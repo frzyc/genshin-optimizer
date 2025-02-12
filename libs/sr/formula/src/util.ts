@@ -73,6 +73,9 @@ export function lightConeTagMapNodeEntries(
   superimpose: SuperimposeKey
 ): TagMapNodeEntries {
   return [
+    // Opt-in for light cone buffs, instead of enabling it by default to reduce `read` traffic
+    reader.sheet('agg').reread(reader.sheet('lightCone')),
+
     // Mark light cones as used
     own.common.count.sheet(key).add(1),
     own.lightCone.lvl.add(level),
@@ -93,7 +96,7 @@ export function relicTagMapNodeEntries(
     et: 'own',
   })
   return [
-    // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
+    // Opt-in for relic buffs, instead of enabling it by default to reduce `read` traffic
     reader.sheet('agg').reread(reader.sheet('relic')),
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily

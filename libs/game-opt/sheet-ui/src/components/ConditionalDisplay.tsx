@@ -10,7 +10,7 @@ import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type {
   IListConditionalData,
   INumConditionalData,
-} from '@genshin-optimizer/game-opt/formula'
+} from '@genshin-optimizer/game-opt/engine'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'

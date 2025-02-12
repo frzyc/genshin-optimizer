@@ -137,6 +137,8 @@ describe('sheet', () => {
       ...allCharacterKeys,
       ...allLightConeKeys,
       ...allRelicSetKeys,
+      'relic',
+      'lightCone',
     ])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {

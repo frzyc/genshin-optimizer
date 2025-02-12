@@ -1,16 +1,16 @@
 import { traverse } from '@genshin-optimizer/pando/engine'
 
 import type {
+  IBaseConditionalData,
+  IConditionalData,
+  IFormulaData,
+} from '@genshin-optimizer/game-opt/engine'
+import type {
   AnyNode,
   ReRead,
   Tag,
   TagMapEntries,
 } from '@genshin-optimizer/pando/engine'
-import type {
-  IBaseConditionalData,
-  IConditionalData,
-  IFormulaData,
-} from './IConditionalData'
 
 type Conditionals = Record<string, Record<string, IConditionalData>>
 type Formulas<T> = Record<string, Record<string, IFormulaData<T>>>

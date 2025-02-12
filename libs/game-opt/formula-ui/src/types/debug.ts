@@ -1,4 +1,4 @@
-import type { Read, Tag } from '@genshin-optimizer/game-opt/engine'
+import type { Calculator, Read, Tag } from '@genshin-optimizer/game-opt/engine'
 import type { DebugMeta } from '@genshin-optimizer/pando/engine'
 
 export type GenericRead = Read<
@@ -7,4 +7,11 @@ export type GenericRead = Read<
   string | null,
   string
 >
+export type GenericCalculator = Calculator<
+  string | null,
+  string | null,
+  string,
+  string
+>
+
 export type FilterFunc = (debug: DebugMeta) => boolean

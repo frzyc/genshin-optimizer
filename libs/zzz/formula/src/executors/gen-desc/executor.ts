@@ -23,6 +23,8 @@ export default async function runExecutor(
     if (
       // sheet-specific
       tag.sheet != 'agg' &&
+      tag.sheet !== 'disc' &&
+      tag.sheet !== 'wengine' &&
       // formula listing
       tag.qt == 'listing' &&
       tag.q == 'formulas' &&
@@ -41,6 +43,8 @@ export default async function runExecutor(
     if (
       // sheet-specific
       tag.sheet != 'agg' &&
+      tag.sheet !== 'disc' &&
+      tag.sheet !== 'wengine' &&
       // formula listing
       tag.qt == 'listing' &&
       tag.q == 'buffs' &&

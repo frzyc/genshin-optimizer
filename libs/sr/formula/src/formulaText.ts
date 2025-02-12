@@ -1,5 +1,5 @@
 import type { CalcResult, DebugMeta } from '@genshin-optimizer/pando/engine'
-import { allLightConeKeys } from '@genshin-optimizer/sr/consts'
+import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type { PartialMeta } from './calculator'
 
 type Output = PartialMeta
@@ -86,9 +86,31 @@ const details = {
 } as const
 
 export function filterDebug(debug: DebugMeta) {
-  return (
-    (debug.formula?.includes('[0] thres') ||
-      debug.formula?.includes('[0] match')) &&
-    allLightConeKeys.some((key) => debug.formula?.includes(key))
-  )
+  return debugIsUnequippedLc(debug) || debugIsUnequippedRelic(debug)
+}
+
+function debugIsUnequippedLc(debug: DebugMeta) {
+  if (!debug.formula || !debug.deps || debug.deps.length < 1) return false
+  const f = debug.formula
+  const disabledBuffForLc =
+    f.includes('[0]') &&
+    f.includes('common.count') &&
+    allLightConeKeys.some((key) => f.includes(key))
+  const depGathered0ForCount =
+    debug.deps[0].formula?.includes('gather 0 node') &&
+    debug.deps[0].formula?.includes('common.count')
+  return disabledBuffForLc && depGathered0ForCount
+}
+
+function debugIsUnequippedRelic(debug: DebugMeta) {
+  if (!debug.formula || !debug.deps || debug.deps.length < 1) return false
+  const f = debug.formula
+  const disabledBuffForRelic =
+    f.includes('[0]') &&
+    f.includes('common.count') &&
+    allRelicSetKeys.some((key) => f.includes(key))
+  const depGathered0ForCount =
+    debug.deps[0].formula?.includes('gather 0 node') &&
+    debug.deps[0].formula?.includes('common.count')
+  return disabledBuffForRelic && depGathered0ForCount
 }

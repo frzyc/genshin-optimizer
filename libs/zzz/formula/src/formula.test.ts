@@ -14,6 +14,7 @@ import {
 import { fail } from 'assert'
 import {
   charTagMapNodeEntries,
+  discTagMapNodeEntries,
   formulas,
   wengineTagMapNodeEntries,
   withMember,
@@ -267,6 +268,41 @@ describe('char+wengine test', () => {
     }
   )
 })
+
+describe('disc2p test', () => {
+  it('calculate initial stats', () => {
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+        }),
+        ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
+      ),
+    ]
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Anby', dst: 'Anby' })
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    console.log(
+      JSON.stringify(calc.toDebug().compute(anby.final.atk), undefined, 2)
+    )
+    expect(calc.compute(anby.final.atk).val).toBeCloseTo(195)
+    expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.66)
+  })
+})
+
 describe('sheet', () => {
   test('buff entries', () => {
     const sheets = new Set([
