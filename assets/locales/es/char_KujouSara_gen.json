@@ -45,7 +45,7 @@
     "description": {
       "0": "Retrocede con la velocidad de un tengu e invoca la protección de las plumas de cuervo.",
       "1": "Además, entra en el estado de velo alado durante 18 s. Cuando Kujou Sara dispara una flecha cargada, velo alado se consumirá y dejará una pluma de cuervo en la ubicación del enemigo contra en el que impactó.",
-      "2": "Al poco tiempo, la pluma de cuervo provocará una maldición tengu: emboscada que inflige <electro>Daño Electro</electro> contra los enemigos en un área, además de otorgar al personaje en uso que estaba en esa área un Bono de ATQ proporcional al ATQ Básico de Kujou Sara.",
+      "2": "Al poco tiempo, la pluma de cuervo provocará una maldición tengu: emboscada que inflige <electro>Daño Electro</electro> contra los enemigos en un área, además de otorgar al personaje en uso que estaba en esa área un Bono de ATQ proporcional al ATQ Base de Kujou Sara.",
       "3": "<br/>",
       "4": "Los Bonos de ATQ otorgados por las distintas maldiciones tengu no se pueden acumular, sino que sus efectos y duración se calcularán en función de la última maldición realizada.",
       "5": "<br/>",

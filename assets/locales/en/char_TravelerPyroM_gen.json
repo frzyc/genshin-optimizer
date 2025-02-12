@@ -48,7 +48,7 @@
       "8": "When the current active character within a Scorching Threshold deals DMG to opponents, the Threshold will launch a Coordinated Attack that deals Nightsoul-aligned <pyro>Pyro DMG</pyro> based on the Traveler's ATK. This effect can occur once every 3s.",
       "9": "<br/>",
       "10": "<strong>Nightsoul's Blessing: Traveler</strong>",
-      "11": "Continuously consumes Nightsoul points. The Traveler's Nightsoul's Blessing state lasts 12s at maximum, and when their Nightsoul points are exhausted, or if the skill is used again, this state will end.",
+      "11": "Continuously consumes Nightsoul points. The Traveler's Nightsoul's Blessing state lasts 12s at maximum, and when their Nightsoul points are exhausted, this state will end. If this Elemental Skill is used again while active, the Traveler's Nightsoul points will be reset to 42 points.",
       "12": "Blazing and Scorching Thresholds will disappear once the Traveler's Nightsoul's Blessing state ends, and only 1 Blazing or Scorching Threshold summoned by the Traveler themselves can exist at any one time.",
       "13": "<br/>",
       "14": "<i>Together, you and Paimon watched the shifting colors of the flowing flames.</i>"
@@ -75,7 +75,7 @@
   "burst": {
     "name": "Plains Scorcher",
     "description": {
-      "0": "Condense the flames into a mark, dealing Nightsoul-aligned <pyro>AoE Pyro DMG</pyro> to opponents up ahead. Within the next 4s, the Traveler restores 7 Nightsoul points per second.",
+      "0": "Condense the flames into a mark, dealing Nightsoul-aligned <pyro>AoE Pyro DMG</pyro> to opponents up ahead. The Traveler restores 7 Nightsoul points per second for the next 4s.",
       "1": "<br/>",
       "2": "<i>Together, you and Paimon studied the principles behind an undying flame.</i>"
     },
@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Embers Unspent",
     "description": {
-      "0": "After the current active character inside a <strong>Blazing Threshold</strong> or <strong>Scorching Threshold</strong> triggers Burning, Vaporize, Melt, Overloaded, Burgeon, a Pyro Swirl or a Pyro Crystallize reaction, the Traveler will regain 5 Energy. This can occur once every 12s. Additionally, when a nearby party member triggers a Nightsoul Burst, the Traveler will regain 4 Energy."
+      "0": "After the current active character inside a <strong>Blazing Threshold</strong> or <strong>Scorching Threshold</strong> triggers a <pyro>Pyro-related reaction</pyro>, the Traveler will regain 5 Energy. This can occur once every 12s. Additionally, when a nearby party member triggers a Nightsoul Burst, the Traveler will regain 4 Energy."
     }
   },
   "constellation1": {
@@ -119,7 +119,7 @@
   "constellation2": {
     "name": "Ever-Lit Candle",
     "description": {
-      "0": "Within 12s of using the Elemental Skill <strong>Flowfire Blade</strong>, after nearby party members trigger Burning, Vaporize, Melt, Overloaded, Burgeon, a Pyro Swirl or a Pyro Crystallize reaction on an opponent, the Traveler will regain 14 Nightsoul points. Each use of <strong>Flowfire Blade</strong> will restore at most 28 Nightsoul points in this way."
+      "0": "Within 12s of using the Elemental Skill <strong>Flowfire Blade</strong>, after nearby party members trigger a <pyro>Pyro-related reaction</pyro> on an opponent, the Traveler will regain 14 Nightsoul points. Each use of <strong>Flowfire Blade</strong> will restore at most 28 Nightsoul points in this way."
     }
   },
   "constellation3": {

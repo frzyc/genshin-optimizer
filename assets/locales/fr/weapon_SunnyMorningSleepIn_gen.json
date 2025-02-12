@@ -1,0 +1,24 @@
+{
+  "name": "Matinée flânée sous le soleil",
+  "description": {
+    "0": "Une lanterne en forme de cloche forgée à partir de jade violet. On dit qu'elle fait rêver lorsqu'elle est placée à côté de l'oreiller."
+  },
+  "passiveName": "Bains, faucons et enfin Narukami",
+  "passiveDescription": {
+    "0": {
+      "0": "Après avoir déclenché une réaction de Dispersion, la maîtrise élémentaire augmente de <cryo>120</cryo> pts pendant 6 s. Après avoir touché un ennemi avec une compétence élémentaire, la maîtrise élémentaire augmente de <cryo>96</cryo> pts pendant 9 s. Après avoir touché un ennemi avec un déchaînement élémentaire, la maîtrise élémentaire augmente de <cryo>32</cryo> pts pendant 30 s."
+    },
+    "1": {
+      "0": "Après avoir déclenché une réaction de Dispersion, la maîtrise élémentaire augmente de <cryo>150</cryo> pts pendant 6 s. Après avoir touché un ennemi avec une compétence élémentaire, la maîtrise élémentaire augmente de <cryo>120</cryo> pts pendant 9 s. Après avoir touché un ennemi avec un déchaînement élémentaire, la maîtrise élémentaire augmente de <cryo>40</cryo> pts pendant 30 s."
+    },
+    "2": {
+      "0": "Après avoir déclenché une réaction de Dispersion, la maîtrise élémentaire augmente de <cryo>180</cryo> pts pendant 6 s. Après avoir touché un ennemi avec une compétence élémentaire, la maîtrise élémentaire augmente de <cryo>144</cryo> pts pendant 9 s. Après avoir touché un ennemi avec un déchaînement élémentaire, la maîtrise élémentaire augmente de <cryo>48</cryo> pts pendant 30 s."
+    },
+    "3": {
+      "0": "Après avoir déclenché une réaction de Dispersion, la maîtrise élémentaire augmente de <cryo>210</cryo> pts pendant 6 s. Après avoir touché un ennemi avec une compétence élémentaire, la maîtrise élémentaire augmente de <cryo>168</cryo> pts pendant 9 s. Après avoir touché un ennemi avec un déchaînement élémentaire, la maîtrise élémentaire augmente de <cryo>56</cryo> pts pendant 30 s."
+    },
+    "4": {
+      "0": "Après avoir déclenché une réaction de Dispersion, la maîtrise élémentaire augmente de <cryo>240</cryo> pts pendant 6 s. Après avoir touché un ennemi avec une compétence élémentaire, la maîtrise élémentaire augmente de <cryo>192</cryo> pts pendant 9 s. Après avoir touché un ennemi avec un déchaînement élémentaire, la maîtrise élémentaire augmente de <cryo>64</cryo> pts pendant 30 s."
+    }
+  }
+}

@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "คริสตัลกำยาน"
   },
+  "FestivalStamp": {
+    "name": "แสตมป์เกม"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Lan Yan"
   },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Kachina"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "ดวงดาวแห่งชีวิตของ Lan Yan"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "ดวงดาวแห่งชีวิตของ Yumemizuki Mizuki"
   },
   "Apple": {
     "name": "Apple"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "\"ร้อยใจรวมเป็นหนึ่ง: การประลองอันแสนดุเดือด\" ฉบับร่าง"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "พจนานุกรม Fischl: ฉบับพิมพ์ใหม่ของเจ้าหญิง"
   },
   "WyattsRedKey": {
     "name": "Wyatt's Red Key"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Tomates Narbonnaises แสนอร่อย"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Consomme รสประหลาด"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Consomme"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Consomme แสนอร่อย"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Crepes Suzette แสนอร่อย"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "\"Consomme Purete\""
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "Secret Art"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Bathhouse Manjuu รสประหลาด"
+  },
+  "BathhouseManjuu": {
+    "name": "Bathhouse Manjuu"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Bathhouse Manjuu แสนอร่อย"
+  },
+  "DreamsOfHealing": {
+    "name": "Dreams of Healing"
+  },
   "RecipeItem": {
     "name": "Cooking Ingredients"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "สูตรอาหาร: Tomates Narbonnaises"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "สูตรอาหาร: Consomme"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "สูตรอาหาร: Drunken Plums in Snow"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "สูตรอาหาร: Bathhouse Manjuu"
   },
   "CraftedItems": {
     "name": "ไอเทมจากการสร้าง"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "พัสดุที่หนักอึ้ง"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "ลูกปลาหนึ่งกระป๋อง"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "บันทึกของนักเดินทางนิรนาม V"
   },
+  "InvitationFromMiko": {
+    "name": "จดหมายเชิญจาก Yae Miko"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "คูปองสมนาคุณ \"โรงอาบน้ำ Aisa\""
+  },
+  "LeafyDreams": {
+    "name": "\"ใบไม้แห่งฝันดี\""
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "ข้อความจากสถานที่ทดสอบถอดวิญญาณ"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Saurus Cracker - Tepetlisaurus"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "การ์ดเชิญลูกค้าวีไอพีของโรงอาบน้ำ Aisa"
+  },
+  "MysteriousGift": {
+    "name": "ของขวัญลึกลับ"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "ตำนานลี้ลับแห่ง Inazuma (I)"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "ตำนานลี้ลับแห่ง Inazuma (II)"
+  },
+  "MenOfLithinI": {
+    "name": "มนุษย์แร่หิน (I)"
+  },
+  "MenOfLithinII": {
+    "name": "มนุษย์แร่หิน (II)"
+  },
+  "MenOfLithinIII": {
+    "name": "มนุษย์แร่หิน (III)"
   },
   "TearsAmongTheStars": {
     "name": "น้ำตาแห่งดวงดาว"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Shuttle of Odara"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Smoldering Phosphorescent Flame"
+  },
   "FalconsDance": {
     "name": "Falcon's Dance"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "บันทึก - เปลวไฟดวงใหม่"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki - เขมือบฝันร้าย"
+  },
+  "CelebrationScorch": {
+    "name": "งานฉลอง - แผดเผา"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "บันทึก - ห้วงนิทรา"
+  },
   "EchoDandelionKnight": {
     "name": "เอฟเฟกต์วิ่ง - อัศวิน Dandelion"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "สูตร: Spinelpulp Bait"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "สูตร: Emberglow Bait"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "ทักทายอย่างสง่า"
+  },
+  "EarnestNegotiation": {
+    "name": "คุยอย่างจริงใจ"
   },
   "FantasticalMarvel": {
     "name": "มายาลวงตาพิศวง"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Dark-Shattering Flame"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "All Reprisals and Arrears, Mine to Bear"
+  },
+  "RepaidInFull": {
+    "name": "Repaid in Full"
   },
   "MagicGuide": {
     "name": "Magic Guide"
@@ -14946,10 +15024,13 @@
     "name": "เวที Tepetl"
   },
   "ScionsOfTheCanopy": {
-    "name": "\"Scions of the Canopy\""
+    "name": "\"พงศ์พิดานพฤกษา\""
   },
   "PeopleOfTheSprings": {
     "name": "\"เหล่าวารี\""
+  },
+  "FlowerFeatherClan": {
+    "name": "\"วงศ์ปีกบุปผา\""
   },
   "ElementalResonanceWovenIce": {
     "name": "Elemental Resonance: Woven Ice"
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "อุดมโฟลจิสตัน"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Tepetlisaurus ตัวน้อย! - เจอสมบัติแล้ว!"
   },
   "Origin": {
     "name": "แรกเริ่ม"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "ชั้นวางโน้ตทั่วไป"
+  },
+  "SweetDreams": {
+    "name": "\"ขอให้เธอฝันดี\""
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "อุปกรณ์โรงน้ำชา - \"แม่นยำไร้ข้อผิดพลาด\""
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "\"เชือกกั้นยอด Quahuacan Cliff\""
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "รั้วล้อมคอกสัตว์ - \"เส้นแบ่งเรียบง่าย\""
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "ประตูไม้คอกสัตว์ - \"พื้นฐานการก่อสร้าง\""
+  },
   "SmoothWoodenBench": {
     "name": "ม้านั่งยาวไม้ผิวเรียบ"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "\"แสงจรัสจากเมือง Cinder\""
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "หินโม่คอกสัตว์ - \"ตัวเลือกการทำอาหาร\""
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "เสื่อฟางคอกสัตว์ - \"เตียงชั่วคราว\""
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Charla en el Pabellón",
+  "description": {
+    "0": "En el pasado, hubo una vez un youkai que recorría Inazuma en forma de una lámpara flameante. Esta lámpara debe haber sido uno de sus recipientes."
+  },
+  "passiveName": "Luz verde del fisgón",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental, el ATQ y la Vel. Movimiento aumentan, respectivamente, en un <cryo>20%</cryo> y en un 10% durante 10 s."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental, el ATQ y la Vel. Movimiento aumentan, respectivamente, en un <cryo>25%</cryo> y en un 10% durante 10 s."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental, el ATQ y la Vel. Movimiento aumentan, respectivamente, en un <cryo>30%</cryo> y en un 10% durante 10 s."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental, el ATQ y la Vel. Movimiento aumentan, respectivamente, en un <cryo>35%</cryo> y en un 10% durante 10 s."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental, el ATQ y la Vel. Movimiento aumentan, respectivamente, en un <cryo>40%</cryo> y en un 10% durante 10 s."
+    }
+  }
+}

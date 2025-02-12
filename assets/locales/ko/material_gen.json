@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "향 결정"
   },
+  "FestivalStamp": {
+    "name": "놀이 스탬프"
+  },
   "Primogem": {
     "name": "원석"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "남연"
   },
+  "YumemizukiMizuki": {
+    "name": "유메미즈키 미즈키"
+  },
   "KachinasStellaFortuna": {
     "name": "카치나의 운명의 별"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "남연의 운명의 별"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "유메미즈키 미즈키의 운명의 별"
   },
   "Apple": {
     "name": "사과"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "《백 명의 봉기～최강 무술 대회편～》 원고"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "피슬 사전·황녀 개정판"
   },
   "WyattsRedKey": {
     "name": "와이엇의 빨간 열쇠"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "맛있는 나르본 토마토 팍시"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "이상한 콩소메"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "콩소메"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "맛있는 콩소메"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "맛있는 크레프 쉬제트"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "「순수한 빗방울」"
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "「특별 비법」"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "이상한 대중탕 만쥬"
+  },
+  "BathhouseManjuu": {
+    "name": "대중탕 만쥬"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "맛있는 대중탕 만쥬"
+  },
+  "DreamsOfHealing": {
+    "name": "「꿈의 치유」"
+  },
   "RecipeItem": {
     "name": "레시피 아이템"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "레시피: 나르본 토마토 팍시"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "레시피: 콩소메"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "레시피: 눈에 취한 매화"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "레시피: 대중탕 만쥬"
   },
   "CraftedItems": {
     "name": "합성 산물"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "묵직한 자루"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "어린 물고기 한 통"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "이름 없는 여행가의 노트·다섯 번째"
   },
+  "InvitationFromMiko": {
+    "name": "미코가 보낸 초대장"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "「아이사 대중탕」 특별 이용권"
+  },
+  "LeafyDreams": {
+    "name": "「좋은 꿈의 잎」"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "출혼 시련 장소의 메모"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "용용 쿠키·산룡"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "아이사 대중탕 VIP 초대장"
+  },
+  "MysteriousGift": {
+    "name": "신비한 선물"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "이나즈마 기담집·1권"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "이나즈마 기담집·2권"
+  },
+  "MenOfLithinI": {
+    "name": "석소 인간·1권"
+  },
+  "MenOfLithinII": {
+    "name": "석소 인간·2권"
+  },
+  "MenOfLithinIII": {
+    "name": "석소 인간·3권"
   },
   "TearsAmongTheStars": {
     "name": "뭇별 사이의 눈물"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "영혼을 엮는 베틀북"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "희미한 도깨비불"
+  },
   "FalconsDance": {
     "name": "송골매의 춤"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "기행·새 불씨"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "유메미즈키 미즈키·바쿠"
+  },
+  "CelebrationScorch": {
+    "name": "축제·열정"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "기행·좋은 꿈"
+  },
   "EchoDandelionKnight": {
     "name": "궤적·민들레 기사"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "제조법: 수정 알갱이 미끼"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "제조법: 잿불 미끼"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "우아한 인사"
+  },
+  "EarnestNegotiation": {
+    "name": "성실한 협상"
   },
   "FantasticalMarvel": {
     "name": "절묘한 트릭"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "밤을 가르는 불꽃"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "모든 원한과 빚은 내가 갚고"
+  },
+  "RepaidInFull": {
+    "name": "마땅한 대가"
   },
   "MagicGuide": {
     "name": "마도 서론"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "「샘물 무리」"
   },
+  "FlowerFeatherClan": {
+    "name": "「꽃깃회」"
+  },
   "ElementalResonanceWovenIce": {
     "name": "원소 공명: 뒤엉킨 얼음"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "열소 충만"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "꼬마 산룡! 보물 발견!"
   },
   "Origin": {
     "name": "원초"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "범용형 메모 걸이"
+  },
+  "SweetDreams": {
+    "name": "「좋은 꿈 꿔」"
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "차 공방의 도구-「엄격한 측정」"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "「깃가지 절벽의 밧줄 난간」"
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "축사의 울타리-「평화의 경계선」"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "축사의 나무 문-「건축의 기본」"
+  },
   "SmoothWoodenBench": {
     "name": "평평한 나무 벤치"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "「잿더미성의 찬란한 빛」"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "축사의 맷돌-「맞춤 요리」"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "축사의 멍석-「간이침대」"
   }
 }

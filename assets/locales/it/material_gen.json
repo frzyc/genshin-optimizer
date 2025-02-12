@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "Cristalli cinerei d'incenso"
   },
+  "FestivalStamp": {
+    "name": "Timbro del festival"
+  },
   "Primogem": {
     "name": "Primogemma"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Lan Yan"
   },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna di Kachina"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "Stella Fortuna di Lan Yan"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Stella Fortuna di Yumemizuki Mizuki"
   },
   "Apple": {
     "name": "Mela"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "Bozza del manoscritto di \"Hyakunin Ikki: La grande battaglia\""
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Dizionario di Fischl: Die Neuauflage der Prinzessin"
   },
   "WyattsRedKey": {
     "name": "Chiave rossa di Wyatt"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Tomates narbonnaises deliziosi"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Consommé sospetto"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Consommé"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Consommé delizioso"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Crêpe Suzette deliziose"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "\"Consommé Pureté\""
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "Arte segreta"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Manju termale sospetto"
+  },
+  "BathhouseManjuu": {
+    "name": "Manju termale"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Manju termale delizioso"
+  },
+  "DreamsOfHealing": {
+    "name": "Sogni di guarigione"
+  },
   "RecipeItem": {
     "name": "Ingrediente"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Ricetta: tomates narbonnaises"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Ricetta: Consommé"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "Ricetta: Prugne inebrianti nella neve"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Ricetta: manju termale"
   },
   "CraftedItems": {
     "name": "Oggetti creati"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "Pacchetto pesante"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Barattolo di avannotti"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "Appunti di un viaggiatore anonimo (V)"
   },
+  "InvitationFromMiko": {
+    "name": "Invito di Miko"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Buono per le Terme Aisa"
+  },
+  "LeafyDreams": {
+    "name": "Sogni di foglie"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Messaggio dal luogo della Prova di disincarnazione"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Saurocracker: Tepetlisauro"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Pass VIP per le Terme Aisa"
+  },
+  "MysteriousGift": {
+    "name": "Regalo misterioso"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Scorci della Inazuma misteriosa (I)"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Scorci della Inazuma misteriosa (II)"
+  },
+  "MenOfLithinI": {
+    "name": "Uomini di Litine (I)"
+  },
+  "MenOfLithinII": {
+    "name": "Uomini di Litine (II)"
+  },
+  "MenOfLithinIII": {
+    "name": "Uomini di Litine (III)"
   },
   "TearsAmongTheStars": {
     "name": "Lacrime tra le stelle"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Navetta di Odara"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Fiamma fosforescente indistinta"
+  },
   "FalconsDance": {
     "name": "Danza del falco"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "Appunti di viaggio: La Fiamma rinnovata"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki: Divoraincubi"
+  },
+  "CelebrationScorch": {
+    "name": "Celebrazione: Bruciatura"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "Appunti di viaggio: Sogno meraviglioso"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaliere del Dente di leone"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "Ricetta: esca almandina"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "Ricetta: esca Scintillambra"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "Saluto elegante"
+  },
+  "EarnestNegotiation": {
+    "name": "Negoziazione sincera"
   },
   "FantasticalMarvel": {
     "name": "Prodigio fantastico"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Fiamma frangitenebre"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "Sono io a sopportare ogni interesse o rappresaglia"
+  },
+  "RepaidInFull": {
+    "name": "Estinzione del debito"
   },
   "MagicGuide": {
     "name": "Manuale di magia"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "Popolo delle Sorgenti"
   },
+  "FlowerFeatherClan": {
+    "name": "Clan Piumafiore"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Risonanza elementale: Ghiaccio intrecciato"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "Flogisto abbondante"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Piccolo Tepetlisauro - Cacciatore di tesori a piede libero"
   },
   "Origin": {
     "name": "Origine"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "Portabiglietti comune"
+  },
+  "SweetDreams": {
+    "name": "\"Dolci sogni\""
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Utensile della sala da tè Perfezione millimetrica"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "Vincolo sulla cima del Promontorio di Quahuacán"
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Steccato della recinzione Confine semplice"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Cancello della recinzione Struttura fondante"
+  },
   "SmoothWoodenBench": {
     "name": "Panchina di legno liscio"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "Sotto la luce della Città di cenere"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Macina della recinzione Aiuto cucina"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Giaciglio in paglia della recinzione Letto di fortuna"
   }
 }

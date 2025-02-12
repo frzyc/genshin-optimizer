@@ -15,7 +15,7 @@
         "1": "Consume una cierta cantidad de Aguante para ejecutar hacia delante un tajo incandescente especialmente poderoso."
       },
       "plunging": {
-        "0": "<strong>Ataque Descendiente</strong>",
+        "0": "<strong>Ataque Descendente</strong>",
         "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
       }
     },
@@ -156,7 +156,7 @@
   "constellation2": {
     "name": "Precio de las cenizas",
     "description": {
-      "0": "Mientras está en estado de bendición noctámbula, el ATQ Básico de Mavuika aumenta en 200 pts. y obtiene uno de los siguientes efectos dependiendo de la forma que haya adquirido su arsenal flamígero:",
+      "0": "Mientras está en estado de bendición noctámbula, el ATQ Base de Mavuika aumenta en 200 pts. y obtiene uno de los siguientes efectos dependiendo de la forma que haya adquirido su arsenal flamígero:",
       "1": [
         "Aro incinerador: la DEF de los enemigos cercanos se reduce en un 20%.",
         "Pirociclo: aumenta el daño de los Ataques Normales, Ataques Cargados y del tajosolar descendente de la Habilidad Definitiva <strong>Infierno celestial</strong> de Mavuika en una cantidad equivalente al 60/90/120% de su ATQ, respectivamente."
