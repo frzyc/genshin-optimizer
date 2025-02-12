@@ -91,6 +91,7 @@ import Yanfei from './Character_Yanfei_Card.png'
 import Yaoyao from './Character_Yaoyao_Card.jpg'
 import Yelan from './Character_Yelan_Card.jpg'
 import Yoimiya from './Character_Yoimiya_Card.png'
+import YumemizukiMizuki from './Character_YumemizukiMizuki_Card.jpg'
 import YunJin from './Character_Yun_Jin_Card.jpg'
 import Zhongli from './Character_Zhongli_Card.png'
 import TravelerF from './Traveler_Female_Card.jpg'
@@ -191,6 +192,7 @@ const charCards = {
   Yaoyao,
   Yelan,
   Yoimiya,
+  YumemizukiMizuki,
   YunJin,
   Zhongli,
 } as const
