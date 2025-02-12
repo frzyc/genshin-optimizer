@@ -40,7 +40,9 @@ const sheet = registerRelic(
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.premod.dmg_.add(cmpGE(relicCount, 4, listConditional.map({ val1: 1, val2: 2 }))),
+    teamBuff.premod.dmg_.add(
+      cmpGE(relicCount, 4, listConditional.map({ val1: 1, val2: 2 }))
+    ),
     cmpGE(relicCount, 4, 'unique', '')
   ),
   registerBuff(
