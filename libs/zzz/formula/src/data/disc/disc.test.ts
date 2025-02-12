@@ -8,6 +8,7 @@ import {
   charTagMapNodeEntries,
   conditionals,
   discTagMapNodeEntries,
+  teamData,
   withMember,
 } from '../..'
 import { Calculator } from '../../calculator'
@@ -27,6 +28,7 @@ Object.assign(values, compileTagMapValues(keys, data))
 
 function testCharacterData(setKey: DiscSetKey) {
   const data: TagMapNodeEntries = [
+    ...teamData(['Anby']),
     ...withMember(
       'Anby',
       ...charTagMapNodeEntries({
@@ -70,8 +72,15 @@ describe('Disc sheets test', () => {
         'Anby'
       )(conditionals.AstralVoice.astral.name, 3)
     )
-    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    // console.log(
+    //   JSON.stringify(calc.toDebug().compute(anby.final.dmg_), undefined, 2)
+    // )
     expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0.24)
   })
 })
