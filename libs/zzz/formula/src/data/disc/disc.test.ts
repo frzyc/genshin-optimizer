@@ -4,7 +4,12 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { data, keys, values } from '..'
-import { charTagMapNodeEntries, discTagMapNodeEntries, withMember } from '../..'
+import {
+  charTagMapNodeEntries,
+  conditionals,
+  discTagMapNodeEntries,
+  withMember,
+} from '../..'
 import { Calculator } from '../../calculator'
 import {
   conditionalEntries,
@@ -58,7 +63,13 @@ function testCharacterData(setKey: DiscSetKey) {
 describe('Disc sheets test', () => {
   it('AstrolVoice 4p', () => {
     const data = testCharacterData('AstralVoice')
-    data.push(conditionalEntries('AstralVoice', 'Anby', 'Anby')('astral', 3))
+    data.push(
+      conditionalEntries(
+        'AstralVoice',
+        'Anby',
+        'Anby'
+      )(conditionals.AstralVoice.astral.name, 3)
+    )
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0.24)
