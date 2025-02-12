@@ -1,4 +1,3 @@
-import type { IBaseConditionalData } from '@genshin-optimizer/game-opt/formula'
 import type {
   AnyNode,
   Tag as BaseTag,
@@ -18,6 +17,7 @@ import {
   reread,
 } from '@genshin-optimizer/pando/engine'
 import type { EntryType, Preset } from './listing'
+import type { IBaseConditionalData } from './IConditionalData'
 
 export interface Tag<
   Src extends string | null | null,
