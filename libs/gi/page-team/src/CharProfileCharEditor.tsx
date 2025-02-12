@@ -181,7 +181,9 @@ function Content({ onClose }: { onClose?: () => void }) {
                               ...data,
                             }
                         })
-                      : allTravelerKeys.includes(characterKey)
+                      : allTravelerKeys.includes(
+                          characterKey as (typeof allTravelerKeys)[number]
+                        )
                       ? allTravelerKeys.forEach((tkey) => {
                           database.chars.set(tkey, data)
                         })
