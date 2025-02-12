@@ -9,6 +9,7 @@ import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
+import AThousandBlazingSuns from './AThousandBlazingSuns'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
@@ -161,12 +162,15 @@ import SongOfStillness from './SongOfStillness'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
+import StarcallersWatch from './StarcallersWatch'
 import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
+import SunnyMorningSleepIn from './SunnyMorningSleepIn'
 import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TalkingStick from './TalkingStick'
+import TamayurateiNoOhanashi from './TamayurateiNoOhanashi'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
 import TheBlackSword from './TheBlackSword'
@@ -252,6 +256,7 @@ const data: TagMapNodeEntries[] = [
   WolfFang,
   XiphosMoonlight,
   Akuoumaru,
+  AThousandBlazingSuns,
   BeaconOfTheReedSea,
   BlackcliffSlasher,
   BloodtaintedGreatsword,
@@ -319,6 +324,7 @@ const data: TagMapNodeEntries[] = [
   SkywardSpine,
   StaffOfHoma,
   StaffOfTheScarletSands,
+  TamayurateiNoOhanashi,
   TheCatch,
   VortexVanquisher,
   WavebreakersFin,
@@ -398,6 +404,8 @@ const data: TagMapNodeEntries[] = [
   SacrificialJade,
   SkywardAtlas,
   SolarPearl,
+  StarcallersWatch,
+  SunnyMorningSleepIn,
   SurfsUp,
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
