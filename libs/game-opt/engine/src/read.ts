@@ -16,8 +16,8 @@ import {
   constant,
   reread,
 } from '@genshin-optimizer/pando/engine'
-import type { EntryType, Preset } from './listing'
 import type { IBaseConditionalData } from './IConditionalData'
+import type { EntryType, Preset } from './listing'
 
 export interface Tag<
   Src extends string | null | null,

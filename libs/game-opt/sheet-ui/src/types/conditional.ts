@@ -6,7 +6,7 @@ import type { Header } from './header'
 
 export type Conditional = {
   metadata: IConditionalData
-  label: ReactNode | ((calc: GenericCalculator) => ReactNode)
+  label: ReactNode | ((calc: GenericCalculator, value: number) => ReactNode)
   badge?: ReactNode | ((calc: GenericCalculator, value: number) => ReactNode)
   header?: Header
   fields?: Field[]
