@@ -111,6 +111,7 @@ import Yanfei from './Yanfei'
 import Yaoyao from './Yaoyao'
 import Yelan from './Yelan'
 import Yoimiya from './Yoimiya'
+import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
 
@@ -219,6 +220,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Yaoyao,
   Yelan,
   Yoimiya,
+  YumemizukiMizuki,
   YunJin,
   Zhongli,
 } as const

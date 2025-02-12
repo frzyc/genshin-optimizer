@@ -99,6 +99,7 @@ export const crittableTransformativeReactions = [
   'bloom',
   'burgeon',
   'hyperbloom',
+  'swirl'
 ] as const
 export type CrittableTransformativeReactionsKey =
   (typeof crittableTransformativeReactions)[number]
