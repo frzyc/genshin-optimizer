@@ -1,6 +1,6 @@
-import type { IBaseConditionalData } from '@genshin-optimizer/game-opt/formula'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpEq, cmpNE, subscript } from '@genshin-optimizer/pando/engine'
+import type { IBaseConditionalData } from './IConditionalData'
 import type { Read, Tag } from './read'
 import { reader } from './read'
 

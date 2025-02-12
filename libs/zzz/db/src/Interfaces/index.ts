@@ -1,3 +1,3 @@
 export * from './IDbDisc'
-export * from './IDisc'
+export * from './IZZZChracter'
 export * from './IZZZDatabase'

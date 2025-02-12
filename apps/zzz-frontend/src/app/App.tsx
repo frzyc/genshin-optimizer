@@ -1,6 +1,7 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
 import { DatabaseProvider } from '@genshin-optimizer/zzz/db-ui'
 import '@genshin-optimizer/zzz/i18n' // import to load translations
+import PageHome from '@genshin-optimizer/zzz/page-home'
 import { theme } from '@genshin-optimizer/zzz/theme'
 import {
   Box,
@@ -14,7 +15,6 @@ import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import '../styles.scss'
 import Header from './Header'
-import PageHome from './PageHome'
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
 const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
 const PageCharacters = lazy(

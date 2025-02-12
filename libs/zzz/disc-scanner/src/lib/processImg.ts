@@ -15,7 +15,7 @@ import {
 import { levenshteinDistance } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { discSlotToMainStatKeys } from '@genshin-optimizer/zzz/consts'
-import type { IDisc } from '@genshin-optimizer/zzz/db'
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import type { ReactNode } from 'react'
 import { blackColor } from './consts'
 import { statMapEngMap } from './enStringMap'

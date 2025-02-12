@@ -1007,3 +1007,8 @@ export const wengineSheets: Partial<
     },
   },
 } as const
+
+export const wengineMaxLevel: Record<WengineRarityKey, number> = {
+  A: 60,
+  S: 60,
+} as const

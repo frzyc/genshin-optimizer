@@ -8,7 +8,7 @@ import {
   discSlotToMainStatKeys,
   type DiscSetKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { ISubstat } from '@genshin-optimizer/zzz/db'
+import type { ISubstat } from '@genshin-optimizer/zzz/zood'
 import { misreadCharactersInSubstatMap } from './consts'
 import { statMapEngMap } from './enStringMap'
 

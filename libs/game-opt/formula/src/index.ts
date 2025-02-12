@@ -1,2 +1,2 @@
-export * from './IConditionalData'
 export * from './metadata'
+export * from './util'
