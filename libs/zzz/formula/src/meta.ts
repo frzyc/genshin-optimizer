@@ -1,5 +1,16 @@
 // WARNING: Generated file, do not modify
-export const conditionals = {} as const
+export const conditionals = {
+  AstralVoice: {
+    astral: {
+      sheet: 'AstralVoice',
+      name: 'astral',
+      type: 'num',
+      int_only: true,
+      min: 1,
+      max: 3,
+    },
+  },
+} as const
 export const formulas = {
   Anby: {
     anomalyDmgInst: {
@@ -786,4 +797,18 @@ export const formulas = {
     },
   },
 } as const
-export const buffs = {} as const
+export const buffs = {
+  AstralVoice: {
+    team_dmg_: {
+      sheet: 'AstralVoice',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'AstralVoice',
+        name: 'team_dmg_',
+      },
+    },
+  },
+} as const
