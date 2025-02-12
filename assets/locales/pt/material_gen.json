@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "Cristais de Incenso"
   },
+  "FestivalStamp": {
+    "name": "Selo de Jogos"
+  },
   "Primogem": {
     "name": "Gema Essencial"
   },
@@ -660,7 +663,7 @@
     "name": "Stella Fortuna de Ganyu"
   },
   "AlbedosStellaFortuna": {
-    "name": "Constelação do Albedo"
+    "name": "Stella Fortuna de Albedo"
   },
   "DionasStellaFortuna": {
     "name": "Stella Fortuna de Diona"
@@ -684,13 +687,13 @@
     "name": "Stella Fortuna de Hutao"
   },
   "KaedeharaKazuhasStellaFortuna": {
-    "name": "Constelação de Kaedehara Kazuha"
+    "name": "Stella Fortuna de Kaedehara Kazuha"
   },
   "YanfeisStellaFortuna": {
     "name": "Stella Fortuna de Yanfei"
   },
   "YoimiyasStellaFortuna": {
-    "name": "Constelação de Yoimiya"
+    "name": "Stella Fortuna de Yoimiya"
   },
   "ThomasStellaFortuna": {
     "name": "Stella Fortuna de Thoma"
@@ -702,7 +705,7 @@
     "name": "Stella Fortuna da Shogun Raiden"
   },
   "SayusStellaFortuna": {
-    "name": "Constelação de Sayu"
+    "name": "Stella Fortuna de Sayu"
   },
   "SangonomiyaKokomisStellaFortuna": {
     "name": "Stella Fortuna de Sangonomiya Kokomi"
@@ -729,7 +732,7 @@
     "name": "Stella Fortuna de Kirara"
   },
   "AloysStellaFortuna": {
-    "name": "Stella Fortuna de Alloy"
+    "name": "Stella Fortuna de Aloy"
   },
   "ShenhesStellaFortuna": {
     "name": "Stella Fortuna de Shenhe"
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Lan Yan"
   },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "Stella Fortuna de Lan Yan"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Stella Fortuna de Yumemizuki Mizuki"
   },
   "Apple": {
     "name": "Maçã"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "Rascunho de Manuscrito do \"Hyakunin Ikki: A Grande Batalha\""
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Dicionário Fischl: Nova Edição da Princesa"
   },
   "WyattsRedKey": {
     "name": "Chave Vermelha de Wyatt"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Tomates Narbonnaises Deliciosos"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Consomme Estranho"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Consomme"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Consomme Delicioso"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Crepes Suzette Deliciosos"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "\"Consomme Purete\""
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "Arte Secreta"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Mizu Manjuu Estranho"
+  },
+  "BathhouseManjuu": {
+    "name": "Mizu Manjuu"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Mizu Manjuu Delicioso"
+  },
+  "DreamsOfHealing": {
+    "name": "\"Sonhos Curadores\""
+  },
   "RecipeItem": {
     "name": "Ingredientes"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Receita: Tomates Narbonnaises"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Receita: Consomme"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "Receita: Ameixas na Neve"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Receita: Mizu Manjuu"
   },
   "CraftedItems": {
     "name": "Produtos Combinados"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "Pacote Pesado"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Lata de Alevino"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "Anotações do Viajante Sem Nome V"
   },
+  "InvitationFromMiko": {
+    "name": "Convite da Miko"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Cupom Especial da Banhos de Aisa"
+  },
+  "LeafyDreams": {
+    "name": "Sonho de uma Folha"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Mensagem do Local do Julgamento da Alma"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Bolachas Saurus · Tepetlissauro"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Convite VIP da Banhos de Aisa"
+  },
+  "MysteriousGift": {
+    "name": "Presente Misterioso"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Contos Secretos de Inazuma I"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Contos Secretos de Inazuma II"
+  },
+  "MenOfLithinI": {
+    "name": "Homens de Pedra I"
+  },
+  "MenOfLithinII": {
+    "name": "Homens de Pedra II"
+  },
+  "MenOfLithinIII": {
+    "name": "Homens de Pedra III"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Transporte de Odara"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Chama Fosforescente Latente"
+  },
   "FalconsDance": {
     "name": "Dança do Falcão"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "Passe de Batalha: Chama Renovada"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki: Devoradora de Pesadelos"
+  },
+  "CelebrationScorch": {
+    "name": "Celebração - Fervor"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "Passe de Batalha: Sonhos Coloridos"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaleira de Dandelion"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "Fórmula: Isca de Fruta Cristal-Espinho"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "Receita: Isca Brilhabrasa"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "Saudação Elegante"
+  },
+  "EarnestNegotiation": {
+    "name": "Negociação Honesta"
   },
   "FantasticalMarvel": {
     "name": "Maravilha Fantástica"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Chama Dispersadora da Escuridão"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "Todas as Vinganças e Dívidas são Minhas"
+  },
+  "RepaidInFull": {
+    "name": "Pagamento Completo"
   },
   "MagicGuide": {
     "name": "Guia de Magia"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "Povo das Termas"
   },
+  "FlowerFeatherClan": {
+    "name": "Clã das Plumas de Flores"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Ressonância Elemental: Entrelaçamento Cryo"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "Flogisto Abundante"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Tepetlissauro Pequeno — Grande Caçador de Tesouros"
   },
   "Origin": {
     "name": "Primordial"
@@ -15873,7 +15957,7 @@
     "name": "Pergaminho do Local da Sagacidade"
   },
   "TavernBookcaseEssentialKnowledge": {
-    "name": "Estante de Livros da Taverna - Conhecimento Essencial"
+    "name": "Estante de Livros da Taverna - \"Conhecimento Essencial\""
   },
   "MaisonCardinalicesCabinet": {
     "name": "\"Gabinete de Maison Cardinalice\""
@@ -16020,7 +16104,7 @@
     "name": "Cama de Madeira da Adhigama \"Tranquilidade\""
   },
   "AdhigamaWoodReposeCouch": {
-    "name": "Sofá de Madeira da Adhigama Repouso"
+    "name": "Sofá de Madeira da Adhigama \"Repouso\""
   },
   "LindenWoodSturdyBunk": {
     "name": "Cama \"Resistente\" de Madeira de Tília"
@@ -16098,10 +16182,10 @@
     "name": "Mar de Airela de Finnick"
   },
   "TavernDiningChairFlavorsMultiplicity": {
-    "name": "Cadeira de Jantar da Taverna - Multiplicidade de Sabor"
+    "name": "Cadeira de Jantar da Taverna - \"Multiplicidade de Sabor\""
   },
   "TavernDiningChairAcceleratedSobriety": {
-    "name": "Cadeira de Jantar da Taverna - Sobriedade Acelerada"
+    "name": "Cadeira de Jantar da Taverna - \"Sobriedade Acelerada\""
   },
   "ConversationOfTheForbiddenFortress": {
     "name": "\"Comunicação da Fortaleza Proibida\""
@@ -16266,7 +16350,7 @@
     "name": "Mini Sofá de Diona"
   },
   "TavernDiningCartASnackBetweenDishes": {
-    "name": "Carrinho de Comida da Taverna - Um Lanche Entre Pratos"
+    "name": "Carrinho de Comida da Taverna - \"Um Lanche Entre Pratos\""
   },
   "WisdomOfTheForbiddenFortress": {
     "name": "\"Sabedoria da Fortaleza Proibida\""
@@ -16353,10 +16437,10 @@
     "name": "Padrão Puro do Trigo"
   },
   "TavernCarpetPassionOfPlay": {
-    "name": "Tapete da Taverna: Paixão Duelista"
+    "name": "Tapete da Taverna - \"Paixão Duelista\""
   },
   "TavernCarpetDuelistsWisdom": {
-    "name": "Tapete da Taverna: Sabedoria Duelista"
+    "name": "Tapete da Taverna - \"Sabedoria Duelista\""
   },
   "RestaurantRugEqualDialogue": {
     "name": "Tapete do Restaurante \"Diálogo Igual\""
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "Porta-Anotações Comum"
+  },
+  "SweetDreams": {
+    "name": "\"Bons Sonhos\""
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Utensílio da Casa de Chá: De Passo em Passo se Caminham Léguas"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "\"Talabarte no Pico do Precipício Quahuacan\""
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Cerca do Estábulo: Fronteiras Físicas"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Portão de Madeira do Estábulo: Estrutura Básica"
+  },
   "SmoothWoodenBench": {
     "name": "Banco de Madeira Liso"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "\"Brilho da Cidade Incandescente\""
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Mó do Estábulo: Escolha Culinária"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Colchão de Palha do Estábulo: Descanso Temporário"
   }
 }

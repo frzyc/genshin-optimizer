@@ -48,7 +48,7 @@
       "8": "Cuando el personaje en uso que esté bajo los efectos del umbral abrasador inflija daño a un enemigo, el umbral ejecutará un ataque coordinado que inflige <pyro>Daño Pyro</pyro> de naturaleza noctámbula en función del ATQ {F#de la Viajera}{M#del Viajero}. Este efecto solo puede ocurrir una vez cada 3 s.",
       "9": "<br/>",
       "10": "<strong>Bendición noctámbula: Viajer{F#a}{M#o}</strong>",
-      "11": "Consume continuamente pts. de noctambulismo. Los pts. de noctambulismo {F#de la Viajera}{M#del Viajero} duran un máximo de 12 s y, al agotarse todos o al usar de nuevo la habilidad, terminará su bendición noctámbula.",
+      "11": "Consume continuamente pts. de noctambulismo. Los pts. de noctambulismo {F#de la Viajera}{M#del Viajero} duran un máximo de 12 s y, al agotarse todos, terminará su bendición noctámbula. Si en ese tiempo vuelve a usar la Habilidad Elemental, sus pts. de noctambulismo se reiniciarán a 42.",
       "12": "Tanto el umbral flagrante como el abrasador desaparecerán cuando termine la bendición noctámbula {F#de la Viajera}{M#del Viajero}. Solo puede existir a la vez o bien un umbral flagrante, o bien un umbral abrasador creado por {F#la Viajera}{M#el Viajero}.",
       "13": "<br/>",
       "14": "<i>Observaste con Paimon los cambios de color del fuego.</i>"
@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Perduración de las ascuas",
     "description": {
-      "0": "Cuando el personaje en uso afectado por el <strong>umbral flagrante</strong> o el <strong>umbral abrasador</strong> causa una reacción de Quemadura, Vaporización, Derretido, Sobrecarga, Crepitar, Torbellino Pyro o Cristalización Pyro, {F#la Viajera}{M#el Viajero} recupera 5 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 12 s. Además, cuando un personaje cercano del equipo causa una explosión noctámbula, {F#la Viajera}{M#el Viajero} recupera 4 pts. de Energía Elemental."
+      "0": "Cuando el personaje en uso afectado por el <strong>umbral flagrante</strong> o el <strong>umbral abrasador</strong> causa una <pyro>Reacción Elemental Pyro</pyro>, {F#la Viajera}{M#el Viajero} recupera 5 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 12 s. Además, cuando un personaje cercano del equipo causa una explosión noctámbula, {F#la Viajera}{M#el Viajero} recupera 4 pts. de Energía Elemental."
     }
   },
   "constellation1": {
@@ -119,7 +119,7 @@
   "constellation2": {
     "name": "Vela perpetua",
     "description": {
-      "0": "Durante los 12 s posteriores a usar la Habilidad Elemental, <strong>Espada ignífera</strong>, cuando un personaje cercano del equipo causa una reacción de Quemadura, Vaporización, Derretido, Sobrecarga, Crepitar, Torbellino Pyro o Cristalización Pyro contra un enemigo, {F#la Viajera}{M#el Viajero} recupera 14 pts. de noctambulismo. Solo se pueden recuperar un máximo de 28 pts. de noctambulismo de esta manera por cada vez que se use la Habilidad Elemental, <strong>Espada ignífera</strong>."
+      "0": "Durante los 12 s posteriores a usar la Habilidad Elemental, <strong>Espada ignífera</strong>, cuando un personaje cercano del equipo causa una <pyro>Reacción Elemental Pyro</pyro> contra un enemigo, {F#la Viajera}{M#el Viajero} recupera 14 pts. de noctambulismo. Solo se pueden recuperar un máximo de 28 pts. de noctambulismo de esta manera por cada vez que se use la Habilidad Elemental, <strong>Espada ignífera</strong>."
     }
   },
   "constellation3": {

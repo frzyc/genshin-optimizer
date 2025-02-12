@@ -18,7 +18,7 @@
       "0": "On hit, has a 50% chance to deal <cryo>360%</cryo> ATK DMG to a single opponent. Can only occur once every <cryo>12</cryo>s."
     },
     "4": {
-      "0": "On hit, has a 50% chance to deal <cryo>400%</cryo> ATK DMG to a single target. Can only occur once every <cryo>11</cryo>s."
+      "0": "On hit, has a 50% chance to deal <cryo>400%</cryo> ATK DMG to a single opponent. Can only occur once every <cryo>11</cryo>s."
     }
   }
 }

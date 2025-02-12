@@ -48,7 +48,7 @@
       "8": "Khi nhân vật trong trận có Vòng Thiêu Đốt và gây sát thương cho kẻ địch thì Vòng Thiêu Đốt sẽ hỗ trợ tấn công, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn dựa vào Tấn Công của Nhà Lữ Hành. Hiệu quả này mỗi 3s tối đa kích hoạt một lần.",
       "9": "<br/>",
       "10": "<strong>Dạ Hồn Chúc Phúc - Nhà Lữ Hành</strong>",
-      "11": "Liên tục tiêu hao điểm Dạ Hồn. Dạ Hồn Chúc Phúc của Nhà Lữ Hành tối đa duy trì 12s. Khi tiêu hao hết điểm Dạ Hồn hoặc thi triển lần nữa, trạng thái Dạ Hồn Chúc Phúc của Nhà Lữ Hành sẽ kết thúc.",
+      "11": "Liên tục tiêu hao điểm Dạ Hồn. Dạ Hồn Chúc Phúc của Nhà Lữ Hành tối đa duy trì 12s. Khi tiêu hao hết điểm Dạ Hồn, trạng thái Dạ Hồn Chúc Phúc của Nhà Lữ Hành sẽ kết thúc. Nếu thi triển lại Kỹ Năng Nguyên Tố trong thời gian này, điểm Dạ Hồn của Nhà Lữ Hành sẽ được làm mới thành 42 điểm.",
       "12": "Vòng Rực Cháy và Vòng Thiêu Đốt sẽ biến mất khi Dạ Hồn Chúc Phúc của Nhà Lữ Hành kết thúc, cùng lúc chỉ tồn tại một Vòng Rực Cháy hoặc Vòng Thiêu Đốt do bản thân Nhà Lữ Hành triệu hồi.",
       "13": "<br/>",
       "14": "<i>Cùng Paimon quan sát màu sắc của ngọn lửa rực cháy.</i>"
@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Dư Hỏa Âm Ỉ",
     "description": {
-      "0": "Nhân vật trong trận khi có <strong>Vòng Rực Cháy</strong> hoặc <strong>Vòng Thiêu Đốt</strong>, sau khi kích hoạt phản ứng Thiêu Đốt, Bốc Hơi, Tan Chảy, Quá Tải, Bung Tỏa, Khuếch Tán Hỏa hoặc Kết Tinh Hỏa lên kẻ địch, sẽ hồi phục 5 điểm Năng Lượng Nguyên Tố cho Nhà Lữ Hành. Hiệu quả này mỗi 12s tối đa kích hoạt một lần. Ngoài ra, nhân vật trong đội gần đó khi kích hoạt Dạ Hồn Bùng Nổ, sẽ hồi phục cho Nhà Lữ Hành 4 điểm Năng Lượng Nguyên Tố."
+      "0": "Nhân vật trong trận khi có <strong>Vòng Rực Cháy</strong> hoặc <strong>Vòng Thiêu Đốt</strong>, sau khi kích hoạt <pyro>phản ứng liên quan đến Nguyên Tố Hỏa</pyro> lên kẻ địch, sẽ hồi phục 5 điểm Năng Lượng Nguyên Tố cho Nhà Lữ Hành. Hiệu quả này mỗi 12s tối đa kích hoạt một lần. Ngoài ra, nhân vật trong đội gần đó khi kích hoạt Dạ Hồn Bùng Nổ, sẽ hồi phục cho Nhà Lữ Hành 4 điểm Năng Lượng Nguyên Tố."
     }
   },
   "constellation1": {
@@ -119,7 +119,7 @@
   "constellation2": {
     "name": "Lửa Nến Lấp Lánh",
     "description": {
-      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Lưu Hỏa Kiếm</strong>, nhân vật trong đội gần đó khi kích hoạt phản ứng Thiêu Đốt, Bốc Hơi, Tan Chảy, Quá Tải, Bung Tỏa, Khuếch Tán Hỏa hoặc Kết Tinh Hỏa lên kẻ địch, sẽ hồi phục 14 điểm Dạ Hồn cho Nhà Lữ Hành. Mỗi lần thi triển Kỹ Năng Nguyên Tố <strong>Lưu Hỏa Kiếm</strong> tối đa hồi phục 28 điểm Dạ Hồn thông qua cách thức này."
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Lưu Hỏa Kiếm</strong>, khi nhân vật trong đội gần đó kích hoạt <pyro>phản ứng liên quan đến Nguyên Tố Hỏa</pyro> lên kẻ địch, sẽ hồi phục 14 điểm Dạ Hồn cho Nhà Lữ Hành. Mỗi lần thi triển Kỹ Năng Nguyên Tố <strong>Lưu Hỏa Kiếm</strong> tối đa hồi phục 28 điểm Dạ Hồn thông qua cách thức này."
     }
   },
   "constellation3": {

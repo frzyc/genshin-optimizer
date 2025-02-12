@@ -1,0 +1,24 @@
+{
+  "name": "Şafak Uykusu",
+  "description": {
+    "0": "Mor yeşimden dövülerek yapılan bir çan feneri. Birinin yastığının kenarına konduğunda o kişinin tatlı rüyalar görmesini sağladığı söylenir."
+  },
+  "passiveName": "Hamamlar, Şahinler ve Narukami",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Girdap tepkimesi tetikledikten sonra 6 saniyeliğine Element Ustalığı <cryo>120</cryo> artar. Silahı kuşanan karakterin Element Becerisi bir düşmanı vurduğunda 9 saniyeliğine Element Ustalığı <cryo>96</cryo> artar. Silahı kuşanan karakterin Element Patlaması bir düşmanı vurduğunda 30 saniyeliğine Element Ustalığı <cryo>32</cryo> artar."
+    },
+    "1": {
+      "0": "Bir Girdap tepkimesi tetikledikten sonra 6 saniyeliğine Element Ustalığı <cryo>150</cryo> artar. Silahı kuşanan karakterin Element Becerisi bir düşmanı vurduğunda 9 saniyeliğine Element Ustalığı <cryo>120</cryo> artar. Silahı kuşanan karakterin Element Patlaması bir düşmanı vurduğunda 30 saniyeliğine Element Ustalığı <cryo>40</cryo> artar."
+    },
+    "2": {
+      "0": "Bir Girdap tepkimesi tetikledikten sonra 6 saniyeliğine Element Ustalığı <cryo>180</cryo> artar. Silahı kuşanan karakterin Element Becerisi bir düşmanı vurduğunda 9 saniyeliğine Element Ustalığı <cryo>144</cryo> artar. Silahı kuşanan karakterin Element Patlaması bir düşmanı vurduğunda 30 saniyeliğine Element Ustalığı <cryo>48</cryo> artar."
+    },
+    "3": {
+      "0": "Bir Girdap tepkimesi tetikledikten sonra 6 saniyeliğine Element Ustalığı <cryo>210</cryo> artar. Silahı kuşanan karakterin Element Becerisi bir düşmanı vurduğunda 9 saniyeliğine Element Ustalığı <cryo>168</cryo> artar. Silahı kuşanan karakterin Element Patlaması bir düşmanı vurduğunda 30 saniyeliğine Element Ustalığı <cryo>56</cryo> artar."
+    },
+    "4": {
+      "0": "Bir Girdap tepkimesi tetikledikten sonra 6 saniyeliğine Element Ustalığı <cryo>240</cryo> artar. Silahı kuşanan karakterin Element Becerisi bir düşmanı vurduğunda 9 saniyeliğine Element Ustalığı <cryo>192</cryo> artar. Silahı kuşanan karakterin Element Patlaması bir düşmanı vurduğunda 30 saniyeliğine Element Ustalığı <cryo>64</cryo> artar."
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "La Dulce Soñadora",
+  "description": "La accionista mayoritaria del Balneario Aisa y una baku psicoterapeuta. Se dedica a disipar pesadillas y traer paz mental a las personas.",
+  "constellationName": "Tapirus Somniator",
+  "auto": {
+    "name": "Corazón puro, sueños puros",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques, los cuales infligen <anemo>Daño Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante e inflige <anemo>Daño Anemo en el AdE</anemo> después de un corto tiempo de canalización."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder Anemo y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Peregrinaje de Aisa Utamakura",
+    "description": {
+      "0": "Teje dulces recuerdos oníricos y entra en el estado de <strong>navegasueños</strong>, durante el cual flota a ras de suelo e inflige una vez <anemo>Daño Anemo en el AdE</anemo> a los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<strong>Navegasueños</strong>",
+      "3": [
+        "Mientras está en este estado, Yumemizuki Mizuki flota continuamente hacia delante e inflige cada cierto tiempo <anemo>Daño Anemo en el AdE</anemo> a los enemigos cercanos.",
+        "Mientras el estado de navegasueños está activo, Yumemizuki Mizuki puede controlar la dirección en la que flota y aumenta la distancia desde la que se pueden recoger los <strong>dulces especiales de Yumemizuki</strong> de la Habilidad Definitiva, <strong>Terapia del manantial de Anraku</strong>.",
+        "Aumenta el daño de la reacción de Torbellino causada por los personajes cercanos del equipo en función de la Maestría Elemental de Yumemizuki Mizuki.",
+        "El estado de navegasueños termina cuando Mizuki sea retirada del campo de batalla o utilice de nuevo su Habilidad Elemental."
+      ],
+      "4": "<br/>",
+      "5": "<i>“Noche y luna sueñan con encontrarse, mas su canción resuena en nuestros corazones”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de ataque continuo",
+      "2": "Duración de navegasueños",
+      "3": "Aumento de daño de Torbellino",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Terapia del manantial de Anraku",
+    "description": {
+      "0": "Invoca los recuerdos de innumerables sueños y pesadillas para atraer los objetos y enemigos cercanos, infligir <anemo>Daño Anemo en el AdE</anemo> e invocar a una minibaku para que la ayude.",
+      "1": "<br/>",
+      "2": "<strong>Minibaku</strong>",
+      "3": "Acompaña al personaje en uso. Cada cierto tiempo, la minibaku crea 1 dulce especial de Yumemizuki en un lugar cercano. Cuando alguno de tus personajes recoja un dulce, si su Vida es superior al 70%, el dulce explota y libera una onda de choque munen que inflige una vez <anemo>Daño Anemo en el AdE</anemo> a los enemigos cercanos. Si la Vida no es superior al 70%, restaurará Vida a quien lo recogió en función de la Maestría Elemental de Yumemizuki Mizuki. Si es ella quien recupera Vida por haber recogido un dulce, la cantidad de Vida restaurada aumenta en un 100%. Los dulces que no se recojan después de cierto tiempo explotarán y liberarán una onda de choque munen que inflige una vez <anemo>Daño Anemo en el AdE</anemo> a los enemigos cercanos.",
+      "4": "<br/>",
+      "5": "<i>“Si ocultas una emoción oscura durante demasiado tiempo, se convertirá en una pesadilla. Con eso en mente, ¿por qué no convertirla en un ‘dulce delicioso’ y comértela para hacerla desaparecer?”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de onda de choque munen",
+      "2": "Regeneración de Vida al recoger un dulce",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Voz trémula de la luna",
+    "description": {
+      "0": "Cuando Yumemizuki Mizuki causa una reacción de Torbellino mientras se encuentra en estado de navegasueños, la duración de dicho estado aumenta en 2.5 s. Este efecto solo puede activarse una vez cada 0.3 s y puede ocurrir, como máximo, 2 veces durante un mismo estado de navegasueños."
+    }
+  },
+  "passive2": {
+    "name": "Pensamientos diurnos, sueños nocturnos",
+    "description": {
+      "0": "Mientras Yumemizuki Mizuki se encuentre en estado de navegasueños, cuando otros miembros del equipo cercanos golpeen a un enemigo con un ataque <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, la Maestría Elemental de Yumemizuki Mizuki aumenta en 100 pts. durante 4 s."
+    }
+  },
+  "passive3": {
+    "name": "Desvanecimiento del dolor",
+    "description": {
+      "0": "Cuando Yumemizuki Mizuki está en el equipo y tus personajes del equipo usan comida regenerativa que no tenga la función de revivir, hay cierta probabilidad de que sus efectos regenerativos se potencien un 30%. La probabilidad de que se active este efecto depende del Niv. de Amistad del personaje correspondiente (este efecto siempre se activará si {F#la Viajera}{M#el Viajero} es quien consume la comida regenerativa)."
+    }
+  },
+  "constellation1": {
+    "name": "Aguas brumosas",
+    "description": {
+      "0": "Cuando Yumemizuki Mizuki se encuentra en estado de navegasueños, aplicará continuamente el efecto de “veintitrés noches de espera” a los enemigos cercanos durante 3 s cada 3.5 s. Cuando un enemigo se vea afectado por una reacción de Torbellino causada con Daño Anemo, este efecto se cancelará y el daño de dicha reacción de Torbellino contra este enemigo aumentará en una cantidad equivalente al 1100% de la Maestría Elemental de Mizuki."
+    }
+  },
+  "constellation2": {
+    "name": "Un eco onírico",
+    "description": {
+      "0": "Al entrar en el estado de navegasueños, cada punto de Maestría Elemental que tenga Yumemizuki Mizuki aumenta en un 0.04% el Bono de Daño <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> y <electro>Electro</electro> de todos los demás miembros cercanos del equipo hasta que termine el estado de navegasueños."
+    }
+  },
+  "constellation3": {
+    "name": "Luna del alba",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Peregrinaje de Aisa Utamakura</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Calidez floral del manantial",
+    "description": {
+      "0": "Al recoger un <strong>dulce especial de Yumemizuki</strong> de la Habilidad Definitiva, <strong>Terapia del manantial de Anraku</strong>, el personaje inflige daño, recibe curación y restaura 5 pts. de Energía Elemental a Yumemizuki Mizuki. Solo se puede restaurar Energía Elemental de esta forma 4 veces mientras la habilidad <strong>Terapia del manantial de Anraku</strong> esté activa."
+    }
+  },
+  "constellation5": {
+    "name": "Nubes del regreso lunar",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Terapia del manantial de Anraku</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Anhelo persistente",
+    "description": {
+      "0": "Mientras Yumemizuki Mizuki esté en el estado de navegasueños, el daño de Torbellino infligido por los personajes cercanos del equipo puede asestar golpes CRIT, con un índice fijo de Prob. CRIT del 30% y un Daño CRIT del 100%."
+    }
+  }
+}

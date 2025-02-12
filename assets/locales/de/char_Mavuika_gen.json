@@ -159,7 +159,7 @@
       "0": "Erhöht Mavuikas Basis-ANG im Nachtseelensegen-Zustand um 200 Punkte und verleiht ihr gemäß der Form der Allfeuerrüstung den entsprechenden Effekt:",
       "1": [
         " Ring des Sengenden Glanzes: Verringert die VTD in der Nähe befindlicher Gegner um 20 %.",
-        " Flammenreiter: Erhöht den durch Mavuikas Standardangriffe, heftige Schläge sowie den Sonnensturz-Hieb der Spezialfähigkeit <strong>Stunde brennender Himmel</strong> verursachten Schaden um 60/90/120 % von Mavuikas ANG."
+        " Flammenreiter: Erhöht den durch Mavuikas Standardangriffe, heftige Schläge sowie den Sonnensturz-Hieb der Spezialfähigkeit <strong>Stunde brennender Himmel</strong> verursachten Schaden jeweils um 60/90/120 % von Mavuikas ANG."
       ]
     }
   },
@@ -191,7 +191,7 @@
       "0": "Verleiht der Allfeuerrüstung der Elementarfähigkeit <strong>Moment des Benennens</strong> umfassende Verstärkungen:",
       "1": [
         " Ring des Sengenden Glanzes: Wenn der Angriff des Rings des Sengenden Glanzes einen Gegner trifft, stürzt ein Flammenreiter in den getroffenen Gegner und verursacht mit Nachtseelen versehenen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 200 % ANG.",
-        " Flammenreiter: Wenn Mavuika auf dem Flammenreiter reitet, beschwört sie außerdem den ihr fortlaufend folgenden „Ring des Sengenden Glanzes – Brennende Vision“, der die VTD der in der Nähe befindlichen Gegner um 20 % verringert sowie ihnen alle 3 s einmal mit Nachtseelen versehenen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 500 % ANG zufügt. Außerdem werden die Geländeüberwindungsfähigkeiten des Flammenreitermodus weiter verbessert."
+        " Flammenreiter: Wenn Mavuika auf dem Flammenreiter reitet, beschwört sie einen ihr fortlaufend folgenden „Ring des Sengenden Glanzes – Brennende Vision“, der die VTD der in der Nähe befindlichen Gegner um 20 % verringert sowie ihnen alle 3 s einmal mit Nachtseelen versehenen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 500 % ANG zufügt. Außerdem werden die Geländeüberwindungsfähigkeiten des Flammenreitermodus weiter verbessert."
       ],
       "2": "<br/>",
       "3": "Wenn Mavuika auf dem Flammenreiter reitet und sich nicht im Kampf befindet, erhält sie, wenn ihre Nachtseelenpunkte auf 5 Punkte fallen, 80 Nachtseelenpunkte, 15 s Abklingzeit."

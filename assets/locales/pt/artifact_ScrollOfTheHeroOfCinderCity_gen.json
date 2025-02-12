@@ -2,7 +2,7 @@
   "setName": "Pergaminho do Herói da Cidade Incandescente",
   "setEffects": {
     "2": "Quando um membro da equipe próximo desencadeia uma Explosão do Espírito da Noite, o personagem que está com esse conjunto equipado regenera 6 de Energia Elemental.",
-    "4": "Quando o personagem que está com esse conjunto equipado desencadeia uma Reação Elemental que envolve seu Tipo Elemental, todos os membros próximos da equipe ganham 12% de Bônus de Dano Elemental relacionado à reação por 15s. Caso o personagem que está com essa arma equipada estiver no estado Bênção do Espírito da Noite ao desencadear esse efeito, todos os membros próximos da equipe ganham mais 28% de Bônus de Dano Elemental relacionado à reação por 20s. Esse efeito pode ser ativado mesmo quando o personagem que está com essa arma equipada está fora de campo. Bônus de Dano fornecidos por conjuntos de Artefatos com o mesmo nome não acumularão."
+    "4": "Quando o personagem que está com esse conjunto equipado desencadeia uma Reação Elemental que envolve seu Tipo Elemental, todos os membros próximos da equipe ganham 12% de Bônus de Dano Elemental relacionado à reação por 15s. Caso o personagem que está com esse conjunto equipado estiver no estado Bênção do Espírito da Noite ao desencadear esse efeito, todos os membros próximos da equipe ganham mais 28% de Bônus de Dano Elemental relacionado à reação por 20s. Esse efeito pode ser ativado mesmo quando o personagem que está com esse conjunto equipado está fora de campo. Bônus de Dano fornecidos por conjuntos de Artefatos com o mesmo nome não acumularão."
   },
   "pieces": {
     "flower": {

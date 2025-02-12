@@ -100,7 +100,7 @@
     "name": "Cuchillas selloraculares",
     "description": {
       "0": "Al golpear a un objetivo con la arremetida de la Habilidad Elemental, <strong>Danza briznafénix</strong>, si entra en contacto con <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, el escudo briznafénix sufrirá un cambio elemental. El nuevo escudo generado tras el cambio tiene un 250% de efectividad de absorción del elemento correspondiente.",
-      "1": "Además, si este uso de <strong>Danza briznafénix</strong> causa un cambio elemental en el escudo briznafénix, los anillos plumaluna que Lan Yan lance a sus enemigos obtienen un bono del 50% del daño original del elemento correspondiente. Este daño se considera Daño de Habilidad Elemental."
+      "1": "Además, si este uso de <strong>Danza briznafénix</strong> causa un cambio elemental en el escudo briznafénix, los anillos plumaluna que Lan Yan lance a sus enemigos obtienen un bono del 50% del daño original del elemento correspondiente. Este daño se considera daño de Habilidad Elemental."
     }
   },
   "passive2": {
@@ -110,7 +110,7 @@
     }
   },
   "passive3": {
-    "name": "Corazón sedafragrante",
+    "name": "Corazón sedafragante",
     "description": {
       "0": "Cuando Lan Yan está en el equipo, tus personajes no asustarán a los cristalópteros u otras criaturas.",
       "1": "Puedes consultar cuáles son estas criaturas en Archivo - Seres vivos - Fauna - Otros."

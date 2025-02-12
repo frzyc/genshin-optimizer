@@ -1,0 +1,24 @@
+{
+  "name": "Tamayuratei no Ohanashi",
+  "description": {
+    "0": "Dahulu kala, ada youkai yang berkeliaran di seluruh Inazuma dalam bentuk api lentera. Ini adalah salah satu lentera tempat dia menitipkan wujudnya."
+  },
+  "passiveName": "Busybody's Running Light",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat melancarkan Elemental Skill, meningkatkan <cryo>20%</cryo> ATK dan 10% Movement SPD selama 10 detik."
+    },
+    "1": {
+      "0": "Saat melancarkan Elemental Skill, meningkatkan <cryo>25%</cryo> ATK dan 10% Movement SPD selama 10 detik."
+    },
+    "2": {
+      "0": "Saat melancarkan Elemental Skill, meningkatkan <cryo>30%</cryo> ATK dan 10% Movement SPD selama 10 detik."
+    },
+    "3": {
+      "0": "Saat melancarkan Elemental Skill, meningkatkan <cryo>35%</cryo> ATK dan 10% Movement SPD selama 10 detik."
+    },
+    "4": {
+      "0": "Saat melancarkan Elemental Skill, meningkatkan <cryo>40%</cryo> ATK dan 10% Movement SPD selama 10 detik."
+    }
+  }
+}

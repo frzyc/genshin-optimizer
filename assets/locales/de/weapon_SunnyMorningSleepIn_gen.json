@@ -1,0 +1,24 @@
+{
+  "name": "Frühjahrsschlaf",
+  "description": {
+    "0": "Aus glasklarer lila Jade hergestelltes Glockenlicht, das einem neben das Kopfkissen gestellt liebliche Träume schenken soll."
+  },
+  "passiveName": "Badehäuser, Falken und Narukami",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Elementarkunde nach Auslösen der Reaktion Verwirbelung 6 s lang um <cryo>120</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Elementarfähigkeiten 9 s lang um <cryo>96</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Spezialfähigkeiten 30 s lang um <cryo>32</cryo> Punkte."
+    },
+    "1": {
+      "0": "Erhöht die Elementarkunde nach Auslösen der Reaktion Verwirbelung 6 s lang um <cryo>150</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Elementarfähigkeiten 9 s lang um <cryo>120</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Spezialfähigkeiten 30 s lang um <cryo>40</cryo> Punkte."
+    },
+    "2": {
+      "0": "Erhöht die Elementarkunde nach Auslösen der Reaktion Verwirbelung 6 s lang um <cryo>180</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Elementarfähigkeiten 9 s lang um <cryo>144</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Spezialfähigkeiten 30 s lang um <cryo>48</cryo> Punkte."
+    },
+    "3": {
+      "0": "Erhöht die Elementarkunde nach Auslösen der Reaktion Verwirbelung 6 s lang um <cryo>210</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Elementarfähigkeiten 9 s lang um <cryo>168</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Spezialfähigkeiten 30 s lang um <cryo>56</cryo> Punkte."
+    },
+    "4": {
+      "0": "Erhöht die Elementarkunde nach Auslösen der Reaktion Verwirbelung 6 s lang um <cryo>240</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Elementarfähigkeiten 9 s lang um <cryo>192</cryo> Punkte. Erhöht die Elementarkunde nach Treffen von Gegnern mit Spezialfähigkeiten 30 s lang um <cryo>64</cryo> Punkte."
+    }
+  }
+}
