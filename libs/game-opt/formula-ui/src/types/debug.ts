@@ -8,9 +8,10 @@ export type GenericRead = Read<
   string
 >
 export type GenericCalculator = Calculator<
-string | null,
-string | null,
-string,
-string>
+  string | null,
+  string | null,
+  string,
+  string
+>
 
 export type FilterFunc = (debug: DebugMeta) => boolean
