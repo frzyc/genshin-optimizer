@@ -1,9 +1,9 @@
 import { allWengineKeys } from '@genshin-optimizer/zzz/consts'
-import { register, type TagMapNodeEntries } from '../util'
-import { entriesForWengine } from './util'
+import { type TagMapNodeEntries } from '../util'
+import { entriesForWengine, registerWengine } from './util'
 
 const data: TagMapNodeEntries[] = allWengineKeys.map((weng) =>
-  register(weng, entriesForWengine(weng))
+  registerWengine(weng, entriesForWengine(weng))
 )
 
 export default data.flat()
