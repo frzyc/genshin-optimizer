@@ -86,6 +86,8 @@ export function wengineTagMapNodeEntries(
   phase: PhaseKey
 ): TagMapNodeEntries {
   return [
+    // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
+    reader.sheet('agg').reread(reader.sheet('wengine')),
     // Mark wengine cones as used
     own.common.count.sheet(key).add(1),
     own.wengine.lvl.add(level),
