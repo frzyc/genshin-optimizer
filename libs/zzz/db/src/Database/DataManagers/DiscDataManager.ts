@@ -15,12 +15,12 @@ import {
   discSubstatRollData,
   statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
+import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import type {
   ICachedDisc,
   IZenlessObjectDescription,
   IZZZDatabase,
 } from '../../Interfaces'
-import type { IDisc, ISubstat } from '../../Interfaces/IDisc'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 import type { ImportResult } from '../exim'

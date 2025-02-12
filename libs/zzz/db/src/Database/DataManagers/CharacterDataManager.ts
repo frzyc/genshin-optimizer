@@ -21,6 +21,7 @@ import {
   allWengineKeys,
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
+import type { ICachedCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 
@@ -47,7 +48,7 @@ export type CharacterData = {
   conditionals: Partial<Record<CondKey, number>>
 }
 
-function initialCharacterData(key: CharacterKey): CharacterData {
+export function initialCharacterData(key: CharacterKey): CharacterData {
   return {
     key,
     level: 60,
@@ -75,7 +76,7 @@ function initialCharacterData(key: CharacterKey): CharacterData {
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
-  CharacterData,
+  ICachedCharacter,
   CharacterData
 > {
   constructor(database: ZzzDatabase) {
@@ -264,5 +265,19 @@ export class CharacterDataManager extends DataManager<
   // }
   triggerCharacter(key: CharacterKey, reason: TriggerString) {
     this.trigger(key, reason, this.get(key))
+  }
+
+  /**
+   * **Caution**:
+   * This does not update the `location` on wengine
+   * This function should be use internally for database to maintain cache on CharacterData.
+   */
+  setEquippedWengine(
+    key: CharacterKey,
+    equippedWengine: ICachedCharacter['equippedWengine']
+  ) {
+    const char = super.get(key)
+    if (!char) return
+    super.setCached(key, { ...char, equippedWengine })
   }
 }

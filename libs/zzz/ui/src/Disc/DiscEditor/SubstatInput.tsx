@@ -10,8 +10,9 @@ import {
   discSubstatRollData,
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc, ISubstat } from '@genshin-optimizer/zzz/db'
+import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
+import type { ISubstat } from '@genshin-optimizer/zzz/zood'
 import type { SliderProps } from '@mui/material'
 import {
   ListItemIcon,

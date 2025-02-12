@@ -5,12 +5,14 @@ import { zzzSource } from '../Interfaces'
 import { DBMetaEntry, DisplayDiscEntry } from './DataEntries/'
 import { DiscDataManager } from './DataManagers/'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
+import { WengineDataManager } from './DataManagers/WengineDataManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import { currentDBVersion, migrateStorage, migrateZOD } from './migrate'
 export class ZzzDatabase extends Database {
   discs: DiscDataManager
   chars: CharacterDataManager
+  wengines: WengineDataManager
   dbMeta: DBMetaEntry
   displayDisc: DisplayDiscEntry
   dbIndex: 1 | 2 | 3 | 4
@@ -31,6 +33,9 @@ export class ZzzDatabase extends Database {
     this.discs = new DiscDataManager(this)
     this.chars = new CharacterDataManager(this)
 
+    // Wengine needs to be instantiated after character to check for relations
+    this.wengines = new WengineDataManager(this)
+
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayDisc = new DisplayDiscEntry(this)
@@ -41,10 +46,13 @@ export class ZzzDatabase extends Database {
     this.displayDisc.follow(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
+    this.wengines.followAny(() => {
+      this.dbMeta.set({ lastEdit: Date.now() })
+    })
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, wengines, discs in order, to respect import order
-    return [this.discs, this.chars] as const
+    return [this.chars, this.wengines, this.discs] as const
   }
   get dataEntries() {
     return [this.dbMeta, this.displayDisc] as const
@@ -98,9 +106,9 @@ export class ZzzDatabase extends Database {
         result.discs[reason].push(value)
       ),
       // TODO:
-      // this.lightCones.followAny((_key, reason, value) =>
-      //   result.lightCones[reason].push(value)
-      // ),
+      /* this.wengines.followAny((_key, reason, value) =>
+        result.wengines[reason].push(value)
+      ), */
     ]
 
     this.dataManagers.map((dm) => dm.importZOD(zod, result))

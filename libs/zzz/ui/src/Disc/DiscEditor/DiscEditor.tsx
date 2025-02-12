@@ -15,15 +15,14 @@ import {
   discMaxLevel,
   getDiscMainStatVal,
 } from '@genshin-optimizer/zzz/consts'
-import type { IDisc } from '@genshin-optimizer/zzz/db'
 import {
   validateDiscBasedOnRarity,
   type ICachedDisc,
-  type ISubstat,
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Processed } from '@genshin-optimizer/zzz/disc-scanner'
 import { ScanningQueue } from '@genshin-optimizer/zzz/disc-scanner'
+import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import AddIcon from '@mui/icons-material/Add'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import CloseIcon from '@mui/icons-material/Close'
