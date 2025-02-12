@@ -159,6 +159,7 @@ export const nonTravelerCharacterKeys = [
   'Yaoyao',
   'Yelan',
   'Yoimiya',
+  'YumemizukiMizuki',
   'YunJin',
   'Zhongli',
 ] as const

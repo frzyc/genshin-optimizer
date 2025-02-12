@@ -1,0 +1,24 @@
+{
+  "name": "Hibernação Matinal do Ano Novo",
+  "description": {
+    "0": "Um sino-lanterna forjado com puro jade púrpura, diz-se que, ao ser colocado ao lado do travesseiro, pode trazer sonhos felizes."
+  },
+  "passiveName": "Narukami Um, Dois, Três",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Proficiência Elemental em <cryo>120</cryo> por 6s após desencadear um Redemoinho. A Proficiência Elemental aumenta em <cryo>96</cryo> por 9s após a Habilidade Elemental atingir um oponente. A Proficiência Elemental aumenta em <cryo>32</cryo> por 30s após o Supremo do portador atingir um oponente."
+    },
+    "1": {
+      "0": "Aumenta a Proficiência Elemental em <cryo>150</cryo> por 6s após desencadear um Redemoinho. A Proficiência Elemental aumenta em <cryo>120</cryo> por 9s após a Habilidade Elemental atingir um oponente. A Proficiência Elemental aumenta em <cryo>40</cryo> por 30s após o Supremo do portador atingir um oponente."
+    },
+    "2": {
+      "0": "Aumenta a Proficiência Elemental em <cryo>180</cryo> por 6s após desencadear um Redemoinho. A Proficiência Elemental aumenta em <cryo>144</cryo> por 9s após a Habilidade Elemental atingir um oponente. A Proficiência Elemental aumenta em <cryo>48</cryo> por 30s após o Supremo do portador atingir um oponente."
+    },
+    "3": {
+      "0": "Aumenta a Proficiência Elemental em <cryo>210</cryo> por 6s após desencadear um Redemoinho. A Proficiência Elemental aumenta em <cryo>168</cryo> por 9s após a Habilidade Elemental atingir um oponente. A Proficiência Elemental aumenta em <cryo>56</cryo> por 30s após o Supremo do portador atingir um oponente."
+    },
+    "4": {
+      "0": "Aumenta a Proficiência Elemental em <cryo>240</cryo> por 6s após desencadear um Redemoinho. A Proficiência Elemental aumenta em <cryo>192</cryo> por 9s após a Habilidade Elemental atingir um oponente. A Proficiência Elemental aumenta em <cryo>64</cryo> por 30s após o Supremo do portador atingir um oponente."
+    }
+  }
+}

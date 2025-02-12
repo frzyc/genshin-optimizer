@@ -1,0 +1,24 @@
+{
+  "name": "Tamayuratei no Ohanashi",
+  "description": {
+    "0": "Il était une fois, un démon qui parcourait Inazuma sous la forme d'une flamme de lanterne en papier. Cela devait être l'un de ses vaisseaux."
+  },
+  "passiveName": "Feu vert de fouinard",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>20 %</cryo> et la VIT de déplacement de 10 % pendant 10 s après l'utilisation d'une compétence élémentaire."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>25 %</cryo> et la VIT de déplacement de 10 % pendant 10 s après l'utilisation d'une compétence élémentaire."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>30 %</cryo> et la VIT de déplacement de 10 % pendant 10 s après l'utilisation d'une compétence élémentaire."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>35 %</cryo> et la VIT de déplacement de 10 % pendant 10 s après l'utilisation d'une compétence élémentaire."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>40 %</cryo> et la VIT de déplacement de 10 % pendant 10 s après l'utilisation d'une compétence élémentaire."
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "Étreinte de rêves enchanteurs",
+  "description": "Actionnaire des Bains Aisa, ce Baku dévoreur de rêves exerce en tant que psychoclinicienne. Elle est dévouée à dissiper les cauchemars et à apporter la paix intérieure aux gens.",
+  "constellationName": "Tapirus Somniator",
+  "auto": {
+    "name": "Cœur pur, rêves purs",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques qui infligent des <anemo>DGT Anémo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour infliger des <anemo>DGT Anémo de zone</anemo> après un court délai."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs élémentaires, infligeant des DGT aux ennemis en chemin et des <anemo>DGT Anémo de zone</anemo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pèlerinage d'Aisa Utamakura",
+    "description": {
+      "0": "Yumemizuki Mizuki tisse des souvenirs de beaux rêves, entrant dans l'état <strong>Flotte-rêves</strong>, pendant lequel elle flotte au-dessus du sol, et infligeant une fois des <anemo>DGT Anémo de zone</anemo> aux ennemis proches.",
+      "1": "<br/>",
+      "2": "<strong>Flotte-rêves</strong>",
+      "3": [
+        " Lorsque Yumemizuki Mizuki est dans l'état Flotte-rêves, elle flotte de façon continue vers l'avant et inflige des <anemo>DGT Anémo de zone</anemo> de façon régulière aux ennemis proches.",
+        " Pendant la durée de l'état, Yumemizuki Mizuki peut contrôler la direction dans laquelle elle flotte et la portée de collecte des <strong>snacks de style yumemi</strong> du déchaînement élémentaire <strong>Thérapie sourcière secrète d'Anraku</strong> augmente.",
+        " Les DGT des réactions de Dispersion déclenchées par les personnages de l'équipe à proximité augmentent selon la maîtrise élémentaire de Yumemizuki Mizuki.",
+        " L'état Flotte-rêves prend fin lorsque Yumemizuki Mizuki quitte le champ de bataille ou utilise une nouvelle fois la capacité."
+      ],
+      "4": "<br/>",
+      "5": "<i>« Nos rêves se touchent à minuit, leur chanson résonnant dans nos cœurs. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT attaque continue",
+      "2": "Durée de flotte-rêves",
+      "3": "Bonus de DGT de Dispersion",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Thérapie sourcière secrète d'Anraku",
+    "description": {
+      "0": "Invoque d'innombrables beaux rêves et cauchemars qui attirent les objets et les ennemis à proximité, inflige des <anemo>DGT Anémo de zone</anemo> et invoque un mini-Baku pour aider.",
+      "1": "<br/>",
+      "2": "<br/>",
+      "3": "<strong>Mini-Baku</strong>",
+      "4": "Le mini-Baku suit le personnage déployé et crée 1 snack de style yumemi à proximité à intervalles réguliers : lorsqu'un de vos personnages dans l'équipe ayant plus de 70 % de PV a collecté un tel snack, ce dernier explose et libère une onde munen qui inflige une fois des <anemo>DGT Anémo de zone</anemo> aux ennemis proches ; si le personnage qui collecte un snack a 70 % de PV ou moins, le snack le soigne selon la maîtrise élémentaire de Yumemizuki Mizuki, la quantité de soins augmentant de 100 % lorsque c'est Yumemizuki Mizuki qui collecte un snack et déclenche des soins ; si un snack n'est pas collecté pendant un certain temps, il explose et libère une onde munen qui inflige une fois des <anemo>DGT Anémo de zone</anemo> aux ennemis proches.",
+      "5": "<br/>",
+      "6": "<i>« En enfouissant ses émotions sombres trop longtemps, elles se transforment en cauchemars. Ainsi, pourquoi ne pas les transformer en « délicieux snacks » pendant que c'est encore possible ? »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT onde munen",
+      "2": "Restauration de PV de snack",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Voix tourmentée de la lune brillante",
+    "description": {
+      "0": "Lorsque Yumemizuki Mizuki déclenche une réaction de Dispersion alors qu'elle est dans son état Flotte-rêves, la durée de l'état augmente de 2,5 s. Cet effet peut être déclenché une fois toutes les 0,3 seconde et un maximum de 2 fois pendant la durée d'un état Flotte-rêves."
+    }
+  },
+  "passive2": {
+    "name": "Pensées de jour, rêveries de nuit",
+    "description": {
+      "0": "Pendant l'état Flotte-rêves, la maîtrise élémentaire de Yumemizuki Mizuki augmente de 100 pts pendant 4 s lorsqu'une attaque <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> d'un autre personnage de l'équipe touche un ennemi."
+    }
+  },
+  "passive3": {
+    "name": "Tous maux bannis",
+    "description": {
+      "0": "Lorsque Yumemizuki Mizuki fait partie de votre équipe, vos personnages dans l'équipe ont une chance de récupérer 30 % de PV supplémentaires en utilisant de la nourriture sans capacité de résurrection, la chance de déclencher cet effet augmentant selon le Niv. d'affinité du personnage concerné. (Cet effet se déclenche obligatoirement lorsque {M#le voyageur}{F#la voyageuse} utilise de la nourriture de soins.)"
+    }
+  },
+  "constellation1": {
+    "name": "Dans des eaux de brume",
+    "description": {
+      "0": "Pendant l'état Flotte-rêves, Yumemizuki Mizuki applique l'effet Attente de 23 nuits toutes les 3,5 s aux ennemis proches, cet effet durant 3 s. Lorsqu'un ennemi affecté par cet effet subit des DGT Anémo et déclenche une réaction de Dispersion, l'effet est annulé pour augmenter les DGT de ladite réaction d'une valeur équivalant à 1 100 % de la maîtrise élémentaire de Yumemizuki Mizuki."
+    }
+  },
+  "constellation2": {
+    "name": "Un écho rencontré en rêve",
+    "description": {
+      "0": "En entrant dans l'état Flotte-rêves, chaque point de maîtrise élémentaire de Yumemizuki Mizuki accorde à tous les autres personnages de l'équipe à proximité des bonus de DGT <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> et <electro>Électro</electro> de 0,04 %, ces bonus durant jusqu'à la fin de l'état Flotte-rêves."
+    }
+  },
+  "constellation3": {
+    "name": "Jusqu'à la lune de l'aube terminant la nuit",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Pèlerinage d'Aisa Utamakura</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Bourgeons réchauffant les sources lucides",
+    "description": {
+      "0": "Collecter un <strong>snack de style yumemi</strong> du déchaînement élémentaire <strong>Thérapie sourcière secrète d'Anraku</strong> permet à la fois d'infliger des DGT et de soigner et restaure 5 pts d'énergie élémentaire à Yumemizuki Mizuki. L'énergie élémentaire peut être restaurée 4 fois pendant la durée d'une <strong>Thérapie sourcière secrète d'Anraku</strong> de cette manière."
+    }
+  },
+  "constellation5": {
+    "name": "La lune couchante apportant la fin de l'année",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Thérapie sourcière secrète d'Anraku</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Le cœur s'attardant longtemps",
+    "description": {
+      "0": "Lorsque Yumemizuki Mizuki est dans l'état Flotte-rêves, les DGT infligés par les réactions de Dispersion des personnages de l'équipe à proximité peuvent déclencher des coups CRIT dont le taux CRIT est fixé à 30 % et les DGT CRIT à 100 %."
+    }
+  }
+}

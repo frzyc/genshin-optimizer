@@ -1,0 +1,160 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "Intreccio di sogni incantevoli",
+  "description": "Azionista delle Terme Aisa, baku e psicologa clinica. Si dedica alla rimozione degli incubi per donare serenità alle menti delle persone.",
+  "constellationName": "Tapirus Somniator",
+  "auto": {
+    "name": "Cuore puro, sogni puri",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 attacchi, infliggendo <anemo>DAN da Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per infliggere <anemo>DAN da Anemo ad area</anemo> dopo un breve periodo di lancio."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Evocando il potere di Anemo, si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Pellegrinaggio di Aisa Utamakura",
+    "description": {
+      "0": "Intrecciando ricordi di sogni meravigliosi, Yumemizuki Mizuki entra nello stato di <strong>Girasogni</strong>, che le permette di fluttuare a mezz'aria, e infligge 1 iterazione di <anemo>DAN da Anemo ad area</anemo> agli avversari vicini.",
+      "1": "<br/>",
+      "2": "<strong>Girasogni</strong>",
+      "3": [
+        " Quando è nello stato di Girasogni, Yumemizuki Mizuki fluttua continuamente in avanti, infliggendo <anemo>DAN da Anemo ad area</anemo> agli avversari vicini a intervalli regolari.",
+        " Mentre lo stato di Girasogni è attivo, Yumemizuki Mizuki può controllare la direzione in cui fluttua e aumentare il raggio di raccolta degli <strong>Spuntini speciali in stile Yumemi</strong> del suo Tripudio elementale <strong>Terapia della sorgente segreta di Anraku</strong>.",
+        " I DAN da Turbinio dei membri del gruppo vicini aumentano in base alla maestria elementale di Yumemizuki Mizuki.",
+        " Lo stato di Girasogni termina quando Mizuki lascia il campo o utilizza nuovamente l'abilità elementale."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"I nostri sogni si toccano a mezzanotte, la loro canzone risuona nei nostri cuori.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da ATT continui",
+      "2": "Durata Girasogni",
+      "3": "Aumento DAN da Turbinio per ogni punto di maestria elementale",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Terapia della sorgente segreta di Anraku",
+    "description": {
+      "0": "Mizuki evoca infiniti sogni e incubi che attirano a sé oggetti e avversari, infliggendo <anemo>DAN da Anemo ad area</anemo>, e fa apparire una Mini baku.",
+      "1": "<br/>",
+      "2": "<strong>Mini baku</strong>",
+      "3": "Segue il personaggio attivo. A intervalli regolari, crea 1 Spuntino speciale in stile Yumemi nelle vicinanze. Quando viene raccolto da uno dei membri del tuo gruppo, se i PS del personaggio attivo sono superiori a un 70%, lo Spuntino esplode e sprigiona un'Onda d'urto Munen, che infligge 1 iterazione di <anemo>DAN da Anemo ad area</anemo> agli avversari vicini; in caso contrario, lo Spuntino ripristina i PS del personaggio in base alla maestria elementale di Yumemizuki Mizuki. Quando Yumemizuki Mizuki innesca un effetto di guarigione raccogliendo uno Spuntino speciale in stile Yumemi, la quantità di PS ripristinati aumenta del 100%. Se lo Spuntino non viene raccolto entro un certo limite di tempo, si autodistrugge sprigionando un'Onda d'urto Munen, che infligge 1 iterazione di <anemo>DAN da Anemo ad area</anemo> agli avversari circostanti.",
+      "4": "<br/>",
+      "5": "<i>\"Se le emozioni peggiori vengono ignorate troppo a lungo, si trasformano in incubi. Finché c'è tempo, tanto vale trasformarle in 'spuntini deliziosi', non ti pare?\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Onda d'urto Munen",
+      "2": "Ripristino PS da raccolta Spuntino",
+      "3": "Durata",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Voce irrequieta della luna splendente",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki innesca Turbinio nello stato di Girasogni, la durata di quest'ultimo aumenta di 2,5 s. Quest'effetto può innescarsi una volta ogni 0,3 s, per un massimo di 2 volte per ciascuna iterazione di Girasogni."
+    }
+  },
+  "passive2": {
+    "name": "Sogni notturni da pensieri diurni",
+    "description": {
+      "0": "Mentre Yumemizuki Mizuki è nello stato di Girasogni, quando gli altri membri del gruppo colpiscono gli avversari con attacchi di <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, la sua maestria elementale aumenta di 100 per 4 s."
+    }
+  },
+  "passive3": {
+    "name": "Esilio di ogni malanno",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki è nel gruppo, i membri hanno una probabilità di ripristinare un 30% aggiuntivo dei propri PS quando usano cibi con effetti di guarigione e senza proprietà di rianimazione. La probabilità di innescare quest'effetto aumenta in proporzione al livello amicizia del personaggio corrispondente. Con {F#la viaggiatrice}{M#il viaggiatore}, l'effetto si innesca sempre."
+    }
+  },
+  "constellation1": {
+    "name": "Acque nebbiose",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki è nello stato di Girasogni, applica costantemente l'effetto \"Ventitré notti di attesa\" agli avversari vicini per 3 s ogni 3,5 s. Quando l'avversario viene colpito da reazioni di Turbinio innescate da DAN da Anemo mentre l'effetto sopracitato è attivo, l'effetto viene rimosso e i DAN inflitti dall'attuale iterazione di Turbinio aumentano di un 1.100% della maestria elementale di Mizuki."
+    }
+  },
+  "constellation2": {
+    "name": "Nei sogni incontro il tuo eco",
+    "description": {
+      "0": "Quando entra nello stato di Girasogni, ogni punto di maestria elementale di Yumemizuki Mizuki aumenta di uno 0,04% i bonus DAN da <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ed <electro>Electro</electro> dei membri vicini del gruppo fino al termine del suddetto stato."
+    }
+  },
+  "constellation3": {
+    "name": "Luna dell'alba",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Pellegrinaggio di Aisa Utamakura</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Caldi boccioli della sorgente limpida",
+    "description": {
+      "0": "Raccogliere uno <strong>Spuntino speciale in stile Yumemi</strong> del Tripudio elementale <strong>Terapia della sorgente segreta di Anraku</strong> infligge DAN e apporta effetti di guarigione in tutti i casi, ripristinando al contempo l'energia di Yumemizuki Mizuki di 5. L'energia può essere ripristinata in questo modo per un massimo di 4 volte per tutta la durata di <strong>Terapia della sorgente segreta di Anraku</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Il tramonto lunare conduce alla fine dell'anno",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Terapia della sorgente segreta di Anraku</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Il cuore indugia a lungo",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki è nello stato di Girasogni, i DAN da Turbinio inflitti dai membri vicini del gruppo possono causare colpi CRIT, con tasso di CRIT e DAN da CRIT fissati rispettivamente a un 30% e a un 100%."
+    }
+  }
+}

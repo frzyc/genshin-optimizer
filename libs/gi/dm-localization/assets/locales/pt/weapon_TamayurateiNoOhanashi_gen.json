@@ -1,0 +1,24 @@
+{
+  "name": "Fofocas Breves do Pavilhão",
+  "description": {
+    "0": "No passado, existiu um Youkai que percorria Inazuma em forma de uma lanterna de fogos de artifício. Esta deve ter sido uma das lanternas em que ele habitou."
+  },
+  "passiveName": "Luz de Corrida do Curioso",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta o ATQ e a Veloc. Mov. em <cryo>20%</cryo> e 10%, respectivamente, por 10s ao usar uma Habilidade Elemental."
+    },
+    "1": {
+      "0": "Aumenta o ATQ e a Veloc. Mov. em <cryo>25%</cryo> e 10%, respectivamente, por 10s ao usar uma Habilidade Elemental."
+    },
+    "2": {
+      "0": "Aumenta o ATQ e a Veloc. Mov. em <cryo>30%</cryo> e 10%, respectivamente, por 10s ao usar uma Habilidade Elemental."
+    },
+    "3": {
+      "0": "Aumenta o ATQ e a Veloc. Mov. em <cryo>35%</cryo> e 10%, respectivamente, por 10s ao usar uma Habilidade Elemental."
+    },
+    "4": {
+      "0": "Aumenta o ATQ e a Veloc. Mov. em <cryo>40%</cryo> e 10%, respectivamente, por 10s ao usar uma Habilidade Elemental."
+    }
+  }
+}

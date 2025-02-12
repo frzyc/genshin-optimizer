@@ -178,6 +178,7 @@ const allNonModStats = [
     `${x}_critRate_` as const,
     `${x}_critDMG_` as const,
   ]),
+  'swirl_dmgInc' as const,
   'all_dmgInc' as const,
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,

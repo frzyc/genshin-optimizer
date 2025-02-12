@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "Cendristal encensé"
   },
+  "FestivalStamp": {
+    "name": "Tampon festif"
+  },
   "Primogem": {
     "name": "Primo-gemme"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Lan Yan"
   },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "Stella Fortuna de Lan Yan"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Stella Fortuna de Yumemizuki Mizuki"
   },
   "Apple": {
     "name": "Pomme"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "Brouillon de « Hyakunin Ikki - Le tournoi des meilleurs combattants »"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Dictionnaire Fischl : Nouvelle édition de la Prinzessin"
   },
   "WyattsRedKey": {
     "name": "Clé rouge de Wyatt"
@@ -5100,7 +5112,7 @@
     "name": "Clé de Sanctuaire des profondeurs de Liyue"
   },
   "InazumaShrineOfDepthsKey": {
-    "name": "Clé du Sanctuaire des profondeurs d'Inazuma"
+    "name": "Clé de Sanctuaire des profondeurs d'Inazuma"
   },
   "FragileResin": {
     "name": "Résine fragile"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Tomates narbonnaises (délicieuses)"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Consommé (suspect)"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Consommé"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Consommé (délicieux)"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Crêpes Suzette (délicieuses)"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "« Pureté de consommé »"
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "Art secret"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Manju des Bains (suspects)"
+  },
+  "BathhouseManjuu": {
+    "name": "Manju des Bains"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Manju des Bains (délicieux)"
+  },
+  "DreamsOfHealing": {
+    "name": "Guérison onirique"
+  },
   "RecipeItem": {
     "name": "Ingrédient"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Recette : Tomates narbonnaises"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Recette : Consommé"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "Recette : Prunes ivres en neige"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Recette : Manju des Bains"
   },
   "CraftedItems": {
     "name": "Produit synthétisé"
@@ -8874,7 +8901,7 @@
     "name": "Regard enchevêtrant"
   },
   "ErodedHorn": {
-    "name": "Corne érodé"
+    "name": "Corne érodée"
   },
   "ErodedSunfire": {
     "name": "Rayon érodé"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "Paquet lourd"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Un bocal d'alevins"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "Carnet d'un voyageur anonyme (5)"
   },
+  "InvitationFromMiko": {
+    "name": "Invitation de Miko"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Coupon spécial des Bains Aisa"
+  },
+  "LeafyDreams": {
+    "name": "Rêves feuillus"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Message de l'épreuve de désincarnation"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Biscuit sauriennaurus : Tepetlisaure"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Invitation VIP des Bains Aisa"
+  },
+  "MysteriousGift": {
+    "name": "Cadeau mystérieux"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Aperçus de la mystérieuse Inazuma (1)"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Aperçus de la mystérieuse Inazuma (2)"
+  },
+  "MenOfLithinI": {
+    "name": "Hommes de Lithin (1)"
+  },
+  "MenOfLithinII": {
+    "name": "Hommes de Lithin (2)"
+  },
+  "MenOfLithinIII": {
+    "name": "Hommes de Lithin (3)"
   },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Navette d'Odara"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Flamme phosphorescente fumante"
+  },
   "FalconsDance": {
     "name": "Danse du faucon"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "PB - Feu nouveau"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki - Mange-cauchemars"
+  },
+  "CelebrationScorch": {
+    "name": "Célébration - Embrasement"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "PB - Rêverie"
+  },
   "EchoDandelionKnight": {
     "name": "Écho : Chevalier au Pissenlit"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "Recette : Appât granispinelle"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "Recette : Appât braiserine"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "Salutation élégante"
+  },
+  "EarnestNegotiation": {
+    "name": "Négociation sincère"
   },
   "FantasticalMarvel": {
     "name": "Merveille fantastique"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Flamme brisant la nuit"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "À moi de supporter toute haine et toute dette"
+  },
+  "RepaidInFull": {
+    "name": "Remboursement total"
   },
   "MagicGuide": {
     "name": "Guide de magie"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "Peuple des sources"
   },
+  "FlowerFeatherClan": {
+    "name": "Clan des fleurplumes"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "Abondance de phlogistique"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Petit tepetlisaure trouveur de trésors"
   },
   "Origin": {
     "name": "Origine"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "Porte-notes universel"
+  },
+  "SweetDreams": {
+    "name": "« Doux rêves »"
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Instrument de salon de thé « Pesage de précision »"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "Attache au sommet de la Falaise Quahuacan"
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Clôture d'enclos « Simple frontière »"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Porte d'enclos « Cadre fondamental »"
+  },
   "SmoothWoodenBench": {
     "name": "Banc en bois lisse"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "Lumière éclatante de la Cité de braise"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Moulin d'enclos « Choix de cuisine »"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Matelas en paille d'enclos « Lit de fortune »"
   }
 }
