@@ -64,7 +64,7 @@ export class DisplayWengineEntry extends DataEntry<
       locations,
     } = obj
     const { editWengineId } = obj
-    if (typeof editWengineId !== 'string') return editWengineId
+    if (typeof editWengineId !== 'string') return undefined
     if (
       typeof sortType !== 'string' ||
       !wengineSortKeys.includes(sortType as any)

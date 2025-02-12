@@ -5,7 +5,6 @@
   "reset": "Reset",
   "discFilter": "Disc Filter",
   "sortMap": {
-    "new": "New",
     "name": "Name",
     "level": "Level",
     "rarity": "Rarity"

@@ -12,7 +12,7 @@
     "lockWengines": "Lock Wengines",
     "unlockWengines": "Unlock Wengines"
   },
-  "buttonHint": "Note: the red buttons above only apply to <1>filtered wengines<1>",
+  "buttonHint": "Note: the red buttons above only apply to <1>filtered wengines</1>",
   "equippedWengine": "All Equipped Wengines",
   "wengineInInv": "All Unequipped Wengines",
   "locationsTooltip": "Disable \"All Equipped Wengine\" to filter by specific characters",
