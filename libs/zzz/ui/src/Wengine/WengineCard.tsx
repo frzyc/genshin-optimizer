@@ -20,7 +20,6 @@ import type {
   WengineKey,
   WengineSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
-import { discRarityColor as rarityColor } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Edit } from '@mui/icons-material'
 import {
@@ -167,7 +166,7 @@ export function WengineCard({
               gap={1}
               alignItems="center"
               width={'100%'}
-              color={`${rarityColor[wengineStats.rarity]}.main`}
+              color={`${wengineStats.rarity}.main`}
             >
               <Typography
                 variant="subtitle1"

@@ -13,7 +13,6 @@ import {
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz/consts'
 import {
-  discRarityColor,
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
@@ -143,9 +142,7 @@ export function DiscCard({
               </ClickAwayListener>
               <Box
                 sx={(theme) => ({
-                  border: `4px solid ${
-                    theme.palette[discRarityColor[rarity]].main
-                  }`,
+                  border: `4px solid ${theme.palette[rarity].main}`,
                   borderRadius: '50%',
                 })}
               >
@@ -207,7 +204,7 @@ export function DiscCard({
               gap={1}
               alignItems="center"
               width={'100%'}
-              color={`${discRarityColor[rarity]}.main`}
+              color={`${rarity}.main`}
             >
               <Typography
                 variant="subtitle1"
