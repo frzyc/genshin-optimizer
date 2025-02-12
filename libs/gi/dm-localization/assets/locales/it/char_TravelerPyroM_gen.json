@@ -48,7 +48,7 @@
       "8": "Quando il personaggio attivo con la Soglia infuocata infligge DAN agli avversari, la Soglia infuocata sferra un attacco coordinato che infligge <pyro>DAN da Pyro</pyro> con attributo Anima della Notte in base all'ATT {F#della viaggiatrice}{M#del viaggiatore}. Quest'effetto può verificarsi una volta ogni 3 s.",
       "9": "<br/>",
       "10": "<strong>Grazia dell'Anima della Notte: {F#Viaggiatrice}{M#Viaggiatore}</strong>",
-      "11": "Consuma costantemente punti Anima della Notte e ha una durata massima di 12 s. Dopo aver esaurito i punti Anima della Notte o se l'abilità viene usata di nuovo, lo stato termina.",
+      "11": "Consuma costantemente punti Anima della Notte e ha una durata massima di 12 s. Dopo aver esaurito i punti Anima della Notte, lo stato termina. Se quest'abilità viene usata di nuovo mentre lo stato è ancora attivo, i punti Anima della Notte {F#della viaggiatrice}{M#del viaggiatore} vengono reimpostati a 42.",
       "12": "Sia la Soglia fiammeggiante che la Soglia infuocata spariscono al termine dello stato di Grazia dell'Anima della Notte {F#della viaggiatrice}{M#del viaggiatore}. Può esistere solo una Soglia fiammeggiante o una Soglia infuocata evocata {F#dalla viaggiatrice}{M#dal viaggiatore} alla volta.",
       "13": "<br/>",
       "14": "<i>Insieme, tu e Paimon avete osservato i colori cambiare all'interno del fuoco.</i>"
@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Brace incombusta",
     "description": {
-      "0": "Quando il personaggio attivo all'interno di una <strong>Soglia fiammeggiante</strong> o di una <strong>Soglia infuocata</strong> innesca una reazione di Ustione, Vaporizzazione, Fusione, Sovraccarico, Germinazione, Turbinio di Pyro o Cristallizzazione di Pyro, {F#la viaggiatrice}{M#il viaggiatore} recupera 5 di energia. Quest'effetto può attivarsi una volta ogni 12 s. Inoltre, quando i membri del gruppo vicini innescano un Impeto dell'Anima della Notte, {F#la viaggiatrice}{M#il viaggiatore} recupera 4 di energia."
+      "0": "Quando il personaggio attivo all'interno di una <strong>Soglia fiammeggiante</strong> o di una <strong>Soglia infuocata</strong> innesca una <pyro>reazione di Pyro</pyro>, {F#la viaggiatrice}{M#il viaggiatore} recupera 5 di energia. Quest'effetto può attivarsi una volta ogni 12 s. Inoltre, quando i membri del gruppo vicini innescano un Impeto dell'Anima della Notte, {F#la viaggiatrice}{M#il viaggiatore} recupera 4 di energia."
     }
   },
   "constellation1": {
@@ -119,7 +119,7 @@
   "constellation2": {
     "name": "Candela perpetua",
     "description": {
-      "0": "Per 12 s dopo l'uso dell'abilità elementale <strong>Lama solcafiamme</strong>, dopo che i membri del gruppo hanno innescato reazioni di Ustione, Vaporizzazione, Fusione, Sovraccarico, Germinazione, Turbinio di Pyro o Cristallizzazione di Pyro su un avversario, {F#la viaggiatrice}{M#il viaggiatore} recupera 14 punti Anima della Notte. Ogni utilizzo di <strong>Lama solcafiamme</strong> può ripristinare in questo modo fino a un massimo di 28 punti Anima della Notte."
+      "0": "Per 12 s dopo l'uso dell'abilità elementale <strong>Lama solcafiamme</strong>, dopo che i membri del gruppo hanno innescato una <pyro>reazione di Pyro</pyro> su un avversario, {F#la viaggiatrice}{M#il viaggiatore} recupera 14 punti Anima della Notte. Ogni utilizzo di <strong>Lama solcafiamme</strong> può ripristinare in questo modo fino a un massimo di 28 punti Anima della Notte."
     }
   },
   "constellation3": {

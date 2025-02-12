@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "Tütsü Külü Kristali"
   },
+  "FestivalStamp": {
+    "name": "Festival Damgası"
+  },
   "Primogem": {
     "name": "Köken Taşı"
   },
@@ -297,10 +300,10 @@
     "name": "\"Yankıların Çocukları\" İtibar TP"
   },
   "FlowerFeatherClanReputationEXP": {
-    "name": "Çiçek Tüyü Klanı İtibarı TP"
+    "name": "\"Çiçek Tüyü Klanı\" İtibarı TP"
   },
   "MastersOfTheNightWindReputationEXP": {
-    "name": "Gece Rüzgarının Ustaları İtibarı TP"
+    "name": "\"Gece Rüzgarının Ustaları\" İtibarı TP"
   },
   "MemoryOfEternalFlames": {
     "name": "Ebedi Alevlerin Hatırası"
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Lan Yan"
   },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina'nın Yaşam Yıldızı"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "Lan Yan'ın Yaşam Yıldızı"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Yumemizuki Mizuki'nin Yaşam Yıldızı"
   },
   "Apple": {
     "name": "Elma"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "\"Hyakunin Ikki: En Büyük Dövüş Turnuvası\" Taslak Metni"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Fischl Sözlüğü: Yeni Prinzessin Baskısı"
   },
   "WyattsRedKey": {
     "name": "Wyatt'ın Kırmızı Anahtarı"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Domates Dolması (Lezzetli)"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Konsome (Tuhaf)"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Konsome"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Konsome (Lezzetli)"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Krep Süzet (Lezzetli)"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "\"Saf Konsome\""
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "Gizli Büyü"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Hamam Çöreği (Tuhaf)"
+  },
+  "BathhouseManjuu": {
+    "name": "Hamam Çöreği"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Hamam Çöreği (Lezzetli)"
+  },
+  "DreamsOfHealing": {
+    "name": "İyileşme Hayali"
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Tarif: Domates Dolması"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Tarif: Konsome"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "Tarif: Kardaki Sarhoş Erikler"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Tarif: Hamam Çöreği"
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "Ağır Paket"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Bir Kavanoz Yavru Balık"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "İsimsiz Gezginin Notları (V)"
   },
+  "InvitationFromMiko": {
+    "name": "Miko'dan Gelen Davetiye"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Aisa Hamamı VIP Giriş Bileti"
+  },
+  "LeafyDreams": {
+    "name": "Yapraksı Rüyalar"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Bedenden Ayrılma İmtihanı Mesajının Geldiği Yer"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Sürüngen Krakerleri: Tepetlizor"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Aisa Hamamı VIP Davetiyesi"
+  },
+  "MysteriousGift": {
+    "name": "Gizemli Hediye"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Gizemli Inazuma Manzaraları (I)"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Gizemli Inazuma Manzaraları (II)"
+  },
+  "MenOfLithinI": {
+    "name": "Litin Halkı (I)"
+  },
+  "MenOfLithinII": {
+    "name": "Litin Halkı (II)"
+  },
+  "MenOfLithinIII": {
+    "name": "Litin Halkı (III)"
   },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Odara Aracı"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Fosfor Alevi Közü"
+  },
   "FalconsDance": {
     "name": "Şahin Dansı"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "Gezi Notları: Yenilenen Alev"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki: Kabus Yutan"
+  },
+  "CelebrationScorch": {
+    "name": "Kutlama: Yangın"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "Gezi Notları: Muhteşem Rüya"
+  },
   "EchoDandelionKnight": {
     "name": "Yankı: Karahindiba Şövalyesi"
   },
@@ -13934,8 +14003,8 @@
   "FormulaSpinelgrainBait": {
     "name": "Formül: Spinel ve Tahıl Meyvesi Yemi"
   },
-  "RecipeEmberglowBait": {
-    "name": "Reçete: Akkor Yem"
+  "FormulaEmberglowBait": {
+    "name": "Formül: Akkor Yem"
   },
   "SilkenPrint": {
     "name": "İpek Baskı"
@@ -13956,10 +14025,10 @@
     "name": "Gümüş Gecenin Yıldızları"
   },
   "TheGloomPaintsTheColdBlooms": {
-    "name": "Kasvetli Alacakaranlık Çiçekleri"
+    "name": "Kasvetli Gün Batımı Çiçekleri"
   },
   "FireworksDanceAmidstASnowySky": {
-    "name": "Karlı Gökyüzünde Dans Eden Fişekler"
+    "name": "Karlı Havada Fişeklerin Dansı"
   },
   "GoldenCalendulaSwirl": {
     "name": "Altın Çiçek Girdabı"
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "Zarif Selamlama"
+  },
+  "EarnestNegotiation": {
+    "name": "Samimi Pazarlık"
   },
   "FantasticalMarvel": {
     "name": "Olağanüstü Mucize"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Karanlığı Yaran Alev"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "Tüm İntikamlar ve Borçlar Bana Aittir"
+  },
+  "RepaidInFull": {
+    "name": "Eksiksiz Ödeme"
   },
   "MagicGuide": {
     "name": "Büyü Rehberi"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "\"Kaplıca Halkı\""
   },
+  "FlowerFeatherClan": {
+    "name": "\"Çiçek Tüyü Klanı\""
+  },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "Sürüsüne Bereket Filojiston"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Küçük Tepetlizor - Kaçak Hazine Avcısı"
   },
   "Origin": {
     "name": "Köken"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "Ortak Kullanımlı Notluk"
+  },
+  "SweetDreams": {
+    "name": "\"Tatlı Rüyalar\""
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Çayevi Gereçleri: Damlaya Damlaya Göl Olur"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "\"Quahuacan Yamacı'nın Zirvesindeki Halatlar\""
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Ahır Çiti: Şahsi Sınırlar"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Ahır Kapısı: Kapı Çerçevesi"
+  },
   "SmoothWoodenBench": {
     "name": "Pürüzsüz Ahşap Bank"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "Kül Şehir'in Parlak Işığı"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Ahır Değirmen Taşı: Yiyecek Hazırlığı"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Ahır Hasır Minderi: Derme Çatma Yatak"
   }
 }

@@ -48,7 +48,7 @@
       "8": "Quando o personagem ativo que está com o Baluarte Flamejante causa Dano contra o inimigo, o Baluarte Flamejante fará um Ataque Coordenado baseado no ATQ d{F#a}{M#o} Viajante, causando <pyro>Dano Pyro</pyro> com alinhamento Espírito da Noite. Esse efeito pode ser desencadeado uma vez a cada 3s.",
       "9": "<br/>",
       "10": "<strong>Bênção do Espírito da Noite: Viajante</strong>",
-      "11": "Consome os pontos de Espírito da Noite continuamente. O estado Bênção do Espírito da Noite d{F#a}{M#o} Viajante pode durar até 12s. Quando os pontos de Espírito da Noite acabarem, ou ao lançar novamente, o estado Bênção do Espírito da Noite d{F#a}{M#o} Viajante acabará.",
+      "11": "Consome os pontos de Espírito da Noite continuamente. O estado Bênção do Espírito da Noite d{F#a}{M#o} Viajante pode durar até 12s. Quando os pontos de Espírito da Noite acabarem, o estado Bênção do Espírito da Noite d{F#a}{M#o} Viajante acabará. Lançar a Habilidade Elemental novamente na duração redefinirá os pontos de Espírito da Noite d{F#a}{M#o} Viajante para 42.",
       "12": "Baluarte das Chamas e Baluarte Flamejante desaparecerão quando o estado Bênção do Espírito da Noite d{F#a}{M#o} Viajante acabar. Só é possível existir um Baluarte das Chamas ou Baluarte Flamejante invocado pel{F#a}{M#o} Viajante simultaneamente.",
       "13": "<br/>",
       "14": "<i>Você e Paimon observaram como as chamas mudam.</i>"
@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Cinzas Restantes",
     "description": {
-      "0": "Quando o personagem ativo está com <strong>Baluarte das Chamas</strong> ou <strong>Baluarte Flamejante</strong> e causar Queimaduras, Vaporização, Fusão, Sobrecarga, Germinação, Redemoinho Pyro ou Cristalização Pyro, regenera 5 de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada 12s. Além disso, quando um membro próximo da equipe desencadeia a Explosão do Espírito da Noite, regenera mais 4 de Energia Elemental para {F#a}{M#o} Viajante."
+      "0": "Quando o personagem ativo está com <strong>Baluarte das Chamas</strong> ou <strong>Baluarte Flamejante</strong> e desencadear uma <pyro>reação relacionada ao Pyro</pyro> no inimigo, regenera 5 de Energia Elemental para {F#a}{M#o} Viajante. Esse efeito pode ser desencadeado uma vez a cada 12s. Além disso, quando um membro próximo da equipe desencadeia a Explosão do Espírito da Noite, regenera mais 4 de Energia Elemental para {F#a}{M#o} Viajante."
     }
   },
   "constellation1": {
@@ -119,7 +119,7 @@
   "constellation2": {
     "name": "Vela Eternamente Acesa",
     "description": {
-      "0": "Nos 12s após lançar a Habilidade Elemental <strong>Lâmina do Fluxo do Fogo</strong>, quando os membros próximos da equipe desencadearem Queimaduras, Vaporização, Fusão, Sobrecarga, Germinação, Redemoinho Pyro ou Cristalização Pyro, regenera 14 pontos de Espírito da Noite para {F#a}{M#o} Viajante. É possível regenerar até 28 pontos de Espírito da Noite dessa forma por cada vez que a Habilidade Elemental <strong>Lâmina do Fluxo do Fogo</strong> for lançada."
+      "0": "Nos 12s após lançar a Habilidade Elemental <strong>Lâmina do Fluxo do Fogo</strong>, quando os membros próximos da equipe desencadearem uma <pyro>reação relacionada ao Pyro</pyro> no inimigo, regenera 14 pontos de Espírito da Noite para {F#a}{M#o} Viajante. É possível regenerar até 28 pontos de Espírito da Noite dessa forma por cada vez que a Habilidade Elemental <strong>Lâmina do Fluxo do Fogo</strong> for lançada."
     }
   },
   "constellation3": {

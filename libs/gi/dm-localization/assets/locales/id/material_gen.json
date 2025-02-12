@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "Incense Ashcrystal"
   },
+  "FestivalStamp": {
+    "name": "Festival Stamp"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Lan Yan"
   },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "Lan Yan's Stella Fortuna"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Yumemizuki Mizuki's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "Naskah \"Hyakunin Ikki: Pertempuran Terbesar\""
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Fischl Dictionary: Die Neuauflage der Prinzessin"
   },
   "WyattsRedKey": {
     "name": "Kunci Merah Wyatt"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Delicious Tomates Narbonnaises"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Suspicious Consomme"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Consomme"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Delicious Consomme"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Delicious Crepes Suzette"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "\"Consomme Purete\""
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "Secret Art"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Suspicious Bathhouse Manjuu"
+  },
+  "BathhouseManjuu": {
+    "name": "Bathhouse Manjuu"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Delicious Bathhouse Manjuu"
+  },
+  "DreamsOfHealing": {
+    "name": "Dreams of Healing"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Resep: Tomates Narbonnaises"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Resep: Consomme"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "Resep: Drunken Plums in Snow"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Resep: Bathhouse Manjuu"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "Paket Berat"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Sekaleng Bibit Ikan"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "Catatan Pengembara Tanpa Nama: V"
   },
+  "InvitationFromMiko": {
+    "name": "Undangan dari Miko"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Kupon Khusus Aisa Bathhouse"
+  },
+  "LeafyDreams": {
+    "name": "Sehelai Mimpi Indah"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Pesan dari Tempat Ujian Pengeluaran Jiwa"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Saurus Crackers: Tepetlisaurus"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Undangan Khusus Aisa Bathhouse"
+  },
+  "MysteriousGift": {
+    "name": "Mysterious Gift"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Kisah Rahasia di Inazuma (I)"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Kisah Rahasia di Inazuma (II)"
+  },
+  "MenOfLithinI": {
+    "name": "Manusia Lithin (I)"
+  },
+  "MenOfLithinII": {
+    "name": "Manusia Lithin (II)"
+  },
+  "MenOfLithinIII": {
+    "name": "Manusia Lithin (III)"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Shuttle of Odara"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Smoldering Phosphorescent Flame"
+  },
   "FalconsDance": {
     "name": "Falcon's Dance"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "Catatan Perjalanan: Api yang Baru"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki: Nightmare Devourer"
+  },
+  "CelebrationScorch": {
+    "name": "Perayaan: Panas Membara"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "Catatan Perjalanan: Mimpi Ajaib"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "Resep: Spinelgrain Bait"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "Resep: Emberglow Bait"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "Sambutan Elegan"
+  },
+  "EarnestNegotiation": {
+    "name": "Negosiasi Tulus"
   },
   "FantasticalMarvel": {
     "name": "Fantastical Marvel"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Dark-Shattering Flame"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "All Reprisals and Arrears, Mine to Bear"
+  },
+  "RepaidInFull": {
+    "name": "Repaid in Full"
   },
   "MagicGuide": {
     "name": "Magic Guide"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "\"People of the Springs\""
   },
+  "FlowerFeatherClan": {
+    "name": "\"Flower-Feather Clan\""
+  },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "Abundant Phlogiston"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Little Tepetlisaurus — Treasure Hunter at Large"
   },
   "Origin": {
     "name": "Origin"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "Penyangga Catatan Universal"
+  },
+  "SweetDreams": {
+    "name": "\"Semoga Mimpimu Indah\""
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Peralatan Kedai Teh: Tak Seringan Debu"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "Pagar Tali Tebing Quahuacan"
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Pagar Kandang: Batas yang Sederhana"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Pintu Kandang: Struktur Fondasi"
+  },
   "SmoothWoodenBench": {
     "name": "Bangku Kayu Panjang yang Mulus"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "Cahaya Bersinar Kota Bara"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Penggiling Batu Kandang: Pembuat Pangan"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Alas Rumput Kandang: Ranjang Darurat"
   }
 }

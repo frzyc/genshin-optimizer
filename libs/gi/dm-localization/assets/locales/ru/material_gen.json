@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "Дымный кристалл"
   },
+  "FestivalStamp": {
+    "name": "Праздничная печать"
+  },
   "Primogem": {
     "name": "Камень Истока"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Лань Янь"
   },
+  "YumemizukiMizuki": {
+    "name": "Мидзуки"
+  },
   "KachinasStellaFortuna": {
     "name": "Удача Качины"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "Удача Лань Янь"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Удача Юмэмидзуки Мидзуки"
   },
   "Apple": {
     "name": "Яблоко"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "Черновая рукопись «Хякунин икки. История величайшего бойцовского соревнования»"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Словарь Фишль: Новое издание принцессы"
   },
   "WyattsRedKey": {
     "name": "Красный ключ"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Вкусные фаршированные помидоры по-набонэски"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Странное консоме"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Консоме"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Вкусное консоме"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Вкусные креп-сюзетт"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "Пелена дождя"
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "Тайное искусство"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Странные Банные мандзю"
+  },
+  "BathhouseManjuu": {
+    "name": "Банные мандзю"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Вкусные Банные мандзю"
+  },
+  "DreamsOfHealing": {
+    "name": "Мечты об исцелении"
+  },
   "RecipeItem": {
     "name": "Ингредиенты"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Рецепт: Фаршированные помидоры по-набонэски"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Рецепт: Консоме"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "Рецепт: Пьяные сливы в снегу"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Рецепт: Банные мандзю"
   },
   "CraftedItems": {
     "name": "Созданные Предметы"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "Тяжёлый мешок"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Банка с мальками"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "Записи безымянного путешественника V"
   },
+  "InvitationFromMiko": {
+    "name": "Приглашение от Мико"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Премиальный купон бань «Аиса»"
+  },
+  "LeafyDreams": {
+    "name": "Грёзы листвы"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Послание из места испытания душ"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Заврианское печенье: тепетлизавр"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Приглашение для особо важных гостей бань «Аиса»"
+  },
+  "MysteriousGift": {
+    "name": "Таинственный подарок"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Видения таинственной Инадзумы. Том I"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Видения таинственной Инадзумы. Том II"
+  },
+  "MenOfLithinI": {
+    "name": "Народ литина. Том I"
+  },
+  "MenOfLithinII": {
+    "name": "Народ литина. Том II"
+  },
+  "MenOfLithinIII": {
+    "name": "Народ литина. Том III"
   },
   "TearsAmongTheStars": {
     "name": "Слёзы средь звёзд"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Челнок Одары"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Тлеющее светящееся пламя"
+  },
   "FalconsDance": {
     "name": "Танец сокола"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "Возрождённое пламя"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Пожирательница кошмаров"
+  },
+  "CelebrationScorch": {
+    "name": "Сожжение"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "Волшебные сны"
+  },
   "EchoDandelionKnight": {
     "name": "Эхо: Рыцарь Одуванчик"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "Рецепт: Наживка из корундина"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "Рецепт: Наживка из листка света"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "Элегантное приветствие"
+  },
+  "EarnestNegotiation": {
+    "name": "Искренние переговоры"
   },
   "FantasticalMarvel": {
     "name": "Чудесная идея"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Разрывающее мрак пламя"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "Все возмездия и повинности понесу я"
+  },
+  "RepaidInFull": {
+    "name": "Полное возмещение"
   },
   "MagicGuide": {
     "name": "Руководство по магии"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "Народ Родников"
   },
+  "FlowerFeatherClan": {
+    "name": "Клан Цветочного Пера"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "Изобилие флогистона"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Тепетлизаврик: Поиск сокровищ"
   },
   "Origin": {
     "name": "Изначальный"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "Универсальный держатель для заметок"
+  },
+  "SweetDreams": {
+    "name": "Сладкие сны"
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Чайная утварь: До последнего листочка"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "«Трос на вершине утёса Куауакан»"
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Изгородь загона: Простая граница"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Дверь загона: Основная конструкция"
+  },
   "SmoothWoodenBench": {
     "name": "Гладкая деревянная скамейка"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "При свете сожжённого города"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Жёрнов загона: Выбор повара"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Соломенная подстилка для загона: Временная лежанка"
   }
 }

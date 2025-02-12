@@ -444,6 +444,10 @@
       "icon": "UI_EquipIcon_Pole_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Pole_Isikhulu_Awaken"
     },
+    "TamayurateiNoOhanashi": {
+      "icon": "UI_EquipIcon_Pole_Aoandon",
+      "awakenIcon": "UI_EquipIcon_Pole_Aoandon_Awaken"
+    },
     "StaffOfHoma": {
       "icon": "UI_EquipIcon_Pole_Homa",
       "awakenIcon": "UI_EquipIcon_Pole_Homa_Awaken"
@@ -647,6 +651,10 @@
     "StarcallersWatch": {
       "icon": "UI_EquipIcon_Catalyst_Figurines",
       "awakenIcon": "UI_EquipIcon_Catalyst_Figurines_Awaken"
+    },
+    "SunnyMorningSleepIn": {
+      "icon": "UI_EquipIcon_Catalyst_SakuraFan",
+      "awakenIcon": "UI_EquipIcon_Catalyst_SakuraFan_Awaken"
     },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
@@ -2775,6 +2783,23 @@
       "constellation4": "UI_Talent_S_Lanyan_03",
       "constellation5": "UI_Talent_U_Lanyan_02",
       "constellation6": "UI_Talent_S_Lanyan_04"
+    },
+    "YumemizukiMizuki": {
+      "icon": "UI_AvatarIcon_Mizuki",
+      "iconSide": "UI_AvatarIcon_Side_Mizuki",
+      "banner": "UI_NameCardPic_Mizuki_P",
+      "bar": "UI_NameCardPic_Mizuki_Alpha",
+      "skill": "Skill_S_Mizuki_01",
+      "burst": "Skill_E_Mizuki_01_HD",
+      "passive1": "UI_Talent_S_Mizuki_05",
+      "passive2": "UI_Talent_S_Mizuki_06",
+      "passive3": "UI_Talent_S_Mizuki_07",
+      "constellation1": "UI_Talent_S_Mizuki_01",
+      "constellation2": "UI_Talent_S_Mizuki_02",
+      "constellation3": "UI_Talent_U_Mizuki_01",
+      "constellation4": "UI_Talent_S_Mizuki_03",
+      "constellation5": "UI_Talent_U_Mizuki_02",
+      "constellation6": "UI_Talent_S_Mizuki_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

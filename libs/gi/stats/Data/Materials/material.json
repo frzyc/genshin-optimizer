@@ -75,6 +75,7 @@
   "ColorfulContemplation": {},
   "FestiveFervor": {},
   "IncenseAshcrystals": {},
+  "FestivalStamp": {},
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
@@ -405,7 +406,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Arlecchino": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Sethos": {
     "type": "MATERIAL_AVATAR"
@@ -813,7 +814,7 @@
     "type": "MATERIAL_AVATAR"
   },
   "Kinich": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Mualani": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -834,6 +835,9 @@
     "type": "MATERIAL_AVATAR"
   },
   "LanYan": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "YumemizukiMizuki": {
     "type": "MATERIAL_AVATAR"
   },
   "KachinasStellaFortuna": {
@@ -861,6 +865,9 @@
     "type": "MATERIAL_TALENT"
   },
   "LanYansStellaFortuna": {
+    "type": "MATERIAL_TALENT"
+  },
+  "YumemizukiMizukisStellaFortuna": {
     "type": "MATERIAL_TALENT"
   },
   "Apple": {
@@ -1443,6 +1450,9 @@
     "type": "MATERIAL_QUEST"
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
     "type": "MATERIAL_QUEST"
   },
   "WyattsRedKey": {
@@ -6745,13 +6755,13 @@
   "DeliciousTomatesNarbonnaises": {
     "type": "MATERIAL_FOOD"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "type": "MATERIAL_FOOD"
   },
-  "Consomme": {
+  "Consomm": {
     "type": "MATERIAL_FOOD"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "type": "MATERIAL_FOOD"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6781,7 +6791,7 @@
   "DeliciousCrepesSuzette": {
     "type": "MATERIAL_FOOD"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "type": "MATERIAL_FOOD"
   },
   "SecretSauceBBQRibs": {
@@ -7076,7 +7086,7 @@
     "type": "MATERIAL_NOTICE_ADD_HP"
   },
   "HotSpringOClock": {
-    "type": "MATERIAL_NOTICE_ADD_HP"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousHotSpringOClock": {
     "type": "MATERIAL_NOTICE_ADD_HP"
@@ -7331,6 +7341,18 @@
     "type": "MATERIAL_FOOD"
   },
   "SecretArt": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousBathhouseManjuu": {
+    "type": "MATERIAL_FOOD"
+  },
+  "BathhouseManjuu": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousBathhouseManjuu": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DreamsOfHealing": {
     "type": "MATERIAL_FOOD"
   },
   "RecipeItem": {
@@ -7840,7 +7862,7 @@
   "RecipeTomatesNarbonnaises": {
     "type": "MATERIAL_CONSUME"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "type": "MATERIAL_CONSUME"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8009,6 +8031,9 @@
     "type": "MATERIAL_CONSUME"
   },
   "RecipeDrunkenPlumsInSnow": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeBathhouseManjuu": {
     "type": "MATERIAL_CONSUME"
   },
   "CraftedItems": {
@@ -9973,7 +9998,7 @@
   "HeavyPack": {
     "type": "MATERIAL_QUEST"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "type": "MATERIAL_QUEST"
   },
   "PrinceQubadsIntaglio": {
@@ -11557,6 +11582,15 @@
   "NamelessTravelersNotesV": {
     "type": "MATERIAL_QUEST"
   },
+  "InvitationFromMiko": {
+    "type": "MATERIAL_MIKAWA_FLOWER_INVITE"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "type": "MATERIAL_QUEST"
+  },
+  "LeafyDreams": {
+    "type": "MATERIAL_QUEST_ALBUM"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "type": "MATERIAL_QUEST"
   },
@@ -11588,6 +11622,27 @@
     "type": "MATERIAL_QUEST"
   },
   "SaurusCrackersTepetlisaurus": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AisaBathhouseVIPPass": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MysteriousGift": {
+    "type": "MATERIAL_CHEST"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MenOfLithinI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MenOfLithinII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MenOfLithinIII": {
     "type": "MATERIAL_QUEST"
   },
   "TearsAmongTheStars": {
@@ -12457,6 +12512,9 @@
   "ShuttleOfOdara": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
+  "SmolderingPhosphorescentFlame": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
   "FalconsDance": {
     "type": "MATERIAL_CHANNELLER_SLAB_BUFF"
   },
@@ -13291,6 +13349,15 @@
   "TravelNotesTheFlameRenewed": {
     "type": "MATERIAL_NAMECARD"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "CelebrationScorch": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "TravelNotesWondrousReverie": {
+    "type": "MATERIAL_NAMECARD"
+  },
   "EchoDandelionKnight": {
     "type": "MATERIAL_AVATAR_TRACE"
   },
@@ -13756,7 +13823,7 @@
   "FormulaSpinelgrainBait": {
     "type": "MATERIAL_CONSUME"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "type": "MATERIAL_CONSUME"
   },
   "SilkenPrint": {
@@ -13886,6 +13953,9 @@
     "type": "MATERIAL_PHOTOGRAPH_POSE"
   },
   "ElegantGreeting": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "EarnestNegotiation": {
     "type": "MATERIAL_PHOTOGRAPH_POSE"
   },
   "FantasticalMarvel": {
@@ -14324,6 +14394,12 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DarkShatteringFlame": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "RepaidInFull": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "MagicGuide": {
@@ -14773,6 +14849,9 @@
   "PeopleOfTheSprings": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "FlowerFeatherClan": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "ElementalResonanceWovenIce": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -14957,6 +15036,9 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "AbundantPhlogiston": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Origin": {
@@ -16409,6 +16491,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "CommonUseNoteHolder": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SweetDreams": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
@@ -18403,6 +18488,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "PaddockFenceSimpleBoundary": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PaddockGateFoundationalFramework": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "SmoothWoodenBench": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -18617,6 +18708,12 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "ByCinderCitysGlowingLight": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   }
 }

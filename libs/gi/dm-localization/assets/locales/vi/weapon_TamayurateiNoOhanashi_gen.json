@@ -1,0 +1,24 @@
+{
+  "name": "Tamayuratei no Ohanashi",
+  "description": {
+    "0": "Trong quá khứ, từng có youkai lang thang khắp Inazuma trong dáng vẻ của ngọn đèn rực cháy. Đây cũng là ngọn đèn nơi mà youkai từng nương náu."
+  },
+  "passiveName": "Ngọn Đèn Tinh Nghịch",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, tăng <cryo>20%</cryo> Tấn Công và 10% Tốc Độ Di Chuyển trong 10s."
+    },
+    "1": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, tăng <cryo>25%</cryo> Tấn Công và 10% Tốc Độ Di Chuyển trong 10s."
+    },
+    "2": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, tăng <cryo>30%</cryo> Tấn Công và 10% Tốc Độ Di Chuyển trong 10s."
+    },
+    "3": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, tăng <cryo>35%</cryo> Tấn Công và 10% Tốc Độ Di Chuyển trong 10s."
+    },
+    "4": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, tăng <cryo>40%</cryo> Tấn Công và 10% Tốc Độ Di Chuyển trong 10s."
+    }
+  }
+}

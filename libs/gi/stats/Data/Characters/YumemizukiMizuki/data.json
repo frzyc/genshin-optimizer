@@ -1,0 +1,66 @@
+{
+  "key": "YumemizukiMizuki",
+  "ele": "anemo",
+  "region": "inazuma",
+  "weaponType": "catalyst",
+  "birthday": {
+    "month": 3,
+    "day": 16
+  },
+  "rarity": 5,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 991.4528,
+      "curve": "GROW_CURVE_HP_S5"
+    },
+    {
+      "key": "atk",
+      "base": 16.758,
+      "curve": "GROW_CURVE_ATTACK_S5"
+    },
+    {
+      "key": "def",
+      "base": 58.93255,
+      "curve": "GROW_CURVE_HP_S5"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      850.0811,
+      1454.0862,
+      2259.4263,
+      2863.4312,
+      3467.4363,
+      4071.4412
+    ],
+    "def": [
+      0,
+      50.5305,
+      86.43375,
+      134.30475,
+      170.208,
+      206.11125,
+      242.0145
+    ],
+    "atk": [
+      0,
+      14.36742,
+      24.57585,
+      38.18709,
+      48.39552,
+      58.60395,
+      68.81238
+    ],
+    "eleMas": [
+      0,
+      0,
+      28.8,
+      57.6,
+      57.6,
+      86.4,
+      115.2
+    ]
+  }
+}
