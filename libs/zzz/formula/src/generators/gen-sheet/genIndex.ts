@@ -1,24 +1,24 @@
 import {
   allCharacterKeys,
-  allLightConeKeys,
-  allRelicSetKeys,
-} from '@genshin-optimizer/sr/consts'
+  allDiscSetKeys,
+  allWengineKeys,
+} from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
 import * as prettier from 'prettier'
 
 export default async function genIndex(tree: Tree, sheet_type: string) {
-  const file_location = `${workspaceRoot}/libs/sr/formula/src/data/${sheet_type}/index.ts`
+  const file_location = `${workspaceRoot}/libs/zzz/formula/src/data/${sheet_type}/${sheet_type}.ts`
   switch (sheet_type) {
     case 'char':
       await writeCharIndex(file_location)
       break
-    case 'relic':
-      await writeRelicIndex(file_location)
+    case 'disc':
+      await writeDiscIndex(file_location)
       break
-    case 'lightCone':
-      await writeLightConeIndex(file_location)
+    case 'wengine':
+      await writeWengineIndex(file_location)
       break
   }
 }
@@ -27,6 +27,7 @@ async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
   const index = prettier.format(
     `
+// WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
 ${allCharacterKeys
   .map((charKey) => `import ${charKey} from './sheets/${charKey}'`)
@@ -43,17 +44,18 @@ export default data.flat()
   writeFileSync(path, index)
 }
 
-async function writeRelicIndex(path: string) {
+async function writeDiscIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
   const index = prettier.format(
     `
+// WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
-${allRelicSetKeys
+${allDiscSetKeys
   .map((setKey) => `import ${setKey} from './sheets/${setKey}'`)
   .join('\n')}
 
 const data: TagMapNodeEntries[] = [
-  ${allRelicSetKeys.join('\n,  ')}
+  ${allDiscSetKeys.join('\n,  ')}
 ]
 export default data.flat()
 
@@ -63,19 +65,18 @@ export default data.flat()
   writeFileSync(path, index)
 }
 
-async function writeLightConeIndex(path: string) {
+async function writeWengineIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
   const index = prettier.format(
     `
+// WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
-${allLightConeKeys
-  .map(
-    (lightConeKey) => `import ${lightConeKey} from './sheets/${lightConeKey}'`
-  )
+${allWengineKeys
+  .map((wKey) => `import ${wKey} from './sheets/${wKey}'`)
   .join('\n')}
 
 const data: TagMapNodeEntries[] = [
-  ${allLightConeKeys.join(',\n  ')}
+  ${allWengineKeys.join(',\n  ')}
 ]
 
 export default data.flat()

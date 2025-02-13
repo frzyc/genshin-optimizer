@@ -5,12 +5,12 @@ import { registerDisc } from '../util'
 const key: DiscSetKey = 'AstralVoice'
 const { astral } = allNumConditionals(key, true, 1, 3)
 
-const relicCount = own.common.count.sheet(key)
+const discCount = own.common.count.sheet(key)
 const sheet = registerDisc(
   key,
   registerBuff(
     'team_dmg_',
-    teamBuff.combat.dmg_.add(cmpGE(relicCount, 4, prod(astral, 0.08)))
+    teamBuff.combat.dmg_.add(cmpGE(discCount, 4, prod(astral, 0.08)))
   )
 )
 export default sheet
