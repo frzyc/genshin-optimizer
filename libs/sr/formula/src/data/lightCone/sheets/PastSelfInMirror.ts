@@ -1,14 +1,8 @@
 import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import {
-  allBoolConditionals,
-  own,
-  register,
-  registerBuff,
-  teamBuff,
-} from '../../util'
-import { entriesForLightCone } from '../util'
+import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
+import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'PastSelfInMirror'
 const data_gen = allStats.lightCone[key]
@@ -18,7 +12,7 @@ const { superimpose } = own.lightCone
 
 const { useUltimate } = allBoolConditionals(key)
 
-const sheet = register(
+const sheet = registerLightCone(
   key,
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
@@ -28,7 +22,9 @@ const sheet = register(
     'cond_dmg_',
     teamBuff.premod.dmg_.add(
       cmpGE(lcCount, 1, useUltimate.ifOn(subscript(superimpose, dm.dmg_)))
-    )
+    ),
+    cmpGE(lcCount, 1, 'unique', ''),
+    true
   )
 )
 export default sheet

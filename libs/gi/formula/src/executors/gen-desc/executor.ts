@@ -23,6 +23,7 @@ export default async function runExecutor(
     if (
       // sheet-specific
       tag.sheet != 'agg' &&
+      tag.sheet !== 'art' &&
       // formula listing
       tag.qt == 'listing' &&
       tag.q == 'formulas' &&
