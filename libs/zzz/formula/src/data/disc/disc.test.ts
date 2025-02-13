@@ -76,7 +76,7 @@ function printDebug(calc: Calculator, read: Read) {
   console.log(JSON.stringify(calc.toDebug().compute(read), undefined, 2))
 }
 describe('Disc sheets test', () => {
-  it('AstrolVoice 4p', () => {
+  it('AstralVoice 4p', () => {
     const data = testCharacterData('AstralVoice')
     data.push(cond('AstralVoice', conditionals.AstralVoice.astral.name, 3))
     const calc = new Calculator(
