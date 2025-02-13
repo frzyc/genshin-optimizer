@@ -285,6 +285,6 @@ export function objSumInPlace(
   return base
 }
 
-export function prettify(obj: object) {
+export function prettify(obj: object | undefined) {
   return JSON.stringify(obj, undefined, 2)
 }

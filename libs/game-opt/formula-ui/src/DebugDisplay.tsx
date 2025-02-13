@@ -58,17 +58,9 @@ export function DebugListingsDisplay({
                         </AccordionSummary>
                         <AccordionDetails>
                           conds:
-                          <CodeBlock
-                            text={JSON.stringify(
-                              computed.meta.conds,
-                              undefined,
-                              2
-                            )}
-                          />
+                          <CodeBlock text={prettify(computed.meta.conds)} />
                           read:
-                          <CodeBlock
-                            text={JSON.stringify(read, undefined, 2)}
-                          />
+                          <CodeBlock text={prettify(read)} />
                           formula:
                           <CodeBlock text={prettify(debugMeta)} />
                         </AccordionDetails>
@@ -102,17 +94,9 @@ export function DebugListingsDisplay({
                         </AccordionSummary>
                         <AccordionDetails>
                           conds:
-                          <CodeBlock
-                            text={JSON.stringify(
-                              computed.meta.conds,
-                              undefined,
-                              2
-                            )}
-                          />
+                          <CodeBlock text={prettify(computed.meta.conds)} />
                           read:
-                          <CodeBlock
-                            text={JSON.stringify(read, undefined, 2)}
-                          />
+                          <CodeBlock text={prettify(read)} />
                           formula:
                           <CodeBlock text={prettify(debugMeta)} />
                         </AccordionDetails>
@@ -157,7 +141,7 @@ export function DebugReadModal() {
                 Computed value: {computed?.val}
                 <Divider />
                 <Typography variant="h6">Read</Typography>
-                <CodeBlock text={JSON.stringify(read, undefined, 2)} />
+                <CodeBlock text={prettify(read)} />
                 <Divider />
                 <Typography variant="h6">Calculator Tag</Typography>
                 <CodeBlock text={JSON.stringify(calculator?.cache.tag)} />
@@ -166,9 +150,7 @@ export function DebugReadModal() {
                 <CodeBlock text={JSON.stringify(tag)} />
                 <Divider />
                 <Typography variant="h6">Conditionals</Typography>
-                <CodeBlock
-                  text={JSON.stringify(computed?.meta.conds, undefined, 2)}
-                />
+                <CodeBlock text={prettify(computed?.meta.conds)} />
                 <Divider />
                 <Typography variant="h6">Formula</Typography>
                 <CodeBlock text={jsonStr || ''} />
