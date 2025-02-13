@@ -1,9 +1,18 @@
-import type { AnyNode, CalcResult, PreRead, ReRead, TagCache } from './node'
+import type {
+  AnyNode,
+  CalcResult,
+  NumNode,
+  PreRead,
+  ReRead,
+  StrNode,
+  TagCache,
+} from './node'
 import { Calculator as BaseCalculator, map } from './node'
 import type { Tag, TagMapEntries, TagMapEntry } from './tag'
 import { entryRef } from './tag/symb'
 
 type TagStr = (tag: Tag, ex?: any) => string
+type FilterFunc = (debug: DebugMeta) => boolean
 
 /** Sequence of entries matched by gathering, in reverse order (final entry first) */
 type ReadSeq = [TagMapEntry<AnyNode>, ...TagMapEntries<ReRead>]
@@ -17,12 +26,18 @@ export type DebugMeta = {
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   tagStr: TagStr
+  filterFunc: FilterFunc
   gathering = new Set<TagCache<DebugMeta>>()
 
-  constructor(calc: BaseCalculator<any>, tagStr: TagStr) {
+  constructor(
+    calc: BaseCalculator<any>,
+    tagStr: TagStr,
+    filterFunc: FilterFunc
+  ) {
     super(calc.cache.keys)
     this.nodes = calc.nodes
     this.tagStr = tagStr
+    this.filterFunc = filterFunc
     this.cache = this.cache.with(calc.cache.tag)
   }
   override withTag(_tag: Tag): this {
@@ -111,6 +126,30 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       result.deps = x.map((x) => x!.meta)
     }
     return result
+  }
+
+  filterDebug(debug: DebugMeta) {
+    for (let i = debug.deps.length - 1; i >= 0; i--) {
+      if (this.filterFunc(debug.deps[i])) {
+        debug.deps.splice(i, 1)
+        continue
+      }
+      debug.deps[i] = this.filterDebug(debug.deps[i])
+    }
+    return debug
+  }
+
+  prettify(debug: DebugMeta): string {
+    return JSON.stringify(this.filterDebug(debug), undefined, 2)
+  }
+
+  computeAndLog(n: NumNode): CalcResult<number, DebugMeta>
+  computeAndLog(n: StrNode): CalcResult<string, DebugMeta>
+  computeAndLog(n: AnyNode): CalcResult<number | string, DebugMeta>
+  computeAndLog(n: AnyNode): CalcResult<number | string, DebugMeta> {
+    const computed = this.compute(n)
+    console.log(this.prettify(computed.meta))
+    return computed
   }
 }
 
