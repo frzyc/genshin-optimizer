@@ -28,9 +28,7 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set2_dmg_',
-    ownBuff.combat.dmg_.add(
-      boolConditional.ifOn(cmpGE(discCount, 2, 0.1))
-    )
+    ownBuff.combat.dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1)))
   ),
   registerBuff(
     'team_dmg_',
