@@ -253,7 +253,7 @@ export const allDiscCondKeys = {
   },
   PolarMetalBasicOrDash: {
     key: 'PolarMetalBasicOrDash',
-    text: 'Optimizatinng for Basic Attack or Dash Attack',
+    text: 'Optimizing for Basic Attack or Dash Attack',
     min: 1,
     max: 1,
   },
@@ -271,7 +271,7 @@ export const allDiscCondKeys = {
   },
   PufferElectroUltimate: {
     key: 'PufferElectroUltimate',
-    text: 'Optimizatinng for Ultimate Damage',
+    text: 'Optimizing for Ultimate Damage',
     min: 1,
     max: 1,
   },
