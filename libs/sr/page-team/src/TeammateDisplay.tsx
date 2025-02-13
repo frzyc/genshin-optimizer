@@ -15,7 +15,7 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
-import { filterDebug, own } from '@genshin-optimizer/sr/formula'
+import { own } from '@genshin-optimizer/sr/formula'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/sr/ui'
 import { Delete } from '@mui/icons-material'
 import {
@@ -206,7 +206,6 @@ function CharacterSection() {
       <DebugListingsDisplay
         formulasRead={own.listing.formulas}
         buffsRead={own.listing.buffs}
-        filterFunc={filterDebug}
       />
     </Stack>
   )

@@ -1,4 +1,3 @@
-import type { DebugMeta } from '@genshin-optimizer/pando/engine'
 import {
   compileTagMapValues,
   read,
@@ -229,24 +228,10 @@ describe('char+wengine test', () => {
       expect(calc.compute(anby.base.atk).val).toBeCloseTo(1134.797)
       expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
 
-      // Debug printing
-      function filterDebug(debug: DebugMeta) {
-        for (let i = debug.deps.length - 1; i >= 0; i--) {
-          const readSeq = debug.deps[i].toJSON().readSeq
-          if (readSeq?.includes('{ wengine } : { wengine }')) {
-            debug.deps.splice(i, 1)
-            continue
-          }
-          debug.deps[i] = filterDebug(debug.deps[i])
-        }
-        return debug
-      }
-      const debug = calc
+      calc
         .withTag({ src: 'Anby', dst: 'Anby' })
         .toDebug()
-        .compute(read(formulas.Anby.standardDmgInst.tag, undefined))
-      const filtered = filterDebug(debug.meta)
-      console.log(JSON.stringify(filtered, undefined, 2))
+        .computeAndLog(read(formulas.Anby.standardDmgInst.tag, undefined))
 
       expect(
         calc
@@ -254,12 +239,10 @@ describe('char+wengine test', () => {
           .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
       ).toBeCloseTo(expectedStandardDmg)
 
-      const debug2 = calc
+      calc
         .withTag({ src: 'Anby', dst: 'Anby' })
         .toDebug()
-        .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined))
-      const filtered2 = filterDebug(debug2.meta)
-      console.log(JSON.stringify(filtered2, undefined, 2))
+        .computeAndLog(read(formulas.Anby.anomalyDmgInst.tag, undefined))
       expect(
         calc
           .withTag({ src: 'Anby', dst: 'Anby' })
@@ -295,9 +278,7 @@ describe('disc2p test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    console.log(
-      JSON.stringify(calc.toDebug().compute(anby.final.atk), undefined, 2)
-    )
+    calc.toDebug().computeAndLog(anby.final.atk)
     expect(calc.compute(anby.final.atk).val).toBeCloseTo(195)
     expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.66)
   })
