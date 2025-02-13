@@ -148,3 +148,9 @@ export type CondMeta = {
   max: number
   min: number
 }
+
+export const rarityColor = {
+  S: 'rankS',
+  A: 'rankA',
+  B: 'rankB',
+} as const

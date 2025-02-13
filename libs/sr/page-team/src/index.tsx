@@ -26,7 +26,6 @@ import {
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
 import {
-  filterDebug,
   getConditional,
   isMember,
   isSheet,
@@ -217,7 +216,7 @@ function Page({ teamId }: { teamId: string }) {
               <ConditionalValuesContext.Provider value={conditionals}>
                 <SetConditionalContext.Provider value={setConditional}>
                   <DebugReadContext.Provider value={debugObj}>
-                    <DebugReadModal filterFunc={filterDebug} />
+                    <DebugReadModal />
                     <Box
                       sx={{
                         display: 'flex',
