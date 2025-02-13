@@ -15,6 +15,7 @@ import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
+  rarityColor,
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Edit } from '@mui/icons-material'
@@ -27,6 +28,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import type { Theme } from '@mui/system'
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
@@ -141,8 +143,10 @@ export function DiscCard({
                 </div>
               </ClickAwayListener>
               <Box
-                sx={(theme) => ({
-                  border: `4px solid ${theme.palette[rarity].main}`,
+                sx={(theme: Theme) => ({
+                  border: `4px solid ${
+                    theme.palette[rarityColor[rarity]].main
+                  }`,
                   borderRadius: '50%',
                 })}
               >
@@ -204,7 +208,7 @@ export function DiscCard({
               gap={1}
               alignItems="center"
               width={'100%'}
-              color={`${rarity}.main`}
+              color={`${rarityColor[rarity]}.main`}
             >
               <Typography
                 variant="subtitle1"

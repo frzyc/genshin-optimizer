@@ -10,9 +10,9 @@ declare module '@mui/material/styles' {
     frost: Palette['primary']
     physical: Palette['primary']
     ether: Palette['primary']
-    S: Palette['primary']
-    A: Palette['primary']
-    B: Palette['primary']
+    rankS: Palette['primary']
+    rankA: Palette['primary']
+    rankB: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -22,9 +22,9 @@ declare module '@mui/material/styles' {
     frost?: PaletteOptions['primary']
     physical?: PaletteOptions['primary']
     ether?: PaletteOptions['primary']
-    S?: PaletteOptions['primary']
-    A?: PaletteOptions['primary']
-    B?: PaletteOptions['primary']
+    rankS?: PaletteOptions['primary']
+    rankA?: PaletteOptions['primary']
+    rankB?: PaletteOptions['primary']
   }
 }
 
@@ -100,17 +100,17 @@ export const theme = createTheme({
       color: { main: '#FE427E', contrastText: '#fff' },
       name: 'ether',
     }),
-    S: commonTheme.palette.augmentColor({
+    rankS: commonTheme.palette.augmentColor({
       color: { main: '#FF9100', contrastText: '#fff' },
-      name: 's-rarity',
+      name: 'rankS',
     }),
-    A: commonTheme.palette.augmentColor({
+    rankA: commonTheme.palette.augmentColor({
       color: { main: '#E900FF', contrastText: '#fff' },
-      name: 'a-rarity',
+      name: 'rankA',
     }),
-    B: commonTheme.palette.augmentColor({
+    rankB: commonTheme.palette.augmentColor({
       color: { main: '#14a9fe', contrastText: '#fff' },
-      name: 'b-rarity',
+      name: 'rankB',
     }),
   },
   shape: {

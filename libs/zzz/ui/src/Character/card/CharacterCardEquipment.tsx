@@ -5,10 +5,11 @@ import {
   discDefIcon,
 } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSlotKeys, discRarityColor } from '@genshin-optimizer/zzz/consts'
+import { allDiscSlotKeys, rarityColor } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { Box, Typography } from '@mui/material'
+import type { Theme } from '@mui/system'
 import { useMemo } from 'react'
 
 const commonStyles = Object.freeze({
@@ -116,10 +117,10 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
         discInfo.disc ? (
           <Box key={discInfo.key}>
             <Box
-              sx={(theme) => ({
+              sx={(theme: Theme) => ({
                 border: `2px solid ${
                   discInfo.disc?.rarity
-                    ? theme.palette[discRarityColor[discInfo.disc.rarity]].main
+                    ? theme.palette[rarityColor[discInfo.disc.rarity]].main
                     : ''
                 }`,
                 ...discInfo.styles,

@@ -15,10 +15,11 @@ import {
   wengineAsset,
   wenginePhaseIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type {
-  LocationKey,
-  WengineKey,
-  WengineSubStatKey,
+import {
+  rarityColor,
+  type LocationKey,
+  type WengineKey,
+  type WengineSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Edit } from '@mui/icons-material'
@@ -166,7 +167,7 @@ export function WengineCard({
               gap={1}
               alignItems="center"
               width={'100%'}
-              color={`${wengineStats.rarity}.main`}
+              color={`${rarityColor[wengineStats.rarity]}.main`}
             >
               <Typography
                 variant="subtitle1"
