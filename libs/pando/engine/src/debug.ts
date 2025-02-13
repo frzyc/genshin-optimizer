@@ -112,17 +112,16 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     }
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
-      result.deps = x.map((x) => x!.meta) //.filter(this.filter)
+      result.deps = x.map((x) => x!.meta)
       const oldDepCount = result.deps.length
       result.deps = result.deps.filter(this.filter)
       const filtered = oldDepCount - result.deps.length
       result.formula = `gather ${
         x.length
-      } node(s) (filtered ${filtered}) for ${this.tagStr(n.tag)} (${this.tagStr(
+      } node(s) (${filtered} filtered) for ${this.tagStr(n.tag)} (${this.tagStr(
         tag
       )})`
     }
-
     return result
   }
 }
