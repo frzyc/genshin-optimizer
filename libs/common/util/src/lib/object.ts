@@ -284,3 +284,7 @@ export function objSumInPlace(
   for (const k in add) base[k] = (base[k] ?? 0) + add[k]
   return base
 }
+
+export function prettify(obj: object | undefined) {
+  return JSON.stringify(obj, undefined, 2)
+}
