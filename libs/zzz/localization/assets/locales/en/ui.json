@@ -8,5 +8,7 @@
     "name": "Name",
     "level": "Level",
     "rarity": "Rarity"
-  }
+  },
+  "phase": "Phase {{value}}",
+  "selectlevel": "Select Level"
 }

@@ -59,11 +59,11 @@ function DataCard({ index }: { index: number }) {
   const { t } = useTranslation('page_settings')
   const numChar = 0 //database.chars.keys.length
   const numDiscs = database.discs.keys.length
-  const numLightCones = 0 // database.lightCones.keys.length
+  const numWengines = database.wengines.keys.length
   const numTeams = 0 // database.teams.keys.length
   const numBuilds = 0 // database.builds.keys.length
   const hasData = Boolean(
-    numChar || numDiscs || numLightCones || numTeams || numBuilds
+    numChar || numDiscs || numWengines || numTeams || numBuilds
   )
   const copyToClipboard = useCallback(
     () =>
@@ -166,7 +166,7 @@ function DataCard({ index }: { index: number }) {
             </Typography>
             <Typography noWrap>
               <Trans t={t} i18nKey="count.lightCones" />{' '}
-              <strong>{numLightCones}</strong>
+              <strong>{numWengines}</strong>
             </Typography>
             <Typography noWrap>
               <Trans t={t} i18nKey="count.teams" /> <strong>{numTeams}</strong>

@@ -10,6 +10,7 @@ import {
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
+import type { WenginePhaseKey } from '@genshin-optimizer/zzz/assets'
 import {
   specialityDefIcon,
   wengineAsset,
@@ -17,10 +18,11 @@ import {
 } from '@genshin-optimizer/zzz/assets'
 import type {
   LocationKey,
-  WengineKey,
+  PhaseKey,
   WengineSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import { discRarityColor as rarityColor } from '@genshin-optimizer/zzz/consts'
+import { useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Edit } from '@mui/icons-material'
 import {
@@ -39,24 +41,36 @@ import { LocationAutocomplete } from '../Character/LocationAutocomplete'
 import { LocationName } from '../Character/LocationName'
 import { ZCard } from '../Components'
 
+const wenginePhases: Record<PhaseKey, WenginePhaseKey> = {
+  1: 'p1',
+  2: 'p2',
+  3: 'p3',
+  4: 'p4',
+  5: 'p5',
+}
+
 export function WengineCard({
-  wengineKey,
+  wengineId,
   onEdit,
   setLocation,
-  extraButtons,
 }: {
-  wengineKey: WengineKey
+  wengineId: string
   onClick?: () => void
-  onEdit?: () => void
-  onDelete?: () => void
-  onLockToggle?: () => void
+  onEdit?: (wengineId: string) => void
   setLocation?: (lk: LocationKey) => void
-  extraButtons?: JSX.Element
 }) {
   const { t } = useTranslation('wengineNames')
   const [show, onShow, onHide] = useBoolState()
-  const wengineStats = getWengineStat(wengineKey)
-  const maxLvlWengine = getWengineStats(wengineKey, 60, 5)
+  const {
+    id = '',
+    key,
+    level = 0,
+    phase = 1,
+    location = '',
+  } = useWengine(wengineId) ?? {}
+  if (!key) return
+  const wengineStat = getWengineStat(key)
+  const wengineStats = getWengineStats(key, level, phase)
   return (
     <Suspense
       fallback={
@@ -116,10 +130,10 @@ export function WengineCard({
                       {
                         <ImgIcon
                           size={2}
-                          src={specialityDefIcon(wengineStats.type)}
+                          src={specialityDefIcon(wengineStat.type)}
                         />
                       }{' '}
-                      {t(`${wengineKey}`)}
+                      {t(`${key}`)}
                     </Typography>
                   </BootstrapTooltip>
                 </div>
@@ -128,7 +142,7 @@ export function WengineCard({
                 <Box
                   component={NextImage ? NextImage : 'img'}
                   alt="Wengine Image"
-                  src={wengineAsset(wengineKey, 'icon')}
+                  src={wengineAsset(key, 'icon')}
                   sx={{
                     width: 'auto',
                     float: 'right',
@@ -148,12 +162,12 @@ export function WengineCard({
                   }}
                   variant="h6"
                 >
-                  Lv.60
+                  Lv.{level}
                 </Typography>
                 <Box>
                   <ImgIcon
                     size={3}
-                    src={wenginePhaseIcon('p1')}
+                    src={wenginePhaseIcon(wenginePhases[phase])}
                     sx={{ py: '10px', margin: 0, width: '5em' }}
                   />{' '}
                 </Box>
@@ -167,7 +181,7 @@ export function WengineCard({
               gap={1}
               alignItems="center"
               width={'100%'}
-              color={`${rarityColor[wengineStats.rarity]}.main`}
+              color={`${rarityColor[wengineStat.rarity]}.main`}
             >
               <Typography
                 variant="subtitle1"
@@ -182,12 +196,12 @@ export function WengineCard({
                 <StatDisplay statKey={'atk'} />
               </Typography>
               <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                {maxLvlWengine['atk_base'].toFixed()}
+                {wengineStats['atk_base'].toFixed()}
               </Typography>
             </Box>
             <SubstatDisplay
-              substatKey={wengineStats['second_statkey']}
-              substatValue={maxLvlWengine[wengineStats['second_statkey']]}
+              substatKey={wengineStat['second_statkey']}
+              substatValue={wengineStats[wengineStat['second_statkey']]}
             />
           </Stack>
         </CardContent>
@@ -203,9 +217,9 @@ export function WengineCard({
         >
           <Box sx={{ flexGrow: 1 }}>
             {setLocation ? (
-              <LocationAutocomplete locKey={''} setLocKey={setLocation} />
+              <LocationAutocomplete locKey={location} setLocKey={setLocation} />
             ) : (
-              <LocationName location={''} />
+              <LocationName location={location} />
             )}
           </Box>
           <Box
@@ -221,12 +235,11 @@ export function WengineCard({
                 placement="top"
                 arrow
               >
-                <Button color="info" size="small" onClick={onEdit}>
+                <Button color="info" size="small" onClick={() => onEdit(id)}>
                   <Edit />
                 </Button>
               </BootstrapTooltip>
             )}
-            {extraButtons}
           </Box>
         </Box>
       </ZCard>
