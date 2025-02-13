@@ -196,7 +196,7 @@ export default function PageWengine() {
         />
       </Suspense>
       <WengineFilter
-        numShowing={1}
+        numShowing={wengineIds.length}
         total={totalWengineNum}
         wengineIds={wengineIds}
       />
