@@ -1,3 +1,4 @@
+import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
   read,
@@ -228,10 +229,11 @@ describe('char+wengine test', () => {
       expect(calc.compute(anby.base.atk).val).toBeCloseTo(1134.797)
       expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
 
-      calc
+      const debug = calc
         .withTag({ src: 'Anby', dst: 'Anby' })
         .toDebug()
-        .computeAndLog(read(formulas.Anby.standardDmgInst.tag, undefined))
+        .compute(read(formulas.Anby.standardDmgInst.tag, undefined))
+      console.log(prettify(debug))
 
       expect(
         calc
@@ -239,10 +241,12 @@ describe('char+wengine test', () => {
           .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
       ).toBeCloseTo(expectedStandardDmg)
 
-      calc
+      const debug2 = calc
         .withTag({ src: 'Anby', dst: 'Anby' })
         .toDebug()
-        .computeAndLog(read(formulas.Anby.anomalyDmgInst.tag, undefined))
+        .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined))
+      console.log(prettify(debug2))
+
       expect(
         calc
           .withTag({ src: 'Anby', dst: 'Anby' })
@@ -278,7 +282,7 @@ describe('disc2p test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    calc.toDebug().computeAndLog(anby.final.atk)
+    console.log(prettify(calc.toDebug().compute(anby.final.atk)))
     expect(calc.compute(anby.final.atk).val).toBeCloseTo(195)
     expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.66)
   })

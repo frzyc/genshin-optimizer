@@ -3,6 +3,7 @@ import {
   CodeBlock,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
+import { prettify } from '@genshin-optimizer/common/util'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -69,7 +70,7 @@ export function DebugListingsDisplay({
                             text={JSON.stringify(read, undefined, 2)}
                           />
                           formula:
-                          <CodeBlock text={debugCalc.prettify(debugMeta)} />
+                          <CodeBlock text={prettify(debugMeta)} />
                         </AccordionDetails>
                       </Accordion>
                     </Box>
@@ -113,7 +114,7 @@ export function DebugListingsDisplay({
                             text={JSON.stringify(read, undefined, 2)}
                           />
                           formula:
-                          <CodeBlock text={debugCalc.prettify(debugMeta)} />
+                          <CodeBlock text={prettify(debugMeta)} />
                         </AccordionDetails>
                       </Accordion>
                     </Box>
@@ -136,7 +137,7 @@ export function DebugReadModal() {
   const debug = read && debugCalc?.compute(read)
   const name = read?.tag['name'] || read?.tag['q']
   const meta = debug?.meta
-  const jsonStr = meta && debugCalc?.prettify(meta)
+  const jsonStr = meta && prettify(meta)
 
   return (
     <ModalWrapper open={!!read} onClose={() => setRead(undefined)}>

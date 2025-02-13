@@ -1,18 +1,10 @@
-import type {
-  AnyNode,
-  CalcResult,
-  NumNode,
-  PreRead,
-  ReRead,
-  StrNode,
-  TagCache,
-} from './node'
+import type { AnyNode, CalcResult, PreRead, ReRead, TagCache } from './node'
 import { Calculator as BaseCalculator, map } from './node'
 import type { Tag, TagMapEntries, TagMapEntry } from './tag'
 import { entryRef } from './tag/symb'
 
 type TagStr = (tag: Tag, ex?: any) => string
-type FilterFunc = (debug: DebugMeta) => boolean
+type Predicate = (debug: DebugMeta) => boolean
 
 /** Sequence of entries matched by gathering, in reverse order (final entry first) */
 type ReadSeq = [TagMapEntry<AnyNode>, ...TagMapEntries<ReRead>]
@@ -26,18 +18,18 @@ export type DebugMeta = {
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   tagStr: TagStr
-  filterFunc: FilterFunc
+  filter: Predicate
   gathering = new Set<TagCache<DebugMeta>>()
 
   constructor(
     calc: BaseCalculator<any>,
     tagStr: TagStr,
-    filterFunc: FilterFunc
+    filter: Predicate = () => true
   ) {
     super(calc.cache.keys)
     this.nodes = calc.nodes
     this.tagStr = tagStr
-    this.filterFunc = filterFunc
+    this.filter = filter
     this.cache = this.cache.with(calc.cache.tag)
   }
   override withTag(_tag: Tag): this {
@@ -120,36 +112,18 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     }
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
-      result.formula = `gather ${x.length} node(s) for ${this.tagStr(
-        n.tag
-      )} (${this.tagStr(tag)})`
-      result.deps = x.map((x) => x!.meta)
+      result.deps = x.map((x) => x!.meta) //.filter(this.filter)
+      const oldDepCount = result.deps.length
+      result.deps = result.deps.filter(this.filter)
+      const filtered = oldDepCount - result.deps.length
+      result.formula = `gather ${
+        x.length
+      } node(s) (filtered ${filtered}) for ${this.tagStr(n.tag)} (${this.tagStr(
+        tag
+      )})`
     }
+
     return result
-  }
-
-  filterDebug(debug: DebugMeta) {
-    for (let i = debug.deps.length - 1; i >= 0; i--) {
-      if (this.filterFunc(debug.deps[i])) {
-        debug.deps.splice(i, 1)
-        continue
-      }
-      debug.deps[i] = this.filterDebug(debug.deps[i])
-    }
-    return debug
-  }
-
-  prettify(debug: DebugMeta): string {
-    return JSON.stringify(this.filterDebug(debug), undefined, 2)
-  }
-
-  computeAndLog(n: NumNode): CalcResult<number, DebugMeta>
-  computeAndLog(n: StrNode): CalcResult<string, DebugMeta>
-  computeAndLog(n: AnyNode): CalcResult<number | string, DebugMeta>
-  computeAndLog(n: AnyNode): CalcResult<number | string, DebugMeta> {
-    const computed = this.compute(n)
-    console.log(this.prettify(computed.meta))
-    return computed
   }
 }
 

@@ -1,7 +1,7 @@
 import type { DebugMeta } from '@genshin-optimizer/pando/engine'
 
 export function createFilterDebug(equipmentKeys: string[]) {
-  return (debug: DebugMeta) => debugIsUnequippedEquipment(debug, equipmentKeys)
+  return (debug: DebugMeta) => !debugIsUnequippedEquipment(debug, equipmentKeys)
 }
 
 function debugIsUnequippedEquipment(debug: DebugMeta, equipmentKeys: string[]) {
