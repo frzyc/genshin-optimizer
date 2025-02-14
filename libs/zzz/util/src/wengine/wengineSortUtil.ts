@@ -1,8 +1,10 @@
 import type { FilterConfigs, SortConfigs } from '@genshin-optimizer/common/util'
-import type { WengineSortKey } from '@genshin-optimizer/zzz/consts'
 import { i18n } from '@genshin-optimizer/zzz/i18n'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
+
+export const wengineSortKeys = ['level', 'rarity', 'name'] as const
+export type WengineSortKey = (typeof wengineSortKeys)[number]
 
 export function wengineSortConfigs(): SortConfigs<WengineSortKey, IWengine> {
   return {

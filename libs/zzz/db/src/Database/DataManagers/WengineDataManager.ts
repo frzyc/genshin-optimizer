@@ -46,9 +46,6 @@ export class WengineDataManager extends DataManager<
   ): ICachedWengine | undefined {
     const newWengine = { ...storageObj, id }
     const oldWengine = super.get(id)
-    // Disallow unequipping of wengines
-    if (!newWengine.location && oldWengine?.location) return undefined
-
     // During initialization of the database, if you import wengines with location without a corresponding character, the char will be generated here.
     const getWithInit = (cKey: CharacterKey): CharacterData => {
       if (!this.database.chars.keys.includes(cKey))

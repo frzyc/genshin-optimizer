@@ -1,3 +1,4 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   useForceUpdate,
   useMediaQueryUp,
@@ -8,11 +9,12 @@ import {
   useInfScroll,
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
-import type { WengineKey, WengineSortKey } from '@genshin-optimizer/zzz/consts'
+import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import { initialWengine } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { WengineCard } from '@genshin-optimizer/zzz/ui'
+import type { WengineSortKey } from '@genshin-optimizer/zzz/util'
 import {
   wengineFilterConfigs,
   wengineSortConfigs,
@@ -35,7 +37,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
 import WengineFilter from './WengineFilter'
 
@@ -46,15 +47,11 @@ const sortKeys = Object.keys(wengineSortMap)
 export default function PageWengine() {
   const { t } = useTranslation(['page_wengine', 'ui'])
   const { database } = useDatabaseContext()
-  const [state, setState] = useState(database.displayWengine.get())
-  useEffect(
-    () => database.displayWengine.follow((_, dbMeta) => setState(dbMeta)),
-    [database]
-  )
+  const state = useDataEntryBase(database.displayWengine)
   const [dbDirty, forceUpdate] = useForceUpdate()
   //set follow, should run only once
   useEffect(() => {
-    ReactGA.send({ hitType: 'pageview', page: '/wengine' })
+    //ReactGA.send({ hitType: 'pageview', page: '/wengine' }) Needs Google Analytics
     return database.wengines.followAny(
       (_, r) =>
         (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
@@ -101,12 +98,12 @@ export default function PageWengine() {
       )
       .sort(
         sortFunction(
-          wengineSortMap[sortType] ?? [],
+          wengineSortMap[sortType as WengineSortKey] ?? [],
           ascending,
           wengineSortConfigs()
         )
       )
-      .map((key) => key.key)
+      .map((key) => key.id)
     return dbDirty && { wengineIds, totalWengineNum }
   }, [
     database.wengines.values,
@@ -166,7 +163,7 @@ export default function PageWengine() {
         }
       >
         <WengineFilter
-          numShowing={1}
+          numShowing={wengineIds.length}
           total={totalWengineNum}
           wengineIds={wengineIds}
         />
@@ -210,10 +207,10 @@ export default function PageWengine() {
           {t('page_wengine:addWengine')}
         </Button>
         <Grid container spacing={1} columns={columns}>
-          {wengineIds.map((wengineKey) => (
-            <Grid item key={wengineKey} xs={1}>
+          {wengineIds.map((wengineIds) => (
+            <Grid item key={wengineIds} xs={1}>
               <WengineCard
-                wengineKey={wengineKey}
+                wengineId={wengineIds}
                 onEdit={() => {}}
                 onDelete={() => {}}
                 setLocation={() => {}}
