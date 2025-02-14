@@ -3,5 +3,10 @@
   "locked": "Locked",
   "unlocked": "Unlocked",
   "reset": "Reset",
-  "discFilter": "Disc Filter"
+  "discFilter": "Disc Filter",
+  "sortMap": {
+    "name": "Name",
+    "level": "Level",
+    "rarity": "Rarity"
+  }
 }

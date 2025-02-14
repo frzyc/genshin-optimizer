@@ -1,0 +1,25 @@
+{
+  "wengineFilterTitle": "Wengine Filter",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Wengine",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Wengines",
+  "edit": "Edit Wengine",
+  "wengineName": "Wengine Name",
+  "removeWengine": "Are you sure you want to remove {{value}}?",
+  "addWengine": "Add New Wengine",
+  "cantDeleteLock": "Cannot delete wengine because it is locked",
+  "button": {
+    "deleteWengines": "Delete Wengines",
+    "lockWengines": "Lock Wengines",
+    "unlockWengines": "Unlock Wengines"
+  },
+  "buttonHint": "Note: the red buttons above only apply to <1>filtered wengines</1>",
+  "equippedWengine": "All Equipped Wengines",
+  "wengineInInv": "All Unequipped Wengines",
+  "locationsTooltip": "Disable \"All Equipped Wengine\" to filter by specific characters",
+  "subheadings": {
+    "general": "General",
+    "inventory": "Inventory"
+  },
+  "refinement": "Refinement <1>{{rank}}</1>",
+  "tcBuild": "TC Build"
+}
