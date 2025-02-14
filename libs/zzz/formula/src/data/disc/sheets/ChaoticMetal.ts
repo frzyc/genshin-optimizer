@@ -1,39 +1,26 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
+import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
 import { registerDisc } from '../util'
 
 const key: DiscSetKey = 'ChaoticMetal'
 
 const discCount = own.common.count.sheet(key)
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
-
+const { trigger_corruption } = allBoolConditionals(key)
 const sheet = registerDisc(
   key,
-
-  // TODO: Add formulas/buffs
+  //passive
+  registerBuff(
+    'set4_passive',
+    ownBuff.combat.crit_dmg_.add(cmpGE(discCount, 4, 0.2))
+  ),
   // Conditional buffs
   registerBuff(
-    'set2_dmg_',
-    ownBuff.combat.dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1)))
-  ),
-  registerBuff(
-    'team_dmg_',
-    teamBuff.combat.dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
-  ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.dmgRed_.add(numConditional))
+    'set4_cond',
+    ownBuff.combat.crit_dmg_.add(
+      cmpGE(discCount, 4, trigger_corruption.ifOn(0.2))
+    )
+  )
 )
 export default sheet

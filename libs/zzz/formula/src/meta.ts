@@ -25,24 +25,10 @@ export const conditionals = {
     },
   },
   ChaoticMetal: {
-    boolConditional: {
+    trigger_corruption: {
       sheet: 'ChaoticMetal',
-      name: 'boolConditional',
+      name: 'trigger_corruption',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ChaoticMetal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ChaoticMetal',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   FangedMetal: {
@@ -1099,26 +1085,26 @@ export const buffs = {
     },
   },
   BranchBladeSong: {
-    '4p_cond': {
+    set4_cond: {
       sheet: 'BranchBladeSong',
-      name: '4p_cond',
+      name: 'set4_cond',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'crit_',
         sheet: 'BranchBladeSong',
-        name: '4p_cond',
+        name: 'set4_cond',
       },
     },
-    '4p_passive': {
+    set4_passive: {
       sheet: 'BranchBladeSong',
-      name: '4p_passive',
+      name: 'set4_passive',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'crit_dmg_',
         sheet: 'BranchBladeSong',
-        name: '4p_passive',
+        name: 'set4_passive',
       },
     },
   },
@@ -1177,37 +1163,26 @@ export const buffs = {
     },
   },
   ChaoticMetal: {
-    enemy_defIgn_: {
+    set4_cond: {
       sheet: 'ChaoticMetal',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ChaoticMetal',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ChaoticMetal',
-      name: 'set2_dmg_',
+      name: 'set4_cond',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'crit_dmg_',
         sheet: 'ChaoticMetal',
-        name: 'set2_dmg_',
+        name: 'set4_cond',
       },
     },
-    team_dmg_: {
+    set4_passive: {
       sheet: 'ChaoticMetal',
-      name: 'team_dmg_',
+      name: 'set4_passive',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'crit_dmg_',
         sheet: 'ChaoticMetal',
-        name: 'team_dmg_',
+        name: 'set4_passive',
       },
     },
   },

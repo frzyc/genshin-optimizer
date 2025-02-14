@@ -127,4 +127,18 @@ describe('Disc sheets test', () => {
     expect(calc.compute(anby.final.dmg_.special[0]).val).toBeCloseTo(0.2)
     expect(calc.compute(anby.final.dmg_.assist[0]).val).toBeCloseTo(0.2)
   })
+  it('ChaoticMetal 4p', () => {
+    const data = testCharacterData('ChaoticMetal')
+    data.push(
+      cond('ChaoticMetal', conditionals.ChaoticMetal.trigger_corruption.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Anby', dst: 'Anby' })
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    expect(calc.compute(anby.final.dmg_.ether).val).toBeCloseTo(0.1) // 2p passive
+    expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.2 * 2)
+  })
 })
