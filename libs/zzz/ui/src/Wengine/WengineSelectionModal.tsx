@@ -79,7 +79,10 @@ export function WengineSelectionModal({
               .toLowerCase()
               .includes(deferredSearchTerm.toLowerCase())
         )
-        .filter((wKey) => rarity.includes(getWengineStat(wKey).rarity)),
+        .filter((wKey) => rarity.includes(getWengineStat(wKey).rarity))
+        .sort((a, b) => {
+          return getWengineStat(b).rarity < getWengineStat(a).rarity ? -1 : 1
+        }),
     [deferredSearchTerm, rarity, t, wengineFilter]
   )
 

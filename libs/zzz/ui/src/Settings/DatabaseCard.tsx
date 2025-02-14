@@ -162,10 +162,10 @@ function DataCard({ index }: { index: number }) {
               <Trans t={t} i18nKey="count.chars" /> <strong>{numChar}</strong>
             </Typography>
             <Typography noWrap>
-              <Trans t={t} i18nKey="count.relics" /> <strong>{numDiscs}</strong>
+              <Trans t={t} i18nKey="count.discs" /> <strong>{numDiscs}</strong>
             </Typography>
             <Typography noWrap>
-              <Trans t={t} i18nKey="count.lightCones" />{' '}
+              <Trans t={t} i18nKey="count.wengines" />{' '}
               <strong>{numWengines}</strong>
             </Typography>
             <Typography noWrap>

@@ -100,7 +100,6 @@ export class DisplayWengineEntry extends DataEntry<
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset') return super.set(initialOption())
-      console.log(value)
       return false
     } else return super.set(value)
   }

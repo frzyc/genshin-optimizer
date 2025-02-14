@@ -6,17 +6,9 @@ import {
   ModalWrapper,
   NextImage,
 } from '@genshin-optimizer/common/ui'
-import {
-  getUnitStr,
-  statKeyToFixed,
-  toPercent,
-} from '@genshin-optimizer/common/util'
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
 import { rarityDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
-import type {
-  LocationKey,
-  WengineSubStatKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { LocationKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedWengine } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
@@ -41,6 +33,7 @@ import { LevelSelect } from '../LevelSelect'
 import { TransHack } from '../util/TransHack'
 import { PhaseDropdown } from './PhaseDropdown'
 import { WengineSelectionModal } from './WengineSelectionModal'
+import { WengineSubstatDisplay } from './WengineSubstatDisplay'
 
 type WengineStatsEditorCardProps = {
   wengineId: string
@@ -241,7 +234,7 @@ export function WengineEditor({
                         </Typography>
                       </Box>
 
-                      <SubstatDisplay
+                      <WengineSubstatDisplay
                         substatKey={wengineStat.second_statkey}
                         substatValue={
                           wengineStats
@@ -282,37 +275,5 @@ export function WengineEditor({
         )}
       </CardThemed>
     </ModalWrapper>
-  )
-}
-
-function SubstatDisplay({
-  substatKey,
-  substatValue,
-}: {
-  substatKey: WengineSubStatKey
-  substatValue: number
-}) {
-  if (!substatKey) return null
-  const displayValue = toPercent(substatValue, substatKey).toFixed(
-    statKeyToFixed(substatKey)
-  )
-  return (
-    <Typography
-      variant="subtitle2"
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        fontWeight: 'bold',
-      }}
-    >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <StatDisplay statKey={substatKey} />
-      </Box>
-      <span>
-        {displayValue}
-        {getUnitStr(substatKey)}
-      </span>
-    </Typography>
   )
 }
