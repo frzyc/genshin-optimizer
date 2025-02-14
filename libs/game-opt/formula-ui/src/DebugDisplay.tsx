@@ -3,7 +3,7 @@ import {
   CodeBlock,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
-import type { DebugMeta } from '@genshin-optimizer/pando/engine'
+import { prettify } from '@genshin-optimizer/common/util'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -19,19 +19,19 @@ import {
 import { Box, Stack } from '@mui/system'
 import { useContext } from 'react'
 import { CalcContext, DebugReadContext, TagContext } from './context'
-import type { FilterFunc, GenericRead } from './types'
+import type { GenericRead } from './types'
 
 export function DebugListingsDisplay({
   formulasRead,
   buffsRead,
-  filterFunc,
 }: {
   formulasRead: GenericRead
   buffsRead: GenericRead
-  filterFunc: FilterFunc
 }) {
   const tag = useContext(TagContext)
   const calc = useContext(CalcContext)?.withTag(tag)
+  const debugCalc = calc?.toDebug()
+
   return (
     <CardThemed bgt="dark">
       <CardContent>
@@ -41,45 +41,33 @@ export function DebugListingsDisplay({
           </AccordionSummary>
           <AccordionDetails>
             <Stack>
-              {calc?.listFormulas(formulasRead).map((read, index) => {
-                const computed = calc.compute(read)
-                const name = read.tag.name || read.tag.q
-                return (
-                  <Box key={`${name}${index}`}>
-                    <Typography>
-                      {name}: {computed.val}
-                    </Typography>
-                    <Accordion>
-                      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        debug for {name}
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        conds:
-                        <CodeBlock
-                          text={JSON.stringify(
-                            computed.meta.conds,
-                            undefined,
-                            2
-                          )}
-                        />
-                        read:
-                        <CodeBlock text={JSON.stringify(read, undefined, 2)} />
-                        formula:
-                        <CodeBlock
-                          text={JSON.stringify(
-                            filterDebug(
-                              calc.toDebug().compute(read).meta,
-                              filterFunc
-                            ),
-                            undefined,
-                            2
-                          )}
-                        />
-                      </AccordionDetails>
-                    </Accordion>
-                  </Box>
-                )
-              })}
+              {calc &&
+                debugCalc &&
+                calc.listFormulas(formulasRead).map((read, index) => {
+                  const computed = calc.compute(read)
+                  const debugMeta = debugCalc.compute(read).meta
+                  const name = read.tag.name || read.tag.q
+                  return (
+                    <Box key={`${name}${index}`}>
+                      <Typography>
+                        {name}: {computed.val}
+                      </Typography>
+                      <Accordion>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                          debug for {name}
+                        </AccordionSummary>
+                        <AccordionDetails>
+                          conds:
+                          <CodeBlock text={prettify(computed.meta.conds)} />
+                          read:
+                          <CodeBlock text={prettify(read)} />
+                          formula:
+                          <CodeBlock text={prettify(debugMeta)} />
+                        </AccordionDetails>
+                      </Accordion>
+                    </Box>
+                  )
+                })}
             </Stack>
           </AccordionDetails>
         </Accordion>
@@ -89,45 +77,33 @@ export function DebugListingsDisplay({
           </AccordionSummary>
           <AccordionDetails>
             <Stack>
-              {calc?.listFormulas(buffsRead).map((read, index) => {
-                const computed = calc.compute(read)
-                const name = read.tag.name || read.tag.q
-                return (
-                  <Box key={`${name}${index}`}>
-                    <Typography>
-                      {name}: {computed.val}
-                    </Typography>
-                    <Accordion>
-                      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        debug for {name}
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        conds:
-                        <CodeBlock
-                          text={JSON.stringify(
-                            computed.meta.conds,
-                            undefined,
-                            2
-                          )}
-                        />
-                        read:
-                        <CodeBlock text={JSON.stringify(read, undefined, 2)} />
-                        formula:
-                        <CodeBlock
-                          text={JSON.stringify(
-                            filterDebug(
-                              calc.toDebug().compute(read).meta,
-                              filterFunc
-                            ),
-                            undefined,
-                            2
-                          )}
-                        />
-                      </AccordionDetails>
-                    </Accordion>
-                  </Box>
-                )
-              })}
+              {calc &&
+                debugCalc &&
+                calc.listFormulas(buffsRead).map((read, index) => {
+                  const computed = calc.compute(read)
+                  const debugMeta = debugCalc.compute(read).meta
+                  const name = read.tag.name || read.tag.q
+                  return (
+                    <Box key={`${name}${index}`}>
+                      <Typography>
+                        {name}: {computed.val}
+                      </Typography>
+                      <Accordion>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                          debug for {name}
+                        </AccordionSummary>
+                        <AccordionDetails>
+                          conds:
+                          <CodeBlock text={prettify(computed.meta.conds)} />
+                          read:
+                          <CodeBlock text={prettify(read)} />
+                          formula:
+                          <CodeBlock text={prettify(debugMeta)} />
+                        </AccordionDetails>
+                      </Accordion>
+                    </Box>
+                  )
+                })}
             </Stack>
           </AccordionDetails>
         </Accordion>
@@ -136,16 +112,16 @@ export function DebugListingsDisplay({
   )
 }
 
-export function DebugReadModal({ filterFunc }: { filterFunc: FilterFunc }) {
+export function DebugReadModal() {
   const tag = useContext(TagContext)
   const calculator = useContext(CalcContext)?.withTag(tag)
+  const debugCalc = calculator?.toDebug()
   const { read, setRead } = useContext(DebugReadContext)
   const computed = read && calculator?.compute(read)
-  const debug = read && calculator?.toDebug().compute(read)
+  const debug = read && debugCalc?.compute(read)
   const name = read?.tag['name'] || read?.tag['q']
   const meta = debug?.meta
-  const jsonStr =
-    meta && JSON.stringify(filterDebug(meta, filterFunc), undefined, 2)
+  const jsonStr = meta && prettify(meta)
 
   return (
     <ModalWrapper open={!!read} onClose={() => setRead(undefined)}>
@@ -165,7 +141,7 @@ export function DebugReadModal({ filterFunc }: { filterFunc: FilterFunc }) {
                 Computed value: {computed?.val}
                 <Divider />
                 <Typography variant="h6">Read</Typography>
-                <CodeBlock text={JSON.stringify(read, undefined, 2)} />
+                <CodeBlock text={prettify(read)} />
                 <Divider />
                 <Typography variant="h6">Calculator Tag</Typography>
                 <CodeBlock text={JSON.stringify(calculator?.cache.tag)} />
@@ -174,9 +150,7 @@ export function DebugReadModal({ filterFunc }: { filterFunc: FilterFunc }) {
                 <CodeBlock text={JSON.stringify(tag)} />
                 <Divider />
                 <Typography variant="h6">Conditionals</Typography>
-                <CodeBlock
-                  text={JSON.stringify(computed?.meta.conds, undefined, 2)}
-                />
+                <CodeBlock text={prettify(computed?.meta.conds)} />
                 <Divider />
                 <Typography variant="h6">Formula</Typography>
                 <CodeBlock text={jsonStr || ''} />
@@ -187,15 +161,4 @@ export function DebugReadModal({ filterFunc }: { filterFunc: FilterFunc }) {
       </CardThemed>
     </ModalWrapper>
   )
-}
-
-function filterDebug(debug: DebugMeta, filterFunc: FilterFunc) {
-  for (let i = debug.deps.length - 1; i >= 0; i--) {
-    if (filterFunc(debug.deps[i])) {
-      debug.deps.splice(i, 1)
-      continue
-    }
-    debug.deps[i] = filterDebug(debug.deps[i], filterFunc)
-  }
-  return debug
 }

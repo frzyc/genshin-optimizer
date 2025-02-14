@@ -4,6 +4,7 @@ import type { Tag, TagMapEntries, TagMapEntry } from './tag'
 import { entryRef } from './tag/symb'
 
 type TagStr = (tag: Tag, ex?: any) => string
+type Predicate = (debug: DebugMeta) => boolean
 
 /** Sequence of entries matched by gathering, in reverse order (final entry first) */
 type ReadSeq = [TagMapEntry<AnyNode>, ...TagMapEntries<ReRead>]
@@ -17,12 +18,18 @@ export type DebugMeta = {
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   tagStr: TagStr
+  filter: Predicate
   gathering = new Set<TagCache<DebugMeta>>()
 
-  constructor(calc: BaseCalculator<any>, tagStr: TagStr) {
+  constructor(
+    calc: BaseCalculator<any>,
+    tagStr: TagStr,
+    filter: Predicate = () => true
+  ) {
     super(calc.cache.keys)
     this.nodes = calc.nodes
     this.tagStr = tagStr
+    this.filter = filter
     this.cache = this.cache.with(calc.cache.tag)
   }
   override withTag(_tag: Tag): this {
@@ -105,10 +112,15 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     }
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
-      result.formula = `gather ${x.length} node(s) for ${this.tagStr(
-        n.tag
-      )} (${this.tagStr(tag)})`
       result.deps = x.map((x) => x!.meta)
+      const oldDepCount = result.deps.length
+      result.deps = result.deps.filter(this.filter)
+      const filtered = oldDepCount - result.deps.length
+      result.formula = `gather ${
+        x.length
+      } node(s) (${filtered} filtered) for ${this.tagStr(n.tag)} (${this.tagStr(
+        tag
+      )})`
     }
     return result
   }
