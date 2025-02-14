@@ -38,6 +38,27 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  FreedomBlues: {
+    boolConditional: {
+      sheet: 'FreedomBlues',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'FreedomBlues',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'FreedomBlues',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   HormonePunk: {
     boolConditional: {
       sheet: 'HormonePunk',
@@ -1147,6 +1168,41 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'FangedMetal',
         name: 'set4_cond_inflict_assault',
+      },
+    },
+  },
+  FreedomBlues: {
+    enemy_defIgn_: {
+      sheet: 'FreedomBlues',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'FreedomBlues',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'FreedomBlues',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'FreedomBlues',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'FreedomBlues',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'FreedomBlues',
+        name: 'team_dmg_',
       },
     },
   },
