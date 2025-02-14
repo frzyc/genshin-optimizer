@@ -83,9 +83,6 @@ export const allWengineSubStatKeys = [
 ] as const
 export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
 
-export const wengineSortKeys = ['level', 'rarity', 'name'] as const
-export type WengineSortKey = (typeof wengineSortKeys)[number]
-
 export const allPhaseKeys = [1, 2, 3, 4, 5] as const
 export type PhaseKey = (typeof allPhaseKeys)[number]
 export const allWengineCondKeys = {

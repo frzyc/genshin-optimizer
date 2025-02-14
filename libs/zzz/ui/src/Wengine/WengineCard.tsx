@@ -16,12 +16,12 @@ import {
   wengineAsset,
   wenginePhaseIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type {
-  LocationKey,
-  PhaseKey,
-  WengineSubStatKey,
+import type { PhaseKey } from '@genshin-optimizer/zzz/consts'
+import {
+  rarityColor,
+  type LocationKey,
+  type WengineSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
-import { rarityColor } from '@genshin-optimizer/zzz/consts'
 import { useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Edit } from '@mui/icons-material'

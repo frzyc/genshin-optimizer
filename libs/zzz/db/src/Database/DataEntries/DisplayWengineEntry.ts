@@ -3,14 +3,16 @@ import type {
   LocationKey,
   SpecialityKey,
   WengineRarityKey,
-  WengineSortKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
   allLocationKeys,
   allSpecialityKeys,
   allWengineRarityKeys,
-  wengineSortKeys,
 } from '@genshin-optimizer/zzz/consts'
+import {
+  wengineSortKeys,
+  type WengineSortKey,
+} from '@genshin-optimizer/zzz/util'
 import type { ZzzDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
 
@@ -71,12 +73,10 @@ export class DisplayWengineEntry extends DataEntry<
     )
       sortType = wengineSortKeys[0]
     if (typeof ascending !== 'boolean') ascending = false
-    if (!Array.isArray(rarity)) rarity = [...allWengineRarityKeys]
-    else rarity = rarity.filter((r) => allWengineRarityKeys.includes(r))
-    if (!Array.isArray(speciality)) speciality = [...allSpecialityKeys]
-    else speciality = speciality.filter((r) => allSpecialityKeys.includes(r))
     if (typeof showEquipped !== 'boolean') showEquipped = true
     if (typeof showInventory !== 'boolean') showInventory = true
+    speciality = validateArr(speciality, allSpecialityKeys, [])
+    rarity = validateArr(rarity, allWengineRarityKeys, [])
     locked = validateArr(locked, ['locked', 'unlocked'])
     locations = validateArr(locations, allLocationKeys, [])
     const data: IDisplayWengine = {

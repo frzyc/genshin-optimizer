@@ -1,14 +1,11 @@
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   BootstrapTooltip,
   CardThemed,
   SolidToggleButtonGroup,
   theme,
 } from '@genshin-optimizer/common/ui'
-import {
-  bulkCatTotal,
-  catTotal,
-  handleMultiSelect,
-} from '@genshin-optimizer/common/util'
+import { bulkCatTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
 import {
   allLocationKeys,
   allSpecialityKeys,
@@ -37,7 +34,7 @@ import {
   ToggleButton,
   Typography,
 } from '@mui/material'
-import { Suspense, useEffect, useMemo, useState } from 'react'
+import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 const lockedValues = ['locked', 'unlocked'] as const
@@ -55,59 +52,43 @@ export default function WengineFilter({
 }) {
   const { t } = useTranslation(['page_wengine', 'ui'])
   const { database } = useDatabaseContext()
-  const [state, setState] = useState(database.displayWengine.get())
-
-  useEffect(() => {
-    database.displayWengine.follow((_, dbMeta) => setState(dbMeta))
-  }, [database])
+  const state = useDataEntryBase(database.displayWengine)
 
   const { speciality, rarity, locked, showEquipped, showInventory, locations } =
     state
 
-  const wengineTotals = useMemo(
-    () =>
-      catTotal(allSpecialityKeys, (sk) =>
-        database.wengines.entries.forEach(([id, wengine]) => {
-          const wek = getWengineStat(wengine.key).type
-          sk[wek].total++
-          if (wengineIds.includes(id)) sk[wek].current++
-        })
-      ),
-    [database.wengines.entries, wengineIds]
-  )
-
-  const wengineRarityTotals = useMemo(
-    () =>
-      catTotal(allWengineRarityKeys, (ct) =>
-        database.wengines.entries.forEach(([id, wengine]) => {
-          const rk = getWengineStat(wengine.key).rarity
-          if (rk) {
-            ct[rk].total++
-            if (wengineIds.includes(id)) ct[rk].current++
-          }
-        })
-      ),
-    [database.wengines.entries, wengineIds]
-  )
-
-  const { lockedTotal, equippedTotal, locationTotal } = useMemo(() => {
+  const {
+    lockedTotal,
+    equippedTotal,
+    locationTotal,
+    wengineTotals,
+    wengineRarityTotals,
+  } = useMemo(() => {
     const catKeys = {
       lockedTotal: ['locked', 'unlocked'],
       equippedTotal: ['equipped', 'unequipped'],
       locationTotal: [...allLocationKeys, ''],
+      wengineTotals: [...allSpecialityKeys],
+      wengineRarityTotals: [...allWengineRarityKeys],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.wengines.entries.forEach(([id, wengine]) => {
         const location = wengine.location
         const lock = wengine.lock ? 'locked' : 'unlocked'
         const equipped = location ? 'equipped' : 'unequipped'
+        const speciality = getWengineStat(wengine.key).type
+        const rarity = getWengineStat(wengine.key).rarity
         ctMap['lockedTotal'][lock].total++
         ctMap['equippedTotal'][equipped].total++
         ctMap['locationTotal'][location].total++
+        ctMap['wengineTotals'][speciality].total++
+        ctMap['wengineRarityTotals'][rarity].total++
         if (wengineIds.includes(id)) {
           ctMap['lockedTotal'][lock].current++
           ctMap['equippedTotal'][equipped].current++
           ctMap['locationTotal'][location].current++
+          ctMap['wengineTotals'][speciality].current++
+          ctMap['wengineRarityTotals'][rarity].current++
         }
       })
     )
