@@ -292,7 +292,9 @@ describe('sheet', () => {
   test('buff entries', () => {
     const sheets = new Set([
       ...allCharacterKeys,
+      'wengine',
       ...allWengineKeys,
+      'disc',
       ...allDiscSetKeys,
     ])
     for (const { tag } of data) {

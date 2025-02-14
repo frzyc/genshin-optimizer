@@ -1,9 +1,9 @@
 import { isIn } from '@genshin-optimizer/common/util'
 import {
   allCharacterKeys,
-  allLightConeKeys,
-  allRelicSetKeys,
-} from '@genshin-optimizer/sr/consts'
+  allDiscSetKeys,
+  allWengineKeys,
+} from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'
 import genSheet from './genSheet'
@@ -18,13 +18,13 @@ export default async function genSheetGenerator(
       if (!isIn(allCharacterKeys, sheet))
         return console.error(`Character with key ${sheet} does not exist.`)
       break
-    case 'lightCone':
-      if (!isIn(allLightConeKeys, sheet))
-        return console.error(`Light Cone with key ${sheet} does not exist.`)
+    case 'wengine':
+      if (!isIn(allWengineKeys, sheet))
+        return console.error(`W-Engine with key ${sheet} does not exist.`)
       break
-    case 'relic':
-      if (!isIn(allRelicSetKeys, sheet))
-        return console.error(`Relic set with key ${sheet} does not exist.`)
+    case 'Disc':
+      if (!isIn(allDiscSetKeys, sheet))
+        return console.error(`Drive Disc with key ${sheet} does not exist.`)
       break
     default:
       console.error('Invalid sheet type')

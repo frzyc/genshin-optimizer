@@ -1,5 +1,261 @@
 // WARNING: Generated file, do not modify
-export const conditionals = {} as const
+export const conditionals = {
+  AstralVoice: {
+    astral: {
+      sheet: 'AstralVoice',
+      name: 'astral',
+      type: 'num',
+      int_only: true,
+      min: 1,
+      max: 3,
+    },
+  },
+  BranchBladeSong: {
+    apply_or_trigger: {
+      sheet: 'BranchBladeSong',
+      name: 'apply_or_trigger',
+      type: 'bool',
+    },
+  },
+  ChaosJazz: {
+    while_off_field: {
+      sheet: 'ChaosJazz',
+      name: 'while_off_field',
+      type: 'bool',
+    },
+  },
+  ChaoticMetal: {
+    trigger_corruption: {
+      sheet: 'ChaoticMetal',
+      name: 'trigger_corruption',
+      type: 'bool',
+    },
+  },
+  FangedMetal: {
+    inflict_assault: {
+      sheet: 'FangedMetal',
+      name: 'inflict_assault',
+      type: 'bool',
+    },
+  },
+  FreedomBlues: {
+    boolConditional: {
+      sheet: 'FreedomBlues',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'FreedomBlues',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'FreedomBlues',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  HormonePunk: {
+    boolConditional: {
+      sheet: 'HormonePunk',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'HormonePunk',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'HormonePunk',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  InfernoMetal: {
+    hitting_burning_enemy: {
+      sheet: 'InfernoMetal',
+      name: 'hitting_burning_enemy',
+      type: 'bool',
+    },
+  },
+  PolarMetal: {
+    boolConditional: {
+      sheet: 'PolarMetal',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'PolarMetal',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'PolarMetal',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ProtoPunk: {
+    boolConditional: {
+      sheet: 'ProtoPunk',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ProtoPunk',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ProtoPunk',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  PufferElectro: {
+    boolConditional: {
+      sheet: 'PufferElectro',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'PufferElectro',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'PufferElectro',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ShockstarDisco: {
+    boolConditional: {
+      sheet: 'ShockstarDisco',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ShockstarDisco',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ShockstarDisco',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  SoulRock: {
+    boolConditional: {
+      sheet: 'SoulRock',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'SoulRock',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'SoulRock',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  SwingJazz: {
+    boolConditional: {
+      sheet: 'SwingJazz',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'SwingJazz',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'SwingJazz',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ThunderMetal: {
+    boolConditional: {
+      sheet: 'ThunderMetal',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ThunderMetal',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ThunderMetal',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  WoodpeckerElectro: {
+    boolConditional: {
+      sheet: 'WoodpeckerElectro',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'WoodpeckerElectro',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'WoodpeckerElectro',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+} as const
 export const formulas = {
   Anby: {
     anomalyDmgInst: {
@@ -786,4 +1042,496 @@ export const formulas = {
     },
   },
 } as const
-export const buffs = {} as const
+export const buffs = {
+  AstralVoice: {
+    set4_team_dmg_: {
+      sheet: 'AstralVoice',
+      name: 'set4_team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'AstralVoice',
+        name: 'set4_team_dmg_',
+      },
+    },
+  },
+  BranchBladeSong: {
+    set4_cond: {
+      sheet: 'BranchBladeSong',
+      name: 'set4_cond',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_',
+        sheet: 'BranchBladeSong',
+        name: 'set4_cond',
+      },
+    },
+    set4_passive: {
+      sheet: 'BranchBladeSong',
+      name: 'set4_passive',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'BranchBladeSong',
+        name: 'set4_passive',
+      },
+    },
+  },
+  ChaosJazz: {
+    set4_off_field_assist_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_off_field_assist_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        damageType2: 'assist',
+        name: 'set4_off_field_assist_dmg_',
+      },
+    },
+    set4_off_field_special_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_off_field_special_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        damageType2: 'special',
+        name: 'set4_off_field_special_dmg_',
+      },
+    },
+    set4_passive_electric_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_passive_electric_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        attribute: 'electric',
+        name: 'set4_passive_electric_dmg_',
+      },
+    },
+    set4_passive_fire_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_passive_fire_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        attribute: 'fire',
+        name: 'set4_passive_fire_dmg_',
+      },
+    },
+  },
+  ChaoticMetal: {
+    set4_cond_trigger_corruption: {
+      sheet: 'ChaoticMetal',
+      name: 'set4_cond_trigger_corruption',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'ChaoticMetal',
+        name: 'set4_cond_trigger_corruption',
+      },
+    },
+    set4_passive: {
+      sheet: 'ChaoticMetal',
+      name: 'set4_passive',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'ChaoticMetal',
+        name: 'set4_passive',
+      },
+    },
+  },
+  FangedMetal: {
+    set4_cond_inflict_assault: {
+      sheet: 'FangedMetal',
+      name: 'set4_cond_inflict_assault',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'FangedMetal',
+        name: 'set4_cond_inflict_assault',
+      },
+    },
+  },
+  FreedomBlues: {
+    enemy_defIgn_: {
+      sheet: 'FreedomBlues',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'FreedomBlues',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'FreedomBlues',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'FreedomBlues',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'FreedomBlues',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'FreedomBlues',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  HormonePunk: {
+    enemy_defIgn_: {
+      sheet: 'HormonePunk',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'HormonePunk',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'HormonePunk',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'HormonePunk',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'HormonePunk',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'HormonePunk',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  InfernoMetal: {
+    set4_cond_hitting_burning_enemy: {
+      sheet: 'InfernoMetal',
+      name: 'set4_cond_hitting_burning_enemy',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_',
+        sheet: 'InfernoMetal',
+        name: 'set4_cond_hitting_burning_enemy',
+      },
+    },
+  },
+  PolarMetal: {
+    enemy_defIgn_: {
+      sheet: 'PolarMetal',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'PolarMetal',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'PolarMetal',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'PolarMetal',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PolarMetal',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'PolarMetal',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ProtoPunk: {
+    enemy_defIgn_: {
+      sheet: 'ProtoPunk',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'ProtoPunk',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'ProtoPunk',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ProtoPunk',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ProtoPunk',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ProtoPunk',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PufferElectro: {
+    enemy_defIgn_: {
+      sheet: 'PufferElectro',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'PufferElectro',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'PufferElectro',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'PufferElectro',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PufferElectro',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'PufferElectro',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ShockstarDisco: {
+    enemy_defIgn_: {
+      sheet: 'ShockstarDisco',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'ShockstarDisco',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'ShockstarDisco',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ShockstarDisco',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ShockstarDisco',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ShockstarDisco',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SoulRock: {
+    enemy_defIgn_: {
+      sheet: 'SoulRock',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'SoulRock',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'SoulRock',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'SoulRock',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SoulRock',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'SoulRock',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SwingJazz: {
+    enemy_defIgn_: {
+      sheet: 'SwingJazz',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'SwingJazz',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'SwingJazz',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'SwingJazz',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SwingJazz',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'SwingJazz',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ThunderMetal: {
+    enemy_defIgn_: {
+      sheet: 'ThunderMetal',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'ThunderMetal',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'ThunderMetal',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ThunderMetal',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ThunderMetal',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ThunderMetal',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WoodpeckerElectro: {
+    enemy_defIgn_: {
+      sheet: 'WoodpeckerElectro',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'dmgRed_',
+        sheet: 'WoodpeckerElectro',
+        name: 'enemy_defIgn_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'WoodpeckerElectro',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'WoodpeckerElectro',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WoodpeckerElectro',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'WoodpeckerElectro',
+        name: 'team_dmg_',
+      },
+    },
+  },
+} as const
