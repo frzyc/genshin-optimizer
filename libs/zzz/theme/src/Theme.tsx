@@ -10,6 +10,9 @@ declare module '@mui/material/styles' {
     frost: Palette['primary']
     physical: Palette['primary']
     ether: Palette['primary']
+    rankS: Palette['primary']
+    rankA: Palette['primary']
+    rankB: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -19,6 +22,9 @@ declare module '@mui/material/styles' {
     frost?: PaletteOptions['primary']
     physical?: PaletteOptions['primary']
     ether?: PaletteOptions['primary']
+    rankS?: PaletteOptions['primary']
+    rankA?: PaletteOptions['primary']
+    rankB?: PaletteOptions['primary']
   }
 }
 
@@ -93,6 +99,18 @@ export const theme = createTheme({
     ether: commonTheme.palette.augmentColor({
       color: { main: '#FE427E', contrastText: '#fff' },
       name: 'ether',
+    }),
+    rankS: commonTheme.palette.augmentColor({
+      color: { main: '#FF9100', contrastText: '#fff' },
+      name: 'rankS',
+    }),
+    rankA: commonTheme.palette.augmentColor({
+      color: { main: '#E900FF', contrastText: '#fff' },
+      name: 'rankA',
+    }),
+    rankB: commonTheme.palette.augmentColor({
+      color: { main: '#14a9fe', contrastText: '#fff' },
+      name: 'rankB',
     }),
   },
   shape: {
