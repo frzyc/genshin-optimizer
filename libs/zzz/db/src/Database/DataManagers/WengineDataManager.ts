@@ -46,10 +46,7 @@ export class WengineDataManager extends DataManager<
   ): ICachedWengine | undefined {
     const newWengine = { ...storageObj, id }
     const oldWengine = super.get(id)
-    // Disallow unequipping of weapons
-    if (!newWengine.location && oldWengine?.location) return undefined
-
-    // During initialization of the database, if you import weapons with location without a corresponding character, the char will be generated here.
+    // During initialization of the database, if you import wengines with location without a corresponding character, the char will be generated here.
     const getWithInit = (cKey: CharacterKey): CharacterData => {
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacterData(cKey))
@@ -105,11 +102,45 @@ export class WengineDataManager extends DataManager<
         this.database.chars.setEquippedWengine(wengine.location, '')
     return wengine
   }
-}
 
-export const defaultInitialWeapon = (
-  key: WengineKey = 'BashfulDemon'
-): ICachedWengine => initialWengine(key)
+  findDups(
+    wengine: IWengine,
+    idList = this.keys
+  ): { duplicated: ICachedWengine[]; upgraded: ICachedWengine[] } {
+    const { key, level, ascension, phase } = wengine
+
+    const wengines = idList
+      .map((id) => this.get(id))
+      .filter((a) => a) as ICachedWengine[]
+    const candidates = wengines.filter(
+      (candidate) =>
+        key === candidate.key &&
+        level >= candidate.level &&
+        ascension >= candidate.ascension &&
+        phase >= candidate.phase
+    )
+
+    // Strictly upgraded wengines
+    const upgraded = candidates
+      .filter(
+        (candidate) =>
+          level > candidate.level ||
+          ascension > candidate.ascension ||
+          phase > candidate.phase
+      )
+      .sort((candidates) => (candidates.location === wengine.location ? -1 : 1))
+    // Strictly duplicated wengines
+    const duplicated = candidates
+      .filter(
+        (candidate) =>
+          level === candidate.level &&
+          ascension === candidate.ascension &&
+          phase === candidate.phase
+      )
+      .sort((candidates) => (candidates.location === wengine.location ? -1 : 1))
+    return { duplicated, upgraded }
+  }
+}
 
 export const initialWengine = (key: WengineKey): ICachedWengine => ({
   id: '',
