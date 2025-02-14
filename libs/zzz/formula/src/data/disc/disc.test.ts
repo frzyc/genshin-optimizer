@@ -141,4 +141,20 @@ describe('Disc sheets test', () => {
     expect(calc.compute(anby.final.dmg_.ether).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.2 * 2)
   })
+  it('FangedMetal 4p', () => {
+    const data = testCharacterData('FangedMetal')
+    data.push(
+      cond('FangedMetal', conditionals.FangedMetal.inflict_assault.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Anby', dst: 'Anby' })
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    printDebug(calc, anby.final.dmg_.physical)
+    expect(calc.compute(anby.final.dmg_.physical).val).toBeCloseTo(0.1) // 2p passive
+
+    expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0.35)
+  })
 })

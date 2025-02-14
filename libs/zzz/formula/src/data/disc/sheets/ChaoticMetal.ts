@@ -17,7 +17,7 @@ const sheet = registerDisc(
   ),
   // Conditional buffs
   registerBuff(
-    'set4_cond',
+    'set4_cond_trigger_corruption',
     ownBuff.combat.crit_dmg_.add(
       cmpGE(discCount, 4, trigger_corruption.ifOn(0.2))
     )

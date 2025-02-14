@@ -32,45 +32,10 @@ export const conditionals = {
     },
   },
   FangedMetal: {
-    boolConditional: {
+    inflict_assault: {
       sheet: 'FangedMetal',
-      name: 'boolConditional',
+      name: 'inflict_assault',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FangedMetal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FangedMetal',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  FreedomBlues: {
-    boolConditional: {
-      sheet: 'FreedomBlues',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FreedomBlues',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FreedomBlues',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   HormonePunk: {
@@ -95,24 +60,10 @@ export const conditionals = {
     },
   },
   InfernoMetal: {
-    boolConditional: {
+    hitting_burning_enemy: {
       sheet: 'InfernoMetal',
-      name: 'boolConditional',
+      name: 'hitting_burning_enemy',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'InfernoMetal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'InfernoMetal',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PolarMetal: {
@@ -1163,15 +1114,15 @@ export const buffs = {
     },
   },
   ChaoticMetal: {
-    set4_cond: {
+    set4_cond_trigger_corruption: {
       sheet: 'ChaoticMetal',
-      name: 'set4_cond',
+      name: 'set4_cond_trigger_corruption',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'crit_dmg_',
         sheet: 'ChaoticMetal',
-        name: 'set4_cond',
+        name: 'set4_cond_trigger_corruption',
       },
     },
     set4_passive: {
@@ -1187,72 +1138,15 @@ export const buffs = {
     },
   },
   FangedMetal: {
-    enemy_defIgn_: {
+    set4_cond_inflict_assault: {
       sheet: 'FangedMetal',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'FangedMetal',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'FangedMetal',
-      name: 'set2_dmg_',
+      name: 'set4_cond_inflict_assault',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'FangedMetal',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FangedMetal',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'FangedMetal',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  FreedomBlues: {
-    enemy_defIgn_: {
-      sheet: 'FreedomBlues',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'FreedomBlues',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'FreedomBlues',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'FreedomBlues',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FreedomBlues',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'FreedomBlues',
-        name: 'team_dmg_',
+        name: 'set4_cond_inflict_assault',
       },
     },
   },
@@ -1292,37 +1186,15 @@ export const buffs = {
     },
   },
   InfernoMetal: {
-    enemy_defIgn_: {
+    set4_cond_hitting_burning_enemy: {
       sheet: 'InfernoMetal',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'InfernoMetal',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'InfernoMetal',
-      name: 'set2_dmg_',
+      name: 'set4_cond_hitting_burning_enemy',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'crit_',
         sheet: 'InfernoMetal',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'InfernoMetal',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'InfernoMetal',
-        name: 'team_dmg_',
+        name: 'set4_cond_hitting_burning_enemy',
       },
     },
   },
