@@ -9,7 +9,7 @@ const discCount = own.common.count.sheet(key)
 const sheet = registerDisc(
   key,
   registerBuff(
-    'team_dmg_',
+    'set4_team_dmg_',
     teamBuff.combat.dmg_.add(cmpGE(discCount, 4, prod(astral, 0.08)))
   )
 )

@@ -18,9 +18,9 @@ export const conditionals = {
     },
   },
   ChaosJazz: {
-    inflict_assault: {
+    while_off_field: {
       sheet: 'ChaosJazz',
-      name: 'inflict_assault',
+      name: 'while_off_field',
       type: 'bool',
     },
   },
@@ -1086,15 +1086,15 @@ export const formulas = {
 } as const
 export const buffs = {
   AstralVoice: {
-    team_dmg_: {
+    set4_team_dmg_: {
       sheet: 'AstralVoice',
-      name: 'team_dmg_',
+      name: 'set4_team_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'AstralVoice',
-        name: 'team_dmg_',
+        name: 'set4_team_dmg_',
       },
     },
   },
@@ -1123,16 +1123,56 @@ export const buffs = {
     },
   },
   ChaosJazz: {
-    set4_dmg_: {
+    set4_off_field_assist_dmg_: {
       sheet: 'ChaosJazz',
-      name: 'set4_dmg_',
+      name: 'set4_off_field_assist_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'ChaosJazz',
         dst: null,
-        name: 'set4_dmg_',
+        damageType2: 'assist',
+        name: 'set4_off_field_assist_dmg_',
+      },
+    },
+    set4_off_field_special_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_off_field_special_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        damageType2: 'special',
+        name: 'set4_off_field_special_dmg_',
+      },
+    },
+    set4_passive_electric_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_passive_electric_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        attribute: 'electric',
+        name: 'set4_passive_electric_dmg_',
+      },
+    },
+    set4_passive_fire_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_passive_fire_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        attribute: 'fire',
+        name: 'set4_passive_fire_dmg_',
       },
     },
   },

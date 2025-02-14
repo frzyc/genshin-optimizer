@@ -1,3 +1,4 @@
+import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
   setDebugMode,
@@ -70,10 +71,11 @@ function testCharacterData(
   return data
 }
 function cond(setKey: DiscSetKey, name: string, value: number) {
-  return conditionalEntries(setKey, 'Anby', 'Anby')(name, value)
+  return conditionalEntries(setKey, 'Anby', null)(name, value)
 }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function printDebug(calc: Calculator, read: Read) {
-  console.log(JSON.stringify(calc.toDebug().compute(read), undefined, 2))
+  console.log(prettify(calc.toDebug().compute(read)))
 }
 describe('Disc sheets test', () => {
   it('AstralVoice 4p', () => {
@@ -107,19 +109,22 @@ describe('Disc sheets test', () => {
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(119) // should be greater than 115
     expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.16 + 0.3) //.16 from 2p, 3p from anommas
-    printDebug(calc, anby.final.crit_)
+    // printDebug(calc, anby.final.crit_)
     expect(calc.compute(anby.final.crit_).val).toBeCloseTo(0.05 + 0.12) //.12 from cond
   })
   it('ChaosJazz 4p', () => {
     const data = testCharacterData('ChaosJazz')
-    data.push(cond('ChaosJazz', conditionals.ChaosJazz.inflict_assault.name, 1))
+    data.push(cond('ChaosJazz', conditionals.ChaosJazz.while_off_field.name, 1))
     const calc = new Calculator(
       keys,
       values,
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    printDebug(calc, anby.final.dmg_)
-    expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0.3) //.3 from cond
+    expect(calc.compute(anby.initial.anomProf).val).toBeCloseTo(93 + 30) // 2p passive
+    expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.15)
+    expect(calc.compute(anby.final.dmg_.electric).val).toBeCloseTo(0.15)
+    expect(calc.compute(anby.final.dmg_.special[0]).val).toBeCloseTo(0.2)
+    expect(calc.compute(anby.final.dmg_.assist[0]).val).toBeCloseTo(0.2)
   })
 })

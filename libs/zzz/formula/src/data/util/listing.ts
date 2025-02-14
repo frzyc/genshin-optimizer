@@ -44,7 +44,7 @@ export const damageTypes = [
   'ult',
   'assist',
   'anomaly',
-  'additional',
+  'additional', // rule 7
   'elemental',
 ] as const
 
