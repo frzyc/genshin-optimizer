@@ -1,7 +1,7 @@
 import { objSumInPlace } from '@genshin-optimizer/common/util'
 import type { CondKey } from './common'
 
-export const allWengineRarityKeys = ['S', 'A'] as const
+export const allWengineRarityKeys = ['S', 'A', 'B'] as const
 export type WengineRarityKey = (typeof allWengineRarityKeys)[number]
 
 export const allWengineKeys = [

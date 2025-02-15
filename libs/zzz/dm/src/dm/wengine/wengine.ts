@@ -1,9 +1,11 @@
+import { dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
 import { isPercentStat } from '@genshin-optimizer/common/util'
 import type {
   SpecialityKey,
   WengineKey,
   WengineRarityKey,
 } from '@genshin-optimizer/zzz/consts'
+import { PROJROOT_PATH } from '../../consts'
 import { readHakushinJSON } from '../../util'
 import {
   specialityMap,
@@ -47,12 +49,14 @@ export type WengineData = {
   desc3: string
   phase: Array<{ name: string; desc: string }>
 }
+const rarityMap = {} as Record<WengineKey, number>
 export const wengineDetailedJSONData = Object.fromEntries(
   Object.entries(WengineIdMap).map(([id, name]) => {
     const raw = JSON.parse(
       readHakushinJSON(`weapon/${id}.json`)
     ) as WengineRawData
     const second_statkey = subStatMap[raw.RandProperty.Name2]
+    rarityMap[name] = raw.Rarity
     const data: WengineData = {
       name: raw.Name,
       rarity: wengineRarityMap[raw.Rarity],
@@ -73,3 +77,8 @@ export const wengineDetailedJSONData = Object.fromEntries(
     return [name, data] as const
   })
 ) as Record<WengineKey, WengineData>
+
+dumpPrettyFile(
+  `${PROJROOT_PATH}/src/dm/wengine/wengineRarityMap.json`,
+  rarityMap
+)
