@@ -92,8 +92,6 @@ export class WengineDataManager extends DataManager<
 
   new(value: IWengine): string {
     const id = this.generateKey()
-    const dupe = this.findDups(value) //TODO remove dupe check here with actual implementation
-    if (dupe.duplicated.length) return id
     this.set(id, value)
     return id
   }
