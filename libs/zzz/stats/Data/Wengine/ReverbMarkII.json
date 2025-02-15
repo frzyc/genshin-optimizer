@@ -1,5 +1,6 @@
 {
   "name": "[Reverb] Mark II",
+  "rarity": "B",
   "type": "support",
   "atk_base": 32,
   "second_statkey": "enerRegen_",

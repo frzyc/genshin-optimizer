@@ -1,5 +1,6 @@
 {
   "name": "[Lunar] Decrescent",
+  "rarity": "B",
   "type": "attack",
   "atk_base": 32,
   "second_statkey": "atk_",

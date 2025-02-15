@@ -1,5 +1,6 @@
 {
   "name": "[Vortex] Revolver",
+  "rarity": "B",
   "type": "stun",
   "atk_base": 32,
   "second_statkey": "atk_",
