@@ -13,6 +13,7 @@ import {
 } from '@genshin-optimizer/zzz/assets'
 import type { SpecialityKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
+  allRaritykeys,
   allSpecialityKeys,
   allWengineKeys,
   allWengineRarityKeys,
@@ -81,7 +82,11 @@ export function WengineSelectionModal({
         )
         .filter((wKey) => rarity.includes(getWengineStat(wKey).rarity))
         .sort((a, b) => {
-          return getWengineStat(b).rarity < getWengineStat(a).rarity ? -1 : 1
+          const wengineSortRarityMap = allRaritykeys
+          return (
+            wengineSortRarityMap.indexOf(getWengineStat(a).rarity) -
+            wengineSortRarityMap.indexOf(getWengineStat(b).rarity)
+          )
         }),
     [deferredSearchTerm, rarity, t, wengineFilter]
   )

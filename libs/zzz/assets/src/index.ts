@@ -1,8 +1,8 @@
 import type { AssetDataType } from '@genshin-optimizer/zzz/assets-data'
 import type {
   CharacterKey,
-  CharacterRarityKey,
   DiscSetKey,
+  Raritykey,
   SkillKey,
   SpecialityKey,
   WengineKey,
@@ -46,7 +46,7 @@ export function specialityDefIcon(profKey: SpecialityKey) {
   return profKey ? speciality[profKey] : ''
 }
 
-export function rarityDefIcon(rarityKey: CharacterRarityKey) {
+export function rarityDefIcon(rarityKey: Raritykey) {
   return rarityKey ? rarity[rarityKey] : ''
 }
 

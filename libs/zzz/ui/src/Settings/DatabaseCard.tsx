@@ -60,11 +60,7 @@ function DataCard({ index }: { index: number }) {
   const numChar = 0 //database.chars.keys.length
   const numDiscs = database.discs.keys.length
   const numWengines = database.wengines.keys.length
-  const numTeams = 0 // database.teams.keys.length
-  const numBuilds = 0 // database.builds.keys.length
-  const hasData = Boolean(
-    numChar || numDiscs || numWengines || numTeams || numBuilds
-  )
+  const hasData = Boolean(numChar || numDiscs || numWengines)
   const copyToClipboard = useCallback(
     () =>
       navigator.clipboard
@@ -167,13 +163,6 @@ function DataCard({ index }: { index: number }) {
             <Typography noWrap>
               <Trans t={t} i18nKey="count.wengines" />{' '}
               <strong>{numWengines}</strong>
-            </Typography>
-            <Typography noWrap>
-              <Trans t={t} i18nKey="count.teams" /> <strong>{numTeams}</strong>
-            </Typography>
-            <Typography noWrap>
-              <Trans t={t} i18nKey="count.builds" />{' '}
-              <strong>{numBuilds}</strong>
             </Typography>
           </Box>
           <Box>
