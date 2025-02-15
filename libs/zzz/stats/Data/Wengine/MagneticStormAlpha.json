@@ -1,5 +1,6 @@
 {
   "name": "[Magnetic Storm] Alpha",
+  "rarity": "B",
   "type": "anomaly",
   "atk_base": 32,
   "second_statkey": "atk_",

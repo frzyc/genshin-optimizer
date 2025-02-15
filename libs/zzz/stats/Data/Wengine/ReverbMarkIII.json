@@ -1,5 +1,6 @@
 {
   "name": "[Reverb] Mark III",
+  "rarity": "B",
   "type": "support",
   "atk_base": 32,
   "second_statkey": "hp_",

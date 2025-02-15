@@ -1,7 +1,7 @@
 import { objSumInPlace } from '@genshin-optimizer/common/util'
 import type { CondKey } from './common'
 
-export const allWengineRarityKeys = ['S', 'A'] as const
+export const allWengineRarityKeys = ['S', 'A', 'B'] as const
 export type WengineRarityKey = (typeof allWengineRarityKeys)[number]
 
 export const allWengineKeys = [
@@ -1009,6 +1009,7 @@ export const wengineSheets: Partial<
 } as const
 
 export const wengineMaxLevel: Record<WengineRarityKey, number> = {
+  B: 60,
   A: 60,
   S: 60,
 } as const
