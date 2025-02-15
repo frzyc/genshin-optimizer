@@ -74,6 +74,7 @@ export const specialityMap: Record<number, SpecialityKey> = {
 } as const
 
 export const wengineRarityMap: Record<number, WengineRarityKey> = {
+  2: 'B',
   3: 'A',
   4: 'S',
 } as const

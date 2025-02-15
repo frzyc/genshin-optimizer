@@ -1,5 +1,6 @@
 {
   "name": "[Identity] Base",
+  "rarity": "B",
   "type": "defense",
   "atk_base": 32,
   "second_statkey": "def_",

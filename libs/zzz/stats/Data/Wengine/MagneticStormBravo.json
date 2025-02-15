@@ -1,5 +1,6 @@
 {
   "name": "[Magnetic Storm] Bravo",
+  "rarity": "B",
   "type": "anomaly",
   "atk_base": 32,
   "second_statkey": "anomProf",
