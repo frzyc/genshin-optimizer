@@ -37246,6 +37246,7 @@
   "wengine": {
     "LunarPleniluna": {
       "name": "[Lunar] Pleniluna",
+      "rarity": "B",
       "type": "attack",
       "atk_base": 32,
       "second_statkey": "atk_",
@@ -37279,6 +37280,7 @@
     },
     "LunarDecrescent": {
       "name": "[Lunar] Decrescent",
+      "rarity": "B",
       "type": "attack",
       "atk_base": 32,
       "second_statkey": "atk_",
@@ -37312,6 +37314,7 @@
     },
     "LunarNoviluna": {
       "name": "[Lunar] Noviluna",
+      "rarity": "B",
       "type": "attack",
       "atk_base": 32,
       "second_statkey": "crit_",
@@ -37345,6 +37348,7 @@
     },
     "ReverbMarkI": {
       "name": "[Reverb] Mark I",
+      "rarity": "B",
       "type": "support",
       "atk_base": 32,
       "second_statkey": "atk_",
@@ -37378,6 +37382,7 @@
     },
     "ReverbMarkII": {
       "name": "[Reverb] Mark II",
+      "rarity": "B",
       "type": "support",
       "atk_base": 32,
       "second_statkey": "enerRegen_",
@@ -37411,6 +37416,7 @@
     },
     "ReverbMarkIII": {
       "name": "[Reverb] Mark III",
+      "rarity": "B",
       "type": "support",
       "atk_base": 32,
       "second_statkey": "hp_",
@@ -37444,6 +37450,7 @@
     },
     "VortexRevolver": {
       "name": "[Vortex] Revolver",
+      "rarity": "B",
       "type": "stun",
       "atk_base": 32,
       "second_statkey": "atk_",
@@ -37477,6 +37484,7 @@
     },
     "VortexArrow": {
       "name": "[Vortex] Arrow",
+      "rarity": "B",
       "type": "stun",
       "atk_base": 32,
       "second_statkey": "impact_",
@@ -37510,6 +37518,7 @@
     },
     "VortexHatchet": {
       "name": "[Vortex] Hatchet",
+      "rarity": "B",
       "type": "stun",
       "atk_base": 32,
       "second_statkey": "enerRegen_",
@@ -37543,6 +37552,7 @@
     },
     "MagneticStormAlpha": {
       "name": "[Magnetic Storm] Alpha",
+      "rarity": "B",
       "type": "anomaly",
       "atk_base": 32,
       "second_statkey": "atk_",
@@ -37576,6 +37586,7 @@
     },
     "MagneticStormBravo": {
       "name": "[Magnetic Storm] Bravo",
+      "rarity": "B",
       "type": "anomaly",
       "atk_base": 32,
       "second_statkey": "anomProf",
@@ -37609,6 +37620,7 @@
     },
     "MagneticStormCharlie": {
       "name": "[Magnetic Storm] Charlie",
+      "rarity": "B",
       "type": "anomaly",
       "atk_base": 32,
       "second_statkey": "pen_",
@@ -37642,6 +37654,7 @@
     },
     "IdentityBase": {
       "name": "[Identity] Base",
+      "rarity": "B",
       "type": "defense",
       "atk_base": 32,
       "second_statkey": "def_",
@@ -37675,6 +37688,7 @@
     },
     "IdentityInflection": {
       "name": "[Identity] Inflection",
+      "rarity": "B",
       "type": "defense",
       "atk_base": 32,
       "second_statkey": "def_",

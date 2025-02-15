@@ -1,5 +1,6 @@
 {
   "name": "[Vortex] Hatchet",
+  "rarity": "B",
   "type": "stun",
   "atk_base": 32,
   "second_statkey": "enerRegen_",
