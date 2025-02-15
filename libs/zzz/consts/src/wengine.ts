@@ -674,10 +674,10 @@ export const wengineSheets: Partial<
     condMeta: allWengineCondKeys.MagneticStormBravo,
     getStats: (conds, stats) => {
       const p = stats['wenginePhase'] - 1
-      const anomMas = [25, 28, 32, 36, 40]
+      const anomProf = [25, 28, 32, 36, 40]
       if (conds['MagneticStormBravo'])
         return {
-          cond_anomMas: anomMas[p],
+          anomProf: anomProf[p],
         } as Record<string, number>
       return undefined
     },

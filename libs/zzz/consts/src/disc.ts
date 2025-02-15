@@ -328,8 +328,10 @@ export const disc4PeffectSheets: Partial<
       const ret: Record<string, number> = {}
       // Have to calculate the "final" here because there are no stages for calc
       if (
-        (stats['anomMas_base'] ?? 0) * (1 + (stats['anomMas_'] ?? 0)) +
-          (stats['anomMas'] ?? 0) >=
+        ((stats['anomMas_base'] ?? 0) * (1 + (stats['anomMas_'] ?? 0)) +
+          (stats['anomMas'] ?? 0)) *
+          (1 + (stats['cond_anomMas_'] ?? 0)) +
+          (stats['cond_anomMas'] ?? 0) >=
         115
       )
         ret['crit_dmg_'] = 0.3
