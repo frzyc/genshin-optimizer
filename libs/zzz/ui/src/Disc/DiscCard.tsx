@@ -323,6 +323,7 @@ function SubstatDisplay({
         alignItems: 'center',
         justifyContent: 'space-between',
         fontWeight: 'bold',
+        gap: 1,
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

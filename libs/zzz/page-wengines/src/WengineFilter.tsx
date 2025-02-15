@@ -82,13 +82,13 @@ export default function WengineFilter({
         ctMap['equippedTotal'][equipped].total++
         ctMap['locationTotal'][location].total++
         ctMap['wengineTotals'][speciality].total++
-        ctMap['wengineRarityTotals'][rarity].total++
+        if (rarity) ctMap['wengineRarityTotals'][rarity].total++
         if (wengineIds.includes(id)) {
           ctMap['lockedTotal'][lock].current++
           ctMap['equippedTotal'][equipped].current++
           ctMap['locationTotal'][location].current++
           ctMap['wengineTotals'][speciality].current++
-          ctMap['wengineRarityTotals'][rarity].current++
+          if (rarity) ctMap['wengineRarityTotals'][rarity].current++
         }
       })
     )
