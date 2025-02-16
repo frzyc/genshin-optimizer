@@ -60,24 +60,10 @@ export const conditionals = {
     },
   },
   HormonePunk: {
-    boolConditional: {
+    entering_combat: {
       sheet: 'HormonePunk',
-      name: 'boolConditional',
+      name: 'entering_combat',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HormonePunk',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HormonePunk',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   InfernoMetal: {
@@ -88,66 +74,24 @@ export const conditionals = {
     },
   },
   PolarMetal: {
-    boolConditional: {
+    freeze_shatter: {
       sheet: 'PolarMetal',
-      name: 'boolConditional',
+      name: 'freeze_shatter',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PolarMetal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PolarMetal',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ProtoPunk: {
-    boolConditional: {
+    def_assist_or_evasive_assist: {
       sheet: 'ProtoPunk',
-      name: 'boolConditional',
+      name: 'def_assist_or_evasive_assist',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ProtoPunk',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ProtoPunk',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PufferElectro: {
-    boolConditional: {
+    launching_ult: {
       sheet: 'PufferElectro',
-      name: 'boolConditional',
+      name: 'launching_ult',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PufferElectro',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PufferElectro',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ShockstarDisco: {
@@ -1207,37 +1151,15 @@ export const buffs = {
     },
   },
   HormonePunk: {
-    enemy_defIgn_: {
+    set4_cond_entering_combat: {
       sheet: 'HormonePunk',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'HormonePunk',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'HormonePunk',
-      name: 'set2_dmg_',
+      name: 'set4_cond_entering_combat',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'atk_',
         sheet: 'HormonePunk',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HormonePunk',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'HormonePunk',
-        name: 'team_dmg_',
+        name: 'set4_cond_entering_combat',
       },
     },
   },
@@ -1255,107 +1177,66 @@ export const buffs = {
     },
   },
   PolarMetal: {
-    enemy_defIgn_: {
+    set4_basic_dmg_: {
       sheet: 'PolarMetal',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'PolarMetal',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PolarMetal',
-      name: 'set2_dmg_',
+      name: 'set4_basic_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'PolarMetal',
-        name: 'set2_dmg_',
+        damageType2: 'basic',
+        name: 'set4_basic_dmg_',
       },
     },
-    team_dmg_: {
+    set4_dodge_dmg_: {
       sheet: 'PolarMetal',
-      name: 'team_dmg_',
+      name: 'set4_dodge_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'PolarMetal',
-        name: 'team_dmg_',
+        damageType2: 'dodge',
+        name: 'set4_dodge_dmg_',
       },
     },
   },
   ProtoPunk: {
-    enemy_defIgn_: {
+    set2_cond_def_assist_or_evasive_assist_dmg_: {
       sheet: 'ProtoPunk',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ProtoPunk',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ProtoPunk',
-      name: 'set2_dmg_',
+      name: 'set2_cond_def_assist_or_evasive_assist_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'ProtoPunk',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ProtoPunk',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'ProtoPunk',
-        name: 'team_dmg_',
+        name: 'set2_cond_def_assist_or_evasive_assist_dmg_',
       },
     },
   },
   PufferElectro: {
-    enemy_defIgn_: {
+    set4_cond_launching_ult_atk_: {
       sheet: 'PufferElectro',
-      name: 'enemy_defIgn_',
+      name: 'set4_cond_launching_ult_atk_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
+        qt: 'combat',
+        q: 'atk_',
         sheet: 'PufferElectro',
-        name: 'enemy_defIgn_',
+        name: 'set4_cond_launching_ult_atk_',
       },
     },
-    set2_dmg_: {
+    set4_dmg_: {
       sheet: 'PufferElectro',
-      name: 'set2_dmg_',
+      name: 'set4_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'PufferElectro',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PufferElectro',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'PufferElectro',
-        name: 'team_dmg_',
+        damageType2: 'ult',
+        name: 'set4_dmg_',
       },
     },
   },
