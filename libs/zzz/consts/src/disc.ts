@@ -152,9 +152,12 @@ const mainData = {
 export function getDiscMainStatVal(
   rarity: DiscRarityKey,
   mainStatKey: DiscMainStatKey,
-  _level: number
+  level: number
 ): number {
-  return (mainData as any)[mainStatKey][rarity] ?? 0
+  const maxVal = (mainData as any)[mainStatKey][rarity]
+  if (!maxVal) return 0
+  // the lvl0 value is always 0.25 of the max value, with linear increments per level
+  return maxVal * (0.25 + (0.75 * level) / discMaxLevel[rarity])
 }
 
 /**
