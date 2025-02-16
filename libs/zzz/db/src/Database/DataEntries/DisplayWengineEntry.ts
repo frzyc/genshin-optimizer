@@ -75,10 +75,10 @@ export class DisplayWengineEntry extends DataEntry<
     if (typeof ascending !== 'boolean') ascending = false
     if (typeof showEquipped !== 'boolean') showEquipped = true
     if (typeof showInventory !== 'boolean') showInventory = true
-    speciality = validateArr(speciality, allSpecialityKeys, [])
-    rarity = validateArr(rarity, allWengineRarityKeys, [])
+    speciality = validateArr(speciality, allSpecialityKeys)
+    rarity = validateArr(rarity, allWengineRarityKeys)
     locked = validateArr(locked, ['locked', 'unlocked'])
-    locations = validateArr(locations, allLocationKeys, [])
+    locations = validateArr(locations, allLocationKeys)
     const data: IDisplayWengine = {
       editWengineId,
       sortType,
@@ -100,7 +100,6 @@ export class DisplayWengineEntry extends DataEntry<
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset') return super.set(initialOption())
-      console.log(value)
       return false
     } else return super.set(value)
   }

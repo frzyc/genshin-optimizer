@@ -12,8 +12,8 @@
   },
   "count": {
     "chars": "Characters:",
-    "relics": "Relics: ",
-    "lightCones": "Light Cones:",
+    "discs": "Discs: ",
+    "wengines": "Wengines:",
     "teams": "Teams:",
     "builds": "Builds:",
     "new": "New:",

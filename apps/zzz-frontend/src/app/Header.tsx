@@ -55,6 +55,7 @@ const wengines: ITab = {
   icon: <AnvilIcon />,
   to: '/wengines',
   value: 'wengines',
+  textSuffix: <WengineTab key="rewengineAdd" />,
 }
 
 const optimize: ITab = {
@@ -81,6 +82,11 @@ function SettingsChip() {
 function DiscsTab() {
   const { database } = useDatabaseContext()
   return <Tally>{useDatabaseTally(database.discs)}</Tally>
+}
+
+function WengineTab() {
+  const { database } = useDatabaseContext()
+  return <Tally>{useDatabaseTally(database.wengines)}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {

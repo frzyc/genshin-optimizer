@@ -20,7 +20,6 @@ import {
   weaponHasRefinement,
 } from '@genshin-optimizer/gi/stats'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
-import { milestoneLevelsLow } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Lock, LockOpen } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
@@ -36,7 +35,7 @@ import {
   ListItem,
   Typography,
 } from '@mui/material'
-import { useCallback, useContext, useEffect, useMemo } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../../context'
 import { DocumentDisplay } from '../DocumentDisplay'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
@@ -99,15 +98,6 @@ export function WeaponEditor({
   const [showModal, onShowModal, onHideModal] = useBoolState()
   const img = key ? weaponAsset(key, ascension >= 2) : ''
 
-  //check the levels when switching from a 5* to a 1*, for example.
-  useEffect(() => {
-    if (!weaponStat) return
-    if (weaponStat.rarity <= 2 && (level > 70 || ascension > 4)) {
-      const [level, ascension] = milestoneLevelsLow[0]
-      weaponDispatch({ level, ascension })
-    }
-  }, [weaponStat, weapon, weaponDispatch, level, ascension])
-
   const weaponUIData = useMemo(
     () =>
       weaponSheet &&
@@ -115,6 +105,7 @@ export function WeaponEditor({
       computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
     [weaponSheet, weapon]
   )
+
   return (
     <ModalWrapper
       open={!!propWeaponId}
