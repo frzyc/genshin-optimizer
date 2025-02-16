@@ -1,39 +1,30 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
+import { enemyDebuff, own, registerBuff } from '../../util'
 import { registerDisc } from '../util'
 
 const key: DiscSetKey = 'ShockstarDisco'
 
 const discCount = own.common.count.sheet(key)
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
-
 const sheet = registerDisc(
   key,
 
-  // TODO: Add formulas/buffs
-  // Conditional buffs
+  // Passives
   registerBuff(
-    'set2_dmg_',
-    ownBuff.combat.dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1)))
+    'set4_basic_daze_',
+    enemyDebuff.common.stun_.addWithDmgType('basic', cmpGE(discCount, 4, 0.2))
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.combat.dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    'set4_dash_daze_',
+    enemyDebuff.common.stun_.addWithDmgType('dodge', cmpGE(discCount, 4, 0.2))
   ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.dmgRed_.add(numConditional))
+  registerBuff(
+    'set4_dodgeCounter_daze_',
+    enemyDebuff.common.stun_.addWithDmgType(
+      'dodgeCounter',
+      cmpGE(discCount, 4, 0.2)
+    )
+  )
 )
 export default sheet

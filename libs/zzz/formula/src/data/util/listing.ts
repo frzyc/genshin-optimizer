@@ -38,7 +38,8 @@ export const attributes = [
 
 export const damageTypes = [
   'basic',
-  'dodge',
+  'dodge', // Dash Attacks
+  'dodgeCounter',
   'special',
   'chain',
   'ult',

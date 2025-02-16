@@ -67,6 +67,12 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
       super.with('damageType2', 'dodge'),
     ]
   }
+  get dodgeCounter(): Read[] {
+    return [
+      super.with('damageType1', 'dodgeCounter'),
+      super.with('damageType2', 'dodgeCounter'),
+    ]
+  }
   get special(): Read[] {
     return [
       super.with('damageType1', 'special'),

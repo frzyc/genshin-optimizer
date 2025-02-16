@@ -38,27 +38,6 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  FreedomBlues: {
-    boolConditional: {
-      sheet: 'FreedomBlues',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FreedomBlues',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FreedomBlues',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   HormonePunk: {
     entering_combat: {
       sheet: 'HormonePunk',
@@ -94,109 +73,24 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  ShockstarDisco: {
-    boolConditional: {
-      sheet: 'ShockstarDisco',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ShockstarDisco',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ShockstarDisco',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  SoulRock: {
-    boolConditional: {
-      sheet: 'SoulRock',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SoulRock',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SoulRock',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   SwingJazz: {
-    boolConditional: {
-      sheet: 'SwingJazz',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SwingJazz',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SwingJazz',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    chain_or_ult: { sheet: 'SwingJazz', name: 'chain_or_ult', type: 'bool' },
   },
   ThunderMetal: {
-    boolConditional: {
+    enemy_shocked: {
       sheet: 'ThunderMetal',
-      name: 'boolConditional',
+      name: 'enemy_shocked',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ThunderMetal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ThunderMetal',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   WoodpeckerElectro: {
-    boolConditional: {
+    crit_basic_dodge_ex: {
       sheet: 'WoodpeckerElectro',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WoodpeckerElectro',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WoodpeckerElectro',
-      name: 'numConditional',
+      name: 'crit_basic_dodge_ex',
       type: 'num',
       int_only: true,
-      min: 0,
-      max: 2,
+      min: 1,
+      max: 3,
     },
   },
 } as const
@@ -1115,41 +1009,6 @@ export const buffs = {
       },
     },
   },
-  FreedomBlues: {
-    enemy_defIgn_: {
-      sheet: 'FreedomBlues',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'FreedomBlues',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'FreedomBlues',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'FreedomBlues',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FreedomBlues',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'FreedomBlues',
-        name: 'team_dmg_',
-      },
-    },
-  },
   HormonePunk: {
     set4_cond_entering_combat: {
       sheet: 'HormonePunk',
@@ -1203,15 +1062,15 @@ export const buffs = {
     },
   },
   ProtoPunk: {
-    set2_cond_def_assist_or_evasive_assist_dmg_: {
+    set4_cond_def_assist_or_evasive_assist_dmg_: {
       sheet: 'ProtoPunk',
-      name: 'set2_cond_def_assist_or_evasive_assist_dmg_',
+      name: 'set4_cond_def_assist_or_evasive_assist_dmg_',
       tag: {
         et: 'display',
         qt: 'combat',
         q: 'dmg_',
         sheet: 'ProtoPunk',
-        name: 'set2_cond_def_assist_or_evasive_assist_dmg_',
+        name: 'set4_cond_def_assist_or_evasive_assist_dmg_',
       },
     },
   },
@@ -1241,177 +1100,79 @@ export const buffs = {
     },
   },
   ShockstarDisco: {
-    enemy_defIgn_: {
+    set4_basic_daze_: {
       sheet: 'ShockstarDisco',
-      name: 'enemy_defIgn_',
+      name: 'set4_basic_daze_',
       tag: {
         et: 'display',
         qt: 'common',
-        q: 'dmgRed_',
+        q: 'stun_',
         sheet: 'ShockstarDisco',
-        name: 'enemy_defIgn_',
+        damageType2: 'basic',
+        name: 'set4_basic_daze_',
       },
     },
-    set2_dmg_: {
+    set4_dash_daze_: {
       sheet: 'ShockstarDisco',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'ShockstarDisco',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ShockstarDisco',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'ShockstarDisco',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  SoulRock: {
-    enemy_defIgn_: {
-      sheet: 'SoulRock',
-      name: 'enemy_defIgn_',
+      name: 'set4_dash_daze_',
       tag: {
         et: 'display',
         qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SoulRock',
-        name: 'enemy_defIgn_',
+        q: 'stun_',
+        sheet: 'ShockstarDisco',
+        damageType2: 'dodge',
+        name: 'set4_dash_daze_',
       },
     },
-    set2_dmg_: {
-      sheet: 'SoulRock',
-      name: 'set2_dmg_',
+    set4_dodgeCounter_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_dodgeCounter_daze_',
       tag: {
         et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'SoulRock',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SoulRock',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'SoulRock',
-        name: 'team_dmg_',
+        qt: 'common',
+        q: 'stun_',
+        sheet: 'ShockstarDisco',
+        damageType2: 'dodgeCounter',
+        name: 'set4_dodgeCounter_daze_',
       },
     },
   },
   SwingJazz: {
-    enemy_defIgn_: {
+    set4_cond_chain_or_ult: {
       sheet: 'SwingJazz',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'SwingJazz',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SwingJazz',
-      name: 'set2_dmg_',
+      name: 'set4_cond_chain_or_ult',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'atk_',
         sheet: 'SwingJazz',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SwingJazz',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'SwingJazz',
-        name: 'team_dmg_',
+        name: 'set4_cond_chain_or_ult',
       },
     },
   },
   ThunderMetal: {
-    enemy_defIgn_: {
+    set4_cond_enemy_shocked_atk_: {
       sheet: 'ThunderMetal',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'ThunderMetal',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ThunderMetal',
-      name: 'set2_dmg_',
+      name: 'set4_cond_enemy_shocked_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'atk_',
         sheet: 'ThunderMetal',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ThunderMetal',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'ThunderMetal',
-        name: 'team_dmg_',
+        name: 'set4_cond_enemy_shocked_atk_',
       },
     },
   },
   WoodpeckerElectro: {
-    enemy_defIgn_: {
+    set4_cond_crit_basic_dodge_ex_atk_: {
       sheet: 'WoodpeckerElectro',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'dmgRed_',
-        sheet: 'WoodpeckerElectro',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'WoodpeckerElectro',
-      name: 'set2_dmg_',
+      name: 'set4_cond_crit_basic_dodge_ex_atk_',
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'atk_',
         sheet: 'WoodpeckerElectro',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WoodpeckerElectro',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'combat',
-        q: 'dmg_',
-        sheet: 'WoodpeckerElectro',
-        name: 'team_dmg_',
+        name: 'set4_cond_crit_basic_dodge_ex_atk_',
       },
     },
   },

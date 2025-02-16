@@ -13,7 +13,7 @@ const sheet = registerDisc(
   key,
   // Conditional buffs
   registerBuff(
-    'set2_cond_def_assist_or_evasive_assist_dmg_',
+    'set4_cond_def_assist_or_evasive_assist_dmg_',
     ownBuff.combat.dmg_.add(
       cmpGE(discCount, 2, def_assist_or_evasive_assist.ifOn(0.15))
     )
