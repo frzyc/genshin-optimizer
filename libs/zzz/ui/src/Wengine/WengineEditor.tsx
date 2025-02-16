@@ -61,7 +61,9 @@ export function WengineEditor({
   } = wengine ?? {}
   const wengineStat = key ? getWengineStat(key) : undefined
   const wengineType = wengineStat?.type
-  const wengineStats = key ? getWengineStats(key, level, phase) : undefined
+  const wengineStats = key
+    ? getWengineStats(key, level, phase, ascension)
+    : undefined
   const wengineDispatch = useCallback(
     (newWengine: Partial<ICachedWengine>) => {
       database.wengines.set(propWengineId, newWengine)
@@ -91,7 +93,6 @@ export function WengineEditor({
 
   const [showModal, onShowModal, onHideModal] = useBoolState()
   const img = key ? wengineAsset(key, 'icon') : ''
-
   return (
     <ModalWrapper
       open={!!propWengineId}
