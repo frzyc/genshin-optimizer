@@ -3,6 +3,7 @@ import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
 import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
 import { zzzSource } from '../Interfaces'
 import { DBMetaEntry, DisplayDiscEntry } from './DataEntries/'
+import { DisplayWengineEntry } from './DataEntries/DisplayWengineEntry'
 import { DiscDataManager } from './DataManagers/'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import { WengineDataManager } from './DataManagers/WengineDataManager'
@@ -15,6 +16,7 @@ export class ZzzDatabase extends Database {
   wengines: WengineDataManager
   dbMeta: DBMetaEntry
   displayDisc: DisplayDiscEntry
+  displayWengine: DisplayWengineEntry
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
@@ -39,6 +41,7 @@ export class ZzzDatabase extends Database {
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayDisc = new DisplayDiscEntry(this)
+    this.displayWengine = new DisplayWengineEntry(this)
 
     this.discs.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
@@ -49,13 +52,16 @@ export class ZzzDatabase extends Database {
     this.wengines.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
+    this.displayWengine.follow(() => {
+      this.dbMeta.set({ lastEdit: Date.now() })
+    })
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, wengines, discs in order, to respect import order
     return [this.chars, this.wengines, this.discs] as const
   }
   get dataEntries() {
-    return [this.dbMeta, this.displayDisc] as const
+    return [this.dbMeta, this.displayDisc, this.displayWengine] as const
   }
 
   clear() {

@@ -326,7 +326,15 @@ export const disc4PeffectSheets: Partial<
     condMeta: allDiscCondKeys.BranchBladeSong,
     getStats: (conds, stats) => {
       const ret: Record<string, number> = {}
-      if (stats['anomMas'] >= 115) ret['crit_dmg_'] = 0.3
+      // Have to calculate the "final" here because there are no stages for calc
+      if (
+        ((stats['anomMas_base'] ?? 0) * (1 + (stats['anomMas_'] ?? 0)) +
+          (stats['anomMas'] ?? 0)) *
+          (1 + (stats['cond_anomMas_'] ?? 0)) +
+          (stats['cond_anomMas'] ?? 0) >=
+        115
+      )
+        ret['crit_dmg_'] = 0.3
       if (conds['BranchBladeSong']) ret['crit_'] = 0.12
       return ret
     },

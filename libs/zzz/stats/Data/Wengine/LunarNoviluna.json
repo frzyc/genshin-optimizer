@@ -1,5 +1,6 @@
 {
   "name": "[Lunar] Noviluna",
+  "rarity": "B",
   "type": "attack",
   "atk_base": 32,
   "second_statkey": "crit_",
