@@ -67,6 +67,7 @@ const baseMap = {
   base_amplifying_multi_: 'Base Amplifying Multiplier',
   base_transformative_multi_: 'Base Transformative Multiplier',
   base_crystallize_multi_: 'Base Crystallize Multiplier',
+  swirl_dmgInc: 'Swirl DMG Increase',
 
   // Enemy
   enemyLevel: 'Enemy Level',

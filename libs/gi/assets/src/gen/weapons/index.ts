@@ -165,10 +165,12 @@ import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import StarcallersWatch from './StarcallersWatch'
 import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
+import SunnyMorningSleepIn from './SunnyMorningSleepIn'
 import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TalkingStick from './TalkingStick'
+import TamayurateiNoOhanashi from './TamayurateiNoOhanashi'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
 import TheBlackSword from './TheBlackSword'
@@ -372,10 +374,12 @@ const data = {
   StarcallersWatch,
   SturdyBone,
   SummitShaper,
+  SunnyMorningSleepIn,
   SurfsUp,
   SwordOfDescension,
   SwordOfNarzissenkreuz,
   TalkingStick,
+  TamayurateiNoOhanashi,
   TheAlleyFlash,
   TheBell,
   TheBlackSword,

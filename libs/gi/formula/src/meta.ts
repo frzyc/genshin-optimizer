@@ -849,6 +849,20 @@ export const formulas = {
       },
     },
   },
+  Citlali: {
+    normal1: {
+      sheet: 'Citlali',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Citlali',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Clorinde: {
     normal1: {
       sheet: 'Clorinde',
@@ -1269,6 +1283,20 @@ export const formulas = {
       },
     },
   },
+  LanYan: {
+    normal1: {
+      sheet: 'LanYan',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'LanYan',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Layla: {
     normal1: {
       sheet: 'Layla',
@@ -1320,6 +1348,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Lyney',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Mavuika: {
+    normal1: {
+      sheet: 'Mavuika',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Mavuika',
         move: 'normal',
         name: 'normal1',
       },
@@ -2261,6 +2303,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yoimiya',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  YumemizukiMizuki: {
+    normal1: {
+      sheet: 'YumemizukiMizuki',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'YumemizukiMizuki',
         move: 'normal',
         name: 'normal1',
       },

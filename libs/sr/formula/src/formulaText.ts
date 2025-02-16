@@ -1,5 +1,4 @@
-import type { CalcResult, DebugMeta } from '@genshin-optimizer/pando/engine'
-import { allLightConeKeys } from '@genshin-optimizer/sr/consts'
+import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { PartialMeta } from './calculator'
 
 type Output = PartialMeta
@@ -84,11 +83,3 @@ const details = {
   max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
   min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
 } as const
-
-export function filterDebug(debug: DebugMeta) {
-  return (
-    (debug.formula?.includes('[0] thres') ||
-      debug.formula?.includes('[0] match')) &&
-    allLightConeKeys.some((key) => debug.formula?.includes(key))
-  )
-}

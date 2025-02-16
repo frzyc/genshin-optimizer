@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "香の結晶"
   },
+  "FestivalStamp": {
+    "name": "遊芸の印"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "藍硯"
   },
+  "YumemizukiMizuki": {
+    "name": "夢見月瑞希"
+  },
   "KachinasStellaFortuna": {
     "name": "カチーナの星屑"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "藍硯の星屑"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "夢見月瑞希の星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "『百人一揆～最強武闘大会編～』見本原稿"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "フィッシュル辞書・皇女改訂版"
   },
   "WyattsRedKey": {
     "name": "ワイアットの赤い鍵"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "美味しそうなナルボンヌのトマトファルシ"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "微妙なコンソメスープ"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "コンソメスープ"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "美味しそうなコンソメスープ"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "美味しそうなクレームクレープシュゼット"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "「無欠のピュルテ」"
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "「唯一無二の秘法」"
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "微妙な銭湯まんじゅう"
+  },
+  "BathhouseManjuu": {
+    "name": "銭湯まんじゅう"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "美味しい銭湯まんじゅう"
+  },
+  "DreamsOfHealing": {
+    "name": "「夢一夜の癒し」"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "レシピ：ナルボンヌのトマトファルシ"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "レシピ：コンソメスープ"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "レシピ：梅落雪間酔"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "レシピ：銭湯まんじゅう"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "重い荷物"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "一缶の稚魚"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "名もなき旅者のノート・5"
   },
+  "InvitationFromMiko": {
+    "name": "神子からの手紙"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "「秋沙銭湯」特別券"
+  },
+  "LeafyDreams": {
+    "name": "「一葉の良き夢」"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "脱魂の試練場のメッセージ"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "ちび竜ビスケット・テペトル"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "秋沙銭湯特別招待券"
+  },
+  "MysteriousGift": {
+    "name": "不思議な贈り物"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "稲妻秘聞録・1"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "稲妻秘聞録・2"
+  },
+  "MenOfLithinI": {
+    "name": "石素人・1"
+  },
+  "MenOfLithinII": {
+    "name": "石素人・2"
+  },
+  "MenOfLithinIII": {
+    "name": "石素人・3"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "霊を紡ぐシャトル"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "幽かに燃える燐火"
+  },
   "FalconsDance": {
     "name": "鷹の舞"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "紀行・新火"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "夢見月瑞希・悪夢喰"
+  },
+  "CelebrationScorch": {
+    "name": "祭典・灼熱"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "紀行・瑞夢"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "調合書：スピネルグレインの餌"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "調合書：エンバー餌"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "優雅な挨拶"
+  },
+  "EarnestNegotiation": {
+    "name": "誠実な交渉"
   },
   "FantasticalMarvel": {
     "name": "素晴らしきトリック"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "夜を裂く紫焔"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "あらゆる怨みと借りは私が清算しよう"
+  },
+  "RepaidInFull": {
+    "name": "すべてに対価を"
   },
   "MagicGuide": {
     "name": "魔導緒論"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "「流泉の衆」"
   },
+  "FlowerFeatherClan": {
+    "name": "「花翼の集」"
+  },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "燃素満タン"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "テペトル仔竜！お宝発見！"
   },
   "Origin": {
     "name": "原初"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "汎用型メモラック"
+  },
+  "SweetDreams": {
+    "name": "「良い夢を」"
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "茶房の道具-「毫厘の重さ」"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "「クァワカン断崖の頂の柵」"
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "厩舎の柵‐「素朴な境界」"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "厩舎の木製ドア‐「建築の基礎」"
+  },
   "SmoothWoodenBench": {
     "name": "平らな木製ベンチ"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "「灰燼の都の輝き」"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "厩舎の石臼-「食材加工の選択肢」"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "厩舎の敷き藁-「簡易ベッド」"
   }
 }

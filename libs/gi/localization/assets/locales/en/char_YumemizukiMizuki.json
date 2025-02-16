@@ -1,0 +1,5 @@
+{
+  "skillCond": "In the Dreamdrifter state",
+  "a4Cond": "In the Dreamdrifter state and nearby party members hit opponents with <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, or <electro>Electro</electro> attacks",
+  "c1Cond": "Enemy under the \"Twenty-Three Nights' Awaiting\" effect"
+}

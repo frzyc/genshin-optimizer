@@ -1,0 +1,160 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "Embrace of Enchanting Dreams",
+  "description": "Pemegang saham Aisa Bathhouse, psikolog klinis dari klan yumekui-baku yang berdedikasi untuk mengusir mimpi buruk dan membawa ketenangan batin bagi semua orang.",
+  "constellationName": "Tapirus Somniator",
+  "auto": {
+    "name": "Pure Heart, Pure Dreams",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan dan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk mengakibatkan <anemo>Anemo DMG Area</anemo> setelah jeda singkat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Anemo dan menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG Area</anemo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Aisa Utamakura Pilgrimage",
+    "description": {
+      "0": "Menenun kenangan mimpi indah, memasuki status <strong>Dreamdrifter</strong> yang bisa melayang di atas permukaan tanah, dan mengakibatkan satu kali <anemo>Anemo DMG Area</anemo> terhadap musuh di sekitar.",
+      "1": "<br/>",
+      "2": "<strong>Dreamdrifter</strong>",
+      "3": [
+        "Saat berada dalam status Dreamdrifter, Yumemizuki Mizuki akan terus melayang dan mengakibatkan <anemo>Anemo DMG Area</anemo> secara berkala terhadap musuh di sekitar.",
+        "Selama durasi ini, Yumemizuki Mizuki dapat mengontrol arah melayangnya, dan jarak pengambilan <strong>Yumemi Style Special Snacks</strong> dari Elemental Burst <strong>Anraku Secret Spring Therapy</strong> akan meningkat.",
+        "Meningkatkan DMG Swirl yang dipicu oleh anggota party di sekitar berdasarkan Elemental Mastery Yumemizuki Mizuki.",
+        "Status Dreamdrifter akan berakhir saat Yumemizuki Mizuki meninggalkan medan pertempuran atau melancarkan Elemental Skill-nya sekali lagi."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Mimpi kita bersentuhan pada malam hari, lagunya bersenandung di dalam sanubari kita.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Serangan Terus-Menerus",
+      "2": "Durasi Dreamdrifter",
+      "3": "Peningkatan Persentase DMG Swirl untuk Setiap Poin Elemental Mastery",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Anraku Secret Spring Therapy",
+    "description": {
+      "0": "Membangunkan berbagai mimpi indah dan mimpi buruk yang akan menarik musuh dan objek di sekitar dan mengakibatkan <anemo>Anemo DMG Area</anemo>, serta memanggil Mini Baku untuk membantu.",
+      "1": "<br/>",
+      "2": "<strong>Mini Baku:</strong>",
+      "3": "Akan mengikuti Karakter aktif. Setiap beberapa saat, Mini Baku ini akan menghasilkan 1 buah Yumemi Style Special Snacks di sekitar. Saat salah satu Karakter di dalam party-mu mengambil Snack, jika HP Karakter yang bersangkutan di atas 70%, maka Snack tersebut akan meledak dan melancarkan Munen Shockwave, mengakibatkan <anemo>Anemo DMG Area</anemo> satu kali pada musuh di sekitar. Jika tidak, maka Snack ini akan memulihkan HP Karakter yang mengambilnya berdasarkan Elemental Mastery Yumemizuki Mizuki. Saat Yumemizuki Mizuki mengambil Yumemi Style Special Snacks dan memicu pemulihan HP, jumlah pemulihannya akan meningkat 100%. Jika tidak diambil setelah kurun waktu tertentu, maka Snack ini akan meledak dan melancarkan Munen Shockwave, mengakibatkan <anemo>Anemo DMG Area</anemo> satu kali pada musuh di sekitar.",
+      "4": "<br/>",
+      "5": "<i>\"Jika kamu mengubur emosi negatifmu terlalu lama, semuanya akan berubah menjadi mimpi buruk. Kalau begitu, kenapa kita tidak ubah emosi itu menjadi 'camilan enak' mumpung masih ada kesempatan?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Munen Shockwave",
+      "2": "Pemulihan HP dari Pengambilan Snack",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bright Moon's Restless Voice",
+    "description": {
+      "0": "Setiap kali Yumemizuki Mizuki memicu reaksi Swirl saat dalam status Dreamdrifter, maka durasi Dreamdrifter akan bertambah 2,5 detik. Efek ini dapat terpicu sekali setiap 0,3 detik, dan dapat terpicu sebanyak 2 kali dalam satu kali status Dreamdrifter."
+    }
+  },
+  "passive2": {
+    "name": "Thoughts by Day Bring Dreams by Night",
+    "description": {
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, jika serangan anggota party lain di sekitar yang berelemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro> mengenai musuh, maka Elemental Mastery Yumemizuki Mizuki meningkat 100 poin selama 4 detik."
+    }
+  },
+  "passive3": {
+    "name": "All Ailments Banished",
+    "description": {
+      "0": "Saat Yumemizuki Mizuki berada di dalam party, anggota party memiliki kemungkinan untuk mendapatkan 30% pemulihan HP tambahan saat mengonsumsi makanan pemulihan HP yang tidak memiliki fungsi menghidupkan kembali Karakter gugur. Kemungkinan terpicunya efek ini didasarkan pada Level Persahabatan Karakter yang bersangkutan. (Efek ini akan selalu terpicu jika Pengembara yang mengonsumsi makanan pemulihan.)"
+    }
+  },
+  "constellation1": {
+    "name": "In Mist-Like Waters",
+    "description": {
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, ia akan memberikan efek \"Twenty-Three Nights' Awaiting\" pada musuh di sekitar setiap 3,5 detik dan bertahan selama 3 detik. Saat musuh yang berada dalam status \"Twenty-Three Nights' Awaiting\" terkena Anemo DMG dan memicu reaksi Swirl, maka efek ini terhapus dan membuat DMG reaksi Swirl pada musuh yang bersangkutan kali ini meningkat sebesar 1.100% dari Elemental Mastery Yumemizuki Mizuki."
+    }
+  },
+  "constellation2": {
+    "name": "Your Echo I Meet in Dreams",
+    "description": {
+      "0": "Saat memasuki status Dreamdrifter, setiap poin Elemental Mastery Yumemizuki Mizuki akan memberikan 0,04% <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, dan <electro>Electro</electro> DMG Bonus terhadap seluruh Karakter lain dalam party yang ada di sekitar dan berlangsung hingga status Dreamdrifter berakhir."
+    }
+  },
+  "constellation3": {
+    "name": "Till Dawn's Moon Ends Night",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Aisa Utamakura Pilgrimage</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Buds Warm Lucid Springs",
+    "description": {
+      "0": "Saat mengambil <strong>Yumemi Style Special Snacks</strong> dari Elemental Burst <strong>Anraku Secret Spring Therapy</strong>, Snack ini akan mengakibatkan DMG dan memulihkan HP di waktu yang bersamaan, juga memulihkan 5 poin Energy untuk Yumemizuki Mizuki. Dalam satu durasi<strong>Anraku Secret Spring Therapy</strong>, maksimum 4 kali pemulihan Energy yang bisa diperoleh dengan cara ini."
+    }
+  },
+  "constellation5": {
+    "name": "As Setting Moon Brings Year's End",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Anraku Secret Spring Therapy</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Heart Lingers Long",
+    "description": {
+      "0": "Saat Yumemizuki Mizuki berada dalam status Dreamdrifter, DMG reaksi Swirl yang dipicu oleh anggota party di sekitar dapat mengakibatkan CRIT, dengan nilai CRIT Rate tetap sebesar 30% dan CRIT DMG tetap sebesar 100%."
+    }
+  }
+}

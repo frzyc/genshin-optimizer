@@ -48,7 +48,7 @@
       "8": "Saat Karakter yang sedang diikuti oleh Scorching Threshold mengakibatkan DMG terhadap musuh, Scorching Threshold akan melancarkan serangan terkoordinasi, mengakibatkan Nightsoul-aligned <pyro>Pyro DMG</pyro> berdasarkan ATK Traveler terhadap musuh. Efek ini dapat terpicu sekali setiap 3 detik.",
       "9": "<br/>",
       "10": "<strong>Nightsoul Blessing: Traveler</strong>",
-      "11": "Terus mengonsumsi poin Nightsoul. Nightsoul's Blessing Traveler. Kondisi Nightsoul's Blessing Traveler sendiri bertahan hingga 12 detik dan saat poin Nightsoul habis dikonsumsi atau saat dilancarkan sekali lagi, Nightsoul Blessing Traveler akan berakhir.",
+      "11": "Terus mengonsumsi poin Nightsoul. Kondisi Nightsoul's Blessing Traveler sendiri bertahan hingga 12 detik dan saat poin Nightsoul habis dikonsumsi, Nightsoul Blessing Traveler akan berakhir. Jika Elemental Skill ini digunakan lagi saat aktif, poin Nightsoul Traveler akan diperbarui menjadi 42 poin.",
       "12": "Blazing Threshold dan Scorching Threshold akan hilang setelah Nightsoul's Blessing Traveler berakhir. Hanya ada satu Blazing Threshold atau Scorching Threshold yang dipanggil oleh Traveler sendiri yang bisa ada di medan pertempuran di saat yang sama.",
       "13": "<br/>",
       "14": "<i>Kamu dan Paimon bersama-sama menyaksikan perubahan warna bara api yang mengalir.</i>"
@@ -106,7 +106,7 @@
   "passive2": {
     "name": "Embers Unspent",
     "description": {
-      "0": "Setelah Karakter aktif berada dalam status <strong>Blazing Threshold</strong> atau <strong>Scorching Threshold</strong> memicu reaksi Burning, Vaporize, Melt, Overloaded, Burgeon, Pyro Swirl, atau Pyro Crystallize, Traveler akan memulihkan 5 Energy. Efek ini dapat terpicu sekali setiap 12 detik. Selain itu, saat anggota party di sekitar memicu Nightsoul Burst, akan memulihkan 4 Energy Traveler."
+      "0": "Setelah Karakter aktif berada dalam status <strong>Blazing Threshold</strong> atau <strong>Scorching Threshold</strong> memicu <pyro>reaksi terkait Pyro</pyro>, Traveler akan memulihkan 5 Energy. Efek ini dapat terpicu sekali setiap 12 detik. Selain itu, saat anggota party di sekitar memicu Nightsoul Burst, akan memulihkan 4 Energy Traveler."
     }
   },
   "constellation1": {
@@ -118,7 +118,7 @@
   "constellation2": {
     "name": "Ever-Lit Candle",
     "description": {
-      "0": "Dalam 12 detik setelah melancarkan Elemental Skill <strong>Flowfire Blade</strong>, setelah anggota party di sekitar memicu Burning, Vaporize, Melt, Overloaded, Burgeon, Pyro Swirl atau Pyro Crystallize terhadap musuh, akan memulihkan 14 poin Nightsoul Traveler. Setiap kali menggunakan Elemental Skill <strong>Flowfire Blade</strong>, poin Nightsoul yang bisa dipulihkan dengan cara ini adalah maksimum 28 poin Nightsoul."
+      "0": "Dalam 12 detik setelah melancarkan Elemental Skill <strong>Flowfire Blade</strong>, setelah anggota party di sekitar memicu <pyro>reaksi terkait Pyro</pyro>, akan memulihkan 14 poin Nightsoul Traveler. Setiap kali menggunakan Elemental Skill <strong>Flowfire Blade</strong>, poin Nightsoul yang bisa dipulihkan dengan cara ini adalah maksimum 28 poin Nightsoul."
     }
   },
   "constellation3": {

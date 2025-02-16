@@ -1,5 +1,4 @@
 import { max, min, prod, sum } from '@genshin-optimizer/pando/engine'
-import { allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import type { TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent, reader, stats } from '../util'
 import dmg from './dmg'
@@ -26,15 +25,10 @@ const data: TagMapNodeEntries = [
   reader.withTag({ sheet: 'iso', et: 'own' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'own' }).reread(reader.sheet('custom')),
 
-  // convert sheet:<char/wengine> to sheet:agg for accumulation
+  // convert sheet:<char> to sheet:agg for accumulation
+  // sheet:<wengine> is reread in src/util.ts:wengineTagMapNodeEntries()
   // sheet:<disc> is reread in src/util.ts:discTagMapNodeEntries()
   reader.sheet('agg').reread(reader.sheet('char')),
-
-  // add all wengine by default
-  ...allWengineKeys.map((we) =>
-    reader.sheet('wengine').reread(reader.sheet(we))
-  ),
-  reader.sheet('agg').reread(reader.sheet('wengine')),
 
   // For stats with a flat and percent variant
   // initial x += base x * initial x%

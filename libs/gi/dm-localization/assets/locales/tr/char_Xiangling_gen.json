@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Saldırı</strong>",
-        "1": "Arka arkaya en fazla beş mızrak saldırısı yapar."
+        "1": "Arka arkaya en fazla 5 mızrak saldırısı yapar."
       },
       "charged": {
         "0": "<strong>Yüklü Saldırı</strong>",

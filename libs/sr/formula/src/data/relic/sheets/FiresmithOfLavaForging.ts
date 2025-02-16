@@ -8,11 +8,10 @@ import {
   enemyDebuff,
   own,
   ownBuff,
-  register,
   registerBuff,
   teamBuff,
 } from '../../util'
-import { entriesForRelic } from '../util'
+import { entriesForRelic, registerRelic } from '../util'
 
 const key: RelicSetKey = 'FiresmithOfLavaForging'
 const data_gen = allStats.relic[key]
@@ -25,7 +24,7 @@ const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
 const { numConditional } = allNumConditionals(key, true, 0, 2)
 
-const sheet = register(
+const sheet = registerRelic(
   key,
   // Handles passive buffs
   entriesForRelic(key, data_gen),
@@ -35,13 +34,21 @@ const sheet = register(
   registerBuff(
     'set2_dmg_',
     ownBuff.premod.dmg_.add(
-      boolConditional.ifOn(cmpGE(relicCount, 2, dm[2].cond_dmg_))
-    )
+      cmpGE(relicCount, 2, boolConditional.ifOn(dm[2].cond_dmg_))
+    ),
+    cmpGE(relicCount, 2, 'unique', '')
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    teamBuff.premod.dmg_.add(
+      cmpGE(relicCount, 4, listConditional.map({ val1: 1, val2: 2 }))
+    ),
+    cmpGE(relicCount, 4, 'unique', '')
   ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.defIgn_.add(numConditional))
+  registerBuff(
+    'enemy_defIgn_',
+    enemyDebuff.common.defIgn_.add(cmpGE(relicCount, 4, numConditional)),
+    cmpGE(relicCount, 4, 'unique', '')
+  )
 )
 export default sheet

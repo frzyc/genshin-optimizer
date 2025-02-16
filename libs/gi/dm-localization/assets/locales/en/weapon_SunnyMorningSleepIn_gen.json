@@ -1,0 +1,24 @@
+{
+  "name": "Sunny Morning Sleep-In",
+  "description": {
+    "0": "A bell lantern forged from purple jade. They say it brings sweet dreams when placed beside one's pillow."
+  },
+  "passiveName": "Bathhouses, Hawks, and Narukami",
+  "passiveDescription": {
+    "0": {
+      "0": "Elemental Mastery increases by <cryo>120</cryo> for 6s after triggering Swirl. Elemental Mastery increases by <cryo>96</cryo> for 9s after the wielder's Elemental Skill hits an opponent. Elemental Mastery increases by <cryo>32</cryo> for 30s after the wielder's Elemental Burst hits an opponent."
+    },
+    "1": {
+      "0": "Elemental Mastery increases by <cryo>150</cryo> for 6s after triggering Swirl. Elemental Mastery increases by <cryo>120</cryo> for 9s after the wielder's Elemental Skill hits an opponent. Elemental Mastery increases by <cryo>40</cryo> for 30s after the wielder's Elemental Burst hits an opponent."
+    },
+    "2": {
+      "0": "Elemental Mastery increases by <cryo>180</cryo> for 6s after triggering Swirl. Elemental Mastery increases by <cryo>144</cryo> for 9s after the wielder's Elemental Skill hits an opponent. Elemental Mastery increases by <cryo>48</cryo> for 30s after the wielder's Elemental Burst hits an opponent."
+    },
+    "3": {
+      "0": "Elemental Mastery increases by <cryo>210</cryo> for 6s after triggering Swirl. Elemental Mastery increases by <cryo>168</cryo> for 9s after the wielder's Elemental Skill hits an opponent. Elemental Mastery increases by <cryo>56</cryo> for 30s after the wielder's Elemental Burst hits an opponent."
+    },
+    "4": {
+      "0": "Elemental Mastery increases by <cryo>240</cryo> for 6s after triggering Swirl. Elemental Mastery increases by <cryo>192</cryo> for 9s after the wielder's Elemental Skill hits an opponent. Elemental Mastery increases by <cryo>64</cryo> for 30s after the wielder's Elemental Burst hits an opponent."
+    }
+  }
+}

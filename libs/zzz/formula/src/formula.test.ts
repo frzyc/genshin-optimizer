@@ -1,4 +1,4 @@
-import type { DebugMeta } from '@genshin-optimizer/pando/engine'
+import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
   read,
@@ -14,6 +14,7 @@ import {
 import { fail } from 'assert'
 import {
   charTagMapNodeEntries,
+  discTagMapNodeEntries,
   formulas,
   wengineTagMapNodeEntries,
   withMember,
@@ -228,24 +229,11 @@ describe('char+wengine test', () => {
       expect(calc.compute(anby.base.atk).val).toBeCloseTo(1134.797)
       expect(calc.compute(anby.final.atk).val).toBeCloseTo(1597.696912)
 
-      // Debug printing
-      function filterDebug(debug: DebugMeta) {
-        for (let i = debug.deps.length - 1; i >= 0; i--) {
-          const readSeq = debug.deps[i].toJSON().readSeq
-          if (readSeq?.includes('{ wengine } : { wengine }')) {
-            debug.deps.splice(i, 1)
-            continue
-          }
-          debug.deps[i] = filterDebug(debug.deps[i])
-        }
-        return debug
-      }
       const debug = calc
         .withTag({ src: 'Anby', dst: 'Anby' })
         .toDebug()
         .compute(read(formulas.Anby.standardDmgInst.tag, undefined))
-      const filtered = filterDebug(debug.meta)
-      console.log(JSON.stringify(filtered, undefined, 2))
+      console.log(prettify(debug))
 
       expect(
         calc
@@ -257,8 +245,8 @@ describe('char+wengine test', () => {
         .withTag({ src: 'Anby', dst: 'Anby' })
         .toDebug()
         .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined))
-      const filtered2 = filterDebug(debug2.meta)
-      console.log(JSON.stringify(filtered2, undefined, 2))
+      console.log(prettify(debug2))
+
       expect(
         calc
           .withTag({ src: 'Anby', dst: 'Anby' })
@@ -267,6 +255,39 @@ describe('char+wengine test', () => {
     }
   )
 })
+
+describe('disc2p test', () => {
+  it('calculate initial stats', () => {
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+        }),
+        ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
+      ),
+    ]
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Anby', dst: 'Anby' })
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    console.log(prettify(calc.toDebug().compute(anby.final.atk)))
+    expect(calc.compute(anby.final.atk).val).toBeCloseTo(195)
+    expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.66)
+  })
+})
+
 describe('sheet', () => {
   test('buff entries', () => {
     const sheets = new Set([

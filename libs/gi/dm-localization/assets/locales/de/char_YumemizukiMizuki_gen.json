@@ -1,0 +1,160 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "Umarmt von süßen Träumen",
+  "description": "Hauptanteilseignerin des „Badehauses Aisa“ und Psychotherapeutin, ein Yumekui-Baku in Menschengestalt. Besonders versiert im Vertreiben von Albträumen, verhilft sie den Menschen zu Gelassenheit.",
+  "constellationName": "Tapirus Somniator",
+  "auto": {
+    "name": "Reines Herz, reine Träume",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Angriffe aus und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit <anemo>Anemo-Flächenschaden</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Windes, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <anemo>Anemo-Flächenschaden</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Wallfahrt nach Aisa Utamakura",
+    "description": {
+      "0": "Webt die Erinnerungen an einen schönen Traum, geht in Zustand <strong>Träumerisches Treiben</strong>, in dem sie über dem Boden schwebt, über und fügt Gegnern in der Umgebung einmal <anemo>Anemo-Flächenschaden</anemo> zu.",
+      "1": "<br/>",
+      "2": "<strong>Träumerisches Treiben</strong>",
+      "3": [
+        " Yumemizuki Mizuki bewegt sich, wenn sie im Zustand Träumerisches Treiben ist, fortlaufend nach vorn und fügt Gegnern in der Nähe in gewissen zeitlichen Abständen <anemo>Anemo-Flächenschaden</anemo> zu.",
+        " Während dieser Zeit kann Yumemizuki Mizuki die Richtung, in die sie schwebt, steuern. Erhöht währenddessen die Reichweite zum Aufsammeln von <strong>Snacks nach Yumemi-Art</strong> der Spezialfähigkeit <strong>Anraku-Therapie in den geheimen Quellen</strong>.",
+        " Erhöht den von Truppenmitgliedern in der Nähe beim Auslösen der Reaktion Verwirbelung verursachten Schaden basierend auf Yumemizuki Mizukis Elementarkunde.",
+        " Beim Auswechseln von Yumemizuki Mizuki oder erneuten Anwenden der Fähigkeit endet der Zustand Träumerisches Treiben."
+      ],
+      "4": "<br/>",
+      "5": "<i>„Wir treffen uns in tiefster Nacht, wenn froher Klang in uns erwacht.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH fortlaufenden Angriffs",
+      "2": "Dauer von Träumerisches Treiben",
+      "3": "Verwirbelung-SCH-Bonus pro Punkt Elementarkunde",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Anraku-Therapie in den geheimen Quellen",
+    "description": {
+      "0": "Weckt die Erinnerungen an viele Träume und Albträume, zieht damit Objekte und Gegner in der Nähe an, verursacht <anemo>Anemo-Flächenschaden</anemo> und beschwört einen kleinen Baku, um ihr beizustehen.",
+      "1": "<br/>",
+      "2": "<strong>Kleiner Baku</strong>",
+      "3": "Folgt der aktuellen Figur und erschafft in gewissen Abständen in ihrer Nähe 1 „Snack nach Yumemi-Art“. Löst beim Aufsammeln der Snacks durch eigene Truppenmitglieder je nach Menge an LP der aufsammelnden Figur unterschiedliche Effekte aus: Lässt den Snack bei mehr als 70 % LP explodieren und löst damit eine Munen-Druckwelle aus, die Gegnern in der Umgebung einmal <anemo>Anemo-Flächenschaden</anemo> zufügt. Stellt bei bis zu 70 % LP basierend auf Yumemizuki Mizukis Elementarkunde LP wieder her. Erhöht, wenn Yumemizuki Mizuki Snacks nach Yumemi-Art sammelt und dabei Heilung ausgelöst hat, die wiederhergestellten LP um 100 %. Snacks nach Yumemi-Art explodieren auch, wenn sie innerhalb einer gewissen Zeit nicht aufgesammelt werden, und lösen damit eine Munen-Druckwelle aus, die Gegnern in der Umgebung einmal <anemo>Anemo-Flächenschaden</anemo> zufügt.",
+      "4": "<br/>",
+      "5": "<i>„Unterdrückt man seine schlechten Gefühle zu lange, werden sie zu Albträumen. Da können wir sie doch viel lieber zu leckeren Snacks verarbeiten und einfach wegputzen!“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH Munen-Druckwelle",
+      "2": "Von Snacks wiederhergestellte LP",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ruhelose Stimme des hellen Mondes",
+    "description": {
+      "0": "Verlängert, wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben die Reaktion Verwirbelung auslöst, die Wirkungsdauer dieses Zustands um 2,5 s. 0,3 s Abklingzeit, 2-mal auslösbar während einer Wirkungsdauer des Zustands Träumerisches Treiben."
+    }
+  },
+  "passive2": {
+    "name": "Tag- und Nachtträume",
+    "description": {
+      "0": "Erhöht, wenn die anderen Truppenmitglieder in der Nähe mit Angriffen vom Elementartyp <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Kryo</cryo> oder <electro>Elektro</electro> Gegner treffen, während Yumemizuki Mizuki sich im Zustand Träumerisches Treiben befindet, die Elementarkunde von Yumemizuki Mizuki 4 s lang um 100 Punkte."
+    }
+  },
+  "passive3": {
+    "name": "Schmerzen sind nur Illusion",
+    "description": {
+      "0": "Gerichte mit wiederherstellender, aber ohne wiederbelebende Funktion stellen eigenen Truppenmitgliedern mit gewisser Wahrscheinlichkeit 30 % mehr LP wieder her, wenn Yumemizuki Mizuki in der Truppe ist. Die Wahrscheinlichkeit zum Auslösen dieses Effekts steigt mit höherer Freundschaftsstufe der jeweiligen Figur. Ist {F#die}{M#der} Reisende der Anwender, wird dieser Effekt immer ausgelöst."
+    }
+  },
+  "constellation1": {
+    "name": "Fernen Wassern gleicher Nebel in der Nacht",
+    "description": {
+      "0": "Yumemizuki Mizuki fügt im Zustand Träumerisches Treiben alle 3,5 s Gegnern in der Nähe den 3 s haltenden Effekt „Dreiundzwanzig Nächte des Wartens“ zu. Entfernt diesen Effekt von Gegnern, sobald diese von einer Reaktion Verwirbelung erfasst werden, die durch Anemo-Schaden entsteht, und erhöht den diesen Gegnern durch diese Reaktion zugefügten Schaden einmalig um 1.100 % von Yumemizuki Mizukis Elementarkunde."
+    }
+  },
+  "constellation2": {
+    "name": "Begegnung mit dir in meinen Träumen",
+    "description": {
+      "0": "Erhöht im Zustand Träumerisches Treiben den <pyro>Pyro</pyro>-, <hydro>Hydro</hydro>-, <cryo>Kryo</cryo>- und <electro>Elektro</electro>-Schaden aller anderen Truppenmitglieder in der Nähe für jeden Punkt Elementarkunde von Yumemizuki Mizuki um 0,04 %, hält bis zum Ende des Zustands Träumerisches Treiben."
+    }
+  },
+  "constellation3": {
+    "name": "Mondenschein am Ende der Nacht",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Wallfahrt nach Aisa Utamakura</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Im warmen Quellwasser treibende Blüten",
+    "description": {
+      "0": "Verursacht beim Aufsammeln von <strong>Snacks nach Yumemi-Art</strong> der Spezialfähigkeit <strong>Anraku-Therapie in den geheimen Quellen</strong> Schaden und heilt gleichzeitig, stellt Yumemizuki Mizuki außerdem 5 Punkte Elementarenergie wieder her, während einer Anwendung von <strong>Anraku-Therapie in den geheimen Quellen</strong> aber höchstens 4-mal."
+    }
+  },
+  "constellation5": {
+    "name": "Rückkehr des Mondes am Jahresende",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Anraku-Therapie in den geheimen Quellen</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sehnsucht tief in meinem Herzen",
+    "description": {
+      "0": "Wenn Yumemizuki Mizuki im Zustand Träumerisches Treiben ist, können beim Verursachen der Reaktion Verwirbelung durch Truppenmitglieder in der Nähe Kritische Treffer des entsprechenden Schadens ausgelöst werden, wobei die KT auf 30 % und der KSCH auf 100 % festgelegt sind."
+    }
+  }
+}

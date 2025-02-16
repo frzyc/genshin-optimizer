@@ -11,7 +11,7 @@ import {
   allDiscRarityKeys,
   allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
-import type { IDisc } from '@genshin-optimizer/zzz/db'
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
 
 export type DiscFilterOption = {
   discSetKeys: DiscSetKey[]

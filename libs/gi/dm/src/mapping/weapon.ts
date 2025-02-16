@@ -129,6 +129,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13427: 'ProspectorsDrill',
   13430: 'MountainBracingBolt',
   13431: 'FootprintOfTheRainbow',
+  13432: 'TamayurateiNoOhanashi',
   13501: 'StaffOfHoma',
   13502: 'SkywardSpine',
   // 13503: "",
@@ -191,6 +192,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14515: 'CranesEchoingCall',
   14516: 'SurfsUp',
   14517: 'StarcallersWatch',
+  14518: 'SunnyMorningSleepIn',
 
   //bow
   15101: 'HuntersBow',

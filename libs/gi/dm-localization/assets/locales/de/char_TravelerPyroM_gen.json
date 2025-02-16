@@ -48,7 +48,7 @@
       "8": "Wenn die aktuelle Figur in der „Versengenden Schwelle“ Gegnern Schaden zufügt, führt die „Versengende Schwelle“ einen abgestimmten Angriff aus, der auf Basis des ANG {F#der}{M#des} Reisenden Gegnern mit Nachtseelen versehenen <pyro>Pyro-Schaden</pyro> zufügt. 3 s Abklingzeit.",
       "9": "<br/>",
       "10": "<strong>Nachtseelensegen – Reisende{M#r}</strong>",
-      "11": "Verbraucht fortlaufend Nachtseelenpunkte. Der Nachtseelensegen-Zustand {F#der}{M#des} Reisenden hält bis zu 12 s. Wenn {F#ihre}{M#seine} Nachtseelenpunkte aufgebraucht sind, oder beim erneuten Auslösen endet der Nachtseelensegen-Zustand {F#der}{M#des} Reisenden.",
+      "11": "Verbraucht fortlaufend Nachtseelenpunkte. Der Nachtseelensegen-Zustand {F#der}{M#des} Reisenden hält bis zu 12 s. Wenn {F#ihre}{M#seine} Nachtseelenpunkte aufgebraucht sind, endet der Nachtseelensegen-Zustand {F#der}{M#des} Reisenden. Aktualisiert die Nachtseelenpunkte beim erneuten Auslösen der Elementarfähigkeit während der Wirkungsdauer auf 42 Punkte.",
       "12": "Die „Flammende Schwelle“ und „Versengende Schwelle“ verschwinden, wenn der Nachtseelensegen-Zustand {F#der}{M#des} Reisenden endet. Es kann gleichzeitig nur eine von {F#der}{M#dem} Reisenden selbst erschaffene „Flammende Schwelle“ oder „Versengende Schwelle“ auf dem Feld existieren.",
       "13": "<br/>",
       "14": "<i>Du hast mit Paimon gemeinsam die wechselnden Farben der fließenden Flammen beobachtet.</i>"
@@ -107,7 +107,7 @@
   "passive2": {
     "name": "Unverbrannte Glut",
     "description": {
-      "0": "Stellt {F#der}{M#dem} Reisenden beim Auslösen der Reaktionen „In Flammen“, „Verdampfen“, „Schmelzen“, „Überladen“, „Flammenspross“, „Pyro-Verwirbelung“ und „Pyro-Kristallisation“ an Gegnern durch die aktuelle Figur im Zustand <strong>„Flammende Schwelle“</strong> oder <strong>„Versengende Schwelle“</strong> 5 Punkte Elementarenergie wieder her, 12 s Abklingzeit. Stellt {F#der}{M#dem} Reisenden außerdem beim Auslösen des „Nachtseelenaufbruchs“ durch ein Truppenmitglied in der Nähe 4 Punkte Elementarenergie wieder her."
+      "0": "Stellt {F#der}{M#dem} Reisenden beim Auslösen von <pyro>Pyro-Reaktionen</pyro> an Gegnern durch die aktuelle Figur im Zustand <strong>„Flammende Schwelle“</strong> oder <strong>„Versengende Schwelle“</strong> 5 Punkte Elementarenergie wieder her, 12 s Abklingzeit. Stellt {F#der}{M#dem} Reisenden außerdem beim Auslösen des „Nachtseelenaufbruchs“ durch ein Truppenmitglied in der Nähe 4 Punkte Elementarenergie wieder her."
     }
   },
   "constellation1": {
@@ -119,7 +119,7 @@
   "constellation2": {
     "name": "Ewig leuchtender Kerzenschein",
     "description": {
-      "0": "Stellt {F#der}{M#dem} Reisenden innerhalb von 12 s nach dem Einsetzen der Elementarfähigkeit <strong>Flussfeuer-Klinge</strong> beim Auslösen der Reaktionen „In Flammen“, „Verdampfen“, „Schmelzen“, „Überladen“, „Flammenspross“, „Pyro-Verwirbelung“ und „Pyro-Kristallisation“ an Gegnern durch in der Nähe befindliche Truppenmitglieder 14 Nachtseelenpunkte wieder her. Auf diese Weise können pro Einsetzen der Elementarfähigkeit <strong>Flussfeuer-Klinge</strong> max. 28 Nachtseelenpunkte wiederhergestellt werden."
+      "0": "Stellt {F#der}{M#dem} Reisenden innerhalb von 12 s nach dem Einsetzen der Elementarfähigkeit <strong>Flussfeuer-Klinge</strong> beim Auslösen von <pyro>Pyro-Reaktionen</pyro> an Gegnern durch in der Nähe befindliche Truppenmitglieder 14 Nachtseelenpunkte wieder her. Auf diese Weise können pro Einsetzen der Elementarfähigkeit <strong>Flussfeuer-Klinge</strong> max. 28 Nachtseelenpunkte wiederhergestellt werden."
     }
   },
   "constellation3": {

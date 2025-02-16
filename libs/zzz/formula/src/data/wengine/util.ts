@@ -1,7 +1,15 @@
+import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
 import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { allStats } from '@genshin-optimizer/zzz/stats'
-import type { TagMapNodeEntries } from '../util'
+import type {
+  Dst,
+  Sheet,
+  Src,
+  Tag,
+  TagMapNodeEntries,
+  TagMapNodeEntry,
+} from '../util'
 import { own, ownBuff } from '../util'
 
 const atk_multiplier = [
@@ -13,6 +21,13 @@ const atk_multiplier = [
   7.8408, 7.9977, 8.1545, 8.3113, 8.4681, 8.6249, 8.7817, 8.9386, 9.0954,
   9.2522, 9.409,
 ]
+
+export function registerWengine(
+  sheet: WengineKey,
+  ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
+): TagMapNodeEntries {
+  return registerEquipment<Tag, Src, Dst, Sheet>(sheet, 'wengine', ...data)
+}
 
 export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
   const { lvl, modification } = own.wengine

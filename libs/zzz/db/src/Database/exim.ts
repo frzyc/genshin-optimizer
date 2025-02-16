@@ -1,4 +1,4 @@
-import type { IDisc } from '../Interfaces/IDisc'
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import type { CharacterData } from './DataManagers/CharacterDataManager'
 
 function newCounter<T>(): ImportResultCounter<T> {

@@ -8,11 +8,10 @@ import {
   enemyDebuff,
   own,
   ownBuff,
-  register,
   registerBuff,
   teamBuff,
 } from '../../util'
-import { entriesForLightCone } from '../util'
+import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'SailingTowardsASecondLife'
 const data_gen = allStats.lightCone[key]
@@ -25,7 +24,7 @@ const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
 const { numConditional } = allNumConditionals(key, true, 0, 2)
 
-const sheet = register(
+const sheet = registerLightCone(
   key,
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
@@ -35,20 +34,25 @@ const sheet = register(
   registerBuff(
     'cond_dmg_',
     ownBuff.premod.dmg_.add(
-      boolConditional.ifOn(
-        cmpGE(lcCount, 1, subscript(superimpose, dm.cond_dmg_))
+      cmpGE(
+        lcCount,
+        1,
+        boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_))
       )
-    )
+    ),
+    cmpGE(lcCount, 1, 'unique', '')
   ),
   registerBuff(
     'team_dmg_',
     teamBuff.premod.dmg_.add(
       cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 }))
-    )
+    ),
+    cmpGE(lcCount, 1, 'unique', '')
   ),
   registerBuff(
     'enemy_defIgn_',
-    enemyDebuff.common.defIgn_.add(cmpGE(lcCount, 1, numConditional))
+    enemyDebuff.common.defIgn_.add(cmpGE(lcCount, 1, numConditional)),
+    cmpGE(lcCount, 1, 'unique', '')
   )
 )
 export default sheet

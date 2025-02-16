@@ -1,0 +1,8 @@
+{
+  "name": "zzz-zood",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/zood/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

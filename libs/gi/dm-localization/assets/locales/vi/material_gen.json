@@ -215,6 +215,9 @@
   "IncenseAshcrystals": {
     "name": "Tinh Thể Hương Hồn"
   },
+  "FestivalStamp": {
+    "name": "Ấn Lễ Hội"
+  },
   "Primogem": {
     "name": "Nguyên Thạch"
   },
@@ -1004,6 +1007,9 @@
   "LanYan": {
     "name": "Lan Yan"
   },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "Chòm Sao Của Kachina"
   },
@@ -1030,6 +1036,9 @@
   },
   "LanYansStellaFortuna": {
     "name": "Chòm Sao Của Lan Yan"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Chòm Sao Của Yumemizuki Mizuki"
   },
   "Apple": {
     "name": "Táo"
@@ -1612,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "Bản Thảo \"Hyakunin Ikki: Tuyệt Đỉnh Giác Đấu\""
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Từ Điển Fischl: Phiên Bản Mới Của Công Chúa"
   },
   "WyattsRedKey": {
     "name": "Chìa Khóa Đỏ Của Wyatt"
@@ -6923,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Cà Dồn Narbonnaise Ngon"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Consomme Kỳ Lạ"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Consomme"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Consomme Ngon"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6959,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Crepes Suzette Ngon"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "\"Một Giọt Mưa Bay\""
   },
   "SecretSauceBBQRibs": {
@@ -7511,6 +7523,18 @@
   "SecretArt": {
     "name": "\"Bí Pháp Độc Quyền\""
   },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Manjuu Phòng Tắm Kỳ Lạ"
+  },
+  "BathhouseManjuu": {
+    "name": "Manjuu Phòng Tắm"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Manjuu Phòng Tắm Ngon"
+  },
+  "DreamsOfHealing": {
+    "name": "Giấc Mơ Chữa Trị"
+  },
   "RecipeItem": {
     "name": "Đạo Cụ Công Thức"
   },
@@ -8018,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Công Thức: Cà Dồn Narbonnaise"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Công Thức: Consomme"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -8188,6 +8212,9 @@
   },
   "RecipeDrunkenPlumsInSnow": {
     "name": "Công Thức: Mai Lạc Tuyết Say"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Công Thức: Manjuu Phòng Tắm"
   },
   "CraftedItems": {
     "name": "Sản Phẩm Ghép"
@@ -8982,16 +9009,16 @@
     "name": "Uy Dũng Của Narukami"
   },
   "MaskOfTheWickedLieutenant": {
-    "name": "Tà Ác Của Gekiga"
+    "name": "Mặt Nạ Tà Ác"
   },
   "MaskOfTheTigersBite": {
-    "name": "Nanh Cọp Của Gekiga"
+    "name": "Mặt Nạ Cắn Hổ"
   },
   "MaskOfTheOneHorned": {
-    "name": "Sừng Của Gekiga"
+    "name": "Mặt Nạ Một Sừng"
   },
   "MaskOfTheKijin": {
-    "name": "Con Quỷ Của Gekiga"
+    "name": "Mặt Nạ Kijin"
   },
   "CopperTalismanOfTheForestDew": {
     "name": "Bùa Rừng Xanh Sương Đọng - Đồng"
@@ -10151,7 +10178,7 @@
   "HeavyPack": {
     "name": "Túi Nặng Trĩu"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Lọ Cá Con"
   },
   "PrinceQubadsIntaglio": {
@@ -11735,6 +11762,15 @@
   "NamelessTravelersNotesV": {
     "name": "Nhật Ký Của Lữ Khách Vô Danh V"
   },
+  "InvitationFromMiko": {
+    "name": "Thư Mời Từ Miko"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Vé Đặc Biệt Của \"Phòng Tắm Hơi Aisa\""
+  },
+  "LeafyDreams": {
+    "name": "Chiếc Lá Mộng Đẹp"
+  },
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Lời Nhắn Từ Nơi Thí Luyện Xuất Hồn"
   },
@@ -11767,6 +11803,27 @@
   },
   "SaurusCrackersTepetlisaurus": {
     "name": "Bánh Quy Saurus - Tepetlisaurus"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Vé VIP Phòng Tắm Hơi Aisa"
+  },
+  "MysteriousGift": {
+    "name": "Món Quà Thần Bí"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Chuyện Kỳ Bí Ở Inazuma I"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Chuyện Kỳ Bí Ở Inazuma II"
+  },
+  "MenOfLithinI": {
+    "name": "Người Lithin I"
+  },
+  "MenOfLithinII": {
+    "name": "Người Lithin II"
+  },
+  "MenOfLithinIII": {
+    "name": "Người Lithin III"
   },
   "TearsAmongTheStars": {
     "name": "Giọt Lệ Giữa Những Vì Sao"
@@ -12635,6 +12692,9 @@
   "ShuttleOfOdara": {
     "name": "Con Thoi Odara"
   },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Đốm Lửa Âm Ỉ"
+  },
   "FalconsDance": {
     "name": "Vũ Điệu Chim Ưng"
   },
@@ -13469,6 +13529,15 @@
   "TravelNotesTheFlameRenewed": {
     "name": "Nhật Ký Hành Trình - Lửa Mới"
   },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki - Ăn Giấc Mơ"
+  },
+  "CelebrationScorch": {
+    "name": "Lễ Hội - Nóng Bỏng"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "Nhật Ký Hành Trình - Kỳ Mộng"
+  },
   "EchoDandelionKnight": {
     "name": "Vết Tích - Kỵ Sĩ Bồ Công Anh"
   },
@@ -13934,7 +14003,7 @@
   "FormulaSpinelgrainBait": {
     "name": "Công Thức: Mồi Bột Spinel"
   },
-  "RecipeEmberglowBait": {
+  "FormulaEmberglowBait": {
     "name": "Công Thức: Mồi Lửa Ấm"
   },
   "SilkenPrint": {
@@ -14065,6 +14134,9 @@
   },
   "ElegantGreeting": {
     "name": "Hỏi Thăm Thanh Lịch"
+  },
+  "EarnestNegotiation": {
+    "name": "Đàm Phán Chân Thành"
   },
   "FantasticalMarvel": {
     "name": "Ảo Kịch Tuyệt Ý"
@@ -14503,6 +14575,12 @@
   },
   "DarkShatteringFlame": {
     "name": "Ngọn Lửa Xua Bóng Tối"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "Tất Cả Thù Và Nợ Do Ta Tự Trả..."
+  },
+  "RepaidInFull": {
+    "name": "Hoàn Trả Đầy Đủ"
   },
   "MagicGuide": {
     "name": "Tóm Tắt Ma Pháp"
@@ -14951,6 +15029,9 @@
   "PeopleOfTheSprings": {
     "name": "\"Cư Dân Suối Nước\""
   },
+  "FlowerFeatherClan": {
+    "name": "\"Hội Hoa Vũ\""
+  },
   "ElementalResonanceWovenIce": {
     "name": "Cộng Hưởng Nguyên Tố: Băng Giao Thoa"
   },
@@ -15136,6 +15217,9 @@
   },
   "AbundantPhlogiston": {
     "name": "Phlogiston Dồi Dào"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Nhóc Tepetlisaur! Phát Hiện Kho Báu!"
   },
   "Origin": {
     "name": "Nguyên Sơ"
@@ -16588,6 +16672,9 @@
   },
   "CommonUseNoteHolder": {
     "name": "Giá Ghi Chú Thông Dụng"
+  },
+  "SweetDreams": {
+    "name": "\"Chúc Ngủ Ngon\""
   },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Dụng Cụ Phòng Trà - Nặng Hơn Một Xíu"
@@ -18581,6 +18668,12 @@
   "TetherAtTheSummitOfQuahuacanCliff": {
     "name": "Dây Chặn Trên Vách Quahuacan"
   },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Hàng Rào Chuồng Nghỉ - Ranh Giới Kiên Cố"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Cửa Gỗ Chuồng Nghỉ - Xây Nền Móng"
+  },
   "SmoothWoodenBench": {
     "name": "Ghế Gỗ Dài"
   },
@@ -18796,5 +18889,11 @@
   },
   "ByCinderCitysGlowingLight": {
     "name": "Ánh Sáng Thành Tro Tàn"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Đá Mài Chuồng Nghỉ - Lựa Chọn Nấu Ăn"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Nệm Cỏ Chuồng Nghỉ - Giường Tạm Thời"
   }
 }

@@ -92,7 +92,7 @@ export function StatEditorList({
   )
 
   const setFilter = useCallback(
-    (sKey, min) => {
+    (sKey: InputPremodKey, min: number) => {
       const statFilters_ = { ...statFilters }
       statFilters_[sKey] = min
       setStatFilters({ ...statFilters_ })
@@ -101,7 +101,7 @@ export function StatEditorList({
   )
 
   const delKey = useCallback(
-    (statKey) => {
+    (statKey: InputPremodKey) => {
       const statFilters_ = { ...statFilters }
       delete statFilters_[statKey]
       setStatFilters({ ...statFilters_ })
@@ -396,6 +396,9 @@ const inputPremodKeyToGroupMap: Record<InputPremodKey, GroupKey> = {
   burgeon_critDMG_: 'reaction_crit',
   hyperbloom_critRate_: 'reaction_crit',
   hyperbloom_critDMG_: 'reaction_crit',
+  swirl_critRate_: 'reaction_crit',
+  swirl_critDMG_: 'reaction_crit',
+  swirl_dmgInc: 'elem_dmgInc',
   all_dmgInc: 'elem_dmgInc',
   physical_enemyRes_: 'enemy_debuffs',
   anemo_enemyRes_: 'enemy_debuffs',

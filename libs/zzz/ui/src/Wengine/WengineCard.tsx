@@ -15,12 +15,12 @@ import {
   wengineAsset,
   wenginePhaseIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type {
-  LocationKey,
-  WengineKey,
-  WengineSubStatKey,
+import {
+  rarityColor,
+  type LocationKey,
+  type WengineSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
-import { discRarityColor as rarityColor } from '@genshin-optimizer/zzz/consts'
+import { useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Edit } from '@mui/icons-material'
 import {
@@ -40,12 +40,12 @@ import { LocationName } from '../Character/LocationName'
 import { ZCard } from '../Components'
 
 export function WengineCard({
-  wengineKey,
+  wengineId,
   onEdit,
   setLocation,
   extraButtons,
 }: {
-  wengineKey: WengineKey
+  wengineId: string
   onClick?: () => void
   onEdit?: () => void
   onDelete?: () => void
@@ -55,8 +55,15 @@ export function WengineCard({
 }) {
   const { t } = useTranslation('wengineNames')
   const [show, onShow, onHide] = useBoolState()
-  const wengineStats = getWengineStat(wengineKey)
-  const maxLvlWengine = getWengineStats(wengineKey, 60, 5)
+  const {
+    key,
+    level = 0,
+    phase = 1,
+    location = '',
+  } = useWengine(wengineId) ?? {}
+  if (!key) return
+  const wengineStat = getWengineStat(key)
+  const wengineStats = getWengineStats(key, level, phase)
   return (
     <Suspense
       fallback={
@@ -116,10 +123,10 @@ export function WengineCard({
                       {
                         <ImgIcon
                           size={2}
-                          src={specialityDefIcon(wengineStats.type)}
+                          src={specialityDefIcon(wengineStat.type)}
                         />
                       }{' '}
-                      {t(`${wengineKey}`)}
+                      {t(`${key}`)}
                     </Typography>
                   </BootstrapTooltip>
                 </div>
@@ -128,7 +135,7 @@ export function WengineCard({
                 <Box
                   component={NextImage ? NextImage : 'img'}
                   alt="Wengine Image"
-                  src={wengineAsset(wengineKey, 'icon')}
+                  src={wengineAsset(key, 'icon')}
                   sx={{
                     width: 'auto',
                     float: 'right',
@@ -167,7 +174,7 @@ export function WengineCard({
               gap={1}
               alignItems="center"
               width={'100%'}
-              color={`${rarityColor[wengineStats.rarity]}.main`}
+              color={`${rarityColor[wengineStat.rarity]}.main`}
             >
               <Typography
                 variant="subtitle1"
@@ -182,12 +189,12 @@ export function WengineCard({
                 <StatDisplay statKey={'atk'} />
               </Typography>
               <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                {maxLvlWengine['atk_base'].toFixed()}
+                {wengineStats['atk_base'].toFixed()}
               </Typography>
             </Box>
             <SubstatDisplay
-              substatKey={wengineStats['second_statkey']}
-              substatValue={maxLvlWengine[wengineStats['second_statkey']]}
+              substatKey={wengineStat['second_statkey']}
+              substatValue={wengineStats[wengineStat['second_statkey']]}
             />
           </Stack>
         </CardContent>
@@ -203,9 +210,9 @@ export function WengineCard({
         >
           <Box sx={{ flexGrow: 1 }}>
             {setLocation ? (
-              <LocationAutocomplete locKey={''} setLocKey={setLocation} />
+              <LocationAutocomplete locKey={location} setLocKey={setLocation} />
             ) : (
-              <LocationName location={''} />
+              <LocationName location={location} />
             )}
           </Box>
           <Box

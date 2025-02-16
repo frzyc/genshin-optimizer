@@ -51,7 +51,7 @@
       "7": "<strong>Itzpapa</strong>",
       "8": [
         " Itzpapa segue il personaggio.",
-        " Se Citlali ha almeno 50 punti Anima della Notte, Itzpapa entra nello stato di Opale ardente e consuma continuamente punti Anima della Notte per scatenare un Tifone glaciale che attacca gli avversari nella sua area d'effetto, infliggendo <cryo>DAN da Cryo</cryo> con attributo Anima della Notte.",
+        " Se Citlali ha almeno 50 punti Anima della Notte, Itzpapa entra nello stato di Opale ardente e consuma continuamente punti Anima della Notte per scatenare un Tifone glaciale che segue il personaggio e attacca gli avversari nella sua area d'effetto, infliggendo <cryo>DAN da Cryo</cryo> con attributo Anima della Notte.",
         " Quando i punti Anima della Notte di Citlali si esauriscono, anche lo stato di Opale ardente di Itzpapa termina."
       ],
       "9": "<br/>",

@@ -121,7 +121,7 @@
   "constellation1": {
     "name": "Crow's Eye",
     "description": {
-      "0": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of <strong>Tengu Stormcall</strong> is decreased by 1s.",
+      "0": "When Tengu Juurai grants characters ATK Bonuses or hits opponents, the CD of <strong>Tengu Stormcall</strong> is decreased by 1s.",
       "1": "This effect can be triggered once every 3s."
     }
   },

@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Sabiduría del pasado",
     "description": {
-      "0": "Cuando un personaje bajo los efectos de la bendición vientosacro de <strong>Camino del ascenso</strong> inflige <anemo>Daño Anemo</anemo> contra un enemigo con un Ataque Normal, Cargado, Descendente o una Habilidad Elemental o Definitiva, se produce el efecto de “bendición tempestuosa”, el cual aumenta dicho daño en un 32% del ATQ Básico de Faruzán. Este efecto solo se puede generar una vez cada 0.8 s y se anula cuando termina la duración de la bendición vientosacro o después de que esta se haya activado una vez."
+      "0": "Cuando un personaje bajo los efectos de la bendición vientosacro de <strong>Camino del ascenso</strong> inflige <anemo>Daño Anemo</anemo> contra un enemigo con un Ataque Normal, Cargado, Descendente o una Habilidad Elemental o Definitiva, se produce el efecto de “bendición tempestuosa”, el cual aumenta dicho daño en un 32% del ATQ Base de Faruzán. Este efecto solo se puede generar una vez cada 0.8 s y se anula cuando termina la duración de la bendición vientosacro o después de que esta se haya activado una vez."
     }
   },
   "passive3": {

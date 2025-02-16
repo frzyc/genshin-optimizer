@@ -1,4 +1,5 @@
 export * from './calculator'
+export * from './IConditionalData'
 export * from './listing'
 export * from './read'
 export * from './tag'
