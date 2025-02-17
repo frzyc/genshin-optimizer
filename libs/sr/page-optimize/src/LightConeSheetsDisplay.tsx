@@ -1,14 +1,14 @@
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { isLightConeKey } from '@genshin-optimizer/sr/consts'
+import { useCharacterContext, useCharOpt } from '@genshin-optimizer/sr/db-ui'
 import { LightConeSheetDisplay } from '@genshin-optimizer/sr/formula-ui'
 import { LightConeAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
-import { useTeamContext } from './context'
 
 export function LightConeSheetsDisplay() {
-  const { team } = useTeamContext()
-  const conditionals = team.conditionals
+  const { key: charcterKey } = useCharacterContext()!
+  const { conditionals } = useCharOpt(charcterKey)!
   const [lcKey, setLcKey] = useState<LightConeKey | ''>('')
   const lcList = useMemo(() => {
     const sets = conditionals.map((c) => c.sheet).filter(isLightConeKey)

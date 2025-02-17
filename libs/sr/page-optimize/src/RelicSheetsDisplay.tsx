@@ -1,13 +1,13 @@
 import { isRelicSetKey, type RelicSetKey } from '@genshin-optimizer/sr/consts'
+import { useCharacterContext, useCharOpt } from '@genshin-optimizer/sr/db-ui'
 import { RelicSheetDisplay } from '@genshin-optimizer/sr/formula-ui'
 import { RelicSetAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
-import { useTeamContext } from './context'
 
 export function RelicSheetsDisplay() {
-  const { team } = useTeamContext()
-  const conditionals = team.conditionals
+  const { key: charcterKey } = useCharacterContext()!
+  const { conditionals } = useCharOpt(charcterKey)!
   const [relicSetKey, setRelicSetKey] = useState<RelicSetKey | ''>('')
   const relicList = useMemo(() => {
     const sets = conditionals

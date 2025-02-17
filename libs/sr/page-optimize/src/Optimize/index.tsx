@@ -5,6 +5,7 @@ import {
   OptConfigContext,
   OptConfigProvider,
   useCharacterContext,
+  useCharOpt,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
@@ -32,55 +33,34 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { TeamContext, useTeammateContext } from '../context'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
 
 export default function Optimize() {
+  const { key: characterKey } = useCharacterContext()!
+  const { optConfigId } = useCharOpt(characterKey)!
   const { database } = useDatabaseContext()
-  const { teamId } = useContext(TeamContext)
-  const teammateDatum = useTeammateContext()
-  const optConfigId = teammateDatum.optConfigId
-  const createOptConfig = useCallback(() => {
+  useEffect(() => {
     if (optConfigId) return
-
-    database.teams.set(teamId, (team) => {
-      const meta = team.teamMetadata.find(
-        (meta) => meta?.characterKey === teammateDatum.characterKey
-      )
-      if (meta) {
-        const newOptConfigId = database.optConfigs.new()
-        meta.optConfigId = newOptConfigId
-      }
+    const newOptConfigId = database.optConfigs.new()
+    database.charOpts.set(characterKey, {
+      optConfigId: newOptConfigId,
     })
-  }, [teamId, teammateDatum.characterKey, database, optConfigId])
-  if (optConfigId) {
-    return (
-      <OptConfigProvider optConfigId={optConfigId}>
-        <OptimizeWrapper />
-        <GeneratedBuildsDisplay />
-      </OptConfigProvider>
-    )
-  } else {
-    return (
-      <CardThemed>
-        <CardHeader
-          title={
-            <span>Optimize this team for {teammateDatum.characterKey}</span>
-          }
-          action={<Button onClick={createOptConfig}>Optimize</Button>}
-        />
-      </CardThemed>
-    )
-  }
+  }, [database, optConfigId])
+  if (!optConfigId) return null
+  return (
+    <OptConfigProvider optConfigId={optConfigId}>
+      <OptimizeWrapper />
+      <GeneratedBuildsDisplay />
+    </OptConfigProvider>
+  )
 }
 
 function OptimizeWrapper() {
   const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
-
   const calc = useSrCalcContext()
-  const { team } = useContext(TeamContext)
-  const { characterKey } = useTeammateContext()
+  const { key: characterKey } = useCharacterContext()!
+  const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
@@ -147,7 +127,12 @@ function OptimizeWrapper() {
     const optimizer = new Solver(
       characterKey,
       calc,
-      team.frames,
+      [
+        {
+          tag: target,
+          multiplier: 1,
+        },
+      ],
       statFilters,
       lightCones,
       relicsBySlot,
@@ -176,7 +161,6 @@ function OptimizeWrapper() {
     calc,
     optConfig.statFilters,
     characterKey,
-    team.frames,
     lightCones,
     relicsBySlot,
     numWorkers,

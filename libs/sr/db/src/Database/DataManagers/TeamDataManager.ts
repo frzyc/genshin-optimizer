@@ -5,7 +5,6 @@ import {
   range,
   shallowCompareObj,
 } from '@genshin-optimizer/common/util'
-import type { IConditionalData } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
@@ -21,6 +20,7 @@ import {
 import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { correctConditionalValue } from '../conditionalUtil'
 import { validateTag } from '../tagUtil'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
@@ -522,25 +522,4 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       }
     })
   }
-}
-
-function correctConditionalValue(conditional: IConditionalData, value: number) {
-  if (conditional.type === 'bool') {
-    return +!!value
-  } else if (conditional.type === 'num') {
-    if (conditional.int_only && !Number.isInteger(value)) {
-      value = Math.round(value)
-    }
-    if (conditional.min !== undefined && value < conditional.min)
-      value = conditional.min
-    if (conditional.max !== undefined && value > conditional.max)
-      value = conditional.max
-  } else if (conditional.type === 'list') {
-    if (!Number.isInteger(value)) {
-      value = Math.round(value)
-    }
-    if (value < 0) value = 0
-    if (value > conditional.list.length - 1) value = conditional.list.length - 1
-  }
-  return value
 }
