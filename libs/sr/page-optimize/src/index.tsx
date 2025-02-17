@@ -14,7 +14,8 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
-import { allCharacterKeys, CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
 import {
   CharacterContext,
   useCharacter,
@@ -93,7 +94,7 @@ export default function PageOptimize() {
         condValue
       )
     },
-    [database.teams]
+    [characterKey, database.charOpts]
   )
   const tag = useMemo<Tag>(
     () => ({

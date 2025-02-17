@@ -45,7 +45,7 @@ export default function Optimize() {
     database.charOpts.set(characterKey, {
       optConfigId: newOptConfigId,
     })
-  }, [database, optConfigId])
+  }, [database, optConfigId, characterKey])
   if (!optConfigId) return null
   return (
     <OptConfigProvider optConfigId={optConfigId}>
@@ -161,6 +161,7 @@ function OptimizeWrapper() {
     calc,
     optConfig.statFilters,
     characterKey,
+    target,
     lightCones,
     relicsBySlot,
     numWorkers,

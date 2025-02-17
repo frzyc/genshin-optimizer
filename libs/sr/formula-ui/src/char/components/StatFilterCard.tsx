@@ -4,10 +4,10 @@ import {
   OptConfigContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
-import { OptimizationTargetEditorList } from '@genshin-optimizer/sr/formula-ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { OptimizationTargetEditorList } from './OptimizationTargetEditorList'
 
 export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation('page_character_optimize')

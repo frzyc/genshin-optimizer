@@ -74,15 +74,13 @@ function EquipBtn({
     database.chars.setEquippedLightCone(characterKey, lightConeId)
   }, [characterKey, database.chars, lightConeId, relicIds])
   return (
-    <>
-      <Button
-        color="info"
-        size="small"
-        startIcon={<CheckroomIcon />}
-        onClick={onEquip}
-      >
-        {t('buildDisplay.equipToCrr')}
-      </Button>
-    </>
+    <Button
+      color="info"
+      size="small"
+      startIcon={<CheckroomIcon />}
+      onClick={onEquip}
+    >
+      {t('buildDisplay.equipToCrr')}
+    </Button>
   )
 }

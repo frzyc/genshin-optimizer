@@ -1,4 +1,4 @@
-import { shallowCompareObj } from '@genshin-optimizer/common/util'
+import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/sr/formula'
 import { getConditional, isMember } from '@genshin-optimizer/sr/formula'
@@ -43,23 +43,29 @@ export class CharacterOptManager extends DataManager<
     if (!validateTag(target)) target = defOptTarget(key)
     if (!Array.isArray(conditionals)) conditionals = []
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
-    conditionals = conditionals.filter(
-      ({ sheet, condKey, src, dst, condValue }) => {
-        if (!isMember(src) || !(dst === null || isMember(dst))) return false
+    conditionals = conditionals
+      .map(({ sheet, condKey, src, dst, condValue }) => {
+        if (!isMember(src) || !(dst === null || isMember(dst))) return undefined
         const cond = getConditional(sheet, condKey)
-        if (!cond) return false
+        if (!cond) return undefined
 
         // validate uniqueness
         const hash = `${sheet}:${condKey}:${src}:${dst}`
-        if (hashList.includes(hash)) return false
+        if (hashList.includes(hash)) return undefined
         hashList.push(hash)
 
         // validate values
         condValue = correctConditionalValue(cond, condValue)
 
-        return true
-      }
-    )
+        return {
+          sheet,
+          src,
+          dst,
+          condKey,
+          condValue,
+        }
+      })
+      .filter(notEmpty)
     if (!Array.isArray(bonusStats)) bonusStats = []
     bonusStats = bonusStats.filter(({ tag, value }) => {
       if (!validateTag(tag)) return false

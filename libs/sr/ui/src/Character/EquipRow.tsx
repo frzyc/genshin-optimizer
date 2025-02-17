@@ -3,16 +3,15 @@ import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
 import { type RelicIds } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { Box, useTheme } from '@mui/material'
+import { useEffect, useMemo, useState } from 'react'
 import {
   COMPACT_ELE_HEIGHT,
   COMPACT_ELE_WIDTH,
   COMPACT_ELE_WIDTH_NUMBER,
-  LightConeCardCompact,
-  RelicCardCompact,
-  RelicSetCardCompact,
-} from '@genshin-optimizer/sr/ui'
-import { Box, useTheme } from '@mui/material'
-import { useEffect, useMemo, useState } from 'react'
+} from '../compactConst'
+import { LightConeCardCompact } from '../LightCone'
+import { RelicCardCompact, RelicSetCardCompact } from '../Relic'
 export function EquipRow({
   relicIds,
   lightConeId,
