@@ -24,7 +24,6 @@ const sheet = register(
   // Handles base stats, StatBoosts and Eidolon 3 + 5
   entriesForChar(data_gen),
 
-  // TODO: Add formulas/buffs
   // Formulas
   ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
   ...dmg('skillDmg', baseTag, 'atk', dm.skill.dmg, 'skill'),
