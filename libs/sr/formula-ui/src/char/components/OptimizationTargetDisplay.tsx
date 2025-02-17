@@ -1,6 +1,6 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type { Tag } from '@genshin-optimizer/sr/formula'
-import { getVariant, tagFieldMap } from '@genshin-optimizer/sr/formula-ui'
+import { getVariant, tagFieldMap } from '..'
 export function OptimizationTargetDisplay({ tag }: { tag: Tag }) {
   return (
     <ColorText color={getVariant(tag)}>

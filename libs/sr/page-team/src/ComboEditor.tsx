@@ -5,13 +5,15 @@ import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Read } from '@genshin-optimizer/sr/formula'
+import {
+  OptimizationTargetDisplay,
+  OptimizationTargetSelector,
+} from '@genshin-optimizer/sr/formula-ui'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import { Box, CardActionArea, Divider, Typography } from '@mui/material'
 import type { MouseEvent } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { PresetContext, useTeamContext } from './context'
-import { OptimizationTargetDisplay } from './Optimize/OptimizationTargetDisplay'
-import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
 
 export function ComboEditor() {
   const { database } = useDatabaseContext()

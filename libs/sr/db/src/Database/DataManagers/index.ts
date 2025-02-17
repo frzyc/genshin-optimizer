@@ -1,6 +1,7 @@
 export * from './BuildDataManager'
 export * from './BuildTcDataManager'
 export * from './CharacterDataManager'
+export * from './CharacterOptManager'
 export * from './CharMetaDataManager'
 export * from './GeneratedBuildListDataManager'
 export * from './LightConeDataManager'

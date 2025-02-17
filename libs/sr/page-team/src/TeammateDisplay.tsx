@@ -16,7 +16,12 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
-import { CharacterCard, CharacterEditor } from '@genshin-optimizer/sr/ui'
+import { OptimizationTargetSelector } from '@genshin-optimizer/sr/formula-ui'
+import {
+  CharacterCard,
+  CharacterEditor,
+  EquipRow,
+} from '@genshin-optimizer/sr/ui'
 import { Delete } from '@mui/icons-material'
 import {
   Box,
@@ -32,11 +37,10 @@ import {
 import type { ReactNode } from 'react'
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { BonusStatsSection } from './BonusStats'
-import { BuildsDisplay, EquipRow, EquipRowTC } from './BuildsDisplay'
+import { BuildsDisplay, EquipRowTC } from './BuildsDisplay'
 import { PresetContext, useTeamContext, useTeammateContext } from './context'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
 import Optimize from './Optimize'
-import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
 import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 import CharacterTalentPane from './TalentContent'
 import { TeamHeaderHeightContext } from './TeamHeader'
@@ -178,8 +182,8 @@ function ComboEditorSection() {
   )
 }
 function CharacterSection() {
-  const { characterKey } = useTeammateContext()
-  const character = useCharacterContext()
+  const character = useCharacterContext()!
+  const { key: characterKey } = character
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )

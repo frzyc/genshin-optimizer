@@ -23,7 +23,7 @@ type OptimizationTargetEditorListProps = {
   disabled: boolean
 }
 
-export default function OptimizationTargetEditorList({
+export function OptimizationTargetEditorList({
   statFilters,
   setStatFilters,
   disabled = false,

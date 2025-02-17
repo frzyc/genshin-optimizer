@@ -2,10 +2,10 @@ import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
-import { getDmgType } from '@genshin-optimizer/sr/formula-ui'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import { getDmgType } from '..'
 import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 
 export function OptimizationTargetSelector({

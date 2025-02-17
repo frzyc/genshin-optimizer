@@ -8,6 +8,7 @@ import {
   TeamsIcon,
 } from '@genshin-optimizer/sr/svgicons'
 import { Settings } from '@mui/icons-material'
+import CalculateIcon from '@mui/icons-material/Calculate'
 import MenuIcon from '@mui/icons-material/Menu'
 import {
   AppBar,
@@ -29,7 +30,6 @@ import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
-
 type ITab = {
   i18Key: string
   icon: ReactNode
@@ -77,6 +77,13 @@ const settings: ITab = {
   textSuffix: <SettingsChip />,
 }
 
+const optimize: ITab = {
+  i18Key: 'tabs.optimize',
+  icon: <CalculateIcon />,
+  to: '/optimize',
+  value: 'optimize',
+}
+
 function SettingsChip() {
   const { database } = useDatabaseContext()
   const { name } = database?.dbMeta.get() ?? 'Database 0'
@@ -111,7 +118,14 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [relics, lightCones, characters, teams, settings] as const
+const maincontent = [
+  relics,
+  lightCones,
+  characters,
+  teams,
+  optimize,
+  settings,
+] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -209,7 +223,14 @@ function DesktopHeader({
   )
 }
 
-const mobileContent = [relics, lightCones, characters, teams, settings] as const
+const mobileContent = [
+  relics,
+  lightCones,
+  characters,
+  teams,
+  optimize,
+  settings,
+] as const
 function MobileHeader({
   anchor,
   currentTab,
