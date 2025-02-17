@@ -6,8 +6,8 @@ import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
 
 export function RelicSheetsDisplay() {
-  const { key: charcterKey } = useCharacterContext()!
-  const { conditionals } = useCharOpt(charcterKey)!
+  const { key: characterKey } = useCharacterContext()!
+  const { conditionals } = useCharOpt(characterKey)!
   const [relicSetKey, setRelicSetKey] = useState<RelicSetKey | ''>('')
   const relicList = useMemo(() => {
     const sets = conditionals

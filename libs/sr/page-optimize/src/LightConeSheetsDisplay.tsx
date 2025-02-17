@@ -7,8 +7,8 @@ import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
 
 export function LightConeSheetsDisplay() {
-  const { key: charcterKey } = useCharacterContext()!
-  const { conditionals } = useCharOpt(charcterKey)!
+  const { key: characterKey } = useCharacterContext()!
+  const { conditionals } = useCharOpt(characterKey)!
   const [lcKey, setLcKey] = useState<LightConeKey | ''>('')
   const lcList = useMemo(() => {
     const sets = conditionals.map((c) => c.sheet).filter(isLightConeKey)
