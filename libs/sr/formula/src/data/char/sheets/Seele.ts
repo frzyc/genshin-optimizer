@@ -3,6 +3,7 @@ import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
+  allNumConditionals,
   own,
   ownBuff,
   register,
@@ -17,7 +18,8 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-const { skillUsed, amplification, enemyLowerThan80_ } = allBoolConditionals(key)
+const { amplification, enemyLowerThan80_ } = allBoolConditionals(key)
+const { skillStacks } = allNumConditionals(key, true, 0, 2)
 
 const sheet = register(
   key,
@@ -43,7 +45,14 @@ const sheet = register(
   // Buffs
   registerBuff(
     'skill_spd_',
-    ownBuff.premod.spd_.add(skillUsed.ifOn(dm.skill.spd_))
+    ownBuff.premod.spd_.add(
+      cmpGE(
+        skillStacks,
+        2,
+        cmpGE(own.char.eidolon, 2, dm.skill.spd_ * 2, dm.skill.spd_),
+        cmpGE(skillStacks, 1, dm.skill.spd_)
+      )
+    )
   ),
   registerBuff(
     'amplification_dmg_',

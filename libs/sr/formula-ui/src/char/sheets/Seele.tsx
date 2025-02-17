@@ -63,8 +63,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
           text: 'Skill Used',
           additional: <SqBadge>Skill</SqBadge>,
         },
-        metadata: cond.skillUsed,
-        label: 'Skill Used',
+        metadata: cond.skillStacks,
+        label: 'Skill SPD Stacks',
         fields: [
           {
             title: <StatDisplay statKey="spd_" />,

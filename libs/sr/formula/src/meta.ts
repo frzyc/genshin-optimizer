@@ -2860,7 +2860,14 @@ export const conditionals = {
       name: 'enemyLowerThan80_',
       type: 'bool',
     },
-    skillUsed: { sheet: 'Seele', name: 'skillUsed', type: 'bool' },
+    skillStacks: {
+      sheet: 'Seele',
+      name: 'skillStacks',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
   },
   Serval: {
     boolConditional: { sheet: 'Serval', name: 'boolConditional', type: 'bool' },
