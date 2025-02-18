@@ -10,8 +10,8 @@ import {
   allAttributeDamageKeys,
   allDiscSetKeys,
 } from '@genshin-optimizer/zzz/consts'
-import type { Constraints } from '@genshin-optimizer/zzz/db'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+import type { Constraints } from '@genshin-optimizer/zzz/zood'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,

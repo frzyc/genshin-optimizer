@@ -4,7 +4,7 @@ import type {
   DiscSlotKey,
   FormulaKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { Constraints, Stats } from '@genshin-optimizer/zzz/db'
+import type { Constraints, Stats } from '@genshin-optimizer/zzz/zood'
 import { applyCalc, calcFormula, passSetFilter } from './calc'
 import type { BuildResult, DiscStats } from './common'
 import { MAX_BUILDS } from './common'

@@ -19,11 +19,7 @@ import {
   wengineSheets,
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
-import type {
-  CharacterData,
-  Stats,
-  ZzzDatabase,
-} from '@genshin-optimizer/zzz/db'
+import type { ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { combineStats, type BuildResult } from '@genshin-optimizer/zzz/solver'
 import {
@@ -36,6 +32,7 @@ import {
   WengineRefineDesc,
   WengineRefineName,
 } from '@genshin-optimizer/zzz/ui'
+import type { ICharacter, Stats } from '@genshin-optimizer/zzz/zood'
 import {
   Box,
   CardActionArea,
@@ -272,7 +269,7 @@ function CharacterSection({
   locationKey: LocationKey
   discIds: Record<DiscSlotKey, string>
   baseStats: Stats
-  character: CharacterData | undefined
+  character: ICharacter | undefined
   characterStats: Record<string, number> | undefined
   wengineStats: Record<string, number> | undefined
 }) {

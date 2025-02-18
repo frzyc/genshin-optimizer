@@ -1,5 +1,5 @@
-import type { Stats } from '@genshin-optimizer/zzz/db'
 import type { BuildResult } from '@genshin-optimizer/zzz/solver'
+import type { Stats } from '@genshin-optimizer/zzz/zood'
 import { Stack } from '@mui/material'
 import { BuildDisplay } from './BuildDisplay'
 

@@ -1,8 +1,8 @@
-import type { CharacterData } from '@genshin-optimizer/zzz/db'
+import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 import { createContext, useContext } from 'react'
 
 export const CharacterContext = createContext(
-  undefined as CharacterData | undefined
+  undefined as ICharacter | undefined
 )
 
 export function useCharacterContext() {
