@@ -5,54 +5,27 @@ import {
   objFilterKeys,
   validateArr,
 } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  CondKey,
-  DiscMainStatKey,
-  DiscSetKey,
-  FormulaKey,
-  WengineKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
   allCharacterKeys,
   allDiscSetKeys,
   allFormulaKeys,
   allWengineKeys,
+  coreLimits,
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
+import { validateLevelAsc, validateTalent } from '@genshin-optimizer/zzz/util'
+import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 
-export type Constraints = Record<string, { value: number; isMax: boolean }>
-export type Stats = Record<string, number>
-export type CharacterData = {
-  key: CharacterKey
-  level: number
-  core: number // 0-6
-  wengineKey: WengineKey
-  wengineLvl: number
-  wenginePhase: number
-  stats: Stats
-  formulaKey: FormulaKey
-  constraints: Constraints
-  useEquipped: boolean
-  slot4: DiscMainStatKey[]
-  slot5: DiscMainStatKey[]
-  slot6: DiscMainStatKey[]
-  levelLow: number
-  levelHigh: number
-  setFilter2: DiscSetKey[]
-  setFilter4: DiscSetKey[]
-  conditionals: Partial<Record<CondKey, number>>
-}
-
-export function initialCharacterData(key: CharacterKey): CharacterData {
+export function initialCharacterData(key: CharacterKey): ICharacter {
   return {
     key,
-    level: 60,
-    core: 6,
+    level: 1,
+    core: 0,
     wengineKey: allWengineKeys[0],
     wengineLvl: 60,
     wenginePhase: 1,
@@ -71,22 +44,30 @@ export function initialCharacterData(key: CharacterKey): CharacterData {
     setFilter2: [],
     setFilter4: [],
     conditionals: {},
+    ascension: 0,
+    mindscape: 0,
+    talent: {
+      dodge: 1,
+      basic: 1,
+      chain: 1,
+      special: 1,
+      assist: 1,
+    },
   }
 }
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedCharacter,
-  CharacterData
+  ICharacter
 > {
   constructor(database: ZzzDatabase) {
     super(database, 'characters')
   }
-  override validate(obj: unknown): CharacterData | undefined {
+  override validate(obj: unknown): ICharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    const { key: characterKey } = obj as CharacterData
+    const { key: characterKey } = obj as ICharacter
     let {
-      level,
       core,
       wengineKey,
       wengineLvl,
@@ -103,15 +84,24 @@ export class CharacterDataManager extends DataManager<
       setFilter2,
       setFilter4,
       conditionals,
-    } = obj as CharacterData
+      mindscape,
+      talent,
+    } = obj as ICharacter
+    const { level: rawLevel, ascension: rawAscension } = obj as ICharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
-    if (typeof level !== 'number') level = 60
-    level = clamp(level, 1, 60)
+    if (typeof mindscape !== 'number' && mindscape < 0 && mindscape > 6)
+      mindscape = 0
 
-    if (typeof core !== 'number') core = 6
-    core = clamp(core, 0, 6)
+    const { sanitizedLevel, ascension } = validateLevelAsc(
+      rawLevel,
+      rawAscension
+    )
+    talent = validateTalent(ascension, talent)
+
+    if (typeof core !== 'number') core = 0
+    core = clamp(core, 0, coreLimits[ascension + 1])
 
     if (!allWengineKeys.includes(wengineKey)) wengineKey = allWengineKeys[0]
 
@@ -168,9 +158,9 @@ export class CharacterDataManager extends DataManager<
     if (typeof conditionals !== 'object') conditionals = {}
     conditionals = objFilter(conditionals, (value) => typeof value === 'number')
 
-    const char: CharacterData = {
+    const char: ICharacter = {
       key: characterKey,
-      level,
+      level: sanitizedLevel,
       core,
       wengineKey,
       wengineLvl,
@@ -187,6 +177,9 @@ export class CharacterDataManager extends DataManager<
       setFilter2,
       setFilter4,
       conditionals,
+      mindscape,
+      talent,
+      ascension,
     }
     return char
   }
@@ -199,11 +192,11 @@ export class CharacterDataManager extends DataManager<
     return key.split(`${this.goKeySingle}_`)[1] as CharacterKey
   }
 
-  getOrCreate(key: CharacterKey): CharacterData {
+  getOrCreate(key: CharacterKey): ICharacter {
     if (!this.keys.includes(key)) {
       this.set(key, initialCharacterData(key))
     }
-    return this.get(key) as CharacterData
+    return this.get(key) as ICharacter
   }
 
   // hasDup(char: ICharacter, isSro: boolean) {
@@ -270,7 +263,7 @@ export class CharacterDataManager extends DataManager<
   /**
    * **Caution**:
    * This does not update the `location` on wengine
-   * This function should be use internally for database to maintain cache on CharacterData.
+   * This function should be use internally for database to maintain cache on ICharacter.
    */
   setEquippedWengine(
     key: CharacterKey,

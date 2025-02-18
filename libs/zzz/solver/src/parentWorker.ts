@@ -8,7 +8,8 @@ import {
   allDiscSlotKeys,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
+import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
+import type { Constraints, Stats } from '@genshin-optimizer/zzz/zood'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import type { BuildResult, DiscStats } from './common'
 import { convertDiscToStats, MAX_BUILDS } from './common'

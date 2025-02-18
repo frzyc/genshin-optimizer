@@ -1,5 +1,4 @@
-import type { IDisc } from '@genshin-optimizer/zzz/zood'
-import type { CharacterData } from './DataManagers/CharacterDataManager'
+import type { ICharacter, IDisc } from '@genshin-optimizer/zzz/zood'
 
 function newCounter<T>(): ImportResultCounter<T> {
   return {
@@ -49,7 +48,7 @@ export type ImportResult = {
   discs: ImportResultCounter<IDisc>
   // TODO:
   // lightCones: ImportResultCounter<ILightCone>
-  characters: ImportResultCounter<CharacterData>
+  characters: ImportResultCounter<ICharacter>
   keepNotInImport: boolean
   ignoreDups: boolean
 }

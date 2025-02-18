@@ -1,5 +1,5 @@
-import type { CharacterData } from '../Database'
+import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 
-export interface ICachedCharacter extends CharacterData {
+export interface ICachedCharacter extends ICharacter {
   equippedWengine?: string
 }

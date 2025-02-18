@@ -18,7 +18,7 @@ import {
   disc4PeffectSheets,
   wengineSheets,
 } from '@genshin-optimizer/zzz/consts'
-import type { Stats } from '@genshin-optimizer/zzz/db'
+import type { Stats } from '@genshin-optimizer/zzz/zood'
 import type { DiscStats } from './common'
 
 export function passSetFilter(
