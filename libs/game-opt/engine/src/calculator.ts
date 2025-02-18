@@ -39,7 +39,7 @@ export type PartialMeta<
   ops: CalcResult<number, PartialMeta<Src, Dst, Sheet, Op>>[]
 }
 export type Info<Member extends string, Sheet extends string> = {
-  conds: CondInfo<Member, Sheet>
+  conds: CondInfo<Member | 'All', Sheet>
 }
 
 const { arithmetic } = calculation
@@ -142,10 +142,10 @@ export class Calculator<
 
     if (tag.qt === 'cond') {
       const { src, dst, sheet, q } = tag
-      if (src && dst && sheet && q)
+      if (src && sheet && q)
         meta.conds = {
-          [dst]: { [src]: { [sheet!]: { [q!]: val } } },
-        } as CondInfo<Member, Sheet>
+          [dst ?? 'All']: { [src]: { [sheet!]: { [q!]: val } } },
+        } as CondInfo<Member | 'All', Sheet>
       dirty = true
     }
     Object.freeze(meta)
@@ -166,7 +166,7 @@ export class Calculator<
   }
   listCondFormulas(
     read: Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>
-  ): CondInfo<Member, Sheet> {
+  ): CondInfo<Member | 'All', Sheet> {
     return this.listFormulas(read)
       .map((x) => this.compute(x).meta.conds)
       .reduce(mergeConds, {})
@@ -190,9 +190,9 @@ function extract<
 }
 
 function mergeConds<Member extends string, Sheet extends string>(
-  a: CondInfo<Member, Sheet>,
-  b: CondInfo<Member, Sheet>
-): CondInfo<Member, Sheet> {
+  a: CondInfo<Member | 'All', Sheet>,
+  b: CondInfo<Member | 'All', Sheet>
+): CondInfo<Member | 'All', Sheet> {
   return merge(a, b, (_, v) => (typeof v === 'number' ? v : undefined))
 }
 function merge<T extends Record<string, any>>(
