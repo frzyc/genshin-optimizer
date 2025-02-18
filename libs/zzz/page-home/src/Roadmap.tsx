@@ -13,7 +13,7 @@ export function Roadmap() {
   return (
     <ZCard>
       <CardContent>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           <span role="img" aria-label="rocket">
             🚀
           </span>{' '}
@@ -24,7 +24,7 @@ export function Roadmap() {
           <ZCard bgt="dark">
             <CardContent>
               {/* Milestone 1 */}
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 <span role="img" aria-label="target">
                   🎯
                 </span>{' '}
@@ -69,14 +69,14 @@ export function Roadmap() {
           <ZCard bgt="dark">
             <CardContent>
               {/* Milestone 2 */}
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 <span role="img" aria-label="lightbulb">
                   💡
                 </span>{' '}
                 Milestone 2: I NEED THIS{' '}
                 <SqBadge color="success">COMPLETED</SqBadge>
               </Typography>
-              <List>
+              <List dense>
                 <ListItem>
                   <ListItemText primary="🧙‍♂️ Scuffed datamine via Hakushin API" />
                 </ListItem>
@@ -96,7 +96,7 @@ export function Roadmap() {
           <ZCard bgt="dark">
             <CardContent>
               {/* Milestone 3 */}
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 <span role="img" aria-label="gem">
                   💎
                 </span>{' '}
@@ -107,7 +107,7 @@ export function Roadmap() {
                 We’re entering <strong>premium optimizer experience</strong>{' '}
                 territory. 🛠️✨
               </Typography>
-              <List>
+              <List dense>
                 <ListItem>
                   <ListItemText primary="🔧 Wengine conditionals (min-maxers be eatin’ GOOD 🧠💪)" />
                 </ListItem>
@@ -127,7 +127,7 @@ export function Roadmap() {
           <ZCard bgt="dark">
             <CardContent>
               {/* Milestone 4: Engine Swap */}
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 <span role="img" aria-label="gear">
                   ⚙️
                 </span>{' '}
@@ -154,13 +154,13 @@ export function Roadmap() {
           <ZCard bgt="dark">
             <CardContent>
               {/* Milestone 5 */}
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 <span role="img" aria-label="performing arts">
                   🎭
                 </span>{' '}
                 Milestone 5: Characters ARE Built Different
               </Typography>
-              <List>
+              <List dense>
                 <ListItem>
                   <ListItemText primary="🏆 Adding in each character and targets" />
                 </ListItem>
