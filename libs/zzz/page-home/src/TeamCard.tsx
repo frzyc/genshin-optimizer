@@ -64,7 +64,7 @@ export default function TeamCard() {
       />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Grid container spacing={1}>
-          {team.map(({ name, img, title, subtitle, url = '' }, i) => (
+          {team.map(({ name, img, title, subtitle, url = '' }) => (
             <Grid item key={name} xs={6} md={4}>
               <CardThemed bgt="light" sx={{ height: '100%' }}>
                 <CardContent>

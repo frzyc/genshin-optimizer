@@ -55,12 +55,14 @@ export default function PageHome() {
     )
   // separate layout for vertical
   else
-    <Box my={1} display="flex" flexDirection="column" gap={1}>
-      <IntroCard />
-      <QuickLinksCard />
-      <TeamCard />
-      <PatchNotesCard />
-    </Box>
+    return (
+      <Box my={1} display="flex" flexDirection="column" gap={1}>
+        <IntroCard />
+        <QuickLinksCard />
+        <TeamCard />
+        <PatchNotesCard />
+      </Box>
+    )
 }
 
 function PatchNotesCard() {
