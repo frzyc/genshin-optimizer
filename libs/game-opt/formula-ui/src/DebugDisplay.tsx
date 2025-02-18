@@ -35,7 +35,7 @@ export function DebugListingsDisplay({
 
   const [expanded, setExpanded] = useState<string | false>(false)
   const handleChange =
-    (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
+    (panel: string) => (_event: SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false)
     }
 
