@@ -5,21 +5,14 @@ import {
   ImgIcon,
   NextImage,
 } from '@genshin-optimizer/common/ui'
-import {
-  getUnitStr,
-  statKeyToFixed,
-  toPercent,
-} from '@genshin-optimizer/common/util'
+import type { WenginePhaseKey } from '@genshin-optimizer/zzz/assets'
 import {
   specialityDefIcon,
   wengineAsset,
   wenginePhaseIcon,
 } from '@genshin-optimizer/zzz/assets'
-import {
-  rarityColor,
-  type LocationKey,
-  type WengineSubStatKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { PhaseKey } from '@genshin-optimizer/zzz/consts'
+import { rarityColor, type LocationKey } from '@genshin-optimizer/zzz/consts'
 import { useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Edit } from '@mui/icons-material'
@@ -38,32 +31,44 @@ import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
 import { LocationName } from '../Character/LocationName'
 import { ZCard } from '../Components'
+import { WengineSubstatDisplay } from './WengineSubstatDisplay'
+
+const wenginePhaseIconsMap: Record<PhaseKey, WenginePhaseKey> = {
+  1: 'p1',
+  2: 'p2',
+  3: 'p3',
+  4: 'p4',
+  5: 'p5',
+}
 
 export function WengineCard({
   wengineId,
   onEdit,
   setLocation,
-  extraButtons,
 }: {
   wengineId: string
   onClick?: () => void
-  onEdit?: () => void
-  onDelete?: () => void
-  onLockToggle?: () => void
+  onEdit?: (wengineId: string) => void
   setLocation?: (lk: LocationKey) => void
-  extraButtons?: JSX.Element
 }) {
   const { t } = useTranslation('wengineNames')
   const [show, onShow, onHide] = useBoolState()
   const {
+    id = '',
     key,
     level = 0,
     phase = 1,
     location = '',
+    ascension = 0,
   } = useWengine(wengineId) ?? {}
-  if (!key) return
+  if (!key)
+    return (
+      <CardThemed>
+        <Typography color="error">Error: Wengine not found</Typography>
+      </CardThemed>
+    )
   const wengineStat = getWengineStat(key)
-  const wengineStats = getWengineStats(key, level, phase)
+  const wengineStats = getWengineStats(key, level, phase, ascension)
   return (
     <Suspense
       fallback={
@@ -155,12 +160,12 @@ export function WengineCard({
                   }}
                   variant="h6"
                 >
-                  Lv.60
+                  Lv.{level}
                 </Typography>
                 <Box>
                   <ImgIcon
                     size={3}
-                    src={wenginePhaseIcon('p1')}
+                    src={wenginePhaseIcon(wenginePhaseIconsMap[phase])}
                     sx={{ py: '10px', margin: 0, width: '5em' }}
                   />{' '}
                 </Box>
@@ -192,7 +197,7 @@ export function WengineCard({
                 {wengineStats['atk_base'].toFixed()}
               </Typography>
             </Box>
-            <SubstatDisplay
+            <WengineSubstatDisplay
               substatKey={wengineStat['second_statkey']}
               substatValue={wengineStats[wengineStat['second_statkey']]}
             />
@@ -228,46 +233,14 @@ export function WengineCard({
                 placement="top"
                 arrow
               >
-                <Button color="info" size="small" onClick={onEdit}>
+                <Button color="info" size="small" onClick={() => onEdit(id)}>
                   <Edit />
                 </Button>
               </BootstrapTooltip>
             )}
-            {extraButtons}
           </Box>
         </Box>
       </ZCard>
     </Suspense>
-  )
-}
-function SubstatDisplay({
-  substatKey,
-  substatValue,
-}: {
-  substatKey: WengineSubStatKey
-  substatValue: number
-}) {
-  if (!substatKey) return null
-  const displayValue = toPercent(substatValue, substatKey).toFixed(
-    statKeyToFixed(substatKey)
-  )
-  return (
-    <Typography
-      variant="subtitle2"
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        fontWeight: 'bold',
-      }}
-    >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <StatDisplay statKey={substatKey} />
-      </Box>
-      <span>
-        {displayValue}
-        {getUnitStr(substatKey)}
-      </span>
-    </Typography>
   )
 }

@@ -12,10 +12,15 @@ export const ambiguousLevelLow = (level: number) =>
   ascensionMaxLevel.includes(level as (typeof ascensionMaxLevel)[number])
 export const milestoneLevelsLow = [
   [50, 5],
+  [50, 4],
   [40, 4],
+  [40, 3],
   [30, 3],
+  [30, 2],
   [20, 2],
+  [20, 1],
   [10, 1],
+  [10, 0],
   [1, 0],
 ] as const
 export const milestoneLevels = [[60, 5], ...milestoneLevelsLow] as const

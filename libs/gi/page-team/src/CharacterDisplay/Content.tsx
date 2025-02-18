@@ -10,7 +10,7 @@ import ScienceIcon from '@mui/icons-material/Science'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import UpgradeIcon from '@mui/icons-material/Upgrade'
 import { Skeleton, Tab, Tabs, useMediaQuery, useTheme } from '@mui/material'
-import { Suspense, useContext } from 'react'
+import { Suspense, useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom'
 import FormulaModal from './FormulaModal'
@@ -28,16 +28,25 @@ export default function Content({ tab }: { tab?: string }) {
   const isTCBuild = !!(
     loadoutDatum.buildTcId && loadoutDatum.buildType === 'tc'
   )
+  const scrollTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
   return (
     <>
       <FormulaModal />
-      <TabNav tab={tab} characterKey={characterKey} isTCBuild={isTCBuild} />
+      <TabNav
+        tab={tab}
+        characterKey={characterKey}
+        isTCBuild={isTCBuild}
+        onChange={() => {}}
+      />
       <CharacterPanel isTCBuild={isTCBuild} />
       <TabNav
         tab={tab}
         characterKey={characterKey}
         isTCBuild={isTCBuild}
         hideTitle
+        onChange={scrollTop}
       />
     </>
   )
@@ -69,11 +78,13 @@ function TabNav({
   characterKey,
   isTCBuild,
   hideTitle = false,
+  onChange,
 }: {
   tab?: string
   characterKey: CharacterKey
   isTCBuild: boolean
   hideTitle?: boolean
+  onChange?: () => void
 }) {
   const { gender } = useDBMeta()
   const elementKey = getCharEle(characterKey)
@@ -104,7 +115,12 @@ function TabNav({
       }}
     >
       {!hideTitle && <LoadoutHeader elementKey={elementKey} />}
-      <LoadoutTabs tab={tab} isTCBuild={isTCBuild} elementKey={elementKey} />
+      <LoadoutTabs
+        tab={tab}
+        isTCBuild={isTCBuild}
+        elementKey={elementKey}
+        onChange={onChange}
+      />
     </CardThemed>
   )
 }
@@ -113,18 +129,22 @@ function LoadoutTabs({
   tab,
   elementKey,
   isTCBuild,
+  onChange,
 }: {
   tab?: string
   elementKey?: ElementKey
   isTCBuild: boolean
+  onChange?: () => void
 }) {
   const { t } = useTranslation('page_character')
   const theme = useTheme()
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
+
   return (
     <Tabs
       value={tab ?? 'overview'}
       variant={isXs ? 'scrollable' : 'fullWidth'}
+      onChange={onChange}
       allowScrollButtonsMobile
       sx={(theme) => {
         const color = elementKey && theme.palette[elementKey]?.main

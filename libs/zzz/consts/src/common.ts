@@ -154,3 +154,6 @@ export const rarityColor = {
   A: 'rankA',
   B: 'rankB',
 } as const
+
+export const allRaritykeys = ['S', 'A', 'B'] as const
+export type Raritykey = (typeof allRaritykeys)[number]

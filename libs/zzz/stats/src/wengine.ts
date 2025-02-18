@@ -9,10 +9,11 @@ export function getWengineStat(wKey: WengineKey) {
 export function getWengineStats(
   wk: WengineKey,
   level: number,
-  wenginePhase: number
+  wenginePhase: number,
+  wengineAscension?: number
 ) {
   const { atk_base, second_statkey, second_statvalue } = getWengineStat(wk)
-  const ascension = clamp(Math.floor(level / 10), 0, 5)
+  const ascension = wengineAscension ?? clamp(Math.floor(level / 10), 0, 5) //TODO: Remove clamp once we can get wengine from characters for optimize
   const stats: Record<string, number> = {
     atk_base:
       atk_base * (1 + atk_multiplier[level] / 10000 + 0.8922 * ascension),
