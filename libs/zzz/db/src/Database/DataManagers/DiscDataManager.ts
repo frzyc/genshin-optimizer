@@ -40,29 +40,16 @@ export class DiscDataManager extends DataManager<
     // Generate cache fields
     const newDisc = { ...storageObj, id } as ICachedDisc
 
-    // rudimentary check for equipment relationship
-    const oldDisc = super.get(id)
-    if (newDisc.location && newDisc.location !== oldDisc?.location) {
-      // remove any other disc from the same character in the same slot
-      this.values.forEach((d) => {
-        if (d.location === newDisc.location && d.slotKey === newDisc.slotKey) {
-          this.set(d.id, { location: '' })
-        }
-      })
-    }
-
     // Check relations and update equipment
-    /* TODO:
     const oldDisc = super.get(id)
     if (newDisc.location !== oldDisc?.location) {
       const slotKey = newDisc.slotKey
       const prevChar = oldDisc?.location
-        ? this.database.chars.getOrCreate(oldDisc.location)
+        ? this.database.chars?.getOrCreate(oldDisc.location)
         : undefined
       const newChar = newDisc.location
-        ? this.database.chars.getOrCreate(newDisc.location)
+        ? this.database.chars?.getOrCreate(newDisc.location)
         : undefined
-
       // previously equipped disc at new location
       const prevDisc = super.get(newChar?.equippedDiscs[slotKey])
 
@@ -85,7 +72,7 @@ export class DiscDataManager extends DataManager<
     } else
       newDisc.location &&
         this.database.chars.triggerCharacter(newDisc.location, 'update')
-    */
+
     return newDisc
   }
   override deCache(disc: ICachedDisc): IDisc {
@@ -123,10 +110,9 @@ export class DiscDataManager extends DataManager<
   }
   override remove(key: string, notify = true): ICachedDisc | undefined {
     const disc = super.remove(key, notify)
-    // TODO:
-    // if (disc)
-    //   disc.location &&
-    //     this.database.chars.setEquippedDisc(disc.location, disc.slotKey, '')
+    if (disc)
+      disc.location &&
+        this.database.chars.setEquippedDisc(disc.location, disc.slotKey, '')
     return disc
   }
   override importZOD(
