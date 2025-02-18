@@ -1,15 +1,18 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
 import {
   clamp,
+  deepClone,
   objFilter,
   objFilterKeys,
+  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
   allCharacterKeys,
   allDiscSetKeys,
+  allDiscSlotKeys,
   allFormulaKeys,
   allWengineKeys,
   coreLimits,
@@ -20,41 +23,6 @@ import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
-
-export function initialCharacterData(key: CharacterKey): ICharacter {
-  return {
-    key,
-    level: 1,
-    core: 0,
-    wengineKey: allWengineKeys[0],
-    wengineLvl: 60,
-    wenginePhase: 1,
-    stats: {
-      // in percent
-      enemyDef: 953, // default enemy DEF
-    },
-    formulaKey: allFormulaKeys[0],
-    constraints: {}, // in percent
-    useEquipped: false,
-    slot4: [...discSlotToMainStatKeys['4']],
-    slot5: [...discSlotToMainStatKeys['5']],
-    slot6: [...discSlotToMainStatKeys['6']],
-    levelLow: 15,
-    levelHigh: 15,
-    setFilter2: [],
-    setFilter4: [],
-    conditionals: {},
-    ascension: 0,
-    mindscape: 0,
-    talent: {
-      dodge: 1,
-      basic: 1,
-      chain: 1,
-      special: 1,
-      assist: 1,
-    },
-  }
-}
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
@@ -183,6 +151,27 @@ export class CharacterDataManager extends DataManager<
     }
     return char
   }
+
+  override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
+    const oldChar = this.get(id)
+    return {
+      equippedDiscs: oldChar
+        ? oldChar.equippedDiscs
+        : objKeyMap(
+            allDiscSlotKeys,
+            (sk) =>
+              Object.values(this.database.discs?.data ?? {}).find(
+                (a) => a?.location === id && a.slotKey === sk
+              )?.id ?? ''
+          ),
+      equippedWengine: oldChar
+        ? oldChar.equippedWengine
+        : Object.values(this.database.wengines?.data ?? {}).find(
+            (w) => w?.location === id
+          )?.id ?? '',
+      ...storageObj,
+    }
+  }
   // These overrides allow CharacterKey to be used as id.
   // This assumes we only support one copy of a character in a DB.
   override toStorageKey(key: string): string {
@@ -192,11 +181,11 @@ export class CharacterDataManager extends DataManager<
     return key.split(`${this.goKeySingle}_`)[1] as CharacterKey
   }
 
-  getOrCreate(key: CharacterKey): ICharacter {
+  getOrCreate(key: CharacterKey): ICachedCharacter {
     if (!this.keys.includes(key)) {
       this.set(key, initialCharacterData(key))
     }
-    return this.get(key) as ICharacter
+    return this.get(key) as ICachedCharacter
   }
 
   // hasDup(char: ICharacter, isSro: boolean) {
@@ -260,6 +249,26 @@ export class CharacterDataManager extends DataManager<
     this.trigger(key, reason, this.get(key))
   }
 
+  override remove(key: CharacterKey): ICachedCharacter | undefined {
+    const char = this.get(key)
+    if (!char) return undefined
+    for (const artKey of Object.values(char.equippedDiscs)) {
+      const art = this.database.discs.get(artKey)
+      // Only unequip from artifact from traveler if there are no more "Travelers" in the database
+      if (art && art.location === key)
+        this.database.discs.setCached(artKey, { ...art, location: '' })
+    }
+    const wengine = this.database.wengines.get(char.equippedWengine)
+    // Only unequip from weapon from traveler if there are no more "Travelers" in the database
+    if (wengine && wengine.location === key)
+      this.database.wengines.setCached(char.equippedWengine, {
+        ...wengine,
+        location: '',
+      })
+
+    return super.remove(key)
+  }
+
   /**
    * **Caution**:
    * This does not update the `location` on wengine
@@ -272,5 +281,55 @@ export class CharacterDataManager extends DataManager<
     const char = super.get(key)
     if (!char) return
     super.setCached(key, { ...char, equippedWengine })
+  }
+
+  /**
+   * **Caution**:
+   * This does not update the `location` on disc
+   * This function should be use internally for database to maintain cache on ICachedCharacter.
+   */
+  setEquippedDisc(key: CharacterKey, slotKey: DiscSlotKey, discId: string) {
+    const char = super.get(key)
+    if (!char) return
+    const equippedDiscs = deepClone(char.equippedDiscs)
+    equippedDiscs[slotKey] = discId
+    super.setCached(key, { ...char, equippedDiscs })
+  }
+}
+
+export function initialCharacterData(key: CharacterKey): ICachedCharacter {
+  return {
+    key,
+    level: 1,
+    core: 0,
+    wengineKey: allWengineKeys[0],
+    wengineLvl: 60,
+    wenginePhase: 1,
+    stats: {
+      // in percent
+      enemyDef: 953, // default enemy DEF
+    },
+    formulaKey: allFormulaKeys[0],
+    constraints: {}, // in percent
+    useEquipped: false,
+    slot4: [...discSlotToMainStatKeys['4']],
+    slot5: [...discSlotToMainStatKeys['5']],
+    slot6: [...discSlotToMainStatKeys['6']],
+    levelLow: 15,
+    levelHigh: 15,
+    setFilter2: [],
+    setFilter4: [],
+    conditionals: {},
+    ascension: 0,
+    mindscape: 0,
+    talent: {
+      dodge: 1,
+      basic: 1,
+      chain: 1,
+      special: 1,
+      assist: 1,
+    },
+    equippedDiscs: objKeyMap(allDiscSlotKeys, () => ''),
+    equippedWengine: '',
   }
 }
