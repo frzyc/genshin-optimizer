@@ -1,5 +1,6 @@
 'use client'
-import { Box, styled } from '@mui/material'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import { Box, IconButton, styled } from '@mui/material'
 
 const CodeArea = styled('code')(({ theme }) => ({
   '&:disabled': {
@@ -18,7 +19,7 @@ const CodeArea = styled('code')(({ theme }) => ({
   resize: 'none',
   color: theme.palette.info.light,
   background: theme.palette.contentDark.main,
-  'p::before': {
+  '.codeLine::before': {
     content: 'counter(lineNumber)',
     width: '2.5em',
     textAlign: 'right',
@@ -33,23 +34,39 @@ export function CodeBlock({ text }: { text: string }) {
   const lines = text.split(/\r\n|\r|\n/)
 
   return (
-    <Box display="flex" flexDirection="row" p={1}>
-      <CodeArea spellCheck="false" aria-label="Code Sample">
+    <Box display="flex" flexDirection="row" px={1} pb={1}>
+      <CodeArea
+        spellCheck="false"
+        aria-label="Code Sample"
+        sx={{ mt: 0, pt: 0 }}
+      >
+        <Box display="flex">
+          <Box sx={{ flexGrow: 1 }} />
+          <IconButton
+            size="small"
+            sx={{ opacity: 0.5, p: 0, mt: 1 }}
+            onClick={() => navigator.clipboard.writeText(text)}
+          >
+            <ContentCopyIcon fontSize="inherit" />
+          </IconButton>
+        </Box>{' '}
         {lines.map((l, index) => {
           const numSpaces = l.search(/\S/)
           return (
-            <p
+            <span
               key={index}
+              className="codeLine"
               style={{
                 counterIncrement: 'lineNumber',
                 margin: 0,
+                display: 'block',
                 // Makes it so wrapped lines start with some amount of indentation
                 paddingLeft: `${numSpaces * 7.5 + 20}px`,
                 textIndent: `-${numSpaces * 7.5 + 20}px`,
               }}
             >
               {l}
-            </p>
+            </span>
           )
         })}
       </CodeArea>
