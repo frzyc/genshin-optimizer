@@ -17,7 +17,8 @@ import {
   Typography,
 } from '@mui/material'
 import { Box, Stack } from '@mui/system'
-import { useContext } from 'react'
+import type { SyntheticEvent } from 'react'
+import { useContext, useState } from 'react'
 import { CalcContext, DebugReadContext, TagContext } from './context'
 import type { GenericRead } from './types'
 
@@ -32,10 +33,20 @@ export function DebugListingsDisplay({
   const calc = useContext(CalcContext)?.withTag(tag)
   const debugCalc = calc?.toDebug()
 
+  const [expanded, setExpanded] = useState<string | false>(false)
+  const handleChange =
+    (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false)
+    }
+
   return (
     <CardThemed bgt="dark">
       <CardContent>
-        <Accordion>
+        <Accordion
+          expanded={expanded === 'formulas'}
+          onChange={handleChange('formulas')}
+          slotProps={{ transition: { unmountOnExit: true } }}
+        >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             All target listings
           </AccordionSummary>
@@ -43,6 +54,7 @@ export function DebugListingsDisplay({
             <Stack>
               {calc &&
                 debugCalc &&
+                expanded === 'formulas' &&
                 calc.listFormulas(formulasRead).map((read, index) => {
                   const computed = calc.compute(read)
                   const debugMeta = debugCalc.compute(read).meta
@@ -71,7 +83,11 @@ export function DebugListingsDisplay({
             </Stack>
           </AccordionDetails>
         </Accordion>
-        <Accordion>
+        <Accordion
+          expanded={expanded === 'buffs'}
+          onChange={handleChange('buffs')}
+          slotProps={{ transition: { unmountOnExit: true } }}
+        >
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             All target buffs
           </AccordionSummary>
@@ -79,6 +95,7 @@ export function DebugListingsDisplay({
             <Stack>
               {calc &&
                 debugCalc &&
+                expanded === 'buffs' &&
                 calc.listFormulas(buffsRead).map((read, index) => {
                   const computed = calc.compute(read)
                   const debugMeta = debugCalc.compute(read).meta
