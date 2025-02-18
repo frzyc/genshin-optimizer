@@ -29,7 +29,6 @@ import {
   getConditional,
   isMember,
   isSheet,
-  type Sheet,
   type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { CharacterName } from '@genshin-optimizer/sr/ui'
@@ -173,7 +172,7 @@ function Page({ teamId }: { teamId: string }) {
     ) => {
       if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
         return
-      const cond = getConditional(sheet as Sheet, condKey)
+      const cond = getConditional(sheet, condKey)
       if (!cond) return
 
       database.teams.setConditional(

@@ -21,6 +21,7 @@ import {
   RelicDataManager,
   TeamDataManager,
 } from './DataManagers/'
+import { CharacterOptManager } from './DataManagers/CharacterOptManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import {
@@ -31,6 +32,7 @@ import {
 export class SroDatabase extends Database {
   relics: RelicDataManager
   chars: CharacterDataManager
+  charOpts: CharacterOptManager
   buildTcs: BuildTcDataManager
   lightCones: LightConeDataManager
   optConfigs: OptConfigDataManager
@@ -80,6 +82,9 @@ export class SroDatabase extends Database {
     // Depends on builds, buildTcs, and optConfigs
     this.teams = new TeamDataManager(this)
 
+    // Depends on optConfigs
+    this.charOpts = new CharacterOptManager(this)
+
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayCharacter = new DisplayCharacterEntry(this)
@@ -108,6 +113,7 @@ export class SroDatabase extends Database {
       this.charMeta,
       this.builds,
       this.teams,
+      this.charOpts,
     ] as const
   }
   get dataEntries() {

@@ -26,6 +26,8 @@ const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))
 const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
 
+const PageOptimize = lazy(() => import('@genshin-optimizer/sr/page-optimize'))
+
 export default function App() {
   return (
     <StyledEngineProvider injectFirst>
@@ -72,6 +74,7 @@ function Content() {
               <Route path=":teamId/*" element={<PageTeam />} />
             </Route>
             <Route path="/settings" element={<PageSettings />} />
+            <Route path="/optimize" element={<PageOptimize />} />
           </Routes>
         </Suspense>
       </Container>

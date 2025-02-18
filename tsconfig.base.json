@@ -147,6 +147,9 @@
       "@genshin-optimizer/sr/page-lightcones": [
         "libs/sr/page-lightcones/src/index.tsx"
       ],
+      "@genshin-optimizer/sr/page-optimize": [
+        "libs/sr/page-optimize/src/index.tsx"
+      ],
       "@genshin-optimizer/sr/page-relics": [
         "libs/sr/page-relics/src/index.tsx"
       ],

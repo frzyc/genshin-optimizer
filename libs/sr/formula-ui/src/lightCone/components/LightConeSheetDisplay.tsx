@@ -5,7 +5,6 @@ import {
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { lightConeUiSheets } from '@genshin-optimizer/sr/formula-ui'
 import { LightConeName } from '@genshin-optimizer/sr/ui'
 import {
   Box,
@@ -15,6 +14,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { lightConeUiSheets } from '../sheets'
 
 export function LightConeSheetDisplay({ lcKey }: { lcKey: LightConeKey }) {
   const lcSheet = lightConeUiSheets[lcKey]

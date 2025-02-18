@@ -3,7 +3,11 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
 import type { GeneratedBuild } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import {
+  OptConfigContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/sr/db-ui'
+import { EquipRow } from '@genshin-optimizer/sr/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -21,9 +25,7 @@ import {
 import type { FormEventHandler } from 'react'
 import { memo, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { EquipRow } from '../BuildsDisplay'
 import { useTeamContext, useTeammateContext } from '../context'
-import { OptConfigContext } from './OptConfigWrapper'
 
 function useGeneratedBuildList(listId: string) {
   const { database } = useDatabaseContext()
