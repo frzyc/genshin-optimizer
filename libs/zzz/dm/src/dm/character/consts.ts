@@ -63,7 +63,7 @@ export const characterRarityMap: Record<number, CharacterRarityKey> = {
 // Remove the 'base' portion to make stat names match what is in Pando
 export const coreStatMap = {
   'Base ATK': 'atk_base',
-  Impact: 'impact_',
+  Impact: 'impact',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',
   'Base Energy Regen': 'base_enerRegen',

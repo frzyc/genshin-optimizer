@@ -68,7 +68,7 @@ export class CharacterDataManager extends DataManager<
     talent = validateTalent(ascension, talent)
 
     if (typeof core !== 'number') core = 0
-    core = clamp(core, 0, coreLimits[ascension + 1])
+    core = clamp(core, 0, coreLimits[ascension])
 
     if (!allWengineKeys.includes(wengineKey)) wengineKey = allWengineKeys[0]
 

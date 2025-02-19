@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next'
 
 const coreStatMap = {
   'Base ATK': 'atk_base',
-  Impact: 'impact_',
+  Impact: 'impact',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',
   'Base Energy Regen': 'base_enerRegen',
