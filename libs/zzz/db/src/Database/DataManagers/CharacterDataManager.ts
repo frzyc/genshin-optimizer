@@ -254,14 +254,12 @@ export class CharacterDataManager extends DataManager<
   override remove(key: CharacterKey): ICachedCharacter | undefined {
     const char = this.get(key)
     if (!char) return undefined
-    for (const artKey of Object.values(char.equippedDiscs)) {
-      const art = this.database.discs.get(artKey)
-      // Only unequip from artifact from traveler if there are no more "Travelers" in the database
-      if (art && art.location === key)
-        this.database.discs.setCached(artKey, { ...art, location: '' })
+    for (const discKey of Object.values(char.equippedDiscs)) {
+      const disc = this.database.discs.get(discKey)
+      if (disc && disc.location === key)
+        this.database.discs.setCached(discKey, { ...disc, location: '' })
     }
     const wengine = this.database.wengines.get(char.equippedWengine)
-    // Only unequip from weapon from traveler if there are no more "Travelers" in the database
     if (wengine && wengine.location === key)
       this.database.wengines.setCached(char.equippedWengine, {
         ...wengine,
