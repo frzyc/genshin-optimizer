@@ -330,7 +330,7 @@ export function reaffine<C>(state: State<OP, C>) {
 /** Get range assuming any item in `comp` can be selected */
 function computeCompRanges(comp: Component<any>[]): CompRanges[number] {
   const iter = comp.values()
-  const first = iter.next().value
+  const first: Component<any> | undefined = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(
     Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])
