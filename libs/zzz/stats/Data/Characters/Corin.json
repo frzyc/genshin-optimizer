@@ -3,6 +3,7 @@
   "rarity": "A",
   "attribute": "physical",
   "specialty": "attack",
+  "fullname": "Corin Wickes",
   "stats": {
     "atk_base": 116,
     "atk_growth": 6.9346,

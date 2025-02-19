@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "anomaly",
+  "fullname": "Burnice White",
   "stats": {
     "atk_base": 124,
     "atk_growth": 7.4992,

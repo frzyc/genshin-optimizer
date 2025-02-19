@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "attack",
+  "fullname": "Soldier 11",
   "stats": {
     "atk_base": 128,
     "atk_growth": 7.7554,

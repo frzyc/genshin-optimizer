@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "electric",
   "specialty": "anomaly",
+  "fullname": "Grace Howard",
   "stats": {
     "atk_base": 119,
     "atk_growth": 7.1181,
