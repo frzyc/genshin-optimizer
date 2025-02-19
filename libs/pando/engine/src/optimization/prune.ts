@@ -20,6 +20,8 @@ type CompRanges = Record<string, Range>[]
 type NodeRanges = Map<AnyNode<OP>, Range>
 type Monotonicities = Map<string, Monotonicity>
 
+const container = Symbol()
+
 /**
  * Reduce the complexity of the optimization problem,
  * returning a new optimization with the same `topN` builds
@@ -37,21 +39,27 @@ type Monotonicities = Map<string, Monotonicity>
  *    with the passed-in arguments (DO NOT mix them). Build components may change, so all
  *    related computation needs to pass in to `nodes` as well, else they'll become unusable.
  */
-export function prune<I extends OP, C extends Component>(
+export function prune<I extends OP, C extends { stats: Component }>(
   nodes: NumNode<I>[],
   builds: C[][],
   cat: string,
   minimum: number[],
   _keepTop: number
-): { nodes: NumNode<I>[]; builds: Omit<C, string>[][]; minimum: number[] } {
-  const state = new State(nodes, builds, cat)
+): { nodes: NumNode<I>[]; builds: C[][]; minimum: number[] } {
+  const internal_builds = builds.map((comp) =>
+    comp.map((c) => ({ ...c.stats, [container]: c }))
+  )
+  const state = new State(nodes, internal_builds, cat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
     minimum = pruneRange(state, minimum)
     reaffine(state)
   }
-  return { nodes: state.nodes, builds: state.builds, minimum }
+  builds = state.builds.map((comp) =>
+    comp.map(({ [container]: c, ...stats }) => ({ ...c, stats }))
+  )
+  return { nodes: state.nodes, builds, minimum }
 }
 
 export class State<I extends OP, C extends Component> {

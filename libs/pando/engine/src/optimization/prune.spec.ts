@@ -22,7 +22,7 @@ const r0 = read({ q: 'c0' }, undefined)
 const r1 = read({ q: 'c1' }, undefined)
 const r2 = read({ q: 'c2' }, undefined)
 
-addCustomOperation('sq', {
+addCustomOperation('sqrt', {
   range: ([r]) => {
     const candidates = [r.min * r.min, r.max * r.max]
     if (r.min <= 0 && 0 <= r.max) candidates.push(0)
@@ -118,7 +118,7 @@ describe('state', () => {
     sumfrac(r0, r1),
     subscript(r0, [44, 2, 3, 4, 5, 22, 7, 8]),
     lookup(subscript(r0, ['a', 'b', 'c']), { a: r1, b: r2, c: 6 }),
-    custom('sq', sum(r0, -3)),
+    custom('sqrt', sum(r0, -3)),
   ]
 
   const builds: Record<string, number>[][] = [
@@ -217,25 +217,25 @@ describe('state', () => {
         test(inc ? 'inc' : 'dec', () => {
           const n1 = prod(sum(r0, -7), r1, r2)
           const m1 = new State([flip(n1, inc)], builds, 'q').monotonicities
-          expect(m1.get('c0')![inc ? 'dec' : 'inc']).toEqual(false)
-          expect(m1.get('c1')![inc ? 'inc' : 'dec']).toEqual(false)
-          expect(m1.get('c2')![inc ? 'inc' : 'dec']).toEqual(false)
+          expect(m1.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
+          expect(m1.get('c1')?.[inc ? 'inc' : 'dec']).toEqual(false)
+          expect(m1.get('c2')?.[inc ? 'inc' : 'dec']).toEqual(false)
 
           const n2 = prod(sum(r0, -7), sum(r1, -11), r2)
           const m2 = new State([flip(n2, inc)], builds, 'q').monotonicities
-          expect(m2.get('c0')![inc ? 'inc' : 'dec']).toEqual(false)
-          expect(m2.get('c1')![inc ? 'inc' : 'dec']).toEqual(false)
-          expect(m2.get('c2')![inc ? 'dec' : 'inc']).toEqual(false)
+          expect(m2.get('c0')?.[inc ? 'inc' : 'dec']).toEqual(false)
+          expect(m2.get('c1')?.[inc ? 'inc' : 'dec']).toEqual(false)
+          expect(m2.get('c2')?.[inc ? 'dec' : 'inc']).toEqual(false)
 
           const n3 = prod(sum(r0, -7), sum(r1, -11), sum(r2, -8))
           const m3 = new State([flip(n3, inc)], builds, 'q').monotonicities
-          expect(m3.get('c0')![inc ? 'dec' : 'inc']).toEqual(false)
-          expect(m3.get('c1')![inc ? 'dec' : 'inc']).toEqual(false)
-          expect(m3.get('c2')![inc ? 'dec' : 'inc']).toEqual(false)
+          expect(m3.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
+          expect(m3.get('c1')?.[inc ? 'dec' : 'inc']).toEqual(false)
+          expect(m3.get('c2')?.[inc ? 'dec' : 'inc']).toEqual(false)
 
           const n4 = prod(sum(r0, -4), r1, r2) // r0 can be neg/zero/pos
           const m4 = new State([flip(n4, inc)], builds, 'q').monotonicities
-          expect(m4.get('c0')![inc ? 'dec' : 'inc']).toEqual(false)
+          expect(m4.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
           expect(m4.get('c1')).toEqual({ inc: false, dec: false })
           expect(m4.get('c2')).toEqual({ inc: false, dec: false })
         })
@@ -331,15 +331,15 @@ describe('state', () => {
     describe('custom', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
-          const pos = custom('sq', r0)
+          const pos = custom('sqrt', r0)
           const mpos = new State([flip(pos, inc)], builds, 'q').monotonicities
           expect(mpos.get('c0')).toEqual({ inc, dec: !inc })
 
-          const neg = custom('sq', sum(r0, -8))
+          const neg = custom('sqrt', sum(r0, -8))
           const mneg = new State([flip(neg, inc)], builds, 'q').monotonicities
           expect(mneg.get('c0')).toEqual({ inc: !inc, dec: inc })
 
-          const zero = custom('sq', sum(r0, -4))
+          const zero = custom('sqrt', sum(r0, -4))
           const mzero = new State([flip(zero, inc)], builds, 'q').monotonicities
           expect(mzero.get('c0')).toEqual({ inc: false, dec: false })
         })
