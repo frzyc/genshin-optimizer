@@ -115,20 +115,10 @@ export default function PageOptimize() {
   )
   return (
     <Box>
-      <Box display="flex" gap={1}>
-        <Box sx={{ flexGrow: 1 }}>
-          <CharacterAutocomplete
-            charKey={characterKey}
-            setCharKey={(ck) => ck && setCharacterKey(ck)}
-          />
-        </Box>
-        {character && charOpt && (
-          <Box sx={{ flexGrow: 1 }}>
-            <OptSelector character={character} charOpt={charOpt} />
-          </Box>
-        )}
-      </Box>
-
+      <CharacterAutocomplete
+        charKey={characterKey}
+        setCharKey={(ck) => ck && setCharacterKey(ck)}
+      />
       {character && charOpt && (
         <CharacterContext.Provider value={character}>
           <TagContext.Provider value={tag}>
@@ -146,6 +136,7 @@ export default function PageOptimize() {
                           mt: 2,
                         }}
                       >
+                        <OptSelector character={character} charOpt={charOpt} />
                         <TeamHeaderHeightContext.Provider value={0}>
                           <CharacterOptDisplay />
                         </TeamHeaderHeightContext.Provider>
