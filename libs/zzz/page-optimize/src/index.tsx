@@ -20,7 +20,7 @@ import {
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import type {
-  CharacterData,
+  ICachedCharacter,
   Stats,
   ZzzDatabase,
 } from '@genshin-optimizer/zzz/db'
@@ -272,7 +272,7 @@ function CharacterSection({
   locationKey: LocationKey
   discIds: Record<DiscSlotKey, string>
   baseStats: Stats
-  character: CharacterData | undefined
+  character: ICachedCharacter | undefined
   characterStats: Record<string, number> | undefined
   wengineStats: Record<string, number> | undefined
 }) {

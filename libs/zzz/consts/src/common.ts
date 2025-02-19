@@ -96,6 +96,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
   impact_: 'Impact',
+  impact: 'Impact',
   daze_: 'Daze',
   shield_: 'Shield Effect',
   anomMas: 'Anomaly Mastery',
@@ -157,3 +158,5 @@ export const rarityColor = {
 
 export const allRaritykeys = ['S', 'A', 'B'] as const
 export type Raritykey = (typeof allRaritykeys)[number]
+export const talentLimits = [1, 3, 5, 7, 9, 12] as const
+export const coreLimits = [0, 1, 2, 3, 4, 6] as const
