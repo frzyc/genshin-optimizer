@@ -2,13 +2,16 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
+  OptConfigContext,
+  OptConfigProvider,
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
+import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
 import type { ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import { getCharStat, getLightConeStat } from '@genshin-optimizer/sr/stats'
-import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
+import { useSrCalcContext, WorkerSelector } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -31,9 +34,6 @@ import {
 import { useTranslation } from 'react-i18next'
 import { TeamContext, useTeammateContext } from '../context'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
-import OptConfigProvider, { OptConfigContext } from './OptConfigWrapper'
-import { StatFilterCard } from './StatFilterCard'
-import { WorkerSelector } from './WorkerSelector'
 
 export default function Optimize() {
   const { database } = useDatabaseContext()
