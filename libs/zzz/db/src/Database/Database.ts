@@ -32,8 +32,8 @@ export class ZzzDatabase extends Database {
     this.storage.setDBIndex(this.dbIndex)
 
     // Handle Datamanagers
-    this.discs = new DiscDataManager(this)
     this.chars = new CharacterDataManager(this)
+    this.discs = new DiscDataManager(this)
 
     // Wengine needs to be instantiated after character to check for relations
     this.wengines = new WengineDataManager(this)

@@ -2,6 +2,7 @@ import type {
   CondKey,
   DiscMainStatKey,
   DiscSetKey,
+  DiscSlotKey,
   FormulaKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -9,7 +10,6 @@ import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 
 export type Constraints = Record<string, { value: number; isMax: boolean }>
 export type Stats = Record<string, number>
-
 export interface IDbCharacter extends ICharacter {
   stats: Stats
   formulaKey: FormulaKey
@@ -29,5 +29,6 @@ export interface IDbCharacter extends ICharacter {
 }
 
 export interface ICachedCharacter extends IDbCharacter {
-  equippedWengine?: string
+  equippedDiscs: Record<DiscSlotKey, string>
+  equippedWengine: string
 }
