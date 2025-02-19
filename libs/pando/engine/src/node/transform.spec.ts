@@ -77,7 +77,7 @@ describe('optimization', () => {
         range: () => {
           throw new Error('Unused')
         },
-        tonicity: () => {
+        monotonicity: () => {
           throw new Error('Unused')
         },
         calc: function (args) {
@@ -89,7 +89,7 @@ describe('optimization', () => {
         range: () => {
           throw new Error('Unused')
         },
-        tonicity: () => {
+        monotonicity: () => {
           throw new Error('Unused')
         },
         calc: function (args) {
