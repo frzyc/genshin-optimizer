@@ -45,10 +45,10 @@ export class DiscDataManager extends DataManager<
     if (newDisc.location !== oldDisc?.location) {
       const slotKey = newDisc.slotKey
       const prevChar = oldDisc?.location
-        ? this.database.chars?.getOrCreate(oldDisc.location)
+        ? this.database.chars.getOrCreate(oldDisc.location)
         : undefined
       const newChar = newDisc.location
-        ? this.database.chars?.getOrCreate(newDisc.location)
+        ? this.database.chars.getOrCreate(newDisc.location)
         : undefined
       // previously equipped disc at new location
       const prevDisc = super.get(newChar?.equippedDiscs[slotKey])
