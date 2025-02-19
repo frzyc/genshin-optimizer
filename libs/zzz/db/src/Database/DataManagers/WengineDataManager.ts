@@ -6,7 +6,8 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { validateLevelAsc } from '@genshin-optimizer/zzz/util'
-import type { ICharacter, IWengine } from '@genshin-optimizer/zzz/zood'
+import type { IWengine } from '@genshin-optimizer/zzz/zood'
+import type { IDbCharacter } from '../../Interfaces'
 import type { ICachedWengine } from '../../Interfaces/IDbWengine'
 import type { ZzzDatabase } from '../Database'
 import { DataManager } from '../DataManager'
@@ -46,10 +47,10 @@ export class WengineDataManager extends DataManager<
     const newWengine = { ...storageObj, id }
     const oldWengine = super.get(id)
     // During initialization of the database, if you import wengines with location without a corresponding character, the char will be generated here.
-    const getWithInit = (cKey: CharacterKey): ICharacter => {
+    const getWithInit = (cKey: CharacterKey): IDbCharacter => {
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacterData(cKey))
-      return this.database.chars.get(cKey) as ICharacter
+      return this.database.chars.get(cKey) as IDbCharacter
     }
     if (newWengine.location !== oldWengine?.location) {
       const prevChar = oldWengine?.location
