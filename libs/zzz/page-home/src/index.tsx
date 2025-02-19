@@ -60,6 +60,7 @@ export default function PageHome() {
         <IntroCard />
         <QuickLinksCard />
         <TeamCard />
+        <Roadmap />
         <PatchNotesCard />
       </Box>
     )
