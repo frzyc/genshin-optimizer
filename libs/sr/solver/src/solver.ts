@@ -1,5 +1,6 @@
+import { objMap } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
+import { detach, prod, prune, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type {
@@ -9,6 +10,8 @@ import type {
   Team,
 } from '@genshin-optimizer/sr/db'
 import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
+import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
+import type { EquipmentStats } from './common'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,
@@ -30,12 +33,13 @@ export class Solver {
   private calc: Calculator
   private frames: Team['frames']
   private statFilters: Array<Omit<StatFilter, 'disabled'>>
-  private lightCones: ICachedLightCone[]
-  private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
+  private lightConeStats: EquipmentStats[]
+  private relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
   private numWorkers: number
   private setProgress: (progress: ProgressResult) => void
   private worker: Worker
   private characterKey: CharacterKey
+  private topN = 10
 
   constructor(
     characterKey: CharacterKey,
@@ -51,8 +55,10 @@ export class Solver {
     this.calc = calc
     this.frames = frames
     this.statFilters = statFilters
-    this.lightCones = lightCones
-    this.relicsBySlot = relicsBySlot
+    this.lightConeStats = lightCones.map(convertLightConeToStats)
+    this.relicStatsBySlot = objMap(relicsBySlot, (relics) =>
+      relics.map(convertRelicToStats)
+    )
     this.numWorkers = numWorkers
     this.setProgress = setProgress
 
@@ -83,9 +89,9 @@ export class Solver {
       // Start worker
       const message: ParentCommandStart = {
         command: 'start',
-        lightCones: this.lightCones,
-        relicsBySlot: this.relicsBySlot,
-        detachedNodes: this.detachNodes(),
+        lightConeStats: this.lightConeStats,
+        relicStatsBySlot: this.relicStatsBySlot,
+        detachedNodes: this.detachAndPruneNodes(),
         constraints: this.statFilters.map(({ value, isMax }) => ({
           value,
           isMax,
@@ -121,48 +127,102 @@ export class Solver {
     this.worker.terminate()
   }
 
-  private detachNodes() {
+  private detachAndPruneNodes() {
     // Step 2: Detach nodes from Calculator
     const relicSetKeys = new Set(allRelicSetKeys)
     const lightConeKeys = new Set(allLightConeKeys)
-    const detachedNodes = detach(
-      [
-        // team
-        sum(
-          ...this.frames.map((frame, i) =>
-            prod(
-              frame.multiplier,
-              new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset)
-            )
+    const nodes = [
+      // stat filters
+      ...this.statFilters.map(({ tag }) => new Read(tag, 'sum')),
+      // other calcs (graph, etc)
+      // optimization targets
+      sum(
+        ...this.frames.map((frame, i) =>
+          prod(
+            frame.multiplier,
+            new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset)
           )
-        ),
-        // stat filters
-        ...this.statFilters.map(({ tag }) => new Read(tag, 'sum')),
-      ],
-      this.calc,
-      (tag: Tag) => {
-        /**
-         * Removes relic and lightcone nodes from the opt character, while retaining data from the rest of the team.
-         * TODO: make lightcone node detachment opt-in.
-         */
-        if (tag['src'] !== this.characterKey) return undefined // Wrong member
-        if (tag['et'] !== 'own') return undefined // Not applied (only) to self
-
-        if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
-          return { q: tag['q']! } // Relic stat bonus
-        if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
-          return { q: tag['sheet']! } // Relic set counter
-        if (
-          tag['qt'] == 'lightCone' &&
-          ['lvl', 'ascension', 'superimpose'].includes(tag['q'] as string)
         )
-          return { q: tag['q']! } // Light cone bonus
-        if (tag['q'] === 'count' && lightConeKeys.has(tag['sheet'] as any))
-          return { q: tag['sheet']! } // Relic set counter
+      ),
+    ]
+    const detachedNodes = detach(nodes, this.calc, (tag: Tag) => {
+      /**
+       * Removes relic and lightcone nodes from the opt character, while retaining data from the rest of the team.
+       * TODO: make lightcone node detachment opt-in.
+       */
+      if (tag['src'] !== this.characterKey) return undefined // Wrong member
+      if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
-        return undefined
-      }
+      if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
+        return { q: tag['q']! } // Relic stat bonus
+      if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
+        return { q: tag['sheet']! } // Relic set counter
+      if (
+        tag['qt'] == 'lightCone' &&
+        ['lvl', 'ascension', 'superimpose'].includes(tag['q'] as string)
+      )
+        return { q: tag['q']! } // Light cone bonus
+      if (tag['q'] === 'count' && lightConeKeys.has(tag['sheet'] as any))
+        return { q: tag['sheet']! } // Relic set counter
+
+      return undefined
+    })
+    const buildComponents = [
+      this.lightConeStats,
+      // 1-by-1 for deterministic order
+      this.relicStatsBySlot.head,
+      this.relicStatsBySlot.hands,
+      this.relicStatsBySlot.body,
+      this.relicStatsBySlot.feet,
+      this.relicStatsBySlot.sphere,
+      this.relicStatsBySlot.rope,
+    ]
+    const constraints = this.statFilters.map((filter) =>
+      filter.isMax ? filter.value * -1 : filter.value
     )
-    return detachedNodes
+    const {
+      nodes: prunedNodes,
+      candidates,
+      minimum,
+    } = prune(detachedNodes, buildComponents, 'q', constraints, this.topN)
+    this.lightConeStats = candidates[0]
+    // 1-by-1 for deterministic order
+    this.relicStatsBySlot.head = candidates[1]
+    this.relicStatsBySlot.hands = candidates[2]
+    this.relicStatsBySlot.body = candidates[3]
+    this.relicStatsBySlot.feet = candidates[4]
+    this.relicStatsBySlot.sphere = candidates[5]
+    this.relicStatsBySlot.rope = candidates[6]
+    minimum.map((v, i) => (this.statFilters[i].value = v))
+    return prunedNodes
+  }
+}
+
+function convertRelicToStats(relic: ICachedRelic): EquipmentStats {
+  const { id, mainStatKey, level, rarity, setKey, substats } = relic
+  return {
+    id,
+    component: {
+      [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
+      ...Object.fromEntries(
+        substats
+          .filter(({ key, value }) => key && value)
+          .map(({ key, value }) => [key, value])
+      ),
+      [setKey]: 1,
+    },
+  }
+}
+
+function convertLightConeToStats(lightCone: ICachedLightCone): EquipmentStats {
+  const { id, key, level: lvl, ascension, superimpose } = lightCone
+  return {
+    id,
+    component: {
+      lvl,
+      superimpose,
+      ascension,
+      [key]: 1,
+    },
   }
 }

@@ -1,20 +1,22 @@
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { EquipmentStats } from './common'
 import { MAX_BUILDS } from './common'
-import type { LightConeStats, RelicStats } from './parentWorker'
 import type { BuildResult } from './solver'
 
 const MAX_BUILDS_TO_SEND = 200_000
-let compiledCalcFunction: (relicStats: RelicStats['stats'][]) => number[]
-let lightConeStats: LightConeStats[]
-let relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
+let compiledCalcFunction: (
+  equipmentStatsOnly: EquipmentStats['component'][]
+) => number[]
+let lightConeStats: EquipmentStats[]
+let relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
 let constraints: Array<{ value: number; isMax: boolean }> = []
 
 export interface ChildCommandInit {
   command: 'init'
-  lightConeStats: LightConeStats[]
-  relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
+  lightConeStats: EquipmentStats[]
+  relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
   constraints: Array<{ value: number; isMax: boolean }>
   detachedNodes: NumTagFree[]
 }
@@ -94,13 +96,13 @@ async function init({
   postMessage({ resultType: 'initialized' })
 }
 function* generateCombinations(): Generator<{
-  lightCone: LightConeStats
-  head: RelicStats
-  hands: RelicStats
-  feet: RelicStats
-  body: RelicStats
-  sphere: RelicStats
-  rope: RelicStats
+  lightCone: EquipmentStats
+  head: EquipmentStats
+  hands: EquipmentStats
+  feet: EquipmentStats
+  body: EquipmentStats
+  sphere: EquipmentStats
+  rope: EquipmentStats
 }> {
   for (const lightCone of lightConeStats) {
     for (const head of relicStatsBySlot.head) {
@@ -156,13 +158,13 @@ async function start() {
   } of generateCombinations()) {
     // Step 5: Calculate the value
     const results = compiledCalcFunction([
-      lightCone.stats,
-      head.stats,
-      hands.stats,
-      feet.stats,
-      body.stats,
-      sphere.stats,
-      rope.stats,
+      lightCone.component,
+      head.component,
+      hands.component,
+      feet.component,
+      body.component,
+      sphere.component,
+      rope.component,
     ])
     if (
       constraints.every(({ value, isMax }, i) =>
