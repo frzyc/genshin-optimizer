@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "electric",
   "specialty": "stun",
+  "fullname": "Qingyi",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.4272,

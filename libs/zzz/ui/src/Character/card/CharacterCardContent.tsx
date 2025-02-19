@@ -11,13 +11,14 @@ import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Box, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import { CharacterName } from '../CharacterTrans'
 
 export function CharacterCardContent({
   characterKey,
 }: {
   characterKey: CharacterKey
 }) {
-  const { t } = useTranslation(['page_characters', 'charNames_gen'])
+  const { t } = useTranslation('page_characters')
   const { level, talent, core } = useCharacter(characterKey) as ICachedCharacter
   const { rarity, specialty, attribute } = getCharStat(characterKey)
   const talentKeys = Object.keys(talent)
@@ -26,7 +27,7 @@ export function CharacterCardContent({
       <Box display="flex" gap={1.5} alignItems="center">
         <ImgIcon size={2} src={rarityDefIcon(rarity)} />
         <Typography variant="h4">
-          {t(`charNames_gen:${characterKey}`)}
+          <CharacterName characterKey={characterKey} />
         </Typography>
         <ElementIcon ele={attribute} />
         <ImgIcon size={2} src={specialityDefIcon(specialty)} />

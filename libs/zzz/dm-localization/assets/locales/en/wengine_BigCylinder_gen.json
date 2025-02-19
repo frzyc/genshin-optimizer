@@ -1,0 +1,14 @@
+{
+  "name": "Big Cylinder",
+  "desc": "This super-powerful support W-Engine, into which Ben installed extra heavy oil cylinders to keep it growling along, can even provide sufficient power for heavy-duty machinery. Despite its weight being so massive that ordinary people cannot lift it, for Ben, it's the perfect counterweight ball for his concrete pillar.\n\n<color=#959595>\"Don't worry. I've calculated the counterweight position and impact resistance factor down to four decimal places. It won't impact weapon performance.\" — Ben, before taking out his notebook to check over the calculations yet again</color>",
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "A powerful protection-type W-Engine, characterized by thick oil cylinders that ceaselessly roar inside it. It can provide sufficient power for heavy machinery.",
+  "phase": "Ten Ton Top",
+  "phaseDescs": [
+    "Reduces DMG taken by <color=#2BAD00>7.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>600%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+    "Reduces DMG taken by <color=#2BAD00>8.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>690%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+    "Reduces DMG taken by <color=#2BAD00>9.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>780%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+    "Reduces DMG taken by <color=#2BAD00>10.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>870%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+    "Reduces DMG taken by <color=#2BAD00>12%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>960%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s."
+  ]
+}

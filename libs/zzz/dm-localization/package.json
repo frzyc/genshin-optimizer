@@ -1,0 +1,9 @@
+{
+  "name": "@genshin-optimizer/zzz/dm-localization",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "private": true,
+  "executors": "./executors.json"
+}

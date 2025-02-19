@@ -14,6 +14,7 @@ import { Box, CardActionArea, Chip, Grid, Typography } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CharacterName } from './CharacterTrans'
 
 export function CharacterCompactMindscapeSelector({
   setMindscape,
@@ -112,7 +113,6 @@ function CoverArea({
 }
 
 function CharChip() {
-  const { t } = useTranslation('charNames_gen')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -128,7 +128,7 @@ function CharChip() {
         >
           <ElementIcon ele={attribute} />
           <Box sx={{ whiteSpace: 'normal', textAlign: 'center' }}>
-            {t(`${characterKey}`)}
+            <CharacterName characterKey={characterKey} />
           </Box>
           <ImgIcon size={1.5} src={specialityDefIcon(specialty)} />
         </Typography>

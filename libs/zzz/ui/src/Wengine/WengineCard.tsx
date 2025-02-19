@@ -32,6 +32,7 @@ import { LocationAutocomplete } from '../Character/LocationAutocomplete'
 import { LocationName } from '../Character/LocationName'
 import { ZCard } from '../Components'
 import { WengineSubstatDisplay } from './WengineSubstatDisplay'
+import { WengineName } from './WengineTrans'
 
 const wenginePhaseIconsMap: Record<PhaseKey, WenginePhaseKey> = {
   1: 'p1',
@@ -51,7 +52,7 @@ export function WengineCard({
   onEdit?: (wengineId: string) => void
   setLocation?: (lk: LocationKey) => void
 }) {
-  const { t } = useTranslation('wengineNames')
+  const { t } = useTranslation('ui')
   const [show, onShow, onHide] = useBoolState()
   const {
     id = '',
@@ -131,7 +132,7 @@ export function WengineCard({
                           src={specialityDefIcon(wengineStat.type)}
                         />
                       }{' '}
-                      {t(`${key}`)}
+                      <WengineName wKey={key} />
                     </Typography>
                   </BootstrapTooltip>
                 </div>

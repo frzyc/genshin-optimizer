@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "stun",
+  "fullname": "Koleda Belobog",
   "stats": {
     "atk_base": 106,
     "atk_growth": 6.2007,

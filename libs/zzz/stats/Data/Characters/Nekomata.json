@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "physical",
   "specialty": "attack",
+  "fullname": "Nekomiya Mana",
   "stats": {
     "atk_base": 131,
     "atk_growth": 7.9762,
