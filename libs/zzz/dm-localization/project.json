@@ -1,0 +1,13 @@
+{
+  "name": "zzz-dm-localization",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/dm-localization/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/zzz/dm-localization:gen-locale",
+      "outputs": ["{projectRoot}/assets/locales"]
+    }
+  }
+}
