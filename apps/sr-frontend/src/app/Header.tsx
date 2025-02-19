@@ -1,5 +1,6 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { Tally } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
   CharacterIcon,
@@ -122,7 +123,7 @@ const maincontent = [
   relics,
   lightCones,
   characters,
-  teams,
+  ...(shouldShowDevComponents ? [teams] : []),
   optimize,
   settings,
 ] as const
@@ -187,6 +188,9 @@ function DesktopHeader({
               <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
                 {t('pageTitle')}
               </Typography>
+              {shouldShowDevComponents && (
+                <Typography variant="body1">(Dev Mode)</Typography>
+              )}
             </Box>
           }
         />
@@ -227,7 +231,7 @@ const mobileContent = [
   relics,
   lightCones,
   characters,
-  teams,
+  ...(shouldShowDevComponents ? [teams] : []),
   optimize,
   settings,
 ] as const
@@ -326,6 +330,9 @@ function MobileHeader({
             <Typography variant="h6" noWrap component="div" sx={{ px: 1 }}>
               {t('pageTitle')}
             </Typography>
+            {shouldShowDevComponents ? (
+              <Typography variant="body1">(Dev Mode)</Typography>
+            ) : undefined}
           </Button>
           <Box flexGrow={1} />
           <IconButton

@@ -1,8 +1,8 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { Tally } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { shouldShowDevComponents } from '@genshin-optimizer/zzz/ui'
 import { Settings } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import DiscFullIcon from '@mui/icons-material/DiscFull'
@@ -166,6 +166,9 @@ function DesktopHeader({
                 Zenless Optimizer
                 {/* TODO: {t('pageTitle')} */}
               </Typography>
+              {shouldShowDevComponents && (
+                <Typography variant="body1">(Dev Mode)</Typography>
+              )}
             </Box>
           }
         />
@@ -308,6 +311,9 @@ function MobileHeader({
             <Typography variant="h6" noWrap component="div" sx={{ px: 1 }}>
               {t('pageTitle')}
             </Typography>
+            {shouldShowDevComponents ? (
+              <Typography variant="body1">(Dev Mode)</Typography>
+            ) : undefined}
           </Button>
           <Box flexGrow={1} />
           <IconButton
