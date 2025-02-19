@@ -1,10 +1,10 @@
 import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
+import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/sr/formula'
 import { getConditional, isMember } from '@genshin-optimizer/sr/formula'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { correctConditionalValue } from '../conditionalUtil'
 import { validateTag } from '../tagUtil'
 
 export type CharOpt = {

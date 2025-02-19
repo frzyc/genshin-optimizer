@@ -5,6 +5,7 @@ import {
   range,
   shallowCompareObj,
 } from '@genshin-optimizer/common/util'
+import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
@@ -20,7 +21,6 @@ import {
 import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import { correctConditionalValue } from '../conditionalUtil'
 import { validateTag } from '../tagUtil'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const

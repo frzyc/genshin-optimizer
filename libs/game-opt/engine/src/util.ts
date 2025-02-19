@@ -1,4 +1,4 @@
-import type { IConditionalData } from '@genshin-optimizer/game-opt/engine'
+import type { IConditionalData } from './IConditionalData'
 
 export function correctConditionalValue(
   conditional: IConditionalData,
