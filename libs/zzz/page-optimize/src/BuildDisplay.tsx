@@ -5,6 +5,7 @@ import {
   valueString,
 } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import type { Stats } from '@genshin-optimizer/zzz/db'
 import {
   useDatabaseContext,
   useDisc,
@@ -12,7 +13,6 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import { applyCalc, convertDiscToStats } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
-import type { Stats } from '@genshin-optimizer/zzz/zood'
 import { Box, Button, CardContent, Grid, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useCharacterContext } from './CharacterContext'

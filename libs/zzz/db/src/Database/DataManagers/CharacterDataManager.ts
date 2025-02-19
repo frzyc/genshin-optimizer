@@ -19,22 +19,21 @@ import {
   discSlotToMainStatKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelAsc, validateTalent } from '@genshin-optimizer/zzz/util'
-import type { ICharacter } from '@genshin-optimizer/zzz/zood'
-import type { ICachedCharacter } from '../../Interfaces'
+import type { ICachedCharacter, IDbCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedCharacter,
-  ICharacter
+  IDbCharacter
 > {
   constructor(database: ZzzDatabase) {
     super(database, 'characters')
   }
-  override validate(obj: unknown): ICharacter | undefined {
+  override validate(obj: unknown): IDbCharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    const { key: characterKey } = obj as ICharacter
+    const { key: characterKey } = obj as IDbCharacter
     let {
       core,
       wengineKey,
@@ -54,12 +53,12 @@ export class CharacterDataManager extends DataManager<
       conditionals,
       mindscape,
       talent,
-    } = obj as ICharacter
-    const { level: rawLevel, ascension: rawAscension } = obj as ICharacter
+    } = obj as IDbCharacter
+    const { level: rawLevel, ascension: rawAscension } = obj as IDbCharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
-    if (typeof mindscape !== 'number' && mindscape < 0 && mindscape > 6)
+    if (typeof mindscape !== 'number' || mindscape < 0 || mindscape > 6)
       mindscape = 0
 
     const { sanitizedLevel, ascension } = validateLevelAsc(
@@ -126,7 +125,7 @@ export class CharacterDataManager extends DataManager<
     if (typeof conditionals !== 'object') conditionals = {}
     conditionals = objFilter(conditionals, (value) => typeof value === 'number')
 
-    const char: ICharacter = {
+    const char: IDbCharacter = {
       key: characterKey,
       level: sanitizedLevel,
       core,
@@ -152,7 +151,10 @@ export class CharacterDataManager extends DataManager<
     return char
   }
 
-  override toCache(storageObj: ICharacter, id: CharacterKey): ICachedCharacter {
+  override toCache(
+    storageObj: IDbCharacter,
+    id: CharacterKey
+  ): ICachedCharacter {
     const oldChar = this.get(id)
     return {
       equippedDiscs: oldChar

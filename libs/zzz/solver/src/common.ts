@@ -4,8 +4,7 @@ import {
   getDiscSubStatBaseVal,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import type { Stats } from '@genshin-optimizer/zzz/zood'
+import type { ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 
 export const MAX_BUILDS = 50_000
 

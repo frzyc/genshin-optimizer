@@ -1,15 +1,4 @@
-import type {
-  AscensionKey,
-  CharacterKey,
-  CondKey,
-  DiscMainStatKey,
-  DiscSetKey,
-  FormulaKey,
-  WengineKey,
-} from '@genshin-optimizer/zzz/consts'
-
-export type Constraints = Record<string, { value: number; isMax: boolean }>
-export type Stats = Record<string, number>
+import type { AscensionKey, CharacterKey } from '@genshin-optimizer/zzz/consts'
 
 export interface ICharacterTalent {
   dodge: number
@@ -23,21 +12,6 @@ export interface ICharacter {
   key: CharacterKey
   level: number
   core: number
-  wengineKey: WengineKey
-  wengineLvl: number
-  wenginePhase: number
-  stats: Stats
-  formulaKey: FormulaKey
-  constraints: Constraints
-  useEquipped: boolean
-  slot4: DiscMainStatKey[]
-  slot5: DiscMainStatKey[]
-  slot6: DiscMainStatKey[]
-  levelLow: number
-  levelHigh: number
-  setFilter2: DiscSetKey[]
-  setFilter4: DiscSetKey[]
-  conditionals: Partial<Record<CondKey, number>>
   mindscape: number
   ascension: AscensionKey
   talent: ICharacterTalent

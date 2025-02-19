@@ -1,5 +1,6 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { Tally } from '@genshin-optimizer/common/ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/common/util'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
   CharacterIcon,
@@ -8,6 +9,7 @@ import {
   TeamsIcon,
 } from '@genshin-optimizer/sr/svgicons'
 import { Settings } from '@mui/icons-material'
+import CalculateIcon from '@mui/icons-material/Calculate'
 import MenuIcon from '@mui/icons-material/Menu'
 import {
   AppBar,
@@ -29,7 +31,6 @@ import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
-
 type ITab = {
   i18Key: string
   icon: ReactNode
@@ -77,6 +78,13 @@ const settings: ITab = {
   textSuffix: <SettingsChip />,
 }
 
+const optimize: ITab = {
+  i18Key: 'tabs.optimize',
+  icon: <CalculateIcon />,
+  to: '/optimize',
+  value: 'optimize',
+}
+
 function SettingsChip() {
   const { database } = useDatabaseContext()
   const { name } = database?.dbMeta.get() ?? 'Database 0'
@@ -111,7 +119,14 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [relics, lightCones, characters, teams, settings] as const
+const maincontent = [
+  relics,
+  lightCones,
+  characters,
+  ...(shouldShowDevComponents ? [teams] : []),
+  optimize,
+  settings,
+] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -173,6 +188,9 @@ function DesktopHeader({
               <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
                 {t('pageTitle')}
               </Typography>
+              {shouldShowDevComponents && (
+                <Typography variant="body1">(Dev Mode)</Typography>
+              )}
             </Box>
           }
         />
@@ -209,7 +227,14 @@ function DesktopHeader({
   )
 }
 
-const mobileContent = [relics, lightCones, characters, teams, settings] as const
+const mobileContent = [
+  relics,
+  lightCones,
+  characters,
+  ...(shouldShowDevComponents ? [teams] : []),
+  optimize,
+  settings,
+] as const
 function MobileHeader({
   anchor,
   currentTab,
@@ -305,6 +330,9 @@ function MobileHeader({
             <Typography variant="h6" noWrap component="div" sx={{ px: 1 }}>
               {t('pageTitle')}
             </Typography>
+            {shouldShowDevComponents ? (
+              <Typography variant="body1">(Dev Mode)</Typography>
+            ) : undefined}
           </Button>
           <Box flexGrow={1} />
           <IconButton

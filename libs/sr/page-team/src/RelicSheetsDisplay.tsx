@@ -1,9 +1,9 @@
 import { isRelicSetKey, type RelicSetKey } from '@genshin-optimizer/sr/consts'
+import { RelicSheetDisplay } from '@genshin-optimizer/sr/formula-ui'
 import { RelicSetAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { useTeamContext } from './context'
-import { RelicSheetDisplay } from './RelicSheetDisplay'
 
 export function RelicSheetsDisplay() {
   const { team } = useTeamContext()

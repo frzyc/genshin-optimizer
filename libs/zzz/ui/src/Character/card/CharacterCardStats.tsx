@@ -1,3 +1,4 @@
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { type CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
@@ -5,15 +6,16 @@ import {
   toPercent,
 } from '@genshin-optimizer/common/util'
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
+import { statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
 import { getCharacterStats, getCharStat } from '@genshin-optimizer/zzz/stats'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Box, ListItem, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { StatDisplay } from '../StatDisplay'
 
 const coreStatMap = {
   'Base ATK': 'atk_base',
-  Impact: 'impact',
+  Impact: 'impact_',
   'CRIT Rate': 'crit_',
   'CRIT DMG': 'crit_dmg_',
   'Base Energy Regen': 'base_enerRegen',
@@ -49,7 +51,7 @@ export function CharacterCardStats({
   return (
     <FieldDisplayList bgt={bgt} sx={{ width: '100%', borderRadius: 0 }}>
       {stats.map((stat: string) => (
-        <ListItem>
+        <ListItem key={stat}>
           <SubstatDisplay
             substat={stat}
             value={characterStats[stat]}
@@ -76,7 +78,13 @@ export function CharacterCardStats({
   )
 }
 
-function SubstatDisplay({ substat, value }: { substat: any; value: any }) {
+function SubstatDisplay({
+  substat,
+  value,
+}: {
+  substat: string
+  value: number | undefined
+}) {
   if (!value) return null
   const displayValue = toPercent(value, substat).toFixed(
     statKeyToFixed(substat)
@@ -93,7 +101,8 @@ function SubstatDisplay({ substat, value }: { substat: any; value: any }) {
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <StatDisplay statKey={substat} />
+        <StatIcon statKey={substat} iconProps={iconInlineProps} />
+        {statKeyTextMap[substat]}
       </Box>
       <span>
         {displayValue}

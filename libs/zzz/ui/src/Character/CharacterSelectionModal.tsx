@@ -1,5 +1,4 @@
 'use client'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ImgIcon,
@@ -19,7 +18,6 @@ import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ascensionMaxLevel } from '@genshin-optimizer/zzz/util'
 import CloseIcon from '@mui/icons-material/Close'
-import type { TooltipProps } from '@mui/material'
 import {
   Box,
   CardActionArea,
@@ -27,10 +25,7 @@ import {
   Divider,
   Grid,
   IconButton,
-  Tooltip,
   Typography,
-  styled,
-  tooltipClasses,
 } from '@mui/material'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -55,7 +50,17 @@ export function CharacterSingleSelectionModal({
         <Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
           {allCharacterKeys.map((characterKey) => (
             <Grid item key={characterKey} xs={1}>
-              <SingleSelectCardWrapper characterKey={characterKey}>
+              <CardThemed
+                bgt="light"
+                sx={() => {
+                  return {
+                    position: 'relative',
+                    flexGrow: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }
+                }}
+              >
                 <SelectionCard
                   characterKey={characterKey}
                   onClick={() => {
@@ -63,7 +68,7 @@ export function CharacterSingleSelectionModal({
                     onSelect(characterKey)
                   }}
                 />
-              </SingleSelectCardWrapper>
+              </CardThemed>
             </Grid>
           ))}
         </Grid>
@@ -156,54 +161,6 @@ function CharacterSelectionModalBase({
         {children}
       </CardThemed>
     </ModalWrapper>
-  )
-}
-
-const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))({
-  [`& .${tooltipClasses.tooltip}`]: {
-    padding: 0,
-  },
-})
-
-// used for wrapping SelectionCards for the single selection variant - passing
-// in the appropriate selectedIndex and teamSlotIndex controls whether outlining
-// and flashing the selected outline is enabled, favorite icon and the character
-// tooltip are always present
-function SingleSelectCardWrapper({
-  characterKey,
-  children,
-}: {
-  characterKey: CharacterKey
-  children: React.ReactNode
-}) {
-  const [open, onOpen, onClose] = useBoolState()
-  return (
-    <CustomTooltip
-      enterDelay={300}
-      enterNextDelay={300}
-      arrow
-      placement="bottom"
-      open={open}
-      onClose={onClose}
-      onOpen={onOpen}
-      title={<Box sx={{ width: 300 }}>To be added {characterKey}</Box>}
-    >
-      <CardThemed
-        bgt="light"
-        sx={() => {
-          return {
-            position: 'relative',
-            flexGrow: 1,
-            display: 'flex',
-            flexDirection: 'column',
-          }
-        }}
-      >
-        {children}
-      </CardThemed>
-    </CustomTooltip>
   )
 }
 
