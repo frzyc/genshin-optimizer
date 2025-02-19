@@ -3,7 +3,6 @@ import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { relicUiSheets } from '@genshin-optimizer/sr/formula-ui'
 import { RelicSetName } from '@genshin-optimizer/sr/ui'
 import { getDefaultRelicSlot, isCavernRelic } from '@genshin-optimizer/sr/util'
 import {
@@ -14,6 +13,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { relicUiSheets } from '../sheets'
 
 export function RelicSheetDisplay({ setKey }: { setKey: RelicSetKey }) {
   const relicSheet = relicUiSheets[setKey]

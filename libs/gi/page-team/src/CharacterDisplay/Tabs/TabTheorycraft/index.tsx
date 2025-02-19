@@ -1,5 +1,5 @@
 import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { objMap, toPercent } from '@genshin-optimizer/common/util'
+import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import {
@@ -25,7 +25,6 @@ import {
   getBuildTcWeaponData,
   getTeamDataCalc,
   initialBuildStatus,
-  isDev,
   optimizeNodesForScaling,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
