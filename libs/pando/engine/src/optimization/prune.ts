@@ -17,13 +17,12 @@ type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 type NumTagFree = NumNode<OP>
 type AnyTagFree = AnyNode<OP>
 
-type Component = Record<string, number>
+const container = Symbol() // component's container
+type Component<C> = Record<string, number> & { [container]?: C }
 
 type CompRanges = Record<string, Range>[]
 type NodeRanges = Map<AnyTagFree, Range>
 type Monotonicities = Map<string, Monotonicity>
-
-const container = Symbol()
 
 /**
  * Reduce the complexity of the optimization problem,
@@ -40,7 +39,10 @@ const container = Symbol()
  *    with the passed-in arguments (DO NOT mix them). Components may also change, so all related
  *    computation needs to pass in to `nodes` as well, else they'll become unusable.
  */
-export function prune<I extends OP, C extends { component: Component }>(
+export function prune<
+  I extends OP,
+  C extends { component: Record<string, number> }
+>(
   nodes: NumNode<I>[],
   candidates: C[][],
   cat: string,
@@ -58,14 +60,14 @@ export function prune<I extends OP, C extends { component: Component }>(
     reaffine(state)
   }
   candidates = state.candidates.map((comp) =>
-    comp.map(({ [container]: c, ...component }) => ({ ...c, component }))
+    comp.map(({ [container]: c, ...component }) => ({ ...c!, component }))
   )
   return { nodes: state.nodes, candidates, minimum }
 }
 
-export class State<I extends OP, C extends Component> {
+export class State<I extends OP, C> {
   nodes: NumNode<I>[]
-  candidates: Omit<C, string>[][]
+  candidates: Component<C>[][]
   cat: string
 
   progress = true
@@ -73,7 +75,7 @@ export class State<I extends OP, C extends Component> {
   _nodeRanges: NodeRanges | undefined
   _monotonicities: Monotonicities | undefined
 
-  constructor(nodes: NumNode<I>[], candidates: C[][], cat: string) {
+  constructor(nodes: NumNode<I>[], candidates: Component<C>[][], cat: string) {
     this.nodes = nodes
     this.candidates = candidates
     this.cat = cat
@@ -86,7 +88,7 @@ export class State<I extends OP, C extends Component> {
     this._nodeRanges = undefined
     this._monotonicities = undefined
   }
-  setCandidates(candidates: Omit<C, string>[][], compRanges?: CompRanges) {
+  setCandidates(candidates: Component<C>[][], compRanges?: CompRanges) {
     if (this.candidates === candidates) return
     this.progress = true
     this.candidates = candidates
@@ -115,7 +117,7 @@ export class State<I extends OP, C extends Component> {
 }
 
 /** Remove branches that are never chosen */
-export function pruneBranches(state: State<OP, Component>) {
+export function pruneBranches(state: State<OP, any>) {
   const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
     const r = nodeRanges.get(o)!
@@ -160,10 +162,7 @@ export function pruneBranches(state: State<OP, Component>) {
  * - Remove top-level nodes whose `minimum` requirements are met by every build
  * - Returns new `minimum` appropriate for the new `state.nodes`
  */
-export function pruneRange(
-  state: State<OP, Component>,
-  minimum: number[]
-): number[] {
+export function pruneRange(state: State<OP, any>, minimum: number[]): number[] {
   const { nodeRanges, cat } = state
   const candidates = [...state.candidates]
   const compRanges = [...state.compRanges]
@@ -206,7 +205,7 @@ const offset = Symbol()
  * If changes are made, components `builds` will be replaced with new values with all string keys
  * replaced. Owned `Symbol` keys are transferred from the old `builds` components to the new ones.
  */
-export function reaffine(state: State<OP, Component>) {
+export function reaffine<C>(state: State<OP, C>) {
   const { nodes, cat, candidates } = state
   type Weight = Record<string | typeof offset, number>
   const weights = new Map<AnyTagFree, Weight>()
@@ -266,11 +265,9 @@ export function reaffine(state: State<OP, Component>) {
     [...topWeights.values()].map((w, i) => [w, `c${i}`])
   )
   const newCandidates = candidates.map((comp) =>
-    (comp as Component[]).map((c) => {
-      const result: Component = {}
-      // Preserve non-string keys
-      for (const s of Object.getOwnPropertySymbols(c))
-        result[s as any] = (c as any)[s]
+    comp.map((c) => {
+      const result: Component<C> = {}
+      if (container in c) result[container] = c[container]
       weightNames.forEach((name, w) => {
         result[name] = Object.entries(w).reduce(
           (acu, [k, v]) => acu + (c[k] ?? 0) * v,
@@ -331,9 +328,9 @@ export function reaffine(state: State<OP, Component>) {
 }
 
 /** Get range assuming any item in `comp` can be selected */
-function computeCompRanges(comp: Component[]): CompRanges[number] {
+function computeCompRanges(comp: Component<any>[]): CompRanges[number] {
   const iter = comp.values()
-  const first: Component | undefined = iter.next().value
+  const first = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(
     Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])

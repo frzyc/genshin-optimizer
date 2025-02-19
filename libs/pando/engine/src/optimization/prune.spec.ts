@@ -56,7 +56,7 @@ describe('pruning', () => {
     expect(state.progress).toBe(true)
     // Normally the reaffined keys are unspecified, but since the current
     // algorithm is deterministic, we can just run it and note the keys
-    expect(state.builds).toEqual([[{}, { c0: 3, c1: 5 }, { c0: 4, c1: 8 }]])
+    expect(state.candidates).toEqual([[{}, { c0: 3, c1: 5 }, { c0: 4, c1: 8 }]])
     // reaffine nodes into different keys (c0 and c1, again, with different values)
     // and leave the constant nodes alone
     expect(state.nodes).toEqual([
@@ -101,10 +101,10 @@ describe('pruning', () => {
     expect(state.nodes[2]).toBe(nodes[3])
     expect(newMinimum).toEqual([minimum[0]])
 
-    expect(state.builds.length).toEqual(1)
-    expect(state.builds[0].length).toEqual(2)
-    expect(state.builds[0][0]).toBe(builds[0][1])
-    expect(state.builds[0][1]).toBe(builds[0][2])
+    expect(state.candidates.length).toEqual(1)
+    expect(state.candidates[0].length).toEqual(2)
+    expect(state.candidates[0][0]).toBe(builds[0][1])
+    expect(state.candidates[0][1]).toBe(builds[0][2])
   })
 })
 describe('state', () => {
