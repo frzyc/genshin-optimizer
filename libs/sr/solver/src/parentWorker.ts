@@ -6,9 +6,12 @@ import {
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
-import type { EquipmentStats } from './common'
+import type {
+  BuildResultByIndex,
+  EquipmentStats,
+  ProgressResult,
+} from './common'
 import { MAX_BUILDS } from './common'
-import type { BuildResult, ProgressResult } from './solver'
 
 let workers: Worker[]
 
@@ -34,7 +37,7 @@ export interface ParentMessageSending {
 }
 export interface ParentMessageDone {
   resultType: 'done'
-  buildResults: BuildResult[]
+  buildResults: BuildResultByIndex[]
 }
 export interface ParentMessageTerminated {
   resultType: 'terminated'
@@ -119,7 +122,7 @@ async function start({
       })
   )
 
-  let results: BuildResult[] = []
+  let results: BuildResultByIndex[] = []
   let numBuildsComputed = 0
 
   // post initial progress

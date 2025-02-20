@@ -11,28 +11,24 @@ import type {
 } from '@genshin-optimizer/sr/db'
 import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
-import type { EquipmentStats } from './common'
+import type {
+  BuildResult,
+  BuildResultByIndex,
+  EquipmentStats,
+  ProgressResult,
+} from './common'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,
   ParentMessage,
 } from './parentWorker'
 
-export interface BuildResult {
-  value: number
-  lightConeId: string
-  relicIds: Record<RelicSlotKey, string>
-}
-
-export interface ProgressResult {
-  numBuildsKept: number
-  numBuildsComputed: number
-}
-
 export class Solver {
   private calc: Calculator
   private frames: Team['frames']
   private statFilters: Array<Omit<StatFilter, 'disabled'>>
+  private lightCones: ICachedLightCone[]
+  private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   private lightConeStats: EquipmentStats[]
   private relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
   private numWorkers: number
@@ -55,7 +51,9 @@ export class Solver {
     this.calc = calc
     this.frames = frames
     this.statFilters = statFilters
+    this.lightCones = lightCones
     this.lightConeStats = lightCones.map(convertLightConeToStats)
+    this.relicsBySlot = relicsBySlot
     this.relicStatsBySlot = objMap(relicsBySlot, (relics) =>
       relics.map(convertRelicToStats)
     )
@@ -77,7 +75,7 @@ export class Solver {
             this.setProgress(data.progress)
             break
           case 'done':
-            res(data.buildResults)
+            res(data.buildResults.map(this.convertBuildResult))
             break
           case 'err':
             console.error(data)
@@ -196,33 +194,50 @@ export class Solver {
     minimum.map((v, i) => (this.statFilters[i].value = v))
     return prunedNodes
   }
-}
 
-function convertRelicToStats(relic: ICachedRelic): EquipmentStats {
-  const { id, mainStatKey, level, rarity, setKey, substats } = relic
-  return {
-    id,
-    component: {
-      [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
-      ...Object.fromEntries(
-        substats
-          .filter(({ key, value }) => key && value)
-          .map(({ key, value }) => [key, value])
+  private convertBuildResult({
+    value,
+    lightConeIndex,
+    relicIndices,
+  }: BuildResultByIndex): BuildResult {
+    return {
+      value,
+      lightConeId: this.lightCones[lightConeIndex].id,
+      relicIds: objMap(
+        relicIndices,
+        (index, slot) => this.relicsBySlot[slot][index].id
       ),
-      [setKey]: 1,
-    },
+    }
   }
 }
 
-function convertLightConeToStats(lightCone: ICachedLightCone): EquipmentStats {
-  const { id, key, level: lvl, ascension, superimpose } = lightCone
+function convertRelicToStats(
+  relic: ICachedRelic,
+  index: number
+): EquipmentStats {
+  const { mainStatKey, level, rarity, setKey, substats } = relic
   return {
-    id,
-    component: {
-      lvl,
-      superimpose,
-      ascension,
-      [key]: 1,
-    },
+    id: index,
+    [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
+    ...Object.fromEntries(
+      substats
+        .filter(({ key, value }) => key && value)
+        .map(({ key, value }) => [key, value])
+    ),
+    [setKey]: 1,
+  }
+}
+
+function convertLightConeToStats(
+  lightCone: ICachedLightCone,
+  index: number
+): EquipmentStats {
+  const { key, level: lvl, ascension, superimpose } = lightCone
+  return {
+    id: index,
+    lvl,
+    superimpose,
+    ascension,
+    [key]: 1,
   }
 }

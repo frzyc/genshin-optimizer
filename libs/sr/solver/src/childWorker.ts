@@ -1,14 +1,11 @@
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
-import type { EquipmentStats } from './common'
+import type { BuildResultByIndex, EquipmentStats } from './common'
 import { MAX_BUILDS } from './common'
-import type { BuildResult } from './solver'
 
 const MAX_BUILDS_TO_SEND = 200_000
-let compiledCalcFunction: (
-  equipmentStatsOnly: EquipmentStats['component'][]
-) => number[]
+let compiledCalcFunction: (equipmentStatsOnly: EquipmentStats[]) => number[]
 let lightConeStats: EquipmentStats[]
 let relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
 let constraints: Array<{ value: number; isMax: boolean }> = []
@@ -30,7 +27,7 @@ export interface ChildMessageInitialized {
 }
 export interface ChildMessaageResults {
   resultType: 'results'
-  builds: BuildResult[]
+  builds: BuildResultByIndex[]
   numBuildsComputed: number
 }
 export interface ChildMessageDone {
@@ -130,7 +127,7 @@ function* generateCombinations(): Generator<{
 }
 // Actually start calculating builds and sending back periodic responses
 async function start() {
-  let builds: BuildResult[] = []
+  let builds: BuildResultByIndex[] = []
   let skipped = 0
 
   function sliceSortSendBuilds() {
@@ -158,13 +155,13 @@ async function start() {
   } of generateCombinations()) {
     // Step 5: Calculate the value
     const results = compiledCalcFunction([
-      lightCone.component,
-      head.component,
-      hands.component,
-      feet.component,
-      body.component,
-      sphere.component,
-      rope.component,
+      lightCone,
+      head,
+      hands,
+      feet,
+      body,
+      sphere,
+      rope,
     ])
     if (
       constraints.every(({ value, isMax }, i) =>
@@ -173,8 +170,8 @@ async function start() {
     ) {
       builds.push({
         value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
-        lightConeId: lightCone.id,
-        relicIds: {
+        lightConeIndex: lightCone.id,
+        relicIndices: {
           head: head.id,
           hands: hands.id,
           feet: feet.id,
