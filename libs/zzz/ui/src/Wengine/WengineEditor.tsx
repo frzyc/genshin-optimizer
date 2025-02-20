@@ -55,7 +55,7 @@ export function WengineEditor({
     key,
     level = 0,
     phase = 1,
-    ascension = 0,
+    modification = 0,
     lock,
     location = '',
     id,
@@ -63,7 +63,7 @@ export function WengineEditor({
   const wengineStat = key ? getWengineStat(key) : undefined
   const wengineType = wengineStat?.type
   const wengineStats = key
-    ? getWengineStats(key, level, phase, ascension)
+    ? getWengineStats(key, level, phase, modification)
     : undefined
   const wengineDispatch = useCallback(
     (newWengine: Partial<ICachedWengine>) => {
@@ -180,7 +180,7 @@ export function WengineEditor({
                   {key && (
                     <LevelSelect
                       level={level}
-                      ascension={ascension}
+                      milestone={modification}
                       setBoth={wengineDispatch}
                     />
                   )}

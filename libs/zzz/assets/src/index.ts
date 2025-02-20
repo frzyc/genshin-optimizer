@@ -50,7 +50,7 @@ export function rarityDefIcon(rarityKey: Raritykey) {
   return rarityKey ? rarity[rarityKey] : ''
 }
 
-export function commonDefIcon(key: SkillKey) {
+export function commonDefIcon(key: SkillKey | 'core') {
   return key ? skill[key] : ''
 }
 

@@ -11,12 +11,10 @@
     "mindscape": "M{{level}}",
     "new": "NEW"
   },
-  "talent": {
-    "basic": "Basic Lv. {{level}}",
-    "dodge": "Dodge Lv. {{level}}",
-    "assist": "Assist Lv. {{level}}",
-    "special": "Special Lv. {{level}}",
-    "chain": "Chain Lv. {{level}}",
-    "core": "Core Lv. {{level}}"
-  }
+  "basic": "Basic Lv. {{level}}",
+  "dodge": "Dodge Lv. {{level}}",
+  "assist": "Assist Lv. {{level}}",
+  "special": "Special Lv. {{level}}",
+  "chain": "Chain Lv. {{level}}",
+  "core": "Core Lv. {{level}}"
 }

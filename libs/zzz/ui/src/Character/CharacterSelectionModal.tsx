@@ -16,7 +16,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
-import { ascensionMaxLevel } from '@genshin-optimizer/zzz/util'
+import { milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -174,7 +174,7 @@ function SelectionCard({
   const { t } = useTranslation(['page_characters', 'charNames_gen'])
   const character = useCharacter(characterKey)
   const { rarity } = getCharStat(characterKey)
-  const { level = 1, ascension = 0, mindscape = 0 } = character ?? {}
+  const { level = 1, promotion = 0, mindscape = 0 } = character ?? {}
 
   return (
     <CardActionArea onClick={onClick}>
@@ -243,7 +243,7 @@ function SelectionCard({
                   component="span"
                   color="text.secondary"
                 >
-                  /{ascensionMaxLevel[ascension]}
+                  /{milestoneMaxLevel[promotion]}
                 </Typography>
               </Box>
               <Typography variant="body2">M{mindscape}</Typography>

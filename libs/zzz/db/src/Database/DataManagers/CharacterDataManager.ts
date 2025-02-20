@@ -17,8 +17,9 @@ import {
   allWengineKeys,
   coreLimits,
   discSlotToMainStatKeys,
+  skillLimits,
 } from '@genshin-optimizer/zzz/consts'
-import { validateLevelAsc, validateTalent } from '@genshin-optimizer/zzz/util'
+import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { ICachedCharacter, IDbCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
@@ -52,23 +53,36 @@ export class CharacterDataManager extends DataManager<
       setFilter4,
       conditionals,
       mindscape,
-      talent,
+      dodge,
+      basic,
+      chain,
+      special,
+      assist,
     } = obj as IDbCharacter
-    const { level: rawLevel, ascension: rawAscension } = obj as IDbCharacter
+    const { level: rawLevel, promotion: rawAscension } = obj as IDbCharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
     if (typeof mindscape !== 'number' || mindscape < 0 || mindscape > 6)
       mindscape = 0
 
-    const { sanitizedLevel, ascension } = validateLevelAsc(
+    const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
       rawLevel,
       rawAscension
     )
-    talent = validateTalent(ascension, talent)
+    if (typeof basic !== 'number') basic = 1
+    basic = clamp(basic, 1, skillLimits[promotion])
+    if (typeof dodge !== 'number') dodge = 1
+    dodge = clamp(dodge, 1, skillLimits[promotion])
+    if (typeof chain !== 'number') chain = 1
+    chain = clamp(chain, 1, skillLimits[promotion])
+    if (typeof special !== 'number') special = 1
+    special = clamp(special, 1, skillLimits[promotion])
+    if (typeof assist !== 'number') assist = 1
+    assist = clamp(assist, 1, skillLimits[promotion])
 
     if (typeof core !== 'number') core = 0
-    core = clamp(core, 0, coreLimits[ascension])
+    core = clamp(core, 0, coreLimits[promotion])
 
     if (!allWengineKeys.includes(wengineKey)) wengineKey = allWengineKeys[0]
 
@@ -145,8 +159,12 @@ export class CharacterDataManager extends DataManager<
       setFilter4,
       conditionals,
       mindscape,
-      talent,
-      ascension,
+      dodge,
+      basic,
+      chain,
+      special,
+      assist,
+      promotion,
     }
     return char
   }
@@ -320,15 +338,13 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     setFilter2: [],
     setFilter4: [],
     conditionals: {},
-    ascension: 0,
+    promotion: 0,
     mindscape: 0,
-    talent: {
-      dodge: 1,
-      basic: 1,
-      chain: 1,
-      special: 1,
-      assist: 1,
-    },
+    dodge: 1,
+    basic: 1,
+    chain: 1,
+    special: 1,
+    assist: 1,
     equippedDiscs: objKeyMap(allDiscSlotKeys, () => ''),
     equippedWengine: '',
   }

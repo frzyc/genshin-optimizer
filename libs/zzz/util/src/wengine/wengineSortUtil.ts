@@ -8,7 +8,7 @@ export type WengineSortKey = (typeof wengineSortKeys)[number]
 
 export function wengineSortConfigs(): SortConfigs<WengineSortKey, IWengine> {
   return {
-    level: (we) => we.level * (we.ascension + 1),
+    level: (we) => we.level * (we.modification + 1),
     rarity: (we) => getWengineStat(we.key).rarity,
     name: (we) => i18n.t(`${we.key}`) as string,
   }

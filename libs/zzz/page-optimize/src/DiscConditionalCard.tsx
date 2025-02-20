@@ -3,6 +3,7 @@ import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { disc4PeffectSheets } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
+import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import { DiscSet4p, DiscSetName } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -13,7 +14,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useMemo } from 'react'
-import { useCharacterContext } from './CharacterContext'
 import { ConditionalToggles } from './ConditionalToggle'
 import { StatsDisplay } from './StatsDisplay'
 
