@@ -41,9 +41,8 @@ export default function SubstatInput({
   const { t } = useTranslation('disc')
   const { mainStatKey = '' } = disc ?? {}
   const { key, upgrades = 0 } = disc?.substats?.[index] ?? {}
-  const isDisabled =
-    index === 0 ||
-    (disc?.substats?.[index - 1] && disc.substats?.[index - 1].key)
+  const isEnabled =
+    index === 0 || disc?.substats?.[index - 1]?.key !== undefined
 
   const marks = useMemo(
     () =>
@@ -63,7 +62,7 @@ export default function SubstatInput({
             t('editor.substat.substatFormat', { value: index + 1 })
           )
         }
-        disabled={!disc?.mainStatKey || !isDisabled}
+        disabled={!disc?.mainStatKey || !isEnabled}
         color={key ? 'success' : 'primary'}
         sx={{ whiteSpace: 'nowrap', width: '13em' }}
       >
