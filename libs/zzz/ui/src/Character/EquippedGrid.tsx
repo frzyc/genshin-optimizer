@@ -54,7 +54,7 @@ export function EquippedGrid() {
           <DiscEditor
             disc={disc}
             show={!!discIdToEdit}
-            onShow={() => setDiscIdToEdit}
+            onShow={() => setDiscIdToEdit(discIdToEdit)}
             onClose={() => setDiscIdToEdit(undefined)}
           />
         )}
