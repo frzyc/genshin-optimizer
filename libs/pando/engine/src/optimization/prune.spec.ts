@@ -40,9 +40,9 @@ addCustomOperation('sqrt', {
 describe('pruning', () => {
   const candidates = [
     [
-      { c0: 0, c1: 3, c2: 4 },
-      { c0: 6, c1: 2, c2: 6 },
-      { c0: 10, c1: 1, c2: 6 },
+      { id: 1, c0: 0, c1: 3, c2: 4 },
+      { id: 2, c0: 6, c1: 2, c2: 6 },
+      { id: 3, c0: 10, c1: 1, c2: 6 },
     ],
   ]
   test('reaffine', () => {
@@ -56,7 +56,9 @@ describe('pruning', () => {
     expect(state.progress).toBe(true)
     // Normally the reaffined keys are unspecified, but since the current
     // algorithm is deterministic, we can just run it and note the keys
-    expect(state.candidates).toEqual([[{}, { c0: 3, c1: 5 }, { c0: 4, c1: 8 }]])
+    expect(state.candidates).toEqual([
+      [{ id: 1 }, { id: 2, c0: 3, c1: 5 }, { id: 3, c0: 4, c1: 8 }],
+    ])
     // reaffine nodes into different keys (c0 and c1, again, with different values)
     // and leave the constant nodes alone
     expect(state.nodes).toEqual([
@@ -123,12 +125,12 @@ describe('state', () => {
 
   const candidates = [
     [
-      { c1: 10, c2: 4 },
-      { c0: 3, c1: 9, c2: 4 },
+      { id: 1, c1: 10, c2: 4 },
+      { id: 2, c0: 3, c1: 9, c2: 4 },
     ],
     [
-      { c0: 4, c1: 1, c2: 4 },
-      { c0: 2, c2: 4 },
+      { id: 3, c0: 4, c1: 1, c2: 4 },
+      { id: 4, c0: 2, c2: 4 },
     ],
   ]
   const state = new State(nodes, candidates, 'q')
