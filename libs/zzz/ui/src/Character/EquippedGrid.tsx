@@ -8,6 +8,7 @@ import {
   useDatabaseContext,
   useDisc,
   useDiscs,
+  useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
 import {
@@ -22,6 +23,7 @@ import {
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscCard, DiscEditor } from '../Disc'
+import { WengineCard, WengineEditor } from '../Wengine'
 
 const columns = {
   xs: 1,
@@ -33,6 +35,7 @@ const columns = {
 export function EquippedGrid() {
   const { database } = useDatabaseContext()
   const character = useContext(CharacterContext)
+  const [editWengineId, setEditorWengineId] = useState('')
   const [discIdToEdit, setDiscIdToEdit] = useState<string | undefined>()
   const discIds = useMemo(() => {
     return objKeyMap(
@@ -40,15 +43,28 @@ export function EquippedGrid() {
       (slotKey) => character?.equippedDiscs[slotKey]
     )
   }, [character])
-  const onEdit = useCallback((id: string) => {
+  const onEditDisc = useCallback((id: string) => {
     setDiscIdToEdit(id)
   }, [])
+  const onEditWengine = useCallback((id: string) => {
+    setEditorWengineId(id)
+  }, [])
+  const wengine = useWengine(character?.equippedWengine)
   const discs = useDiscs(discIds)
   const disc = useDisc(discIdToEdit)
 
   return (
     <Box>
-      <Suspense fallback={false}>Weapon Editor</Suspense>
+      <Suspense fallback={false}>
+        {editWengineId && (
+          <WengineEditor
+            wengineId={editWengineId}
+            footer
+            onClose={() => setEditorWengineId('')}
+            extraButtons={<LargeWeaponSwapButton />}
+          />
+        )}
+      </Suspense>
       <Suspense fallback={false}>
         {disc && (
           <DiscEditor
@@ -59,8 +75,18 @@ export function EquippedGrid() {
           />
         )}
       </Suspense>
-      <Grid item xs={1} display="flex" flexDirection="column">
-        Weapon Swap
+      <Grid item columns={columns} container spacing={1}>
+        {wengine &&
+        wengine.id &&
+        database.wengines.keys.includes(wengine.id) ? (
+          <WengineCard
+            wengineId={wengine.id}
+            onEdit={() => onEditWengine(wengine.id)}
+            extraButtons={<WengineSwapButton />}
+          />
+        ) : (
+          <WeaponSwapCard />
+        )}
       </Grid>
       <Grid item columns={columns} container spacing={1}>
         {!!discs &&
@@ -70,7 +96,7 @@ export function EquippedGrid() {
                 <DiscCard
                   disc={disc}
                   extraButtons={<DiscSwapButtonButton />}
-                  onEdit={() => onEdit(disc.id)}
+                  onEdit={() => onEditDisc(disc.id)}
                   onLockToggle={() =>
                     database.discs.set(disc.id, ({ lock }) => ({ lock: !lock }))
                   }
@@ -82,6 +108,35 @@ export function EquippedGrid() {
           ))}
       </Grid>
     </Box>
+  )
+}
+
+export function WeaponSwapCard() {
+  return (
+    <CardThemed
+      bgt="light"
+      sx={{
+        height: '100%',
+        width: '100%',
+        minHeight: 300,
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Box
+        sx={{
+          flexGrow: 1,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        Swap modal
+        <Button color="info" sx={{ borderRadius: '1em' }}>
+          <SwapHorizIcon sx={{ height: 100, width: 100 }} />
+        </Button>
+      </Box>
+    </CardThemed>
   )
 }
 
@@ -133,5 +188,30 @@ function DiscSwapButtonButton() {
         <SwapHorizIcon />
       </Button>
     </Tooltip>
+  )
+}
+
+function WengineSwapButton() {
+  const { t } = useTranslation('page_characters')
+
+  return (
+    <Tooltip
+      title={<Typography>{t('tabEquip.swapWengine')}</Typography>}
+      placement="top"
+      arrow
+    >
+      <Button color="info" size="small">
+        <SwapHorizIcon />
+      </Button>
+    </Tooltip>
+  )
+}
+
+function LargeWeaponSwapButton() {
+  const { t } = useTranslation('page_characters')
+  return (
+    <Button color="info" startIcon={<SwapHorizIcon />}>
+      {t('tabEquip.swapWeapon')}
+    </Button>
   )
 }
