@@ -615,6 +615,7 @@ export function DiscEditor({
                   startIcon={<AddIcon />}
                   onClick={() => {
                     disc && database.discs.set(prev.id, disc)
+                    onClose()
                     reset()
                   }}
                   disabled={!validatedDisc || !isValid}
@@ -628,6 +629,7 @@ export function DiscEditor({
                   onClick={() => {
                     if (!validatedDisc) return
                     database.discs.new(validatedDisc)
+                    onClose()
                     reset()
                   }}
                   disabled={!validatedDisc || !isValid}

@@ -16,5 +16,8 @@
   "assist": "Assist Lv. {{level}}",
   "special": "Special Lv. {{level}}",
   "chain": "Chain Lv. {{level}}",
-  "core": "Core Lv. {{level}}"
+  "core": "Core Lv. {{level}}",
+  "tabEquip": {
+    "swapDisc": "Swap Disc"
+  }
 }

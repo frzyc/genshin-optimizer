@@ -17,6 +17,7 @@ import {
   CharacterCoverArea,
 } from '../CharacterProfilePieces'
 import { CoreDropdown } from '../CoreDropdown'
+import { EquippedGrid } from '../EquippedGrid'
 import { SkillDropdown } from '../SkillDropdown'
 export function Content({ onClose }: { onClose?: () => void }) {
   const { t } = useTranslation(['page_characters'])
@@ -106,19 +107,12 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 </Grid>
               </Grid>
             </Box>
-            <EquipmentSection />
+            <Box>
+              <EquippedGrid />
+            </Box>
           </Grid>
         </Grid>
       </Box>
-    </Box>
-  )
-}
-
-function EquipmentSection() {
-  return (
-    <Box>
-      <Box>Wengine View To Be Implemented</Box>
-      <Box>Discs View To Be Implemented</Box>
     </Box>
   )
 }
