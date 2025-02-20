@@ -1,10 +1,9 @@
 'use client'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { CharacterContextObj } from '@genshin-optimizer/zzz/db-ui'
 import { CharacterContext, useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { CardContent, Skeleton } from '@mui/material'
-import { Suspense, useMemo } from 'react'
+import { Suspense } from 'react'
 import { Content } from './Content'
 
 export function CharacterEditor({
@@ -40,13 +39,6 @@ function CharacterEditorContent({
   onClose,
 }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
-  const characterContextValue: CharacterContextObj | undefined = useMemo(
-    () =>
-      character && {
-        character,
-      },
-    [character]
-  )
 
   return (
     <CardThemed>
@@ -56,8 +48,8 @@ function CharacterEditorContent({
             <Skeleton variant="rectangular" width="100%" height={1000} />
           }
         >
-          {characterContextValue ? (
-            <CharacterContext.Provider value={characterContextValue}>
+          {character ? (
+            <CharacterContext.Provider value={character}>
               <Content onClose={onClose} />
             </CharacterContext.Provider>
           ) : (

@@ -1,10 +1,12 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { CondMeta } from '@genshin-optimizer/zzz/consts'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import {
+  useCharacterContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/zzz/db-ui'
 import { Button, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
-import { useCharacterContext } from './CharacterContext'
 
 export function ConditionalToggles({
   condMetas,
@@ -16,17 +18,19 @@ export function ConditionalToggles({
 }
 function ConditionalToggle({ condMeta }: { condMeta: CondMeta }) {
   const { database } = useDatabaseContext()
-  const character = useCharacterContext()!
-  const value = character.conditionals[condMeta.key] ?? 0
+  const character = useCharacterContext()
+  const value = character?.conditionals[condMeta.key] ?? 0
+  const characterKey = character?.key
   const updateConditional = useCallback(
     (value: number | undefined) =>
-      database.chars.set(character.key, (chars) => ({
+      characterKey &&
+      database.chars.set(characterKey, (chars) => ({
         conditionals: {
           ...chars.conditionals,
           [condMeta.key]: value,
         },
       })),
-    [database.chars, character.key, condMeta.key]
+    [database.chars, characterKey, condMeta.key]
   )
   if (condMeta.max > 1)
     return (

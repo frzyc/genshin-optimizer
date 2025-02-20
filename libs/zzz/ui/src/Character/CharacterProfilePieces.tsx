@@ -5,35 +5,32 @@ import {
   rarityDefIcon,
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type { AscensionKey } from '@genshin-optimizer/zzz/consts'
-import { CharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import type { CharacterKey, MilestoneKey } from '@genshin-optimizer/zzz/consts'
+import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { getLevelString } from '@genshin-optimizer/zzz/util'
 import { Box, CardActionArea, Chip, Grid, Typography } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
-import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CharacterName } from './CharacterTrans'
 
 export function CharacterCompactMindscapeSelector({
+  mindscape,
   setMindscape,
 }: {
+  mindscape: number
   setMindscape: (mindscape: number) => void
 }) {
   const { t } = useTranslation('page_characters')
-  const { character } = useContext(CharacterContext)
-  const selectedMindscape = character.mindscape
   return (
     <Grid container spacing={1}>
       {range(1, 6).map((i) => (
         <Grid item xs={4} key={i}>
           <CardActionArea
-            onClick={() => setMindscape(i === selectedMindscape ? i - 1 : i)}
+            onClick={() => setMindscape(i === mindscape ? i - 1 : i)}
             style={{
-              border: `1px solid ${
-                selectedMindscape >= i ? yellow[700] : grey[200]
-              }`,
+              border: `1px solid ${mindscape >= i ? yellow[700] : grey[200]}`,
               borderRadius: '4px',
               overflow: 'hidden',
               padding: '16px',
@@ -48,24 +45,29 @@ export function CharacterCompactMindscapeSelector({
   )
 }
 
-export function CharacterCoverArea() {
-  const { character } = useContext(CharacterContext)
-  const level = character.level
-  const ascension = character.ascension
-
-  return <CoverArea level={level} ascension={ascension} />
+export function CharacterCoverArea({
+  character: { level, promotion, key: characterKey },
+}: {
+  character: ICachedCharacter
+}) {
+  return (
+    <CoverArea
+      level={level}
+      promotion={promotion}
+      characterKey={characterKey}
+    />
+  )
 }
 
 function CoverArea({
+  characterKey,
   level,
-  ascension,
+  promotion,
 }: {
+  characterKey: CharacterKey
   level: number
-  ascension: AscensionKey
+  promotion: MilestoneKey
 }) {
-  const {
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
   const { rarity } = getCharStat(characterKey)
 
   return (
@@ -98,9 +100,9 @@ function CoverArea({
             px: 1,
           }}
         >
-          <CharChip />
+          <CharChip characterKey={characterKey} />
         </Box>
-        <LevelBadge level={level} ascension={ascension} />
+        <LevelBadge level={level} promotion={promotion} />
       </Box>
       <Box
         src={characterAsset(characterKey, 'full')}
@@ -112,10 +114,7 @@ function CoverArea({
   )
 }
 
-function CharChip() {
-  const {
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
+function CharChip({ characterKey }: { characterKey: CharacterKey }) {
   const { attribute, specialty } = getCharStat(characterKey)
   return (
     <Chip
@@ -138,16 +137,16 @@ function CharChip() {
 }
 function LevelBadge({
   level,
-  ascension,
+  promotion,
 }: {
   level: number
-  ascension: AscensionKey
+  promotion: MilestoneKey
 }) {
   return (
     <Typography
       sx={{ p: 1, position: 'absolute', right: 0, top: 0, opacity: 0.8 }}
     >
-      <SqBadge>{getLevelString(level, ascension)}</SqBadge>
+      <SqBadge>{getLevelString(level, promotion)}</SqBadge>
     </Typography>
   )
 }

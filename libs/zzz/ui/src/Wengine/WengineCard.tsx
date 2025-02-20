@@ -60,7 +60,7 @@ export function WengineCard({
     level = 0,
     phase = 1,
     location = '',
-    ascension = 0,
+    modification = 0,
   } = useWengine(wengineId) ?? {}
   if (!key)
     return (
@@ -69,7 +69,7 @@ export function WengineCard({
       </CardThemed>
     )
   const wengineStat = getWengineStat(key)
-  const wengineStats = getWengineStats(key, level, phase, ascension)
+  const wengineStats = getWengineStats(key, level, phase, modification)
   return (
     <Suspense
       fallback={

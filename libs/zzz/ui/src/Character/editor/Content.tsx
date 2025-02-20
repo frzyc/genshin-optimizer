@@ -1,14 +1,13 @@
-import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
-import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import {
-  CharacterContext,
+  useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
-import { useCallback, useContext } from 'react'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { LevelSelect } from '../../LevelSelect'
@@ -17,23 +16,20 @@ import {
   CharacterCompactMindscapeSelector,
   CharacterCoverArea,
 } from '../CharacterProfilePieces'
-import { TalentDropdown } from '../TalentDropdown'
-
+import { CoreDropdown } from '../CoreDropdown'
+import { SkillDropdown } from '../SkillDropdown'
 export function Content({ onClose }: { onClose?: () => void }) {
   const { t } = useTranslation(['page_characters'])
   const navigate = useNavigate()
   const { database } = useDatabaseContext()
-  const {
-    character,
-    character: { key: characterKey },
-  } = useContext(CharacterContext)
+  const character = useCharacterContext()!
+  const { key: characterKey } = character
   const deleteCharacter = useCallback(async () => {
     const name = t(`${characterKey}`)
     if (!window.confirm(t('removeCharacter', { value: name }))) return
     database.chars.remove(characterKey)
     navigate('/characters')
   }, [database, navigate, characterKey, t])
-  const talentKeys = allSkillKeys.filter((skill) => skill !== 'core')
 
   return (
     <Box display="flex" flexDirection="column" gap={1}>
@@ -64,11 +60,11 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 gap: 1,
               }}
             >
-              <CharacterCoverArea />
+              <CharacterCoverArea character={character} />
               <Box sx={{ px: 1 }}>
                 <LevelSelect
                   level={character.level}
-                  ascension={character.ascension}
+                  milestone={character.promotion}
                   setBoth={(data) => {
                     database.chars.set(characterKey, data)
                   }}
@@ -80,6 +76,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
               </Typography>
               <Box sx={{ px: 1 }}>
                 <CharacterCompactMindscapeSelector
+                  mindscape={character.mindscape}
                   setMindscape={(mindscape) =>
                     database.chars.set(characterKey, {
                       mindscape,
@@ -99,45 +96,13 @@ export function Content({ onClose }: { onClose?: () => void }) {
           >
             <Box>
               <Grid container columns={3} spacing={1}>
-                {talentKeys.map((talentKey) => (
-                  <Grid item xs={1} key={talentKey}>
-                    <TalentDropdown
-                      key={talentKey}
-                      talentKey={talentKey}
-                      dropDownButtonProps={{
-                        startIcon: (
-                          <ImgIcon
-                            src={commonDefIcon(talentKey)}
-                            size={1.75}
-                            sideMargin
-                          />
-                        ),
-                      }}
-                      setTalent={(talent) =>
-                        database.chars.set(characterKey, (char) => {
-                          char.talent[talentKey] = talent
-                        })
-                      }
-                    />
+                {allSkillKeys.map((sk) => (
+                  <Grid item xs={1} key={sk}>
+                    <SkillDropdown key={sk} skillKey={sk} />
                   </Grid>
                 ))}
                 <Grid item xs={1} key={'core'}>
-                  <TalentDropdown
-                    dropDownButtonProps={{
-                      startIcon: (
-                        <ImgIcon
-                          src={commonDefIcon('core')}
-                          size={1.75}
-                          sideMargin
-                        />
-                      ),
-                    }}
-                    setTalent={(core) => {
-                      database.chars.set(characterKey, (char) => {
-                        char['core'] = core
-                      })
-                    }}
-                  />
+                  <CoreDropdown />
                 </Grid>
               </Grid>
             </Box>

@@ -1,6 +1,6 @@
-import type { AscensionKey, CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey, MilestoneKey } from '@genshin-optimizer/zzz/consts'
 
-export interface ICharacterTalent {
+interface ICharacterSkill {
   dodge: number
   basic: number
   chain: number
@@ -8,17 +8,10 @@ export interface ICharacterTalent {
   assist: number
 }
 
-export interface ICharacter {
+export interface ICharacter extends ICharacterSkill {
   key: CharacterKey
   level: number
   core: number
   mindscape: number
-  ascension: AscensionKey
-  talent: ICharacterTalent
-}
-
-export function isTalentKey(tKey: string): tKey is keyof ICharacterTalent {
-  return (['dodge', 'basic', 'chain', 'special', 'assist'] as const).includes(
-    tKey as keyof ICharacter['talent']
-  )
+  promotion: MilestoneKey
 }

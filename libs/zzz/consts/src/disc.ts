@@ -28,6 +28,10 @@ export const allDiscSetKeys = [
 ] as const
 export type DiscSetKey = (typeof allDiscSetKeys)[number]
 
+export function isDiscSetKey(key: unknown): key is DiscSetKey {
+  return typeof key === 'string' && allDiscSetKeys.includes(key as DiscSetKey)
+}
+
 export const allDiscSubStatKeys = [
   'hp',
   'atk',

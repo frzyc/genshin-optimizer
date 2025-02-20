@@ -24,7 +24,11 @@ import type {
   Stats,
   ZzzDatabase,
 } from '@genshin-optimizer/zzz/db'
-import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import {
+  CharacterContext,
+  useCharacter,
+  useDatabaseContext,
+} from '@genshin-optimizer/zzz/db-ui'
 import { combineStats, type BuildResult } from '@genshin-optimizer/zzz/solver'
 import {
   getCharacterStats,
@@ -57,7 +61,6 @@ import {
 import BaseStatCard from './BaseStatCard'
 import { BuildDisplay } from './BuildDisplay'
 import { BuildsDisplay } from './BuildsDisplay'
-import { CharacterContext } from './CharacterContext'
 import { ConditionalToggles } from './ConditionalToggle'
 import { DiscConditionalsCard } from './DiscConditionalCard'
 import OptimizeWrapper from './Optimize'

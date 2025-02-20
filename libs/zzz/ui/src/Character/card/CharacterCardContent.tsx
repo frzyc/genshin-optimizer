@@ -4,8 +4,7 @@ import {
   rarityDefIcon,
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
+import { allSkillKeys, type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
@@ -19,9 +18,9 @@ export function CharacterCardContent({
   characterKey: CharacterKey
 }) {
   const { t } = useTranslation('page_characters')
-  const { level, talent, core } = useCharacter(characterKey) as ICachedCharacter
+  const character = useCharacter(characterKey)!
   const { rarity, specialty, attribute } = getCharStat(characterKey)
-  const talentKeys = Object.keys(talent)
+  const { level, core } = character
   return (
     <>
       <Box display="flex" gap={1.5} alignItems="center">
@@ -50,7 +49,7 @@ export function CharacterCardContent({
           </Typography>
         </Box>
         <Box display="flex" gap={1.5} marginLeft="14px" alignItems="center">
-          {talentKeys.map((item, index) => (
+          {allSkillKeys.map((item, index) => (
             <Box key={index} position="relative">
               <ImgIcon size={2} src={commonDefIcon(item)} />
               <Box
@@ -69,7 +68,7 @@ export function CharacterCardContent({
                   background: '#1C1C1C',
                 }}
               >
-                {talent[item]}
+                {character[item]}
               </Box>
             </Box>
           ))}

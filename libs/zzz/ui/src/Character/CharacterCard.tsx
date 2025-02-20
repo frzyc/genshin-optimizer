@@ -1,11 +1,10 @@
 import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
-import type { CharacterContextObj } from '@genshin-optimizer/zzz/db-ui'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { Box, CardActionArea, Skeleton } from '@mui/material'
 import type { ReactNode } from 'react'
-import { Suspense, useCallback, useMemo } from 'react'
+import { Suspense, useCallback } from 'react'
 import { CharacterCardContent, CharacterCardEquipment } from './card'
 
 export function CharacterCard({
@@ -32,14 +31,6 @@ export function CharacterCard({
     [onClickHandler]
   )
 
-  const characterContextObj: CharacterContextObj | undefined = useMemo(
-    () =>
-      character && {
-        character,
-      },
-    [character]
-  )
-
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={300} />}
@@ -54,7 +45,7 @@ export function CharacterCard({
         }}
       >
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
-          {character && characterContextObj && (
+          {character && (
             <ExistingCharacterCardContent characterKey={characterKey} />
           )}
         </ConditionalWrapper>
