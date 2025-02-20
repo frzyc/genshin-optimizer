@@ -71,9 +71,6 @@ export function isWengineKey(key: unknown): key is WengineKey {
   return typeof key === 'string' && allWengineKeys.includes(key as WengineKey)
 }
 
-export const allModificationKeys = [0, 1, 2, 3, 4, 5] as const
-export type ModificationKey = (typeof allModificationKeys)[number]
-
 export const allWengineSubStatKeys = [
   'hp_',
   'atk_',
