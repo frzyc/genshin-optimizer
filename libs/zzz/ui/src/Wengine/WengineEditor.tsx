@@ -34,6 +34,7 @@ import { TransHack } from '../util/TransHack'
 import { PhaseDropdown } from './PhaseDropdown'
 import { WengineSelectionModal } from './WengineSelectionModal'
 import { WengineSubstatDisplay } from './WengineSubstatDisplay'
+import { WengineName } from './WengineTrans'
 
 type WengineStatsEditorCardProps = {
   wengineId: string
@@ -47,7 +48,7 @@ export function WengineEditor({
   onClose,
   extraButtons,
 }: WengineStatsEditorCardProps) {
-  const { t } = useTranslation(['wengineNames'])
+  const { t } = useTranslation(['page_wengine'])
   const { database } = useDatabaseContext()
   const wengine = useWengine(propWengineId)
   const {
@@ -159,7 +160,7 @@ export function WengineEditor({
                 <Box display="flex" gap={1} flexWrap="wrap">
                   <ButtonGroup>
                     <Button color="info" onClick={onShowModal}>
-                      {(key && t(`wengineNames:${key}`)) || 'Select a Wengine'}
+                      {key ? <WengineName wKey={key} /> : 'Select a Wengine'}
                     </Button>
                     {key && (
                       <PhaseDropdown

@@ -170,7 +170,11 @@ export class CharacterDataManager extends DataManager<
    * This does not update the `location` on relic
    * This function should be use internally for database to maintain cache on ICachedSroCharacter.
    */
-  setEquippedRelic(key: CharacterKey, slotKey: RelicSlotKey, relicId: string) {
+  setEquippedRelic(
+    key: CharacterKey,
+    slotKey: RelicSlotKey,
+    relicId: string | undefined
+  ) {
     const char = super.get(key)
     if (!char) return
     const equippedRelics = deepClone(char.equippedRelics)

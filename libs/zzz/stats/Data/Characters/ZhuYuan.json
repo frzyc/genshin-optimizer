@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ether",
   "specialty": "attack",
+  "fullname": "Zhu Yuan",
   "stats": {
     "atk_base": 132,
     "atk_growth": 8.0729,

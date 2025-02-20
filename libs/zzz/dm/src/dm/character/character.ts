@@ -22,6 +22,10 @@ type CharacterRawData = {
   Rarity: number
   ElementType: Record<string, string> // index, Attribute
   WeaponType: Record<string, string> // index, Specialty
+  PartnerInfo: {
+    Birthday: string
+    FullName: string
+  }
   Stats: {
     Attack: 95
     AttackGrowth: 54230
@@ -170,6 +174,7 @@ export type CharacterData = {
   skillList: CharacterRawData['SkillList']
   cores: CharacterRawData['Passive']
   mindscapes: CharacterRawData['Talent']
+  fullname: string
 }
 export const charactersDetailedJSONData = Object.fromEntries(
   Object.entries(characterIdMap)
@@ -183,6 +188,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
         rarity: characterRarityMap[raw.Rarity],
         attribute: attributeMap[Object.keys(raw.ElementType)[0] as any],
         specialty: specialityMap[Object.keys(raw.WeaponType)[0] as any],
+        fullname: raw.PartnerInfo.FullName,
         stats: {
           atk_base: raw.Stats.Attack,
           atk_growth: raw.Stats.AttackGrowth / PERCENT_SCALING,

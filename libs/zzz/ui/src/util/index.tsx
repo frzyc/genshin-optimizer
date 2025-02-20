@@ -1,1 +1,1 @@
-export * from './isDev'
+export * from './TransHack'

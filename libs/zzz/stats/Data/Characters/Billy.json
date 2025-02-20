@@ -3,6 +3,7 @@
   "rarity": "A",
   "attribute": "physical",
   "specialty": "attack",
+  "fullname": "Billy Kid",
   "stats": {
     "atk_base": 113,
     "atk_growth": 6.7335,

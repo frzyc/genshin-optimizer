@@ -57,7 +57,7 @@ function DataCard({ index }: { index: number }) {
   const current = mainDB === database
   const [uploadOpen, onOpen, onClose] = useBoolState()
   const { t } = useTranslation('page_settings')
-  const numChar = 0 //database.chars.keys.length
+  const numChar = database.chars.keys.length
   const numDiscs = database.discs.keys.length
   const numWengines = database.wengines.keys.length
   const hasData = Boolean(numChar || numDiscs || numWengines)

@@ -6,6 +6,7 @@ import {
 import {
   getUnitStr,
   range,
+  shouldShowDevComponents,
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
@@ -62,7 +63,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
-import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
