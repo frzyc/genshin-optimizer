@@ -41,22 +41,9 @@ export default function SubstatInput({
   const { t } = useTranslation('disc')
   const { mainStatKey = '' } = disc ?? {}
   const { key, upgrades = 0 } = disc?.substats?.[index] ?? {}
-
-  // let error = '',
-  //   allowedRolls = 0
-
-  // if (disc?.rarity) {
-  //   // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
-  //   const rarity = disc.rarity
-  //   const { numUpgrades, high } = discSubstatRollData[rarity]
-  //   const maxRollNum = numUpgrades + high - 3
-  //   allowedRolls = maxRollNum - value
-  // }
-
-  // if (allowedRolls < 0)
-  //   error =
-  //     error ||
-  //     t('editor.substat.error.noOverRoll', { value: allowedRolls + value })
+  const isDisabled =
+    index === 0 ||
+    (disc?.substats?.[index - 1] && disc.substats?.[index - 1].key)
 
   const marks = useMemo(
     () =>
@@ -76,7 +63,7 @@ export default function SubstatInput({
             t('editor.substat.substatFormat', { value: index + 1 })
           )
         }
-        disabled={!disc?.mainStatKey}
+        disabled={!disc?.mainStatKey || !isDisabled}
         color={key ? 'success' : 'primary'}
         sx={{ whiteSpace: 'nowrap', width: '13em' }}
       >
