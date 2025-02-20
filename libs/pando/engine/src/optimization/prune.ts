@@ -17,20 +17,23 @@ type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 type NumTagFree = NumNode<OP>
 type AnyTagFree = AnyNode<OP>
 
-const container = Symbol() // component's container
-type Component<C> = Record<string, number> & { [container]?: C }
+type Component = Record<string, number> & { id: number }
 
 type CompRanges = Record<string, Range>[]
 type NodeRanges = Map<AnyTagFree, Range>
 type Monotonicities = Map<string, Monotonicity>
 
 /**
- * Reduce the complexity of the optimization problem,
+ * Reduce the complexity of the optimization problem
+ *
+ *     maximize obj node
+ *     s.t. constraint nodes >= minimum
+ *
  * returning a new optimization with the same `topN` builds
  * @param nodes
  *    A set of nodes used for minimum constraints, objective function, and other calculations.
  *    The nodes must be in the order [min constraints, other calc, obj functions].
- * @param candidates Components used to construct the builds. Keys in `component` may be removed in the resulting `candidates`.
+ * @param candidates Components used to construct the builds. Keys in `component` except 'id' may be removed in the results.
  * @param cat Tag category used by `compile` in the actual computation
  * @param minimum Minimum values for min constraints nodes.
  * @param _topN The number of top builds to keep.
@@ -39,35 +42,26 @@ type Monotonicities = Map<string, Monotonicity>
  *    with the passed-in arguments (DO NOT mix them). Components may also change, so all related
  *    computation needs to pass in to `nodes` as well, else they'll become unusable.
  */
-export function prune<
-  I extends OP,
-  C extends { component: Record<string, number> }
->(
+export function prune<I extends OP>(
   nodes: NumNode<I>[],
-  candidates: C[][],
+  candidates: Component[][],
   cat: string,
   minimum: number[],
   _keepTop: number
-): { nodes: NumNode<I>[]; candidates: C[][]; minimum: number[] } {
-  const internal_candidates = candidates.map((comp) =>
-    comp.map((c) => ({ ...c.component, [container]: c }))
-  )
-  const state = new State(nodes, internal_candidates, cat)
+): { nodes: NumNode<I>[]; candidates: Component[][]; minimum: number[] } {
+  const state = new State(nodes, candidates, cat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
     minimum = pruneRange(state, minimum)
     reaffine(state)
   }
-  candidates = state.candidates.map((comp) =>
-    comp.map(({ [container]: c, ...component }) => ({ ...c!, component }))
-  )
   return { nodes: state.nodes, candidates, minimum }
 }
 
-export class State<I extends OP, C> {
+export class State<I extends OP> {
   nodes: NumNode<I>[]
-  candidates: Component<C>[][]
+  candidates: Component[][]
   cat: string
 
   progress = true
@@ -75,7 +69,7 @@ export class State<I extends OP, C> {
   _nodeRanges: NodeRanges | undefined
   _monotonicities: Monotonicities | undefined
 
-  constructor(nodes: NumNode<I>[], candidates: Component<C>[][], cat: string) {
+  constructor(nodes: NumNode<I>[], candidates: Component[][], cat: string) {
     this.nodes = nodes
     this.candidates = candidates
     this.cat = cat
@@ -88,7 +82,7 @@ export class State<I extends OP, C> {
     this._nodeRanges = undefined
     this._monotonicities = undefined
   }
-  setCandidates(candidates: Component<C>[][], compRanges?: CompRanges) {
+  setCandidates(candidates: Component[][], compRanges?: CompRanges) {
     if (this.candidates === candidates) return
     this.progress = true
     this.candidates = candidates
@@ -117,7 +111,7 @@ export class State<I extends OP, C> {
 }
 
 /** Remove branches that are never chosen */
-export function pruneBranches(state: State<OP, any>) {
+export function pruneBranches(state: State<OP>) {
   const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
     const r = nodeRanges.get(o)!
@@ -162,7 +156,7 @@ export function pruneBranches(state: State<OP, any>) {
  * - Remove top-level nodes whose `minimum` requirements are met by every build
  * - Returns new `minimum` appropriate for the new `state.nodes`
  */
-export function pruneRange(state: State<OP, any>, minimum: number[]): number[] {
+export function pruneRange(state: State<OP>, minimum: number[]): number[] {
   const { nodeRanges, cat } = state
   const candidates = [...state.candidates]
   const compRanges = [...state.compRanges]
@@ -201,11 +195,10 @@ export function pruneRange(state: State<OP, any>, minimum: number[]): number[] {
 
 const offset = Symbol()
 /**
- * Replace `read`/`sum`/`prod` combination with appropriate, smaller `read` nodes when appropriate
- * If changes are made, components `builds` will be replaced with new values with all string keys
- * replaced. Owned `Symbol` keys are transferred from the old `builds` components to the new ones.
+ * Replace `read`/`sum`/`prod` combinations with smaller `read` nodes. If changes are made,
+ * `candidates` will be replaced with new values with all string keys replaced, maintaining only 'id'.
  */
-export function reaffine<C>(state: State<OP, C>) {
+export function reaffine(state: State<OP>) {
   const { nodes, cat, candidates } = state
   type Weight = Record<string | typeof offset, number>
   const weights = new Map<AnyTagFree, Weight>()
@@ -266,8 +259,7 @@ export function reaffine<C>(state: State<OP, C>) {
   )
   const newCandidates = candidates.map((comp) =>
     comp.map((c) => {
-      const result: Component<C> = {}
-      if (container in c) result[container] = c[container]
+      const result: Component = { id: c['id'] }
       weightNames.forEach((name, w) => {
         result[name] = Object.entries(w).reduce(
           (acu, [k, v]) => acu + (c[k] ?? 0) * v,
@@ -328,9 +320,9 @@ export function reaffine<C>(state: State<OP, C>) {
 }
 
 /** Get range assuming any item in `comp` can be selected */
-function computeCompRanges(comp: Component<any>[]): CompRanges[number] {
+function computeCompRanges(comp: Component[]): CompRanges[number] {
   const iter = comp.values()
-  const first: Component<any> | undefined = iter.next().value
+  const first: Component | undefined = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(
     Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])
@@ -345,6 +337,7 @@ function computeCompRanges(comp: Component<any>[]): CompRanges[number] {
       if (!(k in result))
         result[k] = { min: Math.min(0, v), max: Math.max(0, v) }
   }
+  delete result['id']
   return result
 }
 
