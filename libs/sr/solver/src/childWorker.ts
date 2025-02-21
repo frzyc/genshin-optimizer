@@ -8,13 +8,13 @@ const MAX_BUILDS_TO_SEND = 200_000
 let compiledCalcFunction: (equipmentStatsOnly: EquipmentStats[]) => number[]
 let lightConeStats: EquipmentStats[]
 let relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
-let constraints: Array<{ value: number; isMax: boolean }> = []
+let constraints: number[] = []
 
 export interface ChildCommandInit {
   command: 'init'
   lightConeStats: EquipmentStats[]
   relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
-  constraints: Array<{ value: number; isMax: boolean }>
+  constraints: number[]
   detachedNodes: NumTagFree[]
 }
 export interface ChildCommandStart {
@@ -163,13 +163,9 @@ async function start() {
       sphere,
       rope,
     ])
-    if (
-      constraints.every(({ value, isMax }, i) =>
-        isMax ? results[i + 1] <= value : results[i + 1] >= value
-      )
-    ) {
+    if (constraints.every((value, i) => results[i] >= value)) {
       builds.push({
-        value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
+        value: results[results.length - 1], // We only pass 1 target to calculate, as the final entry
         lightConeIndex: lightCone.id,
         relicIndices: {
           head: head.id,

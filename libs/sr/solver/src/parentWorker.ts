@@ -20,7 +20,7 @@ export interface ParentCommandStart {
   lightConeStats: EquipmentStats[]
   relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
   detachedNodes: NumTagFree[]
-  constraints: Array<{ value: number; isMax: boolean }>
+  constraints: number[]
   numWorkers: number
 }
 export interface ParentCommandTerminate {

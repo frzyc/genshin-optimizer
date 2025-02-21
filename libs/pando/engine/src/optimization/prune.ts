@@ -56,7 +56,7 @@ export function prune<I extends OP>(
     minimum = pruneRange(state, minimum)
     reaffine(state)
   }
-  return { nodes: state.nodes, candidates, minimum }
+  return { nodes: state.nodes, candidates: state.candidates, minimum }
 }
 
 export class State<I extends OP> {

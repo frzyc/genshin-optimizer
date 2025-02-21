@@ -29,8 +29,6 @@ export class Solver {
   private statFilters: Array<Omit<StatFilter, 'disabled'>>
   private lightCones: ICachedLightCone[]
   private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
-  private lightConeStats: EquipmentStats[]
-  private relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
   private numWorkers: number
   private setProgress: (progress: ProgressResult) => void
   private worker: Worker
@@ -52,11 +50,7 @@ export class Solver {
     this.frames = frames
     this.statFilters = statFilters
     this.lightCones = lightCones
-    this.lightConeStats = lightCones.map(convertLightConeToStats)
     this.relicsBySlot = relicsBySlot
-    this.relicStatsBySlot = objMap(relicsBySlot, (relics) =>
-      relics.map(convertRelicToStats)
-    )
     this.numWorkers = numWorkers
     this.setProgress = setProgress
 
@@ -75,7 +69,11 @@ export class Solver {
             this.setProgress(data.progress)
             break
           case 'done':
-            res(data.buildResults.map(this.convertBuildResult))
+            res(
+              data.buildResults.map(
+                createConvertBuildResult(this.lightCones, this.relicsBySlot)
+              )
+            )
             break
           case 'err':
             console.error(data)
@@ -85,15 +83,22 @@ export class Solver {
       }
 
       // Start worker
+      // Call first for side effects to other properties
+      const {
+        prunedNodes,
+        prunedMinumum,
+        prunedLightConeStats,
+        prunedRelicStatsBySlot,
+      } = this.detachAndPrune(
+        this.lightCones.map(convertLightConeToStats),
+        objMap(this.relicsBySlot, (relics) => relics.map(convertRelicToStats))
+      )
       const message: ParentCommandStart = {
         command: 'start',
-        lightConeStats: this.lightConeStats,
-        relicStatsBySlot: this.relicStatsBySlot,
-        detachedNodes: this.detachAndPruneNodes(),
-        constraints: this.statFilters.map(({ value, isMax }) => ({
-          value,
-          isMax,
-        })),
+        detachedNodes: prunedNodes,
+        lightConeStats: prunedLightConeStats,
+        relicStatsBySlot: prunedRelicStatsBySlot,
+        constraints: prunedMinumum,
         numWorkers: this.numWorkers,
       }
       this.worker.postMessage(message)
@@ -125,13 +130,18 @@ export class Solver {
     this.worker.terminate()
   }
 
-  private detachAndPruneNodes() {
+  private detachAndPrune(
+    lightConeStats: EquipmentStats[],
+    relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
+  ) {
     // Step 2: Detach nodes from Calculator
     const relicSetKeys = new Set(allRelicSetKeys)
     const lightConeKeys = new Set(allLightConeKeys)
     const nodes = [
       // stat filters
-      ...this.statFilters.map(({ tag }) => new Read(tag, 'sum')),
+      ...this.statFilters.map(({ tag, isMax }) =>
+        isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
+      ),
       // other calcs (graph, etc)
       // optimization targets
       sum(
@@ -146,7 +156,6 @@ export class Solver {
     const detachedNodes = detach(nodes, this.calc, (tag: Tag) => {
       /**
        * Removes relic and lightcone nodes from the opt character, while retaining data from the rest of the team.
-       * TODO: make lightcone node detachment opt-in.
        */
       if (tag['src'] !== this.characterKey) return undefined // Wrong member
       if (tag['et'] !== 'own') return undefined // Not applied (only) to self
@@ -166,47 +175,39 @@ export class Solver {
       return undefined
     })
     const buildComponents = [
-      this.lightConeStats,
+      lightConeStats,
       // 1-by-1 for deterministic order
-      this.relicStatsBySlot.head,
-      this.relicStatsBySlot.hands,
-      this.relicStatsBySlot.body,
-      this.relicStatsBySlot.feet,
-      this.relicStatsBySlot.sphere,
-      this.relicStatsBySlot.rope,
+      relicStatsBySlot.head,
+      relicStatsBySlot.hands,
+      relicStatsBySlot.body,
+      relicStatsBySlot.feet,
+      relicStatsBySlot.sphere,
+      relicStatsBySlot.rope,
     ]
+    // Invert max constraints for pruning
     const constraints = this.statFilters.map((filter) =>
       filter.isMax ? filter.value * -1 : filter.value
     )
     const {
       nodes: prunedNodes,
       candidates,
-      minimum,
+      minimum: prunedMinumum,
     } = prune(detachedNodes, buildComponents, 'q', constraints, this.topN)
-    this.lightConeStats = candidates[0]
+    const prunedLightConeStats = candidates[0]
     // 1-by-1 for deterministic order
-    this.relicStatsBySlot.head = candidates[1]
-    this.relicStatsBySlot.hands = candidates[2]
-    this.relicStatsBySlot.body = candidates[3]
-    this.relicStatsBySlot.feet = candidates[4]
-    this.relicStatsBySlot.sphere = candidates[5]
-    this.relicStatsBySlot.rope = candidates[6]
-    minimum.map((v, i) => (this.statFilters[i].value = v))
-    return prunedNodes
-  }
-
-  private convertBuildResult({
-    value,
-    lightConeIndex,
-    relicIndices,
-  }: BuildResultByIndex): BuildResult {
+    const prunedRelicStatsBySlot = {
+      head: candidates[1],
+      hands: candidates[2],
+      body: candidates[3],
+      feet: candidates[4],
+      sphere: candidates[5],
+      rope: candidates[6],
+    }
     return {
-      value,
-      lightConeId: this.lightCones[lightConeIndex].id,
-      relicIds: objMap(
-        relicIndices,
-        (index, slot) => this.relicsBySlot[slot][index].id
-      ),
+      prunedNodes,
+      prunedMinumum,
+      prunedLightConeStats,
+      prunedRelicStatsBySlot,
     }
   }
 }
@@ -239,5 +240,25 @@ function convertLightConeToStats(
     superimpose,
     ascension,
     [key]: 1,
+  }
+}
+
+function createConvertBuildResult(
+  lightCones: ICachedLightCone[],
+  relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
+) {
+  return function ({
+    value,
+    lightConeIndex,
+    relicIndices,
+  }: BuildResultByIndex): BuildResult {
+    return {
+      value,
+      lightConeId: lightCones[lightConeIndex].id,
+      relicIds: objMap(
+        relicIndices,
+        (index, slot) => relicsBySlot[slot][index].id
+      ),
+    }
   }
 }
