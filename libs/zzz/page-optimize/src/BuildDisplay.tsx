@@ -7,6 +7,7 @@ import {
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import {
+  useCharacterContext,
   useDatabaseContext,
   useDisc,
   useDiscs,
@@ -15,7 +16,6 @@ import { applyCalc, convertDiscToStats } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Button, CardContent, Grid, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
-import { useCharacterContext } from './CharacterContext'
 import { StatsDisplay } from './StatsDisplay'
 
 export function BuildDisplay({

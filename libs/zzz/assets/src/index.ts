@@ -1,8 +1,8 @@
 import type { AssetDataType } from '@genshin-optimizer/zzz/assets-data'
 import type {
   CharacterKey,
-  CharacterRarityKey,
   DiscSetKey,
+  Raritykey,
   SkillKey,
   SpecialityKey,
   WengineKey,
@@ -18,7 +18,7 @@ import discs from './gen/discs'
 import wengines from './gen/wengines'
 
 type CommonImagesKey = 'discDrive'
-type WenginePhaseKey = 'p1' | 'p2' | 'p3' | 'p4' | 'p5'
+export type WenginePhaseKey = 'p1' | 'p2' | 'p3' | 'p4' | 'p5'
 
 export function characterAsset(
   ck: CharacterKey,
@@ -46,11 +46,11 @@ export function specialityDefIcon(profKey: SpecialityKey) {
   return profKey ? speciality[profKey] : ''
 }
 
-export function rarityDefIcon(rarityKey: CharacterRarityKey) {
+export function rarityDefIcon(rarityKey: Raritykey) {
   return rarityKey ? rarity[rarityKey] : ''
 }
 
-export function commonDefIcon(key: SkillKey) {
+export function commonDefIcon(key: SkillKey | 'core') {
   return key ? skill[key] : ''
 }
 

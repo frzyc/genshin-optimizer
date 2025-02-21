@@ -12062,7 +12062,7 @@ __metadata:
     prettier-plugin-organize-imports: ^3.2.4
     react: 18.3.1
     react-dom: 18.3.1
-    react-ga4: ^1.4.1
+    react-ga4: ^2.1.0
     react-i18next: ^13.3.1
     react-markdown: ^8.0.5
     react-refresh: ^0.10.0
@@ -17791,10 +17791,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-ga4@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "react-ga4@npm:1.4.1"
-  checksum: 4c33ecb47dfc26c241a6af8e2b08b29b6c059f40e456e93d1c2b65c995edce18f32d9777295774ec992d968d7c5efdd105eb62398972d85ff2e2b6dad8646a26
+"react-ga4@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "react-ga4@npm:2.1.0"
+  checksum: f7fb41141418d4ad14756f1126a1e9958db37d4d84ae6cd798043dc03a390b6dba74d69311af0349f0b9580a43bda8930138194ccc29c4100efe446e2d6eb057
   languageName: node
   linkType: hard
 

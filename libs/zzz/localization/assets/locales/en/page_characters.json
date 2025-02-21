@@ -1,0 +1,20 @@
+{
+  "addNew": "Add Character",
+  "characterCard": {
+    "charLevel": "Lv. {{level}}",
+    "coreStat": "Core Stat",
+    "notUnlocked": "Not Unlocked"
+  },
+  "characterEditor": {
+    "delete": "Delete Character",
+    "mindscapeTitle": "Mindscape Cinema",
+    "mindscape": "M{{level}}",
+    "new": "NEW"
+  },
+  "basic": "Basic Lv. {{level}}",
+  "dodge": "Dodge Lv. {{level}}",
+  "assist": "Assist Lv. {{level}}",
+  "special": "Special Lv. {{level}}",
+  "chain": "Chain Lv. {{level}}",
+  "core": "Core Lv. {{level}}"
+}

@@ -1,23 +1,69 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
-import { CardContent, CardHeader, Stack, Typography } from '@mui/material'
+import {
+  Box,
+  CardContent,
+  CardHeader,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { IntroCard } from './IntroCard'
+import QuickLinksCard from './QuickLinksCard'
 import { Roadmap } from './Roadmap'
+import TeamCard from './TeamCard'
 
 declare const __VERSION__: string
 export default function PageHome() {
-  return (
-    <Stack spacing={1} sx={{ my: 1 }}>
-      <Roadmap />
-      <ZCard>
+  const theme = useTheme()
+  const lg = useMediaQuery(theme.breakpoints.up('lg'))
+  if (lg)
+    return (
+      <Box sx={{ my: 1 }}>
+        <Grid container spacing={2}>
+          <Grid
+            item
+            xs={12}
+            lg={7}
+            xl={8}
+            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+          >
+            <IntroCard />
+            <Roadmap />
+            <ZCard>
+              <PatchNotesCard />
+            </ZCard>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            lg={5}
+            xl={4}
+            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+          >
+            <QuickLinksCard />
+            <TeamCard />
+          </Grid>
+        </Grid>
+      </Box>
+    )
+  // separate layout for vertical
+  else
+    return (
+      <Box my={1} display="flex" flexDirection="column" gap={1}>
+        <IntroCard />
+        <QuickLinksCard />
+        <TeamCard />
+        <Roadmap />
         <PatchNotesCard />
-      </ZCard>
-    </Stack>
-  )
+      </Box>
+    )
 }
 
 function PatchNotesCard() {

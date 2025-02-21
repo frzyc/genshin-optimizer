@@ -1,0 +1,14 @@
+{
+  "name": "Street Superstar",
+  "desc": "A custom-made W-Engine designed for street music lovers. It sacrifices cooling components to make space for high-end speaker modules, ensuring your fans, both Ethereal and human, hear your every word.\n——From the streets to the Hollows, superstars are never short of flowers and applause. The bars they spit are so flaming hot, they add the perfect heat to any battlefield.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A custom-made W-Engine designed for urban music lovers. It sacrifices heat dissipation components for improved sound quality.",
+  "phase": "Flaming Bars",
+  "phaseDescs": [
+    "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>15%</color>.",
+    "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>17.2%</color>.",
+    "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>19.5%</color>.",
+    "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>21.7%</color>.",
+    "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>24%</color>."
+  ]
+}

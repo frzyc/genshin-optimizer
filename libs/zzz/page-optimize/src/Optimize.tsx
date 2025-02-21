@@ -15,7 +15,10 @@ import {
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import {
+  useCharacterContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
@@ -33,7 +36,6 @@ import {
 import { Stack } from '@mui/system'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useCharacterContext } from './CharacterContext'
 import { LevelFilter } from './LevelFilter'
 import { SetFilter } from './SetFilter'
 import { StatFilterCard } from './StatFilterCard'

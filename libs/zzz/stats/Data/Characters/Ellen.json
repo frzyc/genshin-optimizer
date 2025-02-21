@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ice",
   "specialty": "attack",
+  "fullname": "Ellen Joe",
   "stats": {
     "atk_base": 135,
     "atk_growth": 8.2578,

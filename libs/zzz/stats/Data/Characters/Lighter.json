@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "stun",
+  "fullname": "Lighter",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.3891,

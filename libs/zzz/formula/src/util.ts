@@ -5,11 +5,10 @@ import type {
   DiscMainStatKey,
   DiscSetKey,
   DiscSubStatKey,
-  ModificationKey,
+  MilestoneKey,
   PhaseKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
-import {} from '@genshin-optimizer/zzz/db'
 import type { Member, TagMapNodeEntries } from './data/util'
 import {
   convert,
@@ -82,7 +81,7 @@ export function charTagMapNodeEntries(data: TempICharacter): TagMapNodeEntries {
 export function wengineTagMapNodeEntries(
   key: WengineKey,
   level: number,
-  modification: ModificationKey,
+  modification: MilestoneKey,
   phase: PhaseKey
 ): TagMapNodeEntries {
   return [
