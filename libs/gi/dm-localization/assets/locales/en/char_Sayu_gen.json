@@ -37,6 +37,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%+{{3, percent(fixed: 1)}}%",
+      "3": "{{4, percent(fixed: 1)}}%",
+      "4": "{{5, percent(fixed: 1)}}%",
+      "5": "{{6, percent}}%",
+      "6": "{{7, fixed(fixed: 1)}}/s",
+      "7": "{{8, fixed(fixed: 1)}}s",
+      "8": "{{9, percent(fixed: 1)}}%",
+      "9": "{{10, percent}}%/{{11, percent}}%",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {
@@ -78,6 +96,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{2, percent(fixed: 1)}}%",
+      "2": "{{3, percent(fixed: 1)}}%",
+      "3": "{{1, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, fixed(fixed: 1)}}s",
+      "6": "{{6, fixed(fixed: 1)}} to {{7, fixed(fixed: 1)}}s",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -103,6 +139,24 @@
       "4": "Duration",
       "5": "CD",
       "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent}}%",
+      "1": "{{2, percent(fixed: 1)}}% ATK+{{1}}",
+      "2": "{{3, percent}}%",
+      "3": "{{5, percent(fixed: 1)}}% ATK+{{4}}",
+      "4": "{{6, fixed(fixed: 1)}}s",
+      "5": "{{7, fixed(fixed: 1)}}s",
+      "6": "{{8}}",
       "7": "",
       "8": "",
       "9": "",
