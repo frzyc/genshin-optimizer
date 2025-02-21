@@ -180,6 +180,11 @@ export const parsingFunctions: {
     string = string.split('|')[0]
     return string
   },
+  skillParamEncoding: (lang, string) => {
+    if (!string) return ''
+    string = string.split('|')[1]
+    return string
+  },
   plungeLow: (lang, string) => plungeUtil(lang, string, true),
   plungeHigh: (lang, string) => plungeUtil(lang, string, false),
   string: (lang, string) => string,
