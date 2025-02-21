@@ -11,6 +11,7 @@ import {
 } from '../node'
 import type { Monotonicity, Range } from '../util'
 import { assertUnreachable, customOps } from '../util'
+import { combineConst, flatten } from './simplify'
 const { arithmetic, branching } = calculation
 
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
@@ -55,8 +56,10 @@ export function prune<I extends OP>(
     pruneBranches(state)
     minimum = pruneRange(state, minimum)
     reaffine(state)
+    state.setNodes(flatten(state.nodes))
+    state.setNodes(combineConst(state.nodes))
   }
-  return { nodes: state.nodes, candidates, minimum }
+  return { nodes: state.nodes, candidates: state.candidates, minimum }
 }
 
 export class State<I extends OP> {
