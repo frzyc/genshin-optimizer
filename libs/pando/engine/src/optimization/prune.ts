@@ -181,6 +181,7 @@ export function pruneRange(state: State<OP>, minimum: number[]): number[] {
 
   let progress = false
   candidates.forEach((comp, i) => {
+    const oldCompRange = compRanges[i]
     const newComp = comp.filter((c) => {
       compRanges[i] = computeCompRanges([c])
       const ranges = computeNodeRanges(nodes, cat, compRanges)
@@ -190,7 +191,7 @@ export function pruneRange(state: State<OP>, minimum: number[]): number[] {
       candidates[i] = newComp
       compRanges[i] = computeCompRanges(newComp)
       progress = true
-    }
+    } else compRanges[i] = oldCompRange
   })
   if (progress) state.setCandidates(candidates, compRanges)
   return minimum
@@ -283,13 +284,11 @@ export function reaffine(state: State<OP>) {
         if (f > bestFreq || (v === 0 && f >= bestFreq))
           [best, bestFreq] = [v, f]
       if (best !== 0) {
-        for (const c of comp) {
-          c[name] -= best
-          if (c[name] === 0) delete c[name]
-        }
+        for (const c of comp) c[name] -= best
         w[offset] += best
         shouldChange = true
       }
+      for (const c of comp) if (c[name] === 0) delete c[name]
     }
   }
 

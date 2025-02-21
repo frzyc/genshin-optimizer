@@ -1,4 +1,4 @@
-import type { NumNode, OP as TaggedOP } from '../node'
+import type { NumTagFree } from '../node'
 import {
   cmpEq,
   cmpGE,
@@ -15,8 +15,6 @@ import {
 } from '../node'
 import { addCustomOperation } from '../util'
 import { pruneBranches, pruneRange, reaffine, State } from './prune'
-
-type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 
 const r0 = read({ q: 'c0' }, undefined)
 const r1 = read({ q: 'c1' }, undefined)
@@ -171,7 +169,7 @@ describe('state', () => {
     // So make sure to check all cases that should return `false`, but we
     // can skip some `true` cases that aren't handled yet
 
-    function flip(n: NumNode<OP>, inc: boolean): NumNode<OP> {
+    function flip(n: NumTagFree, inc: boolean): NumTagFree {
       return inc ? n : sumfrac(10000, n)
     }
 
