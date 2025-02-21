@@ -1,5 +1,4 @@
 'use client'
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
@@ -34,7 +33,6 @@ const columns = {
 export function EquippedGrid() {
   const { database } = useDatabaseContext()
   const character = useContext(CharacterContext)
-  const [show, onOpen, onClose] = useBoolState()
   const [discIdToEdit, setDiscIdToEdit] = useState<string | undefined>()
   const discIds = useMemo(() => {
     return objKeyMap(
@@ -42,16 +40,9 @@ export function EquippedGrid() {
       (slotKey) => character?.equippedDiscs[slotKey]
     )
   }, [character])
-  const onEdit = useCallback(
-    (id: string) => {
-      const disc = database.discs.get(id)
-      if (disc) {
-        setDiscIdToEdit(id)
-        onOpen()
-      }
-    },
-    [database.discs, onOpen]
-  )
+  const onEdit = useCallback((id: string) => {
+    setDiscIdToEdit(id)
+  }, [])
   const discs = useDiscs(discIds)
   const disc = useDisc(discIdToEdit)
 
@@ -62,9 +53,9 @@ export function EquippedGrid() {
         {disc && (
           <DiscEditor
             disc={disc}
-            show={show}
-            onShow={onOpen}
-            onClose={onClose}
+            show={!!discIdToEdit}
+            onShow={() => setDiscIdToEdit(discIdToEdit)}
+            onClose={() => setDiscIdToEdit(undefined)}
             cancelEdit={() => setDiscIdToEdit(undefined)}
           />
         )}
