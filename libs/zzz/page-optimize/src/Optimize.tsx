@@ -21,7 +21,7 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { StatDisplay, WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -39,7 +39,6 @@ import { useTranslation } from 'react-i18next'
 import { LevelFilter } from './LevelFilter'
 import { SetFilter } from './SetFilter'
 import { StatFilterCard } from './StatFilterCard'
-import { WorkerSelector } from './WorkerSelector'
 
 export default function OptimizeWrapper({
   formulaKey,

@@ -1,3 +1,6 @@
 export * from './CharacterDataManager'
+export * from './CharacterOptManager'
 export * from './DiscDataManager'
+export * from './GeneratedBuildListDataManager'
+export * from './OptConfigDataManager'
 export * from './WengineDataManager'
