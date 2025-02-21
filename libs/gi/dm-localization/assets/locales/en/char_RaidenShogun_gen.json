@@ -36,6 +36,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P}",
+      "2": "{param3:F1P}",
+      "3": "{param4:F1P}+{param5:F1P}",
+      "4": "{param6:F1P}",
+      "5": "{param7:F1P}",
+      "6": "{param8:F1}",
+      "7": "{param9:F1P}",
+      "8": "{param10:P}/{param11:P}",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {
@@ -60,6 +78,24 @@
       "2": "Duration",
       "3": "Elemental Burst DMG Bonus",
       "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P}",
+      "2": "{param3:F1}s",
+      "3": "{param4:F2P} Per Energy",
+      "4": "{param5:F1}s",
       "5": "",
       "6": "",
       "7": "",
@@ -110,6 +146,24 @@
       "13": "Musou Isshin Duration",
       "14": "CD",
       "15": "Energy Cost"
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:P}",
+      "1": "{param2:F2P} Initial/{param3:F2P} ATK DMG Per Stack",
+      "2": "{param4:F2} Per Energy Consumed",
+      "3": "{param5:F1P}",
+      "4": "{param6:F1P}",
+      "5": "{param7:F1P}",
+      "6": "{param8:F1P}+{param9:F1P}",
+      "7": "{param10:F1P}",
+      "8": "{param11:F1P}+{param12:F1P}",
+      "9": "{param13:F1}",
+      "10": "{param14:F1P}",
+      "11": "{param15:P}/{param16:P}",
+      "12": "{param17:F1}",
+      "13": "{param18:F1}s",
+      "14": "{param19:F1}s",
+      "15": "{param20:I}"
     }
   },
   "passive1": {

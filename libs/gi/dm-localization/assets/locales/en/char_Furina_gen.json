@@ -41,6 +41,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P}",
+      "2": "{param3:F1P}",
+      "3": "{param4:F1P}",
+      "4": "{param5:F1P}",
+      "5": "{param6:F1}",
+      "6": "{param7:F1P}",
+      "7": "{param8:P}/{param9:P}",
+      "8": "{param10:F1P}",
+      "9": "{param11:I}s/{param12:I}s",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {
@@ -78,6 +96,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P} Max HP",
+      "1": "{param2:F1}s",
+      "2": "{param3:F2P} Max HP",
+      "3": "{param4:F2P} Max HP",
+      "4": "{param5:F2P} Max HP",
+      "5": "{param6:F1P} Max HP",
+      "6": "{param7:F1P} Max HP",
+      "7": "{param8:F1P} Max HP",
+      "8": "{param9:F2P} Max HP+{param10:I}",
+      "9": "{param11:F1}s",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -97,6 +133,24 @@
       "4": "Fanfare to Incoming Healing Bonus Conversion Ratio",
       "5": "CD",
       "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P} Max HP",
+      "1": "{param2:F1}s",
+      "2": "{param4:I}",
+      "3": "{param5:F2P}",
+      "4": "{param6:F2P}",
+      "5": "{param7:F1}s",
+      "6": "{param8:I}",
       "7": "",
       "8": "",
       "9": "",

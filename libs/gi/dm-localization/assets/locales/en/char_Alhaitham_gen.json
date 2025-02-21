@@ -36,6 +36,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P}",
+      "2": "{param3:F1P}+{param4:F1P}",
+      "3": "{param5:F1P}",
+      "4": "{param6:F1P}",
+      "5": "{param7:F1P}+{param8:F1P}",
+      "6": "{param9:F1}",
+      "7": "{param10:F1P}",
+      "8": "{param11:P}/{param12:P}",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {
@@ -75,6 +93,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P} ATK+{param2:F1P} Elemental Mastery",
+      "1": "{param3:F1}s",
+      "2": "{param4:F1P} ATK+{param5:F1P} Elemental Mastery",
+      "3": "({param6:F1P} ATK+{param7:F1P} Elemental Mastery)×2",
+      "4": "({param8:F1P} ATK+{param9:F1P} Elemental Mastery)×3",
+      "5": "{param10:F1}s",
+      "6": "{param11:F1}s",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -94,6 +130,24 @@
       "4": "3-Mirror Attack Instances",
       "5": "CD",
       "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P} ATK+{param2:F1P} Elemental Mastery",
+      "1": "{param3:I}",
+      "2": "{param4:I}",
+      "3": "{param5:I}",
+      "4": "{param6:I}",
+      "5": "{param7:F1}s",
+      "6": "{param8:I}",
       "7": "",
       "8": "",
       "9": "",

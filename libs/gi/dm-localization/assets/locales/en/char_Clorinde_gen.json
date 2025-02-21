@@ -36,6 +36,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P}",
+      "2": "{param3:F1P}+{param4:F1P}",
+      "3": "{param5:F1P}+{param6:F1P}+{param7:F1P}",
+      "4": "{param10:F1P}",
+      "5": "{param11:F1P}",
+      "6": "{param12:F1}",
+      "7": "{param13:F1P}",
+      "8": "{param14:P}/{param15:P}",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {
@@ -84,6 +102,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}/{param2:F1P}",
+      "1": "{param3:F1P} Max HP",
+      "2": "{param4:F1P}/{param5:F1P}/{param7:F1P}×3",
+      "3": "0%/{param6:F1P}/{param8:F1P} Bond of Life",
+      "4": "{param9:P} Healing",
+      "5": "{param10:F1P}",
+      "6": "{param11:F1}s",
+      "7": "{param12:F1}s",
+      "8": "{param13:F1}s",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -99,6 +135,24 @@
       "1": "Bond of Life Gain",
       "2": "CD",
       "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}×5",
+      "1": "{param2:F1P} Max HP",
+      "2": "{param3:F1}s",
+      "3": "{param4:I}",
       "4": "",
       "5": "",
       "6": "",

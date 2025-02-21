@@ -56,6 +56,24 @@
       "13": "Spiritbreath Thorn DMG",
       "14": "Spiritbreath Thorn Interval",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P}",
+      "2": "{param3:F1P}+{param4:F1P}",
+      "3": "{param5:F1P}",
+      "4": "{param6:F1P}",
+      "5": "{param7:F1P}/{param8:F1P}",
+      "6": "{param9:F1P}",
+      "7": "{param10:F1P}",
+      "8": "{param11:F1P}",
+      "9": "{param12:P} Max HP",
+      "10": "{param13:P}",
+      "11": "{param14:F1}s",
+      "12": "{param15:F1P}",
+      "13": "{param16:F1P}",
+      "14": "{param17:F1}s",
+      "15": ""
     }
   },
   "skill": {
@@ -86,6 +104,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P} ATK/Stack",
+      "2": "{param3:P}/Stack",
+      "3": "{param5:F1}s",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -104,6 +140,24 @@
       "2": "Duration",
       "3": "CD",
       "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{param1:F1P}",
+      "1": "{param2:F1P}",
+      "2": "{param3:F1}s",
+      "3": "{param4:F1}s",
+      "4": "{param5:I}",
       "5": "",
       "6": "",
       "7": "",
