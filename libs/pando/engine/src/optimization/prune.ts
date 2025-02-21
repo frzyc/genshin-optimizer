@@ -25,21 +25,23 @@ type Monotonicities = Map<string, Monotonicity>
 /**
  * Reduce the complexity of the optimization problem
  *
- *     maximize obj node
- *     s.t. constraint nodes >= minimum
+ *     maximize constraints[0]
+ *     s.t. constraints[0..minimum.length] >= minimum
  *
  * returning a new optimization with the same `topN` builds
  * @param nodes
  *    A set of nodes used for minimum constraints, objective function, and other calculations.
- *    The nodes must be in the order [min constraints, other calc, obj functions].
+ *    The nodes must be in the order [minConstraints, other calc], and `minConstraint[0]` is
+ *    the obj function.
  * @param candidates Components used to construct the builds. Keys in `component` except 'id' may be removed in the results.
  * @param cat Tag category used by `compile` in the actual computation
- * @param minimum Minimum values for min constraints nodes.
+ * @param minimum Minimum values for min constraint nodes.
  * @param _topN The number of top builds to keep.
  * @returns
  *    A new values for `nodes`, `candidates`, and `minimum`. The returned values are incompatible
  *    with the passed-in arguments (DO NOT mix them). Components may also change, so all related
- *    computation needs to pass in to `nodes` as well, else they'll become unusable.
+ *    computation needs to pass in to `nodes` as well, else they'll become unusable. `minConstraints`
+ *    in `nodes` may be removed, excepts for `minConstraints[0]` if the constraint is always satisfied.
  */
 export function prune<I extends OP>(
   nodes: NumNode<I>[],
@@ -48,20 +50,21 @@ export function prune<I extends OP>(
   minimum: number[],
   _keepTop: number
 ): { nodes: NumNode<I>[]; candidates: Component[][]; minimum: number[] } {
-  const state = new State(nodes, candidates, cat)
+  const state = new State(nodes, minimum, candidates, cat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
-    minimum = pruneRange(state, minimum)
+    pruneRange(state, 1)
     reaffine(state)
-    state.setNodes(flatten(state.nodes))
-    state.setNodes(combineConst(state.nodes))
   }
-  return { nodes: state.nodes, candidates: state.candidates, minimum }
+  state.setNodes(flatten(state.nodes))
+  state.setNodes(combineConst(state.nodes))
+  return state
 }
 
 export class State<I extends OP> {
   nodes: NumNode<I>[]
+  minimum: number[]
   candidates: Component[][]
   cat: string
 
@@ -70,16 +73,23 @@ export class State<I extends OP> {
   _nodeRanges: NodeRanges | undefined
   _monotonicities: Monotonicities | undefined
 
-  constructor(nodes: NumNode<I>[], candidates: Component[][], cat: string) {
+  constructor(
+    nodes: NumNode<I>[],
+    minimum: number[],
+    candidates: Component[][],
+    cat: string
+  ) {
     this.nodes = nodes
+    this.minimum = minimum
     this.candidates = candidates
     this.cat = cat
   }
 
-  setNodes(nodes: NumNode<I>[]) {
+  setNodes(nodes: NumNode<I>[], minimum?: number[]) {
     if (this.nodes === nodes) return
     this.progress = true
     this.nodes = nodes
+    if (minimum !== undefined) this.minimum = minimum
     this._nodeRanges = undefined
     this._monotonicities = undefined
   }
@@ -104,7 +114,7 @@ export class State<I extends OP> {
   }
   get monotonicities(): Monotonicities {
     return (this._monotonicities ??= getMonotonicities(
-      this.nodes[this.nodes.length - 1],
+      this.nodes.slice(0, this.minimum.length),
       this.cat,
       this.nodeRanges
     ))
@@ -157,25 +167,25 @@ export function pruneBranches(state: State<OP>) {
  * - Remove top-level nodes whose `minimum` requirements are met by every build
  * - Returns new `minimum` appropriate for the new `state.nodes`
  */
-export function pruneRange(state: State<OP>, minimum: number[]): number[] {
-  const { nodeRanges, cat } = state
+export function pruneRange(state: State<OP>, numReq: number) {
+  const { nodeRanges, minimum: oldMin, cat } = state
   const candidates = [...state.candidates]
   const compRanges = [...state.compRanges]
 
   const nodes: NumNode<OP>[] = []
-  const newMinimum: number[] = []
+  const minimum: number[] = []
+  let hasNonTrivialConstraint = false
   state.nodes.forEach((n, i) => {
-    if (i < minimum.length)
-      if (minimum[i] <= nodeRanges.get(n)!.min) return
-      else newMinimum.push(minimum[i])
+    if (i < oldMin.length) {
+      if (oldMin[i] > nodeRanges.get(n)!.min) hasNonTrivialConstraint = true
+      else if (i >= numReq) return
+      minimum.push(oldMin[i])
+    }
     nodes.push(n)
   })
-  if (newMinimum.length != minimum.length) {
-    state.setNodes(nodes)
-    minimum = newMinimum
-  }
+  if (minimum.length != oldMin.length) state.setNodes(nodes, minimum)
 
-  if (!minimum.length) return minimum
+  if (!hasNonTrivialConstraint) return
 
   let progress = false
   candidates.forEach((comp, i) => {
@@ -192,7 +202,6 @@ export function pruneRange(state: State<OP>, minimum: number[]): number[] {
     } else compRanges[i] = oldCompRange
   })
   if (progress) state.setCandidates(candidates, compRanges)
-  return minimum
 }
 
 const offset = Symbol()
@@ -337,7 +346,6 @@ function computeCompRanges(comp: Component[]): CompRanges[number] {
       if (!(k in result))
         result[k] = { min: Math.min(0, v), max: Math.max(0, v) }
   }
-  delete result['id']
   return result
 }
 
@@ -445,12 +453,12 @@ function computeNodeRanges(
 }
 
 function getMonotonicities(
-  node: NumNode<OP>,
+  nodes: NumNode<OP>[],
   cat: string,
   nodeRanges: NodeRanges
 ): Monotonicities {
   const mon = new Map<AnyNode<OP>, Monotonicity>()
-  const toVisit: { node: AnyNode<OP>; inc: boolean }[] = [{ node, inc: true }]
+  const toVisit: { node: AnyNode<OP>; inc: boolean }[] = []
   const result = new Map<string, Monotonicity>()
 
   // `inc` if `node` is strictly increasing in *some* valid regions.
@@ -466,6 +474,7 @@ function getMonotonicities(
     toVisit.push({ node, inc })
   }
 
+  nodes.forEach((node) => visit(node, true))
   // Cannot use `traverse` because each node is visited twice, once for `inc` and once for `dec`
   while (toVisit.length) {
     const { node, inc } = toVisit.pop()!
