@@ -90,8 +90,8 @@
     },
     "skillParamsEncoding": {
       "0": "{{7, percent}}%",
-      "1": "{{0, percent(fixed: 2}}% ATK+{{1, }}",
-      "2": "{{2, percent(fixed: 2}}% ATK+{{3, }}",
+      "1": "{{0, percent(fixed: 2}}% ATK+{{1}}",
+      "2": "{{2, percent(fixed: 2}}% ATK+{{3}}",
       "3": "{{4, percent(fixed: 1}}%",
       "4": "{{5, fixed(fixed: 1}}s",
       "5": "{{6, fixed(fixed: 1}}s",
@@ -138,10 +138,10 @@
     },
     "skillParamsEncoding": {
       "0": "{{2, percent}}%",
-      "1": "{{0, percent(fixed: 1}}% ATK+{{1, }}",
+      "1": "{{0, percent(fixed: 1}}% ATK+{{1}}",
       "2": "{{3, fixed(fixed: 1}}s",
       "3": "{{4, fixed(fixed: 1}}s",
-      "4": "{{5, }}",
+      "4": "{{5}}",
       "5": "",
       "6": "",
       "7": "",

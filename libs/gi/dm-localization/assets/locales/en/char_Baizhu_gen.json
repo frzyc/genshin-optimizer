@@ -84,7 +84,7 @@
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1}}%",
-      "1": "{{1, percent(fixed: 2}}% Max HP+{{2, }}",
+      "1": "{{1, percent(fixed: 2}}% Max HP+{{2}}",
       "2": "{{3, fixed(fixed: 1}}s",
       "3": "",
       "4": "",
@@ -134,13 +134,13 @@
       "15": ""
     },
     "skillParamsEncoding": {
-      "0": "{{0, percent(fixed: 2}}% Max HP+{{1, }}",
+      "0": "{{0, percent(fixed: 2}}% Max HP+{{1}}",
       "1": "{{2, fixed(fixed: 1}}s",
-      "2": "{{4, percent(fixed: 2}}% Max HP+{{5, }}",
+      "2": "{{4, percent(fixed: 2}}% Max HP+{{5}}",
       "3": "{{6, percent(fixed: 1}}%",
       "4": "{{7, fixed(fixed: 1}}s",
       "5": "{{8, fixed(fixed: 1}}s",
-      "6": "{{9, }}",
+      "6": "{{9}}",
       "7": "",
       "8": "",
       "9": "",

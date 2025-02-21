@@ -97,7 +97,7 @@
       "0": "{{0, percent(fixed: 1}}%",
       "1": "{{1, percent(fixed: 1}}% Normal Attack DMG",
       "2": "{{2, percent(fixed: 1}}% Charged Attack DMG",
-      "3": "{{3, }}",
+      "3": "{{3}}",
       "4": "{{4, fixed(fixed: 1}}s",
       "5": "",
       "6": "",
@@ -141,7 +141,7 @@
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1}}%×5",
       "1": "{{1, fixed(fixed: 1}}s",
-      "2": "{{2, }}",
+      "2": "{{2}}",
       "3": "",
       "4": "",
       "5": "",

@@ -110,7 +110,7 @@
       "9": "{{9, percent(fixed: 1}}%",
       "10": "{{10, percent(fixed: 1}}%",
       "11": "{{11, percent(fixed: 1}}%",
-      "12": "{{12, }}",
+      "12": "{{12}}",
       "13": "{{13, fixed(fixed: 1}}s",
       "14": "",
       "15": ""
@@ -163,7 +163,7 @@
       "3": "{{3, percent(fixed: 2}}% ATK per Fighting Spirit",
       "4": "{{4, percent(fixed: 2}}% ATK per Fighting Spirit",
       "5": "{{7, fixed(fixed: 1}}s",
-      "6": "{{8, }}",
+      "6": "{{8}}",
       "7": "",
       "8": "",
       "9": "",

@@ -94,7 +94,7 @@
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1}}% per Paw",
-      "1": "{{1, percent(fixed: 1}}% Max HP+{{2, }}",
+      "1": "{{1, percent(fixed: 1}}% Max HP+{{2}}",
       "2": "{{5, fixed(fixed: 1}}s per Paw",
       "3": "{{3, fixed(fixed: 1}}s",
       "4": "{{4, fixed(fixed: 1}}s",
@@ -145,10 +145,10 @@
     "skillParamsEncoding": {
       "0": "{{0, percent}}%",
       "1": "{{1, percent(fixed: 1}}%",
-      "2": "{{2, percent(fixed: 2}}% Max HP+{{3, }}",
+      "2": "{{2, percent(fixed: 2}}% Max HP+{{3}}",
       "3": "{{6, fixed(fixed: 1}}s",
       "4": "{{4, fixed(fixed: 1}}s",
-      "5": "{{5, }}",
+      "5": "{{5}}",
       "6": "",
       "7": "",
       "8": "",

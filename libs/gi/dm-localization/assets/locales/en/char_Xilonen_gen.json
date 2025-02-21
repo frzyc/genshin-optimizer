@@ -156,11 +156,11 @@
     },
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1}}% DEF",
-      "1": "{{1, percent(fixed: 1}}% DEF+{{2, }}",
+      "1": "{{1, percent(fixed: 1}}% DEF+{{2}}",
       "2": "{{3, fixed(fixed: 1}}s",
       "3": "{{4, percent(fixed: 1}}% DEF",
       "4": "{{5, fixed(fixed: 1}}s",
-      "5": "{{6, }}",
+      "5": "{{6}}",
       "6": "",
       "7": "",
       "8": "",

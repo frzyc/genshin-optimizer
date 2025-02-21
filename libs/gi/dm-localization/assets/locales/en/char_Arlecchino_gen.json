@@ -144,7 +144,7 @@
       "0": "{{0, percent(fixed: 1}}%",
       "1": "{{2, percent(fixed: 1}}% Bond of Life+{{3, percent(fixed: 1}}% ATK",
       "2": "{{4, fixed(fixed: 1}}s",
-      "3": "{{5, }}",
+      "3": "{{5}}",
       "4": "",
       "5": "",
       "6": "",

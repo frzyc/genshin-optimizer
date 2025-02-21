@@ -139,10 +139,10 @@
     "skillParamsEncoding": {
       "0": "{{0, percent(fixed: 1}}%",
       "1": "{{1, percent(fixed: 1}}%",
-      "2": "{{2, percent(fixed: 1}}% Elemental Mastery+{{6, }}",
+      "2": "{{2, percent(fixed: 1}}% Elemental Mastery+{{6}}",
       "3": "{{5, fixed(fixed: 1}}s",
       "4": "{{3, fixed(fixed: 1}}s",
-      "5": "{{4, }}",
+      "5": "{{4}}",
       "6": "",
       "7": "",
       "8": "",
