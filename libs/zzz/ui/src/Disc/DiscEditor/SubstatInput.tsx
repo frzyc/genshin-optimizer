@@ -46,7 +46,7 @@ export default function SubstatInput({
 
   const marks = useMemo(
     () =>
-      range(1, discSubstatRollData[rarity].numUpgrades).map((i) => ({
+      range(1, discSubstatRollData[rarity].numUpgrades + 1).map((i) => ({
         value: i,
       })),
     [rarity]
