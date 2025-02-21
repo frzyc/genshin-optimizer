@@ -203,9 +203,9 @@ export const parsingFunctions: {
         // 'F1' or 'F1P'
         else if (floatOrInt?.[0] === 'F') {
           if (percent === 'P') {
-            replace += `percent(fixed: ${floatOrInt[1]}`
+            replace += `percent(fixed: ${floatOrInt[1]})`
           } else {
-            replace += `fixed(fixed: ${floatOrInt[1]}`
+            replace += `fixed(fixed: ${floatOrInt[1]})`
           }
         }
         // 'P'
