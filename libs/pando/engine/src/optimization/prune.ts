@@ -15,13 +15,11 @@ import { combineConst, flatten } from './simplify'
 const { arithmetic, branching } = calculation
 
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
-type NumTagFree = NumNode<OP>
-type AnyTagFree = AnyNode<OP>
 
 type Component = Record<string, number> & { id: number }
 
 type CompRanges = Record<string, Range>[]
-type NodeRanges = Map<AnyTagFree, Range>
+type NodeRanges = Map<AnyNode<OP>, Range>
 type Monotonicities = Map<string, Monotonicity>
 
 /**
@@ -129,13 +127,13 @@ export function pruneBranches(state: State<OP>) {
       case 'min': {
         const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.min <= r.max)
         if (x.length === 1) return x[0]
-        if (x.length !== n.x.length) return min(...(x as any)) as NumTagFree
+        if (x.length !== n.x.length) return min(...(x as any)) as NumNode<OP>
         break
       }
       case 'max': {
         const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.max >= r.min)
         if (x.length === 1) return x[0]
-        if (x.length !== n.x.length) return max(...(x as any)) as NumTagFree
+        if (x.length !== n.x.length) return max(...(x as any)) as NumNode<OP>
         break
       }
       case 'match':
@@ -164,7 +162,7 @@ export function pruneRange(state: State<OP>, minimum: number[]): number[] {
   const candidates = [...state.candidates]
   const compRanges = [...state.compRanges]
 
-  const nodes: NumTagFree[] = []
+  const nodes: NumNode<OP>[] = []
   const newMinimum: number[] = []
   state.nodes.forEach((n, i) => {
     if (i < minimum.length)
@@ -205,7 +203,7 @@ const offset = Symbol()
 export function reaffine(state: State<OP>) {
   const { nodes, cat, candidates } = state
   type Weight = Record<string | typeof offset, number>
-  const weights = new Map<AnyTagFree, Weight>()
+  const weights = new Map<AnyNode<OP>, Weight>()
   traverse(nodes, (n, visit) => {
     n.x.forEach(visit)
     n.br.forEach(visit)
@@ -247,7 +245,7 @@ export function reaffine(state: State<OP>) {
     weights.set(n, weight)
   })
 
-  const topWeights = new Map<AnyTagFree, Weight>()
+  const topWeights = new Map<AnyNode<OP>, Weight>()
   traverse(nodes, (n, visit) => {
     const w = weights.get(n)
     // Make sure `n` contains a variable, i.e., `w` has some string keys
@@ -305,9 +303,9 @@ export function reaffine(state: State<OP>) {
 
   if (!shouldChange) return
 
-  const weightNodes = new Map<Weight, NumTagFree>()
+  const weightNodes = new Map<Weight, NumNode<OP>>()
   for (const [w, name] of weightNames) {
-    let node: NumTagFree = read({ [cat]: name }, undefined)
+    let node: NumNode<OP> = read({ [cat]: name }, undefined)
     if (w[offset] !== 0) node = sum(w[offset], node)
     weightNodes.set(w, node)
   }
@@ -345,11 +343,11 @@ function computeCompRanges(comp: Component[]): CompRanges[number] {
 
 /** Get possible ranges of each node */
 function computeNodeRanges(
-  nodes: NumTagFree[],
+  nodes: NumNode<OP>[],
   cat: string,
   compRanges: CompRanges
 ): NodeRanges {
-  const result = new Map<AnyTagFree, Range>()
+  const result = new Map<AnyNode<OP>, Range>()
   traverse(nodes, (n, visit) => {
     n.x.forEach(visit)
     n.br.forEach(visit)
@@ -447,19 +445,19 @@ function computeNodeRanges(
 }
 
 function getMonotonicities(
-  node: NumTagFree,
+  node: NumNode<OP>,
   cat: string,
   nodeRanges: NodeRanges
 ): Monotonicities {
-  const mon = new Map<AnyTagFree, Monotonicity>()
-  const toVisit: { node: AnyTagFree; inc: boolean }[] = [{ node, inc: true }]
+  const mon = new Map<AnyNode<OP>, Monotonicity>()
+  const toVisit: { node: AnyNode<OP>; inc: boolean }[] = [{ node, inc: true }]
   const result = new Map<string, Monotonicity>()
 
   // `inc` if `node` is strictly increasing in *some* valid regions.
   // `!inc` if `node` is strictly decreasing in *some* valid regions.
   // Consequently, if both `inc` and `!inc` are called on the same
   // node, the node itself is non-monotonic.
-  function visit(node: AnyTagFree, inc: boolean) {
+  function visit(node: AnyNode<OP>, inc: boolean) {
     if (!mon.has(node)) mon.set(node, { inc: true, dec: true })
     const m = mon.get(node)!
     if (inc && m.dec) m.dec = false
