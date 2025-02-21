@@ -14,7 +14,7 @@ export function CoreDropdown() {
   const { t } = useTranslation('page_characters')
   const { database } = useDatabaseContext()
   const character = useCharacterContext()
-  const { level = 0, promotion = 0, key: characterKey } = character ?? {}
+  const { core = 0, promotion = 0, key: characterKey } = character ?? {}
   const setCore = useCallback(
     (val: number) =>
       characterKey &&
@@ -26,15 +26,15 @@ export function CoreDropdown() {
   return (
     <DropdownButton
       fullWidth
-      title={t('core', { level: level })}
+      title={t('core', { level: core })}
       color={'primary'}
       startIcon={<ImgIcon src={commonDefIcon('core')} size={1.75} sideMargin />}
     >
       {range(0, coreLimits[promotion]).map((i) => (
         <MenuItem
           key={i}
-          selected={level === i}
-          disabled={level === i}
+          selected={core === i}
+          disabled={core === i}
           onClick={() => setCore(i)}
         >
           {t('core', { level: i })}
