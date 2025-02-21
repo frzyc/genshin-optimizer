@@ -196,16 +196,24 @@ export const parsingFunctions: {
       /:(F\d|I)?(P)?}}/g,
       (_match, floatOrInt, percent) => {
         let replace = ', '
-        if (floatOrInt?.[0] === 'F') {
+        // 'I' has no formatting
+        if (floatOrInt?.[0] === 'I') {
+          replace = ''
+        }
+        // 'F1' or 'F1P'
+        else if (floatOrInt?.[0] === 'F') {
           if (percent === 'P') {
             replace += `percent(fixed: ${floatOrInt[1]}`
           } else {
             replace += `fixed(fixed: ${floatOrInt[1]}`
           }
-        } else if (percent === 'P') {
+        }
+        // 'P'
+        else if (percent === 'P') {
           replace += `percent`
         }
         replace += '}}'
+        // Add percent symbol for any 'P' handling
         if (percent === 'P') {
           replace += '%'
         }
