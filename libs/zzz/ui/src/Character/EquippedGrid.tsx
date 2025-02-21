@@ -72,10 +72,17 @@ export function EquippedGrid() {
             show={!!discIdToEdit}
             onShow={() => setDiscIdToEdit(discIdToEdit)}
             onClose={() => setDiscIdToEdit(undefined)}
+            cancelEdit={() => setDiscIdToEdit(undefined)}
           />
         )}
       </Suspense>
-      <Grid item columns={columns} container spacing={1}>
+      <Grid
+        item
+        columns={columns}
+        container
+        spacing={1}
+        sx={{ padding: '16px 8px' }}
+      >
         {wengine &&
         wengine.id &&
         database.wengines.keys.includes(wengine.id) ? (
