@@ -254,6 +254,56 @@ describe('char+wengine test', () => {
       ).toBeCloseTo(expectedAnomalyDmg)
     }
   )
+  it('calculate specific elemental damage bonus separate from common', () => {
+    const data: TagMapNodeEntries = [
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 60,
+          promotion: 5,
+          key: 'Anby',
+          mindscape: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 6,
+        }),
+        ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
+
+        ownBuff.initial.atk.add(25),
+        ownBuff.combat.atk.add(100),
+        ownBuff.combat.atk_.add(0.08),
+        ownBuff.initial.crit_.add(0.7),
+        ownBuff.initial.crit_dmg_.add(1.04),
+        ownBuff.initial.common_dmg_.add(0.2),
+        ownBuff.initial.dmg_.electric.add(0.4),
+        ...ownBuff.combat.dmg_.electric.addWithDmgType('chain', 0.3),
+        ownBuff.initial.pen_.add(0.05),
+        ownBuff.initial.pen.add(90),
+        ownBuff.initial.resIgn_.add(0.02),
+        ownBuff.initial.anomProf.add(338)
+      ),
+      own.common.critMode.add('avgHit'),
+      enemy.common.def.add(635),
+      enemy.common.res_.electric.add(0.1),
+      enemy.common.isStunned.add(1),
+      enemyDebuff.common.resRed_.electric.add(0.15),
+      enemyDebuff.common.dmgInc_.add(0.1),
+      enemyDebuff.common.dmgRed_.add(0.15),
+      enemyDebuff.common.stun_.add(1.5),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
+    expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0)
+    expect(calc.compute(anby.final.dmg_.electric).val).toBeCloseTo(0.4)
+    expect(calc.compute(anby.final.dmg_.electric.chain[0]).val).toBeCloseTo(0.7)
+    expect(calc.compute(anby.final.dmg_.electric.chain[1]).val).toBeCloseTo(0.7)
+    expect(calc.compute(anby.final.dmg_.chain[0]).val).toBeCloseTo(0)
+    expect(calc.compute(anby.final.dmg_.chain[1]).val).toBeCloseTo(0)
+    expect(calc.compute(anby.final.common_dmg_).val).toBeCloseTo(0.2)
+  })
 })
 
 describe('disc2p test', () => {
