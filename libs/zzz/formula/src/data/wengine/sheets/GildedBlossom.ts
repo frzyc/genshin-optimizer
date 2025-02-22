@@ -12,7 +12,7 @@ import {
 } from '../../util'
 import { entriesForWengine, registerWengine } from '../util'
 
-const key: WengineKey = '<%= sheet %>'
+const key: WengineKey = 'GildedBlossom'
 const weCount = own.common.count.sheet(key)
 const { modification } = own.wengine
 
