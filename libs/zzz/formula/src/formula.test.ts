@@ -4,7 +4,7 @@ import {
   read,
   setDebugMode,
 } from '@genshin-optimizer/pando/engine'
-import type { ModificationKey, WengineKey } from '@genshin-optimizer/zzz/consts'
+import type { MilestoneKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCharacterKeys,
   allDiscSetKeys,
@@ -108,7 +108,7 @@ describe('wengine test', () => {
           ...wengineTagMapNodeEntries(
             wengKey,
             lvl,
-            modification as ModificationKey,
+            modification as MilestoneKey,
             1
           )
         ),
