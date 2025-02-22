@@ -1,7 +1,7 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
+import { DatabaseProvider } from '@genshin-optimizer/sr/db-ui'
 import '@genshin-optimizer/sr/i18n' // import to load translations
 import { theme } from '@genshin-optimizer/sr/theme'
-import { CharacterProvider, DatabaseProvider } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   Container,
@@ -26,6 +26,8 @@ const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))
 const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
 
+const PageOptimize = lazy(() => import('@genshin-optimizer/sr/page-optimize'))
+
 export default function App() {
   return (
     <StyledEngineProvider injectFirst>
@@ -33,12 +35,10 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         <DatabaseProvider>
-          <CharacterProvider>
-            <HashRouter basename="/">
-              <Content />
-              <ScrollTop />
-            </HashRouter>
-          </CharacterProvider>
+          <HashRouter basename="/">
+            <Content />
+            <ScrollTop />
+          </HashRouter>
         </DatabaseProvider>
       </ThemeProvider>
     </StyledEngineProvider>
@@ -74,6 +74,7 @@ function Content() {
               <Route path=":teamId/*" element={<PageTeam />} />
             </Route>
             <Route path="/settings" element={<PageSettings />} />
+            <Route path="/optimize" element={<PageOptimize />} />
           </Routes>
         </Suspense>
       </Container>

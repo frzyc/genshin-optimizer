@@ -12,7 +12,11 @@ import {
 } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import { TeamCharacterContext, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useGeneratedBuildList,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
   GraphContext,
@@ -83,9 +87,12 @@ export default function ChartCard({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { builds: generatedBuilds } = useOptConfig(optConfigId) ?? {
-    builds: [] as GeneratedBuild[],
+  const { generatedBuildListId } = useOptConfig(optConfigId) ?? {
+    generatedBuildListId: undefined,
   }
+  const { builds: generatedBuilds } = useGeneratedBuildList(
+    generatedBuildListId ?? ''
+  ) ?? { builds: [] as GeneratedBuild[] }
 
   const [sliderLow, setSliderLow] = useState(-Infinity)
   const [sliderHigh, setSliderHigh] = useState(Infinity)
@@ -218,7 +225,7 @@ export default function ChartCard({
       <CardContent>
         <Grid container spacing={1} alignItems="center">
           <Grid item>
-            <Typography>{t`tcGraph.vs`}</Typography>
+            <Typography>{t('tcGraph.vs')}</Typography>
           </Grid>
           <Grid item>
             <BootstrapTooltip
@@ -236,7 +243,7 @@ export default function ChartCard({
                   defaultText={buttonText}
                   disabled={disabled}
                   targetSelectorModalProps={{
-                    excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                    excludeSections: ['character', 'bonusStats', 'teamBuff'],
                   }}
                 />
               </span>
@@ -271,7 +278,9 @@ export default function ChartCard({
                 startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
                 color={showMin ? 'success' : 'secondary'}
                 onClick={() => setshowMin(!showMin)}
-              >{t`tcGraph.showStatThr`}</Button>
+              >
+                {t('tcGraph.showStatThr')}
+              </Button>
             </Grid>
           )}
           {!!downloadData && (
@@ -281,7 +290,9 @@ export default function ChartCard({
                 color="info"
                 startIcon={<Download />}
                 onClick={() => setshowDownload(!showDownload)}
-              >{t`tcGraph.downloadData`}</Button>
+              >
+                {t('tcGraph.downloadData')}
+              </Button>
             </Grid>
           )}
         </Grid>
@@ -436,7 +447,7 @@ function Chart({
               ? [
                   {
                     id: 'min',
-                    value: t`tcGraph.statReqThr`,
+                    value: t('tcGraph.statReqThr'),
                     type: 'line' as LegendType,
                     color: lineColor,
                   },
@@ -444,19 +455,19 @@ function Chart({
               : []),
             {
               id: 'trueY',
-              value: t`tcGraph.generatedBuilds`,
+              value: t('tcGraph.generatedBuilds'),
               type: 'circle',
               color: optTargetColor,
             },
             {
               id: 'highlighted',
-              value: t`tcGraph.highlightedBuilds`,
+              value: t('tcGraph.highlightedBuilds'),
               type: 'square',
               color: highlightedColor,
             },
             {
               id: 'current',
-              value: t`tcGraph.currentBuild`,
+              value: t('tcGraph.currentBuild'),
               type: 'diamond',
               color: currentColor,
             },

@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del viento, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+        "1": "Concentra el poder del viento y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
       }
     },
     "skillParams": {
@@ -125,7 +125,7 @@
   "passive3": {
     "name": "Encarnación de la grulla",
     "description": {
-      "0": "Aumenta en un 15% la Vel. de Vuelo de tus personajes del equipo.",
+      "0": "Aumenta en un 15% la Vel. Vuelo de tus personajes del equipo.",
       "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
     }
   },

@@ -1,0 +1,24 @@
+{
+  "name": "Lông Vũ Thêu Hoa",
+  "description": {
+    "0": "Cung dài rực rỡ như lửa, lông vũ trang trí trên đó nghe nói đến từ bạo chúa Ngoubou cổ xưa."
+  },
+  "passiveName": "Cụm Hoa Chưa Đến",
+  "passiveDescription": {
+    "0": {
+      "0": "Giảm 15% thể lực tiêu hao khi bay. Khi tiến hành ngắm chuẩn, mỗi 0.5s sẽ tăng <cryo>6%</cryo> sát thương Trọng Kích gây ra. Hiệu quả này tối đa cộng dồn 6 tầng và sẽ xóa sau 10s kể từ khi thoát trạng thái ngắm chuẩn."
+    },
+    "1": {
+      "0": "Giảm 15% thể lực tiêu hao khi bay. Khi tiến hành ngắm chuẩn, mỗi 0.5s sẽ tăng <cryo>7.5%</cryo> sát thương Trọng Kích gây ra. Hiệu quả này tối đa cộng dồn 6 tầng và sẽ xóa sau 10s kể từ khi thoát trạng thái ngắm chuẩn."
+    },
+    "2": {
+      "0": "Giảm 15% thể lực tiêu hao khi bay. Khi tiến hành ngắm chuẩn, mỗi 0.5s sẽ tăng <cryo>9%</cryo> sát thương Trọng Kích gây ra. Hiệu quả này tối đa cộng dồn 6 tầng và sẽ xóa sau 10s kể từ khi thoát trạng thái ngắm chuẩn."
+    },
+    "3": {
+      "0": "Giảm 15% thể lực tiêu hao khi bay. Khi tiến hành ngắm chuẩn, mỗi 0.5s sẽ tăng <cryo>10.5%</cryo> sát thương Trọng Kích gây ra. Hiệu quả này tối đa cộng dồn 6 tầng và sẽ xóa sau 10s kể từ khi thoát trạng thái ngắm chuẩn."
+    },
+    "4": {
+      "0": "Giảm 15% thể lực tiêu hao khi bay. Khi tiến hành ngắm chuẩn, mỗi 0.5s sẽ tăng <cryo>12%</cryo> sát thương Trọng Kích gây ra. Hiệu quả này tối đa cộng dồn 6 tầng và sẽ xóa sau 10s kể từ khi thoát trạng thái ngắm chuẩn."
+    }
+  }
+}

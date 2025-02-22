@@ -1,0 +1,12 @@
+{
+  "flameNormal_dmgInc": "Flamestrider Normal Attack DMG Inc.",
+  "flameCharged_dmgInc": "Flamestrider Charged Attack DMG Inc.",
+  "flameBurst_dmgInc": "Flamestrider Charged Attack DMG Inc.",
+  "burstCond": "Fighting Spirit consumed",
+  "a4Cond": "Time since burst used",
+  "c1Cond": "After gaining Fighting Spirit",
+  "c2RingCond": "In Ring of Searing Radiance form",
+  "c2FlameCond": "In Flamestrider form",
+  "flamestriderDmg": "Flamestrider DMG",
+  "c2Exception": "Enemy DEF Reduction will not apply to Flamestrider or Burst hits until C6"
+}

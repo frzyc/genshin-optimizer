@@ -1,0 +1,14 @@
+{
+  "relics": "Relíquias",
+  "set": "Conjunto de Relíquias",
+  "mainStat": "Atributo Principal",
+  "slot": "Espaço",
+  "slotKey": {
+    "head": "Cabeça",
+    "hands": "Mãos",
+    "body": "Corpo",
+    "feet": "Pés",
+    "sphere": "Esfera Plana",
+    "rope": "Corda de Ligação"
+  }
+}

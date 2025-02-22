@@ -1,0 +1,14 @@
+{
+  "relics": "รีลิกส์",
+  "set": "เซ็ตรีลิกส์",
+  "mainStat": "ค่าสถานะหลัก",
+  "slot": "ช่อง",
+  "slotKey": {
+    "head": "ศีรษะ",
+    "hands": "มือ",
+    "body": "ลำตัว",
+    "feet": "เท้า",
+    "sphere": "Planar Sphere",
+    "rope": "Link Rope"
+  }
+}

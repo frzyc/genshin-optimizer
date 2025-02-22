@@ -29,7 +29,7 @@
       "0": {
         "name": "调性合颂",
         "fullDesc": "使我方全体暴击伤害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，且我方目标攻击敌方目标后，知更鸟额外为自身恢复{{2}}点能量。",
-        "shortDesc": "使我方全体<orangeStrong>暴击伤害</orangeStrong>提高，且我方角色攻击敌方后知更鸟额外恢复能量。",
+        "shortDesc": "使我方全体<orangeStrong>暴击伤害</orangeStrong>提高，且我方目标攻击敌方后知更鸟额外恢复能量。",
         "tag": "辅助"
       }
     },

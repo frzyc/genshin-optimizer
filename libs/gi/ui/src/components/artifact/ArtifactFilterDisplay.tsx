@@ -18,7 +18,6 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
-import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
 import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
@@ -39,6 +38,7 @@ import { Trans, useTranslation } from 'react-i18next'
 import { ExcludeIcon, OptimizationIcon } from '../../consts'
 import { SubstatMultiAutocomplete } from '../SubstatMultiAutocomplete'
 import { LocationFilterMultiAutocomplete } from '../character/LocationFilterMultiAutocomplete'
+import { ArtifactSlotToggle } from '../toggles'
 import { ArtifactLevelSlider } from './ArtifactLevelSlider'
 import { ArtifactMainStatMultiAutocomplete } from './ArtifactMainStatMultiAutocomplete'
 import { ArtifactSetMultiAutocomplete } from './ArtifactSetMultiAutocomplete'
@@ -49,7 +49,6 @@ const lockedValues = ['locked', 'unlocked'] as const
 const excludedValues = ['excluded', 'included'] as const
 
 const rarityHandler = handleMultiSelect([...allArtifactRarityKeys])
-const slotHandler = handleMultiSelect([...allArtifactSlotKeys])
 const lockedHandler = handleMultiSelect([...lockedValues])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
 const excludedHandler = handleMultiSelect([...excludedValues])
@@ -227,28 +226,12 @@ export function ArtifactFilterDisplay({
               ))}
             </SolidToggleButtonGroup>
             {/* Artifact Slot */}
-            <SolidToggleButtonGroup
-              fullWidth
-              value={slotKeys}
-              size="small"
+            <ArtifactSlotToggle
               disabled={disableSlotFilter}
-            >
-              {allArtifactSlotKeys.map((slotKey) => (
-                <ToggleButton
-                  key={slotKey}
-                  sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
-                  value={slotKey}
-                  onClick={() =>
-                    filterOptionDispatch({
-                      slotKeys: slotHandler(slotKeys, slotKey),
-                    })
-                  }
-                >
-                  <SlotIcon slotKey={slotKey} />
-                  <Chip label={slotTotal[slotKey]} size="small" />
-                </ToggleButton>
-              ))}
-            </SolidToggleButtonGroup>
+              onChange={(slotKeys) => filterOptionDispatch({ slotKeys })}
+              totals={slotTotal}
+              value={slotKeys}
+            />
           </Stack>
           <Stack spacing={1.5} pt={1.5}>
             {/* Artifact set dropdown */}
@@ -335,7 +318,7 @@ export function ArtifactFilterDisplay({
                   filterOptionDispatch({ showInventory: !showInventory })
                 }
               >
-                {t`artInInv`}{' '}
+                {t('artInInv')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
                   label={equippedTotal['unequipped']}
@@ -350,7 +333,7 @@ export function ArtifactFilterDisplay({
                   filterOptionDispatch({ showEquipped: !showEquipped })
                 }
               >
-                {t`equippedArt`}{' '}
+                {t('equippedArt')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
                   label={equippedTotal['equipped']}
@@ -362,7 +345,7 @@ export function ArtifactFilterDisplay({
               {/* Filter characters */}
               <Suspense fallback={null}>
                 <BootstrapTooltip
-                  title={showEquipped ? t`locationsTooltip` : ''}
+                  title={showEquipped ? t('locationsTooltip') : ''}
                   placement="top"
                 >
                   <span>

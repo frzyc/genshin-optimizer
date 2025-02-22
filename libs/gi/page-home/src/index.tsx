@@ -114,7 +114,9 @@ function PatchNotesCard() {
     <CardThemed>
       <CardHeader
         title={
-          <Typography variant="h5">{t`quickLinksCard.buttons.patchNotes.title`}</Typography>
+          <Typography variant="h5">
+            {t('quickLinksCard.buttons.patchNotes.title')}
+          </Typography>
         }
         avatar={<DescriptionIcon fontSize="large" />}
       />

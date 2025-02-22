@@ -1,0 +1,1000 @@
+{
+  "icon": "IconRole22",
+  "rarity": "S",
+  "attribute": "electric",
+  "specialty": "support",
+  "fullname": "Alexandrina Sebastiane",
+  "stats": {
+    "atk_base": 103,
+    "atk_growth": 6.0201,
+    "def_base": 48,
+    "def_growth": 6.5524,
+    "hp_base": 692,
+    "hp_growth": 93.9358,
+    "anomMas_base": 93,
+    "anomProf": 92,
+    "impact": 83,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 475, "atk": 37, "def": 33 },
+    { "hp": 950, "atk": 74, "def": 66 },
+    { "hp": 1425, "atk": 111, "def": 99 },
+    { "hp": 1900, "atk": 147, "def": 133 },
+    { "hp": 2375, "atk": 184, "def": 166 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "pen_": 0.048 },
+    { "atk_base": 25, "pen_": 0.048 },
+    { "atk_base": 25, "pen_": 0.096 },
+    { "atk_base": 50, "pen_": 0.096 },
+    { "atk_base": 50, "pen_": 0.144 },
+    { "atk_base": 75, "pen_": 0.144 }
+  ],
+  "skills": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "Basic Attack: Whack the Dimwit",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nOrder Drusilla and Anastella to attack up to 4 times, dealing <color=#F0D12B>Physical DMG</color> and <color=#2EB6FF>Electric DMG</color>.\nPerforming other actions with Rina during Drusilla and Anastella's attacks will not interrupt Rina's <color=#FFFFFF>Basic Attack</color> combo count."
+        },
+        {
+          "Name": "Basic Attack: Shoo the Fool",
+          "Desc": "Hold <IconMap:Icon_Normal> or <IconMap:Icon_Special> to activate:\nCalls back Drusilla and Anastella to swing them around for a ranged attack, dealing <color=#2EB6FF>Electric DMG</color>.\nAnti-Interrupt level is increased while using this skill."
+        },
+        {
+          "Name": "Basic Attack: Whack the Dimwit",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1211001, Prop:1001}",
+              "Param": {
+                "1211001": {
+                  "Main": 44,
+                  "Growth": 0.04,
+                  "Format": "%",
+                  "DamagePercentage": 0.44,
+                  "DamagePercentageGrowth": 0.04,
+                  "StunRatio": 0.245,
+                  "StunRatioGrowth": 0.012,
+                  "SpRecovery": 83.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 640.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1211003, Prop:1001}",
+              "Param": {
+                "1211003": {
+                  "Main": 111.4,
+                  "Growth": 0.102,
+                  "Format": "%",
+                  "DamagePercentage": 1.114,
+                  "DamagePercentageGrowth": 0.102,
+                  "StunRatio": 0.884,
+                  "StunRatioGrowth": 0.041,
+                  "SpRecovery": 302.9,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1652.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1211004, Prop:1001}",
+              "Param": {
+                "1211004": {
+                  "Main": 117.1,
+                  "Growth": 0.107,
+                  "Format": "%",
+                  "DamagePercentage": 1.171,
+                  "DamagePercentageGrowth": 0.107,
+                  "StunRatio": 0.966,
+                  "StunRatioGrowth": 0.044,
+                  "SpRecovery": 331,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3861,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 83.63,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit DMG Multiplier",
+              "Desc": "{Skill:1211006, Prop:1001}",
+              "Param": {
+                "1211006": {
+                  "Main": 183.9,
+                  "Growth": 0.168,
+                  "Format": "%",
+                  "DamagePercentage": 1.839,
+                  "DamagePercentageGrowth": 0.168,
+                  "StunRatio": 1.468,
+                  "StunRatioGrowth": 0.067,
+                  "SpRecovery": 559,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3418.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 104.74,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1211001, Prop:1002}",
+              "Param": {
+                "1211001": {
+                  "Main": 24.5,
+                  "Growth": 0.012,
+                  "Format": "%",
+                  "DamagePercentage": 0.44,
+                  "DamagePercentageGrowth": 0.04,
+                  "StunRatio": 0.245,
+                  "StunRatioGrowth": 0.012,
+                  "SpRecovery": 83.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 640.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1211003, Prop:1002}",
+              "Param": {
+                "1211003": {
+                  "Main": 88.4,
+                  "Growth": 0.041,
+                  "Format": "%",
+                  "DamagePercentage": 1.114,
+                  "DamagePercentageGrowth": 0.102,
+                  "StunRatio": 0.884,
+                  "StunRatioGrowth": 0.041,
+                  "SpRecovery": 302.9,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1652.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1211004, Prop:1002}",
+              "Param": {
+                "1211004": {
+                  "Main": 96.6,
+                  "Growth": 0.044,
+                  "Format": "%",
+                  "DamagePercentage": 1.171,
+                  "DamagePercentageGrowth": 0.107,
+                  "StunRatio": 0.966,
+                  "StunRatioGrowth": 0.044,
+                  "SpRecovery": 331,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3861,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 83.63,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Daze Multiplier",
+              "Desc": "{Skill:1211006, Prop:1002}",
+              "Param": {
+                "1211006": {
+                  "Main": 146.8,
+                  "Growth": 0.067,
+                  "Format": "%",
+                  "DamagePercentage": 1.839,
+                  "DamagePercentageGrowth": 0.168,
+                  "StunRatio": 1.468,
+                  "StunRatioGrowth": 0.067,
+                  "SpRecovery": 559,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3418.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 104.74,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Shoo the Fool",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211007, Prop:1001}",
+              "Param": {
+                "1211007": {
+                  "Main": 315.1,
+                  "Growth": 0.287,
+                  "Format": "%",
+                  "DamagePercentage": 3.151,
+                  "DamagePercentageGrowth": 0.287,
+                  "StunRatio": 3.151,
+                  "StunRatioGrowth": 0.144,
+                  "SpRecovery": 1080.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 8252.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 300.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211007, Prop:1002}",
+              "Param": {
+                "1211007": {
+                  "Main": 315.1,
+                  "Growth": 0.144,
+                  "Format": "%",
+                  "DamagePercentage": 3.151,
+                  "DamagePercentageGrowth": 0.287,
+                  "StunRatio": 3.151,
+                  "StunRatioGrowth": 0.144,
+                  "SpRecovery": 1080.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 8252.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 300.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "Dodge: Dress Adjustment",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Sudden Surprise",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nOrder Drusilla and Anastella to execute a piercing attack, dealing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Dodge Counter: Bangboo Callback",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nOrder Drusilla and Anastella to spin forward and trigger an explosion, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Sudden Surprise",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211011, Prop:1001}",
+              "Param": {
+                "1211011": {
+                  "Main": 105,
+                  "Growth": 0.096,
+                  "Format": "%",
+                  "DamagePercentage": 1.05,
+                  "DamagePercentageGrowth": 0.096,
+                  "StunRatio": 0.525,
+                  "StunRatioGrowth": 0.024,
+                  "SpRecovery": 180,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1375,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211011, Prop:1002}",
+              "Param": {
+                "1211011": {
+                  "Main": 52.5,
+                  "Growth": 0.024,
+                  "Format": "%",
+                  "DamagePercentage": 1.05,
+                  "DamagePercentageGrowth": 0.096,
+                  "StunRatio": 0.525,
+                  "StunRatioGrowth": 0.024,
+                  "SpRecovery": 180,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1375,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Dodge Counter: Bangboo Callback",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211013, Prop:1001}",
+              "Param": {
+                "1211013": {
+                  "Main": 227.6,
+                  "Growth": 0.207,
+                  "Format": "%",
+                  "DamagePercentage": 2.276,
+                  "DamagePercentageGrowth": 0.207,
+                  "StunRatio": 2.276,
+                  "StunRatioGrowth": 0.104,
+                  "SpRecovery": 420.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3212,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 116.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211013, Prop:1002}",
+              "Param": {
+                "1211013": {
+                  "Main": 227.6,
+                  "Growth": 0.104,
+                  "Format": "%",
+                  "DamagePercentage": 2.276,
+                  "DamagePercentageGrowth": 0.207,
+                  "StunRatio": 2.276,
+                  "StunRatioGrowth": 0.104,
+                  "SpRecovery": 420.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3212,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 116.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "Special Attack: Beat the Blockhead",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nOrder Anastella to execute a downward smash, dealing <color=#2EB6FF>Electric DMG</color>\nAnti-Interrupt level is increased while using this skill."
+        },
+        {
+          "Name": "EX Special Attack: Dimwit Disappearing Trick",
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nOrder Drusilla and Anastella to execute multiple downward smashes, dealing massive <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill.\nA <color=#FFFFFF>Quick Assist</color> is triggered when this skill hits an enemy."
+        },
+        {
+          "Name": "Special Attack: Beat the Blockhead",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211008, Prop:1001}",
+              "Param": {
+                "1211008": {
+                  "Main": 61.3,
+                  "Growth": 0.056,
+                  "Format": "%",
+                  "DamagePercentage": 0.613,
+                  "DamagePercentageGrowth": 0.056,
+                  "StunRatio": 0.613,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1606,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 58.35,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211008, Prop:1002}",
+              "Param": {
+                "1211008": {
+                  "Main": 61.3,
+                  "Growth": 0.028,
+                  "Format": "%",
+                  "DamagePercentage": 0.613,
+                  "DamagePercentageGrowth": 0.056,
+                  "StunRatio": 0.613,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1606,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 58.35,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "EX Special Attack: Dimwit Disappearing Trick",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211009, Prop:1001}",
+              "Param": {
+                "1211009": {
+                  "Main": 546,
+                  "Growth": 0.497,
+                  "Format": "%",
+                  "DamagePercentage": 5.46,
+                  "DamagePercentageGrowth": 0.497,
+                  "StunRatio": 4.445,
+                  "StunRatioGrowth": 0.203,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 11459.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 471.62,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211009, Prop:1002}",
+              "Param": {
+                "1211009": {
+                  "Main": 444.5,
+                  "Growth": 0.203,
+                  "Format": "%",
+                  "DamagePercentage": 5.46,
+                  "DamagePercentageGrowth": 0.497,
+                  "StunRatio": 4.445,
+                  "StunRatioGrowth": 0.203,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 11459.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 471.62,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            { "Name": "Energy Cost", "Desc": "60" }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        {
+          "Name": "Chain Attack: Code of Conduct",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nOrder Drusilla and Anastella to push forward and generate a ball-shaped electrical field that deals massive <color=#2EB6FF>Electric DMG</color>.\nDuring this skill, Drusilla and Anastella are unable to perform <color=#FFFFFF>Basic Attacks</color>, <color=#FFFFFF>Dash Attacks</color>, <color=#FFFFFF>Special Attacks</color>, and <color=#FFFFFF>EX Special Attacks</color>, but can be recalled to Rina's side through <color=#FFFFFF>Basic Attack: Shoo the Fool</color>.\nCharacter is invulnerable while using this skill.\nA <color=#FFFFFF>Quick Assist</color> is triggered when this skill hits an enemy."
+        },
+        {
+          "Name": "Ultimate: The Queen's Attendants",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nOrder Drusilla and Anastella to spin forward, dealing massive <color=#2EB6FF>Electric DMG</color>.\nDuring this skill, Drusilla and Anastella are unable to respond to <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> commands, but can be recalled to Rina's side through <color=#FFFFFF>Basic Attack: Shoo the Fool</color>.\nUpon activating this skill, the other squad members recover 10 Energy. The next character to switch in recovers an additional 20 Energy.\nCharacter is invulnerable while using this skill.\nA <color=#FFFFFF>Quick Assist</color> is triggered when this skill hits an enemy."
+        },
+        {
+          "Name": "Chain Attack: Code of Conduct",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211015, Prop:1001}",
+              "Param": {
+                "1211015": {
+                  "Main": 1013,
+                  "Growth": 0.921,
+                  "Format": "%",
+                  "DamagePercentage": 10.13,
+                  "DamagePercentageGrowth": 0.921,
+                  "StunRatio": 1.751,
+                  "StunRatioGrowth": 0.08,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 22874.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 366.2,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211015, Prop:1002}",
+              "Param": {
+                "1211015": {
+                  "Main": 175.1,
+                  "Growth": 0.08,
+                  "Format": "%",
+                  "DamagePercentage": 10.13,
+                  "DamagePercentageGrowth": 0.921,
+                  "StunRatio": 1.751,
+                  "StunRatioGrowth": 0.08,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 22874.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 366.2,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Ultimate: The Queen's Attendants",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211017, Prop:1001}",
+              "Param": {
+                "1211017": {
+                  "Main": 2116.7,
+                  "Growth": 1.925,
+                  "Format": "%",
+                  "DamagePercentage": 21.167,
+                  "DamagePercentageGrowth": 1.925,
+                  "StunRatio": 1.138,
+                  "StunRatioGrowth": 0.052,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 108.37,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211017, Prop:1002}",
+              "Param": {
+                "1211017": {
+                  "Main": 113.8,
+                  "Growth": 0.052,
+                  "Format": "%",
+                  "DamagePercentage": 21.167,
+                  "DamagePercentageGrowth": 1.925,
+                  "StunRatio": 1.138,
+                  "StunRatioGrowth": 0.052,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 108.37,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "Quick Assist: Duple Meter Allemande",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nOrder Drusilla and Anastella to spin forward and trigger an explosion, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Evasive Assist: Triple Meter Courante",
+          "Desc": "When the character on field is about to be attacked, press <IconMap:Icon_Switch> to activate:\nDodges the enemy's attack and activates <color=#FFFFFF>Vital View</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Assist Follow-Up: Quadruple Meter Gavotte",
+          "Desc": "Press <IconMap:Icon_Normal> after an <color=#FFFFFF>Evasive Assist</color> to activate:\nOrder Drusilla and Anastella to push forward and generate an electrical vortex, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Quick Assist: Duple Meter Allemande",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211019, Prop:1001}",
+              "Param": {
+                "1211019": {
+                  "Main": 122.6,
+                  "Growth": 0.112,
+                  "Format": "%",
+                  "DamagePercentage": 1.226,
+                  "DamagePercentageGrowth": 0.112,
+                  "StunRatio": 1.226,
+                  "StunRatioGrowth": 0.056,
+                  "SpRecovery": 420.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3212,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 116.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211019, Prop:1002}",
+              "Param": {
+                "1211019": {
+                  "Main": 122.6,
+                  "Growth": 0.056,
+                  "Format": "%",
+                  "DamagePercentage": 1.226,
+                  "DamagePercentageGrowth": 0.112,
+                  "StunRatio": 1.226,
+                  "StunRatioGrowth": 0.056,
+                  "SpRecovery": 420.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3212,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 116.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Assist Follow-Up: Quadruple Meter Gavotte",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1211021, Prop:1001}",
+              "Param": {
+                "1211021": {
+                  "Main": 349.4,
+                  "Growth": 0.318,
+                  "Format": "%",
+                  "DamagePercentage": 3.494,
+                  "DamagePercentageGrowth": 0.318,
+                  "StunRatio": 3.036,
+                  "StunRatioGrowth": 0.138,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 10351,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 310.92,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1211021, Prop:1002}",
+              "Param": {
+                "1211021": {
+                  "Main": 303.6,
+                  "Growth": 0.138,
+                  "Format": "%",
+                  "DamagePercentage": 3.494,
+                  "DamagePercentageGrowth": 0.318,
+                  "StunRatio": 3.036,
+                  "StunRatioGrowth": 0.138,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 10351,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 310.92,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "skillList": {
+    "1211001": {
+      "Name": "Basic Attack: Whack the Dimwit",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 103
+    },
+    "1211002": {
+      "Name": "Basic Attack: Shoo the Fool",
+      "Desc": "<IconMap:Icon_Normal>(Hold)",
+      "ElementType": 203,
+      "HitType": 102
+    },
+    "1211003": {
+      "Name": "Special Attack: Beat the Blockhead",
+      "Desc": "<IconMap:Icon_Special>",
+      "ElementType": 203,
+      "HitType": 102
+    },
+    "1211004": {
+      "Name": "EX Special Attack: Dimwit Disappearing Trick",
+      "Desc": "<IconMap:Icon_SpecialReady>",
+      "ElementType": 203,
+      "HitType": 102
+    },
+    "1211005": {
+      "Name": "Dash Attack: Sudden Surprise",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 103
+    },
+    "1211006": {
+      "Name": "Dodge Counter: Bangboo Callback",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 203,
+      "HitType": 102
+    },
+    "1211007": {
+      "Name": "Chain Attack: Code of Conduct",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 203,
+      "HitType": 102
+    },
+    "1211008": {
+      "Name": "Ultimate: The Queen's Attendants",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 203,
+      "HitType": 102
+    },
+    "1211009": {
+      "Name": "Quick Assist: Duple Meter Allemande",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 203,
+      "HitType": 102
+    },
+    "1211010": {
+      "Name": "Evasive Assist: Triple Meter Courante",
+      "Desc": "<IconMap:Icon_Switch>(When Triggering Evasive Assist)",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1211011": {
+      "Name": "Assist Follow-Up: Quadruple Meter Gavotte",
+      "Desc": "<IconMap:Icon_Normal> (After Evasive Assist)",
+      "ElementType": 203,
+      "HitType": 102
+    }
+  },
+  "cores": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1211501,
+        "Name": [
+          "Core Passive: Mini Destruction Partner",
+          "Additional Ability: Banquet of Perfection"
+        ],
+        "Desc": [
+          "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <color=#2BAD00>6%</color>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+          "When another character in your squad shares the same Attribute or Faction:\nIncreases the duration of <color=#2EB6FF>Shock</color> inflicted on enemies by any character by 3s. When <color=#2EB6FF>Shocked</color> enemies are on the field, all squad members' <color=#2EB6FF>Electric DMG</color> increases by 10%."
+        ]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1211502,
+        "Name": [
+          "Core Passive: Mini Destruction Partner",
+          "Additional Ability: Banquet of Perfection"
+        ],
+        "Desc": [
+          "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <color=#2BAD00>7.5%</color>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+          "When another character in your squad shares the same Attribute or Faction:\nIncreases the duration of <color=#2EB6FF>Shock</color> inflicted on enemies by any character by 3s. When <color=#2EB6FF>Shocked</color> enemies are on the field, all squad members' <color=#2EB6FF>Electric DMG</color> increases by 10%."
+        ]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1211503,
+        "Name": [
+          "Core Passive: Mini Destruction Partner",
+          "Additional Ability: Banquet of Perfection"
+        ],
+        "Desc": [
+          "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <color=#2BAD00>9%</color>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+          "When another character in your squad shares the same Attribute or Faction:\nIncreases the duration of <color=#2EB6FF>Shock</color> inflicted on enemies by any character by 3s. When <color=#2EB6FF>Shocked</color> enemies are on the field, all squad members' <color=#2EB6FF>Electric DMG</color> increases by 10%."
+        ]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1211504,
+        "Name": [
+          "Core Passive: Mini Destruction Partner",
+          "Additional Ability: Banquet of Perfection"
+        ],
+        "Desc": [
+          "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <color=#2BAD00>10.2%</color>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+          "When another character in your squad shares the same Attribute or Faction:\nIncreases the duration of <color=#2EB6FF>Shock</color> inflicted on enemies by any character by 3s. When <color=#2EB6FF>Shocked</color> enemies are on the field, all squad members' <color=#2EB6FF>Electric DMG</color> increases by 10%."
+        ]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1211505,
+        "Name": [
+          "Core Passive: Mini Destruction Partner",
+          "Additional Ability: Banquet of Perfection"
+        ],
+        "Desc": [
+          "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <color=#2BAD00>10.8%</color>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+          "When another character in your squad shares the same Attribute or Faction:\nIncreases the duration of <color=#2EB6FF>Shock</color> inflicted on enemies by any character by 3s. When <color=#2EB6FF>Shocked</color> enemies are on the field, all squad members' <color=#2EB6FF>Electric DMG</color> increases by 10%."
+        ]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1211506,
+        "Name": [
+          "Core Passive: Mini Destruction Partner",
+          "Additional Ability: Banquet of Perfection"
+        ],
+        "Desc": [
+          "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <color=#2BAD00>11.4%</color>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+          "When another character in your squad shares the same Attribute or Faction:\nIncreases the duration of <color=#2EB6FF>Shock</color> inflicted on enemies by any character by 3s. When <color=#2EB6FF>Shocked</color> enemies are on the field, all squad members' <color=#2EB6FF>Electric DMG</color> increases by 10%."
+        ]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1211507,
+        "Name": [
+          "Core Passive: Mini Destruction Partner",
+          "Additional Ability: Banquet of Perfection"
+        ],
+        "Desc": [
+          "When ordering Drusilla or Anastella to attack, other squad members' PEN Ratio increases together with Rina's, by 25% of Rina's PEN Ratio + <color=#2BAD00>12%</color>, up to 30%. The effect ends when both Drusilla and Anastella return to Rina.",
+          "When another character in your squad shares the same Attribute or Faction:\nIncreases the duration of <color=#2EB6FF>Shock</color> inflicted on enemies by any character by 3s. When <color=#2EB6FF>Shocked</color> enemies are on the field, all squad members' <color=#2EB6FF>Electric DMG</color> increases by 10%."
+        ]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110505": 2 },
+      "3": { "10": 28000, "110505": 4 },
+      "4": { "10": 60000, "110003": 2, "110505": 9 },
+      "5": { "10": 100000, "110003": 3, "110505": 15 },
+      "6": { "10": 200000, "110003": 4, "110505": 30 }
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "Level": 1,
+      "Name": "Dance Duet",
+      "Desc": "After being sent out to launch an attack, Drusilla and Anastella stay in place for an additional 5.5s before returning to Rina.\nThe effect gained from <color=#FFFFFF>Core Passive: Mini Destruction Partner</color> by characters within 10m is increased to 130% of the original value.",
+      "Desc2": "\"Get your work done, or you're in for a beating!\" is how Drusilla tries to encourage everyone.\n\"Yeah, a beating!\" Anastella always chimes in."
+    },
+    "2": {
+      "Level": 2,
+      "Name": "Master's Paragon",
+      "Desc": "Upon entering combat or switching in, Rina's DMG increases by 15% for 12s. This effect can trigger once every 18s.",
+      "Desc2": "\"It takes an excellent head maid to lead excellent maids, and an exemplary master to raise exemplary Bangboo.\" — Excerpt from Rina's speech at the \"Victoria Housekeeping Human Resource Management and Bangboo Training Insight Seminar.\""
+    },
+    "3": {
+      "Level": 3,
+      "Name": "Head Maid's Specialty",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "Rina always has the confidence to excel at anything and the ability to annihilate everything.\nHowever, when it comes to being in the mood to annihilate enemies, both her confidence and capability align."
+    },
+    "4": {
+      "Level": 4,
+      "Name": "Needle and Hammer",
+      "Desc": "Rina's Energy Regen increases by 0.5/s when both Drusilla and Anastella are deployed. The effect ends when Drusilla or Anastella returns to Rina.",
+      "Desc2": "Drusilla and Anastella can never agree on anything.\n\"Beating up the dummy in front\" is an exception."
+    },
+    "5": {
+      "Level": 5,
+      "Name": "Head Maid Perfectionist",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "\"Rina\" means perfection in the Bangboo language.\nPerfectionism is the number one rule in the Victoria Housekeeping handbook.\nAnd Rina has her own criteria for judging \"perfection.\""
+    },
+    "6": {
+      "Level": 6,
+      "Name": "Stormy Night's Fright",
+      "Desc": "When an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> hits an enemy, the entire squad's <color=#2EB6FF>Electric DMG</color> is increased by 15% for 8s.",
+      "Desc2": "Thunder rumbles in the old castle on a rainy night. The depths of the long corridors are filled with eerie shadows.\nFear circuits overloaded, the filming of a thriller commences."
+    }
+  }
+}

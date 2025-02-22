@@ -1,0 +1,200 @@
+{
+  "name": "Mavuika",
+  "title": "La Calcinadora de la Noche",
+  "description": "La líder de Natlan que heredó el nombre antiguo de “Kiongozi”. Ella se comprometió a iluminar el futuro de la Nación de la Guerra con el Fuego Sagrado.",
+  "constellationName": "Sol Invictus",
+  "auto": {
+    "name": "Fuego tejedestinos",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 tajos consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para ejecutar hacia delante un tajo incandescente especialmente poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Denominación",
+    "description": {
+      "0": "Sirviéndose de la autoridad de la contienda, invoca un “arsenal flamígero” heredado por los dioses humanos e inflige <pyro>Daño Pyro</pyro> de naturaleza noctámbula.",
+      "1": "Tras usar esta habilidad, Mavuika recupera todos sus pts. de noctambulismo y entra en estado de bendición noctámbula.",
+      "2": "<br/>",
+      "3": "<strong>Arsenal flamígero</strong>",
+      "4": "Se libera de forma distinta dependiendo de si se hace pulsando una vez o manteniendo pulsado.",
+      "5": "<br/>",
+      "6": "<strong>Pulsar una vez</strong>",
+      "7": "Liberación de nombre divino: el arsenal flamígero adquiere la forma de un aro incinerador, el cual sigue al personaje en uso y ataca cada cierto tiempo a los enemigos cercanos para infligirles <pyro>Daño Pyro</pyro> de naturaleza noctámbula.",
+      "8": "<br/>",
+      "9": "<strong>Mantener pulsado</strong>",
+      "10": "Liberación de nombre antiguo: el arsenal flamígero adquiere la forma de un pirociclo. En este estado, Mavuika puede manejar el pirociclo para moverse rápidamente, o activar las funciones ocultas en la parte trasera del vehículo para moverse temporalmente por toda clase de terrenos, así como para planear durante un breve periodo de tiempo. Además, el daño de los Ataques Normales, Cargados y Descendentes de Mavuika se convierte en <pyro>Daño Pyro</pyro> de naturaleza noctámbula, el cual no puede sustituirse imbuyéndose de otro elemento. Al esprintar, también inflige <pyro>Daño Pyro</pyro> de naturaleza noctámbula a los enemigos situados en su trayectoria.",
+      "11": "<br/>",
+      "12": "La forma del arsenal flamígero se puede cambiar pulsando una vez la Habilidad Elemental mientras se está en estado de bendición noctámbula. El arsenal flamígero desaparecerá cuando termine la duración de dicho estado.",
+      "13": "<br/>",
+      "14": "<strong>Bendición noctámbula: Mavuika</strong>",
+      "15": "Consume continuamente pts. de noctambulismo dependiendo de la forma del arsenal flamígero. Al agotarse todos los pts., terminará la duración de la bendición noctámbula de Mavuika.",
+      "16": "<br/>",
+      "17": "<i>Si le dijeras a Mavuika que, en otros mundos, los medios de transporte similares a su pirociclo necesitan ser identificados con placas, se pondría muy contenta y diría:",
+      "18": "“Bueno, este pirociclo es único, así que puedo escoger el número de placa que yo quiera, ¿no?”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de aro incinerador",
+      "2": "Intervalo de ATQ de aro incinerador",
+      "3": "Daño de 1er golpe de ATQ Normal con pirociclo",
+      "4": "Daño de 2.º golpe de ATQ Normal con pirociclo",
+      "5": "Daño de 3er golpe de ATQ Normal con pirociclo",
+      "6": "Daño de 4.º golpe de ATQ Normal con pirociclo",
+      "7": "Daño de 5.º golpe de ATQ Normal con pirociclo",
+      "8": "Daño de esprint con pirociclo",
+      "9": "Daño de ATQ Cargado en ciclo con pirociclo",
+      "10": "Daño final de ATQ Cargado con pirociclo",
+      "11": "Daño de Ataque Descendente con pirociclo",
+      "12": "Límite de pts. de noctambulismo",
+      "13": "TdE",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Infierno celestial",
+    "description": {
+      "0": "Lleva los deseos del pueblo hasta el trono divino de los cielos.",
+      "1": "<strong>La Habilidad Definitiva de Mavuika no funciona con Energía Elemental, sino con “espíritu de lucha”.</strong>",
+      "2": "<br/>",
+      "3": "<strong>Espíritu de lucha</strong>",
+      "4": "Cuando el espíritu de lucha de Mavuika está al menos al 50%, puede consumirlo para usar su Habilidad Definitiva.",
+      "5": "Mavuika puede obtener espíritu de lucha de las siguientes formas:",
+      "6": [
+        "Al estar en combate, los pts. de noctambulismo consumidos por los personajes cercanos del equipo se convierten en espíritu de lucha para Mavuika.",
+        "Cuando un personaje cercano del equipo golpea a un enemigo con un Ataque Normal, Mavuika obtiene 1.5 pts. de espíritu de lucha. Esto solo puede ocurrir una vez cada 0.1 s."
+      ],
+      "7": "<br/>",
+      "8": "Tras usar esta habilidad, Mavuika obtiene 10 pts. de noctambulismo, entra en estado de bendición noctámbula, salta hasta el cielo con el pirociclo y ejecuta un poderoso tajosolar descendente contra los enemigos que haya en el suelo, el cual inflige <pyro>Daño Pyro en el AdE</pyro> de naturaleza noctámbula y hace que Mavuika entre en estado de “fragua vitamortal”.",
+      "9": "<br/>",
+      "10": "<strong>Fragua vitamortal</strong>",
+      "11": "Mientras este estado está activo, las acciones de Mavuika no consumen pts. de noctambulismo y su RES a interrupción aumenta. Además, aumenta el daño infligido con el tajosolar descendente y con los Ataques Normales y Cargados ejecutados con la liberación de nombre antiguo en función del espíritu de lucha que tenga Mavuika al usar la habilidad.",
+      "12": "El estado de fragua vitamortal se anula cuando Mavuika se retira del campo de batalla.",
+      "13": "<br/>",
+      "14": "<i>“Esta vez, quiero aplastar el destino con mis propias manos”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración de fragua vitamortal",
+      "2": "Bono de daño de tajosolar descendente",
+      "3": "Bono de daño de Ataque Normal con pirociclo",
+      "4": "Bono de daño de Ataque Cargado con pirociclo",
+      "5": "TdE",
+      "6": "Límite de espíritu de lucha",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ofrenda pirofloral",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, el ATQ de Mavuika aumenta en un 30% durante 10 s."
+    }
+  },
+  "passive2": {
+    "name": "Kiongozi",
+    "description": {
+      "0": "Tras usar la Habilidad Definitiva <strong>Infierno celestial</strong>, el daño que inflige el personaje en uso del equipo aumenta en un 0.2% por cada punto de espíritu de lucha que tuviera Mavuika. El aumento de daño conseguido de esta forma puede ser, como máximo, del 40%. Este efecto dura 20 s e irá disminuyendo progresivamente mientras dure hasta llegar a 0."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Modo agotamiento",
+    "description": {
+      "0": "Cuando no tenga más pts. de noctambulismo, Mavuika consumirá flogisto para conservar el pirociclo del arsenal flamígero.",
+      "1": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, se podrá utilizar “Transmisión noctambular: Mavuika”. Cuando el personaje en uso esprinte, escale, nade, esté en un estado de movimiento derivado de algún talento o esté a cierta altura en el aire, al cambiar a Mavuika, esta entrará en estado de bendición noctámbula y obtendrá una cantidad de pts. de noctambulismo equivalente al 50% de su límite de pts. de noctambulismo. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s."
+    }
+  },
+  "passive": {
+    "name": "Llama devastanoches",
+    "description": {
+      "0": "Reduce en un 20% el TdE de Transmisión noctambular del equipo."
+    }
+  },
+  "constellation1": {
+    "name": "Enseñanzas de la Señora de la Noche",
+    "description": {
+      "0": "El límite de pts. de noctambulismo de Mavuika aumenta a 120 e incrementa en un 25% la eficiencia con la que obtiene espíritu de lucha.",
+      "1": "Además, tras obtener espíritu de lucha, el ATQ de Mavuika aumenta en un 40% durante 8 s."
+    }
+  },
+  "constellation2": {
+    "name": "Precio de las cenizas",
+    "description": {
+      "0": "Mientras está en estado de bendición noctámbula, el ATQ Base de Mavuika aumenta en 200 pts. y obtiene uno de los siguientes efectos dependiendo de la forma que haya adquirido su arsenal flamígero:",
+      "1": [
+        "Aro incinerador: la DEF de los enemigos cercanos se reduce en un 20%.",
+        "Pirociclo: aumenta el daño de los Ataques Normales, Ataques Cargados y del tajosolar descendente de la Habilidad Definitiva <strong>Infierno celestial</strong> de Mavuika en una cantidad equivalente al 60/90/120% de su ATQ, respectivamente."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "El Sol Ardiente",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Infierno celestial</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Comprensión del liderazgo",
+    "description": {
+      "0": "Mejora el efecto del talento pasivo “Kiongozi”:",
+      "1": "El aumento de daño de la Habilidad Definitiva, <strong>Infierno celestial</strong>, ya no disminuye con el tiempo y obtiene un 10% de bono de daño adicional.",
+      "2": "Es necesario desbloquear el talento pasivo “Kiongozi”."
+    }
+  },
+  "constellation5": {
+    "name": "Significado de la verdad",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Denominación</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Liberación de nombre humano",
+    "description": {
+      "0": "El arsenal flamígero de la Habilidad Elemental, <strong>Denominación</strong>, se fortalece de manera integral:",
+      "1": [
+        "Aro incinerador: cuando el aro incinerador golpee a un enemigo, un pirociclo arremeterá contra él para infligir <pyro>Daño Pyro en el AdE</pyro> de naturaleza noctámbula en una cantidad equivalente al 200% del ATQ.",
+        "Pirociclo: cuando Mavuika esté manejando el pirociclo, invocará un aro incinerador: imagen ardiente que la seguirá continuamente, reducirá en un 20% la DEF de los enemigos cercanos y, cada 3 s, infligirá <pyro>Daño Pyro en el AdE</pyro> de naturaleza noctámbula una vez a los enemigos cercanos en una cantidad equivalente al 500% del ATQ. Además, mejora aún más la capacidad de Mavuika para moverse por toda clase de terrenos."
+      ],
+      "2": "<br/>",
+      "3": "Por otro lado, cuando Mavuika esté conduciendo su pirociclo y no esté en combate, cuando sus pts. de noctambulismo lleguen a 5, obtendrá 80 pts. Este efecto solo puede ocurrir una vez cada 15 s."
+    }
+  }
+}

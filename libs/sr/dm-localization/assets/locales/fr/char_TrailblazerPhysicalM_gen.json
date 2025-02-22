@@ -41,7 +41,7 @@
       "0": {
         "name": "Pickoff parfait",
         "fullDesc": "L'ATQ augmente de <orangeStrong>{{1, percent}}%</orangeStrong> à chaque fois que le personnage fait subir une Rupture de faiblesse à un ennemi. Effet cumulable jusqu'à {{2}} fois.",
-        "shortDesc": "",
+        "shortDesc": "Chaque fois que cette unité fait subir une Rupture de faiblesse à un ennemi, l'ATQ augmente.",
         "tag": "Renforcement"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "Troisième prise immortelle",
         "fullDesc": "Soigne immédiatement tous les alliés à hauteur de {{1, percent}}% de leurs PV max respectifs après utilisation de cette technique.",
-        "shortDesc": "",
+        "shortDesc": "<orangeStrong>Restaure immédiatement des PV</orangeStrong> pour l'équipe après avoir utilisé la technique.",
         "tag": "Restauration"
       }
     },
@@ -101,7 +101,7 @@
     },
     "4": {
       "name": "Regard destructeur",
-      "desc": "Les chances de coup critique du personnage augmentent de {{1, percent}}% contre les ennemis victimes d'une Rupture de faiblesse."
+      "desc": "Les chances de coup critique du personnage augmentent de {{1, percent}}% contre les ennemis en état de Rupture de faiblesse."
     },
     "5": {
       "name": "Un espoir de survie",

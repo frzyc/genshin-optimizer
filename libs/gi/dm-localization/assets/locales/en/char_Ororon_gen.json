@@ -1,0 +1,241 @@
+{
+  "name": "Ororon",
+  "title": "Shadow of the Night-Wind",
+  "description": "A young man from the Masters of the Night-Wind who instead lives in the wild alongside all manner of life.",
+  "constellationName": "Vampyrum Spectrum",
+  "auto": {
+    "name": "Spiritvessel Snapshot",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 3 consecutive shots with a bow."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, Electro energy will accumulate on the arrowhead. A fully charged arrow will deal <electro>Electro DMG</electro>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Aimed Shot",
+      "4": "Fully-Charged Aimed Shot",
+      "5": "Plunge DMG",
+      "6": "Low/High Plunge DMG",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent}}%",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent}}%/{{7, percent}}%",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Night's Sling",
+    "description": {
+      "0": "Ororon manifests an ancient mystical technique from the Masters of the Night-Wind as a <strong>Spirit Orb</strong> of midnight shade and throws it at his foe, dealing Nightsoul-aligned <electro>Electro DMG</electro>.",
+      "1": "When other opponents are nearby, the Spirit Orb will bounce between them, dealing Nightsoul-aligned <electro>Electro DMG</electro>. Each time Night's Sling is used, each opponent can only be selected as a target once.",
+      "2": "After 3 bounces, or if there are no eligible targets left, the Orb will disappear.",
+      "3": "<br/>",
+      "4": "<i>\"People always wish to foretell the future, but that might be because they have yet to discover that which they must do... Sorry, I'm saying complicated things again, aren't I...\"</i>"
+    },
+    "skillParams": {
+      "0": "Spirit Orb DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, fixed(fixed: 1)}}s",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dark Voices Echo",
+    "description": {
+      "0": "Ororon works an ancient ritual, dealing Nightsoul-aligned <electro>AoE Electro DMG</electro>, summoning forth a Supersonic Oculus.",
+      "1": "<br/>",
+      "2": "<strong>Supersonic Oculus</strong>",
+      "3": [
+        "Continuously taunts nearby opponents and attracts attacks from them.",
+        "Continuously rotates and fires off sonic waves that deal Nightsoul-aligned <electro>Electro DMG</electro>."
+      ],
+      "4": "<br/>",
+      "5": "<i>Those with sharp enough senses can hear the minute voices with which all things speak. That way, they will never lose their way — not even on long, lightless nights.</i>"
+    },
+    "skillParams": {
+      "0": "Ritual DMG",
+      "1": "Soundwave Collision DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4}}",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nightshade Synesthesia",
+    "description": {
+      "0": "After a nearby party member triggers Nightsoul Burst, Ororon will gain 40 Nightsoul points. Within 15s after using his Elemental Skill, when other party members' <hydro>Hydro</hydro> or <electro>Electro</electro> attacks hit opponents, Ororon will gain 5 Nightsoul points, an effect that can occur every 0.3s for a maximum of 10 times during this 15s duration.",
+      "1": "Ororon can have a maximum of 80 Nightsoul points.",
+      "2": "<br/>",
+      "3": "Also, when nearby opponents take <electro>Electro-Charged</electro> reaction DMG or Nightsoul-aligned DMG dealt by other nearby characters, Ororon will consume 10 Nightsoul points (provided he has at least that amount), entering the Nightsoul's Blessing state and triggering the Hypersense effect: Deal Nightsoul-aligned <electro>Electro DMG</electro> based on 160% of Ororon's ATK to at most 4 nearby opponents. The aforementioned effect can trigger once every 1.8s.",
+      "4": "<br/>",
+      "5": "<strong>Nightsoul's Blessing: Ororon</strong>",
+      "6": "Ororon's Nightsoul's Blessing state lasts 6s."
+    }
+  },
+  "passive2": {
+    "name": "Aspect Catalyst",
+    "description": {
+      "0": "After the Elemental Skill <strong>Night's Sling</strong>'s <strong>Spirit Orb</strong> hits an opponent, Ororon will gain the Aspect Sigil effect for 15s.",
+      "1": "<br/>",
+      "2": "<strong>Aspect Sigil</strong>",
+      "3": "When a nearby active party member hits an opponent with Normal, Charged, or Plunging Attacks, that character will restore 3 Energy. If Ororon is off-field, Ororon will also restore 3 Energy. This effect can trigger once every 1s, and can trigger 3 times per duration."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Flowing Fog, Spritely Shadows",
+    "description": {
+      "0": "While in an area with Phlogiston Mechanics within Natlan, he can use Nightsoul Transmission: Ororon. When the active character is currently in the air, the following will trigger when switching to Ororon: Ororon will leap up high. Nightsoul Transmission can be triggered once every 10s by your party.",
+      "1": "<br/>",
+      "2": "Holding Aiming Mode will cause Ororon to enter the \"Spiritspeaker\" state, which will allow him to interact with \"Nightspirit Graffiti\" and \"Nightspirit Sigils,\" extracting information and power from them. The rules for interacting with these objects follow the same rules as those governing Iktomisaurus interactions.",
+      "3": "<br/>",
+      "4": "Additionally, holding the jump button will cause Ororon to consume 75 Stamina and leap. In areas within Natlan where Phlogiston mechanics are present, Ororon will prioritize consuming 5 Phlogiston to leap to a height higher still.",
+      "5": "When in the air, Ororon can Hold his Normal Attack to consume Phlogiston or Stamina and enter Aiming Mode."
+    }
+  },
+  "passive": {
+    "name": "The Art of Skinchanging",
+    "description": {
+      "0": "Increases gliding SPD for your own party members by 15%.",
+      "1": "Not stackable with Passive Talents that provide the exact same effects."
+    }
+  },
+  "constellation1": {
+    "name": "Trails Amidst the Forest Fog",
+    "description": {
+      "0": "The Elemental Skill <strong>Night's Sling</strong>'s <strong>Spirit Orb</strong> can bounce 2 additional times.",
+      "1": "Additionally, after the <strong>Spirit Orb</strong> hits an opponent, it will apply the Nighttide effect to them for 12s. Opponents affected by Nighttide take 50% increased DMG from Hypersense triggered by the Passive Talent, \"Nightshade Synesthesia.\" Unlock the aforementioned Passive Talent to trigger this effect."
+    }
+  },
+  "constellation2": {
+    "name": "King Bee of the Hidden Honeyed Wine",
+    "description": {
+      "0": "After using his Elemental Burst, <strong>Dark Voices Echo</strong>, Ororon will obtain the Spiritual Supersense effect for 9s.",
+      "1": "<br/>",
+      "2": "<strong>Spiritual Supersense</strong>",
+      "3": "Gain 8% <electro>Electro DMG Bonus</electro>.",
+      "4": "Additionally, during this time, every additional opponent hit by the Elemental Burst <strong>Dark Voices Echo</strong> or <strong>Supersonic Oculus</strong> will grant Ororon a further 8% <electro>Electro DMG Bonus</electro>. The maximum that can be gained this way is 32% <electro>Electro DMG Bonus</electro>."
+    }
+  },
+  "constellation3": {
+    "name": "Roosting Bat's Spiritcage",
+    "description": {
+      "0": "Increases the Level of <strong>Dark Voices Echo</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "As the Mysteries of the Night Wind",
+    "description": {
+      "0": "The <strong>Supersonic Oculus</strong> summoned by the Elemental Burst <strong>Dark Voices Echo</strong> rotates 25% faster.",
+      "1": "Additionally, Ororon will restore 8 Energy to himself after using <strong>Dark Voices Echo</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "A Gift For the Soul",
+    "description": {
+      "0": "Increases the Level of <strong>Night's Sling</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ode to Deep Springs",
+    "description": {
+      "0": "After triggering Hypersense through the Passive Talent, Nightshade Synesthesia, your current active character's ATK is increased by 10% for 9s. Max 3 stacks, each stack is counted independently.",
+      "1": "Additionally, when you use the Elemental Burst <strong>Dark Voices Echo</strong>, you will trigger one instance of an effect equivalent to Hypersense, dealing 200% of its original DMG.",
+      "2": "You must unlock the Passive Talent \"Nightshade Synesthesia\" first."
+    }
+  }
+}

@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Campeã da Espada",
-        "fullDesc": "Após usar Clarão Transcendente, a próxima ação será Avançada Adiante em {{1, percent}}%.",
+        "fullDesc": "Após usar o \"Clarão Transcendente\", a próxima ação será Avançada Adiante em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Ira Gélida",
-        "fullDesc": "Aumenta o Dano da Perícia Suprema em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
+        "fullDesc": "Aumenta o Dano causado pela Perícia Suprema em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
         "shortDesc": "",
         "tag": ""
       }

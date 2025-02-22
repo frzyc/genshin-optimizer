@@ -6,8 +6,9 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LocationKey } from '@genshin-optimizer/sr/consts'
+import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
-  lightConeData,
+  lightConeTagMapNodeEntries,
   own,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr/formula'
@@ -24,9 +25,10 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense } from 'react'
+import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LocationAutocomplete } from '../Character'
+import { LocationAutocomplete, StatDisplay } from '../Character'
+import { LocationName } from '../Components'
 import { LightConeName } from './LightConeTrans'
 
 export type LightConeCardProps = {
@@ -50,10 +52,16 @@ export function LightConeCard({
   setLocation,
   extraButtons,
 }: LightConeCardProps) {
-  const { t } = useTranslation(['lightCone', 'sheet_gen'])
+  const { t } = useTranslation(['lightCone', 'lightCones_gen', 'common_gen'])
 
   const { key, level, ascension, superimpose, location = '', lock } = lightCone
-  const calc = srCalculatorWithEntries(lightConeData(lightCone))
+  const calc = useMemo(
+    () =>
+      srCalculatorWithEntries(
+        lightConeTagMapNodeEntries(key, level, ascension, superimpose)
+      ),
+    [ascension, key, level, superimpose]
+  )
   const lcStat = getLightConeStat(key)
 
   return (
@@ -106,13 +114,13 @@ export function LightConeCard({
               </Typography>
             </Box>
             <Typography component="span" variant="h5">
-              {t('sheet_gen:lvl')} {level}
+              {t('common_gen:lv')} {level}
             </Typography>
             <Typography component="span" variant="h5" color="text.secondary">
               /{ascensionMaxLevel[ascension]}
             </Typography>
             <Typography variant="h6">
-              {t('sheet_gen:superimpose')} {superimpose}
+              {t('lightCones_gen:superimpose')} {superimpose}
             </Typography>
             <StarsDisplay stars={lcStat.rarity} colored />
           </Box>
@@ -142,15 +150,9 @@ export function LightConeCard({
             width: '100%',
           }}
         >
-          <Typography>
-            HP: {calc.compute(own.base.hp.with('sheet', 'lightCone')).val}
-          </Typography>
-          <Typography>
-            ATK: {calc.compute(own.base.atk.with('sheet', 'lightCone')).val}
-          </Typography>
-          <Typography>
-            DEF: {calc.compute(own.base.def.with('sheet', 'lightCone')).val}
-          </Typography>
+          {(['hp', 'atk', 'def'] as const).map((stat) => (
+            <StatRow key={stat} calc={calc} stat={stat} />
+          ))}
         </CardContent>
         <Box
           sx={{
@@ -170,8 +172,7 @@ export function LightConeCard({
                 disableClearable
               />
             ) : (
-              // TODO: replace with LocationName component after porting it from GO
-              <Typography>{location}</Typography>
+              <LocationName location={location} />
             )}
           </Box>
           <Box
@@ -215,5 +216,24 @@ export function LightConeCard({
         </Box>
       </CardThemed>
     </Suspense>
+  )
+}
+function StatRow({
+  calc,
+  stat,
+}: {
+  calc: Calculator
+  stat: 'hp' | 'atk' | 'def'
+}) {
+  return (
+    <Typography
+      key={stat}
+      sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+    >
+      <StatDisplay statKey={stat} />
+      <span>
+        {calc.compute(own.base[stat].with('sheet', 'lightCone')).val.toFixed()}
+      </span>
+    </Typography>
   )
 }

@@ -1,0 +1,8 @@
+{
+  "name": "zzz-svgicons",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/svgicons/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

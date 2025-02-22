@@ -45,7 +45,7 @@ export function EquippedGrid({
   weaponId?: string
   artifactIds?: Record<ArtifactSlotKey, string | undefined>
   setWeapon: (id: string) => void
-  setArtifact: (slotKey: ArtifactSlotKey, id: string) => void
+  setArtifact: (slotKey: ArtifactSlotKey, id: string | null) => void
 }) {
   const database = useDatabase()
 
@@ -73,6 +73,7 @@ export function EquippedGrid({
           onClose={hideWeapon}
           extraButtons={
             <LargeWeaponSwapButton
+              weaponId={weaponId || ''}
               weaponTypeKey={weaponTypeKey}
               onChangeId={setWeapon}
             />
@@ -93,6 +94,7 @@ export function EquippedGrid({
               onEdit={showWeapon}
               extraButtons={
                 <WeaponSwapButton
+                  weaponId={weaponId}
                   weaponTypeKey={weaponTypeKey}
                   onChangeId={setWeapon}
                 />
@@ -100,6 +102,7 @@ export function EquippedGrid({
             />
           ) : (
             <WeaponSwapCard
+              weaponId=""
               weaponTypeKey={weaponTypeKey}
               onChangeId={setWeapon}
             />
@@ -113,6 +116,7 @@ export function EquippedGrid({
                   artifactId={id}
                   extraButtons={
                     <ArtifactSwapButton
+                      artifactId={id}
                       slotKey={slotKey}
                       onChangeId={(id) => setArtifact(slotKey, id)}
                     />
@@ -135,9 +139,11 @@ export function EquippedGrid({
   )
 }
 export function WeaponSwapCard({
+  weaponId,
   weaponTypeKey,
   onChangeId,
 }: {
+  weaponId: string
   weaponTypeKey: WeaponTypeKey
   onChangeId: (id: string) => void
 }) {
@@ -170,6 +176,7 @@ export function WeaponSwapCard({
         }}
       >
         <WeaponSwapModal
+          weaponId={weaponId}
           weaponTypeKey={weaponTypeKey}
           show={show}
           onClose={onClose}
@@ -188,7 +195,7 @@ export function ArtSwapCard({
   onChangeId,
 }: {
   slotKey: ArtifactSlotKey
-  onChangeId: (id: string) => void
+  onChangeId: (id: string | null) => void
 }) {
   const [show, onOpen, onClose] = useBoolState()
   const { t } = useTranslation('artifact')
@@ -219,6 +226,7 @@ export function ArtSwapCard({
         }}
       >
         <ArtifactSwapModal
+          artId=""
           slotKey={slotKey}
           show={show}
           onClose={onClose}
@@ -232,18 +240,20 @@ export function ArtSwapCard({
   )
 }
 function ArtifactSwapButton({
+  artifactId,
   slotKey,
   onChangeId,
 }: {
+  artifactId: string
   slotKey: ArtifactSlotKey
-  onChangeId: (id: string) => void
+  onChangeId: (id: string | null) => void
 }) {
   const { t } = useTranslation('page_character')
   const [show, onOpen, onClose] = useBoolState()
   return (
     <>
       <Tooltip
-        title={<Typography>{t`tabEquip.swapArt`}</Typography>}
+        title={<Typography>{t('tabEquip.swapArt')}</Typography>}
         placement="top"
         arrow
       >
@@ -252,6 +262,7 @@ function ArtifactSwapButton({
         </Button>
       </Tooltip>
       <ArtifactSwapModal
+        artId={artifactId}
         slotKey={slotKey}
         show={show}
         onClose={onClose}
@@ -261,9 +272,11 @@ function ArtifactSwapButton({
   )
 }
 function WeaponSwapButton({
+  weaponId,
   weaponTypeKey,
   onChangeId,
 }: {
+  weaponId: string
   weaponTypeKey: WeaponTypeKey
   onChangeId: (id: string) => void
 }) {
@@ -273,7 +286,7 @@ function WeaponSwapButton({
   return (
     <>
       <Tooltip
-        title={<Typography>{t`tabEquip.swapWeapon`}</Typography>}
+        title={<Typography>{t('tabEquip.swapWeapon')}</Typography>}
         placement="top"
         arrow
       >
@@ -282,6 +295,7 @@ function WeaponSwapButton({
         </Button>
       </Tooltip>
       <WeaponSwapModal
+        weaponId={weaponId}
         weaponTypeKey={weaponTypeKey}
         onChangeId={onChangeId}
         show={show}
@@ -291,9 +305,11 @@ function WeaponSwapButton({
   )
 }
 function LargeWeaponSwapButton({
+  weaponId,
   weaponTypeKey,
   onChangeId,
 }: {
+  weaponId: string
   weaponTypeKey: WeaponTypeKey
   onChangeId: (id: string) => void
 }) {
@@ -301,12 +317,11 @@ function LargeWeaponSwapButton({
   const [show, onOpen, onClose] = useBoolState()
   return (
     <>
-      <Button
-        color="info"
-        onClick={onOpen}
-        startIcon={<SwapHorizIcon />}
-      >{t`tabEquip.swapWeapon`}</Button>
+      <Button color="info" onClick={onOpen} startIcon={<SwapHorizIcon />}>
+        {t('tabEquip.swapWeapon')}
+      </Button>
       <WeaponSwapModal
+        weaponId={weaponId}
         weaponTypeKey={weaponTypeKey}
         onChangeId={onChangeId}
         show={show}

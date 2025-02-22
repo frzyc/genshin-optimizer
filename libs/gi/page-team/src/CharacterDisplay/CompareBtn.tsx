@@ -41,11 +41,11 @@ export default function CompareBtn({
       <span>
         {database.buildTcs.get(compareBuildTcId)?.name ?? ''}{' '}
         <SqBadge color="info" sx={{ ml: 1 }}>
-          {t`compareBtn.tcBadge`}
+          {t('compareBtn.tcBadge')}
         </SqBadge>
       </span>
     ) : (
-      t`compareBtn.equipped`
+      t('compareBtn.equipped')
     )
   const current =
     (compareType === 'equipped' && buildType === 'equipped') ||
@@ -66,7 +66,7 @@ export default function CompareBtn({
           })
         }
       >
-        {t`compareBtn.compare`}
+        {t('compareBtn.compare')}
       </Button>
       <DropdownButton
         title={
@@ -74,7 +74,7 @@ export default function CompareBtn({
             {selectedLabel}{' '}
             {current && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                {t`compareBtn.crrBadge`}
+                {t('compareBtn.crrBadge')}
               </SqBadge>
             )}
           </>
@@ -88,10 +88,10 @@ export default function CompareBtn({
             })
           }
         >
-          {t`compareBtn.equipped`}
+          {t('compareBtn.equipped')}
           {buildType === 'equipped' && (
             <SqBadge color="info" sx={{ ml: 1 }}>
-              {t`compareBtn.crrBadge`}
+              {t('compareBtn.crrBadge')}
             </SqBadge>
           )}
         </MenuItem>
@@ -109,7 +109,7 @@ export default function CompareBtn({
             {database.builds.get(bId)!.name}{' '}
             {buildType === 'real' && bId === buildId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                {t`compareBtn.crrBadge`}
+                {t('compareBtn.crrBadge')}
               </SqBadge>
             )}
           </MenuItem>
@@ -126,11 +126,11 @@ export default function CompareBtn({
           >
             {database.buildTcs.get(bTcId)?.name ?? ''}{' '}
             <SqBadge color="info" sx={{ ml: 1 }}>
-              {t`compareBtn.tcBadge`}
+              {t('compareBtn.tcBadge')}
             </SqBadge>
             {buildType === 'tc' && bTcId === buildTcId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                {t`compareBtn.crrBadge`}
+                {t('compareBtn.crrBadge')}
               </SqBadge>
             )}
           </MenuItem>

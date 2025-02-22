@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Pas si vite !",
-        "fullDesc": "Crée une dimension spéciale qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis pris dans la dimension sont affectés par Prison onirique et arrêtent toutes leurs actions. Le nombre de frappes par action du prochain ultime de Micha augmente de {{2}} lorsqu'il entre en combat contre des ennemis affectés par Prison onirique. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis pris dans la dimension spéciale sont affectés par Prison onirique et arrêtent toutes leurs actions. Le nombre de frappes par action du prochain ultime de Micha augmente de {{2}} lorsqu'il entre en combat contre des ennemis affectés par Prison onirique. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale qui arrête tous les ennemis qui s'y trouvent. Le <orangeStrong>prochain ultime de Micha inflige plus de frappes par action</orangeStrong> après être entré en combat contre des ennemis à l'intérieur de la dimension.",
         "tag": "Incapacitation"
       }
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Libération",
-        "fullDesc": "Augmente les chances de base de geler la cible avant que la première frappe de l'ultime ne touche de {{1, percent}}%.",
+        "fullDesc": "Augmente de {{1, percent}}% les chances de base de geler la cible avant que la première frappe de l'ultime ne touche.",
         "shortDesc": "",
         "tag": ""
       }

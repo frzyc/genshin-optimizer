@@ -12,11 +12,7 @@ export default async function genIndex(tree: Tree, map_type: string) {
   const file_location = `${workspaceRoot}/libs/sr/stats/src/mappedStats/${map_type}/index.ts`
   switch (map_type) {
     case 'char':
-      // TODO: Add Trailblazer support
-      await writeIndex(
-        file_location,
-        allCharacterKeys.filter((key) => !key.includes('Trailblazer'))
-      )
+      await writeIndex(file_location, allCharacterKeys)
       break
     case 'relic':
       await writeIndex(file_location, allRelicSetKeys)

@@ -52,8 +52,8 @@
       "8": "<strong>Pirueta Turbo</strong>",
       "9": "É capaz de existir independentemente, ou pode ser montado por Kachina. Enquanto Pirueta Turbo existir, a Habilidade Elemental de Kachina \"Ataque, Pirueta Turbo!\" será substituída por montar ou desmontar de Pirueta Turbo.",
       "10": [
-        " Enquanto Pirueta Turbo existir independente, periodicamente golpeará o chão, causando <geo>Dano Geo em AdE</geo> baseado na DEF de Kachina que possui o alinhamento Espírito da Noite.",
-        " Quando Kachina montar em Pirueta Turbo, poderá controlá-lo para se mover e escalar rapidamente, e ao fazer um Ataque Normal, golpeará o chão, causando <geo>Dano Geo em AdE</geo> baseado na sua DEF que possui o alinhamento Espírito da Noite."
+        " Enquanto Pirueta Turbo existir independente, periodicamente golpeará o chão, causando <geo>Dano Geo em AdE</geo> baseado na DEF de Kachina que possui o alinhamento de Espírito da Noite.",
+        " Quando Kachina montar em Pirueta Turbo, poderá controlá-lo para se mover e escalar rapidamente, e ao fazer um Ataque Normal, golpeará o chão, causando <geo>Dano Geo em AdE</geo> baseado na sua DEF que possui o alinhamento de Espírito da Noite."
       ],
       "11": "<br/>",
       "12": "Pirueta Turbo desaparecerá quando a duração do estado Bênção do Espírito da Noite de Kachina acabar, e é considerado uma Construção Geo. Só é possível existir simultaneamente um Pirueta Turbo criado por Kachina.",
@@ -124,7 +124,7 @@
     "name": "Presente do Reino da Noite: Coração da Unidade",
     "description": {
       "0": "Depois que os pontos de Espírito da Noite de Kachina acabarem, ela mudará para consumir Flogisto para manter a Bênção do Espírito da Noite.",
-      "1": "Enquanto em Natlan ou numa área com Dispositivos de Flogisto, ela pode usar Transmissão do Espírito da Noite: Kachina. Quando o personagem ativo estiver correndo, escalando, sob um estado especial de movimento de um Talento ou em uma certa altura no ar, trocar para Kachina como personagem ativa desencadeará: Kachina entra no estado Bênção do Espírito da Noite e monta <strong>Pirueta Turbo</strong> ao virar a personagem ativa, ganhando 30 pontos de Espírito da Noite. Sua própria equipe pode entrar em Transmissão do Espírito da Noite uma vez a cada 10s.",
+      "1": "Enquanto estiver numa área de Natlan com Dispositivos de Flogisto, ela pode usar Transmissão do Espírito da Noite: Kachina. Quando o personagem ativo estiver correndo, escalando, sob um estado especial de movimento de um Talento ou em uma certa altura no ar, trocar para Kachina como personagem ativa desencadeará: Kachina entra no estado Bênção do Espírito da Noite e monta <strong>Pirueta Turbo</strong> ao virar a personagem ativa, ganhando 30 pontos de Espírito da Noite. Sua própria equipe pode entrar em Transmissão do Espírito da Noite uma vez a cada 10s.",
       "2": "<br/>",
       "3": "Além disso, Kachina consumirá 90% a menos de Stamina enquanto estiver escalando e montada em <strong>Pirueta Turbo</strong> em Natlan."
     }

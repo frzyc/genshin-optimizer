@@ -5,9 +5,9 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ICachedLightCone, ICachedRelic } from '@genshin-optimizer/sr/db'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
-import type { ChildCommand, ChildMessage } from './childWorker'
+import type { ChildCommandInit, ChildMessage } from './childWorker'
 import { MAX_BUILDS } from './common'
 import type { BuildResult, ProgressResult } from './solver'
 
@@ -15,8 +15,10 @@ let workers: Worker[]
 
 export interface ParentCommandStart {
   command: 'start'
+  lightCones: ICachedLightCone[]
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   detachedNodes: NumTagFree[]
+  constraints: Array<{ value: number; isMax: boolean }>
   numWorkers: number
 }
 export interface ParentCommandTerminate {
@@ -52,6 +54,10 @@ export type RelicStats = {
   id: string
   stats: Record<string, number>
 }
+export type LightConeStats = {
+  id: string
+  stats: Record<string, number>
+}
 
 // Get proper typings for posting a message back to main thread
 declare function postMessage(message: ParentMessage): void
@@ -61,7 +67,7 @@ onmessage = async (e: MessageEvent<ParentCommand>) => {
   try {
     await handleEvent(e)
   } catch (err) {
-    console.log(err)
+    console.error(err)
     postMessage({ resultType: 'err', message: JSON.stringify(err) })
   }
 }
@@ -80,14 +86,16 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
 }
 
 async function start({
+  lightCones,
   relicsBySlot,
   detachedNodes,
+  constraints,
   numWorkers,
 }: ParentCommandStart) {
   // Step 3: Optimize nodes, as needed
   detachedNodes = flatten(detachedNodes)
   detachedNodes = combineConst(detachedNodes)
-
+  const lightConeStats = lightCones.map(convertLightConeToStats)
   const relicStatsBySlot = objKeyMap(allRelicSlotKeys, (slot) =>
     relicsBySlot[slot].map(convertRelicToStats)
   )
@@ -96,7 +104,10 @@ async function start({
   const { largestSlot } = Object.entries(relicsBySlot).reduce(
     ({ largestSlot, largestSize }, [currentSlot, relics]) =>
       relics.length > largestSize
-        ? { largestSlot: currentSlot, largestSize: relics.length }
+        ? {
+            largestSlot: currentSlot as RelicSlotKey,
+            largestSize: relics.length,
+          }
         : { largestSlot, largestSize },
     { largestSlot: 'head' as RelicSlotKey, largestSize: -1 }
   )
@@ -123,9 +134,19 @@ async function start({
         type: 'module',
       })
   )
-  // Wait for all workers to finish optimizing
+
   let results: BuildResult[] = []
   let numBuildsComputed = 0
+
+  // post initial progress
+  postMessage({
+    resultType: 'progress',
+    progress: {
+      numBuildsKept: 0,
+      numBuildsComputed: 0,
+    },
+  })
+  // Wait for all workers to finish optimizing
   await Promise.all(
     workers.map((worker, index) => {
       return new Promise<void>((res, rej) => {
@@ -158,32 +179,29 @@ async function start({
               res()
               break
             case 'err':
-              console.log(data)
+              console.error(data)
               rej()
               break
           }
         }
 
         // Initialize worker
-        const message: ChildCommand = {
+        const message: ChildCommandInit = {
           command: 'init',
+          lightConeStats,
           relicStatsBySlot: chunkedRelicStatsBySlot[index],
           detachedNodes,
+          constraints,
         }
         worker.postMessage(message)
       })
     })
   )
 
-  // Trigger spinner on UI
-  if (results.length > MAX_BUILDS) {
-    results.sort((a, b) => b.value - a.value)
-    results = results.slice(0, MAX_BUILDS)
-  }
   // Send back results, which can take a few seconds
   postMessage({
     resultType: 'done',
-    buildResults: results,
+    buildResults: results.sort((a, b) => b.value - a.value).slice(0, 10), // TODO: take numBuilds from opt UI
   })
 }
 
@@ -195,18 +213,30 @@ function terminate() {
 }
 
 function convertRelicToStats(relic: ICachedRelic): RelicStats {
+  const { id, mainStatKey, level, rarity, setKey, substats } = relic
   return {
-    id: relic.id,
+    id,
     stats: {
-      [relic.mainStatKey]: getRelicMainStatVal(
-        relic.rarity,
-        relic.mainStatKey,
-        relic.level
-      ),
+      [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
       ...Object.fromEntries(
-        relic.substats.map((substat) => [substat.key, substat.value])
+        substats
+          .filter(({ key, value }) => key && value)
+          .map(({ key, value }) => [key, value])
       ),
-      [relic.setKey]: 1,
+      [setKey]: 1,
+    },
+  }
+}
+
+function convertLightConeToStats(lightCone: ICachedLightCone): LightConeStats {
+  const { id, key, level: lvl, ascension, superimpose } = lightCone
+  return {
+    id,
+    stats: {
+      lvl,
+      superimpose,
+      ascension,
+      [key]: 1,
     },
   }
 }

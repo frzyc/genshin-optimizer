@@ -1,0 +1,1575 @@
+{
+  "Id": 1151,
+  "Icon": "IconRole27",
+  "Name": "Lucy",
+  "CodeName": "Lucy",
+  "Rarity": 3,
+  "WeaponType": { "4": "Support" },
+  "ElementType": { "201": "Fire" },
+  "SpecialElementType": {},
+  "HitType": { "102": "Strike" },
+  "Camp": { "4": "Sons of Calydon" },
+  "Gender": 2,
+  "PartnerInfo": {
+    "Birthday": "AUG 14",
+    "FullName": "Luciana de Montefio",
+    "Gender": "Female",
+    "IconPath": "UI/Sprite/A1DynamicLoad/IconRoleCircle/UnPacker/IconRoleCircle27.png",
+    "ImpressionF": "Lucy's Knock Knock profile pic is soooo pretty! Is that what she looked like back when she was still living as a rich heiress?",
+    "ImpressionM": "I think Caesar mentioned Lucy only uses this profile picture because it's incredibly effective when it comes to talking business with others...",
+    "Name": "",
+    "OutlookDesc": "New Eridu Citizen Verification Profile Info:\nHollow Investigator — Luciana Auxesis Theodoro de Montefio, possessing good Ether aptitude, is allowed to perform basic tasks like investigating and extracting resources in known Hollows within the city (including Companion Hollows).\nNote: FYI, Luciana Auxesis Theodoro de Montefio is Lucy's full name.",
+    "ProfileDesc": "Lucy is currently in charge of outgoing business and managing boars for the Sons of Calydon.\nSince her name is far too long and she doesn't want to be involved with her family, she refers to herself as just \"Lucy\" in the Outer Ring.\nHer three boars are called Grassy, Woody, and Bricky, and they're unceasingly loyal to her.\nThough Lucy often speaks with a mixture of rough and elegant language, her actions subtly betray the marks of a proper education.\nLucy's family is incredibly wealthy. She grew up very privileged, with anything she could ever want within grasp... except for freedom.\nAfter her Ether Aptitude test results came back high, Lucy decided she wanted to be a Hollow investigator, but her family disapproved. She was met with harsh words, isolation and confinement, and emotional abuse which led to her deciding to leave to find her own freedom.\n\"Hmph! There's no chance I'll ever go back! If I'm found... then I can say goodbye to the stars and sky and I'll have to inherit the family business instead!\"\nLucy is extremely competitive. She loves to win and hates losing.\nCurrently, the one who has given her the most bitter taste of defeat is Caesar, so Lucy keeps challenging Caesar to duels, losing then challenging again, challenging then losing again.",
+    "Race": "Sons of Calydon",
+    "RoleIcon": "IconRole/UnPacker/IconRole27",
+    "Stature": "152",
+    "UnlockCondition": [
+      "Obtain Agent",
+      "Complete Main Story \"Leisurely Lull: Unexpected New Customer\" (available after completing Main Story Chapter 4) to unlock"
+    ],
+    "TrustLv": {
+      "1": "Lucy is currently in charge of outgoing business and managing boars for the Sons of Calydon.\nSince her name is far too long and she doesn't want to be involved with her family, she refers to herself as just \"Lucy\" in the Outer Ring.\nHer three boars are called Grassy, Woody, and Bricky, and they're unceasingly loyal to her.\nThough Lucy often speaks with a mixture of rough and elegant language, her actions subtly betray the marks of a proper education.\nLucy's family is incredibly wealthy. She grew up very privileged, with anything she could ever want within grasp... except for freedom.\nAfter her Ether Aptitude test results came back high, Lucy decided she wanted to be a Hollow investigator, but her family disapproved. She was met with harsh words, isolation and confinement, and emotional abuse which led to her deciding to leave to find her own freedom.\n\"Hmph! There's no chance I'll ever go back! If I'm found... then I can say goodbye to the stars and sky and I'll have to inherit the family business instead!\"\nLucy is extremely competitive. She loves to win and hates losing.\nCurrently, the one who has given her the most bitter taste of defeat is Caesar, so Lucy keeps challenging Caesar to duels, losing then challenging again, challenging then losing again.",
+      "2": "",
+      "3": "The way Lucy joined the Sons of Calydon was both comedic and dramatic.\nTo run away from home, she hired some \"kidnappers\" and devised a kidnapping for herself. Yet, this plan was accidentally screwed up by the Sons of Calydon — Caesar defeated all the \"kidnappers\" and saved their \"victim.\"\nAccording to eye-witness testimony, the sight of Caesar crashing straight through the door on her ride with the sunlight behind her left quite the impression on Lucy.\n\"That was when I saw it — freedom.\"\nFrom then on, Lucy stuck with Caesar, eager to join the Sons of Calydon.",
+      "4": ""
+    }
+  },
+  "Skin": {},
+  "Stats": {
+    "Armor": 0,
+    "ArmorGrowth": 0,
+    "Attack": 95,
+    "AttackGrowth": 54230,
+    "AvatarPieceId": 5151,
+    "BreakStun": 86,
+    "BuffResistBurnPossibilityDelta": 0,
+    "BuffResistBurnPossibilityRatio": 0,
+    "BuffResistElectricPossibilityDelta": 0,
+    "BuffResistElectricPossibilityRatio": 0,
+    "BuffResistFrozenPossibilityDelta": 0,
+    "BuffResistFrozenPossibilityRatio": 0,
+    "Crit": 500,
+    "CritDamage": 5000,
+    "CritDmgRes": 0,
+    "CritRes": 0,
+    "Defence": 49,
+    "DefenceGrowth": 66882,
+    "ElementAbnormalPower": 94,
+    "ElementMystery": 93,
+    "Endurance": 0,
+    "HpGrowth": 875757,
+    "HpMax": 645,
+    "Luck": 10,
+    "PenDelta": 0,
+    "PenRate": 0,
+    "Rbl": 1,
+    "RblCorrectionFactor": 10000,
+    "RblProbability": 0,
+    "Shield": 0,
+    "ShieldGrowth": 0,
+    "SpBarPoint": 120,
+    "SpRecover": 120,
+    "StarInitial": 1,
+    "Stun": 0,
+    "Tags": [
+      "Lucy",
+      "Punch",
+      "Fire",
+      "Female",
+      "Camp4",
+      "Size1",
+      "AidTypeParry",
+      "Lucy"
+    ]
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": { "10": 24000, "100214": 4 }
+    },
+    "2": {
+      "HpMax": 443,
+      "Attack": 34,
+      "Defence": 34,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": { "10": 56000, "100224": 12 }
+    },
+    "3": {
+      "HpMax": 886,
+      "Attack": 68,
+      "Defence": 68,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": { "10": 120000, "100224": 20 }
+    },
+    "4": {
+      "HpMax": 1329,
+      "Attack": 102,
+      "Defence": 101,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": { "10": 200000, "100234": 10 }
+    },
+    "5": {
+      "HpMax": 1772,
+      "Attack": 135,
+      "Defence": 135,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": { "10": 400000, "100234": 20 }
+    },
+    "6": {
+      "HpMax": 2214,
+      "Attack": 169,
+      "Defence": 169,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {}
+    }
+  },
+  "ExtraLevel": {
+    "1": {
+      "MaxLevel": 15,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 0
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 12
+        }
+      }
+    },
+    "2": {
+      "MaxLevel": 25,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 12
+        }
+      }
+    },
+    "3": {
+      "MaxLevel": 35,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 24
+        }
+      }
+    },
+    "4": {
+      "MaxLevel": 45,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 24
+        }
+      }
+    },
+    "5": {
+      "MaxLevel": 55,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 36
+        }
+      }
+    },
+    "6": {
+      "MaxLevel": 60,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 75
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 36
+        }
+      }
+    }
+  },
+  "LevelEXP": [
+    50, 150, 250, 400, 600, 800, 1000, 1250, 1500, 1800, 1935, 2065, 2200, 2335,
+    2465, 2600, 2735, 2865, 3000, 4680, 4975, 5265, 5560, 5855, 6145, 6440,
+    6735, 7025, 7320, 10800, 11400, 12000, 12600, 13200, 13800, 14400, 15000,
+    15600, 16200, 17100, 18300, 19500, 20700, 21900, 23100, 24300, 25500, 26700,
+    27900, 34200, 36600, 39000, 41400, 43800, 46200, 48600, 51000, 53400, 55800,
+    0
+  ],
+  "Skill": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "Basic Attack: Lady's Bat",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nStrike forward up to 4 times, dealing <color=#F0D12B>Physical DMG</color> and <color=#FF5521>Fire DMG</color>.\nWhen Lucy uses her fourth <color=#FFFFFF>Basic Attack</color>, the currently on-field guard boars will launch <color=#FFFFFF>Guard Boars: Spinning Swing!</color> together."
+        },
+        {
+          "Name": "Guard Boars: To Arms!",
+          "Desc": "In combat, the guard boars will randomly use a baseball bat, boxing gloves, or a slingshot to automatically attack enemies, dealing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Guard Boars: Spinning Swing!",
+          "Desc": "When Lucy uses the fourth <color=#FFFFFF>Basic Attack</color>, or when she gains the <color=#FFFFFF>Cheer On!</color> status, the guard boars will whirl their baseball bats in a continuous motion, dealing <color=#F0D12B>Physical DMG</color> to nearby enemies. If the attack cannot be executed immediately, the guard boars will remember the required number of times to execute it."
+        },
+        {
+          "Name": "Basic Attack: Lady's Bat",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1151001, Prop:1001}",
+              "Param": {
+                "1151001": {
+                  "Main": 5660,
+                  "Growth": 520,
+                  "Format": "%",
+                  "DamagePercentage": 5660,
+                  "DamagePercentageGrowth": 520,
+                  "StunRatio": 2830,
+                  "StunRatioGrowth": 130,
+                  "SpRecovery": 10190,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 77825,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1151002, Prop:1001}",
+              "Param": {
+                "1151002": {
+                  "Main": 7780,
+                  "Growth": 710,
+                  "Format": "%",
+                  "DamagePercentage": 7780,
+                  "DamagePercentageGrowth": 710,
+                  "StunRatio": 6500,
+                  "StunRatioGrowth": 300,
+                  "SpRecovery": 23400,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 178750,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1151004, Prop:1001}",
+              "Param": {
+                "1151004": {
+                  "Main": 18890,
+                  "Growth": 1720,
+                  "Format": "%",
+                  "DamagePercentage": 18890,
+                  "DamagePercentageGrowth": 1720,
+                  "StunRatio": 15740,
+                  "StunRatioGrowth": 720,
+                  "SpRecovery": 56660,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 432850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 13401,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit (ALT) DMG Multiplier",
+              "Desc": "{Skill:1151003, Prop:1001}",
+              "Param": {
+                "1151003": {
+                  "Main": 21150,
+                  "Growth": 1930,
+                  "Format": "%",
+                  "DamagePercentage": 21150,
+                  "DamagePercentageGrowth": 1930,
+                  "StunRatio": 16230,
+                  "StunRatioGrowth": 740,
+                  "SpRecovery": 58420,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 446325,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit DMG Multiplier",
+              "Desc": "{Skill:1151005, Prop:1001}",
+              "Param": {
+                "1151005": {
+                  "Main": 27260,
+                  "Growth": 2480,
+                  "Format": "%",
+                  "DamagePercentage": 27260,
+                  "DamagePercentageGrowth": 2480,
+                  "StunRatio": 20800,
+                  "StunRatioGrowth": 950,
+                  "SpRecovery": 74880,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 572000,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 18625,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1151001, Prop:1002}",
+              "Param": {
+                "1151001": {
+                  "Main": 2830,
+                  "Growth": 130,
+                  "Format": "%",
+                  "DamagePercentage": 5660,
+                  "DamagePercentageGrowth": 520,
+                  "StunRatio": 2830,
+                  "StunRatioGrowth": 130,
+                  "SpRecovery": 10190,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 77825,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1151002, Prop:1002}",
+              "Param": {
+                "1151002": {
+                  "Main": 6500,
+                  "Growth": 300,
+                  "Format": "%",
+                  "DamagePercentage": 7780,
+                  "DamagePercentageGrowth": 710,
+                  "StunRatio": 6500,
+                  "StunRatioGrowth": 300,
+                  "SpRecovery": 23400,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 178750,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1151004, Prop:1002}",
+              "Param": {
+                "1151004": {
+                  "Main": 15740,
+                  "Growth": 720,
+                  "Format": "%",
+                  "DamagePercentage": 18890,
+                  "DamagePercentageGrowth": 1720,
+                  "StunRatio": 15740,
+                  "StunRatioGrowth": 720,
+                  "SpRecovery": 56660,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 432850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 13401,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit (ALT) Daze Multiplier",
+              "Desc": "{Skill:1151003, Prop:1002}",
+              "Param": {
+                "1151003": {
+                  "Main": 16230,
+                  "Growth": 740,
+                  "Format": "%",
+                  "DamagePercentage": 21150,
+                  "DamagePercentageGrowth": 1930,
+                  "StunRatio": 16230,
+                  "StunRatioGrowth": 740,
+                  "SpRecovery": 58420,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 446325,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Daze Multiplier",
+              "Desc": "{Skill:1151005, Prop:1002}",
+              "Param": {
+                "1151005": {
+                  "Main": 20800,
+                  "Growth": 950,
+                  "Format": "%",
+                  "DamagePercentage": 27260,
+                  "DamagePercentageGrowth": 2480,
+                  "StunRatio": 20800,
+                  "StunRatioGrowth": 950,
+                  "SpRecovery": 74880,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 572000,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 18625,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Guard Boars: To Arms!",
+          "Param": [
+            {
+              "Name": "Baseball Bat DMG Multiplier",
+              "Desc": "{Skill:1151023, Prop:1001}",
+              "Param": {
+                "1151023": {
+                  "Main": 9250,
+                  "Growth": 850,
+                  "Format": "%",
+                  "DamagePercentage": 9250,
+                  "DamagePercentageGrowth": 850,
+                  "StunRatio": 1550,
+                  "StunRatioGrowth": 80,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Boxing Gloves DMG Multiplier",
+              "Desc": "{Skill:1151024, Prop:1001}",
+              "Param": {
+                "1151024": {
+                  "Main": 12750,
+                  "Growth": 1160,
+                  "Format": "%",
+                  "DamagePercentage": 12750,
+                  "DamagePercentageGrowth": 1160,
+                  "StunRatio": 2130,
+                  "StunRatioGrowth": 100,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Slingshot DMG Multiplier",
+              "Desc": "{Skill:1151025, Prop:1001}",
+              "Param": {
+                "1151025": {
+                  "Main": 17500,
+                  "Growth": 1600,
+                  "Format": "%",
+                  "DamagePercentage": 17500,
+                  "DamagePercentageGrowth": 1600,
+                  "StunRatio": 2920,
+                  "StunRatioGrowth": 140,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Baseball Bat Daze Multiplier",
+              "Desc": "{Skill:1151023, Prop:1002}",
+              "Param": {
+                "1151023": {
+                  "Main": 1550,
+                  "Growth": 80,
+                  "Format": "%",
+                  "DamagePercentage": 9250,
+                  "DamagePercentageGrowth": 850,
+                  "StunRatio": 1550,
+                  "StunRatioGrowth": 80,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Boxing Gloves Daze Multiplier",
+              "Desc": "{Skill:1151024, Prop:1002}",
+              "Param": {
+                "1151024": {
+                  "Main": 2130,
+                  "Growth": 100,
+                  "Format": "%",
+                  "DamagePercentage": 12750,
+                  "DamagePercentageGrowth": 1160,
+                  "StunRatio": 2130,
+                  "StunRatioGrowth": 100,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Slingshot Daze Multiplier",
+              "Desc": "{Skill:1151025, Prop:1002}",
+              "Param": {
+                "1151025": {
+                  "Main": 2920,
+                  "Growth": 140,
+                  "Format": "%",
+                  "DamagePercentage": 17500,
+                  "DamagePercentageGrowth": 1600,
+                  "StunRatio": 2920,
+                  "StunRatioGrowth": 140,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Guard Boars: Spinning Swing!",
+          "Param": [
+            {
+              "Name": "Spinning Swing DMG Multiplier",
+              "Desc": "{Skill:1151026, Prop:1001}",
+              "Param": {
+                "1151026": {
+                  "Main": 25000,
+                  "Growth": 2280,
+                  "Format": "%",
+                  "DamagePercentage": 25000,
+                  "DamagePercentageGrowth": 2280,
+                  "StunRatio": 2000,
+                  "StunRatioGrowth": 100,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Spinning Swing Daze Multiplier",
+              "Desc": "{Skill:1151026, Prop:1002}",
+              "Param": {
+                "1151026": {
+                  "Main": 2000,
+                  "Growth": 100,
+                  "Format": "%",
+                  "DamagePercentage": 25000,
+                  "DamagePercentageGrowth": 2280,
+                  "StunRatio": 2000,
+                  "StunRatioGrowth": 100,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "Dodge: Foul Ball!",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Fearless Boar!",
+          "Desc": "Press <IconMap:Icon_Normal> during dodge to activate:\nRapidly strikes enemies in front, dealing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Dodge Counter: Returning Tusk!",
+          "Desc": "Press <IconMap:Icon_Normal> during a Perfect Dodge to activate:\nStrike enemies in front, dealing <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Fearless Boar!",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1151014, Prop:1001}",
+              "Param": {
+                "1151014": {
+                  "Main": 7840,
+                  "Growth": 720,
+                  "Format": "%",
+                  "DamagePercentage": 7840,
+                  "DamagePercentageGrowth": 720,
+                  "StunRatio": 3920,
+                  "StunRatioGrowth": 180,
+                  "SpRecovery": 14110,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 107800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1151014, Prop:1002}",
+              "Param": {
+                "1151014": {
+                  "Main": 3920,
+                  "Growth": 180,
+                  "Format": "%",
+                  "DamagePercentage": 7840,
+                  "DamagePercentageGrowth": 720,
+                  "StunRatio": 3920,
+                  "StunRatioGrowth": 180,
+                  "SpRecovery": 14110,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 107800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Dodge Counter: Returning Tusk!",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1151015, Prop:1001}",
+              "Param": {
+                "1151015": {
+                  "Main": 30800,
+                  "Growth": 2800,
+                  "Format": "%",
+                  "DamagePercentage": 30800,
+                  "DamagePercentageGrowth": 2800,
+                  "StunRatio": 26000,
+                  "StunRatioGrowth": 1190,
+                  "SpRecovery": 57590,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 440000,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 15996,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1151015, Prop:1002}",
+              "Param": {
+                "1151015": {
+                  "Main": 26000,
+                  "Growth": 1190,
+                  "Format": "%",
+                  "DamagePercentage": 30800,
+                  "DamagePercentageGrowth": 2800,
+                  "StunRatio": 26000,
+                  "StunRatioGrowth": 1190,
+                  "SpRecovery": 57590,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 440000,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 15996,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "Special Attack: Solid Hit!",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nRecall a guard boar and launch it as a <color=#FFFFFF>Line Drive</color>. The guard boar will cause an explosion upon hitting enemies or walls, dealing <color=#FF5521>Fire DMG</color>.\nHold <IconMap:Icon_Special> to activate:\nRecall a guard boar and launch it as a <color=#FFFFFF>Fly Ball</color>. The guard boar will cause an explosion upon landing, dealing <color=#FF5521>Fire DMG</color>."
+        },
+        {
+          "Name": "EX Special Attack: Home Run!",
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nRecall a guard boar and launch it as a <color=#FFFFFF>Line Drive</color>. The guard boar will cause an explosion upon hitting enemies or walls, dealing massive <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill.\nWhen the skill hits an enemy, it triggers a <color=#FFFFFF>Quick Assist</color>.\nWith enough Energy, hold <IconMap:Icon_SpecialReady> to activate:\nRecall a guard boar and launch it as a <color=#FFFFFF>Fly Ball</color>. The guard boar will cause an explosion upon landing, dealing massive <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill.\nWhen the skill hits an enemy, it triggers a <color=#FFFFFF>Quick Assist</color>."
+        },
+        {
+          "Name": "Cheer On!",
+          "Desc": "After using <color=#FFFFFF>EX Special Attack</color>, when a guard boar triggers an explosion, it will apply the <color=#FFFFFF>Cheer On!</color> status to all allies, Bangboo, and the guard boars themselves. While under the <color=#FFFFFF>Cheer On!</color> status, allies' ATK increases by <color=#2BAD00>{CAL:13+AvatarSkillLevel(1)*0.8,1,2}%</color> of Lucy's initial ATK + <color=#2BAD00>{CAL:40+AvatarSkillLevel(1)*4,1,2}</color>, up to a maximum of 600. The <color=#FFFFFF>Cheer On!</color> status lasts for 10s when a <color=#FFFFFF>Line Drive</color> is hit, and 15s when a <color=#FFFFFF>Fly Ball</color> is hit. Repeated triggers reset the duration."
+        },
+        {
+          "Name": "Cheer On!",
+          "Param": [
+            {
+              "Name": "ATK Increase",
+              "Desc": "{CAL:13+AvatarSkillLevel(1)*0.8,1,2}% of Lucy's ATK + {CAL:40+AvatarSkillLevel(1)*4,1,2}"
+            }
+          ]
+        },
+        {
+          "Name": "Special Attack: Solid Hit!",
+          "Param": [
+            {
+              "Name": "Line Drive DMG Multiplier",
+              "Desc": "{Skill:1151008, Prop:1001}",
+              "Param": {
+                "1151008": {
+                  "Main": 6170,
+                  "Growth": 570,
+                  "Format": "%",
+                  "DamagePercentage": 6170,
+                  "DamagePercentageGrowth": 570,
+                  "StunRatio": 6170,
+                  "StunRatioGrowth": 290,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 169675,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6165,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Fly Ball DMG Multiplier",
+              "Desc": "{Skill:1151009, Prop:1001}",
+              "Param": {
+                "1151009": {
+                  "Main": 6920,
+                  "Growth": 630,
+                  "Format": "%",
+                  "DamagePercentage": 6920,
+                  "DamagePercentageGrowth": 630,
+                  "StunRatio": 6920,
+                  "StunRatioGrowth": 320,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 190300,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6915,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Line Drive Daze Multiplier",
+              "Desc": "{Skill:1151008, Prop:1002}",
+              "Param": {
+                "1151008": {
+                  "Main": 6170,
+                  "Growth": 290,
+                  "Format": "%",
+                  "DamagePercentage": 6170,
+                  "DamagePercentageGrowth": 570,
+                  "StunRatio": 6170,
+                  "StunRatioGrowth": 290,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 169675,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6165,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Fly Ball Daze Multiplier",
+              "Desc": "{Skill:1151009, Prop:1002}",
+              "Param": {
+                "1151009": {
+                  "Main": 6920,
+                  "Growth": 320,
+                  "Format": "%",
+                  "DamagePercentage": 6920,
+                  "DamagePercentageGrowth": 630,
+                  "StunRatio": 6920,
+                  "StunRatioGrowth": 320,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 190300,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6915,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "EX Special Attack: Home Run!",
+          "Param": [
+            {
+              "Name": "Line Drive DMG Multiplier",
+              "Desc": "{Skill:1151012, Prop:1001}",
+              "Param": {
+                "1151012": {
+                  "Main": 50840,
+                  "Growth": 4630,
+                  "Format": "%",
+                  "DamagePercentage": 50840,
+                  "DamagePercentageGrowth": 4630,
+                  "StunRatio": 36460,
+                  "StunRatioGrowth": 1660,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1661550,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 33541,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Fly Ball DMG Multiplier",
+              "Desc": "{Skill:1151013, Prop:1001}",
+              "Param": {
+                "1151013": {
+                  "Main": 53640,
+                  "Growth": 4880,
+                  "Format": "%",
+                  "DamagePercentage": 53640,
+                  "DamagePercentageGrowth": 4880,
+                  "StunRatio": 38960,
+                  "StunRatioGrowth": 1780,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1744050,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 34241,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Line Drive Daze Multiplier",
+              "Desc": "{Skill:1151012, Prop:1002}",
+              "Param": {
+                "1151012": {
+                  "Main": 36460,
+                  "Growth": 1660,
+                  "Format": "%",
+                  "DamagePercentage": 50840,
+                  "DamagePercentageGrowth": 4630,
+                  "StunRatio": 36460,
+                  "StunRatioGrowth": 1660,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1661550,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 33541,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Fly Ball Daze Multiplier",
+              "Desc": "{Skill:1151013, Prop:1002}",
+              "Param": {
+                "1151013": {
+                  "Main": 38960,
+                  "Growth": 1780,
+                  "Format": "%",
+                  "DamagePercentage": 53640,
+                  "DamagePercentageGrowth": 4880,
+                  "StunRatio": 38960,
+                  "StunRatioGrowth": 1780,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1744050,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 34241,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            { "Name": "Energy Cost", "Desc": "60" }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        {
+          "Name": "Chain Attack: Grand Slam!",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nLucy jumps up and sends a guard boar at enemies in front in a large area, dealing massive <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill.\nWhen the skill hits an enemy, it triggers a <color=#FFFFFF>Quick Assist</color>."
+        },
+        {
+          "Name": "Ultimate: Walk-Off Home Run!",
+          "Desc": "When Decibel Rating is at Maximum, press <IconMap:Icon_UltimateReady> to activate:\nLaunch all guard boars sequentially, dealing massive <color=#FF5521>Fire DMG</color> in a large area to enemies ahead.\nWhile using this skill, other squad members recover 10 energy, and the next character to switch in gains an additional 20 energy.\nCharacter is invulnerable while using this skill.\nWhen the skill hits an enemy, it triggers a <color=#FFFFFF>Quick Assist</color>."
+        },
+        {
+          "Name": "Chain Attack: Grand Slam!",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{{Skill:1151016, Prop:1001}/3}*3",
+              "Param": {
+                "1151016": {
+                  "Main": 49240,
+                  "Growth": 4480,
+                  "Format": "%",
+                  "DamagePercentage": 49240,
+                  "DamagePercentageGrowth": 4480,
+                  "StunRatio": 9340,
+                  "StunRatioGrowth": 430,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2085600,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 29280,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{{Skill:1151016, Prop:1002}/3}*3",
+              "Param": {
+                "1151016": {
+                  "Main": 9340,
+                  "Growth": 430,
+                  "Format": "%",
+                  "DamagePercentage": 49240,
+                  "DamagePercentageGrowth": 4480,
+                  "StunRatio": 9340,
+                  "StunRatioGrowth": 430,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2085600,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 29280,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Ultimate: Walk-Off Home Run!",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{{Skill:1151017, Prop:1001}/3}*3",
+              "Param": {
+                "1151017": {
+                  "Main": 171860,
+                  "Growth": 15630,
+                  "Format": "%",
+                  "DamagePercentage": 171860,
+                  "DamagePercentageGrowth": 15630,
+                  "StunRatio": 28350,
+                  "StunRatioGrowth": 1290,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 31500,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{{Skill:1151017, Prop:1002}/3}*3",
+              "Param": {
+                "1151017": {
+                  "Main": 28350,
+                  "Growth": 1290,
+                  "Format": "%",
+                  "DamagePercentage": 171860,
+                  "DamagePercentageGrowth": 15630,
+                  "StunRatio": 28350,
+                  "StunRatioGrowth": 1290,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 31500,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "Quick Assist: Hit By Pitch!",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nStrikes enemies in front, dealing <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable during the attack."
+        },
+        {
+          "Name": "Defensive Assist: Safe on Base!",
+          "Desc": "When the character on field is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Assist Follow-Up: Scored a Run!",
+          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nStrikes enemies in front, dealing <color=#FF5521>Fire DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Quick Assist: Hit By Pitch!",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1151018, Prop:1001}",
+              "Param": {
+                "1151018": {
+                  "Main": 16000,
+                  "Growth": 1460,
+                  "Format": "%",
+                  "DamagePercentage": 16000,
+                  "DamagePercentageGrowth": 1460,
+                  "StunRatio": 16000,
+                  "StunRatioGrowth": 730,
+                  "SpRecovery": 57590,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 440000,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 15996,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1151018, Prop:1002}",
+              "Param": {
+                "1151018": {
+                  "Main": 16000,
+                  "Growth": 730,
+                  "Format": "%",
+                  "DamagePercentage": 16000,
+                  "DamagePercentageGrowth": 1460,
+                  "StunRatio": 16000,
+                  "StunRatioGrowth": 730,
+                  "SpRecovery": 57590,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 440000,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 15996,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Defensive Assist: Safe on Base!",
+          "Param": [
+            {
+              "Name": "Light Defensive Daze Multiplier",
+              "Desc": "{Skill:1151019, Prop:1002}",
+              "Param": {
+                "1151019": {
+                  "Main": 20770,
+                  "Growth": 950,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 20770,
+                  "StunRatioGrowth": 950,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Heavy Defensive Daze Multiplier",
+              "Desc": "{Skill:1151020, Prop:1002}",
+              "Param": {
+                "1151020": {
+                  "Main": 22940,
+                  "Growth": 1050,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 22940,
+                  "StunRatioGrowth": 1050,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Chain Defensive Daze Multiplier",
+              "Desc": "{Skill:1151021, Prop:1002}",
+              "Param": {
+                "1151021": {
+                  "Main": 6940,
+                  "Growth": 320,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 6940,
+                  "StunRatioGrowth": 320,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Assist Follow-Up: Scored a Run!",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1151022, Prop:1001}",
+              "Param": {
+                "1151022": {
+                  "Main": 34910,
+                  "Growth": 3180,
+                  "Format": "%",
+                  "DamagePercentage": 34910,
+                  "DamagePercentageGrowth": 3180,
+                  "StunRatio": 30430,
+                  "StunRatioGrowth": 1390,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1083225,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 32667,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1151022, Prop:1002}",
+              "Param": {
+                "1151022": {
+                  "Main": 30430,
+                  "Growth": 1390,
+                  "Format": "%",
+                  "DamagePercentage": 34910,
+                  "DamagePercentageGrowth": 3180,
+                  "StunRatio": 30430,
+                  "StunRatioGrowth": 1390,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1083225,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 32667,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "SkillList": {
+    "1151001": {
+      "Name": "Basic Attack: Lady's Bat",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 102
+    },
+    "1151002": {
+      "Name": "Special Attack: Solid Hit! (Line Drive)",
+      "Desc": "<IconMap:Icon_Special>",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151003": {
+      "Name": "Special Attack: Solid Hit! (Fly Ball)",
+      "Desc": "<IconMap:Icon_Special> (Hold Down)",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151004": {
+      "Name": "EX Special Attack: Home Run! (Line Drive)",
+      "Desc": "<IconMap:Icon_SpecialReady>",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151005": {
+      "Name": "EX Special Attack: Home Run! (Fly Ball)",
+      "Desc": "<IconMap:Icon_SpecialReady>(Hold Down)",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151006": {
+      "Name": "Dash Attack: Fearless Boar!",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 102
+    },
+    "1151007": {
+      "Name": "Dodge Counter: Returning Tusk!",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151008": {
+      "Name": "Chain Attack: Grand Slam!",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151009": {
+      "Name": "Ultimate: Walk-Off Home Run!",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151010": {
+      "Name": "Quick Assist: Hit By Pitch!",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 201,
+      "HitType": 102
+    },
+    "1151011": {
+      "Name": "Defensive Assist: Safe on Base!",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1151012": {
+      "Name": "Assist Follow-Up: Scored a Run!",
+      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
+      "ElementType": 201,
+      "HitType": 102
+    }
+  },
+  "Passive": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1151501,
+        "Name": [
+          "Core Passive: Crimson Mane Guard",
+          "Additional Ability: Batter Up!"
+        ],
+        "Desc": [
+          "When Lucy uses her <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <color=#FFFFFF>Cheer On!</color> buff for the guard boars is increased to <color=#2BAD00>140%</color> of the original effect, and their attack frequency is increased.",
+          "When another character in your squad shares the same Attribute or Faction:\nThe guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+        ]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1151502,
+        "Name": [
+          "Core Passive: Crimson Mane Guard",
+          "Additional Ability: Batter Up!"
+        ],
+        "Desc": [
+          "When Lucy uses her <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <color=#FFFFFF>Cheer On!</color> buff for the guard boars is increased to <color=#2BAD00>150%</color> of the original effect, and their attack frequency is increased.",
+          "When another character in your squad shares the same Attribute or Faction:\nThe guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+        ]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1151503,
+        "Name": [
+          "Core Passive: Crimson Mane Guard",
+          "Additional Ability: Batter Up!"
+        ],
+        "Desc": [
+          "When Lucy uses her <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <color=#FFFFFF>Cheer On!</color> buff for the guard boars is increased to <color=#2BAD00>160%</color> of the original effect, and their attack frequency is increased.",
+          "When another character in your squad shares the same Attribute or Faction:\nThe guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+        ]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1151504,
+        "Name": [
+          "Core Passive: Crimson Mane Guard",
+          "Additional Ability: Batter Up!"
+        ],
+        "Desc": [
+          "When Lucy uses her <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <color=#FFFFFF>Cheer On!</color> buff for the guard boars is increased to <color=#2BAD00>170%</color> of the original effect, and their attack frequency is increased.",
+          "When another character in your squad shares the same Attribute or Faction:\nThe guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+        ]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1151505,
+        "Name": [
+          "Core Passive: Crimson Mane Guard",
+          "Additional Ability: Batter Up!"
+        ],
+        "Desc": [
+          "When Lucy uses her <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <color=#FFFFFF>Cheer On!</color> buff for the guard boars is increased to <color=#2BAD00>180%</color> of the original effect, and their attack frequency is increased.",
+          "When another character in your squad shares the same Attribute or Faction:\nThe guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+        ]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1151506,
+        "Name": [
+          "Core Passive: Crimson Mane Guard",
+          "Additional Ability: Batter Up!"
+        ],
+        "Desc": [
+          "When Lucy uses her <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <color=#FFFFFF>Cheer On!</color> buff for the guard boars is increased to <color=#2BAD00>190%</color> of the original effect, and their attack frequency is increased.",
+          "When another character in your squad shares the same Attribute or Faction:\nThe guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+        ]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1151507,
+        "Name": [
+          "Core Passive: Crimson Mane Guard",
+          "Additional Ability: Batter Up!"
+        ],
+        "Desc": [
+          "When Lucy uses her <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, a guard boar will join the battle and call in two other guard boars. The guard boars inherit Lucy's ATK, Impact, and Anomaly Proficiency. The <color=#FFFFFF>Cheer On!</color> buff for the guard boars is increased to <color=#2BAD00>200%</color> of the original effect, and their attack frequency is increased.",
+          "When another character in your squad shares the same Attribute or Faction:\nThe guard boars inherit Lucy's CRIT Rate and CRIT DMG."
+        ]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110504": 2 },
+      "3": { "10": 28000, "110504": 4 },
+      "4": { "10": 60000, "110001": 2, "110504": 9 },
+      "5": { "10": 100000, "110001": 3, "110504": 15 },
+      "6": { "10": 200000, "110001": 4, "110504": 30 }
+    }
+  },
+  "Talent": {
+    "1": {
+      "Level": 1,
+      "Name": "Drill Formations",
+      "Desc": "When the guard boars launch <color=#FFFFFF>Guard Boars: Spinning Swing!</color>, Lucy recovers 2 Energy. This effect can trigger once every 15s, with each guard boar having its own separate cooldown.",
+      "Desc2": "\"Grassy, eyes right! ...That's left, you idiot!!!\"\nOne command, two directions, three cries of pain, and wails all around."
+    },
+    "2": {
+      "Level": 2,
+      "Name": "Little Boar Captain",
+      "Desc": "When Lucy uses a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, it grants all squad members, Bangboo, and the guard boars the <color=#FFFFFF>Cheer On!</color> status for 10s.",
+      "Desc2": "\"Without a doubt, Captain Lucy is the best leader of the Calydon Boar Thirens!\"\nThis was Woody's conclusion in the \"Sons of Calydon Annual Report.\""
+    },
+    "3": {
+      "Level": 3,
+      "Name": "Ironfist Overseer",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "\"I just wish Captain Lucy would be more gentle when she's smacking us around.\"\nWoody thought, but didn't dare say it out loud."
+    },
+    "4": {
+      "Level": 4,
+      "Name": "Chaos Ball Game",
+      "Desc": "While in the <color=#FFFFFF>Cheer On!</color> state, allies' CRIT DMG is increased by an additional 10%.",
+      "Desc2": "Rules and ribs are made to be broken."
+    },
+    "5": {
+      "Level": 5,
+      "Name": "Wildland Princess",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "She speaks politely to opponents screaming under her bat.\nShe apologizes to enemies groveling at her feet.\nThis is the perfect etiquette of a noble lady."
+    },
+    "6": {
+      "Level": 6,
+      "Name": "Fierce Fangs of Fire",
+      "Desc": "When an ally in the <color=#FFFFFF>Cheer On!</color> state hits an enemy with an <color=#FFFFFF>EX Special Attack</color>, a guard boar will drop from the sky and cause an explosion, dealing <color=#FF5521>Fire DMG</color> equal to 300% of the guard boar's ATK. This will extend the duration of the <color=#FFFFFF>Cheer On!</color> buff for all squad members by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the <color=#FFFFFF>Cheer On!</color> state resets the stack count. After the guard boar's explosion, it will launch <color=#FFFFFF>Guard Boars: Spinning Swing!</color>.",
+      "Desc2": "The little boar Thirens known as the Crimson Mane Guard are always at the forefront of battle!\nThough it's hard to tell if, at the moment they're launched by the bat, they feel total despair or just accept their fate.\nBrave little boars, leading the charge!"
+    }
+  }
+}

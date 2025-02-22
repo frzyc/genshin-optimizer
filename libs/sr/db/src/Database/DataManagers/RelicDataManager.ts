@@ -1,4 +1,4 @@
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp, pruneOrPadArray } from '@genshin-optimizer/common/util'
 import type {
   RelicMainStatKey,
   RelicRarityKey,
@@ -439,7 +439,8 @@ export function cachedRelic(
 
 export function validateRelic(
   obj: unknown = {},
-  allowZeroSub = false
+  allowZeroSub = false,
+  sortSubs = true
 ): IRelic | undefined {
   if (!obj || typeof obj !== 'object') return undefined
   const { setKey, rarity, slotKey } = obj as IRelic
@@ -458,7 +459,7 @@ export function validateRelic(
   level = Math.round(level)
   if (level > relicMaxLevel[rarity]) return undefined
 
-  substats = parseSubstats(substats, rarity, allowZeroSub)
+  substats = parseSubstats(substats, rarity, allowZeroSub, sortSubs)
   // substat cannot have same key as mainstat
   if (substats.find((sub) => sub.key === mainStatKey)) return undefined
   lock = !!lock
@@ -484,28 +485,36 @@ function defSub(): ISubstat {
 function parseSubstats(
   obj: unknown,
   rarity: RelicRarityKey,
-  allowZeroSub = false
+  allowZeroSub = false,
+  sortSubs = true
 ): ISubstat[] {
   if (!Array.isArray(obj)) return new Array(4).map((_) => defSub())
-  const substats = (obj as ISubstat[])
-    .slice(0, 4)
-    .map(({ key = '', value = 0 }) => {
-      if (
-        !allRelicSubStatKeys.includes(key as RelicSubStatKey) ||
-        typeof value !== 'number' ||
-        !isFinite(value)
-      )
-        return defSub()
-      if (key) {
-        value = key.endsWith('_')
-          ? Math.round(value * 1000) / 1000
-          : Math.round(value)
-        const { low, high } = getSubstatRange(rarity, key)
-        value = clamp(value, allowZeroSub ? 0 : low, high)
-      } else value = 0
-      return { key, value }
-    })
-  while (substats.length < 4) substats.push(defSub())
+  let substats = (obj as ISubstat[]).map(({ key = '', value = 0 }) => {
+    if (
+      !allRelicSubStatKeys.includes(key as RelicSubStatKey) ||
+      typeof value !== 'number' ||
+      !isFinite(value)
+    )
+      return defSub()
+    if (key) {
+      value = key.endsWith('_')
+        ? Math.round(value * 1000) / 1000
+        : Math.round(value)
+      const { low, high } = getSubstatRange(rarity, key)
+      value = clamp(value, allowZeroSub ? 0 : low, high)
+    } else value = 0
+    return { key, value }
+  })
+  if (sortSubs)
+    substats = substats
+      // SR substats are sorted by the order of allRelicSubStatKeys
+      .sort((a, b) => {
+        function getPrio(key: ISubstat['key']) {
+          if (!key) return 100 // empty subs to to the end
+          return allRelicSubStatKeys.indexOf(key)
+        }
+        return getPrio(a.key) - getPrio(b.key)
+      })
 
-  return substats
+  return pruneOrPadArray(substats, 4, defSub())
 }

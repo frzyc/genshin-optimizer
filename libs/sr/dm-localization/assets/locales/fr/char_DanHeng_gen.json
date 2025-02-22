@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Portée supérieure",
-        "fullDesc": "Lorsque Dan Heng est la cible de la capacité d'un allié, la PÉN de RÉS de vent de sa prochaine attaque augmente de <orangeStrong>{{1, percent}}%</orangeStrong>. Cet effet peut se déclencher à nouveau après {{2}} tours.",
-        "shortDesc": "Lorsqu'il est la cible de la capacité d'un allié, la <orangeStrong>PÉN de RÉS de vent de sa prochaine attaque augmente</orangeStrong>. Cet effet peut se déclencher à nouveau après 2 tours.",
+        "fullDesc": "Lorsque Dan Heng devient la cible de la capacité d'un allié, la PÉN de RÉS de vent de sa prochaine attaque augmente de <orangeStrong>{{1, percent}}%</orangeStrong>. Cet effet peut se déclencher à nouveau après {{2}} tours.",
+        "shortDesc": "Lorsque cette unité devient la cible de la capacité d'un allié, la <orangeStrong>PÉN de RÉS de vent de sa prochaine attaque augmente</orangeStrong>. Cet effet peut se déclencher à nouveau après 2 tours.",
         "tag": "Renforcement"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Plus rapide que la lumière",
-        "fullDesc": "Le personnage a {{1, percent}}% de chances fixes d'augmenter sa propre VIT de {{2, percent}}% pendant {{3}} tours après avoir lancé une attaque.",
+        "fullDesc": "Le personnage a {{1, percent}}% de chances fixes d'augmenter sa VIT de {{2, percent}}% pendant {{3}} tours après avoir lancé une attaque.",
         "shortDesc": "",
         "tag": ""
       }

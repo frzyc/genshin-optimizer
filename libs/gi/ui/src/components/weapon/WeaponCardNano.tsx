@@ -18,7 +18,7 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
-import { getCalcDisplay, resolveInfo } from '../../util'
+import { GetCalcDisplay, resolveInfo } from '../../util'
 import { CharIconSide } from '../character'
 import { WeaponNameTooltip } from './WeaponNameTooltip'
 
@@ -46,6 +46,7 @@ export function WeaponCardNano({
           height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
+          py: 2,
         }}
       >
         <Box
@@ -205,7 +206,7 @@ function WeaponStat({ node }: { node: CalcResult }) {
         >
           <span>{icon}</span>
         </BootstrapTooltip>
-        <span>{getCalcDisplay(node).valueString}</span>
+        <span>{GetCalcDisplay(node).valueString}</span>
       </Typography>
     </Box>
   )

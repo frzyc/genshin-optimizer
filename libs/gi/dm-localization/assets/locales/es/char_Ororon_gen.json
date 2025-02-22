@@ -1,0 +1,187 @@
+{
+  "name": "Ororon",
+  "title": "La Sombra del Viento Nocturno",
+  "description": "Un joven de los Augures Vientonocturno que vive en la naturaleza junto a toda clase de seres vivos.",
+  "constellationName": "Vampyrum Spectrum",
+  "auto": {
+    "name": "Flecha albergaespíritus",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, la flecha se imbuirá del elemento Electro y, cuando esté completamente cargada, infligirá <electro>Daño Electro</electro> al dispararla."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Disparo Preciso",
+      "4": "Disparo Preciso (carga completa)",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Amparo de la noche",
+    "description": {
+      "0": "Ororon manifiesta una técnica arcaica de los Augures Vientonocturno en la forma de un <strong>orbe espiritual</strong> oscuro que lanza contra el enemigo para infligirle <electro>Daño Electro</electro> de naturaleza noctámbula.",
+      "1": "Si en las cercanías hay más enemigos, el orbe espiritual rebotará en ellos y les infligirá <electro>Daño Electro</electro> de naturaleza noctámbula. Cada enemigo solo podrá ser fijado como objetivo una vez por cada vez que se use “Amparo de la noche”.",
+      "2": "El orbe espiritual desaparecerá tras rebotar 3 veces o si en las cercanías no hay ningún enemigo que pueda servir como objetivo.",
+      "3": "<br/>",
+      "4": "<i>“Todo el mundo quiere conocer el futuro, pero probablemente sea porque aún no saben lo que deben hacer... Perdón, otra vez estoy diciendo cosas difíciles de entender”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño del orbe espiritual",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Eco de la oscuridad",
+    "description": {
+      "0": "Ororon realiza un antiguo ritual para infligir <electro>Daño Electro en el AdE</electro> de naturaleza noctámbula e invocar un ojo sonicoespiritual.",
+      "1": "<br/>",
+      "2": "<strong>Ojo sonicoespiritual</strong>",
+      "3": [
+        "Provoca constantemente a los enemigos cercanos para atraerlos y que lo ataquen.",
+        "Gira continuamente y emite ondas sónicas que infligen <electro>Daño Electro</electro> de naturaleza noctámbula a los enemigos cercanos."
+      ],
+      "4": "<br/>",
+      "5": "<i>Las personas con una gran percepción son capaces de escuchar el lejano sonido que producen todos los seres vivos. Así, estas personas no se pierden ni en la más oscura de las noches.</i>"
+    },
+    "skillParams": {
+      "0": "Daño del ritual",
+      "1": "Daño de contacto con onda sónica",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Sinestesia noctívaga",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, Ororon obtiene 40 pts. de noctambulismo. Durante 15 s tras usar la Habilidad Elemental, cuando otro personaje del equipo golpea a un enemigo con un ataque <hydro>Hydro</hydro> o <electro>Electro</electro>, Ororon obtiene 5 pts. de noctambulismo. Este efecto solo se puede activar una vez cada 0.3 s y solo puede ocurrir 10 veces mientras esté activo.",
+      "1": "El máximo de pts. de noctambulismo que puede tener Ororon es 80.",
+      "2": "<br/>",
+      "3": "Además, cuando un enemigo cercano recibe daño de la reacción de <electro>Electrocargado</electro> o cuando otro personaje cercano del equipo inflige daño de naturaleza noctámbula, si Ororon tiene al menos 10 pts. de noctambulismo, consumirá dicha cantidad para entrar en estado de bendición noctámbula y activar el efecto de “ultrapercepción”, el cual inflige <electro>Daño Electro</electro> de naturaleza noctámbula a un máximo de 4 enemigos cercanos en una cantidad equivalente al 160% del ATQ de Ororon. Este efecto solo se puede activar una vez cada 1.8 s.",
+      "4": "<br/>",
+      "5": "<strong>Bendición noctámbula: Ororon</strong>",
+      "6": "Como máximo, el estado de bendición noctámbula de Ororon dura 6 s."
+    }
+  },
+  "passive2": {
+    "name": "Presencia manifiesta",
+    "description": {
+      "0": "Tras golpear a un enemigo con el <strong>orbe espiritual</strong> de su Habilidad Elemental, <strong>Amparo de la noche</strong>, Ororon obtiene el efecto de “sello presencial” durante 15 s.",
+      "1": "<br/>",
+      "2": "<strong>Sello presencial</strong>",
+      "3": "Cuando un personaje en uso cercano del equipo golpea a un enemigo con un Ataque Normal, Cargado o Descendente, dicho personaje recupera 3 pts. de Energía Elemental. Si Ororon está en tu equipo pero no en uso, también recupera 3 pts. de Energía Elemental. Este efecto solo se puede activar una vez por segundo y solo puede ocurrir 3 veces mientras esté activo."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Salto brumasombra",
+    "description": {
+      "0": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, se podrá utilizar Transmisión noctambular: Ororon. Cuando el personaje en uso esté en el aire, al cambiar a Ororon, este saltará muy alto. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s.",
+      "1": "<br/>",
+      "2": "Al mantener pulsado para apuntar, Ororon entrará en estado de “espiritismo”, en el cual puede interactuar con pintadas e inscripciones místicas para extraer la información y el poder que contienen. Para interactuar con estos objetos, se seguirán las mismas reglas de interacción de los Iktomisaurios.",
+      "3": "<br/>",
+      "4": "Además, al mantener pulsado para saltar, Ororon consumirá 75 pts. de Aguante para dar un salto. Si se encuentra en una zona con alguna mecánica de flogisto de Natlan, Ororon consumirá con prioridad 5 pts. de flogisto para saltar aún más alto.",
+      "5": "Cuando está en el aire, Ororon puede mantener pulsado el Ataque Normal para apuntar consumiendo flogisto o Aguante."
+    }
+  },
+  "passive": {
+    "name": "Cambiapieles",
+    "description": {
+      "0": "Aumenta en un 15% la Vel. Vuelo de tus personajes del equipo.",
+      "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
+    }
+  },
+  "constellation1": {
+    "name": "Huellas en el bosque brumoso",
+    "description": {
+      "0": "El <strong>orbe espiritual</strong> de la Habilidad Elemental, <strong>Amparo de la noche</strong>, puede rebotar 2 veces más.",
+      "1": "Además, cuando el <strong>orbe espiritual</strong> golpea a un enemigo, le aplica el efecto de “lobreguez” durante 12 s, el cual aumenta en un 50% el daño que recibe con el efecto de ultrapercepción del talento pasivo “Sinestesia noctívaga”. Es necesario desbloquear previamente el talento pasivo “Sinestesia noctívaga”."
+    }
+  },
+  "constellation2": {
+    "name": "Abeja rey",
+    "description": {
+      "0": "Tras usar la Habilidad Definitiva, <strong>Eco de la oscuridad</strong>, Ororon obtiene el efecto de “percepción espiritual” durante 9 s.",
+      "1": "<br/>",
+      "2": "<strong>Percepción espiritual</strong>",
+      "3": "Otorga un 8% de <electro>Bono de Daño Electro</electro>.",
+      "4": "Además, mientras este efecto está activo, Ororon obtiene un 8% de <electro>Bono de Daño Electro</electro> extra por cada enemigo adicional golpeado con la Habilidad Definitiva, <strong>Eco de la oscuridad</strong>, o con el <strong>ojo sonicoespiritual</strong>. Como máximo, podrá obtener un 32% de <electro>Bono de Daño Electro</electro> de esta manera."
+    }
+  },
+  "constellation3": {
+    "name": "Jaula de quiróptero",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Eco de la oscuridad</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Humo vientonocturno",
+    "description": {
+      "0": "Aumenta en un 25% la velocidad de giro del <strong>ojo sonicoespiritual</strong> invocado con la Habilidad Definitiva, <strong>Eco de la oscuridad</strong>.",
+      "1": "Además, Ororon recupera 8 pts. de Energía Elemental tras usar <strong>Eco de la oscuridad</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Obsequio del alma",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Amparo de la noche</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Elogio de los manantiales",
+    "description": {
+      "0": "Tras activar el efecto de ultrapercepción del talento pasivo “Sinestesia noctívaga”, el ATQ de tu personaje en uso aumenta en un 10% durante 9 s. Este efecto puede acumularse hasta 3 veces y su duración se calcula de forma independiente.",
+      "1": "Además, al usar la Habilidad Definitiva, <strong>Eco de la oscuridad</strong>, se activa una vez un efecto equivalente a ultrapercepción, el cual inflige un 200% del daño original.",
+      "2": "Es necesario desbloquear el talento pasivo “Sinestesia noctívaga”."
+    }
+  }
+}

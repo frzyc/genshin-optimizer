@@ -4246,6 +4246,607 @@
       }
     }
   },
+  "TravelerPyro": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfContention",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfContention",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfContention",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "TheCornerstoneOfStarsAndFlames",
+              "amount": 1
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "BrilliantDiamondSliver",
+            "amount": 1
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 3
+          },
+          {
+            "item": "DamagedMask",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "BrilliantDiamondFragment",
+            "amount": 3
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 10
+          },
+          {
+            "item": "DamagedMask",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "BrilliantDiamondFragment",
+            "amount": 6
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 20
+          },
+          {
+            "item": "StainedMask",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "BrilliantDiamondChunk",
+            "amount": 3
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 30
+          },
+          {
+            "item": "StainedMask",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "BrilliantDiamondChunk",
+            "amount": 6
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 45
+          },
+          {
+            "item": "OminousMask",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "BrilliantDiamondGemstone",
+            "amount": 6
+          },
+          {
+            "item": "WindwheelAster",
+            "amount": 60
+          },
+          {
+            "item": "OminousMask",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Lisa": {
     "talents": {
       "normal": {
@@ -57025,6 +57626,4353 @@
           },
           {
             "item": "SaurianCrownedWarriorsGoldenWhistle",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Xilonen": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "MirrorOfMushin",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "PrithivaTopazSliver",
+            "amount": 1
+          },
+          {
+            "item": "BrilliantChrysanthemum",
+            "amount": 3
+          },
+          {
+            "item": "SentrysWoodenWhistle",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "PrithivaTopazFragment",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 2
+          },
+          {
+            "item": "BrilliantChrysanthemum",
+            "amount": 10
+          },
+          {
+            "item": "SentrysWoodenWhistle",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "PrithivaTopazFragment",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 4
+          },
+          {
+            "item": "BrilliantChrysanthemum",
+            "amount": 20
+          },
+          {
+            "item": "WarriorsMetalWhistle",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "PrithivaTopazChunk",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 8
+          },
+          {
+            "item": "BrilliantChrysanthemum",
+            "amount": 30
+          },
+          {
+            "item": "WarriorsMetalWhistle",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "PrithivaTopazChunk",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 12
+          },
+          {
+            "item": "BrilliantChrysanthemum",
+            "amount": 45
+          },
+          {
+            "item": "SaurianCrownedWarriorsGoldenWhistle",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "PrithivaTopazGemstone",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 20
+          },
+          {
+            "item": "BrilliantChrysanthemum",
+            "amount": 60
+          },
+          {
+            "item": "SaurianCrownedWarriorsGoldenWhistle",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Chasca": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfConflict",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfConflict",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfConflict",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToConflict",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfConflict",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "SilkenFeather",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseSliver",
+            "amount": 1
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 3
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 3
+          },
+          {
+            "item": "EnsnaringGaze",
+            "amount": 2
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 10
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 6
+          },
+          {
+            "item": "EnsnaringGaze",
+            "amount": 4
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 20
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 3
+          },
+          {
+            "item": "EnsnaringGaze",
+            "amount": 8
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 30
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 6
+          },
+          {
+            "item": "EnsnaringGaze",
+            "amount": 12
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 45
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseGemstone",
+            "amount": 6
+          },
+          {
+            "item": "EnsnaringGaze",
+            "amount": 20
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 60
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Ororon": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "LightlessSilkString",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VajradaAmethystSliver",
+            "amount": 1
+          },
+          {
+            "item": "GlowingHornshroom",
+            "amount": 3
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VajradaAmethystFragment",
+            "amount": 3
+          },
+          {
+            "item": "MarkOfTheBindingBlessing",
+            "amount": 2
+          },
+          {
+            "item": "GlowingHornshroom",
+            "amount": 10
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VajradaAmethystFragment",
+            "amount": 6
+          },
+          {
+            "item": "MarkOfTheBindingBlessing",
+            "amount": 4
+          },
+          {
+            "item": "GlowingHornshroom",
+            "amount": 20
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VajradaAmethystChunk",
+            "amount": 3
+          },
+          {
+            "item": "MarkOfTheBindingBlessing",
+            "amount": 8
+          },
+          {
+            "item": "GlowingHornshroom",
+            "amount": 30
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VajradaAmethystChunk",
+            "amount": 6
+          },
+          {
+            "item": "MarkOfTheBindingBlessing",
+            "amount": 12
+          },
+          {
+            "item": "GlowingHornshroom",
+            "amount": 45
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VajradaAmethystGemstone",
+            "amount": 6
+          },
+          {
+            "item": "MarkOfTheBindingBlessing",
+            "amount": 20
+          },
+          {
+            "item": "GlowingHornshroom",
+            "amount": 60
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Mavuika": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfContention",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfContention",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfContention",
+              "amount": 3
+            },
+            {
+              "item": "SentrysWoodenWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 2
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 4
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 6
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToContention",
+              "amount": 9
+            },
+            {
+              "item": "WarriorsMetalWhistle",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 4
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 4
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 6
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 6
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 12
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 9
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfContention",
+              "amount": 16
+            },
+            {
+              "item": "SaurianCrownedWarriorsGoldenWhistle",
+              "amount": 12
+            },
+            {
+              "item": "ErodedHorn",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "AgnidusAgateSliver",
+            "amount": 1
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 3
+          },
+          {
+            "item": "SentrysWoodenWhistle",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "AgnidusAgateFragment",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 2
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 10
+          },
+          {
+            "item": "SentrysWoodenWhistle",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "AgnidusAgateFragment",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 4
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 20
+          },
+          {
+            "item": "WarriorsMetalWhistle",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "AgnidusAgateChunk",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 8
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 30
+          },
+          {
+            "item": "WarriorsMetalWhistle",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "AgnidusAgateChunk",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 12
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 45
+          },
+          {
+            "item": "SaurianCrownedWarriorsGoldenWhistle",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "AgnidusAgateGemstone",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 20
+          },
+          {
+            "item": "WitheringPurpurbloom",
+            "amount": 60
+          },
+          {
+            "item": "SaurianCrownedWarriorsGoldenWhistle",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "Citlali": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "ShivadaJadeSliver",
+            "amount": 1
+          },
+          {
+            "item": "QuenepaBerry",
+            "amount": 3
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "ShivadaJadeFragment",
+            "amount": 3
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 2
+          },
+          {
+            "item": "QuenepaBerry",
+            "amount": 10
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "ShivadaJadeFragment",
+            "amount": 6
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 4
+          },
+          {
+            "item": "QuenepaBerry",
+            "amount": 20
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "ShivadaJadeChunk",
+            "amount": 3
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 8
+          },
+          {
+            "item": "QuenepaBerry",
+            "amount": 30
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "ShivadaJadeChunk",
+            "amount": 6
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 12
+          },
+          {
+            "item": "QuenepaBerry",
+            "amount": 45
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "ShivadaJadeGemstone",
+            "amount": 6
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 20
+          },
+          {
+            "item": "QuenepaBerry",
+            "amount": 60
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "LanYan": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfDiligence",
+              "amount": 3
+            },
+            {
+              "item": "WhopperflowerNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 2
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 4
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 6
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 9
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 4
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 6
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 12
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 16
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfDiligence",
+              "amount": 3
+            },
+            {
+              "item": "WhopperflowerNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 2
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 4
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 6
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 9
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 4
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 6
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 12
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 16
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfDiligence",
+              "amount": 3
+            },
+            {
+              "item": "WhopperflowerNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 2
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 4
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 6
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 9
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 4
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 6
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 12
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 16
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseSliver",
+            "amount": 1
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 3
+          },
+          {
+            "item": "WhopperflowerNectar",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 2
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 10
+          },
+          {
+            "item": "WhopperflowerNectar",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 4
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 20
+          },
+          {
+            "item": "ShimmeringNectar",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 8
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 30
+          },
+          {
+            "item": "ShimmeringNectar",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 12
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 45
+          },
+          {
+            "item": "EnergyNectar",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseGemstone",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 20
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 60
+          },
+          {
+            "item": "EnergyNectar",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
+  "YumemizukiMizuki": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfTransience",
+              "amount": 3
+            },
+            {
+              "item": "OldHandguard",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 2
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 4
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 6
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 9
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 4
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 4
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 6
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 6
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 12
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 9
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 16
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 12
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfTransience",
+              "amount": 3
+            },
+            {
+              "item": "OldHandguard",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 2
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 4
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 6
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 9
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 4
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 4
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 6
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 6
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 12
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 9
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 16
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 12
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfTransience",
+              "amount": 3
+            },
+            {
+              "item": "OldHandguard",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 2
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 4
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 6
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToTransience",
+              "amount": 9
+            },
+            {
+              "item": "KageuchiHandguard",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 4
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 4
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 6
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 6
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 12
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 9
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfTransience",
+              "amount": 16
+            },
+            {
+              "item": "FamedHandguard",
+              "amount": 12
+            },
+            {
+              "item": "FadingCandle",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseSliver",
+            "amount": 1
+          },
+          {
+            "item": "SeaGanoderma",
+            "amount": 3
+          },
+          {
+            "item": "OldHandguard",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 3
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 2
+          },
+          {
+            "item": "SeaGanoderma",
+            "amount": 10
+          },
+          {
+            "item": "OldHandguard",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 6
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 4
+          },
+          {
+            "item": "SeaGanoderma",
+            "amount": 20
+          },
+          {
+            "item": "KageuchiHandguard",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 3
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 8
+          },
+          {
+            "item": "SeaGanoderma",
+            "amount": 30
+          },
+          {
+            "item": "KageuchiHandguard",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 6
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 12
+          },
+          {
+            "item": "SeaGanoderma",
+            "amount": 45
+          },
+          {
+            "item": "FamedHandguard",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseGemstone",
+            "amount": 6
+          },
+          {
+            "item": "TalismanOfTheEnigmaticLand",
+            "amount": 20
+          },
+          {
+            "item": "SeaGanoderma",
+            "amount": 60
+          },
+          {
+            "item": "FamedHandguard",
             "amount": 24
           }
         ]

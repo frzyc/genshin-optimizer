@@ -29,7 +29,7 @@
       "0": {
         "name": "Siegesrausch",
         "fullDesc": "Wenn die Schwäche eines Gegners gebrochen wird, erhält Himeko 1 Pkt. Aufladung, maximal {{2}} Pkt.<br>Wenn ein Verbündeter einen Angriff ausführt und Himeko voll aufgeladen ist, führt sie sofort 1 Folgeangriff aus, der allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Himekos ANG zufügt und alle Aufladungen verbraucht.<br>Erhält beim Kampfeintritt 1 Pkt. Aufladung.",
-        "shortDesc": "Erhält 1 Aufladung, wenn die Schwäche eines Gegners gebrochen wird.<br>Nach einem voll aufgeladenen Angriff eines Verbündeten führt dieser <orangeStrong>sofort</orangeStrong> einen Folgeangriff aus und fügt <orangeStrong>allen Gegnern</orangeStrong> Feuer-SCH zu, wobei alle Aufladungen verbraucht werden.<br>Erhält zu Beginn jedes Kampfes 1 Aufladung.",
+        "shortDesc": "Erhält zu Beginn eines Kampfes oder wenn die Schwäche eines Gegners gebrochen wird Aufladung.<br>Nachdem ein Verbündeter angegriffen hat, wird bei voller Aufladung ein <orangeStrong>Folgeangriff gestartet</orangeStrong>, der <orangeStrong>allen Gegnern</orangeStrong> Feuer-SCH zufügt, wobei alle Aufladungen verbraucht werden.",
         "tag": "Flächenangriff"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Sternenfeuer",
-        "fullDesc": "Nach dem Einsatz eines Angriffs besteht eine Grundchance von {{1, percent}}%, bei den Gegnern für {{2}} Rd. Brennen zu verursachen.<br>Gegner im Status Brennen erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Himekos ANG.",
+        "fullDesc": "Nach einem Angriff besteht eine Grundchance von {{1, percent}}%, bei den Gegnern für {{2}} Rd. Brennen zu verursachen.<br>Gegner im Status Brennen erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Himekos ANG.",
         "shortDesc": "",
         "tag": ""
       }

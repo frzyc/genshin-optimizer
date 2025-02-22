@@ -1,0 +1,332 @@
+{
+  "Id": 53006,
+  "CodeName": "Bagboo",
+  "Name": "Bagboo",
+  "Desc": "There's a dark past hidden under that bag...",
+  "Rarity": 3,
+  "Icon": "UI/Sprite/A1DynamicLoad/BangbooModGarage/UnPacker/BangbooRole/BangbooGarageRole01.png",
+  "Stats": {
+    "Stamina": 100,
+    "StaminaUpragde": 10,
+    "Endurance": 180,
+    "HpMax": 360,
+    "Hpupgrade": 428397,
+    "Attack": 53,
+    "AttackUpgrade": 267156,
+    "BreakStun": 94,
+    "ElementAbnormalPower": 100,
+    "Defence": 32,
+    "DefUpgrade": 92587,
+    "Crit": 500,
+    "PenRatio": 0,
+    "CritDmg": 5000
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": { "10": 15000, "102010": 4 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "2": {
+      "HpMax": 188,
+      "Attack": 49,
+      "Defence": 41,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": { "10": 35000, "102020": 12 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 450
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "3": {
+      "HpMax": 376,
+      "Attack": 247,
+      "Defence": 81,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": { "10": 75000, "102020": 20 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 2250
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "4": {
+      "HpMax": 564,
+      "Attack": 741,
+      "Defence": 122,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": { "10": 125000, "102030": 10 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 2250
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 2500
+        }
+      }
+    },
+    "5": {
+      "HpMax": 752,
+      "Attack": 1976,
+      "Defence": 163,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": { "10": 250000, "102030": 20 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 4500
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 2500
+        }
+      }
+    },
+    "6": {
+      "HpMax": 940,
+      "Attack": 4941,
+      "Defence": 203,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {},
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 4500
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 5000
+        }
+      }
+    }
+  },
+  "Skill": {
+    "A": {
+      "Level": {
+        "1": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "2": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "3": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "4": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "5": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "6": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "7": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "8": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "9": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        },
+        "10": {
+          "Name": "Closer, Closer...",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nUnleashes a series of slashes with dual blades, dealing <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5300601, Prop:1001}|{Skill:5300601, Prop:1002}|18s"
+        }
+      }
+    },
+    "B": {
+      "Level": {
+        "1": {
+          "Name": "Swiftly Honed",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least 1 <color=#FFFFFF>Attack</color> character in your squad: <color=#FFFFFF>Bangboo Chain Attack</color> DMG increases by 30%.",
+          "Property": ["DMG Increase"],
+          "Param": "30%"
+        },
+        "2": {
+          "Name": "Swiftly Honed",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least 1 <color=#FFFFFF>Attack</color> character in your squad: <color=#FFFFFF>Bangboo Chain Attack</color> DMG increases by 37.5%.",
+          "Property": ["DMG Increase"],
+          "Param": "37.5%"
+        },
+        "3": {
+          "Name": "Swiftly Honed",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least 1 <color=#FFFFFF>Attack</color> character in your squad: <color=#FFFFFF>Bangboo Chain Attack</color> DMG increases by 45%.",
+          "Property": ["DMG Increase"],
+          "Param": "45%"
+        },
+        "4": {
+          "Name": "Swiftly Honed",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least 1 <color=#FFFFFF>Attack</color> character in your squad: <color=#FFFFFF>Bangboo Chain Attack</color> DMG increases by 52.5%.",
+          "Property": ["DMG Increase"],
+          "Param": "52.5%"
+        },
+        "5": {
+          "Name": "Swiftly Honed",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least 1 <color=#FFFFFF>Attack</color> character in your squad: <color=#FFFFFF>Bangboo Chain Attack</color> DMG increases by 60%.",
+          "Property": ["DMG Increase"],
+          "Param": "60%"
+        }
+      }
+    },
+    "C": {
+      "Level": {
+        "1": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "2": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "3": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "4": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "5": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "6": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "7": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "8": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "9": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        },
+        "10": {
+          "Name": "That's Close Enough!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nContinually slashes the target, dealing massive <color=#F0D12B>Physical DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5300602, Prop:1001}|{Skill:5300602, Prop:1002}"
+        }
+      }
+    }
+  },
+  "SkillProp": {
+    "5300601": {
+      "1001": { "Main": 36000, "Growth": 3600, "Format": "%" },
+      "1002": { "Main": 21100, "Growth": 2110, "Format": "%" }
+    },
+    "5300602": {
+      "1001": { "Main": 76400, "Growth": 7640, "Format": "%" },
+      "1002": { "Main": 10900, "Growth": 1090, "Format": "%" }
+    }
+  }
+}

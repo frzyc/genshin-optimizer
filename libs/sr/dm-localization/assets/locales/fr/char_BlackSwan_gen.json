@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Marc de café",
-        "fullDesc": "Lorsqu'une cible ennemie entre en combat, elle a {{1, percent}}% de chances de base de subir 1 cumul d'Arcanes.<br>Chaque fois qu'une cible ennemie subit des dégâts sur la durée pendant l'attaque d'un allié, elle a {{1, percent}}% de chances de base d'être affectée par 1 cumul d'Arcanes. Le nombre maximum de cumuls qui peuvent être appliqués au cours d'une seule attaque est de {{2}}.",
+        "fullDesc": "Lorsqu'une cible ennemie entre en combat, elle a {{1, percent}}% de chances de base de subir 1 cumul d'Arcanes.<br>Chaque fois qu'une cible ennemie subit 1 instance de dégâts sur la durée au cours de l'attaque d'un allié, elle a {{1, percent}}% de chances de base d'être affectée par 1 cumul d'Arcanes. Le nombre maximum de cumuls qui peuvent être appliqués au cours d'1 seule attaque est de {{2}}.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Panthéon miséricordieux des masses pitoyables",
-      "desc": "Lorsqu'une cible ennemie est attaquée par des alliés de Cygne noir, Cygne noir a {{2, percent}}% de chances de base d'appliquer 1 cumul d'Arcanes à la cible.<br>Chaque fois que Cygne noir applique Arcanes à une cible ennemie, il y a {{1, percent}}% de chances fixes d'augmenter de {{3}} le nombre de cumuls d'Arcanes pour cette fois."
+      "desc": "Lorsqu'une cible ennemie est attaquée par des coéquipiers de Cygne noir, Cygne noir a {{2, percent}}% de chances de base d'appliquer 1 cumul d'Arcanes à la cible.<br>Chaque fois que Cygne noir applique Arcanes à une cible ennemie, il y a {{1, percent}}% de chances fixes d'augmenter de {{3}} le nombre de cumuls d'Arcanes pour cette fois."
     }
   }
 }

@@ -107,7 +107,7 @@ export function LocationAutocomplete({
     () => [
       {
         key: '',
-        label: t`artifact:filterLocation.inventory`,
+        label: t('artifact:filterLocation.inventory'),
       },
       ...Array.from(
         new Set(

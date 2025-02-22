@@ -1,0 +1,24 @@
+{
+  "name": "Canzone della Pattuglia delle Sommità",
+  "description": {
+    "0": "Una lama d'ossidiana dall'ineguagliabile affilatezza, ma leggera come una canzone. Pare che un'artigiana l'abbia dotata di un Dispositivo flogistico smontabile capace di riprodurre della musica."
+  },
+  "passiveName": "Epoca d'oro infinita",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando il personaggio colpisce un avversario con attacchi normali o in picchiata, ottiene l'effetto \"Ode ai fiori\": la sua DIF aumenta di un <cryo>8%</cryo> e riceve un bonus DAN per tutti gli elementi di un <cryo>10%</cryo> per 6 s. L'effetto è cumulabile 2 volte e può attivarsi ogni 0,1 s. Quando l'effetto raggiunge i 2 accumuli o la durata del secondo accumulo si ripristina, il bonus DAN per tutti gli elementi di tutti i membri del gruppo vicini aumenta di un <cryo>8%</cryo> per ogni 1.000 di DIF del personaggio che equipaggia l'arma, fino a un <cryo>25,6%</cryo> massimo per 15 s."
+    },
+    "1": {
+      "0": "Quando il personaggio colpisce un avversario con attacchi normali o in picchiata, ottiene l'effetto \"Ode ai fiori\": la sua DIF aumenta di un <cryo>10%</cryo> e riceve un bonus DAN per tutti gli elementi di un <cryo>12,5%</cryo> per 6 s. L'effetto è cumulabile 2 volte e può attivarsi ogni 0,1 s. Quando l'effetto raggiunge i 2 accumuli o la durata del secondo accumulo si ripristina, il bonus DAN per tutti gli elementi di tutti i membri del gruppo vicini aumenta di un <cryo>10%</cryo> per ogni 1.000 di DIF del personaggio che equipaggia l'arma, fino a un <cryo>32%</cryo> massimo per 15 s."
+    },
+    "2": {
+      "0": "Quando il personaggio colpisce un avversario con attacchi normali o in picchiata, ottiene l'effetto \"Ode ai fiori\": la sua DIF aumenta di un <cryo>12%</cryo> e riceve un bonus DAN per tutti gli elementi di un <cryo>15%</cryo> per 6 s. L'effetto è cumulabile 2 volte e può attivarsi ogni 0,1 s. Quando l'effetto raggiunge i 2 accumuli o la durata del secondo accumulo si ripristina, il bonus DAN per tutti gli elementi di tutti i membri del gruppo vicini aumenta di un <cryo>12%</cryo> per ogni 1.000 di DIF del personaggio che equipaggia l'arma, fino a un <cryo>38,4%</cryo> massimo per 15 s."
+    },
+    "3": {
+      "0": "Quando il personaggio colpisce un avversario con attacchi normali o in picchiata, ottiene l'effetto \"Ode ai fiori\": la sua DIF aumenta di un <cryo>14%</cryo> e riceve un bonus DAN per tutti gli elementi di un <cryo>17,5%</cryo> per 6 s. L'effetto è cumulabile 2 volte e può attivarsi ogni 0,1 s. Quando l'effetto raggiunge i 2 accumuli o la durata del secondo accumulo si ripristina, il bonus DAN per tutti gli elementi di tutti i membri del gruppo vicini aumenta di un <cryo>14%</cryo> per ogni 1.000 di DIF del personaggio che equipaggia l'arma, fino a un <cryo>44,8%</cryo> massimo per 15 s."
+    },
+    "4": {
+      "0": "Quando il personaggio colpisce un avversario con attacchi normali o in picchiata, ottiene l'effetto \"Ode ai fiori\": la sua DIF aumenta di un <cryo>16%</cryo> e riceve un bonus DAN per tutti gli elementi di un <cryo>20%</cryo> per 6 s. L'effetto è cumulabile 2 volte e può attivarsi ogni 0,1 s. Quando l'effetto raggiunge i 2 accumuli o la durata del secondo accumulo si ripristina, il bonus DAN per tutti gli elementi di tutti i membri del gruppo vicini aumenta di un <cryo>16%</cryo> per ogni 1.000 di DIF del personaggio che equipaggia l'arma, fino a un <cryo>51,2%</cryo> massimo per 15 s."
+    }
+  }
+}

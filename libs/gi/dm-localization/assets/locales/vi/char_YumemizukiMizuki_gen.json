@@ -1,0 +1,160 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "Ảo Mộng Trùng Điệp",
+  "description": "Cổ đông của Phòng Tắm Hơi Aisa, một nhà trị liệu tâm lý thuộc tộc baku, dốc sức để xua đuổi ác mộng, đem lại bình yên cho mọi người.",
+  "constellationName": "Cung Mạc Chẩm",
+  "auto": {
+    "name": "Giấc Mơ Thuần Khiết",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần tấn công, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, sau khi tụ lực, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh nguyên tố Phong, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Sát Thương Khi Đáp",
+      "6": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Hành Trình Aisa Utamakura",
+    "description": {
+      "0": "Dệt nên hồi ức của giấc mơ đẹp, bước vào trạng thái <strong>Mộng Trôi</strong> lơ lửng trên mặt đất, đồng thời gây cho kẻ địch xung quanh một lần <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>.",
+      "1": "<br/>",
+      "2": "<strong>Mộng Trôi</strong>",
+      "3": [
+        "Khi trong trạng thái Mộng Trôi, Yumemizuki Mizuki sẽ liên tục trôi về phía trước, đồng thời gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> cho kẻ địch gần đó theo chu kỳ.",
+        "Trong thời gian này, Yumemizuki Mizuki có thể điều khiển hướng trôi, đồng thời tăng khoảng cách thu thập <strong>Đồ Ăn Vặt Yumemi</strong> từ Kỹ Năng Nộ <strong>Liệu Pháp Bí Truyền Anraku</strong>.",
+        "Căn cứ vào Tinh Thông Nguyên Tố của Yumemizuki Mizuki để gia tăng sát thương phản ứng Khuếch Tán gây ra bởi nhân vật trong đội gần đó.",
+        "Khi Yumemizuki Mizuki rời trận hoặc kích hoạt lại kỹ năng này lần nữa thì trạng thái Mộng Trôi sẽ kết thúc."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Gặp nhau trong giấc mơ đêm, bài ca trong mộng vang rộng khắp.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Tấn Công Theo Chu Kỳ",
+      "2": "Thời Gian Duy Trì Mộng Trôi",
+      "3": "Phần Trăm Sát Thương Khuếch Tán Tăng Bởi Mỗi Điểm Tinh Thông",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Liệu Pháp Bí Truyền Anraku",
+    "description": {
+      "0": "Đánh thức vô số hồi ức của giấc mơ đẹp lẫn ác mộng, thu hút vật thể và kẻ địch ở gần, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>, đồng thời triệu hồi Mini Baku đến hỗ trợ.",
+      "1": "<br/>",
+      "2": "<strong>Mini Baku</strong>",
+      "3": "Sẽ đi theo nhân vật ra trận hiện tại. Mỗi cách một khoảng thời gian, Mini Baku sẽ tạo ra 1 \"Đồ Ăn Vặt Yumemi\". Sau khi nhân vật trong đội của bản thân nhặt được Đồ Ăn Vặt Yumemi, nếu người nhặt có HP trên 70% thì đồ ăn vặt sẽ phát nổ và tung ra Sóng Xung Kích Munen, gây cho kẻ địch xung quanh một lần <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>. Nếu ngược lại thì sẽ hồi phục HP cho người nhặt, lượng hồi phục căn cứ vào Tinh Thông Nguyên Tố của Yumemizuki Mizuki. Khi Yumemizuki Mizuki nhặt Đồ Ăn Vặt Yumemi và kích hoạt chữa trị, lượng chữa trị sẽ gia tăng 100%. Nếu trong một thời gian không được nhặt, Đồ Ăn Vặt Yumemi cũng sẽ phát nổ và phóng thích Sóng Xung Kích Munen, gây cho kẻ địch xung quanh một lần <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>.",
+      "4": "<br/>",
+      "5": "<i>\"Nếu chôn vùi cảm xúc tiêu cực quá lâu thì chúng sẽ trở thành ác mộng. Vì vậy, tại sao chúng ta không biến chúng thành món ăn vặt ngon lành khi rảnh rỗi nhỉ?\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Sóng Xung Kích Munen",
+      "2": "HP Hồi Phục Khi Nhặt Đồ Ăn Vặt",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tiếng Vọng Đêm Trăng",
+    "description": {
+      "0": "Khi Yumemizuki Mizuki kích hoạt phản ứng Khuếch Tán trong trạng thái Mộng Trôi, thời gian duy trì trạng thái Mộng Trôi sẽ kéo dài 2.5s. Hiệu quả này mỗi 0.3s tối đa kích hoạt 1 lần, trong một lần Mộng Trôi tối đa kích hoạt 2 lần."
+    }
+  },
+  "passive2": {
+    "name": "Ngày Nghĩ Tối Mơ",
+    "description": {
+      "0": "Lúc Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, khi đòn tấn công nguyên tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo>, <electro>Lôi</electro> của các nhân vật khác trong đội gần đó đánh trúng kẻ địch, Tinh Thông Nguyên Tố của Yumemizuki Mizuki tăng 100 điểm trong 4s."
+    }
+  },
+  "passive3": {
+    "name": "Vạn Sự Vô Bệnh",
+    "description": {
+      "0": "Khi Yumemizuki Mizuki ở trong đội, nhân vật trong đội của bản thân khi dùng thực phẩm dạng hồi phục không có chức năng hồi sinh sẽ có tỷ lệ tăng 30% lượng hồi phục. Xác suất kích hoạt hiệu quả này sẽ căn cứ vào Cấp Yêu Thích của nhân vật tương ứng (Khi Nhà Lữ Hành sử dụng, hiệu quả này sẽ luôn kích hoạt)."
+    }
+  },
+  "constellation1": {
+    "name": "Sương Mù Mờ Ảo Như Nước Xa",
+    "description": {
+      "0": "Yumemizuki Mizuki khi ở trong trạng thái Mộng Trôi, mỗi 3.5s sẽ gán hiệu ứng \"Chờ Đợi Hai Mươi Ba Đêm\" cho kẻ địch gần đó trong 3s. Kẻ địch bị ảnh hưởng bởi hiệu quả \"Chờ Đợi Hai Mươi Ba Đêm\" khi chịu Sát Thương Nguyên Tố Phong và kích hoạt phản ứng Khuếch Tán sẽ xóa bỏ hiệu quả này, khiến sát thương của lần Khuếch Tán đó lên kẻ địch gia tăng tương ứng với 1100% Tinh Thông Nguyên Tố của Mizuki."
+    }
+  },
+  "constellation2": {
+    "name": "Như Từng Gặp Nhau Trong Giấc Mộng",
+    "description": {
+      "0": "Khi vào trạng thái Mộng Trôi, mỗi điểm Tinh Thông Nguyên Tố của Yumemizuki Mizuki sẽ cung cấp 0.04% Buff Sát Thương Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo>, <electro>Lôi</electro> cho tất cả nhân vật khác trong đội gần đó. Hiệu quả này duy trì đến khi trạng thái Mộng Trôi kết thúc."
+    }
+  },
+  "constellation3": {
+    "name": "Bình Minh Ló Dạng Mặt Trăng Tan",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Hành Trình Aisa Utamakura</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dòng Suối Ấm Áp Hương Hoa Nồng",
+    "description": {
+      "0": "Khi nhặt <strong>Đồ Ăn Vặt Yumemi</strong> sinh ra từ Kỹ Năng Nộ <strong>Liệu Pháp Bí Truyền Anraku</strong> sẽ cùng lúc nhận được trị liệu và gây ra sát thương, đồng thời hồi phục cho Mizuki 5 điểm Năng Lượng Nguyên Tố. Trong thời gian duy trì một lần <strong>Liệu Pháp Bí Truyền Anraku</strong> tối đa hồi phục 4 lần Năng Lượng Nguyên Tố thông qua cách thức này."
+    }
+  },
+  "constellation5": {
+    "name": "Như Buổi Hoàng Hôn Chờ Trăng Về",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Liệu Pháp Bí Truyền Anraku</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Nỗi Nhớ Quanh Quẩn Vướng Trong Tim",
+    "description": {
+      "0": "Khi Yumemizuki Mizuki ở trong trạng thái Mộng Trôi, sát thương phản ứng Khuếch Tán kích hoạt từ nhân vật trong đội gần đó có thể Bạo Kích, với Tỷ Lệ Bạo Kích cố định là 30%, Sát Thương Bạo Kích cố định là 100%."
+    }
+  }
+}

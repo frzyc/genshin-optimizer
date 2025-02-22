@@ -94,7 +94,7 @@ export default function TeamExportModal({
     const dataStr = JSON.stringify(data)
     navigator.clipboard
       .writeText(dataStr)
-      .then(() => alert(t`exportModal.msg`))
+      .then(() => alert(t('exportModal.msg')))
       .catch(console.error)
   }
   const [selAll, setSelAll] = useState(true)
@@ -135,7 +135,7 @@ export default function TeamExportModal({
     <ModalWrapper open={show} onClose={onHide}>
       <CardThemed>
         <CardHeader
-          title={t`exportModal.title`}
+          title={t('exportModal.title')}
           action={
             <IconButton onClick={onHide}>
               <CloseIcon />
@@ -164,7 +164,7 @@ export default function TeamExportModal({
               color="info"
               onClick={selAll ? onSelAll : onUnselAll}
             >
-              {selAll ? t`exportModal.selAll` : t`exportModal.unselAll`}
+              {selAll ? t('exportModal.selAll') : t('exportModal.unselAll')}
             </Button>
           </Box>
 
@@ -197,7 +197,7 @@ export default function TeamExportModal({
           sx={{ display: 'flex', gap: 2, justifyContent: 'flex-end' }}
         >
           <Button color="success" onClick={onExport}>
-            {t`exportModal.export`}
+            {t('exportModal.export')}
           </Button>
         </CardContent>
       </CardThemed>
@@ -267,7 +267,7 @@ function LoadoutSetting({
                   sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
                 >
                   <OptimizationIcon />
-                  <Box>{t`exportModal.target`}</Box>
+                  <Box>{t('exportModal.target')}</Box>
                 </Typography>
                 <Typography>
                   <OptimizationTargetDisplay
@@ -287,7 +287,7 @@ function LoadoutSetting({
           <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <CustomMultiTargetIcon />
             <Typography>
-              <strong>{t`exportModal.mTargets`}</strong>
+              <strong>{t('exportModal.mTargets')}</strong>
             </Typography>
           </CardContent>
           <FieldDisplayList bgt="light">
@@ -335,7 +335,7 @@ function LoadoutSetting({
       <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <BuildIcon />
         <Typography>
-          <strong>{t`exportModal.builds`}</strong>
+          <strong>{t('exportModal.builds')}</strong>
         </Typography>
       </CardContent>
       <FieldDisplayList bgt="light">
@@ -351,7 +351,7 @@ function LoadoutSetting({
               tabIndex={-1}
               disableRipple
             />
-            <ListItemText primary={t`exportModal.equipped`} />
+            <ListItemText primary={t('exportModal.equipped')} />
           </ListItemButton>
         </ListItem>
         {buildIds.map((buildId) => {
@@ -404,7 +404,8 @@ function LoadoutSetting({
                 <ListItemText
                   primary={
                     <Box>
-                      {buildTc.name} <SqBadge>{t`exportModal.tcBadge`}</SqBadge>
+                      {buildTc.name}{' '}
+                      <SqBadge>{t('exportModal.tcBadge')}</SqBadge>
                     </Box>
                   }
                 />

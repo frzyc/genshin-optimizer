@@ -6,6 +6,7 @@ import type {
   ImportResultCounter,
 } from '@genshin-optimizer/sr/db'
 import { SroDatabase } from '@genshin-optimizer/sr/db'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'
@@ -22,7 +23,6 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { useDatabaseContext } from '../Context'
 
 const InvisInput = styled('input')({ display: 'none' })
 
@@ -123,7 +123,7 @@ export function UploadCard({
                 onChange={onUpload}
               />
               <Button component="span" color="info" startIcon={<FileOpen />}>
-                {t`uploadCard.buttons.open`}
+                {t('uploadCard.buttons.open')}
               </Button>
             </label>
           </Grid>
@@ -149,8 +149,8 @@ export function UploadCard({
             title={
               <Typography>
                 {ignoreDups
-                  ? t`uploadCard.tooltip.ignoreDup`
-                  : t`uploadCard.tooltip.detectdup`}
+                  ? t('uploadCard.tooltip.ignoreDup')
+                  : t('uploadCard.tooltip.detectdup')}
               </Typography>
             }
             placement="top"
@@ -164,7 +164,7 @@ export function UploadCard({
                 onClick={() => setIgnoreDups(!ignoreDups)}
                 startIcon={ignoreDups ? <CheckBoxOutlineBlank /> : <CheckBox />}
               >
-                {t`uploadCard.buttons.detectDups`}
+                {t('uploadCard.buttons.detectDups')}
               </Button>
             </Box>
           </Tooltip>
@@ -172,8 +172,8 @@ export function UploadCard({
             title={
               <Typography>
                 {keepNotInImport
-                  ? t`uploadCard.tooltip.keepNotInImport`
-                  : t`uploadCard.tooltip.delNotInImport`}
+                  ? t('uploadCard.tooltip.keepNotInImport')
+                  : t('uploadCard.tooltip.delNotInImport')}
               </Typography>
             }
             placement="top"
@@ -189,7 +189,7 @@ export function UploadCard({
                   keepNotInImport ? <CheckBoxOutlineBlank /> : <CheckBox />
                 }
               >
-                {t`uploadCard.buttons.delNotInImport`}
+                {t('uploadCard.buttons.delNotInImport')}
               </Button>
             </Box>
           </Tooltip>

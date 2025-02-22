@@ -1,0 +1,14 @@
+{
+  "relics": "Relikte",
+  "set": "Reliktset",
+  "mainStat": "Hauptattribut",
+  "slot": "Steckplatz",
+  "slotKey": {
+    "head": "Kopf",
+    "hands": "Hände",
+    "body": "Körper",
+    "feet": "Füße",
+    "sphere": "Planarsphäre",
+    "rope": "Verbindungsseil"
+  }
+}

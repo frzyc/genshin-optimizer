@@ -41,7 +41,7 @@
   "skill": {
     "name": "Blazing Blessing",
     "description": {
-      "0": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan sebuah pelindung Blazing Barrier. Saat melancarkan Elemental Skill, Thoma akan terkena <pyro>efek elemen Pyro</pyro> selama sekejap.",
+      "0": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan sebuah Blazing Barrier. Saat melancarkan Elemental Skill, Thoma akan terkena <pyro>efek elemen Pyro</pyro> selama sekejap.",
       "1": "DMG yang dapat ditahan oleh Barrier didasarkan pada Max HP Thoma.",
       "2": "Blazing Barrier mempunyai efek sebagai berikut:",
       "3": [

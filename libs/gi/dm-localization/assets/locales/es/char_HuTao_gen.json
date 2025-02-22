@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
       }
     },
     "skillParams": {
@@ -46,7 +46,7 @@
       "2": "<br/>",
       "3": "<strong>Mariposa excelsa</strong>",
       "4": [
-        "Aumenta el ATQ de Hu Tao en función de la Vida Máx. que tenía al entrar en este estado. El bono de ATQ obtenido de esta forma no podrá ser superior al 400% del ATQ Básico de Hu Tao.",
+        "Aumenta el ATQ de Hu Tao en función de la Vida Máx. que tenía al entrar en este estado. El bono de ATQ obtenido de esta forma no podrá ser superior al 400% del ATQ Base de Hu Tao.",
         "El daño de los ataques se convierte en <pyro>Daño Pyro</pyro>. Este cambio elemental no puede sustituirse imbuyéndose de otro elemento.",
         "Al atacar a los enemigos con Ataques Cargados, aplicará sobre ellos el efecto de pétalos sangrientos.",
         "Aumenta la RES a interrupción de Hu Tao."

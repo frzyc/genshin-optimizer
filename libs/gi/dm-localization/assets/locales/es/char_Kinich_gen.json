@@ -9,7 +9,7 @@
       "normal": {
         "0": "<strong>Ataque Normal</strong>",
         "1": "Realiza hasta 3 ataques consecutivos.",
-        "2": "Tras usar la Habilidad Elemental, “Caza en suspensión: Persecución aérea” para ejecutar un balanceo aéreo, puede realizar un Ataque Normal en el aire antes de aterrizar."
+        "2": "Tras usar la Habilidad Elemental “Caza en suspensión: Persecución aérea” para ejecutar un balanceo aéreo, puede realizar un Ataque Normal en el aire antes de aterrizar."
       },
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
@@ -17,7 +17,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Se lanza desde el aire para golpear el suelo, infligiendo Daño en el AdE a los enemigos cercanos en el momento del impacto."
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
       }
     },
     "skillParams": {
@@ -44,7 +44,7 @@
     "description": {
       "0": "Kinich hace uso de sus habilidades de caza mayor para moverse con presteza y atacar a su enemigo.",
       "1": "Cuando en las cercanías haya un enemigo o un objeto que pueda ser atacado, le disparará el gancho de agarre y entrará en el estado de “bendición noctámbula” con 0 pts. de noctambulismo. Cuando no haya enemigos cerca, lanzará un gancho de agarre para ejecutar un balanceo aéreo y, además, el TdE de la habilidad se reducirá en un 60%.",
-      "2": "Podrás mantener pulsada esta habilidad para apuntar con el gancho de agarre.",
+      "2": "Al mantener pulsada esta habilidad, se podrá apuntar con el gancho de agarre.",
       "3": "<br/>",
       "4": "<strong>Bendición noctámbula: Kinich</strong>",
       "5": "La bendición noctámbula de Kinich dura 10 s y genera 2 pts. de noctambulismo por segundo.",
@@ -122,7 +122,7 @@
       "0": "Cuando Kinich está en el aire tras ejecutar el balanceo aéreo de <strong>Caza en suspensión: Persecución aérea</strong>, puede consumir 10 pts. de flogisto para realizar un segundo balanceo aéreo.",
       "1": "Si se encuentra en una zona con alguna mecánica de flogisto de Natlan, podrá utilizar “Transmisión noctambular: Kinich”. Cuando el personaje en uso esté esprintando, se encuentre en estado de movimiento derivado de algún talento o esté en el aire, al cambiar a Kinich, este realizará una de las siguientes acciones según ciertas condiciones:",
       "2": [
-        "Al apuntar a un sigilo hojavoluta con el que se pueda interactuar, le disparará un gancho de agarre para moverse.",
+        "Al apuntar a un sigilo hojavoluta con el que se pueda interactuar, le disparará un gancho de agarre para moverse hacia él.",
         "Si está en combate y hay algún enemigo cerca, usará Caza en suspensión: Persecución aérea contra dicho enemigo."
       ],
       "3": "Si no, lanzará el gancho de agarre y ejecutará un balanceo aéreo. Kinich priorizará los sigilos hojavoluta válidos como objetivos para el gancho de agarre.",

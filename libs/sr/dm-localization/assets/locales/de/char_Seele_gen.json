@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Zerreißen",
-        "fullDesc": "Erhöht beim Buff die Quanten-WDS-DUR von Seele um {{1, percent}}%.",
+        "fullDesc": "Erhöht im Verstärkten Zustand die Quanten-WDS-DUR von Seele um {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Gekräuselte Oberfläche",
-        "fullDesc": "Zieht nach einem Standardangriff Seeles nächste Aktion um {{1, percent}}% vor.",
+        "fullDesc": "Nach dem Einsatz eines Standardangriffs wird Seeles nächste Aktion um {{1, percent}}% vorgezogen.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Trennung",
-      "desc": "Der Ultimate verursacht beim getroffenen Gegner für {{2}} Rd. den Status „Schmetterlingssturm“. Gegner im Schmetterlingssturm erleiden bei Treffern 1-mal zusätzlich Quanten-SCH in Höhe von {{1, percent}}% von Seeles Ultimate-SCH. Wenn ein anderer Verbündeter das Ziel durch den zusätzlichen SCH von „Schmetterlingssturm“ besiegt, wird Seeles Talent nicht ausgelöst.<br>Ist Seele handlungsunfähig, wird der Status „Schmetterlingssturm“ vom Gegner entfernt."
+      "desc": "Der Ultimate verursacht beim getroffenen Gegner für {{2}} Rd. den Status „Schmetterlingssturm“. Gegner im Schmetterlingssturm erleiden bei Treffern 1-mal zusätzlich Quanten-SCH in Höhe von {{1, percent}}% von Seeles Ultimate-SCH. Wenn ein anderer Verbündeter das Ziel durch den zusätzlichen SCH von Schmetterlingssturm besiegt, wird Seeles Talent nicht ausgelöst.<br>Ist Seele handlungsunfähig, wird der Status Schmetterlingssturm vom Gegner entfernt."
     }
   }
 }

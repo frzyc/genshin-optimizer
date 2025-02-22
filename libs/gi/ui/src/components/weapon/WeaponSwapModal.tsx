@@ -64,11 +64,13 @@ const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const rarityHandler = handleMultiSelect([...allRarityKeys])
 
 export function WeaponSwapModal({
+  weaponId,
   onChangeId,
   weaponTypeKey,
   show,
   onClose,
 }: {
+  weaponId: string
   onChangeId: (id: string) => void
   weaponTypeKey: WeaponTypeKey
   show: boolean
@@ -103,27 +105,34 @@ export function WeaponSwapModal({
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
-  const weaponIds = useMemo(
-    () =>
-      (dbDirty &&
-        database.weapons.values
-          .filter(
-            filterFunction(
-              { weaponType: weaponTypeKey, rarity, name: deferredSearchTerm },
-              weaponFilterConfigs()
-            )
-          )
-          .sort(
-            sortFunction(
-              weaponSortMap['level'] ?? [],
-              false,
-              weaponSortConfigs()
-            )
-          )
-          .map((weapon) => weapon.id)) ??
-      [],
-    [dbDirty, database, rarity, weaponTypeKey, deferredSearchTerm]
-  )
+  const weaponIds = useMemo(() => {
+    const filterFunc = filterFunction(
+      { weaponType: weaponTypeKey, rarity, name: deferredSearchTerm },
+      weaponFilterConfigs()
+    )
+    const sortFunc = sortFunction(
+      weaponSortMap['level'] ?? [],
+      false,
+      weaponSortConfigs()
+    )
+    let weaponIds = database.weapons.values
+      .filter(filterFunc)
+      .sort(sortFunc)
+      .map((weapon) => weapon.id)
+    if (weaponId && database.weapons.get(weaponId)) {
+      // always show weaponId first if it exists
+      weaponIds = weaponIds.filter((id) => id !== weaponId) // remove
+      weaponIds.unshift(weaponId) // add to beginnig
+    }
+    return dbDirty && weaponIds
+  }, [
+    weaponTypeKey,
+    rarity,
+    deferredSearchTerm,
+    database.weapons,
+    weaponId,
+    dbDirty,
+  ])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
@@ -178,7 +187,7 @@ export function WeaponSwapModal({
                 {weaponTypeKey ? (
                   <ImgIcon src={imgAssets.weaponTypes[weaponTypeKey]} />
                 ) : null}
-                <span>{t`page_character:tabEquip.swapWeapon`}</span>
+                <span>{t('page_character:tabEquip.swapWeapon')}</span>
               </Typography>
             }
             action={
@@ -250,11 +259,27 @@ export function WeaponSwapModal({
               onEquip={clickHandler}
             />
             <Grid container spacing={1}>
-              {weaponIdsToShow.map((weaponId) => (
-                <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3}>
+              {weaponIdsToShow.map((id) => (
+                <Grid
+                  item
+                  key={id}
+                  xs={6}
+                  sm={6}
+                  md={4}
+                  lg={3}
+                  sx={(theme) => ({
+                    ...(weaponId === id && {
+                      '> .MuiCard-root': {
+                        outline: `solid ${theme.palette.warning.main}`,
+                      },
+                    }),
+                  })}
+                >
                   <WeaponCard
-                    weaponId={weaponId}
-                    onClick={() => setSwapWeaponId(weaponId)}
+                    weaponId={id}
+                    onClick={
+                      weaponId === id ? undefined : () => setSwapWeaponId(id)
+                    }
                   />
                 </Grid>
               ))}

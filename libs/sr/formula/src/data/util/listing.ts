@@ -21,6 +21,7 @@ const stats = [
   'enerRegen_',
   'heal_',
   'dmg_',
+  'common_dmg_',
   'resPen_',
   'weakness_',
   'brEfficiency_',
@@ -66,16 +67,6 @@ export const damageTypes = [
   'elemental', // pursued
 ] as const
 
-export const entryTypes = [
-  'own',
-  'enemy',
-  'team',
-  'target',
-  'teamBuff',
-  'notOwnBuff',
-  'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
-  'display', // Display-only, not participating in any buffs
-] as const
 export const sheets = [
   'agg',
   'iso',
@@ -90,26 +81,21 @@ export const sheets = [
   'enemy',
   'custom',
 ] as const
-export const members = ['0', '1', '2', '3'] as const
-export const presets = [
-  'preset0',
-  'preset1',
-  'preset2',
-  'preset3',
-  'preset4',
-  'preset5',
-  'preset6',
-  'preset7',
-  'preset8',
-  'preset9',
-] as const
 
+export const members = [...allCharacterKeys] as const
 export type Stat = (typeof stats)[number]
 export type BonusAbility = (typeof bonusAbilities)[number]
 export type StatBoost = (typeof statBoosts)[number]
 export type ElementalType = (typeof elementalTypes)[number]
 export type DamageType = (typeof damageTypes)[number]
-export type EntryType = (typeof entryTypes)[number]
 export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
-export type Preset = (typeof presets)[number]
+export type Src = Member
+export type Dst = Member | null
+
+export function isMember(x: string): x is Member {
+  return members.includes(x as Member)
+}
+export function isSheet(x: string): x is Sheet {
+  return sheets.includes(x as Sheet)
+}

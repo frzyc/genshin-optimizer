@@ -1,0 +1,336 @@
+{
+  "Id": 53015,
+  "CodeName": "Brawlerboo",
+  "Name": "Brawlerboo",
+  "Desc": "Ten thousand en-nah forward punches as practice per day!",
+  "Rarity": 3,
+  "Icon": "UI/Sprite/A1DynamicLoad/BangbooModGarage/UnPacker/BangbooRole/BangbooGarageRole29.png",
+  "Stats": {
+    "Stamina": 100,
+    "StaminaUpragde": 10,
+    "Endurance": 180,
+    "HpMax": 360,
+    "Hpupgrade": 428397,
+    "Attack": 53,
+    "AttackUpgrade": 267156,
+    "BreakStun": 94,
+    "ElementAbnormalPower": 100,
+    "Defence": 32,
+    "DefUpgrade": 92587,
+    "Crit": 500,
+    "PenRatio": 0,
+    "CritDmg": 5000
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": { "10": 15000, "102010": 4 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "2": {
+      "HpMax": 188,
+      "Attack": 49,
+      "Defence": 41,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": { "10": 35000, "102020": 12 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 450
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "3": {
+      "HpMax": 376,
+      "Attack": 247,
+      "Defence": 81,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": { "10": 75000, "102020": 20 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 2250
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "4": {
+      "HpMax": 564,
+      "Attack": 741,
+      "Defence": 122,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": { "10": 125000, "102030": 10 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 2250
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 2500
+        }
+      }
+    },
+    "5": {
+      "HpMax": 752,
+      "Attack": 1976,
+      "Defence": 163,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": { "10": 250000, "102030": 20 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 4500
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 2500
+        }
+      }
+    },
+    "6": {
+      "HpMax": 940,
+      "Attack": 4941,
+      "Defence": 203,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {},
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 4500
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 5000
+        }
+      }
+    }
+  },
+  "Skill": {
+    "A": {
+      "Level": {
+        "1": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "2": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "3": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "4": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "5": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "6": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "7": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "8": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "9": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        },
+        "10": {
+          "Name": "Falling Bangboo Asteroid Strike!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
+          "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
+        }
+      }
+    },
+    "B": {
+      "Level": {
+        "1": {
+          "Name": "Opening Jab",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character: Brawlerboo enters the <color=#FFFFFF>Airborne</color> state ahead of time when the battle starts. The first dive attack's DMG is increased by 120%.",
+          "Property": ["DMG Increase"],
+          "Param": "120%"
+        },
+        "2": {
+          "Name": "Opening Jab",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character: Brawlerboo enters the <color=#FFFFFF>Airborne</color> state ahead of time when the battle starts. The first dive attack's DMG is increased by 150%.",
+          "Property": ["DMG Increase"],
+          "Param": "150%"
+        },
+        "3": {
+          "Name": "Opening Jab",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character: Brawlerboo enters the <color=#FFFFFF>Airborne</color> state ahead of time when the battle starts. The first dive attack's DMG is increased by 180%.",
+          "Property": ["DMG Increase"],
+          "Param": "180%"
+        },
+        "4": {
+          "Name": "Opening Jab",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character: Brawlerboo enters the <color=#FFFFFF>Airborne</color> state ahead of time when the battle starts. The first dive attack's DMG is increased by 210%.",
+          "Property": ["DMG Increase"],
+          "Param": "210%"
+        },
+        "5": {
+          "Name": "Opening Jab",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character: Brawlerboo enters the <color=#FFFFFF>Airborne</color> state ahead of time when the battle starts. The first dive attack's DMG is increased by 240%.",
+          "Property": ["DMG Increase"],
+          "Param": "240%"
+        }
+      }
+    },
+    "C": {
+      "Level": {
+        "1": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "2": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "3": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "4": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "5": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "6": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "7": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "8": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "9": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        },
+        "10": {
+          "Name": "Scorching Wind Strike",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nJump up and strike continuously at enemies in a large area ahead, dealing <color=#FF5521>Fire DMG</color>.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301502, Prop:1001}|{Skill:5301502, Prop:1002}"
+        }
+      }
+    }
+  },
+  "SkillProp": {
+    "5301501": {
+      "1001": { "Main": 56000, "Growth": 5600, "Format": "%" },
+      "1002": { "Main": 32800, "Growth": 3280, "Format": "%" }
+    },
+    "5301502": {
+      "1001": { "Main": 84600, "Growth": 8460, "Format": "%" },
+      "1002": { "Main": 12100, "Growth": 1210, "Format": "%" }
+    },
+    "5301503": {
+      "1001": { "Main": 80000, "Growth": 8000, "Format": "%" },
+      "1002": { "Main": 23400, "Growth": 2340, "Format": "%" }
+    }
+  }
+}

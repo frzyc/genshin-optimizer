@@ -1,0 +1,24 @@
+{
+  "name": "Peak Patrol Song",
+  "description": {
+    "0": "Pedang obsidian yang tajam tak terkira, juga ringan seperti lagu. Dimodifikasi oleh seorang pengrajin dan ditambahkan dengan perangkat Phlogiston pemutar rekaman yang bisa dibongkar pasang."
+  },
+  "passiveName": "Halcyon Years Unending",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Normal Attack atau Plunging Attack mengenai musuh, akan mendapatkan \"Ode to Flowers\": DEF meningkat <cryo>8%</cryo>, serta mendapatkan <cryo>10%</cryo> Elemental DMG Bonus seluruh elemen. Efek ini berlangsung selama 6 detik dan dapat ditumpuk sampai 2 lapis, maksimum terpicu sekali setiap 0,1 detik. Saat efek ini ditumpuk sampai 2 lapis atau saat durasi lapisan kedua diperbarui, untuk setiap 1.000 poin DEF Karakter yang mengenakan, Karakter lain di sekitar akan mendapatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>8%</cryo>, sampai dengan maksimum <cryo>25,6%</cryo> dan berlangsung selama 15 detik."
+    },
+    "1": {
+      "0": "Setelah Normal Attack atau Plunging Attack mengenai musuh, akan mendapatkan \"Ode to Flowers\": DEF meningkat <cryo>10%</cryo>, serta mendapatkan <cryo>12,5%</cryo> peningkatan Elemental DMG Bonus seluruh elemen, efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 2 lapis, maksimum terpicu sekali setiap 0,1 detik. Saat efek ini ditumpuk sampai 2 lapis atau saat durasi lapisan kedua diperbarui, untuk setiap 1.000 poin DEF Karakter yang mengenakan, Karakter lain di sekitar akan mendapatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>10%</cryo>, sampai dengan maksimum <cryo>32%</cryo> dan berlangsung selama 15 detik."
+    },
+    "2": {
+      "0": "Setelah Normal Attack atau Plunging Attack mengenai musuh, akan mendapatkan \"Ode to Flowers\": DEF meningkat <cryo>12%</cryo>, serta mendapatkan <cryo>15%</cryo> peningkatan Elemental DMG Bonus seluruh elemen, efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 2 lapis, maksimum terpicu sekali setiap 0,1 detik. Saat efek ini ditumpuk sampai 2 lapis atau saat durasi lapisan kedua diperbarui, untuk setiap 1.000 poin DEF Karakter yang mengenakan, Karakter lain di sekitar akan mendapatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>12%</cryo>, sampai dengan maksimum <cryo>38,4%</cryo> dan berlangsung selama 15 detik."
+    },
+    "3": {
+      "0": "Setelah Normal Attack atau Plunging Attack mengenai musuh, akan mendapatkan \"Ode to Flowers\": DEF meningkat <cryo>14%</cryo>, serta mendapatkan <cryo>17,5%</cryo> peningkatan Elemental DMG Bonus seluruh elemen, efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 2 lapis, maksimum terpicu sekali setiap 0,1 detik. Saat efek ini ditumpuk sampai 2 lapis atau saat durasi lapisan kedua diperbarui, untuk setiap 1.000 poin DEF Karakter yang mengenakan, Karakter lain di sekitar akan mendapatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>14%</cryo>, sampai dengan maksimum <cryo>44,8%</cryo> dan berlangsung selama 15 detik."
+    },
+    "4": {
+      "0": "Setelah Normal Attack atau Plunging Attack mengenai musuh, akan mendapatkan \"Ode to Flowers\": DEF meningkat <cryo>16%</cryo>, serta mendapatkan <cryo>20%</cryo> peningkatan Elemental DMG Bonus seluruh elemen, efek ini berlangsung selama 6 detik, dapat ditumpuk sampai 2 lapis, maksimum terpicu sekali setiap 0,1 detik. Saat efek ini ditumpuk sampai 2 lapis atau saat durasi lapisan kedua diperbarui, untuk setiap 1.000 poin DEF Karakter yang mengenakan, Karakter lain di sekitar akan mendapatkan Elemental DMG Bonus seluruh elemen sebesar <cryo>16%</cryo>, sampai dengan maksimum <cryo>51,2%</cryo> dan berlangsung selama 15 detik."
+    }
+  }
+}

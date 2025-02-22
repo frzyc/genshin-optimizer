@@ -109,13 +109,6 @@ export const parsingFunctions: {
   },
   autoFields: (lang, string, keys) => {
     const strings = autoFields(string)
-    if (strings.length === 2) {
-      const [, charkey] = keys as any
-      if (charkey === 'Kinich' && lang === 'id') {
-        const [normal, charged, plunging] = autoFields(string, '\\n<strong>')
-        return { normal, charged, plunging } as any
-      }
-    }
     if (strings.length === 3) {
       const [normal, charged, plunging] = strings
       return { normal, charged, plunging } as any
@@ -157,6 +150,10 @@ export const parsingFunctions: {
         const [normal, charged, plunging, infusion] = strings
         return { normal, charged, plunging, infusion } as any
       }
+      if (charkey === 'Xilonen') {
+        const [normal, charged, plunging, nightsoul] = strings
+        return { normal, charged, plunging, nightsoul } as any
+      }
     } else if (strings.length === 5) {
       const [, charkey] = keys as any
       if (charkey === 'Neuvillette') {
@@ -181,6 +178,39 @@ export const parsingFunctions: {
   skillParam: (lang, string) => {
     if (!string) string = ''
     string = string.split('|')[0]
+    return string
+  },
+  skillParamEncoding: (lang, string) => {
+    if (!string) return ''
+    string = string.split('|')[1]
+    // Convert to i18n'able format
+    // Add double braces
+    string = string.replace(/[{}]/g, (match) => match + match)
+    // Convert param1 to 0
+    string = string.replace(
+      /param(\d*)/g,
+      (_match, capture) => `${+capture - 1}`
+    )
+    // Handle formatting ':F1}}', ':F1P}}', ':I}}', ':P}}'
+    string = string.replace(
+      /:(F\d|I)?(P)?}}/g,
+      (_match, floatOrInt, percent) => {
+        // 'F1' or 'F1P'
+        if (floatOrInt?.[0] === 'F') {
+          if (percent === 'P') {
+            return `, percent(fixed: ${floatOrInt[1]})}}%`
+          } else {
+            return `, fixed(fixed: ${floatOrInt[1]})}}`
+          }
+        }
+        // 'P'
+        else if (percent === 'P') {
+          return `, percent}}%`
+        }
+        // 'I' has no formatting
+        return '}}'
+      }
+    )
     return string
   },
   plungeLow: (lang, string) => plungeUtil(lang, string, true),

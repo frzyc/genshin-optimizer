@@ -124,9 +124,17 @@
       "icon": "UI_EquipIcon_Sword_Purewill",
       "awakenIcon": "UI_EquipIcon_Sword_Purewill"
     },
+    "SturdyBone": {
+      "icon": "UI_EquipIcon_Sword_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Sword_Umpakati_Awaken"
+    },
     "FluteOfEzpitzal": {
       "icon": "UI_EquipIcon_Sword_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Sword_Isikhulu_Awaken"
+    },
+    "CalamityOfEshu": {
+      "icon": "UI_EquipIcon_Sword_SacrificialNgombe",
+      "awakenIcon": "UI_EquipIcon_Sword_SacrificialNgombe_Awaken"
     },
     "AquilaFavonia": {
       "icon": "UI_EquipIcon_Sword_Falcon",
@@ -175,6 +183,10 @@
     "Absolution": {
       "icon": "UI_EquipIcon_Sword_Estoc",
       "awakenIcon": "UI_EquipIcon_Sword_Estoc_Awaken"
+    },
+    "PeakPatrolSong": {
+      "icon": "UI_EquipIcon_Sword_XochitlsTube",
+      "awakenIcon": "UI_EquipIcon_Sword_XochitlsTube_Awaken"
     },
     "WasterGreatsword": {
       "icon": "UI_EquipIcon_Claymore_Aniki",
@@ -288,6 +300,10 @@
       "icon": "UI_EquipIcon_Claymore_Mechanic",
       "awakenIcon": "UI_EquipIcon_Claymore_Mechanic_Awaken"
     },
+    "FruitfulHook": {
+      "icon": "UI_EquipIcon_Claymore_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Claymore_Umpakati_Awaken"
+    },
     "EarthShaker": {
       "icon": "UI_EquipIcon_Claymore_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Claymore_Isikhulu_Awaken"
@@ -323,6 +339,10 @@
     "FangOfTheMountainKing": {
       "icon": "UI_EquipIcon_Claymore_EmeraldSword",
       "awakenIcon": "UI_EquipIcon_Claymore_EmeraldSword_Awaken"
+    },
+    "AThousandBlazingSuns": {
+      "icon": "UI_EquipIcon_Claymore_RadianceSword",
+      "awakenIcon": "UI_EquipIcon_Claymore_RadianceSword_Awaken"
     },
     "BeginnersProtector": {
       "icon": "UI_EquipIcon_Pole_Gewalt",
@@ -416,9 +436,17 @@
       "icon": "UI_EquipIcon_Pole_Mechanic",
       "awakenIcon": "UI_EquipIcon_Pole_Mechanic_Awaken"
     },
+    "MountainBracingBolt": {
+      "icon": "UI_EquipIcon_Pole_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Pole_Umpakati_Awaken"
+    },
     "FootprintOfTheRainbow": {
       "icon": "UI_EquipIcon_Pole_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Pole_Isikhulu_Awaken"
+    },
+    "TamayurateiNoOhanashi": {
+      "icon": "UI_EquipIcon_Pole_Aoandon",
+      "awakenIcon": "UI_EquipIcon_Pole_Aoandon_Awaken"
     },
     "StaffOfHoma": {
       "icon": "UI_EquipIcon_Pole_Homa",
@@ -564,6 +592,10 @@
       "icon": "UI_EquipIcon_Catalyst_ConchSprayer",
       "awakenIcon": "UI_EquipIcon_Catalyst_ConchSprayer_Awaken"
     },
+    "WaveridingWhirl": {
+      "icon": "UI_EquipIcon_Catalyst_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Umpakati_Awaken"
+    },
     "RingOfYaxche": {
       "icon": "UI_EquipIcon_Catalyst_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Catalyst_Isikhulu_Awaken"
@@ -615,6 +647,14 @@
     "SurfsUp": {
       "icon": "UI_EquipIcon_Catalyst_MechaPufferfish",
       "awakenIcon": "UI_EquipIcon_Catalyst_MechaPufferfish_Awaken"
+    },
+    "StarcallersWatch": {
+      "icon": "UI_EquipIcon_Catalyst_Figurines",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Figurines_Awaken"
+    },
+    "SunnyMorningSleepIn": {
+      "icon": "UI_EquipIcon_Catalyst_SakuraFan",
+      "awakenIcon": "UI_EquipIcon_Catalyst_SakuraFan_Awaken"
     },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
@@ -736,6 +776,10 @@
       "icon": "UI_EquipIcon_Bow_Mechanic",
       "awakenIcon": "UI_EquipIcon_Bow_Mechanic_Awaken"
     },
+    "FlowerWreathedFeathers": {
+      "icon": "UI_EquipIcon_Bow_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Bow_Umpakati_Awaken"
+    },
     "ChainBreaker": {
       "icon": "UI_EquipIcon_Bow_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Bow_Isikhulu_Awaken"
@@ -775,6 +819,10 @@
     "SilvershowerHeartstrings": {
       "icon": "UI_EquipIcon_Bow_Arcdange",
       "awakenIcon": "UI_EquipIcon_Bow_Arcdange_Awaken"
+    },
+    "AstralVulturesCrimsonPlumage": {
+      "icon": "UI_EquipIcon_Bow_Qoyllorsnova",
+      "awakenIcon": "UI_EquipIcon_Bow_Qoyllorsnova_Awaken"
     },
     "QuantumCatalyst": {}
   },
@@ -2629,6 +2677,130 @@
       "constellation5": "UI_Talent_U_Mualani_02",
       "constellation6": "UI_Talent_S_Mualani_04"
     },
+    "Xilonen": {
+      "icon": "UI_AvatarIcon_Xilonen",
+      "iconSide": "UI_AvatarIcon_Side_Xilonen",
+      "banner": "UI_NameCardPic_Xilonen_P",
+      "bar": "UI_NameCardPic_Xilonen_Alpha",
+      "skill": "Skill_S_Xilonen_01",
+      "burst": "Skill_E_Xilonen_01_HD",
+      "passive1": "UI_Talent_S_Xilonen_05",
+      "passive2": "UI_Talent_S_Xilonen_06",
+      "passive3": "UI_Talent_S_Xilonen_07",
+      "passive": "UI_Talent_S_Xilonen_08",
+      "constellation1": "UI_Talent_S_Xilonen_01",
+      "constellation2": "UI_Talent_S_Xilonen_02",
+      "constellation3": "UI_Talent_U_Xilonen_01",
+      "constellation4": "UI_Talent_S_Xilonen_03",
+      "constellation5": "UI_Talent_U_Xilonen_02",
+      "constellation6": "UI_Talent_S_Xilonen_04"
+    },
+    "Chasca": {
+      "icon": "UI_AvatarIcon_Chasca",
+      "iconSide": "UI_AvatarIcon_Side_Chasca",
+      "banner": "UI_NameCardPic_Chasca_P",
+      "bar": "UI_NameCardPic_Chasca_Alpha",
+      "skill": "Skill_S_Chasca_01",
+      "burst": "Skill_E_Chasca_01_HD",
+      "passive1": "UI_Talent_S_Chasca_05",
+      "passive2": "UI_Talent_S_Chasca_06",
+      "passive3": "UI_Talent_S_Chasca_07",
+      "passive": "UI_Talent_S_Chasca_08",
+      "constellation1": "UI_Talent_S_Chasca_01",
+      "constellation2": "UI_Talent_S_Chasca_02",
+      "constellation3": "UI_Talent_U_Chasca_01",
+      "constellation4": "UI_Talent_S_Chasca_03",
+      "constellation5": "UI_Talent_U_Chasca_02",
+      "constellation6": "UI_Talent_S_Chasca_04"
+    },
+    "Ororon": {
+      "icon": "UI_AvatarIcon_Olorun",
+      "iconSide": "UI_AvatarIcon_Side_Olorun",
+      "banner": "UI_NameCardPic_Olorun_P",
+      "bar": "UI_NameCardPic_Olorun_Alpha",
+      "skill": "Skill_S_Olorun_01",
+      "burst": "Skill_E_Olorun_01_HD",
+      "passive1": "UI_Talent_S_Olorun_05",
+      "passive2": "UI_Talent_S_Olorun_06",
+      "passive3": "UI_Talent_S_Olorun_07",
+      "passive": "UI_Talent_S_Olorun_08",
+      "constellation1": "UI_Talent_S_Olorun_01",
+      "constellation2": "UI_Talent_S_Olorun_02",
+      "constellation3": "UI_Talent_U_Olorun_01",
+      "constellation4": "UI_Talent_S_Olorun_03",
+      "constellation5": "UI_Talent_U_Olorun_02",
+      "constellation6": "UI_Talent_S_Olorun_04"
+    },
+    "Mavuika": {
+      "icon": "UI_AvatarIcon_Mavuika",
+      "iconSide": "UI_AvatarIcon_Side_Mavuika",
+      "banner": "UI_NameCardPic_Mavuika_P",
+      "bar": "UI_NameCardPic_Mavuika_Alpha",
+      "skill": "Skill_S_Mavuika_01",
+      "burst": "Skill_E_Mavuika_01_HD",
+      "passive1": "UI_Talent_S_Mavuika_05",
+      "passive2": "UI_Talent_S_Mavuika_06",
+      "passive3": "UI_Talent_S_Mavuika_07",
+      "passive": "UI_Talent_S_Citlali_07",
+      "constellation1": "UI_Talent_S_Mavuika_01",
+      "constellation2": "UI_Talent_S_Mavuika_02",
+      "constellation3": "UI_Talent_U_Mavuika_01",
+      "constellation4": "UI_Talent_S_Mavuika_03",
+      "constellation5": "UI_Talent_U_Mavuika_02",
+      "constellation6": "UI_Talent_S_Mavuika_04"
+    },
+    "Citlali": {
+      "icon": "UI_AvatarIcon_Citlali",
+      "iconSide": "UI_AvatarIcon_Side_Citlali",
+      "banner": "UI_NameCardPic_Citlali_P",
+      "bar": "UI_NameCardPic_Citlali_Alpha",
+      "skill": "Skill_S_Citlali_01",
+      "burst": "Skill_E_Citlali_01_HD",
+      "passive1": "UI_Talent_S_Citlali_05",
+      "passive2": "UI_Talent_S_Citlali_06",
+      "passive3": "UI_Talent_S_Citlali_08",
+      "passive": "UI_Talent_S_Mavuika_08",
+      "constellation1": "UI_Talent_S_Citlali_01",
+      "constellation2": "UI_Talent_S_Citlali_02",
+      "constellation3": "UI_Talent_U_Citlali_01",
+      "constellation4": "UI_Talent_S_Citlali_03",
+      "constellation5": "UI_Talent_U_Citlali_02",
+      "constellation6": "UI_Talent_S_Citlali_04"
+    },
+    "LanYan": {
+      "icon": "UI_AvatarIcon_Lanyan",
+      "iconSide": "UI_AvatarIcon_Side_Lanyan",
+      "banner": "UI_NameCardPic_Lanyan_P",
+      "bar": "UI_NameCardPic_Lanyan_Alpha",
+      "skill": "Skill_S_Lanyan_01",
+      "burst": "Skill_E_Lanyan_01_HD",
+      "passive1": "UI_Talent_S_Lanyan_05",
+      "passive2": "UI_Talent_S_Lanyan_06",
+      "passive3": "UI_Talent_S_Sayu_07",
+      "constellation1": "UI_Talent_S_Lanyan_01",
+      "constellation2": "UI_Talent_S_Lanyan_02",
+      "constellation3": "UI_Talent_U_Lanyan_01",
+      "constellation4": "UI_Talent_S_Lanyan_03",
+      "constellation5": "UI_Talent_U_Lanyan_02",
+      "constellation6": "UI_Talent_S_Lanyan_04"
+    },
+    "YumemizukiMizuki": {
+      "icon": "UI_AvatarIcon_Mizuki",
+      "iconSide": "UI_AvatarIcon_Side_Mizuki",
+      "banner": "UI_NameCardPic_Mizuki_P",
+      "bar": "UI_NameCardPic_Mizuki_Alpha",
+      "skill": "Skill_S_Mizuki_01",
+      "burst": "Skill_E_Mizuki_01_HD",
+      "passive1": "UI_Talent_S_Mizuki_05",
+      "passive2": "UI_Talent_S_Mizuki_06",
+      "passive3": "UI_Talent_S_Mizuki_07",
+      "constellation1": "UI_Talent_S_Mizuki_01",
+      "constellation2": "UI_Talent_S_Mizuki_02",
+      "constellation3": "UI_Talent_U_Mizuki_01",
+      "constellation4": "UI_Talent_S_Mizuki_03",
+      "constellation5": "UI_Talent_U_Mizuki_02",
+      "constellation6": "UI_Talent_S_Mizuki_04"
+    },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",
       "burst": "Skill_E_PlayerWind_01_HD",
@@ -2688,6 +2860,18 @@
       "constellation4": "UI_Talent_S_PlayerWater_03",
       "constellation5": "UI_Talent_U_PlayerWater_02",
       "constellation6": "UI_Talent_S_PlayerWater_04"
+    },
+    "TravelerPyro": {
+      "skill": "Skill_S_PlayerFire_01",
+      "burst": "Skill_E_PlayerFire_01_HD",
+      "passive1": "UI_Talent_S_PlayerFire_05",
+      "passive2": "UI_Talent_S_PlayerFire_06",
+      "constellation1": "UI_Talent_S_PlayerFire_01",
+      "constellation2": "UI_Talent_S_PlayerFire_02",
+      "constellation3": "UI_Talent_U_PlayerFire_01",
+      "constellation4": "UI_Talent_S_PlayerFire_03",
+      "constellation5": "UI_Talent_U_PlayerFire_02",
+      "constellation6": "UI_Talent_S_PlayerFire_04"
     },
     "Somnia": {}
   }

@@ -33,7 +33,7 @@ import {
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { getCalcDisplay, resolveInfo } from '../../util'
+import { GetCalcDisplay, resolveInfo } from '../../util'
 import { LocationAutocomplete, LocationName } from '../character'
 import { WeaponName } from './WeaponTrans'
 
@@ -194,7 +194,7 @@ export function WeaponCardObj({
                   <Typography flexGrow={1}>
                     {icon} {name}
                   </Typography>
-                  <Typography>{getCalcDisplay(node).valueString}</Typography>
+                  <Typography>{GetCalcDisplay(node).valueString}</Typography>
                 </Box>
               )
             })}
@@ -233,7 +233,7 @@ export function WeaponCardObj({
           >
             {!!onEdit && (
               <Tooltip
-                title={<Typography>{t`page_weapon:edit`}</Typography>}
+                title={<Typography>{t('page_weapon:edit')}</Typography>}
                 placement="top"
                 arrow
               >

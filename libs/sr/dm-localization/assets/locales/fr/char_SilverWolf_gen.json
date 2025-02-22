@@ -29,7 +29,7 @@
       "0": {
         "name": "En attente de la réponse du système...",
         "fullDesc": "Louve d'argent peut créer trois types de Bugs : une réduction d'ATQ de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, une réduction de DÉF de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ou une réduction de VIT de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Chaque fois que Louve d'argent attaque, elle a <orangeStrong>{{4, percent}}%</orangeStrong> de chances de base d'implanter un Bug aléatoire qui dure {{5}} tours aux cibles attaquées.",
-        "shortDesc": "Après chaque attaque, il y a une chance d'implanter 1 <orangeStrong>Bug</orangeStrong> aléatoire à l'ennemi attaqué.",
+        "shortDesc": "Après que cette unité a attaqué, il y a une chance d'implanter 1 <orangeStrong>Bug</orangeStrong> aléatoire à l'ennemi attaqué.",
         "tag": "Incapacitation"
       }
     },
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Cyberattaque",
-      "desc": "Lorsque Louve d'argent attaque un ennemi avec son ultime, elle inflige des DGT quantiques additionnels équivalents à {{1, percent}}% de son ATQ pour chaque malus actuellement présent sur la cible ennemie. Cet effet peut être déclenché un maximum de {{2}} fois par utilisation de l'ultime."
+      "desc": "Lorsque Louve d'argent attaque un ennemi avec son ultime, elle inflige des DGT additionnels quantiques équivalents à {{1, percent}}% de son ATQ pour chaque malus actuellement présent sur la cible ennemie. Cet effet peut être déclenché un maximum de {{2}} fois par utilisation de l'ultime."
     },
     "5": {
       "name": "Attaque par force brute",

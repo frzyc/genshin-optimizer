@@ -1,0 +1,34 @@
+{
+  "name": "Cannon Rotor",
+  "rarity": "A",
+  "type": "attack",
+  "atk_base": 40,
+  "second_statkey": "crit_",
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_Common_01.png",
+  "desc": "A high-performance supercomputing W-Engine, capable of collecting real-time data on the battlefield and providing tactical support to its operator. Additionally, it is equipped with mini cannons and can even be deployed as an automatic combat unit in critical moments. In such situations, the operator may become more of a hindrance than a help.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A high-performance supercomputing W-Engine, capable of collecting real-time battlefield data and equipped with mini cannons.",
+  "phase": [
+    {
+      "name": "Oversized Barrel",
+      "desc": "Increases ATK by <color=#2BAD00>7.5%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>8</color>s."
+    },
+    {
+      "name": "Oversized Barrel",
+      "desc": "Increases ATK by <color=#2BAD00>8.6%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7.5</color>s."
+    },
+    {
+      "name": "Oversized Barrel",
+      "desc": "Increases ATK by <color=#2BAD00>9.7%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7</color>s."
+    },
+    {
+      "name": "Oversized Barrel",
+      "desc": "Increases ATK by <color=#2BAD00>10.8%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6.5</color>s."
+    },
+    {
+      "name": "Oversized Barrel",
+      "desc": "Increases ATK by <color=#2BAD00>12%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6</color>s."
+    }
+  ]
+}

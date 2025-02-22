@@ -68,7 +68,7 @@ export function RVSlide({
             color: 'rgba(255,255,255,0.9)',
           }}
         >
-          {MRV_RV ? t`rvSliderBtn.maximum` : t`rvSliderBtn.current`}
+          {MRV_RV ? t('rvSliderBtn.maximum') : t('rvSliderBtn.current')}
         </Button>
 
         <Divider orientation="vertical" flexItem />

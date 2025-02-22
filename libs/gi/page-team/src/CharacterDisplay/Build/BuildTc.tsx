@@ -34,15 +34,23 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import {
+  useContext,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildTc({
   buildTcId,
   active = false,
+  onChangeBuild,
 }: {
   buildTcId: string
   active?: boolean
+  onChangeBuild?: () => void
 }) {
   const { t } = useTranslation('build')
   const [open, onOpen, onClose] = useBoolState()
@@ -50,11 +58,16 @@ export default function BuildTc({
   const database = useDatabase()
   const buildTc = useBuildTc(buildTcId)!
   const { name, description } = buildTc
-  const onActive = () =>
-    database.teams.setLoadoutDatum(teamId, teamCharId, {
-      buildType: 'tc',
-      buildTcId,
-    })
+  const onActive = useMemo(() => {
+    if (active) return undefined
+    return () => {
+      database.teams.setLoadoutDatum(teamId, teamCharId, {
+        buildType: 'tc',
+        buildTcId,
+      })
+      onChangeBuild?.()
+    }
+  }, [active, database, teamId, teamCharId, buildTcId, onChangeBuild])
   const onRemove = () => {
     //TODO: prompt user for removal
     database.buildTcs.remove(buildTcId)
@@ -271,7 +284,7 @@ function BuildTcEditor({
   return (
     <CardThemed>
       <CardHeader
-        title={t`buildTcCard.edit.title`}
+        title={t('buildTcCard.edit.title')}
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -282,14 +295,14 @@ function BuildTcEditor({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <TextField
           fullWidth
-          label={t`buildTcCard.edit.label`}
-          placeholder={t`buildTcCard.edit.placeholder`}
+          label={t('buildTcCard.edit.label')}
+          placeholder={t('buildTcCard.edit.placeholder')}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextField
           fullWidth
-          label={t`buildTcCard.edit.desc`}
+          label={t('buildTcCard.edit.desc')}
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline

@@ -1,0 +1,24 @@
+{
+  "name": "Khúc Ca Núi Đá",
+  "description": {
+    "0": "Lưỡi đao Đá Obsidian sắc bén vô cùng, nhẹ như tiếng hát. Sau khi được một người thợ nào đó cải tạo, đã thêm vào đó thiết bị Phlogiston có khả năng phát đĩa nhạc và có thể tháo bỏ."
+  },
+  "passiveName": "Tháng Năm Tươi Đẹp Bất Tận",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi Tấn Công Thường hoặc Tấn Công Khi Đáp trúng kẻ địch, sẽ nhận được \"Khúc Ca Vinh Hoa\": Phòng Ngự tăng <cryo>8%</cryo>, đồng thời nhận <cryo>10%</cryo> buff sát thương tất cả nguyên tố trong 6s, tối đa cộng dồn 2 tầng, mỗi 0.1s tối đa kích hoạt một lần. Khi hiệu quả cộng dồn đến 2 tầng hoặc thời gian duy trì tầng 2 được làm mới, sẽ căn cứ vào Phòng Ngự của người trang bị, mỗi 1000 điểm Phòng Ngự sẽ khiến tất cả nhân vật trong đội ở gần tăng <cryo>8%</cryo> buff sát thương tất cả nguyên tố, tối đa tăng <cryo>25.6%</cryo>, duy trì 15s."
+    },
+    "1": {
+      "0": "Sau khi Tấn Công Thường hoặc Tấn Công Khi Đáp trúng kẻ địch, sẽ nhận được \"Khúc Ca Vinh Hoa\": Phòng Ngự tăng <cryo>10%</cryo>, đồng thời nhận <cryo>12.5%</cryo> buff sát thương tất cả nguyên tố trong 6s, tối đa cộng dồn 2 tầng, mỗi 0.1s tối đa kích hoạt một lần. Khi hiệu quả cộng dồn đến 2 tầng hoặc thời gian duy trì tầng 2 được làm mới, sẽ căn cứ vào Phòng Ngự của người trang bị, mỗi 1000 điểm Phòng Ngự sẽ khiến tất cả nhân vật trong đội ở gần tăng <cryo>10%</cryo> buff sát thương tất cả nguyên tố, tối đa tăng <cryo>32%</cryo>, duy trì 15s."
+    },
+    "2": {
+      "0": "Sau khi Tấn Công Thường hoặc Tấn Công Khi Đáp trúng kẻ địch, sẽ nhận được \"Khúc Ca Vinh Hoa\": Phòng Ngự tăng <cryo>12%</cryo>, đồng thời nhận <cryo>15%</cryo> buff sát thương tất cả nguyên tố trong 6s, tối đa cộng dồn 2 tầng, mỗi 0.1s tối đa kích hoạt một lần. Khi hiệu quả cộng dồn đến 2 tầng hoặc thời gian duy trì tầng 2 được làm mới, sẽ căn cứ vào Phòng Ngự của người trang bị, mỗi 1000 điểm Phòng Ngự sẽ khiến tất cả nhân vật trong đội ở gần tăng <cryo>12%</cryo> buff sát thương tất cả nguyên tố, tối đa tăng <cryo>38.4%</cryo>, duy trì 15s."
+    },
+    "3": {
+      "0": "Sau khi Tấn Công Thường hoặc Tấn Công Khi Đáp trúng kẻ địch, sẽ nhận được \"Khúc Ca Vinh Hoa\": Phòng Ngự tăng <cryo>14%</cryo>, đồng thời nhận <cryo>17.5%</cryo> buff sát thương tất cả nguyên tố trong 6s, tối đa cộng dồn 2 tầng, mỗi 0.1s tối đa kích hoạt một lần. Khi hiệu quả cộng dồn đến 2 tầng hoặc thời gian duy trì tầng 2 được làm mới, sẽ căn cứ vào Phòng Ngự của người trang bị, mỗi 1000 điểm Phòng Ngự sẽ khiến tất cả nhân vật trong đội ở gần tăng <cryo>14%</cryo> buff sát thương tất cả nguyên tố, tối đa tăng <cryo>44.8%</cryo>, duy trì 15s."
+    },
+    "4": {
+      "0": "Sau khi Tấn Công Thường hoặc Tấn Công Khi Đáp trúng kẻ địch, sẽ nhận được \"Khúc Ca Vinh Hoa\": Phòng Ngự tăng <cryo>16%</cryo>, đồng thời nhận <cryo>20%</cryo> buff sát thương tất cả nguyên tố trong 6s, tối đa cộng dồn 2 tầng, mỗi 0.1s tối đa kích hoạt một lần. Khi hiệu quả cộng dồn đến 2 tầng hoặc thời gian duy trì tầng 2 được làm mới, sẽ căn cứ vào Phòng Ngự của người trang bị, mỗi 1000 điểm Phòng Ngự sẽ khiến tất cả nhân vật trong đội ở gần tăng <cryo>16%</cryo> buff sát thương tất cả nguyên tố, tối đa tăng <cryo>51.2%</cryo>, duy trì 15s."
+    }
+  }
+}

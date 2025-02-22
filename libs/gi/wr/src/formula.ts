@@ -46,6 +46,48 @@ const asConst = true as const,
 
 const allElements = allElementWithPhyKeys
 const allTalents = ['auto', 'skill', 'burst'] as const
+const allNonstackBuffs = [
+  'no4',
+  'totm4',
+  'ap4',
+  'inst4',
+  'vv4pyro',
+  'vv4hydro',
+  'vv4electro',
+  'vv4cryo',
+  'dm4',
+  'scroll4basepyro',
+  'scroll4basehydro',
+  'scroll4baseelectro',
+  'scroll4basecryo',
+  'scroll4baseanemo',
+  'scroll4basegeo',
+  'scroll4basedendro',
+  'scroll4nspyro',
+  'scroll4nshydro',
+  'scroll4nselectro',
+  'scroll4nscryo',
+  'scroll4nsanemo',
+  'scroll4nsgeo',
+  'scroll4nsdendro',
+  'millenialatk',
+  'patrol',
+  'key',
+  'crane',
+  'starcaller',
+  'leafCon',
+  'leafRev',
+  'hakushinpyro',
+  'hakushinhydro',
+  'hakushinelectro',
+  'hakushincryo',
+  'hakushinanemo',
+  'hakushingeo',
+  'hakushindendro',
+  'ttds',
+  'wolf',
+] as const
+export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
   'normal',
   'charged',
@@ -136,6 +178,7 @@ const allNonModStats = [
     `${x}_critRate_` as const,
     `${x}_critDMG_` as const,
   ]),
+  'swirl_dmgInc' as const,
   'all_dmgInc' as const,
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,
@@ -587,6 +630,11 @@ const tally = {
   ele: sum(...allElements.map((ele) => min(_tally[ele], 1))),
 }
 
+const nonStacking = setReadNodeKeys(
+  objKeyMap(allNonstackBuffs, () => stringRead('small')),
+  ['nonStacking']
+)
+
 /**
  * List of `input` nodes, rearranged to conform to the needs of the
  * UI code. This is a separate list so that the evolution of the UIs
@@ -604,4 +652,4 @@ export const infusionNode = stringPrio(
   input.infusion.overridableSelf
 )
 
-export { common, customBonus, input, tally, target, uiInput }
+export { common, customBonus, input, nonStacking, tally, target, uiInput }

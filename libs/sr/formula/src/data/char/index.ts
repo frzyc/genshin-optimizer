@@ -46,6 +46,9 @@ import Sparkle from './sheets/Sparkle'
 import Sushang from './sheets/Sushang'
 import Tingyun from './sheets/Tingyun'
 import TopazAndNumby from './sheets/TopazAndNumby'
+import TrailblazerFire from './sheets/TrailblazerFire'
+import TrailblazerImaginary from './sheets/TrailblazerImaginary'
+import TrailblazerPhysical from './sheets/TrailblazerPhysical'
 import Welt from './sheets/Welt'
 import Xueyi from './sheets/Xueyi'
 import Yanqing from './sheets/Yanqing'
@@ -105,5 +108,8 @@ const data: TagMapNodeEntries[] = [
   Yanqing,
   Yukong,
   Yunli,
+  TrailblazerPhysical,
+  TrailblazerFire,
+  TrailblazerImaginary,
 ]
 export default data.flat()

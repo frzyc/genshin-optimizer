@@ -1,4 +1,3 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -6,14 +5,18 @@ import {
   NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import {
   allElementalDamageKeys,
   type LocationKey,
 } from '@genshin-optimizer/sr/consts'
-import type { IRelic } from '@genshin-optimizer/sr/srod'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
-import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
+import {
+  getRelicMainStatDisplayVal,
+  statToFixed,
+} from '@genshin-optimizer/sr/util'
 import {
   DeleteForever,
   Edit,
@@ -33,7 +36,8 @@ import {
 } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LocationAutocomplete } from '../Character'
+import { LocationAutocomplete, StatDisplay } from '../Character'
+import { LocationName } from '../Components'
 import { RelicSetName } from './RelicTrans'
 import { relicLevelVariant } from './util'
 
@@ -61,7 +65,7 @@ export function RelicCard({
   excluded = false,
 }: RelicCardProps) {
   const { t } = useTranslation('relic')
-  const { t: tk } = useTranslation(['slotKey_gen', 'statKey_gen'])
+  const { t: tk } = useTranslation(['relics_gen', 'statKey_gen'])
 
   const {
     lock,
@@ -165,7 +169,7 @@ export function RelicCard({
               sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
             >
               <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} />
-              {tk(`slotKey_gen:${slotKey}`)}
+              {tk(`relics_gen:${slotKey}`)}
             </Typography>
             <Typography
               variant="h6"
@@ -183,6 +187,7 @@ export function RelicCard({
                   color={mainStatLevel !== level ? 'warning' : undefined}
                 >
                   {getRelicMainStatDisplayVal(rarity, mainStatKey, level)}
+                  {getUnitStr(mainStatKey)}
                 </ColorText>
               </strong>
             </Typography>
@@ -215,12 +220,12 @@ export function RelicCard({
             width: '100%',
           }}
         >
-          {substats.map((substat) => (
-            <Typography key={substat.key}>
-              <StatIcon statKey={substat.key} iconProps={iconInlineProps} />{' '}
-              {tk(`statKey_gen:${substat.key}`)}+{substat.value}
-            </Typography>
-          ))}
+          {substats.map(
+            (substat) =>
+              substat.key && (
+                <SubstatDisplay key={substat.key} substat={substat} />
+              )
+          )}
           <Box flexGrow={1} />
           <Typography color="success.main">
             {/* TODO: depends on if we swap to using relic set names as card title
@@ -246,8 +251,7 @@ export function RelicCard({
             {setLocation ? (
               <LocationAutocomplete locKey={location} setLocKey={setLocation} />
             ) : (
-              // TODO: replace with LocationName component after porting it from GO
-              <Typography>{location}</Typography>
+              <LocationName location={location} />
             )}
           </Box>
           <Box
@@ -291,5 +295,19 @@ export function RelicCard({
         </Box>
       </CardThemed>
     </Suspense>
+  )
+}
+function SubstatDisplay({ substat }: { substat: ISubstat }) {
+  const { key, value } = substat
+  if (!value || !key) return null
+  const displayValue = toPercent(value, key).toFixed(statToFixed(key))
+  return (
+    <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+      <StatDisplay statKey={key} />
+      <span>
+        +{displayValue}
+        {getUnitStr(key)}
+      </span>
+    </Typography>
   )
 }

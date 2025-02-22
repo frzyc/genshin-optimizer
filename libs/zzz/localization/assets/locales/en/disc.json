@@ -1,0 +1,94 @@
+{
+  "editor": {
+    "title": "Disc Editor",
+    "rarity": "Rarity",
+    "level": "Level",
+    "unknownPieceName": "Unknown Piece Name",
+    "unknownSetName": "Unknown Set Name",
+    "curSubEff": "Current Roll Value",
+    "curSubEffDesc": "Every 3 disc upgrades, you get a substat roll. <strong>Roll Value</strong> calculates how high the substat rolled as a percentage.",
+    "maxSubEff": "Max. Roll Value",
+    "maxSubEffDesc": "The <strong>Maximum Substats Roll Value</strong> of a disc calculates the RV if the remaining upgrades rolled their maximum values.",
+    "substat": {
+      "selectSub": "Select Value",
+      "error": {
+        "noCalc": "Cannot calculate stat rolls.",
+        "noOverRoll": "Substat cannot be rolled more than {{value}} times."
+      },
+      "noRoll": "No Rolls",
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls",
+      "noStat": "No Value",
+      "eff": "RV: <1></1>",
+      "noSubstat": "Empty",
+      "substatFormat": "Substat {{value}}",
+      "nextRolls": "Next rolls:"
+    },
+    "preview": "Disc Preview",
+    "dupeDisc": "Duplicate disc detected",
+    "updateDisc": "Upgraded disc detected",
+    "beforeEdit": "Before Edit",
+    "btnSave": "Save Disc",
+    "btnAdd": "Add Disc",
+    "btnClear": "Clear",
+    "btnRandom": "Randomize",
+    "btnUpdate": "Update Disc",
+    "uploadBtn": "Upload Screenshot (or Ctrl-V)",
+    "clearPrompt": "There is a disc being edited. Are you sure you want to clear the editor?",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this disc?"
+  },
+  "slot": "Slot",
+  "slotName": "Slot {{slotKey}}",
+  "setEffectNum": "{{setNum}}-Set",
+  "discFilter": "Disc Filter",
+  "efficiencyFilter": {
+    "title": "Substats to use in Roll Value calculation"
+  },
+  "filterLocation": {
+    "location": "Characters",
+    "inventory": "Inventory",
+    "currentlyEquipped": "Currently Equipped"
+  },
+  "button": {
+    "unequipDisc": "Unequip Disc",
+    "unequipDiscs": "Unequip Discs",
+    "deleteDiscs": "Delete Discs",
+    "lockDiscs": "Lock Discs",
+    "unlockDiscs": "Unlock Discs"
+  },
+  "buttonHint": "Note: the red buttons above only apply to <1>filtered discs</1>",
+  "sortMap": {
+    "level": "Level",
+    "efficiency": "Current Roll Value",
+    "mefficiency": "Maximum Roll Value"
+  },
+  "mainStat": "Main Stat",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Disc",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Discs",
+  "resetFilters": "Reset Filters",
+  "edit": "Edit Disc",
+  "autocompleteLabels": {
+    "mainStats": "Main Stats",
+    "substats": "Sub-Stats",
+    "set": "Disc Set",
+    "sets": "Disc Sets"
+  },
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
+  "addNew": "Add New Disc",
+  "showDupes": "Show Duplicates",
+  "noDupAlert": "There are no duplicate discs in your inventory.",
+  "cantDeleteLock": "Cannot delete disc because it is locked",
+  "equippedDiscs": "All Equipped Discs",
+  "unequippedDiscs": "All Unequipped Discs",
+  "locationsTooltip": "Disable \"All Equipped Discs\" to filter by specific characters",
+  "noDiscs": "Looks like you haven't added any discs yet. If you want, there are <1>automatic scanners</1> that can speed up the import process!",
+  "subheadings": {
+    "general": "General",
+    "inventory": "Inventory",
+    "rollvalue": "Roll Value"
+  }
+}

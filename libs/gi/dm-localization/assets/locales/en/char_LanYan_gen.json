@@ -1,0 +1,212 @@
+{
+  "name": "Lan Yan",
+  "title": "Spring Woven From Jade",
+  "description": "A rattan weaver from Chenyu Vale. Clear-minded and well-tempered, she is as lively as a mountain spring.",
+  "constellationName": "Hirundo Lazuli",
+  "auto": {
+    "name": "Black Pheasant Strides on Water",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Wields her Feathermoon Rings to perform up to 4 attacks, dealing <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to throw out a Feathermoon Ring, dealing <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Gathers the power of Anemo and plunges towards the ground from mid-air, damaging all opponents in her path. Deals <anemo>AoE Anemo DMG</anemo> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%+{{2, percent(fixed: 1)}}%",
+      "2": "{{3, percent(fixed: 1)}}%+{{4, percent(fixed: 1)}}%",
+      "3": "{{5, percent(fixed: 1)}}%",
+      "4": "{{6, percent(fixed: 1)}}%×3",
+      "5": "{{7, fixed(fixed: 1)}}",
+      "6": "{{8, percent(fixed: 1)}}%",
+      "7": "{{9, percent}}%/{{10, percent}}%",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Swallow-Wisp Pinion Dance",
+    "description": {
+      "0": "Summoning forth the Swallow-Wisp Shield, a secret art passed down across generations, Lan Yan dashes forward and, upon making contact with her target, will leap back into the air.",
+      "1": "The Swallow-Wisp Shield's DMG absorption scales based on her ATK, and has a 250% absorption efficiency against <anemo>Anemo DMG</anemo>.",
+      "2": "While in mid-air due to the effects of her Elemental Skill: Swallow-Wisp Pinion Dance, pressing her Elemental Skill again or pressing Normal Attack will cause Lan Yan to hurl her Feathermoon Rings at an opponent, and they will spin between nearby opponents twice upon hit, dealing <anemo>Anemo DMG</anemo>.",
+      "3": "Holding the Skill will cause it to behave differently.",
+      "4": "<br/>",
+      "5": "<strong>Hold</strong>",
+      "6": "Enter Aiming Mode to adjust the dash direction.",
+      "7": "<br/>",
+      "8": "<i>\"The clouds cut the lunar light, like shadows silver gracing one's sight.\"</i>"
+    },
+    "skillParams": {
+      "0": "Feathermoon Ring DMG",
+      "1": "Shield DMG Absorption",
+      "2": "Shield Duration",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}% ATK+{{2}}",
+      "2": "{{3, fixed(fixed: 1)}}s",
+      "3": "{{4, fixed(fixed: 1)}}s",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lustrous Moonrise",
+    "description": {
+      "0": "Lan Yan creates a Feathermoon Swallow Array, pulling in nearby opponents and objects and dealing multiple instances of <anemo>AoE Anemo DMG</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Strictly speaking, with only Lan Yan herself present, it cannot properly be called an \"array.\" However, if her Rattan Figures are brought into the picture, she can sort of fulfill the requirements... Probably.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%×3",
+      "1": "{{1, fixed(fixed: 1)}}s",
+      "2": "{{2}}",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Four Sealing Divination Charms",
+    "description": {
+      "0": "When the dash from the Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong> hits a target, if it interacts with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, the Swallow-Wisp Shield will undergo Elemental Absorption, with the converted shield absorbing DMG from the corresponding element with 250% efficiency.",
+      "1": "Additionally, if this use of <strong>Swallow-Wisp Pinion Dance</strong> causes the Swallow-Wisp Shield to undergo Elemental Absorption, the Feathermoon Rings that Lan Yan throws at her foes additionally deal Elemental DMG equal to 50% of the original in the corresponding Elemental Type. This DMG is considered Elemental Skill DMG."
+    }
+  },
+  "passive2": {
+    "name": "Skyfeather Evil-Subduing Charm",
+    "description": {
+      "0": "The Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong> and the Elemental Burst <strong>Lustrous Moonrise</strong> deal increased DMG equal to 309% and 774% of Lan Yan's Elemental Mastery respectively."
+    }
+  },
+  "passive3": {
+    "name": "Thought and Intent, Like Silken Scent",
+    "description": {
+      "0": "When Lan Yan is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.",
+      "1": "Check the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on."
+    }
+  },
+  "constellation1": {
+    "name": "\"As One Might Stride Betwixt the Clouds\"",
+    "description": {
+      "0": "After triggering the Elemental Absorption from the Passive Talent \"Four Sealing Divination Charms,\" this instance of Lan Yan's Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong> will produce another Feathermoon Ring when they are thrown at opponents.",
+      "1": "You must first unlock the Passive Talent \"Four Sealing Divination Charms.\""
+    }
+  },
+  "constellation2": {
+    "name": "\"Dance Vestments Billow Like Rainbow Jade\"",
+    "description": {
+      "0": "While the <strong>Swallow-Wisp Shield</strong> is active, when your active party member's Normal Attacks deal DMG, 40% of the Shield's DMG absorption will be restored, up to its original maximum absorption. This effect can occur once every 2s."
+    }
+  },
+  "constellation3": {
+    "name": "\"On White Wings Pierce Through Cloud and Fog\"",
+    "description": {
+      "0": "Increases the Level of <strong>Swallow-Wisp Pinion Dance</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"With Drakefalcon's Blood-Pearls Adorned\"",
+    "description": {
+      "0": "After Lan Yan uses her Elemental Burst <strong>Lustrous Moonrise</strong>, the Elemental Mastery of all nearby party members increases by 60 for 12s."
+    }
+  },
+  "constellation5": {
+    "name": "\"Having Met You, My Heart is Gladdened\"",
+    "description": {
+      "0": "Increases the Level of <strong>Lustrous Moonrise</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Let Us Away on Sylphic Wing, the Silvered Ornaments to Ring\"",
+    "description": {
+      "0": "<strong>Swallow-Wisp Pinion Dance</strong> gains 1 additional charge."
+    }
+  }
+}

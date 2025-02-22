@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Pain and Anger",
-        "fullDesc": "Increases Arlan's DMG for every percent of HP below his Max HP, up to a max of <orangeStrong>{{1, percent}}%</orangeStrong> more DMG.",
-        "shortDesc": "Gain DMG bonus <orangeStrong>based on</orangeStrong> <orangeStrong>percent of HP lost</orangeStrong>.",
+        "fullDesc": "Based on Arlan's current missing HP percentage, gains DMG bonus, up to a maximum increase of <orangeStrong>{{1, percent}}%</orangeStrong> DMG dealt by Arlan.",
+        "shortDesc": "Gain DMG bonus <orangeStrong>based on</orangeStrong> <orangeStrong>currently missing HP percentage</orangeStrong>.",
         "tag": "Enhance"
       }
     },
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Repel",
-        "fullDesc": "Upon entering battle, if Arlan's HP is less than or equal to {{1, percent}}%, he can nullify all DMG received except for DoTs until he is attacked.",
+        "fullDesc": "Upon entering battle, if Arlan's HP percentage is less than or equal to {{1, percent}}%, he can nullify all DMG received except for DoTs until he is attacked.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,11 +77,11 @@
   "ranks": {
     "1": {
       "name": "To the Bitter End",
-      "desc": "When HP is lower than or equal to 50% of Max HP, increases DMG dealt by Skill by {{1, percent}}%."
+      "desc": "When HP percentage is lower than or equal to 50% of Max HP, increases DMG dealt by Skill by {{1, percent}}%."
     },
     "2": {
       "name": "Breaking Free",
-      "desc": "Using Skill or Ultimate removes 1 debuff from oneself."
+      "desc": "Using Skill or Ultimate removes 1 debuff from this unit."
     },
     "3": {
       "name": "Power Through",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Self-Sacrifice",
-      "desc": "When HP drops to 50% or below, Ultimate deals {{1, percent}}% more DMG. And the DMG multiplier for adjacent targets is raised to the same level as that for the primary target."
+      "desc": "When the current HP percentage drops to 50% or below, Ultimate deals {{1, percent}}% more DMG, and the DMG multiplier for adjacent targets is raised to the same level as that for the primary target."
     }
   }
 }

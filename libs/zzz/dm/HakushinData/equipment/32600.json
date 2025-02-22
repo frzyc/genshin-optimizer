@@ -1,0 +1,9 @@
+{
+  "Id": 32600,
+  "Name": "Fanged Metal",
+  "Desc2": "<color=#F0D12B>Physical DMG</color> +10%",
+  "Desc4": "Whenever a squad member inflicts <color=#F0D12B>Assault</color> on an enemy, the equipper deals 35% additional DMG to the target for 12s.",
+  "Story": "A Drive Disc burned with specialized Ether technology offering personalized attribute amplification to the user.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitFangedMetal.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitFangedMetal.png"
+}

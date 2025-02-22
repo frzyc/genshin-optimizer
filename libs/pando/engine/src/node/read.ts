@@ -1,14 +1,14 @@
 import type { Tag, TagMapEntry } from '../tag'
-import type { Read } from './type'
+import type { BaseRead } from './type'
 
-export class TypedRead<T extends Tag> implements Read {
+export class TypedRead<T extends Tag> implements BaseRead {
   op = 'read' as const
   x: never[] = []
   br: never[] = []
   tag: T
-  ex: Read['ex']
+  ex: BaseRead['ex']
 
-  constructor(tag: T, ex: Read['ex']) {
+  constructor(tag: T, ex: BaseRead['ex']) {
     this.tag = tag
     this.ex = ex
   }
@@ -16,13 +16,13 @@ export class TypedRead<T extends Tag> implements Read {
   // Subclass interfaces
 
   /** Callback for when a tag `<cat>:<val>` is generated */
-  register<C extends keyof T>(_cat: C, _val: T[C]) {}
+  register<C extends keyof T & string>(_cat: C, _val: T[C]) {}
   /** Return an instance with given `tag` and `ex` */
-  ctor(tag: T, ex: Read['ex']): this {
+  ctor(tag: T, ex: BaseRead['ex']): this {
     return new (this.constructor as any)(tag, ex)
   }
 
-  with<C extends keyof T>(cat: C, val: T[C]): this {
+  with<C extends keyof T & string & string>(cat: C, val: T[C]): this {
     this.register(cat, val)
     return this.ctor({ ...this.tag, [cat]: val }, this.ex)
   }
@@ -30,22 +30,22 @@ export class TypedRead<T extends Tag> implements Read {
     for (const [c, v] of Object.entries(tag)) this.register(c, v as T[typeof c])
     return this.ctor({ ...this.tag, ...tag }, this.ex)
   }
-  withAll<C extends keyof T>(
+  withAll<C extends keyof T & string>(
     cat: C,
     keys: (T[C] & string)[]
   ): Record<T[C] & string, this>
-  withAll<C extends keyof T, V>(
+  withAll<C extends keyof T & string, V>(
     cat: C,
     keys: (T[C] & string)[],
     transform: (r: this, k: T[C] & string) => V
   ): Record<T[C] & string, V>
-  withAll<C extends keyof T, V, Base>(
+  withAll<C extends keyof T & string, V, Base>(
     cat: C,
     keys: (T[C] & string)[],
     transform: (r: this, k: T[C] & string) => V,
     base: Base
   ): { [k in (T[C] & string) | keyof Base]: k extends keyof Base ? Base[k] : V }
-  withAll<C extends keyof T, V>(
+  withAll<C extends keyof T & string, V>(
     cat: C,
     keys: (T[C] & string)[],
     transform: (r: this, k: T[C] & string) => V | this = (x) => x,

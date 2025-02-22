@@ -2,13 +2,14 @@ import { range } from '@genshin-optimizer/common/util'
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   equal,
+  equalStr,
   input,
   lookup,
   naught,
   prod,
   subscript,
 } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg } from '../../../SheetUtil'
+import { cond, nonStackBuff, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -47,16 +48,14 @@ const selfEleMas = equal(
     naught
   )
 )
-const teamEleMas = equal(
-  input.weapon.key,
-  key,
-  equal(
-    condAfterSkillStacks,
-    '3',
-    prod(
-      subscript(input.weapon.refinement, teamEmSrc, { unit: '%', fixed: 2 }),
-      input.total.hp
-    )
+
+const nonstackWrite = equalStr(condAfterSkillStacks, '3', input.charKey)
+const [teamEleMas, teamEleMasInactive] = nonStackBuff(
+  'key',
+  'eleMas',
+  prod(
+    subscript(input.weapon.refinement, teamEmSrc, { unit: '%', fixed: 2 }),
+    input.total.hp
   )
 )
 
@@ -72,6 +71,9 @@ const data = dataObjForWeaponSheet(
     teamBuff: {
       total: {
         eleMas: teamEleMas,
+      },
+      nonStacking: {
+        key: nonstackWrite,
       },
     },
   },
@@ -119,6 +121,9 @@ const sheet: IWeaponSheet = {
       fields: [
         {
           node: teamEleMas,
+        },
+        {
+          node: teamEleMasInactive,
         },
         {
           text: stg('duration'),

@@ -3,6 +3,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   clamp,
+  filterFunction,
   notEmpty,
   objKeyMap,
   objPathValue,
@@ -10,6 +11,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
+  allArtifactSetKeys,
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
@@ -27,6 +29,8 @@ import {
   AdResponsive,
   AddArtInfo,
   ArtifactEditor,
+  ArtifactSetMultiAutocomplete,
+  ArtifactSlotToggle,
   DataContext,
   HitModeToggle,
   NoArtWarning,
@@ -36,6 +40,11 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
+import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
+import {
+  artifactFilterConfigs,
+  initialArtifactFilterOption,
+} from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
@@ -58,9 +67,11 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useReducer,
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -80,11 +91,15 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
   const { t } = useTranslation(['artifact', 'ui'])
   return (
     <Button fullWidth onClick={onClick} color="info" startIcon={<AddIcon />}>
-      {t`addNew`}
+      {t('addNew')}
     </Button>
   )
 }
 
+const filterOptionReducer = (
+  state: Partial<ArtifactFilterOption>,
+  action: Partial<ArtifactFilterOption>
+) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
   const {
@@ -95,6 +110,10 @@ export default function TabUpopt() {
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
+  const [filterOption, filterOptionDispatch] = useReducer(
+    filterOptionReducer,
+    initialArtifactFilterOption()
+  )
 
   const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
@@ -130,29 +149,32 @@ export default function TabUpopt() {
       upOptLevelHigh,
       useExcludedArts,
     } = optConfig
+    const filterFunc = filterFunction(filterOption, artifactFilterConfigs())
 
     return (
       artsDirty &&
-      database.arts.values.filter((art) => {
-        if (!useExcludedArts && artExclusion.includes(art.id)) return false
-        if (art.level < upOptLevelLow) return false
-        if (art.level > upOptLevelHigh) return false
-        const mainStats = mainStatKeys[art.slotKey]
-        if (mainStats?.length && !mainStats.includes(art.mainStatKey))
-          return false
+      database.arts.values
+        .filter((art) => {
+          if (!useExcludedArts && artExclusion.includes(art.id)) return false
+          if (art.level < upOptLevelLow) return false
+          if (art.level > upOptLevelHigh) return false
+          const mainStats = mainStatKeys[art.slotKey]
+          if (mainStats?.length && !mainStats.includes(art.mainStatKey))
+            return false
 
-        const locKey = charKeyToLocCharKey(characterKey)
-        if (
-          art.location &&
-          art.location !== locKey &&
-          excludedLocations.includes(art.location)
-        )
-          return false
+          const locKey = charKeyToLocCharKey(characterKey)
+          if (
+            art.location &&
+            art.location !== locKey &&
+            excludedLocations.includes(art.location)
+          )
+            return false
 
-        return true
-      })
+          return true
+        })
+        .filter(filterFunc)
     )
-  }, [optConfig, artsDirty, database, characterKey])
+  }, [optConfig, artsDirty, database, characterKey, filterOption])
   const filteredArtIdMap = useMemo(
     () =>
       objKeyMap(
@@ -162,17 +184,27 @@ export default function TabUpopt() {
     [filteredArts]
   )
 
-  const { levelTotal } = useMemo(() => {
+  const { artSetKeys = [], slotKeys = [] } = filterOption
+
+  const { levelTotal, setTotal, slotTotal } = useMemo(() => {
     const catKeys = {
       levelTotal: ['in'],
+      setTotal: allArtifactSetKeys,
+      slotTotal: allArtifactSlotKeys,
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
-        const { level } = art
+        const { level, setKey, slotKey } = art
         const { upOptLevelLow, upOptLevelHigh } = optConfig
         if (level >= upOptLevelLow && level <= upOptLevelHigh) {
           ctMap['levelTotal']['in'].total++
           if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
+        }
+        ctMap['setTotal'][setKey].total++
+        ctMap['slotTotal'][slotKey].total++
+        if (filteredArtIdMap[id]) {
+          ctMap['setTotal'][setKey].current++
+          ctMap['slotTotal'][slotKey].current++
         }
       })
     )
@@ -430,6 +462,7 @@ export default function TabUpopt() {
                   {/* character card */}
                   <OptCharacterCard characterKey={characterKey} />
                   <BonusStatsCard />
+                  <CustomMultiTargetButton />
                 </Grid>
 
                 {/* 2 */}
@@ -447,6 +480,22 @@ export default function TabUpopt() {
                     upOptLevelLow={upOptLevelLow}
                     upOptLevelHigh={upOptLevelHigh}
                     optConfigId={optConfigId}
+                  />
+                  <ArtifactSlotToggle
+                    onChange={(slotKeys) => {
+                      filterOptionDispatch({ slotKeys })
+                    }}
+                    totals={slotTotal}
+                    value={slotKeys}
+                  />
+                  <ArtifactSetMultiAutocomplete
+                    // Only show 5-star artifacts sets as they are filtered out of this page
+                    allowRarities={[5]}
+                    totals={setTotal}
+                    artSetKeys={artSetKeys}
+                    setArtSetKeys={(artSetKeys) =>
+                      filterOptionDispatch({ artSetKeys })
+                    }
                   />
                   <CardThemed bgt="light">
                     <MainStatSelectionCard
@@ -484,7 +533,7 @@ export default function TabUpopt() {
                 }
                 disabled={false}
                 targetSelectorModalProps={{
-                  excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                  excludeSections: ['character', 'bonusStats', 'teamBuff'],
                 }}
               />
             </ButtonGroup>
@@ -531,7 +580,7 @@ export default function TabUpopt() {
               />
             </Suspense>
             {!upOptCalc?.artifacts.length && (
-              <Alert severity="warning">{t`upOptNoResults`}</Alert>
+              <Alert severity="warning">{t('upOptNoResults')}</Alert>
             )}
             <Suspense
               fallback={

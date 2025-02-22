@@ -4,6 +4,7 @@ import Absolution from './Absolution'
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
 import BlackcliffLongsword from './BlackcliffLongsword'
+import CalamityOfEshu from './CalamityOfEshu'
 import CinnabarSpindle from './CinnabarSpindle'
 import CoolSteel from './CoolSteel'
 import DarkIronSword from './DarkIronSword'
@@ -23,6 +24,7 @@ import KeyOfKhajNisut from './KeyOfKhajNisut'
 import LightOfFoliarIncision from './LightOfFoliarIncision'
 import LionsRoar from './LionsRoar'
 import MistsplitterReforged from './MistsplitterReforged'
+import PeakPatrolSong from './PeakPatrolSong'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrototypeRancour from './PrototypeRancour'
 import RoyalLongsword from './RoyalLongsword'
@@ -32,6 +34,7 @@ import SilverSword from './SilverSword'
 import SkyriderSword from './SkyriderSword'
 import SkywardBlade from './SkywardBlade'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
+import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
@@ -49,6 +52,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   AmenomaKageuchi,
   AquilaFavonia,
   BlackcliffLongsword,
+  CalamityOfEshu,
   CinnabarSpindle,
   CoolSteel,
   DarkIronSword,
@@ -68,6 +72,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   LightOfFoliarIncision,
   LionsRoar,
   MistsplitterReforged,
+  PeakPatrolSong,
   PrimordialJadeCutter,
   PrototypeRancour,
   RoyalLongsword,
@@ -77,6 +82,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   SkyriderSword,
   SkywardBlade,
   SplendorOfTranquilWaters,
+  SturdyBone,
   SummitShaper,
   SwordOfDescension,
   SwordOfNarzissenkreuz,

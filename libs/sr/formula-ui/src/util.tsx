@@ -1,4 +1,5 @@
 import type {
+  CharacterGenderedKey,
   LightConeKey,
   NonTrailblazerCharacterKey,
   RelicSetKey,
@@ -11,7 +12,7 @@ export const st = (
   values?: Record<string, string | number>
 ) => <Translate ns="sheet" key18={strKey} values={values} />
 export const stg = (strKey: string) => (
-  <Translate ns="sheet_gen" key18={strKey} />
+  <Translate ns="characters_gen" key18={strKey} />
 )
 
 type Translated = [
@@ -19,10 +20,7 @@ type Translated = [
   tr: (i18key: string, values?: Record<string, string | number>) => ReactNode
 ]
 
-export function trans(
-  typeKey: 'char',
-  key: NonTrailblazerCharacterKey | TrailblazerGenderedKey
-): Translated
+export function trans(typeKey: 'char', key: CharacterGenderedKey): Translated
 export function trans(typeKey: 'lightcone', key: LightConeKey): Translated
 export function trans(typeKey: 'relic', key: RelicSetKey): Translated
 export function trans(

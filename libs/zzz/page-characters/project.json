@@ -1,0 +1,8 @@
+{
+  "name": "zzz-page-characters",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/page-characters/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

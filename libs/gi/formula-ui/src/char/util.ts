@@ -1,3 +1,8 @@
+import type {
+  Document,
+  TextDocument,
+  UISheetElement,
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,
@@ -5,11 +10,6 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import { travelerFKeys, travelerMKeys } from '@genshin-optimizer/gi/consts'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type {
-  Document,
-  TextDocument,
-  UISheetElement,
-} from '@genshin-optimizer/pando/ui-sheet'
 import type { StaticImageData } from 'next/image'
 import type { ReactNode } from 'react'
 import { trans } from '../util'
@@ -70,7 +70,7 @@ const talentTemplate = (
   img: string | StaticImageData,
   documents?: Document[]
 ): UISheetElement => ({
-  name: tr(`${talentKey}.name`),
+  title: tr(`${talentKey}.name`),
   img,
   documents: [
     ...(talentKey !== 'auto'

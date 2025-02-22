@@ -1,0 +1,1654 @@
+{
+  "Id": 1131,
+  "Icon": "IconRole17",
+  "Name": "Soukaku",
+  "CodeName": "Soukaku",
+  "Rarity": 3,
+  "WeaponType": { "4": "Support" },
+  "ElementType": { "202": "Ice" },
+  "SpecialElementType": {},
+  "HitType": { "101": "Slash" },
+  "Camp": { "6": "Hollow Special Operations Section 6" },
+  "Gender": 2,
+  "PartnerInfo": {
+    "Birthday": "JAN 23",
+    "FullName": "Soukaku",
+    "Gender": "Female",
+    "IconPath": "UI/Sprite/A1DynamicLoad/IconRoleCircle/UnPacker/IconRoleCircle17.png",
+    "ImpressionF": "So many \"avoid doing this\" and \"don't do thats\"... It makes it look like Soukaku's difficult to get along with, but she's a super cute and sweet kid!",
+    "ImpressionM": "That's probably because we've always avoided the things Fairy warns us about... At least, I won't be taking the risk and trying anything.",
+    "Name": "",
+    "OutlookDesc": "Hollow Investigative Association Licensing Archive:\nExecutive Officer Soukaku, Ether aptitude confidential, is allowed to perform basic tasks like investigating and extracting resources in known Hollows within the city (including Companion Hollows).\nNote: Considering prior combat data, it can be deduced that Soukaku, as an Oni, possesses exceptional Ether aptitude.",
+    "ProfileDesc": "Soukaku is a member of Hollow Special Operations Section 6 and currently under the guardianship of Section 6's Deputy Chief, Tsukishiro Yanagi.\nSoukaku's birth records cannot be found in either the HIA archives or the New Eridu Citizen Verification Profiles. Her records only date back to when she started living with Tsukishiro Yanagi.\nThere are also no records of her schooling. According to supplementary information, Soukaku is currently homeschooled.\n\nSoukaku is naive, innocent, and carefree, but she possesses an uncharacteristic obsession with food. Please be careful not to let Soukaku become too hungry.\nAt the same time, please do not let Soukaku see food being wasted. This is unacceptable behavior to Soukaku. Deduction: Soukaku has experienced famine before.\n\nSoukaku's understanding of city life and human society is limited, and her view of life and death differs from most people.\nUsually, Soukaku is willing to believe anything other people say, but that doesn't mean she can't tell when something is a lie.\nIn fact, prior data shows that unless one has the ability to run and hide on par with Section 6, it would be in one's best interest to avoid lying to Soukaku.",
+    "Race": "Hollow Special Operations Section 6",
+    "RoleIcon": "IconRole/UnPacker/IconRole17",
+    "Stature": "145",
+    "UnlockCondition": [
+      "Obtain Agent",
+      "Complete Main Story \"Leisurely Lull: Goldfinch's Escape\" (available after completing Main Story Chapter 5)"
+    ],
+    "TrustLv": {
+      "1": "Soukaku is a member of Hollow Special Operations Section 6 and currently under the guardianship of Section 6's Deputy Chief, Tsukishiro Yanagi.\nSoukaku's birth records cannot be found in either the HIA archives or the New Eridu Citizen Verification Profiles. Her records only date back to when she started living with Tsukishiro Yanagi.\nThere are also no records of her schooling. According to supplementary information, Soukaku is currently homeschooled.\n\nSoukaku is naive, innocent, and carefree, but she possesses an uncharacteristic obsession with food. Please be careful not to let Soukaku become too hungry.\nAt the same time, please do not let Soukaku see food being wasted. This is unacceptable behavior to Soukaku. Deduction: Soukaku has experienced famine before.\n\nSoukaku's understanding of city life and human society is limited, and her view of life and death differs from most people.\nUsually, Soukaku is willing to believe anything other people say, but that doesn't mean she can't tell when something is a lie.\nIn fact, prior data shows that unless one has the ability to run and hide on par with Section 6, it would be in one's best interest to avoid lying to Soukaku.",
+      "2": "",
+      "3": "Apart from her legal guardian Tsukishiro Yanagi, Soukaku appears to have another family member whom she refers to as \"sister.\" No information regarding this individual was found in any New Eridu citizen records.\nThrough cross-referencing records including the timeline on Tsukishiro Yanagi and Soukaku's records, it can be confirmed that Tsukishiro Yanagi was awarded for her outstanding contribution in a military operation against the oni.\nDeduction: Tsukishiro Yanagi has more information on the sister of Soukaku.",
+      "4": ""
+    }
+  },
+  "Skin": {},
+  "Stats": {
+    "Armor": 0,
+    "ArmorGrowth": 0,
+    "Attack": 96,
+    "AttackGrowth": 54887,
+    "AvatarPieceId": 5131,
+    "BreakStun": 86,
+    "BuffResistBurnPossibilityDelta": 0,
+    "BuffResistBurnPossibilityRatio": 0,
+    "BuffResistElectricPossibilityDelta": 0,
+    "BuffResistElectricPossibilityRatio": 0,
+    "BuffResistFrozenPossibilityDelta": 0,
+    "BuffResistFrozenPossibilityRatio": 0,
+    "Crit": 500,
+    "CritDamage": 5000,
+    "CritDmgRes": 0,
+    "CritRes": 0,
+    "Defence": 48,
+    "DefenceGrowth": 65185,
+    "ElementAbnormalPower": 93,
+    "ElementMystery": 96,
+    "Endurance": 0,
+    "HpGrowth": 875757,
+    "HpMax": 645,
+    "Luck": 10,
+    "PenDelta": 0,
+    "PenRate": 0,
+    "Rbl": 1,
+    "RblCorrectionFactor": 10000,
+    "RblProbability": 0,
+    "Shield": 0,
+    "ShieldGrowth": 0,
+    "SpBarPoint": 120,
+    "SpRecover": 120,
+    "StarInitial": 1,
+    "Stun": 0,
+    "Tags": [
+      "Aokaku",
+      "Cut",
+      "Ice",
+      "Female",
+      "Camp6",
+      "Size1",
+      "AidTypeParry",
+      "Aokaku"
+    ]
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": { "10": 24000, "100214": 4 }
+    },
+    "2": {
+      "HpMax": 443,
+      "Attack": 34,
+      "Defence": 33,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": { "10": 56000, "100224": 12 }
+    },
+    "3": {
+      "HpMax": 886,
+      "Attack": 68,
+      "Defence": 66,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": { "10": 120000, "100224": 20 }
+    },
+    "4": {
+      "HpMax": 1329,
+      "Attack": 103,
+      "Defence": 99,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": { "10": 200000, "100234": 10 }
+    },
+    "5": {
+      "HpMax": 1772,
+      "Attack": 137,
+      "Defence": 132,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": { "10": 400000, "100234": 20 }
+    },
+    "6": {
+      "HpMax": 2214,
+      "Attack": 171,
+      "Defence": 165,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {}
+    }
+  },
+  "ExtraLevel": {
+    "1": {
+      "MaxLevel": 15,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 0
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 12
+        }
+      }
+    },
+    "2": {
+      "MaxLevel": 25,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 12
+        }
+      }
+    },
+    "3": {
+      "MaxLevel": 35,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 24
+        }
+      }
+    },
+    "4": {
+      "MaxLevel": 45,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 24
+        }
+      }
+    },
+    "5": {
+      "MaxLevel": 55,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 36
+        }
+      }
+    },
+    "6": {
+      "MaxLevel": 60,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 75
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 36
+        }
+      }
+    }
+  },
+  "LevelEXP": [
+    50, 150, 250, 400, 600, 800, 1000, 1250, 1500, 1800, 1935, 2065, 2200, 2335,
+    2465, 2600, 2735, 2865, 3000, 4680, 4975, 5265, 5560, 5855, 6145, 6440,
+    6735, 7025, 7320, 10800, 11400, 12000, 12600, 13200, 13800, 14400, 15000,
+    15600, 16200, 17100, 18300, 19500, 20700, 21900, 23100, 24300, 25500, 26700,
+    27900, 34200, 36600, 39000, 41400, 43800, 46200, 48600, 51000, 53400, 55800,
+    0
+  ],
+  "Skill": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "Basic Attack: Making Rice Cakes",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 3 attacks, dealing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Basic Attack: Making Rice Cakes (Frosted Banner)",
+          "Desc": "When <color=#FFFFFF>Frosted Banner</color> is active, press <IconMap:Icon_Normal> to activate:\nUnleashes up to 3 faster attacks in front, dealing <color=#98EFF0>Ice DMG</color>."
+        },
+        {
+          "Name": "Basic Attack: Making Rice Cakes",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1131001, Prop:1001}",
+              "Param": {
+                "1131001": {
+                  "Main": 6620,
+                  "Growth": 610,
+                  "Format": "%",
+                  "DamagePercentage": 6620,
+                  "DamagePercentageGrowth": 610,
+                  "StunRatio": 3310,
+                  "StunRatioGrowth": 160,
+                  "SpRecovery": 11920,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 91025,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1131002, Prop:1001}",
+              "Param": {
+                "1131002": {
+                  "Main": 21630,
+                  "Growth": 1970,
+                  "Format": "%",
+                  "DamagePercentage": 21630,
+                  "DamagePercentageGrowth": 1970,
+                  "StunRatio": 18800,
+                  "StunRatioGrowth": 860,
+                  "SpRecovery": 67670,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 444125,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1131003, Prop:1001}",
+              "Param": {
+                "1131003": {
+                  "Main": 29310,
+                  "Growth": 2670,
+                  "Format": "%",
+                  "DamagePercentage": 29310,
+                  "DamagePercentageGrowth": 2670,
+                  "StunRatio": 22170,
+                  "StunRatioGrowth": 1010,
+                  "SpRecovery": 79800,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 542025,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1131001, Prop:1002}",
+              "Param": {
+                "1131001": {
+                  "Main": 3310,
+                  "Growth": 160,
+                  "Format": "%",
+                  "DamagePercentage": 6620,
+                  "DamagePercentageGrowth": 610,
+                  "StunRatio": 3310,
+                  "StunRatioGrowth": 160,
+                  "SpRecovery": 11920,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 91025,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1131002, Prop:1002}",
+              "Param": {
+                "1131002": {
+                  "Main": 18800,
+                  "Growth": 860,
+                  "Format": "%",
+                  "DamagePercentage": 21630,
+                  "DamagePercentageGrowth": 1970,
+                  "StunRatio": 18800,
+                  "StunRatioGrowth": 860,
+                  "SpRecovery": 67670,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 444125,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1131003, Prop:1002}",
+              "Param": {
+                "1131003": {
+                  "Main": 22170,
+                  "Growth": 1010,
+                  "Format": "%",
+                  "DamagePercentage": 29310,
+                  "DamagePercentageGrowth": 2670,
+                  "StunRatio": 22170,
+                  "StunRatioGrowth": 1010,
+                  "SpRecovery": 79800,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 542025,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Making Rice Cakes (Frosted Banner)",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1131004, Prop:1001}",
+              "Param": {
+                "1131004": {
+                  "Main": 7660,
+                  "Growth": 700,
+                  "Format": "%",
+                  "DamagePercentage": 7660,
+                  "DamagePercentageGrowth": 700,
+                  "StunRatio": 4660,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 16770,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 128150,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 4657,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1131005, Prop:1001}",
+              "Param": {
+                "1131005": {
+                  "Main": 22850,
+                  "Growth": 2080,
+                  "Format": "%",
+                  "DamagePercentage": 22850,
+                  "DamagePercentageGrowth": 2080,
+                  "StunRatio": 12750,
+                  "StunRatioGrowth": 580,
+                  "SpRecovery": 45880,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 350625,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 12743,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1131006, Prop:1001}",
+              "Param": {
+                "1131006": {
+                  "Main": 51140,
+                  "Growth": 4650,
+                  "Format": "%",
+                  "DamagePercentage": 51140,
+                  "DamagePercentageGrowth": 4650,
+                  "StunRatio": 26330,
+                  "StunRatioGrowth": 1200,
+                  "SpRecovery": 94760,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 724075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 26321,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1131004, Prop:1002}",
+              "Param": {
+                "1131004": {
+                  "Main": 4660,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 7660,
+                  "DamagePercentageGrowth": 700,
+                  "StunRatio": 4660,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 16770,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 128150,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 4657,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1131005, Prop:1002}",
+              "Param": {
+                "1131005": {
+                  "Main": 12750,
+                  "Growth": 580,
+                  "Format": "%",
+                  "DamagePercentage": 22850,
+                  "DamagePercentageGrowth": 2080,
+                  "StunRatio": 12750,
+                  "StunRatioGrowth": 580,
+                  "SpRecovery": 45880,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 350625,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 12743,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1131006, Prop:1002}",
+              "Param": {
+                "1131006": {
+                  "Main": 26330,
+                  "Growth": 1200,
+                  "Format": "%",
+                  "DamagePercentage": 51140,
+                  "DamagePercentageGrowth": 4650,
+                  "StunRatio": 26330,
+                  "StunRatioGrowth": 1200,
+                  "SpRecovery": 94760,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 724075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 26321,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "Dodge: Grab a Bite",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: 50/50",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nSlashes enemies in front, dealing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Dash Attack: 50/50 (Frosted Banner)",
+          "Desc": "When <color=#FFFFFF>Frosted Banner</color> is active, press <IconMap:Icon_Normal> during a Dodge to activate:\nSlashes enemies in front, dealing <color=#98EFF0>Ice DMG</color>."
+        },
+        {
+          "Name": "Dodge Counter: Away From My Snacks",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nSlashes enemies in front, dealing <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: 50/50",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1131015, Prop:1001}",
+              "Param": {
+                "1131015": {
+                  "Main": 7670,
+                  "Growth": 700,
+                  "Format": "%",
+                  "DamagePercentage": 7670,
+                  "DamagePercentageGrowth": 700,
+                  "StunRatio": 3840,
+                  "StunRatioGrowth": 180,
+                  "SpRecovery": 13800,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 105600,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1131015, Prop:1002}",
+              "Param": {
+                "1131015": {
+                  "Main": 3840,
+                  "Growth": 180,
+                  "Format": "%",
+                  "DamagePercentage": 7670,
+                  "DamagePercentageGrowth": 700,
+                  "StunRatio": 3840,
+                  "StunRatioGrowth": 180,
+                  "SpRecovery": 13800,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 105600,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Dash Attack: 50/50 (Frosted Banner)",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1131016, Prop:1001}",
+              "Param": {
+                "1131016": {
+                  "Main": 13150,
+                  "Growth": 1200,
+                  "Format": "%",
+                  "DamagePercentage": 13150,
+                  "DamagePercentageGrowth": 1200,
+                  "StunRatio": 8010,
+                  "StunRatioGrowth": 370,
+                  "SpRecovery": 28820,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 220275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 8003,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1131016, Prop:1002}",
+              "Param": {
+                "1131016": {
+                  "Main": 8010,
+                  "Growth": 370,
+                  "Format": "%",
+                  "DamagePercentage": 13150,
+                  "DamagePercentageGrowth": 1200,
+                  "StunRatio": 8010,
+                  "StunRatioGrowth": 370,
+                  "SpRecovery": 28820,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 220275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 8003,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Dodge Counter: Away From My Snacks",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1131017, Prop:1001}",
+              "Param": {
+                "1131017": {
+                  "Main": 24730,
+                  "Growth": 2250,
+                  "Format": "%",
+                  "DamagePercentage": 24730,
+                  "DamagePercentageGrowth": 2250,
+                  "StunRatio": 21340,
+                  "StunRatioGrowth": 970,
+                  "SpRecovery": 40790,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 311850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 11330,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1131017, Prop:1002}",
+              "Param": {
+                "1131017": {
+                  "Main": 21340,
+                  "Growth": 970,
+                  "Format": "%",
+                  "DamagePercentage": 24730,
+                  "DamagePercentageGrowth": 2250,
+                  "StunRatio": 21340,
+                  "StunRatioGrowth": 970,
+                  "SpRecovery": 40790,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 311850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 11330,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "Special Attack: Cooling Bento",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nSoukaku releases a wind current in front of her and unleashes her finishing move, dealing <color=#98EFF0>Ice DMG</color>.\nDuring skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.\nHolding <IconMap:Icon_Special> while using this skill allows for a quick transition to <color=#FFFFFF>Fly the Flag</color>."
+        },
+        {
+          "Name": "EX Special Attack: Fanning Mosquitoes",
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nReleases wind currents of extended range in front of her, dealing massive <color=#98EFF0>Ice DMG</color>.\nThis skill can be triggered consecutively by pressing repeatedly. Each use consumes a specified amount of Energy. When Soukaku's Energy is depleted, or you stop pressing the button, she unleashes a powerful finishing move that deals massive <color=#98EFF0>Ice DMG</color>.\nDuring skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.\nHolding <IconMap:Icon_Special> while using this skill allows for a quick transition to <color=#FFFFFF>Fly the Flag</color>."
+        },
+        {
+          "Name": "Special Attack: Rally!",
+          "Desc": "Hold <IconMap:Icon_Special> to activate:\nSoukaku plunges her weapon into the ground, morphs it into a flag, and launches <color=#FFFFFF>Fly the Flag</color>, dealing <color=#98EFF0>Ice DMG</color>. Hitting an enemy with <color=#FFFFFF>Fly the Flag</color> triggers a <color=#FFFFFF>Quick Assist</color>.\nPressing <IconMap:Icon_Normal> or <IconMap:Icon_Special> after <color=#FFFFFF>Fly the Flag</color> activates a Special Attack as she retracts the flag, dealing <color=#98EFF0>Ice DMG</color>.\nIf Soukaku owns 3 stacks of <color=#FFFFFF>Vortex</color> on using <color=#FFFFFF>Fly the Flag</color>, she consumes all 3 stacks and enters the <color=#FFFFFF>Frosted Banner</color> state. In the <color=#FFFFFF>Frosted Banner</color> state, she can unleash an enhanced <color=#FFFFFF>Basic Attack</color> or an enhanced <color=#FFFFFF>Dash Attack</color>, dealing massive <color=#98EFF0>Ice DMG</color>. This effect can last up to 45s or stack up to 6 times.\nSoukaku's weapon gains <color=#FFFFFF>Vortexes</color> in the following circumstances:\nGains 1 stack of <color=#FFFFFF>Vortex</color> when launching an <color=#FFFFFF>EX Special Attack</color>,\nGains 1 stack of <color=#FFFFFF>Vortex</color> when launching a <color=#FFFFFF>Chain Attack</color>,\nGains 3 stacks of <color=#FFFFFF>Vortex</color> when launching an <color=#FFFFFF>Ultimate</color>.\nSoukaku can accumulate a maximum of 3 stacks of <color=#FFFFFF>Vortex</color>."
+        },
+        {
+          "Name": "Special Attack: Cooling Bento",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1131008, Prop:1001}",
+              "Param": {
+                "1131008": {
+                  "Main": 2840,
+                  "Growth": 260,
+                  "Format": "%",
+                  "DamagePercentage": 2840,
+                  "DamagePercentageGrowth": 260,
+                  "StunRatio": 2840,
+                  "StunRatioGrowth": 130,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 78100,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2834,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Finishing Move DMG Multiplier",
+              "Desc": "{Skill:1131009, Prop:1001}",
+              "Param": {
+                "1131009": {
+                  "Main": 10010,
+                  "Growth": 910,
+                  "Format": "%",
+                  "DamagePercentage": 10010,
+                  "DamagePercentageGrowth": 910,
+                  "StunRatio": 10010,
+                  "StunRatioGrowth": 460,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 275275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5001,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1131008, Prop:1002}",
+              "Param": {
+                "1131008": {
+                  "Main": 2840,
+                  "Growth": 130,
+                  "Format": "%",
+                  "DamagePercentage": 2840,
+                  "DamagePercentageGrowth": 260,
+                  "StunRatio": 2840,
+                  "StunRatioGrowth": 130,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 78100,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2834,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Finishing Move Daze Multiplier",
+              "Desc": "{Skill:1131009, Prop:1002}",
+              "Param": {
+                "1131009": {
+                  "Main": 10010,
+                  "Growth": 460,
+                  "Format": "%",
+                  "DamagePercentage": 10010,
+                  "DamagePercentageGrowth": 910,
+                  "StunRatio": 10010,
+                  "StunRatioGrowth": 460,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 275275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5001,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "EX Special Attack: Fanning Mosquitoes",
+          "Param": [
+            {
+              "Name": "Consecutive Attack DMG Multiplier",
+              "Desc": "{{Skill:1131011, Prop:1001}/2}",
+              "Param": {
+                "1131011": {
+                  "Main": 26240,
+                  "Growth": 2390,
+                  "Format": "%",
+                  "DamagePercentage": 26240,
+                  "DamagePercentageGrowth": 2390,
+                  "StunRatio": 22580,
+                  "StunRatioGrowth": 1030,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 822250,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 24407,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Wind Current DMG Multiplier",
+              "Desc": "{Skill:1131010, Prop:1001}",
+              "Param": {
+                "1131010": {
+                  "Main": 10210,
+                  "Growth": 930,
+                  "Format": "%",
+                  "DamagePercentage": 10210,
+                  "DamagePercentageGrowth": 930,
+                  "StunRatio": 8790,
+                  "StunRatioGrowth": 400,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 319825,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 9491,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Consecutive Attack Daze Multiplier",
+              "Desc": "{{Skill:1131011, Prop:1002}/2}",
+              "Param": {
+                "1131011": {
+                  "Main": 22580,
+                  "Growth": 1030,
+                  "Format": "%",
+                  "DamagePercentage": 26240,
+                  "DamagePercentageGrowth": 2390,
+                  "StunRatio": 22580,
+                  "StunRatioGrowth": 1030,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 822250,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 24407,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Wind Current Daze Multiplier",
+              "Desc": "{Skill:1131010, Prop:1002}",
+              "Param": {
+                "1131010": {
+                  "Main": 8790,
+                  "Growth": 400,
+                  "Format": "%",
+                  "DamagePercentage": 10210,
+                  "DamagePercentageGrowth": 930,
+                  "StunRatio": 8790,
+                  "StunRatioGrowth": 400,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 319825,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 9491,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            { "Name": "Energy Cost to Use", "Desc": "60" },
+            { "Name": "Energy Cost of Each Attack", "Desc": "30" }
+          ]
+        },
+        {
+          "Name": "Special Attack: Rally!",
+          "Param": [
+            {
+              "Name": "Fly the Flag DMG Multiplier",
+              "Desc": "{Skill:1131012, Prop:1001}",
+              "Param": {
+                "1131012": {
+                  "Main": 25010,
+                  "Growth": 2280,
+                  "Format": "%",
+                  "DamagePercentage": 25010,
+                  "DamagePercentageGrowth": 2280,
+                  "StunRatio": 27510,
+                  "StunRatioGrowth": 1260,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 687775,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 12500,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Quick Fly the Flag DMG Multiplier",
+              "Desc": "{Skill:1131013, Prop:1001}",
+              "Param": {
+                "1131013": {
+                  "Main": 14010,
+                  "Growth": 1280,
+                  "Format": "%",
+                  "DamagePercentage": 14010,
+                  "DamagePercentageGrowth": 1280,
+                  "StunRatio": 14010,
+                  "StunRatioGrowth": 640,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 385275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 7001,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Lowering the Flag DMG Multiplier",
+              "Desc": "{Skill:1131014, Prop:1001}",
+              "Param": {
+                "1131014": {
+                  "Main": 24500,
+                  "Growth": 2230,
+                  "Format": "%",
+                  "DamagePercentage": 24500,
+                  "DamagePercentageGrowth": 2230,
+                  "StunRatio": 24500,
+                  "StunRatioGrowth": 1120,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 673750,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 12250,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Fly the Flag Daze Multiplier",
+              "Desc": "{Skill:1131012, Prop:1002}",
+              "Param": {
+                "1131012": {
+                  "Main": 27510,
+                  "Growth": 1260,
+                  "Format": "%",
+                  "DamagePercentage": 25010,
+                  "DamagePercentageGrowth": 2280,
+                  "StunRatio": 27510,
+                  "StunRatioGrowth": 1260,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 687775,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 12500,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Quick Fly the Flag Daze Multiplier",
+              "Desc": "{Skill:1131013, Prop:1002}",
+              "Param": {
+                "1131013": {
+                  "Main": 14010,
+                  "Growth": 640,
+                  "Format": "%",
+                  "DamagePercentage": 14010,
+                  "DamagePercentageGrowth": 1280,
+                  "StunRatio": 14010,
+                  "StunRatioGrowth": 640,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 385275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 7001,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Lowering the Flag Daze Multiplier",
+              "Desc": "{Skill:1131014, Prop:1002}",
+              "Param": {
+                "1131014": {
+                  "Main": 24500,
+                  "Growth": 1120,
+                  "Format": "%",
+                  "DamagePercentage": 24500,
+                  "DamagePercentageGrowth": 2230,
+                  "StunRatio": 24500,
+                  "StunRatioGrowth": 1120,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 673750,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 12250,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        {
+          "Name": "Chain Attack: Pudding Slash",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nSoukaku quickly unleashes a series of strikes at enemies in front of her and follows up with <color=#FFFFFF>Fly the Flag</color>, dealing massive <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Ultimate: Jumbo Pudding Slash",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nSoukaku quickly unleashes an extended series of strikes at enemies in front of her and follows up with <color=#FFFFFF>Fly the Flag</color>, dealing massive <color=#98EFF0>Ice DMG</color>.\nUpon activating this skill, Soukaku enters the <color=#FFFFFF>Masked</color> state, increasing her CRIT Rate by 15% for 15s.\nUpon activating this skill, other squad members recover 10 Energy. The next character to switch in gains an additional 20 Energy.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Chain Attack: Pudding Slash",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1131018, Prop:1001}",
+              "Param": {
+                "1131018": {
+                  "Main": 74580,
+                  "Growth": 6780,
+                  "Format": "%",
+                  "DamagePercentage": 74580,
+                  "DamagePercentageGrowth": 6780,
+                  "StunRatio": 34680,
+                  "StunRatioGrowth": 1580,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2782450,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 54620,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1131018, Prop:1002}",
+              "Param": {
+                "1131018": {
+                  "Main": 34680,
+                  "Growth": 1580,
+                  "Format": "%",
+                  "DamagePercentage": 74580,
+                  "DamagePercentageGrowth": 6780,
+                  "StunRatio": 34680,
+                  "StunRatioGrowth": 1580,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2782450,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 54620,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Ultimate: Jumbo Pudding Slash",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1131019, Prop:1001}",
+              "Param": {
+                "1131019": {
+                  "Main": 198980,
+                  "Growth": 18090,
+                  "Format": "%",
+                  "DamagePercentage": 198980,
+                  "DamagePercentageGrowth": 18090,
+                  "StunRatio": 37680,
+                  "StunRatioGrowth": 1720,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 37670,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1131019, Prop:1002}",
+              "Param": {
+                "1131019": {
+                  "Main": 37680,
+                  "Growth": 1720,
+                  "Format": "%",
+                  "DamagePercentage": 198980,
+                  "DamagePercentageGrowth": 18090,
+                  "StunRatio": 37680,
+                  "StunRatioGrowth": 1720,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 37670,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "Quick Assist: A Set for Two",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nSlashes enemies in front, dealing <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Defensive Assist: Guarding Tactics",
+          "Desc": "When the character on field is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nThis skill excels at parrying enemy attacks and reduces the consumption of <color=#FFFFFF>Assist Points</color> when the character is under intense attacks.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Assist Follow-Up: Sweeping Strike",
+          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nCharges and strikes enemies in front, dealing <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill.\nHolding <IconMap:Icon_Normal> while using this skill allows for a quick transition to <color=#FFFFFF>Fly the Flag</color>."
+        },
+        {
+          "Name": "Quick Assist: A Set for Two",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1131020, Prop:1001}",
+              "Param": {
+                "1131020": {
+                  "Main": 11340,
+                  "Growth": 1040,
+                  "Format": "%",
+                  "DamagePercentage": 11340,
+                  "DamagePercentageGrowth": 1040,
+                  "StunRatio": 11340,
+                  "StunRatioGrowth": 520,
+                  "SpRecovery": 40790,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 311850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 11330,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1131020, Prop:1002}",
+              "Param": {
+                "1131020": {
+                  "Main": 11340,
+                  "Growth": 520,
+                  "Format": "%",
+                  "DamagePercentage": 11340,
+                  "DamagePercentageGrowth": 1040,
+                  "StunRatio": 11340,
+                  "StunRatioGrowth": 520,
+                  "SpRecovery": 40790,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 311850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 11330,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Defensive Assist: Guarding Tactics",
+          "Param": [
+            {
+              "Name": "Light Defensive Daze Multiplier",
+              "Desc": "{Skill:1131021, Prop:1002}",
+              "Param": {
+                "1131021": {
+                  "Main": 24670,
+                  "Growth": 1130,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 24670,
+                  "StunRatioGrowth": 1130,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Heavy Defensive Daze Multiplier",
+              "Desc": "{Skill:1131022, Prop:1002}",
+              "Param": {
+                "1131022": {
+                  "Main": 31170,
+                  "Growth": 1420,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 31170,
+                  "StunRatioGrowth": 1420,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Chain Defensive Daze Multiplier",
+              "Desc": "{Skill:1131023, Prop:1002}",
+              "Param": {
+                "1131023": {
+                  "Main": 15170,
+                  "Growth": 690,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 15170,
+                  "StunRatioGrowth": 690,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Assist Follow-Up: Sweeping Strike",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{{Skill:1131024, Prop:1001} + {Skill:1131026, Prop:1001}}",
+              "Param": {
+                "1131024": {
+                  "Main": 26400,
+                  "Growth": 2400,
+                  "Format": "%",
+                  "DamagePercentage": 26400,
+                  "DamagePercentageGrowth": 2400,
+                  "StunRatio": 23130,
+                  "StunRatioGrowth": 1060,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 815925,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 24757,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1131026": {
+                  "Main": 11320,
+                  "Growth": 1030,
+                  "Format": "%",
+                  "DamagePercentage": 11320,
+                  "DamagePercentageGrowth": 1030,
+                  "StunRatio": 9910,
+                  "StunRatioGrowth": 460,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 349800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 10610,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{{Skill:1131024, Prop:1002} + {Skill:1131026, Prop:1002}}",
+              "Param": {
+                "1131024": {
+                  "Main": 23130,
+                  "Growth": 1060,
+                  "Format": "%",
+                  "DamagePercentage": 26400,
+                  "DamagePercentageGrowth": 2400,
+                  "StunRatio": 23130,
+                  "StunRatioGrowth": 1060,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 815925,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 24757,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1131026": {
+                  "Main": 9910,
+                  "Growth": 460,
+                  "Format": "%",
+                  "DamagePercentage": 11320,
+                  "DamagePercentageGrowth": 1030,
+                  "StunRatio": 9910,
+                  "StunRatioGrowth": 460,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 349800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 10610,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "SkillList": {
+    "1131001": {
+      "Name": "Basic Attack: Making Rice Cakes",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1131002": {
+      "Name": "Basic Attack: Making Rice Cakes (Frosted Banner)",
+      "Desc": "<IconMap:Icon_Normal> (Frosted Banner)",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1131003": {
+      "Name": "Special Attack: Cooling Bento",
+      "Desc": "<IconMap:Icon_Special>",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1131004": {
+      "Name": "Special Attack: Rally!",
+      "Desc": "<IconMap:Icon_Special> (Hold Down)",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1131005": {
+      "Name": "EX Special Attack: Fanning Mosquitoes",
+      "Desc": "<IconMap:Icon_SpecialReady> (Repeatedly press)",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1131006": {
+      "Name": "Dash Attack: 50/50",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1131007": {
+      "Name": "Dash Attack: 50/50 (Frosted Banner)",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal> (Frosted Banner)",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1131008": {
+      "Name": "Dodge Counter: Away From My Snacks",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 202,
+      "HitType": 101
+    },
+    "1131009": {
+      "Name": "Chain Attack: Pudding Slash",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1131010": {
+      "Name": "Ultimate: Jumbo Pudding Slash",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1131011": {
+      "Name": "Quick Assist: A Set for Two",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 202,
+      "HitType": 101
+    },
+    "1131012": {
+      "Name": "Defensive Assist: Guarding Tactics",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1131013": {
+      "Name": "Assist Follow-Up: Sweeping Strike",
+      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
+      "ElementType": 202,
+      "HitType": 102
+    }
+  },
+  "Passive": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1131501,
+        "Name": [
+          "Core Passive: Blade Banner",
+          "Additional Ability: Group Set Meal"
+        ],
+        "Desc": [
+          "When Soukaku launches <color=#FFFFFF>Fly the Flag</color>, her ATK is increased by <color=#2BAD00>10%</color> of her initial ATK, up to 500, for 22s. When consuming <color=#FFFFFF>Vortex</color> during <color=#FFFFFF>Fly the Flag</color>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <color=#FFFFFF>Quick Assists</color> or <color=#FFFFFF>Chain Attacks</color> triggered by <color=#FFFFFF>Fly the Flag</color>, and it refreshes the duration of the buff.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Soukaku consumes <color=#FFFFFF>Vortex</color> to activate <color=#FFFFFF>Fly the Flag</color>, the <color=#98EFF0>Ice DMG</color> of all squad members is increased by 20% for 22s."
+        ]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1131502,
+        "Name": [
+          "Core Passive: Blade Banner",
+          "Additional Ability: Group Set Meal"
+        ],
+        "Desc": [
+          "When Soukaku launches <color=#FFFFFF>Fly the Flag</color>, her ATK is increased by <color=#2BAD00>12.5%</color> of her initial ATK, up to 500, for 22s. When consuming <color=#FFFFFF>Vortex</color> during <color=#FFFFFF>Fly the Flag</color>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <color=#FFFFFF>Quick Assists</color> or <color=#FFFFFF>Chain Attacks</color> triggered by <color=#FFFFFF>Fly the Flag</color>, and it refreshes the duration of the buff.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Soukaku consumes <color=#FFFFFF>Vortex</color> to activate <color=#FFFFFF>Fly the Flag</color>, the <color=#98EFF0>Ice DMG</color> of all squad members is increased by 20% for 22s."
+        ]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1131503,
+        "Name": [
+          "Core Passive: Blade Banner",
+          "Additional Ability: Group Set Meal"
+        ],
+        "Desc": [
+          "When Soukaku launches <color=#FFFFFF>Fly the Flag</color>, her ATK is increased by <color=#2BAD00>15%</color> of her initial ATK, up to 500, for 22s. When consuming <color=#FFFFFF>Vortex</color> during <color=#FFFFFF>Fly the Flag</color>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <color=#FFFFFF>Quick Assists</color> or <color=#FFFFFF>Chain Attacks</color> triggered by <color=#FFFFFF>Fly the Flag</color>, and it refreshes the duration of the buff.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Soukaku consumes <color=#FFFFFF>Vortex</color> to activate <color=#FFFFFF>Fly the Flag</color>, the <color=#98EFF0>Ice DMG</color> of all squad members is increased by 20% for 22s."
+        ]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1131504,
+        "Name": [
+          "Core Passive: Blade Banner",
+          "Additional Ability: Group Set Meal"
+        ],
+        "Desc": [
+          "When Soukaku launches <color=#FFFFFF>Fly the Flag</color>, her ATK is increased by <color=#2BAD00>17%</color> of her initial ATK, up to 500, for 22s. When consuming <color=#FFFFFF>Vortex</color> during <color=#FFFFFF>Fly the Flag</color>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <color=#FFFFFF>Quick Assists</color> or <color=#FFFFFF>Chain Attacks</color> triggered by <color=#FFFFFF>Fly the Flag</color>, and it refreshes the duration of the buff.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Soukaku consumes <color=#FFFFFF>Vortex</color> to activate <color=#FFFFFF>Fly the Flag</color>, the <color=#98EFF0>Ice DMG</color> of all squad members is increased by 20% for 22s."
+        ]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1131505,
+        "Name": [
+          "Core Passive: Blade Banner",
+          "Additional Ability: Group Set Meal"
+        ],
+        "Desc": [
+          "When Soukaku launches <color=#FFFFFF>Fly the Flag</color>, her ATK is increased by <color=#2BAD00>18%</color> of her initial ATK, up to 500, for 22s. When consuming <color=#FFFFFF>Vortex</color> during <color=#FFFFFF>Fly the Flag</color>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <color=#FFFFFF>Quick Assists</color> or <color=#FFFFFF>Chain Attacks</color> triggered by <color=#FFFFFF>Fly the Flag</color>, and it refreshes the duration of the buff.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Soukaku consumes <color=#FFFFFF>Vortex</color> to activate <color=#FFFFFF>Fly the Flag</color>, the <color=#98EFF0>Ice DMG</color> of all squad members is increased by 20% for 22s."
+        ]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1131506,
+        "Name": [
+          "Core Passive: Blade Banner",
+          "Additional Ability: Group Set Meal"
+        ],
+        "Desc": [
+          "When Soukaku launches <color=#FFFFFF>Fly the Flag</color>, her ATK is increased by <color=#2BAD00>19%</color> of her initial ATK, up to 500, for 22s. When consuming <color=#FFFFFF>Vortex</color> during <color=#FFFFFF>Fly the Flag</color>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <color=#FFFFFF>Quick Assists</color> or <color=#FFFFFF>Chain Attacks</color> triggered by <color=#FFFFFF>Fly the Flag</color>, and it refreshes the duration of the buff.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Soukaku consumes <color=#FFFFFF>Vortex</color> to activate <color=#FFFFFF>Fly the Flag</color>, the <color=#98EFF0>Ice DMG</color> of all squad members is increased by 20% for 22s."
+        ]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1131507,
+        "Name": [
+          "Core Passive: Blade Banner",
+          "Additional Ability: Group Set Meal"
+        ],
+        "Desc": [
+          "When Soukaku launches <color=#FFFFFF>Fly the Flag</color>, her ATK is increased by <color=#2BAD00>20%</color> of her initial ATK, up to 500, for 22s. When consuming <color=#FFFFFF>Vortex</color> during <color=#FFFFFF>Fly the Flag</color>, the ATK increase is doubled, up to a max of 1,000. This buff can be passed along to characters switching in via <color=#FFFFFF>Quick Assists</color> or <color=#FFFFFF>Chain Attacks</color> triggered by <color=#FFFFFF>Fly the Flag</color>, and it refreshes the duration of the buff.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Soukaku consumes <color=#FFFFFF>Vortex</color> to activate <color=#FFFFFF>Fly the Flag</color>, the <color=#98EFF0>Ice DMG</color> of all squad members is increased by 20% for 22s."
+        ]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110501": 2 },
+      "3": { "10": 28000, "110501": 4 },
+      "4": { "10": 60000, "110003": 2, "110501": 9 },
+      "5": { "10": 100000, "110003": 3, "110501": 15 },
+      "6": { "10": 200000, "110003": 4, "110501": 30 }
+    }
+  },
+  "Talent": {
+    "1": {
+      "Level": 1,
+      "Name": "Uplifting Current",
+      "Desc": "When Soukaku triggers <color=#FFFFFF>Core Passive: Blade Banner</color> or <color=#FFFFFF>Additional Ability: Group Set Meal</color>, the buff duration is increased by 8s.",
+      "Desc2": "When charged, the special charging module can generate a wind current of Ether energy to charge surrounding Ether devices.\nTo Soukaku, it's just like having a buffet with friends.\n\"Guys~ It's all-you-can-eat time!\""
+    },
+    "2": {
+      "Level": 2,
+      "Name": "Experimental Charging Module",
+      "Desc": "When Soukaku's <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, <color=#FFFFFF>Dodge Counter</color>, or <color=#FFFFFF>Quick Assist</color> hits an enemy, there's a 15% chance she gains 1 stack of <color=#FFFFFF>Vortex</color>, triggering up to once per second.\nWhen <color=#FFFFFF>Vortex</color> reaches max stacks, any additional stacks grant Soukaku 1.2 Energy instead.",
+      "Desc2": "A charging module is able to continuously accumulate energy during battle.\nTherefore, it is regarded as an era-defining conceptual tactical weapon by the R&D department.\nBut for Soukaku, fully charging it simply means it's time to eat."
+    },
+    "3": {
+      "Level": 3,
+      "Name": "Attendance Meal Allowance",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "The best way to motivate Soukaku to train harder is simple: just increase her attendance meal allowance."
+    },
+    "4": {
+      "Level": 4,
+      "Name": "Hypothermia",
+      "Desc": "If an enemy is hit by <color=#FFFFFF>Fly the Flag</color>, the target's <color=#98EFF0>Ice RES</color> is reduced by 10% for 8s.",
+      "Desc2": "The custom-made weapon Oni Banner features a powerful built-in cooling system. Its Ether-infused catalyst generates cold air, dealing significant DMG to enemies it hits."
+    },
+    "5": {
+      "Level": 5,
+      "Name": "Late-Night Snacks",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "To further incentivize Soukaku to train is simple: just add a late-night snack top of the attendance meal allowance."
+    },
+    "6": {
+      "Level": 6,
+      "Name": "Northern Wind",
+      "Desc": "While in the <color=#FFFFFF>Frosted Banner</color> state, the number of usable enhanced <color=#FFFFFF>Basic Attacks</color> and enhanced <color=#FFFFFF>Dash Attacks</color> is increased to 12, and also deal 45% more DMG.",
+      "Desc2": "Unlocking the safety device within the blade banner allows it to operate at full capacity. It's not just for combat... it's also handy for cooling down a meal."
+    }
+  }
+}

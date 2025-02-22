@@ -1,5 +1,5 @@
 import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
-import { objMap, toPercent } from '@genshin-optimizer/common/util'
+import { isDev, objMap, toPercent } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import {
@@ -25,7 +25,6 @@ import {
   getBuildTcWeaponData,
   getTeamDataCalc,
   initialBuildStatus,
-  isDev,
   optimizeNodesForScaling,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -37,7 +36,9 @@ import { Trans, useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../../../BuildTcContext'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
+import BonusStatsModal from '../../BonusStatsModal'
 import CompareBtn from '../../CompareBtn'
+import { CustomMultiTargetModal } from '../../CustomMultiTarget/CustomMultiTargetModal'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
@@ -247,6 +248,8 @@ export default function TabTheorycraft() {
                 <DataContext.Provider value={dataContextValueWithCompare}>
                   <StatDisplayComponent
                     columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                    BonusStatEditor={BonusStatsModal}
+                    CustomMTargetEditor={CustomMultiTargetModal}
                   />
                 </DataContext.Provider>
               ) : (
@@ -308,14 +311,14 @@ export default function TabTheorycraft() {
                 optimizationTarget={optimizationTarget}
                 setTarget={(target) => setOptimizationTarget(target)}
                 targetSelectorModalProps={{
-                  excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                  excludeSections: ['character', 'bonusStats', 'teamBuff'],
                 }}
               />
               <CustomNumberInput
                 value={distributedSubstats}
                 disabled={!optimizationTarget || solving}
                 onChange={(v) => v !== undefined && setDistributedSubstats(v)}
-                endAdornment={t`tabTheorycraft.distInput`}
+                endAdornment={t('tabTheorycraft.distInput')}
                 sx={{
                   borderRadius: 1,
                   px: 1,
@@ -343,7 +346,7 @@ export default function TabTheorycraft() {
                   color="success"
                   startIcon={<CalculateIcon />}
                 >
-                  {t`tabTheorycraft.distribute`}
+                  {t('tabTheorycraft.distribute')}
                 </Button>
               ) : (
                 <Button

@@ -40,12 +40,12 @@ const genshin_optimizer_links = [
     url: process.env['NX_URL_GITHUB_GO'],
   },
   {
-    title: (t: TFunction) => t`quickLinksCard.buttons.patchNotes.title`,
+    title: (t: TFunction) => t('quickLinksCard.buttons.patchNotes.title'),
     icon: <Description />,
     url: `${process.env['NX_URL_GITHUB_GO']}/releases`,
   },
   {
-    title: (t: TFunction) => t`quickLinksCard.buttons.tyGuide.title`,
+    title: (t: TFunction) => t('quickLinksCard.buttons.tyGuide.title'),
     icon: <YouTube />,
     url: process.env['NX_URL_YOUTUBE_TUTPL'],
   },
@@ -76,22 +76,22 @@ const frzyc_links = [
 
 const other_links = [
   {
-    title: (t: TFunction) => t`quickLinksCard.buttons.scanners.title`,
+    title: (t: TFunction) => t('quickLinksCard.buttons.scanners.title'),
     icon: <Scanner />,
     to: '/scanner',
   },
   {
-    title: (t: TFunction) => t`quickLinksCard.buttons.kqm.title`,
+    title: (t: TFunction) => t('quickLinksCard.buttons.kqm.title'),
     icon: <Handshake />,
     url: process.env['NX_URL_WEBSITE_KQM'],
   },
   {
-    title: (t: TFunction) => t`quickLinksCard.buttons.devDiscord.title`,
+    title: (t: TFunction) => t('quickLinksCard.buttons.devDiscord.title'),
     icon: <DiscordIcon />,
     url: process.env['NX_URL_DISCORD_GDEV'],
   },
   {
-    title: (t: TFunction) => t`quickLinksCard.buttons.good.title`,
+    title: (t: TFunction) => t('quickLinksCard.buttons.good.title'),
     icon: <Article />,
     to: '/doc',
   },
@@ -102,7 +102,9 @@ export default function QuickLinksCard() {
   return (
     <CardThemed>
       <CardHeader
-        title={<Typography variant="h5">{t`quickLinksCard.title`}</Typography>}
+        title={
+          <Typography variant="h5">{t('quickLinksCard.title')}</Typography>
+        }
         avatar={<InsertLink fontSize="large" />}
       />
       <Divider />

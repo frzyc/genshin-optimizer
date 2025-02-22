@@ -11,7 +11,7 @@
       "1": {
         "name": "Ceño desarrugado, corazón azorado",
         "fullDesc": "Inicialmente, inflige daño {{4}} veces. Cada vez, inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Siete de Marzo como Daño Imaginario a un enemigo. Después de infligir daño la última vez, tiene una probabilidad fija del {{2, percent}}% de infligir daño 1 vez adicional, hasta un máximo de {{3}} veces adicionales. La energía recuperada al usar el ATQ básico potenciado no aumenta en función de las veces adicionales que se inflija daño.<br>El ATQ básico potenciado no puede recuperar pts. de habilidad básica.",
-        "shortDesc": "Inflige Daño Imaginario a un enemigo. Inicialmente, inflige daño <orangeStrong>{{4}}</orangeStrong> veces. <orangeStrong>Tiene una probabilidad de infligir daño hasta <color=#f29e38ff>#3[i]</orangeStrong> veces más</color>.",
+        "shortDesc": "Inflige Daño Imaginario a un enemigo. Inicialmente, inflige daño <orangeStrong>{{4}}</orangeStrong> veces. <orangeStrong>Tiene una probabilidad de infligir daño hasta <color=#f29e38ff>{{3}}[i]</orangeStrong> veces más</color>.",
         "tag": "ATQ individual"
       }
     },
@@ -42,7 +42,7 @@
     "technique": {
       "0": {
         "name": "Festín de una sentada",
-        "fullDesc": "Si Siete de Marzo está en el equipo, cada vez que un aliado use la técnica 1 vez, Siete de Marzo obtiene 1 pt. de carga al entrar en el siguiente combate, hasta un máximo de {{1}} pts. <br>Al usar la técnica, Siete de Marzo recupera {{2}} pts. de energía al entrar en el siguiente combate.",
+        "fullDesc": "Si Siete de Marzo está en el equipo, cada vez que un aliado use la técnica 1 vez, Siete de Marzo obtiene 1 pt. de carga al entrar en el siguiente combate, hasta un máximo de {{1}} pts. <br>Tras usar la técnica, Siete de Marzo recupera {{2}} pts. de energía al entrar en el siguiente combate.",
         "shortDesc": "Cada vez que un aliado usa la técnica, Siete de Marzo obtiene carga al entrar en el siguiente combate. Al usar la técnica, recupera pts. de energía tras entrar en el siguiente combate.",
         "tag": "Potenciación"
       }

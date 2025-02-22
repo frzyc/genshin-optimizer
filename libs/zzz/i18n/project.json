@@ -1,0 +1,8 @@
+{
+  "name": "zzz-i18n",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/i18n/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

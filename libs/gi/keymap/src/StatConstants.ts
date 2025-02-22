@@ -1,3 +1,8 @@
+import type {
+  ElementWithPhyKey,
+  TransformativeReactionKey,
+} from '@genshin-optimizer/gi/consts'
+
 export const hitTypes = {
   hit: 'DMG',
   avgHit: 'Avg. DMG',
@@ -14,31 +19,41 @@ export const hitMoves = {
   burst: 'Ele. Burst',
 } as const
 export type HitMoveKey = keyof typeof hitMoves
-export const transformativeReactions = {
+type TransformativeReaction = {
+  name: string
+  multi: number
+  variants: ElementWithPhyKey[]
+  resist: ElementWithPhyKey
+  canCrit: boolean
+}
+export const transformativeReactions: Record<
+  TransformativeReactionKey,
+  TransformativeReaction
+> = {
   overloaded: {
     name: 'Overloaded',
-    multi: 2,
+    multi: 2.75,
     variants: ['pyro'],
     resist: 'pyro',
     canCrit: false,
   },
   shattered: {
     name: 'Shattered',
-    multi: 1.5,
+    multi: 3,
     variants: ['physical'],
     resist: 'physical',
     canCrit: false,
   },
   electrocharged: {
     name: 'Electro-Charged',
-    multi: 1.2,
+    multi: 2,
     variants: ['electro'],
     resist: 'electro',
     canCrit: false,
   },
   superconduct: {
     name: 'Superconduct',
-    multi: 0.5,
+    multi: 1.5,
     variants: ['cryo'],
     resist: 'cryo',
     canCrit: false,
@@ -79,12 +94,12 @@ export const transformativeReactions = {
     canCrit: true,
   },
 } as const
-export type TransformativeReactionsKey = keyof typeof transformativeReactions
 export const crittableTransformativeReactions = [
   'burning',
   'bloom',
   'burgeon',
   'hyperbloom',
+  'swirl',
 ] as const
 export type CrittableTransformativeReactionsKey =
   (typeof crittableTransformativeReactions)[number]

@@ -11,9 +11,11 @@ import Beidou from './Character_Beidou_Card.jpg'
 import Bennett from './Character_Bennett_Card.jpg'
 import Candace from './Character_Candace_Card.jpg'
 import Charlotte from './Character_Charlotte_Card.jpg'
+import Chasca from './Character_Chasca_Card.jpg'
 import Chevreuse from './Character_Chevreuse_Card.jpg'
 import Chiori from './Character_Chiori_Card.jpg'
 import Chongyun from './Character_Chongyun_Card.jpg'
+import Citlali from './Character_Citlali_Card.jpg'
 import Clorinde from './Character_Clorinde_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
 import Cyno from './Character_Cyno_Card.jpg'
@@ -44,10 +46,12 @@ import Kirara from './Character_Kirara_Card.jpg'
 import Klee from './Character_Klee_Card.jpg'
 import KujouSara from './Character_Kujou_Sara_Card.jpg'
 import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
+import LanYan from './Character_LanYan_Card.jpg'
 import Layla from './Character_Layla_Card.jpeg'
 import Lisa from './Character_Lisa_Card.jpg'
 import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
+import Mavuika from './Character_Mavuika_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Mualani from './Character_Mualani_Card.jpg'
@@ -57,6 +61,7 @@ import Neuvillette from './Character_Neuvillette_Card.jpg'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
+import Ororon from './Character_Ororon_Card.jpg'
 import Qiqi from './Character_Qiqi_Card.jpg'
 import RaidenShogun from './Character_Raiden_Shogun_Card.png'
 import Razor from './Character_Razor_Card.jpg'
@@ -78,6 +83,7 @@ import Wriothesley from './Character_Wriothesley_Card.jpg'
 import Xiangling from './Character_Xiangling_Card.jpg'
 import Xianyun from './Character_Xianyun_Card.jpg'
 import Xiao from './Character_Xiao_Card.jpg'
+import Xilonen from './Character_Xilonen_Card.jpg'
 import Xingqiu from './Character_Xingqiu_Card.jpg'
 import Xinyan from './Character_Xinyan_Card.jpg'
 import YaeMiko from './Character_Yae_Miko_Card.png'
@@ -85,6 +91,7 @@ import Yanfei from './Character_Yanfei_Card.png'
 import Yaoyao from './Character_Yaoyao_Card.jpg'
 import Yelan from './Character_Yelan_Card.jpg'
 import Yoimiya from './Character_Yoimiya_Card.png'
+import YumemizukiMizuki from './Character_YumemizukiMizuki_Card.jpg'
 import YunJin from './Character_Yun_Jin_Card.jpg'
 import Zhongli from './Character_Zhongli_Card.png'
 import TravelerF from './Traveler_Female_Card.jpg'
@@ -103,9 +110,11 @@ const charCards = {
   Bennett,
   Candace,
   Charlotte,
+  Chasca,
   Chevreuse,
   Chiori,
   Chongyun,
+  Citlali,
   Clorinde,
   Collei,
   Cyno,
@@ -136,10 +145,12 @@ const charCards = {
   Klee,
   KujouSara,
   KukiShinobu,
+  LanYan,
   Layla,
   Lisa,
   Lyney,
   Lynette,
+  Mavuika,
   Mika,
   Mona,
   Mualani,
@@ -149,6 +160,7 @@ const charCards = {
   Nilou,
   Ningguang,
   Noelle,
+  Ororon,
   Qiqi,
   RaidenShogun,
   Razor,
@@ -172,6 +184,7 @@ const charCards = {
   Xiangling,
   Xianyun,
   Xiao,
+  Xilonen,
   Xingqiu,
   Xinyan,
   YaeMiko,
@@ -179,6 +192,7 @@ const charCards = {
   Yaoyao,
   Yelan,
   Yoimiya,
+  YumemizukiMizuki,
   YunJin,
   Zhongli,
 } as const
@@ -190,6 +204,7 @@ export function charCard(charKey: CharacterKey, gender: GenderKey) {
     case 'TravelerElectro':
     case 'TravelerGeo':
     case 'TravelerHydro':
+    case 'TravelerPyro':
       return charCards[`Traveler${gender}`]
     default:
       return charCards[charKey]

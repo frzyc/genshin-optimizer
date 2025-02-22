@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Gourdful of Elixir",
-        "fullDesc": "After an ally with Invigoration is hit, restores the ally's HP for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>. This effect can trigger {{5}} time(s).<br>When an ally receives a killing blow, they will not be knocked down. Bailu immediately heals the ally for <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{4}}</orangeStrong> HP. This effect can be triggered 1 time per battle.",
-        "shortDesc": "When an ally with <orangeStrong>Invigoration</orangeStrong> is attacked, <orangeStrong>restores HP</orangeStrong> for the ally.<br>When an ally suffers a <orangeStrong>killing blow</orangeStrong>, Bailu <orangeStrong>immediately restores their HP</orangeStrong>. This effect can only trigger 1 time per battle.",
+        "fullDesc": "After an ally target with Invigoration is hit, restores the ally's HP for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>. This effect can trigger {{5}} time(s).<br>When Bailu's teammate receives a killing blow, they will not be knocked down. Bailu immediately heals the ally for <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{4}}</orangeStrong> HP. This effect can be triggered 1 time per battle.",
+        "shortDesc": "When an ally target with <orangeStrong>Invigoration</orangeStrong> is attacked, <orangeStrong>restores HP</orangeStrong> for the ally.<br>When a teammate suffers a <orangeStrong>killing blow</orangeStrong>, Bailu <orangeStrong>immediately restores their HP</orangeStrong>. This effect can only trigger 1 time per battle.",
         "tag": "Restore"
       }
     },

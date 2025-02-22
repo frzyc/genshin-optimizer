@@ -1,0 +1,24 @@
+{
+  "name": "Tai Họa Eshu",
+  "description": {
+    "0": "Thanh đao nghi thức chế tác bởi tư tế vĩ đại Sanhaj của Chủ Nhân Gió Đêm. Trong câu chuyện quá khứ, Sanhaj có thể dùng thanh đao cong này để cử hành nghi thức, xóa nhòa ranh giới giữa Vương Quốc Dạ Thần và thế giới thực tại."
+  },
+  "passiveName": "Ranh Giới Bành Trướng",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi nhân vật được khiên bảo vệ, sát thương gây ra từ Tấn Công Thường và Trọng Kích tăng <cryo>20%</cryo>, Tỷ Lệ Bạo Kích của Tấn Công Thường và Trọng Kích tăng <cryo>8%</cryo>."
+    },
+    "1": {
+      "0": "Khi nhân vật được khiên bảo vệ, sát thương gây ra từ Tấn Công Thường và Trọng Kích tăng <cryo>25%</cryo>, Tỷ Lệ Bạo Kích của Tấn Công Thường và Trọng Kích tăng <cryo>10%</cryo>."
+    },
+    "2": {
+      "0": "Khi nhân vật được khiên bảo vệ, sát thương gây ra từ Tấn Công Thường và Trọng Kích tăng <cryo>30%</cryo>, Tỷ Lệ Bạo Kích của Tấn Công Thường và Trọng Kích tăng <cryo>12%</cryo>."
+    },
+    "3": {
+      "0": "Khi nhân vật được khiên bảo vệ, sát thương gây ra từ Tấn Công Thường và Trọng Kích tăng <cryo>35%</cryo>, Tỷ Lệ Bạo Kích của Tấn Công Thường và Trọng Kích tăng <cryo>14%</cryo>."
+    },
+    "4": {
+      "0": "Khi nhân vật được khiên bảo vệ, sát thương gây ra từ Tấn Công Thường và Trọng Kích tăng <cryo>40%</cryo>, Tỷ Lệ Bạo Kích của Tấn Công Thường và Trọng Kích tăng <cryo>16%</cryo>."
+    }
+  }
+}

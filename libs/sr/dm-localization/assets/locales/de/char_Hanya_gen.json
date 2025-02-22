@@ -29,7 +29,7 @@
       "0": {
         "name": "Sanktion",
         "fullDesc": "Wenn ein Verbündeter einen Standardangriff, eine Fertigkeit oder einen Ultimate gegen einen Gegner einsetzt, der mit „Aufbürden“ belegt ist, wird der zugefügte SCH für {{2}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht.",
-        "shortDesc": "Verbündete fügen Gegnern, die mit „Aufbürden“ belegt wurden, mehr SCH zu.",
+        "shortDesc": "Wenn ein Verbündeter einen Standardangriff, eine Fertigkeit oder einen Ultimate gegen einen Gegner einsetzt, der mit „Aufbürden“ belegt ist, wird der zugefügte SCH erhöht.",
         "tag": "Unterstützung"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Ein Herz",
-      "desc": "Besiegt ein Verbündeter einen Gegner mit Hanyas Ultimate, wird Hanyas Aktion um {{1, percent}}% vorgezogen. Dieser Effekt kann nur {{2}}-mal pro Runde ausgelöst werden."
+      "desc": "Besiegt ein Verbündeter einen Gegner mit Hanyas Ultimate-Effekt, wird Hanyas Aktion um {{1, percent}}% vorgezogen. Dieser Effekt kann nur {{2}}-mal pro Runde ausgelöst werden."
     },
     "2": {
       "name": "Zwei Ansichten",

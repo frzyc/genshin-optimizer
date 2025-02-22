@@ -1,0 +1,942 @@
+{
+  "rarity": "A",
+  "attribute": "physical",
+  "specialty": "stun",
+  "stats": {
+    "atk_base": 96,
+    "atk_growth": 5.4887,
+    "def_base": 49,
+    "def_growth": 6.6203,
+    "hp_base": 612,
+    "hp_growth": 83.0642,
+    "anomMas": 92,
+    "anomProf": 90,
+    "impact": 118,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 420, "atk": 34, "def": 33 },
+    { "hp": 840, "atk": 68, "def": 67 },
+    { "hp": 1260, "atk": 103, "def": 100 },
+    { "hp": 1680, "atk": 137, "def": 134 },
+    { "hp": 2100, "atk": 171, "def": 167 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "impact": 6 },
+    { "atk_base": 25, "impact": 6 },
+    { "atk_base": 25, "impact": 12 },
+    { "atk_base": 50, "impact": 12 },
+    { "atk_base": 50, "impact": 18 },
+    { "atk_base": 75, "impact": 18 }
+  ],
+  "skills": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "Pulchra_Skill_Normal_Title",
+          "Desc": "Pulchra_Skill_Normal_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_Normal_Charge_Title",
+          "Desc": "Pulchra_Skill_Normal_Charge_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_Normal_Title",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1351001, Prop:1001}",
+              "Param": {
+                "1351001": {
+                  "Main": 35.7,
+                  "Growth": 0.033,
+                  "Format": "%",
+                  "DamagePercentage": 0.357,
+                  "DamagePercentageGrowth": 0.033,
+                  "StunRatio": 0.285,
+                  "StunRatioGrowth": 0.013,
+                  "SpRecovery": 102.6,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 783.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 28.48,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1351002, Prop:1001}",
+              "Param": {
+                "1351002": {
+                  "Main": 113.5,
+                  "Growth": 0.104,
+                  "Format": "%",
+                  "DamagePercentage": 1.135,
+                  "DamagePercentageGrowth": 0.104,
+                  "StunRatio": 0.882,
+                  "StunRatioGrowth": 0.041,
+                  "SpRecovery": 317.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2425.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 88.19,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1351003, Prop:1001}",
+              "Param": {
+                "1351003": {
+                  "Main": 237.3,
+                  "Growth": 0.216,
+                  "Format": "%",
+                  "DamagePercentage": 2.373,
+                  "DamagePercentageGrowth": 0.216,
+                  "StunRatio": 1.806,
+                  "StunRatioGrowth": 0.083,
+                  "SpRecovery": 650,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4966.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 180.52,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1351001, Prop:1002}",
+              "Param": {
+                "1351001": {
+                  "Main": 28.5,
+                  "Growth": 0.013,
+                  "Format": "%",
+                  "DamagePercentage": 0.357,
+                  "DamagePercentageGrowth": 0.033,
+                  "StunRatio": 0.285,
+                  "StunRatioGrowth": 0.013,
+                  "SpRecovery": 102.6,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 783.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 28.48,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1351002, Prop:1002}",
+              "Param": {
+                "1351002": {
+                  "Main": 88.2,
+                  "Growth": 0.041,
+                  "Format": "%",
+                  "DamagePercentage": 1.135,
+                  "DamagePercentageGrowth": 0.104,
+                  "StunRatio": 0.882,
+                  "StunRatioGrowth": 0.041,
+                  "SpRecovery": 317.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2425.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 88.19,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1351003, Prop:1002}",
+              "Param": {
+                "1351003": {
+                  "Main": 180.6,
+                  "Growth": 0.083,
+                  "Format": "%",
+                  "DamagePercentage": 2.373,
+                  "DamagePercentageGrowth": 0.216,
+                  "StunRatio": 1.806,
+                  "StunRatioGrowth": 0.083,
+                  "SpRecovery": 650,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4966.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 180.52,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Pulchra_Skill_Normal_Charge_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351004, Prop:1001}",
+              "Param": {
+                "1351004": {
+                  "Main": 135,
+                  "Growth": 0.123,
+                  "Format": "%",
+                  "DamagePercentage": 1.35,
+                  "DamagePercentageGrowth": 0.123,
+                  "StunRatio": 1.08,
+                  "StunRatioGrowth": 0.05,
+                  "SpRecovery": 388.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2970,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 107.97,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351004, Prop:1002}",
+              "Param": {
+                "1351004": {
+                  "Main": 108,
+                  "Growth": 0.05,
+                  "Format": "%",
+                  "DamagePercentage": 1.35,
+                  "DamagePercentageGrowth": 0.123,
+                  "StunRatio": 1.08,
+                  "StunRatioGrowth": 0.05,
+                  "SpRecovery": 388.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2970,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 107.97,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100110": 2 },
+        "2": { "10": 3000, "100110": 3 },
+        "3": { "10": 6000, "100120": 2 },
+        "4": { "10": 9000, "100120": 3 },
+        "5": { "10": 12000, "100120": 4 },
+        "6": { "10": 18000, "100120": 6 },
+        "7": { "10": 45000, "100130": 5 },
+        "8": { "10": 67500, "100130": 8 },
+        "9": { "10": 90000, "100130": 10 },
+        "10": { "10": 112500, "100130": 12 },
+        "11": { "10": 135000, "100130": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "Pulchra_Skill_Evade_Title",
+          "Desc": "Pulchra_Skill_Evade_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_Rush_Title",
+          "Desc": "Pulchra_Skill_Rush_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_Counter_Title",
+          "Desc": "Pulchra_Skill_Counter_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_Rush_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351009, Prop:1001}",
+              "Param": {
+                "1351009": {
+                  "Main": 48.3,
+                  "Growth": 0.044,
+                  "Format": "%",
+                  "DamagePercentage": 0.483,
+                  "DamagePercentageGrowth": 0.044,
+                  "StunRatio": 0.242,
+                  "StunRatioGrowth": 0.011,
+                  "SpRecovery": 87,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 665.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 24.14,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351009, Prop:1002}",
+              "Param": {
+                "1351009": {
+                  "Main": 24.2,
+                  "Growth": 0.011,
+                  "Format": "%",
+                  "DamagePercentage": 0.483,
+                  "DamagePercentageGrowth": 0.044,
+                  "StunRatio": 0.242,
+                  "StunRatioGrowth": 0.011,
+                  "SpRecovery": 87,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 665.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 24.14,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Pulchra_Skill_Counter_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351010, Prop:1001}",
+              "Param": {
+                "1351010": {
+                  "Main": 201.8,
+                  "Growth": 0.184,
+                  "Format": "%",
+                  "DamagePercentage": 2.018,
+                  "DamagePercentageGrowth": 0.184,
+                  "StunRatio": 1.783,
+                  "StunRatioGrowth": 0.082,
+                  "SpRecovery": 281.9,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2153.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 78.29,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351010, Prop:1002}",
+              "Param": {
+                "1351010": {
+                  "Main": 178.3,
+                  "Growth": 0.082,
+                  "Format": "%",
+                  "DamagePercentage": 2.018,
+                  "DamagePercentageGrowth": 0.184,
+                  "StunRatio": 1.783,
+                  "StunRatioGrowth": 0.082,
+                  "SpRecovery": 281.9,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2153.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 78.29,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100110": 2 },
+        "2": { "10": 3000, "100110": 3 },
+        "3": { "10": 6000, "100120": 2 },
+        "4": { "10": 9000, "100120": 3 },
+        "5": { "10": 12000, "100120": 4 },
+        "6": { "10": 18000, "100120": 6 },
+        "7": { "10": 45000, "100130": 5 },
+        "8": { "10": 67500, "100130": 8 },
+        "9": { "10": 90000, "100130": 10 },
+        "10": { "10": 112500, "100130": 12 },
+        "11": { "10": 135000, "100130": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "Pulchra_Skill_Special_Title",
+          "Desc": "Pulchra_Skill_Special_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_Special_ChainAttack_Title",
+          "Desc": "Pulchra_Skill_Special_ChainAttack_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_ExSpecial_Title",
+          "Desc": "Pulchra_Skill_ExSpecial_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_Special_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351005, Prop:1001}",
+              "Param": {
+                "1351005": {
+                  "Main": 25.1,
+                  "Growth": 0.023,
+                  "Format": "%",
+                  "DamagePercentage": 0.251,
+                  "DamagePercentageGrowth": 0.023,
+                  "StunRatio": 0.501,
+                  "StunRatioGrowth": 0.023,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1377.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 25,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351005, Prop:1002}",
+              "Param": {
+                "1351005": {
+                  "Main": 50.1,
+                  "Growth": 0.023,
+                  "Format": "%",
+                  "DamagePercentage": 0.251,
+                  "DamagePercentageGrowth": 0.023,
+                  "StunRatio": 0.501,
+                  "StunRatioGrowth": 0.023,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1377.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 25,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Pulchra_Skill_Special_ChainAttack_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351006, Prop:1001}",
+              "Param": {
+                "1351006": {
+                  "Main": 168.1,
+                  "Growth": 0.153,
+                  "Format": "%",
+                  "DamagePercentage": 1.681,
+                  "DamagePercentageGrowth": 0.153,
+                  "StunRatio": 0.917,
+                  "StunRatioGrowth": 0.042,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3286.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 98.61,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Pulchra_Property_Special_ChainAttack_Desc_Dmg_01",
+              "Desc": "{Skill:1351007, Prop:1001}",
+              "Param": {
+                "1351007": {
+                  "Main": 540.6,
+                  "Growth": 0.492,
+                  "Format": "%",
+                  "DamagePercentage": 5.406,
+                  "DamagePercentageGrowth": 0.492,
+                  "StunRatio": 2.262,
+                  "StunRatioGrowth": 0.103,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 7647.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 239.13,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351006, Prop:1002}",
+              "Param": {
+                "1351006": {
+                  "Main": 91.7,
+                  "Growth": 0.042,
+                  "Format": "%",
+                  "DamagePercentage": 1.681,
+                  "DamagePercentageGrowth": 0.153,
+                  "StunRatio": 0.917,
+                  "StunRatioGrowth": 0.042,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3286.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 98.61,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Pulchra_Property_Special_ChainAttack_Desc_Stun_01",
+              "Desc": "{Skill:1351007, Prop:1002}",
+              "Param": {
+                "1351007": {
+                  "Main": 226.2,
+                  "Growth": 0.103,
+                  "Format": "%",
+                  "DamagePercentage": 5.406,
+                  "DamagePercentageGrowth": 0.492,
+                  "StunRatio": 2.262,
+                  "StunRatioGrowth": 0.103,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 7647.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 239.13,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Pulchra_Skill_ExSpecial_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351008, Prop:1001}",
+              "Param": {
+                "1351008": {
+                  "Main": 473.2,
+                  "Growth": 0.431,
+                  "Format": "%",
+                  "DamagePercentage": 4.732,
+                  "DamagePercentageGrowth": 0.431,
+                  "StunRatio": 1.874,
+                  "StunRatioGrowth": 0.086,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 7122.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 205.26,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351008, Prop:1002}",
+              "Param": {
+                "1351008": {
+                  "Main": 187.4,
+                  "Growth": 0.086,
+                  "Format": "%",
+                  "DamagePercentage": 4.732,
+                  "DamagePercentageGrowth": 0.431,
+                  "StunRatio": 1.874,
+                  "StunRatioGrowth": 0.086,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 7122.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 205.26,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Energy Cost",
+              "Desc": "Pulchra_Property_ExSpecial_SpCostValue_01"
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100110": 2 },
+        "2": { "10": 3000, "100110": 3 },
+        "3": { "10": 6000, "100120": 2 },
+        "4": { "10": 9000, "100120": 3 },
+        "5": { "10": 12000, "100120": 4 },
+        "6": { "10": 18000, "100120": 6 },
+        "7": { "10": 45000, "100130": 5 },
+        "8": { "10": 67500, "100130": 8 },
+        "9": { "10": 90000, "100130": 10 },
+        "10": { "10": 112500, "100130": 12 },
+        "11": { "10": 135000, "100130": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        { "Name": "Pulchra_Skill_QTE_Title", "Desc": "Pulchra_Skill_QTE_Desc" },
+        {
+          "Name": "Pulchra_Skill_ExQTE_Title",
+          "Desc": "Pulchra_Skill_ExQTE_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_QTE_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351011, Prop:1001}",
+              "Param": {
+                "1351011": {
+                  "Main": 534.1,
+                  "Growth": 0.486,
+                  "Format": "%",
+                  "DamagePercentage": 5.341,
+                  "DamagePercentageGrowth": 0.486,
+                  "StunRatio": 1.351,
+                  "StunRatioGrowth": 0.062,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 22002.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 334.53,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351011, Prop:1002}",
+              "Param": {
+                "1351011": {
+                  "Main": 135.1,
+                  "Growth": 0.062,
+                  "Format": "%",
+                  "DamagePercentage": 5.341,
+                  "DamagePercentageGrowth": 0.486,
+                  "StunRatio": 1.351,
+                  "StunRatioGrowth": 0.062,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 22002.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 334.53,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Pulchra_Skill_ExQTE_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351012, Prop:1001}",
+              "Param": {
+                "1351012": {
+                  "Main": 1510.5,
+                  "Growth": 1.374,
+                  "Format": "%",
+                  "DamagePercentage": 15.105,
+                  "DamagePercentageGrowth": 1.374,
+                  "StunRatio": 9.897,
+                  "StunRatioGrowth": 0.45,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 208.36,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351012, Prop:1002}",
+              "Param": {
+                "1351012": {
+                  "Main": 989.7,
+                  "Growth": 0.45,
+                  "Format": "%",
+                  "DamagePercentage": 15.105,
+                  "DamagePercentageGrowth": 1.374,
+                  "StunRatio": 9.897,
+                  "StunRatioGrowth": 0.45,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 208.36,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100110": 2 },
+        "2": { "10": 3000, "100110": 3 },
+        "3": { "10": 6000, "100120": 2 },
+        "4": { "10": 9000, "100120": 3 },
+        "5": { "10": 12000, "100120": 4 },
+        "6": { "10": 18000, "100120": 6 },
+        "7": { "10": 45000, "100130": 5 },
+        "8": { "10": 67500, "100130": 8 },
+        "9": { "10": 90000, "100130": 10 },
+        "10": { "10": 112500, "100130": 12 },
+        "11": { "10": 135000, "100130": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "Pulchra_Skill_BeHitAid_Title",
+          "Desc": "Pulchra_Skill_BeHitAid_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_EvadeAid_Title",
+          "Desc": "Pulchra_Skill_EvadeAid_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_AssaultAid_Title",
+          "Desc": "Pulchra_Skill_AssaultAid_Desc"
+        },
+        {
+          "Name": "Pulchra_Skill_BeHitAid_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351013, Prop:1001}",
+              "Param": {
+                "1351013": {
+                  "Main": 78.3,
+                  "Growth": 0.072,
+                  "Format": "%",
+                  "DamagePercentage": 0.783,
+                  "DamagePercentageGrowth": 0.072,
+                  "StunRatio": 0.783,
+                  "StunRatioGrowth": 0.036,
+                  "SpRecovery": 281.9,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2153.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 78.29,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351013, Prop:1002}",
+              "Param": {
+                "1351013": {
+                  "Main": 78.3,
+                  "Growth": 0.036,
+                  "Format": "%",
+                  "DamagePercentage": 0.783,
+                  "DamagePercentageGrowth": 0.072,
+                  "StunRatio": 0.783,
+                  "StunRatioGrowth": 0.036,
+                  "SpRecovery": 281.9,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2153.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 78.29,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Pulchra_Skill_AssaultAid_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1351014, Prop:1001}",
+              "Param": {
+                "1351014": {
+                  "Main": 307.1,
+                  "Growth": 0.28,
+                  "Format": "%",
+                  "DamagePercentage": 3.071,
+                  "DamagePercentageGrowth": 0.28,
+                  "StunRatio": 5.578,
+                  "StunRatioGrowth": 0.254,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 9594.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 286.17,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1351014, Prop:1002}",
+              "Param": {
+                "1351014": {
+                  "Main": 557.8,
+                  "Growth": 0.254,
+                  "Format": "%",
+                  "DamagePercentage": 3.071,
+                  "DamagePercentageGrowth": 0.28,
+                  "StunRatio": 5.578,
+                  "StunRatioGrowth": 0.254,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 9594.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 286.17,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100110": 2 },
+        "2": { "10": 3000, "100110": 3 },
+        "3": { "10": 6000, "100120": 2 },
+        "4": { "10": 9000, "100120": 3 },
+        "5": { "10": 12000, "100120": 4 },
+        "6": { "10": 18000, "100120": 6 },
+        "7": { "10": 45000, "100130": 5 },
+        "8": { "10": 67500, "100130": 8 },
+        "9": { "10": 90000, "100130": 10 },
+        "10": { "10": 112500, "100130": 12 },
+        "11": { "10": 135000, "100130": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "skillList": {},
+  "cores": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1351501,
+        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
+        "Desc": ["Pulchra_UniqueSkill_01_Desc", "Pulchra_MathSkill_Desc"]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1351502,
+        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
+        "Desc": ["Pulchra_UniqueSkill_02_Desc", "Pulchra_MathSkill_Desc"]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1351503,
+        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
+        "Desc": ["Pulchra_UniqueSkill_03_Desc", "Pulchra_MathSkill_Desc"]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1351504,
+        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
+        "Desc": ["Pulchra_UniqueSkill_04_Desc", "Pulchra_MathSkill_Desc"]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1351505,
+        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
+        "Desc": ["Pulchra_UniqueSkill_05_Desc", "Pulchra_MathSkill_Desc"]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1351506,
+        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
+        "Desc": ["Pulchra_UniqueSkill_06_Desc", "Pulchra_MathSkill_Desc"]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1351507,
+        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
+        "Desc": ["Pulchra_UniqueSkill_07_Desc", "Pulchra_MathSkill_Desc"]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110507": 2 },
+      "3": { "10": 28000, "110507": 4 },
+      "4": { "10": 60000, "110004": 2, "110507": 9 },
+      "5": { "10": 100000, "110004": 3, "110507": 15 },
+      "6": { "10": 200000, "110004": 4, "110507": 30 }
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "Level": 1,
+      "Name": "Pulchra_Talent_01_Title",
+      "Desc": "Pulchra_Talent_01_Desc_01",
+      "Desc2": "Pulchra_Talent_01_Desc_02"
+    },
+    "2": {
+      "Level": 2,
+      "Name": "Pulchra_Talent_02_Title",
+      "Desc": "Pulchra_Talent_02_Desc_01",
+      "Desc2": "Pulchra_Talent_02_Desc_02"
+    },
+    "3": {
+      "Level": 3,
+      "Name": "Pulchra_Talent_03_Title",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "Pulchra_Talent_03_Desc_02"
+    },
+    "4": {
+      "Level": 4,
+      "Name": "Pulchra_Talent_04_Title",
+      "Desc": "Pulchra_Talent_04_Desc_01",
+      "Desc2": "Pulchra_Talent_04_Desc_02"
+    },
+    "5": {
+      "Level": 5,
+      "Name": "Pulchra_Talent_05_Title",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "Pulchra_Talent_05_Desc_02"
+    },
+    "6": {
+      "Level": 6,
+      "Name": "Pulchra_Talent_06_Title",
+      "Desc": "Pulchra_Talent_06_Desc_01",
+      "Desc2": "Pulchra_Talent_06_Desc_02"
+    }
+  }
+}

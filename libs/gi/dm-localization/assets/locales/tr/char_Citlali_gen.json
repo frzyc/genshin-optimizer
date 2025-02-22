@@ -1,0 +1,186 @@
+{
+  "name": "Citlali",
+  "title": "Obsidiyen Opal Yıldızı",
+  "description": "Gece Rüzgarının Ustalarının büyük şamanı, herkes tarafından saygı duyulan Itztli Nine.",
+  "constellationName": "Kalp Aynası",
+  "auto": {
+    "name": "Gölge Çalan Ruh Meskeni",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Gece Rüzgarının Ustalarında nesilden nesile aktarılan gizli teknikleri kullanarak <cryo>Buz Hasarı</cryo> veren en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Nişan Alma Moduna girer. Basılı Tuttuktan sonra belirli bir miktar Dayanıklılık harcayarak yoluna çıkan düşmanlara <cryo>Buz Hasarı</cryo> veren bir Buz Yıldızı çağırır."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Citlali, Buzun gücünü toplayarak havadayken yere doğru dalışa geçer ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <cryo>Buz Alan Hasarı</cryo> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Şafak Ayazının Karanlık Yıldızı",
+    "description": {
+      "0": "Citlali, kabilesinde bin yıldır nesilden nesile aktarılan gizli anlaşmalarına başvurarak bir Opal Kalkan oluşturur ve (sözde) akla hayale sığmayacak kadar korkutucu bir yaratık olan \"Obsidiyen Tzitzimitl: Itzpapa\"yı çağırıp Gece Ruhu tesirli <cryo>Buz Alan Hasarı</cryo> verir.",
+      "1": "Opal Kalkanın Hasar Emilimi, Citlali'nin Element Ustalığına bağlıdır ve <cryo>Buz Hasarını</cryo> %250 verimlilikle emer. Oluşturulduktan sonra Citlali'nin kısa süreliğine <cryo>Buz etkisine</cryo> girmesine neden olur.",
+      "2": "Citlali bu beceriyi kullandıktan sonra 24 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girer.",
+      "3": "<br/>",
+      "4": "<strong>Gece Ruhunun Lütfu: Citlali</strong>",
+      "5": "Itzpapa alandan ayrıldığında Citlali, Gece Ruhunun Lütfu durumundan çıkar.",
+      "6": "<br/>",
+      "7": "<strong>Itzpapa</strong>",
+      "8": [
+        "Itzpapa karakteri takip eder.",
+        "Citlali en az 50 Gece Ruhu puanına sahipse Itzpapa, Opal Ateş durumuna girer ve devamlı Gece Ruhu puanı tüketerek bir Ayaz Düşüşü Fırtınası oluşturur. Bu fırtına karakteri takip eder ve Etki Alanındaki düşmanlara saldırarak Gece Ruhu tesirli <cryo>Buz Hasarı</cryo> verir.",
+        "Citlali'nin Gece Ruhu puanı tükendiğinde Itzpapa'nın Opal Ateş durumu da sona erer."
+      ],
+      "9": "<br/>",
+      "10": "<i>Genelde farklı yıldızları simgeleyen iradeler aynı anda var olamaz. En saf siyah, en saf beyazdan yansıyabilir mi sonuçta?",
+      "11": "Öte yandan Citlali'nin bir renk tercihi yoktur, en sonunda da böyle olmuştur zaten.</i>"
+    },
+    "skillParams": {
+      "0": "Obsidiyen Tzitzimitl Hasarı",
+      "1": "Kalkanın Hasar Emilimi",
+      "2": "Kalkan Süresi",
+      "3": "Itzpapa Süresi",
+      "4": "Itzpapa: Opal Ateş Gece Ruhu Puanı Tüketimi",
+      "5": "Ayaz Düşüşü Fırtınası Hasarı",
+      "6": "Gece Ruhu Puanı Sınırı",
+      "7": "BS",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sarmalayan İhtişamın Fermanı",
+    "description": {
+      "0": "Citlali, yıldızlı gökyüzü ve engin yeryüzünden \"müttefiklerini\" çağırarak önündeki alanı bombalayan bir buz fırtınası gönderir. Bu fırtına Gece Ruhu tesirli <cryo>Buz Alan Hasarı</cryo> verir, Citlali'ye belirli bir miktar Gece Ruhu puanı yeniler ve Etki Alanı içindeki en fazla 3 düşmanın yakınına bir <strong>Ruh Meskeni Kafatası</strong> çağırır. Her düşman için 1 Kafatası çağrılır. Ruh Meskeni Kafatasları bir süre sonra patlayarak Gece Ruhu tesirli <cryo>Buz Alan Hasarı</cryo> verir ve Citlali'ye belirli bir miktar Gece Ruhu puanı yeniler.",
+      "1": "<br/>",
+      "2": "<i>\"Of, bıktım bu 'karanlık yıldız', 'opal yıldız' işlerinden! Citlalin, Itzpapa, haklayın şunları!\"</i>"
+    },
+    "skillParams": {
+      "0": "Buz Fırtınası Hasarı",
+      "1": "Buz Fırtınası Gece Ruhu Puanı Kazanımı",
+      "2": "Ruh Meskeni Kafatası Hasarı",
+      "3": "Ruh Meskeni Kafatası Gece Ruhu Puanı Kazanımı",
+      "4": "BS",
+      "5": "Enerji Maliyeti",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mamaloaco'nun Soğuk Yağmurları",
+    "description": {
+      "0": "Itzpapa alandayken yakındaki grup üyeleri Donma veya Erime tepkimeleri tetiklediğinde etkilenen düşmanların 12 saniyeliğine <pyro>Ateş</pyro> ve <hydro>Su</hydro> Dirençleri %20 azalır. Ayrıca Citlali 16 Gece Ruhu puanı yeniler. Gece Ruhu puanı bu şekilde her 8 saniyede bir yenilenebilir."
+    }
+  },
+  "passive2": {
+    "name": "Itzpapalotl'un Yıldız Giysileri",
+    "description": {
+      "0": "<strong>Şafak Ayazının Karanlık Yıldızı</strong> Element Becerisi sırasında Itzpapa'nın Ayaz Düşüşü Fırtınası Hasarı, Citlali'nin Element Ustalığının %90'ı kadar artar. <strong>Sarmalayan İhtişamın Fermanı</strong> Element Patlaması sırasında Buz Fırtınası Hasarı, Citlali'nin Element Ustalığının %1200'ü kadar artar.",
+      "1": "Ayrıca yakındaki grup üyeleri bir Gece Ruhu Patlaması tetiklediğinde Citlali 4 Gece Ruhu puanı yeniler."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Duman, Aynalar ve Esen Rüzgarlar",
+    "description": {
+      "0": "Citlali, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Citlali\" kullanabilir. Aktif karakter havada yeterli yükseklikteyken Citlali'ye geçildiğinde şu etkiler tetiklenir: Citlali yükseğe sıçrar ve \"Beyaz Obsidiyen Tzitzimitl: Citlalin\" çağırarak havada süzülür. Gece Ruhu Aktarımı grubun tarafından her 10 saniyede bir tetiklenebilir.",
+      "1": "<br/>",
+      "2": "Nişan Alma Modu basılı tutulduğunda Citlali \"Ruh Sözcüsü\" durumuna girerek \"Gece Ruhu Grafitileri\" ve \"Gece Ruhu Mühürleri\" ile etkileşime geçebilir ve onlardan bilgi ile güç alabilir. Bu nesnelerle etkileşime geçme kuralları, Iktomizor etkileşimi kurallarıyla aynıdır.",
+      "3": "<br/>",
+      "4": "Ayrıca sıçrama butonuna basılı tutulduğunda Citlali 75 Dayanıklılık tüketir ve sıçrar. Natlan'da Filojiston mekaniklerinin olduğu bir bölgedeyken, Citlali daha yükseğe sıçramak için öncelikle 5 Filojiston tüketir.",
+      "5": "Citlali havadayken Normal Saldırısı Basılı Tutulduğunda Filojiston veya Dayanıklılık tüketerek Nişan Alma Moduna girebilir ve Yüklü Saldırılar tetikleyebilir. Havadayken Yüklü Saldırı başlattığında Citlali 20 Filojiston harcamaya öncelik verir."
+    }
+  },
+  "passive": {
+    "name": "Derin Gizem Şarkıları",
+    "description": {
+      "0": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken \"Gece Ruhu Patlaması\" tetiklemek 20 Filojiston yeniler.",
+      "1": "Bu etki Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında tetiklenemez."
+    }
+  },
+  "constellation1": {
+    "name": "Centzon Mimixcoah'nın Parlak Kılıçları",
+    "description": {
+      "0": "Citlali, <strong>Şafak Ayazının Karanlık Yıldızı</strong> Element Becerisini kullandığında Itzpapa alandan ayrılana dek \"Opal Yıldızı Elbiseleri\" etkisini kazanır. Bu süre boyunca 10 yük Yıldız Kılıcı elde eder. Citlali hariç yakındaki bir aktif karakter Normal, Yüklü veya Havadan Saldırılarla ya da Element Becerisi ve Element Patlamasıyla Hasar verdiğinde 1 yük Yıldız Kılıcı tüketerek verilen Hasarı Citlali'nin Element Ustalığının %200'ü kadar artırır.",
+      "1": "Yakındaki grup üyeleri Donma veya Erime tetiklediğinde Citlali 3 yük Yıldız Kılıcı daha kazanır. Bu etki 8 saniyede bir tetiklenebilir.",
+      "2": "<br/>",
+      "3": "<strong>Şafak Ayazının Karanlık Yıldızı</strong> Element Becerisi kullanıldığında Yıldız Kılıcı kademeleri sıfırlanır.",
+      "4": "Ayrıca Citlali atlamasını kullanırken, nişan alırken veya havada Yüklü Saldırısını yaparken Filojiston tüketimi %45 azalır."
+    }
+  },
+  "constellation2": {
+    "name": "Kalp Yutanın Izdırabı",
+    "description": {
+      "0": "Citlali 125 Element Ustalığı kazanır, Opal Kalkan ile korunan veya Itzpapa tarafından takip edilen diğer karakterler ise 250 Element Ustalığı kazanır.",
+      "1": "Buna ek olarak Citlali, <strong>Şafak Ayazının Karanlık Yıldızı</strong> Element Becerisini kullandığında yakındaki aktif karakterler de Opal Kalkan kazanır.",
+      "2": "<br/>",
+      "3": "Ayrıca \"Mamaloaco'nun Soğuk Yağmurları\" Pasif Yeteneğinin etkileri gelişir:",
+      "4": "Itzpapa alandayken yakındaki grup üyeleri Donma veya Erime tetiklediğinde bu tepkimelerden etkilenen düşmanların 12 saniye boyunca <pyro>Ateş</pyro> ve <hydro>Su</hydro> Dirençleri fazladan %20 daha azalır. Bu etkinin uygulanması için \"Mamaloaco'nun Soğuk Yağmurları\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Bulut Yılanının Tüylü Tacı",
+    "description": {
+      "0": "<strong>Şafak Ayazının Karanlık Yıldızı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Ölüme Meydan Okuyanın Ruh Kafatası",
+    "description": {
+      "0": "<strong>Şafak Ayazının Karanlık Yıldızı</strong> Element Becerisi etkinken Itzpapa'nın Ayaz Düşüşü Fırtınası düşmanlara vurduğunda fazladan bir <strong>Obsidiyen Ruh Meskeni Kafatası</strong> çağrılır. Bu şekilde çağrılan bir Ruh Meskeni Kafatası patladığında Citlali'nin Element Ustalığının %1800'ü kadar Gece Ruhu tesirli <cryo>Buz Alan Hasarı</cryo> verir ve Citlali'ye 16 Gece Ruhu puanı ve 8 Enerji yeniler. Bu etki 8 saniyede bir tetiklenebilir. Bu Hasar, Element Patlaması Hasarı sayılmaz."
+    }
+  },
+  "constellation5": {
+    "name": "Nemontemi'nin Laneti",
+    "description": {
+      "0": "<strong>Sarmalayan İhtişamın Fermanı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Teoiztac'ın Gizli Anlaşması",
+    "description": {
+      "0": "<strong>Şafak Ayazının Karanlık Yıldızı</strong> Element Becerisi ile çağrılan Itzpapa her zaman Opal Ateş durumunda olur ve Gece Ruhu puanı tükendiğinde bu durum sona ermez.",
+      "1": "Ayrıca <strong>Şafak Ayazının Karanlık Yıldızı</strong> kullanıldığında Itzpapa tüm Gece Ruhu puanlarını tüketir. Bunun yanı sıra savaş alanındayken de devamlı Gece Ruhu puanı tüketir. Bu şekilde tüketilen her Gece Ruhu puanı, Citlali'ye 1 \"Gizli Kanunların Sayısı\" puanı verir.",
+      "2": "En fazla 40 \"Gizli Kanunların Sayısı\" puanı toplanabilir. Citlali'nin sahip olduğu her puan, yakındaki tüm grup üyelerine %1,5 <pyro>Ateş</pyro> ve <hydro>Su</hydro> Hasarı Bonusu verir ve Citlali'nin verdiği Hasarı %2,5 artırır.",
+      "3": "Itzpapa alandan ayrıldığında veya Citlali tekrar Element Becerisini kullandığında sahip olduğu tüm \"Gizli Kanunların Sayısı\" puanları silinir."
+    }
+  }
+}

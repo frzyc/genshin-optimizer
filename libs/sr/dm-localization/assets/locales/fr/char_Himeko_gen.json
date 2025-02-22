@@ -29,7 +29,7 @@
       "0": {
         "name": "Ruée vers la victoire",
         "fullDesc": "Lorsqu'un ennemi subit une Rupture de faiblesse, Himeko obtient 1 point de Charge ({{2}} points max).<br>Si la Charge de Himeko est au maximum lorsqu'un allié attaque, Himeko effectue immédiatement 1 attaque de suivi et inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à tous les ennemis, consommant tous les points de Charge.<br>Himeko obtient 1 point de Charge en début de combat.",
-        "shortDesc": "Obtient un point de Charge lorsqu'un ennemi subit une Rupture de faiblesse.<br>Lorsque la Charge est complète, après une attaque alliée, Himeko lance <orangeStrong>immédiatement une attaque de suivi</orangeStrong> qui inflige des DGT de feu à <orangeStrong>tous les ennemis</orangeStrong>, en consommant tous les points de Charge.<br>Gagne 1 point de Charge au début de chaque combat.",
+        "shortDesc": "Obtient de la Charge en début de combat ou lorsqu'une unité ennemie subit une Rupture de faiblesse.<br>Lorsqu'une cible alliée attaque et que la Charge est complète, Himeko <orangeStrong>lance une attaque de suivi</orangeStrong> qui inflige des DGT de feu à <orangeStrong>tous les ennemis</orangeStrong>, en consommant tous les points de Charge.",
         "tag": "ZdE"
       }
     },

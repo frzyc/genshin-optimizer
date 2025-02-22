@@ -53,10 +53,10 @@
       ],
       "6": "<br/>",
       "7": "<strong>Slancio ondoso e Marchio della Preda</strong>",
-      "8": "Quando Mualani usa il Morso di Sharky, i DAN inflitti aumentano in base agli accumuli di Slancio ondoso. Se possiede 3 accumuli, l'attacco normale viene sostituito dal Morso impetuoso di Sharky, che aumenta ulteriormente i DAN e rimuove tutti gli accumuli una volta colpito un avversario.",
-      "9": "Quando i Morsi di Sharky colpiscono avversari affetti dal Marchio della Preda, il Marchio viene rimosso, e Mualani lancia dei Missili squalosi a un massimo di 5 avversari vicini contrassegnati da un Marchio della Preda, infliggendo DAN pari all'attuale iterazione del Morso di Sharky e rimuovendo tutti i Marchi. Se il numero di obiettivi del Morso di Sharky e dei Missili squalosi è maggiore di 1, i DAN inflitti diminuiscono a un 72% dei DAN originali quando sono presenti almeno 3 obiettivi.",
+      "8": "Quando Mualani usa il Morso di Sharky, i DAN inflitti aumentano in base agli accumuli di Slancio ondoso. Se possiede 3 accumuli, il Morso di Sharky si converte in Morso impetuoso di Sharky, che aumenta ulteriormente i DAN e rimuove tutti gli accumuli una volta colpito un avversario.",
+      "9": "Quando il Morso di Sharky colpisce un avversario affetto dal Marchio della Preda, il Marchio viene rimosso, e Mualani lancia dei Missili squalosi a un massimo di 5 avversari vicini contrassegnati da un Marchio della Preda, infliggendo DAN pari all'attuale iterazione del Morso di Sharky e rimuovendo tutti i Marchi. Se il numero di obiettivi del Morso di Sharky e dei Missili squalosi è maggiore di 1, i DAN inflitti diminuiscono fino a un 72% dei DAN originali quando sono presenti almeno 3 obiettivi.",
       "10": "<br/>",
-      "11": "<i>Innanzitutto, Sharky è uno squalo d'acqua dolce, oltre a essere una tavola da surf. E poi, non è che voglia davvero nutrirsi, ma i suoi morsi fanno davvero tanto male.</i>"
+      "11": "<i>Innanzitutto, Sharky è uno squalo d'acqua dolce, oltre a essere una tavola da surf. E poi, potrà anche non aver bisogno di nutrirsi, ma i suoi morsi fanno molto, molto male.</i>"
     },
     "skillParams": {
       "0": "DAN base da Morso di Sharky",

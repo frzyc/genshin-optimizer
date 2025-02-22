@@ -1,0 +1,186 @@
+{
+  "name": "Citlali",
+  "title": "Fulgistella d'ossidiana",
+  "description": "La grande sciamana dei Maestri del Vento della Notte, l'universalmente venerata Nonna Itztli.",
+  "constellationName": "Patina Anavatlaca",
+  "auto": {
+    "name": "Albergaspirito rubanime",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Invoca le arti segrete tramandate da generazioni tra i Maestri del Vento della Notte e sferra fino a 3 colpi che infliggono <cryo>DAN da Cryo</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Entra in modalità di mira e, dopo una pressione prolungata, consuma una certa quantità di vigore per evocare una Gelostella che infligge <cryo>DAN da Cryo</cryo> agli avversari lungo il suo percorso."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Accumulando la forza di Cryo, si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <cryo>DAN da Cryo ad area</cryo> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Stella nera Albagelo",
+    "description": {
+      "0": "Invocando patti segreti tramandati nella sua tribù da millenni, Citlali crea uno Scudo d'opale ed evoca la Tzitzimitl d'ossidiana: Itzpapa, una creatura (stando a quel che si dice) terrificante oltre ogni dire, che infligge <cryo>DAN da Cryo ad area</cryo> con attributo Anima della Notte.",
+      "1": "L'assorbimento DAN dello Scudo d'opale si basa sulla maestria elementale di Citlali, e permette di assorbire i <cryo>DAN da Cryo</cryo> con un 250% di efficienza. Dopo aver creato lo Scudo, Citlali subisce una breve <cryo>applicazione di Cryo</cryo>.",
+      "2": "Dopo aver usato l'abilità, Citlali ottiene 24 punti Anima della Notte ed entra nello stato di Grazia dell'Anima della Notte.",
+      "3": "<br/>",
+      "4": "<strong>Grazia dell'Anima della Notte: Citlali</strong>",
+      "5": "Quando Itzpapa abbandona il campo, lo stato di Grazia dell'Anima della Notte di Citlali termina.",
+      "6": "<br/>",
+      "7": "<strong>Itzpapa</strong>",
+      "8": [
+        " Itzpapa segue il personaggio.",
+        " Se Citlali ha almeno 50 punti Anima della Notte, Itzpapa entra nello stato di Opale ardente e consuma continuamente punti Anima della Notte per scatenare un Tifone glaciale che segue il personaggio e attacca gli avversari nella sua area d'effetto, infliggendo <cryo>DAN da Cryo</cryo> con attributo Anima della Notte.",
+        " Quando i punti Anima della Notte di Citlali si esauriscono, anche lo stato di Opale ardente di Itzpapa termina."
+      ],
+      "9": "<br/>",
+      "10": "<i>Di solito, le volontà che simboleggiano stelle diverse non possono coesistere: come potrebbe il nero più profondo riflettersi nel bianco più candido?",
+      "11": "A ogni modo, Citlali non ha mai avuto preferenze particolari per i colori in sé, quindi la cosa è finita lì.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Tzitzimitl d'ossidiana",
+      "1": "Assorbimento DAN scudo",
+      "2": "Durata scudo",
+      "3": "Durata Itzpapa",
+      "4": "Consumo punti Anima della Notte Itzpapa: Opale ardente",
+      "5": "DAN da Tifone glaciale",
+      "6": "Limite punti Anima della Notte",
+      "7": "TdR",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Editto dello splendore intrecciato",
+    "description": {
+      "0": "Evoca degli \"alleati\" dai cieli stellati e dalla vasta terra, scatenando una Tormenta di ghiaccio che bombarda l'area davanti al personaggio, infliggendo <cryo>DAN da Cryo ad area</cryo> con attributo Anima della Notte. La Tormenta ripristina una determinata quantità di punti Anima della Notte di Citlali ed evoca un <strong>Teschio albergaspiriti</strong> vicino a un massimo di 3 avversari nella sua area d'effetto, con 1 Teschio per ciascun avversario. I Teschi albergaspiriti esplodono dopo un certo periodo di tempo, infliggendo <cryo>DAN da Cryo ad area</cryo> con attributo Anima della Notte e ripristinando una determinata quantità di punti Anima della Notte di Citlali.",
+      "1": "<br/>",
+      "2": "<i>\"Uff, basta con questa storia della 'stella nera, stella opale'! Citlalin, Itzpapa, prendeteli!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Tormenta di ghiaccio",
+      "1": "Acquisizione punti Anima della Notte Tormenta di ghiaccio",
+      "2": "DAN da Teschio albergaspiriti",
+      "3": "Acquisizione punti Anima della Notte Teschio albergaspiriti",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pioggia gelida di Mamaloaco",
+    "description": {
+      "0": "Mentre Itzpapa è in campo, dopo che i membri vicini del gruppo hanno innescato reazioni di Congelamento o di Fusione, le RES a <pyro>Pyro</pyro> e <hydro>Hydro</hydro> degli avversari colpiti diminuiscono di un 20% per 12 s. Inoltre, i punti Anima della Notte di Citlali si ripristinano di 16. Il ripristino può verificarsi una volta ogni 8 s."
+    }
+  },
+  "passive2": {
+    "name": "Abiti stellari di Itzpapalotl",
+    "description": {
+      "0": "Durante l'abilità elementale <strong>Stella nera Albagelo</strong>, i DAN del Tifone glaciale di Itzpapa aumentano di un 90% della maestria elementale di Citlali. Durante il Tripudio elementale <strong>Editto dello splendore intrecciato</strong>, i DAN della Tormenta di ghiaccio aumentano di un 1200% della maestria elementale di Citlali.",
+      "1": "Inoltre, quando i membri vicini del gruppo innescano un Impeto dell'Anima della Notte, i punti Anima della Notte di Citlali si ripristinano di 4."
+    }
+  },
+  "passive3": {
+    "name": "Dono del Reame notturno: Fumo, specchi e flusso dei venti",
+    "description": {
+      "0": "Se si trova in un'area di Natlan dove sono presenti uno o più Meccanismi flogistici, può usare Trasmissione dell'Anima della Notte: Citlali. Quando il personaggio attivo è sospeso a mezz'aria a un'altezza sufficiente, passare il controllo a Citlali attiva il seguente effetto: Citlali compie un balzo formidabile verso l'alto ed evoca la Tzitzimitl d'ossidiana bianca: Citlalin per fluttuare in aria. Trasmissione dell'Anima della Notte può attivarsi una volta ogni 10 s all'interno del tuo gruppo.",
+      "1": "<br/>",
+      "2": "Passare alla modalità di mira permette a Citlali di entrare nello stato medianico, che le consente di interagire con i Graffiti e i Sigilli dello Spirito della Notte ed estrarne informazioni e potere. Le regole per l'interazione con gli oggetti sopracitati sono le stesse seguite dagli Iktomisauri.",
+      "3": "<br/>",
+      "4": "Inoltre, la pressione prolungata del tasto di salto fa consumare a Citlali 75 di vigore per eseguire il balzo. Nelle aree di Natlan dove sono presenti dei Meccanismi flogistici, Citlali dà la priorità al consumo di Flogisto, usando 5 punti di quest'ultimo per saltare ancora più in alto.",
+      "5": "Quando è in aria, la pressione prolungata dell'attacco normale permette a Citlali di consumare Flogisto o vigore per entrare in modalità di mira e di innescare degli attacchi caricati. Quando effettua degli attacchi caricati a mezz'aria, Citlali dà la priorità al consumo di 20 punti Flogisto."
+    }
+  },
+  "passive": {
+    "name": "Canzoni di misteri profondi",
+    "description": {
+      "0": "Se si trova in un'area di Natlan dove sono presenti uno o più Meccanismi flogistici, vengono ripristinati 20 punti Flogisto quando si innesca un Impeto dell'Anima della Notte.",
+      "1": "Non ha effetto nei domini, nei Domini della conquista o nell'Abisso a spirale."
+    }
+  },
+  "constellation1": {
+    "name": "Lame lucenti di Centzon Mimixcoah",
+    "description": {
+      "0": "Quando usa la sua abilità elementale <strong>Stella nera Albagelo</strong>, Citlali ottiene l'effetto Paramenti Fulgistella finché Itzpapa non abbandona il campo. Durante questo periodo, ottiene 10 accumuli di Lama stellare. Quando un personaggio attivo vicino diverso da Citlali infligge DAN usando attacchi normali, caricati o in picchiata, o abilità e Tripudi elementali, viene consumata 1 accumulo di Lama stellare per aumentare i DAN inflitti di un 200% della maestria elementale di Citlali.",
+      "1": "Quando un personaggio vicino del gruppo innesca reazioni di Congelamento o Fusione, Citlali ottiene altri 3 accumuli di Lama stellare. Quest'effetto può attivarsi una volta ogni 8 s.",
+      "2": "<br/>",
+      "3": "Usare l'abilità elementale <strong>Stella nera Albagelo</strong> ripristina il numero di Lame stellari.",
+      "4": "In più, quando Citlali esegue il suo balzo, è in modalità di mira o usa il suo attacco caricato a mezz'aria, il suo consumo di Flogisto diminuisce di un 45%."
+    }
+  },
+  "constellation2": {
+    "name": "Calvario del Divoracuori",
+    "description": {
+      "0": "Citlali ottiene 125 punti di maestria elementale, mentre gli altri personaggi che sono protetti dal suo Scudo d'opale o che vengono seguiti da Itzpapa ne ottengono 250.",
+      "1": "Inoltre, quando Citlali usa la sua abilità elementale <strong>Stella nera Albagelo</strong>, anche i personaggi vicini ottengono uno Scudo d'opale.",
+      "2": "<br/>",
+      "3": "In più, gli effetti del talento passivo Pioggia gelida di Mamaloaco ricevono un miglioramento:",
+      "4": "mentre Itzpapa è in campo, dopo che i membri vicini del gruppo hanno innescato reazioni di Congelamento o di Fusione, le RES a <pyro>Pyro</pyro> e <hydro>Hydro</hydro> degli avversari colpiti diminuiscono di un ulteriore 20% per 12 s. Richiede il talento passivo Pioggia gelida di Mamaloaco."
+    }
+  },
+  "constellation3": {
+    "name": "Corona piumata del serpente delle nuvole",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Stella nera Albagelo</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Spiriteschio Affrontamorte",
+    "description": {
+      "0": "Mentre l'abilità elementale <strong>Stella nera Albagelo</strong> è attiva, quando il Tifone glaciale di Itzpapa colpisce gli avversari, viene evocato un <strong>Teschio albergaspiriti d'ossidiana</strong> aggiuntivo. Quando un Teschio albergaspiriti evocato in questo modo esplode, infligge <cryo>DAN da Cryo ad area</cryo> con attributo Anima della Notte pari a un 1800% della maestria elementale di Citlali, ripristinando al contempo 16 punti Anima della Notte e 8 di energia di quest'ultima. Quest'effetto può attivarsi una volta ogni 8 s. Tali DAN non sono considerati DAN da Tripudio elementale."
+    }
+  },
+  "constellation5": {
+    "name": "Maleficio di Nemontemi",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Editto dello splendore intrecciato</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Patto segreto di Teoiztac",
+    "description": {
+      "0": "Dopo essere stata evocata con l'abilità elementale <strong>Stella nera Albagelo</strong>, Itzpapa rimane sempre nello stato di Opale ardente, che non termina neanche se vengono consumati tutti i punti Anima della Notte.",
+      "1": "In più, quando viene usata <strong>Stella nera Albagelo</strong>, Itzpapa consuma tutti i punti Anima della Notte e, mentre è in campo, continua a consumarli. Ogni punto Anima della Notte consumato in questo modo conferisce a Citlali 1 punto di Cifra della legge segreta.",
+      "2": "È possibile ottenere in questo modo fino a un massimo di 40 punti, e ciascun punto posseduto da Citlali conferisce a tutti i membri del gruppo vicini un bonus DAN da <pyro>Pyro</pyro> e <hydro>Hydro</hydro> pari a un 1,5%, oltre a un aumento dei DAN inflitti da Citlali di un 2,5%.",
+      "3": "Quando Itzpapa abbandona il campo, o dopo aver usato di nuovo l'abilità elementale di Citlali, tutti i punti di Cifra della legge segreta spariscono."
+    }
+  }
+}

@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
-        "fullDesc": "Aventurine acumula 1 Aposta Cega depois que um aliado com Aposta Fortificada realiza um Ataque Extra. Este efeito pode ser acionado um máximo de {{3}} vez(es). A contagem de acionamento deste efeito é reiniciada no início da rodada de Aventurine. Depois que Aventurine realiza um Ataque Extra do seu Talento, fornece Aposta Fortificada para todos os aliados, que pode bloquear Dano igual a {{1, percent}}% da DEF de Aventurine + {{2}}, e fornece adicionalmente Aposta Fortificada que pode bloquear Dano igual a {{4, percent}}% da DEF de Aventurine + {{5}} ao aliado com o efeito de Escudo mais baixo no momento, durando por 3 rodadas.",
+        "fullDesc": "Aventurine acumula 1 ponto de \"Aposta Cega\" depois que um aliado com \"Aposta Fortificada\" realiza um Ataque Extra. Este efeito pode ser ativado um máximo de {{3}} vez(es). A contagem de ativação deste efeito é reiniciada no início da rodada de Aventurine. Depois que Aventurine realiza um Ataque Extra do seu Talento, fornece \"Aposta Fortificada\" para todos os aliados, que pode bloquear Dano igual a {{1, percent}}% da DEF de Aventurine + {{2}}, e fornece adicionalmente \"Aposta Fortificada\" que pode bloquear Dano igual a {{4, percent}}% da DEF de Aventurine + {{5}} ao aliado com o efeito de Escudo mais baixo no momento, durando por 3 rodadas.",
         "shortDesc": "",
         "tag": ""
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Paradoxo Suspenso Inesperado",
-      "desc": "Ao ativar os Ataques Extras do Talento dele, primeiro a DEF de Aventurine aumenta em {{1, percent}}% por {{2}} rodada(s), e aumenta adicionalmente os Golpes por Ação do Ataque Extra ativados pelo Talento dele em {{3}}."
+      "desc": "Ao ativar os Ataques Extras do Talento dele, primeiro, a DEF de Aventurine aumenta em {{1, percent}}% por {{2}} rodada(s), e aumenta adicionalmente os Golpes por Ação do Ataque Extra ativados pelo seu Talento em {{3}}."
     },
     "5": {
       "name": "Aversão Ambígua",

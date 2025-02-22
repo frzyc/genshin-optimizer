@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Trở Về Cát Bụi",
-      "desc": "Khi thi triển Tuyệt Kỹ, có {{1, percent}}% xác suất cố định khiến Kháng Toàn Thuộc Tính của toàn bộ địch giảm {{2, percent}}%, duy trì {{3}} hiệp."
+      "desc": "Khi thi triển Tuyệt Kỹ, có {{1, percent}}% xác suất cố định khiến Kháng Toàn Thuộc Tính của toàn bộ phe địch giảm {{2, percent}}%, duy trì {{3}} hiệp."
     }
   }
 }

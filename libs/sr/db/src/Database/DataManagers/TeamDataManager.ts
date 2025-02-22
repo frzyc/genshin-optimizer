@@ -1,19 +1,33 @@
 import {
-  deepClone,
+  notEmpty,
   objKeyMap,
-  objMap,
+  pruneOrPadArray,
   range,
+  shallowCompareObj,
 } from '@genshin-optimizer/common/util'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
-import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '../../Interfaces'
+import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import {
+  allCharacterKeys,
+  allRelicSlotKeys,
+} from '@genshin-optimizer/sr/consts'
+import type { Dst, Src } from '@genshin-optimizer/sr/formula'
+import {
+  getConditional,
+  isMember,
+  type Sheet,
+  type Tag,
+} from '@genshin-optimizer/sr/formula'
+import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { validateTag } from '../tagUtil'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type BuildTypeKey = (typeof buildTypeKeys)[number]
-export type LoadoutMetadatum = {
-  loadoutId: string
+export type TeammateDatum = {
+  characterKey: CharacterKey
+
   buildType: BuildTypeKey
   buildId: string
   buildTcId: string
@@ -21,13 +35,41 @@ export type LoadoutMetadatum = {
   compareType: BuildTypeKey
   compareBuildId: string
   compareBuildTcId: string
+
+  optConfigId?: string
+}
+export type Frame = {
+  tag: Tag
+  multiplier: number
+  description?: string
 }
 export interface Team {
   name: string
   description: string
 
-  loadoutMetadata: Array<LoadoutMetadatum | undefined>
   lastEdit: number
+
+  // frames, store data as a "sparse 2d array"
+  frames: Array<Frame>
+  conditionals: Array<{
+    sheet: Sheet
+    src: Src
+    dst: Dst
+    condKey: string
+    condValues: number[] // should be the same length as `frames`
+  }>
+  bonusStats: Array<{
+    tag: Tag
+    values: number[] // should be the same length as `frames`
+  }>
+  statConstraints: Array<{
+    tag: Tag
+    values: number[] // should be the same length as `frames`
+    isMaxs: boolean[] // should be the same length as `frames`
+  }>
+
+  // TODO enemy base stats
+  teamMetadata: Array<TeammateDatum | undefined>
 }
 
 export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
@@ -43,20 +85,30 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return `Team Name`
   }
   override validate(obj: unknown): Team | undefined {
-    let { name, description, loadoutMetadata, lastEdit } = obj as Team
+    let {
+      name,
+      description,
+      teamMetadata,
+      lastEdit,
+      frames,
+      conditionals,
+      bonusStats,
+      statConstraints,
+    } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
 
+    // Validate teamMetadata
     {
       // validate loadoutIds
-      if (!Array.isArray(loadoutMetadata))
-        loadoutMetadata = range(0, 3).map(() => undefined)
+      if (!Array.isArray(teamMetadata))
+        teamMetadata = range(0, 3).map(() => undefined)
 
-      loadoutMetadata = range(0, 3).map((ind) => {
-        const loadoutMetadatum = loadoutMetadata[ind]
-        if (!loadoutMetadatum || typeof loadoutMetadatum !== 'object')
+      teamMetadata = range(0, 3).map((ind) => {
+        const teammateDatum = teamMetadata[ind]
+        if (!teammateDatum || typeof teammateDatum !== 'object')
           return undefined
-        const { loadoutId } = loadoutMetadatum
+        const { characterKey } = teammateDatum
         let {
           buildType,
           buildId,
@@ -65,17 +117,20 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareType,
           compareBuildId,
           compareBuildTcId,
-        } = loadoutMetadatum
-        const loadout = this.database.loadouts.get(loadoutId)
-        if (!loadout) return undefined
+          optConfigId,
+        } = teammateDatum
 
+        if (!allCharacterKeys.includes(characterKey)) return undefined
         if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
-        if (typeof buildId !== 'string' || !loadout.buildIds.includes(buildId))
+        if (
+          typeof buildId !== 'string' ||
+          !this.database.builds.keys.includes(buildId)
+        )
           buildId = ''
 
         if (
           typeof buildTcId !== 'string' ||
-          !loadout.buildTcIds.includes(buildTcId)
+          !this.database.buildTcs.keys.includes(buildTcId)
         )
           buildTcId = ''
 
@@ -91,7 +146,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
 
         if (
           typeof compareBuildId !== 'string' ||
-          !loadout.buildIds.includes(compareBuildId)
+          !this.database.builds.keys.includes(compareBuildId)
         ) {
           compareBuildId = ''
           if (compareType === 'real') compareType = 'equipped'
@@ -99,14 +154,17 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
 
         if (
           typeof compareBuildTcId !== 'string' ||
-          !loadout.buildTcIds.includes(compareBuildTcId)
+          !this.database.buildTcs.keys.includes(compareBuildTcId)
         ) {
           compareBuildTcId = ''
           if (compareType === 'tc') compareType = 'equipped'
         }
 
+        if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
+          optConfigId = undefined
+
         return {
-          loadoutId,
+          characterKey,
           buildType,
           buildId,
           buildTcId,
@@ -114,29 +172,85 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareType,
           compareBuildId,
           compareBuildTcId,
-        } as LoadoutMetadatum
+          optConfigId,
+        } as TeammateDatum
       })
-
-      // make sure there isnt a team without "Active" character, by shifting characters forward.
-      if (
-        !loadoutMetadata[0] &&
-        loadoutMetadata.some((loadoutMetadata) => loadoutMetadata)
-      ) {
-        const index = loadoutMetadata.findIndex(
-          (loadoutMetadata) => !!loadoutMetadata
-        )
-        loadoutMetadata[0] = loadoutMetadata[index]
-        loadoutMetadata[index] = undefined
-      }
     }
 
     if (typeof lastEdit !== 'number') lastEdit = Date.now()
 
+    if (!Array.isArray(frames)) frames = []
+    frames = frames
+      .map((f) => {
+        const { tag } = f
+        let { multiplier, description } = f
+        if (!validateTag(tag)) return undefined
+        if (typeof multiplier !== 'number' || multiplier === 0) multiplier = 1
+        if (typeof description !== 'string') description = undefined
+
+        return { tag, multiplier, description }
+      })
+      .filter(notEmpty)
+    const framesLength = frames.length
+    if (!framesLength) {
+      conditionals = []
+      bonusStats = []
+    } else {
+      if (!Array.isArray(conditionals)) conditionals = []
+      const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
+      conditionals = conditionals.filter(
+        ({ sheet, condKey, src, dst, condValues }) => {
+          if (!isMember(src) || !(dst === null || isMember(dst))) return false
+          const cond = getConditional(sheet, condKey)
+          if (!cond) return false
+
+          // validate uniqueness
+          const hash = `${sheet}:${condKey}:${src}:${dst}`
+          if (hashList.includes(hash)) return false
+          hashList.push(hash)
+
+          // validate values
+          if (!Array.isArray(condValues)) return false
+          pruneOrPadArray(condValues, framesLength, 0)
+          condValues = condValues.map((v) => correctConditionalValue(cond, v))
+          // If all values are false, remove the conditional
+          if (condValues.every((v) => !v)) return false
+
+          return true
+        }
+      )
+
+      if (!Array.isArray(bonusStats)) bonusStats = []
+      bonusStats = bonusStats.filter(({ tag, values }) => {
+        if (!validateTag(tag)) return false
+        if (!Array.isArray(values)) return false
+        pruneOrPadArray(values, framesLength, 0)
+        return true
+      })
+
+      if (!Array.isArray(statConstraints)) statConstraints = []
+      statConstraints = statConstraints.filter(({ tag, values, isMaxs }) => {
+        if (!validateTag(tag)) return false
+        if (!Array.isArray(values)) return false
+        pruneOrPadArray(values, framesLength, 0)
+        if (!Array.isArray(isMaxs)) return false
+        pruneOrPadArray(isMaxs, framesLength, false)
+        return true
+      })
+    }
+    // TODO: validate frames
+
+    // TODO: validate bonusStats
+
     return {
       name,
       description,
-      loadoutMetadata,
+      teamMetadata: teamMetadata,
       lastEdit,
+      frames,
+      conditionals,
+      bonusStats,
+      statConstraints,
     }
   }
 
@@ -145,110 +259,110 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     this.set(id, value)
     return id
   }
+  override remove(teamId: string, notify?: boolean): Team | undefined {
+    const rem = super.remove(teamId, notify)
+    if (!rem) return
+    rem.teamMetadata.forEach((teammateDatum) => {
+      teammateDatum?.optConfigId &&
+        this.database.optConfigs.remove(teammateDatum?.optConfigId)
+    })
+    return rem
+  }
   override clear(): void {
     super.clear()
   }
 
-  duplicate(teamId: string): string {
-    const teamRaw = this.database.teams.get(teamId)
-    if (!teamRaw) return ''
-    const team = deepClone(teamRaw)
-    team.name = `${team.name} (duplicated)`
-    return this.new(team)
-  }
-  export(teamId: string): object {
-    const team = this.database.teams.get(teamId)
-    if (!team) return {}
-    const { loadoutMetadata, ...rest } = team
-    return {
-      ...rest,
-      loadoutMetadata: loadoutMetadata.map(
-        (loadoutMetadatum) =>
-          loadoutMetadatum?.loadoutId &&
-          this.database.loadouts.export(loadoutMetadatum?.loadoutId)
-      ),
-    }
-  }
-  import(data: object): string {
-    const { loadoutMetadata, ...rest } = data as Team & {
-      loadoutMetadata: object[]
-    }
-    const id = this.generateKey()
-    if (
-      !this.set(id, {
-        ...rest,
-        name: `${rest.name ?? ''} (Imported)`,
-        loadoutMetadata: loadoutMetadata.map(
-          (obj) =>
-            obj && {
-              loadoutId: this.database.loadouts.import(obj),
-            }
-        ),
-      } as Team)
-    )
-      return ''
-    return id
-  }
+  //TODO: dup + i/o
+  // duplicate(teamId: string): string {
+  //   const teamRaw = this.database.teams.get(teamId)
+  //   if (!teamRaw) return ''
+  //   const team = deepClone(teamRaw)
+  //   team.name = `${team.name} (duplicated)`
+  //   return this.new(team)
+  // }
+  // export(teamId: string): object {
+  //   const team = this.database.teams.get(teamId)
+  //   if (!team) return {}
+  //   const { loadoutMetadata, ...rest } = team
+  //   return {
+  //     ...rest,
+  //     loadoutMetadata: loadoutMetadata.map(
+  //       (loadoutMetadatum) =>
+  //         loadoutMetadatum?.loadoutId &&
+  //         this.database.loadouts.export(loadoutMetadatum?.loadoutId)
+  //     ),
+  //   }
+  // }
+  // import(data: object): string {
+  //   const { teamMetadata: loadoutMetadata, ...rest } = data as Team & {
+  //     loadoutMetadata: object[]
+  //   }
+  //   const id = this.generateKey()
+  //   if (
+  //     !this.set(id, {
+  //       ...rest,
+  //       name: `${rest.name ?? ''} (Imported)`,
+  //       teamMetadata: loadoutMetadata.map(
+  //         (obj) =>
+  //           obj && {
+  //             loadoutId: this.database.loadouts.import(obj),
+  //           }
+  //       ),
+  //     } as Team)
+  //   )
+  //     return ''
+  //   return id
+  // }
 
-  getActiveTeamChar(teamId: string) {
-    const team = this.database.teams.get(teamId)
-    const loadoutId = team?.loadoutMetadata[0]?.loadoutId
-    return this.database.loadouts.get(loadoutId)
-  }
-
-  getLoadoutDatum(teamId: string, loadoutId: string) {
-    const team = this.get(teamId)
-    if (!team) return undefined
-    return team.loadoutMetadata.find(
-      (loadoutMetadatum) => loadoutMetadatum?.loadoutId === loadoutId
-    )
-  }
-  setLoadoutDatum(
-    teamId: string,
-    loadoutId: string,
-    data: Partial<LoadoutMetadatum>
-  ) {
-    this.set(teamId, (team) => {
-      const loadoutDataInd = team.loadoutMetadata.findIndex(
-        (loadoutMetadatum) =>
-          loadoutMetadatum && loadoutMetadatum.loadoutId === loadoutId
-      )
-      if (loadoutDataInd < 0) return
-
-      team.loadoutMetadata[loadoutDataInd]! = {
-        ...team.loadoutMetadata[loadoutDataInd]!,
-        ...data,
-      }
-    })
-  }
   /**
-   * Note: this doesnt return any relics (all undefined) when the current teamchar is using a TC Build.
+   * Note: this doesnt return any ids (all undefined) when the current teamchar is using a TC Build.
    */
-  getLoadoutRelics({
-    loadoutId,
-    buildType,
-    buildId,
-  }: LoadoutMetadatum): Record<RelicSlotKey, ICachedRelic | undefined> {
-    const loadout = this.database.loadouts.get(loadoutId)
-    if (!loadout) return objKeyMap(allRelicSlotKeys, () => undefined)
-    const { key: characterKey } = loadout
+  getTeamActiveBuild({ characterKey, buildType, buildId }: TeammateDatum): {
+    relicIds: RelicIds
+    lightConeId: string | undefined
+  } {
+    const def = {
+      relicIds: objKeyMap(allRelicSlotKeys, () => undefined),
+      lightConeId: undefined,
+    }
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
-        if (!char) return objKeyMap(allRelicSlotKeys, () => undefined)
-        return objMap(char.equippedRelics, (id) => this.database.relics.get(id))
+        if (!char) return def
+        return {
+          relicIds: char.equippedRelics,
+          lightConeId: char.equippedLightCone,
+        }
       }
       case 'real': {
         const build = this.database.builds.get(buildId)
-        if (!build) return objKeyMap(allRelicSlotKeys, () => undefined)
-        return objMap(build.relicIds, (id) => this.database.relics.get(id))
+        if (!build) return def
+        return {
+          relicIds: build.relicIds,
+          lightConeId: build.lightConeId,
+        }
+      }
+      case 'tc': {
+        return def
       }
     }
-    return objKeyMap(allRelicSlotKeys, () => undefined)
+  }
+  getActiveBuildName(
+    { buildType, buildId, buildTcId }: TeammateDatum,
+    equippedName = 'Equipped Build'
+  ) {
+    switch (buildType) {
+      case 'equipped':
+        return equippedName
+      case 'real':
+        return this.database.builds.get(buildId)?.name ?? ''
+      case 'tc':
+        return this.database.buildTcs.get(buildTcId)?.name ?? ''
+    }
   }
 
-  followLoadoutDatum(
-    { buildType, buildId, buildTcId }: LoadoutMetadatum,
+  followTeamDatum(
+    { buildType, buildId, buildTcId }: TeammateDatum,
     callback: () => void
   ) {
     if (buildType === 'real') {
@@ -270,8 +384,8 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       return this.database.buildTcs.follow(buildTcId, callback)
     return () => {}
   }
-  followLoadoutDatumCompare(
-    { compareType, compareBuildId, compareBuildTcId }: LoadoutMetadatum,
+  followTeamDatumCompare(
+    { compareType, compareBuildId, compareBuildTcId }: TeammateDatum,
     callback: () => void
   ) {
     if (compareType === 'real') {
@@ -296,17 +410,116 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       return this.database.buildTcs.follow(compareBuildTcId, callback)
     return () => {}
   }
-  getActiveBuildName(
-    { buildType, buildId, buildTcId }: LoadoutMetadatum,
-    equippedName = 'Equipped Build'
+
+  setConditional(
+    teamId: string,
+    sheet: Sheet,
+    condKey: string,
+    src: Src,
+    dst: Dst,
+    condValue: number,
+    frameIndex: number
   ) {
-    switch (buildType) {
-      case 'equipped':
-        return equippedName
-      case 'real':
-        return this.database.builds.get(buildId)?.name ?? ''
-      case 'tc':
-        return this.database.buildTcs.get(buildTcId)?.name ?? ''
-    }
+    this.set(teamId, (team) => {
+      if (frameIndex > team.frames.length) return false
+      const condIndex = team.conditionals.findIndex(
+        (c) =>
+          c.condKey === condKey &&
+          c.sheet === sheet &&
+          c.src === src &&
+          c.dst === dst
+      )
+      if (condIndex === -1) {
+        const condValues = new Array(team.frames.length).fill(0)
+        condValues[frameIndex] = condValue
+        team.conditionals.push({
+          sheet,
+          src,
+          dst,
+          condKey,
+          condValues,
+        })
+      } else {
+        const cond = team.conditionals[condIndex]
+        // Check if the value is the same, return false to not propagate the update.
+        if (
+          cond.sheet === sheet &&
+          cond.src === src &&
+          cond.dst === dst &&
+          cond.condKey === condKey &&
+          cond.condValues[frameIndex] === condValue
+        )
+          return false
+        cond.sheet = sheet
+        cond.src = src
+        cond.dst = dst
+        cond.condKey = condKey
+        cond.condValues[frameIndex] = condValue
+      }
+      return team
+    })
+  }
+  /**
+   *
+   * @param teamId
+   * @param tag
+   * @param value number or null, null to delete
+   * @param frameIndex
+   */
+  setBonusStat(
+    teamId: string,
+    tag: Tag,
+    value: number | null,
+    frameIndex: number
+  ) {
+    this.set(teamId, (team) => {
+      if (frameIndex > team.frames.length) return
+      const statIndex = team.bonusStats.findIndex((s) =>
+        shallowCompareObj(s.tag, tag)
+      )
+      if (statIndex === -1 && value !== null) {
+        const values = new Array(team.frames.length).fill(0)
+        values[frameIndex] = value
+        team.bonusStats.push({ tag, values })
+      } else if (value === null && statIndex > -1) {
+        team.bonusStats.splice(statIndex, 1)
+      } else if (value !== null && statIndex > -1) {
+        team.bonusStats[statIndex].values[frameIndex] = value
+      }
+    })
+  }
+  /**
+   *
+   * @param teamId
+   * @param tag
+   * @param value number or null, null to delete
+   * @param isMax
+   * @param frameIndex
+   */
+  setStatConstraint(
+    teamId: string,
+    tag: Tag,
+    value: number | null,
+    isMax: boolean,
+    frameIndex: number
+  ) {
+    this.set(teamId, (team) => {
+      if (frameIndex > team.frames.length) return
+      const statIndex = team.statConstraints.findIndex((s) =>
+        shallowCompareObj(s.tag, tag)
+      )
+      if (statIndex === -1 && value !== null) {
+        const values = new Array(team.frames.length).fill(0)
+        values[frameIndex] = value
+        const isMaxs = new Array(team.frames.length).fill(false)
+        isMaxs[frameIndex] = isMax
+        team.statConstraints.push({ tag, values, isMaxs })
+      } else if (value === null && statIndex > -1) {
+        team.statConstraints.splice(statIndex, 1)
+      } else if (value !== null && statIndex > -1) {
+        team.statConstraints[statIndex].values[frameIndex] = value
+        team.statConstraints[statIndex].isMaxs[frameIndex] = isMax
+      }
+    })
   }
 }

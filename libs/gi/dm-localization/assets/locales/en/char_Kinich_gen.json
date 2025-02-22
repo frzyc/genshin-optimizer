@@ -13,7 +13,7 @@
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount to spin and throw his Claymore forward to attack opponents."
+        "1": "Consumes a certain amount of Stamina to spin and throw his Claymore forward to attack opponents."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -29,6 +29,24 @@
       "5": "Charged Attack Stamina Cost",
       "6": "Plunge DMG",
       "7": "Low/High Plunge DMG",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{8, percent(fixed: 1)}}%",
+      "4": "{{3, percent(fixed: 1)}}%×3",
+      "5": "{{4, fixed(fixed: 1)}}",
+      "6": "{{5, percent(fixed: 1)}}%",
+      "7": "{{6, percent}}%/{{7, percent}}%",
       "8": "",
       "9": "",
       "10": "",
@@ -75,6 +93,24 @@
       "13": "",
       "14": "",
       "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%×2",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{3, fixed(fixed: 1)}}",
+      "3": "{{2, fixed(fixed: 1)}}s",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -91,6 +127,24 @@
       "2": "Duration",
       "3": "CD",
       "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, fixed(fixed: 1)}}s",
+      "3": "{{3, fixed(fixed: 1)}}s",
+      "4": "{{4}}",
       "5": "",
       "6": "",
       "7": "",

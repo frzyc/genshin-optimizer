@@ -1,0 +1,24 @@
+{
+  "name": "Lied der Gipfelpatrouille",
+  "description": {
+    "0": "Eine scharfe Klinge aus Obsidian, die so leicht ist wie ein in der Luft treibendes Lied. Sie wurde von einem bestimmten Handwerker modifiziert und ist mit einem abnehmbaren Phlogiston-Apparat ausgestattet, mit dem man Schallplatten abspielen kann."
+  },
+  "passiveName": "Unendliche Blütezeit",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhält nach dem Treffen von Gegnern mit Standardangriffen oder Angriffen aus dem Fall „Glorreiches Lied“: Erhöht die VTD um <cryo>8 %</cryo> und erhält einen Elementar-SCH-Bonus aller Elemente von <cryo>10 %</cryo>, hält 6 s, 2-fach stapelbar, 0,1 s Abklingzeit. Erhöht bei 2 Stapelungen oder beim Zurücksetzen der Wirkungsdauer von 2 Stapelungen für je 1.000 Punkte VTD des Trägers den Elementar-SCH-Bonus für alle Elemente aller Truppenmitglieder in der Nähe 15 s lang um <cryo>8 %</cryo>, höchstens <cryo>25,6 %</cryo>."
+    },
+    "1": {
+      "0": "Erhält nach dem Treffen von Gegnern mit Standardangriffen oder Angriffen aus dem Fall „Glorreiches Lied“: Erhöht die VTD um <cryo>10 %</cryo> und erhält einen Elementar-SCH-Bonus aller Elemente von <cryo>12,5 %</cryo>, hält 6 s, 2-fach stapelbar, 0,1 s Abklingzeit. Erhöht bei 2 Stapelungen oder beim Zurücksetzen der Wirkungsdauer von 2 Stapelungen für je 1.000 Punkte VTD des Trägers den Elementar-SCH-Bonus für alle Elemente aller Truppenmitglieder in der Nähe 15 s lang um <cryo>10 %</cryo>, höchstens <cryo>32 %</cryo>."
+    },
+    "2": {
+      "0": "Erhält nach dem Treffen von Gegnern mit Standardangriffen oder Angriffen aus dem Fall „Glorreiches Lied“: Erhöht die VTD um <cryo>12 %</cryo> und erhält einen Elementar-SCH-Bonus aller Elemente von <cryo>15 %</cryo>, hält 6 s, 2-fach stapelbar, 0,1 s Abklingzeit. Erhöht bei 2 Stapelungen oder beim Zurücksetzen der Wirkungsdauer von 2 Stapelungen für je 1.000 Punkte VTD des Trägers den Elementar-SCH-Bonus für alle Elemente aller Truppenmitglieder in der Nähe 15 s lang um <cryo>12 %</cryo>, höchstens <cryo>38,4 %</cryo>."
+    },
+    "3": {
+      "0": "Erhält nach dem Treffen von Gegnern mit Standardangriffen oder Angriffen aus dem Fall „Glorreiches Lied“: Erhöht die VTD um <cryo>14 %</cryo> und erhält einen Elementar-SCH-Bonus aller Elemente von <cryo>17,5 %</cryo>, hält 6 s, 2-fach stapelbar, 0,1 s Abklingzeit. Erhöht bei 2 Stapelungen oder beim Zurücksetzen der Wirkungsdauer von 2 Stapelungen für je 1.000 Punkte VTD des Trägers den Elementar-SCH-Bonus für alle Elemente aller Truppenmitglieder in der Nähe 15 s lang um <cryo>14 %</cryo>, höchstens <cryo>44,8 %</cryo>."
+    },
+    "4": {
+      "0": "Erhält nach dem Treffen von Gegnern mit Standardangriffen oder Angriffen aus dem Fall „Glorreiches Lied“: Erhöht die VTD um <cryo>16 %</cryo> und erhält einen Elementar-SCH-Bonus aller Elemente von <cryo>20 %</cryo>, hält 6 s, 2-fach stapelbar, 0,1 s Abklingzeit. Erhöht bei 2 Stapelungen oder beim Zurücksetzen der Wirkungsdauer von 2 Stapelungen für je 1.000 Punkte VTD des Trägers den Elementar-SCH-Bonus für alle Elemente aller Truppenmitglieder in der Nähe 15 s lang um <cryo>16 %</cryo>, höchstens <cryo>51,2 %</cryo>."
+    }
+  }
+}

@@ -12,6 +12,7 @@ import {
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
+  BuildEditContext,
   DataContext,
   DocumentDisplay,
   EquippedGrid,
@@ -67,6 +68,9 @@ export default function EquipmentSection() {
       ),
     [data]
   )
+
+  const editBuildId = buildType === 'equipped' ? 'equipped' : buildId
+
   return (
     <Box>
       <Grid container spacing={1}>
@@ -84,28 +88,33 @@ export default function EquipmentSection() {
           </Grid>
         )}
         <Grid item xs={12} md={12} lg={9} xl={9}>
-          <EquippedGrid
-            weaponTypeKey={weaponTypeKey}
-            weaponId={weaponId}
-            artifactIds={artifactIds}
-            setWeapon={(id) => {
-              if (loadoutEquip) database.builds.set(buildId, { weaponId: id })
-              else
-                database.weapons.set(id, {
-                  location: charKeyToLocCharKey(characterKey),
-                })
-            }}
-            setArtifact={(slotKey, id) => {
-              if (loadoutEquip)
-                database.builds.set(buildId, (build) => {
-                  build.artifactIds[slotKey] = id
-                })
-              else
-                database.arts.set(id, {
-                  location: charKeyToLocCharKey(characterKey),
-                })
-            }}
-          />
+          <BuildEditContext.Provider value={editBuildId}>
+            <EquippedGrid
+              weaponTypeKey={weaponTypeKey}
+              weaponId={weaponId}
+              artifactIds={artifactIds}
+              setWeapon={(id) => {
+                if (loadoutEquip) database.builds.set(buildId, { weaponId: id })
+                else
+                  database.weapons.set(id, {
+                    location: charKeyToLocCharKey(characterKey),
+                  })
+              }}
+              setArtifact={(slotKey, id) => {
+                if (loadoutEquip)
+                  database.builds.set(buildId, (build) => {
+                    build.artifactIds[slotKey] = id ? id : undefined
+                  })
+                else
+                  id
+                    ? database.arts.set(id, {
+                        location: charKeyToLocCharKey(characterKey),
+                      })
+                    : artifactIds[slotKey] &&
+                      database.arts.set(artifactIds[slotKey], { location: '' })
+              }}
+            />
+          </BuildEditContext.Provider>
         </Grid>
         {!breakpoint && (
           <Grid item xs={12} md={12} xl={3} container spacing={1}>
@@ -168,7 +177,9 @@ function ArtifactSectionCard() {
           onClick={unequipArts}
           fullWidth
           sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}
-        >{t`tabEquip.unequipArts`}</Button>
+        >
+          {t('tabEquip.unequipArts')}
+        </Button>
       )}
       <Box p={1}>
         <Stack spacing={1}>

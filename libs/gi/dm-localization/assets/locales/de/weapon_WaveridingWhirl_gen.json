@@ -1,0 +1,24 @@
+{
+  "name": "Wellenreitender Wirbel",
+  "description": {
+    "0": "Ein Bumerang, der aus den Reißzähnen einer riesigen Seeschlange hergestellt wurde. Für den Riesen Tupac war diese Waffe ein treuer Wegbegleiter."
+  },
+  "passiveName": "Umherfliegende Reißzähne",
+  "passiveDescription": {
+    "0": {
+      "0": "Verringert die beim Schwimmen verbrauchte Ausdauer um 15 %. Erhöht außerdem die max. LP nach Anwendung der Elementarfähigkeit 10 s lang um <cryo>20 %</cryo>. Für jede Figur des Elementartyps Hydro in der Truppe werden die max. LP weiter um <cryo>12 %</cryo> erhöht. Auf diese Weise können die max. LP um bis zu <cryo>24 %</cryo> erhöht werden. 15 s Abklingzeit."
+    },
+    "1": {
+      "0": "Verringert die beim Schwimmen verbrauchte Ausdauer um 15 %. Erhöht außerdem die max. LP nach Anwendung der Elementarfähigkeit 10 s lang um <cryo>25 %</cryo>. Für jede Figur des Elementartyps Hydro in der Truppe werden die max. LP weiter um <cryo>15 %</cryo> erhöht. Auf diese Weise können die max. LP um bis zu <cryo>30 %</cryo> erhöht werden. 15 s Abklingzeit."
+    },
+    "2": {
+      "0": "Verringert die beim Schwimmen verbrauchte Ausdauer um 15 %. Erhöht außerdem die max. LP nach Anwendung der Elementarfähigkeit 10 s lang um <cryo>30 %</cryo>. Für jede Figur des Elementartyps Hydro in der Truppe werden die max. LP weiter um <cryo>18 %</cryo> erhöht. Auf diese Weise können die max. LP um bis zu <cryo>36 %</cryo> erhöht werden. 15 s Abklingzeit."
+    },
+    "3": {
+      "0": "Verringert die beim Schwimmen verbrauchte Ausdauer um 15 %. Erhöht außerdem die max. LP nach Anwendung der Elementarfähigkeit 10 s lang um <cryo>35 %</cryo>. Für jede Figur des Elementartyps Hydro in der Truppe werden die max. LP weiter um <cryo>21 %</cryo> erhöht. Auf diese Weise können die max. LP um bis zu <cryo>42 %</cryo> erhöht werden. 15 s Abklingzeit."
+    },
+    "4": {
+      "0": "Verringert die beim Schwimmen verbrauchte Ausdauer um 15 %. Erhöht außerdem die max. LP nach Anwendung der Elementarfähigkeit 10 s lang um <cryo>40 %</cryo>. Für jede Figur des Elementartyps Hydro in der Truppe werden die max. LP weiter um <cryo>24 %</cryo> erhöht. Auf diese Weise können die max. LP um bis zu <cryo>48 %</cryo> erhöht werden. 15 s Abklingzeit."
+    }
+  }
+}

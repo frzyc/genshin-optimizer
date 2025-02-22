@@ -19,9 +19,11 @@ import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
 import Charlotte from './Charlotte'
+import Chasca from './Chasca'
 import Chevreuse from './Chevreuse'
 import Chiori from './Chiori'
 import Chongyun from './Chongyun'
+import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -52,10 +54,12 @@ import Kirara from './Kirara'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
+import LanYan from './LanYan'
 import Layla from './Layla'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
+import Mavuika from './Mavuika'
 import Mika from './Mika'
 import Mona from './Mona'
 import Mualani from './Mualani'
@@ -65,6 +69,7 @@ import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
+import Ororon from './Ororon'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
@@ -90,12 +95,15 @@ import TravelerGeoF from './TravelerGeoF'
 import TravelerGeoM from './TravelerGeoM'
 import TravelerHydroF from './TravelerHydroF'
 import TravelerHydroM from './TravelerHydroM'
+import TravelerPyroF from './TravelerPyroF'
+import TravelerPyroM from './TravelerPyroM'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xianyun from './Xianyun'
 import Xiao from './Xiao'
+import Xilonen from './Xilonen'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
@@ -103,6 +111,7 @@ import Yanfei from './Yanfei'
 import Yaoyao from './Yaoyao'
 import Yelan from './Yelan'
 import Yoimiya from './Yoimiya'
+import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
 
@@ -119,9 +128,11 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Bennett,
   Candace,
   Charlotte,
+  Chasca,
   Chevreuse,
   Chiori,
   Chongyun,
+  Citlali,
   Clorinde,
   Collei,
   Cyno,
@@ -152,10 +163,12 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Klee,
   KujouSara,
   KukiShinobu,
+  LanYan,
   Layla,
   Lisa,
   Lynette,
   Lyney,
+  Mavuika,
   Mika,
   Mona,
   Mualani,
@@ -165,6 +178,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Nilou,
   Ningguang,
   Noelle,
+  Ororon,
   Qiqi,
   RaidenShogun,
   Razor,
@@ -190,12 +204,15 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   TravelerDendroM,
   TravelerHydroF,
   TravelerHydroM,
+  TravelerPyroF,
+  TravelerPyroM,
   Venti,
   Wanderer,
   Wriothesley,
   Xiangling,
   Xianyun,
   Xiao,
+  Xilonen,
   Xingqiu,
   Xinyan,
   YaeMiko,
@@ -203,6 +220,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Yaoyao,
   Yelan,
   Yoimiya,
+  YumemizukiMizuki,
   YunJin,
   Zhongli,
 } as const

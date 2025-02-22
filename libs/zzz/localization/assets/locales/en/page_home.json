@@ -1,0 +1,19 @@
+{
+  "quickLinksCard": {
+    "title": "Quick Links",
+    "buttons": {
+      "patchNotes": {
+        "title": "Patch Notes",
+        "tooltip": "All of ZO's patch notes"
+      }
+    }
+  },
+  "teamCard": {
+    "title": "Credits & Thanks",
+    "jobTitle": {
+      "leadDev": "Lead Developer",
+      "dev": "Developer",
+      "designer": "Designer"
+    }
+  }
+}

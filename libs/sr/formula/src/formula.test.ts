@@ -5,12 +5,17 @@ import {
 import {
   allCharacterKeys,
   allLightConeKeys,
+  allRelicSetKeys,
   type AscensionKey,
   type CharacterKey,
   type LightConeKey,
 } from '@genshin-optimizer/sr/consts'
 import { fail } from 'assert'
-import { charData, lightConeData, withMember } from '.'
+import {
+  charTagMapNodeEntries,
+  lightConeTagMapNodeEntries,
+  withMember,
+} from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
@@ -35,8 +40,8 @@ describe('character test', () => {
     const charKey: CharacterKey = 'March7th'
     const data: TagMapNodeEntries = [
       ...withMember(
-        '0',
-        ...charData({
+        'March7th',
+        ...charTagMapNodeEntries({
           level: lvl,
           ascension: ascension as AscensionKey,
           key: charKey,
@@ -52,11 +57,11 @@ describe('character test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(ownTag, { et: 'own', src: '0' })
-    expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
-    expect(calc.compute(member0.final.def).val).toBeCloseTo(def)
-    expect(calc.compute(member0.final.hp).val).toBeCloseTo(hp)
-    expect(calc.compute(member0.final.spd).val).toBeCloseTo(spd)
+    const m7 = convert(ownTag, { et: 'own', src: 'March7th' })
+    expect(calc.compute(m7.final.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(m7.final.def).val).toBeCloseTo(def)
+    expect(calc.compute(m7.final.hp).val).toBeCloseTo(hp)
+    expect(calc.compute(m7.final.spd).val).toBeCloseTo(spd)
   })
 })
 
@@ -69,8 +74,8 @@ describe('lightCone test', () => {
     const lcKey: LightConeKey = 'Arrows'
     const data: TagMapNodeEntries = [
       ...withMember(
-        '0',
-        ...charData({
+        'March7th',
+        ...charTagMapNodeEntries({
           level: 1,
           ascension: 0,
           key: 'March7th',
@@ -82,21 +87,14 @@ describe('lightCone test', () => {
           bonusAbilities: {},
           statBoosts: {},
         }),
-        ...lightConeData({
-          key: lcKey,
-          level: lvl,
-          ascension: ascension as AscensionKey,
-          superimpose: 1,
-          lock: false,
-          location: 'March7th',
-        })
+        ...lightConeTagMapNodeEntries(lcKey, lvl, ascension as AscensionKey, 1)
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
     const lightCone0 = convert(ownTag, {
       et: 'own',
-      src: '0',
+      src: 'March7th',
       sheet: 'lightCone',
     })
     expect(calc.compute(lightCone0.base.atk).val).toBeCloseTo(atk)
@@ -112,8 +110,8 @@ describe('char+lightCone test', () => {
 
     const data: TagMapNodeEntries = [
       ...withMember(
-        '0',
-        ...charData({
+        'March7th',
+        ...charTagMapNodeEntries({
           level: 1,
           ascension: 0,
           key: charKey,
@@ -125,24 +123,23 @@ describe('char+lightCone test', () => {
           bonusAbilities: {},
           statBoosts: {},
         }),
-        ...lightConeData({
-          key: lcKey,
-          level: 1,
-          ascension: 0,
-          superimpose: 1,
-          lock: false,
-          location: 'March7th',
-        })
+        ...lightConeTagMapNodeEntries(lcKey, 1, 0, 1)
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const member0 = convert(ownTag, { et: 'own', src: '0' })
-    expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
+    const m7 = convert(ownTag, { et: 'own', src: 'March7th' })
+    expect(calc.compute(m7.final.atk).val).toBeCloseTo(81.6)
   })
 })
 describe('sheet', () => {
   test('buff entries', () => {
-    const sheets = new Set([...allCharacterKeys, ...allLightConeKeys, 'relic'])
+    const sheets = new Set([
+      ...allCharacterKeys,
+      ...allLightConeKeys,
+      ...allRelicSetKeys,
+      'relic',
+      'lightCone',
+    ])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
@@ -152,15 +149,15 @@ describe('sheet', () => {
             // Buff entries are for agg queries inside a sheet
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
+          // eslint-disable-next-line no-fallthrough
           case 'enemyDeBuff': {
             const { sheet } = (enemyTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             if (sheet === tag.sheet) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
+          // eslint-disable-next-line no-fallthrough
           case 'own': {
             const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -169,8 +166,8 @@ describe('sheet', () => {
             if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
               continue
             fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
+          // eslint-disable-next-line no-fallthrough
           case 'enemy': {
             const desc = (enemyTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -178,7 +175,6 @@ describe('sheet', () => {
             if (!sheet) continue
             if (sheet === 'agg' || sheet === tag.sheet) continue
             fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
         }
       }

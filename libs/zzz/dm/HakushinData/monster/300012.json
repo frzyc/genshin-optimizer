@@ -1,0 +1,16 @@
+{
+  "Id": 300012,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/Monster_DeathXIII.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "Hollow exploration can be mentally distressing, and Thanatos, with its unique teleportation ability and unpredictable attack patterns, has become a common psychological challenge among Hollow Raiders.\nA considerable number of individuals who have faced Thanatos alone in the Hollow have lost all courage to continue their ventures and instead chosen to retire prematurely.\nAs a result, these elusive entities have become recurring figures in horror movies.\n\"The slender shadow disappears before your eyes and reappears behind you...\"\n\"What should I do? Now I'm too scared to even go to the restroom alone...\"",
+  "Rarity": 2,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Night of the premiere of the horror movie \"Ethereal Comes Knocking,\" trending discussion thread on the \"Copper Plum\" movie review website",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

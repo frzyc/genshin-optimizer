@@ -1,0 +1,66 @@
+{
+  "key": "Mavuika",
+  "ele": "pyro",
+  "region": "natlan",
+  "weaponType": "claymore",
+  "birthday": {
+    "month": 8,
+    "day": 28
+  },
+  "rarity": 5,
+  "lvlCurves": [
+    {
+      "key": "hp",
+      "base": 977.153,
+      "curve": "GROW_CURVE_HP_S5"
+    },
+    {
+      "key": "atk",
+      "base": 27.93,
+      "curve": "GROW_CURVE_ATTACK_S5"
+    },
+    {
+      "key": "def",
+      "base": 61.6249,
+      "curve": "GROW_CURVE_HP_S5"
+    }
+  ],
+  "ascensionBonus": {
+    "hp": [
+      0,
+      837.8203,
+      1433.1138,
+      2226.8384,
+      2822.1316,
+      3417.425,
+      4012.7185
+    ],
+    "def": [
+      0,
+      52.839,
+      90.3825,
+      140.4405,
+      177.984,
+      215.5275,
+      253.071
+    ],
+    "atk": [
+      0,
+      23.9457,
+      40.95975,
+      63.64515,
+      80.6592,
+      97.67325,
+      114.6873
+    ],
+    "critDMG_": [
+      0,
+      0,
+      0.096,
+      0.192,
+      0.192,
+      0.288,
+      0.384
+    ]
+  }
+}

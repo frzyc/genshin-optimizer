@@ -1,0 +1,24 @@
+{
+  "name": "Chanson de patrouille de sommet",
+  "description": {
+    "0": "Une lame d'obsidienne d'un tranchant incomparable, légère comme une chanson. Elle a été modifiée par une certaine personne pour être équipée d'un dispositif phlogistique amovible pour la lecture de disques."
+  },
+  "passiveName": "Âge d'or sans fin",
+  "passiveDescription": {
+    "0": {
+      "0": "Toucher un ennemi avec une attaque normale ou plongeante accorde une ode aux fleurs : augmente la DÉF de <cryo>8 %</cryo> et accorde un bonus de DGT élémentaires de <cryo>10 %</cryo>, le tout pendant 6 s, cet effet pouvant être cumulé 2 fois maximum et déclenché une fois toutes les 0,1 s. Lorsque cet effet obtient 2 cumuls ou que la durée du 2e cumul est actualisée, chaque tranche de 1 000 pts de DÉF du personnage équipé de l'arme augmente le bonus de DGT élémentaires de tous les personnages de l'équipe à proximité de <cryo>8 %</cryo> (jusqu'à <cryo>25,6 %</cryo> maximum) pendant 15 s."
+    },
+    "1": {
+      "0": "Toucher un ennemi avec une attaque normale ou plongeante accorde une ode aux fleurs : augmente la DÉF de <cryo>10 %</cryo> et accorde un bonus de DGT élémentaires de <cryo>12,5 %</cryo>, le tout pendant 6 s, cet effet pouvant être cumulé 2 fois maximum et déclenché une fois toutes les 0,1 s. Lorsque cet effet obtient 2 cumuls ou que la durée du 2e cumul est actualisée, chaque tranche de 1 000 pts de DÉF du personnage équipé de l'arme augmente le bonus de DGT élémentaires de tous les personnages de l'équipe à proximité de <cryo>10 %</cryo> (jusqu'à <cryo>32 %</cryo> maximum) pendant 15 s."
+    },
+    "2": {
+      "0": "Toucher un ennemi avec une attaque normale ou plongeante accorde une ode aux fleurs : augmente la DÉF de <cryo>12 %</cryo> et accorde un bonus de DGT élémentaires de <cryo>15 %</cryo>, le tout pendant 6 s, cet effet pouvant être cumulé 2 fois maximum et déclenché une fois toutes les 0,1 s. Lorsque cet effet obtient 2 cumuls ou que la durée du 2e cumul est actualisée, chaque tranche de 1 000 pts de DÉF du personnage équipé de l'arme augmente le bonus de DGT élémentaires de tous les personnages de l'équipe à proximité de <cryo>12 %</cryo> (jusqu'à <cryo>38,4 %</cryo> maximum) pendant 15 s."
+    },
+    "3": {
+      "0": "Toucher un ennemi avec une attaque normale ou plongeante accorde une ode aux fleurs : augmente la DÉF de <cryo>14 %</cryo> et accorde un bonus de DGT élémentaires de <cryo>17,5 %</cryo>, le tout pendant 6 s, cet effet pouvant être cumulé 2 fois maximum et déclenché une fois toutes les 0,1 s. Lorsque cet effet obtient 2 cumuls ou que la durée du 2e cumul est actualisée, chaque tranche de 1 000 pts de DÉF du personnage équipé de l'arme augmente le bonus de DGT élémentaires de tous les personnages de l'équipe à proximité de <cryo>14 %</cryo> (jusqu'à <cryo>44,8 %</cryo> maximum) pendant 15 s."
+    },
+    "4": {
+      "0": "Toucher un ennemi avec une attaque normale ou plongeante accorde une ode aux fleurs : augmente la DÉF de <cryo>16 %</cryo> et accorde un bonus de DGT élémentaires de <cryo>20 %</cryo>, le tout pendant 6 s, cet effet pouvant être cumulé 2 fois maximum et déclenché une fois toutes les 0,1 s. Lorsque cet effet obtient 2 cumuls ou que la durée du 2e cumul est actualisée, chaque tranche de 1 000 pts de DÉF du personnage équipé de l'arme augmente le bonus de DGT élémentaires de tous les personnages de l'équipe à proximité de <cryo>16 %</cryo> (jusqu'à <cryo>51,2 %</cryo> maximum) pendant 15 s."
+    }
+  }
+}

@@ -2,6 +2,7 @@ import {
   cmpEq,
   cmpGE,
   max,
+  min,
   prod,
   subscript,
   sum,
@@ -49,18 +50,13 @@ const sheet = register(
   ...customBreakDmg(
     'talentBreakDmg',
     { ...baseTag, damageType1: 'break' },
-    subscript(char.talent, dm.talent.breakDmg)
-  ),
-  ...customBreakDmg(
-    'techBreakDmg',
-    { ...baseTag, damageType1: 'break' },
-    sum(dm.technique.breakDmg, e6TechniqueAddMult)
+    sum(subscript(char.talent, dm.talent.breakDmg), e6TechniqueAddMult)
   ),
 
   // Buffs
   registerBuff(
     'skillOvertone_dmg_',
-    teamBuff.premod.dmg_.add(
+    teamBuff.premod.common_dmg_.add(
       skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
     )
   ),
@@ -75,6 +71,7 @@ const sheet = register(
       ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
     )
   ),
+  // TODO: ultimate actionDelay_ of 20%*BrEff_ + 10%
   registerBuff(
     'talent_spd_',
     notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_))
@@ -84,24 +81,29 @@ const sheet = register(
     teamBuff.premod.brEffect_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
   ),
   registerBuffFormula(
-    'ba3_brEff_',
-    teamBuff.premod.dmg_.add(
+    'ba3_dmg_',
+    teamBuff.premod.common_dmg_.add(
       cmpEq(
         char.bonusAbility3,
         1,
         skillOvertone.ifOn(
-          max(
-            // (brEff_ - breakThreshold) / breakPer * dmgPer
-            prod(
-              sum(own.final.brEffect_, -dm.b3.breakThreshold),
-              1 / dm.b3.breakPer,
-              dm.b3.dmg_per
+          min(
+            max(
+              // (brEff_ - breakThreshold) / perBreak * dmgPer
+              prod(
+                sum(own.final.brEffect_, -dm.b3.breakThreshold),
+                1 / dm.b3.perBreak,
+                dm.b3.dmg_per
+              ),
+              0
             ),
             dm.b3.max_dmg_
           )
         )
       )
-    )
+    ),
+    undefined,
+    true
   ),
   registerBuff(
     'e1_defIgn_',

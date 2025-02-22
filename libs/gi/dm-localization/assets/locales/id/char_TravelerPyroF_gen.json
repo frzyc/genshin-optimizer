@@ -1,0 +1,150 @@
+{
+  "auto": {
+    "name": "Foreign Blaze",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Selama Plunging",
+      "8": "DMG Plunging Attack Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Flowfire Blade",
+    "description": {
+      "0": "Mengayunkan bara api yang bisa membakar bumi, menghasilkan efek yang berbeda berdasarkan cara skill dilancarkan: Mode Tekan atau Mode Tahan.",
+      "1": "<br/>",
+      "2": "<strong>Mode Tekan</strong>",
+      "3": "Menggunakan kekuatan api dengan cara membara. Setelah dilancarkan, Traveler akan mendapatkan 42 poin Nightsoul dan memasuki status Nightsoul's Blessing, serta memanggil Blazing Threshold yang mengikuti Karakter aktif.",
+      "4": "Saat Blazing Threshold mendekati musuh, akan melancarkan Nightsoul-aligned <pyro>Pyro DMG</pyro> terhadap musuh di sekitar secara berkala.",
+      "5": "<br/>",
+      "6": "<strong>Mode Tahan</strong>",
+      "7": "Menggunakan kekuatan api dengan stabil dan mengakibatkan Nightsoul-aligned <pyro>Pyro DMG Area</pyro> terhadap musuh di sekitar. Setelah dilancarkan, Traveler akan mendapatkan 42 poin Nightsoul dan memasuki status Nightsoul's Blessing, serta memanggil Scorching Threshold yang bisa mengikuti Karakter aktif saat ini.",
+      "8": "Saat Karakter yang sedang diikuti oleh Scorching Threshold mengakibatkan DMG terhadap musuh, Scorching Threshold akan melancarkan serangan terkoordinasi, mengakibatkan Nightsoul-aligned <pyro>Pyro DMG</pyro> berdasarkan ATK Traveler terhadap musuh. Efek ini dapat terpicu sekali setiap 3 detik.",
+      "9": "<br/>",
+      "10": "<strong>Nightsoul Blessing: Traveler</strong>",
+      "11": "Terus mengonsumsi poin Nightsoul. Kondisi Nightsoul's Blessing Traveler sendiri bertahan hingga 12 detik dan saat poin Nightsoul habis dikonsumsi, Nightsoul Blessing Traveler akan berakhir. Jika Elemental Skill ini digunakan lagi saat aktif, poin Nightsoul Traveler akan diperbarui menjadi 42 poin.",
+      "12": "Blazing Threshold dan Scorching Threshold akan hilang setelah Nightsoul's Blessing Traveler berakhir. Hanya ada satu Blazing Threshold atau Scorching Threshold yang dipanggil oleh Traveler sendiri yang bisa ada di medan pertempuran di saat yang sama.",
+      "13": "<br/>",
+      "14": "<i>Kamu dan Paimon bersama-sama menyaksikan perubahan warna bara api yang mengalir.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Blazing Threshold",
+      "1": "DMG Tahan",
+      "2": "DMG Scorching Threshold",
+      "3": "Batas Poin Nightsoul",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Plains Scorcher",
+    "description": {
+      "0": "Memadatkan api menjadi tanda, mengakibatkan Nightsoul-aligned <pyro>Pyro DMG Area</pyro> terhadap musuh di arah depan. Dalam 4 detik selanjutnya, 7 poin Nightsoul Traveler akan dipulihkan setiap detiknya.",
+      "1": "<i>Kamu dan Paimon mempelajari prinsip-prinsip di balik api yang tak pernah padam.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "True Flame of Incineration",
+    "description": {
+      "0": "Saat Traveler memiliki lebih dari 20 poin Nightsoul, area efek serangan Blazing Threshold dan Scorching Threshold dari Elemental Skill <strong>Flowfire Blade</strong> setelah mengenai musuh meningkat."
+    }
+  },
+  "passive2": {
+    "name": "Embers Unspent",
+    "description": {
+      "0": "Setelah Karakter aktif berada dalam status <strong>Blazing Threshold</strong> atau <strong>Scorching Threshold</strong> memicu <pyro>reaksi terkait Pyro</pyro>, Traveler akan memulihkan 5 Energy. Efek ini dapat terpicu sekali setiap 12 detik. Selain itu, saat anggota party di sekitar memicu Nightsoul Burst, akan memulihkan 4 Energy Traveler."
+    }
+  },
+  "constellation1": {
+    "name": "Starfire's Flowing Light",
+    "description": {
+      "0": "Selama <strong>Blazing Threshold</strong> atau <strong>Scorching Threshold</strong> aktif, meningkatkan 6% DMG yang diakibatkan oleh Karakter aktif. Jika Karakter aktif sedang dalam status Nightsoul's Blessing, DMG yang diakibatkan meningkat 9% lagi."
+    }
+  },
+  "constellation2": {
+    "name": "Ever-Lit Candle",
+    "description": {
+      "0": "Dalam 12 detik setelah melancarkan Elemental Skill <strong>Flowfire Blade</strong>, setelah anggota party di sekitar memicu <pyro>reaksi terkait Pyro</pyro>, akan memulihkan 14 poin Nightsoul Traveler. Setiap kali menggunakan Elemental Skill <strong>Flowfire Blade</strong>, poin Nightsoul yang bisa dipulihkan dengan cara ini adalah maksimum 28 poin Nightsoul."
+    }
+  },
+  "constellation3": {
+    "name": "Relayed Beacon",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Flowfire Blade</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ravaging Flame",
+    "description": {
+      "0": "Setelah menggunakan Elemental Burst <strong>Plains Scorcher</strong>, Traveler mendapatkan 20% <pyro>Pyro DMG Bonus</pyro> selama 9 detik."
+    }
+  },
+  "constellation5": {
+    "name": "The Fire Inextinguishable",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Plains Scorcher</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Sacred Flame Imperishable",
+    "description": {
+      "0": "Saat berada dalam status Nightsoul's Blessing, Normal Attack,Charged Attack, dan Plunging Attack Traveler dikonversi menjadi Nightsoul-aligned <pyro>Pyro DMG</pyro> yang tidak bisa ditimpa Elemental Infusion lainnya, CRIT DMG serangan-serangan ini juga meningkat 40%."
+    }
+  }
+}

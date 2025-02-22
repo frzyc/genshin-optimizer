@@ -1,13 +1,23 @@
 import {
   CardThemed,
   DropdownButton,
+  ImgIcon,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
+import {
+  characterAsset,
+  characterKeyToGenderedKey,
+} from '@genshin-optimizer/sr/assets'
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allEidolonKeys } from '@genshin-optimizer/sr/consts'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { getCharStatBoostStat } from '@genshin-optimizer/sr/stats'
+import { StatIcon } from '@genshin-optimizer/sr/svgicons'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import {
+  Box,
   Button,
   CardContent,
   Divider,
@@ -19,9 +29,8 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense } from 'react'
-import { useDatabaseContext } from '../Context'
-import { useCharacter } from '../Hook'
 import { AbilityDropdown } from './AbilityDropdown'
+import { CharacterName } from './CharacterTrans'
 
 export function CharacterEditor({
   characterKey,
@@ -47,12 +56,14 @@ function CharacterEditorContent({
   characterKey: CharacterKey
 }) {
   const character = useCharacter(characterKey)
+  const genderedKey = characterKeyToGenderedKey(characterKey)
   const { database } = useDatabaseContext()
-
   return (
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Typography variant="h2">{characterKey}</Typography>
+        <Typography variant="h3">
+          <CharacterName genderedKey={genderedKey} />
+        </Typography>
         <TextField
           type="number"
           label="Level"
@@ -100,18 +111,63 @@ function CharacterEditorContent({
           <Divider />
           <Grid container gap={1}>
             <Grid item>
-              <AbilityDropdown characterKey={characterKey} abilityKey="basic" />
+              <AbilityDropdown
+                characterKey={characterKey}
+                abilityKey="basic"
+                dropDownButtonProps={{
+                  startIcon: (
+                    <ImgIcon
+                      size={1.5}
+                      sideMargin
+                      src={characterAsset(genderedKey, 'basic_0')}
+                    />
+                  ),
+                }}
+              />
             </Grid>
             <Grid item>
-              <AbilityDropdown characterKey={characterKey} abilityKey="skill" />
+              <AbilityDropdown
+                characterKey={characterKey}
+                abilityKey="skill"
+                dropDownButtonProps={{
+                  startIcon: (
+                    <ImgIcon
+                      size={1.5}
+                      sideMargin
+                      src={characterAsset(genderedKey, 'skill_0')}
+                    />
+                  ),
+                }}
+              />
             </Grid>
             <Grid item>
-              <AbilityDropdown characterKey={characterKey} abilityKey="ult" />
+              <AbilityDropdown
+                characterKey={characterKey}
+                abilityKey="ult"
+                dropDownButtonProps={{
+                  startIcon: (
+                    <ImgIcon
+                      size={1.5}
+                      sideMargin
+                      src={characterAsset(genderedKey, 'ult_0')}
+                    />
+                  ),
+                }}
+              />
             </Grid>
             <Grid item>
               <AbilityDropdown
                 characterKey={characterKey}
                 abilityKey="talent"
+                dropDownButtonProps={{
+                  startIcon: (
+                    <ImgIcon
+                      size={1.5}
+                      sideMargin
+                      src={characterAsset(genderedKey, 'talent_0')}
+                    />
+                  ),
+                }}
               />
             </Grid>
           </Grid>
@@ -135,7 +191,14 @@ function CharacterEditorContent({
                       enabled ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
                     }
                   >
-                    {bonusAbility}
+                    <ImgIcon
+                      size={2}
+                      src={characterAsset(
+                        genderedKey,
+                        `bonusAbility${bonusAbility}`
+                      )}
+                      sideMargin
+                    />
                   </Button>
                 </Grid>
               )
@@ -145,26 +208,43 @@ function CharacterEditorContent({
           <Divider />
           <Grid container gap={1}>
             {Object.entries(character?.statBoosts ?? {}).map(
-              ([statBoost, enabled]) => (
-                <Grid item key={statBoost}>
-                  <Button
-                    color={enabled ? 'success' : 'primary'}
-                    onClick={() => {
-                      database.chars.set(characterKey, {
-                        statBoosts: {
-                          ...character?.statBoosts,
-                          [statBoost]: !enabled,
-                        },
-                      })
-                    }}
-                    startIcon={
-                      enabled ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
-                    }
-                  >
-                    {statBoost}
-                  </Button>
-                </Grid>
-              )
+              ([statBoost, enabled]) => {
+                const { statKey, value } = getCharStatBoostStat(
+                  characterKey,
+                  statBoost
+                )
+                return (
+                  <Grid item key={statBoost}>
+                    <Button
+                      color={enabled ? 'success' : 'primary'}
+                      onClick={() => {
+                        database.chars.set(characterKey, {
+                          statBoosts: {
+                            ...character?.statBoosts,
+                            [statBoost]: !enabled,
+                          },
+                        })
+                      }}
+                      startIcon={
+                        enabled ? (
+                          <CheckBoxIcon />
+                        ) : (
+                          <CheckBoxOutlineBlankIcon />
+                        )
+                      }
+                    >
+                      <StatIcon
+                        statKey={statKey}
+                        iconProps={{ sx: { ml: -1, mr: 0.5 } }}
+                      />
+                      <Box>
+                        {toPercent(value, statKey)}
+                        {getUnitStr(statKey)}
+                      </Box>
+                    </Button>
+                  </Grid>
+                )
+              }
             )}
           </Grid>
         </Stack>

@@ -1,7 +1,7 @@
 import {
   extractCondMetadata,
   extractFormulaMetadata,
-} from '@genshin-optimizer/common/formula'
+} from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
 import * as path from 'path'
@@ -23,6 +23,7 @@ export default async function runExecutor(
     if (
       // sheet-specific
       tag.sheet != 'agg' &&
+      tag.sheet !== 'art' &&
       // formula listing
       tag.qt == 'listing' &&
       tag.q == 'formulas' &&

@@ -11,9 +11,11 @@ import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
 import Charlotte from './Charlotte'
+import Chasca from './Chasca'
 import Chevreuse from './Chevreuse'
 import Chiori from './Chiori'
 import Chongyun from './Chongyun'
+import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -44,10 +46,12 @@ import Kirara from './Kirara'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
+import LanYan from './LanYan'
 import Layla from './Layla'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
+import Mavuika from './Mavuika'
 import Mika from './Mika'
 import Mona from './Mona'
 import Mualani from './Mualani'
@@ -57,6 +61,7 @@ import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
+import Ororon from './Ororon'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
@@ -79,12 +84,14 @@ import TravelerF from './TravelerF'
 import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
+import TravelerPyro from './TravelerPyro'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xianyun from './Xianyun'
 import Xiao from './Xiao'
+import Xilonen from './Xilonen'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
@@ -92,6 +99,7 @@ import Yanfei from './Yanfei'
 import Yaoyao from './Yaoyao'
 import Yelan from './Yelan'
 import Yoimiya from './Yoimiya'
+import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
 
@@ -108,9 +116,11 @@ const data = {
   Bennett,
   Candace,
   Charlotte,
+  Chasca,
   Chevreuse,
   Chiori,
   Chongyun,
+  Citlali,
   Clorinde,
   Collei,
   Cyno,
@@ -141,10 +151,12 @@ const data = {
   Klee,
   KujouSara,
   KukiShinobu,
+  LanYan,
   Layla,
   Lisa,
   Lynette,
   Lyney,
+  Mavuika,
   Mika,
   Mona,
   Mualani,
@@ -154,6 +166,7 @@ const data = {
   Nilou,
   Ningguang,
   Noelle,
+  Ororon,
   Qiqi,
   RaidenShogun,
   Razor,
@@ -176,12 +189,14 @@ const data = {
   TravelerGeo,
   TravelerHydro,
   TravelerM,
+  TravelerPyro,
   Venti,
   Wanderer,
   Wriothesley,
   Xiangling,
   Xianyun,
   Xiao,
+  Xilonen,
   Xingqiu,
   Xinyan,
   YaeMiko,
@@ -189,6 +204,7 @@ const data = {
   Yaoyao,
   Yelan,
   Yoimiya,
+  YumemizukiMizuki,
   YunJin,
   Zhongli,
 } as const

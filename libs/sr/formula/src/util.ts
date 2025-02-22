@@ -1,14 +1,20 @@
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
-import type { RelicSetKey, StatKey } from '@genshin-optimizer/sr/consts'
+import type {
+  AscensionKey,
+  LightConeKey,
+  RelicMainStatKey,
+  RelicSetKey,
+  RelicSubStatKey,
+  SuperimposeKey,
+} from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
   allStatBoostKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
-import type { SrcCondInfo } from './calculator'
-import type { Member, Preset, TagMapNodeEntries } from './data/util'
+import type { ICharacter } from '@genshin-optimizer/sr/srod'
+import type { Member, TagMapNodeEntries } from './data/util'
 import {
-  conditionalEntries,
   convert,
   getStatFromStatKey,
   own,
@@ -30,7 +36,7 @@ export function withMember(
   return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
 }
 
-export function charData(data: ICharacter): TagMapNodeEntries {
+export function charTagMapNodeEntries(data: ICharacter): TagMapNodeEntries {
   const { lvl, basic, skill, ult, talent, ascension, eidolon } = own.char
   const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
@@ -60,43 +66,37 @@ export function charData(data: ICharacter): TagMapNodeEntries {
   ]
 }
 
-export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
-  if (!data) return []
-  const { lvl, ascension, superimpose } = own.lightCone
-
+export function lightConeTagMapNodeEntries(
+  key: LightConeKey,
+  level: number,
+  ascension: AscensionKey,
+  superimpose: SuperimposeKey
+): TagMapNodeEntries {
   return [
-    reader.sheet('lightCone').reread(reader.sheet(data.key)),
+    // Opt-in for light cone buffs, instead of enabling it by default to reduce `read` traffic
+    reader.sheet('agg').reread(reader.sheet('lightCone')),
 
-    lvl.add(data.level),
-    ascension.add(data.ascension),
-    superimpose.add(data.superimpose),
+    // Mark light cones as used
+    own.common.count.sheet(key).add(1),
+    own.lightCone.lvl.add(level),
+    own.lightCone.ascension.add(ascension),
+    own.lightCone.superimpose.add(superimpose),
   ]
 }
 
-export function relicsData(
-  data: {
-    set: RelicSetKey
-    stats: readonly { key: StatKey; value: number }[]
-  }[]
+export function relicTagMapNodeEntries(
+  stats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>>,
+  sets: Partial<Record<RelicSetKey, number>>
 ): TagMapNodeEntries {
   const {
     common: { count },
     premod,
-  } = convert(ownTag, { sheet: 'relic', et: 'own' })
-  const sets: Partial<Record<RelicSetKey, number>> = {},
-    stats: Partial<Record<StatKey, number>> = {}
-  for (const { set: setKey, stats: stat } of data) {
-    const set = sets[setKey]
-    if (set === undefined) sets[setKey] = 1
-    else sets[setKey] = set + 1
-    for (const { key, value } of stat) {
-      const stat = stats[key]
-      if (stat === undefined) stats[key] = value
-      else stats[key] = stat + value
-    }
-  }
+  } = convert(ownTag, {
+    sheet: 'relic',
+    et: 'own',
+  })
   return [
-    // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
+    // Opt-in for relic buffs, instead of enabling it by default to reduce `read` traffic
     reader.sheet('agg').reread(reader.sheet('relic')),
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
@@ -172,23 +172,4 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // must use `sum` accumulator for a correct result.
     members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }).sum)),
   ].flat()
-}
-
-/**
- * Generate conditional TagMapNodeEntry for calculator. Should be provided outside of any member data, in order to preserve specified 'src'
- * @param dst member to apply conditionals to
- * @param data conditional data in `Src: { Sheet: { CondKey: value } }` format. Src can be 'all', unless the buff is possibly duplicated (e.g. relic team buff). In that case, you should specify the src member, if you want to select which one to apply.
- * @returns
- */
-export function conditionalData(
-  dst: Member | 'all',
-  data: SrcCondInfo | undefined
-) {
-  if (!data) return []
-  return Object.entries(data).flatMap(([src, entries]) =>
-    Object.entries(entries).flatMap(([sheet, entries]) => {
-      const conds = conditionalEntries(sheet, src, dst)
-      return Object.entries(entries).map(([k, v]) => conds(k, v))
-    })
-  )
 }

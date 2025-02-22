@@ -21,7 +21,7 @@
       "0": {
         "name": "The Belobog March",
         "fullDesc": "Increases the ATK of all allies by <orangeStrong>{{1, percent}}%</orangeStrong>, and increases their CRIT DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Bronya's CRIT DMG plus <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s).",
-        "shortDesc": "Increases <orangeStrong>ATK</orangeStrong> and <orangeStrong>CRIT DMG</orangeStrong> of all allies",
+        "shortDesc": "Increases <orangeStrong>ATK</orangeStrong> and <orangeStrong>CRIT DMG</orangeStrong> of all allies.",
         "tag": "Support"
       }
     },
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Take by Surprise",
-      "desc": "After any other allied character uses Basic ATK on an enemy target that has Wind Weakness, Bronya immediately launches 1 instance of follow-up attack, dealing Wind DMG to this target by an amount equal to {{1, percent}}% of Basic ATK DMG. This effect can only trigger once per turn."
+      "desc": "After any other ally character uses Basic ATK on an enemy target that has Wind Weakness, Bronya immediately launches 1 instance of Follow-up ATK, dealing Wind DMG to this target equal to {{1, percent}}% of her Basic ATK DMG. This effect can only trigger once per turn."
     },
     "5": {
       "name": "Unstoppable",

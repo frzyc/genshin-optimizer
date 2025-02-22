@@ -1,6 +1,10 @@
 import type { Language } from '@genshin-optimizer/common/pipeline'
-import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import {
+  crawlObject,
+  layeredAssignment,
+  nameToKey,
+} from '@genshin-optimizer/common/util'
 import type {
   ElementKey,
   LocationGenderedCharacterKey,
@@ -91,6 +95,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           avatarSkillExcelConfigData[normal].proudSkillGroupId
         ][0].paramDescList.map((id) => [id, 'skillParam'])
       )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'auto', 'skillParamsEncoding'],
+        proudSkillExcelConfigData[
+          avatarSkillExcelConfigData[normal].proudSkillGroupId
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
+      )
 
       layeredAssignment(
         mapHashData,
@@ -109,6 +120,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           avatarSkillExcelConfigData[skill].proudSkillGroupId
         ][0].paramDescList.map((id) => [id, 'skillParam'])
       )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'skill', 'skillParamsEncoding'],
+        proudSkillExcelConfigData[
+          avatarSkillExcelConfigData[skill].proudSkillGroupId
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
+      )
 
       layeredAssignment(
         mapHashData,
@@ -126,6 +144,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[burst].proudSkillGroupId
         ][0].paramDescList.map((id) => [id, 'skillParam'])
+      )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'burst', 'skillParamsEncoding'],
+        proudSkillExcelConfigData[
+          avatarSkillExcelConfigData[burst].proudSkillGroupId
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
       )
 
       if (sprint) {
@@ -229,7 +254,8 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
 
     if (candSkillDepotIds.length) {
       //Traveler
-      const [_1, _2, hydro, anemo, _5, geo, electro, dendro] = candSkillDepotIds
+      const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
+        candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
         ['char', 'TravelerAnemo' + gender],
@@ -250,6 +276,10 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       genTalentHash(
         ['char', 'TravelerHydro' + gender],
         avatarSkillDepotExcelConfigData[hydro]
+      )
+      genTalentHash(
+        ['char', 'TravelerPyro' + gender],
+        avatarSkillDepotExcelConfigData[pyro]
       )
     } else {
       genTalentHash(
@@ -372,6 +402,8 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           const ind = rawString.indexOf('n<color=#FFD780FF>') + 1
           rawString = rawString.slice(0, ind) + '\\n' + rawString.slice(ind)
         }
+        // Skip encoding strings for non EN languages
+        if (processing === 'skillParamEncoding' && lang !== 'en') return
         const string = parsingFunctions[processing](
           lang as Language,
           preprocess(rawString),
@@ -425,6 +457,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           'weaponNames',
           'artifactNames',
           'statKey',
+          'teams',
         ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)

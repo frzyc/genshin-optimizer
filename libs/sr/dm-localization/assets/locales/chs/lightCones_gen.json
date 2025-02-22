@@ -1,0 +1,14 @@
+{
+  "lightCone_one": "角色光锥",
+  "lightCone_other": "光锥",
+  "superimposition": "叠影",
+  "path": {
+    "Erudition": "智识",
+    "Preservation": "存护",
+    "Abundance": "丰饶",
+    "Nihility": "虚无",
+    "Destruction": "毁灭",
+    "Harmony": "同谐",
+    "TheHunt": "巡猎"
+  }
+}

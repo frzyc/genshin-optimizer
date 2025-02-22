@@ -31,7 +31,7 @@ import {
 import type { ChangeEvent } from 'react'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { teamFilterConfigs, teamSortConfigs, teamSortMap } from './TeamSort'
 
 const columns = { xs: 1, sm: 2, md: 2, lg: 3, xl: 3 }
@@ -48,6 +48,7 @@ export default function PageTeams() {
   const database = useDatabase()
   const [dbDirty, forceUpdate] = useForceUpdate()
   const navigate = useNavigate()
+  const location = useLocation()
   // Set follow, should run only once
   useEffect(() => {
     return database.teams.followAny(
@@ -65,14 +66,21 @@ export default function PageTeams() {
   }
   const [showImport, onShowImport, onHideImport] = useBoolState()
   const [data, setData] = useState('')
+  // Automatically open the import modal if the state indicates to do so
+  useEffect(() => {
+    if (location.state?.openImportModal) {
+      setData(location.state?.teamData)
+      onShowImport()
+    }
+  }, [location.state, onShowImport, setData])
   const importData = () => {
     try {
       const dataObj = JSON.parse(data)
       if (!database.teams.import(dataObj))
-        window.alert(t`importForm.error.verifi`)
+        window.alert(t('importForm.error.verifi'))
       onHideImport()
     } catch (e) {
-      window.alert(t`importForm.error.import` + `\n${e}`)
+      window.alert(t('importForm.error.import') + `\n${e}`)
 
       return
     }
@@ -154,7 +162,7 @@ export default function PageTeams() {
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                 setSearchTerm(e.target.value)
               }
-              label={t`searchLabel.team`}
+              label={t('searchLabel.team')}
               // size="small"
               sx={{ height: '100%', flexGrow: 1 }}
               InputProps={{
@@ -178,20 +186,20 @@ export default function PageTeams() {
 
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button fullWidth onClick={onAdd} color="info" startIcon={<AddIcon />}>
-          {t`addTeamBtn`}
+          {t('addTeamBtn')}
         </Button>
         <ModalWrapper open={showImport} onClose={onHideImport}>
           <CardThemed>
-            <CardHeader title={t`importForm.title`} />
+            <CardHeader title={t('importForm.title')} />
             <Divider />
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
-              <Typography>{t`importForm.desc`}</Typography>
+              <Typography>{t('importForm.desc')}</Typography>
               <TextField
                 fullWidth
-                label={t`importForm.label`}
-                placeholder={t`importForm.placeholder`}
+                label={t('importForm.label')}
+                placeholder={t('importForm.placeholder')}
                 value={data}
                 onChange={(e) => setData(e.target.value)}
                 multiline
@@ -202,7 +210,7 @@ export default function PageTeams() {
                 disabled={!data}
                 onClick={importData}
               >
-                {t`importForm.importBtn`}
+                {t('importForm.importBtn')}
               </Button>
             </CardContent>
           </CardThemed>
@@ -213,7 +221,7 @@ export default function PageTeams() {
           color="info"
           startIcon={<UploadIcon />}
         >
-          {t`importTeamBtn`}
+          {t('importTeamBtn')}
         </Button>
       </Box>
       <Suspense

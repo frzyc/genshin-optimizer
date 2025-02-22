@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
       }
     },
     "skillParams": {
@@ -82,7 +82,7 @@
       "2": "<strong>Círculo de apoyo moral</strong>",
       "3": [
         "Si la Vida de un personaje dentro del círculo es igual o inferior al 70%, su vida se regenerará continuamente. La cantidad de vida regenerada aumenta en proporción a la Vida Máx. de Bennett.",
-        "Si la Vida de un personaje dentro del círculo es superior al 70%, obtendrá un Bono de ATQ en proporción al ATQ Básico de Bennett.",
+        "Si la Vida de un personaje dentro del círculo es superior al 70%, obtendrá un Bono de ATQ en proporción al ATQ Base de Bennett.",
         "Los personajes dentro del círculo serán <pyro>afectados por Pyro</pyro>."
       ],
       "4": "<br/>",
@@ -132,7 +132,7 @@
   "constellation1": {
     "name": "Visión de aventura",
     "description": {
-      "0": "El aumento de ATQ de <strong>Aventura maravillosa</strong> ya no se ve restringido por la cantidad de Vida, y aumenta en un 20% adicional en proporción al ATQ Básico de Bennett."
+      "0": "El aumento de ATQ de <strong>Aventura maravillosa</strong> ya no se ve restringido por la cantidad de Vida, y aumenta en un 20% adicional en proporción al ATQ Base de Bennett."
     }
   },
   "constellation2": {

@@ -1,0 +1,160 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "Sonhos Entrelaçados",
+  "description": "Acionista da Banhos de Aisa, psicóloga da tribo Yumekui-baku, dedicada a dissipar pesadelos e trazer paz mental às pessoas.",
+  "constellationName": "Tapirus Somniator",
+  "auto": {
+    "name": "Coração Puro, Sonhos Puros",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 3 ataques, infligindo <anemo>Dano Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina que inflige <anemo>Dano Anemo em uma AdE</anemo> após um curto período de canalização."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Convocando os poderes do vento para si, mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige <anemo>Dano Anemo em uma AdE</anemo> durante o impacto com o chão."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Peregrinação Aisa Utamakura",
+    "description": {
+      "0": "Tecendo memórias de sonhos encantadores, entra no estado de <strong>Devaneio Onírico</strong>, flutuando acima do solo e causando 1 instância de <anemo>Dano Anemo em uma AdE</anemo> aos oponentes próximos.",
+      "1": "<br/>",
+      "2": "<strong>Devaneio Onírico</strong>",
+      "3": [
+        " Enquanto está no estado de Devaneio Onírico, Yumemizuki Mizuki flutua continuamente para frente, causando <anemo>Dano Anemo em uma AdE</anemo> aos oponentes próximos em intervalos regulares.",
+        " Durante este período, Yumemizuki Mizuki pode controlar a direção que flutua, e a distância para coletar os <strong>Lanches Yumemikaze</strong> do Supremo <strong>Terapia da Nascente Secreta Anraku</strong> será aumentada.",
+        " Aumenta o Dano de Redemoinho causado pelos membros próximos do grupo com base na Proficiência Elemental de Yumemizuki Mizuki.",
+        " O estado de Devaneio Onírico termina quando Mizuki sai do campo ou utiliza sua Habilidade Elemental novamente."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Nossos sonhos se encontram à meia-noite, sua melodia ressoando em nossos corações.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Ataques Contínuos",
+      "2": "Duração do Devaneio Onírico",
+      "3": "Proporção de aumento de Dano de Redemoinho para cada ponto de Proficiência",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Terapia da Nascente Secreta Anraku",
+    "description": {
+      "0": "Invoca incontáveis sonhos encantadores e pesadelos que atraem objetos e oponentes próximos, causando <anemo>Dano Anemo em uma AdE</anemo> e convocando um Mini Baku de sua espécie.",
+      "1": "<br/>",
+      "2": "<strong>Mini Baku:</strong>",
+      "3": "Segue o personagem ativo atual. Em intervalos regulares, o Mini Baku criará 1 Lanche Yumemikaze nas proximidades. Após seu personagem pegar um Lanche Yumemikaze, se sua Vida estiver acima de 70%, o Lanche explodirá e liberará uma Onda de Choque Munen, causando 1 instância de <anemo>Dano Anemo em uma AdE</anemo> aos oponentes próximos. Caso contrário, curará quem o coletou com base na Proficiência Elemental de Yumemizuki Mizuki. Quando Yumemizuki Mizuki ativa a cura ao pegar um Lanche Yumemikaze, a quantidade de cura é aumentada em 100%. Se passar algum tempo sem que o Lanche seja coletado, ele explodirá e liberará uma Onda de Choque Munen, causando 1 instância de <anemo>Dano Anemo em uma AdE</anemo> aos oponentes ao redor.",
+      "4": "<br/>",
+      "5": "<i>\"Se você guardar emoções sombrias por muito tempo, elas se tornarão pesadelos. Com isso em mente, por que não as transformamos em 'lanches deliciosos' enquanto temos tempo?\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano da Onde de Choque Munen",
+      "2": "Regeneração de Vida ao coletar um Lanche",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "A Voz Inquieta da Lua Brilhante",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki desencadeia Redemoinho enquanto está em seu estado de Devaneio Onírico, a duração de Devaneio Onírico aumenta em 2.5s. Este efeito pode ser ativado uma vez a cada 0.3s. Este efeito pode ser ativado até 2 vezes por estado de Devaneio Onírico."
+    }
+  },
+  "passive2": {
+    "name": "Pensamentos Diurnos, Sonhos Noturnos",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki está no Devaneio Onírico, e o Tipo Elemental dos ataques dos outros membros próximos da equipe que atinge um inimigo for <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Electro</electro>, aumenta a Proficiência Elemental de Yumemizuki Mizuki em 100 por 4s."
+    }
+  },
+  "passive3": {
+    "name": "Banimento das Doenças",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki está na equipe, membros da equipe tem uma chance de recuperar 30% a mais de Vida se não estiverem equipados com alimentados que regeneram Vida. A chance desse efeito desencadear é baseado no Nv. de Amizade do personagem correspondente (quando o Viajante utilizar, esse efeito sempre será desencadeado)."
+    }
+  },
+  "constellation1": {
+    "name": "Águas Enevoadas",
+    "description": {
+      "0": "Quando Yumemizuki Mizuki está no estado Devaneio Onírico, aplicará por 3s contra o inimigo o efeito \"Espera de 23 Noites\" a cada 3.5s. Inimigos afetados por Espera de 23 Noites ao sofrerem Dano Anemo ou ao desencadearem Redemoinho terão esse efeito removido, e essa reação de Redemoinho receberá um aumento de Dano. O aumento de Dano é de 1100% da Proficiência Elemental de Yumemizuki Mizuki."
+    }
+  },
+  "constellation2": {
+    "name": "Seu Eco que Conheci nos Sonhos",
+    "description": {
+      "0": "Ao entrar no estado Devaneio Onírico, cada ponto de Proficiência Elemental de Yumemizuki Mizuki fornece 0.04% de Bônus de Dano <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> e <electro>Electro</electro> para os outros membros próximos da equipe. Esse efeito dura até o estado Devaneio Onírico acabar."
+    }
+  },
+  "constellation3": {
+    "name": "Até a Lua do Amanhecer Acabar a Noite",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong>Peregrinação Aisa Utamakura</strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Brotos Quentes na Nascente Transluzente",
+    "description": {
+      "0": "Ao coletar o <strong>Lanche Yumemikaze</strong> do Supremo <strong>Terapia da Nascente Secreta Anraku</strong>, ele simultaneamente causará Dano e curará, e regenerará 5 de Energia Elemental para Yumemizuki Mizuki. É possível regenerar Energia Elemental dessa forma até 4 vezes por cada duração de <strong>Terapia da Nascente Secreta Anraku</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Quando a Lua Poente Traz o Fim do Ano",
+    "description": {
+      "0": "Aumenta o nível do Supremo <strong>Terapia da Nascente Secreta Anraku</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "O Coração Perdura Longamente",
+    "description": {
+      "0": "Enquanto Yumemizuki Mizuki estiver no estado de Devaneio Onírico, o Dano de Redemoinho causado por membros próximos da equipe pode causar Acerto CRIT, com a Taxa CRIT fixa em 30% e o Dano CRIT fixo em 100%."
+    }
+  }
+}

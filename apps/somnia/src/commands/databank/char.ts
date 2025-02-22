@@ -1,5 +1,8 @@
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
-import type { AbilityKey, CharacterDataKey } from '@genshin-optimizer/sr/consts'
+import type {
+  AbilityKey,
+  CharacterGenderedKey,
+} from '@genshin-optimizer/sr/consts'
 import {
   ActionRowBuilder,
   EmbedBuilder,
@@ -10,7 +13,7 @@ import { hsrURL } from '../../lib/util'
 import { clean, skillsList } from '../databank'
 
 function getEmbed(
-  id: CharacterDataKey,
+  id: CharacterGenderedKey,
   name: string,
   data: any,
   talent: string
@@ -33,11 +36,11 @@ function getEmbed(
   else throw 'Invalid talent name.'
 }
 
-function getAssets(id: CharacterDataKey) {
+function getAssets(id: CharacterGenderedKey) {
   return AssetData.chars[id]
 }
 
-function baseEmbed(id: CharacterDataKey, name: string) {
+function baseEmbed(id: CharacterGenderedKey, name: string) {
   // TODO: const icon = getAssets(id).icon
   // TODO: const element = allStats.char[id].damageType
   const thumbnail = getAssets(id).icon
@@ -54,7 +57,7 @@ function baseEmbed(id: CharacterDataKey, name: string) {
 
 function skillEmbed(
   ability: AbilityKey,
-  id: CharacterDataKey,
+  id: CharacterGenderedKey,
   name: string,
   data: any
 ) {
@@ -73,7 +76,7 @@ function skillEmbed(
 }
 
 function eidolonsEmbed(
-  id: CharacterDataKey,
+  id: CharacterGenderedKey,
   name: string,
   data: any,
   arg: string
@@ -99,7 +102,7 @@ function eidolonsEmbed(
 }
 
 export function charBank(
-  id: CharacterDataKey,
+  id: CharacterGenderedKey,
   name: string,
   data: any,
   args: string

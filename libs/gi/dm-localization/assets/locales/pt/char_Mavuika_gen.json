@@ -1,0 +1,200 @@
+{
+  "name": "Mavuika",
+  "title": "Chama da Noite Ardente",
+  "description": "A líder de Natlan que herdou o Nome Antigo de \"Kiongozi\". Ela fez um voto para iluminar o futuro da nação da guerra com a Chama Sagrada.",
+  "constellationName": "Sol Invictus",
+  "auto": {
+    "name": "Chamas Tecem a Vida",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir um poderoso Esplendor Fervoroso em frente."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Momento do Nome",
+    "description": {
+      "0": "Clamando a sua autoridade sobre o \"conflito\", Mavuika invoca os Armamentos Flamejantes, causando <pyro>Dano Pyro</pyro> com alinhamento Espírito da Noite.",
+      "1": "Depois de lançar, Mavuika regenera seus pontos de Espírito da Noite até o máximo, e entra no estado Bênção do Espírito da Noite.",
+      "2": "<br/>",
+      "3": "<strong>Armamentos Flamejantes</strong>",
+      "4": "Lança os Armamentos Flamejantes de formas diferentes se for pressionado ou manter pressionado.",
+      "5": "<br/>",
+      "6": "<strong>Pressionar</strong>",
+      "7": "\"Libertação do Nome Divino\": os Armamentos Flamejantes se manifestam como Anéis das Chamas Esplendorosas. Os Anéis das Chamas Esplendorosas acompanham o personagem ativo, e atacam os inimigos próximos periodicamente, causando <pyro>Dano Pyro</pyro> com alinhamento Espírito da Noite.",
+      "8": "<br/>",
+      "9": "<strong>Manter pressionado</strong>",
+      "10": "\"Libertação do Nome Antigo\": os Armamentos Flamejantes se manifestam como a Ignimoto. Nesse estado, Mavuika pode andar na Ignimoto em altas velocidades, ou pode abrir o compartimento secreto da Ignimoto para andar sobre todo terreno, bem como planar por um tempo. Além disso, os Ataques Normais, Carregados e Imersivos de Mavuika serão convertidos para causarem <pyro>Dano Pyro</pyro> com alinhamento Espírito da Noite que não pode ser substituído. Ao correr, também causará <pyro>Dano Pyro</pyro> com alinhamento Espírito da Noite contra os inimigos no seu caminho.",
+      "11": "<br/>",
+      "12": "Quando está no estado Bênção do Espírito da Noite, pressionar a Habilidade Elemental permite mudar a forma dos Armamentos Flamejantes. Eles desaparecerão quando o estado Bênção do Espírito da Noite de Mavuika acabar.",
+      "13": "<br/>",
+      "14": "<strong>Bênção do Espírito da Noite: Mavuika</strong>",
+      "15": "Consome pontos de Espírito da Noite continuamente de acordo com a forma dos Armamentos Flamejantes. Quando os pontos de Espírito da Noite acabarem, o estado Bênção do Espírito da Noite de Mavuika acabará.",
+      "16": "<br/>",
+      "17": "<i>Se você contasse para Mavuika que veículos como a Ignimoto precisam de placas para identificação em outros mundos, isso a faria feliz:",
+      "18": "\"Veja bem, a minha é a única que existe, então eu poderia escolher minha placa, não é?\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano dos Anéis das Chamas Esplendorosas",
+      "2": "Intervalo de ataque dos Anéis das Chamas Esplendorosas",
+      "3": "Dano do 1º Golpe do Ataque Normal da Ignimoto",
+      "4": "Dano do 2º Golpe do Ataque Normal da Ignimoto",
+      "5": "Dano do 3º Golpe do Ataque Normal da Ignimoto",
+      "6": "Dano do 4º Golpe do Ataque Normal da Ignimoto",
+      "7": "Dano do 5º Golpe do Ataque Normal da Ignimoto",
+      "8": "Dano de investida da Ignimoto",
+      "9": "Dano de Loop de Ataque Carregado da Ignimoto",
+      "10": "Dano Final de Ataque Carregado da Ignimoto",
+      "11": "Dano de ataque contra o chão da Ignimoto",
+      "12": "Limite de Pontos de Espírito da Noite",
+      "13": "Tempo de Recarga",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hora de Queimar os Céus",
+    "description": {
+      "0": "Que as vozes do povo alcancem os tronos divinos nos céus.",
+      "1": "<strong>O Supremo de Mavuika não usa Energia Elemental, mas Espírito Lutador.</strong>",
+      "2": "<br/>",
+      "3": "<strong>Espírito Lutador</strong>",
+      "4": "Quando Mavuika possui pelo menos 50% de Espírito Lutador, ela pode consumir tudo dele para lançar seu Supremo.",
+      "5": "Mavuika pode obter Espírito Lutador das seguintes formas:",
+      "6": [
+        " Quando está em batalha e um membro próximo da equipe consome pontos de Espírito da Noite, eles se converterão em Espírito Lutador para Mavuika.",
+        " Quando um membro próximo da equipe atinge Ataques Normais em um inimigo, Mavuika obterá 1.5 de Espírito Lutador. Esse efeito pode ser desencadeado uma vez a cada 0.1s."
+      ],
+      "7": "<br/>",
+      "8": "Depois de lançar, Mavuika obtém 10 pontos de Espírito da Noite, entra no estado Bênção do Espírito da Noite e sobe na Ignimoto para saltar no ar, desferindo um Golpe Solar contra os oponentes no chão, causando <pyro>Dano Pyro em AdE</pyro> com alinhamento Espírito da Noite, e entrando no estado Cadinho da Vida e da Morte.",
+      "9": "<br/>",
+      "10": "<strong>Cadinho da Vida e da Morte</strong>",
+      "11": "Na sua duração, as ações de Mavuika não consumirão pontos de Espírito da Noite, e aumenta a Resistência contra Interrupção de Mavuika. Além disso, de acordo com a quantidade de Espírito Lutador ao ser lançado, aumenta o Dano causado pelo Golpe Solar e pelos Ataques Normais e Carregados no estado Libertação do Nome Antigo.",
+      "12": "O estado Cadinho da Vida e da Morte será removido quando Mavuika sair do campo.",
+      "13": "<br/>",
+      "14": "<i>\"Mas, desta vez, eu quero destruir esse destino com minhas próprias mãos.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Duração do Cadinho da Vida e da Morte",
+      "2": "Aumento de Dano de Golpe Solar",
+      "3": "Aumento de Dano do Ataque Normal da Ignimoto",
+      "4": "Aumento de Dano do Ataque Carregado da Ignimoto",
+      "5": "Tempo de Recarga",
+      "6": "Limite de Espírito Lutador",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Presente das Flores Flamejantes",
+    "description": {
+      "0": "Quando um membro próximo da equipe desencadeia Explosão do Espírito da Noite, aumenta o ATQ de Mavuika em 30% por 10s."
+    }
+  },
+  "passive2": {
+    "name": "\"Kiongozi\"",
+    "description": {
+      "0": "Depois de lançar o Supremo <strong>Hora de Queimar os Céus</strong>, de acordo com a quantidade de Espírito Lutador, aumenta o Dano do personagem ativo da equipe para cada ponto de Espírito Lutador em 0.2%. É possível aumentar o Dano do personagem ativo em até 40% dessa forma. Esse efeito dura 20s, e ele gradativamente reduzirá até chegar a 0."
+    }
+  },
+  "passive3": {
+    "name": "Presente do Reino da Noite: Modo de Exaustão",
+    "description": {
+      "0": "Após os pontos de Espírito da Noite serem esgotados, Mavuika passará a usar Flogisto para manter seu Armamento Flamejante: Ignimoto.",
+      "1": "Enquanto estiver em uma área com Mecanismos de Flogisto dentro de Natlan, Transmissão do Espírito da Noite: Mavuika poderá ser usada. Quando o personagem ativo atual estiver correndo, escalando, nadando, em modos de movimento causados por certos Talentos ou a uma certa altura no ar, trocar para Mavuika ativará: Mavuika entra no estado de Bênção do Espírito da Noite e obtém pontos de Espírito da Noite equivalentes a 50% do seu valor máximo. A Transmissão do Espírito da Noite pode ser desencadeada uma vez a cada 10s pela sua própria equipe."
+    }
+  },
+  "passive": {
+    "name": "Luz Dispersadora da Escuridão",
+    "description": {
+      "0": "Reduz a recarga de Transmissão do Espírito da Noite da equipe em 20%."
+    }
+  },
+  "constellation1": {
+    "name": "Explicação do Lorde da Noite",
+    "description": {
+      "0": "Aumenta o limite máximo de pontos de Espírito da Noite de Mavuika para 120, e aumenta a taxa de obtenção de Espírito Lutador em 25%.",
+      "1": "Além disso, depois de obter Espírito Lutador, aumenta o ATQ de Mavuika em 40% por 8s."
+    }
+  },
+  "constellation2": {
+    "name": "O Preço das Cinzas",
+    "description": {
+      "0": "Quando está no estado Bênção do Espírito da Noite, aumenta o ATQ Básico de Mavuika em 200 pontos, e obtém os seguintes efeitos de acordo com a forma dos Armamentos Flamejantes:",
+      "1": [
+        " Anéis das Chamas Esplendorosas: reduz a DEF dos inimigos próximos em 20%.",
+        " Ignimoto: aumenta o Dano causado pelos Ataques Normais, Carregados e pelo Golpe Solar do Supremo <strong>Hora de Queimar os Céus</strong> de Mavuika, o aumento é equivalente a 60%/90%/120% do ATQ de Mavuika."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Sol em Chamas",
+    "description": {
+      "0": "Aumenta o nível de <strong>Hora de Queimar os Céus</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Percepção da Líder",
+    "description": {
+      "0": "Aumenta o efeito obtido do Talento Passivo \"Kiongozi\":",
+      "1": "O efeito de aumento de Dano após lançar o Supremo <strong>Kiongozi</strong> não diminuirá com o tempo, e obtém 10% de Bônus de Dano adicional.",
+      "2": "É necessário ter desbloqueado o Talento Passivo \"Kiongozi\"."
+    }
+  },
+  "constellation5": {
+    "name": "Significado da Verdade",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong>Momento do Nome</strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Libertação da Pessoa Nomeada",
+    "description": {
+      "0": "Os Armamentos Flamejantes da Habilidade Elemental <strong>Momento do Nome</strong> são fortalecidos:",
+      "1": [
+        " Anéis das Chamas Esplendorosas: quando os Anéis das Chamas Esplendorosas atingem um inimigo, uma Ignimoto atingirá o inimigo, causando 200% do ATQ como <pyro>Dano Pyro em AdE</pyro> com alinhamento Espírito da Noite.",
+        " Ignimoto: quando Mavuika montar na Ignimoto, invocará o Anel das Chamas Esplendorosas: Incêndio para acompanhá-la, que reduzirá a DEF dos oponentes próximos em 20% e causando 500% do ATQ de Mavuika como <pyro>Dano Pyro em AdE</pyro> com alinhamento Espírito da Noite a cada 3s contra os inimigos próximos. As habilidades de locomoção no terreno de Mavuika também serão melhoradas."
+      ],
+      "2": "<br/>",
+      "3": "Além disso, quando Mavuika está montada na Ignimoto e não está em combate, e quando os pontos de Espírito da Noite de Mavuika caírem para 5, obtém 80 pontos de Espírito da Noite. Esse efeito pode ser desencadeado uma vez a cada 15s."
+    }
+  }
+}

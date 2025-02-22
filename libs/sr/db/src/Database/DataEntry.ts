@@ -10,18 +10,18 @@ export class DataEntry<
   CacheValue,
   StorageValue
 > extends DataEntryBase<Key, SROKey, CacheValue, StorageValue, SroDatabase> {
-  get prefixedKey() {
-    return `${this.database.keyPrefix}_${this.goKey}`
-  }
   exportSROD(sroDb: Partial<ISroDatabase & ISrObjectDescription>) {
-    sroDb[this.prefixedKey] = this.data
+    sroDb[this.dataKey] = this.data
   }
   importSROD(
     sroDb: ISrObjectDescription &
       ISroDatabase & { [k in SROKey]?: Partial<StorageValue> | never },
     _result: ImportResult
   ) {
-    const data = sroDb[this.prefixedKey]
+    const data = sroDb[this.dataKey]
     if (data) this.set(data)
+  }
+  override toStorageKey(): string {
+    return `${this.database.keyPrefix}_${this.key}`
   }
 }

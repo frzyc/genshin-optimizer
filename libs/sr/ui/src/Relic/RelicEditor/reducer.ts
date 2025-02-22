@@ -40,5 +40,6 @@ export function relicReducer(
   }
   const rel = handle()
   if (!rel) return rel
-  return validateRelic(rel, true)
+  // Disable substat sorting to avoid layout shift as substats are added.
+  return validateRelic(rel, true, false)
 }

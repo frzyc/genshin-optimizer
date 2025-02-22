@@ -79,9 +79,11 @@ export const nonTravelerCharacterKeys = [
   'Bennett',
   'Candace',
   'Charlotte',
+  'Chasca',
   'Chevreuse',
   'Chiori',
   'Chongyun',
+  'Citlali',
   'Clorinde',
   'Collei',
   'Cyno',
@@ -112,10 +114,12 @@ export const nonTravelerCharacterKeys = [
   'Klee',
   'KujouSara',
   'KukiShinobu',
+  'LanYan',
   'Layla',
   'Lisa',
   'Lynette',
   'Lyney',
+  'Mavuika',
   'Mika',
   'Mona',
   'Mualani',
@@ -125,6 +129,7 @@ export const nonTravelerCharacterKeys = [
   'Nilou',
   'Ningguang',
   'Noelle',
+  'Ororon',
   'Qiqi',
   'RaidenShogun',
   'Razor',
@@ -146,6 +151,7 @@ export const nonTravelerCharacterKeys = [
   'Xiangling',
   'Xianyun',
   'Xiao',
+  'Xilonen',
   'Xingqiu',
   'Xinyan',
   'YaeMiko',
@@ -153,6 +159,7 @@ export const nonTravelerCharacterKeys = [
   'Yaoyao',
   'Yelan',
   'Yoimiya',
+  'YumemizukiMizuki',
   'YunJin',
   'Zhongli',
 ] as const
@@ -164,6 +171,7 @@ export const travelerElements = [
   'electro',
   'dendro',
   'hydro',
+  'pyro',
 ] as const
 export type TravelerElementKey = (typeof travelerElements)[number]
 
@@ -173,6 +181,7 @@ export const allTravelerKeys = [
   'TravelerElectro',
   'TravelerDendro',
   'TravelerHydro',
+  'TravelerPyro',
 ] as const
 export type TravelerKey = (typeof allTravelerKeys)[number]
 
@@ -182,6 +191,7 @@ export const travelerEleMap: Partial<Record<ElementKey, TravelerKey>> = {
   electro: 'TravelerElectro',
   dendro: 'TravelerDendro',
   hydro: 'TravelerHydro',
+  pyro: 'TravelerPyro',
 } as const
 
 export const locationGenderedCharacterKeys = [
@@ -243,12 +253,7 @@ export function travelerElement(element: TravelerElementKey): TravelerKey {
     element.slice(1)) as TravelerKey
 }
 
-export const absorbableEle = [
-  'hydro',
-  'pyro',
-  'cryo',
-  'electro',
-] as ElementKey[]
+export const absorbableEle = ['hydro', 'pyro', 'cryo', 'electro'] as const
 
 export const travelerFKeys = [
   'TravelerAnemoF',
@@ -256,6 +261,7 @@ export const travelerFKeys = [
   'TravelerElectroF',
   'TravelerDendroF',
   'TravelerHydroF',
+  'TravelerPyroF',
 ] as const
 export const travelerMKeys = [
   'TravelerAnemoM',
@@ -263,6 +269,7 @@ export const travelerMKeys = [
   'TravelerElectroM',
   'TravelerDendroM',
   'TravelerHydroM',
+  'TravelerPyroM',
 ] as const
 export const allCharacterSheetKeys = [
   ...nonTravelerCharacterKeys,

@@ -1,5 +1,5 @@
 import type {
-  CharacterDataKey,
+  CharacterGenderedKey,
   ElementalTypeKey,
   PathKey,
   RarityKey,
@@ -7,7 +7,7 @@ import type {
 import type { AvatarRarity } from '../dm'
 import type { AvatarDamageType } from '../dm/character/AvatarConfig'
 
-export const characterIdMap: Record<string, CharacterDataKey> = {
+export const characterIdMap: Record<string, CharacterGenderedKey> = {
   1001: 'March7th',
   1002: 'DanHeng',
   1003: 'Himeko',

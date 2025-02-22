@@ -1,0 +1,332 @@
+{
+  "Id": 53017,
+  "CodeName": "Knightboo",
+  "Name": "Knightboo",
+  "Desc": "My steed and I can both bounce to accelerate!",
+  "Rarity": 3,
+  "Icon": "UI/Sprite/A1DynamicLoad/BangbooModGarage/UnPacker/BangbooRole/BangbooGarageRole27.png",
+  "Stats": {
+    "Stamina": 100,
+    "StaminaUpragde": 10,
+    "Endurance": 180,
+    "HpMax": 436,
+    "Hpupgrade": 518360,
+    "Attack": 47,
+    "AttackUpgrade": 236912,
+    "BreakStun": 100,
+    "ElementAbnormalPower": 100,
+    "Defence": 32,
+    "DefUpgrade": 92587,
+    "Crit": 500,
+    "PenRatio": 0,
+    "CritDmg": 5000
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": { "10": 15000, "102010": 4 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "2": {
+      "HpMax": 228,
+      "Attack": 44,
+      "Defence": 41,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": { "10": 35000, "102020": 12 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 450
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "3": {
+      "HpMax": 455,
+      "Attack": 219,
+      "Defence": 81,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": { "10": 75000, "102020": 20 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 2250
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 0
+        }
+      }
+    },
+    "4": {
+      "HpMax": 683,
+      "Attack": 657,
+      "Defence": 122,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": { "10": 125000, "102030": 10 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 2250
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 2500
+        }
+      }
+    },
+    "5": {
+      "HpMax": 910,
+      "Attack": 1753,
+      "Defence": 163,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": { "10": 250000, "102030": 20 },
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 4500
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 2500
+        }
+      }
+    },
+    "6": {
+      "HpMax": 1138,
+      "Attack": 4381,
+      "Defence": 203,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {},
+      "Extra": {
+        "20101": {
+          "Prop": 20101,
+          "Name": "CRIT Rate",
+          "Format": "{0:0.#%}",
+          "Value": 4500
+        },
+        "21101": {
+          "Prop": 21101,
+          "Name": "CRIT DMG",
+          "Format": "{0:0.#%}",
+          "Value": 5000
+        }
+      }
+    }
+  },
+  "Skill": {
+    "A": {
+      "Level": {
+        "1": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[0.5 + Bangboo Level × 0.01]|24s"
+        },
+        "2": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[0.6 + Bangboo Level × 0.01]|24s"
+        },
+        "3": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[0.7 + Bangboo Level × 0.01]|24s"
+        },
+        "4": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[0.8 + Bangboo Level × 0.01]|24s"
+        },
+        "5": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[0.9 + Bangboo Level × 0.01]|24s"
+        },
+        "6": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[1 + Bangboo Level × 0.01]|24s"
+        },
+        "7": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[1.1 + Bangboo Level × 0.01]|24s"
+        },
+        "8": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[1.2 + Bangboo Level × 0.01]|24s"
+        },
+        "9": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[1.3 + Bangboo Level × 0.01]|24s"
+        },
+        "10": {
+          "Name": "Knight, Charge Up!",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nJump repeatedly while riding Pale Bouncy and summon 3 <color=#FFFFFF>Knight's Stars</color>. When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, they recover Energy.",
+          "Property": ["Energy Generation", "Cooldown"],
+          "Param": "[1.4 + Bangboo Level × 0.01]|24s"
+        }
+      }
+    },
+    "B": {
+      "Level": {
+        "1": {
+          "Name": "Knight's Chivalry",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least one <color=#FFFFFF>Support</color> character in your squad: When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, their ATK increases by 20 + Bangboo level × 1.2 for 10s.",
+          "Property": ["ATK Increase", "Duration"],
+          "Param": "[20 + Bangboo Level × 1.2]|10s"
+        },
+        "2": {
+          "Name": "Knight's Chivalry",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least one <color=#FFFFFF>Support</color> character in your squad: When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, their ATK increases by 25 + Bangboo level × 1.4 for 10s.",
+          "Property": ["ATK Increase", "Duration"],
+          "Param": "[25 + Bangboo Level × 1.4]|10s"
+        },
+        "3": {
+          "Name": "Knight's Chivalry",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least one <color=#FFFFFF>Support</color> character in your squad: When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, their ATK increases by 30 + Bangboo level × 1.6 for 10s.",
+          "Property": ["ATK Increase", "Duration"],
+          "Param": "[30 + Bangboo Level × 1.6]|10s"
+        },
+        "4": {
+          "Name": "Knight's Chivalry",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least one <color=#FFFFFF>Support</color> character in your squad: When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, their ATK increases by 35 + Bangboo level × 1.8 for 10s.",
+          "Property": ["ATK Increase", "Duration"],
+          "Param": "[35 + Bangboo Level × 1.8]|10s"
+        },
+        "5": {
+          "Name": "Knight's Chivalry",
+          "Desc": "<color=#FFFFFF>Additional Ability</color>\nWhen there is at least one <color=#FFFFFF>Support</color> character in your squad: When characters come into contact with <color=#FFFFFF>Knight's Stars</color>, their ATK increases by 40 + Bangboo level × 2 for 10s.",
+          "Property": ["ATK Increase", "Duration"],
+          "Param": "[40 + Bangboo Level × 2]|10s"
+        }
+      }
+    },
+    "C": {
+      "Level": {
+        "1": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "2": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "3": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "4": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "5": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "6": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "7": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "8": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "9": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        },
+        "10": {
+          "Name": "Knight, Bouncing Charge!",
+          "Desc": "<color=#FFFFFF>Bangboo Chain Attack</color>\nSummons 3 Pale Bouncys which stomp up to 10 times in the area ahead, each time dealing <color=#FE437E>Ether DMG</color> to enemies within its attack range.",
+          "Property": ["DMG Multiplier", "Daze Multiplier"],
+          "Param": "{Skill:5301702, Prop:1001}|{Skill:5301702, Prop:1002}"
+        }
+      }
+    }
+  },
+  "SkillProp": {
+    "5301701": {
+      "1001": { "Main": 0, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 0, "Growth": 0, "Format": "%" }
+    },
+    "5301702": {
+      "1001": { "Main": 8600, "Growth": 860, "Format": "%" },
+      "1002": { "Main": 1200, "Growth": 120, "Format": "%" }
+    }
+  }
+}

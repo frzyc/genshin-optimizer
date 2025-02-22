@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Cleansing Revival",
-        "fullDesc": "Saat memicu efek Skill, menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan.",
+        "fullDesc": "Saat memicu efek Skill, menghilangkan {{1}} efek Debuff dari 1 rekan tim yang ditargetkan.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Reunion With the Dust",
-      "desc": "Saat melancarkan Ultimate, ada {{1, percent}}% peluang tetap untuk mengurangi {{2, percent}}% RES seluruh tipe seluruh musuh selama {{3}} giliran."
+      "desc": "Saat melancarkan Ultimate, ada {{1, percent}}% peluang tetap untuk mengurangi {{2, percent}}% RES seluruh Tipe seluruh musuh selama {{3}} giliran."
     }
   }
 }

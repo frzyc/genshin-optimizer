@@ -134,7 +134,7 @@
     "name": "Frozen Kiss",
     "description": {
       "0": "Terpicu secara otomatis saat HP Kaeya kurang dari 20%:",
-      "1": "Membuat perisai yang menahan DMG setara dengan 30% Max HP Kaeya. Berlangsung selama 20 detik.",
+      "1": "Membuat Perisai yang menahan DMG setara dengan 30% Max HP Kaeya. Berlangsung selama 20 detik.",
       "2": "Perisai ini memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>.",
       "3": "Terpicu setiap 60 detik."
     }

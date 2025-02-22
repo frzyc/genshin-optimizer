@@ -406,8 +406,10 @@ export function constantFold(
               result = map(selected, context)
               break
             }
+            throw new Error(`Unsupported ${operation} node while folding`)
           }
-          throw new Error(`Unsupported ${operation} node while folding`)
+          result = map(transpose(formula.operands[0], index, formula), context)
+          break
         }
         case 'prio': {
           const first = formula.operands.find((op) => {
@@ -425,8 +427,13 @@ export function constantFold(
             | undefined
           for (const operand of formula.operands) {
             const folded = foldStr(operand, context)
-            if (folded.operation !== 'const')
-              throw new Error(`Unsupported ${operation} node while folding`)
+            if (folded.operation !== 'const') {
+              smallest = map(
+                transpose(operand, folded, formula),
+                context
+              ) as any // wrong type, but immediately assigned to `result` anyway
+              break
+            }
             if (
               smallest?.value === undefined ||
               (folded.value !== undefined && folded.value < smallest.value)
@@ -440,9 +447,11 @@ export function constantFold(
           const [v1, v2, match, unmatch] = formula.operands.map(
             (x: NumNode | StrNode) => map(x, context)
           )
-          if (v1.operation !== 'const' || v2.operation !== 'const')
-            throw new Error(`Unsupported ${operation} node while folding`)
-          result = v1.value === v2.value ? match : unmatch
+          if (v1.operation !== 'const')
+            result = map(transpose(formula.operands[0], v1, formula), context)
+          else if (v2.operation !== 'const')
+            result = map(transpose(formula.operands[1], v2, formula), context)
+          else result = v1.value === v2.value ? match : unmatch
           break
         }
         case 'threshold': {
@@ -522,6 +531,32 @@ export function constantFold(
       return result
     }
   ) as OptNode[]
+}
+
+/** "Move" branching `br`, which must be inside `parent` and folded to `fold`, to be the "container" of `parent` instead */
+function transpose(br: AnyNode, fold: AnyNode, parent: AnyNode): AnyNode {
+  if (
+    process.env['NODE_ENV'] === 'development' &&
+    !parent.operands.includes(br as any as never)
+  )
+    throw new Error('ill-formed transpose')
+  function replace(newNode: AnyNode): AnyNode {
+    return {
+      ...parent,
+      operands: parent.operands.map((n) => (n === br ? newNode : n)),
+    } as AnyNode
+  }
+
+  if (fold.operation === 'threshold') {
+    const [v0, v1, v2, v3] = fold.operands
+    if (v2.operation === 'const' || v3.operation === 'const') {
+      return {
+        operation: 'threshold',
+        operands: [v0, v1, replace(v2) as any, replace(v3) as any],
+      }
+    }
+  }
+  throw new Error(`Unsupported dynamic operand ${fold.operation}`)
 }
 
 export const testing = {

@@ -19,27 +19,6 @@ const stats = [
   'heal_',
 ] as const
 
-export const presets = [
-  'preset0',
-  'preset1',
-  'preset2',
-  'preset3',
-  'preset4',
-  'preset5',
-  'preset6',
-  'preset7',
-  'preset8',
-  'preset9',
-] as const
-export const entryTypes = [
-  'own',
-  'enemy',
-  'team',
-  'target',
-  'teamBuff',
-  'notOwnBuff',
-  'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
-] as const
 export const sheets = [
   'agg',
   'iso',
@@ -56,7 +35,7 @@ export const sheets = [
 export const members = ['0', '1', '2', '3'] as const
 
 export type Stat = (typeof stats)[number]
-export type Preset = (typeof presets)[number]
-export type EntryType = (typeof entryTypes)[number]
 export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
+export type Src = Member | null
+export type Dst = Member | null

@@ -1,0 +1,1007 @@
+{
+  "rarity": "S",
+  "attribute": "electric",
+  "specialty": "attack",
+  "stats": {
+    "atk_base": 134,
+    "atk_growth": 8.1654,
+    "def_base": 49,
+    "def_growth": 6.6882,
+    "hp_base": 617,
+    "hp_growth": 83.7238,
+    "anomMas": 94,
+    "anomProf": 93,
+    "impact": 93,
+    "enerRegen": 1.2
+  },
+  "promotionStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 423, "atk": 48, "def": 34 },
+    { "hp": 847, "atk": 95, "def": 68 },
+    { "hp": 1270, "atk": 143, "def": 101 },
+    { "hp": 1694, "atk": 191, "def": 135 },
+    { "hp": 2117, "atk": 239, "def": 169 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "crit_": 0.048 },
+    { "atk_base": 25, "crit_": 0.048 },
+    { "atk_base": 25, "crit_": 0.096 },
+    { "atk_base": 50, "crit_": 0.096 },
+    { "atk_base": 50, "crit_": 0.144 },
+    { "atk_base": 75, "crit_": 0.144 }
+  ],
+  "skills": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "SilverAnby_Skill_Normal_Title",
+          "Desc": "SilverAnby_Skill_Normal_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_Normal_Mark01_Title",
+          "Desc": "SilverAnby_Skill_Normal_Mark01_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_Normal_Title",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1381001, Prop:1001}",
+              "Param": {
+                "1381001": {
+                  "Main": 43.1,
+                  "Growth": 0.04,
+                  "Format": "%",
+                  "DamagePercentage": 0.431,
+                  "DamagePercentageGrowth": 0.04,
+                  "StunRatio": 0.216,
+                  "StunRatioGrowth": 0.01,
+                  "SpRecovery": 70.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 539,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 19.58,
+                  "SpConsume": 0,
+                  "AttackData": [55608]
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1381002, Prop:1001}",
+              "Param": {
+                "1381002": {
+                  "Main": 87.5,
+                  "Growth": 0.08,
+                  "Format": "%",
+                  "DamagePercentage": 0.875,
+                  "DamagePercentageGrowth": 0.08,
+                  "StunRatio": 0.675,
+                  "StunRatioGrowth": 0.031,
+                  "SpRecovery": 220.7,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1685.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 61.29,
+                  "SpConsume": 0,
+                  "AttackData": [97524]
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1381003, Prop:1001}",
+              "Param": {
+                "1381003": {
+                  "Main": 177.8,
+                  "Growth": 0.162,
+                  "Format": "%",
+                  "DamagePercentage": 1.778,
+                  "DamagePercentageGrowth": 0.162,
+                  "StunRatio": 1.294,
+                  "StunRatioGrowth": 0.059,
+                  "SpRecovery": 423.4,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3236.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 117.6,
+                  "SpConsume": 0,
+                  "AttackData": [178457]
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit DMG Multiplier",
+              "Desc": "{Skill:1381004, Prop:1001}",
+              "Param": {
+                "1381004": {
+                  "Main": 224.2,
+                  "Growth": 0.204,
+                  "Format": "%",
+                  "DamagePercentage": 2.242,
+                  "DamagePercentageGrowth": 0.204,
+                  "StunRatio": 1.913,
+                  "StunRatioGrowth": 0.087,
+                  "SpRecovery": 625.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4782.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 173.82,
+                  "SpConsume": 0,
+                  "AttackData": [197088]
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1381001, Prop:1002}",
+              "Param": {
+                "1381001": {
+                  "Main": 21.6,
+                  "Growth": 0.01,
+                  "Format": "%",
+                  "DamagePercentage": 0.431,
+                  "DamagePercentageGrowth": 0.04,
+                  "StunRatio": 0.216,
+                  "StunRatioGrowth": 0.01,
+                  "SpRecovery": 70.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 539,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 19.58,
+                  "SpConsume": 0,
+                  "AttackData": [55608]
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1381002, Prop:1002}",
+              "Param": {
+                "1381002": {
+                  "Main": 67.5,
+                  "Growth": 0.031,
+                  "Format": "%",
+                  "DamagePercentage": 0.875,
+                  "DamagePercentageGrowth": 0.08,
+                  "StunRatio": 0.675,
+                  "StunRatioGrowth": 0.031,
+                  "SpRecovery": 220.7,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1685.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 61.29,
+                  "SpConsume": 0,
+                  "AttackData": [97524]
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1381003, Prop:1002}",
+              "Param": {
+                "1381003": {
+                  "Main": 129.4,
+                  "Growth": 0.059,
+                  "Format": "%",
+                  "DamagePercentage": 1.778,
+                  "DamagePercentageGrowth": 0.162,
+                  "StunRatio": 1.294,
+                  "StunRatioGrowth": 0.059,
+                  "SpRecovery": 423.4,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3236.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 117.6,
+                  "SpConsume": 0,
+                  "AttackData": [178457]
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Daze Multiplier",
+              "Desc": "{Skill:1381004, Prop:1002}",
+              "Param": {
+                "1381004": {
+                  "Main": 191.3,
+                  "Growth": 0.087,
+                  "Format": "%",
+                  "DamagePercentage": 2.242,
+                  "DamagePercentageGrowth": 0.204,
+                  "StunRatio": 1.913,
+                  "StunRatioGrowth": 0.087,
+                  "SpRecovery": 625.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4782.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 173.82,
+                  "SpConsume": 0,
+                  "AttackData": [197088]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "SilverAnby_Skill_Normal_Mark01_Title",
+          "Param": [
+            {
+              "Name": "SilverAnby_Property_Normal_Mark01_Desc_Dmg_01",
+              "Desc": "{Skill:1381005, Prop:1001}",
+              "Param": {
+                "1381005": {
+                  "Main": 330,
+                  "Growth": 0.3,
+                  "Format": "%",
+                  "DamagePercentage": 3.3,
+                  "DamagePercentageGrowth": 0.3,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "SilverAnby_Property_Normal_Mark01_Desc_Stun_01",
+              "Desc": "{Skill:1381005, Prop:1001}",
+              "Param": {
+                "1381005": {
+                  "Main": 330,
+                  "Growth": 0.3,
+                  "Format": "%",
+                  "DamagePercentage": 3.3,
+                  "DamagePercentageGrowth": 0.3,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "SilverAnby_Skill_Evade_Title",
+          "Desc": "SilverAnby_Skill_Evade_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_Rush_Title",
+          "Desc": "SilverAnby_Skill_Rush_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_Counter_Title",
+          "Desc": "SilverAnby_Skill_Counter_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_Rush_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381009, Prop:1001}",
+              "Param": {
+                "1381009": {
+                  "Main": 247.5,
+                  "Growth": 0.225,
+                  "Format": "%",
+                  "DamagePercentage": 2.475,
+                  "DamagePercentageGrowth": 0.225,
+                  "StunRatio": 0.413,
+                  "StunRatioGrowth": 0.019,
+                  "SpRecovery": 135,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1031.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 37.48,
+                  "SpConsume": 0,
+                  "AttackData": [53227]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381009, Prop:1002}",
+              "Param": {
+                "1381009": {
+                  "Main": 41.3,
+                  "Growth": 0.019,
+                  "Format": "%",
+                  "DamagePercentage": 2.475,
+                  "DamagePercentageGrowth": 0.225,
+                  "StunRatio": 0.413,
+                  "StunRatioGrowth": 0.019,
+                  "SpRecovery": 135,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1031.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 37.48,
+                  "SpConsume": 0,
+                  "AttackData": [53227]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "SilverAnby_Skill_Counter_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381010, Prop:1001}",
+              "Param": {
+                "1381010": {
+                  "Main": 238.7,
+                  "Growth": 0.217,
+                  "Format": "%",
+                  "DamagePercentage": 2.387,
+                  "DamagePercentageGrowth": 0.217,
+                  "StunRatio": 2.09,
+                  "StunRatioGrowth": 0.095,
+                  "SpRecovery": 324,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4950,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 90,
+                  "SpConsume": 0,
+                  "AttackData": [532500]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381010, Prop:1002}",
+              "Param": {
+                "1381010": {
+                  "Main": 209,
+                  "Growth": 0.095,
+                  "Format": "%",
+                  "DamagePercentage": 2.387,
+                  "DamagePercentageGrowth": 0.217,
+                  "StunRatio": 2.09,
+                  "StunRatioGrowth": 0.095,
+                  "SpRecovery": 324,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4950,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 90,
+                  "SpConsume": 0,
+                  "AttackData": [532500]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "SilverAnby_Skill_Special_Title",
+          "Desc": "SilverAnby_Skill_Special_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_ExSpecial_Title",
+          "Desc": "SilverAnby_Skill_ExSpecial_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_Special_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381006, Prop:1001}",
+              "Param": {
+                "1381006": {
+                  "Main": 108.2,
+                  "Growth": 0.099,
+                  "Format": "%",
+                  "DamagePercentage": 1.082,
+                  "DamagePercentageGrowth": 0.099,
+                  "StunRatio": 0.541,
+                  "StunRatioGrowth": 0.025,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1353,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 49.16,
+                  "SpConsume": 0,
+                  "AttackData": [69817]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381006, Prop:1002}",
+              "Param": {
+                "1381006": {
+                  "Main": 54.1,
+                  "Growth": 0.025,
+                  "Format": "%",
+                  "DamagePercentage": 1.082,
+                  "DamagePercentageGrowth": 0.099,
+                  "StunRatio": 0.541,
+                  "StunRatioGrowth": 0.025,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1353,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 49.16,
+                  "SpConsume": 0,
+                  "AttackData": [69817]
+                }
+              }
+            },
+            {
+              "Name": "SilverAnby_Property_Special_ChargeAttack_Desc_Dmg_03",
+              "Desc": "{Skill:1381007, Prop:1001}",
+              "Param": {
+                "1381007": {
+                  "Main": 38.2,
+                  "Growth": 0.035,
+                  "Format": "%",
+                  "DamagePercentage": 0.382,
+                  "DamagePercentageGrowth": 0.035,
+                  "StunRatio": 0.294,
+                  "StunRatioGrowth": 0.014,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 734.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 26.69,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "SilverAnby_Property_Special_ChargeAttack_Desc_Stun_03",
+              "Desc": "{Skill:1381007, Prop:1002}",
+              "Param": {
+                "1381007": {
+                  "Main": 29.4,
+                  "Growth": 0.014,
+                  "Format": "%",
+                  "DamagePercentage": 0.382,
+                  "DamagePercentageGrowth": 0.035,
+                  "StunRatio": 0.294,
+                  "StunRatioGrowth": 0.014,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 734.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 26.69,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "SilverAnby_Skill_ExSpecial_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381008, Prop:1001}",
+              "Param": {
+                "1381008": {
+                  "Main": 472.7,
+                  "Growth": 0.43,
+                  "Format": "%",
+                  "DamagePercentage": 4.727,
+                  "DamagePercentageGrowth": 0.43,
+                  "StunRatio": 4.586,
+                  "StunRatioGrowth": 0.209,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 16755.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 464.96,
+                  "SpConsume": 0,
+                  "AttackData": [990000]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381008, Prop:1002}",
+              "Param": {
+                "1381008": {
+                  "Main": 458.6,
+                  "Growth": 0.209,
+                  "Format": "%",
+                  "DamagePercentage": 4.727,
+                  "DamagePercentageGrowth": 0.43,
+                  "StunRatio": 4.586,
+                  "StunRatioGrowth": 0.209,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 16755.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 464.96,
+                  "SpConsume": 0,
+                  "AttackData": [990000]
+                }
+              }
+            },
+            {
+              "Name": "Energy Cost",
+              "Desc": "SilverAnby_Property_ExSpecial_SpCostValue_01"
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        {
+          "Name": "SilverAnby_Skill_QTE_Title",
+          "Desc": "SilverAnby_Skill_QTE_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_ExQTE_Title",
+          "Desc": "SilverAnby_Skill_ExQTE_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_QTE_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381011, Prop:1001}",
+              "Param": {
+                "1381011": {
+                  "Main": 670,
+                  "Growth": 0.61,
+                  "Format": "%",
+                  "DamagePercentage": 6.7,
+                  "DamagePercentageGrowth": 0.61,
+                  "StunRatio": 2.311,
+                  "StunRatioGrowth": 0.106,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 24065.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 409.5,
+                  "SpConsume": 0,
+                  "AttackData": [298201]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381011, Prop:1002}",
+              "Param": {
+                "1381011": {
+                  "Main": 231.1,
+                  "Growth": 0.106,
+                  "Format": "%",
+                  "DamagePercentage": 6.7,
+                  "DamagePercentageGrowth": 0.61,
+                  "StunRatio": 2.311,
+                  "StunRatioGrowth": 0.106,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 24065.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 409.5,
+                  "SpConsume": 0,
+                  "AttackData": [298201]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "SilverAnby_Skill_ExQTE_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381012, Prop:1001}",
+              "Param": {
+                "1381012": {
+                  "Main": 1995.6,
+                  "Growth": 1.815,
+                  "Format": "%",
+                  "DamagePercentage": 19.956,
+                  "DamagePercentageGrowth": 1.815,
+                  "StunRatio": 2.659,
+                  "StunRatioGrowth": 0.121,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 241.66,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381012, Prop:1002}",
+              "Param": {
+                "1381012": {
+                  "Main": 265.9,
+                  "Growth": 0.121,
+                  "Format": "%",
+                  "DamagePercentage": 19.956,
+                  "DamagePercentageGrowth": 1.815,
+                  "StunRatio": 2.659,
+                  "StunRatioGrowth": 0.121,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 241.66,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "SilverAnby_Skill_BeHitAid_Title",
+          "Desc": "SilverAnby_Skill_BeHitAid_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_ParryAid_Title",
+          "Desc": "SilverAnby_Skill_ParryAid_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_AssaultAid_Title",
+          "Desc": "SilverAnby_Skill_AssaultAid_Desc"
+        },
+        {
+          "Name": "SilverAnby_Skill_BeHitAid_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381013, Prop:1001}",
+              "Param": {
+                "1381013": {
+                  "Main": 102.7,
+                  "Growth": 0.094,
+                  "Format": "%",
+                  "DamagePercentage": 1.027,
+                  "DamagePercentageGrowth": 0.094,
+                  "StunRatio": 1.027,
+                  "StunRatioGrowth": 0.047,
+                  "SpRecovery": 168,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2568.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 93.33,
+                  "SpConsume": 0,
+                  "AttackData": [132534]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381013, Prop:1002}",
+              "Param": {
+                "1381013": {
+                  "Main": 102.7,
+                  "Growth": 0.047,
+                  "Format": "%",
+                  "DamagePercentage": 1.027,
+                  "DamagePercentageGrowth": 0.094,
+                  "StunRatio": 1.027,
+                  "StunRatioGrowth": 0.047,
+                  "SpRecovery": 168,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2568.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 93.33,
+                  "SpConsume": 0,
+                  "AttackData": [132534]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "SilverAnby_Skill_ParryAid_Title",
+          "Param": [
+            {
+              "Name": "Light Defensive Daze Multiplier",
+              "Desc": "{Skill:1381014, Prop:1002}",
+              "Param": {
+                "1381014": {
+                  "Main": 271.3,
+                  "Growth": 0.124,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 2.713,
+                  "StunRatioGrowth": 0.124,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "Heavy Defensive Daze Multiplier",
+              "Desc": "{Skill:1381015, Prop:1002}",
+              "Param": {
+                "1381015": {
+                  "Main": 342.8,
+                  "Growth": 0.156,
+                  "Format": "%",
+                  "DamagePercentage": 1.1,
+                  "DamagePercentageGrowth": 0.1,
+                  "StunRatio": 3.428,
+                  "StunRatioGrowth": 0.156,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "Chain Defensive Daze Multiplier",
+              "Desc": "{Skill:1381016, Prop:1002}",
+              "Param": {
+                "1381016": {
+                  "Main": 166.8,
+                  "Growth": 0.076,
+                  "Format": "%",
+                  "DamagePercentage": 1.283,
+                  "DamagePercentageGrowth": 0.117,
+                  "StunRatio": 1.668,
+                  "StunRatioGrowth": 0.076,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "SilverAnby_Skill_AssaultAid_Title",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381017, Prop:1001}",
+              "Param": {
+                "1381017": {
+                  "Main": 432.8,
+                  "Growth": 0.394,
+                  "Format": "%",
+                  "DamagePercentage": 4.328,
+                  "DamagePercentageGrowth": 0.394,
+                  "StunRatio": 3.801,
+                  "StunRatioGrowth": 0.173,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 12138.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 369.47,
+                  "SpConsume": 0,
+                  "AttackData": [286367]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381017, Prop:1002}",
+              "Param": {
+                "1381017": {
+                  "Main": 380.1,
+                  "Growth": 0.173,
+                  "Format": "%",
+                  "DamagePercentage": 4.328,
+                  "DamagePercentageGrowth": 0.394,
+                  "StunRatio": 3.801,
+                  "StunRatioGrowth": 0.173,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 12138.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 369.47,
+                  "SpConsume": 0,
+                  "AttackData": [286367]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "skillList": {},
+  "cores": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1381501,
+        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
+        "Desc": ["SilverAnby_UniqueSkill_01_Desc", "SilverAnby_MathSkill_Desc"]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1381502,
+        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
+        "Desc": ["SilverAnby_UniqueSkill_02_Desc", "SilverAnby_MathSkill_Desc"]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1381503,
+        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
+        "Desc": ["SilverAnby_UniqueSkill_03_Desc", "SilverAnby_MathSkill_Desc"]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1381504,
+        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
+        "Desc": ["SilverAnby_UniqueSkill_04_Desc", "SilverAnby_MathSkill_Desc"]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1381505,
+        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
+        "Desc": ["SilverAnby_UniqueSkill_05_Desc", "SilverAnby_MathSkill_Desc"]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1381506,
+        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
+        "Desc": ["SilverAnby_UniqueSkill_06_Desc", "SilverAnby_MathSkill_Desc"]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1381507,
+        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
+        "Desc": ["SilverAnby_UniqueSkill_07_Desc", "SilverAnby_MathSkill_Desc"]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110509": 2 },
+      "3": { "10": 28000, "110509": 4 },
+      "4": { "10": 60000, "110002": 2, "110509": 9 },
+      "5": { "10": 100000, "110002": 3, "110509": 15 },
+      "6": { "10": 200000, "110002": 4, "110509": 30 }
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "Level": 1,
+      "Name": "SilverAnby_Talent_01_Title",
+      "Desc": "SilverAnby_Talent_01_Desc_01",
+      "Desc2": "SilverAnby_Talent_01_Desc_02"
+    },
+    "2": {
+      "Level": 2,
+      "Name": "SilverAnby_Talent_02_Title",
+      "Desc": "SilverAnby_Talent_02_Desc_01",
+      "Desc2": "SilverAnby_Talent_02_Desc_02"
+    },
+    "3": {
+      "Level": 3,
+      "Name": "SilverAnby_Talent_03_Title",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "SilverAnby_Talent_03_Desc_02"
+    },
+    "4": {
+      "Level": 4,
+      "Name": "SilverAnby_Talent_04_Title",
+      "Desc": "SilverAnby_Talent_04_Desc_01",
+      "Desc2": "SilverAnby_Talent_04_Desc_02"
+    },
+    "5": {
+      "Level": 5,
+      "Name": "SilverAnby_Talent_05_Title",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "SilverAnby_Talent_05_Desc_02"
+    },
+    "6": {
+      "Level": 6,
+      "Name": "SilverAnby_Talent_06_Title",
+      "Desc": "SilverAnby_Talent_06_Desc_01",
+      "Desc2": "SilverAnby_Talent_06_Desc_02"
+    }
+  }
+}

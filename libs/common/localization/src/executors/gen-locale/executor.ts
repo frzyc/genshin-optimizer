@@ -7,8 +7,9 @@ import type { GenLocaleExecutorSchema } from './schema'
  * common: /libs/common/localization
  * gi: /libs/gi/localization
  * sr: /libs/sr/localization
+ * zzz: /libs/zzz/localization
  */
-type ProjNames = 'common' | 'gi' | 'sr'
+type ProjNames = 'common' | 'gi' | 'sr' | 'zzz'
 export const projRootPath = (cat: ProjNames) =>
   `${process.env['NX_WORKSPACE_ROOT']}/libs/${cat}/localization/`
 
@@ -25,7 +26,12 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       const json = JSON.parse(raw)
       await Promise.all(
         Object.entries(json).map(async ([ns, entry]) => {
-          if (ns.startsWith('sr_')) {
+          if (ns.startsWith('zzz_')) {
+            await dumpPrettyFile(
+              `${localeDir('zzz')}${lang}/${ns.slice(3)}.json`,
+              entry
+            )
+          } else if (ns.startsWith('sr_')) {
             await dumpPrettyFile(
               `${localeDir('sr')}${lang}/${ns.slice(3)}.json`,
               entry
@@ -52,6 +58,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
    * common: XXX -> common_XXX
    * gi XXX -> XXX (no change due to legacy)
    * sr XXX -> sr_XXX
+   * zzz XXX -> zzz_XXX
    */
   const main = {} as { [key: string]: object }
 
@@ -70,6 +77,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
   enToMain(`${localeDir('common')}en/`, 'common_')
   enToMain(`${localeDir('gi')}en/`) // do not add prefix to gi files
   enToMain(`${localeDir('sr')}en/`, 'sr_')
+  enToMain(`${localeDir('zzz')}en/`, 'zzz_')
   // dump main file to common lib
   dumpFile(`${projRootPath('common')}/main_gen.json`, main)
 

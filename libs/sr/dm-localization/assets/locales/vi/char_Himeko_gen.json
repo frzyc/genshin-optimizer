@@ -29,7 +29,7 @@
       "0": {
         "name": "Truy Kích Dồn Dập",
         "fullDesc": "Khi Điểm Yếu của mục tiêu địch bị phá vỡ, Himeko sẽ nhận Nạp Năng Lượng, giới hạn là {{2}} điểm.<br>Sau khi phe ta tấn công, nếu Nạp Năng Lượng của Himeko đạt giới hạn sẽ phát động ngay 1 lần Đòn Đánh Theo Sau, gây Sát Thương Hỏa cho toàn phe địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Himeko, đồng thời tiêu hao toàn bộ Nạp Năng Lượng.<br>Khi bắt đầu chiến đấu sẽ nhận 1 điểm Nạp Năng Lượng.",
-        "shortDesc": "Khi điểm yếu của kẻ địch bị phá vỡ sẽ nhận nạp năng lượng.<br>Sau khi mục tiêu phe ta tấn công, nếu nạp năng lượng đạt giới hạn, <orangeStrong>sẽ phát động ngay Đòn Đánh Theo Sau</orangeStrong>, gây Sát Thương Hỏa cho <orangeStrong>toàn bộ kẻ địch</orangeStrong> và tiêu hao tất cả nạp năng lượng.<br>Khi bắt đầu chiến đấu sẽ nhận 1 điểm nạp năng lượng.",
+        "shortDesc": "Khi trận đấu bắt đầu và điểm yếu của kẻ địch bị phá vỡ sẽ nhận Nạp Năng Lượng.<br>Sau khi mục tiêu phe ta tấn công, nếu Nạp Năng Lượng đạt giới hạn, <orangeStrong>sẽ phát động Đòn Đánh Theo Sau</orangeStrong>, gây Sát Thương Hỏa cho <orangeStrong>toàn bộ kẻ địch</orangeStrong> và tiêu hao tất cả Nạp Năng Lượng.",
         "tag": "Đánh Lan"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Ngôi Sao Lửa",
-        "fullDesc": "Khi thi triển tấn công có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công của Himeko.",
+        "fullDesc": "Khi thi triển tấn công có {{1, percent}}% xác suất cơ bản khiến mục tiêu phe địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, mục tiêu phe địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công của Himeko.",
         "shortDesc": "",
         "tag": ""
       }

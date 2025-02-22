@@ -154,7 +154,7 @@
   "constellation3": {
     "name": "Griffe du protosuchien",
     "description": {
-      "0": "Niveau d'aptitude <strong>Chasse canopéenne : Altitude</strong> +3.",
+      "0": "Niveau d'aptitude <strong>Chasse canopéenne : En altitude</strong> +3.",
       "1": "Niveau max : 15"
     }
   },
@@ -176,7 +176,7 @@
     "name": "Forme de bête augurale",
     "description": {
       "0": "Après avoir touché un ennemi, le canon à pointe d'écailles rebondit une fois entre les ennemis, infligeant des <dendro>DGT Dendro</dendro> d'une valeur équivalant à 700 % de l'ATQ de Kinich.",
-      "1": "Si ce canon à pointe d'écailles déclenche les améliorations que l'aptitude passive « Pacte de l'esprit enflammé » ou la constellation « Paume de coléoptère » peuvent lui conférer, l'attaque rebondissante en bénéfice également."
+      "1": "Si ce canon à pointe d'écailles déclenche les améliorations que l'aptitude passive « Pacte de l'esprit enflammé » ou la constellation « Paume de coléoptère » peuvent lui conférer, l'attaque rebondissante en bénéficie également."
     }
   }
 }

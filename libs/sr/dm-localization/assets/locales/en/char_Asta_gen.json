@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Sparks",
-        "fullDesc": "Asta's Basic ATK has a {{1, percent}}% base chance to Burn an enemy target for {{2}} turn(s).<br>Burned enemies take Fire DoT equal to {{3, percent}}% of DMG dealt by Asta's Basic ATK at the start of each turn.",
+        "fullDesc": "Asta's Basic ATK has a {{1, percent}}% base chance to Burn the enemy target for {{2}} turn(s).<br>Burned enemies take Fire DoT equal to {{3, percent}}% of DMG dealt by Asta's Basic ATK at the start of each turn.",
         "shortDesc": "",
         "tag": ""
       }

@@ -1,0 +1,7 @@
+{
+  "name": "Proto Punk",
+  "desc2": "Increases Shield effect by 15%.",
+  "desc4": "When any squad member triggers a <color=#FFFFFF>Defensive Assist</color> or <color=#FFFFFF>Evasive Assist</color>, all squad members deal 15% increased DMG, lasting 10s. Passive effects of the same name do not stack.",
+  "story": "Carefully selected as a recommended Drive Disc series by the Hollow Investigative Association. It offers a significant Ether increase, but also requires more effort to control.",
+  "icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitProtoPunk.png"
+}

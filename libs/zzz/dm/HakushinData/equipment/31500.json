@@ -1,0 +1,9 @@
+{
+  "Id": 31500,
+  "Name": "Soul Rock",
+  "Desc2": "DEF +16%",
+  "Desc4": "Upon receiving an enemy attack and losing HP, the equipper takes 40% less DMG for 2.5s. This effect can trigger once every 15s.",
+  "Story": "A mysterious and colorful Drive Disc. The creator and Master Copy are both unknown. Although many different versions burned versions are circulating among Hollow Raiders, where the original comes from remains a mystery.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitSoulRock.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitSoulRock.png"
+}

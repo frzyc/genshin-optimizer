@@ -75,7 +75,7 @@ export class DataManagerBase<
     key: CacheKey,
     valueOrFunc:
       | Partial<StorageValue>
-      | ((v: StorageValue) => Partial<StorageValue> | void),
+      | ((v: StorageValue) => Partial<StorageValue> | void | false),
     notify = true
   ): boolean {
     const old = this.getStorage(key)
@@ -85,6 +85,7 @@ export class DataManagerBase<
     }
     const value =
       typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
+    if (value === false) return false
     const validated = this.validate({ ...(old ?? {}), ...value }, key)
     if (!validated) {
       this.trigger(key, 'invalid', value)

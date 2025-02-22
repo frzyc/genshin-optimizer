@@ -21,7 +21,7 @@ export class DataManager<
     // Delete it from storage
     for (const key of this.database.storage.keys)
       if (
-        key.startsWith(this.goKeySingle) &&
+        key.startsWith(`${this.goKeySingle}_`) &&
         !this.set(this.toCacheKey(key), {})
       ) {
         this.database.storage.remove(key)

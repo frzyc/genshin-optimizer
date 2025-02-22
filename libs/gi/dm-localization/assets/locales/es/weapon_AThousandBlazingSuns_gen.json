@@ -1,0 +1,34 @@
+{
+  "name": "Mil Soles Abrasadores",
+  "description": {
+    "0": "Una gran espada deslumbrante como el sol naciente. Ha sido testigo de la extinción y el resurgimiento de innumerables soles."
+  },
+  "passiveName": "Amanecer del crepúsculo",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental o Definitiva, se obtiene el efecto de “brillo abrasador”, de manera que el Daño CRIT aumenta en un <cryo>20%</cryo> y el ATQ aumenta en un <cryo>28%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s.",
+      "1": "Mientras este efecto esté activo, su duración aumenta en 2 s después de infligir Daño Elemental con un Ataque Normal o Cargado. Esto solo puede ocurrir una vez por segundo y, como máximo, su duración puede aumentar en 6 s.",
+      "2": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y la duración no se contará cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental o Definitiva, se obtiene el efecto de “brillo abrasador”, de manera que el Daño CRIT aumenta en un <cryo>25%</cryo> y el ATQ aumenta en un <cryo>35%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s.",
+      "1": "Mientras este efecto esté activo, su duración aumenta en 2 s después de infligir Daño Elemental con un Ataque Normal o Cargado. Esto solo puede ocurrir una vez por segundo y, como máximo, su duración puede aumentar en 6 s.",
+      "2": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y la duración no se contará cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental o Definitiva, se obtiene el efecto de “brillo abrasador”, de manera que el Daño CRIT aumenta en un <cryo>30%</cryo> y el ATQ aumenta en un <cryo>42%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s.",
+      "1": "Mientras este efecto esté activo, su duración aumenta en 2 s después de infligir Daño Elemental con un Ataque Normal o Cargado. Esto solo puede ocurrir una vez por segundo y, como máximo, su duración puede aumentar en 6 s.",
+      "2": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y la duración no se contará cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental o Definitiva, se obtiene el efecto de “brillo abrasador”, de manera que el Daño CRIT aumenta en un <cryo>35%</cryo> y el ATQ aumenta en un <cryo>49%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s.",
+      "1": "Mientras este efecto esté activo, su duración aumenta en 2 s después de infligir Daño Elemental con un Ataque Normal o Cargado. Esto solo puede ocurrir una vez por segundo y, como máximo, su duración puede aumentar en 6 s.",
+      "2": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y la duración no se contará cuando el portador de esta arma esté en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental o Definitiva, se obtiene el efecto de “brillo abrasador”, de manera que el Daño CRIT aumenta en un <cryo>40%</cryo> y el ATQ aumenta en un <cryo>56%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s.",
+      "1": "Mientras este efecto esté activo, su duración aumenta en 2 s después de infligir Daño Elemental con un Ataque Normal o Cargado. Esto solo puede ocurrir una vez por segundo y, como máximo, su duración puede aumentar en 6 s.",
+      "2": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y la duración no se contará cuando el portador de esta arma esté en tu equipo pero no en uso."
+    }
+  }
+}

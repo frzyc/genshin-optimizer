@@ -5,6 +5,7 @@ import {
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { sortFunction } from '@genshin-optimizer/common/util'
 import { allPathKeys, allRarityKeys } from '@genshin-optimizer/sr/consts'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
   lightConeSortConfigs,
   lightConeSortKeys,
@@ -21,7 +22,6 @@ import {
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDatabaseContext } from '../Context'
 import { LightConeCard } from './LightConeCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }

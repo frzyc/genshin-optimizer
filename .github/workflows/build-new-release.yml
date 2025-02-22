@@ -11,8 +11,6 @@ jobs:
     if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release') }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -41,6 +39,7 @@ jobs:
       - name: Setup .env
         run: |
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
+          printf '%s' "$ENVFILE" > apps/zzz-frontend/.env.local
         env:
           ENVFILE: ${{ vars.ENVFILE }}
       - name: Build genshin-optimizer

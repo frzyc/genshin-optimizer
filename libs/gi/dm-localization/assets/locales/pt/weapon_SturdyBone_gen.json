@@ -1,0 +1,24 @@
+{
+  "name": "Osso Robusto",
+  "description": {
+    "0": "Uma espada longa feita de osso que se tornou ainda mais resistente após ter sido golpeada e balançada inúmeras vezes. Diz-se que esta era a arma fiel do herói Wanjiru."
+  },
+  "passiveName": "Orgulho do Armador",
+  "passiveDescription": {
+    "0": {
+      "0": "Reduz o consumo de Stamina de Correr ou de Habilidades que substituem Correr em 15%. Além disso, ao Correr ou usar uma Habilidade que substitui Correr, aumenta o Dano causado por Ataques Normais. O valor do aumento é baseado em <cryo>16%</cryo> do ATQ. Esse efeito desaparecerá depois ser desencadeado 18 vezes ou depois de 7s."
+    },
+    "1": {
+      "0": "Reduz o consumo de Stamina de Correr ou de Habilidades que substituem Correr em 15%. Além disso, ao Correr ou usar uma Habilidade que substitui Correr, aumenta o Dano causado por Ataques Normais. O valor do aumento é baseado em <cryo>20%</cryo> do ATQ. Esse efeito desaparecerá depois ser desencadeado 18 vezes ou depois de 7s."
+    },
+    "2": {
+      "0": "Reduz o consumo de Stamina de Correr ou de Habilidades que substituem Correr em 15%. Além disso, ao Correr ou usar uma Habilidade que substitui Correr, aumenta o Dano causado por Ataques Normais. O valor do aumento é baseado em <cryo>24%</cryo> do ATQ. Esse efeito desaparecerá depois ser desencadeado 18 vezes ou depois de 7s."
+    },
+    "3": {
+      "0": "Reduz o consumo de Stamina de Correr ou de Habilidades que substituem Correr em 15%. Além disso, ao Correr ou usar uma Habilidade que substitui Correr, aumenta o Dano causado por Ataques Normais. O valor do aumento é baseado em <cryo>28%</cryo> do ATQ. Esse efeito desaparecerá depois ser desencadeado 18 vezes ou depois de 7s."
+    },
+    "4": {
+      "0": "Reduz o consumo de Stamina de Correr ou de Habilidades que substituem Correr em 15%. Além disso, ao Correr ou usar uma Habilidade que substitui Correr, aumenta o Dano causado por Ataques Normais. O valor do aumento é baseado em <cryo>32%</cryo> do ATQ. Esse efeito desaparecerá depois ser desencadeado 18 vezes ou depois de 7s."
+    }
+  }
+}

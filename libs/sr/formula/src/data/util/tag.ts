@@ -1,16 +1,18 @@
-import type { IBaseConditionalData } from '@genshin-optimizer/common/formula'
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
+import type { Desc as BaseDesc } from '@genshin-optimizer/game-opt/engine'
 import {
-  cmpEq,
-  cmpNE,
-  constant,
-  subscript,
-} from '@genshin-optimizer/pando/engine'
-import type { Member, Sheet, Stat } from './listing'
+  createAllBoolConditionals,
+  createAllListConditionals,
+  createAllNumConditionals,
+  createConditionalEntries,
+  createConvert,
+  tag,
+} from '@genshin-optimizer/game-opt/engine'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
+import { constant } from '@genshin-optimizer/pando/engine'
+import type { Dst, Sheet, Src, Stat } from './listing'
 import { bonusAbilities, statBoosts } from './listing'
-import type { Read, Tag } from './read'
-import { reader, tag } from './read'
+import { reader, type Read, type Tag } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -66,7 +68,7 @@ export function priorityTable(
  * only include contributions from character and custom values.
  */
 
-type Desc = { sheet: Sheet | undefined; accu: Read['accu'] }
+type Desc = BaseDesc<Tag, Src, Dst, Sheet>
 const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
 const iso: Desc = { sheet: 'iso', accu: 'unique' }
@@ -94,6 +96,7 @@ const stats: Record<Stat, Desc> = {
   heal_: agg,
   dmg_: agg,
   resPen_: agg,
+  common_dmg_: agg,
   weakness_: agg,
   brEfficiency_: agg,
 } as const
@@ -114,7 +117,7 @@ export const ownTag = {
     ...objKeyMap(bonusAbilities, () => isoSum),
     ...objKeyMap(statBoosts, () => isoSum),
   },
-  lightCone: { lvl: iso, ascension: iso, superimpose: iso },
+  lightCone: { lvl: iso, ascension: iso, superimpose: isoSum },
   common: {
     count: isoSum,
     path: iso,
@@ -148,34 +151,19 @@ export const enemyTag = {
   },
 } as const
 
-export function convert<V extends Record<string, Record<string, Desc>>>(
-  v: V,
-  tag: Omit<Tag, 'qt' | 'q'>
-): {
-  [j in 'withTag' | keyof V]: j extends 'withTag'
-    ? (_: Tag) => Read
-    : { [k in keyof V[j]]: Read }
-} {
-  const r = reader.withTag(tag)
-  return r.withAll(
-    'qt',
-    Object.keys(v),
-    (r, qt) =>
-      r.withAll('q', Object.keys(v[qt]), (r, q) => {
-        if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
-        const { sheet, accu } = v[qt][q]
-        // `tag.sheet` overrides `Desc`
-        if (sheet && !tag.sheet) r = r.sheet(sheet)
-        return r[accu]
-      }),
-    { withTag: (tag: Tag) => r.withTag(tag) }
-  ) as any
-}
+export const convert = createConvert<Read, Tag, Src, Dst, Sheet>()
 
 // Default queries
 const noName = { src: null, name: null }
-export const own = convert(ownTag, { et: 'own', dst: null })
-export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
+export const own = convert(ownTag, {
+  et: 'own',
+  dst: null,
+})
+export const team = convert(ownTag, {
+  et: 'team',
+  dst: null,
+  ...noName,
+})
 export const target = convert(ownTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
@@ -187,67 +175,18 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(ownTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
+const nullTag = {
+  name: null,
+  elementalType: null,
+  damageType1: null,
+  damageType2: null,
+}
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'own', sheet, qt: 'misc' }).withAll('q', [])
-export const allBoolConditionals = (sheet: Sheet, ignored?: CondIgnored) =>
-  allConditionals(sheet, ignored, { type: 'bool' }, (r) => ({
-    ifOn: (node: NumNode | number, off?: NumNode | number) =>
-      cmpNE(r, 0, node, off),
-    ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
-  }))
-export const allListConditionals = <T extends string>(
-  sheet: Sheet,
-  list: T[],
-  ignored?: CondIgnored
-) =>
-  allConditionals(sheet, ignored, { type: 'list', list }, (r) => ({
-    map: (table: Record<T, number>, def = 0) =>
-      subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
-    value: r,
-  }))
-export const allNumConditionals = (
-  sheet: Sheet,
-  int_only = true,
-  min?: number,
-  max?: number,
-  ignored?: CondIgnored
-) =>
-  allConditionals(sheet, ignored, { type: 'num', int_only, min, max }, (r) => r)
-
-type MemAll = Member | 'all'
-export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
-  let tag: Tag = { sheet, qt: 'cond' }
-  if (src !== 'all') tag = { ...tag, src }
-  if (dst !== 'all') tag = { ...tag, dst }
-  const base = own.withTag(tag).withAll('q', [])
-  return (name: string, val: string | number) => base[name].add(val)
-}
-
-const condMeta = Symbol.for('condMeta')
-type CondIgnored = 'both' | 'src' | 'dst' | 'none'
-function allConditionals<T>(
-  sheet: Sheet,
-  shared: CondIgnored = 'src',
-  meta: IBaseConditionalData,
-  transform: (r: Read, q: string) => T
-): Record<string, T> {
-  // Keep the base tag "full" here so that `cond` returns consistent tags
-  const baseTag: Omit<Required<Tag>, 'preset' | 'src' | 'dst' | 'q'> = {
-    et: 'own',
-    sheet,
-    qt: 'cond',
-    // Remove irrelevant tags
-    name: null,
-    elementalType: null,
-    damageType1: null,
-    damageType2: null,
-    [condMeta as any]: meta, // Add metadata directly to tag
-  }
-  let base = reader.max.withTag(baseTag)
-  if (shared === 'both') base = base.withTag({ src: null, dst: null })
-  else if (shared !== 'none') base = base.with(shared, null)
-  return base.withAll('q', [], transform)
-}
+export const allBoolConditionals = createAllBoolConditionals(nullTag)
+export const allListConditionals = createAllListConditionals(nullTag)
+export const allNumConditionals = createAllNumConditionals(nullTag)
+export const conditionalEntries = createConditionalEntries(own)
 
 export const queryTypes = new Set([
   ...Object.keys(ownTag),

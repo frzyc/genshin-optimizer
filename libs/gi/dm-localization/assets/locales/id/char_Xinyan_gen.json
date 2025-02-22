@@ -41,8 +41,8 @@
   "skill": {
     "name": "Sweeping Fervor",
     "description": {
-      "0": "Xinyan mengayunkan alat musiknya, mengakibatkan <pyro>Pyro DMG</pyro> terhadap semua musuh di dekatnya, dan membentuk sebuah perisai yang terbuat dari hasrat para pendengarnya.",
-      "1": "Jumlah DMG yang bisa ditahan perisai didasarkan pada DEF Xinyan dan jumlah musuh yang terkena skill ini.",
+      "0": "Xinyan mengayunkan alat musiknya, mengakibatkan <pyro>Pyro DMG</pyro> terhadap semua musuh di dekatnya, dan membentuk sebuah Perisai yang terbuat dari hasrat para pendengarnya.",
+      "1": "Jumlah DMG yang bisa ditahan Perisai didasarkan pada DEF Xinyan dan jumlah musuh yang terkena skill ini.",
       "2": [
         " Mengenai 0-1 musuh memberikan Perisai Level 1: Ad Lib.",
         " Mengenai 2 musuh memberikan Perisai Level 2: Lead-In.",
@@ -51,7 +51,7 @@
       "3": "<br/>",
       "4": "Perisai Xinyan memiliki sifat khusus berikut:",
       "5": [
-        " Ketika dilancarkan, perisai akan memberikan efek <pyro>Pyro</pyro> untuk Xinyan.",
+        " Ketika dilancarkan, Perisai akan memberikan efek <pyro>Pyro</pyro> untuk Xinyan.",
         " Perisai dapat menahan <pyro>Pyro DMG</pyro> 250% lebih efektif."
       ],
       "6": "<br/>",
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "\"The Show Goes On, Even Without An Audience...\"",
     "description": {
-      "0": "Mengurangi jumlah musuh yang harus terkena serangan <strong>Sweeping Fervor</strong> untuk memicu setiap level perisai.",
+      "0": "Mengurangi jumlah musuh yang harus terkena serangan <strong>Sweeping Fervor</strong> untuk memicu setiap level Perisai.",
       "1": [
         " Perisai Level 2: Syarat memicu Lead-In dikurangi menjadi 1 musuh.",
         "Perisai Level 3: Syarat memicu Rave dikurangi menjadi 2 musuh atau lebih."
@@ -116,7 +116,7 @@
   "passive2": {
     "name": "\"...Now That's Rock 'N' Roll!\"",
     "description": {
-      "0": "Meningkatkan 15% Physical DMG Karakter yang dilindungi oleh perisai dari <strong>Sweeping Fervor</strong>."
+      "0": "Meningkatkan 15% Physical DMG Karakter yang dilindungi oleh Perisai dari <strong>Sweeping Fervor</strong>."
     }
   },
   "passive3": {

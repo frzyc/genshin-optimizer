@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Éblouissement",
-        "fullDesc": "Après utilisation de la technique de Sampo, les ennemis situés dans une zone définie subissent Aveuglement pendant {{1}} secondes. Les ennemis aveuglés ne peuvent pas détecter votre équipe.<br>Lorsqu'un combat est lancé contre un ennemi aveuglé, il y a {{2, percent}}% de chances fixes de retarder l'action de tous les ennemis de {{3, percent}}%.",
+        "fullDesc": "Après utilisation de la technique de Sampo, les ennemis situés dans une zone définie subissent Aveuglement pendant {{1}} secondes. Les ennemis aveuglés ne peuvent pas détecter l'équipe alliée.<br>Lorsqu'un combat est lancé contre un ennemi aveuglé, il y a {{2, percent}}% de chances fixes de retarder l'action de tous les ennemis de {{3, percent}}%.",
         "shortDesc": "Les ennemis dans une zone définie sont Aveuglés. En engageant le combat contre des ennemis Aveuglés, il y a de fortes chances de retarder leurs actions.",
         "tag": "Incapacitation"
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Enthousiasme contagieux",
-      "desc": "Vaincre un ennemi affecté par Faille du vent a {{1, percent}}% de chances de base d'infliger à tous les ennemis {{2}} cumul du même effet Faille du vent que celui provoqué par le talent."
+      "desc": "Vaincre un ennemi affecté par Faille du vent a {{1, percent}}% de chances de base d'infliger à tous les ennemis {{2}} cumul du même effet Faille du vent que celui de la compétence."
     },
     "3": {
       "name": "Joli cachet !",

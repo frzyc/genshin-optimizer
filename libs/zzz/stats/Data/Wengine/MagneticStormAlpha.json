@@ -1,0 +1,34 @@
+{
+  "name": "[Magnetic Storm] Alpha",
+  "rarity": "B",
+  "type": "anomaly",
+  "atk_base": 32,
+  "second_statkey": "atk_",
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_10.png",
+  "desc": "This special W-Engine can analyze the target's weak spots through real-time calculations. Although its heavy exoskeleton can be a burden to the operator, some users have found it to be an efficient way to exercise and lose weight, and have thus become loyal customers.",
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "A special W-Engine that can analyze the target's weak spots through real-time calculations.",
+  "phase": [
+    {
+      "name": "Disordered Current",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s. "
+    },
+    {
+      "name": "Disordered Current",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>28</color> for 10s. This effect can trigger once every 20s. "
+    },
+    {
+      "name": "Disordered Current",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>32</color> for 10s. This effect can trigger once every 20s. "
+    },
+    {
+      "name": "Disordered Current",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>36</color> for 10s. This effect can trigger once every 20s. "
+    },
+    {
+      "name": "Disordered Current",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>40</color> for 10s. This effect can trigger once every 20s. "
+    }
+  ]
+}

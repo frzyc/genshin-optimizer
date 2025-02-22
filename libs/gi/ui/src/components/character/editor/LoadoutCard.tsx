@@ -3,13 +3,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import AddIcon from '@mui/icons-material/Add'
-import {
-  Button,
-  CardActionArea,
-  CardContent,
-  Divider,
-  Grid,
-} from '@mui/material'
+import { Button, CardContent, Grid } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { TeamCard } from '../../team'
@@ -47,10 +41,20 @@ export function LoadoutCard({
         teamIds={teamIds}
       />
       <CardThemed key={teamCharId} bgt="light">
-        <CardActionArea onClick={onShow}>
+        <Button
+          fullWidth
+          onClick={onShow}
+          sx={{
+            p: 0,
+            display: 'flex',
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
+          }}
+          color="neutral100"
+          variant="outlined"
+        >
           <LoadoutHeaderContent teamCharId={teamCharId} showSetting />
-        </CardActionArea>
-        <Divider />
+        </Button>
         <CardContent sx={{ p: 1 }}>
           <Grid container columns={columns} spacing={1}>
             {teamIds.map((teamId) => (
@@ -72,7 +76,7 @@ export function LoadoutCard({
                 color="info"
                 startIcon={<AddIcon />}
               >
-                {t`charContentModal.addTeam`}
+                {t('charContentModal.addTeam')}
               </Button>
             </Grid>
           </Grid>

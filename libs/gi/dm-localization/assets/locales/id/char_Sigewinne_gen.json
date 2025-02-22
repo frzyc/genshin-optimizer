@@ -135,7 +135,7 @@
   "constellation2": {
     "name": "\"Can the Most Merciful of Spirits Defeat Its Foes?\"",
     "description": {
-      "0": "Saat melancarkan <strong>Rebound Hydrotherapy</strong> dan <strong>Super Saturated Syringing</strong>, akan menghasilkan 1 perisai gelembung yang bisa menyerap <hydro>Hydro DMG</hydro> sebesar 30% Max HP dan memiliki 250% efisiensi ketahanan, efek ini berlangsung sampai Skill ini selesai dilancarkan.",
+      "0": "Saat melancarkan <strong>Rebound Hydrotherapy</strong> dan <strong>Super Saturated Syringing</strong>, akan menghasilkan 1 Perisai gelembung yang bisa menyerap <hydro>Hydro DMG</hydro> sebesar 30% Max HP dan memiliki 250% efisiensi ketahanan, efek ini berlangsung sampai Skill ini selesai dilancarkan.",
       "1": "Selain itu, setelah Bolstering Bubblebalm dari Rebound Hydrotherapy melambung atau setelah Super Saturated Syringing mengenai musuh, <hydro>Hydro RES</hydro> musuh ini berkurang 35% selama 8 detik."
     }
   },

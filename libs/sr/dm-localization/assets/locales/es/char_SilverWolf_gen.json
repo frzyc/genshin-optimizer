@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Nota al margen",
-        "fullDesc": "Al usar la habilidad básica, si el objetivo tiene {{1}} o más estados negativos, su RES a todos los tipos se reduce en un {{2, percent}}% adicional.",
+        "fullDesc": "Al usar la habilidad básica, si el enemigo tiene {{1}} o más estados negativos, su RES a todos los tipos se reduce en un {{2, percent}}% adicional.",
         "shortDesc": "",
         "tag": ""
       }

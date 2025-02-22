@@ -40,13 +40,12 @@ import InfoIcon from '@mui/icons-material/Info'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
+  Button,
   CardActionArea,
-  Divider,
-  IconButton,
   Skeleton,
   Typography,
 } from '@mui/material'
-import React, { Suspense, useContext, useMemo } from 'react'
+import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { dataContextObj } from '../../context'
 import { DataContext, SillyContext } from '../../context'
@@ -90,9 +89,26 @@ export function TeamCard({
             flexDirection: 'row',
           }}
         >
-          <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>
-            <Typography sx={{ display: 'flex', gap: 1 }} variant="h6">
-              <span>{name}</span>{' '}
+          <Button
+            onClick={() => onClick()}
+            variant="outlined"
+            fullWidth
+            color="neutral300"
+            sx={{
+              borderTopRightRadius: 0,
+              borderBottomRightRadius: 0,
+              borderBottomLeftRadius: 0,
+            }}
+          >
+            <Typography
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+              }}
+              variant="h6"
+            >
+              <span>{name}</span>
               {description && (
                 <BootstrapTooltip
                   title={<Typography>{description}</Typography>}
@@ -101,25 +117,47 @@ export function TeamCard({
                 </BootstrapTooltip>
               )}
             </Typography>
-          </CardActionArea>
+          </Button>
+
           <TeamDelModal
             teamId={teamId}
             show={showDel}
             onHide={onHideDel}
             onDel={function (): void {}}
           />
-          <IconButton onClick={onShowDel} color="error">
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={onShowDel}
+            color="error"
+            sx={{
+              borderTopLeftRadius: 0,
+              borderBottomRightRadius: 0,
+              borderBottomLeftRadius: 0,
+            }}
+          >
             <DeleteForeverIcon />
-          </IconButton>
+          </Button>
         </Box>
-        <Box sx={{ marginTop: 'auto' }}>
+        <Box
+          sx={{
+            marginTop: 'auto',
+          }}
+        >
           {loadoutData.map((loadoutDatum, i) => {
             const teamCharId = loadoutDatum?.teamCharId
             const characterKey =
               teamCharId && database.teamChars.get(teamCharId)?.key
             return (
-              <React.Fragment key={i}>
-                <Divider />
+              <Box
+                className="team-teammate"
+                sx={{
+                  border: '1px rgba(200,200,200,0.3) solid',
+                  '&:hover': {
+                    border: '1px rgba(200,200,200,0.8) solid',
+                  },
+                }}
+              >
                 {characterKey ? (
                   <CardActionArea onClick={() => onClick(characterKey)}>
                     <CharacterArea
@@ -161,7 +199,7 @@ export function TeamCard({
                     </Box>
                   </CardActionArea>
                 )}
-              </React.Fragment>
+              </Box>
             )
           })}
         </Box>
@@ -457,9 +495,9 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
 function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
   const { setNum = {}, mains = {} } = artifactData
   const { t } = useTranslation('statKey_gen')
-  const processedSetNum = Object.entries(setNum).filter(
-    ([, num]) => num === 2 || num === 4
-  )
+  const processedSetNum: [ArtifactSetKey, number][] = Object.entries(setNum)
+    .filter(([, num]) => num > 1)
+    .map(([set, num]) => [set, num < 4 ? 2 : 4])
   return (
     <CardThemed
       bgt="neutral600"

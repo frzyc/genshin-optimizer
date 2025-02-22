@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Organic Yeast",
-        "fullDesc": "Setelah karakter ini melancarkan Ultimate, aksinya akan segera didahulukan 100%.",
+        "fullDesc": "Setelah karakter ini melancarkan Ultimate, aksinya akan segera didahulukan sebesar 100%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -87,7 +87,7 @@
     },
     "2": {
       "name": "Lion's Tail",
-      "desc": "Saat melancarkan Skill, akan menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan. Di saat bersamaan, akan meningkatkan {{2, percent}}% Effect RES rekan tersebut, berlangsung selama {{3}} giliran."
+      "desc": "Saat melancarkan Skill, akan menghilangkan {{1}} efek Debuff dari 1 rekan tim yang ditargetkan. Di saat bersamaan, akan meningkatkan {{2, percent}}% Effect RES rekan tersebut, berlangsung selama {{3}} giliran."
     },
     "3": {
       "name": "Corpse Reviver",

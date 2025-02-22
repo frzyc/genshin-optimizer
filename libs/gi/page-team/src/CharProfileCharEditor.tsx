@@ -4,6 +4,7 @@ import {
   ImgIcon,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
+import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   useDBMeta,
@@ -103,7 +104,7 @@ function Content({ onClose }: { onClose?: () => void }) {
                 })
               }}
             >
-              {t`buildTcCharOverride.btn`}
+              {t('buildTcCharOverride.btn')}
             </Button>
           </BootstrapTooltip>
         )}
@@ -171,7 +172,7 @@ function Content({ onClose }: { onClose?: () => void }) {
                   warning={!!buildTc?.character}
                   level={level}
                   ascension={ascension}
-                  setBoth={(data) =>
+                  setBoth={(data) => {
                     buildTc?.character
                       ? setBuildTc((buildTc) => {
                           if (buildTc.character)
@@ -180,8 +181,14 @@ function Content({ onClose }: { onClose?: () => void }) {
                               ...data,
                             }
                         })
+                      : allTravelerKeys.includes(
+                          characterKey as (typeof allTravelerKeys)[number]
+                        )
+                      ? allTravelerKeys.forEach((tkey) => {
+                          database.chars.set(tkey, data)
+                        })
                       : database.chars.set(characterKey, data)
-                  }
+                  }}
                 />
               </CardThemed>
               <CardThemed bgt="light" sx={{ p: 1 }}>

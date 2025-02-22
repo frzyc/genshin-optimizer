@@ -134,7 +134,7 @@
   "constellation4": {
     "name": "Pouring Descent",
     "description": {
-      "0": "Saat melancarkan <strong>Aquacrest Saber</strong>, akan menghasilkan perisai Aquacrest Aegis yang dapat menahan DMG setara dengan 10% Max HP dan memiliki 250% pertahanan terhadap <hydro>Hydro DMG</hydro>. Perisai akan bertahan sampai Pengembara selesai melancarkan skill.",
+      "0": "Saat melancarkan <strong>Aquacrest Saber</strong>, akan menghasilkan Perisai Aquacrest Aegis yang dapat menahan DMG setara dengan 10% Max HP dan memiliki 250% pertahanan terhadap <hydro>Hydro DMG</hydro>. Perisai akan bertahan sampai Pengembara selesai melancarkan skill.",
       "1": "Sekali setiap 2 detik, setelah Dewdrop mengenai musuh, dan jika Pengembara berada dalam status perlindungan Aquacrest Aegis, maka DMG yang ditahan oleh Aquacrest Aegis akan dikembalikan menjadi 10% Max HP Pengembara. Jika Pengembara tidak berada dalam status perlindungan Aquacrest Aegis, maka akan menghasilkan satu Aquacrest Aegis yang baru."
     }
   },

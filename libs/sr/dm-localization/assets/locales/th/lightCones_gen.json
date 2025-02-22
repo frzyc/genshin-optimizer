@@ -1,0 +1,14 @@
+{
+  "lightCone_one": "Light Cone",
+  "lightCone_other": "Light Cone",
+  "superimposition": "วางซ้อน",
+  "path": {
+    "Erudition": "ปัญญา",
+    "Preservation": "อนุรักษ์",
+    "Abundance": "เฟื่องฟู",
+    "Nihility": "ลบล้าง",
+    "Destruction": "ทำลายล้าง",
+    "Harmony": "ประสาน",
+    "TheHunt": "ล่าสังหาร"
+  }
+}

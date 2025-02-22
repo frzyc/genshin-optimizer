@@ -1,0 +1,24 @@
+{
+  "name": "Penacho Engalanado",
+  "description": {
+    "0": "Un arco largo que arde como el fuego. Dicen que las plumas que lo adornan pertenecían originalmente al antiguo tirano Ngoubou."
+  },
+  "passiveName": "Inflorescencia del Porvenir",
+  "passiveDescription": {
+    "0": {
+      "0": "Reduce en un 15% el Coste de Aguante al planear. Cuando se realiza un Disparo Preciso, el daño del Ataque Cargado aumenta en un <cryo>6%</cryo> cada 0.5 s. Este efecto puede acumularse hasta 6 veces y se anula 10 s después de dejar de apuntar."
+    },
+    "1": {
+      "0": "Reduce en un 15% el Coste de Aguante al planear. Cuando se realiza un Disparo Preciso, el daño del Ataque Cargado aumenta en un <cryo>7.5%</cryo> cada 0.5 s. Este efecto puede acumularse hasta 6 veces y se anula 10 s después de dejar de apuntar."
+    },
+    "2": {
+      "0": "Reduce en un 15% el Coste de Aguante al planear. Cuando se realiza un Disparo Preciso, el daño del Ataque Cargado aumenta en un <cryo>9%</cryo> cada 0.5 s. Este efecto puede acumularse hasta 6 veces y se anula 10 s después de dejar de apuntar."
+    },
+    "3": {
+      "0": "Reduce en un 15% el Coste de Aguante al planear. Cuando se realiza un Disparo Preciso, el daño del Ataque Cargado aumenta en un <cryo>10.5%</cryo> cada 0.5 s. Este efecto puede acumularse hasta 6 veces y se anula 10 s después de dejar de apuntar."
+    },
+    "4": {
+      "0": "Reduce en un 15% el Coste de Aguante al planear. Cuando se realiza un Disparo Preciso, el daño del Ataque Cargado aumenta en un <cryo>12%</cryo> cada 0.5 s. Este efecto puede acumularse hasta 6 veces y se anula 10 s después de dejar de apuntar."
+    }
+  }
+}

@@ -73,7 +73,7 @@ function SourceDisplay({ source }: { source: string | undefined }) {
   return null
 }
 
-export function getCalcDisplay(
+export function GetCalcDisplay(
   node: CalcResult<number | string | undefined>
 ): CalcDisplay {
   if ((node as any)[displayKey]) {
@@ -151,12 +151,12 @@ function computeFormulaDisplay(
     prec: Infinity,
     formula: '',
     valueString: valueString(node.value, info.unit, info.fixed),
-    formulas: [...new Set(ops.flatMap((op) => getCalcDisplay(op).formulas))],
+    formulas: [...new Set(ops.flatMap((op) => GetCalcDisplay(op).formulas))],
   }
   const components: ReactNode[] = []
 
   function addComponents(node: CalcResult<number>, p: number) {
-    const display = getCalcDisplay(node)
+    const display = GetCalcDisplay(node)
     if (p > display.prec) components.push('(')
     if (display.name && (node.info.pivot || node.meta.op === 'const'))
       components.push(
@@ -177,7 +177,7 @@ function computeFormulaDisplay(
     case 'mul':
     case 'min':
     case 'max': {
-      if (ops.length === 1) result.prec = getCalcDisplay(ops[0]).prec
+      if (ops.length === 1) result.prec = GetCalcDisplay(ops[0]).prec
       else result.prec = details[op].prec
       const { head, sep, tail, prec } = details[op]
       components.push(head)
@@ -222,7 +222,14 @@ function computeFormulaDisplay(
   result.formula = (
     <>
       {components.map((x, i) => (
-        <span key={i}>{x}</span>
+        <span
+          style={{
+            textDecoration: info.strikethrough ? 'line-through' : undefined,
+          }}
+          key={i}
+        >
+          {x}
+        </span>
       ))}
     </>
   )

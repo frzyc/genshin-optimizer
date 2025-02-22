@@ -1,0 +1,24 @@
+{
+  "name": "Hibernación Matutina de Año Nuevo",
+  "description": {
+    "0": "Una lámpara con una campanilla hecha de jade púrpura. Dicen que, si se coloca al lado de la almohada, atrae sueños hermosos."
+  },
+  "passiveName": "Balneario, halcón, Narukami",
+  "passiveDescription": {
+    "0": {
+      "0": "La Maestría Elemental aumenta en <cryo>120</cryo> pts. durante 6 s tras causar una reacción de Torbellino. La Maestría Elemental aumenta en <cryo>96</cryo> pts. durante 9 s tras golpear a un enemigo con la Habilidad Elemental, y aumenta en <cryo>32</cryo> pts. durante 30 s tras golpear a un enemigo con la Habilidad Definitiva."
+    },
+    "1": {
+      "0": "La Maestría Elemental aumenta en <cryo>150</cryo> pts. durante 6 s tras causar una reacción de Torbellino. La Maestría Elemental aumenta en <cryo>120</cryo> pts. durante 9 s tras golpear a un enemigo con la Habilidad Elemental, y aumenta en <cryo>40</cryo> pts. durante 30 s tras golpear a un enemigo con la Habilidad Definitiva."
+    },
+    "2": {
+      "0": "La Maestría Elemental aumenta en <cryo>180</cryo> pts. durante 6 s tras causar una reacción de Torbellino. La Maestría Elemental aumenta en <cryo>144</cryo> pts. durante 9 s tras golpear a un enemigo con la Habilidad Elemental, y aumenta en <cryo>48</cryo> pts. durante 30 s tras golpear a un enemigo con la Habilidad Definitiva."
+    },
+    "3": {
+      "0": "La Maestría Elemental aumenta en <cryo>210</cryo> pts. durante 6 s tras causar una reacción de Torbellino. La Maestría Elemental aumenta en <cryo>168</cryo> pts. durante 9 s tras golpear a un enemigo con la Habilidad Elemental, y aumenta en <cryo>56</cryo> pts. durante 30 s tras golpear a un enemigo con la Habilidad Definitiva."
+    },
+    "4": {
+      "0": "La Maestría Elemental aumenta en <cryo>240</cryo> pts. durante 6 s tras causar una reacción de Torbellino. La Maestría Elemental aumenta en <cryo>192</cryo> pts. durante 9 s tras golpear a un enemigo con la Habilidad Elemental, y aumenta en <cryo>64</cryo> pts. durante 30 s tras golpear a un enemigo con la Habilidad Definitiva."
+    }
+  }
+}

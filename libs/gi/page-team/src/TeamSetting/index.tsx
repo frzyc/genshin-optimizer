@@ -8,7 +8,7 @@ import {
   CharIconSide,
   CharacterMultiSelectionModal,
   CharacterName,
-  CharacterSelectionModal,
+  CharacterSingleSelectionModal,
   EnemyExpandCard,
   TeamDelModal,
   TeamInfoAlert,
@@ -74,7 +74,7 @@ export default function TeamSetting({
           disabled={noChars}
           onClick={onShow}
         >
-          {t`teamSettings.exportBtn`}
+          {t('teamSettings.exportBtn')}
         </Button>
         <Button
           color="info"
@@ -83,7 +83,7 @@ export default function TeamSetting({
           onClick={onDup}
           startIcon={<ContentCopyIcon />}
         >
-          {t`teamSettings.dupBtn`}
+          {t('teamSettings.dupBtn')}
         </Button>
         <TeamDelModal
           teamId={teamId}
@@ -97,7 +97,7 @@ export default function TeamSetting({
           onClick={noChars ? onDelNoChars : onShowDel}
           startIcon={<DeleteForeverIcon />}
         >
-          {t`teamSettings.deleteBtn`}
+          {t('teamSettings.deleteBtn')}
         </Button>
       </Box>
       <EnemyExpandCard teamId={teamId} />
@@ -113,9 +113,11 @@ function TeamEditor({
   teamData?: TeamData
 }) {
   const { t } = useTranslation('page_team')
+  const { t: tk } = useTranslation('teams_gen')
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const { loadoutData } = team
+
   const onSelect = (cKey: CharacterKey, selectedIndex: number) => {
     // Make sure character exists
     database.chars.getWithInitWeapon(cKey)
@@ -154,12 +156,14 @@ function TeamEditor({
           }
         })
       } else if (
-        team.loadoutData[existingIndex]?.teamCharId !==
-        loadoutData[existingIndex]!.teamCharId
-      ) {
         // Only relevant during multi-selection when the teamChar at loadoutData[existingIndex] is moved to
         // selectedIndex due to inserting a different teamChar at existingIndex, but loadoutData[selectedIndex]
-        // is undefined. This condition should never be true during single selection.
+        // is undefined. Comparison needs to be done against the team data currently in the database
+        // to account for any changes made by selections that have already been processed. This condition should
+        // never be true during single selection.
+        database.teams.get(teamId)!.loadoutData[existingIndex]?.teamCharId !==
+        loadoutData[existingIndex]!.teamCharId
+      ) {
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = loadoutData[existingIndex]
         })
@@ -170,9 +174,6 @@ function TeamEditor({
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
   )
-  const charKeyAtIndex = database.teamChars.get(
-    loadoutData[charSelectIndex as number]?.teamCharId
-  )?.key
   const onSingleSelect = (cKey: CharacterKey) => {
     if (charSelectIndex === undefined) return
     onSelect(cKey, charSelectIndex)
@@ -215,11 +216,12 @@ function TeamEditor({
   return (
     <>
       <Suspense fallback={false}>
-        <CharacterSelectionModal
-          filter={(c) => c !== charKeyAtIndex}
+        <CharacterSingleSelectionModal
           show={!showMultiSelect && charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
           onSelect={onSingleSelect}
+          selectedIndex={charSelectIndex}
+          loadoutData={loadoutData}
         />
       </Suspense>
       <Suspense fallback={false}>
@@ -228,8 +230,8 @@ function TeamEditor({
           onHide={() => {
             setShowMultiSelect(false)
           }}
-          onMultiSelect={onMultiSelect}
-          teamId={teamId}
+          onSelect={onMultiSelect}
+          loadoutData={loadoutData}
         />
       </Suspense>
       <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
@@ -252,14 +254,14 @@ function TeamEditor({
       </Alert>
       <Grid container sx={{ justifyContent: 'space-between' }} spacing={2}>
         <Grid item>
-          <Typography variant="h5">Selected Team Members</Typography>
+          <Typography variant="h5">{t('teamSettings.title')}</Typography>
         </Grid>
         <Grid item>
           <Button
             startIcon={<Filter4Icon />}
             onClick={() => setShowMultiSelect(true)}
           >
-            Quick Select
+            {tk('quickSetup')}
           </Button>
         </Grid>
       </Grid>
@@ -283,7 +285,7 @@ function TeamEditor({
                 disabled={!!ind && !loadoutData.some((id) => id)}
                 startIcon={<AddIcon />}
               >
-                {t`teamSettings.addCharBtn`}
+                {t('teamSettings.addCharBtn')}
               </Button>
             )}
           </Grid>
@@ -368,11 +370,11 @@ function CharSelButton({
       />
       {index ? (
         <Button onClick={onActive} color="info">
-          {t`teamSettings.toFieldBtn`}
+          {t('teamSettings.toFieldBtn')}
         </Button>
       ) : (
         <Button disabled color="info">
-          {t`teamSettings.onFieldBtn`}
+          {t('teamSettings.onFieldBtn')}
         </Button>
       )}
       {dataContextValue && (

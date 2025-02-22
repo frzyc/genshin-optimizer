@@ -108,9 +108,13 @@ export default function ExcludeArt({
           <CardHeader
             title={
               <Box display="flex" gap={1} alignItems="center">
-                <Typography variant="h6">{t`excludeArt.title_exclude`}</Typography>
+                <Typography variant="h6">
+                  {t('excludeArt.title_exclude')}
+                </Typography>
                 <InfoTooltip
-                  title={<Typography>{t`excludeArt.title_tooltip`}</Typography>}
+                  title={
+                    <Typography>{t('excludeArt.title_tooltip')}</Typography>
+                  }
                 />
               </Box>
             }
@@ -136,10 +140,14 @@ export default function ExcludeArt({
               color="info"
               sx={{ mb: 1 }}
               startIcon={<AddIcon />}
-            >{t`excludeArt.addExc`}</Button>
+            >
+              {t('excludeArt.addExc')}
+            </Button>
             {!!numExcludedArt && (
               <CardThemed bgt="light" sx={{ mb: 1 }}>
-                <Typography textAlign="center">{t`excludeArt.deSelectExc`}</Typography>
+                <Typography textAlign="center">
+                  {t('excludeArt.deSelectExc')}
+                </Typography>
               </CardThemed>
             )}
             <Grid
@@ -253,7 +261,7 @@ function ExcludeArtRedButtons({
           onClick={excludeArtifacts}
           startIcon={<ExcludeIcon />}
         >
-          {t`optExcludeModal.excludeBtn`}
+          {t('optExcludeModal.excludeBtn')}
           <SqBadge sx={{ ml: 1 }} color={numExclude ? 'success' : 'secondary'}>
             {numExclude}
           </SqBadge>
@@ -267,7 +275,7 @@ function ExcludeArtRedButtons({
           onClick={includeArtifacts}
           startIcon={<OptimizationIcon />}
         >
-          {t`optExcludeModal.includeBtn`}
+          {t('optExcludeModal.includeBtn')}
           <SqBadge sx={{ ml: 1 }} color={numInclude ? 'success' : 'secondary'}>
             {numInclude}
           </SqBadge>
@@ -341,7 +349,7 @@ function ArtifactSelectModal({
     >
       <CardThemed>
         <CardHeader
-          title={t`excludeArt.selExc`}
+          title={t('excludeArt.selExc')}
           action={
             <IconButton onClick={onClose}>
               <CloseIcon />

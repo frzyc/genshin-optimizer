@@ -1,0 +1,200 @@
+{
+  "name": "Chasca",
+  "title": "Phán Quyết Trên Cao",
+  "description": "\"Người hòa giải\" của Tlalocan, người kết thúc ngàn vạn tranh chấp.",
+  "constellationName": "Cung Thần Tựu",
+  "auto": {
+    "name": "Mưa Lông Vũ",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiến hành <strong>ngắm bắn</strong> chuẩn hơn, có sát thương cao hơn.",
+        "2": "Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên xuống mặt đất, đồng thời lao nhanh xuống đất, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Ngắm Bắn",
+      "5": "Tụ Lực Ngắm Bắn",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dây Cương Truy Ảnh",
+    "description": {
+      "0": "Chasca cộng hưởng với ý chí trong vũ khí, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn.",
+      "1": "Sau khi thi triển, Chasca nhận được 80 điểm Dạ Hồn và vào trạng thái Dạ Hồn Chúc Phúc.",
+      "2": "<br/>",
+      "3": "<strong>Dạ Hồn Chúc Phúc - Chasca</strong>",
+      "4": "Liên tục tiêu hao điểm Dạ Hồn. Khi tiêu hao hết điểm Dạ Hồn hoặc thi triển lần nữa sẽ kết thúc trạng thái Dạ Hồn Chúc Phúc của Chasca. Trạng thái Dạ Hồn Chúc Phúc có đặc tính sau:",
+      "5": [
+        "Lái \"Súng Linh Hồn - Trượng Nghi Thức\", tăng Tốc Độ Di Chuyển và Kháng Gián Đoạn của Chasca. Trong trạng thái này, Chasca sẽ liên tục tiêu hao điểm Dạ Hồn để duy trì trạng thái lơ lửng. Khi tiến hành xung kích hoặc bay lên cao sẽ tiêu hao thêm điểm Dạ Hồn;",
+        "Khi dùng Tấn Công Thường hoặc Trọng Kích, sẽ dựa vào nhấn hoặc nhấn giữ để chuyển thành \"Ngắm Đa Mục Tiêu\" với cách thức khác nhau."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Ngắm Đa Mục Tiêu</strong>",
+      "8": "<strong>Nhấn</strong>",
+      "9": "Gây <anemo>Sát Thương Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn cho kẻ địch phía trước, sát thương này được xem là sát thương Tấn Công Thường.",
+      "10": "<strong>Nhấn Giữ</strong>",
+      "11": "Vào trạng thái ngắm chuẩn và chọn số lượng kẻ địch nhất định trong phạm vi. Dựa vào thời gian tụ lực dài ngắn để nạp lần lượt 6 viên Đạn Truy Ảnh; Khi nạp đầy hoặc ngừng tụ lực sẽ bắn lần lượt vào kẻ địch đã chọn.",
+      "12": "<br/>",
+      "13": "<strong>Đạn Truy Ảnh</strong>",
+      "14": [
+        "Gây <anemo>Sát Thương Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn, sát thương này được xem là sát thương Trọng Kích.",
+        "Viên Đạn Truy Ảnh thứ 4, 5, 6 nạp vào hộp đạn sẽ phát sinh chuyển hóa nguyên tố dựa vào loại nguyên tố của những nhân vật khác trong đội; Trong đội mỗi tồn tại một nhân vật Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo> hoặc <electro>Lôi</electro>, một viên Đạn Truy Ảnh sẽ chuyển hóa ngẫu nhiên thành Đạn Truy Ảnh Sáng Chói với một trong những dạng nguyên tố tương ứng, gây sát thương nguyên tố tương ứng mang thuộc tính Dạ Hồn. Sát thương này được xem là sát thương Trọng Kích.",
+        "Viên Đạn Truy Ảnh nạp vào sau sẽ ưu tiên bắn trước."
+      ],
+      "15": "<br/>",
+      "16": "Ngoài ra, khi trong trạng thái Dạ Hồn Chúc Phúc, nhấn giữ thi triển Kỹ Năng Nguyên Tố <strong>Dây Cương Truy Ảnh</strong>, Chasca sẽ chuyển sang tiến hành Tấn Công Khi Đáp mang thuộc tính Dạ Hồn. Khi thả nhấn giữ kỹ năng sẽ hủy Tấn Công Khi Đáp và duy trì lại trạng thái lơ lửng. Lúc Tấn Công Khi Đáp tiếp đất, trạng thái Dạ Hồn Chúc Phúc của Chasca sẽ kết thúc.",
+      "17": "<br/>",
+      "18": "<i>Theo lý thuyết, chỉ cần cô ấy muốn, thì sợi dây đó có thể bám lấy bất cứ thứ gì... Tuy nhiên, còn gì ngầu hơn là một khẩu pháo khổng lồ chứ?</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Cộng Hưởng",
+      "1": "Sát Thương Nhấn Ngắm Đa Mục Tiêu",
+      "2": "Sát Thương Đạn Truy Ảnh",
+      "3": "Sát Thương Đạn Truy Ảnh Sáng Chói",
+      "4": "Giới Hạn Điểm Dạ Hồn",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Tập Kích Diệt Hồn",
+    "description": {
+      "0": "Chasca tập trung ý chí, bắn ra một viên \"Đạn Diệt Hồn Gió Xoáy\", gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn. Sau đó, Đạn Diệt Hồn Gió Xoáy phân tách thành sáu viên Đạn Diệt Hồn để tấn công kẻ địch gần đó.",
+      "1": "<br/>",
+      "2": "<strong>Đạn Diệt Hồn</strong>",
+      "3": [
+        "Gây <anemo>Sát Thương Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn.",
+        "Trong đội mỗi tồn tại một nhân vật Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo> hoặc <electro>Lôi</electro>, hai viên Đạn Diệt Hồn sẽ ngẫu nhiên chuyển hóa thành Đạn Diệt Hồn Rực Rỡ với một trong những dạng nguyên tố tương ứng, gây sát thương nguyên tố tương ứng mang thuộc tính Dạ Hồn."
+      ],
+      "4": "<br/>",
+      "5": "<i>Không ai có thể thoát khỏi lời thì thầm của màn đêm và ánh trăng, cũng như không có kẻ thù nào có thể thoát khỏi tầm mắt của cô ấy.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Đạn Diệt Hồn Gió Xoáy",
+      "1": "Sát Thương Đạn Diệt Hồn",
+      "2": "Sát Thương Đạn Diệt Hồn Rực Rỡ",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Ảo Thuật Với Đạn",
+    "description": {
+      "0": "Khi tiến hành tụ lực <strong>Ngắm Đa Mục Tiêu</strong> của Kỹ Năng Nguyên Tố <strong>Dây Cương Truy Ảnh</strong>, nếu trong đội tồn tại nhân vật có loại nguyên tố phù hợp với chuyển hóa nguyên tố, sẽ căn cứ vào số lượng nguyên tố khác nhau thỏa mãn điều kiện để nhận hiệu quả sau:",
+      "1": [
+        "Mỗi loại nguyên tố có 33.3%/66.7%/100% tỷ lệ kích hoạt Chuyển Hóa Linh Hồn, khiến viên <strong>Đạn Truy Ảnh</strong> thứ ba nạp vào hộp đạn sẽ chuyển hóa thành <strong>Đạn Truy Ảnh Sáng Chói</strong> với một trong những dạng nguyên tố tương ứng.",
+        "Mỗi loại nguyên tố sẽ sản sinh một tầng hiệu quả \"Linh Hồn Ảo Ảnh\" cho Chasca, khiến sát thương Đạn Truy Ảnh Sáng Chói gây ra tăng 15%/35%/65%. Hiệu quả này duy trì đến khi Ngắm Đa Mục Tiêu lần đó kết thúc, tối đa cộng dồn 3 tầng."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Quyết Tâm Che Chở",
+    "description": {
+      "0": "Khi nhân vật trong đội gần đó kích hoạt Dạ Hồn Bùng Nổ, Chasca sẽ bắn Đạn Truy Ảnh Rực Cháy vào kẻ địch gần đó, gây <anemo>Sát Thương Nguyên Tố Phong</anemo> mang thuộc tính Dạ Hồn, sát thương này tương đương 150% sát thương của <strong>Đạn Truy Ảnh</strong> từ Kỹ Năng Nguyên Tố <strong>Dây Cương Truy Ảnh</strong>. Nếu trong đội có nhân vật Nguyên Tố <pyro>Hỏa</pyro>, <hydro>Thủy</hydro>, <cryo>Băng</cryo> hoặc <electro>Lôi</electro> thì Đạn Truy Ảnh Rực Cháy sẽ phát sinh chuyển hóa nguyên tố, gây sát thương nguyên tố tương ứng mang thuộc tính Dạ Hồn. Sát thương này tương đương 150% sát thương của <strong>Đạn Truy Ảnh Sáng Chói</strong> từ Kỹ Năng Nguyên Tố <strong>Dây Cương Truy Ảnh</strong>.",
+      "1": "Sát thương gây ra từ phương thức nêu trên được tính là sát thương Trọng Kích."
+    }
+  },
+  "passive3": {
+    "name": "Món Quà Dạ Vực - Trái Tim Bất Diệt",
+    "description": {
+      "0": "Sau khi dùng hết điểm Dạ Hồn, Chasca sẽ chuyển sang tiêu hao Phlogiston để duy trì trạng thái Dạ Hồn Chúc Phúc.",
+      "1": "Khi ở trong khu vực có cơ chế Phlogiston của Natlan, có thể tiến hành Dạ Hồn Chuyển Hóa - Chasca. Nhân vật trong trận khi ở trên không, đổi sang Chasca ra trận sẽ kích hoạt: Chasca sẽ vào trạng thái Dạ Hồn Chúc Phúc và nhận 32 điểm Dạ Hồn. Đội bản thân mỗi 10s có thể kích hoạt một lần Dạ Hồn Chuyển Hóa."
+    }
+  },
+  "passive": {
+    "name": "Thành Ý Hòa Giải",
+    "description": {
+      "0": "Nhân vật của bản thân trong đội khi đánh bại kẻ địch sẽ hồi phục 25 Phlogiston. Hiệu quả này mỗi 12s tối đa kích hoạt một lần.",
+      "1": "Hiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh."
+    }
+  },
+  "constellation1": {
+    "name": "Hộp Đạn, Vòng Quay Rộn Ràng",
+    "description": {
+      "0": "Khi kích hoạt Chuyển Hóa Linh Hồn từ thiên phú \"Ảo Thuật Với Đạn\", sẽ khiến thêm viên <strong>Đạn Truy Ảnh</strong> thứ hai nạp vào hộp đạn chuyển hóa thành <strong>Đạn Truy Ảnh Sáng Chói</strong>.",
+      "1": "Tăng tỷ lệ kích hoạt Chuyển Hóa Linh Hồn: Nếu trong đội tồn tại nhân vật có loại nguyên tố phù hợp với chuyển hóa nguyên tố, thì tỷ lệ kích hoạt Chuyển Hóa Linh Hồn tăng 33.3%, tối đa tăng đến 100%.",
+      "2": "<br/>",
+      "3": "Cần mở khóa thiên phú \"Ảo Thuật Với Đạn\".",
+      "4": "Ngoài ra, trạng thái Dạ Hồn Chúc Phúc của Chasca sẽ giảm 30% tiêu hao điểm Dạ Hồn và Phlogiston khi không chiến đấu."
+    }
+  },
+  "constellation2": {
+    "name": "Nòng Súng, Khói Lửa Rực Cháy",
+    "description": {
+      "0": "Khi Chasca ra trận, sẽ nhận được một tầng Linh Hồn Ảo Ảnh từ thiên phú \"Ảo Thuật Với Đạn\". Hiệu quả này cần mở khóa thiên phú \"Ảo Thuật Với Đạn\" trước.",
+      "1": "Ngoài ra, khi thi triển <strong>Ngắm Đa Mục Tiêu</strong> của Kỹ Năng Nguyên Tố <strong>Dây Cương Truy Ảnh</strong>, nếu <strong>Đạn Truy Ảnh Sáng Chói</strong> của Chasca trúng kẻ địch, sẽ căn cứ vào loại nguyên tố của <strong>Đạn Truy Ảnh Sáng Chói</strong> để gây Sát Thương Phạm Vi Nguyên Tố Tương Ứng tương đương với 400% Tấn Công của Chasca, sát thương này được tính là sát thương Trọng Kích. Mỗi lần thi triển <strong>Ngắm Đa Mục Tiêu</strong> tối đa kích hoạt một lần hiệu quả này."
+    }
+  },
+  "constellation3": {
+    "name": "Dây Cương, Khống Chế Toàn Diện",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Dây Cương Truy Ảnh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tia Lửa, Phát Bắn Bất Ngờ",
+    "description": {
+      "0": "Khi <strong>Đạn Diệt Hồn Rực Rỡ</strong> từ Kỹ Năng Nộ <strong>Tập Kích Diệt Hồn</strong> đánh trúng kẻ địch, sẽ hồi phục cho Chasca 1.5 điểm Năng Lượng Nguyên Tố, đồng thời căn cứ vào loại nguyên tố của <strong>Đạn Diệt Hồn Rực Rỡ</strong> để gây Sát Thương Phạm Vi Nguyên Tố Tương Ứng tương đương với 400% Tấn Công của Chasca, sát thương này được tính là sát thương Trọng Kích.",
+      "1": "Hiệu quả gây Sát Thương Phạm Vi Nguyên Tố Tương Ứng nêu trên, mỗi lần thi triển <strong>Tập Kích Diệt Hồn</strong> tối đa kích hoạt một lần hiệu quả này."
+    }
+  },
+  "constellation5": {
+    "name": "Vành Mũ, Đường Nét Của Cát",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Tập Kích Diệt Hồn</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Đối Đầu, Vinh Quang Chiến Đấu",
+    "description": {
+      "0": "Giảm thời gian tụ lực cần thiết cho <strong>Ngắm Đa Mục Tiêu</strong> của Chasca, đồng thời sau khi kích hoạt Chuyển Hóa Linh Hồn từ thiên phú \"Ảo Thuật Với Đạn\", Chasca sẽ nhận trạng thái \"Tập Kích\": Trong 3s tiếp theo, khi Chasca thi triển <strong>Ngắm Đa Mục Tiêu</strong> từ Kỹ Năng Nguyên Tố <strong>Dây Cương Truy Ảnh</strong> sẽ hoàn thành tụ lực ngay lập tức, đồng thời Sát Thương Bạo Kích của <strong>Đạn Truy Ảnh</strong> và <strong>Đạn Truy Ảnh Sáng Chói</strong> từ <strong>Ngắm Đa Mục Tiêu</strong> lần đó tăng 120%, mỗi 3s tối đa nhận một lần hiệu quả \"Tập Kích\".",
+      "1": "<br/>",
+      "2": "Hiệu quả nêu trên cần mở khóa thiên phú \"Ảo Thuật Với Đạn\"."
+    }
+  }
+}

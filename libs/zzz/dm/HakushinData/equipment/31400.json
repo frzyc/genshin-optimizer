@@ -1,0 +1,9 @@
+{
+  "Id": 31400,
+  "Name": "Hormone Punk",
+  "Desc2": "ATK +10%",
+  "Desc4": "Upon entering combat or switching in, its user's ATK increases by 25% for 10s. This effect can trigger once every 20s.",
+  "Story": "This Drive Disc series is highly recommended by the Hollow Investigative Association. According to incomplete statistics, investigators using this Drive Disc display a higher desire for combat.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitHormonePunk.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitHormonePunk.png"
+}

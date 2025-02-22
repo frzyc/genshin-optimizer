@@ -1,0 +1,8 @@
+{
+  "name": "zzz-page-discs",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/page-discs/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

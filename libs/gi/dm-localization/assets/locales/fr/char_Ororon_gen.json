@@ -1,0 +1,187 @@
+{
+  "name": "Ororon",
+  "title": "Ombre du vent nocturne",
+  "description": "Un jeune homme appartenant aux Maîtres du vent nocturne qui vit principalement dans la nature aux côtés de toutes sortes de créatures.",
+  "constellationName": "Vampyrum Spectrum",
+  "auto": {
+    "name": "Flèche spirituellement habitée",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Électro, infligeant des <electro>DGT Électro</electro> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT tir visé",
+      "4": "DGT tir visé (pleine charge)",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cordon fermement crépusculaire",
+    "description": {
+      "0": "Ororon manifeste une ancienne technique mystique des Maîtres du vent nocturne sous la forme d'un <strong>spiritorbe</strong> de couleur nocturne et le lance sur un ennemi pour infliger des <electro>DGT Électro</electro> infusés de noctâme.",
+      "1": "Lorsque d'autres ennemis sont présents à proximité, le spiritorbe rebondit entre les ennemis proches pour infliger des <electro>DGT Électro</electro> infusés de noctâme, chaque ennemi ne pouvant être ciblé qu'une seule fois par utilisation de Cordon fermement crépusculaire.",
+      "2": "Le spiritorbe disparaît après 3 rebonds ou si aucun ennemi ne peut être ciblé.",
+      "3": "<br/>",
+      "4": "<i>« Les gens veulent toujours prédire l'avenir, mais c'est peut-être parce qu'ils n'ont pas encore découvert ce qu'ils doivent faire... Désolé, je dis encore des choses compliquées, je sais... »</i>"
+    },
+    "skillParams": {
+      "0": "DGT spiritorbe",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Écho opaquement étouffé",
+    "description": {
+      "0": "Ororon accomplit un ancien rituel pour infliger des <electro>DGT Électro de zone</electro> infusés de noctâme et invoquer un spiroculus sonique.",
+      "1": "<br/>",
+      "2": "<strong>Spiroculus sonique</strong>",
+      "3": [
+        " Nargue les ennemis proches et attire leurs attaques.",
+        " Tournoie de façon continue et envoie des ondes sonores infligeant des <electro>DGT Électro</electro> infusés de noctâme aux ennemis proches."
+      ],
+      "4": "<br/>",
+      "5": "<i>Ceux aux sens suffisamment aiguisés peuvent entendre les petites voix avec lesquelles toutes choses parlent. Ainsi, ils ne se perdront jamais, même pendant les longues nuits sans lumière.</i>"
+    },
+    "skillParams": {
+      "0": "DGT rituel",
+      "1": "DGT impact d'onde sonore",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Synesthésie sombrement nocturne",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité a déclenché une éruption noctâme, Ororon obtient 40 pts de noctâme. Pendant 15 s après l'utilisation d'une compétence élémentaire, Ororon obtient 5 pts de noctâme lorsqu'un autre personnage <hydro>Hydro</hydro> ou <electro>Électro</electro> de l'équipe touche un ennemi, cet effet pouvant être déclenché une fois toutes les 0,3 s et un maximum de 10 fois pendant cette durée de 15 s.",
+      "1": "Ororon peut avoir un maximum de 80 pts de noctâme.",
+      "2": "<br/>",
+      "3": "De plus, lorsqu'un ennemi proche subit des DGT d'une réaction d'<electro>Électrocution</electro> ou des DGT infusés de noctâme d'un autre personnage de l'équipe à proximité, Ororon consomme, si possible, 10 pts de noctâme pour entrer dans l'état Bénédiction noctâme et déclencher l'effet Hyper-sens : inflige des <electro>DGT Électro</electro> infusés de noctâme d'une valeur équivalant à 160 % de l'ATQ d'Ororon à un maximum de 4 ennemis à proximité. Cet effet peut être déclenché une fois toutes les 1,8 s.",
+      "4": "<br/>",
+      "5": "<strong>Bénédiction noctâme : Ororon</strong>",
+      "6": "La bénédiction noctâme d'Ororon dure un maximum de 6 s."
+    }
+  },
+  "passive2": {
+    "name": "Catalyseur manifestement spirituel",
+    "description": {
+      "0": "Lorsqu'un <strong>spiritorbe</strong> de la compétence élémentaire <strong>Cordon fermement crépusculaire</strong> a touché un ennemi, Ororon obtient une marque manifeste pendant 15 s.",
+      "1": "<br/>",
+      "2": "<strong>Marque manifeste</strong>",
+      "3": "Lorsqu'un personnage déployé de l'équipe à proximité a touché un ennemi avec une attaque normale, chargée ou plongeante, il récupère 3 pts d'énergie élémentaire. Si Ororon fait partie de l'équipe mais n'est pas déployé, il récupère également 3 pts d'énergie élémentaire. Cet effet peut être déclenché une fois toutes les secondes, et un maximum de 3 fois pendant la durée de cette marque."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Ombre nettement bondissante",
+    "description": {
+      "0": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Ororon » peut être utilisée. Lorsque le personnage déployé est dans les airs, le déploiement d'Ororon déclenche l'effet suivant : Ororon fait un bond très haut. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe.",
+      "1": "<br/>",
+      "2": "Maintenir pour viser fait passer Ororon dans l'état de spiritoraison, ce qui lui permet d'interagir avec les graffitis et insignes de spirinocturne pour extraire les informations et la puissance à l'intérieur. Les règles d'interaction avec ces éléments suivent les mêmes règles que celles régissant les interactions avec les iktomisaures.",
+      "3": "<br/>",
+      "4": "De plus, maintenir le saut fait consommer 75 pts d'endurance à Ororon pour sauter. Dans une zone de Natlan avec des mécanismes phlogistiques, Ororon consomme en priorité 5 pts de phlogistique pour sauter encore plus haut.",
+      "5": "Dans les airs, Ororon peut maintenir l'attaque normale et consommer du phlogistique ou de l'endurance pour passer en mode visée."
+    }
+  },
+  "passive": {
+    "name": "Peau artisanalement modifiée",
+    "description": {
+      "0": "Augmente la VIT de planage de vos personnages dans l'équipe de 15 %.",
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
+    }
+  },
+  "constellation1": {
+    "name": "Traces de la forêt brumeuse",
+    "description": {
+      "0": "Les <strong>spiritorbes</strong> de la compétence élémentaire <strong>Cordon fermement crépusculaire</strong> peuvent rebondir 2 fois supplémentaires.",
+      "1": "De plus, lorsqu'un <strong>spiritorbe</strong> a touché un ennemi, ce dernier est affligé de l'effet Nuit noire pendant 12 s : les DGT infligés par l'hyper-sens de l'aptitude passive « Synesthésie sombrement nocturne » aux ennemis sous l'effet d'une nuit noire augmentent de 50 %, l'aptitude passive « Synesthésie sombrement nocturne » devant être déjà débloquée."
+    }
+  },
+  "constellation2": {
+    "name": "Roi du vin nectarin",
+    "description": {
+      "0": "Après avoir utilisé le déchaînement élémentaire <strong>Écho opaquement étouffé</strong>, Ororon obtient l'effet Spiri-sens pendant 9 s.",
+      "1": "<br/>",
+      "2": "<strong>Spiri-sens</strong>",
+      "3": "Accorde un <electro>bonus de DGT Électro</electro> de 8 %.",
+      "4": "Pendant la durée de l'effet, chaque ennemi supplémentaire touché par le déchaînement élémentaire <strong>Écho opaquement étouffé</strong> et les <strong>spiroculus soniques</strong> accorde à Ororon un <electro>bonus de DGT Électro</electro> supplémentaire de 8 %, le <electro>bonus de DGT Électro</electro> pouvant atteindre 32 % de cette manière."
+    }
+  },
+  "constellation3": {
+    "name": "Cage de la chauve-souris perchée",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Écho opaquement étouffé</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Mystère du vent nocturne",
+    "description": {
+      "0": "La vitesse de rotation des <strong>spiroculus soniques</strong> invoqués par le déchaînement élémentaire <strong>Écho opaquement étouffé</strong> augmente de 25 %.",
+      "1": "De plus, Ororon récupère 8 pts d'énergie élémentaire après avoir utilisé <strong>Écho opaquement étouffé</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Cadeau de l'âme intérieure",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Cordon fermement crépusculaire</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Hymne de source profonde",
+    "description": {
+      "0": "Après avoir déclenché l'hyper-sens de l'aptitude passive « Synesthésie sombrement nocturne », l'ATQ de votre personnage déployé augmente de 10 % pendant 9 s. Cet effet peut être cumulé 3 fois maximum, la durée de chaque cumul étant calculée de façon indépendante.",
+      "1": "De plus, utiliser le déchaînement élémentaire <strong>Écho opaquement étouffé</strong> déclenche un effet équivalant à l'hyper-sens, infligeant des DGT équivalant à 200 % des DGT d'origine.",
+      "2": "L'aptitude passive « Synesthésie sombrement nocturne » doit être déjà débloquée."
+    }
+  }
+}

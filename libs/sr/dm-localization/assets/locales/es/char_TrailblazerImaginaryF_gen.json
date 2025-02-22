@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Sombrero del teatro",
-        "fullDesc": "Cuando un aliado inflige Ruptura de Debilidad, la acción del enemigo se retrasa en un {{1, percent}}% adicional.",
+        "fullDesc": "Cuando un aliado inflige Ruptura de Debilidad, la acción del enemigo se retrasa un {{1, percent}}% adicional.",
         "shortDesc": "",
         "tag": ""
       }

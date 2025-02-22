@@ -1,5 +1,6 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
+import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/keymap'
 import {
   crystallizeLevelMultipliers,
   transformativeReactionLevelMultipliers,
@@ -66,7 +67,14 @@ const trans = {
           {
             hit: one,
             critHit: canCrit
-              ? sum(one, input.total[`${reaction}_critDMG_`])
+              ? sum(
+                  one,
+                  input.total[
+                    `${
+                      reaction as CrittableTransformativeReactionsKey
+                    }_critDMG_`
+                  ]
+                )
               : one,
             avgHit: canCrit
               ? sum(
@@ -75,17 +83,29 @@ const trans = {
                     infoMut(
                       max(
                         min(
-                          input.total[`${reaction}_critRate_`],
+                          input.total[
+                            `${
+                              reaction as CrittableTransformativeReactionsKey
+                            }_critRate_`
+                          ],
                           sum(one, one)
                         ),
                         naught
                       ),
                       {
-                        ...input.total[`${reaction}_critRate_`].info,
+                        ...input.total[
+                          `${
+                            reaction as CrittableTransformativeReactionsKey
+                          }_critRate_`
+                        ].info,
                         pivot: true,
                       }
                     ),
-                    input.total[`${reaction}_critDMG_`]
+                    input.total[
+                      `${
+                        reaction as CrittableTransformativeReactionsKey
+                      }_critDMG_`
+                    ]
                   )
                 )
               : one,
@@ -99,20 +119,43 @@ const trans = {
     )
   }),
   swirl: objKeyMap(transformativeReactions.swirl.variants, (ele) => {
-    const base = prod(
+    const base = sum(
       prod(
-        constant(transformativeReactions.swirl.multi, info('swirl_multi_')),
-        transMulti1
+        prod(
+          constant(transformativeReactions.swirl.multi, info('swirl_multi_')),
+          transMulti1
+        ),
+        sum(
+          infoMut(sum(one, transMulti2), {
+            pivot: true,
+            ...info('base_transformative_multi_'),
+          }),
+          input.total.swirl_dmg_
+        )
       ),
-      sum(
-        infoMut(sum(one, transMulti2), {
-          pivot: true,
-          ...info('base_transformative_multi_'),
-        }),
-        input.total.swirl_dmg_
-      )
+      input.total.swirl_dmgInc
     )
     const res = input.enemy[`${ele}_resMulti_`]
+    const crit = sum(one, input.total.swirl_critDMG_)
+    const avgCrit = sum(
+      one,
+      prod(
+        infoMut(max(min(input.total.swirl_critRate_, sum(one, one)), naught), {
+          ...input.total.swirl_critRate_.info,
+          pivot: true,
+        }),
+        input.total.swirl_critDMG_
+      )
+    )
+    const critFactor = lookup(
+      input.hit.hitMode,
+      {
+        critHit: crit,
+        avgHit: avgCrit,
+        hit: one,
+      },
+      NaN
+    )
     return infoMut(
       // CAUTION:
       // Add amp multiplier/additive term only to swirls that have amp/additive reactions.
@@ -122,11 +165,11 @@ const trans = {
       ['pyro', 'hydro', 'cryo', 'electro'].includes(ele)
         ? ele === 'electro'
           ? // Additive reactions apply the additive term before resistance, but after swirl bonuses
-            data(prod(sum(base, input.hit.addTerm), res), {
+            data(prod(sum(base, input.hit.addTerm), critFactor, res), {
               hit: { ele: constant(ele) },
             })
           : // Amp reaction
-            data(prod(base, res, input.hit.ampMulti), {
+            data(prod(base, critFactor, res, input.hit.ampMulti), {
               hit: { ele: constant(ele) },
             })
         : prod(base, res),
@@ -186,12 +229,10 @@ export const reactions = {
   },
   geo: {
     crystallize: crystallizeHit,
-    ...Object.fromEntries(
-      absorbableEle.map((e) => [
-        `${e}Crystallize`,
-        infoMut(prod(percent(2.5), crystallizeHit), info(`${e}_crystallize`)),
-      ])
-    ),
+    ...objKeyValMap(absorbableEle, (e) => [
+      `${e}Crystallize`,
+      infoMut(prod(percent(2.5), crystallizeHit), info(`${e}_crystallize`)),
+    ]),
     shattered: trans.shattered,
     overloaded: infusionReactions.overloaded,
     electrocharged: infusionReactions.electrocharged,

@@ -35,7 +35,7 @@
       "0": {
         "name": "Ébriété destructrice",
         "fullDesc": "L'effet Ivresse augmente de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> les DGT de rupture subis par les cibles. Chaque fois qu'une cible affectée par Ivresse est attaquée par un allié, l'assaillant récupère <orangeStrong>{{2}}</orangeStrong> PV.",
-        "shortDesc": "L'effet Ivresse <orangeStrong>augmente les DGT de rupture que subissent les cibles</orangeStrong> et chaque fois qu'une cible se fait attaquer par un allié, <orangeStrong>l'assaillant récupère des PV</orangeStrong>.",
+        "shortDesc": "L'effet Ivresse <orangeStrong>augmente les DGT de rupture que subissent les cibles</orangeStrong> et chaque fois qu'une cible se fait attaquer par un personnage allié, <orangeStrong>l'assaillant récupère des PV</orangeStrong>.",
         "tag": "Restauration"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Levure de bière",
-        "fullDesc": "Avance immédiatement de 100 % l'action de ce personnage après l'utilisation de son ultime.",
+        "fullDesc": "Avance immédiatement de 100 % l'action de cette unité après utilisation de son ultime.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Santé !",
-        "fullDesc": "Lorsque Gallagher utilise Coup de fouet pour attaquer des ennemis affectés par Ivresse, l'effet de restauration de PV de son talent s'applique également aux autres alliés pour cette attaque.",
+        "fullDesc": "Lorsque Gallagher utilise Coup de fouet pour attaquer des ennemis affectés par Ivresse, l'effet de restauration de PV de son talent s'applique également aux coéquipiers pour cette attaque.",
         "shortDesc": "",
         "tag": ""
       }
@@ -87,7 +87,7 @@
     },
     "2": {
       "name": "Souffle du dragon",
-      "desc": "Supprime {{1}} malus de la cible alliée lors de l'utilisation de la compétence. D'autre part, augmente de {{2, percent}}% sa RÉS aux effets pendant {{3}} tours."
+      "desc": "Supprime {{1}} malus de l'allié désigné lors de l'utilisation de la compétence. D'autre part, augmente de {{2, percent}}% sa RÉS aux effets pendant {{3}} tours."
     },
     "3": {
       "name": "Remontant",

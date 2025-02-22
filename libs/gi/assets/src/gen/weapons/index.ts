@@ -8,6 +8,8 @@ import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
+import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
+import AThousandBlazingSuns from './AThousandBlazingSuns'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
@@ -20,6 +22,7 @@ import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import BlackTassel from './BlackTassel'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
+import CalamityOfEshu from './CalamityOfEshu'
 import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
 import ChainBreaker from './ChainBreaker'
@@ -57,12 +60,14 @@ import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
 import FleuveCendreFerryman from './FleuveCendreFerryman'
+import FlowerWreathedFeathers from './FlowerWreathedFeathers'
 import FlowingPurity from './FlowingPurity'
 import FluteOfEzpitzal from './FluteOfEzpitzal'
 import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import ForestRegalia from './ForestRegalia'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
+import FruitfulHook from './FruitfulHook'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
 import Halberd from './Halberd'
@@ -98,10 +103,12 @@ import MissiveWindspear from './MissiveWindspear'
 import MistsplitterReforged from './MistsplitterReforged'
 import MitternachtsWaltz from './MitternachtsWaltz'
 import Moonpiercer from './Moonpiercer'
+import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
+import PeakPatrolSong from './PeakPatrolSong'
 import PocketGrimoire from './PocketGrimoire'
 import PolarStar from './PolarStar'
 import PortablePowerSaw from './PortablePowerSaw'
@@ -155,11 +162,15 @@ import SongOfStillness from './SongOfStillness'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
+import StarcallersWatch from './StarcallersWatch'
+import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
+import SunnyMorningSleepIn from './SunnyMorningSleepIn'
 import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TalkingStick from './TalkingStick'
+import TamayurateiNoOhanashi from './TamayurateiNoOhanashi'
 import TheAlleyFlash from './TheAlleyFlash'
 import TheBell from './TheBell'
 import TheBlackSword from './TheBlackSword'
@@ -186,6 +197,7 @@ import VortexVanquisher from './VortexVanquisher'
 import WanderingEvenstar from './WanderingEvenstar'
 import WasterGreatsword from './WasterGreatsword'
 import WavebreakersFin from './WavebreakersFin'
+import WaveridingWhirl from './WaveridingWhirl'
 import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
 import WhiteTassel from './WhiteTassel'
@@ -196,6 +208,7 @@ import WolfsGravestone from './WolfsGravestone'
 import XiphosMoonlight from './XiphosMoonlight'
 
 const data = {
+  AThousandBlazingSuns,
   AThousandFloatingDreams,
   Absolution,
   Akuoumaru,
@@ -206,6 +219,7 @@ const data = {
   AquaSimulacra,
   AquilaFavonia,
   AshGravenDrinkingHorn,
+  AstralVulturesCrimsonPlumage,
   BalladOfTheBoundlessBlue,
   BalladOfTheFjords,
   BeaconOfTheReedSea,
@@ -217,6 +231,7 @@ const data = {
   BlackcliffSlasher,
   BlackcliffWarbow,
   BloodtaintedGreatsword,
+  CalamityOfEshu,
   CalamityQueller,
   CashflowSupervision,
   ChainBreaker,
@@ -254,6 +269,7 @@ const data = {
   FilletBlade,
   FinaleOfTheDeep,
   FleuveCendreFerryman,
+  FlowerWreathedFeathers,
   FlowingPurity,
   FluteOfEzpitzal,
   FootprintOfTheRainbow,
@@ -261,6 +277,7 @@ const data = {
   FreedomSworn,
   Frostbearer,
   FruitOfFulfillment,
+  FruitfulHook,
   HakushinRing,
   Halberd,
   Hamayumi,
@@ -295,10 +312,12 @@ const data = {
   MistsplitterReforged,
   MitternachtsWaltz,
   Moonpiercer,
+  MountainBracingBolt,
   MouunsMoon,
   OathswornEye,
   OldMercsPal,
   OtherworldlyStory,
+  PeakPatrolSong,
   PocketGrimoire,
   PolarStar,
   PortablePowerSaw,
@@ -352,11 +371,15 @@ const data = {
   SplendorOfTranquilWaters,
   StaffOfHoma,
   StaffOfTheScarletSands,
+  StarcallersWatch,
+  SturdyBone,
   SummitShaper,
+  SunnyMorningSleepIn,
   SurfsUp,
   SwordOfDescension,
   SwordOfNarzissenkreuz,
   TalkingStick,
+  TamayurateiNoOhanashi,
   TheAlleyFlash,
   TheBell,
   TheBlackSword,
@@ -383,6 +406,7 @@ const data = {
   WanderingEvenstar,
   WasterGreatsword,
   WavebreakersFin,
+  WaveridingWhirl,
   WhiteIronGreatsword,
   WhiteTassel,
   Whiteblind,

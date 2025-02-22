@@ -11,9 +11,11 @@ import Beidou from './Beidou'
 import Bennett from './Bennett'
 import Candace from './Candace'
 import Charlotte from './Charlotte'
+import Chasca from './Chasca'
 import Chevreuse from './Chevreuse'
 import Chiori from './Chiori'
 import Chongyun from './Chongyun'
+import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -39,14 +41,17 @@ import KamisatoAyaka from './KamisatoAyaka'
 import KamisatoAyato from './KamisatoAyato'
 import Kaveh from './Kaveh'
 import Keqing from './Keqing'
+import Kinich from './Kinich'
 import Kirara from './Kirara'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
+import LanYan from './LanYan'
 import Layla from './Layla'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
+import Mavuika from './Mavuika'
 import Mika from './Mika'
 import Mona from './Mona'
 import Mualani from './Mualani'
@@ -56,6 +61,7 @@ import Neuvillette from './Neuvillette'
 import Nilou from './Nilou'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
+import Ororon from './Ororon'
 import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
@@ -76,12 +82,14 @@ import TravelerDendro from './TravelerDendro'
 import TravelerElectro from './TravelerElectro'
 import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
+import TravelerPyro from './TravelerPyro'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xianyun from './Xianyun'
 import Xiao from './Xiao'
+import Xilonen from './Xilonen'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
@@ -89,6 +97,7 @@ import Yanfei from './Yanfei'
 import Yaoyao from './Yaoyao'
 import Yelan from './Yelan'
 import Yoimiya from './Yoimiya'
+import YumemizukiMizuki from './YumemizukiMizuki'
 import YunJin from './YunJin'
 import Zhongli from './Zhongli'
 
@@ -105,9 +114,11 @@ const data: TagMapNodeEntries[] = [
   Bennett,
   Candace,
   Charlotte,
+  Chasca,
   Chevreuse,
   Chiori,
   Chongyun,
+  Citlali,
   Clorinde,
   Collei,
   Cyno,
@@ -133,14 +144,17 @@ const data: TagMapNodeEntries[] = [
   KamisatoAyato,
   Kaveh,
   Keqing,
+  Kinich,
   Kirara,
   Klee,
   KujouSara,
   KukiShinobu,
+  LanYan,
   Layla,
   Lisa,
   Lynette,
   Lyney,
+  Mavuika,
   Mika,
   Mona,
   Mualani,
@@ -150,6 +164,7 @@ const data: TagMapNodeEntries[] = [
   Nilou,
   Ningguang,
   Noelle,
+  Ororon,
   Qiqi,
   RaidenShogun,
   Razor,
@@ -171,6 +186,7 @@ const data: TagMapNodeEntries[] = [
   Xiangling,
   Xianyun,
   Xiao,
+  Xilonen,
   Xingqiu,
   Xinyan,
   YaeMiko,
@@ -178,6 +194,7 @@ const data: TagMapNodeEntries[] = [
   Yaoyao,
   Yelan,
   Yoimiya,
+  YumemizukiMizuki,
   YunJin,
   Zhongli,
   TravelerAnemo,
@@ -185,5 +202,6 @@ const data: TagMapNodeEntries[] = [
   TravelerElectro,
   TravelerDendro,
   TravelerHydro,
+  TravelerPyro,
 ]
 export default data.flat()

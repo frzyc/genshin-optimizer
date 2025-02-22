@@ -16,24 +16,38 @@ export type RelicSetSkillConfig = {
   AbilityName: string
   AbilityParamList: Value[]
 }
-// TODO: update these once Dim updates the datamine
+type ObfRelicSetSkillConfig = Omit<RelicSetSkillConfig, 'PropertyList'> & {
+  PropertyList: object[]
+}
 type Property = {
-  LFJEANLMLHE: StatDMKey // PropertyName
-  DIBKEHHCPAP: Value // Value
+  PropertyName: StatDMKey
+  Value: Value
 }
 
 const relicSetSkillConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicSetSkillConfig.json')
-) as RelicSetSkillConfig[]
+) as ObfRelicSetSkillConfig[]
 
 export const relicSetSkillConfig = relicSetSkillConfigSrc.reduce(
   (configMap, config) => {
     if (!relicSetIdMap[config.SetID]) return configMap
 
-    const { SetID, RequireNum } = config
+    const { SetID, RequireNum, PropertyList } = config
+    // Convert obfuscated names to unobfuscated names, assuming that the ordering of the object fields stays the same
+    const unobfPropertyList: Property[] = PropertyList.map((prop) => {
+      const fields = Object.values(prop) as unknown as [StatDMKey, Value]
+      return {
+        PropertyName: fields[0],
+        Value: fields[1],
+      }
+    })
+    const unobfConfig = {
+      ...config,
+      PropertyList: unobfPropertyList,
+    }
     if (!configMap[SetID])
       configMap[SetID] = {} as Record<RelicSetCountKey, RelicSetSkillConfig>
-    configMap[SetID][RequireNum] = config
+    configMap[SetID][RequireNum] = unobfConfig
     return configMap
   },
   {} as Record<RelicSetId, Record<RelicSetCountKey, RelicSetSkillConfig>>

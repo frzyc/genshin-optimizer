@@ -1,0 +1,9 @@
+{
+  "Id": 32400,
+  "Name": "Thunder Metal",
+  "Desc2": "<color=#2EB6FF>Electric DMG</color> +10%",
+  "Desc4": "As long as an enemy in combat is <color=#2EB6FF>Shocked</color>, the equipper's ATK is increased by 28%.",
+  "Story": "A Drive Disc burned with specialized Ether technology offering personalized attribute amplification to the user.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitThunderMetal.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitThunderMetal.png"
+}

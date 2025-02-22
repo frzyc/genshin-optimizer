@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -15,7 +16,7 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import PersonIcon from '@mui/icons-material/Person'
 import {
   Box,
-  CardActionArea,
+  Button,
   CardContent,
   CardHeader,
   Divider,
@@ -23,10 +24,8 @@ import {
   Tab,
   Tabs,
   Typography,
-  useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
@@ -61,16 +60,7 @@ export default function TeamCharacterSelector({
   )
   const selectedEle = elementArray[selectedIndex]
   const theme = useTheme()
-  const isXs = useMediaQuery(theme.breakpoints.down('md'))
-  const [editMode, setEditMode] = useState(false)
-
-  const handleName = (teamName: string): void => {
-    database.teams.set(teamId, { name: teamName })
-  }
-
-  const handleDesc = (teamDesc: string): void => {
-    database.teams.set(teamId, { description: teamDesc })
-  }
+  const [showEditor, onShowEditor, onHideEditor] = useBoolState()
 
   return (
     <Box
@@ -81,7 +71,7 @@ export default function TeamCharacterSelector({
         )!
         const rgbas = [
           // color for team setting
-          ...(isXs ? [backrgba, backrgba] : [backrgba]),
+          backrgba,
           ...elementArray.map((ele, i) => {
             if (!ele) return `rgba(0,0,0,0)`
 
@@ -93,16 +83,18 @@ export default function TeamCharacterSelector({
         ]
         const selectedRgb =
           selectedEle && hexToColor(theme.palette[selectedEle].main)
-        const rgba = selectedRgb && colorToRgbaString(selectedRgb, 0.3)
+        const rgba =
+          (selectedRgb && colorToRgbaString(selectedRgb, 0.3)) ??
+          'rgb(200,200,200,0.3)'
         return {
           // will be in the form of `linear-gradient(to right, red xx%, orange xx%, yellow xx%, green xx%)`
-          background: `linear-gradient(to ${isXs ? 'bottom' : 'right'}, ${rgbas
+          background: `linear-gradient(to right, ${rgbas
             .map(
               (rgba, i, arr) =>
                 `${rgba} ${i * (100 / arr.length) + 50 / arr.length}%`
             )
             .join(', ')})`,
-          borderBottom: `1px ${rgba ?? 'rgb(200,200,200,0.3)'} solid`,
+          borderBottom: `2px ${rgba} solid`,
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.25s ease',
             backgroundColor: 'rgba(255,255,255,0.1)',
@@ -119,97 +111,79 @@ export default function TeamCharacterSelector({
         }
       }}
     >
-      <CardActionArea onClick={() => setEditMode(true)}>
-        <BootstrapTooltip
-          placement="top"
-          title={
-            <Box>
-              <Box sx={{ display: 'flex', color: 'info.light', gap: 1 }}>
-                <BorderColorIcon />
-                <Typography>
-                  <strong>{t`team.editNameDesc`}</strong>
-                </Typography>
-              </Box>
-              {!!team.description && (
-                <Typography>{team.description}</Typography>
-              )}
-            </Box>
-          }
-        >
-          <CardContent
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              '&:hover': {
-                color: 'info.light',
-              },
-            }}
-          >
-            <Typography
-              variant="h5"
+      <TeamEditorModal
+        teamId={teamId}
+        show={showEditor}
+        onClose={onHideEditor}
+      />
+      <BootstrapTooltip
+        placement="top"
+        title={
+          <Box>
+            <Box
               sx={{
                 display: 'flex',
+                color: 'info.light',
                 gap: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-                textShadow: '#000 0 0 10px !important',
               }}
             >
-              <TeamIcon />
-              {team.name}
-            </Typography>
-          </CardContent>
-        </BootstrapTooltip>
-      </CardActionArea>
-      <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
-        <CardThemed>
-          <CardHeader
-            title={t`team.editNameDesc`}
-            avatar={<TeamIcon />}
-            titleTypographyProps={{ variant: 'h6' }}
-            action={
-              <IconButton onClick={() => setEditMode(false)}>
-                <CloseIcon />
-              </IconButton>
-            }
-          />
-          <Divider />
-          <CardContent>
-            <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
-              <TextFieldLazy
-                label={t`team.name`}
-                value={team.name}
-                onChange={(teamName) => handleName(teamName)}
-                autoFocus
-              />
-              <TextFieldLazy
-                label={t`team.desc`}
-                value={team.description}
-                onChange={(teamDesc) => handleDesc(teamDesc)}
-                multiline
-                minRows={4}
-              />
+              <BorderColorIcon />
+              <Typography>
+                <strong>{t('team.editNameDesc')}</strong>
+              </Typography>
             </Box>
-          </CardContent>
-        </CardThemed>
-      </ModalWrapper>
-      <Divider />
+            {!!team.description && <Typography>{team.description}</Typography>}
+          </Box>
+        }
+      >
+        <Button
+          variant="outlined"
+          fullWidth
+          startIcon={<TeamIcon />}
+          color="neutral200"
+          sx={{
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
+          }}
+          onClick={onShowEditor}
+        >
+          <Typography noWrap variant="h5">
+            {team.name}
+          </Typography>
+        </Button>
+      </BootstrapTooltip>
       <Tabs
         variant="fullWidth"
         value={characterKey ?? 'team'}
-        orientation={isXs ? 'vertical' : 'horizontal'}
+        sx={{
+          minHeight: 0,
+          '& .MuiTab-root': {
+            minHeight: '2em',
+            py: 1,
+          },
+        }}
       >
         <Tab
           icon={<GroupsIcon />}
           iconPosition="start"
           value={'team'}
-          label={t`teamSettings.tab.team`}
+          label={t('teamSettings.tab.team')}
           onClick={() => navigate(`/teams/${teamId}/`)}
+          sx={{
+            border: '1px solid rgba(255,255,255,0.3)',
+          }}
         />
         {loadoutData.map((loadoutDatum, ind) => {
           const teamCharKey =
             loadoutDatum &&
             database.teamChars.get(loadoutDatum?.teamCharId)?.key
+          const eleKey = teamCharKey && getCharEle(teamCharKey)
+          const color = eleKey && theme.palette[eleKey].main
+          const colorrgb = color && hexToColor(color)
+
+          const colorrbga = (alpha = 1) =>
+            (colorrgb && colorToRgbaString(colorrgb, alpha)) ??
+            `rgba(255,255,255,${alpha})`
           return (
             <Tab
               icon={
@@ -219,6 +193,12 @@ export default function TeamCharacterSelector({
                   <PersonIcon />
                 )
               }
+              sx={{
+                border: `1px solid ${colorrbga(0.3)}`,
+                '&:hover': {
+                  border: `1px solid ${colorrbga(0.8)}`,
+                },
+              }}
               iconPosition="start"
               value={teamCharKey ?? ind}
               key={ind}
@@ -240,5 +220,58 @@ export default function TeamCharacterSelector({
         })}
       </Tabs>
     </Box>
+  )
+}
+function TeamEditorModal({
+  teamId,
+  show,
+  onClose,
+}: {
+  teamId: string
+  show: boolean
+  onClose: () => void
+}) {
+  const { t } = useTranslation('page_team')
+  const database = useDatabase()
+  const team = useTeam(teamId)!
+  const handleName = (teamName: string): void => {
+    database.teams.set(teamId, { name: teamName })
+  }
+  const handleDesc = (teamDesc: string): void => {
+    database.teams.set(teamId, { description: teamDesc })
+  }
+  return (
+    <ModalWrapper open={show} onClose={onClose}>
+      <CardThemed>
+        <CardHeader
+          title={t('team.editNameDesc')}
+          avatar={<TeamIcon />}
+          titleTypographyProps={{ variant: 'h6' }}
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <Divider />
+        <CardContent>
+          <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
+            <TextFieldLazy
+              label={t('team.name')}
+              value={team.name}
+              onChange={(teamName) => handleName(teamName)}
+              autoFocus
+            />
+            <TextFieldLazy
+              label={t('team.desc')}
+              value={team.description}
+              onChange={(teamDesc) => handleDesc(teamDesc)}
+              multiline
+              minRows={4}
+            />
+          </Box>
+        </CardContent>
+      </CardThemed>
+    </ModalWrapper>
   )
 }

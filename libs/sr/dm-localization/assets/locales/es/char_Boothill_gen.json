@@ -27,7 +27,7 @@
       "0": {
         "name": "Rodeo vespertino del diablo de polvo",
         "fullDesc": "Aplica Debilidad Física a un enemigo durante {{3}} turnos.<br>Además, inflige al enemigo un Daño Físico equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Boothill y retrasa su acción en un <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Aplica Debilidad Física</orangeStrong> a un enemigo. Además, inflige gran cantidad de Daño Físico y retrasa la acción del enemigo.",
+        "shortDesc": "<orangeStrong>Implanta Debilidad Física</orangeStrong> a un enemigo. Además, inflige gran cantidad de Daño Físico y retrasa la acción del enemigo.",
         "tag": "ATQ individual"
       }
     },

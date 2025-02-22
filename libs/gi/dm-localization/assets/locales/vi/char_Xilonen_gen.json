@@ -1,0 +1,209 @@
+{
+  "name": "Xilonen",
+  "title": "Lửa Nung Đúc Hồn",
+  "description": "Thợ rèn tên của Nanatzcayan, giỏi cân bằng giữa gánh nặng công việc và cuộc sống thoải mái.",
+  "constellationName": "Cung Báo Miêu",
+  "auto": {
+    "name": "Tiếng Hống Ehecatl",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để đá về phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất căn cứ vào Phòng Ngự của Xilonen."
+      },
+      "nightsoul": {
+        "0": "<strong>Trạng Thái Dạ Hồn - Lưỡi Đao Săn Bắt</strong>",
+        "1": "Trong trạng thái Dạ Hồn Chúc Phúc, Xilonen sẽ chuyển thành dạng Lưỡi Đao Săn Bắt. Trong trạng thái này, Tấn Công Thường của Xilonen sẽ chuyển thành dùng giày trượt để đá bốn lần liên tiếp, không thể tiến hành Trọng Kích.",
+        "2": "Khi tiến hành Tấn Công Thường hoặc Tấn Công Khi Đáp trong trạng thái này, sẽ chuyển thành gây <geo>Sát Thương Nguyên Tố Nham</geo> không thể thay thế và mang thuộc tính Dạ Hồn dựa vào Phòng Ngự của Xilonen."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Sát Thương Khi Đáp",
+      "6": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "7": "Sát Thương Lưỡi Đao Săn Bắt Lần 1",
+      "8": "Sát Thương Lưỡi Đao Săn Bắt Lần 2",
+      "9": "Sát Thương Lưỡi Đao Săn Bắt Lần 3",
+      "10": "Sát Thương Lưỡi Đao Săn Bắt Lần 4",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yohual Cào Xé",
+    "description": {
+      "0": "Để nhịp điệu của đam mê vang vọng khắp mặt đất! Xilonen chuyển sang dùng giày trượt để tấn công tốc độ cao và xung kích một khoảng cách nhất định về phía trước, gây <geo>Sát Thương Nguyên Tố Nham</geo> mang thuộc tính Dạ Hồn dựa vào Phòng Ngự của Xilonen.",
+      "1": "Sau khi thi triển, Xilonen sẽ nhận được 45 điểm Dạ Hồn và tiến vào trạng thái Dạ Hồn Chúc Phúc. Trong trạng thái này, Xilonen sẽ chuyển thành dạng \"Lưỡi Đao Săn Bắt\".",
+      "2": "<br/>",
+      "3": "<strong>Âm Điệu Gốc</strong>",
+      "4": "Xilonen có ba chiếc Máy Lấy Mẫu, căn cứ vào loại nguyên tố của những nhân vật khác trong đội để thể hiện \"Âm Dạng\" khác nhau, đồng thời khi kích hoạt sẽ giảm Kháng Nguyên Tố tương ứng của kẻ địch gần đó;",
+      "5": "Âm Điệu Gốc ban đầu của ba chiếc Máy Lấy Mẫu là <geo>Nguyên Tố Nham</geo>, trong đội mỗi tồn tại một nhân vật Nguyên Tố <pyro>Hỏa</pyro>/<hydro>Thủy</hydro>/<cryo>Băng</cryo> hoặc <electro>Lôi</electro>, một Máy Lấy Mẫu <geo>Nguyên Tố Nham</geo> sẽ chuyển thành loại nguyên tố tương ứng;",
+      "6": "Khi trong trạng thái Dạ Hồn Chúc Phúc, Âm Điệu Gốc <geo>Nguyên Tố Nham</geo> của Xilonen mang theo sẽ luôn được kích hoạt; Sau khi mở khóa thiên phú \"Tiếng Vang Của Netotiliztli\", Xilonen có thể thông qua hiệu quả của thiên phú để hồi phục điểm Dạ Hồn cho bản thân; Khi điểm Dạ Hồn đạt tối đa, Xilonen sẽ tiêu hao toàn bộ điểm Dạ Hồn để kích hoạt ba Âm Điệu Gốc mà cô ấy mang theo trong 15s;",
+      "7": "Khi Âm Điệu Gốc kích hoạt, Kháng Nguyên Tố tương ứng của kẻ địch gần đó sẽ giảm, Âm Điệu Gốc của nguyên tố cùng loại sẽ không thể cộng dồn. Xilonen khi không ra trận cũng có thể sản sinh hiệu quả này.",
+      "8": "<br/>",
+      "9": "<strong>Dạ Hồn Chúc Phúc - Xilonen</strong>",
+      "10": "Liên tục tiêu hao điểm Dạ Hồn. Khi hết điểm Dạ Hồn hoặc kích hoạt lần nữa sẽ kết thúc trạng thái Dạ Hồn Chúc Phúc của Xilonen. Trạng thái Dạ Hồn Chúc Phúc có đặc tính sau:",
+      "11": [
+        "Chuyển sang trạng thái Lưỡi Đao Săn Bắt, tăng tốc độ di chuyển và leo trèo của Xilonen, đồng thời khi leo trèo sẽ dùng dạng mèo gấm Ocelot để nhảy nhanh;",
+        "Trạng thái Dạ Hồn Chúc Phúc của Xilonen có hạn chế sau: Khi ở trong trạng thái Dạ Hồn Chúc Phúc, điểm Dạ Hồn của Xilonen có giới hạn thời gian là 9s. Khi vượt qua giới hạn này, điểm Dạ Hồn của cô ấy sẽ lập tức cạn kiệt."
+      ],
+      "12": "<br/>",
+      "13": "Sau khi cạn điểm Dạ Hồn trong trạng thái Dạ Hồn Chúc Phúc, Xilonen sẽ không thể sản sinh điểm Dạ Hồn từ thiên phú \"Tiếng Vang Của Netotiliztli\".",
+      "14": "<br/>",
+      "15": "<i>Về mặt nào đó thì đúc đá quý và phối nhạc cũng có điểm tương đồng: Lọc bỏ tạp chất, chỉ giữ lại những thứ lấp lánh nhất.",
+      "16": "Tuy nhiên, Xilonen không kén chọn, dù sao thì cô ấy cũng thích cả hai!</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Xung Kích",
+      "1": "Giảm Kháng Nguyên Tố",
+      "2": "Thời Gian Kích Hoạt Âm Điệu Gốc",
+      "3": "Giới Hạn Thời Gian Điểm Dạ Hồn",
+      "4": "Giới Hạn Điểm Dạ Hồn",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Âm Điệu Ocelotlicue!",
+    "description": {
+      "0": "Dùng công suất tối đa để khởi động Đài Phối Âm Phlogiston (Phiên bản di động), gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> mang thuộc tính Dạ Hồn dựa vào Phòng Ngự của Xilonen.",
+      "1": "<br/>",
+      "2": "Ngoài ra, dựa vào loại Âm Điệu Gốc khác nhau để kích hoạt hiệu quả tương ứng như sau:",
+      "3": [
+        "Có ít nhất hai Âm Điệu Gốc đã chuyển hóa nguyên tố: Xilonen sẽ tấu vang giai điệu \"Hân Hoan\", mỗi cách một khoảng thời gian sẽ hồi phục HP cho nhân vật trong trận hiện tại gần đó, lượng hồi phục căn cứ vào Phòng Ngự của Xilonen;",
+        "Có ít hơn hai Âm Điệu Gốc đã chuyển hóa nguyên tố: Xilonen sẽ tấu vang giai điệu \"Cuồng Nhiệt\", tiến hành thêm hai lần Tiết Tấu Thêm, gây <geo>Sát Thương Phạm Vi Nguyên Tố Nham</geo> mang thuộc tính Dạ Hồn dựa vào Phòng Ngự của Xilonen."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Được, tạm ngừng ở đây trước vậy!\"",
+      "6": "\"Không sao, giai điệu ban nãy tôi đã ghi lại rồi. Hãy cùng xem chúng ta sẽ có được gì khi hòa âm với nhau nhé?\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Lượng Trị Liệu Duy Trì",
+      "2": "Thời Gian Duy Trì Nhịp Điệu Hân Hoan",
+      "3": "Sát Thương Tiết Tấu Thêm",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tiếng Vang Của Netotiliztli",
+    "description": {
+      "0": "Trong trạng thái Dạ Hồn Chúc Phúc:",
+      "1": [
+        "Nếu Xilonen sở hữu ít nhất hai Âm Điệu Gốc đã được chuyển hóa nguyên tố, khi Tấn Công Thường và Tấn Công Khi Đáp đánh trúng kẻ địch sẽ nhận được 35 điểm Dạ Hồn, hiệu quả này mỗi 0.1s tối đa kích hoạt một lần.",
+        "Nếu Xilonen sở hữu dưới hai Âm Điệu Gốc đã được chuyển hóa nguyên tố, sát thương Tấn Công Thường và Tấn Công Khi Đáp gây ra tăng 30%."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Tầng Bảo Hộ Di Động",
+    "description": {
+      "0": "Trong trạng thái Dạ Hồn Chúc Phúc, khi điểm Dạ Hồn của Xilonen đạt tối đa, sẽ kích hoạt một lần hiệu quả tương đương với Dạ Hồn Bùng Nổ. Hiệu quả này mỗi 14s tối đa kích hoạt một lần.",
+      "1": "Ngoài ra, khi nhân vật trong đội gần đó kích hoạt Dạ Hồn Bùng Nổ, Phòng Ngự của Xilonen tăng 20% trong 15s."
+    }
+  },
+  "passive3": {
+    "name": "Món Quà Dạ Vực - Lời Chúc Lửa Rèn",
+    "description": {
+      "0": "Sau khi dùng hết điểm Dạ Hồn, Xilonen sẽ chuyển sang tiêu hao Phlogiston để duy trì trạng thái Dạ Hồn Chúc Phúc.",
+      "1": "Khi ở trong khu vực có cơ chế Phlogiston của Natlan, có thể tiến hành Dạ Hồn Chuyển Hóa - Xilonen. Nhân vật trong trận khi xung kích, leo trèo, trong trạng thái di chuyển đặc biệt của Thiên Phú chỉ định hoặc đang ở độ cao nhất định trên không, đổi sang Xilonen ra trận sẽ kích hoạt: Xilonen sẽ vào trạng thái Dạ Hồn Chúc Phúc và nhận 20 điểm Dạ Hồn. Trong tình huống này, điểm Dạ Hồn của Xilonen sẽ có thời hạn là 4s, sau khi vượt quá thời hạn thì điểm Dạ Hồn của Xilonen sẽ lập tức cạn kiệt. Sau khi thi triển <strong>Yohual Cào Xé</strong> trong thời gian giới hạn, giới hạn thời gian điểm Dạ Hồn sẽ kéo dài 9s. Đội bản thân mỗi 10s có thể kích hoạt một lần Dạ Hồn Chuyển Hóa.",
+      "2": "<br/>",
+      "3": "Ngoài ra, khi ở trong khu vực Natlan, Xilonen sẽ không tiêu hao thể lực khi leo trèo ở trong trạng thái Dạ Hồn Chúc Phúc."
+    }
+  },
+  "passive": {
+    "name": "Chuyến Du Hành Của Tepeilhuitl",
+    "description": {
+      "0": "Khi kích hoạt Dạ Hồn Chuyển Hóa sẽ hồi phục 15 điểm Phlogiston."
+    }
+  },
+  "constellation1": {
+    "name": "Giai Điệu Của Ngày Nghỉ",
+    "description": {
+      "0": "Điểm Dạ Hồn và Phlogiston tiêu hao trong trạng thái Dạ Hồn Chúc Phúc của Xilonen giảm 30%, đồng thời giới hạn thời gian điểm Dạ Hồn kéo dài thêm 45%.",
+      "1": "Ngoài ra, khi kích hoạt Âm Điệu Gốc của Xilonen, sẽ còn tăng khả năng kháng gián đoạn của nhân vật trong trận hiện tại gần đó."
+    }
+  },
+  "constellation2": {
+    "name": "Hòa Tấu Của Chiucue",
+    "description": {
+      "0": "Âm Điệu Gốc <geo>Nguyên Tố Nham</geo> của Xilonen sẽ luôn duy trì trạng thái kích hoạt. Ngoài ra, khi Âm Điệu Gốc của Xilonen kích hoạt, sẽ căn cứ vào loại nguyên tố của Âm Điệu Gốc để khiến tất cả nhân vật có loại nguyên tố tương đồng trong đội gần đó nhận hiệu quả tương ứng:",
+      "1": [
+        "<geo>Nguyên Tố Nham</geo>: Sát thương gây ra tăng 50%.",
+        "<pyro>Nguyên Tố Hỏa</pyro>: Tấn Công tăng 45%.",
+        "<hydro>Nguyên Tố Thủy</hydro>: Giới Hạn HP tăng 45%.",
+        "<cryo>Nguyên Tố Băng</cryo>: Sát Thương Bạo Kích tăng 60%.",
+        "<electro>Nguyên Tố Lôi</electro>: Hồi phục 25 điểm Năng Lượng Nguyên Tố, và thời gian chờ của Kỹ Năng Nộ giảm 6s."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Vòng Lặp Của Tonalpohualli",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Yohual Cào Xé</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Nhạc Trance Của Suchitl",
+    "description": {
+      "0": "Xilonen sau khi thi triển <strong>Yohual Cào Xé</strong>, sẽ cung cấp hiệu quả Chúc Phúc Nở Rộ cho tất cả nhân vật trong đội gần đó trong 15s.",
+      "1": "Tăng sát thương Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của nhân vật mang Chúc Phúc Nở Rộ, mức tăng tương ứng với 65% Phòng Ngự của Xilonen. Hiệu quả này sẽ bị xóa sau khi hiệu lực 6 lần hoặc kết thúc thời gian duy trì.",
+      "2": "Khi đánh trúng nhiều kẻ địch cùng lúc, sẽ căn cứ vào số lượng kẻ địch trúng đòn để tiêu hao số lần hiệu lực. Số lần hiệu lực của nhân vật có Chúc Phúc Nở Rộ trong đội sẽ được tính độc lập."
+    }
+  },
+  "constellation5": {
+    "name": "Khoảng Lặng Của Tlaltecuhtli",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Âm Điệu Ocelotlicue!</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Vũ Hội Đêm Vĩnh Hằng",
+    "description": {
+      "0": "Trong trạng thái Dạ Hồn Chúc Phúc, khi Xilonen tiến hành xung kích, nhảy, Tấn Công Thường hoặc Tấn Công Khi Đáp sẽ nhận được \"Chúc Phúc Đêm Vĩnh Hằng\", bỏ qua hạn chế của trạng thái Dạ Hồn Chúc Phúc, đồng thời tăng sát thương gây ra từ Tấn Công Thường và Tấn Công Khi Đáp trong 5s.",
+      "1": "Trong thời gian duy trì:",
+      "2": [
+        "Tạm thời ngừng tính giới hạn thời gian điểm Dạ Hồn của Xilonen. Điểm Dạ Hồn, Phlogiston và Thể Lực của Xilonen sẽ không giảm, đồng thời khi điểm Dạ Hồn đạt tối đa, trạng thái Dạ Hồn Chúc Phúc của cô ấy cũng sẽ không kết thúc.",
+        "Tăng sát thương Tấn Công Thường và Tấn Công Khi Đáp trong trạng thái Dạ Hồn Chúc Phúc của Xilonen tương ứng với 300% Phòng Ngự của cô ấy.",
+        "Mỗi 1.5s sẽ hồi phục HP cho tất cả nhân vật trong đội ở gần, lượng hồi phục tương đương 120% Phòng Ngự của Xilonen."
+      ],
+      "3": "Mỗi 15s tối đa nhận một lần Chúc Phúc Đêm Vĩnh Hằng."
+    }
+  }
+}

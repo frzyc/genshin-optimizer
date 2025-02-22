@@ -13,7 +13,7 @@
       "0": {
         "name": "Octobolt Flash",
         "fullDesc": "Memperoleh {{3}} poin \"Slashed Dream\". Menambahkan {{3}} lapis \"Crimson Knot\" pada 1 musuh yang ditargetkan, dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Acheron pada musuh tersebut, dan di saat yang bersamaan, mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Acheron pada target di sekitar musuh tersebut.",
-        "shortDesc": "Memperoleh <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> poin \"Slashed Dream\"</color>. Menambahkan <orangeStrong>{{3}}</orangeStrong> lapis \"Crimson Knot\" pada 1 musuh dan mengakibatkan Lightning DMG pada musuh tersebut, serta mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitar musuh tersebut.",
+        "shortDesc": "Memperoleh <orangeStrong><color=#f29e38ff>{{3}}[i]</orangeStrong> poin \"Slashed Dream\"</color>. Menambahkan <orangeStrong>{{3}}</orangeStrong> lapis \"Crimson Knot\" pada 1 musuh dan mengakibatkan Lightning DMG pada musuh tersebut, serta mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitar musuh tersebut.",
         "tag": "Blast"
       }
     },
@@ -84,7 +84,7 @@
     "bonusAbility2": {
       "0": {
         "name": "The Abyss",
-        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1, percent}}%/{{2, percent}}% dari DMG awalnya.",
+        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1, percent}}%/{{2, percent}}% dari DMG aslinya.",
         "shortDesc": "",
         "tag": ""
       }

@@ -41,7 +41,7 @@
       "0": {
         "name": "Thành Lũy Cầm Chân",
         "fullDesc": "Sau mỗi lần Phá Vỡ Điểm Yếu của mục tiêu địch, Tấn Công sẽ tăng <orangeStrong>{{1, percent}}%</orangeStrong>, hiệu ứng này tối đa cộng dồn {{2}} tầng.",
-        "shortDesc": "",
+        "shortDesc": "Sau mỗi lần Phá Vỡ Điểm Yếu của mục tiêu phe địch, Tấn Công sẽ tăng.",
         "tag": "Cường Hóa"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "Đòn Đánh Bất Diệt",
         "fullDesc": "Sau khi dùng Bí Kỹ sẽ hồi ngay HP cho toàn thể phe ta tương đương {{1, percent}}% Giới Hạn HP của mỗi người.",
-        "shortDesc": "",
+        "shortDesc": "Sau khi dùng Bí Kỹ sẽ lập tức <orangeStrong>hồi HP</orangeStrong> cho toàn bộ phe ta.",
         "tag": "Hồi Phục"
       }
     },
@@ -101,7 +101,7 @@
     },
     "4": {
       "name": "Khoảnh Khắc Chứng Kiến Huỷ Diệt",
-      "desc": "Khi đánh trúng kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, Tỷ Lệ Bạo Kích tăng {{1, percent}}%."
+      "desc": "Khi đánh trúng mục tiêu phe địch trong trạng thái Phá Vỡ Điểm Yếu, Tỷ Lệ Bạo Kích tăng {{1, percent}}%."
     },
     "5": {
       "name": "Hy Vọng Tái Sinh",

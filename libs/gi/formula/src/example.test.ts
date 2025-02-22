@@ -193,14 +193,14 @@ describe('example', () => {
     const conds = result.meta.conds
 
     // conds[dst][src][sheet][name] == cond value
-    expect(conds).toEqual({ 0: { all: { Nahida: { c2Bloom: 1 } } } })
+    expect(conds).toEqual({ 0: { 0: { Nahida: { c2Bloom: 1 } } } })
   })
   test('list conditionals affecting a member', () => {
     // all conditionals affecting all formulas
     const conds = mem0.listCondFormulas(own.listing.formulas)
 
     // Read current value: all -> member0 Nilou:a1AfterHit
-    expect(conds['0']?.['all']?.['Nilou']?.['a1AfterHit']).toEqual(0)
+    expect(conds['0']?.['1']?.['Nilou']?.['a1AfterHit']).toEqual(0)
 
     // Grab metadata from an entry
     const meta = conditionals.Nilou.a1AfterHit
@@ -238,13 +238,7 @@ describe('example', () => {
       detached,
       'q', // Tag category for object key
       2, // Number of slots
-      {}, // Initial values
-      // Header; includes custom formulas, such as `res`
-      `function res(res) {
-      if (res < 0) return 1 - res / 2
-      else if (res >= 0.75) return 1 / (res * 4 + 1)
-      return 1 - res
-    }`
+      {} // Initial values
     )
 
     // Step 5: Calculate the value

@@ -1,0 +1,34 @@
+{
+  "name": "Alevli Bin Güneş",
+  "description": {
+    "0": "Söken şafak gibi göz kamaştıran bir çift elli kılıç. Sayısız güneşin sönüp yeniden alevlendiğine şahitlik etmiştir."
+  },
+  "passiveName": "Gün Batımıyla Parlar Şafak",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Becerisi veya Element Patlaması kullanıldığında \"Kavurucu Aydınlık\" etkisi kazanılır: 6 saniyeliğine Kritik Hasar <cryo>%20</cryo> ve Saldırı <cryo>%28</cryo> artar. Bu etki 10 saniyede bir tetiklenebilir.",
+      "1": "\"Kavurucu Aydınlık\" etkinken Normal ve Yüklü Saldırılar Element Hasarı verdiğinde etkinin süresi 2sn uzar. Bu etki her saniyede bir defa tetiklenebilir ve süresi en fazla 6sn daha uzayabilir.",
+      "2": "Ayrıca kuşanan karakter Gece Ruhunun Lütfu durumundayken \"Kavurucu Aydınlık\" etkileri %75 artar ve kuşanan karakter alanda değilken süresi azalmaz."
+    },
+    "1": {
+      "0": "Element Becerisi veya Element Patlaması kullanıldığında \"Kavurucu Aydınlık\" etkisi kazanılır: 6 saniyeliğine Kritik Hasar <cryo>%25</cryo> ve Saldırı <cryo>%35</cryo> artar. Bu etki 10 saniyede bir tetiklenebilir.",
+      "1": "\"Kavurucu Aydınlık\" etkinken Normal ve Yüklü Saldırılar Element Hasarı verdiğinde etkinin süresi 2sn uzar. Bu etki her saniyede bir defa tetiklenebilir ve süresi en fazla 6sn daha uzayabilir.",
+      "2": "Ayrıca kuşanan karakter Gece Ruhunun Lütfu durumundayken \"Kavurucu Aydınlık\" etkileri %75 artar ve kuşanan karakter alanda değilken süresi azalmaz."
+    },
+    "2": {
+      "0": "Element Becerisi veya Element Patlaması kullanıldığında \"Kavurucu Aydınlık\" etkisi kazanılır: 6 saniyeliğine Kritik Hasar <cryo>%30</cryo> ve Saldırı <cryo>%42</cryo> artar. Bu etki 10 saniyede bir tetiklenebilir.",
+      "1": "\"Kavurucu Aydınlık\" etkinken Normal ve Yüklü Saldırılar Element Hasarı verdiğinde etkinin süresi 2sn uzar. Bu etki her saniyede bir defa tetiklenebilir ve süresi en fazla 6sn daha uzayabilir.",
+      "2": "Ayrıca kuşanan karakter Gece Ruhunun Lütfu durumundayken \"Kavurucu Aydınlık\" etkileri %75 artar ve kuşanan karakter alanda değilken süresi azalmaz."
+    },
+    "3": {
+      "0": "Element Becerisi veya Element Patlaması kullanıldığında \"Kavurucu Aydınlık\" etkisi kazanılır: 6 saniyeliğine Kritik Hasar <cryo>%35</cryo> ve Saldırı <cryo>%49</cryo> artar. Bu etki 10 saniyede bir tetiklenebilir.",
+      "1": "\"Kavurucu Aydınlık\" etkinken Normal ve Yüklü Saldırılar Element Hasarı verdiğinde etkinin süresi 2sn uzar. Bu etki her saniyede bir defa tetiklenebilir ve süresi en fazla 6sn daha uzayabilir.",
+      "2": "Ayrıca kuşanan karakter Gece Ruhunun Lütfu durumundayken \"Kavurucu Aydınlık\" etkileri %75 artar ve kuşanan karakter alanda değilken süresi azalmaz."
+    },
+    "4": {
+      "0": "Element Becerisi veya Element Patlaması kullanıldığında \"Kavurucu Aydınlık\" etkisi kazanılır: 6 saniyeliğine Kritik Hasar <cryo>%40</cryo> ve Saldırı <cryo>%56</cryo> artar. Bu etki 10 saniyede bir tetiklenebilir.",
+      "1": "\"Kavurucu Aydınlık\" etkinken Normal ve Yüklü Saldırılar Element Hasarı verdiğinde etkinin süresi 2sn uzar. Bu etki her saniyede bir defa tetiklenebilir ve süresi en fazla 6sn daha uzayabilir.",
+      "2": "Ayrıca kuşanan karakter Gece Ruhunun Lütfu durumundayken \"Kavurucu Aydınlık\" etkileri %75 artar ve kuşanan karakter alanda değilken süresi azalmaz."
+    }
+  }
+}

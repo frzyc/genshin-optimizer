@@ -5,16 +5,29 @@ on:
   workflow_call:
     inputs:
       frontend_name:
-        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
+        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`, or `zzz-frontend`.'
         type: string
+        required: true
       deployment_name:
         description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
         type: string
         default: 'master'
+      repo_var_name:
+        description: 'Name of the variable on the repo that contains the repo to deploy to.'
+        type: string
+        required: true
+      repo_deploy_secret_name:
+        description: 'Name of the secret on the repo that contains the deploy key for the deploy repo'
+        type: string
+        required: true
       show_dev_components:
         description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
         type: boolean
         default: false
+      nested_deployments:
+        description: 'When true, the deployment will be nested in a sub-folder corresponding to the frontend_name. When false, the deployment will sit in the repo root folder, which means you can only have 1 deployment active at a time'
+        type: boolean
+        default: true
 
 jobs:
   build:
@@ -47,23 +60,29 @@ jobs:
       - name: Setup .env
         run: |
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
+          printf '%s' "$ENVFILE" > apps/zzz-frontend/.env.local
         env:
           ENVFILE: ${{ vars.ENVFILE }}
       - name: Build frontend
         run: |
-          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
-          NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
+          echo "NX_URL_GITHUB_GO_CURRENT_VERSION=https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "NX_DAEMON=false" >> $GITHUB_ENV
+          echo "NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}" >> $GITHUB_ENV
       - name: Build gi-frontend
         if: inputs.frontend_name == 'gi-frontend'
         run: yarn nx run gi-frontend:next:build
       - name: Build other frontend
         if: inputs.frontend_name != 'gi-frontend'
-        run: yarn run nx run ${{inputs.frontend_name}}:build:production
+        run: |
+          echo $NX_SHOW_DEV_COMPONENTS
+          yarn run nx run ${{inputs.frontend_name}}:build:production
       - name: echos
         run: |
           echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
+          echo ${{inputs.nested_deployments}} > nested_deployments
+          echo ${{inputs.repo_var_name}} > repo_var_name
+          echo ${{inputs.repo_deploy_secret_name}} > repo_deploy_secret_name
           echo $(git rev-parse HEAD) > ref
       - name: Archive build
         uses: actions/upload-artifact@v4
@@ -73,4 +92,7 @@ jobs:
             dist/apps/${{inputs.frontend_name}}
             frontend_name
             deployment_name
+            nested_deployments
+            repo_var_name
+            repo_deploy_secret_name
             ref

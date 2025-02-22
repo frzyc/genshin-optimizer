@@ -17,8 +17,8 @@
   "PrisonerInDeepConfinement": "深い牢獄の囚人",
   "PioneerDiverOfDeadWaters": "死水に潜る先駆者",
   "WatchmakerMasterOfDreamMachinations": "夢を弄ぶ時計屋",
-  "IronCavalryAgainstTheScourge": "{RUBY_B#こうがい}蝗害{RUBY_E#}を{RUBY_B#いっそう}一掃{RUBY_E#}せし{RUBY_B#てっき}鉄騎{RUBY_E#}",
-  "TheWindSouringValorous": "{RUBY_B#ふううん}風雲{RUBY_E#}を{RUBY_B#な}薙{RUBY_E#}ぎ{RUBY_B#はら}払{RUBY_E#}う{RUBY_B#ゆうれつ}勇烈{RUBY_E#}",
+  "IronCavalryAgainstTheScourge": "蝗害を一掃せし鉄騎",
+  "TheWindSouringValorous": "風雲を薙ぎ払う勇烈",
   "SpaceSealingStation": "宇宙封印ステーション",
   "FleetOfTheAgeless": "老いぬ者の仙舟",
   "PanCosmicCommercialEnterprise": "汎銀河商事会社",
@@ -31,8 +31,8 @@
   "BrokenKeel": "折れた竜骨",
   "FirmamentFrontlineGlamoth": "蒼穹戦線グラモス",
   "PenaconyLandOfTheDreams": "夢の地ピノコニー",
-  "SigoniaTheUnclaimedDesolation": "{RUBY_B#こうりょう}荒涼{RUBY_E#}の{RUBY_B#わくせい}惑星{RUBY_E#}ツガンニヤ",
-  "IzumoGenseiAndTakamaDivineRealm": "{RUBY_B#けんせ}顕世{RUBY_E#}の{RUBY_B#いずも}出雲{RUBY_E#}と{RUBY_B#たかま}高天{RUBY_E#}の{RUBY_B#しんこく}神国{RUBY_E#}",
-  "DuranDynastyOfRunningWolves": "{RUBY_B#ほんろう}奔狼{RUBY_E#}の{RUBY_B#どぅーらんおうちょう}都藍王朝{RUBY_E#}",
-  "ForgeOfTheKalpagniLantern": "{RUBY_B#ごうか}劫火{RUBY_E#}と{RUBY_B#れんとう}蓮灯{RUBY_E#}の{RUBY_B#ちゅうれんぐう}鋳煉宮{RUBY_E#}"
+  "SigoniaTheUnclaimedDesolation": "荒涼の惑星ツガンニヤ",
+  "IzumoGenseiAndTakamaDivineRealm": "顕世の出雲と高天の神国",
+  "DuranDynastyOfRunningWolves": "奔狼の都藍王朝",
+  "ForgeOfTheKalpagniLantern": "劫火と蓮灯の鋳煉宮"
 }

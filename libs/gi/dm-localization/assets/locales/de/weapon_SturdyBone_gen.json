@@ -1,0 +1,24 @@
+{
+  "name": "Robuster Knochen",
+  "description": {
+    "0": "Ein Langschwert aus Knochen, das nach unzähligen Schlägen und Schwüngen immer härter wurde. Angeblich war es einst eine handliche Waffe, die der Held Wanjiru in der Hand hielt."
+  },
+  "passiveName": "Stolz des Stürmers",
+  "passiveDescription": {
+    "0": {
+      "0": "Verringert die beim Rennen oder von Fähigkeiten, die Rennen ersetzen, verbrauchte Ausdauer um 15 %. Erhöht außerdem den mit Standardangriffen verursachten Schaden nach dem Rennen oder Anwenden einer Fähigkeit, die Rennen ersetzt, um <cryo>16 %</cryo> ANG. Dieser Effekt verschwindet nach 18 Auslösungen oder 7 s."
+    },
+    "1": {
+      "0": "Verringert die beim Rennen oder von Fähigkeiten, die Rennen ersetzen, verbrauchte Ausdauer um 15 %. Erhöht außerdem den mit Standardangriffen verursachten Schaden nach dem Rennen oder Anwenden einer Fähigkeit, die Rennen ersetzt, um <cryo>20 %</cryo> ANG. Dieser Effekt verschwindet nach 18 Auslösungen oder 7 s."
+    },
+    "2": {
+      "0": "Verringert die beim Rennen oder von Fähigkeiten, die Rennen ersetzen, verbrauchte Ausdauer um 15 %. Erhöht außerdem den mit Standardangriffen verursachten Schaden nach dem Rennen oder Anwenden einer Fähigkeit, die Rennen ersetzt, um <cryo>24 %</cryo> ANG. Dieser Effekt verschwindet nach 18 Auslösungen oder 7 s."
+    },
+    "3": {
+      "0": "Verringert die beim Rennen oder von Fähigkeiten, die Rennen ersetzen, verbrauchte Ausdauer um 15 %. Erhöht außerdem den mit Standardangriffen verursachten Schaden nach dem Rennen oder Anwenden einer Fähigkeit, die Rennen ersetzt, um <cryo>28 %</cryo> ANG. Dieser Effekt verschwindet nach 18 Auslösungen oder 7 s."
+    },
+    "4": {
+      "0": "Verringert die beim Rennen oder von Fähigkeiten, die Rennen ersetzen, verbrauchte Ausdauer um 15 %. Erhöht außerdem den mit Standardangriffen verursachten Schaden nach dem Rennen oder Anwenden einer Fähigkeit, die Rennen ersetzt, um <cryo>32 %</cryo> ANG. Dieser Effekt verschwindet nach 18 Auslösungen oder 7 s."
+    }
+  }
+}

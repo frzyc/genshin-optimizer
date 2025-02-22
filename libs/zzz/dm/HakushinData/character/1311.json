@@ -1,0 +1,1578 @@
+{
+  "Id": 1311,
+  "Icon": "IconRole36",
+  "Name": "Astra Yao",
+  "CodeName": "Astra",
+  "Rarity": 4,
+  "WeaponType": { "4": "Support" },
+  "ElementType": { "205": "Ether" },
+  "SpecialElementType": {},
+  "HitType": { "102": "Strike" },
+  "Camp": { "8": "Stars of Lyra" },
+  "Gender": 2,
+  "PartnerInfo": {
+    "Birthday": "JAN 31",
+    "FullName": "Astra Yao",
+    "Gender": "Female",
+    "IconPath": "UI/Sprite/A1DynamicLoad/IconRoleCircle/UnPacker/IconRoleCircle36.png",
+    "ImpressionF": "Astra just sent me another message on Knock Knock! It's a swimsuit photoshoot for \"Jealous\"! Wow, she's got a great body~",
+    "ImpressionM": "What?! Why don't I... Ahem, I think my phone is broken. Belle, can I borrow yours for a moment?",
+    "Name": "",
+    "OutlookDesc": "There's no record of Astra Yao's aptitude for Ether in her New Eridu Citizen Verification Profile.\nNote: She has an outstanding aptitude for Ether.",
+    "ProfileDesc": "Astra Yao is widely regarded as Ridu's most iconic singer. With her extraordinary voice, stage presence, and songwriting talent, she has led the musical trends of an entire era. \"If music is the resonance of the soul, then Astra Yao is the spark that ignites it all,\" said one famous music critic.\n\nAs brilliant as she is, Astra remains remarkably sincere and pure. On stage, her voice resonates deeply with the audience, which has allowed her to amass a large and loyal fanbase known as her \"Astranauts.\" Of course, Astra's brilliance wouldn't be possible without the careful protection of her manager, Evelyn. Offstage, she appears to be just a cute, hapless girl who depends on Evelyn in her daily life, and on Wise and Belle in the Hollows.\n\n\"If I tickled Eous, would it make you laugh?\" Astra asked curiously while lifting the Proxy, who was linked via the HDD system.\n\nShe seems to have a particular fondness for Eous.\nContemplation: Human emotions are indeed an interesting subject. It's still hard to determine whether Astra likes Eous because of the owner, or whether she likes the owner because of Eous.",
+    "Race": "Stars of Lyra",
+    "RoleIcon": "IconRole/UnPacker/IconRole36",
+    "Stature": "176",
+    "UnlockCondition": [
+      "Obtain Agent",
+      "Complete Main Story \"Leisurely Lull: Goldfinch's Escape\" (available after completing Main Story Chapter 5)",
+      "Complete Special Episode \"Astra-Nomical Moment\""
+    ],
+    "TrustLv": {
+      "1": "Astra Yao is widely regarded as Ridu's most iconic singer. With her extraordinary voice, stage presence, and songwriting talent, she has led the musical trends of an entire era. \"If music is the resonance of the soul, then Astra Yao is the spark that ignites it all,\" said one famous music critic.\n\nAs brilliant as she is, Astra remains remarkably sincere and pure. On stage, her voice resonates deeply with the audience, which has allowed her to amass a large and loyal fanbase known as her \"Astranauts.\" Of course, Astra's brilliance wouldn't be possible without the careful protection of her manager, Evelyn. Offstage, she appears to be just a cute, hapless girl who depends on Evelyn in her daily life, and on Wise and Belle in the Hollows.\n\n\"If I tickled Eous, would it make you laugh?\" Astra asked curiously while lifting the Proxy, who was linked via the HDD system.\n\nShe seems to have a particular fondness for Eous.\nContemplation: Human emotions are indeed an interesting subject. It's still hard to determine whether Astra likes Eous because of the owner, or whether she likes the owner because of Eous.",
+      "2": "",
+      "3": "Astra is particularly fond of Random Play. However, her whereabouts are closely monitored. For now, it seems she can still use an excuse like, \"The store offers rare versions of old movies, and I've got such good taste in movies, so of course I'd love it!\" But being the biggest celebrity in Ridu, such frequent visits to a video rental store are not exactly conducive to keeping our identity under wraps.\n\nBut, who cares about that! If our identity gets exposed, so be it — Astra can't not come.\nContemplation: Creating various situations to bring Astra and Master together is a great way to win the Master's favor.",
+      "4": ""
+    }
+  },
+  "Skin": {
+    "3113110": {
+      "Name": "Astra Yao: Scarlet Rock",
+      "Desc": "The bold red is only to ignite the freedom deep within. On stage, nothing can overshadow her brilliance.",
+      "Image": "IconRole36"
+    },
+    "3113111": {
+      "Name": "Astra Yao: Chandelier",
+      "Desc": "The black-and-white dress glimmers in both light and shadows. Every smile of hers seems to sink into the flowing light of the night, becoming a timeless classic.",
+      "Image": "IconRole36_01"
+    }
+  },
+  "Stats": {
+    "Armor": 0,
+    "ArmorGrowth": 0,
+    "Attack": 103,
+    "AttackGrowth": 59961,
+    "AvatarPieceId": 5311,
+    "BreakStun": 83,
+    "BuffResistBurnPossibilityDelta": 0,
+    "BuffResistBurnPossibilityRatio": 0,
+    "BuffResistElectricPossibilityDelta": 0,
+    "BuffResistElectricPossibilityRatio": 0,
+    "BuffResistFrozenPossibilityDelta": 0,
+    "BuffResistFrozenPossibilityRatio": 0,
+    "Crit": 500,
+    "CritDamage": 5000,
+    "CritDmgRes": 0,
+    "CritRes": 0,
+    "Defence": 48,
+    "DefenceGrowth": 65524,
+    "ElementAbnormalPower": 93,
+    "ElementMystery": 92,
+    "Endurance": 0,
+    "HpGrowth": 939358,
+    "HpMax": 692,
+    "Luck": 10,
+    "PenDelta": 0,
+    "PenRate": 0,
+    "Rbl": 1,
+    "RblCorrectionFactor": 10000,
+    "RblProbability": 0,
+    "Shield": 0,
+    "ShieldGrowth": 0,
+    "SpBarPoint": 120,
+    "SpRecover": 120,
+    "StarInitial": 1,
+    "Stun": 0,
+    "Tags": [
+      "Astra",
+      "Punch",
+      "Ether",
+      "Female",
+      "Camp8",
+      "Size3",
+      "AidTypeEvade",
+      "Astra"
+    ]
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": { "10": 24000, "100214": 4 }
+    },
+    "2": {
+      "HpMax": 475,
+      "Attack": 37,
+      "Defence": 33,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": { "10": 56000, "100224": 12 }
+    },
+    "3": {
+      "HpMax": 950,
+      "Attack": 74,
+      "Defence": 66,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": { "10": 120000, "100224": 20 }
+    },
+    "4": {
+      "HpMax": 1425,
+      "Attack": 110,
+      "Defence": 99,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": { "10": 200000, "100234": 10 }
+    },
+    "5": {
+      "HpMax": 1900,
+      "Attack": 147,
+      "Defence": 133,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": { "10": 400000, "100234": 20 }
+    },
+    "6": {
+      "HpMax": 2375,
+      "Attack": 184,
+      "Defence": 166,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {}
+    }
+  },
+  "ExtraLevel": {
+    "1": {
+      "MaxLevel": 15,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 0
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 12
+        }
+      }
+    },
+    "2": {
+      "MaxLevel": 25,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 12
+        }
+      }
+    },
+    "3": {
+      "MaxLevel": 35,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 24
+        }
+      }
+    },
+    "4": {
+      "MaxLevel": 45,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 24
+        }
+      }
+    },
+    "5": {
+      "MaxLevel": 55,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 36
+        }
+      }
+    },
+    "6": {
+      "MaxLevel": 60,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 75
+        },
+        "30501": {
+          "Prop": 30501,
+          "Name": "Base Energy Regen",
+          "Format": "{0:0.##}",
+          "Value": 36
+        }
+      }
+    }
+  },
+  "LevelEXP": [
+    50, 150, 250, 400, 600, 800, 1000, 1250, 1500, 1800, 1935, 2065, 2200, 2335,
+    2465, 2600, 2735, 2865, 3000, 4680, 4975, 5265, 5560, 5855, 6145, 6440,
+    6735, 7025, 7320, 10800, 11400, 12000, 12600, 13200, 13800, 14400, 15000,
+    15600, 16200, 17100, 18300, 19500, 20700, 21900, 23100, 24300, 25500, 26700,
+    27900, 34200, 36600, 39000, 41400, 43800, 46200, 48600, 51000, 53400, 55800,
+    0
+  ],
+  "Skill": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "Basic Attack: \"Capriccio\"",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nPerform up to three attacks forward, dealing <color=#FE437E>Ether DMG</color>.\nDuring the 3rd-hit, hold <IconMap:Icon_Normal> to charge, drawing enemies in and expanding the attack range for a stronger attack.\nAfter using other skills, hold <IconMap:Icon_Normal> to initiate the 3rd-hit directly."
+        },
+        {
+          "Name": "Basic Attack: Interlude",
+          "Desc": "While in the <color=#FFFFFF>Idyllic Cadenza</color> state, press <IconMap:Icon_Normal> to activate:\nRelease <color=#FFFFFF>Tremolo</color> forward to attack, dealing <color=#FE437E>Ether DMG</color>.\nA <color=#FFFFFF>Quick Assist</color> will be triggered when this skill hits an enemy."
+        },
+        {
+          "Name": "Basic Attack: Chorus",
+          "Desc": "While in the <color=#FFFFFF>Idyllic Cadenza</color> state, press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nLaunch multiple <color=#FFFFFF>Tremolo</color> attacks at enemies in front, dealing massive <color=#FE437E>Ether DMG</color>.\nA <color=#FFFFFF>Quick Assist</color> will be triggered when this skill hits an enemy.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Basic Attack: Finale",
+          "Desc": "While in the <color=#FFFFFF>Idyllic Cadenza</color> state, hold <IconMap:Icon_Normal> to activate:\nRelease <color=#FFFFFF>Tremolo</color> forward to attack, dealing <color=#FE437E>Ether DMG</color> and exit the <color=#FFFFFF>Idyllic Cadenza</color> state.\nUpon activation of the skill, it grants the buff from <color=#FFFFFF>Core Passive: \"Graceful Andante\"</color>.\nWith enough Energy, consumes Energy to follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>. This <color=#FFFFFF>Tremolo</color> attack released is considered an <color=#FFFFFF>EX Special Attack</color>."
+        },
+        {
+          "Name": "Basic Attack: \"Capriccio\"",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1311001, Prop:1001}",
+              "Param": {
+                "1311001": {
+                  "Main": 4380,
+                  "Growth": 400,
+                  "Format": "%",
+                  "DamagePercentage": 4380,
+                  "DamagePercentageGrowth": 400,
+                  "StunRatio": 4130,
+                  "StunRatioGrowth": 190,
+                  "SpRecovery": 6750,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 103125,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3745,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1311002, Prop:1001}",
+              "Param": {
+                "1311002": {
+                  "Main": 5910,
+                  "Growth": 540,
+                  "Format": "%",
+                  "DamagePercentage": 5910,
+                  "DamagePercentageGrowth": 540,
+                  "StunRatio": 5640,
+                  "StunRatioGrowth": 260,
+                  "SpRecovery": 9230,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 141075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5125,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Min DMG Multiplier",
+              "Desc": "{Skill:1311003, Prop:1001}",
+              "Param": {
+                "1311003": {
+                  "Main": 12090,
+                  "Growth": 1100,
+                  "Format": "%",
+                  "DamagePercentage": 12090,
+                  "DamagePercentageGrowth": 1100,
+                  "StunRatio": 11480,
+                  "StunRatioGrowth": 530,
+                  "SpRecovery": 18780,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 287100,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 10431,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Max DMG Multiplier",
+              "Desc": "{Skill:1311004, Prop:1001}",
+              "Param": {
+                "1311004": {
+                  "Main": 27070,
+                  "Growth": 2470,
+                  "Format": "%",
+                  "DamagePercentage": 27070,
+                  "DamagePercentageGrowth": 2470,
+                  "StunRatio": 21940,
+                  "StunRatioGrowth": 1000,
+                  "SpRecovery": 35900,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 548350,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 19939,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1311001, Prop:1002}",
+              "Param": {
+                "1311001": {
+                  "Main": 4130,
+                  "Growth": 190,
+                  "Format": "%",
+                  "DamagePercentage": 4380,
+                  "DamagePercentageGrowth": 400,
+                  "StunRatio": 4130,
+                  "StunRatioGrowth": 190,
+                  "SpRecovery": 6750,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 103125,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3745,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1311002, Prop:1002}",
+              "Param": {
+                "1311002": {
+                  "Main": 5640,
+                  "Growth": 260,
+                  "Format": "%",
+                  "DamagePercentage": 5910,
+                  "DamagePercentageGrowth": 540,
+                  "StunRatio": 5640,
+                  "StunRatioGrowth": 260,
+                  "SpRecovery": 9230,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 141075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5125,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Min Daze Multiplier",
+              "Desc": "{Skill:1311003, Prop:1002}",
+              "Param": {
+                "1311003": {
+                  "Main": 11480,
+                  "Growth": 530,
+                  "Format": "%",
+                  "DamagePercentage": 12090,
+                  "DamagePercentageGrowth": 1100,
+                  "StunRatio": 11480,
+                  "StunRatioGrowth": 530,
+                  "SpRecovery": 18780,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 287100,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 10431,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Max Daze Multiplier",
+              "Desc": "{Skill:1311004, Prop:1002}",
+              "Param": {
+                "1311004": {
+                  "Main": 21940,
+                  "Growth": 1000,
+                  "Format": "%",
+                  "DamagePercentage": 27070,
+                  "DamagePercentageGrowth": 2470,
+                  "StunRatio": 21940,
+                  "StunRatioGrowth": 1000,
+                  "SpRecovery": 35900,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 548350,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 19939,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Interlude",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1311005, Prop:1001}",
+              "Param": {
+                "1311005": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1311005, Prop:1001}",
+              "Param": {
+                "1311005": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1311005, Prop:1001} * 2",
+              "Param": {
+                "1311005": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit DMG Multiplier",
+              "Desc": "{Skill:1311005, Prop:1001}",
+              "Param": {
+                "1311005": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit DMG Multiplier",
+              "Desc": "{Skill:1311005, Prop:1001} * 2",
+              "Param": {
+                "1311005": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1311005, Prop:1002}",
+              "Param": {
+                "1311005": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1311005, Prop:1002}",
+              "Param": {
+                "1311005": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1311005, Prop:1002} * 2",
+              "Param": {
+                "1311005": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Daze Multiplier",
+              "Desc": "{Skill:1311005, Prop:1002}",
+              "Param": {
+                "1311005": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit Daze Multiplier",
+              "Desc": "{Skill:1311005, Prop:1002} * 2",
+              "Param": {
+                "1311005": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Chorus",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311005, Prop:1001} * 4",
+              "Param": {
+                "1311005": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311005, Prop:1002} * 4",
+              "Param": {
+                "1311005": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Finale",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311005, Prop:1001}",
+              "Param": {
+                "1311005": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311005, Prop:1002}",
+              "Param": {
+                "1311005": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100115": 2 },
+        "2": { "10": 3000, "100115": 3 },
+        "3": { "10": 6000, "100125": 2 },
+        "4": { "10": 9000, "100125": 3 },
+        "5": { "10": 12000, "100125": 4 },
+        "6": { "10": 18000, "100125": 6 },
+        "7": { "10": 45000, "100135": 5 },
+        "8": { "10": 67500, "100135": 8 },
+        "9": { "10": 90000, "100135": 10 },
+        "10": { "10": 112500, "100135": 12 },
+        "11": { "10": 135000, "100135": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "Dodge: \"Mini Waltz\"",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: \"Lunar Eclipse Melody\"",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nAttack ahead, dealing <color=#FE437E>Ether DMG</color>.\nWhen triggered, dragging the{LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} allows movement in the corresponding direction."
+        },
+        {
+          "Name": "Dodge Counter: \"Umbrella Waltz\"",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nAttack enemies in front, dealing <color=#FE437E>Ether DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: \"Lunar Eclipse Melody\"",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311010, Prop:1001}",
+              "Param": {
+                "1311010": {
+                  "Main": 8070,
+                  "Growth": 740,
+                  "Format": "%",
+                  "DamagePercentage": 8070,
+                  "DamagePercentageGrowth": 740,
+                  "StunRatio": 4040,
+                  "StunRatioGrowth": 190,
+                  "SpRecovery": 13200,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 100925,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3664,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311010, Prop:1002}",
+              "Param": {
+                "1311010": {
+                  "Main": 4040,
+                  "Growth": 190,
+                  "Format": "%",
+                  "DamagePercentage": 8070,
+                  "DamagePercentageGrowth": 740,
+                  "StunRatio": 4040,
+                  "StunRatioGrowth": 190,
+                  "SpRecovery": 13200,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 100925,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3664,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Dodge Counter: \"Umbrella Waltz\"",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311011, Prop:1001}",
+              "Param": {
+                "1311011": {
+                  "Main": 11000,
+                  "Growth": 1000,
+                  "Format": "%",
+                  "DamagePercentage": 11000,
+                  "DamagePercentageGrowth": 1000,
+                  "StunRatio": 9680,
+                  "StunRatioGrowth": 440,
+                  "SpRecovery": 12670,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 96800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3518,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311011, Prop:1002}",
+              "Param": {
+                "1311011": {
+                  "Main": 9680,
+                  "Growth": 440,
+                  "Format": "%",
+                  "DamagePercentage": 11000,
+                  "DamagePercentageGrowth": 1000,
+                  "StunRatio": 9680,
+                  "StunRatioGrowth": 440,
+                  "SpRecovery": 12670,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 96800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3518,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100115": 2 },
+        "2": { "10": 3000, "100115": 3 },
+        "3": { "10": 6000, "100125": 2 },
+        "4": { "10": 9000, "100125": 3 },
+        "5": { "10": 12000, "100125": 4 },
+        "6": { "10": 18000, "100125": 6 },
+        "7": { "10": 45000, "100135": 5 },
+        "8": { "10": 67500, "100135": 8 },
+        "9": { "10": 90000, "100135": 10 },
+        "10": { "10": 112500, "100135": 12 },
+        "11": { "10": 135000, "100135": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "Special Attack: \"Windchimes & Oaths\"",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nQuickly move away, then release <color=#FFFFFF>Tremolo</color>, dealing <color=#FE437E>Ether DMG</color>, and enter the <color=#FFFFFF>Idyllic Cadenza</color> state.\nDuring activation, dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} enables movement in the direction held.\nHold <IconMap:Icon_Special> to charge during activation, drawing enemies in, and follow up with 1 to 4 <color=#FFFFFF>Tremolos</color> depending on the charge duration.\nA <color=#FFFFFF>Quick Assist</color> will be triggered when this skill hits an enemy.\nCharacter is invulnerable when quickly moving away."
+        },
+        {
+          "Name": "Idyllic Cadenza",
+          "Desc": "After entering the <color=#FFFFFF>Idyllic Cadenza</color> state, Astra Yao increases all squad members' DMG by <color=#2BAD00>{CAL:0.08+AvatarSkillLevel(1)*0.01,100,2}%</color> and CRIT DMG by <color=#2BAD00>{CAL:0.07+AvatarSkillLevel(1)*0.015,100,2}%</color>.\nWhile in the <color=#FFFFFF>Idyllic Cadenza</color> state, Astra Yao cannot move, but pressing <IconMap:Icon_Normal> will activate <color=#FFFFFF>Basic Attack: Interlude</color>, and pressing <IconMap:Icon_Evade> will activate a dodge. After triggering a <color=#FFFFFF>Perfect Dodge</color>, press <IconMap:Icon_Normal> to activate <color=#FFFFFF>Basic Attack: Chorus</color>.\nWhile in this state, Astra Yao's Anti-Interrupt Level is increased, and the DMG she takes is reduced by 40%. After switching to another character, Astra Yao will remain on the field and become Invulnerable. When switching back to her, she will automatically follow up with <color=#FFFFFF>Special Attack: \"Windchimes & Oaths\"</color>.\nDuring this state, hold <IconMap:Icon_Normal> to activate <color=#FFFFFF>Basic Attack: Finale</color>, exiting the <color=#FFFFFF>Idyllic Cadenza</color> state, or hold <IconMap:Icon_Evade> to exit the <color=#FFFFFF>Idyllic Cadenza</color> state directly."
+        },
+        {
+          "Name": "Chord",
+          "Desc": "For every 25 Energy, Astra Yao will have 1 <color=#FFFFFF>Chord</color>.\nWhile in the <color=#FFFFFF>Idyllic Cadenza</color> state, when Astra Yao has <color=#FFFFFF>Chords</color>, a <color=#FFFFFF>Quick Assist</color> can be triggered in the following situations:\n· When the active character's attack hits an enemy, once per 3s.\n· When the active character's heavy attack hits an enemy, once per 1s.\nWhen other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, Astra Yao will consume 25 Energy and release 1 <color=#FFFFFF>Tremolo</color> to attack. This <color=#FFFFFF>Tremolo</color> attack released is considered an <color=#FFFFFF>EX Special Attack</color>.\nAfter triggering a <color=#FFFFFF>Quick Assist</color>, quickly press <IconMap:Icon_Switch> to switch characters and trigger a <color=#FFFFFF>Precise Assist</color>, causing Astra Yao to follow up with 3 <color=#FFFFFF>Tone Clusters</color> to attack. When other squad members switch in through a <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, it will automatically trigger a <color=#FFFFFF>Precise Assist</color>."
+        },
+        {
+          "Name": "Special Attack: \"Windchimes & Oaths\"",
+          "Param": [
+            {
+              "Name": "Squad DMG Increase",
+              "Desc": "{CAL:0.08+AvatarSkillLevel(1)*0.01,100,2}%"
+            },
+            {
+              "Name": "Squad CRIT DMG Increase",
+              "Desc": "{CAL:0.07+AvatarSkillLevel(1)*0.015,100,2}%"
+            },
+            {
+              "Name": "Minimum DMG Multiplier",
+              "Desc": "{Skill:1311006, Prop:1001}",
+              "Param": {
+                "1311006": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Maximum DMG Multiplier",
+              "Desc": "{Skill:1311006, Prop:1001} * 4",
+              "Param": {
+                "1311006": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Minimum Daze Multiplier",
+              "Desc": "{Skill:1311006, Prop:1002}",
+              "Param": {
+                "1311006": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Maximum Daze Multiplier",
+              "Desc": "{Skill:1311006, Prop:1002} * 4",
+              "Param": {
+                "1311006": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Chord",
+          "Param": [
+            {
+              "Name": "Follow-Up Tremolo DMG Multiplier",
+              "Desc": "{Skill:1311008, Prop:1001}",
+              "Param": {
+                "1311008": {
+                  "Main": 4600,
+                  "Growth": 420,
+                  "Format": "%",
+                  "DamagePercentage": 4600,
+                  "DamagePercentageGrowth": 420,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2977,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Follow-Up Tone Cluster DMG Multiplier",
+              "Desc": "{Skill:1311009, Prop:1001} * 3",
+              "Param": {
+                "1311009": {
+                  "Main": 2400,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 2400,
+                  "DamagePercentageGrowth": 220,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1032,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            { "Name": "Energy Cost", "Desc": "25" }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100115": 2 },
+        "2": { "10": 3000, "100115": 3 },
+        "3": { "10": 6000, "100125": 2 },
+        "4": { "10": 9000, "100125": 3 },
+        "5": { "10": 12000, "100125": 4 },
+        "6": { "10": 18000, "100125": 6 },
+        "7": { "10": 45000, "100135": 5 },
+        "8": { "10": 67500, "100135": 8 },
+        "9": { "10": 90000, "100135": 10 },
+        "10": { "10": 112500, "100135": 12 },
+        "11": { "10": 135000, "100135": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        {
+          "Name": "Chain Attack: \"Tipsy Concerto\"",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nUse song to channel energy into a blast, dealing massive <color=#FE437E>Ether DMG</color>.\nCharacter is invulnerable while using this skill.\nA <color=#ffffff>Quick Assist</color> is triggered when this skill hits an enemy.\nAfter the skill, Astra Yao enters the <color=#FFFFFF>Idyllic Cadenza</color> state."
+        },
+        {
+          "Name": "Ultimate: \"Fantasian Sonata\"",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nUse song to channel energy into a blast, dealing massive <color=#FE437E>Ether DMG</color>, and restoring <color=#2BAD00>{CAL:-50+AvatarSkillLevel(3)*250,1,2}</color> HP to all squad members.\nCharacter is invulnerable while using this skill.\nA <color=#ffffff>Quick Assist</color> is triggered when this skill hits an enemy.\nAfter the skill, Astra Yao enters the <color=#FFFFFF>Idyllic Cadenza</color> state.\nAfter the skill, the next two <color=#FFFFFF>Quick Assists</color> will be replaced by <color=#FFFFFF>Chain Attacks</color>.\nBefore all replacement chances are used up, a <color=#FFFFFF>Quick Assist</color> is triggered whenever any quad member hits an enemy with a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>."
+        },
+        {
+          "Name": "Chain Attack: \"Tipsy Concerto\"",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311012, Prop:1001}",
+              "Param": {
+                "1311012": {
+                  "Main": 67180,
+                  "Growth": 6110,
+                  "Format": "%",
+                  "DamagePercentage": 67180,
+                  "DamagePercentageGrowth": 6110,
+                  "StunRatio": 23290,
+                  "StunRatioGrowth": 1060,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2410925,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 41116,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311012, Prop:1002}",
+              "Param": {
+                "1311012": {
+                  "Main": 23290,
+                  "Growth": 1060,
+                  "Format": "%",
+                  "DamagePercentage": 67180,
+                  "DamagePercentageGrowth": 6110,
+                  "StunRatio": 23290,
+                  "StunRatioGrowth": 1060,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2410925,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 41116,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Ultimate: \"Fantasian Sonata\"",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311013, Prop:1001}",
+              "Param": {
+                "1311013": {
+                  "Main": 195980,
+                  "Growth": 17820,
+                  "Format": "%",
+                  "DamagePercentage": 195980,
+                  "DamagePercentageGrowth": 17820,
+                  "StunRatio": 23830,
+                  "StunRatioGrowth": 1090,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 21663,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311013, Prop:1002}",
+              "Param": {
+                "1311013": {
+                  "Main": 23830,
+                  "Growth": 1090,
+                  "Format": "%",
+                  "DamagePercentage": 195980,
+                  "DamagePercentageGrowth": 17820,
+                  "StunRatio": 23830,
+                  "StunRatioGrowth": 1090,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 21663,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "HP Recovery",
+              "Desc": "{CAL:-50+AvatarSkillLevel(3)*250,1,2}"
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100115": 2 },
+        "2": { "10": 3000, "100115": 3 },
+        "3": { "10": 6000, "100125": 2 },
+        "4": { "10": 9000, "100125": 3 },
+        "5": { "10": 12000, "100125": 4 },
+        "6": { "10": 18000, "100125": 6 },
+        "7": { "10": 45000, "100135": 5 },
+        "8": { "10": 67500, "100135": 8 },
+        "9": { "10": 90000, "100135": 10 },
+        "10": { "10": 112500, "100135": 12 },
+        "11": { "10": 135000, "100135": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "Quick Assist: \"One Luminous Sky\"",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nAttack enemies in front, dealing <color=#FE437E>Ether DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Evasive Assist: \"Two Hearts\"",
+          "Desc": "When the on-field character is about to be attacked, press <IconMap:Icon_Switch> to activate:\nDodges the enemy's attack and activates <color=#FFFFFF>Vital View</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Assist Follow-Up: \"Three Lifetimes of Fate\"",
+          "Desc": "Press <IconMap:Icon_Normal> after an <color=#FFFFFF>Evasive Assist</color> to activate:\nRelease an energy beam forward, dealing <color=#FE437E>Ether DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Quick Assist: \"One Luminous Sky\"",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311014, Prop:1001}",
+              "Param": {
+                "1311014": {
+                  "Main": 5500,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311014, Prop:1002}",
+              "Param": {
+                "1311014": {
+                  "Main": 4840,
+                  "Growth": 220,
+                  "Format": "%",
+                  "DamagePercentage": 5500,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 4840,
+                  "StunRatioGrowth": 220,
+                  "SpRecovery": 6340,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 48400,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1759,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Assist Follow-Up: \"Three Lifetimes of Fate\"",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1311015, Prop:1001}",
+              "Param": {
+                "1311015": {
+                  "Main": 30460,
+                  "Growth": 2770,
+                  "Format": "%",
+                  "DamagePercentage": 30460,
+                  "DamagePercentageGrowth": 2770,
+                  "StunRatio": 26100,
+                  "StunRatioGrowth": 1190,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 870375,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 25701,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1311015, Prop:1002}",
+              "Param": {
+                "1311015": {
+                  "Main": 26100,
+                  "Growth": 1190,
+                  "Format": "%",
+                  "DamagePercentage": 30460,
+                  "DamagePercentageGrowth": 2770,
+                  "StunRatio": 26100,
+                  "StunRatioGrowth": 1190,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 870375,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 25701,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100115": 2 },
+        "2": { "10": 3000, "100115": 3 },
+        "3": { "10": 6000, "100125": 2 },
+        "4": { "10": 9000, "100125": 3 },
+        "5": { "10": 12000, "100125": 4 },
+        "6": { "10": 18000, "100125": 6 },
+        "7": { "10": 45000, "100135": 5 },
+        "8": { "10": 67500, "100135": 8 },
+        "9": { "10": 90000, "100135": 10 },
+        "10": { "10": 112500, "100135": 12 },
+        "11": { "10": 135000, "100135": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "SkillList": {
+    "1311001": {
+      "Name": "Basic Attack: \"Capriccio\"",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311002": {
+      "Name": "Basic Attack: Interlude",
+      "Desc": "<IconMap:Icon_Normal> (During Idyllic Cadenza)",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311003": {
+      "Name": "Basic Attack: Chorus",
+      "Desc": "<IconMap:Icon_Evade> (During Idyllic Cadenza) (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311004": {
+      "Name": "Basic Attack: Finale",
+      "Desc": "<IconMap:Icon_Normal> (During Idyllic Cadenza) (Hold)",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311005": {
+      "Name": "Special Attack: \"Windchimes & Oaths\"",
+      "Desc": "<IconMap:Icon_Special>",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311006": {
+      "Name": "Special Attack: \"Windchimes & Oaths\"",
+      "Desc": "<IconMap:Icon_Special> (Hold)",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311007": {
+      "Name": "Dash Attack: \"Lunar Eclipse Melody\"",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311008": {
+      "Name": "Dodge Counter: \"Umbrella Waltz\"",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311009": {
+      "Name": "Chain Attack: \"Tipsy Concerto\"",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311010": {
+      "Name": "Ultimate: \"Fantasian Sonata\"",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311011": {
+      "Name": "Quick Assist: \"One Luminous Sky\"",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 205,
+      "HitType": 102
+    },
+    "1311012": {
+      "Name": "Evasive Assist: \"Two Hearts\"",
+      "Desc": "<IconMap:Icon_Switch>(When Triggering Evasive Assist)",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1311013": {
+      "Name": "Assist Follow-Up: \"Three Lifetimes of Fate\"",
+      "Desc": "<IconMap:Icon_Normal> (After Evasive Assist)",
+      "ElementType": 205,
+      "HitType": 102
+    }
+  },
+  "Passive": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1311501,
+        "Name": [
+          "Core Passive: \"Graceful Andante\"",
+          "Additional Ability: \"Moonlit Frenzy\""
+        ],
+        "Desc": [
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>22%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
+        ]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1311502,
+        "Name": [
+          "Core Passive: \"Graceful Andante\"",
+          "Additional Ability: \"Moonlit Frenzy\""
+        ],
+        "Desc": [
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>24%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
+        ]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1311503,
+        "Name": [
+          "Core Passive: \"Graceful Andante\"",
+          "Additional Ability: \"Moonlit Frenzy\""
+        ],
+        "Desc": [
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>26%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
+        ]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1311504,
+        "Name": [
+          "Core Passive: \"Graceful Andante\"",
+          "Additional Ability: \"Moonlit Frenzy\""
+        ],
+        "Desc": [
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>28%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
+        ]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1311505,
+        "Name": [
+          "Core Passive: \"Graceful Andante\"",
+          "Additional Ability: \"Moonlit Frenzy\""
+        ],
+        "Desc": [
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>30%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
+        ]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1311506,
+        "Name": [
+          "Core Passive: \"Graceful Andante\"",
+          "Additional Ability: \"Moonlit Frenzy\""
+        ],
+        "Desc": [
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>32%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
+        ]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1311507,
+        "Name": [
+          "Core Passive: \"Graceful Andante\"",
+          "Additional Ability: \"Moonlit Frenzy\""
+        ],
+        "Desc": [
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>35%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
+        ]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110508": 2 },
+      "3": { "10": 28000, "110508": 4 },
+      "4": { "10": 60000, "110003": 2, "110508": 9 },
+      "5": { "10": 100000, "110003": 3, "110508": 15 },
+      "6": { "10": 200000, "110003": 4, "110508": 30 }
+    }
+  },
+  "Talent": {
+    "1": {
+      "Level": 1,
+      "Name": "12-Tone Equal Temperament",
+      "Desc": "When Astra Yao's attack hits an enemy, the target's All-Attribute RES is reduced by 6%, stacking up to 3 times and lasting 30s. Repeated triggers reset the duration. Upon entering the battlefield, Astra Yao immediately gains 1,000 Decibels. When activating her <color=#FFFFFF>Ultimate</color>, all squad members gain 1 stack of <color=#FFFFFF>Song of Protection</color> for 60s. When attacked by an enemy, consume <color=#FFFFFF>Song of Protection</color>, granting Invulnerability for 1s.",
+      "Desc2": "\"What is the 12-tone equal temperament?\"\n\"12-tone equal temperament is a musical tuning system, just like how children have to line up, sounds need to be in order too.\"\n\"But sounds probably don't like lining up, just like children!\"\n—Astra Yao's music teacher, recalling when she was six."
+    },
+    "2": {
+      "Level": 2,
+      "Name": "Art of Greed",
+      "Desc": "The ATK buff from <color=#FFFFFF>Core Passive: \"Graceful Andante\"</color> is further increased by 19%, with an increased maximum of 400. While in the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color> to attack. This effect can trigger once every 3s.",
+      "Desc2": "\"The shiniest thing in the world is, of course, love!\"\nJust like a bird gathering shiny things for its nest, an artist's inner greed is probably to gather all the love in the world. By gathering all the love, one can create the most beautiful melody."
+    },
+    "3": {
+      "Level": 3,
+      "Name": "Interwoven Staff Notation",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "A blank musical staff is a set of parallel lines that never intersect, like souls that have never met, quietly waiting for their melodies to intertwine into a song.\n\"Let's fill it with notes! And lots and lots of tied notes. It'll make a fantastic song!\"\nAnd that's how a new song was created, stretching across 136 bars, all connected with ties..."
+    },
+    "4": {
+      "Level": 4,
+      "Name": "\"Hair Upon Your Nape\"",
+      "Desc": "After activating a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, within 15s, Astra Yao can trigger a <color=#FFFFFF>Quick Assist</color> even if she does not have <color=#FFFFFF>Chords</color>. When the attack hits an enemy, the interval for triggering a <color=#FFFFFF>Quick Assist</color> is reduced to 1s. While in the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members enter the field via a <color=#FFFFFF>Quick Assist</color>, they will receive different buffs based on their specialty, and this effect can be triggered once every 3s for the entire squad: <color=#FFFFFF>Attack</color>: The next <color=#FFFFFF>Quick Assist</color> heavy attack on an enemy will deal extra DMG equal to 300% of Astra Yao's ATK; <color=#FFFFFF>Anomaly</color>: The next <color=#FFFFFF>Quick Assist</color> will have 50% increased Anomaly Buildup; <color=#FFFFFF>Stun</color>: The next <color=#FFFFFF>Quick Assist</color> will inflict 50% increased Daze.",
+      "Desc2": "One hand hovers over the piano\nNot sure which note will bring me peace\nA sad minor key\nOr gentle melody of longing?\nI seek your shadow through the score\nI close my eyes, and see you more\nSuch as the hair upon your nape"
+    },
+    "5": {
+      "Level": 5,
+      "Name": "Proxy and Silk String",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "\"Eve! I've just realized something huge — both you and {M#Wise}{F#Belle} are tall and slim!\"\n\"...And your point being...?\"\n\"You're both my favorite people!\"\nAstra beamed with joy, as if she had uncovered an earth-shattering secret."
+    },
+    "6": {
+      "Level": 6,
+      "Name": "We Are the World",
+      "Desc": "While in the <color=#FFFFFF>Idyllic Cadenza</color> state, the DMG multiplier for <color=#FFFFFF>Tremolo</color> and <color=#FFFFFF>Tone Clusters</color> released or followed up with will increase to 200% of the original, and CRIT Rate is increased by 80%. When triggering a <color=#FFFFFF>Precise Assist</color>, Astra Yao will automatically follow up with the charged 3rd-hit of <color=#FFFFFF>Basic Attack: \"Capriccio\"</color>, with a 80% increased CRIT Rate. This effect can trigger once every 10s.",
+      "Desc2": "The turmoil in the world originates from the solitude of the human heart. If everyone's heart was reciprocated, perhaps all the suffering, sadness, and silence in the world would vanish?\nIf we could weave this connection with song, would all the cracks heal, and all the pain turn into a beautiful melody, filling the silence? At that point, the world would no longer be a lonely island.\n\"This song is dedicated to the world!\""
+    }
+  }
+}

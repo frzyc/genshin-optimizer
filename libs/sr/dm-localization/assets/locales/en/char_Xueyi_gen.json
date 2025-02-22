@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Karmic Perpetuation",
-        "fullDesc": "When Xueyi reduces enemy Toughness with attacks, Karma will be stacked. The more Toughness is reduced, the more stacks of Karma are added, up to {{1}} stacks.<br>When Xueyi's allies reduce enemy Toughness with attacks, Xueyi gains {{3}} stack(s) of Karma.<br>When Karma reaches the max number of stacks, consumes all current Karma stacks and immediately launches a follow-up attack against an enemy target, dealing DMG for 3 times, with each time dealing Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Xueyi's ATK to a single random enemy. This follow-up attack will not add Karma stacks.",
-        "shortDesc": "When Xueyi or her allies reduce enemy Toughness with attacks, she gains stacks of Karma. When Karma reaches the max number of stacks, <orangeStrong>immediately launches a follow-up attack</orangeStrong>, dealing minor Quantum DMG to a single enemy target, bouncing for 3 times and consuming all Karma.",
+        "fullDesc": "When Xueyi reduces enemy Toughness with attacks, Karma will be stacked. The more Toughness is reduced, the more stacks of Karma are added, up to {{1}} stacks.<br>When Xueyi's teammates reduce enemy Toughness with attacks, Xueyi gains {{3}} stack(s) of Karma.<br>When Karma reaches the max number of stacks, consumes all current Karma stacks and immediately launches Follow-up ATK against an enemy target, dealing DMG for 3 times, with each time dealing Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Xueyi's ATK to a single random enemy. This Follow-up ATK will not add Karma stacks.",
+        "shortDesc": "When Xueyi or her teammates reduce enemy Toughness with attacks, she gains stacks of Karma. When Karma reaches the max number of stacks, <orangeStrong>immediately launches Follow-up ATK</orangeStrong>, dealing minor Quantum DMG to a single enemy target, bouncing for 3 times and consuming all Karma.",
         "tag": "Bounce"
       }
     },
@@ -77,11 +77,11 @@
   "ranks": {
     "1": {
       "name": "Dvesha, Inhibited",
-      "desc": "Increases the DMG dealt by the Talent's follow-up attack by {{1, percent}}%."
+      "desc": "Increases the DMG dealt by the Talent's Follow-up ATK by {{1, percent}}%."
     },
     "2": {
       "name": "Klesha, Breached",
-      "desc": "Talent's follow-up attack reduces enemy Toughness regardless of Weakness types. At the same time, restores Xueyi's HP by an amount equal to {{1, percent}}% of her Max HP. When breaking Weakness, triggers the Quantum Break Effect."
+      "desc": "Talent's Follow-up ATK Reduces enemy Toughness regardless of Weakness types. At the same time, restores Xueyi's HP by an amount equal to {{1, percent}}% of her Max HP. When breaking Weakness, triggers the Quantum Break Effect."
     },
     "3": {
       "name": "Duḥkha, Ceased",

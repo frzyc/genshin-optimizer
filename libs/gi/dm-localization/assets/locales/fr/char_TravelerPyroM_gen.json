@@ -1,0 +1,151 @@
+{
+  "auto": {
+    "name": "Flammes d'ailleurs",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Fléau des flammes",
+    "description": {
+      "0": "Manipule une flamme brûlante qui peut incinérer la terre entière. Différents effets se produisent selon la méthode de déclenchement :",
+      "1": "<br/>",
+      "2": "<strong>Appui simple</strong>",
+      "3": "Appelle la puissance des flammes de manière déchaînée. Après utilisation, {M#le voyageur}{F#la voyageuse} obtient 42 pts de noctâme, entre dans l'état Bénédiction noctâme et invoque un seuil enflammé qui suit le personnage déployé.",
+      "4": "En s'approchant d'ennemis, le seuil enflammé inflige des <pyro>DGT Pyro</pyro> infusés de noctâme aux ennemis proches de façon intermittente.",
+      "5": "<br/>",
+      "6": "<strong>Appui long</strong>",
+      "7": "Appelle la puissance des flammes de manière posée pour infliger des <pyro>DGT Pyro de zone</pyro> infusés de noctâme aux ennemis proches. Après utilisation, {M#le voyageur}{F#la voyageuse} obtient 42 pts de noctâme, entre dans l'état Bénédiction noctâme et invoque un seuil brûlant qui suit le personnage déployé.",
+      "8": "Lorsqu'un personnage déployé en son sein inflige des DGT à un ennemi, le seuil brûlant déclenche une attaque coordonnée infligeant des <pyro>DGT Pyro</pyro> infusés de noctâme selon l'ATQ {M#du voyageur}{F#de la voyageuse}. Cet effet peut être déclenché une fois toutes les 3 s.",
+      "9": "<br/>",
+      "10": "<strong>Bénédiction noctâme : {M#Voyageur}{F#Voyageuse}</strong>",
+      "11": "La bénédiction noctâme {M#du voyageur}{F#de la voyageuse} consomme de façon continue ses points de noctâme, dure un maximum de 12 s et prend fin une fois les points épuisés. Utiliser à nouveau la compétence élémentaire pendant cette durée réinitialise le noctâme {M#du voyageur}{F#de la voyageuse} à 42 pts.",
+      "12": "Les seuils enflammés et brûlants disparaissent lorsque la bénédiction noctâme {M#du voyageur}{F#de la voyageuse} prend fin et il ne peut exister qu'un seul seuil enflammé ou brûlant invoqué par {M#le voyageur}{F#la voyageuse} à la fois.",
+      "13": "<br/>",
+      "14": "<i>Paimon et vous avez étudié les couleurs changeantes des flammes.</i>"
+    },
+    "skillParams": {
+      "0": "DGT seuil enflammé",
+      "1": "DGT appui long",
+      "2": "DGT seuil brûlant",
+      "3": "Limite de noctâme",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Prairie d'embrasement",
+    "description": {
+      "0": "Condense les flammes en une marque, infligeant des <pyro>DGT Pyro de zone</pyro> infusés de noctâme aux ennemis en face, et accorde 7 pts de noctâme {M#au voyageur}{F#à la voyageuse} toutes les secondes pendant 4 s.",
+      "1": "<br/>",
+      "2": "<i>Paimon et vous avez étudié les principes derrières les flammes éternelles.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Feu d'incinération véritable",
+    "description": {
+      "0": "Si {M#le voyageur}{F#la voyageuse} possède plus de 20 pts de noctâme, la zone d'effet des attaques des seuils enflammés et brûlants de la compétence élémentaire <strong>Fléau des flammes</strong> augmente après qu'un ennemi a été touché."
+    }
+  },
+  "passive2": {
+    "name": "Feu de braise imbrûlée",
+    "description": {
+      "0": "Lorsqu'un personnage déployé à l'intérieur d'un <strong>seuil enflammé</strong> ou d'un <strong>seuil brûlant</strong> a déclenché une <pyro>réaction liée à l'élément Pyro</pyro> sur un ennemi, {M#le voyageur}{F#la voyageuse} récupère 5 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 12 s. De plus, {M#le voyageur}{F#la voyageuse} récupère également 4 pts d'énergie élémentaire lorsqu'un membre de l'équipe à proximité déclenche une éruption noctâme."
+    }
+  },
+  "constellation1": {
+    "name": "Feu de flux stellaire",
+    "description": {
+      "0": "Lorsqu'un <strong>seuil enflammé</strong> ou un <strong>seuil brûlant</strong> est actif, les DGT infligés par le personnage déployé augmentent de 6 %, et de 9 % supplémentaires s'il bénéficie d'une bénédiction noctâme."
+    }
+  },
+  "constellation2": {
+    "name": "Feu de chandelle pérenne",
+    "description": {
+      "0": "Pendant 12 s après avoir utilisé la compétence élémentaire <strong>Fléau des flammes</strong>, {M#le voyageur}{F#la voyageuse} récupère 14 pts de noctâme lorsqu'un membre de l'équipe à proximité a déclenché une <pyro>réaction liée à l'élément Pyro</pyro> sur un ennemi. Chaque utilisation de <strong>Fléau des flammes</strong> peut restaurer un maximum 28 pts de noctâme de cette manière."
+    }
+  },
+  "constellation3": {
+    "name": "Feu de balise relayée",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Fléau des flammes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Feu de ravage flamboyant",
+    "description": {
+      "0": "Après avoir utilisé le déchaînement élémentaire <strong>Prairie d'embrasement</strong>, {M#le voyageur}{F#la voyageuse} bénéficie d'un <pyro>bonus de DGT Pyro</pyro> de 20 % pendant 9 s."
+    }
+  },
+  "constellation5": {
+    "name": "Feu d'inextinguibilité nouvelle",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Prairie d'embrasement</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Feu d'impérissabilité sacrée",
+    "description": {
+      "0": "Lorsque {M#le voyageur}{F#la voyageuse} bénéficie d'une bénédiction noctâme, ses attaques normales, chargées et plongeantes sont converties pour infliger des <pyro>DGT Pyro</pyro> infusés de noctâme ne pouvant pas être enchantés et les DGT CRIT de ces attaques augmentent de 40 %."
+    }
+  }
+}

@@ -1,18 +1,26 @@
 import { clamp, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import type {
+  CharacterKey,
   RelicMainStatKey,
+  RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import {
+  allCharacterKeys,
   allLightConeKeys,
   allRelicSlotKeys,
   allRelicSubStatKeys,
+  isRelicRarityKey,
   relicMaxLevel,
   relicSubstatTypeKeys,
 } from '@genshin-optimizer/sr/consts'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
-import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
+import type {
+  BuildTcRelicSlot,
+  ICachedLightCone,
+  ICachedRelic,
+} from '../../Interfaces'
 import { type IBuildTc } from '../../Interfaces/IBuildTc'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
@@ -27,9 +35,15 @@ export class BuildTcDataManager extends DataManager<
     super(database, 'buildTcs')
   }
   override validate(obj: unknown): IBuildTc | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object') return undefined
+    const { characterKey, teamId } = obj as IBuildTc
+    if (!allCharacterKeys.includes(characterKey)) return undefined
+
     let { name, description } = obj as IBuildTc
     const { lightCone, relic, optimization } = obj as IBuildTc
+
+    // Cannot validate teamId, since on db init database.teams do not exist yet.
+    // if (teamId && !this.database.teams.get(teamId)) teamId = undefined
 
     if (typeof name !== 'string') name = 'Build(TC) Name'
     if (typeof description !== 'string') description = 'Build(TC) Description'
@@ -41,6 +55,8 @@ export class BuildTcDataManager extends DataManager<
     if (!_optimization) return undefined
     return {
       name,
+      characterKey,
+      teamId,
       description,
       relic: _relic,
       lightCone: _lightCone,
@@ -57,26 +73,6 @@ export class BuildTcDataManager extends DataManager<
     if (!buildTc) return ''
     return this.new(structuredClone(buildTc))
   }
-  override remove(key: string, notify?: boolean): IBuildTc | undefined {
-    const buildTc = super.remove(key, notify)
-    // remove data from loadout first
-    this.database.loadouts.entries.forEach(
-      ([loadoutId, loadout]) =>
-        loadout.buildTcIds.includes(key) &&
-        this.database.loadouts.set(loadoutId, {})
-    )
-    // once loadouts are validated, teams can be validated as well
-    this.database.teams.entries.forEach(
-      ([teamId, team]) =>
-        team.loadoutMetadata?.some(
-          (loadoutMetadatum) =>
-            loadoutMetadatum?.buildTcId === key ||
-            loadoutMetadatum?.compareBuildTcId === key
-        ) && this.database.teams.set(teamId, {}) // trigger a validation
-    )
-
-    return buildTc
-  }
   export(buildTcId: string): object | undefined {
     const buildTc = this.database.buildTcs.get(buildTcId)
     if (!buildTc) return undefined
@@ -87,10 +83,16 @@ export class BuildTcDataManager extends DataManager<
     if (!this.set(id, data)) return ''
     return id
   }
+  getBuildTcIds(characterKey: CharacterKey) {
+    return this.keys.filter(
+      (key) => this.get(key)?.characterKey === characterKey
+    )
+  }
 }
 
-export function initCharTC(): IBuildTc {
+export function initCharTC(characterKey: CharacterKey): IBuildTc {
   return {
+    characterKey,
     name: 'Build(TC) Name',
     description: 'Build(TC) Description',
     relic: {
@@ -98,6 +100,7 @@ export function initCharTC(): IBuildTc {
       substats: {
         type: 'max',
         stats: objKeyMap(allRelicSubStatKeys, () => 0),
+        rarity: 5,
       },
       sets: {},
     },
@@ -107,7 +110,7 @@ export function initCharTC(): IBuildTc {
     },
   }
 }
-function initCharTCRelicSlots() {
+function initCharTCRelicSlots(): Record<RelicSlotKey, BuildTcRelicSlot> {
   return objKeyMap(allRelicSlotKeys, (s) => ({
     level: 20,
     statKey: (s === 'head'
@@ -115,6 +118,7 @@ function initCharTCRelicSlots() {
       : s === 'hands'
       ? 'atk'
       : 'atk_') as RelicMainStatKey,
+    rarity: 5,
   }))
 }
 
@@ -141,7 +145,7 @@ function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
   if (typeof relic !== 'object') return undefined
   let {
     slots,
-    substats: { type, stats },
+    substats: { type, stats, rarity },
     sets,
   } = relic as IBuildTc['relic']
   const _slots = validateCharTCRelicSlots(slots)
@@ -152,11 +156,16 @@ function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
   stats = objKeyMap(allRelicSubStatKeys, (k) =>
     typeof stats[k] === 'number' ? stats[k] : 0
   )
+  rarity = validateRelicRarity(rarity)
 
   if (typeof sets !== 'object') sets = {}
   // TODO: validate sets
 
-  return { slots, substats: { type, stats }, sets }
+  return { slots, substats: { type, stats, rarity }, sets }
+}
+
+function validateRelicRarity(rarity: unknown): RelicRarityKey {
+  return isRelicRarityKey(rarity) ? rarity : 5
 }
 function validateCharTCRelicSlots(
   slots: unknown
@@ -171,12 +180,17 @@ function validateCharTCRelicSlots(
     )
   )
     return initCharTCRelicSlots()
-  return objMap(slots as IBuildTc['relic']['slots'], ({ level, ...rest }) => {
-    return {
-      level: clamp(level, 0, relicMaxLevel[5]),
-      ...rest,
+  return objMap(
+    slots as IBuildTc['relic']['slots'],
+    ({ level, rarity, ...rest }) => {
+      rarity = validateRelicRarity(rarity)
+      return {
+        level: clamp(level, 0, relicMaxLevel[rarity]),
+        rarity,
+        ...rest,
+      }
     }
-  })
+  )
 }
 function validateCharTcOptimization(
   optimization: unknown

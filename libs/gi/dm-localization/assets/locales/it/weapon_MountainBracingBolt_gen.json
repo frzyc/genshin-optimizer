@@ -1,0 +1,24 @@
+{
+  "name": "Chiodo reggimonti",
+  "description": {
+    "0": "Un'arma inastata forgiata collettivamente dagli artigiani delle miniere come sacrificio agli spiriti delle montagne."
+  },
+  "passiveName": "Speranza oltre le sommità",
+  "passiveDescription": {
+    "0": {
+      "0": "Riduce il consumo di vigore durante le arrampicate di un 15% e aumenta i DAN da abilità elementale di un <cryo>12%</cryo>. In più, quando altri membri del gruppo vicini usano le abilità elementali, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>12%</cryo> per 8 s."
+    },
+    "1": {
+      "0": "Riduce il consumo di vigore durante le arrampicate di un 15% e aumenta i DAN da abilità elementale di un <cryo>15%</cryo>. In più, quando altri membri del gruppo vicini usano le abilità elementali, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>15%</cryo> per 8 s."
+    },
+    "2": {
+      "0": "Riduce il consumo di vigore durante le arrampicate di un 15% e aumenta i DAN da abilità elementale di un <cryo>18%</cryo>. In più, quando altri membri del gruppo vicini usano le abilità elementali, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>18%</cryo> per 8 s."
+    },
+    "3": {
+      "0": "Riduce il consumo di vigore durante le arrampicate di un 15% e aumenta i DAN da abilità elementale di un <cryo>21%</cryo>. In più, quando altri membri del gruppo vicini usano le abilità elementali, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>21%</cryo> per 8 s."
+    },
+    "4": {
+      "0": "Riduce il consumo di vigore durante le arrampicate di un 15% e aumenta i DAN da abilità elementale di un <cryo>24%</cryo>. In più, quando altri membri del gruppo vicini usano le abilità elementali, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>24%</cryo> per 8 s."
+    }
+  }
+}

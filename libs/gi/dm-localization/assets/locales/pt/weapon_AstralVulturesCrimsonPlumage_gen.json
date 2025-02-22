@@ -1,0 +1,24 @@
+{
+  "name": "Plumagem Escarlate do Abutre Astral",
+  "description": {
+    "0": "Um arco antigo com penas vermelhas. É uma relíquia sagrada do Clã das Plumas de Flores que passou de geração em geração."
+  },
+  "passiveName": "Vista do Brinco da Lua",
+  "passiveDescription": {
+    "0": {
+      "0": "Após desencadear uma reação de Redemoinho, o ATQ aumenta em <cryo>24%</cryo> por 12s. Além disso, se houver pelo menos 1/2 personagens na equipe com um Tipo Elemental diferente do personagem que está com essa arma equipada, o Dano causado por Ataques Carregados do personagem que está com essa arma equipada aumenta em <cryo>20%/48%</cryo>, e o Dano causado pelo Supremo aumenta em <cryo>10%/24%</cryo>."
+    },
+    "1": {
+      "0": "Após desencadear uma reação de Redemoinho, o ATQ aumenta em <cryo>30%</cryo> por 12s. Além disso, se houver pelo menos 1/2 personagens na equipe com um Tipo Elemental diferente do personagem que está com essa arma equipada, o Dano causado por Ataques Carregados do personagem que está com essa arma equipada aumenta em <cryo>25%/60%</cryo>, e o Dano causado pelo Supremo aumenta em <cryo>12.5%/30%</cryo>."
+    },
+    "2": {
+      "0": "Após desencadear uma reação de Redemoinho, o ATQ aumenta em <cryo>36%</cryo> por 12s. Além disso, se houver pelo menos 1/2 personagens na equipe com um Tipo Elemental diferente do personagem que está com essa arma equipada, o Dano causado por Ataques Carregados do personagem que está com essa arma equipada aumenta em <cryo>30%/72%</cryo>, e o Dano causado pelo Supremo aumenta em <cryo>15%/36%</cryo>."
+    },
+    "3": {
+      "0": "Após desencadear uma reação de Redemoinho, o ATQ aumenta em <cryo>42%</cryo> por 12s. Além disso, se houver pelo menos 1/2 personagens na equipe com um Tipo Elemental diferente do personagem que está com essa arma equipada, o Dano causado por Ataques Carregados do personagem que está com essa arma equipada aumenta em <cryo>35%/84%</cryo>, e o Dano causado pelo Supremo aumenta em <cryo>17.5%/42%</cryo>."
+    },
+    "4": {
+      "0": "Após desencadear uma reação de Redemoinho, o ATQ aumenta em <cryo>48%</cryo> por 12s. Além disso, se houver pelo menos 1/2 personagens na equipe com um Tipo Elemental diferente do personagem que está com essa arma equipada, o Dano causado por Ataques Carregados do personagem que está com essa arma equipada aumenta em <cryo>40%/96%</cryo>, e o Dano causado pelo Supremo aumenta em <cryo>20%/48%</cryo>."
+    }
+  }
+}

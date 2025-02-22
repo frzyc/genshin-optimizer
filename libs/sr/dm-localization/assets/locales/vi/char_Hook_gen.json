@@ -43,7 +43,7 @@
       "0": {
         "name": "Haiz! Xem Mớ Bòng Bong Này!",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, sẽ gây Sát Thương Hỏa cho 1 kẻ địch ngẫu nhiên bằng {{4, percent}}% Tấn Công của Hook, đồng thời có {{1, percent}}% xác suất cơ bản khiến mỗi kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{3}} hiệp.<br>Trong trạng thái Thiêu Đốt, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Hỏa duy trì tương đương {{2, percent}}% Tấn Công của Hook.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây Sát Thương Hỏa cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến toàn bộ kẻ địch rơi vào trạng thái Thiêu Đốt.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến mỗi một kẻ địch rơi vào trạng thái Thiêu Đốt.",
         "tag": ""
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Ngây Thơ",
-        "fullDesc": "Tăng {{1, percent}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
         "shortDesc": "",
         "tag": ""
       }
@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Bối Rối Do Dự Chẳng Hề Chi",
-      "desc": "Khi kích hoạt Thiên Phú sẽ có {{1, percent}}% xác suất cơ bản khiến mục tiêu lân cận với kẻ địch chỉ định cũng rơi vào trạng thái Thiêu Đốt giống với Chiến Kỹ."
+      "desc": "Khi kích hoạt Thiên Phú sẽ có {{1, percent}}% xác suất cơ bản khiến mục tiêu lân cận với mục tiêu phe địch chỉ định cũng rơi vào trạng thái Thiêu Đốt giống với Chiến Kỹ."
     },
     "5": {
       "name": "Việc Tốt Lưu Danh",

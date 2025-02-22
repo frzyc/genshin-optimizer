@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Afinidade",
-        "fullDesc": "Ao receber um ataque, este personagem tem uma chance fixa de {{1, percent}}% de remover uma penalidade que tiver sido aplicada a ele.",
+        "fullDesc": "Ao receber um ataque, esta unidade tem uma chance fixa de {{1, percent}}% de remover uma penalidade que tiver sido aplicada a ela.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Sob Proteção",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Vingança",
-        "fullDesc": "Aumenta em {{1, percent}}% o Dano de Contra-Ataque de Svarog.",
+        "fullDesc": "Aumenta em {{1, percent}}% o Dano causado pelo Contra-Ataque de Svarog.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Longa Companhia",
-      "desc": "Quando outros aliados são atingidos, Svarog também tem {{1, percent}}% de chance fixa de ativar um Contra-Ataque no atacante e marcá-lo com uma Marca do Contra-Ataque. Ao usar a Perícia Suprema, o número de Contra-Ataque(s) Aprimorado(s) aumenta em {{2}}."
+      "desc": "Quando outros aliados são atacados, Svarog também tem {{1, percent}}% de chance fixa de ativar um Contra-Ataque no atacante e marcá-lo com uma \"Marca do Contra-Ataque\". Ao usar a Perícia Suprema, o número de Contra-Ataque(s) Aprimorado(s) aumenta em {{2}}."
     }
   }
 }

@@ -1,0 +1,14 @@
+{
+  "lightCone_one": "光円錐",
+  "lightCone_other": "光円錐",
+  "superimposition": "重畳",
+  "path": {
+    "Erudition": "{RUBY_B#ちえ}知恵{RUBY_E#}",
+    "Preservation": "{RUBY_B#そんご}存護{RUBY_E#}",
+    "Abundance": "{RUBY_B#ほうじょう}豊穣{RUBY_E#}",
+    "Nihility": "{RUBY_B#きょむ}虚無{RUBY_E#}",
+    "Destruction": "{RUBY_B#かいめつ}壊滅{RUBY_E#}",
+    "Harmony": "{RUBY_B#ちょうわ}調和{RUBY_E#}",
+    "TheHunt": "{RUBY_B#じゅんしゅ}巡狩{RUBY_E#}"
+  }
+}

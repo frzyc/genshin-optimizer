@@ -1,0 +1,24 @@
+{
+  "name": "Peak Patrol Song",
+  "description": {
+    "0": "An obsidian blade of unparalleled sharpness, light as a song. It was modified by a certain artisan to come equipped with a record-playing detachable Phlogiston Device."
+  },
+  "passiveName": "Halcyon Years Unending",
+  "passiveDescription": {
+    "0": {
+      "0": "Gain \"Ode to Flowers\" after Normal or Plunging Attacks hit an opponent: DEF increases by <cryo>8%</cryo> and gain a <cryo>10%</cryo> All Elemental DMG Bonus for 6s. Max 2 stacks. Can trigger once per 0.1s. When this effect reaches 2 stacks or the 2nd stack's duration is refreshed, increase all nearby party members' All Elemental DMG Bonus by <cryo>8%</cryo> for every 1,000 DEF the equipping character has, up to a maximum of <cryo>25.6%</cryo>, for 15s."
+    },
+    "1": {
+      "0": "Gain \"Ode to Flowers\" after Normal or Plunging Attacks hit an opponent: DEF increases by <cryo>10%</cryo> and gain a <cryo>12.5%</cryo> All Elemental DMG Bonus for 6s. Max 2 stacks. Can trigger once per 0.1s. When this effect reaches 2 stacks or the 2nd stack's duration is refreshed, increase all nearby party members' All Elemental DMG Bonus by <cryo>10%</cryo> for every 1,000 DEF the equipping character has, up to a maximum of <cryo>32%</cryo>, for 15s."
+    },
+    "2": {
+      "0": "Gain \"Ode to Flowers\" after Normal or Plunging Attacks hit an opponent: DEF increases by <cryo>12%</cryo> and gain a <cryo>15%</cryo> All Elemental DMG Bonus for 6s. Max 2 stacks. Can trigger once per 0.1s. When this effect reaches 2 stacks or the 2nd stack's duration is refreshed, increase all nearby party members' All Elemental DMG Bonus by <cryo>12%</cryo> for every 1,000 DEF the equipping character has, up to a maximum of <cryo>38.4%</cryo>, for 15s."
+    },
+    "3": {
+      "0": "Gain \"Ode to Flowers\" after Normal or Plunging Attacks hit an opponent: DEF increases by <cryo>14%</cryo> and gain a <cryo>17.5%</cryo> All Elemental DMG Bonus for 6s. Max 2 stacks. Can trigger once per 0.1s. When this effect reaches 2 stacks or the 2nd stack's duration is refreshed, increase all nearby party members' All Elemental DMG Bonus by <cryo>14%</cryo> for every 1,000 DEF the equipping character has, up to a maximum of <cryo>44.8%</cryo>, for 15s."
+    },
+    "4": {
+      "0": "Gain \"Ode to Flowers\" after Normal or Plunging Attacks hit an opponent: DEF increases by <cryo>16%</cryo> and gain a <cryo>20%</cryo> All Elemental DMG Bonus for 6s. Max 2 stacks. Can trigger once per 0.1s. When this effect reaches 2 stacks or the 2nd stack's duration is refreshed, increase all nearby party members' All Elemental DMG Bonus by <cryo>16%</cryo> for every 1,000 DEF the equipping character has, up to a maximum of <cryo>51.2%</cryo>, for 15s."
+    }
+  }
+}

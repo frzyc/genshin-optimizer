@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Spirale fractale",
-        "fullDesc": "Augmente la VIT de toute l'équipe de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> (à l'exception de ce personnage). Lorsqu'un allié inflige une Rupture de faiblesse à une cible ennemie, Ruan Mei inflige des DGT de rupture équivalents à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de ses propres DGT de rupture de glace à cette cible.",
-        "shortDesc": "Augmente la <orangeStrong>VIT</orangeStrong> de tous les alliés (à l'exception de ce personnage). Infliger une Rupture de faiblesse à une cible ennemie lui inflige des <orangeStrong>DGT de rupture de glace supplémentaires</orangeStrong>.",
+        "fullDesc": "Augmente la VIT de tous les coéquipiers de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> (à l'exception de cette unité). Lorsqu'un allié inflige une Rupture de faiblesse à une cible ennemie, Ruan Mei inflige des DGT de rupture équivalents à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de ses propres DGT de rupture de glace à cette cible.",
+        "shortDesc": "Augmente la <orangeStrong>VIT</orangeStrong> de tous les coéquipiers (à l'exception de cette unité). Infliger une Rupture de faiblesse à une cible ennemie lui inflige des <orangeStrong>DGT de rupture de glace supplémentaires</orangeStrong>.",
         "tag": "Soutien"
       }
     },

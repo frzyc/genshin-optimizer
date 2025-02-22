@@ -30,6 +30,7 @@ import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
+  useGeneratedBuildList,
   useOptConfig,
   useTeammateArtifactIds,
 } from '@genshin-optimizer/gi/db-ui'
@@ -99,6 +100,7 @@ import React, {
 import { Trans, useTranslation } from 'react-i18next'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
+import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
@@ -141,6 +143,8 @@ export default function TabBuild() {
     failed: 0,
     skipped: 0,
     total: 0,
+    testedPerSecond: 0,
+    skippedPerSecond: 0,
   } as BuildStatus)
   const generatingBuilds = buildStatus.type !== 'inactive'
 
@@ -156,6 +160,8 @@ export default function TabBuild() {
       failed: 0,
       skipped: 0,
       total: 0,
+      testedPerSecond: 0,
+      skippedPerSecond: 0,
     })
   }, [characterKey])
 
@@ -170,10 +176,12 @@ export default function TabBuild() {
     maxBuildsToShow,
     levelLow,
     levelHigh,
-    builds: buildsDb,
-    buildDate,
+    generatedBuildListId,
     useTeammateBuild,
   } = buildSetting
+  const { builds: buildsDb, buildDate } = useGeneratedBuildList(
+    generatedBuildListId ?? ''
+  ) ?? { builds: [] as GeneratedBuild[] }
 
   const builds = useConstObj(buildsDb)
   const optimizationTarget = useConstObj(optimizationTargetDb)
@@ -254,8 +262,8 @@ export default function TabBuild() {
           const { levelLow, levelHigh, excludedLocations, artExclusion } =
             deferredArtsDirty && deferredBuildSetting
           if (level >= levelLow && level <= levelHigh) {
-            ctMap.levelTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
+            ctMap['levelTotal']['in'].total++
+            if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
           }
           const locKey = charKeyToLocCharKey(characterKey)
           if (
@@ -263,16 +271,17 @@ export default function TabBuild() {
             location !== locKey &&
             !excludedLocations.includes(location)
           ) {
-            ctMap.allowListTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
+            ctMap['allowListTotal']['in'].total++
+            if (filteredArtIdMap[id]) ctMap['allowListTotal']['in'].current++
           }
           if (artExclusion.includes(id)) {
-            ctMap.excludedTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.excludedTotal.in.current++
+            ctMap['excludedTotal']['in'].total++
+            if (filteredArtIdMap[id]) ctMap['excludedTotal']['in'].current++
           }
           if (teammateArtifactIds.includes(id)) {
-            ctMap.teammateBuildTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.teammateBuildTotal.in.current++
+            ctMap['teammateBuildTotal']['in'].total++
+            if (filteredArtIdMap[id])
+              ctMap['teammateBuildTotal']['in'].current++
           }
         })
       )
@@ -380,6 +389,8 @@ export default function TabBuild() {
       failed: 0,
       skipped: 0,
       total: 0,
+      testedPerSecond: 0,
+      skippedPerSecond: 0,
       startTime: performance.now(),
     }
     const statusUpdateTimer = setInterval(
@@ -437,7 +448,7 @@ export default function TabBuild() {
       if (process.env['NODE_ENV'] === 'development')
         console.log('Build Result', builds)
 
-      database.optConfigs.set(optConfigId, {
+      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
         builds: builds.map((build) => ({
           artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
             build.artifactIds.find(
@@ -454,7 +465,7 @@ export default function TabBuild() {
         if (results && notificationRef.current) {
           audio.play()
           if (!tabFocused.current)
-            setTimeout(() => window.alert(t`buildCompleted`), 1)
+            setTimeout(() => window.alert(t('buildCompleted')), 1)
         }
       }, 100)
     } catch (e) {
@@ -515,7 +526,7 @@ export default function TabBuild() {
       }
       disabled={!!generatingBuilds}
       targetSelectorModalProps={{
-        excludeSections: ['character', 'bounsStats', 'teamBuff'],
+        excludeSections: ['character', 'bonusStats', 'teamBuff'],
       }}
     />
   )
@@ -550,6 +561,7 @@ export default function TabBuild() {
         >
           <OptCharacterCard characterKey={characterKey} />
           <BonusStatsCard />
+          <CustomMultiTargetButton />
         </Grid>
         {/* 2 */}
         <Grid
@@ -563,7 +575,7 @@ export default function TabBuild() {
         >
           {/* Level Filter */}
           <LevelFilter
-            levelTotal={levelTotal.in}
+            levelTotal={levelTotal['in']}
             levelLow={levelLow}
             levelHigh={levelHigh}
             disabled={generatingBuilds}
@@ -573,9 +585,9 @@ export default function TabBuild() {
           {/* Main Stat Filters */}
           <CardThemed bgt="light">
             <CardContent>
-              <Typography
-                sx={{ fontWeight: 'bold' }}
-              >{t`mainStat.title`}</Typography>
+              <Typography sx={{ fontWeight: 'bold' }}>
+                {t('mainStat.title')}
+              </Typography>
             </CardContent>
             <Divider />
             <CardContent>
@@ -594,8 +606,12 @@ export default function TabBuild() {
                 <InfoTooltip
                   title={
                     <Box>
-                      <Typography variant="h6">{t`mainStat.levelAssTooltip.title`}</Typography>
-                      <Typography>{t`mainStat.levelAssTooltip.desc`}</Typography>
+                      <Typography variant="h6">
+                        {t('mainStat.levelAssTooltip.title')}
+                      </Typography>
+                      <Typography>
+                        {t('mainStat.levelAssTooltip.desc')}
+                      </Typography>
                     </Box>
                   }
                 />
@@ -629,7 +645,7 @@ export default function TabBuild() {
             }
             disabled={generatingBuilds}
           >
-            {t`allowPartial`}
+            {t('allowPartial')}
           </Button>
         </Grid>
 
@@ -648,7 +664,7 @@ export default function TabBuild() {
           {/* use equipped */}
           <UseEquipped
             disabled={generatingBuilds}
-            allowListTotal={allowListTotal.in}
+            allowListTotal={allowListTotal['in']}
           />
 
           {/*Minimum Final Stat Filter */}
@@ -712,7 +728,7 @@ export default function TabBuild() {
               </MenuItem>
             ))}
         </DropdownButton>
-        <BootstrapTooltip placement="top" title={t`notifyTooltip`}>
+        <BootstrapTooltip placement="top" title={t('notifyTooltip')}>
           <Box>
             <Button
               sx={{ borderRadius: 0 }}
@@ -790,13 +806,13 @@ export default function TabBuild() {
                     </Trans>{' '}
                     {!!buildDate && (
                       <span>
-                        {t`generatedOn`}
+                        {t('generatedOn')}
                         <strong>{new Date(buildDate).toLocaleString()}</strong>
                       </span>
                     )}
                   </span>
                 ) : (
-                  <span>{t`selectChar`}</span>
+                  <span>{t('selectChar')}</span>
                 )}
               </Typography>
               <Button
@@ -804,13 +820,13 @@ export default function TabBuild() {
                 color="error"
                 onClick={() => {
                   setGraphBuilds(undefined)
-                  database.optConfigs.set(optConfigId, {
+                  database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
                     builds: [],
                     buildDate: 0,
                   })
                 }}
               >
-                {t`clearBuildsBtn`}
+                {t('clearBuildsBtn')}
               </Button>
             </Box>
             <Grid container display="flex" spacing={1}>
@@ -868,7 +884,7 @@ const LevelFilter = memo(function LevelFilter({
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', gap: 1 }}>
-        <Typography sx={{ fontWeight: 'bold' }}>{t`levelFilter`}</Typography>
+        <Typography sx={{ fontWeight: 'bold' }}>{t('levelFilter')}</Typography>
         <SqBadge color="info">{levelTotal}</SqBadge>
       </CardContent>
       <Divider />
@@ -1028,13 +1044,13 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
         startIcon={<Science />}
         onClick={onShowTcPrompt}
       >
-        {t`createBuildTc.button`}
+        {t('createBuildTc.button')}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
-            title={t`createBuildTc.title`}
+            title={t('createBuildTc.title')}
             action={
               <IconButton onClick={OnHideTcPrompt}>
                 <CloseIcon />
@@ -1045,21 +1061,21 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>{t`createBuildTc.desc`}</Typography>
+            <Typography>{t('createBuildTc.desc')}</Typography>
             <TextField
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
               margin="dense"
-              label={t`createBuildTc.label`}
+              label={t('createBuildTc.label')}
               fullWidth
             />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-              <Button
-                onClick={OnHideTcPrompt}
-              >{t`createBuildTc.cancel`}</Button>
+              <Button onClick={OnHideTcPrompt}>
+                {t('createBuildTc.cancel')}
+              </Button>
               <Button color="success" disabled={!name} onClick={toTc}>
-                {t`createBuildTc.create`}
+                {t('createBuildTc.create')}
               </Button>
             </Box>
           </CardContent>
@@ -1099,7 +1115,7 @@ function CopyBuildButton({
         startIcon={<CheckroomIcon />}
         onClick={onShowPrompt}
       >
-        {t`createBuildReal.button`}
+        {t('createBuildReal.button')}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       <ModalWrapper
@@ -1109,7 +1125,7 @@ function CopyBuildButton({
       >
         <CardThemed>
           <CardHeader
-            title={t`createBuildReal.title`}
+            title={t('createBuildReal.title')}
             action={
               <IconButton onClick={OnHidePrompt}>
                 <CloseIcon />
@@ -1120,22 +1136,22 @@ function CopyBuildButton({
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>{t`createBuildReal.desc`}</Typography>
+            <Typography>{t('createBuildReal.desc')}</Typography>
             <form onSubmit={toLoadout}>
               <TextField
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoFocus
                 margin="dense"
-                label={t`createBuildReal.label`}
+                label={t('createBuildReal.label')}
                 fullWidth
               />
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-                <Button
-                  onClick={OnHidePrompt}
-                >{t`createBuildReal.cancel`}</Button>
+                <Button onClick={OnHidePrompt}>
+                  {t('createBuildReal.cancel')}
+                </Button>
                 <Button type="submit" color="success" disabled={!name}>
-                  {t`createBuildReal.create`}
+                  {t('createBuildReal.create')}
                 </Button>
               </Box>
             </form>

@@ -1,0 +1,16 @@
+{
+  "Id": 10027,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_ViciousStriker.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "A poor soul mutated by the corruption due to potent Ether matter in the Hollows. As the original entity had a certain level of Ether aptitude, the transformation is not fully complete, retaining some humanoid features of the original form. Judging by the remnants of clothing and combat experience, it's quite likely it was originally a thug/criminal dwelling within the Hollow.\nWhile gangsters and thugs in the Hollows typically wear anti-corruption gear, some unlucky individuals undergo monstrous transformations due to severe Ether corruption. These transformed Ethereal beings retain their combat skills from their past lives, making them a more formidable threat compared to pure Ethereals.\n\"They lived as criminals, and even in death they continue being a nuisance.\"",
+  "Rarity": 1,
+  "GroupId": 203,
+  "GroupDesc": "Corrupted",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—A New Eridu Public Security discussion post on the Planet of Disaster forum",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

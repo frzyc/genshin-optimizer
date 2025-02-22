@@ -1,0 +1,214 @@
+{
+  "name": "Yumemizuki Mizuki",
+  "title": "Embrace of Enchanting Dreams",
+  "description": "A shareholder of Aisa Bathhouse, a baku, and a clinical psychologist. Dedicated to the dispersal of nightmares, and to bringing people peace of mind.",
+  "constellationName": "Tapirus Somniator",
+  "auto": {
+    "name": "Pure Heart, Pure Dreams",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 3 attacks, dealing <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina and deals <anemo>AoE Anemo DMG</anemo> after a short casting time."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Calling upon the power of Anemo, she plunges towards the ground from mid-air, damaging all opponents in her path. Deals <anemo>AoE Anemo DMG</anemo> upon impact with the ground."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "Charged Attack DMG",
+      "4": "Charged Attack Stamina Cost",
+      "5": "Plunge DMG",
+      "6": "Low/High Plunge DMG",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, fixed(fixed: 1)}}",
+      "5": "{{5, percent(fixed: 1)}}%",
+      "6": "{{6, percent}}%/{{7, percent}}%",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Aisa Utamakura Pilgrimage",
+    "description": {
+      "0": "Weaves memories of lovely dreams, entering a <strong>Dreamdrifter</strong> state where Yumemizuki Mizuki floats above the ground, and dealing 1 instance of <anemo>AoE Anemo DMG</anemo> to nearby opponents.",
+      "1": "<br/>",
+      "2": "<strong>Dreamdrifter</strong>",
+      "3": [
+        "While in the Dreamdrifter state, Yumemizuki Mizuki will continuously drift forward, dealing <anemo>AoE Anemo DMG</anemo> to nearby opponents at regular intervals.",
+        "During this time, Yumemizuki Mizuki can control her direction of drift, and the pick-up distance of <strong>Yumemi Style Special Snacks</strong> from the Elemental Burst <strong>Anraku Secret Spring Therapy</strong> will be increased.",
+        "Increases the Swirl DMG that nearby party members deal based on Yumemizuki Mizuki's Elemental Mastery.",
+        "Dreamdrifter will end when Mizuki leaves the field or uses her Elemental Skill again."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Our dreams touch at midnight, their song ringing on in our hearts.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Continuous Attack DMG",
+      "2": "Dreamdrifter Duration",
+      "3": "Elemental Mastery-Based Swirl DMG Increase",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{3, percent(fixed: 1)}}%",
+      "1": "{{0, percent(fixed: 1)}}%",
+      "2": "{{4, fixed(fixed: 1)}}s",
+      "3": "{{1, percent(fixed: 2)}}% per Point",
+      "4": "{{2, fixed(fixed: 1)}}s",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Anraku Secret Spring Therapy",
+    "description": {
+      "0": "Summons forth countless lovely dreams and nightmares that pull in nearby objects and opponents, dealing <anemo>AoE Anemo DMG</anemo> and summoning a Mini Baku.",
+      "1": "<br/>",
+      "2": "<strong>Mini Baku:</strong>",
+      "3": "Follows the current active character. At regular intervals, the Mini Baku will create 1 Yumemi Style Special Snack nearby. After one of your own party members picks up a Special Snack, if their HP is higher than 70%, the Snack will explode and unleash a Munen Shockwave, dealing 1 instance of <anemo>AoE Anemo DMG</anemo> to nearby opponents. Otherwise, it will heal the character who picked it up based on Yumemizuki Mizuki's Elemental Mastery. When Yumemizuki Mizuki triggers healing by picking up a Yumemi Style Special Snack, the amount of healing is increased by 100%. If a Snack is not picked up after a period of time, it will explode and release a Munen Shockwave, dealing 1 instance of <anemo>AoE Anemo DMG</anemo> to surrounding opponents.",
+      "4": "<br/>",
+      "5": "<i>\"If you bury dark emotions for too long, they will become nightmares. With that in mind, why don't we turn them into 'delicious snacks' while we've got the time?\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Munen Shockwave DMG",
+      "2": "Snack Pick-Up HP Regeneration",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}% Elemental Mastery+{{6}}",
+      "3": "{{5, fixed(fixed: 1)}}s",
+      "4": "{{3, fixed(fixed: 1)}}s",
+      "5": "{{4}}",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bright Moon's Restless Voice",
+    "description": {
+      "0": "When Yumemizuki Mizuki triggers Swirl while in her Dreamdrifter state, Dreamdrifter's duration increases by 2.5s. This effect can trigger once every 0.3s for a maximum of 2 times per Dreamdrifter state."
+    }
+  },
+  "passive2": {
+    "name": "Thoughts by Day Bring Dreams by Night",
+    "description": {
+      "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, when other nearby party members hit opponents with <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, or <electro>Electro</electro> attacks, her Elemental Mastery will increase by 100 for 4s."
+    }
+  },
+  "passive3": {
+    "name": "All Ailments Banished",
+    "description": {
+      "0": "When Yumemizuki Mizuki is in the party, party members have a chance to recover 30% additional HP when using healing foods that do not have reviving properties. The trigger chance for this effect increases with the corresponding character's Friendship Level. (This effect will always trigger if the Traveler is the character consuming healing food.)"
+    }
+  },
+  "constellation1": {
+    "name": "In Mist-Like Waters",
+    "description": {
+      "0": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent is affected by Anemo DMG-triggered Swirl reactions while the aforementioned effect is active, the effect will be canceled and this Swirl instance has its DMG against this opponent increased by 1,100% of Mizuki's Elemental Mastery."
+    }
+  },
+  "constellation2": {
+    "name": "Your Echo I Meet in Dreams",
+    "description": {
+      "0": "When Yumemizuki Mizuki enters the Dreamdrifter state, every Elemental Mastery point she has will increase all nearby party members' <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, and <electro>Electro</electro> DMG Bonuses by 0.04% until the Dreamdrifter state ends."
+    }
+  },
+  "constellation3": {
+    "name": "Till Dawn's Moon Ends Night",
+    "description": {
+      "0": "Increases the Level of <strong>Aisa Utamakura Pilgrimage</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Buds Warm Lucid Springs",
+    "description": {
+      "0": "Picking up a <strong>Yumemi Style Special Snack</strong> from the Elemental Burst <strong>Anraku Secret Spring Therapy</strong> will both deal DMG and heal, and will restore 5 Energy to Yumemizuki Mizuki. Energy can be restored this way 4 times per <strong>Anraku Secret Spring Therapy</strong> duration."
+    }
+  },
+  "constellation5": {
+    "name": "As Setting Moon Brings Year's End",
+    "description": {
+      "0": "Increases the Level of <strong>Anraku Secret Spring Therapy</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Heart Lingers Long",
+    "description": {
+      "0": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%."
+    }
+  }
+}

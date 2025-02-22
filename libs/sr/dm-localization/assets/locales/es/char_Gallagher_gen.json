@@ -35,7 +35,7 @@
       "0": {
         "name": "Pelea embriagante",
         "fullDesc": "Melopea aumenta el Daño de Ruptura que reciben los objetivos en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Cada vez que un objetivo afectado por Melopea recibe el ataque de un aliado, el atacante regenera <orangeStrong>{{2}}</orangeStrong> PV.",
-        "shortDesc": "Melopea <orangeStrong>aumenta el Daño de Ruptura</orangeStrong> que reciben los objetivos. Cada vez que un objetivo con Melopea recibe el ataque de un aliado, <orangeStrong>el atacante regenera PV</orangeStrong>.",
+        "shortDesc": "Melopea <orangeStrong>aumenta el Daño de Ruptura</orangeStrong> que reciben los objetivos. Cada vez que un objetivo con Melopea recibe el ataque de un personaje aliado, <orangeStrong>el atacante regenera PV</orangeStrong>.",
         "tag": "Regeneración"
       }
     },
@@ -87,7 +87,7 @@
     },
     "2": {
       "name": "Cola de león",
-      "desc": "Al usar la habilidad básica, se elimina {{1}} estado negativo del objetivo aliado y aumenta su RES a efecto en un {{2, percent}}% durante {{3}} turnos."
+      "desc": "Al usar la habilidad básica, se disipa {{1}} estado negativo del objetivo aliado y aumenta su RES a efecto en un {{2, percent}}% durante {{3}} turnos."
     },
     "3": {
       "name": "Resucitador",

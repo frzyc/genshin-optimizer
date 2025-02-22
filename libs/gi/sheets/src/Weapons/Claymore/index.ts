@@ -2,6 +2,7 @@ import type { WeaponClaymoreKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
 
 import Akuoumaru from './Akuoumaru'
+import AThousandBlazingSuns from './AThousandBlazingSuns'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BlackcliffSlasher from './BlackcliffSlasher'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
@@ -11,6 +12,7 @@ import FangOfTheMountainKing from './FangOfTheMountainKing'
 import FavoniusGreatsword from './FavoniusGreatsword'
 import FerrousShadow from './FerrousShadow'
 import ForestRegalia from './ForestRegalia'
+import FruitfulHook from './FruitfulHook'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 import LithicBlade from './LithicBlade'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
@@ -35,11 +37,12 @@ import TidalShadow from './TidalShadow'
 import UltimateOverlordsMegaMagicSword from './UltimateOverlordsMegaMagicSword'
 import Verdict from './Verdict'
 import WasterGreatsword from './WasterGreatsword'
-import WhiteIronGreatsword from './WhiteIronGreatsword'
 import Whiteblind from './Whiteblind'
+import WhiteIronGreatsword from './WhiteIronGreatsword'
 import WolfsGravestone from './WolfsGravestone'
 const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   Akuoumaru,
+  AThousandBlazingSuns,
   BeaconOfTheReedSea,
   BlackcliffSlasher,
   BloodtaintedGreatsword,
@@ -49,6 +52,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   FavoniusGreatsword,
   FerrousShadow,
   ForestRegalia,
+  FruitfulHook,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,

@@ -29,7 +29,7 @@
       "0": {
         "name": "Trotter Market!?",
         "fullDesc": "Memanggil Numby saat pertempuran dimulai. Numby memiliki {{1}} SPD dasar. Saat beraksi, Numby akan melancarkan Serangan Lanjutan pada 1 musuh yang berstatus \"Proof of Debt\", mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Topaz.<br>Saat target musuh berstatus \"Proof of Debt\" terkena Serangan Lanjutan dari rekan tim, aksi Numby akan didahulukan sebesar {{3, percent}}%. Saat dalam giliran Numby sendiri, efek pendahuluan aksi tidak dapat dipicu.<br>Saat Topaz gugur, Numby akan menghilang.",
-        "shortDesc": "<orangeStrong>Memanggil Numby</orangeStrong> saat pertempuran dimulai. Saat Numby beraksi, ia akan <orangeStrong>melancarkan Serangan Lanjutan pada 1 musuh yang berstatus \"Proof of Debt\"</orangeStrong>. Saat musuh dengan \"Proof of Debt\" terkena Serangan Lanjutan, <orangeStrong>aksi Numby akan didahulukan</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Memanggil Numby</orangeStrong> saat pertempuran dimulai. Saat Numby beraksi, ia akan <orangeStrong>melancarkan Serangan Lanjutan pada target berstatus \"Proof of Debt\"</orangeStrong>, mengakibatkan Fire DMG.<br>Saat musuh berstatus \"Proof of Debt\" terkena Serangan Lanjutan, <orangeStrong>aksi Numby akan didahulukan</orangeStrong>.",
         "tag": "Single Target"
       }
     },

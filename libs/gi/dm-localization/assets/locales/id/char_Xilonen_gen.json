@@ -1,0 +1,209 @@
+{
+  "name": "Xilonen",
+  "title": "Ardent Flames Forge the Soul",
+  "description": "Seorang Pengukir Marga Nanatzcayan yang sangat terampil dalam mencari keseimbangan antara beban kerja yang berat dan hidup dengan nyaman.",
+  "constellationName": "Panthera Ocelota",
+  "auto": {
+    "name": "Ehecatl's Roar",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan berturut-turut dengan pedang."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menendang ke arah depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh-musuh di jalurnya dan mengakibatkan DMG Area berdasarkan DEF Xilonen saat mendarat."
+      },
+      "nightsoul": {
+        "0": "<strong>Nightsoul's Blessing: Blade Roller</strong>",
+        "1": "Dalam status Nightsoul's Blessing, Xilonen akan berganti ke Mode Blade Roller. Dalam status ini, Normal Attack Xilonen akan dikonversi menjadi tendangan 4 kali berturut-turut dengan sepatu roda Blade Roller, dan tidak akan bisa melancarkan Charged Attack.",
+        "2": "Saat melancarkan Normal Attack atau Plunging Attack dalam status ini, akan mengakibatkan <geo>Nightsoul-aligned Geo DMG</geo> yang tidak bisa ditimpa Elemental Infusion lainnya berdasarkan DEF Xilonen."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Min./Maks.",
+      "7": "DMG Tahap 1 Roller Blade",
+      "8": "DMG Tahap 2 Roller Blade",
+      "9": "DMG Tahap 3 Roller Blade",
+      "10": "DMG Tahap 4 Roller Blade",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yohual's Scratch",
+    "description": {
+      "0": "Biarlah ritme antusiasme menggema ke seluruh daratan! Xilonen berganti ke perlengkapan pertempuran kecepatan tinggi, menerjang ke depan dalam jarak tertentu, dan mengakibatkan <geo>Nightsoul-aligned Geo DMG</geo> berdasarkan DEF Xilonen.",
+      "1": "Setelah dilancarkan, Xilonen akan mendapatkan 45 poin Nightsoul dan memasuki status Nightsoul's Blessing. Dalam kondisi ini, Xilonen akan berganti ke Mode Blade Roller.",
+      "2": "<br/>",
+      "3": "<strong>Source Sample</strong>",
+      "4": "Xilonen memiliki 3 buah Sampler, akan memunculkan Soundscape yang berbeda berdasarkan jenis elemen Karakter lain yang ada di dalam party, dan saat diaktifkan, akan mengurangi Elemental RES elemen yang sesuai milik musuh di sekitar;",
+      "5": "Source Sample yang tercatat oleh Sampler pada awalnya akan berelemen <geo>Geo</geo>. Untuk setiap satu Karakter berelemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro>, satu Sampler <geo>Geo</geo> akan dikonversi menjadi jenis elemen yang sesuai;",
+      "6": "Saat berada dalam status Nightsoul's Blessing, Source Sample <geo>Geo</geo> yang dimiliki oleh Xilonen akan terus berada dalam status aktif; Setelah membuka Talenta Pasif \"Netotiliztli's Echoes\", Xilonen akan bisa memicu efek Talenta Pasif tersebut untuk memulihkan poin Nightsoul diri sendiri; Saat poin Nightsoul mencapai batas tertinggi, Xilonen akan mengonsumsi seluruh poin Nightsoul yang ada untuk akan mengaktifkan tiga Source Sample yang dimiliki Xilonen sendiri selama 15 detik.",
+      "7": "Saat Source Sample aktif, Elemental RES elemen yang sesuai milik musuh di sekitar akan berkurang, efek Source Sample dengan elemen yang sama tidak dapat ditumpuk; Saat Xilonen ada di dalam party namun sedang tidak berada di medan pertempuran, efek ini tetap dapat terpicu.",
+      "8": "<br/>",
+      "9": "<strong>Nightsoul's Blessing: Xilonen</strong>",
+      "10": "Terus-menerus mengonsumsi poin Nightsoul. Setelah poin Nightsoul habis terkonsumsi atau saat dilancarkan sekali lagi, Nightsoul's Blessing Xilonen akan berakhir. Nightsoul's Blessing memiliki karakteristik sebagai berikut:",
+      "11": [
+        "Berganti ke Mode Blade Roller, meningkatkan kecepatan bergerak dan memanjat Xilonen, dan akan bisa melompat dengan kecepatan tinggi dalam wujud Ocelot saat sedang memanjat.",
+        "Nightsoul's Blessing Xilonen memiliki batasan sebagai berikut: Saat berada dalam status Nightsoul's Blessing, poin Nightsoul Xilonen dibatasi selama 9 detik. Setelah melewati batasan ini, poin Nightsoul Xilonen akan langsung habis terpakai."
+      ],
+      "12": "<br/>",
+      "13": "Saat berada dalam status Nightsoul's Blessing, Setelah poin Nightsoul mencapai batas maksimum, Xilonen tidak akan bisa menghasilkan poin Nightsoul melalui Talenta Pasif \"Netotiliztli's Echoes\".",
+      "14": "<br/>",
+      "15": "<i>Dalam beberapa hal, kerajinan permata dan pencampuran musik memiliki prinsip yang sama: Menyaring kotoran dan menyisakan bagian yang paling bercahaya untuk disimpan.",
+      "16": "Namun, Xilonen tidak pilih-pilih soal keduanya. Lagi pula, dia menikmati keduanya kok!</i>"
+    },
+    "skillParams": {
+      "0": "DMG Terjangan",
+      "1": "Pengurangan Elemental RES",
+      "2": "Durasi Aktivasi Source Sample",
+      "3": "Batas Waktu Poin Nightsoul",
+      "4": "Batas Poin Nightsoul",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ocelotlicue Point!",
+    "description": {
+      "0": "Menyalakan Phlogiston Stereo DJ Controller (Edisi Portabel) berkekuatan penuh yang mengakibatkan <geo>Nightsoul-aligned Geo DMG Area</geo> berdasarkan DEF Xilonen.",
+      "1": "<br/>",
+      "2": "Selain itu, akan memicu efek berikut berdasarkan jenis Source Sample yang berbeda:",
+      "3": [
+        "Memiliki minimum 2 Source Sample yang elemennya sudah dikonversi: Xilonen memainkan irama Ebullient, setiap satu kurun waktu, akan memulihkan HP Karakter aktif di sekitar berdasarkan DEF Xilonen;",
+        "Memiliki kurang dari 2 Source Sample yang elemennya sudah dikonversi: Xilonen memainkan irama Ardent, melakukan dua ketukan tambahan, mengakibatkan <geo>Nightsoul-aligned Geo DMG Area</geo> yang didasarkan pada DEF Xilonen."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Oke, rehat sebentar ya!\"",
+      "6": "\"Tidak masalah, aku sudah rekam ketukannya kok. Kita lihat nanti waktu ritmenya digabung, oke?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pemulihan Berkelanjutan",
+      "2": "Durasi Ebullient Rhythm",
+      "3": "DMG Ketukan Tambahan",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Netotiliztli's Echoes",
+    "description": {
+      "0": "Saat dalam status Nightsoul's Blessing:",
+      "1": [
+        "Jika Xilonen memiliki minimum 2 Source Sample yang elemennya sudah dikonversi: Saat mengenai musuh dengan Normal atau Plunging Attack maka akan mendapatkan 35 poin Nightsoul, efek ini dapat terpicu sekali setiap 0,1 detik;",
+        "Jika Xilonen Memiliki kurang dari 2 Source Sample yang elemennya sudah dikonversi: DMG Normal dan Plunging Attack yang diakibatkan meningkat 30%."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Portable Armored Sheath",
+    "description": {
+      "0": "Saat dalam status Nightsoul's Blessing, saat poin Nightsoul Xilonen mencapai batas maksimum, akan memicu satu kali efek yang setara dengan Nightsoul Burst miliknya, efek ini dapat terpicu sekali setiap 14 detik.",
+      "1": "Selain itu, saat Karakter sekitar di dalam party memicu Nightsoul Burst, DEF Xilonen meningkat 20% selama 15 detik."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Blessing of Forge-Fire",
+    "description": {
+      "0": "Setelah poin Nightsoul habis terpakai, Xilonen akan mengonsumsi Phlogiston untuk mempertahankan status Nightsoul's Blessing-nya.",
+      "1": "Saat ada area dengan Phlogiston Mechanic di Natlan, dapat melancarkan Nightsoul Transmission: Xilonen. Saat Karakter aktif sedang berlari, memanjat, atau sedang bergerak yang dikarenakan oleh Talenta tertentu, atau saat melayang di ketinggian tertentu, dan mengganti Karakter menjadi Xilonen, akan memicu efek: Xilonen akan memasuki status Nightsoul's Blessing dan mendapatkan 20 poin Nightsoul. Dalam kondisi ini, poin Nightsoul Xilonen memiliki batasan selama 4 detik. Setelah melewati batasan waktu ini, poin Nightsoul Xilonen akan langsung terkuras habis. Setelah melancarkan <strong>Yohual's Scratch</strong> selama durasi batasan ini, maka durasi batasan waktu poin Nightsoul akan diperpanjang 9 detik. Party sendiri dapat memicu satu kali Nightsoul Transmission sekali setiap 10 detik.",
+      "2": "<br/>",
+      "3": "Selain itu, saat berada di Natlan dan dalam status Nightsoul's Blessing, Xilonen tidak akan mengonsumsi Stamina saat Memanjat."
+    }
+  },
+  "passive": {
+    "name": "Tour of Tepeilhuitl",
+    "description": {
+      "0": "Saat memicu Nightsoul Transmission akan memulihkan 15 poin Phlogiston."
+    }
+  },
+  "constellation1": {
+    "name": "Sabbatical Phrase",
+    "description": {
+      "0": "Konsumsi poin Nightsoul dan Phlogiston Xilonen dalam status Nightsoul's Blessing berkurang 30%, dan batasan waktu poin Nightsoul diperpanjang 45%.",
+      "1": "Selain itu, saat Source Sample Xilonen aktif, akan meningkatkan ketahanan Karakter aktif di sekitar terhadap interupsi."
+    }
+  },
+  "constellation2": {
+    "name": "Chiucue Mix",
+    "description": {
+      "0": "Source Sample <geo>Geo</geo> milik Xilonen akan tetap aktif. Selain itu, saat Source Sample-nya aktif, seluruh Karakter di sekitar dengan jenis elemen yang sama dengan Source Sample tersebut akan mendapatkan efek yang sesuai:",
+      "1": [
+        "<geo>Geo</geo>: DMG +50%.",
+        "<pyro>Pyro</pyro>: ATK +45%.",
+        "<hydro>Hydro</hydro>: Max HP +45%.",
+        "<cryo>Cryo</cryo>: CRIT DMG +60%.",
+        "<electro>Electro</electro>: Memulihkan 25 poin Energy, cooldown Elemental Burst berkurang 6 detik."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Tonalpohualli's Loop",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Yohual's Scratch</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Suchitl's Trance",
+    "description": {
+      "0": "Setelah Xilonen melancarkan <strong>Yohual's Scratch</strong>, akan memberikan efek Blooming Blessing terhadap seluruh Karakter di sekitar selama 15 detik.",
+      "1": "DMG Normal Attack, Charged Attack, dan Plunging Attack Karakter yang memiliki Blooming Blessing akan meningkat sebesar 65% DEF Xilonen. Efek ini akan hilang setelah terpicu 6 kali atau setelah durasinya berakhir.",
+      "2": "Saat serangannya mengenai beberapa musuh sekaligus, jumlah terpicu akan dikurangi berdasarkan jumlah musuh yang terkena serangan. Perhitungan kesempatan terpicu untuk setiap anggota party dihitung terpisah."
+    }
+  },
+  "constellation5": {
+    "name": "Tlaltecuhtli's Crossfade",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Ocelotlicue Point!</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Imperishable Night Carnival",
+    "description": {
+      "0": "Saat Xilonen sedang dalam status Nightsoul's Blessing, saat Xilonen berlari, melompat, melancarkan Normal Attack atau Plunging Attack, akan mendapatkan Imperishable Night's Blessing, mengabaikan batasan status Nightsoul's Blessing dan meningkatkan DMG Normal Attack dan Plunging Attack selama 5 detik.",
+      "1": "Selama berlangsung:",
+      "2": "Batasan waktu poin Nightsoul Xilonen akan dihentikan sementara, poin Nightsoul, Phlogiston, dan Stamina Xilonen tidak akan berkurang lagi, dan saat poin Nightsoul mencapai batas tertinggi, Nightsoul's Blessing Xilonen tidak akan berakhir.",
+      "3": "DMG Normal Attack dan Plunging Attack Xilonen dalam status Nightsoul's Blessing meningkat sebesar 300% DEF Xilonen.",
+      "4": [
+        "Setiap 1,5 detik, akan memulihkan HP seluruh anggota party yang ada di sekitar sebesar 120% DEF Xilonen."
+      ],
+      "5": "Imperishable Night's Blessing bisa didapatkan maksimum sekali setiap 15 detik."
+    }
+  }
+}

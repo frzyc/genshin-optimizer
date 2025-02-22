@@ -60,6 +60,7 @@ export const allRelicSetKeys = [
 ] as const
 export type RelicSetKey = (typeof allRelicSetKeys)[number]
 
+// WARN: do not change order, since this is the order of display of substats in game.
 export const allRelicSubStatKeys = [
   'hp',
   'atk',
@@ -104,6 +105,13 @@ export type RelicMainStatKey = (typeof allRelicMainStatKeys)[number]
 
 export const allRelicRarityKeys = [2, 3, 4, 5] as const
 export type RelicRarityKey = (typeof allRelicRarityKeys)[number]
+
+export function isRelicRarityKey(rarity: unknown): rarity is RelicRarityKey {
+  return (
+    typeof rarity === 'number' &&
+    allRelicRarityKeys.includes(rarity as RelicRarityKey)
+  )
+}
 
 export const allRelicSetCountKeys = [2, 4] as const
 export type RelicSetCountKey = (typeof allRelicSetCountKeys)[number]
@@ -150,3 +158,23 @@ export const allRelicMainSubStatKeys = Array.from(
   new Set([...allRelicSubStatKeys, ...allRelicMainStatKeys] as const)
 )
 export type RelicMainSubStatKey = (typeof allRelicMainSubStatKeys)[number]
+
+export function isCavernRelicSetKey(
+  key: RelicSetKey
+): key is RelicCavernSetKey {
+  return allRelicCavernSetKeys.includes(key as RelicCavernSetKey)
+}
+
+export function isPlanarRelicSetKey(
+  key: RelicSetKey
+): key is RelicPlanarSetKey {
+  return allRelicPlanarSetKeys.includes(key as RelicPlanarSetKey)
+}
+
+export function isRelicSetKey(key: unknown): key is RelicSetKey {
+  return (
+    typeof key === 'string' &&
+    (isCavernRelicSetKey(key as RelicSetKey) ||
+      isPlanarRelicSetKey(key as RelicSetKey))
+  )
+}

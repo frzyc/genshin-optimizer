@@ -20,24 +20,24 @@
     "ult": {
       "0": {
         "name": "Butterfly Flurry",
-        "fullDesc": "Langsung memasuki status Buff dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh.",
-        "shortDesc": "Memasuki <orangeStrong>status Buff</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh.",
+        "fullDesc": "Langsung memasuki status Amplifikasi dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh.",
+        "shortDesc": "Memasuki <orangeStrong>status Amplifikasi</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh.",
         "tag": "Single Target"
       }
     },
     "talent": {
       "0": {
         "name": "Resurgence",
-        "fullDesc": "Saat mengalahkan target musuh dengan Basic Attack, Skill, atau Ultimate, Seele akan segera mendapatkan 1 giliran tambahan dan akan memasuki status Buff. Saat berada dalam status Buff, DMG Seele meningkat <orangeStrong>{{1, percent}}%</orangeStrong> selama {{2}} giliran.<br>Jika Seele mengalahkan musuh lagi pada saat giliran tambahan yang diperoleh dari Talent \"Resurgence\", maka efek Talent ini tidak akan terpicu lagi.",
-        "shortDesc": "Saat <orangeStrong>mengalahkan target musuh</orangeStrong> dengan melancarkan Basic Attack, Skill, atau Ultimate, akan memperoleh <orangeStrong>giliran tambahan dan memasuki status Buff</orangeStrong>. DMG yang diakibatkan dalam status Buff akan meningkat.",
+        "fullDesc": "Saat mengalahkan target musuh dengan Basic Attack, Skill, atau Ultimate, Seele akan segera mendapatkan 1 giliran tambahan dan akan memasuki status Buff. Saat berada dalam status Amplifikasi, DMG Seele meningkat <orangeStrong>{{1, percent}}%</orangeStrong> selama {{2}} giliran.<br>Jika Seele mengalahkan musuh lagi pada saat giliran tambahan yang diperoleh dari Talent \"Resurgence\", maka efek Talent ini tidak akan terpicu lagi.",
+        "shortDesc": "Saat <orangeStrong>mengalahkan target musuh</orangeStrong> dengan melancarkan Basic Attack, Skill, atau Ultimate, akan memperoleh <orangeStrong>giliran tambahan dan memasuki status Amplifikasi</orangeStrong>. DMG yang diakibatkan dalam status Amplifikasi akan meningkat.",
         "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Phantom Illusion",
-        "fullDesc": "Setelah menggunakan Technique, Seele akan memasuki status Stealth selama {{1}} detik. Selama berada dalam status Stealth, Seele tidak akan terdeteksi musuh. Jika memulai pertempuran dengan cara menyerang musuh, Seele akan segera memasuki status Buff.",
-        "shortDesc": "Memasuki status <orangeStrong>Stealth</orangeStrong>. Setelah menyerang musuh dan memasuki pertempuran, akan langsung memasuki <orangeStrong>status Buff</orangeStrong>.",
+        "fullDesc": "Setelah menggunakan Technique, Seele akan memasuki status Stealth selama {{1}} detik. Selama berada dalam status Stealth, Seele tidak akan terdeteksi musuh. Jika memulai pertempuran dengan cara menyerang musuh, Seele akan segera memasuki status Amplifikasi.",
+        "shortDesc": "Memasuki status <orangeStrong>Stealth</orangeStrong>. Setelah menyerang musuh dan memasuki pertempuran, akan langsung memasuki <orangeStrong>status Amplifikasi</orangeStrong>.",
         "tag": "Enhance"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Lacerate",
-        "fullDesc": "Saat Seele dalam status buff, Quantum RES PEN dia meningkat {{1, percent}}%.",
+        "fullDesc": "Saat Seele dalam status Amplifikasi, Quantum RES PEN dirinya meningkat {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Rippling Waves",
-        "fullDesc": "Setelah melancarkan Basic Attack, mendahulukan {{1, percent}}% aksi Seele yang selanjutnya.",
+        "fullDesc": "Setelah melancarkan Basic Attack, aksi Seele yang berikutnya akan didahulukan sebesar {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

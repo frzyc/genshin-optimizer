@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Göttliche Geißelung",
-        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Xueyis ANG zu. Dieser Angriff ignoriert die Schwächen des Gegners und reduziert den WDS des Ziels. Wenn die Schwäche eines Gegners gebrochen wird, wird der Effekt „Schwächebruch: Quanten“ ausgelöst.<br>Je mehr WDS reduziert wird, desto höher ist der Schaden, der mit diesem Angriff zugefügt wird, bis maximal <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Xueyis ANG zu. Dieser Angriff reduziert den WDS des Gegners unabhängig vom Schwächetyp. Wenn die Schwäche eines Gegners gebrochen wird, wird der Effekt „Schwächebruch: Quanten“ ausgelöst.<br>Je mehr WDS reduziert wird, desto höher ist der Schaden, der mit diesem Angriff zugefügt wird, bis maximal <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Fügt einem Gegner massiven Quanten-SCH zu. Dieser Angriff verringert den WDS des Gegners <orangeStrong>unabhängig vom Schwächetyp</orangeStrong>. Je mehr WDS verringert wird, desto höher ist der zugefügte SCH.",
         "tag": "Einzelangriff"
       }
@@ -29,8 +29,8 @@
       "0": {
         "name": "Karmischer Kreislauf",
         "fullDesc": "Fügt Stapelung von „Karma“ hinzu, wenn Xueyis Angriffe den WDS eines Ziels verringern, wobei mehr Stapelungen im Verhältnis zur Menge des verringerten WDS hinzugefügt werden, bis zu {{1}}-fach stapelbar.<br>Wenn Xueyis Verbündete den WDS eines Ziels mit einem Angriff verringern, erhält sie {{3}} Stapelung von „Karma“.<br>Wenn „Karma“ maximal gestapelt wurde, werden alle Stapelungen verbraucht und es wird ein Folgeangriff auf ein Ziel ausgeführt, der 3-mal SCH verursacht, wobei einem zufälligen Gegner Quanten-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Xueyis ANG zugefügt wird. Dieser Folgeangriff fügt keine „Karma“-Stapelung hinzu.",
-        "shortDesc": "Wenn Xueyi einen Angriff ausführt oder ihre Verbündeten den WDS des Ziels aufbrauchen, fügt sie ihm Stapelungen von „Karma“ zu. Wenn „Karma“ maximal gestapelt wurde, <orangeStrong>führt sie sofort einen Folgeangriff aus</orangeStrong>, der einem anvisierten Gegner geringen Quanten-SCH zufügt, 3-mal abprallt und das gesamte „Karma“ verbraucht.",
-        "tag": "Abprallung"
+        "shortDesc": "Wenn Xueyi einen Angriff ausführt oder ihre Verbündeten den WDS des Ziels aufbrauchen, fügt sie ihm Stapelungen von „Karma“ zu. Wenn Karma maximal gestapelt wurde, <orangeStrong>führt sie sofort einen Folgeangriff aus</orangeStrong>, der einem anvisierten Gegner geringen Quanten-SCH zufügt, 3-mal abprallt und das gesamte Karma verbraucht.",
+        "tag": "Abpraller"
       }
     },
     "technique": {
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Klesha, durchbrochen",
-      "desc": "Der Folgeangriff des Talents verringert den WDS unabhängig vom Schwächetyp und stellt gleichzeitig Xueyis LP in Höhe von {{1, percent}}% ihrer max. LP wieder her. Wenn die Schwäche gebrochen wird, wird der Effekt „Schwächebruch: Quanten“ ausgelöst."
+      "desc": "Der Folgeangriff des Talents verringert den WDS unabhängig vom Schwächetyp und stellt gleichzeitig Xueyis LP in Höhe von {{1, percent}}% ihrer max. LP wieder her. Beim Schwächebruch wird der Effekt „Schwächebruch: Quanten“ ausgelöst."
     },
     "3": {
       "name": "Duhkha, ruhend",

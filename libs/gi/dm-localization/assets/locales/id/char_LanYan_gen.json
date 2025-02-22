@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "Spring Woven From Jade",
+  "description": "Penganyam rotan dari Chenyu Vale. Memiliki pola pikir jernih dan emosi yang baik, tangkas seperti sumber mata air pegunungan.",
+  "constellationName": "Hirundo Lazuli",
+  "auto": {
+    "name": "Black Pheasant Strides on Water",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Mengayunkan Feathermoon Ring, melancarkan hingga 4 serangan yang mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melemparkan Feathermoon Ring yang digenggamnya, mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Cryo, menerjang tanah, menyerang musuh di jalur terjangan dan mengakibatkan <anemo>Anemo DMG area</anemo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Swallow-Wisp Pinion Dance",
+    "description": {
+      "0": "Memanggil Swallow-Wisp Shield yang sudah diturunkan dari generasi ke generasi, lalu menerjang ke depan, dan melompat ke udara setelah menyentuh targetnya.",
+      "1": "Penyerapan DMG Swallow-Wisp Shield dihitung berdasarkan ATK-nya, dan memiliki 250% pertahanan terhadap <anemo>Anemo DMG</anemo>.",
+      "2": "Saat Lan Yan melompat ke udara karena Elemental Skill Swallow-Wisp Shield, menekan Elemental Skill atau Normal Attack akan membuatnya melemparkan Feathermoon Ring miliknya terhadap musuh, setelah mengenai musuh, akan berputar dua kali di antara musuh di sekitar, mengakibatkan <anemo>Anemo DMG</anemo>.",
+      "3": "Saat ditahan, akan melancarkan serangan dengan cara yang berbeda.",
+      "4": "<br/>",
+      "5": "<strong>Mode Tahan</strong>",
+      "6": "Memasuki status Membidik untuk menyesuaikan arah terjangan.",
+      "7": "<br/>",
+      "8": "<i>\"Awan membelah bulan penuh, layaknya bayangan perak yang menghiasi pandangan seseorang.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Feathermoon Ring",
+      "1": "Pertahanan Perisai",
+      "2": "Durasi Perisai",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lustrous Moonrise",
+    "description": {
+      "0": "Lan Yan menghasilkan Feathermoon Swallow Array, menarik musuh dan objek di sekitarnya, dan mengakibatkan beberapa kali <anemo>Anemo DMG Area</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Secara harfiah sih, kalau hanya ada satu Lan Yan saja, ini tidak bisa disebut sebagai formasi. Tapi, sepertinya nama itu bisa terpenuhi kalau semua orang-orangan rotannya dimasukkan ke dalam formasi ... Yah, mungkin saja sih.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Konsumsi Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Four Sealing Divination Charms",
+    "description": {
+      "0": "Saat terjangan Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong> mengenai target, jika berinteraksi dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, Swallow-Wisp Shield akan mengalami konversi elemen, dan nilai dari Perisai setelah elemennya sudah dikonversi adalah 250% pertahanan terhadap Elemental DMG dengan tipe elemen yang sesuai.",
+      "1": "Selain itu, jika Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong> kali ini mengakibatkan konversi elemen pada Swallow-Wisp Shield, maka Feathermoon Ring yang Lan Yan lemparkan ke musuhnya akan mendapatkan 50% DMG tambahan berdasarkan tipe elemen yang sesuai. DMG ini dianggap sebagai DMG Elemental Skill."
+    }
+  },
+  "passive2": {
+    "name": "Skyfeather Evil-Subduing Charm",
+    "description": {
+      "0": "DMG Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong> dan Elemental Burst <strong>Lustrous Moonrise</strong> ditingkatkan sebesar 309% dan 774% dari Elemental Mastery Lan Yan."
+    }
+  },
+  "passive3": {
+    "name": "Thought and Intent, Like Silken Scent",
+    "description": {
+      "0": "Saat Lan Yan berada di dalam party, Crystalfly dan beberapa binatang tertentu yang didekati Karakter dalam party tidak akan kaget dan kabur.",
+      "1": "Silakan menuju bagian Arsip > Makhluk Hidup/Hewan Liar > Lainnya untuk mengecek objek-objek yang dapat dipengaruhi skill ini."
+    }
+  },
+  "constellation1": {
+    "name": "\"As One Might Stride Betwixt the Clouds\"",
+    "description": {
+      "0": "Setelah memicu konversi elemen dari Talenta Pasif \"Four Sealing Divination Charms\", Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong> kali ini akan menghasilkan satu Feathermoon Ring lagi saat dilemparkan terhadap musuh.",
+      "1": "Harus membuka Talenta Pasif \"Four Sealing Divination Charms\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "\"Dance Vestments Billow Like Rainbow Jade\"",
+    "description": {
+      "0": "Ketika <strong>Swallow-Wisp Shield</strong> sedang aktif, maka saat Normal Attack dari Karakter aktif milikmu di dalam party menghasilkan DMG, maka DMG yang bisa diserap oleh Perisai akan dipulihkan 40%. Maksimum sampai kembali ke nilai awal yang bisa diserap Perisai. Efek ini dapat terpicu sekali setiap 2 detik."
+    }
+  },
+  "constellation3": {
+    "name": "\"On White Wings Pierce Through Cloud and Fog\"",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Swallow-Wisp Pinion Dance</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"With Drakefalcon's Blood-Pearls Adorned\"",
+    "description": {
+      "0": "Selama 12 detik setelah melancarkan Elemental Burst <strong>Lustrous Moonrise</strong>, Elemental Mastery seluruh anggota party di sekitar meningkat 60 poin."
+    }
+  },
+  "constellation5": {
+    "name": "\"Having Met You, My Heart is Gladdened\"",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Lustrous Moonrise</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Let Us Away on Sylphic Wing, the Silvered Ornaments to Ring\"",
+    "description": {
+      "0": "Menambahkan 1 charge <strong>Swallow-Wisp Pinion Dance</strong>."
+    }
+  }
+}

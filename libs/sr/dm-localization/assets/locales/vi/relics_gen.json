@@ -1,0 +1,14 @@
+{
+  "relics": "Di Vật",
+  "set": "Bộ Di Vật",
+  "mainStat": "Thuộc Tính Chính",
+  "slot": "Ô",
+  "slotKey": {
+    "head": "Đầu",
+    "hands": "Tay",
+    "body": "Thân",
+    "feet": "Chân",
+    "sphere": "Quả Cầu Vị Diện",
+    "rope": "Dây Liên Kết"
+  }
+}

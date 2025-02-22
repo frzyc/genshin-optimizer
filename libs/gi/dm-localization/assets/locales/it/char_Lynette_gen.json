@@ -121,7 +121,7 @@
   "passive2": {
     "name": "Oggetti di scena pronti all'uso",
     "description": {
-      "0": "Dopo che la Scatola Stravagatto, evocata tramite <strong>Gioco di prestigio: Trasmutazione mirabolante</strong>, esegue una conversione elementale, il Tripudio elementale di Lynette infligge un 15% di DAN in più. Quest'effetto rimane attivo per tutta la durata della Scatola Stravagatto."
+      "0": "Dopo che la Scatola Stravagatto, evocata tramite <strong>Gioco di prestigio: Trasmutazione mirabolante</strong>, esegue una Conversione elementale, il Tripudio elementale di Lynette infligge un 15% di DAN in più. Quest'effetto rimane attivo per tutta la durata della Scatola Stravagatto."
     }
   },
   "passive3": {

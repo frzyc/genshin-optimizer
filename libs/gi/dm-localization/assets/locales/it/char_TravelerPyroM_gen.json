@@ -1,0 +1,151 @@
+{
+  "auto": {
+    "name": "Fiamma straniera",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 5 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per sferrare 2 colpi di spada rapidi."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da 5º colpo",
+      "5": "DAN da ATT caricato",
+      "6": "Costo vigore ATT caricato",
+      "7": "DAN da ATT in picchiata",
+      "8": "DAN da ATT in picchiata basso/alto",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lama solcafiamme",
+    "description": {
+      "0": "Evoca una fiamma ardente in grado di incenerire la terra stessa. Produce effetti diversi in base alla durata della pressione.",
+      "1": "<br/>",
+      "2": "<strong>Pressione</strong>",
+      "3": "Sprigiona delle fiamme generando un fuoco impetuoso. Quando l'abilità viene utilizzata, {F#la viaggiatrice}{M#il viaggiatore} ottiene 42 punti Anima della Notte ed entra nello stato di Grazia dell'Anima della Notte, evocando una Soglia fiammeggiante che segue il personaggio attivo.",
+      "4": "Quando la Soglia fiammeggiante si avvicina agli avversari, infligge <pyro>DAN da Pyro</pyro> con attributo Anima della Notte a intervalli regolari.",
+      "5": "<br/>",
+      "6": "<strong>Pressione prolungata</strong>",
+      "7": "Sprigiona la fiamma in modo controllato, infliggendo <pyro>DAN da Pyro ad area</pyro> con attributo Anima della Notte agli avversari vicini. Quando l'abilità viene utilizzata, {F#la viaggiatrice}{M#il viaggiatore} ottiene 42 punti Anima della Notte ed entra nello stato di Grazia dell'Anima della Notte, evocando una Soglia infuocata che segue il personaggio attivo.",
+      "8": "Quando il personaggio attivo con la Soglia infuocata infligge DAN agli avversari, la Soglia infuocata sferra un attacco coordinato che infligge <pyro>DAN da Pyro</pyro> con attributo Anima della Notte in base all'ATT {F#della viaggiatrice}{M#del viaggiatore}. Quest'effetto può verificarsi una volta ogni 3 s.",
+      "9": "<br/>",
+      "10": "<strong>Grazia dell'Anima della Notte: {F#Viaggiatrice}{M#Viaggiatore}</strong>",
+      "11": "Consuma costantemente punti Anima della Notte e ha una durata massima di 12 s. Dopo aver esaurito i punti Anima della Notte, lo stato termina. Se quest'abilità viene usata di nuovo mentre lo stato è ancora attivo, i punti Anima della Notte {F#della viaggiatrice}{M#del viaggiatore} vengono reimpostati a 42.",
+      "12": "Sia la Soglia fiammeggiante che la Soglia infuocata spariscono al termine dello stato di Grazia dell'Anima della Notte {F#della viaggiatrice}{M#del viaggiatore}. Può esistere solo una Soglia fiammeggiante o una Soglia infuocata evocata {F#dalla viaggiatrice}{M#dal viaggiatore} alla volta.",
+      "13": "<br/>",
+      "14": "<i>Insieme, tu e Paimon avete osservato i colori cambiare all'interno del fuoco.</i>"
+    },
+    "skillParams": {
+      "0": "Soglia fiammeggiante",
+      "1": "DAN da pressione prolungata",
+      "2": "Soglia infuocata",
+      "3": "Limite punti Anima della Notte",
+      "4": "TdR",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Incendio canicolare",
+    "description": {
+      "0": "Concentra le fiamme in un marchio, infliggendo <pyro>DAN da Pyro ad area</pyro> con attributo Anima della Notte agli avversari davanti a sé. Per i successivi 4 s, i punti Anima della Notte de{F#lla viaggiatrice}{M#l viaggiatore} si ripristinano di 7 al secondo.",
+      "1": "<br/>",
+      "2": "<i>Insieme, tu e Paimon avete studiato i principi fondamentali del fuoco inestinguibile.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "La vera Fiamma dell'incenerimento",
+    "description": {
+      "0": "Quando {F#la viaggiatrice}{M#il viaggiatore} ha più di 20 punti Anima della Notte, l'area d'effetto degli attacchi della Soglia fiammeggiante e della Soglia infuocata dell'abilità elementale <strong>Lama solcafiamme</strong> aumenta dopo che queste colpiscono gli avversari."
+    }
+  },
+  "passive2": {
+    "name": "Brace incombusta",
+    "description": {
+      "0": "Quando il personaggio attivo all'interno di una <strong>Soglia fiammeggiante</strong> o di una <strong>Soglia infuocata</strong> innesca una <pyro>reazione di Pyro</pyro>, {F#la viaggiatrice}{M#il viaggiatore} recupera 5 di energia. Quest'effetto può attivarsi una volta ogni 12 s. Inoltre, quando i membri del gruppo vicini innescano un Impeto dell'Anima della Notte, {F#la viaggiatrice}{M#il viaggiatore} recupera 4 di energia."
+    }
+  },
+  "constellation1": {
+    "name": "Flusso della luce stellare",
+    "description": {
+      "0": "Quando la <strong>Soglia fiammeggiante</strong> o la <strong>Soglia infuocata</strong> è attiva, i DAN inflitti dal personaggio attivo aumentano di un 6%. Se il personaggio è nello stato di Grazia dell'Anima della Notte, tali DAN aumentano di un ulteriore 9%."
+    }
+  },
+  "constellation2": {
+    "name": "Candela perpetua",
+    "description": {
+      "0": "Per 12 s dopo l'uso dell'abilità elementale <strong>Lama solcafiamme</strong>, dopo che i membri del gruppo hanno innescato una <pyro>reazione di Pyro</pyro> su un avversario, {F#la viaggiatrice}{M#il viaggiatore} recupera 14 punti Anima della Notte. Ogni utilizzo di <strong>Lama solcafiamme</strong> può ripristinare in questo modo fino a un massimo di 28 punti Anima della Notte."
+    }
+  },
+  "constellation3": {
+    "name": "Testimonianza nel fuoco",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Lama solcafiamme</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fiamma devastante",
+    "description": {
+      "0": "Dopo aver usato il Tripudio elementale <strong>Incendio canicolare</strong>, {F#la viaggiatrice}{M#il viaggiatore} ottiene un 20% di <pyro>bonus DAN da Pyro</pyro> per 9 s."
+    }
+  },
+  "constellation5": {
+    "name": "Fuoco inestinguibile",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Incendio canicolare</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Fiamma sacra eterna",
+    "description": {
+      "0": "Mentre lo stato di Grazia dell'Anima della Notte è attivo, gli attacchi normali, caricati e in picchiata {F#della viaggiatrice}{M#del viaggiatore} subiscono una conversione e infliggono <pyro>DAN da Pyro</pyro> con attributo Anima della Notte non influenzabili da altre infusioni elementali. Inoltre, i DAN da CRIT di questi attacchi aumentano di un 40%."
+    }
+  }
+}

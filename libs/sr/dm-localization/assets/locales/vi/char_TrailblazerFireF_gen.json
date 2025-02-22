@@ -35,7 +35,7 @@
       "0": {
         "name": "Kho Báu Của Đấng Kiến Tạo",
         "fullDesc": "Mỗi khi bị tấn công 1 lần sẽ cộng 1 tầng \"Ý Chí Sục Sôi\", tối đa cộng dồn {{3}} tầng.<br>Khi số tầng \"Ý Chí Sục Sôi\" không dưới 4, Tấn Công Thường sẽ được cường hóa, gây sát thương cho 1 kẻ địch chỉ định và mục tiêu lân cận kẻ đó.<br>Sau khi Nhà Khai Phá thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ, sẽ cung cấp Khiên cho toàn phe ta để triệt tiêu sát thương bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Phòng Thủ của Nhà Khai Phá +<orangeStrong>{{4}}</orangeStrong>, duy trì {{2}} hiệp.",
-        "shortDesc": "",
+        "shortDesc": "Khi bị tấn công sẽ cộng dồn Ý Chí Sục Sôi, khi Ý Chí Sục Sôi không dưới 4 tầng, Tấn Công Thường sẽ được <orangeStrong>cường hóa</orangeStrong>. Sau khi thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ sẽ cung cấp Khiên cho toàn bộ phe ta.",
         "tag": "Cường Hóa"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Hiệu Lệnh Của Đấng Bảo Vệ",
         "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ tạo Khiên cho bản thân giúp triệt tiêu sát thương tương đương {{1, percent}}% Phòng Thủ của Nhà Khai Phá +{{2}}, duy trì {{3}} hiệp.",
-        "shortDesc": "",
+        "shortDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ cung cấp Khiên cho bản thân.",
         "tag": "Phòng Thủ"
       }
     },

@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "위협의 일격",
-        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주며 피격된 적은 {{2, percent}}%의 기본 확률로 빙결 상태에 빠진다. 지속 시간: {{3}}턴.<br>빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 추가 피해를 받는다",
+        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 가하며 피격된 적은 {{2, percent}}%의 기본 확률로 빙결 상태에 빠진다. 지속 시간: {{3}}턴.<br>빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 추가 피해를 받는다",
         "shortDesc": "단일 적에게 얼음 속성 피해를 가하고 <orangeStrong>일정 확률로 해당 적에게 빙결 상태를 부여</orangeStrong>한다",
         "tag": "단일 공격"
       }
@@ -44,7 +44,7 @@
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
         "shortDesc": "",
         "tag": ""
       }

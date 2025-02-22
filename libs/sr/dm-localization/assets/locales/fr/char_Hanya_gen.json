@@ -29,7 +29,7 @@
       "0": {
         "name": "Châtiment",
         "fullDesc": "Lorsqu'un allié utilise une ATQ normale, une compétence ou un ultime sur un ennemi affecté par Fardeau, ses DGT augmentent de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{2}} tours.",
-        "shortDesc": "Les alliés infligent davantage de DGT lorsqu'ils attaquent des ennemis affectés par Fardeau.",
+        "shortDesc": "Lorsqu'une cible alliée utilise une ATQ normale, une compétence ou un ultime sur une cible ennemie affectée par Fardeau, les DGT infligés augmentent.",
         "tag": "Soutien"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Une seule pensée",
-      "desc": "Lorsqu'un allié qui bénéficie de l'effet de l'ultime de Hanya élimine un ennemi, l'action de Hanya est avancée de {{1, percent}}%. Cet effet ne peut être déclenché que {{2}} fois par tour."
+      "desc": "Lorsqu'une cible alliée qui bénéficie de l'effet de l'ultime de Hanya élimine un ennemi, l'action de Hanya est avancée de {{1, percent}}%. Cet effet ne peut être déclenché que {{2}} fois par tour."
     },
     "2": {
       "name": "Deux vérités",

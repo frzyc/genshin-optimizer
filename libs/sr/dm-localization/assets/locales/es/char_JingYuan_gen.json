@@ -29,7 +29,7 @@
       "0": {
         "name": "Extirpación del prana",
         "fullDesc": "Invoca al caballero divino al comenzar la batalla. El caballero divino tiene inicialmente {{1}} pts. de VEL y {{4}} golpes por acción. Los golpes que inflige durante su acción se consideran ataques adicionales. Cada golpe inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a un enemigo aleatorio, y los enemigos adyacentes reciben un Daño de Rayo equivalente al {{5, percent}}% del que recibe el objetivo principal.<br>El caballero divino puede acumular {{6}} golpes por acción como máximo. Cada vez que sus golpes por acción se incrementan en 1, su VEL aumenta en {{3}} pts. Cuando finaliza su acción, su VEL y sus golpes por acción regresan al valor original.<br>Cuando Jing Yuan es derrotado, el caballero divino desaparece.<br>Cuando Jing Yuan está afectado por estados negativos de Control, el caballero divino tampoco puede realizar ninguna acción.",
-        "shortDesc": "Invoca al caballero divino al comenzar la batalla. El caballero divino <orangeStrong>inflige una pequeña cantidad de Daño de Rayo</orangeStrong> <orangeStrong>automáticamente</orangeStrong> a un enemigo al azar y a los enemigos adyacentes.",
+        "shortDesc": "Invoca al caballero divino al comenzar la batalla. Al actuar, el caballero divino lanza un ataque adicional que <orangeStrong>inflige una pequeña cantidad de Daño de Rayo</orangeStrong> <orangeStrong>automáticamente</orangeStrong> a un enemigo al azar y a los objetivos adyacentes.",
         "tag": "Rebote"
       }
     },

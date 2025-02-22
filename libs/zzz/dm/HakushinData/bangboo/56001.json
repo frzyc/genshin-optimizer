@@ -1,0 +1,115 @@
+{
+  "Id": 56001,
+  "CodeName": "Bangboo_Name_en_56001",
+  "Name": "Bangboo_Name_56001",
+  "Desc": "",
+  "Rarity": 3,
+  "Icon": "",
+  "Stats": {
+    "Stamina": 100,
+    "StaminaUpragde": 10,
+    "Endurance": 180,
+    "HpMax": 100,
+    "Hpupgrade": 0,
+    "Attack": 10000,
+    "AttackUpgrade": 0,
+    "BreakStun": 100,
+    "ElementAbnormalPower": 100,
+    "Defence": 0,
+    "DefUpgrade": 0,
+    "Crit": 500,
+    "PenRatio": 0,
+    "CritDmg": 5000
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": {},
+      "Extra": {}
+    },
+    "2": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": {},
+      "Extra": {}
+    },
+    "3": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": {},
+      "Extra": {}
+    },
+    "4": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": {},
+      "Extra": {}
+    },
+    "5": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": {},
+      "Extra": {}
+    },
+    "6": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {},
+      "Extra": {}
+    }
+  },
+  "Skill": { "A": { "Level": {} }, "B": { "Level": {} }, "C": { "Level": {} } },
+  "SkillProp": {
+    "5600101": {
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
+    },
+    "5600102": {
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
+    },
+    "5600103": {
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
+    },
+    "5600104": {
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
+    },
+    "5600105": {
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
+    },
+    "5600106": {
+      "1001": { "Main": 129630, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 13889, "Growth": 0, "Format": "%" }
+    },
+    "5600107": {
+      "1001": { "Main": 0, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 0, "Growth": 0, "Format": "%" }
+    },
+    "5600108": {
+      "1001": { "Main": 0, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 0, "Growth": 0, "Format": "%" }
+    }
+  }
+}

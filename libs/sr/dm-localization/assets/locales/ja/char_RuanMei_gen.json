@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "フラクタルの{RUBY_B#らせん}螺旋{RUBY_E#}",
-        "fullDesc": "自身を除く味方全体の速度<orangeStrong>+<unbreak>#1[f1]%</orangeStrong></color>。敵を弱点撃破した後、その敵にルアン・メェイの氷属性弱点撃破ダメージ<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>分の弱点撃破ダメージを与える。",
+        "fullDesc": "自身を除く味方全体の速度<orangeStrong>+<unbreak>{{1}}[f1]%</orangeStrong></color>。敵を弱点撃破した後、その敵にルアン・メェイの氷属性弱点撃破ダメージ<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>分の弱点撃破ダメージを与える。",
         "shortDesc": "自身以外の味方の<orangeStrong>速度</orangeStrong>をアップする。味方が敵を弱点撃破した時、<orangeStrong>さらに氷属性弱点撃破ダメージを与える</orangeStrong>。",
         "tag": "サポート"
       }
@@ -80,7 +80,7 @@
       "desc": "必殺技の結界が展開されている間、味方全体がダメージを与える時、敵の防御力を{{1, percent}}%無視する。"
     },
     "2": {
-      "name": "{RUBY_B#とおり}通{RUBY_E#}りし{RUBY_B#すすき}芒{RUBY_E#}の{RUBY_B#みち}道{RUBY_E#}",
+      "name": "{RUBY_B#とお}通{RUBY_E#}りし{RUBY_B#すすき}芒{RUBY_E#}の{RUBY_B#みち}道{RUBY_E#}",
       "desc": "ルアン・メェイがフィールド上にいる場合、弱点撃破状態の敵に対する味方全体の攻撃力+{{1, percent}}%。"
     },
     "3": {

@@ -1,0 +1,14 @@
+{
+  "relics": "Reliques",
+  "set": "Ensembles de reliques",
+  "mainStat": "Stat principale",
+  "slot": "Emplacement",
+  "slotKey": {
+    "head": "Tête",
+    "hands": "Mains",
+    "body": "Corps",
+    "feet": "Pieds",
+    "sphere": "Sphère planaire",
+    "rope": "Corde de liaison"
+  }
+}

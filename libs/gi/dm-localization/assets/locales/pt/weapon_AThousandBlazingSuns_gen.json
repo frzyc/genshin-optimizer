@@ -1,0 +1,34 @@
+{
+  "name": "Mil Sóis Ardentes",
+  "description": {
+    "0": "Uma espada grande que brilha como o sol nascente. Ela testemunhou o apagar e o reacender de inúmeros sóis."
+  },
+  "passiveName": "O Poente Reacende o Amanhecer",
+  "passiveDescription": {
+    "0": {
+      "0": "Obtém o efeito \"Brilho Escaldante\" ao usar uma Habilidade Elemental ou Supremo: Dano CRIT aumentado em <cryo>20%</cryo> e ATQ aumentado em <cryo>28%</cryo> por 6s. Este efeito pode ser ativado uma vez a cada 10s.",
+      "1": "Enquanto uma instância de \"Brilho Escaldante\" estiver ativa, sua duração é aumentada em 2s após ataques Normais ou Carregados causarem Dano Elemental. Este efeito pode ser ativado uma vez por segundo, e o aumento máximo de duração é de 6s.",
+      "2": "Além disso, quando o personagem estiver no estado Bênção do Espírito da Noite, aumenta o efeito \"Brilho Escaldante\" em 75%, e esse efeito não terá sua contagem regressiva quando o personagem que estiver com essa arma equipada não estiver ativo."
+    },
+    "1": {
+      "0": "Obtém o efeito \"Brilho Escaldante\" ao usar uma Habilidade Elemental ou Supremo: Dano CRIT aumentado em <cryo>25%</cryo> e ATQ aumentado em <cryo>35%</cryo> por 6s. Este efeito pode ser ativado uma vez a cada 10s.",
+      "1": "Enquanto uma instância de \"Brilho Escaldante\" estiver ativa, sua duração é aumentada em 2s após ataques Normais ou Carregados causarem Dano Elemental. Este efeito pode ser ativado uma vez por segundo, e o aumento máximo de duração é de 6s.",
+      "2": "Além disso, quando o personagem estiver no estado Bênção do Espírito da Noite, aumenta o efeito \"Brilho Escaldante\" em 75%, e esse efeito não terá sua contagem regressiva quando o personagem que estiver com essa arma equipada não estiver ativo."
+    },
+    "2": {
+      "0": "Obtém o efeito \"Brilho Escaldante\" ao usar uma Habilidade Elemental ou Supremo: Dano CRIT aumentado em <cryo>30%</cryo> e ATQ aumentado em <cryo>42%</cryo> por 6s. Este efeito pode ser ativado uma vez a cada 10s.",
+      "1": "Enquanto uma instância de \"Brilho Escaldante\" estiver ativa, sua duração é aumentada em 2s após ataques Normais ou Carregados causarem Dano Elemental. Este efeito pode ser ativado uma vez por segundo, e o aumento máximo de duração é de 6s.",
+      "2": "Além disso, quando o personagem estiver no estado Bênção do Espírito da Noite, aumenta o efeito \"Brilho Escaldante\" em 75%, e esse efeito não terá sua contagem regressiva quando o personagem que estiver com essa arma equipada não estiver ativo."
+    },
+    "3": {
+      "0": "Obtém o efeito \"Brilho Escaldante\" ao usar uma Habilidade Elemental ou Supremo: Dano CRIT aumentado em <cryo>35%</cryo> e ATQ aumentado em <cryo>49%</cryo> por 6s. Este efeito pode ser ativado uma vez a cada 10s.",
+      "1": "Enquanto uma instância de \"Brilho Escaldante\" estiver ativa, sua duração é aumentada em 2s após ataques Normais ou Carregados causarem Dano Elemental. Este efeito pode ser ativado uma vez por segundo, e o aumento máximo de duração é de 6s.",
+      "2": "Além disso, quando o personagem estiver no estado Bênção do Espírito da Noite, aumenta o efeito \"Brilho Escaldante\" em 75%, e esse efeito não terá sua contagem regressiva quando o personagem que estiver com essa arma equipada não estiver ativo."
+    },
+    "4": {
+      "0": "Obtém o efeito \"Brilho Escaldante\" ao usar uma Habilidade Elemental ou Supremo: Dano CRIT aumentado em <cryo>40%</cryo> e ATQ aumentado em <cryo>56%</cryo> por 6s. Este efeito pode ser ativado uma vez a cada 10s.",
+      "1": "Enquanto uma instância de \"Brilho Escaldante\" estiver ativa, sua duração é aumentada em 2s após ataques Normais ou Carregados causarem Dano Elemental. Este efeito pode ser ativado uma vez por segundo, e o aumento máximo de duração é de 6s.",
+      "2": "Além disso, quando o personagem estiver no estado Bênção do Espírito da Noite, aumenta o efeito \"Brilho Escaldante\" em 75%, e esse efeito não terá sua contagem regressiva quando o personagem que estiver com essa arma equipada não estiver ativo."
+    }
+  }
+}

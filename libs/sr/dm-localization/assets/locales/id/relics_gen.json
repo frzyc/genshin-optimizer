@@ -1,0 +1,14 @@
+{
+  "relics": "Relic",
+  "set": "Set Relic",
+  "mainStat": "Stats Utama",
+  "slot": "Slot",
+  "slotKey": {
+    "head": "Kepala",
+    "hands": "Tangan",
+    "body": "Badan",
+    "feet": "Kaki",
+    "sphere": "Planar Sphere",
+    "rope": "Link Rope"
+  }
+}

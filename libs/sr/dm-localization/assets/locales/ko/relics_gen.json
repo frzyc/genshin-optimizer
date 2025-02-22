@@ -1,0 +1,14 @@
+{
+  "relics": "유물",
+  "set": "유물 세트",
+  "mainStat": "메인 속성",
+  "slot": "슬롯",
+  "slotKey": {
+    "head": "머리",
+    "hands": "팔",
+    "body": "몸통",
+    "feet": "다리",
+    "sphere": "차원 구체",
+    "rope": "연결 매듭"
+  }
+}

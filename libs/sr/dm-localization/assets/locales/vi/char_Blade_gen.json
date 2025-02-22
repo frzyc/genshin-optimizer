@@ -35,7 +35,7 @@
       "0": {
         "name": "Quà Tặng Của Shuhu",
         "fullDesc": "Khi Blade chịu sát thương hoặc tiêu hao HP sẽ nhận 1 tầng nạp năng lượng, tối đa cộng dồn 5 tầng. Hiệu ứng này mỗi lần chịu tấn công tối đa cộng dồn 1 tầng.<br>Khi nạp năng lượng cộng dồn đến mức tối đa, lập tức thi triển lên toàn thể phe địch 1 Đòn Đánh Theo Sau, gây Sát Thương Phong bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công +<orangeStrong>{{4, percent}}%</orangeStrong> Giới Hạn HP của Blade và hồi HP bằng {{3, percent}}% Giới Hạn HP của Blade, sau khi thi triển Đòn Đánh Theo Sau sẽ tiêu hao tất cả nạp năng lượng.",
-        "shortDesc": "Khi HP của Blade giảm sẽ nhận 1 tầng Nạp Năng Lượng. Khi Nạp Năng Lượng cộng dồn đến giới hạn <orangeStrong>sẽ lập tức gây Sát Thương Phong cho toàn bộ địch</orangeStrong> và hồi HP, sau đó tiêu hao tất cả Nạp Năng Lượng.",
+        "shortDesc": "Khi HP của Blade giảm xuống sẽ nhận 1 tầng Nạp Năng Lượng. Khi Nạp Năng Lượng đạt giới hạn sẽ phát động Đòn Đánh Theo Sau, <orangeStrong>gây Sát Thương Phong cho toàn phe địch</orangeStrong> và hồi HP, tiêu hao tất cả Nạp Năng Lượng.",
         "tag": "Đánh Lan"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Cái Chết Không Hồi Kết",
-        "fullDesc": "Sau khi thi triển Rừng Kiếm, nếu đánh trúng kẻ địch ở trạng thái Phá Vỡ Điểm Yếu, Blade sẽ hồi HP bằng {{1, percent}}% Giới Hạn HP của bản thân +{{2}}",
+        "fullDesc": "Sau khi thi triển Rừng Kiếm, nếu đánh trúng mục tiêu phe địch ở trạng thái Phá Vỡ Điểm Yếu, Blade sẽ hồi HP bằng {{1, percent}}% Giới Hạn HP của bản thân +{{2}}",
         "shortDesc": "",
         "tag": ""
       }

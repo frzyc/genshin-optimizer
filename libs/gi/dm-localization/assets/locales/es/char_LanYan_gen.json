@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "La Tejedora Jadeprimaveral",
+  "description": "Una tejedora de mimbre procedente del Valle Chenyu. Tiene una mente clara, templada, y es ágil como el manantial de una montaña.",
+  "constellationName": "Hirundo Lazuli",
+  "auto": {
+    "name": "Faisán de agua",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques con sus anillos plumaluna para infligir <anemo>Daño Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzar un anillo plumaluna e infligir <anemo>Daño Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del viento y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Danza briznafénix",
+    "description": {
+      "0": "Lan Yan invoca un escudo briznafénix, un arte transmitida de generación en generación, arremete hacia delante con gran agilidad y, al entrar en contacto con su objetivo, salta hacia atrás en el aire.",
+      "1": "La absorción de daño del escudo briznafénix se basa en el ATQ de Lan Yan y tiene un 250% de efectividad de absorción de <anemo>Daño Anemo</anemo>.",
+      "2": "Cuando esté en el aire debido a los efectos de su Habilidad Elemental, “Danza briznafénix”, Lan Yan lanzará unos anillos plumaluna a los enemigos si vuelve a ejecutar su Habilidad Elemental o un Ataque Normal pulsando una vez. Los anillos plumaluna girarán entre los oponentes cercanos dos veces tras golpearlos y les infligirán <anemo>Daño Anemo</anemo>.",
+      "3": "Al mantener pulsada esta habilidad, se liberará de forma distinta.",
+      "4": "<br/>",
+      "5": "<strong>Mantener pulsado</strong>",
+      "6": "Entra en el modo puntería para ajustar la dirección de la arremetida.",
+      "7": "<br/>",
+      "8": "<i>“Las nubes cortan la luz lunar como sombras plateadas que adornan el paisaje”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de anillo plumaluna",
+      "1": "Absorción de escudo",
+      "2": "Duración del escudo",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Aurora lunar",
+    "description": {
+      "0": "Lan Yan hace la formación de golondrina plateada plumalunar para atraer a los enemigos y objetos cercanos e infligir varias veces <anemo>Daño Anemo en el AdE</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Estrictamente hablando, Lan Yan no puede por sí sola hacer una “formación”. Sin embargo, sí puede hacerlo si trae consigo a sus figurillas de mimbre... ¿no?</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cuchillas selloraculares",
+    "description": {
+      "0": "Al golpear a un objetivo con la arremetida de la Habilidad Elemental, <strong>Danza briznafénix</strong>, si entra en contacto con <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, el escudo briznafénix sufrirá un cambio elemental. El nuevo escudo generado tras el cambio tiene un 250% de efectividad de absorción del elemento correspondiente.",
+      "1": "Además, si este uso de <strong>Danza briznafénix</strong> causa un cambio elemental en el escudo briznafénix, los anillos plumaluna que Lan Yan lance a sus enemigos obtienen un bono del 50% del daño original del elemento correspondiente. Este daño se considera daño de Habilidad Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Talismán de exorcismo plumaceleste",
+    "description": {
+      "0": "El daño infligido por la Habilidad Elemental, <strong>Danza briznafénix</strong>, y la Habilidad Definitiva, <strong>Aurora lunar</strong>, aumentan respectivamente en una cantidad equivalente al 309% y el 774% de la Maestría Elemental de Lan Yan."
+    }
+  },
+  "passive3": {
+    "name": "Corazón sedafragante",
+    "description": {
+      "0": "Cuando Lan Yan está en el equipo, tus personajes no asustarán a los cristalópteros u otras criaturas.",
+      "1": "Puedes consultar cuáles son estas criaturas en Archivo - Seres vivos - Fauna - Otros."
+    }
+  },
+  "constellation1": {
+    "name": "Si alguien anduviera entre las nubes...",
+    "description": {
+      "0": "Tras activarse el cambio elemental del talento pasivo “Cuchillas selloraculares”, cuando Lan Yan lance a los enemigos sus anillos plumaluna al usar la Habilidad Elemental, <strong>Danza briznafénix</strong>, lanzará un anillo adicional.",
+      "1": "Es necesario desbloquear el talento pasivo “Cuchillas selloraculares”."
+    }
+  },
+  "constellation2": {
+    "name": "Vestiduras de danza jadeiridiscentes",
+    "description": {
+      "0": "Cuando tu personaje en uso inflige daño con su Ataque Normal mientras el <strong>escudo briznafénix</strong> está activo, se restaurará el 40% de la absorción de daño del escudo hasta llegar, como máximo, a su cantidad de absorción original. Este efecto solo puede ocurrir una vez cada 2 s."
+    }
+  },
+  "constellation3": {
+    "name": "Fénix blanco perforanubes",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Danza briznafénix</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Perlas de sangre dragorrapaces",
+    "description": {
+      "0": "Tras usar la Habilidad Definitiva, <strong>Aurora lunar</strong>, la Maestría Elemental de todos los personajes del equipo cercanos aumenta en 60 pts. durante 12 s."
+    }
+  },
+  "constellation5": {
+    "name": "La felicidad de verte",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Aurora lunar</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Volando cual fénix plateado",
+    "description": {
+      "0": "Aumenta en 1 las cargas de <strong>Danza briznafénix</strong>."
+    }
+  }
+}

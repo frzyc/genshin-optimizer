@@ -11,7 +11,7 @@ import {
   AmpReactionModeText,
   DataContext,
   FormulaDataContext,
-  getCalcDisplay,
+  GetCalcDisplay,
   getDisplayHeader,
   getDisplaySections,
   resolveInfo,
@@ -55,7 +55,7 @@ export default function FormulaModal() {
     <ModalWrapper open={!!modalOpen} onClose={onCloseHandler}>
       <CardThemed>
         <CardHeader
-          title={t`showFormulas.title`}
+          title={t('showFormulas.title')}
           action={
             <IconButton onClick={onCloseHandler}>
               <CloseIcon />
@@ -139,7 +139,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
   }, [scrollRef, node, contextNode])
 
   const { variant, subVariant } = resolveInfo(node.info)
-  const calcDisplay = getCalcDisplay(node)
+  const calcDisplay = GetCalcDisplay(node)
   return (
     <Accordion
       sx={{ bgcolor: 'contentNormal.main' }}

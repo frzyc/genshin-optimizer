@@ -1,3 +1,4 @@
+import { tag } from '@genshin-optimizer/game-opt/engine'
 import type {
   ArtifactSetKey,
   ElementKey,
@@ -9,7 +10,7 @@ import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
 import { prod } from '@genshin-optimizer/pando/engine'
 import type { Sheet, Stat } from './listing'
 import type { Read } from './read'
-import { reader, tag } from './read'
+import { reader } from './read'
 import { own, ownBuff, teamBuff } from './tag'
 import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
 

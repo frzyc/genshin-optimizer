@@ -32,7 +32,7 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { RelicStatWithUnit } from './RelicStatKeyDisplay'
+import { StatDisplay } from '../../Character'
 
 // TODO: validation, roll table, roll values, efficiency, display text, icons, ...
 export default function SubstatInput({
@@ -69,7 +69,7 @@ export default function SubstatInput({
   }
   const rollOffset = 7 - rollData.length
 
-  // if (!rollNum && key && value) error = error || t`editor.substat.error.noCalc`
+  // if (!rollNum && key && value) error = error || t('editor.substat.error.noCalc')
   if (allowedRolls < 0)
     error =
       error ||
@@ -94,7 +94,7 @@ export default function SubstatInput({
             startIcon={key ? <StatIcon statKey={key} /> : undefined}
             title={
               key ? (
-                <RelicStatWithUnit statKey={key} />
+                <StatDisplay statKey={key} showPercent disableIcon />
               ) : (
                 t('editor.substat.substatFormat', { value: index + 1 })
               )
@@ -106,7 +106,9 @@ export default function SubstatInput({
             {key && (
               <MenuItem
                 onClick={() => setSubstat(index, { key: '', value: 0 })}
-              >{t`editor.substat.noSubstat`}</MenuItem>
+              >
+                {t('editor.substat.noSubstat')}
+              </MenuItem>
             )}
             {allRelicSubStatKeys
               .filter((key) => mainStatKey !== key)
@@ -121,7 +123,7 @@ export default function SubstatInput({
                     <StatIcon statKey={k} />
                   </ListItemIcon>
                   <ListItemText>
-                    <RelicStatWithUnit statKey={k} />
+                    <StatDisplay statKey={k} showPercent disableIcon />
                   </ListItemText>
                 </MenuItem>
               ))}
@@ -131,7 +133,7 @@ export default function SubstatInput({
           >
             <CustomNumberInput
               float={getUnitStr(key) === '%'}
-              placeholder={t`editor.substat.selectSub`}
+              placeholder={t('editor.substat.selectSub')}
               value={
                 key
                   ? roundStat(toPercent(value, key), key as RelicSubStatKey)
@@ -155,7 +157,7 @@ export default function SubstatInput({
             />
           </CustomNumberInputButtonGroupWrapper>
           {!!rollData.length && (
-            <TextButton>{t`editor.substat.nextRolls`}</TextButton>
+            <TextButton>{t('editor.substat.nextRolls')}</TextButton>
           )}
           {/* {rollData.map((v, i) => {
             let newValue = artDisplayValue(accurateValue + v, unit)
@@ -193,7 +195,7 @@ export default function SubstatInput({
       </Box>
       <Box sx={{ px: 1, pb: 1 }}>
         {error ? (
-          <SqBadge color="error">{t`ui:error`}</SqBadge>
+          <SqBadge color="error">{t('ui:error')}</SqBadge>
         ) : (
           <Grid container>
             {/* <Grid item>
@@ -206,7 +208,7 @@ export default function SubstatInput({
               >
                 {rollNum
                   ? t('editor.substat.RollCount', { count: rollNum })
-                  : t`editor.substat.noRoll`}
+                  : t('editor.substat.noRoll')}
               </SqBadge>
             </Grid> */}
             <Grid item flexGrow={1}>
@@ -241,7 +243,7 @@ export default function SubstatInput({
                     value={
                       efficiency
                         ? efficiency
-                        : (t`editor.substat.noStat` as string)
+                        : (t('editor.substat.noStat') as string)
                     }
                   /> */}
                   {efficiency}

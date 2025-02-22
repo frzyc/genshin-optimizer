@@ -21,7 +21,7 @@
   "lightning_dmg_": "Augm. des DGT de foudre",
   "quantum_dmg_": "Augm. des DGT quantiques",
   "imaginary_dmg_": "Augm. des DGT imaginaires",
-  "dmg_": "Augm. de DGT",
+  "dmg_": "DGT ↑",
   "weakness_": "Efficacité de Rupture de faiblesse",
   "resPen_": "PÉN de RÉS"
 }

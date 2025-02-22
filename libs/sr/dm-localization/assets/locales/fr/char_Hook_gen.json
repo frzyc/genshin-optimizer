@@ -43,7 +43,7 @@
       "0": {
         "name": "Aïe ! Regarde-moi ce bazar !",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Hook inflige des DGT de feu équivalents à {{4, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat. D'autre part, il y a {{1, percent}}% de chances de base d'infliger Brûlure à tous les ennemis pendant {{3}} tours.<br>Les ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à {{2, percent}}% de l'ATQ de Hook au début de chaque tour.",
-        "shortDesc": "Attaque l'ennemi. Inflige des DGT de feu à un ennemi unique aléatoire, avec de fortes chances d'appliquer Brûlure à toutes les cibles ennemies après être entré en combat.",
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT de feu mineurs à un ennemi aléatoire après être entré en combat, avec de fortes chances d'infliger l'effet Brûlure à chaque ennemi.",
         "tag": ""
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Naïveté",
-        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Jouer avec le feu",
-        "fullDesc": "L'action de Hook est avancée de {{2, percent}}% et elle régénère {{1}} points d'énergie supplémentaires lorsqu'elle utilise son ultime.",
+        "fullDesc": "Après avoir utilisé son ultime, l'action de Hook est avancée de {{2, percent}}% et elle régénère en plus {{1}} points d'énergie.",
         "shortDesc": "",
         "tag": ""
       }
@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "C'est normal de ne pas savoir",
-      "desc": "Lorsque le talent se déclenche, il y a {{1, percent}}% de chances de base d'infliger une Brûlure équivalente à celle de la compétence aux ennemis adjacents à la cible."
+      "desc": "Lorsque le talent se déclenche, il y a {{1, percent}}% de chances de base d'infliger un effet de Brûlure équivalent à celui de la compétence aux ennemis adjacents à la cible ennemie désignée."
     },
     "5": {
       "name": "Gloire aux Taupes",

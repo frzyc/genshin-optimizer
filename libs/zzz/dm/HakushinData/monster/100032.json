@@ -1,0 +1,16 @@
+{
+  "Id": 100032,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_Golem.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["All"],
+  "Name": "OfficialName_",
+  "Desc": "While categorized by the Hollow Investigative Association as a \"low threat\" Ethereal, Hoplitai prove to be a formidable opponent for novice Hollow Raiders and investigators.\nIts forelimbs are covered in a thick inert Ether matter, serving as both a tough shield and an intimidating weapon.\nThe only drawback is its top-heavy appearance, making it not look very clever.\n\"Alright, guys... Check out this sorry excuse... This is Hoplitai.\"\n\"When Ethereals gather together to play rock-paper-scissors, this idiot always plays paper!\"",
+  "Rarity": 1,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Hollow Zoo, special episode about Hoplitai",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

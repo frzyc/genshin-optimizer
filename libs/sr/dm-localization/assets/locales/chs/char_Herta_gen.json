@@ -29,7 +29,7 @@
       "0": {
         "name": "还是我来吧",
         "fullDesc": "当任意我方目标的攻击使敌方目标的当前生命值百分比小于等于{{1, percent}}%时，黑塔发动追加攻击，对敌方全体造成等同于黑塔<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的冰属性伤害。",
-        "shortDesc": "",
+        "shortDesc": "当任意我方目标的攻击使敌方目标的当前生命值百分比小于等于<orangeStrong>{{1, percent}}%</orangeStrong>时，黑塔立即发动<orangeStrong>追加攻击</orangeStrong>，对敌方全体造成少量冰属性伤害。",
         "tag": "群攻"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "可以优化一下",
         "fullDesc": "使用秘技后，下一次战斗开始时黑塔攻击力提高{{1, percent}}%，持续{{2}}回合。",
-        "shortDesc": "",
+        "shortDesc": "使用秘技，下一次战斗开始时使自身攻击力提高。",
         "tag": "强化"
       }
     },

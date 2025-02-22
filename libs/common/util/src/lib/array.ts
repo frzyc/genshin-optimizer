@@ -75,3 +75,34 @@ export function handleMultiSelect<T>(allKeys: T[]) {
     return [...new Set(toggleArr(arr, v))]
   }
 }
+
+/**
+ * Shorten or pad an array to a certain length, with a default value.
+ * Modifies the array in-place.
+ * @param array
+ * @param length
+ * @param value
+ * @returns The modified array
+ */
+export function pruneOrPadArray<T>(array: T[], length: number, value: T) {
+  if (array.length > length) array.length = length
+  else array.push(...new Array(length - array.length).fill(value))
+  return array
+}
+
+/**
+ * Move an element in the array to the front, if it exists.
+ * @param arr
+ * @param key
+ * @returns
+ */
+export function moveToFront<T>(arr: T[], key: T): T[] {
+  const index = arr.indexOf(key)
+  if (index > -1) {
+    // Remove the element from its current position
+    const [element] = arr.splice(index, 1)
+    // Add the element to the front of the array
+    arr.unshift(element)
+  }
+  return arr
+}

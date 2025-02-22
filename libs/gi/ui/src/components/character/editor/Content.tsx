@@ -3,6 +3,7 @@ import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
+  allTravelerKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
@@ -22,7 +23,7 @@ import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { DataContext, SillyContext } from '../../../context'
+import { BuildEditContext, DataContext, SillyContext } from '../../../context'
 import { AddTeamInfo } from '../../AddTeamInfo'
 import { LevelSelect } from '../../LevelSelect'
 import {
@@ -99,7 +100,15 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 <LevelSelect
                   level={character.level}
                   ascension={character.ascension}
-                  setBoth={(data) => database.chars.set(characterKey, data)}
+                  setBoth={(data) => {
+                    allTravelerKeys.includes(
+                      characterKey as (typeof allTravelerKeys)[number]
+                    )
+                      ? allTravelerKeys.forEach((tkey) => {
+                          database.chars.set(tkey, data)
+                        })
+                      : database.chars.set(characterKey, data)
+                  }}
                 />
               </Box>
               <CharacterCardStats bgt="light" />
@@ -165,7 +174,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
 
 function EquipmentSection() {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey, equippedArtifacts },
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
 
@@ -181,23 +190,29 @@ function EquipmentSection() {
       ),
     [data]
   )
+
   return (
     <Box>
-      <EquippedGrid
-        weaponTypeKey={weaponTypeKey}
-        weaponId={weaponId}
-        artifactIds={artifactIds}
-        setWeapon={(id) => {
-          database.weapons.set(id, {
-            location: charKeyToLocCharKey(characterKey),
-          })
-        }}
-        setArtifact={(_, id) => {
-          database.arts.set(id, {
-            location: charKeyToLocCharKey(characterKey),
-          })
-        }}
-      />
+      <BuildEditContext.Provider value={'equipped'}>
+        <EquippedGrid
+          weaponTypeKey={weaponTypeKey}
+          weaponId={weaponId}
+          artifactIds={artifactIds}
+          setWeapon={(id) => {
+            database.weapons.set(id, {
+              location: charKeyToLocCharKey(characterKey),
+            })
+          }}
+          setArtifact={(slotKey, id) => {
+            if (!id)
+              database.arts.set(equippedArtifacts[slotKey], { location: '' })
+            else
+              database.arts.set(id, {
+                location: charKeyToLocCharKey(characterKey),
+              })
+          }}
+        />
+      </BuildEditContext.Provider>
     </Box>
   )
 }
@@ -269,7 +284,7 @@ function InTeam() {
         variant="outlined"
         sx={{ backgroundColor: 'contentLight.main' }}
       >
-        {t`charContentModal.addLoAndTeam`}
+        {t('charContentModal.addLoAndTeam')}
       </Button>
       <CardThemed bgt="light"></CardThemed>
     </Box>

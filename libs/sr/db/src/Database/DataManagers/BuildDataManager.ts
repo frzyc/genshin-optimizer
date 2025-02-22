@@ -1,16 +1,20 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
+  allCharacterKeys,
   allRelicSlotKeys,
-  type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
+import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 export interface Build {
   name: string
   description: string
+  characterKey: CharacterKey
+  teamId?: string
 
   lightConeId?: string
-  relicIds: Record<RelicSlotKey, string>
+  relicIds: RelicIds
 }
 
 export class BuildDataManager extends DataManager<
@@ -23,7 +27,13 @@ export class BuildDataManager extends DataManager<
     super(database, 'builds')
   }
   override validate(obj: unknown): Build | undefined {
+    const { characterKey, teamId } = obj as Build
+    if (!allCharacterKeys.includes(characterKey)) return undefined
+
     let { name, description, lightConeId, relicIds } = obj as Build
+
+    // Cannot validate teamId, since on db init database.teams do not exist yet.
+    // if (teamId && !this.database.teams.get(teamId)) teamId = undefined
     if (typeof name !== 'string') name = 'Build Name'
     if (typeof description !== 'string') description = ''
     if (lightConeId && !this.database.lightCones.get(lightConeId))
@@ -42,6 +52,8 @@ export class BuildDataManager extends DataManager<
       })
     return {
       name,
+      characterKey,
+      teamId,
       description,
       lightConeId,
       relicIds,
@@ -58,24 +70,9 @@ export class BuildDataManager extends DataManager<
     if (!build) return ''
     return this.new(structuredClone(build))
   }
-  override remove(key: string, notify?: boolean): Build | undefined {
-    const build = super.remove(key, notify)
-    // remove data from loadout first
-    this.database.loadouts.entries.forEach(
-      ([loadoutId, loadout]) =>
-        loadout.buildIds.includes(key) &&
-        this.database.loadouts.set(loadoutId, {})
+  getBuildIds(characterKey: CharacterKey) {
+    return this.keys.filter(
+      (key) => this.get(key)?.characterKey === characterKey
     )
-    // once loadouts are validated, teams can be validated as well
-    this.database.teams.entries.forEach(
-      ([teamId, team]) =>
-        team.loadoutMetadata?.some(
-          (loadoutMetadatum) =>
-            loadoutMetadatum?.buildId === key ||
-            loadoutMetadatum?.compareBuildId
-        ) && this.database.teams.set(teamId, {}) // trigger a validation
-    )
-
-    return build
   }
 }

@@ -1,0 +1,21 @@
+{
+  "hp": "HP",
+  "hp_": "HP",
+  "atk": "ATK",
+  "atk_": "ATK",
+  "def": "DEF",
+  "def_": "DEF",
+  "anomProf": "Anomaly Proficiency",
+  "enerRegen_": "Energy Regen",
+  "crit_": "CRIT Rate",
+  "crit_dmg_": "CRIT DMG",
+  "electric_dmg_": "Electric DMG",
+  "fire_dmg_": "Fire DMG",
+  "ice_dmg_": "Ice DMG",
+  "physical_dmg_": "Physical DMG",
+  "ether_dmg_": "Ether DMG",
+  "anomMas_": "Anomaly Mastery",
+  "pen": "PEN",
+  "pen_": "PEN Ratio",
+  "impact_": "Impact"
+}

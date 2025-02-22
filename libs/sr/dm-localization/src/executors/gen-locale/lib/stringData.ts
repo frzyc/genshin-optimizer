@@ -21,6 +21,10 @@ export type InterpolationTag = keyof typeof interpolationTags
 // Process tags in string to template for i18n
 function processString(str: string | undefined) {
   if (str === undefined) str = ''
+
+  // Remove '{SPACE}' artifacts from certain strings
+  // Do this first to match curly brackets to prevent interfering with later str replacements
+  str = str.replace(/(.*?){SPACE}/g, '$1')
   // Find portion similar to
   // <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>
   // replaces with '<color=#f29e38ff>#1[i]%</color>'
@@ -38,7 +42,10 @@ function processString(str: string | undefined) {
   // replaces with '{{1}}%'
 
   // Match <color=#f29e38ff> OR <unbreak>; capturing the hexcode if it exists
+  // FIXME: does not work for nested color tags like:
+  // "1342971982": "Obtiene <color=#f29e38ff><color=#f29e38ff><unbreak>#3[i]</unbreak></color> pt. de Sueños rotos</color>. Aplica...
   const match1 = new RegExp(/(?:<color=#([a-f0-9]{6,8})>|<unbreak>)/)
+
   // Match #1[i]% OR any text; capturing the index (1) + type (i) + suffix (%) OR the plain text if its not meant to be replaced
   const match2 = new RegExp(/(?:#(.*?)\[(.*?)\](.*?)|(.*?))/)
   // Match </color> or </unbreak>
@@ -57,6 +64,10 @@ function processString(str: string | undefined) {
       else return `${value}`
     }
   )
+
+  // replace simple #1 => {{1}}. Only match to 2 digits to prevent matching color hashes.
+  // TODO: can this be folded into the previous regex stages?
+  str = str.replace(/#(\d{1,2})/g, '{{$1}}')
 
   // Remove underlines (used in-game to show clickable information)
   str = str.replace(/(<u>)|(<\/u>)/g, '')
@@ -114,7 +125,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
       throw new Error(
         `Trailblazer key ${key} was unable to find an elemental type`
       )
-    const typeString = strings[HashData.sheet.type[type]]
+    const typeString = strings[HashData.characters.type[type]]
 
     const trailblazerKey = allTrailblazerKeys.find((tbKey) =>
       key.includes(tbKey)
@@ -124,7 +135,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
         `Trailblazer key ${key} was unable to find a trailblazer key`
       )
     const path = TrailblazerPathMap[trailblazerKey]
-    const pathString = strings[HashData.sheet.path[path]]
+    const pathString = strings[HashData.characters.path[path]]
 
     // Override name to something like 'Trailblazer (Physical • Destruction)'
     data.char[
@@ -135,7 +146,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
 
   // March 7th (Hunt) name handling
   data.char.March7thTheHunt.name = `${data.char.March7thTheHunt.name} • ${
-    strings[HashData.sheet.path.TheHunt]
+    strings[HashData.characters.path.TheHunt]
   }`
   data.charNames.March7thTheHunt = data.char.March7thTheHunt.name
 

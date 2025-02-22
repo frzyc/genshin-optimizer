@@ -3,7 +3,7 @@
     "triggerChance": "Prob. de curación",
     "name": "Guardiana del corazón",
     "description": {
-      "0": "Invoca un recubrimiento Geo que inflige <geo>Daño Geo</geo> a los enemigos cercanos y absorbe daño en proporción a la DEF de Noelle. El escudo tiene los siguientes efectos:",
+      "0": "Invoca una armadura Geo que inflige <geo>Daño Geo</geo> a los enemigos cercanos y absorbe daño en proporción a la DEF de Noelle. El escudo tiene los siguientes efectos:",
       "1": [
         "Cuando los Ataques Normales y Ataques Cargados de Noelle golpean un objetivo, hay una probabilidad de regenerar Vida para todos los miembros del equipo.",
         "Posee un 150% de eficiencia de absorción contra todo el Daño Elemental y el Daño Físico."
@@ -83,7 +83,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
       }
     },
     "skillParams": {

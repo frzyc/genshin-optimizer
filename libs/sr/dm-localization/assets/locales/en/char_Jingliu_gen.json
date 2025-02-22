@@ -34,16 +34,16 @@
     "talent": {
       "0": {
         "name": "Crescent Transmigration",
-        "fullDesc": "When Jingliu has {{5}} stack(s) of Syzygy, she enters the Spectral Transmigration state with her Action Advanced by {{6, percent}}% and her CRIT Rate increases by <orangeStrong>{{7, percent}}%</orangeStrong>. Then, Jingliu's Skill \"Transcendent Flash\" is enhanced to \"Moon On Glacial River,\" and only this enhanced Skill is available for use in battle. When Jingliu uses an attack in the Spectral Transmigration state, she consumes HP from all other allies equal to {{2, percent}}% of their respective Max HP (this cannot reduce allies' HP to lower than 1). Jingliu's ATK increases by {{3, percent}}% of the total HP consumed from all allies in this attack, capped at <orangeStrong>{{4, percent}}%</orangeStrong> of her base ATK, lasting until the current attack ends. Jingliu cannot enter the Spectral Transmigration state again until the current Spectral Transmigration state ends. Syzygy can stack up to 3 times. When Syzygy stacks become 0, Jingliu will exit the Spectral Transmigration state.",
-        "shortDesc": "When possessing <orangeStrong>{{5}}</orangeStrong> stacks of Syzygy, Jingliu enters the Spectral Transmigration state with her <orangeStrong>Action Advanced by <unbreak>100%</orangeStrong></color>, her CRIT Rate increased, and her <orangeStrong>Skill becoming Enhanced</orangeStrong>. Using an attack in this state consumes HP from all other allies and <orangeStrong>increases Jingliu's ATK</orangeStrong> according to the total HP consumed. When Syzygy stacks become 0, exits the Spectral Transmigration state.",
+        "fullDesc": "When Jingliu has {{5}} stack(s) of Syzygy, she enters the Spectral Transmigration state with her action advanced by {{6, percent}}% and her CRIT Rate increases by <orangeStrong>{{7, percent}}%</orangeStrong>. Then, Jingliu's Skill \"Transcendent Flash\" is enhanced to \"Moon On Glacial River,\" and only this enhanced Skill is available for use in battle. When Jingliu uses an attack in the Spectral Transmigration state, she consumes HP from her teammates equal to {{2, percent}}% of their respective Max HP (this cannot reduce teammates' HP to lower than 1). Jingliu's ATK increases by {{3, percent}}% of the total HP consumed from all allies in this attack, capped at <orangeStrong>{{4, percent}}%</orangeStrong> of her base ATK, lasting until the current attack ends. Jingliu cannot enter the Spectral Transmigration state again until the current Spectral Transmigration state ends. Syzygy can stack up to 3 times. When Syzygy stacks become 0, Jingliu will exit the Spectral Transmigration state.",
+        "shortDesc": "When possessing <orangeStrong>{{5}}</orangeStrong> stacks of Syzygy, Jingliu enters the Spectral Transmigration state with her <orangeStrong>action advanced by <unbreak>100%</orangeStrong></color>, her CRIT Rate increased, and her <orangeStrong>Skill becoming enhanced</orangeStrong>. Using an attack in this state consumes HP from her teammates and <orangeStrong>increases Jingliu's ATK</orangeStrong> according to the total HP consumed. When Syzygy stacks become 0, exits the Spectral Transmigration state.",
         "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Shine of Truth",
-        "fullDesc": "After using this Technique, creates a special dimension around Jingliu that lasts for {{3}} seconds, and all enemies in this special dimension will become Frozen. After entering combat with enemies in the special dimension, Jingliu immediately regenerates {{6}} Energy and obtains {{1}} stack(s) of Syzygy, with a {{2, percent}}% base chance of Freezing enemy targets for {{4}} turn(s). While Frozen, enemy targets cannot take action, and receive Ice Additional DMG equal to {{5, percent}}% of Jingliu's ATK at the start of every turn. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a special dimension around the character. Enemies within this dimension will become <orangeStrong>Frozen</orangeStrong>. After entering combat with enemies in the dimension, this character regenerates Energy and obtains 1 stack of Syzygy with a high chance to <orangeStrong>Freeze</orangeStrong> enemies.",
+        "fullDesc": "After using this Technique, creates a Special Dimension around Jingliu that lasts for {{3}} seconds, and all enemies in this Special Dimension will become Frozen. After entering combat with enemies in the Special Dimension, Jingliu immediately regenerates {{6}} Energy and obtains {{1}} stack(s) of Syzygy, with a {{2, percent}}% base chance of Freezing enemy targets for {{4}} turn(s). While Frozen, enemy targets cannot take action, and receive Ice Additional DMG equal to {{5, percent}}% of Jingliu's ATK at the start of every turn. Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a Special Dimension around the character. Enemies within this dimension will become <orangeStrong>Frozen</orangeStrong>. After entering combat with enemies in the dimension, this character regenerates Energy and obtains 1 stack of Syzygy with a high chance to <orangeStrong>Freeze</orangeStrong> enemies.",
         "tag": "Impair"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Sword Champion",
-        "fullDesc": "After using Transcendent Flash, the next action will be Advanced Forward by {{1, percent}}%.",
+        "fullDesc": "After using \"Transcendent Flash,\" the next action advances by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Lunarlance Shines Skyward Dome",
-      "desc": "During the Spectral Transmigration state, the ATK gained from consuming allies' HP is additionally increased by {{1, percent}}% of the total HP consumed from the entire team. The cap for ATK gained this way also increases by {{2, percent}}%."
+      "desc": "During the Spectral Transmigration state, the ATK gained from consuming teammates' HP is additionally increased by {{1, percent}}% of the total HP consumed from the entire team. The cap for ATK gained this way also increases by {{2, percent}}%."
     },
     "5": {
       "name": "Night Shades Astral Radiance",

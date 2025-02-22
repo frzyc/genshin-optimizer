@@ -1,0 +1,151 @@
+{
+  "auto": {
+    "name": "Yabancı Alevler",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "En fazla 5 hızlı saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak 2 hızlı kılıç saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "5 Vuruş Hasarı",
+      "5": "Yüklü Saldırı Hasarı",
+      "6": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "7": "Havadan Saldırı Hasarı",
+      "8": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Akaralev Kılıcı",
+    "description": {
+      "0": "Yeryüzünü bile yakabilen kavurucu bir alev kuşanır. Dokunulduğunda ve Basılı Tutulduğunda farklı etkilere sahiptir.",
+      "1": "<br/>",
+      "2": "<strong>Dokun</strong>",
+      "3": "Öfkeli bir yangınla alevler çağırır. Kullanıldığında Gezgin, 42 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girerek mevcut aktif karakteri takip eden bir Yakıcı Eşik çağırır.",
+      "4": "Yakıcı Eşik düşmanlara yaklaştığında yakındaki düşmanlara belirli aralıklarla Gece Ruhu tesirli <pyro>Ateş Hasarı</pyro> verir.",
+      "5": "<br/>",
+      "6": "<strong>Basılı Tut</strong>",
+      "7": "Sakin bir biçimde ateş göndererek yakındaki düşmanlara Gece Ruhu tesirli <pyro>Ateş Alan Hasarı</pyro> verir. Kullanıldığında Gezgin, 42 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girerek mevcut aktif karakteri takip eden bir Kavurucu Eşik çağırır.",
+      "8": "Kavurucu Eşik içindeki mevcut aktif karakter düşmanlara Hasar verdiğinde Eşik, Ortak Saldırı yaparak Gezginin Saldırısına bağlı olarak <pyro>Ateş Hasarı</pyro> verir. Bu etki 3 saniyede bir gerçekleşebilir.",
+      "9": "<br/>",
+      "10": "<strong>Gece Ruhunun Lütfu: Gezgin</strong>",
+      "11": "Devamlı olarak Gece Ruhu puanı harcar. Gezginin Gece Ruhunun Lütfu durumu en fazla 12sn sürer ve Gece Ruhu puanı tükendiğinde bu durum sona erer. Eğer bu Element Becerisi etkinken tekrar kullanılırsa Gezginin Gece Ruhu puanı 42 puana döner.",
+      "12": "Yakıcı ve Kavurucu Eşikler, Gezginin Gece Ruhunun Lütfu durumu sona erdiğinde kaybolur. Aynı anda Gezgin tarafından çağrılan yalnızca 1 Yakıcı veya Kavurucu Eşik var olabilir.",
+      "13": "<br/>",
+      "14": "<i>Paimon ile beraber akan alevlerin değişen renklerini izlediniz.</i>"
+    },
+    "skillParams": {
+      "0": "Yakıcı Eşik",
+      "1": "Basılı Tutma Hasarı",
+      "2": "Kavurucu Eşik",
+      "3": "Gece Ruhu Puanı Sınırı",
+      "4": "BS",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ova Kavuran",
+    "description": {
+      "0": "Alevleri bir işarette yoğunlaştırıp önündeki düşmanlara Gece Ruhu tesirli <pyro>Ateş Alan Hasarı</pyro> verir. Sonraki 4sn boyunca Gezgin her saniye 7 Gece Ruhu puanı yeniler.",
+      "1": "<br/>",
+      "2": "<i>Paimon ile beraber sönmeyen alevin ardındaki ilkeleri öğrendiniz.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "Enerji Maliyeti",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Yangının Has Alevleri",
+    "description": {
+      "0": "Gezginin Gece Ruhu puanı 20'nin üzerindeyse <strong>Akaralev Kılıcı</strong> Element Becerisinin Yakıcı ve Kavurucu Eşiklerinin saldırı Etki Alanı, düşmana isabet ettikten sonra genişler."
+    }
+  },
+  "passive2": {
+    "name": "Tükenmeyen Kor",
+    "description": {
+      "0": "<strong>Yakıcı Eşik</strong> veya <strong>Kavurucu Eşik</strong> içindeki mevcut aktif karakter <pyro>Ateş ile ilgili bir tepkime</pyro> tetiklediğinde Gezgin 5 Enerji yeniler. Bu etki 12 saniyede bir tetiklenebilir. Ayrıca yakındaki bir grup üyesi Gece Ruhu Patlaması tetiklediğinde Gezgin 4 Enerji yeniler."
+    }
+  },
+  "constellation1": {
+    "name": "Yıldız Ateşinden Yayılan Işık",
+    "description": {
+      "0": "<strong>Yakıcı Eşik</strong> veya <strong>Kavurucu Eşik</strong> etkinken mevcut aktif karakterin verdiği Hasar %6 artar. Eğer bu karakter Gece Ruhunun Lütfu durumundaysa verdiği Hasar ek %9 daha artar."
+    }
+  },
+  "constellation2": {
+    "name": "Sönmeyen Mum",
+    "description": {
+      "0": "<strong>Akaralev Kılıcı</strong> Element Becerisi kullanıldıktan sonraki 12sn içinde yakındaki grup üyeleri bir düşman üzerinde <pyro>Ateş ile ilgili bir tepkime</pyro> tetiklediğinde Gezgin 14 Gece Ruhu puanı yeniler. Her bir <strong>Akaralev Kılıcı</strong> kullanımı bu şekilde en fazla 28 Gece Ruhu puanı yenileyebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Aktarıcı İşaret",
+    "description": {
+      "0": "<strong>Akaralev Kılıcı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Yıkımın Alevleri",
+    "description": {
+      "0": "<strong>Ova Kavuran</strong> Element Patlaması kullanıldıktan sonra 9 saniyeliğine Gezgin %20 <pyro>Ateş Hasarı Bonusu</pyro> kazanır."
+    }
+  },
+  "constellation5": {
+    "name": "Bastırılamaz Yangın",
+    "description": {
+      "0": "<strong>Ova Kavuran</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Yok Edilemez Kutsal Alev",
+    "description": {
+      "0": "Gezgin Gece Ruhunun Lütfu durumundayken Normal, Yüklü ve Havadan Saldırıları sonradan değişmeyecek şekilde Gece Ruhu tesirli <pyro>Ateş Hasarı</pyro> verir, ayrıca bu saldırıların Kritik Hasarı %40 artar."
+    }
+  }
+}

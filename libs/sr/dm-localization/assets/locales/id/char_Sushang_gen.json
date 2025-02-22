@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sushang pada 1 target musuh dan membuat Sushang segera beraksi lagi. Selain itu, ATK Sushang meningkat <orangeStrong>{{4, percent}}%</orangeStrong>. Saat melancarkan Skill, akan ada 2 kesempatan tambahan untuk memicu \"Sword Stance\", berlangsung selama {{2}} giliran.<br>\"Sword Stance\" yang dilancarkan dari kesempatan tambahan akan mengakibatkan DMG sebesar {{3, percent}}% dari DMG awal.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sushang pada 1 target musuh dan membuat Sushang segera beraksi lagi. Selain itu, ATK Sushang meningkat <orangeStrong>{{4, percent}}%</orangeStrong>. Saat melancarkan Skill, akan ada 2 kesempatan tambahan untuk memicu \"Sword Stance\", berlangsung selama {{2}} giliran.<br>\"Sword Stance\" yang dilancarkan dari kesempatan tambahan akan mengakibatkan DMG sebesar {{3, percent}}% dari DMG aslinya.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah besar pada 1 musuh, meningkatkan efek \"Sword Stance\", dan <orangeStrong>segera beraksi</orangeStrong>.",
         "tag": "Single Target"
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Vanquisher",
-        "fullDesc": "Setelah melancarkan Basic Attack atau Skill, jika ada target musuh yang terkena Weakness Break di medan pertempuran, aksi Sushang didahulukan {{1, percent}}%.",
+        "fullDesc": "Setelah melancarkan Basic Attack atau Skill, jika ada target musuh yang terkena Weakness Break di medan pertempuran, aksi Sushang akan didahulukan sebesar {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

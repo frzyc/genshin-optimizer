@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
       }
     },
     "skillParams": {
@@ -134,8 +134,8 @@
   "constellation1": {
     "name": "El deber de un compañero",
     "description": {
-      "0": "Cuando los personajes que estén bajo la protección de un <strong>escudo llameante</strong> (a excepción de Thoma) reciben un ataque, tanto el TdE de <strong>Bendición incandescente</strong> como el de <strong>Armadura calcinante</strong> se reducen en 3 s.",
-      "1": "Este efecto solo puede ocurrir una vez cada 20 s."
+      "0": "Cuando los personajes que estén bajo la protección de un <strong>escudo llameante</strong> (a excepción de Thoma) reciben un ataque, tanto el TdE de <strong>Bendición incandescente</strong> como el de <strong>Armadura calcinante</strong> se reducen en 3 s.",
+      "1": "Este efecto solo puede ocurrir una vez cada 20 s."
     }
   },
   "constellation2": {
@@ -167,7 +167,7 @@
   "constellation6": {
     "name": "Corazón fervoroso",
     "description": {
-      "0": "Al obtener un <strong>escudo llameante</strong> o reiniciar su duración, el daño de los Ataques Normales, Cargados y Descendentes de todos los miembros del equipo aumenta en un 15% durante 6 s."
+      "0": "Al obtener un <strong>escudo llameante</strong> o reiniciar su duración, el daño de los Ataques Normales, Cargados y Descendentes de todos los miembros del equipo aumenta en un 15% durante 6 s."
     }
   }
 }

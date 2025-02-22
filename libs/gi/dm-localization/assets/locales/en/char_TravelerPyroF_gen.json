@@ -1,0 +1,205 @@
+{
+  "auto": {
+    "name": "Foreign Blaze",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, percent(fixed: 1)}}%",
+      "4": "{{4, percent(fixed: 1)}}%",
+      "5": "{{5, percent(fixed: 1)}}%+{{6, percent(fixed: 1)}}%",
+      "6": "{{7, fixed(fixed: 1)}}",
+      "7": "{{8, percent(fixed: 1)}}%",
+      "8": "{{9, percent}}%/{{10, percent}}%",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Flowfire Blade",
+    "description": {
+      "0": "Wields a searing flame that can incinerate the very earth. Has different effects when Tapped or Held.",
+      "1": "<br/>",
+      "2": "<strong>Tap</strong>",
+      "3": "Call forth flames in a raging blaze. When used, the Traveler gains 42 Nightsoul points and enters the Nightsoul's Blessing state, summoning a Blazing Threshold that follows the current active character.",
+      "4": "When the Blazing Threshold gets close to opponents, it will deal Nightsoul-aligned <pyro>Pyro DMG</pyro> to nearby opponents at intervals.",
+      "5": "<br/>",
+      "6": "<strong>Hold</strong>",
+      "7": "Unleash fire in a composed manner, dealing Nightsoul-aligned <pyro>AoE Pyro DMG</pyro> to nearby opponents. When used, the Traveler gains 42 Nightsoul points and enters the Nightsoul's Blessing state, summoning a Scorching Threshold that follows the current active character.",
+      "8": "When the current active character within a Scorching Threshold deals DMG to opponents, the Threshold will launch a Coordinated Attack that deals Nightsoul-aligned <pyro>Pyro DMG</pyro> based on the Traveler's ATK. This effect can occur once every 3s.",
+      "9": "<br/>",
+      "10": "<strong>Nightsoul's Blessing: Traveler</strong>",
+      "11": "Continuously consumes Nightsoul points. The Traveler's Nightsoul's Blessing state lasts 12s at maximum, and when their Nightsoul points are exhausted, this state will end. If this Elemental Skill is used again while active, the Traveler's Nightsoul points will be reset to 42 points.",
+      "12": "Blazing and Scorching Thresholds will disappear once the Traveler's Nightsoul's Blessing state ends, and only 1 Blazing or Scorching Threshold summoned by the Traveler themselves can exist at any one time.",
+      "13": "<br/>",
+      "14": "<i>Together, you and Paimon watched the shifting colors of the flowing flames.</i>"
+    },
+    "skillParams": {
+      "0": "Blazing Threshold",
+      "1": "Hold DMG",
+      "2": "Scorching Threshold",
+      "3": "Nightsoul Point Limit",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, percent(fixed: 1)}}%",
+      "2": "{{2, percent(fixed: 1)}}%",
+      "3": "{{3, fixed(fixed: 1)}}",
+      "4": "{{4, fixed(fixed: 1)}}s",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Plains Scorcher",
+    "description": {
+      "0": "Condense the flames into a mark, dealing Nightsoul-aligned <pyro>AoE Pyro DMG</pyro> to opponents up ahead. The Traveler restores 7 Nightsoul points per second for the next 4s.",
+      "1": "<br/>",
+      "2": "<i>Together, you and Paimon studied the principles behind an undying flame.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    },
+    "skillParamsEncoding": {
+      "0": "{{0, percent(fixed: 1)}}%",
+      "1": "{{1, fixed(fixed: 1)}}s",
+      "2": "{{2}}",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "True Flame of Incineration",
+    "description": {
+      "0": "When the Traveler has over 20 Nightsoul points, the attack AoE of the Blazing and Scorching Thresholds from the Elemental Skill <strong>Flowfire Blade</strong> after they hit opponents is increased."
+    }
+  },
+  "passive2": {
+    "name": "Embers Unspent",
+    "description": {
+      "0": "After the current active character inside a <strong>Blazing Threshold</strong> or <strong>Scorching Threshold</strong> triggers a <pyro>Pyro-related reaction</pyro>, the Traveler will regain 5 Energy. This can occur once every 12s. Additionally, when a nearby party member triggers a Nightsoul Burst, the Traveler will regain 4 Energy."
+    }
+  },
+  "constellation1": {
+    "name": "Starfire's Flowing Light",
+    "description": {
+      "0": "While <strong>Blazing Threshold</strong> or <strong>Scorching Threshold</strong> are active, the current active character deals 6% increased DMG. If said character is in the Nightsoul's Blessing state, they will deal an additional 9% DMG."
+    }
+  },
+  "constellation2": {
+    "name": "Ever-Lit Candle",
+    "description": {
+      "0": "Within 12s of using the Elemental Skill <strong>Flowfire Blade</strong>, after nearby party members trigger a <pyro>Pyro-related reaction</pyro> on an opponent, the Traveler will regain 14 Nightsoul points. Each use of <strong>Flowfire Blade</strong> will restore at most 28 Nightsoul points in this way."
+    }
+  },
+  "constellation3": {
+    "name": "Relayed Beacon",
+    "description": {
+      "0": "Increases the Level of <strong>Flowfire Blade</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Ravaging Flame",
+    "description": {
+      "0": "After using the Elemental Burst <strong>Plains Scorcher</strong>, the Traveler gains 20% <pyro>Pyro DMG Bonus</pyro> for 9s."
+    }
+  },
+  "constellation5": {
+    "name": "The Fire Inextinguishable",
+    "description": {
+      "0": "Increases the Level of <strong>Plains Scorcher</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "The Sacred Flame Imperishable",
+    "description": {
+      "0": "While in the Nightsoul's Blessing state, the Traveler's Normal, Charged, and Plunging Attacks will be converted to Nightsoul-aligned <pyro>Pyro DMG</pyro> that cannot be overridden, and the CRIT DMG of these attacks is increased by 40%."
+    }
+  }
+}

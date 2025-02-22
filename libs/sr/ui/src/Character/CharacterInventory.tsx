@@ -4,9 +4,9 @@ import {
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { Box, CardContent, CardHeader, Grid, Skeleton } from '@mui/material'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
+import { Box, CardHeader, Grid, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
-import { useDatabaseContext } from '../Context'
 import { CharacterCard } from './CharacterCard'
 import { CharacterEditor } from './CharacterEditor'
 
@@ -56,41 +56,33 @@ export function CharacterInventory() {
           />
         }
       >
-        <CardThemed bgt="dark">
-          <CardHeader title="Characters" />
-          <CardContent>
-            <Box
-              sx={{ overflow: 'auto', maxHeight: '50vh' }}
-              my={1}
-              display="flex"
-              flexDirection="column"
-              gap={1}
-            >
-              <Grid container spacing={1} columns={columns}>
-                {charactersInView.map((c, i) => (
-                  <Grid item key={i} xs={1}>
-                    <CharacterCard
-                      character={c}
-                      onClick={() => setCharacterKey(c.key)}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-              {characters.length !== charactersInView.length && (
-                <Skeleton
-                  ref={(node) => {
-                    if (!node) return
-                    setTriggerElement(node)
-                  }}
-                  sx={{ borderRadius: 1 }}
-                  variant="rectangular"
-                  width="100%"
-                  height={100}
+        <Box display="flex" flexDirection="column" gap={1}>
+          <CardThemed bgt="dark">
+            <CardHeader title="Characters" />
+          </CardThemed>
+          <Grid container spacing={1} columns={columns}>
+            {charactersInView.map((c, i) => (
+              <Grid item key={i} xs={1}>
+                <CharacterCard
+                  character={c}
+                  onClick={() => setCharacterKey(c.key)}
                 />
-              )}
-            </Box>
-          </CardContent>
-        </CardThemed>
+              </Grid>
+            ))}
+          </Grid>
+          {characters.length !== charactersInView.length && (
+            <Skeleton
+              ref={(node) => {
+                if (!node) return
+                setTriggerElement(node)
+              }}
+              sx={{ borderRadius: 1 }}
+              variant="rectangular"
+              width="100%"
+              height={100}
+            />
+          )}
+        </Box>
       </Suspense>
     </>
   )

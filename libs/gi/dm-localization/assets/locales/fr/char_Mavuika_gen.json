@@ -1,0 +1,200 @@
+{
+  "name": "Mavuika",
+  "title": "Flamme embrasant la nuit",
+  "description": "La dirigeante de Natlan qui a hérité de l'antique nom de Kiongozi. Elle a fait le vœu d'illuminer l'avenir de la nation en guerre avec le sanctifeu.",
+  "constellationName": "Sol Invictus",
+  "auto": {
+    "name": "Flammes tissant la vie",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour exécuter une splendide coupure particulièrement puissante vers l'avant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Moment nomenclateur",
+    "description": {
+      "0": "Faisant appel à son autorité sur les conflits, Mavuika invoque les armements tout-feu transmis par les Archons humains, infligeant des <pyro>DGT Pyro</pyro> infusés de noctâme.",
+      "1": "Après utilisation, Mavuika restaure ses points de noctâme jusqu'à la limite et entre dans l'état Bénédiction noctâme.",
+      "2": "<br/>",
+      "3": "<strong>Armements tout-feu</strong>",
+      "4": "Les armements tout-feu prennent différentes formes selon la méthode de déclenchement :",
+      "5": "<br/>",
+      "6": "<strong>Appui simple</strong>",
+      "7": "Délivrance du nom divin : les armements tout-feu se manifestent sous la forme d'un anneau de rayonnement brûlant qui suit le personnage déployé et attaque les ennemis proches de façon intermittente, infligeant des <pyro>DGT Pyro</pyro> infusés de noctâme.",
+      "8": "<br/>",
+      "9": "<strong>Appui long</strong>",
+      "10": "Délivrance du nom ancien : les armements tout-feu se manifestent sous la forme d'une moto, la flambécane. Dans cet état, Mavuika peut piloter sa flambécane pour se déplacer à toute vitesse ou activer son module de propulsion de secours caché pour traverser temporairement divers types de terrain et planer momentanément dans les airs. De plus, les attaques normales, chargées et plongeantes de Mavuika sont converties pour infliger des <pyro>DGT Pyro</pyro> infusés de noctâme ne pouvant pas être enchantés. Finalement, le sprint inflige également des <pyro>DGT Pyro</pyro> infusés de noctâme aux ennemis en chemin.",
+      "11": "<br/>",
+      "12": "Lorsque Mavuika bénéficie d'une bénédiction noctâme, utiliser sa compétence élémentaire avec un appui simple permet de basculer entre les formes des armements tout-feu. Les armements tout-feu disparaissent lorsque la bénédiction noctâme de Mavuika prend fin.",
+      "13": "<br/>",
+      "14": "<strong>Bénédiction noctâme : Mavuika</strong>",
+      "15": "La bénédiction noctâme de Mavuika consomme de façon continue ses points de noctâme selon la forme des armements tout-feu et prend fin une fois les points épuisés.",
+      "16": "<br/>",
+      "17": "<i>Si vous disiez à Mavuika que les motos comme la sienne nécessitent des plaques d'immatriculation pour être identifiées dans un autre monde, cela la rendrait heureuse :",
+      "18": "« C'est la seule qui existe ici. Donc, je peux choisir mon numéro de plaque, non ? »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT anneau de rayonnement brûlant",
+      "2": "Intervalle d'attaques d'anneau de rayonnement brûlant",
+      "3": "Attaque normale de flambécane (DGT 1er coup)",
+      "4": "Attaque normale de flambécane (DGT 2e coup)",
+      "5": "Attaque normale de flambécane (DGT 3e coup)",
+      "6": "Attaque normale de flambécane (DGT 4e coup)",
+      "7": "Attaque normale de flambécane (DGT 5e coup)",
+      "8": "DGT de sprint de flambécane",
+      "9": "DGT enchaînement attaque chargée de flambécane",
+      "10": "DGT finaux attaque chargée de flambécane",
+      "11": "DGT chute de flambécane",
+      "12": "Limite de noctâme",
+      "13": "Temps de recharge",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Heure des cieux brûlants",
+    "description": {
+      "0": "Permet aux voix intérieures du peuple d'atteindre le trône divin dans les cieux.",
+      "1": "<strong>Le déchaînement élémentaire de Mavuika ne se repose pas sur l'énergie élémentaire, mais sur la ferveur guerrière.</strong>",
+      "2": "<br/>",
+      "3": "<strong>Ferveur guerrière</strong>",
+      "4": "Lorsque Mavuika a au moins 50 % de ferveur guerrière, elle peut la consommer entièrement pour déclencher son déchaînement élémentaire.",
+      "5": "Mavuika peut obtenir de la ferveur guerrière des façons suivantes :",
+      "6": [
+        " En combat, les points de noctâme consommés par les membres de l'équipe à proximité sont convertis en ferveur guerrière.",
+        " Lorsque l'attaque normale d'un membre de l'équipe à proximité touche un ennemi, Mavuika obtient 1,5 pt de ferveur guerrière, cet effet pouvant être déclenché une fois toutes les 0,1 s."
+      ],
+      "7": "<br/>",
+      "8": "Après utilisation, Mavuika obtient 10 pts de noctâme, entre dans l'état Bénédiction noctâme, bondit dans les airs sur sa flambécane et effectue une puissante coupe solaire en direction des ennemis sur le sol afin d'infliger des <pyro>DGT Pyro de zone</pyro> infusés de noctâme et d'entrer dans l'état Creuset mortel.",
+      "9": "<br/>",
+      "10": "<strong>Creuset mortel</strong>",
+      "11": "Pendant la durée, les différentes actions de Mavuika ne consomment plus de points de noctâme et sa RÉS à l'interruption augmente. De plus, les DGT infligés par sa coupe solaire et les attaques normales et chargées lors de « Délivrance du nom ancien » augmentent selon sa ferveur guerrière lors de l'utilisation de la capacité.",
+      "12": "L'état Creuset mortel cesse lorsque Mavuika quitte le champ de bataille.",
+      "13": "<br/>",
+      "14": "<i>« ... Mais cette fois, je veux briser le cycle et nous libérer définitivement de ce sort. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée de creuset mortel",
+      "2": "Bonus de DGT coupe solaire",
+      "3": "Bonus de DGT attaque normale de flambécane",
+      "4": "Bonus de DGT attaque chargée de flambécane",
+      "5": "Temps de recharge",
+      "6": "Limite de ferveur guerrière",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cadeau de fleurs enflammées",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une éruption noctâme, l'ATQ de Mavuika augmente de 30 % pendant 10 s."
+    }
+  },
+  "passive2": {
+    "name": "Kiongozi",
+    "description": {
+      "0": "Après avoir utilisé le déchaînement élémentaire <strong>Heure des cieux brûlants</strong>, chaque point de ferveur guerrière lors de l'utilisation augmente les DGT infligés par le personnage déployé de l'équipe de 0,2 %, les DGT pouvant être augmentés d'un maximum de 40 % de cette manière. Cet effet dure 20 s, diminuant progressivement jusqu'à atteindre 0."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Mode épuisé",
+    "description": {
+      "0": "Après avoir épuisé ses points de noctâme, Mavuika change pour consommer du phlogistique afin de maintenir la flambécane de ses armements tout-feu.",
+      "1": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Mavuika » peut être utilisée. Lorsque le personnage déployé sprinte, escalade, nage, est en plein mouvement provoqué par une aptitude particulière ou est à une certaine hauteur dans les airs, le déploiement de Mavuika déclenche l'effet suivant : Mavuika entre dans l'état Bénédiction noctâme et obtient 50 % de ses points de noctâme maximum. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe."
+    }
+  },
+  "passive": {
+    "name": "Brillance brisant la nuit",
+    "description": {
+      "0": "Le TdR de la transmission noctâme de l'équipe diminue de 20 %."
+    }
+  },
+  "constellation1": {
+    "name": "Confession du seigneur de la nuit",
+    "description": {
+      "0": "Les points de noctâme maximum de Mavuika augmentent à 120 et son taux d'obtention de ferveur guerrière augmentent de 25 %.",
+      "1": "De plus, son ATQ augmente de 40 % pendant 8 s après avoir obtenu de la ferveur guerrière."
+    }
+  },
+  "constellation2": {
+    "name": "Prix des braises cendrées",
+    "description": {
+      "0": "Lorsque Mavuika bénéficie d'une bénédiction noctâme, son ATQ de base augmente de 200 pts et elle obtient les effets suivants selon la forme de ses armements tout-feu :",
+      "1": [
+        " Anneau de rayonnement brûlant : la DÉF des ennemis proches diminue de 20 %.",
+        " Flambécane : les DGT infligés par ses attaques normales, ses attaques chargées et la coupe solaire de son déchaînement élémentaire <strong>Heure des cieux brûlants</strong> augmentent respectivement d'une valeur équivalant à 60 %, 90 % et 120 % de son ATQ."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Soleil du feu brûlant",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Heure des cieux brûlants</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Détermination de la meneuse",
+    "description": {
+      "0": "L'effet de l'aptitude passive « Kiongozi » est amélioré :",
+      "1": "L'augmentation de DGT obtenue après avoir utilisé le déchaînement élémentaire <strong>Heure des cieux brûlants</strong> ne diminue plus avec le temps, et un bonus supplémentaire de DGT de 10 % est obtenu.",
+      "2": "L'aptitude passive « Kiongozi » doit être déjà débloquée."
+    }
+  },
+  "constellation5": {
+    "name": "Signification de la vérité authentique",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Moment nomenclateur</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Délivrance du nom de l'humanité",
+    "description": {
+      "0": "Les armements tout-feu de la compétence élémentaire <strong>Moment nomenclateur</strong> sont renforcés :",
+      "1": [
+        " Anneau de rayonnement brûlant : lorsqu'un anneau touche un ennemi, une flambécane heurte ce dernier pour infliger des <pyro>DGT Pyro de zone</pyro> infusés de noctâme d'une valeur équivalant à 200 % de l'ATQ.",
+        " Flambécane : lorsque Mavuika pilote sa flambécane, elle invoque un anneau enflammé de rayonnement brûlant qui la suit, ce dernier diminuant la DÉF des ennemis proches de 20 % et infligeant des <pyro>DGT Pyro de zone</pyro> infusés de noctâme d'une valeur équivalant à 500 % de l'ATQ aux ennemis proches une fois toutes les 3 s, et la capacité de Mavuika à traverser divers types de terrain est améliorée davantage."
+      ],
+      "2": "<br/>",
+      "3": "De plus, lorsque les points de noctâme de Mavuika tombent à 5, elle en récupère 80 si elle est sur sa flambécane et pas en combat, cet effet pouvant être déclenché une fois toutes les 15 s."
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "name": "Mavuika",
+  "title": "Flamme der Nachterhellung",
+  "description": "Die Anführerin Natlans, die den antiken Namen „Kiongozi“ geerbt hat. Sie schwor, die Zukunft des sich bekämpfenden Landes mit heiligem Feuer zu erhellen.",
+  "constellationName": "Sol Invictus",
+  "auto": {
+    "name": "Flammengewebtes Leben",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen besonders kraftvollen „Glühenden Sonnenhieb“ nach vorn aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Moment des Benennens",
+    "description": {
+      "0": "Unter Berufung auf ihre Autorität über den „Krieg“ beschwört Mavuika die Allfeuerrüstung, die über die menschliche Archon-Linie weitergegeben wurde, und verursacht dabei mit Nachtseelen versehenen <pyro>Pyro-Schaden</pyro>.",
+      "1": "Stellt nach dem Auslösen alle Nachtseelenpunkte von Mavuika wieder her und versetzt sie in den Zustand des „Nachtseelensegens“.",
+      "2": "<br/>",
+      "3": "<strong>Allfeuerrüstungen</strong>",
+      "4": "Je nachdem, ob gedrückt oder gedrückt gehalten wird, erscheint die Allfeuerrüstung in anderer Form.",
+      "5": "<br/>",
+      "6": "<strong>Drücken</strong>",
+      "7": "„Göttlicher Name entfesselt“: Die Allfeuerrüstung manifestiert sich als Ring des Sengenden Glanzes, der der aktuellen Figur folgt und in regelmäßigen Abständen die in der Nähe befindlichen Gegner angreift und mit Nachtseelen versehenen <pyro>Pyro-Schaden</pyro> verursacht.",
+      "8": "<br/>",
+      "9": "<strong>Gedrückthalten</strong>",
+      "10": "„Antiker Name entfesselt“: Die Allfeuerrüstung manifestiert sich als Flammenreiter. In diesem Zustand kann Mavuika den Flammenreiter mit hoher Geschwindigkeit reiten oder sein verstecktes Hilfsantriebsmodul aktivieren, um vorübergehend verschiedene Geländetypen zu durchqueren und in der Luft zu gleiten. Mavuikas Standardangriffe, heftige Schläge und Angriffe aus dem Fall werden außerdem so umgewandelt, dass sie mit Nachtseelen versehenen <pyro>Pyro-Schaden</pyro> verursachen, der nicht von anderen Elementen überdeckt werden kann. Wenn Mavuika sich in diesem Zustand beschleunigt, fügt sie Gegnern in der Bahn ebenfalls mit Nachtseelen versehenen <pyro>Pyro-Schaden</pyro> zu.",
+      "11": "<br/>",
+      "12": "Wenn Mavuika sich im Zustand „Nachtseelensegen“ befindet, kann durch Drücken der Elementarfähigkeit die Form der Allfeuerrüstung geändert werden. Die Allfeuerrüstung verschwindet, sobald Mavuikas Zustand des „Nachtseelensegens“ endet.",
+      "13": "<br/>",
+      "14": "<strong>Nachtseelensegen – Mavuika</strong>",
+      "15": "Verbraucht fortlaufend Nachtseelenpunkte gemäß der Form der Allfeuerrüstung. Der Zustand „Nachtseelensegen“ von Mavuika endet, sobald ihre Nachtseelenpunkte aufgebraucht wurden.",
+      "16": "<br/>",
+      "17": "<i>Wenn du Mavuika sagen würdest, dass Fahrzeuge wie der Flammenreiter in einer anderen Welt Nummernschilder zur Identifizierung benötigen, wäre sie auch glücklich:",
+      "18": "„Also, mein Reiter ist ja der Einzige, den es überhaupt gibt. Insofern darf ich mir mein Nummernschild doch selbst aussuchen, oder?“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH Ring des Sengenden Glanzes",
+      "2": "Angriffsintervall Ring des Sengenden Glanzes",
+      "3": "SCH Phase 1 des Standardangriffs auf dem Flammenreiter",
+      "4": "SCH Phase 2 des Standardangriffs auf dem Flammenreiter",
+      "5": "SCH Phase 3 des Standardangriffs auf dem Flammenreiter",
+      "6": "SCH Phase 4 des Standardangriffs auf dem Flammenreiter",
+      "7": "SCH Phase 5 des Standardangriffs auf dem Flammenreiter",
+      "8": "SCH beim Beschleunigen des Flammenreiters",
+      "9": "SCH heftiger Schläge auf dem Flammenreiter pro Runde",
+      "10": "SCH heftiger Schläge auf dem Flammenreiter am Ende",
+      "11": "SCH beim Aufkommen des Flammenreiters",
+      "12": "Max. Nachtseelenpunkte",
+      "13": "Abklingzeit",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Stunde brennender Himmel",
+    "description": {
+      "0": "Lass die inneren Stimmen des Volkes den göttlichen Thron im Himmel erreichen.",
+      "1": "<strong>Mavuikas Spezialfähigkeit ist nicht auf Elementarenergie angewiesen, sondern auf „Kampfgeist“.</strong>",
+      "2": "<br/>",
+      "3": "<strong>Kampfgeist</strong>",
+      "4": "Wenn Mavuika mindestens 50 % Kampfgeist hat, kann sie diesen verbrauchen, um ihre Spezialfähigkeit auszulösen.",
+      "5": "Mavuika kann Kampfgeist auf folgende Weisen erhalten:",
+      "6": [
+        " Im Kampf werden die von den Truppenmitgliedern in der Nähe verbrauchten Nachtseelenpunkte in Kampfgeist umgewandelt.",
+        " Wenn die Standardangriffe von Truppenmitgliedern in der Nähe Gegner treffen, erhält Mavuika 1,5 Punkte Kampfgeist. 0,1 s Abklingzeit."
+      ],
+      "7": "<br/>",
+      "8": "Nach dem Einsatz dieser Fähigkeit erhält Mavuika 10 Nachtseelenpunkte und tritt in den Zustand „Nachtseelensegen“ ein. Sie reitet auf ihrem Flammenreiter hoch in die Luft und setzt einen mächtigen Sonnensturz-Hieb gegen Gegner auf dem Boden ein, der mit Nachtseelen versehenen <pyro>Pyro-Flächenschaden</pyro> verursacht und sie in den Zustand „Schmelztiegel von Tod und Leben“ versetzt.",
+      "9": "<br/>",
+      "10": "<strong>Schmelztiegel von Tod und Leben</strong>",
+      "11": "Mavuika verbraucht keine Nachtseelenpunkte während der Wirkungsdauer und ihr Unterbrechungs-WDS wird erhöht. Erhöht außerdem gemäß dem Kampfgeist beim Auslösen den durch den Sonnensturz-Hieb sowie die Standardangriffe und heftigen Schläge im „Antiker Name entfesselt“-Zustand verursachten Schaden.",
+      "12": "Der Zustand „Schmelztiegel von Tod und Leben“ verschwindet, sobald Mavuika das Schlachtfeld verlässt.",
+      "13": "<br/>",
+      "14": "<i>„... Aber dieses Mal will ich den Kreislauf durchbrechen und uns für immer von diesem Schicksal befreien.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Dauer Schmelztiegel von Tod und Leben",
+      "2": "SCH-Bonus für Sonnensturz-Hieb",
+      "3": "SCH-Bonus für Standardangriffe auf dem Flammenreiter",
+      "4": "SCH-Bonus für heftige Schläge auf dem Flammenreiter",
+      "5": "Abklingzeit",
+      "6": "Max. Kampfgeist",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Geschenk der flammenden Blumen",
+    "description": {
+      "0": "Erhöht Mavuikas ANG 10 s lang um 30 %, wenn ein Truppenmitglied in der Nähe den Nachtseelenaufbruch auslöst."
+    }
+  },
+  "passive2": {
+    "name": "„Kiongozi“",
+    "description": {
+      "0": "Erhöht nach dem Auslösen der Spezialfähigkeit <strong>Stunde brennender Himmel</strong> je nach Kampfgeist beim Auslösen den durch die aktuelle Figur in der Truppe verursachten Schaden für jeden Punkt Kampfgeist um 0,2 % und insgesamt um bis zu 40 %, hält 20 s und wird während der Wirkungsdauer nach und nach auf 0 reduziert."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Erschöpfungsmodus",
+    "description": {
+      "0": "Nachdem ihre Nachtseelenpunkte aufgebraucht sind, wechselt Mavuika zum Verbrauch von Phlogiston, um ihr „Allfeuerrüstung – Flammenreiter“ aufrechtzuerhalten.",
+      "1": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Mavuika verwendet werden. Wenn die aktuelle Figur gerade rennt, klettert, schwimmt, sich in einem Bewegungsmodus befindet, der durch bestimmte Talente ausgelöst wird, oder sich auf einer bestimmten Höhe in der Luft befindet, wird beim Wechsel zu Mavuika Folgendes ausgelöst: Mavuika tritt in den Zustand des Nachtseelensegens ein und erhält 50 % ihrer maximalen Nachtseelenpunkte. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe."
+    }
+  },
+  "passive": {
+    "name": "Finsternis zersetzendes Flammenlicht",
+    "description": {
+      "0": "Verkürzt die Abklingzeit zum Auslösen der Nachtseelen-Übertragung in der Truppe um 20 %."
+    }
+  },
+  "constellation1": {
+    "name": "Explikation des Nachtherrschers",
+    "description": {
+      "0": "Erhöht Mavuikas maximale Nachtseelenpunkte auf 120 Punkte und ihre Effizienz beim Erhalten von Kampfgeist um 25 %.",
+      "1": "Erhöht außerdem Mavuikas ANG für 8 s um 40 %, nachdem sie Kampfgeist erhalten hat."
+    }
+  },
+  "constellation2": {
+    "name": "Aschfahler Preis",
+    "description": {
+      "0": "Erhöht Mavuikas Basis-ANG im Nachtseelensegen-Zustand um 200 Punkte und verleiht ihr gemäß der Form der Allfeuerrüstung den entsprechenden Effekt:",
+      "1": [
+        " Ring des Sengenden Glanzes: Verringert die VTD in der Nähe befindlicher Gegner um 20 %.",
+        " Flammenreiter: Erhöht den durch Mavuikas Standardangriffe, heftige Schläge sowie den Sonnensturz-Hieb der Spezialfähigkeit <strong>Stunde brennender Himmel</strong> verursachten Schaden jeweils um 60/90/120 % von Mavuikas ANG."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Brennende Sonne",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Stunde brennender Himmel</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Entschlossenheit der Anführerin",
+    "description": {
+      "0": "Verstärkt den Effekt des passiven Talents „Kiongozi“:",
+      "1": "Der Schadenbonus, der nach dem Einsetzen der Spezialfähigkeit <strong>Stunde brennender Himmel</strong> erhalten wird, wird nicht mit der Zeit abnehmen, sondern zusätzlich um 10 % erhöht.",
+      "2": "Das passive Talent „Kiongozi“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation5": {
+    "name": "Bedeutung der Wahrheit",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Moment des Benennens</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Der Name der Menschheit“ entfesselt",
+    "description": {
+      "0": "Verleiht der Allfeuerrüstung der Elementarfähigkeit <strong>Moment des Benennens</strong> umfassende Verstärkungen:",
+      "1": [
+        " Ring des Sengenden Glanzes: Wenn der Angriff des Rings des Sengenden Glanzes einen Gegner trifft, stürzt ein Flammenreiter in den getroffenen Gegner und verursacht mit Nachtseelen versehenen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 200 % ANG.",
+        " Flammenreiter: Wenn Mavuika auf dem Flammenreiter reitet, beschwört sie einen ihr fortlaufend folgenden „Ring des Sengenden Glanzes – Brennende Vision“, der die VTD der in der Nähe befindlichen Gegner um 20 % verringert sowie ihnen alle 3 s einmal mit Nachtseelen versehenen <pyro>Pyro-Flächenschaden</pyro> in Höhe von 500 % ANG zufügt. Außerdem werden die Geländeüberwindungsfähigkeiten des Flammenreitermodus weiter verbessert."
+      ],
+      "2": "<br/>",
+      "3": "Wenn Mavuika auf dem Flammenreiter reitet und sich nicht im Kampf befindet, erhält sie, wenn ihre Nachtseelenpunkte auf 5 Punkte fallen, 80 Nachtseelenpunkte, 15 s Abklingzeit."
+    }
+  }
+}

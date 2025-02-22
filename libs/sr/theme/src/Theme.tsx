@@ -13,6 +13,21 @@ declare module '@mui/material/styles' {
     wind: Palette['primary']
     orange: Palette['primary']
     heal: Palette['primary']
+    grad1: {
+      gradient: string
+    }
+    grad2: {
+      gradient: string
+    }
+    grad3: {
+      gradient: string
+    }
+    grad4: {
+      gradient: string
+    }
+    grad5: {
+      gradient: string
+    }
   }
 
   interface PaletteOptions {
@@ -25,6 +40,21 @@ declare module '@mui/material/styles' {
     wind?: PaletteOptions['primary']
     orange?: Palette['primary']
     heal?: Palette['primary']
+    grad1?: {
+      gradient: string
+    }
+    grad2?: {
+      gradient: string
+    }
+    grad3?: {
+      gradient: string
+    }
+    grad4?: {
+      gradient: string
+    }
+    grad5?: {
+      gradient: string
+    }
   }
 }
 
@@ -119,5 +149,20 @@ export const theme = createTheme({
       color: { main: '#c0e86c' },
       name: 'heal',
     }),
+    grad1: {
+      gradient: 'linear-gradient(to bottom right, #4f5864, #838f99)',
+    },
+    grad2: {
+      gradient: 'linear-gradient(to bottom right, #48575c, #5e966c)',
+    },
+    grad3: {
+      gradient: 'linear-gradient(to bottom right, #515474, #499fb3)',
+    },
+    grad4: {
+      gradient: 'linear-gradient(to bottom right, #595482, #b886ca)',
+    },
+    grad5: {
+      gradient: 'linear-gradient(to bottom right, #695453, #e6ac54)',
+    },
   },
 })

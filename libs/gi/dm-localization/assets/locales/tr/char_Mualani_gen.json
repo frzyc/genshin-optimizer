@@ -53,8 +53,8 @@
       ],
       "6": "<br/>",
       "7": "<strong>Dalga Momentumu ve Av İşareti</strong>",
-      "8": "Mualani, Camgöz'ün Isırığını kullandığında verdiği Hasar, sahip olduğu Dalga Momentumu kademesine göre artar. 3 kademeye sahipse Normal Saldırısı, Camgöz'ün Dev Isırığına dönüşür, verdiği Hasarı daha da artırır ve düşmana isabet ettikten sonra tüm kademeleri kaldırır.",
-      "9": "Camgöz'ün Isırığı, Av İşareti olan düşmanlara isabet ederse İşaret kaldırılır ve Mualani, Av İşareti olan yakındaki en fazla 5 düşmana Camgöz Füzeleri ateşleyerek bu seferki Camgöz'ün Isırığı kadar Hasar verir ve İşaretlerini kaldırır. Eğer Camgöz'ün Isırığı ve Camgöz Füzeleri birden fazla düşmanı hedef almışsa verilen Hasar azalır. En az 3 düşmanı hedef aldığında verilen Hasar, orijinal Hasarın %72'sine azalır.",
+      "8": "Mualani, Camgöz'ün Isırığını kullandığında verdiği Hasar, sahip olduğu Dalga Momentumu kademesine göre artar. 3 kademeye sahipse Camgöz'ün Isırığı, Camgöz'ün Dev Isırığına dönüşür, verdiği Hasarı daha da artırır ve düşmana isabet ettikten sonra tüm kademeleri kaldırır.",
+      "9": "Camgöz'ün Isırığı, Av İşareti olan bir düşmana isabet ederse İşaret kaldırılır ve Mualani, Av İşareti olan yakındaki en fazla 5 düşmana Camgöz Füzeleri ateşleyerek bu seferki Camgöz'ün Isırığı kadar Hasar verir ve İşaretlerini kaldırır. Eğer Camgöz'ün Isırığı ve Camgöz Füzeleri birden fazla düşmanı hedef almışsa verilen Hasar azalır. 3 düşmanı hedef aldığında verilen Hasar, orijinal Hasarın en fazla %72'sine azalır.",
       "10": "<br/>",
       "11": "<i>Öncelikle Camgöz, sörf tahtası olmasının yanı sıra bir tatlı su köpek balığıdır. İkinci olarak da yemek yemeye ihtiyaç duymaz fakat kesinlikle ısırır.</i>"
     },
@@ -141,7 +141,7 @@
     "name": "Mualani Bütün Gücüyle Saldırıyor!",
     "description": {
       "0": "Mualani, Gece Ruhunun Lütfu durumuna girdiğinde <strong>Dalgakıran Köpek Balığı</strong> becerisinden 2 kademe Dalga Momentumu kazanır. Şamandıra aldığında ise 1 kademe kazanır.",
-      "1": "Ayrıca Mualani bir Gece Ruhunun Lütfu durumunda 2 Şamandıra aldığında 2 saniye boyunca ilave 12 Gece Ruhu puanı yeniler. Bu etki için öncelikle \"Isıya Dayanıklı Tatlı Su Şamandırası\" Pasif Yeteneğinin açılmış olması gerekir."
+      "1": "Ayrıca Mualani bir Gece Ruhunun Lütfu durumunda 2 Şamandıra aldığında 2 saniye boyunca ilave 12 Gece Ruhu puanı yeniler. Bu etki için \"Isıya Dayanıklı Tatlı Su Şamandırası\" Pasif Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation3": {

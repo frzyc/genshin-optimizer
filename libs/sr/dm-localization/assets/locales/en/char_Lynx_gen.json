@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Morning of Snow Hike",
-      "desc": "When healing allies with HP equal to or lower than {{1, percent}}%, Lynx's Outgoing Healing increases by {{2, percent}}%. This effect also works on continuous healing."
+      "desc": "When healing allies with HP percentage equal to or lower than {{1, percent}}%, Lynx's Outgoing Healing increases by {{2, percent}}%. This effect also works on continuous healing."
     },
     "2": {
       "name": "Noon of Portable Furnace",

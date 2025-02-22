@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Arquera cortés",
-        "fullDesc": "Yukong puede bloquear un estado negativo cuando se lo aplican. Este efecto puede volver a activarse tras {{1}} turnos.",
+        "fullDesc": "Yukong puede resistir un estado negativo cuando se lo aplican. Este efecto puede volver a activarse tras {{1}} turnos.",
         "shortDesc": "",
         "tag": ""
       }

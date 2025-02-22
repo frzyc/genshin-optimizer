@@ -29,7 +29,7 @@
       "0": {
         "name": "Prana Extirpated",
         "fullDesc": "Memanggil Lightning-Lord saat pertempuran dimulai. Lightning-Lord memiliki {{1}} SPD dasar dan {{4}} Hits Per Action, setiap serangannya dihitung sebagai Serangan Lanjutan. Setiap serangan Lightning-Lord akan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Jing Yuan pada 1 musuh secara acak, serta mengakibatkan Lightning DMG pada target di sekitarnya sebesar {{5, percent}}% dari Lightning DMG yang diakibatkan pada target utama.<br>Maksimal Hits Per Action milik Lightning-Lord adalah {{6}}, dan setiap kali Hits Per Action milik Lightning-Lord bertambah 1, SPD-nya akan meningkat {{3}}. Setelah aksinya berakhir, Hits Per Action dan SPD-nya akan kembali seperti semula.<br>Saat Jing Yuan gugur, Lightning-Lord akan menghilang.<br>Saat Jing Yuan terkena Crowd Control Debuff, Lightning-Lord juga tidak dapat beraksi.",
-        "shortDesc": "Memanggil Lightning-Lord saat pertempuran dimulai. Lightning-Lord akan <orangeStrong>secara otomatis</orangeStrong> menyerang dan <orangeStrong>mengakibatkan Lightning DMG dalam jumlah kecil</orangeStrong> pada 1 musuh secara acak dan target di sekitarnya.",
+        "shortDesc": "Memanggil Lightning-Lord saat pertempuran dimulai. Saat \"Lightning-Lord\" beraksi, akan melancarkan Serangan Lanjutan, <orangeStrong>secara otomatis</orangeStrong> <orangeStrong>mengakibatkan Lightning DMG dalam jumlah kecil</orangeStrong> pada 1 musuh secara acak dan target di sekitarnya.",
         "tag": "Bounce"
       }
     },

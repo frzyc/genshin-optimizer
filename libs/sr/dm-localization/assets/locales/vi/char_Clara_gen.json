@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Bảo Vệ",
-        "fullDesc": "Tăng {{1, percent}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Trả Thù",
-        "fullDesc": "Sát thương gây ra từ đòn phản kích của Svarog tăng {{1, percent}}%.",
+        "fullDesc": "Sát thương gây ra từ đòn Phản Kích của Svarog tăng {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Đồng Hành Dài Lâu",
-      "desc": "Sau khi mục tiêu khác của phe ta bị tấn công, Svarog cũng có {{1, percent}}% xác suất cố định phản kích lại người tấn công, đồng thời thêm \"Ký Hiệu Phản Kích\" lên mục tiêu tấn công. Khi thi triển Tuyệt Kỹ sẽ tăng thêm {{2}} lần cường hóa Phản Kích."
+      "desc": "Sau khi mục tiêu khác của phe ta bị tấn công, Svarog cũng có {{1, percent}}% xác suất cố định Phản Kích lại người tấn công, đồng thời thêm \"Ký Hiệu Phản Kích\" lên mục tiêu tấn công. Khi thi triển Tuyệt Kỹ sẽ tăng thêm {{2}} lần Phản Kích cường hóa."
     }
   }
 }

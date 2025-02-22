@@ -3,16 +3,23 @@ import {
   getRandomIntInclusive,
   getUnitStr,
   range,
+  statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type {
+  RelicCavernSetKey,
+  RelicSetKey,
+  RelicSlotKey,
+} from '@genshin-optimizer/sr/consts'
 import {
+  allRelicCavernSetKeys,
   allRelicCavernSlotKeys,
   allRelicPlanarSetKeys,
   allRelicPlanarSlotKeys,
   allRelicRarityKeys,
   allRelicSetKeys,
   allRelicSubStatKeys,
+  isPlanarRelicSetKey,
   relicMaxLevel,
   relicSlotToMainStatKeys,
   relicSubstatRollData,
@@ -41,10 +48,13 @@ export function getRelicMainStatDisplayVal(
   statKey: RelicMainStatKey,
   level: number
 ) {
-  return roundStat(
-    toPercent(getRelicMainStatVal(rarity, statKey, level), statKey),
+  return toPercent(
+    getRelicMainStatVal(rarity, statKey, level),
     statKey
-  )
+  ).toFixed(statToFixed(statKey))
+}
+export function statToFixed(statKey: RelicMainStatKey | RelicSubStatKey) {
+  return statKeyToFixed(statKey)
 }
 
 // TODO: Update this with proper corrected rolls
@@ -134,6 +144,9 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
   }
 }
 
+/**
+ * @deprecated use common-util/roundStat
+ */
 export function roundStat(
   value: number,
   statKey: RelicMainStatKey | RelicSubStatKey
@@ -161,4 +174,15 @@ export function getSubstatValuesPercent(
 ) {
   console.log('getSubstatValuesPercent', substatKey, rarity)
   return []
+}
+
+export function getDefaultRelicSlot(setKey: RelicSetKey) {
+  if (isCavernRelic(setKey)) return allRelicCavernSlotKeys[0]
+  if (isPlanarRelicSetKey(setKey)) return allRelicPlanarSlotKeys[0]
+  // noopt
+  return allRelicCavernSlotKeys[0]
+}
+
+export function isCavernRelic(setKey: RelicSetKey) {
+  return allRelicCavernSetKeys.includes(setKey as RelicCavernSetKey)
 }

@@ -29,7 +29,7 @@
       "0": {
         "name": "조성의 합창",
         "fullDesc": "모든 아군의 치명타 피해가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가하고, 아군이 적 공격 후 로빈이 추가로 자신의 에너지를 {{2}}pt 회복한다",
-        "shortDesc": "모든 아군의 <orangeStrong>치명타 피해</orangeStrong>가 증가하고, 아군 캐릭터가 적 공격 후 로빈의 에너지가 추가로 회복된다",
+        "shortDesc": "모든 아군의 <orangeStrong>치명타 피해</orangeStrong>가 증가하고, 아군이 적 공격 후 로빈의 에너지가 추가로 회복된다",
         "tag": "서포트"
       }
     },
@@ -44,7 +44,7 @@
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
         "shortDesc": "",
         "tag": ""
       }

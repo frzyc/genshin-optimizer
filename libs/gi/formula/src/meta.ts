@@ -793,6 +793,20 @@ export const formulas = {
       },
     },
   },
+  Chasca: {
+    normal1: {
+      sheet: 'Chasca',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Chasca',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Chevreuse: {
     normal1: {
       sheet: 'Chevreuse',
@@ -830,6 +844,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Chongyun',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Citlali: {
+    normal1: {
+      sheet: 'Citlali',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Citlali',
         move: 'normal',
         name: 'normal1',
       },
@@ -1185,6 +1213,20 @@ export const formulas = {
       },
     },
   },
+  Kinich: {
+    normal1: {
+      sheet: 'Kinich',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Kinich',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Kirara: {
     normal1: {
       sheet: 'Kirara',
@@ -1241,6 +1283,20 @@ export const formulas = {
       },
     },
   },
+  LanYan: {
+    normal1: {
+      sheet: 'LanYan',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'LanYan',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Layla: {
     normal1: {
       sheet: 'Layla',
@@ -1292,6 +1348,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Lyney',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Mavuika: {
+    normal1: {
+      sheet: 'Mavuika',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Mavuika',
         move: 'normal',
         name: 'normal1',
       },
@@ -1735,6 +1805,20 @@ export const formulas = {
       },
     },
   },
+  Ororon: {
+    normal1: {
+      sheet: 'Ororon',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Ororon',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   PrototypeAmber: {
     heal: {
       sheet: 'PrototypeAmber',
@@ -2112,6 +2196,20 @@ export const formulas = {
       },
     },
   },
+  Xilonen: {
+    normal1: {
+      sheet: 'Xilonen',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Xilonen',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Xingqiu: {
     normal1: {
       sheet: 'Xingqiu',
@@ -2205,6 +2303,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yoimiya',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  YumemizukiMizuki: {
+    normal1: {
+      sheet: 'YumemizukiMizuki',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'YumemizukiMizuki',
         move: 'normal',
         name: 'normal1',
       },

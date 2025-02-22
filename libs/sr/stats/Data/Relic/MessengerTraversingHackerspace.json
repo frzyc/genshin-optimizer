@@ -3,7 +3,7 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "undefined": 0.06
+        "spd_": 0.06
       },
       "otherStats": [
         0.06

@@ -1,0 +1,16 @@
+{
+  "Id": 100013,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_CyclopsPro.png",
+  "Tag": ["Ether", "Pro"],
+  "Tag2": ["All"],
+  "Name": "OfficialName_",
+  "Desc": "The Hollow Investigative Association has limited research on Alpeca. After briefly studying its behavioral pattern of spewing liquid Ether, the Association classified Alpeca as a low-threat Ethereal and ended its investigation.\nScholars once showed great interest in observing how Alpeca spews liquefied Ether and even commissioned surveys for closer observation.\nExperienced investigators have been avoiding such tasks for unknown reasons, however.\n\"Run! They're spitting again... Oh, no! My new clothes!\"",
+  "Rarity": 1,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Deep within a Hollow, rookie investigator Raffaele Bert attempting to retreat",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

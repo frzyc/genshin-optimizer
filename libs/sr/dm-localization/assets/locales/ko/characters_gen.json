@@ -1,0 +1,39 @@
+{
+  "character_one": "캐릭터",
+  "character_other": "캐릭터",
+  "eidolonLvl": "성혼 등급:",
+  "traces": "행적",
+  "type": {
+    "physical": "물리",
+    "quantum": "양자",
+    "lightning": "번개",
+    "ice": "얼음",
+    "wind": "바람",
+    "fire": "화염",
+    "imaginary": "허수"
+  },
+  "path": {
+    "Erudition": "지식",
+    "Preservation": "보존",
+    "Abundance": "풍요",
+    "Nihility": "공허",
+    "Destruction": "파멸",
+    "Harmony": "화합",
+    "TheHunt": "수렵"
+  },
+  "ability": {
+    "basic": "일반 공격",
+    "skill": "전투 스킬",
+    "ult": "필살기",
+    "talent": "특성",
+    "technique": "비술"
+  },
+  "dmgType": {
+    "single": "단일 공격",
+    "aoe": "범위 공격",
+    "bounce": "바운스",
+    "blast": "확산",
+    "support": "서포트",
+    "impair": "방해"
+  }
+}

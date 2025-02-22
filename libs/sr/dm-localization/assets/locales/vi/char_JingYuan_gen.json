@@ -29,7 +29,7 @@
       "0": {
         "name": "Chém Tách Thần Hình",
         "fullDesc": "Khi bắt đầu chiến đấu sẽ triệu hồi Thần Quân. Thần Quân ban đầu có {{1}} điểm tốc độ và {{4}} đòn đánh trong một lượt. Khi Thần Quân hành động sẽ phát động Đòn Đánh Theo Sau, mỗi đòn đánh sẽ gây Sát Thương Lôi cho 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Jing Yuan, đồng thời gây Sát Thương Lôi cho mục tiêu lân cận kẻ đó bằng {{5, percent}}% của mục tiêu chính.<br>Thần Quân tối đa tích lũy {{6}} đòn đánh và cứ tăng 1 đòn thì tăng {{3}} điểm tốc độ, sẽ khôi phục lại chỉ số ban đầu sau khi kết thúc hành động.<br>Khi Jing Yuan rơi vào trạng thái không thể chiến đấu thì Thần Quân sẽ biến mất.<br>Khi Jing Yuan bị Hiệu Ứng Xấu dạng khống chế ảnh hưởng thì Thần Quân cũng không thể hành động.",
-        "shortDesc": "Khi bắt đầu chiến đấu sẽ triệu hồi Thần Quân, Thần Quân <orangeStrong>tự động</orangeStrong> <orangeStrong>gây lượng nhỏ Sát Thương Lôi</orangeStrong> lên 1 kẻ địch ngẫu nhiên và mục tiêu ở gần kẻ đó.",
+        "shortDesc": "Khi bắt đầu chiến đấu sẽ triệu hồi Thần Quân, khi Thần Quân hành động sẽ phát động Đòn Đánh Theo Sau, <orangeStrong>tự động</orangeStrong> <orangeStrong>gây lượng nhỏ Sát Thương Lôi</orangeStrong> lên 1 kẻ địch ngẫu nhiên và mục tiêu ở gần kẻ đó.",
         "tag": "Nảy Bật"
       }
     },

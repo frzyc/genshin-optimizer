@@ -3,7 +3,7 @@
     "triggerChance": "Persentase Pemulihan Terpicu",
     "name": "Breastplate",
     "description": {
-      "0": "Menciptakan zirah batu yang mengakibatkan <geo>Geo DMG</geo> pada musuh di sekitar dan membentuk perisai. DMG yang ditahan perisai berdasarkan DEF Noelle.",
+      "0": "Menciptakan zirah batu yang mengakibatkan <geo>Geo DMG</geo> pada musuh di sekitar dan membentuk Perisai. DMG yang ditahan Perisai berdasarkan DEF Noelle.",
       "1": "Perisainya memiliki ciri-ciri berikut:",
       "2": [
         "Saat Normal dan Charged Attack Noelle mengenai target, berkemungkinan memulihkan HP untuk semua karakter.",
@@ -110,7 +110,7 @@
     "name": "Devotion",
     "description": {
       "0": "Saat Noelle berada dalam party, tetapi tidak sedang bertarung, skill ini akan terpicu secara otomatis ketika HP karakter yang sedang digunakan kurang dari 30%:",
-      "1": "Karakter tersebut akan mendapatkan perisai yang dapat menahan DMG sebesar 400% dari DEF Noelle selama 20 detik.",
+      "1": "Karakter tersebut akan mendapatkan Perisai yang dapat menahan DMG sebesar 400% dari DEF Noelle selama 20 detik.",
       "2": "Perisai ini memiliki bonus 150% efektivitas Penahanan DMG untuk semua Elemental dan Physical DMG.",
       "3": "Efek ini dapat terpicu setiap 60 detik."
     }

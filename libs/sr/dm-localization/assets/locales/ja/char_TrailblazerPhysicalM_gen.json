@@ -41,7 +41,7 @@
       "0": {
         "name": "{RUBY_B#とうるいけんせい}盗塁牽制{RUBY_E#}",
         "fullDesc": "敵を弱点撃破した後、攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、最大で{{2}}回累積できる。",
-        "shortDesc": "",
+        "shortDesc": "敵を弱点撃破した後、攻撃力がアップする。",
         "tag": "強化"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "{RUBY_B#ふめつさんしん}不滅三振{RUBY_E#}",
         "fullDesc": "秘技を使用した後、味方全体のHPをそれぞれの最大HP{{1, percent}}%分回復する。",
-        "shortDesc": "",
+        "shortDesc": "秘技を使用した後、味方全体の<orangeStrong>HPを回復</orangeStrong>する。",
         "tag": "回復"
       }
     },

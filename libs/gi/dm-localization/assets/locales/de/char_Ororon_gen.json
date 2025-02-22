@@ -1,0 +1,187 @@
+{
+  "name": "Ororon",
+  "title": "Schatten des Nachtwinds",
+  "description": "Ein junger Mann der Meister des Nachtwinds, der zusammen mit allem, was kreucht und fleucht, in der freien Natur lebt.",
+  "constellationName": "Vampyrum Spectrum",
+  "auto": {
+    "name": "Blitzender Pfeil der schlummernden Seelen",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert die Elektro-Kraft während des Zielens an der Pfeilspitze, die voll aufgeladen <electro>Elektro-Schaden</electro> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "Gezielte Schüsse",
+      "4": "Voll aufgeladene gezielte Schüsse",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kette des Zwielichts",
+    "description": {
+      "0": "Ororon lässt die aus der Ewigkeit ererbte geheime Kunst der Meister des Nachtwinds als eine nachtfarbene <strong>Seelenkugel</strong> erscheinen und wirft sie auf einen Gegner, wobei mit Nachtseelen versehener <electro>Elektro-Schaden</electro> verursacht wird.",
+      "1": "Wenn es andere Gegner in der Nähe gibt, hüpft die Seelenkugel zwischen Gegnern in der Nähe hin und her und verursacht dabei mit Nachtseelen versehenen <electro>Elektro-Schaden</electro>. Nach einem einzelnen Einsetzen der „Kette des Zwielichts“ kann jeder Gegner höchstens einmal als Ziel des Herumhüpfens ausgewählt werden.",
+      "2": "Wenn sie 3-mal herumgehüpft ist oder sich in der Nähe keine Gegner befinden, die als Ziel ausgewählt werden können, verschwindet die Seelenkugel.",
+      "3": "<br/>",
+      "4": "<i>„Die Menschen wollen immer die Zukunft voraussagen, aber das liegt vielleicht daran, dass sie noch nicht entdeckt haben, was sie tun sollten ... Tut mir leid, ich rede wieder unverständliches Zeug.“</i>"
+    },
+    "skillParams": {
+      "0": "Seelenkugel-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Gedämpftes Echo der Finsternis",
+    "description": {
+      "0": "Ororon erweckt ein uraltes geheimes Ritual, verursacht mit Nachtseelen versehenen <electro>Elektro-Flächenschaden</electro> und beschwört ein „Ultraschall-Seelenauge“.",
+      "1": "<br/>",
+      "2": "<strong>Ultraschall-Seelenauge</strong>",
+      "3": [
+        " Verspottet fortlaufend Gegner in der Umgebung und zieht ihre Angriffe auf sich.",
+        " Dreht sich fortlaufend und sendet dabei Schallwellen aus, die Gegnern in der Umgebung mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> zufügen."
+      ],
+      "4": "<br/>",
+      "5": "<i>Wer genügend Wahrnehmung besitzt, kann die subtilen Klänge von allem hören. So verirrt man sich auch in einer langen, lichtlosen Nacht nicht.</i>"
+    },
+    "skillParams": {
+      "0": "SCH des geheimen Rituals",
+      "1": "SCH Schallwellenkollision",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nachtschatten-Synästhesie",
+    "description": {
+      "0": "Verleiht Ororon, wenn ein Truppenmitglied in der Nähe „Nachtseelenaufbruch“ auslöst, 40 Nachtseelenpunkte. Verleiht Ororon 5 Nachtseelenpunkte, wenn sein Truppenmitglied innerhalb von 15 s, nachdem Ororon Elementarfähigkeit angewendet hat, Gegner mit Angriffen der Elemente <hydro>Hydro</hydro> oder <electro>Elektro</electro> getroffen hat; 0,3 s Abklingzeit, während der Wirkungsdauer bis zu 10-mal auszulösen.",
+      "1": "Max. Nachtseelenpunkte für Ororon liegen bei 80 Pkt.",
+      "2": "<br/>",
+      "3": "Verbraucht außerdem, wenn Ororon mindestens 10 Nachtseelenpunkte hat und ein Gegner in der Nähe Schaden von der Reaktion <electro>Unter Strom</electro> oder mit Nachtseelen versehenen Schaden durch sein Truppenmitglied in der Nähe erleidet, 10 Nachtseelenpunkte und geht in den Zustand des Nachtseelensegens über. Löst dabei den Effekt „Feinfühligkeit“ aus: Fügt bis zu 4 Gegnern in der Umgebung mit Nachtseelen versehenen <electro>Elektro-Schaden</electro> in Höhe von 160 % von Ororons ANG zu, 1,8 s Abklingzeit.",
+      "4": "<br/>",
+      "5": "<strong>Nachtseelensegen – Ororon</strong>",
+      "6": "Ororons Nachtseelensegen hält bis zu 6 s."
+    }
+  },
+  "passive2": {
+    "name": "Aspekt-Katalysator",
+    "description": {
+      "0": "Verleiht Ororon, wenn die <strong>Seelenkugel</strong> der Elementarfähigkeit <strong>Kette des Zwielichts</strong> Gegner trifft, 15 s lang den Effekt „Aspektsiegel“.",
+      "1": "<br/>",
+      "2": "<strong>Aspektsiegel</strong>",
+      "3": "Stellt aktuellen Figuren der Truppe in der Nähe, wenn diese mit Standardangriffen, heftigen Schlägen oder Angriffen aus dem Fall Gegner treffen, 3 Punkte Elementarenergie wieder her. Stellt, wenn Ororon inaktiv in der Truppe ist, ihm ebenfalls 3 Punkte Elementarenergie wieder her. 1 s Abklingzeit, während der Wirkungsdauer bis zu 3-mal auszulösen."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Hüpfende Schatten im fließenden Nebel",
+    "description": {
+      "0": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Ororon verwendet werden. Wenn die aktuelle Figur sich in der Luft befindet, wird beim Wechsel zu Ororon Folgendes ausgelöst: Ororon springt hoch hinauf. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung in der eigenen Truppe.",
+      "1": "<br/>",
+      "2": "Beim Gedrückthalten zum Zielen wechselt Ororon in den „Seelensprecher“-Zustand, der es ihm ermöglicht, mit „Nachtgeist-Graffitis“ und „Nachtgeist-Mustern“ zu interagieren und ihre Informationen und Kräfte zu extrahieren. Die Regeln für die Interaktion mit diesen Objekten folgen den Regeln der Iktomisaurier.",
+      "3": "<br/>",
+      "4": "Ororon verbraucht außerdem beim Gedrückthalten zum Springen 75 Punkte Ausdauer und springt dann hoch. Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan verbraucht Ororon vorrangig 5 Punkte Phlogiston und springt damit noch höher.",
+      "5": "In der Luft kann der Standardangriff gedrückt gehalten werden, damit Ororon Phlogiston oder Ausdauer verbraucht, um zu zielen."
+    }
+  },
+  "passive": {
+    "name": "Raffinierte Alltagsfertigkeit",
+    "description": {
+      "0": "Erhöht die Bewegungs-GSW aller eigenen Truppenmitglieder beim Gleiten um 15 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Pfad im Waldnebel",
+    "description": {
+      "0": "Lässt die <strong>Seelenkugel</strong> der Elementarfähigkeit <strong>Kette des Zwielichts</strong> 2-mal zusätzlich hüpfen.",
+      "1": "Verleiht außerdem den von der <strong>Seelenkugel</strong> getroffenen Gegnern den 12 s anhaltenden Effekt „Dunkelheit der Nacht“: Erhöht den den von diesem Effekt betroffenen Gegnern mit „Feinfühligkeit“ des passiven Talents „Nachtschatten-Synästhesie“ zugefügten Schaden um 50 %. Das passive Talent „Nachtschatten-Synästhesie“ muss für diesen Effekt zuerst freigeschaltet werden."
+    }
+  },
+  "constellation2": {
+    "name": "Bienenkönig des versteckten Honigweins",
+    "description": {
+      "0": "Verleiht Ororon nach Anwenden der Spezialfähigkeit <strong>Gedämpftes Echo der Finsternis</strong> den Effekt „Spirituelle Empfindlichkeit“, hält 9 s.",
+      "1": "<br/>",
+      "2": "<strong>Spirituelle Empfindlichkeit</strong>",
+      "3": "Erhöht den <electro>Elektro-Schaden</electro> um 8 %.",
+      "4": "Erhöht außerdem während der Wirkungsdauer beim Treffen jedes zusätzlichen Gegners mit der Spezialfähigkeit <strong>Gedämpftes Echo der Finsternis</strong> oder <strong>Ultraschall-Seelenauge</strong> Ororons <electro>Elektro-Schaden</electro> zusätzlich um 8 %. Sein <electro>Elektro-Schaden</electro> kann auf diese Weise max. um 32 % erhöht werden."
+    }
+  },
+  "constellation3": {
+    "name": "Geisterkäfig der Fledermaus im Nest",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Gedämpftes Echo der Finsternis</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Geheimnisse wie nächtlicher Wind",
+    "description": {
+      "0": "Erhöht die Drehgeschwindigkeit des mit der Spezialfähigkeit <strong>Gedämpftes Echo der Finsternis</strong> beschworenen <strong>Ultraschall-Seelenauges</strong> um 25 %.",
+      "1": "Stellt Ororon selbst außerdem nach dem Anwenden von <strong>Gedämpftes Echo der Finsternis</strong> 8 Punkte Elementarenergie wieder her."
+    }
+  },
+  "constellation5": {
+    "name": "Geschenk für die Seele",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Kette des Zwielichts</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ode an die Quellen der Tiefe",
+    "description": {
+      "0": "Erhöht beim Auslösen von „Feinfühligkeit“ des passiven Talents „Nachtschatten-Synästhesie“ den ANG der eigenen aktuellen Figur in der Truppe 9 s lang um 10 %, 3-fach stapelbar, Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet.",
+      "1": "Löst außerdem beim Anwenden der Spezialfähigkeit <strong>Gedämpftes Echo der Finsternis</strong> einen Effekt aus, der „Feinfühligkeit“ gleicht, und verursacht Schaden in Höhe von 200 % des ursprünglichen Schadens.",
+      "2": "Das passive Talent „Nachtschatten-Synästhesie“ muss für diesen Effekt zuerst freigeschaltet werden."
+    }
+  }
+}

@@ -1,18 +1,8 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  register,
-  registerBuff,
-  teamBuff,
-} from '../../util'
-import { entriesForRelic } from '../util'
+import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
+import { entriesForRelic, registerRelic } from '../util'
 
 const key: RelicSetKey = 'WatchmakerMasterOfDreamMachinations'
 const data_gen = allStats.relic[key]
@@ -20,28 +10,19 @@ const dm = mappedStats.relic[key]
 
 const relicCount = own.common.count.sheet(key)
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { useUltimateOnAlly } = allBoolConditionals(key)
 
-const sheet = register(
+const sheet = registerRelic(
   key,
   // Handles passive buffs
   entriesForRelic(key, data_gen),
 
-  // TODO: Add formulas/buffs
-  // Conditional buffs
   registerBuff(
-    'set2_dmg_',
-    ownBuff.premod.dmg_.add(
-      boolConditional.ifOn(cmpGE(relicCount, 2, dm[2].cond_dmg_))
-    )
-  ),
-  registerBuff(
-    'team_dmg_',
-    teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
-  ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.defIgn_.add(numConditional))
+    'set4_brEffect_',
+    teamBuff.premod.brEffect_.add(
+      cmpGE(relicCount, 4, useUltimateOnAlly.ifOn(dm[4].brEffect_))
+    ),
+    cmpGE(relicCount, 4, 'unique', '')
+  )
 )
 export default sheet

@@ -62,6 +62,29 @@ export function objFilterKeys<K extends string, K2 extends string, V>(
   ) as Record<K2, V>
 }
 
+/**
+ * Filter an object's entries based on a predicate function
+ * @param obj The object to filter
+ * @param f Predicate function that takes (value, key, index)
+ * @returns A new object containing only the entries that pass the predicate
+ */
+export function objFilter<K extends string | number, V>(
+  obj: Record<K, V>,
+  f: (v: V, k: K, i: number) => boolean
+): Record<K, V>
+export function objFilter<K extends string | number, V>(
+  obj: Partial<Record<K, V>>,
+  f: (v: V, k: K, i: number) => boolean
+): Partial<Record<K, V>>
+export function objFilter<K extends string | number, V>(
+  obj: Record<K, V>,
+  f: (v: V, k: K, i: number) => boolean
+): Record<K, V> {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([k, v], i) => f(v as V, k as K, i))
+  ) as Record<K, V>
+}
+
 export function objMap<K extends string | number, V, V2>(
   obj: Record<K, V>,
   f: (v: V, k: K, i: number) => V2
@@ -153,8 +176,8 @@ export const getObjectKeysRecursive = (obj: unknown): string[] =>
 
 export function deepFreeze<T>(obj: T, layers = 5): T {
   if (layers === 0) return obj
-  if (typeof obj === 'object')
-    Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers--))
+  if (obj && typeof obj === 'object')
+    Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers - 1))
   return obj
 }
 
@@ -214,4 +237,54 @@ export function reverseMap<K extends string, V extends string>(
   return Object.fromEntries(
     Object.entries(obj).map(([k, v]) => [v, k])
   ) as Record<V, K>
+}
+
+export function shallowCompareObj<T extends Record<string, any>>(
+  obj1: T,
+  obj2: T
+) {
+  const keys1 = Object.keys(obj1)
+  const keys2 = Object.keys(obj2)
+
+  // Check if the objects have the same number of keys
+  if (keys1.length !== keys2.length) return false
+
+  // Check if all keys and their values are the same
+  for (const key of keys1) if (obj1[key] !== obj2[key]) return false
+
+  return true
+}
+
+export function objFindValue<K extends string, V extends string>(
+  obj: Record<K, V>,
+  value: V
+): K | undefined {
+  return Object.keys(obj).find((k) => obj[k as K] === value) as K | undefined
+}
+
+/**
+ * Returns a new object that is the sum of `a` and `b`
+ */
+export function objSum(
+  a: Record<string, number>,
+  b: Record<string, number>
+): Record<string, number> {
+  const sum = { ...a }
+  for (const k in b) sum[k] = (sum[k] ?? 0) + b[k]
+  return sum
+}
+
+/**
+ * Apply obj `add` to the `base` object
+ */
+export function objSumInPlace(
+  base: Record<string, number>,
+  add: Record<string, number>
+): Record<string, number> {
+  for (const k in add) base[k] = (base[k] ?? 0) + add[k]
+  return base
+}
+
+export function prettify(obj: object | undefined) {
+  return JSON.stringify(obj, undefined, 2)
 }

@@ -1,7 +1,7 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
-import { equal, input, subscript } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg, trans } from '../../../SheetUtil'
+import { equal, equalStr, input, subscript } from '@genshin-optimizer/gi/wr'
+import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -17,12 +17,11 @@ const dmg_arr = data_gen.refinementBonus.dmg_
 if (!dmg_arr)
   throw new Error(`data_gen.refinementBonus.dmg_ for ${key} was undefined`)
 const dmg_ = subscript(input.weapon.refinement, dmg_arr)
-// TODO: These should not stack, similar to NO. But I don't want to copy NO's
-// solution, since then these nodes won't show in the team buff panel. And it's
-// a bit unlikely people will try to stack this buff
-const atk_ = equal(
-  'on',
-  condPassive,
+
+const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
+const [atk_, atk_inactive] = nonStackBuff(
+  'millenialatk',
+  'atk_',
   subscript(input.weapon.refinement, atk_Src)
 )
 const normal_dmg_ = equal(
@@ -44,6 +43,9 @@ const data = dataObjForWeaponSheet(key, {
       charged_dmg_,
       plunging_dmg_,
     },
+    nonStacking: {
+      millenialatk: nonstackWrite,
+    },
   },
 })
 const sheet: IWeaponSheet = {
@@ -62,9 +64,6 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atk_,
-            },
-            {
               node: normal_dmg_,
             },
             {
@@ -72,6 +71,12 @@ const sheet: IWeaponSheet = {
             },
             {
               node: plunging_dmg_,
+            },
+            {
+              node: atk_,
+            },
+            {
+              node: atk_inactive,
             },
             {
               text: stg('duration'),

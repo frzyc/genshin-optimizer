@@ -7,10 +7,10 @@ import {
   initCustomTarget,
   validateCustomMultiTarget,
 } from './CustomMultiTarget'
+import type { GeneratedBuild } from './GeneratedBuildListDataManager'
 import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
-  GeneratedBuild,
   OptConfig,
   StatFilterSetting,
   StatFilters,

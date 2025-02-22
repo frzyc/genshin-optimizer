@@ -11,11 +11,15 @@ on:
       - 'apps/somnia-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
+      - 'apps/zzz-frontend/**'
+      - 'apps/zzz-frontend-e2e/**'
       - 'libs/gi/formula/**'
       - 'libs/gi/formula-ui/**'
       - 'libs/gi/i18n-node/**'
+      - 'libs/game-opt/**'
       - 'libs/pando/**'
       - 'libs/sr/**'
+      - 'libs/zzz/**'
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
@@ -24,4 +28,6 @@ jobs:
     with:
       frontend_name: 'frontend'
       deployment_name: ${{ github.event.number }}
+      repo_var_name: 'PR_REPO'
+      repo_deploy_secret_name: 'PR_REPO_SSH_KEY'
       show_dev_components: ${{ contains(github.event.pull_request.labels.*.name, 'showDevComponents') }}

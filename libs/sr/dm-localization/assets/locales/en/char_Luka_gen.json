@@ -58,7 +58,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Kinetic Overload",
-        "fullDesc": "When the Skill is used, immediately dispels {{1}} buff from the enemy target.",
+        "fullDesc": "When using Skill, immediately dispels {{1}} buff(s) from the enemy target.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Crush Fighting Will",
-        "fullDesc": "When using Enhanced Basic ATK, every hit Direct Punch deals has a {{1, percent}}% fixed chance for Luka to use 1 additional hit. This effect does not apply to additional hits generated in this way.",
+        "fullDesc": "When using Enhanced Basic ATK, every hit of \"Direct Punch\" has a {{1, percent}}% fixed chance for Luka to use 1 additional hit. This effect does not apply to additional hits generated in this way.",
         "shortDesc": "",
         "tag": ""
       }

@@ -36,7 +36,9 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11425: 'FinaleOfTheDeep',
   11426: 'FleuveCendreFerryman',
   11427: 'TheDockhandsAssistant',
+  11430: 'SturdyBone',
   11431: 'FluteOfEzpitzal',
+  11432: 'CalamityOfEshu',
   11501: 'AquilaFavonia',
   11502: 'SkywardBlade',
   11503: 'FreedomSworn',
@@ -52,6 +54,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11513: 'SplendorOfTranquilWaters',
   11514: 'UrakuMisugiri',
   11515: 'Absolution',
+  11516: 'PeakPatrolSong',
 
   //claymore
   12101: 'WasterGreatsword',
@@ -84,6 +87,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12426: 'UltimateOverlordsMegaMagicSword',
   12427: 'PortablePowerSaw',
   11428: 'SwordOfNarzissenkreuz',
+  12430: 'FruitfulHook',
   12431: 'EarthShaker',
   12501: 'SkywardPride',
   12502: 'WolfsGravestone',
@@ -96,6 +100,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12511: 'BeaconOfTheReedSea',
   12512: 'Verdict',
   12513: 'FangOfTheMountainKing',
+  12514: 'AThousandBlazingSuns',
 
   //polearm
   13101: 'BeginnersProtector',
@@ -122,7 +127,9 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13425: 'RightfulReward',
   13426: 'DialoguesOfTheDesertSages',
   13427: 'ProspectorsDrill',
+  13430: 'MountainBracingBolt',
   13431: 'FootprintOfTheRainbow',
+  13432: 'TamayurateiNoOhanashi',
   13501: 'StaffOfHoma',
   13502: 'SkywardSpine',
   // 13503: "",
@@ -165,6 +172,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14425: 'FlowingPurity',
   14426: 'BalladOfTheBoundlessBlue',
   14427: 'AshGravenDrinkingHorn',
+  14430: 'WaveridingWhirl',
   14431: 'RingOfYaxche',
   14501: 'SkywardAtlas',
   14502: 'LostPrayerToTheSacredWinds',
@@ -183,6 +191,8 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14514: 'TomeOfTheEternalFlow',
   14515: 'CranesEchoingCall',
   14516: 'SurfsUp',
+  14517: 'StarcallersWatch',
+  14518: 'SunnyMorningSleepIn',
 
   //bow
   15101: 'HuntersBow',
@@ -216,6 +226,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15425: 'SongOfStillness',
   15426: 'Cloudforged',
   15427: 'RangeGauge',
+  15430: 'FlowerWreathedFeathers',
   15431: 'ChainBreaker',
   15501: 'SkywardHarp',
   15502: 'AmosBow',
@@ -229,5 +240,6 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15511: 'HuntersPath',
   15512: 'TheFirstGreatMagic',
   15513: 'SilvershowerHeartstrings',
+  15514: 'AstralVulturesCrimsonPlumage',
 } as const
 export type WeaponId = keyof typeof weaponIdMap

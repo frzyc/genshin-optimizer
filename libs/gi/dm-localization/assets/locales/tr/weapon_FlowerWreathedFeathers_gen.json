@@ -1,0 +1,24 @@
+{
+  "name": "Çiçek Bezeli Tüyler",
+  "description": {
+    "0": "Alev gibi yanan uzun bir yay. Onu süsleyen tüylerin zalim Ngoubou'dan geldiği söylenir."
+  },
+  "passiveName": "Erişilmez Gelişim",
+  "passiveDescription": {
+    "0": {
+      "0": "Uçuş sırasındaki Dayanıklılık Tüketimi %15 azalır. Hedefli Atış kullanılırken her 0,5 saniyede Yüklü Saldırı Hasarı <cryo>%6</cryo> artar. Bu etki 6 kademeye kadar birikebilir ve Nişan Alma Modundan çıktıktan 10sn sonra kaldırılır."
+    },
+    "1": {
+      "0": "Uçuş sırasındaki Dayanıklılık Tüketimi %15 azalır. Hedefli Atış kullanılırken her 0,5 saniyede Yüklü Saldırı Hasarı <cryo>%7,5</cryo> artar. Bu etki 6 kademeye kadar birikebilir ve Nişan Alma Modundan çıktıktan 10sn sonra kaldırılır."
+    },
+    "2": {
+      "0": "Uçuş sırasındaki Dayanıklılık Tüketimi %15 azalır. Hedefli Atış kullanılırken her 0,5 saniyede Yüklü Saldırı Hasarı <cryo>%9</cryo> artar. Bu etki 6 kademeye kadar birikebilir ve Nişan Alma Modundan çıktıktan 10sn sonra kaldırılır."
+    },
+    "3": {
+      "0": "Uçuş sırasındaki Dayanıklılık Tüketimi %15 azalır. Hedefli Atış kullanılırken her 0,5 saniyede Yüklü Saldırı Hasarı <cryo>%10,5</cryo> artar. Bu etki 6 kademeye kadar birikebilir ve Nişan Alma Modundan çıktıktan 10sn sonra kaldırılır."
+    },
+    "4": {
+      "0": "Uçuş sırasındaki Dayanıklılık Tüketimi %15 azalır. Hedefli Atış kullanılırken her 0,5 saniyede Yüklü Saldırı Hasarı <cryo>%12</cryo> artar. Bu etki 6 kademeye kadar birikebilir ve Nişan Alma Modundan çıktıktan 10sn sonra kaldırılır."
+    }
+  }
+}

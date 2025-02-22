@@ -33,6 +33,8 @@ import SacrificialFragments from './SacrificialFragments'
 import SacrificialJade from './SacrificialJade'
 import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
+import StarcallersWatch from './StarcallersWatch'
+import SunnyMorningSleepIn from './SunnyMorningSleepIn'
 import SurfsUp from './SurfsUp'
 import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
@@ -40,6 +42,7 @@ import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 import TwinNephrite from './TwinNephrite'
 import WanderingEvenstar from './WanderingEvenstar'
+import WaveridingWhirl from './WaveridingWhirl'
 import WineAndSong from './WineAndSong'
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
@@ -75,6 +78,8 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   SacrificialJade,
   SkywardAtlas,
   SolarPearl,
+  StarcallersWatch,
+  SunnyMorningSleepIn,
   SurfsUp,
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
@@ -82,6 +87,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   TulaytullahsRemembrance,
   TwinNephrite,
   WanderingEvenstar,
+  WaveridingWhirl,
   WineAndSong,
 } as const
 export default catalyst

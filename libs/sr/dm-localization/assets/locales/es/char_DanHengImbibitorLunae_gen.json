@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Retorno del reino",
-      "desc": "Cuando otro aliado usa su habilidad definitiva, la PEN de la RES a Imaginario del siguiente Salto fulgurante de Dan Heng - Imbibitor Lunae aumenta en un {{1, percent}}%. Este efecto se puede acumular hasta {{2}} veces."
+      "desc": "Cuando otro personaje aliado usa su habilidad definitiva, la PEN de la RES a Imaginario del siguiente Salto fulgurante de Dan Heng - Imbibitor Lunae aumenta en un {{1, percent}}%. Este efecto se puede acumular hasta {{2}} veces."
     }
   }
 }

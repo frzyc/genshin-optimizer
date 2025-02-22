@@ -1,0 +1,24 @@
+{
+  "name": "Tamayuratei no Ohanashi",
+  "description": {
+    "0": "Once upon a time, there was a youkai that roamed Inazuma in the form of a lantern's flame. This must once have been one of its vessels."
+  },
+  "passiveName": "Busybody's Running Light",
+  "passiveDescription": {
+    "0": {
+      "0": "Increase ATK by <cryo>20%</cryo> and Movement SPD by 10% for 10s when using an Elemental Skill."
+    },
+    "1": {
+      "0": "Increase ATK by <cryo>25%</cryo> and Movement SPD by 10% for 10s when using an Elemental Skill."
+    },
+    "2": {
+      "0": "Increase ATK by <cryo>30%</cryo> and Movement SPD by 10% for 10s when using an Elemental Skill."
+    },
+    "3": {
+      "0": "Increase ATK by <cryo>35%</cryo> and Movement SPD by 10% for 10s when using an Elemental Skill."
+    },
+    "4": {
+      "0": "Increase ATK by <cryo>40%</cryo> and Movement SPD by 10% for 10s when using an Elemental Skill."
+    }
+  }
+}

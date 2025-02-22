@@ -12,7 +12,10 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
-import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
+import {
+  allArtifactSlotKeys,
+  type ArtifactSlotKey,
+} from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import {
@@ -49,12 +52,14 @@ import { ArtifactEditor } from './editor'
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 
 export function ArtifactSwapModal({
+  artId,
   onChangeId,
   slotKey,
   show,
   onClose,
 }: {
-  onChangeId: (id: string) => void
+  artId: string
+  onChangeId: (id: string | null) => void
   slotKey: ArtifactSlotKey
   show: boolean
   onClose: () => void
@@ -91,10 +96,16 @@ export function ArtifactSwapModal({
 
   const artifactIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
-    return (
-      dbDirty && database.arts.values.filter(filterFunc).map((art) => art.id)
-    )
-  }, [dbDirty, database, filterConfigs, filterOption])
+    let artifactIds = database.arts.values
+      .filter(filterFunc)
+      .map((art) => art.id)
+    if (artId && database.arts.get(artId)) {
+      // always show artId first if it exists
+      artifactIds = artifactIds.filter((id) => id !== artId) // remove
+      artifactIds.unshift(artId) // add to beginnig
+    }
+    return dbDirty && artifactIds
+  }, [filterOption, filterConfigs, database, artId, dbDirty])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
@@ -117,12 +128,14 @@ export function ArtifactSwapModal({
     t: t,
     namespace: 'artifact',
   }
-  const [swapArtId, setSwapArtId] = useState('')
+  const [swapArtId, setSwapArtId] = useState<string | ArtifactSlotKey>('')
   const clickHandler = useCallback(() => {
-    if (!swapArtId) {
-      return
-    }
-    onChangeId(swapArtId)
+    if (
+      !swapArtId ||
+      allArtifactSlotKeys.includes(swapArtId as ArtifactSlotKey)
+    ) {
+      onChangeId(null)
+    } else onChangeId(swapArtId)
     setSwapArtId('')
     onClose()
   }, [onChangeId, onClose, swapArtId])
@@ -151,7 +164,7 @@ export function ArtifactSwapModal({
         >
           <Typography variant="h6">
             {slotKey ? <ImgIcon src={imgAssets.slot[slotKey]} /> : null}{' '}
-            {t`tabEquip.swapArt`}
+            {t('tabEquip.swapArt')}
           </Typography>
           <IconButton onClick={onClose} sx={{ ml: 'auto' }}>
             <CloseIcon />
@@ -203,39 +216,57 @@ export function ArtifactSwapModal({
                 onEquip={clickHandler}
               />
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
-                <Grid item xs={1}>
-                  <CardThemed
-                    bgt="light"
-                    sx={{ width: '100%', height: '100%' }}
-                  >
-                    <CardActionArea
-                      sx={{
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                      onClick={() => setSwapArtId(slotKey)}
+                {/* only show "unequip" when an artifact is equipped */}
+                {artId && (
+                  <Grid item xs={1}>
+                    <CardThemed
+                      bgt="light"
+                      sx={{ width: '100%', height: '100%' }}
                     >
-                      <Box
+                      <CardActionArea
                         sx={{
+                          width: '100%',
+                          height: '100%',
                           display: 'flex',
-                          flexDirection: 'column',
+                          justifyContent: 'center',
                           alignItems: 'center',
                         }}
+                        onClick={() => setSwapArtId(slotKey)}
                       >
-                        <RemoveCircleIcon sx={{ fontSize: '10em' }} />
-                        <Typography>{t`artifact:button.unequipArtifact`}</Typography>
-                      </Box>
-                    </CardActionArea>
-                  </CardThemed>
-                </Grid>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                          }}
+                        >
+                          <RemoveCircleIcon sx={{ fontSize: '10em' }} />
+                          <Typography>
+                            {t('artifact:button.unequipArtifact')}
+                          </Typography>
+                        </Box>
+                      </CardActionArea>
+                    </CardThemed>
+                  </Grid>
+                )}
                 {artifactIdsToShow.map((id) => (
-                  <Grid item key={id} xs={1}>
+                  <Grid
+                    item
+                    key={id}
+                    xs={1}
+                    sx={(theme) => ({
+                      ...(artId === id && {
+                        '> .MuiCard-root': {
+                          outline: `solid ${theme.palette.warning.main}`,
+                        },
+                      }),
+                    })}
+                  >
                     <ArtifactCard
                       artifactId={id}
-                      onClick={() => setSwapArtId(id)}
+                      onClick={
+                        artId === id ? undefined : () => setSwapArtId(id)
+                      }
                     />
                   </Grid>
                 ))}

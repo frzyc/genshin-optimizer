@@ -5,6 +5,7 @@ import {
   StyledInputBase,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
@@ -18,7 +19,6 @@ import {
 } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { useDatabaseContext } from '../Context'
 import { UploadCard } from './UploadCard'
 
 export function DatabaseCard() {
@@ -27,7 +27,7 @@ export function DatabaseCard() {
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ py: 1 }}>
-        <Typography variant="subtitle1">{t`DatabaseCard.title`}</Typography>
+        <Typography variant="subtitle1">{t('DatabaseCard.title')}</Typography>
       </CardContent>
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -113,7 +113,10 @@ function DataCard({ index }: { index: number }) {
     database.dbMeta.set({ name: tempName })
     database.toExtraLocalDB()
   }, [tempName, database])
-  const onKeyDown = useCallback((e) => e.key === 'Enter' && onBlur(), [onBlur])
+  const onKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
+    [onBlur]
+  )
 
   return (
     <CardThemed
@@ -137,19 +140,17 @@ function DataCard({ index }: { index: number }) {
           onKeyDown={onKeyDown}
         />
         {!current && (
-          <Button
-            startIcon={<ImportExport />}
-            onClick={onSwap}
-            color="warning"
-          >{t`DatabaseCard.button.swap`}</Button>
+          <Button startIcon={<ImportExport />} onClick={onSwap} color="warning">
+            {t('DatabaseCard.button.swap')}
+          </Button>
         )}
         <Chip
           color={current ? 'success' : 'secondary'}
           sx={{ alignSelf: 'center' }}
           label={
             current
-              ? t`DatabaseCard.currentDB`
-              : `${t`DatabaseCard.title`} ${database.dbIndex}`
+              ? t('DatabaseCard.currentDB')
+              : `${t('DatabaseCard.title')} ${database.dbIndex}`
           }
         />
       </CardContent>
@@ -200,7 +201,7 @@ function DataCard({ index }: { index: number }) {
                   startIcon={<Upload />}
                   onClick={onOpen}
                 >
-                  {t`DatabaseCard.button.upload`}
+                  {t('DatabaseCard.button.upload')}
                 </Button>
               </Grid>
               <Grid item xs={1}>
@@ -210,7 +211,7 @@ function DataCard({ index }: { index: number }) {
                   onClick={download}
                   startIcon={<Download />}
                 >
-                  {t`DatabaseCard.button.download`}
+                  {t('DatabaseCard.button.download')}
                 </Button>
               </Grid>
               <Grid item xs={1}>
@@ -221,7 +222,7 @@ function DataCard({ index }: { index: number }) {
                   onClick={onDelete}
                   startIcon={<Delete />}
                 >
-                  {t`DatabaseCard.button.delete`}
+                  {t('DatabaseCard.button.delete')}
                 </Button>
               </Grid>
             </Grid>

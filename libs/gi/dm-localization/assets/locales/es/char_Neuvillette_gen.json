@@ -28,7 +28,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del agua, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+        "1": "Concentra el poder del agua y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
       }
     },
     "skillParams": {
@@ -129,7 +129,7 @@
     "name": "Eminente ordenanza",
     "description": {
       "0": "Cuando Neuvillette entra en el campo de batalla, obtiene 1 carga del efecto “gloria del legado draconiano” del talento pasivo “Legatario de toda agua” (es necesario desbloquear el talento pasivo Legatario de toda agua).",
-      "1": "Además, al ejecutar el Ataque Potenciado: Apercibimiento procesal y el Ataque Cargado: Sentencia ecuánime, su Res a interrupción aumenta."
+      "1": "Además, al ejecutar el Ataque Potenciado: Apercibimiento procesal y el Ataque Cargado: Sentencia ecuánime, su RES a interrupción aumenta."
     }
   },
   "constellation2": {

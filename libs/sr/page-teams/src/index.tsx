@@ -1,5 +1,5 @@
-import { TeamInventory } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
+import { TeamInventory } from './TeamInventory'
 
 export default function PageTeams() {
   return (

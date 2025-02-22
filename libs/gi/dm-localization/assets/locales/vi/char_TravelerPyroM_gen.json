@@ -1,0 +1,151 @@
+{
+  "auto": {
+    "name": "Ngọn Lửa Dị Bang",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, vung ra hai nhát kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Thể lực Trọng Kích tiêu hao",
+      "7": "Sát Thương Khi Đáp",
+      "8": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Lưu Hỏa Kiếm",
+    "description": {
+      "0": "Điều khiển ngọn lửa có thể thiêu rụi mặt đất, căn cứ vào Nhấn hoặc Nhấn Giữ để sản sinh hiệu quả khác nhau.",
+      "1": "<br/>",
+      "2": "<strong>Nhấn</strong>",
+      "3": "Điều khiển ngọn lửa bùng cháy. Sau khi thi triển, Nhà Lữ Hành nhận được 42 điểm Dạ Hồn và vào trạng thái Dạ Hồn Chúc Phúc, đồng thời triệu hồi Vòng Rực Cháy đi theo nhân vật trong trận.",
+      "4": "Vòng Rực Cháy khi tiếp cận kẻ địch sẽ gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> theo chu kỳ mang thuộc tính Dạ Hồn cho kẻ địch gần đó.",
+      "5": "<br/>",
+      "6": "<strong>Nhấn Giữ</strong>",
+      "7": "Điều khiển ngọn lửa âm ỉ, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn cho kẻ địch xung quanh. Sau khi thi triển, Nhà Lữ Hành nhận được 42 điểm Dạ Hồn và vào trạng thái Dạ Hồn Chúc Phúc, đồng thời triệu hồi Vòng Thiêu Đốt đi theo nhân vật trong trận.",
+      "8": "Khi nhân vật trong trận có Vòng Thiêu Đốt và gây sát thương cho kẻ địch thì Vòng Thiêu Đốt sẽ hỗ trợ tấn công, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn dựa vào Tấn Công của Nhà Lữ Hành. Hiệu quả này mỗi 3s tối đa kích hoạt một lần.",
+      "9": "<br/>",
+      "10": "<strong>Dạ Hồn Chúc Phúc - Nhà Lữ Hành</strong>",
+      "11": "Liên tục tiêu hao điểm Dạ Hồn. Dạ Hồn Chúc Phúc của Nhà Lữ Hành tối đa duy trì 12s. Khi tiêu hao hết điểm Dạ Hồn, trạng thái Dạ Hồn Chúc Phúc của Nhà Lữ Hành sẽ kết thúc. Nếu thi triển lại Kỹ Năng Nguyên Tố trong thời gian này, điểm Dạ Hồn của Nhà Lữ Hành sẽ được làm mới thành 42 điểm.",
+      "12": "Vòng Rực Cháy và Vòng Thiêu Đốt sẽ biến mất khi Dạ Hồn Chúc Phúc của Nhà Lữ Hành kết thúc, cùng lúc chỉ tồn tại một Vòng Rực Cháy hoặc Vòng Thiêu Đốt do bản thân Nhà Lữ Hành triệu hồi.",
+      "13": "<br/>",
+      "14": "<i>Cùng Paimon quan sát màu sắc của ngọn lửa rực cháy.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Vòng Rực Cháy",
+      "1": "Sát Thương Nhấn Giữ",
+      "2": "Sát Thương Vòng Thiêu Đốt",
+      "3": "Giới Hạn Điểm Dạ Hồn",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Chước Hỏa Liêu Nguyên",
+    "description": {
+      "0": "Ngưng tụ ngọn lửa thành dấu ấn, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn cho kẻ địch phía trước. Đồng thời Nhà Lữ Hành sẽ hồi phục 7 điểm Dạ Hồn mỗi giây trong 4s tiếp theo.",
+      "1": "<br/>",
+      "2": "<i>Cùng Paimon nghiên cứu điều kiện khiến ngọn lửa cháy mãi không tắt.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Chiến Hỏa Lan Tràn",
+    "description": {
+      "0": "Khi Nhà Lữ Hành có hơn 20 điểm Dạ Hồn, phạm vi tấn công của Vòng Rực Cháy và Vòng Thiêu Đốt từ Kỹ Năng Nguyên Tố <strong>Lưu Hỏa Kiếm</strong> sau khi chúng đánh trúng kẻ địch sẽ gia tăng."
+    }
+  },
+  "passive2": {
+    "name": "Dư Hỏa Âm Ỉ",
+    "description": {
+      "0": "Nhân vật trong trận khi có <strong>Vòng Rực Cháy</strong> hoặc <strong>Vòng Thiêu Đốt</strong>, sau khi kích hoạt <pyro>phản ứng liên quan đến Nguyên Tố Hỏa</pyro> lên kẻ địch, sẽ hồi phục 5 điểm Năng Lượng Nguyên Tố cho Nhà Lữ Hành. Hiệu quả này mỗi 12s tối đa kích hoạt một lần. Ngoài ra, nhân vật trong đội gần đó khi kích hoạt Dạ Hồn Bùng Nổ, sẽ hồi phục cho Nhà Lữ Hành 4 điểm Năng Lượng Nguyên Tố."
+    }
+  },
+  "constellation1": {
+    "name": "Lửa Sao Sáng Rực",
+    "description": {
+      "0": "Trong thời gian <strong>Vòng Rực Cháy</strong> hoặc <strong>Vòng Thiêu Đốt</strong> tồn tại, sát thương gây ra từ nhân vật trong trận hiện tại tăng 6%. Nếu nhân vật trong trận hiện tại ở trong trạng thái Dạ Hồn Chúc Phúc, sát thương gây ra sẽ còn tăng thêm 9%."
+    }
+  },
+  "constellation2": {
+    "name": "Lửa Nến Lấp Lánh",
+    "description": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nguyên Tố <strong>Lưu Hỏa Kiếm</strong>, khi nhân vật trong đội gần đó kích hoạt <pyro>phản ứng liên quan đến Nguyên Tố Hỏa</pyro> lên kẻ địch, sẽ hồi phục 14 điểm Dạ Hồn cho Nhà Lữ Hành. Mỗi lần thi triển Kỹ Năng Nguyên Tố <strong>Lưu Hỏa Kiếm</strong> tối đa hồi phục 28 điểm Dạ Hồn thông qua cách thức này."
+    }
+  },
+  "constellation3": {
+    "name": "Lửa Chiến Truyền Thừa",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Lưu Hỏa Kiếm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lửa Đỏ Bỏng Cháy",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ <strong>Chước Hỏa Liêu Nguyên</strong>, Nhà Lữ Hành nhận được 20% <pyro>Buff Sát Thương Nguyên Tố Hỏa</pyro> trong 9s."
+    }
+  },
+  "constellation5": {
+    "name": "Lửa Cháy Bất Diệt",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Chước Hỏa Liêu Nguyên</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Lửa Thánh Trường Tồn",
+    "description": {
+      "0": "Khi trong trạng thái Dạ Hồn Chúc Phúc, Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Nhà Lữ Hành sẽ chuyển hóa thành <pyro>Sát Thương Nguyên Tố Hỏa</pyro> không thể bị thay thế và mang thuộc tính Dạ Hồn, đồng thời Sát Thương Bạo Kích của những đòn tấn công này tăng 40%."
+    }
+  }
+}

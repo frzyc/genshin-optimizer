@@ -1,7 +1,7 @@
 {
   "name": "Mualani",
   "title": "La Cabalgadora de Olas Rugientes",
-  "description": "Una guía de Natlan muy famosa que lleva una tienda de suministros acuáticos, así como una surfera experta en todo tipo de deportes de agua.",
+  "description": "Una guía de Natlan muy famosa que lleva una tienda de suministros acuáticos, así como una surfista experta en todo tipo de deportes de agua.",
   "constellationName": "Phoca Neomonachus",
   "auto": {
     "name": "Refrescamiento",
@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del agua, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+        "1": "Concentra el poder del agua y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
       }
     },
     "skillParams": {

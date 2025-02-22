@@ -1,0 +1,24 @@
+{
+  "name": "Meyve Kancası",
+  "description": {
+    "0": "Gök Kubbenin Evlatlarından cesur Burkina, bu silahı Tenoch'un yardımıyla yaptı. Tek amacıysa Natlan'da eşi benzeri bulunmayan Alev Narlarını toplayabilmekti."
+  },
+  "passiveName": "Dökülen Dalların Ağırlığı",
+  "passiveDescription": {
+    "0": {
+      "0": "Havadan Saldırı Kritik Oranı <cryo>%16</cryo> artar. Bir düşmana Havadan Saldırı ile vurulduğunda 10sn boyunca Normal, Yüklü ve Havadan Saldırıların verdiği Hasar <cryo>%16</cryo> artar."
+    },
+    "1": {
+      "0": "Havadan Saldırı Kritik Oranı <cryo>%20</cryo> artar. Bir düşmana Havadan Saldırı ile vurulduğunda 10sn boyunca Normal, Yüklü ve Havadan Saldırıların verdiği Hasar <cryo>%20</cryo> artar."
+    },
+    "2": {
+      "0": "Havadan Saldırı Kritik Oranı <cryo>%24</cryo> artar. Bir düşmana Havadan Saldırı ile vurulduğunda 10sn boyunca Normal, Yüklü ve Havadan Saldırıların verdiği Hasar <cryo>%24</cryo> artar."
+    },
+    "3": {
+      "0": "Havadan Saldırı Kritik Oranı <cryo>%28</cryo> artar. Bir düşmana Havadan Saldırı ile vurulduğunda 10sn boyunca Normal, Yüklü ve Havadan Saldırıların verdiği Hasar <cryo>%28</cryo> artar."
+    },
+    "4": {
+      "0": "Havadan Saldırı Kritik Oranı <cryo>%32</cryo> artar. Bir düşmana Havadan Saldırı ile vurulduğunda 10sn boyunca Normal, Yüklü ve Havadan Saldırıların verdiği Hasar <cryo>%32</cryo> artar."
+    }
+  }
+}

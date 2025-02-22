@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Dor e Raiva",
-        "fullDesc": "Aumenta o Dano de Arlan com base na porcentagem de PV reduzidos de seus PV máximos, até um máximo de <orangeStrong>{{1, percent}}%</orangeStrong> a mais de Dano.",
-        "shortDesc": "Ganha bônus de Dano <orangeStrong>baseado na</orangeStrong> <orangeStrong>porcentagem de PV perdidos</orangeStrong>.",
+        "fullDesc": "Com base na porcentagem atual de PV perdidos de Arlan, ganha um bônus de Dano, até um aumento máximo de <orangeStrong>{{1, percent}}%</orangeStrong> no Dano causado por Arlan.",
+        "shortDesc": "Ganha bônus de Dano <orangeStrong>baseado na</orangeStrong> <orangeStrong>porcentagem atual de PV perdidos</orangeStrong>.",
         "tag": "Aprimoramento"
       }
     },
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Repulsa",
-        "fullDesc": "Ao entrar na batalha, se os PV de Arlan forem iguais ou inferiores a {{1, percent}}%, ele pode anular todo o Dano recebido até ser atacado, exceto por fontes de Dano Contínuo.",
+        "fullDesc": "Ao entrar na batalha, se a porcentagem dos PV de Arlan forem iguais ou inferiores a {{1, percent}}%, ele pode anular todo o Dano recebido até ser atacado, exceto por fontes de Dano Contínuo.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,11 +77,11 @@
   "ranks": {
     "1": {
       "name": "Até o Amargo Fim",
-      "desc": "Quando os PV estiverem abaixo ou iguais a 50% dos PV máximos, o Dano da Perícia aumenta em {{1, percent}}%."
+      "desc": "Quando a porcentagem dos PV estiverem abaixo ou iguais a 50% dos PV máximos, o Dano da Perícia aumenta em {{1, percent}}%."
     },
     "2": {
       "name": "Libertação",
-      "desc": "Usar a Perícia ou a Perícia Suprema remove 1 penalidade de si mesmo."
+      "desc": "Usar a Perícia ou a Perícia Suprema remove 1 penalidade desta unidade."
     },
     "3": {
       "name": "Superação",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Autossacrifício",
-      "desc": "Quando os PV caem para 50% ou menos, a Perícia Suprema causa {{1, percent}}% a mais de Dano. O multiplicador de Dano para alvos adjacentes é elevado ao mesmo nível que o do alvo principal."
+      "desc": "Quando a porcentagem atual de PV cai para 50% ou menos, a Perícia Suprema causa {{1, percent}}% a mais de Dano e o multiplicador de Dano para alvos adjacentes é elevado ao mesmo nível que o do alvo principal."
     }
   }
 }

@@ -89,13 +89,13 @@ export class CharacterDataManager extends DataManager<
             (sk) =>
               Object.values(this.database.relics?.data ?? {}).find(
                 (r) => r?.location === id && r.slotKey === sk
-              )?.id ?? ''
+              )?.id
           ),
       equippedLightCone: oldChar
         ? oldChar.equippedLightCone
         : Object.values(this.database.lightCones?.data ?? {}).find(
             (lc) => lc?.location === id
-          )?.id ?? '',
+          )?.id,
       ...storageObj,
     }
   }
@@ -151,6 +151,7 @@ export class CharacterDataManager extends DataManager<
     const char = this.get(key)
     if (!char) return undefined
     for (const relicKey of Object.values(char.equippedRelics)) {
+      if (!relicKey) continue
       const relic = this.database.relics.get(relicKey)
       if (relic && relic.location === key)
         this.database.relics.setCached(relicKey, { ...relic, location: '' })
@@ -169,7 +170,11 @@ export class CharacterDataManager extends DataManager<
    * This does not update the `location` on relic
    * This function should be use internally for database to maintain cache on ICachedSroCharacter.
    */
-  setEquippedRelic(key: CharacterKey, slotKey: RelicSlotKey, relicId: string) {
+  setEquippedRelic(
+    key: CharacterKey,
+    slotKey: RelicSlotKey,
+    relicId: string | undefined
+  ) {
     const char = super.get(key)
     if (!char) return
     const equippedRelics = deepClone(char.equippedRelics)

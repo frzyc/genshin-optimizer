@@ -1,0 +1,24 @@
+{
+  "name": "Piuma cremisi dell'avvoltoio astrale",
+  "description": {
+    "0": "Un antico arco lungo decorato con piume rosse, una reliquia sacra del Clan Piumafiore tramandata di generazione in generazione."
+  },
+  "passiveName": "Anello lunare",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo aver innescato una reazione di Turbinio, l'ATT aumenta di un <cryo>24%</cryo> per 12 s. Inoltre, se nel gruppo ci sono 1/2 o più personaggi con un tipo elementale diverso rispetto al personaggio che equipaggia l'arma, i DAN da attacco caricato e da Tripudio elementale di quest'ultimo aumentano rispettivamente di un <cryo>20%/48%</cryo> e di un <cryo>10%/24%</cryo>."
+    },
+    "1": {
+      "0": "Dopo aver innescato una reazione di Turbinio, l'ATT aumenta di un <cryo>30%</cryo> per 12 s. Inoltre, se nel gruppo ci sono 1/2 o più personaggi con un tipo elementale diverso rispetto al personaggio che equipaggia l'arma, i DAN da attacco caricato e da Tripudio elementale di quest'ultimo aumentano rispettivamente di un <cryo>25%/60%</cryo> e di un <cryo>12,5%/30%</cryo>."
+    },
+    "2": {
+      "0": "Dopo aver innescato una reazione di Turbinio, l'ATT aumenta di un <cryo>36%</cryo> per 12 s. Inoltre, se nel gruppo ci sono 1/2 o più personaggi con un tipo elementale diverso rispetto al personaggio che equipaggia l'arma, i DAN da attacco caricato e da Tripudio elementale di quest'ultimo aumentano rispettivamente di un <cryo>30%/72%</cryo> e di un <cryo>15%/36%</cryo>."
+    },
+    "3": {
+      "0": "Dopo aver innescato una reazione di Turbinio, l'ATT aumenta di un <cryo>42%</cryo> per 12 s. Inoltre, se nel gruppo ci sono 1/2 o più personaggi con un tipo elementale diverso rispetto al personaggio che equipaggia l'arma, i DAN da attacco caricato e da Tripudio elementale di quest'ultimo aumentano rispettivamente di un <cryo>35%/84%</cryo> e di un <cryo>17,5%/42%</cryo>."
+    },
+    "4": {
+      "0": "Dopo aver innescato una reazione di Turbinio, l'ATT aumenta di un <cryo>48%</cryo> per 12 s. Inoltre, se nel gruppo ci sono 1/2 o più personaggi con un tipo elementale diverso rispetto al personaggio che equipaggia l'arma, i DAN da attacco caricato e da Tripudio elementale di quest'ultimo aumentano rispettivamente di un <cryo>40%/96%</cryo> e di un <cryo>20%/48%</cryo>."
+    }
+  }
+}

@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Icing on the Kick",
-        "fullDesc": "Setelah melancarkan serangan, akan mengakibatkan Ice DMG tambahan sebesar {{1, percent}}% ATK Yanqing pada target musuh dengan Ice Weakness.",
+        "fullDesc": "Setelah melancarkan serangan, akan mengakibatkan Ice DMG Tambahan sebesar {{1, percent}}% ATK Yanqing pada target musuh dengan Ice Weakness.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Svelte Saber",
-      "desc": "Saat Yanqing menyerang target musuh, jika target berstatus Frozen, Yanqing akan segera mengakibatkan Ice DMG tambahan sebesar {{1, percent}}% ATK-nya."
+      "desc": "Saat Yanqing menyerang target musuh, jika target berstatus Frozen, Yanqing akan segera mengakibatkan Ice DMG Tambahan sebesar {{1, percent}}% ATK dirinya."
     },
     "2": {
       "name": "Supine Serenade",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Searing Sting",
-      "desc": "Saat persentase HP saat ini lebih dari atau sama dengan {{1, percent}}%, Ice RES PEN dirinya meningkat {{2, percent}}%."
+      "desc": "Saat persentase HP saat ini lebih dari atau sama dengan {{1, percent}}%, Ice RES PEN karakter ini meningkat {{2, percent}}%."
     },
     "5": {
       "name": "Surging Strife",

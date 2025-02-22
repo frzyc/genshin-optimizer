@@ -13,7 +13,7 @@
       "0": {
         "name": "Relámpago deslumbrante",
         "fullDesc": "Serval inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes. Además, tiene una probabilidad base del {{3, percent}}% de afectar con Electrocución a los enemigos atacados durante {{4}} turnos.<br>Los enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{5, percent}}%</orangeStrong> del ATQ de Serval al comienzo de cada turno.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un objetivo y a los enemigos adyacentes. Gran probabilidad de <orangeStrong>afectar con Electrocución</orangeStrong> a los enemigos golpeados.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y a los objetivos adyacentes. Gran probabilidad de <orangeStrong>afectar con Electrocución</orangeStrong> a los enemigos golpeados.",
         "tag": "Ráfaga"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Rock",
-        "fullDesc": "Al usar la habilidad básica, la probabilidad base de infligir Electrocución aumenta en un {{1, percent}}%.",
+        "fullDesc": "Al usar la habilidad básica, la probabilidad base de afectar con Electrocución al enemigo atacado aumenta en un {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

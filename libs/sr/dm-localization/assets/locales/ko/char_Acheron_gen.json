@@ -13,7 +13,7 @@
       "0": {
         "name": "팔뢰비도",
         "fullDesc": "[꿈 조각]을 {{3}}pt 획득한다. 지정된 단일 적에게 [아즈사카]를 {{3}}스택 부여하고, 아케론 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 번개 속성 피해를 가한다. 동시에 인접한 목표에게 아케론 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 번개 속성 피해를 가한다",
-        "shortDesc": "[꿈 조각]을 <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong>pt</color></color> 획득한다. 단일 적에게 [아즈사카]를 <orangeStrong><unbreak>#3[i]</orangeStrong>스택 부여하고, 번개 속성 피해를 가하며, 인접한 목표에게 소량의 번개 속성 피해를 가한다",
+        "shortDesc": "[꿈 조각]을 <orangeStrong><color=#f29e38ff>{{3}}[i]</orangeStrong>pt</color></color> 획득한다. 단일 적에게 [아즈사카]를 <orangeStrong><unbreak>{{3}}[i]</orangeStrong>스택 부여하고, 번개 속성 피해를 가하며, 인접한 목표에게 소량의 번개 속성 피해를 가한다",
         "tag": "확산"
       }
     },
@@ -68,7 +68,7 @@
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
         "shortDesc": "",
         "tag": ""
       }

@@ -12,7 +12,7 @@ import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
-import { getCalcDisplay, resolveInfo } from '../../util'
+import { GetCalcDisplay, resolveInfo } from '../../util'
 import { WeaponName } from './WeaponTrans'
 export function WeaponFullCard({ weaponId }: { weaponId: string }) {
   const weapon = useWeapon(weaponId)
@@ -88,7 +88,7 @@ function WeaponStat({ node }: { node: CalcResult }) {
   const { icon } = resolveInfo(node.info)
   return Number.isNaN(node.value) ? null : (
     <SqBadge color="secondary">
-      {icon} {getCalcDisplay(node).valueString}
+      {icon} {GetCalcDisplay(node).valueString}
     </SqBadge>
   )
 }

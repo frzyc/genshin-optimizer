@@ -1,4 +1,7 @@
-import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
+import type {
+  ElementWithPhyKey,
+  TransformativeReactionKey,
+} from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 
 import elementalData from './ElementalData'
@@ -7,7 +10,6 @@ import type {
   AmplifyingReactionsKey,
   CrittableTransformativeReactionsKey,
   HitMoveKey,
-  TransformativeReactionsKey,
 } from './StatConstants'
 import {
   additiveReactions,
@@ -65,6 +67,7 @@ const baseMap = {
   base_amplifying_multi_: 'Base Amplifying Multiplier',
   base_transformative_multi_: 'Base Transformative Multiplier',
   base_crystallize_multi_: 'Base Crystallize Multiplier',
+  swirl_dmgInc: 'Swirl DMG Increase',
 
   // Enemy
   enemyLevel: 'Enemy Level',
@@ -157,7 +160,7 @@ type MoveExtKey =
   | HitMoveCritDmgKey
 
 /* Transformation extension keys */
-type TransformativeReactionsDmgKey = `${TransformativeReactionsKey}_dmg_`
+type TransformativeReactionsDmgKey = `${TransformativeReactionKey}_dmg_`
 
 Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
@@ -259,7 +262,7 @@ export class KeyMap {
     key = ''
   ):
     | ElementWithPhyKey
-    | TransformativeReactionsKey
+    | TransformativeReactionKey
     | AmplifyingReactionsKey
     | AdditiveReactionsKey
     | 'heal'

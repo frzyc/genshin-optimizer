@@ -1,0 +1,34 @@
+{
+  "name": "Riot Suppressor Mark VI",
+  "rarity": "S",
+  "type": "attack",
+  "atk_base": 48,
+  "second_statkey": "crit_dmg_",
+  "second_statvalue": 0.192,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1241.png",
+  "desc": "The latest tactical W-Engine used by Public Security's elite Hollow squads. It uses a powerful Ether energy source to supply all combat equipment with explosive power for a short period of time. Although the W-Engines of many elite squad members often suffer from prolonged combat, Zhu Yuan's is in perfect condition. She treats it with utmost care and carefully maintains it, keeping it looking completely brand new.\n\n<color=#959595>\"Non-woven fabric, brush, lubricant, rust remover... alright, ready to go. Timer... starting now!\" — Zhu Yuan, timing herself as she starts maintenance, aiming to beat her previous record</color>",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "The latest tactical W-Engine used by Public Security's elite Hollow squads, possessing a powerful Ether energy source. It's Zhu Yuan's favored model.",
+  "phase": [
+    {
+      "name": "Security Patrol",
+      "desc": "Increases CRIT Rate by <color=#2BAD00>15%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>35%</color>."
+    },
+    {
+      "name": "Security Patrol",
+      "desc": "Increases CRIT Rate by <color=#2BAD00>18.8%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>43.5%</color>."
+    },
+    {
+      "name": "Security Patrol",
+      "desc": "Increases CRIT Rate by <color=#2BAD00>22.6%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>52%</color>."
+    },
+    {
+      "name": "Security Patrol",
+      "desc": "Increases CRIT Rate by <color=#2BAD00>26.4%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>60.5%</color>."
+    },
+    {
+      "name": "Security Patrol",
+      "desc": "Increases CRIT Rate by <color=#2BAD00>30%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>70%</color>."
+    }
+  ]
+}

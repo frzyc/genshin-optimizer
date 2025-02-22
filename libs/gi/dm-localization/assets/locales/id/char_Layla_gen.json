@@ -42,12 +42,12 @@
     "name": "Nights of Formal Focus",
     "description": {
       "0": "Mengaktifkan Curtain of Slumber dan mengakibatkan <cryo>Cryo DMG Area</cryo>.",
-      "1": "Curtain of Slumber dapat menahan DMG berdasarkan Max HP Layla, perisai juga memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>. Saat mengaktifkan perisai, akan memberikan <cryo>efek Cryo</cryo> sementara untuk Layla.",
+      "1": "Curtain of Slumber dapat menahan DMG berdasarkan Max HP Layla, Perisai juga memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>. Saat mengaktifkan Perisai, akan memberikan <cryo>efek Cryo</cryo> sementara untuk Layla.",
       "2": "<br/>",
       "3": "<strong>Night Star and Shooting Star</strong>",
-      "4": "Selama Curtain of Slumber aktif, maka setiap 1,5 detik akan menghasilkan 1 buah Night Star yang melekat ke perisai; Saat Karakter yang berada di dalam perlindungan perisai melancarkan Elemental Skill, 2 buah Night Star akan dihasilkan. Night Star dapat dihasilkan dengan cara ini setiap 0,3 detik, sampai maksimal 4 buah Night Star.",
+      "4": "Selama Curtain of Slumber aktif, maka setiap 1,5 detik akan menghasilkan 1 buah Night Star yang melekat ke Perisai; Saat Karakter yang berada di dalam perlindungan Perisai melancarkan Elemental Skill, 2 buah Night Star akan dihasilkan. Night Star dapat dihasilkan dengan cara ini setiap 0,3 detik, sampai maksimal 4 buah Night Star.",
       "5": "Saat Night Star pada Curtain of Slumber mencapai 4 buah, dan jika ada musuh di sekitar, maka Night Star secara otomatis berubah menjadi Shooting Star yang bisa mengejar musuh, dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh yang terkena.",
-      "6": "Saat durasi Curtain of Slumber berakhir atau perisainya hancur, Night Star juga akan turut lenyap. Jika Night Star sudah berubah menjadi Shooting Star dan sudah diluncurkan, maka Shooting Star akan terus diluncurkan sampai habis.",
+      "6": "Saat durasi Curtain of Slumber berakhir atau Perisainya hancur, Night Star juga akan turut lenyap. Jika Night Star sudah berubah menjadi Shooting Star dan sudah diluncurkan, maka Shooting Star akan terus diluncurkan sampai habis.",
       "7": "<br/>",
       "8": "Night Star yang baru tidak akan bisa dihasilkan sebelum Shooting Star yang lama habis.",
       "9": "<br/>",
@@ -104,7 +104,7 @@
     "description": {
       "0": "<strong>Saat Curtain of Slumber</strong> aktif, untuk setiap Night Star yang diperoleh, akan menghasilkan efek Deep Sleep:",
       "1": [
-        "Karakter yang berada dalam perlindungan Curtain of Slumber akan mendapatkan peningkatan perisai sebesar 6%;"
+        "Karakter yang berada dalam perlindungan Curtain of Slumber akan mendapatkan peningkatan Kekuatan Perisai sebesar 6%;"
       ],
       "2": "Efek ini dapat ditumpuk sampai 4 kali dan bertahan hingga Curtain of Slumber berakhir."
     }
@@ -125,7 +125,7 @@
     "name": "Fortress of Fantasy",
     "description": {
       "0": "DMG yang bisa ditahan Curtain of Slumber dari <strong>Nights of Formal Focus</strong> meningkat 20%.",
-      "1": "Selain itu, saat melancarkan Nights of Formal Focus, akan memberikan perisai kepada seluruh Karakter yang tidak berada dalam perlindungan perisai Curtain of Slumber, perisai ini dapat menahan DMG sebesar 35% perisai Curtain of Slumber, bertahan 12 detik, dan memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>."
+      "1": "Selain itu, saat melancarkan Nights of Formal Focus, akan memberikan Perisai kepada seluruh Karakter yang tidak berada dalam perlindungan Perisai Curtain of Slumber, Perisai ini dapat menahan DMG sebesar 35% Perisai Curtain of Slumber, bertahan 12 detik, dan memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>."
     }
   },
   "constellation2": {

@@ -1,0 +1,186 @@
+{
+  "name": "Citlalí",
+  "title": "La Estrella de Obsidiana",
+  "description": "La gran chamana y la abu Itztli de los Augures Vientonocturno, respetada por toda la gente de su tribu.",
+  "constellationName": "Patina Anavatlaca",
+  "auto": {
+    "name": "Espiritismo atrapasombras",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Hace uso de las artes secretas transmitidas de generación en generación entre los Augures Vientonocturno para realizar hasta 3 ataques consecutivos, los cuales infligen <cryo>Daño Cryo</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Entra en el modo de puntería y, tras mantener pulsado, consume una cierta cantidad de Aguante para lanzar una estrella de escarcha que inflige <cryo>Daño Cryo</cryo> a los enemigos que hay en su trayectoria."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del hielo y se lanza desde el aire para golpear el suelo y dañar a los enemigos a su paso, infligiendo <cryo>Daño Cryo en el AdE</cryo> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Estrella negra albaescarcha",
+    "description": {
+      "0": "En virtud de los pactos secretos milenarios transmitidos en su tribu, Citlalí crea un escudo de obsidiana blanca e invoca a la (supuestamente) terrorífica tzitzímitl de obsidiana negra: Itzpapa, la cual inflige <cryo>Daño Cryo en el AdE</cryo> de naturaleza noctámbula.",
+      "1": "La absorción de daño del escudo de obsidiana blanca se basa en la Maestría Elemental de Citlalí, y tiene un 250% de efectividad de absorción de <cryo>Daño Cryo</cryo>. Al crear el escudo, <cryo>se aplicará el elemento Cryo</cryo> brevemente sobre Citlalí.",
+      "2": "Tras usar esta habilidad, Citlalí obtendrá 24 pts. de noctambulismo y entrará en el estado de bendición noctámbula.",
+      "3": "<br/>",
+      "4": "<strong>Bendición noctámbula: Citlalí</strong>",
+      "5": "El estado de bendición noctámbula de Citlalí terminará cuando Itzpapa se retire del campo de batalla.",
+      "6": "<br/>",
+      "7": "<strong>Itzpapa</strong>",
+      "8": [
+        "Itzpapa se mueve junto al personaje.",
+        "Si Citlalí tiene al menos 50 pts. de noctambulismo, Itzpapa entrará en el estado de “fuego opalescente”, durante el cual consumirá pts. de noctambulismo de forma continua para desencadenar una tormenta de escarcha que se mueve junto al personaje y que golpea a los enemigos dentro de su AdE, infligiéndoles <cryo>Daño Cryo</cryo> de naturaleza noctámbula.",
+        "Cuando los pts. de noctambulismo de Citlalí se agoten, el estado de fuego opalescente de Itzpapa también terminará."
+      ],
+      "9": "<br/>",
+      "10": "<i>Normalmente, las voluntades que representan astros diferentes no pueden coexistir, ya que ¿cómo puede el negro más oscuro reflejar el blanco más puro?",
+      "11": "Sin embargo, Citlalí nunca ha tenido ninguna preferencia particular por los colores en sí, así que ahí quedó la cosa.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de la tzitzímitl de obsidiana negra",
+      "1": "Absorción de daño del escudo",
+      "2": "Duración del escudo",
+      "3": "Duración de Itzpapa",
+      "4": "Itzpapa: consumo de pts. de noctambulismo de fuego opalescente",
+      "5": "Daño de tormenta de escarcha",
+      "6": "Límite de pts. de noctambulismo",
+      "7": "TdE",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Edicto multiastral",
+    "description": {
+      "0": "Invoca a los “aliados” del cielo estrellado y la vasta tierra para lanzar un temporal gélido que azota el área frente a sí misma e inflige <cryo>Daño Cryo en el AdE</cryo> de naturaleza noctámbula, restaura cierta cantidad de pts. de noctambulismo a Citlalí e invoca un <strong>cráneo espiritista</strong> cerca de cada enemigo (hasta un máximo de 3) situado en el AdE del temporal gélido. El cráneo espiritista explotará al cabo de un rato, infligiendo <cryo>Daño Cryo en el AdE</cryo> de naturaleza noctámbula y restaurando cierta cantidad de pts. de noctambulismo a Citlalí.",
+      "1": "<br/>",
+      "2": "<i>“¡Hum! ¡Basta ya de obsidiana negra y obsidiana blanca! Citlalín, Itzpapa, ¡tras ellos!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de temporal gélido",
+      "1": "Pts. de noctambulismo recuperados con temporal gélido",
+      "2": "Daño de cráneo espiritista",
+      "3": "Pts. de noctambulismo recuperados con cráneo espiritista",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Lluvia helada de Mamaloaco",
+    "description": {
+      "0": "Mientras Itzpapa esté activa, después de que un personaje cercano del equipo cause una reacción de Congelado o Derretido, la RES <pyro>Pyro</pyro> e <hydro>Hydro</hydro> de los enemigos afectados por dichas reacciones se reduce en un 20% durante 12 s. Además, Citlalí recupera 16 pts. de noctambulismo. Solo puede recuperar pts. de noctambulismo una vez cada 8 s de esta forma."
+    }
+  },
+  "passive2": {
+    "name": "Astrovestimenta de Itzpapálotl",
+    "description": {
+      "0": "Durante la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, el daño de la tormenta de escarcha de Itzpapa aumenta en una cantidad equivalente al 90% de la Maestría Elemental de Citlalí. Durante la Habilidad Definitiva, <strong>Edicto multiastral</strong>, el daño del temporal gélido aumenta en una cantidad equivalente al 1200% de la Maestría Elemental de Citlalí.",
+      "1": "Además, cuando un miembro del equipo cercano causa una explosión noctámbula, Citlalí recupera 4 pts. de noctambulismo."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Espejos, humo y vientos",
+    "description": {
+      "0": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, se podrá utilizar “Transmisión noctambular: Citlalí”. Cuando el personaje en uso esté a cierta altura en el aire, al cambiar a Citlalí, esta saltará muy alto y llamará a la “tzitzímitl de obsidiana blanca: Citlalín” para flotar en el aire. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s.",
+      "1": "<br/>",
+      "2": "Al mantener pulsado para apuntar, Citlalí entrará en estado de “espiritismo”, en el cual puede interactuar con pintadas e inscripciones místicas para extraer la información y el poder que contienen. Para interactuar con estos objetos, se seguirán las mismas reglas de interacción de los Iktomisaurios.",
+      "3": "<br/>",
+      "4": "Además, al mantener pulsado para saltar, Citlalí consumirá 75 pts. de Aguante para dar un salto. Si se encuentra en una zona con alguna mecánica de flogisto de Natlan, consumirá con prioridad 5 pts. de flogisto para saltar aún más alto.",
+      "5": "Cuando está en el aire, Citlalí puede mantener pulsado el Ataque Normal consumiendo flogisto o Aguante para apuntar y ejecutar Ataques Cargados. Al hacer esto, consumirá 20 pts. de flogisto de forma preferente."
+    }
+  },
+  "passive": {
+    "name": "Cantos enigmáticos",
+    "description": {
+      "0": "Al encontrarse en una zona con alguna mecánica de flogisto de Natlan, causar una explosión noctámbula restaura 20 pts. de flogisto.",
+      "1": "Este efecto no se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo."
+    }
+  },
+  "constellation1": {
+    "name": "Cuchillas radiantes de Centzon Mimixcoah",
+    "description": {
+      "0": "Al usar la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, Citlalí obtiene el efecto de “toga alboestelar” hasta que Itzpapa sea retirada del campo de batalla. Durante este tiempo, obtendrá 10 cargas de “cuchillas estelares”, de manera que, cuando un personaje en uso cercano (a excepción de Citlalí) inflige daño con un Ataque Normal, Cargado o Descendente o con una Habilidad Elemental o Definitiva, se consume 1 carga para aumentar el daño infligido en una cantidad equivalente al 200% de la Maestría Elemental de Citlalí.",
+      "1": "Cuando un personaje cercano del equipo cause una reacción de Congelado o Derretido, Citlalí obtendrá 3 cargas adicionales de cuchillas estelares. Este efecto solo puede ocurrir una vez cada 8 s.",
+      "2": "<br/>",
+      "3": "Al usar la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, se restablecerán las cargas de cuchillas estelares.",
+      "4": "Además, cuando Citlalí salte o cuando apunte o use su Ataque Cargado en el aire, su consumo de flogisto disminuye en un 45%."
+    }
+  },
+  "constellation2": {
+    "name": "Patrulla devoracorazones",
+    "description": {
+      "0": "La Maestría Elemental de Citlalí aumenta en 125 pts., y la de los demás personajes que estén bajo la protección del escudo de obsidiana blanca o que esté siguiendo Itzpapa aumenta en 250 pts.",
+      "1": "Además, al usar la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, también otorga un escudo de obsidiana blanca a los personajes en uso cercanos.",
+      "2": "<br/>",
+      "3": "Por otro lado, mejora el efecto del talento pasivo “Lluvia helada de Mamaloaco”:",
+      "4": "Mientras Itzpapa esté activa, después de que un personaje cercano del equipo cause una reacción de Congelado o Derretido, la RES <pyro>Pyro</pyro> e <hydro>Hydro</hydro> de los enemigos afectados por dichas reacciones se reduce en un 20% adicional. Este efecto dura 12 s y, para poder activarlo, es necesario desbloquear el talento pasivo “Lluvia helada de Mamaloaco”."
+    }
+  },
+  "constellation3": {
+    "name": "Cresta de la serpiente de las nubes",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Estrella negra albaescarcha</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Féretro de los renegados",
+    "description": {
+      "0": "Durante la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, al golpear a un enemigo con la tormenta de escarcha de Itzpapa, se invocará un <strong>cráneo espiritista: estrella negra</strong> adicional. Cuando un cráneo espiritista invocado de esta forma explote, infligirá <cryo>Daño Cryo en el AdE</cryo> de naturaleza noctámbula en una cantidad equivalente al 1800% de la Maestría Elemental de Citlalí y le restaurará 16 pts. de noctambulismo y 8 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 8 s y este daño no se considera daño de Habilidad Definitiva."
+    }
+  },
+  "constellation5": {
+    "name": "Maleficio de los nemontemi",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Edicto multiastral</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Pacto secreto de Teoiztac",
+    "description": {
+      "0": "Al invocar a Itzpapa con la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, permanecerá siempre en el estado de fuego opalescente. Dicho estado no terminará ni siquiera cuando se agoten los pts. de noctambulismo.",
+      "1": "Además, al usar la Habilidad Elemental, <strong>Estrella negra albaescarcha</strong>, Itzpapa consumirá todos los pts. de noctambulismo y, mientras esté activa, consumirá pts. de noctambulismo de forma continua. Por cada punto de noctambulismo consumido de esta forma, Citlalí obtiene 1 pt. de “numerología secreta”.",
+      "2": "Se pueden obtener hasta un máximo de 40 pts. Por cada punto de numerología secreta que posea Citlalí, aumenta el daño que inflige en un 2.5% y todos los miembros del equipo cercanos obtienen un 1.5% de Bono de Daño <pyro>Pyro</pyro> e <hydro>Hydro</hydro>.",
+      "3": "Cuando Itzpapa sea retirada del campo de batalla o tras usar de nuevo la Habilidad Elemental de Citlalí, todos los puntos de numerología secreta que posea serán eliminados."
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "A Thousand Blazing Suns",
+  "description": {
+    "0": "A greatsword that dazzles like the rising sun. It has witnessed the extinguishing and rekindling of innumerable suns."
+  },
+  "passiveName": "Sunset Reignites the Dawn",
+  "passiveDescription": {
+    "0": {
+      "0": "Gain the \"Scorching Brilliance\" effect when using an Elemental Skill or Burst: CRIT DMG increased by <cryo>20%</cryo> and ATK increased by <cryo>28%</cryo> for 6s. This effect can trigger once every 10s.",
+      "1": "While a \"Scorching Brilliance\" instance is active, its duration is increased by 2s after Normal or Charged attacks deal Elemental DMG. This effect can trigger once every second, and the max duration increase is 6s.",
+      "2": "Additionally, when the equipping character is in the Nightsoul's Blessing state, \"Scorching Brilliance\" effects are increased by 75%, and its duration will not count down when the equipping character is off-field."
+    },
+    "1": {
+      "0": "Gain the \"Scorching Brilliance\" effect when using an Elemental Skill or Burst: CRIT DMG increased by <cryo>25%</cryo> and ATK increased by <cryo>35%</cryo> for 6s. This effect can trigger once every 10s.",
+      "1": "While a \"Scorching Brilliance\" instance is active, its duration is increased by 2s after Normal or Charged attacks deal Elemental DMG. This effect can trigger once every second, and the max duration increase is 6s.",
+      "2": "Additionally, when the equipping character is in the Nightsoul's Blessing state, \"Scorching Brilliance\" effects are increased by 75%, and its duration will not count down when the equipping character is off-field."
+    },
+    "2": {
+      "0": "Gain the \"Scorching Brilliance\" effect when using an Elemental Skill or Burst: CRIT DMG increased by <cryo>30%</cryo> and ATK increased by <cryo>42%</cryo> for 6s. This effect can trigger once every 10s.",
+      "1": "While a \"Scorching Brilliance\" instance is active, its duration is increased by 2s after Normal or Charged attacks deal Elemental DMG. This effect can trigger once every second, and the max duration increase is 6s.",
+      "2": "Additionally, when the equipping character is in the Nightsoul's Blessing state, \"Scorching Brilliance\" effects are increased by 75%, and its duration will not count down when the equipping character is off-field."
+    },
+    "3": {
+      "0": "Gain the \"Scorching Brilliance\" effect when using an Elemental Skill or Burst: CRIT DMG increased by <cryo>35%</cryo> and ATK increased by <cryo>49%</cryo> for 6s. This effect can trigger once every 10s.",
+      "1": "While a \"Scorching Brilliance\" instance is active, its duration is increased by 2s after Normal or Charged attacks deal Elemental DMG. This effect can trigger once every second, and the max duration increase is 6s.",
+      "2": "Additionally, when the equipping character is in the Nightsoul's Blessing state, \"Scorching Brilliance\" effects are increased by 75%, and its duration will not count down when the equipping character is off-field."
+    },
+    "4": {
+      "0": "Gain the \"Scorching Brilliance\" effect when using an Elemental Skill or Burst: CRIT DMG increased by <cryo>40%</cryo> and ATK increased by <cryo>56%</cryo> for 6s. This effect can trigger once every 10s.",
+      "1": "While a \"Scorching Brilliance\" instance is active, its duration is increased by 2s after Normal or Charged attacks deal Elemental DMG. This effect can trigger once every second, and the max duration increase is 6s.",
+      "2": "Additionally, when the equipping character is in the Nightsoul's Blessing state, \"Scorching Brilliance\" effects are increased by 75%, and its duration will not count down when the equipping character is off-field."
+    }
+  }
+}

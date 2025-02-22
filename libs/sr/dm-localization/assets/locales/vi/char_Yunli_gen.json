@@ -13,7 +13,7 @@
       "0": {
         "name": "Chấn Động Lẫy Lừng",
         "fullDesc": "Hồi HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Yunli +<orangeStrong>{{4}}</orangeStrong>, đồng thời gây Sát Thương Vật Lý bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Yunli cho 1 kẻ địch chỉ định, và gây Sát Thương Vật Lý bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Yunli cho mục tiêu lân cận kẻ địch đó.",
-        "shortDesc": "Hồi HP cho bản thân, đồng thời gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch và mục tiêu lân cận kẻ đó.",
+        "shortDesc": "Hồi HP cho bản thân, đồng thời gây Sát Thương Vật Lý cho 1 kẻ địch, gây lượng nhỏ Sát Thương Vật Lý cho mục tiêu lân cận.",
         "tag": "Khuếch Tán"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "Nung Chảy",
         "fullDesc": "Sau khi Yunli bị kẻ địch tấn công, sẽ hồi thêm {{3}} điểm Năng Lượng, và lập tức phát động Phản Kích lên người tấn công, gây cho kẻ đó Sát Thương Vật Lý bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Yunli, gây cho mục tiêu lân cận kẻ đó Sát Thương Vật Lý bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Yunli.<br>Nếu không có mục tiêu để phản kích, thì sẽ phản kích kẻ địch ngẫu nhiên.",
-        "shortDesc": "Khi Yunli bị kẻ địch tấn công sẽ hồi thêm Năng Lượng đồng thời lập tức phát động Phản Kích lên kẻ tấn công và mục tiêu lân cận kẻ đó.",
+        "shortDesc": "Khi Yunli bị mục tiêu phe địch tấn công sẽ hồi thêm năng lượng và phản kích ngay, gây Sát Thương Vật Lý cho người tấn công, gây lượng nhỏ Sát Thương Vật Lý cho mục tiêu lân cận.",
         "tag": "Khuếch Tán"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Khước Tà",
-        "fullDesc": "Trong trạng thái Chống Đỡ, kháng Hiệu Ứng Xấu dạng khống chế và giảm {{1, percent}}% sát thương phải chịu.",
+        "fullDesc": "Trong trạng thái Chống Đỡ, kháng Hiệu Ứng Xấu dạng Khống Chế và giảm {{1, percent}}% sát thương phải chịu.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Mầm Sống Nảy Nở",
-      "desc": "Khi phát động Phản Kích gây sát thương, sẽ bỏ qua {{1, percent}}% Phòng Thủ của kẻ địch."
+      "desc": "Khi phát động Phản Kích gây sát thương, sẽ bỏ qua {{1, percent}}% Phòng Thủ của mục tiêu phe địch."
     },
     "3": {
       "name": "Cửu Xích Vận Cân",

@@ -5,10 +5,11 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
+  ElementKey,
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
+import { allElementKeys, allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
@@ -34,6 +35,10 @@ const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
   (key) => input.total[key]
 )
+
+export const hitEle = objKeyMap(allElementKeys, (ele) => ({
+  hit: { ele: constant(ele) },
+}))
 
 const inferredHitEle = stringPrio(
   lookup(
@@ -121,7 +126,17 @@ export function customHealNode(base: NumNode, additional?: Data): NumNode {
 
   return additional ? data(healNode, additional) : healNode
 }
-/** Note: `additional` applies only to this formula */
+
+/**
+ * Note: `additional` applies only to this formula
+ * @param base
+ * @param lvlMultiplier
+ * @param move Sets the damage type and the talent level to look at. Can override the talent level with overrideTalentType
+ * @param additional
+ * @param specialMultiplier
+ * @param overrideTalentType Overrides the talent level to look at
+ * @returns
+ */
 export function dmgNode(
   base: MainStatKey | SubstatKey,
   lvlMultiplier: number[],
@@ -256,10 +271,7 @@ export function shieldNodeTalent(
     additional
   )
 }
-export function shieldElement(
-  element: 'electro' | 'cryo' | 'hydro' | 'pyro' | 'geo' | 'dendro',
-  shieldNode: NumNode
-) {
+export function shieldElement(element: ElementKey, shieldNode: NumNode) {
   return infoMut(prod(percent(element === 'geo' ? 1.5 : 2.5), shieldNode), {
     variant: element,
   })

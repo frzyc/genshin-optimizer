@@ -1,0 +1,16 @@
+{
+  "name": "zzz-stats",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/stats/src",
+  "projectType": "library",
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/zzz/stats:gen-stats",
+      "outputs": [
+        "{projectRoot}/Data/**/*",
+        "{projectRoot}/src/allStat_gen.json"
+      ]
+    }
+  },
+  "tags": []
+}

@@ -29,7 +29,7 @@
       "0": {
         "name": "斩勘神形",
         "fullDesc": "战斗开始时召唤【神君】。【神君】初始拥有{{1}}点速度以及{{4}}段攻击段数，行动时发动追加攻击，每段攻击对随机敌方单体造成等同于景元攻击力<orangeStrong>{{2, percent}}%</orangeStrong>的雷属性伤害，同时对其相邻目标造成等同于主目标{{5, percent}}%的雷属性伤害。<br>【神君】最多累计{{6}}段攻击段数且每增加1段攻击段数，速度提高{{3}}点，行动结束后速度和攻击段数恢复至初始状态。<br>当景元陷入无法战斗状态时【神君】消失。<br>当景元受到控制类负面状态影响时【神君】也无法行动。",
-        "shortDesc": "战斗开始时召唤【神君】，【神君】<orangeStrong>自动</orangeStrong>对随机敌方单体及其相邻目标<orangeStrong>造成少量雷属性伤害</orangeStrong>。",
+        "shortDesc": "战斗开始时召唤【神君】，【神君】行动时发动追加攻击，<orangeStrong>自动</orangeStrong>对随机敌方单体及其相邻目标<orangeStrong>造成少量雷属性伤害</orangeStrong>。",
         "tag": "弹射"
       }
     },

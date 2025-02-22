@@ -38,7 +38,7 @@ export default function DupModal({
               alignItems="center"
             >
               <DifferenceIcon sx={{ verticalAlign: 'text-top', mr: 1 }} />
-              {t`showDup`}
+              {t('showDup')}
             </Typography>
           }
           action={
@@ -111,7 +111,9 @@ function DupContent({
         </CardThemed>
       ))}
       {!dupList.length && (
-        <Alert variant="filled" severity="success">{t`noDupAlert`}</Alert>
+        <Alert variant="filled" severity="success">
+          {t('noDupAlert')}
+        </Alert>
       )}
     </Stack>
   )

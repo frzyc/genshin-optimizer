@@ -1,9 +1,9 @@
-import type { TagField } from '@genshin-optimizer/pando/ui-sheet'
-import { isTagField } from '@genshin-optimizer/pando/ui-sheet'
+import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
+import { isTagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { createTagMap } from '@genshin-optimizer/sr/formula'
+import { charBaseUiSheet } from './CharBase'
 import { uiSheets } from './sheets'
-import { charBaseUiSheet } from './sheets/CharBase'
 
 const tagValue: Array<{ tag: Tag; value: TagField }> = []
 Object.values(uiSheets).forEach((sheet) => {

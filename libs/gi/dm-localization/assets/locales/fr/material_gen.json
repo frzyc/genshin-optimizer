@@ -209,6 +209,15 @@
   "ColorfulContemplation": {
     "name": "Contemplation colorée"
   },
+  "FestiveFervor": {
+    "name": "Ferveur festive"
+  },
+  "IncenseAshcrystals": {
+    "name": "Cendristal encensé"
+  },
+  "FestivalStamp": {
+    "name": "Tampon festif"
+  },
   "Primogem": {
     "name": "Primo-gemme"
   },
@@ -223,6 +232,9 @@
   },
   "ToyMedal": {
     "name": "Médaille-jouet"
+  },
+  "RepertoireCoins": {
+    "name": "Jeton de répertoire"
   },
   "OriginalEssenceInvalidated": {
     "name": "Essence originale (jetée)"
@@ -286,6 +298,12 @@
   },
   "ChildrenOfEchoesReputationEXP": {
     "name": "EXP de réputation : Enfants des échos"
+  },
+  "FlowerFeatherClanReputationEXP": {
+    "name": "EXP de réputation : Clan des fleurplumes"
+  },
+  "MastersOfTheNightWindReputationEXP": {
+    "name": "EXP de réputation : Maîtres du vent nocturne"
   },
   "MemoryOfEternalFlames": {
     "name": "Souvenir de flamme éternelle"
@@ -971,6 +989,27 @@
   "Mualani": {
     "name": "Mualani"
   },
+  "Xilonen": {
+    "name": "Xilonen"
+  },
+  "Chasca": {
+    "name": "Chasca"
+  },
+  "Ororon": {
+    "name": "Ororon"
+  },
+  "Mavuika": {
+    "name": "Mavuika"
+  },
+  "Citlali": {
+    "name": "Citlali"
+  },
+  "LanYan": {
+    "name": "Lan Yan"
+  },
+  "YumemizukiMizuki": {
+    "name": "Yumemizuki Mizuki"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -979,6 +1018,27 @@
   },
   "MualanisStellaFortuna": {
     "name": "Stella Fortuna de Mualani"
+  },
+  "XilonensStellaFortuna": {
+    "name": "Stella Fortuna de Xilonen"
+  },
+  "ChascasStellaFortuna": {
+    "name": "Stella Fortuna de Chasca"
+  },
+  "OroronsStellaFortuna": {
+    "name": "Stella Fortuna d'Ororon"
+  },
+  "MavuikasStellaFortuna": {
+    "name": "Stella Fortuna de Mavuika"
+  },
+  "CitlalisStellaFortuna": {
+    "name": "Stella Fortuna de Citlali"
+  },
+  "LanYansStellaFortuna": {
+    "name": "Stella Fortuna de Lan Yan"
+  },
+  "YumemizukiMizukisStellaFortuna": {
+    "name": "Stella Fortuna de Yumemizuki Mizuki"
   },
   "Apple": {
     "name": "Pomme"
@@ -1561,6 +1621,9 @@
   },
   "DraftManuscriptOfHyakuninIkkiTheGreatestBattle": {
     "name": "Brouillon de « Hyakunin Ikki - Le tournoi des meilleurs combattants »"
+  },
+  "FischlDictionaryDieNeuauflageDerPrinzessin": {
+    "name": "Dictionnaire Fischl : Nouvelle édition de la Prinzessin"
   },
   "WyattsRedKey": {
     "name": "Clé rouge de Wyatt"
@@ -3392,6 +3455,12 @@
   "EmbercoreFlower": {
     "name": "Fleur braisée"
   },
+  "GlowingHornshroom": {
+    "name": "Champicorne brillant"
+  },
+  "WitheringPurpurbloom": {
+    "name": "Pourprinfleur fanée"
+  },
   "BirchWood": {
     "name": "Bois de bouleau"
   },
@@ -5043,7 +5112,7 @@
     "name": "Clé de Sanctuaire des profondeurs de Liyue"
   },
   "InazumaShrineOfDepthsKey": {
-    "name": "Clé du Sanctuaire des profondeurs d'Inazuma"
+    "name": "Clé de Sanctuaire des profondeurs d'Inazuma"
   },
   "FragileResin": {
     "name": "Résine fragile"
@@ -5214,7 +5283,7 @@
     "name": "Poulet fumé nordique"
   },
   "DeliciousNorthernSmokedChicken": {
-    "name": "Poulet fumé nordique (delicieux)"
+    "name": "Poulet fumé nordique (délicieux)"
   },
   "SuspiciousCreamStew": {
     "name": "Ragoût à la crème (suspect)"
@@ -5367,7 +5436,7 @@
     "name": "Soupe aux perles et au jade (délicieuse)"
   },
   "SuspiciousMatsutakeMeatRolls": {
-    "name": "Rouleaux de viande aux matsutake (suspect)"
+    "name": "Rouleaux de viande au matsutake (suspects)"
   },
   "MatsutakeMeatRolls": {
     "name": "Rouleaux de viande au matsutake"
@@ -5763,13 +5832,13 @@
     "name": "Pâté aux trois saveurs façon Festival des lanternes"
   },
   "SuspiciousCrispyPotatoShrimpPlatter": {
-    "name": "Croquants aux crevettes (suspect)"
+    "name": "Croquants aux crevettes (suspects)"
   },
   "CrispyPotatoShrimpPlatter": {
     "name": "Croquants aux crevettes"
   },
   "DeliciousCrispyPotatoShrimpPlatter": {
-    "name": "Croquant aux crevettes (délicieux)"
+    "name": "Croquants aux crevettes (délicieux)"
   },
   "SuspiciousMintJelly": {
     "name": "Gelée de menthe (suspecte)"
@@ -6018,7 +6087,7 @@
     "name": "Pudding de riz"
   },
   "DeliciousRicePudding": {
-    "name": "Pudding de riz (delicieux)"
+    "name": "Pudding de riz (délicieux)"
   },
   "SuspiciousBraisedMeat": {
     "name": "Viande braisée (suspecte)"
@@ -6866,13 +6935,13 @@
   "DeliciousTomatesNarbonnaises": {
     "name": "Tomates narbonnaises (délicieuses)"
   },
-  "SuspiciousConsomme": {
+  "SuspiciousConsomm": {
     "name": "Consommé (suspect)"
   },
-  "Consomme": {
+  "Consomm": {
     "name": "Consommé"
   },
-  "DeliciousConsomme": {
+  "DeliciousConsomm": {
     "name": "Consommé (délicieux)"
   },
   "SuspiciousBoudinNoirAuxPommes": {
@@ -6902,7 +6971,7 @@
   "DeliciousCrepesSuzette": {
     "name": "Crêpes Suzette (délicieuses)"
   },
-  "ConsommePurete": {
+  "ConsommPurete": {
     "name": "« Pureté de consommé »"
   },
   "SecretSauceBBQRibs": {
@@ -7247,14 +7316,14 @@
   "DeliciousTatacos": {
     "name": "Tacoloco (délicieux)"
   },
-  "SuspiciousSourSauceKipper": {
-    "name": "Kipper en sauce aigre (suspect)"
+  "SuspiciousSourSauceCeviche": {
+    "name": "Ceviche en sauce aigre (suspect)"
   },
-  "SourSauceKipper": {
-    "name": "Kipper en sauce aigre"
+  "SourSauceCeviche": {
+    "name": "Ceviche en sauce aigre"
   },
-  "DeliciousSourSauceKipper": {
-    "name": "Kipper en sauce aigre (délicieux)"
+  "DeliciousSourSauceCeviche": {
+    "name": "Ceviche en sauce aigre (délicieux)"
   },
   "SuspiciousChocolate": {
     "name": "Chocolats assortis (suspects)"
@@ -7345,6 +7414,126 @@
   },
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "Délices d'errances merveilleuses (délicieux)"
+  },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "Cœurs de bœuf en brochette (suspects)"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "Cœurs de bœuf en brochette"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "Cœurs de bœuf en brochette (délicieux)"
+  },
+  "SuspiciousXocoatl": {
+    "name": "Xocoatl (suspect)"
+  },
+  "Xocoatl": {
+    "name": "Xocoatl"
+  },
+  "DeliciousXocoatl": {
+    "name": "Xocoatl (délicieux)"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "Bonbons au lait goût fruit"
+  },
+  "SuspiciousSurfTurfAndPerch": {
+    "name": "Montagnes, mers et cieux (suspects)"
+  },
+  "SurfTurfAndPerch": {
+    "name": "Montagnes, mers et cieux"
+  },
+  "DeliciousSurfTurfAndPerch": {
+    "name": "Montagnes, mers et cieux (délicieux)"
+  },
+  "SuspiciousVolcanoCake": {
+    "name": "Gâteau volcanique (suspect)"
+  },
+  "VolcanoCake": {
+    "name": "Gâteau volcanique"
+  },
+  "DeliciousVolcanoCake": {
+    "name": "Gâteau volcanique (délicieux)"
+  },
+  "SuspiciousGrainfruitWrap": {
+    "name": "Dolmas granifruités (suspects)"
+  },
+  "GrainfruitWrap": {
+    "name": "Dolmas granifruités"
+  },
+  "DeliciousGrainfruitWrap": {
+    "name": "Dolmas granifruités (délicieux)"
+  },
+  "SuspiciousMystiqueSoup": {
+    "name": "Soupe mystique (suspecte)"
+  },
+  "MystiqueSoup": {
+    "name": "Soupe mystique"
+  },
+  "DeliciousMystiqueSoup": {
+    "name": "Soupe mystique (délicieuse)"
+  },
+  "SuspiciousSingYourHeartOut": {
+    "name": "À gorge enjouée (suspect)"
+  },
+  "SingYourHeartOut": {
+    "name": "À gorge enjouée"
+  },
+  "DeliciousSingYourHeartOut": {
+    "name": "À gorge enjouée (délicieux)"
+  },
+  "HoneyGlazedCeviche": {
+    "name": "Ceviche au miel"
+  },
+  "MomentOfRespite": {
+    "name": "Instant de repos"
+  },
+  "SuspiciousMagmicOde": {
+    "name": "Ode magmique (suspect)"
+  },
+  "MagmicOde": {
+    "name": "Ode magmique"
+  },
+  "DeliciousMagmicOde": {
+    "name": "Ode magmique (délicieux)"
+  },
+  "SuspiciousQingxinFlowerCake": {
+    "name": "Gâteau aux fleurs de Qingxin (suspect)"
+  },
+  "QingxinFlowerCake": {
+    "name": "Gâteau aux fleurs de Qingxin"
+  },
+  "DeliciousQingxinFlowerCake": {
+    "name": "Gâteau aux fleurs de Qingxin (délicieux)"
+  },
+  "SuspiciousDrunkenPlumsInSnow": {
+    "name": "Prunes ivres en neige (suspectes)"
+  },
+  "DrunkenPlumsInSnow": {
+    "name": "Prunes ivres en neige"
+  },
+  "DeliciousDrunkenPlumsInSnow": {
+    "name": "Prunes ivres en neige (délicieuses)"
+  },
+  "HymnOfGatheredFlame": {
+    "name": "Hymne aux flammes harmonieuses"
+  },
+  "JadeCutFlowers": {
+    "name": "Fleurs taillées en jade"
+  },
+  "SecretArt": {
+    "name": "Art secret"
+  },
+  "SuspiciousBathhouseManjuu": {
+    "name": "Manju des Bains (suspects)"
+  },
+  "BathhouseManjuu": {
+    "name": "Manju des Bains"
+  },
+  "DeliciousBathhouseManjuu": {
+    "name": "Manju des Bains (délicieux)"
+  },
+  "DreamsOfHealing": {
+    "name": "Guérison onirique"
   },
   "RecipeItem": {
     "name": "Ingrédient"
@@ -7853,7 +8042,7 @@
   "RecipeTomatesNarbonnaises": {
     "name": "Recette : Tomates narbonnaises"
   },
-  "RecipeConsomme": {
+  "RecipeConsomm": {
     "name": "Recette : Consommé"
   },
   "RecipeBoudinNoirAuxPommes": {
@@ -7964,8 +8153,8 @@
   "RecipeTatacos": {
     "name": "Recette : Tacoloco"
   },
-  "RecipeSourSauceKipper": {
-    "name": "Recette : Kipper en sauce aigre"
+  "RecipeSourSauceCeviche": {
+    "name": "Recette : Ceviche en sauce aigre"
   },
   "RecipeChocolate": {
     "name": "Recette : Chocolats assortis"
@@ -7993,6 +8182,39 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "Recette : Délices d'errances merveilleuses"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "Recette : Cœurs de bœuf en brochette"
+  },
+  "RecipeXocoatl": {
+    "name": "Recette : Xocoatl"
+  },
+  "RecipeSurfTurfAndPerch": {
+    "name": "Recette : Montagnes, mers et cieux"
+  },
+  "RecipeVolcanoCake": {
+    "name": "Recette : Gâteau volcanique"
+  },
+  "RecipeGrainfruitWrap": {
+    "name": "Recette : Dolmas granifruités"
+  },
+  "RecipeMystiqueSoup": {
+    "name": "Recette : Soupe mystique"
+  },
+  "RecipeSingYourHeartOut": {
+    "name": "Recette : À gorge enjouée"
+  },
+  "RecipeMagmicOde": {
+    "name": "Recette : Ode magmique"
+  },
+  "RecipeQingxinFlowerCake": {
+    "name": "Recette : Gâteau aux fleurs de Qingxin"
+  },
+  "RecipeDrunkenPlumsInSnow": {
+    "name": "Recette : Prunes ivres en neige"
+  },
+  "RecipeBathhouseManjuu": {
+    "name": "Recette : Manju des Bains"
   },
   "CraftedItems": {
     "name": "Produit synthétisé"
@@ -8116,6 +8338,12 @@
   },
   "StrengthTonic": {
     "name": "Tonique de force"
+  },
+  "SpinelgrainBait": {
+    "name": "Appât granispinelle"
+  },
+  "EmberglowBait": {
+    "name": "Appât braiserine"
   },
   "PrimordialEssence": {
     "name": "Substance Primo"
@@ -8462,6 +8690,15 @@
   "HeartOfTheSecretSource": {
     "name": "Noyau de la source secrète"
   },
+  "RefractiveBud": {
+    "name": "Bourgeon réfractif"
+  },
+  "BewilderingBroadleaf": {
+    "name": "Feuillage déroutant"
+  },
+  "IllusoryLeafcoil": {
+    "name": "Cœur illusoire de feuille"
+  },
   "HurricaneSeed": {
     "name": "Graine d'ouragan"
   },
@@ -8656,6 +8893,24 @@
   },
   "OverripeFlamegranate": {
     "name": "Flamboigrenade surmûre"
+  },
+  "GoldInscribedSecretSourceCore": {
+    "name": "Noyau source aux motifs dorés secrets"
+  },
+  "EnsnaringGaze": {
+    "name": "Regard enchevêtrant"
+  },
+  "ErodedHorn": {
+    "name": "Corne érodée"
+  },
+  "ErodedSunfire": {
+    "name": "Rayon érodé"
+  },
+  "ErodedScaleFeather": {
+    "name": "Plume érodée"
+  },
+  "TalismanOfTheEnigmaticLand": {
+    "name": "Talisman d'une terre mystérieuse"
   },
   "TileOfDecarabiansTower": {
     "name": "Tuile cassée de Décarabian"
@@ -9923,7 +10178,7 @@
   "HeavyPack": {
     "name": "Paquet lourd"
   },
-  "ACanOfFry": {
+  "AJarOfFry": {
     "name": "Un bocal d'alevins"
   },
   "PrinceQubadsIntaglio": {
@@ -10916,6 +11171,27 @@
   "GroupPhotoFromAnUnknownTime": {
     "name": "Photo de groupe de date inconnue"
   },
+  "ArtisansMemoII": {
+    "name": "Carnet d'artisan (2)"
+  },
+  "HolySovereignsNotesI": {
+    "name": "Notes du saint souverain (1)"
+  },
+  "HolySovereignsNotesII": {
+    "name": "Notes du saint souverain (2)"
+  },
+  "HolySovereignsNotesIII": {
+    "name": "Notes du saint souverain (3)"
+  },
+  "HolySovereignsNotesV": {
+    "name": "Notes du saint souverain (5)"
+  },
+  "HolySovereignsNotesVI": {
+    "name": "Notes du saint souverain (6)"
+  },
+  "NamelessArtisansMemo": {
+    "name": "Carnet d'un artisan anonyme"
+  },
   "RuggierosNotesII": {
     "name": "Notes de Ruggiero (2)"
   },
@@ -11012,14 +11288,23 @@
   "AncientPieceOfPaper": {
     "name": "Ancienne note"
   },
+  "WaterRustedKey": {
+    "name": "Clé rouillée par l'eau"
+  },
+  "AncientJadestoneFragment": {
+    "name": "Ancien fragment de jade"
+  },
+  "PerfectHeartOfTheSacredDragon": {
+    "name": "Cœur parfait du dragon sacré"
+  },
   "ProductionLog": {
     "name": "Journal de production"
   },
   "ExperimentLog": {
     "name": "Journal d'expérience"
   },
-  "FreshSourSauceKipper": {
-    "name": "Kipper en sauce aigre frais"
+  "FreshSourSauceCeviche": {
+    "name": "Ceviche en sauce aigre frais"
   },
   "AGemMeantAsAGift": {
     "name": "Une gemme à offrir"
@@ -11105,6 +11390,9 @@
   "ShatteredNightJade": {
     "name": "Jade brisé de la nuit"
   },
+  "AncientFlintKey": {
+    "name": "Vieille clé en silex"
+  },
   "ContendingSpark": {
     "name": "Étincelle d'affrontement"
   },
@@ -11132,6 +11420,9 @@
   "AnelasTestimony": {
     "name": "Témoignage d'Anela"
   },
+  "KeyFromABalloonPlatform": {
+    "name": "Clé d'une plateforme de ballon"
+  },
   "FellDragonsPicturebook": {
     "name": "Livre illustré du dragon maléfique"
   },
@@ -11151,7 +11442,7 @@
     "name": "Lettre endommagée"
   },
   "SlightlySquashedPackage": {
-    "name": "Colis tordu"
+    "name": "Colis légèrement écrasé"
   },
   "TornLetter": {
     "name": "Lettre déchirée"
@@ -11261,6 +11552,24 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "Le seigneur du volcan et les épingles d'ombre"
   },
+  "RustSpottedKey": {
+    "name": "Clé tachetée de rouille"
+  },
+  "PilgrimsChronicle": {
+    "name": "Chronique de pèlerinage"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "Copie un peu vieillie de « Tequil le brave »"
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "Copie complètement neuve de « Tequil le brave »"
+  },
+  "Pyrophosphorite": {
+    "name": "Pyrophosphorite"
+  },
+  "DyeSamples": {
+    "name": "Échantillon de teinture"
+  },
   "PicturesqueRecords": {
     "name": "Enregistrements pittoresques"
   },
@@ -11276,8 +11585,251 @@
   "NoteLeftAtTheCamp": {
     "name": "Note laissée au camp"
   },
+  "ANamelessAdventurersNotes": {
+    "name": "Notes d'un aventurier anonyme"
+  },
+  "MedicineOfGreaterEfficacy": {
+    "name": "Médicament de meilleure efficacité"
+  },
+  "MedicineOfSuperiorTaste": {
+    "name": "Médicament de meilleur goût"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "Perle de miel phlogistique écarlate"
+  },
+  "AncientDiary": {
+    "name": "Ancien journal"
+  },
+  "MagnificosMasterpiece": {
+    "name": "« Chef-d'œuvre » de Magnifico"
+  },
+  "FiresOfAutumnTwilightI": {
+    "name": "Les feux du crépuscule d'automne (1)"
+  },
+  "FiresOfAutumnTwilightII": {
+    "name": "Les feux du crépuscule d'automne (2)"
+  },
+  "FiresOfAutumnTwilightIII": {
+    "name": "Les feux du crépuscule d'automne (3)"
+  },
+  "SpringsOfHiddenJadeI": {
+    "name": "Les sources du jade caché (1)"
+  },
+  "SpringsOfHiddenJadeII": {
+    "name": "Les sources du jade caché (2)"
+  },
+  "MtLingmengGossipI": {
+    "name": "Potins du Mont Lingmeng (1)"
+  },
+  "MtLingmengGossipII": {
+    "name": "Potins du Mont Lingmeng (2)"
+  },
+  "MtLingmengGossipIII": {
+    "name": "Potins du Mont Lingmeng (3)"
+  },
+  "TheTaleOfKuntur": {
+    "name": "Le conte de Kuntur"
+  },
+  "MysteriousWeaponFragmentArrowRest": {
+    "name": "Fragment d'arme mystérieux : Repose-flèche"
+  },
+  "IktomiScrollMap": {
+    "name": "Rouleau de clairvoyance : Carte"
+  },
+  "TepalsTatteredNotes": {
+    "name": "Notes en lambeaux de Tepal"
+  },
+  "KeyFoundByThePaintedStoneChallengePodium": {
+    "name": "Clé trouvée au podium du défi des pierres teintées"
+  },
+  "SecretArtGrilledFishInMintSauce": {
+    "name": "Poisson grillé à la menthe façon secrète"
+  },
+  "PurpleObsidianFragment": {
+    "name": "Fragment d'obsidienne violette"
+  },
+  "PurpleObsidianRing": {
+    "name": "Anneau d'obsidienne violette"
+  },
+  "CrimsonObsidianFragment": {
+    "name": "Fragment d'obsidienne écarlate"
+  },
+  "CrimsonObsidianRing": {
+    "name": "Anneau d'obsidienne écarlate"
+  },
+  "PakpakaFlyingSchoolFlyingTournamentInvitationLetter": {
+    "name": "Invitation au tournoi de vol de l'Aérocadémie des pakpakas"
+  },
+  "CapturedPhotos": {
+    "name": "Images capturées"
+  },
+  "NearbyFlammabombWood": {
+    "name": "Bois de flammabombe du coin"
+  },
+  "NearbyAshenAratikuWood": {
+    "name": "Bois d'aratiku cendré du coin"
+  },
+  "SmoothBittedKey": {
+    "name": "Clé à panneton lisse"
+  },
+  "StraightBittedKey": {
+    "name": "Clé à panneton droit"
+  },
+  "MessilyBittedKey": {
+    "name": "Clé à panneton désordonné"
+  },
+  "CitlalisHandkerchief": {
+    "name": "Mouchoir de Citlali"
+  },
+  "LegendInscribedWovenScroll": {
+    "name": "Rouleau tissé relatant une légende"
+  },
+  "ShogunAlmightyRebornAsRaidenWithUnlimitedPowerFirstEdition": {
+    "name": "1e édition de « Shogun toute-puissante — Comment j'ai été réincarnée en Raiden aux pouvoirs illimités »"
+  },
+  "PrettyPleaseKitsuneGuujiLimitedDeluxeEdition": {
+    "name": "Édition deluxe limitée de « S'il te plaît, ma Guuji Kitsune ? »"
+  },
+  "CitlalisHandkerchiefAndKey": {
+    "name": "Mouchoir et clé de Citlali"
+  },
+  "SpiritcallersNotesI": {
+    "name": "Notes du nécromancesprit (1)"
+  },
+  "MountainRangersNotes": {
+    "name": "Notes du patrouilleur montagnard"
+  },
+  "NamelessPriestsNotes": {
+    "name": "Carnet d'un prêtre anonyme"
+  },
+  "TravelingScholarsNotes": {
+    "name": "Notes d'érudit en voyage"
+  },
+  "HolySovereignsNotesVII": {
+    "name": "Notes du saint souverain (7)"
+  },
+  "HolySovereignsNotesVIII": {
+    "name": "Notes du saint souverain (8)"
+  },
+  "HolySovereignsNotesIX": {
+    "name": "Notes du saint souverain (9)"
+  },
+  "SpiritcallersNotesII": {
+    "name": "Notes du nécromancesprit (2)"
+  },
+  "NotesSomeoneLeftBehindI": {
+    "name": "Notes laissées par quelqu'un (1)"
+  },
+  "NotesSomeoneLeftBehindII": {
+    "name": "Notes laissées par quelqu'un (2)"
+  },
+  "NotesSomeoneLeftBehindIII": {
+    "name": "Notes laissées par quelqu'un (3)"
+  },
+  "NotesSomeoneLeftBehindIV": {
+    "name": "Notes laissées par quelqu'un (4)"
+  },
+  "NotesSomeoneLeftBehindV": {
+    "name": "Notes laissées par quelqu'un (5)"
+  },
+  "HelkasNotes": {
+    "name": "Notes de Helka"
+  },
+  "AGiftEnvelopeFromPaimon": {
+    "name": "Enveloppe-cadeau de Paimon"
+  },
+  "EmblemOfValor": {
+    "name": "Preuve de bravoure"
+  },
+  "SpecialCommemorativeLetter": {
+    "name": "LEttre commémorative spéciale"
+  },
+  "RecordkeepingSecretSourceSentinel": {
+    "name": "Sentinelle de source secrète pour la tenue de registres"
+  },
+  "NamelessTravelersNotesI": {
+    "name": "Carnet d'un voyageur anonyme (1)"
+  },
+  "NamelessTravelersNotesII": {
+    "name": "Carnet d'un voyageur anonyme (2)"
+  },
+  "NamelessTravelersNotesIII": {
+    "name": "Carnet d'un voyageur anonyme (3)"
+  },
+  "NamelessTravelersNotesIV": {
+    "name": "Carnet d'un voyageur anonyme (4)"
+  },
+  "NamelessTravelersNotesV": {
+    "name": "Carnet d'un voyageur anonyme (5)"
+  },
+  "InvitationFromMiko": {
+    "name": "Invitation de Miko"
+  },
+  "AisaBathhouseCreditCoupon": {
+    "name": "Coupon spécial des Bains Aisa"
+  },
+  "LeafyDreams": {
+    "name": "Rêves feuillus"
+  },
+  "PlaceOfTheTrialOfDisembodimentMessage": {
+    "name": "Message de l'épreuve de désincarnation"
+  },
+  "RattanToyHuTao": {
+    "name": "Jouet en rotin : Hu Tao"
+  },
+  "HuTaoPlumBranch": {
+    "name": "Hu Tao : Branche de prunier"
+  },
+  "ZhongliRexCoin": {
+    "name": "Zhongli : Pièce du Souverain"
+  },
+  "RattanToy": {
+    "name": "Jouet en rotin"
+  },
+  "SaurusCrackersTatankasaurus": {
+    "name": "Biscuit sauriennaurus : Tatankasaure"
+  },
+  "SaurusCrackersQucusaurus": {
+    "name": "Biscuit sauriennaurus : Qucusaure"
+  },
+  "SaurusCrackersYumkasaurus": {
+    "name": "Biscuit sauriennaurus : Yumkasaure"
+  },
+  "SaurusCrackersIktomisaurus": {
+    "name": "Biscuit sauriennaurus : Iktomisaure"
+  },
+  "SaurusCrackersKoholasaurus": {
+    "name": "Biscuit sauriennaurus : Koholasaure"
+  },
+  "SaurusCrackersTepetlisaurus": {
+    "name": "Biscuit sauriennaurus : Tepetlisaure"
+  },
+  "AisaBathhouseVIPPass": {
+    "name": "Invitation VIP des Bains Aisa"
+  },
+  "MysteriousGift": {
+    "name": "Cadeau mystérieux"
+  },
+  "GlimpsesOfMysteriousInazumaI": {
+    "name": "Aperçus de la mystérieuse Inazuma (1)"
+  },
+  "GlimpsesOfMysteriousInazumaII": {
+    "name": "Aperçus de la mystérieuse Inazuma (2)"
+  },
+  "MenOfLithinI": {
+    "name": "Hommes de Lithin (1)"
+  },
+  "MenOfLithinII": {
+    "name": "Hommes de Lithin (2)"
+  },
+  "MenOfLithinIII": {
+    "name": "Hommes de Lithin (3)"
+  },
   "TearsAmongTheStars": {
     "name": "Larme parmi les étoiles"
+  },
+  "ObsidianAncientName": {
+    "name": "Antique nom d'obsidienne"
   },
   "SilkFlowerSeed": {
     "name": "Graine de fleur de soie"
@@ -11386,6 +11938,9 @@
   },
   "SprayfeatherGillSeed": {
     "name": "Graine de branchie mousseplume"
+  },
+  "GlowingHornshroomSpore": {
+    "name": "Spore de champicorne brillant"
   },
   "Medaka": {
     "name": "Médaka"
@@ -11498,6 +12053,27 @@
   "JadeHeartfeatherBass": {
     "name": "Bar plumé cordial de jade"
   },
+  "FloralRapidfightingFish": {
+    "name": "Poissonflux guerrier floral"
+  },
+  "DivingRapidfightingFish": {
+    "name": "Poissonflux guerrier plongeur"
+  },
+  "MagmaRapidfightingFish": {
+    "name": "Poissonflux guerrier magmique"
+  },
+  "GreenwaveSunfish": {
+    "name": "Môle verdée"
+  },
+  "DuskSunfish": {
+    "name": "Môle crépusculaire"
+  },
+  "PhonyPhlogistonUnihornfish": {
+    "name": "Poissonicorne phlogistique simulé"
+  },
+  "PseudosharkUnihornfish": {
+    "name": "Poissonicorne requin camouflé"
+  },
   "WingsOfFirstFlight": {
     "name": "Planeur du débutant"
   },
@@ -11542,6 +12118,9 @@
   },
   "WingsOfSoaringFlame": {
     "name": "Ailes de flamme montante"
+  },
+  "WingsOfFatesCourseIntertwined": {
+    "name": "Ailes des destins entremêlés"
   },
   "RadiantSpincrystal1": {
     "name": "Gyrocristal radiant 1"
@@ -12011,6 +12590,27 @@
   "RadiantSpincrystal140": {
     "name": "Gyrocristal radiant 140"
   },
+  "RadiantSpincrystal141": {
+    "name": "Gyrocristal radiant 141"
+  },
+  "RadiantSpincrystal142": {
+    "name": "Gyrocristal radiant 142"
+  },
+  "RadiantSpincrystal143": {
+    "name": "Gyrocristal radiant 143"
+  },
+  "RadiantSpincrystal144": {
+    "name": "Gyrocristal radiant 144"
+  },
+  "RadiantSpincrystal145": {
+    "name": "Gyrocristal radiant 145"
+  },
+  "RadiantSpincrystal146": {
+    "name": "Gyrocristal radiant 146"
+  },
+  "RadiantSpincrystal147": {
+    "name": "Gyrocristal radiant 147"
+  },
   "LanternFiber": {
     "name": "Cellulose de lanterne"
   },
@@ -12088,6 +12688,12 @@
   },
   "TheSeasSilentShade": {
     "name": "Ombre silencieuse de la mer"
+  },
+  "ShuttleOfOdara": {
+    "name": "Navette d'Odara"
+  },
+  "SmolderingPhosphorescentFlame": {
+    "name": "Flamme phosphorescente fumante"
   },
   "FalconsDance": {
     "name": "Danse du faucon"
@@ -12235,6 +12841,9 @@
   },
   "Wavepiercer": {
     "name": "Harpon perforant"
+  },
+  "FlowhornFlounderfinder": {
+    "name": "Attrape-flet rhino-fluxeau"
   },
   "GenshinImpactANewWorld": {
     "name": "Genshin Impact - Un monde nouveau"
@@ -12878,6 +13487,57 @@
   "CelebrationCrispyAndSweet": {
     "name": "Célébration - Doux et croquant"
   },
+  "XilonenCuePoint": {
+    "name": "Xilonen - En rythme"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "PB - Sabzeruz"
+  },
+  "ChascaFullyLoaded": {
+    "name": "Chasca - Chargée à bloc"
+  },
+  "OroronNightshade": {
+    "name": "Ororon - Nocturnal"
+  },
+  "NatlanFleetingDreams": {
+    "name": "Natlan - Rêves éphémères"
+  },
+  "AchievementFightingSpirit": {
+    "name": "Succès - Esprit combatif"
+  },
+  "TravelNotesSpiritweaver": {
+    "name": "PB - Spiritissage"
+  },
+  "MavuikaSunCrowned": {
+    "name": "Mavuika - Couronne solaire"
+  },
+  "CitlaliOpalstar": {
+    "name": "Citlali - Étoile opaline"
+  },
+  "LanYanSilverSwallow": {
+    "name": "Lan Yan - Hirondelle argentée"
+  },
+  "AchievementAllSeeing": {
+    "name": "Succès - Omnivision"
+  },
+  "AchievementBlaze": {
+    "name": "Succès - Embrasement"
+  },
+  "AchievementRepertoire": {
+    "name": "Succès - Répertoire"
+  },
+  "TravelNotesTheFlameRenewed": {
+    "name": "PB - Feu nouveau"
+  },
+  "YumemizukiMizukiNightmareDevourer": {
+    "name": "Yumemizuki Mizuki - Mange-cauchemars"
+  },
+  "CelebrationScorch": {
+    "name": "Célébration - Embrasement"
+  },
+  "TravelNotesWondrousReverie": {
+    "name": "PB - Rêverie"
+  },
   "EchoDandelionKnight": {
     "name": "Écho : Chevalier au Pissenlit"
   },
@@ -12892,6 +13552,18 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "Écho : Ombre de l'Aurore"
+  },
+  "EchoVagoMundo": {
+    "name": "Écho : Vagabond du monde mortel"
+  },
+  "EchoDrivingThunder": {
+    "name": "Écho : Ardeur du tonnerre"
+  },
+  "EchoPleniluneGaze": {
+    "name": "Écho : Défense fervente"
+  },
+  "EchoScarletLeavesPursueWildWaves": {
+    "name": "Écho : Tourbillon de feuilles écarlates"
   },
   "AnemoculusResonanceStone": {
     "name": "Pierre de résonance Anémoculus"
@@ -13172,6 +13844,15 @@
   "ArtifactTransmuter": {
     "name": "Transmutateur d'artéfact"
   },
+  "RepertoireOfMyriadMelodies": {
+    "name": "Répertoire aux mille mélodies"
+  },
+  "DjemDjemDrum": {
+    "name": "Tambour djem djem"
+  },
+  "Ukulele": {
+    "name": "Ukulélé"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Instructions : Pierre de résonance Anémoculus"
   },
@@ -13319,6 +14000,12 @@
   "DiagramPyroTreasureCompass": {
     "name": "Plan : Détecteur de trésors Pyro"
   },
+  "FormulaSpinelgrainBait": {
+    "name": "Recette : Appât granispinelle"
+  },
+  "FormulaEmberglowBait": {
+    "name": "Recette : Appât braiserine"
+  },
   "SilkenPrint": {
     "name": "Imprimé de soie"
   },
@@ -13327,6 +14014,9 @@
   },
   "SwirlingSceneInABottle": {
     "name": "« Scène tourbillonnante dans une bouteille »"
+  },
+  "ScrollOfTheFieryFirmament": {
+    "name": "Parchemin du firmament enflammé"
   },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Des nuages de montagne, la pluie dorée tombe"
@@ -13415,6 +14105,75 @@
   "StrivingToNegotiate": {
     "name": "S'efforcer de négocier"
   },
+  "VirtuosoPerformance": {
+    "name": "Performance de virtuose"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "Prêt à en découdre"
+  },
+  "RefinedCountenance": {
+    "name": "Contenance raffinée"
+  },
+  "NoiseFiltering": {
+    "name": "Élimination des bruits"
+  },
+  "PerfectPartner": {
+    "name": "Partenaire parfait"
+  },
+  "HappyTimes": {
+    "name": "Moment heureux"
+  },
+  "DeepContemplation": {
+    "name": "Contemplation profonde"
+  },
+  "ThesisProgression": {
+    "name": "Avancée de thèse"
+  },
+  "PrayerTime": {
+    "name": "Heure de la prière"
+  },
+  "ElegantGreeting": {
+    "name": "Salutation élégante"
+  },
+  "EarnestNegotiation": {
+    "name": "Négociation sincère"
+  },
+  "FantasticalMarvel": {
+    "name": "Merveille fantastique"
+  },
+  "MeditationOnFloatingDreams": {
+    "name": "Rêves flottants"
+  },
+  "HiddenJadeStar": {
+    "name": "Étoile de jade"
+  },
+  "DappledShadowsReflectingRed": {
+    "name": "Ombres de rouge"
+  },
+  "OracleOfReason": {
+    "name": "Oracle de la raison"
+  },
+  "LingeringFeast": {
+    "name": "Fête persistante"
+  },
+  "AzureIcefang": {
+    "name": "Croc de glace azur"
+  },
+  "WindAndFreedom": {
+    "name": "Vent et liberté"
+  },
+  "StoneAndContracts": {
+    "name": "Pierre et contrats"
+  },
+  "ThunderAndEternity": {
+    "name": "Tonnerre et éternité"
+  },
+  "NatureAndWisdom": {
+    "name": "Flore et sagesse"
+  },
+  "WaterAndJustice": {
+    "name": "Eau et justice"
+  },
   "RhodeiaOfLoch": {
     "name": "Océanide - Rhodeia"
   },
@@ -13489,6 +14248,15 @@
   },
   "HydroHilichurlRogue": {
     "name": "Brutovéreux Hydro"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "Chantre de l'Abîme - Foudre pourpre"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "Pirouettière florale des Érémites"
+  },
+  "GoldenWolflord": {
+    "name": "Loup alpha doré"
   },
   "UndividedHeart": {
     "name": "Cœur indivisible"
@@ -13784,6 +14552,36 @@
   "HydrodartSlime": {
     "name": "Blob à dard d'eau"
   },
+  "InFiveColorsDyed": {
+    "name": "Cinq couleurs de la teinture"
+  },
+  "ChainLightningCascade": {
+    "name": "Éclairs en cascade"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "Sifflement du serpent spirituel"
+  },
+  "DivineRetribution": {
+    "name": "Châtiment divin"
+  },
+  "RequiresAppropriateRest": {
+    "name": "Repos adéquat requis"
+  },
+  "BeastlyCorrosion": {
+    "name": "Corruption bestiale"
+  },
+  "NightRealmsGiftCrestsAndTroughs": {
+    "name": "Don de la nuit : Crêtes et creux"
+  },
+  "DarkShatteringFlame": {
+    "name": "Flamme brisant la nuit"
+  },
+  "AllReprisalsAndArrearsMineToBear": {
+    "name": "À moi de supporter toute haine et toute dette"
+  },
+  "RepaidInFull": {
+    "name": "Remboursement total"
+  },
   "MagicGuide": {
     "name": "Guide de magie"
   },
@@ -14045,6 +14843,30 @@
   "Koholasaurus": {
     "name": "Koholasaure"
   },
+  "PortablePowerSaw": {
+    "name": "Scie électrique portative"
+  },
+  "ConductorsTopHat": {
+    "name": "Haut-de-forme du chef d'orchestre"
+  },
+  "Tepetlisaurus": {
+    "name": "Tepetlisaure"
+  },
+  "FlowingPurity": {
+    "name": "Pureté fluide"
+  },
+  "MaidensFadingBeauty": {
+    "name": "Beauté fugace de la Demoiselle"
+  },
+  "Iktomisaurus": {
+    "name": "Iktomisaure"
+  },
+  "DemonWarriorsFeatherMask": {
+    "name": "Masque à plumes du guerrier-démon"
+  },
+  "Qucusaurus": {
+    "name": "Qucusaure"
+  },
   "LiyueHarborWharf": {
     "name": "Quai du Port de Liyue"
   },
@@ -14198,6 +15020,18 @@
   "Atea": {
     "name": "Atea"
   },
+  "StageTepetl": {
+    "name": "Scène Tepetl"
+  },
+  "ScionsOfTheCanopy": {
+    "name": "Êtres des canopées"
+  },
+  "PeopleOfTheSprings": {
+    "name": "Peuple des sources"
+  },
+  "FlowerFeatherClan": {
+    "name": "Clan des fleurplumes"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Résonance élémentaire : Glace tissée"
   },
@@ -14285,18 +15119,6 @@
   "AbyssalSummons": {
     "name": "Appel de l'Abîme"
   },
-  "WindAndFreedom": {
-    "name": "Vent et liberté"
-  },
-  "StoneAndContracts": {
-    "name": "Pierre et contrats"
-  },
-  "ThunderAndEternity": {
-    "name": "Tonnerre et éternité"
-  },
-  "NatureAndWisdom": {
-    "name": "Flore et sagesse"
-  },
   "FatuiConspiracy": {
     "name": "Conspiration Fatui"
   },
@@ -14369,9 +15191,6 @@
   "ViciousAncientBattle": {
     "name": "Ancienne bataille féroce"
   },
-  "WaterAndJustice": {
-    "name": "Eau et justice"
-  },
   "CountdownToTheShow3": {
     "name": "Spectacle imminent : 3"
   },
@@ -14386,6 +15205,21 @@
   },
   "EdictOfAbsolution": {
     "name": "Édit d'absolution"
+  },
+  "EremiteTeatime": {
+    "name": "Thé des Érémites"
+  },
+  "UltimateSurfingBuddy": {
+    "name": "Ultime compagnon de surf !"
+  },
+  "PilgrimageOfTheReturnOfTheSacredFlame": {
+    "name": "Pèlerinage de retour du sanctifeu"
+  },
+  "AbundantPhlogiston": {
+    "name": "Abondance de phlogistique"
+  },
+  "LittleTepetlisaurTreasureHunterAtLarge": {
+    "name": "Petit tepetlisaure trouveur de trésors"
   },
   "Origin": {
     "name": "Origine"
@@ -14437,6 +15271,12 @@
   },
   "Natlan": {
     "name": "Natlan"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "Enkanomiya : Nuit sans fin"
+  },
+  "EnkanomiyaCrown": {
+    "name": "Enkanomiya : Couronne"
   },
   "BeginnerPlayerBadge": {
     "name": "Badge de {M#joueur débutant}{F#joueuse débutante}"
@@ -14509,6 +15349,12 @@
   },
   "PhantomInBoots": {
     "name": "Fantôme en bottes"
+  },
+  "CherriesSnowLaden": {
+    "name": "Cerises sous neige"
+  },
+  "NewYearsCheer": {
+    "name": "Gaieté du Nouvel An"
   },
   "AdventurerCamp": {
     "name": "Campement d'aventurier"
@@ -14762,6 +15608,39 @@
   "TheNationOfHydrosMottledColors": {
     "name": "Couleurs tachetées de la nation Hydro"
   },
+  "CarefullyConsideredWords": {
+    "name": "Mots mûrement réfléchis"
+  },
+  "ArenasToastToTriumph": {
+    "name": "Toast victorieux au Stade"
+  },
+  "SleepNowRestYourWearyHead": {
+    "name": "« Dormez et reposez cet esprit fatigué »"
+  },
+  "FomentingFashionAtTheFair": {
+    "name": "Création des tendances de la Foire"
+  },
+  "BornAmongSearingFlames": {
+    "name": "Naissance dans un berceau ardent"
+  },
+  "TreadingTheUntroddenPath": {
+    "name": "Fouler des sentiers inconnus"
+  },
+  "ChildrenOfEchoesPassion": {
+    "name": "Passion des Enfants des échos"
+  },
+  "PeopleOfTheSpringsRelaxation": {
+    "name": "Relaxation du Peuple des sources"
+  },
+  "ScionsOfTheCanopysDuty": {
+    "name": "Devoir des Êtres des canopées"
+  },
+  "FlowerFeatherClansConquest": {
+    "name": "Conquête du Clan des fleurplumes"
+  },
+  "MastersOfTheNightWindsTranquility": {
+    "name": "Tranquillité des Maîtres du vent nocturne"
+  },
   "TimberWallWithJadeEaves": {
     "name": "Mur en bois avec alcôve de jade"
   },
@@ -14776,6 +15655,9 @@
   },
   "AnnexsGoldenMosaic": {
     "name": "Mosaïque dorée de l'Annexe"
+  },
+  "LoftyTowersFashionableCanvas": {
+    "name": "Toile tendance de haute tour"
   },
   "TraditionalCedarFlooring": {
     "name": "Plancher traditionnel en cèdre"
@@ -14792,6 +15674,9 @@
   "AnnexsMirrorSheenFloorTile": {
     "name": "Parquet miroir de l'Annexe"
   },
+  "LoftyTowersFloorOfTrials": {
+    "name": "Arène d'épreuves de haute tour"
+  },
   "CheckeredCedarCeiling": {
     "name": "Plafond quadrillé en cèdre"
   },
@@ -14806,6 +15691,9 @@
   },
   "AnnexsSpotlessDome": {
     "name": "Dôme immaculé de l'Annexe"
+  },
+  "LoftyTowersRadiantCeiling": {
+    "name": "Plafond rayonnant de haute tour"
   },
   "TwoTierCandleChandelier": {
     "name": "Lustre à deux rangées de chandelles"
@@ -14960,11 +15848,23 @@
   "WhiteChestnutOakWoodTwilightFloorLamp": {
     "name": "Lampadaire « Crépuscule » en bois de chênetaignier blanc"
   },
+  "PhlogistonStreetLampTheRoadAhead": {
+    "name": "Réverbère phlogistique « Chemin en avant »"
+  },
+  "PhlogistonStreetLampThreefold": {
+    "name": "Réverbère phlogistique « Trio »"
+  },
+  "PhlogistonFloorLampHomecoming": {
+    "name": "Lampadaire phlogistique « Chemin de retour »"
+  },
   "EfflorescentIllumination": {
     "name": "Illumination efflorescente"
   },
   "AnnexsSwirlingLight": {
     "name": "Lumière tourbillonnante de l'Annexe"
+  },
+  "LoftyTowersFlamingBrazier": {
+    "name": "Brasero ardent de haute tour"
   },
   "NorthernBirchFoldingCounter": {
     "name": "Comptoir avec abattant en bouleau du nord"
@@ -15004,6 +15904,18 @@
   },
   "MallowWoodMultiModelWardrobe": {
     "name": "Armoire « Modèle multiple » en bois d'hibiscus"
+  },
+  "FairsDistribution": {
+    "name": "« Répartition de la Foire »"
+  },
+  "FairsSplendidTextiles": {
+    "name": "« Splendides textiles de la Foire »"
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "Étagère « Pivot » en bois de palmier-pêcher"
+  },
+  "FairsThoughtsInOrder": {
+    "name": "« Pensées ordonnées de la Foire »"
   },
   "TwoTierLibraryBookshelf": {
     "name": "Bibliothèque à deux étages"
@@ -15161,6 +16073,21 @@
   "TeahouseToolQualiteaReview": {
     "name": "Instrument de salon de thé « Test de qualité »"
   },
+  "OneLeggedRoundShield": {
+    "name": "Bouclier circulaire à un pied"
+  },
+  "FourLeggedTowerShield": {
+    "name": "Bouclier de tour à quatre pieds"
+  },
+  "NamelessAndSilent": {
+    "name": "« Silencieux sans nom »"
+  },
+  "CountlessServices": {
+    "name": "« Innombrables services »"
+  },
+  "FairsSimpleSalesStrategy": {
+    "name": "« Stratégie commerciale de la Foire »"
+  },
   "BreezeBlessedBed": {
     "name": "Lit « Douce brise »"
   },
@@ -15184,6 +16111,9 @@
   },
   "LindenWoodSweetSlumberBed": {
     "name": "Lit « Doux sommeil » en bois de tilleul"
+  },
+  "StoneBedPeacefulSleep": {
+    "name": "Lit « Repos paisible » en pierre"
   },
   "PineReceptionCounter": {
     "name": "Comptoir de réception en pin"
@@ -15280,6 +16210,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "Banc de salon de thé « Assise simple »"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "Chaise à dossier « Festin épicé » du Stade"
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "Banc « Assise ronde » du Stade"
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "Tabouret rond « Collation rapide » du Stade"
   },
   "NorthernStoneHearth": {
     "name": "Cheminée en pierre du nord"
@@ -15455,6 +16394,18 @@
   "HotelRailingPerfectViewingArc": {
     "name": "Garde-corps d'hôtel « Arc scénique »"
   },
+  "FairsFreshVegetables": {
+    "name": "« Légumes frais de la Foire »"
+  },
+  "TravelerOnTheRoad": {
+    "name": "« Vagabondage sur les routes »"
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "Distance avec les flammes"
+  },
+  "PortableAllPurposeGrill": {
+    "name": "Gril portable multi-usages"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapis de Mondstadt « Ardeur pourpre »"
   },
@@ -15503,6 +16454,21 @@
   "FadingAfterglow": {
     "name": "« Lueur qui s'estompe »"
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "Tapis de repos « Fardeau allégé »"
+  },
+  "FairCarpetWarmthAndPassion": {
+    "name": "Tapis de la Foire « Chaleur et passion »"
+  },
+  "VibrantPotBornInFlames": {
+    "name": "Pot vibrant « Né des flammes »"
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "Marionnette bipède « Secou-remou »"
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "Marionnette quadrupède « Prêt et calme »"
+  },
   "TrustyPortableLamp": {
     "name": "Lanterne constamment allumée"
   },
@@ -15538,6 +16504,15 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "Lanterne simple « Matériaux locaux »"
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "Lampe phlogistique de table « Poids suffisant »"
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "Lampadaire phlogistique « Praticité rentable »"
+  },
+  "PhlogistonLampRainCover": {
+    "name": "Lanterne phlogistique « Couvre-pluie »"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Composition florale « Tranquillité céleste »"
@@ -15698,11 +16673,35 @@
   "CommonUseNoteHolder": {
     "name": "Porte-notes universel"
   },
+  "SweetDreams": {
+    "name": "« Doux rêves »"
+  },
   "TeahouseToolMinisculeMissesMakeAMile": {
     "name": "Instrument de salon de thé « Pesage de précision »"
   },
   "MellowTeaInARedClayPot": {
     "name": "« Thé dans un pot d'argile rouge »"
+  },
+  "ModelDishNotToBeMissed": {
+    "name": "Plat modèle « À ne pas manquer »"
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "Plat modèle « Choix habituel »"
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "« Festin et beuverie à la Foire »"
+  },
+  "Windtracker": {
+    "name": "« Traqueur de vent »"
+  },
+  "JavelinImminent": {
+    "name": "« Lancer du javelot imminent »"
+  },
+  "TowardsGreaterHeights": {
+    "name": "« Vers de plus hauts sommets »"
+  },
+  "RidingTheTranquilWaters": {
+    "name": "« Navigation sur les eaux calmes »"
   },
   "RealizationsFromTheLandOfWisdom": {
     "name": "« Réalisation du pays de la sagesse »"
@@ -15721,6 +16720,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "Composition florale « Contraste artistique »"
+  },
+  "EchoesOfTheShore": {
+    "name": "Échos du rivage"
+  },
+  "UnbeatenHero": {
+    "name": "« Héros invaincu »"
+  },
+  "MountainFireworks": {
+    "name": "« Feux d'artifice des montagnes »"
   },
   "LandscapePaintingCountryHome": {
     "name": "Tableau de paysage « Maison de campagne »"
@@ -15805,6 +16813,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "Luminaire mécanique « Réflexions nocturnes »"
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "Lampe phlogistique murale « Guide routier »"
   },
   "LingeringMoment": {
     "name": "« Moment suspendu »"
@@ -16030,6 +17041,21 @@
   },
   "SalesSavvy101": {
     "name": "« Les bases de la vente »"
+  },
+  "WovenHutSereneIndigo": {
+    "name": "Cabane tissée « Indigo serein »"
+  },
+  "WovenHutRhythmicStripes": {
+    "name": "Cabane tissée « Stries rythmiques »"
+  },
+  "GloriousHuesOfTheSacredFlame": {
+    "name": "« Glorieuses teintes du sanctifeu »"
+  },
+  "CuriousCountenancesOfTheSacredFlame": {
+    "name": "« Contenance curieuse du sanctifeu »"
+  },
+  "AlluringFlavorsOfTheSacredFlame": {
+    "name": "« Saveurs séduisantes du sanctifeu »"
   },
   "HilichurlOutpostHut": {
     "name": "Avant-poste Brutocollinus"
@@ -16460,6 +17486,33 @@
   "HotSpringRetreatTopChoice": {
     "name": "Retraite thermale « Premier choix »"
   },
+  "NightWindArchitectureNeedsOfExchange": {
+    "name": "Architecture du vent nocturne « Besoin d'échanges »"
+  },
+  "NightWindArchitectureArcaneFoundation": {
+    "name": "Architecture du vent nocturne « Fondement mystique »"
+  },
+  "NightWindArchitectureMundaneWay": {
+    "name": "Cabane du vent nocturne « Voie habituelle »"
+  },
+  "FlowerFeatherResidenceChasingTriviality": {
+    "name": "Résidence des fleurplumes « Souci du détail »"
+  },
+  "FlowerFeatherResidenceLogicOfFlight": {
+    "name": "Résidence des fleurplumes « Logique du vol »"
+  },
+  "SimpleFlowerFeatherHouseFallbackMeasures": {
+    "name": "Maison des fleurplumes « Mesure de secours »"
+  },
+  "FlowerFeatherStableSauriansRepose": {
+    "name": "Écurie des fleurplumes « Repos des sauriens »"
+  },
+  "AshenAratikuWoodGiantClawPlatform": {
+    "name": "Plateforme « Griffe géante » en bois d'aratiku cendré"
+  },
+  "PilgrimageOfFlame": {
+    "name": "Pèlerinage de la flamme"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fontaine à fleurs et oiseaux"
   },
@@ -16573,6 +17626,12 @@
   },
   "EvenHandedJudgment": {
     "name": "« Punition équitable »"
+  },
+  "DawnOfFlight": {
+    "name": "Envolée première"
+  },
+  "FlowerFeatherClanWarningBalloon": {
+    "name": "Ballon « Avertissement » du Clan des fleurplumes"
   },
   "AdeptusGate": {
     "name": "Portail des Adeptes"
@@ -16747,6 +17806,39 @@
   },
   "ValleyStoneStepsFoundationStone": {
     "name": "Escalier en pierre du vallon « Première pierre »"
+  },
+  "DwellingPortalSacredDuty": {
+    "name": "Portail de résidence « Devoir sacré »"
+  },
+  "DwellingWallJourneyThroughArt": {
+    "name": "Mur de résidence « Épopée artistique »"
+  },
+  "DwellingWallGuidingLines": {
+    "name": "Mur de résidence « Lignes directrices »"
+  },
+  "DwellingWallWarpedPerspective": {
+    "name": "Mur de résidence « Perspective déformée »"
+  },
+  "DwellingWallGraffitiPanel": {
+    "name": "Mur de résidence « Panneau de graffitis »"
+  },
+  "StadiumsTemperedSteps": {
+    "name": "Marches « Perfectionnement » du Stade"
+  },
+  "GuardianPillarMyriadWarriors": {
+    "name": "Pilier protecteur « Myriade de guerriers »"
+  },
+  "GuardianPillarAbundantShamans": {
+    "name": "Pilier protecteur « Abondance de shamans »"
+  },
+  "GuardianPillarInnumerableSparks": {
+    "name": "Pilier protecteur « Foultitude d'étincelles »"
+  },
+  "GuardianPillarExaltedHeroes": {
+    "name": "Pilier protecteur « Exaltation héroïque »"
+  },
+  "AshenAratikuWoodMinimalistStaircase": {
+    "name": "Escalier « Minimalisme » en bois d'aratiku cendré"
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fondations de pierre « Temps fortuné »"
@@ -17002,6 +18094,15 @@
   },
   "SalubriousFragrance": {
     "name": "« Parfum salubre »"
+  },
+  "AgelessAgave": {
+    "name": "Agave sans âge"
+  },
+  "SweetDown": {
+    "name": "Doux plumage"
+  },
+  "SolidRoots": {
+    "name": "« Racines solides »"
   },
   "FirShelves": {
     "name": "Râtelier en épicéa"
@@ -17387,6 +18488,24 @@
   "FlagOfHuitztlan": {
     "name": "Bannière des Huitztlans"
   },
+  "TailPouchOfTheMountainWind": {
+    "name": "Poche du vent des montagnes"
+  },
+  "EndlessAspiration": {
+    "name": "Aspiration infinie"
+  },
+  "TlalocansDrawing": {
+    "name": "Peinture des Tlalocans"
+  },
+  "WoodenSignboardEnchantingExperience": {
+    "name": "Pancarte « Expérience enchanteresse » en bois"
+  },
+  "SpringtimeFoldingScreenATouchOfRed": {
+    "name": "Paravent printanier « Un soupçon de rouge »"
+  },
+  "SpringtimeFoldingScreenFragranceFillsTheAir": {
+    "name": "Paravent printanier « Un parfum dans l'air »"
+  },
   "BookshelfFreeReading": {
     "name": "Présentoir à livres « Lecture libre »"
   },
@@ -17411,6 +18530,9 @@
   "ShadedClarity": {
     "name": "Ombre cristalline"
   },
+  "MoltenLavaPool": {
+    "name": "Lagon lavaïque"
+  },
   "TeaHarvestsStockpilingAndTransport": {
     "name": "« Transport et stockage des récoltes »"
   },
@@ -17431,6 +18553,48 @@
   },
   "ModelContraptionStandardMusicalMode": {
     "name": "Engin modèle « Mode musical standard »"
+  },
+  "ClairvoyanceModelSpiritloom": {
+    "name": "Maquette de clairvoyance « Métier à tisser spirituel »"
+  },
+  "ClairvoyanceModelProjectionCenser": {
+    "name": "Maquette de clairvoyance « Encensoir de projection »"
+  },
+  "TheSilentMeditator": {
+    "name": "Méditant silencieux"
+  },
+  "RopeBoundMultiPurposeBarrel": {
+    "name": "Tonneau polyvalent à cordes"
+  },
+  "VesselOfPurificationAndCalm": {
+    "name": "Réceptacle de purification et de calme"
+  },
+  "SpiritualityAndSealing": {
+    "name": "« Spiritualité et scellement »"
+  },
+  "OurPath": {
+    "name": "« Notre chemin »"
+  },
+  "FamishedThoughts": {
+    "name": "« Pensées affamées »"
+  },
+  "FixedTorchPursuitOfVictory": {
+    "name": "Torche fixe « Quête de victoire »"
+  },
+  "BlackGoldOfTheBlazingRealm": {
+    "name": "« Or noir du royaume ardent »"
+  },
+  "PilgrimageByTheHammersBlow": {
+    "name": "Pèlerinage à coup de marteau"
+  },
+  "ClimaxOfColorsAndHues": {
+    "name": "« Apogée des couleurs et teintes »"
+  },
+  "SpatteredColorsAndHues": {
+    "name": "« Éclaboussure des couleurs et teintes »"
+  },
+  "MusingsOnColorsAndHues": {
+    "name": "« Inspiration des couleurs et teintes »"
   },
   "WeatheredBambooFence": {
     "name": "Clôture en bambou usagé"
@@ -17500,6 +18664,15 @@
   },
   "BalustradeOfTheSprings": {
     "name": "« Balustrade des sources »"
+  },
+  "TetherAtTheSummitOfQuahuacanCliff": {
+    "name": "Attache au sommet de la Falaise Quahuacan"
+  },
+  "PaddockFenceSimpleBoundary": {
+    "name": "Clôture d'enclos « Simple frontière »"
+  },
+  "PaddockGateFoundationalFramework": {
+    "name": "Porte d'enclos « Cadre fondamental »"
   },
   "SmoothWoodenBench": {
     "name": "Banc en bois lisse"
@@ -17624,6 +18797,9 @@
   "WhiteChestnutOakWoodRawFinishLowTable": {
     "name": "Table basse « Finition brute » en bois de chênetaignier blanc"
   },
+  "FairTableUncutOriginal": {
+    "name": "Table de la Foire « Au naturel »"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Présentoir de bar à vin « Boisson à volonté »"
   },
@@ -17680,5 +18856,44 @@
   },
   "WayToTheExtreme": {
     "name": "« Direction de l'extrême »"
+  },
+  "TezcatepetoncoFenceSunsJourney": {
+    "name": "Clôture de Tezcatepetonco « Parcours du soleil »"
+  },
+  "TezcatepetoncoFencePathOfDiscovery": {
+    "name": "Clôture de Tezcatepetonco « Voie de la découverte »"
+  },
+  "WoodenTargetTrainingRegimen": {
+    "name": "Cible en bois « Plan d'entraînement »"
+  },
+  "TheEmbersOfCinderCity": {
+    "name": "Tisons de la Cité de braise"
+  },
+  "OurDestination": {
+    "name": "« Notre destination »"
+  },
+  "ForeverInArms": {
+    "name": "« Compagnons pour toujours »"
+  },
+  "BearWitness": {
+    "name": "« Être témoin »"
+  },
+  "FairsTreasuresAndTrinkets": {
+    "name": "« Trésors et joyaux de la Foire »"
+  },
+  "SecretsOfGoodHealth": {
+    "name": "Secrets de la bonne santé"
+  },
+  "PromiseOfAbundance": {
+    "name": "Promesse d'abondance"
+  },
+  "ByCinderCitysGlowingLight": {
+    "name": "Lumière éclatante de la Cité de braise"
+  },
+  "PaddockMillstonePerfectPrepCompanion": {
+    "name": "Moulin d'enclos « Choix de cuisine »"
+  },
+  "PaddockStrawMattressMakeshiftBed": {
+    "name": "Matelas en paille d'enclos « Lit de fortune »"
   }
 }

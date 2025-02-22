@@ -1,23 +1,39 @@
-import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { members } from '@genshin-optimizer/sr/formula'
-import type {
-  CharacterContextObj,
-  LoadoutContextObj,
-} from '@genshin-optimizer/sr/ui'
+import { useRefSize, useTitle } from '@genshin-optimizer/common/ui'
+import {
+  moveToFront,
+  notEmpty,
+  objKeyMap,
+} from '@genshin-optimizer/common/util'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
+import {
+  DebugReadContext,
+  DebugReadModal,
+  TagContext,
+} from '@genshin-optimizer/game-opt/formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
+import {
+  ConditionalValuesContext,
+  SetConditionalContext,
+  SrcDstDisplayContext,
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
+import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import {
   CharacterContext,
-  LoadoutContext,
-  TeamCalcProvider,
-  TeamCharacterSelector,
   useCharacter,
   useDatabaseContext,
-  useLoadout,
-  useLoadoutContext,
   useTeam,
-} from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr/db-ui'
+import {
+  getConditional,
+  isMember,
+  isSheet,
+  type Tag,
+} from '@genshin-optimizer/sr/formula'
+import { CharacterName } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
-import { Suspense, useEffect, useMemo } from 'react'
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Navigate,
@@ -27,7 +43,16 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
-import TeamSettings from './TeamSettings'
+import type { PresetContextObj } from './context'
+import { PresetContext, TeamContext } from './context'
+import { TeammateContext, useTeammateContext } from './context/TeammateContext'
+import { TeamCalcProvider } from './TeamCalcProvider'
+import {
+  DEFAULT_HEADER_HEIGHT_PX,
+  HEADER_TOP_PX,
+  TeamHeader,
+  TeamHeaderHeightContext,
+} from './TeamHeader'
 import TeammateDisplay from './TeammateDisplay'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
@@ -55,47 +80,44 @@ export default function PageTeam() {
 }
 
 function Page({ teamId }: { teamId: string }) {
-  const { database } = useDatabaseContext()
   const navigate = useNavigate()
-
+  const { database } = useDatabaseContext()
+  const [presetIndex, setPresetIndex] = useState(0)
+  const presetObj = useMemo(
+    () =>
+      ({
+        presetIndex,
+        setPresetIndex,
+      } as PresetContextObj),
+    [presetIndex, setPresetIndex]
+  )
   const team = useTeam(teamId)!
-  const { loadoutMetadata } = team
-  // use the current URL as the "source of truth" for characterKey and tab.
+  const { teamMetadata } = team
+  // use the current URL as the "source of truth" for characterKey.
   const {
     params: { characterKey: characterKeyRaw },
   } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
     params: {},
   }
-  const {
-    params: { tab },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab' }) ?? {
-    params: {},
-  }
 
   // validate characterKey
-  const loadoutMetadatumIndex = useMemo(
-    () =>
-      loadoutMetadata.findIndex(
-        (loadoutMetadatum) =>
-          loadoutMetadatum?.loadoutId &&
-          database.loadouts.get(loadoutMetadatum.loadoutId)?.key ===
-            characterKeyRaw
-      ),
-    [loadoutMetadata, database.loadouts, characterKeyRaw]
+  const teamMetadatumIndex = useMemo(() => {
+    const index = teamMetadata.findIndex(
+      (teammateDatum) =>
+        teammateDatum && teammateDatum.characterKey === characterKeyRaw
+    )
+    if (index === -1) return 0
+    return index
+  }, [teamMetadata, characterKeyRaw])
+  const teammateDatum = useMemo(
+    () => teamMetadata[teamMetadatumIndex],
+    [teamMetadata, teamMetadatumIndex]
   )
-  const loadoutMetadatum = useMemo(
-    () => loadoutMetadata[loadoutMetadatumIndex],
-    [loadoutMetadata, loadoutMetadatumIndex]
-  )
+  const characterKey = teammateDatum?.characterKey
   useEffect(() => {
-    window.scrollTo({ top: 0 })
-  }, [])
-  useEffect(() => {
-    if (!loadoutMetadatum) navigate('', { replace: true })
-  }, [loadoutMetadatum, navigate])
-
-  const loadoutId = loadoutMetadatum?.loadoutId
-  const characterKey = database.loadouts.get(loadoutId)?.key
+    if (characterKey && characterKey !== characterKeyRaw)
+      navigate(`${characterKey}`, { replace: true })
+  }, [characterKey, characterKeyRaw, teammateDatum, navigate])
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
@@ -105,87 +127,143 @@ function Page({ teamId }: { teamId: string }) {
         ? // TODO: replace Character with CharKeyToName function once it's ported
           t('charNames_gen:Character')
         : t('Team Settings')
-      const tabName = tab
-        ? t(`page_character:tabs.${tab}`)
-        : characterKey
-        ? t('Loadout/Build')
-        : tab
-      return `${team.name} - ${charName}${tabName ? ` - ${tabName}` : ''}`
-    }, [characterKey, t, tab, team.name])
+      return `${team.name} - ${charName}`
+    }, [characterKey, t, team.name])
   )
 
-  const loadout = useLoadout(loadoutId ?? '')
-  const loadoutContextObj: LoadoutContextObj | undefined = useMemo(() => {
-    if (!loadoutId || !loadout || !loadoutMetadatum) return undefined
-    const charMap = {
-      ...team.loadoutMetadata.map(
-        (ldata) => ldata && database.loadouts.get(ldata.loadoutId)?.key
-      ),
-    } as unknown as Record<'0' | '1' | '2' | '3', CharacterKey>
-    return { teamId, team, loadoutId, loadout, loadoutMetadatum, charMap }
-  }, [loadoutId, loadout, loadoutMetadatum, team, teamId, database])
+  const teamContextObj = useMemo(
+    () => ({
+      teamId,
+      team,
+    }),
+    [team, teamId]
+  )
+  const srcDstDisplayContextValue = useMemo(() => {
+    const charList = team.teamMetadata
+      .filter(notEmpty)
+      .map(({ characterKey }) => characterKey)
+    if (characterKey) moveToFront(charList, characterKey)
+    const charDisplay = objKeyMap(charList, (ck) => (
+      <CharacterName genderedKey={characterKeyToGenderedKey(ck)} />
+    ))
+    return {
+      srcDisplay: charDisplay,
+      dstDisplay: charDisplay,
+    }
+  }, [team.teamMetadata, characterKey])
+  const conditionals = useMemo(
+    () =>
+      team.conditionals.map(({ sheet, src, dst, condKey, condValues }) => ({
+        sheet,
+        src,
+        dst,
+        condKey,
+        condValue: condValues[presetIndex],
+      })),
+    [presetIndex, team.conditionals]
+  )
+  const setConditional = useCallback<SetConditionalFunc>(
+    (
+      sheet: string,
+      condKey: string,
+      src: string,
+      dst: string | null,
+      condValue: number
+    ) => {
+      if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
+        return
+      const cond = getConditional(sheet, condKey)
+      if (!cond) return
 
+      database.teams.setConditional(
+        teamId,
+        sheet,
+        condKey,
+        src,
+        dst,
+        condValue,
+        presetIndex
+      )
+    },
+    [database.teams, presetIndex, teamId]
+  )
+  const tag = useMemo<Tag>(
+    () => ({
+      src: characterKey,
+      dst: characterKey,
+      preset: `preset${presetIndex}` as Preset,
+    }),
+    [characterKey, presetIndex]
+  )
+
+  const [debugRead, setDebugRead] = useState<BaseRead>()
+  const debugObj = useMemo<DebugReadContextObj>(
+    () => ({
+      read: debugRead,
+      setRead: setDebugRead,
+    }),
+    [debugRead]
+  )
+
+  const { height, ref } = useRefSize()
   return (
-    <TeamCalcProvider
-      teamId={teamId}
-      currentIndex={members[loadoutMetadatumIndex]}
-    >
-      <Box
-        sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
-      >
-        <CardThemed>
-          <TeamCharacterSelector
-            teamId={teamId}
-            charKey={characterKey}
-            tab={tab}
-          />
-        </CardThemed>
-        <Box
-        // sx={(theme) => {
-        //   const elementKey = characterKey && allStats.char[characterKey]
-        //   if (!elementKey) return {}
-        //   const hex = theme.palette[elementKey].main as string
-        //   const color = hexToColor(hex)
-        //   if (!color) return {}
-        //   const rgba = colorToRgbaString(color, 0.1)
-        //   return {
-        //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
-        //   }
-        // }}
-        >
-          {loadoutContextObj ? (
-            <LoadoutContext.Provider value={loadoutContextObj}>
-              <TeammateDisplayWrapper />
-            </LoadoutContext.Provider>
-          ) : (
-            <TeamSettings teamId={teamId} />
-          )}
-        </Box>
-      </Box>
-    </TeamCalcProvider>
+    <TeamContext.Provider value={teamContextObj}>
+      <TagContext.Provider value={tag}>
+        <PresetContext.Provider value={presetObj}>
+          <TeamCalcProvider teamId={teamId}>
+            <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
+              <ConditionalValuesContext.Provider value={conditionals}>
+                <SetConditionalContext.Provider value={setConditional}>
+                  <DebugReadContext.Provider value={debugObj}>
+                    <DebugReadModal />
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        gap: 1,
+                        flexDirection: 'column',
+                        mx: 1,
+                        mt: 2,
+                      }}
+                    >
+                      <TeamHeader
+                        headerRef={ref}
+                        teamId={teamId}
+                        characterKey={characterKey}
+                      />
+                      <TeamHeaderHeightContext.Provider
+                        value={
+                          (height || DEFAULT_HEADER_HEIGHT_PX) + HEADER_TOP_PX
+                        }
+                      >
+                        {teammateDatum && (
+                          <TeammateContext.Provider value={teammateDatum}>
+                            <TeammateDisplayWrapper />
+                          </TeammateContext.Provider>
+                        )}
+                      </TeamHeaderHeightContext.Provider>
+                    </Box>
+                  </DebugReadContext.Provider>
+                </SetConditionalContext.Provider>
+              </ConditionalValuesContext.Provider>
+            </SrcDstDisplayContext.Provider>
+          </TeamCalcProvider>
+        </PresetContext.Provider>
+      </TagContext.Provider>
+    </TeamContext.Provider>
   )
 }
 
-function TeammateDisplayWrapper({ tab }: { tab?: string }) {
-  const {
-    loadout: { key: characterKey },
-  } = useLoadoutContext()
+function TeammateDisplayWrapper() {
+  const { characterKey } = useTeammateContext()
   const character = useCharacter(characterKey)
-  const characterContextValue: CharacterContextObj | undefined = useMemo(
-    () =>
-      character && {
-        character,
-      },
-    [character]
-  )
-  if (!characterContextValue)
+  if (!character)
     return <Skeleton variant="rectangular" width="100%" height={1000} />
 
   return (
-    <CharacterContext.Provider value={characterContextValue}>
+    <CharacterContext.Provider value={character}>
       <Routes>
         <Route path=":characterKey">
-          <Route path="*" index element={<TeammateDisplay tab={tab} />} />
+          <Route path="*" index element={<TeammateDisplay />} />
         </Route>
       </Routes>
     </CharacterContext.Provider>

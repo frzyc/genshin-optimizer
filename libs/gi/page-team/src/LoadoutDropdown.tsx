@@ -71,14 +71,14 @@ export function LoadoutDropdown({
           >
             <TextField
               fullWidth
-              label={t`loDropdown.createModal.label`}
-              placeholder={t`loDropdown.createModal.placeholder`}
+              label={t('loDropdown.createModal.label')}
+              placeholder={t('loDropdown.createModal.placeholder')}
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
             />
             <TextField
               fullWidth
-              label={t`loDropdown.createModal.desc`}
+              label={t('loDropdown.createModal.desc')}
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
               multiline
@@ -86,7 +86,7 @@ export function LoadoutDropdown({
             />
             <Box sx={{ display: 'flex', gap: 2 }}>
               <Button color="error" fullWidth onClick={onHide}>
-                {t`loDropdown.createModal.cancel`}
+                {t('loDropdown.createModal.cancel')}
               </Button>
               <Button
                 color="success"
@@ -94,7 +94,7 @@ export function LoadoutDropdown({
                 onClick={newLoadout}
                 disabled={!newName}
               >
-                {t`loDropdown.createModal.confirm`}
+                {t('loDropdown.createModal.confirm')}
               </Button>
             </Box>
           </CardContent>
@@ -105,15 +105,17 @@ export function LoadoutDropdown({
         title={
           <Box
             sx={{
-              display: 'flex',
               gap: 1,
               flexWrap: 'wrap',
               justifyContent: 'center',
+              textOverflow: 'ellipsis',
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
             }}
           >
             {label ? (
               <span>
-                {t`loDropdown.label`}
+                {t('loDropdown.label')}
                 <strong>{name}</strong>
               </span>
             ) : (
@@ -123,7 +125,7 @@ export function LoadoutDropdown({
         }
         {...dropdownBtnProps}
       >
-        <MenuItem onClick={() => onShow()}>{t`loDropdown.create`}</MenuItem>
+        <MenuItem onClick={() => onShow()}>{t('loDropdown.create')}</MenuItem>
         {teamCharIds.map((tcId) => {
           const { name, buildIds, buildTcIds, customMultiTargets } =
             database.teamChars.get(tcId)!
@@ -139,15 +141,15 @@ export function LoadoutDropdown({
                 color={buildIds.length ? 'primary' : 'secondary'}
                 sx={{ marginLeft: 'auto' }}
               >
-                {t(`loDropdown.builds`, { count: buildIds.length })}
+                {t('loDropdown.builds', { count: buildIds.length })}
               </SqBadge>
               <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
-                {t(`loDropdown.tcs`, { count: buildTcIds.length })}
+                {t('loDropdown.tcs', { count: buildTcIds.length })}
               </SqBadge>
               <SqBadge
                 color={customMultiTargets.length ? 'success' : 'secondary'}
               >
-                {t(`loDropdown.multi`, { count: customMultiTargets.length })}
+                {t('loDropdown.multi', { count: customMultiTargets.length })}
               </SqBadge>
             </MenuItem>
           )

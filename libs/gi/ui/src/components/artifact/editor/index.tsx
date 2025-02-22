@@ -7,7 +7,11 @@ import {
   ModalWrapper,
   NextImage,
 } from '@genshin-optimizer/common/ui'
-import { clamp, deepClone } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  deepClone,
+  shouldShowDevComponents,
+} from '@genshin-optimizer/common/util'
 import type { Processed } from '@genshin-optimizer/gi/art-scanner'
 import { ScanningQueue } from '@genshin-optimizer/gi/art-scanner'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
@@ -75,7 +79,6 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { shouldShowDevComponents } from '../../../util'
 import { CustomNumberTextField } from '../../CustomNumberTextField'
 import { LocationAutocomplete } from '../../character'
 import { ArtifactCardObj } from '../ArtifactCard'
@@ -135,6 +138,19 @@ function artifactReducer(
 const InputInvis = styled('input')({
   display: 'none',
 })
+
+const LineBreak = styled('br')()
+
+function getDefaultSlotKey(
+  artifactSet?: ArtifactSetKey
+): Extract<ArtifactSlotKey, 'flower' | 'circlet'> {
+  if (artifactSet?.startsWith('Prayers')) {
+    return 'circlet'
+  } else {
+    return 'flower'
+  }
+}
+
 export type ArtifactEditorProps = {
   artifactIdToEdit?: string
   cancelEdit: () => void
@@ -263,8 +279,11 @@ export function ArtifactEditor({
         // If we're updating an existing artifact, then slotKey should immediately be set to the artifact's slot.
         // Otherwise, if slot selection is disabled but a key has been provided in fixedSlotKey, we assign that
         // value (e.g. when creating a new artifact from the artifact swap UI). If neither, then we default to
-        // 'flower'.
-        newValue.slotKey = artifact?.slotKey ?? fixedSlotKey ?? 'flower'
+        // 'flower' for all sets and 'circlet' for Prayers Set (Which only have circlets).
+        newValue.slotKey =
+          artifact?.slotKey ??
+          fixedSlotKey ??
+          getDefaultSlotKey(newValue.setKey)
       }
       if (newValue.rarity) newValue.level = artifact?.level ?? 0
       if (newValue.level)
@@ -298,7 +317,7 @@ export function ArtifactEditor({
   )
   const isValid = !errors.length
   const canClearArtifact = (): boolean =>
-    window.confirm(t`editor.clearPrompt` as string)
+    window.confirm(t('editor.clearPrompt') as string)
   const { rarity = 5, level = 0 } = artifact ?? {}
   // Same as above when assigning newValue.slotKey in update.
   const slotKey = useMemo(() => {
@@ -312,7 +331,7 @@ export function ArtifactEditor({
       if (
         !artifactIdToEdit &&
         (queueTotal || artifact) &&
-        !window.confirm(t`editor.clearPrompt` as string)
+        !window.confirm(t('editor.clearPrompt') as string)
       ) {
         e?.preventDefault()
         return
@@ -385,8 +404,19 @@ export function ArtifactEditor({
   }, [queue, processedNum, scannedData])
 
   useEffect(() => {
-    const pasteFunc = (e: Event) =>
+    const pasteFunc = (e: Event) => {
+      // Don't handle paste if targetting the edit team modal
+      const target = e.target as HTMLElement
+      if (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement
+      ) {
+        return
+      }
+
       uploadFiles((e as ClipboardEvent).clipboardData?.files)
+    }
+
     allowUpload && window.addEventListener('paste', pasteFunc)
     return () => {
       if (allowUpload) window.removeEventListener('paste', pasteFunc)
@@ -403,7 +433,7 @@ export function ArtifactEditor({
 
   const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
-    <ModalWrapper open={show} onClose={onClose}>
+    <ModalWrapper open={show} onClose={onClose} data-testid="artifact-editor">
       <CardThemed>
         <UploadExplainationModal
           modalShow={modalShow}
@@ -450,7 +480,7 @@ export function ArtifactEditor({
               <Box component="div" display="flex">
                 <CustomNumberTextField
                   id="filled-basic"
-                  label={t`editor.level`}
+                  label={t('editor.level')}
                   variant="filled"
                   sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
                   margin="dense"
@@ -518,7 +548,7 @@ export function ArtifactEditor({
                           />
                         </span>
                       ) : (
-                        t`editor.unknownPieceName`
+                        t('editor.unknownPieceName')
                       )}
                     </Typography>
                   </Suspense>
@@ -526,7 +556,12 @@ export function ArtifactEditor({
               </Box>
 
               {/* main stat */}
-              <Box component="div" display="flex" gap={1}>
+              <Box
+                component="div"
+                display="flex"
+                gap={1}
+                data-testid="main-stat"
+              >
                 <DropdownButton
                   startIcon={
                     artifact?.mainStatKey ? (
@@ -538,7 +573,7 @@ export function ArtifactEditor({
                       {artifact ? (
                         <ArtifactStatWithUnit statKey={artifact.mainStatKey} />
                       ) : (
-                        t`mainStat`
+                        t('mainStat')
                       )}
                     </b>
                   }
@@ -564,7 +599,7 @@ export function ArtifactEditor({
                           rarity,
                           level
                         )
-                      : t`mainStat`}
+                      : t('mainStat')}
                   </Typography>
                 </CardThemed>
                 <Button
@@ -617,8 +652,10 @@ export function ArtifactEditor({
                               component="span"
                               startIcon={<PhotoCamera />}
                             >
-                              {t`editor.uploadBtn`}
+                              {t('editor.uploadBtn')}
                             </Button>
+                            {/* https://github.com/frzyc/genshin-optimizer/pull/2597 */}
+                            <LineBreak />
                           </label>
                         </Grid>
                         {shouldShowDevComponents && debugImgs && (
@@ -688,7 +725,6 @@ export function ArtifactEditor({
                 </CardThemed>
               )}
             </Grid>
-
             {/* Right column */}
             <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
               {/* substat selections */}
@@ -731,9 +767,9 @@ export function ArtifactEditor({
                   >
                     {oldType !== 'edit'
                       ? oldType === 'duplicate'
-                        ? t`editor.dupArt`
-                        : t`editor.upArt`
-                      : t`editor.beforeEdit`}
+                        ? t('editor.dupArt')
+                        : t('editor.upArt')
+                      : t('editor.beforeEdit')}
                   </Typography>
                   <ArtifactCardObj artifact={old} />
                 </CardThemed>
@@ -758,7 +794,9 @@ export function ArtifactEditor({
                     py={1}
                     variant="h6"
                     color="text.secondary"
-                  >{t`editor.preview`}</Typography>
+                  >
+                    {t('editor.preview')}
+                  </Typography>
                   {cArtifact && <ArtifactCardObj artifact={cArtifact} />}
                 </CardThemed>
               </Grid>
@@ -789,7 +827,7 @@ export function ArtifactEditor({
                 disabled={!artifact || !isValid}
                 color="primary"
               >
-                {t`editor.btnSave`}
+                {t('editor.btnSave')}
               </Button>
             ) : (
               <Button
@@ -805,7 +843,7 @@ export function ArtifactEditor({
                 disabled={!artifact || !isValid}
                 color={oldType === 'duplicate' ? 'warning' : 'primary'}
               >
-                {t`editor.btnAdd`}
+                {t('editor.btnAdd')}
               </Button>
             )}
             {allowEmpty && (
@@ -816,7 +854,9 @@ export function ArtifactEditor({
                   canClearArtifact() && reset()
                 }}
                 color="error"
-              >{t`editor.btnClear`}</Button>
+              >
+                {t('editor.btnClear')}
+              </Button>
             )}
             {process.env['NODE_ENV'] === 'development' && (
               <Button
@@ -828,7 +868,9 @@ export function ArtifactEditor({
                     artifact: randomizeArtifact(),
                   })
                 }
-              >{t`editor.btnRandom`}</Button>
+              >
+                {t('editor.btnRandom')}
+              </Button>
             )}
             {old && oldType !== 'edit' && (
               <Button
@@ -840,20 +882,24 @@ export function ArtifactEditor({
                 }}
                 disabled={!artifact || !isValid}
                 color="success"
-              >{t`editor.btnUpdate`}</Button>
+              >
+                {t('editor.btnUpdate')}
+              </Button>
             )}
             {!!removeId && (
               <Button
                 startIcon={<DeleteForeverIcon />}
                 onClick={() => {
-                  if (!window.confirm(t`editor.confirmDelete`)) return
+                  if (!window.confirm(t('editor.confirmDelete'))) return
                   database.arts.remove(removeId)
                   reset()
                   if (!allowEmpty) setShow(false)
                 }}
                 disabled={!artifact || !isValid}
                 color="error"
-              >{t`editor.delete`}</Button>
+              >
+                {t('editor.delete')}
+              </Button>
             )}
           </Box>
         </CardContent>

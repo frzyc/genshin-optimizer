@@ -29,7 +29,7 @@
       "0": {
         "name": "調性合頌",
         "fullDesc": "使我方全體暴擊傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，且我方目標攻擊敵方目標後，知更鳥額外為自身恢復{{2}}點能量。",
-        "shortDesc": "使我方全體<orangeStrong>暴擊傷害</orangeStrong>提高，且我方角色攻擊敵方後知更鳥額外恢復能量。",
+        "shortDesc": "使我方全體<orangeStrong>暴擊傷害</orangeStrong>提高，且我方目標攻擊敵方後知更鳥額外恢復能量。",
         "tag": "輔助"
       }
     },

@@ -1,0 +1,151 @@
+{
+  "auto": {
+    "name": "Llamarada extranjera",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos con espada."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para desatar un doble golpe de espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Daño de ATQ Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Espada ignífera",
+    "description": {
+      "0": "Invoca unas llamas capaces de incinerar la tierra. Esta habilidad produce distintos efectos dependiendo de si se libera pulsando una vez o manteniendo pulsado.",
+      "1": "<br/>",
+      "2": "<strong>Pulsar una vez</strong>",
+      "3": "Hace uso del poder abrasador del fuego. Al usar la habilidad, {F#la Viajera}{M#el Viajero} obtiene 42 pts. de noctambulismo, entra en estado de bendición noctámbula e invoca un “umbral flagrante” que sigue al personaje en uso.",
+      "4": "Cuando el umbral esté cerca de un enemigo, le infligirá <pyro>Daño Pyro</pyro> de naturaleza noctámbula cada cierto tiempo.",
+      "5": "<br/>",
+      "6": "<strong>Mantener pulsado</strong>",
+      "7": "Hace uso del poder firme del fuego para infligir <pyro>Daño Pyro en el AdE</pyro> de naturaleza noctámbula a los enemigos cercanos. Al usar la habilidad, {F#la Viajera}{M#el Viajero} obtiene 42 pts. de noctambulismo, entra en estado de bendición noctámbula e invoca un “umbral abrasador” que sigue al personaje en uso.",
+      "8": "Cuando el personaje en uso que esté bajo los efectos del umbral abrasador inflija daño a un enemigo, el umbral ejecutará un ataque coordinado que inflige <pyro>Daño Pyro</pyro> de naturaleza noctámbula en función del ATQ {F#de la Viajera}{M#del Viajero}. Este efecto solo puede ocurrir una vez cada 3 s.",
+      "9": "<br/>",
+      "10": "<strong>Bendición noctámbula: Viajer{F#a}{M#o}</strong>",
+      "11": "Consume continuamente pts. de noctambulismo. Los pts. de noctambulismo {F#de la Viajera}{M#del Viajero} duran un máximo de 12 s y, al agotarse todos, terminará su bendición noctámbula. Si en ese tiempo vuelve a usar la Habilidad Elemental, sus pts. de noctambulismo se reiniciarán a 42.",
+      "12": "Tanto el umbral flagrante como el abrasador desaparecerán cuando termine la bendición noctámbula {F#de la Viajera}{M#del Viajero}. Solo puede existir a la vez o bien un umbral flagrante, o bien un umbral abrasador creado por {F#la Viajera}{M#el Viajero}.",
+      "13": "<br/>",
+      "14": "<i>Observaste con Paimon los cambios de color del fuego.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de umbral flagrante",
+      "1": "Daño al mantener pulsado",
+      "2": "Daño de umbral abrasador",
+      "3": "Límite de pts. de noctambulismo",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Abrasallanuras",
+    "description": {
+      "0": "Concentra las llamas en un sello que inflige <pyro>Daño Pyro en el AdE</pyro> de naturaleza noctámbula a los enemigos frente a sí mism{F#a}{M#o} y que, durante los próximos 4 s, restaura {F#a la Viajera}{M#al Viajero} 7 pts. de noctambulismo por segundo.",
+      "1": "<br/>",
+      "2": "<i>Investigaste con Paimon las condiciones necesarias para que el fuego no se apague.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fuego incinerador",
+    "description": {
+      "0": "Cuando {F#la Viajera}{M#el Viajero} tiene más de 20 pts. de noctambulismo, aumenta el AdE del umbral flagrante y el umbral abrasador de la Habilidad Elemental, <strong>Espada ignífera</strong>, tras golpear a un oponente."
+    }
+  },
+  "passive2": {
+    "name": "Perduración de las ascuas",
+    "description": {
+      "0": "Cuando el personaje en uso afectado por el <strong>umbral flagrante</strong> o el <strong>umbral abrasador</strong> causa una <pyro>Reacción Elemental Pyro</pyro>, {F#la Viajera}{M#el Viajero} recupera 5 pts. de Energía Elemental. Este efecto solo puede ocurrir una vez cada 12 s. Además, cuando un personaje cercano del equipo causa una explosión noctámbula, {F#la Viajera}{M#el Viajero} recupera 4 pts. de Energía Elemental."
+    }
+  },
+  "constellation1": {
+    "name": "Estrella fulgente",
+    "description": {
+      "0": "Mientras el <strong>umbral flagrante</strong> o el <strong>umbral abrasador</strong> estén activos, el daño que inflige el personaje en uso aumentará en un 6%. Si dicho personaje está en estado de bendición noctámbula, el daño que inflige aumenta en un 9% adicional."
+    }
+  },
+  "constellation2": {
+    "name": "Vela perpetua",
+    "description": {
+      "0": "Durante los 12 s posteriores a usar la Habilidad Elemental, <strong>Espada ignífera</strong>, cuando un personaje cercano del equipo causa una <pyro>Reacción Elemental Pyro</pyro> contra un enemigo, {F#la Viajera}{M#el Viajero} recupera 14 pts. de noctambulismo. Solo se pueden recuperar un máximo de 28 pts. de noctambulismo de esta manera por cada vez que se use la Habilidad Elemental, <strong>Espada ignífera</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Relevo llameante",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Espada ignífera</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Fuego abrasador",
+    "description": {
+      "0": "Tras usar la Habilidad Definitiva, <strong>Abrasallanuras</strong>, {F#la Viajera}{M#el Viajero} obtiene un 20% de <pyro>Bono de Daño Pyro</pyro> durante 9 s."
+    }
+  },
+  "constellation5": {
+    "name": "Antorcha inextinguible",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Abrasallanuras</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sacrofuego imperecedero",
+    "description": {
+      "0": "Mientras está en estado de bendición noctámbula, el daño de los Ataques Normales, Cargados y Descendentes {F#de la Viajera}{M#del Viajero} se convierte en <pyro>Daño Pyro</pyro> de naturaleza noctámbula, el cual no puede sustituirse imbuyéndose de otro elemento, y el Daño CRIT de estos ataques aumenta en un 40%."
+    }
+  }
+}

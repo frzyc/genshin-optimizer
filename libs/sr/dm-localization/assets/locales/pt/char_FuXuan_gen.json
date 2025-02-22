@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Conhecida pelas Estrelas, Exibida pelos Corações",
-        "fullDesc": "Ativa a Matriz de Presciência através da qual outros membros da equipe vão Distribuir {{1, percent}}% do Dano que eles receberem (antes deste Dano ser mitigado por quaisquer Escudos) com Fu Xuan por {{3}} rodada(s).<br>Enquanto afetados pela Matriz de Presciência, todos os membros da equipe ganham o efeito de Conhecimento, que aumenta seus respectivos PV máximos em <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Fu Xuan, e aumenta a Chance de CRIT em <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Quando Fu Xuan é derrubada, a Matriz de Presciência é desfeita.",
+        "fullDesc": "Ativa a Matriz de Presciência através da qual outros membros da equipe de Fu Xuan vão Distribuir {{1, percent}}% do Dano que eles receberem (antes deste Dano ser mitigado por quaisquer Escudos) com Fu Xuan por {{3}} rodada(s).<br>Enquanto afetados pela Matriz de Presciência, todos os aliados-alvo ganham o efeito de Conhecimento, que aumenta seus respectivos PV máximos em <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Fu Xuan, e aumenta a Chance de CRIT em <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Quando Fu Xuan é derrubada, a Matriz de Presciência é desfeita.",
         "shortDesc": "Ativa a Matriz de Presciência. <orangeStrong>O Dano recebido pelos aliados de Fu Xuan é Distribuído</orangeStrong> com ela. Além disso, <orangeStrong>aumenta a Chance de CRIT</orangeStrong> e os PV máximos de todos os aliados.",
         "tag": "Defesa"
       }
@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Das Sombras à Alegria",
-        "fullDesc": "Enquanto Fu Xuan estiver ativa em combate, a \"Prevenção de Infortúnio\" é aplicada a toda a equipe. Enquanto estiverem com Prevenção de Infortúnio, os aliados recebem <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> a menos de Dano.<br>Quando os PV atuais de Fu Xuan caírem para {{2, percent}}% ou menos dos seus PV máximos, a Restauração de PV será ativada para Fu Xuan, recuperando os PV dela em <orangeStrong>{{3, percent}}%</orangeStrong> da quantidade de PV perdida no momento. Este efeito não pode ser ativado se ela receber um golpe fatal. Este efeito possui 1 contagem de ativação por padrão, e pode possuir um máximo de 2 contagens de ativação.",
+        "fullDesc": "Enquanto Fu Xuan estiver ativa em combate, a \"Prevenção de Infortúnio\" é aplicada a toda a equipe. Enquanto estiverem com Prevenção de Infortúnio, os aliados recebem <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> a menos de Dano.<br>Quando a porcentagem dos PV atuais de Fu Xuan caírem para {{2, percent}}% ou menos dos seus PV máximos, a Restauração de PV será ativada para Fu Xuan, recuperando os PV dela em <orangeStrong>{{3, percent}}%</orangeStrong> da quantidade de PV perdida no momento. Este efeito não pode ser ativado se ela receber um golpe fatal. Este efeito possui 1 contagem de ativação por padrão, e pode possuir um máximo de 2 contagens de ativação.",
         "shortDesc": "Enquanto Fu Xuan estiver ativa em batalha, o Dano recebido pela equipe inteira é reduzido.<br>Quando os PV dela estiverem baixos, ela <orangeStrong>automaticamente</orangeStrong> <orangeStrong>restaura seus próprios PV</orangeStrong> com base na porcentagem de PV já perdidos. Este efeito pode ter até 2 contagens de ativação em qualquer momento.",
         "tag": "Restauração"
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Liuren, o Sexagenário",
-        "fullDesc": "Se um inimigo-alvo aplicar penalidades de Controle Negativo a aliados enquanto a Matriz de Presciência estiver ativa, todos os aliados resistirão a todas as penalidades de Controle Negativo aplicadas pelo inimigo-alvo durante a ação atual. Este efeito só pode ser acionado uma única vez. Quando a Matriz de Presciência é reativada, o número de vezes que este efeito pode ser ativado será redefinido.",
+        "fullDesc": "Se um inimigo-alvo aplicar penalidades de Controle Negativo a aliados enquanto a \"Matriz de Presciência\" estiver ativa, todos os aliados resistirão a todas as penalidades de Controle Negativo aplicadas pelo inimigo-alvo durante a ação atual. Este efeito só pode ser ativado uma única vez. Quando a \"Matriz de Presciência\" é reativada, o número de vezes que este efeito pode ser ativado será redefinido.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Optimus Felix",
-      "desc": "Se qualquer membro da equipe for atingido por um golpe fatal enquanto a Matriz de Presciência estiver ativa, todos os aliados que forem atingidos por um golpe fatal durante esta ação não serão derrubados e {{1, percent}}% de seus PV máximos serão restaurados imediatamente. Este efeito pode ser acionado 1 vez por batalha."
+      "desc": "Se qualquer aliado-alvo for atingido por um golpe fatal enquanto a \"Matriz de Presciência\" estiver ativa, todos os aliados-alvo que forem atingidos por um golpe fatal durante esta ação não serão derrubados e {{1, percent}}% de seus PV máximos serão restaurados imediatamente. Este efeito pode ser ativado 1 vez por batalha."
     },
     "3": {
       "name": "Ápice da Ligação",

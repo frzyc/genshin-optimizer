@@ -1,0 +1,24 @@
+{
+  "name": "Tamayuratei no Ohanashi",
+  "description": {
+    "0": "Bir zamanlar bir fenerin alevi şeklinde Inazuma'da dolaşan bir youkai varmış. Bu da onun meskenlerinden biri olmalı."
+  },
+  "passiveName": "İşgüzarın Seyir Işığı",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullanıldığında 10 saniyeliğine Saldırıyı <cryo>%20</cryo> ve Hareket Hızını %10 artırır."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullanıldığında 10 saniyeliğine Saldırıyı <cryo>%25</cryo> ve Hareket Hızını %10 artırır."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullanıldığında 10 saniyeliğine Saldırıyı <cryo>%30</cryo> ve Hareket Hızını %10 artırır."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullanıldığında 10 saniyeliğine Saldırıyı <cryo>%35</cryo> ve Hareket Hızını %10 artırır."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullanıldığında 10 saniyeliğine Saldırıyı <cryo>%40</cryo> ve Hareket Hızını %10 artırır."
+    }
+  }
+}

@@ -99,11 +99,20 @@ export const allCharacterKeys = [
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
-export const allCharacterDataKeys = [
+export const allCharacterGenderedKeys = [
   ...nonTrailblazerCharacterKeys,
   ...allTrailblazerGenderedKeys,
 ] as const
-export type CharacterDataKey = (typeof allCharacterDataKeys)[number]
+export type CharacterGenderedKey = (typeof allCharacterGenderedKeys)[number]
+
+export function characterGenderedKeyToCharacterKey(
+  cgKey: CharacterGenderedKey
+): CharacterKey {
+  if (cgKey.includes('Trailblazer')) {
+    return cgKey.slice(0, -1) as TrailblazerKey
+  }
+  return cgKey as NonTrailblazerCharacterKey
+}
 
 export const maxEidolonCount = 6 as const
 
@@ -131,3 +140,7 @@ export type AbilityKey = (typeof allAbilityKeys)[number]
 
 // TODO: need to check for correctness
 export const talentLimits = [1, 1, 2, 4, 6, 8, 10] as const
+
+export function isTrailblazerKey(key: CharacterKey): key is TrailblazerKey {
+  return allTrailblazerKeys.includes(key as TrailblazerKey)
+}

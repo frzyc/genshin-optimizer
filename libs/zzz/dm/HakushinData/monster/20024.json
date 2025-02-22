@@ -1,0 +1,97 @@
+{
+  "Id": 20024,
+  "MonsterId": 11621,
+  "MonsterInfo": {
+    "CodeName": "Monster_Pulchra",
+    "Icon": "",
+    "Tag": ["Bios", "Small"],
+    "Type": "Monster",
+    "Element": {
+      "Ice": -1,
+      "Fire": 1,
+      "Electric": 0,
+      "Ether": 0,
+      "Physical": 1
+    },
+    "Stats": {
+      "Hp": 9904,
+      "Attack": 102,
+      "Defence": 50,
+      "Crit": 0,
+      "CritDamage": 5000,
+      "CritRes": 0,
+      "CritDmgRes": 0,
+      "PenRate": 0,
+      "PenDelta": 0,
+      "Stun": 5253,
+      "BreakStun": 0
+    },
+    "Curves": {
+      "Hp": {
+        "Curve": [
+          100, 116, 136, 159, 183, 200, 219, 240, 263, 303, 326, 352, 379, 409,
+          471, 485, 499, 514, 530, 610, 685, 770, 865, 973, 1119, 1132, 1146,
+          1160, 1174, 1351, 1411, 1475, 1541, 1611, 1853, 1858, 1864, 1870,
+          1876, 2158, 2228, 2302, 2377, 2455, 2824, 2847, 2872, 2896, 2920,
+          3213, 3293, 3376, 3460, 3547, 4080, 4106, 4132, 4158, 4185, 4604,
+          4637, 4671, 4705, 4739, 4774, 4809, 4844, 4879, 4915, 5406, 5406,
+          5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406,
+          5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406,
+          5406, 5406, 5406, 5406, 5406, 5406, 5406
+        ],
+        "Ratio": 100
+      },
+      "Attack": {
+        "Curve": [
+          100, 116, 133, 150, 167, 183, 199, 213, 227, 242, 265, 289, 312, 336,
+          359, 383, 406, 430, 453, 477, 496, 515, 534, 553, 573, 592, 611, 630,
+          649, 669, 685, 701, 717, 734, 750, 766, 783, 799, 815, 832, 846, 860,
+          875, 889, 904, 918, 932, 947, 961, 976, 982, 989, 995, 1002, 1009,
+          1015, 1022, 1029, 1035, 1042, 1049, 1055, 1062, 1069, 1075, 1082,
+          1089, 1095, 1102, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109,
+          1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109,
+          1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109
+        ],
+        "Ratio": 120
+      },
+      "Defence": {
+        "Curve": [
+          100, 108, 116, 124, 132, 142, 152, 164, 176, 188, 200, 214, 228, 242,
+          258, 274, 290, 306, 324, 344, 362, 382, 402, 422, 444, 466, 490, 512,
+          536, 562, 586, 612, 638, 666, 694, 722, 750, 780, 810, 842, 872, 904,
+          938, 970, 1004, 1038, 1074, 1110, 1146, 1184, 1220, 1258, 1298, 1338,
+          1378, 1418, 1460, 1502, 1544, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588
+        ],
+        "Ratio": 100
+      },
+      "Stun": {
+        "Curve": [
+          100, 100, 100, 100, 103, 103, 103, 103, 103, 103, 103, 104, 104, 105,
+          106, 106, 107, 107, 108, 109, 110, 111, 113, 114, 116, 117, 118, 120,
+          121, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 136,
+          137, 139, 140, 141, 143, 144, 145, 147, 148, 149, 150, 151, 152, 153,
+          154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167,
+          167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167,
+          167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167,
+          167, 167
+        ],
+        "Ratio": 100
+      }
+    }
+  },
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_Pulchra.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "Pulchra",
+  "Desc": "No one knows where Pulchra came from, but she was once one of the top mercenaries of the Outer Ring, a \"chameleon\" who was adept at adapting depending on the situation.\nNot long after the previous Tour de Inferno ended with Pompey's consecutive victory, a few factions conspired in the shadows to launch a surprise attack on The Vanquishers. This scheme was easily dealt with by The Vanquishers, as if all their plans were within The Vanquishers' grasp.\nThe losers were chased out of the Old Oil Field, yet Pulchra, who had allied with them, was completely untouched. Naturally, many believed that this victory relied on a betrayal.\nThough many made offers, hoping she'd join them, Pulchra never officially joined any gang.\nPerhaps, to her, all these conspiracies and conflicts within the Outer Ring were just a game she could quit at any time. Even if her employer was loathsome, she wouldn't care, so long as they had the money and the job was interesting.\nEspecially if the job involved luring an enemy into an exquisitely prepared trap, allowing her to watch them slowly descend into the abyss of death...\nLuring, deceiving into complete destruction... The more beautiful, the more deadly, that has always been her code of survival.\n\"What, you wanna work under big sis Pulchra?\"\n\"Heh, another poor sucker...\"",
+  "Rarity": 2,
+  "GroupId": 202,
+  "GroupDesc": "Thugs",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "— Within The Vanquishers' camp, a rookie is being teased by a more senior member",
+  "CardSkillDesc": "During combat, Pulchra maintains distance, waiting for the right moment to use physical attacks, her bladeguns, and gadgets to disrupt the target. When her health drops below a certain percentage, she drinks a tonic to enhance her ability to dodge, allowing her to dodge all attacks from nearby targets."
+}

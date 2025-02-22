@@ -19,7 +19,7 @@ import { CharProfileCharEditor } from './CharProfileCharEditor'
 
 /* Image card with star and name and level */
 export default function CharacterProfileCard() {
-  const { t } = useTranslation('page_team')
+  const { t } = useTranslation('common')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -38,7 +38,7 @@ export default function CharacterProfileCard() {
             onClick={onShowEditor}
             startIcon={<DriveFileRenameOutlineIcon />}
           >
-            {t`charProfile.button`}
+            {t('edit')}
           </Button>
         </Box>
 

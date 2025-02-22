@@ -1,0 +1,24 @@
+{
+  "name": "Sağlam Kemik",
+  "description": {
+    "0": "Sayısız kez savrulup darbe aldıktan sonra artık tamamen sertleşmiş, kemikten yapılma bir uzun kılıç. Kahraman Wanjiru'nun en güvendiği silahı olduğu söylenir."
+  },
+  "passiveName": "Öncü Gururu",
+  "passiveDescription": {
+    "0": {
+      "0": "Depar veya Alternatif Depar Dayanıklılık Tüketimi %15 azalır. Ayrıca Depar veya Alternatif Depar kullanıldığında Normal Saldırı Hasarı, Saldırının <cryo>%16'sı</cryo> kadar artar. Bu etki 18 defa tetiklendiğinde veya 7sn geçtiğinde sona erer."
+    },
+    "1": {
+      "0": "Depar veya Alternatif Depar Dayanıklılık Tüketimi %15 azalır. Ayrıca Depar veya Alternatif Depar kullanıldığında Normal Saldırı Hasarı, Saldırının <cryo>%20'si</cryo> kadar artar. Bu etki 18 defa tetiklendiğinde veya 7sn geçtiğinde sona erer."
+    },
+    "2": {
+      "0": "Depar veya Alternatif Depar Dayanıklılık Tüketimi %15 azalır. Ayrıca Depar veya Alternatif Depar kullanıldığında Normal Saldırı Hasarı, Saldırının <cryo>%24'ü</cryo> kadar artar. Bu etki 18 defa tetiklendiğinde veya 7sn geçtiğinde sona erer."
+    },
+    "3": {
+      "0": "Depar veya Alternatif Depar Dayanıklılık Tüketimi %15 azalır. Ayrıca Depar veya Alternatif Depar kullanıldığında Normal Saldırı Hasarı, Saldırının <cryo>%28'i</cryo> kadar artar. Bu etki 18 defa tetiklendiğinde veya 7sn geçtiğinde sona erer."
+    },
+    "4": {
+      "0": "Depar veya Alternatif Depar Dayanıklılık Tüketimi %15 azalır. Ayrıca Depar veya Alternatif Depar kullanıldığında Normal Saldırı Hasarı, Saldırının <cryo>%32'si</cryo> kadar artar. Bu etki 18 defa tetiklendiğinde veya 7sn geçtiğinde sona erer."
+    }
+  }
+}

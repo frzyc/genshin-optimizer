@@ -1,8 +1,8 @@
 {
   "setName": "Retracing Bolide",
   "setEffects": {
-    "2": "Meningkatkan 35% kekuatan perisai.",
-    "4": "Meningkatkan 40% Normal dan Charged Attack saat perisai aktif."
+    "2": "Meningkatkan 35% kekuatan Perisai.",
+    "4": "Meningkatkan 40% Normal dan Charged Attack saat Perisai aktif."
   },
   "pieces": {
     "flower": {

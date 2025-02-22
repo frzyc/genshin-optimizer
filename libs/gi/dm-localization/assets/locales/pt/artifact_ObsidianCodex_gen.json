@@ -1,8 +1,8 @@
 {
   "setName": "Códice de Obsidiana",
   "setEffects": {
-    "2": "Enquanto o personagem que está com essa arma equipada estiver sob a Bênção do Espírito da Noite e estiver ativo, o Dano causado por ele é aumentado em 15%.",
-    "4": "Enquanto estiver ativo, após o personagem que está com essa arma equipada consumir 1 ponto de Espírito da Noite, a Taxa CRIT aumenta em 40% por 6s. Este efeito pode ser ativado no máximo uma vez a cada segundo."
+    "2": "Enquanto o personagem que está com esse conjunto equipado estiver sob a Bênção do Espírito da Noite e estiver ativo, o Dano causado por ele é aumentado em 15%.",
+    "4": "Enquanto estiver ativo, após o personagem que está com esse conjunto equipado consumir 1 ponto de Espírito da Noite, a Taxa CRIT aumenta em 40% por 6s. Este efeito pode ser ativado no máximo uma vez a cada segundo."
   },
   "pieces": {
     "flower": {

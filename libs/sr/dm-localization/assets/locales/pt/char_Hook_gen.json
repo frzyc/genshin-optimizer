@@ -43,7 +43,7 @@
       "0": {
         "name": "Argh! Olha Essa Bagunça!",
         "fullDesc": "Ataca imediatamente o inimigo. Ao entrar em batalha, Hook causa Dano de Fogo igual a {{4, percent}}% de seu ATQ a um inimigo aleatório. Além disso, há {{1, percent}}% de chance-base de infligir Queimadura em todos os inimigos por {{3}} rodada(s).<br>Enquanto tiverem Queimadura, inimigos recebem {{2, percent}}% do ATQ de Hook como Dano de Fogo Contínuo no início de cada rodada.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano de Fogo a um único inimigo aleatório, com uma alta chance de infligir Queimadura a todos os inimigos-alvo.",
+        "shortDesc": "Ataca os inimigos. Após entrar em batalha, causa Dano de Fogo leve a uma unidade inimiga aleatória, com alta chance de infligir Queimadura em cada unidade inimiga.",
         "tag": ""
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Ingenuidade",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Brincando com Fogo",
-        "fullDesc": "Ao usar a Perícia Suprema, Hook tem sua ação Avançada Adiante em {{2, percent}}% e regenera mais {{1}} de Energia.",
+        "fullDesc": "Após usar a Perícia Suprema, Hook tem sua ação Avançada Adiante em {{2, percent}}% e regenera mais {{1}} de Energia.",
         "shortDesc": "",
         "tag": ""
       }
@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Tudo Bem Não Saber",
-      "desc": "Quando o Talento é ativado, há uma chance-base de {{1, percent}}% de infligir Queimadura equivalente à da Perícia aos inimigos adjacentes ao inimigo-alvo."
+      "desc": "Quando o Talento é ativado, há uma chance-base de {{1, percent}}% de infligir \"Queimadura\" equivalente à da Perícia aos inimigos adjacentes ao inimigo-alvo."
     },
     "5": {
       "name": "Conheçam os Feitos das Toupeiras",
