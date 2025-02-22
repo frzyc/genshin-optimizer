@@ -85,7 +85,7 @@ const sheet = register(
       percent(subscript(char.talent, dm.talent.eff_res_))
     )
   ),
-  teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
+  teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
   enemyDebuff.common.defIgn_.add(numConditional)
 )
 export default sheet
