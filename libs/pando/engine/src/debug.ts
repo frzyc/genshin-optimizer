@@ -126,7 +126,10 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   }
 }
 
-function nodeString(node: AnyNode, tagStr: TagStr): string {
+export function nodeString(
+  node: AnyNode,
+  tagStr: TagStr = (t) => JSON.stringify(t)
+): string {
   return map([node], (node, map: (n: AnyNode) => string) => {
     const { op, tag, br, x } = node
     let { ex } = node
