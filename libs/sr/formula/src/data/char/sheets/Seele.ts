@@ -56,7 +56,7 @@ const sheet = register(
   ),
   registerBuff(
     'amplification_dmg_',
-    ownBuff.premod.dmg_.add(
+    ownBuff.premod.common_dmg_.add(
       amplification.ifOn(subscript(char.talent, dm.talent.dmg_))
     )
   ),
