@@ -96,6 +96,7 @@ const stats: Record<Stat, Desc> = {
   heal_: agg,
   dmg_: agg,
   resPen_: agg,
+  common_dmg_: agg,
   weakness_: agg,
   brEfficiency_: agg,
 } as const

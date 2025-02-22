@@ -20,7 +20,7 @@ const sheet = registerLightCone(
   // Conditional buffs
   registerBuff(
     'cond_dmg_',
-    teamBuff.premod.dmg_.add(
+    teamBuff.premod.common_dmg_.add(
       cmpGE(lcCount, 1, useUltimate.ifOn(subscript(superimpose, dm.dmg_)))
     ),
     cmpGE(lcCount, 1, 'unique', ''),

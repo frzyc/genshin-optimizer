@@ -25,7 +25,12 @@ const data: TagMapNodeEntries = [
       // TODO: Vulnerability, DMG Reduction and Broken multipliers
     )
   ),
-  ownBuff.dmg.out.add(prod(own.formula.base, sum(percent(1), own.final.dmg_))),
+  ownBuff.dmg.out.add(
+    prod(
+      own.formula.base,
+      sum(percent(1), own.final.dmg_, own.final.common_dmg_)
+    )
+  ),
   ownBuff.dmg.critMulti.add(
     lookup(own.common.critMode, {
       crit: sum(percent(1), own.final.crit_dmg_),

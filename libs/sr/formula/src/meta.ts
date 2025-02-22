@@ -5176,7 +5176,7 @@ export const formulas = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'RuanMei',
         name: 'ba3_dmg_',
       },
@@ -5691,7 +5691,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ASecretVow',
         name: 'cond_dmg_',
       },
@@ -5713,7 +5713,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ASecretVow',
         name: 'team_dmg_',
       },
@@ -5726,7 +5726,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Acheron',
         name: 'e6_dmg_',
       },
@@ -5904,7 +5904,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Acheron',
         name: 'team_dmg_',
       },
@@ -5917,7 +5917,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Adversarial',
         name: 'cond_dmg_',
       },
@@ -5939,7 +5939,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Adversarial',
         name: 'team_dmg_',
       },
@@ -5952,7 +5952,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'AfterTheCharmonyFall',
         name: 'cond_dmg_',
       },
@@ -5974,7 +5974,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'AfterTheCharmonyFall',
         name: 'team_dmg_',
       },
@@ -5987,7 +5987,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'AlongThePassingShore',
         name: 'cond_dmg_',
       },
@@ -6009,7 +6009,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'AlongThePassingShore',
         name: 'team_dmg_',
       },
@@ -6022,7 +6022,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Amber',
         name: 'cond_dmg_',
       },
@@ -6044,7 +6044,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Amber',
         name: 'team_dmg_',
       },
@@ -6057,7 +6057,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'AnInstantBeforeAGaze',
         name: 'cond_dmg_',
       },
@@ -6079,7 +6079,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'AnInstantBeforeAGaze',
         name: 'team_dmg_',
       },
@@ -6092,7 +6092,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Argenti',
         name: 'e6_dmg_',
       },
@@ -6271,7 +6271,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Argenti',
         name: 'team_dmg_',
       },
@@ -6284,7 +6284,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Arlan',
         name: 'e6_dmg_',
       },
@@ -6460,7 +6460,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Arlan',
         name: 'team_dmg_',
       },
@@ -6473,7 +6473,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Arrows',
         name: 'cond_dmg_',
       },
@@ -6495,7 +6495,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Arrows',
         name: 'team_dmg_',
       },
@@ -6508,7 +6508,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Asta',
         name: 'e6_dmg_',
       },
@@ -6689,7 +6689,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Asta',
         name: 'team_dmg_',
       },
@@ -6702,7 +6702,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Aventurine',
         name: 'e6_dmg_',
       },
@@ -6881,7 +6881,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Aventurine',
         name: 'team_dmg_',
       },
@@ -6894,7 +6894,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Bailu',
         name: 'e6_dmg_',
       },
@@ -7070,7 +7070,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Bailu',
         name: 'team_dmg_',
       },
@@ -7094,7 +7094,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BandOfSizzlingThunder',
         name: 'set2_dmg_',
       },
@@ -7105,7 +7105,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BandOfSizzlingThunder',
         name: 'team_dmg_',
       },
@@ -7118,7 +7118,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BaptismOfPureThought',
         name: 'cond_dmg_',
       },
@@ -7140,7 +7140,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BaptismOfPureThought',
         name: 'team_dmg_',
       },
@@ -7153,7 +7153,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BeforeDawn',
         name: 'cond_dmg_',
       },
@@ -7175,7 +7175,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BeforeDawn',
         name: 'team_dmg_',
       },
@@ -7188,7 +7188,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BeforeTheTutorialMissionStarts',
         name: 'cond_dmg_',
       },
@@ -7210,7 +7210,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BeforeTheTutorialMissionStarts',
         name: 'team_dmg_',
       },
@@ -7234,7 +7234,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BelobogOfTheArchitects',
         name: 'set2_dmg_',
       },
@@ -7245,7 +7245,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BelobogOfTheArchitects',
         name: 'team_dmg_',
       },
@@ -7258,7 +7258,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BlackSwan',
         name: 'e6_dmg_',
       },
@@ -7437,7 +7437,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BlackSwan',
         name: 'team_dmg_',
       },
@@ -7450,7 +7450,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Blade',
         name: 'e6_dmg_',
       },
@@ -7626,7 +7626,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Blade',
         name: 'team_dmg_',
       },
@@ -7639,7 +7639,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Boothill',
         name: 'e6_dmg_',
       },
@@ -7815,7 +7815,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Boothill',
         name: 'team_dmg_',
       },
@@ -7828,7 +7828,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BoundlessChoreo',
         name: 'cond_dmg_',
       },
@@ -7850,7 +7850,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BoundlessChoreo',
         name: 'team_dmg_',
       },
@@ -7863,7 +7863,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BrighterThanTheSun',
         name: 'cond_dmg_',
       },
@@ -7885,7 +7885,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BrighterThanTheSun',
         name: 'team_dmg_',
       },
@@ -7909,7 +7909,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BrokenKeel',
         name: 'set2_dmg_',
       },
@@ -7920,7 +7920,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'BrokenKeel',
         name: 'team_dmg_',
       },
@@ -7933,7 +7933,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Bronya',
         name: 'e6_dmg_',
       },
@@ -8114,7 +8114,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Bronya',
         name: 'team_dmg_',
       },
@@ -8127,7 +8127,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ButTheBattleIsntOver',
         name: 'cond_dmg_',
       },
@@ -8149,7 +8149,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ButTheBattleIsntOver',
         name: 'team_dmg_',
       },
@@ -8162,7 +8162,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CarveTheMoonWeaveTheClouds',
         name: 'cond_dmg_',
       },
@@ -8184,7 +8184,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CarveTheMoonWeaveTheClouds',
         name: 'team_dmg_',
       },
@@ -8208,7 +8208,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CelestialDifferentiator',
         name: 'set2_dmg_',
       },
@@ -8219,7 +8219,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CelestialDifferentiator',
         name: 'team_dmg_',
       },
@@ -8243,7 +8243,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ChampionOfStreetwiseBoxing',
         name: 'set2_dmg_',
       },
@@ -8254,7 +8254,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ChampionOfStreetwiseBoxing',
         name: 'team_dmg_',
       },
@@ -8267,7 +8267,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Chorus',
         name: 'cond_dmg_',
       },
@@ -8289,7 +8289,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Chorus',
         name: 'team_dmg_',
       },
@@ -8302,7 +8302,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Clara',
         name: 'e6_dmg_',
       },
@@ -8481,7 +8481,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Clara',
         name: 'team_dmg_',
       },
@@ -8494,7 +8494,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CollapsingSky',
         name: 'cond_dmg_',
       },
@@ -8516,7 +8516,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CollapsingSky',
         name: 'team_dmg_',
       },
@@ -8529,7 +8529,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ConcertForTwo',
         name: 'cond_dmg_',
       },
@@ -8551,7 +8551,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ConcertForTwo',
         name: 'team_dmg_',
       },
@@ -8564,7 +8564,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Cornucopia',
         name: 'cond_dmg_',
       },
@@ -8586,7 +8586,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Cornucopia',
         name: 'team_dmg_',
       },
@@ -8599,7 +8599,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CruisingInTheStellarSea',
         name: 'cond_dmg_',
       },
@@ -8621,7 +8621,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'CruisingInTheStellarSea',
         name: 'team_dmg_',
       },
@@ -8634,7 +8634,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanHeng',
         name: 'e6_dmg_',
       },
@@ -8815,7 +8815,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanHeng',
         name: 'team_dmg_',
       },
@@ -8828,7 +8828,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanHengImbibitorLunae',
         name: 'e6_dmg_',
       },
@@ -9009,7 +9009,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanHengImbibitorLunae',
         name: 'team_dmg_',
       },
@@ -9022,7 +9022,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanceAtSunset',
         name: 'cond_dmg_',
       },
@@ -9044,7 +9044,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanceAtSunset',
         name: 'team_dmg_',
       },
@@ -9057,7 +9057,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanceDanceDance',
         name: 'cond_dmg_',
       },
@@ -9079,7 +9079,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DanceDanceDance',
         name: 'team_dmg_',
       },
@@ -9092,7 +9092,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DartingArrow',
         name: 'cond_dmg_',
       },
@@ -9114,7 +9114,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DartingArrow',
         name: 'team_dmg_',
       },
@@ -9127,7 +9127,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DataBank',
         name: 'cond_dmg_',
       },
@@ -9149,7 +9149,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DataBank',
         name: 'team_dmg_',
       },
@@ -9162,7 +9162,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DayOneOfMyNewLife',
         name: 'cond_dmg_',
       },
@@ -9184,7 +9184,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DayOneOfMyNewLife',
         name: 'team_dmg_',
       },
@@ -9197,7 +9197,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Defense',
         name: 'cond_dmg_',
       },
@@ -9219,7 +9219,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Defense',
         name: 'team_dmg_',
       },
@@ -9232,7 +9232,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DestinysThreadsForewoven',
         name: 'cond_dmg_',
       },
@@ -9254,7 +9254,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DestinysThreadsForewoven',
         name: 'team_dmg_',
       },
@@ -9267,7 +9267,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DrRatio',
         name: 'e6_dmg_',
       },
@@ -9443,7 +9443,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DrRatio',
         name: 'team_dmg_',
       },
@@ -9456,7 +9456,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DreamvilleAdventure',
         name: 'cond_dmg_',
       },
@@ -9478,7 +9478,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DreamvilleAdventure',
         name: 'team_dmg_',
       },
@@ -9502,7 +9502,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
         name: 'set2_dmg_',
       },
@@ -9513,7 +9513,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
         name: 'team_dmg_',
       },
@@ -9537,7 +9537,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EagleOfTwilightLine',
         name: 'set2_dmg_',
       },
@@ -9548,7 +9548,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EagleOfTwilightLine',
         name: 'team_dmg_',
       },
@@ -9561,7 +9561,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EarthlyEscapade',
         name: 'cond_dmg_',
       },
@@ -9583,7 +9583,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EarthlyEscapade',
         name: 'team_dmg_',
       },
@@ -9596,7 +9596,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EchoesOfTheCoffin',
         name: 'cond_dmg_',
       },
@@ -9618,7 +9618,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EchoesOfTheCoffin',
         name: 'team_dmg_',
       },
@@ -9631,7 +9631,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EyesOfThePrey',
         name: 'cond_dmg_',
       },
@@ -9653,7 +9653,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'EyesOfThePrey',
         name: 'team_dmg_',
       },
@@ -9666,7 +9666,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Fermata',
         name: 'cond_dmg_',
       },
@@ -9688,7 +9688,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Fermata',
         name: 'team_dmg_',
       },
@@ -9701,7 +9701,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FinalVictor',
         name: 'cond_dmg_',
       },
@@ -9723,7 +9723,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FinalVictor',
         name: 'team_dmg_',
       },
@@ -9736,7 +9736,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FineFruit',
         name: 'cond_dmg_',
       },
@@ -9758,7 +9758,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FineFruit',
         name: 'team_dmg_',
       },
@@ -9949,7 +9949,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FiresmithOfLavaForging',
         name: 'set2_dmg_',
       },
@@ -9960,7 +9960,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FiresmithOfLavaForging',
         name: 'team_dmg_',
       },
@@ -9984,7 +9984,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FirmamentFrontlineGlamoth',
         name: 'set2_dmg_',
       },
@@ -9995,7 +9995,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FirmamentFrontlineGlamoth',
         name: 'team_dmg_',
       },
@@ -10008,7 +10008,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FlamesAfar',
         name: 'cond_dmg_',
       },
@@ -10030,7 +10030,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FlamesAfar',
         name: 'team_dmg_',
       },
@@ -10054,7 +10054,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FleetOfTheAgeless',
         name: 'set2_dmg_',
       },
@@ -10065,7 +10065,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FleetOfTheAgeless',
         name: 'team_dmg_',
       },
@@ -10078,7 +10078,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FlowingNightglow',
         name: 'cond_dmg_',
       },
@@ -10100,7 +10100,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FlowingNightglow',
         name: 'team_dmg_',
       },
@@ -10124,7 +10124,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ForgeOfTheKalpagniLantern',
         name: 'set2_dmg_',
       },
@@ -10135,7 +10135,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ForgeOfTheKalpagniLantern',
         name: 'team_dmg_',
       },
@@ -10148,7 +10148,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FuXuan',
         name: 'e6_dmg_',
       },
@@ -10324,7 +10324,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FuXuan',
         name: 'team_dmg_',
       },
@@ -10337,7 +10337,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Gallagher',
         name: 'e6_dmg_',
       },
@@ -10513,7 +10513,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Gallagher',
         name: 'team_dmg_',
       },
@@ -10537,7 +10537,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GeniusOfBrilliantStars',
         name: 'set2_dmg_',
       },
@@ -10548,7 +10548,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GeniusOfBrilliantStars',
         name: 'team_dmg_',
       },
@@ -10561,7 +10561,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GeniusesRepose',
         name: 'cond_dmg_',
       },
@@ -10583,7 +10583,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GeniusesRepose',
         name: 'team_dmg_',
       },
@@ -10596,7 +10596,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Gepard',
         name: 'e6_dmg_',
       },
@@ -10777,7 +10777,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Gepard',
         name: 'team_dmg_',
       },
@@ -10790,7 +10790,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GoodNightAndSleepWell',
         name: 'cond_dmg_',
       },
@@ -10812,7 +10812,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GoodNightAndSleepWell',
         name: 'team_dmg_',
       },
@@ -10836,7 +10836,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GuardOfWutheringSnow',
         name: 'set2_dmg_',
       },
@@ -10847,7 +10847,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'GuardOfWutheringSnow',
         name: 'team_dmg_',
       },
@@ -10860,7 +10860,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Guinaifen',
         name: 'e6_dmg_',
       },
@@ -11041,7 +11041,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Guinaifen',
         name: 'team_dmg_',
       },
@@ -11054,7 +11054,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Hanya',
         name: 'e6_dmg_',
       },
@@ -11230,7 +11230,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Hanya',
         name: 'team_dmg_',
       },
@@ -11243,7 +11243,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Herta',
         name: 'e6_dmg_',
       },
@@ -11424,7 +11424,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Herta',
         name: 'team_dmg_',
       },
@@ -11437,7 +11437,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'HeyOverHere',
         name: 'cond_dmg_',
       },
@@ -11459,7 +11459,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'HeyOverHere',
         name: 'team_dmg_',
       },
@@ -11472,7 +11472,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'HiddenShadow',
         name: 'cond_dmg_',
       },
@@ -11494,7 +11494,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'HiddenShadow',
         name: 'team_dmg_',
       },
@@ -11507,7 +11507,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Himeko',
         name: 'e6_dmg_',
       },
@@ -11688,7 +11688,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Himeko',
         name: 'team_dmg_',
       },
@@ -11701,7 +11701,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Hook',
         name: 'e6_dmg_',
       },
@@ -11877,7 +11877,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Hook',
         name: 'team_dmg_',
       },
@@ -11901,7 +11901,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'HunterOfGlacialForest',
         name: 'set2_dmg_',
       },
@@ -11912,7 +11912,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'HunterOfGlacialForest',
         name: 'team_dmg_',
       },
@@ -11925,7 +11925,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Huohuo',
         name: 'e6_dmg_',
       },
@@ -12101,7 +12101,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Huohuo',
         name: 'team_dmg_',
       },
@@ -12114,7 +12114,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IShallBeMyOwnSword',
         name: 'cond_dmg_',
       },
@@ -12136,7 +12136,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IShallBeMyOwnSword',
         name: 'team_dmg_',
       },
@@ -12149,7 +12149,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InTheNameOfTheWorld',
         name: 'cond_dmg_',
       },
@@ -12171,7 +12171,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InTheNameOfTheWorld',
         name: 'team_dmg_',
       },
@@ -12184,7 +12184,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InTheNight',
         name: 'cond_dmg_',
       },
@@ -12206,7 +12206,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InTheNight',
         name: 'team_dmg_',
       },
@@ -12219,7 +12219,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IncessantRain',
         name: 'cond_dmg_',
       },
@@ -12241,7 +12241,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IncessantRain',
         name: 'team_dmg_',
       },
@@ -12254,7 +12254,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IndeliblePromise',
         name: 'cond_dmg_',
       },
@@ -12276,7 +12276,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IndeliblePromise',
         name: 'team_dmg_',
       },
@@ -12300,7 +12300,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InertSalsotto',
         name: 'set2_dmg_',
       },
@@ -12311,7 +12311,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InertSalsotto',
         name: 'team_dmg_',
       },
@@ -12324,7 +12324,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InherentlyUnjustDestiny',
         name: 'cond_dmg_',
       },
@@ -12346,7 +12346,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'InherentlyUnjustDestiny',
         name: 'team_dmg_',
       },
@@ -12370,7 +12370,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IronCavalryAgainstTheScourge',
         name: 'set2_dmg_',
       },
@@ -12381,7 +12381,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IronCavalryAgainstTheScourge',
         name: 'team_dmg_',
       },
@@ -12394,7 +12394,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ItsShowtime',
         name: 'cond_dmg_',
       },
@@ -12416,7 +12416,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ItsShowtime',
         name: 'team_dmg_',
       },
@@ -12440,7 +12440,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
         name: 'set2_dmg_',
       },
@@ -12451,7 +12451,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
         name: 'team_dmg_',
       },
@@ -12464,7 +12464,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Jade',
         name: 'e6_dmg_',
       },
@@ -12645,7 +12645,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Jade',
         name: 'team_dmg_',
       },
@@ -12658,7 +12658,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'JingYuan',
         name: 'e6_dmg_',
       },
@@ -12834,7 +12834,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'JingYuan',
         name: 'team_dmg_',
       },
@@ -12847,7 +12847,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Jingliu',
         name: 'e6_dmg_',
       },
@@ -13023,7 +13023,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Jingliu',
         name: 'team_dmg_',
       },
@@ -13036,7 +13036,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Kafka',
         name: 'e6_dmg_',
       },
@@ -13212,7 +13212,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Kafka',
         name: 'team_dmg_',
       },
@@ -13236,7 +13236,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'KnightOfPurityPalace',
         name: 'set2_dmg_',
       },
@@ -13247,7 +13247,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'KnightOfPurityPalace',
         name: 'team_dmg_',
       },
@@ -13260,7 +13260,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'LandausChoice',
         name: 'cond_dmg_',
       },
@@ -13282,7 +13282,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'LandausChoice',
         name: 'team_dmg_',
       },
@@ -13306,7 +13306,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'LongevousDisciple',
         name: 'set2_dmg_',
       },
@@ -13317,7 +13317,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'LongevousDisciple',
         name: 'team_dmg_',
       },
@@ -13330,7 +13330,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Loop',
         name: 'cond_dmg_',
       },
@@ -13352,7 +13352,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Loop',
         name: 'team_dmg_',
       },
@@ -13365,7 +13365,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Luka',
         name: 'e6_dmg_',
       },
@@ -13541,7 +13541,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Luka',
         name: 'team_dmg_',
       },
@@ -13554,7 +13554,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Luocha',
         name: 'e6_dmg_',
       },
@@ -13730,7 +13730,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Luocha',
         name: 'team_dmg_',
       },
@@ -13743,7 +13743,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Lynx',
         name: 'e6_dmg_',
       },
@@ -13919,7 +13919,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Lynx',
         name: 'team_dmg_',
       },
@@ -13932,7 +13932,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MakeTheWorldClamor',
         name: 'cond_dmg_',
       },
@@ -13954,7 +13954,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MakeTheWorldClamor',
         name: 'team_dmg_',
       },
@@ -14128,7 +14128,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'March7thTheHunt',
         name: 'e6_dmg_',
       },
@@ -14304,7 +14304,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'March7thTheHunt',
         name: 'team_dmg_',
       },
@@ -14317,7 +14317,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Mediation',
         name: 'cond_dmg_',
       },
@@ -14339,7 +14339,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Mediation',
         name: 'team_dmg_',
       },
@@ -14352,7 +14352,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MemoriesOfThePast',
         name: 'cond_dmg_',
       },
@@ -14374,7 +14374,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MemoriesOfThePast',
         name: 'team_dmg_',
       },
@@ -14387,7 +14387,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MeshingCogs',
         name: 'cond_dmg_',
       },
@@ -14409,7 +14409,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MeshingCogs',
         name: 'team_dmg_',
       },
@@ -14433,7 +14433,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MessengerTraversingHackerspace',
         name: 'set2_dmg_',
       },
@@ -14444,7 +14444,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MessengerTraversingHackerspace',
         name: 'team_dmg_',
       },
@@ -14457,7 +14457,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Misha',
         name: 'e6_dmg_',
       },
@@ -14638,7 +14638,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Misha',
         name: 'team_dmg_',
       },
@@ -14651,7 +14651,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MomentOfVictory',
         name: 'cond_dmg_',
       },
@@ -14673,7 +14673,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MomentOfVictory',
         name: 'team_dmg_',
       },
@@ -14686,7 +14686,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Multiplication',
         name: 'cond_dmg_',
       },
@@ -14708,7 +14708,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Multiplication',
         name: 'team_dmg_',
       },
@@ -14732,7 +14732,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MusketeerOfWildWheat',
         name: 'set2_dmg_',
       },
@@ -14743,7 +14743,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MusketeerOfWildWheat',
         name: 'team_dmg_',
       },
@@ -14756,7 +14756,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MutualDemise',
         name: 'cond_dmg_',
       },
@@ -14778,7 +14778,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'MutualDemise',
         name: 'team_dmg_',
       },
@@ -14791,7 +14791,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Natasha',
         name: 'e6_dmg_',
       },
@@ -14967,7 +14967,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Natasha',
         name: 'team_dmg_',
       },
@@ -14980,7 +14980,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'NightOfFright',
         name: 'cond_dmg_',
       },
@@ -15002,7 +15002,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'NightOfFright',
         name: 'team_dmg_',
       },
@@ -15015,7 +15015,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'NightOnTheMilkyWay',
         name: 'cond_dmg_',
       },
@@ -15037,7 +15037,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'NightOnTheMilkyWay',
         name: 'team_dmg_',
       },
@@ -15050,7 +15050,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'NowhereToRun',
         name: 'cond_dmg_',
       },
@@ -15072,7 +15072,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'NowhereToRun',
         name: 'team_dmg_',
       },
@@ -15085,7 +15085,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'OnTheFallOfAnAeon',
         name: 'cond_dmg_',
       },
@@ -15107,7 +15107,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'OnTheFallOfAnAeon',
         name: 'team_dmg_',
       },
@@ -15120,7 +15120,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'OnlySilenceRemains',
         name: 'cond_dmg_',
       },
@@ -15142,7 +15142,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'OnlySilenceRemains',
         name: 'team_dmg_',
       },
@@ -15166,7 +15166,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PanCosmicCommercialEnterprise',
         name: 'set2_dmg_',
       },
@@ -15177,7 +15177,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PanCosmicCommercialEnterprise',
         name: 'team_dmg_',
       },
@@ -15201,7 +15201,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PasserbyOfWanderingCloud',
         name: 'set2_dmg_',
       },
@@ -15212,7 +15212,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PasserbyOfWanderingCloud',
         name: 'team_dmg_',
       },
@@ -15225,7 +15225,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Passkey',
         name: 'cond_dmg_',
       },
@@ -15247,7 +15247,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Passkey',
         name: 'team_dmg_',
       },
@@ -15260,7 +15260,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PastAndFuture',
         name: 'cond_dmg_',
       },
@@ -15282,7 +15282,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PastAndFuture',
         name: 'team_dmg_',
       },
@@ -15295,7 +15295,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PastSelfInMirror',
         name: 'cond_dmg_',
       },
@@ -15308,7 +15308,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PatienceIsAllYouNeed',
         name: 'cond_dmg_',
       },
@@ -15330,7 +15330,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PatienceIsAllYouNeed',
         name: 'team_dmg_',
       },
@@ -15343,7 +15343,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Pela',
         name: 'e6_dmg_',
       },
@@ -15524,7 +15524,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Pela',
         name: 'team_dmg_',
       },
@@ -15548,7 +15548,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PenaconyLandOfTheDreams',
         name: 'set2_dmg_',
       },
@@ -15559,7 +15559,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PenaconyLandOfTheDreams',
         name: 'team_dmg_',
       },
@@ -15572,7 +15572,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PerfectTiming',
         name: 'cond_dmg_',
       },
@@ -15594,7 +15594,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PerfectTiming',
         name: 'team_dmg_',
       },
@@ -15618,7 +15618,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
         name: 'set2_dmg_',
       },
@@ -15629,7 +15629,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
         name: 'team_dmg_',
       },
@@ -15642,7 +15642,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Pioneering',
         name: 'cond_dmg_',
       },
@@ -15664,7 +15664,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Pioneering',
         name: 'team_dmg_',
       },
@@ -15677,7 +15677,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PlanetaryRendezvous',
         name: 'cond_dmg_',
       },
@@ -15699,7 +15699,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PlanetaryRendezvous',
         name: 'team_dmg_',
       },
@@ -15712,7 +15712,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PoisedToBloom',
         name: 'cond_dmg_',
       },
@@ -15734,7 +15734,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PoisedToBloom',
         name: 'team_dmg_',
       },
@@ -15747,7 +15747,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PostOpConversation',
         name: 'cond_dmg_',
       },
@@ -15769,7 +15769,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PostOpConversation',
         name: 'team_dmg_',
       },
@@ -15793,7 +15793,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PrisonerInDeepConfinement',
         name: 'set2_dmg_',
       },
@@ -15804,7 +15804,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'PrisonerInDeepConfinement',
         name: 'team_dmg_',
       },
@@ -15817,7 +15817,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Qingque',
         name: 'e6_dmg_',
       },
@@ -15996,7 +15996,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Qingque',
         name: 'team_dmg_',
       },
@@ -16009,7 +16009,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'QuidProQuo',
         name: 'cond_dmg_',
       },
@@ -16031,7 +16031,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'QuidProQuo',
         name: 'team_dmg_',
       },
@@ -16044,7 +16044,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ReforgedRemembrance',
         name: 'cond_dmg_',
       },
@@ -16066,7 +16066,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ReforgedRemembrance',
         name: 'team_dmg_',
       },
@@ -16079,7 +16079,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ResolutionShinesAsPearlsOfSweat',
         name: 'cond_dmg_',
       },
@@ -16101,7 +16101,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ResolutionShinesAsPearlsOfSweat',
         name: 'team_dmg_',
       },
@@ -16114,7 +16114,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ReturnToDarkness',
         name: 'cond_dmg_',
       },
@@ -16136,7 +16136,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ReturnToDarkness',
         name: 'team_dmg_',
       },
@@ -16149,7 +16149,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'RiverFlowsInSpring',
         name: 'cond_dmg_',
       },
@@ -16171,7 +16171,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'RiverFlowsInSpring',
         name: 'team_dmg_',
       },
@@ -16184,7 +16184,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Robin',
         name: 'e6_dmg_',
       },
@@ -16360,7 +16360,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Robin',
         name: 'team_dmg_',
       },
@@ -16384,7 +16384,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'RuanMei',
         name: 'ba3_dmg_',
       },
@@ -16472,7 +16472,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'RuanMei',
         name: 'skillOvertone_dmg_',
       },
@@ -16639,7 +16639,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'RutilantArena',
         name: 'set2_dmg_',
       },
@@ -16650,7 +16650,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'RutilantArena',
         name: 'team_dmg_',
       },
@@ -16663,7 +16663,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sagacity',
         name: 'cond_dmg_',
       },
@@ -16685,7 +16685,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sagacity',
         name: 'team_dmg_',
       },
@@ -16698,7 +16698,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SailingTowardsASecondLife',
         name: 'cond_dmg_',
       },
@@ -16720,7 +16720,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SailingTowardsASecondLife',
         name: 'team_dmg_',
       },
@@ -16733,7 +16733,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sampo',
         name: 'e6_dmg_',
       },
@@ -16909,7 +16909,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sampo',
         name: 'team_dmg_',
       },
@@ -16922,7 +16922,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Seele',
         name: 'e6_dmg_',
       },
@@ -17098,7 +17098,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Seele',
         name: 'team_dmg_',
       },
@@ -17111,7 +17111,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Serval',
         name: 'e6_dmg_',
       },
@@ -17287,7 +17287,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Serval',
         name: 'team_dmg_',
       },
@@ -17300,7 +17300,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SharedFeeling',
         name: 'cond_dmg_',
       },
@@ -17322,7 +17322,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SharedFeeling',
         name: 'team_dmg_',
       },
@@ -17335,7 +17335,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ShatteredHome',
         name: 'cond_dmg_',
       },
@@ -17357,7 +17357,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ShatteredHome',
         name: 'team_dmg_',
       },
@@ -17370,7 +17370,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SheAlreadyShutHerEyes',
         name: 'cond_dmg_',
       },
@@ -17392,7 +17392,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SheAlreadyShutHerEyes',
         name: 'team_dmg_',
       },
@@ -17416,7 +17416,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SigoniaTheUnclaimedDesolation',
         name: 'set2_dmg_',
       },
@@ -17427,7 +17427,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SigoniaTheUnclaimedDesolation',
         name: 'team_dmg_',
       },
@@ -17440,7 +17440,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SilverWolf',
         name: 'e6_dmg_',
       },
@@ -17618,7 +17618,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SilverWolf',
         name: 'team_dmg_',
       },
@@ -17631,7 +17631,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SleepLikeTheDead',
         name: 'cond_dmg_',
       },
@@ -17653,7 +17653,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SleepLikeTheDead',
         name: 'team_dmg_',
       },
@@ -17666,7 +17666,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SolitaryHealing',
         name: 'cond_dmg_',
       },
@@ -17688,7 +17688,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SolitaryHealing',
         name: 'team_dmg_',
       },
@@ -17701,7 +17701,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SomethingIrreplaceable',
         name: 'cond_dmg_',
       },
@@ -17723,7 +17723,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SomethingIrreplaceable',
         name: 'team_dmg_',
       },
@@ -17747,7 +17747,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SpaceSealingStation',
         name: 'set2_dmg_',
       },
@@ -17758,7 +17758,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SpaceSealingStation',
         name: 'team_dmg_',
       },
@@ -17771,7 +17771,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sparkle',
         name: 'e6_dmg_',
       },
@@ -17947,7 +17947,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sparkle',
         name: 'team_dmg_',
       },
@@ -17971,7 +17971,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SprightlyVonwacq',
         name: 'set2_dmg_',
       },
@@ -17982,7 +17982,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SprightlyVonwacq',
         name: 'team_dmg_',
       },
@@ -17995,7 +17995,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SubscribeForMore',
         name: 'cond_dmg_',
       },
@@ -18017,7 +18017,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'SubscribeForMore',
         name: 'team_dmg_',
       },
@@ -18030,7 +18030,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sushang',
         name: 'e6_dmg_',
       },
@@ -18206,7 +18206,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Sushang',
         name: 'team_dmg_',
       },
@@ -18219,7 +18219,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Swordplay',
         name: 'cond_dmg_',
       },
@@ -18241,7 +18241,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Swordplay',
         name: 'team_dmg_',
       },
@@ -18265,7 +18265,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TaliaKingdomOfBanditry',
         name: 'set2_dmg_',
       },
@@ -18276,7 +18276,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TaliaKingdomOfBanditry',
         name: 'team_dmg_',
       },
@@ -18289,7 +18289,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TextureOfMemories',
         name: 'cond_dmg_',
       },
@@ -18311,7 +18311,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TextureOfMemories',
         name: 'team_dmg_',
       },
@@ -18335,7 +18335,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheAshblazingGrandDuke',
         name: 'set2_dmg_',
       },
@@ -18346,7 +18346,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheAshblazingGrandDuke',
         name: 'team_dmg_',
       },
@@ -18359,7 +18359,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheBirthOfTheSelf',
         name: 'cond_dmg_',
       },
@@ -18381,7 +18381,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheBirthOfTheSelf',
         name: 'team_dmg_',
       },
@@ -18394,7 +18394,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheDayTheCosmosFell',
         name: 'cond_dmg_',
       },
@@ -18416,7 +18416,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheDayTheCosmosFell',
         name: 'team_dmg_',
       },
@@ -18429,7 +18429,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheMolesWelcomeYou',
         name: 'cond_dmg_',
       },
@@ -18451,7 +18451,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheMolesWelcomeYou',
         name: 'team_dmg_',
       },
@@ -18464,7 +18464,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheSeriousnessOfBreakfast',
         name: 'cond_dmg_',
       },
@@ -18486,7 +18486,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheSeriousnessOfBreakfast',
         name: 'team_dmg_',
       },
@@ -18499,7 +18499,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheUnreachableSide',
         name: 'cond_dmg_',
       },
@@ -18521,7 +18521,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheUnreachableSide',
         name: 'team_dmg_',
       },
@@ -18545,7 +18545,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheWindSouringValorous',
         name: 'set2_dmg_',
       },
@@ -18556,7 +18556,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TheWindSouringValorous',
         name: 'team_dmg_',
       },
@@ -18580,7 +18580,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ThiefOfShootingMeteor',
         name: 'set2_dmg_',
       },
@@ -18591,7 +18591,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ThiefOfShootingMeteor',
         name: 'team_dmg_',
       },
@@ -18604,7 +18604,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ThisIsMe',
         name: 'cond_dmg_',
       },
@@ -18626,7 +18626,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ThisIsMe',
         name: 'team_dmg_',
       },
@@ -18639,7 +18639,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TimeWaitsForNoOne',
         name: 'cond_dmg_',
       },
@@ -18661,7 +18661,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TimeWaitsForNoOne',
         name: 'team_dmg_',
       },
@@ -18674,7 +18674,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Tingyun',
         name: 'e6_dmg_',
       },
@@ -18852,7 +18852,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Tingyun',
         name: 'team_dmg_',
       },
@@ -18865,7 +18865,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TodayIsAnotherPeacefulDay',
         name: 'cond_dmg_',
       },
@@ -18887,7 +18887,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TodayIsAnotherPeacefulDay',
         name: 'team_dmg_',
       },
@@ -18900,7 +18900,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TopazAndNumby',
         name: 'e6_dmg_',
       },
@@ -19081,7 +19081,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TopazAndNumby',
         name: 'team_dmg_',
       },
@@ -19094,7 +19094,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrailblazerFire',
         name: 'e6_dmg_',
       },
@@ -19270,7 +19270,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrailblazerFire',
         name: 'team_dmg_',
       },
@@ -19283,7 +19283,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrailblazerImaginary',
         name: 'e6_dmg_',
       },
@@ -19462,7 +19462,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrailblazerImaginary',
         name: 'team_dmg_',
       },
@@ -19475,7 +19475,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrailblazerPhysical',
         name: 'e6_dmg_',
       },
@@ -19651,7 +19651,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrailblazerPhysical',
         name: 'team_dmg_',
       },
@@ -19664,7 +19664,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrendOfTheUniversalMarket',
         name: 'cond_dmg_',
       },
@@ -19686,7 +19686,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'TrendOfTheUniversalMarket',
         name: 'team_dmg_',
       },
@@ -19699,7 +19699,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'UnderTheBlueSky',
         name: 'cond_dmg_',
       },
@@ -19721,7 +19721,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'UnderTheBlueSky',
         name: 'team_dmg_',
       },
@@ -19734,7 +19734,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Void',
         name: 'cond_dmg_',
       },
@@ -19756,7 +19756,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Void',
         name: 'team_dmg_',
       },
@@ -19769,7 +19769,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WarmthShortensColdNights',
         name: 'cond_dmg_',
       },
@@ -19791,7 +19791,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WarmthShortensColdNights',
         name: 'team_dmg_',
       },
@@ -19815,7 +19815,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WastelanderOfBanditryDesert',
         name: 'set2_dmg_',
       },
@@ -19826,7 +19826,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WastelanderOfBanditryDesert',
         name: 'team_dmg_',
       },
@@ -19852,7 +19852,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WeAreWildfire',
         name: 'cond_dmg_',
       },
@@ -19874,7 +19874,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WeAreWildfire',
         name: 'team_dmg_',
       },
@@ -19887,7 +19887,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WeWillMeetAgain',
         name: 'cond_dmg_',
       },
@@ -19909,7 +19909,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WeWillMeetAgain',
         name: 'team_dmg_',
       },
@@ -19922,7 +19922,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Welt',
         name: 'e6_dmg_',
       },
@@ -20101,7 +20101,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Welt',
         name: 'team_dmg_',
       },
@@ -20114,7 +20114,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WhatIsReal',
         name: 'cond_dmg_',
       },
@@ -20136,7 +20136,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WhatIsReal',
         name: 'team_dmg_',
       },
@@ -20149,7 +20149,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WhereaboutsShouldDreamsRest',
         name: 'cond_dmg_',
       },
@@ -20171,7 +20171,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WhereaboutsShouldDreamsRest',
         name: 'team_dmg_',
       },
@@ -20184,7 +20184,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WoofWalkTime',
         name: 'cond_dmg_',
       },
@@ -20206,7 +20206,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WoofWalkTime',
         name: 'team_dmg_',
       },
@@ -20219,7 +20219,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WorrisomeBlissful',
         name: 'cond_dmg_',
       },
@@ -20241,7 +20241,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'WorrisomeBlissful',
         name: 'team_dmg_',
       },
@@ -20254,7 +20254,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Xueyi',
         name: 'e6_dmg_',
       },
@@ -20432,7 +20432,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Xueyi',
         name: 'team_dmg_',
       },
@@ -20445,7 +20445,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Yanqing',
         name: 'e6_dmg_',
       },
@@ -20624,7 +20624,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Yanqing',
         name: 'team_dmg_',
       },
@@ -20637,7 +20637,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'YetHopeIsPriceless',
         name: 'cond_dmg_',
       },
@@ -20659,7 +20659,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'YetHopeIsPriceless',
         name: 'team_dmg_',
       },
@@ -20672,7 +20672,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Yukong',
         name: 'e6_dmg_',
       },
@@ -20853,7 +20853,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Yukong',
         name: 'team_dmg_',
       },
@@ -20866,7 +20866,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Yunli',
         name: 'e6_dmg_',
       },
@@ -21042,7 +21042,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'Yunli',
         name: 'team_dmg_',
       },

@@ -22,7 +22,7 @@ const data: TagMapNodeEntries = [
   ownBuff.dmg.shared.add(
     prod(
       // DMG Bonus Multiplier
-      sum(percent(1), own.final.dmg_),
+      sum(percent(1), own.final.dmg_, own.final.common_dmg_),
       // DEF Multiplier
       // levelFactor / (max(def * (1 - pen_) - pen, 0) + levelFactor)
       sumfrac(

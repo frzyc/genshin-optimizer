@@ -221,7 +221,6 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(
       listingItem(own.final.dmg_[data_gen.damageType])
     ),
-    ownBuff.listing.formulas.add(listingItem(own.final.dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.weakness_)),
     ownBuff.listing.formulas.add(listingItem(own.final.resPen_)),
   ]

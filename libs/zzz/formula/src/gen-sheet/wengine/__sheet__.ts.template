@@ -34,7 +34,7 @@ const sheet = register(
   // Conditional buffs
   registerBuff(
     'cond_dmg_',
-    ownBuff.premod.dmg_.add(
+    ownBuff.premod.common_dmg_.add(
       boolConditional.ifOn(
         cmpGE(lcCount, 1, subscript(superimpose, dm.cond_dmg_))
       )
@@ -42,7 +42,7 @@ const sheet = register(
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.premod.dmg_.add(
+    teamBuff.premod.common_dmg_.add(
       cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 }))
     )
   ),
