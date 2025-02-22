@@ -57,7 +57,7 @@ export function DiscSwapModal({
   show: boolean
   onClose: () => void
 }) {
-  const { t } = useTranslation(['page_character', 'disc'])
+  const { t } = useTranslation(['page_characters', 'disc'])
   const { database } = useDatabaseContext()
   const discId = disc?.id
 

@@ -223,11 +223,16 @@ function DiscSwapButtonButton({
   return (
     <>
       <Tooltip
-        title={<Typography>{t('tabEquip.swapArt')}</Typography>}
+        title={<Typography>{t('tabEquip.swapDisc')}</Typography>}
         placement="top"
         arrow
       >
-        <Button color="info" size="small" onClick={onOpen}>
+        <Button
+          color="info"
+          size="small"
+          onClick={onOpen}
+          aria-label={t('tabEquip.swapDisc')}
+        >
           <SwapHorizIcon />
         </Button>
       </Tooltip>
@@ -262,7 +267,7 @@ function LargeWeaponSwapButton() {
   const { t } = useTranslation('page_characters')
   return (
     <Button color="info" startIcon={<SwapHorizIcon />}>
-      {t('tabEquip.swapWeapon')}
+      {t('tabEquip.swapWengine')}
     </Button>
   )
 }
