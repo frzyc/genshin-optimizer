@@ -1,5 +1,4 @@
 import {
-  useBoolState,
   useForceUpdate,
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
@@ -19,13 +18,11 @@ import {
   discFilterConfigs,
   initialDiscFilterOption,
 } from '@genshin-optimizer/zzz/util'
-import { IDisc } from '@genshin-optimizer/zzz/zood'
-import AddIcon from '@mui/icons-material/Add'
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import CloseIcon from '@mui/icons-material/Close'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
 import {
   Box,
-  Button,
   CardActionArea,
   CardContent,
   Divider,
@@ -44,7 +41,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscCard } from './DiscCard'
-import { DiscEditor } from './DiscEditor'
 import { DiscFilterDisplay } from './DiscFilterDisplay'
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 
@@ -69,8 +65,6 @@ export function DiscSwapModal({
     (state, action) => ({ ...state, ...action, slotKeys: [slotKey] }),
     [slotKey]
   )
-
-  const [showEditor, onShowEditor, onHideEditor] = useBoolState(false)
 
   const [filterOption, filterOptionDispatch]: [
     DiscFilterOption,
@@ -128,7 +122,7 @@ export function DiscSwapModal({
   }
   const [swapDiscId, setSwapDiscId] = useState<string | DiscSlotKey>('')
 
-  //TODO: This should be replaced with ComapreBuildWrapper
+  //TODO: This should be replaced with CompareBuildWrapper
   if (allDiscSlotKeys.includes(swapDiscId as DiscSlotKey)) {
     onChangeId(null)
     setSwapDiscId('')
@@ -146,18 +140,6 @@ export function DiscSwapModal({
       containerProps={{ maxWidth: 'xl' }}
     >
       <CardThemed>
-        <Suspense fallback={false}>
-          <DiscEditor
-            disc={{}}
-            show={showEditor}
-            onShow={onShowEditor}
-            onClose={onHideEditor}
-            cancelEdit={onHideEditor}
-            allowUpload
-            allowEmpty
-            fixedSlotKey={filterOption.slotKeys[0]}
-          />
-        </Suspense>
         <CardContent
           sx={{
             py: 1,
@@ -196,14 +178,6 @@ export function DiscSwapModal({
           >
             <ShowingAndSortOptionSelect showingTextProps={showingTextProps} />
           </Box>
-          <Button
-            fullWidth
-            onClick={onShowEditor}
-            color="info"
-            startIcon={<AddIcon />}
-          >
-            {t('disc:addNew')}
-          </Button>
           <Box mt={1}>
             <Suspense
               fallback={
@@ -211,7 +185,7 @@ export function DiscSwapModal({
               }
             >
               <Grid container spacing={1} columns={{ xs: 2, md: 3, lg: 4 }}>
-                {/* only show "unequip" when an artifact is equipped */}
+                {/* only show "unequip" when a disc is equipped */}
                 {discId && (
                   <Grid item xs={1}>
                     <CardThemed

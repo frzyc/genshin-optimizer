@@ -8,7 +8,6 @@ import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
   useDatabaseContext,
-  useDisc,
   useDiscs,
 } from '@genshin-optimizer/zzz/db-ui'
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
@@ -21,9 +20,9 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
+import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DiscCard, DiscEditor, DiscSwapModal } from '../Disc'
+import { DiscCard, DiscSwapModal } from '../Disc'
 
 const columns = {
   xs: 1,
@@ -39,33 +38,16 @@ export function EquippedGrid({
 }) {
   const { database } = useDatabaseContext()
   const character = useContext(CharacterContext)
-  const [discIdToEdit, setDiscIdToEdit] = useState<string | undefined>()
   const discIds = useMemo(() => {
     return objKeyMap(
       allDiscSlotKeys,
       (slotKey) => character?.equippedDiscs[slotKey]
     )
   }, [character])
-  const onEdit = useCallback((id: string) => {
-    setDiscIdToEdit(id)
-  }, [])
   const discs = useDiscs(discIds)
-  const disc = useDisc(discIdToEdit)
 
   return (
     <Box>
-      <Suspense fallback={false}>Weapon Editor</Suspense>
-      <Suspense fallback={false}>
-        {disc && (
-          <DiscEditor
-            disc={disc}
-            show={!!discIdToEdit}
-            onShow={() => setDiscIdToEdit(discIdToEdit)}
-            onClose={() => setDiscIdToEdit(undefined)}
-            cancelEdit={() => setDiscIdToEdit(undefined)}
-          />
-        )}
-      </Suspense>
       <Grid item xs={1} display="flex" flexDirection="column">
         Weapon Swap
       </Grid>
@@ -83,7 +65,6 @@ export function EquippedGrid({
                       onChangeId={(id) => setDisc(slotKey, id)}
                     />
                   }
-                  onEdit={() => onEdit(disc.id)}
                   onLockToggle={() =>
                     database.discs.set(disc.id, ({ lock }) => ({ lock: !lock }))
                   }
