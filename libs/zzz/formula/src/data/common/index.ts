@@ -55,11 +55,14 @@ const data: TagMapNodeEntries = [
     .filter((s) => s in ownBuff.base)
     .map(
       (s) =>
-        ownBuff.initial[s].add(ownBuff.base[s as keyof typeof ownBuff.base]) // Validated with filter
+        ownBuff.initial[s].add(
+          ownBuff.base[s as keyof typeof ownBuff.base],
+          true
+        ) // Validated with filter
     ),
   // final x += initial X + combat X
   ...otherStats.map((s) =>
-    ownBuff.final[s].add(sum(own.initial[s], own.combat[s]))
+    ownBuff.final[s].add(sum(own.initial[s], own.combat[s]), true)
   ),
 
   // Capped CR = Max(Min(Final CR, 1), 0)

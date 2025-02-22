@@ -36,6 +36,12 @@ import {
 setDebugMode(true)
 // This is generally unnecessary, but without it, some tags in `DebugCalculator` will be missing
 Object.assign(values, compileTagMapValues(keys, data))
+describe('read test', () => {
+  it('Throws an error when trying to add to dmg_ without modifier', () => {
+    expect(() => ownBuff.final.dmg_.add(1)).toThrowError('dmg_')
+    ownBuff.final.dmg_.ice.add(1)
+  })
+})
 
 describe('character test', () => {
   it.each([
