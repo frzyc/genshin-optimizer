@@ -10,7 +10,7 @@ const sheet = registerDisc(
   key,
   registerBuff(
     'set4_team_dmg_',
-    teamBuff.combat.dmg_.add(cmpGE(discCount, 4, prod(astral, 0.08)))
+    teamBuff.combat.common_dmg_.add(cmpGE(discCount, 4, prod(astral, 0.08)))
   )
 )
 export default sheet

@@ -89,7 +89,7 @@ describe('Disc sheets test', () => {
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     // printDebug(calc, anby.final.dmg_)
     expect(calc.compute(anby.initial.atk_).val).toBeCloseTo(0.1) // 2p passive
-    expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0.24)
+    expect(calc.compute(anby.final.common_dmg_).val).toBeCloseTo(0.24)
   })
   it('BranchBladeSong', () => {
     const data = testCharacterData('BranchBladeSong', undefined, [
@@ -139,8 +139,7 @@ describe('Disc sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    // FIXME:
-    // expect(calc.compute(anby.final.dmg_.ether).val).toBeCloseTo(0.1) // 2p passive
+    expect(calc.compute(anby.final.dmg_.ether).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.2 * 2)
   })
   it('FangedMetal', () => {
@@ -155,10 +154,8 @@ describe('Disc sheets test', () => {
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     // printDebug(calc, anby.final.dmg_.physical)
-    // FIXME:
-    // expect(calc.compute(anby.final.physical.fire).val).toBeCloseTo(0.1) // 2p passive
-    // FIXME:
-    // expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0.35)
+    expect(calc.compute(anby.final.dmg_.physical).val).toBeCloseTo(0.1) // 2p passive
+    expect(calc.compute(anby.final.common_dmg_).val).toBeCloseTo(0.35)
   })
   it('FreedomBlues', () => {
     const data = testCharacterData('FreedomBlues')
@@ -199,8 +196,7 @@ describe('Disc sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    // FIXME:
-    // expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
+    expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.crit_).val).toBeCloseTo(0.05 + 0.28)
   })
   it('InfernoMetal', () => {
@@ -218,8 +214,7 @@ describe('Disc sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    // FIXME:
-    // expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
+    expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.crit_).val).toBeCloseTo(0.05 + 0.28)
   })
   it('PolarMetal no cond', () => {
@@ -231,8 +226,7 @@ describe('Disc sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    // FIXME:
-    // expect(calc.compute(anby.final.dmg_.ice).val).toBeCloseTo(0.1) // 2p passive
+    expect(calc.compute(anby.final.dmg_.ice).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.dmg_.basic[0]).val).toBeCloseTo(0.2)
     expect(calc.compute(anby.final.dmg_.basic[0]).val).toBeCloseTo(0.2)
   })
@@ -247,8 +241,7 @@ describe('Disc sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    // FIXME:
-    // expect(calc.compute(anby.final.dmg_.ice).val).toBeCloseTo(0.1) // 2p passive
+    expect(calc.compute(anby.final.dmg_.ice).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.dmg_.basic[0]).val).toBeCloseTo(0.2 * 2)
     expect(calc.compute(anby.final.dmg_.basic[0]).val).toBeCloseTo(0.2 * 2)
   })
@@ -268,7 +261,7 @@ describe('Disc sheets test', () => {
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.shield_).val).toBeCloseTo(0.15) // 2p passive
-    expect(calc.compute(anby.final.dmg_).val).toBeCloseTo(0.15)
+    expect(calc.compute(anby.final.common_dmg_).val).toBeCloseTo(0.15)
   })
   it('PufferElectro', () => {
     const data = testCharacterData('PufferElectro')
@@ -324,8 +317,7 @@ describe('Disc sheets test', () => {
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.enerRegen_).val).toBeCloseTo(0.2) // 2p
-    // FIXME:
-    // expect(calc.compute(anby.final.atk_).val).toBeCloseTo(0.15)
+    expect(calc.compute(anby.combat.atk_).val).toBeCloseTo(0.15)
   })
   it('ThunderMetal', () => {
     const data = testCharacterData('ThunderMetal')

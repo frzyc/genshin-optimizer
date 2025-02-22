@@ -14,7 +14,9 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set4_cond_inflict_assault',
-    ownBuff.combat.dmg_.add(cmpGE(discCount, 4, inflict_assault.ifOn(0.35)))
+    ownBuff.combat.common_dmg_.add(
+      cmpGE(discCount, 4, inflict_assault.ifOn(0.35))
+    )
   )
 )
 export default sheet
