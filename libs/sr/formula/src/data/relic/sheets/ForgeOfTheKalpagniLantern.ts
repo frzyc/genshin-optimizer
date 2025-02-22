@@ -33,14 +33,14 @@ const sheet = registerRelic(
   // Conditional buffs
   registerBuff(
     'set2_dmg_',
-    ownBuff.premod.dmg_.add(
+    ownBuff.premod.common_dmg_.add(
       cmpGE(relicCount, 2, boolConditional.ifOn(dm[2].cond_dmg_))
     ),
     cmpGE(relicCount, 2, 'unique', '')
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.premod.dmg_.add(
+    teamBuff.premod.common_dmg_.add(
       cmpGE(relicCount, 4, listConditional.map({ val1: 1, val2: 2 }))
     ),
     cmpGE(relicCount, 4, 'unique', '')

@@ -203,6 +203,5 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(
       listingItem(own.final.dmg_[data_gen.attribute])
     ),
-    ownBuff.listing.formulas.add(listingItem(own.final.dmg_)),
   ]
 }

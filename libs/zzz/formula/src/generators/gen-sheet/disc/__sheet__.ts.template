@@ -28,11 +28,11 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set2_dmg_',
-    ownBuff.combat.dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1)))
+    ownBuff.combat.common_dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1)))
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.combat.dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
   ),
   registerBuff('enemy_defIgn_', enemyDebuff.common.dmgRed_.add(numConditional))
 )
