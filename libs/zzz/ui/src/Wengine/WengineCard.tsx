@@ -46,11 +46,13 @@ export function WengineCard({
   wengineId,
   onEdit,
   setLocation,
+  extraButtons,
 }: {
   wengineId: string
   onClick?: () => void
   onEdit?: (wengineId: string) => void
   setLocation?: (lk: LocationKey) => void
+  extraButtons?: JSX.Element
 }) {
   const { t } = useTranslation('ui')
   const [show, onShow, onHide] = useBoolState()
@@ -239,6 +241,7 @@ export function WengineCard({
                 </Button>
               </BootstrapTooltip>
             )}
+            {extraButtons}
           </Box>
         </Box>
       </ZCard>

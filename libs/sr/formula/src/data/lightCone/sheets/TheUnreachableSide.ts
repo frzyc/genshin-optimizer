@@ -33,7 +33,7 @@ const sheet = registerLightCone(
   // Conditional buffs
   registerBuff(
     'cond_dmg_',
-    ownBuff.premod.dmg_.add(
+    ownBuff.premod.common_dmg_.add(
       cmpGE(
         lcCount,
         1,
@@ -44,7 +44,7 @@ const sheet = registerLightCone(
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.premod.dmg_.add(
+    teamBuff.premod.common_dmg_.add(
       cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 }))
     ),
     cmpGE(lcCount, 1, 'unique', '')

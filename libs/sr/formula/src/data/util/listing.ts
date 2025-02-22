@@ -21,6 +21,7 @@ const stats = [
   'enerRegen_',
   'heal_',
   'dmg_',
+  'common_dmg_',
   'resPen_',
   'weakness_',
   'brEfficiency_',

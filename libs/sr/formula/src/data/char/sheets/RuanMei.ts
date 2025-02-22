@@ -56,7 +56,7 @@ const sheet = register(
   // Buffs
   registerBuff(
     'skillOvertone_dmg_',
-    teamBuff.premod.dmg_.add(
+    teamBuff.premod.common_dmg_.add(
       skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
     )
   ),
@@ -82,7 +82,7 @@ const sheet = register(
   ),
   registerBuffFormula(
     'ba3_dmg_',
-    teamBuff.premod.dmg_.add(
+    teamBuff.premod.common_dmg_.add(
       cmpEq(
         char.bonusAbility3,
         1,
