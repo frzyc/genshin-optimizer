@@ -1,7 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
-import { registerDisc } from '../util'
+import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'ChaoticMetal'
 
@@ -10,6 +10,8 @@ const discCount = own.common.count.sheet(key)
 const { trigger_corruption } = allBoolConditionals(key)
 const sheet = registerDisc(
   key,
+  // Handle 2-set effects
+  entriesForDisc(key),
   //passive
   registerBuff(
     'set4_passive',

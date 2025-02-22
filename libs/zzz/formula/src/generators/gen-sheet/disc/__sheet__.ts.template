@@ -23,11 +23,13 @@ const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 const sheet = registerDisc(
   key,
+  // Handle 2-set effects
+  entriesForDisc(key),
 
   // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'set2_dmg_',
+    'set4_dmg_',
     ownBuff.combat.common_dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1)))
   ),
   registerBuff(

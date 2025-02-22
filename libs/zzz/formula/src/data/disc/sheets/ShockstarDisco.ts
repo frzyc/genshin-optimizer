@@ -1,7 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { enemyDebuff, own, registerBuff } from '../../util'
-import { registerDisc } from '../util'
+import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'ShockstarDisco'
 
@@ -9,6 +9,8 @@ const discCount = own.common.count.sheet(key)
 
 const sheet = registerDisc(
   key,
+  // Handle 2-set effects
+  entriesForDisc(key),
 
   // Passives
   registerBuff(

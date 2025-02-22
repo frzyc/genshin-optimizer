@@ -1,7 +1,7 @@
 import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
-import { registerDisc } from '../util'
+import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'WoodpeckerElectro'
 
@@ -11,6 +11,8 @@ const { crit_basic_dodge_ex } = allNumConditionals(key, true, 1, 3)
 
 const sheet = registerDisc(
   key,
+  // Handle 2-set effects
+  entriesForDisc(key),
 
   // Conditional buffs
   registerBuff(

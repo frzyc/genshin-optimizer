@@ -1,7 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allBoolConditionals, own, registerBuff } from '../../util'
-import { registerDisc } from '../util'
+import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'ChaosJazz'
 
@@ -11,6 +11,8 @@ const { while_off_field } = allBoolConditionals(key)
 
 const sheet = registerDisc(
   key,
+  // Handle 2-set effects
+  entriesForDisc(key),
   registerBuff(
     'set4_passive_fire_dmg_',
     own.combat.dmg_.fire.add(cmpGE(discCount, 4, 0.15))

@@ -1,7 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
-import { registerDisc } from '../util'
+import { entriesForDisc, registerDisc } from '../util'
 
 const key: DiscSetKey = 'SwingJazz'
 
@@ -11,6 +11,8 @@ const { chain_or_ult } = allBoolConditionals(key)
 
 const sheet = registerDisc(
   key,
+  // Handle 2-set effects
+  entriesForDisc(key),
 
   // Conditional buffs
   registerBuff(

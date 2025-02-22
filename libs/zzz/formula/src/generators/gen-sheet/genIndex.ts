@@ -9,7 +9,7 @@ import { writeFileSync } from 'fs'
 import * as prettier from 'prettier'
 
 export default async function genIndex(tree: Tree, sheet_type: string) {
-  const file_location = `${workspaceRoot}/libs/zzz/formula/src/data/${sheet_type}/${sheet_type}.ts`
+  const file_location = `${workspaceRoot}/libs/zzz/formula/src/data/${sheet_type}/index.ts`
   switch (sheet_type) {
     case 'char':
       await writeCharIndex(file_location)
