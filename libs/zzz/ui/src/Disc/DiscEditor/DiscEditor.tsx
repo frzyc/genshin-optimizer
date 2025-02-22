@@ -144,6 +144,7 @@ export function DiscEditor({
   fixedSlotKey,
   allowEmpty = false,
   disableSet = false,
+  cancelEdit,
 }: {
   disc: Partial<ICachedDisc>
   show: boolean
@@ -153,6 +154,7 @@ export function DiscEditor({
   allowEmpty?: boolean
   disableSet?: boolean
   fixedSlotKey?: DiscSlotKey
+  cancelEdit?: () => void
 }) {
   const { t } = useTranslation('disc')
 
@@ -185,9 +187,10 @@ export function DiscEditor({
   }, [fixedSlotKey, disc])
 
   const reset = useCallback(() => {
+    cancelEdit?.()
     setDisc({})
     setScannedData(undefined)
-  }, [setDisc])
+  }, [cancelEdit, setDisc])
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {

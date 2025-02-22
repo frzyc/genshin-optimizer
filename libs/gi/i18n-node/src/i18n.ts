@@ -46,5 +46,11 @@ i18nInstance.init({
     escapeValue: false, //react does interlopation already
   },
 })
+i18n.services.formatter?.add('percent', (value, _lng, options) => {
+  return (value * 100).toFixed(options.fixed)
+})
+i18n.services.formatter?.add('fixed', (value, _lng, options) => {
+  return value.toFixed(options.fixed)
+})
 
 export { i18nInstance }

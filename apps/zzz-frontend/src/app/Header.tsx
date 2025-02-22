@@ -48,6 +48,7 @@ const characters: ITab = {
   icon: <PersonIcon />,
   to: '/characters',
   value: 'characters',
+  textSuffix: <CharactersTab key="recharactersAdd" />,
 }
 
 const wengines: ITab = {
@@ -87,6 +88,11 @@ function DiscsTab() {
 function WengineTab() {
   const { database } = useDatabaseContext()
   return <Tally>{useDatabaseTally(database.wengines)}</Tally>
+}
+
+function CharactersTab() {
+  const { database } = useDatabaseContext()
+  return <Tally>{useDatabaseTally(database.chars)}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {

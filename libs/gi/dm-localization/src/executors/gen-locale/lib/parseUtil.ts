@@ -180,6 +180,39 @@ export const parsingFunctions: {
     string = string.split('|')[0]
     return string
   },
+  skillParamEncoding: (lang, string) => {
+    if (!string) return ''
+    string = string.split('|')[1]
+    // Convert to i18n'able format
+    // Add double braces
+    string = string.replace(/[{}]/g, (match) => match + match)
+    // Convert param1 to 0
+    string = string.replace(
+      /param(\d*)/g,
+      (_match, capture) => `${+capture - 1}`
+    )
+    // Handle formatting ':F1}}', ':F1P}}', ':I}}', ':P}}'
+    string = string.replace(
+      /:(F\d|I)?(P)?}}/g,
+      (_match, floatOrInt, percent) => {
+        // 'F1' or 'F1P'
+        if (floatOrInt?.[0] === 'F') {
+          if (percent === 'P') {
+            return `, percent(fixed: ${floatOrInt[1]})}}%`
+          } else {
+            return `, fixed(fixed: ${floatOrInt[1]})}}`
+          }
+        }
+        // 'P'
+        else if (percent === 'P') {
+          return `, percent}}%`
+        }
+        // 'I' has no formatting
+        return '}}'
+      }
+    )
+    return string
+  },
   plungeLow: (lang, string) => plungeUtil(lang, string, true),
   plungeHigh: (lang, string) => plungeUtil(lang, string, false),
   string: (lang, string) => string,
