@@ -30,6 +30,23 @@ export const fixedTags = {
 export type Tag = BaseTag<Src, Dst, Sheet>
 
 export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
+  override add(
+    value: number | string | AnyNode,
+    force = false
+  ): TagMapNodeEntry {
+    if (
+      !force &&
+      this.tag.q === 'dmg_' &&
+      !this.tag['elementalType'] &&
+      !this.tag['damageType1'] &&
+      !this.tag['damageType2']
+    ) {
+      throw new Error(
+        'Tried to add to `dmg_` without optional modifier, use `common_dmg_` instead'
+      )
+    }
+    return super.add(value)
+  }
   addWithDmgType(
     dmgType: DamageType,
     val: number | string | AnyNode

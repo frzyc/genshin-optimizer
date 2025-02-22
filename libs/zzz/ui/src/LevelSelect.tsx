@@ -1,15 +1,15 @@
 import { DropdownButton, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
-import type { AscensionKey } from '@genshin-optimizer/zzz/consts'
+import type { MilestoneKey } from '@genshin-optimizer/zzz/consts'
 import {
   ambiguousLevel,
   ambiguousLevelLow,
-  ascensionMaxLevel,
-  ascensionMaxLevelLow,
   maxLevel,
   maxLevelLow,
   milestoneLevels,
   milestoneLevelsLow,
+  milestoneMaxLevel,
+  milestoneMaxLevelLow,
 } from '@genshin-optimizer/zzz/util'
 import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
@@ -17,39 +17,39 @@ import { useTranslation } from 'react-i18next'
 
 export function LevelSelect({
   level,
-  ascension,
+  milestone,
   setBoth,
   useLow = false,
   disabled = false,
   warning = false,
 }: {
   level: number
-  ascension: AscensionKey
-  setBoth: (action: { level?: number; ascension?: AscensionKey }) => void
+  milestone: MilestoneKey
+  setBoth: (action: { level?: number; milestone?: MilestoneKey }) => void
   useLow?: boolean
   disabled?: boolean
   warning?: boolean
 }) {
   const { t } = useTranslation('ui')
-  const ascensionMaxLevels = useLow ? ascensionMaxLevelLow : ascensionMaxLevel
+  const milestoneMaxLevels = useLow ? milestoneMaxLevelLow : milestoneMaxLevel
   const setLevel = useCallback(
     (level = 1) => {
       level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
-      const ascension = ascensionMaxLevels.findIndex(
+      const milestone = milestoneMaxLevels.findIndex(
         (ascenML) => level <= ascenML
-      ) as AscensionKey
-      setBoth({ level, ascension })
+      ) as MilestoneKey
+      setBoth({ level, milestone })
     },
-    [setBoth, ascensionMaxLevels, useLow]
+    [setBoth, milestoneMaxLevels, useLow]
   )
   const setAscension = useCallback(() => {
-    const lowerAscension = ascensionMaxLevels.findIndex(
+    const lowerAscension = milestoneMaxLevels.findIndex(
       (ascenML) => level !== 60 && level === ascenML
-    ) as AscensionKey
-    if (ascension === lowerAscension)
-      setBoth({ ascension: (ascension + 1) as AscensionKey })
-    else setBoth({ ascension: lowerAscension })
-  }, [setBoth, ascensionMaxLevels, ascension, level])
+    ) as MilestoneKey
+    if (milestone === lowerAscension)
+      setBoth({ milestone: (milestone + 1) as MilestoneKey })
+    else setBoth({ milestone: lowerAscension })
+  }, [setBoth, milestoneMaxLevels, milestone, level])
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', rowGap: '4px' }}>
       <NumberInputLazy
@@ -77,7 +77,7 @@ export function LevelSelect({
                 onClick={setAscension}
                 color={warning ? 'warning' : undefined}
               >
-                <strong>/ {ascensionMaxLevel[ascension]}</strong>
+                <strong>/ {milestoneMaxLevel[milestone]}</strong>
               </Button>
             </InputAdornment>
           ),
@@ -95,18 +95,18 @@ export function LevelSelect({
       >
         {[...(useLow ? milestoneLevelsLow : milestoneLevels)].map(
           ([lv, as]) => {
-            const selected = lv === level && as === ascension
+            const selected = lv === level && as === milestone
 
             return (
               <MenuItem
                 key={`${lv}/${as}`}
                 selected={selected}
                 disabled={selected}
-                onClick={() => setBoth({ level: lv, ascension: as })}
+                onClick={() => setBoth({ level: lv, milestone: as })}
               >
-                {lv === ascensionMaxLevels[as]
+                {lv === milestoneMaxLevels[as]
                   ? `Lv. ${lv}`
-                  : `Lv. ${lv}/${ascensionMaxLevels[as]}`}
+                  : `Lv. ${lv}/${milestoneMaxLevels[as]}`}
               </MenuItem>
             )
           }

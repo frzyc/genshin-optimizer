@@ -95,6 +95,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           avatarSkillExcelConfigData[normal].proudSkillGroupId
         ][0].paramDescList.map((id) => [id, 'skillParam'])
       )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'auto', 'skillParamsEncoding'],
+        proudSkillExcelConfigData[
+          avatarSkillExcelConfigData[normal].proudSkillGroupId
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
+      )
 
       layeredAssignment(
         mapHashData,
@@ -113,6 +120,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           avatarSkillExcelConfigData[skill].proudSkillGroupId
         ][0].paramDescList.map((id) => [id, 'skillParam'])
       )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'skill', 'skillParamsEncoding'],
+        proudSkillExcelConfigData[
+          avatarSkillExcelConfigData[skill].proudSkillGroupId
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
+      )
 
       layeredAssignment(
         mapHashData,
@@ -130,6 +144,13 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[burst].proudSkillGroupId
         ][0].paramDescList.map((id) => [id, 'skillParam'])
+      )
+      layeredAssignment(
+        mapHashData,
+        [...keys, 'burst', 'skillParamsEncoding'],
+        proudSkillExcelConfigData[
+          avatarSkillExcelConfigData[burst].proudSkillGroupId
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
       )
 
       if (sprint) {
@@ -381,6 +402,8 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           const ind = rawString.indexOf('n<color=#FFD780FF>') + 1
           rawString = rawString.slice(0, ind) + '\\n' + rawString.slice(ind)
         }
+        // Skip encoding strings for non EN languages
+        if (processing === 'skillParamEncoding' && lang !== 'en') return
         const string = parsingFunctions[processing](
           lang as Language,
           preprocess(rawString),

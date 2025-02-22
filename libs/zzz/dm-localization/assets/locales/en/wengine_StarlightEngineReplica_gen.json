@@ -1,0 +1,14 @@
+{
+  "name": "Starlight Engine Replica",
+  "desc": "A custom supercomputing W-Engine which specializes in aim assist and calculating trajectories, it looks more like some kind of pirated Starlight Knight figurine now that Billy's finished his modifications. It flashes brightly whenever an enemy is detected, and shouts out pre-set quotes. Despite this move clearly exposing one's location and attracting the enemy, this is not an issue for Billy so long as everything is cool enough.\n\n<color=#959595>\"COPY? How can you call that a copy?! I've poured all my passion, wisdom, soul, and moisture into this! Apart from summoning a shooting star to transform me — this is real deal, bona fide Starlight Knight equipment!\" — Billy, enthusiastically outlining his modding philosophy</color>",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A customized supercomputing W-Engine, specialized in aim support and ballistic calculations. Modified by Billy, it now looks like some sort of knock-off Starlight Knight figurine.",
+  "phase": "Knight Beam: Change",
+  "phaseDescs": [
+    "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>36%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
+    "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>41%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
+    "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>46.5%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
+    "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>52%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
+    "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>57.5%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>."
+  ]
+}

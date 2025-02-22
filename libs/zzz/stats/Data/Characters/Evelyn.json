@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "attack",
+  "fullname": "Evelyn Chevalier",
   "stats": {
     "atk_base": 134,
     "atk_growth": 8.1654,

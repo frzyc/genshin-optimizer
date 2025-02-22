@@ -35,6 +35,7 @@ import type { ChangeEvent } from 'react'
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { WengineRarityToggle, WengineToggle } from '../toggles'
+import { WengineName } from './WengineTrans'
 
 type WengineSelectionModalProps = {
   show: boolean
@@ -49,7 +50,7 @@ export function WengineSelectionModal({
   onSelect,
   wengineTypeFilter,
 }: WengineSelectionModalProps) {
-  const { t } = useTranslation(['page_wengine', 'wengineNames'])
+  const { t } = useTranslation(['page_wengine'])
   const [wengineFilter, setWenginefilter] = useState<SpecialityKey[]>(
     wengineTypeFilter ? [wengineTypeFilter] : [...allSpecialityKeys]
   )
@@ -177,7 +178,7 @@ export function WengineSelectionModal({
                       />
                       <Box sx={{ flexGrow: 1, px: 1 }}>
                         <Typography variant="subtitle1">
-                          {t(`wengineNames:${wengineKey}`)}
+                          <WengineName wKey={wengineKey} />
                         </Typography>
                         <Typography
                           sx={{ display: 'flex', alignItems: 'baseline' }}

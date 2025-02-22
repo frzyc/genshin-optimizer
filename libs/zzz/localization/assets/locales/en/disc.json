@@ -39,6 +39,7 @@
     "confirmDelete": "Are you sure you want to delete this disc?"
   },
   "slot": "Slot",
+  "slotName": "Slot {{slotKey}}",
   "setEffectNum": "{{setNum}}-Set",
   "discFilter": "Disc Filter",
   "efficiencyFilter": {

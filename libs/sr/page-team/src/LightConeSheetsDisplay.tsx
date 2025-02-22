@@ -1,9 +1,9 @@
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { isLightConeKey } from '@genshin-optimizer/sr/consts'
+import { LightConeSheetDisplay } from '@genshin-optimizer/sr/formula-ui'
 import { LightConeAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box, Grid, Stack } from '@mui/material'
 import { useMemo, useState } from 'react'
-import { LightConeSheetDisplay } from './LightConeSheetDisplay'
 import { useTeamContext } from './context'
 
 export function LightConeSheetsDisplay() {

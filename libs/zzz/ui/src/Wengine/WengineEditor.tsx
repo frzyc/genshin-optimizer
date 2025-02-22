@@ -34,6 +34,7 @@ import { TransHack } from '../util/TransHack'
 import { PhaseDropdown } from './PhaseDropdown'
 import { WengineSelectionModal } from './WengineSelectionModal'
 import { WengineSubstatDisplay } from './WengineSubstatDisplay'
+import { WengineName } from './WengineTrans'
 
 type WengineStatsEditorCardProps = {
   wengineId: string
@@ -47,14 +48,14 @@ export function WengineEditor({
   onClose,
   extraButtons,
 }: WengineStatsEditorCardProps) {
-  const { t } = useTranslation(['wengineNames'])
+  const { t } = useTranslation(['page_wengine'])
   const { database } = useDatabaseContext()
   const wengine = useWengine(propWengineId)
   const {
     key,
     level = 0,
     phase = 1,
-    ascension = 0,
+    modification = 0,
     lock,
     location = '',
     id,
@@ -62,7 +63,7 @@ export function WengineEditor({
   const wengineStat = key ? getWengineStat(key) : undefined
   const wengineType = wengineStat?.type
   const wengineStats = key
-    ? getWengineStats(key, level, phase, ascension)
+    ? getWengineStats(key, level, phase, modification)
     : undefined
   const wengineDispatch = useCallback(
     (newWengine: Partial<ICachedWengine>) => {
@@ -159,7 +160,7 @@ export function WengineEditor({
                 <Box display="flex" gap={1} flexWrap="wrap">
                   <ButtonGroup>
                     <Button color="info" onClick={onShowModal}>
-                      {(key && t(`wengineNames:${key}`)) || 'Select a Wengine'}
+                      {key ? <WengineName wKey={key} /> : 'Select a Wengine'}
                     </Button>
                     {key && (
                       <PhaseDropdown
@@ -179,7 +180,7 @@ export function WengineEditor({
                   {key && (
                     <LevelSelect
                       level={level}
-                      ascension={ascension}
+                      milestone={modification}
                       setBoth={wengineDispatch}
                     />
                   )}

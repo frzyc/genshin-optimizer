@@ -1,10 +1,9 @@
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import { Translate } from '@genshin-optimizer/zzz/i18n'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { TransHack } from '../util/TransHack'
 export function WengineName({ wKey }: { wKey: WengineKey }) {
-  return getWengineStat(wKey)?.name ?? 'Unknown Wengine Name'
-  // TODO: Translation
-  // return <Translate ns="discNames_gen" key18={setKey} />
+  return <Translate ns="wengineNames_gen" key18={wKey} />
 }
 
 export function WengineRefineDesc({

@@ -24,6 +24,7 @@ export const stats = [
   'anomMas',
   'anomMas_',
   'dmg_',
+  'common_dmg_',
   'resIgn_',
   'shield_',
 ] as const
@@ -69,7 +70,7 @@ export type Attribute = (typeof attributes)[number]
 export type DamageType = (typeof damageTypes)[number]
 export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
-export type Src = Member | null
+export type Src = Member
 export type Dst = Member | null
 
 export function isMember(x: string): x is Member {

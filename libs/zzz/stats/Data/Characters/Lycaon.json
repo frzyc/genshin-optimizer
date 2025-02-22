@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ice",
   "specialty": "stun",
+  "fullname": "Von Lycaon",
   "stats": {
     "atk_base": 105,
     "atk_growth": 6.1287,

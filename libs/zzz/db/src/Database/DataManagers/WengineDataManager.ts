@@ -5,12 +5,12 @@ import {
   wengineMaxLevel,
 } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
-import { validateLevelAsc } from '@genshin-optimizer/zzz/util'
+import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
+import type { IDbCharacter } from '../../Interfaces'
 import type { ICachedWengine } from '../../Interfaces/IDbWengine'
 import type { ZzzDatabase } from '../Database'
 import { DataManager } from '../DataManager'
-import type { CharacterData } from './CharacterDataManager'
 import { initialCharacterData } from './CharacterDataManager'
 
 export class WengineDataManager extends DataManager<
@@ -25,20 +25,27 @@ export class WengineDataManager extends DataManager<
 
   override validate(obj: unknown): IWengine | undefined {
     if (typeof obj !== 'object') return undefined
-    const { key, level: rawLevel, ascension: rawAscension } = obj as IWengine
+    const { key, level: rawLevel, modification: rawMod } = obj as IWengine
     let { phase, location, lock } = obj as IWengine
 
     if (!allWengineKeys.includes(key)) return undefined
     const { rarity } = getWengineStat(key)
     if (rawLevel > wengineMaxLevel[rarity]) return undefined
-    const { sanitizedLevel, ascension } = validateLevelAsc(
+    const { sanitizedLevel, milestone: modification } = validateLevelMilestone(
       rawLevel,
-      rawAscension
+      rawMod
     )
     if (typeof phase !== 'number' || phase < 1 || phase > 5) phase = 1
     if (location && !allLocationKeys.includes(location)) location = ''
     lock = !!lock
-    return { key, level: sanitizedLevel, ascension, phase, location, lock }
+    return {
+      key,
+      level: sanitizedLevel,
+      modification,
+      phase,
+      location,
+      lock,
+    }
   }
   override toCache(
     storageObj: IWengine,
@@ -47,10 +54,10 @@ export class WengineDataManager extends DataManager<
     const newWengine = { ...storageObj, id }
     const oldWengine = super.get(id)
     // During initialization of the database, if you import wengines with location without a corresponding character, the char will be generated here.
-    const getWithInit = (cKey: CharacterKey): CharacterData => {
+    const getWithInit = (cKey: CharacterKey): IDbCharacter => {
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacterData(cKey))
-      return this.database.chars.get(cKey) as CharacterData
+      return this.database.chars.get(cKey) as IDbCharacter
     }
     if (newWengine.location !== oldWengine?.location) {
       const prevChar = oldWengine?.location
@@ -86,8 +93,8 @@ export class WengineDataManager extends DataManager<
     return newWengine
   }
   override deCache(wengine: ICachedWengine): IWengine {
-    const { key, level, ascension, phase, location, lock } = wengine
-    return { key, level, ascension, phase, location, lock }
+    const { key, level, modification, phase, location, lock } = wengine
+    return { key, level, modification, phase, location, lock }
   }
 
   new(value: IWengine): string {
@@ -107,7 +114,7 @@ export class WengineDataManager extends DataManager<
     wengine: IWengine,
     idList = this.keys
   ): { duplicated: ICachedWengine[]; upgraded: ICachedWengine[] } {
-    const { key, level, ascension, phase } = wengine
+    const { key, level, modification, phase } = wengine
 
     const wengines = idList
       .map((id) => this.get(id))
@@ -116,7 +123,7 @@ export class WengineDataManager extends DataManager<
       (candidate) =>
         key === candidate.key &&
         level >= candidate.level &&
-        ascension >= candidate.ascension &&
+        modification >= candidate.modification &&
         phase >= candidate.phase
     )
 
@@ -125,7 +132,7 @@ export class WengineDataManager extends DataManager<
       .filter(
         (candidate) =>
           level > candidate.level ||
-          ascension > candidate.ascension ||
+          modification > candidate.modification ||
           phase > candidate.phase
       )
       .sort((candidates) => (candidates.location === wengine.location ? -1 : 1))
@@ -134,7 +141,7 @@ export class WengineDataManager extends DataManager<
       .filter(
         (candidate) =>
           level === candidate.level &&
-          ascension === candidate.ascension &&
+          modification === candidate.modification &&
           phase === candidate.phase
       )
       .sort((candidates) => (candidates.location === wengine.location ? -1 : 1))
@@ -146,7 +153,7 @@ export const initialWengine = (key: WengineKey): ICachedWengine => ({
   id: '',
   key,
   level: 1,
-  ascension: 0,
+  modification: 0,
   phase: 1,
   location: '',
   lock: false,

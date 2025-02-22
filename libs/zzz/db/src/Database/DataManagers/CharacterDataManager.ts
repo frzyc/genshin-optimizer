@@ -1,92 +1,41 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
 import {
   clamp,
+  deepClone,
   objFilter,
   objFilterKeys,
+  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  CondKey,
-  DiscMainStatKey,
-  DiscSetKey,
-  FormulaKey,
-  WengineKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
   allCharacterKeys,
   allDiscSetKeys,
+  allDiscSlotKeys,
   allFormulaKeys,
   allWengineKeys,
+  coreLimits,
   discSlotToMainStatKeys,
+  skillLimits,
 } from '@genshin-optimizer/zzz/consts'
-import type { ICachedCharacter } from '../../Interfaces'
+import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
+import type { ICachedCharacter, IDbCharacter } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
-
-export type Constraints = Record<string, { value: number; isMax: boolean }>
-export type Stats = Record<string, number>
-export type CharacterData = {
-  key: CharacterKey
-  level: number
-  core: number // 0-6
-  wengineKey: WengineKey
-  wengineLvl: number
-  wenginePhase: number
-  stats: Stats
-  formulaKey: FormulaKey
-  constraints: Constraints
-  useEquipped: boolean
-  slot4: DiscMainStatKey[]
-  slot5: DiscMainStatKey[]
-  slot6: DiscMainStatKey[]
-  levelLow: number
-  levelHigh: number
-  setFilter2: DiscSetKey[]
-  setFilter4: DiscSetKey[]
-  conditionals: Partial<Record<CondKey, number>>
-}
-
-export function initialCharacterData(key: CharacterKey): CharacterData {
-  return {
-    key,
-    level: 60,
-    core: 6,
-    wengineKey: allWengineKeys[0],
-    wengineLvl: 60,
-    wenginePhase: 1,
-    stats: {
-      // in percent
-      enemyDef: 953, // default enemy DEF
-    },
-    formulaKey: allFormulaKeys[0],
-    constraints: {}, // in percent
-    useEquipped: false,
-    slot4: [...discSlotToMainStatKeys['4']],
-    slot5: [...discSlotToMainStatKeys['5']],
-    slot6: [...discSlotToMainStatKeys['6']],
-    levelLow: 15,
-    levelHigh: 15,
-    setFilter2: [],
-    setFilter4: [],
-    conditionals: {},
-  }
-}
 export class CharacterDataManager extends DataManager<
   CharacterKey,
   'characters',
   ICachedCharacter,
-  CharacterData
+  IDbCharacter
 > {
   constructor(database: ZzzDatabase) {
     super(database, 'characters')
   }
-  override validate(obj: unknown): CharacterData | undefined {
+  override validate(obj: unknown): IDbCharacter | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    const { key: characterKey } = obj as CharacterData
+    const { key: characterKey } = obj as IDbCharacter
     let {
-      level,
       core,
       wengineKey,
       wengineLvl,
@@ -103,15 +52,37 @@ export class CharacterDataManager extends DataManager<
       setFilter2,
       setFilter4,
       conditionals,
-    } = obj as CharacterData
+      mindscape,
+      dodge,
+      basic,
+      chain,
+      special,
+      assist,
+    } = obj as IDbCharacter
+    const { level: rawLevel, promotion: rawAscension } = obj as IDbCharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
-    if (typeof level !== 'number') level = 60
-    level = clamp(level, 1, 60)
+    if (typeof mindscape !== 'number' || mindscape < 0 || mindscape > 6)
+      mindscape = 0
 
-    if (typeof core !== 'number') core = 6
-    core = clamp(core, 0, 6)
+    const { sanitizedLevel, milestone: promotion } = validateLevelMilestone(
+      rawLevel,
+      rawAscension
+    )
+    if (typeof basic !== 'number') basic = 1
+    basic = clamp(basic, 1, skillLimits[promotion])
+    if (typeof dodge !== 'number') dodge = 1
+    dodge = clamp(dodge, 1, skillLimits[promotion])
+    if (typeof chain !== 'number') chain = 1
+    chain = clamp(chain, 1, skillLimits[promotion])
+    if (typeof special !== 'number') special = 1
+    special = clamp(special, 1, skillLimits[promotion])
+    if (typeof assist !== 'number') assist = 1
+    assist = clamp(assist, 1, skillLimits[promotion])
+
+    if (typeof core !== 'number') core = 0
+    core = clamp(core, 0, coreLimits[promotion])
 
     if (!allWengineKeys.includes(wengineKey)) wengineKey = allWengineKeys[0]
 
@@ -168,9 +139,9 @@ export class CharacterDataManager extends DataManager<
     if (typeof conditionals !== 'object') conditionals = {}
     conditionals = objFilter(conditionals, (value) => typeof value === 'number')
 
-    const char: CharacterData = {
+    const char: IDbCharacter = {
       key: characterKey,
-      level,
+      level: sanitizedLevel,
       core,
       wengineKey,
       wengineLvl,
@@ -187,8 +158,39 @@ export class CharacterDataManager extends DataManager<
       setFilter2,
       setFilter4,
       conditionals,
+      mindscape,
+      dodge,
+      basic,
+      chain,
+      special,
+      assist,
+      promotion,
     }
     return char
+  }
+
+  override toCache(
+    storageObj: IDbCharacter,
+    id: CharacterKey
+  ): ICachedCharacter {
+    const oldChar = this.get(id)
+    return {
+      equippedDiscs: oldChar
+        ? oldChar.equippedDiscs
+        : objKeyMap(
+            allDiscSlotKeys,
+            (sk) =>
+              Object.values(this.database.discs?.data ?? {}).find(
+                (a) => a?.location === id && a.slotKey === sk
+              )?.id ?? ''
+          ),
+      equippedWengine: oldChar
+        ? oldChar.equippedWengine
+        : Object.values(this.database.wengines?.data ?? {}).find(
+            (w) => w?.location === id
+          )?.id ?? '',
+      ...storageObj,
+    }
   }
   // These overrides allow CharacterKey to be used as id.
   // This assumes we only support one copy of a character in a DB.
@@ -199,11 +201,11 @@ export class CharacterDataManager extends DataManager<
     return key.split(`${this.goKeySingle}_`)[1] as CharacterKey
   }
 
-  getOrCreate(key: CharacterKey): CharacterData {
+  getOrCreate(key: CharacterKey): ICachedCharacter {
     if (!this.keys.includes(key)) {
       this.set(key, initialCharacterData(key))
     }
-    return this.get(key) as CharacterData
+    return this.get(key) as ICachedCharacter
   }
 
   // hasDup(char: ICharacter, isSro: boolean) {
@@ -267,10 +269,28 @@ export class CharacterDataManager extends DataManager<
     this.trigger(key, reason, this.get(key))
   }
 
+  override remove(key: CharacterKey): ICachedCharacter | undefined {
+    const char = this.get(key)
+    if (!char) return undefined
+    for (const discKey of Object.values(char.equippedDiscs)) {
+      const disc = this.database.discs.get(discKey)
+      if (disc && disc.location === key)
+        this.database.discs.setCached(discKey, { ...disc, location: '' })
+    }
+    const wengine = this.database.wengines.get(char.equippedWengine)
+    if (wengine && wengine.location === key)
+      this.database.wengines.setCached(char.equippedWengine, {
+        ...wengine,
+        location: '',
+      })
+
+    return super.remove(key)
+  }
+
   /**
    * **Caution**:
    * This does not update the `location` on wengine
-   * This function should be use internally for database to maintain cache on CharacterData.
+   * This function should be use internally for database to maintain cache on ICharacter.
    */
   setEquippedWengine(
     key: CharacterKey,
@@ -279,5 +299,53 @@ export class CharacterDataManager extends DataManager<
     const char = super.get(key)
     if (!char) return
     super.setCached(key, { ...char, equippedWengine })
+  }
+
+  /**
+   * **Caution**:
+   * This does not update the `location` on disc
+   * This function should be use internally for database to maintain cache on ICachedCharacter.
+   */
+  setEquippedDisc(key: CharacterKey, slotKey: DiscSlotKey, discId: string) {
+    const char = super.get(key)
+    if (!char) return
+    const equippedDiscs = deepClone(char.equippedDiscs)
+    equippedDiscs[slotKey] = discId
+    super.setCached(key, { ...char, equippedDiscs })
+  }
+}
+
+export function initialCharacterData(key: CharacterKey): ICachedCharacter {
+  return {
+    key,
+    level: 1,
+    core: 0,
+    wengineKey: allWengineKeys[0],
+    wengineLvl: 60,
+    wenginePhase: 1,
+    stats: {
+      // in percent
+      enemyDef: 953, // default enemy DEF
+    },
+    formulaKey: allFormulaKeys[0],
+    constraints: {}, // in percent
+    useEquipped: false,
+    slot4: [...discSlotToMainStatKeys['4']],
+    slot5: [...discSlotToMainStatKeys['5']],
+    slot6: [...discSlotToMainStatKeys['6']],
+    levelLow: 15,
+    levelHigh: 15,
+    setFilter2: [],
+    setFilter4: [],
+    conditionals: {},
+    promotion: 0,
+    mindscape: 0,
+    dodge: 1,
+    basic: 1,
+    chain: 1,
+    special: 1,
+    assist: 1,
+    equippedDiscs: objKeyMap(allDiscSlotKeys, () => ''),
+    equippedWengine: '',
   }
 }

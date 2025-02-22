@@ -42,9 +42,10 @@ export function dmg(
 ): TagMapNodeEntries {
   const multi = percent(subscript(own.char[abilityScalingType], levelScaling))
   const attackType = dmgTag.damageType1 ?? abilityScalingType
-  dmgTag.damageType1 = attackType
+  const tag = { ...dmgTag }
+  tag.damageType1 = attackType
   const base = prod(own.final[stat], multi)
-  return customDmg(name, dmgTag, base, arg, ...extra)
+  return customDmg(name, tag, base, arg, ...extra)
 }
 
 /**
@@ -202,6 +203,5 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(
       listingItem(own.final.dmg_[data_gen.attribute])
     ),
-    ownBuff.listing.formulas.add(listingItem(own.final.dmg_)),
   ]
 }

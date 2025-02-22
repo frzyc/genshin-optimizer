@@ -32,6 +32,7 @@ import { LocationAutocomplete } from '../Character/LocationAutocomplete'
 import { LocationName } from '../Character/LocationName'
 import { ZCard } from '../Components'
 import { WengineSubstatDisplay } from './WengineSubstatDisplay'
+import { WengineName } from './WengineTrans'
 
 const wenginePhaseIconsMap: Record<PhaseKey, WenginePhaseKey> = {
   1: 'p1',
@@ -45,13 +46,15 @@ export function WengineCard({
   wengineId,
   onEdit,
   setLocation,
+  extraButtons,
 }: {
   wengineId: string
   onClick?: () => void
   onEdit?: (wengineId: string) => void
   setLocation?: (lk: LocationKey) => void
+  extraButtons?: JSX.Element
 }) {
-  const { t } = useTranslation('wengineNames')
+  const { t } = useTranslation('ui')
   const [show, onShow, onHide] = useBoolState()
   const {
     id = '',
@@ -59,7 +62,7 @@ export function WengineCard({
     level = 0,
     phase = 1,
     location = '',
-    ascension = 0,
+    modification = 0,
   } = useWengine(wengineId) ?? {}
   if (!key)
     return (
@@ -68,7 +71,7 @@ export function WengineCard({
       </CardThemed>
     )
   const wengineStat = getWengineStat(key)
-  const wengineStats = getWengineStats(key, level, phase, ascension)
+  const wengineStats = getWengineStats(key, level, phase, modification)
   return (
     <Suspense
       fallback={
@@ -131,7 +134,7 @@ export function WengineCard({
                           src={specialityDefIcon(wengineStat.type)}
                         />
                       }{' '}
-                      {t(`${key}`)}
+                      <WengineName wKey={key} />
                     </Typography>
                   </BootstrapTooltip>
                 </div>
@@ -238,6 +241,7 @@ export function WengineCard({
                 </Button>
               </BootstrapTooltip>
             )}
+            {extraButtons}
           </Box>
         </Box>
       </ZCard>

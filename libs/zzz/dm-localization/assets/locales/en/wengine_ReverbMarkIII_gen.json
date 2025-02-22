@@ -1,0 +1,14 @@
+{
+  "name": "[Reverb] Mark III",
+  "desc": "This special W-Engine features motion capture algorithms that monitor the status of the operator's teammates, enabling it to send signals to coordinate tactical movements and enhance the overall combat competency of the squad. However, this premise assumes that everyone can keep up with its signals instead of stepping on other members' toes...",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A special W-Engine that features motion capture algorithms, which enhance the overall combat competency of your squad.",
+  "phase": "Booming Sound",
+  "phaseDescs": [
+    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+  ]
+}

@@ -1,15 +1,36 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
+import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
-import { Box, Skeleton } from '@mui/material'
-import { Suspense } from 'react'
+import { Box, CardActionArea, Skeleton } from '@mui/material'
+import type { ReactNode } from 'react'
+import { Suspense, useCallback } from 'react'
 import { CharacterCardContent, CharacterCardEquipment } from './card'
 
 export function CharacterCard({
   characterKey,
+  onClick,
 }: {
   characterKey: CharacterKey
+  onClick?: (characterKey: CharacterKey) => void
 }) {
+  const character = useCharacter(characterKey)
+  const onClickHandler = useCallback(
+    () => characterKey && onClick?.(characterKey),
+    [characterKey, onClick]
+  )
+  const actionWrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <CardActionArea
+        onClick={onClickHandler}
+        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+      >
+        {children}
+      </CardActionArea>
+    ),
+    [onClickHandler]
+  )
+
   return (
     <Suspense
       fallback={<Skeleton variant="rectangular" width="100%" height={300} />}
@@ -23,7 +44,11 @@ export function CharacterCard({
           borderRadius: '24px',
         }}
       >
-        <ExistingCharacterCardContent characterKey={characterKey} />
+        <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+          {character && (
+            <ExistingCharacterCardContent characterKey={characterKey} />
+          )}
+        </ConditionalWrapper>
       </CardThemed>
     </Suspense>
   )
@@ -37,7 +62,7 @@ function ExistingCharacterCardContent({
 }: ExistingCharacterCardContentProps) {
   const charStat = getCharStat(characterKey)
   return (
-    <CardThemed sx={{ borderRadius: '20px' }}>
+    <CardThemed sx={{ borderRadius: '20px', width: '100%' }}>
       <Box
         sx={(theme) => ({
           p: 1,

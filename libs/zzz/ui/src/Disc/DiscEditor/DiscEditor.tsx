@@ -6,6 +6,7 @@ import {
 import {
   getUnitStr,
   range,
+  shouldShowDevComponents,
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
@@ -62,7 +63,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
-import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
@@ -144,6 +144,7 @@ export function DiscEditor({
   fixedSlotKey,
   allowEmpty = false,
   disableSet = false,
+  cancelEdit,
 }: {
   disc: Partial<ICachedDisc>
   show: boolean
@@ -153,6 +154,7 @@ export function DiscEditor({
   allowEmpty?: boolean
   disableSet?: boolean
   fixedSlotKey?: DiscSlotKey
+  cancelEdit?: () => void
 }) {
   const { t } = useTranslation('disc')
 
@@ -185,9 +187,10 @@ export function DiscEditor({
   }, [fixedSlotKey, disc])
 
   const reset = useCallback(() => {
+    cancelEdit?.()
     setDisc({})
     setScannedData(undefined)
-  }, [setDisc])
+  }, [cancelEdit, setDisc])
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {

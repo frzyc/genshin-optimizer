@@ -36,7 +36,7 @@ function skillDmg(name: string, baseMult: number, addlMult: number[]) {
     percent(subscript(char.skill, addlMult))
   )
   const base = prod(own.final.atk, multi)
-  return customDmg(name, baseTag, base)
+  return customDmg(name, { ...baseTag, damageType1: 'skill' }, base)
 }
 
 const ba3_brEffect_ = isBonusAbilityActive(
@@ -58,7 +58,7 @@ const sheet = register(
   ...skillDmg('skill1DmgBlast', dm.skill1.dmgBlastBase, dm.skill1.dmgBlast),
   ...customDmg(
     'techDmg',
-    baseTag,
+    { ...baseTag, damageType1: 'technique' },
     prod(own.final.atk, percent(dm.technique.dmg))
   ),
   // TODO: ba2 superbreak; needs toughness reduction calculations + maybe some kind of reaction toggle
@@ -85,7 +85,7 @@ const sheet = register(
       percent(subscript(char.talent, dm.talent.eff_res_))
     )
   ),
-  teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
+  teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
   enemyDebuff.common.defIgn_.add(numConditional)
 )
 export default sheet
