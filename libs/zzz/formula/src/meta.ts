@@ -888,7 +888,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'AstralVoice',
         name: 'set4_team_dmg_',
       },
@@ -1003,7 +1003,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'FangedMetal',
         name: 'set4_cond_inflict_assault',
       },
@@ -1068,7 +1068,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'dmg_',
+        q: 'common_dmg_',
         sheet: 'ProtoPunk',
         name: 'set4_cond_def_assist_or_evasive_assist_dmg_',
       },
