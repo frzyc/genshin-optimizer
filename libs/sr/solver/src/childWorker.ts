@@ -1,21 +1,20 @@
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { BuildResultByIndex, EquipmentStats } from './common'
 import { MAX_BUILDS } from './common'
-import type { LightConeStats, RelicStats } from './parentWorker'
-import type { BuildResult } from './solver'
 
 const MAX_BUILDS_TO_SEND = 200_000
-let compiledCalcFunction: (relicStats: RelicStats['stats'][]) => number[]
-let lightConeStats: LightConeStats[]
-let relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
-let constraints: Array<{ value: number; isMax: boolean }> = []
+let compiledCalcFunction: (equipmentStatsOnly: EquipmentStats[]) => number[]
+let lightConeStats: EquipmentStats[]
+let relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
+let constraints: number[] = []
 
 export interface ChildCommandInit {
   command: 'init'
-  lightConeStats: LightConeStats[]
-  relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
-  constraints: Array<{ value: number; isMax: boolean }>
+  lightConeStats: EquipmentStats[]
+  relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
+  constraints: number[]
   detachedNodes: NumTagFree[]
 }
 export interface ChildCommandStart {
@@ -28,7 +27,7 @@ export interface ChildMessageInitialized {
 }
 export interface ChildMessaageResults {
   resultType: 'results'
-  builds: BuildResult[]
+  builds: BuildResultByIndex[]
   numBuildsComputed: number
 }
 export interface ChildMessageDone {
@@ -94,13 +93,13 @@ async function init({
   postMessage({ resultType: 'initialized' })
 }
 function* generateCombinations(): Generator<{
-  lightCone: LightConeStats
-  head: RelicStats
-  hands: RelicStats
-  feet: RelicStats
-  body: RelicStats
-  sphere: RelicStats
-  rope: RelicStats
+  lightCone: EquipmentStats
+  head: EquipmentStats
+  hands: EquipmentStats
+  feet: EquipmentStats
+  body: EquipmentStats
+  sphere: EquipmentStats
+  rope: EquipmentStats
 }> {
   for (const lightCone of lightConeStats) {
     for (const head of relicStatsBySlot.head) {
@@ -128,7 +127,7 @@ function* generateCombinations(): Generator<{
 }
 // Actually start calculating builds and sending back periodic responses
 async function start() {
-  let builds: BuildResult[] = []
+  let builds: BuildResultByIndex[] = []
   let skipped = 0
 
   function sliceSortSendBuilds() {
@@ -156,23 +155,20 @@ async function start() {
   } of generateCombinations()) {
     // Step 5: Calculate the value
     const results = compiledCalcFunction([
-      lightCone.stats,
-      head.stats,
-      hands.stats,
-      feet.stats,
-      body.stats,
-      sphere.stats,
-      rope.stats,
+      lightCone,
+      head,
+      hands,
+      feet,
+      body,
+      sphere,
+      rope,
     ])
-    if (
-      constraints.every(({ value, isMax }, i) =>
-        isMax ? results[i + 1] <= value : results[i + 1] >= value
-      )
-    ) {
+    // Constraints are offset by 1 because the opt target is first
+    if (constraints.every((value, i) => results[i + 1] >= value)) {
       builds.push({
-        value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
-        lightConeId: lightCone.id,
-        relicIds: {
+        value: results[0], // We only pass 1 target to calculate, as the first entry
+        lightConeIndex: lightCone.id,
+        relicIndices: {
           head: head.id,
           hands: hands.id,
           feet: feet.id,
