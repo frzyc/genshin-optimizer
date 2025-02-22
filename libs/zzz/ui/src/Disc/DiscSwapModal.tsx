@@ -62,7 +62,7 @@ export function DiscSwapModal({
   const discId = disc?.id
 
   const filterOptionReducer = useCallback(
-    (state, action) => ({ ...state, ...action, slotKeys: [slotKey] }),
+    (state: any, action: any) => ({ ...state, ...action, slotKeys: [slotKey] }),
     [slotKey]
   )
 

@@ -8,6 +8,7 @@ import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
   useDatabaseContext,
+  useDisc,
   useDiscs,
   useWengine,
 } from '@genshin-optimizer/zzz/db-ui'
@@ -23,7 +24,7 @@ import {
 } from '@mui/material'
 import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DiscCard, DiscSwapModal } from '../Disc'
+import { DiscCard, DiscEditor, DiscSwapModal } from '../Disc'
 import { WengineCard, WengineEditor } from '../Wengine'
 
 const columns = {
@@ -40,6 +41,7 @@ export function EquippedGrid({
 }) {
   const { database } = useDatabaseContext()
   const character = useContext(CharacterContext)
+  const [discIdToEdit, setDiscIdToEdit] = useState<string | undefined>()
   const [editWengineId, setEditorWengineId] = useState('')
   const discIds = useMemo(() => {
     return objKeyMap(
@@ -50,8 +52,13 @@ export function EquippedGrid({
   const onEditWengine = useCallback((id: string) => {
     setEditorWengineId(id)
   }, [])
+  const onEditDisc = useCallback((id: string) => {
+    setDiscIdToEdit(id)
+  }, [])
+
   const wengine = useWengine(character?.equippedWengine)
   const discs = useDiscs(discIds)
+  const disc = useDisc(discIdToEdit)
 
   return (
     <Box>
@@ -62,6 +69,17 @@ export function EquippedGrid({
             footer
             onClose={() => setEditorWengineId('')}
             extraButtons={<LargeWeaponSwapButton />}
+          />
+        )}
+      </Suspense>
+      <Suspense fallback={false}>
+        {disc && (
+          <DiscEditor
+            disc={disc}
+            show={!!discIdToEdit}
+            onShow={() => setDiscIdToEdit(discIdToEdit)}
+            onClose={() => setDiscIdToEdit(undefined)}
+            cancelEdit={() => setDiscIdToEdit(undefined)}
           />
         )}
       </Suspense>
@@ -98,6 +116,7 @@ export function EquippedGrid({
                       onChangeId={(id) => setDisc(slotKey, id)}
                     />
                   }
+                  onEdit={() => onEditDisc(disc.id)}
                   onLockToggle={() =>
                     database.discs.set(disc.id, ({ lock }) => ({ lock: !lock }))
                   }
