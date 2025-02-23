@@ -17,11 +17,6 @@ const sheet = registerRelic(
 
   // Conditional buffs
   registerBuff(
-    'set4_spd_',
-    ownBuff.premod.spd_.add(cmpGE(relicCount, 4, dm[4].spd_)),
-    cmpGE(relicCount, 4, 'unique', '')
-  ),
-  registerBuff(
     'set4_basic_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'basic',

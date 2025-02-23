@@ -4,12 +4,13 @@ import { allStats } from '../../../allStats'
 const key: RelicSetKey = 'PanCosmicCommercialEnterprise'
 const data_gen = allStats.relic[key]
 
-let o = 0
-// TODO: Load scalings
+let o = 1
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    passive_eff_: data_gen.setEffects[0].passiveStats.eff_,
+    scaling: data_gen.setEffects[0].otherStats[o++],
+    atk_cap: data_gen.setEffects[0].otherStats[o++],
   },
 } as const
 

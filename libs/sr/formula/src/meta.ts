@@ -1972,27 +1972,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  PanCosmicCommercialEnterprise: {
-    boolConditional: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   PasserbyOfWanderingCloud: {
     boolConditional: {
       sheet: 'PasserbyOfWanderingCloud',
@@ -14005,17 +13984,6 @@ export const buffs = {
         name: 'set4_basic_dmg_',
       },
     },
-    set4_spd_: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'set4_spd_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'spd_',
-        sheet: 'MusketeerOfWildWheat',
-        name: 'set4_spd_',
-      },
-    },
   },
   MutualDemise: {
     cond_dmg_: {
@@ -14417,37 +14385,15 @@ export const buffs = {
     },
   },
   PanCosmicCommercialEnterprise: {
-    enemy_defIgn_: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'PanCosmicCommercialEnterprise',
-        name: 'enemy_defIgn_',
-      },
-    },
     set2_dmg_: {
       sheet: 'PanCosmicCommercialEnterprise',
       name: 'set2_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'PanCosmicCommercialEnterprise',
         name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PanCosmicCommercialEnterprise',
-        name: 'team_dmg_',
       },
     },
   },

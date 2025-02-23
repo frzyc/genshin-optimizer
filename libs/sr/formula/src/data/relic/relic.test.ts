@@ -425,4 +425,21 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
     expect(calc.compute(seele.final.dmg_.basic[0]).val).toBeCloseTo(0.1)
   })
+
+  it('PanCosmicCommercialEnterprise', () => {
+    const data = testCharacterData('PanCosmicCommercialEnterprise', undefined, [
+      ownBuff.premod.eff_.add(0.5),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // (Assumed + 2 set bonus) * scaling
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo((0.5 + 0.1) * 0.25)
+    // Assumed + 2 set bonus
+    expect(calc.compute(seele.final.eff_).val).toBeCloseTo(0.5 + 0.1)
+  })
 })
