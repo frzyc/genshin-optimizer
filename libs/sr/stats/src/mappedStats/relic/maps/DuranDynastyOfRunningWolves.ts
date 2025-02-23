@@ -5,11 +5,12 @@ const key: RelicSetKey = 'DuranDynastyOfRunningWolves'
 const data_gen = allStats.relic[key]
 
 let o = 0
-// TODO: Load scalings
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    stacks: data_gen.setEffects[0].otherStats[o++],
+    followUp_: data_gen.setEffects[0].otherStats[o++],
+    crit_dmg_: data_gen.setEffects[0].otherStats[o++],
   },
 } as const
 

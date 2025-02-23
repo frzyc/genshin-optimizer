@@ -254,24 +254,10 @@ export const conditionals = {
     },
   },
   BandOfSizzlingThunder: {
-    boolConditional: {
+    skillUsed: {
       sheet: 'BandOfSizzlingThunder',
-      name: 'boolConditional',
+      name: 'skillUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   BaptismOfPureThought: {
@@ -330,27 +316,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'BeforeTheTutorialMissionStarts',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  BelobogOfTheArchitects: {
-    boolConditional: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BelobogOfTheArchitects',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -459,27 +424,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  BrokenKeel: {
-    boolConditional: {
-      sheet: 'BrokenKeel',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BrokenKeel',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BrokenKeel',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Bronya: {
     boolConditional: { sheet: 'Bronya', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -540,45 +484,20 @@ export const conditionals = {
     },
   },
   CelestialDifferentiator: {
-    boolConditional: {
+    firstAttack: {
       sheet: 'CelestialDifferentiator',
-      name: 'boolConditional',
+      name: 'firstAttack',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'CelestialDifferentiator',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'CelestialDifferentiator',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ChampionOfStreetwiseBoxing: {
-    boolConditional: {
+    hits: {
       sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'numConditional',
+      name: 'hits',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 5,
     },
   },
   Chorus: {
@@ -931,45 +850,13 @@ export const conditionals = {
     },
   },
   DuranDynastyOfRunningWolves: {
-    boolConditional: {
+    merit: {
       sheet: 'DuranDynastyOfRunningWolves',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DuranDynastyOfRunningWolves',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DuranDynastyOfRunningWolves',
-      name: 'numConditional',
+      name: 'merit',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
-  EagleOfTwilightLine: {
-    boolConditional: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      max: 5,
     },
   },
   EarthlyEscapade: {
@@ -1125,46 +1012,7 @@ export const conditionals = {
     },
   },
   FiresmithOfLavaForging: {
-    boolConditional: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  FirmamentFrontlineGlamoth: {
-    boolConditional: {
-      sheet: 'FirmamentFrontlineGlamoth',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FirmamentFrontlineGlamoth',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FirmamentFrontlineGlamoth',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'FiresmithOfLavaForging', name: 'ultUsed', type: 'bool' },
   },
   FlamesAfar: {
     boolConditional: {
@@ -1180,27 +1028,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'FlamesAfar',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  FleetOfTheAgeless: {
-    boolConditional: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FleetOfTheAgeless',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1230,24 +1057,10 @@ export const conditionals = {
     },
   },
   ForgeOfTheKalpagniLantern: {
-    boolConditional: {
+    enemyHit: {
       sheet: 'ForgeOfTheKalpagniLantern',
-      name: 'boolConditional',
+      name: 'enemyHit',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ForgeOfTheKalpagniLantern',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ForgeOfTheKalpagniLantern',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   FuXuan: {
@@ -1289,24 +1102,10 @@ export const conditionals = {
     },
   },
   GeniusOfBrilliantStars: {
-    boolConditional: {
+    hasQuantumWeakness: {
       sheet: 'GeniusOfBrilliantStars',
-      name: 'boolConditional',
+      name: 'hasQuantumWeakness',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GeniusOfBrilliantStars',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GeniusOfBrilliantStars',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   GeniusesRepose: {
@@ -1369,24 +1168,10 @@ export const conditionals = {
     },
   },
   GuardOfWutheringSnow: {
-    boolConditional: {
+    hpLowerThan50: {
       sheet: 'GuardOfWutheringSnow',
-      name: 'boolConditional',
+      name: 'hpLowerThan50',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Guinaifen: {
@@ -1521,25 +1306,7 @@ export const conditionals = {
     },
   },
   HunterOfGlacialForest: {
-    boolConditional: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'HunterOfGlacialForest', name: 'ultUsed', type: 'bool' },
   },
   Huohuo: {
     boolConditional: { sheet: 'Huohuo', name: 'boolConditional', type: 'bool' },
@@ -1663,27 +1430,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  InertSalsotto: {
-    boolConditional: {
-      sheet: 'InertSalsotto',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'InertSalsotto',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'InertSalsotto',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   InherentlyUnjustDestiny: {
     boolConditional: {
       sheet: 'InherentlyUnjustDestiny',
@@ -1698,27 +1444,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'InherentlyUnjustDestiny',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  IronCavalryAgainstTheScourge: {
-    boolConditional: {
-      sheet: 'IronCavalryAgainstTheScourge',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IronCavalryAgainstTheScourge',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IronCavalryAgainstTheScourge',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1748,24 +1473,10 @@ export const conditionals = {
     },
   },
   IzumoGenseiAndTakamaDivineRealm: {
-    boolConditional: {
+    allySamePath: {
       sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'boolConditional',
+      name: 'allySamePath',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Jade: {
@@ -1844,27 +1555,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  KnightOfPurityPalace: {
-    boolConditional: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   LandausChoice: {
     boolConditional: {
       sheet: 'LandausChoice',
@@ -1887,20 +1577,9 @@ export const conditionals = {
     },
   },
   LongevousDisciple: {
-    boolConditional: {
+    stacks: {
       sheet: 'LongevousDisciple',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LongevousDisciple',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LongevousDisciple',
-      name: 'numConditional',
+      name: 'stacks',
       type: 'num',
       int_only: true,
       min: 0,
@@ -4481,6 +4160,19 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  GuardOfWutheringSnow: {
+    set4_heal: {
+      sheet: 'GuardOfWutheringSnow',
+      name: 'set4_heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'GuardOfWutheringSnow',
+        name: 'set4_heal',
       },
     },
   },
@@ -7115,37 +6807,15 @@ export const buffs = {
     },
   },
   BandOfSizzlingThunder: {
-    enemy_defIgn_: {
+    set4_atk_: {
       sheet: 'BandOfSizzlingThunder',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'BandOfSizzlingThunder',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'set2_dmg_',
+      name: 'set4_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'BandOfSizzlingThunder',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BandOfSizzlingThunder',
-        name: 'team_dmg_',
+        name: 'set4_atk_',
       },
     },
   },
@@ -7255,37 +6925,15 @@ export const buffs = {
     },
   },
   BelobogOfTheArchitects: {
-    enemy_defIgn_: {
+    set2_def_: {
       sheet: 'BelobogOfTheArchitects',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'BelobogOfTheArchitects',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'set2_dmg_',
+      name: 'set2_def_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'def_',
         sheet: 'BelobogOfTheArchitects',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BelobogOfTheArchitects',
-        name: 'team_dmg_',
+        name: 'set2_def_',
       },
     },
   },
@@ -7930,37 +7578,15 @@ export const buffs = {
     },
   },
   BrokenKeel: {
-    enemy_defIgn_: {
+    set2_crit_dmg_: {
       sheet: 'BrokenKeel',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'BrokenKeel',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BrokenKeel',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'BrokenKeel',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BrokenKeel',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BrokenKeel',
-        name: 'team_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
   },
@@ -8229,72 +7855,28 @@ export const buffs = {
     },
   },
   CelestialDifferentiator: {
-    enemy_defIgn_: {
+    set2_crit_rate_: {
       sheet: 'CelestialDifferentiator',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'CelestialDifferentiator',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'CelestialDifferentiator',
-      name: 'set2_dmg_',
+      name: 'set2_crit_rate_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'CelestialDifferentiator',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'CelestialDifferentiator',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'CelestialDifferentiator',
-        name: 'team_dmg_',
+        name: 'set2_crit_rate_',
       },
     },
   },
   ChampionOfStreetwiseBoxing: {
-    enemy_defIgn_: {
+    set4_atk_: {
       sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'ChampionOfStreetwiseBoxing',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'set2_dmg_',
+      name: 'set4_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'ChampionOfStreetwiseBoxing',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ChampionOfStreetwiseBoxing',
-        name: 'team_dmg_',
+        name: 'set4_atk_',
       },
     },
   },
@@ -9523,72 +9105,27 @@ export const buffs = {
     },
   },
   DuranDynastyOfRunningWolves: {
-    enemy_defIgn_: {
+    set2_crit_dmg_: {
       sheet: 'DuranDynastyOfRunningWolves',
-      name: 'enemy_defIgn_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
+        qt: 'premod',
+        q: 'crit_dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
-        name: 'enemy_defIgn_',
+        name: 'set2_crit_dmg_',
       },
     },
-    set2_dmg_: {
+    set2_followUp_dmg_: {
       sheet: 'DuranDynastyOfRunningWolves',
-      name: 'set2_dmg_',
+      name: 'set2_followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DuranDynastyOfRunningWolves',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DuranDynastyOfRunningWolves',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  EagleOfTwilightLine: {
-    enemy_defIgn_: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'EagleOfTwilightLine',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'EagleOfTwilightLine',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'EagleOfTwilightLine',
-        name: 'team_dmg_',
+        damageType2: 'followUp',
+        name: 'set2_followUp_dmg_',
       },
     },
   },
@@ -9970,52 +9507,32 @@ export const buffs = {
     },
   },
   FiresmithOfLavaForging: {
-    enemy_defIgn_: {
+    set4_fire_dmg_: {
       sheet: 'FiresmithOfLavaForging',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'FiresmithOfLavaForging',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'set2_dmg_',
+      name: 'set4_fire_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'FiresmithOfLavaForging',
-        name: 'set2_dmg_',
+        elementalType: 'fire',
+        name: 'set4_fire_dmg_',
       },
     },
-    team_dmg_: {
+    set4_skill_dmg_: {
       sheet: 'FiresmithOfLavaForging',
-      name: 'team_dmg_',
+      name: 'set4_skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'FiresmithOfLavaForging',
-        name: 'team_dmg_',
+        damageType2: 'skill',
+        name: 'set4_skill_dmg_',
       },
     },
   },
   FirmamentFrontlineGlamoth: {
-    enemy_defIgn_: {
-      sheet: 'FirmamentFrontlineGlamoth',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'FirmamentFrontlineGlamoth',
-        name: 'enemy_defIgn_',
-      },
-    },
     set2_dmg_: {
       sheet: 'FirmamentFrontlineGlamoth',
       name: 'set2_dmg_',
@@ -10025,17 +9542,6 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'FirmamentFrontlineGlamoth',
         name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FirmamentFrontlineGlamoth',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'FirmamentFrontlineGlamoth',
-        name: 'team_dmg_',
       },
     },
   },
@@ -10075,37 +9581,15 @@ export const buffs = {
     },
   },
   FleetOfTheAgeless: {
-    enemy_defIgn_: {
+    set2_atk_: {
       sheet: 'FleetOfTheAgeless',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'FleetOfTheAgeless',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'FleetOfTheAgeless',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'FleetOfTheAgeless',
-        name: 'team_dmg_',
+        name: 'set2_atk_',
       },
     },
   },
@@ -10145,37 +9629,15 @@ export const buffs = {
     },
   },
   ForgeOfTheKalpagniLantern: {
-    enemy_defIgn_: {
+    set2_brEffect_: {
       sheet: 'ForgeOfTheKalpagniLantern',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'ForgeOfTheKalpagniLantern',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ForgeOfTheKalpagniLantern',
-      name: 'set2_dmg_',
+      name: 'set2_brEffect_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'brEffect_',
         sheet: 'ForgeOfTheKalpagniLantern',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ForgeOfTheKalpagniLantern',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ForgeOfTheKalpagniLantern',
-        name: 'team_dmg_',
+        name: 'set2_brEffect_',
       },
     },
   },
@@ -10558,37 +10020,26 @@ export const buffs = {
     },
   },
   GeniusOfBrilliantStars: {
-    enemy_defIgn_: {
+    set4_addDefIgn_: {
       sheet: 'GeniusOfBrilliantStars',
-      name: 'enemy_defIgn_',
+      name: 'set4_addDefIgn_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defIgn_',
         sheet: 'GeniusOfBrilliantStars',
-        name: 'enemy_defIgn_',
+        name: 'set4_addDefIgn_',
       },
     },
-    set2_dmg_: {
+    set4_defIgn_: {
       sheet: 'GeniusOfBrilliantStars',
-      name: 'set2_dmg_',
+      name: 'set4_defIgn_',
       tag: {
         et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
+        qt: 'common',
+        q: 'defIgn_',
         sheet: 'GeniusOfBrilliantStars',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GeniusOfBrilliantStars',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GeniusOfBrilliantStars',
-        name: 'team_dmg_',
+        name: 'set4_defIgn_',
       },
     },
   },
@@ -10852,41 +10303,6 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GoodNightAndSleepWell',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  GuardOfWutheringSnow: {
-    enemy_defIgn_: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'GuardOfWutheringSnow',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GuardOfWutheringSnow',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GuardOfWutheringSnow',
         name: 'team_dmg_',
       },
     },
@@ -11922,37 +11338,15 @@ export const buffs = {
     },
   },
   HunterOfGlacialForest: {
-    enemy_defIgn_: {
+    set4_crit_dmg_: {
       sheet: 'HunterOfGlacialForest',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'HunterOfGlacialForest',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'set2_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'HunterOfGlacialForest',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'HunterOfGlacialForest',
-        name: 'team_dmg_',
+        name: 'set4_crit_dmg_',
       },
     },
   },
@@ -12321,37 +11715,28 @@ export const buffs = {
     },
   },
   InertSalsotto: {
-    enemy_defIgn_: {
+    set2_followUp_dmg_: {
       sheet: 'InertSalsotto',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'InertSalsotto',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'InertSalsotto',
-      name: 'set2_dmg_',
+      name: 'set2_followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'InertSalsotto',
-        name: 'set2_dmg_',
+        damageType2: 'followUp',
+        name: 'set2_followUp_dmg_',
       },
     },
-    team_dmg_: {
+    set2_ult_dmg_: {
       sheet: 'InertSalsotto',
-      name: 'team_dmg_',
+      name: 'set2_ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'InertSalsotto',
-        name: 'team_dmg_',
+        damageType2: 'ult',
+        name: 'set2_ult_dmg_',
       },
     },
   },
@@ -12391,37 +11776,28 @@ export const buffs = {
     },
   },
   IronCavalryAgainstTheScourge: {
-    enemy_defIgn_: {
+    set4_break_defIgn_: {
       sheet: 'IronCavalryAgainstTheScourge',
-      name: 'enemy_defIgn_',
+      name: 'set4_break_defIgn_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defIgn_',
         sheet: 'IronCavalryAgainstTheScourge',
-        name: 'enemy_defIgn_',
+        damageType2: 'break',
+        name: 'set4_break_defIgn_',
       },
     },
-    set2_dmg_: {
+    set4_superBreak_defIgn_: {
       sheet: 'IronCavalryAgainstTheScourge',
-      name: 'set2_dmg_',
+      name: 'set4_superBreak_defIgn_',
       tag: {
         et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
+        qt: 'common',
+        q: 'defIgn_',
         sheet: 'IronCavalryAgainstTheScourge',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IronCavalryAgainstTheScourge',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'IronCavalryAgainstTheScourge',
-        name: 'team_dmg_',
+        damageType2: 'break',
+        name: 'set4_superBreak_defIgn_',
       },
     },
   },
@@ -12461,37 +11837,15 @@ export const buffs = {
     },
   },
   IzumoGenseiAndTakamaDivineRealm: {
-    enemy_defIgn_: {
+    set2_crit_: {
       sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'set2_dmg_',
+      name: 'set2_crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'team_dmg_',
+        name: 'set2_crit_',
       },
     },
   },
@@ -13256,41 +12610,6 @@ export const buffs = {
       },
     },
   },
-  KnightOfPurityPalace: {
-    enemy_defIgn_: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'KnightOfPurityPalace',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'KnightOfPurityPalace',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'KnightOfPurityPalace',
-        name: 'team_dmg_',
-      },
-    },
-  },
   LandausChoice: {
     cond_dmg_: {
       sheet: 'LandausChoice',
@@ -13327,37 +12646,15 @@ export const buffs = {
     },
   },
   LongevousDisciple: {
-    enemy_defIgn_: {
+    set4_crit_: {
       sheet: 'LongevousDisciple',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'LongevousDisciple',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'LongevousDisciple',
-      name: 'set2_dmg_',
+      name: 'set4_crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'LongevousDisciple',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LongevousDisciple',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'LongevousDisciple',
-        name: 'team_dmg_',
+        name: 'set4_crit_',
       },
     },
   },
