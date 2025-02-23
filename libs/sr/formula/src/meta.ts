@@ -2854,16 +2854,15 @@ export const conditionals = {
     },
   },
   Seele: {
-    boolConditional: { sheet: 'Seele', name: 'boolConditional', type: 'bool' },
-    listConditional: {
+    amplification: { sheet: 'Seele', name: 'amplification', type: 'bool' },
+    enemyLowerThan80_: {
       sheet: 'Seele',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
+      name: 'enemyLowerThan80_',
+      type: 'bool',
     },
-    numConditional: {
+    skillStacks: {
       sheet: 'Seele',
-      name: 'numConditional',
+      name: 'skillStacks',
       type: 'num',
       int_only: true,
       min: 0,
@@ -5287,6 +5286,45 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+    e6Dmg_0: {
+      sheet: 'Seele',
+      name: 'e6Dmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Seele',
+        elementalType: 'quantum',
+        damageType1: 'elemental',
+        name: 'e6Dmg_0',
+      },
+    },
+    skillDmg_0: {
+      sheet: 'Seele',
+      name: 'skillDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Seele',
+        elementalType: 'quantum',
+        damageType1: 'skill',
+        name: 'skillDmg_0',
+      },
+    },
+    ultDmg_0: {
+      sheet: 'Seele',
+      name: 'ultDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Seele',
+        elementalType: 'quantum',
+        damageType1: 'ult',
+        name: 'ultDmg_0',
       },
     },
   },
@@ -16916,15 +16954,38 @@ export const buffs = {
     },
   },
   Seele: {
-    e6_dmg_: {
+    amplification_dmg_: {
       sheet: 'Seele',
-      name: 'e6_dmg_',
+      name: 'amplification_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Seele',
-        name: 'e6_dmg_',
+        name: 'amplification_dmg_',
+      },
+    },
+    ba2_resPen_: {
+      sheet: 'Seele',
+      name: 'ba2_resPen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'resPen_',
+        sheet: 'Seele',
+        elementalType: 'quantum',
+        name: 'ba2_resPen_',
+      },
+    },
+    e1_crit_: {
+      sheet: 'Seele',
+      name: 'e1_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Seele',
+        name: 'e1_crit_',
       },
     },
     eidolon3_skill: {
@@ -16971,15 +17032,15 @@ export const buffs = {
         name: 'eidolon5_ult',
       },
     },
-    enemy_defIgn_: {
+    skill_spd_: {
       sheet: 'Seele',
-      name: 'enemy_defIgn_',
+      name: 'skill_spd_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
+        qt: 'premod',
+        q: 'spd_',
         sheet: 'Seele',
-        name: 'enemy_defIgn_',
+        name: 'skill_spd_',
       },
     },
     statBoost1: {
@@ -17090,17 +17151,6 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'Seele',
         name: 'statBoost9',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Seele',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Seele',
-        name: 'team_dmg_',
       },
     },
   },

@@ -3,6 +3,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
+  ConditionalWrapper,
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
@@ -22,6 +23,7 @@ import { Edit } from '@mui/icons-material'
 import {
   Box,
   Button,
+  CardActionArea,
   CardContent,
   ClickAwayListener,
   Skeleton,
@@ -29,7 +31,8 @@ import {
   Typography,
 } from '@mui/material'
 import type { Theme } from '@mui/system'
-import { Suspense, useEffect, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
@@ -39,6 +42,7 @@ import { DiscSet2p, DiscSet4p, DiscSetName } from './DiscTrans'
 
 export function DiscCard({
   disc,
+  onClick,
   onEdit,
   setLocation,
   extraButtons,
@@ -62,6 +66,21 @@ export function DiscCard({
   const { slotKey, setKey, rarity, level, mainStatKey, substats, location } =
     disc
   const [show, onShow, onHide] = useBoolState()
+
+  const wrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <CardActionArea onClick={onClick}>{children}</CardActionArea>
+    ),
+    [onClick]
+  )
+  const falseWrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+        {children}
+      </Box>
+    ),
+    []
+  )
 
   // const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
   // TODO: requires individual disc set piece names/desc added to sheets
@@ -96,152 +115,159 @@ export function DiscCard({
           flexGrow: 1,
         }}
       >
-        <CardContent>
-          <CardThemed bgt="light" sx={{ borderRadius: '11px' }}>
-            <CardContent
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <ClickAwayListener onClickAway={onHide}>
-                <div>
-                  <BootstrapTooltip
-                    placement="top"
-                    onClose={onHide}
-                    open={show}
-                    disableFocusListener
-                    disableTouchListener
-                    title={
-                      <Box>
-                        <Typography>
-                          2-Piece Set: <DiscSet2p setKey={setKey} />
-                        </Typography>
-                        <Typography>
-                          4-Piece Set: <DiscSet4p setKey={setKey} />
-                        </Typography>
-                      </Box>
-                    }
-                    slotProps={{
-                      popper: {
-                        disablePortal: true,
-                      },
-                    }}
-                  >
-                    <Typography
-                      noWrap
-                      variant="subtitle1"
-                      align="center"
-                      fontWeight="bold"
-                      maxWidth={'100%'}
-                      onClick={onShow}
-                    >
-                      [{slotKey}] <DiscSetName setKey={setKey} />
-                    </Typography>
-                  </BootstrapTooltip>
-                </div>
-              </ClickAwayListener>
-              <Box
-                sx={(theme: Theme) => ({
-                  border: `4px solid ${
-                    theme.palette[rarityColor[rarity]].main
-                  }`,
-                  borderRadius: '50%',
-                })}
-              >
-                <Box
-                  component="div"
-                  onMouseDown={handleMouseDown as any}
-                  onMouseMove={handleMouseMove as any}
-                  onMouseUp={handleMouseUp as any}
-                  onMouseLeave={handleMouseUp as any}
-                  sx={{
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    overflow: 'hidden',
-                    borderRadius: '50%',
-                    border: `2px solid black`,
-                  }}
-                >
-                  <Box
-                    component={NextImage ? NextImage : 'img'}
-                    alt="Disc Piece Image"
-                    src={discDefIcon(setKey)}
-                    style={{
-                      transform: `rotate(${rotation}deg)`,
-                    }}
-                    sx={{
-                      width: 'auto',
-                      float: 'right',
-                      height: '150px',
-                      transition: isDragging
-                        ? 'none'
-                        : 'transform 0.1s ease-out',
-                    }}
-                  />
-                  <Box sx={{ height: 0, position: 'absolute', bottom: 30 }}>
-                    <Typography
-                      sx={{
-                        backgroundColor: 'rgba(0,0,0,0.85)',
-                        py: '3px',
-                        px: '30px',
-                        borderRadius: '20px',
-                        fontWeight: 'bold',
-                      }}
-                      variant="h6"
-                    >
-                      {level}
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
-              {/* Main stats */}
-            </CardContent>
-          </CardThemed>
-          <Stack spacing={1} sx={{ pt: 1 }}>
-            <Box
-              display="flex"
-              gap={1}
-              alignItems="center"
-              width={'100%'}
-              color={`${rarityColor[rarity]}.main`}
-            >
-              <Typography
-                variant="subtitle1"
-                noWrap
+        <ConditionalWrapper
+          condition={!!onClick}
+          wrapper={wrapperFunc}
+          falseWrapper={falseWrapperFunc}
+        >
+          <CardContent>
+            <CardThemed bgt="light" sx={{ borderRadius: '11px' }}>
+              <CardContent
                 sx={{
                   display: 'flex',
+                  flexDirection: 'column',
                   alignItems: 'center',
-                  flexGrow: 1,
-                  fontWeight: 'bold',
                 }}
               >
-                <StatDisplay statKey={mainStatKey} />
-              </Typography>
-              <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                {toPercent(
-                  getDiscMainStatVal(rarity, mainStatKey, level),
-                  mainStatKey
-                ).toFixed(statKeyToFixed(mainStatKey))}
-                {getUnitStr(mainStatKey)}
-              </Typography>
-            </Box>
-            {substats.map(
-              (substat) =>
-                substat.key && (
-                  <SubstatDisplay
-                    key={substat.key}
-                    substat={substat}
-                    rarity={rarity}
-                  />
-                )
-            )}
-          </Stack>
-        </CardContent>
+                <ClickAwayListener onClickAway={onHide}>
+                  <div>
+                    <BootstrapTooltip
+                      placement="top"
+                      onClose={onHide}
+                      open={show}
+                      disableFocusListener
+                      disableTouchListener
+                      title={
+                        <Box>
+                          <Typography>
+                            2-Piece Set: <DiscSet2p setKey={setKey} />
+                          </Typography>
+                          <Typography>
+                            4-Piece Set: <DiscSet4p setKey={setKey} />
+                          </Typography>
+                        </Box>
+                      }
+                      slotProps={{
+                        popper: {
+                          disablePortal: true,
+                        },
+                      }}
+                    >
+                      <Typography
+                        noWrap
+                        variant="subtitle1"
+                        align="center"
+                        fontWeight="bold"
+                        maxWidth={'100%'}
+                        onClick={onShow}
+                      >
+                        [{slotKey}] <DiscSetName setKey={setKey} />
+                      </Typography>
+                    </BootstrapTooltip>
+                  </div>
+                </ClickAwayListener>
+                <Box
+                  sx={(theme: Theme) => ({
+                    border: `4px solid ${
+                      theme.palette[rarityColor[rarity]].main
+                    }`,
+                    borderRadius: '50%',
+                  })}
+                >
+                  <Box
+                    component="div"
+                    onMouseDown={handleMouseDown as any}
+                    onMouseMove={handleMouseMove as any}
+                    onMouseUp={handleMouseUp as any}
+                    onMouseLeave={handleMouseUp as any}
+                    sx={{
+                      position: 'relative',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      overflow: 'hidden',
+                      borderRadius: '50%',
+                      border: `2px solid black`,
+                    }}
+                  >
+                    <Box
+                      component={NextImage ? NextImage : 'img'}
+                      alt="Disc Piece Image"
+                      src={discDefIcon(setKey)}
+                      style={{
+                        transform: `rotate(${rotation}deg)`,
+                      }}
+                      sx={{
+                        width: 'auto',
+                        float: 'right',
+                        height: '150px',
+                        transition: isDragging
+                          ? 'none'
+                          : 'transform 0.1s ease-out',
+                      }}
+                    />
+                    <Box sx={{ height: 0, position: 'absolute', bottom: 30 }}>
+                      <Typography
+                        sx={{
+                          backgroundColor: 'rgba(0,0,0,0.85)',
+                          py: '3px',
+                          px: '30px',
+                          borderRadius: '20px',
+                          fontWeight: 'bold',
+                        }}
+                        variant="h6"
+                      >
+                        {level}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+                {/* Main stats */}
+              </CardContent>
+            </CardThemed>
+            <Stack spacing={1} sx={{ pt: 1 }}>
+              <Box
+                display="flex"
+                gap={1}
+                alignItems="center"
+                width={'100%'}
+                color={`${rarityColor[rarity]}.main`}
+              >
+                <Typography
+                  variant="subtitle1"
+                  noWrap
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexGrow: 1,
+                    fontWeight: 'bold',
+                  }}
+                >
+                  <StatDisplay statKey={mainStatKey} />
+                </Typography>
+                <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                  {toPercent(
+                    getDiscMainStatVal(rarity, mainStatKey, level),
+                    mainStatKey
+                  ).toFixed(statKeyToFixed(mainStatKey))}
+                  {getUnitStr(mainStatKey)}
+                </Typography>
+              </Box>
+              {substats.map(
+                (substat) =>
+                  substat.key && (
+                    <SubstatDisplay
+                      key={substat.key}
+                      substat={substat}
+                      rarity={rarity}
+                    />
+                  )
+              )}
+            </Stack>
+          </CardContent>
+        </ConditionalWrapper>
+
         <Box flexGrow={1} />
         <Box
           sx={{

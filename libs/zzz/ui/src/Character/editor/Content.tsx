@@ -24,7 +24,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
   const navigate = useNavigate()
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
-  const { key: characterKey } = character
+  const { key: characterKey, equippedDiscs, equippedWengine } = character
   const deleteCharacter = useCallback(async () => {
     const name = t(`${characterKey}`)
     if (!window.confirm(t('removeCharacter', { value: name }))) return
@@ -108,7 +108,25 @@ export function Content({ onClose }: { onClose?: () => void }) {
               </Grid>
             </Box>
             <Box>
-              <EquippedGrid />
+              <EquippedGrid
+                setWengine={(id) => {
+                  if (!id) {
+                    database.wengines.set(equippedWengine, { location: '' })
+                  } else {
+                    database.wengines.set(id, {
+                      location: characterKey,
+                    })
+                  }
+                }}
+                setDisc={(slotKey, id) => {
+                  if (!id)
+                    database.discs.set(equippedDiscs[slotKey], { location: '' })
+                  else
+                    database.discs.set(id, {
+                      location: characterKey,
+                    })
+                }}
+              />
             </Box>
           </Grid>
         </Grid>

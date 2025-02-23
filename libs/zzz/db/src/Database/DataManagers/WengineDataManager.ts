@@ -7,7 +7,7 @@ import {
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
-import type { IDbCharacter } from '../../Interfaces'
+import type { ICachedCharacter } from '../../Interfaces'
 import type { ICachedWengine } from '../../Interfaces/IDbWengine'
 import type { ZzzDatabase } from '../Database'
 import { DataManager } from '../DataManager'
@@ -54,10 +54,10 @@ export class WengineDataManager extends DataManager<
     const newWengine = { ...storageObj, id }
     const oldWengine = super.get(id)
     // During initialization of the database, if you import wengines with location without a corresponding character, the char will be generated here.
-    const getWithInit = (cKey: CharacterKey): IDbCharacter => {
+    const getWithInit = (cKey: CharacterKey): ICachedCharacter => {
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacterData(cKey))
-      return this.database.chars.get(cKey) as IDbCharacter
+      return this.database.chars.get(cKey) as ICachedCharacter
     }
     if (newWengine.location !== oldWengine?.location) {
       const prevChar = oldWengine?.location
@@ -68,7 +68,7 @@ export class WengineDataManager extends DataManager<
         : undefined
 
       // previously equipped wengine at new location
-      let prevWengine = super.get(newChar?.wengineKey)
+      let prevWengine = super.get(newChar?.equippedWengine)
 
       //current prevWengine <-> newChar  && newWengine <-> prevChar
       //swap to prevWengine <-> prevChar && newWengine <-> newChar(outside of this if)
@@ -82,7 +82,7 @@ export class WengineDataManager extends DataManager<
 
       if (newChar)
         this.database.chars.setEquippedWengine(newChar.key, newWengine.id)
-      if (prevChar)
+      if (prevChar && prevWengine)
         this.database.chars.setEquippedWengine(
           prevChar.key,
           prevWengine?.id as WengineKey
