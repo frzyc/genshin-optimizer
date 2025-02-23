@@ -123,15 +123,17 @@ export function DiscSwapModal({
   const [swapDiscId, setSwapDiscId] = useState<string | DiscSlotKey>('')
 
   //TODO: This should be replaced with CompareBuildWrapper
-  if (allDiscSlotKeys.includes(swapDiscId as DiscSlotKey)) {
-    onChangeId(null)
-    setSwapDiscId('')
-    onClose()
-  } else if (swapDiscId) {
-    onChangeId(swapDiscId)
-    setSwapDiscId('')
-    onClose()
-  }
+  useEffect(() => {
+    if (allDiscSlotKeys.includes(swapDiscId as DiscSlotKey)) {
+      onChangeId(null)
+      setSwapDiscId('')
+      onClose()
+    } else if (swapDiscId) {
+      onChangeId(swapDiscId)
+      setSwapDiscId('')
+      onClose()
+    }
+  }, [onChangeId, onClose, swapDiscId])
 
   return (
     <ModalWrapper
