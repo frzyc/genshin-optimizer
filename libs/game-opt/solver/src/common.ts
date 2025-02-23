@@ -13,7 +13,6 @@ export interface BuildResultByIndex {
 export interface ProgressResult {
   numBuildsKept: number
   numBuildsComputed: number
-  numBuildsPruned: number
 }
 
 // Store metadata in 'id' key

@@ -239,8 +239,7 @@ function ProgressIndicator({
   return (
     <Box>
       <Typography>
-        {t('totalProgress')}: {progress.numBuildsComputed.toLocaleString()} (
-        {t('buildsPruned')}: {progress.numBuildsPruned.toLocaleString()}) /{' '}
+        {t('totalProgress')}: {progress.numBuildsComputed.toLocaleString()} /{' '}
         {totalPermutations.toLocaleString()}
       </Typography>
       <Typography>

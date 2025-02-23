@@ -125,7 +125,6 @@ async function start({
     progress: {
       numBuildsKept: 0,
       numBuildsComputed: 0,
-      numBuildsPruned: 0,
     },
   })
   // Wait for all workers to finish optimizing
@@ -152,7 +151,6 @@ async function start({
                 progress: {
                   numBuildsKept: Math.min(results.length, MAX_BUILDS),
                   numBuildsComputed,
-                  numBuildsPruned: 0,
                 },
               })
               // TODO: Send message to child workers with the lowest build so far.

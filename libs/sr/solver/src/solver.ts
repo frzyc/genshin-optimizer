@@ -61,13 +61,11 @@ export class Solver {
   }
 
   async optimize() {
-    let buildsPruned = 0
     // Wait for parent worker to report complete
     const buildResults = await new Promise<BuildResult[]>((res, rej) => {
       this.worker.onmessage = ({ data }: MessageEvent<ParentMessage>) => {
         switch (data.resultType) {
           case 'progress':
-            data.progress.numBuildsPruned += buildsPruned
             this.setProgress(data.progress)
             break
           case 'done':
@@ -97,16 +95,6 @@ export class Solver {
       ]
       const { prunedNodes, prunedMinumum, prunedStats } =
         this.detachAndPrune(stats)
-      // TODO: Redundant with UI calculation
-      const totalPerms = stats.reduce(
-        (accu, slotStats) => accu * slotStats.length,
-        1
-      )
-      const prunedPerms = prunedStats.reduce(
-        (accu, slotStats) => accu * slotStats.length,
-        1
-      )
-      buildsPruned = totalPerms - prunedPerms
       const message: ParentCommandStart = {
         command: 'start',
         detachedNodes: prunedNodes,
