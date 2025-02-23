@@ -24,7 +24,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
   const navigate = useNavigate()
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
-  const { key: characterKey } = character
+  const { key: characterKey, equippedDiscs } = character
   const deleteCharacter = useCallback(async () => {
     const name = t(`${characterKey}`)
     if (!window.confirm(t('removeCharacter', { value: name }))) return
@@ -108,7 +108,16 @@ export function Content({ onClose }: { onClose?: () => void }) {
               </Grid>
             </Box>
             <Box>
-              <EquippedGrid />
+              <EquippedGrid
+                setDisc={(slotKey, id) => {
+                  if (!id)
+                    database.discs.set(equippedDiscs[slotKey], { location: '' })
+                  else
+                    database.discs.set(id, {
+                      location: characterKey,
+                    })
+                }}
+              />
             </Box>
           </Grid>
         </Grid>

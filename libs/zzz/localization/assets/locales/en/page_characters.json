@@ -18,6 +18,7 @@
   "chain": "Chain Lv. {{level}}",
   "core": "Core Lv. {{level}}",
   "tabEquip": {
-    "swapDisc": "Swap Disc"
+    "swapDisc": "Swap Disc",
+    "swapWengine": "Swap Wengine"
   }
 }
