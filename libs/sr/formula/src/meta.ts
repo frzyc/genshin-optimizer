@@ -1972,27 +1972,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  PasserbyOfWanderingCloud: {
-    boolConditional: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Passkey: {
     boolConditional: {
       sheet: 'Passkey',
@@ -14394,41 +14373,6 @@ export const buffs = {
         q: 'atk_',
         sheet: 'PanCosmicCommercialEnterprise',
         name: 'set2_dmg_',
-      },
-    },
-  },
-  PasserbyOfWanderingCloud: {
-    enemy_defIgn_: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'PasserbyOfWanderingCloud',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PasserbyOfWanderingCloud',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PasserbyOfWanderingCloud',
-        name: 'team_dmg_',
       },
     },
   },

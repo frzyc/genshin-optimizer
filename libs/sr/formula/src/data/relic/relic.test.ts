@@ -442,4 +442,16 @@ describe('Relic sheets test', () => {
     // Assumed + 2 set bonus
     expect(calc.compute(seele.final.eff_).val).toBeCloseTo(0.5 + 0.1)
   })
+
+  it('PasserbyOfWanderingCloud', () => {
+    const data = testCharacterData('PasserbyOfWanderingCloud')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.heal_).val).toBeCloseTo(0.1)
+  })
 })
