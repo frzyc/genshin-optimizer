@@ -19,8 +19,8 @@ import {
   allArtifactSetKeys,
   allCharacterSheetKeys,
   allWeaponKeys,
-  type CharacterSheetKey,
   type ArtifactSetKey,
+  type CharacterSheetKey,
   type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
