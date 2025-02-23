@@ -13,7 +13,6 @@ import {
   percent,
   register,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag, isBonusAbilityActive } from '../util'
 
@@ -84,8 +83,6 @@ const sheet = register(
     ultInCompleteCombustion.ifOn(
       percent(subscript(char.talent, dm.talent.eff_res_))
     )
-  ),
-  teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
-  enemyDebuff.common.defIgn_.add(numConditional)
+  )
 )
 export default sheet
