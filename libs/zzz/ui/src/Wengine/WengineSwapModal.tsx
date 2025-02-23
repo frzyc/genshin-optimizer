@@ -31,9 +31,11 @@ import {
 } from '@genshin-optimizer/zzz/util'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
 import {
   Box,
   Button,
+  CardActionArea,
   CardContent,
   CardHeader,
   Divider,
@@ -148,14 +150,14 @@ export function WengineSwapModal({
   }
   const [swapWengineId, setSwapWengineId] = useState('')
 
-  console.log(swapWengineId)
-
   //TODO: This should be replaced with CompareBuildWrapper
-  if (swapWengineId) {
-    onChangeId(swapWengineId)
-    setSwapWengineId('')
-    onClose()
-  }
+  useEffect(() => {
+    if (swapWengineId) {
+      onChangeId(swapWengineId === 'unequip' ? '' : swapWengineId)
+      setSwapWengineId('')
+      onClose()
+    }
+  }, [onChangeId, onClose, swapWengineId])
 
   return (
     <>
@@ -251,6 +253,39 @@ export function WengineSwapModal({
               {t('page_wengine:addWengine')}
             </Button>
             <Grid container spacing={1}>
+              {/* only show "unequip" when a wengine is equipped */}
+              {wengineId && (
+                <Grid item xs={6} sm={6} md={4} lg={3}>
+                  <CardThemed
+                    bgt="light"
+                    sx={{ width: '100%', height: '100%' }}
+                  >
+                    <CardActionArea
+                      sx={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}
+                      onClick={() => setSwapWengineId('unequip')}
+                    >
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <RemoveCircleIcon sx={{ fontSize: '10em' }} />
+                        <Typography>
+                          {t('wengine:button.unequipWengine')}
+                        </Typography>
+                      </Box>
+                    </CardActionArea>
+                  </CardThemed>
+                </Grid>
+              )}
               {wengineIdsToShow.map((id) => (
                 <Grid
                   item
