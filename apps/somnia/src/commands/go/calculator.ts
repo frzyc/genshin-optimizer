@@ -1,7 +1,6 @@
 import {
   sheetKeyToCharKey,
   type AscensionKey,
-  type CharacterKey,
   type CharacterSheetKey,
   type RefinementKey,
   type WeaponKey,
