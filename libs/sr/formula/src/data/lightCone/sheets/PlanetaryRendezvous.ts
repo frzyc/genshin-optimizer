@@ -50,8 +50,8 @@ const sheet = registerLightCone(
     cmpGE(lcCount, 1, 'unique', '')
   ),
   registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.defIgn_.add(cmpGE(lcCount, 1, numConditional)),
+    'enemy_defRed_',
+    enemyDebuff.common.defRed_.add(cmpGE(lcCount, 1, numConditional)),
     cmpGE(lcCount, 1, 'unique', '')
   )
 )

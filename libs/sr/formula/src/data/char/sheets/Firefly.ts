@@ -3,8 +3,6 @@ import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
   customDmg,
   customHeal,
   enemyDebuff,
@@ -25,8 +23,6 @@ const { char } = own
 
 // TODO: Add conditionals
 const { ultInCompleteCombustion, techFireWeakness } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 function skillDmg(name: string, baseMult: number, addlMult: number[]) {
   // (baseMult * capped break effect + addlMult)
