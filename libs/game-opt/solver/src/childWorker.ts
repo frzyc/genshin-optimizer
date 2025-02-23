@@ -122,7 +122,7 @@ async function start() {
     // Step 5: Calculate the value
     const results = compiledCalcFunction(stats)
     // Constraints are offset by 1 because the opt target is first
-    if (constraints.every((value, i) => results[i + 1] >= value)) {
+    if (constraints.every((value, i) => results[i] >= value)) {
       builds.push({
         value: results[0], // We only pass 1 target to calculate, as the first entry
         indices: stats.map((s) => s.id),
