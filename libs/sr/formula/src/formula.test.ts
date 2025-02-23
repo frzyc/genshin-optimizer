@@ -14,6 +14,7 @@ import { fail } from 'assert'
 import {
   charTagMapNodeEntries,
   lightConeTagMapNodeEntries,
+  teamData,
   withMember,
 } from '.'
 import { Calculator } from './calculator'
@@ -23,6 +24,7 @@ import {
   enemyTag,
   ownTag,
   tagStr,
+  team,
   type TagMapNodeEntries,
 } from './data/util'
 
@@ -131,6 +133,49 @@ describe('char+lightCone test', () => {
     expect(calc.compute(m7.final.atk).val).toBeCloseTo(81.6)
   })
 })
+
+describe('team test', () => {
+  it('counts paths', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Acheron', 'Argenti']),
+      ...withMember(
+        'Acheron',
+        ...charTagMapNodeEntries({
+          level: 1,
+          ascension: 0,
+          key: 'Acheron',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        })
+      ),
+      ...withMember(
+        'Argenti',
+        ...charTagMapNodeEntries({
+          level: 1,
+          ascension: 0,
+          key: 'Argenti',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    expect(calc.compute(team.common.count.withPath('Nihility')).val).toEqual(1)
+    expect(calc.compute(team.common.count.withPath('Erudition')).val).toEqual(1)
+    expect(calc.compute(team.common.count.withPath('TheHunt')).val).toEqual(0)
+  })
+})
+
 describe('sheet', () => {
   test('buff entries', () => {
     const sheets = new Set([
