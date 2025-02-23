@@ -454,4 +454,37 @@ describe('Relic sheets test', () => {
 
     expect(calc.compute(seele.final.heal_).val).toBeCloseTo(0.1)
   })
+
+  it('PioneerDiverOfDeadWaters', () => {
+    const data = testCharacterData('PioneerDiverOfDeadWaters')
+    data.push(
+      cond(
+        'PioneerDiverOfDeadWaters',
+        conditionals.PioneerDiverOfDeadWaters.affectedByDebuff.name,
+        1
+      ),
+      cond(
+        'PioneerDiverOfDeadWaters',
+        conditionals.PioneerDiverOfDeadWaters.debuffCount.name,
+        3
+      ),
+      cond(
+        'PioneerDiverOfDeadWaters',
+        conditionals.PioneerDiverOfDeadWaters.wearerDebuff.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.common_dmg_).val).toBeCloseTo(0.12)
+    // Base + 4 set bonus
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 2 * 0.04)
+    // Base + 4 set bonus
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 2 * 0.12)
+  })
 })

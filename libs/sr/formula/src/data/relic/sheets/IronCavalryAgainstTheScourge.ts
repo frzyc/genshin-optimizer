@@ -32,6 +32,7 @@ const sheet = registerRelic(
     ),
     cmpGE(relicCount, 4, 'unique', '')
   ),
+  // TODO: Change to Super Break
   registerBuff(
     'set4_superBreak_defIgn_',
     enemyDebuff.common.defIgn_.addWithDmgType(

@@ -2102,24 +2102,23 @@ export const conditionals = {
     },
   },
   PioneerDiverOfDeadWaters: {
-    boolConditional: {
+    affectedByDebuff: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'boolConditional',
+      name: 'affectedByDebuff',
       type: 'bool',
     },
-    listConditional: {
+    debuffCount: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PioneerDiverOfDeadWaters',
-      name: 'numConditional',
+      name: 'debuffCount',
       type: 'num',
       int_only: true,
-      min: 0,
-      max: 2,
+      min: 2,
+      max: 3,
+    },
+    wearerDebuff: {
+      sheet: 'PioneerDiverOfDeadWaters',
+      name: 'wearerDebuff',
+      type: 'bool',
     },
   },
   Pioneering: {
@@ -14759,37 +14758,37 @@ export const buffs = {
     },
   },
   PioneerDiverOfDeadWaters: {
-    enemy_defIgn_: {
+    set2_common_dmg_: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'PioneerDiverOfDeadWaters',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PioneerDiverOfDeadWaters',
-      name: 'set2_dmg_',
+      name: 'set2_common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'set2_dmg_',
+        name: 'set2_common_dmg_',
       },
     },
-    team_dmg_: {
+    set4_crit_: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'team_dmg_',
+      name: 'set4_crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'team_dmg_',
+        name: 'set4_crit_',
+      },
+    },
+    set4_crit_dmg_: {
+      sheet: 'PioneerDiverOfDeadWaters',
+      name: 'set4_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'PioneerDiverOfDeadWaters',
+        name: 'set4_crit_dmg_',
       },
     },
   },
