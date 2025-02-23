@@ -1,22 +1,15 @@
 import { max, min, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { own, ownBuff, percent, reader, stats } from '../util'
+import {
+  flatAndPercentStats,
+  nonFlatAndPercentStats,
+  own,
+  ownBuff,
+  percent,
+  reader,
+} from '../util'
 import dmg from './dmg'
 import prep from './prep'
-
-const flatAndPercentStats = [
-  'atk',
-  'def',
-  'hp',
-  'impact',
-  'anomProf',
-  'anomMas',
-  'enerRegen',
-] as const
-const otherStats = stats.filter(
-  (stat) =>
-    !flatAndPercentStats.flatMap((stat) => [stat, `${stat}_`]).includes(stat)
-)
 
 const data: TagMapNodeEntries = [
   ...dmg,
@@ -51,7 +44,7 @@ const data: TagMapNodeEntries = [
 
   // For stats with only 1 variant
   // initial x += base X; assuming base exists for that stat
-  ...otherStats
+  ...nonFlatAndPercentStats
     .filter((s) => s in ownBuff.base)
     .map(
       (s) =>
@@ -61,7 +54,7 @@ const data: TagMapNodeEntries = [
         ) // Validated with filter
     ),
   // final x += initial X + combat X
-  ...otherStats.map((s) =>
+  ...nonFlatAndPercentStats.map((s) =>
     ownBuff.final[s].add(sum(own.initial[s], own.combat[s]), true)
   ),
 
