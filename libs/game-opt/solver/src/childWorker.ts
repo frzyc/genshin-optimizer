@@ -1,19 +1,16 @@
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import type { BuildResultByIndex, EquipmentStats } from './common'
 import { MAX_BUILDS } from './common'
 
 const MAX_BUILDS_TO_SEND = 200_000
 let compiledCalcFunction: (equipmentStatsOnly: EquipmentStats[]) => number[]
-let lightConeStats: EquipmentStats[]
-let relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
+let equipmentStats: EquipmentStats[][]
 let constraints: number[] = []
 
 export interface ChildCommandInit {
   command: 'init'
-  lightConeStats: EquipmentStats[]
-  relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
+  equipmentStats: EquipmentStats[][]
   constraints: number[]
   detachedNodes: NumTagFree[]
 }
@@ -72,8 +69,7 @@ async function handleEvent(e: MessageEvent<ChildCommand>): Promise<void> {
 
 // Create compiledCalcFunction
 async function init({
-  lightConeStats: lcs,
-  relicStatsBySlot: relics,
+  equipmentStats: ecs,
   detachedNodes: combinedNodes,
   constraints: initCons,
 }: ChildCommandInit) {
@@ -81,49 +77,26 @@ async function init({
   compiledCalcFunction = compile(
     combinedNodes,
     'q', // Tag category for object key
-    7, // Number of slots
+    Object.keys(ecs).length, // Number of slots
     {} // Initial values
     // Header; includes custom formulas, such as `res`
   )
-  lightConeStats = lcs
-  relicStatsBySlot = relics
+  equipmentStats = ecs
   constraints = initCons
 
   // Let parent know we are ready to optimize
   postMessage({ resultType: 'initialized' })
 }
-function* generateCombinations(): Generator<{
-  lightCone: EquipmentStats
-  head: EquipmentStats
-  hands: EquipmentStats
-  feet: EquipmentStats
-  body: EquipmentStats
-  sphere: EquipmentStats
-  rope: EquipmentStats
-}> {
-  for (const lightCone of lightConeStats) {
-    for (const head of relicStatsBySlot.head) {
-      for (const hands of relicStatsBySlot.hands) {
-        for (const feet of relicStatsBySlot.feet) {
-          for (const body of relicStatsBySlot.body) {
-            for (const sphere of relicStatsBySlot.sphere) {
-              for (const rope of relicStatsBySlot.rope) {
-                yield {
-                  lightCone,
-                  head,
-                  hands,
-                  feet,
-                  body,
-                  sphere,
-                  rope,
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+
+// ???
+// Recursively generate cartesian product of an array of arrays
+function* generateCombinations(
+  head: EquipmentStats[],
+  ...tail: EquipmentStats[][]
+): Generator<EquipmentStats[]> {
+  const [h, ...t] = tail
+  const remainder = tail.length > 0 ? generateCombinations(h, ...t) : [[]]
+  for (const r of remainder) for (const h of head) yield [h, ...r]
 }
 // Actually start calculating builds and sending back periodic responses
 async function start() {
@@ -144,48 +117,25 @@ async function start() {
     builds = []
     skipped = 0
   }
-  for (const {
-    lightCone,
-    head,
-    hands,
-    feet,
-    body,
-    sphere,
-    rope,
-  } of generateCombinations()) {
+  const [head, ...tail] = equipmentStats
+  for (const stats of generateCombinations(head, ...tail)) {
     // Step 5: Calculate the value
-    const results = compiledCalcFunction([
-      lightCone,
-      head,
-      hands,
-      feet,
-      body,
-      sphere,
-      rope,
-    ])
+    const results = compiledCalcFunction(stats)
     // Constraints are offset by 1 because the opt target is first
     if (constraints.every((value, i) => results[i + 1] >= value)) {
       builds.push({
         value: results[0], // We only pass 1 target to calculate, as the first entry
-        lightConeIndex: lightCone.id,
-        relicIndices: {
-          head: head.id,
-          hands: hands.id,
-          feet: feet.id,
-          body: body.id,
-          sphere: sphere.id,
-          rope: rope.id,
-        },
+        indices: stats.map((s) => s.id),
       })
     } else {
       skipped++
     }
-    if (builds.length > MAX_BUILDS_TO_SEND) {
+    if (builds.length + skipped > MAX_BUILDS_TO_SEND) {
       sliceSortSendBuilds()
     }
   }
 
-  if (builds.length > 0) {
+  if (builds.length + skipped > 0) {
     sliceSortSendBuilds()
   }
 

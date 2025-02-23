@@ -1,10 +1,6 @@
-import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import { range } from '@genshin-optimizer/common/util'
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { combineConst, flatten } from '@genshin-optimizer/pando/engine'
-import {
-  allRelicSlotKeys,
-  type RelicSlotKey,
-} from '@genshin-optimizer/sr/consts'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import type {
   BuildResultByIndex,
@@ -17,8 +13,7 @@ let workers: Worker[]
 
 export interface ParentCommandStart {
   command: 'start'
-  lightConeStats: EquipmentStats[]
-  relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
+  equipmentStats: EquipmentStats[][]
   detachedNodes: NumTagFree[]
   constraints: number[]
   numWorkers: number
@@ -79,8 +74,7 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
 }
 
 async function start({
-  lightConeStats,
-  relicStatsBySlot,
+  equipmentStats,
   detachedNodes,
   constraints,
   numWorkers,
@@ -90,29 +84,29 @@ async function start({
   detachedNodes = combineConst(detachedNodes)
 
   // Split work on the largest slot to reduce variance in work between workers
-  const { largestSlot } = Object.entries(relicStatsBySlot).reduce(
-    ({ largestSlot, largestSize }, [currentSlot, relics]) =>
-      relics.length > largestSize
+  const { largestSlot } = equipmentStats.reduce(
+    ({ largestSlot, largestSize }, equips, currentSlot) =>
+      equips.length > largestSize
         ? {
-            largestSlot: currentSlot as RelicSlotKey,
-            largestSize: relics.length,
+            largestSlot: currentSlot,
+            largestSize: equips.length,
           }
         : { largestSlot, largestSize },
-    { largestSlot: 'head' as RelicSlotKey, largestSize: -1 }
+    { largestSlot: -1, largestSize: -1 }
   )
   // Split work
-  const chunkedRelicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>[] =
-    range(0, numWorkers - 1).map((worker) =>
-      objKeyMap(allRelicSlotKeys, (slot) =>
+  const chunkedStatsBySlot: EquipmentStats[][][] = range(0, numWorkers - 1).map(
+    (worker) =>
+      equipmentStats.map((_, slot) =>
         slot === largestSlot
           ? // For largest slot, only give ~1/numWorkers amount of relics
-            relicStatsBySlot[slot].filter(
+            equipmentStats[slot].filter(
               (_, index) => index % numWorkers === worker
             )
           : // For other slots, give all relics
-            relicStatsBySlot[slot]
+            equipmentStats[slot]
       )
-    )
+  )
 
   // Spawn child workers to calculate builds
   workers = range(1, numWorkers).map(
@@ -131,6 +125,7 @@ async function start({
     progress: {
       numBuildsKept: 0,
       numBuildsComputed: 0,
+      numBuildsPruned: 0,
     },
   })
   // Wait for all workers to finish optimizing
@@ -157,6 +152,7 @@ async function start({
                 progress: {
                   numBuildsKept: Math.min(results.length, MAX_BUILDS),
                   numBuildsComputed,
+                  numBuildsPruned: 0,
                 },
               })
               // TODO: Send message to child workers with the lowest build so far.
@@ -175,8 +171,7 @@ async function start({
         // Initialize worker
         const message: ChildCommandInit = {
           command: 'init',
-          lightConeStats,
-          relicStatsBySlot: chunkedRelicStatsBySlot[index],
+          equipmentStats: chunkedStatsBySlot[index],
           detachedNodes,
           constraints,
         }

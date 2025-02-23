@@ -1,22 +1,19 @@
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
-
 export const MAX_BUILDS = 50_000
 
 export interface BuildResult {
   value: number
-  lightConeId: string
-  relicIds: Record<RelicSlotKey, string>
+  ids: string[]
 }
 
 export interface BuildResultByIndex {
   value: number
-  lightConeIndex: number
-  relicIndices: Record<RelicSlotKey, number>
+  indices: number[]
 }
 
 export interface ProgressResult {
   numBuildsKept: number
   numBuildsComputed: number
+  numBuildsPruned: number
 }
 
 // Store metadata in 'id' key
