@@ -10,7 +10,7 @@ const dm = {
   2: {
     passive_crit_dmg: data_gen.setEffects[0].passiveStats.crit_dmg_,
     crit_dmg_threshold: data_gen.setEffects[0].otherStats[o++],
-    crit_: data_gen.setEffects[0].otherStats[o++]
+    crit_: data_gen.setEffects[0].otherStats[o++],
   },
 } as const
 

@@ -12,7 +12,7 @@ const dm = {
   },
   4: {
     advance_: data_gen.setEffects[1].otherStats[o++],
-  }
+  },
 } as const
 
 export default dm

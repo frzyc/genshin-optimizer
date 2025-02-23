@@ -13,7 +13,7 @@ const dm = {
   4: {
     skill_dmg: data_gen.setEffects[1].otherStats[o++],
     fire_dmg_: data_gen.setEffects[1].otherStats[o++],
-  }
+  },
 } as const
 
 export default dm

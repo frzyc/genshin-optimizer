@@ -13,7 +13,7 @@ const dm = {
   4: {
     defIgn_: data_gen.setEffects[1].otherStats[o++],
     addDefIgn_: data_gen.setEffects[1].otherStats[o++],
-  }
+  },
 } as const
 
 export default dm

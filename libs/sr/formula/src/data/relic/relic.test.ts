@@ -391,4 +391,24 @@ describe('Relic sheets test', () => {
     // Base + 4 set bonus
     expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.16)
   })
+
+  it('MessengerTraversingHackerspace', () => {
+    const data = testCharacterData('MessengerTraversingHackerspace')
+    data.push(
+      cond(
+        'MessengerTraversingHackerspace',
+        conditionals.MessengerTraversingHackerspace.ultUsed.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // 2 set + 4 set bonus
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06 + 0.12)
+  })
 })

@@ -13,7 +13,7 @@ const dm = {
   4: {
     atk_: data_gen.setEffects[1].otherStats[o++],
     stacks: data_gen.setEffects[1].otherStats[o++],
-  }
+  },
 } as const
 
 export default dm

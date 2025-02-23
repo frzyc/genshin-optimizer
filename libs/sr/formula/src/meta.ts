@@ -1760,24 +1760,10 @@ export const conditionals = {
     },
   },
   MessengerTraversingHackerspace: {
-    boolConditional: {
+    ultUsed: {
       sheet: 'MessengerTraversingHackerspace',
-      name: 'boolConditional',
+      name: 'ultUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Misha: {
@@ -13751,37 +13737,15 @@ export const buffs = {
     },
   },
   MessengerTraversingHackerspace: {
-    enemy_defIgn_: {
+    set4_spd_: {
       sheet: 'MessengerTraversingHackerspace',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'MessengerTraversingHackerspace',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'set2_dmg_',
+      name: 'set4_spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'MessengerTraversingHackerspace',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MessengerTraversingHackerspace',
-        name: 'team_dmg_',
+        name: 'set4_spd_',
       },
     },
   },
