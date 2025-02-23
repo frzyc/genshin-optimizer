@@ -229,6 +229,7 @@ describe('char+wengine test', () => {
         enemyDebuff.common.dmgInc_.add(0.1),
         enemyDebuff.common.dmgRed_.add(0.15),
         enemyDebuff.common.stun_.add(1.5),
+        enemyDebuff.common.unstun_.add(1),
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
       const anby = convert(ownTag, { et: 'own', src: 'Anby' })
@@ -299,6 +300,7 @@ describe('char+wengine test', () => {
       enemyDebuff.common.dmgInc_.add(0.1),
       enemyDebuff.common.dmgRed_.add(0.15),
       enemyDebuff.common.stun_.add(1.5),
+      enemyDebuff.common.unstun_.add(1),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })

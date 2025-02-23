@@ -164,6 +164,7 @@ export const enemyTag = {
     dmgInc_: agg,
     dmgRed_: agg,
     stun_: agg,
+    unstun_: agg,
     isStunned: iso,
     anomTimePassed: iso,
   },
