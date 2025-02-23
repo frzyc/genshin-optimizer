@@ -247,6 +247,13 @@ export function locCharKeyToCharKey(
   return locKey as CharacterKey
 }
 
+export function sheetKeyToCharKey(
+  sheetKey: CharacterSheetKey
+): CharacterKey {
+  if (sheetKey.includes('Traveler')) return sheetKey.slice(0, -1) as CharacterKey
+  else return sheetKey as CharacterKey
+}
+
 export function travelerElement(element: TravelerElementKey): TravelerKey {
   return ('Traveler' +
     element.toUpperCase().slice(0, 1) +

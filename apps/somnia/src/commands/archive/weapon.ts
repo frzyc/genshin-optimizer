@@ -46,7 +46,7 @@ function getDropdown(id: string, lang: string, refine: string) {
   ]
 }
 
-export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
+export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
   const namespace = `weapon_${id}_gen`
   await i18nInstance.loadNamespaces(namespace)
   const msg: any = {}

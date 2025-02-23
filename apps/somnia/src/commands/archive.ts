@@ -17,10 +17,10 @@ import { error } from '../lib/message'
 
 import {
   allArtifactSetKeys,
-  allCharacterKeys,
+  allCharacterSheetKeys,
   allWeaponKeys,
+  CharacterSheetKey,
   type ArtifactSetKey,
-  type CharacterKey,
   type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
@@ -39,7 +39,7 @@ export const slashcommand = new SlashCommandBuilder()
     InteractionContextType.BotDM,
     InteractionContextType.PrivateChannel,
   ])
-  .setName('archive')
+  .setName('test')
   .setDescription('Genshin Archive')
   .addSubcommand((s) =>
     s
@@ -106,7 +106,7 @@ export const slashcommand = new SlashCommandBuilder()
 
 type ArchiveSubcommand = 'char' | 'weapon' | 'artifact'
 const archive = {
-  char: allCharacterKeys,
+  char: allCharacterSheetKeys,
   weapon: allWeaponKeys,
   artifact: allArtifactSetKeys,
 }
@@ -114,11 +114,13 @@ function translate(
   namespace: string,
   key: string,
   lang = 'en',
-  object = false
+  object = false,
+  options?: { [key: string]: any }
 ): any {
   return i18nInstance.t(`${namespace}:${key}`, {
     returnObjects: object,
     lng: lang,
+    ...options,
   })
 }
 export { translate }
@@ -135,15 +137,20 @@ export const talentlist = {
 //clean tags from input
 //discord has no colored text, so just bold everything instead
 export function clean(s: string) {
-  //keep italic tags
-  s = s.replaceAll(/(<i>)+/g, '-# *')
+  //trim whitespace
+  s = s.trim()
+  //italics become small
+  s = s.replace(/(<i>[\s\S]*)\n([\s\S]*<\/i>)/g, (m) =>
+    m.replace(/\n/g, '\n-# ')
+  )
+  s = s.replaceAll(/(<i>)+/g, '*-# ')
   s = s.replaceAll(/(<\/i>)+/g, '*')
   //turn rest into bold
   s = s.replaceAll(/(<\/?\w+>)+/g, '**')
   //ignore <br/> tags
   s = s.replaceAll(/<\w+\/>/g, '')
   //remove extra whitespace
-  return s.trim()
+  return s
 }
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
@@ -187,25 +194,25 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
 async function archiveMessage(
   subcommand: ArchiveSubcommand,
   id: string,
-  lang: string,
-  arg: string
+  arg: string,
+  lang: string
 ) {
   //character archive
   if (subcommand === 'char') {
-    if (!archive[subcommand].includes(id as CharacterKey))
-      throw 'invalid character name'
-    return await charArchive(id as CharacterKey, lang, arg)
+    if (!archive[subcommand].includes(id as CharacterSheetKey))
+      throw 'Invalid character name'
+    return await charArchive(id as CharacterSheetKey, arg, lang)
   }
   //weapons archive
   else if (subcommand === 'weapon') {
     if (!archive[subcommand].includes(id as WeaponKey))
-      throw 'invalid weapon name'
-    return await weaponArchive(id as WeaponKey, lang, arg)
+      throw 'Invalid weapon name'
+    return await weaponArchive(id as WeaponKey, arg, lang)
   }
   //artifacts archive
   else if (subcommand === 'artifact') {
     if (!archive[subcommand].includes(id as ArtifactSetKey))
-      throw 'invalid artifact name'
+      throw 'Invalid artifact name'
     return await artifactArchive(id as ArtifactSetKey, lang)
   } else throw 'Invalid selection'
 }
@@ -222,7 +229,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
     arg = interaction.options.getString('refine', false) ?? ''
 
   try {
-    interaction.reply(await archiveMessage(subcommand, id, lang, arg))
+    interaction.reply(await archiveMessage(subcommand, id, arg, lang))
   } catch (e) {
     error(interaction, e)
   }
@@ -234,11 +241,12 @@ export async function selectmenu(
 ) {
   const subcommand = args[1] as ArchiveSubcommand
   const id = args[2]
-  const lang = args[3]
+  //const oldarg = args[3]
+  const lang = args[4]
   const arg = interaction.values[0]
 
   try {
-    interaction.update(await archiveMessage(subcommand, id, lang, arg))
+    interaction.update(await archiveMessage(subcommand, id, arg, lang))
   } catch (e) {
     error(interaction, e)
   }
