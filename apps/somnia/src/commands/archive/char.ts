@@ -1,9 +1,9 @@
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
 import {
-  LocationGenderedCharacterKey,
   sheetKeyToCharKey,
   type CharacterSheetKey,
+  type LocationGenderedCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import {
@@ -29,7 +29,7 @@ function getEmbed(
   arg: string,
   lang: string
 ) {
-  let res: { embed: EmbedBuilder; components: AnyComponentBuilder[] } = {
+  const res: { embed: EmbedBuilder; components: AnyComponentBuilder[] } = {
     embed: {} as EmbedBuilder,
     components: [],
   }
@@ -128,10 +128,9 @@ function talentFields(
   level: number,
   lang: string
 ) {
-  let scalings: Record<string, number> = {}
-  for (const key in params) {
-    scalings[key] = params[key][level - 1]
-  }
+  const scalings = Object.fromEntries(
+    params.map((hit, i) => [i, hit[level - 1]])
+  )
   let text = ''
   let val = ''
   for (const index in scalings) {
@@ -145,6 +144,8 @@ function talentFields(
         scalings
       ) + '\n'
   }
+
+  //format to inline embed fields
   return [
     {
       name: ' ',

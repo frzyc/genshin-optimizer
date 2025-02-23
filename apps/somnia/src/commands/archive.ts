@@ -19,7 +19,7 @@ import {
   allArtifactSetKeys,
   allCharacterSheetKeys,
   allWeaponKeys,
-  CharacterSheetKey,
+  type CharacterSheetKey,
   type ArtifactSetKey,
   type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
