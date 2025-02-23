@@ -69,7 +69,7 @@ async function handleEvent(e: MessageEvent<ChildCommand>): Promise<void> {
 
 // Create compiledCalcFunction
 async function init({
-  equipmentStats: ecs,
+  equipmentStats: eqs,
   detachedNodes: combinedNodes,
   constraints: initCons,
 }: ChildCommandInit) {
@@ -77,11 +77,11 @@ async function init({
   compiledCalcFunction = compile(
     combinedNodes,
     'q', // Tag category for object key
-    Object.keys(ecs).length, // Number of slots
+    eqs.length, // Number of slots
     {} // Initial values
     // Header; includes custom formulas, such as `res`
   )
-  equipmentStats = ecs
+  equipmentStats = eqs
   constraints = initCons
 
   // Let parent know we are ready to optimize
