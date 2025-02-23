@@ -2,6 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
+  ConditionalWrapper,
   ImgIcon,
   NextImage,
 } from '@genshin-optimizer/common/ui'
@@ -19,13 +20,15 @@ import { Edit } from '@mui/icons-material'
 import {
   Box,
   Button,
+  CardActionArea,
   CardContent,
   ClickAwayListener,
   Skeleton,
   Stack,
   Typography,
 } from '@mui/material'
-import { Suspense } from 'react'
+import type { ReactNode } from 'react'
+import { Suspense, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
@@ -44,18 +47,31 @@ const wenginePhaseIconsMap: Record<PhaseKey, WenginePhaseKey> = {
 
 export function WengineCard({
   wengineId,
+  onClick,
   onEdit,
   setLocation,
   extraButtons,
 }: {
   wengineId: string
-  onClick?: () => void
+  onClick?: (wengineId: string) => void
   onEdit?: (wengineId: string) => void
   setLocation?: (lk: LocationKey) => void
   extraButtons?: JSX.Element
 }) {
   const { t } = useTranslation('ui')
   const [show, onShow, onHide] = useBoolState()
+  const wrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <CardActionArea onClick={() => onClick?.(wengineId)}>
+        {children}
+      </CardActionArea>
+    ),
+    [onClick, wengineId]
+  )
+  const falseWrapperFunc = useCallback(
+    (children: ReactNode) => <Box>{children}</Box>,
+    []
+  )
   const {
     id = '',
     key,
@@ -72,6 +88,7 @@ export function WengineCard({
     )
   const wengineStat = getWengineStat(key)
   const wengineStats = getWengineStats(key, level, phase, modification)
+
   return (
     <Suspense
       fallback={
@@ -90,122 +107,129 @@ export function WengineCard({
           flexGrow: 1,
         }}
       >
-        <CardContent>
-          <CardThemed bgt="light" sx={{ borderRadius: '11px' }}>
-            <CardContent
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                paddingBottom: '0 !important',
-              }}
-            >
-              <ClickAwayListener onClickAway={onHide}>
-                <div>
-                  <BootstrapTooltip
-                    placement="top"
-                    onClose={onHide}
-                    open={show}
-                    disableFocusListener
-                    disableTouchListener
-                    title={
-                      <Box>
-                        <Typography>Description</Typography>
-                      </Box>
-                    }
-                    slotProps={{
-                      popper: {
-                        disablePortal: true,
-                      },
-                    }}
-                  >
-                    <Typography
-                      noWrap
-                      variant="subtitle1"
-                      align="center"
-                      fontWeight="bold"
-                      maxWidth={'100%'}
-                      width="200px"
-                      onClick={onShow}
-                    >
-                      {
-                        <ImgIcon
-                          size={2}
-                          src={specialityDefIcon(wengineStat.type)}
-                        />
-                      }{' '}
-                      <WengineName wKey={key} />
-                    </Typography>
-                  </BootstrapTooltip>
-                </div>
-              </ClickAwayListener>
-              <Box component="div">
-                <Box
-                  component={NextImage ? NextImage : 'img'}
-                  alt="Wengine Image"
-                  src={wengineAsset(key, 'icon')}
-                  sx={{
-                    width: 'auto',
-                    float: 'right',
-                    height: '150px',
-                  }}
-                />
-              </Box>
-              <Box
-                display="flex"
-                justifyContent="space-between"
-                width="100%"
-                alignItems="center"
-              >
-                <Typography
-                  sx={{
-                    fontWeight: 'bold',
-                  }}
-                  variant="h6"
-                >
-                  Lv.{level}
-                </Typography>
-                <Box>
-                  <ImgIcon
-                    size={3}
-                    src={wenginePhaseIcon(wenginePhaseIconsMap[phase])}
-                    sx={{ py: '10px', margin: 0, width: '5em' }}
-                  />{' '}
-                </Box>
-              </Box>
-              {/* Main stats */}
-            </CardContent>
-          </CardThemed>
-          <Stack spacing={1} sx={{ pt: 1 }}>
-            <Box
-              display="flex"
-              gap={1}
-              alignItems="center"
-              width={'100%'}
-              color={`${rarityColor[wengineStat.rarity]}.main`}
-            >
-              <Typography
-                variant="subtitle1"
-                noWrap
+        <ConditionalWrapper
+          condition={!!onClick}
+          wrapper={wrapperFunc}
+          falseWrapper={falseWrapperFunc}
+        >
+          <CardContent>
+            <CardThemed bgt="light" sx={{ borderRadius: '11px' }}>
+              <CardContent
                 sx={{
                   display: 'flex',
+                  flexDirection: 'column',
                   alignItems: 'center',
-                  flexGrow: 1,
-                  fontWeight: 'bold',
+                  paddingBottom: '0 !important',
                 }}
               >
-                <StatDisplay statKey={'atk'} />
-              </Typography>
-              <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                {wengineStats['atk_base'].toFixed()}
-              </Typography>
-            </Box>
-            <WengineSubstatDisplay
-              substatKey={wengineStat['second_statkey']}
-              substatValue={wengineStats[wengineStat['second_statkey']]}
-            />
-          </Stack>
-        </CardContent>
+                <ClickAwayListener onClickAway={onHide}>
+                  <div>
+                    <BootstrapTooltip
+                      placement="top"
+                      onClose={onHide}
+                      open={show}
+                      disableFocusListener
+                      disableTouchListener
+                      title={
+                        <Box>
+                          <Typography>Description</Typography>
+                        </Box>
+                      }
+                      slotProps={{
+                        popper: {
+                          disablePortal: true,
+                        },
+                      }}
+                    >
+                      <Typography
+                        noWrap
+                        variant="subtitle1"
+                        align="center"
+                        fontWeight="bold"
+                        maxWidth={'100%'}
+                        width="200px"
+                        onClick={onShow}
+                      >
+                        {
+                          <ImgIcon
+                            size={2}
+                            src={specialityDefIcon(wengineStat.type)}
+                          />
+                        }{' '}
+                        <WengineName wKey={key} />
+                      </Typography>
+                    </BootstrapTooltip>
+                  </div>
+                </ClickAwayListener>
+                <Box component="div">
+                  <Box
+                    component={NextImage ? NextImage : 'img'}
+                    alt="Wengine Image"
+                    src={wengineAsset(key, 'icon')}
+                    sx={{
+                      width: 'auto',
+                      float: 'right',
+                      height: '150px',
+                    }}
+                  />
+                </Box>
+                <Box
+                  display="flex"
+                  justifyContent="space-between"
+                  width="100%"
+                  alignItems="center"
+                >
+                  <Typography
+                    sx={{
+                      fontWeight: 'bold',
+                    }}
+                    variant="h6"
+                  >
+                    Lv.{level}
+                  </Typography>
+                  <Box>
+                    <ImgIcon
+                      size={3}
+                      src={wenginePhaseIcon(wenginePhaseIconsMap[phase])}
+                      sx={{ py: '10px', margin: 0, width: '5em' }}
+                    />{' '}
+                  </Box>
+                </Box>
+                {/* Main stats */}
+              </CardContent>
+            </CardThemed>
+            <Stack spacing={1} sx={{ pt: 1 }}>
+              <Box
+                display="flex"
+                gap={1}
+                alignItems="center"
+                width={'100%'}
+                color={`${rarityColor[wengineStat.rarity]}.main`}
+              >
+                <Typography
+                  variant="subtitle1"
+                  noWrap
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexGrow: 1,
+                    fontWeight: 'bold',
+                  }}
+                >
+                  <StatDisplay statKey={'atk'} />
+                </Typography>
+                <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                  {wengineStats['atk_base'].toFixed()}
+                </Typography>
+              </Box>
+              <WengineSubstatDisplay
+                substatKey={wengineStat['second_statkey']}
+                substatValue={wengineStats[wengineStat['second_statkey']]}
+              />
+            </Stack>
+          </CardContent>
+        </ConditionalWrapper>
+
         <Box flexGrow={1} />
         <Box
           sx={{

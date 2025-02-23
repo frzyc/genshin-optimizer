@@ -109,6 +109,11 @@ export function Content({ onClose }: { onClose?: () => void }) {
             </Box>
             <Box>
               <EquippedGrid
+                setWengine={(id) => {
+                  database.wengines.set(id, {
+                    location: characterKey,
+                  })
+                }}
                 setDisc={(slotKey, id) => {
                   if (!id)
                     database.discs.set(equippedDiscs[slotKey], { location: '' })
