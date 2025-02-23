@@ -507,4 +507,21 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12)
     expect(calc.compute(enemy.common.defIgn_).val).toBeCloseTo(3 * 0.06)
   })
+
+  it('RutilantArena', () => {
+    const data = testCharacterData('RutilantArena', undefined, [
+      ownBuff.premod.crit_.add(0.57),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Base + assumed + 2 set bonus
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.57 + 0.08)
+    expect(calc.compute(seele.final.dmg_.basic[0]).val).toBeCloseTo(0.2)
+    expect(calc.compute(seele.final.dmg_.skill[0]).val).toBeCloseTo(0.2)
+  })
 })

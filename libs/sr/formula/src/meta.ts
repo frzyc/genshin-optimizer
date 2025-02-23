@@ -2363,27 +2363,6 @@ export const conditionals = {
     skillOvertone: { sheet: 'RuanMei', name: 'skillOvertone', type: 'bool' },
     ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
   },
-  RutilantArena: {
-    boolConditional: {
-      sheet: 'RutilantArena',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'RutilantArena',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'RutilantArena',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Sagacity: {
     boolConditional: {
       sheet: 'Sagacity',
@@ -15746,37 +15725,16 @@ export const buffs = {
     },
   },
   RutilantArena: {
-    enemy_defIgn_: {
+    set4_basic_dmg_: {
       sheet: 'RutilantArena',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'RutilantArena',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'RutilantArena',
-      name: 'set2_dmg_',
+      name: 'set4_basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'RutilantArena',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'RutilantArena',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'RutilantArena',
-        name: 'team_dmg_',
+        damageType2: 'skill',
+        name: 'set4_basic_dmg_',
       },
     },
   },
