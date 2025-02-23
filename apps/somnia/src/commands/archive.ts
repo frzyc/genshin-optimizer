@@ -39,7 +39,7 @@ export const slashcommand = new SlashCommandBuilder()
     InteractionContextType.BotDM,
     InteractionContextType.PrivateChannel,
   ])
-  .setName('test')
+  .setName('archive')
   .setDescription('Genshin Archive')
   .addSubcommand((s) =>
     s

@@ -15,7 +15,7 @@ import {
 } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
 import { giURL } from '../../lib/util'
-import { clean, translate } from '../archive'
+import { clean, slashcommand, translate } from '../archive'
 import { getFixed } from '../go/calculator'
 
 const refinedisplay: Record<string, string> = {
@@ -39,7 +39,7 @@ function getDropdown(id: string, lang: string, refine: string) {
   return [
     new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
-        .setCustomId(`archive weapon ${id} ${lang} ${refine}`)
+        .setCustomId(`${slashcommand.name} weapon ${id} ${lang} ${refine}`)
         .setPlaceholder(`Refinement ${refine}`)
         .addOptions(options)
     ),
