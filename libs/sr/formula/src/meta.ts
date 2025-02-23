@@ -1825,27 +1825,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  MusketeerOfWildWheat: {
-    boolConditional: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   MutualDemise: {
     boolConditional: {
       sheet: 'MutualDemise',
@@ -14014,37 +13993,27 @@ export const buffs = {
     },
   },
   MusketeerOfWildWheat: {
-    enemy_defIgn_: {
+    set4_basic_dmg_: {
       sheet: 'MusketeerOfWildWheat',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'MusketeerOfWildWheat',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'set2_dmg_',
+      name: 'set4_basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'MusketeerOfWildWheat',
-        name: 'set2_dmg_',
+        damageType2: 'basic',
+        name: 'set4_basic_dmg_',
       },
     },
-    team_dmg_: {
+    set4_spd_: {
       sheet: 'MusketeerOfWildWheat',
-      name: 'team_dmg_',
+      name: 'set4_spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'MusketeerOfWildWheat',
-        name: 'team_dmg_',
+        name: 'set4_spd_',
       },
     },
   },

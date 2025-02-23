@@ -411,4 +411,18 @@ describe('Relic sheets test', () => {
     // 2 set + 4 set bonus
     expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06 + 0.12)
   })
+
+  it('MusketeerOfWildWheat', () => {
+    const data = testCharacterData('MusketeerOfWildWheat')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12)
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
+    expect(calc.compute(seele.final.dmg_.basic[0]).val).toBeCloseTo(0.1)
+  })
 })
