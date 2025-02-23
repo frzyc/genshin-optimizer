@@ -96,6 +96,7 @@ const stats: Record<Stat, Desc> = {
   heal_: agg,
   dmg_: agg,
   resPen_: agg,
+  defIgn_: agg,
   common_dmg_: agg,
   weakness_: agg,
   brEfficiency_: agg,
@@ -144,7 +145,6 @@ export const enemyTag = {
   common: {
     lvl: fixed,
     defRed_: agg,
-    defIgn_: agg,
     res: agg,
     maxToughness: iso,
     isBroken: iso,

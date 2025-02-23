@@ -23,6 +23,7 @@ const stats = [
   'dmg_',
   'common_dmg_',
   'resPen_',
+  'defIgn_',
   'weakness_',
   'brEfficiency_',
 ] as const
