@@ -184,10 +184,14 @@ export class Solver {
       relicStatsBySlot.sphere,
       relicStatsBySlot.rope,
     ]
+    // Add -Infinity as the opt-target itself is also used as a min constraint
     // Invert max constraints for pruning
-    const constraints = this.statFilters.map((filter) =>
-      filter.isMax ? filter.value * -1 : filter.value
-    )
+    const constraints = [
+      -Infinity,
+      this.statFilters.map((filter) =>
+        filter.isMax ? filter.value * -1 : filter.value
+      ),
+    ]
     const {
       nodes: prunedNodes,
       candidates: prunedCandidates,
