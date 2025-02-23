@@ -54,14 +54,28 @@ export const attributes = [
 
 export const damageTypes = [
   'basic',
-  'dodge',
+  'dash',
+  'dodgeCounter',
   'special',
+  'exSpecial',
   'chain',
   'ult',
-  'assist',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
   'anomaly',
+  'disorder',
   'additional',
   'elemental',
+] as const
+
+export const skillTypes = [
+  'basicSkill',
+  'dodgeSkill',
+  'specialSkill',
+  'chainSkill',
+  'assistSkill'
 ] as const
 
 export const sheets = [
@@ -83,6 +97,7 @@ export const members = [...allCharacterKeys] as const
 export type Stat = (typeof stats)[number]
 export type Attribute = (typeof attributes)[number]
 export type DamageType = (typeof damageTypes)[number]
+export type SkillType = (typeof skillTypes)[number]
 export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
 export type Src = Member
