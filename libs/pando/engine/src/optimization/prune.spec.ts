@@ -1,4 +1,4 @@
-import type { NumNode, OP as TaggedOP } from '../node'
+import type { NumTagFree } from '../node'
 import {
   cmpEq,
   cmpGE,
@@ -13,10 +13,8 @@ import {
   sum,
   sumfrac,
 } from '../node'
-import { addCustomOperation } from '../util'
+import { addCustomOperation, type Monotonicity } from '../util'
 import { pruneBranches, pruneRange, reaffine, State } from './prune'
-
-type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 
 const r0 = read({ q: 'c0' }, undefined)
 const r1 = read({ q: 'c1' }, undefined)
@@ -38,11 +36,11 @@ addCustomOperation('sqrt', {
 })
 
 describe('pruning', () => {
-  const builds = [
+  const candidates = [
     [
-      { c0: 0, c1: 3, c2: 4 },
-      { c0: 6, c1: 2, c2: 6 },
-      { c0: 10, c1: 1, c2: 6 },
+      { id: 1, c0: 0, c1: 3, c2: 4 },
+      { id: 2, c0: 6, c1: 2, c2: 6 },
+      { id: 3, c0: 10, c1: 1, c2: 6 },
     ],
   ]
   test('reaffine', () => {
@@ -50,13 +48,15 @@ describe('pruning', () => {
       prod(7, sum(r0, prod(3, r1), 6), sum(r0, r1, 2)),
       constant(11),
     ]
-    const state = new State(nodes, builds, 'q')
+    const state = new State(nodes, [], candidates, 'q')
     state.progress = false
     reaffine(state)
     expect(state.progress).toBe(true)
     // Normally the reaffined keys are unspecified, but since the current
     // algorithm is deterministic, we can just run it and note the keys
-    expect(state.candidates).toEqual([[{}, { c0: 3, c1: 5 }, { c0: 4, c1: 8 }]])
+    expect(state.candidates).toEqual([
+      [{ id: 1 }, { id: 2, c0: 3, c1: 5 }, { id: 3, c0: 4, c1: 8 }],
+    ])
     // reaffine nodes into different keys (c0 and c1, again, with different values)
     // and leave the constant nodes alone
     expect(state.nodes).toEqual([
@@ -74,7 +74,7 @@ describe('pruning', () => {
       cmpEq(1, 1, r0, r1),
       lookup(subscript(2, ['a', 'b', 'c']), { a: 0, b: 11, c: 22 }),
     ]
-    const state = new State(nodes, builds, 'q')
+    const state = new State(nodes, [], candidates, 'q')
     state.progress = false
     pruneBranches(state)
     expect(state.progress).toBe(true)
@@ -88,23 +88,21 @@ describe('pruning', () => {
     expect(state.nodes[6]).toEqual(constant(22))
   })
   test('pruneRanges', () => {
-    const nodes = [r0, r1, prod(r1, r2), sum(1, r2)]
-    const minimum = [5, 0]
-    const state = new State(nodes, builds, 'q')
+    const nodes = [sum(1, r2), r0, r1, prod(r1, r2)]
+    const minimum = [-Infinity, 5, 0]
+    const state = new State(nodes, minimum, candidates, 'q')
     state.progress = false
-    const newMinimum = pruneRange(state, minimum)
+    pruneRange(state, 1)
     expect(state.progress).toBe(true)
-    expect(state.nodes.length).toEqual(3)
-    expect(state.nodes[0]).toBe(nodes[0])
-    // Skip `nodes[1]` because the minimum is always met
-    expect(state.nodes[1]).toBe(nodes[2])
-    expect(state.nodes[2]).toBe(nodes[3])
-    expect(newMinimum).toEqual([minimum[0]])
+    // Keep `nodes[0]` because it's a "required" constraint
+    // Skip `nodes[2]` because the minimum is always met
+    expect(state.nodes).toEqual([nodes[0], nodes[1], nodes[3]])
+    expect(state.minimum).toEqual([minimum[0], minimum[1]])
 
     expect(state.candidates.length).toEqual(1)
     expect(state.candidates[0].length).toEqual(2)
-    expect(state.candidates[0][0]).toBe(builds[0][1])
-    expect(state.candidates[0][1]).toBe(builds[0][2])
+    expect(state.candidates[0][0]).toBe(candidates[0][1])
+    expect(state.candidates[0][1]).toBe(candidates[0][2])
   })
 })
 describe('state', () => {
@@ -121,30 +119,32 @@ describe('state', () => {
     custom('sqrt', sum(r0, -3)),
   ]
 
-  const builds: Record<string, number>[][] = [
+  const candidates = [
     [
-      { c1: 10, c2: 4 },
-      { c0: 3, c1: 9, c2: 4 },
+      { id: 1, c1: 10, c2: 4 },
+      { id: 2, c0: 3, c1: 9, c2: 4 },
     ],
     [
-      { c0: 4, c1: 1, c2: 4 },
-      { c0: 2, c2: 4 },
+      { id: 3, c0: 4, c1: 1, c2: 4 },
+      { id: 4, c0: 2, c2: 4 },
     ],
   ]
-  const state = new State(nodes, builds, 'q')
+  const state = new State(nodes, [], candidates, 'q')
 
   test('comp ranges', () => {
     const { compRanges } = state
-    expect(compRanges.length).toEqual(builds.length)
+    expect(compRanges.length).toEqual(candidates.length)
     expect(compRanges[0]).toEqual({
       c0: { min: 0, max: 3 },
       c1: { min: 9, max: 10 },
       c2: { min: 4, max: 4 },
+      id: { min: 1, max: 2 },
     })
     expect(compRanges[1]).toEqual({
       c0: { min: 2, max: 4 },
       c1: { min: 0, max: 1 },
       c2: { min: 4, max: 4 },
+      id: { min: 3, max: 4 },
     })
   })
   test('node ranges', () => {
@@ -169,16 +169,33 @@ describe('state', () => {
     // So make sure to check all cases that should return `false`, but we
     // can skip some `true` cases that aren't handled yet
 
-    function flip(n: NumNode<OP>, inc: boolean): NumNode<OP> {
+    function flip(n: NumTagFree, inc: boolean): NumTagFree {
       return inc ? n : sumfrac(10000, n)
     }
+    function getMonotonicity(node: NumTagFree): Map<string, Monotonicity> {
+      return new State([node], [-Infinity], candidates, 'q').monotonicities
+    }
 
+    test('only on constraint nodes', () => {
+      const nodes = [r0, prod(-1, r0)]
+      {
+        // only the first node affect monotonicity
+        const m = new State(nodes, [-Infinity], candidates, 'q').monotonicities
+        expect(m).toEqual(new Map([['c0', { inc: true, dec: false }]]))
+      }
+      {
+        // both nodes affect monotonicity
+        const m = new State(nodes, [-Infinity, -Infinity], candidates, 'q')
+          .monotonicities
+        expect(m).toEqual(new Map([['c0', { inc: false, dec: false }]]))
+      }
+    })
     for (const op of [sum, min, max])
       describe(op.name, () => {
         for (const inc of [true, false])
           test(inc ? 'inc' : 'dec', () => {
             const n = op(r0, r1, r2)
-            const m = new State([flip(n, inc)], builds, 'q').monotonicities
+            const m = getMonotonicity(flip(n, inc))
             expect(m.get('c0')).toEqual({ inc, dec: !inc })
             expect(m.get('c1')).toEqual({ inc, dec: !inc })
             expect(m.get('c2')).toEqual({ inc, dec: !inc })
@@ -188,25 +205,25 @@ describe('state', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
           const n0 = prod(r0, r1, r2)
-          const m0 = new State([flip(n0, inc)], builds, 'q').monotonicities
+          const m0 = getMonotonicity(flip(n0, inc))
           expect(m0.get('c0')).toEqual({ inc, dec: !inc })
           expect(m0.get('c1')).toEqual({ inc, dec: !inc })
           expect(m0.get('c2')).toEqual({ inc, dec: !inc })
 
           const n1 = prod(sum(r0, -8), r1, r2)
-          const m1 = new State([flip(n1, inc)], builds, 'q').monotonicities
+          const m1 = getMonotonicity(flip(n1, inc))
           expect(m1.get('c0')).toEqual({ inc, dec: !inc })
           expect(m1.get('c1')).toEqual({ inc: !inc, dec: inc })
           expect(m1.get('c2')).toEqual({ inc: !inc, dec: inc })
 
           const n2 = prod(sum(r0, -8), sum(r1, -12), r2)
-          const m2 = new State([flip(n2, inc)], builds, 'q').monotonicities
+          const m2 = getMonotonicity(flip(n2, inc))
           expect(m2.get('c0')).toEqual({ inc: !inc, dec: inc })
           expect(m2.get('c1')).toEqual({ inc: !inc, dec: inc })
           expect(m2.get('c2')).toEqual({ inc, dec: !inc })
 
           const n3 = prod(sum(r0, -8), sum(r1, -12), sum(r2, -9))
-          const m3 = new State([flip(n3, inc)], builds, 'q').monotonicities
+          const m3 = getMonotonicity(flip(n3, inc))
           expect(m3.get('c0')).toEqual({ inc, dec: !inc })
           expect(m3.get('c1')).toEqual({ inc, dec: !inc })
           expect(m3.get('c2')).toEqual({ inc, dec: !inc })
@@ -216,25 +233,25 @@ describe('state', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
           const n1 = prod(sum(r0, -7), r1, r2)
-          const m1 = new State([flip(n1, inc)], builds, 'q').monotonicities
+          const m1 = getMonotonicity(flip(n1, inc))
           expect(m1.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
           expect(m1.get('c1')?.[inc ? 'inc' : 'dec']).toEqual(false)
           expect(m1.get('c2')?.[inc ? 'inc' : 'dec']).toEqual(false)
 
           const n2 = prod(sum(r0, -7), sum(r1, -11), r2)
-          const m2 = new State([flip(n2, inc)], builds, 'q').monotonicities
+          const m2 = getMonotonicity(flip(n2, inc))
           expect(m2.get('c0')?.[inc ? 'inc' : 'dec']).toEqual(false)
           expect(m2.get('c1')?.[inc ? 'inc' : 'dec']).toEqual(false)
           expect(m2.get('c2')?.[inc ? 'dec' : 'inc']).toEqual(false)
 
           const n3 = prod(sum(r0, -7), sum(r1, -11), sum(r2, -8))
-          const m3 = new State([flip(n3, inc)], builds, 'q').monotonicities
+          const m3 = getMonotonicity(flip(n3, inc))
           expect(m3.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
           expect(m3.get('c1')?.[inc ? 'dec' : 'inc']).toEqual(false)
           expect(m3.get('c2')?.[inc ? 'dec' : 'inc']).toEqual(false)
 
           const n4 = prod(sum(r0, -4), r1, r2) // r0 can be neg/zero/pos
-          const m4 = new State([flip(n4, inc)], builds, 'q').monotonicities
+          const m4 = getMonotonicity(flip(n4, inc))
           expect(m4.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
           expect(m4.get('c1')).toEqual({ inc: false, dec: false })
           expect(m4.get('c2')).toEqual({ inc: false, dec: false })
@@ -245,7 +262,7 @@ describe('state', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
           const n = cmpEq(r0, 3, r1, r2)
-          const m = new State([flip(n, inc)], builds, 'q').monotonicities
+          const m = getMonotonicity(flip(n, inc))
           expect(m.get('c0')).toEqual({ inc: false, dec: false })
           expect(m.get('c1')).toEqual({ inc, dec: !inc })
           expect(m.get('c2')).toEqual({ inc, dec: !inc })
@@ -255,25 +272,25 @@ describe('state', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
           const n1 = cmpGE(r0, 3, r1, r2)
-          const m1 = new State([flip(n1, inc)], builds, 'q').monotonicities
+          const m1 = getMonotonicity(flip(n1, inc))
           expect(m1.get('c0')).toEqual({ inc, dec: !inc })
           expect(m1.get('c1')).toEqual({ inc, dec: !inc })
           expect(m1.get('c2')).toEqual({ inc, dec: !inc })
 
           const n2 = cmpGE(r0, 3, r2, r1)
-          const m2 = new State([flip(n2, inc)], builds, 'q').monotonicities
+          const m2 = getMonotonicity(flip(n2, inc))
           expect(m2.get('c0')).toEqual({ inc: !inc, dec: inc })
           expect(m2.get('c1')).toEqual({ inc, dec: !inc })
           expect(m2.get('c2')).toEqual({ inc, dec: !inc })
 
           const n3 = cmpGE(3, r0, r1, r2)
-          const m3 = new State([flip(n3, inc)], builds, 'q').monotonicities
+          const m3 = getMonotonicity(flip(n3, inc))
           expect(m3.get('c0')).toEqual({ inc: !inc, dec: inc })
           expect(m3.get('c1')).toEqual({ inc, dec: !inc })
           expect(m3.get('c2')).toEqual({ inc, dec: !inc })
 
           const n4 = cmpGE(3, r0, r2, r1)
-          const m4 = new State([flip(n4, inc)], builds, 'q').monotonicities
+          const m4 = getMonotonicity(flip(n4, inc))
           expect(m4.get('c0')).toEqual({ inc, dec: !inc })
           expect(m4.get('c1')).toEqual({ inc, dec: !inc })
           expect(m4.get('c2')).toEqual({ inc, dec: !inc })
@@ -283,23 +300,22 @@ describe('state', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
           const npos = sumfrac(r0, r1)
-          const mpos = new State([flip(npos, inc)], builds, 'q').monotonicities
+          const mpos = getMonotonicity(flip(npos, inc))
           expect(mpos.get('c0')).toEqual({ inc, dec: !inc })
           expect(mpos.get('c1')).toEqual({ inc: !inc, dec: inc })
 
           const negx = sumfrac(sum(r0, -8), r1)
-          const mnegx = new State([flip(negx, inc)], builds, 'q').monotonicities
+          const mnegx = getMonotonicity(flip(negx, inc))
           expect(mnegx.get('c0')).toEqual({ inc, dec: !inc })
           expect(mnegx.get('c1')).toEqual({ inc, dec: !inc })
 
           const negc = sumfrac(r0, sum(r1, -12))
-          const mnegc = new State([flip(negc, inc)], builds, 'q').monotonicities
+          const mnegc = getMonotonicity(flip(negc, inc))
           expect(mnegc.get('c0')).toEqual({ inc: !inc, dec: inc })
           expect(mnegc.get('c1')).toEqual({ inc: !inc, dec: inc })
 
           const degen = sumfrac(r0, prod(-1, r0))
-          const mdegen = new State([flip(degen, inc)], builds, 'q')
-            .monotonicities
+          const mdegen = getMonotonicity(flip(degen, inc))
           expect(mdegen.get('c0')).toEqual({ inc: false, dec: false })
         })
     })
@@ -308,7 +324,7 @@ describe('state', () => {
         test(inc ? 'inc' : 'dec', () => {
           const table = { a: r1, b: r2, c: 6 }
           const n = lookup(subscript(r0, ['a', 'b', 'c']), table)
-          const m = new State([flip(n, inc)], builds, 'q').monotonicities
+          const m = getMonotonicity(flip(n, inc))
           expect(m.get('c0')).toEqual({ inc: false, dec: false })
         })
     })
@@ -316,15 +332,15 @@ describe('state', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
           const n0 = subscript(r0, [33, 44, 1, 2, 3])
-          const m0 = new State([flip(n0, inc)], builds, 'q').monotonicities
+          const m0 = getMonotonicity(flip(n0, inc))
           expect(m0.get('c0')).toEqual({ inc, dec: !inc })
 
           const n1 = subscript(r0, [33, 44, 4, 3, 2])
-          const m1 = new State([flip(n1, inc)], builds, 'q').monotonicities
+          const m1 = getMonotonicity(flip(n1, inc))
           expect(m1.get('c0')).toEqual({ inc: !inc, dec: inc })
 
           const n2 = subscript(r0, [33, 44, 4, 3, 5])
-          const m2 = new State([flip(n2, inc)], builds, 'q').monotonicities
+          const m2 = getMonotonicity(flip(n2, inc))
           expect(m2.get('c0')).toEqual({ inc: false, dec: false })
         })
     })
@@ -332,15 +348,15 @@ describe('state', () => {
       for (const inc of [true, false])
         test(inc ? 'inc' : 'dec', () => {
           const pos = custom('sqrt', r0)
-          const mpos = new State([flip(pos, inc)], builds, 'q').monotonicities
+          const mpos = getMonotonicity(flip(pos, inc))
           expect(mpos.get('c0')).toEqual({ inc, dec: !inc })
 
           const neg = custom('sqrt', sum(r0, -8))
-          const mneg = new State([flip(neg, inc)], builds, 'q').monotonicities
+          const mneg = getMonotonicity(flip(neg, inc))
           expect(mneg.get('c0')).toEqual({ inc: !inc, dec: inc })
 
           const zero = custom('sqrt', sum(r0, -4))
-          const mzero = new State([flip(zero, inc)], builds, 'q').monotonicities
+          const mzero = getMonotonicity(flip(zero, inc))
           expect(mzero.get('c0')).toEqual({ inc: false, dec: false })
         })
     })

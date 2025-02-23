@@ -11,63 +11,61 @@ import {
 } from '../node'
 import type { Monotonicity, Range } from '../util'
 import { assertUnreachable, customOps } from '../util'
+import { combineConst, flatten } from './simplify'
 const { arithmetic, branching } = calculation
 
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
-type NumTagFree = NumNode<OP>
-type AnyTagFree = AnyNode<OP>
 
-const container = Symbol() // component's container
-type Component<C> = Record<string, number> & { [container]?: C }
+type Component = Record<string, number> & { id: number }
 
 type CompRanges = Record<string, Range>[]
-type NodeRanges = Map<AnyTagFree, Range>
+type NodeRanges = Map<AnyNode<OP>, Range>
 type Monotonicities = Map<string, Monotonicity>
 
 /**
- * Reduce the complexity of the optimization problem,
+ * Reduce the complexity of the optimization problem
+ *
+ *     maximize constraints[0]
+ *     s.t. constraints[0..minimum.length] >= minimum
+ *
  * returning a new optimization with the same `topN` builds
  * @param nodes
  *    A set of nodes used for minimum constraints, objective function, and other calculations.
- *    The nodes must be in the order [min constraints, other calc, obj functions].
- * @param candidates Components used to construct the builds. Keys in `component` may be removed in the resulting `candidates`.
+ *    The nodes must be in the order [minConstraints, other calc], and `minConstraint[0]` is
+ *    the obj function.
+ * @param candidates Components used to construct the builds. Keys in `component` except 'id' may be removed in the results.
  * @param cat Tag category used by `compile` in the actual computation
- * @param minimum Minimum values for min constraints nodes.
+ * @param minimum Minimum values for min constraint nodes.
  * @param _topN The number of top builds to keep.
  * @returns
  *    A new values for `nodes`, `candidates`, and `minimum`. The returned values are incompatible
  *    with the passed-in arguments (DO NOT mix them). Components may also change, so all related
- *    computation needs to pass in to `nodes` as well, else they'll become unusable.
+ *    computation needs to pass in to `nodes` as well, else they'll become unusable. `minConstraints`
+ *    in `nodes` may be removed, excepts for `minConstraints[0]` if the constraint is always satisfied.
  */
-export function prune<
-  I extends OP,
-  C extends { component: Record<string, number> }
->(
+export function prune<I extends OP>(
   nodes: NumNode<I>[],
-  candidates: C[][],
+  candidates: Component[][],
   cat: string,
   minimum: number[],
   _keepTop: number
-): { nodes: NumNode<I>[]; candidates: C[][]; minimum: number[] } {
-  const internal_candidates = candidates.map((comp) =>
-    comp.map((c) => ({ ...c.component, [container]: c }))
-  )
-  const state = new State(nodes, internal_candidates, cat)
+): { nodes: NumNode<I>[]; candidates: Component[][]; minimum: number[] } {
+  const state = new State(nodes, minimum, candidates, cat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
-    minimum = pruneRange(state, minimum)
+    pruneRange(state, 1)
     reaffine(state)
   }
-  candidates = state.candidates.map((comp) =>
-    comp.map(({ [container]: c, ...component }) => ({ ...c!, component }))
-  )
-  return { nodes: state.nodes, candidates, minimum }
+  state.setNodes(flatten(state.nodes))
+  state.setNodes(combineConst(state.nodes))
+  return state
 }
 
-export class State<I extends OP, C> {
+export class State<I extends OP> {
   nodes: NumNode<I>[]
-  candidates: Component<C>[][]
+  minimum: number[]
+  candidates: Component[][]
   cat: string
 
   progress = true
@@ -75,20 +73,27 @@ export class State<I extends OP, C> {
   _nodeRanges: NodeRanges | undefined
   _monotonicities: Monotonicities | undefined
 
-  constructor(nodes: NumNode<I>[], candidates: Component<C>[][], cat: string) {
+  constructor(
+    nodes: NumNode<I>[],
+    minimum: number[],
+    candidates: Component[][],
+    cat: string
+  ) {
     this.nodes = nodes
+    this.minimum = minimum
     this.candidates = candidates
     this.cat = cat
   }
 
-  setNodes(nodes: NumNode<I>[]) {
+  setNodes(nodes: NumNode<I>[], minimum?: number[]) {
     if (this.nodes === nodes) return
     this.progress = true
     this.nodes = nodes
+    if (minimum !== undefined) this.minimum = minimum
     this._nodeRanges = undefined
     this._monotonicities = undefined
   }
-  setCandidates(candidates: Component<C>[][], compRanges?: CompRanges) {
+  setCandidates(candidates: Component[][], compRanges?: CompRanges) {
     if (this.candidates === candidates) return
     this.progress = true
     this.candidates = candidates
@@ -109,7 +114,7 @@ export class State<I extends OP, C> {
   }
   get monotonicities(): Monotonicities {
     return (this._monotonicities ??= getMonotonicities(
-      this.nodes[this.nodes.length - 1],
+      this.nodes.slice(0, this.minimum.length),
       this.cat,
       this.nodeRanges
     ))
@@ -117,7 +122,7 @@ export class State<I extends OP, C> {
 }
 
 /** Remove branches that are never chosen */
-export function pruneBranches(state: State<OP, any>) {
+export function pruneBranches(state: State<OP>) {
   const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
     const r = nodeRanges.get(o)!
@@ -132,13 +137,13 @@ export function pruneBranches(state: State<OP, any>) {
       case 'min': {
         const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.min <= r.max)
         if (x.length === 1) return x[0]
-        if (x.length !== n.x.length) return min(...(x as any)) as NumTagFree
+        if (x.length !== n.x.length) return min(...(x as any)) as NumNode<OP>
         break
       }
       case 'max': {
         const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.max >= r.min)
         if (x.length === 1) return x[0]
-        if (x.length !== n.x.length) return max(...(x as any)) as NumTagFree
+        if (x.length !== n.x.length) return max(...(x as any)) as NumNode<OP>
         break
       }
       case 'match':
@@ -162,28 +167,29 @@ export function pruneBranches(state: State<OP, any>) {
  * - Remove top-level nodes whose `minimum` requirements are met by every build
  * - Returns new `minimum` appropriate for the new `state.nodes`
  */
-export function pruneRange(state: State<OP, any>, minimum: number[]): number[] {
-  const { nodeRanges, cat } = state
+export function pruneRange(state: State<OP>, numReq: number) {
+  const { nodeRanges, minimum: oldMin, cat } = state
   const candidates = [...state.candidates]
   const compRanges = [...state.compRanges]
 
-  const nodes: NumTagFree[] = []
-  const newMinimum: number[] = []
+  const nodes: NumNode<OP>[] = []
+  const minimum: number[] = []
+  let hasNonTrivialConstraint = false
   state.nodes.forEach((n, i) => {
-    if (i < minimum.length)
-      if (minimum[i] <= nodeRanges.get(n)!.min) return
-      else newMinimum.push(minimum[i])
+    if (i < oldMin.length) {
+      if (oldMin[i] > nodeRanges.get(n)!.min) hasNonTrivialConstraint = true
+      else if (i >= numReq) return
+      minimum.push(oldMin[i])
+    }
     nodes.push(n)
   })
-  if (newMinimum.length != minimum.length) {
-    state.setNodes(nodes)
-    minimum = newMinimum
-  }
+  if (minimum.length != oldMin.length) state.setNodes(nodes, minimum)
 
-  if (!minimum.length) return minimum
+  if (!hasNonTrivialConstraint) return
 
   let progress = false
   candidates.forEach((comp, i) => {
+    const oldCompRange = compRanges[i]
     const newComp = comp.filter((c) => {
       compRanges[i] = computeCompRanges([c])
       const ranges = computeNodeRanges(nodes, cat, compRanges)
@@ -193,22 +199,20 @@ export function pruneRange(state: State<OP, any>, minimum: number[]): number[] {
       candidates[i] = newComp
       compRanges[i] = computeCompRanges(newComp)
       progress = true
-    }
+    } else compRanges[i] = oldCompRange
   })
   if (progress) state.setCandidates(candidates, compRanges)
-  return minimum
 }
 
 const offset = Symbol()
 /**
- * Replace `read`/`sum`/`prod` combination with appropriate, smaller `read` nodes when appropriate
- * If changes are made, components `builds` will be replaced with new values with all string keys
- * replaced. Owned `Symbol` keys are transferred from the old `builds` components to the new ones.
+ * Replace `read`/`sum`/`prod` combinations with smaller `read` nodes. If changes are made,
+ * `candidates` will be replaced with new values with all string keys replaced, maintaining only 'id'.
  */
-export function reaffine<C>(state: State<OP, C>) {
+export function reaffine(state: State<OP>) {
   const { nodes, cat, candidates } = state
   type Weight = Record<string | typeof offset, number>
-  const weights = new Map<AnyTagFree, Weight>()
+  const weights = new Map<AnyNode<OP>, Weight>()
   traverse(nodes, (n, visit) => {
     n.x.forEach(visit)
     n.br.forEach(visit)
@@ -250,7 +254,7 @@ export function reaffine<C>(state: State<OP, C>) {
     weights.set(n, weight)
   })
 
-  const topWeights = new Map<AnyTagFree, Weight>()
+  const topWeights = new Map<AnyNode<OP>, Weight>()
   traverse(nodes, (n, visit) => {
     const w = weights.get(n)
     // Make sure `n` contains a variable, i.e., `w` has some string keys
@@ -266,8 +270,7 @@ export function reaffine<C>(state: State<OP, C>) {
   )
   const newCandidates = candidates.map((comp) =>
     comp.map((c) => {
-      const result: Component<C> = {}
-      if (container in c) result[container] = c[container]
+      const result: Component = { id: c['id'] }
       weightNames.forEach((name, w) => {
         result[name] = Object.entries(w).reduce(
           (acu, [k, v]) => acu + (c[k] ?? 0) * v,
@@ -288,13 +291,11 @@ export function reaffine<C>(state: State<OP, C>) {
         if (f > bestFreq || (v === 0 && f >= bestFreq))
           [best, bestFreq] = [v, f]
       if (best !== 0) {
-        for (const c of comp) {
-          c[name] -= best
-          if (c[name] === 0) delete c[name]
-        }
+        for (const c of comp) c[name] -= best
         w[offset] += best
         shouldChange = true
       }
+      for (const c of comp) if (c[name] === 0) delete c[name]
     }
   }
 
@@ -311,9 +312,9 @@ export function reaffine<C>(state: State<OP, C>) {
 
   if (!shouldChange) return
 
-  const weightNodes = new Map<Weight, NumTagFree>()
+  const weightNodes = new Map<Weight, NumNode<OP>>()
   for (const [w, name] of weightNames) {
-    let node: NumTagFree = read({ [cat]: name }, undefined)
+    let node: NumNode<OP> = read({ [cat]: name }, undefined)
     if (w[offset] !== 0) node = sum(w[offset], node)
     weightNodes.set(w, node)
   }
@@ -328,9 +329,9 @@ export function reaffine<C>(state: State<OP, C>) {
 }
 
 /** Get range assuming any item in `comp` can be selected */
-function computeCompRanges(comp: Component<any>[]): CompRanges[number] {
+function computeCompRanges(comp: Component[]): CompRanges[number] {
   const iter = comp.values()
-  const first: Component<any> | undefined = iter.next().value
+  const first: Component | undefined = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(
     Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])
@@ -350,11 +351,11 @@ function computeCompRanges(comp: Component<any>[]): CompRanges[number] {
 
 /** Get possible ranges of each node */
 function computeNodeRanges(
-  nodes: NumTagFree[],
+  nodes: NumNode<OP>[],
   cat: string,
   compRanges: CompRanges
 ): NodeRanges {
-  const result = new Map<AnyTagFree, Range>()
+  const result = new Map<AnyNode<OP>, Range>()
   traverse(nodes, (n, visit) => {
     n.x.forEach(visit)
     n.br.forEach(visit)
@@ -452,19 +453,19 @@ function computeNodeRanges(
 }
 
 function getMonotonicities(
-  node: NumTagFree,
+  nodes: NumNode<OP>[],
   cat: string,
   nodeRanges: NodeRanges
 ): Monotonicities {
-  const mon = new Map<AnyTagFree, Monotonicity>()
-  const toVisit: { node: AnyTagFree; inc: boolean }[] = [{ node, inc: true }]
+  const mon = new Map<AnyNode<OP>, Monotonicity>()
+  const toVisit: { node: AnyNode<OP>; inc: boolean }[] = []
   const result = new Map<string, Monotonicity>()
 
   // `inc` if `node` is strictly increasing in *some* valid regions.
   // `!inc` if `node` is strictly decreasing in *some* valid regions.
   // Consequently, if both `inc` and `!inc` are called on the same
   // node, the node itself is non-monotonic.
-  function visit(node: AnyTagFree, inc: boolean) {
+  function visit(node: AnyNode<OP>, inc: boolean) {
     if (!mon.has(node)) mon.set(node, { inc: true, dec: true })
     const m = mon.get(node)!
     if (inc && m.dec) m.dec = false
@@ -473,6 +474,7 @@ function getMonotonicities(
     toVisit.push({ node, inc })
   }
 
+  nodes.forEach((node) => visit(node, true))
   // Cannot use `traverse` because each node is visited twice, once for `inc` and once for `dec`
   while (toVisit.length) {
     const { node, inc } = toVisit.pop()!

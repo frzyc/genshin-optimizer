@@ -148,6 +148,8 @@ export function WengineSwapModal({
   }
   const [swapWengineId, setSwapWengineId] = useState('')
 
+  console.log(swapWengineId)
+
   //TODO: This should be replaced with CompareBuildWrapper
   if (swapWengineId) {
     onChangeId(swapWengineId)
