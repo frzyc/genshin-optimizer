@@ -188,7 +188,7 @@ export class Solver {
     // Invert max constraints for pruning
     const constraints = [
       -Infinity,
-      this.statFilters.map((filter) =>
+      ...this.statFilters.map((filter) =>
         filter.isMax ? filter.value * -1 : filter.value
       ),
     ]
