@@ -7,7 +7,14 @@ import {
   type Tag as BaseTag,
 } from '@genshin-optimizer/game-opt/engine'
 import type { AnyNode } from '@genshin-optimizer/pando/engine'
-import type { DamageType, Dst, Src, TagMapNodeEntry } from '.'
+import type {
+  Attribute,
+  DamageType,
+  Dst,
+  SkillType,
+  Src,
+  TagMapNodeEntry,
+} from '.'
 import {
   attributes,
   damageTypes,
@@ -29,7 +36,12 @@ export const fixedTags = {
   damageType1: damageTypes,
   damageType2: damageTypes,
 }
-export type Tag = BaseTag<Src, Dst, Sheet>
+export type Tag = BaseTag<Src, Dst, Sheet> & {
+  attribute?: Attribute
+  skillType?: SkillType
+  damageType1?: DamageType
+  damageType2?: DamageType
+}
 
 export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
   override add(
@@ -39,10 +51,10 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
     if (
       !force &&
       this.tag.q === 'dmg_' &&
-      !this.tag['attribute'] &&
-      !this.tag['skillType'] &&
-      !this.tag['damageType1'] &&
-      !this.tag['damageType2']
+      !this.tag.attribute &&
+      !this.tag.skillType &&
+      !this.tag.damageType1 &&
+      !this.tag.damageType2
     ) {
       throw new Error(
         'Tried to add to `dmg_` without optional modifier, use `common_dmg_` instead'
