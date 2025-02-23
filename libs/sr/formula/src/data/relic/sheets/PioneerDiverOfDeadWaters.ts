@@ -17,7 +17,12 @@ const dm = mappedStats.relic[key]
 const relicCount = own.common.count.sheet(key)
 
 const { affectedByDebuff, wearerDebuff } = allBoolConditionals(key)
-const { debuffCount } = allNumConditionals(key, true, 2, 3)
+const { debuffCount } = allNumConditionals(
+  key,
+  true,
+  dm[4].debuffThreshold1,
+  dm[4].debuffThreshold2
+)
 
 const sheet = registerRelic(
   key,

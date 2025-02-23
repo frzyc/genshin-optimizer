@@ -487,4 +487,24 @@ describe('Relic sheets test', () => {
     // Base + 4 set bonus
     expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 2 * 0.12)
   })
+
+  it('PrisonerInDeepConfinement', () => {
+    const data = testCharacterData('PrisonerInDeepConfinement')
+    data.push(
+      cond(
+        'PrisonerInDeepConfinement',
+        conditionals.PrisonerInDeepConfinement.dotCount.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12)
+    expect(calc.compute(enemy.common.defIgn_).val).toBeCloseTo(3 * 0.06)
+  })
 })

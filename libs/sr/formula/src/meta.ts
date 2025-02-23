@@ -2206,24 +2206,13 @@ export const conditionals = {
     },
   },
   PrisonerInDeepConfinement: {
-    boolConditional: {
+    dotCount: {
       sheet: 'PrisonerInDeepConfinement',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'numConditional',
+      name: 'dotCount',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   Qingque: {
@@ -14933,37 +14922,15 @@ export const buffs = {
     },
   },
   PrisonerInDeepConfinement: {
-    enemy_defIgn_: {
+    set4_defIgn_: {
       sheet: 'PrisonerInDeepConfinement',
-      name: 'enemy_defIgn_',
+      name: 'set4_defIgn_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defIgn_',
         sheet: 'PrisonerInDeepConfinement',
-        name: 'enemy_defIgn_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PrisonerInDeepConfinement',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PrisonerInDeepConfinement',
-        name: 'team_dmg_',
+        name: 'set4_defIgn_',
       },
     },
   },
