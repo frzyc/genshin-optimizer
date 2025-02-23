@@ -128,6 +128,7 @@ export const ownTag = {
     lvl: iso,
     attribute: iso,
     specialty: iso,
+    faction: iso,
     promotion: iso,
     mindscape: iso,
     basic: agg,

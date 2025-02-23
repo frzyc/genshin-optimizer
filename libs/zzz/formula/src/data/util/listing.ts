@@ -1,6 +1,9 @@
 import {
+  allAttributeKeys,
   allCharacterKeys,
   allDiscSetKeys,
+  allFactionKeys,
+  allSpecialityKeys,
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -44,13 +47,7 @@ export const nonFlatAndPercentStats = stats.filter(
     !flatAndPercentStats.flatMap((stat) => [stat, `${stat}_`]).includes(stat)
 )
 
-export const attributes = [
-  'fire',
-  'electric',
-  'ice',
-  'physical',
-  'ether',
-] as const
+export const attributes = [...allAttributeKeys] as const
 
 export const damageTypes = [
   'basic',
@@ -94,6 +91,11 @@ export const sheets = [
 ] as const
 
 export const members = [...allCharacterKeys] as const
+
+export const specialties = [...allSpecialityKeys] as const
+
+export const factions = [...allFactionKeys] as const
+
 export type Stat = (typeof stats)[number]
 export type Attribute = (typeof attributes)[number]
 export type DamageType = (typeof damageTypes)[number]
@@ -102,6 +104,8 @@ export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
 export type Src = Member
 export type Dst = Member | null
+export type Specialty = (typeof specialties)[number]
+export type Faction = (typeof factions)[number]
 
 export function isMember(x: string): x is Member {
   return members.includes(x as Member)

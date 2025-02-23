@@ -11,16 +11,20 @@ import type {
   Attribute,
   DamageType,
   Dst,
+  Faction,
   SkillType,
+  Specialty,
   Src,
   TagMapNodeEntry,
 } from '.'
 import {
   attributes,
   damageTypes,
+  factions,
   members,
   sheets,
   skillTypes,
+  specialties,
   type Sheet,
 } from './listing'
 
@@ -35,12 +39,19 @@ export const fixedTags = {
   skillType: skillTypes,
   damageType1: damageTypes,
   damageType2: damageTypes,
+
+  // For `count`
+  specialty: specialties,
+  faction: factions,
 }
 export type Tag = BaseTag<Src, Dst, Sheet> & {
   attribute?: Attribute
   skillType?: SkillType
   damageType1?: DamageType
   damageType2?: DamageType
+
+  specialty?: Specialty
+  faction?: Faction
 }
 
 export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
@@ -197,6 +208,17 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
       super.with('damageType1', 'elemental'),
       super.with('damageType2', 'elemental'),
     ]
+  }
+
+  // For `count` usage, use lighter footprint so it doesn't pollute autocomplete
+  // Specialty
+  withSpecialty(specialty: Specialty): Read {
+    return super.with('specialty', specialty)
+  }
+
+  // Faction
+  withFaction(faction: Faction): Read {
+    return super.with('faction', faction)
   }
 }
 
