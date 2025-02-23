@@ -75,7 +75,7 @@ export const skillTypes = [
   'dodgeSkill',
   'specialSkill',
   'chainSkill',
-  'assistSkill'
+  'assistSkill',
 ] as const
 
 export const sheets = [
