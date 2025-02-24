@@ -1458,13 +1458,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  IzumoGenseiAndTakamaDivineRealm: {
-    allySamePath: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'allySamePath',
-      type: 'bool',
-    },
-  },
   Jade: {
     boolConditional: { sheet: 'Jade', name: 'boolConditional', type: 'bool' },
     listConditional: {

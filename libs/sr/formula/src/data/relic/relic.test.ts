@@ -71,7 +71,7 @@ function testTeamData(
   otherCharData: TagMapNodeEntries = []
 ) {
   const data: TagMapNodeEntries = [
-    ...teamData(['Seele', 'Boothill']),
+    ...teamData(['Seele', 'SilverWolf']),
     ...withMember(
       'Seele',
       ...charTagMapNodeEntries(
@@ -93,12 +93,12 @@ function testTeamData(
       ...otherCharData
     ),
     ...withMember(
-      'Boothill',
+      'SilverWolf',
       ...charTagMapNodeEntries(
         {
           level: 80,
           ascension: 6,
-          key: 'Boothill',
+          key: 'SilverWolf',
           eidolon: 0,
           basic: 0,
           skill: 0,
@@ -399,13 +399,6 @@ describe('Relic sheets test', () => {
 
   it('IzumoGenseiAndTakamaDivineRealm', () => {
     const data = testCharacterData('IzumoGenseiAndTakamaDivineRealm')
-    data.push(
-      cond(
-        'IzumoGenseiAndTakamaDivineRealm',
-        conditionals.IzumoGenseiAndTakamaDivineRealm.allySamePath.name,
-        1
-      )
-    )
     const calc = new Calculator(
       keys,
       values,
@@ -517,16 +510,16 @@ describe('Relic sheets test', () => {
       values,
       compileTagMapValues(keys, data)
     ).withTag({ src: 'Seele', dst: 'Seele' })
-    const calcBoothill = new Calculator(
+    const calcSilverWolf = new Calculator(
       keys,
       values,
       compileTagMapValues(keys, data)
-    ).withTag({ src: 'Seele', dst: null })
+    ).withTag({ src: 'SilverWolf', dst: 'SilverWolf' })
 
     expect(calcSeele.compute(own.final.enerRegen_).val).toBeCloseTo(0.05)
     // Buff applies to other characters with same path
     expect(calcSeele.compute(own.final.common_dmg_).val).toBeCloseTo(0)
-    expect(calcBoothill.compute(own.final.common_dmg_).val).toBeCloseTo(0.1)
+    expect(calcSilverWolf.compute(own.final.common_dmg_).val).toBeCloseTo(0.1)
   })
 
   it('PioneerDiverOfDeadWaters', () => {
