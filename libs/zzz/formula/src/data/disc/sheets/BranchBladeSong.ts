@@ -17,7 +17,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_passive',
     ownBuff.combat.crit_dmg_.add(
-      cmpGE(discCount, 4, cmpGE(own.initial.anomMas, 115, 0.3))
+      cmpGE(discCount, 4, cmpGE(own.final.anomMas, 115, 0.3))
     )
   ),
   // Conditional buffs
