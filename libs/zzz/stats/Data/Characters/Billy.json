@@ -3,6 +3,7 @@
   "rarity": "A",
   "attribute": "physical",
   "specialty": "attack",
+  "faction": "CunningHares",
   "fullname": "Billy Kid",
   "stats": {
     "atk_base": 113,

@@ -1,6 +1,7 @@
 import type {
   AttributeKey,
   CharacterRarityKey,
+  FactionKey,
   SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -53,6 +54,17 @@ export const specialityMap: Record<number, SpecialityKey> = {
   4: 'support',
   5: 'defense',
 } as const
+export const factionMap: Record<number, FactionKey> = {
+  0: 'RandomPlay',
+  1: 'CunningHares',
+  2: 'VictoriaHousekeepingCo',
+  3: 'BelebogHeavyIndustries',
+  4: 'SonsOfCalydon',
+  5: 'ObolSquad',
+  6: 'HollowSpecialOoperationsSection6',
+  7: 'CriminalInvestigationSpecialResponseTeam',
+  8: 'StarsOfLyra',
+}
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {
   3: 'A',

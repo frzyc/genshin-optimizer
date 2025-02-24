@@ -22,14 +22,14 @@ export default async function runExecutor(
   const formulas = extractFormulaMetadata(data, (tag: Tag, value) => {
     if (
       // sheet-specific
-      tag.sheet != 'agg' &&
+      tag.sheet !== 'agg' &&
       tag.sheet !== 'disc' &&
       tag.sheet !== 'wengine' &&
       // formula listing
-      tag.qt == 'listing' &&
-      tag.q == 'formulas' &&
+      tag.qt === 'listing' &&
+      tag.q === 'formulas' &&
       // pattern from `registerFormula`
-      value.op == 'tag' &&
+      value.op === 'tag' &&
       'name' in value.tag &&
       'q' in value.tag
     ) {
@@ -42,16 +42,18 @@ export default async function runExecutor(
   const buffs = extractFormulaMetadata(data, (tag: Tag, value) => {
     if (
       // sheet-specific
-      tag.sheet != 'agg' &&
+      tag.sheet !== 'agg' &&
       tag.sheet !== 'disc' &&
       tag.sheet !== 'wengine' &&
       // formula listing
       tag.qt == 'listing' &&
-      tag.q == 'buffs' &&
+      tag.q === 'buffs' &&
       // pattern from `registerBuffs`
-      value.op == 'tag' &&
+      value.op === 'tag' &&
       'name' in value.tag &&
-      'q' in value.tag
+      'q' in value.tag &&
+      // Ignore double listings for damageType
+      !(!value.tag['damageType1'] && value.tag['damageType2'] !== undefined)
     ) {
       const sheet = tag.sheet!
       const name = value.tag['name']!

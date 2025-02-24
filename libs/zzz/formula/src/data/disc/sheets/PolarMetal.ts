@@ -23,9 +23,9 @@ const sheet = registerDisc(
     )
   ),
   registerBuff(
-    'set4_dodge_dmg_',
+    'set4_dash_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
-      'dodge',
+      'dash',
       cmpGE(discCount, 4, prod(0.2, freeze_shatter.ifOn(2, 1)))
     )
   )
