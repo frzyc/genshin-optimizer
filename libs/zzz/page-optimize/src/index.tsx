@@ -3,6 +3,7 @@ import {
   CardThemed,
   DropdownButton,
   NumberInputLazy,
+  TextFieldLazy,
   useScrollRef,
 } from '@genshin-optimizer/common/ui'
 import {
@@ -285,7 +286,8 @@ function CharacterSection({
     },
     [character, database.chars]
   )
-
+  const charMetaDesc =
+    locationKey && database.charMeta.get(locationKey).description
   const sheet = character && wengineSheets[character.wengineKey]
 
   const wengineCondstats = useMemo(
@@ -294,6 +296,14 @@ function CharacterSection({
       sheet?.getStats &&
       sheet.getStats(character.conditionals, baseStats),
     [baseStats, character, sheet]
+  )
+
+  const setDescription = useCallback(
+    (description: string | undefined) => {
+      if (!locationKey || !description) return
+      database.charMeta.set(locationKey, { description: description })
+    },
+    [database.charMeta, locationKey]
   )
 
   return (
@@ -444,6 +454,24 @@ function CharacterSection({
               <StatsDisplay stats={wengineCondstats} />
             </CardContent>
           )}
+        </CardThemed>
+        <CardThemed>
+          <CardContent>
+            <Typography variant="h6" marginBottom={'12px'}>
+              Team Buffs Notes
+            </Typography>
+            <TextFieldLazy
+              label={'Team buffs'}
+              placeholder={'Some notes on how you play your character'}
+              value={charMetaDesc}
+              disabled={!locationKey}
+              onChange={(value) => setDescription(value)}
+              autoFocus
+              multiline
+              minRows={5}
+              fullWidth={true}
+            />
+          </CardContent>
         </CardThemed>
         {character && <BuildDisplay discIds={discIds} baseStats={baseStats} />}
       </Box>

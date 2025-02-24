@@ -10,6 +10,11 @@ import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 
 export type Constraints = Record<string, { value: number; isMax: boolean }>
 export type Stats = Record<string, number>
+
+export interface ICharMeta {
+  description: string
+}
+
 export interface IDbCharacter extends ICharacter {
   stats: Stats
   formulaKey: FormulaKey
@@ -26,7 +31,6 @@ export interface IDbCharacter extends ICharacter {
   conditionals: Partial<Record<CondKey, number>>
   levelLow: number
   levelHigh: number
-  teamBuffNotes: string
 }
 
 export interface ICachedCharacter extends IDbCharacter {
