@@ -52,7 +52,7 @@ export const allFactionKeys = [
   'CriminalInvestigationSpecialResponseTeam',
   'SonsOfCalydon',
   'HollowSpecialOoperationsSection6',
-  'StarsOfLyra'
+  'StarsOfLyra',
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 
