@@ -52,12 +52,9 @@ export class Solver {
     this.setProgress = setProgress
 
     // Spawn a parent worker to compile nodes, split/filter relics and spawn child workers for calculating results
-    this.worker = new Worker(
-      new URL('../../../game-opt/solver/src/parentWorker.ts', import.meta.url),
-      {
-        type: 'module',
-      }
-    )
+    this.worker = new Worker(new URL('./parentWorker.ts', import.meta.url), {
+      type: 'module',
+    })
   }
 
   async optimize() {
