@@ -5,10 +5,10 @@
   "desc3": "This damage-type W-Engine boasts a built-in current transformer, and automatically attracts electrically sensitive objects around the operator and deals additional damage to them.",
   "phase": "Kiss of Death",
   "phaseDescs": [
-    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>10%</color> and they deal an additional <color=#2BAD00>15%</color> more DMG to the target.",
-    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>11.5%</color> and they deal an additional <color=#2BAD00>17.5%</color> more DMG to the target.",
-    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>13%</color> and they deal an additional <color=#2BAD00>20%</color> more DMG to the target.",
-    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>14.5%</color> and they deal an additional <color=#2BAD00>22.5%</color> more DMG to the target.",
-    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>16%</color> and they deal an additional <color=#2BAD00>25%</color> more DMG to the target."
+    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <ct color=#2BAD00>10%</ct> and they deal an additional <ct color=#2BAD00>15%</ct> more DMG to the target.",
+    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <ct color=#2BAD00>11.5%</ct> and they deal an additional <ct color=#2BAD00>17.5%</ct> more DMG to the target.",
+    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <ct color=#2BAD00>13%</ct> and they deal an additional <ct color=#2BAD00>20%</ct> more DMG to the target.",
+    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <ct color=#2BAD00>14.5%</ct> and they deal an additional <ct color=#2BAD00>22.5%</ct> more DMG to the target.",
+    "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <ct color=#2BAD00>16%</ct> and they deal an additional <ct color=#2BAD00>25%</ct> more DMG to the target."
   ]
 }

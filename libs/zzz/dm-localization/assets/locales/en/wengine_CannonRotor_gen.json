@@ -5,10 +5,10 @@
   "desc3": "A high-performance supercomputing W-Engine, capable of collecting real-time battlefield data and equipped with mini cannons.",
   "phase": "Oversized Barrel",
   "phaseDescs": [
-    "Increases ATK by <color=#2BAD00>7.5%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>8</color>s.",
-    "Increases ATK by <color=#2BAD00>8.6%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7.5</color>s.",
-    "Increases ATK by <color=#2BAD00>9.7%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7</color>s.",
-    "Increases ATK by <color=#2BAD00>10.8%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6.5</color>s.",
-    "Increases ATK by <color=#2BAD00>12%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6</color>s."
+    "Increases ATK by <ct color=#2BAD00>7.5%</ct>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <ct color=#2BAD00>8</ct>s.",
+    "Increases ATK by <ct color=#2BAD00>8.6%</ct>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <ct color=#2BAD00>7.5</ct>s.",
+    "Increases ATK by <ct color=#2BAD00>9.7%</ct>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <ct color=#2BAD00>7</ct>s.",
+    "Increases ATK by <ct color=#2BAD00>10.8%</ct>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <ct color=#2BAD00>6.5</ct>s.",
+    "Increases ATK by <ct color=#2BAD00>12%</ct>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <ct color=#2BAD00>6</ct>s."
   ]
 }
