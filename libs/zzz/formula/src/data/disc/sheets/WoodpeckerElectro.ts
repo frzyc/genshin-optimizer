@@ -7,7 +7,7 @@ const key: DiscSetKey = 'WoodpeckerElectro'
 
 const discCount = own.common.count.sheet(key)
 
-const { crit_basic_dodge_ex } = allNumConditionals(key, true, 1, 3)
+const { crit_basic_dodge_ex } = allNumConditionals(key, true, 0, 3)
 
 const sheet = registerDisc(
   key,

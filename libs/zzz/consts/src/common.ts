@@ -15,6 +15,7 @@ export const otherStatKeys = [
   'enemyRes_', // Enemy Resistance
   'enemyResRed_', // Enemy Resistance Reduction
   'enemyResIgn_', // Enemy Resistance Ignore
+  'common_dmg_', // Common DMG bonus
   'dmg_', // Bonus DMG
 
   // Other stats
@@ -104,6 +105,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomProf: 'Anomaly Proficiency',
   anomBuild_: 'Anomaly Buildup',
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => `${dmg_} DMG Bonus`),
+  common_dmg_: 'DMG Bonus',
   dmg_: 'DMG Bonus',
   charLvl: 'Character Level',
   enemyDef: 'Enemy DEF',

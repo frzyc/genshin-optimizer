@@ -5,10 +5,10 @@
   "desc3": "A damage-type W-Engine made of special Etheric matter. When its user is attacked, it builds up energy.",
   "phase": "Knight's Combo",
   "phaseDescs": [
-    "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>12%</color> for 12s.",
-    "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>13.8%</color> for 12s.",
-    "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>15.6%</color> for 12s.",
-    "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>17.4%</color> for 12s.",
-    "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>19.2%</color> for 12s."
+    "Launching a <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> increases the equipper's ATK by <ct color=#2BAD00>12%</ct> for 12s.",
+    "Launching a <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> increases the equipper's ATK by <ct color=#2BAD00>13.8%</ct> for 12s.",
+    "Launching a <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> increases the equipper's ATK by <ct color=#2BAD00>15.6%</ct> for 12s.",
+    "Launching a <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> increases the equipper's ATK by <ct color=#2BAD00>17.4%</ct> for 12s.",
+    "Launching a <ct color=#FFFFFF>Dodge Counter</ct> or <ct color=#FFFFFF>Quick Assist</ct> increases the equipper's ATK by <ct color=#2BAD00>19.2%</ct> for 12s."
   ]
 }

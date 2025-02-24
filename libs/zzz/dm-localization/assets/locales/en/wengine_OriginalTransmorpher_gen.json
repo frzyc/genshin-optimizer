@@ -5,10 +5,10 @@
   "desc3": "An epic W-Engine favored by Starlight Knight fans. Its high popularity and scarcity marketing strategy have caused an influx of knock-offs.",
   "phase": "Starlight Knight Flying Kick",
   "phaseDescs": [
-    "Increases Max HP by <color=#2BAD00>8%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 12s.",
-    "Increases Max HP by <color=#2BAD00>9%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>11.5%</color> for 12s.",
-    "Increases Max HP by <color=#2BAD00>10%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>13%</color> for 12s.",
-    "Increases Max HP by <color=#2BAD00>11%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>14.5%</color> for 12s.",
-    "Increases Max HP by <color=#2BAD00>12.5%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>16%</color> for 12s."
+    "Increases Max HP by <ct color=#2BAD00>8%</ct>. When attacked, the equipper's Impact is increased by <ct color=#2BAD00>10%</ct> for 12s.",
+    "Increases Max HP by <ct color=#2BAD00>9%</ct>. When attacked, the equipper's Impact is increased by <ct color=#2BAD00>11.5%</ct> for 12s.",
+    "Increases Max HP by <ct color=#2BAD00>10%</ct>. When attacked, the equipper's Impact is increased by <ct color=#2BAD00>13%</ct> for 12s.",
+    "Increases Max HP by <ct color=#2BAD00>11%</ct>. When attacked, the equipper's Impact is increased by <ct color=#2BAD00>14.5%</ct> for 12s.",
+    "Increases Max HP by <ct color=#2BAD00>12.5%</ct>. When attacked, the equipper's Impact is increased by <ct color=#2BAD00>16%</ct> for 12s."
   ]
 }

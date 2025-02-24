@@ -131,7 +131,7 @@ describe('Disc sheets test', () => {
   it('ChaoticMetal', () => {
     const data = testCharacterData('ChaoticMetal')
     data.push(
-      cond('ChaoticMetal', conditionals.ChaoticMetal.trigger_corruption.name, 1)
+      cond('ChaoticMetal', conditionals.ChaoticMetal.trigger_corruption.name, 6)
     )
     const calc = new Calculator(
       keys,
@@ -140,7 +140,9 @@ describe('Disc sheets test', () => {
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_.ether).val).toBeCloseTo(0.1) // 2p passive
-    expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.2 * 2)
+    expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(
+      0.5 + 0.2 + 0.055 * 6
+    )
   })
   it('FangedMetal', () => {
     const data = testCharacterData('FangedMetal')
@@ -317,7 +319,7 @@ describe('Disc sheets test', () => {
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.enerRegen_).val).toBeCloseTo(0.2) // 2p
-    expect(calc.compute(anby.combat.atk_).val).toBeCloseTo(0.15)
+    expect(calc.compute(anby.final.common_dmg_).val).toBeCloseTo(0.15)
   })
   it('ThunderMetal', () => {
     const data = testCharacterData('ThunderMetal')
