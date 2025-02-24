@@ -79,6 +79,42 @@ export class ParentWorker {
     detachedNodes = flatten(detachedNodes)
     detachedNodes = combineConst(detachedNodes)
 
+    const chunkedStatsBySlot = this.splitWork(equipmentStats, numWorkers)
+
+    // Spawn child workers to calculate builds
+    this.workers = range(1, numWorkers).map(this.spawnWorker)
+
+    // post initial progress
+    postMessage({
+      resultType: 'progress',
+      progress: {
+        numBuildsKept: 0,
+        numBuildsComputed: 0,
+      },
+    })
+
+    // Wait for all workers to finish optimizing
+    const results = await this.handleAllWorkers(
+      chunkedStatsBySlot,
+      detachedNodes,
+      constraints
+    )
+
+    // Send back results
+    postMessage({
+      resultType: 'done',
+      buildResults: results.sort((a, b) => b.value - a.value).slice(0, 10), // TODO: take numBuilds from opt UI
+    })
+  }
+
+  terminate() {
+    this.workers.forEach((w) => w.terminate())
+    postMessage({
+      resultType: 'terminated',
+    })
+  }
+
+  private splitWork(equipmentStats: EquipmentStats[][], numWorkers: number) {
     // Split work on the largest slot to reduce variance in work between workers
     const { largestSlot } = equipmentStats.reduce(
       ({ largestSlot, largestSize }, equips, currentSlot) =>
@@ -105,84 +141,65 @@ export class ParentWorker {
             equipmentStats[slot]
       )
     )
+    return chunkedStatsBySlot
+  }
 
-    // Spawn child workers to calculate builds
-    this.workers = range(1, numWorkers).map(
-    this.spawnWorker)
-
+  private async handleAllWorkers(
+    chunkedStatsBySlot: EquipmentStats[][][],
+    detachedNodes: NumTagFree[],
+    constraints: number[]
+  ) {
     let results: BuildResultByIndex[] = []
     let numBuildsComputed = 0
 
-    // post initial progress
-    postMessage({
-      resultType: 'progress',
-      progress: {
-        numBuildsKept: 0,
-        numBuildsComputed: 0,
-      },
-    })
-    // Wait for all workers to finish optimizing
-    await Promise.all(
-      this.workers.map((worker, index) => {
-        return new Promise<void>((res, rej) => {
-          // On worker completion, resolve promise
-          worker.onmessage = ({ data }: MessageEvent<ChildMessage>) => {
-            switch (data.resultType) {
-              case 'initialized':
-                // Worker is initialized; start optimizing
-                worker.postMessage({ command: 'start' })
-                break
-              case 'results':
-                numBuildsComputed += data.numBuildsComputed
-                results = results.concat(data.builds)
-                // Only sort and slice occasionally
-                if (results.length > MAX_BUILDS * 4) {
-                  results.sort((a, b) => b.value - a.value)
-                  results = results.slice(0, MAX_BUILDS)
-                }
-                postMessage({
-                  resultType: 'progress',
-                  progress: {
-                    numBuildsKept: Math.min(results.length, MAX_BUILDS),
-                    numBuildsComputed,
-                  },
-                })
-                // TODO: Send message to child workers with the lowest build so far.
-                // Then, children can automatically filter out any builds less than that.
-                break
-              case 'done':
-                res()
-                break
-              case 'err':
-                console.error(data)
-                rej()
-                break
-            }
+    function startAndHandleWorker(worker: Worker, index: number) {
+      return new Promise<void>((res, rej) => {
+        worker.onmessage = ({ data }: MessageEvent<ChildMessage>) => {
+          switch (data.resultType) {
+            case 'initialized':
+              // Worker is initialized; start optimizing
+              worker.postMessage({ command: 'start' })
+              break
+            case 'results':
+              numBuildsComputed += data.numBuildsComputed
+              results = results.concat(data.builds)
+              // Only sort and slice occasionally
+              if (results.length > MAX_BUILDS * 4) {
+                results.sort((a, b) => b.value - a.value)
+                results = results.slice(0, MAX_BUILDS)
+              }
+              postMessage({
+                resultType: 'progress',
+                progress: {
+                  numBuildsKept: Math.min(results.length, MAX_BUILDS),
+                  numBuildsComputed,
+                },
+              })
+              break
+            // On worker completion, resolve promise
+            case 'done':
+              res()
+              break
+            case 'err':
+              console.error(data)
+              rej()
+              break
           }
+        }
 
-          // Initialize worker
-          const message: ChildCommandInit = {
-            command: 'init',
-            equipmentStats: chunkedStatsBySlot[index],
-            detachedNodes,
-            constraints,
-          }
-          worker.postMessage(message)
-        })
+        // Initialize worker
+        const message: ChildCommandInit = {
+          command: 'init',
+          equipmentStats: chunkedStatsBySlot[index],
+          detachedNodes,
+          constraints,
+        }
+        worker.postMessage(message)
       })
-    )
+    }
 
-    // Send back results, which can take a few seconds
-    postMessage({
-      resultType: 'done',
-      buildResults: results.sort((a, b) => b.value - a.value).slice(0, 10), // TODO: take numBuilds from opt UI
-    })
-  }
+    await Promise.all(this.workers.map(startAndHandleWorker))
 
-  terminate() {
-    this.workers.forEach((w) => w.terminate())
-    postMessage({
-      resultType: 'terminated',
-    })
+    return results
   }
 }
