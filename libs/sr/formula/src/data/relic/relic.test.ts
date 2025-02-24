@@ -613,4 +613,18 @@ describe('Relic sheets test', () => {
     // Base + 2 set bonus
     expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.4)
   })
+
+  it('SpaceSealingStation', () => {
+    const data = testCharacterData('SpaceSealingStation', undefined, [
+      ownBuff.premod.spd.add(5),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12 + 0.12)
+  })
 })

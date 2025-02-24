@@ -2570,27 +2570,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  SpaceSealingStation: {
-    boolConditional: {
-      sheet: 'SpaceSealingStation',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SpaceSealingStation',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SpaceSealingStation',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Sparkle: {
     boolConditional: {
       sheet: 'Sparkle',
@@ -16727,37 +16706,15 @@ export const buffs = {
     },
   },
   SpaceSealingStation: {
-    enemy_defRed_: {
+    set2_atk_: {
       sheet: 'SpaceSealingStation',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SpaceSealingStation',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SpaceSealingStation',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'SpaceSealingStation',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SpaceSealingStation',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SpaceSealingStation',
-        name: 'team_dmg_',
+        name: 'set2_atk_',
       },
     },
   },
