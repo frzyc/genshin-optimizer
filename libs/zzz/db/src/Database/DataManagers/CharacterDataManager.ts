@@ -58,6 +58,7 @@ export class CharacterDataManager extends DataManager<
       chain,
       special,
       assist,
+      teamBuffNotes,
     } = obj as IDbCharacter
     const { level: rawLevel, promotion: rawAscension } = obj as IDbCharacter
 
@@ -139,6 +140,8 @@ export class CharacterDataManager extends DataManager<
     if (typeof conditionals !== 'object') conditionals = {}
     conditionals = objFilter(conditionals, (value) => typeof value === 'number')
 
+    if (typeof teamBuffNotes !== 'string') teamBuffNotes = ''
+
     const char: IDbCharacter = {
       key: characterKey,
       level: sanitizedLevel,
@@ -165,6 +168,7 @@ export class CharacterDataManager extends DataManager<
       special,
       assist,
       promotion,
+      teamBuffNotes,
     }
     return char
   }
@@ -347,5 +351,6 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     assist: 1,
     equippedDiscs: objKeyMap(allDiscSlotKeys, () => ''),
     equippedWengine: '',
+    teamBuffNotes: '',
   }
 }

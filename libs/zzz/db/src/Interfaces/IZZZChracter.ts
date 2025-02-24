@@ -26,6 +26,7 @@ export interface IDbCharacter extends ICharacter {
   conditionals: Partial<Record<CondKey, number>>
   levelLow: number
   levelHigh: number
+  teamBuffNotes: string
 }
 
 export interface ICachedCharacter extends IDbCharacter {

@@ -103,7 +103,7 @@ export function WengineSwapModal({
 
   const wengineIds = useMemo(() => {
     const filterFunc = filterFunction(
-      { speciality: wengineTypeKey, rarity, name: deferredSearchTerm },
+      { rarity, name: deferredSearchTerm },
       wengineFilterConfigs()
     )
     const sortFunc = sortFunction(
@@ -121,14 +121,7 @@ export function WengineSwapModal({
       wengineIds.unshift(wengineId) // add to beginnig
     }
     return dbDirty && wengineIds
-  }, [
-    wengineTypeKey,
-    rarity,
-    deferredSearchTerm,
-    database.wengines,
-    wengineId,
-    dbDirty,
-  ])
+  }, [rarity, deferredSearchTerm, database.wengines, wengineId, dbDirty])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],

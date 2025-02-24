@@ -1,4 +1,8 @@
-import { CardThemed, NumberInputLazy } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  NumberInputLazy,
+  TextFieldLazy,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr, isPercentStat } from '@genshin-optimizer/common/util'
 import type { LocationKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
@@ -6,8 +10,10 @@ import {
   unCondKeys,
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { Box, CardContent, Typography } from '@mui/material'
+import { useCallback } from 'react'
 const baseKeys = ['hp_base', 'atk_base', 'def_base'] as const
 const statKeys: StatKey[] = [
   'hp',
@@ -42,6 +48,8 @@ export default function BaseStatCard({
   baseStats: Stats
   setBaseStats: (baseStats: Stats) => void
 }) {
+  const { database } = useDatabaseContext()
+  const character = useCharacter(locationKey)
   const input = (key: string) => (
     <NumberInputLazy
       disabled={!locationKey}
@@ -62,6 +70,14 @@ export default function BaseStatCard({
       }}
     />
   )
+  const setCore = useCallback(
+    (teamBuffs: string | undefined) => {
+      if (!character || !teamBuffs) return
+      database.chars.set(character.key, { teamBuffNotes: teamBuffs })
+    },
+    [character, database.chars]
+  )
+
   return (
     <CardThemed>
       <CardContent>
@@ -80,6 +96,18 @@ export default function BaseStatCard({
         <Typography>Combat Buffs</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {unCondKeys.map((key) => input(key))}
+        </Box>
+        <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
+          <TextFieldLazy
+            label={'Team buffs'}
+            value={character?.teamBuffNotes}
+            disabled={!locationKey}
+            onChange={(value) => setCore(value)}
+            autoFocus
+            multiline
+            minRows={5}
+            fullWidth={true}
+          />
         </Box>
       </CardContent>
     </CardThemed>
