@@ -591,4 +591,26 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.dmg_.basic[0]).val).toBeCloseTo(0.2)
     expect(calc.compute(seele.final.dmg_.skill[0]).val).toBeCloseTo(0.2)
   })
+
+  it('SigoniaTheUnclaimedDesolation', () => {
+    const data = testCharacterData('SigoniaTheUnclaimedDesolation')
+    data.push(
+      cond(
+        'SigoniaTheUnclaimedDesolation',
+        conditionals.SigoniaTheUnclaimedDesolation.enemiesDefeated.name,
+        10
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Base + 2 set bonus
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.04)
+    // Base + 2 set bonus
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.4)
+  })
 })

@@ -2477,24 +2477,13 @@ export const conditionals = {
     },
   },
   SigoniaTheUnclaimedDesolation: {
-    boolConditional: {
+    enemiesDefeated: {
       sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'numConditional',
+      name: 'enemiesDefeated',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 10,
     },
   },
   SilverWolf: {
@@ -16429,37 +16418,15 @@ export const buffs = {
     },
   },
   SigoniaTheUnclaimedDesolation: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'team_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
   },
