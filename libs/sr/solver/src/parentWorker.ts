@@ -5,20 +5,22 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import type { ICachedLightCone, ICachedRelic } from '@genshin-optimizer/sr/db'
-import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
+import type {
+  BuildResultByIndex,
+  EquipmentStats,
+  ProgressResult,
+} from './common'
 import { MAX_BUILDS } from './common'
-import type { BuildResult, ProgressResult } from './solver'
 
 let workers: Worker[]
 
 export interface ParentCommandStart {
   command: 'start'
-  lightCones: ICachedLightCone[]
-  relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
+  lightConeStats: EquipmentStats[]
+  relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
   detachedNodes: NumTagFree[]
-  constraints: Array<{ value: number; isMax: boolean }>
+  constraints: number[]
   numWorkers: number
 }
 export interface ParentCommandTerminate {
@@ -35,7 +37,7 @@ export interface ParentMessageSending {
 }
 export interface ParentMessageDone {
   resultType: 'done'
-  buildResults: BuildResult[]
+  buildResults: BuildResultByIndex[]
 }
 export interface ParentMessageTerminated {
   resultType: 'terminated'
@@ -49,15 +51,6 @@ export type ParentMessage =
   | ParentMessageDone
   | ParentMessageTerminated
   | ParentMessageErr
-
-export type RelicStats = {
-  id: string
-  stats: Record<string, number>
-}
-export type LightConeStats = {
-  id: string
-  stats: Record<string, number>
-}
 
 // Get proper typings for posting a message back to main thread
 declare function postMessage(message: ParentMessage): void
@@ -86,8 +79,8 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
 }
 
 async function start({
-  lightCones,
-  relicsBySlot,
+  lightConeStats,
+  relicStatsBySlot,
   detachedNodes,
   constraints,
   numWorkers,
@@ -95,13 +88,9 @@ async function start({
   // Step 3: Optimize nodes, as needed
   detachedNodes = flatten(detachedNodes)
   detachedNodes = combineConst(detachedNodes)
-  const lightConeStats = lightCones.map(convertLightConeToStats)
-  const relicStatsBySlot = objKeyMap(allRelicSlotKeys, (slot) =>
-    relicsBySlot[slot].map(convertRelicToStats)
-  )
 
   // Split work on the largest slot to reduce variance in work between workers
-  const { largestSlot } = Object.entries(relicsBySlot).reduce(
+  const { largestSlot } = Object.entries(relicStatsBySlot).reduce(
     ({ largestSlot, largestSize }, [currentSlot, relics]) =>
       relics.length > largestSize
         ? {
@@ -112,20 +101,18 @@ async function start({
     { largestSlot: 'head' as RelicSlotKey, largestSize: -1 }
   )
   // Split work
-  const chunkedRelicStatsBySlot: Record<RelicSlotKey, RelicStats[]>[] = range(
-    0,
-    numWorkers - 1
-  ).map((worker) =>
-    objKeyMap(allRelicSlotKeys, (slot) =>
-      slot === largestSlot
-        ? // For largest slot, only give ~1/numWorkers amount of relics
-          relicStatsBySlot[slot].filter(
-            (_, index) => index % numWorkers === worker
-          )
-        : // For other slots, give all relics
-          relicStatsBySlot[slot]
+  const chunkedRelicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>[] =
+    range(0, numWorkers - 1).map((worker) =>
+      objKeyMap(allRelicSlotKeys, (slot) =>
+        slot === largestSlot
+          ? // For largest slot, only give ~1/numWorkers amount of relics
+            relicStatsBySlot[slot].filter(
+              (_, index) => index % numWorkers === worker
+            )
+          : // For other slots, give all relics
+            relicStatsBySlot[slot]
+      )
     )
-  )
 
   // Spawn child workers to calculate builds
   workers = range(1, numWorkers).map(
@@ -135,7 +122,7 @@ async function start({
       })
   )
 
-  let results: BuildResult[] = []
+  let results: BuildResultByIndex[] = []
   let numBuildsComputed = 0
 
   // post initial progress
@@ -210,33 +197,4 @@ function terminate() {
   postMessage({
     resultType: 'terminated',
   })
-}
-
-function convertRelicToStats(relic: ICachedRelic): RelicStats {
-  const { id, mainStatKey, level, rarity, setKey, substats } = relic
-  return {
-    id,
-    stats: {
-      [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
-      ...Object.fromEntries(
-        substats
-          .filter(({ key, value }) => key && value)
-          .map(({ key, value }) => [key, value])
-      ),
-      [setKey]: 1,
-    },
-  }
-}
-
-function convertLightConeToStats(lightCone: ICachedLightCone): LightConeStats {
-  const { id, key, level: lvl, ascension, superimpose } = lightCone
-  return {
-    id,
-    stats: {
-      lvl,
-      superimpose,
-      ascension,
-      [key]: 1,
-    },
-  }
 }
