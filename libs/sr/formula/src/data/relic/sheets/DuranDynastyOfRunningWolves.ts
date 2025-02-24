@@ -46,8 +46,8 @@ const sheet = registerRelic(
     cmpGE(relicCount, 4, 'unique', '')
   ),
   registerBuff(
-    'enemy_defIgn_',
-    enemyDebuff.common.defIgn_.add(cmpGE(relicCount, 4, numConditional)),
+    'enemy_defRed_',
+    enemyDebuff.common.defRed_.add(cmpGE(relicCount, 4, numConditional)),
     cmpGE(relicCount, 4, 'unique', '')
   )
 )

@@ -54,7 +54,7 @@ export function CharacterCard({
 }) {
   const calc =
     useSrCalcContext() ??
-    srCalculatorWithEntries(charTagMapNodeEntries(character))
+    srCalculatorWithEntries(charTagMapNodeEntries(character, 1))
 
   return (
     <Stack>

@@ -96,6 +96,7 @@ const stats: Record<Stat, Desc> = {
   heal_: agg,
   dmg_: agg,
   resPen_: agg,
+  defIgn_: agg,
   common_dmg_: agg,
   weakness_: agg,
   brEfficiency_: agg,
@@ -109,6 +110,7 @@ export const ownTag = {
     ele: iso,
     path: iso,
     ascension: iso,
+    teamPosition: iso,
     eidolon: iso,
     basic: agg,
     skill: agg,
@@ -120,7 +122,6 @@ export const ownTag = {
   lightCone: { lvl: iso, ascension: iso, superimpose: isoSum },
   common: {
     count: isoSum,
-    path: iso,
     critMode: fixed,
     cappedCrit_: iso,
   },
@@ -144,7 +145,6 @@ export const enemyTag = {
   common: {
     lvl: fixed,
     defRed_: agg,
-    defIgn_: agg,
     res: agg,
     maxToughness: iso,
     isBroken: iso,

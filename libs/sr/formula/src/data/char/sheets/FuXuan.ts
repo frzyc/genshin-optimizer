@@ -46,6 +46,6 @@ const sheet = register(
     'team_dmg_',
     teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
   ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.defIgn_.add(numConditional))
+  registerBuff('enemy_defRed_', enemyDebuff.common.defRed_.add(numConditional))
 )
 export default sheet

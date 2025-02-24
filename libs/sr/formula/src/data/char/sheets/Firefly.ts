@@ -3,8 +3,6 @@ import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
   customDmg,
   customHeal,
   enemyDebuff,
@@ -13,7 +11,6 @@ import {
   percent,
   register,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag, isBonusAbilityActive } from '../util'
 
@@ -26,8 +23,6 @@ const { char } = own
 
 // TODO: Add conditionals
 const { ultInCompleteCombustion, techFireWeakness } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 function skillDmg(name: string, baseMult: number, addlMult: number[]) {
   // (baseMult * capped break effect + addlMult)
@@ -84,8 +79,6 @@ const sheet = register(
     ultInCompleteCombustion.ifOn(
       percent(subscript(char.talent, dm.talent.eff_res_))
     )
-  ),
-  teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
-  enemyDebuff.common.defIgn_.add(numConditional)
+  )
 )
 export default sheet
