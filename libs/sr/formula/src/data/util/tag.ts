@@ -110,6 +110,7 @@ export const ownTag = {
     ele: iso,
     path: iso,
     ascension: iso,
+    teamPosition: iso,
     eidolon: iso,
     basic: agg,
     skill: agg,

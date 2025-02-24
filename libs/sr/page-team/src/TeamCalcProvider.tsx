@@ -39,10 +39,10 @@ export function TeamCalcProvider({
   children: ReactNode
 }) {
   const team = useTeam(teamId)!
-  const member0 = useCharacterAndEquipment(team.teamMetadata[0])
-  const member1 = useCharacterAndEquipment(team.teamMetadata[1])
-  const member2 = useCharacterAndEquipment(team.teamMetadata[2])
-  const member3 = useCharacterAndEquipment(team.teamMetadata[3])
+  const member0 = useCharacterAndEquipment(team.teamMetadata, 0)
+  const member1 = useCharacterAndEquipment(team.teamMetadata, 1)
+  const member2 = useCharacterAndEquipment(team.teamMetadata, 2)
+  const member3 = useCharacterAndEquipment(team.teamMetadata, 3)
 
   const calc = useMemo(
     () =>
@@ -90,7 +90,11 @@ export function TeamCalcProvider({
   return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
 }
 
-function useCharacterAndEquipment(meta: TeammateDatum | undefined) {
+function useCharacterAndEquipment(
+  metas: (TeammateDatum | undefined)[],
+  index: number
+) {
+  const meta = metas[index]
   const character = useCharacter(meta?.characterKey)
   const buildTc = useBuildTc(meta?.buildTcId)
   const build = useBuild(meta?.buildId)
@@ -129,9 +133,9 @@ function useCharacterAndEquipment(meta: TeammateDatum | undefined) {
     if (!character) return []
     return withMember(
       character.key,
-      ...charTagMapNodeEntries(character),
+      ...charTagMapNodeEntries(character, index + 1),
       ...lcTagEntries,
       ...relicTagEntries
     )
-  }, [character, lcTagEntries, relicTagEntries])
+  }, [character, index, lcTagEntries, relicTagEntries])
 }

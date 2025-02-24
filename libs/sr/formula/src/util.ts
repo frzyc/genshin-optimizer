@@ -36,8 +36,8 @@ export function withMember(
   return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
 }
 
-export function charTagMapNodeEntries(data: ICharacter): TagMapNodeEntries {
-  const { lvl, basic, skill, ult, talent, ascension, eidolon } = own.char
+export function charTagMapNodeEntries(data: ICharacter, position: number): TagMapNodeEntries {
+  const { lvl, basic, skill, ult, talent, ascension, eidolon, teamPosition } = own.char
   const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
   return [
@@ -51,6 +51,7 @@ export function charTagMapNodeEntries(data: ICharacter): TagMapNodeEntries {
     talent.add(data.talent),
     ascension.add(data.ascension),
     eidolon.add(data.eidolon),
+    teamPosition.add(position),
     ...allStatBoostKeys.map((index) =>
       ownBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
     ),
