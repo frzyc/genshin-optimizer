@@ -6,7 +6,7 @@ export const conditionals = {
       name: 'astral',
       type: 'num',
       int_only: true,
-      min: 1,
+      min: 0,
       max: 3,
     },
   },
@@ -28,7 +28,10 @@ export const conditionals = {
     trigger_corruption: {
       sheet: 'ChaoticMetal',
       name: 'trigger_corruption',
-      type: 'bool',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 6,
     },
   },
   FangedMetal: {
@@ -89,7 +92,7 @@ export const conditionals = {
       name: 'crit_basic_dodge_ex',
       type: 'num',
       int_only: true,
-      min: 1,
+      min: 0,
       max: 3,
     },
   },
@@ -1144,7 +1147,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'combat',
-        q: 'atk_',
+        q: 'common_dmg_',
         sheet: 'SwingJazz',
         name: 'set4_cond_chain_or_ult',
       },

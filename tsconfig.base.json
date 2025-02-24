@@ -180,6 +180,7 @@
         "libs/zzz/dm-localization/src/index.ts"
       ],
       "@genshin-optimizer/zzz/formula": ["libs/zzz/formula/src/index.ts"],
+      "@genshin-optimizer/zzz/formula-ui": ["libs/zzz/formula-ui/src/index.ts"],
       "@genshin-optimizer/zzz/i18n": ["libs/zzz/i18n/src/index.ts"],
       "@genshin-optimizer/zzz/i18n-node": ["libs/zzz/i18n-node/src/index.ts"],
       "@genshin-optimizer/zzz/localization": [
@@ -194,6 +195,9 @@
       "@genshin-optimizer/zzz/page-home": ["libs/zzz/page-home/src/index.tsx"],
       "@genshin-optimizer/zzz/page-optimize": [
         "libs/zzz/page-optimize/src/index.tsx"
+      ],
+      "@genshin-optimizer/zzz/page-optimize-pando": [
+        "libs/zzz/page-optimize-pando/src/index.tsx"
       ],
       "@genshin-optimizer/zzz/page-settings": [
         "libs/zzz/page-settings/src/index.tsx"
