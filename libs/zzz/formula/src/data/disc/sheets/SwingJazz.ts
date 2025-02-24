@@ -17,7 +17,9 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set4_cond_chain_or_ult',
-    teamBuff.combat.atk_.add(cmpGE(discCount, 4, chain_or_ult.ifOn(0.15)))
+    teamBuff.combat.common_dmg_.add(
+      cmpGE(discCount, 4, chain_or_ult.ifOn(0.15))
+    )
   )
 )
 export default sheet

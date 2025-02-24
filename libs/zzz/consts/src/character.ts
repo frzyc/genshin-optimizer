@@ -43,6 +43,19 @@ export const allSpecialityKeys = [
 ] as const
 export type SpecialityKey = (typeof allSpecialityKeys)[number]
 
+export const allFactionKeys = [
+  'RandomPlay',
+  'CunningHares',
+  'BelebogHeavyIndustries',
+  'VictoriaHousekeepingCo',
+  'ObolSquad',
+  'CriminalInvestigationSpecialResponseTeam',
+  'SonsOfCalydon',
+  'HollowSpecialOoperationsSection6',
+  'StarsOfLyra',
+] as const
+export type FactionKey = (typeof allFactionKeys)[number]
+
 export const allAttackTypeKeys = ['slash', 'strike', 'pierce'] as const
 export type AttackTypeKey = (typeof allAttackTypeKeys)[number]
 

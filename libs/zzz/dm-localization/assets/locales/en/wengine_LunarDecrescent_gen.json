@@ -5,10 +5,10 @@
   "desc3": "A W-Engine with excellent sonic and thermal energy usage, capable of hitting its target with a double whammy.",
   "phase": "Waning Moon",
   "phaseDescs": [
-    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>15%</color> for 6s.",
-    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>17.5%</color> for 6s.",
-    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>20%</color> for 6s.",
-    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>22.5%</color> for 6s.",
-    "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>25%</color> for 6s."
+    "Launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> increases the equipper's DMG by <ct color=#2BAD00>15%</ct> for 6s.",
+    "Launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> increases the equipper's DMG by <ct color=#2BAD00>17.5%</ct> for 6s.",
+    "Launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> increases the equipper's DMG by <ct color=#2BAD00>20%</ct> for 6s.",
+    "Launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> increases the equipper's DMG by <ct color=#2BAD00>22.5%</ct> for 6s.",
+    "Launching a <ct color=#FFFFFF>Chain Attack</ct> or <ct color=#FFFFFF>Ultimate</ct> increases the equipper's DMG by <ct color=#2BAD00>25%</ct> for 6s."
   ]
 }

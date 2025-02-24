@@ -83,7 +83,7 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
     if (!character) return []
     return withMember(
       character.key,
-      ...charTagMapNodeEntries(character),
+      ...charTagMapNodeEntries(character, 1),
       ...lcTagEntries,
       ...relicTagEntries
     )

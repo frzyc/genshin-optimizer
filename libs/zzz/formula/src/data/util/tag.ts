@@ -1,3 +1,4 @@
+import { objFilterKeys } from '@genshin-optimizer/common/util'
 import {
   createAllBoolConditionals,
   createAllListConditionals,
@@ -10,6 +11,7 @@ import {
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
 import type { Dst, Sheet, Src, Stat } from './listing'
+import { flatAndPercentStats, nonFlatAndPercentStats } from './listing'
 import type { Read, Tag } from './read'
 import { reader } from './read'
 
@@ -98,9 +100,14 @@ const stats: Record<Stat, Desc> = {
   anomMas_: agg,
   dmg_: agg,
   common_dmg_: agg,
+  buff_: agg,
   resIgn_: agg,
   shield_: agg,
 } as const
+const finalStats = objFilterKeys(stats, [
+  ...flatAndPercentStats,
+  ...nonFlatAndPercentStats,
+])
 export const ownTag = {
   base: {
     atk: agg,
@@ -116,11 +123,12 @@ export const ownTag = {
   },
   initial: stats,
   combat: stats,
-  final: stats,
+  final: finalStats,
   char: {
     lvl: iso,
     attribute: iso,
     specialty: iso,
+    faction: iso,
     promotion: iso,
     mindscape: iso,
     basic: agg,
@@ -163,6 +171,7 @@ export const enemyTag = {
     dmgInc_: agg,
     dmgRed_: agg,
     stun_: agg,
+    unstun_: agg,
     isStunned: iso,
     anomTimePassed: iso,
   },

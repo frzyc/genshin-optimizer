@@ -19,7 +19,7 @@ const sheet = registerDisc(
   ),
   registerBuff(
     'set4_dash_daze_',
-    enemyDebuff.common.stun_.addWithDmgType('dodge', cmpGE(discCount, 4, 0.2))
+    enemyDebuff.common.stun_.addWithDmgType('dash', cmpGE(discCount, 4, 0.2))
   ),
   registerBuff(
     'set4_dodgeCounter_daze_',

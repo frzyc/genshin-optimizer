@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "attack",
+  "faction": "StarsOfLyra",
   "fullname": "Evelyn Chevalier",
   "stats": {
     "atk_base": 134,

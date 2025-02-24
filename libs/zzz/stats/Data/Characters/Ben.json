@@ -3,6 +3,7 @@
   "rarity": "A",
   "attribute": "fire",
   "specialty": "defense",
+  "faction": "BelebogHeavyIndustries",
   "fullname": "Ben Bigger",
   "stats": {
     "atk_base": 94,

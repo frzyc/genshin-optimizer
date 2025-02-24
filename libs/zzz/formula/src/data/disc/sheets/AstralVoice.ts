@@ -3,7 +3,7 @@ import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allNumConditionals, own, registerBuff, teamBuff } from '../../util'
 import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'AstralVoice'
-const { astral } = allNumConditionals(key, true, 1, 3)
+const { astral } = allNumConditionals(key, true, 0, 3)
 
 const discCount = own.common.count.sheet(key)
 const sheet = registerDisc(

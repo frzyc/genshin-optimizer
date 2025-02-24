@@ -119,6 +119,7 @@
       "rarity": "A",
       "attribute": "electric",
       "specialty": "stun",
+      "faction": "CunningHares",
       "fullname": "Anby Demara",
       "stats": {
         "atk_base": 95,
@@ -1202,6 +1203,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "attack",
+      "faction": "CunningHares",
       "fullname": "Nekomiya Mana",
       "stats": {
         "atk_base": 131,
@@ -2317,6 +2319,7 @@
       "rarity": "A",
       "attribute": "ether",
       "specialty": "support",
+      "faction": "CunningHares",
       "fullname": "Nicole Demara",
       "stats": {
         "atk_base": 93,
@@ -4133,6 +4136,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "attack",
+      "faction": "ObolSquad",
       "fullname": "Soldier 11",
       "stats": {
         "atk_base": 128,
@@ -5389,6 +5393,7 @@
       "rarity": "A",
       "attribute": "physical",
       "specialty": "attack",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Corin Wickes",
       "stats": {
         "atk_base": 116,
@@ -6687,6 +6692,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "defense",
+      "faction": "SonsOfCalydon",
       "fullname": "Caesar King",
       "stats": {
         "atk_base": 101,
@@ -8143,6 +8149,7 @@
       "rarity": "A",
       "attribute": "physical",
       "specialty": "attack",
+      "faction": "CunningHares",
       "fullname": "Billy Kid",
       "stats": {
         "atk_base": 113,
@@ -9310,6 +9317,7 @@
       "rarity": "S",
       "attribute": "ice",
       "specialty": "anomaly",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Hoshimi Miyabi",
       "stats": {
         "atk_base": 127,
@@ -10692,6 +10700,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "stun",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Koleda Belobog",
       "stats": {
         "atk_base": 106,
@@ -12068,6 +12077,7 @@
       "rarity": "A",
       "attribute": "electric",
       "specialty": "attack",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Anton Ivanov",
       "stats": {
         "atk_base": 114,
@@ -13404,6 +13414,7 @@
       "rarity": "A",
       "attribute": "fire",
       "specialty": "defense",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Ben Bigger",
       "stats": {
         "atk_base": 94,
@@ -14549,6 +14560,7 @@
       "rarity": "A",
       "attribute": "ice",
       "specialty": "support",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Soukaku",
       "stats": {
         "atk_base": 96,
@@ -15991,6 +16003,7 @@
       "rarity": "S",
       "attribute": "ice",
       "specialty": "stun",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Von Lycaon",
       "stats": {
         "atk_base": 105,
@@ -17534,6 +17547,7 @@
       "rarity": "A",
       "attribute": "fire",
       "specialty": "support",
+      "faction": "SonsOfCalydon",
       "fullname": "Luciana de Montefio",
       "stats": {
         "atk_base": 95,
@@ -18897,6 +18911,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "stun",
+      "faction": "SonsOfCalydon",
       "fullname": "Lighter",
       "stats": {
         "atk_base": 109,
@@ -20500,6 +20515,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "anomaly",
+      "faction": "SonsOfCalydon",
       "fullname": "Burnice White",
       "stats": {
         "atk_base": 124,
@@ -21855,6 +21871,7 @@
       "rarity": "S",
       "attribute": "electric",
       "specialty": "anomaly",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Grace Howard",
       "stats": {
         "atk_base": 119,
@@ -22840,6 +22857,7 @@
       "rarity": "S",
       "attribute": "ice",
       "specialty": "attack",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Ellen Joe",
       "stats": {
         "atk_base": 135,
@@ -24249,6 +24267,7 @@
       "rarity": "S",
       "attribute": "electric",
       "specialty": "attack",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Asaba Harumasa",
       "stats": {
         "atk_base": 132,
@@ -25635,6 +25654,7 @@
       "rarity": "S",
       "attribute": "electric",
       "specialty": "support",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Alexandrina Sebastiane",
       "stats": {
         "atk_base": 103,
@@ -26635,6 +26655,7 @@
       "rarity": "S",
       "attribute": "electric",
       "specialty": "anomaly",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Tsukishiro Yanagi",
       "stats": {
         "atk_base": 126,
@@ -27986,6 +28007,7 @@
       "rarity": "S",
       "attribute": "ether",
       "specialty": "attack",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Zhu Yuan",
       "stats": {
         "atk_base": 132,
@@ -29353,6 +29375,7 @@
       "rarity": "S",
       "attribute": "electric",
       "specialty": "stun",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Qingyi",
       "stats": {
         "atk_base": 109,
@@ -30684,6 +30707,7 @@
       "rarity": "S",
       "attribute": "physical",
       "specialty": "anomaly",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Jane Doe",
       "stats": {
         "atk_base": 127,
@@ -32135,6 +32159,7 @@
       "rarity": "A",
       "attribute": "electric",
       "specialty": "defense",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Seth Lowell",
       "stats": {
         "atk_base": 93,
@@ -33294,6 +33319,7 @@
       "rarity": "A",
       "attribute": "physical",
       "specialty": "anomaly",
+      "faction": "SonsOfCalydon",
       "fullname": "Piper",
       "stats": {
         "atk_base": 109,
@@ -34525,6 +34551,7 @@
       "rarity": "S",
       "attribute": "ether",
       "specialty": "support",
+      "faction": "StarsOfLyra",
       "fullname": "Astra Yao",
       "stats": {
         "atk_base": 103,
@@ -35879,6 +35906,7 @@
       "rarity": "S",
       "attribute": "fire",
       "specialty": "attack",
+      "faction": "StarsOfLyra",
       "fullname": "Evelyn Chevalier",
       "stats": {
         "atk_base": 134,

@@ -5,10 +5,10 @@
   "desc3": "A special W-Engine decorated with a fluffy bunny. However, it is just an imitation of the real animal.",
   "phase": "Pet the Bunny",
   "phaseDescs": [
-    "Increases Max HP by <color=#2BAD00>8%</color>. Increases the equipper's ATK by <color=#2BAD00>10%</color> when they are shielded.",
-    "Increases Max HP by <color=#2BAD00>9.2%</color>. Increases the equipper's ATK by <color=#2BAD00>11.5%</color> when they are shielded.",
-    "Increases Max HP by <color=#2BAD00>10.4%</color>. Increases the equipper's ATK by <color=#2BAD00>13%</color> when they are shielded.",
-    "Increases Max HP by <color=#2BAD00>11.6%</color>. Increases the equipper's ATK by <color=#2BAD00>14.5%</color> when they are shielded.",
-    "Increases Max HP by <color=#2BAD00>12.8%</color>. Increases the equipper's ATK by <color=#2BAD00>16%</color> when they are shielded."
+    "Increases Max HP by <ct color=#2BAD00>8%</ct>. Increases the equipper's ATK by <ct color=#2BAD00>10%</ct> when they are shielded.",
+    "Increases Max HP by <ct color=#2BAD00>9.2%</ct>. Increases the equipper's ATK by <ct color=#2BAD00>11.5%</ct> when they are shielded.",
+    "Increases Max HP by <ct color=#2BAD00>10.4%</ct>. Increases the equipper's ATK by <ct color=#2BAD00>13%</ct> when they are shielded.",
+    "Increases Max HP by <ct color=#2BAD00>11.6%</ct>. Increases the equipper's ATK by <ct color=#2BAD00>14.5%</ct> when they are shielded.",
+    "Increases Max HP by <ct color=#2BAD00>12.8%</ct>. Increases the equipper's ATK by <ct color=#2BAD00>16%</ct> when they are shielded."
   ]
 }

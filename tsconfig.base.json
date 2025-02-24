@@ -63,6 +63,9 @@
       "@genshin-optimizer/game-opt/sheet-ui": [
         "libs/game-opt/sheet-ui/src/index.ts"
       ],
+      "@genshin-optimizer/game-opt/solver": [
+        "libs/game-opt/solver/src/index.ts"
+      ],
       "@genshin-optimizer/gi/art-scanner": ["libs/gi/art-scanner/src/index.ts"],
       "@genshin-optimizer/gi/assets": ["libs/gi/assets/src/index.ts"],
       "@genshin-optimizer/gi/assets-data": ["libs/gi/assets-data/src/index.ts"],
@@ -180,6 +183,7 @@
         "libs/zzz/dm-localization/src/index.ts"
       ],
       "@genshin-optimizer/zzz/formula": ["libs/zzz/formula/src/index.ts"],
+      "@genshin-optimizer/zzz/formula-ui": ["libs/zzz/formula-ui/src/index.ts"],
       "@genshin-optimizer/zzz/i18n": ["libs/zzz/i18n/src/index.ts"],
       "@genshin-optimizer/zzz/i18n-node": ["libs/zzz/i18n-node/src/index.ts"],
       "@genshin-optimizer/zzz/localization": [

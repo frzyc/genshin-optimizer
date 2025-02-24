@@ -3,6 +3,7 @@
   "rarity": "A",
   "attribute": "electric",
   "specialty": "stun",
+  "faction": "CunningHares",
   "fullname": "Anby Demara",
   "stats": {
     "atk_base": 95,

@@ -5,10 +5,10 @@
   "desc3": "A W-Engine with a grandiose and luxurious appearance equipped with a premium Ether-powered anti-theft device. It's actually used to provide the equipper with energy.",
   "phase": "Extraordinary Anti-Theft Measures",
   "phaseDescs": [
-    "ATK increases by <color=#2BAD00>6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>15%</color>.",
-    "ATK increases by <color=#2BAD00>6.9</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>17.2%</color>.",
-    "ATK increases by <color=#2BAD00>7.8</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>19.5%</color>.",
-    "ATK increases by <color=#2BAD00>8.7</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>21.8%</color>.",
-    "ATK increases by <color=#2BAD00>9.6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>24%</color>."
+    "ATK increases by <ct color=#2BAD00>6</ct>%, and DMG dealt by <ct color=#FFFFFF>EX Special Attacks</ct> increases by <ct color=#2BAD00>15%</ct>.",
+    "ATK increases by <ct color=#2BAD00>6.9</ct>%, and DMG dealt by <ct color=#FFFFFF>EX Special Attacks</ct> increases by <ct color=#2BAD00>17.2%</ct>.",
+    "ATK increases by <ct color=#2BAD00>7.8</ct>%, and DMG dealt by <ct color=#FFFFFF>EX Special Attacks</ct> increases by <ct color=#2BAD00>19.5%</ct>.",
+    "ATK increases by <ct color=#2BAD00>8.7</ct>%, and DMG dealt by <ct color=#FFFFFF>EX Special Attacks</ct> increases by <ct color=#2BAD00>21.8%</ct>.",
+    "ATK increases by <ct color=#2BAD00>9.6</ct>%, and DMG dealt by <ct color=#FFFFFF>EX Special Attacks</ct> increases by <ct color=#2BAD00>24%</ct>."
   ]
 }

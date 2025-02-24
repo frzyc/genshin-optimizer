@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "anomaly",
+  "faction": "SonsOfCalydon",
   "fullname": "Burnice White",
   "stats": {
     "atk_base": 124,

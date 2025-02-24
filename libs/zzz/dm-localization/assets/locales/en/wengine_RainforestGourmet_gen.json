@@ -5,10 +5,10 @@
   "desc3": "A consumer-class W-Engine launched by an exotic pet fan club to promote pet culture. Due to its cute appearance, it was once a very popular model.",
   "phase": "Dinner's Ready!",
   "phaseDescs": [
-    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.5%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.8%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.2%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.6%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>4%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
+    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <ct color=#2BAD00>2.5%</ct> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <ct color=#2BAD00>2.8%</ct> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <ct color=#2BAD00>3.2%</ct> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <ct color=#2BAD00>3.6%</ct> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+    "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <ct color=#2BAD00>4%</ct> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
   ]
 }

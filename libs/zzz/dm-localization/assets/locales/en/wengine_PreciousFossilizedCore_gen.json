@@ -5,10 +5,10 @@
   "desc3": "A special W-Engine whose outer shell is made of composite Etheric matter that effectively absorbs impact, and turns it against the enemy.",
   "phase": "Behemoth Hunter",
   "phaseDescs": [
-    "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>10%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>10%</color>.",
-    "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>11.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>11.5%</color>.",
-    "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>13%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>13%</color>.",
-    "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>14.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>14.5%</color>.",
-    "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>16%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>16%</color>."
+    "When the target's HP is no lower than 50%, the equipper inflicts <ct color=#2BAD00>10%</ct> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <ct color=#2BAD00>10%</ct>.",
+    "When the target's HP is no lower than 50%, the equipper inflicts <ct color=#2BAD00>11.5%</ct> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <ct color=#2BAD00>11.5%</ct>.",
+    "When the target's HP is no lower than 50%, the equipper inflicts <ct color=#2BAD00>13%</ct> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <ct color=#2BAD00>13%</ct>.",
+    "When the target's HP is no lower than 50%, the equipper inflicts <ct color=#2BAD00>14.5%</ct> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <ct color=#2BAD00>14.5%</ct>.",
+    "When the target's HP is no lower than 50%, the equipper inflicts <ct color=#2BAD00>16%</ct> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <ct color=#2BAD00>16%</ct>."
   ]
 }

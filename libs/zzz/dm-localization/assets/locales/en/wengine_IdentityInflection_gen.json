@@ -5,10 +5,10 @@
   "desc3": "A functional W-Engine that specializes in energy conversion. It can analyze combat environments and generate special sounds to disrupt the enemy's offense.",
   "phase": "Dazzle",
   "phaseDescs": [
-    "When attacked, reduces the attacker's DMG by <color=#2BAD00>6%</color> for 12s.",
-    "When attacked, reduces the attacker's DMG by <color=#2BAD00>7%</color> for 12s.",
-    "When attacked, reduces the attacker's DMG by <color=#2BAD00>8%</color> for 12s.",
-    "When attacked, reduces the attacker's DMG by <color=#2BAD00>9%</color> for 12s.",
-    "When attacked, reduces the attacker's DMG by <color=#2BAD00>10%</color> for 12s."
+    "When attacked, reduces the attacker's DMG by <ct color=#2BAD00>6%</ct> for 12s.",
+    "When attacked, reduces the attacker's DMG by <ct color=#2BAD00>7%</ct> for 12s.",
+    "When attacked, reduces the attacker's DMG by <ct color=#2BAD00>8%</ct> for 12s.",
+    "When attacked, reduces the attacker's DMG by <ct color=#2BAD00>9%</ct> for 12s.",
+    "When attacked, reduces the attacker's DMG by <ct color=#2BAD00>10%</ct> for 12s."
   ]
 }
