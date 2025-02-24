@@ -1,4 +1,5 @@
 import {
+  cmpEq,
   compileTagMapValues,
   setDebugMode,
 } from '@genshin-optimizer/pando/engine'
@@ -24,7 +25,9 @@ import {
   enemyTag,
   ownTag,
   tagStr,
+  target,
   team,
+  teamBuff,
   type TagMapNodeEntries,
 } from './data/util'
 
@@ -43,18 +46,21 @@ describe('character test', () => {
     const data: TagMapNodeEntries = [
       ...withMember(
         'March7th',
-        ...charTagMapNodeEntries({
-          level: lvl,
-          ascension: ascension as AscensionKey,
-          key: charKey,
-          eidolon: 0,
-          basic: 0,
-          skill: 0,
-          ult: 0,
-          talent: 0,
-          bonusAbilities: {},
-          statBoosts: {},
-        })
+        ...charTagMapNodeEntries(
+          {
+            level: lvl,
+            ascension: ascension as AscensionKey,
+            key: charKey,
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        )
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -77,18 +83,21 @@ describe('lightCone test', () => {
     const data: TagMapNodeEntries = [
       ...withMember(
         'March7th',
-        ...charTagMapNodeEntries({
-          level: 1,
-          ascension: 0,
-          key: 'March7th',
-          eidolon: 0,
-          basic: 0,
-          skill: 0,
-          ult: 0,
-          talent: 0,
-          bonusAbilities: {},
-          statBoosts: {},
-        }),
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'March7th',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        ),
         ...lightConeTagMapNodeEntries(lcKey, lvl, ascension as AscensionKey, 1)
       ),
     ]
@@ -113,18 +122,21 @@ describe('char+lightCone test', () => {
     const data: TagMapNodeEntries = [
       ...withMember(
         'March7th',
-        ...charTagMapNodeEntries({
-          level: 1,
-          ascension: 0,
-          key: charKey,
-          eidolon: 0,
-          basic: 0,
-          skill: 0,
-          ult: 0,
-          talent: 0,
-          bonusAbilities: {},
-          statBoosts: {},
-        }),
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: charKey,
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        ),
         ...lightConeTagMapNodeEntries(lcKey, 1, 0, 1)
       ),
     ]
@@ -140,39 +152,92 @@ describe('team test', () => {
       ...teamData(['Acheron', 'Argenti']),
       ...withMember(
         'Acheron',
-        ...charTagMapNodeEntries({
-          level: 1,
-          ascension: 0,
-          key: 'Acheron',
-          eidolon: 0,
-          basic: 0,
-          skill: 0,
-          ult: 0,
-          talent: 0,
-          bonusAbilities: {},
-          statBoosts: {},
-        })
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Acheron',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        )
       ),
       ...withMember(
         'Argenti',
-        ...charTagMapNodeEntries({
-          level: 1,
-          ascension: 0,
-          key: 'Argenti',
-          eidolon: 0,
-          basic: 0,
-          skill: 0,
-          ult: 0,
-          talent: 0,
-          bonusAbilities: {},
-          statBoosts: {},
-        })
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Argenti',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          2
+        )
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(calc.compute(team.common.count.withPath('Nihility')).val).toEqual(1)
     expect(calc.compute(team.common.count.withPath('Erudition')).val).toEqual(1)
     expect(calc.compute(team.common.count.withPath('TheHunt')).val).toEqual(0)
+  })
+  it('can buff based on position', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Acheron', 'Argenti']),
+      ...withMember(
+        'Acheron',
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Acheron',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        )
+      ),
+      ...withMember(
+        'Argenti',
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Argenti',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          2
+        ),
+        teamBuff.premod.atk.add(cmpEq(target.char.teamPosition, 1, 10000))
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const acheron = convert(ownTag, { et: 'own', src: 'Acheron' })
+    const argenti = convert(ownTag, { et: 'own', src: 'Argenti' })
+    expect(calc.compute(acheron.final.atk).val).greaterThan(10000)
+    expect(calc.compute(argenti.final.atk).val).lessThan(10000)
   })
 })
 
