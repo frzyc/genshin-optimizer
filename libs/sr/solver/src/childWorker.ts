@@ -163,7 +163,6 @@ async function start() {
       sphere,
       rope,
     ])
-    // Constraints are offset by 1 because the opt target is first
     if (constraints.every((value, i) => results[i] >= value)) {
       builds.push({
         value: results[0], // We only pass 1 target to calculate, as the first entry
