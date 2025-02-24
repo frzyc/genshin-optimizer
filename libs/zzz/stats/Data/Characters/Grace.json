@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "electric",
   "specialty": "anomaly",
+  "faction": "BelebogHeavyIndustries",
   "fullname": "Grace Howard",
   "stats": {
     "atk_base": 119,

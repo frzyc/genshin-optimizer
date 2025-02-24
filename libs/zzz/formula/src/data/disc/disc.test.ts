@@ -126,7 +126,7 @@ describe('Disc sheets test', () => {
     expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.15)
     expect(calc.compute(anby.final.dmg_.electric).val).toBeCloseTo(0.15)
     expect(calc.compute(anby.final.dmg_.special[0]).val).toBeCloseTo(0.2)
-    expect(calc.compute(anby.final.dmg_.assist[0]).val).toBeCloseTo(0.2)
+    expect(calc.compute(anby.final.dmg_.assistSkill).val).toBeCloseTo(0.2)
   })
   it('ChaoticMetal', () => {
     const data = testCharacterData('ChaoticMetal')
@@ -288,7 +288,7 @@ describe('Disc sheets test', () => {
     expect(calc.compute(enemyDebuff.common.stun_.basic[0]).val).toBeCloseTo(
       1.5 + 0.2
     ) // 4p passive
-    expect(calc.compute(enemyDebuff.common.stun_.dodge[0]).val).toBeCloseTo(
+    expect(calc.compute(enemyDebuff.common.stun_.dash[0]).val).toBeCloseTo(
       1.5 + 0.2
     ) // 4p passive
     expect(

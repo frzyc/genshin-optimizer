@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "electric",
   "specialty": "stun",
+  "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Qingyi",
   "stats": {
     "atk_base": 109,

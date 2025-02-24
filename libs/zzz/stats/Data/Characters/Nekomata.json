@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "physical",
   "specialty": "attack",
+  "faction": "CunningHares",
   "fullname": "Nekomiya Mana",
   "stats": {
     "atk_base": 131,
