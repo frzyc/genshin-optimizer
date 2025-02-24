@@ -22,7 +22,6 @@ import {
   conditionalEntries,
   convert,
   enemy,
-  enemyDebuff,
   own,
   ownBuff,
   ownTag,
@@ -41,18 +40,21 @@ function testCharacterData(
     ...teamData(['Seele']),
     ...withMember(
       'Seele',
-      ...charTagMapNodeEntries({
-        level: 80,
-        ascension: 6,
-        key: 'Seele',
-        eidolon: 0,
-        basic: 0,
-        skill: 0,
-        ult: 0,
-        talent: 0,
-        bonusAbilities: {},
-        statBoosts: {},
-      }),
+      ...charTagMapNodeEntries(
+        {
+          level: 80,
+          ascension: 6,
+          key: 'Seele',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        },
+        1
+      ),
       ...relicTagMapNodeEntries(relicStats, { [setKey]: 4 }),
       ...otherCharData
     ),
@@ -284,7 +286,7 @@ describe('Relic sheets test', () => {
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
     expect(calc.compute(seele.final.dmg_.quantum).val).toBeCloseTo(0.1)
-    expect(calc.compute(enemyDebuff.common.defIgn_).val).toBeCloseTo(0.2)
+    expect(calc.compute(seele.final.defIgn_).val).toBeCloseTo(0.2)
   })
 
   it('HunterOfGlacialForest', () => {
@@ -337,7 +339,7 @@ describe('Relic sheets test', () => {
     // Assumed bonus + 2 set
     expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(2.34 + 0.16)
     // First + second part of 4 set bonus
-    expect(calc.compute(enemy.common.defIgn_.break[0]).val).toBeCloseTo(
+    expect(calc.compute(seele.final.defIgn_.break[0]).val).toBeCloseTo(
       0.1 + 0.15
     )
   })
@@ -505,7 +507,7 @@ describe('Relic sheets test', () => {
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
     expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12)
-    expect(calc.compute(enemy.common.defIgn_).val).toBeCloseTo(3 * 0.06)
+    expect(calc.compute(seele.final.defIgn_).val).toBeCloseTo(3 * 0.06)
   })
 
   it('RutilantArena', () => {

@@ -1,7 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { enemyDebuff, own, registerBuff } from '../../util'
+import { own, ownBuff, registerBuff } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'
 
 const key: RelicSetKey = 'IronCavalryAgainstTheScourge'
@@ -18,7 +18,7 @@ const sheet = registerRelic(
   // Conditional buffs
   registerBuff(
     'set4_break_defIgn_',
-    enemyDebuff.common.defIgn_.addWithDmgType(
+    ownBuff.premod.defIgn_.addWithDmgType(
       'break',
       cmpGE(
         relicCount,
@@ -35,7 +35,7 @@ const sheet = registerRelic(
   // TODO: Change to Super Break
   registerBuff(
     'set4_superBreak_defIgn_',
-    enemyDebuff.common.defIgn_.addWithDmgType(
+    ownBuff.premod.defIgn_.addWithDmgType(
       'break',
       cmpGE(
         relicCount,
