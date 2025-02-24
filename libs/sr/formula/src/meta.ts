@@ -2045,27 +2045,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  PenaconyLandOfTheDreams: {
-    boolConditional: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   PerfectTiming: {
     boolConditional: {
       sheet: 'PerfectTiming',
@@ -14642,37 +14621,15 @@ export const buffs = {
     },
   },
   PenaconyLandOfTheDreams: {
-    enemy_defRed_: {
+    set2_common_dmg_: {
       sheet: 'PenaconyLandOfTheDreams',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PenaconyLandOfTheDreams',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'set2_dmg_',
+      name: 'set2_common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PenaconyLandOfTheDreams',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PenaconyLandOfTheDreams',
-        name: 'team_dmg_',
+        name: 'set2_common_dmg_',
       },
     },
   },

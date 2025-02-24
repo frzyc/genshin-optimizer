@@ -65,6 +65,59 @@ function testCharacterData(
   return data
 }
 
+function testTeamData(
+  setKey: RelicSetKey,
+  relicStats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>> = {},
+  otherCharData: TagMapNodeEntries = []
+) {
+  const data: TagMapNodeEntries = [
+    ...teamData(['Seele', 'Boothill']),
+    ...withMember(
+      'Seele',
+      ...charTagMapNodeEntries(
+        {
+          level: 80,
+          ascension: 6,
+          key: 'Seele',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        },
+        1
+      ),
+      ...relicTagMapNodeEntries(relicStats, { [setKey]: 4 }),
+      ...otherCharData
+    ),
+    ...withMember(
+      'Boothill',
+      ...charTagMapNodeEntries(
+        {
+          level: 80,
+          ascension: 6,
+          key: 'Boothill',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        },
+        2
+      ),
+      ...otherCharData
+    ),
+    own.common.critMode.add('avg'),
+    enemy.common.res.quantum.add(0.1),
+    enemy.common.isBroken.add(0),
+  ]
+  return data
+}
+
 function cond(setKey: RelicSetKey, name: string, value: number) {
   return conditionalEntries(setKey, 'Seele', null)(name, value)
 }
@@ -455,6 +508,25 @@ describe('Relic sheets test', () => {
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
     expect(calc.compute(seele.final.heal_).val).toBeCloseTo(0.1)
+  })
+
+  it('PenaconyLandOfTheDreams', () => {
+    const data = testTeamData('PenaconyLandOfTheDreams')
+    const calcSeele = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const calcBoothill = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: null })
+
+    expect(calcSeele.compute(own.final.enerRegen_).val).toBeCloseTo(0.05)
+    // Buff applies to other characters with same path
+    expect(calcSeele.compute(own.final.common_dmg_).val).toBeCloseTo(0)
+    expect(calcBoothill.compute(own.final.common_dmg_).val).toBeCloseTo(0.1)
   })
 
   it('PioneerDiverOfDeadWaters', () => {
