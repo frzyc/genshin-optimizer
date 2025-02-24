@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "ether",
   "specialty": "support",
+  "faction": "StarsOfLyra",
   "fullname": "Astra Yao",
   "stats": {
     "atk_base": 103,

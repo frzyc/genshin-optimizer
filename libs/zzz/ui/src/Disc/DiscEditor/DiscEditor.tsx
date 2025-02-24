@@ -157,7 +157,6 @@ export function DiscEditor({
   cancelEdit?: () => void
 }) {
   const { t } = useTranslation('disc')
-
   const { database } = useDatabaseContext()
   const { disc, validatedDisc, setDisc, errors } =
     useDiscValidation(discFromProp)
@@ -183,7 +182,7 @@ export function DiscEditor({
 
   const { rarity = 'S', level = 0 } = disc ?? {}
   const slotKey = useMemo(() => {
-    return disc?.slotKey ?? fixedSlotKey
+    return fixedSlotKey ?? disc?.slotKey
   }, [fixedSlotKey, disc])
 
   const reset = useCallback(() => {

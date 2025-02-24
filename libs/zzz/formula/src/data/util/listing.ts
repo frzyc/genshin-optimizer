@@ -1,6 +1,9 @@
 import {
+  allAttributeKeys,
   allCharacterKeys,
   allDiscSetKeys,
+  allFactionKeys,
+  allSpecialityKeys,
   allWengineKeys,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -25,28 +28,51 @@ export const stats = [
   'anomMas_',
   'dmg_',
   'common_dmg_',
+  'buff_',
   'resIgn_',
   'shield_',
 ] as const
 
-export const attributes = [
-  'fire',
-  'electric',
-  'ice',
-  'physical',
-  'ether',
+export const flatAndPercentStats = [
+  'atk',
+  'def',
+  'hp',
+  'impact',
+  'anomProf',
+  'anomMas',
+  'enerRegen',
 ] as const
+export const nonFlatAndPercentStats = stats.filter(
+  (stat) =>
+    !flatAndPercentStats.flatMap((stat) => [stat, `${stat}_`]).includes(stat)
+)
+
+export const attributes = [...allAttributeKeys] as const
 
 export const damageTypes = [
   'basic',
-  'dodge',
+  'dash',
+  'dodgeCounter',
   'special',
+  'exSpecial',
   'chain',
   'ult',
-  'assist',
+  'quickAssist',
+  'defensiveAssist',
+  'evasiveAssist',
+  'assistFollowUp',
   'anomaly',
+  'disorder',
   'additional',
   'elemental',
+] as const
+
+export const skillTypes = [
+  'basicSkill',
+  'dodgeSkill',
+  'specialSkill',
+  'chainSkill',
+  'assistSkill',
 ] as const
 
 export const sheets = [
@@ -65,13 +91,21 @@ export const sheets = [
 ] as const
 
 export const members = [...allCharacterKeys] as const
+
+export const specialties = [...allSpecialityKeys] as const
+
+export const factions = [...allFactionKeys] as const
+
 export type Stat = (typeof stats)[number]
 export type Attribute = (typeof attributes)[number]
 export type DamageType = (typeof damageTypes)[number]
+export type SkillType = (typeof skillTypes)[number]
 export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
 export type Src = Member
 export type Dst = Member | null
+export type Specialty = (typeof specialties)[number]
+export type Faction = (typeof factions)[number]
 
 export function isMember(x: string): x is Member {
   return members.includes(x as Member)

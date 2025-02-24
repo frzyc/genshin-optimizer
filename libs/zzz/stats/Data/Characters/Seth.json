@@ -3,6 +3,7 @@
   "rarity": "A",
   "attribute": "electric",
   "specialty": "defense",
+  "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Seth Lowell",
   "stats": {
     "atk_base": 93,

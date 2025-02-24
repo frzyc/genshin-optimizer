@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "physical",
   "specialty": "defense",
+  "faction": "SonsOfCalydon",
   "fullname": "Caesar King",
   "stats": {
     "atk_base": 101,

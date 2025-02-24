@@ -3,6 +3,7 @@
   "rarity": "A",
   "attribute": "physical",
   "specialty": "anomaly",
+  "faction": "SonsOfCalydon",
   "fullname": "Piper",
   "stats": {
     "atk_base": 109,

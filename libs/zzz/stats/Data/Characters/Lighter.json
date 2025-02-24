@@ -3,6 +3,7 @@
   "rarity": "S",
   "attribute": "fire",
   "specialty": "stun",
+  "faction": "SonsOfCalydon",
   "fullname": "Lighter",
   "stats": {
     "atk_base": 109,

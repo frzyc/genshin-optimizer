@@ -1,5 +1,99 @@
 // WARNING: Generated file, do not modify
-export const conditionals = {} as const
+export const conditionals = {
+  AstralVoice: {
+    astral: {
+      sheet: 'AstralVoice',
+      name: 'astral',
+      type: 'num',
+      int_only: true,
+      min: 1,
+      max: 3,
+    },
+  },
+  BranchBladeSong: {
+    apply_or_trigger: {
+      sheet: 'BranchBladeSong',
+      name: 'apply_or_trigger',
+      type: 'bool',
+    },
+  },
+  ChaosJazz: {
+    while_off_field: {
+      sheet: 'ChaosJazz',
+      name: 'while_off_field',
+      type: 'bool',
+    },
+  },
+  ChaoticMetal: {
+    trigger_corruption: {
+      sheet: 'ChaoticMetal',
+      name: 'trigger_corruption',
+      type: 'bool',
+    },
+  },
+  FangedMetal: {
+    inflict_assault: {
+      sheet: 'FangedMetal',
+      name: 'inflict_assault',
+      type: 'bool',
+    },
+  },
+  HormonePunk: {
+    entering_combat: {
+      sheet: 'HormonePunk',
+      name: 'entering_combat',
+      type: 'bool',
+    },
+  },
+  InfernoMetal: {
+    hitting_burning_enemy: {
+      sheet: 'InfernoMetal',
+      name: 'hitting_burning_enemy',
+      type: 'bool',
+    },
+  },
+  PolarMetal: {
+    freeze_shatter: {
+      sheet: 'PolarMetal',
+      name: 'freeze_shatter',
+      type: 'bool',
+    },
+  },
+  ProtoPunk: {
+    def_assist_or_evasive_assist: {
+      sheet: 'ProtoPunk',
+      name: 'def_assist_or_evasive_assist',
+      type: 'bool',
+    },
+  },
+  PufferElectro: {
+    launching_ult: {
+      sheet: 'PufferElectro',
+      name: 'launching_ult',
+      type: 'bool',
+    },
+  },
+  SwingJazz: {
+    chain_or_ult: { sheet: 'SwingJazz', name: 'chain_or_ult', type: 'bool' },
+  },
+  ThunderMetal: {
+    enemy_shocked: {
+      sheet: 'ThunderMetal',
+      name: 'enemy_shocked',
+      type: 'bool',
+    },
+  },
+  WoodpeckerElectro: {
+    crit_basic_dodge_ex: {
+      sheet: 'WoodpeckerElectro',
+      name: 'crit_basic_dodge_ex',
+      type: 'num',
+      int_only: true,
+      min: 1,
+      max: 3,
+    },
+  },
+} as const
 export const formulas = {
   Anby: {
     anomalyDmgInst: {
@@ -786,4 +880,300 @@ export const formulas = {
     },
   },
 } as const
-export const buffs = {} as const
+export const buffs = {
+  AstralVoice: {
+    set4_team_dmg_: {
+      sheet: 'AstralVoice',
+      name: 'set4_team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'AstralVoice',
+        name: 'set4_team_dmg_',
+      },
+    },
+  },
+  BranchBladeSong: {
+    set4_cond: {
+      sheet: 'BranchBladeSong',
+      name: 'set4_cond',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_',
+        sheet: 'BranchBladeSong',
+        name: 'set4_cond',
+      },
+    },
+    set4_passive: {
+      sheet: 'BranchBladeSong',
+      name: 'set4_passive',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'BranchBladeSong',
+        name: 'set4_passive',
+      },
+    },
+  },
+  ChaosJazz: {
+    set4_off_field_assist_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_off_field_assist_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        skillType: 'assistSkill',
+        name: 'set4_off_field_assist_dmg_',
+      },
+    },
+    set4_off_field_special_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_off_field_special_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        damageType1: 'special',
+        name: 'set4_off_field_special_dmg_',
+      },
+    },
+    set4_passive_electric_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_passive_electric_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        attribute: 'electric',
+        name: 'set4_passive_electric_dmg_',
+      },
+    },
+    set4_passive_fire_dmg_: {
+      sheet: 'ChaosJazz',
+      name: 'set4_passive_fire_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'ChaosJazz',
+        dst: null,
+        attribute: 'fire',
+        name: 'set4_passive_fire_dmg_',
+      },
+    },
+  },
+  ChaoticMetal: {
+    set4_cond_trigger_corruption: {
+      sheet: 'ChaoticMetal',
+      name: 'set4_cond_trigger_corruption',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'ChaoticMetal',
+        name: 'set4_cond_trigger_corruption',
+      },
+    },
+    set4_passive: {
+      sheet: 'ChaoticMetal',
+      name: 'set4_passive',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_dmg_',
+        sheet: 'ChaoticMetal',
+        name: 'set4_passive',
+      },
+    },
+  },
+  FangedMetal: {
+    set4_cond_inflict_assault: {
+      sheet: 'FangedMetal',
+      name: 'set4_cond_inflict_assault',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'FangedMetal',
+        name: 'set4_cond_inflict_assault',
+      },
+    },
+  },
+  HormonePunk: {
+    set4_cond_entering_combat: {
+      sheet: 'HormonePunk',
+      name: 'set4_cond_entering_combat',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'atk_',
+        sheet: 'HormonePunk',
+        name: 'set4_cond_entering_combat',
+      },
+    },
+  },
+  InfernoMetal: {
+    set4_cond_hitting_burning_enemy: {
+      sheet: 'InfernoMetal',
+      name: 'set4_cond_hitting_burning_enemy',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'crit_',
+        sheet: 'InfernoMetal',
+        name: 'set4_cond_hitting_burning_enemy',
+      },
+    },
+  },
+  PolarMetal: {
+    set4_basic_dmg_: {
+      sheet: 'PolarMetal',
+      name: 'set4_basic_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'PolarMetal',
+        damageType1: 'basic',
+        name: 'set4_basic_dmg_',
+      },
+    },
+    set4_dash_dmg_: {
+      sheet: 'PolarMetal',
+      name: 'set4_dash_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'PolarMetal',
+        damageType1: 'dash',
+        name: 'set4_dash_dmg_',
+      },
+    },
+  },
+  ProtoPunk: {
+    set4_cond_def_assist_or_evasive_assist_dmg_: {
+      sheet: 'ProtoPunk',
+      name: 'set4_cond_def_assist_or_evasive_assist_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'common_dmg_',
+        sheet: 'ProtoPunk',
+        name: 'set4_cond_def_assist_or_evasive_assist_dmg_',
+      },
+    },
+  },
+  PufferElectro: {
+    set4_cond_launching_ult_atk_: {
+      sheet: 'PufferElectro',
+      name: 'set4_cond_launching_ult_atk_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'atk_',
+        sheet: 'PufferElectro',
+        name: 'set4_cond_launching_ult_atk_',
+      },
+    },
+    set4_dmg_: {
+      sheet: 'PufferElectro',
+      name: 'set4_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'dmg_',
+        sheet: 'PufferElectro',
+        damageType1: 'ult',
+        name: 'set4_dmg_',
+      },
+    },
+  },
+  ShockstarDisco: {
+    set4_basic_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_basic_daze_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'stun_',
+        sheet: 'ShockstarDisco',
+        damageType1: 'basic',
+        name: 'set4_basic_daze_',
+      },
+    },
+    set4_dash_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_dash_daze_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'stun_',
+        sheet: 'ShockstarDisco',
+        damageType1: 'dash',
+        name: 'set4_dash_daze_',
+      },
+    },
+    set4_dodgeCounter_daze_: {
+      sheet: 'ShockstarDisco',
+      name: 'set4_dodgeCounter_daze_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'stun_',
+        sheet: 'ShockstarDisco',
+        damageType1: 'dodgeCounter',
+        name: 'set4_dodgeCounter_daze_',
+      },
+    },
+  },
+  SwingJazz: {
+    set4_cond_chain_or_ult: {
+      sheet: 'SwingJazz',
+      name: 'set4_cond_chain_or_ult',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'atk_',
+        sheet: 'SwingJazz',
+        name: 'set4_cond_chain_or_ult',
+      },
+    },
+  },
+  ThunderMetal: {
+    set4_cond_enemy_shocked_atk_: {
+      sheet: 'ThunderMetal',
+      name: 'set4_cond_enemy_shocked_atk_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'atk_',
+        sheet: 'ThunderMetal',
+        name: 'set4_cond_enemy_shocked_atk_',
+      },
+    },
+  },
+  WoodpeckerElectro: {
+    set4_cond_crit_basic_dodge_ex_atk_: {
+      sheet: 'WoodpeckerElectro',
+      name: 'set4_cond_crit_basic_dodge_ex_atk_',
+      tag: {
+        et: 'display',
+        qt: 'combat',
+        q: 'atk_',
+        sheet: 'WoodpeckerElectro',
+        name: 'set4_cond_crit_basic_dodge_ex_atk_',
+      },
+    },
+  },
+} as const

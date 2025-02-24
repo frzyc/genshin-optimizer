@@ -16,6 +16,7 @@ import {
   charTagMapNodeEntries,
   discTagMapNodeEntries,
   formulas,
+  teamData,
   wengineTagMapNodeEntries,
   withMember,
 } from '.'
@@ -30,6 +31,7 @@ import {
   ownBuff,
   ownTag,
   tagStr,
+  team,
   type TagMapNodeEntries,
 } from './data/util'
 
@@ -229,6 +231,7 @@ describe('char+wengine test', () => {
         enemyDebuff.common.dmgInc_.add(0.1),
         enemyDebuff.common.dmgRed_.add(0.15),
         enemyDebuff.common.stun_.add(1.5),
+        enemyDebuff.common.unstun_.add(1),
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
       const anby = convert(ownTag, { et: 'own', src: 'Anby' })
@@ -299,6 +302,7 @@ describe('char+wengine test', () => {
       enemyDebuff.common.dmgInc_.add(0.1),
       enemyDebuff.common.dmgRed_.add(0.15),
       enemyDebuff.common.stun_.add(1.5),
+      enemyDebuff.common.unstun_.add(1),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
@@ -344,11 +348,68 @@ describe('disc2p test', () => {
   })
 })
 
+describe('team', () => {
+  test('can count faction and specialty', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Anby', 'Anton']),
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+        })
+      ),
+      ...withMember(
+        'Anton',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anton',
+          mindscape: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+        })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    expect(calc.compute(team.common.count.withSpecialty('attack')).val).toEqual(
+      1
+    )
+    expect(calc.compute(team.common.count.withSpecialty('stun')).val).toEqual(1)
+    expect(
+      calc.compute(team.common.count.withSpecialty('anomaly')).val
+    ).toEqual(0)
+    expect(
+      calc.compute(team.common.count.withFaction('CunningHares')).val
+    ).toEqual(1)
+    expect(
+      calc.compute(team.common.count.withFaction('BelebogHeavyIndustries')).val
+    ).toEqual(1)
+    expect(
+      calc.compute(team.common.count.withFaction('StarsOfLyra')).val
+    ).toEqual(0)
+  })
+})
+
 describe('sheet', () => {
   test('buff entries', () => {
     const sheets = new Set([
       ...allCharacterKeys,
+      'wengine',
       ...allWengineKeys,
+      'disc',
       ...allDiscSetKeys,
     ])
     for (const { tag } of data) {
