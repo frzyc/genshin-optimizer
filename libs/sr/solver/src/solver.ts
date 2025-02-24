@@ -166,7 +166,7 @@ export class Solver {
       )
         return { q: tag['q']! } // Light cone bonus
       if (tag['q'] === 'count' && lightConeKeys.has(tag['sheet'] as any))
-        return { q: tag['sheet']! } // Relic set counter
+        return { q: tag['sheet']! } // Light cone counter
 
       return undefined
     })
