@@ -159,7 +159,6 @@ export function WengineSwapModal({
           show={newWengineModalShow}
           onHide={() => setnewWengineModalShow(false)}
           onSelect={newWengine}
-          wengineTypeFilter={wengineTypeKey}
         />
       </Suspense>
       {/* Editor/character detail display */}
