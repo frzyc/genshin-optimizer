@@ -16,6 +16,7 @@ import {
   charTagMapNodeEntries,
   discTagMapNodeEntries,
   formulas,
+  teamData,
   wengineTagMapNodeEntries,
   withMember,
 } from '.'
@@ -30,6 +31,7 @@ import {
   ownBuff,
   ownTag,
   tagStr,
+  team,
   type TagMapNodeEntries,
 } from './data/util'
 
@@ -343,6 +345,61 @@ describe('disc2p test', () => {
     console.log(prettify(calc.toDebug().compute(anby.final.atk)))
     expect(calc.compute(anby.final.atk).val).toBeCloseTo(195)
     expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(0.66)
+  })
+})
+
+describe('team', () => {
+  test('can count faction and specialty', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Anby', 'Anton']),
+      ...withMember(
+        'Anby',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anby',
+          mindscape: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+        })
+      ),
+      ...withMember(
+        'Anton',
+        ...charTagMapNodeEntries({
+          level: 1,
+          promotion: 0,
+          key: 'Anton',
+          mindscape: 0,
+          basic: 0,
+          dodge: 0,
+          special: 0,
+          assist: 0,
+          chain: 0,
+          core: 0,
+        })
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    expect(calc.compute(team.common.count.withSpecialty('attack')).val).toEqual(
+      1
+    )
+    expect(calc.compute(team.common.count.withSpecialty('stun')).val).toEqual(1)
+    expect(
+      calc.compute(team.common.count.withSpecialty('anomaly')).val
+    ).toEqual(0)
+    expect(
+      calc.compute(team.common.count.withFaction('CunningHares')).val
+    ).toEqual(1)
+    expect(
+      calc.compute(team.common.count.withFaction('BelebogHeavyIndustries')).val
+    ).toEqual(1)
+    expect(
+      calc.compute(team.common.count.withFaction('StarsOfLyra')).val
+    ).toEqual(0)
   })
 })
 
