@@ -2654,27 +2654,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  TaliaKingdomOfBanditry: {
-    boolConditional: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   TextureOfMemories: {
     boolConditional: {
       sheet: 'TextureOfMemories',
@@ -17158,37 +17137,15 @@ export const buffs = {
     },
   },
   TaliaKingdomOfBanditry: {
-    enemy_defRed_: {
+    set2_brEffect_: {
       sheet: 'TaliaKingdomOfBanditry',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TaliaKingdomOfBanditry',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'set2_dmg_',
+      name: 'set2_brEffect_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'brEffect_',
         sheet: 'TaliaKingdomOfBanditry',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TaliaKingdomOfBanditry',
-        name: 'team_dmg_',
+        name: 'set2_brEffect_',
       },
     },
   },

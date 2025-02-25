@@ -639,4 +639,18 @@ describe('Relic sheets test', () => {
 
     expect(calc.compute(seele.final.enerRegen_).val).toBeCloseTo(0.05)
   })
+
+  it('TaliaKingdomOfBanditry', () => {
+    const data = testCharacterData('TaliaKingdomOfBanditry', undefined, [
+      ownBuff.premod.spd.add(30),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.16 + 0.2)
+  })
 })
