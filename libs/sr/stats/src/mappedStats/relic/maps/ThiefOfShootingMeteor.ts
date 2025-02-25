@@ -13,7 +13,7 @@ const dm = {
   4: {
     passive_brEffect_: data_gen.setEffects[1].passiveStats.brEffect_,
     energy: data_gen.setEffects[1].otherStats[o++],
-  }
+  },
 } as const
 
 export default dm
