@@ -1,4 +1,6 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
+import { isDev } from '@genshin-optimizer/common/util'
+import { setDebugMode } from '@genshin-optimizer/pando/engine'
 import { DatabaseProvider } from '@genshin-optimizer/sr/db-ui'
 import '@genshin-optimizer/sr/i18n' // import to load translations
 import { theme } from '@genshin-optimizer/sr/theme'
@@ -27,6 +29,9 @@ const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))
 const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
 
 const PageOptimize = lazy(() => import('@genshin-optimizer/sr/page-optimize'))
+
+// Enable debug mode for Pando calcs
+setDebugMode(isDev)
 
 export default function App() {
   return (

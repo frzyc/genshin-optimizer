@@ -6,6 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'SwingJazz'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
 const { chain_or_ult } = allBoolConditionals(key)
 
@@ -19,7 +20,8 @@ const sheet = registerDisc(
     'set4_cond_chain_or_ult',
     teamBuff.combat.common_dmg_.add(
       cmpGE(discCount, 4, chain_or_ult.ifOn(0.15))
-    )
+    ),
+    showCond4Set
   )
 )
 export default sheet

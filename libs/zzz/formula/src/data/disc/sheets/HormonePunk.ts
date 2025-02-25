@@ -6,6 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'HormonePunk'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
 const { entering_combat } = allBoolConditionals(key)
 
@@ -17,7 +18,8 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set4_cond_entering_combat',
-    ownBuff.combat.atk_.add(cmpGE(discCount, 4, entering_combat.ifOn(0.25)))
+    ownBuff.combat.atk_.add(cmpGE(discCount, 4, entering_combat.ifOn(0.25))),
+    showCond4Set
   )
 )
 export default sheet
