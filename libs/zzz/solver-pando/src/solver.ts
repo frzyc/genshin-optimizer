@@ -166,11 +166,11 @@ export class Solver {
         return { q: tag['sheet']! } // Disc set counter
       if (
         tag['qt'] == 'wengine' &&
-        ['lvl', 'ascension', 'superimpose'].includes(tag['q'] as string)
+        ['lvl', 'phase', 'modification'].includes(tag['q'] as string)
       )
-        return { q: tag['q']! } // Light cone bonus
+        return { q: tag['q']! } // wengine bonus
       if (tag['q'] === 'count' && wengineKeys.has(tag['sheet'] as any))
-        return { q: tag['sheet']! } // Light cone counter
+        return { q: tag['sheet']! } // wengine counter
 
       return undefined
     })
