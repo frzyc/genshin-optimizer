@@ -2797,27 +2797,6 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  ThiefOfShootingMeteor: {
-    boolConditional: {
-      sheet: 'ThiefOfShootingMeteor',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ThiefOfShootingMeteor',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ThiefOfShootingMeteor',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   ThisIsMe: {
     boolConditional: {
       sheet: 'ThisIsMe',
@@ -17370,41 +17349,6 @@ export const buffs = {
         sheet: 'TheWindSouringValorous',
         damageType1: 'ult',
         name: 'set4_ult_dmg_',
-      },
-    },
-  },
-  ThiefOfShootingMeteor: {
-    enemy_defRed_: {
-      sheet: 'ThiefOfShootingMeteor',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ThiefOfShootingMeteor',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ThiefOfShootingMeteor',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ThiefOfShootingMeteor',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ThiefOfShootingMeteor',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ThiefOfShootingMeteor',
-        name: 'team_dmg_',
       },
     },
   },

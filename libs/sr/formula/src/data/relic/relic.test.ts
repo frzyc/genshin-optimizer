@@ -695,4 +695,17 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.06)
     expect(calc.compute(seele.final.dmg_.ult[0]).val).toBeCloseTo(0.36)
   })
+
+  it('ThiefOfShootingMeteor', () => {
+    const data = testCharacterData('ThiefOfShootingMeteor')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // 2 set + 4 set bonus
+    expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.16 + 0.16)
+  })
 })
