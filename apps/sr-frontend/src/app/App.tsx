@@ -28,6 +28,9 @@ const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
 
 const PageOptimize = lazy(() => import('@genshin-optimizer/sr/page-optimize'))
 
+// Enable debug mode for Pando calcs
+setDebugMode(isDev)
+
 export default function App() {
   return (
     <StyledEngineProvider injectFirst>
