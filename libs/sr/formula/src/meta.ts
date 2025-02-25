@@ -2791,24 +2791,10 @@ export const conditionals = {
     },
   },
   TheWindSouringValorous: {
-    boolConditional: {
+    followUpUsed: {
       sheet: 'TheWindSouringValorous',
-      name: 'boolConditional',
+      name: 'followUpUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheWindSouringValorous',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheWindSouringValorous',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ThiefOfShootingMeteor: {
@@ -17374,37 +17360,16 @@ export const buffs = {
     },
   },
   TheWindSouringValorous: {
-    enemy_defRed_: {
+    set4_ult_dmg_: {
       sheet: 'TheWindSouringValorous',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheWindSouringValorous',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TheWindSouringValorous',
-      name: 'set2_dmg_',
+      name: 'set4_ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'TheWindSouringValorous',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheWindSouringValorous',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheWindSouringValorous',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'set4_ult_dmg_',
       },
     },
   },
