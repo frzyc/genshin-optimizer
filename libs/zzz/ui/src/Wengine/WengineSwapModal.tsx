@@ -21,7 +21,7 @@ import type {
   SpecialityKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
-import { allRaritykeys } from '@genshin-optimizer/zzz/consts'
+import { allRaritykeys, allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
 import { initialWengine } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import {
@@ -62,6 +62,7 @@ import { WengineSelectionModal } from './WengineSelectionModal'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const rarityHandler = handleMultiSelect([...allRaritykeys])
+const wengineTypeHandler = handleMultiSelect([...allSpecialityKeys])
 
 export function WengineSwapModal({
   wengineId,
@@ -98,12 +99,15 @@ export function WengineSwapModal({
   const brPt = useMediaQueryUp()
 
   const [rarity, setRarity] = useState<Raritykey[]>(['S', 'A', 'B'])
+  const [speciality, setWengineType] = useState<SpecialityKey[]>([
+    wengineTypeKey,
+  ])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
 
   const wengineIds = useMemo(() => {
     const filterFunc = filterFunction(
-      { rarity, name: deferredSearchTerm },
+      { speciality, rarity, name: deferredSearchTerm },
       wengineFilterConfigs()
     )
     const sortFunc = sortFunction(
@@ -121,7 +125,14 @@ export function WengineSwapModal({
       wengineIds.unshift(wengineId) // add to beginnig
     }
     return dbDirty && wengineIds
-  }, [rarity, deferredSearchTerm, database.wengines, wengineId, dbDirty])
+  }, [
+    speciality,
+    rarity,
+    deferredSearchTerm,
+    database.wengines,
+    wengineId,
+    dbDirty,
+  ])
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
@@ -192,6 +203,28 @@ export function WengineSwapModal({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Grid container spacing={1}>
+              <Grid item>
+                <SolidToggleButtonGroup
+                  sx={{ height: '100%' }}
+                  value={speciality}
+                >
+                  {allSpecialityKeys.map((sk) => (
+                    <ToggleButton
+                      key={sk}
+                      value={sk}
+                      onClick={() =>
+                        setWengineType(wengineTypeHandler(speciality, sk))
+                      }
+                    >
+                      <ImgIcon
+                        src={specialityDefIcon(sk)}
+                        size={2}
+                        sideMargin
+                      />
+                    </ToggleButton>
+                  ))}
+                </SolidToggleButtonGroup>
+              </Grid>
               <Grid item>
                 <SolidToggleButtonGroup
                   sx={{ height: '100%' }}

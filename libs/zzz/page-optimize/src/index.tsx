@@ -458,10 +458,9 @@ function CharacterSection({
         <CardThemed>
           <CardContent>
             <Typography variant="h6" marginBottom={'12px'}>
-              Team Buffs Notes
+              Character Notes
             </Typography>
             <TextFieldLazy
-              label={'Team buffs'}
               placeholder={'Some notes on how you play your character'}
               value={charMetaDesc}
               disabled={!locationKey}
