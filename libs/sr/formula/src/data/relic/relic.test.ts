@@ -708,4 +708,52 @@ describe('Relic sheets test', () => {
     // 2 set + 4 set bonus
     expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.16 + 0.16)
   })
+
+  it('WastelanderOfBanditryDesert', () => {
+    const data = testCharacterData('WastelanderOfBanditryDesert')
+    data.push(
+      cond(
+        'WastelanderOfBanditryDesert',
+        conditionals.WastelanderOfBanditryDesert.attackingDebuffed.name,
+        1
+      ),
+      cond(
+        'WastelanderOfBanditryDesert',
+        conditionals.WastelanderOfBanditryDesert.enemyImprisoned.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.dmg_.imaginary).val).toBeCloseTo(0.1)
+    // Base + 4 set bonus
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.1)
+    // Base + 4 set bonus
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.2)
+  })
+
+  it('WatchmakerMasterOfDreamMachinations', () => {
+    const data = testCharacterData('WatchmakerMasterOfDreamMachinations')
+    data.push(
+      cond(
+        'WatchmakerMasterOfDreamMachinations',
+        conditionals.WatchmakerMasterOfDreamMachinations.useUltimateOnAlly.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // 2 set + 4 set bonus
+    expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.16 + 0.3)
+  })
 })

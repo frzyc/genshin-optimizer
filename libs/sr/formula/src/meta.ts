@@ -3046,24 +3046,15 @@ export const conditionals = {
     },
   },
   WastelanderOfBanditryDesert: {
-    boolConditional: {
+    attackingDebuffed: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'boolConditional',
+      name: 'attackingDebuffed',
       type: 'bool',
     },
-    listConditional: {
+    enemyImprisoned: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WastelanderOfBanditryDesert',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'enemyImprisoned',
+      type: 'bool',
     },
   },
   WatchmakerMasterOfDreamMachinations: {
@@ -18553,37 +18544,26 @@ export const buffs = {
     },
   },
   WastelanderOfBanditryDesert: {
-    enemy_defRed_: {
+    set4_crit_: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WastelanderOfBanditryDesert',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'WastelanderOfBanditryDesert',
-      name: 'set2_dmg_',
+      name: 'set4_crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'WastelanderOfBanditryDesert',
-        name: 'set2_dmg_',
+        name: 'set4_crit_',
       },
     },
-    team_dmg_: {
+    set4_crit_dmg_: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'team_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'WastelanderOfBanditryDesert',
-        name: 'team_dmg_',
+        name: 'set4_crit_dmg_',
       },
     },
   },
