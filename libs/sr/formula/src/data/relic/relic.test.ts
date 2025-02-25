@@ -653,4 +653,24 @@ describe('Relic sheets test', () => {
 
     expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.16 + 0.2)
   })
+
+  it('TheAshblazingGrandDuke', () => {
+    const data = testCharacterData('TheAshblazingGrandDuke')
+    data.push(
+      cond(
+        'TheAshblazingGrandDuke',
+        conditionals.TheAshblazingGrandDuke.followUpDmgDealt.name,
+        8
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.dmg_.followUp[0]).val).toBeCloseTo(0.2)
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(8 * 0.06)
+  })
 })

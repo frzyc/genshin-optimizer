@@ -2676,24 +2676,13 @@ export const conditionals = {
     },
   },
   TheAshblazingGrandDuke: {
-    boolConditional: {
+    followUpDmgDealt: {
       sheet: 'TheAshblazingGrandDuke',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheAshblazingGrandDuke',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheAshblazingGrandDuke',
-      name: 'numConditional',
+      name: 'followUpDmgDealt',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 8,
     },
   },
   TheBirthOfTheSelf: {
@@ -17185,37 +17174,27 @@ export const buffs = {
     },
   },
   TheAshblazingGrandDuke: {
-    enemy_defRed_: {
+    set2_followUp_: {
       sheet: 'TheAshblazingGrandDuke',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheAshblazingGrandDuke',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TheAshblazingGrandDuke',
-      name: 'set2_dmg_',
+      name: 'set2_followUp_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'TheAshblazingGrandDuke',
-        name: 'set2_dmg_',
+        damageType1: 'followUp',
+        name: 'set2_followUp_',
       },
     },
-    team_dmg_: {
+    set4_atk_: {
       sheet: 'TheAshblazingGrandDuke',
-      name: 'team_dmg_',
+      name: 'set4_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'TheAshblazingGrandDuke',
-        name: 'team_dmg_',
+        name: 'set4_atk_',
       },
     },
   },
