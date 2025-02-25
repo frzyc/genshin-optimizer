@@ -1,4 +1,5 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
 import type { HashId } from '../common'
@@ -19,7 +20,7 @@ export type AvatarPropertyConfig = {
   PropertyClassify?: number
 }
 
-const AvatarPropertyConfig = JSON.parse(
+const AvatarPropertyConfig = parse(
   readDMJSON('ExcelOutput/AvatarPropertyConfig.json')
 ) as AvatarPropertyConfig[]
 

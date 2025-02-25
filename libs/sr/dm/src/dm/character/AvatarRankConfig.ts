@@ -4,6 +4,7 @@ import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
 import type { HashId, MaterialValue, Value } from '../common'
 import { avatarConfig } from './AvatarConfig'
+import { parse } from 'json-bigint'
 
 // Eidolon information
 export type AvatarRankConfig = {
@@ -23,7 +24,7 @@ export type Rank = (typeof allRanks)[number]
 // { <skillId>: <# of levels increased> }
 type SkillAddLevelList = Partial<Record<string, number>>
 
-const avatarRankConfigSrc = JSON.parse(
+const avatarRankConfigSrc = parse(
   readDMJSON('ExcelOutput/AvatarRankConfig.json')
 ) as AvatarRankConfig[]
 const avatarRankConfigMap = objKeyValMap(avatarRankConfigSrc, (config) => [

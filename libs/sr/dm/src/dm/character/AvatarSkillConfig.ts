@@ -1,5 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import type { AbilityKey } from '@genshin-optimizer/sr/consts'
+import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
 import type { HashId, Value } from '../common'
@@ -15,8 +16,8 @@ export type AvatarSkillConfig = {
   SkillIcon: string
   UltraSkillIcon: string
   LevelUpCostList: any[]
-  SkillDesc: HashId // Deals Ice DMG equal to 100% of March 7th's ATK to a single enemy.
-  SimpleSkillDesc: HashId // Deals minor Ice DMG to a single enemy.
+  SkillDesc?: HashId // Deals Ice DMG equal to 100% of March 7th's ATK to a single enemy.
+  SimpleSkillDesc?: HashId // Deals minor Ice DMG to a single enemy.
   RatedSkillTreeID: number[]
   RatedRankID: number[]
   ExtraEffectIDList: number[]
@@ -81,7 +82,7 @@ export type StanceDamageType =
   | 'Quantum'
   | 'Physical'
 
-const avatarSkillConfigSrc = JSON.parse(
+const avatarSkillConfigSrc = parse(
   readDMJSON('ExcelOutput/AvatarSkillConfig.json')
 ) as AvatarSkillConfig[]
 

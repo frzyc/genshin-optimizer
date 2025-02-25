@@ -4,10 +4,11 @@ import {
   objFilterKeys,
   objKeyValMap,
 } from '@genshin-optimizer/common/util'
-import { TextMapEN } from '../../TextMapUtil'
+import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarBaseTypeKey, AvatarId } from '../../mapping'
 import { characterIdMap } from '../../mapping'
+import { TextMapEN } from '../../TextMapUtil'
 import { readDMJSON } from '../../util'
 import type { HashId, MaterialValue, Value } from '../common'
 
@@ -72,7 +73,7 @@ export type AvatarDamageType =
   | 'Fire'
   | 'Imaginary'
 
-const avatarConfigSrc = JSON.parse(
+const avatarConfigSrc = parse(
   readDMJSON('ExcelOutput/AvatarConfig.json')
 ) as AvatarConfig[]
 
@@ -81,7 +82,7 @@ dumpFile(
   Object.fromEntries(
     Object.entries(avatarConfigSrc).map(([avatarId, data]) => [
       avatarId,
-      nameToKey(TextMapEN[data.AvatarName.Hash]),
+      nameToKey(TextMapEN[data.AvatarName.Hash.toString()]),
     ])
   )
 )
@@ -90,7 +91,7 @@ dumpFile(
   [
     ...new Set(
       avatarConfigSrc.map((config) =>
-        nameToKey(TextMapEN[config.AvatarName.Hash])
+        nameToKey(TextMapEN[config.AvatarName.Hash.toString()])
       )
     ),
   ]

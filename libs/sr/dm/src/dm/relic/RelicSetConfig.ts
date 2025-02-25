@@ -4,6 +4,7 @@ import {
   objFilterKeys,
   objKeyValMap,
 } from '@genshin-optimizer/common/util'
+import { parse } from 'json-bigint'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { RelicSetId } from '../../mapping/relic'
@@ -21,7 +22,7 @@ export type RelicSetConfig = {
   IsPlanarSuit?: boolean
 }
 
-const relicSetConfigSrc = JSON.parse(
+const relicSetConfigSrc = parse(
   readDMJSON('ExcelOutput/RelicSetConfig.json')
 ) as RelicSetConfig[]
 
@@ -31,14 +32,16 @@ dumpFile(
   `${prePath}_idmap_gen.json`,
   objKeyValMap(relicSetConfigSrc, (config) => [
     config.SetID,
-    nameToKey(TextMapEN[config.SetName.Hash]),
+    nameToKey(TextMapEN[config.SetName.Hash.toString()]),
   ])
 )
 dumpFile(
   `${prePath}_keys_gen.json`,
   [
     ...new Set(
-      relicSetConfigSrc.map((data) => nameToKey(TextMapEN[data.SetName.Hash]))
+      relicSetConfigSrc.map((data) =>
+        nameToKey(TextMapEN[data.SetName.Hash.toString()])
+      )
     ),
   ]
     .filter((s) => s)
@@ -51,7 +54,7 @@ dumpFile(
     ...new Set(
       relicSetConfigSrc
         .filter((d) => d.IsPlanarSuit)
-        .map((data) => nameToKey(TextMapEN[data.SetName.Hash]))
+        .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()]))
     ),
   ]
     .filter((s) => s)
@@ -64,7 +67,7 @@ dumpFile(
     ...new Set(
       relicSetConfigSrc
         .filter((d) => !d.IsPlanarSuit)
-        .map((data) => nameToKey(TextMapEN[data.SetName.Hash]))
+        .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()]))
     ),
   ]
     .filter((s) => s)
