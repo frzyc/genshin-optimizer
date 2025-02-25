@@ -2591,27 +2591,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  SprightlyVonwacq: {
-    boolConditional: {
-      sheet: 'SprightlyVonwacq',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SprightlyVonwacq',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SprightlyVonwacq',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   SubscribeForMore: {
     boolConditional: {
       sheet: 'SubscribeForMore',
@@ -15637,8 +15616,20 @@ export const buffs = {
         qt: 'premod',
         q: 'dmg_',
         sheet: 'RutilantArena',
-        damageType1: 'skill',
+        damageType1: 'basic',
         name: 'set4_basic_dmg_',
+      },
+    },
+    set4_skill_dmg_: {
+      sheet: 'RutilantArena',
+      name: 'set4_skill_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'RutilantArena',
+        damageType1: 'skill',
+        name: 'set4_skill_dmg_',
       },
     },
   },
@@ -16903,41 +16894,6 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sparkle',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  SprightlyVonwacq: {
-    enemy_defRed_: {
-      sheet: 'SprightlyVonwacq',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SprightlyVonwacq',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SprightlyVonwacq',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SprightlyVonwacq',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SprightlyVonwacq',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SprightlyVonwacq',
         name: 'team_dmg_',
       },
     },

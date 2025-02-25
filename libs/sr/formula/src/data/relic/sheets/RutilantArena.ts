@@ -29,7 +29,7 @@ const sheet = registerRelic(
     cmpGE(relicCount, 4, 'unique', '')
   ),
   registerBuff(
-    'set4_basic_dmg_',
+    'set4_skill_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'skill',
       cmpGE(

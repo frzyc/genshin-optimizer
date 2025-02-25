@@ -627,4 +627,16 @@ describe('Relic sheets test', () => {
 
     expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12 + 0.12)
   })
+
+  it('SprightlyVonwacq', () => {
+    const data = testCharacterData('SprightlyVonwacq')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.enerRegen_).val).toBeCloseTo(0.05)
+  })
 })
