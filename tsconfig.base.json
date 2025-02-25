@@ -206,6 +206,9 @@
         "libs/zzz/page-wengines/src/index.tsx"
       ],
       "@genshin-optimizer/zzz/solver": ["libs/zzz/solver/src/index.ts"],
+      "@genshin-optimizer/zzz/solver-pando": [
+        "libs/zzz/solver-pando/src/index.ts"
+      ],
       "@genshin-optimizer/zzz/stats": ["libs/zzz/stats/src/index.ts"],
       "@genshin-optimizer/zzz/svgicons": ["libs/zzz/svgicons/src/index.ts"],
       "@genshin-optimizer/zzz/theme": ["libs/zzz/theme/src/index.ts"],
