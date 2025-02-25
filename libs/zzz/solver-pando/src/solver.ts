@@ -16,17 +16,18 @@ import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
-import type {
-  ICachedDisc,
-  ICachedWengine,
-  StatFilter,
-} from '@genshin-optimizer/zzz/db'
+import type { ICachedDisc, ICachedWengine } from '@genshin-optimizer/zzz/db'
 import { Read, type Calculator, type Tag } from '@genshin-optimizer/zzz/formula'
 type Frames = Array<{ tag: Tag; multiplier: number }>
+type StatFilter = {
+  tag: Tag
+  value: number
+  isMax: boolean
+}
 export class Solver {
   private calc: Calculator
   private frames: Frames
-  private statFilters: Array<Omit<StatFilter, 'disabled'>>
+  private statFilters: Array<StatFilter>
   private wengines: ICachedWengine[]
   private discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   private numWorkers: number
