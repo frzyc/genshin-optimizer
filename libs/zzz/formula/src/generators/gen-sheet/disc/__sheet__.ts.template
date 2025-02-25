@@ -15,6 +15,7 @@ import { registerDisc } from '../util'
 const key: DiscSetKey = '<%= sheet %>'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -30,12 +31,18 @@ const sheet = registerDisc(
   // Conditional buffs
   registerBuff(
     'set4_dmg_',
-    ownBuff.combat.common_dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1)))
+    ownBuff.combat.common_dmg_.add(cmpGE(discCount, 2, boolConditional.ifOn(0.1))),
+    showCond4Set
   ),
   registerBuff(
     'team_dmg_',
-    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    teamBuff.combat.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
+    showCond4Set
   ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.dmgRed_.add(numConditional))
+  registerBuff(
+    'enemy_defIgn_',
+    enemyDebuff.common.dmgRed_.add(numConditional),
+    showCond4Set
+    )
 )
 export default sheet

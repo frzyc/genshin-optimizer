@@ -6,6 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'ChaoticMetal'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
 const { trigger_corruption } = allNumConditionals(key, true, 0, 6)
 const sheet = registerDisc(
@@ -15,14 +16,16 @@ const sheet = registerDisc(
   //passive
   registerBuff(
     'set4_passive',
-    ownBuff.combat.crit_dmg_.add(cmpGE(discCount, 4, 0.2))
+    ownBuff.combat.crit_dmg_.add(cmpGE(discCount, 4, 0.2)),
+    showCond4Set
   ),
   // Conditional buffs
   registerBuff(
     'set4_cond_trigger_corruption',
     ownBuff.combat.crit_dmg_.add(
       cmpGE(discCount, 4, prod(trigger_corruption, 0.055))
-    )
+    ),
+    showCond4Set
   )
 )
 export default sheet

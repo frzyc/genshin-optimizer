@@ -6,6 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'PolarMetal'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
 const { freeze_shatter } = allBoolConditionals(key)
 
@@ -20,14 +21,16 @@ const sheet = registerDisc(
     ownBuff.combat.dmg_.addWithDmgType(
       'basic',
       cmpGE(discCount, 4, prod(0.2, freeze_shatter.ifOn(2, 1)))
-    )
+    ),
+    showCond4Set
   ),
   registerBuff(
     'set4_dash_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'dash',
       cmpGE(discCount, 4, prod(0.2, freeze_shatter.ifOn(2, 1)))
-    )
+    ),
+    showCond4Set
   )
 )
 export default sheet
