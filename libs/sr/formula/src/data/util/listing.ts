@@ -81,8 +81,6 @@ export const sheets = [
 
 export const paths = [...allPathKeys] as const
 
-export const misc = ['maxEnergy'] as const
-
 export const members = [...allCharacterKeys] as const
 export type Stat = (typeof stats)[number]
 export type BonusAbility = (typeof bonusAbilities)[number]
@@ -94,7 +92,6 @@ export type Member = (typeof members)[number]
 export type Src = Member
 export type Dst = Member | null
 export type Path = (typeof paths)[number]
-export type Misc = (typeof misc)[number]
 
 export function isMember(x: string): x is Member {
   return members.includes(x as Member)
