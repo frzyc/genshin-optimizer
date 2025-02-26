@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Combustión incompleta",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una probabilidad base del {{1, percent}}% de que los objetivos enemigos reciban un {{2, percent}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una probabilidad base del {{1, percent}}% de que los objetivos enemigos reciban un {{2, percent}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. Al entrar en combate con enemigos en la zona especial, hay una gran probabilidad de que <orangeStrong>el Daño de Fuego que reciben los enemigos aumente</orangeStrong>.",
         "tag": "Alteración"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fuego estelar",
-        "fullDesc": "Al lanzar un ataque, hay un {{1, percent}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.<br>Los enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del ATQ de Himeko.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al lanzar un ataque, hay un {{1, percent}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.<br>Los enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del ATQ de Himeko."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "El daño que la habilidad básica inflige a los enemigos afectados por Quemadura aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "El daño que la habilidad básica inflige a los enemigos afectados por Quemadura aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "El estándar",
-        "fullDesc": "Si el porcentaje de PV es igual o superior al {{1, percent}}%, la Prob. CRIT aumenta en un {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Si el porcentaje de PV es igual o superior al {{1, percent}}%, la Prob. CRIT aumenta en un {{2, percent}}%."
       }
     }
   },

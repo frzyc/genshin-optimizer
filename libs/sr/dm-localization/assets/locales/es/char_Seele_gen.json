@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Sombra nocturna",
-        "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1, percent}}%, se reduce la probabilidad de recibir un ataque enemigo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1, percent}}%, se reduce la probabilidad de recibir un ataque enemigo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Laceración",
-        "fullDesc": "Cuando Seele está en el estado potenciado, su PEN de la RES a Cuántico aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando Seele está en el estado potenciado, su PEN de la RES a Cuántico aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Olas agitadas",
-        "fullDesc": "Tras usar el ATQ básico, la siguiente acción de Seele se adelanta un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tras usar el ATQ básico, la siguiente acción de Seele se adelanta un {{1, percent}}%."
       }
     }
   },

@@ -1,0 +1,7 @@
+{
+  "name": "Shadowburn",
+  "passive": {
+    "name": "Beautify",
+    "description": "When the wearer summons memosprite for the first time, recovers {{1}} Skill Point(s) and regenerates <orangeStrong>{{2}}</orangeStrong> Energy for this unit."
+  }
+}

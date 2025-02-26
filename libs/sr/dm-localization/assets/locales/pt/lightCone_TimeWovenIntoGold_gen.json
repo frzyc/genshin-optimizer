@@ -1,0 +1,7 @@
+{
+  "name": "Tempo Tecido em Ouro",
+  "passive": {
+    "name": "Estabelecimento",
+    "description": "Aumenta a VEL base do usuário em <orangeStrong>{{1}}</orangeStrong>. Após o usuário e o Memoespírito do usuário atacarem, o usuário ganha 1 acúmulo de \"Brocado\". Cada acúmulo de \"Brocado\" aumenta o Dano CRIT do usuário e de seu Memoespírito em <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, acumulando até {{2}} vez(es). Ao atingir o número máximo de acúmulos, cada acúmulo de \"Brocado\" aumentará adicionalmente o Dano causado pelo ATQ Básico em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>."
+  }
+}

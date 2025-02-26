@@ -1,0 +1,7 @@
+{
+  "name": "Thiêu Đốt Ảo Ảnh",
+  "passive": {
+    "name": "Làm Đẹp",
+    "description": "Khi người trang bị lần đầu triệu hồi Linh Hồn Ký Ức, hồi {{1}} Điểm Chiến Kỹ, và hồi <orangeStrong>{{2}}</orangeStrong> điểm Năng Lượng cho bản thân."
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "name": "Rappa",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ninjutsu : Élévation",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Rappa à un ennemi désigné.",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi désigné.",
+        "tag": "Cible unique"
+      },
+      "1": {
+        "name": "Ningu : Lame de pétale d'exorcisme",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi désigné ainsi qu'aux cibles adjacentes. La robustesse des ennemis peut être réduite même s'ils n'ont pas de Faiblesse imaginaire.",
+        "tag": "Propagation"
+      },
+      "2": {
+        "name": "Ningu : Lame de pétale d'exorcisme",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi désigné ainsi qu'aux cibles adjacentes. La robustesse des ennemis peut être réduite même s'ils n'ont pas de Faiblesse imaginaire.",
+        "tag": "Propagation"
+      },
+      "3": {
+        "name": "Ningu : Lame de pétale d'exorcisme",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à tous les ennemis. La robustesse des ennemis peut être réduite même s'ils n'ont pas de Faiblesse imaginaire.",
+        "tag": "ZdE"
+      },
+      "4": {
+        "name": "Ningu : Lame de pétale d'exorcisme",
+        "fullDesc": "Active Ningu : Lame de pétale d'exorcisme. Les 2 premières frappes infligent des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Rappa à un ennemi désigné et des DGT imaginaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Rappa aux cibles adjacentes. La 3e frappe inflige des DGT imaginaires équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Rappa à tous les ennemis.<br>L'ATQ normale renforcée ne permet pas de récupérer de points de compétence. Il est également possible d'infliger une réduction de robustesse équivalente à {{4, percent}}% de la valeur initiale de réduction de robustesse aux cibles ennemies qui n'ont pas de Faiblesse imaginaire. Déclenche l'effet de Rupture de faiblesse imaginaire en cas de Rupture de faiblesse.",
+        "shortDesc": "Les deux premières frappes infligent des DGT imaginaires mineurs à un ennemi désigné ainsi qu'aux cibles adjacentes. La troisième frappe inflige des DGT imaginaires mineurs à tous les ennemis. La robustesse des ennemis peut être réduite même s'ils n'ont pas de Faiblesse imaginaire.",
+        "tag": "Propagation"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Frappe ninja : Résolution profonde",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Rappa à tous les ennemis.",
+        "shortDesc": "Inflige des DGT imaginaires à tous les ennemis.",
+        "tag": "ZdE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Nindô suprême de l'Amour profond",
+        "fullDesc": "Entre dans la forme du sceau, gagne immédiatement 1 tour supplémentaire, obtient {{3}} points d'encre chromatique et augmente l'efficacité de Rupture de faiblesse de {{1, percent}}% et l'effet de Rupture de <orangeStrong>{{2, percent}}%</orangeStrong>.<br>Lorsque Rappa est dans la forme du sceau, son ATQ normale devient renforcée, mais elle ne peut pas utiliser sa compétence et son ultime. Chaque utilisation de l'ATQ normale renforcée consomme 1 point d'encre chromatique. Rappa quitte la forme du sceau lorsqu'elle a utilisé tous les points d'encre chromatique.",
+        "shortDesc": "Entre dans la forme du sceau, gagne un <orangeStrong>tour supplémentaire</orangeStrong>, obtient 3 points d'encre chromatique et <orangeStrong>augmente l'efficacité de Rupture de faiblesse et l'effet de Rupture</orangeStrong>.<br>Lorsque Rappa est dans la forme du sceau, <orangeStrong>son ATQ normale devient renforcée</orangeStrong>. Chaque utilisation de l'ATQ normale renforcée consomme 1 point d'encre chromatique. Rappa quitte la forme du sceau lorsqu'elle a utilisé tous les points d'encre chromatique.",
+        "tag": "Renforcement"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Technique ninja : Jauge d'endurance",
+        "fullDesc": "Rappa obtient 1 point de charge chaque fois qu'une cible ennemie subit une Rupture de faiblesse, jusqu'à un maximum de {{1}} points. La prochaine fois que Rappa lance la troisième frappe de Ningu : Lame de pétale d'exorcisme, elle inflige des DGT de rupture équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de ses DGT de rupture imaginaires à tous les ennemis. Ces DGT ignorent le type de faiblesse et réduisent la robustesse de {{4}}. Tous les points de charge sont consommés. Chaque point de charge augmente le multiplicateur des DGT de rupture de <orangeStrong>{{5, percent}}%</orangeStrong> et la réduction de robustesse pouvant ignorer le type de faiblesse de {{6}}.<br>En cas de Rupture de faiblesse, c'est l'effet de Rupture de faiblesse imaginaire qui s'applique.",
+        "shortDesc": "Rappa obtient 1 point de charge chaque fois qu'une cible ennemie subit une Rupture de faiblesse. Lors du déclenchement de la troisième frappe de Ningu : Lame de pétale d'exorcisme, inflige des DGT de rupture imaginaires supplémentaires à tous les ennemis. Ces DGT <orangeStrong>ignorent le type de faiblesse pour réduire la robustesse</orangeStrong> et consomment tous les points de charge pour augmenter le multiplicateur de DGT de rupture et la réduction de robustesse.",
+        "tag": "Renforcement"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Glissade ninja : Boing Boing",
+        "fullDesc": "Après avoir utilisé la technique, entre dans l'état Graffiti pendant {{1}} secondes. Dans cet état, avance rapidement sur une distance fixe et attaque tous les ennemis touchés. Bloque toutes les attaques ennemies pendant ce déplacement rapide. Utiliser une attaque dans l'état Graffiti permet de mettre fin au déplacement plus tôt. Après être entré en combat en attaquant des ennemis, leur inflige {{5}} points de robustesse quelles que soient leurs Faiblesses, inflige également des DGT de rupture équivalents à {{2, percent}}% des DGT de rupture imaginaires de Rappa à chaque cible ennemie et des DGT de rupture équivalents à {{3, percent}}% des DGT de rupture imaginaires de Rappa aux cibles adjacentes. D'autre part, Rappa régénère {{4}} points d'énergie.",
+        "shortDesc": "Entre dans l'état Graffiti. Se déplace rapidement vers l'avant sur une distance fixe et attaque tous les ennemis touchés. Après être entré en combat en attaquant des ennemis, <orangeStrong>réduit la robustesse de toutes les cibles ennemies quels que soient leurs types de faiblesses</orangeStrong> et inflige des DGT de rupture imaginaires à chaque cible ennemie ainsi qu'aux cibles adjacentes. D'autre part, cette unité régénère des points d'énergie.",
+        "tag": "Renforcement"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Écritures ninjutsu : Hauteurs célestes",
+        "fullDesc": "Lorsqu'un ennemi élite ou d'un niveau supérieur subit une Rupture de faiblesse, Rappa gagne {{2}} point de charge supplémentaire et récupère {{1}} points d'énergie."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Écritures ninjutsu : Résonance des mers",
+        "fullDesc": "Lorsque Rappa est dans la forme du sceau et qu'elle utilise son ATQ normale renforcée pour infliger des DGT à une cible ennemie en état de Rupture de faiblesse, la réduction de robustesse de cette instance de DGT est convertie en 1 instance de {{1, percent}}% de DGT de rupture extrême."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Écritures ninjutsu : Feuille flétrie",
+        "fullDesc": "Lorsqu'une cible ennemie subit une Rupture de faiblesse, les DGT de rupture qu'elle subit augmentent de {{1, percent}}%. Si l'ATQ actuelle de Rappa est supérieure à {{2}}, pour chaque tranche de 100 d'ATQ en excédent, cette augmentation est majorée de {{3, percent}}%, jusqu'à une augmentation supplémentaire maximale de {{4, percent}}%. Cet effet dure {{5}} tours."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Retour à sec",
+      "desc": "Lorsque Rappa entre dans la forme du sceau en utilisant son ultime, les DGT qu'elle inflige ignorent {{1, percent}}% de la DÉF des cibles. D'autre part, Rappa récupère {{2}} points d'énergie lorsqu'elle quitte la forme du sceau."
+    },
+    "2": {
+      "name": "Esprit illuminé par les haikus",
+      "desc": "La réduction de robustesse des deux premières frappes de l'ATQ normale renforcée contre l'ennemi désigné augmente de {{1, percent}}%."
+    },
+    "3": {
+      "name": "Nombreux sont les sanctuaires qui ne repoussent pas l'enfer",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Nindô perdu dévoré par le temps",
+      "desc": "Lorsque Rappa est dans la forme du sceau, la VIT de tous les alliés augmente de {{1, percent}}%."
+    },
+    "5": {
+      "name": "Volonté inébranlable et flèches infaillibles",
+      "desc": "Niv. de l'ultime +2, jusqu'au niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au niv. 10 maximum."
+    },
+    "6": {
+      "name": "Justice implacable sans merci",
+      "desc": "Augmente le nombre de points de charge initiaux du talent de {{1}} et la limite de points de charge de {{2}}. Obtient {{1}} points de charge après avoir lancé la troisième frappe de Ningu : Lame de pétale d'exorcisme."
+    }
+  }
+}

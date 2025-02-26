@@ -1,0 +1,102 @@
+{
+  "name": "The Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Did You Get It",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK The Herta pada 1 target musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh yang ditargetkan.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Big Brain Energy",
+        "fullDesc": "Mengakibatkan Ice DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK The Herta, dan menambahkan {{2}} lapis \"Interpretation\". Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK The Herta pada target yang terkena Skill kali ini dan target di sekitarnya, efek ini dapat berulang 2 kali.",
+        "shortDesc": "Mengakibatkan DMG pada 1 musuh yang ditargetkan. Mengakibatkan DMG pada target yang terkena Skill kali ini dan target di sekitarnya, berulang 2 kali.",
+        "tag": "Blast"
+      },
+      "1": {
+        "name": "Hear Me Out",
+        "fullDesc": "Mengonsumsi 1 lapis \"Inspiration\". Mengakibatkan Ice DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK The Herta dan menambahkan {{2}} lapis \"Interpretation\". Mengakibatkan Ice DMG pada target yang terkena Skill kali ini dan target di sekitarnya sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK The Herta, berulang 2 kali. Terakhir, mengakibatkan Ice DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK The Herta pada seluruh target musuh.",
+        "shortDesc": "Mengakibatkan DMG pada 1 musuh yang ditargetkan. Mengakibatkan DMG pada target yang terkena Skill kali ini dan target di sekitarnya, berulang 2 kali. Kemudian, mengakibatkan DMG pada seluruh musuh.",
+        "tag": "AoE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Told Ya! Magic Happens",
+        "fullDesc": "Menyortir ulang jumlah lapisan \"Interpretation\" seluruh musuh. Jumlah lapisan \"Interpretation\" yang lebih tinggi akan diprioritaskan ditransfer ke target tingkatan Elite ke atas, dan mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK The Herta pada seluruh musuh. Saat melancarkan Ultimate, akan meningkatkan <orangeStrong>{{4, percent}}%</orangeStrong> ATK The Herta, berlangsung selama {{5}} giliran. Setelah melancarkan, The Herta akan segera beraksi dan memperoleh 1 lapis \"Inspiration\". Maksimal dapat memiliki {{6}} lapis \"Inspiration\". Saat memiliki \"Inspiration\", Skill akan diperkuat menjadi \"Hear Me Out\".",
+        "shortDesc": "<orangeStrong>Menyortir ulang jumlah lapisan</orangeStrong> \"Interpretation\" seluruh musuh. Jumlah lapisan \"Interpretation\" yang lebih tinggi akan diprioritaskan ditransfer ke target tingkatan Elite ke atas, dan mengakibatkan Ice DMG pada seluruh musuh. Setelah digunakan, akan memperoleh Enhanced Skill dan segera beraksi.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Hand Them Over",
+        "fullDesc": "Saat target musuh memasuki pertempuran, The Herta akan menambahkan 1 lapis \"Interpretation\" padanya. Saat setiap gelombang pertempuran dimulai, akan menambahkan {{6}} lapis \"Interpretation\" pada 1 target musuh acak, dan prioritas utama penambahan lapisan adalah target musuh Elite ke atas. Saat target utama dari Enhanced Skill memiliki \"Interpretation\", DMG Multiplier yang diakibatkan akan meningkat, setiap lapisnya meningkatkan DMG Multiplier sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pada target utama/target lainnya. Jika karakter Path \"Erudition\" dalam tim lebih dari atau sama dengan 2, maka setiap lapis \"Interpretation\" akan meningkatkan DMG Multiplier sebesar ekstra <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pada target utama/target lainnya. \"Interpretation\" dapat ditumpuk hingga {{3}} lapis. Saat menggunakan Enhanced Skill, \"Interpretation\" target utama akan direset menjadi 1 lapis. Setelah target musuh meninggalkan medan pertempuran atau dikalahkan oleh unit mana pun, \"Interpretation\" akan ditransfer, dan akan diprioritaskan ditransfer ke target tingkatan Elite ke atas.",
+        "shortDesc": "Enhanced Skill <orangeStrong>meningkatkan DMG yang diakibatkan berdasarkan jumlah lapisan \"Interpretation\" target</orangeStrong>.",
+        "tag": "Enhance"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Vibe Checker",
+        "fullDesc": "Setelah menggunakan Technique, saat pertempuran selanjutnya dimulai akan meningkatkan {{1, percent}}% ATK The Herta, berlangsung selama {{2}} giliran.<br>Jika ada Peti Harta Biasa di latar tempat saat ini, setelah menggunakan Technique, akan menandai hingga {{3}} lokasi Peti Harta Biasa.<br>Setelah menggunakan Technique untuk memasuki pertempuran di Simulated Universe atau Divergent Universe, saat setiap gelombang pertempuran dimulai, akan mengakibatkan True DMG sebesar {{4, percent}}% Max HP target pada target musuh di bawah tingkatan Elite, dan mengakibatkan True DMG sebesar {{5, percent}}% Max HP target pada target musuh tingkat Elite ke atas.",
+        "shortDesc": "Setelah menggunakan Technique, <orangeStrong>beberapa lokasi Peti Harta Biasa akan ditandai</orangeStrong>, dan ATK The Herta akan meningkat saat pertempuran selanjutnya dimulai.<br>Setelah menggunakan Technique untuk memasuki pertempuran di Simulated Universe atau Divergent Universe, saat setiap gelombang pertempuran dimulai, akan mengakibatkan True DMG dalam jumlah besar pada seluruh musuh.",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Aloofly Honest",
+        "fullDesc": "Saat rekan tim menyerang, akan menambahkan 1 lapis \"Interpretation\" pada target musuh yang terserang. Setelah menyerang, untuk setiap 1 target yang terserang oleh serangan kali ini, The Herta akan memulihkan {{1}} Energy dalam jumlah tetap, maksimal menghitung hingga 5 target. Saat melancarkan Enhanced Skill, jika jumlah lapisan \"Interpretation\" target utama mencapai 42, maka DMG yang diakibatkan The Herta akan meningkat {{2, percent}}%, berlangsung hingga serangan kali ini berakhir."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Message From Beyond the Veil",
+        "fullDesc": "Saat memasuki pertempuran, jika karakter Path \"Erudition\" dalam tim lebih dari atau sama dengan 2, akan meningkatkan {{1, percent}}% CRIT DMG seluruh rekan tim, dan membuat Trace \"Aloofly Honest\" menghitung setidaknya ada {{2}} target yang terserang. Setelah menyerang, akan menambahkan {{3}} lapis \"Interpretation\" pada target yang jumlah lapisan \"Interpretation\"-nya tertinggi di antara target yang terserang. Jika penyerang adalah karakter Path \"Erudition\", maka akan menambahkan ekstra {{4}} lapis \"Interpretation\"."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Starved Landscape of Vacua",
+        "fullDesc": "Setiap 1 lapis \"Interpretation\" yang ditambahkan pada target musuh akan membuat The Herta memperoleh 1 lapis \"Answer\", maksimal dapat ditumpuk hingga {{2}} lapis. Saat melancarkan Ultimate, setiap 1 \"Answer\" yang dimiliki akan meningkatkan {{1, percent(fixed: 1)}}% DMG Multiplier dari Ultimate The Herta kali ini."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Night at Shorefall",
+      "desc": "Saat Enhanced Skill menghitung jumlah lapisan \"Interpretation\", perhitungan akan menghitung ekstra {{1, percent}}% dari jumlah lapisan \"Interpretation\" milik 1 target yang jumlah lapisan \"Interpretation\"-nya paling tinggi dari antara target utama dan target di sekitarnya. Saat melancarkan Enhanced Skill dan mereset \"Interpretation\", jumlah lapisan saat direset akan menjadi {{2}} lapis."
+    },
+    "2": {
+      "name": "Wind Through Keyhole",
+      "desc": "Setelah The Herta memasuki pertempuran atau melancarkan Ultimate, akan memperoleh tambahan 1 lapis \"Inspiration\". Setelah melancarkan Enhanced Skill, aksi The Herta yang berikutnya akan didahulukan sebesar {{1, percent}}%."
+    },
+    "3": {
+      "name": "Door into Summer",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "The Sixteenth Key",
+      "desc": "Meningkatkan {{1, percent}}% SPD karakter Path \"Erudition\" dalam tim."
+    },
+    "5": {
+      "name": "Bitter Pill of Truth",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Sweet Lure of Answer",
+      "desc": "Ice RES PEN The Herta meningkat {{4, percent}}%. Saat di medan pertempuran ada 3 atau lebih/2/1 target musuh, DMG Multiplier dari Ultimate meningkat {{1, percent}}%/{{2, percent}}%/{{3, percent}}%."
+    }
+  }
+}

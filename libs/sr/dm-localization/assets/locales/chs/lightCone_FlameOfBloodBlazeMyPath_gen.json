@@ -1,0 +1,7 @@
+{
+  "name": "血火啊，燃烧前路",
+  "passive": {
+    "name": "远望",
+    "description": "使装备者的生命上限提高<orangeStrong>{{1, percent}}%</orangeStrong>，受到的治疗量提高<orangeStrong>{{6, percent}}%</orangeStrong>，施放战技或终结技时消耗等同于自身<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限的生命值，并使本次攻击造成的伤害提高<orangeStrong>{{3, percent}}%</orangeStrong>，若该效果消耗的生命值高于{{4}}点，可使伤害额外提高<orangeStrong>{{5, percent}}%</orangeStrong>。<br>若当前生命值不足，该效果最多使装备者的当前生命值降低至1点。"
+  }
+}

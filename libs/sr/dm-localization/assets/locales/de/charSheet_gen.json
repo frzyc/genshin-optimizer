@@ -6,7 +6,7 @@
     "atk_": "ANG-Verstärkung",
     "def_": "VTD-Verstärkung",
     "crit_": "KRIT-Rate-Erhöhung",
-    "crit_dmg_": "KRIT-Rate- u. KRIT-SCH-Erhöhung",
+    "crit_dmg_": "KRIT-SCH-Erhöhung",
     "eff_res_": "Effekt-WDS-Verstärkung",
     "spd": "GES-Erhöhung",
     "physical_dmg_": "SCH-Verstärkung: Physisch",
@@ -16,6 +16,6 @@
     "wind_dmg_": "SCH-Verstärkung: Wind",
     "quantum_dmg_": "SCH-Verstärkung: Quanten",
     "imaginary_dmg_": "SCH-Verstärkung: Imaginär",
-    "brEffect_": "Brucheffekt-Verstärkung"
+    "brEffect_": "Brucheffekt-Erhöhung"
   }
 }

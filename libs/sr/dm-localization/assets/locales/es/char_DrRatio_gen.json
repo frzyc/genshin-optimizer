@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Molde de la idolatría",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que afecta con Provocación a los enemigos cercanos durante {{1}} s. Al entrar en combate con los enemigos dentro de la zona especial, hay una probabilidad base del {{2, percent}}% de que la VEL de cada enemigo se reduzca en un {{3, percent}}% durante {{4}} turnos. Solo puedes tener una zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que afecta con Provocación a los enemigos cercanos durante {{1}} s. Al entrar en combate con los enemigos dentro de la zona especial, hay una probabilidad base del {{2, percent}}% de que la VEL de cada enemigo se reduzca en un {{3, percent}}% durante {{4}} turnos. Solo puede haber una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. Los enemigos que se encuentren dentro de la zona son afectados por Provocación. Al entrar en combate con los enemigos de la zona, hay una gran probabilidad de que <orangeStrong>la velocidad del objetivo enemigo se reduzca</orangeStrong>.",
         "tag": "Alteración"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Inducción",
-        "fullDesc": "Al usar la habilidad básica, por cada estado negativo del objetivo, la Prob. CRIT del Dr. Ratio aumenta en un {{1, percent(fixed: 1)}}% y su Daño CRIT aumenta en un {{2, percent}}%. Este efecto se puede acumular hasta {{3}} veces.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad básica, por cada estado negativo del objetivo, la Prob. CRIT del Dr. Ratio aumenta en un {{1, percent(fixed: 1)}}% y su Daño CRIT aumenta en un {{2, percent}}%. Este efecto se puede acumular hasta {{3}} veces."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inferencia",
-        "fullDesc": "Al usar la habilidad básica para atacar a un enemigo, hay un {{1, percent}}% de probabilidad base de reducir la RES a efecto del objetivo en un {{2, percent}}% durante {{3}} turnos.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad básica para atacar a un enemigo, hay un {{1, percent}}% de probabilidad base de reducir la RES a efecto del objetivo en un {{2, percent}}% durante {{3}} turnos."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Deducción",
-        "fullDesc": "Al infligir daño, si el objetivo tiene {{1}} o más estados negativos, el Dr. Ratio le inflige un {{2, percent}}% más de daño por cada estado negativo, hasta un aumento máximo del {{3, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al infligir daño, si el objetivo tiene {{1}} o más estados negativos, el Dr. Ratio le inflige un {{2, percent}}% más de daño por cada estado negativo, hasta un aumento máximo del {{3, percent}}%."
       }
     }
   },

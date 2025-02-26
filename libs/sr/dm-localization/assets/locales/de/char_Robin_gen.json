@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Prachtvolle Koloratur",
-        "fullDesc": "Beim Kampfbeginn wird die eigene Aktion um {{1, percent}}% vorgezogen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Beim Kampfbeginn wird die eigene Aktion um {{1, percent}}% vorgezogen."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Improvisierte Vokalise",
-        "fullDesc": "Im Status „Konzert“ wird der KRIT-SCH aller Verbündeten bei Folgeangriffen um {{1, percent}}% erhöht.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Im Status „Konzert“ wird der KRIT-SCH aller Verbündeten bei Folgeangriffen um {{1, percent}}% erhöht."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Modulierte Passage",
-        "fullDesc": "Stellt beim Einsatz der Fertigkeit zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt beim Einsatz der Fertigkeit zusätzlich {{1}} Pkt. Energie wieder her."
       }
     }
   },

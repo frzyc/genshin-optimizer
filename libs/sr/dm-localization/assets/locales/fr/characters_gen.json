@@ -19,7 +19,8 @@
     "Nihility": "La Nihilité",
     "Destruction": "La Destruction",
     "Harmony": "L'Harmonie",
-    "TheHunt": "La Chasse"
+    "TheHunt": "La Chasse",
+    "Remembrance": "Le Souvenir"
   },
   "ability": {
     "basic": "ATQ normale",
@@ -30,10 +31,15 @@
   },
   "dmgType": {
     "single": "Cible unique",
-    "aoe": "ZdE",
+    "aoe": "ATQ à ZdE",
     "bounce": "Rebond",
     "blast": "Propagation",
     "support": "Soutien",
-    "impair": "Incapacitation"
+    "impair": "Incapacitation",
+    "restore": "Restauration",
+    "defense": "Défense",
+    "enhance": "Renforcement",
+    "charging": "Chargement",
+    "summon": "Invocation"
   }
 }

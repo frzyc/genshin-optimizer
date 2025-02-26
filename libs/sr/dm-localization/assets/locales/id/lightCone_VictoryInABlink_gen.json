@@ -1,0 +1,7 @@
+{
+  "name": "Victory In a Blink",
+  "passive": {
+    "name": "Final Hit",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> CRIT DMG pengguna. Saat Memosprite pengguna melancarkan kemampuan pada rekan tim, DMG yang diakibatkan seluruh rekan tim akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>, berlangsung selama {{3}} giliran."
+  }
+}

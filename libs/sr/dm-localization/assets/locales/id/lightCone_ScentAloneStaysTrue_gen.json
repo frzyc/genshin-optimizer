@@ -1,0 +1,7 @@
+{
+  "name": "Scent Alone Stays True",
+  "passive": {
+    "name": "Contentment",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Break Effect pengguna. Setelah pengguna melancarkan Ultimate untuk menyerang target musuh, akan membuat target musuh tersebut memasuki status \"Woefree\" selama {{5}} giliran. DMG yang diterima target musuh yang berstatus \"Woefree\" akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. Jika Break Effect pengguna saat ini lebih dari atau sama dengan {{3, percent}}%, maka efek peningkatan DMG yang diterimanya akan meningkat ekstra <orangeStrong>{{4, percent}}%</orangeStrong>."
+  }
+}

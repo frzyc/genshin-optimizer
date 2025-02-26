@@ -25,7 +25,7 @@
       "1": {
         "name": "Surcharge de l'étoile mourante de Lampyroptère type IV",
         "fullDesc": "Restaure des PV à hauteur de {{3, percent}}% des PV max du personnage. Applique une Faiblesse au feu à une cible ennemie unique pour une durée de {{4}} tours. Inflige des DGT de feu équivalents à ({{5, fixed(fixed: 1)}} x effet de Rupture + <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>) de l'ATQ de SAM à cette cible. D'autre part, inflige des DGT de feu équivalents à ({{6, fixed(fixed: 1)}} x effet de Rupture + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>) de l'ATQ de SAM aux cibles adjacentes. L'effet de Rupture pris en compte ne peut pas dépasser {{7, percent}}%.",
-        "shortDesc": "Restaure une partie des PV du personnage, <orangeStrong>applique une Faiblesse au feu</orangeStrong> à une cible ennemie unique et inflige des DGT de feu massifs à cette cible, et des DGT de feu aux cibles adjacentes.",
+        "shortDesc": "Restaure une partie des PV du personnage, <orangeStrong>applique une Faiblesse au feu</orangeStrong> à un ennemi et inflige des DGT de feu massifs à cette cible, et des DGT de feu aux cibles adjacentes.",
         "tag": "Propagation"
       }
     },
@@ -57,32 +57,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Explosion à retardement du module α",
-        "fullDesc": "Dans l'état Combustion complète, les attaques contre les ennemis qui n'ont pas de Faiblesse au feu peuvent également réduire la robustesse d'un montant équivalent à {{1, percent}}% de la réduction de robustesse originale de la capacité.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Dans l'état Combustion complète, les attaques contre les ennemis qui n'ont pas de Faiblesse au feu peuvent également réduire la robustesse d'un montant équivalent à {{1, percent}}% de la réduction de robustesse originale de la capacité."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Armure auto-réactive du module β",
-        "fullDesc": "Lorsque SAM est dans l'état Combustion complète avec un effet de Rupture supérieur ou égal à {{1, percent}}%/{{2, percent}}%, attaquer une cible ennemie en état de Rupture de faiblesse convertit la réduction de robustesse de cette attaque en 1 instance de {{3, percent}}%/{{4, percent}}% de DGT de rupture extrême.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque SAM est dans l'état Combustion complète avec un effet de Rupture supérieur ou égal à {{1, percent}}%/{{2, percent}}%, attaquer une cible ennemie en état de Rupture de faiblesse convertit la réduction de robustesse de cette attaque en 1 instance de {{3, percent}}%/{{4, percent}}% de DGT de rupture extrême."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Noyau de surcharge du module γ",
-        "fullDesc": "Augmente l'effet de Rupture de SAM de {{3, percent(fixed: 1)}}% pour chaque tranche de {{2}} points d'ATQ qui dépasse {{1}}.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente l'effet de Rupture de SAM de {{3, percent(fixed: 1)}}% pour chaque tranche de {{2}} points d'ATQ qui dépasse {{1}}."
       }
     }
   },

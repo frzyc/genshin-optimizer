@@ -42,7 +42,7 @@
     "technique": {
       "0": {
         "name": "Shine of Truth",
-        "fullDesc": "After using this Technique, creates a Special Dimension around Jingliu that lasts for {{3}} seconds, and all enemies in this Special Dimension will become Frozen. After entering combat with enemies in the Special Dimension, Jingliu immediately regenerates {{6}} Energy and obtains {{1}} stack(s) of Syzygy, with a {{2, percent}}% base chance of Freezing enemy targets for {{4}} turn(s). While Frozen, enemy targets cannot take action, and receive Ice Additional DMG equal to {{5, percent}}% of Jingliu's ATK at the start of every turn. Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using this Technique, creates a Special Dimension around Jingliu that lasts for {{3}} seconds, and all enemies in this Special Dimension will become Frozen. After entering combat with enemies in the Special Dimension, Jingliu immediately regenerates {{6}} Energy and obtains {{1}} stack(s) of Syzygy, with a {{2, percent}}% base chance of Freezing enemy targets for {{4}} turn(s). While Frozen, enemy targets cannot take action, and receive Ice Additional DMG equal to {{5, percent}}% of Jingliu's ATK at the start of every turn. Only 1 Dimension Effect created by allies can exist at the same time.",
         "shortDesc": "Creates a Special Dimension around the character. Enemies within this dimension will become <orangeStrong>Frozen</orangeStrong>. After entering combat with enemies in the dimension, this character regenerates Energy and obtains 1 stack of Syzygy with a high chance to <orangeStrong>Freeze</orangeStrong> enemies.",
         "tag": "Impair"
       }
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Deathrealm",
-        "fullDesc": "While in the Spectral Transmigration state, increases Effect RES by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "While in the Spectral Transmigration state, increases Effect RES by {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sword Champion",
-        "fullDesc": "After using \"Transcendent Flash,\" the next action advances by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After using \"Transcendent Flash,\" the next action advances by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Frost Wraith",
-        "fullDesc": "While in the Spectral Transmigration state, increases DMG dealt by Ultimate by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "While in the Spectral Transmigration state, increases DMG dealt by Ultimate by {{1, percent}}%."
       }
     }
   },

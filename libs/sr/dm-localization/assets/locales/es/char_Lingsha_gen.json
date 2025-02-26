@@ -1,0 +1,96 @@
+{
+  "name": "Lingsha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Incienso votivo",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Lingsha como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Humo y esplendor",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Lingsha como Daño de Fuego a todos los enemigos, regenera a todos los aliados una cantidad de PV equivalente al <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del ATQ de Lingsha + <orangeStrong>{{3}}</orangeStrong> y adelanta la acción de Fuyuan en un {{4, percent}}%.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a todos los enemigos, <orangeStrong>regenera PV</orangeStrong> a todos los aliados y adelanta la acción de Fuyuan.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Neblina goteante",
+        "fullDesc": "Afecta con Obnubilación a todos los enemigos. En el estado de Obnubilación, el Daño de Ruptura que reciben los enemigos aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong> durante {{5}} turnos.<br>Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Lingsha como Daño de Fuego a todos los enemigos y, al mismo tiempo, regenera a todos los aliados una cantidad de PV equivalente al <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del ATQ de Lingsha + <orangeStrong>{{3}}</orangeStrong> y adelanta la acción de Fuyuan en un {{6, percent}}%.",
+        "shortDesc": "<orangeStrong>Aumenta el Daño de Ruptura que reciben</orangeStrong> todos los enemigos, inflige Daño de Fuego a todos los enemigos, <orangeStrong>regenera PV</orangeStrong> a todos los aliados y adelanta la acción de Fuyuan.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Manifestación nebulosa",
+        "fullDesc": "Al lanzar la habilidad básica, invoca a Fuyuan, que tiene inicialmente una VEL de {{1}} y puede actuar {{7}} veces.<br>Cuando Fuyuan actúa, lanza un ataque adicional que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Lingsha como Daño de Fuego a todos los enemigos. Además, inflige un <orangeStrong>{{8, percent}}%</orangeStrong> del ATQ de Lingsha como Daño de Fuego a un enemigo al azar. Este daño elige prioritariamente a un objetivo con una Firmeza superior a 0 y que tenga Debilidad de Fuego. Disipa {{6}} estado negativo de todos los aliados y les regenera una cantidad de PV equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> del ATQ de Lingsha + <orangeStrong>{{4}}</orangeStrong>.<br>Fuyuan puede acumular hasta {{5}} acciones. Cuando sus acciones llegan a 0 o Lingsha es derrotada, Fuyuan desaparece.<br>Mientras Fuyuan está en el campo de batalla, las acciones de Fuyuan aumentan en {{7}} cada vez que Lingsha lanza la habilidad básica.",
+        "shortDesc": "Al lanzar la habilidad básica, invoca a Fuyuan: cuando actúa, lanza un <orangeStrong>ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño de Fuego a todos los enemigos. Además, inflige una pequeña cantidad de Daño de Fuego a un enemigo al azar, priorizando objetivos con una Firmeza superior a 0 y que tengan Debilidad de Fuego. Disipa 1 estado negativo y <orangeStrong>regenera PV</orangeStrong> a todos los aliados.<br>Las veces que Fuyuan puede actuar aumentan al lanzar repetidamente la habilidad básica.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Soplos de la aurora",
+        "fullDesc": "Tras usar la técnica, invoca inmediatamente a Fuyuan al comenzar la siguiente batalla y afecta a todos los enemigos con Obnubilación durante {{1}} turnos.",
+        "shortDesc": "Tras usar la técnica, invoca inmediatamente a Fuyuan al comenzar la siguiente batalla y hace que todos los enemigos <orangeStrong>reciban más Daño de Ruptura</orangeStrong>.",
+        "tag": "Apoyo"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bocanada bermellón",
+        "fullDesc": "Aumenta su ATQ/curación realizada en una cantidad equivalente al {{1, percent}}%/{{2, percent}}% del efecto de Ruptura, hasta un aumento máximo del {{3, percent}}%/{{4, percent}}% respectivamente."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vapores silvestres",
+        "fullDesc": "Al lanzar el ATQ básico, recupera {{1}} pts. de energía adicionales."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ecos del incienso",
+        "fullDesc": "Cuando cualquier personaje recibe daño o pierde PV mientras Fuyuan está en el campo de batalla, si en el equipo hay algún personaje cuyo porcentaje de PV actual sea igual o inferior al {{1, percent}}%, Fuyuan lanza inmediatamente contra los enemigos el ataque adicional del talento sin consumir ninguna acción. Este efecto se puede volver a activar después de {{2}} turnos."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ramo en flor contra los males",
+      "desc": "La eficiencia de la Ruptura de Debilidad de Lingsha aumenta en un {{2, percent}}%. Cuando se rompe la Debilidad de un enemigo, reduce su DEF en un {{1, percent}}%."
+    },
+    "2": {
+      "name": "Reposo tras el velo de humo",
+      "desc": "Al lanzar la habilidad definitiva, el efecto de Ruptura de todos los aliados aumenta en un {{1, percent}}% durante {{2}} turnos."
+    },
+    "3": {
+      "name": "Brillo del pábilo floral",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Aromas del recuerdo bajo el dosel",
+      "desc": "Cuando Fuyuan actúa, regenera al objetivo aliado con menos PV actualmente una cantidad de PV equivalente al {{1, percent}}% del ATQ de Lingsha."
+    },
+    "5": {
+      "name": "Compostura ante las vueltas y revueltas",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Reclusión de fragancia acumulada",
+      "desc": "Cuando Fuyuan está en el campo de batalla, la RES a todos los tipos de todos los enemigos se reduce en un {{1, percent}}%. Cuando Fuyuan ataca, inflige daño {{2}} veces adicionales. Cada vez, inflige un {{3, percent}}% del ATQ de Lingsha como Daño de Fuego a un enemigo al azar y causa {{4}} puntos de Reducción de Firmeza. Elige prioritariamente a objetivos con una Firmeza superior a 0 y que tengan Debilidad de Fuego."
+    }
+  }
+}

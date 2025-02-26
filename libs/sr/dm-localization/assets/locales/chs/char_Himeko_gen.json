@@ -45,32 +45,25 @@
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "星火",
-        "fullDesc": "施放攻击后，有{{1, percent}}%的基础概率使敌方目标陷入灼烧状态，持续{{2}}回合。<br>灼烧状态下，敌方目标每回合开始时受到等同于姬子{{3, percent}}%攻击力的火属性持续伤害。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "施放攻击后，有{{1, percent}}%的基础概率使敌方目标陷入灼烧状态，持续{{2}}回合。<br>灼烧状态下，敌方目标每回合开始时受到等同于姬子{{3, percent}}%攻击力的火属性持续伤害。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "灼热",
-        "fullDesc": "战技对灼烧状态下的敌方目标造成的伤害提高{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "战技对灼烧状态下的敌方目标造成的伤害提高{{1, percent}}%。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "道标",
-        "fullDesc": "若当前生命值百分比大于等于{{1, percent}}%，则暴击率提高{{2, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "若当前生命值百分比大于等于{{1, percent}}%，则暴击率提高{{2, percent}}%。"
       }
     }
   },

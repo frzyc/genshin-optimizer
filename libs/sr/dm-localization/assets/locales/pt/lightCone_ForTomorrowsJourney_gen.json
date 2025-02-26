@@ -1,0 +1,7 @@
+{
+  "name": "Pela Jornada do Amanhã",
+  "passive": {
+    "name": "Laços",
+    "description": "Aumenta o ATQ do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Depois que o usuário usa sua Perícia Suprema, aumenta o seu Dano causado em <orangeStrong>{{2, percent}}%</orangeStrong>, durando por {{3}} rodada(s)."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "Fugue",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Strahlender Schweif",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Fugues ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu.",
+        "tag": "Einzelangriff"
+      },
+      "1": {
+        "name": "Sanfte Flammen",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Fugues ANG zu und fügt angrenzenden Einheiten Feuer-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Fugues ANG zu.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Feuer-SCH zu.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Verdiente Glückseligkeit",
+        "fullDesc": "Verleiht einem anvisierten Verbündeten „Fuchsgebet“ und tritt selbst für {{1}} Rd. in den Status „Flammend“ ein. Die Dauer dieses Status wird jeweils zu Beginn von Fugues Runde um 1 verringert. Fuchsgebet wirkt nur auf das letzte Ziel der Fertigkeit von Fugue.<br>Der Brucheffekt von Verbündeten mit Fuchsgebet wird um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Angriffe auf Gegner ohne entsprechenden Schwächetyp können auch WDS reduzieren, wobei der Effekt {{6, percent}}% des ursprünglichen WDS-Reduzierungswerts entspricht und nicht mit anderen Effekten, die WDS unabhängig vom Schwächetyp reduzieren, gestapelt werden kann.<br>Im Status „Flammend“ wird Fugues Standardangriff verstärkt. Nach jedem Angriff von Verbündeten mit „Fuchsgebet“ hat Fugue eine Grundchance von {{3, percent}}%, die VTD des Angriffsziels für {{5}} Rd. um <orangeStrong>{{4, percent}}%</orangeStrong> zu reduzieren.",
+        "shortDesc": "Verleiht einem Verbündeten „Fuchsgebet“, <orangeStrong>erhöht den Brucheffekt</orangeStrong> und bewirkt, dass <orangeStrong>Angriffe auf Gegner ohne entsprechenden Schwächetyp auch WDS reduzieren können</orangeStrong>.<br>Diese Einheit tritt in den Status „Flammend“ ein, wodurch der Standardangriff verstärkt wird. Wenn Verbündete mit „Fuchsgebet“ angreifen, hat Fugue eine hohe Chance, die VTD des Gegners zu reduzieren.",
+        "tag": "Unterstützung"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Sonnenpracht scheint auf alle",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Fugues ANG zu. Dieser Angriff verringert unabhängig vom Schwächetyp den WDS aller Gegner. Wenn Gegner Schwächebruch erleiden, wird der Effekt Schwächebruch: Feuer ausgelöst.",
+        "shortDesc": "Fügt allen Gegnern Feuer-SCH zu. Dieser Angriff verringert <orangeStrong>unabhängig vom Schwächetyp</orangeStrong> den WDS aller Gegner.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Reichlich Güte verbreitet Tugend",
+        "fullDesc": "Wenn sich Fugue auf dem Kampffeld befindet, werden Gegner zusätzlich mit „Wolkenflammen“ in Höhe von {{2, percent}}% ihres max. WDS belegt. Wenn der anfängliche WDS auf 0 reduziert wird, kann Wolkenflammen weiter bis auf 0 reduziert werden, woraufhin der Gegner zusätzlich 1-mal Schwächebruch-SCH erleidet.<br>Wenn sich Fugue auf dem Kampffeld befindet und nachdem ein Verbündeter einen Gegner mit Schwächebruch angegriffen hat, wird der WDS-Reduzierungswert dieses Angriffs 1-mal in <orangeStrong>{{1, percent}}%</orangeStrong> Super-Bruch-SCH umgewandelt.",
+        "shortDesc": "Wenn sich Fugue auf dem Kampffeld befindet, werden Gegner <orangeStrong>zusätzlich mit „Wolkenflammen“ belegt</orangeStrong>. Wenn Wolkenflammen auf 0 reduziert wird, erleiden die Gegner <orangeStrong>zusätzlich 1-mal Schwächebruch-SCH</orangeStrong>. Nachdem ein Verbündeter Gegner mit Schwächebruch angegriffen hat, wird zusätzlich <orangeStrong>Super-Bruch-SCH</orangeStrong> verursacht.",
+        "tag": "Beeinträchtigung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Hell und klar",
+        "fullDesc": "Belegt nach dem Einsatz der Technik Gegner in einem bestimmten Bereich für {{1}} Sek. mit Schwindel. Von Schwindel betroffene Gegner greifen Verbündete nicht aktiv an.<br>Nach Kampfeintritt mit einem aktiven Angriff auf von Schwindel betroffene Gegner wird Fugues Aktion um {{4, percent}}% vorgezogen, wobei eine Grundchance von {{2, percent}}% besteht, jeden Gegner für {{3}} Rd. mit dem Status von VTD-Reduktion, der dem von Fugues Fertigkeit entspricht, zu belegen.",
+        "shortDesc": "Belegt Gegner in einem bestimmten Bereich mit Schwindel. Nach Kampfeintritt mit einem Angriff auf von Schwindel betroffenen Gegnern wird Fugues Aktion vorgezogen, wobei eine hohe Chance besteht, jeden Gegner mit dem Status von VTD-Reduktion, der dem von Fugues Fertigkeit entspricht, zu belegen.",
+        "tag": "Beeinträchtigung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Erstrahlendes Verdantia",
+        "fullDesc": "Verzögert die Aktion der Gegner zusätzlich um {{1, percent}}%, nachdem Verbündete ihnen Schwächebruch zugefügt haben."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Die Fuchslegende",
+        "fullDesc": "Erhöht den Brucheffekt dieser Einheit um {{1, percent}}%. Stellt sofort {{2}} Fertigkeitspunkt wieder her, wenn die Fertigkeit zum ersten Mal eingesetzt wird."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Schlichte Himmelsperlen",
+        "fullDesc": "Wenn ein Gegner Schwächebruch erleidet, wird der Brucheffekt von allen Verbündeten außer dieser Einheit um {{1, percent}}% erhöht. Wenn Fugues Brucheffekt {{4, percent}}% oder mehr beträgt, wird der Effekt der Brucheffekt-Erhöhung für {{2}} Rd. zusätzlich um {{5, percent}}% erhöht. Dieser Effekt ist bis zu {{3}}-fach stapelbar."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Einst erdgebunden, bald wolkenwärts",
+      "desc": "Erhöht die Schwächebruch-Effizienz von Verbündeten mit „Fuchsgebet“ um {{1, percent}}%."
+    },
+    "2": {
+      "name": "Für die Würdigen bricht Seligkeit an",
+      "desc": "Wenn ein Gegner Schwächebruch erleidet, stellt Fugue {{1}} Pkt. Energie wieder her. Nach dem Einsatz des Ultimates wird die Aktion aller Verbündeten um {{2, percent}}% vorgezogen."
+    },
+    "3": {
+      "name": "Erscheinung in reinen Farben",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Verwandeltes Ich, verlorene Namen",
+      "desc": "Erhöht den verursachten Bruch-SCH von Verbündeten mit „Fuchsgebet“ um {{1, percent}}%."
+    },
+    "5": {
+      "name": "Glücksvorboten in farbreichen Wolken",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Hellsehen in Licht und Schatten",
+      "desc": "Erhöht Fugues Schwächebruch-Effizienz um {{1, percent}}%. Wenn sich Fugue im Status Flammend befindet, wird der Effekt von Fuchsgebet bei allen Verbündeten wirksam."
+    }
+  }
+}

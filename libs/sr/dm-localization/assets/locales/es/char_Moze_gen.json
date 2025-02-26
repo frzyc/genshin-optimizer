@@ -1,0 +1,96 @@
+{
+  "name": "Moze",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dardo volador",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Moze como Daño de Rayo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Embate raudo",
+        "fullDesc": "Marca como Presa a un enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Moze como Daño de Rayo y obtiene {{2}} puntos de carga.<br>Si en el campo de batalla no quedan otros personajes que puedan combatir, Moze no puede usar la habilidad básica y se disipa el estado de Presa del enemigo.",
+        "shortDesc": "<orangeStrong>Marca a un enemigo como Presa</orangeStrong> y le inflige Daño de Rayo. Además, obtiene <orangeStrong>{{2}}</orangeStrong> pts. de carga.",
+        "tag": "ATQ individual"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Puñalada y evasión",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Moze como Daño de Rayo a un enemigo y lanza el ataque adicional del talento contra dicho enemigo. Si el objetivo es eliminado antes de lanzar este ataque adicional, entonces lo lanza contra un enemigo al azar.",
+        "shortDesc": "Inflige Daño de Rayo a un enemigo y lanza el <orangeStrong>ataque adicional</orangeStrong> del talento.",
+        "tag": "ATQ individual"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cascada de puñales plumíferos",
+        "fullDesc": "Moze entra en el estado de Ausente mientras haya una Presa en el campo de batalla.<br>Después de que un objetivo aliado ataque a la Presa, Moze le inflige 1 vez un Daño de Rayo adicional equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ, y gasta 1 punto de carga. Por cada {{2}} puntos de carga gastados, Moze lanza 1 ataque adicional a la Presa que le inflige un <orangeStrong>{{3, percent}}%</orangeStrong> de su ATQ como Daño de Rayo. Cuando la carga llega a 0, se disipa el estado de Presa del objetivo y se reinicia el contador de pts. de carga requeridos para lanzar los ataques adicionales. El ataque adicional del talento no consume carga.",
+        "shortDesc": "Moze entra en el estado de <orangeStrong>Ausente</orangeStrong> mientras haya una Presa en el campo de batalla.<br>Después de que un objetivo aliado ataque a la Presa, Moze inflige <orangeStrong>Daño de Rayo adicional</orangeStrong> y gasta 1 pt. de carga. Por cada <orangeStrong>{{2}}</orangeStrong> puntos gastados, Moze lanza un <orangeStrong>ataque adicional</orangeStrong> a la Presa que le inflige Daño de Rayo. Cuando la carga llega a 0, se disipa el estado de Presa del objetivo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Alas ocultas",
+        "fullDesc": "Tras usar la técnica, Moze obtiene Invisibilidad durante {{1}} s. Mientras está en el estado de Invisibilidad, no puede ser detectado por los enemigos. Al entrar en combate al golpear al enemigo mientras está en el estado de Invisibilidad, el daño de Moze aumenta en un {{2, percent}}% durante {{3}} turnos.",
+        "shortDesc": "Entra en el estado de Invisibilidad. Al entrar en combate al golpear al enemigo mientras está en el estado de Invisibilidad, su daño aumenta.",
+        "tag": "Potenciación"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Manto de plumas negras",
+        "fullDesc": "Tras lanzar el ataque adicional del talento, recupera {{1}} pt. de habilidad básica. Este efecto se puede volver a activar después de {{2}} turno."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Daga en mano",
+        "fullDesc": "La acción de Moze se adelanta un {{1, percent}}% cuando se disipa su estado de Ausente. Al comienzo de cada oleada, Moze adelanta su acción en un {{2, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Venganza dirigida",
+        "fullDesc": "Cuando inflige daño con su habilidad definitiva, se considera que lanza un ataque adicional. El daño de ataque adicional que recibe la Presa aumenta en un {{1, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Juramento",
+      "desc": "Tras entrar en combate, Moze recupera {{2}} pts. de energía. Cada vez que se activa el daño adicional del talento, Moze recupera {{1}} pts. de energía."
+    },
+    "2": {
+      "name": "Castigo",
+      "desc": "El Daño CRIT que infligen todos los objetivos aliados a los enemigos marcados como Presa aumenta en un {{1, percent}}%."
+    },
+    "3": {
+      "name": "Persecución",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "Camuflaje",
+      "desc": "Al lanzar la habilidad definitiva, el daño que inflige Moze aumenta en un {{1, percent(fixed: 1)}}% durante {{2}} turnos."
+    },
+    "5": {
+      "name": "Impostura",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Lealtad",
+      "desc": "El multiplicador de daño del ataque adicional del talento aumenta en un {{1, percent}}%."
+    }
+  }
+}

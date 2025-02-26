@@ -1,0 +1,7 @@
+{
+  "setName": "Nhà Thơ Khúc Bi Ca Vong Quốc",
+  "setEffects": {
+    "2": "Sát Thương Lượng Tử tăng {{1, percent}}%.",
+    "4": "Khiến Tốc Độ của người trang bị giảm {{6, percent}}%. Trước khi vào chiến đấu, nếu Tốc Độ của người trang bị dưới {{2}}/{{3}}, sẽ khiến Tỷ Lệ Bạo Kích của người trang bị tăng {{4, percent}}%/{{5, percent}}%. Hiệu ứng này đồng thời có hiệu lực với Linh Hồn Ký Ức của người trang bị."
+  }
+}

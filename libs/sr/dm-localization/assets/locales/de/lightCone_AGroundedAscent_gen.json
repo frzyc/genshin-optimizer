@@ -1,0 +1,7 @@
+{
+  "name": "Flug zurück zur Erde",
+  "passive": {
+    "name": "Erneute Abreise",
+    "description": "Nachdem der Träger eine Fertigkeit oder einen Ultimate auf einen Verbündeten angewendet hat, stellt er <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her und das Ziel erhält für {{4}} Rd. 1 Stapelung „Heilige Hymne“, was den verursachten SCH um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{3}}-fach stapelbar. Nachdem Fertigkeit oder Ultimate des Trägers {{5}}-mal auf Verbündete angewendet wurde, wird 1 Fertigkeitspunkt wiederhergestellt."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "name": "Mydei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Vow of Voyage",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Mydei's Max HP to one designated enemy.",
+        "shortDesc": "Deals minor Imaginary DMG to one enemy.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Deaths are Legion, Regrets are None",
+        "fullDesc": "Consumes HP by an amount equal to {{3, percent}}% of Mydei's current HP. Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Mydei's Max HP to one designated enemy and Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Mydei's Max HP to adjacent targets.<br>If the current HP is not sufficient, using Skill reduces Mydei's current HP to 1.",
+        "shortDesc": "Consumes HP and deals Imaginary DMG to one designated enemy unit and minor Imaginary DMG to adjacent targets.",
+        "tag": "Blast"
+      },
+      "1": {
+        "name": "Kingslayer Be King",
+        "fullDesc": "Consumes HP by an amount equal to {{3, percent}}% of Mydei's current HP. Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Mydei's Max HP to one enemy and Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Mydei's Max HP to adjacent targets.<br>If the current HP is not sufficient, using Skill reduces Mydei's current HP to 1.<br>This ability will be automatically used.",
+        "shortDesc": "Consumes HP. Deals Imaginary DMG to one designated enemy and Imaginary DMG to adjacent targets.<br>This ability will be <orangeStrong>automatically used</orangeStrong>.",
+        "tag": "Blast"
+      },
+      "2": {
+        "name": "Godslayer Be God",
+        "fullDesc": "Consumes {{3}} point(s) of Charge. Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Mydei's Max HP to one enemy and Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Mydei's Max HP to adjacent targets.<br>This ability will be automatically used. While this ability is in use, Charge cannot be accumulated.",
+        "shortDesc": "<orangeStrong>Consumes Charge</orangeStrong>. Deals massive Imaginary DMG to one designated enemy and massive Imaginary DMG to adjacent targets.<br>This ability will be <orangeStrong>automatically used</orangeStrong>.",
+        "tag": "Blast"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Throne of Bones",
+        "fullDesc": "Restores HP by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Mydei's Max HP and accumulates {{5}} Talent's Charge point(s). Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Mydei's Max HP to one designated enemy, and deals Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Mydei's Max HP to adjacent targets. Additionally, Taunts the target and targets adjacent to it, lasting for {{4}} turn(s). The next use of \"Godslayer Be God\" prioritizes attacking one designated enemy, and this effect only works on the latest target.",
+        "shortDesc": "<orangeStrong>Restores HP</orangeStrong> and accumulates Talent's Charge. Deals massive Imaginary DMG to one designated enemy and Imaginary DMG to adjacent targets, then <orangeStrong>Taunts</orangeStrong> the target and their adjacent targets.",
+        "tag": "Blast"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Blood for Blood",
+        "fullDesc": "For each 1% of HP lost, accumulates 1 point of Charge (up to 200 points). When Charge reaches 100, consumes 100 points of Charge to enter the \"Vendetta\" state, restores HP equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Mydei's Max HP, and advances action by 100%. While the \"Vendetta\" state is active, Max HP increases by {{5, percent}}% of the current Max HP and DEF remains at 0. At the start of this unit's turn, automatically uses \"Kingslayer Be King.\"<br>When Charge reaches {{3}} points during the \"Vendetta\" state, Mydei immediately gains 1 extra turn and automatically uses \"Godslayer Be God.\"<br>When receiving a killing blow during the \"Vendetta\" state, Mydei will not be knocked down, but will clear his Charge, exits the \"Vendetta\" state, and restores HP by {{4, percent}}% of his Max HP.",
+        "shortDesc": "When losing HP, accumulates Charge. When Charge is at 100, enters the <orangeStrong>\"Vendetta\"</orangeStrong> state, restores HP and advances action. During \"Vendetta,\" Max HP increases and DEF remains at 0. At the start of this unit's turn, <orangeStrong>automatically uses</orangeStrong> \"Kingslayer Be King.\"<br>When Charge reaches 150 during \"Vendetta,\" Mydei immediately gains 1 <orangeStrong>extra turn</orangeStrong> and <orangeStrong>automatically uses</orangeStrong> \"Godslayer Be God.\"<br>When Mydei receives a killing blow, he exits the \"Vendetta\" state.",
+        "tag": "Enhance"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Cage of Broken Lance",
+        "fullDesc": "After using Technique, pulls in enemies within a certain area and inflicts Daze on them for {{1}} second(s). Dazed enemies will not actively attack ally targets.<br>If actively attacking Dazed enemies, when entering battle, deals Imaginary DMG equal to {{2, percent}}% of Mydei's Max HP to all enemies, and Taunts the targets, lasting for {{4}} turn(s). This unit accumulates {{5}} point(s) of Talent's Charge.",
+        "shortDesc": "Pulls in enemies within a certain area and inflicts Daze on them. After attacking Dazed enemies and entering battle, deals minor Imaginary DMG to all enemies and Taunts the targets. This unit accumulates Talent's Charge.",
+        "tag": "Impair"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Earth and Water",
+        "fullDesc": "During the \"Vendetta\" state, Mydei will not exit the \"Vendetta\" state when receiving a killing blow. This effect can trigger {{1}} time(s) per battle."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Thirty Tyrants",
+        "fullDesc": "While in the \"Vendetta\" state, Mydei is immune to Crowd Control debuffs."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bloodied Chiton",
+        "fullDesc": "When battle starts, if Mydei's Max HP exceeds {{1}}, for every 100 excess HP, Mydei's CRIT Rate increases by {{3, percent(fixed: 1)}}%, his Charge ratio from enemy targets' DMG increases by {{4, percent(fixed: 1)}}%, and his Incoming Healing increases by {{5, percent(fixed: 2)}}%. Up to {{2}} excess HP can be taken into account for this effect."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Frost Hones Spine of Steel",
+      "desc": "Increases the DMG multiplier dealt by \"Godslayer Be God\" to the primary target by {{1, percent}}%. This ability now deals to all enemies Imaginary DMG equal to the DMG multiplier dealt to the primary target."
+    },
+    "2": {
+      "name": "Strife Beholds Cry of Dead",
+      "desc": "During \"Vendetta,\" the DMG dealt by Mydei ignores {{1, percent}}% of enemy targets' DEF. After he receives healing, converts {{2, percent}}% of the healed amount to Charge. The tally of the converted Charge cannot exceed {{3}} point(s). Resets this tally of Charge after any unit takes action."
+    },
+    "3": {
+      "name": "Honor Exalts Feast of Faith",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Siren Jolts the Laconic Lion",
+      "desc": "While in \"Vendetta,\" increases CRIT DMG by {{2, percent}}% and restores HP by {{1, percent}}% of this unit's Max HP after receiving attacks from enemy targets."
+    },
+    "5": {
+      "name": "War Chisels Flesh of Flame",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Legacy Scales Mound of Blood",
+      "desc": "When entering battle, immediately enters the \"Vendetta\" state, and lowers the Charge required for \"Godslayer Be God\" to {{1}} point(s)."
+    }
+  }
+}

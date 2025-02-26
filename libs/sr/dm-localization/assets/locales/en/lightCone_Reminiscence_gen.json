@@ -1,0 +1,7 @@
+{
+  "name": "Reminiscence",
+  "passive": {
+    "name": "Going to Sleep",
+    "description": "When memosprite's turn starts, the wearer and memosprite each gain 1 stack of \"Commemoration.\" Each stack increases DMG dealt by <orangeStrong>{{1, percent}}%</orangeStrong>, stacking up to {{2}} time(s). When memosprite disappears, removes \"Commemoration\" from the wearer and memosprite."
+  }
+}

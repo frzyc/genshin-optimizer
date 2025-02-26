@@ -1,0 +1,7 @@
+{
+  "name": "Geniuses' Greetings",
+  "passive": {
+    "name": "Congratulations",
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หลังจากผู้สวมใส่ปล่อยท่าไม้ตาย จะทำให้ผู้สวมใส่และภูตความทรงจำ สร้าง DMG โจมตีปกติเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

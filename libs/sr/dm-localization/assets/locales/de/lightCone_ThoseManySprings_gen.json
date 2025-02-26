@@ -1,0 +1,7 @@
+{
+  "name": "Jene unzähligen Frühlinge",
+  "passive": {
+    "name": "Weltliches hinterlässt keine Spur",
+    "description": "Erhöht die Effekt-Trefferrate des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nachdem der Träger Standardangriff, Fertigkeit oder Ultimate auf einen Gegner angewendet hat, besteht eine Grundchance von {{2, percent}}%, diesen Gegner mit „Ungerüstet“ zu belegen. Mit diesem Status wird der erlittene SCH des Gegners für {{4}} Rd. um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Wenn das Ziel sich im vom Träger verursachten DoT-Status befindet, besteht eine Grundchance von {{5, percent}}%, den vom Träger zugefügten Status Ungerüstet zu „In die Enge“ aufzuwerten, wodurch der erlittene SCH des Gegners für {{4}} Rd. zusätzlich um <orangeStrong>{{6, percent}}%</orangeStrong> erhöht wird. Während dieser Dauer kann der Träger beim Ziel nicht Ungerüstet verursachen."
+  }
+}

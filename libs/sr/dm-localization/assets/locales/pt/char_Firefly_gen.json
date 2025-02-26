@@ -25,7 +25,7 @@
       "1": {
         "name": "Vaga-lume Tipo-IV: Sobrecarga da Estrela da Morte",
         "fullDesc": "Restaura os PV em {{3, percent}}% dos PV máximos desta unidade. Aplica Fraqueza contra Fogo a um único inimigo, durando por {{4}} rodada(s). Causa Dano de Fogo igual a ({{5, fixed(fixed: 1)}} x Efeito de Quebra + <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>) do ATQ de SAM a este alvo. Ao mesmo tempo, causa Dano de Fogo igual a ({{6, fixed(fixed: 1)}} x Efeito de Quebra + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>) do ATQ de SAM aos alvos adjacentes. O Efeito de Quebra considerado no cálculo é limitado a {{7, percent}}%.",
-        "shortDesc": "Restaura uma parte dos PV desta unidade. <orangeStrong>Aplica Fraqueza contra Fogo</orangeStrong> a um único inimigo-alvo, causando Dano de Fogo massivo a este alvo e Dano de Fogo aos alvos adjacentes.",
+        "shortDesc": "Restaura uma parte dos PV desta unidade. <orangeStrong>Aplica Fraqueza contra Fogo</orangeStrong> a um único inimigo, causando Dano de Fogo massivo a este alvo e Dano de Fogo aos alvos adjacentes.",
         "tag": "Explosão"
       }
     },
@@ -57,32 +57,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Módulo α: Explosão Anti-Lag",
-        "fullDesc": "Durante a Combustão Completa, atacar inimigos que não têm Fraqueza contra Fogo também pode reduzir sua Tenacidade, com o efeito sendo equivalente a {{1, percent}}% da Redução de Tenacidade original das habilidades.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Durante a Combustão Completa, atacar inimigos que não têm Fraqueza contra Fogo também pode reduzir sua Tenacidade, com o efeito sendo equivalente a {{1, percent}}% da Redução de Tenacidade original das habilidades."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Módulo β: Armadura Auto-Reativa",
-        "fullDesc": "Quando SAM está em \"Combustão Completa\" com um Efeito de Quebra que seja igual ou maior a {{1, percent}}%/{{2, percent}}%, atacar um inimigo-alvo afligido com Quebra de Fraqueza converterá a Redução de Tenacidade deste ataque em 1 instância de {{3, percent}}%/{{4, percent}}% Super Dano de Quebra.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando SAM está em \"Combustão Completa\" com um Efeito de Quebra que seja igual ou maior a {{1, percent}}%/{{2, percent}}%, atacar um inimigo-alvo afligido com Quebra de Fraqueza converterá a Redução de Tenacidade deste ataque em 1 instância de {{3, percent}}%/{{4, percent}}% Super Dano de Quebra."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Módulo γ: Sobrecarga Nuclear",
-        "fullDesc": "Para cada {{2}} ponto(s) do ATQ de SAM que exceda {{1}}, o Efeito de Quebra da unidade aumenta em {{3, percent(fixed: 1)}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Para cada {{2}} ponto(s) do ATQ de SAM que exceda {{1}}, o Efeito de Quebra da unidade aumenta em {{3, percent(fixed: 1)}}%."
       }
     }
   },

@@ -1,0 +1,7 @@
+{
+  "name": "In Gold gewebte Zeit",
+  "passive": {
+    "name": "Gestalten",
+    "description": "Erhöht die Basis-GES des Trägers um <orangeStrong>{{1}}</orangeStrong>. Nach einem Angriff durch den Träger und seinen Memogeist erhält der Träger 1 Stapelung „Brokat“. Jede Stapelung von Brokat erhöht den KRIT-SCH des Trägers und seines Memogeistes um <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, bis zu {{2}} Stapelungen. Wenn die max. Stapelzahl erreicht wird, erhöht jede Stapelung von Brokat den verursachten Standardangriff-SCH zusätzlich um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>."
+  }
+}

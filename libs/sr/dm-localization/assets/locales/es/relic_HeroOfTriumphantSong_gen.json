@@ -1,0 +1,7 @@
+{
+  "setName": "Héroe de la epopeya triunfal",
+  "setEffects": {
+    "2": "ATQ +{{1, percent}}%.",
+    "4": "Cuando el mnemoduende del portador está en el campo de batalla, la VEL del portador aumenta en un {{1, percent}}%. Cuando el mnemoduende del portador ataca, el Daño CRIT del portador y el mnemoduende aumenta en un {{2, percent}}% durante {{3}} turnos."
+  }
+}

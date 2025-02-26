@@ -1,0 +1,96 @@
+{
+  "name": "灵砂",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "肃香",
+        "fullDesc": "对指定敌方单体造成等同于灵砂<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害。",
+        "shortDesc": "对敌方单体造成少量火属性伤害。",
+        "tag": "单攻"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "识烟飞彩",
+        "fullDesc": "对敌方全体造成等同于灵砂<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，同时为我方全体回复等同于灵砂<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>攻击力+<orangeStrong>{{3}}</orangeStrong>的生命值，使【浮元】行动提前{{4, percent}}%。",
+        "shortDesc": "对敌方全体造成少量火属性伤害，同时为我方全体<orangeStrong>回复生命值</orangeStrong>，使【浮元】行动提前。",
+        "tag": "群攻"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "幔亭缭霞",
+        "fullDesc": "使敌方全体陷入【醇醉】状态，【醇醉】状态下，使目标受到的击破伤害提高<orangeStrong>{{4, percent}}%</orangeStrong>，持续{{5}}回合。<br>对敌方全体造成等同于灵砂<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，同时为我方全体回复等同于灵砂<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>攻击力+<orangeStrong>{{3}}</orangeStrong>的生命值，使【浮元】行动提前{{6, percent}}%。",
+        "shortDesc": "使敌方全体<orangeStrong>受到的击破伤害提高</orangeStrong>，对敌方全体造成火属性伤害，同时为我方全体<orangeStrong>回复生命值</orangeStrong>，使【浮元】行动提前。",
+        "tag": "群攻"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "烟斜雾横，氛氲化生",
+        "fullDesc": "施放战技时召唤【浮元】，初始拥有{{1}}点速度以及{{7}}次行动次数。<br>【浮元】行动时发动追加攻击，对敌方全体造成等同于灵砂<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的火属性伤害。额外对随机敌方单体造成等同于灵砂<orangeStrong>{{8, percent}}%</orangeStrong>攻击力的火属性伤害，本次伤害优先选择韧性值大于0且有火属性弱点的目标。解除我方全体的{{6}}个负面效果，并回复等同于灵砂<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>攻击力+<orangeStrong>{{4}}</orangeStrong>的生命值。<br>【浮元】最多累计{{5}}次行动次数，当次数为0或灵砂陷入无法战斗状态时【浮元】消失。<br>【浮元】在场时，施放战技会增加{{7}}次【浮元】的行动次数。",
+        "shortDesc": "施放战技召唤【浮元】：行动时发动<orangeStrong>追加攻击</orangeStrong>，对敌方全体造成少量火属性伤害。额外对随机敌方单体造成少量火属性伤害，优先选择韧性值大于0且有火属性弱点的目标。解除我方全体1个负面效果并<orangeStrong>回复生命值</orangeStrong>。<br>重复施放战技会增加【浮元】行动次数。",
+        "tag": "群攻"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "流翠散云",
+        "fullDesc": "使用秘技后，下一次战斗开始时立即召唤【浮元】，并使敌方全体陷入【醇醉】状态，持续{{1}}回合。",
+        "shortDesc": "使用秘技，下一次战斗开始时立即召唤【浮元】并使敌方全体<orangeStrong>受到的击破伤害提高</orangeStrong>。",
+        "tag": "辅助"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "tag": "单攻"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "朱燎",
+        "fullDesc": "使自身攻击力/治疗量提高，提高数值等同于击破特攻的{{1, percent}}%/{{2, percent}}%，最多使攻击力/治疗量提高{{3, percent}}%/{{4, percent}}%。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "兰烟",
+        "fullDesc": "施放普攻时额外恢复{{1}}点能量。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "遗爇",
+        "fullDesc": "【浮元】在场时，我方任意角色受到伤害或消耗生命值时，若队伍中有存在当前生命值百分比小于等于{{1, percent}}%的角色，【浮元】会立即对敌人发动天赋的追加攻击，此次触发不消耗【浮元】行动次数，该效果在{{2}}回合后可再次触发。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "馨气当盛，除邪避讳",
+      "desc": "灵砂的弱点击破效率提高{{2, percent}}%。当有敌方单位的弱点被击破时，使其防御力降低{{1, percent}}%。"
+    },
+    "2": {
+      "name": "欹枕垂云，烟奁红雪",
+      "desc": "施放终结技时，使我方全体击破特攻提高{{1, percent}}%，持续{{2}}回合。"
+    },
+    "3": {
+      "name": "含芽细炷，浪蕊浓焚",
+      "desc": "终结技等级+2，最多不超过15级；天赋等级+2，最多不超过15级。"
+    },
+    "4": {
+      "name": "横垂宝幄，半拂琼筵",
+      "desc": "【浮元】行动时，为当前生命值最低的我方目标回复等同于灵砂{{1, percent}}%攻击力的生命值。"
+    },
+    "5": {
+      "name": "纵横圆转，内常不倾",
+      "desc": "战技等级+2，最多不超过15级；普攻等级+1，最多不超过10级。"
+    },
+    "6": {
+      "name": "晓兰深藏，宿香暗贮",
+      "desc": "【浮元】在场时，使敌方全体全属性抗性降低{{1, percent}}%，【浮元】攻击时，额外造成{{2}}次伤害，每次伤害对随机敌方单体造成等同于灵砂{{3, percent}}%攻击力的火属性伤害和{{4}}点削韧值，优先选择韧性值大于0且有火属性弱点的目标。"
+    }
+  }
+}

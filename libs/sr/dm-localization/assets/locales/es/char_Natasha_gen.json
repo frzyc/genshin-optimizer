@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Consuelo",
-        "fullDesc": "Al usar la habilidad básica, se disipa {{1}} estado negativo del objetivo aliado.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad básica, se disipa {{1}} estado negativo del objetivo aliado."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sanadora",
-        "fullDesc": "La curación realizada por Natasha aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La curación realizada por Natasha aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Recuperación",
-        "fullDesc": "La Regeneración con el tiempo causada al lanzar la habilidad básica dura {{1}} turno más.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La Regeneración con el tiempo causada al lanzar la habilidad básica dura {{1}} turno más."
       }
     }
   },

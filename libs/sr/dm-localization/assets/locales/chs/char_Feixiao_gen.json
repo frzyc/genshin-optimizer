@@ -1,0 +1,113 @@
+{
+  "name": "飞霄",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "闪裂",
+        "fullDesc": "对指定敌方单体造成等同于飞霄<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。",
+        "shortDesc": "对敌方单体造成少量风属性伤害。",
+        "tag": "单攻"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "钺贯",
+        "fullDesc": "对指定敌方单体造成等同于飞霄<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害，随后立即对该目标额外发动1次天赋的追加攻击。",
+        "shortDesc": "对敌方单体造成风属性伤害，随后额外发动1次天赋的追加攻击。",
+        "tag": "单攻"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "凿破大荒",
+        "fullDesc": "对指定敌方单体造成最多等同于飞霄<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的风属性伤害，期间可无视弱点属性削减目标韧性，目标未处于弱点击破状态时飞霄的弱点击破效率提高{{2, percent}}%。<br>其中，飞霄先对该目标发动【闪裂刃舞】或【钺贯天冲】，总计{{3}}次。最后对该目标造成等同于飞霄<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。",
+        "shortDesc": "终结技期间可<orangeStrong>无视弱点属性</orangeStrong>削减敌方韧性，目标未被击破时飞霄<orangeStrong>弱点击破效率提高</orangeStrong>。<br>对敌方单体发动<orangeStrong>{{3}}</orangeStrong>次【闪裂刃舞】或【钺贯天冲】，最后造成风属性伤害。",
+        "tag": "单攻"
+      },
+      "1": {
+        "name": "闪裂刃舞",
+        "fullDesc": "对所选目标造成等同于飞霄<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。若目标处于弱点击破状态，伤害倍率提高<orangeStrong>{{2, percent}}%</orangeStrong>。",
+        "shortDesc": "对敌方单体造成少量风属性伤害，对<orangeStrong>被击破</orangeStrong>的目标伤害倍率提高。",
+        "tag": "单攻"
+      },
+      "2": {
+        "name": "钺贯天冲",
+        "fullDesc": "对所选目标造成等同于飞霄<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。若目标未处于弱点击破状态，伤害倍率提高<orangeStrong>{{2, percent}}%</orangeStrong>。",
+        "shortDesc": "对敌方单体造成少量风属性伤害，对<orangeStrong>未被击破</orangeStrong>的目标伤害倍率提高。",
+        "tag": "单攻"
+      },
+      "3": {
+        "name": "凿破大荒",
+        "shortDesc": "终结技期间可<orangeStrong>无视弱点属性</orangeStrong>削减敌方韧性，目标未被击破时飞霄<orangeStrong>弱点击破效率提高</orangeStrong>。<br>对敌方单体发动<orangeStrong>{{3}}</orangeStrong>次【闪裂刃舞】或【钺贯天冲】，最后造成风属性伤害。",
+        "tag": "单攻"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "雷狩",
+        "fullDesc": "【飞黄】达到{{3}}点时可激活终结技，最多累计{{4}}点。我方目标每施放{{2}}次攻击，飞霄获得1点【飞黄】，飞霄的终结技攻击不计入次数。<br>当飞霄的队友对敌方目标施放攻击后，飞霄立即对主目标发动追加攻击，造成等同于飞霄<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。若不存在可攻击的主目标，则攻击敌方随机单体。该效果每回合最多触发1次，飞霄回合开始时重置可触发次数。发动此攻击时使自身造成的伤害提高<orangeStrong>{{5, percent}}%</orangeStrong>，持续{{6}}回合。",
+        "shortDesc": "【飞黄】达到<orangeStrong>{{3}}</orangeStrong>点时可激活终结技，最多累计<orangeStrong>{{4}}</orangeStrong>点。我方目标每施放<orangeStrong>{{2}}</orangeStrong>次攻击，飞霄获得<orangeStrong>【飞黄】</orangeStrong>。<br>队友施放攻击后，飞霄对主目标发动<orangeStrong>追加攻击</orangeStrong>，造成风属性伤害。该效果每回合最多触发1次，发动此攻击时使自身<orangeStrong>造成的伤害提高</orangeStrong>。",
+        "tag": "单攻"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "岚身",
+        "fullDesc": "使用秘技后进入持续{{1}}秒的【陷锋】状态。【陷锋】状态下会牵引一定范围内的敌人，并且自身移动速度提高{{2, percent}}%，进入战斗后获得{{4}}点【飞黄】。<br>【陷锋】状态下主动攻击会使所有牵引的敌人进入战斗。进入战斗后，每个波次开始时对敌方全体造成等同于飞霄{{3, percent}}%攻击力的风属性伤害，该伤害必定造成暴击。若牵引了超过1个敌人，每超过1个敌人，该伤害的倍率提高{{5, percent}}%，最多提高至{{6, percent}}%。",
+        "shortDesc": "进入【陷锋】状态，持续牵引敌人且移动速度提高，进战后获得【飞黄】。<br>【陷锋】状态下可主动攻击所有牵引的敌人，每个波次开始时对敌方全体造成风属性伤害，该伤害必定暴击。<orangeStrong>牵引敌人越多，伤害倍率越高</orangeStrong>。",
+        "tag": "强化"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "天通",
+        "fullDesc": "战斗开始时，获得{{1}}点【飞黄】。<br>回合开始时，若上回合未通过天赋发动追加攻击，计入1次获得【飞黄】所需的攻击次数。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "解形",
+        "fullDesc": "施放终结技对敌方目标造成伤害时，被视为发动了追加攻击。追加攻击的暴击伤害提高{{1, percent}}%。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "电举",
+        "fullDesc": "施放战技时，攻击力提高{{1, percent}}%，持续{{2}}回合。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "镇绥天钧",
+      "desc": "发动【闪裂刃舞】或【钺贯天冲】后，使飞霄造成的终结技伤害额外提高，提高数值等同于原伤害的{{1, percent}}%，最多叠加{{2}}层，持续至终结技行动结束。"
+    },
+    "2": {
+      "name": "礼辰祷月",
+      "desc": "天赋效果中，我方目标每施放1次追加攻击即可使飞霄获得1点【飞黄】。该效果每回合最多触发{{1}}次。"
+    },
+    "3": {
+      "name": "景星出宿",
+      "desc": "终结技等级+2，最多不超过15级；普攻等级+1，最多不超过10级。"
+    },
+    "4": {
+      "name": "驱飓听冰",
+      "desc": "天赋的追加攻击的削韧值提高{{1, percent}}%，并且发动时使自身速度提高{{2, percent}}%，持续{{3}}回合。"
+    },
+    "5": {
+      "name": "擢登霄汉",
+      "desc": "战技等级+2，最多不超过15级；天赋等级+2，最多不超过15级。"
+    },
+    "6": {
+      "name": "惟首正丘",
+      "desc": "飞霄造成的终结技伤害的全属性抗性穿透提高{{1, percent}}%。天赋的追加攻击伤害同时视为终结技伤害，并且伤害倍率提高{{2, percent}}%。"
+    }
+  }
+}

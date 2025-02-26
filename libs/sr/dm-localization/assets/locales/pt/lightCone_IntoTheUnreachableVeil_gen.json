@@ -1,0 +1,7 @@
+{
+  "name": "Ao Véu Inalcançável",
+  "passive": {
+    "name": "Jogo Mental",
+    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Quando o usuário usa sua Perícia Suprema, aumenta o Dano causado pela Perícia e pela Perícia Suprema do usuário em <orangeStrong>{{4, percent}}%</orangeStrong>, durando por {{5}} rodada(s). Após o usuário usar sua Perícia Suprema, se essa Perícia Suprema consumir {{3}} ou mais de Energia, recupera 1 Ponto de Perícia."
+  }
+}

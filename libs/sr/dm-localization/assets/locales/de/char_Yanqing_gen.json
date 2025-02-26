@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Gefrorener Segen",
-        "fullDesc": "Nach einem Angriff wird Gegnern mit Eis-Schwäche zusätzlicher Eis-SCH in Höhe von {{1, percent}}% von Yanqings ANG zugefügt.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Nach einem Angriff wird Gegnern mit Eis-Schwäche zusätzlicher Eis-SCH in Höhe von {{1, percent}}% von Yanqings ANG zugefügt."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Eisfrost",
-        "fullDesc": "Erhöht bei „Empathische Schwertverbindung“ den Effekt-WDS um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht bei „Empathische Schwertverbindung“ den Effekt-WDS um {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sanfte Klinge",
-        "fullDesc": "Erhöht bei der Auslösung eines kritischen Treffers die GES für {{2}} Rd. um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht bei der Auslösung eines Kritischen Treffers die GES für {{2}} Rd. um {{1, percent}}%."
       }
     }
   },

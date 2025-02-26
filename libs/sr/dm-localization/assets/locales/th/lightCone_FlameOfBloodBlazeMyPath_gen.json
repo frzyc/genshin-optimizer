@@ -1,0 +1,7 @@
+{
+  "name": "Flame of Blood, Blaze My Path",
+  "passive": {
+    "name": "Vista",
+    "description": "ทำให้ HP สูงสุดของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> และปริมาณการรักษาที่ได้รับ เพิ่มขึ้น <orangeStrong>{{6, percent}}%</orangeStrong> เมื่อปล่อยสกิลต่อสู้หรือท่าไม้ตาย จะใช้ HP <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของตัวเอง และทำให้การโจมตีครั้งนี้สร้าง DMG เพิ่มขึ้น <orangeStrong>{{3, percent}}%</orangeStrong> หากเอฟเฟกต์นี้ใช้ HP สูงกว่า {{4}} หน่วย ก็จะทำให้ DMG เพิ่มขึ้นอีก <orangeStrong>{{5, percent}}%</orangeStrong><br>หาก HP ปัจจุบันไม่เพียงพอ เอฟเฟกต์นี้จะทำให้ HP ปัจจุบันของผู้สวมใส่ ลดลงได้มากสุดจนเหลือ 1 หน่วย"
+  }
+}

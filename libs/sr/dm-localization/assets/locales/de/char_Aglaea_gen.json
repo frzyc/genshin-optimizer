@@ -1,0 +1,107 @@
+{
+  "name": "Aglaea",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dorniger Nektar",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Aglaeas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu.",
+        "tag": "Einzelangriff"
+      },
+      "1": {
+        "name": "Einsame Spitze, tausend Küsse",
+        "fullDesc": "Aglaea und die Kleidermacherin starten einen Kettenangriff auf das Ziel, der Blitz-SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Aglaeas ANG und <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des ANG der Kleidermacherin verursacht. Fügt gleichzeitig angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Aglaeas ANG und <orangeStrong>{{4, percent}}%</orangeStrong> des ANG der Kleidermacherin zu.<br>„Einsame Spitze, tausend Küsse“ kann keine Fertigkeitspunkte wiederherstellen.",
+        "shortDesc": "Aglaea und die Kleidermacherin starten einen <orangeStrong>Kettenangriff</orangeStrong>, der einem Gegner Blitz-SCH und angrenzenden Einheiten geringen Blitz-SCH zufügt.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Erhebe dich, gepriesener Name",
+        "fullDesc": "Stellt die LP der Kleidermacherin in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> ihrer max. LP wieder her. Befindet sich der Memogeist Kleidermacherin nicht auf dem Kampffeld, so wird er beschworen und führt sofort eine Aktion aus.",
+        "shortDesc": "Stellt die LP der Kleidermacherin wieder her. Befindet sich der Memogeist Kleidermacherin nicht auf dem Kampffeld, so wird er <orangeStrong>beschworen</orangeStrong> und führt sofort eine Aktion aus.",
+        "tag": "Beschwören"
+      },
+      "1": {
+        "name": "Erhebe dich, gepriesener Name",
+        "shortDesc": "Stellt die LP der Kleidermacherin wieder her. Befindet sich der Memogeist Kleidermacherin nicht auf dem Kampffeld, so wird er beschworen und führt sofort eine Aktion aus.",
+        "tag": "Wiederherstellung"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Tanzen wir, schicksalsbestimmte Kleidermacherin",
+        "fullDesc": "Beschwört den Memogeist Kleidermacherin. Wenn sie bereits auf dem Kampffeld ist, werden ihre LP vollständig wiederhergestellt. Aglaea tritt in den Status „Höchste Haltung“ ein und führt sofort eine Aktion aus.<br>Im Status Höchste Haltung erhält Aglaea die Stapelzahl für die GES-Erhöhung des Memogeist-Talents. Jede Stapelung erhöht ihre GES um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Ihr Standardangriff wird zu „Einsame Spitze, tausend Küsse“ verstärkt und sie kann keine Fertigkeit einsetzen. Die Kleidermacherin ist immun gegen Mengenkontrolle-Debuffs.<br>In der Aktionsreihenfolge erscheint ein Countdown, der eine feste GES von {{4}} hat. Beim erneuten Einsatz des Ultimates, während der Countdown existiert, wird der Countdown zurückgesetzt. Beginnt die Runde des Countdowns, zerstört sich die Kleidermacherin selbst. Wenn die Kleidermacherin verschwindet, wird Aglaeas Status Höchste Haltung aufgehoben.",
+        "shortDesc": "<orangeStrong>Beschwört den Memogeist</orangeStrong> Kleidermacherin. Aglaea tritt in den Status „Höchste Haltung“ ein, führt sofort eine Aktion aus und erhält den verstärkten Standardangriff.",
+        "tag": "Verstärkung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Finger der Goldenen Rose",
+        "fullDesc": "Der Memogeist Kleidermacherin hat anfänglich eine GES in Höhe von {{4, percent}}% der GES von Aglaea und max. LP in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> der max. LP von Aglaea plus <orangeStrong>{{6}}</orangeStrong>. Wenn die Kleidermacherin auf dem Kampffeld ist, verursacht Aglaeas Angriff beim Ziel „Nahtstich“. Nach Angriffen auf Gegner mit dem Status Nahtstich wird zusätzlicher Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Aglaeas ANG verursacht. Nahtstich wirkt nur auf das letzte Ziel, auf das er angewendet wird.",
+        "shortDesc": "Wenn die Kleidermacherin auf dem Kampffeld ist, verursacht Aglaeas Angriff beim Ziel „Nahtstich“. Nach Angriffen auf Gegner mit dem Status Nahtstich wird geringer zusätzlicher Blitz-SCH verursacht.",
+        "tag": "Verstärkung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gespaltene Sterne",
+        "fullDesc": "Beschwört den Memogeist Kleidermacherin und startet einen gemeinsamen Angriff nach vorne. Stellt nach Kampfeintritt {{2}} Pkt. Energie wieder her und fügt allen Gegnern Blitz-SCH in Höhe von {{1, percent}}% von Aglaeas ANG zu. Verursacht dann bei einem zufälligen Gegner „Nahtstich“.",
+        "shortDesc": "<orangeStrong>Beschwört den Memogeist</orangeStrong> Kleidermacherin und startet einen gemeinsamen Angriff nach vorne. Stellt nach Kampfeintritt Energie wieder her und fügt allen Gegnern geringen Blitz-SCH zu. Verursacht dann bei einem zufälligen Gegner „Nahtstich“.",
+        "tag": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Strafe der Kurzsichtigkeit",
+        "fullDesc": "Wenn „Höchste Haltung“ aktiv ist, wird der ANG von Aglaea und der Kleidermacherin um {{1, percent}}% von Aglaeas GES plus {{2, percent}}% der GES der Kleidermacherin erhöht."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Letzter Schicksalsfaden",
+        "fullDesc": "Wenn die Kleidermacherin verschwindet, kann bis zu {{1}} Stapelung der GES-Erhöhung vom Memogeist-Talent behalten werden. Wenn sie erneut beschworen wird, wird sie die GES-Erhöhung der entsprechenden Stapelzahl erhalten."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Aufsteigende Morgenröte",
+        "fullDesc": "Wenn die Energie dieser Einheit zu Beginn des Kampfes weniger als {{1, percent}}% beträgt, wird sie auf {{2, percent}}% wiederhergestellt."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Schwebende Sternformation",
+      "desc": "Erhöht den erlittenen SCH des Gegners mit „Nahtstich“ um {{1, percent}}%. Stellt zusätzlich {{2}} Pkt. Energie wieder her, nachdem Aglaea oder die Kleidermacherin diesen Gegner angegriffen hat."
+    },
+    "2": {
+      "name": "Augenlider des treibenden Schicksals",
+      "desc": "Wenn Aglaea oder die Kleidermacherin eine Aktion ausführt, ignoriert ihr verursachter SCH {{1, percent}}% der VTD des Ziels. Dieser Effekt ist bis zu {{2}}-fach stapelbar und hält an, bis eine andere Einheit als Aglaea oder Kleidermacherin ihre Fähigkeit aktiv einsetzt."
+    },
+    "3": {
+      "name": "Geschenk des perlenden Morgentaus",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10. Talentstufe des Memogeists +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Das Funkeln in der Murmel",
+      "desc": "Erhöht die max. Stapelzahl für die GES-Erhöhung des Memogeist-Talents um {{1}}. Nach Aglaeas Angriff kann die Kleidermacherin ebenfalls die GES-Erhöhung des Memogeist-Talents erhalten."
+    },
+    "5": {
+      "name": "Weberin der pechschwarzen Qualen",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15. Technikstufe des Memogeists +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Goldene Fäden voller Ungewissheit",
+      "desc": "Wenn Aglaea sich im Status „Höchste Haltung“ befindet, wird die Blitz-WDS-DUR von ihr und der Kleidermacherin um {{1, percent}}% erhöht. Wenn die GES von Aglaea oder der Kleidermacherin mehr als 160/240/320 beträgt, wird der durch ihre Kettenangriffe verursachte SCH um {{2, percent}}%/{{3, percent}}%/{{4, percent}}% erhöht."
+    }
+  }
+}

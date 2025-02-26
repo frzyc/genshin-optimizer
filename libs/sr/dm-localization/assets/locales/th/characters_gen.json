@@ -19,7 +19,8 @@
     "Nihility": "ลบล้าง",
     "Destruction": "ทำลายล้าง",
     "Harmony": "ประสาน",
-    "TheHunt": "ล่าสังหาร"
+    "TheHunt": "ล่าสังหาร",
+    "Remembrance": "\"ความทรงจำ\""
   },
   "ability": {
     "basic": "โจมตีปกติ",
@@ -34,6 +35,11 @@
     "bounce": "จู่โจม",
     "blast": "กระจาย",
     "support": "สนับสนุน",
-    "impair": "สกัดกั้น"
+    "impair": "สกัดกั้น",
+    "restore": "ฟื้นฟู",
+    "defense": "ป้องกัน",
+    "enhance": "เสริมพลัง",
+    "charging": "ชาร์จ",
+    "summon": "อัญเชิญ"
   }
 }

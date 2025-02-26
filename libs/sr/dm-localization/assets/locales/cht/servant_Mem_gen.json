@@ -1,0 +1,39 @@
+{
+  "name": "迷迷",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "壞人！麻煩！",
+        "fullDesc": "造成{{2}}次傷害，每次對敵方隨機單體造成等同於迷迷<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>攻擊力的冰屬性傷害。最後對敵方全體造成等同於迷迷<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
+        "shortDesc": "造成少量冰屬性傷害，共彈射<orangeStrong>{{2}}</orangeStrong>次。最後對敵方全體造成少量冰屬性傷害。",
+        "tag": "群體攻擊"
+      },
+      "1": {
+        "name": "我會！幫你！",
+        "fullDesc": "使指定我方單體行動提前{{3, percent}}%並附上【迷迷的聲援】，持續{{2}}回合。<br>持有【迷迷的聲援】的目標每造成1次傷害，都會再額外造成1次等同於原傷害<orangeStrong>{{1, percent}}%</orangeStrong>的真實傷害。<br>當對自身施放該技能時，無法觸發行動提前效果。",
+        "shortDesc": "使我方單體<orangeStrong>行動提前</orangeStrong>並附上【迷迷的聲援】：造成傷害後額外造成<orangeStrong>真實傷害</orangeStrong>。",
+        "tag": "輔助"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "夥伴！一起！",
+        "fullDesc": "使我方全體的暴擊傷害提高，提高數值等同於迷迷<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴擊傷害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>。<br>若充能未達到100%，迷迷行動時自動施放【壞人！麻煩！】。充能達到100%時迷迷立即行動，下一次行動時能夠選擇我方單體並施放【我會！幫你！】。",
+        "shortDesc": "使我方全體暴擊傷害提高。<br>行動時自動發動攻擊。若充能達到100%則立即行動並可施放新技能：使我方單體<orangeStrong>行動提前</orangeStrong>並能造成<orangeStrong>真實傷害</orangeStrong>。",
+        "tag": "輔助"
+      },
+      "1": {
+        "name": "迷迷，加油！",
+        "fullDesc": "迷迷被召喚時，立即獲得{{1, percent}}%充能。",
+        "shortDesc": "被召喚時，立即獲得充能。",
+        "tag": "強化"
+      },
+      "2": {
+        "name": "遺憾……不留",
+        "fullDesc": "迷迷消失時，使開拓者行動提前{{1, percent}}%。",
+        "shortDesc": "消失時，使開拓者行動提前。",
+        "tag": "強化"
+      }
+    }
+  }
+}

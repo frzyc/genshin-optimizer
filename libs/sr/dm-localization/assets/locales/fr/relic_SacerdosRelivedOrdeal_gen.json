@@ -1,0 +1,7 @@
+{
+  "setName": "Supplice du prêtre",
+  "setEffects": {
+    "2": "Augmente la VIT de {{1, percent}}%.",
+    "4": "Après avoir utilisé une compétence ou un ultime sur une cible alliée, augmente les DGT critiques de la capacité de la cible de {{1, percent}}% pendant {{2}} tours. Cet effet peut être cumulé jusqu'à {{3}} fois."
+  }
+}

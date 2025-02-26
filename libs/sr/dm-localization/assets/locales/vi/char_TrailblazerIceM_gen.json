@@ -1,0 +1,101 @@
+{
+  "name": "Nhà Khai Phá (Băng • Ký Ức)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cứ Để Tôi Lo!",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tôi Chọn Em!",
+        "fullDesc": "Triệu hồi Linh Hồn Ký Ức Mem. Nếu Mem đã xuất hiện trong trận, sẽ hồi cho Mem lượng HP bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Mem, và khiến Mem nhận {{2, percent}}% Nạp Năng Lượng.",
+        "shortDesc": "<orangeStrong>Triệu hồi Linh Hồn Ký Ức</orangeStrong> Mem. Nếu Mem đã xuất hiện trong trận, sẽ hồi HP cho Mem, và khiến Mem nhận <orangeStrong>Nạp Năng Lượng</orangeStrong>.",
+        "tag": "Triệu Hồi"
+      },
+      "1": {
+        "name": "Tôi Chọn Em!",
+        "shortDesc": "<orangeStrong>Triệu hồi Linh Hồn Ký Ức</orangeStrong> Mem. Nếu Mem đã xuất hiện trong trận, sẽ hồi HP cho Mem, và khiến Mem nhận <orangeStrong>Nạp Năng Lượng</orangeStrong>.",
+        "tag": "Hồi Phục"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Cùng Lên Nào, Mem!",
+        "fullDesc": "Triệu hồi Linh Hồn Ký Ức Mem. Khiến Mem nhận {{2, percent}}% Nạp Năng Lượng, sau đó khiến Mem gây sát thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Mem cho toàn phe địch.",
+        "shortDesc": "<orangeStrong>Triệu hồi Linh Hồn Ký Ức</orangeStrong> Mem. Khiến Mem nhận <orangeStrong>Nạp Năng Lượng</orangeStrong>, sau đó khiến Mem gây lượng lớn sát thương Băng lên toàn phe địch.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Đồng Đội Vạn Năng",
+        "fullDesc": "Linh Hồn Ký Ức Mem ban đầu có {{1}} điểm Tốc Độ và Giới Hạn HP bằng <orangeStrong>{{2, percent}}%</orangeStrong> Giới Hạn HP của Nhà Khai Phá +<orangeStrong>{{4}}</orangeStrong>. Toàn bộ phe ta mỗi khi tích lũy hồi {{3}} điểm Năng Lượng, Mem đều sẽ nhận được 1% Nạp Năng Lượng.",
+        "shortDesc": "Toàn bộ phe ta mỗi khi <orangeStrong>hồi Năng Lượng nhất định</orangeStrong>, Mem đều sẽ nhận được <orangeStrong>Nạp Năng Lượng</orangeStrong>.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ký Ức Như Quá Khứ Tái Hiện",
+        "fullDesc": "Sau khi dùng Bí Kỹ, tạo 1 vùng đặc biệt duy trì {{1}} giây. Kẻ địch trong vùng đặc biệt sẽ rơi vào trạng thái Dừng Thời Gian. Kẻ địch ở trạng thái Dừng Thời Gian sẽ dừng mọi hành động.<br>Sau khi vào chiến đấu với kẻ địch ở trạng thái Dừng Thời Gian, sẽ khiến toàn phe địch Trì Hoãn Hành Động {{2, percent}}%, sau đó gây cho toàn phe địch Sát Thương Băng bằng {{3, percent}}% Tấn Công của Nhà Khai Phá.<br>Cùng lúc chỉ được tồn tại 1 hiệu ứng khu vực mà phe ta tạo ra.",
+        "shortDesc": "Tạo vùng đặc biệt. Kẻ địch trong khu vực sẽ <orangeStrong>dừng hành động</orangeStrong>. Sau khi vào chiến đấu với kẻ địch trong khu vực, khiến toàn bộ phe địch Trì Hoãn Hành Động, và gây lượng nhỏ Sát Thương Băng cho toàn bộ phe địch.",
+        "tag": "Quấy Nhiễu"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Quyền Trượng Hoài Niệm",
+        "fullDesc": "Khi bắt đầu trận, Nhà Khai Phá Ưu Tiên Hành Động {{1, percent}}%. Khi lần đầu triệu hồi Mem, sẽ khiến Mem nhận được {{2, percent}}% Nạp Năng Lượng."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Truyện Ngụ Ngôn Nho Nhỏ",
+        "fullDesc": "Khi Mem thi triển \"Kẻ Xấu! Rắc Rối!\", sẽ lập tức nhận {{1, percent}}% Nạp Năng Lượng."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Nam Châm Và Dây Xích",
+        "fullDesc": "Khi mục tiêu phe ta sở hữu \"Mem Cổ Vũ\" có Giới Hạn Năng Lượng trên {{1}} điểm, thì cứ mỗi {{2}} điểm vượt quá, bội số Sát Thương Chuẩn gây ra thông qua \"Mem Cổ Vũ\" sẽ tăng thêm {{3, percent(fixed: 1)}}%, tối đa tăng {{4, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Người Kể Chuyện Hiện Tại",
+      "desc": "Tỷ Lệ Bạo Kích của mục tiêu phe ta có Mem Cổ Vũ sẽ tăng {{1, percent}}%. Khi mục tiêu phe ta có Mem Cổ Vũ, hiệu ứng của Mem Cổ Vũ cũng có hiệu lực với Linh Hồn Ký Ức/Bậc Thầy Ký Ức của mục tiêu này, hiệu ứng này không thể cộng dồn."
+    },
+    "2": {
+      "name": "Người Nhặt Nhạnh Quá Khứ",
+      "desc": "Khi Linh Hồn Ký Ức phe ta hành động (ngoại trừ Mem), Nhà Khai Phá sẽ hồi {{1}} điểm Năng Lượng. Hiệu ứng này mỗi hiệp tối đa kích hoạt {{2}} lần, khi bắt đầu hiệp của Nhà Khai Phá sẽ làm mới số lần có thể kích hoạt."
+    },
+    "3": {
+      "name": "Người Ngâm Tụng Tương Lai",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15; Cấp Thiên Phú Linh Hồn Ký Ức +1, tối đa không vượt quá cấp 10."
+    },
+    "4": {
+      "name": "Bạn Nhảy Mới Của Muse",
+      "desc": "Khiến khi mục tiêu phe ta có giới hạn Năng Lượng bằng 0 chủ động thi triển kỹ năng, Mem cũng có thể nhận {{1, percent}}% Nạp Năng Lượng, và Bội Số Sát Thương Chuẩn mà mục tiêu này gây ra thông qua \"Mem Cổ Vũ\" tăng thêm {{2, percent}}%."
+    },
+    "5": {
+      "name": "Người May Vá Thơ Ca",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10; Cấp kỹ năng của Linh Hồn Ký Ức +1, tối đa không vượt quá cấp 10."
+    },
+    "6": {
+      "name": "Người Gánh Vác Thần Khởi",
+      "desc": "Tỷ lệ Bạo Kích của Tuyệt Kỹ được cố định là 100%."
+    }
+  }
+}

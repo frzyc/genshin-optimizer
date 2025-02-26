@@ -1,0 +1,7 @@
+{
+  "name": "Für die Reise von morgen",
+  "passive": {
+    "name": "Verketten",
+    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nachdem der Träger seinen Ultimate eingesetzt hat, wird der verursachte SCH für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht."
+  }
+}

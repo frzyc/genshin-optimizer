@@ -1,0 +1,113 @@
+{
+  "name": "Feixiao",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Boltsunder",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Feixiao's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Wind DMG to a single enemy.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Waraxe",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Feixiao's ATK to a single target enemy. Then, immediately launches 1 extra instance of Talent's Follow-up ATK against the target.",
+        "shortDesc": "Deals Wind DMG to an enemy, and additionally launches Talent's Follow-up ATK 1 time.",
+        "tag": "Single Target"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Terrasplit",
+        "fullDesc": "Deals Wind DMG to a single target enemy, up to <orangeStrong>{{4, percent}}%</orangeStrong> of Feixiao's ATK. During this time, can ignore Weakness Type to reduce the target's Toughness. When the target is not Weakness Broken, Feixiao's Weakness Break Efficiency increases by {{2, percent}}%.<br>During the attack, Feixiao first launches \"Boltsunder Blitz\" or \"Waraxe Skyward\" on the target, for a total of {{3}} time(s).<br>At the end, deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Feixiao's ATK to the target.",
+        "shortDesc": "During the Ultimate, can <orangeStrong>ignore Weakness Type</orangeStrong> to reduce enemy Toughness. When the target is not Weakness Broken, Feixiao's <orangeStrong>Weakness Break Efficiency increases</orangeStrong>.<br>Launches \"Boltsunder Blitz\" or \"Waraxe Skyward\" on a single enemy <orangeStrong>{{3}}</orangeStrong> time(s). Deals Wind DMG at the end.",
+        "tag": "Single Target"
+      },
+      "1": {
+        "name": "Boltsunder Blitz",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Feixiao's ATK to the chosen target. If the target is Weakness Broken, the DMG multiplier increases by <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Deals minor Wind DMG to a single enemy and increases the DMG multiplier against targets that are <orangeStrong>Weakness Broken</orangeStrong>.",
+        "tag": "Single Target"
+      },
+      "2": {
+        "name": "Waraxe Skyward",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Feixiao's ATK to the chosen target. If the target is not Weakness Broken, the DMG multiplier increases by <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Deals minor Wind DMG to a single enemy and increases the DMG multiplier against targets that are <orangeStrong>not Weakness Broken</orangeStrong>.",
+        "tag": "Single Target"
+      },
+      "3": {
+        "name": "Terrasplit",
+        "shortDesc": "During the Ultimate, can <orangeStrong>ignore Weakness Type</orangeStrong> to reduce enemy Toughness. When the target is not Weakness Broken, Feixiao's <orangeStrong>Weakness Break Efficiency increases</orangeStrong>.<br>Launches \"Boltsunder Blitz\" or \"Waraxe Skyward\" on a single enemy <orangeStrong>{{3}}</orangeStrong> time(s). Deals Wind DMG at the end.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Thunderhunt",
+        "fullDesc": "Can activate Ultimate when \"Flying Aureus\" reaches {{3}} points, accumulating up to {{4}} points. Feixiao gains 1 point of \"Flying Aureus\" for every {{2}} attacks by ally targets. Feixiao's Ultimate attacks do not count towards this number.<br>After Feixiao's teammates attack an Enemy target, Feixiao immediately launches Follow-up ATK against the primary target, dealing Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Feixiao's ATK. If there is no primary target available to attack, Feixiao attacks a single random enemy instead. This effect can only trigger once per turn and the trigger count resets at the start of Feixiao's turn. When using this attack, increases DMG dealt by this unit by <orangeStrong>{{5, percent}}%</orangeStrong>, lasting for {{6}} turn(s).",
+        "shortDesc": "Can activate Ultimate when \"Flying Aureus\" reaches <orangeStrong>{{3}}</orangeStrong> points, accumulating up to <orangeStrong>{{4}}</orangeStrong> points. For every <orangeStrong>{{2}}</orangeStrong> attacks by ally targets, Feixiao gains <orangeStrong>\"Flying Aureus\"</orangeStrong>.<br>After teammates attack, Feixiao launches <orangeStrong>Follow-up ATK</orangeStrong> against the primary target, dealing Wind DMG. This effect can only trigger once per turn. When using this attack, increases <orangeStrong>DMG dealt by this unit</orangeStrong>.",
+        "tag": "Single Target"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Stormborn",
+        "fullDesc": "After using Technique, enters the \"Onrush\" state, lasting for {{1}} seconds. While in \"Onrush,\" pulls in enemies within a certain range, and increases this unit's movement speed by {{2, percent}}%. After entering battle, gains {{4}} point(s) of \"Flying Aureus.\"<br>While in \"Onrush,\" actively attacking will start battle with all pulled enemies. After entering battle, deals Wind DMG equal to {{3, percent}}% of Feixiao's ATK to all enemies at the start of each wave. This DMG is guaranteed to CRIT. If more than 1 enemy is pulled in, increases the multiplier of this DMG by {{5, percent}}% for each additional enemy pulled in, up to a maximum of {{6, percent}}%.",
+        "shortDesc": "Enters the \"Onrush\" state. Continuously pulls in enemies and increases movement speed. Gains \"Flying Aureus\" after entering battle.<br>While in \"Onrush,\" can actively attack all pulled enemies. At the start of every wave, deals Wind DMG to all enemies. This DMG is guaranteed to CRIT. <orangeStrong>The more enemies are pulled in, the higher the DMG multiplier becomes</orangeStrong>.",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Heavenpath",
+        "fullDesc": "When the battle starts, gains {{1}} point(s) of \"Flying Aureus.\"<br>At the start of a turn, if no Follow-up ATK was launched via Talent in the previous turn, then this counts as 1 toward the number of attacks required to gain \"Flying Aureus.\""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Formshift",
+        "fullDesc": "When using Ultimate to deal DMG to an enemy target, it is considered as a Follow-up ATK. Follow-up ATKs' CRIT DMG increases by {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Boltcatch",
+        "fullDesc": "When using Skill, increases ATK by {{1, percent}}%, lasting for {{2}} turn(s)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Skyward I Quell",
+      "desc": "After launching \"Boltsunder Blitz\" or \"Waraxe Skyward,\" additionally increases the Ultimate DMG dealt by Feixiao by an amount equal to {{1, percent}}% of the original DMG, stacking up to {{2}} time(s) and lasting until the end of the Ultimate action."
+    },
+    "2": {
+      "name": "Moonward I Wish",
+      "desc": "In the Talent's effect, for every 1 instance of Follow-up ATK launched by ally targets, Feixiao gains 1 point of \"Flying Aureus.\" This effect can trigger up to {{1}} time(s) per turn."
+    },
+    "3": {
+      "name": "Starward I Bode",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Stormward I Hear",
+      "desc": "The Toughness Reduction from the Talent's Follow-up ATK increases by {{1, percent}}% and, when launched, increases this unit's SPD by {{2, percent}}%, lasting for {{3}} turn(s)."
+    },
+    "5": {
+      "name": "Heavenward I Leap",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Homeward I Near",
+      "desc": "Increases the All-Type RES PEN of Ultimate DMG dealt by Feixiao by {{1, percent}}%. Talent's Follow-up ATK DMG is considered as Ultimate DMG at the same time, and its DMG multiplier increases by {{2, percent}}%."
+    }
+  }
+}

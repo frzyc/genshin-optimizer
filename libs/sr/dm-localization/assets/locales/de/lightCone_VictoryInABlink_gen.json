@@ -1,0 +1,7 @@
+{
+  "name": "Sieg im Handumdrehen",
+  "passive": {
+    "name": "Letzter Schlag",
+    "description": "Erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn der Memogeist des Trägers eine Fähigkeit auf Verbündete anwendet, wird der verursachte SCH aller Verbündeten für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht."
+  }
+}

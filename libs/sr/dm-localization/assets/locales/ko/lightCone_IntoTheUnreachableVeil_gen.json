@@ -1,0 +1,7 @@
+{
+  "name": "추궁할 수 없는 곳을 향해",
+  "passive": {
+    "name": "두뇌 게임",
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기 발동 시 장착한 캐릭터가 가하는 전투 스킬과 필살기 피해가 <orangeStrong>{{4, percent}}%</orangeStrong> 증가한다, 지속 시간: {{5}}턴. 장착한 캐릭터가 필살기 발동 후 이번 필살기로 소모한 에너지가 {{3}}pt 이상일 경우 전투 스킬 포인트를 1pt 회복한다"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Ninja Record: Sound Hunt",
+  "passive": {
+    "name": "Curtains Up!",
+    "description": "ทำให้ HP สูงสุดของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หลังจากสูญเสีย HP หรือฟื้นฟู HP ของตัวเองแล้ว DMG คริติคอลจะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น โดยเอฟเฟกต์นี้ จะเกิดขึ้นได้แค่เทิร์นละ 1 ครั้งเท่านั้น"
+  }
+}

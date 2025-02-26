@@ -3,115 +3,43 @@
   "path": "Nihility",
   "ascension": [
     {
-      "atk": {
-        "base": 24,
-        "add": 3.6
-      },
-      "def": {
-        "base": 15,
-        "add": 2.25
-      },
-      "hp": {
-        "base": 38.4,
-        "add": 5.76
-      }
+      "atk": { "base": 24, "add": 3.6 },
+      "def": { "base": 15, "add": 2.25 },
+      "hp": { "base": 38.4, "add": 5.76 }
     },
     {
-      "atk": {
-        "base": 52.8,
-        "add": 3.6
-      },
-      "def": {
-        "base": 33,
-        "add": 2.25
-      },
-      "hp": {
-        "base": 84.48,
-        "add": 5.76
-      }
+      "atk": { "base": 52.8, "add": 3.6 },
+      "def": { "base": 33, "add": 2.25 },
+      "hp": { "base": 84.48, "add": 5.76 }
     },
     {
-      "atk": {
-        "base": 91.2,
-        "add": 3.6
-      },
-      "def": {
-        "base": 57,
-        "add": 2.25
-      },
-      "hp": {
-        "base": 145.92,
-        "add": 5.76
-      }
+      "atk": { "base": 91.2, "add": 3.6 },
+      "def": { "base": 57, "add": 2.25 },
+      "hp": { "base": 145.92, "add": 5.76 }
     },
     {
-      "atk": {
-        "base": 129.6,
-        "add": 3.6
-      },
-      "def": {
-        "base": 81,
-        "add": 2.25
-      },
-      "hp": {
-        "base": 207.36,
-        "add": 5.76
-      }
+      "atk": { "base": 129.6, "add": 3.6 },
+      "def": { "base": 81, "add": 2.25 },
+      "hp": { "base": 207.36, "add": 5.76 }
     },
     {
-      "atk": {
-        "base": 168,
-        "add": 3.6
-      },
-      "def": {
-        "base": 105,
-        "add": 2.25
-      },
-      "hp": {
-        "base": 268.8,
-        "add": 5.76
-      }
+      "atk": { "base": 168, "add": 3.6 },
+      "def": { "base": 105, "add": 2.25 },
+      "hp": { "base": 268.8, "add": 5.76 }
     },
     {
-      "atk": {
-        "base": 206.4,
-        "add": 3.6
-      },
-      "def": {
-        "base": 129,
-        "add": 2.25
-      },
-      "hp": {
-        "base": 330.24,
-        "add": 5.76
-      }
+      "atk": { "base": 206.4, "add": 3.6 },
+      "def": { "base": 129, "add": 2.25 },
+      "hp": { "base": 330.24, "add": 5.76 }
     },
     {
-      "atk": {
-        "base": 244.8,
-        "add": 3.6
-      },
-      "def": {
-        "base": 153,
-        "add": 2.25
-      },
-      "hp": {
-        "base": 391.68,
-        "add": 5.76
-      }
+      "atk": { "base": 244.8, "add": 3.6 },
+      "def": { "base": 153, "add": 2.25 },
+      "hp": { "base": 391.68, "add": 5.76 }
     }
   ],
   "superimpose": {
-    "otherStats": [
-      [
-        -1,
-        0.48,
-        0.6,
-        0.72,
-        0.84,
-        0.96
-      ]
-    ],
+    "otherStats": [[-1, 0.48, 0.6, 0.72, 0.84, 0.96]],
     "passiveStats": {}
   }
 }

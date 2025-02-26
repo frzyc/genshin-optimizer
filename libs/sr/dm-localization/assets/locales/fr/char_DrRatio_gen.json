@@ -20,23 +20,23 @@
     "ult": {
       "0": {
         "name": "Paradoxe du syllogisme",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'attaque de suivi de son talent une fois.<br>Folie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
-        "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <orangeStrong>attaque de suivi</orangeStrong>.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'ATQ de suivi de son talent une fois.<br>Folie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
+        "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <orangeStrong>ATQ de suivi</orangeStrong>.",
         "tag": "Cible unique"
       }
     },
     "talent": {
       "0": {
         "name": "Cogito, Ergo Sum",
-        "fullDesc": "Dr Ratio a {{2, percent}}% de chances fixes de déclencher 1 attaque de suivi contre sa cible lorsqu'il utilise sa compétence, lui infligeant des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio. Les chances fixes de déclencher l'attaque de suivi augmentent de {{3, percent}}% pour chaque malus appliqué à la cible ennemie. L'attaque de suivi est lancée sur un autre ennemi aléatoire si la cible ennemie est vaincue avant que l'attaque de suivi ne soit déclenchée.",
-        "shortDesc": "Il y a une chance de lancer 1 <orangeStrong>attaque de suivi</orangeStrong> sur la cible, qui inflige des DGT imaginaires lors de l'utilisation de la compétence.",
+        "fullDesc": "Dr Ratio a {{2, percent}}% de chances fixes de déclencher 1 ATQ de suivi contre sa cible lorsqu'il utilise sa compétence, lui infligeant des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio. Les chances fixes de déclencher l'ATQ de suivi augmentent de {{3, percent}}% pour chaque malus appliqué à la cible ennemie. L'ATQ de suivi est lancée sur un autre ennemi aléatoire si la cible ennemie est vaincue avant que l'ATQ de suivi ne soit déclenchée.",
+        "shortDesc": "Il y a une chance de lancer 1 <orangeStrong>ATQ de suivi</orangeStrong> sur la cible, qui inflige des DGT imaginaires lors de l'utilisation de la compétence.",
         "tag": "Cible unique"
       }
     },
     "technique": {
       "0": {
         "name": "Fascination façonnée",
-        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2, percent}}% de chances de base de réduire la VIT des ennemis de {{3, percent}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension spéciale. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2, percent}}% de chances de base de réduire la VIT des ennemis de {{3, percent}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension spéciale. Il ne peut exister qu'1 effet de dimension créé par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale. Les ennemis dans la dimension subissent l'effet Provocation. Il y a de fortes chances de <orangeStrong>réduire la VIT</orangeStrong> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension.",
         "tag": "Incapacitation"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Synthèse",
-        "fullDesc": "Lorsque Dr Ratio utilise sa compétence, ses chances de coup critique augmentent de {{1, percent(fixed: 1)}}% et ses DGT critiques de {{2, percent}}% pour chaque malus sur la cible. Cet effet peut être cumulé jusqu'à {{3}} fois.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque Dr Ratio utilise sa compétence, ses chances de coup critique augmentent de {{1, percent(fixed: 1)}}% et ses DGT critiques de {{2, percent}}% pour chaque malus sur la cible. Cet effet peut être cumulé jusqu'à {{3}} fois."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inférence",
-        "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible ennemie attaquée de {{2, percent}}% pendant {{3}} tours.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible ennemie attaquée de {{2, percent}}% pendant {{3}} tours."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Déduction",
-        "fullDesc": "Lorsque Dr Ratio inflige des DGT à une cible ayant au moins {{1}} malus, les DGT infligés par Dr Ratio à cette cible augmentent de {{2, percent}}% pour chaque malus appliqué à la cible, jusqu'à une augmentation maximale de {{3, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque Dr Ratio inflige des DGT à une cible ayant au moins {{1}} malus, les DGT infligés par Dr Ratio à cette cible augmentent de {{2, percent}}% pour chaque malus appliqué à la cible, jusqu'à une augmentation maximale de {{3, percent}}%."
       }
     }
   },

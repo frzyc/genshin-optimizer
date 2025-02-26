@@ -1,0 +1,101 @@
+{
+  "name": "Desbrava{M#dor}{F#dora} (Gelo • A Recordação)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Deixa Comigo!",
+        "fullDesc": "Causa Dano de Gelo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um inimigo designado.",
+        "shortDesc": "Causa Dano de Gelo leve a um inimigo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Eu Escolho Você!",
+        "fullDesc": "Invoca o Memoespírito Mem. Se Mem já estiver no campo de batalha, restaura os PV de Mem em uma quantidade igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Mem e concede {{2, percent}}% de Carga a Mem.",
+        "shortDesc": "<orangeStrong>Invoca o Memoespírito</orangeStrong> Mem. Se Mem já estiver em campo, restaura os PV de Mem e concede <orangeStrong>Carga</orangeStrong> a Mem.",
+        "tag": "Invocar"
+      },
+      "1": {
+        "name": "Eu Escolho Você!",
+        "shortDesc": "<orangeStrong>Invoca o Memoespírito</orangeStrong> Mem. Se Mem já estiver em campo, restaura os PV de Mem e concede <orangeStrong>Carga</orangeStrong> a Mem.",
+        "tag": "Restauração"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vamos, Mem!",
+        "fullDesc": "Invoca o Memoespírito Mem. Concede {{2, percent}}% de Carga a Mem, e em seguida faz com que Mem cause Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Mem a todos os inimigos.",
+        "shortDesc": "<orangeStrong>Invoca o Memoespírito</orangeStrong> Mem. Concede <orangeStrong>Carga</orangeStrong> a Mem e, em seguida, faz Mem infligir Dano de Gelo massivo a todos os inimigos.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Companheira Poderosa",
+        "fullDesc": "O Memoespírito Mem tem uma VEL inicial de {{1}} e PV máximos iguais a <orangeStrong>{{2, percent}}%</orangeStrong> dos PV máximos {M#do Desbravador}{F#da Desbravadora} + <orangeStrong>{{4}}</orangeStrong>. Para cada {{3}} de Energia regenerada por todos os aliados no total, Mem ganha 1% de Carga.",
+        "shortDesc": "Sempre que <orangeStrong>uma certa quantidade de Energia for regenerada</orangeStrong> por todos os aliados, Mem ganha <orangeStrong>Carga</orangeStrong>.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Memórias Ressurgem Como Ecos",
+        "fullDesc": "Depois de usar a Técnica, cria uma Dimensão Especial que dura por {{1}} segundo(s). Inimigos dentro da Dimensão Especial são colocados em um estado de \"Tempo Parado\", interrompendo todas suas ações.<br>Após entrar na batalha contra inimigos afligidos com o estado de \"Tempo Parado\", atrasa a ação de todos os inimigos em {{2, percent}}%, e então causa Dano de Gelo a todos os inimigos igual a {{3, percent}}% do ATQ {F#da Desbravadora}{M#do Desbravador}.<br>Apenas 1 Efeito de Dimensão Especial criado por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma Dimensão Especial. Os inimigos na Dimensão <orangeStrong>ficam sem agir</orangeStrong>. Ao entrar em combate contra inimigos na Dimensão, faz com que as ações de todos os inimigos sejam atrasadas e inflige um Dano de Gelo leve a todos os inimigos.",
+        "tag": "Incapacitação"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cetro da Rapsódia",
+        "fullDesc": "Quando a batalha começa, Avança Adiante a ação {F#da Desbravadora}{M#do Desbravador} em {{1, percent}}%. Quando Mem é invocada pela primeira vez, concede {{2, percent}}% de Carga para Mem."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Pequena Parábola",
+        "fullDesc": "Ao usar \"Malvadões! Treta!\", Mem ganha imediatamente {{1, percent}}% de Carga."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Imãs e Grandes Correntes",
+        "fullDesc": "Quando a Energia Máxima do aliado-alvo que possui \"Suporte da Mem\" é maior que {{1}}, para cada {{2}} de Energia excedente, aumenta adicionalmente o multiplicador do Dano Verdadeiro causado através do \"Suporte da Mem\" em {{3, percent(fixed: 1)}}%, até um aumento máximo de {{4, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{M#Narrador}{F#Narradora} do Presente",
+      "desc": "Aumenta a Chance de CRIT de aliados-alvo com \"Suporte da Mem\" em {{1, percent}}%. Quando um aliado-alvo possui \"Suporte da Mem\", o efeito de \"Suporte da Mem\" também se aplica ao Memoespírito/Memomestre do alvo. Este efeito não pode acumular."
+    },
+    "2": {
+      "name": "{M#Colhedor}{F#Colhedora} do Passado",
+      "desc": "Quando Memoespíritos aliados (exceto por Mem) agem, {F#a Desbravadora}{M#o Desbravador} regenera {{1}} de Energia. Este efeito pode ativar um máximo de {{2}} vez(es) por rodada. A contagem de ativação é reiniciada no início da rodada {F#da Desbravadora}{M#do Desbravador}."
+    },
+    "3": {
+      "name": "{M#Cantor}{F#Cantora} do Futuro",
+      "desc": "Nv. de Perícia +2, até no máximo Nv. 15.<br>Nv. de Talento +2, até no máximo Nv. 15.<br>Nv. de Talento do Memoespírito +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "{F#Dançarina}{M#Dançarino} da Musa",
+      "desc": "Quando um aliado-alvo com 0 de Energia Máxima usa uma habilidade, Mem também pode ganhar {{1, percent}}% de Carga, e o multiplicador do Dano Verdadeiro causado por esse alvo através do \"Suporte da Mem\" aumenta adicionalmente em {{2, percent}}%."
+    },
+    "5": {
+      "name": "{F#Costureira}{M#Costureiro} da Ode",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10.<br>Nv. da Perícia do Memoespírito +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "{M#Portador}{F#Portadora} da Revelação",
+      "desc": "A Chance de CRIT da Perícia Suprema é definida em 100%."
+    }
+  }
+}

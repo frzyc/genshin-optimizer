@@ -1,0 +1,7 @@
+{
+  "name": "Nur ein Duft bleibt zurück",
+  "passive": {
+    "name": "Erleichterung",
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nachdem der Träger einen Gegner mit seinem Ultimate angegriffen hat, wird das Ziel für {{5}} Rd. mit „Sorglos“ belegt. Der erlittene SCH von Gegnern mit „Sorglos“ wird um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Der Effekt dieser SCH-Erhöhung wird zusätzlich um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht, wenn der aktuelle Brucheffekt des Trägers {{3, percent}}% oder mehr beträgt."
+  }
+}

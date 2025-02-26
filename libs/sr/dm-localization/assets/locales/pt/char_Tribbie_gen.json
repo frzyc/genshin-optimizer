@@ -1,0 +1,96 @@
+{
+  "name": "Tribbie",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Os Cem Foguetes",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Tribbie a um inimigo designado. Causa Dano Quântico igual a <orangeStrong>{{2, percent}}%</orangeStrong> dos PV máximos de Tribbie em alvos adjacentes.",
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo e unidades adjacentes.",
+        "tag": "Explosão"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Cadê os Presentes?",
+        "fullDesc": "Ganha \"Numinosidade\", que dura por {{2}} rodada(s). Esta duração diminui em 1 no início de cada rodada desta unidade. Enquanto Tribbie possuir \"Numinosidade\", aumenta a PEN de RES a Todos os Tipos de todos os aliados-alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.",
+        "shortDesc": "Ganha “Numinosidade”, durante a qual todos os aliados-alvo têm sua PEN de RES a Todos os Tipos aumentada.",
+        "tag": "Suporte"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Adivinhe Quem Mora Aqui",
+        "fullDesc": "Ativa um Campo e causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Tribbie a todos os inimigos.<br>Enquanto o Campo estiver ativo, aumenta o Dano recebido pelos inimigos-alvo em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Após um aliado-alvo atacar, para cada 1 inimigo atingido, causa 1 instância de Dano Quântico Adicional igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Tribbie ao inimigo com maior PV entre os atingidos.<br>O Campo dura por {{4}} rodada(s). Essa duração é reduzida em 1 no início de cada rodada desta unidade.",
+        "shortDesc": "<orangeStrong>Ativa um Campo</orangeStrong> e causa Dano Quântico leve a todos os inimigos. Enquanto o Campo durar, aumenta o Dano recebido pelos inimigos e causa <orangeStrong>Dano Quântico leve Adicional</orangeStrong> ao alvo que tem os maiores PV entre os alvos atingidos com base no <orangeStrong>número de inimigos</orangeStrong> atacados.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ocupado Como a Tribbie",
+        "fullDesc": "Após outros personagens aliados usarem a Perícia Suprema, Tribbie realiza um Ataque Extra, causando Dano Quântico igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Tribbie a todos os inimigos. Esse efeito pode ser ativado até 1 vez por personagem. Quando Tribbie usa sua Perícia Suprema, a contagem de ativação para outros personagens aliados é reiniciada. Se o alvo for derrotado antes do Ataque Extra ser realizado, em vez disso, Tribbie lança o Ataque Extra contra novos inimigos-alvo que entrarem no campo de batalha.",
+        "shortDesc": "Após outros personagens aliados utilizarem sua Perícia Suprema, Tribbie realiza um <orangeStrong>Ataque Extra</orangeStrong>, causando Dano Quântico leve a <orangeStrong>todos os inimigos</orangeStrong>. Esse efeito pode ser ativado até 1 vez por personagem. Quando Tribbie usa sua Perícia Suprema, a contagem de ativação para outros personagens aliados é reiniciada.",
+        "tag": "Área"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Se Você Está Contente Bata Palmas",
+        "fullDesc": "Depois de usar a Técnica e ao entrar na batalha, obtém \"Numinosidade\" por {{1}} rodada(s).",
+        "shortDesc": "Ao entrar em batalha, obtém \"Numinosidade\".",
+        "tag": "Aprimoramento"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cordeirinhos Fora do Cercado...",
+        "fullDesc": "Depois de usar o Ataque Extra do Talento, aumenta o Dano causado por Tribbie em {{1, percent}}%. Este efeito pode acumular até {{2}} vez(es), durando por {{3}} rodada(s)."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Esfera de Vidro Alada!",
+        "fullDesc": "Enquanto o Campo durar, os PV máximos de Tribbie aumentam em um valor igual a {{1, percent}}% da soma dos PV máximos de todos os personagens aliados."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Pedra na Encruzilhada?",
+        "fullDesc": "No início da batalha, Tribbie regenera {{1}} de Energia. Após outros aliados atacarem, Tribbie regenera {{2, fixed(fixed: 1)}} de Energia para cada alvo atingido."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ritual da Colher de Açúcar",
+      "desc": "Enquanto o Campo estiver ativo e após aliados-alvo atacarem inimigos, causa adicionalmente Dano Verdadeiro igual a {{1, percent}}% do Dano total desse ataque aos alvos que receberam Dano Adicional do Campo."
+    },
+    "2": {
+      "name": "Guia De Visita Aos Sonhos",
+      "desc": "O Dano Adicional causado pelo Campo aumenta para {{1, percent}}% do Dano original. Quando o Campo causa Dano Adicional, causa adicionalmente {{2}} instância(s) de Dano Adicional."
+    },
+    "3": {
+      "name": "Tesouro do Brilho Matutino",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Paz do Laço Empático",
+      "desc": "Enquanto \"Numinosidade\" durar, o Dano causado por todos os aliados ignora {{1, percent}}% da DEF do alvo."
+    },
+    "5": {
+      "name": "Relógio da Origem das Maravilhas",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Manhã do Brilho Estelar",
+      "desc": "Após Tribbie utilizar sua Perícia Suprema, ela lança o Ataque Extra do seu Talento contra todos os inimigos. O Dano causado pelo Ataque Extra do seu Talento é aumentado em {{1, percent}}%."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "La Grande Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ça rentre dans le crâne ?",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de la Grande Herta à un ennemi désigné.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi désigné.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Aux portes de la connaissance",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de la Grande Herta à un ennemi désigné tout en appliquant {{2}} cumul d'Interprétation. Inflige également des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de la Grande Herta aux cibles touchées par cette instance de la compétence et à leurs cibles adjacentes respectives. Cet effet peut se répéter 2 fois.",
+        "shortDesc": "Inflige des DGT à un ennemi désigné. Puis inflige des DGT aux cibles touchées par cette instance de la compétence et à leurs cibles adjacentes respectives, répétés 2 fois.",
+        "tag": "Propagation"
+      },
+      "1": {
+        "name": "Écoutez bien",
+        "fullDesc": "Consomme 1 cumul d'Inspiration. Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de la Grande Herta à un ennemi désigné et applique {{2}} cumul d'Interprétation. Puis, inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de la Grande Herta répétés 2 fois aux cibles touchées par cette instance de la compétence et à leurs cibles adjacentes respectives. Enfin, inflige des DGT de glace équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de la Grande Herta à tous les ennemis.",
+        "shortDesc": "Inflige des DGT à un ennemi désigné. Puis, inflige des DGT répétés 2 fois aux cibles touchées par cette instance de la compétence et à leurs cibles adjacentes respectives. Enfin, inflige des DGT à tous les ennemis.",
+        "tag": "ZdE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Je t'avais bien dit que c'était de la magie",
+        "fullDesc": "Réorganise le nombre de cumuls d'Interprétation sur tous les ennemis, en transférant les nombres de cumuls les plus élevés en priorité aux cibles de niveau élite ou supérieur. Puis, inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de la Grande Herta à tous les ennemis. Lors de l'utilisation de l'ultime, l'ATQ de la Grande Herta augmente de <orangeStrong>{{4, percent}}%</orangeStrong> pendant {{5}} tours. La Grande Herta agit immédiatement et obtient 1 cumul d'Inspiration après utilisation. Inspiration peut être cumulé jusqu'à {{6}} fois. La compétence est renforcée en « Écoutez bien » sous l'effet Inspiration.",
+        "shortDesc": "<orangeStrong>Réorganise le nombre de cumuls d'Interprétation</orangeStrong> sur tous les ennemis, en transférant les nombres de cumuls les plus élevés en priorité aux cibles de niveau élite ou supérieur. Puis, inflige des DGT de glace à tous les ennemis. Après utilisation, renforce la compétence et permet d'agir immédiatement.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Donne-moi ça",
+        "fullDesc": "Lorsque des cibles ennemies entrent en combat, la Grande Herta leur applique 1 cumul d'Interprétation. Au début de chaque vague, applique {{6}} cumuls d'Interprétation à une cible ennemie aléatoire, en donnant la priorité aux cibles ennemies de niveau élite ou supérieur. Lorsque la cible principale de la compétence renforcée a Interprétation, le multiplicateur des DGT infligés augmente, chaque cumul accordant une augmentation de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> sur la cible principale/les autres cibles respectivement. Si 2 personnages ou plus suivent la Voie de l'Érudition dans l'équipe, chaque cumul accorde une augmentation supplémentaire de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> sur la cible principale/les autres cibles respectivement. Interprétation peut se cumuler jusqu'à {{3}} fois. Le nombre de cumuls d'Interprétation sur la cible principale est réinitialisé à 1 lors de l'utilisation de la compétence renforcée. Lorsqu'une cible ennemie quitte le combat ou est vaincue par une unité, ses cumuls d'Interprétation sont transférés en priorité aux cibles de niveau élite ou supérieur.",
+        "shortDesc": "La compétence renforcée <orangeStrong>augmente les DGT infligés en fonction des cumuls d'Interprétation de la cible</orangeStrong>.",
+        "tag": "Renforcement"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Voyons voir ce qu'il y a de beau",
+        "fullDesc": "Après utilisation de la technique, l'ATQ de la Grande Herta augmente de {{1, percent}}% pendant {{2}} tours au début du prochain combat.<br>S'il y a des coffres de base sur la carte actuelle, l'utilisation de la technique marque l'emplacement de {{3}} coffres de base au maximum.<br>Lorsqu'elle entre en combat après avoir utilisé la technique dans l'Univers simulé ou l'Univers parallèle, la Grande Herta inflige des DGT réels équivalents à {{4, percent}}% des PV max de la cible aux cibles ennemies de niveau inférieur au niveau élite, et des DGT réels équivalents à {{5, percent}}% des PV max de la cible aux cibles ennemies de niveau élite ou supérieur au début de chaque vague.",
+        "shortDesc": "Après utilisation de la technique, la Grande Herta peut <orangeStrong>marquer l'emplacement de plusieurs coffres de base</orangeStrong> et son ATQ augmente au début du combat suivant.<br>Lorsqu'elle entre en combat après avoir utilisé la technique dans l'Univers simulé ou l'Univers parallèle, la Grande Herta inflige des DGT réels massifs à tous les ennemis au début de chaque vague.",
+        "tag": "Renforcement"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Honnêteté indifférente",
+        "fullDesc": "Lorsqu'une cible alliée attaque, inflige 1 cumul d'Interprétation à chaque cible ennemie touchée. Après l'attaque, la Grande Herta récupère {{1}} points d'énergie pour chaque cible touchée, jusqu'à un maximum de 5 cibles comptabilisées. Lors de l'utilisation de la compétence renforcée, si la cible principale a 42 cumuls d'Interprétation, les DGT de glace infligés par la Grande Herta augmentent de {{2, percent}}% jusqu'à la fin de cette attaque."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Message aux confins du savoir",
+        "fullDesc": "Les DGT critiques de tous les alliés augmentent de {{1, percent}}% en début de combat lorsqu'il y a au moins deux personnages de la Voie de l'Érudition dans l'équipe. Et lors du calcul du nombre de cibles touchées pour la Trace Honnêteté indifférente, prend en compte au moins {{2}} cibles. Applique {{3}} cumul d'Interprétation à la cible qui possède actuellement le plus grand nombre de cumuls d'Interprétation parmi les cibles ennemies touchées après une attaque et applique {{4}} cumuls d'Interprétation supplémentaires si l'assaillant suit la Voie de l'Érudition."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Paysage de la théorie des cordes",
+        "fullDesc": "Chaque fois qu'1 cumul d'Interprétation est appliqué à une cible ennemie, la Grande Herta obtient 1 cumul de Réponse, jusqu'à un maximum de {{2}} cumuls. Lors de l'utilisation de l'ultime, chaque cumul de Réponse augmente le multiplicateur de DGT de cette instance de l'ultime de {{1, percent(fixed: 1)}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Nuit des étoiles déchues",
+      "desc": "Lors du calcul des cumuls d'Interprétation pour la compétence renforcée, prend également en compte {{1, percent}}% du nombre actuel de cumuls d'Interprétation sur la cible qui a le plus de cumuls parmi la cible principale et ses cibles adjacentes. Lorsque le statut Interprétation est réinitialisé par l'utilisation de la compétence renforcée, le nombre de cumuls est ramené à {{2}}."
+    },
+    "2": {
+      "name": "Clé des vents",
+      "desc": "Après que la Grande Herta entre en combat ou utilise son ultime, elle obtient 1 cumul d'Inspiration. Après l'utilisation de la compétence renforcée, la prochaine action de la Grande Herta est avancée de {{1, percent}}%."
+    },
+    "3": {
+      "name": "Porte vers l'été",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Seizième clé",
+      "desc": "La VIT des personnages de l'Érudition dans l'équipe augmente de {{1, percent}}%."
+    },
+    "5": {
+      "name": "Pilule de vérité amère",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Appât de la réponse",
+      "desc": "La PÉN de RÉS à la glace de la Grande Herta augmente de {{4, percent}}%. Lorsque le nombre de cibles ennemies sur le champ de bataille est de 3 (ou plus)/2/1, le multiplicateur de DGT de l'ultime augmente de {{1, percent}}%/{{2, percent}}%/{{3, percent}}% respectivement."
+    }
+  }
+}

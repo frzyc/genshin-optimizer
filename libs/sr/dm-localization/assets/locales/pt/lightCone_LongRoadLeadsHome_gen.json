@@ -1,0 +1,7 @@
+{
+  "name": "A Longa Estrada Leva para Casa",
+  "passive": {
+    "name": "Renascimento",
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Quando um inimigo-alvo sofre Quebra de Fraqueza, há uma chance-base de {{2, percent}}% de infligir o estado de \"Carbonização\" a ele, que aumenta o Dano de Quebra recebido em <orangeStrong>{{3, percent}}%</orangeStrong>, durando por {{4}} rodada(s). Este efeito pode acumular até {{5}} vez(es)."
+  }
+}

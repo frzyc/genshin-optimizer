@@ -1,0 +1,7 @@
+{
+  "name": "Tiempo urdido en oro",
+  "passive": {
+    "name": "Creación",
+    "description": "La VEL base del portador aumenta en <orangeStrong>{{1}}</orangeStrong> pts. Después de que el portador o su mnemoduende ataquen, el portador obtiene una acumulación de Bordado. Cada acumulación de Bordado aumenta el Daño CRIT del portador y de su mnemoduende en un <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>. Se puede acumular hasta {{2}} veces. Cuando las acumulaciones llegan al límite, cada acumulación de Bordado aumenta el daño de ATQ básico infligido en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> adicional."
+  }
+}

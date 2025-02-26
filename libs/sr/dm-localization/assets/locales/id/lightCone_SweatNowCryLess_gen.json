@@ -1,0 +1,7 @@
+{
+  "name": "Sweat Now, Cry Less",
+  "passive": {
+    "name": "Come Train!",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> CRIT Rate pengguna. Saat Memosprite pengguna berada di medan pertempuran, DMG yang diakibatkan pengguna dan Memosprite-nya meningkat <orangeStrong>{{2, percent}}%</orangeStrong>."
+  }
+}

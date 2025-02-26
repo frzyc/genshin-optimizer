@@ -1,0 +1,108 @@
+{
+  "name": "Mydei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lời Thề Dẫm Nát Hành Trình",
+        "fullDesc": "Gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho 1 kẻ địch chỉ định.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Vạn Lần Chết Không Hối Hận",
+        "fullDesc": "Tiêu hao lượng HP bằng {{3, percent}}% HP hiện tại của Mydei, gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho 1 kẻ địch chỉ định, đồng thời gây Sát Thương Số Ảo bằng <orangeStrong>{{2, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho mục tiêu lân cận kẻ đó.<br>Nếu HP hiện tại không đủ, thì khi thi triển Chiến Kỹ, HP hiện tại của Mydei sẽ giảm còn 1.",
+        "shortDesc": "Tiêu hao HP, gây sát thương Số Ảo cho 1 kẻ địch chỉ định và gây lượng nhỏ sát thương Số Ảo cho mục tiêu lân cận.",
+        "tag": "Khuếch Tán"
+      },
+      "1": {
+        "name": "Sát Vương Thành Vương",
+        "fullDesc": "Tiêu hao lượng HP bằng {{3, percent}}% HP hiện tại của Mydei. Gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho 1 kẻ địch, đồng thời gây Sát Thương Số Ảo bằng <orangeStrong>{{2, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho mục tiêu lân cận kẻ đó.<br>Nếu HP hiện tại không đủ, thì khi thi triển Chiến Kỹ, HP hiện tại của Mydei sẽ giảm còn 1.<br>Kỹ năng này sẽ tự động thi triển.",
+        "shortDesc": "Tiêu hao HP, gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định, gây Sát Thương Số Ảo cho mục tiêu lân cận.<br>Kỹ năng này sẽ <orangeStrong>tự động thi triển</orangeStrong>.",
+        "tag": "Khuếch Tán"
+      },
+      "2": {
+        "name": "Sát Thần Đăng Thần",
+        "fullDesc": "Tiêu hao {{3}} điểm Nạp Năng Lượng, gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho 1 kẻ địch, đồng thời gây Sát Thương Số Ảo bằng <orangeStrong>{{2, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho mục tiêu lân cận kẻ đó.<br>Kỹ năng này sẽ tự động thi triển. Trong thời gian kỹ năng này sẽ không thể tích lũy Nạp Năng Lượng.",
+        "shortDesc": "<orangeStrong>Tiêu hao Nạp Năng Lượng</orangeStrong>, gây lượng lớn Sát Thương Số Ảo cho 1 kẻ địch chỉ định, gây lượng lớn Sát Thương Số Ảo cho mục tiêu lân cận.<br>Kỹ năng này sẽ <orangeStrong>tự động thi triển</orangeStrong>.",
+        "tag": "Khuếch Tán"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ngai Vàng Xương Cốt",
+        "fullDesc": "Hồi HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Mydei và tích lũy {{5}} điểm Nạp Năng Lượng Thiên Phú. Gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho 1 kẻ địch chỉ định, đồng thời gây Sát Thương Số Ảo bằng <orangeStrong>{{2, percent}}%</orangeStrong> Giới Hạn HP của Mydei cho mục tiêu lân cận, khiến mục tiêu và mục tiêu lân cận rơi vào trạng thái Khiêu Khích, duy trì {{4}} hiệp. Sát Thần Đăng Thần lần kế tiếp sẽ ưu tiên tấn công 1 kẻ địch chỉ định, hiệu ứng này chỉ có hiệu lực với mục tiêu mới nhất.",
+        "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> và tích lũy Nạp Năng Lượng Thiên Phú, gây lượng lớn Sát Thương Số Ảo cho 1 kẻ địch chỉ định, gây Sát Thương Số Ảo cho mục tiêu lân cận, đồng thời khiến mục tiêu và mục tiêu lân cận rơi vào trạng thái <orangeStrong>Khiêu Khích</orangeStrong>.",
+        "tag": "Khuếch Tán"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Nợ Máu Trả Bằng Máu",
+        "fullDesc": "Mỗi 1% HP bị mất đi sẽ tích lũy 1 điểm Nạp Năng Lượng, tối đa tích lũy 200 điểm. Khi Nạp Năng Lượng đạt 100 điểm thì sẽ tiêu hao 100 điểm này để vào trạng thái \"Huyết Thù\" và hồi HP bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Mydei, đồng thời Ưu Tiên Hành Động 100%. Trong trạng thái \"Huyết Thù\", Giới Hạn HP sẽ tăng, giá trị tăng bằng {{5, percent}}% Giới Hạn HP hiện tại, Phòng Thủ duy trì bằng 0. Khi hiệp của bản thân bắt đầu sẽ tự động thi triển \"Sát Vương Thành Vương\".<br>Trong trạng thái \"Huyết Thù\" khi Nạp Năng Lượng đạt {{3}} điểm, Mydei sẽ lập tức nhận được 1 hiệp thêm và tự động thi triển \"Sát Thần Đăng Thần\".<br>Trong trạng thái \"Huyết Thù\", khi Mydei chịu tấn công chí tử sẽ không rơi vào trạng thái không thể chiến đấu, nhưng sẽ xóa Nạp Năng Lượng và thoát khỏi trạng thái Huyết Thù, đồng thời hồi HP bằng {{4, percent}}% Giới Hạn HP của bản thân.",
+        "shortDesc": "Khi mất HP sẽ tích lũy Nạp Năng Lượng, Nạp Năng Lượng đạt 100 sẽ vào trạng thái <orangeStrong>\"Huyết Thù\"</orangeStrong>, hồi HP và Ưu Tiên Hành Động. Trong trạng thái \"Huyết Thù\", Giới Hạn HP tăng, Phòng Thủ duy trì bằng 0. Khi bắt đầu hiệp của bản thân sẽ <orangeStrong>tự động thi triển</orangeStrong> \"Sát Vương Thành Vương\".<br>Trong trạng thái \"Huyết Thù\" khi Nạp Năng Lượng đạt 150, Mydei sẽ lập tức nhận được 1 <orangeStrong>lượt thêm</orangeStrong> và <orangeStrong>tự động thi triển</orangeStrong> \"Sát Thần Đăng Thần\".<br>Khi Mydei chịu tấn công chí tử sẽ thoát khỏi trạng thái \"Huyết Thù\".",
+        "tag": "Cường Hóa"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Lồng Giam Giáo Gãy Thần Phục",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ lôi kéo kẻ địch trong khu vực nhất định và khiến chúng rơi vào trạng thái Choáng {{1}} giây. Kẻ địch trong trạng thái Choáng sẽ không thể chủ động tấn công mục tiêu phe ta.<br>Nếu chủ động tấn công kẻ địch rơi vào trạng thái Choáng, thì khi vào chiến đấu sẽ gây Sát Thương Số Ảo bằng {{2, percent}}% Giới Hạn HP của Mydei cho toàn bộ phe địch, đồng thời khiến mục tiêu rơi vào trạng thái Khiêu Khích, duy trì {{4}} hiệp. Bản thân tích lũy {{5}} điểm Nạp Năng Lượng của Thiên Phú.",
+        "shortDesc": "Lôi kéo kẻ địch trong khu vực nhất định và khiến chúng rơi vào trạng thái Choáng. Tấn công kẻ địch trong trạng thái Choáng, sau khi vào chiến đấu sẽ gây lượng nhỏ Sát Thương Số Ảo cho toàn bộ phe địch, đồng thời khiến mục tiêu rơi vào trạng thái Khiêu Khích. Bản thân tích lũy Nạp Năng Lượng của Thiên Phú.",
+        "tag": "Quấy Nhiễu"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu, sẽ làm giảm Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nước Và Bùn",
+        "fullDesc": "Khi Mydei chịu tấn công chí tử khi ở trạng thái Huyết Thù sẽ không thoát khỏi trạng thái Huyết Thù. Hiệu ứng này có thể kích hoạt {{1}} lần trong 1 trận."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ba Mươi Bạo Chúa",
+        "fullDesc": "Khi trong trạng thái \"Huyết Thù\" Mydei sẽ miễn dịch Hiệu Ứng Xấu loại Khống Chế."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Tấm Áo Đẫm Máu",
+        "fullDesc": "Khi bắt đầu chiến đấu, nếu Giới Hạn HP của Mydei trên {{1}} điểm thì mỗi 100 HP vượt quá có thể khiến Tỷ Lệ Bạo Kích của bản thân tăng {{3, percent(fixed: 1)}}%, tỷ lệ Nạp Năng Lượng mà Mydei phải chịu do sát thương của mục tiêu phe địch gây ra tăng {{4, percent(fixed: 1)}}%, lượng hồi phục khi nhận trị liệu tăng {{5, percent(fixed: 2)}}%, phần vượt quá sẽ được tính vào tối đa {{2}} điểm HP."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Gió Lạnh Khắc Nên Xương Sống Bất Khuất",
+      "desc": "Tăng {{1, percent}}% Bội Số Sát Thương mà Sát Thần Đăng Thần gây ra cho mục tiêu chính, đồng thời biến thành Sát Thương Số Ảo gây ra cho toàn bộ phe địch bằng với Bội Số Sát Thương của mục tiêu chính."
+    },
+    "2": {
+      "name": "Phân Tranh Chứng Kiến Tiếng Gào Của Thi Thể",
+      "desc": "Trong trạng thái \"Huyết Thù\", sát thương Mydei gây ra sẽ bỏ qua {{1, percent}}% Phòng Thủ của mục tiêu phe địch, đồng thời sau khi nhận trị liệu, sẽ khiến {{2, percent}}% giá trị trị liệu chuyển hóa thành Nạp Năng Lượng, Nạp Năng Lượng tích lũy chuyển hóa này không vượt quá {{3}} điểm. Sau khi bất kỳ đơn vị nào hành động, sẽ tái lập Nạp Năng Lượng có thể tích lũy."
+    },
+    "3": {
+      "name": "Vinh Quang Soi Chiếu Bữa Tiệc Không Tàn",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Kèn Lệnh Đánh Thức Con Sư Tử Trầm Mặc",
+      "desc": "Trong thời gian trạng thái \"Huyết Thù\", sát thương Bạo Kích tăng {{2, percent}}%, sau khi bị mục tiêu phe địch tấn công, sẽ hồi HP bằng {{1, percent}}% Giới Hạn HP của bản thân."
+    },
+    "5": {
+      "name": "Binh Đao Chạm Trổ Ngọn Lửa Của Thân Xác",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Quá Khứ Đạp Lên Ngọn Núi Máu",
+      "desc": "Khi vào chiến đấu lập tức vào trạng thái \"Huyết Thù\", đồng thời giá trị Nạp Năng Lượng mà \"Sát Thần Đăng Thần\" yêu cầu sẽ giảm còn {{1}}."
+    }
+  }
+}

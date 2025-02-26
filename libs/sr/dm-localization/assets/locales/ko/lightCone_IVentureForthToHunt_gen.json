@@ -1,0 +1,7 @@
+{
+  "name": "정복하고 사냥하리",
+  "passive": {
+    "name": "진섭",
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가한다. 장착한 캐릭터가 추가 공격 발동 시 [유광]을 1스택 획득한다, 최대 중첩수: {{3}}스택. [유광] 1스택마다 장착한 캐릭터가 가하는 필살기 피해가 목표의 방어력을 <orangeStrong>{{2, percent}}%</orangeStrong> 무시한다. 장착한 캐릭터의 턴 종료 시 [유광]이 1스택 해제된다"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Long est le chemin retour",
+  "passive": {
+    "name": "Renaissance",
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsqu'une cible ennemie subit une Rupture de faiblesse, il y a {{2, percent}}% de chances de base de lui infliger l'état Incinération, ce qui augmente les DGT de rupture qu'elle subit de <orangeStrong>{{3, percent}}%</orangeStrong>. Dure {{4}} tours. Cet effet peut être cumulé jusqu'à {{5}} fois."
+  }
+}

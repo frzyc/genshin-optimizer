@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integrity",
-        "fullDesc": "Gepard has a higher chance to be attacked by enemies.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Gepard has a higher chance to be attacked by enemies."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Commander",
-        "fullDesc": "When \"Unyielding Will\" is triggered, Gepard's Energy will be restored to 100%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When \"Unyielding Will\" is triggered, Gepard's Energy will be restored to 100%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Grit",
-        "fullDesc": "Gepard's ATK increases by {{1, percent}}% of his current DEF. This effect will refresh at the start of each turn.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Gepard's ATK increases by {{1, percent}}% of his current DEF. This effect will refresh at the start of each turn."
       }
     }
   },

@@ -1,0 +1,6 @@
+{
+  "setName": "Công Viên Chuối Kỳ Ảo",
+  "setEffects": {
+    "2": "Khiến Sát Thương Bạo Kích của người trang bị tăng {{1, percent}}%, khi tồn tại mục tiêu mà người trang bị triệu hồi, Sát Thương Bạo Kích sẽ tăng thêm {{2, percent}}%."
+  }
+}

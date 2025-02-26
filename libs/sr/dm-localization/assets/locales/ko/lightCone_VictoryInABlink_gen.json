@@ -1,0 +1,7 @@
+{
+  "name": "찰나에 결정되는 승리",
+  "passive": {
+    "name": "최후의 일격",
+    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하며, 장착한 캐릭터의 기억 정령이 아군에게 스킬 발동 시 모든 아군이 가하는 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다, 지속 시간: {{3}}턴"
+  }
+}

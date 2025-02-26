@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Emprisonnement gravitationnel",
-        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Les ennemis dans cette dimension spéciale voient leur vitesse de déplacement réduite de {{5, percent}}%. Il y a {{1, percent}}% de chances de base d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension spéciale.<br>Les ennemis emprisonnés voient leur action retardée de {{2, percent}}% et leur VIT réduite de {{3, percent}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Les ennemis dans cette dimension spéciale voient leur vitesse de déplacement réduite de {{5, percent}}%. Il y a {{1, percent}}% de chances de base d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension spéciale.<br>Les ennemis emprisonnés voient leur action retardée de {{2, percent}}% et leur VIT réduite de {{3, percent}}%. Il ne peut exister qu'1 effet de dimension créé par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'appliquer Emprisonné aux ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension.",
         "tag": "Incapacitation"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Acharnement",
-        "fullDesc": "Il y a {{1, percent}}% de chances de base d'augmenter les DGT subis par les cibles de {{2, percent}}% pendant {{3}} tours lors de l'utilisation de l'ultime.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Il y a {{1, percent}}% de chances de base d'augmenter les DGT subis par les cibles de {{2, percent}}% pendant {{3}} tours lors de l'utilisation de l'ultime."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Jugement",
-        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lorsque le personnage utilise son ultime.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lorsque le personnage utilise son ultime."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Châtiment",
-        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis qui subissent une Rupture de faiblesse.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis qui subissent une Rupture de faiblesse."
       }
     }
   },

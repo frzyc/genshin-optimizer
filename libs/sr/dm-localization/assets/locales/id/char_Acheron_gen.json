@@ -26,25 +26,21 @@
       },
       "1": {
         "name": "Rainblade",
-        "fullDesc": "",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh yang ditargetkan, dan menghilangkan maksimal hingga 3 lapis \"Crimson Knot\" dari target. Saat menghilangkan \"Crimson Knot\", akan mengakibatkan 1 kali Lightning DMG dalam jumlah kecil pada seluruh musuh, dan untuk setiap 1 lapisan \"Crimson Knot\" yang dihilangkan, DMG Multiplier dari serangan ini akan meningkat.",
         "tag": "AoE"
       },
       "2": {
         "name": "Rainblade",
-        "fullDesc": "",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh yang ditargetkan, dan menghilangkan maksimal hingga 3 lapis \"Crimson Knot\" dari target. Saat menghilangkan \"Crimson Knot\", akan mengakibatkan 1 kali Lightning DMG dalam jumlah kecil pada seluruh musuh, dan untuk setiap 1 lapisan \"Crimson Knot\" yang dihilangkan, DMG Multiplier dari serangan ini akan meningkat.",
         "tag": "AoE"
       },
       "3": {
         "name": "Rainblade",
-        "fullDesc": "",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh yang ditargetkan, dan menghilangkan maksimal hingga 3 lapis \"Crimson Knot\" dari target. Saat menghilangkan \"Crimson Knot\", akan mengakibatkan 1 kali Lightning DMG dalam jumlah kecil pada seluruh musuh, dan untuk setiap 1 lapisan \"Crimson Knot\" yang dihilangkan, DMG Multiplier dari serangan ini akan meningkat.",
         "tag": "AoE"
       },
       "4": {
         "name": "Stygian Resurge",
-        "fullDesc": "",
         "shortDesc": "Mengakibatkan Lightning DMG pada seluruh musuh dan menghapus seluruh \"Crimson Knot\".",
         "tag": "AoE"
       }
@@ -69,32 +65,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Red Oni",
-        "fullDesc": "Saat pertempuran dimulai, segera memperoleh {{1}} poin \"Slashed Dream\" dan menambahkan {{1}} lapis \"Crimson Knot\" pada 1 musuh secara acak. Saat \"Slashed Dream\" mencapai batas maksimum, setiap 1 poin \"Slashed Dream\" yang berlebih akan memberikan 1 lapis \"Quadrivalent Ascendance\", dan membuat \"Quadrivalent Ascendance\" dapat ditumpuk hingga {{2}} lapis.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat pertempuran dimulai, segera memperoleh {{1}} poin \"Slashed Dream\" dan menambahkan {{1}} lapis \"Crimson Knot\" pada 1 musuh secara acak. Saat \"Slashed Dream\" mencapai batas maksimum, setiap 1 poin \"Slashed Dream\" yang berlebih akan memberikan 1 lapis \"Quadrivalent Ascendance\", dan membuat \"Quadrivalent Ascendance\" dapat ditumpuk hingga {{2}} lapis."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Abyss",
-        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1, percent}}%/{{2, percent}}% dari DMG aslinya.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1, percent}}%/{{2, percent}}% dari DMG aslinya."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Thunder Core",
-        "fullDesc": "Saat \"Rainblade\" dari Ultimate mengenai target musuh yang memiliki \"Crimson Knot\", akan meningkatkan {{1, percent}}% DMG yang diakibatkan Acheron, efek ini dapat ditumpuk hingga {{2}} lapis dan berlangsung selama {{3}} giliran, serta mengakibatkan {{4}} kali DMG tambahan saat melancarkan \"Stygian Resurge\", yang masing-masing DMG tersebut mengakibatkan Lightning DMG sebesar {{5, percent}}% ATK Acheron pada musuh secara acak. DMG tersebut akan dianggap sebagai Ultimate DMG.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat \"Rainblade\" dari Ultimate mengenai target musuh yang memiliki \"Crimson Knot\", akan meningkatkan {{1, percent}}% DMG yang diakibatkan Acheron, efek ini dapat ditumpuk hingga {{2}} lapis dan berlangsung selama {{3}} giliran, serta mengakibatkan {{4}} kali DMG tambahan saat melancarkan \"Stygian Resurge\", yang masing-masing DMG tersebut mengakibatkan Lightning DMG sebesar {{5, percent}}% ATK Acheron pada musuh secara acak. DMG tersebut akan dianggap sebagai Ultimate DMG."
       }
     }
   },

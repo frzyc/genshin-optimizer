@@ -1,0 +1,6 @@
+{
+  "setName": "Lushaka, sumergido bajo el mar",
+  "setEffects": {
+    "2": "La recuperación de energía del portador aumenta en un {{1, percent}}%. Si el portador no es el primer personaje de la formación, aumenta en un {{2, percent}}% el ATQ del primer personaje de la formación."
+  }
+}

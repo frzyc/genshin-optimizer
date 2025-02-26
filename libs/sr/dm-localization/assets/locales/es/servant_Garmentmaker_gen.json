@@ -1,0 +1,33 @@
+{
+  "name": "Sastre",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Trampa punzante",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a los objetivos adyacentes.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y a los objetivos adyacentes.",
+        "tag": "Ráfaga"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cuerpo forjado de lágrimas",
+        "fullDesc": "Tras atacar a un enemigo en el estado de Hilván, su VEL aumenta en <orangeStrong>{{1}}</orangeStrong> pts. Este efecto puede acumularse hasta {{3}} veces. Cuando el Sastre actúa, lanza automáticamente Trampa punzante, priorizando al enemigo en el estado de Hilván.",
+        "shortDesc": "Tras atacar a un enemigo en el estado de Hilván, <orangeStrong>su VEL aumenta</orangeStrong>. Cuando actúa, ataca automáticamente priorizando al enemigo en el estado de Hilván.",
+        "tag": "Potenciación"
+      },
+      "1": {
+        "name": "Estío fugaz",
+        "fullDesc": "Cuando el Sastre es invocado, su acción se adelanta un {{1, percent}}%.",
+        "shortDesc": "Cuando es invocado, su acción se adelanta.",
+        "tag": "Potenciación"
+      },
+      "2": {
+        "name": "Profusión de hierbas secas",
+        "fullDesc": "Cuando el Sastre desaparece, Aglaea recupera {{1}} pts. de energía.",
+        "shortDesc": "Cuando desaparece, Aglaea recupera energía.",
+        "tag": "Potenciación"
+      }
+    }
+  }
+}

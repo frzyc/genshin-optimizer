@@ -1,0 +1,113 @@
+{
+  "name": "Feixiao",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Trovão Descendente",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Feixiao a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Fissura do Machado",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Feixiao a um único inimigo-alvo. Então, imediatamente desfere 1 instância adicional do Ataque Extra do Talento contra o alvo.",
+        "shortDesc": "Causa Dano de Vento a um inimigo, e utiliza adicionalmente o Ataque Extra do Talento 1 vez.",
+        "tag": "Alvo Único"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rompeterra",
+        "fullDesc": "Causa Dano de Vento em um único inimigo-alvo igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Feixiao. Durante este período, pode ignorar o Tipo de Fraqueza para reduzir a Tenacidade do alvo. Se o alvo não estiver afetado com Quebra de Fraqueza, a Eficiência de Quebra de Fraqueza de Feixiao aumenta em {{2, percent}}%.<br>Durante o ataque, Feixiao primeiro usa Trovão Descendente ou Fissura do Machado Celestial no alvo, por um total de {{3}} vez(es).<br>Finalmente, causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Feixiao ao alvo.",
+        "shortDesc": "Durante a Perícia Suprema, pode <orangeStrong>ignorar o Tipo de Fraqueza</orangeStrong> para reduzir a Tenacidade do inimigo. Quando o alvo não estiver infligido com Quebra de Fraqueza, a <orangeStrong>Eficiência de Quebra de Fraqueza</orangeStrong> de Feixiao aumenta.<br>Utiliza Trovão Descendente ou Fissura do Machado Celestial em um único inimigo <orangeStrong>{{3}}</orangeStrong> vez(es). Causa Dano de Vento no final.",
+        "tag": "Alvo Único"
+      },
+      "1": {
+        "name": "Trovão Descendente",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Feixiao a um único alvo. Se o alvo estiver com Quebra de Fraqueza, o Multiplicador de Dano aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo e aumenta o Multiplicador de Dano contra alvos afligidos com <orangeStrong>Quebra de Fraqueza</orangeStrong>.",
+        "tag": "Alvo Único"
+      },
+      "2": {
+        "name": "Fissura do Machado Celestial",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Feixiao a um único inimigo. Se o inimigo-alvo não estiver afligida com Quebra de Fraqueza, o Multiplicador de Dano aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Causa Dano de Vento leve a um único inimigo e aumenta o Multiplicador de Dano de ataques contra inimigos que <orangeStrong>não estão afligidos com Quebra de Fraqueza</orangeStrong>.",
+        "tag": "Alvo Único"
+      },
+      "3": {
+        "name": "Rompeterra",
+        "shortDesc": "Durante a Perícia Suprema, pode <orangeStrong>ignorar o Tipo de Fraqueza</orangeStrong> para reduzir a Tenacidade do inimigo. Quando o alvo não estiver infligido com Quebra de Fraqueza, a <orangeStrong>Eficiência de Quebra de Fraqueza</orangeStrong> de Feixiao aumenta.<br>Utiliza Trovão Descendente ou Fissura do Machado Celestial em um único inimigo <orangeStrong>{{3}}</orangeStrong> vez(es). Causa Dano de Vento no final.",
+        "tag": "Alvo Único"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Caça aos Trovões",
+        "fullDesc": "A Perícia Suprema pode ser ativada quando \"Aureus Voador\" chegar a {{3}} ponto(s), acumulando até um máximo de {{4}} ponto(s). Feixiao ganha 1 ponto de \"Aureus Voador\" para cada {{2}} ataques utilizados pelos aliados-alvo. Ataques da Perícia Suprema de Feixiao não são considerados nessa contagem.<br>Depois que os companheiros de equipe de Feixiao atacam um inimigo-alvo, Feixiao desfere imediatamente um Ataque Extra contra o alvo principal, causando Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Feixiao. Se nenhum alvo principal estiver disponível para ser atacado, Feixiao ataca um único inimigo aleatório. Esse efeito só pode ser ativado uma vez por rodada e a contagem de ativação é reiniciada no início da rodada de Feixiao. Ao utilizar esse ataque, aumenta o Dano causado por esta unidade em <orangeStrong>{{5, percent}}%</orangeStrong>, durando por {{6}} rodada(s).",
+        "shortDesc": "A Perícia Suprema pode ser ativada quando \"Aureus Voador\" atingir <orangeStrong>{{3}}</orangeStrong> pontos, acumulando até um máximo de <orangeStrong>{{4}}</orangeStrong> pontos. Para cada <orangeStrong>{{2}}</orangeStrong> ataques utilizados considerando todos os aliados-alvo, Feixiao ganha <orangeStrong>\"Aureus Voador\"</orangeStrong>.<br>Depois que companheiros de equipe usarem um ataque, Feixiao desfere um <orangeStrong>Ataque Extra</orangeStrong> contra o alvo principal, causando Dano de Vento. Este efeito pode ser ativado 1 vez por rodada. Ao utilizar esse ataque, aumenta <orangeStrong>o Dano causado por esta unidade</orangeStrong>.",
+        "tag": "Alvo Único"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Advinda da Tempestade",
+        "fullDesc": "Após usar a Técnica, entra no estado de \"Investida\", durando por {{1}} segundo(s). Enquanto estiver em \"Investida\", puxa os inimigos dentro de um certo alcance e aumenta a velocidade de movimento desta unidade em {{2, percent}}%. Após entrar em batalha, ganha {{4}} ponto(s) de \"Aureus Voador\"<br>Enquanto estiver em \"Investida\", realizar um ataque iniciará uma batalha contra todos os inimigos puxados. Após entrar em batalha, causa Dano de Vento igual a {{3, percent}}% do ATQ de Feixiao a todos os inimigos no início de cada onda. O CRIT desse Dano é garantido. Se mais de 1 inimigo for puxado, aumenta o multiplicador desse Dano em {{5, percent}}% para cada inimigo adicional puxado, até um máximo de {{6, percent}}%.",
+        "shortDesc": "Entra no estado de \"Investida\". Puxa continuamente inimigos e aumenta a velocidade de movimento. Ganha \"Aureus Voador\" depois de entrar em batalha.<br>Enquanto estiver em \"Investida\", pode atacar ativamente todos os inimigos puxados. No início de cada onda, causa Dano de Vento a todos os inimigos. Este Dano tem CRIT garantido. <orangeStrong>Quanto mais inimigos forem puxados, maior será o Multiplicador de Dano</orangeStrong>.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Caminho Celestial",
+        "fullDesc": "Quando a batalha começa, recebe {{1}} ponto(s) de \"Aureus Voador\".<br>No início da rodada, se nenhum Ataque Extra do Talento tiver sido utilizado na rodada anterior, isso conta como 1 em direção ao número de ataques necessários para ganhar \"Aureus Voador\"."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mudar de Forma",
+        "fullDesc": "Ao causar Dano a um inimigo com a Perícia Suprema, este ataque é considerado como um Ataque Extra. O Dano CRIT dos Ataques Extras aumenta em {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Capturar Raios",
+        "fullDesc": "Ao usar a Perícia, o ATQ aumenta em {{1, percent}}%, durando por {{2}} rodada(s)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Aos Céus eu Amaino",
+      "desc": "Após usar Trovão Descendente ou Fissura do Machado Celestial, o Dano de Perícia Suprema causado por Feixiao aumenta adicionalmente em uma quantidade igual a {{1, percent}}% do Dano original, acumulando até {{2}} vez(es) e durando até o final da ação da Perícia Suprema."
+    },
+    "2": {
+      "name": "À Lua Eu Desejo",
+      "desc": "No efeito do Talento, cada vez que um aliado desfere 1 Ataque Extra, Feixiao ganha 1 ponto de \"Aureus Voador\". Esse efeito pode ser ativado até {{1}} vez(es) por rodada."
+    },
+    "3": {
+      "name": "Às Estrelas Eu Prevejo",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "À Tempestade Eu Ouço",
+      "desc": "A Redução de Tenacidade do Ataque Extra do Talento aumenta em {{1, percent}}% e, quando ativado, aumenta a VEL desta unidade em {{2, percent}}%, durando por {{3}} rodada(s)."
+    },
+    "5": {
+      "name": "Ao Paraíso Eu Salto",
+      "desc": "Nv. da Perícia + 2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Do Lar Me Aproximo",
+      "desc": "Aumenta a PEN de RES a todos os Tipos do Dano de Perícia Suprema causado por Feixiao em {{1, percent}}%. O Dano do Ataque Extra do Talento é simultaneamente considerado como Dano de Perícia Suprema, e aumenta seu multiplicador de Dano em {{2, percent}}%."
+    }
+  }
+}

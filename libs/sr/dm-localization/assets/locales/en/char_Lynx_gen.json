@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": "Single Target"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Advance Surveying",
-        "fullDesc": "After a target with \"Survival Response\" is hit, Lynx regenerates {{1}} Energy immediately.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After a target with \"Survival Response\" is hit, Lynx regenerates {{1}} Energy immediately."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Exploration Techniques",
-        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Survival in the Extreme",
-        "fullDesc": "Extends the duration of the continuous healing effect granted by Talent for {{1}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Extends the duration of the continuous healing effect granted by Talent for {{1}} turn(s)."
       }
     }
   },

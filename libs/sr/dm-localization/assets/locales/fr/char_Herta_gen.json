@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "La chance a tourné !",
-        "fullDesc": "Lorsque l'attaque d'un allié réduit le pourcentage de PV d'un ennemi à {{1, percent}}% ou moins, Herta lance une attaque de suivi qui inflige des DGT de glace équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ à tous les ennemis.",
-        "shortDesc": "Lorsque l'attaque d'un allié réduit le pourcentage de PV actuels de la cible ennemie à <orangeStrong>{{1, percent}}%</orangeStrong> ou moins, Herta lance immédiatement une <orangeStrong>attaque de suivi</orangeStrong>, qui inflige des DGT de glace mineurs à tous les ennemis.",
+        "fullDesc": "Lorsque l'attaque d'un allié réduit le pourcentage de PV d'un ennemi à {{1, percent}}% ou moins, Herta lance une ATQ de suivi qui inflige des DGT de glace équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ à tous les ennemis.",
+        "shortDesc": "Lorsque l'attaque d'un allié réduit le pourcentage de PV actuels de la cible ennemie à <orangeStrong>{{1, percent}}%</orangeStrong> ou moins, Herta lance immédiatement une <orangeStrong>ATQ de suivi</orangeStrong>, qui inflige des DGT de glace mineurs à tous les ennemis.",
         "tag": "ZdE"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Efficacité",
-        "fullDesc": "L'effet d'augmentation des DGT actif lors de l'utilisation de la compétence est majoré de {{1, percent}}% supplémentaires.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "L'effet d'augmentation des DGT actif lors de l'utilisation de la compétence est majoré de {{1, percent}}% supplémentaires."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marionnette",
-        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Glaçage",
-        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis gelés lors de l'utilisation de l'ultime.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis gelés lors de l'utilisation de l'ultime."
       }
     }
   },

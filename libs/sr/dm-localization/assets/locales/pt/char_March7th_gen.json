@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Pureza",
-        "fullDesc": "Ao usar a Perícia, remove 1 penalidade de um aliado-alvo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia, remove 1 penalidade de um aliado-alvo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Reforço",
-        "fullDesc": "A duração do Escudo gerado pela Perícia é estendida por {{1}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A duração do Escudo gerado pela Perícia é estendida por {{1}} rodada(s)."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Feitiço de Gelo",
-        "fullDesc": "Ao usar a Perícia Suprema, aumenta a chance-base de causar \"Congelamento\" nos inimigos em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia Suprema, aumenta a chance-base de causar \"Congelamento\" nos inimigos em {{1, percent}}%."
       }
     }
   },

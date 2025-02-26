@@ -1,0 +1,6 @@
+{
+  "setName": "Arbre géant des réflexions profondes",
+  "setEffects": {
+    "2": "La VIT du porteur augmente de {{1, percent}}%. Lorsque la VIT du porteur est de {{2}}/{{3}} ou plus, les soins prodigués par le porteur et son mnémesprit augmentent de {{4, percent}}%/{{5, percent}}%."
+  }
+}

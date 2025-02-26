@@ -1,0 +1,7 @@
+{
+  "name": "Victoire éclair",
+  "passive": {
+    "name": "Coup de grâce",
+    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le mnémesprit du porteur utilise une compétence sur une cible alliée, augmente les DGT infligés par toutes les cibles alliées de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours."
+  }
+}

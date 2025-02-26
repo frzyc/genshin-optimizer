@@ -1,0 +1,39 @@
+{
+  "name": "Mem",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Du balai les méchants !",
+        "fullDesc": "Inflige {{2}} instances de DGT, chaque instance inflige des DGT de glace équivalents à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Mem à un ennemi aléatoire. Puis, inflige des DGT de glace équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Mem à tous les ennemis.",
+        "shortDesc": "Inflige des DGT de glace mineurs qui rebondissent un total de <orangeStrong>{{2}}</orangeStrong> fois. Inflige ensuite des DGT de glace mineurs à tous les ennemis.",
+        "tag": "ZdE"
+      },
+      "1": {
+        "name": "Laisse-moi t'aider !",
+        "fullDesc": "Mem avance l'action d'un allié désigné de {{3, percent}}% et lui accorde Soutien de Mem pendant {{2}} tours.<br>À chaque fois qu'une cible avec Soutien de Mem inflige des DGT, elle inflige également des DGT réels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des DGT initiaux 1 fois supplémentaire.<br>L'action n'est pas avancée lorsque la capacité est utilisée sur cette unité.",
+        "shortDesc": "Mem <orangeStrong>avance l'action</orangeStrong> d'un allié et lui accorde Soutien de Mem, ce qui lui permet d'infliger des <orangeStrong>DGT réels</orangeStrong> supplémentaires après avoir infligé des DGT.",
+        "tag": "Soutien"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Amis pour la vie !",
+        "fullDesc": "Mem augmente les DGT critiques de tous les alliés à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de ses propres DGT critiques + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.<br>Lorsque la charge n'est pas à 100 %, Mem utilise automatiquement Du balai les méchants ! au cours de son tour. Lorsque la charge est à 100 %, Mem agit immédiatement, Mem peut alors sélectionner un allié pour la capacité Laisse-moi t'aider ! au cours de son prochain tour.",
+        "shortDesc": "Mem augmente les DGT critiques de tous les alliés.<br>Mem attaque automatiquement au cours de son tour. Lorsque la charge atteint 100 %, Mem agit immédiatement et peut utiliser une nouvelle capacité qui permet d'<orangeStrong>avancer l'action</orangeStrong> d'un allié et d'infliger des <orangeStrong>DGT réels</orangeStrong>.",
+        "tag": "Soutien"
+      },
+      "1": {
+        "name": "Allez, Mem, en avant !",
+        "fullDesc": "Mem gagne immédiatement {{1, percent}}% de charge lors de son invocation.",
+        "shortDesc": "Mem gagne immédiatement de la charge lors de son invocation.",
+        "tag": "Renforcement"
+      },
+      "2": {
+        "name": "Aucun... regret",
+        "fullDesc": "Mem avance l'action {M#du pionnier}{F#de la pionnière} de {{1, percent}}% après sa disparition.",
+        "shortDesc": "Mem avance l'action {M#du pionnier}{F#de la pionnière} après sa disparition.",
+        "tag": "Renforcement"
+      }
+    }
+  }
+}

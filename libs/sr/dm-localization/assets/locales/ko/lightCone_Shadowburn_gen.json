@@ -1,0 +1,7 @@
+{
+  "name": "불타는 그림자",
+  "passive": {
+    "name": "미화",
+    "description": "장착한 캐릭터가 처음으로 기억 정령 소환 시 전투 스킬 포인트를 {{1}}pt 회복하고 자신의 에너지를 <orangeStrong>{{2}}</orangeStrong>pt 회복한다"
+  }
+}

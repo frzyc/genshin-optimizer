@@ -1,0 +1,101 @@
+{
+  "name": "{M#Pionnier}{F#Pionnière} (Glace • Le Souvenir)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Je m'en charge !",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi désigné.",
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Je te choisis !",
+        "fullDesc": "Invoque le mnémesprit Mem. Si Mem est déjà sur le champ de bataille, lui permet de récupérer des PV à hauteur de <orangeStrong>{{1, percent}}%</orangeStrong> de ses PV max et de gagner {{2, percent}}% de charge.",
+        "shortDesc": "<orangeStrong>Invoque le mnémesprit</orangeStrong> Mem. Si Mem est déjà sur le champ de bataille, lui permet de récupérer des PV et de gagner de la <orangeStrong>charge</orangeStrong>.",
+        "tag": "Invocation"
+      },
+      "1": {
+        "name": "Je te choisis !",
+        "shortDesc": "<orangeStrong>Invoque le mnémesprit</orangeStrong> Mem. Si Mem est déjà sur le champ de bataille, lui permet de récupérer des PV et de gagner de la <orangeStrong>charge</orangeStrong>.",
+        "tag": "Restauration"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "En avant, Mem !",
+        "fullDesc": "Invoque le mnémesprit Mem. Permet à Mem de gagner {{2, percent}}% de charge, puis d'infliger des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Mem à tous les ennemis.",
+        "shortDesc": "<orangeStrong>Invoque le mnémesprit</orangeStrong> Mem. Mem gagne de la <orangeStrong>charge</orangeStrong>, puis inflige des DGT massifs de glace à tous les ennemis.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Compagnon tout-puissant",
+        "fullDesc": "Le mnémesprit Mem possède une VIT initiale de {{1}} et ses PV max sont équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> des PV max {M#du pionnier}{F#de la pionnière} + <orangeStrong>{{4}}</orangeStrong>. Mem gagne 1 % de charge tous les {{3}} points d'énergie régénérés par tous les alliés au total.",
+        "shortDesc": "Chaque fois qu'un <orangeStrong>certain montant d'énergie est régénéré</orangeStrong> par tous les alliés, Mem gagne de la <orangeStrong>charge</orangeStrong>.",
+        "tag": "Renforcement"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Réveil des souvenirs",
+        "fullDesc": "Crée une dimension spéciale qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis situés dans la dimension spéciale sont affectés par Temps figé, les empêchant de réaliser toute action.<br>Lorsque vous engagez le combat contre des ennemis affectés par l'effet Temps figé, l'action de tous les ennemis est retardée de {{2, percent}}%, puis des DGT de glace équivalents à {{3, percent}}% de l'ATQ {M#du pionnier}{F#de la pionnière} sont infligés à tous les ennemis.<br>Il ne peut exister qu'1 effet de dimension créé par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale dans laquelle les ennemis <orangeStrong>cessent toute action</orangeStrong>. Lorsque vous engagez le combat contre des ennemis présents dans cette dimension, l'action de tous les ennemis est retardée et des DGT de glace mineurs sont infligés à tous les ennemis.",
+        "tag": "Incapacitation"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sceptre de la mémoire",
+        "fullDesc": "L'action {M#du pionnier}{F#de la pionnière} est avancée de {{1, percent}}% en début de combat. Mem gagne {{2, percent}}% de charge lors de sa première invocation."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Petite parabole",
+        "fullDesc": "Mem gagne immédiatement {{1, percent}}% de charge lors de l'utilisation de « Du balai les méchants ! »."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Magnétisme et longue chaîne",
+        "fullDesc": "Lorsque l'énergie max d'une cible alliée qui bénéficie de Soutien de Mem excède {{1}}, pour chaque tranche de {{2}} points d'énergie en excédant, augmente le multiplicateur des DGT réels infligés avec Soutien de Mem de {{3, percent(fixed: 1)}}% supplémentaires, jusqu'à une augmentation maximale de {{4, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Narration du présent",
+      "desc": "Augmente les chances de coup critique des cibles alliées qui bénéficient de Soutien de Mem de {{1, percent}}%. Lorsqu'une cible alliée bénéficie de Soutien de Mem, cet effet s'applique également au mnémesprit de la cible/au mnémomaître. Cet effet n'est pas cumulable."
+    },
+    "2": {
+      "name": "Récupération des vestiges du passé",
+      "desc": "{M#Le pionnier}{F#La pionnière} régénère {{1}} points d'énergie lorsqu'un mnémesprit allié (autre que Mem) agit. Cet effet peut se déclencher jusqu'à {{2}} fois par tour. Le nombre de déclenchements est réinitialisé au début du tour {M#du pionnier}{F#de la pionnière}."
+    },
+    "3": {
+      "name": "Hymne au futur",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum.<br>Niv. de talent du mnémesprit +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Danse des Muses",
+      "desc": "Lorsqu'une cible alliée avec 0 d'énergie max utilise activement une capacité, Mem gagne {{1, percent}}% de charge. De plus, le multiplicateur des DGT réels infligés par cette cible via Soutien de Mem augmente de {{2, percent}}% supplémentaires."
+    },
+    "5": {
+      "name": "Art des messages décousus",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum.<br>Niv. de compétence du mnémesprit +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Transmission de l'inspiration divine",
+      "desc": "Les chances de coup critique de l'ultime sont fixées à 100 %."
+    }
+  }
+}

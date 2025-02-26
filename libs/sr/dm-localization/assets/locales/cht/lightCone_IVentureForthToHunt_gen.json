@@ -1,0 +1,7 @@
+{
+  "name": "我將，巡徵追獵",
+  "passive": {
+    "name": "震懾",
+    "description": "使裝備者的暴擊率提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。裝備者發動追加攻擊時，獲得1層【流光】，最多疊加{{3}}層。每層【流光】使裝備者造成的終結技傷害無視目標<orangeStrong>{{2, percent}}%</orangeStrong>的防禦力。裝備者回合結束時，移除1層【流光】。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Shadowed by Night",
+  "passive": {
+    "name": "Concealment",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. When entering battle or after dealing Break DMG, increases SPD by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s). This effect can only trigger once per turn."
+  }
+}

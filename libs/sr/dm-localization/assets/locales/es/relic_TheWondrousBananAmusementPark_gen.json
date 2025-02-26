@@ -1,0 +1,6 @@
+{
+  "setName": "Parque de Platanolandia",
+  "setEffects": {
+    "2": "El Daño CRIT del portador aumenta en un {{1, percent}}%. Cuando hay un objetivo invocado por el portador, el Daño CRIT aumenta en un {{2, percent}}% adicional."
+  }
+}

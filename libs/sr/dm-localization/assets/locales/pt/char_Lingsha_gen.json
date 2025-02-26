@@ -1,0 +1,96 @@
+{
+  "name": "Lingsha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Incenso de Votos",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Lingsha a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Fumaça e Esplendor",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Lingsha a todos os inimigos ao mesmo tempo, restaura PV iguais a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do ATQ de Lingsha + <orangeStrong>{{3}}</orangeStrong> para todos os aliados e a ação de Fuyuan é Avançada Adiante em {{4, percent}}%.",
+        "shortDesc": "Causa Dano de Fogo leve a todos os inimigos e, ao mesmo tempo, <orangeStrong>restaura PV</orangeStrong> para todos os aliados. A ação de Fuyuan é Avançada Adiante.",
+        "tag": "Área"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Respingos Enevoados",
+        "fullDesc": "Inflige \"Obscurecimento\" a todos os inimigos. Enquanto em \"Obscurecimento\", os alvos recebem <orangeStrong>{{4, percent}}%</orangeStrong> a mais de Dano de Quebra, durando por {{5}} rodada(s).<br>Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Lingsha a todos os inimigos e, ao mesmo tempo, restaura PV igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do ATQ de Lingsha + <orangeStrong>{{3}}</orangeStrong> para todos os aliados. A ação de Fuyuan é Avançada Adiante em {{6, percent}}%.",
+        "shortDesc": "Aumenta o <orangeStrong>Dano de Quebra recebido</orangeStrong> por todos os inimigos, causa Dano de Fogo a todos os inimigos ao mesmo tempo, <orangeStrong>restaura os PV</orangeStrong> de todos os aliados e a ação de Fuyuan é Avançada Adiante.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Manifesto da Dança da Névoa",
+        "fullDesc": "Ao usar a Perícia, invoca Fuyuan, com uma VEL inicial de {{1}} e um contador de ação inicial de {{7}}.<br>Ao realizar uma ação, Fuyuan desfere um Ataque Extra, causando Dano de Fogo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Lingsha a todos os inimigos. Além disso, causa Dano de Fogo igual a <orangeStrong>{{8, percent}}%</orangeStrong> do ATQ de Lingsha a um único inimigo aleatório, e esse Dano prioriza alvos que possuam Tenacidade maior que 0 e Fraqueza contra Fogo. Remove {{6}} penalidade(s) de todos os aliados e restaura PV igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> do ATQ de Lingsha mais <orangeStrong>{{4}}</orangeStrong>.<br>O contador de ação de Fuyuan pode acumular até {{5}}. Quando o contador de ação chegar a 0 ou quando Lingsha for derrubada, Fuyuan desaparece.<br>Enquanto Fuyuan estiver no campo, usar a Perícia pode aumentar o contador de ação de Fuyuan em {{7}}.",
+        "shortDesc": "Usar a Perícia invoca Fuyuan: Ao realizar uma ação, desfere um <orangeStrong>Ataque Extra</orangeStrong> e causa Dano de Fogo leve a todos os inimigos. Além disso, causa Dano de Fogo leve a um único inimigo aleatório, priorizando alvos que possuam Tenacidade maior que 0 e Fraqueza contra Fogo. Remove 1 penalidade de todos os aliados e <orangeStrong>restaura os PV</orangeStrong> deles.<br>Usar a Perícia repetidamente aumentará o contador de ação de Fuyuan.",
+        "tag": "Área"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Chamas de Aurora",
+        "fullDesc": "Após usar a Técnica, invoca Fuyuan imediatamente no começo da próxima batalha e inflige \"Obscurecimento\" em todos os inimigos, durando por {{1}} rodada(s).",
+        "shortDesc": "Após usar a Técnica, invoca Fuyuan imediatamente no começo da próxima batalha e aumenta o <orangeStrong>Dano de Quebra recebido</orangeStrong> por todos os inimigos.",
+        "tag": "Suporte"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": "Alvo Único"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sopro Escarlate",
+        "fullDesc": "Aumenta o ATQ ou a Cura Realizada dessa unidade por uma quantidade igual a {{1, percent}}%/{{2, percent}}% do Efeito de Quebra, até um acréscimo máximo de {{3, percent}}%/{{4, percent}}%, respectivamente."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Fumaça Silvestre",
+        "fullDesc": "Ao usar o ATQ Básico, regenera adicionalmente {{1}} de Energia."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Eco das Brasas",
+        "fullDesc": "Enquanto Fuyuan estiver em campo e qualquer personagem aliado receber Dano ou consumir PV, se a porcentagem atual de PV do personagem for menor ou igual a {{1, percent}}%, Fuyuan ativará automaticamente o Ataque Extra do Talento contra os inimigos. Isso não consumirá o contador de ação de Fuyuan. Este efeito pode ser ativado novamente após {{2}} rodada(s)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Floreio no Buquê do Vilarejo",
+      "desc": "A Eficiência de Quebra de Fraqueza de Lingsha aumenta em {{2, percent}}%. Quando uma unidade inimiga é afligida com Quebra de Fraqueza, sua DEF é reduzida em {{1, percent}}%."
+    },
+    "2": {
+      "name": "Lazer Sob o Véu de Fumaça Carmim",
+      "desc": "Ao usar a Perícia Suprema, aumenta o Efeito de Quebra de todos os aliados em {{1, percent}}%, durando por {{2}} rodada(s)."
+    },
+    "3": {
+      "name": "Brilho do Pavio Floral",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Aroma do Banquete Adornado",
+      "desc": "Quando Fuyuan age, restaura PV igual a {{1, percent}}% do ATQ de Lingsha para o aliado-alvo com menos PV no momento."
+    },
+    "5": {
+      "name": "Aprumo Diante de Reviravoltas",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Arcádia Sob Profunda Reclusão",
+      "desc": "Enquanto \"Fuyuan\" estiver no campo, reduz a RES a Todos os Tipos de todas as unidades inimigas em {{1, percent}}%. Quando \"Fuyuan\" ataca, desfere adicionalmente {{2}} instância(s) de Dano, com cada instância causando Dano de Fogo igual a {{3, percent}}% do ATQ de Lingsha e uma Redução de Tenacidade de {{4}} a uma unidade inimiga aleatória. Isso prioriza alvos com Tenacidade maior que 0 e Fraqueza contra Fogo."
+    }
+  }
+}

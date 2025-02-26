@@ -27,7 +27,7 @@
       "0": {
         "name": "Golpe de Misericórdia",
         "fullDesc": "Recebe {{5}} acúmulo(s) de Desejo de Lutar, com uma chance-base de {{2, percent}}% de aumentar o Dano recebido de um único inimigo-alvo em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por {{4}} rodada(s). Então, causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luka ao alvo.",
-        "shortDesc": "Recebe <orangeStrong>{{5}}</orangeStrong> acúmulo(s) de Desejo de Lutar, com uma alta chance de aumentar o Dano recebido pelo alvo, e causa Dano Físico massivo ao alvo.",
+        "shortDesc": "Recebe <orangeStrong>{{5}}</orangeStrong> acúmulo(s) de Desejo de Lutar, com uma alta chance de aumentar o Dano recebido pelo inimigo, e causa Dano Físico massivo ao alvo.",
         "tag": "Alvo Único"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Sobrecarga Cinética",
-        "fullDesc": "Ao usar a Perícia, remove imediatamente {{1}} melhoria(s) do inimigo-alvo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia, remove imediatamente {{1}} melhoria(s) do inimigo-alvo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Quebra de Ciclo",
-        "fullDesc": "Para cada acúmulo de Desejo de Lutar obtido, regenera adicionalmente {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Para cada acúmulo de Desejo de Lutar obtido, regenera adicionalmente {{1}} de Energia."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Desejo de Lutar Avassalador",
-        "fullDesc": "Ao usar um ATQ Básico Aprimorado, cada golpe que o \"Punho Certeiro\" causa tem uma chance fixa de {{1, percent}}% de fazer com que Luka use 1 golpe adicional. Este efeito não se aplica a golpes adicionais gerados desta forma.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar um ATQ Básico Aprimorado, cada golpe que o \"Punho Certeiro\" causa tem uma chance fixa de {{1, percent}}% de fazer com que Luka use 1 golpe adicional. Este efeito não se aplica a golpes adicionais gerados desta forma."
       }
     }
   },

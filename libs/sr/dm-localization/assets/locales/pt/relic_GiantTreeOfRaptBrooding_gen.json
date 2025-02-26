@@ -1,0 +1,6 @@
+{
+  "setName": "Árvore Gigante da Reflexão Arrebatadora",
+  "setEffects": {
+    "2": "Aumenta a VEL do usuário em {{1, percent}}%. Quando a VEL do usuário é {{2}}/{{3}} ou maior, a Cura Realizada do usuário e de seu Memoespírito aumenta em {{4, percent}}%/{{5, percent}}%."
+  }
+}

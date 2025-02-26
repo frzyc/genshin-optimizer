@@ -57,32 +57,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, vào chiến đấu và làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Mô Đun α: Anti-lag Bùng Lửa",
-        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, tấn công kẻ địch không có Điểm Yếu Hỏa cũng có thể làm giảm Sức Bền, hiệu ứng bằng {{1, percent}}% Giảm Sức Bền của kỹ năng vốn có.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, tấn công kẻ địch không có Điểm Yếu Hỏa cũng có thể làm giảm Sức Bền, hiệu ứng bằng {{1, percent}}% Giảm Sức Bền của kỹ năng vốn có."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Mô Đun β: Chiến Giáp Tự Phản Ứng",
-        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, khi Tấn Công Kích Phá của Chiến Giáp SAM lớn hơn hoặc bằng {{1, percent}}%/{{2, percent}}%, tấn công mục tiêu phe địch trong trạng thái Phá Vỡ Điểm Yếu, sẽ khiến Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần {{3, percent}}%/{{4, percent}}% Siêu Sát Thương Phá Vỡ.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, khi Tấn Công Kích Phá của Chiến Giáp SAM lớn hơn hoặc bằng {{1, percent}}%/{{2, percent}}%, tấn công mục tiêu phe địch trong trạng thái Phá Vỡ Điểm Yếu, sẽ khiến Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần {{3, percent}}%/{{4, percent}}% Siêu Sát Thương Phá Vỡ."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mô Đun γ: Lõi Quá Tải",
-        "fullDesc": "Nếu Tấn Công của Chiến Giáp SAM cao hơn {{1}} điểm, mỗi {{2}} điểm Tấn Công vượt quá sẽ khiến Tấn Công Kích Phá của bản thân tăng {{3, percent(fixed: 1)}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Nếu Tấn Công của Chiến Giáp SAM cao hơn {{1}} điểm, mỗi {{2}} điểm Tấn Công vượt quá sẽ khiến Tấn Công Kích Phá của bản thân tăng {{3, percent(fixed: 1)}}%."
       }
     }
   },

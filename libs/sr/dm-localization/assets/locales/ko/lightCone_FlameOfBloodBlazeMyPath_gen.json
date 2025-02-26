@@ -1,0 +1,7 @@
+{
+  "name": "피의 불꽃이여, 앞길을 태워라",
+  "passive": {
+    "name": "조망",
+    "description": "장착한 캐릭터의 HP 최대치가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 받는 치유량이 <orangeStrong>{{6, percent}}%</orangeStrong> 증가한다. 전투 스킬 또는 필살기 발동 시 자신의 HP 최대치의 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>만큼 HP를 소모해 이번 공격으로 가하는 피해를 <orangeStrong>{{3, percent}}%</orangeStrong> 증가시킨다. 해당 효과로 소모된 HP가 {{4}}pt보다 높을 경우 피해가 추가로 <orangeStrong>{{5, percent}}%</orangeStrong> 증가한다.<br>현재 HP가 부족하면 해당 효과는 장착한 캐릭터의 현재 HP를 최대 1pt까지 감소시킨다"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Me voy de caza",
+  "passive": {
+    "name": "Intimidación",
+    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Cuando el portador lanza un ataque adicional, obtiene 1 acumulación de Resplandor. Se puede acumular hasta {{3}} veces. Por cada acumulación de Resplandor, el daño de habilidad definitiva que inflige el portador ignora un <orangeStrong>{{2, percent}}%</orangeStrong> de la DEF del objetivo. Cuando termina el turno del portador, se elimina 1 acumulación de Resplandor."
+  }
+}

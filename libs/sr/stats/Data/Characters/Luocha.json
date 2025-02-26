@@ -7,22 +7,7 @@
       "pointId": "1203001",
       "anchor": "Point01",
       "pointType": 2,
-      "skillParamList": [
-        [
-          [
-            -1,
-            0.5,
-            0.6,
-            0.7,
-            0.8,
-            0.9,
-            1,
-            1.1,
-            1.2,
-            1.3
-          ]
-        ]
-      ]
+      "skillParamList": [[[-1, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3]]]
     },
     "skill": {
       "pointId": "1203002",
@@ -31,77 +16,18 @@
       "skillParamList": [
         [
           [
-            -1,
-            0.4,
-            0.425,
-            0.45,
-            0.475,
-            0.5,
-            0.52,
-            0.54,
-            0.56,
-            0.58,
-            0.6,
-            0.62,
-            0.64,
-            0.66,
-            0.68,
-            0.7
+            -1, 0.4, 0.425, 0.45, 0.475, 0.5, 0.52, 0.54, 0.56, 0.58, 0.6, 0.62,
+            0.64, 0.66, 0.68, 0.7
           ],
           [
-            -1,
-            200,
-            320,
-            410,
-            500,
-            560,
-            620,
-            665,
-            710,
-            755,
-            800,
-            845,
-            890,
-            935,
-            980,
-            1025
+            -1, 200, 320, 410, 500, 560, 620, 665, 710, 755, 800, 845, 890, 935,
+            980, 1025
           ],
           [
-            -1,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5,
-            0.5
+            -1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+            0.5, 0.5
           ],
-          [
-            -1,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2
-          ]
+          [-1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
         ]
       ]
     },
@@ -112,41 +38,10 @@
       "skillParamList": [
         [
           [
-            -1,
-            1.2,
-            1.28,
-            1.36,
-            1.44,
-            1.52,
-            1.6,
-            1.7,
-            1.8,
-            1.9,
-            2,
-            2.08,
-            2.16,
-            2.24,
-            2.32,
-            2.4
+            -1, 1.2, 1.28, 1.36, 1.44, 1.52, 1.6, 1.7, 1.8, 1.9, 2, 2.08, 2.16,
+            2.24, 2.32, 2.4
           ],
-          [
-            -1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ]
+          [-1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         ]
       ]
     },
@@ -156,77 +51,15 @@
       "pointType": 2,
       "skillParamList": [
         [
+          [-1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
           [
-            -1,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2
+            -1, 0.12, 0.1275, 0.135, 0.1425, 0.15, 0.156, 0.162, 0.168, 0.174,
+            0.18, 0.186, 0.192, 0.198, 0.204, 0.21
           ],
+          [-1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
           [
-            -1,
-            0.12,
-            0.1275,
-            0.135,
-            0.1425,
-            0.15,
-            0.156,
-            0.162,
-            0.168,
-            0.174,
-            0.18,
-            0.186,
-            0.192,
-            0.198,
-            0.204,
-            0.21
-          ],
-          [
-            -1,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2
-          ],
-          [
-            -1,
-            60,
-            96,
-            123,
-            150,
-            168,
-            186,
-            199.5,
-            213,
-            226.5,
-            240,
-            253.5,
-            267,
-            280.5,
-            294,
-            307.5
+            -1, 60, 96, 123, 150, 168, 186, 199.5, 213, 226.5, 240, 253.5, 267,
+            280.5, 294, 307.5
           ]
         ]
       ]
@@ -235,340 +68,156 @@
       "pointId": "1203007",
       "anchor": "Point05",
       "pointType": 2,
-      "skillParamList": [
-        []
-      ]
+      "skillParamList": [[]]
     },
     "bonusAbility1": {
       "pointId": "1203101",
       "anchor": "Point06",
       "pointType": 3,
-      "skillParamList": [
-        [
-          [
-            1
-          ]
-        ]
-      ]
+      "skillParamList": [[[1]]]
     },
     "bonusAbility2": {
       "pointId": "1203102",
       "anchor": "Point07",
       "pointType": 3,
-      "skillParamList": [
-        [
-          [
-            0.07,
-            93
-          ]
-        ]
-      ]
+      "skillParamList": [[[0.07, 93]]]
     },
     "bonusAbility3": {
       "pointId": "1203103",
       "anchor": "Point08",
       "pointType": 3,
-      "skillParamList": [
-        [
-          [
-            0.7
-          ]
-        ]
-      ]
+      "skillParamList": [[[0.7]]]
     },
     "statBoost1": {
       "pointId": "1203201",
       "anchor": "Point09",
-      "levels": [
-        {
-          "stats": {
-            "atk_": 0.04
-          }
-        }
-      ],
+      "levels": [{ "stats": { "atk_": 0.04 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost2": {
       "pointId": "1203202",
       "anchor": "Point10",
-      "levels": [
-        {
-          "stats": {
-            "hp_": 0.04
-          }
-        }
-      ],
+      "levels": [{ "stats": { "hp_": 0.04 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost3": {
       "pointId": "1203203",
       "anchor": "Point11",
-      "levels": [
-        {
-          "stats": {
-            "atk_": 0.04
-          }
-        }
-      ],
+      "levels": [{ "stats": { "atk_": 0.04 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost4": {
       "pointId": "1203204",
       "anchor": "Point12",
-      "levels": [
-        {
-          "stats": {
-            "def_": 0.05
-          }
-        }
-      ],
+      "levels": [{ "stats": { "def_": 0.05 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost5": {
       "pointId": "1203205",
       "anchor": "Point13",
-      "levels": [
-        {
-          "stats": {
-            "atk_": 0.06
-          }
-        }
-      ],
+      "levels": [{ "stats": { "atk_": 0.06 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost6": {
       "pointId": "1203206",
       "anchor": "Point14",
-      "levels": [
-        {
-          "stats": {
-            "hp_": 0.06
-          }
-        }
-      ],
+      "levels": [{ "stats": { "hp_": 0.06 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost7": {
       "pointId": "1203207",
       "anchor": "Point15",
-      "levels": [
-        {
-          "stats": {
-            "atk_": 0.06
-          }
-        }
-      ],
+      "levels": [{ "stats": { "atk_": 0.06 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost8": {
       "pointId": "1203208",
       "anchor": "Point16",
-      "levels": [
-        {
-          "stats": {
-            "def_": 0.075
-          }
-        }
-      ],
+      "levels": [{ "stats": { "def_": 0.075 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost9": {
       "pointId": "1203209",
       "anchor": "Point17",
-      "levels": [
-        {
-          "stats": {
-            "hp_": 0.08
-          }
-        }
-      ],
+      "levels": [{ "stats": { "hp_": 0.08 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     },
     "statBoost10": {
       "pointId": "1203210",
       "anchor": "Point18",
-      "levels": [
-        {
-          "stats": {
-            "atk_": 0.08
-          }
-        }
-      ],
+      "levels": [{ "stats": { "atk_": 0.08 } }],
       "pointType": 1,
-      "skillParamList": [
-        [
-          []
-        ]
-      ]
+      "skillParamList": [[[]]]
     }
   },
   "ascension": [
     {
-      "atk": {
-        "base": 102.96,
-        "add": 5.148
-      },
-      "def": {
-        "base": 49.5,
-        "add": 2.475
-      },
-      "hp": {
-        "base": 174.24,
-        "add": 8.712
-      },
+      "atk": { "base": 102.96, "add": 5.148 },
+      "def": { "base": 49.5, "add": 2.475 },
+      "hp": { "base": 174.24, "add": 8.712 },
       "spd": 101,
       "crit_": 0.05,
       "crit_dmg_": 0.5,
       "taunt": 100
     },
     {
-      "atk": {
-        "base": 144.144,
-        "add": 5.148
-      },
-      "def": {
-        "base": 69.3,
-        "add": 2.475
-      },
-      "hp": {
-        "base": 243.936,
-        "add": 8.712
-      },
+      "atk": { "base": 144.144, "add": 5.148 },
+      "def": { "base": 69.3, "add": 2.475 },
+      "hp": { "base": 243.936, "add": 8.712 },
       "spd": 101,
       "crit_": 0.05,
       "crit_dmg_": 0.5,
       "taunt": 100
     },
     {
-      "atk": {
-        "base": 185.328,
-        "add": 5.148
-      },
-      "def": {
-        "base": 89.1,
-        "add": 2.475
-      },
-      "hp": {
-        "base": 313.632,
-        "add": 8.712
-      },
+      "atk": { "base": 185.328, "add": 5.148 },
+      "def": { "base": 89.1, "add": 2.475 },
+      "hp": { "base": 313.632, "add": 8.712 },
       "spd": 101,
       "crit_": 0.05,
       "crit_dmg_": 0.5,
       "taunt": 100
     },
     {
-      "atk": {
-        "base": 226.512,
-        "add": 5.148
-      },
-      "def": {
-        "base": 108.9,
-        "add": 2.475
-      },
-      "hp": {
-        "base": 383.328,
-        "add": 8.712
-      },
+      "atk": { "base": 226.512, "add": 5.148 },
+      "def": { "base": 108.9, "add": 2.475 },
+      "hp": { "base": 383.328, "add": 8.712 },
       "spd": 101,
       "crit_": 0.05,
       "crit_dmg_": 0.5,
       "taunt": 100
     },
     {
-      "atk": {
-        "base": 267.696,
-        "add": 5.148
-      },
-      "def": {
-        "base": 128.7,
-        "add": 2.475
-      },
-      "hp": {
-        "base": 453.024,
-        "add": 8.712
-      },
+      "atk": { "base": 267.696, "add": 5.148 },
+      "def": { "base": 128.7, "add": 2.475 },
+      "hp": { "base": 453.024, "add": 8.712 },
       "spd": 101,
       "crit_": 0.05,
       "crit_dmg_": 0.5,
       "taunt": 100
     },
     {
-      "atk": {
-        "base": 308.88,
-        "add": 5.148
-      },
-      "def": {
-        "base": 148.5,
-        "add": 2.475
-      },
-      "hp": {
-        "base": 522.72,
-        "add": 8.712
-      },
+      "atk": { "base": 308.88, "add": 5.148 },
+      "def": { "base": 148.5, "add": 2.475 },
+      "hp": { "base": 522.72, "add": 8.712 },
       "spd": 101,
       "crit_": 0.05,
       "crit_dmg_": 0.5,
       "taunt": 100
     },
     {
-      "atk": {
-        "base": 350.064,
-        "add": 5.148
-      },
-      "def": {
-        "base": 168.3,
-        "add": 2.475
-      },
-      "hp": {
-        "base": 592.416,
-        "add": 8.712
-      },
+      "atk": { "base": 350.064, "add": 5.148 },
+      "def": { "base": 168.3, "add": 2.475 },
+      "hp": { "base": 592.416, "add": 8.712 },
       "spd": 101,
       "crit_": 0.05,
       "crit_dmg_": 0.5,
@@ -576,48 +225,11 @@
     }
   ],
   "rankMap": {
-    "1": {
-      "skillTypeAddLevel": {},
-      "params": [
-        0.2
-      ]
-    },
-    "2": {
-      "skillTypeAddLevel": {},
-      "params": [
-        0.3,
-        0.18,
-        240,
-        2
-      ]
-    },
-    "3": {
-      "skillTypeAddLevel": {
-        "basic": 1,
-        "skill": 2
-      },
-      "params": []
-    },
-    "4": {
-      "skillTypeAddLevel": {},
-      "params": [
-        0.12
-      ]
-    },
-    "5": {
-      "skillTypeAddLevel": {
-        "ult": 2,
-        "talent": 2
-      },
-      "params": []
-    },
-    "6": {
-      "skillTypeAddLevel": {},
-      "params": [
-        1,
-        0.2,
-        2
-      ]
-    }
+    "1": { "skillTypeAddLevel": {}, "params": [0.2] },
+    "2": { "skillTypeAddLevel": {}, "params": [0.3, 0.18, 240, 2] },
+    "3": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
+    "4": { "skillTypeAddLevel": {}, "params": [0.12] },
+    "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
+    "6": { "skillTypeAddLevel": {}, "params": [1, 0.2, 2] }
   }
 }

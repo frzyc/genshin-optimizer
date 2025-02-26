@@ -1,0 +1,108 @@
+{
+  "name": "Mydei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Schwur der resoluten Reise",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mydeis max. LP zu.",
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Tausend Tode ohne Bedauern",
+        "fullDesc": "Verbraucht LP in Höhe von {{3, percent}}% von Mydeis aktuellen LP und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mydeis max. LP zu. Fügt gleichzeitig angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Mydeis max. LP zu.<br>Wenn die aktuellen LP nicht ausreichen, werden Mydeis LP beim Einsatz der Fertigkeit auf 1 reduziert.",
+        "shortDesc": "Verbraucht LP und fügt einem anvisierten Gegner imaginären SCH und angrenzenden Einheiten geringen imaginären SCH zu.",
+        "tag": "Ausdehnung"
+      },
+      "1": {
+        "name": "Königsmörder sei König",
+        "fullDesc": "Verbraucht LP in Höhe von {{3, percent}}% von Mydeis aktuellen LP. Fügt einem Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mydeis max. LP und angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Mydeis max. LP zu.<br>Wenn die aktuellen LP nicht ausreichen, werden Mydeis LP beim Einsatz der Fertigkeit auf 1 reduziert.<br>Diese Fähigkeit wird automatisch eingesetzt.",
+        "shortDesc": "Verbraucht LP und fügt einem anvisierten Gegner und angrenzenden Einheiten imaginären SCH zu.<br>Diese Fähigkeit wird <orangeStrong>automatisch eingesetzt</orangeStrong>.",
+        "tag": "Ausdehnung"
+      },
+      "2": {
+        "name": "Gottesmörder sei Gott",
+        "fullDesc": "Verbraucht {{3}} Pkt. Aufladung und fügt einem Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> der max. LP von Mydei zu. Fügt gleichzeitig angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> der max. LP von Mydei zu.<br>Diese Fähigkeit wird automatisch eingesetzt. Während der Dauer der Fähigkeit kann keine Aufladung angesammelt werden.",
+        "shortDesc": "<orangeStrong>Verbraucht Aufladung</orangeStrong> und fügt einem anvisierten Gegner massiven imaginären SCH und angrenzenden Einheiten massiven imaginären SCH zu.<br>Diese Fähigkeit wird <orangeStrong>automatisch eingesetzt</orangeStrong>.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Thron der brennenden Knochen",
+        "fullDesc": "Stellt LP in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Mydeis max. LP wieder her und erhält {{5}} Pkt. Aufladung für das Talent. Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mydeis max. LP und angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Mydeis max. LP zu. Verursacht außerdem beim Ziel und angrenzenden Einheiten für {{4}} Rd. Verspotten. Das nächste Mal priorisiert „Gottesmörder sei Gott“ den anvisierten Gegner (dieser Effekt wirkt nur auf das neueste Ziel).",
+        "shortDesc": "<orangeStrong>Stellt LP wieder her</orangeStrong> und sammelt Aufladung für das Talent an. Fügt einem anvisierten Gegner massiven imaginären SCH und angrenzenden Einheiten imaginären SCH zu. Verursacht beim Ziel und angrenzenden Einheiten <orangeStrong>Verspotten</orangeStrong>.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Blut für Blut",
+        "fullDesc": "Erhält 1 Pkt. Aufladung für je 1 % verlorener LP, bis max. 200 Pkt. Wenn die Aufladung 100 Pkt. erreicht, werden 100 Pkt. verbraucht, um den Status „Blutrache“ zu aktivieren, LP in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> der max. LP von Mydei wiederherzustellen und gleichzeitig die Aktion um 100 % vorzuziehen. Im Status Blutrache werden die max. LP um {{5, percent}}% der aktuellen LP erhöht und die VTD bleibt bei 0. Zu Beginn der eigenen Runde wird automatisch „Königsmörder sei König“ eingesetzt.<br>Wenn die Aufladung während der Dauer von Blutrache {{3}} Pkt. erreicht, erhält Mydei sofort 1 zusätzliche Runde und „Königsmörder sei König“ wird automatisch eingesetzt.<br>Wenn Mydei im Status Blutrache einen Todesstoß erleidet, wird er zwar nicht handlungsunfähig, aber die gesamte Aufladung wird verbraucht und der Status Blutrache beendet. Es werden LP in Höhe von {{4, percent}}% seiner max. LP wiederhergestellt.",
+        "shortDesc": "Wenn Mydei LP verliert, erhält er Aufladung. Wenn die Aufladung 100 erreicht, tritt er in den Status <orangeStrong>Blutrache</orangeStrong> ein. Er stellt LP wieder her und seine Aktion wird vorgezogen. Im Status Blutrache werden die max. LP erhöht und die VTD bleibt bei 0. Zu Beginn der eigenen Runde wird <orangeStrong>automatisch</orangeStrong> „Königsmörder sei König“ eingesetzt.<br>Wenn die Aufladung während der Dauer von Blutrache 150 erreicht, erhält Mydei sofort 1 <orangeStrong>zusätzliche Runde</orangeStrong> und setzt <orangeStrong>automatisch</orangeStrong> „Königsmörder sei König“ ein.<br>Wenn Mydei einen Todesstoß erleidet, wird Blutrache beendet.",
+        "tag": "Verstärkung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Gefängnis der unterwerfenden Lanze",
+        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich mitgezogen und für {{1}} Sek. von Schwindel betroffen. Von Schwindel betroffene Gegner greifen Verbündete nicht aktiv an.<br>Nach Kampfeintritt mit einem aktiven Angriff auf von Schwindel betroffene Gegner wird allen Gegnern imaginärer SCH in Höhe von {{2, percent}}% von Mydeis max. LP zugefügt und es wird für {{4}} Rd. Verspotten verursacht. Sammelt {{5}} Pkt. Aufladung für das Talent an.",
+        "shortDesc": "Zieht Gegner in einem bestimmten Bereich an und belegt sie mit Schwindel. Nach Kampfeintritt mit einem Angriff auf von Schwindel betroffene Gegner wird allen Gegnern geringer imaginärer SCH zugefügt und es besteht eine Chance, bei Gegnern Verspotten zu verursachen. Sammelt außerdem Aufladung für das Talent an.",
+        "tag": "Beeinträchtigung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Wasser und Lehm",
+        "fullDesc": "Wenn Mydei im Status „Blutrache“ von einem Todesstoß getroffen wird, wird der Status Blutrache nicht entfernt. Dieser Effekt kann {{1}}-mal pro Kampf ausgelöst werden."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dreißig Tyrannen",
+        "fullDesc": "Im Status „Blutrache“ ist Mydei immun gegen Mengenkontrolle-Debuffs."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Blutige Vorahnung",
+        "fullDesc": "Wenn zu Beginn des Kampfes die max. LP von Mydei {{1}} Pkt. überschreiten, wird für je 100 LP über diesem Wert seine KRIT-Rate um {{3, percent(fixed: 1)}}% erhöht. Wenn er von Gegnern SCH erleidet, wird Mydeis Aufladerate um {{4, percent(fixed: 1)}}% und die LP-Wiederherstellung bei erhaltener Heilung um {{5, percent(fixed: 2)}}% erhöht. Der Überschuss kann max. {{2}} LP erreichen."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Unnachgiebiges Rückgrat im Eiswind",
+      "desc": "Erhöht den SCH-Multiplikator gegen das Hauptziel von „Gottesmörder sei Gott“ um {{1, percent}}%. Wird zu imaginärem SCH, der allen Gegnern zugefügt wird und dem SCH-Multiplikator des Hauptziels entspricht."
+    },
+    "2": {
+      "name": "Todesgesang des Zwists",
+      "desc": "Während der Dauer von „Blutrache“ ignoriert der von Mydei verursachte SCH {{1, percent}}% der VTD des Ziels. Wenn er geheilt wird, werden {{2, percent}}% der erhaltenen Heilung in Aufladung umgewandelt. Die gesamte umgewandelte Aufladung kann {{3}} nicht überschreiten. Nachdem eine beliebige Einheit eine Aktion durchgeführt hat, wird die ansammelbare Aufladung zurückgesetzt."
+    },
+    "3": {
+      "name": "Festmahl der unvergänglichen Ehre",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Erwecken der stillen Löwen",
+      "desc": "Erhöht im Status „Blutrache“ den KRIT-SCH um {{2, percent}}%. Stellt nach einem gegnerischen Angriff LP in Höhe von {{1, percent}}% der max. LP wieder her."
+    },
+    "5": {
+      "name": "Flamme der gemeißelten Narben",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Blutiger Hügel aus vergangenen Schlachten",
+      "desc": "Tritt beim Kampfeintritt sofort in den Status „Blutrache“ ein und die für „Gottesmörder sei Gott“ benötigte Aufladung wird auf {{1}} verringert."
+    }
+  }
+}

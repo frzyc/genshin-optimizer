@@ -1,0 +1,7 @@
+{
+  "name": "Ascension terrestre",
+  "passive": {
+    "name": "Nouveau départ",
+    "description": "Lorsque le porteur utilise sa compétence ou son ultime sur un personnage allié unique, il régénère <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> points d'énergie et la cible de la capacité reçoit 1 cumul d'Hymne pour {{4}} tours, cumulable jusqu'à {{3}} fois. Chaque cumul d'Hymne augmente les DGT infligés par son bénéficiaire de <orangeStrong>{{2, percent}}%</orangeStrong>. Après que le porteur a utilisé {{5}} fois sa compétence ou son ultime sur un personnage allié, il récupère 1 point de compétence."
+  }
+}

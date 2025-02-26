@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Molde da Idolatria",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta dimensão especial, há uma chance-base de {{2, percent}}% de reduzir a VEL de cada inimigo-alvo em {{3, percent}}% por {{4}} rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após usar a Técnica, cria uma Dimensão Especial que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta Dimensão Especial, há uma chance-base de {{2, percent}}% de reduzir a VEL de cada inimigo-alvo em {{3, percent}}% por {{4}} rodada(s). Só 1 Efeito de Dimensão criado por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial. Inimigos dentro dessa dimensão sofrem Provocação. Após entrar em combate com inimigos nesta dimensão, há uma alta chance de reduzir a <orangeStrong>VEL</orangeStrong> dos inimigos-alvo.",
         "tag": "Incapacitação"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Soma",
-        "fullDesc": "Quando o Dr. Ratio usa sua Perícia, para cada penalidade no alvo, aumenta sua Chance de CRIT em {{1, percent(fixed: 1)}}% e seu Dano CRIT em {{2, percent}}%. Esse efeito pode acumular até {{3}} vez(es).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando o Dr. Ratio usa sua Perícia, para cada penalidade no alvo, aumenta sua Chance de CRIT em {{1, percent(fixed: 1)}}% e seu Dano CRIT em {{2, percent}}%. Esse efeito pode acumular até {{3}} vez(es)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inferência",
-        "fullDesc": "Quando a Perícia é utilizada para atacar um inimigo-alvo, há uma chance-base de {{1, percent}}% de reduzir a RES a Efeito do inimigo-alvo atacado em {{2, percent}}% por {{3}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando a Perícia é utilizada para atacar um inimigo-alvo, há uma chance-base de {{1, percent}}% de reduzir a RES a Efeito do inimigo-alvo atacado em {{2, percent}}% por {{3}} rodada(s)."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Dedução",
-        "fullDesc": "Ao causar Dano a um alvo que possua {{1}} ou mais penalidades, para cada penalidade que o alvo possua, o Dano causado pelo Dr. Ratio a este alvo aumenta em {{2, percent}}%, até um aumento máximo de {{3, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao causar Dano a um alvo que possua {{1}} ou mais penalidades, para cada penalidade que o alvo possua, o Dano causado pelo Dr. Ratio a este alvo aumenta em {{2, percent}}%, até um aumento máximo de {{3, percent}}%."
       }
     }
   },

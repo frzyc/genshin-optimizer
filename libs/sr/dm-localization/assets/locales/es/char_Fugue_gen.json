@@ -1,0 +1,102 @@
+{
+  "name": "Fugue",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Estela radiante",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Fugue como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
+      },
+      "1": {
+        "name": "Caricia ardiente",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Fugue como Daño de Fuego a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Fugue como Daño de Fuego a los objetivos adyacentes.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los objetivos adyacentes.",
+        "tag": "Ráfaga"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Dicha de la virtud",
+        "fullDesc": "Otorga Plegaria raposiana a un aliado y entra en el estado Llama tórrida durante {{1}} turnos. Cada vez que comienza el turno de Fugue, la duración se reduce en 1 turno. Plegaria raposiana solo surte efecto sobre el último objetivo de la habilidad básica de Fugue.<br>El efecto de Ruptura del aliado con Plegaria raposiana aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>. Además, también puede reducir la Firmeza de los enemigos que no tengan Debilidad de su mismo tipo en un {{6, percent}}% de la Reducción de Firmeza original. Esto no puede acumularse con otros efectos que permiten reducir la Firmeza ignorando los tipos de Debilidad.<br>Cuando está en el estado de Llama tórrida, el ATQ básico de Fugue se potencia. Cada vez que el aliado con Plegaria raposiana ataca, Fugue tiene una probabilidad base del {{3, percent}}% de reducir la DEF del enemigo atacado en un <orangeStrong>{{4, percent}}%</orangeStrong> durante {{5}} turnos.",
+        "shortDesc": "Otorga Plegaria raposiana a un aliado: su <orangeStrong>efecto de Ruptura aumenta</orangeStrong> y <orangeStrong>también puede reducir la Firmeza de los enemigos que no tengan Debilidad de su mismo tipo</orangeStrong>.<br>Fugue entra en el estado de Llama tórrida: su ATQ básico se potencia. Cuando un aliado con Plegaria raposiana ataca, Fugue tiene una gran probabilidad de reducir la DEF de los objetivos enemigos.",
+        "tag": "Apoyo"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Refulgencia iluminadora",
+        "fullDesc": "Inflige un Daño de Fuego equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Fugue a todos los enemigos. Este ataque ignora los tipos de Debilidad y reduce la Firmeza de todos los enemigos. Al romper la Debilidad, activa el efecto de Ruptura de Debilidad de Fuego.",
+        "shortDesc": "Inflige Daño de Fuego a todos los enemigos. Este ataque <orangeStrong>ignora los tipos de Debilidad</orangeStrong> y reduce la Firmeza de todos los enemigos.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Integridad afortunada",
+        "fullDesc": "Cuando Fugue está en el campo de batalla, los enemigos reciben adicionalmente un Brillo nubeígneo equivalente al {{2, percent}}% de su Firmeza máxima. Cuando su Firmeza inicial se reduce hasta 0, se puede seguir reduciendo Brillo nubeígneo. Cuando Brillo nubeígneo se reduce hasta 0, vuelven a recibir Daño de Ruptura de Debilidad.<br>Después de que los aliados ataquen a enemigos con Ruptura de Debilidad cuando Fugue está en el campo de batalla, la reducción de Firmeza de este ataque se convierte en un <orangeStrong>{{1, percent}}%</orangeStrong> de Daño de Ultrarruptura.",
+        "shortDesc": "Cuando Fugue está en el campo de batalla, los enemigos reciben adicionalmente <orangeStrong>Brillo nubeígneo</orangeStrong>. Cuando Brillo nubeígneo se reduce a 0, <orangeStrong>vuelven a recibir Daño de Ruptura de Debilidad</orangeStrong>. Después de que un aliado ataque a un objetivo con Ruptura de Debilidad, le inflige adicionalmente <orangeStrong>Daño de Ultrarruptura</orangeStrong>.",
+        "tag": "Alteración"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Brillo perspicaz",
+        "fullDesc": "Tras usar la técnica, afecta con Mareo a los enemigos que estén dentro de una zona determinada durante {{1}} s. Los enemigos mareados no atacan activamente a los aliados.<br>Tras atacar a enemigos mareados y entrar en combate, la acción de Fugue se adelanta un {{4, percent}}% y tiene un {{2, percent}}% de probabilidad base de afectar a cada uno de los objetivos enemigos con un estado de DEF reducida similar al de la habilidad básica de Fugue durante {{3}} turnos.",
+        "shortDesc": "Afecta con Mareo a los enemigos que estén dentro de una zona determinada. Tras atacar a enemigos mareados y entrar en combate, la acción de Fugue se adelanta y tiene una gran probabilidad de afectar a cada uno de los objetivos enemigos con un estado de DEF reducida similar al de la habilidad básica de Fugue.",
+        "tag": "Alteración"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Reconquista de Verdantia",
+        "fullDesc": "Cuando un aliado inflige Ruptura de Debilidad, la acción del enemigo se retrasa un {{1, percent}}% adicional."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Enigma de Tushan",
+        "fullDesc": "Su efecto de Ruptura aumenta en un {{1, percent}}%. Recupera {{2}} pt. de habilidad básica tras lanzar la habilidad básica por primera vez en una batalla."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Primordio de Phecda",
+        "fullDesc": "Cuando se rompe la Debilidad de algún enemigo, el efecto de Ruptura de los demás compañeros de equipo aumenta en un {{1, percent}}%. Si el efecto de Ruptura de Fugue es igual o superior al {{4, percent}}%, el aumento del efecto de Ruptura se incrementa en un {{5, percent}}% adicional. Este efecto dura {{2}} turnos y se puede acumular hasta {{3}} veces."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Del suelo al cielo",
+      "desc": "La eficiencia de la Ruptura de Debilidad de los aliados con Plegaria raposiana aumenta en un {{1, percent}}%."
+    },
+    "2": {
+      "name": "De la virtud viene la ventura",
+      "desc": "Cuando se rompe la Debilidad de un enemigo, Fugue recupera {{1}} pts. de energía. Tras lanzar su habilidad definitiva, la acción de todos los aliados se adelanta un {{2, percent}}%."
+    },
+    "3": {
+      "name": "Mi verdadero yo",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Cambio de forma, cambio de nombre",
+      "desc": "El Daño de Ruptura que infligen los aliados con Plegaria raposiana aumenta en un {{1, percent}}%."
+    },
+    "5": {
+      "name": "Nubes auspiciosas",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Clarividencia de fortunas y desgracias",
+      "desc": "La eficiencia de la Ruptura de Debilidad de Fugue aumenta en un {{1, percent}}%. Cuando Fugue está en el estado de Llama tórrida, el efecto de Plegaria raposiana aplica a todos los aliados."
+    }
+  }
+}

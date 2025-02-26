@@ -1,0 +1,7 @@
+{
+  "name": "Shadowed by Night",
+  "passive": {
+    "name": "Concealment",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Break Effect pengguna. Setelah memasuki pertempuran atau mengakibatkan Break DMG, SPD akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>, berlangsung selama {{3}} giliran. Efek ini hanya dapat dipicu 1 kali setiap giliran."
+  }
+}

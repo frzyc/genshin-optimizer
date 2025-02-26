@@ -1,0 +1,7 @@
+{
+  "name": "Flamme des Blutes, entzünde meinen Pfad",
+  "passive": {
+    "name": "Weitblick",
+    "description": "Erhöht die max. LP des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong> und die erhaltene Heilung um <orangeStrong>{{6, percent}}%</orangeStrong>. Der Einsatz der Fertigkeit oder des Ultimates verbraucht LP in Höhe von <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> der max. LP des Trägers und erhöht den verursachten SCH dieses Angriffs um <orangeStrong>{{3, percent}}%</orangeStrong>. Wenn die dabei verbrauchten LP {{4}} oder mehr betragen, wird der SCH zusätzlich um <orangeStrong>{{5, percent}}%</orangeStrong> erhöht.<br>Wenn die aktuellen LP nicht ausreichen, werden die aktuellen LP des Trägers auf 1 reduziert."
+  }
+}

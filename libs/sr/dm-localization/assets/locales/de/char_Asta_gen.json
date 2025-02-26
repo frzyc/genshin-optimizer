@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Funken",
-        "fullDesc": "Beim Einsatz des Standardangriffs besteht eine Grundchance von {{1, percent}}%, bei Gegnern für {{2}} Rd. Brennen zu verursachen.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Astas Standardangriffs.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Beim Einsatz des Standardangriffs besteht eine Grundchance von {{1, percent}}%, bei Gegnern für {{2}} Rd. Brennen zu verursachen.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Astas Standardangriffs."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Entzünden",
-        "fullDesc": "Erhöht den Feuer-SCH aller Verbündeten um {{1, percent}}%, wenn Asta mitkämpft.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den Feuer-SCH aller Verbündeten um {{1, percent}}%, wenn Asta mitkämpft."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Konstellation",
-        "fullDesc": "Erhöht die VTD für jede Aufladestapelung um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht die VTD für jede Aufladestapelung um {{1, percent}}%."
       }
     }
   },

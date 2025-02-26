@@ -1,0 +1,7 @@
+{
+  "name": "Vì Hành Trình Ngày Mai",
+  "passive": {
+    "name": "Liên Kết",
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công cho người trang bị. Sau khi người trang bị thi triển Tuyệt Kỹ, sát thương gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

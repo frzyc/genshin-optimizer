@@ -1,0 +1,7 @@
+{
+  "name": "溯憶",
+  "passive": {
+    "name": "入寐",
+    "description": "憶靈的回合開始時，使裝備者和憶靈分別獲得1層【緬懷】，每層使造成的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>，最多疊加{{2}}層。憶靈消失時移除裝備者和憶靈的【緬懷】。"
+  }
+}

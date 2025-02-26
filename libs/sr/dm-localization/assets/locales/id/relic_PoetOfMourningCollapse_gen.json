@@ -1,0 +1,7 @@
+{
+  "setName": "Poet of Mourning Collapse",
+  "setEffects": {
+    "2": "Quantum DMG +{{1, percent}}%.",
+    "4": "Mengurangi {{6, percent}}% SPD pengguna. Sebelum memasuki pertempuran, jika SPD pengguna kurang dari {{2}}/{{3}}, CRIT Rate pengguna akan meningkat {{4, percent}}%/{{5, percent}}%. Efek ini juga berlaku pada Memosprite pengguna."
+  }
+}

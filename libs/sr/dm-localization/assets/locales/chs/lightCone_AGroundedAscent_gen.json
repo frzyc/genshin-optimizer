@@ -1,0 +1,7 @@
+{
+  "name": "回到大地的飞行",
+  "passive": {
+    "name": "再启程",
+    "description": "当装备者对我方单体角色施放战技或终结技后，装备者恢复<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>点能量，同时使技能目标获得1层【圣咏】，持续{{4}}回合，最多叠加{{3}}层，每层【圣咏】使持有者造成的伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>。装备者每对我方单体角色施放{{5}}次战技或终结技后，恢复1个战技点。"
+  }
+}

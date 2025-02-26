@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Espere, Você É Tão Linda!",
-        "fullDesc": "Usar a Técnica cria uma dimensão especial que dura por {{1}} segundos. Inimigos pegos na dimensão especial são afetados pela Prisão Onírica e todas as suas ações são interrompidas. Ao entrar em batalha contra inimigos afetados pela Prisão Onírica, a próxima Perícia Suprema de Misha causa {{2}} Golpe(s) por Ação a mais. Apenas uma dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Usar a Técnica cria uma Dimensão Especial que dura por {{1}} segundos. Inimigos pegos na Dimensão Especial são afetados pela Prisão Onírica e todas as suas ações são interrompidas. Ao entrar em batalha contra inimigos afetados pela Prisão Onírica, a próxima Perícia Suprema de Misha causa {{2}} Golpe(s) por Ação a mais. Só 1 Efeito de Dimensão criado por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial que para todos os inimigos que estiverem dentro dela. Ao entrar em batalha contra inimigos na dimensão, <orangeStrong>a próxima Perícia Suprema de Misha causa mais Golpes por Ação</orangeStrong>.",
         "tag": "Incapacitação"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Liberação",
-        "fullDesc": "Antes do acerto do primeiro golpe da Perícia Suprema, aumenta em {{1, percent}}% a chance-base de causar \"Congelamento\" ao alvo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Antes do acerto do primeiro golpe da Perícia Suprema, aumenta em {{1, percent}}% a chance-base de causar \"Congelamento\" ao alvo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Interligação",
-        "fullDesc": "Ao usar a Perícia Suprema, aumenta a Taxa de Acerto de Efeito em {{1, percent}}%, durando até o final da ação da Perícia Suprema atual.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia Suprema, aumenta a Taxa de Acerto de Efeito em {{1, percent}}%, durando até o final da ação da Perícia Suprema atual."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmissão",
-        "fullDesc": "Ao causar Dano a inimigos com Congelamento, aumenta o Dano CRIT em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao causar Dano a inimigos com Congelamento, aumenta o Dano CRIT em {{1, percent}}%."
       }
     }
   },

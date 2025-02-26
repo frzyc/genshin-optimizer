@@ -1,0 +1,7 @@
+{
+  "name": "Uma Ascensão Aterrada",
+  "passive": {
+    "name": "Partindo Outra Vez",
+    "description": "Após o usuário utilizar sua Perícia ou Perícia Suprema em um personagem aliado, o usuário regenera <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> de Energia e o alvo da habilidade recebe um acúmulo de \"Hino\" por {{4}} rodada(s), acumulando até um máximo de {{3}} vez(es). Cada acúmulo de \"Hino\" aumenta o Dano causado por seu portador em <orangeStrong>{{2, percent}}%</orangeStrong>. Após cada {{5}} instância(s) de Perícia ou Perícia Suprema utilizada(s) pelo usuário em um personagem aliado, recupera 1 Ponto de Perícia."
+  }
+}

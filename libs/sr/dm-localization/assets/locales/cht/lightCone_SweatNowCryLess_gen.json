@@ -1,0 +1,7 @@
+{
+  "name": "多流汗，少流淚",
+  "passive": {
+    "name": "來練！",
+    "description": "使裝備者的暴擊率提高<orangeStrong>{{1, percent}}%</orangeStrong>，裝備者的憶靈在場上時，裝備者與憶靈造成的傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>。"
+  }
+}

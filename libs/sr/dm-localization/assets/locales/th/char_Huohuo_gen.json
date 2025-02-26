@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภท ที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fearful to Act",
-        "fullDesc": "เมื่อเริ่มการต่อสู้ Huohuo จะได้รับ \"Divine Provision\" เป็นเวลา {{1}} เทิร์น",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่อเริ่มการต่อสู้ Huohuo จะได้รับ \"Divine Provision\" เป็นเวลา {{1}} เทิร์น"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Cursed One",
-        "fullDesc": "โอกาสต้านทาน สถานะ Debuff ประเภทควบคุม เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "โอกาสต้านทาน สถานะ Debuff ประเภทควบคุม เพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stress Reaction to Horror",
-        "fullDesc": "เมื่อปล่อยพรสวรรค์ เพื่อรักษาเป้าหมายฝ่ายเรา Huohuo จะฟื้นฟูพลังงาน {{1}} หน่วย",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่อปล่อยพรสวรรค์ เพื่อรักษาเป้าหมายฝ่ายเรา Huohuo จะฟื้นฟูพลังงาน {{1}} หน่วย"
       }
     }
   },

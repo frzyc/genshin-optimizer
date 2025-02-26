@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Vergeltung",
-        "fullDesc": "Beim Einsatz des Ultimates besteht eine Grundchance von {{1, percent}}%, den erlittenen SCH des Ziels für {{3}} Rd. um {{2, percent}}% zu erhöhen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Beim Einsatz des Ultimates besteht eine Grundchance von {{1, percent}}%, den erlittenen SCH des Ziels für {{3}} Rd. um {{2, percent}}% zu erhöhen."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Urteil",
-        "fullDesc": "Stellt beim Einsatz des Ultimates zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt beim Einsatz des Ultimates zusätzlich {{1}} Pkt. Energie wieder her."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bestrafung",
-        "fullDesc": "Erhöht den zugefügten SCH an Gegnern mit Schwächebruch um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den zugefügten SCH an Gegnern mit Schwächebruch um {{1, percent}}%."
       }
     }
   },

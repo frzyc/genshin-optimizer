@@ -19,7 +19,8 @@
     "Nihility": "공허",
     "Destruction": "파멸",
     "Harmony": "화합",
-    "TheHunt": "수렵"
+    "TheHunt": "수렵",
+    "Remembrance": "「기억」"
   },
   "ability": {
     "basic": "일반 공격",
@@ -34,6 +35,11 @@
     "bounce": "바운스",
     "blast": "확산",
     "support": "서포트",
-    "impair": "방해"
+    "impair": "방해",
+    "restore": "회복",
+    "defense": "방어",
+    "enhance": "강화",
+    "charging": "차지",
+    "summon": "소환"
   }
 }

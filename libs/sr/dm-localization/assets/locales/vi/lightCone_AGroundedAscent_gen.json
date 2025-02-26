@@ -1,0 +1,7 @@
+{
+  "name": "Chuyến Bay Trở Về Mặt Đất",
+  "passive": {
+    "name": "Khởi Hành Lần Nữa",
+    "description": "Sau khi người trang bị thi triển Chiến Kỹ hoặc Tuyệt Kỹ lên 1 nhân vật phe ta, thì người trang bị sẽ hồi <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> điểm Năng Lượng, đồng thời khiến mục tiêu kỹ năng nhận 1 tầng Thánh Ca, duy trì {{4}} hiệp, tối đa cộng dồn {{3}} tầng, mỗi tầng Thánh Ca khiến sát thương mà người sở hữu gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>. Sau mỗi {{5}} lần người trang bị thi triển Chiến Kỹ hoặc Tuyệt Kỹ cho 1 nhân vật phe ta, sẽ hồi 1 Điểm Chiến Kỹ."
+  }
+}

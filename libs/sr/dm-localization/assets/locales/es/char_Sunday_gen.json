@@ -1,0 +1,96 @@
+{
+  "name": "Sunday",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Admonición resplandeciente",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sunday como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Concesión del papel y los ritos",
+        "fullDesc": "Hace que un personaje aliado y su invocación actúen inmediatamente y aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> el daño que infligen. Si el objetivo tiene una invocación, el efecto de aumento de daño se incrementa en un <orangeStrong>{{4, percent}}%</orangeStrong> adicional. Dura {{3}} turnos.<br>Recupera 1 pt. de habilidad básica tras lanzar la habilidad básica sobre el aliado con Beatitud.<br>Si Sunday lanza esta habilidad a personajes de la Vía de la Armonía, el efecto de acción inmediata no se activa.",
+        "shortDesc": "Hace que un <orangeStrong>personaje aliado y su invocación actúen inmediatamente</orangeStrong> y aumenta el daño que infligen. Si el objetivo tiene una invocación, el efecto de aumento del daño infligido se incrementa adicionalmente.<br>Recupera 1 pt. de habilidad básica tras lanzar la habilidad básica sobre el aliado con Beatitud.<br>Si Sunday lanza esta habilidad a personajes de la Vía de la Armonía, el efecto de acción inmediata no se activa.",
+        "tag": "Apoyo"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Elogio de caricias y cicatrices",
+        "fullDesc": "Recupera un {{1, percent(fixed: 1)}}% de la energía máxima de un personaje aliado y aplica Beatitud a ese aliado y a su invocación. El Daño CRIT de los aliados con Beatitud aumenta en una cantidad equivalente al <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Sunday + <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>.<br>La duración del estado de Beatitud se reduce en 1 turno al comienzo de cada turno de Sunday. Dura un total de {{3}} turnos y solo tiene efecto en el último objetivo de la habilidad definitiva (sin incluir a Sunday). Cuando Sunday es derrotado, el efecto de Beatitud se disipa.",
+        "shortDesc": "<orangeStrong>Recupera la energía</orangeStrong> de un personaje aliado y aplica Beatitud a ese aliado y a su invocación. Aumenta el Daño CRIT de los aliados con Beatitud.",
+        "tag": "Apoyo"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cuerpo de la confesión",
+        "fullDesc": "Al lanzar la habilidad básica, la Prob. CRIT del objetivo aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Dura {{2}} turnos.",
+        "shortDesc": "Al lanzar la habilidad básica, la Prob. CRIT del objetivo aumenta.",
+        "tag": "Apoyo"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Misterios gloriosos",
+        "fullDesc": "Tras usar la técnica, la primera vez que Sunday lance una habilidad sobre un aliado en la siguiente batalla, el daño que inflige el objetivo aumenta en un {{1, percent}}% durante {{2}} turnos.",
+        "shortDesc": "Tras usar la técnica, la primera vez que Sunday lance una habilidad sobre un aliado en la siguiente batalla, el daño que inflige el objetivo aumenta.",
+        "tag": "Apoyo"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Anhelo dominical",
+        "fullDesc": "Si al lanzar la habilidad definitiva el objetivo no llega a recuperar {{1}} pts. de energía, la energía recuperada aumenta hasta {{1}} pts."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Plumero sublime",
+        "fullDesc": "Sunday recupera {{1}} pts. de energía al comenzar la batalla."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Paz en las manos",
+        "fullDesc": "Al lanzar la habilidad básica, se disipa {{1}} estado negativo del objetivo."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Resurgimiento del milenarismo",
+      "desc": "Cuando Sunday lanza la habilidad básica, hace que el personaje y la invocación objetivos de la habilidad ignoren respectivamente un {{2, percent}}% y un {{3, percent}}% de la DEF del enemigo al infligir daño durante {{1}} turnos."
+    },
+    "2": {
+      "name": "La fe suple los defectos",
+      "desc": "Recupera {{2}} pts. de habilidad básica después de lanzar la habilidad definitiva por primera vez. El daño que inflige el aliado con Beatitud aumenta en un {{1, percent}}%."
+    },
+    "3": {
+      "name": "Cenobio de las espinas",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Preámbulo de la escultura",
+      "desc": "Recupera {{1}} pts. de energía al comienzo del turno."
+    },
+    "5": {
+      "name": "Barquita en el mar de estrellas",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Alba del clamor sideral",
+      "desc": "El efecto de aumento de Prob. CRIT del talento pasa a ser acumulable y se puede acumular hasta {{1}} veces. Además, la duración del talento aumenta en {{3}} turno. Cuando Sunday lanza su habilidad definitiva, también implanta el efecto de aumento de la Prob. CRIT del talento al objetivo. Cuando el efecto de aumento de la Prob. CRIT del talento está activo y la Prob. CRIT del objetivo sobrepasa el 100%, cada 1% de Prob. CRIT excedente aumenta el Daño CRIT en un {{2, percent}}%."
+    }
+  }
+}

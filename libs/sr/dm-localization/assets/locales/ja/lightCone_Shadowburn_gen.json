@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#も}燃{RUBY_E#}ゆる{RUBY_B#かげ}影{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#びか}美化{RUBY_E#}",
+    "description": "装備キャラが戦闘中に初めて記憶の精霊を召喚する時、SPを{{1}}回復し、自身のEPを<orangeStrong>{{2}}</orangeStrong>回復する。"
+  }
+}

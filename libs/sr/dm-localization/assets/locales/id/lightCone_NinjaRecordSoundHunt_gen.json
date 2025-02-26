@@ -1,0 +1,7 @@
+{
+  "name": "Ninja Record: Sound Hunt",
+  "passive": {
+    "name": "Curtains Up!",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Max HP pengguna. Setelah pengguna kehilangan HP atau memulihkan HP dirinya, CRIT DMG akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong> selama {{3}} giliran. Efek ini hanya dapat dipicu 1 kali di setiap giliran."
+  }
+}

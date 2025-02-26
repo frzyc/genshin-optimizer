@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "장대 타기",
-        "fullDesc": "일반 공격이 {{1, percent}}%의 기본 확률로 적을 전투 스킬과 동일한 연소 상태에 빠트린다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "일반 공격이 {{1, percent}}%의 기본 확률로 적을 전투 스킬과 동일한 연소 상태에 빠트린다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "장애물 통과",
-        "fullDesc": "전투 시작 시 계네빈의 행동 게이지가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "전투 시작 시 계네빈의 행동 게이지가 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "칼날 위 걷기",
-        "fullDesc": "연소 상태에 빠진 적에게 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "연소 상태에 빠진 적에게 가하는 피해가 {{1, percent}}% 증가한다"
       }
     }
   },

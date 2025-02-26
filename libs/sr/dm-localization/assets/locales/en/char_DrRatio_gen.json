@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Cogito, Ergo Sum",
-        "fullDesc": "When using his Skill, Dr. Ratio has a {{2, percent}}% fixed chance of launching a follow-up attack against his target for 1 time, dealing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK. For each debuff the target enemy has, the fixed chance of launching follow-up attack increases by {{3, percent}}%. If the target enemy is defeated before the follow-up attack triggers, the follow-up attack will be directed at a single random enemy instead.",
+        "fullDesc": "When using his Skill, Dr. Ratio has a {{2, percent}}% fixed chance of launching a Follow-up ATK against his target for 1 time, dealing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK. For each debuff the target enemy has, the fixed chance of launching Follow-up ATK increases by {{3, percent}}%. If the target enemy is defeated before the Follow-up ATK triggers, the Follow-up ATK will be directed at a single random enemy instead.",
         "shortDesc": "When using Skill, there is a chance to launch 1 instance of <orangeStrong>Follow-up ATK</orangeStrong> on the target, dealing Imaginary DMG.",
         "tag": "Single Target"
       }
@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Mold of Idolatry",
-        "fullDesc": "After using Technique, creates a Special Dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this Special Dimension, there is a {{2, percent}}% base chance to reduce each single enemy target's SPD by {{3, percent}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Technique, creates a Special Dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this Special Dimension, there is a {{2, percent}}% base chance to reduce each single enemy target's SPD by {{3, percent}}% for {{4}} turn(s). Only 1 Dimension Effect created by allies can exist at the same time.",
         "shortDesc": "Creates a Special Dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <orangeStrong>reduce SPD</orangeStrong> of enemy targets.",
         "tag": "Impair"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Summation",
-        "fullDesc": "When Dr. Ratio uses his Skill, for every debuff on the target, his CRIT Rate increases by {{1, percent(fixed: 1)}}% and CRIT DMG by {{2, percent}}%. This effect can stack up to {{3}} time(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Dr. Ratio uses his Skill, for every debuff on the target, his CRIT Rate increases by {{1, percent(fixed: 1)}}% and CRIT DMG by {{2, percent}}%. This effect can stack up to {{3}} time(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inference",
-        "fullDesc": "When Skill is used to attack an enemy target, there is a {{1, percent}}% base chance to reduce the attacked enemy target's Effect RES by {{2, percent}}% for {{3}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Skill is used to attack an enemy target, there is a {{1, percent}}% base chance to reduce the attacked enemy target's Effect RES by {{2, percent}}% for {{3}} turn(s)."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Deduction",
-        "fullDesc": "When dealing DMG to a target that has {{1}} or more debuff(s), for each debuff the target has, the DMG dealt by Dr. Ratio to this target increases by {{2, percent}}%, up to a maximum increase of {{3, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When dealing DMG to a target that has {{1}} or more debuff(s), for each debuff the target has, the DMG dealt by Dr. Ratio to this target increases by {{2, percent}}%, up to a maximum increase of {{3, percent}}%."
       }
     }
   },

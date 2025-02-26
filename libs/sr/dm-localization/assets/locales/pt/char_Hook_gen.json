@@ -51,32 +51,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Inocência",
-        "fullDesc": "Hook restaura {{1, percent}}% de seus PV máximos sempre que utilizar seu Talento.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Hook restaura {{1, percent}}% de seus PV máximos sempre que utilizar seu Talento."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ingenuidade",
-        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Brincando com Fogo",
-        "fullDesc": "Após usar a Perícia Suprema, Hook tem sua ação Avançada Adiante em {{2, percent}}% e regenera mais {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Após usar a Perícia Suprema, Hook tem sua ação Avançada Adiante em {{2, percent}}% e regenera mais {{1}} de Energia."
       }
     }
   },

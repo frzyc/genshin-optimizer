@@ -1,0 +1,7 @@
+{
+  "name": "Sweat Now, Cry Less",
+  "passive": {
+    "name": "Come Train!",
+    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อภูตความทรงจำของผู้สวมใส่ อยู่ในการต่อสู้ ผู้สวมใส่และภูตความทรงจำ จะสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong>"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "name": "Feixiao",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Éclair tonitruant",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Feixiao à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hache de guerre",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Feixiao à une cible ennemie unique, puis lance immédiatement 1 instance supplémentaire de l'ATQ de suivi du talent contre la cible.",
+        "shortDesc": "Inflige des DGT de vent à un ennemi, et déclenche l'ATQ de suivi du talent 1 fois.",
+        "tag": "Cible unique"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Fracture du monde",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Feixiao à une cible ennemie unique, en ignorant ses types de faiblesses pour réduire sa robustesse. Si la cible n'est pas en état de Rupture de faiblesse, l'efficacité de Rupture de faiblesse de Feixiao augmente de {{2, percent}}%.<br>Durant l'attaque, Feixiao déclenche d'abord Éclair tonitruant des étoiles ou Hache de guerre céleste {{3}} fois sur la cible.<br>Puis, elle inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à la cible.",
+        "shortDesc": "L'ultime permet d'<orangeStrong>ignorer les types de faiblesses</orangeStrong> de l'ennemi pour réduire sa robustesse. Si la cible n'est pas en état de Rupture de faiblesse, l'<orangeStrong>efficacité de Rupture de faiblesse</orangeStrong> de Feixiao augmente. <br>Lance Éclair tonitruant des étoiles ou Hache de guerre céleste sur un ennemi unique <orangeStrong>{{3}}</orangeStrong> fois et inflige des DGT de vent à la fin.",
+        "tag": "Cible unique"
+      },
+      "1": {
+        "name": "Éclair tonitruant des étoiles",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Feixiao à une cible sélectionnée. Si la cible subit une Rupture de faiblesse, le multiplicateur de DGT augmente de <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique et augmente le multiplicateur de DGT contre les cibles qui subissent une <orangeStrong>Rupture de faiblesse</orangeStrong>.",
+        "tag": "Cible unique"
+      },
+      "2": {
+        "name": "Hache de guerre céleste",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Feixiao à une cible sélectionnée. Si la cible n'est pas en état de Rupture de faiblesse, le multiplicateur de DGT augmente de <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique et augmente le multiplicateur de DGT contre les cibles qui ne subissent pas de <orangeStrong>Rupture de faiblesse</orangeStrong>.",
+        "tag": "Cible unique"
+      },
+      "3": {
+        "name": "Fracture du monde",
+        "shortDesc": "L'ultime permet d'<orangeStrong>ignorer les types de faiblesses</orangeStrong> de l'ennemi pour réduire sa robustesse. Si la cible n'est pas en état de Rupture de faiblesse, l'<orangeStrong>efficacité de Rupture de faiblesse</orangeStrong> de Feixiao augmente. <br>Lance Éclair tonitruant des étoiles ou Hache de guerre céleste sur un ennemi unique <orangeStrong>{{3}}</orangeStrong> fois et inflige des DGT de vent à la fin.",
+        "tag": "Cible unique"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Traque-tonnerre",
+        "fullDesc": "Feixiao peut activer son ultime à partir de {{3}} points de Chimère volante, le cumul maximum de points étant de {{4}}. Feixiao obtient 1 point de Chimère volante toutes les {{2}} attaques par des cibles alliées, les attaques de l'ultime de Feixiao n'étant pas prises en compte.<br>Après qu'un coéquipier a attaqué une cible ennemie, Feixiao lance immédiatement une ATQ de suivi sur la cible principale, infligeant des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Feixiao. S'il n'y a pas de cible principale à attaquer, Feixiao attaque un ennemi unique aléatoire à la place. Cet effet ne peut être déclenché qu'une fois par tour et le nombre de déclenchements se réinitialise au début du tour de Feixiao. Les DGT infligés par Feixiao augmentent de <orangeStrong>{{5, percent}}%</orangeStrong> pendant {{6}} tours lorsqu'elle utilise cette attaque.",
+        "shortDesc": "Feixiao peut activer son ultime à partir de <orangeStrong>{{3}}</orangeStrong> points de Chimère volante, le cumul maximum de points étant de <orangeStrong>{{4}}</orangeStrong>. Feixiao obtient <orangeStrong>Chimère volante</orangeStrong> toutes les <orangeStrong>{{2}}</orangeStrong> attaques par des cibles alliées.<br>Feixiao lance une <orangeStrong>ATQ de suivi</orangeStrong> sur la cible principale après l'attaque d'un coéquipier, infligeant des DGT de vent. Cet effet ne peut être déclenché qu'une fois par tour et les <orangeStrong>DGT infligés par Feixiao</orangeStrong> augmentent lorsqu'elle utilise cette attaque.",
+        "tag": "Cible unique"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Manifestation de tempête",
+        "fullDesc": "Après avoir utilisé la technique, le personnage entre dans l'état Charge intrépide pendant {{1}} secondes. Dans cet état, le personnage attire les ennemis à une certaine distance et sa vitesse de déplacement augmente de {{2, percent}}%. Obtient {{4}} point de Chimère volante après être entré en combat.<br>Attaquer de manière active en état de Charge intrépide engage le combat avec tous les ennemis attirés. Inflige des DGT de vent équivalents à {{3, percent}}% de l'ATQ de Feixiao à tous les ennemis au début de chaque vague après être entré en combat. Ces DGT sont garantis d'être des DGT critiques. S'il y a plus d'1 ennemi attiré, le multiplicateur de ces DGT augmente de {{5, percent}}% pour chaque ennemi supplémentaire attiré, jusqu'à un maximum de {{6, percent}}%.",
+        "shortDesc": "Entre en état de Charge intrépide. Attire les ennemis en continu et augmente la vitesse de déplacement. Obtient Chimère volante après être entré en combat.<br>Le personnage peut attaquer activement tous les ennemis attirés lorsqu'il est en état de Charge intrépide. Inflige des DGT de vent qui sont garantis d'être des DGT critiques à tous les ennemis au début de chaque vague. <orangeStrong>Plus il y a d'ennemis attirés, plus le multiplicateur de DGT est élevé</orangeStrong>.",
+        "tag": "Renforcement"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Connexion céleste",
+        "fullDesc": "Obtient {{1}} points de Chimère volante en début de combat.<br>Si l'ATQ de suivi du talent n'a pas été déclenchée lors du tour précédent, une attaque supplémentaire est ajoutée au nombre d'attaques comptabilisées pour obtenir 1 point de Chimère volante au début du tour."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Transcendance spirituelle",
+        "fullDesc": "Les ultimes utilisés pour infliger des DGT à une cible ennemie sont considérés comme des ATQ de suivi. Augmente les DGT critiques des ATQ de suivi de {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Fulgurance de la foudre",
+        "fullDesc": "Lors de l'utilisation de la compétence, l'ATQ augmente de {{1, percent}}% pendant {{2}} tours."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Apaisement des cieux",
+      "desc": "Après avoir lancé Éclair tonitruant des étoiles ou Hache de guerre céleste, les DGT d'ultime infligés par Feixiao augmentent d'un montant équivalent à {{1, percent}}% des DGT initiaux. Cet effet est cumulable jusqu'à {{2}} fois et dure jusqu'à la fin de l'action de l'ultime."
+    },
+    "2": {
+      "name": "Prière à la Lune",
+      "desc": "Dans l'effet du talent, chaque fois qu'une cible alliée déclenche 1 instance de l'ATQ de suivi, Feixiao obtient 1 point de Chimère volante. Cet effet peut se déclencher jusqu'à {{1}} fois par tour."
+    },
+    "3": {
+      "name": "Étoile de prospérité",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Chant de la tempête",
+      "desc": "La réduction de robustesse de l'ATQ de suivi du talent augmente de {{1, percent}}%, et la VIT du personnage augmente de {{2, percent}}% pendant {{3}} tours lorsqu'elle se déclenche."
+    },
+    "5": {
+      "name": "Ascension céleste",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Retour à la terre ancestrale",
+      "desc": "Augmente la PÉN de RÉS à tous les types des DGT d'ultime infligés par Feixiao de {{1, percent}}%. Les DGT de l'ATQ de suivi du talent sont également considérés comme des DGT d'ultime, et son multiplicateur de DGT augmente de {{2, percent}}%."
+    }
+  }
+}

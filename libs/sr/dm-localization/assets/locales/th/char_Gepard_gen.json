@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integrity",
-        "fullDesc": "Gepard มีโอกาสถูกศัตรูโจมตีเพิ่มขึ้น",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Gepard มีโอกาสถูกศัตรูโจมตีเพิ่มขึ้น"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Commander",
-        "fullDesc": "หลังจากปล่อย \"Unyielding Will\" แล้ว พลังงานของ Gepard จะฟื้นฟูจนถึง 100% ทันที",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "หลังจากปล่อย \"Unyielding Will\" แล้ว พลังงานของ Gepard จะฟื้นฟูจนถึง 100% ทันที"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "วิญญาณนักสู้",
-        "fullDesc": "ATK ของ Gepard จะเพิ่มขึ้น {{1, percent}}% ของ DEF ของตัวเองในขณะนั้น โดยเอฟเฟกต์นี้จะรีเฟรชเมื่อเริ่มต้นแต่ละเทิร์น",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "ATK ของ Gepard จะเพิ่มขึ้น {{1, percent}}% ของ DEF ของตัวเองในขณะนั้น โดยเอฟเฟกต์นี้จะรีเฟรชเมื่อเริ่มต้นแต่ละเทิร์น"
       }
     }
   },

@@ -19,7 +19,8 @@
     "Nihility": "A Inexistência",
     "Destruction": "A Destruição",
     "Harmony": "A Harmonia",
-    "TheHunt": "A Caça"
+    "TheHunt": "A Caça",
+    "Remembrance": "A Recordação"
   },
   "ability": {
     "basic": "ATQ Básico",
@@ -30,10 +31,15 @@
   },
   "dmgType": {
     "single": "Alvo Único",
-    "aoe": "Área",
+    "aoe": "ATQ de Área",
     "bounce": "Rebote",
     "blast": "Explosão",
     "support": "Suporte",
-    "impair": "Incapacitação"
+    "impair": "Incapacitação",
+    "restore": "Restauração",
+    "defense": "Defesa",
+    "enhance": "Aprimorar",
+    "charging": "Carregamento",
+    "summon": "Invocação"
   }
 }

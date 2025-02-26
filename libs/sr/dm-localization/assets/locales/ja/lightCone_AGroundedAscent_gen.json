@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#だいち}大地{RUBY_E#}より{RUBY_B#てん}天{RUBY_E#}を{RUBY_B#めざ}目指{RUBY_E#}して",
+  "passive": {
+    "name": "{RUBY_B#あら}新{RUBY_E#}たなる{RUBY_B#たびだ}旅立{RUBY_E#}ち",
+    "description": "装備キャラが味方キャラ単体に戦闘スキル、または必殺技を発動すると、装備キャラはEPを<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>回復し、スキルターゲットは「聖なる詠唱」を1層獲得する、{{4}}ターン継続。最大で{{3}}層累積できる。「聖なる詠唱」1層につき、所持者の与ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。装備キャラが味方キャラ単体に戦闘スキル、または必殺技を{{5}}回発動するたびに、SPを1回復する。"
+  }
+}

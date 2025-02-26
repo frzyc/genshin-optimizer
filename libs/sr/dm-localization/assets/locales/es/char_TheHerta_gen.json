@@ -1,0 +1,102 @@
+{
+  "name": "Sra. Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "¿Lo captas?",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de la Sra. Herta como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "La que sabe, sabe",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de la Sra. Herta como Daño de Hielo a un enemigo y le aplica {{2}} acumulación de Interpretación. Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de la Sra. Herta como Daño de Hielo al objetivo de la habilidad básica y a los objetivos adyacentes, y este efecto se repite 2 veces.",
+        "shortDesc": "Inflige daño a un enemigo. Inflige daño al objetivo de la habilidad básica y a los objetivos adyacentes, y este efecto se repite 2 veces.",
+        "tag": "Ráfaga"
+      },
+      "1": {
+        "name": "Tengo una idea genial",
+        "fullDesc": "Consume 1 acumulación de Inspiración, inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de la Sra. Herta como Daño de Hielo a un enemigo y le aplica {{2}} acumulación de Interpretación. Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de la Sra. Herta como Daño de Hielo al objetivo de esta habilidad básica y a los objetivos adyacentes, y se repite 2 veces. Luego, inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a todos los enemigos.",
+        "shortDesc": "Inflige daño a un enemigo. Inflige daño al objetivo de esta habilidad básica y a los objetivos adyacentes; esto se repite 2 veces. Después, inflige daño a todos los enemigos.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Te dije que era magia",
+        "fullDesc": "Reordena las acumulaciones de Interpretación de todos los enemigos y prioriza transferir la mayor cantidad de acumulaciones de Interpretación a los enemigos de élite o de nivel superior. Después inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de la Sra. Herta como Daño de Hielo a todos los enemigos. Al lanzar la habilidad definitiva, el ATQ de la Sra. Herta aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong> durante {{5}} turnos. Tras lanzarla, la Sra. Herta actúa inmediatamente y obtiene una acumulación de Inspiración, hasta un máximo de {{6}} acumulaciones. Cuando tiene Inspiración, su habilidad básica se potencia y se convierte en Tengo una idea genial.",
+        "shortDesc": "<orangeStrong>Reordena las acumulaciones</orangeStrong> de Interpretación de todos los enemigos y prioriza transferir la mayor cantidad de acumulaciones de Interpretación a los enemigos de élite o de nivel superior. Después inflige Daño de Hielo a todos los enemigos. Tras lanzar esta habilidad, obtiene una habilidad básica potenciada y actúa inmediatamente.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dame eso",
+        "fullDesc": "Cuando un enemigo entra en combate, la Sra. Herta le aplica 1 acumulación de Interpretación. Al comienzo de cada oleada, aplica {{6}} acumulaciones de Interpretación a un enemigo al azar, priorizando los enemigos de élite o de nivel superior. Cuando el objetivo principal de la habilidad básica potenciada tiene Interpretación, el multiplicador de daño aumenta. Por cada acumulación, el daño que recibe el objetivo principal/los demás objetivos aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Si en el equipo hay 2 o más personajes de la Vía de la Erudición, el daño que recibe el objetivo principal/los demás objetivos aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> adicional por cada acumulación. Interpretación se puede acumular hasta {{3}} veces. Al usar la habilidad básica potenciada, las acumulaciones de Interpretación del objetivo principal se reducen a 1. Cuando un objetivo enemigo abandona el campo de batalla o es eliminado por cualquier unidad, sus acumulaciones de Interpretación se transfieren (prioriza los enemigos de élite o de nivel superior).",
+        "shortDesc": "El daño que inflige la habilidad básica potenciada <orangeStrong>aumenta en función de la cantidad de acumulaciones de Interpretación</orangeStrong> del objetivo.",
+        "tag": "Potenciación"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Espejito, espejito",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de la Sra. Herta aumenta en un {{1, percent}}% durante {{2}} turnos. <br>Si en la escena actual quedan tesoros normales, tras usar la técnica se marca la ubicación de hasta {{3}} tesoros normales.<br>Al entrar en combate en el Universo Simulado o en el Universo Diferenciado tras haber usado la técnica, al comienzo de cada oleada inflige a los enemigos de nivel inferior a élite un Daño verdadero equivalente al {{4, percent}}% de sus respectivos PV máx., mientras que a los objetivos de élite o de nivel superior les inflige un Daño verdadero equivalente al {{5, percent}}% de sus PV máx.",
+        "shortDesc": "Tras usar la técnica, <orangeStrong>se marcan las ubicaciones de cierto número de tesoros normales</orangeStrong>. Además, al comenzar la siguiente batalla, el ATQ de la Sra. Herta aumenta.<br>Al entrar en combate en el Universo Simulado o en el Universo Diferenciado tras haber usado la técnica, se inflige una gran cantidad de Daño verdadero a todos los enemigos al comienzo de cada oleada.",
+        "tag": "Potenciación"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, reduce la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sinceridad indiferente",
+        "fullDesc": "Cuando un aliado ataca, aplica 1 acumulación de Interpretación a los enemigos golpeados. Tras el ataque, la Sra. Herta recupera {{1}} pts. de energía por cada enemigo golpeado. Se cuenta un máximo de 5 enemigos. Si al lanzar la habilidad básica potenciada el objetivo principal alcanza 42 acumulaciones de Interpretación, el daño que inflige la Sra. Herta aumenta en un {{2, percent}}% hasta que termine el ataque."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Noticias de la frontera del conocimiento",
+        "fullDesc": "Al entrar en combate, si en el equipo hay 2 o más personajes de la Vía de la Erudición, el Daño CRIT de todos los aliados aumenta en un {{1, percent}}%. Cuando el Rastro Sinceridad indiferente calcula los enemigos golpeados, se cuentan al menos {{2}} enemigos. Tras el ataque, se aplica {{3}} acumulación de Interpretación al enemigo que tenga más acumulaciones. Si el atacante es un personaje de la Vía de la Erudición, se aplican {{4}} acumulaciones adicionales de Interpretación."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Paisaje de vacíos famélico",
+        "fullDesc": "Por cada acumulación de Interpretación que se aplique al enemigo, la Sra. Herta obtiene una acumulación de Respuesta, hasta un máximo de {{2}} acumulaciones. Al lanzar la habilidad definitiva, el multiplicador de daño de la habilidad definitiva lanzada esta vez aumenta en un {{1, percent(fixed: 1)}}% por cada acumulación de Respuesta."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Noche de estrellas fugaces",
+      "desc": "Cuando la habilidad básica potenciada calcula las acumulaciones de Interpretación, se calculan adicionalmente un {{1, percent}}% de las acumulaciones de Interpretación del objetivo que más acumulaciones tenga de entre el objetivo principal y los objetivos adyacentes. Cuando se restablecen las acumulaciones de Interpretación al lanzar la habilidad básica potenciada, estas acumulaciones se restablecen a {{2}} en su lugar."
+    },
+    "2": {
+      "name": "El viento por la cerradura",
+      "desc": "Al entrar en combate y tras lanzar la habilidad definitiva, la Sra. Herta obtiene 1 acumulación adicional de Inspiración. Tras lanzar la habilidad básica potenciada, la siguiente acción de la Sra. Herta se adelanta un {{1, percent}}%."
+    },
+    "3": {
+      "name": "Puerta al verano",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "La decimosexta llave",
+      "desc": "Aumenta en un {{1, percent}}% la VEL de los personajes del equipo que siguen la Vía de la Erudición."
+    },
+    "5": {
+      "name": "Las verdades duelen",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "El embrujo de las respuestas",
+      "desc": "La PEN de la RES a Hielo de la Sra. Herta aumenta en un {{4, percent}}%. Si hay 3 (o más)/2/1 enemigos en el campo de batalla, el multiplicador de daño de la habilidad definitiva aumenta en un {{1, percent}}%/{{2, percent}}%/{{3, percent}}%."
+    }
+  }
+}

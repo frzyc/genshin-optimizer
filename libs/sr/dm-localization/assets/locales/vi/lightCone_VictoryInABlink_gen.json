@@ -1,0 +1,7 @@
+{
+  "name": "Chiến Thắng Trong Chớp Mắt",
+  "passive": {
+    "name": "Đòn Đánh Cuối Cùng",
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Sát Thương Bạo Kích cho người trang bị. Khi Linh Hồn Ký Ức của người trang bị thi triển kỹ năng với mục tiêu phe ta, sẽ khiến Sát Thương toàn bộ mục tiêu phe ta gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e quando a batalha começa, reduz a Tenacidade dele do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Dance Para Mim",
-        "fullDesc": "Quando o número de inimigos-alvo em campo for 5 (ou mais)/4/3/2/1, o Super Dano de Quebra ativado pelo efeito de \"Dançarino de Apoio\" aumenta em {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando o número de inimigos-alvo em campo for 5 (ou mais)/4/3/2/1, o Super Dano de Quebra ativado pelo efeito de \"Dançarino de Apoio\" aumenta em {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Siga o Fluxo",
-        "fullDesc": "Ao usar a Perícia, aumenta a Redução de Tenacidade adicionalmente da primeira instância de Dano em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia, aumenta a Redução de Tenacidade adicionalmente da primeira instância de Dano em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chapéu do Teatro",
-        "fullDesc": "Após aliados-alvo causarem Quebra de Fraqueza, atrasa adicionalmente a ação do inimigo-alvo em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Após aliados-alvo causarem Quebra de Fraqueza, atrasa adicionalmente a ação do inimigo-alvo em {{1, percent}}%."
       }
     }
   },

@@ -45,32 +45,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
-        "shortDesc": "",
         "tag": "Đánh Đơn"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Thăm Dò Trước",
-        "fullDesc": "Sau khi mục tiêu có Phản Ứng Sinh Tồn bị tấn công, Lynx sẽ hồi ngay {{1}} điểm năng lượng.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Sau khi mục tiêu có Phản Ứng Sinh Tồn bị tấn công, Lynx sẽ hồi ngay {{1}} điểm năng lượng."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Kỹ Thuật Thám Hiểm",
-        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sống Sót Trong Nghịch Cảnh",
-        "fullDesc": "Hiệu ứng hồi liên tục của Thiên Phú kéo dài {{1}} hiệp.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Hiệu ứng hồi liên tục của Thiên Phú kéo dài {{1}} hiệp."
       }
     }
   },

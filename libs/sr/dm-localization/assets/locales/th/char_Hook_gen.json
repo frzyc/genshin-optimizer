@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Innocence",
-        "fullDesc": "เมื่อใช้พรสวรรค์ จะฟื้นฟู HP {{1, percent}}% ของ HP สูงสุดของ Hook",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่อใช้พรสวรรค์ จะฟื้นฟู HP {{1, percent}}% ของ HP สูงสุดของ Hook"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivete",
-        "fullDesc": "โอกาสต้านทาน สถานะ Debuff ประเภทควบคุม เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "โอกาสต้านทาน สถานะ Debuff ประเภทควบคุม เพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Playing With Fire",
-        "fullDesc": "หลังจากปล่อยท่าไม้ตาย Hook จะ เร่งแอ็กชัน {{2, percent}}% และจะฟื้นฟูพลังงานเพิ่มเติม {{1}} หน่วย",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "หลังจากปล่อยท่าไม้ตาย Hook จะ เร่งแอ็กชัน {{2, percent}}% และจะฟื้นฟูพลังงานเพิ่มเติม {{1}} หน่วย"
       }
     }
   },

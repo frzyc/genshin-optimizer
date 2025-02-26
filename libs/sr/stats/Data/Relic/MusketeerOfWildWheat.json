@@ -2,22 +2,13 @@
   "setEffects": [
     {
       "numRequired": 2,
-      "passiveStats": {
-        "atk_": 0.12
-      },
-      "otherStats": [
-        0.12
-      ]
+      "passiveStats": { "atk_": 0.12 },
+      "otherStats": [0.12]
     },
     {
       "numRequired": 4,
-      "passiveStats": {
-        "spd_": 0.06
-      },
-      "otherStats": [
-        0.06,
-        0.1
-      ]
+      "passiveStats": { "spd_": 0.06 },
+      "otherStats": [0.06, 0.1]
     }
   ]
 }

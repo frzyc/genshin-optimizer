@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "Meister, trink etwas Tee!",
-        "fullDesc": "Lässt einen Verbündeten außer der Figur selbst zum „Meister“ werden. Seine GES wird um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Nur das letzte Ziel der Fertigkeit gilt als Meister von 7. März.<br>Wenn der Meister mit bestimmten Pfaden auf dem Kampffeld ist, werden entsprechende Effekte beim Einsatz von Standardangriffen oder beim Verursachen von SCH durch verstärkte Standardangriffe mit 1 Treffer ausgelöst:<br>Die Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters zusätzlichen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von 7. März’ ANG.<br>Die Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Der WDS-Reduzierungswert des verursachten SCH wird um {{3, percent}}% erhöht.",
-        "shortDesc": "Lässt einen Verbündeten zum „Meister“ werden. Wenn er seinen Standardangriff einsetzt oder SCH durch einen verstärkten Standardangriff verursacht, wird basierend auf dem <orangeStrong>Pfad des Meisters</orangeStrong> der entsprechende Effekt ausgelöst.<br>Die Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters <orangeStrong>zusätzlichen SCH</orangeStrong>.<br>Die Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Erhöht <orangeStrong>WDS-Reduzierungswert</orangeStrong>.",
+        "fullDesc": "Lässt einen Verbündeten außer der Figur selbst zum „Meister“ werden. Seine GES wird um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Nur das letzte Ziel der Fertigkeit gilt als Meister von 7. März.<br>Wenn der Meister mit bestimmten Pfaden auf dem Kampffeld ist, werden entsprechende Effekte beim Einsatz von Standardangriffen oder beim Verursachen von SCH durch verstärkte Standardangriffe mit 1 Treffer ausgelöst:<br>Die Gelehrsamkeit, Die Zerstörung, Die Jagd, Das Gedenken: Verursacht basierend auf dem Typ des Meisters zusätzlichen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von 7. März’ ANG.<br>Die Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Erhöht den WDS-Reduzierungswert dieses SCH um {{3, percent}}%.",
+        "shortDesc": "Lässt einen Verbündeten zum „Meister“ werden. Wenn er seinen Standardangriff einsetzt oder SCH durch einen verstärkten Standardangriff verursacht, wird basierend auf dem <orangeStrong>Pfad des Meisters</orangeStrong> der entsprechende Effekt ausgelöst.<br>Die Gelehrsamkeit, Die Zerstörung, Die Jagd, Das Gedenken: Verursacht basierend auf dem Typ des Meisters <orangeStrong>zusätzlichen SCH</orangeStrong>.<br>Die Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Erhöht <orangeStrong>WDS-Reduzierungswert</orangeStrong>.",
         "tag": "Unterstützung"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Anmut",
-        "fullDesc": "Beim Kampfbeginn wird 7. März’ Aktion um {{1, percent}}% vorgezogen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Beim Kampfbeginn wird 7. März’ Aktion um {{1, percent}}% vorgezogen."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Zartheit",
-        "fullDesc": "7. März kann den WDS von Gegnern mit der Schwäche vom Typ des Meisters reduzieren. Wenn Schwächebruch erlitten wird, wird auch der Effekt von Schwächebruch des Typs Imaginär ausgelöst.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "7. März kann den WDS von Gegnern mit der Schwäche vom Typ des Meisters reduzieren. Wenn Schwächebruch erlitten wird, wird auch der Effekt von Schwächebruch des Typs Imaginär ausgelöst."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gezeitenwechsel",
-        "fullDesc": "Erhöht nach dem Einsatz des verstärkten Standardangriffs den KRIT-SCH des Meisters für {{3}} Rd. um {{1, percent}}% und seinen Brucheffekt um {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht nach dem Einsatz des verstärkten Standardangriffs den KRIT-SCH des Meisters für {{3}} Rd. um {{1, percent}}% und seinen Brucheffekt um {{2, percent}}%."
       }
     }
   },

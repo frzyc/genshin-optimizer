@@ -5635,6 +5635,327 @@
       ]
     }
   },
+  "1218": {
+    "1": {
+      "RankID": 121801,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_121801",
+      "Desc": "AvatarRankDesc_121801",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1218/SkillIcon_1218_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11218,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.4
+        },
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "2": {
+      "RankID": 121802,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_121802",
+      "Desc": "AvatarRankDesc_121802",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1218/SkillIcon_1218_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11218,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 3
+        }
+      ]
+    },
+    "3": {
+      "RankID": 121803,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_121803",
+      "Desc": "AvatarRankDesc_121803",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1218/SkillIcon_1218_BP.png",
+      "SkillAddLevelList": {
+        "121801": 1,
+        "121802": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11218,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 121804,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_121804",
+      "Desc": "AvatarRankDesc_121804",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1218/SkillIcon_1218_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11218,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        }
+      ]
+    },
+    "5": {
+      "RankID": 121805,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_121805",
+      "Desc": "AvatarRankDesc_121805",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1218/SkillIcon_1218_Ultra.png",
+      "SkillAddLevelList": {
+        "121803": 2,
+        "121804": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11218,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 121806,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_121806",
+      "Desc": "AvatarRankDesc_121806",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1218/SkillIcon_1218_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11218,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        },
+        {
+          "Value": 9
+        },
+        {
+          "Value": 0.03
+        }
+      ]
+    }
+  },
+  "1220": {
+    "1": {
+      "RankID": 122001,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_122001",
+      "Desc": "AvatarRankDesc_122001",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1220/SkillIcon_1220_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11220,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 5
+        }
+      ]
+    },
+    "2": {
+      "RankID": 122002,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_122002",
+      "Desc": "AvatarRankDesc_122002",
+      "ExtraEffectIDList": [
+        10000004
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1220/SkillIcon_1220_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11220,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 6
+        }
+      ]
+    },
+    "3": {
+      "RankID": 122003,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_122003",
+      "Desc": "AvatarRankDesc_122003",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1220/SkillIcon_1220_Ultra.png",
+      "SkillAddLevelList": {
+        "122001": 1,
+        "122003": 2,
+        "122008": 2,
+        "122009": 2,
+        "122014": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11220,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 122004,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_122004",
+      "Desc": "AvatarRankDesc_122004",
+      "ExtraEffectIDList": [
+        10000004
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1220/SkillIcon_1220_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11220,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        },
+        {
+          "Value": 0.08
+        },
+        {
+          "Value": 2
+        }
+      ]
+    },
+    "5": {
+      "RankID": 122005,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_122005",
+      "Desc": "AvatarRankDesc_122005",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1220/SkillIcon_1220_BP.png",
+      "SkillAddLevelList": {
+        "122002": 2,
+        "122004": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11220,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 122006,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_122006",
+      "Desc": "AvatarRankDesc_122006",
+      "ExtraEffectIDList": [
+        30000005,
+        10000004
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1220/SkillIcon_1220_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_Feixiao_00_Rank06"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 11220,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 1.4
+        }
+      ]
+    }
+  },
   "1221": {
     "1": {
       "RankID": 122101,
@@ -5792,6 +6113,319 @@
       ]
     }
   },
+  "1222": {
+    "1": {
+      "RankID": 122201,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_122201",
+      "Desc": "AvatarRankDesc_122201",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1222/SkillIcon_1222_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11222,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.5
+        }
+      ]
+    },
+    "2": {
+      "RankID": 122202,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_122202",
+      "Desc": "AvatarRankDesc_122202",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1222/SkillIcon_1222_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11222,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.4
+        },
+        {
+          "Value": 3
+        }
+      ]
+    },
+    "3": {
+      "RankID": 122203,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_122203",
+      "Desc": "AvatarRankDesc_122203",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1222/SkillIcon_1222_Ultra.png",
+      "SkillAddLevelList": {
+        "122203": 2,
+        "122204": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11222,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 122204,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_122204",
+      "Desc": "AvatarRankDesc_122204",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1222/SkillIcon_1222_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11222,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.4
+        }
+      ]
+    },
+    "5": {
+      "RankID": 122205,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_122205",
+      "Desc": "AvatarRankDesc_122205",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1222/SkillIcon_1222_BP.png",
+      "SkillAddLevelList": {
+        "122201": 1,
+        "122202": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11222,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 122206,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_122206",
+      "Desc": "AvatarRankDesc_122206",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1222/SkillIcon_1222_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11222,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.5
+        },
+        {
+          "Value": 5
+        }
+      ]
+    }
+  },
+  "1223": {
+    "1": {
+      "RankID": 122301,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_122301",
+      "Desc": "AvatarRankDesc_122301",
+      "ExtraEffectIDList": [
+        10000005
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1223/SkillIcon_1223_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11223,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 2
+        },
+        {
+          "Value": 20
+        }
+      ]
+    },
+    "2": {
+      "RankID": 122302,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_122302",
+      "Desc": "AvatarRankDesc_122302",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1223/SkillIcon_1223_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11223,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.4
+        }
+      ]
+    },
+    "3": {
+      "RankID": 122303,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_122303",
+      "Desc": "AvatarRankDesc_122303",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1223/SkillIcon_1223_Ultra.png",
+      "SkillAddLevelList": {
+        "122303": 2,
+        "122304": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11223,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 122304,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_122304",
+      "Desc": "AvatarRankDesc_122304",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1223/SkillIcon_1223_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11223,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 2
+        }
+      ]
+    },
+    "5": {
+      "RankID": 122305,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_122305",
+      "Desc": "AvatarRankDesc_122305",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1223/SkillIcon_1223_BP.png",
+      "SkillAddLevelList": {
+        "122301": 1,
+        "122302": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11223,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 122306,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_122306",
+      "Desc": "AvatarRankDesc_122306",
+      "ExtraEffectIDList": [
+        10000004
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1223/SkillIcon_1223_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11223,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.25
+        }
+      ]
+    }
+  },
   "1224": {
     "1": {
       "RankID": 122401,
@@ -5942,6 +6576,156 @@
       "UnlockCost": [
         {
           "ItemID": 11224,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        }
+      ]
+    }
+  },
+  "1225": {
+    "1": {
+      "RankID": 122501,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_122501",
+      "Desc": "AvatarRankDesc_122501",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1225/SkillIcon_1225_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11225,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        }
+      ]
+    },
+    "2": {
+      "RankID": 122502,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_122502",
+      "Desc": "AvatarRankDesc_122502",
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1225/SkillIcon_1225_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11225,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 3
+        },
+        {
+          "Value": 0.24
+        }
+      ]
+    },
+    "3": {
+      "RankID": 122503,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_122503",
+      "Desc": "AvatarRankDesc_122503",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1225/SkillIcon_1225_BP.png",
+      "SkillAddLevelList": {
+        "122501": 1,
+        "122502": 2,
+        "122508": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11225,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 122504,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_122504",
+      "Desc": "AvatarRankDesc_122504",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1225/SkillIcon_1225_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11225,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        }
+      ]
+    },
+    "5": {
+      "RankID": 122505,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_122505",
+      "Desc": "AvatarRankDesc_122505",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1225/SkillIcon_1225_Ultra.png",
+      "SkillAddLevelList": {
+        "122503": 2,
+        "122504": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11225,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 122506,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_122506",
+      "Desc": "AvatarRankDesc_122506",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1225/SkillIcon_1225_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11225,
           "ItemNum": 1
         }
       ],
@@ -7685,6 +8469,165 @@
       ]
     }
   },
+  "1313": {
+    "1": {
+      "RankID": 131301,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_131301",
+      "Desc": "AvatarRankDesc_131301",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1313/SkillIcon_1313_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11313,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 2
+        },
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 0.4
+        }
+      ]
+    },
+    "2": {
+      "RankID": 131302,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_131302",
+      "Desc": "AvatarRankDesc_131302",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1313/SkillIcon_1313_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11313,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 2
+        }
+      ]
+    },
+    "3": {
+      "RankID": 131303,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_131303",
+      "Desc": "AvatarRankDesc_131303",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1313/SkillIcon_1313_Ultra.png",
+      "SkillAddLevelList": {
+        "131301": 1,
+        "131303": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11313,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 131304,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_131304",
+      "Desc": "AvatarRankDesc_131304",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1313/SkillIcon_1313_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11313,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 8
+        }
+      ]
+    },
+    "5": {
+      "RankID": 131305,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_131305",
+      "Desc": "AvatarRankDesc_131305",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1313/SkillIcon_1313_BP.png",
+      "SkillAddLevelList": {
+        "131302": 2,
+        "131304": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11313,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 131306,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_131306",
+      "Desc": "AvatarRankDesc_131306",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1313/SkillIcon_1313_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11313,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 3
+        },
+        {
+          "Value": 0.02
+        },
+        {
+          "Value": 1
+        }
+      ]
+    }
+  },
   "1314": {
     "1": {
       "RankID": 131401,
@@ -8002,6 +8945,805 @@
         },
         {
           "Value": 0.7
+        }
+      ]
+    }
+  },
+  "1317": {
+    "1": {
+      "RankID": 131701,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_131701",
+      "Desc": "AvatarRankDesc_131701",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1317/SkillIcon_1317_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11317,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        },
+        {
+          "Value": 20
+        }
+      ]
+    },
+    "2": {
+      "RankID": 131702,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_131702",
+      "Desc": "AvatarRankDesc_131702",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1317/SkillIcon_1317_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11317,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        }
+      ]
+    },
+    "3": {
+      "RankID": 131703,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_131703",
+      "Desc": "AvatarRankDesc_131703",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1317/SkillIcon_1317_BP.png",
+      "SkillAddLevelList": {
+        "131702": 2,
+        "131704": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11317,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 131704,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_131704",
+      "Desc": "AvatarRankDesc_131704",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1317/SkillIcon_1317_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11317,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    "5": {
+      "RankID": 131705,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_131705",
+      "Desc": "AvatarRankDesc_131705",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1317/SkillIcon_1317_Ultra.png",
+      "SkillAddLevelList": {
+        "131701": 1,
+        "131703": 2,
+        "131708": 1,
+        "131710": 1,
+        "131712": 1,
+        "131718": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11317,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 131706,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_131706",
+      "Desc": "AvatarRankDesc_131706",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1317/SkillIcon_1317_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11317,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 5
+        },
+        {
+          "Value": 5
+        }
+      ]
+    }
+  },
+  "1401": {
+    "1": {
+      "RankID": 140101,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_140101",
+      "Desc": "AvatarRankDesc_140101",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1401/SkillIcon_1401_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11401,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.5
+        },
+        {
+          "Value": 15
+        }
+      ]
+    },
+    "2": {
+      "RankID": 140102,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_140102",
+      "Desc": "AvatarRankDesc_140102",
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1401/SkillIcon_1401_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11401,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.35
+        },
+        {
+          "Value": 42
+        },
+        {
+          "Value": 0.25
+        }
+      ]
+    },
+    "3": {
+      "RankID": 140103,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_140103",
+      "Desc": "AvatarRankDesc_140103",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1401/SkillIcon_1401_BP.png",
+      "SkillAddLevelList": {
+        "140102": 2,
+        "140104": 2,
+        "140109": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11401,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 140104,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_140104",
+      "Desc": "AvatarRankDesc_140104",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1401/SkillIcon_1401_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11401,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    "5": {
+      "RankID": 140105,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_140105",
+      "Desc": "AvatarRankDesc_140105",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1401/SkillIcon_1401_Ultra.png",
+      "SkillAddLevelList": {
+        "140101": 1,
+        "140103": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11401,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 140106,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_140106",
+      "Desc": "AvatarRankDesc_140106",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1401/SkillIcon_1401_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11401,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1.4
+        },
+        {
+          "Value": 2.5
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.2
+        }
+      ]
+    }
+  },
+  "1402": {
+    "1": {
+      "RankID": 140201,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_140201",
+      "Desc": "AvatarRankDesc_140201",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_1402_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11402,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        },
+        {
+          "Value": 20
+        }
+      ]
+    },
+    "2": {
+      "RankID": 140202,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_140202",
+      "Desc": "AvatarRankDesc_140202",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_1402_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11402,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.14
+        },
+        {
+          "Value": 3
+        }
+      ]
+    },
+    "3": {
+      "RankID": 140203,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_140203",
+      "Desc": "AvatarRankDesc_140203",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_1402_BP.png",
+      "SkillAddLevelList": {
+        "140201": 1,
+        "140202": 2,
+        "140208": 1,
+        "140209": 2,
+        "1140203": 1,
+        "1140205": 1,
+        "1140206": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11402,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 140204,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_140204",
+      "Desc": "AvatarRankDesc_140204",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_1402_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11402,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        },
+        {
+          "Value": 2
+        }
+      ]
+    },
+    "5": {
+      "RankID": 140205,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_140205",
+      "Desc": "AvatarRankDesc_140205",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_1402_Ultra.png",
+      "SkillAddLevelList": {
+        "140203": 2,
+        "140204": 2,
+        "1140201": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11402,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 140206,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_140206",
+      "Desc": "AvatarRankDesc_140206",
+      "ExtraEffectIDList": [
+        30000005,
+        10000019
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_1402_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11402,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 0.6
+        }
+      ]
+    }
+  },
+  "1403": {
+    "1": {
+      "RankID": 140301,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_140301",
+      "Desc": "AvatarRankDesc_140301",
+      "ExtraEffectIDList": [
+        10000005,
+        10000017
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1403/SkillIcon_1403_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11403,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.24
+        }
+      ]
+    },
+    "2": {
+      "RankID": 140302,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_140302",
+      "Desc": "AvatarRankDesc_140302",
+      "ExtraEffectIDList": [
+        10000005
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1403/SkillIcon_1403_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11403,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1.2
+        },
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "3": {
+      "RankID": 140303,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_140303",
+      "Desc": "AvatarRankDesc_140303",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1403/SkillIcon_1403_Ultra.png",
+      "SkillAddLevelList": {
+        "140301": 1,
+        "140303": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11403,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 140304,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_140304",
+      "Desc": "AvatarRankDesc_140304",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1403/SkillIcon_1403_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11403,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.18
+        }
+      ]
+    },
+    "5": {
+      "RankID": 140305,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_140305",
+      "Desc": "AvatarRankDesc_140305",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1403/SkillIcon_1403_BP.png",
+      "SkillAddLevelList": {
+        "140302": 2,
+        "140304": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11403,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 140306,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_140306",
+      "Desc": "AvatarRankDesc_140306",
+      "ExtraEffectIDList": [
+        10000004
+      ],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1403/SkillIcon_1403_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11403,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 7.29
+        }
+      ]
+    }
+  },
+  "1404": {
+    "1": {
+      "RankID": 140401,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_140401",
+      "Desc": "AvatarRankDesc_140401",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1404/SkillIcon_1404_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11404,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.3
+        }
+      ]
+    },
+    "2": {
+      "RankID": 140402,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_140402",
+      "Desc": "AvatarRankDesc_140402",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1404/SkillIcon_1404_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11404,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.15
+        },
+        {
+          "Value": 0.4
+        },
+        {
+          "Value": 40
+        }
+      ]
+    },
+    "3": {
+      "RankID": 140403,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_140403",
+      "Desc": "AvatarRankDesc_140403",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1404/SkillIcon_1404_BP.png",
+      "SkillAddLevelList": {
+        "140401": 1,
+        "140402": 2,
+        "140409": 2,
+        "140411": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11404,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 140404,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_140404",
+      "Desc": "AvatarRankDesc_140404",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1404/SkillIcon_1404_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11404,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.1
+        },
+        {
+          "Value": 0.3
+        }
+      ]
+    },
+    "5": {
+      "RankID": 140405,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_140405",
+      "Desc": "AvatarRankDesc_140405",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1404/SkillIcon_1404_Ultra.png",
+      "SkillAddLevelList": {
+        "140403": 2,
+        "140404": 2
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11404,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 140406,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_140406",
+      "Desc": "AvatarRankDesc_140406",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/1404/SkillIcon_1404_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 11404,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 100
         }
       ]
     }
@@ -8904,6 +10646,326 @@
       "Param": [
         {
           "Value": 2
+        }
+      ]
+    }
+  },
+  "8007": {
+    "1": {
+      "RankID": 800701,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_800701",
+      "Desc": "AvatarRankDesc_800701",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    "2": {
+      "RankID": 800702,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_800702",
+      "Desc": "AvatarRankDesc_800702",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_PlayerBoy_30_Rank02"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 8
+        },
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "3": {
+      "RankID": 800703,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_800703",
+      "Desc": "AvatarRankDesc_800703",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_BP.png",
+      "SkillAddLevelList": {
+        "800702": 2,
+        "800704": 2,
+        "800709": 2,
+        "1800703": 1,
+        "1800705": 1,
+        "1800706": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 800704,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_800704",
+      "Desc": "AvatarRankDesc_800704",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_PlayerBoy_30_Rank04"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.03
+        },
+        {
+          "Value": 0.06
+        }
+      ]
+    },
+    "5": {
+      "RankID": 800705,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_800705",
+      "Desc": "AvatarRankDesc_800705",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Ultra.png",
+      "SkillAddLevelList": {
+        "800701": 1,
+        "800703": 2,
+        "1800701": 1,
+        "1800707": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 800706,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_800706",
+      "Desc": "AvatarRankDesc_800706",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
+        }
+      ]
+    }
+  },
+  "8008": {
+    "1": {
+      "RankID": 800801,
+      "Rank": 1,
+      "Trigger": {
+        "Hash": 2089636447
+      },
+      "Name": "AvatarRankName_800801",
+      "Desc": "AvatarRankDesc_800801",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank1.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    "2": {
+      "RankID": 800802,
+      "Rank": 2,
+      "Trigger": {
+        "Hash": 523552506
+      },
+      "Name": "AvatarRankName_800802",
+      "Desc": "AvatarRankDesc_800802",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank2.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_PlayerBoy_30_Rank02"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 8
+        },
+        {
+          "Value": 1
+        }
+      ]
+    },
+    "3": {
+      "RankID": 800803,
+      "Rank": 3,
+      "Trigger": {
+        "Hash": -1042531435
+      },
+      "Name": "AvatarRankName_800803",
+      "Desc": "AvatarRankDesc_800803",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_BP.png",
+      "SkillAddLevelList": {
+        "800802": 2,
+        "800804": 2,
+        "800809": 2,
+        "1800703": 1,
+        "1800705": 1,
+        "1800706": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "4": {
+      "RankID": 800804,
+      "Rank": 4,
+      "Trigger": {
+        "Hash": 1686351920
+      },
+      "Name": "AvatarRankName_800804",
+      "Desc": "AvatarRankDesc_800804",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank4.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [
+        "Avatar_PlayerBoy_30_Rank04"
+      ],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 0.03
+        },
+        {
+          "Value": 0.06
+        }
+      ]
+    },
+    "5": {
+      "RankID": 800805,
+      "Rank": 5,
+      "Trigger": {
+        "Hash": 120267979
+      },
+      "Name": "AvatarRankName_800805",
+      "Desc": "AvatarRankDesc_800805",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Ultra.png",
+      "SkillAddLevelList": {
+        "800801": 1,
+        "800803": 2,
+        "1800701": 1,
+        "1800707": 1
+      },
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": []
+    },
+    "6": {
+      "RankID": 800806,
+      "Rank": 6,
+      "Trigger": {
+        "Hash": -1445815962
+      },
+      "Name": "AvatarRankName_800806",
+      "Desc": "AvatarRankDesc_800806",
+      "ExtraEffectIDList": [],
+      "IconPath": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_8007_Rank6.png",
+      "SkillAddLevelList": {},
+      "RankAbility": [],
+      "UnlockCost": [
+        {
+          "ItemID": 18007,
+          "ItemNum": 1
+        }
+      ],
+      "Param": [
+        {
+          "Value": 1
         }
       ]
     }

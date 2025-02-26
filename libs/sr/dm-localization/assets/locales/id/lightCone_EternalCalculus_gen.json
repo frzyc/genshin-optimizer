@@ -1,0 +1,7 @@
+{
+  "name": "Eternal Calculus",
+  "passive": {
+    "name": "Boundless Thought",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK pengguna. Setelah melancarkan serangan, untuk setiap 1 target musuh yang terkena serangan, akan membuat ATK pengguna meningkat ekstra <orangeStrong>{{2, percent}}%</orangeStrong>. Efek ini dapat ditumpuk hingga 5 kali dan berlangsung hingga setelah serangan berikutnya. Jika serangan mengenai lebih dari atau sama dengan {{3}} target musuh, akan membuat SPD pengguna meningkat <orangeStrong>{{4, percent}}%</orangeStrong> selama {{5}} giliran."
+  }
+}
