@@ -64,10 +64,6 @@ export function charTagMapNodeEntries(
         data.bonusAbilities[index] ? 1 : 0
       )
     ),
-
-    // Default char
-    ownBuff.premod.crit_.add(0.05),
-    ownBuff.premod.crit_dmg_.add(0.5),
   ]
 }
 
