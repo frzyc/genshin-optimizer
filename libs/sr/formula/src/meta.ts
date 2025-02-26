@@ -64,46 +64,14 @@ export const conditionals = {
     },
   },
   Adversarial: {
-    boolConditional: {
+    enemyDefeated: {
       sheet: 'Adversarial',
-      name: 'boolConditional',
+      name: 'enemyDefeated',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Adversarial',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Adversarial',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   AfterTheCharmonyFall: {
-    boolConditional: {
-      sheet: 'AfterTheCharmonyFall',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'AfterTheCharmonyFall',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'AfterTheCharmonyFall',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'AfterTheCharmonyFall', name: 'ultUsed', type: 'bool' },
   },
   Aglaea: {
     boolConditional: { sheet: 'Aglaea', name: 'boolConditional', type: 'bool' },
@@ -6554,72 +6522,28 @@ export const buffs = {
     },
   },
   Adversarial: {
-    cond_dmg_: {
+    spd_: {
       sheet: 'Adversarial',
-      name: 'cond_dmg_',
+      name: 'spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'Adversarial',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Adversarial',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Adversarial',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Adversarial',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Adversarial',
-        name: 'team_dmg_',
+        name: 'spd_',
       },
     },
   },
   AfterTheCharmonyFall: {
-    cond_dmg_: {
+    spd_: {
       sheet: 'AfterTheCharmonyFall',
-      name: 'cond_dmg_',
+      name: 'spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'AfterTheCharmonyFall',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'AfterTheCharmonyFall',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'AfterTheCharmonyFall',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'AfterTheCharmonyFall',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'AfterTheCharmonyFall',
-        name: 'team_dmg_',
+        name: 'spd_',
       },
     },
   },
