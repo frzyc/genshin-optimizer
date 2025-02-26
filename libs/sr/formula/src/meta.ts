@@ -1,24 +1,10 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
   AGroundedAscent: {
-    boolConditional: {
+    ultOrSkillUsed: {
       sheet: 'AGroundedAscent',
-      name: 'boolConditional',
+      name: 'ultOrSkillUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'AGroundedAscent',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'AGroundedAscent',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ASecretVow: {
@@ -91,42 +77,10 @@ export const conditionals = {
     },
   },
   AlongThePassingShore: {
-    boolConditional: {
-      sheet: 'AlongThePassingShore',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'AlongThePassingShore',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'AlongThePassingShore',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    enemyHit: { sheet: 'AlongThePassingShore', name: 'enemyHit', type: 'bool' },
   },
   Amber: {
-    boolConditional: { sheet: 'Amber', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Amber',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Amber',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    hpLowerThan50: { sheet: 'Amber', name: 'hpLowerThan50', type: 'bool' },
   },
   AnInstantBeforeAGaze: {
     boolConditional: {
@@ -188,21 +142,7 @@ export const conditionals = {
     },
   },
   Arrows: {
-    boolConditional: { sheet: 'Arrows', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Arrows',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Arrows',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    startOfBattle: { sheet: 'Arrows', name: 'startOfBattle', type: 'bool' },
   },
   Asta: {
     boolConditional: { sheet: 'Asta', name: 'boolConditional', type: 'bool' },
@@ -6261,37 +6201,15 @@ export const formulas = {
 } as const
 export const buffs = {
   AGroundedAscent: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'AGroundedAscent',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AGroundedAscent',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'AGroundedAscent',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'AGroundedAscent',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'AGroundedAscent',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'AGroundedAscent',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -6764,72 +6682,40 @@ export const buffs = {
     },
   },
   AlongThePassingShore: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'AlongThePassingShore',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AlongThePassingShore',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    ult_dmg_: {
       sheet: 'AlongThePassingShore',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'AlongThePassingShore',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'AlongThePassingShore',
-      name: 'team_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'AlongThePassingShore',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
   Amber: {
-    cond_dmg_: {
+    def_: {
       sheet: 'Amber',
-      name: 'cond_dmg_',
+      name: 'def_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'def_',
         sheet: 'Amber',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Amber',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Amber',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Amber',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Amber',
-        name: 'team_dmg_',
+        name: 'def_',
       },
     },
   },
@@ -7250,37 +7136,15 @@ export const buffs = {
     },
   },
   Arrows: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'Arrows',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'Arrows',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Arrows',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Arrows',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Arrows',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Arrows',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },

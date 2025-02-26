@@ -112,4 +112,84 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.56)
     expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.16)
   })
+
+  it('AGroundedAscent', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'AGroundedAscent')
+    data.push(
+      cond(
+        charKey,
+        'AGroundedAscent',
+        conditionals.AGroundedAscent.ultOrSkillUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.24)
+  })
+
+  it('AlongThePassingShore', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'AlongThePassingShore')
+    data.push(
+      cond(
+        charKey,
+        'AlongThePassingShore',
+        conditionals.AlongThePassingShore.enemyHit.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC bonus
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.6)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.dmg_.ult[0]).val).toBeCloseTo(0.4)
+  })
+
+  it('Amber', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'Amber')
+    data.push(
+      cond(charKey, 'Amber', conditionals.Amber.hpLowerThan50.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // LC passive + cond
+    expect(calc.compute(char.final.def_).val).toBeCloseTo(0.32 + 0.32)
+  })
+
+  // TODO: AnInstantBeforeAGaze
+
+  it('Arrows', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'Arrows')
+    data.push(
+      cond(charKey, 'Arrows', conditionals.Arrows.startOfBattle.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
+  })
 })
