@@ -1,4 +1,4 @@
-import { notEmpty } from '@genshin-optimizer/common/util'
+import { notEmpty, toDecimal } from '@genshin-optimizer/common/util'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
 import type {
@@ -21,6 +21,7 @@ import {
   charTagMapNodeEntries,
   conditionalEntries,
   discTagMapNodeEntries,
+  enemy,
   enemyDebuff,
   ownBuff,
   teamData,
@@ -52,6 +53,14 @@ export function CharCalcProvider({
         ...member0,
         // TODO: Get enemy values from db
         enemyDebuff.common.lvl.add(80),
+        enemy.common.def.add(953),
+        enemy.common.res_.electric.add(0.1),
+        enemy.common.isStunned.add(0),
+        enemyDebuff.common.resRed_.electric.add(0.15),
+        enemyDebuff.common.dmgInc_.add(0.1),
+        enemyDebuff.common.dmgRed_.add(0.15),
+        enemyDebuff.common.stun_.add(1.5),
+        enemyDebuff.common.unstun_.add(1),
         ownBuff.common.critMode.add('avg'),
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
@@ -63,7 +72,7 @@ export function CharCalcProvider({
         ...charOpt.bonusStats.flatMap(({ tag, value }) =>
           withPreset(`preset0`, {
             tag: { ...tag },
-            value: constant(value),
+            value: constant(toDecimal(value, tag.q ?? '')),
           })
         ),
       ]),

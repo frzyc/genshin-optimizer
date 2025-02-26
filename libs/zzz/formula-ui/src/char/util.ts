@@ -1,9 +1,9 @@
 import type { Attribute, DamageType, Tag } from '@genshin-optimizer/zzz/formula'
 
 export function getVariant(tag: Tag) {
-  const { elementalType } = tag
+  const { attribute } = tag
   // if (q === 'heal' || q === 'heal_') return 'heal'
-  if (elementalType) return elementalType as Attribute
+  if (attribute) return attribute as Attribute
   // TODO: shield?
   return
 }
