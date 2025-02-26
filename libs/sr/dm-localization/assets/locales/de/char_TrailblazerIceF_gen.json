@@ -1,0 +1,101 @@
+{
+  "name": "Trailblazer (Eis • Das Gedenken)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Überlass das mir!",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Du bist dran!",
+        "fullDesc": "Beschwört den Memogeist Memi. Wenn Memi sich bereits auf dem Feld befindet, werden ihre LP um <orangeStrong>{{1, percent}}%</orangeStrong> ihrer max. LP wiederhergestellt und sie erhält {{2, percent}}% Aufladung.",
+        "shortDesc": "<orangeStrong>Beschwört den Memogeist</orangeStrong> Memi. Wenn sich Memi bereits auf dem Feld befindet, werden ihre LP wiederhergestellt und sie erhält <orangeStrong>Aufladung</orangeStrong>.",
+        "tag": "Beschwören"
+      },
+      "1": {
+        "name": "Du bist dran!",
+        "shortDesc": "<orangeStrong>Beschwört den Memogeist</orangeStrong> Memi. Wenn sich Memi bereits auf dem Feld befindet, werden ihre LP wiederhergestellt und sie erhält <orangeStrong>Aufladung</orangeStrong>.",
+        "tag": "Wiederherstellung"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Zusammen, Memi!",
+        "fullDesc": "Beschwört den Memogeist Memi. Memi erhält {{2, percent}}% Aufladung und fügt dann allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Memis ANG zu.",
+        "shortDesc": "<orangeStrong>Beschwört den Memogeist</orangeStrong> Memi. Memi erhält <orangeStrong>Aufladung</orangeStrong> und fügt dann allen Gegnern massiven Eis-SCH zu.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Allmächtige Partnerin",
+        "fullDesc": "Der Memogeist Memi hat anfänglich {{1}} Pkt. GES und max. LP in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> der max. LP {F#der Trailblazerin}{M#des Trailblazers} plus <orangeStrong>{{4}}</orangeStrong>. Für je {{3}} Pkt. Energie, die alle Verbündeten wiederherstellen, erhält Memi 1 % Aufladung.",
+        "shortDesc": "Jedes Mal, wenn alle Verbündeten <orangeStrong>eine bestimmte Menge Energie wiederherstellen</orangeStrong>, erhält Memi <orangeStrong>Aufladung</orangeStrong>.",
+        "tag": "Verstärkung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Erweckte Erinnerungen",
+        "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{1}} Sek. eine spezielle Dimension. Gegner in der Dimension werden in den Status „Zeitstillstand“ versetzt. In diesem Status werden die Aktionen der Gegner angehalten.<br>Nach Kampfeintritt mit Gegnern im Status Zeitstillstand wird die Aktion aller Gegner um {{2, percent}}% verzögert. Anschließend wird allen Gegner Eis-SCH in Höhe von {{3, percent}}% des ANG {F#der Trailblazerin}{M#des Trailblazers} zugefügt.<br>Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "shortDesc": "Erzeugt eine spezielle Dimension, die alle Gegner in ihr <orangeStrong>anhält</orangeStrong>. Nach Kampfeintritt mit Gegnern in dieser Dimension wird die Aktion aller Gegner verzögert und ihnen geringen Eis-SCH zugefügt.",
+        "tag": "Beeinträchtigung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Zepter der Erinnerung",
+        "fullDesc": "Beim Kampfbeginn wird die Aktion {F#der Trailblazerin}{M#des Trailblazers} um {{1, percent}}% vorgezogen. Wenn Memi zum ersten Mal beschworen wird, erhält sie {{2, percent}}% Aufladung."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Taschenpoesie",
+        "fullDesc": "Wenn Memi „Bösewichte! Ärger!“ einsetzt, erhält sie sofort {{1, percent}}% Aufladung."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Magneten und Ketten",
+        "fullDesc": "Wenn die max. Energie eines Verbündeten mit „Memis Unterstützung“ mehr als {{1}} beträgt, wird für jede weitere {{2}} Pkt. Energie der Multiplikator des Tatsächlichen SCH durch Memis Unterstützung um {{3, percent(fixed: 1)}}% erhöht, bis max. {{4, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{F#Erzählerin}{M#Erzähler} der Gegenwart",
+      "desc": "Erhöht die KRIT-Rate von Verbündeten mit „Memis Unterstützung“ um {{1, percent}}%. Wenn ein Verbündeter Memis Unterstützung besitzt, wirkt der Effekt auch auf den Memogeist/Memomeister des Ziels. Dieser Effekt ist nicht stapelbar."
+    },
+    "2": {
+      "name": "{F#Sammlerin}{M#Sammler} des Vergangenen",
+      "desc": "Wenn Memogeister der Verbündeten (außer Memi) eine Aktion ausführen, stellt {M#der Trailblazer}{F#die Trailblazerin} {{1}} Pkt. Energie wieder her. Dieser Effekt kann bis zu {{2}}-mal pro Runde ausgelöst werden. Die Auslösungsanzahl wird zu Beginn der Runde {M#des Trailblazers}{F#der Trailblazerin} zurückgesetzt."
+    },
+    "3": {
+      "name": "{F#Kantorin}{M#Kantor} der Zukunft",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15. Talentstufe des Memogeists +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "{F#Tanzpartnerin}{M#Tanzpartner} der Muse",
+      "desc": "Wenn ein Verbündeter mit einer max. Energie von 0 aktiv seine Fähigkeit einsetzt, erhält Memi {{1, percent}}% Aufladung und der Multiplikator für den Tatsächlichen SCH, den das Ziel durch „Memis Unterstützung“ verursacht, wird zusätzlich um {{2, percent}}% erhöht."
+    },
+    "5": {
+      "name": "{F#Schneiderin}{M#Schneider} der Poesie",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10. Technikstufe des Memogeists +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "{F#Erbin}{M#Erbe} der göttlichen Offenbarung",
+      "desc": "Die KRIT-Rate von Ultimate ist auf 100 % festgelegt."
+    }
+  }
+}

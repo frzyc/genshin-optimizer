@@ -1,5 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objKeyValMap } from '@genshin-optimizer/common/util'
+import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import { readDMJSON } from '../../util'
 import type { HashId, MaterialValue, Value } from '../common'
@@ -23,7 +24,7 @@ export type Rank = (typeof allRanks)[number]
 // { <skillId>: <# of levels increased> }
 type SkillAddLevelList = Partial<Record<string, number>>
 
-const avatarRankConfigSrc = JSON.parse(
+const avatarRankConfigSrc = parse(
   readDMJSON('ExcelOutput/AvatarRankConfig.json')
 ) as AvatarRankConfig[]
 const avatarRankConfigMap = objKeyValMap(avatarRankConfigSrc, (config) => [

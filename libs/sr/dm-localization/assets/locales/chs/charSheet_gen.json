@@ -6,9 +6,9 @@
     "atk_": "攻击强化",
     "def_": "防御强化",
     "crit_": "暴击率提高",
-    "crit_dmg_": "暴击率、暴击伤害提高",
+    "crit_dmg_": "暴击伤害提高",
     "eff_res_": "效果抵抗强化",
-    "spd": "速度提高",
+    "spd": "加速",
     "physical_dmg_": "伤害强化•物理",
     "fire_dmg_": "伤害强化•火",
     "ice_dmg_": "伤害强化•冰",
@@ -16,6 +16,6 @@
     "wind_dmg_": "伤害强化•风",
     "quantum_dmg_": "伤害强化•量子",
     "imaginary_dmg_": "伤害强化•虚数",
-    "brEffect_": "击破特攻强化"
+    "brEffect_": "击破特攻提高"
   }
 }

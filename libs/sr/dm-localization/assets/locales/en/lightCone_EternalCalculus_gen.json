@@ -1,0 +1,7 @@
+{
+  "name": "Eternal Calculus",
+  "passive": {
+    "name": "Boundless Thought",
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1, percent}}%</orangeStrong>. After using an attack, for each enemy target hit, additionally increases ATK by <orangeStrong>{{2, percent}}%</orangeStrong>. This effect can stack up to 5 times and last until the next attack. If there are {{3}} or more enemy targets hit, this unit's SPD increases by <orangeStrong>{{4, percent}}%</orangeStrong>, lasting for {{5}} turn(s)."
+  }
+}

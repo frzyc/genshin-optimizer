@@ -1,0 +1,7 @@
+{
+  "name": "不息的演算",
+  "passive": {
+    "name": "无界之思",
+    "description": "使装备者的攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>。施放攻击后，每击中一名敌方目标，使攻击力额外提高<orangeStrong>{{2, percent}}%</orangeStrong>，该效果最多叠加5次，持续至下次攻击后，若击中大于等于{{3}}名敌方目标，使自身速度提高<orangeStrong>{{4, percent}}%</orangeStrong>，持续{{5}}回合。"
+  }
+}

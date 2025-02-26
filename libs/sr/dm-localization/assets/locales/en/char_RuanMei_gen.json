@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Inert Respiration",
-        "fullDesc": "Increases Break Effect by {{1, percent}}% for all allies.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases Break Effect by {{1, percent}}% for all allies."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Days Wane, Thoughts Wax",
-        "fullDesc": "Ruan Mei regenerates {{1}} Energy at the start of her turn.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ruan Mei regenerates {{1}} Energy at the start of her turn."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Candle Lights on Still Waters",
-        "fullDesc": "In battle, for every {{2, percent}}% of Ruan Mei's Break Effect that exceeds {{1, percent}}%, her Skill additionally increases allies' DMG by {{3, percent}}%, up to a maximum of {{4, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "In battle, for every {{2, percent}}% of Ruan Mei's Break Effect that exceeds {{1, percent}}%, her Skill additionally increases allies' DMG by {{3, percent}}%, up to a maximum of {{4, percent}}%."
       }
     }
   },

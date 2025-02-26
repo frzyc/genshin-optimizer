@@ -1,0 +1,7 @@
+{
+  "name": "먼 길 끝의 귀로",
+  "passive": {
+    "name": "신생",
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 적의 약점이 격파될 시 {{2, percent}}%의 기본 확률로 대상을 [타오름] 상태에 빠트리고 받는 격파 피해를 <orangeStrong>{{3, percent}}%</orangeStrong> 증가시킨다, 지속 시간: {{4}}턴. 해당 효과는 {{5}}스택 중첩 가능하다"
+  }
+}

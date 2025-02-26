@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Prisión gravitacional",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un {{5, percent}}%. Tras entrar en combate con enemigos en la zona especial, tiene una probabilidad base del {{1, percent}}% de afectarlos con Prisión durante 1 turno.<br>Las acciones de los enemigos aprisionados se retrasan un {{2, percent}}% y su VEL se reduce en un {{3, percent}}%. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un {{5, percent}}%. Tras entrar en combate con enemigos en la zona especial, tiene una probabilidad base del {{1, percent}}% de afectarlos con Prisión durante 1 turno.<br>Las acciones de los enemigos aprisionados se retrasan un {{2, percent}}% y su VEL se reduce en un {{3, percent}}%. Solo puede haber una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. La VEL de movimiento de los enemigos que estén en la zona se reduce. Al entrar en combate contra los enemigos en la zona, tiene una <orangeStrong>gran probabilidad de afectarlos con Prisión</orangeStrong>.",
         "tag": "Alteración"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Retribución",
-        "fullDesc": "Al usar la habilidad definitiva, hay una probabilidad base del {{1, percent}}% de infligir un {{2, percent}}% más de daño a los objetivos durante {{3}} turnos.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad definitiva, hay una probabilidad base del {{1, percent}}% de infligir un {{2, percent}}% más de daño a los objetivos durante {{3}} turnos."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Juicio",
-        "fullDesc": "Al usar la habilidad definitiva, recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad definitiva, recupera {{1}} pts. de energía adicionales."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Castigo",
-        "fullDesc": "Inflige un {{1, percent}}% más de daño a los enemigos afectados por Ruptura.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Inflige un {{1, percent}}% más de daño a los enemigos afectados por Ruptura."
       }
     }
   },

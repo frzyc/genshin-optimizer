@@ -22,6 +22,7 @@ const stats = [
   'eff_res_',
   'enerRegen_',
   'heal_',
+  'incHeal_',
   'dmg_',
   'common_dmg_',
   'resPen_',
@@ -60,6 +61,7 @@ export const damageTypes = [
   'dot',
   'break', // elementDamage
   'elemental', // pursued
+  'servantSkill', // TODO: This probably isn't right
 ] as const
 
 export const sheets = [

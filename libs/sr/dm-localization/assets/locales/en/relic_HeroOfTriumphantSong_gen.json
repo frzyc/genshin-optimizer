@@ -1,0 +1,7 @@
+{
+  "setName": "Hero of Triumphant Song",
+  "setEffects": {
+    "2": "Increases ATK by {{1, percent}}%.",
+    "4": "While the wearer's memosprite is on the field, increases the wearer's SPD by {{1, percent}}%. When the wearer's memosprite attacks, increases the wearer's and memosprite's CRIT DMG by {{2, percent}}%, lasting for {{3}} turn(s)."
+  }
+}

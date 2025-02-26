@@ -1,0 +1,33 @@
+{
+  "name": "Confeccionadora",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Armadilha de Espinhos",
+        "fullDesc": "Causa Dano de Raio equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ a um inimigo e Dano de Raio equivalente a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ a alvos adjacentes.",
+        "shortDesc": "Causa Dano de Raio leve a um inimigo-alvo e a unidades adjacentes.",
+        "tag": "Explosão"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Um Corpo Feito de Lágrimas",
+        "fullDesc": "Após atacar um inimigo afetado por \"Costura Vinculante\", aumenta a VEL desta unidade em <orangeStrong>{{1}}</orangeStrong>, acumulando até {{3}} vez(es). Quando a Confeccionadora age, usa automaticamente \"Armadilha de Espinhos\", priorizando inimigos no estado de \"Costura Vinculante\".",
+        "shortDesc": "Após atacar um inimigo afligido com \"Costura Vinculante\", <orangeStrong>aumenta a VEL desta unidade</orangeStrong>. Enquanto estiver em ação, usa ataques automaticamente, priorizando inimigos no estado de \"Costura Vinculante\".",
+        "tag": "Aprimoramento"
+      },
+      "1": {
+        "name": "O Verão Acelerado",
+        "fullDesc": "Quando a Confeccionadora é invocada, a ação dessa unidade é Avançada Adiante em {{1, percent}}%.",
+        "shortDesc": "Ao ser invocada, a ação dessa unidade é Avançada Adiante.",
+        "tag": "Aprimoramento"
+      },
+      "2": {
+        "name": "Florescer da Grama Seca",
+        "fullDesc": "Quando a Confeccionadora desaparece, regenera {{1}} de Energia para Aglaea.",
+        "shortDesc": "Regenera Energia para Aglaea ao desaparecer.",
+        "tag": "Aprimoramento"
+      }
+    }
+  }
+}

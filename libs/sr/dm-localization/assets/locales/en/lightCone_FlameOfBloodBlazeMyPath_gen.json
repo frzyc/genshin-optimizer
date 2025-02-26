@@ -1,0 +1,7 @@
+{
+  "name": "Flame of Blood, Blaze My Path",
+  "passive": {
+    "name": "Vista",
+    "description": "Increases the wearer's Max HP by <orangeStrong>{{1, percent}}%</orangeStrong> and Incoming Healing by <orangeStrong>{{6, percent}}%</orangeStrong>. When using Skill or Ultimate, consumes HP equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of the wearer's Max HP and increases the DMG dealt by this attack by <orangeStrong>{{3, percent}}%</orangeStrong>. If this effect's consumed HP is greater than {{4}}, the DMG additionally increases by <orangeStrong>{{5, percent}}%</orangeStrong>.<br>If the current HP is not sufficient, this effect reduces the wearer's current HP down to 1."
+  }
+}

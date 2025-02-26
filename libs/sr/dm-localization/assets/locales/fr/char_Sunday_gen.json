@@ -1,0 +1,96 @@
+{
+  "name": "Sunday",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Admonestation éblouissante",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sunday à un ennemi désigné.",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi désigné.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Bénédiction des écritures",
+        "fullDesc": "Permet à un personnage allié désigné et à son invocation d'agir immédiatement, tout en augmentant les DGT qu'ils infligent de <orangeStrong>{{2, percent}}%</orangeStrong>. L'effet d'augmentation de DGT augmente de <orangeStrong>{{4, percent}}%</orangeStrong> supplémentaires si la cible a une invocation. Cet effet dure {{3}} tours.<br>Récupère 1 point de compétence après avoir utilisé cette capacité sur le Béatifié.<br>Lorsque Sunday utilise cette capacité sur un personnage de la Voie de l'Harmonie, l'effet d'action immédiate n'est pas déclenché.",
+        "shortDesc": "Permet à un <orangeStrong>personnage allié désigné et à son invocation d'agir immédiatement</orangeStrong>, tout en augmentant les DGT qu'ils infligent. L'effet d'augmentation de DGT est plus important si la cible a une invocation.<br>Récupère 1 point de compétence après avoir utilisé la compétence sur le Béatifié.<br>Lorsque Sunday utilise cette capacité sur un personnage de la Voie de l'Harmonie, l'effet d'action immédiate n'est pas déclenché.",
+        "tag": "Soutien"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ode à la légèreté et aux cicatrices",
+        "fullDesc": "Restaure de l'énergie à hauteur de {{1, percent(fixed: 1)}}% de son énergie max à un personnage allié désigné et lui accorde ainsi qu'à son invocation le statut Béatifié. Les DGT critiques des Béatifiés augmentent d'un montant équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Sunday + <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>.<br>La durée de l'effet Béatifié diminue de 1 tour au début de chaque tour de Sunday. Cet effet dure {{3}} tours en tout et ne s'applique qu'à la dernière cible de l'ultime (ne peut pas s'appliquer à Sunday). L'effet Béatifié est dissipé lorsque Sunday est à terre.",
+        "shortDesc": "Permet de <orangeStrong>restaurer de l'énergie</orangeStrong> à un personnage allié désigné et lui accorde ainsi qu'à son invocation le statut Béatifié. Les Béatifiés voient leur DGT critiques augmenter.",
+        "tag": "Soutien"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Confessions du corps",
+        "fullDesc": "Lors de l'utilisation de la compétence, les chances de coup critique de la cible augmentent de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> pendant {{2}} tours.",
+        "shortDesc": "Augmente les chances de coup critique de la cible lors de l'utilisation de la compétence.",
+        "tag": "Soutien"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Mystères de la gloire",
+        "fullDesc": "Après avoir utilisé cette technique, la première fois que Sunday utilise une capacité sur une cible alliée au cours du prochain combat, les DGT infligés par cette cible augmentent de {{1, percent}}% pendant {{2}} tours.",
+        "shortDesc": "Après avoir utilisé cette technique, la première fois que Sunday utilise une capacité sur une cible alliée au cours du prochain combat, les DGT infligés par cette cible augmentent.",
+        "tag": "Soutien"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Quête du repos",
+        "fullDesc": "Lors de l'utilisation de l'ultime, si l'ultime régénère une quantité d'énergie inférieure à {{1}} à la cible, augmente l'énergie régénérée jusqu'à {{1}}."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Exaltation de la purification",
+        "fullDesc": "Sunday régénère {{1}} points d'énergie en début de combat."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Paume de la rédemption",
+        "fullDesc": "Dissipe {{1}} malus de la cible lors de l'utilisation de la compétence."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Quiétude du millénaire",
+      "desc": "Lorsque Sunday utilise sa compétence, le personnage cible ignore {{2, percent}}% de la DÉF de la cible ennemie et ses invocations ignorent {{3, percent}}% de la DÉF de la cible ennemie en cas de DGT infligés, pour une durée de {{1}} tours."
+    },
+    "2": {
+      "name": "Rempart de la foi",
+      "desc": "Récupère {{2}} points de compétence après la première utilisation de l'ultime. Les DGT infligés par les Béatifiés augmentent de {{1, percent}}%."
+    },
+    "3": {
+      "name": "Sanctuaire de ronces",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Préambule à la sculpture",
+      "desc": "Régénère {{1}} points d'énergie au début du tour."
+    },
+    "5": {
+      "name": "Radeau de papier de la baie d'argent",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Aube de la cacophonie stellaire",
+      "desc": "L'effet d'augmentation des chances de coup critique du talent peut être cumulé jusqu'à {{1}} fois et la durée du talent augmente de {{3}} tour. Quand Sunday utilise son ultime, il applique également l'effet d'augmentation des chances de coup critique du talent à la cible. Lorsque l'effet d'augmentation des chances de coup critique du talent est actif et que les chances de coup critique de la cible dépassent 100 %, chaque 1 % supplémentaire augmente les DGT critiques de {{2, percent}}%."
+    }
+  }
+}

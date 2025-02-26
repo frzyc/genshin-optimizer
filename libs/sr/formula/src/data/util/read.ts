@@ -144,6 +144,12 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
       super.with('damageType2', 'elemental'),
     ]
   }
+  get servantSkill(): Read[] {
+    return [
+      super.with('damageType1', 'servantSkill'),
+      super.with('damageType2', 'servantSkill'),
+    ]
+  }
 
   // For `count` usage, use lighter footprint so it doesn't pollute autocomplete
   // Path

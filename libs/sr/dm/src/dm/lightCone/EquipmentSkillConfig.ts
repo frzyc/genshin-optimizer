@@ -1,6 +1,7 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import type { SuperimposeKey } from '@genshin-optimizer/sr/consts'
+import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import type { StatDMKey } from '../../mapping'
 import type { LightConeId } from '../../mapping/lightCone'
@@ -33,7 +34,7 @@ type EquipmentSkillConfig_bySuperimpose = {
   AbilityProperty: AbilityProperty[][]
 }
 
-const equipmentSkillConfigSrc = JSON.parse(
+const equipmentSkillConfigSrc = parse(
   readDMJSON('ExcelOutput/EquipmentSkillConfig.json')
 ) as EquipmentSkillConfig[]
 

@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#いくどめ}幾度目{RUBY_E#}かの{RUBY_B#はる}春{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#せじ}世事{RUBY_E#}は{RUBY_B#あと}跡{RUBY_E#}を{RUBY_B#のこ}残{RUBY_E#}さず",
+    "description": "装備キャラの効果命中+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが通常攻撃、戦闘スキル、または必殺技を発動して敵に攻撃した後、{{2, percent}}%の基礎確率で敵を「甲卸」状態にする。<br>「甲卸」状態の敵の受けるダメージ+<orangeStrong>{{3, percent}}%</orangeStrong>、{{4}}ターン継続。ターゲットが装備キャラによって持続ダメージ系デバフを付与されている場合、{{5, percent}}%の基礎確率で装備キャラが付与した「甲卸」状態を「窮寇」状態に強化し、さらに敵の受けるダメージ+<orangeStrong>{{6, percent}}%</orangeStrong>、{{4}}ターン継続。<br>敵に「窮寇」状態がある時、装備キャラはその敵に「甲卸」状態を付与できない。"
+  }
+}

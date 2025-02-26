@@ -1,0 +1,7 @@
+{
+  "name": "Rückkehr auf langem Wege",
+  "passive": {
+    "name": "Wiedergeburt",
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn ein Gegner Schwächebruch erleidet, besteht eine Grundchance von {{2, percent}}%, ihn für {{4}} Rd. mit „Lichterloh“ zu belegen, was den erlittenen Bruch-SCH um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{5}}-fach stapelbar."
+  }
+}

@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Renouveau de purification",
-        "fullDesc": "Supprime {{1}} malus d'un allié désigné lorsque l'effet de la compétence est déclenché.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Supprime {{1}} malus d'un allié désigné lorsque l'effet de la compétence est déclenché."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sanctifié",
-        "fullDesc": "Lorsqu'un ennemi est attaqué par un allié dans la zone, tous les alliés (à l'exception de l'attaquant) restaurent un montant de PV équivalent à {{1, percent(fixed: 1)}}% de l'ATQ de Luocha + {{2}}.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsqu'un ennemi est attaqué par un allié dans la zone, tous les alliés (à l'exception de l'attaquant) restaurent un montant de PV équivalent à {{1, percent(fixed: 1)}}% de l'ATQ de Luocha + {{2}}."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "À travers la vallée",
-        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%."
       }
     }
   },

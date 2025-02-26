@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "After using Welt's Technique, create a Special Dimension that lasts for {{4}} second(s). Enemies in this Special Dimension have their movement speed reduced by {{5, percent}}%. After entering battle with enemies in the Special Dimension, there is a {{1, percent}}% base chance to Imprison the enemies for 1 turn.<br>Imprisoned enemies have their actions delayed by {{2, percent}}% and SPD reduced by {{3, percent}}%. Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Welt's Technique, create a Special Dimension that lasts for {{4}} second(s). Enemies in this Special Dimension have their movement speed reduced by {{5, percent}}%. After entering battle with enemies in the Special Dimension, there is a {{1, percent}}% base chance to Imprison the enemies for 1 turn.<br>Imprisoned enemies have their actions delayed by {{2, percent}}% and SPD reduced by {{3, percent}}%. Only 1 Dimension Effect created by allies can exist at the same time.",
         "shortDesc": "Creates a Special Dimension. Enemies in this dimension have their movement speed reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>.",
         "tag": "Impair"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Retribution",
-        "fullDesc": "When using Ultimate, there is a {{1, percent}}% base chance to increase the DMG taken by the targets by {{2, percent}}% for {{3}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using Ultimate, there is a {{1, percent}}% base chance to increase the DMG taken by the targets by {{2, percent}}% for {{3}} turn(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Judgment",
-        "fullDesc": "Using Ultimate additionally regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Using Ultimate additionally regenerates {{1}} Energy."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Punishment",
-        "fullDesc": "Deals {{1, percent}}% more DMG to enemies inflicted with Weakness Break.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Deals {{1, percent}}% more DMG to enemies inflicted with Weakness Break."
       }
     }
   },

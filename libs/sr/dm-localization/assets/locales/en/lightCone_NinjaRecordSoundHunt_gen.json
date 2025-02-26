@@ -1,0 +1,7 @@
+{
+  "name": "Ninja Record: Sound Hunt",
+  "passive": {
+    "name": "Curtains Up!",
+    "description": "Increases the wearer's Max HP by <orangeStrong>{{1, percent}}%</orangeStrong>. When losing or restoring this unit's HP, increases CRIT DMG by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s). This effect can only trigger once per turn."
+  }
+}

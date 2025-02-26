@@ -1,0 +1,7 @@
+{
+  "name": "Tìm Về Ký Ức",
+  "passive": {
+    "name": "Vào Giấc Ngủ",
+    "description": "Khi bắt đầu hiệp của Linh Hồn Ký Ức, khiến người trang bị và Linh Hồn Ký Ức lần lượt nhận 1 tầng Tưởng Nhớ. Mỗi tầng khiến Sát Thương gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>, tối đa cộng dồn {{2}} tầng. Khi Linh Hồn Ký Ức biến mất, sẽ xóa Tưởng Nhớ của người trang bị và Linh Hồn Ký Ức."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Flamme de sang, illumine mon chemin",
+  "passive": {
+    "name": "Contemplation",
+    "description": "Augmente les PV max du porteur de <orangeStrong>{{1, percent}}%</orangeStrong> et les soins reçus de <orangeStrong>{{6, percent}}%</orangeStrong>. Lorsque le porteur utilise sa compétence ou son ultime, il consomme <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de ses PV max, et les DGT infligés par cette attaque augmentent de <orangeStrong>{{3, percent}}%</orangeStrong>. Si les PV consommés par cet effet sont supérieurs à {{4}}, les DGT infligés par cette attaque augmentent de <orangeStrong>{{5, percent}}%</orangeStrong> supplémentaires.<br>Si les PV du porteur sont insuffisants, ils tombent à 1."
+  }
+}

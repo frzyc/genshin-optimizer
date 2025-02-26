@@ -27,7 +27,7 @@
       "0": {
         "name": "Coup de grâce",
         "fullDesc": "Accorde {{5}} cumuls de Soif de combat, avec {{2, percent}}% de chances de base d'augmenter les DGT subis par une cible ennemie unique de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. Puis inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à la cible.",
-        "shortDesc": "Accorde <orangeStrong>{{5}}</orangeStrong> cumuls de Soif de combat, avec de fortes chances d'augmenter les DGT subis par la cible ennemie et lui inflige des DGT physiques massifs.",
+        "shortDesc": "Accorde <orangeStrong>{{5}}</orangeStrong> cumuls de Soif de combat, avec de fortes chances d'augmenter les DGT subis par un ennemi et lui inflige des DGT physiques massifs.",
         "tag": "Cible unique"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Surcharge cinétique",
-        "fullDesc": "Dissipe immédiatement {{1}} bonus de la cible ennemie lors de l'utilisation de la compétence.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Dissipe immédiatement {{1}} bonus de la cible ennemie lors de l'utilisation de la compétence."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Freinage cyclique",
-        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires pour chaque cumul de Soif de combat obtenu.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires pour chaque cumul de Soif de combat obtenu."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Soif de combat écrasante",
-        "fullDesc": "Lors de l'utilisation de l'ATQ normale renforcée, chaque coup porté par Direct du droit accorde à Luka {{1, percent}}% de chances fixes d'utiliser 1 attaque supplémentaire. Cet effet ne s'applique pas aux coups supplémentaires assénés de cette manière.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lors de l'utilisation de l'ATQ normale renforcée, chaque coup porté par Direct du droit accorde à Luka {{1, percent}}% de chances fixes d'utiliser 1 attaque supplémentaire. Cet effet ne s'applique pas aux coups supplémentaires assénés de cette manière."
       }
     }
   },

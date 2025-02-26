@@ -1,0 +1,7 @@
+{
+  "setName": "Hero of Triumphant Song",
+  "setEffects": {
+    "2": "ATK +{{1, percent}}%.",
+    "4": "Saat Memosprite pengguna ada di medan pertempuran, SPD pengguna meningkat {{1, percent}}%. Saat Memosprite pengguna menyerang, CRIT DMG pengguna dan Memosprite miliknya akan meningkat {{2, percent}}%, berlangsung selama {{3}} giliran."
+  }
+}

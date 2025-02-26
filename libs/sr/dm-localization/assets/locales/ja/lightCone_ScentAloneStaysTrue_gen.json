@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#せきじつ}昔日{RUBY_E#}の{RUBY_B#かお}香{RUBY_E#}りは{RUBY_B#いま}今{RUBY_E#}も{RUBY_B#なお}猶{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#あんしん}安心{RUBY_E#}",
+    "description": "装備キャラの撃破特効+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが必殺技を発動して敵を攻撃した後、その敵を「忘憂」状態にする、{{5}}ターン継続。「忘憂」状態の敵が受けるダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。装備キャラの撃破特効が{{3, percent}}%以上の場合、敵の受けるダメージアップ効果がさらに+<orangeStrong>{{4, percent}}%</orangeStrong>。"
+  }
+}

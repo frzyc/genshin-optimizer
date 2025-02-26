@@ -1,0 +1,7 @@
+{
+  "setName": "Klagende Dichterin",
+  "setEffects": {
+    "2": "Erhöht Quanten-SCH um {{1, percent}}%.",
+    "4": "Reduziert die GES des Trägers um {{6, percent}}%. Wenn die GES des Trägers vor dem Kampfeintritt unter {{2}}/{{3}} liegt, wird die KRIT-Rate des Trägers um {{4, percent}}%/{{5, percent}}% erhöht. Dieser Effekt wirkt auch auf den Memogeist des Trägers."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Ninjutsu Inscription: Dazzling Evilbreaker",
+  "passive": {
+    "name": "Exorcism",
+    "description": "ทำให้เอฟเฟกต์ทำลายล้างของผู้สวมใส่ เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อเข้าสู่การต่อสู้ จะฟื้นฟูพลังงาน <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> หน่วยทันที หลังจากผู้สวมใส่ปล่อยท่าไม้ตาย จะได้รับ \"คาถาสายฟ้า\" โดยหลังจากปล่อยการโจมตีปกติ 2 ครั้ง จะเร่งแอ็กชันของผู้สวมใส่ <orangeStrong>{{3, percent}}%</orangeStrong> และลบล้าง \"คาถาสายฟ้า\" ทั้งนี้หลังจากผู้สวมใส่ ปล่อยท่าไม้ตายแล้ว จะรีเซ็ต \"คาถาสายฟ้า\""
+  }
+}

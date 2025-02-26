@@ -4,7 +4,14 @@ import { allRelicMainStatKeys, allRelicSubStatKeys } from './relic'
 export const allRarityKeys = [5, 4, 3, 2, 1] as const
 export type RarityKey = (typeof allRarityKeys)[number]
 
-export const otherStatKeys = ['spd_', 'dmg_', 'weakness_', 'resPen_'] as const
+export const otherStatKeys = [
+  'spd_',
+  'dmg_',
+  'weakness_',
+  'resPen_',
+  'incHeal_',
+  'baseSpd',
+] as const
 
 export const allStatKeys = Array.from(
   new Set([...allRelicMainStatKeys, ...allRelicSubStatKeys, ...otherStatKeys])
@@ -35,6 +42,9 @@ export const allAbilityLimits: Record<
   skill: abilityLimits,
   ult: abilityLimits,
   talent: abilityLimits,
+  // TODO: validate this
+  servantSkill: abilityLimits,
+  servantTalent: abilityLimits,
 } as const
 
 export const allPathKeys = [
@@ -45,5 +55,6 @@ export const allPathKeys = [
   'Destruction',
   'Harmony',
   'TheHunt',
+  'Remembrance',
 ] as const
 export type PathKey = (typeof allPathKeys)[number]

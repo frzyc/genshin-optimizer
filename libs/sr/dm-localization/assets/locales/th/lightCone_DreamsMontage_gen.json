@@ -1,0 +1,7 @@
+{
+  "name": "Dream's Montage",
+  "passive": {
+    "name": "Academy-Style Edit",
+    "description": "ทำให้ความเร็วของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หลังจากโจมตีศัตรูเป้าหมาย ที่อยู่ในสถานะทำลายจุดอ่อน จะฟื้นฟูพลังงาน <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> หน่วย โดยเอฟเฟกต์นี้เกิดขึ้นได้มากสุด {{3}} ครั้งต่อเทิร์น"
+  }
+}

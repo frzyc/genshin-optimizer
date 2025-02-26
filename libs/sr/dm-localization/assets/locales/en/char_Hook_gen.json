@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Innocence",
-        "fullDesc": "Hook restores HP equal to {{1, percent}}% of her Max HP whenever her Talent is triggered.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Hook restores HP equal to {{1, percent}}% of her Max HP whenever her Talent is triggered."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivete",
-        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Playing With Fire",
-        "fullDesc": "After using her Ultimate, Hook has her action advanced by {{2, percent}}% and additionally regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After using her Ultimate, Hook has her action advanced by {{2, percent}}% and additionally regenerates {{1}} Energy."
       }
     }
   },

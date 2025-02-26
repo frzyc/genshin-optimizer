@@ -1,0 +1,7 @@
+{
+  "name": "忍法帖•缭乱破魔",
+  "passive": {
+    "name": "除邪",
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。进入战斗时立即恢复<orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong>点能量，且装备者施放终结技后获得【雷遁】，施放2次普攻后，装备者行动提前<orangeStrong>{{3, percent}}%</orangeStrong>，并移除【雷遁】。装备者施放终结技后会重置【雷遁】。"
+  }
+}

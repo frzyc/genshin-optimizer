@@ -1,0 +1,7 @@
+{
+  "name": "Dựng Phim Trong Mơ",
+  "passive": {
+    "name": "Chỉnh Sửa Phong Cách Học Viện",
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> tốc độ của người trang bị, sau khi tấn công mục tiêu phe địch ở trạng thái Phá Vỡ Điểm Yếu, sẽ hồi <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> điểm Năng Lượng, hiệu ứng này mỗi hiệp tối đa kích hoạt {{3}} lần."
+  }
+}

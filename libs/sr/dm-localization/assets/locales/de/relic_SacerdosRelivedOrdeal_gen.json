@@ -1,0 +1,7 @@
+{
+  "setName": "Wiedererlebte Tortur des Priesters",
+  "setEffects": {
+    "2": "Erhöht GES um {{1, percent}}%.",
+    "4": "Wenn eine Fertigkeit oder ein Ultimate auf einen Verbündeten eingesetzt wird, wird der KRIT-SCH des Ziels für {{2}} Rd. um {{1, percent}}% erhöht. Dieser Effekt ist bis zu {{3}}-mal stapelbar."
+  }
+}

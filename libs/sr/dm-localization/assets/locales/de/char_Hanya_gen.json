@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Schriftführerin",
-        "fullDesc": "Erhöht den ANG von Verbündeten, die die Fertigkeitspunkt-Wiederherstellung von Aufbürden auslösen, für {{2}} Rd. um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den ANG von Verbündeten, die die Fertigkeitspunkt-Wiederherstellung von Aufbürden auslösen, für {{2}} Rd. um {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Totenreich",
-        "fullDesc": "Stellt zusätzlich {{1}} Fertigkeitspunkt(e) wieder her, wenn mit Aufbürden belegte Gegner besiegt werden und die Auslösungsanzahl für die Fertigkeitspunkt-Wiederherstellung von Aufbürden {{2}} oder weniger beträgt.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt zusätzlich {{1}} Fertigkeitspunkt(e) wieder her, wenn mit Aufbürden belegte Gegner besiegt werden und die Auslösungsanzahl für die Fertigkeitspunkt-Wiederherstellung von Aufbürden {{2}} oder weniger beträgt."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Wiederbeleben",
-        "fullDesc": "Stellt {{1}} Pkt. Energie wieder her, wenn die Fertigkeitspunkt-Wiederherstellung von Aufbürden ausgelöst wird.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt {{1}} Pkt. Energie wieder her, wenn die Fertigkeitspunkt-Wiederherstellung von Aufbürden ausgelöst wird."
       }
     }
   },

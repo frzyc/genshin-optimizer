@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' Roll",
-        "fullDesc": "Ao usar a Perícia, aumenta a chance-base de causar \"Choque\" no inimigo-alvo atacado em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia, aumenta a chance-base de causar \"Choque\" no inimigo-alvo atacado em {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vibração das Cordas",
-        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mania",
-        "fullDesc": "Ao derrotar um inimigo, o ATQ aumenta em {{1, percent}}% por {{2}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao derrotar um inimigo, o ATQ aumenta em {{1, percent}}% por {{2}} rodada(s)."
       }
     }
   },

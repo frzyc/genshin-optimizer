@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Torture",
-        "fullDesc": "When the Ultimate is used, enemy targets will now receive DMG immediately from all currently applied DoT sources instead of just receiving DMG immediately from the currently applied Shock state.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When the Ultimate is used, enemy targets will now receive DMG immediately from all currently applied DoT sources instead of just receiving DMG immediately from the currently applied Shock state."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Plunder",
-        "fullDesc": "If an enemy is defeated while Shocked, Kafka additionally regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "If an enemy is defeated while Shocked, Kafka additionally regenerates {{1}} Energy."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Thorns",
-        "fullDesc": "The base chance for target enemies to be Shocked by the Ultimate, the Technique, and the Talent-triggered Follow-up ATK increases by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "The base chance for target enemies to be Shocked by the Ultimate, the Technique, and the Talent-triggered Follow-up ATK increases by {{1, percent}}%."
       }
     }
   },

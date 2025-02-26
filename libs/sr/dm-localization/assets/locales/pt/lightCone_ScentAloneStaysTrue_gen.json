@@ -1,0 +1,7 @@
+{
+  "name": "Só a Fragrância Permanece",
+  "passive": {
+    "name": "Contentamento",
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após o usuário utilizar a Perícia Suprema para atacar inimigos-alvo, inflige o(s) alvo(s) com o estado de \"Infortúnio\", durando por {{5}} rodada(s). Enquanto estiverem no estado de \"Infortúnio\", inimigos-alvo recebem <orangeStrong>{{2, percent}}%</orangeStrong> a mais de Dano. O efeito de aumento de Dano recebido é adicionalmente aumentado em <orangeStrong>{{4, percent}}%</orangeStrong> se o Efeito de Quebra atual do usuário for {{3, percent}}% ou maior."
+  }
+}

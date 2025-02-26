@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Esmagamento de Batalha",
-        "fullDesc": "Se os Golpes por Ação do Senhor dos Raios forem maiores ou iguais a {{1}} na próxima rodada, o Dano CRIT dele aumenta em {{2, percent}}% pela próxima rodada.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Se os Golpes por Ação do Senhor dos Raios forem maiores ou iguais a {{1}} na próxima rodada, o Dano CRIT dele aumenta em {{2, percent}}% pela próxima rodada."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Providência da Sabedoria",
-        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Marechal da Guerra",
-        "fullDesc": "Após a Perícia ser utilizada, a Chance de CRIT aumenta em {{1, percent}}% por {{2}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Após a Perícia ser utilizada, a Chance de CRIT aumenta em {{1, percent}}% por {{2}} rodada(s)."
       }
     }
   },

@@ -57,32 +57,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Módulo α: Estallido de desfase",
-        "fullDesc": "En el estado de Combustión completa, los ataques contra enemigos que no tengan Debilidad de Fuego también pueden reducir su Firmeza. Este efecto equivale al {{1, percent}}% de la Reducción de Firmeza de la habilidad original.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "En el estado de Combustión completa, los ataques contra enemigos que no tengan Debilidad de Fuego también pueden reducir su Firmeza. Este efecto equivale al {{1, percent}}% de la Reducción de Firmeza de la habilidad original."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Módulo β: Armadura autorreactiva",
-        "fullDesc": "Si el efecto de Ruptura de SAM es igual o superior al {{1, percent}}%/{{2, percent}}% cuando está en el estado de Combustión completa, tras atacar a un enemigo con Ruptura de Debilidad, la Reducción de Firmeza de este ataque se convertirá 1 vez en un {{3, percent}}%/{{4, percent}}% de Daño de Ultrarruptura.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Si el efecto de Ruptura de SAM es igual o superior al {{1, percent}}%/{{2, percent}}% cuando está en el estado de Combustión completa, tras atacar a un enemigo con Ruptura de Debilidad, la Reducción de Firmeza de este ataque se convertirá 1 vez en un {{3, percent}}%/{{4, percent}}% de Daño de Ultrarruptura."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Módulo γ: Núcleo de sobrecarga",
-        "fullDesc": "Si el ATQ de SAM es superior a {{1}}, por cada {{2}} pts. de ATQ que superen este valor, el efecto de Ruptura de SAM aumenta en un {{3, percent(fixed: 1)}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Si el ATQ de SAM es superior a {{1}}, por cada {{2}} pts. de ATQ que superen este valor, el efecto de Ruptura de SAM aumenta en un {{3, percent(fixed: 1)}}%."
       }
     }
   },

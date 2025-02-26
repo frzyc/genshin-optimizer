@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Douce mais cruelle",
-        "fullDesc": "Lorsqu'un allié de Kafka utilise une ATQ normale sur une cible ennemie, Kafka lance immédiatement 1 attaque de suivi et inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à cette cible, avec {{2, percent}}% de chances de base de lui infliger l'effet Stupéfaction de son ultime pendant {{3}} tours. Cet effet ne peut être déclenché que 1 fois par tour.",
-        "shortDesc": "Lorsqu'un allié utilise son ATQ normale sur un ennemi, Kafka lance immédiatement une attaque de suivi et inflige des DGT de foudre, avec de fortes chances d'<orangeStrong>infliger Stupéfaction</orangeStrong> à cette cible. Cet effet ne peut être déclenché que 1 fois par tour.",
+        "fullDesc": "Lorsqu'un allié de Kafka utilise une ATQ normale sur une cible ennemie, Kafka lance immédiatement 1 ATQ de suivi et inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à cette cible, avec {{2, percent}}% de chances de base de lui infliger l'effet Stupéfaction de son ultime pendant {{3}} tours. Cet effet ne peut être déclenché que 1 fois par tour.",
+        "shortDesc": "Lorsqu'un allié utilise son ATQ normale sur un ennemi, Kafka lance immédiatement une ATQ de suivi et inflige des DGT de foudre, avec de fortes chances d'<orangeStrong>infliger Stupéfaction</orangeStrong> à cette cible. Cet effet ne peut être déclenché que 1 fois par tour.",
         "tag": "Cible unique"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Torture",
-        "fullDesc": "Les cibles ennemies subissent immédiatement les dégâts infligés par tous les effets de dégâts sur la durée actuels au lieu de subir immédiatement les dégâts de Stupéfaction lors de l'utilisation de l'ultime.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Les cibles ennemies subissent immédiatement les dégâts infligés par tous les effets de dégâts sur la durée actuels au lieu de subir immédiatement les dégâts de Stupéfaction lors de l'utilisation de l'ultime."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Pillage",
-        "fullDesc": "Lorsqu'un ennemi affecté par l'effet Stupéfaction est vaincu, Kafka régénère en plus {{1}} points d'énergie.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsqu'un ennemi affecté par l'effet Stupéfaction est vaincu, Kafka régénère en plus {{1}} points d'énergie."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Épines",
-        "fullDesc": "Les chances de base des cibles ennemies de se voir infliger Stupéfaction lors de l'ultime, la technique ou l'ATQ de suivi déclenchée par le talent augmentent de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Les chances de base des cibles ennemies de se voir infliger Stupéfaction lors de l'ultime, la technique ou l'ATQ de suivi déclenchée par le talent augmentent de {{1, percent}}%."
       }
     }
   },

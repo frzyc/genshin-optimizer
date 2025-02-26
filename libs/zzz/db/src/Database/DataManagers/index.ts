@@ -1,5 +1,6 @@
 export * from './CharacterDataManager'
 export * from './CharacterOptManager'
+export * from './CharMetaDataManager'
 export * from './DiscDataManager'
 export * from './GeneratedBuildListDataManager'
 export * from './OptConfigDataManager'

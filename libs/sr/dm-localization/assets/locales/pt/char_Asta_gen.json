@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Faíscas",
-        "fullDesc": "O ATQ Básico de Asta tem {{1, percent}}% de chance-base de causar \"Queimadura\" ao inimigo-alvo por {{2}} rodada(s).<br>Os inimigos afetados por \"Queimadura\" recebem Dano de Fogo Contínuo igual a {{3, percent}}% do Dano causado pelo ATQ Básico de Asta no início de cada rodada.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "O ATQ Básico de Asta tem {{1, percent}}% de chance-base de causar \"Queimadura\" ao inimigo-alvo por {{2}} rodada(s).<br>Os inimigos afetados por \"Queimadura\" recebem Dano de Fogo Contínuo igual a {{3, percent}}% do Dano causado pelo ATQ Básico de Asta no início de cada rodada."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Acender",
-        "fullDesc": "Quando Asta está no campo, o Dano de Fogo de todos os aliados aumenta em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando Asta está no campo, o Dano de Fogo de todos os aliados aumenta em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constelação",
-        "fullDesc": "A DEF de Asta aumenta em {{1, percent}}% para cada acúmulo de Carga que ela tem.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A DEF de Asta aumenta em {{1, percent}}% para cada acúmulo de Carga que ela tem."
       }
     }
   },

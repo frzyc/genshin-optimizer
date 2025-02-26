@@ -1,0 +1,6240 @@
+{
+  "1140201": [
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.55
+        },
+        {
+          "Value": 0.33
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.55
+        },
+        {
+          "Value": 0.33
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.66
+        },
+        {
+          "Value": 0.396
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.66
+        },
+        {
+          "Value": 0.396
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.77
+        },
+        {
+          "Value": 0.462
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.77
+        },
+        {
+          "Value": 0.462
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.88
+        },
+        {
+          "Value": 0.528
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.88
+        },
+        {
+          "Value": 0.528
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.99
+        },
+        {
+          "Value": 0.594
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.99
+        },
+        {
+          "Value": 0.594
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1.1
+        },
+        {
+          "Value": 0.66
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1.1
+        },
+        {
+          "Value": 0.66
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1.21
+        },
+        {
+          "Value": 0.726
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1.21
+        },
+        {
+          "Value": 0.726
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1.32
+        },
+        {
+          "Value": 0.792
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1.32
+        },
+        {
+          "Value": 0.792
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1.43
+        },
+        {
+          "Value": 0.858
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1.43
+        },
+        {
+          "Value": 0.858
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    },
+    {
+      "SkillID": 1140201,
+      "SkillName": {
+        "Hash": "474908829947930591"
+      },
+      "SkillTag": {
+        "Hash": "8271918951422785867"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3942575346024233467"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "6141215541844076818"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 15
+        }
+      ],
+      "StanceDamageDisplay": 10,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1.54
+        },
+        {
+          "Value": 0.924
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1.54
+        },
+        {
+          "Value": 0.924
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "StanceDamageType": "Thunder",
+      "AttackType": "Servant",
+      "SkillEffect": "Blast"
+    }
+  ],
+  "1140203": [
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 44
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 44
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 46.2
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 46.2
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 48.4
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 48.4
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 50.6
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 50.6
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 52.8
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 52.8
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 55
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 55
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 57.2
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 57.2
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 59.4
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 59.4
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 61.6
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 61.6
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140203,
+      "SkillName": {
+        "Hash": "6223718378827429957"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "12107161552458923910"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14743780309557817245"
+      },
+      "RatedSkillTreeID": [
+        1402102
+      ],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 63.8
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 63.8
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 6
+        }
+      ],
+      "SkillEffect": "Enhance"
+    }
+  ],
+  "1140205": [
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140205,
+      "SkillName": {
+        "Hash": "2005389005364572598"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "2145824298643035238"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "10540596989502570453"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 1
+        }
+      ],
+      "SkillEffect": "Enhance"
+    }
+  ],
+  "1140206": [
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1140206,
+      "SkillName": {
+        "Hash": "10928766594966685123"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/1402/SkillIcon_11402_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "8815739862805533577"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "18112152095632443728"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 20
+        }
+      ],
+      "SkillEffect": "Enhance"
+    }
+  ],
+  "1800701": [
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.18
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.45
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.18
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.45
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.216
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.54
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.216
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.54
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.252
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.63
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.252
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.63
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.288
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.72
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.288
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.72
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.324
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.81
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.324
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.81
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.9
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.9
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.396
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.99
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.396
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 0.99
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.432
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 1.08
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.432
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 1.08
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.468
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 1.17
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.468
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 1.17
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    },
+    {
+      "SkillID": 1800701,
+      "SkillName": {
+        "Hash": "5959502663816777040"
+      },
+      "SkillTag": {
+        "Hash": "9868503137584243444"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant01.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "10940022753528469405"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "7038750824213332483"
+      },
+      "RatedSkillTreeID": [
+        8007102,
+        8007103,
+        8008102,
+        8008103
+      ],
+      "RatedRankID": [
+        800701,
+        800801
+      ],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 15
+        },
+        {
+          "Value": 30
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "StanceDamageDisplay": 15,
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.504
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 1.26
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.504
+        },
+        {
+          "Value": 4
+        },
+        {
+          "Value": 1.26
+        }
+      ],
+      "StanceDamageType": "Ice",
+      "AttackType": "Servant",
+      "SkillEffect": "AoEAttack"
+    }
+  ],
+  "1800703": [
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.06
+        },
+        {
+          "Value": 0.12
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.06
+        },
+        {
+          "Value": 0.12
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.072
+        },
+        {
+          "Value": 0.144
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.072
+        },
+        {
+          "Value": 0.144
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.084
+        },
+        {
+          "Value": 0.168
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.084
+        },
+        {
+          "Value": 0.168
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.096
+        },
+        {
+          "Value": 0.192
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.096
+        },
+        {
+          "Value": 0.192
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.108
+        },
+        {
+          "Value": 0.216
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.108
+        },
+        {
+          "Value": 0.216
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.24
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.24
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.132
+        },
+        {
+          "Value": 0.264
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.132
+        },
+        {
+          "Value": 0.264
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.144
+        },
+        {
+          "Value": 0.288
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.144
+        },
+        {
+          "Value": 0.288
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.156
+        },
+        {
+          "Value": 0.312
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.156
+        },
+        {
+          "Value": 0.312
+        }
+      ],
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800703,
+      "SkillName": {
+        "Hash": "4884120913737219953"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP01",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "3716507517080563288"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426672058874032645"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.168
+        },
+        {
+          "Value": 0.336
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.168
+        },
+        {
+          "Value": 0.336
+        }
+      ],
+      "SkillEffect": "Support"
+    }
+  ],
+  "1800705": [
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800705,
+      "SkillName": {
+        "Hash": "10480373109413708372"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP03",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18405312700192853132"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "2426783276237137210"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [],
+      "SimpleExtraEffectIDList": [],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.5
+        }
+      ],
+      "SkillEffect": "Enhance"
+    }
+  ],
+  "1800706": [
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    },
+    {
+      "SkillID": 1800706,
+      "SkillName": {
+        "Hash": "15637547572092546216"
+      },
+      "SkillTag": {
+        "Hash": "15983939177738998168"
+      },
+      "SkillTypeDesc": {
+        "Hash": "6335588426775391855"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "SkillP04",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_ServantPassive.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "9513205300370354186"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "14815545124956775406"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.25
+        }
+      ],
+      "SkillEffect": "Enhance"
+    }
+  ],
+  "1800707": [
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 1,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.18
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.18
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 2,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 3,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.22
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.22
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 4,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.24
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.24
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 5,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.26
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.26
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 6,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.28
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 7,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 8,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 9,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.34
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.34
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    },
+    {
+      "SkillID": 1800707,
+      "SkillName": {
+        "Hash": "8911775483521162562"
+      },
+      "SkillTag": {
+        "Hash": "12601813654230214900"
+      },
+      "SkillTypeDesc": {
+        "Hash": "14537074486625075419"
+      },
+      "Level": 10,
+      "MaxLevel": 10,
+      "SkillTriggerKey": "Skill11",
+      "SkillIcon": "SpriteOutput/SkillIcons/Avatar/8007/SkillIcon_18007_Servant02.png",
+      "UltraSkillIcon": "",
+      "SkillDesc": {
+        "Hash": "18345116932524273276"
+      },
+      "SimpleSkillDesc": {
+        "Hash": "9323664965931617191"
+      },
+      "RatedSkillTreeID": [],
+      "RatedRankID": [],
+      "ExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "SimpleExtraEffectIDList": [
+        10000001,
+        10000017
+      ],
+      "ShowStanceList": [
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        },
+        {
+          "Value": 0
+        }
+      ],
+      "SPBase": {
+        "Value": 10
+      },
+      "SPMultipleRatio": {
+        "Value": 0.5
+      },
+      "BPNeed": {
+        "Value": -1
+      },
+      "SkillNeed": {
+        "Hash": "18440467643921305064"
+      },
+      "DelayRatio": {
+        "Value": 1
+      },
+      "ParamList": [
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "SimpleParamList": [
+        {
+          "Value": 0.36
+        },
+        {
+          "Value": 3
+        },
+        {
+          "Value": 1
+        }
+      ],
+      "AttackType": "Servant",
+      "SkillEffect": "Support"
+    }
+  ]
+}

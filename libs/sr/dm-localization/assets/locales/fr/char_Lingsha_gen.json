@@ -1,0 +1,96 @@
+{
+  "name": "Lingsha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Encens sacré",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Lingsha à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Vapeurs incandescentes",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Lingsha à tous les ennemis, tout en restaurant un montant de PV équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Lingsha + <orangeStrong>{{3}}</orangeStrong> à tous les alliés. D'autre part, avance l'action de Fuyuan de {{4, percent}}%.",
+        "shortDesc": "Inflige des DGT de feu mineurs à tous les ennemis tout en <orangeStrong>restaurant des PV</orangeStrong> à tous les alliés. D'autre part, avance l'action de Fuyuan.",
+        "tag": "ZdE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Voile des brumes évanescentes",
+        "fullDesc": "Applique Embrumé à tous les ennemis. Les cibles affectées par Embrumé subissent <orangeStrong>{{4, percent}}%</orangeStrong> de DGT de rupture supplémentaires pendant {{5}} tours.<br>Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Lingsha à tous les ennemis tout en restaurant un montant de PV équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Lingsha + <orangeStrong>{{3}}</orangeStrong> à tous les alliés.  D'autre part, avance l'action de Fuyuan de {{6, percent}}%.",
+        "shortDesc": "Augmente les <orangeStrong>DGT de rupture</orangeStrong> subis par tous les ennemis, et leur inflige des DGT de feu, tout en <orangeStrong>restaurant des PV</orangeStrong> à tous les alliés. D'autre part, avance l'action de Fuyuan.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Danse nébuleuse",
+        "fullDesc": "Lors de l'utilisation de la compétence, invoque Fuyuan, dont la VIT de départ est de {{1}} et le nombre d'actions initial est de {{7}}.<br>Lors de son action, Fuyuan lance une ATQ de suivi qui inflige des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Lingsha à tous les ennemis. D'autre part, inflige des DGT de feu équivalents à <orangeStrong>{{8, percent}}%</orangeStrong> de l'ATQ de Lingsha à un ennemi unique aléatoire, cette instance de DGT priorisant les cibles dont la robustesse est supérieure à 0 et qui ont une Faiblesse au feu. Dissipe {{6}} malus sur tous les alliés et restaure un montant de PV équivalent à <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Lingsha + <orangeStrong>{{4}}</orangeStrong>.<br>Fuyuan peut cumuler jusqu'à {{5}} actions. Fuyuan disparaît lorsque son nombre d'actions tombe à 0 ou que Lingsha est à terre.<br>Lorsque Fuyuan est sur le champ de bataille, utiliser la compétence augmente le nombre d'actions de Fuyuan de {{7}}.",
+        "shortDesc": "Utiliser la compétence invoque Fuyuan. Lors de son action, Fuyuan lance une <orangeStrong>ATQ de suivi</orangeStrong> et inflige des DGT de feu mineurs à tous les ennemis. D'autre part, inflige des DGT de feu mineurs à un ennemi unique aléatoire, en priorisant les cibles dont la robustesse est supérieure à 0 et qui ont une Faiblesse au feu. Dissipe 1 malus à tous les alliés et <orangeStrong>restaure des PV</orangeStrong>.<br>Utiliser la compétence de façon répétée augmente le nombre d'actions de Fuyuan.",
+        "tag": "ZdE"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Effluves de l'aurore",
+        "fullDesc": "Invoque immédiatement Fuyuan au début du prochain combat après avoir utilisé la technique, et inflige Embrumé à tous les ennemis pendant {{1}} tours.",
+        "shortDesc": "Invoque immédiatement Fuyuan au début du prochain combat après avoir utilisé la technique, et augmente les <orangeStrong>DGT de rupture subis</orangeStrong> par tous les ennemis.",
+        "tag": "Soutien"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": "Cible unique"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Fumée écarlate",
+        "fullDesc": "Augmente l'ATQ et les soins prodigués par le personnage à hauteur de {{1, percent}}%/{{2, percent}}% de son effet de Rupture, jusqu'à un maximum de {{3, percent}}%/{{4, percent}}% d'ATQ/de soins prodigués respectivement."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Brume d'orchidée",
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lors de l'utilisation de l'ATQ normale."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Écho des cendres",
+        "fullDesc": "Lorsque Fuyuan est sur le champ de bataille et qu'un personnage allié subit des DGT ou consomme des PV, si un personnage de l'équipe a un pourcentage de PV inférieur ou égal à {{1, percent}}%, Fuyuan lance immédiatement l'ATQ de suivi du talent contre les ennemis. Cela ne consomme pas le nombre d'actions de Fuyuan. Cet effet peut se déclencher à nouveau après {{2}} tours."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Fumée destructrice",
+      "desc": "L'efficacité de Rupture de faiblesse de Lingsha augmente de {{2, percent}}%. Lorsqu'une unité ennemie subit une Rupture de faiblesse, sa DÉF est réduite de {{1, percent}}%."
+    },
+    "2": {
+      "name": "Volutes écarlates",
+      "desc": "L'effet de Rupture de tous les alliés augmente de {{1, percent}}% pendant {{2}} tours lors de l'utilisation de l'ultime."
+    },
+    "3": {
+      "name": "Mèche parfumée",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Senteurs feutrées",
+      "desc": "Lors de l'action de Fuyuan, restaure un montant de PV équivalent à {{1, percent}}% de l'ATQ de Lingsha à la cible alliée ayant les PV les plus bas actuellement."
+    },
+    "5": {
+      "name": "Plénitude intérieure",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Paradis de l'isolement",
+      "desc": "Réduit toutes les RÉS de type de tous les ennemis de {{1, percent}}% lorsque Fuyuan est sur le champ de bataille. Fuyuan inflige {{2}} instances de DGT supplémentaires lors de son attaque, chacune infligeant des DGT de feu équivalents à {{3, percent}}% de l'ATQ de Lingsha et réduisant la robustesse d'une unité ennemie aléatoire de {{4}}. Les cibles dont la robustesse est supérieure à 0 et qui ont une Faiblesse au feu sont touchées en priorité."
+    }
+  }
+}

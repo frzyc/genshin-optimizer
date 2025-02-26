@@ -1,0 +1,96 @@
+{
+  "name": "Sunday",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Gleaming Admonition",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sunday pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Benison of Paper and Rites",
+        "fullDesc": "Membuat 1 karakter tim yang ditargetkan dan objek panggilannya segera beraksi, serta meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> DMG yang diakibatkannya. Jika target memiliki objek panggilan, maka efek peningkatan DMG yang diakibatkannya akan meningkat ekstra <orangeStrong>{{4, percent}}%</orangeStrong>, berlangsung selama {{3}} giliran.<br>Setelah melancarkan Skill pada \"The Beatified\", akan memulihkan 1 Poin Skill.<br>Saat Sunday melancarkan kemampuan ini pada karakter Path \"Harmony\", efek \"segera beraksi\" tidak akan terpicu.",
+        "shortDesc": "Membuat <orangeStrong>1 karakter tim yang ditargetkan dan objek panggilannya segera beraksi</orangeStrong>, serta meningkatkan DMG yang diakibatkannya. Jika target memiliki objek panggilan, maka efek peningkatan DMG yang diakibatkannya akan meningkat ekstra.<br>Setelah melancarkan Skill pada \"The Beatified\", akan memulihkan 1 Poin Skill.<br>Saat Sunday melancarkan kemampuan ini pada karakter Path \"Harmony\", efek \"segera beraksi\" tidak akan terpicu.",
+        "tag": "Support"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ode to Caress and Cicatrix",
+        "fullDesc": "Memulihkan Energy 1 karakter tim yang ditargetkan sebesar {{1, percent(fixed: 1)}}% Max Energy, serta membuat target dan objek panggilan miliknya menjadi \"The Beatified\". Meningkatkan CRIT DMG \"The Beatified\", peningkatannya adalah sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dari CRIT DMG Sunday + <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>.<br>Setiap kali giliran Sunday dimulai, durasi status \"The Beatified\" akan berkurang 1, berlangsung selama {{3}} giliran. Efek ini hanya akan efektif pada target terbaru dari pelancaran Ultimate Sunday (selain Sunday sendiri). Saat Sunday gugur, efek \"The Beatified\" juga akan dihapus.",
+        "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> 1 karakter tim yang ditargetkan, serta membuat karakter tersebut dan objek panggilannya menjadi \"The Beatified\". Meningkatkan CRIT DMG \"The Beatified\".",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "The Sorrowing Body",
+        "fullDesc": "Saat melancarkan Skill, akan meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT Rate target selama {{2}} giliran.",
+        "shortDesc": "Saat melancarkan Skill, akan meningkatkan CRIT Rate target.",
+        "tag": "Support"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "The Glorious Mysteries",
+        "fullDesc": "Setelah menggunakan Technique, pada pertempuran selanjutnya saat Sunday pertama kali melancarkan kemampuan pada rekan tim, DMG yang diakibatkan target akan meningkat {{1, percent}}%, berlangsung selama {{2}} giliran.",
+        "shortDesc": "Setelah menggunakan Technique, pada pertempuran selanjutnya saat Sunday pertama kali melancarkan kemampuan pada rekan tim, DMG yang diakibatkan target akan meningkat.",
+        "tag": "Support"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rest Day's Longing",
+        "fullDesc": "Saat melancarkan Ultimate, jika Energy yang dipulihkan untuk target kurang dari {{1}} poin, maka Energy yang dipulihkan akan meningkat hingga {{1}} poin."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Exalted Sweep",
+        "fullDesc": "Saat pertempuran dimulai, Sunday akan segera memulihkan {{1}} Energy."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Haven in Palm",
+        "fullDesc": "Saat melancarkan Skill, akan menghapus {{1}} efek Debuff dari target."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Millennium's Quietus",
+      "desc": "Saat Sunday melancarkan Skill, karakter yang ditarget akan mengabaikan {{2, percent}}% DEF musuh saat mengakibatkan DMG, dan objek panggilannya akan mengabaikan {{3, percent}}% DEF musuh saat mengakibatkan DMG, berlangsung selama {{1}} giliran."
+    },
+    "2": {
+      "name": "Faith Outstrips Frailty",
+      "desc": "Memulihkan {{2}} Poin Skill setelah melancarkan Ultimate untuk pertama kalinya. DMG yang diakibatkan \"The Beatified\" meningkat {{1, percent}}%."
+    },
+    "3": {
+      "name": "Hermitage of Thorns",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Sculpture's Preamble",
+      "desc": "Saat giliran dimulai, akan memulihkan {{1}} Energy."
+    },
+    "5": {
+      "name": "Paper Raft in Silver Bay",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Dawn of Sidereal Cacophony",
+      "desc": "Efek peningkatan CRIT Rate dari Talent menjadi dapat ditumpuk hingga {{1}} lapis, dan membuat durasi Talent bertambah {{3}} giliran. Saat Sunday melancarkan Ultimate, efek peningkatan CRIT Rate dari Talent juga akan ditambahkan pada target. Saat efek peningkatan CRIT Rate dari Talent efektif, jika CRIT Rate target lebih dari 100%, maka untuk setiap 1% CRIT Rate yang berlebih akan meningkatkan {{2, percent}}% CRIT DMG."
+    }
+  }
+}

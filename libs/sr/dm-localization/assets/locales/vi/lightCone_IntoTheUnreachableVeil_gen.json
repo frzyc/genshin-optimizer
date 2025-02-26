@@ -1,0 +1,7 @@
+{
+  "name": "Hướng Về Điều Không Thể Truy Hỏi",
+  "passive": {
+    "name": "Trò Chơi Trí Tuệ",
+    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Khi người trang bị thi triển Tuyệt Kỹ, sẽ khiến sát thương Chiến Kỹ và Tuyệt Kỹ do người trang bị gây ra tăng <orangeStrong>{{4, percent}}%</orangeStrong>, duy trì {{5}} hiệp. Sau khi người trang bị thi triển Tuyệt Kỹ, nếu Năng Lượng tiêu hao trong lần Tuyệt Kỹ này lớn hơn hoặc bằng {{3}} điểm, sẽ hồi 1 điểm Chiến Kỹ."
+  }
+}

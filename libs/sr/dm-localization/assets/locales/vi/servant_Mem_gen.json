@@ -1,0 +1,39 @@
+{
+  "name": "Mem",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Kẻ Xấu! Rắc Rối!",
+        "fullDesc": "Gây {{2}} lần sát thương, mỗi lần gây Sát Thương Băng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Mem cho 1 kẻ địch ngẫu nhiên. Cuối cùng gây Sát Thương Băng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Mem cho toàn bộ phe địch.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng, tổng cộng nảy bật <orangeStrong>{{2}}</orangeStrong> lần. Cuối cùng gây lượng nhỏ Sát Thương Băng cho toàn bộ phe địch.",
+        "tag": "Đánh Lan"
+      },
+      "1": {
+        "name": "Tôi Sẽ! Giúp Bạn!",
+        "fullDesc": "Khiến 1 đồng đội chỉ định Ưu Tiên Hành Động {{3, percent}}% và gắn kèm \"Mem Cổ Vũ\", duy trì {{2}} hiệp.<br>Mục tiêu sở hữu \"Mem Cổ Vũ\" mỗi khi gây 1 lần sát thương, sẽ gây thêm 1 lần Sát Thương Chuẩn bằng <orangeStrong>{{1, percent}}%</orangeStrong> sát thương ban đầu.<br>Khi thi triển kỹ năng này với chính mình, không thể kích hoạt hiệu ứng Ưu Tiên Hành Động.",
+        "shortDesc": "Khiến 1 đồng đội <orangeStrong>Ưu Tiên Hành Động</orangeStrong> và gắn kèm \"Mem Cổ Vũ\": Sau khi gây Sát Thương sẽ gây thêm <orangeStrong>Sát Thương Chuẩn</orangeStrong>.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Đồng Đội! Cùng Nhau!",
+        "fullDesc": "Tăng Sát Thương Bạo Kích của toàn bộ phe ta, mức tăng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích của Mem + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.<br>Nếu Nạp Năng Lượng chưa đạt 100%, khi Mem hành động sẽ tự động thi triển \"Kẻ Xấu! Rắc Rối!\". Khi Nạp Năng Lượng đạt 100%, Mem sẽ lập tức hành động, lần hành động sau có thể chọn 1 đồng đội và thi triển \"Tôi Sẽ! Giúp Bạn!\".",
+        "shortDesc": "Tăng Sát Thương Bạo Kích của toàn bộ phe ta.<br>Khi hành động sẽ tự động thi triển tấn công. Nếu Nạp Năng Lượng đạt 100% sẽ hành động ngay và có thể thi triển kỹ năng mới: Khiến 1 đồng đội <orangeStrong>ưu tiên hành động</orangeStrong> và có thể gây <orangeStrong>Sát Thương Chuẩn</orangeStrong>.",
+        "tag": "Hỗ Trợ"
+      },
+      "1": {
+        "name": "Mem, Cố Lên!",
+        "fullDesc": "Khi Mem được triệu hồi, sẽ nhận ngay {{1, percent}}% Nạp Năng Lượng.",
+        "shortDesc": "Khi được triệu hồi, nhận ngay Nạp Năng Lượng.",
+        "tag": "Cường Hóa"
+      },
+      "2": {
+        "name": "Tiếc Nuối... Không Lưu Luyến",
+        "fullDesc": "Khi Mem biến mất, sẽ khiến Nhà Khai Phá Ưu Tiên Hành Động {{1, percent}}%.",
+        "shortDesc": "Khi biến mất, sẽ khiến Nhà Khai Phá Ưu Tiên Hành Động.",
+        "tag": "Cường Hóa"
+      }
+    }
+  }
+}

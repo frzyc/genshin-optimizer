@@ -1,0 +1,7 @@
+{
+  "name": "长路终有归途",
+  "passive": {
+    "name": "新生",
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。当有敌方目标的弱点被击破时，有{{2, percent}}%的基础概率使其陷入【焚灼】状态，受到的击破伤害提高<orangeStrong>{{3, percent}}%</orangeStrong>，持续{{4}}回合，此效果可叠加{{5}}层。"
+  }
+}

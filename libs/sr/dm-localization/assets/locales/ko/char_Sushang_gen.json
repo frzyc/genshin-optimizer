@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "태허형온 • 촉야",
-        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고 소상은 즉시 행동한다. 동시에 소상의 공격력이 <orangeStrong>{{4, percent}}%</orangeStrong> 증가하고 전투 스킬 발동 시 [검세]의 발동 판정이 추가로 2회 증가한다. 지속 시간: {{2}}턴.<br>추가 판정으로 발동된 [검세]의 피해는 기존 피해의 {{3, percent}}%이다",
+        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고 소상은 즉시 행동한다. 동시에 소상의 공격력이 <orangeStrong>{{4, percent}}%</orangeStrong> 증가하고 전투 스킬 발동 시 [검세]의 발동 판정이 추가로 2회 증가한다. 지속 시간: {{2}}턴<br>추가 판정으로 발동된 [검세]의 피해는 기존 피해의 {{3, percent}}%이다",
         "shortDesc": "단일 적에게 대량의 물리 속성 피해를 가하고, [검세] 효과를 강화하며 <orangeStrong>즉시 행동</orangeStrong>한다",
         "tag": "단일 공격"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "순수",
-        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "응수",
-        "fullDesc": "[검세]를 1회 발동할 때마다 [검세]가 가하는 피해가 {{1, percent}}% 증가한다. 해당 효과 최대 중첩수: {{2}}스택",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "[검세]를 1회 발동할 때마다 [검세]가 가하는 피해가 {{1, percent}}% 증가한다. 해당 효과 최대 중첩수: {{2}}스택"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "섬멸",
-        "fullDesc": "일반 공격 혹은 전투 스킬 발동 후 필드 위의 적이 약점 격파 상태일 경우 소상의 행동 게이지가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "일반 공격 혹은 전투 스킬 발동 후 필드 위의 적이 약점 격파 상태일 경우 소상의 행동 게이지가 {{1, percent}}% 증가한다"
       }
     }
   },

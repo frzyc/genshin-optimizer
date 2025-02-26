@@ -1,0 +1,7 @@
+{
+  "name": "If Time Were a Flower",
+  "passive": {
+    "name": "Aspiration",
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1, percent}}%</orangeStrong>. After the wearer launches Follow-up ATK, additionally regenerates {{2}} Energy and gains \"Presage,\" lasting for {{3}} turn(s). While the wearer has \"Presage,\" all ally targets' CRIT DMG increases by <orangeStrong>{{4, percent}}%</orangeStrong>. When entering battle, the wearer regenerates {{5}} Energy and gains \"Presage,\" lasting for {{6}} turn(s)."
+  }
+}

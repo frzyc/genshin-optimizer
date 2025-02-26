@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt seinen Widerstand gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Formationsbrecher",
-        "fullDesc": "Erhöht den KRIT-SCH für die nächste Runde um {{2, percent}}%, wenn die Trefferzahl des Blitz-Lords in der nächsten Runde bei {{1}} oder mehr liegt.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den KRIT-SCH für die nächste Runde um {{2, percent}}%, wenn die Trefferzahl des Blitz-Lords in der nächsten Runde bei {{1}} oder mehr liegt."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Alles geplant",
-        "fullDesc": "Stellt unmittelbar zu Beginn des Kampfes {{1}} Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt unmittelbar zu Beginn des Kampfes {{1}} Energie wieder her."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Schachmatt",
-        "fullDesc": "Erhöht nach dem Einsatz der Fertigkeit die KRIT-Rate für {{2}} Rd. um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht nach dem Einsatz der Fertigkeit die KRIT-Rate für {{2}} Rd. um {{1, percent}}%."
       }
     }
   },

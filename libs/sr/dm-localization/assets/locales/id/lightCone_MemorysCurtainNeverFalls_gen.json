@@ -1,0 +1,7 @@
+{
+  "name": "Memory's Curtain Never Falls",
+  "passive": {
+    "name": "Reception",
+    "description": "Meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> SPD pengguna. Setelah pengguna melancarkan Skill, membuat DMG yang diakibatkan seluruh rekan tim meningkat <orangeStrong>{{2, percent}}%</orangeStrong>, berlangsung selama {{3}} giliran."
+  }
+}

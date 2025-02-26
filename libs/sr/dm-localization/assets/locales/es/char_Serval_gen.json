@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock",
-        "fullDesc": "Al usar la habilidad básica, la probabilidad base de afectar con Electrocución al enemigo atacado aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad básica, la probabilidad base de afectar con Electrocución al enemigo atacado aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vibración de cuerdas",
-        "fullDesc": "Recupera {{1}} pts. de energía al comenzar la batalla.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Recupera {{1}} pts. de energía al comenzar la batalla."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Locura",
-        "fullDesc": "Tras eliminar a un enemigo, el ATQ aumenta en un {{1, percent}}% durante {{2}} turnos.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tras eliminar a un enemigo, el ATQ aumenta en un {{1, percent}}% durante {{2}} turnos."
       }
     }
   },

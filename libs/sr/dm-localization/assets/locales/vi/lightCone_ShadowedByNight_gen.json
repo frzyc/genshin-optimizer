@@ -1,0 +1,7 @@
+{
+  "name": "Bóng Tối Đồng Hành",
+  "passive": {
+    "name": "Ẩn Nấp",
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Khi vào chiến đấu hoặc sau khi gây Sát Thương Phá Vỡ, Tốc Độ tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp, hiệu ứng này mỗi hiệp chỉ có thể kích hoạt 1 lần."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "name": "Mydei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Promessa da Viagem",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Mydei a um inimigo-alvo.",
+        "shortDesc": "Causa Dano Imaginário leve a um inimigo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Morrer Mil Vezes Sem Arrependimentos",
+        "fullDesc": "Consome PV em um valor igual a {{3, percent}}% dos PV atuais de Mydei. Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Mydei a um inimigo designado e Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> dos PV máximos de Mydei aos alvos adjacentes.<br>Se os PV atuais não forem suficientes, o uso da Perícia reduz os PV atuais de Mydei para 1.",
+        "shortDesc": "Consome PV e causa Dano Imaginário a uma unidade inimiga designada, além de Dano Imaginário leve aos alvos adjacentes.",
+        "tag": "Explosão"
+      },
+      "1": {
+        "name": "Regicida, Torne-se Rei",
+        "fullDesc": "Consome PV em um valor igual a {{3, percent}}% dos PV atuais de Mydei. Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Mydei a um inimigo e Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> dos PV máximos de Mydei a alvos adjacentes.<br>Se os PV atuais não forem suficientes, usar a Perícia reduz os PV atuais de Mydei para 1.<br>Esta habilidade será usada automaticamente.",
+        "shortDesc": "Consome PV. Causa Dano Imaginário a um inimigo designado e Dano Imaginário aos alvos adjacentes.<br>Esta habilidade será <orangeStrong>usada automaticamente</orangeStrong>.",
+        "tag": "Explosão"
+      },
+      "2": {
+        "name": "Deicida, Torne-se Uma Divindade",
+        "fullDesc": "Consome {{3}} ponto(s) de Carga. Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Mydei a um inimigo e Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> dos PV máximos de Mydei a alvos adjacentes.<br>Esta habilidade será usada automaticamente. Enquanto esta habilidade estiver em uso, Carga não pode ser acumulada.",
+        "shortDesc": "<orangeStrong>Consome Carga</orangeStrong>. Causa Dano Imaginário massivo a um inimigo designado e Dano Imaginário massivo aos alvos adjacentes.<br>Esta habilidade será <orangeStrong>usada automaticamente</orangeStrong>.",
+        "tag": "Explosão"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Trono de Ossos",
+        "fullDesc": "Restaura PV em um valor igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Mydei e acumula {{5}} ponto(s) de Carga do Talento. Causa Dano Imaginário em um valor igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Mydei a um inimigo designado e Dano Imaginário em um valor igual a <orangeStrong>{{2, percent}}%</orangeStrong> dos PV máximos de Mydei aos alvos adjacentes. Adicionalmente, aplica \"Provocação\" ao alvo e aos alvos adjacentes, durando por {{4}} rodada(s). O próximo uso de \"Deicida, Torne-se Uma Divindade\" prioriza atacar um inimigo designado, e esse efeito só funciona no alvo mais recente.",
+        "shortDesc": "<orangeStrong>Restaura PV</orangeStrong> e acumula Carga do Talento. Causa Dano Imaginário massivo a um inimigo designado e Dano Imaginário a alvos adjacentes, então aplica <orangeStrong>\"Provocação\"</orangeStrong> ao alvo e seus alvos adjacentes.",
+        "tag": "Explosão"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sangue por Sangue",
+        "fullDesc": "Para cada 1% de PV perdidos, acumula 1 ponto de Carga (até um máximo de 200 pontos). Quando a Carga chega a 100, consome 100 pontos de Carga para entrar no estado de \"Vingança\", restaura PV em um valor igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Mydei e Avança Adiante a ação em 100%. Enquanto o estado de \"Vingança\" estiver ativo, os PV máximos aumentam em {{5, percent}}% dos PV máximos atuais e a DEF se mantém em 0. No início da rodada desta unidade, usa automaticamente \"Regicida, Torne-se Rei\".<br>Quando a Carga atinge {{3}} pontos durante o estado de \"Vingança\", Mydei ganha imediatamente 1 rodada extra e usa automaticamente \"Deicida, Torne-se Uma Divindade\".<br>Ao receber um Golpe Fatal durante o estado de \"Vingança\", Mydei não será derrubado, mas irá zerar sua Carga, sair do estado de \"Vingança\" e restaurar PV em um valor igual a {{4, percent}}% dos seus PV máximos.",
+        "shortDesc": "Ao perder PV, acumula Carga. Quando a Carga está em 100, entra no estado de <orangeStrong>\"Vingança\"</orangeStrong>, restaura PV e Avança Adiante a ação. Durante \"Vingança\", os PV máximos aumentam e a DEF permanece em 0. No início da rodada desta unidade, <orangeStrong>usa automaticamente</orangeStrong> \"Regicida, Torne-se Rei\".<br>Quando a Carga atinge 150 durante \"Vingança\", Mydei ganha imediatamente 1 <orangeStrong>rodada extra</orangeStrong> e <orangeStrong>usa automaticamente</orangeStrong> \"Deicida, Torne-se Uma Divindade\".<br>Quando Mydei recebe um golpe fatal, sai do estado de \"Vingança\".",
+        "tag": "Aprimoramento"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Jaula da Lança Estilhaçada",
+        "fullDesc": "Após usar a Técnica, puxa os inimigos dentro de uma certa área e inflige \"Confusão\" neles por {{1}} segundo(s). Inimigos em estado de \"Confusão\" não atacarão ativamente os aliados-alvo.<br>Se atacar ativamente inimigos em estado de \"Confusão\", ao entrar em batalha, causa Dano Imaginário igual a {{2, percent}}% dos PV máximos de Mydei a todos os inimigos, e aplica \"Provocação\" aos alvos, durando por {{4}} rodada(s). Esta unidade acumula {{5}} ponto(s) de Carga do Talento.",
+        "shortDesc": "Atrai inimigos dentro de uma certa área e inflige \"Confusão\" neles. Após atacar inimigos em estado de \"Confusão\" e entrar em batalha, causa Dano Imaginário leve a todos os inimigos e aplica \"Provocação\" aos alvos. Esta unidade acumula a Carga de Talento.",
+        "tag": "Incapacitação"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Terra e Água",
+        "fullDesc": "Enquanto estiver no estado de \"Vingança\", Mydei não sairá do estado de \"Vingança\" ao receber um Golpe Fatal. Este efeito pode ser ativado {{1}} vez(es) por batalha."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Trinta Tiranos",
+        "fullDesc": "Enquanto estiver no estado \"Vingança\", Mydei é imune a Penalidades de Controle Negativo."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Quíton Ensanguentado",
+        "fullDesc": "No início da batalha, se os PV máximos de Mydei excederem {{1}}, para cada 100 PV excedentes, sua Chance de CRIT aumenta em {{3, percent(fixed: 1)}}%, sua taxa de Carga gerado pelo Dano dos inimigos-alvo aumenta em {{4, percent(fixed: 1)}}% e sua Cura Recebida aumenta em {{5, percent(fixed: 2)}}%. Até {{2}} PV excedentes podem ser considerados neste efeito."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "O Gelo Afia a Espinha de Aço",
+      "desc": "Aumenta o multiplicador de Dano causado por “Deicida, Torne-se Uma Divindade” ao alvo principal em {{1, percent}}%. Esta habilidade agora causa a todos os inimigos Dano Imaginário equivalente ao multiplicador de Dano causado ao alvo principal."
+    },
+    "2": {
+      "name": "O Conflito Observa o Lamurio dos Mortos",
+      "desc": "Durante \"Vingança\", o Dano causado por Mydei ignora {{1, percent}}% da DEF dos inimigos-alvo. Depois de receber cura, converte {{2, percent}}% do valor curado em Carga. O total de Carga convertida não pode exceder {{3}} ponto(s). A contagem total de Carga do efeito é reiniciada após qualquer unidade agir."
+    },
+    "3": {
+      "name": "A Honra Exalta o Festejo da Fé",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "O Alarme que Desperta o Leão Lacônico",
+      "desc": "Enquanto estiver em \"Vingança\", aumenta o Dano CRIT em {{2, percent}}% e restaura PV em {{1, percent}}% dos PV máximos desta unidade após receber ataques de inimigos-alvo."
+    },
+    "5": {
+      "name": "Cinzéis da Guerra Moldam a Carne Ardente",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Montanha de Sangue Acumulada Pelo Legado",
+      "desc": "Ao entrar na batalha, entra imediatamente no estado de \"Vingança\", e reduz a Carga necessária para \"Deicida, Torne-se Uma Divindade\" em {{1}} ponto(s)."
+    }
+  }
+}

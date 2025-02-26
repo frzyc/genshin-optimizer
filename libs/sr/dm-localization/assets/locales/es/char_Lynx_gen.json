@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": "ATQ individual"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Investigación previa",
-        "fullDesc": "Cuando un objetivo con Reacción de supervivencia recibe un ataque, Lynx recupera {{1}} pts. de energía inmediatamente.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando un objetivo con Reacción de supervivencia recibe un ataque, Lynx recupera {{1}} pts. de energía inmediatamente."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Técnicas de exploración",
-        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Supervivencia extrema",
-        "fullDesc": "El efecto de curación continua del talento dura {{1}} turno más.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "El efecto de curación continua del talento dura {{1}} turno más."
       }
     }
   },

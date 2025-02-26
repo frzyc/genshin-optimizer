@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Archerion",
-        "fullDesc": "Yukong can resist 1 debuff application for 1 time. This effect can be triggered again after {{1}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Yukong can resist 1 debuff application for 1 time. This effect can be triggered again after {{1}} turn(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bowmaster",
-        "fullDesc": "When Yukong is on the field, Imaginary DMG dealt by all allies increases by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Yukong is on the field, Imaginary DMG dealt by all allies increases by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Majestas",
-        "fullDesc": "When \"Roaring Bowstrings\" is active, Yukong regenerates {{1}} additional Energy every time an ally takes action.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When \"Roaring Bowstrings\" is active, Yukong regenerates {{1}} additional Energy every time an ally takes action."
       }
     }
   },

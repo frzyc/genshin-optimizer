@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Deathrealm",
-        "fullDesc": "เมื่ออยู่ภายใต้สถานะ \"Spectral Transmigration\" การต้านทานสถานะจะเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่ออยู่ภายใต้สถานะ \"Spectral Transmigration\" การต้านทานสถานะจะเพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sword Champion",
-        "fullDesc": "หลังจากปล่อย \"Transcendent Flash\" จะ เร่งแอ็กชัน ครั้งต่อไป {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "หลังจากปล่อย \"Transcendent Flash\" จะ เร่งแอ็กชัน ครั้งต่อไป {{1, percent}}%"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Frost Wraith",
-        "fullDesc": "เมื่ออยู่ภายใต้สถานะ \"Spectral Transmigration\" ท่าไม้ตายจะสร้าง DMG เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่ออยู่ภายใต้สถานะ \"Spectral Transmigration\" ท่าไม้ตายจะสร้าง DMG เพิ่มขึ้น {{1, percent}}%"
       }
     }
   },

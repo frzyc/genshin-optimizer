@@ -51,32 +51,25 @@
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#そうはん}争番{RUBY_E#}",
-        "fullDesc": "戦闘スキルを発動した時、SPを1回復する。この効果は一度の戦闘で1回まで発動できる。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "戦闘スキルを発動した時、SPを1回復する。この効果は一度の戦闘で1回まで発動できる。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#テンパイ}聴牌{RUBY_E#}",
-        "fullDesc": "戦闘スキルによる、自身の与ダメージアップ効果がさらに{{1, percent}}%アップする。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "戦闘スキルによる、自身の与ダメージアップ効果がさらに{{1, percent}}%アップする。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "チャンカン",
-        "fullDesc": "強化通常攻撃を行った後、青雀の速度+{{1, percent}}%、1ターン継続。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "強化通常攻撃を行った後、青雀の速度+{{1, percent}}%、1ターン継続。"
       }
     }
   },
@@ -86,7 +79,7 @@
       "desc": "必殺技によるダメージ+{{1, percent}}%。"
     },
     "2": {
-      "name": "{RUBY_B#ごばん}碁盤{RUBY_E#}は{RUBY_B#まくら}枕{RUBY_E#}、{RUBY_B#かいみん}快眠{RUBY_E#}の{RUBY_B#たす}助け{RUBY_E#}",
+      "name": "{RUBY_B#ごばん}碁盤{RUBY_E#}は{RUBY_B#まくら}枕{RUBY_E#}、{RUBY_B#かいみん}快眠{RUBY_E#}の{RUBY_B#たす}助{RUBY_E#}け",
       "desc": "青雀は牌を取るたびにEPを{{1}}回復する。"
     },
     "3": {

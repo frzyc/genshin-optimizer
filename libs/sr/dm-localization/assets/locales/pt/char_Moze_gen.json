@@ -1,0 +1,96 @@
+{
+  "name": "Moze",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Atirar Espinhos",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Moze a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Invasão Alada Veloz",
+        "fullDesc": "Marca um único inimigo-alvo como Presa e causa Dano de Raio a ele igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Moze, e ganha {{2}} pontos de Carga.<br>Quando não houver mais personagens no campo de batalha capazes de lutar, Moze não pode usar sua Perícia e o estado de Presa do inimigo é removido.",
+        "shortDesc": "<orangeStrong>Marca um único inimigo como \"Presa\"</orangeStrong> e causa Dano de Raio a ele. Ganha <orangeStrong>{{2}}</orangeStrong> ponto(s) de Carga.",
+        "tag": "Alvo Único"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Invadir, Fugir",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Moze a um único inimigo-alvo e utiliza o Ataque Extra do Talento contra esse alvo. Se o alvo for derrotado antes deste Ataque Extra ser utilizado, então desfere o Ataque Extra contra um único inimigo aleatório ao invés disso.",
+        "shortDesc": "Causa Dano de Raio a um único inimigo e utiliza o <orangeStrong>Ataque Extra</orangeStrong> do Talento.",
+        "tag": "Alvo Único"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cascata de Lâminas Emplumadas",
+        "fullDesc": "Enquanto houver uma \"Presa\" no campo, Moze entrará no estado de Partida.<br>Após os aliados atacarem a \"Presa\", Moze causa adicionalmente 1 instância de Dano de Raio Adicional igual a <orangeStrong>{{1, percent}}%</orangeStrong> do seu ATQ e consome 1 ponto de Carga. Para cada {{2}} ponto(s) de Carga consumido(s), Moze utiliza 1 Ataque Extra contra a \"Presa\", causando Dano de Raio igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Moze. Quando a Carga chega a 0, remove o estado de \"Presa\" do alvo e reinicia a contagem de pontos de Carga necessários para utilizar o Ataque Extra. O Ataque Extra do Talento não consome Carga.",
+        "shortDesc": "Enquanto houver uma \"Presa\" no campo, Moze entrará no estado de <orangeStrong>Partida</orangeStrong>.<br>Depois que aliados atacam a \"Presa\", Moze causa <orangeStrong>Dano Adicional</orangeStrong> de Raio e consome 1 ponto de Carga. Para cada <orangeStrong>{{2}}</orangeStrong> ponto(s) de Carga consumido(s), Moze utiliza <orangeStrong>Ataque Extra</orangeStrong> conta a \"Presa\", causando Dano de Raio. Quando a Carga está em 0, remove o estado de \"Presa\" do alvo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Asas Abatidas",
+        "fullDesc": "Após usar a Técnica, entra no estado de Furtividade por {{1}} segundo(s). Enquanto estiver em Furtividade, Moze é indetectável pelos inimigos. Se Moze atacar inimigos para entrar em combate enquanto no estado de Furtividade, aumenta o Dano em {{2, percent}}%, durando por {{3}} rodada(s).",
+        "shortDesc": "Entra no estado de Furtividade. Atacar inimigos para iniciar o combate enquanto no modo de Furtividade aumenta o Dano.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pena Noturna",
+        "fullDesc": "Depois de usar o Ataque Extra do Talento, recupera {{1}} Ponto(s) de Perícia. Este efeito pode ser ativado novamente após {{2}} rodada(s)."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Empunhar Adagas",
+        "fullDesc": "Quando Moze remove seu estado de \"Partida\", sua ação é Avançada Adiante em {{1, percent}}%. No início de cada onda, a ação de Moze é Avançada Adiante em {{2, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vingança",
+        "fullDesc": "Ao causar Dano utilizando a Perícia Suprema, esse Dano será considerado um Ataque Extra. O Dano de Ataque Extra recebido pela \"Presa\" aumenta em {{1, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Mantenedor de Promessas",
+      "desc": "Após entrar em batalha, Moze restaura {{2}} de Energia. Cada vez que o Dano Adicional de seu Talento for ativado, Moze restaura {{1}} de Energia."
+    },
+    "2": {
+      "name": "Sustento da Ira",
+      "desc": "Quando aliados causam Dano ao inimigo-alvo marcado como \"Presa\", aumenta o Dano CRIT em {{1, percent}}%."
+    },
+    "3": {
+      "name": "Perseguidor da Morte",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Predador Selvagem",
+      "desc": "Ao usar a Perícia Suprema, aumenta o Dano causado por Moze em {{1, percent(fixed: 1)}}%, durando por {{2}} rodada(s)."
+    },
+    "5": {
+      "name": "Dobrador de Verdades",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Vinculador de Fé",
+      "desc": "Aumenta em {{1, percent}}% o multiplicador de Dano causado pelo Ataque Extra do Talento."
+    }
+  }
+}

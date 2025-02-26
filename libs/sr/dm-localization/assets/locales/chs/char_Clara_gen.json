@@ -45,32 +45,25 @@
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "家人",
-        "fullDesc": "受到攻击时有{{1, percent}}%的固定概率解除自身1个负面效果。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "受到攻击时有{{1, percent}}%的固定概率解除自身1个负面效果。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "守护",
-        "fullDesc": "抵抗控制类负面状态的概率提高{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "抵抗控制类负面状态的概率提高{{1, percent}}%。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "复仇",
-        "fullDesc": "史瓦罗的反击造成的伤害提高{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "史瓦罗的反击造成的伤害提高{{1, percent}}%。"
       }
     }
   },

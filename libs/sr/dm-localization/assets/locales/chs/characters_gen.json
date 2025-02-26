@@ -19,7 +19,8 @@
     "Nihility": "虚无",
     "Destruction": "毁灭",
     "Harmony": "同谐",
-    "TheHunt": "巡猎"
+    "TheHunt": "巡猎",
+    "Remembrance": "「记忆」"
   },
   "ability": {
     "basic": "普攻",
@@ -34,6 +35,11 @@
     "bounce": "弹射",
     "blast": "扩散",
     "support": "辅助",
-    "impair": "妨害"
+    "impair": "妨害",
+    "restore": "回复",
+    "defense": "防御",
+    "enhance": "强化",
+    "charging": "蓄力",
+    "summon": "召唤"
   }
 }

@@ -6,7 +6,7 @@
     "atk_": "Bônus de ATQ",
     "def_": "Bônus de DEF",
     "crit_": "Bônus de Chance de CRIT",
-    "crit_dmg_": "Bônus de Chance de CRIT e de Dano CRIT",
+    "crit_dmg_": "Bônus de Dano CRIT",
     "eff_res_": "Bônus de RES a Efeito",
     "spd": "Bônus de VEL",
     "physical_dmg_": "Bônus de Dano: Físico",

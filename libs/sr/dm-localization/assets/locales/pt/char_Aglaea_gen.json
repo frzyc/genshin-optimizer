@@ -1,0 +1,107 @@
+{
+  "name": "Aglaea",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Néctar Espinhoso",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Aglaea a um inimigo designado.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo.",
+        "tag": "Alvo Único"
+      },
+      "1": {
+        "name": "Talho de Mil Beijos",
+        "fullDesc": "Aglaea e a Confeccionadora realizam um Ataque Conjunto no alvo, causando respectivamente Dano de Raio igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Aglaea e <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> do ATQ da Confeccionadora ao alvo. Além disso, causa Dano de Raio igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Aglaea e <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ da Confeccionadora aos alvos adjacentes.<br>\"Talho de Mil Beijos\" não pode recuperar Pontos de Perícia.",
+        "shortDesc": "Aglaea e a Confeccionadora realizam um <orangeStrong>Ataque Conjunto</orangeStrong> no alvo. Causa Dano de Raio a um inimigo e Dano de Raio leve aos alvos adjacentes.",
+        "tag": "Explosão"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ascensão, Renome Exaltado",
+        "fullDesc": "Restaura PV da Confeccionadora em <orangeStrong>{{1, percent}}%</orangeStrong> dos seus PV máximos. Se a Confeccionadora estiver ausente, invoca o Memoespírito da Confeccionadora, e esta unidade age imediatamente.",
+        "shortDesc": "Restaura PV da Confeccionadora. Se a Confeccionadora estiver ausente, <orangeStrong>invoca o Memoespírito</orangeStrong> da Confeccionadora, e esta unidade age imediatamente.",
+        "tag": "Invocar"
+      },
+      "1": {
+        "name": "Ascensão, Renome Exaltado",
+        "shortDesc": "Restaura PV da Confeccionadora. Se a Confeccionadora estiver ausente, invoca o Memoespírito da Confeccionadora, e esta unidade age imediatamente.",
+        "tag": "Restauração"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dance, Tecelã Destinada",
+        "fullDesc": "Invoca o Memoespírito da Confeccionadora. Se a Confeccionadora já estiver no campo, restaura seus PV ao máximo. Aglaea entra no estado de \"Postura Suprema\" e age imediatamente.<br>Enquanto está no estado de \"Postura Suprema\", Aglaea ganha os acúmulos de Bônus de VEL do Talento do Memoespírito da Confeccionadora, com cada acúmulo aumentando sua VEL em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. O ATQ Básico é aprimorado para \"Talho de Mil Beijos\" e a Perícia não pode ser utilizada. A Confeccionadora torna-se imune a penalidades de Controle Negativo.<br>Uma contagem regressiva aparece na Ordem de Ação, com sua própria VEL definida em {{4}}. Usar a Perícia Suprema novamente quando a contagem regressiva estiver na Ordem de Ação fará com que a contagem regressiva seja reiniciada. Quando a rodada da contagem regressiva começar, a Confeccionadora se autodestrói. Quando a Confeccionadora desaparece, o estado de \"Postura Suprema\" de Aglaea é removido.",
+        "shortDesc": "<orangeStrong>Invoca o Memoespírito</orangeStrong> da Confeccionadora, permitindo que Aglaea entre no estado de \"Postura Suprema\", aja imediatamente e ganhe ATQ Básico Aprimorado.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dedo da Rosa Dourada",
+        "fullDesc": "O Memoespírito da \"Confeccionadora\" possui VEL inicial igual a {{4, percent}}% da VEL de Aglaea e PV máximos iguais a <orangeStrong>{{5, percent}}%</orangeStrong> dos PV máximos de Aglaea + <orangeStrong>{{6}}</orangeStrong>. Enquanto a \"Confeccionadora\" estiver em campo, os ataques de Aglaea infligem o estado \"Costura Vinculante\" no alvo. Após atacar inimigos no estado de \"Costura Vinculante\", causa Dano Adicional de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Aglaea. \"Costura Vinculante\" entra em efeito apenas no alvo afligido mais recentemente.",
+        "shortDesc": "Enquanto a Confeccionadora estiver em campo, os ataques de Aglaea infligem o estado de \"Costura Vinculante\" no alvo. Após atacar inimigos no estado de \"Costura Vinculante\", causa Dano de Raio leve Adicional.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Divisão Meteórica",
+        "fullDesc": "Invoca o Memoespírito da Confeccionadora e realiza um Ataque Conjunto. Após entrar em batalha, regenera {{2}} de Energia e causa Dano de Raio igual a {{1, percent}}% do ATQ de Aglaea a todos os inimigos-alvo. Então, inflige aleatoriamente o estado de \"Costura Vinculante\" a um inimigo-alvo aleatório.",
+        "shortDesc": "<orangeStrong>Invoca o Memoespírito</orangeStrong> da \"Confeccionadora\" e realiza um Ataque Conjunto. Após entrar em batalha, regenera Energia e causa Dano de Raio leve a todos os inimigos. Então, inflige aleatoriamente o estado de \"Costura Vinculante\" a um inimigo-alvo aleatório.",
+        "tag": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "A Ruína do Míope",
+        "fullDesc": "Enquanto em \"Postura Suprema\", aumenta o ATQ de Aglaea e da \"Confeccionadora\" em um valor igual a {{1, percent}}% da VEL de Aglaea + {{2, percent}}% da VEL da \"Confeccionadora\"."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Último Fio do Destino",
+        "fullDesc": "Quando a Confeccionadora desaparece, até {{1}} acúmulo(s) do Bônus de VEL do Talento do Memoespírito pode(m) ser retido(s). Quando a Confeccionadora for invocada novamente, ganha o número correspondente de acúmulos de Bônus de VEL."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "O Amanhecer Acelerado",
+        "fullDesc": "No início da batalha, se a Energia desta unidade for inferior a {{1, percent}}%, regenera a Energia desta unidade até {{2, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Deriva ao Capricho de Vênus",
+      "desc": "Inimigos afetados por \"Costura Vinculante\" recebem {{1, percent}}% de Dano aumentado. Após o ataque de Aglaea ou da \"Confeccionadora\" atingir esse alvo, Aglaea também regenera {{2}} de Energia."
+    },
+    "2": {
+      "name": "Navegue na Jangada das Pálpebras",
+      "desc": "Quando Aglaea ou a \"Confeccionadora\" agem, o Dano causado por elas ignora {{1, percent}}% da DEF do alvo. Este efeito acumula até {{2}} vez(es) e dura até que qualquer unidade, exceto Aglaea ou a \"Confeccionadora\", utilize ativamente uma habilidade."
+    },
+    "3": {
+      "name": "Legado na Coalescência do Orvalho",
+      "desc": "Nv. da Perícia +2, até um máximo de Nv. 15.<br>Nv. do ATQ Básico +1, até um máximo de Nv. 10.<br>Nv. do Talento do Memoespírito +1, até um máximo de Nv. 10."
+    },
+    "4": {
+      "name": "Cintilação Abaixo da Superfície do Mármore",
+      "desc": "O efeito de Bônus de VEL do Talento do Memoespírito tem seu limite máximo de acúmulos aumentado em {{1}}. Após Aglaea realizar um ataque, também pode fazer a \"Confeccionadora\" receber o efeito de Bônus de VEL do Talento do Memoespírito."
+    },
+    "5": {
+      "name": "Tecer sob o Sudário do Infortúnio",
+      "desc": "Nv. da Perícia Suprema +2, até um máximo de Nv. 15.<br>Nv. do Talento +2, até um máximo de Nv. 15.<br>Nv. da Perícia do Memoespírito +1, até um máximo de Nv. 10."
+    },
+    "6": {
+      "name": "Flutuar na Tapeçaria dos Destinos",
+      "desc": "Enquanto Aglaea estiver em \"Postura Suprema\", aumenta a PEN de RES a Raio dela e da \"Confeccionadora\" em {{1, percent}}%. Quando a VEL de Aglaea ou da \"Confeccionadora\" for maior que 160/240/320, o Dano causado pelo Ataque Conjunto aumenta em {{2, percent}}%/{{3, percent}}%/{{4, percent}}%."
+    }
+  }
+}

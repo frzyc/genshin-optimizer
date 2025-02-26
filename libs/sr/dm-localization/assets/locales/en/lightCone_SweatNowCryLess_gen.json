@@ -1,0 +1,7 @@
+{
+  "name": "Sweat Now, Cry Less",
+  "passive": {
+    "name": "Come Train!",
+    "description": "Increases the wearer's CRIT Rate by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer's memosprite is on the field, increases the DMG dealt by the wearer and their memosprite by <orangeStrong>{{2, percent}}%</orangeStrong>."
+  }
+}

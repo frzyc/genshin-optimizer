@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "Master, It's Tea Time!",
-        "fullDesc": "Membuat 1 rekan tim selain diri sendiri menjadi \"Shifu\". SPD \"Shifu\" akan meningkat <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Hanya target pelancaran Skill terbaru yang akan dianggap sebagai \"Shifu\" March 7th.<br>Setiap kali melancarkan Basic Attack atau mengakibatkan 1 Hit Enhanced Basic Attack DMG, jika ada \"Shifu\" dari Path tertentu di medan pertempuran, akan memicu efek yang sesuai:<br>\"Erudition\", \"Destruction\", dan \"Hunt\": Mengakibatkan DMG Tambahan berdasarkan Tipe \"Shifu\" sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK March 7th.<br>\"Harmony\", \"Nihility\", \"Preservation\", dan \"Abundance\": Pengurangan Toughness dari DMG kali ini meningkat {{3, percent}}%.",
-        "shortDesc": "Membuat 1 rekan tim menjadi \"Shifu\". Saat melancarkan Basic Attack atau mengakibatkan Enhanced Basic Attack DMG, akan memicu efek berikut berdasarkan <orangeStrong>Path \"Shifu\"</orangeStrong>:<br>\"Erudition\", \"Destruction\", \"Hunt\": mengakibatkan <orangeStrong>DMG Tambahan</orangeStrong> berdasarkan Tipe \"Shifu\".<br>\"Harmony\", \"Nihility\", \"Preservation\", \"Abundance\": <orangeStrong>Pengurangan Toughness</orangeStrong> meningkat.",
+        "fullDesc": "Membuat 1 rekan tim selain diri sendiri menjadi \"Shifu\". SPD \"Shifu\" akan meningkat <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Hanya target pelancaran Skill terbaru yang akan dianggap sebagai \"Shifu\" March 7th.<br>Setiap kali melancarkan Basic Attack atau mengakibatkan 1 Hit Enhanced Basic Attack DMG, jika ada \"Shifu\" dari Path tertentu di medan pertempuran, akan memicu efek yang sesuai:<br>\"Erudition\", \"Destruction\", \"Hunt\", dan \"Remembrance\": Mengakibatkan DMG Tambahan berdasarkan Tipe \"Shifu\" sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK March 7th.<br>\"Harmony\", \"Nihility\", \"Preservation\", dan \"Abundance\": Pengurangan Toughness dari DMG kali ini meningkat {{3, percent}}%.",
+        "shortDesc": "Membuat 1 rekan tim menjadi \"Shifu\". Saat melancarkan Basic Attack atau mengakibatkan Enhanced Basic Attack DMG, akan memicu efek berikut berdasarkan <orangeStrong>Path \"Shifu\"</orangeStrong>:<br>\"Erudition\", \"Destruction\", \"Hunt\", \"Remembrance\": mengakibatkan <orangeStrong>DMG Tambahan</orangeStrong> berdasarkan Tipe \"Shifu\".<br>\"Harmony\", \"Nihility\", \"Preservation\", \"Abundance\": <orangeStrong>Pengurangan Toughness</orangeStrong> meningkat.",
         "tag": "Support"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Swan Soar",
-        "fullDesc": "Saat pertempuran dimulai, aksi March 7th akan didahulukan sebesar {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat pertempuran dimulai, aksi March 7th akan didahulukan sebesar {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Filigree",
-        "fullDesc": "March 7th dapat mengurangi Toughness target musuh yang memiliki Tipe Weakness yang sama dengan Tipe \"Shifu\". Saat mengakibatkan Weakness Break, akan memicu efek Weakness Break Tipe Imaginary.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "March 7th dapat mengurangi Toughness target musuh yang memiliki Tipe Weakness yang sama dengan Tipe \"Shifu\". Saat mengakibatkan Weakness Break, akan memicu efek Weakness Break Tipe Imaginary."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Tide Tamer",
-        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, akan meningkatkan {{1, percent}}% CRIT DMG \"Shifu\" dan meningkatkan {{2, percent}}% Break Effect \"Shifu\", berlangsung selama {{3}} giliran.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, akan meningkatkan {{1, percent}}% CRIT DMG \"Shifu\" dan meningkatkan {{2, percent}}% Break Effect \"Shifu\", berlangsung selama {{3}} giliran."
       }
     }
   },

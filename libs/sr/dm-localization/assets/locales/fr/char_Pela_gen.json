@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Morsure du givre",
-        "fullDesc": "Supprime {{2}} bonus et inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
+        "fullDesc": "Supprime {{2}} bonus et inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie désigné.",
         "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong>bonus</orangeStrong> d'une cible ennemie unique, et inflige des DGT de glace à la cible ennemie.",
         "tag": "Cible unique"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Frappe douloureuse",
-        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux cibles ennemies qui subissent un malus.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux cibles ennemies qui subissent un malus."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Stratégie secrète",
-        "fullDesc": "Augmente les chances d'appliquer des effets de tous les alliés de {{1, percent}}% lorsque Pela est sur le champ de bataille.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les chances d'appliquer des effets de tous les alliés de {{1, percent}}% lorsque Pela est sur le champ de bataille."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Anéantissement",
-        "fullDesc": "Augmente les DGT infligés par la prochaine attaque de {{1, percent}}% lorsque le personnage utilise sa compétence pour supprimer un bonus.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les DGT infligés par la prochaine attaque de {{1, percent}}% lorsque le personnage utilise sa compétence pour supprimer un bonus."
       }
     }
   },

@@ -1,0 +1,7 @@
+{
+  "name": "Those Many Springs",
+  "passive": {
+    "name": "Worldly Affairs Leave No Mark",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Effect Hit Rate pengguna. Setelah pengguna melancarkan Basic Attack, Skill, atau Ultimate untuk menyerang target musuh, terdapat {{2, percent}}% peluang dasar untuk membuat target tersebut memasuki status \"Unarmored\". Saat berada dalam status \"Unarmored\", DMG yang diterima target musuh meningkat <orangeStrong>{{3, percent}}%</orangeStrong>, berlangsung selama {{4}} giliran. Jika target berada dalam status DoT yang ditambahkan oleh pengguna, maka terdapat {{5, percent}}% peluang dasar untuk meng-upgrade status \"Unarmored\" yang ditambahkan pengguna menjadi status \"Cornered\", membuat DMG yang diterima target musuh meningkat ekstra <orangeStrong>{{6, percent}}%</orangeStrong>, berlangsung selama {{4}} giliran. Selama durasi tersebut, pengguna tidak dapat menambahkan status \"Unarmored\" kepada target musuh."
+  }
+}

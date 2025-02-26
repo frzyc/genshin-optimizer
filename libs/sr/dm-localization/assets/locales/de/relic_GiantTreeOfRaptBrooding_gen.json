@@ -1,0 +1,6 @@
+{
+  "setName": "Riesenbaum des versunkenen Grübelns",
+  "setEffects": {
+    "2": "Erhöht die GES des Trägers um {{1, percent}}%. Wenn die GES des Trägers {{2}}/{{3}} oder höher erreicht, wird die bewirkte Heilung des Trägers und seines Memogeists um {{4, percent}}%/{{5, percent}}% erhöht."
+  }
+}

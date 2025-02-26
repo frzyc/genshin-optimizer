@@ -37,7 +37,6 @@
       "1": {
         "name": "취소",
         "fullDesc": "강화를 취소한다",
-        "shortDesc": "",
         "tag": "취소"
       }
     },
@@ -69,32 +68,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "자취를 감춘 성신",
-        "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "치수",
-        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "계칩(啓蟄)",
-        "fullDesc": "허수 속성 약점을 보유한 적에게 피해를 가할 시 치명타 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "허수 속성 약점을 보유한 적에게 피해를 가할 시 치명타 피해가 {{1, percent}}% 증가한다"
       }
     }
   },

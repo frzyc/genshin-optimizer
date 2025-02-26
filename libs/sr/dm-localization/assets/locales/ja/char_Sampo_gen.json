@@ -45,32 +45,25 @@
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "ワナ",
-        "fullDesc": "天賦による敵の風化状態の継続時間+{{1}}ターン。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "天賦による敵の風化状態の継続時間+{{1}}ターン。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#よび}予備{RUBY_E#}プラン",
-        "fullDesc": "必殺技を発動した時、さらにEPを{{1}}回復する。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "必殺技を発動した時、さらにEPを{{1}}回復する。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ひ}火{RUBY_E#}に{RUBY_B#あぶら}油{RUBY_E#}",
-        "fullDesc": "サンポに対する、風化状態の敵の与ダメージ-{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "サンポに対する、風化状態の敵の与ダメージ-{{1, percent}}%。"
       }
     }
   },

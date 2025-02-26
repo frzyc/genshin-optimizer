@@ -1,0 +1,7 @@
+{
+  "name": "Shadowed by Night",
+  "passive": {
+    "name": "Concealment",
+    "description": "ทำให้เอฟเฟกต์ทำลายล้างของผู้สวมใส่ เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อเข้าสู่การต่อสู้หรือสร้าง DMG ทำลายล้าง ความเร็วจะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น โดยเอฟเฟกต์นี้ จะเกิดขึ้นได้เพียงเทิร์นละ 1 ครั้งเท่านั้น"
+  }
+}

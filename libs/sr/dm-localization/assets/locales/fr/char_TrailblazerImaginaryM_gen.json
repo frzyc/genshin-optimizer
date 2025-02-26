@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Danse avec moi",
-        "fullDesc": "Lorsqu'il y a 5 ou plus/4/3/2/1 cible(s) ennemie(s) sur le champ de bataille, les DGT de rupture extrême déclenchés par l'effet Soutien sur scène augmentent de {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsqu'il y a 5 ou plus/4/3/2/1 cible(s) ennemie(s) sur le champ de bataille, les DGT de rupture extrême déclenchés par l'effet Soutien sur scène augmentent de {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ovation",
-        "fullDesc": "Augmente de {{1, percent}}% la réduction de robustesse de la première instance de DGT en utilisant la compétence.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente de {{1, percent}}% la réduction de robustesse de la première instance de DGT en utilisant la compétence."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chapeau bas",
-        "fullDesc": "Lorsqu'une cible alliée inflige une Rupture de faiblesse, l'action de la cible ennemie est retardée de {{1, percent}}% supplémentaires.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsqu'une cible alliée inflige une Rupture de faiblesse, l'action de la cible ennemie est retardée de {{1, percent}}% supplémentaires."
       }
     }
   },

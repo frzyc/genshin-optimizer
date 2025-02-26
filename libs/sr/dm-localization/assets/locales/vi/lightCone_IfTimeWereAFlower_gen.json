@@ -1,0 +1,7 @@
+{
+  "name": "Nếu Thời Gian Là Một Đóa Hoa",
+  "passive": {
+    "name": "Khát Vọng",
+    "description": "Khiến sát thương bạo kích của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Sau khi người trang bị thi triển Đòn Đánh Theo Sau sẽ hồi thêm {{2}} Năng Lượng và nhận Chỉ Dẫn, duy trì {{3}} hiệp. Khi người trang bị có Chỉ Dẫn, sát thương bạo kích của toàn bộ mục tiêu phe ta tăng <orangeStrong>{{4, percent}}%</orangeStrong>. Khi vào chiến đấu, người trang bị hồi {{5}} Năng Lượng và nhận Chỉ Dẫn, duy trì {{6}} hiệp."
+  }
+}

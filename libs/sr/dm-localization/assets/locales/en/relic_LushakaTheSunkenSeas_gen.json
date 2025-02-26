@@ -1,0 +1,6 @@
+{
+  "setName": "Lushaka, the Sunken Seas",
+  "setEffects": {
+    "2": "Increases the wearer's Energy Regeneration Rate by {{1, percent}}%. If the wearer is not the first character in the team lineup, then increases the ATK of the first character in the team lineup by {{2, percent}}%."
+  }
+}

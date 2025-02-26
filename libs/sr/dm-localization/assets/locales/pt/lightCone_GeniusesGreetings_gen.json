@@ -1,0 +1,7 @@
+{
+  "name": "Saudações dos Gênios",
+  "passive": {
+    "name": "Parabéns",
+    "description": "Aumenta o ATQ do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após o usuário usar sua Perícia Suprema, aumenta adicionalmente o Dano causado pelo ATQ Básico do usuário e de seu Memoespírito em <orangeStrong>{{2, percent}}%</orangeStrong> por {{3}} rodada(s)."
+  }
+}

@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "전광석화의 순간",
-        "fullDesc": "지정된 단일 적에게 서벌 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 피해를 가하고, 인접한 목표에게 서벌 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 번개 속성 피해를 가한다. 또한, 피격된 적은 {{3, percent}}%의 기본 확률로 감전 상태에 빠진다. 지속 시간: {{4}}턴.<br>감전 상태의 적은 턴이 시작될 때마다 서벌 공격력 <orangeStrong>{{5, percent}}%</orangeStrong>만큼의 번개 속성 지속 피해를 받는다",
+        "fullDesc": "지정된 단일 적에게 서벌 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 피해를 가하고, 인접한 목표에게 서벌 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 번개 속성 피해를 가한다. 또한, 피격된 적은 {{3, percent}}%의 기본 확률로 감전 상태에 빠진다. 지속 시간: {{4}}턴<br>감전 상태의 적은 턴이 시작될 때마다 서벌 공격력 <orangeStrong>{{5, percent}}%</orangeStrong>만큼의 번개 속성 지속 피해를 받는다",
         "shortDesc": "단일 적에게 번개 속성 피해를 가하고, 인접한 목표에게 소량의 번개 속성 피해를 가한다. 높은 확률로 목표에게 <orangeStrong>감전 상태를 부여</orangeStrong>한다",
         "tag": "확산"
       }
@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "굿나잇, 벨로보그",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 서벌 공격력 {{4, percent}}%만큼의 번개 속성 피해를 가하고, {{1, percent}}%의 기본 확률로 각 단일 적을 감전 상태에 빠트린다. 지속 시간: {{3}}턴.<br>감전 상태의 적은 새로운 턴이 시작될 때마다 서벌 공격력 {{2, percent}}%만큼의 번개 속성 지속 피해를 받는다",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 랜덤 단일 적에게 서벌 공격력 {{4, percent}}%만큼의 번개 속성 피해를 가하고, {{1, percent}}%의 기본 확률로 각 단일 적을 감전 상태에 빠트린다. 지속 시간: {{3}}턴<br>감전 상태의 적은 새로운 턴이 시작될 때마다 서벌 공격력 {{2, percent}}%만큼의 번개 속성 지속 피해를 받는다",
         "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 번개 속성 피해를 가하고, 높은 확률로 각 단일 적을 <orangeStrong>감전 상태에 빠트린다</orangeStrong>",
         "tag": ""
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "로큰롤",
-        "fullDesc": "전투 스킬 발동 시 피격된 적이 감전 상태에 빠질 기본 확률이 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "전투 스킬 발동 시 피격된 적이 감전 상태에 빠질 기본 확률이 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "전자음",
-        "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "열광",
-        "fullDesc": "적 처치 후 공격력이 {{1, percent}}% 증가한다. 지속 시간: {{2}}턴",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "적 처치 후 공격력이 {{1, percent}}% 증가한다. 지속 시간: {{2}}턴"
       }
     }
   },

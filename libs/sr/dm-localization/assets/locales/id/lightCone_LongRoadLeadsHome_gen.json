@@ -1,0 +1,7 @@
+{
+  "name": "Long Road Leads Home",
+  "passive": {
+    "name": "Rebirth",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Break Effect pengguna. Saat target musuh terkena Weakness Break, memiliki {{2, percent}}% peluang dasar untuk membuat target memasuki status \"Charring\": Meningkatkan <orangeStrong>{{3, percent}}%</orangeStrong> Break DMG yang diterima selama {{4}} giliran, dapat ditumpuk hingga {{5}} lapis."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Mùi Hương Vẹn Nguyên",
+  "passive": {
+    "name": "An Tâm",
+    "description": "Khiến Tấn Công Kích Phá của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Sau khi người trang bị thi triển Tuyệt Kỹ tấn công kẻ địch, sẽ khiến kẻ đó rơi vào trạng thái Vong Ưu, duy trì {{5}} hiệp. Sát thương phải chịu của kẻ địch trong trạng thái Vong Ưu tăng <orangeStrong>{{2, percent}}%</orangeStrong>, nếu Tấn Công Kích Phá hiện tại của người trang bị lớn hơn hoặc bằng {{3, percent}}%, hiệu ứng tăng sát thương phải chịu sẽ tăng thêm <orangeStrong>{{4, percent}}%</orangeStrong>."
+  }
+}

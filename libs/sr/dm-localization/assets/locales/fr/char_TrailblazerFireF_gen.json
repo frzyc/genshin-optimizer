@@ -51,32 +51,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Le fort défend le faible",
-        "fullDesc": "Les DGT subis par tous les alliés sont réduits de {{2, percent}}% pendant {{3}} tour après utilisation de la compétence.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Les DGT subis par tous les alliés sont réduits de {{2, percent}}% pendant {{3}} tour après utilisation de la compétence."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bravoure inébranlable",
-        "fullDesc": "Utiliser l'ATQ normale renforcée restaure {{1, percent}}% des PV max {M#du pionnier}{F#de la pionnière}.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Utiliser l'ATQ normale renforcée restaure {{1, percent}}% des PV max {M#du pionnier}{F#de la pionnière}."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Il vaut toujours mieux agir",
-        "fullDesc": "Lorsque {M#le pionnier}{F#la pionnière} est {M#protégé}{F#protégée} par un bouclier au début du tour, augmente son ATQ de {{2, percent}}% jusqu'à la fin de l'action et régénère {{1}} points d'énergie.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque {M#le pionnier}{F#la pionnière} est {M#protégé}{F#protégée} par un bouclier au début du tour, augmente son ATQ de {{2, percent}}% jusqu'à la fin de l'action et régénère {{1}} points d'énergie."
       }
     }
   },

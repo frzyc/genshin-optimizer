@@ -4,7 +4,7 @@ import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
 import { zzzSource } from '../Interfaces'
 import { DBMetaEntry, DisplayDiscEntry } from './DataEntries/'
 import { DisplayWengineEntry } from './DataEntries/DisplayWengineEntry'
-import { DiscDataManager } from './DataManagers/'
+import { CharMetaDataManager, DiscDataManager } from './DataManagers/'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import { CharacterOptManager } from './DataManagers/CharacterOptManager'
 import { GeneratedBuildListDataManager } from './DataManagers/GeneratedBuildListDataManager'
@@ -19,6 +19,7 @@ export class ZzzDatabase extends Database {
   charOpts: CharacterOptManager
   wengines: WengineDataManager
   optConfigs: OptConfigDataManager
+  charMeta: CharMetaDataManager
   dbMeta: DBMetaEntry
   displayDisc: DisplayDiscEntry
   displayWengine: DisplayWengineEntry
@@ -54,6 +55,7 @@ export class ZzzDatabase extends Database {
 
     // Depends on optConfigs
     this.charOpts = new CharacterOptManager(this)
+    this.charMeta = new CharMetaDataManager(this)
 
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
@@ -63,13 +65,16 @@ export class ZzzDatabase extends Database {
     this.discs.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
-    this.displayDisc.follow(() => {
-      this.dbMeta.set({ lastEdit: Date.now() })
-    })
     this.wengines.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
+    this.charMeta.followAny(() => {
+      this.dbMeta.set({ lastEdit: Date.now() })
+    })
     this.displayWengine.follow(() => {
+      this.dbMeta.set({ lastEdit: Date.now() })
+    })
+    this.displayDisc.follow(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
   }
@@ -79,6 +84,7 @@ export class ZzzDatabase extends Database {
       this.chars,
       this.discs,
       this.wengines,
+      this.charMeta,
       this.generatedBuildList,
       this.optConfigs,
       this.charOpts,

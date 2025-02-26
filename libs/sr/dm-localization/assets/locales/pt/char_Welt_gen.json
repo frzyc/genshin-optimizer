@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Aprisionamento Gravitacional",
-        "fullDesc": "Após Welt usar sua Técnica, cria uma dimensão especial que dura {{4}}s. Inimigos nessa dimensão especial têm a VEL de Movimento reduzida em {{5, percent}}%. Depois de entrar em batalha com inimigos na dimensão especial, há {{1, percent}}% de chance-base de Aprisionar os inimigos por 1 rodada.<br>Inimigos aprisionados têm ações atrasadas em {{2, percent}}% e a VEL reduzida em {{3, percent}}%. Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após Welt usar sua Técnica, cria uma Dimensão Especial que dura {{4}}s. Inimigos nessa Dimensão Especial têm a VEL de Movimento reduzida em {{5, percent}}%. Depois de entrar em batalha com inimigos na Dimensão Especial, há {{1, percent}}% de chance-base de Aprisionar os inimigos por 1 rodada.<br>Inimigos aprisionados têm ações atrasadas em {{2, percent}}% e a VEL reduzida em {{3, percent}}%. Só 1 Efeito de Dimensão criado por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial. Inimigos nessa dimensão têm sua VEL de Movimento reduzida. Depois de entrar em combate com inimigos na dimensão, existe uma <orangeStrong>alta chance dos inimigos sofrerem de Aprisionamento.</orangeStrong>",
         "tag": "Incapacitação"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Retaliação",
-        "fullDesc": "Ao usar a Perícia Suprema, há {{1, percent}}% de chance-base de aumentar o Dano recebido pelos alvos em {{2, percent}}% por {{3}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia Suprema, há {{1, percent}}% de chance-base de aumentar o Dano recebido pelos alvos em {{2, percent}}% por {{3}} rodada(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Julgamento",
-        "fullDesc": "Usar a Perícia Suprema regenera um adicional de {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Usar a Perícia Suprema regenera um adicional de {{1}} de Energia."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Punição",
-        "fullDesc": "Causa {{1, percent}}% a mais de Dano a inimigos afetados por Quebra de Fraqueza.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Causa {{1, percent}}% a mais de Dano a inimigos afetados por Quebra de Fraqueza."
       }
     }
   },

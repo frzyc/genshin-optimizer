@@ -1,0 +1,7 @@
+{
+  "name": "Sobre los recuerdos nunca cae el telón",
+  "passive": {
+    "name": "Recepción",
+    "description": "La VEL del portador aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Después de que el portador lance la habilidad básica, el daño que infligen todos los aliados aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos."
+  }
+}

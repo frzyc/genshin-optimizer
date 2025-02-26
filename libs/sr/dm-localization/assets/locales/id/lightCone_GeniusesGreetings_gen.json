@@ -1,0 +1,7 @@
+{
+  "name": "Geniuses' Greetings",
+  "passive": {
+    "name": "Congratulations",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK pengguna. Setelah pengguna melancarkan Ultimate, Basic Attack DMG yang diakibatkan pengguna dan Memosprite miliknya meningkat <orangeStrong>{{2, percent}}%</orangeStrong>, berlangsung selama {{3}} giliran."
+  }
+}

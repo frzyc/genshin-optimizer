@@ -1,0 +1,48 @@
+{
+  "rarity": 4,
+  "path": "Remembrance",
+  "ascension": [
+    {
+      "atk": { "base": 24, "add": 3.6 },
+      "def": { "base": 9, "add": 1.35 },
+      "hp": { "base": 48, "add": 7.2 }
+    },
+    {
+      "atk": { "base": 52.8, "add": 3.6 },
+      "def": { "base": 19.8, "add": 1.35 },
+      "hp": { "base": 105.6, "add": 7.2 }
+    },
+    {
+      "atk": { "base": 91.2, "add": 3.6 },
+      "def": { "base": 34.2, "add": 1.35 },
+      "hp": { "base": 182.4, "add": 7.2 }
+    },
+    {
+      "atk": { "base": 129.6, "add": 3.6 },
+      "def": { "base": 48.6, "add": 1.35 },
+      "hp": { "base": 259.2, "add": 7.2 }
+    },
+    {
+      "atk": { "base": 168, "add": 3.6 },
+      "def": { "base": 63, "add": 1.35 },
+      "hp": { "base": 336, "add": 7.2 }
+    },
+    {
+      "atk": { "base": 206.4, "add": 3.6 },
+      "def": { "base": 77.4, "add": 1.35 },
+      "hp": { "base": 412.8, "add": 7.2 }
+    },
+    {
+      "atk": { "base": 244.8, "add": 3.6 },
+      "def": { "base": 91.8, "add": 1.35 },
+      "hp": { "base": 489.6, "add": 7.2 }
+    }
+  ],
+  "superimpose": {
+    "otherStats": [
+      [-1, 0.12, 0.14, 0.16, 0.18, 0.2],
+      [-1, 0.24, 0.27, 0.3, 0.33, 0.36]
+    ],
+    "passiveStats": { "crit_": [-1, 0.12, 0.14, 0.16, 0.18, 0.2] }
+  }
+}

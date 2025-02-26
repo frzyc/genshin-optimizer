@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "Maestro, ¡toma un poco de té!",
-        "fullDesc": "Hace que otro aliado distinto a sí misma se convierta en Maestro. La VEL del Maestro aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Solo el último aliado que haya sido objetivo de la habilidad básica de Siete de Marzo se considera su \"Maestro\".<br>Cuando usa su ATQ básico o inflige daño 1 vez con su ATQ básico potenciado, se activa uno de los siguientes efectos en función de la Vía del Maestro que haya presente en el campo de batalla:<br>Erudición, Destrucción o Cacería: inflige un daño adicional del mismo tipo que el Maestro equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Siete de Marzo.<br>Armonía, Nihilidad, Conservación o Abundancia: la Reducción de Firmeza del daño infligido esta vez aumenta en un {{3, percent}}%.",
-        "shortDesc": "Designa a un aliado como Maestro. Al infligir daño el ATQ básico o ATQ básico potenciado, activa uno de los siguientes efectos según sea la <orangeStrong>Vía del Maestro</orangeStrong>:<br>Erudición, Destrucción o Cacería: inflige <orangeStrong>daño adicional</orangeStrong> extra del mismo tipo que el Maestro.<br>Armonía, Nihilidad, Conservación o Abundancia: aumenta la <orangeStrong>Reducción de Firmeza</orangeStrong>.",
+        "fullDesc": "Hace que otro aliado distinto a sí misma se convierta en Maestro. La VEL del Maestro aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Solo el último aliado que haya sido objetivo de la habilidad básica de Siete de Marzo se considera su \"Maestro\".<br>Cuando usa su ATQ básico o inflige daño 1 vez con su ATQ básico potenciado, se activa uno de los siguientes efectos en función de la Vía del Maestro que haya presente en el campo de batalla:<br>Erudición, Destrucción, Cacería o Reminiscencia: inflige un daño adicional del mismo tipo que el Maestro equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Siete de Marzo.<br>Armonía, Nihilidad, Conservación o Abundancia: la Reducción de Firmeza del daño infligido esta vez aumenta en un {{3, percent}}%.",
+        "shortDesc": "Designa a un aliado como Maestro. Al infligir daño el ATQ básico o ATQ básico potenciado, activa uno de los siguientes efectos según sea la <orangeStrong>Vía del Maestro</orangeStrong>:<br>Erudición, Destrucción, Cacería o Reminiscencia: inflige <orangeStrong>daño adicional</orangeStrong> extra del mismo tipo que el Maestro.<br>Armonía, Nihilidad, Conservación o Abundancia: aumenta la <orangeStrong>Reducción de Firmeza</orangeStrong>.",
         "tag": "Apoyo"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Donaire",
-        "fullDesc": "Al comenzar la batalla, la acción de Siete de Marzo se adelanta un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al comenzar la batalla, la acción de Siete de Marzo se adelanta un {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Finura",
-        "fullDesc": "Siete de Marzo puede reducir la Firmeza de los enemigos que tengan Debilidad del tipo del Maestro. Al causar Ruptura de Debilidad, también activa el efecto de Ruptura Imaginaria.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Siete de Marzo puede reducir la Firmeza de los enemigos que tengan Debilidad del tipo del Maestro. Al causar Ruptura de Debilidad, también activa el efecto de Ruptura Imaginaria."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Domadora de olas",
-        "fullDesc": "Tras usar el ATQ básico potenciado, el Daño CRIT y el efecto de Ruptura del Maestro aumentan respectivamente en un {{1, percent}}% y en un {{2, percent}}% durante {{3}} turnos.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tras usar el ATQ básico potenciado, el Daño CRIT y el efecto de Ruptura del Maestro aumentan respectivamente en un {{1, percent}}% y en un {{2, percent}}% durante {{3}} turnos."
       }
     }
   },

@@ -1,0 +1,96 @@
+{
+  "name": "Sunday",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Gleaming Admonition",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sunday's ATK to one designated enemy.",
+        "shortDesc": "Deals minor Imaginary DMG to one designated enemy.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Benison of Paper and Rites",
+        "fullDesc": "Enables one designated ally character and their summon to immediately take action, and increases their DMG dealt by <orangeStrong>{{2, percent}}%</orangeStrong>. If the target has a summon, then the dealt DMG increase is further boosted by an additional <orangeStrong>{{4, percent}}%</orangeStrong>, lasting for {{3}} turn(s).<br>After using Skill on The Beatified, recovers 1 Skill Point.<br>When Sunday uses this ability on characters following the Path of Harmony, cannot trigger the \"immediate action\" effect.",
+        "shortDesc": "Enables one designated <orangeStrong>ally character and their summon to immediately take action</orangeStrong>, and increases their DMG dealt. If the target has a summon, then the dealt DMG increase is further boosted.<br>After using Skill on The Beatified, recovers 1 Skill Point.<br>When Sunday uses this ability on characters following the Path of Harmony, cannot trigger the \"immediate action\" effect.",
+        "tag": "Support"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ode to Caress and Cicatrix",
+        "fullDesc": "Regenerates Energy by {{1, percent(fixed: 1)}}% of Max Energy for one designated ally character, and turns the target and their summon into \"The Beatified.\" \"The Beatified\" have their CRIT DMG increased by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Sunday's CRIT DMG plus <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>.<br>At the start of Sunday's each turn, the duration of \"The Beatified\" decreases by 1 turn, lasting for a total of {{3}} turn(s). And it only takes effect on the most recent target of the Ultimate (excluding Sunday himself). When Sunday is knocked down, \"The Beatified\" will also be dispelled.",
+        "shortDesc": "<orangeStrong>Regenerates Energy</orangeStrong> for one designated ally character and turns the target and their summon into \"The Beatified.\" \"The Beatified\" increases their CRIT DMG.",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "The Sorrowing Body",
+        "fullDesc": "When using Skill, increases the target's CRIT Rate by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, lasting for {{2}} turn(s).",
+        "shortDesc": "When using Skill, increases the target's CRIT Rate.",
+        "tag": "Support"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "The Glorious Mysteries",
+        "fullDesc": "After this Technique is used, the first time Sunday uses an ability on an ally target in the next battle, the target's DMG dealt increases by {{1, percent}}%, lasting for {{2}} turn(s).",
+        "shortDesc": "After this Technique is used, the first time Sunday uses an ability on an ally target in the next battle, the target's DMG dealt increases.",
+        "tag": "Support"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rest Day's Longing",
+        "fullDesc": "When using Ultimate, if the Energy regenerated for the target is less than {{1}}, increases the regenerated Energy to {{1}}."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Exalted Sweep",
+        "fullDesc": "When battle starts, Sunday regenerates {{1}} Energy."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Haven in Palm",
+        "fullDesc": "When using Skill, dispels {{1}} debuff(s) from the target."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Millennium's Quietus",
+      "desc": "When Sunday uses Skill, the target character can ignore {{2, percent}}% of enemy target's DEF to deal DMG and their summon can ignore {{3, percent}}% of enemy target's DEF to deal DMG, lasting for {{1}} turn(s)."
+    },
+    "2": {
+      "name": "Faith Outstrips Frailty",
+      "desc": "After the first use of Ultimate, recovers {{2}} Skill Point(s). The DMG dealt by \"The Beatified\" increases by {{1, percent}}%."
+    },
+    "3": {
+      "name": "Hermitage of Thorns",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Sculpture's Preamble",
+      "desc": "When the turn starts, regenerates {{1}} Energy."
+    },
+    "5": {
+      "name": "Paper Raft in Silver Bay",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Dawn of Sidereal Cacophony",
+      "desc": "The Talent's CRIT Rate boost effect becomes stackable up to {{1}} time(s), and the Talent's duration increases by {{3}} turn(s). When Sunday uses Ultimate, can also apply the Talent's CRIT Rate boost effect to the target. When the Talent's CRIT Rate boost takes effect and the target's CRIT Rate exceeds 100%, every 1% of excess CRIT Rate increases CRIT DMG by {{2, percent}}%."
+    }
+  }
+}

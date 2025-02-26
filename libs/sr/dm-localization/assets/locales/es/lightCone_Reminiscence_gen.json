@@ -1,0 +1,7 @@
+{
+  "name": "Retrospección",
+  "passive": {
+    "name": "Sopor",
+    "description": "Cuando comienza el turno del mnemoduende, tanto el portador como el mnemoduende obtienen 1 acumulación de Conmemoración. Cada acumulación aumenta el daño infligido en un <orangeStrong>{{1, percent}}%</orangeStrong>. Conmemoración se puede acumular hasta {{2}} veces. Cuando el mnemoduende es eliminado, se disipa Conmemoración del portador y del mnemoduende."
+  }
+}

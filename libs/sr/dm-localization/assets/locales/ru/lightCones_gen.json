@@ -1,6 +1,6 @@
 {
   "lightCone_one": "Световой конус",
-  "lightCone_other": "Световые конусы",
+  "lightCone_other": "Световой конус",
   "superimposition": "Наложение",
   "path": {
     "Erudition": "Эрудиция",
@@ -9,6 +9,7 @@
     "Nihility": "Небытие",
     "Destruction": "Разрушение",
     "Harmony": "Гармония",
-    "TheHunt": "Охота"
+    "TheHunt": "Охота",
+    "Remembrance": "Память"
   }
 }

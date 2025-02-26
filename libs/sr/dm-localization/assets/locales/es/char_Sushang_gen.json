@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Nacimiento primaveral",
-        "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1, percent}}%, se reduce la probabilidad de recibir un ataque enemigo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1, percent}}%, se reduce la probabilidad de recibir un ataque enemigo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Espantaenemigos",
-        "fullDesc": "El daño que inflige Postura espadachina aumenta en un {{1, percent}}% cada vez que se activa. Este efecto se puede acumular hasta {{2}} veces.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "El daño que inflige Postura espadachina aumenta en un {{1, percent}}% cada vez que se activa. Este efecto se puede acumular hasta {{2}} veces."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vencedora",
-        "fullDesc": "Tras usar el ATQ básico o la habilidad básica, si en el campo de batalla hay enemigos afectados por Ruptura de Debilidad, la acción de Sushang se adelanta un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tras usar el ATQ básico o la habilidad básica, si en el campo de batalla hay enemigos afectados por Ruptura de Debilidad, la acción de Sushang se adelanta un {{1, percent}}%."
       }
     }
   },

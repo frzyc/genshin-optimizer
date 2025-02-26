@@ -1,13 +1,5 @@
 {
   "setEffects": [
-    {
-      "numRequired": 2,
-      "passiveStats": {},
-      "otherStats": [
-        5,
-        0.05,
-        0.25
-      ]
-    }
+    { "numRequired": 2, "passiveStats": {}, "otherStats": [5, 0.05, 0.25] }
   ]
 }

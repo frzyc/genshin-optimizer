@@ -1,0 +1,7 @@
+{
+  "name": "I Venture Forth to Hunt",
+  "passive": {
+    "name": "Intimidation",
+    "description": "Meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT Rate pengguna. Saat pengguna melancarkan Serangan Lanjutan, akan memperoleh 1 lapis \"Luminflux\", dapat ditumpuk hingga {{3}} lapis. Setiap lapis \"Luminflux\" akan membuat Ultimate DMG yang diakibatkan pengguna mengabaikan <orangeStrong>{{2, percent}}%</orangeStrong> DEF target. Saat giliran pengguna berakhir, akan menghapus 1 lapis \"Luminflux\"."
+  }
+}

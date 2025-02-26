@@ -1,0 +1,7 @@
+{
+  "name": "Sombreado pela Noite",
+  "passive": {
+    "name": "Ocultação",
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Ao entrar em batalha ou após causar Dano de Quebra, aumenta a VEL em <orangeStrong>{{2, percent}}%</orangeStrong>, durando por {{3}} rodada(s). Este efeito só pode ser ativado 1 vez por rodada."
+  }
+}

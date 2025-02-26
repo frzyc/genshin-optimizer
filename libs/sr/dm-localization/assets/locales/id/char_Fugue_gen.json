@@ -1,0 +1,102 @@
+{
+  "name": "Fugue",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Radiant Streak",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Fugue pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      },
+      "1": {
+        "name": "Fiery Caress",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Fugue pada 1 musuh yang ditargetkan, dan mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Fugue pada musuh di sekitar target.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 target musuh dan Fire DMG dalam jumlah kecil pada musuh di sekitar target.",
+        "tag": "Blast"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Virtue Beckons Bliss",
+        "fullDesc": "Memberikan \"Foxian Prayer\" pada 1 rekan tim yang ditargetkan, serta membuat Fugue memasuki status \"Torrid Scorch\", berlangsung selama {{1}} giliran. Durasi akan berkurang 1 setiap kali giliran Fugue dimulai, dan \"Foxian Prayer\" hanya akan efektif pada target terbaru dari pelancaran Skill Fugue.<br>Break Effect rekan tim yang memiliki \"Foxian Prayer\" akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. Menyerang musuh tanpa Tipe Weakness yang sesuai juga dapat mengurangi Toughness musuh, dengan efek Pengurangan Toughness-nya adalah sebesar {{6, percent}}% dari Pengurangan Toughness aslinya. Efek ini tidak dapat ditumpuk dengan efek Pengurangan Toughness lain yang mengabaikan Tipe Weakness.<br>Saat berada dalam status \"Torrid Scorch\", Basic Attack Fugue akan diperkuat. Setiap kali rekan tim yang memiliki \"Foxian Prayer\" melancarkan serangan, Fugue memiliki {{3, percent}}% peluang dasar untuk mengurangi <orangeStrong>{{4, percent}}%</orangeStrong> DEF target musuh yang terkena serangan, berlangsung selama {{5}} giliran.",
+        "shortDesc": "Memberikan \"Foxian Prayer\" pada 1 rekan tim, <orangeStrong>meningkatkan Break Effect</orangeStrong>, dan membuat <orangeStrong>menyerang musuh tanpa Tipe Weakness yang sesuai juga dapat mengurangi Toughness musuh</orangeStrong>.<br>Membuat Fugue memasuki status \"Torrid Scorch\" dan memperkuat Basic Attack-nya. Saat rekan tim yang memiliki \"Foxian Prayer\" menyerang, Fugue berpeluang besar mengurangi DEF target musuh.",
+        "tag": "Support"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Solar Splendor Shines Upon All",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Fugue pada seluruh musuh. Serangan kali ini akan mengabaikan Tipe Weakness untuk mengurangi Toughness seluruh musuh. Saat memicu Weakness Break, akan memicu efek Fire Weakness Break.",
+        "shortDesc": "Mengakibatkan Fire DMG pada seluruh musuh. Serangan kali ini akan <orangeStrong>mengabaikan Tipe Weakness</orangeStrong> untuk mengurangi Toughness seluruh musuh.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fortune Follows Where Virtue Spreads",
+        "fullDesc": "Saat Fugue berada di medan pertempuran, target musuh akan memperoleh \"Cloudflame Luster\" sebesar {{2, percent}}% Max Toughness dirinya. Saat Toughness awal dikurangi hingga 0, dapat lanjut mengurangi \"Cloudflame Luster\", dan saat \"Cloudflame Luster\" dikurangi hingga 0, target musuh akan menerima Weakness Break DMG sekali lagi.<br>Saat Fugue berada di medan pertempuran, setelah rekan tim menyerang target musuh yang berstatus Weakness Break, nilai Pengurangan Toughness pada serangan ini akan dikonversi menjadi 1 kali <orangeStrong>{{1, percent}}%</orangeStrong> Super Break DMG.",
+        "shortDesc": "Saat Fugue berada di medan pertempuran, target musuh akan <orangeStrong>memperoleh \"Cloudflame Luster\"</orangeStrong>. Saat \"Cloudflame Luster\" dikurangi hingga 0, target musuh akan <orangeStrong>menerima Weakness Break DMG sekali lagi</orangeStrong>. Setelah rekan tim menyerang target musuh yang berada dalam status Weakness Break, akan mengakibatkan <orangeStrong>Super Break DMG</orangeStrong> pada target tersebut.",
+        "tag": "Impair"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Percipient Shine",
+        "fullDesc": "Setelah melancarkan Technique, musuh dalam jangkauan tertentu akan memasuki status Daze selama {{1}} detik. Musuh yang berstatus Daze tidak akan secara aktif menyerang rekan tim.<br>Jika secara aktif menyerang musuh yang berstatus Daze, maka setelah memasuki pertempuran, aksi Fugue akan didahulukan sebesar {{4, percent}}%, serta memiliki {{2, percent}}% peluang dasar untuk membuat setiap target musuh memasuki status Pengurangan DEF yang sama dengan Skill Fugue, berlangsung selama {{3}} giliran.",
+        "shortDesc": "Membuat musuh dalam jangkauan tertentu memasuki status Daze. Jika menyerang musuh yang berstatus Daze, aksi Fugue akan didahulukan saat memasuki pertempuran, serta berpeluang besar untuk membuat setiap target musuh memasuki status Pengurangan DEF yang sama dengan Skill Fugue.",
+        "tag": "Impair"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Verdantia Renaissance",
+        "fullDesc": "Saat rekan tim mengakibatkan Weakness Break, penundaan aksi pada target musuh tersebut akan meningkat ekstra {{1, percent}}%."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sylvan Enigma",
+        "fullDesc": "Meningkatkan {{1, percent}}% Break Effect karakter ini. Setelah melancarkan Skill untuk pertama kalinya, akan memulihkan {{2}} Poin Skill."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Phecda Primordia",
+        "fullDesc": "Saat ada target musuh yang terkena Weakness Break, akan meningkatkan Break Effect rekan tim (selain Fugue) sebesar {{1, percent}}%. Jika Break Effect Fugue lebih dari atau sama dengan {{4, percent}}%, maka efek peningkatan Break Effect akan meningkat ekstra {{5, percent}}%, berlangsung selama {{2}} giliran. Efek ini maksimal dapat ditumpuk hingga {{3}} lapis."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Earthbound I Was, Cloudward I Be",
+      "desc": "Meningkatkan {{1, percent}}% Weakness Break Efficiency rekan tim yang memiliki \"Foxian Prayer\"."
+    },
+    "2": {
+      "name": "Beatitude Dawns for the Worthy",
+      "desc": "Saat target musuh terkena Weakness Break, Fugue akan memulihkan {{1}} Energy. Setelah melancarkan Ultimate, aksi seluruh rekan tim akan didahulukan sebesar {{2, percent}}%."
+    },
+    "3": {
+      "name": "Verity Weaves Thoughts to Blade",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Bereft of Form, Which Name to Bear",
+      "desc": "Break DMG yang diakibatkan rekan tim yang memiliki \"Foxian Prayer\" meningkat {{1, percent}}%."
+    },
+    "5": {
+      "name": "Colored Cloud Rains Fortune",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Clairvoyance of Boom and Doom",
+      "desc": "Weakness Break Efficiency Fugue meningkat {{1, percent}}%. Saat Fugue berada dalam status \"Torrid Scorch\", efek \"Foxian Prayer\" akan berlaku pada seluruh rekan tim."
+    }
+  }
+}

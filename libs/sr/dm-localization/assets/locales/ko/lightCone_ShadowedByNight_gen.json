@@ -1,0 +1,7 @@
+{
+  "name": "그림자처럼 뒤따르는 밤",
+  "passive": {
+    "name": "은닉",
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 전투 진입 시 또는 격파 피해를 가한 후 속도가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다, 지속 시간: {{3}}턴, 해당 효과는 턴마다 1회만 발동할 수 있다"
+  }
+}

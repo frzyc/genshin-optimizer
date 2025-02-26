@@ -1,0 +1,7 @@
+{
+  "name": "Geniuses' Greetings",
+  "passive": {
+    "name": "Congratulations",
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1, percent}}%</orangeStrong>. After the wearer uses Ultimate, increases the Basic ATK DMG dealt by the wearer and their memosprite by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s)."
+  }
+}

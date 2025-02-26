@@ -1,0 +1,102 @@
+{
+  "name": "The Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Did You Get It",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of The Herta's ATK to one designated enemy.",
+        "shortDesc": "Deals minor Ice DMG to one designated enemy.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Big Brain Energy",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of The Herta's ATK to one designated enemy, and inflicts {{2}} stack(s) of \"Interpretation.\" Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of The Herta's ATK to the targets hit by this instance of Skill and their respective adjacent targets. This effect can repeat 2 times.",
+        "shortDesc": "Deals DMG to one designated enemy. Deals DMG to the targets hit by this instance of Skill and their respective adjacent targets, repeating 2 times.",
+        "tag": "Blast"
+      },
+      "1": {
+        "name": "Hear Me Out",
+        "fullDesc": "Consumes 1 stack of \"Inspiration.\" Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of The Herta's ATK to one designated enemy and inflicts {{2}} stack(s) of \"Interpretation.\" Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of The Herta's ATK to the targets hit by this instance of Skill and their respective adjacent targets, repeating 2 times. At the end, deals Ice DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of The Herta's ATK to all enemies.",
+        "shortDesc": "Deals DMG to one designated enemy. Deals DMG to the targets hit by this instance of Skill and their respective adjacent targets, repeating 2 times. After that, deals DMG to all enemies.",
+        "tag": "AoE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Told Ya! Magic Happens",
+        "fullDesc": "Rearranges the numbers of \"Interpretation\" stacks on all enemies, prioritizing the transfer of the higher numbers of \"Interpretation\" stacks to Elite-level targets and above. Then, deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of The Herta's ATK to all enemies. When using Ultimate, increases The Herta's ATK by <orangeStrong>{{4, percent}}%</orangeStrong>, lasting for {{5}} turn(s). After the use, The Herta immediately takes action and gains 1 stack of \"Inspiration.\" \"Inspiration\" can stack up to {{6}} time(s). While having \"Inspiration,\" enhances Skill to \"Hear Me Out.\"",
+        "shortDesc": "<orangeStrong>Rearranges the numbers of \"Interpretation\" stacks</orangeStrong> on all enemies, prioritizing the transfer of the higher numbers of \"Interpretation\" stacks to Elite-level targets and above. Then, deals Ice DMG to all enemies. After use, enhances Skill and immediately takes action.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Hand Them Over",
+        "fullDesc": "When enemy targets enter battle, The Herta inflicts 1 stack of \"Interpretation\" on them. At the start of each wave, applies {{6}} stack(s) of \"Interpretation\" to a random enemy target, prioritizing Elite-level targets and above. When the Enhanced Skill's primary target has \"Interpretation,\" the multiplier for the DMG dealt increases, with each stack granting an increase of <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> on the primary target/other targets respectively. If 2 or more characters follow the Path of Erudition in the team, each stack grants an additional increase of <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> on the primary target/other targets respectively. \"Interpretation\" can stack up to {{3}} time(s). When using the Enhanced Skill, resets the number of \"Interpretation\" stacks on the primary target to 1. After the enemy target leaves the field or gets defeated by any unit, \"Interpretation\" will be transferred, prioritizing the transfer to Elite-level targets and above.",
+        "shortDesc": "Enhanced Skill <orangeStrong>increases the DMG dealt based on the target's \"Interpretation\" stacks</orangeStrong>.",
+        "tag": "Enhance"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Vibe Checker",
+        "fullDesc": "After using Technique, increases The Herta's ATK by {{1, percent}}% at the start of the next battle, lasting for {{2}} turn(s).<br>If there are Basic Treasures in this current map, using Technique can mark up to {{3}} Basic Treasures' locations.<br>After entering battle by using Technique in Simulated Universe or Divergent Universe, at the start of each wave, deals True DMG to enemy targets lower than Elite-level by an amount equal to {{4, percent}}% of the targets' Max HP, and deals True DMG to enemy targets at Elite-level and above by an amount equal to {{5, percent}}% of the targets' Max HP.",
+        "shortDesc": "After using Technique, <orangeStrong>can mark several Basic Treasures' locations</orangeStrong>, and increases The Herta's ATK at the start of the next battle.<br>After entering battle by using Technique in Simulated Universe or Divergent Universe, deals massive True DMG to all enemies at the start of each wave.",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Aloofly Honest",
+        "fullDesc": "When ally targets attack, inflicts 1 stack of \"Interpretation\" on the hit enemy target. After attacking, for every 1 target hit by this attack, regenerates {{1}} fixed Energy for The Herta, counting up to a maximum of 5 targets. When using Enhanced Skill, if the primary target's \"Interpretation\" stack reaches 42, increases the Ice DMG dealt by The Herta by {{2, percent}}%, lasting until the end of this attack."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Message From Beyond the Veil",
+        "fullDesc": "When entering battle, if the team has 2 or more Erudition characters, increases all allies' CRIT DMG by {{1, percent}}%. And the Trace \"Aloofly Honest\" counts at least {{2}} target(s) when calculating the number of targets hit. After attacking, applies {{3}} \"Interpretation\" stack(s) to the target that has the highest existing \"Interpretation\" stacks among the hit enemy targets. If the attacker is an Erudition character, then additionally applies {{4}} \"Interpretation\" stack(s)."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Starved Landscape of Vacua",
+        "fullDesc": "For every 1 stack of \"Interpretation\" inflicted on enemy targets, The Herta gains 1 stack of \"Answer,\" up to a max of {{2}} stack(s). When using Ultimate, each \"Answer\" stack increases this instance of Ultimate's DMG multiplier by {{1, percent(fixed: 1)}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Night at Shorefall",
+      "desc": "When the Enhanced Skill calculates the number of \"Interpretation\" stacks, additionally counts {{1, percent}}% of the number of \"Interpretation\" stacks on the 1 target with the most stacks among the primary target and adjacent targets. When \"Interpretation\" is reset by using the Enhanced Skill, its stack number is reset to {{2}} instead."
+    },
+    "2": {
+      "name": "Wind Through Keyhole",
+      "desc": "After The Herta enters battle or uses Ultimate, additionally gains 1 \"Inspiration\" stack. After using Enhanced Skill, advances The Herta's next action by {{1, percent}}%."
+    },
+    "3": {
+      "name": "Door into Summer",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "The Sixteenth Key",
+      "desc": "The SPD of Erudition characters in the team increases by {{1, percent}}%."
+    },
+    "5": {
+      "name": "Bitter Pill of Truth",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Sweet Lure of Answer",
+      "desc": "The Herta's Ice RES PEN increases by {{4, percent}}%. When the number of enemy targets on the field is 3 (or more)/2/1, Ultimate's DMG multiplier increases by {{1, percent}}%/{{2, percent}}%/{{3, percent}}% respectively."
+    }
+  }
+}

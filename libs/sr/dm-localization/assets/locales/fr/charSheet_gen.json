@@ -6,7 +6,7 @@
     "atk_": "Augmentation d'ATQ",
     "def_": "Augmentation de DÉF",
     "crit_": "Chances de coup critique ↑",
-    "crit_dmg_": "Chances de coup critique et DGT CRIT ↑",
+    "crit_dmg_": "DGT CRIT ↑",
     "eff_res_": "Augmentation de la RÉS aux effets",
     "spd": "VIT ↑",
     "physical_dmg_": "Augmentation des DGT physiques",
@@ -16,6 +16,6 @@
     "wind_dmg_": "Augmentation des DGT de vent",
     "quantum_dmg_": "Augmentation des DGT quantiques",
     "imaginary_dmg_": "Augmentation des DGT imaginaires",
-    "brEffect_": "Augmentation de l'effet de Rupture"
+    "brEffect_": "Effet de Rupture ↑"
   }
 }

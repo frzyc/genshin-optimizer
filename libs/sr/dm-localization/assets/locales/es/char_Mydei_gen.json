@@ -1,0 +1,108 @@
+{
+  "name": "Midei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Juramento de andanza resoluta",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Midei como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Morir mil veces sin remordimientos",
+        "fullDesc": "Midei consume un {{3, percent}}% de sus PV actuales e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a los objetivos adyacentes.<br>Si no tiene suficientes PV, sus PV actuales se reducen a 1 tras lanzar la habilidad básica.",
+        "shortDesc": "Consume PV e inflige Daño Imaginario a un enemigo y una pequeña cantidad de Daño Imaginario a los objetivos adyacentes.",
+        "tag": "Ráfaga"
+      },
+      "1": {
+        "name": "Regicidio, ascenso al trono",
+        "fullDesc": "Midei consume un {{3, percent}}% de sus PV actuales e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a los objetivos adyacentes.<br>Si Midei no tiene suficientes PV, sus PV actuales se reducen a 1 tras usar la habilidad básica.<br>Esta habilidad se lanza automáticamente.",
+        "shortDesc": "Consume PV e inflige Daño Imaginario a un enemigo y a los objetivos adyacentes.<br>Esta habilidad se <orangeStrong>lanza automáticamente</orangeStrong>.",
+        "tag": "Ráfaga"
+      },
+      "2": {
+        "name": "Deicidio, ascenso divino",
+        "fullDesc": "Midei consume {{3}} puntos de carga e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a los objetivos adyacentes.<br>Esta habilidad se lanza automáticamente. Mientras dura la habilidad, no se acumulan puntos de carga.",
+        "shortDesc": "<orangeStrong>Consume carga</orangeStrong> e inflige una gran cantidad de Daño Imaginario a un enemigo y a los objetivos adyacentes.<br>Esta habilidad se <orangeStrong>lanza automáticamente</orangeStrong>.",
+        "tag": "Ráfaga"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Trono del verdugo celestial",
+        "fullDesc": "Midei regenera un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de sus PV máx. y acumula {{5}} pts. de carga del talento. Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de sus PV máx. como Daño Imaginario a los objetivos adyacentes. Además, afecta con Provocación al objetivo y a los objetivos adyacentes durante {{4}} turnos. La siguiente vez que lance Deicidio, ascenso divino prioriza atacar a un objetivo determinado (este efecto solo se activa en el objetivo más reciente).",
+        "shortDesc": "Tras ser atacado, <orangeStrong>regenera PV</orangeStrong> y acumula carga del talento. Inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los objetivos adyacentes, y afecta con <orangeStrong>Provocación</orangeStrong> al objetivo y a los objetivos adyacentes.",
+        "tag": "Ráfaga"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sangre por sangre",
+        "fullDesc": "Acumula 1 punto de carga por cada 1% de PV que pierde, hasta un máximo de 200 puntos. Cuando la carga alcanza 100, consume 100 puntos de carga para entrar en el estado de Venganza de sangre, regenera un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Midei, y además adelanta su acción un 100%. En el estado de Venganza de sangre, sus PV máx. aumentan en un {{5, percent}}% de sus PV máx. actuales y su DEF se mantiene en 0. Al comenzar su turno, lanza automáticamente Regicidio, ascenso al trono.<br> Cuando la carga en el estado de Venganza de sangre alcanza {{3}} puntos, Midei obtiene inmediatamente 1 turno adicional y lanza automáticamente Deicidio, ascenso divino.<br>Si Midei recibe un golpe letal mientras está en el estado de Venganza de sangre, no es derrotado, pero reinicia la carga, sale del estado de Venganza de sangre y regenera un {{4, percent}}% de sus PV máx.",
+        "shortDesc": "Acumula carga al perder PV. Cuando la carga alcanza 100, entra en el estado de <orangeStrong>Venganza de sangre</orangeStrong>, regenera PV y adelanta su acción. En el estado de Venganza de sangre, sus PV máx. actuales aumentan y su DEF se mantiene en 0. Al comenzar su turno, <orangeStrong>lanza automáticamente</orangeStrong> Regicidio, ascenso al trono.<br>Cuando la carga en el estado de Venganza de sangre llega a 150, Midei obtiene inmediatamente 1 <orangeStrong>turno adicional</orangeStrong> y <orangeStrong>lanza automáticamente</orangeStrong> Deicidio, ascenso divino.<br>Cuando Midei recibe un golpe letal, sale del estado de Venganza de sangre.",
+        "tag": "Potenciación"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Prisión de obediencia rota",
+        "fullDesc": "Tras usar la técnica, atrae a los enemigos de un área determinada y los afecta con Mareo durante {{1}} s, lo que les impide atacar activamente a los aliados.<br>Al entrar en combate tras atacar a un enemigo mareado, inflige a todos los enemigos un Daño Imaginario equivalente al {{2, percent}}% de los PV máx. de Midei y afecta con Provocación a los objetivos durante {{4}} turno. Además, acumula {{5}} puntos de carga del talento.",
+        "shortDesc": "Atrae a los enemigos de cierta área y los afecta con Mareo. Al atacar a un enemigo mareado y entrar en combate, inflige una pequeña cantidad de Daño Imaginario a todos los enemigos y los afecta con Provocación. Además, acumula carga del talento.",
+        "tag": "Alteración"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tierra y agua",
+        "fullDesc": "Cuando Midei recibe un golpe letal mientras está en el estado de Venganza de sangre, no sale de dicho estado. Este efecto solo se puede activar {{1}} vez en cada batalla."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Treinta usurpadores",
+        "fullDesc": "Mientras está en el estado de Venganza de sangre, Midei es inmune a los estados negativos de Control."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sayo de presagio sangriento",
+        "fullDesc": "Al comenzar la batalla, si los PV máx. de Midei son superiores a {{1}}, por cada 100 PV de exceso su Prob. CRIT aumenta en un {{3, percent(fixed: 1)}}%, la proporción de carga obtenida al recibir daño de los objetivos de Midei aumenta en un {{4, percent(fixed: 1)}}%, y la curación recibida aumenta en un {{5, percent(fixed: 2)}}%. Se pueden calcular como máximo {{2}} PV de exceso."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Espalda por el frío curtida",
+      "desc": "El multiplicador de daño que Deicidio, ascenso divino inflige al objetivo principal aumenta en un {{1, percent}}%. Deicidio, ascenso divino pasa a infligir a todos los enemigos un Daño Imaginario equivalente al multiplicador de daño del objetivo principal."
+    },
+    "2": {
+      "name": "Estertor de los muertos del Conflicto",
+      "desc": "Durante el estado de Venganza de sangre, el daño que inflige Midei ignora un {{1, percent}}% de la DEF de los enemigos. Tras recibir una curación, un {{2, percent}}% de la curación recibida se convierte en carga. La carga convertida acumulada no puede superar {{3}} pts. Después de que cualquier unidad actúe, se restablece la carga que se puede acumular."
+    },
+    "3": {
+      "name": "Banquete de gloria inmarcesible",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Cuerno que despierta al león silencioso",
+      "desc": "Durante el estado de Venganza de sangre, el Daño CRIT aumenta en un {{2, percent}}%. Tras recibir un ataque enemigo, regenera un {{1, percent}}% de sus PV máx."
+    },
+    "5": {
+      "name": "Cuerpo por la guerra esculpido",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Montaña de sangre sedimentada",
+      "desc": "Al entrar en combate, entra en el estado de Venganza de sangre y la carga necesaria para activar Deicidio, ascenso divino se reduce a {{1}} puntos."
+    }
+  }
+}

@@ -1,5 +1,26 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
+  AGroundedAscent: {
+    boolConditional: {
+      sheet: 'AGroundedAscent',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'AGroundedAscent',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'AGroundedAscent',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   ASecretVow: {
     boolConditional: {
       sheet: 'ASecretVow',
@@ -77,6 +98,23 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'AfterTheCharmonyFall',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Aglaea: {
+    boolConditional: { sheet: 'Aglaea', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Aglaea',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Aglaea',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -254,24 +292,10 @@ export const conditionals = {
     },
   },
   BandOfSizzlingThunder: {
-    boolConditional: {
+    skillUsed: {
       sheet: 'BandOfSizzlingThunder',
-      name: 'boolConditional',
+      name: 'skillUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   BaptismOfPureThought: {
@@ -337,27 +361,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  BelobogOfTheArchitects: {
-    boolConditional: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   BlackSwan: {
     boolConditional: {
       sheet: 'BlackSwan',
@@ -389,6 +392,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Blade',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  BoneCollectionsSereneDemesne: {
+    boolConditional: {
+      sheet: 'BoneCollectionsSereneDemesne',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'BoneCollectionsSereneDemesne',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'BoneCollectionsSereneDemesne',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -459,27 +483,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  BrokenKeel: {
-    boolConditional: {
-      sheet: 'BrokenKeel',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BrokenKeel',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BrokenKeel',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Bronya: {
     boolConditional: { sheet: 'Bronya', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -540,45 +543,20 @@ export const conditionals = {
     },
   },
   CelestialDifferentiator: {
-    boolConditional: {
+    firstAttack: {
       sheet: 'CelestialDifferentiator',
-      name: 'boolConditional',
+      name: 'firstAttack',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'CelestialDifferentiator',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'CelestialDifferentiator',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ChampionOfStreetwiseBoxing: {
-    boolConditional: {
+    hits: {
       sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'numConditional',
+      name: 'hits',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 5,
     },
   },
   Chorus: {
@@ -909,6 +887,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  DreamsMontage: {
+    boolConditional: {
+      sheet: 'DreamsMontage',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'DreamsMontage',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'DreamsMontage',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   DreamvilleAdventure: {
     boolConditional: {
       sheet: 'DreamvilleAdventure',
@@ -931,45 +930,13 @@ export const conditionals = {
     },
   },
   DuranDynastyOfRunningWolves: {
-    boolConditional: {
+    merit: {
       sheet: 'DuranDynastyOfRunningWolves',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DuranDynastyOfRunningWolves',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DuranDynastyOfRunningWolves',
-      name: 'numConditional',
+      name: 'merit',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
-  EagleOfTwilightLine: {
-    boolConditional: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      max: 5,
     },
   },
   EarthlyEscapade: {
@@ -1014,6 +981,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  EternalCalculus: {
+    boolConditional: {
+      sheet: 'EternalCalculus',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'EternalCalculus',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'EternalCalculus',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   EyesOfThePrey: {
     boolConditional: {
       sheet: 'EyesOfThePrey',
@@ -1028,6 +1016,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'EyesOfThePrey',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Feixiao: {
+    boolConditional: {
+      sheet: 'Feixiao',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Feixiao',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Feixiao',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1111,40 +1120,22 @@ export const conditionals = {
     },
   },
   FiresmithOfLavaForging: {
-    boolConditional: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'FiresmithOfLavaForging', name: 'ultUsed', type: 'bool' },
   },
-  FirmamentFrontlineGlamoth: {
+  FlameOfBloodBlazeMyPath: {
     boolConditional: {
-      sheet: 'FirmamentFrontlineGlamoth',
+      sheet: 'FlameOfBloodBlazeMyPath',
       name: 'boolConditional',
       type: 'bool',
     },
     listConditional: {
-      sheet: 'FirmamentFrontlineGlamoth',
+      sheet: 'FlameOfBloodBlazeMyPath',
       name: 'listConditional',
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      sheet: 'FirmamentFrontlineGlamoth',
+      sheet: 'FlameOfBloodBlazeMyPath',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1173,27 +1164,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  FleetOfTheAgeless: {
-    boolConditional: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   FlowingNightglow: {
     boolConditional: {
       sheet: 'FlowingNightglow',
@@ -1215,25 +1185,32 @@ export const conditionals = {
       max: 2,
     },
   },
-  ForgeOfTheKalpagniLantern: {
+  ForTomorrowsJourney: {
     boolConditional: {
-      sheet: 'ForgeOfTheKalpagniLantern',
+      sheet: 'ForTomorrowsJourney',
       name: 'boolConditional',
       type: 'bool',
     },
     listConditional: {
-      sheet: 'ForgeOfTheKalpagniLantern',
+      sheet: 'ForTomorrowsJourney',
       name: 'listConditional',
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      sheet: 'ForgeOfTheKalpagniLantern',
+      sheet: 'ForTomorrowsJourney',
       name: 'numConditional',
       type: 'num',
       int_only: true,
       min: 0,
       max: 2,
+    },
+  },
+  ForgeOfTheKalpagniLantern: {
+    enemyHit: {
+      sheet: 'ForgeOfTheKalpagniLantern',
+      name: 'enemyHit',
+      type: 'bool',
     },
   },
   FuXuan: {
@@ -1246,6 +1223,23 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'FuXuan',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Fugue: {
+    boolConditional: { sheet: 'Fugue', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Fugue',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Fugue',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1275,19 +1269,26 @@ export const conditionals = {
     },
   },
   GeniusOfBrilliantStars: {
-    boolConditional: {
+    hasQuantumWeakness: {
       sheet: 'GeniusOfBrilliantStars',
+      name: 'hasQuantumWeakness',
+      type: 'bool',
+    },
+  },
+  GeniusesGreetings: {
+    boolConditional: {
+      sheet: 'GeniusesGreetings',
       name: 'boolConditional',
       type: 'bool',
     },
     listConditional: {
-      sheet: 'GeniusOfBrilliantStars',
+      sheet: 'GeniusesGreetings',
       name: 'listConditional',
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      sheet: 'GeniusOfBrilliantStars',
+      sheet: 'GeniusesGreetings',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1333,6 +1334,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  GiantTreeOfRaptBrooding: {
+    boolConditional: {
+      sheet: 'GiantTreeOfRaptBrooding',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'GiantTreeOfRaptBrooding',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'GiantTreeOfRaptBrooding',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   GoodNightAndSleepWell: {
     boolConditional: {
       sheet: 'GoodNightAndSleepWell',
@@ -1355,24 +1377,10 @@ export const conditionals = {
     },
   },
   GuardOfWutheringSnow: {
-    boolConditional: {
+    hpLowerThan50: {
       sheet: 'GuardOfWutheringSnow',
-      name: 'boolConditional',
+      name: 'hpLowerThan50',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Guinaifen: {
@@ -1411,6 +1419,13 @@ export const conditionals = {
       int_only: true,
       min: 0,
       max: 2,
+    },
+  },
+  HeroOfTriumphantSong: {
+    followUpUsed: {
+      sheet: 'HeroOfTriumphantSong',
+      name: 'followUpUsed',
+      type: 'bool',
     },
   },
   Herta: {
@@ -1507,25 +1522,7 @@ export const conditionals = {
     },
   },
   HunterOfGlacialForest: {
-    boolConditional: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'HunterOfGlacialForest', name: 'ultUsed', type: 'bool' },
   },
   Huohuo: {
     boolConditional: { sheet: 'Huohuo', name: 'boolConditional', type: 'bool' },
@@ -1558,6 +1555,48 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'IShallBeMyOwnSword',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  IVentureForthToHunt: {
+    boolConditional: {
+      sheet: 'IVentureForthToHunt',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'IVentureForthToHunt',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'IVentureForthToHunt',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  IfTimeWereAFlower: {
+    boolConditional: {
+      sheet: 'IfTimeWereAFlower',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'IfTimeWereAFlower',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'IfTimeWereAFlower',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1649,27 +1688,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  InertSalsotto: {
-    boolConditional: {
-      sheet: 'InertSalsotto',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'InertSalsotto',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'InertSalsotto',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   InherentlyUnjustDestiny: {
     boolConditional: {
       sheet: 'InherentlyUnjustDestiny',
@@ -1691,20 +1709,20 @@ export const conditionals = {
       max: 2,
     },
   },
-  IronCavalryAgainstTheScourge: {
+  IntoTheUnreachableVeil: {
     boolConditional: {
-      sheet: 'IronCavalryAgainstTheScourge',
+      sheet: 'IntoTheUnreachableVeil',
       name: 'boolConditional',
       type: 'bool',
     },
     listConditional: {
-      sheet: 'IronCavalryAgainstTheScourge',
+      sheet: 'IntoTheUnreachableVeil',
       name: 'listConditional',
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      sheet: 'IronCavalryAgainstTheScourge',
+      sheet: 'IntoTheUnreachableVeil',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1733,27 +1751,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  IzumoGenseiAndTakamaDivineRealm: {
-    boolConditional: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Jade: {
     boolConditional: { sheet: 'Jade', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -1764,6 +1761,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Jade',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Jiaoqiu: {
+    boolConditional: {
+      sheet: 'Jiaoqiu',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Jiaoqiu',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Jiaoqiu',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1830,27 +1848,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  KnightOfPurityPalace: {
-    boolConditional: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   LandausChoice: {
     boolConditional: {
       sheet: 'LandausChoice',
@@ -1872,21 +1869,52 @@ export const conditionals = {
       max: 2,
     },
   },
-  LongevousDisciple: {
+  Lingsha: {
     boolConditional: {
-      sheet: 'LongevousDisciple',
+      sheet: 'Lingsha',
       name: 'boolConditional',
       type: 'bool',
     },
     listConditional: {
-      sheet: 'LongevousDisciple',
+      sheet: 'Lingsha',
       name: 'listConditional',
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      sheet: 'LongevousDisciple',
+      sheet: 'Lingsha',
       name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  LongRoadLeadsHome: {
+    boolConditional: {
+      sheet: 'LongRoadLeadsHome',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'LongRoadLeadsHome',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'LongRoadLeadsHome',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  LongevousDisciple: {
+    stacks: {
+      sheet: 'LongevousDisciple',
+      name: 'stacks',
       type: 'num',
       int_only: true,
       min: 0,
@@ -1937,6 +1965,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Luocha',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  LushakaTheSunkenSeas: {
+    boolConditional: {
+      sheet: 'LushakaTheSunkenSeas',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'LushakaTheSunkenSeas',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'LushakaTheSunkenSeas',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2045,6 +2094,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  MemorysCurtainNeverFalls: {
+    boolConditional: {
+      sheet: 'MemorysCurtainNeverFalls',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'MemorysCurtainNeverFalls',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'MemorysCurtainNeverFalls',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   MeshingCogs: {
     boolConditional: {
       sheet: 'MeshingCogs',
@@ -2067,24 +2137,10 @@ export const conditionals = {
     },
   },
   MessengerTraversingHackerspace: {
-    boolConditional: {
+    ultUsed: {
       sheet: 'MessengerTraversingHackerspace',
-      name: 'boolConditional',
+      name: 'ultUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Misha: {
@@ -2125,6 +2181,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Moze: {
+    boolConditional: { sheet: 'Moze', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Moze',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Moze',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Multiplication: {
     boolConditional: {
       sheet: 'Multiplication',
@@ -2146,27 +2219,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  MusketeerOfWildWheat: {
-    boolConditional: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   MutualDemise: {
     boolConditional: {
       sheet: 'MutualDemise',
@@ -2181,6 +2233,23 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'MutualDemise',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Mydei: {
+    boolConditional: { sheet: 'Mydei', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Mydei',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Mydei',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2251,6 +2320,48 @@ export const conditionals = {
       max: 2,
     },
   },
+  NinjaRecordSoundHunt: {
+    boolConditional: {
+      sheet: 'NinjaRecordSoundHunt',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'NinjaRecordSoundHunt',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'NinjaRecordSoundHunt',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  NinjutsuInscriptionDazzlingEvilbreaker: {
+    boolConditional: {
+      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   NowhereToRun: {
     boolConditional: {
       sheet: 'NowhereToRun',
@@ -2307,48 +2418,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'OnlySilenceRemains',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  PanCosmicCommercialEnterprise: {
-    boolConditional: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  PasserbyOfWanderingCloud: {
-    boolConditional: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PasserbyOfWanderingCloud',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2443,27 +2512,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  PenaconyLandOfTheDreams: {
-    boolConditional: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   PerfectTiming: {
     boolConditional: {
       sheet: 'PerfectTiming',
@@ -2486,24 +2534,23 @@ export const conditionals = {
     },
   },
   PioneerDiverOfDeadWaters: {
-    boolConditional: {
+    affectedByDebuff: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'boolConditional',
+      name: 'affectedByDebuff',
       type: 'bool',
     },
-    listConditional: {
+    debuffCount: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PioneerDiverOfDeadWaters',
-      name: 'numConditional',
+      name: 'debuffCount',
       type: 'num',
       int_only: true,
-      min: 0,
-      max: 2,
+      min: 2,
+      max: 3,
+    },
+    wearerDebuff: {
+      sheet: 'PioneerDiverOfDeadWaters',
+      name: 'wearerDebuff',
+      type: 'bool',
     },
   },
   Pioneering: {
@@ -2541,6 +2588,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'PlanetaryRendezvous',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  PoetOfMourningCollapse: {
+    boolConditional: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'PoetOfMourningCollapse',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2591,24 +2659,13 @@ export const conditionals = {
     },
   },
   PrisonerInDeepConfinement: {
-    boolConditional: {
+    dotCount: {
       sheet: 'PrisonerInDeepConfinement',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'numConditional',
+      name: 'dotCount',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   Qingque: {
@@ -2653,6 +2710,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Rappa: {
+    boolConditional: { sheet: 'Rappa', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Rappa',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Rappa',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   ReforgedRemembrance: {
     boolConditional: {
       sheet: 'ReforgedRemembrance',
@@ -2667,6 +2741,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'ReforgedRemembrance',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Reminiscence: {
+    boolConditional: {
+      sheet: 'Reminiscence',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Reminiscence',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Reminiscence',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2759,20 +2854,20 @@ export const conditionals = {
     skillOvertone: { sheet: 'RuanMei', name: 'skillOvertone', type: 'bool' },
     ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
   },
-  RutilantArena: {
+  SacerdosRelivedOrdeal: {
     boolConditional: {
-      sheet: 'RutilantArena',
+      sheet: 'SacerdosRelivedOrdeal',
       name: 'boolConditional',
       type: 'bool',
     },
     listConditional: {
-      sheet: 'RutilantArena',
+      sheet: 'SacerdosRelivedOrdeal',
       name: 'listConditional',
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      sheet: 'RutilantArena',
+      sheet: 'SacerdosRelivedOrdeal',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2839,6 +2934,48 @@ export const conditionals = {
       max: 2,
     },
   },
+  ScentAloneStaysTrue: {
+    boolConditional: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ScholarLostInErudition: {
+    boolConditional: {
+      sheet: 'ScholarLostInErudition',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ScholarLostInErudition',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ScholarLostInErudition',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Seele: {
     amplification: { sheet: 'Seele', name: 'amplification', type: 'bool' },
     enemyLowerThan80_: {
@@ -2865,6 +3002,48 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Serval',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Shadowburn: {
+    boolConditional: {
+      sheet: 'Shadowburn',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Shadowburn',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Shadowburn',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  ShadowedByNight: {
+    boolConditional: {
+      sheet: 'ShadowedByNight',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ShadowedByNight',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ShadowedByNight',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2936,24 +3115,13 @@ export const conditionals = {
     },
   },
   SigoniaTheUnclaimedDesolation: {
-    boolConditional: {
+    enemiesDefeated: {
       sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'numConditional',
+      name: 'enemiesDefeated',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 10,
     },
   },
   SilverWolf: {
@@ -3040,27 +3208,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  SpaceSealingStation: {
-    boolConditional: {
-      sheet: 'SpaceSealingStation',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SpaceSealingStation',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SpaceSealingStation',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Sparkle: {
     boolConditional: {
       sheet: 'Sparkle',
@@ -3075,27 +3222,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Sparkle',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  SprightlyVonwacq: {
-    boolConditional: {
-      sheet: 'SprightlyVonwacq',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SprightlyVonwacq',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SprightlyVonwacq',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -3124,6 +3250,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Sunday: {
+    boolConditional: { sheet: 'Sunday', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Sunday',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Sunday',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Sushang: {
     boolConditional: {
       sheet: 'Sushang',
@@ -3145,6 +3288,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  SweatNowCryLess: {
+    boolConditional: {
+      sheet: 'SweatNowCryLess',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'SweatNowCryLess',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'SweatNowCryLess',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   Swordplay: {
     boolConditional: {
       sheet: 'Swordplay',
@@ -3159,27 +3323,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Swordplay',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  TaliaKingdomOfBanditry: {
-    boolConditional: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TaliaKingdomOfBanditry',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -3209,24 +3352,13 @@ export const conditionals = {
     },
   },
   TheAshblazingGrandDuke: {
-    boolConditional: {
+    followUpDmgDealt: {
       sheet: 'TheAshblazingGrandDuke',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheAshblazingGrandDuke',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheAshblazingGrandDuke',
-      name: 'numConditional',
+      name: 'followUpDmgDealt',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 8,
     },
   },
   TheBirthOfTheSelf: {
@@ -3264,6 +3396,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'TheDayTheCosmosFell',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  TheHerta: {
+    boolConditional: {
+      sheet: 'TheHerta',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'TheHerta',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'TheHerta',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -3334,41 +3487,27 @@ export const conditionals = {
       max: 2,
     },
   },
-  TheWindSouringValorous: {
-    boolConditional: {
-      sheet: 'TheWindSouringValorous',
-      name: 'boolConditional',
+  TheWindSoaringValorous: {
+    followUpUsed: {
+      sheet: 'TheWindSoaringValorous',
+      name: 'followUpUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheWindSouringValorous',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheWindSouringValorous',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
-  ThiefOfShootingMeteor: {
+  TheWondrousBananAmusementPark: {
     boolConditional: {
-      sheet: 'ThiefOfShootingMeteor',
+      sheet: 'TheWondrousBananAmusementPark',
       name: 'boolConditional',
       type: 'bool',
     },
     listConditional: {
-      sheet: 'ThiefOfShootingMeteor',
+      sheet: 'TheWondrousBananAmusementPark',
       name: 'listConditional',
       type: 'list',
       list: ['val1', 'val2'],
     },
     numConditional: {
-      sheet: 'ThiefOfShootingMeteor',
+      sheet: 'TheWondrousBananAmusementPark',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -3397,6 +3536,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  ThoseManySprings: {
+    boolConditional: {
+      sheet: 'ThoseManySprings',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'ThoseManySprings',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'ThoseManySprings',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   TimeWaitsForNoOne: {
     boolConditional: {
       sheet: 'TimeWaitsForNoOne',
@@ -3411,6 +3571,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'TimeWaitsForNoOne',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  TimeWovenIntoGold: {
+    boolConditional: {
+      sheet: 'TimeWovenIntoGold',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'TimeWovenIntoGold',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'TimeWovenIntoGold',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -3502,6 +3683,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  TrailblazerIce: {
+    boolConditional: {
+      sheet: 'TrailblazerIce',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'TrailblazerIce',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'TrailblazerIce',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   TrailblazerImaginary: {
     boolConditional: {
       sheet: 'TrailblazerImaginary',
@@ -3565,6 +3767,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  Tribbie: {
+    boolConditional: {
+      sheet: 'Tribbie',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Tribbie',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Tribbie',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   UnderTheBlueSky: {
     boolConditional: {
       sheet: 'UnderTheBlueSky',
@@ -3579,6 +3802,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'UnderTheBlueSky',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  VictoryInABlink: {
+    boolConditional: {
+      sheet: 'VictoryInABlink',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'VictoryInABlink',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'VictoryInABlink',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -3625,24 +3869,15 @@ export const conditionals = {
     },
   },
   WastelanderOfBanditryDesert: {
-    boolConditional: {
+    attackingDebuffed: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'boolConditional',
+      name: 'attackingDebuffed',
       type: 'bool',
     },
-    listConditional: {
+    enemyImprisoned: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WastelanderOfBanditryDesert',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'enemyImprisoned',
+      type: 'bool',
     },
   },
   WatchmakerMasterOfDreamMachinations: {
@@ -3912,6 +4147,34 @@ export const formulas = {
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Acheron',
+        elementalType: 'lightning',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Aglaea: {
+    basicDmg_0: {
+      sheet: 'Aglaea',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Aglaea',
+        elementalType: 'lightning',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Aglaea',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Aglaea',
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
@@ -4282,6 +4545,34 @@ export const formulas = {
       },
     },
   },
+  Feixiao: {
+    basicDmg_0: {
+      sheet: 'Feixiao',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Feixiao',
+        elementalType: 'wind',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Feixiao',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Feixiao',
+        elementalType: 'wind',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
   Firefly: {
     basic0Dmg_0: {
       sheet: 'Firefly',
@@ -4414,6 +4705,34 @@ export const formulas = {
       },
     },
   },
+  Fugue: {
+    basicDmg_0: {
+      sheet: 'Fugue',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Fugue',
+        elementalType: 'fire',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Fugue',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Fugue',
+        elementalType: 'fire',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
   Gallagher: {
     basicDmg_0: {
       sheet: 'Gallagher',
@@ -4467,6 +4786,19 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  GuardOfWutheringSnow: {
+    set4_heal: {
+      sheet: 'GuardOfWutheringSnow',
+      name: 'set4_heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'GuardOfWutheringSnow',
+        name: 'set4_heal',
       },
     },
   },
@@ -4666,6 +4998,34 @@ export const formulas = {
       },
     },
   },
+  Jiaoqiu: {
+    basicDmg_0: {
+      sheet: 'Jiaoqiu',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jiaoqiu',
+        elementalType: 'fire',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Jiaoqiu',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Jiaoqiu',
+        elementalType: 'fire',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
   JingYuan: {
     basicDmg_0: {
       sheet: 'JingYuan',
@@ -4745,6 +5105,34 @@ export const formulas = {
         q: 'breakDmg',
         sheet: 'Kafka',
         elementalType: 'lightning',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Lingsha: {
+    basicDmg_0: {
+      sheet: 'Lingsha',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lingsha',
+        elementalType: 'fire',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Lingsha',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Lingsha',
+        elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
       },
@@ -5042,6 +5430,62 @@ export const formulas = {
       },
     },
   },
+  Moze: {
+    basicDmg_0: {
+      sheet: 'Moze',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Moze',
+        elementalType: 'lightning',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Moze',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Moze',
+        elementalType: 'lightning',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Mydei: {
+    basicDmg_0: {
+      sheet: 'Mydei',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Mydei',
+        elementalType: 'imaginary',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Mydei',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Mydei',
+        elementalType: 'imaginary',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
   Natasha: {
     basicDmg_0: {
       sheet: 'Natasha',
@@ -5121,6 +5565,34 @@ export const formulas = {
         q: 'breakDmg',
         sheet: 'Qingque',
         elementalType: 'quantum',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Rappa: {
+    basicDmg_0: {
+      sheet: 'Rappa',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Rappa',
+        elementalType: 'imaginary',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Rappa',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Rappa',
+        elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
       },
@@ -5398,6 +5870,34 @@ export const formulas = {
       },
     },
   },
+  Sunday: {
+    basicDmg_0: {
+      sheet: 'Sunday',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sunday',
+        elementalType: 'imaginary',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Sunday',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Sunday',
+        elementalType: 'imaginary',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
   Sushang: {
     basicDmg_0: {
       sheet: 'Sushang',
@@ -5421,6 +5921,34 @@ export const formulas = {
         q: 'breakDmg',
         sheet: 'Sushang',
         elementalType: 'physical',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
+  TheHerta: {
+    basicDmg_0: {
+      sheet: 'TheHerta',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TheHerta',
+        elementalType: 'ice',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'TheHerta',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'TheHerta',
+        elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
       },
@@ -5510,6 +6038,34 @@ export const formulas = {
       },
     },
   },
+  TrailblazerIce: {
+    basicDmg_0: {
+      sheet: 'TrailblazerIce',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TrailblazerIce',
+        elementalType: 'ice',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'TrailblazerIce',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'TrailblazerIce',
+        elementalType: 'ice',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
   TrailblazerImaginary: {
     basicDmg_0: {
       sheet: 'TrailblazerImaginary',
@@ -5561,6 +6117,34 @@ export const formulas = {
         q: 'breakDmg',
         sheet: 'TrailblazerPhysical',
         elementalType: 'physical',
+        damageType1: 'break',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Tribbie: {
+    basicDmg_0: {
+      sheet: 'Tribbie',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Tribbie',
+        elementalType: 'quantum',
+        damageType1: 'basic',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Tribbie',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Tribbie',
+        elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
       },
@@ -5708,6 +6292,41 @@ export const formulas = {
   },
 } as const
 export const buffs = {
+  AGroundedAscent: {
+    cond_dmg_: {
+      sheet: 'AGroundedAscent',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'AGroundedAscent',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'AGroundedAscent',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'AGroundedAscent',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'AGroundedAscent',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'AGroundedAscent',
+        name: 'team_dmg_',
+      },
+    },
+  },
   ASecretVow: {
     cond_dmg_: {
       sheet: 'ASecretVow',
@@ -6000,6 +6619,222 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AfterTheCharmonyFall',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Aglaea: {
+    e6_dmg_: {
+      sheet: 'Aglaea',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Aglaea',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_basic: {
+      sheet: 'Aglaea',
+      name: 'eidolon3_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Aglaea',
+        name: 'eidolon3_basic',
+      },
+    },
+    eidolon3_skill: {
+      sheet: 'Aglaea',
+      name: 'eidolon3_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Aglaea',
+        name: 'eidolon3_skill',
+      },
+    },
+    eidolon3_talent: {
+      sheet: 'Aglaea',
+      name: 'eidolon3_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Aglaea',
+        name: 'eidolon3_talent',
+      },
+    },
+    eidolon5_servantSkill: {
+      sheet: 'Aglaea',
+      name: 'eidolon5_servantSkill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'servantSkill',
+        sheet: 'Aglaea',
+        name: 'eidolon5_servantSkill',
+      },
+    },
+    eidolon5_talent: {
+      sheet: 'Aglaea',
+      name: 'eidolon5_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Aglaea',
+        name: 'eidolon5_talent',
+      },
+    },
+    eidolon5_ult: {
+      sheet: 'Aglaea',
+      name: 'eidolon5_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Aglaea',
+        name: 'eidolon5_ult',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Aglaea',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Aglaea',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Aglaea',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Aglaea',
+        elementalType: 'lightning',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Aglaea',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Aglaea',
+        elementalType: 'lightning',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Aglaea',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Aglaea',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Aglaea',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Aglaea',
+        elementalType: 'lightning',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Aglaea',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'Aglaea',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Aglaea',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Aglaea',
+        elementalType: 'lightning',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Aglaea',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Aglaea',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Aglaea',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Aglaea',
+        elementalType: 'lightning',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Aglaea',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'Aglaea',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Aglaea',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Aglaea',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Aglaea',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Aglaea',
         name: 'team_dmg_',
       },
     },
@@ -7101,37 +7936,15 @@ export const buffs = {
     },
   },
   BandOfSizzlingThunder: {
-    enemy_defRed_: {
+    set4_atk_: {
       sheet: 'BandOfSizzlingThunder',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BandOfSizzlingThunder',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'set2_dmg_',
+      name: 'set4_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'BandOfSizzlingThunder',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BandOfSizzlingThunder',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BandOfSizzlingThunder',
-        name: 'team_dmg_',
+        name: 'set4_atk_',
       },
     },
   },
@@ -7241,37 +8054,15 @@ export const buffs = {
     },
   },
   BelobogOfTheArchitects: {
-    enemy_defRed_: {
+    set2_def_: {
       sheet: 'BelobogOfTheArchitects',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BelobogOfTheArchitects',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'set2_dmg_',
+      name: 'set2_def_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'def_',
         sheet: 'BelobogOfTheArchitects',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BelobogOfTheArchitects',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BelobogOfTheArchitects',
-        name: 'team_dmg_',
+        name: 'set2_def_',
       },
     },
   },
@@ -7656,6 +8447,41 @@ export const buffs = {
       },
     },
   },
+  BoneCollectionsSereneDemesne: {
+    enemy_defRed_: {
+      sheet: 'BoneCollectionsSereneDemesne',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'BoneCollectionsSereneDemesne',
+        name: 'enemy_defRed_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'BoneCollectionsSereneDemesne',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'BoneCollectionsSereneDemesne',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BoneCollectionsSereneDemesne',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'BoneCollectionsSereneDemesne',
+        name: 'team_dmg_',
+      },
+    },
+  },
   Boothill: {
     e6_dmg_: {
       sheet: 'Boothill',
@@ -7916,37 +8742,15 @@ export const buffs = {
     },
   },
   BrokenKeel: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'BrokenKeel',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BrokenKeel',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BrokenKeel',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'BrokenKeel',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BrokenKeel',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BrokenKeel',
-        name: 'team_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
   },
@@ -8215,72 +9019,28 @@ export const buffs = {
     },
   },
   CelestialDifferentiator: {
-    enemy_defRed_: {
+    set2_crit_rate_: {
       sheet: 'CelestialDifferentiator',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'CelestialDifferentiator',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'CelestialDifferentiator',
-      name: 'set2_dmg_',
+      name: 'set2_crit_rate_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'CelestialDifferentiator',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'CelestialDifferentiator',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'CelestialDifferentiator',
-        name: 'team_dmg_',
+        name: 'set2_crit_rate_',
       },
     },
   },
   ChampionOfStreetwiseBoxing: {
-    enemy_defRed_: {
+    set4_atk_: {
       sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ChampionOfStreetwiseBoxing',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'set2_dmg_',
+      name: 'set4_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'ChampionOfStreetwiseBoxing',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ChampionOfStreetwiseBoxing',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ChampionOfStreetwiseBoxing',
-        name: 'team_dmg_',
+        name: 'set4_atk_',
       },
     },
   },
@@ -9473,6 +10233,41 @@ export const buffs = {
       },
     },
   },
+  DreamsMontage: {
+    cond_dmg_: {
+      sheet: 'DreamsMontage',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'DreamsMontage',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'DreamsMontage',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'DreamsMontage',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DreamsMontage',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'DreamsMontage',
+        name: 'team_dmg_',
+      },
+    },
+  },
   DreamvilleAdventure: {
     cond_dmg_: {
       sheet: 'DreamvilleAdventure',
@@ -9509,72 +10304,27 @@ export const buffs = {
     },
   },
   DuranDynastyOfRunningWolves: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'DuranDynastyOfRunningWolves',
-      name: 'enemy_defRed_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defRed_',
+        qt: 'premod',
+        q: 'crit_dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
-        name: 'enemy_defRed_',
+        name: 'set2_crit_dmg_',
       },
     },
-    set2_dmg_: {
+    set2_followUp_dmg_: {
       sheet: 'DuranDynastyOfRunningWolves',
-      name: 'set2_dmg_',
+      name: 'set2_followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DuranDynastyOfRunningWolves',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DuranDynastyOfRunningWolves',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  EagleOfTwilightLine: {
-    enemy_defRed_: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'EagleOfTwilightLine',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'EagleOfTwilightLine',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'EagleOfTwilightLine',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'EagleOfTwilightLine',
-        name: 'team_dmg_',
+        damageType1: 'followUp',
+        name: 'set2_followUp_dmg_',
       },
     },
   },
@@ -9648,6 +10398,41 @@ export const buffs = {
       },
     },
   },
+  EternalCalculus: {
+    cond_dmg_: {
+      sheet: 'EternalCalculus',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'EternalCalculus',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'EternalCalculus',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'EternalCalculus',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'EternalCalculus',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'EternalCalculus',
+        name: 'team_dmg_',
+      },
+    },
+  },
   EyesOfThePrey: {
     cond_dmg_: {
       sheet: 'EyesOfThePrey',
@@ -9679,6 +10464,195 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'EyesOfThePrey',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Feixiao: {
+    e6_dmg_: {
+      sheet: 'Feixiao',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Feixiao',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_basic: {
+      sheet: 'Feixiao',
+      name: 'eidolon3_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Feixiao',
+        name: 'eidolon3_basic',
+      },
+    },
+    eidolon3_ult: {
+      sheet: 'Feixiao',
+      name: 'eidolon3_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Feixiao',
+        name: 'eidolon3_ult',
+      },
+    },
+    eidolon5_skill: {
+      sheet: 'Feixiao',
+      name: 'eidolon5_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Feixiao',
+        name: 'eidolon5_skill',
+      },
+    },
+    eidolon5_talent: {
+      sheet: 'Feixiao',
+      name: 'eidolon5_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Feixiao',
+        name: 'eidolon5_talent',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Feixiao',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Feixiao',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Feixiao',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Feixiao',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Feixiao',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Feixiao',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Feixiao',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Feixiao',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Feixiao',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Feixiao',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Feixiao',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'Feixiao',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Feixiao',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Feixiao',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Feixiao',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Feixiao',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Feixiao',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Feixiao',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Feixiao',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'Feixiao',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Feixiao',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Feixiao',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Feixiao',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Feixiao',
         name: 'team_dmg_',
       },
     },
@@ -9956,52 +10930,32 @@ export const buffs = {
     },
   },
   FiresmithOfLavaForging: {
-    enemy_defRed_: {
+    set4_fire_dmg_: {
       sheet: 'FiresmithOfLavaForging',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FiresmithOfLavaForging',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'FiresmithOfLavaForging',
-      name: 'set2_dmg_',
+      name: 'set4_fire_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'FiresmithOfLavaForging',
-        name: 'set2_dmg_',
+        elementalType: 'fire',
+        name: 'set4_fire_dmg_',
       },
     },
-    team_dmg_: {
+    set4_skill_dmg_: {
       sheet: 'FiresmithOfLavaForging',
-      name: 'team_dmg_',
+      name: 'set4_skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'FiresmithOfLavaForging',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'set4_skill_dmg_',
       },
     },
   },
   FirmamentFrontlineGlamoth: {
-    enemy_defRed_: {
-      sheet: 'FirmamentFrontlineGlamoth',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FirmamentFrontlineGlamoth',
-        name: 'enemy_defRed_',
-      },
-    },
     set2_dmg_: {
       sheet: 'FirmamentFrontlineGlamoth',
       name: 'set2_dmg_',
@@ -10013,14 +10967,38 @@ export const buffs = {
         name: 'set2_dmg_',
       },
     },
+  },
+  FlameOfBloodBlazeMyPath: {
+    cond_dmg_: {
+      sheet: 'FlameOfBloodBlazeMyPath',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'FlameOfBloodBlazeMyPath',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'FlameOfBloodBlazeMyPath',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'FlameOfBloodBlazeMyPath',
+        name: 'enemy_defRed_',
+      },
+    },
     team_dmg_: {
-      sheet: 'FirmamentFrontlineGlamoth',
+      sheet: 'FlameOfBloodBlazeMyPath',
       name: 'team_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'FirmamentFrontlineGlamoth',
+        sheet: 'FlameOfBloodBlazeMyPath',
         name: 'team_dmg_',
       },
     },
@@ -10061,37 +11039,15 @@ export const buffs = {
     },
   },
   FleetOfTheAgeless: {
-    enemy_defRed_: {
+    set2_atk_: {
       sheet: 'FleetOfTheAgeless',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FleetOfTheAgeless',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'FleetOfTheAgeless',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FleetOfTheAgeless',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'FleetOfTheAgeless',
-        name: 'team_dmg_',
+        name: 'set2_atk_',
       },
     },
   },
@@ -10130,38 +11086,51 @@ export const buffs = {
       },
     },
   },
-  ForgeOfTheKalpagniLantern: {
+  ForTomorrowsJourney: {
+    cond_dmg_: {
+      sheet: 'ForTomorrowsJourney',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ForTomorrowsJourney',
+        name: 'cond_dmg_',
+      },
+    },
     enemy_defRed_: {
-      sheet: 'ForgeOfTheKalpagniLantern',
+      sheet: 'ForTomorrowsJourney',
       name: 'enemy_defRed_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defRed_',
-        sheet: 'ForgeOfTheKalpagniLantern',
+        sheet: 'ForTomorrowsJourney',
         name: 'enemy_defRed_',
       },
     },
-    set2_dmg_: {
-      sheet: 'ForgeOfTheKalpagniLantern',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ForgeOfTheKalpagniLantern',
-        name: 'set2_dmg_',
-      },
-    },
     team_dmg_: {
-      sheet: 'ForgeOfTheKalpagniLantern',
+      sheet: 'ForTomorrowsJourney',
       name: 'team_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'ForgeOfTheKalpagniLantern',
+        sheet: 'ForTomorrowsJourney',
         name: 'team_dmg_',
+      },
+    },
+  },
+  ForgeOfTheKalpagniLantern: {
+    set2_brEffect_: {
+      sheet: 'ForgeOfTheKalpagniLantern',
+      name: 'set2_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'ForgeOfTheKalpagniLantern',
+        name: 'set2_brEffect_',
       },
     },
   },
@@ -10350,6 +11319,195 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FuXuan',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Fugue: {
+    e6_dmg_: {
+      sheet: 'Fugue',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Fugue',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_basic: {
+      sheet: 'Fugue',
+      name: 'eidolon3_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Fugue',
+        name: 'eidolon3_basic',
+      },
+    },
+    eidolon3_skill: {
+      sheet: 'Fugue',
+      name: 'eidolon3_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Fugue',
+        name: 'eidolon3_skill',
+      },
+    },
+    eidolon5_talent: {
+      sheet: 'Fugue',
+      name: 'eidolon5_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Fugue',
+        name: 'eidolon5_talent',
+      },
+    },
+    eidolon5_ult: {
+      sheet: 'Fugue',
+      name: 'eidolon5_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Fugue',
+        name: 'eidolon5_ult',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Fugue',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Fugue',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Fugue',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Fugue',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Fugue',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Fugue',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Fugue',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Fugue',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Fugue',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Fugue',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Fugue',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Fugue',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Fugue',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Fugue',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Fugue',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Fugue',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Fugue',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Fugue',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Fugue',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Fugue',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Fugue',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Fugue',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Fugue',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Fugue',
         name: 'team_dmg_',
       },
     },
@@ -10544,36 +11702,60 @@ export const buffs = {
     },
   },
   GeniusOfBrilliantStars: {
-    enemy_defRed_: {
+    set4_addDefIgn_: {
       sheet: 'GeniusOfBrilliantStars',
+      name: 'set4_addDefIgn_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'defIgn_',
+        sheet: 'GeniusOfBrilliantStars',
+        name: 'set4_addDefIgn_',
+      },
+    },
+    set4_defIgn_: {
+      sheet: 'GeniusOfBrilliantStars',
+      name: 'set4_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'defIgn_',
+        sheet: 'GeniusOfBrilliantStars',
+        name: 'set4_defIgn_',
+      },
+    },
+  },
+  GeniusesGreetings: {
+    cond_dmg_: {
+      sheet: 'GeniusesGreetings',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'GeniusesGreetings',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'GeniusesGreetings',
       name: 'enemy_defRed_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defRed_',
-        sheet: 'GeniusOfBrilliantStars',
+        sheet: 'GeniusesGreetings',
         name: 'enemy_defRed_',
       },
     },
-    set2_dmg_: {
-      sheet: 'GeniusOfBrilliantStars',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GeniusOfBrilliantStars',
-        name: 'set2_dmg_',
-      },
-    },
     team_dmg_: {
-      sheet: 'GeniusOfBrilliantStars',
+      sheet: 'GeniusesGreetings',
       name: 'team_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'GeniusOfBrilliantStars',
+        sheet: 'GeniusesGreetings',
         name: 'team_dmg_',
       },
     },
@@ -10807,6 +11989,41 @@ export const buffs = {
       },
     },
   },
+  GiantTreeOfRaptBrooding: {
+    enemy_defRed_: {
+      sheet: 'GiantTreeOfRaptBrooding',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'GiantTreeOfRaptBrooding',
+        name: 'enemy_defRed_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'GiantTreeOfRaptBrooding',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'GiantTreeOfRaptBrooding',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'GiantTreeOfRaptBrooding',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'GiantTreeOfRaptBrooding',
+        name: 'team_dmg_',
+      },
+    },
+  },
   GoodNightAndSleepWell: {
     cond_dmg_: {
       sheet: 'GoodNightAndSleepWell',
@@ -10838,41 +12055,6 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GoodNightAndSleepWell',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  GuardOfWutheringSnow: {
-    enemy_defRed_: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'GuardOfWutheringSnow',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GuardOfWutheringSnow',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GuardOfWutheringSnow',
         name: 'team_dmg_',
       },
     },
@@ -11257,6 +12439,20 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'Hanya',
         name: 'team_dmg_',
+      },
+    },
+  },
+  HeroOfTriumphantSong: {
+    set4_ult_dmg_: {
+      sheet: 'HeroOfTriumphantSong',
+      name: 'set4_ult_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'HeroOfTriumphantSong',
+        damageType1: 'ult',
+        name: 'set4_ult_dmg_',
       },
     },
   },
@@ -11908,37 +13104,15 @@ export const buffs = {
     },
   },
   HunterOfGlacialForest: {
-    enemy_defRed_: {
+    set4_crit_dmg_: {
       sheet: 'HunterOfGlacialForest',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'HunterOfGlacialForest',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'set2_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'HunterOfGlacialForest',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HunterOfGlacialForest',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'HunterOfGlacialForest',
-        name: 'team_dmg_',
+        name: 'set4_crit_dmg_',
       },
     },
   },
@@ -12166,6 +13340,76 @@ export const buffs = {
       },
     },
   },
+  IVentureForthToHunt: {
+    cond_dmg_: {
+      sheet: 'IVentureForthToHunt',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'IVentureForthToHunt',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'IVentureForthToHunt',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'IVentureForthToHunt',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'IVentureForthToHunt',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'IVentureForthToHunt',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  IfTimeWereAFlower: {
+    cond_dmg_: {
+      sheet: 'IfTimeWereAFlower',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'IfTimeWereAFlower',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'IfTimeWereAFlower',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'IfTimeWereAFlower',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'IfTimeWereAFlower',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'IfTimeWereAFlower',
+        name: 'team_dmg_',
+      },
+    },
+  },
   InTheNameOfTheWorld: {
     cond_dmg_: {
       sheet: 'InTheNameOfTheWorld',
@@ -12307,37 +13551,28 @@ export const buffs = {
     },
   },
   InertSalsotto: {
-    enemy_defRed_: {
+    set2_followUp_dmg_: {
       sheet: 'InertSalsotto',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'InertSalsotto',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'InertSalsotto',
-      name: 'set2_dmg_',
+      name: 'set2_followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'InertSalsotto',
-        name: 'set2_dmg_',
+        damageType1: 'followUp',
+        name: 'set2_followUp_dmg_',
       },
     },
-    team_dmg_: {
+    set2_ult_dmg_: {
       sheet: 'InertSalsotto',
-      name: 'team_dmg_',
+      name: 'set2_ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'InertSalsotto',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'set2_ult_dmg_',
       },
     },
   },
@@ -12376,38 +13611,64 @@ export const buffs = {
       },
     },
   },
-  IronCavalryAgainstTheScourge: {
+  IntoTheUnreachableVeil: {
+    cond_dmg_: {
+      sheet: 'IntoTheUnreachableVeil',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'IntoTheUnreachableVeil',
+        name: 'cond_dmg_',
+      },
+    },
     enemy_defRed_: {
-      sheet: 'IronCavalryAgainstTheScourge',
+      sheet: 'IntoTheUnreachableVeil',
       name: 'enemy_defRed_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defRed_',
-        sheet: 'IronCavalryAgainstTheScourge',
+        sheet: 'IntoTheUnreachableVeil',
         name: 'enemy_defRed_',
       },
     },
-    set2_dmg_: {
-      sheet: 'IronCavalryAgainstTheScourge',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'IronCavalryAgainstTheScourge',
-        name: 'set2_dmg_',
-      },
-    },
     team_dmg_: {
-      sheet: 'IronCavalryAgainstTheScourge',
+      sheet: 'IntoTheUnreachableVeil',
       name: 'team_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'IronCavalryAgainstTheScourge',
+        sheet: 'IntoTheUnreachableVeil',
         name: 'team_dmg_',
+      },
+    },
+  },
+  IronCavalryAgainstTheScourge: {
+    set4_break_defIgn_: {
+      sheet: 'IronCavalryAgainstTheScourge',
+      name: 'set4_break_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'defIgn_',
+        sheet: 'IronCavalryAgainstTheScourge',
+        damageType1: 'break',
+        name: 'set4_break_defIgn_',
+      },
+    },
+    set4_superBreak_defIgn_: {
+      sheet: 'IronCavalryAgainstTheScourge',
+      name: 'set4_superBreak_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'defIgn_',
+        sheet: 'IronCavalryAgainstTheScourge',
+        damageType1: 'break',
+        name: 'set4_superBreak_defIgn_',
       },
     },
   },
@@ -12447,37 +13708,15 @@ export const buffs = {
     },
   },
   IzumoGenseiAndTakamaDivineRealm: {
-    enemy_defRed_: {
+    set2_crit_: {
       sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'set2_dmg_',
+      name: 'set2_crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IzumoGenseiAndTakamaDivineRealm',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'team_dmg_',
+        name: 'set2_crit_',
       },
     },
   },
@@ -12671,6 +13910,198 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jade',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Jiaoqiu: {
+    e6_dmg_: {
+      sheet: 'Jiaoqiu',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Jiaoqiu',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_basic: {
+      sheet: 'Jiaoqiu',
+      name: 'eidolon3_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Jiaoqiu',
+        name: 'eidolon3_basic',
+      },
+    },
+    eidolon3_skill: {
+      sheet: 'Jiaoqiu',
+      name: 'eidolon3_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Jiaoqiu',
+        name: 'eidolon3_skill',
+      },
+    },
+    eidolon5_talent: {
+      sheet: 'Jiaoqiu',
+      name: 'eidolon5_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Jiaoqiu',
+        name: 'eidolon5_talent',
+      },
+    },
+    eidolon5_ult: {
+      sheet: 'Jiaoqiu',
+      name: 'eidolon5_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Jiaoqiu',
+        name: 'eidolon5_ult',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Jiaoqiu',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Jiaoqiu',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'Jiaoqiu',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'Jiaoqiu',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Jiaoqiu',
+        elementalType: 'fire',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'Jiaoqiu',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Jiaoqiu',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'Jiaoqiu',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Jiaoqiu',
+        elementalType: 'fire',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'Jiaoqiu',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Jiaoqiu',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Jiaoqiu',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Jiaoqiu',
+        elementalType: 'fire',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Jiaoqiu',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Jiaoqiu',
         name: 'team_dmg_',
       },
     },
@@ -13242,41 +14673,6 @@ export const buffs = {
       },
     },
   },
-  KnightOfPurityPalace: {
-    enemy_defRed_: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'KnightOfPurityPalace',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'KnightOfPurityPalace',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'KnightOfPurityPalace',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'KnightOfPurityPalace',
-        name: 'team_dmg_',
-      },
-    },
-  },
   LandausChoice: {
     cond_dmg_: {
       sheet: 'LandausChoice',
@@ -13312,38 +14708,240 @@ export const buffs = {
       },
     },
   },
-  LongevousDisciple: {
+  Lingsha: {
+    e6_dmg_: {
+      sheet: 'Lingsha',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Lingsha',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_talent: {
+      sheet: 'Lingsha',
+      name: 'eidolon3_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Lingsha',
+        name: 'eidolon3_talent',
+      },
+    },
+    eidolon3_ult: {
+      sheet: 'Lingsha',
+      name: 'eidolon3_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Lingsha',
+        name: 'eidolon3_ult',
+      },
+    },
+    eidolon5_basic: {
+      sheet: 'Lingsha',
+      name: 'eidolon5_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Lingsha',
+        name: 'eidolon5_basic',
+      },
+    },
+    eidolon5_skill: {
+      sheet: 'Lingsha',
+      name: 'eidolon5_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Lingsha',
+        name: 'eidolon5_skill',
+      },
+    },
     enemy_defRed_: {
-      sheet: 'LongevousDisciple',
+      sheet: 'Lingsha',
       name: 'enemy_defRed_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defRed_',
-        sheet: 'LongevousDisciple',
+        sheet: 'Lingsha',
         name: 'enemy_defRed_',
       },
     },
-    set2_dmg_: {
-      sheet: 'LongevousDisciple',
-      name: 'set2_dmg_',
+    statBoost1: {
+      sheet: 'Lingsha',
+      name: 'statBoost1',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'LongevousDisciple',
-        name: 'set2_dmg_',
+        q: 'brEffect_',
+        sheet: 'Lingsha',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Lingsha',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Lingsha',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Lingsha',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Lingsha',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Lingsha',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Lingsha',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Lingsha',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Lingsha',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Lingsha',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Lingsha',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Lingsha',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Lingsha',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Lingsha',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Lingsha',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Lingsha',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Lingsha',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Lingsha',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Lingsha',
+        name: 'statBoost9',
       },
     },
     team_dmg_: {
-      sheet: 'LongevousDisciple',
+      sheet: 'Lingsha',
       name: 'team_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'LongevousDisciple',
+        sheet: 'Lingsha',
         name: 'team_dmg_',
+      },
+    },
+  },
+  LongRoadLeadsHome: {
+    cond_dmg_: {
+      sheet: 'LongRoadLeadsHome',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'LongRoadLeadsHome',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'LongRoadLeadsHome',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'LongRoadLeadsHome',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'LongRoadLeadsHome',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'LongRoadLeadsHome',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  LongevousDisciple: {
+    set4_crit_: {
+      sheet: 'LongevousDisciple',
+      name: 'set4_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'LongevousDisciple',
+        name: 'set4_crit_',
       },
     },
   },
@@ -13756,6 +15354,41 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Luocha',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  LushakaTheSunkenSeas: {
+    enemy_defRed_: {
+      sheet: 'LushakaTheSunkenSeas',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'LushakaTheSunkenSeas',
+        name: 'enemy_defRed_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'LushakaTheSunkenSeas',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'LushakaTheSunkenSeas',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'LushakaTheSunkenSeas',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'LushakaTheSunkenSeas',
         name: 'team_dmg_',
       },
     },
@@ -14404,6 +16037,41 @@ export const buffs = {
       },
     },
   },
+  MemorysCurtainNeverFalls: {
+    cond_dmg_: {
+      sheet: 'MemorysCurtainNeverFalls',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'MemorysCurtainNeverFalls',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'MemorysCurtainNeverFalls',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'MemorysCurtainNeverFalls',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'MemorysCurtainNeverFalls',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'MemorysCurtainNeverFalls',
+        name: 'team_dmg_',
+      },
+    },
+  },
   MeshingCogs: {
     cond_dmg_: {
       sheet: 'MeshingCogs',
@@ -14440,37 +16108,15 @@ export const buffs = {
     },
   },
   MessengerTraversingHackerspace: {
-    enemy_defRed_: {
+    set4_spd_: {
       sheet: 'MessengerTraversingHackerspace',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MessengerTraversingHackerspace',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'set2_dmg_',
+      name: 'set4_spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'MessengerTraversingHackerspace',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MessengerTraversingHackerspace',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MessengerTraversingHackerspace',
-        name: 'team_dmg_',
+        name: 'set4_spd_',
       },
     },
   },
@@ -14703,6 +16349,195 @@ export const buffs = {
       },
     },
   },
+  Moze: {
+    e6_dmg_: {
+      sheet: 'Moze',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Moze',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_talent: {
+      sheet: 'Moze',
+      name: 'eidolon3_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Moze',
+        name: 'eidolon3_talent',
+      },
+    },
+    eidolon3_ult: {
+      sheet: 'Moze',
+      name: 'eidolon3_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Moze',
+        name: 'eidolon3_ult',
+      },
+    },
+    eidolon5_basic: {
+      sheet: 'Moze',
+      name: 'eidolon5_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Moze',
+        name: 'eidolon5_basic',
+      },
+    },
+    eidolon5_skill: {
+      sheet: 'Moze',
+      name: 'eidolon5_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Moze',
+        name: 'eidolon5_skill',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Moze',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Moze',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Moze',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Moze',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Moze',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Moze',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Moze',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Moze',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Moze',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Moze',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Moze',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Moze',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Moze',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Moze',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Moze',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Moze',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Moze',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Moze',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Moze',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Moze',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Moze',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Moze',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Moze',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Moze',
+        name: 'team_dmg_',
+      },
+    },
+  },
   Multiplication: {
     cond_dmg_: {
       sheet: 'Multiplication',
@@ -14739,37 +16574,16 @@ export const buffs = {
     },
   },
   MusketeerOfWildWheat: {
-    enemy_defRed_: {
+    set4_basic_dmg_: {
       sheet: 'MusketeerOfWildWheat',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MusketeerOfWildWheat',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'set2_dmg_',
+      name: 'set4_basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'MusketeerOfWildWheat',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MusketeerOfWildWheat',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MusketeerOfWildWheat',
-        name: 'team_dmg_',
+        damageType1: 'basic',
+        name: 'set4_basic_dmg_',
       },
     },
   },
@@ -14804,6 +16618,195 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MutualDemise',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Mydei: {
+    e6_dmg_: {
+      sheet: 'Mydei',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Mydei',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_basic: {
+      sheet: 'Mydei',
+      name: 'eidolon3_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Mydei',
+        name: 'eidolon3_basic',
+      },
+    },
+    eidolon3_skill: {
+      sheet: 'Mydei',
+      name: 'eidolon3_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Mydei',
+        name: 'eidolon3_skill',
+      },
+    },
+    eidolon5_talent: {
+      sheet: 'Mydei',
+      name: 'eidolon5_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Mydei',
+        name: 'eidolon5_talent',
+      },
+    },
+    eidolon5_ult: {
+      sheet: 'Mydei',
+      name: 'eidolon5_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Mydei',
+        name: 'eidolon5_ult',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Mydei',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Mydei',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Mydei',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Mydei',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Mydei',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Mydei',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Mydei',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Mydei',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Mydei',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Mydei',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Mydei',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Mydei',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Mydei',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Mydei',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Mydei',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Mydei',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Mydei',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Mydei',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Mydei',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Mydei',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Mydei',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Mydei',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Mydei',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Mydei',
         name: 'team_dmg_',
       },
     },
@@ -15067,6 +17070,76 @@ export const buffs = {
       },
     },
   },
+  NinjaRecordSoundHunt: {
+    cond_dmg_: {
+      sheet: 'NinjaRecordSoundHunt',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'NinjaRecordSoundHunt',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'NinjaRecordSoundHunt',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'NinjaRecordSoundHunt',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'NinjaRecordSoundHunt',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'NinjaRecordSoundHunt',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  NinjutsuInscriptionDazzlingEvilbreaker: {
+    cond_dmg_: {
+      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+        name: 'team_dmg_',
+      },
+    },
+  },
   NowhereToRun: {
     cond_dmg_: {
       sheet: 'NowhereToRun',
@@ -15173,72 +17246,15 @@ export const buffs = {
     },
   },
   PanCosmicCommercialEnterprise: {
-    enemy_defRed_: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PanCosmicCommercialEnterprise',
-        name: 'enemy_defRed_',
-      },
-    },
     set2_dmg_: {
       sheet: 'PanCosmicCommercialEnterprise',
       name: 'set2_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'PanCosmicCommercialEnterprise',
         name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PanCosmicCommercialEnterprise',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PanCosmicCommercialEnterprise',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  PasserbyOfWanderingCloud: {
-    enemy_defRed_: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PasserbyOfWanderingCloud',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PasserbyOfWanderingCloud',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PasserbyOfWanderingCloud',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PasserbyOfWanderingCloud',
-        name: 'team_dmg_',
       },
     },
   },
@@ -15555,37 +17571,15 @@ export const buffs = {
     },
   },
   PenaconyLandOfTheDreams: {
-    enemy_defRed_: {
+    set2_common_dmg_: {
       sheet: 'PenaconyLandOfTheDreams',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PenaconyLandOfTheDreams',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'set2_dmg_',
+      name: 'set2_common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PenaconyLandOfTheDreams',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PenaconyLandOfTheDreams',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PenaconyLandOfTheDreams',
-        name: 'team_dmg_',
+        name: 'set2_common_dmg_',
       },
     },
   },
@@ -15625,37 +17619,37 @@ export const buffs = {
     },
   },
   PioneerDiverOfDeadWaters: {
-    enemy_defRed_: {
+    set2_common_dmg_: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PioneerDiverOfDeadWaters',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PioneerDiverOfDeadWaters',
-      name: 'set2_dmg_',
+      name: 'set2_common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'set2_dmg_',
+        name: 'set2_common_dmg_',
       },
     },
-    team_dmg_: {
+    set4_crit_: {
       sheet: 'PioneerDiverOfDeadWaters',
-      name: 'team_dmg_',
+      name: 'set4_crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'team_dmg_',
+        name: 'set4_crit_',
+      },
+    },
+    set4_crit_dmg_: {
+      sheet: 'PioneerDiverOfDeadWaters',
+      name: 'set4_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'PioneerDiverOfDeadWaters',
+        name: 'set4_crit_dmg_',
       },
     },
   },
@@ -15725,6 +17719,41 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PlanetaryRendezvous',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PoetOfMourningCollapse: {
+    enemy_defRed_: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'PoetOfMourningCollapse',
+        name: 'enemy_defRed_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'PoetOfMourningCollapse',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'PoetOfMourningCollapse',
         name: 'team_dmg_',
       },
     },
@@ -15800,37 +17829,15 @@ export const buffs = {
     },
   },
   PrisonerInDeepConfinement: {
-    enemy_defRed_: {
+    set4_defIgn_: {
       sheet: 'PrisonerInDeepConfinement',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PrisonerInDeepConfinement',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'set2_dmg_',
+      name: 'set4_defIgn_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'PrisonerInDeepConfinement',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PrisonerInDeepConfinement',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PrisonerInDeepConfinement',
-        name: 'team_dmg_',
+        name: 'set4_defIgn_',
       },
     },
   },
@@ -16061,6 +18068,195 @@ export const buffs = {
       },
     },
   },
+  Rappa: {
+    e6_dmg_: {
+      sheet: 'Rappa',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Rappa',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_skill: {
+      sheet: 'Rappa',
+      name: 'eidolon3_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Rappa',
+        name: 'eidolon3_skill',
+      },
+    },
+    eidolon3_talent: {
+      sheet: 'Rappa',
+      name: 'eidolon3_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Rappa',
+        name: 'eidolon3_talent',
+      },
+    },
+    eidolon5_basic: {
+      sheet: 'Rappa',
+      name: 'eidolon5_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Rappa',
+        name: 'eidolon5_basic',
+      },
+    },
+    eidolon5_ult: {
+      sheet: 'Rappa',
+      name: 'eidolon5_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Rappa',
+        name: 'eidolon5_ult',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Rappa',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Rappa',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Rappa',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Rappa',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Rappa',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Rappa',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Rappa',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Rappa',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Rappa',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Rappa',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Rappa',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Rappa',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Rappa',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Rappa',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Rappa',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Rappa',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Rappa',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'Rappa',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Rappa',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Rappa',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Rappa',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'Rappa',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Rappa',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Rappa',
+        name: 'team_dmg_',
+      },
+    },
+  },
   ReforgedRemembrance: {
     cond_dmg_: {
       sheet: 'ReforgedRemembrance',
@@ -16092,6 +18288,41 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ReforgedRemembrance',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Reminiscence: {
+    cond_dmg_: {
+      sheet: 'Reminiscence',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Reminiscence',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Reminiscence',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Reminiscence',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Reminiscence',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Reminiscence',
         name: 'team_dmg_',
       },
     },
@@ -16646,36 +18877,62 @@ export const buffs = {
     },
   },
   RutilantArena: {
-    enemy_defRed_: {
+    set4_basic_dmg_: {
       sheet: 'RutilantArena',
+      name: 'set4_basic_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'RutilantArena',
+        damageType1: 'basic',
+        name: 'set4_basic_dmg_',
+      },
+    },
+    set4_skill_dmg_: {
+      sheet: 'RutilantArena',
+      name: 'set4_skill_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'RutilantArena',
+        damageType1: 'skill',
+        name: 'set4_skill_dmg_',
+      },
+    },
+  },
+  SacerdosRelivedOrdeal: {
+    enemy_defRed_: {
+      sheet: 'SacerdosRelivedOrdeal',
       name: 'enemy_defRed_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defRed_',
-        sheet: 'RutilantArena',
+        sheet: 'SacerdosRelivedOrdeal',
         name: 'enemy_defRed_',
       },
     },
     set2_dmg_: {
-      sheet: 'RutilantArena',
+      sheet: 'SacerdosRelivedOrdeal',
       name: 'set2_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'RutilantArena',
+        sheet: 'SacerdosRelivedOrdeal',
         name: 'set2_dmg_',
       },
     },
     team_dmg_: {
-      sheet: 'RutilantArena',
+      sheet: 'SacerdosRelivedOrdeal',
       name: 'team_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'RutilantArena',
+        sheet: 'SacerdosRelivedOrdeal',
         name: 'team_dmg_',
       },
     },
@@ -16935,6 +19192,76 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sampo',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ScentAloneStaysTrue: {
+    cond_dmg_: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ScentAloneStaysTrue',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'ScentAloneStaysTrue',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ScentAloneStaysTrue',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ScholarLostInErudition: {
+    enemy_defRed_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'ScholarLostInErudition',
+        name: 'enemy_defRed_',
+      },
+    },
+    set2_dmg_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'set2_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ScholarLostInErudition',
+        name: 'set2_dmg_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ScholarLostInErudition',
         name: 'team_dmg_',
       },
     },
@@ -17329,6 +19656,76 @@ export const buffs = {
       },
     },
   },
+  Shadowburn: {
+    cond_dmg_: {
+      sheet: 'Shadowburn',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Shadowburn',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Shadowburn',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Shadowburn',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Shadowburn',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Shadowburn',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ShadowedByNight: {
+    cond_dmg_: {
+      sheet: 'ShadowedByNight',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ShadowedByNight',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'ShadowedByNight',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'ShadowedByNight',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ShadowedByNight',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ShadowedByNight',
+        name: 'team_dmg_',
+      },
+    },
+  },
   SharedFeeling: {
     cond_dmg_: {
       sheet: 'SharedFeeling',
@@ -17435,37 +19832,15 @@ export const buffs = {
     },
   },
   SigoniaTheUnclaimedDesolation: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SigoniaTheUnclaimedDesolation',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'team_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
   },
@@ -17766,37 +20141,15 @@ export const buffs = {
     },
   },
   SpaceSealingStation: {
-    enemy_defRed_: {
+    set2_atk_: {
       sheet: 'SpaceSealingStation',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SpaceSealingStation',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SpaceSealingStation',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'SpaceSealingStation',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SpaceSealingStation',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SpaceSealingStation',
-        name: 'team_dmg_',
+        name: 'set2_atk_',
       },
     },
   },
@@ -17989,41 +20342,6 @@ export const buffs = {
       },
     },
   },
-  SprightlyVonwacq: {
-    enemy_defRed_: {
-      sheet: 'SprightlyVonwacq',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SprightlyVonwacq',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SprightlyVonwacq',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SprightlyVonwacq',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SprightlyVonwacq',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SprightlyVonwacq',
-        name: 'team_dmg_',
-      },
-    },
-  },
   SubscribeForMore: {
     cond_dmg_: {
       sheet: 'SubscribeForMore',
@@ -18055,6 +20373,195 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SubscribeForMore',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Sunday: {
+    e6_dmg_: {
+      sheet: 'Sunday',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Sunday',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_basic: {
+      sheet: 'Sunday',
+      name: 'eidolon3_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Sunday',
+        name: 'eidolon3_basic',
+      },
+    },
+    eidolon3_ult: {
+      sheet: 'Sunday',
+      name: 'eidolon3_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Sunday',
+        name: 'eidolon3_ult',
+      },
+    },
+    eidolon5_skill: {
+      sheet: 'Sunday',
+      name: 'eidolon5_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Sunday',
+        name: 'eidolon5_skill',
+      },
+    },
+    eidolon5_talent: {
+      sheet: 'Sunday',
+      name: 'eidolon5_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Sunday',
+        name: 'eidolon5_talent',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Sunday',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Sunday',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Sunday',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Sunday',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Sunday',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Sunday',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Sunday',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_res_',
+        sheet: 'Sunday',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Sunday',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Sunday',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Sunday',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'Sunday',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Sunday',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Sunday',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Sunday',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_res_',
+        sheet: 'Sunday',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Sunday',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Sunday',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Sunday',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'Sunday',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Sunday',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_res_',
+        sheet: 'Sunday',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Sunday',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Sunday',
         name: 'team_dmg_',
       },
     },
@@ -18248,6 +20755,41 @@ export const buffs = {
       },
     },
   },
+  SweatNowCryLess: {
+    cond_dmg_: {
+      sheet: 'SweatNowCryLess',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'SweatNowCryLess',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'SweatNowCryLess',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'SweatNowCryLess',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SweatNowCryLess',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'SweatNowCryLess',
+        name: 'team_dmg_',
+      },
+    },
+  },
   Swordplay: {
     cond_dmg_: {
       sheet: 'Swordplay',
@@ -18284,37 +20826,15 @@ export const buffs = {
     },
   },
   TaliaKingdomOfBanditry: {
-    enemy_defRed_: {
+    set2_brEffect_: {
       sheet: 'TaliaKingdomOfBanditry',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TaliaKingdomOfBanditry',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'set2_dmg_',
+      name: 'set2_brEffect_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'brEffect_',
         sheet: 'TaliaKingdomOfBanditry',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TaliaKingdomOfBanditry',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TaliaKingdomOfBanditry',
-        name: 'team_dmg_',
+        name: 'set2_brEffect_',
       },
     },
   },
@@ -18354,37 +20874,27 @@ export const buffs = {
     },
   },
   TheAshblazingGrandDuke: {
-    enemy_defRed_: {
+    set2_followUp_: {
       sheet: 'TheAshblazingGrandDuke',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheAshblazingGrandDuke',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TheAshblazingGrandDuke',
-      name: 'set2_dmg_',
+      name: 'set2_followUp_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'TheAshblazingGrandDuke',
-        name: 'set2_dmg_',
+        damageType1: 'followUp',
+        name: 'set2_followUp_',
       },
     },
-    team_dmg_: {
+    set4_atk_: {
       sheet: 'TheAshblazingGrandDuke',
-      name: 'team_dmg_',
+      name: 'set4_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'TheAshblazingGrandDuke',
-        name: 'team_dmg_',
+        name: 'set4_atk_',
       },
     },
   },
@@ -18454,6 +20964,200 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheDayTheCosmosFell',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TheHerta: {
+    e6_dmg_: {
+      sheet: 'TheHerta',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'TheHerta',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_skill: {
+      sheet: 'TheHerta',
+      name: 'eidolon3_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'TheHerta',
+        name: 'eidolon3_skill',
+      },
+    },
+    eidolon3_talent: {
+      sheet: 'TheHerta',
+      name: 'eidolon3_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'TheHerta',
+        name: 'eidolon3_talent',
+      },
+    },
+    eidolon5_basic: {
+      sheet: 'TheHerta',
+      name: 'eidolon5_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'TheHerta',
+        name: 'eidolon5_basic',
+      },
+    },
+    eidolon5_ult: {
+      sheet: 'TheHerta',
+      name: 'eidolon5_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'TheHerta',
+        name: 'eidolon5_ult',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'TheHerta',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'TheHerta',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'TheHerta',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheHerta',
+        elementalType: 'ice',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'TheHerta',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheHerta',
+        elementalType: 'ice',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'TheHerta',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TheHerta',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'TheHerta',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheHerta',
+        elementalType: 'ice',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'TheHerta',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'TheHerta',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'TheHerta',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheHerta',
+        elementalType: 'ice',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'TheHerta',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TheHerta',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'TheHerta',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheHerta',
+        elementalType: 'ice',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'TheHerta',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd',
+        sheet: 'TheHerta',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'TheHerta',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TheHerta',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TheHerta',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'TheHerta',
         name: 'team_dmg_',
       },
     },
@@ -18563,72 +21267,51 @@ export const buffs = {
       },
     },
   },
-  TheWindSouringValorous: {
-    enemy_defRed_: {
-      sheet: 'TheWindSouringValorous',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheWindSouringValorous',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TheWindSouringValorous',
-      name: 'set2_dmg_',
+  TheWindSoaringValorous: {
+    set4_ult_dmg_: {
+      sheet: 'TheWindSoaringValorous',
+      name: 'set4_ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheWindSouringValorous',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheWindSouringValorous',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheWindSouringValorous',
-        name: 'team_dmg_',
+        q: 'dmg_',
+        sheet: 'TheWindSoaringValorous',
+        damageType1: 'ult',
+        name: 'set4_ult_dmg_',
       },
     },
   },
-  ThiefOfShootingMeteor: {
+  TheWondrousBananAmusementPark: {
     enemy_defRed_: {
-      sheet: 'ThiefOfShootingMeteor',
+      sheet: 'TheWondrousBananAmusementPark',
       name: 'enemy_defRed_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defRed_',
-        sheet: 'ThiefOfShootingMeteor',
+        sheet: 'TheWondrousBananAmusementPark',
         name: 'enemy_defRed_',
       },
     },
     set2_dmg_: {
-      sheet: 'ThiefOfShootingMeteor',
+      sheet: 'TheWondrousBananAmusementPark',
       name: 'set2_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'ThiefOfShootingMeteor',
+        sheet: 'TheWondrousBananAmusementPark',
         name: 'set2_dmg_',
       },
     },
     team_dmg_: {
-      sheet: 'ThiefOfShootingMeteor',
+      sheet: 'TheWondrousBananAmusementPark',
       name: 'team_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
-        sheet: 'ThiefOfShootingMeteor',
+        sheet: 'TheWondrousBananAmusementPark',
         name: 'team_dmg_',
       },
     },
@@ -18668,6 +21351,41 @@ export const buffs = {
       },
     },
   },
+  ThoseManySprings: {
+    cond_dmg_: {
+      sheet: 'ThoseManySprings',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ThoseManySprings',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'ThoseManySprings',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'ThoseManySprings',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ThoseManySprings',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ThoseManySprings',
+        name: 'team_dmg_',
+      },
+    },
+  },
   TimeWaitsForNoOne: {
     cond_dmg_: {
       sheet: 'TimeWaitsForNoOne',
@@ -18699,6 +21417,41 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TimeWaitsForNoOne',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TimeWovenIntoGold: {
+    cond_dmg_: {
+      sheet: 'TimeWovenIntoGold',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'TimeWovenIntoGold',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'TimeWovenIntoGold',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'TimeWovenIntoGold',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TimeWovenIntoGold',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'TimeWovenIntoGold',
         name: 'team_dmg_',
       },
     },
@@ -19312,6 +22065,206 @@ export const buffs = {
       },
     },
   },
+  TrailblazerIce: {
+    e6_dmg_: {
+      sheet: 'TrailblazerIce',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'TrailblazerIce',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_skill: {
+      sheet: 'TrailblazerIce',
+      name: 'eidolon3_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'TrailblazerIce',
+        name: 'eidolon3_skill',
+      },
+    },
+    eidolon3_talent: {
+      sheet: 'TrailblazerIce',
+      name: 'eidolon3_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'TrailblazerIce',
+        name: 'eidolon3_talent',
+      },
+    },
+    eidolon5_basic: {
+      sheet: 'TrailblazerIce',
+      name: 'eidolon5_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'TrailblazerIce',
+        name: 'eidolon5_basic',
+      },
+    },
+    eidolon5_servantSkill: {
+      sheet: 'TrailblazerIce',
+      name: 'eidolon5_servantSkill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'servantSkill',
+        sheet: 'TrailblazerIce',
+        name: 'eidolon5_servantSkill',
+      },
+    },
+    eidolon5_ult: {
+      sheet: 'TrailblazerIce',
+      name: 'eidolon5_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'TrailblazerIce',
+        name: 'eidolon5_ult',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'TrailblazerIce',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'TrailblazerIce',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'TrailblazerIce',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'TrailblazerIce',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TrailblazerIce',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'TrailblazerIce',
+        name: 'team_dmg_',
+      },
+    },
+  },
   TrailblazerImaginary: {
     e6_dmg_: {
       sheet: 'TrailblazerImaginary',
@@ -19728,6 +22681,195 @@ export const buffs = {
       },
     },
   },
+  Tribbie: {
+    e6_dmg_: {
+      sheet: 'Tribbie',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Tribbie',
+        name: 'e6_dmg_',
+      },
+    },
+    eidolon3_basic: {
+      sheet: 'Tribbie',
+      name: 'eidolon3_basic',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'basic',
+        sheet: 'Tribbie',
+        name: 'eidolon3_basic',
+      },
+    },
+    eidolon3_ult: {
+      sheet: 'Tribbie',
+      name: 'eidolon3_ult',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'ult',
+        sheet: 'Tribbie',
+        name: 'eidolon3_ult',
+      },
+    },
+    eidolon5_skill: {
+      sheet: 'Tribbie',
+      name: 'eidolon5_skill',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'skill',
+        sheet: 'Tribbie',
+        name: 'eidolon5_skill',
+      },
+    },
+    eidolon5_talent: {
+      sheet: 'Tribbie',
+      name: 'eidolon5_talent',
+      tag: {
+        et: 'display',
+        qt: 'char',
+        q: 'talent',
+        sheet: 'Tribbie',
+        name: 'eidolon5_talent',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'Tribbie',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'Tribbie',
+        name: 'enemy_defRed_',
+      },
+    },
+    statBoost1: {
+      sheet: 'Tribbie',
+      name: 'statBoost1',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Tribbie',
+        name: 'statBoost1',
+      },
+    },
+    statBoost10: {
+      sheet: 'Tribbie',
+      name: 'statBoost10',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Tribbie',
+        name: 'statBoost10',
+      },
+    },
+    statBoost2: {
+      sheet: 'Tribbie',
+      name: 'statBoost2',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Tribbie',
+        name: 'statBoost2',
+      },
+    },
+    statBoost3: {
+      sheet: 'Tribbie',
+      name: 'statBoost3',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Tribbie',
+        name: 'statBoost3',
+      },
+    },
+    statBoost4: {
+      sheet: 'Tribbie',
+      name: 'statBoost4',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Tribbie',
+        name: 'statBoost4',
+      },
+    },
+    statBoost5: {
+      sheet: 'Tribbie',
+      name: 'statBoost5',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Tribbie',
+        name: 'statBoost5',
+      },
+    },
+    statBoost6: {
+      sheet: 'Tribbie',
+      name: 'statBoost6',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Tribbie',
+        name: 'statBoost6',
+      },
+    },
+    statBoost7: {
+      sheet: 'Tribbie',
+      name: 'statBoost7',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'Tribbie',
+        name: 'statBoost7',
+      },
+    },
+    statBoost8: {
+      sheet: 'Tribbie',
+      name: 'statBoost8',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'Tribbie',
+        name: 'statBoost8',
+      },
+    },
+    statBoost9: {
+      sheet: 'Tribbie',
+      name: 'statBoost9',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'Tribbie',
+        name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Tribbie',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'Tribbie',
+        name: 'team_dmg_',
+      },
+    },
+  },
   UnderTheBlueSky: {
     cond_dmg_: {
       sheet: 'UnderTheBlueSky',
@@ -19759,6 +22901,41 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'UnderTheBlueSky',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  VictoryInABlink: {
+    cond_dmg_: {
+      sheet: 'VictoryInABlink',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'VictoryInABlink',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defRed_: {
+      sheet: 'VictoryInABlink',
+      name: 'enemy_defRed_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defRed_',
+        sheet: 'VictoryInABlink',
+        name: 'enemy_defRed_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'VictoryInABlink',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'VictoryInABlink',
         name: 'team_dmg_',
       },
     },
@@ -19834,37 +23011,26 @@ export const buffs = {
     },
   },
   WastelanderOfBanditryDesert: {
-    enemy_defRed_: {
+    set4_crit_: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WastelanderOfBanditryDesert',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'WastelanderOfBanditryDesert',
-      name: 'set2_dmg_',
+      name: 'set4_crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'WastelanderOfBanditryDesert',
-        name: 'set2_dmg_',
+        name: 'set4_crit_',
       },
     },
-    team_dmg_: {
+    set4_crit_dmg_: {
       sheet: 'WastelanderOfBanditryDesert',
-      name: 'team_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'WastelanderOfBanditryDesert',
-        name: 'team_dmg_',
+        name: 'set4_crit_dmg_',
       },
     },
   },

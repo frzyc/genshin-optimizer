@@ -34,7 +34,7 @@
     "talent": {
       "0": {
         "name": "Cinco Balas no Tambor",
-        "fullDesc": "Cada acúmulo do Truque de Bolso aumenta a Redução de Tenacidade do ATQ Básico Aprimorado em {{4, percent}}%, podendo acumular até {{5}} vez(es).<br>Se o alvo estiver com Quebra de Fraqueza quando o ATQ Básico Aprimorado for usado, com base no número de acúmulos de Truque de Bolso, causa Dano de Quebra a esse alvo igual a <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> do Dano de Quebra Físico de Boothill. A Tenacidade máxima considerada para este dano não pode exceder {{6}} vezes a Redução de Tenacidade base causada pelo ATQ Básico \"Esporas Esmaga-Crânio\".<br>Após vencer a batalha, Boothill pode manter o Truque de Bolso para a próxima batalha.",
+        "fullDesc": "Cada acúmulo do Truque de Bolso aumenta a Redução de Tenacidade do ATQ Básico Aprimorado em {{4, percent}}%, podendo acumular até {{5}} vez(es).<br>Se o alvo estiver com Quebra de Fraqueza quando o ATQ Básico Aprimorado for usado, com base no número de acúmulos de Truque de Bolso, causa Dano de Quebra a esse alvo igual a <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> do Dano de Quebra Físico de Boothill. A Tenacidade máxima considerada para este Dano não pode exceder {{6}} vezes a Redução de Tenacidade base causada pelo ATQ Básico \"Esporas Esmaga-Crânio\".<br>Após vencer a batalha, Boothill pode manter o Truque de Bolso para a próxima batalha.",
         "shortDesc": "O Truque de Bolso aumenta a Redução de Tenacidade do ATQ Básico Aprimorado e causa <orangeStrong>Dano de Quebra</orangeStrong> de Físico adicional ao <orangeStrong>inimigo que sofreu Quebra de Fraqueza</orangeStrong>. Após vencer a batalha, mantém o Truque de Bolso para a próxima batalha.",
         "tag": "Aprimoramento"
       }
@@ -51,32 +51,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Munição Fantasma",
-        "fullDesc": "Aumenta a Chance de CRIT / o Dano CRIT deste personagem em uma quantidade igual a {{1, percent}}% / {{3, percent}}% do Efeito de Quebra, com um aumento máximo de {{2, percent}}% / {{4, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta a Chance de CRIT / o Dano CRIT deste personagem em uma quantidade igual a {{1, percent}}% / {{3, percent}}% do Efeito de Quebra, com um aumento máximo de {{2, percent}}% / {{4, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sobre as Cobras",
-        "fullDesc": "Enquanto Boothill está em Confronto, diminui o Dano que ele recebe de alvos que não estejam em Confronto em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Enquanto Boothill está em Confronto, diminui o Dano que ele recebe de alvos que não estejam em Confronto em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "À Queima-Roupa",
-        "fullDesc": "Ao obter Truque de Bolso no Confronto, regenera {{1}} de Energia. Esse efeito também é ativado quando são obtidos acúmulos de Truque de Bolso que excedam o limite máximo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao obter Truque de Bolso no Confronto, regenera {{1}} de Energia. Esse efeito também é ativado quando são obtidos acúmulos de Truque de Bolso que excedam o limite máximo."
       }
     }
   },

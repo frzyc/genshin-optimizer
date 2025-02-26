@@ -1,0 +1,7 @@
+{
+  "name": "땀은 많이, 눈물은 적게",
+  "passive": {
+    "name": "와서 훈련해!",
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하며, 장착한 캐릭터의 기억 정령이 필드에 있을 시 장착한 캐릭터와 기억 정령이 가하는 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다"
+  }
+}

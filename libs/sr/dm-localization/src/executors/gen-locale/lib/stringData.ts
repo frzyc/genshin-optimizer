@@ -111,7 +111,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
   crawlObject(
     HashData,
     [],
-    (value) => typeof value === 'string',
+    (value) => typeof value === 'string' && !!value,
     (hash: string, path) =>
       layeredAssignment(data, path, processString(strings[hash]))
   )

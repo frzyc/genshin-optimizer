@@ -1,0 +1,7 @@
+{
+  "name": "忍事錄•音律狩獵",
+  "passive": {
+    "name": "開演！",
+    "description": "使裝備者的生命上限提高<orangeStrong>{{1, percent}}%</orangeStrong>，損失或回復自身生命值後，暴擊傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持續{{3}}回合，該效果每回合只可觸發1次。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Ninjutsu Inscription: Dazzling Evilbreaker",
+  "passive": {
+    "name": "Exorcism",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. When entering battle, immediately regenerates <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> Energy. After the wearer uses Ultimate, obtains \"Raiton.\" After using 2 Basic ATKs, advances the wearer's action by <orangeStrong>{{3, percent}}%</orangeStrong> and removes \"Raiton.\" After the wearer uses Ultimate, resets \"Raiton.\""
+  }
+}

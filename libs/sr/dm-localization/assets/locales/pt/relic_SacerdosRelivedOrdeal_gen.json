@@ -1,0 +1,7 @@
+{
+  "setName": "O Ordálio Revivido de Sacerdos",
+  "setEffects": {
+    "2": "Aumenta a VEL em {{1, percent}}%.",
+    "4": "Ao usar uma Perícia ou Perícia Suprema em um aliado-alvo, aumenta o Dano CRIT do alvo em {{1, percent}}%, durando por {{2}} rodada(s). Esse efeito pode acumular até {{3}} vez(es)."
+  }
+}

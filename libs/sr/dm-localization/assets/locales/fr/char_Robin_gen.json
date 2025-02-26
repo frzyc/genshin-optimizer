@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Prélude à l'ivresse",
-        "fullDesc": "Crée une dimension spéciale autour du personnage qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis qui s'y trouvent n'attaquent pas Robin et la suivent tant que la dimension est active. Robin régénère {{2}} points d'énergie au début de chaque vague lorsque le combat est engagé alors que la dimension est active. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale autour du personnage qui dure {{1}} secondes après avoir utilisé la technique. Les ennemis qui s'y trouvent n'attaquent pas Robin et la suivent tant que la dimension est active. Robin régénère {{2}} points d'énergie au début de chaque vague lorsque le combat est engagé alors que la dimension est active. Il ne peut exister qu'1 effet de dimension créé par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale autour du personnage. Les ennemis qui se trouvent dans cette dimension n'attaquent pas Robin. Robin régénère <orangeStrong>{{2}}</orangeStrong> points d'énergie supplémentaires au début de chaque vague lorsque le combat est engagé alors que la dimension est active.",
         "tag": "Soutien"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Cadence colorée",
-        "fullDesc": "L'action de ce personnage est avancée de {{1, percent}}% en début de combat.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "L'action de ce personnage est avancée de {{1, percent}}% en début de combat."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ornement improvisé",
-        "fullDesc": "Lorsque l'état Concerto est actif, les DGT critiques des ATQ de suivi de tous les alliés augmentent de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque l'état Concerto est actif, les DGT critiques des ATQ de suivi de tous les alliés augmentent de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Passage séquentiel",
-        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lors de l'utilisation de la compétence.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lors de l'utilisation de la compétence."
       }
     }
   },

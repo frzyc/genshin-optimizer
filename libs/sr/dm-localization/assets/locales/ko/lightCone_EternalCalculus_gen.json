@@ -1,0 +1,7 @@
+{
+  "name": "멈추지 않는 연산",
+  "passive": {
+    "name": "끝없는 생각",
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 공격 발동 후 적을 1기 명중할 때마다 공격력이 추가로 <orangeStrong>{{2, percent}}%</orangeStrong> 증가하며(최대 중첩수: 5회), 다음 공격 후까지 지속된다. {{3}}기 이상의 적을 명중하면 자신의 속도가 <orangeStrong>{{4, percent}}%</orangeStrong> 증가한다, 지속 시간: {{5}}턴"
+  }
+}

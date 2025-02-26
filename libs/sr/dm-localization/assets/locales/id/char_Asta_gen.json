@@ -29,7 +29,7 @@
       "0": {
         "name": "Astrometry",
         "fullDesc": "Memperoleh 1 lapis Charge untuk setiap musuh yang terkena serangan Asta, mendapatkan 1 lapis Charge tambahan jika musuh yang terserang memiliki Fire Weakness.<br>Setiap lapis Charge yang dimiliki Asta akan meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK seluruh rekan tim. Efek ini dapat ditumpuk hingga {{2}} kali.<br>Mulai dari giliran ke-2 Asta, jumlah lapisan Charge Asta akan berkurang {{3}} lapis setiap gilirannya dimulai.",
-        "shortDesc": "Memperoleh 1 lapis Charge setiap kali menyerang 1 musuh yang berbeda, maksimal 5 lapis. Setiap lapis Charge mingkatkan ATK seluruh rekan tim. Saat giliran dirinya dimulai, jumlah Charge akan dikurangi.",
+        "shortDesc": "Memperoleh 1 lapis Charge setiap kali menyerang 1 musuh yang berbeda, maksimal 5 lapis. Setiap lapis Charge meningkatkan ATK seluruh rekan tim. Saat giliran dirinya dimulai, jumlah Charge akan dikurangi.",
         "tag": "Support"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Sparks",
-        "fullDesc": "Saat melancarkan Basic Attack, ada {{1, percent}}% peluang dasar untuk mengakibatkan target musuh terkena status Burn selama {{2}} giliran.<br>Saat terkena status Burn, target musuh akan menerima Fire DoT sebesar {{3, percent}}% Basic Attack Asta setiap saat giliran dimulai.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat melancarkan Basic Attack, ada {{1, percent}}% peluang dasar untuk mengakibatkan target musuh terkena status Burn selama {{2}} giliran.<br>Saat terkena status Burn, target musuh akan menerima Fire DoT sebesar {{3, percent}}% Basic Attack Asta setiap saat giliran dimulai."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ignite",
-        "fullDesc": "Meningkatkan {{1, percent}}% Fire DMG seluruh rekan tim saat Asta berada di medan pertempuran.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Meningkatkan {{1, percent}}% Fire DMG seluruh rekan tim saat Asta berada di medan pertempuran."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constellation",
-        "fullDesc": "Setiap lapis Charge yang dimiliki Asta akan meningkatkan {{1, percent}}% DEF-nya.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Setiap lapis Charge yang dimiliki Asta akan meningkatkan {{1, percent}}% DEF-nya."
       }
     }
   },

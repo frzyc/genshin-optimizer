@@ -1,0 +1,7 @@
+{
+  "name": "Inscrição do Ninjutsu: Destruição Deslumbrante do Mal",
+  "passive": {
+    "name": "Exorcismo",
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Ao entrar em batalha, regenera imediatamente <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> de Energia. Após o usuário utilizar a Perícia Suprema, obtém \"Raiton\". Após usar 2 ATQs Básicos, Avança Adiante a ação do usuário em <orangeStrong>{{3, percent}}%</orangeStrong> e remove \"Raiton\". Após o usuário usar a Perícia Suprema, \"Raiton\" é redefinido."
+  }
+}

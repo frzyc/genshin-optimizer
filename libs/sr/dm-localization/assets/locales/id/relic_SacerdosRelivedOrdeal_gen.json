@@ -1,0 +1,7 @@
+{
+  "setName": "Sacerdos' Relived Ordeal",
+  "setEffects": {
+    "2": "SPD +{{1, percent}}%.",
+    "4": "Saat melancarkan Skill atau Ultimate pada 1 rekan tim, akan meningkatkan {{1, percent}}% CRIT DMG target kemampuan tersebut selama {{2}} giliran. Efek ini dapat ditumpuk {{3}} kali."
+  }
+}

@@ -51,32 +51,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Piété",
-        "fullDesc": "Obtient immédiatement {{1}} cumul d'Ascension en début de tour.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Obtient immédiatement {{1}} cumul d'Ascension en début de tour."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Générosité",
-        "fullDesc": "Le personnage régénère immédiatement {{1}} points d'énergie lorsque les cibles ennemies entrent en combat.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Le personnage régénère immédiatement {{1}} points d'énergie lorsque les cibles ennemies entrent en combat."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Courage",
-        "fullDesc": "Inflige {{2, percent}}% de DGT supplémentaires aux ennemis dont le pourcentage de PV est inférieur ou égal à {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Inflige {{2, percent}}% de DGT supplémentaires aux ennemis dont le pourcentage de PV est inférieur ou égal à {{1, percent}}%."
       }
     }
   },

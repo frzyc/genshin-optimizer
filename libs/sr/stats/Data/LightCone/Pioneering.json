@@ -3,115 +3,43 @@
   "path": "Preservation",
   "ascension": [
     {
-      "atk": {
-        "base": 12,
-        "add": 1.8
-      },
-      "def": {
-        "base": 12,
-        "add": 1.8
-      },
-      "hp": {
-        "base": 43.2,
-        "add": 6.48
-      }
+      "atk": { "base": 12, "add": 1.8 },
+      "def": { "base": 12, "add": 1.8 },
+      "hp": { "base": 43.2, "add": 6.48 }
     },
     {
-      "atk": {
-        "base": 26.4,
-        "add": 1.8
-      },
-      "def": {
-        "base": 26.4,
-        "add": 1.8
-      },
-      "hp": {
-        "base": 95.04,
-        "add": 6.48
-      }
+      "atk": { "base": 26.4, "add": 1.8 },
+      "def": { "base": 26.4, "add": 1.8 },
+      "hp": { "base": 95.04, "add": 6.48 }
     },
     {
-      "atk": {
-        "base": 45.6,
-        "add": 1.8
-      },
-      "def": {
-        "base": 45.6,
-        "add": 1.8
-      },
-      "hp": {
-        "base": 164.16,
-        "add": 6.48
-      }
+      "atk": { "base": 45.6, "add": 1.8 },
+      "def": { "base": 45.6, "add": 1.8 },
+      "hp": { "base": 164.16, "add": 6.48 }
     },
     {
-      "atk": {
-        "base": 64.8,
-        "add": 1.8
-      },
-      "def": {
-        "base": 64.8,
-        "add": 1.8
-      },
-      "hp": {
-        "base": 233.28,
-        "add": 6.48
-      }
+      "atk": { "base": 64.8, "add": 1.8 },
+      "def": { "base": 64.8, "add": 1.8 },
+      "hp": { "base": 233.28, "add": 6.48 }
     },
     {
-      "atk": {
-        "base": 84,
-        "add": 1.8
-      },
-      "def": {
-        "base": 84,
-        "add": 1.8
-      },
-      "hp": {
-        "base": 302.4,
-        "add": 6.48
-      }
+      "atk": { "base": 84, "add": 1.8 },
+      "def": { "base": 84, "add": 1.8 },
+      "hp": { "base": 302.4, "add": 6.48 }
     },
     {
-      "atk": {
-        "base": 103.2,
-        "add": 1.8
-      },
-      "def": {
-        "base": 103.2,
-        "add": 1.8
-      },
-      "hp": {
-        "base": 371.52,
-        "add": 6.48
-      }
+      "atk": { "base": 103.2, "add": 1.8 },
+      "def": { "base": 103.2, "add": 1.8 },
+      "hp": { "base": 371.52, "add": 6.48 }
     },
     {
-      "atk": {
-        "base": 122.4,
-        "add": 1.8
-      },
-      "def": {
-        "base": 122.4,
-        "add": 1.8
-      },
-      "hp": {
-        "base": 440.64,
-        "add": 6.48
-      }
+      "atk": { "base": 122.4, "add": 1.8 },
+      "def": { "base": 122.4, "add": 1.8 },
+      "hp": { "base": 440.64, "add": 6.48 }
     }
   ],
   "superimpose": {
-    "otherStats": [
-      [
-        -1,
-        0.12,
-        0.14,
-        0.16,
-        0.18,
-        0.2
-      ]
-    ],
+    "otherStats": [[-1, 0.12, 0.14, 0.16, 0.18, 0.2]],
     "passiveStats": {}
   }
 }

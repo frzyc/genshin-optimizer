@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hohe Stangen",
-        "fullDesc": "Der Standardangriff hat eine Grundchance von {{1, percent}}%, beim Gegner denselben Status Brennen wie die Fertigkeit zu verursachen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Der Standardangriff hat eine Grundchance von {{1, percent}}%, beim Gegner denselben Status Brennen wie die Fertigkeit zu verursachen."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ring mit Klingen",
-        "fullDesc": "Beim Kampfbeginn wird Guinaifens Aktion um {{1, percent}}% vorgezogen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Beim Kampfbeginn wird Guinaifens Aktion um {{1, percent}}% vorgezogen."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Auf Messern gehen",
-        "fullDesc": "Fügt brennenden Gegnern {{1, percent}}% mehr SCH zu.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Fügt brennenden Gegnern {{1, percent}}% mehr SCH zu."
       }
     }
   },

@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "바람을 찢는 비수",
-        "fullDesc": "삼포는 적 공격 후 {{1, percent}}%의 기본 확률로 적을 풍화 상태에 빠트린다. 지속 시간: {{3}}턴.<br>풍화 상태의 적은 새로운 턴이 시작될 때마다 삼포 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 바람 속성 지속 피해를 받는다. 풍화 상태 최대 중첩수: {{4}}스택",
+        "fullDesc": "삼포는 적 공격 후 {{1, percent}}%의 기본 확률로 적을 풍화 상태에 빠트린다. 지속 시간: {{3}}턴<br>풍화 상태의 적은 새로운 턴이 시작될 때마다 삼포 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 바람 속성 지속 피해를 받는다. 풍화 상태 최대 중첩수: {{4}}스택",
         "shortDesc": "자신이 적을 명중하면 일정 확률로 적을 <orangeStrong>풍화 상태에 빠트린다</orangeStrong>",
         "tag": "강화"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "올가미",
-        "fullDesc": "특성으로 적이 풍화 상태에 빠지는 지속 시간이 {{1}}턴 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "특성으로 적이 풍화 상태에 빠지는 지속 시간이 {{1}}턴 증가한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "후공",
-        "fullDesc": "필살기 발동 시 추가로 에너지를 {{1}}pt 회복한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "필살기 발동 시 추가로 에너지를 {{1}}pt 회복한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "첨가",
-        "fullDesc": "풍화 상태의 적이 삼포에게 가하는 피해가 {{1, percent}}% 감소한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "풍화 상태의 적이 삼포에게 가하는 피해가 {{1, percent}}% 감소한다"
       }
     }
   },

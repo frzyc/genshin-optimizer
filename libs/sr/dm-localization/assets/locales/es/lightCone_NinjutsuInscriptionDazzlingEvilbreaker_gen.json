@@ -1,0 +1,7 @@
+{
+  "name": "Pergamino ninja: Azote deslumbrante del mal",
+  "passive": {
+    "name": "Exorcismo",
+    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Al entrar en combate, recupera inmediatamente <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> pts. de energía. Tras lanzar la habilidad definitiva, el portador obtiene Elemento Rayo. Tras lanzar 2 veces el ATQ básico, la acción del portador se adelanta un <orangeStrong>{{3, percent}}%</orangeStrong> y Elemento Rayo se disipa. Elemento Rayo se restablece después de que el portador lance la habilidad definitiva."
+  }
+}

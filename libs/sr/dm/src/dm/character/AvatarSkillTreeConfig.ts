@@ -1,5 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objKeyMap } from '@genshin-optimizer/common/util'
+import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
 import type { AvatarId } from '../../mapping'
 import { characterIdMap } from '../../mapping'
@@ -70,7 +71,7 @@ export type PropertyType =
   | 'PhysicalAddedRatio'
   | 'ThunderAddedRatio'
 
-export const allSkillTreeTypes = [
+export const allAvatarSkillTreeTypes = [
   'basic',
   'skill',
   'ult',
@@ -90,9 +91,19 @@ export const allSkillTreeTypes = [
   'statBoost9',
   'statBoost10',
 ] as const
+export const allServantSkillTreeTypes = [
+  'servantSkill',
+  'servantTalent',
+] as const
+export const allSkillTreeTypes = [
+  ...allAvatarSkillTreeTypes,
+  ...allServantSkillTreeTypes,
+] as const
+export type AvatarSkillTreeType = (typeof allAvatarSkillTreeTypes)[number]
+export type ServantSkillTreeType = (typeof allServantSkillTreeTypes)[number]
 export type SkillTreeType = (typeof allSkillTreeTypes)[number]
 
-const avatarSkillTreeConfigSrc = JSON.parse(
+const avatarSkillTreeConfigSrc = parse(
   readDMJSON('ExcelOutput/AvatarSkillTreeConfig.json')
 ) as AvatarSkillTreeConfig[]
 

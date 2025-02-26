@@ -1,0 +1,7 @@
+{
+  "name": "Ninja-Aufzeichnung: Klangjagd",
+  "passive": {
+    "name": "Vorhang auf!",
+    "description": "Erhöht die max. LP des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nachdem der Träger LP verloren oder wiederhergestellt hat, wird sein KRIT-SCH für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+  }
+}

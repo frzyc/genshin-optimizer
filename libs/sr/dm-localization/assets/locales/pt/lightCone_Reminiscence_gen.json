@@ -1,0 +1,7 @@
+{
+  "name": "Reminiscência",
+  "passive": {
+    "name": "Adormecendo",
+    "description": "No início da rodada do Memoespírito, o usuário e o Memoespírito ganham 1 acúmulo de \"Comemoração\" cada. Cada acúmulo aumenta o Dano causado em <orangeStrong>{{1, percent}}%</orangeStrong>, até um máximo de {{2}} vez(es). \"Comemoração\" é removida do usuário e do Memoespírito quando o Memoespírito desaparece."
+  }
+}

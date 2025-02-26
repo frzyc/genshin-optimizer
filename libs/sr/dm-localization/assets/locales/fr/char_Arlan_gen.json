@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Second souffle",
-        "fullDesc": "Si le pourcentage de PV du personnage est inférieur ou égal à {{1, percent}}% lorsqu'il élimine un ennemi, restaure immédiatement des PV équivalents à {{2, percent}}% de ses PV max.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Si le pourcentage de PV du personnage est inférieur ou égal à {{1, percent}}% lorsqu'il élimine un ennemi, restaure immédiatement des PV équivalents à {{2, percent}}% de ses PV max."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Endurance",
-        "fullDesc": "Les chances de résister aux malus de dégâts sur la durée augmentent de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Les chances de résister aux malus de dégâts sur la durée augmentent de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Protection",
-        "fullDesc": "Si les PV d'Arlan sont inférieurs ou égaux à {{1, percent}}% en entrant en combat, il peut annuler tous les DGT subis à l'exception des dégâts sur la durée jusqu'à ce qu'il soit attaqué (les DGT de l'attaque étant annulés).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Si les PV d'Arlan sont inférieurs ou égaux à {{1, percent}}% en entrant en combat, il peut annuler tous les DGT subis à l'exception des dégâts sur la durée jusqu'à ce qu'il soit attaqué (les DGT de l'attaque étant annulés)."
       }
     }
   },

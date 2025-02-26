@@ -1,0 +1,7 @@
+{
+  "name": "Đổ Mồ Hôi Nhiều, Rơi Nước Mắt Ít",
+  "passive": {
+    "name": "Cùng Tập Luyện Nào!",
+    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Khi Linh Hồn Ký Ức của người trang bị trong trận, Sát Thương người trang bị và Linh Hồn Ký Ức gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>."
+  }
+}

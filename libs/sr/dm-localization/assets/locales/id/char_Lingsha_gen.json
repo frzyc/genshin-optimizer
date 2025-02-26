@@ -1,0 +1,96 @@
+{
+  "name": "Lingsha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Votive Incense",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Lingsha pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Smoke and Splendor",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Lingsha pada seluruh musuh. Pada saat yang bersamaan, memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ATK Lingsha + <orangeStrong>{{3}}</orangeStrong>, serta mendahulukan aksi \"Fuyuan\" sebesar {{4, percent}}%.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh, pada saat bersamaan <orangeStrong>memulihkan HP</orangeStrong> seluruh rekan tim, membuat \"Fuyuan\" mengalami Pendahuluan Aksi.",
+        "tag": "AoE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dripping Mistscape",
+        "fullDesc": "Membuat seluruh musuh memasuki status \"Befog\". Saat berstatus \"Befog\", Break DMG yang diterima target akan meningkat <orangeStrong>{{4, percent}}%</orangeStrong> selama {{5}} giliran.<br>Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Lingsha pada seluruh musuh. Pada saat yang bersamaan, memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ATK Lingsha + <orangeStrong>{{3}}</orangeStrong>, serta mendahulukan aksi \"Fuyuan\" sebesar {{6, percent}}%.",
+        "shortDesc": "Membuat <orangeStrong>Break DMG yang diterima seluruh musuh meningkat</orangeStrong>, mengakibatkan Fire DMG pada seluruh musuh, dan pada saat bersamaan <orangeStrong>memulihkan HP</orangeStrong> seluruh rekan tim, membuat \"Fuyuan\" mengalami Pendahuluan Aksi.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Mistdance Manifest",
+        "fullDesc": "Memanggil \"Fuyuan\" saat melancarkan Skill. \"Fuyuan\" memiliki SPD dasar sebesar {{1}} dan jumlah aksi dasar sebanyak {{7}} kali.<br>Saat \"Fuyuan\" beraksi, akan melancarkan Serangan Lanjutan, mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Lingsha pada seluruh musuh. Mengakibatkan tambahan Fire DMG sebesar <orangeStrong>{{8, percent}}%</orangeStrong> ATK Lingsha pada 1 musuh acak, dan DMG ini memprioritaskan target yang Toughness-nya lebih dari 0 dan memiliki Fire Weakness. Menghapus masing-masing {{6}} efek Debuff dari seluruh rekan tim, serta memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ATK Lingsha + <orangeStrong>{{4}}</orangeStrong>.<br>\"Fuyuan\" maksimal dapat mengakumulasi {{5}} kali jumlah aksi. Saat jumlah aksi mencapai 0 atau Lingsha gugur, \"Fuyuan\" akan menghilang.<br>Saat \"Fuyuan\" berada di medan pertempuran, melancarkan Skill Lingsha dapat menambah {{7}} kali jumlah aksi \"Fuyuan\".",
+        "shortDesc": "Memanggil \"Fuyuan\" saat melancarkan Skill: Saat \"Fuyuan\" beraksi, akan melancarkan <orangeStrong>Serangan Lanjutan</orangeStrong>, mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh. Mengakibatkan tambahan Fire DMG dalam jumlah kecil pada 1 musuh acak, memprioritaskan target yang Toughness-nya lebih dari 0 dan memiliki Fire Weakness. Menghapus masing-masing 1 efek Debuff dari seluruh rekan tim dan <orangeStrong>memulihkan HP</orangeStrong>.<br>Melancarkan Skill lagi dapat menambah jumlah aksi \"Fuyuan\".",
+        "tag": "AoE"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Wisps of Aurora",
+        "fullDesc": "Setelah menggunakan Technique, akan segera memanggil \"Fuyuan\" saat pertempuran berikutnya dimulai, serta membuat seluruh musuh memasuki status \"Befog\", berlangsung selama {{1}} giliran.",
+        "shortDesc": "Setelah menggunakan Technique, akan segera memanggil \"Fuyuan\" saat pertempuran berikutnya dimulai dan <orangeStrong>meningkatkan Break DMG yang diterima</orangeStrong> seluruh musuh.",
+        "tag": "Support"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": "Single Target"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Vermilion Waft",
+        "fullDesc": "Meningkatkan ATK/Outgoing Healing karakter ini, peningkatannya adalah sebesar {{1, percent}}%/{{2, percent}}% dari Break Effect, peningkatannya maksimal hingga {{3, percent}}%/{{4, percent}}%."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sylvan Smoke",
+        "fullDesc": "Saat melancarkan Basic Attack, akan memulihkan {{1}} Energy tambahan."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ember's Echo",
+        "fullDesc": "Saat \"Fuyuan\" ada di medan pertempuran, ketika karakter tim mana pun menerima DMG atau mengonsumsi HP: Jika ada karakter dalam tim yang persentase HP-nya saat ini kurang dari atau sama dengan {{1, percent}}%, maka \"Fuyuan\" akan segera melancarkan Serangan Lanjutan dari Talent pada musuh, dan pelancaran kali ini tidak akan mengonsumsi jumlah aksi \"Fuyuan\". Efek ini dapat dipicu lagi setelah {{2}} giliran."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Bloom on Vileward Bouquet",
+      "desc": "Weakness Break Efficiency Lingsha meningkat {{2, percent}}%. Saat ada unit musuh yang terkena Weakness Break, DEF musuh tersebut akan berkurang {{1, percent}}%."
+    },
+    "2": {
+      "name": "Leisure in Carmine Smokeveil",
+      "desc": "Saat melancarkan Ultimate, Break Effect seluruh rekan tim meningkat {{1, percent}}%, berlangsung selama {{2}} giliran."
+    },
+    "3": {
+      "name": "Shine of Floral Wick",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Redolence from Canopied Banquet",
+      "desc": "Saat \"Fuyuan\" beraksi, akan memulihkan HP rekan tim yang HP-nya saat ini paling rendah sebesar {{1, percent}}% ATK Lingsha."
+    },
+    "5": {
+      "name": "Poise Atop Twists and Turns",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Arcadia Under Deep Seclusion",
+      "desc": "Saat \"Fuyuan\" berada di medan pertempuran, RES Seluruh Tipe milik seluruh musuh berkurang {{1, percent}}%. Saat \"Fuyuan\" menyerang, akan mengakibatkan ekstra {{2}} kali DMG, yang setiap DMG-nya akan mengakibatkan Fire DMG sebesar {{3, percent}}% ATK Lingsha dan Pengurangan Toughness sebesar {{4}} pada musuh acak. DMG ini memprioritaskan target yang Toughness-nya lebih dari 0 dan memiliki Fire Weakness."
+    }
+  }
+}

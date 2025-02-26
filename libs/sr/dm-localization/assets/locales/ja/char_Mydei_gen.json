@@ -1,0 +1,108 @@
+{
+  "name": "モーディス",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#せいととうは}征途踏破{RUBY_E#}の{RUBY_B#ちか}誓{RUBY_E#}い",
+        "fullDesc": "指定した敵単体にモーディスの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与える。",
+        "tag": "単体攻撃"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#ばんし}万死{RUBY_E#}に{RUBY_B#く}悔{RUBY_E#}いなし",
+        "fullDesc": "モーディスの残りHP{{3, percent}}%分のHPを消費し、指定した敵単体にモーディスの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、隣接する敵にモーディスの最大HP<orangeStrong>{{2, percent}}%</orangeStrong>分の虚数属性ダメージを与える。<br>残りHPが足りない場合、戦闘スキルを発動した時、モーディスの残りHPが1になる。",
+        "shortDesc": "HPを消費し、指定した敵単体に虚数属性ダメージを与え、隣接する敵に少量の虚数属性ダメージを与える。",
+        "tag": "拡散攻撃"
+      },
+      "1": {
+        "name": "{RUBY_B#おう}王{RUBY_E#}を{RUBY_B#あや}殺{RUBY_E#}め{RUBY_B#おう}王{RUBY_E#}となる",
+        "fullDesc": "モーディスの残りHP{{3, percent}}%分のHPを消費する。敵単体にモーディスの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、隣接する敵にモーディスの最大HP<orangeStrong>{{2, percent}}%</orangeStrong>分の虚数属性ダメージを与える。<br>残りHPが足りない場合、戦闘スキルを発動した時、モーディスの残りHPが1になる。<br>このスキルは自動で発動する。",
+        "shortDesc": "HPを消費し、指定した敵単体に虚数属性ダメージを与え、隣接する敵に虚数属性ダメージを与える。<br>このスキルは<orangeStrong>自動で発動</orangeStrong>する。",
+        "tag": "拡散攻撃"
+      },
+      "2": {
+        "name": "{RUBY_B#かみ}神{RUBY_E#}を{RUBY_B#あや}殺{RUBY_E#}め{RUBY_B#かみ}神{RUBY_E#}となる",
+        "fullDesc": "チャージを{{3}}消費して、敵単体にモーディスの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、隣接する敵にモーディスの最大HP<orangeStrong>{{2, percent}}%</orangeStrong>分の虚数属性ダメージを与える。<br>このスキルは自動で発動し、発動している間はチャージを獲得できなくなる。",
+        "shortDesc": "<orangeStrong>チャージを消費し</orangeStrong>、指定した敵単体に大量の虚数属性ダメージを与え、隣接する敵に大量の虚数属性ダメージを与える。<br>このスキルは<orangeStrong>自動で発動</orangeStrong>する。",
+        "tag": "拡散攻撃"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#てん}天{RUBY_E#}を{RUBY_B#めっ}滅{RUBY_E#}す{RUBY_B#えんこつ}炎骨{RUBY_E#}の{RUBY_B#おうざ}王座{RUBY_E#}",
+        "fullDesc": "モーディスの最大HP<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>分のHPを回復し、天賦のチャージを{{5}}獲得する。指定した敵単体にモーディスの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、隣接する敵にモーディスの最大HP<orangeStrong>{{2, percent}}%</orangeStrong>分の虚数属性ダメージを与える。さらに、ターゲットおよび隣接する敵を挑発状態にする、{{4}}ターン持続。なお、次の「神を殺め神となる」は指定した敵単体を優先的に攻撃する。なお、この効果は最後のターゲットにのみ有効。",
+        "shortDesc": "<orangeStrong>HPを回復し</orangeStrong>、天賦のチャージを獲得する。指定した敵単体に大量の虚数属性ダメージを与え、隣接する敵にも虚数属性ダメージを与える。さらに、ターゲットおよび隣接する敵を<orangeStrong>挑発</orangeStrong>状態にする。",
+        "tag": "拡散攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#ち}血{RUBY_E#}を{RUBY_B#も}以{RUBY_E#}って{RUBY_B#ち}血{RUBY_E#}を{RUBY_B#せい}制{RUBY_E#}す",
+        "fullDesc": "HPを1%失うごとにチャージを1獲得する、最大200までチャージ可能。チャージが100になると、チャージを100消費して「血の報復」状態に入り、モーディスの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分のHPを回復し、行動順が100%早まる。「血の報復」状態の間、最大HPが現在の最大HPの{{5, percent}}%分アップし、防御力が0に固定される。自身のターンが回ってきた時、自動で「王を殺め王となる」を発動する。<br>「血の報復」状態の間、チャージが{{3}}に達した時、モーディスは追加ターンを1獲得し、「神を殺め神となる」を発動する。<br>「血の報復」状態の間、HPが0になる攻撃を受けた時、戦闘不能状態にならない代わりにチャージをクリアし、「血の報復」状態を解除、最大HPの{{4, percent}}%分を回復する。",
+        "shortDesc": "HPを失う時にチャージを獲得する。チャージが100になると<orangeStrong>「血の報復」</orangeStrong>状態に入り、HPを回復して行動順が早まる。「血の報復」状態の間、現在の最大HPがアップし、防御力が0に固定される。自身のターンが回ってきた時に「王を殺め王となる」を<orangeStrong>自動で発動</orangeStrong>する。<br>「血の報復」状態の間、チャージが150になると、モーディスが<orangeStrong>追加ターン</orangeStrong>を1獲得し、「神を殺め神となる」を<orangeStrong>自動で発動</orangeStrong>する。<br>モーディスがHPが0になる攻撃を受けた時、「血の報復」状態を解除する。",
+        "tag": "強化"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#さいせつ}砕折{RUBY_E#}の{RUBY_B#ほこ}矛{RUBY_E#}、{RUBY_B#しんぷく}臣服{RUBY_E#}の{RUBY_B#ろうごく}牢獄{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、一定範囲内の敵を引き寄せ、{{1}}秒間の目眩状態にする。目眩状態の敵は味方を攻撃しない。<br>目眩状態の敵を先制攻撃して戦闘に入った後、敵全体にモーディスの最大HP{{2, percent}}%分の虚数属性ダメージを与え、敵を挑発状態にする。{{4}}ターン継続。また、自身は天賦のチャージを{{5}}獲得する。",
+        "shortDesc": "一定範囲内の敵を引き寄せ、目眩状態にする。目眩状態の敵を攻撃して戦闘に入った後、敵全体に少量の虚数属性ダメージを与え、敵を挑発状態にする。自身は天賦によるチャージを獲得する。",
+        "tag": "妨害"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#つち}土{RUBY_E#}と{RUBY_B#みず}水{RUBY_E#}",
+        "fullDesc": "「血の報復」状態のモーディスがHPが0になる攻撃を受けても、「血の報復」状態を解除しない。この効果は一度の戦闘で{{1}}回まで発動できる。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#さんじゅう}三十{RUBY_E#}の{RUBY_B#せんしゅ}僭主{RUBY_E#}",
+        "fullDesc": "「血の報復」状態のモーディスは行動制限系デバフに抵抗できる。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ちぞ}血染{RUBY_E#}めの{RUBY_B#ころも}衣{RUBY_E#}",
+        "fullDesc": "戦闘開始時、モーディスの最大HPが{{1}}を超えた場合、超過したHP100につき、自身の会心率+{{3, percent(fixed: 1)}}%。モーディスが敵からの攻撃でダメージを受けた際に得られるチャージ割合+{{4, percent(fixed: 1)}}%、治癒を受けた時の回復量+{{5, percent(fixed: 2)}}%。超過したHPは最大で{{2}}までカウントされる。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#かんぷう}寒風{RUBY_E#}に{RUBY_B#みが}磨{RUBY_E#}かれし<br>{RUBY_B#ふくつ}不屈{RUBY_E#}の{RUBY_B#せきちゅう}脊柱{RUBY_E#}",
+      "desc": "「神を殺め神となる」のメインターゲットに対するダメージ倍率+{{1, percent}}%、また、「神を殺め神となる」はメインターゲットに対するダメージ倍率で敵全体に虚数属性ダメージを与えるようになる。"
+    },
+    "2": {
+      "name": "{RUBY_B#ふんそう}紛争{RUBY_E#}が{RUBY_B#みとど}見届{RUBY_E#}けし<br>{RUBY_B#しかばね}屍{RUBY_E#}の{RUBY_B#きょき}歔欷{RUBY_E#}",
+      "desc": "「血の報復」状態の間、モーディスが与えるダメージは敵の防御力を{{1, percent}}%無視する。治癒を受けた後、治癒量の{{2, percent}}%分がチャージに変換され、累計で{{3}}まで変換できる。任意のユニットが行動した後、変換できるチャージのカウントはリセットされる。"
+    },
+    "3": {
+      "name": "{RUBY_B#えいこう}栄光{RUBY_E#}を{RUBY_B#たた}称{RUBY_E#}えし<br>{RUBY_B#ばんごう}万劫{RUBY_E#}の{RUBY_B#きょうえん}饗宴{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#つのぶえ}角笛{RUBY_E#}で{RUBY_B#めざ}目覚{RUBY_E#}めし<br>{RUBY_B#ちんもく}沈黙{RUBY_E#}の{RUBY_B#しし}獅子{RUBY_E#}",
+      "desc": "「血の報復」状態の間、会心ダメージ+{{2, percent}}%。敵から攻撃を受けた後、自身の最大HP{{1, percent}}%分のHPを回復する。"
+    },
+    "5": {
+      "name": "{RUBY_B#へいか}兵戈{RUBY_E#}で{RUBY_B#きざ}刻{RUBY_E#}まれし<br>{RUBY_B#しんく}身躯{RUBY_E#}の{RUBY_B#れつえん}烈炎{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#おうじつ}往日{RUBY_E#}に{RUBY_B#とうはん}登攀{RUBY_E#}せし<br>{RUBY_B#こうけつ}紅血{RUBY_E#}の{RUBY_B#やま}山{RUBY_E#}",
+      "desc": "戦闘に入る時、「血の報復」状態に入り、「神を殺め神となる」に必要なチャージが{{1}}になる。"
+    }
+  }
+}

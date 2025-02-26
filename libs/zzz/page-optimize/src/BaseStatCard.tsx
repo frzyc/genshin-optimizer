@@ -62,6 +62,7 @@ export default function BaseStatCard({
       }}
     />
   )
+
   return (
     <CardThemed>
       <CardContent>

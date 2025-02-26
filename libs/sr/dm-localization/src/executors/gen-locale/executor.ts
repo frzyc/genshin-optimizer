@@ -25,6 +25,8 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
           'relics',
           'relicNames',
           'paths',
+          'servants',
+          'servantNames',
           'statKey',
           'teams',
           'ui',

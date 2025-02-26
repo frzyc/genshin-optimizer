@@ -57,32 +57,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Élan de la bataille",
-        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ténacité",
-        "fullDesc": "Chaque cumul du talent augmente la DÉF {M#du pionnier}{F#de la pionnière} de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Chaque cumul du talent augmente la DÉF {M#du pionnier}{F#de la pionnière} de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Soif d'en découdre",
-        "fullDesc": "Les DGT infligés à la cible principale augmentent de {{1, percent}}% lorsque le personnage utilise sa compétence ou son ultime « Frappe écrasante : Home run final ».",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Les DGT infligés à la cible principale augmentent de {{1, percent}}% lorsque le personnage utilise sa compétence ou son ultime « Frappe écrasante : Home run final »."
       }
     }
   },
