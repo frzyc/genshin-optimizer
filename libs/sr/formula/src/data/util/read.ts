@@ -39,7 +39,7 @@ export const fixedTags = {
 
   // Count
   path: paths,
-  misc
+  misc,
 }
 export type Tag = BaseTag<Src, Dst, Sheet> & {
   elementalType?: ElementalType

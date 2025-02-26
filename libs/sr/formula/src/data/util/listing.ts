@@ -81,9 +81,7 @@ export const sheets = [
 
 export const paths = [...allPathKeys] as const
 
-export const misc = [
-  'maxEnergy'
-] as const
+export const misc = ['maxEnergy'] as const
 
 export const members = [...allCharacterKeys] as const
 export type Stat = (typeof stats)[number]
