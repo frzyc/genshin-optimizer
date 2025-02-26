@@ -257,5 +257,6 @@
     "4": { "skillTypeAddLevel": {}, "params": [0.4] },
     "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
     "6": { "skillTypeAddLevel": {}, "params": [0.2, 4, 0.5, 5] }
-  }
+  },
+  "maxEnergy": 110
 }

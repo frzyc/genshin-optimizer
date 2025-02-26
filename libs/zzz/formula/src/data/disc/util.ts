@@ -20,12 +20,12 @@ export function registerDisc(
 }
 
 export function entriesForDisc(key: DiscSetKey): TagMapNodeEntries {
-  const relicCount = own.common.count.sheet(key)
+  const discCount = own.common.count.sheet(key)
   const dataGen = disc2pEffect[key]
   return [
     // Passive stats
     ...Object.entries(dataGen).map(([stat, value]) =>
-      getStatFromStatKey(ownBuff.initial, stat).add(cmpGE(relicCount, 2, value))
+      getStatFromStatKey(ownBuff.initial, stat).add(cmpGE(discCount, 2, value))
     ),
   ]
 }

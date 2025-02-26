@@ -244,17 +244,35 @@ describe('state', () => {
           expect(m2.get('c1')?.[inc ? 'inc' : 'dec']).toEqual(false)
           expect(m2.get('c2')?.[inc ? 'dec' : 'inc']).toEqual(false)
 
-          const n3 = prod(sum(r0, -7), sum(r1, -11), sum(r2, -8))
+          const n3 = prod(sum(r0, -4), r1, r2) // r0 can be neg/zero/pos
           const m3 = getMonotonicity(flip(n3, inc))
           expect(m3.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
-          expect(m3.get('c1')?.[inc ? 'dec' : 'inc']).toEqual(false)
-          expect(m3.get('c2')?.[inc ? 'dec' : 'inc']).toEqual(false)
+          expect(m3.get('c1')).toEqual({ inc: false, dec: false })
+          expect(m3.get('c2')).toEqual({ inc: false, dec: false })
 
-          const n4 = prod(sum(r0, -4), r1, r2) // r0 can be neg/zero/pos
+          const n4 = prod(r0, r1, r2) // pos * pos * pos
           const m4 = getMonotonicity(flip(n4, inc))
-          expect(m4.get('c0')?.[inc ? 'dec' : 'inc']).toEqual(false)
-          expect(m4.get('c1')).toEqual({ inc: false, dec: false })
-          expect(m4.get('c2')).toEqual({ inc: false, dec: false })
+          expect(m4.get('c0')).toEqual({ inc, dec: !inc })
+          expect(m4.get('c1')).toEqual({ inc, dec: !inc })
+          expect(m4.get('c2')).toEqual({ inc, dec: !inc })
+
+          const n5 = prod(sum(r0, -7), r1, r2) // neg * pos * pos
+          const m5 = getMonotonicity(flip(n5, inc))
+          expect(m5.get('c0')).toEqual({ inc, dec: !inc })
+          expect(m5.get('c1')).toEqual({ inc: !inc, dec: inc })
+          expect(m5.get('c2')).toEqual({ inc: !inc, dec: inc })
+
+          const n6 = prod(sum(r0, -7), sum(r1, -11), r2) // neg * neg * pos
+          const m6 = getMonotonicity(flip(n6, inc))
+          expect(m6.get('c0')).toEqual({ inc: !inc, dec: inc })
+          expect(m6.get('c1')).toEqual({ inc: !inc, dec: inc })
+          expect(m6.get('c2')).toEqual({ inc, dec: !inc })
+
+          const n7 = prod(sum(r0, -7), sum(r1, -11), sum(r2, -9)) // neg * neg * neg
+          const m7 = getMonotonicity(flip(n7, inc))
+          expect(m7.get('c0')).toEqual({ inc, dec: !inc })
+          expect(m7.get('c1')).toEqual({ inc, dec: !inc })
+          expect(m7.get('c2')).toEqual({ inc, dec: !inc })
         })
     })
     // r0 < r2 < r1
