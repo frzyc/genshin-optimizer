@@ -1,5 +1,5 @@
-import { cmpGE, read, sum } from '../node'
-import { combineConst, flatten } from './simplify'
+import { cmpEq, cmpGE, cmpNE, read, sum } from '../node'
+import { combineConst, deduplicate, flatten } from './simplify'
 
 describe('optimization', () => {
   const read0 = read({ q: '0' }, undefined)
@@ -26,5 +26,26 @@ describe('optimization', () => {
       cmpGE(2, 1, read0, read1),
       cmpGE(read1, 1, 3, 3),
     ])
+  })
+  test('deduplicate', () => {
+    const [s0, s1, m0, m1, t0, t0dup, t1, t2] = deduplicate([
+      // sum
+      sum(12, read0),
+      sum(read0, 12),
+      // match
+      cmpEq(read0, read1, 1, 0),
+      cmpNE(read1, read0, 0, 1),
+      // threshold
+      cmpGE(read0, read1, 0, 1),
+      cmpGE(read0, read1, 0, 1),
+      cmpGE(read1, read0, 0, 1),
+      cmpGE(read0, read1, 1, 0),
+    ])
+    expect(s0).toBe(s1)
+    expect(m0).toBe(m1)
+    expect(t0).toBe(t0dup)
+    expect(t0).not.toBe(t1)
+    expect(t0).not.toBe(t2)
+    expect(t1).not.toBe(t2)
   })
 })

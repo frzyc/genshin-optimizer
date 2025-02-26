@@ -70,10 +70,11 @@ export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
   })
 }
 
+/** Reuse nodes if they share the same computation with another node */
 export function deduplicate<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
   type Key = string | number | undefined | string[] | number[]
-  const nodeIds = new Map<AnyNode<I>, number>() // Id of the new node
-  const nodeByKey = new ArrayMap<Key, AnyNode<I>>() // Node given the key
+  const nodeIds = new Map<AnyNode<I>, number>()
+  const nodeByKey = new ArrayMap<Key, AnyNode<I>>()
   return mapBottomUp(n, (n) => {
     const { op } = n
     const xIds = n.x.map((n) => nodeIds.get(n)!)
@@ -92,13 +93,15 @@ export function deduplicate<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
         key = [op, ...xIds.sort()]
         break
       case 'thres':
-      case 'match':
       case 'custom':
       case 'sumfrac':
       case 'lookup':
       case 'subscript':
       case 'const':
         key = [op, n.ex, ...xIds, ...brIds]
+        break
+      case 'match':
+        key = [op, n.ex, ...xIds, ...brIds.sort()]
         break
       default:
         assertUnreachable(op)
