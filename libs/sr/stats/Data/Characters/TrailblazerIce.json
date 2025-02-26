@@ -277,5 +277,6 @@
       "params": []
     },
     "6": { "skillTypeAddLevel": {}, "params": [1] }
-  }
+  },
+  "maxEnergy": 160
 }
