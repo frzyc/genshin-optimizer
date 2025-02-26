@@ -82,27 +82,6 @@ export const conditionals = {
   Amber: {
     hpLowerThan50: { sheet: 'Amber', name: 'hpLowerThan50', type: 'bool' },
   },
-  AnInstantBeforeAGaze: {
-    boolConditional: {
-      sheet: 'AnInstantBeforeAGaze',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'AnInstantBeforeAGaze',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'AnInstantBeforeAGaze',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Argenti: {
     boolConditional: {
       sheet: 'Argenti',
@@ -207,66 +186,21 @@ export const conditionals = {
     },
   },
   BaptismOfPureThought: {
-    boolConditional: {
+    debuffCount: {
       sheet: 'BaptismOfPureThought',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BaptismOfPureThought',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BaptismOfPureThought',
-      name: 'numConditional',
+      name: 'debuffCount',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
+    ultUsed: { sheet: 'BaptismOfPureThought', name: 'ultUsed', type: 'bool' },
   },
   BeforeDawn: {
-    boolConditional: {
+    followUpTriggered: {
       sheet: 'BeforeDawn',
-      name: 'boolConditional',
+      name: 'followUpTriggered',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BeforeDawn',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BeforeDawn',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  BeforeTheTutorialMissionStarts: {
-    boolConditional: {
-      sheet: 'BeforeTheTutorialMissionStarts',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BeforeTheTutorialMissionStarts',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BeforeTheTutorialMissionStarts',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   BlackSwan: {
@@ -6720,37 +6654,16 @@ export const buffs = {
     },
   },
   AnInstantBeforeAGaze: {
-    cond_dmg_: {
+    ult_dmg_: {
       sheet: 'AnInstantBeforeAGaze',
-      name: 'cond_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'AnInstantBeforeAGaze',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'AnInstantBeforeAGaze',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'AnInstantBeforeAGaze',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'AnInstantBeforeAGaze',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'AnInstantBeforeAGaze',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
@@ -7737,107 +7650,76 @@ export const buffs = {
     },
   },
   BaptismOfPureThought: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'BaptismOfPureThought',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BaptismOfPureThought',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    crit_dmg_: {
       sheet: 'BaptismOfPureThought',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BaptismOfPureThought',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BaptismOfPureThought',
-      name: 'team_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'BaptismOfPureThought',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
+      },
+    },
+    followUp_defIgn_: {
+      sheet: 'BaptismOfPureThought',
+      name: 'followUp_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'defIgn_',
+        sheet: 'BaptismOfPureThought',
+        damageType1: 'followUp',
+        name: 'followUp_defIgn_',
       },
     },
   },
   BeforeDawn: {
-    cond_dmg_: {
+    followUp_dmg_: {
       sheet: 'BeforeDawn',
-      name: 'cond_dmg_',
+      name: 'followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'BeforeDawn',
-        name: 'cond_dmg_',
+        damageType1: 'followUp',
+        name: 'followUp_dmg_',
       },
     },
-    enemy_defRed_: {
+    skill_dmg_: {
       sheet: 'BeforeDawn',
-      name: 'enemy_defRed_',
+      name: 'skill_dmg_',
       tag: {
         et: 'display',
-        qt: 'common',
-        q: 'defRed_',
+        qt: 'premod',
+        q: 'dmg_',
         sheet: 'BeforeDawn',
-        name: 'enemy_defRed_',
+        damageType1: 'skill',
+        name: 'skill_dmg_',
       },
     },
-    team_dmg_: {
+    ult_dmg_: {
       sheet: 'BeforeDawn',
-      name: 'team_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'BeforeDawn',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  BeforeTheTutorialMissionStarts: {
-    cond_dmg_: {
-      sheet: 'BeforeTheTutorialMissionStarts',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BeforeTheTutorialMissionStarts',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'BeforeTheTutorialMissionStarts',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BeforeTheTutorialMissionStarts',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BeforeTheTutorialMissionStarts',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BeforeTheTutorialMissionStarts',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },

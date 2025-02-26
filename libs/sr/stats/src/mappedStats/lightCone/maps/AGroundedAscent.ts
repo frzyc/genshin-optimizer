@@ -9,9 +9,9 @@ let o = 0
 const dm = {
   energy: data_gen.superimpose.otherStats[o++],
   common_dmg_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++],
-  stacks: data_gen.superimpose.otherStats[o++],
-  step: data_gen.superimpose.otherStats[o++],
+  duration: data_gen.superimpose.otherStats[o++][1],
+  stacks: data_gen.superimpose.otherStats[o++][1],
+  step: data_gen.superimpose.otherStats[o++][1],
 } as const
 
 export default dm

@@ -9,7 +9,7 @@ let o = 1
 const dm = {
   passive_brEffect_: data_gen.superimpose.passiveStats.brEffect_,
   spd_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++],
+  duration: data_gen.superimpose.otherStats[o++][1],
 } as const
 
 export default dm
