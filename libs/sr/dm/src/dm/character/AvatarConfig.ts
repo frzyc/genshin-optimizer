@@ -80,8 +80,8 @@ const avatarConfigSrc = parse(
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarConfig_idmap_gen.json`,
   Object.fromEntries(
-    Object.entries(avatarConfigSrc).map(([avatarId, data]) => [
-      avatarId,
+    Object.values(avatarConfigSrc).map((data) => [
+      data.AvatarID,
       nameToKey(TextMapEN[data.AvatarName.Hash.toString()]),
     ])
   )

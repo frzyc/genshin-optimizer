@@ -5,6 +5,7 @@ export type GenderKey = (typeof allGenderKeys)[number]
 
 export const nonTrailblazerCharacterKeys = [
   'Acheron',
+  'Aglaea',
   'Argenti',
   'Arlan',
   'Asta',
@@ -18,8 +19,10 @@ export const nonTrailblazerCharacterKeys = [
   'DanHeng',
   'DanHengImbibitorLunae',
   'DrRatio',
+  'Feixiao',
   'Firefly',
   'FuXuan',
+  'Fugue',
   'Gallagher',
   'Gepard',
   'Guinaifen',
@@ -29,18 +32,23 @@ export const nonTrailblazerCharacterKeys = [
   'Hook',
   'Huohuo',
   'Jade',
+  'Jiaoqiu',
   'JingYuan',
   'Jingliu',
   'Kafka',
+  'Lingsha',
   'Luka',
   'Luocha',
   'Lynx',
   'March7th',
   'March7thTheHunt',
   'Misha',
+  'Moze',
+  'Mydei',
   'Natasha',
   'Pela',
   'Qingque',
+  'Rappa',
   'Robin',
   'RuanMei',
   'Sampo',
@@ -48,9 +56,12 @@ export const nonTrailblazerCharacterKeys = [
   'Serval',
   'SilverWolf',
   'Sparkle',
+  'Sunday',
   'Sushang',
+  'TheHerta',
   'Tingyun',
   'TopazAndNumby',
+  'Tribbie',
   'Welt',
   'Xueyi',
   'Yanqing',
@@ -78,6 +89,8 @@ export const allTrailblazerGenderedKeys = [
   'TrailblazerFireF',
   'TrailblazerImaginaryM',
   'TrailblazerImaginaryF',
+  'TrailblazerIceM',
+  'TrailblazerIceF',
 ] as const
 export type TrailblazerGenderedKey = (typeof allTrailblazerGenderedKeys)[number]
 
@@ -85,12 +98,14 @@ export const allTrailblazerKeys = [
   'TrailblazerPhysical',
   'TrailblazerFire',
   'TrailblazerImaginary',
+  'TrailblazerIce',
 ] as const
 export type TrailblazerKey = (typeof allTrailblazerKeys)[number]
 export const TrailblazerPathMap: Record<TrailblazerKey, PathKey> = {
   TrailblazerPhysical: 'Destruction',
   TrailblazerFire: 'Preservation',
   TrailblazerImaginary: 'Harmony',
+  TrailblazerIce: 'Remembrance',
 }
 
 export const allCharacterKeys = [
@@ -114,6 +129,9 @@ export function characterGenderedKeyToCharacterKey(
   return cgKey as NonTrailblazerCharacterKey
 }
 
+export const allServantKeys = ['Garmentmaker', 'Mem'] as const
+export type ServantKey = (typeof allServantKeys)[number]
+
 export const maxEidolonCount = 6 as const
 
 export const allLocationKeys = [...allCharacterKeys, ''] as const
@@ -135,6 +153,7 @@ export const allAbilityKeys = [
   'talent',
   'technique', // MAZE
   'overworld', // MAZE_NORMAL
+  'servant'
 ] as const
 export type AbilityKey = (typeof allAbilityKeys)[number]
 

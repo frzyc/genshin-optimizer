@@ -45,5 +45,6 @@ export const allPathKeys = [
   'Destruction',
   'Harmony',
   'TheHunt',
+  'Remembrance',
 ] as const
 export type PathKey = (typeof allPathKeys)[number]

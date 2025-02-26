@@ -17,6 +17,7 @@ export const allRelicCavernSetKeys = [
   'FiresmithOfLavaForging',
   'GeniusOfBrilliantStars',
   'GuardOfWutheringSnow',
+  'HeroOfTriumphantSong',
   'HunterOfGlacialForest',
   'IronCavalryAgainstTheScourge',
   'KnightOfPurityPalace',
@@ -25,9 +26,12 @@ export const allRelicCavernSetKeys = [
   'MusketeerOfWildWheat',
   'PasserbyOfWanderingCloud',
   'PioneerDiverOfDeadWaters',
+  'PoetOfMourningCollapse',
   'PrisonerInDeepConfinement',
+  'SacerdosRelivedOrdeal',
+  'ScholarLostInErudition',
   'TheAshblazingGrandDuke',
-  'TheWindSouringValorous',
+  'TheWindSoaringValorous',
   'ThiefOfShootingMeteor',
   'WastelanderOfBanditryDesert',
   'WatchmakerMasterOfDreamMachinations',
@@ -36,14 +40,17 @@ export type RelicCavernSetKey = (typeof allRelicCavernSetKeys)[number]
 
 export const allRelicPlanarSetKeys = [
   'BelobogOfTheArchitects',
+  'BoneCollectionsSereneDemesne',
   'BrokenKeel',
   'CelestialDifferentiator',
   'DuranDynastyOfRunningWolves',
   'FirmamentFrontlineGlamoth',
-  'ForgeOfTheKalpagniLantern',
   'FleetOfTheAgeless',
+  'ForgeOfTheKalpagniLantern',
+  'GiantTreeOfRaptBrooding',
   'InertSalsotto',
   'IzumoGenseiAndTakamaDivineRealm',
+  'LushakaTheSunkenSeas',
   'PanCosmicCommercialEnterprise',
   'PenaconyLandOfTheDreams',
   'RutilantArena',
@@ -51,6 +58,7 @@ export const allRelicPlanarSetKeys = [
   'SpaceSealingStation',
   'SprightlyVonwacq',
   'TaliaKingdomOfBanditry',
+  'TheWondrousBananAmusementPark',
 ] as const
 export type RelicPlanarSetKey = (typeof allRelicPlanarSetKeys)[number]
 
