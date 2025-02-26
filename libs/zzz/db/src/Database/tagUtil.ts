@@ -1,5 +1,5 @@
-import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
-import type { Tag } from '@genshin-optimizer/sr/formula'
+import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
+import type { Tag } from '@genshin-optimizer/zzz/formula'
 
 export function validateTag(tag: Tag) {
   // TODO: more tag validation

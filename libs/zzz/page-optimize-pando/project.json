@@ -1,0 +1,9 @@
+{
+  "name": "zzz-page-optimize-pando",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/page-optimize-pando/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-page-optimize-pandos --web",
+  "targets": {}
+}

@@ -16,7 +16,6 @@ export type DiscStats = {
 
 export interface BuildResult {
   value: number
-  // lightConeId: string
   discIds: Record<DiscSlotKey, string>
 }
 export function combineStats(...stats: Stats[]) {

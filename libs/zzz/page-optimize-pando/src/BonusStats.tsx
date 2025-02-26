@@ -1,18 +1,20 @@
 import {
   CardThemed,
+  ColorText,
   DropdownButton,
   NumberInputLazy,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
-import type { ElementalTypeKey, StatKey } from '@genshin-optimizer/sr/consts'
-import { allElementalTypeKeys } from '@genshin-optimizer/sr/consts'
+import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacterContext,
   useCharOpt,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/db-ui'
-import type { Member, Tag } from '@genshin-optimizer/sr/formula'
-import { tagFieldMap } from '@genshin-optimizer/sr/formula-ui'
+} from '@genshin-optimizer/zzz/db-ui'
+import type { Attribute, Member, Tag } from '@genshin-optimizer/zzz/formula'
+import { tagFieldMap } from '@genshin-optimizer/zzz/formula-ui'
+import { AttributeName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
   CardContent,
@@ -49,9 +51,9 @@ export function BonusStatsSection() {
               key={JSON.stringify(tag) + i}
               tag={tag}
               value={value}
-              setValue={(value) => setStat(tag, value)}
-              onDelete={() => setStat(tag, null)}
-              setTag={(tag) => setStat(tag, 0)}
+              setValue={(value) => setStat(tag, value, i)}
+              onDelete={() => setStat(tag, null, i)}
+              setTag={(tag) => setStat(tag, 0, i)}
             />
           ))}
           <InitialStatDropdown onSelect={newTarget} />
@@ -66,7 +68,7 @@ function newTag(q: Tag['q'], member: Member): Tag {
     dst: member,
     et: 'own',
     q,
-    qt: 'premod',
+    qt: 'combat',
     sheet: 'agg',
   }
 }
@@ -77,16 +79,10 @@ const initialStats: StatKey[] = [
   'def_',
   'atk',
   'atk_',
-  'spd',
-  'spd_',
   'dmg_',
   'enerRegen_',
-  'brEffect_',
   'crit_',
   'crit_dmg_',
-  'eff_',
-  'eff_res_',
-  'heal_',
 ] as const
 type InitialStats = (typeof initialStats)[number]
 function InitialStatDropdown({
@@ -102,7 +98,7 @@ function InitialStatDropdown({
     >
       {initialStats.map((statKey) => (
         <MenuItem key={statKey} onClick={() => onSelect(statKey)}>
-          {statKey}
+          <StatDisplay statKey={statKey} showPercent />
         </MenuItem>
       ))}
     </DropdownButton>
@@ -129,13 +125,15 @@ function BonusStatDisplay({
       <CardContent
         sx={{ display: 'flex', gap: 1, justifyContent: 'space-around' }}
       >
-        <SqBadge sx={{ m: 'auto' }}>{tag.q}</SqBadge>
+        <SqBadge sx={{ m: 'auto' }}>
+          <StatDisplay statKey={tag.q as any} />
+        </SqBadge>
         {tag.q === 'dmg_' && (
-          <ElementTypeDropdown
+          <AttributeDropdown
             tag={tag}
-            setElementalType={(ele) => {
-              const { elementalType, ...rest } = tag
-              setTag(ele ? { ...rest, elementalType: ele } : rest)
+            setAttribute={(ele) => {
+              const { attribute, ...rest } = tag
+              setTag(ele ? { ...rest, attribute: ele } : rest)
             }}
           />
         )}
@@ -167,19 +165,30 @@ function BonusStatDisplay({
   )
 }
 
-function ElementTypeDropdown({
+function AttributeDropdown({
   tag,
-  setElementalType,
+  setAttribute,
 }: {
   tag: Tag
-  setElementalType: (ele: ElementalTypeKey | null) => void
+  setAttribute: (ele: Attribute | null) => void
 }) {
   return (
-    <DropdownButton title={tag.elementalType ?? 'No Element'}>
-      <MenuItem onClick={() => setElementalType(null)}>No Element</MenuItem>
-      {allElementalTypeKeys.map((statKey) => (
-        <MenuItem key={statKey} onClick={() => setElementalType(statKey)}>
-          {statKey}
+    <DropdownButton
+      title={
+        tag.attribute ? (
+          <AttributeName attribute={tag.attribute} />
+        ) : (
+          'No Attribute'
+        )
+      }
+      color={tag.attribute}
+    >
+      <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
+      {allAttributeKeys.map((attr) => (
+        <MenuItem key={attr} onClick={() => setAttribute(attr)}>
+          <ColorText color={attr}>
+            <AttributeName attribute={attr} />
+          </ColorText>
         </MenuItem>
       ))}
     </DropdownButton>

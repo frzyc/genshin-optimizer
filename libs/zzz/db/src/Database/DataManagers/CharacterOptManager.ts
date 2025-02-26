@@ -1,10 +1,10 @@
 import { notEmpty, shallowCompareObj } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/sr/formula'
-import { getConditional, isMember } from '@genshin-optimizer/sr/formula'
+import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
+import type { Dst, Sheet, Src, Tag } from '@genshin-optimizer/zzz/formula'
+import { getConditional, isMember } from '@genshin-optimizer/zzz/formula'
+import type { ZzzDatabase } from '../..'
 import { DataManager } from '../DataManager'
-import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
 
 export type CharOpt = {
@@ -33,7 +33,7 @@ export class CharacterOptManager extends DataManager<
   CharOpt,
   CharOpt
 > {
-  constructor(database: SroDatabase) {
+  constructor(database: ZzzDatabase) {
     super(database, 'charOpts')
   }
   override validate(obj: unknown, key: CharacterKey): CharOpt | undefined {
@@ -45,6 +45,7 @@ export class CharacterOptManager extends DataManager<
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
+        if (!condValue) return undefined //remove conditionals when the value is 0
         if (!isMember(src) || !(dst === null || isMember(dst))) return undefined
         const cond = getConditional(sheet, condKey)
         if (!cond) return undefined
@@ -181,7 +182,7 @@ function defOptTarget(key: CharacterKey): CharOpt['target'] {
     src: key,
     et: 'own',
     qt: 'final',
-    q: 'spd',
+    q: 'atk',
     sheet: 'agg',
   }
 }

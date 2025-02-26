@@ -23,9 +23,7 @@ export interface ParentCommandStart {
   constraints: Constraints
   setFilter2: DiscSetKey[] // [] means rainbow
   setFilter4: DiscSetKey[] // [] means rainbow
-  // lightCones: ICachedLightCone[]
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
-  // detachedNodes: NumTagFree[]
   formulaKey: FormulaKey
   numWorkers: number
 }
