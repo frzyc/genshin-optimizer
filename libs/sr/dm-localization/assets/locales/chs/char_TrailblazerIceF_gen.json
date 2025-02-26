@@ -1,0 +1,101 @@
+{
+  "name": "开拓者 (冰 • 「记忆」)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "包在我身上！",
+        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的冰属性伤害。",
+        "shortDesc": "对敌方单体造成少量冰属性伤害。",
+        "tag": "单攻"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "就决定是你了！",
+        "fullDesc": "召唤忆灵迷迷。若迷迷已在场，为迷迷回复等同于迷迷生命上限<orangeStrong>{{1, percent}}%</orangeStrong>的生命值，并且使迷迷获得{{2, percent}}%充能。",
+        "shortDesc": "<orangeStrong>召唤忆灵</orangeStrong>迷迷。若迷迷已在场，为迷迷回复生命值，并使迷迷获得<orangeStrong>充能</orangeStrong>。",
+        "tag": "召唤"
+      },
+      "1": {
+        "name": "就决定是你了！",
+        "shortDesc": "<orangeStrong>召唤忆灵</orangeStrong>迷迷。若迷迷已在场，为迷迷回复生命值，并使迷迷获得<orangeStrong>充能</orangeStrong>。",
+        "tag": "回复"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "一起上吧，迷迷！",
+        "fullDesc": "召唤忆灵迷迷。使迷迷获得{{2, percent}}%充能，随后使迷迷对敌方全体造成等同于迷迷<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的冰属性伤害。",
+        "shortDesc": "<orangeStrong>召唤忆灵</orangeStrong>迷迷。使迷迷获得<orangeStrong>充能</orangeStrong>，随后使迷迷对敌方全体造成大量冰属性伤害。",
+        "tag": "群攻"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "无所不能的伙伴",
+        "fullDesc": "忆灵迷迷初始拥有{{1}}点速度和等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命上限。我方全体每累计恢复{{3}}点能量，迷迷都会获得1%充能。",
+        "shortDesc": "我方全体每<orangeStrong>恢复一定能量</orangeStrong>，迷迷都会获得<orangeStrong>充能</orangeStrong>。",
+        "tag": "强化"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "记忆如往日重现",
+        "fullDesc": "使用秘技后，制造1片持续{{1}}秒的特殊领域。处于特殊领域内的敌人陷入时停状态。时停状态下的敌人会停止所有行动。<br>与处于时停状态下的敌人进入战斗后，使敌方全体行动延后{{2, percent}}%，随后对敌方全体造成等同于开拓者{{3, percent}}%攻击力的冰属性伤害。<br>我方制造的领域效果最多存在1个。",
+        "shortDesc": "制造特殊领域。领域内敌人<orangeStrong>行动停止</orangeStrong>。与领域内敌人进入战斗后，使敌方全体行动延后，并对敌方全体造成少量冰属性伤害。",
+        "tag": "妨害"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻击",
+        "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "追念之权杖",
+        "fullDesc": "战斗开始时，开拓者的行动提前{{1, percent}}%。首次召唤迷迷时，使迷迷获得{{2, percent}}%充能。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "袖珍的事诗",
+        "fullDesc": "迷迷施放【坏人！麻烦！】时，立即获得{{1, percent}}%充能。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "磁石与长链",
+        "fullDesc": "持有【迷迷的声援】的我方目标能量上限大于{{1}}点时，每超过{{2}}点，通过【迷迷的声援】造成的真实伤害倍率额外提高{{3, percent(fixed: 1)}}%，最多提高{{4, percent}}%。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "现在的记叙者",
+      "desc": "持有【迷迷的声援】的我方目标暴击率提高{{1, percent}}%。当我方目标持有【迷迷的声援】时，【迷迷的声援】的效果对该目标的忆灵/忆师也生效，该效果不可叠加。"
+    },
+    "2": {
+      "name": "过往的拾遗者",
+      "desc": "除迷迷以外的我方忆灵行动时，开拓者恢复{{1}}点能量。该效果每回合最多触发{{2}}次，开拓者回合开始时重置可触发次数。"
+    },
+    "3": {
+      "name": "未来的咏唱者",
+      "desc": "战技等级+2，最多不超过15级；天赋等级+2，最多不超过15级；忆灵天赋等级+1，最多不超过10级。"
+    },
+    "4": {
+      "name": "缪斯的新舞伴",
+      "desc": "使能量上限为0的我方目标主动施放技能时，迷迷也能够获得{{1, percent}}%充能，并且该目标通过【迷迷的声援】造成的真实伤害倍率额外提高{{2, percent}}%。"
+    },
+    "5": {
+      "name": "诗篇的裁缝匠",
+      "desc": "终结技等级+2，最多不超过15级；普攻等级+1，最多不超过10级；忆灵技等级+1，最多不超过10级。"
+    },
+    "6": {
+      "name": "神启的转呈者",
+      "desc": "终结技的暴击率固定为100%。"
+    }
+  }
+}

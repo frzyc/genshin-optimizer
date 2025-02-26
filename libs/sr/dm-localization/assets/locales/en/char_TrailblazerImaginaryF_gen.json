@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Dance With the One",
-        "fullDesc": "When the number of enemy targets on the field is 5 (or more)/4/3/2/1, the Super Break DMG triggered by the Backup Dancer effect increases by {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When the number of enemy targets on the field is 5 (or more)/4/3/2/1, the Super Break DMG triggered by the Backup Dancer effect increases by {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Shuffle Along",
-        "fullDesc": "When using Skill, additionally increases the Toughness Reduction of the first instance of DMG by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using Skill, additionally increases the Toughness Reduction of the first instance of DMG by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Hat of the Theater",
-        "fullDesc": "After ally targets break weakness, additionally delays the action of the enemy target by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After ally targets break weakness, additionally delays the action of the enemy target by {{1, percent}}%."
       }
     }
   },

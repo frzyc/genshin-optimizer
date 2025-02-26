@@ -1,4 +1,5 @@
 export * from './useCharacter'
+export * from './useCharOpt'
 export * from './useDisc'
 export * from './useDiscDisplay'
 export * from './useDiscs'

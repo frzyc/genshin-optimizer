@@ -1,0 +1,96 @@
+{
+  "name": "モゼ",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#あんき}暗器{RUBY_E#}",
+        "fullDesc": "指定した敵単体にモゼの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。",
+        "tag": "単体攻撃"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#きゅうしゅう}急襲{RUBY_E#}する{RUBY_B#じんう}迅羽{RUBY_E#}",
+        "fullDesc": "指定した敵単体を「獲物」状態にし、モゼの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、チャージを{{2}}獲得する。<br>フィールド上に戦闘可能な他の味方キャラがいない時、モゼは戦闘スキルを発動できず、敵の「獲物」状態も解除される。",
+        "shortDesc": "<orangeStrong>敵単体を「獲物」状態にし</orangeStrong>、雷属性ダメージを与え、チャージを<orangeStrong>{{2}}</orangeStrong>獲得する。",
+        "tag": "単体攻撃"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#ひそ}潜{RUBY_E#}む{RUBY_B#やいば}刃{RUBY_E#}、{RUBY_B#するど}鋭{RUBY_E#}い{RUBY_B#かげ}影{RUBY_E#}",
+        "fullDesc": "指定した敵単体にモゼの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、天賦による追加攻撃を行う。この回の追加攻撃を行う前にターゲットが倒された場合、ランダムな敵単体に追加攻撃を行う。",
+        "shortDesc": "敵単体に雷属性ダメージを与え、天賦による<orangeStrong>追加攻撃</orangeStrong>を発動する。",
+        "tag": "単体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#つばさ}翼{RUBY_E#}を{RUBY_B#お}折{RUBY_E#}りて{RUBY_B#ほうぼう}鋒鋩{RUBY_E#}とす",
+        "fullDesc": "フィールド上に「獲物」状態の敵がいる時、モゼは一時離脱状態に入る。<br>味方が「獲物」状態の敵を攻撃した後、モゼはその敵に自身の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性付加ダメージを与え、チャージを1消費する。チャージを{{2}}消費するたびに、モゼは「獲物」状態の敵に対して追加攻撃を1回行い、自身の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の雷属性ダメージを与える。チャージが0になると敵の「獲物」状態が解除され、追加攻撃発動に必要なチャージ数がリセットされる。なお、天賦による追加攻撃はチャージを消費しない。",
+        "shortDesc": "フィールド上に「獲物」状態の敵がいる時、モゼは<orangeStrong>一時離脱</orangeStrong>状態に入る。<br>味方が「獲物」状態の敵を攻撃した後、モゼはその敵に雷属性<orangeStrong>付加ダメージ</orangeStrong>を与え、チャージを1消費する。チャージを<orangeStrong>{{2}}</orangeStrong>消費するたびに、モゼは「獲物」状態の敵に<orangeStrong>追加攻撃</orangeStrong>を行い、雷属性ダメージを与える。チャージが0になると、敵の「獲物」状態が解除される。",
+        "tag": "単体攻撃"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#み}見{RUBY_E#}えざる{RUBY_B#きょうい}脅威{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、{{1}}秒間継続するステルス状態に入る。ステルス状態の間は敵に発見されない。ステルス状態のモゼが敵を先制攻撃して戦闘に入った時、与ダメージ+{{2, percent}}%、{{3}}ターン継続。",
+        "shortDesc": "ステルス状態に入る。ステルス状態で敵を先制攻撃して戦闘に入った時、与ダメージがアップする。",
+        "tag": "強化"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#からすば}烏羽{RUBY_E#}の{RUBY_B#ころも}衣{RUBY_E#}",
+        "fullDesc": "天賦による追加攻撃を行った後、SPを{{1}}回復する。この効果は{{2}}ターン後に再度発動できる。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#しの}忍{RUBY_E#}び{RUBY_B#よ}寄{RUBY_E#}る{RUBY_B#あいくち}匕首{RUBY_E#}",
+        "fullDesc": "モゼの一時離脱状態が解除される時、行動順+{{1, percent}}%。各ウェーブ開始時、モゼの行動順+{{2, percent}}%。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "その{RUBY_B#かげ}影{RUBY_E#}、{RUBY_B#ほうけん}宝剣{RUBY_E#}と{RUBY_B#とも}共{RUBY_E#}に{RUBY_B#あ}在{RUBY_E#}り",
+        "fullDesc": "必殺技を発動してダメージを与える時、追加攻撃を行うと見なされる。「獲物」状態の敵が受ける追加攻撃ダメージ+{{1, percent}}%。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#りっし}立志{RUBY_E#}",
+      "desc": "戦闘に入った後、モゼはEPを{{2}}回復する。天賦による付加ダメージを1回発動するたびに、EPを{{1}}回復する。"
+    },
+    "2": {
+      "name": "{RUBY_B#ちょうばつ}懲罰{RUBY_E#}",
+      "desc": "味方が「獲物」状態の敵にダメージを与える時、会心ダメージ+{{1, percent}}%。"
+    },
+    "3": {
+      "name": "{RUBY_B#ついげき}追撃{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#おんみつ}隠密{RUBY_E#}",
+      "desc": "必殺技を発動する時、モゼの与ダメージ+{{1, percent(fixed: 1)}}%、{{2}}ターン継続。"
+    },
+    "5": {
+      "name": "{RUBY_B#ぎまん}欺瞞{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#ちゅうせい}忠誠{RUBY_E#}",
+      "desc": "天賦による追加攻撃のダメージ倍率+{{1, percent}}%。"
+    }
+  }
+}

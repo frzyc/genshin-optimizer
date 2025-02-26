@@ -1,0 +1,7 @@
+{
+  "name": "Brûlombre",
+  "passive": {
+    "name": "Embellissement",
+    "description": "Lorsque le porteur invoque un mnémesprit pour la première fois, il récupère {{1}} point de compétence et régénère <orangeStrong>{{2}}</orangeStrong> points d'énergie."
+  }
+}

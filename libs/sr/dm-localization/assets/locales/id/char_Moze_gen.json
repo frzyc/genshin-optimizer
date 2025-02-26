@@ -1,0 +1,96 @@
+{
+  "name": "Moze",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hurlthorn",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Moze pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Fleetwinged Raid",
+        "fullDesc": "Menjadikan 1 musuh yang ditargetkan sebagai \"Prey\" dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Moze pada musuh tersebut, serta memperoleh {{2}} poin Charge.<br>Saat tidak ada karakter lain yang siap bertempur di medan pertempuran, Moze tidak bisa menggunakan Skill dan status \"Prey\" musuh akan dihapus.",
+        "shortDesc": "<orangeStrong>Menjadikan 1 musuh sebagai \"Prey\"</orangeStrong> dan mengakibatkan Lightning DMG padanya, serta memperoleh <orangeStrong>{{2}}</orangeStrong> poin Charge.",
+        "tag": "Single Target"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dash In, Gash Out",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Moze pada 1 musuh yang ditargetkan, serta melancarkan Serangan Lanjutan dari Talent pada target tersebut. Jika target dikalahkan sebelum melancarkan Serangan Lanjutan kali ini, maka Moze akan melancarkan Serangan Lanjutan pada 1 musuh acak.",
+        "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh, serta melancarkan <orangeStrong>Serangan Lanjutan</orangeStrong> dari Talent.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cascading Featherblade",
+        "fullDesc": "Saat terdapat \"Prey\" di medan pertempuran, Moze akan memasuki status Departed.<br>Setelah rekan tim menyerang \"Prey\", Moze akan mengakibatkan 1 kali Lightning DMG Tambahan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK dirinya, serta mengonsumsi 1 poin Charge. Setiap mengonsumsi {{2}} poin Charge, Moze akan melancarkan 1 kali Serangan Lanjutan pada \"Prey\", mengakibatkan Lightning DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK dirinya. Saat poin Charge berjumlah 0, akan menghapus status \"Prey\" dari target, serta mereset perhitungan Poin Charge yang dibutuhkan untuk melancarkan Serangan Lanjutan. Serangan Lanjutan dari Talent tidak akan mengonsumsi Charge.",
+        "shortDesc": "Saat terdapat \"Prey\" di medan pertempuran, Moze akan memasuki status <orangeStrong>Departed</orangeStrong>.<br>Setelah rekan tim menyerang \"Prey\", Moze akan mengakibatkan Lightning <orangeStrong>DMG Tambahan</orangeStrong> dan mengonsumsi 1 poin Charge. Setiap mengonsumsi <orangeStrong>{{2}}</orangeStrong> poin Charge, Moze akan melancarkan <orangeStrong>Serangan Lanjutan</orangeStrong> pada \"Prey\", mengakibatkan Lightning DMG. Saat poin Charge berjumlah 0, akan menghapus status \"Prey\" dari target.",
+        "tag": "Single Target"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Bated Wings",
+        "fullDesc": "Setelah menggunakan Technique, Moze akan memasuki status Stealth selama {{1}} detik. Selama berstatus Stealth, Moze tidak akan terdeteksi musuh. Jika Moze menyerang musuh saat berstatus Stealth untuk memasuki pertempuran, maka DMG yang diakibatkan Moze akan meningkat {{2, percent}}%, berlangsung selama {{3}} giliran.",
+        "shortDesc": "Memasuki status Stealth. Saat menyerang musuh ketika berstatus Stealth untuk memasuki pertempuran, DMG yang diakibatkan Moze akan meningkat.",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nightfeather",
+        "fullDesc": "Setelah melancarkan Serangan Lanjutan dari Talent, akan memulihkan {{1}} Poin Skill. Efek ini dapat dipicu kembali setelah {{2}} giliran."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Daggerhold",
+        "fullDesc": "Saat Moze menghapus status Departed, aksinya akan didahulukan sebesar {{1, percent}}%. Saat setiap gelombang pertempuran dimulai, aksi Moze akan didahulukan sebesar {{2, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vengewise",
+        "fullDesc": "Saat melancarkan Ultimate untuk mengakibatkan DMG, akan dianggap sebagai Serangan Lanjutan. DMG Serangan Lanjutan yang diterima \"Prey\" meningkat {{1, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Oathkeeper",
+      "desc": "Setelah memasuki pertempuran, Moze akan memulihkan {{2}} poin Energy. Setiap memicu 1 kali DMG Tambahan dari Talent miliknya, Moze akan memulihkan {{1}} poin Energy."
+    },
+    "2": {
+      "name": "Wrathbearer",
+      "desc": "Saat rekan tim mengakibatkan DMG pada target musuh yang menjadi \"Prey\", CRIT DMG akan meningkat {{1, percent}}%."
+    },
+    "3": {
+      "name": "Deathchaser",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Heathprowler",
+      "desc": "Saat melancarkan Ultimate, DMG yang diakibatkan Moze meningkat {{1, percent(fixed: 1)}}%, berlangsung selama {{2}} giliran."
+    },
+    "5": {
+      "name": "Truthbender",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Faithbinder",
+      "desc": "DMG Multiplier Serangan Lanjutan dari Talent meningkat {{1, percent}}%."
+    }
+  }
+}

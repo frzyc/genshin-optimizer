@@ -1,0 +1,7 @@
+{
+  "name": "Salutation des génies",
+  "passive": {
+    "name": "Félicitations",
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Après que le porteur a utilisé son ultime, augmente également les DGT d'ATQ normale du porteur et de son mnémesprit de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours."
+  }
+}

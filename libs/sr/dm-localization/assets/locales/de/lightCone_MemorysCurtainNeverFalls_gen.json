@@ -1,0 +1,7 @@
+{
+  "name": "Der Vorhang der Erinnerung fällt nie",
+  "passive": {
+    "name": "Empfang",
+    "description": "Erhöht die GES des Trägers um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Nach dem Einsatz der Fertigkeit des Trägers wird der verursachte SCH aller Verbündeten für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht."
+  }
+}

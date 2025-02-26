@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Armadilha",
-        "fullDesc": "Estende a duração do Cisalhamento de Vento causado pelo Talento por {{1}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Estende a duração do Cisalhamento de Vento causado pelo Talento por {{1}} rodada(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Posição Defensiva",
-        "fullDesc": "Usar a Perícia Suprema regenera um adicional de {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Usar a Perícia Suprema regenera um adicional de {{1}} de Energia."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Incremento",
-        "fullDesc": "Inimigos com efeito de Cisalhamento de Vento causam {{1, percent}}% a menos de Dano a Sampo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Inimigos com efeito de Cisalhamento de Vento causam {{1, percent}}% a menos de Dano a Sampo."
       }
     }
   },

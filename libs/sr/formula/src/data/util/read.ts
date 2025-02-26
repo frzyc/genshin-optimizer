@@ -11,6 +11,7 @@ import type {
   DamageType,
   Dst,
   ElementalType,
+  Misc,
   Path,
   Src,
   TagMapNodeEntry,
@@ -19,6 +20,7 @@ import {
   damageTypes,
   elementalTypes,
   members,
+  misc,
   paths,
   sheets,
   type Sheet,
@@ -37,6 +39,7 @@ export const fixedTags = {
 
   // Count
   path: paths,
+  misc,
 }
 export type Tag = BaseTag<Src, Dst, Sheet> & {
   elementalType?: ElementalType
@@ -45,6 +48,7 @@ export type Tag = BaseTag<Src, Dst, Sheet> & {
 
   // Count
   path?: Path
+  misc?: Misc
 }
 
 export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
@@ -144,11 +148,22 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
       super.with('damageType2', 'elemental'),
     ]
   }
+  get servantSkill(): Read[] {
+    return [
+      super.with('damageType1', 'servantSkill'),
+      super.with('damageType2', 'servantSkill'),
+    ]
+  }
 
   // For `count` usage, use lighter footprint so it doesn't pollute autocomplete
   // Path
   withPath(path: Path): Read {
     return super.with('path', path)
+  }
+
+  // Misc
+  withMisc(misc: Misc): Read {
+    return super.with('misc', misc)
   }
 }
 

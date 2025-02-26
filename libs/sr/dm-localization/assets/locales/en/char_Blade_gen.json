@@ -34,7 +34,7 @@
     "talent": {
       "0": {
         "name": "Shuhu's Gift",
-        "fullDesc": "When Blade sustains DMG or consumes his HP, he gains 1 stack of Charge, stacking up to 5 times. A max of 1 Charge stack can be gained every time he is attacked.<br>When Charge stack reaches maximum, immediately launches a follow-up attack on all enemies, dealing Wind DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Blade's ATK plus <orangeStrong>{{4, percent}}%</orangeStrong> of his Max HP. At the same time, restores Blade's HP by {{3, percent}}% of his Max HP. After the follow-up attack, all Charges are consumed.",
+        "fullDesc": "When Blade sustains DMG or consumes his HP, he gains 1 stack of Charge, stacking up to 5 times. A max of 1 Charge stack can be gained every time he is attacked.<br>When Charge stack reaches maximum, immediately launches a Follow-up ATK on all enemies, dealing Wind DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Blade's ATK plus <orangeStrong>{{4, percent}}%</orangeStrong> of his Max HP. At the same time, restores Blade's HP by {{3, percent}}% of his Max HP. After the Follow-up ATK, all Charges are consumed.",
         "shortDesc": "When Blade's HP decreases, gains 1 stack of Charge. Upon reaching maximum Charge, launches Follow-up ATK, <orangeStrong>dealing Wind DMG to all enemies</orangeStrong>, restoring HP, and consuming all Charges.",
         "tag": "AoE"
       }
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Vita Infinita",
-        "fullDesc": "When Blade's current HP percentage is at 50% of Max HP or lower, Incoming Healing increases by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Blade's current HP percentage is at 50% of Max HP or lower, Incoming Healing increases by {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Neverending Deaths",
-        "fullDesc": "If Blade hits a Weakness Broken enemy after using \"Forest of Swords,\" he will restore HP equal to {{1, percent}}% of his Max HP plus {{2}}.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "If Blade hits a Weakness Broken enemy after using \"Forest of Swords,\" he will restore HP equal to {{1, percent}}% of his Max HP plus {{2}}."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Cyclone of Destruction",
-        "fullDesc": "Increases DMG dealt by the Talent's Follow-up ATK by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases DMG dealt by the Talent's Follow-up ATK by {{1, percent}}%."
       }
     }
   },

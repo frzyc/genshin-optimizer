@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Revival",
-        "fullDesc": "Saat mengalahkan target musuh, jika persentase HP saat ini kurang dari atau sama dengan {{1, percent}}%, maka Arlan akan segera memulihkan HP sebesar {{2, percent}}% Max HP dirinya.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat mengalahkan target musuh, jika persentase HP saat ini kurang dari atau sama dengan {{1, percent}}%, maka Arlan akan segera memulihkan HP sebesar {{2, percent}}% Max HP dirinya."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Endurance",
-        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan DoT Debuff.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan DoT Debuff."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Repel",
-        "fullDesc": "Saat memasuki pertempuran, jika persentase HP Arlan saat ini kurang dari atau sama dengan {{1, percent}}%, Arlan dapat menahan semua DMG selain DoT. Efek ini akan hilang setelah Arlan terkena serangan.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat memasuki pertempuran, jika persentase HP Arlan saat ini kurang dari atau sama dengan {{1, percent}}%, Arlan dapat menahan semua DMG selain DoT. Efek ini akan hilang setelah Arlan terkena serangan."
       }
     }
   },

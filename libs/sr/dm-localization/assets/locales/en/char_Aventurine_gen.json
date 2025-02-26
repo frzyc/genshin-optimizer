@@ -21,15 +21,15 @@
       "0": {
         "name": "Roulette Shark",
         "fullDesc": "Randomly gains 1 to {{1}} points of Blind Bet. Then, inflicts Unnerved on a single target enemy for {{4}} turn(s) and deals Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "Gains a random amount of Blind Bet points and inflicts Unnerved on a single enemy, dealing Imaginary DMG. When an ally hits an Unnerved enemy, <orangeStrong>the CRIT DMG dealt increases</orangeStrong>.",
+        "shortDesc": "Gains a random amount of \"Blind Bet\" points and inflicts \"Unnerved \"on one enemy, dealing Imaginary DMG. When an ally target hits an \"Unnerved\" enemy, <orangeStrong>the CRIT DMG dealt increases</orangeStrong>.",
         "tag": "Single Target"
       }
     },
     "talent": {
       "0": {
         "name": "Shot Loaded Right",
-        "fullDesc": "For any single ally with Fortified Wager, their Effect RES increases by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, and when they get attacked, Aventurine gains 1 point of Blind Bet. When Aventurine has Fortified Wager, he can resist Crowd Control debuffs. This effect can trigger again after {{5}} turn(s). Aventurine additionally gains {{1}} point(s) of Blind Bet after getting attacked. Upon reaching 7 points of Blind Bet, Aventurine consumes the 7 points to launch a {{2}}-hit follow-up attack, with each hit dealing Imaginary DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Aventurine's DEF to a single random enemy. Blind Bet is capped at 10 points.",
-        "shortDesc": "For any single ally with Fortified Wager, their Effect RES increases, and when they get attacked, Aventurine accumulates Blind Bet. When Aventurine has Fortified Wager, he can resist Crowd Control debuffs. Upon reaching 7 points of Blind Bet, Aventurine consumes the 7 points to launch a <orangeStrong>follow-up attack</orangeStrong> that deals minor Imaginary DMG to random single enemy targets, bouncing a total of 7 times.",
+        "fullDesc": "For any single ally with Fortified Wager, their Effect RES increases by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, and when they get attacked, Aventurine gains 1 point of Blind Bet. When Aventurine has Fortified Wager, he can resist Crowd Control debuffs. This effect can trigger again after {{5}} turn(s). Aventurine additionally gains {{1}} point(s) of Blind Bet after getting attacked. Upon reaching 7 points of Blind Bet, Aventurine consumes the 7 points to launch a {{2}}-hit Follow-up ATK, with each hit dealing Imaginary DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Aventurine's DEF to a single random enemy. Blind Bet is capped at 10 points.",
+        "shortDesc": "For any single ally with Fortified Wager, their Effect RES increases, and when they get attacked, Aventurine accumulates Blind Bet. When Aventurine has Fortified Wager, he can resist Crowd Control debuffs. Upon reaching 7 points of Blind Bet, Aventurine consumes the 7 points to launch a <orangeStrong>Follow-up ATK</orangeStrong> that deals minor Imaginary DMG to random single enemy targets, bouncing a total of 7 times.",
         "tag": "Bounce"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Leverage",
-        "fullDesc": "For every 100 of Aventurine's DEF that exceeds {{3}}, increases his own CRIT Rate by {{1, percent}}%, up to a maximum increase of {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "For every 100 of Aventurine's DEF that exceeds {{3}}, increases his own CRIT Rate by {{1, percent}}%, up to a maximum increase of {{2, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Hot Hand",
-        "fullDesc": "When battle starts, grants all allies a Fortified Wager shield, whose Shield Effect is equal to {{2, percent}}% of the one provided by the Skill, lasting for {{1}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When battle starts, grants all allies a Fortified Wager shield, whose Shield Effect is equal to {{2, percent}}% of the one provided by the Skill, lasting for {{1}} turn(s)."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
-        "fullDesc": "After a teammate with Fortified Wager launches Follow-up ATK, Aventurine accumulates 1 Blind Bet point. This effect can trigger up to {{3}} time(s). Its trigger count resets at the start of Aventurine's turn. After Aventurine launches his Talent's Follow-up ATK, provides all ally targets with a Fortified Wager that can block DMG equal to {{1, percent}}% of Aventurine's DEF plus {{2}}, and additionally grants a Fortified Wager that can block DMG equal to {{4, percent}}% of Aventurine's DEF plus {{5}} to the ally with the lowest Shield Effect, lasting for 3 turns.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After a teammate with Fortified Wager launches Follow-up ATK, Aventurine accumulates 1 Blind Bet point. This effect can trigger up to {{3}} time(s). Its trigger count resets at the start of Aventurine's turn. After Aventurine launches his Talent's Follow-up ATK, provides all ally targets with a Fortified Wager that can block DMG equal to {{1, percent}}% of Aventurine's DEF plus {{2}}, and additionally grants a Fortified Wager that can block DMG equal to {{4, percent}}% of Aventurine's DEF plus {{5}} to the ally with the lowest Shield Effect, lasting for 3 turns."
       }
     }
   },

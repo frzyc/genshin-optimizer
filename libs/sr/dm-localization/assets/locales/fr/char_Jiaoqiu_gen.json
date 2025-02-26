@@ -1,0 +1,96 @@
+{
+  "name": "Jiaoqiu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cœur de flamme",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jiaoqiu à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lancer d'épices",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jiaoqiu à une cible ennemie unique et des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Jiaoqiu aux cibles adjacentes, avec {{3, percent}}% de chances de base d'infliger 1 cumul de Charbons ardents à la cible principale.",
+        "shortDesc": "Inflige des DGT de feu à un ennemi unique et des DGT de feu mineurs aux cibles adjacentes, avec de fortes chances d'appliquer 1 cumul de Charbons ardents à la cible principale.",
+        "tag": "Propagation"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Arcanes pyrogramiques",
+        "fullDesc": "Ajuste le nombre de cumuls de Charbons ardents sur les cibles ennemies au nombre maximum de cumuls de Charbons ardents présent sur le champ de bataille. Puis, active une zone et inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jiaoqiu à tous les ennemis.<br>Les cibles ennemies situées dans la zone subissent <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de DGT d'ultime supplémentaires et ont <orangeStrong>{{2, percent}}%</orangeStrong> de chances de base de se voir appliqué 1 cumul de Charbons ardents à chaque action. Cet effet peut se déclencher jusqu'à {{5}} fois pendant la durée de la zone, chaque cible ennemie ne pouvant être affectée qu'une fois par tour. Le nombre de déclenchements se réinitialise à chaque fois que Jiaoqiu utilise son ultime.<br>La zone dure {{4}} tours et sa durée diminue de 1 tour au début de chaque tour de Jiaoqiu. Si Jiaoqiu est à terre, la zone est également dissipée.",
+        "shortDesc": "Ajuste le nombre de cumuls de Charbons ardents sur les cibles ennemies au nombre maximum de cumuls de Charbons ardents présent sur le champ de bataille. Puis, active une zone et inflige des DGT de feu à tous les ennemis. Les cibles ennemies à l'intérieur de la zone <orangeStrong>subissent plus de DGT d'ultime</orangeStrong> et ont une chance de se voir appliqué 1 cumul de Charbons ardents à chaque action.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Force et raffinement",
+        "fullDesc": "Chaque fois que Jiaoqiu touche un ennemi avec son ATQ normale, sa compétence ou son ultime, il a {{1, percent}}% de chances de base de lui appliquer 1 cumul de Charbons ardents. À 1 cumul, les DGT subis par l'ennemi augmentent de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, puis chaque cumul supplémentaire augmente les DGT subis de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Charbons ardents peut se cumuler jusqu'à {{4}} fois et dure {{5}} tours.<br>Lorsqu'une cible ennemie est dans l'état Charbons ardents, elle est également considérée en état de Brûlure et elle subit des dégâts de feu sur la durée équivalents à <orangeStrong>{{6, percent}}%</orangeStrong> de l'ATQ de Jiaoqiu au début de chaque tour.",
+        "shortDesc": "Lors d'une attaque avec l'ATQ normale, la compétence ou l'ultime, il y a de fortes chances d'infliger 1 cumul de Charbons ardents à la cible, ce qui augmente les DGT qu'elle subit et la considère comme subissant l'état Brûlure.",
+        "tag": "Incapacitation"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Réprimande ardente",
+        "fullDesc": "Crée une dimension spéciale qui dure {{2}} secondes après avoir utilisé la technique. Inflige des DGT de feu équivalents à {{1, percent}}% de l'ATQ de Jiaoqiu à tous les ennemis, avec {{3, percent}}% de chances de base d'appliquer 1 cumul de Charbons ardents après être entré en combat avec des ennemis dans cette dimension spéciale. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale. Inflige des DGT de feu mineurs à tous les ennemis et a de fortes chances d'appliquer 1 cumul de Charbons ardents après être entré en combat avec des ennemis dans cette dimension.",
+        "tag": "Incapacitation"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Purification par les flammes",
+        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Feu de la fournaise",
+        "fullDesc": "Pour chaque tranche de {{2, percent}}% de chances d'appliquer des effets de Jiaoqiu qui dépasse {{1, percent}}%, augmente l'ATQ de {{3, percent}}%, jusqu'à un maximum de {{4, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Torréfaction aromatique",
+        "fullDesc": "Tant que la zone est active, les ennemis qui entrent en combat subissent Charbons ardents. Le nombre de cumuls appliqué correspond au nombre maximum de cumuls atteint par une unité pendant la période d'activation de la zone, avec un minimum de {{1}} cumul."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Transfert des saveurs",
+      "desc": "Les alliés infligent {{1, percent}}% de DGT supplémentaires aux cibles ennemies affectées par Charbons ardents. Lorsque Charbons ardents est appliqué à une cible ennemie via l'effet du talent, le nombre de cumuls de Charbons ardents appliqué cette fois augmente de {{2}}."
+    },
+    "2": {
+      "name": "Goût de la souffrance",
+      "desc": "Lorsqu'une cible ennemie est affectée par Charbons ardents, le multiplicateur des dégâts de feu sur la durée infligés par Charbons ardents augmente de {{1, percent}}%."
+    },
+    "3": {
+      "name": "Art de l'équilibre",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Paix intérieure et vigueur extérieure",
+      "desc": "L'ATQ des cibles ennemies est réduite de {{1, percent}}% lorsque la zone est active."
+    },
+    "5": {
+      "name": "Équilibre des contraires",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Feu des neufs transformations",
+      "desc": "Lorsqu'une cible ennemie est éliminée, ses cumuls de Charbons ardents sont transférés à l'ennemi ayant le moins de cumuls de Charbons ardents sur le champ de bataille. La limite de cumuls de Charbons ardents passe à {{2}}. Chaque cumul de Charbons ardents réduit toutes les RÉS de type de la cible de {{3, percent}}%."
+    }
+  }
+}

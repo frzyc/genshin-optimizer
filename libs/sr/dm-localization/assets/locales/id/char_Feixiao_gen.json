@@ -1,0 +1,113 @@
+{
+  "name": "Feixiao",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Boltsunder",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Feixiao pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Waraxe",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Feixiao pada 1 musuh yang ditargetkan. Setelah itu, akan segera melancarkan 1 kali Serangan Lanjutan dari Talent pada target tersebut.",
+        "shortDesc": "Mengakibatkan Wind DMG pada 1 musuh, lalu melancarkan 1 kali Serangan Lanjutan dari Talent.",
+        "tag": "Single Target"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Terrasplit",
+        "fullDesc": "Mengakibatkan Wind DMG maksimal hingga sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Feixiao pada 1 musuh yang ditargetkan, yang dapat mengurangi Toughness target tanpa memedulikan tipe Weakness-nya. Saat target tidak berstatus Weakness Break, maka Weakness Break Efficiency Feixiao akan meningkat {{2, percent}}%.<br>Saat serangan berlangsung, Feixiao akan terlebih dulu melancarkan \"Boltsunder Blitz\" atau \"Waraxe Skyward\" pada target tersebut, total {{3}} kali. Lalu terakhir, akan mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Feixiao pada target tersebut.",
+        "shortDesc": "Selama Ultimate berlangsung, dapat mengurangi Toughness musuh <orangeStrong>tanpa memedulikan tipe Weakness-nya</orangeStrong>. Jika target tidak berstatus Weakness Break, maka <orangeStrong>Weakness Break Efficiency Feixiao akan meningkat</orangeStrong>.<br>Melancarkan <orangeStrong>{{3}}</orangeStrong> kali \"Boltsunder Blitz\" atau \"Waraxe Skyward\" pada 1 musuh, lalu terakhir mengakibatkan Wind DMG.",
+        "tag": "Single Target"
+      },
+      "1": {
+        "name": "Boltsunder Blitz",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Feixiao pada target yang dipilih. Jika target berstatus Weakness Break, DMG Multiplier meningkat <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh, DMG Multiplier akan meningkat pada target <orangeStrong>berstatus Weakness Break</orangeStrong>.",
+        "tag": "Single Target"
+      },
+      "2": {
+        "name": "Waraxe Skyward",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Feixiao pada target yang dipilih. Jika target tidak berstatus Weakness Break, DMG Multiplier meningkat <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh, DMG Multiplier akan meningkat pada target <orangeStrong>yang tidak berstatus Weakness Break</orangeStrong>.",
+        "tag": "Single Target"
+      },
+      "3": {
+        "name": "Terrasplit",
+        "shortDesc": "Selama Ultimate berlangsung, dapat mengurangi Toughness musuh <orangeStrong>tanpa memedulikan tipe Weakness-nya</orangeStrong>. Jika target tidak berstatus Weakness Break, maka <orangeStrong>Weakness Break Efficiency Feixiao akan meningkat</orangeStrong>.<br>Melancarkan <orangeStrong>{{3}}</orangeStrong> kali \"Boltsunder Blitz\" atau \"Waraxe Skyward\" pada 1 musuh, lalu terakhir mengakibatkan Wind DMG.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Thunderhunt",
+        "fullDesc": "Ultimate dapat diaktifkan saat \"Flying Aureus\" mencapai {{3}} poin, maksimal dapat mengakumulasi hingga {{4}} poin. Setiap kali rekan tim melancarkan {{2}} kali serangan, Feixiao akan memperoleh 1 poin \"Flying Aureus\" (serangan dari Ultimate Feixiao tidak dihitung).<br>Saat setelah rekan tim Feixiao melancarkan serangan pada target musuh, Feixiao akan segera melancarkan Serangan Lanjutan pada target utama, yang mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Feixiao. Jika tidak ada target utama yang dapat diserang, maka akan menyerang 1 musuh secara acak. Efek ini maksimal dapat terpicu 1 kali di setiap giliran, dan jumlah pemicuan akan direset saat giliran Feixiao dimulai. Saat melancarkan serangan ini, DMG yang diakibatkan diri sendiri akan meningkat <orangeStrong>{{5, percent}}%</orangeStrong>, berlangsung selama {{6}} giliran.",
+        "shortDesc": "Ultimate dapat diaktifkan saat \"Flying Aureus\" mencapai <orangeStrong>{{3}}</orangeStrong> poin, maksimal dapat mengakumulasi hingga <orangeStrong>{{4}}</orangeStrong> poin. Setiap kali rekan tim melancarkan <orangeStrong>{{2}}</orangeStrong> kali serangan, Feixiao akan memperoleh <orangeStrong>\"Flying Aureus\"</orangeStrong>.<br>Setelah rekan tim Feixiao melancarkan serangan, Feixiao akan melancarkan <orangeStrong>Serangan Lanjutan</orangeStrong> pada target utama, mengakibatkan Wind DMG. Efek ini maksimal dapat terpicu 1 kali di setiap giliran. Saat melancarkan serangan ini, <orangeStrong>DMG yang diakibatkan diri sendiri akan meningkat</orangeStrong>.",
+        "tag": "Single Target"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Stormborn",
+        "fullDesc": "Setelah menggunakan Technique, akan memasuki status \"Onrush\" selama {{1}} detik. Saat berstatus \"Onrush\", Feixiao akan menarik musuh dalam jangkauan tertentu dan meningkatkan {{2, percent}}% Movement SPD dirinya, serta memperoleh {{4}} poin \"Flying Aureus\" setelah memasuki pertempuran.<br>Menyerang secara aktif saat berstatus \"Onrush\" akan membuat semua musuh yang tertarik memasuki pertempuran. Setelah memasuki pertempuran, saat setiap gelombang pertempuran dimulai, akan mengakibatkan Wind DMG sebesar {{3, percent}}% ATK Feixiao pada seluruh musuh, dan DMG ini dijamin akan mengakibatkan CRIT Hit. Jika menarik lebih dari 1 musuh, Multiplier dari DMG tersebut akan meningkat {{5, percent}}% untuk setiap ekstra 1 musuh yang tertarik, maksimal meningkat hingga {{6, percent}}%.",
+        "shortDesc": "Memasuki status \"Onrush\", terus-menerus menarik musuh dan meningkatkan Movement SPD diri sendiri, serta akan memperoleh \"Flying Aureus\" setelah memasuki pertempuran.<br>Saat berstatus \"Onrush\", dapat secara aktif menyerang seluruh musuh yang tertarik, serta mengakibatkan Wind DMG yang dijamin akan CRIT Hit pada seluruh musuh saat setiap gelombang pertempuran dimulai. <orangeStrong>Semakin banyak musuh yang tertarik, maka DMG Multiplier akan semakin tinggi</orangeStrong>.",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Heavenpath",
+        "fullDesc": "Saat pertempuran dimulai, memperoleh {{1}} poin \"Flying Aureus\".<br>Saat giliran dimulai, jika pada giliran sebelumnya tidak melancarkan Serangan Lanjutan dari Talent, maka hal tersebut akan dihitung sebagai 1 kali serangan yang diperlukan untuk memperoleh \"Flying Aureus\"."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Formshift",
+        "fullDesc": "Saat melancarkan Ultimate untuk mengakibatkan DMG pada target musuh, akan dianggap melancarkan Serangan Lanjutan. CRIT DMG dari Serangan Lanjutan meningkat {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Boltcatch",
+        "fullDesc": "Saat melancarkan Skill, meningkatkan {{1, percent}}% ATK selama {{2}} giliran."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Skyward I Quell",
+      "desc": "Setelah melancarkan \"Boltsunder Blitz\" atau \"Waraxe Skyward\", Ultimate DMG yang diakibatkan Feixiao akan meningkat ekstra, peningkatannya adalah sebesar {{1, percent}}% dari DMG aslinya. Efek ini maksimal dapat ditumpuk hingga {{2}} lapis, dan berlangsung hingga aksi Ultimate berakhir."
+    },
+    "2": {
+      "name": "Moonward I Wish",
+      "desc": "Pada efek Talent, setiap kali rekan tim melancarkan 1 kali Serangan Lanjutan, akan membuat Feixiao memperoleh 1 poin \"Flying Aureus\". Efek ini maksimal dapat dipicu {{1}} kali setiap giliran."
+    },
+    "3": {
+      "name": "Starward I Bode",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Stormward I Hear",
+      "desc": "Pengurangan Toughness dari Serangan Lanjutan Talent meningkat {{1, percent}}%, dan saat melancarkannya, SPD diri sendiri akan meningkat {{2, percent}}% selama {{3}} giliran."
+    },
+    "5": {
+      "name": "Heavenward I Leap",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Homeward I Near",
+      "desc": "RES PEN Seluruh Tipe dari Ultimate DMG yang diakibatkan Feixiao meningkat {{1, percent}}%. DMG Serangan Lanjutan yang diakibatkan Talent akan dianggap sebagai Ultimate DMG, dan DMG Multiplier-nya meningkat {{2, percent}}%."
+    }
+  }
+}

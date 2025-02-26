@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#てんさい}天才{RUBY_E#}たちの「{RUBY_B#あいさつ}挨拶{RUBY_E#}」",
+  "passive": {
+    "name": "おめでとう",
+    "description": "装備キャラの攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが必殺技を発動した後、装備キャラおよびその記憶の精霊の通常攻撃ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、{{3}}ターン継続。"
+  }
+}

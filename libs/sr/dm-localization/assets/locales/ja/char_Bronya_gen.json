@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "ベロブルグ{RUBY_B#こうしんきょく}行進曲{RUBY_E#}",
-        "fullDesc": "味方全体の攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、会心ダメージがブローニャの会心ダメージの<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>アップする、{{4}}ターン継続。",
+        "fullDesc": "味方全体の攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、会心ダメージがブローニャの会心ダメージ<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>分+<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>アップする、{{4}}ターン継続。",
         "shortDesc": "味方全体の<orangeStrong>攻撃力</orangeStrong>と<orangeStrong>会心ダメージをアップ</orangeStrong>する。",
         "tag": "サポート"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#ごうれい}号令{RUBY_E#}",
-        "fullDesc": "通常攻撃の会心率が100%まで上がる。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "通常攻撃の会心率が100%まで上がる。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#じんち}陣地{RUBY_E#}",
-        "fullDesc": "戦闘開始時、味方全体の防御力+{{2, percent}}%、{{1}}ターン継続。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "戦闘開始時、味方全体の防御力+{{2, percent}}%、{{1}}ターン継続。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ぐんぜい}軍勢{RUBY_E#}",
-        "fullDesc": "ブローニャがフィールド上にいる時、味方全体の与ダメージ+{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "ブローニャがフィールド上にいる時、味方全体の与ダメージ+{{1, percent}}%。"
       }
     }
   },

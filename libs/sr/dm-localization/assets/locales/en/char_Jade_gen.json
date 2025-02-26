@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Vow of the Deep",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to all enemies. At the same time, Jade enhances her Talent's follow-up attack, increasing its DMG multiplier by <orangeStrong>{{1, percent}}%</orangeStrong>. This enhancement can take effect {{2}} time(s).",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to all enemies. At the same time, Jade enhances her Talent's Follow-up ATK, increasing its DMG multiplier by <orangeStrong>{{1, percent}}%</orangeStrong>. This enhancement can take effect {{2}} time(s).",
         "shortDesc": "Deals Quantum DMG to all enemy units, and this unit's Talent's <orangeStrong>Follow-up ATK</orangeStrong> DMG multiplier increases.",
         "tag": "AoE"
       }
@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Fang of Flare Flaying",
-        "fullDesc": "After Jade or the Debt Collector unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching {{3}} points of Charge, consumes the {{3}} points to launch 1 instance of follow-up attack, dealing Quantum DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Jade's ATK to all enemies. This follow-up attack does not generate Charge.<br>When launching her Talent's follow-up attack, Jade immediately gains {{4}} stack(s) of Pawned Asset, with each stack increasing CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, stacking up to {{2}} times.",
-        "shortDesc": "After Jade or the <orangeStrong>Debt Collector</orangeStrong> unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching <orangeStrong>{{3}}</orangeStrong> points of Charge, consumes the <orangeStrong>{{3}}</orangeStrong> points to launch 1 instance of <orangeStrong>follow-up attack</orangeStrong>, dealing Quantum DMG to all enemies.<br>When Jade launches the <orangeStrong>follow-up attack</orangeStrong>, gains Pawned Asset and increases CRIT DMG, stacking up to <orangeStrong>{{2}}</orangeStrong> times.",
+        "fullDesc": "After Jade or the Debt Collector unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching {{3}} points of Charge, consumes the {{3}} points to launch 1 instance of Follow-up ATK, dealing Quantum DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Jade's ATK to all enemies. This Follow-up ATK does not generate Charge.<br>When launching her Talent's Follow-up ATK, Jade immediately gains {{4}} stack(s) of Pawned Asset, with each stack increasing CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, stacking up to {{2}} times.",
+        "shortDesc": "After Jade or the <orangeStrong>Debt Collector</orangeStrong> unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching <orangeStrong>{{3}}</orangeStrong> points of Charge, consumes the <orangeStrong>{{3}}</orangeStrong> points to launch 1 instance of <orangeStrong>Follow-up ATK</orangeStrong>, dealing Quantum DMG to all enemies.<br>When Jade launches the <orangeStrong>Follow-up ATK</orangeStrong>, gains Pawned Asset and increases CRIT DMG, stacking up to <orangeStrong>{{2}}</orangeStrong> times.",
         "tag": "AoE"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Reverse Repo",
-        "fullDesc": "When an enemy target enters combat, Jade gains {{2}} stack(s) of Pawned Asset. When the Debt Collector character's turn starts, additionally gains {{1}} stack(s) of Pawned Asset.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When an enemy target enters combat, Jade gains {{2}} stack(s) of Pawned Asset. When the Debt Collector character's turn starts, additionally gains {{1}} stack(s) of Pawned Asset."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Collateral Ticket",
-        "fullDesc": "When the battle starts, action advances Jade by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When the battle starts, action advances Jade by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Asset Forfeiture",
-        "fullDesc": "Each Pawned Asset stack from the Talent additionally increases Jade's ATK by {{1, percent(fixed: 1)}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Each Pawned Asset stack from the Talent additionally increases Jade's ATK by {{1, percent(fixed: 1)}}%."
       }
     }
   },

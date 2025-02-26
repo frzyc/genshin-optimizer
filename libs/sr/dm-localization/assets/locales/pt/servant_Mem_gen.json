@@ -1,0 +1,39 @@
+{
+  "name": "Mem",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Malvadões! Treta!",
+        "fullDesc": "Causa {{2}} instância(s) de Dano, com cada instância causando Dano de Gelo igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Mem a um inimigo aleatório. Por fim, causa Dano de Gelo igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Mem a todos os inimigos.",
+        "shortDesc": "Causa Dano de Gelo leve que Ricocheteia por um total de <orangeStrong>{{2}}</orangeStrong> vez(es). Causa Dano de Gelo leve a todos os inimigos no fim.",
+        "tag": "Área"
+      },
+      "1": {
+        "name": "Deixa! Eu Ajudar Você!",
+        "fullDesc": "Avança Adiante a ação de um aliado designado em {{3, percent}}% e concede a ele \"Suporte da Mem\", com duração de {{2}} rodada(s).<br>A cada 1 instância de Dano causado pelo alvo que possui \"Suporte da Mem\", causa adicionalmente 1 instância de Dano Verdadeiro igual a <orangeStrong>{{1, percent}}%</orangeStrong> do Dano original.<br>Ao usar esta habilidade nesta unidade, o efeito de Avançar Adiante da ação não pode ser ativado.",
+        "shortDesc": "<orangeStrong>Avança Adiante</orangeStrong> a ação de um aliado e concede \"Suporte da Mem\": causa adicionalmente <orangeStrong>Dano Verdadeiro</orangeStrong> depois de causar Dano.",
+        "tag": "Suporte"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Amigos! Unidos!",
+        "fullDesc": "Aumenta o Dano CRIT de todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Mem + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.<br>Se a Carga ainda não tiver chegado a 100%, Mem usa \"Malvadões! Treta!\" automaticamente durante a ação. Quando a Carga chega a 100%, Mem age imediatamente e pode selecionar uma unidade-aliada para utilizar \"Deixa Eu! Ajudar Você!\" na próxima ação.",
+        "shortDesc": "Aumenta o Dano CRIT de todos os aliados.<br>Ao agir, ataca automaticamente. Se a Carga chegar a 100%, age imediatamente e pode usar uma nova habilidade: <orangeStrong>Avança Adiante</orangeStrong> a ação de um aliado e causa <orangeStrong>Dano Verdadeiro</orangeStrong>.",
+        "tag": "Suporte"
+      },
+      "1": {
+        "name": "Vai, Mem, Vai!",
+        "fullDesc": "Quando Mem é invocada imediatamente ganha {{1, percent}}% de Carga.",
+        "shortDesc": "Ao ser invocada, ganha Carga imediatamente.",
+        "tag": "Aprimoramento"
+      },
+      "2": {
+        "name": "Sem... Arrependimentos",
+        "fullDesc": "Quando Mem desaparece, a ação {F#da Desbravadora}{M#do Desbravador} é Avançada Adiante em {{1, percent}}%.",
+        "shortDesc": "Ao desaparecer, Avança Adiante a ação {F#da Desbravadora}{M#do Desbravador}.",
+        "tag": "Aprimoramento"
+      }
+    }
+  }
+}

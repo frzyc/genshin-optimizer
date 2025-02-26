@@ -1,0 +1,7 @@
+{
+  "name": "Time Woven Into Gold",
+  "passive": {
+    "name": "Establishment",
+    "description": "Increases the wearer's base SPD by <orangeStrong>{{1}}</orangeStrong>. After the wearer and the wearer's memosprite attacks, the wearer gains 1 stack of \"Brocade.\" Each stack of \"Brocade\" increases the wearer's and their memosprite's CRIT DMG by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, stacking up to {{2}} time(s). When reaching maximum stacks, each \"Brocade\" stack additionally increases Basic ATK DMG dealt by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>."
+  }
+}

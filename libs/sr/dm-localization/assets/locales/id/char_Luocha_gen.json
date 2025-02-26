@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Cleansing Revival",
-        "fullDesc": "Saat memicu efek Skill, menghilangkan {{1}} efek Debuff dari 1 rekan tim yang ditargetkan.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat memicu efek Skill, menghilangkan {{1}} efek Debuff dari 1 rekan tim yang ditargetkan."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sanctified",
-        "fullDesc": "Setelah target musuh mana pun dalam area pembatas terkena serangan rekan tim, seluruh rekan tim (selain penyerang) akan memulihkan HP sebesar {{1, percent(fixed: 1)}}% ATK Luocha +{{2}}.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Setelah target musuh mana pun dalam area pembatas terkena serangan rekan tim, seluruh rekan tim (selain penyerang) akan memulihkan HP sebesar {{1, percent(fixed: 1)}}% ATK Luocha +{{2}}."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Through the Valley",
-        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff."
       }
     }
   },

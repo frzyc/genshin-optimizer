@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
-        "fullDesc": "Robin entra no estado de Concerto e faz com que todos os outros aliados (excluindo esta unidade) ajam imediatamente.<br>Enquanto estiver no estado de Concerto, aumenta o ATQ de todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. Além disso, após cada ataque dos aliados-alvo, Robin causa Dano Físico Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do seu ATQ uma vez. A Chance de CRIT para este dano é fixada em {{5, percent}}% e o Dano CRIT é fixado em {{6, percent}}%.<br>Quando no estado de Concerto, Robin é imune a penalidades de Controle Negativo e não pode entrar em sua rodada ou agir.<br>Uma contagem regressiva de Concerto aparece na barra de Ordem de Ação. Quando a rodada da contagem regressiva começa, Robin sai do estado de Concerto e age imediatamente. A contagem regressiva tem sua própria VEL fixa de {{2}}.",
+        "fullDesc": "Robin entra no estado de Concerto e faz com que todos os outros aliados (excluindo esta unidade) ajam imediatamente.<br>Enquanto estiver no estado de Concerto, aumenta o ATQ de todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. Além disso, após cada ataque dos aliados-alvo, Robin causa Dano Físico Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do seu ATQ uma vez. A Chance de CRIT para este Dano é fixada em {{5, percent}}% e o Dano CRIT é fixado em {{6, percent}}%.<br>Quando no estado de Concerto, Robin é imune a penalidades de Controle Negativo e não pode entrar em sua rodada ou agir.<br>Uma contagem regressiva de Concerto aparece na barra de Ordem de Ação. Quando a rodada da contagem regressiva começa, Robin sai do estado de Concerto e age imediatamente. A contagem regressiva tem sua própria VEL fixa de {{2}}.",
         "shortDesc": "Entra no estado de Concerto, <orangeStrong>aumenta o ATQ de todos os aliados</orangeStrong> e faz com que todos os companheiros de equipe ajam imediatamente. Depois de um ataque, Robin causa <orangeStrong>Dano Físico Adicional</orangeStrong>. Enquanto Concerto dura, Robin é imune a penalidades de Controle Negativo. Antes de Concerto terminar, Robin não pode agir nem iniciar sua rodada até o final da contagem regressiva.",
         "tag": "Suporte"
       }
@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Prelúdio da Inebriação",
-        "fullDesc": "Depois de usar a Técnica, cria uma dimensão especial ao seu redor que dura por {{1}} segundos. Inimigos dentro dessa dimensão não atacarão Robin e a seguirão enquanto a dimensão estiver ativa. Depois de entrar em batalha enquanto a dimensão está ativa, Robin regenera {{2}} de Energia no início de cada onda. Apenas 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Depois de usar a Técnica, cria uma Dimensão Especial ao seu redor que dura por {{1}} segundos. Inimigos dentro dessa dimensão não atacarão Robin e a seguirão enquanto a dimensão estiver ativa. Depois de entrar em batalha enquanto a dimensão está ativa, Robin regenera {{2}} de Energia no início de cada onda. Só 1 Efeito de Dimensão criado por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial ao seu redor. Inimigos dentro dessa dimensão não atacarão Robin. Depois de entrar em batalha enquanto a dimensão está ativa, Robin regenera adicionalmente <orangeStrong>{{2}}</orangeStrong> de Energia no início de cada onda.",
         "tag": "Suporte"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Cadência Coloratura",
-        "fullDesc": "No começo da batalha, a ação deste personagem é Avançada Adiante em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "No começo da batalha, a ação deste personagem é Avançada Adiante em {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Floreio Improvisado",
-        "fullDesc": "Enquanto estiver no estado de \"Concerto\", o Dano CRIT causado por todos os aliados ao realizar Ataques Extras aumenta em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Enquanto estiver no estado de \"Concerto\", o Dano CRIT causado por todos os aliados ao realizar Ataques Extras aumenta em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Passagem Sequencial",
-        "fullDesc": "Ao usar a Perícia, adicionalmente regenera {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia, adicionalmente regenera {{1}} de Energia."
       }
     }
   },

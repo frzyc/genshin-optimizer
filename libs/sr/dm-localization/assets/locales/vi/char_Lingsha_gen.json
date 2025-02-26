@@ -1,0 +1,96 @@
+{
+  "name": "Lingsha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dâng Hương",
+        "fullDesc": "Gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Lingsha cho 1 kẻ địch chỉ định.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Khói Sương Óng Ánh",
+        "fullDesc": "Gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Lingsha cho toàn thể phe địch, đồng thời giúp toàn thể phe ta hồi HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Lingsha +<orangeStrong>{{3}}</orangeStrong>, khiến Fuyuan Ưu Tiên Hành Động {{4, percent}}%.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho toàn thể phe địch, đồng thời <orangeStrong>hồi HP</orangeStrong> cho toàn thể phe ta, khiến Fuyuan Ưu Tiên Hành Động.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ráng Chiều Che Nghiêng",
+        "fullDesc": "Khiến toàn thể phe địch rơi vào trạng thái Say Men, trong trạng thái Say Men, Sát Thương Phá Vỡ mục tiêu phải chịu tăng <orangeStrong>{{4, percent}}%</orangeStrong>, duy trì {{5}} hiệp.<br>Gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Lingsha cho toàn thể phe địch, đồng thời hồi HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Lingsha +<orangeStrong>{{3}}</orangeStrong> cho toàn thể phe ta, khiến Fuyuan Ưu Tiên Hành Động {{6, percent}}%.",
+        "shortDesc": "<orangeStrong>Tăng Sát Thương Phá Vỡ</orangeStrong> toàn thể phe địch phải chịu, gây Sát Thương Hỏa cho toàn thể phe địch, đồng thời <orangeStrong>hồi HP</orangeStrong> cho toàn thể phe ta, khiến Fuyuan Ưu Tiên Hành Động.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Khói Sương Nghiêng Ngả, Khí Trời Hóa Sinh",
+        "fullDesc": "Khi thi triển Chiến Kỹ sẽ triệu hồi Fuyuan, Fuyuan ban đầu có {{1}} điểm Tốc Độ và {{7}} lần hành động.<br>Khi Fuyuan hành động sẽ phát động Đòn Đánh Theo Sau, gây Sát Thương Hỏa bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Lingsha cho toàn thể phe địch. Gây thêm Sát Thương Hỏa bằng <orangeStrong>{{8, percent}}%</orangeStrong> Tấn Công của Lingsha cho 1 kẻ địch ngẫu nhiên, lần sát thương này ưu tiên chọn mục tiêu có Sức Bền lớn hơn 0 và có Điểm Yếu Hỏa. Giải trừ {{6}} Hiệu Ứng Xấu cho toàn thể phe ta, đồng thời hồi HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Lingsha +<orangeStrong>{{4}}</orangeStrong>.<br>Fuyuan tối đa tích lũy {{5}} lần hành động, khi số lần bằng 0 hoặc Lingsha vào trạng thái không thể chiến đấu, thì Fuyuan sẽ biến mất.<br>Khi Fuyuan ở trong trận, thi triển Chiến Kỹ sẽ tăng {{7}} lần hành động của Fuyuan.",
+        "shortDesc": "Thi triển Chiến Kỹ triệu hồi Fuyuan: Khi hành động sẽ phát động <orangeStrong>Đòn Đánh Theo Sau</orangeStrong>, gây lượng nhỏ Sát Thương Hỏa cho toàn bộ kẻ địch. Gây thêm lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch ngẫu nhiên, ưu tiên chọn mục tiêu có Sức Bền lớn hơn 0 và có Điểm Yếu Hỏa. Giải trừ 1 Hiệu Ứng Xấu của toàn bộ phe ta và <orangeStrong>hồi HP</orangeStrong>.<br>Thi triển Chiến Kỹ lặp lại sẽ tăng số lần hành động của Fuyuan.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Lưu Thúy Tản Vân",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, lập tức triệu hồi Fuyuan, đồng thời khiến toàn thể phe địch rơi vào trạng thái Say Men, duy trì {{1}} hiệp.",
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, lập tức triệu hồi Fuyuan và khiến toàn thể phe địch <orangeStrong>tăng Sát Thương Phá Vỡ phải chịu</orangeStrong>.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ngọn Lửa Rực Đỏ",
+        "fullDesc": "Tăng Tấn Công/Lượng Trị Liệu của bản thân, mức tăng bằng {{1, percent}}%/{{2, percent}}% Tấn Công Kích Phá, tối đa khiến Tấn Công/Lượng Trị Liệu tăng {{3, percent}}%/{{4, percent}}%."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Hương Khói Cỏ Cây",
+        "fullDesc": "Khi thi triển Tấn Công Thường sẽ hồi thêm {{1}} Năng Lượng."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Tro Tàn Sót Lại",
+        "fullDesc": "Trong lúc Fuyuan ở trong trận, khi nhân vật bất kỳ của phe ta chịu sát thương hoặc tiêu hao HP, nếu trong đội có nhân vật mà Phần Trăm HP hiện tại thấp hơn hoặc bằng {{1, percent}}%, Fuyuan sẽ lập tức phát động Đòn Đánh Theo Sau của Thiên Phú lên kẻ địch, lần phát động này không tiêu hao số lần hành động của Fuyuan, hiệu ứng này sau {{2}} hiệp có thể được kích hoạt lại."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Hương Nồng Lan Tỏa, Trừ Bỏ Tà Ma",
+      "desc": "Hiệu suất Phá Vỡ Điểm Yếu của Lingsha tăng {{2, percent}}%. Khi Điểm Yếu của kẻ địch bị phá vỡ, Phòng Thủ của kẻ địch đó sẽ giảm {{1, percent}}%."
+    },
+    "2": {
+      "name": "Đầu Tựa Gối Mây, Khói Soi Tuyết Đỏ",
+      "desc": "Khi thi triển Tuyệt Kỹ, khiến Tấn Công Kích Phá của toàn thể phe ta tăng {{1, percent}}%, duy trì {{2}} hiệp."
+    },
+    "3": {
+      "name": "Sợi Bấc Vươn Chồi, Hoa Bung Rực Lửa",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Rủ Ngang Màn Liễu, Phảng Phất Chiếu Quỳnh",
+      "desc": "Khi Fuyuan hành động, hồi HP bằng {{1, percent}}% Tấn Công của Lingsha cho mục tiêu phe ta có HP hiện tại thấp nhất."
+    },
+    "5": {
+      "name": "Dọc Ngang Xoay Chuyển, Giữ Thế Cân Bằng",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Hoa Lan Ẩn Mình, Hương Thầm Cất Giấu",
+      "desc": "Khi Fuyuan trong trận, Kháng Toàn Thuộc Tính của toàn thể phe địch giảm {{1, percent}}%, khi Fuyuan tấn công, sẽ gây thêm {{2}} lần sát thương, mỗi lần sát thương sẽ gây Sát Thương Hỏa bằng {{3, percent}}% Tấn Công của Lingsha và {{4}} điểm Giảm Sức Bền cho 1 kẻ địch ngẫu nhiên, ưu tiên chọn mục tiêu có Sức Bền lớn hơn 0 và có Điểm Yếu Hỏa."
+    }
+  }
+}

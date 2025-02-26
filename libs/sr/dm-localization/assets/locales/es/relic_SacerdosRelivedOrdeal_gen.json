@@ -1,0 +1,7 @@
+{
+  "setName": "Sacerdote del calvario revivido",
+  "setEffects": {
+    "2": "VEL +{{1, percent}}%.",
+    "4": "Al lanzar la habilidad básica o la habilidad definitiva a un aliado, el Daño CRIT del objetivo de la habilidad aumenta en un {{1, percent}}% durante {{2}} turnos. Este efecto se puede acumular hasta {{3}} veces."
+  }
+}

@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Frostbite",
-        "fullDesc": "ลบเอฟเฟกต์ Buff {{2}} เอฟเฟกต์ ของศัตรูที่กำหนดหนึ่งตัว พร้อมทั้งสร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Pela",
+        "fullDesc": "ลบ เอฟเฟกต์ Buff {{2}} เอฟเฟกต์ ของศัตรูที่กำหนดหนึ่งตัว พร้อมทั้งสร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Pela",
         "shortDesc": "<orangeStrong>ลบ</orangeStrong><orangeStrong>เอฟเฟกต์ Buff</orangeStrong> 1 เอฟเฟกต์ จากศัตรูหนึ่งตัว และสร้าง DMG น้ำแข็งแก่ศัตรูหนึ่งตัว",
         "tag": "โจมตีเดี่ยว"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Bash",
-        "fullDesc": "สร้าง DMG ต่อศัตรูเป้าหมายที่อยู่ภายใต้ เอฟเฟกต์ Debuff เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "สร้าง DMG ต่อศัตรูเป้าหมายที่อยู่ภายใต้ เอฟเฟกต์ Debuff เพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Secret Strategy",
-        "fullDesc": "เมื่อ Pela อยู่ในการต่อสู้ อัตราสร้างสถานะของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่อ Pela อยู่ในการต่อสู้ อัตราสร้างสถานะของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Wipe Out",
-        "fullDesc": "เมื่อปล่อยสกิลต่อสู้และลบ เอฟเฟกต์ Buff จะสร้าง DMG ในการโจมตีครั้งต่อไปเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่อปล่อยสกิลต่อสู้และลบ เอฟเฟกต์ Buff จะสร้าง DMG ในการโจมตีครั้งต่อไปเพิ่มขึ้น {{1, percent}}%"
       }
     }
   },

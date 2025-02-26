@@ -12,8 +12,8 @@
     "skill": {
       "0": {
         "name": "Des difficultés de paiement ?",
-        "fullDesc": "Applique Reconnaissance de dette à une cible ennemie unique, ce qui augmente les DGT d'attaque de suivi qu'elle subit de <orangeStrong>{{2, percent}}%</orangeStrong>. Reconnaissance de dette ne s'applique qu'à sa dernière cible. Si aucun ennemi sur le champ de bataille n'est affecté par Reconnaissance de dette au début du tour ou pendant l'action d'un allié, Topaz applique Reconnaissance de dette à une cible ennemie aléatoire.<br>Compti inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Topaz à cette cible. Les DGT infligés par cette compétence sont considérés comme provenant d'une attaque de suivi.",
-        "shortDesc": "Applique Reconnaissance de dette à un ennemi unique, <orangeStrong>ce qui augmente les DGT d'attaque de suivi qu'il subit</orangeStrong>. Compti inflige des DGT de feu à la cible.",
+        "fullDesc": "Applique Reconnaissance de dette à une cible ennemie unique, ce qui augmente les DGT d'ATQ de suivi qu'elle subit de <orangeStrong>{{2, percent}}%</orangeStrong>. Reconnaissance de dette ne s'applique qu'à sa dernière cible. Si aucun ennemi sur le champ de bataille n'est affecté par Reconnaissance de dette au début du tour ou pendant l'action d'un allié, Topaz applique Reconnaissance de dette à une cible ennemie aléatoire.<br>Compti inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Topaz à cette cible. Les DGT infligés par cette compétence sont considérés comme provenant d'une ATQ de suivi.",
+        "shortDesc": "Applique Reconnaissance de dette à un ennemi, <orangeStrong>ce qui augmente les DGT d'ATQ de suivi qu'il subit</orangeStrong>. Compti inflige des DGT de feu à la cible.",
         "tag": "Cible unique"
       }
     },
@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Magoret porteur",
-        "fullDesc": "Invoque Compti en début de combat. Compti a une VIT de {{1}} par défaut. Lorsque Compti effectue une action, il lance des attaques de suivi sur la cible de Reconnaissance de dette, lui infligeant des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Topaz.<br>L'action de Compti avance de {{3, percent}}% lorsque les ennemis victimes de Reconnaissance de dette subissent des attaques de suivi de la part des alliés. L'action de Compti ne peut pas être avancée au cours de son propre tour.<br>Compti disparaît quand Topaz tombe à terre.",
-        "shortDesc": "<orangeStrong>Invoque Compti</orangeStrong> en début de combat. Lorsque Compti agit, il <orangeStrong>lance une attaque de suivi à la cible de Reconnaissance de dette</orangeStrong>, ce qui lui inflige des DGT de feu.<br>L'action de Compti <orangeStrong>est avancée</orangeStrong> lorsqu'un ennemi avec Reconnaissance de dette subit une attaque de suivi.",
+        "fullDesc": "Invoque Compti en début de combat. Compti a une VIT de {{1}} par défaut. Lorsque Compti effectue une action, il lance des ATQ de suivi sur la cible de Reconnaissance de dette, lui infligeant des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Topaz.<br>L'action de Compti avance de {{3, percent}}% lorsque les ennemis victimes de Reconnaissance de dette subissent des ATQ de suivi de la part des alliés. L'action de Compti ne peut pas être avancée au cours de son propre tour.<br>Compti disparaît quand Topaz tombe à terre.",
+        "shortDesc": "<orangeStrong>Invoque Compti</orangeStrong> en début de combat. Lorsque Compti agit, il <orangeStrong>lance une ATQ de suivi à la cible de Reconnaissance de dette</orangeStrong>, ce qui lui inflige des DGT de feu.<br>L'action de Compti <orangeStrong>est avancée</orangeStrong> lorsqu'un ennemi avec Reconnaissance de dette subit une ATQ de suivi.",
         "tag": "Cible unique"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Décroissance",
-        "fullDesc": "Lorsque Topaz utilise une ATQ normale pour infliger des DGT, l'attaque est considérée comme une ATQ de suivi.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque Topaz utilise une ATQ normale pour infliger des DGT, l'attaque est considérée comme une ATQ de suivi."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Turbulences financières",
-        "fullDesc": "Augmente les DGT infligés par Topaz et Compti aux cibles ennemies qui ont une Faiblesse au feu de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les DGT infligés par Topaz et Compti aux cibles ennemies qui ont une Faiblesse au feu de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Loi du marché",
-        "fullDesc": "Lorsque Compti attaque dans l'état Inflation exponentielle, Topaz régénère {{1}} points d'énergie supplémentaires.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque Compti attaque dans l'état Inflation exponentielle, Topaz régénère {{1}} points d'énergie supplémentaires."
       }
     }
   },

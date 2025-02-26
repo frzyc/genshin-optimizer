@@ -1,0 +1,113 @@
+{
+  "name": "Feixiao",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Corte relámpago",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Feixiao como Daño de Viento a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Hachazo hendedor",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Feixiao como Daño de Viento a un enemigo y a continuación lanza inmediatamente 1 vez el ataque adicional del talento contra ese enemigo.",
+        "shortDesc": "Inflige Daño de Viento a un enemigo y a continuación lanza adicionalmente 1 vez el ataque adicional del talento.",
+        "tag": "ATQ individual"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Quebrantamundos",
+        "fullDesc": "Inflige hasta un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Feixiao como Daño de Viento a un enemigo que reduce su Firmeza ignorando sus tipos de Debilidad. Si el enemigo no está afectado con Ruptura de Debilidad, la eficiencia de la Ruptura de Debilidad de Feixiao aumenta en un {{2, percent}}%.<br>Durante el transcurso de la habilidad, Feixiao lanza Danza de cortes relámpago o Aluvión de hachazos hendedores {{3}} veces en total a dicho enemigo. Por último, inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Feixiao como Daño de Viento a dicho enemigo.",
+        "shortDesc": "Durante la habilidad definitiva, reduce la Firmeza del enemigo <orangeStrong>ignorando sus tipos de Debilidad</orangeStrong>. Si el objetivo no tiene Ruptura de Debilidad, la <orangeStrong>eficiencia de la Ruptura de Debilidad de Feixiao aumenta</orangeStrong>.<br>Lanza <orangeStrong>{{3}}</orangeStrong> veces Danza de cortes relámpago o Aluvión de hachazos hendedores a un enemigo, y por último inflige Daño de Viento.",
+        "tag": "ATQ individual"
+      },
+      "1": {
+        "name": "Danza de cortes relámpago",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Feixiao como Daño de Viento al enemigo elegido. Si el enemigo está en el estado de Ruptura de Debilidad, el multiplicador de daño aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo. Aumenta el multiplicador de daño contra los objetivos afectados <orangeStrong>con Ruptura de Debilidad</orangeStrong>.",
+        "tag": "ATQ individual"
+      },
+      "2": {
+        "name": "Aluvión de hachazos hendedores",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Feixiao como Daño de Viento al enemigo elegido. Si el enemigo no está en el estado de Ruptura de Debilidad, el multiplicador de daño aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo. Aumenta el multiplicador de daño contra los objetivos que no estén afectados <orangeStrong>con Ruptura de Debilidad</orangeStrong>.",
+        "tag": "ATQ individual"
+      },
+      "3": {
+        "name": "Quebrantamundos",
+        "shortDesc": "Durante la habilidad definitiva, reduce la Firmeza del enemigo <orangeStrong>ignorando sus tipos de Debilidad</orangeStrong>. Si el objetivo no tiene Ruptura de Debilidad, la <orangeStrong>eficiencia de la Ruptura de Debilidad de Feixiao aumenta</orangeStrong>.<br>Lanza <orangeStrong>{{3}}</orangeStrong> veces Danza de cortes relámpago o Aluvión de hachazos hendedores a un enemigo, y por último inflige Daño de Viento.",
+        "tag": "ATQ individual"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cazatruenos",
+        "fullDesc": "Puede activar la habilidad definitiva cuando alcanza {{3}} puntos de Feihuang. Puede acumular hasta {{4}} puntos. Feixiao obtiene 1 punto de Feihuang después de cada {{2}} ataques que lancen los objetivos aliados. Los ataques de la habilidad definitiva de Feixiao no cuentan para este cálculo.<br>Después de que un compañero de equipo de Feixiao lance un ataque contra el enemigo, Feixiao lanza inmediatamente contra el objetivo principal un ataque adicional que inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Feixiao como Daño de Viento. Si no hay un objetivo principal que pueda ser atacado, ataca a un enemigo al azar. Este efecto solo puede activarse 1 vez en cada turno y el contador se reinicia al comienzo del turno de Feixiao. Al lanzar este ataque, el daño que inflige aumenta en un <orangeStrong>{{5, percent}}%</orangeStrong> durante {{6}} turnos.",
+        "shortDesc": "Puede activar la habilidad definitiva cuando alcanza <orangeStrong>{{3}}</orangeStrong> puntos de Feihuang. Puede acumular hasta <orangeStrong>{{4}}</orangeStrong> puntos. Por cada <orangeStrong>{{2}}</orangeStrong> ataques que lancen los objetivos aliados, Feixiao obtiene <orangeStrong>Feihuang</orangeStrong>.<br>Después de que un compañero de equipo ataque, Feixiao lanza contra el objetivo principal un <orangeStrong>ataque adicional</orangeStrong> que inflige Daño de Viento. Este efecto puede activarse 1 vez como máximo en cada turno. Al lanzar este ataque, el <orangeStrong>daño que inflige aumenta</orangeStrong>.",
+        "tag": "ATQ individual"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Cuerpo de tormenta",
+        "fullDesc": "Después de usar la técnica, entra en el estado de Trampa de remolino durante {{1}} segundos. En este estado, atrae a los enemigos en un área determinada, aumenta su VEL de movimiento en un {{2, percent}}% y obtiene {{4}} punto de Feihuang tras entrar en combate.<br>Cuando ataca por iniciativa propia en el estado de Trampa de remolino, hace que todos los enemigos atraídos entren en combate. Tras entrar en combate, inflige un {{3, percent}}% del ATQ de Feixiao como Daño de Viento a todos los enemigos al comienzo de cada oleada. Este daño resulta en Golpe CRIT garantizado. Cuando atrae a más de 1 enemigo, aumenta el multiplicador de este daño en un {{5, percent}}% por cada enemigo adicional atraído, hasta un máximo del {{6, percent}}%.",
+        "shortDesc": "Entra en el estado de Trampa de remolino. Atrae a los enemigos de manera continua, aumenta su VEL de movimiento y obtiene Feihuang tras entrar en combate.<br>En el estado de Trampa de remolino, puede atacar a todos los enemigos atraídos. Al comienzo de cada oleada, inflige Daño de Viento a todos los enemigos. Este daño resultará en un Golpe CRIT de forma garantizada. <orangeStrong>Cuantos más enemigos atraiga, más alto es su multiplicador de daño</orangeStrong>.",
+        "tag": "Potenciación"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Caminar por el cielo",
+        "fullDesc": "Obtiene {{1}} pts. de Feihuang al entrar en combate.<br>Al comenzar el turno, si en el turno anterior no ha lanzado ningún ataque adicional mediante su talento, se añade 1 al recuento de ataques realizados para obtener Feihuang."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Desprenderse de la forma",
+        "fullDesc": "Cuando lanza la habilidad definitiva e inflige daño al objetivo, se considera como un ataque adicional. El Daño CRIT de los ataques adicionales aumenta en un {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Moverse como el rayo",
+        "fullDesc": "Al lanzar la habilidad básica, su ATQ aumenta en un {{1, percent}}% durante {{2}} turnos."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Cielo apaciguado",
+      "desc": "Tras lanzar Danza de cortes relámpago o Aluvión de hachazos hendedores, el daño de habilidad definitiva que inflige Feixiao aumenta adicionalmente en un {{1, percent}}% del daño original. Puede acumularse hasta {{2}} veces y dura hasta que termina la acción de la habilidad definitiva."
+    },
+    "2": {
+      "name": "Rito lunar",
+      "desc": "En los efectos del talento, cada vez que un objetivo aliado lanza 1 ataque adicional, Feixiao gana 1 punto de Feihuang. Este efecto solo se puede activar un máximo de {{1}} veces por turno."
+    },
+    "3": {
+      "name": "Estrella del buen augurio",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Susurro del hielo en la ventisca",
+      "desc": "La Reducción de Firmeza del ataque adicional del talento aumenta en un {{1, percent}}% y, al ser lanzado, su VEL aumenta en un {{2, percent}}% durante {{3}} turnos."
+    },
+    "5": {
+      "name": "Salto celeste",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Mirada al origen",
+      "desc": "La PEN de la RES a todos los tipos del daño de habilidad definitiva que inflige Feixiao aumenta en un {{1, percent}}%. A su vez, el daño de ataque adicional del talento se considera como daño de habilidad definitiva, y su multiplicador de daño aumenta en un {{2, percent}}%."
+    }
+  }
+}

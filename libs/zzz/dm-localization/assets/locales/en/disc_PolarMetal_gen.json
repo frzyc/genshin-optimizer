@@ -1,6 +1,6 @@
 {
   "name": "Polar Metal",
-  "desc2": "<color=#98EFF0>Ice DMG</color> +10%",
-  "desc4": "Increase the DMG of <color=#FFFFFF>Basic Attack</color> and <color=#FFFFFF>Dash Attack</color> by 20%. When any squad member inflicts <color=#98EFF0>Freeze</color> or <color=#98EFF0>Shatter</color>, this effect increases by an additional 20% for 12s.",
+  "desc2": "<ct color=#98EFF0>Ice DMG</ct> +10%",
+  "desc4": "Increase the DMG of <ct color=#FFFFFF>Basic Attack</ct> and <ct color=#FFFFFF>Dash Attack</ct> by 20%. When any squad member inflicts <ct color=#98EFF0>Freeze</ct> or <ct color=#98EFF0>Shatter</ct>, this effect increases by an additional 20% for 12s.",
   "story": "A Drive Disc burned with specialized Ether technology offering personalized attribute amplification to the user."
 }

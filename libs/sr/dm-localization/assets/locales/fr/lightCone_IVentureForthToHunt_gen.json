@@ -1,0 +1,7 @@
+{
+  "name": "La chasse est ouverte",
+  "passive": {
+    "name": "Intimidation",
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Lorsque le porteur lance une ATQ de suivi, il gagne 1 cumul de Lumière vive jusqu'à un maximum de {{3}} fois. Chaque cumul de Lumière vive permet aux DGT d'ultime infligés par le porteur d'ignorer <orangeStrong>{{2, percent}}%</orangeStrong> de la DÉF de la cible. Lorsque le tour du porteur se termine, supprime 1 cumul de Lumière vive."
+  }
+}

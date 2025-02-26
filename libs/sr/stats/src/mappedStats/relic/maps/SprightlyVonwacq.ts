@@ -4,12 +4,13 @@ import { allStats } from '../../../allStats'
 const key: RelicSetKey = 'SprightlyVonwacq'
 const data_gen = allStats.relic[key]
 
-let o = 0
-// TODO: Load scalings
+let o = 1
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    passive_enerRegen_: data_gen.setEffects[0].passiveStats.enerRegen_,
+    spdThreshold: data_gen.setEffects[0].otherStats[o++],
+    advanceForward: data_gen.setEffects[0].otherStats[o++],
   },
 } as const
 

@@ -1,0 +1,33 @@
+{
+  "name": "ラフトラ",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "サイフォスの{RUBY_B#わな}罠{RUBY_E#}",
+        "fullDesc": "敵単体に攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵に攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "shortDesc": "敵単体および隣接する敵に少量の雷属性ダメージを与える。",
+        "tag": "拡散攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#なみだ}涙{RUBY_E#}で{RUBY_B#きた}鍛{RUBY_E#}えし{RUBY_B#たくみ}匠{RUBY_E#}の{RUBY_B#むくろ}躯{RUBY_E#}",
+        "fullDesc": "「隙を縫う糸」状態の敵を攻撃した後、自身の速度+<orangeStrong>{{1}}</orangeStrong>。この効果は最大で{{3}}層累積できる。<br>「ラフトラ」は行動時に自動で「サイフォスの罠」を発動し、「隙を縫う糸」状態の敵を優先的に攻撃する。",
+        "shortDesc": "「隙を縫う糸」状態の敵を攻撃した後、<orangeStrong>自身の速度がアップ</orangeStrong>する。行動時に自動で攻撃を行う。なお、「隙を縫う糸」状態の敵を優先的に攻撃する。",
+        "tag": "強化"
+      },
+      "1": {
+        "name": "{RUBY_B#す}過{RUBY_E#}ぎ{RUBY_B#さ}去{RUBY_E#}りし{RUBY_B#なつかげ}夏影{RUBY_E#}",
+        "fullDesc": "「ラフトラ」が召喚された時、自身の行動順が{{1, percent}}%早まる。",
+        "shortDesc": "召喚された時、自身の行動順が早まる。",
+        "tag": "強化"
+      },
+      "2": {
+        "name": "{RUBY_B#か}枯{RUBY_E#}れ{RUBY_B#くさ}草{RUBY_E#}の{RUBY_B#いぶき}息吹{RUBY_E#}",
+        "fullDesc": "「ラフトラ」が退場する時、アグライアのEPを{{1}}回復する。",
+        "shortDesc": "退場する時、アグライアのEPを回復する。",
+        "tag": "強化"
+      }
+    }
+  }
+}

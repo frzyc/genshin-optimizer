@@ -1,0 +1,7 @@
+{
+  "name": "인법첩•요란 파마",
+  "passive": {
+    "name": "제악",
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 전투 진입 시 즉시 에너지를 <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong>pt 회복하며, 장착한 캐릭터가 필살기를 발동하면 [뇌둔]을 획득하고, 일반 공격을 2회 발동하면 장착한 캐릭터의 행동 게이지가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가하고 [뇌둔]이 해제된다. 장착한 캐릭터가 필살기를 발동하면 [뇌둔]이 초기화된다"
+  }
+}

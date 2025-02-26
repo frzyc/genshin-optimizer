@@ -1,0 +1,7 @@
+{
+  "setName": "Sacerdos' Relived Ordeal",
+  "setEffects": {
+    "2": "Increases SPD by {{1, percent}}%.",
+    "4": "When using Skill or Ultimate on one ally target, increases the ability target's CRIT DMG by {{1, percent}}%, lasting for {{2}} turn(s). This effect can stack up to {{3}} time(s)."
+  }
+}

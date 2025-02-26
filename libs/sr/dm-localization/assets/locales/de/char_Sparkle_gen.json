@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Almanach",
-        "fullDesc": "Stellt beim Einsatz des Standardangriffs zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt beim Einsatz des Standardangriffs zusätzlich {{1}} Pkt. Energie wieder her."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Künstliche Blume",
-        "fullDesc": "Die durch die Fertigkeit gewährte KRIT-SCH-Erhöhung wird bis zum Beginn der nächsten Runde des Ziels verlängert.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Die durch die Fertigkeit gewährte KRIT-SCH-Erhöhung wird bis zum Beginn der nächsten Runde des Ziels verlängert."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Nocturne",
-        "fullDesc": "Erhöht den ANG aller Verbündeten um {{4, percent}}%. Bei 1/2/3 Quantenfigur(en) im Team wird der ANG von Verbündeten vom Typ Quanten zusätzlich um {{1, percent}}%/{{2, percent}}%/{{3, percent}}% erhöht.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den ANG aller Verbündeten um {{4, percent}}%. Bei 1/2/3 Quantenfigur(en) im Team wird der ANG von Verbündeten vom Typ Quanten zusätzlich um {{1, percent}}%/{{2, percent}}%/{{3, percent}}% erhöht."
       }
     }
   },

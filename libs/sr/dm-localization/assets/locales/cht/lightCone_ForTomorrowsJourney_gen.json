@@ -1,0 +1,7 @@
+{
+  "name": "為了明日的旅途",
+  "passive": {
+    "name": "聯結",
+    "description": "使裝備者的攻擊力提高<orangeStrong>{{1, percent}}%</orangeStrong>。裝備者施放終結技後，造成的傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持續{{3}}回合。"
+  }
+}

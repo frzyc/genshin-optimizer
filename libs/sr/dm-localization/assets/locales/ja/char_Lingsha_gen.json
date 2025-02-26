@@ -1,0 +1,96 @@
+{
+  "name": "{RUBY_B#レイサ}霊砂{RUBY_E#}",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#ぐこう}供香{RUBY_E#}",
+        "fullDesc": "指定した敵単体に霊砂の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の炎属性ダメージを与える。",
+        "tag": "単体攻撃"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#さいえん}彩煙{RUBY_E#}",
+        "fullDesc": "敵全体に霊砂の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、味方全体のHPを霊砂の攻撃力<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>回復する。また、「浮元」の行動順を{{4, percent}}%早める。",
+        "shortDesc": "敵全体に少量の炎属性ダメージを与えると同時に、味方全体の<orangeStrong>HPを回復</orangeStrong>し、「浮元」の行動順を早める。",
+        "tag": "全体攻撃"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "{RUBY_B#さいうん}彩雲{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}く{RUBY_B#めぐ}巡{RUBY_E#}る{RUBY_B#かすみ}霞{RUBY_E#}",
+        "fullDesc": "敵全体を「芳酔」状態にする。「芳酔」状態の敵が受ける弱点撃破ダメージ+<orangeStrong>{{4, percent}}%</orangeStrong>、{{5}}ターン継続。<br>敵全体に霊砂の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、同時に味方全体のHPを霊砂の攻撃力<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>回復する。また、「浮元」の行動順を{{6, percent}}%早める。",
+        "shortDesc": "敵全体の<orangeStrong>受ける弱点撃破ダメージをアップ</orangeStrong>させる。また、敵全体に炎属性ダメージを与えると同時に、味方全体の<orangeStrong>HPを回復</orangeStrong>し、「浮元」の行動順を早める。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#べにぎり}紅霧{RUBY_E#}より{RUBY_B#い}出{RUBY_E#}づる{RUBY_B#えんじゅう}煙獣{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動する時、「浮元」を召喚する。「浮元」の初期速度は{{1}}、初期行動可能回数は{{7}}回。<br>行動時、「浮元」は敵全体に追加攻撃を行い、霊砂の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の炎属性ダメージを与える。<br>さらに、ランダムな敵単体に霊砂の攻撃力<orangeStrong>{{8, percent}}%</orangeStrong>分の炎属性ダメージを与える。この時、「浮元」は炎属性弱点を持ち、かつ残り靭性値が0より大きいいずれかの敵を優先的にターゲットにする。<br>また、味方それぞれのデバフを{{6}}つ解除すると同時に、霊砂の攻撃力<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>のHPを回復する。<br>「浮元」の行動可能回数は最大で{{5}}回まで累積できる。行動可能回数が0になる、または霊砂が戦闘不能状態になると「浮元」は消える。<br>「浮元」がフィールド上にいる時に戦闘スキルを発動すると、「浮元」の行動可能回数+{{7}}回。",
+        "shortDesc": "戦闘スキルを発動する時、「浮元」を召喚する。「浮元」が行動する時は<orangeStrong>追加攻撃</orangeStrong>を行い、敵全体に少量の炎属性ダメージを与える。さらに、ランダムな敵単体に少量の炎属性ダメージを与える。この時、「浮元」は炎属性弱点を持ち、かつ残り靭性値が0より大きいいずれかの敵を優先的にターゲットにする。また、味方それぞれのデバフを1つ解除し、<orangeStrong>HPを回復</orangeStrong>させる。<br>「浮元」がフィールド上にいる時に戦闘スキルを発動すると、「浮元」の行動回数がアップする。",
+        "tag": "全体攻撃"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#りゅうすいさんうん}流翠散雲{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時に即座に「浮元」を召喚し、敵全体を「芳酔」状態にする、{{1}}ターン継続。",
+        "shortDesc": "秘技を使用、次の戦闘開始時、即座に「浮元」を召喚し、敵全体の<orangeStrong>受ける弱点撃破ダメージ</orangeStrong>をアップする。",
+        "tag": "サポート"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "tag": "単体攻撃"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#しゅえん}朱炎{RUBY_E#}",
+        "fullDesc": "自身の攻撃力を撃破特効{{1, percent}}%分アップする、最大で攻撃力+{{3, percent}}%。また、自身の治癒量を撃破特効{{2, percent}}%分アップする、最大で治癒量+{{4, percent}}%。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ゆうこう}幽香{RUBY_E#}",
+        "fullDesc": "通常攻撃を行う時、さらにEPを{{1}}回復する。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#よこう}余香{RUBY_E#}",
+        "fullDesc": "「浮元」がフィールド上に存在する時、任意の味方キャラがダメージを受ける、またはHPを消費する時、パーティに残りHP割合が{{1, percent}}%以下のキャラがいる場合、「浮元」が即座に天賦による追加攻撃を行う。この追加攻撃は「浮元」の行動可能回数を消費せず、{{2}}ターン後に再度発動できる。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#はじゃ}破邪{RUBY_E#}の{RUBY_B#かお}香{RUBY_E#}り",
+      "desc": "霊砂の弱点撃破効率+{{2, percent}}%。敵が弱点撃破される時、その敵の防御力-{{1, percent}}%。"
+    },
+    "2": {
+      "name": "{RUBY_B#しだ}垂{RUBY_E#}れ{RUBY_B#ぐも}雲{RUBY_E#}に{RUBY_B#べにこうろ}紅香炉{RUBY_E#}",
+      "desc": "必殺技を発動する時、味方全体の撃破特効+{{1, percent}}%、{{2}}ターン継続。"
+    },
+    "3": {
+      "name": "{RUBY_B#いちる}一縷{RUBY_E#}の{RUBY_B#しんめ}新芽{RUBY_E#}、<br>{RUBY_B#のうこう}濃香{RUBY_E#}なる{RUBY_B#はな}華{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#とばり}帳{RUBY_E#}を{RUBY_B#な}撫{RUBY_E#}でる{RUBY_B#しゅえん}朱煙{RUBY_E#}",
+      "desc": "「浮元」が行動する時、残りHPが最も低い味方のHPを、霊砂の攻撃力{{1, percent}}%分回復する。"
+    },
+    "5": {
+      "name": "{RUBY_B#ゆ}揺{RUBY_E#}るがぬ{RUBY_B#きく}規矩{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#しゅんらん}春蘭{RUBY_E#}の{RUBY_B#しゅくこう}宿香{RUBY_E#}",
+      "desc": "「浮元」がフィールド上に存在する時、敵全体の全属性耐性-{{1, percent}}%。「浮元」が攻撃を行う時、さらに{{2}}ヒットする。<br>1ヒットにつき、ランダムな敵単体に霊砂の攻撃力{{3, percent}}%分の炎属性ダメージを与える。この時、「浮元」は炎属性弱点を持ち、かつ残り靭性値が0より大きい敵を優先的にターゲットにする。なお、このダメージの削靭値は1ヒットにつき{{4}}。"
+    }
+  }
+}

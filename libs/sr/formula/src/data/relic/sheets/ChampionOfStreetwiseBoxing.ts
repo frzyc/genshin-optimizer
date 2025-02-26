@@ -1,16 +1,7 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
+import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'
 
 const key: RelicSetKey = 'ChampionOfStreetwiseBoxing'
@@ -19,35 +10,17 @@ const dm = mappedStats.relic[key]
 
 const relicCount = own.common.count.sheet(key)
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { hits } = allNumConditionals(key, true, 0, dm[4].stacks)
 
 const sheet = registerRelic(
   key,
   // Handles passive buffs
   entriesForRelic(key, data_gen),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'set2_dmg_',
-    ownBuff.premod.common_dmg_.add(
-      cmpGE(relicCount, 2, boolConditional.ifOn(dm[2].cond_dmg_))
-    ),
-    cmpGE(relicCount, 2, 'unique', '')
-  ),
-  registerBuff(
-    'team_dmg_',
-    teamBuff.premod.common_dmg_.add(
-      cmpGE(relicCount, 4, listConditional.map({ val1: 1, val2: 2 }))
-    ),
-    cmpGE(relicCount, 4, 'unique', '')
-  ),
-  registerBuff(
-    'enemy_defRed_',
-    enemyDebuff.common.defRed_.add(cmpGE(relicCount, 4, numConditional)),
+    'set4_atk_',
+    ownBuff.premod.atk_.add(cmpGE(relicCount, 4, prod(hits, dm[4].atk_))),
     cmpGE(relicCount, 4, 'unique', '')
   )
 )

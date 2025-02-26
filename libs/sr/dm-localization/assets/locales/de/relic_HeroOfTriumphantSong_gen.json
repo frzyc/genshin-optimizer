@@ -1,0 +1,7 @@
+{
+  "setName": "Held des Lobgesangs",
+  "setEffects": {
+    "2": "Erhöht ANG um {{1, percent}}%.",
+    "4": "Während der Memogeist des Trägers sich auf dem Kampffeld befindet, wird die GES des Trägers um {{1, percent}}% erhöht. Wenn der Memogeist des Trägers angreift, wird der KRIT-SCH von Träger und Memogeist für {{3}} Rd. um {{2, percent}}% erhöht."
+  }
+}

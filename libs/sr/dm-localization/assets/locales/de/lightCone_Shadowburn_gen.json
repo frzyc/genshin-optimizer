@@ -1,0 +1,7 @@
+{
+  "name": "Brennender Schatten",
+  "passive": {
+    "name": "Verschönerung",
+    "description": "Stellt {{1}} Fertigkeitspunkt und <orangeStrong>{{2}}</orangeStrong> Pkt. der Energie des Trägers wieder her, wenn er zum ersten Mal einen Memogeist beschwört."
+  }
+}

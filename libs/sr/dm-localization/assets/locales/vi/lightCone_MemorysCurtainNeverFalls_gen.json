@@ -1,0 +1,7 @@
+{
+  "name": "Ký Ức Không Bao Giờ Hạ Màn",
+  "passive": {
+    "name": "Nhận",
+    "description": "Khiến Tốc Độ của người trang bị tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Sau khi người trang bị thi triển Chiến Kỹ, khiến sát thương toàn bộ phe ta gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

@@ -19,7 +19,8 @@
     "Nihility": "Hư Vô",
     "Destruction": "Hủy Diệt",
     "Harmony": "Hòa Hợp",
-    "TheHunt": "Săn Bắn"
+    "TheHunt": "Săn Bắn",
+    "Remembrance": "Ký Ức"
   },
   "ability": {
     "basic": "Tấn Công Thường",
@@ -34,6 +35,11 @@
     "bounce": "Nảy Bật",
     "blast": "Khuếch Tán",
     "support": "Hỗ Trợ",
-    "impair": "Quấy Nhiễu"
+    "impair": "Quấy Nhiễu",
+    "restore": "Hồi Phục",
+    "defense": "Phòng Thủ",
+    "enhance": "Cường Hóa",
+    "charging": "Tụ Lực",
+    "summon": "Triệu Hồi"
   }
 }

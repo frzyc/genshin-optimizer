@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Teil der Familie",
-        "fullDesc": "Beim erlittenen Angriff besteht eine feste Chance von {{1, percent}}%, einen Debuff von dieser Einheit zu entfernen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Beim erlittenen Angriff besteht eine feste Chance von {{1, percent}}%, einen Debuff von dieser Einheit zu entfernen."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Unter Schutz",
-        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Rache",
-        "fullDesc": "Erhöht den durch Svarogs Konter verursachten SCH um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den durch Svarogs Konter verursachten SCH um {{1, percent}}%."
       }
     }
   },

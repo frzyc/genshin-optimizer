@@ -1,0 +1,7 @@
+{
+  "name": "인사록•음률 사냥",
+  "passive": {
+    "name": "공연 시작!",
+    "description": "장착한 캐릭터의 HP 최대치가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 자신의 HP를 잃거나 회복하면 치명타 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다, 지속 시간: {{3}}턴, 해당 효과는 턴마다 1회만 발동한다"
+  }
+}

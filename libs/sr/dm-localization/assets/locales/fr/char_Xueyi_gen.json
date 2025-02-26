@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Rétribution karmique",
-        "fullDesc": "Lorsque les attaques de Xueyi réduisent la robustesse ennemie, elle cumule du Karma. Plus la robustesse est réduite, plus elle gagne de cumuls de Karma, avec un maximum de {{1}} cumuls.<br>Lorsque les alliés de Xueyi réduisent la robustesse ennemie avec des attaques, Xueyi gagne {{3}} cumul de Karma.<br>Lorsque le nombre de cumuls de Karma atteint son maximum, elle consomme tous les cumuls de Karma et déclenche immédiatement une attaque de suivi, qui inflige des DGT à 3 reprises. Chaque instance de DGT inflige des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Xueyi à une cible aléatoire unique. Cette attaque de suivi ne permet pas d'accumuler de Karma.",
-        "shortDesc": "Lorsque Xueyi ou ses alliés réduisent la robustesse des ennemis avec des attaques, Xueyi obtient des cumuls de Karma. Lorsque le nombre de cumuls de Karma atteint son maximum, elle <orangeStrong>déclenche immédiatement une attaque de suivi</orangeStrong> qui inflige des DGT quantiques mineurs à une cible ennemie unique, rebondissant 3 fois et consommant tout le Karma.",
+        "fullDesc": "Lorsque les attaques de Xueyi réduisent la robustesse ennemie, elle cumule du Karma. Plus la robustesse est réduite, plus elle gagne de cumuls de Karma, avec un maximum de {{1}} cumuls.<br>Lorsque les alliés de Xueyi réduisent la robustesse ennemie avec des attaques, Xueyi gagne {{3}} cumul de Karma.<br>Lorsque le nombre de cumuls de Karma atteint son maximum, elle consomme tous les cumuls de Karma et déclenche immédiatement une ATQ de suivi, qui inflige des DGT à 3 reprises. Chaque instance de DGT inflige des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Xueyi à une cible aléatoire unique. Cette ATQ de suivi ne permet pas d'accumuler de Karma.",
+        "shortDesc": "Lorsque Xueyi ou ses alliés réduisent la robustesse des ennemis avec des attaques, Xueyi obtient des cumuls de Karma. Lorsque le nombre de cumuls de Karma atteint son maximum, elle <orangeStrong>déclenche immédiatement une ATQ de suivi</orangeStrong> qui inflige des DGT quantiques mineurs à une cible ennemie unique, rebondissant 3 fois et consommant tout le Karma.",
         "tag": "Rebond"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Présage clairvoyant",
-        "fullDesc": "Augmente les DGT infligés par le personnage à hauteur de {{1, percent}}% de son effet de Rupture, jusqu'à une augmentation maximale de DGT de {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les DGT infligés par le personnage à hauteur de {{1, percent}}% de son effet de Rupture, jusqu'à une augmentation maximale de DGT de {{2, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Rouages du destin",
-        "fullDesc": "L'ultime inflige {{2, percent}}% de DGT supplémentaires aux cibles ennemies qui ont {{1, percent}}% ou plus de leur robustesse max.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "L'ultime inflige {{2, percent}}% de DGT supplémentaires aux cibles ennemies qui ont {{1, percent}}% ou plus de leur robustesse max."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Intelligence robotique",
-        "fullDesc": "Xueyi enregistre le nombre de cumuls de Karma qui dépassent la limite maximale de cumuls, jusqu'à un maximum de {{1}} cumuls. Lorsque le talent de Xueyi est déclenché, elle gagne le nombre correspondant de cumuls de Karma enregistrés.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Xueyi enregistre le nombre de cumuls de Karma qui dépassent la limite maximale de cumuls, jusqu'à un maximum de {{1}} cumuls. Lorsque le talent de Xueyi est déclenché, elle gagne le nombre correspondant de cumuls de Karma enregistrés."
       }
     }
   },

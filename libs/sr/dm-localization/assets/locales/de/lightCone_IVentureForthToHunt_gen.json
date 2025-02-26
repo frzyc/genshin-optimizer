@@ -1,0 +1,7 @@
+{
+  "name": "Ich wage die Jagd",
+  "passive": {
+    "name": "Einschüchtern",
+    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Wenn der Träger einen Folgeangriff ausführt, erhält er 1 Stapelung „Lichtfluss“, bis zu {{3}} Stapelungen. Mit jeder Stapelung von Lichtfluss ignoriert der vom Träger verursachte Ultimate-SCH <orangeStrong>{{2, percent}}%</orangeStrong> der VTD des Ziels. Wenn die Runde des Trägers endet, wird 1 Stapelung Lichtfluss entfernt."
+  }
+}

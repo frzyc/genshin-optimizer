@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Atmender Organismus",
-        "fullDesc": "Erhöht Brucheffekt aller Verbündeten um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht Brucheffekt aller Verbündeten um {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sonne geht unter, Träume kommen auf",
-        "fullDesc": "Stellt zu Beginn von Ruan Meis Runde {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt zu Beginn von Ruan Meis Runde {{1}} Pkt. Energie wieder her."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Tropfendes Wachs, brennendes Wasser",
-        "fullDesc": "Im Kampf erhöht Ruan Meis Fertigkeit für jede {{2, percent}}% von Ruan Meis Brucheffekt über {{1, percent}}% zusätzlich den SCH der Verbündeten um {{3, percent}}% bis max. {{4, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Im Kampf erhöht Ruan Meis Fertigkeit für jede {{2, percent}}% von Ruan Meis Brucheffekt über {{1, percent}}% zusätzlich den SCH der Verbündeten um {{3, percent}}% bis max. {{4, percent}}%."
       }
     }
   },

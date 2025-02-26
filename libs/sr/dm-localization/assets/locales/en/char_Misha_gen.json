@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Wait, You Are So Beautiful!",
-        "fullDesc": "After using the Technique, creates a Special Dimension that lasts for {{1}} seconds. Enemies caught in the Special Dimension are inflicted with Dream Prison and stop all their actions. Upon entering battle against enemies afflicted with Dream Prison, increases the Hits Per Action for Misha's next Ultimate by {{2}} hit(s). Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using the Technique, creates a Special Dimension that lasts for {{1}} seconds. Enemies caught in the Special Dimension are inflicted with Dream Prison and stop all their actions. Upon entering battle against enemies afflicted with Dream Prison, increases the Hits Per Action for Misha's next Ultimate by {{2}} hit(s). Only 1 Dimension Effect created by allies can exist at the same time.",
         "shortDesc": "Creates a Special Dimension that stops all enemies within. Upon entering battle against enemies within the dimension, Misha's <orangeStrong>next Ultimate deals more Hits Per Action</orangeStrong>.",
         "tag": "Impair"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Release",
-        "fullDesc": "Before the Ultimate's first hit, increases the base chance of Freezing the target by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Before the Ultimate's first hit, increases the base chance of Freezing the target by {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Interlock",
-        "fullDesc": "When using the Ultimate, increases the Effect Hit Rate by {{1, percent}}%, lasting until the end of the current Ultimate's action.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using the Ultimate, increases the Effect Hit Rate by {{1, percent}}%, lasting until the end of the current Ultimate's action."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmission",
-        "fullDesc": "When dealing DMG to Frozen enemies, increases CRIT DMG by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When dealing DMG to Frozen enemies, increases CRIT DMG by {{1, percent}}%."
       }
     }
   },

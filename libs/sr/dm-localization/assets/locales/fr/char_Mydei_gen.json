@@ -1,0 +1,108 @@
+{
+  "name": "Mydei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Serment de conquête",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Mydei à un ennemi désigné.",
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Mille morts sans regrets",
+        "fullDesc": "Consomme {{3, percent}}% des PV actuels de Mydei pour infliger des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de ses PV max à un ennemi désigné et des DGT imaginaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de ses PV max aux cibles adjacentes.<br>Si les PV actuels ne sont pas suffisants, utiliser la compétence réduit les PV actuels de Mydei à 1.",
+        "shortDesc": "Consomme des PV et inflige des DGT imaginaires à une unité ennemie désignée, et des DGT imaginaires mineurs aux cibles adjacentes.",
+        "tag": "Propagation"
+      },
+      "1": {
+        "name": "Roi régicide",
+        "fullDesc": "Consomme un montant de PV équivalent à {{3, percent}}% des PV actuels de Mydei. Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Mydei à un ennemi unique et des DGT imaginaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de ses PV max aux cibles adjacentes.<br>Si les PV actuels ne sont pas suffisants, utiliser la compétence réduit les PV actuels de Mydei à 1.<br>Cette capacité se déclenche automatiquement.",
+        "shortDesc": "Consomme des PV. Inflige des DGT imaginaires à un ennemi désigné et des DGT imaginaires aux cibles adjacentes.<br>Cette capacité se déclenche <orangeStrong>automatiquement</orangeStrong>.",
+        "tag": "Propagation"
+      },
+      "2": {
+        "name": "Dieu déicide",
+        "fullDesc": "Consomme {{3}} points de charge. Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Mydei à un ennemi unique et des DGT imaginaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de ses PV max aux cibles adjacentes.<br>Cette capacité se déclenche automatiquement et il n'est pas possible d'accumuler de charge au cours de son activation.",
+        "shortDesc": "<orangeStrong>Consomme de la charge</orangeStrong>. Inflige des DGT imaginaires à un ennemi désigné et des DGT imaginaires aux cibles adjacentes.<br>Cette capacité se déclenche <orangeStrong>automatiquement</orangeStrong>.",
+        "tag": "Propagation"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Trône d'annihilation",
+        "fullDesc": "Restaure des PV à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des PV max de Mydei et accumule {{5}} points de charge pour le talent. Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Mydei à un ennemi désigné et des DGT imaginaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> des PV max de Mydei aux cibles adjacentes. D'autre part, provoque la cible et les cibles adjacentes pendant {{4}} tours. La prochaine utilisation de Dieu déicide attaque en priorité un ennemi désigné (cet effet s'applique uniquement à la cible la plus récente).",
+        "shortDesc": "<orangeStrong>Restaure des PV</orangeStrong> et accumule de la charge pour le talent. Inflige des DGT imaginaires massifs à un ennemi désigné et des DGT imaginaires aux cibles adjacentes.<orangeStrong>Provoque</orangeStrong> la cible et les cibles adjacentes.",
+        "tag": "Propagation"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sang pour sang",
+        "fullDesc": "Mydei accumule 1 point de charge pour chaque 1 % de PV perdus (jusqu'à un maximum de 200 points). Lorsque la charge atteint 100, il consomme 100 points de charge pour entrer dans l'état Vendetta, restaure un montant de PV équivalent à <orangeStrong>{{1, percent}}%</orangeStrong> de ses PV max et avance son action de 100 %. Lorsque Mydei est dans l'état Vendetta, ses PV max augmentent à hauteur de {{5, percent}}% de ses PV max actuels, mais sa DÉF se maintient à 0. Mydei utilise automatiquement Roi régicide au début de son tour.<br>Lorsque la charge atteint {{3}} points dans l'état Vendetta, Mydei gagne immédiatement 1 tour supplémentaire et utilise automatiquement Roi régicide.<br>Lorsque Mydei subit un coup fatal dans l'état Vendetta, il ne tombe pas à terre, mais perd toute sa charge, quitte l'état Vendetta et récupère un montant de PV équivalent à {{4, percent}}% de ses PV max.",
+        "shortDesc": "Mydei accumule de la charge lorsqu'il perd des PV. Lorsque la charge atteint 100, il entre dans l'état <orangeStrong>Vendetta</orangeStrong>, restaure des PV et avance son action. Lorsque Mydei est dans l'état Vendetta, ses PV max augmentent, mais sa DÉF se maintient à 0. Mydei <orangeStrong>utilise automatiquement</orangeStrong> Roi régicide au début de son tour.<br>Lorsque la charge atteint 150 dans l'état Vendetta, Mydei gagne immédiatement 1 <orangeStrong>tour supplémentaire</orangeStrong> et <orangeStrong>utilise automatiquement</orangeStrong> Dieu déicide.<br>Mydei quitte l'état Vendetta lorsqu'il subit un coup fatal.",
+        "tag": "Renforcement"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Reddition des lances brisées",
+        "fullDesc": "Après avoir utilisé la technique, attire les ennemis dans une zone définie et leur inflige l'état Hébété pendant {{1}} secondes. Les ennemis hébétés ne peuvent pas attaquer activement les cibles alliées.<br>Lorsque vous engagez le combat en attaquant activement des ennemis hébétés, vous infligez à tous les ennemis des DGT imaginaires équivalents à {{2, percent}}% des PV max de Mydei, et appliquez Provocation aux cibles pendant {{4}} tour. D'autre part, cette unité accumule {{5}} points de charge pour son talent.",
+        "shortDesc": "Attire les ennemis dans une zone définie et leur inflige l'état Hébété. Lorsque vous engagez le combat en attaquant des ennemis hébétés, vous infligez des DGT imaginaires mineurs à tous les ennemis, et appliquez Provocation aux cibles. D'autre part, cette unité accumule de la charge pour son talent.",
+        "tag": "Incapacitation"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Terre et eau",
+        "fullDesc": "Lorsque Mydei est dans l'état Vendetta, il ne quitte pas cet état lorsqu'il subit un coup fatal. Cet effet ne peut se déclencher que {{1}} fois par combat."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Trente tyrans",
+        "fullDesc": "Dans l'état Vendetta, Mydei est immunisé aux malus de contrôle."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Tunique funeste",
+        "fullDesc": "En début de combat, si les PV max de Mydei sont supérieurs à {{1}}, pour chaque tranche de 100 PV en excès, les chances de coup critique de Mydei augmentent {{3, percent(fixed: 1)}}%, son pourcentage de charge de la part des DGT des cibles ennemies augmente de {{4, percent(fixed: 1)}}% et les soins reçus augmentent de {{5, percent(fixed: 2)}}%. Un maximum de {{2}} PV excédentaires peuvent être pris en compte."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Droiture née de l'adversité",
+      "desc": "Augmente le multiplicateur de DGT de Dieu déicide à la cible principale de {{1, percent}}%. Cette capacité inflige désormais à tous les ennemis des DGT imaginaires équivalents au multiplicateur de DGT appliqué à la cible principale."
+    },
+    "2": {
+      "name": "Témoin du râle des morts",
+      "desc": "Dans l'état Vendetta, les DGT que Mydei inflige ignorent {{1, percent}}% de la DÉF des cibles ennemies. Après avoir reçu des soins, {{2, percent}}% des soins prodigués sont convertis en charge jusqu'à un maximum cumulé de {{3}} points de charge. Le nombre de points de charge pouvant être convertis est réinitialisé après chaque action d'une unité."
+    },
+    "3": {
+      "name": "Festin de gloire immuable",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Éveil du lion silencieux",
+      "desc": "Lorsque Mydei est dans l'état Vendetta, ses DGT critiques augmentent de {{2, percent}}%, et il restaure des PV équivalents à {{1, percent}}% de ses PV max après avoir subi une attaque de la part d'une cible ennemie."
+    },
+    "5": {
+      "name": "Corps forgé par le combat",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Héritage de la montagne de sang",
+      "desc": "Entre immédiatement dans l'état Vendetta en début de combat, et diminue la charge nécessaire à Dieu déicide de {{1}} points."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "溯忆",
+  "passive": {
+    "name": "入寐",
+    "description": "忆灵的回合开始时，使装备者和忆灵分别获得1层【缅怀】，每层使造成的伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>，最多叠加{{2}}层。忆灵消失时移除装备者和忆灵的【缅怀】。"
+  }
+}

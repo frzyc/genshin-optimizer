@@ -1,0 +1,7 @@
+{
+  "name": "Flame of Blood, Blaze My Path",
+  "passive": {
+    "name": "Vista",
+    "description": "Membuat Max HP pengguna meningkat <orangeStrong>{{1, percent}}%</orangeStrong>, dan pemulihan yang diterima meningkat <orangeStrong>{{6, percent}}%</orangeStrong>. Saat melancarkan Skill atau Ultimate, mengonsumsi HP sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Max HP dirinya, dan membuat DMG yang diakibatkan dari serangan kali ini meningkat <orangeStrong>{{3, percent}}%</orangeStrong>. Jika HP yang dikonsumsi efek ini lebih dari {{4}}, dapat membuat DMG serangan kali ini meningkat ekstra <orangeStrong>{{5, percent}}%</orangeStrong>.<br>Jika HP saat ini tidak cukup, efek ini hanya akan membuat HP pengguna saat ini berkurang hingga 1 poin."
+  }
+}

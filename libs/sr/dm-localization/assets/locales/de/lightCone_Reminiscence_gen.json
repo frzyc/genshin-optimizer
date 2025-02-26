@@ -1,0 +1,7 @@
+{
+  "name": "Rückblick",
+  "passive": {
+    "name": "Einschlafen",
+    "description": "Zu Beginn der Runde des Memogeists erhalten der Träger und der Memogeist jeweils eine Stapelung „Nachtrauern“. Jede Stapelung erhöht den verursachten SCH um <orangeStrong>{{1, percent}}%</orangeStrong>. Dieser Effekt ist bis zu {{2}}-fach stapelbar. Wenn der Memogeist verschwindet, wird Nachtrauern vom Träger und vom Memogeist entfernt."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "As Cortinas da Memória Nunca Caem",
+  "passive": {
+    "name": "Recepção",
+    "description": "Aumenta a VEL do usuário em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Depois que o usuário usa a Perícia, aumenta o Dano causado por todos os aliados em <orangeStrong>{{2, percent}}%</orangeStrong>, durando por {{3}} rodada(s)."
+  }
+}

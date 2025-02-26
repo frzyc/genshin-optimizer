@@ -1,0 +1,7 @@
+{
+  "name": "Đường Dài Vẫn Có Lối Về",
+  "passive": {
+    "name": "Tái Sinh",
+    "description": "Khiến Tấn Công Kích Phá của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Khi điểm yếu của mục tiêu phe địch bị phá vỡ sẽ có {{2, percent}}% xác suất cơ bản khiến kẻ đó rơi vào trạng thái Lửa Đốt, Sát Thương Phá Vỡ phải chịu tăng <orangeStrong>{{3, percent}}%</orangeStrong>, duy trì {{4}} hiệp, hiệu ứng này có thể cộng dồn {{5}} tầng."
+  }
+}

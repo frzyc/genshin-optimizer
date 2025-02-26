@@ -1,0 +1,101 @@
+{
+  "name": "開拓者 (氷 • 「記憶」)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "お{RUBY_B#まか}任{RUBY_E#}せあれ！",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。",
+        "tag": "単体攻撃"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "ミュリオンに{RUBY_B#き}決{RUBY_E#}めた！",
+        "fullDesc": "記憶の精霊「ミュリオン」を召喚する。ミュリオンがすでにフィールド上にいる場合、ミュリオンはHPを最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分回復し、チャージを{{2, percent}}%獲得する。",
+        "shortDesc": "<orangeStrong>記憶の精霊</orangeStrong>「ミュリオン」を召喚する。ミュリオンがすでにフィールド上にいる場合、ミュリオンはHPを回復し、<orangeStrong>チャージ</orangeStrong>を獲得する。",
+        "tag": "召喚"
+      },
+      "1": {
+        "name": "ミュリオンに{RUBY_B#き}決{RUBY_E#}めた！",
+        "shortDesc": "<orangeStrong>記憶の精霊</orangeStrong>「ミュリオン」を召喚する。ミュリオンがすでにフィールド上にいる場合、ミュリオンはHPを回復し、<orangeStrong>チャージ</orangeStrong>を獲得する。",
+        "tag": "回復"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "やっちゃえミュリオン！",
+        "fullDesc": "記憶の精霊「ミュリオン」を召喚する。ミュリオンがチャージを{{2, percent}}%獲得し、敵全体に自身攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "<orangeStrong>記憶の精霊</orangeStrong>「ミュリオン」を召喚する。ミュリオンは<orangeStrong>チャージ</orangeStrong>を獲得し、その後、敵全体に大量の氷属性ダメージを与える。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "なんでもできる{RUBY_B#なかま}仲間{RUBY_E#}",
+        "fullDesc": "記憶の精霊「ミュリオン」の初期速度は{{1}}となり、初期最大HPは、開拓者の最大HP<orangeStrong>{{2, percent}}%</orangeStrong>分+<orangeStrong>{{4}}</orangeStrong>となる。味方全体でEPを{{3}}回復するたびに、ミュリオンがチャージを1%獲得する。",
+        "shortDesc": "味方全体で<orangeStrong>一定のEPを回復</orangeStrong>するたびに、ミュリオンが<orangeStrong>チャージ</orangeStrong>を獲得する。",
+        "tag": "強化"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "こだまする{RUBY_B#きおく}記憶{RUBY_E#}",
+        "fullDesc": "秘技を使用した後、{{1}}秒間継続する特殊領域を作り出す。特殊領域内にいる敵はタイムストップ状態を付与され、タイムストップ状態の敵は行動を停止する。<br>タイムストップ状態の敵と戦闘に入った後、敵全体の行動順を{{2, percent}}%遅延させ、敵全体に開拓者の攻撃力{{3, percent}}%分の氷属性ダメージを与える。<br>味方が作り出した領域は1つまで存在できる。",
+        "shortDesc": "特殊領域を作り出す。領域内の敵は<orangeStrong>行動を停止</orangeStrong>する。領域内の敵と戦闘に入った後、敵全体の行動順を遅延させ、敵全体に少量の氷属性ダメージを与える。",
+        "tag": "妨害"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#ついおく}追憶{RUBY_E#}の{RUBY_B#つえ}杖{RUBY_E#}",
+        "fullDesc": "戦闘開始時、開拓者の行動順が{{1, percent}}%早まる。「ミュリオン」を初めて召喚した時、ミュリオンがチャージを{{2, percent}}%獲得する。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#しょうじょう}掌上{RUBY_E#}の{RUBY_B#じょじし}叙事詩{RUBY_E#}",
+        "fullDesc": "「ミュリオン」が「厄介な悪者さん！」を発動する時、即座にチャージを{{1, percent}}%獲得する。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#じしゃく}磁石{RUBY_E#}と{RUBY_B#ちょうさ}長鎖{RUBY_E#}",
+        "fullDesc": "「ミュリオンの応援」を持つ味方の最大EPが{{1}}を超えている場合、超過分{{2}}につき、「ミュリオンの応援」による確定ダメージの倍率がさらに+{{3, percent(fixed: 1)}}%、最大で{{4, percent}}%アップできる。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#げんざい}現在{RUBY_E#}を{RUBY_B#きろく}記録{RUBY_E#}する{RUBY_B#もの}者{RUBY_E#}",
+      "desc": "「ミュリオンの応援」を持つ味方の会心率+{{1, percent}}%。味方が「ミュリオンの応援」を持つ時、その効果はその味方の記憶の精霊/召喚者、両方に適用される。なお、この効果は累積できない。"
+    },
+    "2": {
+      "name": "{RUBY_B#かこ}過去{RUBY_E#}を{RUBY_B#ひろ}拾{RUBY_E#}う{RUBY_B#もの}者{RUBY_E#}",
+      "desc": "「ミュリオン」以外の味方の記憶の精霊が行動する時、開拓者のEPを{{1}}回復する。この効果はターンが回ってくるたびに{{2}}回まで発動でき、開拓者のターンが回ってきた時に発動可能回数がリセットされる。"
+    },
+    "3": {
+      "name": "{RUBY_B#みらい}未来{RUBY_E#}を{RUBY_B#うた}詠{RUBY_E#}う{RUBY_B#もの}者{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。精霊天賦のLv.+1、最大Lv.10まで。"
+    },
+    "4": {
+      "name": "ミューズの{RUBY_B#あら}新{RUBY_E#}たな<br>{RUBY_B#おど}踊{RUBY_E#}り{RUBY_B#て}手{RUBY_E#}",
+      "desc": "最大EPが0の味方がスキルを発動する時、「ミュリオン」はチャージを{{1, percent}}%獲得し、その味方が「ミュリオンの応援」による確定ダメージのダメージ倍率がさらに+{{2, percent}}%。"
+    },
+    "5": {
+      "name": "{RUBY_B#しへん}詩篇{RUBY_E#}の{RUBY_B#つむ}紡{RUBY_E#}ぎ{RUBY_B#て}手{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。精霊スキルのLv.+1、最大Lv.10まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#けいじ}啓示{RUBY_E#}の{RUBY_B#かた}語{RUBY_E#}り{RUBY_B#て}手{RUBY_E#}",
+      "desc": "必殺技の会心率が100%に固定される。"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "name": "Große Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hast du es verstanden?",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG der Großen Herta zu.",
+        "shortDesc": "Fügt einem anvisierten Gegner geringen Eis-SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Erweiterter Horizont",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG der Großen Herta zu und belegt ihn mit {{2}} Stapelung „Interpretation“. Fügt dem Gegner, der von dieser Fertigkeit getroffen wurde, und angrenzenden Einheiten Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG der Großen Herta zu. Dieser Effekt kann 2-mal wiederholt werden.",
+        "shortDesc": "Fügt einem anvisierten Gegner SCH zu. Fügt dem Gegner, der von dieser Fertigkeit getroffen wurde, und angrenzenden Einheiten SCH zu, was 2-mal wiederholt wird.",
+        "tag": "Ausdehnung"
+      },
+      "1": {
+        "name": "Ich habe eine gewagte Idee",
+        "fullDesc": "Verbraucht 1 Stapelung „Inspiration“, fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG der Großen Herta zu und belegt ihn mit {{2}} Stapelung „Interpretation“. Fügt dem Gegner, der von dieser Fertigkeit getroffen wurde, und angrenzenden Einheiten Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG der Großen Herta zu, was 2-mal wiederholt wird. Fügt schließlich allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> des ANG der Großen Herta zu.",
+        "shortDesc": "Fügt einem anvisierten Gegner SCH zu. Fügt dem Gegner, der von dieser Fertigkeit getroffen wurde, und angrenzenden Einheiten SCH zu, was 2-mal wiederholt wird. Fügt anschließend allen Gegnern SCH zu.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ich habe doch gesagt, es ist Magie",
+        "fullDesc": "Ordnet die Stapelungen von „Interpretation“ aller Gegner neu an. „Interpretation“ mit höherer Stapelzahl wird vorrangig auf Elite- oder stärkere Gegner übertragen. Außerdem wird allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG der Großen Herta zugefügt. Beim Einsatz des Ultimates wird der ANG der Großen Herta für {{5}} Rd. um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht. Nach dem Einsatz führt Große Herta sofort eine Aktion aus und erhält 1 Stapelung „Inspiration“, bis zu {{6}} Stapelungen. Wenn Große Herta Inspiration besitzt, wird ihre Fertigkeit zu „Ich habe eine gewagte Idee“ verstärkt.",
+        "shortDesc": "<orangeStrong>Ordnet die Stapelungen von „Interpretation“ aller Gegner neu an</orangeStrong>. „Interpretation“ mit höherer Stapelzahl wird vorrangig auf Elite- oder stärkere Gegner übertragen. Außerdem wird allen Gegnern Eis-SCH zugefügt. Nach dem Einsatz erhält die Figur die verstärkte Fertigkeit und handelt sofort.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Her damit",
+        "fullDesc": "Belegt Gegner beim Kampfeintritt mit 1 Stapelung „Interpretation“. Wendet zu Beginn jeder Kampfwelle {{6}} Stapelung(en) Interpretation auf einen zufälligen Gegner an, wobei Elite- oder stärkere Gegner vorrangig getroffen werden. Wenn das Hauptziel der verstärkten Fertigkeit mit Interpretation belegt ist, wird der verursachte SCH-Multiplikator erhöht, wobei jede Stapelung eine Erhöhung von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> auf das Hauptziel / andere Ziele gewährt. Wenn 2 oder mehr Figuren im Team dem Pfad der Gelehrsamkeit folgen, gewährt jede Stapelung zusätzlich eine Erhöhung von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> auf das Hauptziel / andere Ziele. Interpretation ist bis zu {{3}}-fach stapelbar. Beim Einsatz der verstärkten Fertigkeit wird die Stapelzahl von Interpretation des Hauptziels auf 1 zurückgesetzt. Wenn ein Gegner das Kampffeld verlässt oder von einer beliebigen Einheit besiegt wird, wird Interpretation übertragen, wobei Elite- und stärkere Gegner vorrangig getroffen werden.",
+        "shortDesc": "Die verstärkte Fertigkeit <orangeStrong>erhöht den verursachten SCH basierend auf der Stapelzahl von „Interpretation“</orangeStrong> des Ziels.",
+        "tag": "Verstärkung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Das lässt sich sehen",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik den ANG der Großen Herta zu Beginn des nächsten Kampfes für {{2}} Rd. um {{1, percent}}%.<br>Wenn sich auf der Karte Gewöhnliche Schätze befinden, wird nach dem Einsatz der Technik die Position von bis zu {{3}} davon markiert.<br>Fügt nach dem Einsatz der Technik in der Universum-Simulation und in Divergentes Universum zu Beginn jeder Kampfwelle Gegnern, die schwächer als Elitegegner sind, Tatsächlichen SCH in Höhe von {{4, percent}}% der max. LP des Ziels und Elite- oder stärkeren Gegnern Tatsächlichen SCH in Höhe von {{5, percent}}% der max. LP des Ziels zu.",
+        "shortDesc": "Nach dem Einsatz der Technik wird <orangeStrong>die Position mehrerer Gewöhnlicher Schätze markiert</orangeStrong>. Außerdem wird zu Beginn des nächsten Kampfes der ANG der Großen Herta erhöht.<br>Nach dem Einsatz der Technik in der Universum-Simulation und in Divergentes Universum wird zu Beginn jeder Kampfwelle allen Gegnern massiver Tatsächlicher SCH zugefügt.",
+        "tag": "Verstärkung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kalte Ehrlichkeit",
+        "fullDesc": "Wenn ein Verbündeter angreift, wird der getroffene Gegner mit 1 Stapelung „Interpretation“ belegt. Nach dem Angriff wird die Energie der Großen Herta für jedes getroffene Ziel um {{1}} Pkt. wiederhergestellt, wobei bis zu 5 Zielen gezählt wird. Wenn die Interpretation vom Hauptziel beim Einsatz der verstärkten Fertigkeit 42 Stapelungen erreicht, wird der verursachte SCH der Großen Herta um {{2, percent}}% erhöht. Dieser Effekt hält an, bis dieser Angriff endet."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Brief von jenseits des Horizonts",
+        "fullDesc": "Wenn beim Kampfeintritt 2 oder mehr Figuren auf dem Pfad der Gelehrsamkeit im Team sind, wird der KRIT-SCH aller Verbündeten um {{1, percent}}% erhöht. Die Spur „Kalte Ehrlichkeit“ zählt beim Berechnen der getroffenen Ziele mindestens {{2}} Ziele. Nach dem Angriff wird der Gegner mit der höchsten Stapelzahl von „Interpretation“ unter den getroffenen Zielen mit {{3}} Stapelung Interpretation belegt. Wenn der Angreifer dem Pfad der Gelehrsamkeit folgt, werden zusätzlich {{4}} Stapelungen Interpretation belegt."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Hungernde Landschaft",
+        "fullDesc": "Für jede Stapelung „Interpretation“, die dem Gegner zugefügt wird, erhält Große Herta 1 Stapelung „Des Rätsels Lösung“, bis zu {{2}} Stapelungen. Beim Einsatz des Ultimates wird für jede Stapelung Des Rätsels Lösung der SCH-Multiplikator dieses Ultimates um {{1, percent(fixed: 1)}}% erhöht."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Nacht der fallenden Sterne",
+      "desc": "Wenn die verstärkte Fertigkeit die Stapelungen von „Interpretation“ berechnet, wird zusätzlich {{1, percent}}% der Stapelzahl von Interpretation des Ziels mit der höchsten aktuellen Stapelzahl unter dem Hauptziel sowie angrenzenden Einheiten berechnet. Wenn beim Einsatz der verstärkten Fertigkeit Interpretation zurückgesetzt wird, wird die Stapelzahl stattdessen auf {{2}} zurückgesetzt."
+    },
+    "2": {
+      "name": "Wind durch das Schlüsselloch",
+      "desc": "Nachdem Große Herta den Kampf betreten oder ihr Ultimate eingesetzt hat, erhält sie zusätzlich 1 Stapelung „Inspiration“. Nach dem Einsatz der verstärkten Fertigkeit wird die nächste Aktion der Großen Herta um {{1, percent}}% vorgezogen."
+    },
+    "3": {
+      "name": "Durch das Tor des Hochsommers",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Der sechzehnte Schlüssel",
+      "desc": "Erhöht die GES von Figuren auf dem Pfad der Gelehrsamkeit im Team um {{1, percent}}%."
+    },
+    "5": {
+      "name": "Wahrheit, bitter wie Medizin",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Antwort, süß wie eine Honigfalle",
+      "desc": "Erhöht die Eis-WDS-DUR der Großen Herta um {{4, percent}}%. Wenn die Anzahl der Gegner auf dem Kampffeld 3 oder mehr/2/1 beträgt, wird der SCH-Multiplikator des Ultimates um {{1, percent}}%/{{2, percent}}%/{{3, percent}}% erhöht."
+    }
+  }
+}

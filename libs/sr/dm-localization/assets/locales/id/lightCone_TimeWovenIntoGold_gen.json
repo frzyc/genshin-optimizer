@@ -1,0 +1,7 @@
+{
+  "name": "Time Woven Into Gold",
+  "passive": {
+    "name": "Establishment",
+    "description": "Meningkatkan SPD Dasar pengguna sebesar <orangeStrong>{{1}}</orangeStrong>. Setiap kali setelah pengguna atau Memosprite pengguna melancarkan serangan, pengguna akan memperoleh 1 lapis \"Brocade\". Setiap lapis \"Brocade\" meningkatkan <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> CRIT DMG pengguna dan Memosprite pengguna, efek ini dapat ditumpuk hingga {{2}} lapis. Saat lapisan \"Brocade\" mencapai batas maksimum, setiap lapis \"Brocade\" akan meningkatkan Basic Attack DMG yang diakibatkan sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>."
+  }
+}

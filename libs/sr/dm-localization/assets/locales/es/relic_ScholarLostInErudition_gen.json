@@ -1,0 +1,7 @@
+{
+  "setName": "Eruditos perdidos en el mar del conocimiento",
+  "setEffects": {
+    "2": "Prob. CRIT +{{1, percent}}%.",
+    "4": "El daño que infligen la habilidad básica y la habilidad definitiva aumenta en un {{1, percent}}%. Tras lanzar la habilidad definitiva, el daño que inflige la siguiente habilidad básica aumenta en un {{2, percent}}% adicional."
+  }
+}

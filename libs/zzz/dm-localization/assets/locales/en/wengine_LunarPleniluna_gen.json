@@ -5,10 +5,10 @@
   "desc3": "A W-Engine that prioritizes damage output over noise reduction. It can indiscriminately deal considerable damage to all units nearby.",
   "phase": "Full Moon",
   "phaseDescs": [
-    "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>12%</color>.",
-    "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>14%</color>.",
-    "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>16%</color>.",
-    "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>18%</color>.",
-    "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>20%</color>."
+    "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by <ct color=#2BAD00>12%</ct>.",
+    "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by <ct color=#2BAD00>14%</ct>.",
+    "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by <ct color=#2BAD00>16%</ct>.",
+    "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by <ct color=#2BAD00>18%</ct>.",
+    "<ct color=#FFFFFF>Basic Attack</ct>, <ct color=#FFFFFF>Dash Attack</ct>, and <ct color=#FFFFFF>Dodge Counter</ct> DMG increases by <ct color=#2BAD00>20%</ct>."
   ]
 }

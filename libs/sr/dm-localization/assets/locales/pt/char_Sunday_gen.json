@@ -1,0 +1,96 @@
+{
+  "name": "Sunday",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Admoestação Brilhante",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sunday a uma unidade inimiga designada.",
+        "shortDesc": "Causa Dano Imaginário leve a uma unidade inimiga designada.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Bênção de Papéis e Ritos",
+        "fullDesc": "Permite que um personagem aliado designado e sua invocação atuem imediatamente, aumentando o Dano causado em <orangeStrong>{{2, percent}}%</orangeStrong>. Se o alvo tiver uma invocação, o bônus de Dano adicional aumenta em <orangeStrong>{{4, percent}}%</orangeStrong>, durando {{3}} rodada(s).<br>Após usar a Perícia em O Beatificado, recupera 1 Ponto de Perícia.<br>Quando Sunday utiliza essa habilidade em personagens que seguem o Caminho da Harmonia, o efeito de \"ação imediata\" não pode ser ativado.",
+        "shortDesc": "Faz com que <orangeStrong>um personagem aliado designado e sua invocação ajam imediatamente</orangeStrong>, e aumenta seu Dano causado.<br>Após utilizar sua Perícia em \"O Beatificado\", recupera 1 Ponto de Perícia.<br>Quando Sunday utiliza sua habilidade em personagens do Caminho da Harmonia, o efeito de ação imediata não pode ser ativado.",
+        "tag": "Suporte"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ode ao Afago e à Cicatrix",
+        "fullDesc": "Regenera Energia em {{1, percent(fixed: 1)}}% da Energia máxima de um personagem aliado designado e transforma o alvo e sua invocação em \"O Beatificado\". \"O Beatificado\" recebe aumento de Dano CRIT em uma quantidade igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Sunday + <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>.<br>No início de cada rodada de Sunday, a duração do estado \"O Beatificado\" é reduzida em 1 rodada, durando por um total de {{3}} rodada(s). E ela só entra em efeito no alvo mais recente da Perícia Suprema (exceto pelo próprio Sunday). Quando Sunday é derrubado, \"O Beatificado\" também será dissipado.",
+        "shortDesc": "<orangeStrong>Regenera Energia</orangeStrong> para um personagem aliado designado e transforma o alvo e sua invocação em \"O Beatificado\". \"O Beatificado\" aumenta o Dano CRIT.",
+        "tag": "Suporte"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "O Corpo em Sofrimento",
+        "fullDesc": "Ao utilizar a Perícia, aumenta a Chance de CRIT do alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, durando por {{2}} rodada(s).",
+        "shortDesc": "Ao utilizar a Perícia, aumenta a Chance de CRIT do alvo.",
+        "tag": "Suporte"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Os Mistérios Gloriosos",
+        "fullDesc": "Da primeira vez que Sunday usar uma habilidade em um aliado-alvo na próxima batalha, o Dano causado aumenta em {{1, percent}}%, com duração de {{2}} rodada(s).",
+        "shortDesc": "Após esta Técnica ser usada, da primeira vez que Sunday usar uma habilidade em um aliado-alvo na próxima batalha, o Dano causado pelo alvo aumenta.",
+        "tag": "Suporte"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Desejo pelo Dia de Descanso",
+        "fullDesc": "Se a Perícia Suprema regenerar menos que {{1}} de Energia para o alvo, aumenta a Energia regenerada para {{1}}."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Varredura Exaltada",
+        "fullDesc": "No início da batalha, Sunday regenera {{1}} de Energia."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Paraíso nas Mãos",
+        "fullDesc": "Ao usar a Perícia, remove {{1}} penalidade(s) do alvo."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Quietude Milenar",
+      "desc": "Quando Sunday usa uma Perícia, o personagem-alvo pode ignorar {{2, percent}}% da DEF do inimigo-alvo para causar Dano, e sua invocação pode ignorar {{3, percent}}% da DEF do inimigo-alvo para causar Dano, com duração de {{1}} rodada(s)."
+    },
+    "2": {
+      "name": "A Fé Supera a Fragilidade",
+      "desc": "Após o primeiro uso da Perícia Suprema, recupera {{2}} ponto(s) de Perícia. O Dano causado por \"O Beatificado\" aumenta em {{1, percent}}%."
+    },
+    "3": {
+      "name": "Eremitério de Espinhos",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Preâmbulo da Escultura",
+      "desc": "No início da rodada, regenera {{1}} de Energia."
+    },
+    "5": {
+      "name": "Navio de Papel na Baía Prateada",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Amanhecer da Cacofonia Sideral",
+      "desc": "O efeito de Bônus de Chance de CRIT do Talento se torna acumulável em até {{1}} vez(es) e a duração do Talento aumenta em {{3}} rodada(s). Quando Sunday utiliza sua Perícia Suprema, ele também aplica o efeito de Bônus de Chance de CRIT do Talento ao alvo. Quando o efeito de Bônus de Chance de CRIT do Talento entra em efeito e a Chance de CRIT do alvo exceder os 100%, cada 1% da Chance de CRIT excedente aumenta em {{2, percent}}% o Dano CRIT."
+    }
+  }
+}

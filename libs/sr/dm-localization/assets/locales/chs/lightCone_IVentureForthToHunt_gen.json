@@ -1,0 +1,7 @@
+{
+  "name": "我将，巡征追猎",
+  "passive": {
+    "name": "震慑",
+    "description": "使装备者的暴击率提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。装备者施放追加攻击时，获得1层【流光】，最多叠加{{3}}层。每层【流光】使装备者造成的终结技伤害无视目标<orangeStrong>{{2, percent}}%</orangeStrong>的防御力。装备者回合结束时，移除1层【流光】。"
+  }
+}

@@ -23,6 +23,7 @@ import { data, keys, values } from './data'
 import {
   convert,
   enemyTag,
+  own,
   ownTag,
   tagStr,
   target,
@@ -56,6 +57,8 @@ describe('character test', () => {
             skill: 0,
             ult: 0,
             talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
             bonusAbilities: {},
             statBoosts: {},
           },
@@ -93,6 +96,8 @@ describe('lightCone test', () => {
             skill: 0,
             ult: 0,
             talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
             bonusAbilities: {},
             statBoosts: {},
           },
@@ -132,6 +137,8 @@ describe('char+lightCone test', () => {
             skill: 0,
             ult: 0,
             talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
             bonusAbilities: {},
             statBoosts: {},
           },
@@ -162,6 +169,8 @@ describe('team test', () => {
             skill: 0,
             ult: 0,
             talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
             bonusAbilities: {},
             statBoosts: {},
           },
@@ -180,6 +189,8 @@ describe('team test', () => {
             skill: 0,
             ult: 0,
             talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
             bonusAbilities: {},
             statBoosts: {},
           },
@@ -207,6 +218,8 @@ describe('team test', () => {
             skill: 0,
             ult: 0,
             talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
             bonusAbilities: {},
             statBoosts: {},
           },
@@ -225,6 +238,8 @@ describe('team test', () => {
             skill: 0,
             ult: 0,
             talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
             bonusAbilities: {},
             statBoosts: {},
           },
@@ -238,6 +253,58 @@ describe('team test', () => {
     const argenti = convert(ownTag, { et: 'own', src: 'Argenti' })
     expect(calc.compute(acheron.final.atk).val).greaterThan(10000)
     expect(calc.compute(argenti.final.atk).val).lessThan(10000)
+  })
+  it('can read individual and team energy', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Acheron', 'Argenti']),
+      ...withMember(
+        'Acheron',
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Acheron',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        )
+      ),
+      ...withMember(
+        'Argenti',
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Argenti',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          2
+        )
+      ),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    expect(
+      calc.withTag({ src: 'Argenti' }).compute(own.char.maxEnergy).val
+    ).toEqual(180)
+    expect(calc.compute(team.common.count.withMisc('maxEnergy')).val).toEqual(
+      189
+    )
   })
 })
 

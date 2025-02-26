@@ -1,5 +1,13 @@
-import { objMap } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import type {
+  BuildResult,
+  BuildResultByIndex,
+  EquipmentStats,
+  ParentCommandStart,
+  ParentCommandTerminate,
+  ParentMessage,
+  ProgressResult,
+} from '@genshin-optimizer/game-opt/solver'
 import { detach, prod, prune, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
@@ -11,17 +19,6 @@ import type {
 } from '@genshin-optimizer/sr/db'
 import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
-import type {
-  BuildResult,
-  BuildResultByIndex,
-  EquipmentStats,
-  ProgressResult,
-} from './common'
-import type {
-  ParentCommandStart,
-  ParentCommandTerminate,
-  ParentMessage,
-} from './parentWorker'
 
 export class Solver {
   private calc: Calculator
@@ -84,20 +81,21 @@ export class Solver {
 
       // Start worker
       // Call first for side effects to other properties
-      const {
-        prunedNodes,
-        prunedMinumum,
-        prunedLightConeStats,
-        prunedRelicStatsBySlot,
-      } = this.detachAndPrune(
+      const stats = [
         this.lightCones.map(convertLightConeToStats),
-        objMap(this.relicsBySlot, (relics) => relics.map(convertRelicToStats))
-      )
+        this.relicsBySlot.head.map(convertRelicToStats),
+        this.relicsBySlot.hands.map(convertRelicToStats),
+        this.relicsBySlot.body.map(convertRelicToStats),
+        this.relicsBySlot.feet.map(convertRelicToStats),
+        this.relicsBySlot.sphere.map(convertRelicToStats),
+        this.relicsBySlot.rope.map(convertRelicToStats),
+      ]
+      const { prunedNodes, prunedMinumum, prunedStats } =
+        this.detachAndPrune(stats)
       const message: ParentCommandStart = {
         command: 'start',
         detachedNodes: prunedNodes,
-        lightConeStats: prunedLightConeStats,
-        relicStatsBySlot: prunedRelicStatsBySlot,
+        equipmentStats: prunedStats,
         constraints: prunedMinumum,
         numWorkers: this.numWorkers,
       }
@@ -130,10 +128,7 @@ export class Solver {
     this.worker.terminate()
   }
 
-  private detachAndPrune(
-    lightConeStats: EquipmentStats[],
-    relicStatsBySlot: Record<RelicSlotKey, EquipmentStats[]>
-  ) {
+  private detachAndPrune(equipmentStats: EquipmentStats[][]) {
     // Step 2: Detach nodes from Calculator
     const relicSetKeys = new Set(allRelicSetKeys)
     const lightConeKeys = new Set(allLightConeKeys)
@@ -175,15 +170,6 @@ export class Solver {
 
       return undefined
     })
-    const candidates = [
-      lightConeStats,
-      relicStatsBySlot.head,
-      relicStatsBySlot.hands,
-      relicStatsBySlot.body,
-      relicStatsBySlot.feet,
-      relicStatsBySlot.sphere,
-      relicStatsBySlot.rope,
-    ]
     // Add -Infinity as the opt-target itself is also used as a min constraint
     // Invert max constraints for pruning
     const constraints = [
@@ -196,21 +182,11 @@ export class Solver {
       nodes: prunedNodes,
       candidates: prunedCandidates,
       minimum: prunedMinumum,
-    } = prune(detachedNodes, candidates, 'q', constraints, this.topN)
-    const prunedLightConeStats = prunedCandidates[0]
-    const prunedRelicStatsBySlot = {
-      head: prunedCandidates[1],
-      hands: prunedCandidates[2],
-      body: prunedCandidates[3],
-      feet: prunedCandidates[4],
-      sphere: prunedCandidates[5],
-      rope: prunedCandidates[6],
-    }
+    } = prune(detachedNodes, equipmentStats, 'q', constraints, this.topN)
     return {
       prunedNodes,
       prunedMinumum,
-      prunedLightConeStats,
-      prunedRelicStatsBySlot,
+      prunedStats: prunedCandidates,
     }
   }
 }
@@ -250,17 +226,20 @@ function createConvertBuildResult(
   lightCones: ICachedLightCone[],
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
 ) {
-  return function ({
-    value,
-    lightConeIndex,
-    relicIndices,
-  }: BuildResultByIndex): BuildResult {
+  const arr = [
+    lightCones,
+    relicsBySlot.head,
+    relicsBySlot.hands,
+    relicsBySlot.body,
+    relicsBySlot.feet,
+    relicsBySlot.sphere,
+    relicsBySlot.rope,
+  ]
+  return function ({ value, indices }: BuildResultByIndex): BuildResult {
     return {
       value,
-      lightConeId: lightCones[lightConeIndex].id,
-      relicIds: objMap(
-        relicIndices,
-        (index, slot) => relicsBySlot[slot][index].id
+      ids: indices.map(
+        (equipIndex, listIndex) => arr[listIndex][equipIndex].id
       ),
     }
   }

@@ -45,32 +45,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Chính Trực",
-        "fullDesc": "Tăng xác suất Gepard bị phe địch tấn công.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tăng xác suất Gepard bị phe địch tấn công."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Thống Lĩnh",
-        "fullDesc": "Sau khi kích hoạt Ý Chí Kiên Cường, năng lượng của Gepard hồi ngay đến 100%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Sau khi kích hoạt Ý Chí Kiên Cường, năng lượng của Gepard hồi ngay đến 100%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chiến Ý",
-        "fullDesc": "Gepard tăng tấn công bằng {{1, percent}}% Phòng Thủ hiện tại của bản thân, khi bắt đầu mỗi hiệp sẽ làm mới.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Gepard tăng tấn công bằng {{1, percent}}% Phòng Thủ hiện tại của bản thân, khi bắt đầu mỗi hiệp sẽ làm mới."
       }
     }
   },

@@ -1,0 +1,96 @@
+{
+  "name": "Sunday",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Lời Khuyên Can Lấp Lánh",
+        "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sunday.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Sự Ban Ơn Của Giấy Và Nghi Thức",
+        "fullDesc": "Khiến 1 nhân vật chỉ định phe ta và vật triệu hồi của nhân vật đó lập tức hành động, đồng thời tăng <orangeStrong>{{2, percent}}%</orangeStrong> sát thương họ gây ra, nếu mục tiêu có vật triệu hồi, sẽ tăng thêm <orangeStrong>{{4, percent}}%</orangeStrong> hiệu ứng Tăng Sát Thương gây ra, duy trì {{3}} hiệp.<br>Sau khi thi triển Chiến Kỹ lên Chân Phước sẽ hồi 1 điểm Chiến Kỹ.<br>Khi Sunday thi triển kỹ năng này lên nhân vật vận mệnh Hòa Hợp, sẽ không thể kích hoạt hiệu ứng lập tức hành động.",
+        "shortDesc": "Khiến <orangeStrong>1 nhân vật chỉ định phe ta và vật triệu hồi của nhân vật đó lập tức hành động</orangeStrong>, đồng thời tăng sát thương họ gây ra, nếu mục tiêu có vật triệu hồi, sẽ tăng thêm hiệu ứng Tăng Sát Thương gây ra.<br>Sau khi thi triển Chiến Kỹ lên Chân Phước sẽ hồi 1 điểm Chiến Kỹ.<br>Khi Sunday thi triển kỹ năng này lên nhân vật vận mệnh Hòa Hợp, sẽ không thể kích hoạt hiệu ứng lập tức hành động.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Lời Ca Tụng Sự Vuốt Ve Và Vết Sẹo",
+        "fullDesc": "Hồi năng lượng bằng {{1, percent(fixed: 1)}}% giới hạn năng lượng cho 1 nhân vật chỉ định phe ta, đồng thời khiến mục tiêu và vật triệu hồi của mục tiêu đó trở thành Chân Phước, tăng Sát Thương Bạo Kích của Chân Phước, trị số tăng bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> sát thương bạo kích của Sunday +<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>.<br>Mỗi khi hiệp của Sunday bắt đầu, thì số hiệp duy trì của trạng thái Chân Phước giảm 1, tổng cộng duy trì {{3}} hiệp. Hơn nữa chỉ có hiệu lực với mục tiêu thi triển Tuyệt Kỹ mới nhất (ngoài bản thân Sunday). Khi Sunday rơi vào trạng thái không thể chiến đấu, hiệu ứng Chân Phước cũng sẽ bị giải trừ.",
+        "shortDesc": "<orangeStrong>Hồi Năng Lượng</orangeStrong> cho 1 nhân vật chỉ định phe ta, đồng thời khiến mục tiêu và vật triệu hồi trở thành Chân Phước, tăng Sát Thương Bạo Kích của Chân Phước.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Thân Xác Thổ Lộ",
+        "fullDesc": "Khi thi triển Chiến Kỹ sẽ tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tỷ Lệ Bạo Kích của mục tiêu, duy trì {{2}} hiệp.",
+        "shortDesc": "Khi thi triển Chiến Kỹ sẽ tăng Tỷ Lệ Bạo Kích của mục tiêu.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Bí Mật Phồn Vinh",
+        "fullDesc": "Sau khi dùng Bí Kỹ, lần chiến đấu tiếp theo khi Sunday lần đầu tiên thi triển kỹ năng lên mục tiêu phe ta, sẽ khiến sát thương mục tiêu gây ra tăng {{1, percent}}%, duy trì {{2}} hiệp.",
+        "shortDesc": "Sau khi dùng Bí Kỹ, lần chiến đấu tiếp theo khi Sunday lần đầu tiên thi triển kỹ năng lên mục tiêu phe ta, sẽ khiến sát thương mục tiêu gây ra tăng.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Khát Vọng Chủ Nhật",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ, nếu năng lượng hồi cho mục tiêu không đủ {{1}} điểm, thì năng lượng hồi phục sẽ tăng đến {{1}} điểm."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Phất Trần Cao Thượng",
+        "fullDesc": "Khi bắt đầu trận, Sunday sẽ hồi {{1}} điểm Năng Lượng."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Thiên Đường Trong Tay",
+        "fullDesc": "Khi thi triển Chiến Kỹ, giải trừ {{1}} Hiệu Ứng Xấu của mục tiêu."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Sự Kết Thúc Của Thiên Niên Kỷ Tĩnh Lặng",
+      "desc": "Khi Sunday thi triển Chiến Kỹ, khiến nhân vật mục tiêu gây sát thương, sẽ bỏ qua {{2, percent}}% phòng thủ của mục tiêu, khi Vật Triệu Hồi gây sát thương sẽ bỏ qua {{3, percent}}% phòng thủ của mục tiêu, duy trì {{1}} hiệp."
+    },
+    "2": {
+      "name": "Đức Tin Bổ Túc",
+      "desc": "Sau khi lần đầu tiên thi triển Tuyệt Kỹ sẽ hồi {{2}} Điểm Chiến Kỹ. Sát thương Chân Phước gây ra tăng {{1, percent}}%."
+    },
+    "3": {
+      "name": "Viện Tịnh Tu Của Bụi Gai",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không vượt quá cấp 15; Cấp Tấn Công Thường +1, tối đa không vượt quá cấp 10."
+    },
+    "4": {
+      "name": "Lời Mở Đầu Của Bức Tượng",
+      "desc": "Khi bắt đầu hiệp, sẽ hồi phục {{1}} điểm Năng Lượng."
+    },
+    "5": {
+      "name": "Thuyền Giấy Lênh Đênh Vịnh Bạc",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không vượt quá cấp 15; Cấp Thiên Phú +2, tối đa không vượt quá cấp 15."
+    },
+    "6": {
+      "name": "Sự Khởi Đầu Náo Động Của Quần Sao",
+      "desc": "Hiệu ứng Tăng Tỷ Lệ Bạo Kích của Thiên Phú có thể cộng dồn, tối đa cộng dồn {{1}} tầng, đồng thời khiến thời gian duy trì của Thiên Phú tăng {{3}} hiệp. Khi Sunday thi triển Tuyệt Kỹ cũng có thể thêm hiệu ứng Tăng Tỷ Lệ Bạo Kích của Thiên Phú cho mục tiêu. Khi hiệu ứng Tăng Tỷ Lệ Bạo Kích của Thiên Phú có hiệu lực, nếu Tỷ Lệ Bạo Kích của mục tiêu trên 100% thì cứ mỗi 1% Tỷ Lệ Bạo Kích vượt mức sẽ tăng {{2, percent}}% sát thương Bạo Kích."
+    }
+  }
+}

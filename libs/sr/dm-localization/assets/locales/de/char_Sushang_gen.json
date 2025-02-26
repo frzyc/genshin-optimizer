@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Frühlingsgeburt",
-        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Zurückschlagen gegen den Feind",
-        "fullDesc": "Für jede ausgelöste „Schwerthaltung“ wird ihr zugefügter SCH um {{1, percent}}% erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Für jede ausgelöste „Schwerthaltung“ wird ihr zugefügter SCH um {{1, percent}}% erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sieger",
-        "fullDesc": "Nach dem Einsatz des Standardangriffs oder der Fertigkeit wird Sushangs Aktion um {{1, percent}}% vorgezogen, wenn sich auf dem Kampffeld Gegner mit Schwächebruch befinden.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Nach dem Einsatz des Standardangriffs oder der Fertigkeit wird Sushangs Aktion um {{1, percent}}% vorgezogen, wenn sich auf dem Kampffeld Gegner mit Schwächebruch befinden."
       }
     }
   },

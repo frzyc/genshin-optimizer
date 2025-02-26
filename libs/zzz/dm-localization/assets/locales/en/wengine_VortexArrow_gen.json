@@ -5,10 +5,10 @@
   "desc3": "A tactical W-Engine that locates enemies using high-frequency sound waves. Its aiming aid can make its operator's precision attack more deadly.",
   "phase": "Tsunami",
   "phaseDescs": [
-    "The equipper's attacks inflict <color=#2BAD00>8%</color> more Daze on their main target.",
-    "The equipper's attacks inflict <color=#2BAD00>9%</color> more Daze on their main target.",
-    "The equipper's attacks inflict <color=#2BAD00>10%</color> more Daze on their main target.",
-    "The equipper's attacks inflict <color=#2BAD00>11%</color> more Daze on their main target.",
-    "The equipper's attacks inflict <color=#2BAD00>12%</color> more Daze on their main target."
+    "The equipper's attacks inflict <ct color=#2BAD00>8%</ct> more Daze on their main target.",
+    "The equipper's attacks inflict <ct color=#2BAD00>9%</ct> more Daze on their main target.",
+    "The equipper's attacks inflict <ct color=#2BAD00>10%</ct> more Daze on their main target.",
+    "The equipper's attacks inflict <ct color=#2BAD00>11%</ct> more Daze on their main target.",
+    "The equipper's attacks inflict <ct color=#2BAD00>12%</ct> more Daze on their main target."
   ]
 }

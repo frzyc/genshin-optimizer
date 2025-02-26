@@ -1,0 +1,7 @@
+{
+  "name": "Montagem do Sonho",
+  "passive": {
+    "name": "Edição Acadêmica",
+    "description": "Aumenta a VEL do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após atacar inimigos-alvo afligidos com Quebra de Fraqueza, regenera <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> de Energia. Este efeito pode ser ativado até {{3}} vez(es) por rodada."
+  }
+}

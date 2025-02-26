@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' Roll",
-        "fullDesc": "When using skill, increases the base chance for the attacked enemy target to become Shocked by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using skill, increases the base chance for the attacked enemy target to become Shocked by {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "String Vibration",
-        "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mania",
-        "fullDesc": "Upon defeating an enemy, ATK is increased by {{1, percent}}% for {{2}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Upon defeating an enemy, ATK is increased by {{1, percent}}% for {{2}} turn(s)."
       }
     }
   },

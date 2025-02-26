@@ -1,0 +1,6 @@
+{
+  "setName": "Biển Lục Địa Chìm - Lushaka",
+  "setEffects": {
+    "2": "Khiến Hiệu Suất Hồi Năng Lượng của người trang bị tăng {{1, percent}}%, nếu người trang bị không phải nhân vật vị trí đầu tiên trong đội, thì sẽ khiến Tấn Công của nhân vật ở vị trí đầu tiên trong đội tăng {{2, percent}}%."
+  }
+}

@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Overture of Inebriation",
-        "fullDesc": "After using Technique, creates a Special Dimension around the character that lasts for {{1}} seconds. Enemies within this dimension will not attack Robin and will follow Robin while the dimension is active. After entering battle while the dimension is active, Robin regenerates {{2}} Energy at the start of each wave. Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Technique, creates a Special Dimension around the character that lasts for {{1}} seconds. Enemies within this dimension will not attack Robin and will follow Robin while the dimension is active. After entering battle while the dimension is active, Robin regenerates {{2}} Energy at the start of each wave. Only 1 Dimension Effect created by allies can exist at the same time.",
         "shortDesc": "Creates a Special Dimension around the character. Enemies within this dimension will not attack Robin. After entering battle while the dimension is active, Robin additionally regenerates <orangeStrong>{{2}}</orangeStrong> Energy at the start of each wave.",
         "tag": "Support"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Coloratura Cadenza",
-        "fullDesc": "When the battle begins, action advances this character by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When the battle begins, action advances this character by {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Impromptu Flourish",
-        "fullDesc": "While the Concerto state is active, the CRIT DMG dealt when all allies launch Follow-up ATK increases by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "While the Concerto state is active, the CRIT DMG dealt when all allies launch Follow-up ATK increases by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sequential Passage",
-        "fullDesc": "When using Skill, additionally regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using Skill, additionally regenerates {{1}} Energy."
       }
     }
   },

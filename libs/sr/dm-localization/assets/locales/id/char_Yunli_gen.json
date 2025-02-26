@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fiery Wheel",
-        "fullDesc": "Setiap kali setelah melancarkan 1 kali \"Intuit: Slash\", \"Intuit: Slash\" yang berikutnya akan diganti menjadi \"Intuit: Cull\".",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Setiap kali setelah melancarkan 1 kali \"Intuit: Slash\", \"Intuit: Slash\" yang berikutnya akan diganti menjadi \"Intuit: Cull\"."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Demon Quell",
-        "fullDesc": "Saat berstatus \"Parry\", akan menahan efek Crowd Control Debuff yang diterima, serta mengurangi DMG yang diterima sebesar {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat berstatus \"Parry\", akan menahan efek Crowd Control Debuff yang diterima, serta mengurangi DMG yang diterima sebesar {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "True Sunder",
-        "fullDesc": "Saat melancarkan Serangan Balasan, ATK Yunli meningkat {{1, percent}}%, berlangsung selama 1 giliran.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat melancarkan Serangan Balasan, ATK Yunli meningkat {{1, percent}}%, berlangsung selama 1 giliran."
       }
     }
   },

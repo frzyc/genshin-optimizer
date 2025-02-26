@@ -1,0 +1,7 @@
+{
+  "name": "Montage du rêve",
+  "passive": {
+    "name": "Montage de style académique",
+    "description": "Augmente la VIT du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Après avoir attaqué des cibles ennemies en état de Rupture de faiblesse, régénère <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> points d'énergie. Cet effet peut s'activer {{3}} fois par tour."
+  }
+}

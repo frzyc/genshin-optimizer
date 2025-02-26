@@ -1,0 +1,7 @@
+{
+  "name": "Reminiscence",
+  "passive": {
+    "name": "Going to Sleep",
+    "description": "Saat giliran Memosprite pengguna dimulai, akan membuat pengguna dan Memosprite-nya masing-masing memperoleh 1 lapis \"Commemoration\". Setiap lapisnya meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diakibatkan, dapat ditumpuk hingga {{2}} lapis. Saat Memosprite pengguna menghilang, \"Commemoration\" milik pengguna dan Memosprite-nya akan dihapus."
+  }
+}

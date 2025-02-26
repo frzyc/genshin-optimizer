@@ -5,11 +5,14 @@ const key: RelicSetKey = 'HunterOfGlacialForest'
 const data_gen = allStats.relic[key]
 
 let o = 0
-// TODO: Load scalings
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    passive_ice_dmg_: data_gen.setEffects[0].passiveStats.ice_dmg_,
+  },
+  4: {
+    crit_dmg_: data_gen.setEffects[1].otherStats[o++],
+    duration: data_gen.setEffects[1].otherStats[o++],
   },
 } as const
 

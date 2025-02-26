@@ -1,0 +1,7 @@
+{
+  "name": "向著不可追問處",
+  "passive": {
+    "name": "思維遊戲",
+    "description": "使裝備者的暴擊率提高<orangeStrong>{{1, percent}}%</orangeStrong>。裝備者施放終結技時，使裝備者造成的戰技和終結技傷害提高<orangeStrong>{{4, percent}}%</orangeStrong>，持續{{5}}回合。裝備者施放終結技後，若本次終結技消耗的能量大於等於{{3}}點，恢復1個戰技點。"
+  }
+}

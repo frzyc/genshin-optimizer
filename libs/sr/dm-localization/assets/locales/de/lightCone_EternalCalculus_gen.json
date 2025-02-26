@@ -1,0 +1,7 @@
+{
+  "name": "Unermüdliche Berechnung",
+  "passive": {
+    "name": "Gedanken ohne Grenzen",
+    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nach einem Angriff wird der ANG für jedes getroffene Ziel zusätzlich um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu 5-mal stapelbar und dauert bis zum nächsten Angriff. Wenn {{3}} oder mehr Gegner getroffen werden, wird die GES dieser Einheit für {{5}} Rd. um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht."
+  }
+}

@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Icing on the Kick",
-        "fullDesc": "หลังจากที่โจมตีแล้ว จะสร้าง DMG น้ำแข็งเพิ่มเติม {{1, percent}}% ของ ATK ของ Yanqing แก่ศัตรูเป้าหมายที่มีจุดอ่อนน้ำแข็ง",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "หลังจากที่โจมตีแล้ว จะสร้าง DMG น้ำแข็งเพิ่มเติม {{1, percent}}% ของ ATK ของ Yanqing แก่ศัตรูเป้าหมายที่มีจุดอ่อนน้ำแข็ง"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Frost Favors the Brave",
-        "fullDesc": "เมื่ออยู่ภายใต้เอฟเฟกต์ \"Soulsteel Sync\" การต้านทานสถานะจะเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่ออยู่ภายใต้เอฟเฟกต์ \"Soulsteel Sync\" การต้านทานสถานะจะเพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gentle Blade",
-        "fullDesc": "เมื่อเกิดคริติคอล ความเร็วจะเพิ่มขึ้น {{1, percent}}% เป็นเวลา {{2}} เทิร์น",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่อเกิดคริติคอล ความเร็วจะเพิ่มขึ้น {{1, percent}}% เป็นเวลา {{2}} เทิร์น"
       }
     }
   },

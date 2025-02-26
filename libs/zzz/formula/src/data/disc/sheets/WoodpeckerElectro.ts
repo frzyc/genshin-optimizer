@@ -6,8 +6,9 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'WoodpeckerElectro'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
-const { crit_basic_dodge_ex } = allNumConditionals(key, true, 1, 3)
+const { crit_basic_dodge_ex } = allNumConditionals(key, true, 0, 3)
 
 const sheet = registerDisc(
   key,
@@ -19,7 +20,8 @@ const sheet = registerDisc(
     'set4_cond_crit_basic_dodge_ex_atk_',
     ownBuff.combat.atk_.add(
       cmpGE(discCount, 4, prod(0.09, crit_basic_dodge_ex))
-    )
+    ),
+    showCond4Set
   )
 )
 export default sheet

@@ -1,0 +1,7 @@
+{
+  "name": "Dream's Montage",
+  "passive": {
+    "name": "Academy-Style Edit",
+    "description": "Increases the wearer's SPD by <orangeStrong>{{1, percent}}%</orangeStrong>. After attacking enemy targets that are Weakness Broken, regenerates <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> Energy. This effect can trigger up to {{3}} time(s) per turn."
+  }
+}

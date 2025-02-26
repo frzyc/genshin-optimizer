@@ -16,4 +16,7 @@ export interface ICharacter {
   talent: number
   bonusAbilities: Partial<Record<BonusAbilityKey, boolean>>
   statBoosts: Partial<Record<StatBoostKey, boolean>>
+  // TODO: Names?
+  servantSkill: number
+  servantTalent: number
 }

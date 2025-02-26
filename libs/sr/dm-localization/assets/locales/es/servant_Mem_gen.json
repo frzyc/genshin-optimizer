@@ -1,0 +1,39 @@
+{
+  "name": "Mem",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "¡Malos! ¡Problemas!",
+        "fullDesc": "Inflige daño {{2}} veces. Cada vez inflige un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del ATQ de Mem como Daño de Hielo a un enemigo al azar. Después inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Mem como Daño de Hielo a todos los enemigos.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo que se dispara <orangeStrong>{{2}}</orangeStrong> veces en total. Después inflige una pequeña cantidad de Daño de Hielo a todos los enemigos.",
+        "tag": "ATQ AdE"
+      },
+      "1": {
+        "name": "¡Yo! ¡Te ayudo!",
+        "fullDesc": "Adelanta la acción de un aliado un {{3, percent}}% y le otorga Apoyo de Mem durante {{2}} turnos.<br>Cada vez que un objetivo con Apoyo de Mem inflige daño, inflige de forma adicional un Daño verdadero equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del daño original.<br>Si se lanza a sí misma esta habilidad, no se activará la acción adelantada.",
+        "shortDesc": "<orangeStrong>Adelanta la acción</orangeStrong> de un aliado y le otorga Apoyo de Mem: inflige <orangeStrong>Daño verdadero</orangeStrong> de forma adicional después de infligir daño.",
+        "tag": "Apoyo"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "¡Amigui! ¡Vamos!",
+        "fullDesc": "Aumenta el Daño CRIT de todos los aliados en una cantidad equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Mem + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.<br>Si la carga no está al 100%, Mem lanza automáticamente \"¡Malos! ¡Problemas!\" al actuar. Cuando alcanza el 100%, Mem actúa inmediatamente y puede lanzar en su siguiente acción \"¡Yo! ¡Te ayudo!\" al aliado seleccionado.",
+        "shortDesc": "Aumenta el Daño CRIT de todos los aliados.<br>Al actuar, ataca inmediatamente. Cuando la carga alcanza el 100%, actúa inmediatamente y lanza una nueva habilidad que permite a un aliado <orangeStrong>adelantar su acción</orangeStrong> e infligir <orangeStrong>Daño verdadero</orangeStrong>.",
+        "tag": "Apoyo"
+      },
+      "1": {
+        "name": "¡Ánimo, Mem!",
+        "fullDesc": "Cuando Mem es invocada, obtiene inmediatamente un {{1, percent}}% de carga.",
+        "shortDesc": "Obtiene carga inmediatamente al ser invocada.",
+        "tag": "Potenciación"
+      },
+      "2": {
+        "name": "Remordimientos... no.",
+        "fullDesc": "Cuando Mem desaparece, la acción {F#de la}{M#del} Trazacaminos se adelanta un {{1, percent}}%.",
+        "shortDesc": "Al desaparecer, la acción {F#de la}{M#del} Trazacaminos se adelanta.",
+        "tag": "Potenciación"
+      }
+    }
+  }
+}

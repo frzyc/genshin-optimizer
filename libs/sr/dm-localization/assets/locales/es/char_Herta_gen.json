@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Eficiencia",
-        "fullDesc": "Al usar la habilidad básica, el efecto de incremento de daño aumenta en un {{1, percent}}% adicional.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad básica, el efecto de incremento de daño aumenta en un {{1, percent}}% adicional."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marioneta",
-        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Congelamiento",
-        "fullDesc": "La habilidad definitiva de Herta inflige un {{1, percent}}% más de daño a los enemigos afectados por Congelación.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La habilidad definitiva de Herta inflige un {{1, percent}}% más de daño a los enemigos afectados por Congelación."
       }
     }
   },

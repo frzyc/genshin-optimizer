@@ -1,0 +1,7 @@
+{
+  "name": "Le temps du printemps",
+  "passive": {
+    "name": "Passage sans laisser de trace",
+    "description": "Augmente les chances d'appliquer des effets du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le porteur utilise son ATQ normale, sa compétence, ou son ultime pour attaquer une cible ennemie, il a {{2, percent}}% de chances de base de lui infliger l'état Sans défense. Dans l'état Sans défense, augmente les DGT subis par la cible ennemie de <orangeStrong>{{3, percent}}%</orangeStrong> pendant {{4}} tours. Lorsque la cible subit des dégâts sur la durée infligés par le porteur, il y a {{5, percent}}% de chances de base de transformer son état Sans défense en Cerné, ce qui augmente les DGT subis par la cible de <orangeStrong>{{6, percent}}%</orangeStrong> pendant {{4}} tours. Pendant cette période, le porteur ne peut pas appliquer Sans défense à la cible."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Doré est le fil du temps",
+  "passive": {
+    "name": "Conception",
+    "description": "Augmente la VIT de base du porteur de <orangeStrong>{{1}}</orangeStrong>. Le porteur gagne 1 cumul de Tapisserie après chaque attaque du porteur ou de son mnémesprit. Chaque cumul de Tapisserie augmente les DGT critiques du porteur et de son mnémesprit de <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, cumulable jusqu'à {{2}} fois. Après avoir atteint la limite de cumuls, chaque cumul de Tapisserie augmente les DGT infligés par l'ATQ normale de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> supplémentaires."
+  }
+}

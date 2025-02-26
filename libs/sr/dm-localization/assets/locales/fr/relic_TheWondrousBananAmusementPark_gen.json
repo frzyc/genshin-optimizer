@@ -1,0 +1,6 @@
+{
+  "setName": "Parc de bananattractions",
+  "setEffects": {
+    "2": "Augmente les DGT critiques du porteur de {{1, percent}}%. Lorsqu'une cible invoquée par le porteur est sur le champ de bataille, augmente les DGT critiques de {{2, percent}}% supplémentaires."
+  }
+}

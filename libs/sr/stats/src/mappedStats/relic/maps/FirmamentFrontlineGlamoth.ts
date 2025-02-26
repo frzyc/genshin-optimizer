@@ -4,12 +4,15 @@ import { allStats } from '../../../allStats'
 const key: RelicSetKey = 'FirmamentFrontlineGlamoth'
 const data_gen = allStats.relic[key]
 
-let o = 0
-// TODO: Load scalings
+let o = 1
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    atk_: data_gen.setEffects[0].passiveStats.atk_,
+    spdBp1: data_gen.setEffects[0].otherStats[o++],
+    spdBp2: data_gen.setEffects[0].otherStats[o++],
+    common_dmg_1: data_gen.setEffects[0].otherStats[o++],
+    common_dmg_2: data_gen.setEffects[0].otherStats[o++],
   },
 } as const
 

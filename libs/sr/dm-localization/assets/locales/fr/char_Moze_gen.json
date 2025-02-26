@@ -1,0 +1,96 @@
+{
+  "name": "Moze",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Dague volante",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Moze à une cible ennemie unique.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique.",
+        "tag": "Cible unique"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Frappe de l'aigle",
+        "fullDesc": "Désigne une cible ennemie unique comme Proie et lui inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Moze. D'autre part, gagne {{2}} points de charge.<br>Lorsqu'il n'y a aucun autre personnage sur le champ de bataille en état de combattre, Moze ne peut pas utiliser sa compétence et dissipe l'état Proie de l'ennemi.",
+        "shortDesc": "<orangeStrong>Désigne un ennemi comme Proie</orangeStrong> et lui inflige des DGT de foudre. Gagne <orangeStrong>{{2}}</orangeStrong> points de charge.",
+        "tag": "Cible unique"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Perforation des ténèbres",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Moze à une cible ennemie unique et déclenche l'ATQ de suivi de son talent sur cette cible. Si la cible est vaincue avant que l'ATQ de suivi ne soit utilisée, lance l'ATQ de suivi sur un ennemi unique aléatoire à la place.",
+        "shortDesc": "Inflige des DGT de foudre à un ennemi unique, et déclenche l'<orangeStrong>ATQ de suivi</orangeStrong> du talent.",
+        "tag": "Cible unique"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Assaut des plumes",
+        "fullDesc": "Moze entre dans l'état Retrait lorsqu'il y a une Proie sur le champ de bataille.<br>Lorsque les alliés attaquent la Proie, Moze inflige également 1 instance de DGT de foudre additionnels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ et il consomme 1 point de charge. Moze lance 1 ATQ de suivi sur la Proie tous les {{2}} points de charge consommés, ce qui inflige des DGT de foudre équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de son ATQ. L'état Proie de la cible est dissipé lorsque la charge tombe à 0 et le nombre de points de charge nécessaires pour lancer l'ATQ de suivi est réinitialisé. L'ATQ de suivi du talent ne consomme pas de point de charge.",
+        "shortDesc": "Moze entre dans l'état <orangeStrong>Retrait</orangeStrong> lorsqu'il y a une Proie sur le champ de bataille.<br>Lorsque les alliés attaquent la Proie, Moze inflige des <orangeStrong>DGT de foudre additionnels</orangeStrong> et consomme 1 point de charge. Moze lance une <orangeStrong>ATQ de suivi</orangeStrong> sur la Proie tous les <orangeStrong>{{2}}</orangeStrong> points de charge consommés, ce qui inflige des DGT de foudre. L'état Proie de la cible est dissipé lorsque la charge tombe à 0.",
+        "tag": "Cible unique"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Vol obscur",
+        "fullDesc": "Après avoir utilisé la technique, Moze entre en état de Furtivité pendant {{1}} secondes. Lorsque Moze est en état de Furtivité, il ne peut pas être détecté par les ennemis. Si Moze engage le combat en attaquant des ennemis en état de Furtivité, ses DGT augmentent de {{2, percent}}% pendant {{3}} tours.",
+        "shortDesc": "Entre en état de Furtivité. Les DGT infligés augmentent après être entré en combat en attaquant un ennemi en état de Furtivité.",
+        "tag": "Renforcement"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Plume nocturne",
+        "fullDesc": "Récupère {{1}} point de compétence après avoir utilisé l'ATQ de suivi du talent. Cet effet peut se déclencher à nouveau après {{2}} tour."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Pointe de dague",
+        "fullDesc": "Lorsque Moze dissipe son état Retrait, son action est avancée de {{1, percent}}%. Au début de chaque vague, son action est avancée de {{2, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vengeance",
+        "fullDesc": "Lorsque Moze inflige des DGT avec son ultime, il est considéré comme ayant lancé une ATQ de suivi. La Proie subit {{1, percent}}% de DGT en plus de la part des ATQ de suivi."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Gardien du serment",
+      "desc": "Moze gagne {{2}} points d'énergie après être entré en combat et {{1}} points d'énergie chaque fois que les DGT additionnels de son talent sont déclenchés."
+    },
+    "2": {
+      "name": "Héraut du châtiment",
+      "desc": "Augmente de {{1, percent}}% les DGT critiques lorsque tous les alliés infligent des DGT à une cible ennemie marquée comme Proie."
+    },
+    "3": {
+      "name": "Justicier implacable",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "4": {
+      "name": "Rôdeur des ombres",
+      "desc": "Les DGT infligés par Moze augmentent de {{1, percent(fixed: 1)}}% pendant {{2}} tours lors de l'utilisation de l'ultime."
+    },
+    "5": {
+      "name": "Manipulateur de vérité",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "6": {
+      "name": "Rassembleur de loyauté",
+      "desc": "Augmente le multiplicateur de DGT de l'ATQ de suivi du talent de {{1, percent}}%."
+    }
+  }
+}

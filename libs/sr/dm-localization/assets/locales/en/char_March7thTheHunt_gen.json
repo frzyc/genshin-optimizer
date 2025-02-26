@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "Master, It's Tea Time!",
-        "fullDesc": "Designates a single ally (excluding this unit) as Shifu and increases Shifu's SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Only the most recent target of March 7th's Skill is considered as Shifu.<br><br><br>Whenever using Basic ATK or dealing 1 hit of Enhanced Basic ATK's DMG, triggers the corresponding effect if Shifu with the specified Path is present on the field:<br><br>Erudition, Destruction, The Hunt: Deals Additional DMG (DMG Type based on Shifu's Combat Type) equal to <orangeStrong>{{2, percent}}%</orangeStrong> of March 7th's ATK.<br><br>Harmony, Nihility, Preservation, Abundance: Increases the Toughness Reduction of this instance of DMG by {{3, percent}}%.",
-        "shortDesc": "Makes a single ally become Shifu. When using Basic ATK or dealing Enhanced Basic ATK's DMG, triggers the corresponding effect based on <orangeStrong>the Shifu's Path</orangeStrong>:<br>Erudition, Destruction, The Hunt: Deals <orangeStrong>Additional DMG</orangeStrong> based on Shifu's Type.<br>Harmony, Nihility, Preservation, Abundance: <orangeStrong>Toughness Reduction</orangeStrong> increases.",
+        "fullDesc": "Designates a single ally (excluding this unit) as \"Shifu\" and increases \"Shifu\"'s SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Only the most recent target of March 7th's Skill is considered as \"Shifu.\"<br><br><br>Whenever using Basic ATK or dealing 1 hit of Enhanced Basic ATK's DMG, triggers the corresponding effect if \"Shifu\" with the specified Path is present on the field:<br><br>Erudition, Destruction, The Hunt, Remembrance: Deals Additional DMG (DMG Type based on \"Shifu\"'s Combat Type) equal to <orangeStrong>{{2, percent}}%</orangeStrong> of March 7th's ATK.<br><br>Harmony, Nihility, Preservation, Abundance: Increases the Toughness Reduction of this instance of DMG by {{3, percent}}%.",
+        "shortDesc": "Makes a single ally become \"Shifu.\" When using Basic ATK or dealing Enhanced Basic ATK's DMG, triggers the corresponding effect based on <orangeStrong>the \"Shifu\"'s Path</orangeStrong>:<br>Erudition, Destruction, The Hunt, Remembrance: Deals <orangeStrong>Additional DMG</orangeStrong> based on Shifu's Type.<br>Harmony, Nihility, Preservation, Abundance: <orangeStrong>Toughness Reduction</orangeStrong> increases.",
         "tag": "Support"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Swan Soar",
-        "fullDesc": "When the battle starts, March 7th's action advances by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When the battle starts, March 7th's action advances by {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Filigree",
-        "fullDesc": "March 7th can reduce the Toughness of enemies whose Weakness Type is the same as Shifu's Combat Type. When Breaking Weakness, triggers the Imaginary Weakness Break effect.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "March 7th can reduce the Toughness of enemies whose Weakness Type is the same as Shifu's Combat Type. When Breaking Weakness, triggers the Imaginary Weakness Break effect."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Tide Tamer",
-        "fullDesc": "After using Enhanced Basic ATK, increases Shifu's CRIT DMG by {{1, percent}}% and Break Effect by {{2, percent}}%, lasting for {{3}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After using Enhanced Basic ATK, increases Shifu's CRIT DMG by {{1, percent}}% and Break Effect by {{2, percent}}%, lasting for {{3}} turn(s)."
       }
     }
   },

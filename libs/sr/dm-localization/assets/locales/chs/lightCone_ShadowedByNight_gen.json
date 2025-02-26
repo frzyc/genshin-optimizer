@@ -1,0 +1,7 @@
+{
+  "name": "黑夜如影随行",
+  "passive": {
+    "name": "隐匿",
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。进入战斗时或造成击破伤害后，速度提高<orangeStrong>{{2, percent}}%</orangeStrong>，持续{{3}}回合，该效果每回合只可触发1次。"
+  }
+}

@@ -19,7 +19,8 @@
     "Nihility": "{RUBY_B#きょむ}虚無{RUBY_E#}",
     "Destruction": "{RUBY_B#かいめつ}壊滅{RUBY_E#}",
     "Harmony": "{RUBY_B#ちょうわ}調和{RUBY_E#}",
-    "TheHunt": "{RUBY_B#じゅんしゅ}巡狩{RUBY_E#}"
+    "TheHunt": "{RUBY_B#じゅんしゅ}巡狩{RUBY_E#}",
+    "Remembrance": "「記憶」"
   },
   "ability": {
     "basic": "通常攻撃",
@@ -34,6 +35,11 @@
     "bounce": "バウンド",
     "blast": "拡散攻撃",
     "support": "サポート",
-    "impair": "妨害"
+    "impair": "妨害",
+    "restore": "回復",
+    "defense": "防御",
+    "enhance": "強化",
+    "charging": "チャージ",
+    "summon": "召喚"
   }
 }

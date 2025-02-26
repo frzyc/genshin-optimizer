@@ -1,0 +1,6 @@
+{
+  "setName": "Ruhiges Anwesen für die Gebeine der Toten",
+  "setEffects": {
+    "2": "Erhöht die max. LP des Trägers um {{1, percent}}%. Wenn die max. LP des Trägers {{2}} oder mehr betragen, wird der KRIT-SCH des Trägers und seines Memogeistes um {{3, percent}}% erhöht."
+  }
+}

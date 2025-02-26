@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Ritter-Speertechnik: Sturzflut",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu.<br>Verringert die GES des Ziels mit einer Grundchance von {{4, percent}}% für {{3}} Rd. um {{2, percent}}%, wenn der durch Fertigkeiten verursachte SCH einen kritischen Treffer auslöst.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu.<br>Verringert die GES des Ziels mit einer Grundchance von {{4, percent}}% für {{3}} Rd. um {{2, percent}}%, wenn der durch Fertigkeiten verursachte SCH einen Kritischen Treffer auslöst.",
         "shortDesc": "Fügt einem Gegner Wind-SCH zu. Nach einem KRIT wird das Ziel mit hoher Wahrscheinlichkeit verlangsamt.",
         "tag": "Einzelangriff"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Verborgener Drache",
-        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Schatten der Verzweiflung",
-        "fullDesc": "Nach dem Angriff besteht eine feste Chance von {{1, percent}}%, die GES dieser Einheit für {{3}} Rd. um {{2, percent}}% zu erhöhen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Nach dem Angriff besteht eine feste Chance von {{1, percent}}%, die GES dieser Einheit für {{3}} Rd. um {{2, percent}}% zu erhöhen."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Heftiger Wind",
-        "fullDesc": "Erhöht den verursachten SCH von Standardangriffen an verlangsamten Gegnern um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den verursachten SCH von Standardangriffen an verlangsamten Gegnern um {{1, percent}}%."
       }
     }
   },

@@ -63,7 +63,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
 
   // Override for trailblazer
   const name = ([...allTrailblazerGenderedKeys] as string[]).includes(charKey)
-    ? '-2090701432' // Trailblazer
+    ? '6354779731002018877' // Trailblazer
     : AvatarName.Hash.toString()
 
   // Skills
@@ -77,8 +77,8 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
       AttackType !== undefined ? DmAttackTypeMap[AttackType] : 'talent'
     abilities[ability]?.push({
       name: SkillName.Hash.toString(),
-      fullDesc: SkillDesc.Hash.toString(),
-      shortDesc: SimpleSkillDesc.Hash.toString(),
+      fullDesc: SkillDesc?.Hash.toString() ?? '',
+      shortDesc: SimpleSkillDesc?.Hash.toString() ?? '',
       tag: SkillTag.Hash.toString(),
     })
   })

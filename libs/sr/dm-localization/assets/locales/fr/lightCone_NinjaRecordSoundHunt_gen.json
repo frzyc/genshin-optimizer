@@ -1,0 +1,7 @@
+{
+  "name": "Registre ninja : Chasse au son",
+  "passive": {
+    "name": "Lever de rideau",
+    "description": "Augmente les PV max du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le porteur perd ou récupère des PV, augmente les DGT critiques de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours. Cet effet ne peut se déclencher qu'une fois par tour."
+  }
+}

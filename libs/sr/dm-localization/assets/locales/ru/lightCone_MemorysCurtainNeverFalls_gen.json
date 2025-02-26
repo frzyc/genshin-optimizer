@@ -1,0 +1,7 @@
+{
+  "name": "Не падёт занавес памяти",
+  "passive": {
+    "name": "Приём",
+    "description": "Скорость владельца повышается на <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. После того как владелец использует навык, наносимый всеми союзниками урон повышается на <orangeStrong>{{2, percent}}%</orangeStrong> на {{3}} хода."
+  }
+}

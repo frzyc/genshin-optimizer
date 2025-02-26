@@ -1,0 +1,6 @@
+{
+  "setName": "Osario sereno",
+  "setEffects": {
+    "2": "Los PV máx. del portador aumentan en un {{1, percent}}%. Cuando sus PV máx. son iguales o superiores a {{2}}, el Daño CRIT del portador y su mnemoduende aumenta en un {{3, percent}}%."
+  }
+}

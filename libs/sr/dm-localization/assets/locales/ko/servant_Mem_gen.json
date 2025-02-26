@@ -1,0 +1,39 @@
+{
+  "name": "미미",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "나쁜 녀석! 성가셔!",
+        "fullDesc": "피해를 {{2}}회 가하고, 1회마다 랜덤 단일 적에게 미미 공격력의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>만큼 얼음 속성 피해를 가한다. 이후 모든 적에게 미미 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가한다",
+        "shortDesc": "소량의 얼음 속성 피해를 가하고, 총 <orangeStrong>{{2}}</orangeStrong>회 바운스한다. 이후 모든 적에게 소량의 얼음 속성 피해를 가한다",
+        "tag": "범위 공격"
+      },
+      "1": {
+        "name": "내가! 도와줄게!",
+        "fullDesc": "지정된 단일 아군의 행동 게이지를 {{3, percent}}% 증가시키고 [미미의 응원]을 부여한다, 지속 시간: {{2}}턴<br>[미미의 응원]을 보유한 목표가 피해를 1회 가할 때마다 추가로 기존 피해의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 확정 피해를 1회 가한다.<br>자신에게 해당 스킬 발동 시 행동 게이지 증가 효과를 발동할 수 없다",
+        "shortDesc": "단일 아군의 <orangeStrong>행동 게이지를 증가</orangeStrong>시키고 [미미의 응원]을 부여한다. [미미의 응원]: 피해를 가한 후 추가로 <orangeStrong>확정 피해</orangeStrong>를 가한다",
+        "tag": "서포트"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "파트너! 함께!",
+        "fullDesc": "모든 아군의 치명타 피해가 미미 치명타 피해의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>에 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>를 더한 값만큼 증가한다.<br>충전이 100% 미만일 시 미미가 행동하면 자동으로 [나쁜 녀석! 성가셔!]를 발동한다. 충전 100% 도달 시 미미가 즉시 행동하고, 다음번 행동 시 단일 아군을 선택해 [내가! 도와줄게!]를 발동할 수 있다",
+        "shortDesc": "모든 아군의 치명타 피해가 증가한다.<br>행동 시 자동으로 공격을 발동한다. 충전이 100%에 도달하면 즉시 행동하고 새로운 스킬을 발동한다. 새로운 스킬: 단일 아군의 <orangeStrong>행동 게이지가 증가</orangeStrong>하고, <orangeStrong>확정 피해</orangeStrong>를 가한다",
+        "tag": "서포트"
+      },
+      "1": {
+        "name": "미미, 파이팅!",
+        "fullDesc": "미미가 소환될 시 즉시 충전을 {{1, percent}}% 획득한다",
+        "shortDesc": "소환될 시 즉시 충전을 획득한다",
+        "tag": "강화"
+      },
+      "2": {
+        "name": "아쉬움… 남기지 마",
+        "fullDesc": "미미가 사라질 시 개척자의 행동 게이지가 {{1, percent}}% 증가한다",
+        "shortDesc": "사라질 시 개척자의 행동 게이지가 증가한다",
+        "tag": "강화"
+      }
+    }
+  }
+}

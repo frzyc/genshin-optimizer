@@ -20,7 +20,7 @@
   "wind_dmg_": "風属性ダメージ",
   "lightning_dmg_": "雷属性ダメージ",
   "quantum_dmg_": "量子属性ダメージ",
-  "imaginary_dmg_": "虚数属性ダメージ",
+  "imaginary_dmg_": "虚数属性ダメージアップ",
   "dmg_": "ダメージアップ",
   "weakness_": "弱点撃破効率",
   "resPen_": "耐性貫通"

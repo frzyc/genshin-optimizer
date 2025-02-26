@@ -1,0 +1,96 @@
+{
+  "name": "Moze",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Phi Đao",
+        "fullDesc": "Gây Sát Thương Lôi bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Moze cho 1 kẻ địch chỉ định.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Đột Kích Lướt Gió",
+        "fullDesc": "Khiến 1 kẻ địch chỉ định trở thành Con Mồi, gây Sát Thương Lôi bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Moze, đồng thời nhận {{2}} điểm Nạp Năng Lượng.<br>Khi trong trận không có nhân vật khác có thể chiến đấu, Moze sẽ không thể sử dụng Chiến Kỹ, và giải trừ trạng thái Con Mồi của kẻ địch.",
+        "shortDesc": "<orangeStrong>Khiến 1 kẻ địch trở thành Con Mồi</orangeStrong>, gây Sát Thương Lôi cho kẻ đó, đồng thời nhận <orangeStrong>{{2}}</orangeStrong> điểm Nạp Năng Lượng.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dao Lạnh Vô Tình",
+        "fullDesc": "Gây Sát Thương Lôi bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Moze cho 1 kẻ địch chỉ định, đồng thời phát động Đòn Đánh Theo Sau của Thiên Phú lên mục tiêu này. Nếu trước lần thi triển Đòn Đánh Theo Sau này, mục tiêu bị tiêu diệt, thì sẽ phát động Đòn Đánh Theo Sau lên 1 kẻ địch ngẫu nhiên.",
+        "shortDesc": "Gây Sát Thương Lôi cho 1 kẻ địch, đồng thời phát động <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> của Thiên Phú.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Thu Cánh Tung Đao",
+        "fullDesc": "Khi trong trận có Con Mồi, Moze sẽ vào trạng thái Rời Trận.<br>Sau khi mục tiêu phe ta tấn công Con Mồi, Moze sẽ gây thêm 1 lần Sát Thương Lôi kèm theo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân, đồng thời tiêu hao 1 điểm Nạp Năng Lượng. Mỗi lần tiêu hao {{2}} điểm Nạp Năng Lượng, Moze sẽ phát động 1 lần Đòn Đánh Theo Sau lên Con Mồi, gây Sát Thương Lôi bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của bản thân. Khi Nạp Năng Lượng bằng 0, sẽ giải trừ trạng thái Con Mồi của mục tiêu, đồng thời làm mới số điểm Nạp Năng Lượng cần để phát động Đòn Đánh Theo Sau. Đòn Đánh Theo Sau của Thiên Phú sẽ không tiêu hao Nạp Năng Lượng.",
+        "shortDesc": "Khi trong trận có Con Mồi, Moze sẽ vào trạng thái <orangeStrong>Rời Trận</orangeStrong>.<br>Sau khi mục tiêu phe ta tấn công Con Mồi, Moze sẽ gây <orangeStrong>Sát Thương Lôi Kèm Theo</orangeStrong>, đồng thời tiêu hao 1 điểm Nạp Năng Lượng. Mỗi khi tiêu hao <orangeStrong>{{2}}</orangeStrong> điểm Nạp Năng Lượng, Moze sẽ phát động <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> lên Con Mồi, gây Sát Thương Lôi. Khi Nạp Năng Lượng bằng 0, sẽ giải trừ trạng thái Con Mồi của mục tiêu.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Đôi Cánh Ẩn Hình",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ vào trạng thái Tàng Hình duy trì {{1}} giây. Trong trạng thái Tàng Hình sẽ không bị kẻ địch phát hiện, khi Moze trong trạng thái Tàng Hình tấn công kẻ địch để vào chiến đấu, sát thương sẽ tăng {{2, percent}}%, duy trì {{3}} hiệp.",
+        "shortDesc": "Vào trạng thái Tàng Hình. Khi tấn công kẻ địch trong trạng thái Tàng Hình để vào chiến đấu, sát thương sẽ tăng.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Áo Thêu Bóng Tối",
+        "fullDesc": "Sau khi thi triển Đòn Đánh Theo Sau của Thiên Phú, hồi {{1}} Điểm Chiến Kỹ, hiệu ứng này có thể kích hoạt lần nữa sau {{2}} hiệp."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dao Găm Trong Tay",
+        "fullDesc": "Khi Moze giải trừ trạng thái Rời Trận, sẽ Ưu Tiên Hành Động {{1, percent}}%. Khi bắt đầu mỗi đợt, Moze sẽ Ưu Tiên Hành Động {{2, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Báo Thù Khôn Ngoan",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ gây sát thương, sẽ xem như là phát động Đòn Đánh Theo Sau. Sát thương Đòn Đánh Theo Sau Con Mồi phải chịu tăng {{1, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Tuyên Thệ",
+      "desc": "Sau khi vào chiến đấu, Moze hồi {{2}} điểm Năng Lượng. Mỗi khi kích hoạt 1 lần Sát Thương Kèm Theo của Thiên Phú, Moze sẽ hồi {{1}} điểm Năng Lượng."
+    },
+    "2": {
+      "name": "Trừng Phạt",
+      "desc": "Khi toàn bộ mục tiêu phe ta gây sát thương cho mục tiêu phe địch bị đánh dấu là Con Mồi, Sát Thương Bạo Kích sẽ tăng {{1, percent}}%."
+    },
+    "3": {
+      "name": "Truy Đuổi",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "4": {
+      "name": "Rình Rập",
+      "desc": "Khi thi triển Tuyệt Kỹ, sát thương Moze gây ra tăng {{1, percent(fixed: 1)}}%, duy trì {{2}} hiệp."
+    },
+    "5": {
+      "name": "Đánh Lừa",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Trung Thành",
+      "desc": "Bội Số Sát Thương Đòn Đánh Theo Sau của Thiên Phú tăng {{1, percent}}%."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Le rideau de la mémoire ne tombe jamais",
+  "passive": {
+    "name": "Réception",
+    "description": "Augmente la VIT du porteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Augmente les DGT infligés par tous les alliés de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours après que le porteur a utilisé sa compétence."
+  }
+}

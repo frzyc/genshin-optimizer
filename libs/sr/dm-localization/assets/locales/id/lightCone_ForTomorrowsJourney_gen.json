@@ -1,0 +1,7 @@
+{
+  "name": "For Tomorrow's Journey",
+  "passive": {
+    "name": "Bonds",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK pengguna. Setelah pengguna melancarkan Ultimate, DMG yang diakibatkan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>, berlangsung selama {{3}} giliran."
+  }
+}

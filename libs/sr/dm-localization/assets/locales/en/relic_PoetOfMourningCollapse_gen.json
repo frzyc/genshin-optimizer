@@ -1,0 +1,7 @@
+{
+  "setName": "Poet of Mourning Collapse",
+  "setEffects": {
+    "2": "Increases Quantum DMG by {{1, percent}}%.",
+    "4": "Decreases the wearer's SPD by {{6, percent}}%. Before entering battle, if the wearer's SPD is lower than {{2}}/{{3}}, increases the wearer's CRIT Rate by {{4, percent}}%/{{5, percent}}%. This effect applies to the wearer's memosprite at the same time."
+  }
+}

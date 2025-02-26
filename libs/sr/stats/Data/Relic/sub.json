@@ -1,250 +1,58 @@
 {
   "2": {
-    "hp": {
-      "base": 13.548016,
-      "step": 1.693502,
-      "numSteps": 2
-    },
-    "atk": {
-      "base": 6.774008,
-      "step": 0.846751,
-      "numSteps": 2
-    },
-    "def": {
-      "base": 6.774008,
-      "step": 0.846751,
-      "numSteps": 2
-    },
-    "hp_": {
-      "base": 0.013824001,
-      "step": 0.0017280006,
-      "numSteps": 2
-    },
-    "atk_": {
-      "base": 0.013824001,
-      "step": 0.0017280006,
-      "numSteps": 2
-    },
-    "def_": {
-      "base": 0.017280001,
-      "step": 0.0021600004,
-      "numSteps": 2
-    },
-    "spd": {
-      "base": 1,
-      "step": 0.1,
-      "numSteps": 2
-    },
-    "crit_": {
-      "base": 0.010368001,
-      "step": 0.0012960008,
-      "numSteps": 2
-    },
-    "crit_dmg_": {
-      "base": 0.020736001,
-      "step": 0.0025920009,
-      "numSteps": 2
-    },
-    "eff_": {
-      "base": 0.013824001,
-      "step": 0.0017280006,
-      "numSteps": 2
-    },
-    "eff_res_": {
-      "base": 0.013824001,
-      "step": 0.0017280006,
-      "numSteps": 2
-    },
-    "brEffect_": {
-      "base": 0.020736001,
-      "step": 0.0025920009,
-      "numSteps": 2
-    }
+    "hp": { "base": 13.548016, "step": 1.693502, "numSteps": 2 },
+    "atk": { "base": 6.774008, "step": 0.846751, "numSteps": 2 },
+    "def": { "base": 6.774008, "step": 0.846751, "numSteps": 2 },
+    "hp_": { "base": 0.013824001, "step": 0.0017280006, "numSteps": 2 },
+    "atk_": { "base": 0.013824001, "step": 0.0017280006, "numSteps": 2 },
+    "def_": { "base": 0.017280001, "step": 0.0021600004, "numSteps": 2 },
+    "spd": { "base": 1, "step": 0.1, "numSteps": 2 },
+    "crit_": { "base": 0.010368001, "step": 0.0012960008, "numSteps": 2 },
+    "crit_dmg_": { "base": 0.020736001, "step": 0.0025920009, "numSteps": 2 },
+    "eff_": { "base": 0.013824001, "step": 0.0017280006, "numSteps": 2 },
+    "eff_res_": { "base": 0.013824001, "step": 0.0017280006, "numSteps": 2 },
+    "brEffect_": { "base": 0.020736001, "step": 0.0025920009, "numSteps": 2 }
   },
   "3": {
-    "hp": {
-      "base": 20.322023,
-      "step": 2.540253,
-      "numSteps": 2
-    },
-    "atk": {
-      "base": 10.161012,
-      "step": 1.270126,
-      "numSteps": 2
-    },
-    "def": {
-      "base": 10.161012,
-      "step": 1.270126,
-      "numSteps": 2
-    },
-    "hp_": {
-      "base": 0.020736001,
-      "step": 0.0025920009,
-      "numSteps": 2
-    },
-    "atk_": {
-      "base": 0.020736001,
-      "step": 0.0025920009,
-      "numSteps": 2
-    },
-    "def_": {
-      "base": 0.02592,
-      "step": 0.0032400002,
-      "numSteps": 2
-    },
-    "spd": {
-      "base": 1.2,
-      "step": 0.1,
-      "numSteps": 2
-    },
-    "crit_": {
-      "base": 0.015552,
-      "step": 0.0019440008,
-      "numSteps": 2
-    },
-    "crit_dmg_": {
-      "base": 0.031104,
-      "step": 0.003888001,
-      "numSteps": 2
-    },
-    "eff_": {
-      "base": 0.020736001,
-      "step": 0.0025920009,
-      "numSteps": 2
-    },
-    "eff_res_": {
-      "base": 0.020736001,
-      "step": 0.0025920009,
-      "numSteps": 2
-    },
-    "brEffect_": {
-      "base": 0.031104,
-      "step": 0.003888001,
-      "numSteps": 2
-    }
+    "hp": { "base": 20.322023, "step": 2.540253, "numSteps": 2 },
+    "atk": { "base": 10.161012, "step": 1.270126, "numSteps": 2 },
+    "def": { "base": 10.161012, "step": 1.270126, "numSteps": 2 },
+    "hp_": { "base": 0.020736001, "step": 0.0025920009, "numSteps": 2 },
+    "atk_": { "base": 0.020736001, "step": 0.0025920009, "numSteps": 2 },
+    "def_": { "base": 0.02592, "step": 0.0032400002, "numSteps": 2 },
+    "spd": { "base": 1.2, "step": 0.1, "numSteps": 2 },
+    "crit_": { "base": 0.015552, "step": 0.0019440008, "numSteps": 2 },
+    "crit_dmg_": { "base": 0.031104, "step": 0.003888001, "numSteps": 2 },
+    "eff_": { "base": 0.020736001, "step": 0.0025920009, "numSteps": 2 },
+    "eff_res_": { "base": 0.020736001, "step": 0.0025920009, "numSteps": 2 },
+    "brEffect_": { "base": 0.031104, "step": 0.003888001, "numSteps": 2 }
   },
   "4": {
-    "hp": {
-      "base": 27.096031,
-      "step": 3.387004,
-      "numSteps": 2
-    },
-    "atk": {
-      "base": 13.548016,
-      "step": 1.693502,
-      "numSteps": 2
-    },
-    "def": {
-      "base": 13.548016,
-      "step": 1.693502,
-      "numSteps": 2
-    },
-    "hp_": {
-      "base": 0.027648,
-      "step": 0.0034560005,
-      "numSteps": 2
-    },
-    "atk_": {
-      "base": 0.027648,
-      "step": 0.0034560005,
-      "numSteps": 2
-    },
-    "def_": {
-      "base": 0.034560002,
-      "step": 0.0043200003,
-      "numSteps": 2
-    },
-    "spd": {
-      "base": 1.6,
-      "step": 0.2,
-      "numSteps": 2
-    },
-    "crit_": {
-      "base": 0.020736001,
-      "step": 0.0025920009,
-      "numSteps": 2
-    },
-    "crit_dmg_": {
-      "base": 0.041472,
-      "step": 0.0051840004,
-      "numSteps": 2
-    },
-    "eff_": {
-      "base": 0.027648,
-      "step": 0.0034560005,
-      "numSteps": 2
-    },
-    "eff_res_": {
-      "base": 0.027648,
-      "step": 0.0034560005,
-      "numSteps": 2
-    },
-    "brEffect_": {
-      "base": 0.041472,
-      "step": 0.0051840004,
-      "numSteps": 2
-    }
+    "hp": { "base": 27.096031, "step": 3.387004, "numSteps": 2 },
+    "atk": { "base": 13.548016, "step": 1.693502, "numSteps": 2 },
+    "def": { "base": 13.548016, "step": 1.693502, "numSteps": 2 },
+    "hp_": { "base": 0.027648, "step": 0.0034560005, "numSteps": 2 },
+    "atk_": { "base": 0.027648, "step": 0.0034560005, "numSteps": 2 },
+    "def_": { "base": 0.034560002, "step": 0.0043200003, "numSteps": 2 },
+    "spd": { "base": 1.6, "step": 0.2, "numSteps": 2 },
+    "crit_": { "base": 0.020736001, "step": 0.0025920009, "numSteps": 2 },
+    "crit_dmg_": { "base": 0.041472, "step": 0.0051840004, "numSteps": 2 },
+    "eff_": { "base": 0.027648, "step": 0.0034560005, "numSteps": 2 },
+    "eff_res_": { "base": 0.027648, "step": 0.0034560005, "numSteps": 2 },
+    "brEffect_": { "base": 0.041472, "step": 0.0051840004, "numSteps": 2 }
   },
   "5": {
-    "hp": {
-      "base": 33.87004,
-      "step": 4.233755,
-      "numSteps": 2
-    },
-    "atk": {
-      "base": 16.935019,
-      "step": 2.116877,
-      "numSteps": 2
-    },
-    "def": {
-      "base": 16.935019,
-      "step": 2.116877,
-      "numSteps": 2
-    },
-    "hp_": {
-      "base": 0.034560002,
-      "step": 0.0043200003,
-      "numSteps": 2
-    },
-    "atk_": {
-      "base": 0.034560002,
-      "step": 0.0043200003,
-      "numSteps": 2
-    },
-    "def_": {
-      "base": 0.0432,
-      "step": 0.0054,
-      "numSteps": 2
-    },
-    "spd": {
-      "base": 2,
-      "step": 0.3,
-      "numSteps": 2
-    },
-    "crit_": {
-      "base": 0.02592,
-      "step": 0.0032400002,
-      "numSteps": 2
-    },
-    "crit_dmg_": {
-      "base": 0.05184,
-      "step": 0.0064800004,
-      "numSteps": 2
-    },
-    "eff_": {
-      "base": 0.034560002,
-      "step": 0.0043200003,
-      "numSteps": 2
-    },
-    "eff_res_": {
-      "base": 0.034560002,
-      "step": 0.0043200003,
-      "numSteps": 2
-    },
-    "brEffect_": {
-      "base": 0.05184,
-      "step": 0.0064800004,
-      "numSteps": 2
-    }
+    "hp": { "base": 33.87004, "step": 4.233755, "numSteps": 2 },
+    "atk": { "base": 16.935019, "step": 2.116877, "numSteps": 2 },
+    "def": { "base": 16.935019, "step": 2.116877, "numSteps": 2 },
+    "hp_": { "base": 0.034560002, "step": 0.0043200003, "numSteps": 2 },
+    "atk_": { "base": 0.034560002, "step": 0.0043200003, "numSteps": 2 },
+    "def_": { "base": 0.0432, "step": 0.0054, "numSteps": 2 },
+    "spd": { "base": 2, "step": 0.3, "numSteps": 2 },
+    "crit_": { "base": 0.02592, "step": 0.0032400002, "numSteps": 2 },
+    "crit_dmg_": { "base": 0.05184, "step": 0.0064800004, "numSteps": 2 },
+    "eff_": { "base": 0.034560002, "step": 0.0043200003, "numSteps": 2 },
+    "eff_res_": { "base": 0.034560002, "step": 0.0043200003, "numSteps": 2 },
+    "brEffect_": { "base": 0.05184, "step": 0.0064800004, "numSteps": 2 }
   }
 }

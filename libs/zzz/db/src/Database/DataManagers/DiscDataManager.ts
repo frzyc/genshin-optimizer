@@ -252,16 +252,16 @@ export class DiscDataManager extends DataManager<
                   substat,
                   i // Has no extra roll
                 ) =>
-                  substat.key === candidate.substats[i].key &&
-                  substat.upgrades === candidate.substats[i].upgrades
+                  substat.key === candidate.substats[i]?.key &&
+                  substat.upgrades === candidate.substats[i]?.upgrades
               )
             : substats.some(
                 (
                   substat,
                   i // Has extra rolls
                 ) =>
-                  candidate.substats[i].key
-                    ? substat.upgrades > candidate.substats[i].upgrades // Extra roll to existing substat
+                  candidate.substats[i]?.key
+                    ? substat.upgrades > candidate.substats[i]?.upgrades // Extra roll to existing substat
                     : substat.key // Extra roll to new substat
               ))
       )
@@ -327,7 +327,7 @@ export function validateDisc(
   if (!(plausibleMainStats as DiscMainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
-  if (location && !allCharacterKeys.includes(location)) location = ''
+  if (!location || !allCharacterKeys.includes(location)) location = ''
   return {
     setKey,
     rarity,

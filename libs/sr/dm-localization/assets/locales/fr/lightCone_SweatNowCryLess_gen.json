@@ -1,0 +1,7 @@
+{
+  "name": "Transpire, tu pleureras moins",
+  "passive": {
+    "name": "À l'entraînement !",
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le mnémesprit du porteur est sur le champ de bataille, augmente les DGT infligés par le porteur et son mnémesprit de <orangeStrong>{{2, percent}}%</orangeStrong>."
+  }
+}

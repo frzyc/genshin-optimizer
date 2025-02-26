@@ -45,32 +45,25 @@
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "物体呼吸中",
-        "fullDesc": "我方全体击破特攻提高{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "我方全体击破特攻提高{{1, percent}}%。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "日消遐思长",
-        "fullDesc": "阮•梅的回合开始时，自身恢复{{1}}点能量。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "阮•梅的回合开始时，自身恢复{{1}}点能量。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "落烛照水燃",
-        "fullDesc": "战斗中阮•梅的击破特攻大于{{1, percent}}%时，每超过{{2, percent}}%，则战技使我方全体伤害提高的效果额外提高{{3, percent}}%，最高不超过{{4, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "战斗中阮•梅的击破特攻大于{{1, percent}}%时，每超过{{2, percent}}%，则战技使我方全体伤害提高的效果额外提高{{3, percent}}%，最高不超过{{4, percent}}%。"
       }
     }
   },

@@ -45,32 +45,25 @@
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "夜行",
-        "fullDesc": "若当前生命值百分比小于等于{{1, percent}}%，则被敌方目标攻击的概率降低。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "若当前生命值百分比小于等于{{1, percent}}%，则被敌方目标攻击的概率降低。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "割裂",
-        "fullDesc": "增幅状态下希儿的量子属性抗性穿透提高{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "增幅状态下希儿的量子属性抗性穿透提高{{1, percent}}%。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "涟漪",
-        "fullDesc": "施放普攻后，希儿的下一次行动提前{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "施放普攻后，希儿的下一次行动提前{{1, percent}}%。"
       }
     }
   },

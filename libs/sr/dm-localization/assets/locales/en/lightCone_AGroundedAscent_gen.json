@@ -1,0 +1,7 @@
+{
+  "name": "A Grounded Ascent",
+  "passive": {
+    "name": "Departing Anew",
+    "description": "After the wearer uses Skill or Ultimate on one ally character, the wearer regenerates <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Energy and the ability's target receives 1 stack of \"Hymn\" for {{4}} turn(s), stacking up to {{3}} time(s). Each stack of \"Hymn\" increases its holder's DMG dealt by <orangeStrong>{{2, percent}}%</orangeStrong>. After every {{5}} instance(s) of Skill or Ultimate the wearer uses on one ally character, recovers 1 Skill Point."
+  }
+}

@@ -5,10 +5,10 @@
   "desc3": "A W-Engine with a component structure adjusted according to specific parameters. It can enhance the defensive capabilities of those who have a certain style of combat.",
   "phase": "Sinking Strike",
   "phaseDescs": [
-    "When attacked, the equipper's DEF increases by <color=#2BAD00>20%</color> for 8s.",
-    "When attacked, the equipper's DEF increases by <color=#2BAD00>23%</color> for 8s.",
-    "When attacked, the equipper's DEF increases by <color=#2BAD00>26%</color> for 8s.",
-    "When attacked, the equipper's DEF increases by <color=#2BAD00>29%</color> for 8s.",
-    "When attacked, the equipper's DEF increases by <color=#2BAD00>32%</color> for 8s."
+    "When attacked, the equipper's DEF increases by <ct color=#2BAD00>20%</ct> for 8s.",
+    "When attacked, the equipper's DEF increases by <ct color=#2BAD00>23%</ct> for 8s.",
+    "When attacked, the equipper's DEF increases by <ct color=#2BAD00>26%</ct> for 8s.",
+    "When attacked, the equipper's DEF increases by <ct color=#2BAD00>29%</ct> for 8s.",
+    "When attacked, the equipper's DEF increases by <ct color=#2BAD00>32%</ct> for 8s."
   ]
 }

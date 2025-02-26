@@ -1,0 +1,6 @@
+{
+  "setName": "O Maravilhoso Parque Bananalândia",
+  "setEffects": {
+    "2": "Aumenta o Dano CRIT do usuário em {{1, percent}}%. Quando um alvo invocado pelo usuário está em campo, o Dano CRIT aumenta adicionalmente em {{2, percent}}%."
+  }
+}

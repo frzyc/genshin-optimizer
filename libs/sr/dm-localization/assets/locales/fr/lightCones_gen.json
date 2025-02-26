@@ -1,6 +1,6 @@
 {
   "lightCone_one": "Cône de lumière",
-  "lightCone_other": "Cônes de lumière",
+  "lightCone_other": "Cône de lumière",
   "superimposition": "Superposition",
   "path": {
     "Erudition": "L'Érudition",
@@ -9,6 +9,7 @@
     "Nihility": "La Nihilité",
     "Destruction": "La Destruction",
     "Harmony": "L'Harmonie",
-    "TheHunt": "La Chasse"
+    "TheHunt": "La Chasse",
+    "Remembrance": "Le Souvenir"
   }
 }

@@ -1,15 +1,12 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'
 
@@ -19,35 +16,50 @@ const dm = mappedStats.relic[key]
 
 const relicCount = own.common.count.sheet(key)
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { affectedByDebuff, wearerDebuff } = allBoolConditionals(key)
+const { debuffCount } = allNumConditionals(
+  key,
+  true,
+  dm[4].debuffThreshold1,
+  dm[4].debuffThreshold2
+)
 
 const sheet = registerRelic(
   key,
   // Handles passive buffs
   entriesForRelic(key, data_gen),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'set2_dmg_',
+    'set2_common_dmg_',
     ownBuff.premod.common_dmg_.add(
-      cmpGE(relicCount, 2, boolConditional.ifOn(dm[2].cond_dmg_))
+      cmpGE(relicCount, 2, affectedByDebuff.ifOn(dm[2].dmg_))
     ),
     cmpGE(relicCount, 2, 'unique', '')
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.premod.common_dmg_.add(
-      cmpGE(relicCount, 4, listConditional.map({ val1: 1, val2: 2 }))
+    'set4_crit_dmg_',
+    ownBuff.premod.crit_dmg_.add(
+      cmpGE(
+        relicCount,
+        4,
+        affectedByDebuff.ifOn(
+          cmpEq(
+            debuffCount,
+            dm[4].debuffThreshold2,
+            prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_2),
+            prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_1)
+          )
+        )
+      )
     ),
     cmpGE(relicCount, 4, 'unique', '')
   ),
   registerBuff(
-    'enemy_defRed_',
-    enemyDebuff.common.defRed_.add(cmpGE(relicCount, 4, numConditional)),
+    'set4_crit_',
+    ownBuff.premod.crit_.add(
+      cmpGE(relicCount, 4, wearerDebuff.ifOn(dm[4].crit_))
+    ),
     cmpGE(relicCount, 4, 'unique', '')
   )
 )

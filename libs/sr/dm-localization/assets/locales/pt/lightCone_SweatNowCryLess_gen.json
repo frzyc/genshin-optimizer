@@ -1,0 +1,7 @@
+{
+  "name": "Suar Para Não Chorar",
+  "passive": {
+    "name": "Vem Treinar!",
+    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Quando o Memoespírito do usuário está em campo, aumenta o Dano causado pelo usuário e pelo Memoespírito em <orangeStrong>{{2, percent}}%</orangeStrong>."
+  }
+}

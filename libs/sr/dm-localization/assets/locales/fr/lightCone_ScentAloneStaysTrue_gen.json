@@ -1,0 +1,7 @@
+{
+  "name": "Essence de l'encens",
+  "passive": {
+    "name": "Satisfaction",
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le porteur attaque des cibles ennemies avec son ultime, leur applique l'effet Sans souci pendant {{5}} tours. Les cibles ennemies avec l'effet Sans souci subissent <orangeStrong>{{2, percent}}%</orangeStrong> de DGT supplémentaires. L'effet d'augmentation des DGT subis est renforcé de <orangeStrong>{{4, percent}}%</orangeStrong> supplémentaires si l'effet de Rupture actuel du porteur est supérieur ou égal à {{3, percent}}%."
+  }
+}

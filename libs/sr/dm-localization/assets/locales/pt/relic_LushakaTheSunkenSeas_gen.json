@@ -1,0 +1,6 @@
+{
+  "setName": "Lushaka, os Mares Submersos",
+  "setEffects": {
+    "2": "Aumenta a Taxa de Regeneração de Energia do usuário em {{1, percent}}%. Se o usuário não for o primeiro personagem na Formação de Equipe, então aumenta o ATQ do primeiro personagem na Formação de Equipe em {{2, percent}}%."
+  }
+}

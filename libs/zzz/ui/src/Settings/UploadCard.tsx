@@ -265,9 +265,9 @@ function ZODUploadInfo({
             </Grid>
             {/* <Grid item flexGrow={1}>
               <MergeResult
-                result={lightCones}
-                dbTotal={importedDatabase.lightCones.values.length}
-                type="lightCones"
+                result={wengines}
+                dbTotal={importedDatabase.wengines.values.length}
+                type="wengines"
               />
             </Grid>
             <Grid item flexGrow={1}>

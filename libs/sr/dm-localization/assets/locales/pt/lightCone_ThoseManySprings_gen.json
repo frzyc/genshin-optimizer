@@ -1,0 +1,7 @@
+{
+  "name": "Aquelas Incontáveis Primaveras",
+  "passive": {
+    "name": "Assuntos Mundanos Não Deixam Marcas",
+    "description": "Aumenta a Taxa de Acerto de Efeito do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após o usuário utilizar um ATQ Básico, Perícia ou Perícia Suprema para atacar um inimigo-alvo, existe uma chance-base de {{2, percent}}% de infligir o estado de \"Desprotegido\". Enquanto estiver no estado de Desprotegido, o inimigo-alvo recebe <orangeStrong>{{3, percent}}%</orangeStrong> a mais de Dano, durando por {{4}} rodada(s). Se o alvo está sob um estado de Dano Contínuo infligido pelo usuário, há uma chance-base de {{5, percent}}% de melhorar o estado de \"Desprotegido\" infligido pelo usuário para um estado de \"Encurralado\", que aumenta adicionalmente o Dano recebido pelo inimigo-alvo em <orangeStrong>{{6, percent}}%</orangeStrong>, durando por {{4}} rodada(s). Durante esse período, o usuário não pode infligir \"Desprotegido\" no alvo."
+  }
+}

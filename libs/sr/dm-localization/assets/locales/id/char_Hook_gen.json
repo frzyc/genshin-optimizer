@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Innocence",
-        "fullDesc": "Saat Talent terpicu, Hook akan memulihkan HP sebesar {{1, percent}}% dari Max HP-nya.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat Talent terpicu, Hook akan memulihkan HP sebesar {{1, percent}}% dari Max HP-nya."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivete",
-        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Playing With Fire",
-        "fullDesc": "Setelah melancarkan Ultimate, Hook akan mengalami {{2, percent}}% Pendahuluan Aksi dan memulihkan {{1}} Energy tambahan.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Setelah melancarkan Ultimate, Hook akan mengalami {{2, percent}}% Pendahuluan Aksi dan memulihkan {{1}} Energy tambahan."
       }
     }
   },

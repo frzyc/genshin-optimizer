@@ -1,6 +1,6 @@
 {
   "name": "Thunder Metal",
-  "desc2": "<color=#2EB6FF>Electric DMG</color> +10%",
-  "desc4": "As long as an enemy in combat is <color=#2EB6FF>Shocked</color>, the equipper's ATK is increased by 28%.",
+  "desc2": "<ct color=#2EB6FF>Electric DMG</ct> +10%",
+  "desc4": "As long as an enemy in combat is <ct color=#2EB6FF>Shocked</ct>, the equipper's ATK is increased by 28%.",
   "story": "A Drive Disc burned with specialized Ether technology offering personalized attribute amplification to the user."
 }

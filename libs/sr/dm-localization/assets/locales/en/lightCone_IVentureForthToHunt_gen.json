@@ -1,0 +1,7 @@
+{
+  "name": "I Venture Forth to Hunt",
+  "passive": {
+    "name": "Intimidation",
+    "description": "Increases the wearer's CRIT Rate by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. When the wearer launches a Follow-up ATK, gains 1 stack of \"Luminflux,\" stacking up to {{3}} time(s). Each stack of \"Luminflux\" enables the Ultimate DMG dealt by the wearer to ignore <orangeStrong>{{2, percent}}%</orangeStrong> of the target's DEF. When the wearer's turn ends, removes 1 stack of \"Luminflux.\""
+  }
+}

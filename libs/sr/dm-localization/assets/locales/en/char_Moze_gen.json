@@ -1,0 +1,96 @@
+{
+  "name": "Moze",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hurlthorn",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Moze's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Lightning DMG to a single enemy.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Fleetwinged Raid",
+        "fullDesc": "Marks a designated single enemy target as \"Prey\" and deals to it Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Moze's ATK, and gains {{2}} points of Charge.<br>When there are no other characters on the field that are capable of combat, Moze cannot use his Skill and dispels the enemy's \"Prey\" state.",
+        "shortDesc": "<orangeStrong>Marks one enemy as \"Prey\"</orangeStrong> and deals Lightning DMG to it. Gains <orangeStrong>{{2}}</orangeStrong> points of Charge.",
+        "tag": "Single Target"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dash In, Gash Out",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Moze's ATK to a single target enemy, and launches the Talent's Follow-up ATK against this target. If the target is defeated before this Follow-up ATK is used, then launches the Follow-up ATK against a random single enemy instead.",
+        "shortDesc": "Deals Lightning DMG to a single enemy, and launches Talent's <orangeStrong>Follow-up ATK</orangeStrong>.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cascading Featherblade",
+        "fullDesc": "When \"Prey\" exists on the field, Moze will enter the Departed state.<br>After allies attack \"Prey,\" Moze will additionally deal 1 instance of Lightning Additional DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of his ATK and consumes 1 point of Charge. For every {{2}} point(s) of Charge consumed, Moze launches 1 Follow-up ATK to \"Prey,\" dealing Lightning DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of his ATK. When Charge reaches 0, dispels the target's \"Prey\" state and resets the tally of Charge points required to launch Follow-up ATK. Talent's Follow-up ATK does not consume Charge.",
+        "shortDesc": "When \"Prey\" exists on the field, Moze will enter the <orangeStrong>Departed</orangeStrong> state.<br>After allies attack \"Prey,\" Moze deals Lightning <orangeStrong>Additional DMG</orangeStrong> and consumes 1 Charge point. For every <orangeStrong>{{2}}</orangeStrong> point(s) of Charge consumed, Moze launches <orangeStrong>Follow-up ATK</orangeStrong> on \"Prey,\" dealing Lightning DMG. When Charge is 0, dispels the target's \"Prey\" state.",
+        "tag": "Single Target"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Bated Wings",
+        "fullDesc": "After using Technique, enters the Stealth state for {{1}} second(s). While in Stealth, Moze is undetectable by enemies. If Moze attacks enemies to enter combat while in Stealth, increases DMG by {{2, percent}}%, lasting for {{3}} turn(s).",
+        "shortDesc": "Enters the Stealth state. Attacking enemies to enter combat while in Stealth increases DMG.",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nightfeather",
+        "fullDesc": "After using Talent's Follow-up ATK, recovers {{1}} Skill Point(s). This effect can trigger again after {{2}} turn(s)."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Daggerhold",
+        "fullDesc": "When Moze dispels his Departed state, his action advances by {{1, percent}}%. At the start of each wave, Moze's action advances by {{2, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vengewise",
+        "fullDesc": "When dealing DMG by using Ultimate, it is considered as having launched a Follow-up ATK. The Follow-up ATK DMG taken by the \"Prey\" increases by {{1, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Oathkeeper",
+      "desc": "After entering battle, Moze regenerates {{2}} Energy. Each time the Additional DMG from his Talent is triggered, Moze regenerates {{1}} Energy."
+    },
+    "2": {
+      "name": "Wrathbearer",
+      "desc": "When all allies deal DMG to the enemy target marked as \"Prey,\" increases CRIT DMG by {{1, percent}}%."
+    },
+    "3": {
+      "name": "Deathchaser",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "4": {
+      "name": "Heathprowler",
+      "desc": "When using Ultimate, increases the DMG dealt by Moze by {{1, percent(fixed: 1)}}%, lasting for {{2}} turn(s)."
+    },
+    "5": {
+      "name": "Truthbender",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "6": {
+      "name": "Faithbinder",
+      "desc": "Increases the DMG multiplier of the Talent's Follow-up ATK by {{1, percent}}%."
+    }
+  }
+}

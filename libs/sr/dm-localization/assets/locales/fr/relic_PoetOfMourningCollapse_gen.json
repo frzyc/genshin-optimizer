@@ -1,0 +1,7 @@
+{
+  "setName": "Poétesse du déclin funèbre",
+  "setEffects": {
+    "2": "Augmente les DGT quantiques infligés de {{1, percent}}%.",
+    "4": "Réduit la VIT du porteur de {{6, percent}}%. Si sa VIT est inférieure à {{2}}/{{3}} en entrant en combat, ses chances de coup critique augmentent de {{4, percent}}%/{{5, percent}}%. Cet effet s'applique également au mnémesprit du porteur au même moment."
+  }
+}

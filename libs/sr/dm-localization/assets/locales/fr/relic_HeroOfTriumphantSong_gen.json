@@ -1,0 +1,7 @@
+{
+  "setName": "Héros de la chanson triomphale",
+  "setEffects": {
+    "2": "Augmente l'ATQ de {{1, percent}}%.",
+    "4": "Augmente la VIT du porteur de {{1, percent}}% tant que son mnémesprit est sur le champ de bataille. Lorsque le mnémesprit du porteur attaque, ses DGT critiques ainsi que ceux du porteur augmentent de {{2, percent}}% pendant {{3}} tours."
+  }
+}
