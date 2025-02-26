@@ -130,7 +130,7 @@ export class CharacterOptManager extends DataManager<
           src,
           dst,
           condKey,
-          condValue: 0,
+          condValue,
         })
       } else {
         const cond = conditionals[condIndex]
