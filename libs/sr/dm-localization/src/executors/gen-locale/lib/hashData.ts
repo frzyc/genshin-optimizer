@@ -3,8 +3,15 @@ import {
   allCharacterGenderedKeys,
   allLightConeKeys,
   allRelicSetKeys,
+  allServantKeys,
 } from '@genshin-optimizer/sr/consts'
-import { allCharHashData, charHashData, charSheet } from './charHashData'
+import {
+  allCharHashData,
+  allServantHashData,
+  charHashData,
+  charSheet,
+  servantHashData,
+} from './charHashData'
 import { allLightConeHashData, lightConeHashData } from './lightConeHashData'
 import { allRelicHashData, relicHashData } from './relicHashData'
 import { uiHashData } from './uiHashData'
@@ -15,6 +22,11 @@ const charNames = Object.fromEntries(
   Object.entries(allCharHashData).map(([key, data]) => [key, data.name])
 )
 verifyObjKeys(charNames, allCharacterGenderedKeys)
+
+const servantNames = Object.fromEntries(
+  Object.entries(allServantHashData).map(([key, data]) => [key, data.name])
+)
+verifyObjKeys(servantNames, allServantKeys)
 
 const relicNames = Object.fromEntries(
   Object.entries(allRelicHashData).map(([key, data]) => [key, data.setName])
@@ -29,8 +41,11 @@ verifyObjKeys(lightConeNames, allLightConeKeys)
 export const HashData = {
   char: allCharHashData,
   charNames,
+  servant: allServantHashData,
+  servantNames,
   characters: charHashData,
   charSheet,
+  servants: servantHashData,
 
   relic: allRelicHashData,
   relicNames,

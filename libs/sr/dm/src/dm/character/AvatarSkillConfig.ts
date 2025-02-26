@@ -42,13 +42,20 @@ export type AvatarSkillConfig = {
   SPNeed?: Value
 }
 
-export type AttackType = 'Normal' | 'BPSkill' | 'Ultra' | 'MazeNormal' | 'Maze'
+export type AttackType =
+  | 'Normal'
+  | 'BPSkill'
+  | 'Ultra'
+  | 'MazeNormal'
+  | 'Maze'
+  | 'Servant'
 export const DmAttackTypeMap: Record<AttackType, AbilityKey> = {
   Normal: 'basic',
   BPSkill: 'skill',
   Ultra: 'ult',
   MazeNormal: 'overworld',
   Maze: 'technique',
+  Servant: 'servantSkill',
 }
 
 export type SkillEffect =

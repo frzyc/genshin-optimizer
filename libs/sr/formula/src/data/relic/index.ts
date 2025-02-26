@@ -31,7 +31,7 @@ import SpaceSealingStation from './sheets/SpaceSealingStation'
 import SprightlyVonwacq from './sheets/SprightlyVonwacq'
 import TaliaKingdomOfBanditry from './sheets/TaliaKingdomOfBanditry'
 import TheAshblazingGrandDuke from './sheets/TheAshblazingGrandDuke'
-import TheWindSouringValorous from './sheets/TheWindSouringValorous'
+import TheWindSoaringValorous from './sheets/TheWindSoaringValorous'
 import ThiefOfShootingMeteor from './sheets/ThiefOfShootingMeteor'
 import WastelanderOfBanditryDesert from './sheets/WastelanderOfBanditryDesert'
 import WatchmakerMasterOfDreamMachinations from './sheets/WatchmakerMasterOfDreamMachinations'
@@ -53,7 +53,7 @@ const data: TagMapNodeEntries[] = [
   PioneerDiverOfDeadWaters,
   PrisonerInDeepConfinement,
   TheAshblazingGrandDuke,
-  TheWindSouringValorous,
+  TheWindSoaringValorous,
   ThiefOfShootingMeteor,
   WastelanderOfBanditryDesert,
   WatchmakerMasterOfDreamMachinations,

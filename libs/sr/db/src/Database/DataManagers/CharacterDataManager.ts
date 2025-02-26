@@ -35,8 +35,17 @@ export class CharacterDataManager extends DataManager<
       level: rawLevel,
       ascension: rawAscension,
     } = obj as ICharacter
-    let { basic, skill, ult, talent, bonusAbilities, statBoosts, eidolon } =
-      obj as ICharacter
+    let {
+      basic,
+      skill,
+      ult,
+      talent,
+      bonusAbilities,
+      statBoosts,
+      eidolon,
+      servantSkill,
+      servantTalent,
+    } = obj as ICharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
@@ -64,6 +73,10 @@ export class CharacterDataManager extends DataManager<
     skill = typeof skill !== 'number' ? 1 : clamp(skill, 1, 10)
     ult = typeof ult !== 'number' ? 1 : clamp(ult, 1, 10)
     talent = typeof talent !== 'number' ? 1 : clamp(talent, 1, 10)
+    servantSkill =
+      typeof servantSkill !== 'number' ? 1 : clamp(servantSkill, 1, 10)
+    servantTalent =
+      typeof servantTalent !== 'number' ? 1 : clamp(servantTalent, 1, 10)
 
     const char: ICharacter = {
       key: characterKey,
@@ -76,6 +89,8 @@ export class CharacterDataManager extends DataManager<
       bonusAbilities,
       statBoosts,
       eidolon,
+      servantSkill,
+      servantTalent,
     }
     return char
   }
@@ -111,6 +126,8 @@ export class CharacterDataManager extends DataManager<
       bonusAbilities,
       statBoosts,
       eidolon,
+      servantSkill,
+      servantTalent,
     } = char
     const result: ICharacter = {
       key,
@@ -123,6 +140,8 @@ export class CharacterDataManager extends DataManager<
       bonusAbilities,
       statBoosts,
       eidolon,
+      servantSkill,
+      servantTalent,
     }
     return result
   }
@@ -303,5 +322,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     statBoosts: {},
     equippedRelics: objKeyMap(allRelicSlotKeys, () => ''),
     equippedLightCone: '',
+    servantSkill: 1,
+    servantTalent: 1,
   }
 }
