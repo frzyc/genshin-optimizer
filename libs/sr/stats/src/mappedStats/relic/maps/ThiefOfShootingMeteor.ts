@@ -4,12 +4,15 @@ import { allStats } from '../../../allStats'
 const key: RelicSetKey = 'ThiefOfShootingMeteor'
 const data_gen = allStats.relic[key]
 
-let o = 0
-// TODO: Load scalings
+let o = 1
+
 const dm = {
   2: {
-    cond_dmg_: data_gen.setEffects[0].otherStats[o++] ?? [1, 2],
-    passive_atk: data_gen.setEffects[0].passiveStats.atk ?? 1,
+    passive_brEffect_: data_gen.setEffects[0].passiveStats.brEffect_,
+  },
+  4: {
+    passive_brEffect_: data_gen.setEffects[1].passiveStats.brEffect_,
+    energy: data_gen.setEffects[1].otherStats[o++],
   },
 } as const
 
