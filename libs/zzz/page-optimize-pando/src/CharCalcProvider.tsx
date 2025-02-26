@@ -86,11 +86,15 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
   const wengine = useWengine(character?.equippedWengine)
   const discs = useDiscs(character?.equippedDiscs)
   const wengineTagEntries = useMemo(() => {
-    const we = wengine
-    if (!we) return []
-    return wengineTagMapNodeEntries(we.key, we.level, we.modification, we.phase)
+    if (!wengine) return []
+    return wengineTagMapNodeEntries(
+      wengine.key,
+      wengine.level,
+      wengine.modification,
+      wengine.phase
+    )
   }, [wengine])
-  const relicTagEntries = useMemo(() => {
+  const discTagEntries = useMemo(() => {
     if (!discs) return []
     return discsTagMapNodes(Object.values(discs).filter(notEmpty))
   }, [discs])
@@ -100,9 +104,9 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
       character.key,
       ...charTagMapNodeEntries(character),
       ...wengineTagEntries,
-      ...relicTagEntries
+      ...discTagEntries
     )
-  }, [character, wengineTagEntries, relicTagEntries])
+  }, [character, wengineTagEntries, discTagEntries])
 }
 
 export function discsTagMapNodes(discs: ICachedDisc[]): TagMapNodeEntries {

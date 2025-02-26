@@ -45,6 +45,7 @@ export class CharacterOptManager extends DataManager<
     const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
     conditionals = conditionals
       .map(({ sheet, condKey, src, dst, condValue }) => {
+        if (!condValue) return undefined //remove conditionals when the value is 0
         if (!isMember(src) || !(dst === null || isMember(dst))) return undefined
         const cond = getConditional(sheet, condKey)
         if (!cond) return undefined

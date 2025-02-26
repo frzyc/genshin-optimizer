@@ -113,7 +113,6 @@ export default function OptimizeWrapper({
         (total, discs) => total * discs.length,
         1
       ),
-    // * lightCones.length
     [discsBySlot]
   )
 

@@ -50,7 +50,7 @@ export class ZzzDatabase extends Database {
     // Depends on wengines and discs
     this.generatedBuildList = new GeneratedBuildListDataManager(this)
 
-    // Depends on relics
+    // Depends on discs and characters
     this.optConfigs = new OptConfigDataManager(this)
 
     // Depends on optConfigs
@@ -121,7 +121,7 @@ export class ZzzDatabase extends Database {
       ignoreDups
     )
 
-    // Follow updates from char/disc/lightCone to gather import results
+    // Follow updates from char/disc/wengine to gather import results
     const unfollows = [
       // TODO:
       // this.chars.followAny((key, reason, value) => {
