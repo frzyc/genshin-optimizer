@@ -1,5 +1,5 @@
 import { NumberInputLazy } from '@genshin-optimizer/common/ui'
-import type { UnArray } from '@genshin-optimizer/common/util'
+import { isPercentStat, type UnArray } from '@genshin-optimizer/common/util'
 import { type StatFilters } from '@genshin-optimizer/sr/db'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import {
@@ -117,8 +117,7 @@ function OptimizationTargetEditorItem({
 }) {
   const { tag, value, isMax, disabled: valueDisabled } = statFilter
 
-  // TODO: best way to infer percentage from tag?
-  const isPercent = (tag.name || tag.q)?.endsWith('_')
+  const isPercent = isPercentStat(tag.name ?? tag.q ?? '')
   return (
     <Box sx={{ display: 'flex', gap: 1 }}>
       <ButtonGroup

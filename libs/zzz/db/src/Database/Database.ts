@@ -39,7 +39,6 @@ export class ZzzDatabase extends Database {
 
     // Handle Datamanagers
     this.chars = new CharacterDataManager(this)
-    this.discs = new DiscDataManager(this)
 
     // discs needs to be instantiated after character to check for relations
     this.discs = new DiscDataManager(this)
