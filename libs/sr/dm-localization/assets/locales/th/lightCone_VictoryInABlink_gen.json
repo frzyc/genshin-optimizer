@@ -1,0 +1,7 @@
+{
+  "name": "Victory In a Blink",
+  "passive": {
+    "name": "Final Hit",
+    "description": "ทำให้ DMG คริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อภูตความทรงจำของผู้สวมใส่ ปล่อยสกิลใส่เป้าหมายฝ่ายเรา จะทำให้เป้าหมายฝ่ายเราทั้งหมดสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

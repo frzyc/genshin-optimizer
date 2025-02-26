@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Prana Extirpated",
-        "fullDesc": "Summons Lightning-Lord at the start of the battle. Lightning-Lord has {{1}} base SPD and {{4}} base Hits Per Action. When the Lightning-Lord takes action, its hits are considered as follow-up attacks, with each hit dealing Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Jing Yuan's ATK to a random single enemy, and enemies adjacent to it also receive Lightning DMG equal to {{5, percent}}% of the DMG dealt to the primary target enemy.<br>The Lightning-Lord's Hits Per Action can reach a max of {{6}}. Every time Lightning-Lord's Hits Per Action increases by 1, its SPD increases by {{3}}. After the Lightning-Lord's action ends, its SPD and Hits Per Action return to their base values.<br>When Jing Yuan is knocked down, the Lightning-Lord will disappear.<br>When Jing Yuan is affected by Crowd Control debuff, the Lightning-Lord is unable to take action.",
+        "fullDesc": "Summons Lightning-Lord at the start of the battle. Lightning-Lord has {{1}} base SPD and {{4}} base Hits Per Action. When the Lightning-Lord takes action, its hits are considered as Follow-up ATKs, with each hit dealing Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Jing Yuan's ATK to a random single enemy, and enemies adjacent to it also receive Lightning DMG equal to {{5, percent}}% of the DMG dealt to the primary target enemy.<br>The Lightning-Lord's Hits Per Action can reach a max of {{6}}. Every time Lightning-Lord's Hits Per Action increases by 1, its SPD increases by {{3}}. After the Lightning-Lord's action ends, its SPD and Hits Per Action return to their base values.<br>When Jing Yuan is knocked down, the Lightning-Lord will disappear.<br>When Jing Yuan is affected by Crowd Control debuff, the Lightning-Lord is unable to take action.",
         "shortDesc": "At the start of the battle, summons \"Lightning-Lord.\" When \"Lightning-Lord\" takes action, launches Follow-up ATK to <orangeStrong>automatically</orangeStrong> <orangeStrong>deal minor Lightning DMG</orangeStrong> to one random enemy and adjacent targets.",
         "tag": "Bounce"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Battalia Crush",
-        "fullDesc": "If the Lightning-Lord's Hits Per Action is greater or equal to {{1}} in the next turn, its CRIT DMG increases by {{2, percent}}% for the next turn.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "If the Lightning-Lord's Hits Per Action is greater or equal to {{1}} in the next turn, its CRIT DMG increases by {{2, percent}}% for the next turn."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Savant Providence",
-        "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "War Marshal",
-        "fullDesc": "After the Skill is used, the CRIT Rate increases by {{1, percent}}% for {{2}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After the Skill is used, the CRIT Rate increases by {{1, percent}}% for {{2}} turn(s)."
       }
     }
   },

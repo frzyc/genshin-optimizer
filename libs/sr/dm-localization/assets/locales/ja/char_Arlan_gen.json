@@ -45,39 +45,32 @@
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#そせい}蘇生{RUBY_E#}",
-        "fullDesc": "敵を倒した時、残りHPが{{1, percent}}%以下の場合、自身の最大HP{{2, percent}}%分のHPを回復する。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "敵を倒した時、残りHPが{{1, percent}}%以下の場合、自身の最大HP{{2, percent}}%分のHPを回復する。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#けんにん}堅忍{RUBY_E#}",
-        "fullDesc": "持続ダメージ系デバフに抵抗する確率+{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "持続ダメージ系デバフに抵抗する確率+{{1, percent}}%。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#こうきょ}抗拒{RUBY_E#}",
-        "fullDesc": "戦闘に入る時、残りHPが{{1, percent}}%以下の場合、アーランは持続ダメージ以外のすべてのダメージを防ぐ。アーランが攻撃を受けた後、この効果は解除される。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "戦闘に入る時、残りHPが{{1, percent}}%以下の場合、アーランは持続ダメージ以外のすべてのダメージを防ぐ。アーランが攻撃を受けた後、この効果は解除される。"
       }
     }
   },
   "ranks": {
     "1": {
       "name": "{RUBY_B#ばんし}万死{RUBY_E#}も{RUBY_B#じ}辞{RUBY_E#}さぬ{RUBY_B#けつい}決意{RUBY_E#}",
-      "desc": "残りHPが50%以下の敵に対する、戦闘スキルによるダメージ+{{1, percent}}%。"
+      "desc": "残りHPが50%以下の時、戦闘スキルによるダメージ+{{1, percent}}%。"
     },
     "2": {
       "name": "{RUBY_B#しば}縛{RUBY_E#}りより{RUBY_B#はな}放{RUBY_E#}たれし{RUBY_B#こころ}心{RUBY_E#}",

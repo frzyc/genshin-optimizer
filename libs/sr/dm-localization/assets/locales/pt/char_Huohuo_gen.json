@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Medo de Agir",
-        "fullDesc": "Quando a batalha começa, Huohuo ganha Provisão Divina, durando por {{1}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando a batalha começa, Huohuo ganha Provisão Divina, durando por {{1}} rodada(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "A Amaldiçoada",
-        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Reação de Estresse ao Horror",
-        "fullDesc": "Quando o Talento dela é ativado para curar aliados, Huohuo regenera {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando o Talento dela é ativado para curar aliados, Huohuo regenera {{1}} de Energia."
       }
     }
   },

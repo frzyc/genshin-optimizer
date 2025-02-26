@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Viscera's Disquiet",
-        "fullDesc": "After using Skill to attack one designated enemy that has Wind Shear, Bleed, Burn, or Shock, each of these debuffs respectively has a {{1, percent}}% base chance of inflicting 1 extra stack of Arcana.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After using Skill to attack one designated enemy that has Wind Shear, Bleed, Burn, or Shock, each of these debuffs respectively has a {{1, percent}}% base chance of inflicting 1 extra stack of Arcana."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Goblet's Dredges",
-        "fullDesc": "When an enemy target enters battle, there is a {{1, percent}}% base chance for it to be inflicted with 1 stack of Arcana.<br>Every time an enemy target receives 1 instance of DoT during a single attack by an ally, there is a {{1, percent}}% base chance for the target to be inflicted with 1 stack of Arcana. The maximum number of stacks that can be inflicted during 1 single attack is {{2}}.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When an enemy target enters battle, there is a {{1, percent}}% base chance for it to be inflicted with 1 stack of Arcana.<br>Every time an enemy target receives 1 instance of DoT during a single attack by an ally, there is a {{1, percent}}% base chance for the target to be inflicted with 1 stack of Arcana. The maximum number of stacks that can be inflicted during 1 single attack is {{2}}."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Candleflame's Portent",
-        "fullDesc": "Increases this unit's DMG by an amount equal to {{1, percent}}% of Effect Hit Rate, up to a maximum DMG increase of {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases this unit's DMG by an amount equal to {{1, percent}}% of Effect Hit Rate, up to a maximum DMG increase of {{2, percent}}%."
       }
     }
   },

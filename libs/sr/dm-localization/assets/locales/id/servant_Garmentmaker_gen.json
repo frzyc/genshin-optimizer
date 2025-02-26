@@ -1,0 +1,33 @@
+{
+  "name": "Garmentmaker",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Thorned Snare",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK pada 1 musuh, dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK pada target di sekitarnya.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh dan target di sekitarnya.",
+        "tag": "Blast"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "A Body Brewed by Tears",
+        "fullDesc": "Setelah menyerang musuh berstatus \"Seam Stitch\", SPD unit ini akan meningkat <orangeStrong>{{1}}</orangeStrong> poin, efek ini maksimal dapat ditumpuk hingga {{3}} lapis. Saat Garmentmaker beraksi, ia akan melancarkan \"Thorned Snare\" secara otomatis, dan memprioritaskan untuk menyerang musuh yang berstatus \"Seam Stitch\".",
+        "shortDesc": "Setelah menyerang musuh berstatus \"Seam Stitch\", <orangeStrong>SPD unit ini</orangeStrong> akan meningkat. Saat beraksi akan melancarkan serangan secara otomatis, dan memprioritaskan untuk menyerang musuh berstatus \"Seam Stitch\".",
+        "tag": "Enhance"
+      },
+      "1": {
+        "name": "The Speeding Summer",
+        "fullDesc": "Saat Garmentmaker dipanggil, unit ini akan mengalami Pendahuluan Aksi sebesar {{1, percent}}%.",
+        "shortDesc": "Saat dipanggil, unit ini akan mengalami Pendahuluan Aksi.",
+        "tag": "Enhance"
+      },
+      "2": {
+        "name": "Bloom of Drying Grass",
+        "fullDesc": "Saat Garmentmaker menghilang, akan memulihkan {{1}} Energy untuk Aglaea.",
+        "shortDesc": "Saat menghilang, akan memulihkan Energy untuk Aglaea.",
+        "tag": "Enhance"
+      }
+    }
+  }
+}

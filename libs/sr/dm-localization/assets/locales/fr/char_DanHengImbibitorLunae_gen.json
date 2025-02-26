@@ -37,7 +37,6 @@
       "1": {
         "name": "Annulation",
         "fullDesc": "Annule le renforcement",
-        "shortDesc": "",
         "tag": "Annulation"
       }
     },
@@ -69,32 +68,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Étoile cachée",
-        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Règne abyssal",
-        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sursaut du dragon",
-        "fullDesc": "Les DGT critiques du personnage augmentent de {{1, percent}}% lorsqu'il inflige des DGT à des cibles ennemies qui ont une Faiblesse imaginaire.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Les DGT critiques du personnage augmentent de {{1, percent}}% lorsqu'il inflige des DGT à des cibles ennemies qui ont une Faiblesse imaginaire."
       }
     }
   },

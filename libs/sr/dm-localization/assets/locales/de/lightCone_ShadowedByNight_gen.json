@@ -1,0 +1,7 @@
+{
+  "name": "Die Nacht der langen Schatten",
+  "passive": {
+    "name": "Verstecken",
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Beim Kampfeintritt oder nach dem Verursachen von Bruch-SCH wird die GES für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+  }
+}

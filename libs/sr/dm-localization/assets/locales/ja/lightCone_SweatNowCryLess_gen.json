@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#なが}流{RUBY_E#}すなら{RUBY_B#なみだ}涙{RUBY_E#}より{RUBY_B#あせ}汗{RUBY_E#}",
+  "passive": {
+    "name": "さあ{RUBY_B#たんれん}鍛錬{RUBY_E#}だ！",
+    "description": "装備キャラの会心率+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラの記憶の精霊がフィールド上にいる時、装備キャラおよびその記憶の精霊の与ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。"
+  }
+}

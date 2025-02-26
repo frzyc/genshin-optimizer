@@ -1,0 +1,113 @@
+{
+  "name": "Feixiao",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Schneidender Blitz",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Feixiaos ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Spaltender Hieb",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Feixiaos ANG zu und startet zusätzlich sofort 1-mal den Folgeangriff des Talents auf das Ziel.",
+        "shortDesc": "Fügt einem Gegner Wind-SCH zu und startet zusätzlich 1-mal den Folgeangriff des Talents.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Zertrümmern der Ungebändigten",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Feixiaos ANG zu und reduziert seinen WDS unabhängig vom Schwächetyp. Solange das Ziel sich nicht im Schwächebruch befindet, wird Feixiaos Schwächebruch-Effizienz um {{2, percent}}% erhöht.<br>Feixiao setzt zunächst {{3}}-mal „Schneidender Blitz im Tanz“ oder „Spaltender Hieb gen Himmel“ ein. Schließlich fügt sie dem Ziel Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> ihres ANG zu.",
+        "shortDesc": "Während des Ultimates wird der WDS des Gegners <orangeStrong>unabhängig vom Schwächetyp</orangeStrong> reduziert. Solange das Ziel sich nicht im Schwächebruch befindet, wird Feixiaos <orangeStrong>Schwächebruch-Effizienz</orangeStrong> erhöht.<br>Setzt gegen einen Gegner <orangeStrong>{{3}}</orangeStrong>-mal „Schneidender Blitz im Tanz“ oder „Spaltender Hieb gen Himmel“ ein und verursacht schließlich Wind-SCH.",
+        "tag": "Einzelangriff"
+      },
+      "1": {
+        "name": "Schneidender Blitz im Tanz",
+        "fullDesc": "Fügt dem ausgewählten Ziel Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Feixiaos ANG zu. Befindet das Ziel sich im Schwächebruch, wird der SCH-Multiplikator um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu. Befindet das Ziel sich <orangeStrong>im Schwächebruch</orangeStrong>, wird der SCH-Multiplikator erhöht.",
+        "tag": "Einzelangriff"
+      },
+      "2": {
+        "name": "Spaltender Hieb gen Himmel",
+        "fullDesc": "Fügt dem ausgewählten Ziel Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Feixiaos ANG zu. Befindet das Ziel sich nicht im Schwächebruch, wird der SCH-Multiplikator um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht.",
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu. Befindet das Ziel sich <orangeStrong>nicht im Schwächebruch</orangeStrong>, wird der SCH-Multiplikator erhöht.",
+        "tag": "Einzelangriff"
+      },
+      "3": {
+        "name": "Zertrümmern der Ungebändigten",
+        "shortDesc": "Während des Ultimates wird der WDS des Gegners <orangeStrong>unabhängig vom Schwächetyp</orangeStrong> reduziert. Solange das Ziel sich nicht im Schwächebruch befindet, wird Feixiaos <orangeStrong>Schwächebruch-Effizienz</orangeStrong> erhöht.<br>Setzt gegen einen Gegner <orangeStrong>{{3}}</orangeStrong>-mal „Schneidender Blitz im Tanz“ oder „Spaltender Hieb gen Himmel“ ein und verursacht schließlich Wind-SCH.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Donnerjagd",
+        "fullDesc": "Wenn „Fliegender Aureus“ {{3}} Pkt. erreicht, kann der Ultimate aktiviert werden, bis zu {{4}} Pkt. Für je {{2}} Angriffe von Verbündeten erhält Feixiao 1 Pkt. Fliegender Aureus. Feixiaos Ultimate wird nicht mitberechnet.<br>Nachdem ihre Teammitglieder Gegner angegriffen haben, startet Feixiao sofort einen Folgeangriff auf das Hauptziel, der Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Feixiaos ANG verursacht. Wenn kein Hauptziel zum Angriff vorhanden ist, wird ein zufälliger Gegner angegriffen. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden. Zu Beginn von Feixiaos Runde wird die Auslösungsanzahl zurückgesetzt. Beim Einsatz dieses Angriffs wird Feixiaos verursachter SCH für {{6}} Rd. um <orangeStrong>{{5, percent}}%</orangeStrong> erhöht.",
+        "shortDesc": "Wenn „Fliegender Aureus“ <orangeStrong>{{3}}</orangeStrong> Pkt. erreicht, kann der Ultimate aktiviert werden, bis zu <orangeStrong>{{4}}</orangeStrong> Pkt. Feixiao erhält <orangeStrong>Fliegender Aureus</orangeStrong> nach je <orangeStrong>{{2}}</orangeStrong> Angriffen von Verbündeten.<br>Nachdem ihre Teammitglieder angegriffen haben, startet Feixiao einen <orangeStrong>Folgeangriff</orangeStrong> auf das Hauptziel, der Wind-SCH verursacht. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden. Beim Einsatz dieses Angriffs wird <orangeStrong>Feixiaos verursachter SCH erhöht</orangeStrong>.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Corpus des Sturms",
+        "fullDesc": "Tritt nach dem Einsatz der Technik für {{1}} Sek. in den Status „Angestürmt“ ein. Dieser Status zieht Gegner innerhalb einer bestimmten Reichweite mit und erhöht die eigene Bewegungs-GES um {{2, percent}}%. Erhält nach Kampfeintritt {{4}} Pkt. „Fliegender Aureus“.<br>Im Status Angestürmt treten bei aktiven Angriffen alle durch den Effekt mitgezogenen Gegner in den Kampf ein. Nach Kampfeintritt wird zu Beginn jeder Kampfwelle allen Gegnern Wind-SCH in Höhe von {{3, percent}}% von Feixiaos ANG zugefügt. Dieser SCH ist garantiert ein Kritischer Treffer. Wenn mehr als 1 Gegner mitgezogenen werden, wird der SCH-Multiplikator für jeden zusätzlichen mitgezogenen Gegner um {{5, percent}}% erhöht, bis zu {{6, percent}}%.",
+        "shortDesc": "Tritt in den Status „Angestürmt“ ein, was Gegner fortlaufend mitzieht und die eigene Bewegungs-GES erhöht. Erhält nach Kampfeintritt „Fliegender Aureus“.<br>Im Status Angestürmt können alle mitgezogenen Gegner angegriffen werden. Zu Beginn jeder Kampfwelle wird allen Gegnern Wind-SCH zugefügt. Dieser SCH ist garantiert ein Kritischer Treffer. <orangeStrong>Je mehr Gegner mitgezogen werden, desto höher ist der SCH-Multiplikator.</orangeStrong>",
+        "tag": "Verstärkung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Griff zum Himmel",
+        "fullDesc": "Erhält zu Beginn des Kampfes {{1}} Pkt. „Fliegender Aureus“.<br>Wenn in der vorherigen Runde kein Folgeangriff des Talents gestartet wurde, wird zu Beginn der Runde 1 Pkt. für die benötigte Anzahl der Angriffe für Fliegender Aureus berechnet."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Gelöster Aufstieg",
+        "fullDesc": "Wenn durch Ultimates Gegnern SCH zugefügt wird, wird der Angriff als Folgeangriff gewertet. Der KRIT-SCH der Folgeangriffe wird um {{1, percent}}% erhöht."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Blitzschnell",
+        "fullDesc": "Erhöht ANG beim Einsatz der Fertigkeit für {{2}} Rd. um {{1, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Gipfelbezwinger",
+      "desc": "Nach dem Einsatz von „Schneidender Blitz im Tanz“ oder „Spaltender Hieb gen Himmel“ wird Feixiaos verursachter Ultimate-SCH zusätzlich erhöht. Die Erhöhung entspricht {{1, percent}}% des ursprünglichen SCH. Dieser Effekt ist bis zu {{2}}-fach stapelbar und hält bis zum Ende der Aktion des Ultimates an."
+    },
+    "2": {
+      "name": "Mondritual",
+      "desc": "Beim Talenteffekt erhält Feixiao jedes Mal, wenn ein Verbündeter 1 Folgeangriff ausgeführt hat, 1 Pkt. „Fliegender Aureus“. Dieser Effekt kann bis zu {{1}}-mal pro Runde ausgelöst werden."
+    },
+    "3": {
+      "name": "Erscheinen des Glückssterns",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Wachsamkeit des Sturms",
+      "desc": "Erhöht den WDS-Reduzierungswert der Folgeangriffe des Talents um {{1, percent}}%. Beim Auslösen der Folgeangriffe wird die GES dieser Einheit für {{3}} Rd. um {{2, percent}}% erhöht."
+    },
+    "5": {
+      "name": "Auf den Zenit",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Heimwärts immerdar",
+      "desc": "Erhöht die WDS-DUR aller Typen von Feixiaos verursachtem Ultimate-SCH um {{1, percent}}%. Der Folgeangriff-SCH des Talents wird als Ultimate-SCH betrachtet und sein SCH-Multiplikator um {{2, percent}}% erhöht."
+    }
+  }
+}

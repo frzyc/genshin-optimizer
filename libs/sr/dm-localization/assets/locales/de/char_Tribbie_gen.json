@@ -1,0 +1,96 @@
+{
+  "name": "Tribbie",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hundert kleine Raketen",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Tribbies max. LP und angrenzenden Einheiten Quanten-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Tribbies max. LP zu.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Quanten-SCH zu.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Wo sind die Geschenke?",
+        "fullDesc": "Erhält „Numinosität“ für {{2}} Rd. Die Dauer dieses Status wird zu Beginn jeder Runde dieser Einheit um 1 reduziert. Wenn Tribbie Numinosität besitzt, wird die WDS-DUR aller Typen für alle Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht.",
+        "shortDesc": "Erhält „Numinosität“. Während der Dauer dieses Status wird die WDS-DUR aller Typen für alle Verbündeten erhöht.",
+        "tag": "Unterstützung"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Rate mal, wer hier wohnt",
+        "fullDesc": "Erzeugt ein Feld und fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Tribbies max. LP zu.<br>Erhöht während der Dauer des Feldes den erlittenen SCH der Gegner um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Nachdem ein Verbündeter angegriffen hat, wird für jedes getroffene Ziel dem Ziel mit den höchsten LP 1-mal zusätzlichen Quanten-SCH in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Tribbies max. LP zugefügt.<br>Das Feld hält {{4}} Rd. an. Zu Beginn jeder Runde dieser Einheit wird die Dauer des Feldes um 1 verringert.",
+        "shortDesc": "<orangeStrong>Erzeugt ein Feld</orangeStrong> und fügt allen Gegnern geringen Quanten-SCH zu. Während das Feld aktiv ist, wird der erlittene SCH der Gegner erhöht und das Ziel mit den höchsten LP erleidet geringen <orangeStrong>zusätzlichen Quanten-SCH</orangeStrong>, basierend auf der <orangeStrong>Anzahl der getroffenen Gegner</orangeStrong>.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tribbie ist immer beschäftigt",
+        "fullDesc": "Nachdem andere Verbündeten Ultimate eingesetzt haben, löst Tribbie einen Folgeangriff aus, der allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Tribbies max. LP zufügt. Dieser Effekt kann nur 1-mal pro Verbündeten ausgelöst werden. Beim Einsatz von Tribbies Ultimate wird die Auslösungsanzahl der anderen Verbündeten zurückgesetzt. Wenn das Ziel vor dem Einsatz des Folgeangriffs besiegt wird, wird der Folgeangriff gegen einen neuen Gegner auf dem Kampffeld ausgelöst.",
+        "shortDesc": "Nachdem andere Verbündeten Ultimate eingesetzt haben, löst Tribbie einen <orangeStrong>Folgeangriff</orangeStrong> aus, der <orangeStrong>allen Gegnern</orangeStrong> geringen Quanten-SCH zufügt. Dieser Effekt kann nur 1-mal pro Verbündeten ausgelöst werden. Beim Einsatz von Tribbies Ultimate wird die Auslösungsanzahl der anderen Verbündeten zurückgesetzt.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Klatsche, wenn du glücklich bist",
+        "fullDesc": "Erhält nach dem Einsatz der Technik beim Kampfeintritt für {{1}} Rd. „Numinosität“.",
+        "shortDesc": "Erhält beim Kampfeintritt „Numinosität“.",
+        "tag": "Verstärkung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Die Lämmer vor den Stadtmauern ...",
+        "fullDesc": "Nach dem Auslösen des Folgeangriffs des Talents verursacht Tribbie {{1, percent}}% mehr SCH. Dieser Effekt ist bis zu {{2}}-fach stapelbar und hält {{3}} Rd. an."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Glasmurmeln mit Flügeln!",
+        "fullDesc": "Während das Feld aktiv ist, wird Tribbies max. LP um {{1, percent}}% der Summe der  max. LP aller Verbündeten erhöht."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Der Stein am Straßenrand?",
+        "fullDesc": "Zu Beginn des Kampfes stellt Tribbie {{1}} Pkt. Energie wieder her. Nachdem andere Verbündeten angegriffen haben, stellt Tribbie für jedes getroffene Ziel {{2, fixed(fixed: 1)}} Pkt. Energie wieder her."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ritual des Streuzuckers",
+      "desc": "Nachdem Verbündete während der Dauer des Feldes Gegner angegriffen haben, verursacht das Ziel, das dem Feld zusätzlichen SCH zugefügt hat, zusätzlichen Tatsächlichen SCH in Höhe von {{1, percent}}% der gesamten Schadenmenge dieses Angriffs."
+    },
+    "2": {
+      "name": "Guide zum süßen Traum",
+      "desc": "Erhöht den durch das Feld verursachten zusätzlichen SCH auf {{1, percent}}% des ursprünglichen SCH. Wenn das Feld zusätzlichen SCH verursacht, wird noch {{2}}-mal zusätzlicher SCH verursacht."
+    },
+    "3": {
+      "name": "Tresor des Morgengrauens",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Wie eins mit dem Herzen",
+      "desc": "Während der Dauer von „Numinosität“ ignoriert der von allen Verbündeten verursachte SCH {{1, percent}}% der VTD des Ziels."
+    },
+    "5": {
+      "name": "Die wundersame Uhr",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Morgen mit Mond und Sternen",
+      "desc": "Nach dem Einsatz des Ultimates führt Tribbie einen Folgeangriff ihres Talents gegen alle Gegner aus. Der verursachte SCH des Folgeangriffs ihres Talents wird um {{1, percent}}% erhöht."
+    }
+  }
+}

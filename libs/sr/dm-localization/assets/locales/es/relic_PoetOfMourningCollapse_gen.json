@@ -1,0 +1,7 @@
+{
+  "setName": "Poetisa del colapso elegíaco",
+  "setEffects": {
+    "2": "Daño Cuántico +{{1, percent}}%.",
+    "4": "La VEL del portador se reduce en un {{6, percent}}%. Antes de entrar en combate, si la VEL del portador es inferior a {{2}}/{{3}}, su Prob. CRIT aumenta en un {{4, percent}}%/{{5, percent}}%. Este efecto también aplica al mnemoduende del portador."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Scent Alone Stays True",
+  "passive": {
+    "name": "Contentment",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. After the wearer uses Ultimate to attack enemy targets, inflicts the targets with the \"Woefree\" state, lasting for {{5}} turn(s). While in \"Woefree,\" enemy targets take <orangeStrong>{{2, percent}}%</orangeStrong> increased DMG. The effect of increasing DMG taken is additionally boosted by <orangeStrong>{{4, percent}}%</orangeStrong> if the wearer's current Break Effect is {{3, percent}}% or higher."
+  }
+}

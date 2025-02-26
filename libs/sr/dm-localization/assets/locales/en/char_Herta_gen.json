@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Fine, I'll Do It Myself",
-        "fullDesc": "When an ally's attack causes an enemy's HP percentage to fall to {{1, percent}}% or lower, Herta will launch a follow-up attack, dealing Ice DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Herta's ATK to all enemies.",
+        "fullDesc": "When an ally's attack causes an enemy's HP percentage to fall to {{1, percent}}% or lower, Herta will launch a Follow-up ATK, dealing Ice DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Herta's ATK to all enemies.",
         "shortDesc": "When any ally target's attack reduces the enemy target's current HP percentage to <orangeStrong>{{1, percent}}%</orangeStrong> or lower, Herta immediately launches <orangeStrong>Follow-up ATK</orangeStrong>, dealing minor Ice DMG to all enemies.",
         "tag": "AoE"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Efficiency",
-        "fullDesc": "When Skill is used, the DMG Boost effect on target enemies increases by an extra {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Skill is used, the DMG Boost effect on target enemies increases by an extra {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Puppet",
-        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Icing",
-        "fullDesc": "When Ultimate is used, deals {{1, percent}}% more DMG to Frozen enemies.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Ultimate is used, deals {{1, percent}}% more DMG to Frozen enemies."
       }
     }
   },

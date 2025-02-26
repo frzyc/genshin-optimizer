@@ -1,0 +1,96 @@
+{
+  "name": "Jiaoqiu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Entflammen des Herzens",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jiaoqius ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lodernder Angriff",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jiaoqius ANG zu und fügt den angrenzenden Einheiten Feuer-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Jiaoqius ANG zu. Es besteht eine Grundchance von {{3, percent}}%, das Hauptziel mit 1 Stapelung „Aschenbrennen“ zu belegen.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH und angrenzenden Einheiten geringen Feuer-SCH zu. Verursacht beim Hauptziel mit hoher Chance 1 Stapelung <orangeStrong>Aschenbrennen</orangeStrong>.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Formation durch Einfallsreichtum",
+        "fullDesc": "Setzt die Stapelzahl von „Aschenbrennen“ der Gegner einheitlich auf die höchste Stapelzahl von Aschenbrennen auf dem Kampffeld. Aktiviert dann ein Feld und fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jiaoqius ANG zu.<br>Solange sich ein Gegner in diesem Feld befindet, wird sein erlittener Ultimate-SCH um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> erhöht und es besteht die Grundchance von <orangeStrong>{{2, percent}}%</orangeStrong>, dass er bei seiner Aktion mit 1 Stapelung Aschenbrennen belegt wird. Ist dieses Feld aktiv, kann dieser Effekt bis zu {{5}}-mal und für jeden Gegner nur 1-mal pro Runde ausgelöst werden. Die Auslösungsanzahl wird jedes Mal zurückgesetzt, wenn Jiaoqiu seinen Ultimate einsetzt.<br>Das Feld hält {{4}} Rd. an und seine Dauer wird zu Beginn jeder Runde um 1 verringert. Wenn Jiaoqiu handlungsunfähig wird, wird auch das Feld aufgehoben.",
+        "shortDesc": "Setzt die Stapelzahl von „Aschenbrennen“ der Gegner einheitlich auf die höchste Stapelzahl von Aschenbrennen auf dem Kampffeld. Aktiviert dann ein Feld und fügt allen Gegnern Feuer-SCH zu. Solange sich ein Gegner in diesem Feld befindet, wird sein <orangeStrong>erlittener Ultimate-SCH erhöht</orangeStrong> und es besteht die Chance, dass er bei seiner Aktion mit 1 Stapelung Aschenbrennen belegt wird.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Strategeme und List, Köstlichkeiten und Gift",
+        "fullDesc": "Wenn Jiaoqiu Gegner mit Standardangriff, Fertigkeit oder Ultimate angreift, besteht eine Grundchance von {{1, percent}}%, sie mit 1 Stapelung „Aschenbrennen“ zu belegen. Bei 1 Stapelung wird der erlittene SCH des Gegners um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> erhöht, und jede Stapelung danach erhöht ihn um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Aschenbrennen ist bis zu {{4}}-fach stapelbar und hält {{5}} Rd. an.<br>Wenn der Gegner sich im Status Aschenbrennen befindet, wird er gleichzeitig als im Status Brennen angesehen und erleidet zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{6, percent}}%</orangeStrong> von Jiaoqius ANG.",
+        "shortDesc": "Nach einem Angriff durch Standardangriff, Fertigkeit oder Ultimate besteht eine hohe Chance, das Ziel mit 1 Stapelung „Aschenbrennen“ zu belegen, wodurch der Gegner mehr SCH erleidet und gleichzeitig als im Status Brennen betrachtet wird.",
+        "tag": "Beeinträchtigung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Feuriger Aufruhr",
+        "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{2}} Sek. eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension wird allen Gegnern Feuer-SCH in Höhe von {{1, percent}}% von Jiaoqius ANG zugefügt. Außerdem besteht eine Grundchance von {{3, percent}}%, ihnen 1 Stapelung „Aschenbrennen“ zuzufügen. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "shortDesc": "Erzeugt eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension wird allen Gegnern geringer Feuer-SCH zugefügt und sie werden mit hoher Chance mit 1 Stapelung „Aschenbrennen“ belegt.",
+        "tag": "Beeinträchtigung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Schmiede die Flamme",
+        "fullDesc": "Stellt zu Beginn des Kampfes sofort {{1}} Pkt. Energie wieder her."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Neige die Pfanne",
+        "fullDesc": "Für je {{2, percent}}% von Jiaoqius Effekt-Trefferrate, die {{1, percent}}% übersteigt, wird sein ANG zusätzlich um {{3, percent}}% erhöht, bis zu {{4, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Röste das Aroma",
+        "fullDesc": "Wenn Gegner in den Kampf eintreten, solange das Feld aktiv ist, werden sie mit „Aschenbrennen“ belegt. Die Anzahl der Stapelungen entspricht der höchsten Stapelzahl von Aschenbrennen, die ein Gegner während der Dauer des Felds besitzt, jedoch min. {{1}} Stapelung."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Vorbestimmung der Geschmäcke",
+      "desc": "Verbündete fügen Gegnern mit dem Status „Aschenbrennen“ {{1, percent}}% mehr SCH zu. Jedes Mal, wenn der Effekt des Talents ausgelöst und ein Gegner mit Aschenbrennen belegt wird, werden die Stapelungen von Aschenbrennen dieses Mal zusätzlich um {{2}} erhöht."
+    },
+    "2": {
+      "name": "Köstliche Gifte",
+      "desc": "Wenn der Gegner sich im Status „Aschenbrennen“ befindet, wird der Feuer-DoT-Multiplikator von Aschenbrennen an ihm um {{1, percent}}% erhöht."
+    },
+    "3": {
+      "name": "Unaufhaltsame Harmonie des Geschmacks",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Innerer Frieden, blühende Lebenskraft",
+      "desc": "Solange das Feld aktiv ist, wird der ANG der Gegner um {{1, percent}}% reduziert."
+    },
+    "5": {
+      "name": "Kollision von Licht und Schatten",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Feuer in neun Stufen",
+      "desc": "Wenn ein Gegner besiegt wird, werden seine Stapelungen „Aschenbrennen“ auf den Gegner mit der niedrigsten verbleibenden Stapelzahl von Aschenbrennen auf dem Kampffeld übertragen. Das Stapelungslimit von Aschenbrennen wird auf {{2}} erhöht. Jede Stapelung von Aschenbrennen reduziert den WDS aller Typen des Ziels um {{3, percent}}%."
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Nuit des ombres",
+  "passive": {
+    "name": "Dissimulation",
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Augmente sa VIT de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours lorsqu'il entre en combat ou qu'il inflige des DGT de rupture. Cet effet ne peut être déclenché qu'1 seule fois par tour."
+  }
+}

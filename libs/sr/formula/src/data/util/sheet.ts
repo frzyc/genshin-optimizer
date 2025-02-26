@@ -255,6 +255,10 @@ export function getStatFromStatKey(
       return buff.dmg_[
         statKey.substring(0, statKey.indexOf('_')) as ElementalType
       ]
+    case 'baseSpd':
+      throw new Error(
+        'Attempted to use baseSpd to index premod; possibly a mistake?'
+      )
     default:
       return buff[statKey]
   }

@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Geladura",
-        "fullDesc": "Remove {{2}} melhoria(s) e causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Pela a um único inimigo-alvo.",
+        "fullDesc": "Remove {{2}} melhoria(s) e causa Dano de Gelo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Pela a um inimigo-alvo designado.",
         "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong>melhoria</orangeStrong> de um único inimigo-alvo e causa Dano de Gelo ao inimigo-alvo.",
         "tag": "Alvo Único"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Pancada",
-        "fullDesc": "Causa {{1, percent}}% a mais de Dano a inimigos com penalidades.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Causa {{1, percent}}% a mais de Dano a inimigos com penalidades."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "A Estratégia Secreta",
-        "fullDesc": "Quando Pela está no campo, a Taxa de Acerto de Efeito de todos os aliados aumenta em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando Pela está no campo, a Taxa de Acerto de Efeito de todos os aliados aumenta em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Exterminar",
-        "fullDesc": "Ao usar a Perícia para remover melhoria(s), aumenta em {{1, percent}}% o Dano do próximo ataque.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia para remover melhoria(s), aumenta em {{1, percent}}% o Dano do próximo ataque."
       }
     }
   },

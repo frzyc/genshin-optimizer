@@ -1,0 +1,7 @@
+{
+  "name": "向着不可追问处",
+  "passive": {
+    "name": "思维游戏",
+    "description": "使装备者的暴击率提高<orangeStrong>{{1, percent}}%</orangeStrong>。装备者施放终结技时，使装备者造成的战技和终结技伤害提高<orangeStrong>{{4, percent}}%</orangeStrong>，持续{{5}}回合。装备者施放终结技后，若本次终结技消耗的能量大于等于{{3}}点，恢复1个战技点。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Registro Ninja: Caça ao Som",
+  "passive": {
+    "name": "Ação!",
+    "description": "Aumenta os PV máximos do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Ao perder ou restaurar PV desta unidade, aumenta o Dano CRIT em <orangeStrong>{{2, percent}}%</orangeStrong>, durando por {{3}} rodada(s). Este efeito só pode ser ativado 1 vez por rodada."
+  }
+}

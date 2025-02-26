@@ -1,0 +1,7 @@
+{
+  "setName": "Anh Hùng Ca Khúc Khải Hoàn",
+  "setEffects": {
+    "2": "Tấn Công tăng {{1, percent}}%.",
+    "4": "Khi Linh Hồn Ký Ức của người trang bị trong trận, Tốc Độ của người trang bị tăng {{1, percent}}%, Khi Linh Hồn Ký Ức của người trang bị tấn công, Sát Thương Bạo Kích của Linh Hồn Ký Ức và người trang bị tăng {{2, percent}}%, duy trì {{3}} hiệp."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "name": "Trazacaminos (Hielo • Reminiscencia)",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "¡Yo me encargo!",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño de Hielo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "¡Te elijo a ti!",
+        "fullDesc": "Invoca al mnemoduende Mem. Si Mem ya está en el campo de batalla, Mem regenera una cantidad de PV equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. y obtiene un {{2, percent}}% de carga.",
+        "shortDesc": "<orangeStrong>Invoca al mnemoduende</orangeStrong> Mem. Si Mem ya está en el campo de batalla, Mem regenera PV y obtiene <orangeStrong>carga</orangeStrong>.",
+        "tag": "Invocación"
+      },
+      "1": {
+        "name": "¡Te elijo a ti!",
+        "shortDesc": "<orangeStrong>Invoca al mnemoduende</orangeStrong> Mem. Si Mem ya está en el campo de batalla, Mem regenera PV y obtiene <orangeStrong>carga</orangeStrong>.",
+        "tag": "Regeneración"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "¡Vamos, Mem!",
+        "fullDesc": "Invoca al mnemoduende Mem. Mem obtiene un {{2, percent}}% de carga y luego inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Hielo a todos los enemigos.",
+        "shortDesc": "<orangeStrong>Invoca al mnemoduende</orangeStrong> Mem. Mem obtiene <orangeStrong>carga</orangeStrong> e inflige una gran cantidad de Daño de Hielo a todos los enemigos.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Compañera omnipotente",
+        "fullDesc": "Inicialmente, el mnemoduende Mem tiene {{1}} pts. de VEL y unos PV máx. equivalentes al <orangeStrong>{{2, percent}}%</orangeStrong> de los PV máx. {F#de la}{M#del} Trazacaminos + <orangeStrong>{{4}}</orangeStrong>. Por cada {{3}} pts. de energía que recuperen todos los aliados, Mem obtiene un 1% de carga.",
+        "shortDesc": "Cada vez que todos los aliados <orangeStrong>recuperan cierta cantidad de energía</orangeStrong>, Mem obtiene <orangeStrong>carga</orangeStrong>.",
+        "tag": "Potenciación"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Recuerdos resurgentes",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{1}} s. Los enemigos que estén en la zona especial entran en el estado de Tiempo detenido y no pueden moverse.<br>Al entrar en combate con enemigos afectados con Tiempo detenido, las acciones de todos los enemigos se retrasan un {{2, percent}}%. Después, inflige un {{3, percent}}% del ATQ {F#de la}{M#del} Trazacaminos como Daño de Hielo a todos los enemigos.<br>Solo puede haber una zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial. Los enemigos que estén en la zona <orangeStrong>no pueden moverse</orangeStrong>. Tras entrar en combate con los enemigos de la zona, retrasa la acción de todos los enemigos e inflige una pequeña cantidad de Daño de Hielo a todos los enemigos.",
+        "tag": "Alteración"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, reduce la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cetro de la rememoración",
+        "fullDesc": "Al comenzar la batalla, la acción {F#de la}{M#del} Trazacaminos se adelanta un {{1, percent}}%. La primera vez que invoca a Mem, Mem obtiene un {{2, percent}}% de carga."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Oda de bolsillo",
+        "fullDesc": "Cuando Mem lanza \"¡Malos! ¡Problemas!\", obtiene inmediatamente un {{1, percent}}% de carga."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Imanes y largas cadenas",
+        "fullDesc": "Cuando la energía máxima de un aliado con Apoyo de Mem es superior a {{1}} pts., el multiplicador de Daño verdadero infligido mediante Apoyo de Mem aumenta en un {{3, percent(fixed: 1)}}% adicional por cada {{2}} pts. excedentes, hasta un máximo de un {{4, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Narrado{F#ra}{M#r} del presente",
+      "desc": "La Prob. CRIT del aliado con Apoyo de Mem aumenta en un {{1, percent}}%. Cuando un aliado tiene Apoyo de Mem, el efecto de Apoyo de Mem también se aplica a su mnemoduende o mnemomédium (según corresponda). Este efecto no se puede acumular."
+    },
+    "2": {
+      "name": "Recolecto{F#ra}{M#r} del pasado",
+      "desc": "Cuando un mnemoduende aliado (que no sea Mem) actúa, {F#la}{M#el} Trazacaminos recupera {{1}} pts. de energía. Este efecto se puede activar {{2}} vez como máximo en cada turno. El contador de activaciones se reinicia cuando comienza el turno {F#de la}{M#del} Trazacaminos."
+    },
+    "3": {
+      "name": "Rapsoda del futuro",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15). Niv. de talento del mnemoduende +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Baila{F#rina}{M#rín} de las musas",
+      "desc": "Cuando un aliado cuya energía máxima sea 0 lanza una habilidad de forma proactiva, Mem también obtiene un {{1, percent}}% de carga y el multiplicador del Daño verdadero que ese objetivo inflige gracias a Apoyo de Mem aumenta en un {{2, percent}}% adicional."
+    },
+    "5": {
+      "name": "Costurer{F#a}{M#o} de la poesía",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10). Niv. de habilidad del mnemoduende +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Portado{F#ra}{M#r} de la revelación divina",
+      "desc": "La Prob. CRIT de la habilidad definitiva se fija en el 100%."
+    }
+  }
+}

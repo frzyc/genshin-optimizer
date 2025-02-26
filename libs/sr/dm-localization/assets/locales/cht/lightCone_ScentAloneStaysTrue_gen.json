@@ -1,0 +1,7 @@
+{
+  "name": "唯有香如故",
+  "passive": {
+    "name": "安心",
+    "description": "使裝備者擊破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。裝備者施放終結技攻擊敵方目標後，使其陷入【忘憂】狀態，持續{{5}}回合，【忘憂】狀態下的敵方目標受到的傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，若裝備者目前擊破特攻大於等於{{3, percent}}%，受到的傷害提高效果額外提高<orangeStrong>{{4, percent}}%</orangeStrong>。"
+  }
+}

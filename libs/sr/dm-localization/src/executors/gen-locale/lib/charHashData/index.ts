@@ -1,3 +1,5 @@
 export * from './allCharacters'
+export * from './allServants'
 export * from './character'
 export * from './charSheet'
+export * from './servant'

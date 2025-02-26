@@ -51,32 +51,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Chất Phác",
-        "fullDesc": "Khi kích hoạt Thiên Phú, sẽ hồi HP bằng {{1, percent}}% Giới Hạn HP của Hook.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Khi kích hoạt Thiên Phú, sẽ hồi HP bằng {{1, percent}}% Giới Hạn HP của Hook."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ngây Thơ",
-        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chơi Với Lửa",
-        "fullDesc": "Sau khi thi triển Tuyệt Kỹ, Hook Ưu Tiên Hành Động {{2, percent}}% và hồi thêm {{1}} điểm Năng Lượng.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Sau khi thi triển Tuyệt Kỹ, Hook Ưu Tiên Hành Động {{2, percent}}% và hồi thêm {{1}} điểm Năng Lượng."
       }
     }
   },

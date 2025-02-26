@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tai-Yi-Wahrsagung",
-        "fullDesc": "Ist die „Matrix der Voraussicht“ aktiv, stellt Fu Xuan beim Einsatz der Fertigkeit zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ist die „Matrix der Voraussicht“ aktiv, stellt Fu Xuan beim Einsatz der Fertigkeit zusätzlich {{1}} Pkt. Energie wieder her."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Dun-Jia-Wahrsagung",
-        "fullDesc": "Beim Einsatz des Ultimates werden die LP aller anderen Verbündeten um {{1, percent}}% der max. LP von Fu Xuan plus {{2}} wiederhergestellt.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Beim Einsatz des Ultimates werden die LP aller anderen Verbündeten um {{1, percent}}% der max. LP von Fu Xuan plus {{2}} wiederhergestellt."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Liu-Ren-Wahrsagung",
-        "fullDesc": "Wenn ein Gegner versucht, Mengenkontrolle-Debuffs auf Verbündete anzuwenden, während die „Matrix der Voraussicht“ aktiv ist, widerstehen die Verbündeten allen Mengenkontrolle-Debuffs, die der Gegner während der aktuellen Aktion anwendet. Dieser Effekt kann 1-mal ausgelöst werden. Nach erneuter Aktivierung der Matrix der Voraussicht wird die Auslösungsanzahl dieses Effekts zurückgesetzt.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Wenn ein Gegner versucht, Mengenkontrolle-Debuffs auf Verbündete anzuwenden, während die „Matrix der Voraussicht“ aktiv ist, widerstehen die Verbündeten allen Mengenkontrolle-Debuffs, die der Gegner während der aktuellen Aktion anwendet. Dieser Effekt kann 1-mal ausgelöst werden. Nach erneuter Aktivierung der Matrix der Voraussicht wird die Auslösungsanzahl dieses Effekts zurückgesetzt."
       }
     }
   },

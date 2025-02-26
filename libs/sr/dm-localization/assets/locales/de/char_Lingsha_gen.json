@@ -1,0 +1,96 @@
+{
+  "name": "Lingsha",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Entzündeter Duft",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Lingshas ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Schillernder Dunst",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Lingshas ANG zu und stellt gleichzeitig bei allen Verbündeten LP in Höhe von <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Lingshas ANG plus <orangeStrong>{{3}}</orangeStrong> wieder her. Die Aktion von Fuyuan wird um {{4, percent}}% vorgezogen.",
+        "shortDesc": "Fügt allen Gegnern geringen Feuer-SCH zu, <orangeStrong>stellt gleichzeitig bei allen Verbündeten LP wieder her</orangeStrong> und die Aktion von Fuyuan wird vorgezogen.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Nebellandschaft",
+        "fullDesc": "Verursacht bei allen Gegnern „Benebelt“. Gegner im Status Benebelt erleiden für {{5}} Rd. <orangeStrong>{{4, percent}}%</orangeStrong> mehr Bruch-SCH.<br>Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Lingshas ANG zu und stellt gleichzeitig bei allen Verbündeten LP in Höhe von <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Lingshas ANG plus <orangeStrong>{{3}}</orangeStrong> wieder her. Die Aktion von Fuyuan wird um {{6, percent}}% vorgezogen.",
+        "shortDesc": "<orangeStrong>Erhöht den erlittenen Bruch-SCH</orangeStrong> aller Gegner. Fügt allen Gegnern Feuer-SCH zu und <orangeStrong>stellt gleichzeitig bei allen Verbündeten LP wieder her</orangeStrong>. Die Aktion von Fuyuan wird vorgezogen.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Nebulöses Manifest",
+        "fullDesc": "Beschwört beim Einsatz der Fertigkeit Fuyuan. Fuyuan hat anfänglich eine GES von {{1}} Pkt. und eine Aktionsanzahl von {{7}}.<br>Bei Fuyuans Aktion führt es einen Folgeangriff aus, der allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Lingshas ANG zufügt. Fügt zusätzlich einem zufälligen Gegner Feuer-SCH in Höhe von <orangeStrong>{{8, percent}}%</orangeStrong> von Lingshas ANG zu, wobei dieser SCH vorrangig bei Zielen mit Feuer-Schwäche und einem WDS von über 0 verursacht wird. Entfernt {{6}} Debuff von allen Verbündeten und stellt bei ihnen LP in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Lingshas ANG plus <orangeStrong>{{4}}</orangeStrong> wieder her.<br>Fuyuan kann bis zu {{5}} Aktionen akkumulieren. Wenn die Aktionsanzahl auf 0 sinkt oder Lingsha handlungsunfähig wird, verschwindet Fuyuan.<br>Wenn Fuyuan auf dem Kampffeld ist, erhöht der Einsatz der Fertigkeit seine Aktionsanzahl um {{7}}.",
+        "shortDesc": "Beschwört Fuyuan durch Einsatz der Fertigkeit: Bei Fuyuans Aktion führt es <orangeStrong>Folgeangriff</orangeStrong> aus, der allen Gegnern geringen Feuer-SCH zufügt. Fügt zusätzlich einem zufälligen Gegner geringen Feuer-SCH zu, wobei Ziele mit Feuer-Schwäche und einem WDS von über 0 vorrangig getroffen werden. Entfernt 1 Debuff von allen Verbündeten und stellt bei ihnen <orangeStrong>LP wieder her</orangeStrong>.<br>Beim wiederholten Einsatz der Fertigkeit wird die Aktionsanzahl von Fuyuan erhöht.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Flüsternder Smaragd",
+        "fullDesc": "Beschwört nach dem Einsatz der Technik zu Beginn des nächsten Kampfes sofort Fuyuan und belegt alle Gegner für {{1}} Rd. mit „Benebelt“.",
+        "shortDesc": "Beschwört nach dem Einsatz der Technik zu Beginn des nächsten Kampfes sofort Fuyuan und erhöht <orangeStrong>den erlittenen Bruch-SCH aller Gegner</orangeStrong>.",
+        "tag": "Unterstützung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rote Flamme",
+        "fullDesc": "Erhöht den ANG / die bewirkte Heilung um {{1, percent}}%/{{2, percent}}% des Brucheffekts. Der ANG / die bewirkte Heilung kann durch diesen Effekt um bis zu {{3, percent}}%/{{4, percent}}% erhöht werden."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Wohlriechende Schwaden",
+        "fullDesc": "Stellt beim Einsatz des Standardangriffs zusätzlich {{1}} Pkt. Energie wieder her."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Resthitze",
+        "fullDesc": "Wenn Fuyuan auf dem Kampffeld ist und eine beliebige Figur SCH erleidet oder LP verbraucht, löst Fuyuan, falls der LP-Prozentsatz einer Figur {{1, percent}}% oder weniger beträgt, sofort den Folgeangriff des Talents aus, ohne seine Aktionszahl zu verbrauchen. Dieser Effekt kann nach {{2}} Rd. erneut ausgelöst werden."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Austreibung durch Blumenaroma",
+      "desc": "Erhöht Lingshas Schwächebruch-Effizienz um {{2, percent}}%. Wenn ein Gegner Schwächebruch erleidet, wird seine VTD um {{1, percent}}% verringert."
+    },
+    "2": {
+      "name": "Roter Rauchschleier",
+      "desc": "Erhöht den Brucheffekt aller Verbündeten beim Einsatz des Ultimates für {{2}} Rd. um {{1, percent}}%."
+    },
+    "3": {
+      "name": "Staubblatt als Kerzendocht",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Duftendes Bankett",
+      "desc": "Stellt während Fuyuans Aktion die LP des Verbündeten mit den aktuell niedrigsten LP um {{1, percent}}% von Lingshas ANG wieder her."
+    },
+    "5": {
+      "name": "Quintessenz des Gleichgewichts",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Duft der Nacht, verborgen im Dunkeln",
+      "desc": "Wenn Fuyuan auf dem Kampffeld ist, wird der WDS aller Typen aller Gegner um {{1, percent}}% reduziert. Wenn Fuyuan angreift, verursacht es zusätzlich {{2}}-mal SCH, wobei jeder Treffer einem zufälligen Gegner Feuer-SCH in Höhe von {{3, percent}}% von Lingshas ANG zufügt und den WDS um {{4}} Pkt. reduziert. Ziele mit Feuer-Schwäche und einem WDS von über 0 werden vorrangig ausgewählt."
+    }
+  }
+}

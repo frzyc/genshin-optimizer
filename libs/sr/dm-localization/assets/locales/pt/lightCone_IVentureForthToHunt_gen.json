@@ -1,0 +1,7 @@
+{
+  "name": "Eu Me Aventuro para Caçar",
+  "passive": {
+    "name": "Intimidação",
+    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Quando o usuário utiliza um Ataque Extra, ganha 1 acúmulo de \"Luminiflux\", acumulando até um máximo de {{3}} vez(es). Cada acúmulo de \"Luminiflux\" permite que o Dano de Perícia Suprema causado pelo usuário ignore <orangeStrong>{{2, percent}}%</orangeStrong> da DEF do alvo. Quando a rodada do usuário termina, remove 1 acúmulo de \"Luminiflux\"."
+  }
+}

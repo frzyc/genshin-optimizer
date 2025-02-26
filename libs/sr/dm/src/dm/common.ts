@@ -1,5 +1,5 @@
 export type HashId = {
-  Hash: number
+  Hash: bigint
 }
 export type MaterialValue = {
   ItemID: number

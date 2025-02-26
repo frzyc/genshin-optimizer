@@ -1,0 +1,7 @@
+{
+  "name": "焚影",
+  "passive": {
+    "name": "美化",
+    "description": "装备者首次召唤忆灵时，恢复{{1}}点战技点，并恢复自身<orangeStrong>{{2}}</orangeStrong>点能量。"
+  }
+}

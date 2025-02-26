@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Frostbite",
-        "fullDesc": "Removes {{2}} buff(s) and deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Pela's ATK to a single target enemy.",
+        "fullDesc": "Removes {{2}} buff(s) and deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Pela's ATK to one designated target enemy.",
         "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong>buff</orangeStrong> from a single enemy target, and deals Ice DMG to the target enemy.",
         "tag": "Single Target"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Bash",
-        "fullDesc": "Deals {{1, percent}}% more DMG to debuffed enemy targets.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Deals {{1, percent}}% more DMG to debuffed enemy targets."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Secret Strategy",
-        "fullDesc": "When Pela is on the battlefield, all allies' Effect Hit Rate increases by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Pela is on the battlefield, all allies' Effect Hit Rate increases by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Wipe Out",
-        "fullDesc": "When using Skill to dispel buff(s), increases the DMG dealt by the next attack by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using Skill to dispel buff(s), increases the DMG dealt by the next attack by {{1, percent}}%."
       }
     }
   },

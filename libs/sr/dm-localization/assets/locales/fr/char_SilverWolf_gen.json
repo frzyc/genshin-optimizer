@@ -13,7 +13,7 @@
       "0": {
         "name": "Autoriser les modifications ?",
         "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de chances de base d'appliquer 1 Faiblesse du type d'un personnage présent sur le champ de bataille à une cible ennemie. Réduit également la RÉS aux DGT de ce type de faiblesse de l'ennemi de {{4, percent}}% pendant {{3}} tours. Si l'ennemi a déjà ce type de faiblesse, l'effet de réduction de RÉS aux DGT ne sera pas déclenché.<br>Chaque ennemi ne peut avoir qu'une seule Faiblesse appliquée par Louve d'argent à la fois. Si Louve d'argent applique une nouvelle Faiblesse, elle remplace la précédente.<br>D'autre part, il y a {{5, percent}}% de chances de base de réduire toutes les RÉS de type de l'ennemi de <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> pendant {{7}} tours.<br>Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent à cet ennemi.",
-        "shortDesc": "Fortes chances d'<orangeStrong>appliquer une Faiblesse de type supplémentaire</orangeStrong> à un ennemi unique et de lui infliger des DGT quantiques.",
+        "shortDesc": "Fortes chances d'<orangeStrong>appliquer une Faiblesse de type supplémentaire</orangeStrong> à un ennemi et de lui infliger des DGT quantiques.",
         "tag": "Cible unique"
       }
     },
@@ -21,7 +21,7 @@
       "0": {
         "name": "Compte bloqué",
         "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de chances de base de réduire la DÉF d'une cible ennemie de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. D'autre part, inflige à la cible ennemie des DGT quantiques équivalent à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent.",
-        "shortDesc": "Fortes chances de <orangeStrong>réduire la DÉF d'un ennemi unique</orangeStrong> et inflige des DGT quantiques massifs à cette cible ennemie.",
+        "shortDesc": "Fortes chances de <orangeStrong>réduire la DÉF d'un ennemi</orangeStrong> et inflige des DGT quantiques massifs à cet ennemi.",
         "tag": "Cible unique"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "En attente de la réponse du système...",
         "fullDesc": "Louve d'argent peut créer trois types de Bugs : une réduction d'ATQ de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, une réduction de DÉF de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ou une réduction de VIT de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Chaque fois que Louve d'argent attaque, elle a <orangeStrong>{{4, percent}}%</orangeStrong> de chances de base d'implanter un Bug aléatoire qui dure {{5}} tours aux cibles attaquées.",
-        "shortDesc": "Après que cette unité a attaqué, il y a une chance d'implanter 1 <orangeStrong>Bug</orangeStrong> aléatoire à l'ennemi attaqué.",
+        "shortDesc": "Après que cette unité a attaqué, il y a une chance d'implanter 1 <orangeStrong>Bug</orangeStrong> aléatoire à la cible attaquée.",
         "tag": "Incapacitation"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Générer",
-        "fullDesc": "La durée du Bug est prolongée d'{{1}} tour. Chaque fois qu'un ennemi subit une Rupture de faiblesse, Louve d'argent a {{2, percent}}% de chances de base d'implanter un Bug aléatoire à l'ennemi.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La durée du Bug est prolongée d'{{1}} tour. Chaque fois qu'un ennemi subit une Rupture de faiblesse, Louve d'argent a {{2, percent}}% de chances de base d'implanter un Bug aléatoire à l'ennemi."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Infecter",
-        "fullDesc": "La durée de la Faiblesse infligée par la compétence de Louve d'argent augmente d'{{1}} tour.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La durée de la Faiblesse infligée par la compétence de Louve d'argent augmente d'{{1}} tour."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Annotation complémentaire",
-        "fullDesc": "Lorsque l'ennemi subit au moins {{1}} malus, la compétence diminue toutes ses RÉS de type de {{2, percent}}% supplémentaires.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque l'ennemi subit au moins {{1}} malus, la compétence diminue toutes ses RÉS de type de {{2, percent}}% supplémentaires."
       }
     }
   },

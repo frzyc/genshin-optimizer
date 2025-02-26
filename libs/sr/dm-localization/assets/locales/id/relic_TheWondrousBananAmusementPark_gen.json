@@ -1,0 +1,6 @@
+{
+  "setName": "The Wondrous BananAmusement Park",
+  "setEffects": {
+    "2": "Meningkatkan {{1, percent}}% CRIT DMG pengguna. Saat terdapat target yang dipanggil oleh pengguna, CRIT DMG meningkat ekstra {{2, percent}}%."
+  }
+}

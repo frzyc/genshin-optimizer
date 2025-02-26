@@ -1,0 +1,33 @@
+{
+  "name": "衣匠",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "刺纹之陷",
+        "fullDesc": "对敌方单体造成<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，对其相邻目标造成<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的雷属性伤害。",
+        "shortDesc": "对敌方单体与相邻目标造成少量雷属性伤害。",
+        "tag": "扩散"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "泪水锻造的匠躯",
+        "fullDesc": "攻击处于【间隙织线】状态的敌人后，使自身的速度提高<orangeStrong>{{1}}</orangeStrong>点，该效果最多叠加{{3}}层。衣匠行动时自动施放【刺纹之陷】，优先攻击处于【间隙织线】状态下的敌人。",
+        "shortDesc": "攻击处于【间隙织线】状态的敌人后，使<orangeStrong>自身的速度提高</orangeStrong>。行动时自动施放攻击，优先攻击处于【间隙织线】状态下的敌人。",
+        "tag": "强化"
+      },
+      "1": {
+        "name": "飞驰之夏",
+        "fullDesc": "衣匠被召唤时，使自身行动提前{{1, percent}}%。",
+        "shortDesc": "被召唤时，使自身行动提前。",
+        "tag": "强化"
+      },
+      "2": {
+        "name": "枯草之盈",
+        "fullDesc": "衣匠消失时，使阿格莱雅恢复{{1}}点能量。",
+        "shortDesc": "消失时，使阿格莱雅恢复能量。",
+        "tag": "强化"
+      }
+    }
+  }
+}

@@ -51,32 +51,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Innocence",
-        "fullDesc": "Hook restaure {{1, percent}}% de ses PV max lorsque son talent est déclenché.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Hook restaure {{1, percent}}% de ses PV max lorsque son talent est déclenché."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naïveté",
-        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Jouer avec le feu",
-        "fullDesc": "Après avoir utilisé son ultime, l'action de Hook est avancée de {{2, percent}}% et elle régénère en plus {{1}} points d'énergie.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Après avoir utilisé son ultime, l'action de Hook est avancée de {{2, percent}}% et elle régénère en plus {{1}} points d'énergie."
       }
     }
   },

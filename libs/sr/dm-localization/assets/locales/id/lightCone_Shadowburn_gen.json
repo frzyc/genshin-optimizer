@@ -1,0 +1,7 @@
+{
+  "name": "Shadowburn",
+  "passive": {
+    "name": "Beautify",
+    "description": "Saat pengguna memanggil Memosprite untuk pertama kalinya, akan memulihkan {{1}} Poin Skill dan memulihkan <orangeStrong>{{2}}</orangeStrong> Energy."
+  }
+}

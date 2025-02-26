@@ -1,0 +1,7 @@
+{
+  "name": "Queimada",
+  "passive": {
+    "name": "Embelezar",
+    "description": "Quando o usuário invocar o Memoespírito pela primeira vez em batalha, recupera {{1}} Ponto(s) de Perícia e regenera <orangeStrong>{{2}}</orangeStrong> de Energia para esta unidade."
+  }
+}

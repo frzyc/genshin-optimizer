@@ -1,0 +1,7 @@
+{
+  "name": "Réminiscence",
+  "passive": {
+    "name": "Sommeil",
+    "description": "Au début du tour du mnémesprit, accorde 1 cumul de Commémoration au porteur et au mnémesprit. Chaque cumul de Commémoration augmente les DGT infligés de <orangeStrong>{{1, percent}}%</orangeStrong>, cumulable jusqu'à {{2}} fois. L'effet Commémoration est supprimé pour le porteur et le mnémesprit lorsque le mnémesprit disparaît."
+  }
+}

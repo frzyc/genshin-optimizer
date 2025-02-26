@@ -1,0 +1,108 @@
+{
+  "name": "Mydei",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Vow of Voyage",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Mydei pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Deaths are Legion, Regrets are None",
+        "fullDesc": "Mengonsumsi HP sebesar {{3, percent}}% HP Mydei saat ini. Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Mydei pada 1 musuh yang ditargetkan, dan di saat bersamaan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> Max HP Mydei pada musuh di sekitar target.<br>Jika HP saat ini tidak cukup saat melancarkan Skill, HP Mydei saat ini akan berkurang hingga 1.",
+        "shortDesc": "Mengonsumsi HP dan mengakibatkan Imaginary DMG pada 1 musuh yang ditargetkan dan mengakibatkan Imaginary DMG dalam jumlah kecil pada musuh di sekitar target.",
+        "tag": "Blast"
+      },
+      "1": {
+        "name": "Kingslayer Be King",
+        "fullDesc": "Mengonsumsi HP sebesar {{3, percent}}% HP Mydei saat ini. Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Mydei pada 1 musuh, dan di saat bersamaan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> Max HP Mydei pada musuh di sekitar target.<br>Jika HP saat ini tidak cukup, saat melancarkan Skill, HP Mydei saat ini akan berkurang hingga 1.<br>Kemampuan ini akan dilancarkan secara otomatis.",
+        "shortDesc": "Mengonsumsi HP. Mengakibatkan Imaginary DMG pada 1 musuh yang ditargetkan dan mengakibatkan Imaginary DMG pada musuh di sekitar target.<br>Kemampuan ini akan <orangeStrong>dilancarkan secara otomatis</orangeStrong>.",
+        "tag": "Blast"
+      },
+      "2": {
+        "name": "Godslayer Be God",
+        "fullDesc": "Mengonsumsi {{3}} Charge, mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Mydei pada satu musuh, dan di saat bersamaan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> Max HP Mydei pada musuh di sekitar target .<br>Kemampuan ini akan dilancarkan secara otomatis. Selama durasi kemampuan ini, Charge tidak dapat diakumulasi.",
+        "shortDesc": "<orangeStrong>Mengonsumsi Charge</orangeStrong>, mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh yang ditargetkan dan mengakibatkan Imaginary DMG dalam jumlah besar pada musuh di sekitar target.<br>Kemampuan ini akan <orangeStrong>dilancarkan secara otomatis</orangeStrong>.",
+        "tag": "Blast"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Throne of Bones",
+        "fullDesc": "Mydei akan memulihkan HP sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Max HP Mydei dan mengakumulasi {{5}} poin Charge Talent. Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Mydei pada 1 musuh yang ditargetkan, di saat bersamaan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> Max HP Mydei pada musuh di sekitar target, serta membuat musuh dan target di sekitarnya memasuki status Taunt, berlangsung selama {{4}} giliran. \"Godslayer Be God\" yang berikutnya akan memprioritaskan serangan pada 1 musuh yang ditargetkan, dan efek ini hanya efektif pada target terbaru.",
+        "shortDesc": "<orangeStrong>Memulihkan HP</orangeStrong> dan mengakumulasi Charge Talent, mengakibatkan Imaginary DMG dalam jumlah besar pada satu musuh yang ditargetkan, dan mengakibatkan Imaginary DMG pada musuh di sekitar target, serta membuat target dan musuh di sekitarnya memasuki status <orangeStrong>Taunt</orangeStrong>.",
+        "tag": "Blast"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Blood for Blood",
+        "fullDesc": "Untuk setiap 1% HP yang hilang, akan mengakumulasi 1 poin Charge, maksimal mengakumulasi hingga 200 poin. Saat Charge mencapai 100, Mydei akan mengonsumsi 100 poin Charge dan memasuki status \"Vendetta\", serta memulihkan HP sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Mydei. Di saat bersamaan Mydei juga mengalami 100% Pendahuluan Aksi. Saat status \"Vendetta\" aktif, Max HP Mydei akan meningkat sebesar {{5, percent}}% Max HP-nya saat ini, dan DEF menjadi 0 secara tetap. Saat giliran Mydei dimulai, Mydei akan secara otomatis melancarkan \"Kingslayer Be King\".<br>Saat Charge mencapai {{3}} poin ketika status \"Vendetta\" aktif, Mydei akan segera memperoleh 1 giliran tambahan dan secara otomatis melancarkan \"Godslayer Be God\".<br>Saat Mydei terkena serangan mematikan ketika status \"Vendetta\" aktif, Mydei tidak akan gugur, tetapi Charge Mydei akan dihapus dan Mydei akan keluar dari status \"Vendetta\", serta memulihkan HP sebesar {{4, percent}}% Max HP-nya.",
+        "shortDesc": "Memperoleh Charge saat kehilangan HP. Saat Charge mencapai 100, akan memasuki status <orangeStrong>\"Vendetta\"</orangeStrong>, memulihkan HP serta mengalami Pendahuluan Aksi. Saat berstatus \"Vendetta\", Max HP saat ini akan meningkat, dan DEF menjadi 0 secara tetap. Saat giliran Mydei dimulai, Mydei akan <orangeStrong>secara otomatis melancarkan </orangeStrong> \"Kingslayer Be King\".<br>Saat Charge mencapai 150 ketika status \"Vendetta\" masih aktif, Mydei akan segera memperoleh 1 <orangeStrong>giliran tambahan</orangeStrong> dan <orangeStrong>secara otomatis melancarkan</orangeStrong> \"Godslayer Be God\".<br>Saat Mydei terkena serangan mematikan, Mydei akan keluar dari status \"Vendetta\".",
+        "tag": "Enhance"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Cage of Broken Lance",
+        "fullDesc": "Setelah menggunakan Technique, menarik musuh dalam area tertentu dan membuat musuh memasuki status Daze selama {{1}} detik. Musuh berstatus Daze tidak akan menyerang rekan tim secara aktif.<br>Jika secara aktif menyerang musuh berstatus Daze, saat memasuki pertempuran, akan mengakibatkan Imaginary DMG sebesar {{2, percent}}% Max HP Mydei pada seluruh musuh, dan membuat target memasuki status Taunt, berlangsung selama {{4}} giliran. Unit ini akan mengakumulasi {{5, percent}}% poin Charge Talent.",
+        "shortDesc": "Menarik musuh dalam area tertentu dan membuat musuh memasuki status Daze. Jika menyerang musuh berstatus Daze, setelah memasuki pertempuran, akan mengakibatkan Imaginary DMG dalam jumlah kecil pada seluruh musuh, dan membuat target memasuki status Taunt. Unit ini akan mengakumulasi Charge Talent.",
+        "tag": "Impair"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Earth and Water",
+        "fullDesc": "Saat Mydei berada dalam status \"Vendetta\" dan terkena serangan mematikan, status \"Vendetta\" tidak akan terhapus. Efek ini dapat dipicu {{1}} kali dalam 1 pertempuran."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Thirty Tyrants",
+        "fullDesc": "Saat berada dalam status \"Vendetta\", Mydei kebal terhadap Crowd Control Debuff."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bloodied Chiton",
+        "fullDesc": "Saat pertempuran dimulai, jika Max HP Mydei lebih dari {{1}}, maka untuk setiap 100 poin HP yang berlebih, akan meningkatkan {{3, percent(fixed: 1)}}% CRIT Rate unit ini, meningkatkan {{4, percent(fixed: 1)}}% persentase Charge yang diterima Mydei dari DMG yang diakibatkan target musuh, serta meningkatkan {{5, percent(fixed: 2)}}% Pemulihan HP saat menerima pemulihan. Jumlah pemulihan yang berlebih akan dihitung hingga maksimal {{2}} poin HP."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Frost Hones Spine of Steel",
+      "desc": "DMG Multiplier \"Godslayer Be God\" yang diakibatkan pada target utama meningkat {{1, percent}}%, dan \"\"Godslayer Be God\" berubah menjadi mengakibatkan Imaginary DMG pada seluruh musuh sebesar DMG Multiplier pada target utama."
+    },
+    "2": {
+      "name": "Strife Beholds Cry of Dead",
+      "desc": "Saat berstatus \"Vendetta\", DMG yang diakibatkan Mydei akan mengabaikan {{1, percent}}% DEF target musuh, dan setelah menerima pemulihan, {{2, percent}}% dari nilai pemulihan akan diubah menjadi poin Charge. Akumulasi dari Charge yang diubah tidak dapat melebihi {{3}} poin. Setelah unit mana pun beraksi, akan mereset Charge yang dapat diakumulasi."
+    },
+    "3": {
+      "name": "Honor Exalts Feast of Faith",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Siren Jolts the Laconic Lion",
+      "desc": "Saat berstatus \"Vendetta\", CRIT DMG meningkat {{2, percent}}% dan setelah diserang target musuh akan memulihkan HP sebesar {{1, percent}}% Max HP diri sendiri."
+    },
+    "5": {
+      "name": "War Chisels Flesh of Flame",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Legacy Scales Mound of Blood",
+      "desc": "Saat memasuki pertempuran, akan segera memasuki status \"Vendetta\" dan Charge yang diperlukan untuk \"Godslayer Be God\" berkurang hingga {{1}} poin."
+    }
+  }
+}

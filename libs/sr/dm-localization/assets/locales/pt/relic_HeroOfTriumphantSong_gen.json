@@ -1,0 +1,7 @@
+{
+  "setName": "Herói da Melodia Triunfante",
+  "setEffects": {
+    "2": "Aumenta o ATQ em {{1, percent}}%.",
+    "4": "Enquanto o Memoespírito do usuário está em campo, aumenta a VEL do usuário em {{1, percent}}%. Quando o Memoespírito do usuário ataca, aumenta o Dano CRIT do usuário e do Memoespírito em {{2, percent}}% por {{3}} rodada(s)."
+  }
+}

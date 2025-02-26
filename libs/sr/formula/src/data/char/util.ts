@@ -30,7 +30,10 @@ import {
   type TagMapNodeEntries,
 } from '../util'
 
-type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>
+type AbilityScalingType = Exclude<
+  AbilityKey,
+  'technique' | 'overworld' | 'servantTalent'
+>
 
 export function getBaseTag(data_gen: CharacterDatum): DmgTag {
   return { elementalType: data_gen.damageType }

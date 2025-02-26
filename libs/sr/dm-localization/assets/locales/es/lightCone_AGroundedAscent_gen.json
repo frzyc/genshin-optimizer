@@ -1,0 +1,7 @@
+{
+  "name": "De vuelta a la tierra",
+  "passive": {
+    "name": "Volver a partir",
+    "description": "Después de que el portador lance la habilidad básica o la habilidad definitiva sobre un personaje aliado, el portador recupera <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> pts. de energía y el objetivo recibe 1 acumulación de Himno sagrado durante {{4}} turnos. Se puede acumular hasta {{3}} veces. Cada acumulación de Himno sagrado aumenta el daño en un <orangeStrong>{{2, percent}}%</orangeStrong>. Tras cada {{5}} lanzamientos de la habilidad básica o la habilidad definitiva sobre un personaje aliado, el portador recupera 1 pt. de habilidad básica."
+  }
+}

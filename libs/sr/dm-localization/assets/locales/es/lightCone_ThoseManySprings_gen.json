@@ -1,0 +1,7 @@
+{
+  "name": "Esas incontables primaveras",
+  "passive": {
+    "name": "Los asuntos mundanos no dejan huella",
+    "description": "El acierto de efecto del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Después de que el portador ataque al enemigo con su ATQ básico, habilidad básica o habilidad definitiva, tiene una probabilidad base del {{2, percent}}% de afectar al enemigo con Sin armadura. En el estado de Sin armadura, el daño que recibe el enemigo aumenta en un <orangeStrong>{{3, percent}}%</orangeStrong> durante {{4}} turnos. Si el objetivo está afectado por un estado de Daño con el tiempo aplicado por el portador, hay una probabilidad base del {{5, percent}}% de mejorar el estado de Sin armadura aplicado por el portador al estado de Arrinconado, lo que aumenta el daño que recibe el enemigo en un <orangeStrong>{{6, percent}}%</orangeStrong> adicional durante {{4}} turnos. Durante este periodo, el portador no puede aplicarle Sin armadura."
+  }
+}

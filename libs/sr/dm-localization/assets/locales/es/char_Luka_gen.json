@@ -51,32 +51,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Sobrecarga cinética",
-        "fullDesc": "Al usar la habilidad básica, se disipa inmediatamente {{1}} efecto positivo del enemigo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad básica, se disipa inmediatamente {{1}} efecto positivo del enemigo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Frenado cíclico",
-        "fullDesc": "Cada vez que obtiene 1 acumulación de Voluntad luchadora, recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cada vez que obtiene 1 acumulación de Voluntad luchadora, recupera {{1}} pts. de energía adicionales."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Voluntad luchadora aplastante",
-        "fullDesc": "Al usar el ATQ básico potenciado, cada golpe de Puño certero tiene un {{1, percent}}% de probabilidad fija de que Luka lance 1 golpe adicional. Este efecto no se activa con los golpes adicionales activados de esta manera.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar el ATQ básico potenciado, cada golpe de Puño certero tiene un {{1, percent}}% de probabilidad fija de que Luka lance 1 golpe adicional. Este efecto no se activa con los golpes adicionales activados de esta manera."
       }
     }
   },

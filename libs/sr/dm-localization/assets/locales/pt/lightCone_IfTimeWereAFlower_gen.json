@@ -1,0 +1,7 @@
+{
+  "name": "Se o Tempo Fosse Uma Flor",
+  "passive": {
+    "name": "Aspiração",
+    "description": "Aumenta o Dano CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após o usuário realizar um Ataque Extra, regenera adicionalmente {{2}} de Energia e recebe \"Presságio\", que dura por {{3}} rodada(s). Enquanto o usuário estiver sob o efeito de \"Presságio\", o Dano CRIT de todos os aliados-alvo aumenta em <orangeStrong>{{4, percent}}%</orangeStrong>. Ao entrar em combate, o usuário regenera {{5}} de Energia e recebe \"Presságio\", que dura por {{6}} rodada(s)."
+  }
+}

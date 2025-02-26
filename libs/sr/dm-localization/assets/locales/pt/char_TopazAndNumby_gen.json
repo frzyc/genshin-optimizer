@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Descoberta",
-        "fullDesc": "Quando Topaz usa seu ATQ Básico para causar Dano, ele será considerado um Ataque Extra.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando Topaz usa seu ATQ Básico para causar Dano, ele será considerado um Ataque Extra."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Turbulência Financeira",
-        "fullDesc": "Aumenta em {{1, percent}}% o Dano causado por Topaz e Dinheirinho aos inimigos-alvo com Fraqueza contra Fogo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta em {{1, percent}}% o Dano causado por Topaz e Dinheirinho aos inimigos-alvo com Fraqueza contra Fogo."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mercado Stonks",
-        "fullDesc": "Após Dinheirinho usar um ataque enquanto está no estado de \"Bonança Inesperada!\", Topaz adicionalmente regenera {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Após Dinheirinho usar um ataque enquanto está no estado de \"Bonança Inesperada!\", Topaz adicionalmente regenera {{1}} de Energia."
       }
     }
   },

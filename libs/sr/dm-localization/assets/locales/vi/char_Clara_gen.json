@@ -45,32 +45,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Người Nhà",
-        "fullDesc": "Khi bị tấn công có {{1, percent}}% xác suất cố định giải trừ 1 Hiệu Ứng Xấu của bản thân.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Khi bị tấn công có {{1, percent}}% xác suất cố định giải trừ 1 Hiệu Ứng Xấu của bản thân."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bảo Vệ",
-        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Trả Thù",
-        "fullDesc": "Sát thương gây ra từ đòn Phản Kích của Svarog tăng {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Sát thương gây ra từ đòn Phản Kích của Svarog tăng {{1, percent}}%."
       }
     }
   },

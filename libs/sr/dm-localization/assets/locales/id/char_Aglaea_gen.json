@@ -1,0 +1,107 @@
+{
+  "name": "Aglaea",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Thorned Nectar",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Aglaea pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      },
+      "1": {
+        "name": "Slash by a Thousandfold Kiss",
+        "fullDesc": "Aglaea dan Garmentmaker melancarkan Joint Attack pada target, masing-masing mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Aglaea dan <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ATK Garmentmaker pada target, serta masing-masing mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Aglaea dan <orangeStrong>{{4, percent}}%</orangeStrong> ATK Garmentmaker pada target di sekitarnya.<br>\"Slash by a Thousandfold Kiss\" tidak dapat memulihkan Poin Skill.",
+        "shortDesc": "Aglaea dan Garmentmaker melancarkan <orangeStrong>Joint Attack</orangeStrong> pada target, mengakibatkan Lightning DMG pada 1 musuh, dan Lightning DMG dalam jumlah kecil pada target di sekitarnya.",
+        "tag": "Blast"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Rise, Exalted Renown",
+        "fullDesc": "Memulihkan HP Garmentmaker sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP-nya. Jika Garmentmaker tidak ada di medan pertempuran, maka akan memanggil Memosprite Garmentmaker dan membuat Aglaea segera beraksi.",
+        "shortDesc": "Memulihkan HP Garmentmaker. Saat Garmentmaker tidak berada di medan pertempuran, <orangeStrong>memanggil Memosprite</orangeStrong> Garmentmaker dan membuat Aglaea segera beraksi.",
+        "tag": "Panggil"
+      },
+      "1": {
+        "name": "Rise, Exalted Renown",
+        "shortDesc": "Memulihkan HP Garmentmaker. Saat Garmentmaker tidak berada di medan pertempuran, akan memanggil Memosprite Garmentmaker dan membuat Aglaea segera beraksi.",
+        "tag": "Restore"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Dance, Destined Weaveress",
+        "fullDesc": "Memanggil Memosprite Garmentmaker. Jika Garmentmaker sudah berada di medan pertempuran, maka akan memulihkan HP-nya hingga penuh. Aglaea memasuki status \"Supreme Stance\" dan membuat Aglaea segera beraksi.<br>Saat berstatus \"Supreme Stance\", Garmentmaker menjadi kebal terhadap Crowd Control Debuff, dan Aglaea akan memperoleh jumlah lapisan peningkatan SPD dari Talent Memosprite Garmentmaker, setiap lapisnya meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> SPD, Basic Attack akan diperkuat menjadi \"Slash by a Thousandfold Kiss\", dan tidak dapat melancarkan Skill.<br>Hitung mundur akan muncul di Susunan Aksi, dan hitung mundur memiliki SPD tetap sebesar {{4}}. Jika melancarkan Ultimate lagi saat hitung mundur ada di Bar Aksi, maka akan mereset hitung mundur. Garmentmaker akan menghancurkan dirinya sendiri saat giliran hitung mundur dimulai. Saat Garmentmaker menghilang, status \"Supreme Stance\" Aglaea akan dihapus.",
+        "shortDesc": "<orangeStrong>Memanggil Memosprite</orangeStrong> Garmentmaker, membuat Aglaea memasuki status \"Supreme Stance\" dan membuat Aglaea segera beraksi, serta memperoleh Enhanced Basic Attack.",
+        "tag": "Enhance"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Rosy-Fingered",
+        "fullDesc": "Memosprite Garmentmaker pada awalnya memiliki SPD sebesar {{4, percent}}% SPD Aglaea dan Max HP sebesar <orangeStrong>{{5, percent}}%</orangeStrong> Max HP Aglaea +<orangeStrong>{{6}}</orangeStrong>. Saat Aglaea melancarkan serangan ketika Garmentmaker berada di medan pertempuran, akan membuat target memasuki status \"Seam Stitch\". Setelah menyerang musuh yang berstatus \"Seam Stitch\", akan mengakibatkan Lightning DMG Tambahan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Aglaea. \"Seam Stitch\" hanya akan efektif pada target terbaru yang memperolehnya.",
+        "shortDesc": "Saat Aglaea melancarkan serangan ketika Garmentmaker berada di medan pertempuran, akan membuat target memasuki status \"Seam Stitch\". Setelah menyerang musuh yang berstatus \"Seam Stitch\", akan mengakibatkan Lightning DMG Tambahan dalam jumlah kecil.",
+        "tag": "Enhance"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Meteoric Sunder",
+        "fullDesc": "Memanggil Memosprite Garmentmaker dan melancarkan serangan ke depan bersama-sama. Setelah memasuki pertempuran, memulihkan {{2}} Energy dan mengakibatkan Lightning DMG sebesar {{1, percent}}% ATK Aglaea pada seluruh target musuh, kemudian membuat target musuh acak memasuki status \"Seam Stitch\".",
+        "shortDesc": "<orangeStrong>Memanggil Memosprite</orangeStrong> Garmentmaker dan melancarkan serangan ke depan bersama-sama. Setelah memasuki pertempuran, memulihkan Energy dan mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, kemudian membuat target musuh acak memasuki status \"Seam Stitch\".",
+        "tag": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "The Myopic's Doom",
+        "fullDesc": "Saat Aglaea berada dalam status \"Supreme Stance\", ATK Aglaea dan Garmentmaker akan meningkat, peningkatannya adalah sebesar {{1, percent}}% SPD Aglaea + {{2, percent}}% SPD Garmentmaker."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Last Thread of Fate",
+        "fullDesc": "Saat Garmentmaker menghilang, jumlah lapisan peningkatan SPD dari Talent Memosprite dapat tersimpan, maksimal {{1}} lapis. Saat Garmentmaker dipanggil lagi, akan memperoleh efek peningkatan SPD dengan jumlah lapisan yang sesuai."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "The Speeding Sol",
+        "fullDesc": "Saat pertempuran dimulai, jika Energy diri sendiri kurang dari {{1, percent}}%, akan memulihkan Energy diri sendiri hingga {{2, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Drift at the Whim of Venus",
+      "desc": "DMG yang diterima musuh yang berstatus \"Seam Stitch\" meningkat {{1, percent}}%. Setelah Aglaea atau Garmentmaker menyerang target tersebut, Aglaea akan memulihkan {{2}} Energy tambahan."
+    },
+    "2": {
+      "name": "Sail on the Raft of Eyelids",
+      "desc": "Saat Aglaea atau Garmentmaker beraksi, DMG yang diakibatkan Aglaea dan Garmentmaker akan mengabaikan {{1, percent}}% DEF target. Efek ini dapat ditumpuk hingga {{2}} lapis, dan berlangsung hingga saat unit mana pun selain Aglaea atau Garmentmaker melancarkan kemampuan secara aktif."
+    },
+    "3": {
+      "name": "Bequeath in the Coalescence of Dew",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10. Level Talent Memosprite +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Flicker Below the Surface of Marble",
+      "desc": "Batas maksimal lapisan efek peningkatan SPD dari Talent Memosprite meningkat {{1}} lapis. Setelah Aglaea melancarkan serangan, Garmentmaker juga akan memperoleh efek peningkatan SPD dari Talent Memosprite."
+    },
+    "5": {
+      "name": "Weave Under the Shroud of Woe",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15. Level Skill Memosprite +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Fluctuate in the Tapestry of Fates",
+      "desc": "Saat Aglaea berada dalam status \"Supreme Stance\", Lightning RES PEN dirinya dan Garmentmaker meningkat {{1, percent}}%. Saat SPD Aglaea atau Garmentmaker lebih dari 160/240/320, Joint Attack DMG yang diakibatkannya akan meningkat {{2, percent}}%/{{3, percent}}%/{{4, percent}}%."
+    }
+  }
+}

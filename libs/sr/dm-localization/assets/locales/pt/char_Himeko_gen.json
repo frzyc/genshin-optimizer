@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Combustão Incompleta",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão especial, há {{1, percent}}% de chance-base de aumentar o Dano de Fogo que os inimigos recebem em {{2, percent}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após usar a Técnica, cria uma Dimensão Especial que dura {{4}}s. Depois de entrar em batalha com inimigos na Dimensão Especial, há {{1, percent}}% de chance-base de aumentar o Dano de Fogo que os inimigos recebem em {{2, percent}}% por {{3}} rodada(s). Só 1 Efeito de Dimensão criado por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <orangeStrong>aumentar o Dano de Fogo recebido pelos inimigos</orangeStrong>.",
         "tag": "Incapacitação"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Chama Estelar",
-        "fullDesc": "Depois de usar um ataque, tem {{1, percent}}% de chance-base de infligir \"Queimadura\" a inimigos por {{2}} rodada(s).<br>Quando afligidos por \"Queimadura\", os inimigos recebem Dano de Fogo Contínuo igual a {{3, percent}}% do ATQ de Himeko no início de cada rodada.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Depois de usar um ataque, tem {{1, percent}}% de chance-base de infligir \"Queimadura\" a inimigos por {{2}} rodada(s).<br>Quando afligidos por \"Queimadura\", os inimigos recebem Dano de Fogo Contínuo igual a {{3, percent}}% do ATQ de Himeko no início de cada rodada."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "A Perícia causa {{1, percent}}% a mais de Dano a inimigos atualmente sob efeito de Queimadura.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A Perícia causa {{1, percent}}% a mais de Dano a inimigos atualmente sob efeito de Queimadura."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Marco",
-        "fullDesc": "Quando os PV estiverem em {{1, percent}}% ou mais, a Chance de CRIT aumenta em {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando os PV estiverem em {{1, percent}}% ou mais, a Chance de CRIT aumenta em {{2, percent}}%."
       }
     }
   },
@@ -97,7 +90,7 @@
     },
     "6": {
       "name": "Desbravamento!",
-      "desc": "A Perícia Suprema causa dano mais duas vezes, causando também Dano de Fogo igual a {{1, percent}}% do Dano original a um inimigo aleatório."
+      "desc": "A Perícia Suprema causa Dano mais duas vezes, causando também Dano de Fogo igual a {{1, percent}}% do Dano original a um inimigo aleatório."
     }
   }
 }

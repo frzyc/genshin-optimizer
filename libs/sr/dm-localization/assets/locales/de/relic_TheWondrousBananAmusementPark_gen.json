@@ -1,0 +1,6 @@
+{
+  "setName": "Wunbanana-Park",
+  "setEffects": {
+    "2": "Erhöht den KRIT-SCH des Trägers um {{1, percent}}%. Befindet sich ein vom Träger beschworenes Objekt auf dem Kampffeld, wird der KRIT-SCH zusätzlich um {{2, percent}}% erhöht."
+  }
+}

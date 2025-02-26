@@ -1,5 +1,5 @@
 {
-  "lightCone_one": "캐릭터 광추",
+  "lightCone_one": "광추",
   "lightCone_other": "광추",
   "superimposition": "중첩",
   "path": {
@@ -9,6 +9,7 @@
     "Nihility": "공허",
     "Destruction": "파멸",
     "Harmony": "화합",
-    "TheHunt": "수렵"
+    "TheHunt": "수렵",
+    "Remembrance": "「기억」"
   }
 }

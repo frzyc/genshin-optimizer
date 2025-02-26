@@ -1,0 +1,102 @@
+{
+  "name": "Pérégrine",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Radiance dardante",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pérégrine à un ennemi désigné.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi.",
+        "tag": "Cible unique"
+      },
+      "1": {
+        "name": "Caresses de flammes",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pérégrine à un ennemi désigné et des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ aux cibles adjacentes.",
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi et des DGT de feu mineurs aux cibles adjacentes.",
+        "tag": "Propagation"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Félicité méritée",
+        "fullDesc": "Accorde Prière foxienne à un allié désigné et fait entrer Pérégrine dans l'état Brûlure ardente pendant {{1}} tours. La durée de cet état est réduite de 1 au début de chaque tour de Pérégrine. Prière foxienne prend effet uniquement sur la cible la plus récente de la compétence de Pérégrine.<br>L'effet de Rupture de la cible alliée qui bénéficie de Prière foxienne augmente de <orangeStrong>{{2, percent}}%</orangeStrong> et elle peut infliger une réduction de robustesse lorsqu'elle attaque des ennemis qui n'ont pas le type de faiblesse correspondant, avec un effet équivalent à {{6, percent}}% de la réduction de robustesse initiale. Cet effet ne peut pas être cumulé avec d'autres effets de réduction de robustesse qui ignorent les Faiblesses.<br>Dans l'état Brûlure ardente, l'ATQ normale de Pérégrine est renforcée. Lorsque la cible alliée qui bénéficie de Prière foxienne attaque, Pérégrine a {{3, percent}}% de chances de base de réduire la DÉF de la cible ennemie attaquée de <orangeStrong>{{4, percent}}%</orangeStrong> pendant {{5}} tours.",
+        "shortDesc": "Accorde Prière foxienne à un allié, ce qui <orangeStrong>augmente son effet de Rupture</orangeStrong> et <orangeStrong>permet aux attaques de réduire la robustesse des ennemis qui n'ont pas le type de faiblesse correspondant</orangeStrong>.<br>Fait entrer Pérégrine dans l'état Brûlure ardente, ce qui renforce son ATQ normale. Pérégrine a de fortes chances de réduire la DÉF de la cible ennemie lorsque l'unité alliée qui bénéficie de Prière foxienne attaque.",
+        "tag": "Soutien"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Splendeur solaire éblouissante",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pérégrine à tous les ennemis. Cette attaque ignore les types de faiblesse et réduit la robustesse de tous les ennemis. Déclenche l'effet de Rupture de faiblesse de feu lorsqu'un ennemi subit une Rupture de faiblesse.",
+        "shortDesc": "Inflige des DGT de feu à tous les ennemis. Cette attaque <orangeStrong>ignore les types de faiblesse</orangeStrong> et réduit la robustesse de tous les ennemis.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Vertu mère de fortune",
+        "fullDesc": "Lorsque Pérégrine est sur le champ de bataille, les cibles ennemies se voient appliquer l'effet supplémentaire Marque de feu des nuages qui équivaut à {{2, percent}}% de leur robustesse max. Quand la robustesse initiale est réduite à 0, la Marque de feu des nuages peut continuer à être réduite à 0, auquel cas les cibles ennemies subissent à nouveau des DGT de rupture de faiblesse.<br>Lorsque Pérégrine est sur le champ de bataille, chaque fois que des alliés attaquent des cibles ennemies en état de Rupture de faiblesse, la réduction de robustesse de cette attaque est convertie en 1 instance de <orangeStrong>{{1, percent}}%</orangeStrong> de DGT de rupture extrême.",
+        "shortDesc": "Lorsque Pérégrine est sur le champ de bataille, les cibles ennemies se voient <orangeStrong>appliquer l'effet supplémentaire Marque de feu des nuages</orangeStrong>. Lorsque la Marque de feu des nuages tombe à 0, l'ennemi <orangeStrong>subit à nouveau des DGT de rupture de faiblesse</orangeStrong>. Lorsque des alliés attaquent une cible ennemie en état de Rupture de faiblesse, ils lui infligent également des <orangeStrong>DGT de rupture extrême</orangeStrong>.",
+        "tag": "Incapacitation"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Éclat étourdissant",
+        "fullDesc": "Après avoir utilisé la technique, inflige Hébété aux ennemis dans une zone définie pendant {{1}} secondes. Les ennemis hébétés n'attaquent pas activement les cibles alliées.<br>Lorsque vous entrez en combat en attaquant activement des ennemis hébétés, l'action de Pérégrine est avancée de {{4, percent}}%, avec {{2, percent}}% de chances de base d'infliger à chaque cible ennemie la même réduction de DÉF que celle appliquée par sa compétence pendant {{3}} tours.",
+        "shortDesc": "Inflige Hébété aux ennemis dans une zone définie. Lorsque vous entrez en combat en attaquant des ennemis hébétés, l'action de Pérégrine est avancée et elle a de fortes chances d'infliger la même réduction de DÉF que celle appliquée par sa compétence à chaque cible ennemie.",
+        "tag": "Incapacitation"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Renaissance de Verdoyaume",
+        "fullDesc": "Lorsqu'une cible alliée inflige une Rupture de faiblesse, l'action de la cible ennemie est retardée de {{1, percent}}% supplémentaires."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mystères de l'esprit du renard",
+        "fullDesc": "Augmente l'effet de Rupture de Pérégrine de {{1, percent}}%. Récupère immédiatement {{2}} point de compétence après la première utilisation de sa compétence."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Étoile primordiale",
+        "fullDesc": "Lorsqu'une cible ennemie subit une Rupture de faiblesse, l'effet de Rupture des alliés (à l'exception de Pérégrine) augmente de {{1, percent}}%. Si l'effet de Rupture de Pérégrine est supérieur ou égal à {{4, percent}}%, l'augmentation de l'effet de Rupture est majorée de {{5, percent}}%. Cet effet dure pendant {{2}} tours et peut être cumulé jusqu'à {{3}} fois."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Mortalité envolée et départ annoncé",
+      "desc": "Augmente de {{1, percent}}% l'efficacité de Rupture de faiblesse de la cible alliée qui bénéficie de Prière foxienne."
+    },
+    "2": {
+      "name": "Présage synonyme de vertu",
+      "desc": "Pérégrine régénère {{1}} points d'énergie lorsqu'une cible ennemie subit une Rupture de faiblesse. Après utilisation de son ultime, les actions de tous les alliés sont avancées de {{2, percent}}%."
+    },
+    "3": {
+      "name": "Esprit protégé par la vérité",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Transcendance de l'enveloppe charnelle",
+      "desc": "Augmente de {{1, percent}}% les DGT de rupture de la cible alliée qui bénéficie de Prière foxienne."
+    },
+    "5": {
+      "name": "Nuages colorés annonciateurs de fortune",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Vision prophétique de la prospérité et du déclin",
+      "desc": "L'efficacité de Rupture de faiblesse de Pérégrine augmente de {{1, percent}}%. Lorsque Pérégrine est dans l'état Brûlure ardente, Prière foxienne s'applique à tous les alliés."
+    }
+  }
+}

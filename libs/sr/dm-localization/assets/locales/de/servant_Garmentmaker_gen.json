@@ -1,0 +1,33 @@
+{
+  "name": "Kleidermacherin",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Dornige Falle",
+        "fullDesc": "Fügt einem Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG und angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG zu.",
+        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Blitz-SCH zu.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Körper aus Tränen",
+        "fullDesc": "Nachdem Gegner mit dem Status „Nahtstich“ angegriffen wurden, wird die eigene GES um <orangeStrong>{{1}}</orangeStrong> Pkt. erhöht. Dieser Effekt ist bis zu {{3}}-fach stapelbar. Die Kleidermacherin setzt während ihrer Aktion automatisch „Dornige Falle“ ein, wobei Gegner mit Nahtstich vorrangig getroffen werden.",
+        "shortDesc": "Nachdem Gegner mit dem Status „Nahtstich“ angegriffen wurden, wird die <orangeStrong>eigene GES erhöht</orangeStrong>. Greift während der Aktion automatisch an, wobei Gegner mit Nahtstich vorrangig getroffen werden.",
+        "tag": "Verstärkung"
+      },
+      "1": {
+        "name": "Aufsteigender Sommer",
+        "fullDesc": "Wenn die Kleidermacherin beschworen wird, wird ihre Aktion um {{1, percent}}% vorgezogen.",
+        "shortDesc": "Wenn diese Einheit beschworen wird, wird ihre Aktion vorgezogen.",
+        "tag": "Verstärkung"
+      },
+      "2": {
+        "name": "Blüte der trockenen Gräser",
+        "fullDesc": "Wenn die Kleidermacherin verschwindet, stellt Aglaea {{1}} Pkt. Energie wieder her.",
+        "shortDesc": "Wenn diese Einheit verschwindet, stellt Aglaea Energie wieder her.",
+        "tag": "Verstärkung"
+      }
+    }
+  }
+}

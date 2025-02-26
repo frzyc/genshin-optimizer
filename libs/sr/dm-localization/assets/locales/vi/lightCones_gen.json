@@ -1,5 +1,5 @@
 {
-  "lightCone_one": "Nón Ánh Sáng Nhân Vật",
+  "lightCone_one": "Nón Ánh Sáng",
   "lightCone_other": "Nón Ánh Sáng",
   "superimposition": "Tích Tầng",
   "path": {
@@ -9,6 +9,7 @@
     "Nihility": "Hư Vô",
     "Destruction": "Hủy Diệt",
     "Harmony": "Hòa Hợp",
-    "TheHunt": "Săn Bắn"
+    "TheHunt": "Săn Bắn",
+    "Remembrance": "Ký Ức"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "setName": "Bone Collection's Serene Demesne",
+  "setEffects": {
+    "2": "Meningkatkan {{1, percent}}% Max HP pengguna. Saat Max HP pengguna lebih dari atau sama dengan {{2}}, akan meningkatkan {{3, percent}}% CRIT DMG pengguna dan Memosprite miliknya."
+  }
+}

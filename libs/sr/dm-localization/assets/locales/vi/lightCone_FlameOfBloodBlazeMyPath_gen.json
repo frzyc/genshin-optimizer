@@ -1,0 +1,7 @@
+{
+  "name": "Huyết Hỏa, Hãy Thiêu Đốt Con Đường Phía Trước",
+  "passive": {
+    "name": "Viễn Cảnh",
+    "description": "Giới Hạn HP của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>, lượng trị liệu nhận được tăng <orangeStrong>{{6, percent}}%</orangeStrong>, thi triển Chiến Kỹ hoặc Tuyệt Kỹ sẽ tiêu hao HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của bản thân, đồng thời khiến sát thương lần tấn công này gây ra tăng <orangeStrong>{{3, percent}}%</orangeStrong>, nếu lượng HP mà hiệu ứng này tiêu hao lớn hơn {{4}}, thì sẽ khiến sát thương tăng thêm <orangeStrong>{{5, percent}}%</orangeStrong>.<br>Nếu HP hiện tại không đủ, hiệu ứng này tối đa khiến HP hiện tại của người trang bị giảm đến 1."
+  }
+}

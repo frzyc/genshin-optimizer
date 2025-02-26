@@ -1,0 +1,7 @@
+{
+  "setName": "Poetisa do Colapso Enlutada",
+  "setEffects": {
+    "2": "Aumenta o Dano Quântico em {{1, percent}}%.",
+    "4": "Reduz a VEL do usuário em {{6, percent}}%. Antes de entrar em batalha, se a VEL do usuário estiver abaixo de {{2}}/{{3}}, aumenta a Chance de CRIT do usuário em {{4, percent}}%/{{5, percent}}%. Este efeito também se aplica no Memoespírito do usuário."
+  }
+}

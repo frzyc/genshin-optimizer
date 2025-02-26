@@ -1,0 +1,7 @@
+{
+  "name": "L'impénétrable à portée de main",
+  "passive": {
+    "name": "Jeu de réflexion",
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Augmente les DGT infligés par la compétence et l'ultime du porteur de <orangeStrong>{{4, percent}}%</orangeStrong> pendant {{5}} tours lorsque le porteur utilise son ultime. Après l'utilisation de l'ultime, si un minimum de {{3}} points d'énergie ont été consommés, récupère 1 point de compétence."
+  }
+}

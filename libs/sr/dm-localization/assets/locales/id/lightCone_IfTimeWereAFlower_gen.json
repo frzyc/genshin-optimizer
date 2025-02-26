@@ -1,0 +1,7 @@
+{
+  "name": "If Time Were a Flower",
+  "passive": {
+    "name": "Aspiration",
+    "description": "CRIT DMG pengguna meningkat <orangeStrong>{{1, percent}}%</orangeStrong>. Setelah pengguna melancarkan Serangan Lanjutan, akan memulihkan {{2}} Energy tambahan serta memperoleh \"Presage\" selama {{3}} giliran. Saat pengguna memiliki \"Presage\", CRIT DMG seluruh rekan tim akan meningkat <orangeStrong>{{4, percent}}%</orangeStrong>. Saat memasuki pertempuran, pengguna akan memulihkan {{5}} Energy dan memperoleh \"Presage\" selama {{6}} giliran."
+  }
+}

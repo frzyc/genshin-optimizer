@@ -1,0 +1,7 @@
+{
+  "setName": "Học Giả Lạc Lối Trong Biển Tri Thức",
+  "setEffects": {
+    "2": "Tỷ Lệ Bạo Kích tăng {{1, percent}}%.",
+    "4": "Sát thương Chiến Kỹ và Tuyệt Kỹ gây ra tăng {{1, percent}}%, sau khi thi triển Tuyệt Kỹ, sát thương gây ra trong lần thi triển Chiến Kỹ kế tiếp tăng thêm {{2, percent}}%."
+  }
+}

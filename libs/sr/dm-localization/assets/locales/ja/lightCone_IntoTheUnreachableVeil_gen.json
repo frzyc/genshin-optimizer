@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#ふ}触{RUBY_E#}れてはならぬ{RUBY_B#りょういき}領域{RUBY_E#}へ",
+  "passive": {
+    "name": "マインドゲーム",
+    "description": "装備キャラの会心率+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが必殺技を発動する時、装備キャラの戦闘スキルおよび必殺技ダメージ+<orangeStrong>{{4, percent}}%</orangeStrong>、{{5}}ターン継続。装備キャラが必殺技を発動した後、その回の必殺技で消費したEPが{{3}}以上の場合、SPを1回復する。"
+  }
+}

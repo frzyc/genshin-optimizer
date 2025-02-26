@@ -1,0 +1,7 @@
+{
+  "name": "내일을 위한 여정",
+  "passive": {
+    "name": "연결",
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기를 발동한 후 가하는 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다, 지속 시간: {{3}}턴"
+  }
+}

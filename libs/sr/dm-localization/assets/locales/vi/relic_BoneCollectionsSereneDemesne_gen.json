@@ -1,0 +1,6 @@
+{
+  "setName": "Vùng Đất Nhặt Hài Cốt Tĩnh Lặng",
+  "setEffects": {
+    "2": "Tăng{{1, percent}}% Giới Hạn HP của người trang bị. Khi Giới Hạn HP của người trang bị lớn hơn hoặc bằng {{2}}, sẽ tăng {{3, percent}}% Sát Thương Bạo Kích của người trang bị và Linh Hồn Ký Ức của người đó."
+  }
+}

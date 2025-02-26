@@ -1,0 +1,33 @@
+{
+  "name": "Garmentmaker",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Thorned Snare",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of ATK to one enemy and Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of ATK to adjacent targets.",
+        "shortDesc": "Deals minor Lightning DMG to one enemy target and adjacent targets.",
+        "tag": "Blast"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "A Body Brewed by Tears",
+        "fullDesc": "After attacking an enemy afflicted with \"Seam Stitch,\" increases this unit's SPD by <orangeStrong>{{1}}</orangeStrong>, stacking up to {{3}} time(s). When Garmentmaker takes action, automatically uses \"Thorned Snare,\" prioritizing enemies under the \"Seam Stitch\" state.",
+        "shortDesc": "After attacking an enemy afflicted with \"Seam Stitch,\" <orangeStrong>increases this unit's SPD</orangeStrong>. When taking action, automatically uses attacks, prioritizing enemies under the \"Seam Stitch\" state.",
+        "tag": "Enhance"
+      },
+      "1": {
+        "name": "The Speeding Summer",
+        "fullDesc": "When Garmentmaker is summoned, this unit's action advances by {{1, percent}}%.",
+        "shortDesc": "When summoned, this unit has its action advanced.",
+        "tag": "Enhance"
+      },
+      "2": {
+        "name": "Bloom of Drying Grass",
+        "fullDesc": "When Garmentmaker disappears, regenerates {{1}} Energy for Aglaea.",
+        "shortDesc": "Upon disappearing, regenerates Energy for Aglaea.",
+        "tag": "Enhance"
+      }
+    }
+  }
+}

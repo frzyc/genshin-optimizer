@@ -1,0 +1,7 @@
+{
+  "name": "Ninja-Kodex: Blendender Schattenbrecher",
+  "passive": {
+    "name": "Exorzismus",
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Stellt beim Kampfeintritt sofort <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her. Nach dem Einsatz des Ultimates erhält der Träger „Raiton“. Nachdem er 2-mal seinen Standardangriff eingesetzt hat, wird seine Aktion um <orangeStrong>{{3, percent}}%</orangeStrong> vorgezogen und Raiton entfernt. Nach dem Einsatz des Ultimates wird Raiton zurückgesetzt."
+  }
+}

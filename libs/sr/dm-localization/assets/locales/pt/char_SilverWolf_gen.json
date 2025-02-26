@@ -13,7 +13,7 @@
       "0": {
         "name": "Permitir Mudanças?",
         "fullDesc": "Tem <orangeStrong>{{2, percent}}%</orangeStrong> de chance-base de adicionar 1 Fraqueza do Tipo de um personagem em campo ao inimigo-alvo. Isso também reduz a RES a Dano do inimigo a este Tipo de Fraqueza em {{4, percent}}% por {{3}} rodada(s). Se o inimigo já possui Fraqueza a este Tipo, o efeito de redução da RES a Dano a este Tipo de Fraqueza não será ativado.<br>Cada inimigo pode ter apenas 1 Fraqueza implantada pela Loba Prateada. Quando Loba Prateada implanta outra Fraqueza ao alvo, apenas a última Fraqueza implantada será mantida. Adicionalmente, existe {{5, percent}}% de chance-base de reduzir mais ainda a RES a Todos os Tipos do inimigo em <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> por {{7}} rodada(s).<br>Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ da Loba Prateada a um único inimigo-alvo.",
-        "shortDesc": "Existe uma chance alta de <orangeStrong>aplicar Fraquezas de Tipo adicionais</orangeStrong> a um único inimigo e causa Dano Quântico a este inimigo-alvo.",
+        "shortDesc": "Existe uma chance alta de <orangeStrong>aplicar Fraquezas de Tipo adicionais</orangeStrong> a um único inimigo e causa Dano Quântico a este inimigo.",
         "tag": "Alvo Único"
       }
     },
@@ -21,7 +21,7 @@
       "0": {
         "name": "Usuário Banido",
         "fullDesc": "Tem uma chance-base de <orangeStrong>{{2, percent}}%</orangeStrong> de diminuir a DEF do inimigo-alvo em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por {{4}} rodada(s). E, ao mesmo tempo, causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ da Loba Prateada como Dano Quântico ao inimigo-alvo.",
-        "shortDesc": "Tem uma chance alta de <orangeStrong>diminuir a DEF de um único inimigo</orangeStrong> e causa Dano Quântico massivo a este inimigo-alvo.",
+        "shortDesc": "Tem uma chance alta de <orangeStrong>diminuir a DEF de um único inimigo</orangeStrong> e causa Dano Quântico massivo a este inimigo.",
         "tag": "Alvo Único"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Geração",
-        "fullDesc": "A duração do \"Erro\" é estendida por {{1}} rodada(s). Sempre que um inimigo é afligido com Quebra de Fraqueza, Loba Prateada tem {{2, percent}}% de chance-base de implantar um \"Erro\" aleatório ao inimigo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A duração do \"Erro\" é estendida por {{1}} rodada(s). Sempre que um inimigo é afligido com Quebra de Fraqueza, Loba Prateada tem {{2, percent}}% de chance-base de implantar um \"Erro\" aleatório ao inimigo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Injeção",
-        "fullDesc": "A duração da Fraqueza implantada pela Perícia da Loba Prateada aumenta em {{1}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A duração da Fraqueza implantada pela Perícia da Loba Prateada aumenta em {{1}} rodada(s)."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Comentário Adicional",
-        "fullDesc": "Se tiver {{1}} ou mais penalidades afetando o inimigo quando a Perícia for utilizada, a Perícia diminui a RES a Todos os Tipos do inimigo em um adicional de {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Se tiver {{1}} ou mais penalidades afetando o inimigo quando a Perícia for utilizada, a Perícia diminui a RES a Todos os Tipos do inimigo em um adicional de {{2, percent}}%."
       }
     }
   },

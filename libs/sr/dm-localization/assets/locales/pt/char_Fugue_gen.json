@@ -1,0 +1,102 @@
+{
+  "name": "Fugue",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Feixe Radiante",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Fugue a uma unidade inimiga designada.",
+        "shortDesc": "Causa Dano de Fogo leve a um inimigo.",
+        "tag": "Alvo Único"
+      },
+      "1": {
+        "name": "Carícia Incandescente",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Fugue a um inimigo designado e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Fugue como Dano de Fogo aos inimigos adjacentes.",
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo e Dano de Fogo leve a inimigos adjacentes a ele.",
+        "tag": "Explosão"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "A Virtude Traz Felicidade",
+        "fullDesc": "Concede a um aliado designado a \"Prece Vulpe\". Entra no estado de \"Abrasamento Tórrido\", que dura {{1}} rodada(s). A duração é reduzida em 1 no início de cada rodada de Fugue. A \"Prece Vulpe\" só tem efeito no alvo mais recente da Perícia de Fugue.<br>O aliado-alvo com \"Prece Vulpe\" aumenta seu Efeito de Quebra em <orangeStrong>{{2, percent}}%</orangeStrong> e também pode reduzir a Tenacidade ao atacar inimigos que não possuem o Tipo de Fraqueza correspondente, com um efeito equivalente a {{6, percent}}% do valor original de Redução de Tenacidade. Isso não acumula com outros efeitos de Redução de Tenacidade que também ignoram Tipo de Fraqueza.<br>Enquanto está no estado de \"Abrasamento Tórrido\", Fugue aprimora seu ATQ Básico. Sempre que um aliado com \"Prece Vulpe\" ataca, Fugue tem uma chance-base de {{3, percent}}% de reduzir a DEF do inimigo-alvo atacado em <orangeStrong>{{4, percent}}%</orangeStrong>, com duração de {{5}} rodada(s).",
+        "shortDesc": "Concede a um aliado a \"Prece Vulpe\", que <orangeStrong>aumenta o Efeito de Quebra</orangeStrong> e <orangeStrong>permite reduzir a Tenacidade ao atacar inimigos que não possuem o Tipo de Fraqueza correspondente</orangeStrong>.<br>Faz com que esta unidade entre no estado de \"Abrasamento Tórrido\", fortalecendo o ATQ Básico. Quando aliados com \"Prece Vulpe\" atacam, Fugue tem uma alta chance de reduzir a DEF do inimigo-alvo.",
+        "tag": "Suporte"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "O Esplendor Solar Brilha Sobre Todos Nós",
+        "fullDesc": "Causa Dano de Fogo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Fugue a todos os inimigos. Este ataque ignora o Tipo de Fraqueza para reduzir a Tenacidade de todos os inimigos. Ao quebrar uma Fraqueza, ativa o efeito de Quebra de Fraqueza de Fogo.",
+        "shortDesc": "Causa Dano de Fogo a todos os inimigos. Esse ataque <orangeStrong>ignora o Tipo de Fraqueza</orangeStrong> para causar Redução de Tenacidade a todos os inimigos.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "A Sorte Segue o Caminho da Virtude",
+        "fullDesc": "Enquanto Fugue estiver em campo, os inimigos-alvo serão adicionalmente afetados por \"Bruma Abrasante\", equivalente a {{2, percent}}% de sua Tenacidade Máxima. Quando a Tenacidade inicial for reduzida a 0, a \"Bruma Abrasante\" pode ser ainda mais reduzida. Ao chegar a 0, o inimigo receberá novamente Dano de Quebra de Fraqueza.<br>Enquanto Fugue estiver em campo, após os aliados atacarem inimigos com Quebra de Fraqueza, a Redução de Tenacidade desse ataque será convertida em 1 instancia de <orangeStrong>{{1, percent}}%</orangeStrong> de Super Dano de Quebra.",
+        "shortDesc": "Enquanto Fugue está em campo, os inimigos-alvo são <orangeStrong>adicionalmente afligidos com \"Bruma Abrasante\".</orangeStrong>. Quando a \"Bruma Abrasante\" é reduzida a 0, o inimigo <orangeStrong>receberá um Dano de Quebra de Fraqueza novamente</orangeStrong>. Após um aliado atacar inimigos-alvo infligidos com Quebra de Fraqueza, adicionalmente causa <orangeStrong>Super Dano de Quebra</orangeStrong>.",
+        "tag": "Incapacitação"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Brilho Perceptivo",
+        "fullDesc": "Após usar a Técnica, inflige \"Confusão\" aos inimigos dentro de uma certa área que dura por {{1}} segundo(s). Enquanto os inimigos estão em estado de \"Confusão\", eles não atacarão ativamente aliados-alvo.<br>Após entrar em combate ao atacar ativamente inimigos afligidos com \"Confusão\", a ação de Fugue é Avançada Adiante em {{4, percent}}%, com uma chance-base de {{2, percent}}% de infligir cada inimigo-alvo com o mesmo estado de Redução de DEF aplicado pela Perícia de Fugue, durando por {{3}} rodada(s).",
+        "shortDesc": "Inflige \"Confusão\" aos inimigos dentro de uma certa área. Após entrar em combate ao atacar inimigos no estado de \"Confusão\", a ação de Fugue é Avançada Adiante, com altas chances de infligir a cada inimigo-alvo o mesmo estado de Redução de DEF aplicado pela Perícia de Fugue.",
+        "tag": "Incapacitação"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Renascença de Verdantia",
+        "fullDesc": "Após aliados-alvo causarem Quebra de Fraqueza, atrasa adicionalmente a ação do inimigo-alvo em {{1, percent}}%."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Enigma Silvestre",
+        "fullDesc": "Aumenta o Efeito de Quebra desta unidade em {{1, percent}}%. Após utilizar a Perícia pela primeira vez, recupera imediatamente {{2}} Ponto(s) de Perícia."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Phecda Primordia",
+        "fullDesc": "Quando um inimigo-alvo sofre Quebra de Fraqueza, aumenta o Efeito de Quebra dos aliados (exceto desta unidade) em {{1, percent}}%. Se o Efeito de Quebra de Fugue for {{4, percent}}% ou maior, o aumento do Efeito de Quebra recebe um bônus adicional de {{5, percent}}%, com duração de {{2}} rodada(s). Este efeito pode acumular até {{3}} vez(es)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Estava Presa à Terra, Agora Sigo para as Nuvens",
+      "desc": "O aliado-alvo com \"Prece Vulpe\" aumenta sua Eficiência de Quebra de Fraqueza em {{1, percent}}%."
+    },
+    "2": {
+      "name": "A Beatitude Alvorece para os Justos",
+      "desc": "Quando um inimigo-alvo sofre Quebra de Fraqueza, Fugue regenera {{1}} de Energia. Após ela usar sua Perícia Suprema, as ações de todos os aliados são Avançadas Adiante em {{2, percent}}%."
+    },
+    "3": {
+      "name": "A Verdade Tece Pensamentos em Lâminas",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>ATQ Básico Nv. +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Desprovida de Forma, Qual Nome Ela Assume",
+      "desc": "O aliado-alvo com \"Prece Vulpe\" aumenta seu Dano de Quebra causado em {{1, percent}}%."
+    },
+    "5": {
+      "name": "As Nuvens Coloridas Fazem Chover Boa Sorte",
+      "desc": "Perícia Suprema Nv. +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Clarividência da Aniquilação Explosiva",
+      "desc": "Aumenta a Eficiência de Quebra de Fraqueza de Fugue em {{1, percent}}%. Quando Fugue estiver no estado de \"Abrasamento Tórrido\", a \"Prece Vulpe\" terá efeito em todos os aliados."
+    }
+  }
+}

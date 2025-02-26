@@ -1,7 +1,7 @@
 {
   "level": "Stufe",
   "lv": "St.",
-  "path_one": "Pfade",
-  "path_other": "Pfade",
+  "path_one": "Pfad",
+  "path_other": "Pfad",
   "rarity": "Seltenheit"
 }

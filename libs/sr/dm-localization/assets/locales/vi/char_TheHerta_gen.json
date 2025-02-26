@@ -1,0 +1,102 @@
+{
+  "name": "Đại Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Thông Suốt Chưa",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Đại Herta.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch chỉ định.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Mở Rộng Tâm Trí",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Đại Herta và thi triển {{2}} tầng Diễn Giải. Gây sát thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Đại Herta cho mục tiêu mà Chiến Kỹ đánh trúng lần này và các mục tiêu lân cận, hiệu ứng này có thể lặp lại 2 lần.",
+        "shortDesc": "Gây sát thương cho 1 kẻ địch chỉ định. Gây sát thương cho mục tiêu bị Chiến Kỹ lần này đánh trúng và các mục tiêu lân cận, lặp lại 2 lần.",
+        "tag": "Khuếch Tán"
+      },
+      "1": {
+        "name": "Tôi Có Một Suy Nghĩ Táo Bạo",
+        "fullDesc": "Tiêu hao 1 tầng Cảm Hứng, gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Đại Herta và thi triển {{2}} tầng Diễn Giải. Gây sát thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Đại Herta cho mục tiêu mà lần Chiến Kỹ này đánh trúng và các mục tiêu lân cận, lặp lại 2 lần. Cuối cùng, gây Sát Thương Băng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Đại Herta cho tất cả mục tiêu phe địch.",
+        "shortDesc": "Gây sát thương cho 1 kẻ địch chỉ định. Gây sát thương cho mục tiêu bị Chiến Kỹ lần này đánh trúng và các mục tiêu lân cận, lặp lại 2 lần. Sau đó, gây sát thương lên toàn phe địch.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Đã Nói Là Phép Thuật Mà",
+        "fullDesc": "Sắp xếp lại số tầng Diễn Giải của toàn bộ phe địch, Diễn Giải có số tầng tương đối cao sẽ ưu tiên chuyển đến mục tiêu cấp Tinh Anh trở lên, đồng thời gây Sát Thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Đại Herta cho toàn bộ phe địch. Khi thi triển Tuyệt Kỹ, khiến Tấn Công của Đại Herta tăng <orangeStrong>{{4, percent}}%</orangeStrong>, duy trì {{5}} hiệp. Sau khi thi triển Tuyệt Kỹ, khiến Đại Herta lập tức hành động, và nhận 1 tầng Cảm Hứng. Cảm Hứng tối đa có {{6}} tầng, khi có Cảm Hứng, cường hóa Chiến Kỹ thành \"Tôi Có Một Suy Nghĩ Táo Bạo\".",
+        "shortDesc": "<orangeStrong>Sắp xếp lại số tầng</orangeStrong> Diễn Giải của toàn bộ phe địch, Diễn Giải có số tầng tương đối cao sẽ ưu tiên chuyển đến mục tiêu cấp Tinh Anh trở lên, đồng thời gây Sát Thương Băng cho toàn bộ phe địch. Sau khi dùng sẽ nhận cường hóa Chiến Kỹ và lập tức hành động.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Đưa Đây Đi Nào",
+        "fullDesc": "Khi mục tiêu phe địch vào chiến đấu, Đại Herta sẽ thi triển 1 tầng Diễn Giải lên kẻ đó. Khi bắt đầu mỗi đợt sẽ thi triển {{6}} tầng Diễn Giải lên 1 mục tiêu phe địch ngẫu nhiên, ưu tiên thi triển cho mục tiêu cấp Tinh Anh trở lên. Khi mục tiêu chính của Chiến Kỹ Cường Hóa có Diễn Giải, thì Bội Số Sát Thương gây ra sẽ tăng, mỗi tầng tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> cho mục tiêu chính/mục tiêu khác. Nếu nhân vật vận mệnh Tri Thức trong đội từ 2 người trở lên, mỗi tầng tăng thêm <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> cho mục tiêu chính/mục tiêu khác. Diễn Giải tối đa có thể cộng dồn {{3}} tầng. Khi sử dụng Chiến Kỹ Cường Hóa, sẽ thiết lập lại Diễn Giải của mục tiêu chính thành 1 tầng. Sau khi mục tiêu phe địch rời trận hoặc bị đơn vị bất kỳ tiêu diệt, Diễn Giải sẽ bị chuyển dời, ưu tiên chuyển sang mục tiêu cấp Tinh Anh trở lên.",
+        "shortDesc": "Chiến Kỹ Cường Hóa sẽ căn cứ theo <orangeStrong>số tầng Diễn Giải của mục tiêu để tăng Sát Thương gây ra</orangeStrong>.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ngắm Nhìn Thứ Đẹp Đẽ",
+        "fullDesc": "Sau khi sử dụng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, Tấn Công của Đại Herta tăng {{1, percent}}%, duy trì {{2}} hiệp.<br>Nếu bản đồ hiện tại có Chiến Lợi Phẩm Thường, sau khi sử dụng Bí Kỹ sẽ đánh dấu tối đa vị trí của {{3}} Chiến Lợi Phẩm Thường.<br>Trong Vũ Trụ Mô Phỏng, Vũ Trụ Sai Phân, sau khi sử dụng Bí Kỹ để vào chiến đấu, khi bắt đầu mỗi đợt sẽ gây cho mục tiêu phe địch dưới cấp Tinh Anh Sát Thương Chuẩn bằng {{4, percent}}% Giới Hạn HP của mục tiêu, gây cho mục tiêu phe địch cấp Tinh Anh trở lên Sát Thương Chuẩn bằng {{5, percent}}% Giới Hạn HP của mục tiêu.",
+        "shortDesc": "Sau khi sử dụng Bí Kỹ, có thể <orangeStrong>đánh dấu vị trí của vài Chiến Lợi Phẩm Thường</orangeStrong>. Và khi bắt đầu lần chiến đấu tiếp theo, Tấn Công của Đại Herta tăng.<br>Trong Vũ Trụ Mô Phỏng, Vũ Trụ Sai Phân, sau khi sử dụng Bí Kỹ vào chiến đấu, khi bắt đầu mỗi đợt, sẽ gây lượng lớn Sát Thương Chuẩn cho toàn bộ phe địch.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sự Thành Thật Lạnh Nhạt",
+        "fullDesc": "Khi mục tiêu phe ta tấn công, sẽ thi triển 1 tầng Diễn Giải cho mục tiêu phe địch bị đánh trúng. Sau khi tấn công, cứ mỗi đánh trúng 1 mục tiêu trong lần tấn công này thì sẽ hồi cố định cho Đại Herta {{1}} điểm Năng Lượng, tính tối đa đến 5 mục tiêu. Khi thi triển Chiến Kỹ Cường Hóa, nếu số tầng Diễn Giải của mục tiêu chính đạt 42, sẽ khiến sát thương Đại Herta gây ra tăng {{2, percent}}%, duy trì đến khi kết thúc lần tấn công này."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Thông Điệp Bên Ngoài Tầm Nhìn",
+        "fullDesc": "Khi vào chiến đấu, nếu trong đội có từ 2 nhân vật vận mệnh Tri Thức trở lên, sẽ khiến sát thương bạo kích của toàn phe ta tăng {{1, percent}}%. Khi tính số lượng mục tiêu trúng đòn của Vết Tích \"Sự Thành Thật Lạnh Nhạt\", tối thiểu tính {{2}} mục tiêu, sau khi tấn công sẽ thi triển {{3}} tầng Diễn Giải lên mục tiêu có số tầng Diễn Giải cao nhất đối với các mục tiêu phe địch bị trúng đòn, nếu người tấn công là nhân vật vận mệnh Tri Thức, sẽ thi triển thêm {{4}} tầng Diễn Giải."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Địa Cảnh Đói Khát",
+        "fullDesc": "Mỗi khi mục tiêu phe địch bị thi triển 1 tầng Diễn Giải, Đại Herta sẽ nhận 1 tầng Đáp Án, tối đa cộng dồn {{2}} tầng. Khi thi triển Tuyệt Kỹ, cứ mỗi 1 tầng Đáp Án đang có sẽ khiến Bội Số Sát Thương của lần Tuyệt Kỹ này tăng {{1, percent(fixed: 1)}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Đêm Sao Rơi",
+      "desc": "Khi Chiến Kỹ Cường Hóa tính số tầng Diễn Giải, sẽ tính thêm {{1, percent}}% số tầng Diễn Giải hiện tại của 1 mục tiêu có số tầng cao nhất trong số mục tiêu chính và mục tiêu lân cận. Khi thi triển Chiến Kỹ Cường Hóa để tái lập Diễn Giải, thì số tầng Diễn Giải sẽ đặt lại thành {{2}} tầng."
+    },
+    "2": {
+      "name": "Gió Xuyên Qua Lỗ Khóa",
+      "desc": "Sau khi Đại Herta vào chiến đấu và thi triển Tuyệt Kỹ sẽ nhận thêm 1 tầng \"Cảm Hứng\". Sau khi thi triển Chiến Kỹ Cường Hóa, sẽ khiến Đại Herta ở lần kế tiếp Ưu Tiên Hành Động {{1, percent}}%."
+    },
+    "3": {
+      "name": "Cánh Cổng Bước Vào Mùa Hè",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không vượt quá cấp 15; Cấp Thiên Phú +2, tối đa không vượt quá cấp 15."
+    },
+    "4": {
+      "name": "Chìa Khóa Thứ 16",
+      "desc": "Tốc độ của nhân vật vận mệnh Tri Thức trong đội tăng {{1, percent}}%."
+    },
+    "5": {
+      "name": "Chân Lý Như Thuốc Đắng",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không vượt quá cấp 15; Cấp Tấn Công Thường +1, tối đa không vượt quá cấp 10."
+    },
+    "6": {
+      "name": "Câu Trả Lời Quyến Rũ Ngọt Ngào",
+      "desc": "Xuyên Kháng Băng của Đại Herta tăng {{4, percent}}%. Khi số lượng mục tiêu phe địch trong trận từ 3 (hoặc trở lên)/2/1, thì Bội Số Sát Thương của Tuyệt Kỹ sẽ tăng {{1, percent}}%/{{2, percent}}%/{{3, percent}}%."
+    }
+  }
+}

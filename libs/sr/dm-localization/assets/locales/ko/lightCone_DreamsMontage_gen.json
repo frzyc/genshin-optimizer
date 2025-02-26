@@ -1,0 +1,7 @@
+{
+  "name": "꿈의 몽타주",
+  "passive": {
+    "name": "아카데믹 편집",
+    "description": "장착한 캐릭터의 속도가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 약점 격파 상태의 적을 공격하면 에너지를 <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong>pt 회복하며, 해당 효과는 턴마다 최대 {{3}}회 발동한다"
+  }
+}

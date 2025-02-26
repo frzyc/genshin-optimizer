@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Soothe",
-        "fullDesc": "When using Skill, dispels {{1}} debuff(s) from one designated ally.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using Skill, dispels {{1}} debuff(s) from one designated ally."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Healer",
-        "fullDesc": "Natasha's Outgoing Healing increases by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Natasha's Outgoing Healing increases by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Recuperation",
-        "fullDesc": "Increases the duration of Skill's continuous healing effect for {{1}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases the duration of Skill's continuous healing effect for {{1}} turn(s)."
       }
     }
   },

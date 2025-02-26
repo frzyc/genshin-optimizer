@@ -50,6 +50,8 @@ function testCharacterData(
           skill: 0,
           ult: 0,
           talent: 0,
+          servantSkill: 0,
+          servantTalent: 0,
           bonusAbilities: {},
           statBoosts: {},
         },
@@ -84,6 +86,8 @@ function testTeamData(
           skill: 0,
           ult: 0,
           talent: 0,
+          servantSkill: 0,
+          servantTalent: 0,
           bonusAbilities: {},
           statBoosts: {},
         },
@@ -104,6 +108,8 @@ function testTeamData(
           skill: 0,
           ult: 0,
           talent: 0,
+          servantSkill: 0,
+          servantTalent: 0,
           bonusAbilities: {},
           statBoosts: {},
         },
@@ -674,12 +680,12 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.atk_).val).toBeCloseTo(8 * 0.06)
   })
 
-  it('TheWindSouringValorous', () => {
-    const data = testCharacterData('TheWindSouringValorous')
+  it('TheWindSoaringValorous', () => {
+    const data = testCharacterData('TheWindSoaringValorous')
     data.push(
       cond(
-        'TheWindSouringValorous',
-        conditionals.TheWindSouringValorous.followUpUsed.name,
+        'TheWindSoaringValorous',
+        conditionals.TheWindSoaringValorous.followUpUsed.name,
         1
       )
     )

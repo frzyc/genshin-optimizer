@@ -1,0 +1,7 @@
+{
+  "name": "Long Road Leads Home",
+  "passive": {
+    "name": "Rebirth",
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. When an enemy target's Weakness gets broken, there is a {{2, percent}}% base chance to inflict the \"Charring\" state on it, which increases its Break DMG taken by <orangeStrong>{{3, percent}}%</orangeStrong>, lasting for {{4}} turn(s). This effect can stack {{5}} time(s)."
+  }
+}

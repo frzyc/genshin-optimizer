@@ -1,0 +1,7 @@
+{
+  "name": "Ta Sẽ, Tuần Tra Săn Bắn",
+  "passive": {
+    "name": "Kinh Hoàng",
+    "description": "Tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tỷ Lệ Bạo Kích của người trang bị. Khi người trang bị thi triển Đòn Đánh Theo Sau sẽ nhận 1 tầng Lưu Quang, tối đa cộng dồn {{3}} tầng. Mỗi tầng Lưu Quang khiến sát thương Tuyệt Kỹ mà người trang bị gây ra bỏ qua <orangeStrong>{{2, percent}}%</orangeStrong> phòng thủ của mục tiêu. Khi hiệp của người trang bị kết thúc sẽ xóa bỏ 1 tầng Lưu Quang."
+  }
+}

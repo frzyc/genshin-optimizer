@@ -42,7 +42,7 @@
     "technique": {
       "0": {
         "name": "Brilho da Verdade",
-        "fullDesc": "Após usar esta Técnica, cria uma dimensão especial ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão especial sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão especial, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma chance-base de {{2, percent}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem Dano de Gelo Adicional igual a {{5, percent}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após usar esta Técnica, cria uma Dimensão Especial ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta Dimensão Especial sofrerão Congelamento. Após entrar em combate com os inimigos na Dimensão Especial, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma chance-base de {{2, percent}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem Dano de Gelo Adicional igual a {{5, percent}}% do ATQ de Jingliu no início de cada rodada. Só 1 Efeito de Dimensão criado por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial em volta do personagem. Inimigos dentro desta dimensão sofrerão <orangeStrong>Congelamento</orangeStrong>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <orangeStrong>Congelamento</orangeStrong> nos inimigos.",
         "tag": "Incapacitação"
       }
@@ -51,32 +51,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Reino da Morte",
-        "fullDesc": "Aumenta a RES a Efeito em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta a RES a Efeito em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Campeã da Espada",
-        "fullDesc": "Após usar o \"Clarão Transcendente\", a próxima ação será Avançada Adiante em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Após usar o \"Clarão Transcendente\", a próxima ação será Avançada Adiante em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ira Gélida",
-        "fullDesc": "Aumenta o Dano causado pela Perícia Suprema em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta o Dano causado pela Perícia Suprema em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral."
       }
     }
   },

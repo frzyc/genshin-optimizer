@@ -1,0 +1,6 @@
+{
+  "setName": "Giant Tree of Rapt Brooding",
+  "setEffects": {
+    "2": "Meningkatkan {{1, percent}}% SPD pengguna. Saat SPD pengguna lebih dari atau sama dengan {{2}}/{{3}}, Outgoing Healing pengguna dan Memosprite miliknya akan meningkat {{4, percent}}%/{{5, percent}}%."
+  }
+}

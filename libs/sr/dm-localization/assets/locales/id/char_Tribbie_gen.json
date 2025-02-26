@@ -1,0 +1,96 @@
+{
+  "name": "Tribbie",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Hundred Rockets",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Tribbie pada 1 musuh yang ditargetkan, mengakibatkan Quantum DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> Max HP Tribbie pada musuh di sekitar target.",
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh dan target di sekitarnya.",
+        "tag": "Blast"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Where'd the Gifts Go",
+        "fullDesc": "Memperoleh \"Numinosity\", berlangsung selama {{2}} giliran. Setiap saat giliran unit ini dimulai, durasi gilirannya akan berkurang 1. Saat Tribbie memiliki \"Numinosity\", RES PEN Seluruh Tipe dari seluruh rekan tim akan meningkat <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.",
+        "shortDesc": "Memperoleh \"Numinosity\". Selama durasi ini, RES PEN Seluruh Tipe dari seluruh rekan tim akan meningkat.",
+        "tag": "Support"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Guess Who Lives Here",
+        "fullDesc": "Mengaktifkan area pembatas dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Tribbie pada seluruh musuh.<br>Selama durasi area pembatas, DMG yang diterima musuh akan meningkat <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Setelah terkena serangan rekan tim, untuk setiap 1 target yang terkena serangan, akan mengakibatkan 1 kali Quantum DMG Tambahan sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Max HP Tribbie pada target dengan HP tertinggi di antara semua target yang terkena serangan.<br>Area pembatas berlangsung selama {{4}} giliran dan durasi giliran area pembatas akan berkurang 1 setiap saat giliran Tribbie dimulai.",
+        "shortDesc": "<orangeStrong>Mengaktifkan area pembatas</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah kecil pada seluruh musuh. Selama durasi area pembatas, DMG yang diterima musuh akan meningkat, dan mengakibatkan Quantum <orangeStrong>DMG Tambahan</orangeStrong> dalam jumlah kecil pada target dengan HP tertinggi di antara semua target serangan berdasarkan <orangeStrong>jumlah musuh</orangeStrong> yang diserang.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Busy as Tribbie",
+        "fullDesc": "Setelah karakter lain dalam tim melancarkan Ultimate, Tribbie akan melancarkan Serangan Lanjutan, mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Tribbie pada seluruh musuh. Efek ini hanya dapat terpicu hingga 1 kali untuk setiap karakter tim. Saat Tribbie melancarkan Ultimate, jumlah pemicuan untuk karakter lain akan direset. Jika target dikalahkan sebelum Serangan Lanjutan dilancarkan, maka akan melancarkan Serangan Lanjutan pada target musuh yang baru memasuki medan pertempuran.",
+        "shortDesc": "Setelah karakter lain dalam tim melancarkan Ultimate, Tribbie akan melancarkan <orangeStrong>Serangan Lanjutan</orangeStrong>, mengakibatkan Quantum DMG dalam jumlah kecil pada <orangeStrong>seluruh musuh</orangeStrong>. Efek ini dapat dipicu hingga 1 kali untuk setiap karakter. Saat Tribbie melancarkan Ultimate, jumlah pemicuan untuk karakter tim yang lain akan direset.",
+        "tag": "AoE"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "If You're Happy and You Know It",
+        "fullDesc": "Setelah menggunakan Technique, saat memasuki pertempuran, akan memperoleh \"Numinosity\", berlangsung selama {{1}} giliran.",
+        "shortDesc": "Saat memasuki pertempuran, akan memperoleh \"Numinosity\".",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Lamb Outside the Wall...",
+        "fullDesc": "Setelah melancarkan Serangan Lanjutan dari Talent, DMG yang diakibatkan Tribbie akan meningkat {{1, percent}}%. Efek ini dapat ditumpuk hingga {{2}} lapis, berlangsung selama {{3}} giliran."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Glass Ball with Wings!",
+        "fullDesc": "Selama area pembatas berlangsung, Max HP Tribbie meningkat dengan batas maksimal sebesar {{1, percent}}% dari gabungan Max HP seluruh karakter tim."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Pebble at Crossroads?",
+        "fullDesc": "Saat pertempuran dimulai, Tribbie akan memulihkan {{1}} Energy. Setelah rekan tim selain Tribbie menyerang, Tribbie akan memulihkan {{2, fixed(fixed: 1)}} Energy untuk setiap 1 target yang terserang."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Rite of Sugar Scoop",
+      "desc": "Selama durasi area pembatas, setelah rekan tim menyerang musuh, target yang mengakibatkan DMG Tambahan pada area pembatas akan mengakibatkan True DMG tambahan sebesar {{1, percent}}% dari total DMG serangan kali ini."
+    },
+    "2": {
+      "name": "Guide of Dream Tour",
+      "desc": "DMG Tambahan yang diakibatkan area pembatas meningkat hingga {{1, percent}}% dari DMG aslinya. Saat area pembatas mengakibatkan DMG Tambahan, akan mengakibatkan ekstra {{2}} kali DMG Tambahan."
+    },
+    "3": {
+      "name": "Trove of Morning Glow",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Peace of Empathy Bond",
+      "desc": "Selama durasi \"Numinosity\", DMG yang diakibatkan seluruh rekan tim akan mengabaikan {{1, percent}}% DEF target."
+    },
+    "5": {
+      "name": "Clock of Wonder Origin",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Morrow of Star Shine",
+      "desc": "Setelah Tribbie melancarkan Ultimate, dia akan melancarkan Serangan Lanjutan dari Talent miliknya pada seluruh musuh. DMG yang diakibatkan Serangan Lanjutan dari Talent akan meningkat {{1, percent}}%."
+    }
+  }
+}

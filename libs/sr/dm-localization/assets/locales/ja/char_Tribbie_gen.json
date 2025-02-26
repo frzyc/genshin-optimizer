@@ -1,0 +1,96 @@
+{
+  "name": "トリビー",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "{RUBY_B#ひゃっぱつぶん}百発分{RUBY_E#}のピラヴロス",
+        "fullDesc": "指定した敵単体にトリビーの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵にトリビーの最大HP<orangeStrong>{{2, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "shortDesc": "敵単体および隣接する敵に少量の量子属性ダメージを与える。",
+        "tag": "拡散攻撃"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "プレゼントはどこ？",
+        "fullDesc": "「神の啓示」を獲得する。{{2}}ターン継続。自身のターンが回ってくるたびに、「神の啓示」の継続時間-1ターン。トリビーに「神の啓示」がある時、味方全体の全属性耐性貫通+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。",
+        "shortDesc": "「神の啓示」を獲得し、効果継続中、味方全体の全属性耐性貫通をアップする。",
+        "tag": "サポート"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "ここに{RUBY_B#す}住{RUBY_E#}んでるのは{RUBY_B#だれ}誰{RUBY_E#}でしょう！",
+        "fullDesc": "結界を展開し、敵全体にトリビーの最大HP<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。<br>結界が展開されている間、敵の受けるダメージ+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>。敵が味方の攻撃を受けた後、攻撃を受けた敵1体につき、その敵の中で残りHPが最も高い敵に、トリビーの最大HP<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>分の量子属性付加ダメージを1回与える。<br>結界は{{4}}ターン継続。自身のターンが回ってくるたびに結界の継続時間-1ターン。",
+        "shortDesc": "<orangeStrong>結界を展開し</orangeStrong>、敵全体に少量の量子属性ダメージを与える。結界が継続している間、敵の被ダメージがアップし、攻撃した<orangeStrong>敵の数</orangeStrong>に応じて、残りHPが最も高い敵に少量の量子属性<orangeStrong>付加ダメージを与える</orangeStrong>。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "どたばたトリビー",
+        "fullDesc": "自身以外の味方キャラが必殺技を発動した後、トリビーが追加攻撃を行い、敵全体にトリビーの最大HPの<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>分の量子属性ダメージを与える。この効果はトリビーを除いた味方キャラ1人につき1回のみ発動でき、トリビーが必殺技を発動するとこの回数がリセットされる。追加攻撃を行う前に、ターゲットがすでに倒された場合、新たに登場した敵に追加攻撃を発動する。",
+        "shortDesc": "自身以外の味方キャラが必殺技を発動した後、トリビーが<orangeStrong>追加攻撃</orangeStrong>を行い、<orangeStrong>敵全体</orangeStrong>に少量の量子属性ダメージを与える。この効果はトリビーを除いた味方1人につき1回のみ発動でき、トリビーが必殺技を発動するとこの回数がリセットされる。",
+        "tag": "全体攻撃"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "{RUBY_B#たの}楽{RUBY_E#}しいなら{RUBY_B#て}手{RUBY_E#}を{RUBY_B#たた}叩{RUBY_E#}こう",
+        "fullDesc": "秘技を使用した後、戦闘に入る時に「神の啓示」を獲得する。{{1}}ターン継続。",
+        "shortDesc": "戦闘に入る時、「神の啓示」を獲得する。",
+        "tag": "強化"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "攻撃",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#かべ}壁{RUBY_E#}の{RUBY_B#そと}外{RUBY_E#}の{RUBY_B#こひつじ}子羊{RUBY_E#}…",
+        "fullDesc": "天賦の追加攻撃を行った後、トリビーの与ダメージ+{{1, percent}}%。この効果は最大で{{2}}層累積できる、{{3}}ターン継続する。"
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#はね}羽{RUBY_E#}の{RUBY_B#は}生{RUBY_E#}えたガラス{RUBY_B#だま}玉{RUBY_E#}！",
+        "fullDesc": "結界が展開されている間、トリビーの最大HPが味方全体の最大HP合計値{{1, percent}}%分アップする。"
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#わ}分{RUBY_E#}かれ{RUBY_B#みち}道{RUBY_E#}の{RUBY_B#そば}傍{RUBY_E#}の{RUBY_B#こいし}小石{RUBY_E#}？",
+        "fullDesc": "戦闘開始時、トリビーがEPを{{1}}回復する。トリビー以外の味方が攻撃を行った後、命中した敵1体につき、トリビーがEPを{{2, fixed(fixed: 1)}}回復する。"
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "{RUBY_B#さとう}砂糖{RUBY_E#}を{RUBY_B#ひろ}拾{RUBY_E#}い{RUBY_B#あ}上{RUBY_E#}げる{RUBY_B#さいてん}祭典{RUBY_E#}",
+      "desc": "結界が展開されている間、味方が敵を攻撃した後、結界により付加ダメージを与えられた敵に、その回の攻撃の総ダメージ{{1, percent}}%分の確定ダメージを追加で与える。"
+    },
+    "2": {
+      "name": "{RUBY_B#すてき}素敵{RUBY_E#}な{RUBY_B#ゆめ}夢{RUBY_E#}への{RUBY_B#あんないにん}案内人{RUBY_E#}",
+      "desc": "結界による付加ダメージが本来のダメージの{{1, percent}}%分にアップする。結界による付加ダメージを与えた時、さらに{{2}}回付加ダメージを与える。"
+    },
+    "3": {
+      "name": "{RUBY_B#ゆうや}朝焼{RUBY_E#}けの{RUBY_B#たからもの}宝物{RUBY_E#}",
+      "desc": "必殺技のLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
+    },
+    "4": {
+      "name": "{RUBY_B#こころかよ}心通{RUBY_E#}い{RUBY_B#あ}合{RUBY_E#}う{RUBY_B#やす}安{RUBY_E#}らぎ",
+      "desc": "「神の啓示」が継続している間、味方全体がダメージを与える時、敵の防御力を{{1, percent}}%無視する。"
+    },
+    "5": {
+      "name": "{RUBY_B#きせき}奇跡{RUBY_E#}を{RUBY_B#お}起{RUBY_E#}こす{RUBY_B#とけい}時計{RUBY_E#}",
+      "desc": "戦闘スキルのLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
+    },
+    "6": {
+      "name": "{RUBY_B#ほし}星{RUBY_E#}が{RUBY_B#きら}煌{RUBY_E#}めく{RUBY_B#あした}明日{RUBY_E#}",
+      "desc": "トリビーが必殺技を発動した後、敵全体に天賦による追加攻撃を行う。天賦による追加攻撃ダメージ+{{1, percent}}%。"
+    }
+  }
+}

@@ -34,8 +34,8 @@
     "talent": {
       "0": {
         "name": "Don de Shuhu",
-        "fullDesc": "Chaque fois que Blade subit des DGT ou consomme ses PV, il gagne 1 cumul de Charge, jusqu'à un maximum de 5 cumuls. Blade ne peut gagner qu'1 cumul de Charge au maximum pour chaque attaque qu'il subit.<br>Lorsque le nombre de cumuls de Charge atteint son maximum, il lance immédiatement une attaque de suivi sur tous les ennemis, infligeant des DGT de vent équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ + <orangeStrong>{{4, percent}}%</orangeStrong> de ses PV max. Blade restaure également {{3, percent}}% de ses PV max. Toutes les Charges sont consommées après avoir déclenché l'attaque de suivi.",
-        "shortDesc": "Lorsque les PV de Blade diminuent, il gagne 1 cumul de Charge. Lorsque la Charge est au maximum, il lance une attaque de suivi, ce qui <orangeStrong>inflige des DGT de vent à tous les ennemis</orangeStrong>, restaure des PV et consomme toutes les Charges.",
+        "fullDesc": "Chaque fois que Blade subit des DGT ou consomme ses PV, il gagne 1 cumul de Charge, jusqu'à un maximum de 5 cumuls. Blade ne peut gagner qu'1 cumul de Charge au maximum pour chaque attaque qu'il subit.<br>Lorsque le nombre de cumuls de Charge atteint son maximum, il lance immédiatement une ATQ de suivi sur tous les ennemis, infligeant des DGT de vent équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ + <orangeStrong>{{4, percent}}%</orangeStrong> de ses PV max. Blade restaure également {{3, percent}}% de ses PV max. Toutes les Charges sont consommées après avoir déclenché l'ATQ de suivi.",
+        "shortDesc": "Lorsque les PV de Blade diminuent, il gagne 1 cumul de Charge. Lorsque la Charge est au maximum, il lance une ATQ de suivi, ce qui <orangeStrong>inflige des DGT de vent à tous les ennemis</orangeStrong>, restaure des PV et consomme toutes les Charges.",
         "tag": "ZdE"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ad vitam æternam",
-        "fullDesc": "Lorsque les PV actuels de Blade sont inférieurs ou égaux à 50 %, les soins reçus augmentent de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque les PV actuels de Blade sont inférieurs ou égaux à 50 %, les soins reçus augmentent de {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Morts sans fin",
-        "fullDesc": "Lorsque Blade touche un ennemi en état de Rupture de faiblesse avec Forêt de lames, il restaure {{1, percent}}% de ses PV max + {{2}}.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque Blade touche un ennemi en état de Rupture de faiblesse avec Forêt de lames, il restaure {{1, percent}}% de ses PV max + {{2}}."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Cyclone de destruction",
-        "fullDesc": "Augmente les DGT infligés par l'ATQ de suivi du talent de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les DGT infligés par l'ATQ de suivi du talent de {{1, percent}}%."
       }
     }
   },

@@ -1,0 +1,107 @@
+{
+  "name": "Aglaea",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Miel con espinas",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Aglaea como Daño de Rayo a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo.",
+        "tag": "ATQ individual"
+      },
+      "1": {
+        "name": "Mil besos afilados",
+        "fullDesc": "Aglaea y el Sastre lanzan un ataque combinado contra el objetivo e infligen respectivamente un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del ATQ de Aglaea y un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> del ATQ del Sastre como Daño de Rayo. Además, infligen un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Aglaea y un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ del Sastre como Daño de Rayo a los objetivos adyacentes.<br>Mil besos afilados no puede recuperar pts. de habilidad básica.",
+        "shortDesc": "Aglaea y el Sastre lanzan un <orangeStrong>ataque combinado</orangeStrong> contra el objetivo. Infligen Daño de Rayo a un enemigo y una pequeña cantidad de Daño de Rayo a los objetivos adyacentes.",
+        "tag": "Ráfaga"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Álzate, renombre sublime",
+        "fullDesc": "Regenera un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. del Sastre. Si el Sastre no está en el campo de batalla, invoca al mnemoduende Sastre y vuelve a actuar inmediatamente.",
+        "shortDesc": "Regenera los PV del Sastre. Cuando el Sastre no está en la batalla, <orangeStrong>invoca al mnemoduende</orangeStrong> Sastre y vuelve a actuar inmediatamente.",
+        "tag": "Invocación"
+      },
+      "1": {
+        "name": "Álzate, renombre sublime",
+        "shortDesc": "Regenera los PV del Sastre. Cuando el Sastre no está en la batalla, invoca al mnemoduende Sastre y vuelve a actuar inmediatamente.",
+        "tag": "Regeneración"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Bailemos, sastre del destino",
+        "fullDesc": "Invoca al mnemoduende Sastre. Si el Sastre ya está en el campo de batalla, sus PV se regeneran al máximo. Aglaea entra en el estado de Disposición suprema y vuelve a actuar inmediatamente.<br>En el estado de Disposición suprema, Aglaea obtiene las acumulaciones de aumento de VEL del talento del mnemoduende Sastre. Cada acumulación aumenta su VEL en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. El ataque básico se convierte en Mil besos afilados y no puede lanzar su habilidad básica. El Sastre es inmune a los estados negativos de Control.<br>En el orden de acción aparece una cuenta regresiva con una VEL fija de {{4}}. Mientras está la cuenta regresiva, lanzar de nuevo la habilidad definitiva restablece dicha cuenta, y cuando comienza su turno, el Sastre se autodestruye. Cuando el Sastre desaparece, se disipa el estado de Disposición suprema de Aglaea.",
+        "shortDesc": "<orangeStrong>Invoca al mnemoduende</orangeStrong> Sastre. Aglaea entra en el estado Disposición suprema y actúa inmediatamente. Además, obtiene un ATQ básico potenciado.",
+        "tag": "Potenciación"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dedos de rosa",
+        "fullDesc": "Inicialmente, el mnemoduende Sastre tiene una VEL equivalente al {{4, percent}}% de la VEL de Aglaea y unos PV máx. equivalentes al <orangeStrong>{{5, percent}}%</orangeStrong> de los PV máx. de Aglaea + <orangeStrong>{{6}}</orangeStrong>. Cuando Aglaea ataca mientras el Sastre está en la batalla, afecta con Hilván al objetivo. Tras atacar a un objetivo en el estado de Hilván, inflige adicionalmente un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Aglaea como Daño de Rayo adicional. Hilván solo afecta al último enemigo al que se le haya aplicado.",
+        "shortDesc": "Cuando Aglaea ataca mientras el Sastre está en la batalla, afecta con Hilván al objetivo. Tras atacar a un objetivo en el estado de Hilván, inflige una pequeña cantidad de Daño de Rayo adicional.",
+        "tag": "Potenciación"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Perforación meteórica",
+        "fullDesc": "Invoca al mnemoduende Sastre y ambos atacan a la vez hacia adelante. Tras entrar en combate, recupera {{2}} pts. de energía, inflige un {{1, percent}}% del ATQ de Aglaea como Daño de Rayo a todos los enemigos y afecta con Hilván a un enemigo al azar.",
+        "shortDesc": "<orangeStrong>Invoca al mnemoduende</orangeStrong> Sastre y ambos atacan a la vez hacia delante. Tras entrar en combate, recupera energía, inflige una pequeña cantidad de Daño de Rayo a todos los enemigos y afecta con Hilván a un enemigo al azar.",
+        "tag": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, reduce la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Perdición del miope",
+        "fullDesc": "Cuando está en el estado de Disposición suprema, el ATQ de Aglaea y del Sastre aumenta en un {{1, percent}}% de la VEL de Aglaea + {{2, percent}}% de la VEL del Sastre."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Último hilo del destino",
+        "fullDesc": "Cuando el Sastre desaparece, se conserva un máximo de {{1}} acumulación del efecto de aumento de VEL del talento del mnemoduende. Cuando se vuelve a invocar al Sastre, se obtienen las acumulaciones correspondientes del efecto de aumento de VEL."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sol fugaz",
+        "fullDesc": "Si su energía no alcanza el {{1, percent}}% al comenzar la batalla, recupera su energía hasta el {{2, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Deriva caprichosa de Venus",
+      "desc": "El daño que recibe el enemigo afectado con Hilván aumenta en un {{1, percent}}%. Cuando Aglaea o el Sastre atacan a ese objetivo, recuperan {{2}} pts. de energía adicionales."
+    },
+    "2": {
+      "name": "Párpados que navegan el destino",
+      "desc": "Cuando Aglaea o el Sastre actúan, el daño que infligen Aglaea y el Sastre ignora un {{1, percent}}% de la DEF del objetivo. Este efecto se puede acumular hasta {{2}} veces y dura hasta que cualquier unidad que no sea el Sastre o Aglaea lance una habilidad de forma proactiva."
+    },
+    "3": {
+      "name": "Don del rocío bello",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10). Niv. de talento del mnemoduende +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Destello bajo el mármol",
+      "desc": "El límite de acumulaciones del efecto de aumento de VEL del talento del mnemoduende aumenta en {{1}}. Después de que Aglaea lance un ataque, el Sastre también obtiene el aumento de VEL del talento del mnemoduende."
+    },
+    "5": {
+      "name": "Tejedora del infortunio",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15). Niv. de habilidad del mnemoduende +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "Fluctuación en el tapiz del destino",
+      "desc": "Cuando Aglaea está en el estado de Disposición suprema, su PEN de la RES a Rayo y la del Sastre aumentan en un {{1, percent}}%. Cuando la VEL de Aglaea o el Sastre es superior a 160/240/320 pts., su daño de ataque combinado aumenta en un {{2, percent}}%/{{3, percent}}%/{{4, percent}}% respectivamente."
+    }
+  }
+}

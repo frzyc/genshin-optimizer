@@ -1,0 +1,7 @@
+{
+  "setName": "Perdition dans l'Érudition",
+  "setEffects": {
+    "2": "Augmente les chances de coup critique de {{1, percent}}%.",
+    "4": "Augmente les DGT infligés par l'ultime et la compétence de {{1, percent}}%. Après avoir utilisé l'ultime, augmente en plus les DGT infligés par la prochaine compétence de {{2, percent}}%."
+  }
+}

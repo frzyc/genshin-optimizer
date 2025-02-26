@@ -743,6 +743,175 @@
       ]
     }
   ],
+  "121": [
+    {
+      "SetID": 121,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1212",
+      "PropertyList": [
+        {
+          "PropertyName": "SpeedAddedRatio",
+          "Value": {
+            "Value": 0.06
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.06
+        }
+      ]
+    },
+    {
+      "SetID": 121,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1214",
+      "PropertyList": [],
+      "AbilityName": "Ability51211",
+      "AbilityParamList": [
+        {
+          "Value": 0.18
+        },
+        {
+          "Value": 2
+        },
+        {
+          "Value": 2
+        }
+      ]
+    }
+  ],
+  "122": [
+    {
+      "SetID": 122,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1222",
+      "PropertyList": [
+        {
+          "PropertyName": "CriticalChanceBase",
+          "Value": {
+            "Value": 0.08
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.08
+        }
+      ]
+    },
+    {
+      "SetID": 122,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1224",
+      "PropertyList": [],
+      "AbilityName": "Ability51221",
+      "AbilityParamList": [
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.25
+        }
+      ]
+    }
+  ],
+  "123": [
+    {
+      "SetID": 123,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1232",
+      "PropertyList": [
+        {
+          "PropertyName": "AttackAddedRatio",
+          "Value": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        }
+      ]
+    },
+    {
+      "SetID": 123,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1234",
+      "PropertyList": [],
+      "AbilityName": "Ability51231",
+      "AbilityParamList": [
+        {
+          "Value": 0.06
+        },
+        {
+          "Value": 0.3
+        },
+        {
+          "Value": 2
+        }
+      ]
+    }
+  ],
+  "124": [
+    {
+      "SetID": 124,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_1242",
+      "PropertyList": [
+        {
+          "PropertyName": "QuantumAddedRatio",
+          "Value": {
+            "Value": 0.1
+          }
+        }
+      ],
+      "AbilityName": "",
+      "AbilityParamList": [
+        {
+          "Value": 0.1
+        }
+      ]
+    },
+    {
+      "SetID": 124,
+      "RequireNum": 4,
+      "SkillDesc": "RelicDesc_1244",
+      "PropertyList": [
+        {
+          "PropertyName": "SpeedAddedRatio",
+          "Value": {
+            "Value": -0.08
+          }
+        }
+      ],
+      "AbilityName": "Ability51241",
+      "AbilityParamList": [
+        {
+          "Value": -0.08
+        },
+        {
+          "Value": 110
+        },
+        {
+          "Value": 95
+        },
+        {
+          "Value": 0.2
+        },
+        {
+          "Value": 0.32
+        },
+        {
+          "Value": 0.08
+        }
+      ]
+    }
+  ],
   "301": [
     {
       "SetID": 301,
@@ -1164,6 +1333,114 @@
         },
         {
           "Value": 1
+        }
+      ]
+    }
+  ],
+  "317": [
+    {
+      "SetID": 317,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3172",
+      "PropertyList": [
+        {
+          "PropertyName": "SPRatioBase",
+          "Value": {
+            "Value": 0.05
+          }
+        }
+      ],
+      "AbilityName": "Ability53171",
+      "AbilityParamList": [
+        {
+          "Value": 0.05
+        },
+        {
+          "Value": 0.12
+        }
+      ]
+    }
+  ],
+  "318": [
+    {
+      "SetID": 318,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3182",
+      "PropertyList": [
+        {
+          "PropertyName": "CriticalDamageBase",
+          "Value": {
+            "Value": 0.16
+          }
+        }
+      ],
+      "AbilityName": "Ability53181",
+      "AbilityParamList": [
+        {
+          "Value": 0.16
+        },
+        {
+          "Value": 0.32
+        }
+      ]
+    }
+  ],
+  "319": [
+    {
+      "SetID": 319,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3192",
+      "PropertyList": [
+        {
+          "PropertyName": "HPAddedRatio",
+          "Value": {
+            "Value": 0.12
+          }
+        }
+      ],
+      "AbilityName": "Ability53191",
+      "AbilityParamList": [
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 5000
+        },
+        {
+          "Value": 0.28
+        }
+      ]
+    }
+  ],
+  "320": [
+    {
+      "SetID": 320,
+      "RequireNum": 2,
+      "SkillDesc": "RelicDesc_3202",
+      "PropertyList": [
+        {
+          "PropertyName": "SpeedAddedRatio",
+          "Value": {
+            "Value": 0.06
+          }
+        }
+      ],
+      "AbilityName": "Ability53201",
+      "AbilityParamList": [
+        {
+          "Value": 0.06
+        },
+        {
+          "Value": 135
+        },
+        {
+          "Value": 180
+        },
+        {
+          "Value": 0.12
+        },
+        {
+          "Value": 0.2
         }
       ]
     }

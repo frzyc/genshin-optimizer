@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Viszerale Unruhe",
-        "fullDesc": "Nachdem mit der Fertigkeit ein Gegner angegriffen wurde, der sich im Status Windscherung, Bluten, Brennen oder Schock befindet, besteht für jeden dieser Debuffs eine Grundchance von {{1, percent}}%, ihn zusätzlich mit 1 Stapelung Arkana zu belegen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Nachdem mit der Fertigkeit ein Gegner angegriffen wurde, der sich im Status Windscherung, Bluten, Brennen oder Schock befindet, besteht für jeden dieser Debuffs eine Grundchance von {{1, percent}}%, ihn zusätzlich mit 1 Stapelung Arkana zu belegen."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Des Kelches Bodensatz",
-        "fullDesc": "Wenn ein Gegner den Kampf betritt, besteht eine Grundchance von {{1, percent}}%, ihn mit 1 Stapelung Arkana zu belegen.<br>Jedes Mal, wenn ein Gegner durch einen Einzelangriff eines Verbündeten DoT erleidet, besteht eine Grundchance von {{1, percent}}%, dass er mit 1 Stapelung Arkana belegt wird. Jeder Einzelangriff kann bis zu {{2}} Stapelungen verursachen.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Wenn ein Gegner den Kampf betritt, besteht eine Grundchance von {{1, percent}}%, ihn mit 1 Stapelung Arkana zu belegen.<br>Jedes Mal, wenn ein Gegner durch einen Einzelangriff eines Verbündeten DoT erleidet, besteht eine Grundchance von {{1, percent}}%, dass er mit 1 Stapelung Arkana belegt wird. Jeder Einzelangriff kann bis zu {{2}} Stapelungen verursachen."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Omen im Kerzenlicht",
-        "fullDesc": "Erhöht den von dieser Einheit zugefügten SCH um {{1, percent}}% ihrer Effekt-Trefferrate. Der SCH kann durch diesen Effekt um bis zu max. {{2, percent}}% erhöht werden.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den von dieser Einheit zugefügten SCH um {{1, percent}}% ihrer Effekt-Trefferrate. Der SCH kann durch diesen Effekt um bis zu max. {{2, percent}}% erhöht werden."
       }
     }
   },

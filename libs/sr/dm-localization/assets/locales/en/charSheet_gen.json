@@ -6,7 +6,7 @@
     "atk_": "ATK Boost",
     "def_": "DEF Boost",
     "crit_": "CRIT Rate Boost",
-    "crit_dmg_": "CRIT Rate, CRIT DMG Boost",
+    "crit_dmg_": "CRIT DMG Boost",
     "eff_res_": "Effect RES Boost",
     "spd": "SPD Boost",
     "physical_dmg_": "DMG Boost: Physical",

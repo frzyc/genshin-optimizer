@@ -1,0 +1,7 @@
+{
+  "name": "如果时间是一朵花",
+  "passive": {
+    "name": "希冀",
+    "description": "使装备者的暴击伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>。装备者施放追加攻击后额外恢复{{2}}点能量，并获得【谕示】，持续{{3}}回合。当装备者持有【谕示】时，我方全体目标的暴击伤害提高<orangeStrong>{{4, percent}}%</orangeStrong>。进入战斗时，装备者恢复{{5}}点能量，并获得【谕示】，持续{{6}}回合。"
+  }
+}

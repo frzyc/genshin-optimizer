@@ -1,0 +1,7 @@
+{
+  "name": "Cálculo Ininterrupto",
+  "passive": {
+    "name": "Pensamento Irrefreável",
+    "description": "Aumenta o ATQ do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após utilizar um ataque, para cada inimigo-alvo atingido, adicionalmente aumenta o ATQ em <orangeStrong>{{2, percent}}%</orangeStrong>. Este efeito pode acumular até 5 vezes e dura até o próximo ataque. Se houver {{3}} ou mais inimigos-alvo atingidos, a VEL desta unidade aumenta em <orangeStrong>{{4, percent}}%</orangeStrong>, durando por {{5}} rodada(s)."
+  }
+}

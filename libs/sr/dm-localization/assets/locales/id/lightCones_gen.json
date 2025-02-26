@@ -1,5 +1,5 @@
 {
-  "lightCone_one": "Light Cone Karakter",
+  "lightCone_one": "Light Cone",
   "lightCone_other": "Light Cone",
   "superimposition": "Superimpose",
   "path": {
@@ -9,6 +9,7 @@
     "Nihility": "Nihility",
     "Destruction": "Destruction",
     "Harmony": "Harmony",
-    "TheHunt": "Hunt"
+    "TheHunt": "Hunt",
+    "Remembrance": "\"Remembrance\""
   }
 }

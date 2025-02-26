@@ -1,0 +1,7 @@
+{
+  "setName": "Scholar Lost in Erudition",
+  "setEffects": {
+    "2": "Increases CRIT Rate by {{1, percent}}%.",
+    "4": "Increases DMG dealt by Skill and Ultimate by {{1, percent}}%. After using Ultimate, additionally increases the DMG dealt by the next Skill by {{2, percent}}%."
+  }
+}

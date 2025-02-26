@@ -1,0 +1,7 @@
+{
+  "setName": "Lại Một Hành Trình Gian Khổ Của Linh Mục",
+  "setEffects": {
+    "2": "Tốc Độ tăng {{1, percent}}%.",
+    "4": "Khi thi triển Chiến Kỹ hoặc Tuyệt Kỹ lên 1 mục tiêu phe ta, sẽ khiến Sát Thương Bạo Kích của mục tiêu kỹ năng tăng {{1, percent}}%, duy trì {{2}} hiệp, hiệu ứng này tối đa cộng dồn {{3}} lần."
+  }
+}

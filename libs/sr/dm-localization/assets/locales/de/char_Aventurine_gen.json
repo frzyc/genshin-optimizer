@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hebelwirkung",
-        "fullDesc": "Wenn Aventurins VTD höher als {{3}} ist, steigt seine KRIT-Rate für jede 100 Pkt. VTD über diesem Wert um {{1, percent}}%, bis max. {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Wenn Aventurins VTD höher als {{3}} ist, steigt seine KRIT-Rate für jede 100 Pkt. VTD über diesem Wert um {{1, percent}}%, bis max. {{2, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Heiße Hand",
-        "fullDesc": "Gewährt allen Verbündeten zu Beginn des Kampfes für {{1}} Rd. den Schild „Verstärkter Einsatz“. Die Schildmenge entspricht {{2, percent}}% der durch die Fertigkeit gewährten Schildmenge.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Gewährt allen Verbündeten zu Beginn des Kampfes für {{1}} Rd. den Schild „Verstärkter Einsatz“. Die Schildmenge entspricht {{2, percent}}% der durch die Fertigkeit gewährten Schildmenge."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
-        "fullDesc": "Aventurin sammelt 1 Pkt. „Blinde Wette“, nachdem sein Teammitglied mit „Verstärkter Einsatz“ einen Folgeangriff gestartet hat. Dieser Effekt kann bis zu {{3}}-mal ausgelöst werden. Zu Beginn von Aventurins Runde wird seine Auslösungsanzahl zurückgesetzt. Nachdem Aventurin einen Folgeangriff seines Talents gestartet hat, erhalten alle Verbündeten Verstärkter Einsatz, der SCH in Höhe von {{1, percent}}% von Aventurins VTD plus {{2}} absorbiert. Der Verbündete mit der momentan geringsten Schildmenge erhält für 3 Rd. zusätzlich Verstärkter Einsatz, der SCH in Höhe von {{4, percent}}% von Aventurins VTD plus {{5}} absorbiert.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aventurin sammelt 1 Pkt. „Blinde Wette“, nachdem sein Teammitglied mit „Verstärkter Einsatz“ einen Folgeangriff gestartet hat. Dieser Effekt kann bis zu {{3}}-mal ausgelöst werden. Zu Beginn von Aventurins Runde wird seine Auslösungsanzahl zurückgesetzt. Nachdem Aventurin einen Folgeangriff seines Talents gestartet hat, erhalten alle Verbündeten Verstärkter Einsatz, der SCH in Höhe von {{1, percent}}% von Aventurins VTD plus {{2}} absorbiert. Der Verbündete mit der momentan geringsten Schildmenge erhält für 3 Rd. zusätzlich Verstärkter Einsatz, der SCH in Höhe von {{4, percent}}% von Aventurins VTD plus {{5}} absorbiert."
       }
     }
   },

@@ -1,0 +1,96 @@
+{
+  "name": "Sonntag",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Funkelnde Ermahnung",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sonntags ANG zu.",
+        "shortDesc": "Fügt einem anvisierten Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Segen aus Papier und Ritualen",
+        "fullDesc": "Lässt einen anvisierten Verbündeten und sein beschworenes Objekt sofort eine Aktion ausführen und erhöht ihren verursachten SCH um <orangeStrong>{{2, percent}}%</orangeStrong>. Wenn das Ziel ein beschworenes Objekt besitzt, wird diese SCH-Erhöhung zusätzlich für {{3}} Rd. um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht. <br>Stellt nach der Anwendung der Fertigkeit auf die „Geheiligten“ 1 Fertigkeitspunkt wieder her.<br>Wenn Sonntag diese Fähigkeit auf Figuren anwendet, die dem Pfad der Harmonie folgen, kann der Effekt des sofortigen Aktionsvorzugs nicht ausgelöst werden.",
+        "shortDesc": "Lässt <orangeStrong>einen anvisierten Verbündeten und sein beschworenes Objekt sofort eine Aktion ausführen</orangeStrong> und erhöht ihren verursachten SCH. Wenn das Ziel ein beschworenes Objekt besitzt, wird diese SCH-Erhöhung zusätzlich erhöht.<br>Stellt nach der Anwendung der Fertigkeit gegen den „Geheiligten“ 1 Fertigkeitspunkt wieder her.<br>Wenn Sonntag diese Fähigkeit auf Figuren anwendet, die dem Pfad der Harmonie folgen, kann der Effekt des sofortigen Aktionsvorzugs nicht ausgelöst werden.",
+        "tag": "Unterstützung"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Gelobt sei die Sanftheit und die Narbe",
+        "fullDesc": "Stellt bei einem anvisierten Verbündeten Energie in Höhe von {{1, percent(fixed: 1)}}% der max. Energie wieder her und lässt ihn sowie sein beschworenes Objekt zu „Geheiligten“ werden. Der KRIT-SCH der Geheiligten wird um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Sonntags KRIT-SCH plus <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> erhöht.<br>Zu Beginn von Sonntags Runde wird die Dauer der Geheiligten jeweils um 1 verringert. Dieser Effekt hält insgesamt {{3}} Rd. an und wirkt nur beim letzten Ziel des Ultimates (Sonntag ausgeschlossen). Wenn Sonntag handlungsunfähig wird, wird der Effekt „Geheiligter“ aufgehoben.",
+        "shortDesc": "<orangeStrong>Stellt</orangeStrong> bei einem anvisierten Verbündeten <orangeStrong>Energie wieder her</orangeStrong> und lässt ihn sowie sein beschworenes Objekt zu „Geheiligten“ werden. Erhöht den KRIT-SCH von den Geheiligten.",
+        "tag": "Unterstützung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Körper des Beichters",
+        "fullDesc": "Erhöht beim Einsatz der Fertigkeit die KRIT-Rate des Ziels für {{2}} Rd. um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.",
+        "shortDesc": "Erhöht beim Einsatz der Fertigkeit die KRIT-Rate des Ziels.",
+        "tag": "Unterstützung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Die glorreichen Geheimnisse",
+        "fullDesc": "Wenn Sonntag nach dem Einsatz der Technik im nächsten Kampf zum ersten Mal auf einen Verbündeten eine Fähigkeit anwendet, wird der verursachte SCH des Ziels für {{2}} Rd. um {{1, percent}}% erhöht.",
+        "shortDesc": "Wenn Sonntag nach dem Einsatz der Technik im nächsten Kampf zum ersten Mal auf einen Verbündeten eine Fähigkeit anwendet, wird der verursachte SCH des Ziels erhöht.",
+        "tag": "Unterstützung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sehnsucht des Ruhetags",
+        "fullDesc": "Wenn der Ultimate weniger als {{1}} Pkt. Energie für das Ziel wiederherstellt, wird die wiederhergestellte Energie auf {{1}} Pkt. erhöht."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Erhabener Staubwedel",
+        "fullDesc": "Zu Beginn des Kampfes stellt Sonntag {{1}} Pkt. Energie wieder her."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Hafen in der Handfläche",
+        "fullDesc": "Entfernt beim Einsatz der Fertigkeit {{1}} Debuff vom Ziel."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ende der Jahrtausendstille",
+      "desc": "Wenn Sonntag seine Fertigkeit einsetzt, kann das Ziel beim Verursachen von SCH {{2, percent}}% der VTD der Gegner ignorieren und beschworenes Objekt {{3, percent}}% der VTD der Gegner ignorieren. Dieser Effekt hält {{1}} Rd. an."
+    },
+    "2": {
+      "name": "Glaube ersetzt Unvollkommenheit",
+      "desc": "Stellt nach dem ersten Einsatz des Ultimates {{2}} Fertigkeitspunkte wieder her. Erhöht den verursachten SCH von „Geheiligten“ um {{1, percent}}%."
+    },
+    "3": {
+      "name": "Dornige Einsiedelei",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "4": {
+      "name": "Präambel der Skulptur",
+      "desc": "Stellt zu Beginn der Runde {{1}} Pkt. Energie wieder her."
+    },
+    "5": {
+      "name": "Papierfloß in der silbernen Bucht",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "6": {
+      "name": "Beginn der astralen Kakophonie",
+      "desc": "Der Effekt der KRIT-Rate-Erhöhung des Talents wird bis zu {{1}}-fach stapelbar und die Dauer des Talents wird um {{3}} Rd. verlängert. Wenn Sonntag seinen Ultimate einsetzt, verleiht er dem Ziel auch die KRIT-Rate-Erhöhung des Talents. Wenn diese wirksam wird und die KRIT-Rate des Ziels 100 % überschreitet, wird der KRIT-SCH für je 1 % überschüssiger KRIT-Rate um {{2, percent}}% erhöht."
+    }
+  }
+}

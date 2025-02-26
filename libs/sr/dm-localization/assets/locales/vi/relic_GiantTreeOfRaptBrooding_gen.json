@@ -1,0 +1,6 @@
+{
+  "setName": "Đại Thụ Trầm Tư",
+  "setEffects": {
+    "2": "Khiến Tốc Độ của người trang bị tăng {{1, percent}}%. Khi Tốc Độ của người trang bị từ {{2}}/{{3}} trở lên, thì Lượng Trị Liệu của người trang bị và Linh Hồn Ký Ức của người đó sẽ tăng {{4, percent}}%/{{5, percent}}%."
+  }
+}

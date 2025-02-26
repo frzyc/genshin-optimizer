@@ -18,7 +18,11 @@
   "PioneerDiverOfDeadWaters": "Exploratrice des abîmes",
   "WatchmakerMasterOfDreamMachinations": "Horloger, maître des machinations oniriques",
   "IronCavalryAgainstTheScourge": "Brigade de fer à l'assaut du fléau",
-  "TheWindSouringValorous": "Vaillance du guerrier du vent",
+  "TheWindSoaringValorous": "Vaillance du guerrier du vent",
+  "SacerdosRelivedOrdeal": "Supplice du prêtre",
+  "ScholarLostInErudition": "Perdition dans l'Érudition",
+  "HeroOfTriumphantSong": "Héros de la chanson triomphale",
+  "PoetOfMourningCollapse": "Poétesse du déclin funèbre",
   "SpaceSealingStation": "Station de scellement spatial",
   "FleetOfTheAgeless": "Flotte de l'éternel",
   "PanCosmicCommercialEnterprise": "Entreprise commerciale intersidérale",
@@ -34,5 +38,9 @@
   "SigoniaTheUnclaimedDesolation": "Sigonia, terre vierge désolée",
   "IzumoGenseiAndTakamaDivineRealm": "Vie présente d'Izumo et royaume divin de Takama",
   "DuranDynastyOfRunningWolves": "Duran, dynastie des loups",
-  "ForgeOfTheKalpagniLantern": "Forge de la lanterne Kalpagni"
+  "ForgeOfTheKalpagniLantern": "Forge de la lanterne Kalpagni",
+  "LushakaTheSunkenSeas": "Lushaka, les mers englouties",
+  "TheWondrousBananAmusementPark": "Parc de bananattractions",
+  "BoneCollectionsSereneDemesne": "Tranquille demeure des os",
+  "GiantTreeOfRaptBrooding": "Arbre géant des réflexions profondes"
 }

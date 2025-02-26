@@ -12,8 +12,8 @@
     "skill": {
       "0": {
         "name": "Difficulty Paying?",
-        "fullDesc": "Inflicts a single target enemy with a Proof of Debt status, increasing the follow-up attack DMG it receives by <orangeStrong>{{2, percent}}%</orangeStrong>. Proof of Debt only takes effect on the most recent target it is applied to. If there are no enemies inflicted with Proof of Debt on the field when an ally's turn starts or when an ally takes action, Topaz will inflict a random enemy with Proof of Debt.<br>Numby deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Topaz's ATK to this target. Using this Skill to deal DMG is considered as launching a follow-up attack.",
-        "shortDesc": "Inflicts a single enemy with a Proof of Debt status and causes it to <orangeStrong>receive increased follow-up attack DMG</orangeStrong>. Numby deals Fire DMG to the target.",
+        "fullDesc": "Inflicts a single target enemy with a Proof of Debt status, increasing the Follow-up ATK DMG it receives by <orangeStrong>{{2, percent}}%</orangeStrong>. Proof of Debt only takes effect on the most recent target it is applied to. If there are no enemies inflicted with Proof of Debt on the field when an ally's turn starts or when an ally takes action, Topaz will inflict a random enemy with Proof of Debt.<br>Numby deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Topaz's ATK to this target. Using this Skill to deal DMG is considered as launching a Follow-up ATK.",
+        "shortDesc": "Inflicts one enemy with a \"Proof of Debt\" state and causes it to <orangeStrong>receive increased Follow-up ATK DMG</orangeStrong>. Numby deals Fire DMG to the target.",
         "tag": "Single Target"
       }
     },
@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Trotter Market!?",
-        "fullDesc": "Summons Numby at the start of battle. Numby has {{1}} SPD by default. When taking action, Numby launches follow-up attacks on a single enemy target afflicted with Proof of Debt, dealing Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Topaz's ATK.<br>When enemies afflicted with Proof of Debt receive an ally's follow-up attacks, Numby's action is Advanced Forward by {{3, percent}}%. The action Advance Forward effect cannot be triggered during Numby's own turn.<br>When Topaz is downed, Numby disappears.",
+        "fullDesc": "Summons Numby at the start of battle. Numby has {{1}} SPD by default. When taking action, Numby launches Follow-up ATKs on a single enemy target afflicted with Proof of Debt, dealing Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Topaz's ATK.<br>When enemies afflicted with Proof of Debt receive an ally's Follow-up ATKs, Numby's action is Advanced Forward by {{3, percent}}%. The action Advance Forward effect cannot be triggered during Numby's own turn.<br>When Topaz is downed, Numby disappears.",
         "shortDesc": "At the start of the battle, <orangeStrong>summons Numby</orangeStrong>. When Numby takes action, it <orangeStrong>launches Follow-up ATK on a target afflicted with \"Proof of Debt\"</orangeStrong>, dealing Fire DMG.<br>When an enemy afflicted with \"Proof of Debt\" receives Follow-up ATK, Numby's <orangeStrong>action advances</orangeStrong>.",
         "tag": "Single Target"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Overdraft",
-        "fullDesc": "When Topaz uses Basic ATK to deal DMG, it is considered as a Follow-up ATK.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Topaz uses Basic ATK to deal DMG, it is considered as a Follow-up ATK."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Financial Turmoil",
-        "fullDesc": "Increases Topaz & Numby's DMG dealt to enemy targets with Fire Weakness by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases Topaz & Numby's DMG dealt to enemy targets with Fire Weakness by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stonks Market",
-        "fullDesc": "After Numby uses an attack while in the Windfall Bonanza! state, Topaz additionally regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After Numby uses an attack while in the Windfall Bonanza! state, Topaz additionally regenerates {{1}} Energy."
       }
     }
   },

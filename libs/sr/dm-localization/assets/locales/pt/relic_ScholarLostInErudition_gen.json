@@ -1,0 +1,7 @@
+{
+  "setName": "Uma Erudita Perdida na Erudição",
+  "setEffects": {
+    "2": "Aumenta a Chance de CRIT em {{1, percent}}%.",
+    "4": "Aumenta o Dano causado pela Perícia e pela Perícia Suprema em {{1, percent}}%. Após usar a Perícia Suprema, aumenta adicionalmente o Dano causado pela próxima Perícia em {{2, percent}}%."
+  }
+}

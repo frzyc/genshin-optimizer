@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Étincelles",
-        "fullDesc": "L'ATQ normale d'Asta a {{1, percent}}% de chances de base de brûler une cible ennemie pendant {{2}} tours.<br>Les ennemis brûlés subissent des dégâts de feu sur la durée équivalents à {{3, percent}}% des DGT infligés par l'ATQ normale d'Asta au début de chaque tour.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "L'ATQ normale d'Asta a {{1, percent}}% de chances de base de brûler une cible ennemie pendant {{2}} tours.<br>Les ennemis brûlés subissent des dégâts de feu sur la durée équivalents à {{3, percent}}% des DGT infligés par l'ATQ normale d'Asta au début de chaque tour."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Mettre le feu aux poudres",
-        "fullDesc": "Lorsque Asta est sur le champ de bataille, les DGT de feu de tous les alliés augmentent de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque Asta est sur le champ de bataille, les DGT de feu de tous les alliés augmentent de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constellation",
-        "fullDesc": "La DÉF d'Asta augmente de {{1, percent}}% pour chaque cumul de Chargement.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La DÉF d'Asta augmente de {{1, percent}}% pour chaque cumul de Chargement."
       }
     }
   },

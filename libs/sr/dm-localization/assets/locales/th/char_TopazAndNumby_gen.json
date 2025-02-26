@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Overdraft",
-        "fullDesc": "เมื่อ Topaz ปล่อยการโจมตีปกติเพื่อสร้าง DMG จะถือว่าเป็นการ โจมตีต่อเนื่อง",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "เมื่อ Topaz ปล่อยการโจมตีปกติเพื่อสร้าง DMG จะถือว่าเป็นการ โจมตีต่อเนื่อง"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Financial Turmoil",
-        "fullDesc": "Topaz และ Numby สร้าง DMG แก่ศัตรูเป้าหมายที่มีจุดอ่อนไฟเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Topaz และ Numby สร้าง DMG แก่ศัตรูเป้าหมายที่มีจุดอ่อนไฟเพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stonks Market",
-        "fullDesc": "หลังจาก Numby ที่ติดสถานะ \"Windfall Bonanza!\" ทำการโจมตี Topaz จะฟื้นฟูพลังงานเพิ่มเติม {{1}} หน่วย",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "หลังจาก Numby ที่ติดสถานะ \"Windfall Bonanza!\" ทำการโจมตี Topaz จะฟื้นฟูพลังงานเพิ่มเติม {{1}} หน่วย"
       }
     }
   },

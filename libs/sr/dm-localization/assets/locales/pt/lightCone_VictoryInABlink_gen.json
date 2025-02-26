@@ -1,0 +1,7 @@
+{
+  "name": "Vitória em Um Piscar de Olhos",
+  "passive": {
+    "name": "Golpe Final",
+    "description": "Aumenta o Dano CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Quando o Memoespírito do usuário utiliza uma habilidade em qualquer aliado-alvo, aumenta o Dano causado por todos os aliados-alvo em <orangeStrong>{{2, percent}}%</orangeStrong>, durando por {{3}} rodada(s)."
+  }
+}

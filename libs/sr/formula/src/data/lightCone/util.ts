@@ -51,14 +51,19 @@ export function entriesForLightCone(
     }),
     // Passive stats
     ...Object.entries(dataGen.superimpose.passiveStats).map(
-      ([statKey, values]) =>
-        getStatFromStatKey(ownBuff.premod, statKey).add(
+      ([statKey, values]) => {
+        const stat =
+          statKey === 'baseSpd'
+            ? ownBuff.base.spd
+            : getStatFromStatKey(ownBuff.premod, statKey)
+        return stat.add(
           cmpGE(
             lcCount,
             1,
             cmpEq(dataGen.path, own.char.path, subscript(superimpose, values))
           )
         )
+      }
     ),
   ]
 }

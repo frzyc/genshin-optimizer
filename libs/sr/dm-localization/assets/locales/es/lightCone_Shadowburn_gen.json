@@ -1,0 +1,7 @@
+{
+  "name": "Imágenes quemadas",
+  "passive": {
+    "name": "Embellecimiento",
+    "description": "La primera vez que el portador invoca a un mnemoduende, recupera {{1}} pt. de habilidad básica y <orangeStrong>{{2}}</orangeStrong> pts. de energía."
+  }
+}

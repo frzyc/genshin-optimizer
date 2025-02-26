@@ -26,25 +26,21 @@
       },
       "1": {
         "name": "Pluviespada",
-        "fullDesc": "",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, se inflige una pequeña cantidad de Daño de Rayo a todos los enemigos 1 vez, y por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta.",
         "tag": "ATQ AdE"
       },
       "2": {
         "name": "Pluviespada",
-        "fullDesc": "",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, se inflige una pequeña cantidad de Daño de Rayo a todos los enemigos 1 vez, y por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta.",
         "tag": "ATQ AdE"
       },
       "3": {
         "name": "Pluviespada",
-        "fullDesc": "",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, se inflige una pequeña cantidad de Daño de Rayo a todos los enemigos 1 vez, y por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta.",
         "tag": "ATQ AdE"
       },
       "4": {
         "name": "Resurgimiento estigio",
-        "fullDesc": "",
         "shortDesc": "Inflige Daño de Rayo a todos los enemigos y elimina todas las acumulaciones de Rojo sacrificial.",
         "tag": "ATQ AdE"
       }
@@ -69,32 +65,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Oni rojo",
-        "fullDesc": "Al comienzo de la batalla, obtiene inmediatamente {{1}} pts. de Sueños rotos y aplica {{1}} acumulaciones de Rojo sacrificial a un enemigo al azar. Cuando Sueños rotos llega al máximo, por cada punto excedente de Sueños rotos obtiene 1 acumulación de Influjo tetravalente. Hace que Influjo tetravalente se pueda acumular hasta {{2}} veces.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al comienzo de la batalla, obtiene inmediatamente {{1}} pts. de Sueños rotos y aplica {{1}} acumulaciones de Rojo sacrificial a un enemigo al azar. Cuando Sueños rotos llega al máximo, por cada punto excedente de Sueños rotos obtiene 1 acumulación de Influjo tetravalente. Hace que Influjo tetravalente se pueda acumular hasta {{2}} veces."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "El abismo",
-        "fullDesc": "Cuando en el equipo hay 1 o 2 personajes de la Vía de la Nihilidad (sin contar a Acheron), el daño que infligen el ATQ básico, la habilidad básica y la habilidad definitiva de Acheron aumenta en un {{1, percent}}% o un {{2, percent}}% del daño original.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando en el equipo hay 1 o 2 personajes de la Vía de la Nihilidad (sin contar a Acheron), el daño que infligen el ATQ básico, la habilidad básica y la habilidad definitiva de Acheron aumenta en un {{1, percent}}% o un {{2, percent}}% del daño original."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Núcleo relampagueante",
-        "fullDesc": "Cuando Pluviespada de la habilidad definitiva golpea a un objetivo enemigo con Rojo sacrificial, el daño de Acheron aumenta en un {{1, percent}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos. Además, inflige daño {{4}} veces más cuando se activa Resurgimiento estigio. Cada vez inflige un Daño de Rayo equivalente al {{5, percent}}% del ATQ de Acheron a un objetivo enemigo y se considera daño de habilidad definitiva.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando Pluviespada de la habilidad definitiva golpea a un objetivo enemigo con Rojo sacrificial, el daño de Acheron aumenta en un {{1, percent}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos. Además, inflige daño {{4}} veces más cuando se activa Resurgimiento estigio. Cada vez inflige un Daño de Rayo equivalente al {{5, percent}}% del ATQ de Acheron a un objetivo enemigo y se considera daño de habilidad definitiva."
       }
     }
   },

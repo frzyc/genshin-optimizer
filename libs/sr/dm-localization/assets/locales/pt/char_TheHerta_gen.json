@@ -1,0 +1,102 @@
+{
+  "name": "A Herta",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Você Compreendeu?",
+        "fullDesc": "Causa Dano de Gelo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de A Herta a um inimigo designado.",
+        "shortDesc": "Causa Dano de Gelo leve a um inimigo-alvo designado.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Sabida e Metida",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de A Herta a um inimigo designado e inflige {{2}} acúmulo(s) de \"Interpretação\". Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de A Herta aos alvos atingidos por esta instância da Perícia e aos seus respectivos alvos adjacentes. Este efeito pode ser repetido 2 vezes.",
+        "shortDesc": "Causa Dano a um inimigo designado. Causa Dano a alvos atingidos por esta instância da Perícia e aos seus alvos adjacentes, repetindo 2 vezes.",
+        "tag": "Explosão"
+      },
+      "1": {
+        "name": "Presta Atenção",
+        "fullDesc": "Consome 1 acúmulo de \"Inspiração\". Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de A Herta a um inimigo designado e inflige {{2}} acúmulo(s) de \"Interpretação\". Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de A Herta aos alvos atingidos por essa instância da Perícia e aos seus respectivos alvos adjacentes, repetindo 2 vezes. No final, causa Dano de Gelo igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de A Herta a todos os inimigos.",
+        "shortDesc": "Causa Dano a um inimigo designado. Causa Dano aos alvos atingidos por esta instância da Perícia e aos seus respectivos alvos adjacentes, repetindo 2 vezes. Após isso, causa Dano a todos os inimigos.",
+        "tag": "Área"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Te falei!  A Mágica Acontece",
+        "fullDesc": "Rearranja o número de acúmulos de \"Interpretação\" em todos os inimigos, priorizando a transferência de maiores números de acúmulos de \"Interpretação\" para inimigos de Elite ou de raridade superior. Então, causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de A Herta a todos os inimigos. Ao utilizar a Perícia Suprema, aumenta o ATQ de A Herta em <orangeStrong>{{4, percent}}%</orangeStrong>, durando por {{5}} rodada(s). Após o uso, A Herta age imediatamente e ganha 1 acúmulo de \"Inspiração\". \"Inspiração\" pode chegar a um máximo de {{6}} acúmulo(s). Quando a \"Inspiração\" está ativa, aprimora sua Perícia para \"Presta Atenção\".",
+        "shortDesc": "<orangeStrong>Rearranja o número de acúmulos de \"Interpretação\"</orangeStrong> em todos os inimigos, priorizando a transferência de maiores valores de acúmulos de \"Interpretação\" para alvos de Elite ou de raridade superior. Então, causa Dano de Gelo a todos os inimigos. Após o uso, aprimora a Perícia e age imediatamente.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Me Dá Isso Aqui",
+        "fullDesc": "Quando inimigos-alvo entram em combate, A Herta inflige 1 acúmulo de \"Interpretação\" neles. No início de cada onda, aplica {{6}} acúmulo(s) de \"Interpretação\" a um inimigo-alvo aleatório, priorizando alvos de Elite ou superiores. Caso o alvo principal da Perícia Aprimorada possua \"Interpretação,\" o multiplicador do Dano causado aumenta, com cada acúmulo concedendo um aumento de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ao alvo principal/outros alvos, respectivamente. Se pelo menos 2 personagens da equipe seguirem o Caminho da Erudição, cada acúmulo concede um aumento adicional de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>/<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ao alvo principal/outros alvos, respectivamente. \"Interpretação\" pode acumular até {{3}} vez(es). Ao usar a Perícia Aprimorada, o número de acúmulos de \"Interpretação\" no alvo principal é redefinido para 1. Após o inimigo-alvo deixar o combate ou ser derrotado por qualquer unidade, \"Interpretação\" será transferida, priorizando a transferência para alvos de nível de Elite ou superior.",
+        "shortDesc": "A Perícia Aprimorada <orangeStrong>aumenta o Dano causado com base nos acúmulos de \"Interpretação\" do alvo</orangeStrong>.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Checagem de Vibes",
+        "fullDesc": "Após usar a Técnica, o ATQ de A Herta aumenta em {{1, percent}}% no início da próxima batalha, durando por {{2}} rodada(s).<br>Se houver Tesouros Básicos no mapa atual, usar a Técnica pode marcar até {{3}} localizações de Tesouros Básicos.<br>Após entrar em batalha usando a Técnica no Universo Simulado ou no Universo Divergente, no início de cada onda, causará Dano Verdadeiro igual a {{4, percent}}% dos PV máximos dos alvos para inimigos abaixo do nível Elite, e causará Dano Verdadeiro igual a {{5, percent}}% dos PV máximos dos alvos para inimigos-alvo no nível Elite ou superior.",
+        "shortDesc": "Após usar a Técnica, marca <orangeStrong>várias localizações de Tesouros Básicos</orangeStrong>, e aumenta o ATQ de A Herta no início da próxima batalha.<br>Após entrar em batalha usando a Técnica no Universo Simulado ou no Universo Divergente, causará uma quantidade massiva de Dano Verdadeiro a todos os inimigos no início de cada onda.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Honestidade Indiferente",
+        "fullDesc": "Quando um aliado-alvo ataca, inflige 1 acúmulo de \"Interpretação\" ao inimigo-alvo atingido. Após atacar, para cada 1 alvo atingido por este ataque, regenera {{1}} de Energia fixa para A Herta, até um máximo de 5 alvos. Ao usar a Perícia Aprimorada, se o acúmulo de \"Interpretação\" do alvo principal chegar a 42, aumenta o Dano de Gelo causado por A Herta em {{2, percent}}%, durando até o final deste ataque."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mensagem de Além do Véu",
+        "fullDesc": "Ao entrar em combate, se houver pelo menos 2 personagens seguindo o Caminho da Erudição na equipe, aumenta o Dano CRIT de todos os aliados em {{1, percent}}%. E o Rastro \"Honestidade Indiferente\" conta ao menos {{2}} alvo(s) ao calcular o número de alvos atingidos. Após atacar, aplica {{3}} acúmulo(s) de \"Interpretação\" ao alvo que tem o maior número de acúmulo(s) existente(s) de \"Interpretação\" entre os inimigos-alvo atingidos. Se o atacante for um personagem do Caminho da Erudição, então aplica adicionalmente {{4}} acúmulo(s) de \"Interpretação\"."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Paisagem Faminta de Vacua",
+        "fullDesc": "Para cada 1 acúmulo de \"Interpretação\" aplicado a inimigos-alvo, A Herta ganha 1 acúmulo de \"Resposta\" até um máximo de {{2}} acúmulo(s). Ao utilizar a Perícia Suprema, cada acúmulo de \"Resposta\" aumenta o multiplicador de Dano da Perícia Suprema em {{1, percent(fixed: 1)}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Noite das Estrelas Fugazes",
+      "desc": "Quando a Perícia Aprimorada calcula a quantidade de acúmulos de \"Interpretação\", conta adicionalmente {{1, percent}}% dos acúmulos de \"Interpretação\" no alvo com os maiores acúmulos entre alvo principal e os alvos adjacentes. Quando a \"Interpretação\" é redefinida ao utilizar uma Perícia Aprimorada, o número de acúmulos é redefinido para {{2}} em seu lugar."
+    },
+    "2": {
+      "name": "Vento Pela Fechadura",
+      "desc": "Após A Herta entrar em combate ou usar sua Perícia Suprema, ela ganha adicionalmente 1 acúmulo de \"Inspiração\". Ao usar a Perícia Aprimorada, a ação subsequente de A Herta é Avançada Adiante em {{1, percent}}%."
+    },
+    "3": {
+      "name": "A Porta para o Verão",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "A Décima-Sexta Chave",
+      "desc": "Aumenta em {{1, percent}}% a VEL dos personagens que seguem o Caminho da Erudição na equipe."
+    },
+    "5": {
+      "name": "A Amarga Pílula da Verdade",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "A Doce Atração da Resposta",
+      "desc": "A PEN de RES a Gelo de A Herta aumenta em {{4, percent}}%. Quando o número de inimigos-alvo em campo for 3 (ou maior)/2/1, o multiplicador de Dano da Perícia Suprema aumenta em {{1, percent}}%/{{2, percent}}%/{{3, percent}}% respectivamente."
+    }
+  }
+}

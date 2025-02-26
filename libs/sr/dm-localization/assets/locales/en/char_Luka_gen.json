@@ -27,7 +27,7 @@
       "0": {
         "name": "Coup de Grâce",
         "fullDesc": "Receives {{5}} stack(s) of Fighting Will, with a {{2, percent}}% base chance to increase a single enemy target's DMG received by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s). Then, deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to the target.",
-        "shortDesc": "Receives <orangeStrong>{{5}}</orangeStrong> stack(s) of Fighting Will, with a high chance of increasing the target's DMG received, and deals massive Physical DMG to the target.",
+        "shortDesc": "Receives <orangeStrong>{{5}}</orangeStrong> stack(s) of \"Fighting Will,\" with a high chance of increasing the one enemy's DMG received, and deals massive Physical DMG to the target.",
         "tag": "Single Target"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Kinetic Overload",
-        "fullDesc": "When using Skill, immediately dispels {{1}} buff(s) from the enemy target.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using Skill, immediately dispels {{1}} buff(s) from the enemy target."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Cycle Braking",
-        "fullDesc": "For every stack of Fighting Will obtained, additionally regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "For every stack of Fighting Will obtained, additionally regenerates {{1}} Energy."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Crush Fighting Will",
-        "fullDesc": "When using Enhanced Basic ATK, every hit of \"Direct Punch\" has a {{1, percent}}% fixed chance for Luka to use 1 additional hit. This effect does not apply to additional hits generated in this way.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When using Enhanced Basic ATK, every hit of \"Direct Punch\" has a {{1, percent}}% fixed chance for Luka to use 1 additional hit. This effect does not apply to additional hits generated in this way."
       }
     }
   },

@@ -1,0 +1,6 @@
+{
+  "setName": "Giant Tree of Rapt Brooding",
+  "setEffects": {
+    "2": "Increases the wearer's SPD by {{1, percent}}%. When the wearer's SPD is {{2}}/{{3}} or higher, the wearer and their memosprite's Outgoing Healing increases by {{4, percent}}%/{{5, percent}}%."
+  }
+}

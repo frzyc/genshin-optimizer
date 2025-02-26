@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Almanac",
-        "fullDesc": "Saat melancarkan Basic Attack, akan memulihkan {{1}} Energy tambahan.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat melancarkan Basic Attack, akan memulihkan {{1}} Energy tambahan."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Artificial Flower",
-        "fullDesc": "Efek peningkatan CRIT DMG yang diberikan oleh Skill akan diperpanjang hingga awal giliran target yang berikutnya.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Efek peningkatan CRIT DMG yang diberikan oleh Skill akan diperpanjang hingga awal giliran target yang berikutnya."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Nocturne",
-        "fullDesc": "Meningkatkan {{4, percent}}% ATK seluruh rekan tim. Saat ada 1/2/3 karakter Tipe Quantum di dalam tim, ATK dari rekan tim Tipe Quantum meningkat {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Meningkatkan {{4, percent}}% ATK seluruh rekan tim. Saat ada 1/2/3 karakter Tipe Quantum di dalam tim, ATK dari rekan tim Tipe Quantum meningkat {{1, percent}}%/{{2, percent}}%/{{3, percent}}%."
       }
     }
   },

@@ -25,7 +25,7 @@
       "1": {
         "name": "Fyrefly Type-IV: Deathstar Overload",
         "fullDesc": "Restores HP by an amount equal to {{3, percent}}% of this unit's Max HP. Applies Fire Weakness to a single target enemy, lasting for {{4}} turn(s). Deals Fire DMG equal to ({{5, fixed(fixed: 1)}} × Break Effect + <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>) of SAM's ATK to this target. At the same time, deals Fire DMG equal to ({{6, fixed(fixed: 1)}} × Break Effect + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>) of SAM's ATK to adjacent targets. The Break Effect taken into the calculation is capped at {{7, percent}}%.",
-        "shortDesc": "Restores a portion of this unit's own HP. <orangeStrong>Applies Fire Weakness</orangeStrong> to a single enemy target. Deals massive Fire DMG to this target and Fire DMG to adjacent targets.",
+        "shortDesc": "Restores a portion of this unit's own HP. <orangeStrong>Applies Fire Weakness</orangeStrong> to one enemy. Deals massive Fire DMG to this target and Fire DMG to adjacent targets.",
         "tag": "Blast"
       }
     },
@@ -57,32 +57,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Module α: Antilag Outburst",
-        "fullDesc": "During the Complete Combustion, attacking enemies that have no Fire Weakness can also reduce their Toughness, with the effect being equivalent to {{1, percent}}% of the original Toughness Reduction from abilities.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "During the Complete Combustion, attacking enemies that have no Fire Weakness can also reduce their Toughness, with the effect being equivalent to {{1, percent}}% of the original Toughness Reduction from abilities."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Module β: Autoreactive Armor",
-        "fullDesc": "When SAM is in Complete Combustion with a Break Effect that is equal to or greater than {{1, percent}}%/{{2, percent}}%, attacking a Weakness-Broken enemy target will convert the Toughness Reduction of this attack into 1 instance of {{3, percent}}%/{{4, percent}}% Super Break DMG.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When SAM is in Complete Combustion with a Break Effect that is equal to or greater than {{1, percent}}%/{{2, percent}}%, attacking a Weakness-Broken enemy target will convert the Toughness Reduction of this attack into 1 instance of {{3, percent}}%/{{4, percent}}% Super Break DMG."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Module γ: Core Overload",
-        "fullDesc": "For every {{2}} point(s) of SAM's ATK that exceeds {{1}}, increases this unit's Break Effect by {{3, percent(fixed: 1)}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "For every {{2}} point(s) of SAM's ATK that exceeds {{1}}, increases this unit's Break Effect by {{3, percent(fixed: 1)}}%."
       }
     }
   },

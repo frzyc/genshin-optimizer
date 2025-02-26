@@ -1,0 +1,6 @@
+{
+  "setName": "Lushaka, the Sunken Seas",
+  "setEffects": {
+    "2": "Meningkatkan {{1, percent}}% Energy Regeneration Rate pengguna. Jika pengguna bukan karakter pertama dalam lineup tim, maka akan meningkatkan {{2, percent}}% ATK karakter pertama dalam lineup tim."
+  }
+}

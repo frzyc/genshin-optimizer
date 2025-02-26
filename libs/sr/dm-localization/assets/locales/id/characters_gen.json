@@ -19,7 +19,8 @@
     "Nihility": "Nihility",
     "Destruction": "Destruction",
     "Harmony": "Harmony",
-    "TheHunt": "Hunt"
+    "TheHunt": "Hunt",
+    "Remembrance": "\"Remembrance\""
   },
   "ability": {
     "basic": "Basic ATK",
@@ -30,10 +31,15 @@
   },
   "dmgType": {
     "single": "Single Target",
-    "aoe": "AoE",
+    "aoe": "AoE ATK",
     "bounce": "Bounce",
     "blast": "Blast",
     "support": "Support",
-    "impair": "Impair"
+    "impair": "Impair",
+    "restore": "Restore",
+    "defense": "DEF",
+    "enhance": "Enhance",
+    "charging": "Charge",
+    "summon": "Summon"
   }
 }

@@ -21,6 +21,8 @@
   "120": "TheWindSoaringValorous",
   "121": "SacerdosRelivedOrdeal",
   "122": "ScholarLostInErudition",
+  "123": "HeroOfTriumphantSong",
+  "124": "PoetOfMourningCollapse",
   "301": "SpaceSealingStation",
   "302": "FleetOfTheAgeless",
   "303": "PanCosmicCommercialEnterprise",
@@ -38,5 +40,7 @@
   "315": "DuranDynastyOfRunningWolves",
   "316": "ForgeOfTheKalpagniLantern",
   "317": "LushakaTheSunkenSeas",
-  "318": "TheWondrousBananAmusementPark"
+  "318": "TheWondrousBananAmusementPark",
+  "319": "BoneCollectionsSereneDemesne",
+  "320": "GiantTreeOfRaptBrooding"
 }

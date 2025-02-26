@@ -1,0 +1,7 @@
+{
+  "name": "Calcul éternel",
+  "passive": {
+    "name": "Pensée sans limite",
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Après avoir utilisé une attaque, pour chaque cible ennemie touchée, augmente l'ATQ de <orangeStrong>{{2, percent}}%</orangeStrong> supplémentaires. Cet effet peut être cumulé jusqu'à 5 fois et dure jusqu'à la prochaine attaque. La VIT du personnage augmente de <orangeStrong>{{4, percent}}%</orangeStrong> s'il y a au moins {{3}} cibles ennemies touchées. Dure {{5}} tour."
+  }
+}

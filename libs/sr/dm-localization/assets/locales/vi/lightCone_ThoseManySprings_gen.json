@@ -1,0 +1,7 @@
+{
+  "name": "Vô Số Mùa Xuân Ấy",
+  "passive": {
+    "name": "Chẳng Còn Dấu Vết Chuyện Thế Gian",
+    "description": "Khiến Chính Xác Hiệu Ứng của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>, sau khi người trang bị thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ tấn công kẻ địch, sẽ có {{2, percent}}% xác suất cơ bản khiến kẻ đó rơi vào trạng thái Tháo Giáp. Trong trạng thái Tháo Giáp, sát thương kẻ địch phải chịu tăng <orangeStrong>{{3, percent}}%</orangeStrong>, duy trì {{4}} hiệp. Nếu mục tiêu ở trạng thái Sát Thương Duy Trì do người trang bị thi triển, thì có {{5, percent}}% xác suất cơ bản khiến trạng thái Tháo Giáp mà người trang bị thi triển tăng cấp thành trạng thái Đường Cùng, khiến sát thương kẻ địch phải chịu tăng thêm <orangeStrong>{{6, percent}}%</orangeStrong>, duy trì {{4}} hiệp, trong thời gian này người trang bị không thể thi triển Tháo Giáp cho mục tiêu này."
+  }
+}

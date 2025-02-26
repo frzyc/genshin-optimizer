@@ -1,0 +1,7 @@
+{
+  "name": "将光阴织成黄金",
+  "passive": {
+    "name": "创设",
+    "description": "使装备者的基础速度提高<orangeStrong>{{1}}</orangeStrong>，装备者和装备者的忆灵在攻击后使装备者获得1层【织锦】，每层【织锦】使装备者和装备者的忆灵暴击伤害提高<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>，最多叠加{{2}}层。叠加至上限时，每层【织锦】额外使造成的普攻伤害提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>。"
+  }
+}

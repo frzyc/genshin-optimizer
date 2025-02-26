@@ -1,0 +1,7 @@
+{
+  "name": "Au nom du voyage de demain",
+  "passive": {
+    "name": "Liens",
+    "description": "Augmente l'ATQ du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Augmente les DGT infligés de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tour lorsque le porteur utilise son ultime."
+  }
+}

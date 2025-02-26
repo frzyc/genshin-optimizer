@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integridad",
-        "fullDesc": "Aumenta la probabilidad de que Gepard reciba un ataque enemigo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta la probabilidad de que Gepard reciba un ataque enemigo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Comandante",
-        "fullDesc": "Tras activar Voluntad de hierro, Gepard recupera inmediatamente el 100% de su energía.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tras activar Voluntad de hierro, Gepard recupera inmediatamente el 100% de su energía."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Espíritu combativo",
-        "fullDesc": "El ATQ de Gepard aumenta en un {{1, percent}}% de su DEF actual. Se actualiza al comienzo de cada turno.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "El ATQ de Gepard aumenta en un {{1, percent}}% de su DEF actual. Se actualiza al comienzo de cada turno."
       }
     }
   },

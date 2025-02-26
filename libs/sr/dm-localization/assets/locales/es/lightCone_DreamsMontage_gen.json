@@ -1,0 +1,7 @@
+{
+  "name": "Montaje de sueños",
+  "passive": {
+    "name": "Montaje de estilo académico",
+    "description": "La VEL del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Al atacar a un enemigo con Ruptura de Debilidad, recupera <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> pts. de energía. Este efecto solo se puede activar {{3}} veces en cada turno."
+  }
+}

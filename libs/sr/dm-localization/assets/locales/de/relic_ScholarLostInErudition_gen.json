@@ -1,0 +1,7 @@
+{
+  "setName": "Im Wissen verlorene Gelehrte",
+  "setEffects": {
+    "2": "Erhöht KRIT-Rate um {{1, percent}}%.",
+    "4": "Erhöht den durch Fertigkeiten und Ultimates verursachten SCH um {{1, percent}}%. Nach dem Einsatz des Ultimates wird der SCH beim nächsten Einsatz der Fertigkeit zusätzlich um {{2, percent}}% erhöht."
+  }
+}

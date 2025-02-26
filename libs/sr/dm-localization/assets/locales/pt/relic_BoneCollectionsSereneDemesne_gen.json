@@ -1,0 +1,6 @@
+{
+  "setName": "Domínio Sereno da Coleção de Ossos",
+  "setEffects": {
+    "2": "Aumenta os PV máximos do usuário em {{1, percent}}%. Quando os PV máximos do usuário forem {{2}} ou mais, aumenta o Dano CRIT do usuário e de seu Memoespírito em {{3, percent}}%."
+  }
+}

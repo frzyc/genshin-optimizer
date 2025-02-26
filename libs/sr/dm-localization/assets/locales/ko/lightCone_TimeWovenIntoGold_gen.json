@@ -1,0 +1,7 @@
+{
+  "name": "시간을 황금으로 엮어",
+  "passive": {
+    "name": "창설",
+    "description": "장착한 캐릭터의 기본 속도가 <orangeStrong>{{1}}</orangeStrong> 증가한다. 장착한 캐릭터 및 장착한 캐릭터의 기억 정령이 공격 후 장착한 캐릭터는 [비단]을 1스택 획득하며, [비단] 스택마다 장착한 캐릭터 및 장착한 캐릭터의 기억 정령의 치명타 피해가 <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> 증가한다, 최대 중첩수: {{2}}스택. 최대 중첩수에 도달하면 [비단] 스택마다 가하는 일반 공격 피해가 추가로 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> 증가한다"
+  }
+}

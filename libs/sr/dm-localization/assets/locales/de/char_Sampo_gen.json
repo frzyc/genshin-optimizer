@@ -45,32 +45,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Falle",
-        "fullDesc": "Verlängert die Dauer der Windscherung durch das Talent um {{1}} Rd.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Verlängert die Dauer der Windscherung durch das Talent um {{1}} Rd."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Defensivstellung",
-        "fullDesc": "Stellt beim Einsatz des Ultimates zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt beim Einsatz des Ultimates zusätzlich {{1}} Pkt. Energie wieder her."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mehr Würze",
-        "fullDesc": "Von Windscherung betroffene Gegner fügen Sampo {{1, percent}}% weniger SCH zu.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Von Windscherung betroffene Gegner fügen Sampo {{1, percent}}% weniger SCH zu."
       }
     }
   },
