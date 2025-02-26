@@ -1,5 +1,5 @@
-import { cmpGE, constant, read, sum } from '../node'
-import { applyConst, combineConst, flatten } from './simplify'
+import { cmpGE, read, sum } from '../node'
+import { combineConst, flatten } from './simplify'
 
 describe('optimization', () => {
   const read0 = read({ q: '0' }, undefined)
@@ -25,14 +25,6 @@ describe('optimization', () => {
       sum(3, sum(4, sum(5)), read1), // Ignore nested operations
       cmpGE(2, 1, read0, read1),
       cmpGE(read1, 1, 3, 3),
-    ])
-  })
-  test('applyConst', () => {
-    expect(applyConst(x)).toEqual([
-      sum(3, 4, 5, read0), // Does NOT combine if it does not result in a const
-      sum(3, 9, read1), // Apply only "constant" `sum`
-      read0,
-      constant(3),
     ])
   })
 })
