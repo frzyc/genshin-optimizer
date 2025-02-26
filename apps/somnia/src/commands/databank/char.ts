@@ -55,8 +55,9 @@ function baseEmbed(id: CharacterGenderedKey, name: string) {
   //.setColor(elementColors[element])
 }
 
+// TODO: Add memosprite support
 function skillEmbed(
-  ability: AbilityKey,
+  ability: Exclude<AbilityKey, "servantTalent" | "servantSkill">,
   id: CharacterGenderedKey,
   name: string,
   data: any

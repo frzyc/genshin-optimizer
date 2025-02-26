@@ -84,8 +84,8 @@ export const characterIdMap: Record<string, CharacterGenderedKey> = {
 export type AvatarId = keyof typeof characterIdMap
 
 export const servantIdMap: Record<string, ServantKey> = {
-  11402: "Garmentmaker",
-  18007: "Mem"
+  11402: 'Garmentmaker',
+  18007: 'Mem',
 }
 export type ServantId = keyof typeof servantIdMap
 
