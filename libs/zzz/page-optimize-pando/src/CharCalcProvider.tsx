@@ -22,7 +22,6 @@ import {
   conditionalEntries,
   discTagMapNodeEntries,
   enemy,
-  enemyDebuff,
   ownBuff,
   teamData,
   wengineTagMapNodeEntries,
@@ -52,15 +51,11 @@ export function CharCalcProvider({
         // Add actual member data
         ...member0,
         // TODO: Get enemy values from db
-        enemyDebuff.common.lvl.add(80),
+        enemy.common.lvl.add(80),
         enemy.common.def.add(953),
-        enemy.common.res_.electric.add(0.1),
         enemy.common.isStunned.add(0),
-        enemyDebuff.common.resRed_.electric.add(0.15),
-        enemyDebuff.common.dmgInc_.add(0.1),
-        enemyDebuff.common.dmgRed_.add(0.15),
-        enemyDebuff.common.stun_.add(1.5),
-        enemyDebuff.common.unstun_.add(1),
+        enemy.common.stun_.add(1.5),
+        enemy.common.unstun_.add(1),
         ownBuff.common.critMode.add('avg'),
         ...charOpt.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValue }) =>
