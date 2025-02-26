@@ -36,7 +36,7 @@ type Monotonicities = Map<string, Monotonicity>
  * @param candidates Components used to construct the builds. Keys in `component` except 'id' may be removed in the results.
  * @param cat Tag category used by `compile` in the actual computation
  * @param minimum Minimum values for min constraint nodes.
- * @param _topN The number of top builds to keep.
+ * @param topN The number of top builds to keep.
  * @returns
  *    A new values for `nodes`, `candidates`, and `minimum`. The returned values are incompatible
  *    with the passed-in arguments (DO NOT mix them). Components may also change, so all related
@@ -48,7 +48,7 @@ export function prune<I extends OP>(
   candidates: Component[][],
   cat: string,
   minimum: number[],
-  _keepTop: number
+  topN: number
 ): { nodes: NumNode<I>[]; candidates: Component[][]; minimum: number[] } {
   const state = new State(nodes, minimum, candidates, cat)
   while (state.progress) {
@@ -56,6 +56,7 @@ export function prune<I extends OP>(
     pruneBranches(state)
     pruneRange(state, 1)
     reaffine(state)
+    pruneBottom(state, topN)
   }
   state.setNodes(flatten(state.nodes))
   state.setNodes(combineConst(state.nodes))
@@ -202,6 +203,56 @@ export function pruneRange(state: State<OP>, numReq: number) {
     } else compRanges[i] = oldCompRange
   })
   if (progress) state.setCandidates(candidates, compRanges)
+}
+
+/** Remove candidates that are never in the `topN` builds */
+export function pruneBottom(state: State<OP>, topN: number) {
+  const monotonicities = [...state.monotonicities]
+  type Val = { incomp: string; inc: Record<string, number>; c: Component }
+  const vals = state.candidates.map((comp) =>
+    comp.map((c) => {
+      const out: Val = { incomp: '', inc: {}, c }
+      for (const [cat, m] of monotonicities)
+        if (m.inc) out.inc[cat] = c[cat] ?? 0 // increasing
+        else if (m.dec) out.inc[cat] = -(c[cat] ?? 0) // decreasing
+        else out.incomp += (c[cat] ?? 0) + ':' // incomparable
+      return out
+    })
+  )
+  const sample = vals[0][0]
+  if (sample === undefined) return
+  const cats = Object.keys(sample.inc)
+  const revCats = [...cats].reverse()
+  const hasIncomp = sample.incomp !== ''
+
+  const candidates = vals.map((vals) => {
+    const groups: Record<string, Val[]> = {}
+    if (hasIncomp)
+      vals.forEach((val) => {
+        if (!(val.incomp in groups)) groups[val.incomp] = []
+        groups[val.incomp].push(val)
+      })
+    else groups[''] = vals
+
+    return Object.values(groups).flatMap((vals) => {
+      vals.sort(({ inc: a }, { inc: b }) => {
+        const cat = revCats.find((cat) => a[cat] !== b[cat])
+        return cat === undefined ? 0 : b[cat] - a[cat] // assume non-NaN
+      })
+      return vals.filter(({ inc }, i) => {
+        let betterCount = 0
+        for (let j = 0, extra = i - topN; j <= extra + betterCount; j++) {
+          const other = vals[j].inc
+          if (cats.every((cat) => other[cat] >= inc[cat]))
+            if (++betterCount >= topN) return false
+        }
+        return true
+      })
+    })
+  })
+
+  if (candidates.some((comp, i) => comp.length != state.candidates[i].length))
+    state.setCandidates(candidates.map((comp) => comp.map((val) => val.c)))
 }
 
 const offset = Symbol()
