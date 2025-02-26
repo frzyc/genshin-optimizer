@@ -57,7 +57,7 @@ function baseEmbed(id: CharacterGenderedKey, name: string) {
 
 // TODO: Add memosprite support
 function skillEmbed(
-  ability: Exclude<AbilityKey, "servantTalent" | "servantSkill">,
+  ability: Exclude<AbilityKey, 'servantTalent' | 'servantSkill'>,
   id: CharacterGenderedKey,
   name: string,
   data: any
