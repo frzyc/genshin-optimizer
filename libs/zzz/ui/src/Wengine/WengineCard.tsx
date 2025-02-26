@@ -53,7 +53,7 @@ export function WengineCard({
   extraButtons,
 }: {
   wengineId: string
-  onClick?: (wengineId: string) => void
+  onClick?: () => void
   onEdit?: (wengineId: string) => void
   setLocation?: (lk: LocationKey) => void
   extraButtons?: JSX.Element
@@ -62,11 +62,9 @@ export function WengineCard({
   const [show, onShow, onHide] = useBoolState()
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
-      <CardActionArea onClick={() => onClick?.(wengineId)}>
-        {children}
-      </CardActionArea>
+      <CardActionArea onClick={() => onClick?.()}>{children}</CardActionArea>
     ),
-    [onClick, wengineId]
+    [onClick]
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => <Box>{children}</Box>,

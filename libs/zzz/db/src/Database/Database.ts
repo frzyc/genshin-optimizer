@@ -4,7 +4,7 @@ import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
 import { zzzSource } from '../Interfaces'
 import { DBMetaEntry, DisplayDiscEntry } from './DataEntries/'
 import { DisplayWengineEntry } from './DataEntries/DisplayWengineEntry'
-import { DiscDataManager } from './DataManagers/'
+import { CharMetaDataManager, DiscDataManager } from './DataManagers/'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import { WengineDataManager } from './DataManagers/WengineDataManager'
 import type { ImportResult } from './exim'
@@ -14,6 +14,7 @@ export class ZzzDatabase extends Database {
   discs: DiscDataManager
   chars: CharacterDataManager
   wengines: WengineDataManager
+  charMeta: CharMetaDataManager
   dbMeta: DBMetaEntry
   displayDisc: DisplayDiscEntry
   displayWengine: DisplayWengineEntry
@@ -38,6 +39,8 @@ export class ZzzDatabase extends Database {
     // Wengine needs to be instantiated after character to check for relations
     this.wengines = new WengineDataManager(this)
 
+    this.charMeta = new CharMetaDataManager(this)
+
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
     this.displayDisc = new DisplayDiscEntry(this)
@@ -46,19 +49,22 @@ export class ZzzDatabase extends Database {
     this.discs.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
-    this.displayDisc.follow(() => {
+    this.wengines.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
-    this.wengines.followAny(() => {
+    this.charMeta.followAny(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
     this.displayWengine.follow(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
+    this.displayDisc.follow(() => {
+      this.dbMeta.set({ lastEdit: Date.now() })
+    })
   }
   get dataManagers() {
     // IMPORTANT: it must be chars, wengines, discs in order, to respect import order
-    return [this.chars, this.wengines, this.discs] as const
+    return [this.chars, this.wengines, this.discs, this.charMeta] as const
   }
   get dataEntries() {
     return [this.dbMeta, this.displayDisc, this.displayWengine] as const
