@@ -166,7 +166,6 @@ export function pruneBranches(state: State<OP>) {
 /**
  * - Remove components that do not meet the `minimum` requirements in any builds
  * - Remove top-level nodes whose `minimum` requirements are met by every build
- * - Returns new `minimum` appropriate for the new `state.nodes`
  */
 export function pruneRange(state: State<OP>, numReq: number) {
   const { nodeRanges, minimum: oldMin, cat } = state
@@ -371,12 +370,9 @@ export function reaffine(state: State<OP>) {
   })
   if (!shouldChange) return
 
-  const readNodes = new Map(
-    uniqueNames.map((n) => [n, read({ [cat]: n }, undefined)])
-  )
   const weightNodes = new Map<Weight, NumNode<OP>>()
   for (const [w, name] of readNames) {
-    let node: NumNode<OP> = readNodes.get(name)!
+    let node: NumNode<OP> = read({ [cat]: name }, undefined)
     w[offset] += offsetShift.get(name) ?? 0
     if (w[offset] !== 0) node = sum(w[offset], node)
     weightNodes.set(w, node)
