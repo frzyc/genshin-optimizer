@@ -1,7 +1,19 @@
 import type { AnyNode, Const, NumNode, StrNode, OP as TaggedOP } from '../node'
 import { calculation, constant, mapBottomUp } from '../node'
+import { ArrayMap, assertUnreachable } from '../util'
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 const { arithmetic } = calculation
+
+/** Simplify `n` */
+export function simplify<I extends OP>(n: NumNode<I>[]): NumNode<I>[]
+export function simplify<I extends OP>(n: StrNode<I>[]): StrNode<I>[]
+export function simplify<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[]
+export function simplify<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
+  n = flatten(n)
+  n = combineConst(n)
+  n = deduplicate(n)
+  return n
+}
 
 /** Combine nested `sum`/`prod`/`min`/`max`, e.g., turn `sum(..., sum(...))` into `sum(...)` */
 export function flatten<I extends OP>(n: NumNode<I>[]): NumNode<I>[]
@@ -54,6 +66,48 @@ export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
         }
       }
     }
+    return n
+  })
+}
+
+export function deduplicate<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
+  type Key = string | number | undefined | string[] | number[]
+  const nodeIds = new Map<AnyNode<I>, number>() // Id of the new node
+  const nodeByKey = new ArrayMap<Key, AnyNode<I>>() // Node given the key
+  return mapBottomUp(n, (n) => {
+    const { op } = n
+    const xIds = n.x.map((n) => nodeIds.get(n)!)
+    const brIds = n.br.map((n) => nodeIds.get(n)!)
+    let key: (string | number | undefined)[]
+    switch (op) {
+      case 'read': {
+        const cats = Object.keys(n.tag!).sort()
+        key = [op, n.ex, ...cats, ...cats.map((cat) => n.tag![cat])]
+        break
+      }
+      case 'sum':
+      case 'prod':
+      case 'min':
+      case 'max':
+        key = [op, ...xIds.sort()]
+        break
+      case 'thres':
+      case 'match':
+      case 'custom':
+      case 'sumfrac':
+      case 'lookup':
+      case 'subscript':
+      case 'const':
+        key = [op, n.ex, ...xIds, ...brIds]
+        break
+      default:
+        assertUnreachable(op)
+    }
+
+    const ref = nodeByKey.ref(key)
+    if ('value' in ref) return ref.value!
+    ref.value = n
+    nodeIds.set(n, nodeIds.size)
     return n
   })
 }

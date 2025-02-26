@@ -10,8 +10,8 @@ import {
   traverse,
 } from '../node'
 import type { Monotonicity, Range } from '../util'
-import { assertUnreachable, customOps, isDebug } from '../util'
-import { combineConst, flatten } from './simplify'
+import { ArrayMap, assertUnreachable, customOps, isDebug } from '../util'
+import { simplify } from './simplify'
 const { arithmetic, branching } = calculation
 
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
@@ -58,8 +58,7 @@ export function prune<I extends OP>(
     reaffine(state)
     pruneBottom(state, topN)
   }
-  state.setNodes(flatten(state.nodes))
-  state.setNodes(combineConst(state.nodes))
+  state.setNodes(simplify(state.nodes))
   return state
 }
 
@@ -207,14 +206,14 @@ export function pruneRange(state: State<OP>, numReq: number) {
 /** Remove candidates that are never in the `topN` builds */
 export function pruneBottom(state: State<OP>, topN: number) {
   const monotonicities = [...state.monotonicities]
-  type Val = { incomp: string; inc: Record<string, number>; c: Component }
+  type Val = { incomp: number[]; inc: Record<string, number>; c: Component }
   const vals = state.candidates.map((comp) =>
     comp.map((c) => {
-      const out: Val = { incomp: '', inc: {}, c }
+      const out: Val = { incomp: [], inc: {}, c }
       for (const [cat, m] of monotonicities)
         if (m.inc) out.inc[cat] = c[cat] ?? 0 // increasing
         else if (m.dec) out.inc[cat] = -(c[cat] ?? 0) // decreasing
-        else out.incomp += (c[cat] ?? 0) + ':' // incomparable
+        else out.incomp.push(c[cat] ?? 0) // incomparable
       return out
     })
   )
@@ -222,18 +221,19 @@ export function pruneBottom(state: State<OP>, topN: number) {
   if (sample === undefined) return
   const cats = Object.keys(sample.inc)
   const revCats = [...cats].reverse()
-  const hasIncomp = sample.incomp !== ''
+  const hasIncomp = !!sample.incomp.length
 
   const candidates = vals.map((vals) => {
-    const groups: Record<string, Val[]> = {}
-    if (hasIncomp)
+    const groups = new ArrayMap<number, Val[]>()
+    if (hasIncomp) {
       vals.forEach((val) => {
-        if (!(val.incomp in groups)) groups[val.incomp] = []
-        groups[val.incomp].push(val)
+        const ref = groups.ref(val.incomp)
+        if (ref.value) ref.value.push(val)
+        else ref.value = [val]
       })
-    else groups[''] = vals
+    } else groups.ref([]).value = vals
 
-    return Object.values(groups).flatMap((vals) => {
+    return [...groups.values()].flatMap((vals) => {
       vals.sort(({ inc: a }, { inc: b }) => {
         const cat = revCats.find((cat) => a[cat] !== b[cat])
         return cat === undefined ? 0 : b[cat] - a[cat] // assume non-NaN
