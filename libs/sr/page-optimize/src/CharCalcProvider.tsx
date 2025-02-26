@@ -56,7 +56,7 @@ export function CharCalcProvider({
           })
         ),
       ]),
-    [member0, charOpt, character.key]
+    [character.key, member0, charOpt.conditionals, charOpt.bonusStats]
   )
 
   return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>

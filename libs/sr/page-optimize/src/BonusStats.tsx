@@ -30,8 +30,8 @@ export function BonusStatsSection() {
   const { key: characterKey } = useCharacterContext()!
   const { bonusStats } = useCharOpt(characterKey)!
   const setStat = useCallback(
-    (tag: Tag, value: number | null) =>
-      database.charOpts.setBonusStat(characterKey, tag, value),
+    (tag: Tag, value: number | null, index?: number) =>
+      database.charOpts.setBonusStat(characterKey, tag, value, index),
     [database, characterKey]
   )
   const newTarget = (q: InitialStats) => {

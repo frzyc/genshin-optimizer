@@ -10,7 +10,7 @@ import {
   traverse,
 } from '../node'
 import type { Monotonicity, Range } from '../util'
-import { assertUnreachable, customOps } from '../util'
+import { assertUnreachable, customOps, isDebug } from '../util'
 import { combineConst, flatten } from './simplify'
 const { arithmetic, branching } = calculation
 
@@ -36,7 +36,7 @@ type Monotonicities = Map<string, Monotonicity>
  * @param candidates Components used to construct the builds. Keys in `component` except 'id' may be removed in the results.
  * @param cat Tag category used by `compile` in the actual computation
  * @param minimum Minimum values for min constraint nodes.
- * @param _topN The number of top builds to keep.
+ * @param topN The number of top builds to keep.
  * @returns
  *    A new values for `nodes`, `candidates`, and `minimum`. The returned values are incompatible
  *    with the passed-in arguments (DO NOT mix them). Components may also change, so all related
@@ -48,7 +48,7 @@ export function prune<I extends OP>(
   candidates: Component[][],
   cat: string,
   minimum: number[],
-  _keepTop: number
+  topN: number
 ): { nodes: NumNode<I>[]; candidates: Component[][]; minimum: number[] } {
   const state = new State(nodes, minimum, candidates, cat)
   while (state.progress) {
@@ -56,6 +56,7 @@ export function prune<I extends OP>(
     pruneBranches(state)
     pruneRange(state, 1)
     reaffine(state)
+    pruneBottom(state, topN)
   }
   state.setNodes(flatten(state.nodes))
   state.setNodes(combineConst(state.nodes))
@@ -204,6 +205,56 @@ export function pruneRange(state: State<OP>, numReq: number) {
   if (progress) state.setCandidates(candidates, compRanges)
 }
 
+/** Remove candidates that are never in the `topN` builds */
+export function pruneBottom(state: State<OP>, topN: number) {
+  const monotonicities = [...state.monotonicities]
+  type Val = { incomp: string; inc: Record<string, number>; c: Component }
+  const vals = state.candidates.map((comp) =>
+    comp.map((c) => {
+      const out: Val = { incomp: '', inc: {}, c }
+      for (const [cat, m] of monotonicities)
+        if (m.inc) out.inc[cat] = c[cat] ?? 0 // increasing
+        else if (m.dec) out.inc[cat] = -(c[cat] ?? 0) // decreasing
+        else out.incomp += (c[cat] ?? 0) + ':' // incomparable
+      return out
+    })
+  )
+  const sample = vals[0][0]
+  if (sample === undefined) return
+  const cats = Object.keys(sample.inc)
+  const revCats = [...cats].reverse()
+  const hasIncomp = sample.incomp !== ''
+
+  const candidates = vals.map((vals) => {
+    const groups: Record<string, Val[]> = {}
+    if (hasIncomp)
+      vals.forEach((val) => {
+        if (!(val.incomp in groups)) groups[val.incomp] = []
+        groups[val.incomp].push(val)
+      })
+    else groups[''] = vals
+
+    return Object.values(groups).flatMap((vals) => {
+      vals.sort(({ inc: a }, { inc: b }) => {
+        const cat = revCats.find((cat) => a[cat] !== b[cat])
+        return cat === undefined ? 0 : b[cat] - a[cat] // assume non-NaN
+      })
+      return vals.filter(({ inc }, i) => {
+        let betterCount = 0
+        for (let j = 0, extra = i - topN; j <= extra + betterCount; j++) {
+          const other = vals[j].inc
+          if (cats.every((cat) => other[cat] >= inc[cat]))
+            if (++betterCount >= topN) return false
+        }
+        return true
+      })
+    })
+  })
+
+  if (candidates.some((comp, i) => comp.length != state.candidates[i].length))
+    state.setCandidates(candidates.map((comp) => comp.map((val) => val.c)))
+}
+
 const offset = Symbol()
 /**
  * Replace `read`/`sum`/`prod` combinations with smaller `read` nodes. If changes are made,
@@ -265,13 +316,26 @@ export function reaffine(state: State<OP>) {
     }
   })
 
-  const weightNames = new Map(
-    [...topWeights.values()].map((w, i) => [w, `c${i}`])
+  // { cat1:w1 cat2:w2 .. } => "!cat1:<w1>:cat2:<w2>:.." with PUA chars
+  // instead of `!` and `:` to minimize the chance of them being in some `cat`s
+  let readNames = new Map(
+    [...topWeights.values()].map((w) => {
+      const keys = Object.keys(w).sort()
+      if (keys.length === 1 && w[keys[0]] === 1) return [w, keys[0]]
+      // skip `w[offset]` because it doesn't go into the new `Read` nodes
+      return [w, '\u{F33D}' + keys.flatMap((k) => [k, w[k]]).join('\u{F00D}')]
+    })
   )
+  if (!isDebug('calc')) {
+    // "!cat1:<w1>:cat2:<w2>:.." => "cX" (skipped in debug mode)
+    const map = new Map([...readNames.values()].map((id, i) => [id, `c${i}`]))
+    readNames = new Map([...readNames].map(([w, id]) => [w, map.get(id)!]))
+  }
   const newCandidates = candidates.map((comp) =>
     comp.map((c) => {
       const result: Component = { id: c['id'] }
-      weightNames.forEach((name, w) => {
+      readNames.forEach((name, w) => {
+        if (name in result) return // same weight, different offsets
         result[name] = Object.entries(w).reduce(
           (acu, [k, v]) => acu + (c[k] ?? 0) * v,
           0
@@ -281,40 +345,39 @@ export function reaffine(state: State<OP>) {
     })
   )
 
-  let shouldChange = false
+  const uniqueNames = [...new Set(readNames.values())]
+  const offsetShift = new Map<string, number>()
   for (const comp of newCandidates) {
-    for (const [w, name] of weightNames) {
+    for (const name of uniqueNames) {
       const freq = new Map<number, number>()
       for (const c of comp) freq.set(c[name], (freq.get(c[name]) ?? 0) + 1)
-      let [best, bestFreq] = [0, 0]
-      for (const [v, f] of freq)
-        if (f > bestFreq || (v === 0 && f >= bestFreq))
-          [best, bestFreq] = [v, f]
+      let [best, bestFreq] = [0, freq.get(0) ?? 0]
+      for (const [v, f] of freq) if (f > bestFreq) [best, bestFreq] = [v, f]
       if (best !== 0) {
         for (const c of comp) c[name] -= best
-        w[offset] += best
-        shouldChange = true
+        offsetShift.set(name, (offsetShift.get(name) ?? 0) + best)
       }
       for (const c of comp) if (c[name] === 0) delete c[name]
     }
   }
 
-  if (!shouldChange) {
-    for (const n of topWeights.keys()) {
-      if (n.op === 'const' || n.op === 'read') continue
-      if (n.op === 'sum' && n.x.length === 2)
-        if (n.x[0].op === 'const' && n.x[1].op === 'read') continue
-        else if (n.x[1].op === 'const' && n.x[0].op === 'read') continue
-      shouldChange = true
-      break
-    }
-  }
-
+  let shouldChange = !!offsetShift.size
+  shouldChange ||= [...topWeights.keys()].some((n) => {
+    if (n.op === 'const' || n.op === 'read') return false
+    if (n.op === 'sum' && n.x.length === 2)
+      if (n.x[0].op === 'const' && n.x[1].op === 'read') return false
+      else if (n.x[1].op === 'const' && n.x[0].op === 'read') return false
+    return true
+  })
   if (!shouldChange) return
 
+  const readNodes = new Map(
+    uniqueNames.map((n) => [n, read({ [cat]: n }, undefined)])
+  )
   const weightNodes = new Map<Weight, NumNode<OP>>()
-  for (const [w, name] of weightNames) {
-    let node: NumNode<OP> = read({ [cat]: name }, undefined)
+  for (const [w, name] of readNames) {
+    let node: NumNode<OP> = readNodes.get(name)!
+    w[offset] += offsetShift.get(name) ?? 0
     if (w[offset] !== 0) node = sum(w[offset], node)
     weightNodes.set(w, node)
   }
@@ -516,15 +579,14 @@ function getMonotonicities(
       }
       case 'prod': {
         const r = nodeRanges.get(node)!
-        const pos = r.min > 0
-        if (!pos && r.max >= 0) {
-          // unsupported zero-touching
+        if (r.min < 0 && r.max > 0) {
+          // unsupported zero-crossing
           node.x.forEach((n) => visit(n, true))
           node.x.forEach((n) => visit(n, false))
-        } else
-          node.x.forEach((n) =>
-            visit(n, (pos === inc) === nodeRanges.get(n)!.min > 0)
-          )
+        } else {
+          const absInc = inc === r.max > 0 // |node| is increasing in some regions
+          node.x.forEach((n) => visit(n, absInc === nodeRanges.get(n)!.max > 0))
+        }
         break
       }
       case 'match':

@@ -24,7 +24,7 @@ export function newImportResult(
     source,
     discs: newCounter(),
     // TODO:
-    // lightCones: newCounter(),
+    // wengines: newCounter(),
     characters: newCounter(),
     keepNotInImport,
     ignoreDups,
@@ -47,7 +47,7 @@ export type ImportResult = {
   source: string
   discs: ImportResultCounter<IDisc>
   // TODO:
-  // lightCones: ImportResultCounter<ILightCone>
+  // wengines: ImportResultCounter<IWengine>
   characters: ImportResultCounter<ICharacter>
   keepNotInImport: boolean
   ignoreDups: boolean

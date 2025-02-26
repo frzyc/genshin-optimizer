@@ -82,13 +82,14 @@ export type CharacterDatum = {
   skillTree: Record<AvatarSkillTreeType, SkillTree>
   servantSkillTree?: Record<ServantSkillTreeType, SkillTree> | undefined
   rankMap: RankInfoMap
+  maxEnergy: number
 }
 
 export type CharacterData = Record<CharacterKey, CharacterDatum>
 export default function characterData(): CharacterData {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
-      ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
+      ([avatarid, { Rarity, DamageType, AvatarBaseType, SPNeed }]) => {
         const skillTree = Object.fromEntries(
           Object.entries(avatarSkillTreeConfig[avatarid]).map(
             ([pointId, skillTree], index) => {
@@ -200,6 +201,7 @@ export default function characterData(): CharacterData {
           servantSkillTree,
           ascension,
           rankMap,
+          maxEnergy: SPNeed.Value,
         }
         const genderedKey = characterIdMap[avatarid]
         // Assumes genders have the same stats

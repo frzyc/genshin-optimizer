@@ -235,5 +235,6 @@
     "4": { "skillTypeAddLevel": {}, "params": [2] },
     "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
     "6": { "skillTypeAddLevel": {}, "params": [1.56, 1] }
-  }
+  },
+  "maxEnergy": 120
 }

@@ -130,7 +130,7 @@ export class CharacterOptManager extends DataManager<
           src,
           dst,
           condKey,
-          condValue: 0,
+          condValue,
         })
       } else {
         const cond = conditionals[condIndex]
@@ -152,11 +152,16 @@ export class CharacterOptManager extends DataManager<
       return { conditionals }
     })
   }
-  setBonusStat(charKey: CharacterKey, tag: Tag, value: number | null) {
+  setBonusStat(
+    charKey: CharacterKey,
+    tag: Tag,
+    value: number | null, // use null to remove the stat
+    index?: number // to edit an existing stat
+  ) {
     this.set(charKey, (charOpt) => {
-      const statIndex = charOpt.bonusStats.findIndex((s) =>
-        shallowCompareObj(s.tag, tag)
-      )
+      const statIndex =
+        index ??
+        charOpt.bonusStats.findIndex((s) => shallowCompareObj(s.tag, tag))
       const bonusStats = [...charOpt.bonusStats]
       if (statIndex === -1 && value !== null) {
         bonusStats.push({ tag, value })
@@ -164,6 +169,7 @@ export class CharacterOptManager extends DataManager<
         bonusStats.splice(statIndex, 1)
       } else if (value !== null && statIndex > -1) {
         bonusStats[statIndex].value = value
+        bonusStats[statIndex].tag = tag
       }
       return { bonusStats }
     })
