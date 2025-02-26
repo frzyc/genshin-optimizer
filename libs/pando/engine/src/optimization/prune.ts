@@ -528,15 +528,14 @@ function getMonotonicities(
       }
       case 'prod': {
         const r = nodeRanges.get(node)!
-        const pos = r.min > 0
-        if (!pos && r.max >= 0) {
-          // unsupported zero-touching
+        if (r.min < 0 && r.max > 0) {
+          // unsupported zero-crossing
           node.x.forEach((n) => visit(n, true))
           node.x.forEach((n) => visit(n, false))
-        } else
-          node.x.forEach((n) =>
-            visit(n, (pos === inc) === nodeRanges.get(n)!.min > 0)
-          )
+        } else {
+          const absInc = inc === r.max > 0 // |node| is increasing in some regions
+          node.x.forEach((n) => visit(n, absInc === nodeRanges.get(n)!.max > 0))
+        }
         break
       }
       case 'match':
