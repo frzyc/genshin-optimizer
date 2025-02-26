@@ -1,11 +1,11 @@
 import { prettify } from '@genshin-optimizer/common/util'
 import {
-  Calculator,
   compileTagMapValues,
   setDebugMode,
 } from '@genshin-optimizer/pando/engine'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
 import { data, keys, values } from '..'
+import { Calculator } from '../../calculator'
 import { conditionals } from '../../meta'
 import {
   charTagMapNodeEntries,
@@ -20,18 +20,19 @@ setDebugMode(true)
 Object.assign(values, compileTagMapValues(keys, data))
 
 function testCharacterData(
+  charKey: CharacterKey,
   setKey: LightConeKey,
   otherCharData: TagMapNodeEntries = []
 ) {
   const data: TagMapNodeEntries = [
-    ...teamData(['Seele']),
+    ...teamData([charKey]),
     ...withMember(
-      'Seele',
+      charKey,
       ...charTagMapNodeEntries(
         {
           level: 80,
           ascension: 6,
-          key: 'Seele',
+          key: charKey,
           eidolon: 0,
           basic: 0,
           skill: 0,
@@ -48,14 +49,19 @@ function testCharacterData(
       ...otherCharData
     ),
     own.common.critMode.add('avg'),
-    enemy.common.res.quantum.add(0.1),
+    enemy.common.res.add(0.1),
     enemy.common.isBroken.add(0),
   ]
   return data
 }
 
-function cond(setKey: LightConeKey, name: string, value: number) {
-  return conditionalEntries(setKey, 'Seele', null)(name, value)
+function cond(
+  charKey: CharacterKey,
+  setKey: LightConeKey,
+  name: string,
+  value: number
+) {
+  return conditionalEntries(setKey, charKey, null)(name, value)
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -65,24 +71,32 @@ function printDebug(calc: Calculator, read: Read) {
 
 describe('Light Cone sheets test', () => {
   it('Adversarial', () => {
-    const data = testCharacterData('Adversarial')
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'Adversarial')
     data.push(
-      cond('Adversarial', conditionals.Adversarial.enemyDefeated.name, 1)
+      cond(
+        charKey,
+        'Adversarial',
+        conditionals.Adversarial.enemyDefeated.name,
+        1
+      )
     )
     const calc = new Calculator(
       keys,
       values,
       compileTagMapValues(keys, data)
-    ).withTag({ src: 'Seele', dst: 'Seele' })
-    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
 
-    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.18)
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.18)
   })
 
   it('AfterTheCharmonyFall', () => {
-    const data = testCharacterData('AfterTheCharmonyFall')
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'AfterTheCharmonyFall')
     data.push(
       cond(
+        charKey,
         'AfterTheCharmonyFall',
         conditionals.AfterTheCharmonyFall.ultUsed.name,
         1
@@ -92,10 +106,10 @@ describe('Light Cone sheets test', () => {
       keys,
       values,
       compileTagMapValues(keys, data)
-    ).withTag({ src: 'Seele', dst: 'Seele' })
-    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
 
-    expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.56)
-    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.16)
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.56)
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.16)
   })
 })
