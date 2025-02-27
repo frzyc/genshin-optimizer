@@ -35,6 +35,8 @@ export interface Tag<
   [condMeta: symbol]: IBaseConditionalData | undefined
 }
 export type AnyTag = Tag<string | null, string | null, string>
+export type Member<T extends AnyTag> = NonNullable<T['sheet']>
+export type Sheet<T extends AnyTag> = NonNullable<T['sheet']>
 
 export type TagMapNodeEntry<Tag_ extends BaseTag> = TagMapEntry<
   AnyNode | ReRead,
@@ -55,17 +57,14 @@ export class Read<Tag extends AnyTag = AnyTag> extends TypedRead<Tag> {
   name(name: string): this {
     return super.with('name', name)
   }
-  sheet(sheet: Tag['sheet']): this {
+  sheet(sheet: Sheet<Tag>): this {
     return super.with('sheet', sheet)
   }
 
   add(value: number | string | AnyNode): TagMapNodeEntry<Tag> {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
-  addOnce(
-    sheet: Tag['sheet'],
-    value: number | NumNode
-  ): TagMapNodeEntries<Tag> {
+  addOnce(sheet: Sheet<Tag>, value: number | NumNode): TagMapNodeEntries<Tag> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`

@@ -8,7 +8,7 @@ import {
   Calculator as BaseCalculator,
   calculation,
 } from '@genshin-optimizer/pando/engine'
-import type { AnyTag, Read } from './read'
+import type { AnyTag, Member, Read, Sheet } from './read'
 import { reader } from './read'
 
 type MemRec<Member extends string, V> = Partial<Record<Member, V>>
@@ -28,8 +28,7 @@ type CondInfo<Member extends string, Sheet extends string> = MemRec<
 export type CalcMeta<
   Tag extends AnyTag,
   Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> = PartialMeta<Tag, Op> &
-  Info<NonNullable<Tag['member']>, NonNullable<Tag['sheet']>>
+> = PartialMeta<Tag, Op> & Info<Member<Tag>, Sheet<Tag>>
 export type PartialMeta<
   Tag extends BaseTag,
   Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
@@ -136,10 +135,7 @@ export class Calculator<
       if (src && sheet && q)
         meta.conds = {
           [dst ?? 'All']: { [src]: { [sheet!]: { [q!]: val } } },
-        } as CondInfo<
-          NonNullable<Tag['member']> | 'All',
-          NonNullable<Tag['sheet']>
-        >
+        } as CondInfo<Member<Tag> | 'All', Sheet<Tag>>
       dirty = true
     }
     Object.freeze(meta)
@@ -154,9 +150,7 @@ export class Calculator<
           (reader as Read<Tag>).withTag(meta.tag!)[val as Read<Tag>['accu']]
       )
   }
-  listCondFormulas(
-    read: Read<Tag>
-  ): CondInfo<NonNullable<Tag['member']> | 'All', NonNullable<Tag['sheet']>> {
+  listCondFormulas(read: Read<Tag>): CondInfo<Member<Tag> | 'All', Sheet<Tag>> {
     return this.listFormulas(read)
       .map((x) => this.compute(x).meta.conds)
       .reduce(mergeConds, {})
@@ -169,7 +163,7 @@ function extract<
   Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
 >(
   x: CalcResult<V, CalcMeta<Tag, Op>>,
-  info: Info<NonNullable<Tag['member']>, NonNullable<Tag['sheet']>>
+  info: Info<Member<Tag>, Sheet<Tag>>
 ): CalcResult<V, PartialMeta<Tag, Op>> {
   const { conds, ...meta } = x.meta
   info.conds = mergeConds(info.conds, conds)

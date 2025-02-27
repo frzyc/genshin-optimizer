@@ -9,7 +9,7 @@ import { tagStr } from './data/util'
 type Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
 export type PartialMeta = PartialMetaBase<Tag, Op>
 
-export class Calculator extends Base<Tag, Op> {
+export class Calculator extends Base<Tag> {
   override toDebug(): DebugCalculator {
     return new DebugCalculator(
       this,
