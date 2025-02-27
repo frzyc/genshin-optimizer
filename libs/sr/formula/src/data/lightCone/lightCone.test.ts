@@ -21,7 +21,7 @@ Object.assign(values, compileTagMapValues(keys, data))
 
 function testCharacterData(
   charKey: CharacterKey,
-  setKey: LightConeKey,
+  lightConekey: LightConeKey,
   otherCharData: TagMapNodeEntries = []
 ) {
   const data: TagMapNodeEntries = [
@@ -45,7 +45,65 @@ function testCharacterData(
         },
         1
       ),
-      ...lightConeTagMapNodeEntries(setKey, 80, 6, 5),
+      ...lightConeTagMapNodeEntries(lightConekey, 80, 6, 5),
+      ...otherCharData
+    ),
+    own.common.critMode.add('avg'),
+    enemy.common.res.add(0.1),
+    enemy.common.isBroken.add(0),
+  ]
+  return data
+}
+
+function testTeamData(
+  charKey: CharacterKey,
+  otherCharKey: CharacterKey,
+  lightConeKey: LightConeKey,
+  otherCharData: TagMapNodeEntries = []
+) {
+  const data: TagMapNodeEntries = [
+    ...teamData([charKey, otherCharKey]),
+    ...withMember(
+      charKey,
+      ...charTagMapNodeEntries(
+        {
+          level: 80,
+          ascension: 6,
+          key: charKey,
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          servantSkill: 0,
+          servantTalent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        },
+        1
+      ),
+      ...lightConeTagMapNodeEntries(lightConeKey, 80, 6, 5),
+      ...otherCharData
+    ),
+    ...withMember(
+      otherCharKey,
+      ...charTagMapNodeEntries(
+        {
+          level: 80,
+          ascension: 6,
+          key: otherCharKey,
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          servantSkill: 0,
+          servantTalent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        },
+        2
+      ),
       ...otherCharData
     ),
     own.common.critMode.add('avg'),
@@ -59,7 +117,7 @@ function cond(
   charKey: CharacterKey,
   setKey: LightConeKey,
   name: string,
-  value: number
+  value: number | string
 ) {
   return conditionalEntries(setKey, charKey, null)(name, value)
 }
@@ -277,4 +335,113 @@ describe('Light Cone sheets test', () => {
 
     expect(calc.compute(char.final.eff_).val).toBeCloseTo(0.4)
   })
+
+  it('BoundlessChoreo', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'BoundlessChoreo')
+    data.push(
+      cond(
+        charKey,
+        'BoundlessChoreo',
+        conditionals.BoundlessChoreo.enemySlowedOrRedDef.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC bonus
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.16)
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.48)
+  })
+
+  it('BrighterThanTheSun', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'BrighterThanTheSun')
+    data.push(
+      cond(
+        charKey,
+        'BrighterThanTheSun',
+        conditionals.BrighterThanTheSun.basicsUsed.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC bonus
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.3)
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(2 * 0.3)
+    expect(calc.compute(char.final.enerRegen_).val).toBeCloseTo(2 * 0.1)
+  })
+
+  it('ButTheBattleIsntOver', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const otherCharKey: CharacterKey = 'Seele'
+    const data = testTeamData(charKey, otherCharKey, 'ButTheBattleIsntOver')
+    data.push(
+      cond(
+        charKey,
+        'ButTheBattleIsntOver',
+        conditionals.ButTheBattleIsntOver.skillUsed.name,
+        1
+      )
+    )
+    const calcRuanMei = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const calcSeele = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: otherCharKey, dst: otherCharKey })
+
+    expect(calcRuanMei.compute(own.final.enerRegen_).val).toBeCloseTo(0.18)
+    // Check if buff is not applied to wearer
+    expect(calcRuanMei.compute(own.final.common_dmg_).val).toBeCloseTo(0)
+    expect(calcSeele.compute(own.final.common_dmg_).val).toBeCloseTo(0.5)
+  })
+
+  // TODO: Uncomment when ready
+  // it.each([
+  //   { atk_: 0.2, crit_dmg_: 0.5, enerRegen_: 0, name: 'atk_' },
+  //   { atk_: 0, crit_dmg_: 0.74, enerRegen_: 0, name: 'crit_dmg_' },
+  //   { atk_: 0, crit_dmg_: 0.5, enerRegen_: 0.12, name: 'enerRegen_' },
+  // ])('CarveTheMoonWeaveTheClouds', (testCase) => {
+  //   const charKey: CharacterKey = 'RuanMei'
+  //   const data = testCharacterData(charKey, 'CarveTheMoonWeaveTheClouds')
+  //   data.push(
+  //     cond(
+  //       charKey,
+  //       'CarveTheMoonWeaveTheClouds',
+  //       conditionals.CarveTheMoonWeaveTheClouds.atk_crit_dmg_enerRegen_.name,
+  //       testCase.name
+  //     )
+  //   )
+  //   const calc = new Calculator(
+  //     keys,
+  //     values,
+  //     compileTagMapValues(keys, data)
+  //   ).withTag({ src: charKey, dst: charKey })
+
+  //   const char = convert(ownTag, { et: 'own', src: charKey })
+
+  //   expect(calc.compute(char.final.atk_).val).toBeCloseTo(testCase.atk_)
+  //   expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(
+  //     testCase.crit_dmg_
+  //   )
+  //   expect(calc.compute(char.final.enerRegen_).val).toBeCloseTo(
+  //     testCase.enerRegen_
+  //   )
+  // })
 })

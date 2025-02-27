@@ -284,41 +284,16 @@ export const conditionals = {
     },
   },
   BoundlessChoreo: {
-    boolConditional: {
+    enemySlowedOrRedDef: {
       sheet: 'BoundlessChoreo',
-      name: 'boolConditional',
+      name: 'enemySlowedOrRedDef',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BoundlessChoreo',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BoundlessChoreo',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   BrighterThanTheSun: {
-    boolConditional: {
+    basicsUsed: {
       sheet: 'BrighterThanTheSun',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BrighterThanTheSun',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BrighterThanTheSun',
-      name: 'numConditional',
+      name: 'basicsUsed',
       type: 'num',
       int_only: true,
       min: 0,
@@ -343,45 +318,10 @@ export const conditionals = {
     },
   },
   ButTheBattleIsntOver: {
-    boolConditional: {
+    skillUsed: {
       sheet: 'ButTheBattleIsntOver',
-      name: 'boolConditional',
+      name: 'skillUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ButTheBattleIsntOver',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ButTheBattleIsntOver',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  CarveTheMoonWeaveTheClouds: {
-    boolConditional: {
-      sheet: 'CarveTheMoonWeaveTheClouds',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'CarveTheMoonWeaveTheClouds',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'CarveTheMoonWeaveTheClouds',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   CelestialDifferentiator: {
@@ -8342,72 +8282,39 @@ export const buffs = {
     },
   },
   BoundlessChoreo: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'BoundlessChoreo',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'BoundlessChoreo',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'BoundlessChoreo',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BoundlessChoreo',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BoundlessChoreo',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BoundlessChoreo',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },
   BrighterThanTheSun: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'BrighterThanTheSun',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'BrighterThanTheSun',
-        name: 'cond_dmg_',
+        name: 'atk_',
       },
     },
-    enemy_defRed_: {
+    enerRegen_: {
       sheet: 'BrighterThanTheSun',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BrighterThanTheSun',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BrighterThanTheSun',
-      name: 'team_dmg_',
+      name: 'enerRegen_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'enerRegen_',
         sheet: 'BrighterThanTheSun',
-        name: 'team_dmg_',
+        name: 'enerRegen_',
       },
     },
   },
@@ -8619,72 +8526,15 @@ export const buffs = {
     },
   },
   ButTheBattleIsntOver: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ButTheBattleIsntOver',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ButTheBattleIsntOver',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ButTheBattleIsntOver',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ButTheBattleIsntOver',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ButTheBattleIsntOver',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ButTheBattleIsntOver',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  CarveTheMoonWeaveTheClouds: {
-    cond_dmg_: {
-      sheet: 'CarveTheMoonWeaveTheClouds',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'CarveTheMoonWeaveTheClouds',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'CarveTheMoonWeaveTheClouds',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'CarveTheMoonWeaveTheClouds',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'CarveTheMoonWeaveTheClouds',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'CarveTheMoonWeaveTheClouds',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
