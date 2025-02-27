@@ -2,14 +2,16 @@ import { ImgIcon, NextImage, SqBadge } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
+  factionDefIcon,
   rarityDefIcon,
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, MilestoneKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
+import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
-import { getLevelString } from '@genshin-optimizer/zzz/util'
+import { getLevelString, milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import { Box, CardActionArea, Chip, Grid, Typography } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
 import { useTranslation } from 'react-i18next'
@@ -148,5 +150,179 @@ function LevelBadge({
     >
       <SqBadge>{getLevelString(level, promotion)}</SqBadge>
     </Typography>
+  )
+}
+
+export function CharacterCoverOptimize({
+  character: { level, promotion, key: characterKey },
+}: {
+  character: ICachedCharacter
+}) {
+  const character = getCharStat(characterKey)
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
+      <CharImage characterKey={characterKey} character={character} />
+      <CharInformation
+        characterKey={characterKey}
+        character={character}
+        promotion={promotion}
+        level={level}
+      />
+    </Box>
+  )
+}
+
+function CharImage({
+  characterKey,
+  character,
+}: {
+  characterKey: CharacterKey
+  character: CharacterData
+}) {
+  const { attribute, id } = character
+  return (
+    <Box
+      sx={(theme) => ({
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        display: 'flex',
+        background: `${theme.palette[attribute].main}`,
+        zIndex: 1,
+      })}
+    >
+      <Box
+        sx={() => ({
+          position: 'absolute',
+          overflow: 'hidden',
+          left: '0',
+          right: '0',
+          display: 'flex',
+          transform: 'rotate(10deg)',
+          zIndex: 2,
+        })}
+      >
+        <ScrollingBackgroundText characterKey={characterKey} />
+        <ScrollingBackgroundText characterKey={characterKey} />
+      </Box>
+      <Box
+        src={`https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_vertical_painting/role_vertical_painting_${id}.png`}
+        component={NextImage ? NextImage : 'img'}
+        width="100%"
+        height="auto"
+        position="relative"
+        zIndex="2"
+      ></Box>
+    </Box>
+  )
+}
+function CharInformation({
+  characterKey,
+  character,
+  promotion,
+  level,
+}: {
+  characterKey: CharacterKey
+  character: CharacterData
+  promotion: MilestoneKey
+  level: number
+}) {
+  const { attribute, rarity, faction, specialty } = character
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        height: '100%',
+        padding: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Box>
+        <Box
+          gap={2}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <ImgIcon size={2} src={rarityDefIcon(rarity)} />
+          <Typography
+            variant="h5"
+            sx={{
+              fontStyle: 'italic',
+              fontWeight: '900',
+              whiteSpace: 'nowrap',
+              maxWidth: '230px',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
+          >
+            <CharacterName characterKey={characterKey} />
+          </Typography>
+          <ElementIcon ele={attribute} />
+          <ImgIcon size={2} src={specialityDefIcon(specialty)} />
+        </Box>
+        <Box
+          sx={{
+            border: '2px #2B364D solid',
+            borderRadius: '20px',
+            width: '130px',
+            display: 'flex',
+            marginTop: '16px',
+          }}
+        >
+          <Typography sx={{ fontWeight: '900', paddingLeft: '10px' }}>
+            Lv. {level}
+          </Typography>
+          <Typography
+            sx={{ fontWeight: '900', color: '#1E78C8', paddingLeft: '14px' }}
+          >
+            / {milestoneMaxLevel[promotion]}
+          </Typography>
+        </Box>
+      </Box>
+      <Box>
+        <ImgIcon size={5} src={factionDefIcon(faction)}></ImgIcon>
+      </Box>
+    </Box>
+  )
+}
+
+function ScrollingBackgroundText({
+  characterKey,
+}: {
+  characterKey: CharacterKey
+}) {
+  const { t } = useTranslation('charNames_gen')
+  const scroll = {
+    animation: 'scroll 16s infinite linear',
+    '@keyframes scroll': {
+      '0%': { transform: 'translateX(-100%)' },
+      '100%': { transform: 'translateX(0)' },
+    },
+  } as React.CSSProperties
+
+  return (
+    <Box
+      component={'span'}
+      sx={{
+        color: '#000',
+        marginTop: '20px',
+        fontStyle: 'italic',
+        fontSize: '280px',
+        lineHeight: '223px',
+        whiteSpace: 'nowrap',
+        textTransform: 'uppercase',
+        display: 'flex',
+        justifyContent: 'center',
+        fontFamily: 'Impact',
+        opacity: 0.1,
+        ...scroll,
+      }}
+    >
+      {t(`${characterKey}`)}
+    </Box>
   )
 }
