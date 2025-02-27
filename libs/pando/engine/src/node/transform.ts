@@ -294,14 +294,17 @@ export function compileDiff(
         body += `,_0${out}=1`
         x.forEach((x, i) => (body += `,_${i + 1}${out}=_${i}${out}*${x}`))
         body += `,${dout}=`
-        body += dx.reduce((d, dx, i) => `(${d}*${x[i]}+${dx}*_${i}${out})`, '0')
+        // _{i}{out} = prefix product upto (but excluding) x[i]
+        // a_{i+1} = d/dx _{i+1}{out} = (d/dx _{i}{out}) * x[i] + dx[i] * _{i}{out}
+        body += dx.reduce((a, dx, i) => `(${a}*${x[i]}+${dx}*_${i}${out})`, '0')
         break
       case 'min':
       case 'max':
         body += `,${dout}=[${dx}][[${x}].indexOf(${out})]`
         break
       case 'sumfrac':
-        body += `,_${dout}=${x[0]}+${x[1]}`
+        // d/dx x/(x+c) = c/(x+c)^2, d/dc x/(x+c) = -x/(x+c)^2
+        body += `,_${dout}=${x[0]}+${x[1]}` // x + c
         body += `,${dout}=(${x[1]}*${dx[0]}-${x[0]}*${dx[1]})/_${dout}/_${dout}`
         break
       case 'match':
