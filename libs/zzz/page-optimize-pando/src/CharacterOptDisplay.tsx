@@ -7,7 +7,7 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
-  CharacterCard,
+  CharacterCoverOptimize,
   CharacterEditor,
   EquippedGrid,
 } from '@genshin-optimizer/zzz/ui'
@@ -104,10 +104,26 @@ function CharacterSection() {
   )
   return (
     <Stack spacing={1}>
-      <Box sx={{ display: 'flex', gap: 1 }}>
-        <Box sx={{ minWidth: '350px' }}>
-          <Box>
-            <CharacterCard characterKey={characterKey} />
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 1,
+          backgroundColor: '#1b263b',
+        }}
+      >
+        <Box
+          sx={{
+            margin: '24px 0 16px 24px',
+          }}
+        >
+          <Box
+            sx={{
+              border: '4px rgb(46, 54, 70) solid',
+              borderRadius: '20px',
+              overflow: 'hidden',
+            }}
+          >
+            <CharacterCoverOptimize character={character} />
           </Box>
           <CharacterEditor
             characterKey={editorKey}
