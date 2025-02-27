@@ -160,7 +160,7 @@ export function CharacterCoverOptimize({
 }) {
   const character = getCharStat(characterKey)
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <CharImage characterKey={characterKey} character={character} />
       <CharInformation
         characterKey={characterKey}
@@ -180,6 +180,9 @@ function CharImage({
   character: CharacterData
 }) {
   const { attribute, id } = character
+  const CHARACTER_IMAGE_URL_BASE =
+    'https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_vertical_painting/role_vertical_painting_'
+
   return (
     <Box
       sx={(theme) => ({
@@ -189,24 +192,24 @@ function CharImage({
         display: 'flex',
         background: `${theme.palette[attribute].main}`,
         zIndex: 1,
+        overflow: 'hidden',
       })}
     >
       <Box
-        sx={() => ({
+        sx={{
           position: 'absolute',
-          overflow: 'hidden',
           left: '0',
           right: '0',
           display: 'flex',
           transform: 'rotate(10deg)',
           zIndex: 2,
-        })}
+        }}
       >
         <ScrollingBackgroundText characterKey={characterKey} />
         <ScrollingBackgroundText characterKey={characterKey} />
       </Box>
       <Box
-        src={`https://act-webstatic.hoyoverse.com/game_record/zzzv2/role_vertical_painting/role_vertical_painting_${id}.png`}
+        src={`${CHARACTER_IMAGE_URL_BASE}${id}.png`}
         component={NextImage ? NextImage : 'img'}
         width="100%"
         height="auto"
