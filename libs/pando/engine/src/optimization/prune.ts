@@ -34,7 +34,7 @@ type Monotonicities = Map<string, Monotonicity>
  *    The nodes must be in the order [minConstraints, other calc], and `minConstraint[0]` is
  *    the obj function.
  * @param candidates Components used to construct the builds. Keys in `component` except 'id' may be removed in the results.
- * @param cat Tag category used by `compile` in the actual computation
+ * @param dynTagCat Tag category used by `compile` in the actual computation
  * @param minimum Minimum values for min constraint nodes.
  * @param topN The number of top builds to keep.
  * @returns
@@ -46,11 +46,11 @@ type Monotonicities = Map<string, Monotonicity>
 export function prune<I extends OP>(
   nodes: NumNode<I>[],
   candidates: Component[][],
-  cat: string,
+  dynTagCat: string,
   minimum: number[],
   topN: number
 ): { nodes: NumNode<I>[]; candidates: Component[][]; minimum: number[] } {
-  const state = new State(nodes, minimum, candidates, cat)
+  const state = new State(nodes, minimum, candidates, dynTagCat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
