@@ -253,7 +253,112 @@ export function compile(
   let body = `'use strict';const _=0` // making sure `const` has at least one entry
   for (const [name, f] of Object.entries(customOps))
     body += `,f${name}=${f.calc.toString()}`
-  const names = new Map<AnyNode, string>()
+  const { str, names } = compiledStr(n, dynTagCategory, slotCount, initial)
+  body += `${str};return [${n.map((n) => names.get(n)!)}]`
+  return new Function(`b`, body) as any
+}
+
+export function compileDiff(
+  n: AnyTagFree,
+  dynTagCategory: string,
+  diffTags: string[],
+  slotCount: number,
+  initial: Record<string, any>
+): (_: Record<string, any>[]) => any[] {
+  let body = `'use strict';const _=0` // making sure `const` has at least one entry
+  for (const [name, f] of Object.entries(customOps))
+    body += `,f${name}=${f.calc.toString()},g${name}=${f.diff?.toString()}`
+  const { str, names } = compiledStr([n], dynTagCategory, slotCount, initial)
+  body += `${str},diff=(t)=>{const _=0`
+  const discrete = new Set<AnyTagFree>() // values that must be discrete
+  traverse([n], (n, visit) => {
+    const { op } = n
+    n.x.forEach(visit)
+    n.br.forEach(visit)
+    const x = n.x.map((x) => names.get(x)!)
+    const br = n.br.map((n) => names.get(n)!)
+    const dx = n.x.map((x) => `d${names.get(x)}`)
+    const name = names.get(n)
+    const dName = `d${names.get(n)}`
+
+    switch (op) {
+      case 'const':
+        body += `,${dName}=0`
+        break
+      case 'sum':
+        body += `,${dName}=`
+        if (dx.length) body += dx.join('+')
+        else body += 0
+        break
+      case 'prod':
+        body += `,_0${dName}=0,_0${name}=1`
+        dx.forEach((dx, i) => {
+          body += `,_${i + 1}${dName}=_${i}${dName}*${x[i]}+${dx}*_${i}${name}`
+          body += `,_${i + 1}${name}=_${i}${name}*${x[i]}`
+        })
+        body += `,${dName}=_${dx.length}${dName}`
+        break
+      case 'min':
+      case 'max': {
+        const s = op === 'min' ? '>=' : '<='
+        body += `,_0${dName}=0,_0${name}=Infinity`
+        dx.forEach((dx, i) => {
+          body += `,_c${i}${dName}=_${i}${name}${s}${x[i]}`
+          body += `,_${i + 1}${dName}=_c${i}${dName}?${dx}:_${i}${dName}`
+          body += `,_${i + 1}${name}=_c${i}${dName}?${x[i]}:$_{i}${name}`
+        })
+        body += `,${dName}=_${dx.length}${dName}`
+        break
+      }
+      case 'sumfrac':
+        body += `,_${dName}=${x[0]}+${x[1]},`
+        body += `,${dName}=(${x[1]}*${dx[0]}-${x[0]}*${dx[1]})/_${dName}/_${dName}`
+        break
+      case 'match':
+        body += `,${dName}=${br[0]}===${br[1]}?${dx[0]}:${dx[1]}`
+        break
+      case 'thres':
+        body += `,${dName}=${br[0]}>=${br[1]}?${dx[0]}:${dx[1]}`
+        break
+      case 'subscript':
+        body += `,${dName}=0`
+        discrete.add(n.br[0])
+        break
+      case 'read': {
+        const key = n.tag[dynTagCategory]!
+        body += `,${dName}='${key}' === t ? 1 : 0`
+        break
+      }
+      case 'custom':
+        body += `,${dName}=g${n.ex}([${x}])`
+        break
+      case 'lookup':
+        // `JSON.stringify` on `Record<string, number>`
+        body += `,${dName}=([${dx}])[(${JSON.stringify(n.ex)})[${br[0]}] ?? 0]`
+        discrete.add(n.br[0])
+        break
+      default:
+        assertUnreachable(op)
+    }
+  })
+  if (discrete.size) {
+    body += `;if (${[...discrete].map((n) => `d${names.get(n)}`).join('||')})`
+    body += `throw new Error(\`'\${t}' must be discrete\`)`
+  }
+  body += `;return d${names.get(n)}}`
+  body += `;return [${diffTags.map((t) => `diff('${t}')`)}]`
+  console.log(body)
+  return new Function(`b`, body) as any
+}
+
+function compiledStr(
+  n: AnyTagFree[],
+  dynTagCategory: string,
+  slotCount: number,
+  initial: Record<string, any>
+): { str: string; names: Map<AnyTagFree, string> } {
+  let body = ''
+  const names = new Map<AnyTagFree, string>()
   traverse(n, (n, visit) => {
     const name = `x${names.size}`
     names.set(n, name)
@@ -266,7 +371,7 @@ export function compile(
 
     switch (op) {
       case 'const':
-        names.set(n, typeof n.ex !== 'string' ? `(${n.ex})` : `('${n.ex}')`)
+        body += `,${name}=` + (typeof n.ex !== 'string' ? n.ex : `'${n.ex}'`)
         break
       case 'sum':
       case 'prod':
@@ -297,7 +402,7 @@ export function compile(
           (_, i) => `(b[${i}]['${key}'] ?? 0)`
         )
         if (initial[key]) arr = [initial[key]!.toString(), ...arr]
-        body += `,${name}=${arr.join('+')}`
+        body += `,${name}=0+${arr.join('+')}`
         break
       }
       case 'custom':
@@ -311,6 +416,5 @@ export function compile(
         assertUnreachable(op)
     }
   })
-  body += `;return [${n.map((n) => names.get(n)!)}]`
-  return new Function(`b`, body) as any
+  return { str: body, names }
 }
