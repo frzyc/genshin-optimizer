@@ -54,7 +54,7 @@ export type Tag = BaseTag<Src, Dst, Sheet> & {
   faction?: Faction
 }
 
-export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
+export class Read extends BaseRead<Tag, Sheet> {
   override add(
     value: number | string | AnyNode,
     force = false

@@ -45,9 +45,7 @@ export type TagMapNodeEntries<Tag_ extends BaseTag> = TagMapEntries<
 >
 
 export class Read<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
+  Tag_ extends Tag<any, any, Sheet>,
   Sheet extends string
 > extends TypedRead<Tag_> {
   override register<C extends keyof Tag_ & string>(cat: C, val: Tag_[C]): void {
@@ -102,7 +100,7 @@ export function setReader<
   Src extends string | null,
   Dst extends string | null,
   Sheet extends string
->(reader_: Read<Tag_, Src, Dst, Sheet>) {
+>(reader_: Read<Tag_, Sheet>) {
   reader = reader_
 }
 export const usedNames = new Set<string>()

@@ -153,19 +153,19 @@ export class Calculator<
   }
 
   listFormulas(
-    read: Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>
-  ): Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>[] {
+    read: Read<Tag<Src, Dst, Sheet>, Sheet>
+  ): Read<Tag<Src, Dst, Sheet>, Sheet>[] {
     return this.gather(read.tag)
       .filter((x) => x.val)
       .map(
         ({ val, meta }) =>
           reader.withTag(meta.tag!)[
-            val as Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>['accu']
+            val as Read<Tag<Src, Dst, Sheet>, Sheet>['accu']
           ]
       )
   }
   listCondFormulas(
-    read: Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>
+    read: Read<Tag<Src, Dst, Sheet>, Sheet>
   ): CondInfo<Member | 'All', Sheet> {
     return this.listFormulas(read)
       .map((x) => this.compute(x).meta.conds)

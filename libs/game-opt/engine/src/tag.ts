@@ -9,11 +9,11 @@ export type Desc<
   Src extends string | null,
   Dst extends string | null,
   Sheet extends string
-> = { sheet: Sheet | undefined; accu: Read<Tag_, Src, Dst, Sheet>['accu'] }
+> = { sheet: Sheet | undefined; accu: Read<Tag_, Sheet>['accu'] }
 
 export const createConvert =
   <
-    Read_ extends Read<Tag_, Src, Dst, Sheet>,
+    Read_ extends Read<Tag_, Sheet>,
     Tag_ extends Tag<Src, Dst, Sheet>,
     Src extends string | null,
     Dst extends string | null,
@@ -52,7 +52,7 @@ export const allStatics = <
 >(
   sheet: Sheet
 ) =>
-  (reader as Read<Tag_, Src, Dst, Sheet>)
+  (reader as Read<Tag_, Sheet>)
     .withTag({ et: 'own', sheet, qt: 'misc' } as Tag_)
     .withAll('q', [])
 export const createAllBoolConditionals =
@@ -112,7 +112,7 @@ export const createAllNumConditionals =
 
 export const createConditionalEntries =
   <
-    Read_ extends Read<Tag_, Src, Dst, Sheet>,
+    Read_ extends Read<Tag_, Sheet>,
     Tag_ extends Tag<Src, Dst, Sheet>,
     Src extends string | null,
     Dst extends string | null,
@@ -140,7 +140,7 @@ function allConditionals<
   sheet: Sheet,
   shared: CondIgnored = 'none',
   meta: IBaseConditionalData,
-  transform: (r: Read<Tag_, Src, Dst, Sheet>, q: string) => T
+  transform: (r: Read<Tag_, Sheet>, q: string) => T
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
   const baseTag: Omit<Tag_, 'preset' | 'src' | 'dst' | 'q'> = {
@@ -151,7 +151,7 @@ function allConditionals<
     // Remove irrelevant tags
     ...nullTag,
   } as unknown as Tag_
-  let base = reader.max.withTag(baseTag) as Read<Tag_, Src, Dst, Sheet>
+  let base = reader.max.withTag(baseTag) as Read<Tag_, Sheet>
   if (shared === 'both') base = base.withTag({ src: null, dst: null } as Tag_)
   else if (shared !== 'none')
     base = base.with(shared, null as Tag_['src' | 'dst'])

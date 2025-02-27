@@ -33,7 +33,7 @@ export const fixedTags = {
 } as const
 export type Tag = BaseTag<Src, Dst, Sheet>
 
-export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
+export class Read extends BaseRead<Tag, Sheet> {
   override toString(): string {
     return tagStr(this.tag, this.ex)
   }
