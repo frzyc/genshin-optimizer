@@ -250,20 +250,19 @@ export function compile(
   slotCount: number,
   initial: Record<string, any>
 ): (_: Record<string, any>[]) => any[] {
-  let i = 1,
-    body = `'use strict';const x0=0` // making sure `const` has at least one entry
+  let body = `'use strict';const _=0` // making sure `const` has at least one entry
   for (const [name, f] of Object.entries(customOps))
-    body += `,${name}=${f.calc.toString()}`
+    body += `,f${name}=${f.calc.toString()}`
   const names = new Map<AnyNode, string>()
   traverse(n, (n, visit) => {
-    const name = `x${i++}`
+    const name = `x${names.size}`
     names.set(n, name)
 
-    const { op, x, br } = n
-    x.forEach(visit)
-    br.forEach(visit)
-    const argNames = x.map((x) => names.get(x)!),
-      brNames = br.map((n) => names.get(n)!)
+    const { op } = n
+    n.x.forEach(visit)
+    n.br.forEach(visit)
+    const x = n.x.map((x) => names.get(x)!)
+    const br = n.br.map((n) => names.get(n)!)
 
     switch (op) {
       case 'const':
@@ -272,25 +271,25 @@ export function compile(
       case 'sum':
       case 'prod':
         body += `,${name}=`
-        if (argNames.length) body += argNames.join(op == 'sum' ? '+' : '*')
+        if (x.length) body += x.join(op == 'sum' ? '+' : '*')
         else body += op == 'sum' ? 0 : 1
         break
       case 'min':
       case 'max':
-        body += `,${name}=Math.${op}(${argNames})`
+        body += `,${name}=Math.${op}(${x})`
         break
       case 'sumfrac':
-        body += `,${name}=${argNames[0]}/(${argNames[0]} + ${argNames[1]})`
+        body += `,${name}=${x[0]}/(${x[0]} + ${x[1]})`
         break
       case 'match':
-        body += `,${name}=${brNames[0]}===${brNames[1]}?${argNames[0]}:${argNames[1]}`
+        body += `,${name}=${br[0]}===${br[1]}?${x[0]}:${x[1]}`
         break
       case 'thres':
-        body += `,${name}=${brNames[0]}>=${brNames[1]}?${argNames[0]}:${argNames[1]}`
+        body += `,${name}=${br[0]}>=${br[1]}?${x[0]}:${x[1]}`
         break
       case 'subscript':
         // `JSON.stringify` on `number[] | string[]`
-        body += `,${name}=${JSON.stringify(n.ex)}[${brNames[0]}]`
+        body += `,${name}=${JSON.stringify(n.ex)}[${br[0]}]`
         break
       case 'read': {
         const key = n.tag[dynTagCategory]!
@@ -302,13 +301,11 @@ export function compile(
         break
       }
       case 'custom':
-        body += `,${name}=${n.ex}([${argNames}])`
+        body += `,${name}=f${n.ex}([${x}])`
         break
       case 'lookup':
         // `JSON.stringify` on `Record<string, number>`
-        body += `,${name}=([${argNames}])[(${JSON.stringify(n.ex)})[${
-          brNames[0]
-        }] ?? 0]`
+        body += `,${name}=([${x}])[(${JSON.stringify(n.ex)})[${br[0]}] ?? 0]`
         break
       default:
         assertUnreachable(op)
