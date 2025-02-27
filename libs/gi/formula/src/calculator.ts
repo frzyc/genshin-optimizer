@@ -3,13 +3,13 @@ import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
 import { createFilterDebug } from '@genshin-optimizer/game-opt/formula'
 import { allArtifactSetKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
 import { DebugCalculator } from '@genshin-optimizer/pando/engine'
-import type { Dst, Member, Sheet, Src } from './data/util'
+import type { Tag } from './data/util'
 import { tagStr } from './data/util'
 
 type Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
-export type PartialMeta = PartialMetaBase<Src, Dst, Sheet, Op>
+export type PartialMeta = PartialMetaBase<Tag, Op>
 
-export class Calculator extends Base<Src, Dst, Member, Sheet, Op> {
+export class Calculator extends Base<Tag, Op> {
   override toDebug(): DebugCalculator {
     return new DebugCalculator(
       this,

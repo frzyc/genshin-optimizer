@@ -9,7 +9,7 @@ import {
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
-import type { Dst, Sheet, Src, Stat } from './listing'
+import type { Sheet, Stat } from './listing'
 import type { Read, Tag } from './read'
 import { reader } from './read'
 
@@ -166,7 +166,7 @@ export const enemyTag = {
   reaction: { amp: fixed, cata: fixed },
 } as const
 
-export const convert = createConvert<Read, Tag, Src, Dst, Sheet>()
+export const convert = createConvert<Read, Sheet>()
 
 // Default queries
 const noName = { src: null, name: null }

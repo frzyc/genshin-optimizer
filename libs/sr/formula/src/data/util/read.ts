@@ -47,7 +47,7 @@ export type Tag = BaseTag<Src, Dst, Sheet> & {
   path?: Path
 }
 
-export class Read extends BaseRead<Tag, Sheet> {
+export class Read extends BaseRead<Tag> {
   override add(
     value: number | string | AnyNode,
     force = false
@@ -159,7 +159,7 @@ export class Read extends BaseRead<Tag, Sheet> {
 }
 
 // Need to instantiate with sr-specific reader
-setReader<Tag, Src, Dst, Sheet>(new Read({}, undefined))
+setReader<Tag>(new Read({}, undefined))
 export const reader = baseReader as Read
 
 export function tagStr(tag: Tag, ex?: any): string {

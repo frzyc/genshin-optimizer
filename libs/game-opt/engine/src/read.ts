@@ -34,6 +34,7 @@ export interface Tag<
   q?: string | null
   [condMeta: symbol]: IBaseConditionalData | undefined
 }
+export type AnyTag = Tag<string | null, string | null, string>
 
 export type TagMapNodeEntry<Tag_ extends BaseTag> = TagMapEntry<
   AnyNode | ReRead,
@@ -44,11 +45,8 @@ export type TagMapNodeEntries<Tag_ extends BaseTag> = TagMapEntries<
   Tag_
 >
 
-export class Read<
-  Tag_ extends Tag<any, any, Sheet>,
-  Sheet extends string
-> extends TypedRead<Tag_> {
-  override register<C extends keyof Tag_ & string>(cat: C, val: Tag_[C]): void {
+export class Read<Tag extends AnyTag = AnyTag> extends TypedRead<Tag> {
+  override register<C extends keyof Tag & string>(cat: C, val: Tag[C]): void {
     if (val == null) return // null | undefined
     if (cat === 'name') usedNames.add(val)
     else if (cat === 'q') usedQ.add(val)
@@ -57,14 +55,17 @@ export class Read<
   name(name: string): this {
     return super.with('name', name)
   }
-  sheet(sheet: Sheet): this {
+  sheet(sheet: Tag['sheet']): this {
     return super.with('sheet', sheet)
   }
 
-  add(value: number | string | AnyNode): TagMapNodeEntry<Tag_> {
+  add(value: number | string | AnyNode): TagMapNodeEntry<Tag> {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
-  addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries<Tag_> {
+  addOnce(
+    sheet: Tag['sheet'],
+    value: number | NumNode
+  ): TagMapNodeEntries<Tag> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
@@ -74,14 +75,14 @@ export class Read<
       // 1) ownBuff.stackIn.<q>.add(value)
       // Technically this type assertion is a little unsafe, but we should expect that callers
       // will not be overwriting the types for et, sheet, qt nor q
-      this.withTag({ et: 'own', sheet, qt: 'stackIn', q } as Tag_).add(value),
+      this.withTag({ et: 'own', sheet, qt: 'stackIn', q } as Tag).add(value),
       // 2) In TeamData: ownBuff.stackTmp.<q>.add(cmpNE(own.stackIn.<q>, 0, /* priority */))
       // 3) In TeamData: ownBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, own.stackIn))
       // 4) teamBuff.<stat>.add(own.stackOut.<q>)
       this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })), // How should we get this reader? it should be a specific game's Read
     ]
   }
-  reread(r: this): TagMapNodeEntry<Tag_> {
+  reread(r: this): TagMapNodeEntry<Tag> {
     return super.toEntry(reread(r.tag))
   }
 }
@@ -95,12 +96,7 @@ function uniqueId(namespace: string): number {
 }
 
 export let reader = new Read({}, undefined)
-export function setReader<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(reader_: Read<Tag_, Sheet>) {
+export function setReader<Tag_ extends AnyTag>(reader_: Read<Tag_>) {
   reader = reader_
 }
 export const usedNames = new Set<string>()

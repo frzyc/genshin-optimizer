@@ -10,9 +10,10 @@ import {
 } from '@genshin-optimizer/game-opt/engine'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
-import type { Dst, Sheet, Src, Stat } from './listing'
+import type { Sheet, Stat } from './listing'
 import { bonusAbilities, statBoosts } from './listing'
-import { reader, type Read, type Tag } from './read'
+import type { Read, Tag } from './read'
+import { reader } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -68,7 +69,7 @@ export function priorityTable(
  * only include contributions from character and custom values.
  */
 
-type Desc = BaseDesc<Tag, Src, Dst, Sheet>
+type Desc = BaseDesc<Tag, Sheet>
 const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
 const iso: Desc = { sheet: 'iso', accu: 'unique' }
@@ -155,7 +156,7 @@ export const enemyTag = {
   },
 } as const
 
-export const convert = createConvert<Read, Tag, Src, Dst, Sheet>()
+export const convert = createConvert<Read, Sheet>()
 
 // Default queries
 const noName = { src: null, name: null }
