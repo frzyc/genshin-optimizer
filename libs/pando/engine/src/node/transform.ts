@@ -20,8 +20,8 @@ import type {
  */
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 export type NumTagFree = NumNode<OP>
-type StrTagFree = StrNode<OP>
-type AnyTagFree = AnyNode<OP>
+export type StrTagFree = StrNode<OP>
+export type AnyTagFree = AnyNode<OP>
 
 /**
  * Apply all tag-related nodes from `n` calculation and replace `Read` nodes where
@@ -314,10 +314,9 @@ export function compileDiff(
         discrete.add(br[0])
         discrete.add(br[1])
         break
-      case 'read': {
+      case 'read':
         body += `,${dout}='${n.tag[dynTagCat]!}'===t?1:0`
         break
-      }
       case 'subscript':
         body += `,${dout}=0`
         discrete.add(br[0])
@@ -389,7 +388,7 @@ function compiledStr(
           (_, i) => `(b[${i}]['${key}'] ?? 0)`
         )
         if (initial[key]) arr = [initial[key]!.toString(), ...arr]
-        body += `,${out}=+(${arr.join('+')})`
+        body += `,${out}=+(${arr.join('+')}+0)`
         break
       }
       case 'subscript':
