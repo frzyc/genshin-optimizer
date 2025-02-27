@@ -1,13 +1,9 @@
 'use client'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
-import { objKeyMap } from '@genshin-optimizer/common/util'
 import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSlotKey, SpecialityKey } from '@genshin-optimizer/zzz/consts'
-import {
-  allDiscSlotKeys,
-  allSpecialityKeys,
-} from '@genshin-optimizer/zzz/consts'
+import { allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
@@ -27,7 +23,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material'
-import { Suspense, useCallback, useContext, useMemo, useState } from 'react'
+import { Suspense, useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscCard, DiscEditor, DiscSwapModal } from '../Disc'
 import { WengineCard, WengineEditor, WengineSwapModal } from '../Wengine'
@@ -50,12 +46,6 @@ export function EquippedGrid({
   const character = useContext(CharacterContext)
   const [discIdToEdit, setDiscIdToEdit] = useState<string | undefined>()
   const [editWengineId, setEditorWengineId] = useState('')
-  const discIds = useMemo(() => {
-    return objKeyMap(
-      allDiscSlotKeys,
-      (slotKey) => character?.equippedDiscs[slotKey]
-    )
-  }, [character])
   const onEditWengine = useCallback((id: string) => {
     setEditorWengineId(id)
   }, [])
@@ -67,7 +57,7 @@ export function EquippedGrid({
   const characterType = character
     ? getCharStat(character.key).specialty
     : allSpecialityKeys[0]
-  const discs = useDiscs(discIds)
+  const discs = useDiscs(character?.equippedDiscs)
   const disc = useDisc(discIdToEdit)
 
   return (

@@ -237,7 +237,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.3] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.04, 106] }
-      }
+      },
+      "maxEnergy": 120
     },
     "DanHeng": {
       "rarity": 4,
@@ -467,7 +468,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.08] }
-      }
+      },
+      "maxEnergy": 100
     },
     "Himeko": {
       "rarity": 5,
@@ -692,7 +694,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.4] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Welt": {
       "rarity": 5,
@@ -929,7 +932,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.35] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Kafka": {
       "rarity": 5,
@@ -1169,7 +1173,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [2] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1.56, 1] }
-      }
+      },
+      "maxEnergy": 120
     },
     "SilverWolf": {
       "rarity": 5,
@@ -1425,7 +1430,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.2, 5] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2, 1] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Arlan": {
       "rarity": 4,
@@ -1652,7 +1658,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.25, 2] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Asta": {
       "rarity": 4,
@@ -1874,7 +1881,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [2, 0.15] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Herta": {
       "rarity": 4,
@@ -2105,7 +2113,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.1] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.25, 1] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Bronya": {
       "rarity": 5,
@@ -2336,7 +2345,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.8] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Seele": {
       "rarity": 5,
@@ -2561,7 +2571,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [15] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.15, 1] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Serval": {
       "rarity": 4,
@@ -2794,7 +2805,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.3] }
-      }
+      },
+      "maxEnergy": 100
     },
     "Gepard": {
       "rarity": 5,
@@ -3027,7 +3039,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.2] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5] }
-      }
+      },
+      "maxEnergy": 100
     },
     "Natasha": {
       "rarity": 4,
@@ -3267,7 +3280,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [5] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.4] }
-      }
+      },
+      "maxEnergy": 90
     },
     "Pela": {
       "rarity": 4,
@@ -3493,7 +3507,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1, 0.12, 2] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.4] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Clara": {
       "rarity": 5,
@@ -3728,7 +3743,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.3] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5, 1] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Sampo": {
       "rarity": 4,
@@ -3960,7 +3976,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [5, 0.08] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.15] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Hook": {
       "rarity": 4,
@@ -4202,7 +4219,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Lynx": {
       "rarity": 4,
@@ -4457,7 +4475,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.03, 1] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.06, 0.3] }
-      }
+      },
+      "maxEnergy": 100
     },
     "Luka": {
       "rarity": 4,
@@ -4700,7 +4719,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.05, 4] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.08] }
-      }
+      },
+      "maxEnergy": 130
     },
     "TopazAndNumby": {
       "rarity": 5,
@@ -4937,7 +4957,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.2] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1, 0.1] }
-      }
+      },
+      "maxEnergy": 130
     },
     "Qingque": {
       "rarity": 4,
@@ -5164,7 +5185,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.24] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [] }
-      }
+      },
+      "maxEnergy": 140
     },
     "Tingyun": {
       "rarity": 4,
@@ -5394,7 +5416,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.2] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [10] }
-      }
+      },
+      "maxEnergy": 130
     },
     "Luocha": {
       "rarity": 5,
@@ -5629,7 +5652,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.12] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1, 0.2, 2] }
-      }
+      },
+      "maxEnergy": 100
     },
     "JingYuan": {
       "rarity": 5,
@@ -5858,7 +5882,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [2] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.12, 3] }
-      }
+      },
+      "maxEnergy": 130
     },
     "Blade": {
       "rarity": 5,
@@ -6125,7 +6150,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.2, 2] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5] }
-      }
+      },
+      "maxEnergy": 130
     },
     "Sushang": {
       "rarity": 4,
@@ -6362,7 +6388,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.4] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Yukong": {
       "rarity": 4,
@@ -6592,7 +6619,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.3] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1] }
-      }
+      },
+      "maxEnergy": 130
     },
     "FuXuan": {
       "rarity": 5,
@@ -6831,7 +6859,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [5] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [2, 1.2] }
-      }
+      },
+      "maxEnergy": 135
     },
     "Yanqing": {
       "rarity": 5,
@@ -7078,7 +7107,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.8, 0.12] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [] }
-      }
+      },
+      "maxEnergy": 140
     },
     "Guinaifen": {
       "rarity": 4,
@@ -7317,7 +7347,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [2] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Bailu": {
       "rarity": 5,
@@ -7564,7 +7595,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.1, 3, 2] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1] }
-      }
+      },
+      "maxEnergy": 100
     },
     "Jingliu": {
       "rarity": 5,
@@ -7819,7 +7851,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.9, 0.3] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1, 0.5] }
-      }
+      },
+      "maxEnergy": 140
     },
     "DanHengImbibitorLunae": {
       "rarity": 5,
@@ -8057,7 +8090,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2, 3] }
-      }
+      },
+      "maxEnergy": 140
     },
     "Xueyi": {
       "rarity": 4,
@@ -8290,7 +8324,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.4, 2] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [6] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Hanya": {
       "rarity": 4,
@@ -8516,7 +8551,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.1] }
-      }
+      },
+      "maxEnergy": 140
     },
     "Huohuo": {
       "rarity": 5,
@@ -8768,7 +8804,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.8] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5, 2] }
-      }
+      },
+      "maxEnergy": 140
     },
     "Jiaoqiu": {
       "rarity": 5,
@@ -9014,7 +9051,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.15] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1, 9, 0.03] }
-      }
+      },
+      "maxEnergy": 100
     },
     "Feixiao": {
       "rarity": 5,
@@ -9279,7 +9317,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1, 0.08, 2] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2, 1.4] }
-      }
+      },
+      "maxEnergy": 12
     },
     "Yunli": {
       "rarity": 5,
@@ -9534,7 +9573,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.5, 1] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.15, 0.2] }
-      }
+      },
+      "maxEnergy": 240
     },
     "Lingsha": {
       "rarity": 5,
@@ -9795,7 +9835,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.4] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2, 4, 0.5, 5] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Moze": {
       "rarity": 4,
@@ -10020,7 +10061,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.3, 2] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.25] }
-      }
+      },
+      "maxEnergy": 120
     },
     "March7thTheHunt": {
       "rarity": 4,
@@ -10262,7 +10304,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [5] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Fugue": {
       "rarity": 5,
@@ -10502,7 +10545,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.2] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5] }
-      }
+      },
+      "maxEnergy": 130
     },
     "Gallagher": {
       "rarity": 4,
@@ -10733,7 +10777,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2, 0.2] }
-      }
+      },
+      "maxEnergy": 110
     },
     "Argenti": {
       "rarity": 5,
@@ -10971,7 +11016,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [2, 2] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.3] }
-      }
+      },
+      "maxEnergy": 180
     },
     "RuanMei": {
       "rarity": 5,
@@ -11212,7 +11258,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [1, 3] },
         "5": { "skillTypeAddLevel": { "basic": 1, "skill": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1, 2] }
-      }
+      },
+      "maxEnergy": 130
     },
     "Aventurine": {
       "rarity": 5,
@@ -11450,7 +11497,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.4, 2, 3] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5, 1.5] }
-      }
+      },
+      "maxEnergy": 110
     },
     "DrRatio": {
       "rarity": 5,
@@ -11678,7 +11726,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [15] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1, 0.5] }
-      }
+      },
+      "maxEnergy": 140
     },
     "Sparkle": {
       "rarity": 5,
@@ -11912,7 +11961,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.3] }
-      }
+      },
+      "maxEnergy": 110
     },
     "BlackSwan": {
       "rarity": 5,
@@ -12169,7 +12219,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.1, 8] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.5, 0.65, 1] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Acheron": {
       "rarity": 5,
@@ -12463,7 +12514,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.08] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2] }
-      }
+      },
+      "maxEnergy": 9
     },
     "Robin": {
       "rarity": 5,
@@ -12698,7 +12750,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.5] },
         "5": { "skillTypeAddLevel": { "basic": 1, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [8, 4.5] }
-      }
+      },
+      "maxEnergy": 160
     },
     "Firefly": {
       "rarity": 5,
@@ -12983,7 +13036,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.5] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2, 0.5] }
-      }
+      },
+      "maxEnergy": 240
     },
     "Misha": {
       "rarity": 4,
@@ -13218,7 +13272,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.06] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1, 0.3] }
-      }
+      },
+      "maxEnergy": 100
     },
     "Sunday": {
       "rarity": 5,
@@ -13453,7 +13508,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [8] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [3, 0.02, 1] }
-      }
+      },
+      "maxEnergy": 130
     },
     "Jade": {
       "rarity": 5,
@@ -13695,7 +13751,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.12, 3] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.2] }
-      }
+      },
+      "maxEnergy": 140
     },
     "Boothill": {
       "rarity": 5,
@@ -13941,7 +13998,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.12, 0.12] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.4, 0.7] }
-      }
+      },
+      "maxEnergy": 115
     },
     "Rappa": {
       "rarity": 5,
@@ -14192,7 +14250,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.12] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [5, 5] }
-      }
+      },
+      "maxEnergy": 140
     },
     "TheHerta": {
       "rarity": 5,
@@ -14446,7 +14505,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.12] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1.4, 2.5, 4, 0.2] }
-      }
+      },
+      "maxEnergy": 220
     },
     "Aglaea": {
       "rarity": 5,
@@ -14743,7 +14803,8 @@
           "params": []
         },
         "6": { "skillTypeAddLevel": {}, "params": [0.2, 0.1, 0.3, 0.6] }
-      }
+      },
+      "maxEnergy": 350
     },
     "Tribbie": {
       "rarity": 5,
@@ -14977,7 +15038,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.18] },
         "5": { "skillTypeAddLevel": { "skill": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [7.29] }
-      }
+      },
+      "maxEnergy": 120
     },
     "Mydei": {
       "rarity": 5,
@@ -15257,7 +15319,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.1, 0.3] },
         "5": { "skillTypeAddLevel": { "ult": 2, "talent": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [100] }
-      }
+      },
+      "maxEnergy": 160
     },
     "TrailblazerPhysical": {
       "rarity": 5,
@@ -15501,7 +15564,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.25] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [1] }
-      }
+      },
+      "maxEnergy": 120
     },
     "TrailblazerFire": {
       "rarity": 5,
@@ -15738,7 +15802,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [4] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [0.1, 3] }
-      }
+      },
+      "maxEnergy": 120
     },
     "TrailblazerImaginary": {
       "rarity": 5,
@@ -15960,7 +16025,8 @@
         "4": { "skillTypeAddLevel": {}, "params": [0.15] },
         "5": { "skillTypeAddLevel": { "basic": 1, "ult": 2 }, "params": [] },
         "6": { "skillTypeAddLevel": {}, "params": [2] }
-      }
+      },
+      "maxEnergy": 140
     },
     "TrailblazerIce": {
       "rarity": 5,
@@ -16241,7 +16307,8 @@
           "params": []
         },
         "6": { "skillTypeAddLevel": {}, "params": [1] }
-      }
+      },
+      "maxEnergy": 160
     }
   },
   "lightCone": {
@@ -17927,15 +17994,7 @@
           [-1, 0.2, 0.25, 0.3, 0.35, 0.4],
           [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
         ],
-        "passiveStats": {
-          "physical_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4],
-          "fire_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4],
-          "ice_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4],
-          "wind_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4],
-          "lightning_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4],
-          "quantum_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4],
-          "imaginary_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
-        }
+        "passiveStats": { "common_dmg_": [-1, 0.2, 0.25, 0.3, 0.35, 0.4] }
       }
     },
     "MakeTheWorldClamor": {
@@ -18660,15 +18719,7 @@
           [-1, 0.04, 0.05, 0.06, 0.07, 0.08],
           [-1, 3, 3, 3, 3, 3]
         ],
-        "passiveStats": {
-          "physical_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24],
-          "fire_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24],
-          "ice_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24],
-          "wind_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24],
-          "lightning_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24],
-          "quantum_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24],
-          "imaginary_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
-        }
+        "passiveStats": { "common_dmg_": [-1, 0.12, 0.15, 0.18, 0.21, 0.24] }
       }
     },
     "WarmthShortensColdNights": {
@@ -20377,15 +20428,7 @@
           [-1, 3, 3, 3, 3, 3],
           [-1, 1, 1, 1, 1, 1]
         ],
-        "passiveStats": {
-          "physical_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4],
-          "fire_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4],
-          "ice_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4],
-          "wind_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4],
-          "lightning_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4],
-          "quantum_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4],
-          "imaginary_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4]
-        }
+        "passiveStats": { "common_dmg_": [-1, 0.24, 0.28, 0.32, 0.36, 0.4] }
       }
     },
     "IncessantRain": {

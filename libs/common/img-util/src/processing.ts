@@ -106,21 +106,21 @@ export function findHistogramRange(
   const max = Math.max(...histogram)
   const hMax = max * threshold
   const length = histogram.length
-  let a = -window
+  let a = -Infinity
   for (let i = 0; i < length; i++) {
     const maxed = histogram[i] > hMax
-    if (!maxed) a = -window
+    if (!maxed) a = -Infinity
     else if (maxed && a < 0) a = i
-    else if (maxed && i - a > window) break
+    else if (maxed && i - a >= window) break
   }
   if (a < 0) a = 0
 
-  let b = length - 1 + window
+  let b = Infinity
   for (let i = length - 1; i >= 0; i--) {
     const maxed = histogram[i] > hMax
-    if (!maxed) b = length - 1 + window
+    if (!maxed) b = Infinity
     else if (maxed && b > length - 1) b = i
-    else if (maxed && b - i > window) break
+    else if (maxed && b - i >= window) break
   }
   if (b > length - 1) b = length - 1
   return [a, b]
