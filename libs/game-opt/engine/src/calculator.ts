@@ -46,7 +46,7 @@ const { arithmetic } = calculation
 export class Calculator<
   Tag extends AnyTag = AnyTag,
   Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> extends BaseCalculator {
+> extends BaseCalculator<CalcMeta<Tag, Op>> {
   override computeMeta(
     { op, ex }: AnyNode,
     val: number | string,

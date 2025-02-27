@@ -34,17 +34,24 @@ export interface Tag<
   q?: string | null
   [condMeta: symbol]: IBaseConditionalData | undefined
 }
-export type AnyTag = Tag<string | null, string | null, string>
+
+export type AnyTag<Sheet extends string = string> = Tag<
+  string | null,
+  string | null,
+  Sheet
+>
 export type Member<T extends AnyTag> = NonNullable<T['sheet']>
 export type Sheet<T extends AnyTag> = NonNullable<T['sheet']>
+export type Src<T extends AnyTag> = NonNullable<T['src']>
+export type Dst<T extends AnyTag> = NonNullable<T['dst']>
 
-export type TagMapNodeEntry<Tag_ extends BaseTag> = TagMapEntry<
+export type TagMapNodeEntry<Tag extends BaseTag> = TagMapEntry<
   AnyNode | ReRead,
-  Tag_
+  Tag
 >
-export type TagMapNodeEntries<Tag_ extends BaseTag> = TagMapEntries<
+export type TagMapNodeEntries<Tag extends BaseTag> = TagMapEntries<
   AnyNode | ReRead,
-  Tag_
+  Tag
 >
 
 export class Read<Tag extends AnyTag = AnyTag> extends TypedRead<Tag> {
@@ -95,7 +102,7 @@ function uniqueId(namespace: string): number {
 }
 
 export let reader = new Read({}, undefined)
-export function setReader<Tag_ extends AnyTag>(reader_: Read<Tag_>) {
+export function setReader<Tag extends AnyTag>(reader_: Read<Tag>) {
   reader = reader_
 }
 export const usedNames = new Set<string>()
