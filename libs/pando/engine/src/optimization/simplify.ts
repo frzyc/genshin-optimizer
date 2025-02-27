@@ -29,6 +29,7 @@ export function flatten<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
       case 'max':
         if (n.x.some((x) => x.op === op)) {
           const x = n.x.flatMap((x) => (x.op === op ? x.x : [x]))
+          if (x.length === 1) return x[0] as NumNode<I>
           return { ...n, x } as NumNode<I>
         }
     }
@@ -56,12 +57,9 @@ export function combineConst<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
             n.ex
           )
 
-          // Constant-only; replace with `Const` node
-          if (!varX.length) return constant(constVal)
           // Vacuous const part; don't add the unnecessary const term
           if (constVal === arithmetic[op]([], n.ex))
             return { ...n, x: varX } as NumNode<I>
-
           return { ...n, x: [constant(constVal), ...varX] } as NumNode<I>
         }
       }
@@ -79,7 +77,7 @@ export function deduplicate<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
     const { op } = n
     const xIds = n.x.map((n) => nodeIds.get(n)!)
     const brIds = n.br.map((n) => nodeIds.get(n)!)
-    let key: (string | number | undefined)[]
+    let key: Key[]
     switch (op) {
       case 'read': {
         const cats = Object.keys(n.tag!).sort()
