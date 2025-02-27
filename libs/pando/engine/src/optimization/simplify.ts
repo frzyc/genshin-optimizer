@@ -27,9 +27,9 @@ export function flatten<I extends OP>(n: AnyNode<I>[]): AnyNode<I>[] {
       case 'prod':
       case 'min':
       case 'max':
+        if (n.x.length === 1) return n.x[0] as NumNode<I>
         if (n.x.some((x) => x.op === op)) {
           const x = n.x.flatMap((x) => (x.op === op ? x.x : [x]))
-          if (x.length === 1) return x[0] as NumNode<I>
           return { ...n, x } as NumNode<I>
         }
     }
