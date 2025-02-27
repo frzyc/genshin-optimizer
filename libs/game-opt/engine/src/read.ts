@@ -20,8 +20,8 @@ import type { IBaseConditionalData } from './IConditionalData'
 import type { EntryType, Preset } from './listing'
 
 export interface Tag<
-  Src extends string | null | null,
-  Dst extends string | null | null,
+  Src extends string | null,
+  Dst extends string | null,
   Sheet extends string
 > extends BaseTag {
   preset?: Preset
@@ -35,18 +35,14 @@ export interface Tag<
   [condMeta: symbol]: IBaseConditionalData | undefined
 }
 
-export type TagMapNodeEntry<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
-> = TagMapEntry<AnyNode | ReRead, Tag_>
-export type TagMapNodeEntries<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
-> = TagMapEntries<AnyNode | ReRead, Tag_>
+export type TagMapNodeEntry<Tag_ extends BaseTag> = TagMapEntry<
+  AnyNode | ReRead,
+  Tag_
+>
+export type TagMapNodeEntries<Tag_ extends BaseTag> = TagMapEntries<
+  AnyNode | ReRead,
+  Tag_
+>
 
 export class Read<
   Tag_ extends Tag<Src, Dst, Sheet>,
@@ -67,15 +63,10 @@ export class Read<
     return super.with('sheet', sheet)
   }
 
-  add(
-    value: number | string | AnyNode
-  ): TagMapNodeEntry<Tag_, Src, Dst, Sheet> {
+  add(value: number | string | AnyNode): TagMapNodeEntry<Tag_> {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
-  addOnce(
-    sheet: Sheet,
-    value: number | NumNode
-  ): TagMapNodeEntries<Tag_, Src, Dst, Sheet> {
+  addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries<Tag_> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
@@ -92,7 +83,7 @@ export class Read<
       this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })), // How should we get this reader? it should be a specific game's Read
     ]
   }
-  reread(r: this): TagMapNodeEntry<Tag_, Src, Dst, Sheet> {
+  reread(r: this): TagMapNodeEntry<Tag_> {
     return super.toEntry(reread(r.tag))
   }
 }
