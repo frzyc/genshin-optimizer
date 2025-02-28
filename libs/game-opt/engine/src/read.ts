@@ -20,9 +20,9 @@ import type { IBaseConditionalData } from './IConditionalData'
 import type { EntryType, Preset } from './listing'
 
 export interface Tag<
-  Sheet extends string,
-  Src extends string | null,
-  Dst extends string | null
+  Sheet extends string = string,
+  Src extends string | null = string | null,
+  Dst extends string | null = string | null
 > extends BaseTag {
   preset?: Preset
   src?: Src
@@ -34,16 +34,10 @@ export interface Tag<
   q?: string | null
   [condMeta: symbol]: IBaseConditionalData | undefined
 }
-
-export type AnyTag<Sheet extends string = string> = Tag<
-  Sheet,
-  string | null,
-  string | null
->
-export type Member<T extends AnyTag> = NonNullable<T['sheet']>
-export type Sheet<T extends AnyTag> = NonNullable<T['sheet']>
-export type Src<T extends AnyTag> = NonNullable<T['src']>
-export type Dst<T extends AnyTag> = NonNullable<T['dst']>
+export type Member<T extends Tag> = NonNullable<T['member']>
+export type Sheet<T extends Tag> = NonNullable<T['sheet']>
+export type Src<T extends Tag> = NonNullable<T['src']>
+export type Dst<T extends Tag> = NonNullable<T['dst']>
 
 export type TagMapNodeEntry<Tag extends BaseTag> = TagMapEntry<
   AnyNode | ReRead,
@@ -54,8 +48,8 @@ export type TagMapNodeEntries<Tag extends BaseTag> = TagMapEntries<
   Tag
 >
 
-export class Read<Tag extends AnyTag = AnyTag> extends TypedRead<Tag> {
-  override register<C extends keyof Tag & string>(cat: C, val: Tag[C]): void {
+export class Read<Tag_ extends Tag = Tag> extends TypedRead<Tag_> {
+  override register<C extends keyof Tag_ & string>(cat: C, val: Tag_[C]): void {
     if (val == null) return // null | undefined
     if (cat === 'name') usedNames.add(val)
     else if (cat === 'q') usedQ.add(val)
@@ -64,14 +58,17 @@ export class Read<Tag extends AnyTag = AnyTag> extends TypedRead<Tag> {
   name(name: string): this {
     return super.with('name', name)
   }
-  sheet(sheet: Sheet<Tag>): this {
+  sheet(sheet: Sheet<Tag_>): this {
     return super.with('sheet', sheet)
   }
 
-  add(value: number | string | AnyNode): TagMapNodeEntry<Tag> {
+  add(value: number | string | AnyNode): TagMapNodeEntry<Tag_> {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
-  addOnce(sheet: Sheet<Tag>, value: number | NumNode): TagMapNodeEntries<Tag> {
+  addOnce(
+    sheet: Sheet<Tag_>,
+    value: number | NumNode
+  ): TagMapNodeEntries<Tag_> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
@@ -81,14 +78,14 @@ export class Read<Tag extends AnyTag = AnyTag> extends TypedRead<Tag> {
       // 1) ownBuff.stackIn.<q>.add(value)
       // Technically this type assertion is a little unsafe, but we should expect that callers
       // will not be overwriting the types for et, sheet, qt nor q
-      this.withTag({ et: 'own', sheet, qt: 'stackIn', q } as Tag).add(value),
+      this.withTag({ et: 'own', sheet, qt: 'stackIn', q } as Tag_).add(value),
       // 2) In TeamData: ownBuff.stackTmp.<q>.add(cmpNE(own.stackIn.<q>, 0, /* priority */))
       // 3) In TeamData: ownBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, own.stackIn))
       // 4) teamBuff.<stat>.add(own.stackOut.<q>)
       this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })), // How should we get this reader? it should be a specific game's Read
     ]
   }
-  reread(r: this): TagMapNodeEntry<Tag> {
+  reread(r: this): TagMapNodeEntry<Tag_> {
     return super.toEntry(reread(r.tag))
   }
 }
@@ -102,7 +99,7 @@ function uniqueId(namespace: string): number {
 }
 
 export let reader = new Read({}, undefined)
-export function setReader<Tag extends AnyTag>(reader_: Read<Tag>) {
+export function setReader<Tag_ extends Tag>(reader_: Read<Tag_>) {
   reader = reader_
 }
 export const usedNames = new Set<string>()

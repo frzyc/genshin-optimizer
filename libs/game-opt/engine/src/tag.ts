@@ -1,7 +1,7 @@
 import type { Tag as BaseTag, NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpEq, cmpNE, subscript } from '@genshin-optimizer/pando/engine'
 import type { IBaseConditionalData } from './IConditionalData'
-import type { AnyTag, Dst, Read, Sheet, Src } from './read'
+import type { Dst, Read, Sheet, Src, Tag } from './read'
 import { reader } from './read'
 
 export type Desc<Tag extends BaseTag, Sheet extends string> = {
@@ -39,14 +39,14 @@ export const createConvert =
   }
 
 // Custom tags
-export const allStatics = <Tag extends AnyTag<Sheet>, Sheet extends string>(
+export const allStatics = <Tag_ extends Tag<Sheet>, Sheet extends string>(
   sheet: Sheet
 ) =>
-  (reader as Read<Tag>)
-    .withTag({ et: 'own', sheet, qt: 'misc' } as Tag)
+  (reader as Read<Tag_>)
+    .withTag({ et: 'own', sheet, qt: 'misc' } as Tag_)
     .withAll('q', [])
 export const createAllBoolConditionals =
-  <Tag extends AnyTag<Sheet>, Sheet extends string>(nullTag: Tag) =>
+  <Tag_ extends Tag<Sheet>, Sheet extends string>(nullTag: Tag_) =>
   (sheet: Sheet, ignored?: CondIgnored) =>
     allConditionals(nullTag, sheet, ignored, { type: 'bool' }, (r) => ({
       ifOn: (node: NumNode | number, off?: NumNode | number) =>
@@ -54,8 +54,8 @@ export const createAllBoolConditionals =
       ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
     }))
 export const createAllListConditionals =
-  <T extends string, Tag extends AnyTag<Sheet>, Sheet extends string>(
-    nullTag: Tag
+  <T extends string, Tag_ extends Tag<Sheet>, Sheet extends string>(
+    nullTag: Tag_
   ) =>
   (sheet: Sheet, list: T[], ignored?: CondIgnored) =>
     allConditionals(nullTag, sheet, ignored, { type: 'list', list }, (r) => ({
@@ -64,7 +64,7 @@ export const createAllListConditionals =
       value: r,
     }))
 export const createAllNumConditionals =
-  <Tag extends AnyTag<Sheet>, Sheet extends string>(nullTag: Tag) =>
+  <Tag_ extends Tag<Sheet>, Sheet extends string>(nullTag: Tag_) =>
   (
     sheet: Sheet,
     int_only = true,
@@ -81,11 +81,11 @@ export const createAllNumConditionals =
     )
 
 export const createConditionalEntries =
-  <Read_ extends Read<Tag>, Tag extends AnyTag>(own: {
-    withTag: (_: Tag) => Read_
+  <Read_ extends Read<Tag_>, Tag_ extends Tag>(own: {
+    withTag: (_: Tag_) => Read_
   }) =>
-  (sheet: Sheet<Tag>, src: Src<Tag>, dst: Dst<Tag>) => {
-    const tag = { sheet, qt: 'cond', src, dst } as Tag
+  (sheet: Sheet<Tag_>, src: Src<Tag_>, dst: Dst<Tag_>) => {
+    const tag = { sheet, qt: 'cond', src, dst } as Tag_
     const base = own.withTag(tag).withAll('q', [])
     return (name: keyof typeof base, val: string | number) =>
       base[name].add(val)
@@ -93,25 +93,26 @@ export const createConditionalEntries =
 
 const condMeta = Symbol.for('condMeta')
 type CondIgnored = 'both' | 'src' | 'dst' | 'none'
-function allConditionals<T, Tag extends AnyTag>(
-  nullTag: Tag,
-  sheet: Sheet<Tag>,
+function allConditionals<T, Tag_ extends Tag>(
+  nullTag: Tag_,
+  sheet: Sheet<Tag_>,
   shared: CondIgnored = 'none',
   meta: IBaseConditionalData,
-  transform: (r: Read<Tag>, q: string) => T
+  transform: (r: Read<Tag_>, q: string) => T
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
-  const baseTag: Omit<Tag, 'preset' | 'src' | 'dst' | 'q'> = {
+  const baseTag: Omit<Tag_, 'preset' | 'src' | 'dst' | 'q'> = {
     et: 'own' as const,
     sheet,
     qt: 'cond' as const,
     [condMeta]: meta, // Add metadata directly to tag
     // Remove irrelevant tags
     ...nullTag,
-  } as unknown as Tag
-  let base = reader.max.withTag(baseTag) as Read<Tag>
-  if (shared === 'both') base = base.withTag({ src: null, dst: null } as Tag)
+  } as unknown as Tag_
+  let base = reader.max.withTag(baseTag) as Read<Tag_>
+  if (shared === 'both')
+    base = base.withTag({ src: null, dst: null } as any as Tag_)
   else if (shared !== 'none')
-    base = base.with(shared, null as Tag['src' | 'dst'])
+    base = base.with(shared, null as Tag_['src' | 'dst'])
   return base.withAll('q', [], transform)
 }
