@@ -83,11 +83,7 @@ export function CalcWrapper({
   const calcWithTag = useMemo(() => calc?.withTag({ src }) ?? null, [calc, src])
   return (
     // TODO: Remove this type cast, not sure why it is needed for here, but not for SR usage of calccontext.provider
-    <CalcContext.Provider
-      value={
-        calcWithTag as Calculator<string | null, string | null, string, string>
-      }
-    >
+    <CalcContext.Provider value={calcWithTag as Calculator}>
       {children}
     </CalcContext.Provider>
   )
