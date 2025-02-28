@@ -1,5 +1,6 @@
 import type { Tag } from '../tag'
 import { customOps, type CustomInfo } from './custom'
+export * from './arrayMap'
 export * from './custom'
 
 type DebugMode = boolean
