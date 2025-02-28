@@ -1,4 +1,4 @@
-import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
+import { subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allBoolConditionals,
@@ -10,10 +10,14 @@ import {
   registerBuff,
   teamBuff,
 } from '../../util'
-import { entriesForWengine, registerWengine } from '../util'
+import {
+  cmpSpecialtyCount,
+  entriesForWengine,
+  registerWengine,
+  showSpecialtyCount,
+} from '../util'
 
 const key: WengineKey = 'KaboomTheCannon'
-const weCount = own.common.count.sheet(key)
 const { modification } = own.wengine
 
 // TODO: Add conditionals
@@ -31,22 +35,24 @@ const sheet = registerWengine(
   registerBuff(
     'cond_dmg_',
     ownBuff.combat.common_dmg_.add(
-      cmpGE(
-        weCount,
-        1,
+      cmpSpecialtyCount(
+        key,
         boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
       )
-    )
+    ),
+    showSpecialtyCount(key)
   ),
   registerBuff(
     'team_dmg_',
     teamBuff.combat.common_dmg_.add(
-      cmpGE(weCount, 1, listConditional.map({ val1: 1, val2: 2 }))
-    )
+      cmpSpecialtyCount(key, listConditional.map({ val1: 1, val2: 2 }))
+    ),
+    showSpecialtyCount(key)
   ),
   registerBuff(
     'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(cmpGE(weCount, 1, numConditional))
+    enemyDebuff.common.dmgRed_.add(cmpSpecialtyCount(key, numConditional)),
+    showSpecialtyCount(key)
   )
 )
 export default sheet

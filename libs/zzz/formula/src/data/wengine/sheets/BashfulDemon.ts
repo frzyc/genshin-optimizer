@@ -1,4 +1,4 @@
-import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
+import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allNumConditionals,
@@ -7,10 +7,14 @@ import {
   registerBuff,
   teamBuff,
 } from '../../util'
-import { entriesForWengine, registerWengine } from '../util'
+import {
+  cmpSpecialtyCount,
+  entriesForWengine,
+  registerWengine,
+  showSpecialtyCount,
+} from '../util'
 
 const key: WengineKey = 'BashfulDemon'
-const weCount = own.common.count.sheet(key)
 const { modification } = own.wengine
 
 const { launch_ex_attack } = allNumConditionals(key, true, 0, 4)
@@ -24,27 +28,27 @@ const sheet = registerWengine(
   registerBuff(
     'ice_dmg_',
     ownBuff.combat.dmg_.ice.add(
-      cmpGE(
-        weCount,
-        1,
+      cmpSpecialtyCount(
+        key,
         subscript(modification, [-1, 0.15, 0.175, 0.2, 0.22, 0.24])
       )
-    )
+    ),
+    showSpecialtyCount(key)
   ),
 
   // Conditional buffs
   registerBuff(
     'team_atk_',
     teamBuff.combat.atk_.add(
-      cmpGE(
-        weCount,
-        1,
+      cmpSpecialtyCount(
+        key,
         prod(
           launch_ex_attack,
           subscript(modification, [-1, 0.02, 0.023, 0.026, 0.029, 0.032])
         )
       )
-    )
+    ),
+    showSpecialtyCount(key)
   )
 )
 export default sheet
