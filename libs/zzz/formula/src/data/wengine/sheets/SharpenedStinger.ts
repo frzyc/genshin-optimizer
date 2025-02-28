@@ -17,7 +17,7 @@ import {
   showSpecialtyCount,
 } from '../util'
 
-const key: WengineKey = '<%= sheet %>'
+const key: WengineKey = 'SharpenedStinger'
 const { modification } = own.wengine
 
 // TODO: Add conditionals
