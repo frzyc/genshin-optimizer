@@ -20,9 +20,9 @@ import type { IBaseConditionalData } from './IConditionalData'
 import type { EntryType, Preset } from './listing'
 
 export interface Tag<
+  Sheet extends string,
   Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
+  Dst extends string | null
 > extends BaseTag {
   preset?: Preset
   src?: Src
@@ -36,9 +36,9 @@ export interface Tag<
 }
 
 export type AnyTag<Sheet extends string = string> = Tag<
+  Sheet,
   string | null,
-  string | null,
-  Sheet
+  string | null
 >
 export type Member<T extends AnyTag> = NonNullable<T['sheet']>
 export type Sheet<T extends AnyTag> = NonNullable<T['sheet']>
@@ -112,24 +112,24 @@ export function tag<
   Src extends string | null,
   Dst extends string | null,
   Sheet extends string
->(v: number | NumNode, tag: Tag<Src, Dst, Sheet>): TagOverride<NumNode>
+>(v: number | NumNode, tag: Tag<Sheet, Src, Dst>): TagOverride<NumNode>
 export function tag<
   Src extends string | null,
   Dst extends string | null,
   Sheet extends string
->(v: string | StrNode, tag: Tag<Src, Dst, Sheet>): TagOverride<StrNode>
+>(v: string | StrNode, tag: Tag<Sheet, Src, Dst>): TagOverride<StrNode>
 export function tag<
   Src extends string | null,
   Dst extends string | null,
   Sheet extends string
->(v: number | string | AnyNode, tag: Tag<Src, Dst, Sheet>): TagOverride<AnyNode>
+>(v: number | string | AnyNode, tag: Tag<Sheet, Src, Dst>): TagOverride<AnyNode>
 export function tag<
   Src extends string | null,
   Dst extends string | null,
   Sheet extends string
 >(
   v: number | string | AnyNode,
-  tag: Tag<Src, Dst, Sheet>
+  tag: Tag<Sheet, Src, Dst>
 ): TagOverride<AnyNode> {
   return typeof v == 'object' && v.op == 'tag'
     ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
@@ -139,6 +139,6 @@ export function tagVal<
   Src extends string | null,
   Dst extends string | null,
   Sheet extends string
->(cat: keyof Tag<Src, Dst, Sheet>): TagValRead {
+>(cat: keyof Tag<Sheet, Src, Dst>): TagValRead {
   return baseTagVal(cat as string) // idk why it thinks `cat` is number here
 }

@@ -31,7 +31,7 @@ export const fixedTags = {
   amp: [...allAmplifyingReactionKeys, ''],
   cata: [...allCatalyzeReactionKeys, ''],
 } as const
-export type Tag = BaseTag<Src, Dst, Sheet>
+export type Tag = BaseTag<Sheet, Src, Dst>
 
 export class Read extends BaseRead<Tag> {
   override toString(): string {
