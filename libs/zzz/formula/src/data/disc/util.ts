@@ -2,21 +2,14 @@ import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { disc2pEffect } from '@genshin-optimizer/zzz/consts'
-import type {
-  Dst,
-  Sheet,
-  Src,
-  Tag,
-  TagMapNodeEntries,
-  TagMapNodeEntry,
-} from '../util'
+import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { getStatFromStatKey, own, ownBuff } from '../util'
 
 export function registerDisc(
   sheet: DiscSetKey,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
-  return registerEquipment<Tag, Src, Dst, Sheet>(sheet, 'disc', ...data)
+  return registerEquipment<Tag>(sheet, 'disc', ...data)
 }
 
 export function entriesForDisc(key: DiscSetKey): TagMapNodeEntries {

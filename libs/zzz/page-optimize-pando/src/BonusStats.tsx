@@ -181,7 +181,7 @@ function AttributeDropdown({
           'No Attribute'
         )
       }
-      color={tag.attribute}
+      color={tag.attribute!}
     >
       <MenuItem onClick={() => setAttribute(null)}>No Attribute</MenuItem>
       {allAttributeKeys.map((attr) => (

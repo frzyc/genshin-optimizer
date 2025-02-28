@@ -25,8 +25,8 @@ export interface Tag<
   Dst extends string | null = string | null
 > extends BaseTag {
   preset?: Preset
-  src?: Src
-  dst?: Dst
+  src?: Src | null
+  dst?: Dst | null
   et?: EntryType
   sheet?: Sheet
   name?: string | null
@@ -105,37 +105,26 @@ export function setReader<Tag_ extends Tag>(reader_: Read<Tag_>) {
 export const usedNames = new Set<string>()
 export const usedQ = new Set('_')
 
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(v: number | NumNode, tag: Tag<Sheet, Src, Dst>): TagOverride<NumNode>
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(v: string | StrNode, tag: Tag<Sheet, Src, Dst>): TagOverride<StrNode>
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(v: number | string | AnyNode, tag: Tag<Sheet, Src, Dst>): TagOverride<AnyNode>
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(
+export function tag<Tag_ extends Tag>(
+  v: number | NumNode,
+  tag: Tag_
+): TagOverride<NumNode>
+export function tag<Tag_ extends Tag>(
+  v: string | StrNode,
+  tag: Tag_
+): TagOverride<StrNode>
+export function tag<Tag_ extends Tag>(
   v: number | string | AnyNode,
-  tag: Tag<Sheet, Src, Dst>
+  tag: Tag_
+): TagOverride<AnyNode>
+export function tag<Tag_ extends Tag>(
+  v: number | string | AnyNode,
+  tag: Tag_
 ): TagOverride<AnyNode> {
   return typeof v == 'object' && v.op == 'tag'
     ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
     : baseTag(v, tag)
 }
-export function tagVal<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(cat: keyof Tag<Sheet, Src, Dst>): TagValRead {
+export function tagVal<Tag_ extends Tag>(cat: keyof Tag_): TagValRead {
   return baseTagVal(cat as string) // idk why it thinks `cat` is number here
 }

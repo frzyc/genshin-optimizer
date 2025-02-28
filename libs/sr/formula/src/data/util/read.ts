@@ -39,12 +39,12 @@ export const fixedTags = {
   path: paths,
 }
 export type Tag = BaseTag<Sheet, Src, Dst> & {
-  elementalType?: ElementalType
-  damageType1?: DamageType
-  damageType2?: DamageType
+  elementalType?: ElementalType | null
+  damageType1?: DamageType | null
+  damageType2?: DamageType | null
 
   // Count
-  path?: Path
+  path?: Path | null
 }
 
 export class Read extends BaseRead<Tag> {

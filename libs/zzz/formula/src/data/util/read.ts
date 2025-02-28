@@ -45,10 +45,10 @@ export const fixedTags = {
   faction: factions,
 }
 export type Tag = BaseTag<Sheet, Src, Dst> & {
-  attribute?: Attribute
-  skillType?: SkillType
-  damageType1?: DamageType
-  damageType2?: DamageType
+  attribute?: Attribute | null
+  skillType?: SkillType | null
+  damageType1?: DamageType | null
+  damageType2?: DamageType | null
 
   specialty?: Specialty
   faction?: Faction

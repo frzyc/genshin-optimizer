@@ -8,21 +8,14 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import type { LightConeDatum } from '@genshin-optimizer/sr/stats'
-import type {
-  Dst,
-  Sheet,
-  Src,
-  Tag,
-  TagMapNodeEntries,
-  TagMapNodeEntry,
-} from '../util'
+import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { getStatFromStatKey, own, ownBuff } from '../util'
 
 export function registerLightCone(
   sheet: LightConeKey,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
-  return registerEquipment<Tag, Src, Dst, Sheet>(sheet, 'lightCone', ...data)
+  return registerEquipment<Tag>(sheet, 'lightCone', ...data)
 }
 
 export function entriesForLightCone(

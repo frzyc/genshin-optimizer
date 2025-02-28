@@ -166,7 +166,7 @@ export const enemyTag = {
   reaction: { amp: fixed, cata: fixed },
 } as const
 
-export const convert = createConvert<Read, Sheet>()
+export const convert = createConvert<Read>()
 
 // Default queries
 const noName = { src: null, name: null }
@@ -183,7 +183,7 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(ownTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
-const nullTag = {
+const nullTag: Tag = {
   name: null,
   region: null,
   ele: null,
