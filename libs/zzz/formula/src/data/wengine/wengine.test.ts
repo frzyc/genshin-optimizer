@@ -3,7 +3,12 @@ import {
   compileTagMapValues,
   setDebugMode,
 } from '@genshin-optimizer/pando/engine'
-import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  CharacterKey,
+  SpecialityKey,
+  WengineKey,
+} from '@genshin-optimizer/zzz/consts'
+import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { data, keys, values } from '..'
 import {
   charTagMapNodeEntries,
@@ -27,16 +32,24 @@ import {
 setDebugMode(true)
 // This is generally unnecessary, but without it, some tags in `DebugCalculator` will be missing
 Object.assign(values, compileTagMapValues(keys, data))
-
+const specialityMap: Record<SpecialityKey, CharacterKey> = {
+  attack: 'Billy',
+  stun: 'Anby',
+  anomaly: 'Piper',
+  support: 'Nicole',
+  defense: 'Ben',
+}
 function testCharacterData(wengineKey: WengineKey) {
+  const type = getWengineStat(wengineKey).type
+  const characterKey = specialityMap[type]
   const data: TagMapNodeEntries = [
-    ...teamData(['Anby']),
+    ...teamData([characterKey]),
     ...withMember(
-      'Anby',
+      characterKey,
       ...charTagMapNodeEntries({
         level: 60,
         promotion: 5,
-        key: 'Anby',
+        key: characterKey,
         mindscape: 0,
         basic: 0,
         dodge: 0,
@@ -56,10 +69,15 @@ function testCharacterData(wengineKey: WengineKey) {
     enemyDebuff.common.dmgRed_.add(0.15),
     enemyDebuff.common.stun_.add(1.5),
   ]
-  return data
+  return { data, characterKey }
 }
-function cond(wKey: WengineKey, name: string, value: number) {
-  return conditionalEntries(wKey, 'Anby', null)(name, value)
+function cond(
+  characterKey: CharacterKey,
+  wKey: WengineKey,
+  name: string,
+  value: number
+) {
+  return conditionalEntries(wKey, characterKey, null)(name, value)
 }
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function printDebug(calc: Calculator, read: Read) {
@@ -67,18 +85,23 @@ function printDebug(calc: Calculator, read: Read) {
 }
 describe('Disc sheets test', () => {
   it('BashfulDemon', () => {
-    const data = testCharacterData('BashfulDemon')
+    const { data, characterKey } = testCharacterData('BashfulDemon')
     data.push(
-      cond('BashfulDemon', conditionals.BashfulDemon.launch_ex_attack.name, 4)
+      cond(
+        characterKey,
+        'BashfulDemon',
+        conditionals.BashfulDemon.launch_ex_attack.name,
+        4
+      )
     )
     const calc = new Calculator(
       keys,
       values,
       compileTagMapValues(keys, data)
-    ).withTag({ src: 'Anby', dst: 'Anby' })
-    const anby = convert(ownTag, { et: 'own', src: 'Anby' })
-    printDebug(calc, anby.final.dmg_.ice)
-    expect(calc.compute(anby.final.dmg_.ice).val).toBeCloseTo(0.24) // passive
-    expect(calc.compute(anby.combat.atk_).val).toBeCloseTo(0.128) // cond
+    ).withTag({ src: characterKey, dst: characterKey })
+    const char = convert(ownTag, { et: 'own', src: characterKey })
+    // printDebug(calc, char.combat.atk_)
+    expect(calc.compute(char.final.dmg_.ice).val).toBeCloseTo(0.24) // passive
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.128) // cond
   })
 })
