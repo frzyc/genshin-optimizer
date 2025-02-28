@@ -16,7 +16,8 @@ const { arithmetic, branching } = calculation
 
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 
-export type Candidate = Record<string, number> & { id: number }
+// The downside of this is that object literal will not work if `ID` is not `number`, you need to cast it
+export type Candidate<ID = number> = { id: ID } & Record<string, number>
 
 type CndRanges = Record<string, Range>[]
 type NodeRanges = Map<AnyNode<OP>, Range>
@@ -45,11 +46,11 @@ type Monotonicities = Map<string, Monotonicity>
  */
 export function prune<I extends OP, ID>(
   nodes: NumNode<I>[],
-  candidates: (Record<string, number> & { id: ID })[][],
+  candidates: Candidate<ID>[][],
   dynTagCat: string,
   minimum: number[],
   topN: number
-): { nodes: NumNode<I>[]; candidates: { id: ID }[][]; minimum: number[] } {
+): { nodes: NumNode<I>[]; candidates: Candidate<ID>[][]; minimum: number[] } {
   // This `candidate` casting is fine as the rest of the code treats `id`
   // as an opaque object. The only thing that matter is that `id` field
   // exists in both outer- and inner-facing interfaces.
@@ -392,6 +393,11 @@ export function reaffine(state: State<OP>) {
 
 /** Get range assuming any item in `cnds` can be selected */
 function computeCndRanges(cnds: Candidate[]): CndRanges[number] {
+  // CAUTION:
+  // This is the only place where `id` is treated as non-opaque (comparable)
+  // objects. If `c1.id < c2.id` may crash, we have to change the algorithm
+  // or exclude `id` specifically. We don't care if the comparison result is
+  // gibberish, though, so long as it succeeds.
   const iter = cnds.values()
   const first: Candidate | undefined = iter.next().value
   if (!first) return {}

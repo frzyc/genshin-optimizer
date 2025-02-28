@@ -1,7 +1,6 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type {
   BuildResult,
-  BuildResultByIndex,
   EquipmentStats,
   ParentCommandStart,
   ParentCommandTerminate,
@@ -66,11 +65,7 @@ export class Solver {
             this.setProgress(data.progress)
             break
           case 'done':
-            res(
-              data.buildResults.map(
-                createConvertBuildResult(this.lightCones, this.relicsBySlot)
-              )
-            )
+            res(data.buildResults)
             break
           case 'err':
             console.error(data)
@@ -191,13 +186,10 @@ export class Solver {
   }
 }
 
-function convertRelicToStats(
-  relic: ICachedRelic,
-  index: number
-): EquipmentStats {
-  const { mainStatKey, level, rarity, setKey, substats } = relic
+function convertRelicToStats(relic: ICachedRelic): EquipmentStats {
+  const { id, mainStatKey, level, rarity, setKey, substats } = relic
   return {
-    id: index,
+    id,
     [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
     ...Object.fromEntries(
       substats
@@ -205,42 +197,16 @@ function convertRelicToStats(
         .map(({ key, value }) => [key, value])
     ),
     [setKey]: 1,
-  }
+  } as EquipmentStats
 }
 
-function convertLightConeToStats(
-  lightCone: ICachedLightCone,
-  index: number
-): EquipmentStats {
-  const { key, level: lvl, ascension, superimpose } = lightCone
+function convertLightConeToStats(lightCone: ICachedLightCone): EquipmentStats {
+  const { id, key, level: lvl, ascension, superimpose } = lightCone
   return {
-    id: index,
+    id,
     lvl,
     superimpose,
     ascension,
     [key]: 1,
-  }
-}
-
-function createConvertBuildResult(
-  lightCones: ICachedLightCone[],
-  relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
-) {
-  const arr = [
-    lightCones,
-    relicsBySlot.head,
-    relicsBySlot.hands,
-    relicsBySlot.body,
-    relicsBySlot.feet,
-    relicsBySlot.sphere,
-    relicsBySlot.rope,
-  ]
-  return function ({ value, indices }: BuildResultByIndex): BuildResult {
-    return {
-      value,
-      ids: indices.map(
-        (equipIndex, listIndex) => arr[listIndex][equipIndex].id
-      ),
-    }
-  }
+  } as EquipmentStats
 }

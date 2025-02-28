@@ -1,7 +1,6 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type {
   BuildResult,
-  BuildResultByIndex,
   EquipmentStats,
   ParentCommandStart,
   ParentCommandTerminate,
@@ -70,11 +69,7 @@ export class Solver {
             this.setProgress(data.progress)
             break
           case 'done':
-            res(
-              data.buildResults.map(
-                createConvertBuildResult(this.wengines, this.discsBySlot)
-              )
-            )
+            res(data.buildResults)
             break
           case 'err':
             console.error(data)
@@ -195,10 +190,10 @@ export class Solver {
   }
 }
 
-function convertDiscToStats(disc: ICachedDisc, index: number): EquipmentStats {
-  const { mainStatKey, level, rarity, setKey, substats } = disc
+function convertDiscToStats(disc: ICachedDisc): EquipmentStats {
+  const { id, mainStatKey, level, rarity, setKey, substats } = disc
   return {
-    id: index,
+    id,
     [mainStatKey]: getDiscMainStatVal(rarity, mainStatKey, level),
     ...Object.fromEntries(
       substats
@@ -209,42 +204,16 @@ function convertDiscToStats(disc: ICachedDisc, index: number): EquipmentStats {
         ])
     ),
     [setKey]: 1,
-  }
+  } as EquipmentStats
 }
 
-function convertWengineToStats(
-  wengine: ICachedWengine,
-  index: number
-): EquipmentStats {
-  const { key, level: lvl, modification, phase } = wengine
+function convertWengineToStats(wengine: ICachedWengine): EquipmentStats {
+  const { id, key, level: lvl, modification, phase } = wengine
   return {
-    id: index,
+    id,
     lvl,
     modification,
     phase,
     [key]: 1,
-  }
-}
-
-function createConvertBuildResult(
-  wengines: ICachedWengine[],
-  discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
-) {
-  const arr = [
-    wengines,
-    discsBySlot['1'],
-    discsBySlot['2'],
-    discsBySlot['3'],
-    discsBySlot['4'],
-    discsBySlot['5'],
-    discsBySlot['6'],
-  ]
-  return function ({ value, indices }: BuildResultByIndex): BuildResult {
-    return {
-      value,
-      ids: indices.map(
-        (equipIndex, listIndex) => arr[listIndex][equipIndex].id
-      ),
-    }
-  }
+  } as EquipmentStats
 }

@@ -1,6 +1,6 @@
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
-import type { BuildResultByIndex, EquipmentStats } from './common'
+import type { BuildResult, EquipmentStats } from './common'
 import { MAX_BUILDS } from './common'
 
 const MAX_BUILDS_TO_SEND = 200_000
@@ -21,7 +21,7 @@ export interface ChildMessageInitialized {
 }
 export interface ChildMessageResults {
   resultType: 'results'
-  builds: BuildResultByIndex[]
+  builds: BuildResult[]
   numBuildsComputed: number
 }
 export interface ChildMessageDone {
@@ -94,7 +94,7 @@ export class ChildWorker {
   }
   // Actually start calculating builds and sending back periodic responses
   async start() {
-    let builds: BuildResultByIndex[] = []
+    let builds: BuildResult[] = []
     let skipped = 0
 
     function sliceSortSendBuilds() {
@@ -116,13 +116,9 @@ export class ChildWorker {
       // Step 5: Calculate the value
       const results = this.compiledCalcFunction(stats)
       if (this.constraints.every((value, i) => results[i] >= value)) {
-        builds.push({
-          value: results[0], // We only pass 1 target to calculate, as the first entry
-          indices: stats.map((s) => s.id),
-        })
-      } else {
-        skipped++
-      }
+        // We only pass opt target, which is the first entry
+        builds.push({ value: results[0], ids: stats.map((s) => s.id) })
+      } else skipped++
       if (builds.length + skipped > MAX_BUILDS_TO_SEND) {
         sliceSortSendBuilds()
       }

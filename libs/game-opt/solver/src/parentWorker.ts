@@ -2,11 +2,7 @@ import { range } from '@genshin-optimizer/common/util'
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { simplify } from '@genshin-optimizer/pando/engine'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
-import type {
-  BuildResultByIndex,
-  EquipmentStats,
-  ProgressResult,
-} from './common'
+import type { BuildResult, EquipmentStats, ProgressResult } from './common'
 import { MAX_BUILDS } from './common'
 
 export interface ParentCommandStart {
@@ -30,7 +26,7 @@ export interface ParentMessageSending {
 }
 export interface ParentMessageDone {
   resultType: 'done'
-  buildResults: BuildResultByIndex[]
+  buildResults: BuildResult[]
 }
 export interface ParentMessageTerminated {
   resultType: 'terminated'
@@ -148,7 +144,7 @@ export class ParentWorker {
     detachedNodes: NumTagFree[],
     constraints: number[]
   ) {
-    let results: BuildResultByIndex[] = []
+    let results: BuildResult[] = []
     let numBuildsComputed = 0
 
     function startAndHandleWorker(worker: Worker, index: number) {

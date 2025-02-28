@@ -1,13 +1,10 @@
+import type { Candidate } from '@genshin-optimizer/pando/engine'
+
 export const MAX_BUILDS = 50_000
 
 export interface BuildResult {
   value: number
   ids: string[]
-}
-
-export interface BuildResultByIndex {
-  value: number
-  indices: number[]
 }
 
 export interface ProgressResult {
@@ -16,5 +13,4 @@ export interface ProgressResult {
 }
 
 // Store metadata in 'id' key
-// We will store some index information here, since it needs to be number type
-export type EquipmentStats = Record<string, number> & { id: number }
+export type EquipmentStats = Candidate<string>
