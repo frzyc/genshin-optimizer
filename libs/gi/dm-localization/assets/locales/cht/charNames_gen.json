@@ -99,9 +99,13 @@
   "TravelerGeoF": "熒 (岩元素)",
   "TravelerElectroF": "熒 (雷)",
   "TravelerDendroF": "熒 (草元素)",
+  "TravelerHydroF": "熒 (水元素)",
+  "TravelerPyroF": "熒 (火)",
   "TravelerAnemoM": "空 (風)",
   "TravelerGeoM": "空 (岩元素)",
   "TravelerElectroM": "空 (雷)",
   "TravelerDendroM": "空 (草元素)",
+  "TravelerHydroM": "空 (水元素)",
+  "TravelerPyroM": "空 (火)",
   "Somnia": "Somnia"
 }

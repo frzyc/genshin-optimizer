@@ -99,9 +99,13 @@
   "TravelerGeoF": "Lumine (หิน)",
   "TravelerElectroF": "Lumine (ไฟฟ้า)",
   "TravelerDendroF": "Lumine (ไม้)",
+  "TravelerHydroF": "Lumine (น้ำ)",
+  "TravelerPyroF": "Lumine (ไฟ)",
   "TravelerAnemoM": "Aether (ลม)",
   "TravelerGeoM": "Aether (หิน)",
   "TravelerElectroM": "Aether (ไฟฟ้า)",
   "TravelerDendroM": "Aether (ไม้)",
+  "TravelerHydroM": "Aether (น้ำ)",
+  "TravelerPyroM": "Aether (ไฟ)",
   "Somnia": "Somnia"
 }
