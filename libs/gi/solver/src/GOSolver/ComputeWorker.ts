@@ -10,6 +10,11 @@ import type {
 } from '../common'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
 
+const computeKey = Symbol()
+// TODO: Debug only, don't let this into the main branch
+let compileCount = 0
+let skipCompileCount = 0
+
 export class ComputeWorker {
   builds: SolverBuild[] = []
   buildValues: number[] | undefined = undefined
@@ -64,12 +69,17 @@ export class ComputeWorker {
     const arts = Object.values(preArts.values).sort(
       (a, b) => a.length - b.length
     )
-    const compute = precompute(
-      nodes,
-      preArts.base,
-      (f) => f.path[1],
-      arts.length
-    )
+    // Black magic to pass around computed from leaf split to other splits.
+    // `computeKey` works specifically because we have been using object
+    // identity to equality (if `pruneAll` doesn't make progress, then `nodes`
+    // remains the same object).
+    const compute =
+      nodes[computeKey as any] ??
+      precompute(nodes, preArts.base, (f) => f.path[1], arts.length)
+    if (!(computeKey in nodes)) {
+      nodes[computeKey as any] = compute
+      compileCount += 1
+    } else skipCompileCount += 1
 
     const buffer = Array<ArtifactBuildData>(arts.length)
     const count = {
@@ -134,6 +144,8 @@ export class ComputeWorker {
         this.buildValues[topN - 1] ?? -Infinity
       )
     }
+    if (force)
+      console.log(`Compiled ${compileCount} (${skipCompileCount} skipped)`)
   }
   interimReport(
     count: { tested: number; failed: number; skipped: number },
