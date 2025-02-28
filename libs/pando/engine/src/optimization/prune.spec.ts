@@ -132,15 +132,15 @@ describe('state', () => {
   const state = new State(nodes, [], candidates, 'q')
 
   test('comp ranges', () => {
-    const { compRanges } = state
-    expect(compRanges.length).toEqual(candidates.length)
-    expect(compRanges[0]).toEqual({
+    const { cndRanges } = state
+    expect(cndRanges.length).toEqual(candidates.length)
+    expect(cndRanges[0]).toEqual({
       c0: { min: 0, max: 3 },
       c1: { min: 9, max: 10 },
       c2: { min: 4, max: 4 },
       id: { min: 1, max: 2 },
     })
-    expect(compRanges[1]).toEqual({
+    expect(cndRanges[1]).toEqual({
       c0: { min: 2, max: 4 },
       c1: { min: 0, max: 1 },
       c2: { min: 4, max: 4 },
