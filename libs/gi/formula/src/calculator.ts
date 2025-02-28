@@ -6,10 +6,9 @@ import { DebugCalculator } from '@genshin-optimizer/pando/engine'
 import type { Tag } from './data/util'
 import { tagStr } from './data/util'
 
-type Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
-export type PartialMeta = PartialMetaBase<Tag, Op>
+export type PartialMeta = PartialMetaBase<Tag, 'res'>
 
-export class Calculator extends Base<Tag> {
+export class Calculator extends Base<Tag, 'res'> {
   override toDebug(): DebugCalculator {
     return new DebugCalculator(
       this,

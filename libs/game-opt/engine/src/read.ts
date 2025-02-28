@@ -39,13 +39,13 @@ export type Sheet<T extends Tag> = NonNullable<T['sheet']>
 export type Src<T extends Tag> = NonNullable<T['src']>
 export type Dst<T extends Tag> = NonNullable<T['dst']>
 
-export type TagMapNodeEntry<Tag extends BaseTag> = TagMapEntry<
+export type TagMapNodeEntry<Tag_ extends Tag> = TagMapEntry<
   AnyNode | ReRead,
-  Tag
+  Tag_
 >
-export type TagMapNodeEntries<Tag extends BaseTag> = TagMapEntries<
+export type TagMapNodeEntries<Tag_ extends Tag> = TagMapEntries<
   AnyNode | ReRead,
-  Tag
+  Tag_
 >
 
 export class Read<Tag_ extends Tag = Tag> extends TypedRead<Tag_> {
@@ -125,6 +125,6 @@ export function tag<Tag_ extends Tag>(
     ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
     : baseTag(v, tag)
 }
-export function tagVal<Tag_ extends Tag>(cat: keyof Tag_): TagValRead {
-  return baseTagVal(cat as string) // idk why it thinks `cat` is number here
+export function tagVal<Tag_ extends Tag>(cat: string & keyof Tag_): TagValRead {
+  return baseTagVal(cat)
 }

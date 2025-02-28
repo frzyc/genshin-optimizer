@@ -1,9 +1,5 @@
 import { assertUnreachable } from '@genshin-optimizer/common/util'
-import type {
-  AnyNode,
-  Tag as BaseTag,
-  CalcResult,
-} from '@genshin-optimizer/pando/engine'
+import type { AnyNode, CalcResult } from '@genshin-optimizer/pando/engine'
 import {
   Calculator as BaseCalculator,
   calculation,
@@ -25,35 +21,40 @@ type CondInfo<Member extends string, Sheet extends string> = MemRec<
   SrcCondInfo<Member, Sheet>
 >
 
-export type CalcMeta<
-  Tag_ extends Tag,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> = PartialMeta<Tag_, Op> & Info<Member<Tag_>, Sheet<Tag_>>
-export type PartialMeta<
-  Tag extends BaseTag,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> = {
-  tag?: Tag
-  op: Op
-  ops: CalcResult<number, PartialMeta<Tag, Op>>[]
+/// `op`s that appear in `Meta['op']`, inserted by the Calculator.computeMeta
+type MetaOp =
+  | 'sum'
+  | 'prod'
+  | 'min'
+  | 'max'
+  | 'sumfrac'
+  | 'const'
+  | 'subscript'
+  | 'vtag'
+export type CalcMeta<Tag_ extends Tag, COp = never> = PartialMeta<Tag_, COp> &
+  Info<Tag_>
+export type PartialMeta<Tag_ extends Tag, Cop = never> = {
+  tag?: Tag_
+  op: MetaOp | Cop
+  ops: CalcResult<number, PartialMeta<Tag_, Cop>>[]
 }
-export type Info<Member extends string, Sheet extends string> = {
-  conds: CondInfo<Member | 'All', Sheet>
+export type Info<Tag_ extends Tag> = {
+  conds: CondInfo<Member<Tag_> | 'All', Sheet<Tag_>>
 }
 
 const { arithmetic } = calculation
 
 export class Calculator<
   Tag_ extends Tag = Tag,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> extends BaseCalculator<CalcMeta<Tag_, Op>> {
+  COp = never // values of supported `Custom['ex']` if any
+> extends BaseCalculator<CalcMeta<Tag_, COp>> {
   override computeMeta(
     { op, ex }: AnyNode,
     val: number | string,
-    _x: (CalcResult<number | string, CalcMeta<Tag_, Op>> | undefined)[],
-    _br: CalcResult<number | string, CalcMeta<Tag_, Op>>[],
+    _x: (CalcResult<number | string, CalcMeta<Tag_, COp>> | undefined)[],
+    _br: CalcResult<number | string, CalcMeta<Tag_, COp>>[],
     tag: Tag_ | undefined
-  ): CalcMeta<Tag_, Op> {
+  ): CalcMeta<Tag_, COp> {
     const info = {
       ...Object.freeze({
         conds: Object.freeze({}),
@@ -64,20 +65,20 @@ export class Calculator<
 
     function withTag(
       tag: Tag_ | undefined,
-      meta: CalcMeta<Tag_, Op>
-    ): CalcMeta<Tag_, Op> {
+      meta: CalcMeta<Tag_, COp>
+    ): CalcMeta<Tag_, COp> {
       return !meta.tag && tag ? { tag, ...meta } : meta
     }
     function finalize(
-      op: Op,
-      ops: CalcResult<number, PartialMeta<Tag_, Op>>[]
-    ): CalcMeta<Tag_, Op> {
+      op: MetaOp | COp,
+      ops: CalcResult<number, PartialMeta<Tag_, COp>>[]
+    ): CalcMeta<Tag_, COp> {
       return withTag(tag, { op, ops, ...info })
     }
     function wrap(
-      result: CalcResult<number | string, PartialMeta<Tag_, Op>>
-    ): CalcMeta<Tag_, Op> {
-      const meta = result.meta as CalcMeta<Tag_, Op>
+      result: CalcResult<number | string, PartialMeta<Tag_, COp>>
+    ): CalcMeta<Tag_, COp> {
+      const meta = result.meta as CalcMeta<Tag_, COp>
       const reuse = meta.conds === info.conds
       return withTag(tag, reuse ? meta : { ...meta, ...info })
     }
@@ -94,19 +95,19 @@ export class Calculator<
       case 'min':
       case 'max':
       case 'sumfrac': {
-        let ops = x as CalcResult<number, PartialMeta<Tag_, Op>>[]
+        let ops = x as CalcResult<number, PartialMeta<Tag_, COp>>[]
         if (ops.length > 1) {
           const empty = arithmetic[op]([], ex)
           ops = ops.filter((x) => x!.val !== empty)
         }
         if (ops.length === 1) return wrap(ops[0])
-        if (ops.length === 0) return finalize('const' as Op, [])
-        return finalize(op as Op, ops)
+        if (ops.length === 0) return finalize('const', [])
+        return finalize(op, ops)
       }
       case 'const':
       case 'vtag':
       case 'subscript':
-        return finalize('const' as Op, [])
+        return finalize('const', [])
       case 'match':
       case 'thres':
       case 'lookup':
@@ -116,7 +117,8 @@ export class Calculator<
       case 'read':
         return Object.freeze(wrap(x[0]))
       case 'custom':
-        return finalize(ex, x as CalcResult<number, PartialMeta<Tag_, Op>>[])
+        // This is the only usage of `COp`
+        return finalize(ex, x as CalcResult<number, PartialMeta<Tag_, COp>>[])
       default:
         assertUnreachable(op)
     }
@@ -124,8 +126,8 @@ export class Calculator<
   override markGathered(
     tag: Tag_,
     _n: AnyNode,
-    result: CalcResult<string | number, CalcMeta<Tag_, Op>>
-  ): CalcResult<string | number, CalcMeta<Tag_, Op>> {
+    result: CalcResult<string | number, CalcMeta<Tag_, COp>>
+  ): CalcResult<string | number, CalcMeta<Tag_, COp>> {
     let dirty = false
     const val = result.val
     const meta = { ...Object.freeze(result.meta) }
@@ -159,14 +161,10 @@ export class Calculator<
   }
 }
 
-function extract<
-  V,
-  Tag_ extends Tag,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
->(
-  x: CalcResult<V, CalcMeta<Tag_, Op>>,
-  info: Info<Member<Tag_>, Sheet<Tag_>>
-): CalcResult<V, PartialMeta<Tag_, Op>> {
+function extract<V, Tag_ extends Tag, COp>(
+  x: CalcResult<V, CalcMeta<Tag_, COp>>,
+  info: Info<Tag_>
+): CalcResult<V, PartialMeta<Tag_, COp>> {
   const { conds, ...meta } = x.meta
   info.conds = mergeConds(info.conds, conds)
   return Object.isFrozen(x.meta) ? x : { val: x.val, meta }
