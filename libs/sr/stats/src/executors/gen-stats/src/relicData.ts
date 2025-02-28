@@ -1,6 +1,5 @@
 import { objMap, verifyObjKeys } from '@genshin-optimizer/common/util'
 import {
-  allElementalDamageKeys,
   allRelicRarityKeys,
   allRelicSetKeys,
   allRelicSubStatKeys,
@@ -106,13 +105,7 @@ export function RelicData(): RelicData {
           (config): SetEffect => ({
             numRequired: config.RequireNum,
             passiveStats: Object.fromEntries(
-              // Expand all damage bonus to individual elemental dmg bonus
               config.PropertyList.flatMap((property) => {
-                if (property.PropertyName === 'AllDamageTypeAddedRatio')
-                  return allElementalDamageKeys.map((key) => ({
-                    ...property,
-                    key,
-                  }))
                 const statKey = statKeyMap[property.PropertyName]
                 if (!statKey) {
                   throw new Error(`Invalid statKey: ${property.PropertyName}`)

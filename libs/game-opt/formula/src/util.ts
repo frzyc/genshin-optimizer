@@ -1,23 +1,16 @@
 import type {
+  Sheet,
   Tag,
   TagMapNodeEntries,
   TagMapNodeEntry,
 } from '@genshin-optimizer/game-opt/engine'
 import { tag } from '@genshin-optimizer/game-opt/engine'
 
-export function registerEquipment<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(
-  specificSheet: Sheet,
-  equipmentSheet: Sheet,
-  ...data: (
-    | TagMapNodeEntry<Tag_, Src, Dst, Sheet>
-    | TagMapNodeEntries<Tag_, Src, Dst, Sheet>
-  )[]
-): TagMapNodeEntries<Tag_, Src, Dst, Sheet> {
+export function registerEquipment<Tag_ extends Tag>(
+  specificSheet: Sheet<Tag_>,
+  equipmentSheet: Sheet<Tag_>,
+  ...data: (TagMapNodeEntry<Tag_> | TagMapNodeEntries<Tag_>)[]
+): TagMapNodeEntries<Tag_> {
   /* == Below comment also applies for weapon, disc, wengine, relic, lightcone, etc.
    * Unlike character, artifact buff is all-or-nothing, so we can register every
    * buff as `sheet:art` and tag the formula as `sheet:<key>`. This means that `sheet:art`,
@@ -28,12 +21,7 @@ export function registerEquipment<
   function internal({
     tag: oldTag,
     value,
-  }: TagMapNodeEntry<Tag_, Src, Dst, Sheet>): TagMapNodeEntries<
-    Tag_,
-    Src,
-    Dst,
-    Sheet
-  > {
+  }: TagMapNodeEntry<Tag_>): TagMapNodeEntries<Tag_> {
     // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
     if (oldTag.et === 'enemy') oldTag = { ...oldTag, et: 'enemyDeBuff' }
     // Special entries (usually stack count) that override `stack`

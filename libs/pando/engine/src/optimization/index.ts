@@ -1,2 +1,2 @@
 export { prune } from './prune'
-export * from './simplify'
+export { simplify } from './simplify'

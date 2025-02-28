@@ -11,6 +11,7 @@ export const otherStatKeys = [
   'resPen_',
   'incHeal_',
   'baseSpd',
+  'common_dmg_',
 ] as const
 
 export const allStatKeys = Array.from(

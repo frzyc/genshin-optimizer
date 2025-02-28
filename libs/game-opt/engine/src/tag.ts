@@ -1,33 +1,25 @@
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpEq, cmpNE, subscript } from '@genshin-optimizer/pando/engine'
 import type { IBaseConditionalData } from './IConditionalData'
-import type { Read, Tag } from './read'
+import type { Read, Sheet, Src, Tag } from './read'
 import { reader } from './read'
 
-export type Desc<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
-> = { sheet: Sheet | undefined; accu: Read<Tag_, Src, Dst, Sheet>['accu'] }
+export type Desc<Sheet extends string> = {
+  sheet: Sheet | undefined
+  accu: Read['accu']
+}
 
 export const createConvert =
-  <
-    Read_ extends Read<Tag_, Src, Dst, Sheet>,
-    Tag_ extends Tag<Src, Dst, Sheet>,
-    Src extends string | null,
-    Dst extends string | null,
-    Sheet extends string
-  >() =>
-  <V extends Record<string, Record<string, Desc<Tag_, Src, Dst, Sheet>>>>(
+  <Read_ extends Read<Tag>>() =>
+  <V extends Record<string, Record<string, Desc<Sheet<Read['tag']>>>>>(
     v: V,
-    tag: Omit<Tag_, 'qt' | 'q'>
+    tag: Omit<Read_['tag'], 'qt' | 'q'>
   ): {
     [j in 'withTag' | keyof V]: j extends 'withTag'
-      ? (_: Tag_) => Read_
-      : { [k in keyof V[j]]: Read_ }
+      ? (_: Read_['tag']) => Read_
+      : Record<keyof V[j], Read_>
   } => {
-    const r = (reader as Read_).withTag(tag as Tag_)
+    const r = (reader as Read_).withTag(tag as Read_['tag'])
     return r.withAll(
       'qt',
       Object.keys(v),
@@ -39,64 +31,35 @@ export const createConvert =
           if (sheet && !tag['sheet']) r = r.sheet(sheet)
           return r[accu]
         }),
-      { withTag: (tag: Tag_) => r.withTag(tag) }
+      { withTag: (tag: Read_['tag']) => r.withTag(tag) }
     ) as any
   }
 
 // Custom tags
-export const allStatics = <
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(
-  sheet: Sheet
-) =>
-  (reader as Read<Tag_, Src, Dst, Sheet>)
+export const allStatics = <Tag_ extends Tag>(sheet: Sheet<Tag>) =>
+  (reader as Read<Tag_>)
     .withTag({ et: 'own', sheet, qt: 'misc' } as Tag_)
     .withAll('q', [])
 export const createAllBoolConditionals =
-  <
-    Tag_ extends Tag<Src, Dst, Sheet>,
-    Src extends string | null,
-    Dst extends string | null,
-    Sheet extends string
-  >(
-    nullTag: Tag_
-  ) =>
-  (sheet: Sheet, ignored?: CondIgnored) =>
+  <Tag_ extends Tag>(nullTag: Tag_) =>
+  (sheet: Sheet<Tag>, ignored?: CondIgnored) =>
     allConditionals(nullTag, sheet, ignored, { type: 'bool' }, (r) => ({
       ifOn: (node: NumNode | number, off?: NumNode | number) =>
         cmpNE(r, 0, node, off),
       ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
     }))
 export const createAllListConditionals =
-  <
-    T extends string,
-    Tag_ extends Tag<Src, Dst, Sheet>,
-    Src extends string | null,
-    Dst extends string | null,
-    Sheet extends string
-  >(
-    nullTag: Tag_
-  ) =>
-  (sheet: Sheet, list: T[], ignored?: CondIgnored) =>
+  <T extends string, Tag_ extends Tag>(nullTag: Tag_) =>
+  (sheet: Sheet<Tag>, list: T[], ignored?: CondIgnored) =>
     allConditionals(nullTag, sheet, ignored, { type: 'list', list }, (r) => ({
       map: (table: Record<T, number>, def = 0) =>
         subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
       value: r,
     }))
 export const createAllNumConditionals =
-  <
-    Tag_ extends Tag<Src, Dst, Sheet>,
-    Src extends string | null,
-    Dst extends string | null,
-    Sheet extends string
-  >(
-    nullTag: Tag_
-  ) =>
+  <Tag_ extends Tag>(nullTag: Tag_) =>
   (
-    sheet: Sheet,
+    sheet: Sheet<Tag>,
     int_only = true,
     min?: number,
     max?: number,
@@ -111,17 +74,11 @@ export const createAllNumConditionals =
     )
 
 export const createConditionalEntries =
-  <
-    Read_ extends Read<Tag_, Src, Dst, Sheet>,
-    Tag_ extends Tag<Src, Dst, Sheet>,
-    Src extends string | null,
-    Dst extends string | null,
-    Sheet extends string
-  >(own: {
+  <Read_ extends Read<Tag_>, Tag_ extends Tag>(own: {
     withTag: (_: Tag_) => Read_
   }) =>
-  (sheet: Sheet, src: Src, dst: Dst) => {
-    const tag: Tag_ = { sheet, qt: 'cond', src, dst } as unknown as Tag_
+  (sheet: Sheet<Tag_>, src: Src<Tag_>, dst: Tag_['dst']) => {
+    const tag = { sheet, qt: 'cond', src, dst } as Tag_
     const base = own.withTag(tag).withAll('q', [])
     return (name: keyof typeof base, val: string | number) =>
       base[name].add(val)
@@ -129,18 +86,12 @@ export const createConditionalEntries =
 
 const condMeta = Symbol.for('condMeta')
 type CondIgnored = 'both' | 'src' | 'dst' | 'none'
-function allConditionals<
-  T,
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(
+function allConditionals<T, Tag_ extends Tag>(
   nullTag: Tag_,
-  sheet: Sheet,
+  sheet: Sheet<Tag_>,
   shared: CondIgnored = 'none',
   meta: IBaseConditionalData,
-  transform: (r: Read<Tag_, Src, Dst, Sheet>, q: string) => T
+  transform: (r: Read<Tag_>, q: string) => T
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
   const baseTag: Omit<Tag_, 'preset' | 'src' | 'dst' | 'q'> = {
@@ -151,8 +102,9 @@ function allConditionals<
     // Remove irrelevant tags
     ...nullTag,
   } as unknown as Tag_
-  let base = reader.max.withTag(baseTag) as Read<Tag_, Src, Dst, Sheet>
-  if (shared === 'both') base = base.withTag({ src: null, dst: null } as Tag_)
+  let base = reader.max.withTag(baseTag) as Read<Tag_>
+  if (shared === 'both')
+    base = base.withTag({ src: null, dst: null } as any as Tag_)
   else if (shared !== 'none')
     base = base.with(shared, null as Tag_['src' | 'dst'])
   return base.withAll('q', [], transform)

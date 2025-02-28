@@ -4,7 +4,7 @@ import {
   Calculator as BaseCalculator,
   calculation,
 } from '@genshin-optimizer/pando/engine'
-import type { Read, Tag } from './read'
+import type { Member, Read, Sheet, Tag } from './read'
 import { reader } from './read'
 
 type MemRec<Member extends string, V> = Partial<Record<Member, V>>
@@ -21,46 +21,40 @@ type CondInfo<Member extends string, Sheet extends string> = MemRec<
   SrcCondInfo<Member, Sheet>
 >
 
-export type CalcMeta<
-  Src extends string | null,
-  Dst extends string | null,
-  Member extends string,
-  Sheet extends string,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> = PartialMeta<Src, Dst, Sheet, Op> & Info<Member, Sheet>
-export type PartialMeta<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> = {
-  tag?: Tag<Src, Dst, Sheet>
-  op: Op
-  ops: CalcResult<number, PartialMeta<Src, Dst, Sheet, Op>>[]
+/// `op`s that appear in `Meta['op']`, inserted by the Calculator.computeMeta
+type MetaOp =
+  | 'sum'
+  | 'prod'
+  | 'min'
+  | 'max'
+  | 'sumfrac'
+  | 'const'
+  | 'subscript'
+  | 'vtag'
+export type CalcMeta<Tag_ extends Tag, COp = never> = PartialMeta<Tag_, COp> &
+  Info<Tag_>
+export type PartialMeta<Tag_ extends Tag, Cop = never> = {
+  tag?: Tag_
+  op: MetaOp | Cop
+  ops: CalcResult<number, PartialMeta<Tag_, Cop>>[]
 }
-export type Info<Member extends string, Sheet extends string> = {
-  conds: CondInfo<Member | 'All', Sheet>
+export type Info<Tag_ extends Tag> = {
+  conds: CondInfo<Member<Tag_> | 'All', Sheet<Tag_>>
 }
 
 const { arithmetic } = calculation
 
 export class Calculator<
-  Src extends string | null,
-  Dst extends string | null,
-  Member extends string,
-  Sheet extends string,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-> extends BaseCalculator {
+  Tag_ extends Tag = Tag,
+  COp = never // values of supported `Custom['ex']` if any
+> extends BaseCalculator<CalcMeta<Tag_, COp>> {
   override computeMeta(
     { op, ex }: AnyNode,
     val: number | string,
-    _x: (
-      | CalcResult<number | string, CalcMeta<Src, Dst, Member, Sheet, Op>>
-      | undefined
-    )[],
-    _br: CalcResult<number | string, CalcMeta<Src, Dst, Member, Sheet, Op>>[],
-    tag: Tag<Src, Dst, Sheet> | undefined
-  ): CalcMeta<Src, Dst, Member, Sheet, Op> {
+    _x: (CalcResult<number | string, CalcMeta<Tag_, COp>> | undefined)[],
+    _br: CalcResult<number | string, CalcMeta<Tag_, COp>>[],
+    tag: Tag_ | undefined
+  ): CalcMeta<Tag_, COp> {
     const info = {
       ...Object.freeze({
         conds: Object.freeze({}),
@@ -70,21 +64,21 @@ export class Calculator<
     _br.forEach((br) => extract(br, info))
 
     function withTag(
-      tag: Tag<Src, Dst, Sheet> | undefined,
-      meta: CalcMeta<Src, Dst, Member, Sheet, Op>
-    ): CalcMeta<Src, Dst, Member, Sheet, Op> {
+      tag: Tag_ | undefined,
+      meta: CalcMeta<Tag_, COp>
+    ): CalcMeta<Tag_, COp> {
       return !meta.tag && tag ? { tag, ...meta } : meta
     }
     function finalize(
-      op: CalcMeta<Src, Dst, Member, Sheet, Op>['op'],
-      ops: CalcResult<number, PartialMeta<Src, Dst, Sheet, Op>>[]
-    ): CalcMeta<Src, Dst, Member, Sheet, Op> {
+      op: MetaOp | COp,
+      ops: CalcResult<number, PartialMeta<Tag_, COp>>[]
+    ): CalcMeta<Tag_, COp> {
       return withTag(tag, { op, ops, ...info })
     }
     function wrap(
-      result: CalcResult<number | string, PartialMeta<Src, Dst, Sheet, Op>>
-    ): CalcMeta<Src, Dst, Member, Sheet, Op> {
-      const meta = result.meta as CalcMeta<Src, Dst, Member, Sheet, Op>
+      result: CalcResult<number | string, PartialMeta<Tag_, COp>>
+    ): CalcMeta<Tag_, COp> {
+      const meta = result.meta as CalcMeta<Tag_, COp>
       const reuse = meta.conds === info.conds
       return withTag(tag, reuse ? meta : { ...meta, ...info })
     }
@@ -101,19 +95,19 @@ export class Calculator<
       case 'min':
       case 'max':
       case 'sumfrac': {
-        let ops = x as CalcResult<number, PartialMeta<Src, Dst, Sheet, Op>>[]
+        let ops = x as CalcResult<number, PartialMeta<Tag_, COp>>[]
         if (ops.length > 1) {
           const empty = arithmetic[op]([], ex)
           ops = ops.filter((x) => x!.val !== empty)
         }
         if (ops.length === 1) return wrap(ops[0])
-        if (ops.length === 0) return finalize('const' as Op, [])
-        return finalize(op as Op, ops)
+        if (ops.length === 0) return finalize('const', [])
+        return finalize(op, ops)
       }
       case 'const':
       case 'vtag':
       case 'subscript':
-        return finalize('const' as Op, [])
+        return finalize('const', [])
       case 'match':
       case 'thres':
       case 'lookup':
@@ -123,19 +117,17 @@ export class Calculator<
       case 'read':
         return Object.freeze(wrap(x[0]))
       case 'custom':
-        return finalize(
-          ex,
-          x as CalcResult<number, PartialMeta<Src, Dst, Sheet, Op>>[]
-        )
+        // This is the only usage of `COp`
+        return finalize(ex, x as CalcResult<number, PartialMeta<Tag_, COp>>[])
       default:
         assertUnreachable(op)
     }
   }
   override markGathered(
-    tag: Tag<Src, Dst, Sheet>,
+    tag: Tag_,
     _n: AnyNode,
-    result: CalcResult<string | number, CalcMeta<Src, Dst, Member, Sheet, Op>>
-  ): CalcResult<string | number, CalcMeta<Src, Dst, Member, Sheet, Op>> {
+    result: CalcResult<string | number, CalcMeta<Tag_, COp>>
+  ): CalcResult<string | number, CalcMeta<Tag_, COp>> {
     let dirty = false
     const val = result.val
     const meta = { ...Object.freeze(result.meta) }
@@ -145,45 +137,34 @@ export class Calculator<
       if (src && sheet && q)
         meta.conds = {
           [dst ?? 'All']: { [src]: { [sheet!]: { [q!]: val } } },
-        } as CondInfo<Member | 'All', Sheet>
+        } as CondInfo<Member<Tag_> | 'All', Sheet<Tag_>>
       dirty = true
     }
     Object.freeze(meta)
     return dirty ? { val, meta } : result
   }
 
-  listFormulas(
-    read: Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>
-  ): Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>[] {
+  listFormulas(read: Read<Tag_>): Read<Tag_>[] {
     return this.gather(read.tag)
       .filter((x) => x.val)
       .map(
         ({ val, meta }) =>
-          reader.withTag(meta.tag!)[
-            val as Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>['accu']
-          ]
+          (reader as Read<Tag_>).withTag(meta.tag!)[val as Read['accu']]
       )
   }
   listCondFormulas(
-    read: Read<Tag<Src, Dst, Sheet>, Src, Dst, Sheet>
-  ): CondInfo<Member | 'All', Sheet> {
+    read: Read<Tag_>
+  ): CondInfo<Member<Tag_> | 'All', Sheet<Tag_>> {
     return this.listFormulas(read)
       .map((x) => this.compute(x).meta.conds)
       .reduce(mergeConds, {})
   }
 }
 
-function extract<
-  V,
-  Src extends string | null,
-  Dst extends string | null,
-  Member extends string,
-  Sheet extends string,
-  Op = 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
->(
-  x: CalcResult<V, CalcMeta<Src, Dst, Member, Sheet, Op>>,
-  info: Info<Member, Sheet>
-): CalcResult<V, PartialMeta<Src, Dst, Sheet, Op>> {
+function extract<V, Tag_ extends Tag, COp>(
+  x: CalcResult<V, CalcMeta<Tag_, COp>>,
+  info: Info<Tag_>
+): CalcResult<V, PartialMeta<Tag_, COp>> {
   const { conds, ...meta } = x.meta
   info.conds = mergeConds(info.conds, conds)
   return Object.isFrozen(x.meta) ? x : { val: x.val, meta }

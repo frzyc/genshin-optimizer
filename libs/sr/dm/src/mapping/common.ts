@@ -31,10 +31,7 @@ export const allStatDMKeys = [
 ] as const
 export type StatDMKey = (typeof allStatDMKeys)[number]
 
-export const statKeyMap: Record<
-  Exclude<StatDMKey, 'AllDamageTypeAddedRatio'>,
-  StatKey
-> = {
+export const statKeyMap: Record<StatDMKey, StatKey> = {
   HPDelta: 'hp',
   HPAddedRatio: 'hp_',
   AttackDelta: 'atk',
@@ -56,6 +53,7 @@ export const statKeyMap: Record<
   ThunderAddedRatio: 'lightning_dmg_',
   QuantumAddedRatio: 'quantum_dmg_',
   ImaginaryAddedRatio: 'imaginary_dmg_',
+  AllDamageTypeAddedRatio: 'common_dmg_',
 
   StatusProbabilityBase: 'eff_',
   StatusResistanceBase: 'eff_res_',

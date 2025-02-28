@@ -1,6 +1,6 @@
 import { range } from '@genshin-optimizer/common/util'
 import type { NumTagFree } from '@genshin-optimizer/pando/engine'
-import { combineConst, flatten } from '@genshin-optimizer/pando/engine'
+import { simplify } from '@genshin-optimizer/pando/engine'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import type {
   BuildResultByIndex,
@@ -76,8 +76,7 @@ export class ParentWorker {
     numWorkers,
   }: ParentCommandStart) {
     // Step 3: Optimize nodes, as needed
-    detachedNodes = flatten(detachedNodes)
-    detachedNodes = combineConst(detachedNodes)
+    detachedNodes = simplify(detachedNodes)
 
     const chunkedStatsBySlot = this.splitWork(equipmentStats, numWorkers)
 

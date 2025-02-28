@@ -44,17 +44,17 @@ export const fixedTags = {
   specialty: specialties,
   faction: factions,
 }
-export type Tag = BaseTag<Src, Dst, Sheet> & {
-  attribute?: Attribute
-  skillType?: SkillType
-  damageType1?: DamageType
-  damageType2?: DamageType
+export type Tag = BaseTag<Sheet, Src, Dst> & {
+  attribute?: Attribute | null
+  skillType?: SkillType | null
+  damageType1?: DamageType | null
+  damageType2?: DamageType | null
 
   specialty?: Specialty
   faction?: Faction
 }
 
-export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
+export class Read extends BaseRead<Tag> {
   override add(
     value: number | string | AnyNode,
     force = false
@@ -223,7 +223,7 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
 }
 
 // Need to instantiate with zzz-specific reader
-setReader<Tag, Src, Dst, Sheet>(new Read({}, undefined))
+setReader<Tag>(new Read({}, undefined))
 export const reader = baseReader as Read
 
 export function tagStr(tag: Tag, ex?: any): string {

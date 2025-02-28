@@ -343,6 +343,7 @@ export function validateDisc(
 
 export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
   const errors = []
+  const { mainStatKey } = disc
   let { rarity, level, substats } = disc
   const validatedDisc = validateDisc(disc)
 
@@ -350,6 +351,17 @@ export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
   level = level ? level : 0
   substats = substats ? substats : []
   const minSubstats = rarity === allDiscRarityKeys[0] ? 3 : 2
+
+  // substat cannot have same key as mainstat
+  if (mainStatKey) {
+    const dupSubIndex = substats.findIndex((sub) => sub.key === mainStatKey)
+    if (dupSubIndex > -1)
+      errors.push(
+        `Substat at row ${dupSubIndex + 1} with ${
+          statKeyTextMap[mainStatKey]
+        } is the same as mainstat.`
+      )
+  }
 
   if (substats && substats.length >= minSubstats) {
     const totalUpgrades = substats.reduce((sum, item) => sum + item.upgrades, 0)

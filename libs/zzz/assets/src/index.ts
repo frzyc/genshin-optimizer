@@ -2,6 +2,7 @@ import type { AssetDataType } from '@genshin-optimizer/zzz/assets-data'
 import type {
   CharacterKey,
   DiscSetKey,
+  FactionKey,
   Raritykey,
   SkillKey,
   SpecialityKey,
@@ -9,6 +10,7 @@ import type {
 } from '@genshin-optimizer/zzz/consts'
 import type { StaticImageData } from 'next/image'
 import commonImages from './common'
+import faction from './common/faction'
 import phases from './common/phases'
 import rarity from './common/rarity'
 import skill from './common/skill'
@@ -48,6 +50,10 @@ export function specialityDefIcon(profKey: SpecialityKey) {
 
 export function rarityDefIcon(rarityKey: Raritykey) {
   return rarityKey ? rarity[rarityKey] : ''
+}
+
+export function factionDefIcon(factionKey: FactionKey) {
+  return factionKey ? faction[factionKey] : ''
 }
 
 export function commonDefIcon(key: SkillKey | 'core') {

@@ -115,6 +115,7 @@
   },
   "char": {
     "Anby": {
+      "id": "1011",
       "icon": "IconRole01",
       "rarity": "A",
       "attribute": "electric",
@@ -1199,6 +1200,7 @@
       }
     },
     "Nekomata": {
+      "id": "1021",
       "icon": "IconRole11",
       "rarity": "S",
       "attribute": "physical",
@@ -2315,6 +2317,7 @@
       }
     },
     "Nicole": {
+      "id": "1031",
       "icon": "IconRole12",
       "rarity": "A",
       "attribute": "ether",
@@ -4132,6 +4135,7 @@
       }
     },
     "Soldier11": {
+      "id": "1041",
       "icon": "IconRole05",
       "rarity": "S",
       "attribute": "fire",
@@ -5389,6 +5393,7 @@
       }
     },
     "Corin": {
+      "id": "1061",
       "icon": "IconRole09",
       "rarity": "A",
       "attribute": "physical",
@@ -6688,6 +6693,7 @@
       }
     },
     "Caesar": {
+      "id": "1071",
       "icon": "IconRole25",
       "rarity": "S",
       "attribute": "physical",
@@ -8145,6 +8151,7 @@
       }
     },
     "Billy": {
+      "id": "1081",
       "icon": "IconRole10",
       "rarity": "A",
       "attribute": "physical",
@@ -9313,6 +9320,7 @@
       }
     },
     "Miyabi": {
+      "id": "1091",
       "icon": "IconRole13",
       "rarity": "S",
       "attribute": "ice",
@@ -10696,6 +10704,7 @@
       }
     },
     "Koleda": {
+      "id": "1101",
       "icon": "IconRole14",
       "rarity": "S",
       "attribute": "fire",
@@ -12073,6 +12082,7 @@
       }
     },
     "Anton": {
+      "id": "1111",
       "icon": "IconRole15",
       "rarity": "A",
       "attribute": "electric",
@@ -13410,6 +13420,7 @@
       }
     },
     "Ben": {
+      "id": "1121",
       "icon": "IconRole16",
       "rarity": "A",
       "attribute": "fire",
@@ -14556,6 +14567,7 @@
       }
     },
     "Soukaku": {
+      "id": "1131",
       "icon": "IconRole17",
       "rarity": "A",
       "attribute": "ice",
@@ -15999,6 +16011,7 @@
       }
     },
     "Lycaon": {
+      "id": "1141",
       "icon": "IconRole18",
       "rarity": "S",
       "attribute": "ice",
@@ -17543,6 +17556,7 @@
       }
     },
     "Lucy": {
+      "id": "1151",
       "icon": "IconRole27",
       "rarity": "A",
       "attribute": "fire",
@@ -18907,6 +18921,7 @@
       }
     },
     "Lighter": {
+      "id": "1161",
       "icon": "IconRole26",
       "rarity": "S",
       "attribute": "fire",
@@ -20511,6 +20526,7 @@
       }
     },
     "Burnice": {
+      "id": "1171",
       "icon": "IconRole32",
       "rarity": "S",
       "attribute": "fire",
@@ -21867,6 +21883,7 @@
       }
     },
     "Grace": {
+      "id": "1181",
       "icon": "IconRole20",
       "rarity": "S",
       "attribute": "electric",
@@ -22853,6 +22870,7 @@
       }
     },
     "Ellen": {
+      "id": "1191",
       "icon": "IconRole21",
       "rarity": "S",
       "attribute": "ice",
@@ -24263,6 +24281,7 @@
       }
     },
     "Harumasa": {
+      "id": "1201",
       "icon": "IconRole35",
       "rarity": "S",
       "attribute": "electric",
@@ -25650,6 +25669,7 @@
       }
     },
     "Rina": {
+      "id": "1211",
       "icon": "IconRole22",
       "rarity": "S",
       "attribute": "electric",
@@ -26651,6 +26671,7 @@
       }
     },
     "Yanagi": {
+      "id": "1221",
       "icon": "IconRole31",
       "rarity": "S",
       "attribute": "electric",
@@ -28003,6 +28024,7 @@
       }
     },
     "ZhuYuan": {
+      "id": "1241",
       "icon": "IconRole23",
       "rarity": "S",
       "attribute": "ether",
@@ -29371,6 +29393,7 @@
       }
     },
     "QingYi": {
+      "id": "1251",
       "icon": "IconRole29",
       "rarity": "S",
       "attribute": "electric",
@@ -30703,6 +30726,7 @@
       }
     },
     "Jane": {
+      "id": "1261",
       "icon": "IconRole24",
       "rarity": "S",
       "attribute": "physical",
@@ -32155,6 +32179,7 @@
       }
     },
     "Seth": {
+      "id": "1271",
       "icon": "IconRole30",
       "rarity": "A",
       "attribute": "electric",
@@ -33315,6 +33340,7 @@
       }
     },
     "Piper": {
+      "id": "1281",
       "icon": "IconRole28",
       "rarity": "A",
       "attribute": "physical",
@@ -34547,6 +34573,7 @@
       }
     },
     "Astra": {
+      "id": "1311",
       "icon": "IconRole36",
       "rarity": "S",
       "attribute": "ether",
@@ -35902,6 +35929,7 @@
       }
     },
     "Evelyn": {
+      "id": "1321",
       "icon": "IconRole37",
       "rarity": "S",
       "attribute": "fire",
