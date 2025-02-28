@@ -1,6 +1,4 @@
-type Tag = Record<string, string>
-
-export type IFormulaData<T = Tag> = {
+export type IFormulaData<T> = {
   sheet: string // entity
   name: string // formula name
   tag: T // tag used to access value
