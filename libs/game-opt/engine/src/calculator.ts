@@ -69,7 +69,7 @@ export class Calculator<
       return !meta.tag && tag ? { tag, ...meta } : meta
     }
     function finalize(
-      op: CalcMeta<Tag_, Op>['op'],
+      op: Op,
       ops: CalcResult<number, PartialMeta<Tag_, Op>>[]
     ): CalcMeta<Tag_, Op> {
       return withTag(tag, { op, ops, ...info })
@@ -147,7 +147,7 @@ export class Calculator<
       .filter((x) => x.val)
       .map(
         ({ val, meta }) =>
-          (reader as Read<Tag_>).withTag(meta.tag!)[val as Read<Tag_>['accu']]
+          (reader as Read<Tag_>).withTag(meta.tag!)[val as Read['accu']]
       )
   }
   listCondFormulas(

@@ -1,22 +1,17 @@
-import type { Tag as BaseTag, NumNode } from '@genshin-optimizer/pando/engine'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { cmpEq, cmpNE, subscript } from '@genshin-optimizer/pando/engine'
 import type { IBaseConditionalData } from './IConditionalData'
 import type { Read, Sheet, Src, Tag } from './read'
 import { reader } from './read'
 
-export type Desc<Tag extends BaseTag, Sheet extends string> = {
+export type Desc<Sheet extends string> = {
   sheet: Sheet | undefined
-  accu: Read<Tag>['accu']
+  accu: Read['accu']
 }
 
 export const createConvert =
   <Read_ extends Read<Tag>>() =>
-  <
-    V extends Record<
-      string,
-      Record<string, Desc<Read_['tag'], Sheet<Read['tag']>>>
-    >
-  >(
+  <V extends Record<string, Record<string, Desc<Sheet<Read['tag']>>>>>(
     v: V,
     tag: Omit<Read_['tag'], 'qt' | 'q'>
   ): {

@@ -69,7 +69,7 @@ export function priorityTable(
  * only include contributions from character and custom values.
  */
 
-type Desc = BaseDesc<Tag, Sheet>
+type Desc = BaseDesc<Sheet>
 const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
 const iso: Desc = { sheet: 'iso', accu: 'unique' }

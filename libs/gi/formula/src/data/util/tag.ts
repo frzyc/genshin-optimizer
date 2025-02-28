@@ -5,6 +5,7 @@ import {
   createConditionalEntries,
   createConvert,
   tag,
+  type Desc as BaseDesc,
 } from '@genshin-optimizer/game-opt/engine'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
@@ -67,7 +68,7 @@ export function priorityTable(
  * only include contributions from character and custom values.
  */
 
-type Desc = { sheet: Sheet | undefined; accu: Read['accu'] }
+type Desc = BaseDesc<Sheet>
 const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
 const iso: Desc = { sheet: 'iso', accu: 'unique' }
