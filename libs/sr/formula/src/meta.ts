@@ -428,7 +428,6 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  Defense: { ultUsed: { sheet: 'Defense', name: 'ultUsed', type: 'bool' } },
   DrRatio: {
     boolConditional: {
       sheet: 'DrRatio',
@@ -937,13 +936,6 @@ export const conditionals = {
       int_only: true,
       min: 0,
       max: 2,
-    },
-  },
-  GuardOfWutheringSnow: {
-    hpLowerThan50: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'hpLowerThan50',
-      type: 'bool',
     },
   },
   Guinaifen: {

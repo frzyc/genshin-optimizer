@@ -1,19 +1,18 @@
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allListConditionals, own } from '../../util'
+import { allStats } from '@genshin-optimizer/sr/stats'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'CarveTheMoonWeaveTheClouds'
 const data_gen = allStats.lightCone[key]
-const dm = mappedStats.lightCone[key]
-const lcCount = own.common.count.sheet(key)
-const { superimpose } = own.lightCone
+// const dm = mappedStats.lightCone[key]
+// const lcCount = own.common.count.sheet(key)
+// const { superimpose } = own.lightCone
 
-const { atk_crit_dmg_enerRegen_ } = allListConditionals(key, [
-  'atk_',
-  'crit_dmg_',
-  'enerRegen_',
-])
+// const { atk_crit_dmg_enerRegen_ } = allListConditionals(key, [
+//   'atk_',
+//   'crit_dmg_',
+//   'enerRegen_',
+// ])
 
 const sheet = registerLightCone(
   key,

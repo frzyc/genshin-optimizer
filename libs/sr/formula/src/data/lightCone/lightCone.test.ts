@@ -639,7 +639,6 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.def_).val).toBeCloseTo(0.24)
   })
 
-  // Defense shoud be here, but there are no conditionals or passives
   it('Defense', () => {
     const charKey: CharacterKey = 'FuXuan'
     const data = testCharacterData(charKey, 'Defense')
@@ -653,7 +652,7 @@ describe('Light Cone sheets test', () => {
       calc
         .withTag(formulas.Defense.healing.tag)
         .compute(new Read(formulas.Defense.healing.tag, undefined)).val
-    ).toBeCloseTo(0.24) // should be more than this, currently testing
+    ).toBeCloseTo((1474.704 + 952.56) * 0.3)
   })
 
   it('DestinysThreadsForewoven', () => {
