@@ -306,6 +306,14 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  CarveTheMoonWeaveTheClouds: {
+    atk_crit_dmg_enerRegen_: {
+      sheet: 'CarveTheMoonWeaveTheClouds',
+      name: 'atk_crit_dmg_enerRegen_',
+      type: 'list',
+      list: ['atk_', 'crit_dmg_', 'enerRegen_'],
+    },
+  },
   CelestialDifferentiator: {
     firstAttack: {
       sheet: 'CelestialDifferentiator',
@@ -449,46 +457,12 @@ export const conditionals = {
       max: 2,
     },
   },
-  DreamsMontage: {
-    boolConditional: {
-      sheet: 'DreamsMontage',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DreamsMontage',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DreamsMontage',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   DreamvilleAdventure: {
-    boolConditional: {
+    childishness: {
       sheet: 'DreamvilleAdventure',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DreamvilleAdventure',
-      name: 'listConditional',
+      name: 'childishness',
       type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DreamvilleAdventure',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      list: ['basic', 'skill', 'ult'],
     },
   },
   DuranDynastyOfRunningWolves: {
@@ -502,25 +476,7 @@ export const conditionals = {
     },
   },
   EarthlyEscapade: {
-    boolConditional: {
-      sheet: 'EarthlyEscapade',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'EarthlyEscapade',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'EarthlyEscapade',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    mask: { sheet: 'EarthlyEscapade', name: 'mask', type: 'bool' },
   },
   EchoesOfTheCoffin: {
     boolConditional: {
@@ -8302,6 +8258,41 @@ export const buffs = {
       },
     },
   },
+  CarveTheMoonWeaveTheClouds: {
+    atk_: {
+      sheet: 'CarveTheMoonWeaveTheClouds',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'CarveTheMoonWeaveTheClouds',
+        name: 'atk_',
+      },
+    },
+    crit_dmg_: {
+      sheet: 'CarveTheMoonWeaveTheClouds',
+      name: 'crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'CarveTheMoonWeaveTheClouds',
+        name: 'crit_dmg_',
+      },
+    },
+    enerRegen_: {
+      sheet: 'CarveTheMoonWeaveTheClouds',
+      name: 'enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'CarveTheMoonWeaveTheClouds',
+        name: 'enerRegen_',
+      },
+    },
+  },
   CelestialDifferentiator: {
     set2_crit_rate_: {
       sheet: 'CelestialDifferentiator',
@@ -9240,73 +9231,41 @@ export const buffs = {
       },
     },
   },
-  DreamsMontage: {
-    cond_dmg_: {
-      sheet: 'DreamsMontage',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DreamsMontage',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'DreamsMontage',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DreamsMontage',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DreamsMontage',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DreamsMontage',
-        name: 'team_dmg_',
-      },
-    },
-  },
   DreamvilleAdventure: {
-    cond_dmg_: {
+    basic_dmg_: {
       sheet: 'DreamvilleAdventure',
-      name: 'cond_dmg_',
+      name: 'basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DreamvilleAdventure',
-        name: 'cond_dmg_',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
       },
     },
-    enemy_defRed_: {
+    skill_dmg_: {
       sheet: 'DreamvilleAdventure',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DreamvilleAdventure',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DreamvilleAdventure',
-      name: 'team_dmg_',
+      name: 'skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DreamvilleAdventure',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'skill_dmg_',
+      },
+    },
+    ult_dmg_: {
+      sheet: 'DreamvilleAdventure',
+      name: 'ult_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DreamvilleAdventure',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
@@ -9336,37 +9295,26 @@ export const buffs = {
     },
   },
   EarthlyEscapade: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'EarthlyEscapade',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'EarthlyEscapade',
-        name: 'cond_dmg_',
+        name: 'crit_',
       },
     },
-    enemy_defRed_: {
+    crit_dmg_: {
       sheet: 'EarthlyEscapade',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'EarthlyEscapade',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'EarthlyEscapade',
-      name: 'team_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'EarthlyEscapade',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },

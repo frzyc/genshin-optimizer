@@ -435,38 +435,39 @@ describe('Light Cone sheets test', () => {
     expect(calcSeele.compute(own.final.common_dmg_).val).toBeCloseTo(0.5)
   })
 
-  // TODO: Uncomment when ready
-  // it.each([
-  //   { atk_: 0.2, crit_dmg_: 0.5, enerRegen_: 0, name: 'atk_' },
-  //   { atk_: 0, crit_dmg_: 0.74, enerRegen_: 0, name: 'crit_dmg_' },
-  //   { atk_: 0, crit_dmg_: 0.5, enerRegen_: 0.12, name: 'enerRegen_' },
-  // ])('CarveTheMoonWeaveTheClouds', (testCase) => {
-  //   const charKey: CharacterKey = 'RuanMei'
-  //   const data = testCharacterData(charKey, 'CarveTheMoonWeaveTheClouds')
-  //   data.push(
-  //     cond(
-  //       charKey,
-  //       'CarveTheMoonWeaveTheClouds',
-  //       conditionals.CarveTheMoonWeaveTheClouds.atk_crit_dmg_enerRegen_.name,
-  //       testCase.name
-  //     )
-  //   )
-  //   const calc = new Calculator(
-  //     keys,
-  //     values,
-  //     compileTagMapValues(keys, data)
-  //   ).withTag({ src: charKey, dst: charKey })
+  it.each([
+    { atk_: 0.2, crit_dmg_: 0.5, enerRegen_: 0, index: 1 },
+    { atk_: 0, crit_dmg_: 0.74, enerRegen_: 0, index: 2 },
+    { atk_: 0, crit_dmg_: 0.5, enerRegen_: 0.12, index: 3 },
+  ])('CarveTheMoonWeaveTheClouds', (testCase) => {
+    setDebugMode(true)
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'CarveTheMoonWeaveTheClouds')
+    data.push(
+      cond(
+        charKey,
+        'CarveTheMoonWeaveTheClouds',
+        conditionals.CarveTheMoonWeaveTheClouds.atk_crit_dmg_enerRegen_.name,
+        testCase.index
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
 
-  //   const char = convert(ownTag, { et: 'own', src: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
 
-  //   expect(calc.compute(char.final.atk_).val).toBeCloseTo(testCase.atk_)
-  //   expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(
-  //     testCase.crit_dmg_
-  //   )
-  //   expect(calc.compute(char.final.enerRegen_).val).toBeCloseTo(
-  //     testCase.enerRegen_
-  //   )
-  // })
+    // printDebug(calc, char.final.atk_)
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(testCase.atk_)
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(
+      testCase.crit_dmg_
+    )
+    expect(calc.compute(char.final.enerRegen_).val).toBeCloseTo(
+      testCase.enerRegen_
+    )
+  })
 
   it('Chorus', () => {
     const charKey: CharacterKey = 'RuanMei'
@@ -669,5 +670,68 @@ describe('Light Cone sheets test', () => {
 
     expect(calc.compute(char.final.eff_res_).val).toBeCloseTo(0.2)
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.48)
+  })
+
+  it('DreamsMontage', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'DreamsMontage')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.12)
+  })
+
+  it.each([
+    { basic: 0.2, skill: 0, ult: 0, index: 1 },
+    { basic: 0, skill: 0.2, ult: 0, index: 2 },
+    { basic: 0, skill: 0, ult: 0.2, index: 3 },
+  ])('DreamvilleAdventure', (attack) => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'DreamvilleAdventure')
+    data.push(
+      cond(
+        charKey,
+        'DreamvilleAdventure',
+        conditionals.DreamvilleAdventure.childishness.name,
+        attack.index
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.dmg_.basic[0]).val).toBeCloseTo(attack.basic)
+    expect(calc.compute(char.final.dmg_.skill[0]).val).toBeCloseTo(attack.skill)
+    expect(calc.compute(char.final.dmg_.ult[0]).val).toBeCloseTo(attack.ult)
+  })
+
+  it('EarthlyEscapade', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'EarthlyEscapade')
+    data.push(
+      cond(
+        charKey,
+        'EarthlyEscapade',
+        conditionals.EarthlyEscapade.mask.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC bonus
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.6 + 0.56)
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.14)
   })
 })
