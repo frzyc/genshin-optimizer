@@ -8,25 +8,7 @@ export const conditionals = {
     },
   },
   ASecretVow: {
-    boolConditional: {
-      sheet: 'ASecretVow',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ASecretVow',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ASecretVow',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    enemyHpGEOwn: { sheet: 'ASecretVow', name: 'enemyHpGEOwn', type: 'bool' },
   },
   Acheron: {
     boolConditional: {
@@ -341,23 +323,6 @@ export const conditionals = {
       max: 5,
     },
   },
-  Chorus: {
-    boolConditional: { sheet: 'Chorus', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Chorus',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Chorus',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Clara: {
     boolConditional: { sheet: 'Clara', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -375,46 +340,14 @@ export const conditionals = {
       max: 2,
     },
   },
-  CollapsingSky: {
-    boolConditional: {
-      sheet: 'CollapsingSky',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'CollapsingSky',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'CollapsingSky',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   ConcertForTwo: {
-    boolConditional: {
+    shieldCount: {
       sheet: 'ConcertForTwo',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ConcertForTwo',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ConcertForTwo',
-      name: 'numConditional',
+      name: 'shieldCount',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 8,
     },
   },
   Cornucopia: {
@@ -6088,37 +6021,15 @@ export const buffs = {
     },
   },
   ASecretVow: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ASecretVow',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ASecretVow',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ASecretVow',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ASecretVow',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ASecretVow',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ASecretVow',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -8565,37 +8476,15 @@ export const buffs = {
     },
   },
   Chorus: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'Chorus',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'Chorus',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Chorus',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Chorus',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Chorus',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Chorus',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
@@ -8792,72 +8681,41 @@ export const buffs = {
     },
   },
   CollapsingSky: {
-    cond_dmg_: {
+    basic_dmg_: {
       sheet: 'CollapsingSky',
-      name: 'cond_dmg_',
+      name: 'basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'CollapsingSky',
-        name: 'cond_dmg_',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
       },
     },
-    enemy_defRed_: {
+    skill_dmg_: {
       sheet: 'CollapsingSky',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'CollapsingSky',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'CollapsingSky',
-      name: 'team_dmg_',
+      name: 'skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'CollapsingSky',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'skill_dmg_',
       },
     },
   },
   ConcertForTwo: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ConcertForTwo',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ConcertForTwo',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ConcertForTwo',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ConcertForTwo',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ConcertForTwo',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ConcertForTwo',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },

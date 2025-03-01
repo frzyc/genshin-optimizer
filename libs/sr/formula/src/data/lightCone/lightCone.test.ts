@@ -264,7 +264,22 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
   })
 
-  // TODO: ASecretVow
+  it('ASecretVow', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'ASecretVow')
+    data.push(
+      cond(charKey, 'ASecretVow', conditionals.ASecretVow.enemyHpGEOwn.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // LC passive + cond
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4 + 0.4)
+  })
 
   it('BaptismOfPureThought', () => {
     const charKey: CharacterKey = 'Seele'
@@ -444,4 +459,53 @@ describe('Light Cone sheets test', () => {
   //     testCase.enerRegen_
   //   )
   // })
+
+  it('Chorus', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'Chorus')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.12)
+  })
+
+  it('CollapsingSky', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'CollapsingSky')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.dmg_.basic[0]).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.dmg_.skill[0]).val).toBeCloseTo(0.4)
+  })
+
+  it('ConcertForTwo', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'ConcertForTwo')
+    data.push(
+      cond(
+        charKey,
+        'ConcertForTwo',
+        conditionals.ConcertForTwo.shieldCount.name,
+        8
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.def_).val).toBeCloseTo(0.32)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(8 * 0.08)
+  })
 })
