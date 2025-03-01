@@ -6,15 +6,23 @@ import {
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
 import { data, keys, values } from '..'
 import { Calculator } from '../../calculator'
-import { conditionals } from '../../meta'
+import { conditionals, formulas } from '../../meta'
 import {
   charTagMapNodeEntries,
   lightConeTagMapNodeEntries,
   teamData,
   withMember,
 } from '../../util'
-import type { Read, TagMapNodeEntries } from '../util'
-import { conditionalEntries, convert, enemy, own, ownTag } from '../util'
+import type { TagMapNodeEntries } from '../util'
+import {
+  conditionalEntries,
+  convert,
+  enemy,
+  own,
+  ownBuff,
+  ownTag,
+  Read,
+} from '../util'
 
 setDebugMode(true)
 Object.assign(values, compileTagMapValues(keys, data))
@@ -603,5 +611,64 @@ describe('Light Cone sheets test', () => {
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.48)
+  })
+
+  it('DataBank', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'DataBank')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.dmg_.ult[0]).val).toBeCloseTo(0.56)
+  })
+
+  it('DayOneOfMyNewLife', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'DayOneOfMyNewLife')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.def_).val).toBeCloseTo(0.24)
+  })
+
+  // Defense shoud be here, but there are no conditionals or passives
+  it('Defense', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'Defense')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+
+    expect(
+      calc
+        .withTag(formulas.Defense.healing.tag)
+        .compute(new Read(formulas.Defense.healing.tag, undefined)).val
+    ).toBeCloseTo(0.24) // should be more than this, currently testing
+  })
+
+  it('DestinysThreadsForewoven', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'DestinysThreadsForewoven', [
+      ownBuff.premod.def.add(4000), // Adding def for maximum buff increase
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.eff_res_).val).toBeCloseTo(0.2)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.48)
   })
 })

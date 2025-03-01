@@ -428,90 +428,7 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  DataBank: {
-    boolConditional: {
-      sheet: 'DataBank',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DataBank',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DataBank',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  DayOneOfMyNewLife: {
-    boolConditional: {
-      sheet: 'DayOneOfMyNewLife',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DayOneOfMyNewLife',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DayOneOfMyNewLife',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Defense: {
-    boolConditional: {
-      sheet: 'Defense',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Defense',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Defense',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  DestinysThreadsForewoven: {
-    boolConditional: {
-      sheet: 'DestinysThreadsForewoven',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DestinysThreadsForewoven',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DestinysThreadsForewoven',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
+  Defense: { ultUsed: { sheet: 'Defense', name: 'ultUsed', type: 'bool' } },
   DrRatio: {
     boolConditional: {
       sheet: 'DrRatio',
@@ -4160,6 +4077,19 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  Defense: {
+    healing: {
+      sheet: 'Defense',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'Defense',
+        name: 'healing',
       },
     },
   },
@@ -9103,142 +9033,29 @@ export const buffs = {
     },
   },
   DataBank: {
-    cond_dmg_: {
+    ult_dmg_: {
       sheet: 'DataBank',
-      name: 'cond_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DataBank',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'DataBank',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DataBank',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DataBank',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DataBank',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  DayOneOfMyNewLife: {
-    cond_dmg_: {
-      sheet: 'DayOneOfMyNewLife',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DayOneOfMyNewLife',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'DayOneOfMyNewLife',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DayOneOfMyNewLife',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DayOneOfMyNewLife',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DayOneOfMyNewLife',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  Defense: {
-    cond_dmg_: {
-      sheet: 'Defense',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Defense',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Defense',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Defense',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Defense',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Defense',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
   DestinysThreadsForewoven: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'DestinysThreadsForewoven',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DestinysThreadsForewoven',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'DestinysThreadsForewoven',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DestinysThreadsForewoven',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DestinysThreadsForewoven',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DestinysThreadsForewoven',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
