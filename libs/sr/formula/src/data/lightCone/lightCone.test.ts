@@ -508,4 +508,100 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.def_).val).toBeCloseTo(0.32)
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(8 * 0.08)
   })
+
+  it('Cornucopia', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'Cornucopia')
+    data.push(
+      cond(
+        charKey,
+        'Cornucopia',
+        conditionals.Cornucopia.skillOrUltUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.heal_).val).toBeCloseTo(0.24)
+  })
+
+  it('CruisingInTheStellarSea', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'CruisingInTheStellarSea')
+    data.push(
+      cond(
+        charKey,
+        'CruisingInTheStellarSea',
+        conditionals.CruisingInTheStellarSea.enemyHpLEHalf.name,
+        1
+      ),
+      cond(
+        charKey,
+        'CruisingInTheStellarSea',
+        conditionals.CruisingInTheStellarSea.enemyDefeated.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive + cond
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.16 + 0.16)
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.4)
+  })
+
+  it('DanceAtSunset', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'DanceAtSunset')
+    data.push(
+      cond(
+        charKey,
+        'DanceAtSunset',
+        conditionals.DanceAtSunset.ultsUsed.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.6)
+    expect(calc.compute(char.final.dmg_.followUp[0]).val).toBeCloseTo(2 * 0.6)
+  })
+
+  // Dance! Dance! Dance! should be here, but no buffs apart from Action Advance
+
+  it('DartingArrow', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'DartingArrow')
+    data.push(
+      cond(
+        charKey,
+        'DartingArrow',
+        conditionals.DartingArrow.enemyDefeated.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.48)
+  })
 })

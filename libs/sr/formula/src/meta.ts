@@ -351,45 +351,22 @@ export const conditionals = {
     },
   },
   Cornucopia: {
-    boolConditional: {
+    skillOrUltUsed: {
       sheet: 'Cornucopia',
-      name: 'boolConditional',
+      name: 'skillOrUltUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Cornucopia',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Cornucopia',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   CruisingInTheStellarSea: {
-    boolConditional: {
+    enemyDefeated: {
       sheet: 'CruisingInTheStellarSea',
-      name: 'boolConditional',
+      name: 'enemyDefeated',
       type: 'bool',
     },
-    listConditional: {
+    enemyHpLEHalf: {
       sheet: 'CruisingInTheStellarSea',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'CruisingInTheStellarSea',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'enemyHpLEHalf',
+      type: 'bool',
     },
   },
   DanHeng: {
@@ -435,41 +412,9 @@ export const conditionals = {
     },
   },
   DanceAtSunset: {
-    boolConditional: {
+    ultsUsed: {
       sheet: 'DanceAtSunset',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DanceAtSunset',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DanceAtSunset',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  DanceDanceDance: {
-    boolConditional: {
-      sheet: 'DanceDanceDance',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DanceDanceDance',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DanceDanceDance',
-      name: 'numConditional',
+      name: 'ultsUsed',
       type: 'num',
       int_only: true,
       min: 0,
@@ -477,24 +422,10 @@ export const conditionals = {
     },
   },
   DartingArrow: {
-    boolConditional: {
+    enemyDefeated: {
       sheet: 'DartingArrow',
-      name: 'boolConditional',
+      name: 'enemyDefeated',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DartingArrow',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DartingArrow',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   DataBank: {
@@ -8720,72 +8651,39 @@ export const buffs = {
     },
   },
   Cornucopia: {
-    cond_dmg_: {
+    heal_: {
       sheet: 'Cornucopia',
-      name: 'cond_dmg_',
+      name: 'heal_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'heal_',
         sheet: 'Cornucopia',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Cornucopia',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Cornucopia',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Cornucopia',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Cornucopia',
-        name: 'team_dmg_',
+        name: 'heal_',
       },
     },
   },
   CruisingInTheStellarSea: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'CruisingInTheStellarSea',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'CruisingInTheStellarSea',
-        name: 'cond_dmg_',
+        name: 'atk_',
       },
     },
-    enemy_defRed_: {
+    crit_: {
       sheet: 'CruisingInTheStellarSea',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'CruisingInTheStellarSea',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'CruisingInTheStellarSea',
-      name: 'team_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'CruisingInTheStellarSea',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },
@@ -9178,107 +9076,29 @@ export const buffs = {
     },
   },
   DanceAtSunset: {
-    cond_dmg_: {
+    followUp_dmg_: {
       sheet: 'DanceAtSunset',
-      name: 'cond_dmg_',
+      name: 'followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'DanceAtSunset',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'DanceAtSunset',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DanceAtSunset',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DanceAtSunset',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DanceAtSunset',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  DanceDanceDance: {
-    cond_dmg_: {
-      sheet: 'DanceDanceDance',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DanceDanceDance',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'DanceDanceDance',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DanceDanceDance',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DanceDanceDance',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DanceDanceDance',
-        name: 'team_dmg_',
+        damageType1: 'followUp',
+        name: 'followUp_dmg_',
       },
     },
   },
   DartingArrow: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'DartingArrow',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'DartingArrow',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'DartingArrow',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'DartingArrow',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'DartingArrow',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'DartingArrow',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
