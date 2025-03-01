@@ -1,7 +1,6 @@
 import { range, verifyObjKeys } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/sr/consts'
 import {
-  allElementalDamageKeys,
   allLightConeKeys,
   type LightConeKey,
   type PathKey,
@@ -44,23 +43,15 @@ export default function LightConeData(): LightConeData {
     Object.entries(equipmentConfig).map(
       ([lightConeId, { Rarity, AvatarBaseType }]) => {
         const flatConfig = equipmentSkillConfig_bySuperimpose[lightConeId]
-        // Expand AllDamageTypeAddedRatio to all elemental dmg bonus
         const expandedConfig = {
           ...flatConfig,
           AbilityProperty: flatConfig.AbilityProperty.map((superimpose) =>
-            superimpose.flatMap((abilityProperty) =>
-              abilityProperty.PropertyType === 'AllDamageTypeAddedRatio'
-                ? allElementalDamageKeys.map((key) => ({
-                    ...abilityProperty,
-                    key,
-                  }))
-                : [
-                    {
-                      ...abilityProperty,
-                      key: statKeyMap[abilityProperty.PropertyType],
-                    },
-                  ]
-            )
+            superimpose.flatMap((abilityProperty) => [
+              {
+                ...abilityProperty,
+                key: statKeyMap[abilityProperty.PropertyType],
+              },
+            ])
           ),
         }
         // Transpose the config so each param has its own array so we can use subscript() on it

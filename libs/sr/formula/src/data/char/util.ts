@@ -159,7 +159,6 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.char.path.add(data_gen.path),
     ownBuff.common.count.withPath(data_gen.path).add(1),
     ownBuff.char.maxEnergy.add(data_gen.maxEnergy),
-    ownBuff.common.count.withMisc('maxEnergy').add(data_gen.maxEnergy),
     // Base stats
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = data_gen.ascension.map((p) => p[sk].base)

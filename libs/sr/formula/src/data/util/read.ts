@@ -11,7 +11,6 @@ import type {
   DamageType,
   Dst,
   ElementalType,
-  Misc,
   Path,
   Src,
   TagMapNodeEntry,
@@ -20,7 +19,6 @@ import {
   damageTypes,
   elementalTypes,
   members,
-  misc,
   paths,
   sheets,
   type Sheet,
@@ -39,19 +37,17 @@ export const fixedTags = {
 
   // Count
   path: paths,
-  misc,
 }
-export type Tag = BaseTag<Src, Dst, Sheet> & {
-  elementalType?: ElementalType
-  damageType1?: DamageType
-  damageType2?: DamageType
+export type Tag = BaseTag<Sheet, Src, Dst> & {
+  elementalType?: ElementalType | null
+  damageType1?: DamageType | null
+  damageType2?: DamageType | null
 
   // Count
-  path?: Path
-  misc?: Misc
+  path?: Path | null
 }
 
-export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
+export class Read extends BaseRead<Tag> {
   override add(
     value: number | string | AnyNode,
     force = false
@@ -160,15 +156,10 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
   withPath(path: Path): Read {
     return super.with('path', path)
   }
-
-  // Misc
-  withMisc(misc: Misc): Read {
-    return super.with('misc', misc)
-  }
 }
 
 // Need to instantiate with sr-specific reader
-setReader<Tag, Src, Dst, Sheet>(new Read({}, undefined))
+setReader<Tag>(new Read({}, undefined))
 export const reader = baseReader as Read
 
 export function tagStr(tag: Tag, ex?: any): string {
@@ -184,6 +175,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     elementalType,
     damageType1,
     damageType2,
+    path,
     ...remaining
   } = tag
 
@@ -218,6 +210,7 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(elementalType, 'ele')
   optional(damageType1 && `1:${damageType1}`, 'dmg1')
   optional(damageType2 && `2:${damageType2}`, 'dmg2')
+  optional(path && `p:{path}`, 'path')
   if (ex) result += `[${ex}] `
   return result + '}'
 }

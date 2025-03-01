@@ -302,9 +302,7 @@ describe('team test', () => {
     expect(
       calc.withTag({ src: 'Argenti' }).compute(own.char.maxEnergy).val
     ).toEqual(180)
-    expect(calc.compute(team.common.count.withMisc('maxEnergy')).val).toEqual(
-      189
-    )
+    expect(calc.compute(team.char.maxEnergy.sum).val).toEqual(189)
   })
 })
 

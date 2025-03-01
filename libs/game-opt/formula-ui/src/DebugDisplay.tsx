@@ -4,6 +4,7 @@ import {
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import { prettify } from '@genshin-optimizer/common/util'
+import type { Read } from '@genshin-optimizer/game-opt/engine'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -20,14 +21,13 @@ import { Box, Stack } from '@mui/system'
 import type { SyntheticEvent } from 'react'
 import { useContext, useState } from 'react'
 import { CalcContext, DebugReadContext, TagContext } from './context'
-import type { GenericRead } from './types'
 
 export function DebugListingsDisplay({
   formulasRead,
   buffsRead,
 }: {
-  formulasRead: GenericRead
-  buffsRead: GenericRead
+  formulasRead: Read
+  buffsRead: Read
 }) {
   const tag = useContext(TagContext)
   const calc = useContext(CalcContext)?.withTag(tag)

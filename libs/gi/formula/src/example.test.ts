@@ -1,12 +1,11 @@
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import {
-  combineConst,
   compile,
   compileTagMapValues,
   detach,
-  flatten,
   setDebugMode,
+  simplify,
 } from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
@@ -230,8 +229,7 @@ describe('example', () => {
     })
 
     // Step 3: Optimize nodes, as needed
-    detached = flatten(detached)
-    detached = combineConst(detached)
+    detached = simplify(detached)
 
     // Step 4: Compile for quick iteration
     const compiled = compile(

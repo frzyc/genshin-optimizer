@@ -18,6 +18,11 @@ export type CustomInfo = {
    * function or arrow expression with no external function call will suffice.
    */
   calc: (_: (number | string)[]) => number | string
+  /**
+   * The dual part of `calc(x + dx e)` where `e = sqrt(0), e !== 0`. This has the
+   * same declaration restriction as `calc`.
+   */
+  diff?: (x: number[], dx: number[]) => number
 }
 
 // This needs to be set only once at the beginning of the program.

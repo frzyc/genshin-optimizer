@@ -153,6 +153,7 @@ type CharacterRawData = {
   >
 }
 export type CharacterData = {
+  id: string
   icon: string
   rarity: CharacterRarityKey
   attribute: AttributeKey
@@ -188,6 +189,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
         readHakushinJSON(`character/${id}.json`)
       ) as CharacterRawData
       const data: CharacterData = {
+        id: id,
         icon: raw.Icon,
         rarity: characterRarityMap[raw.Rarity],
         attribute: attributeMap[Object.keys(raw.ElementType)[0] as any],

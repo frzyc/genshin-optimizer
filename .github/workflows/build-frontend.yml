@@ -60,9 +60,10 @@ jobs:
       - name: Setup .env
         run: |
           printf '%s' "$ENVFILE" > apps/frontend/.env.local
-          printf '%s' "$ENVFILE" > apps/zzz-frontend/.env.local
+          printf '%s' "$ZO_ENVFILE" > apps/zzz-frontend/.env.local
         env:
           ENVFILE: ${{ vars.ENVFILE }}
+          ZO_ENVFILE: ${{ vars.ZO_ENVFILE }}
       - name: Build frontend
         run: |
           echo "NX_URL_GITHUB_GO_CURRENT_VERSION=https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_ENV"
