@@ -79,7 +79,7 @@ function getEmbed(
       const menu = new StringSelectMenuOptionBuilder()
         .setLabel(label)
         .setValue(value)
-      if (value == arg) menu.setDefault(true)
+      if (value === arg) menu.setDefault(true)
       options.push(menu)
     }
     const label = level ? 'Constellation ' + level : 'All Constellations'
