@@ -1,16 +1,16 @@
-import type { Candidate } from '@genshin-optimizer/pando/engine'
-
-export const MAX_BUILDS = 50_000
-
-export interface BuildResult {
-  value: number
-  ids: string[]
+export type BuildResult<ID = string> = { value: number; ids: ID[] }
+export interface Work {
+  ids: string[][] // possible ids for each slot
+  count: number // # of possible builds
 }
 
-export interface ProgressResult {
-  numBuildsKept: number
-  numBuildsComputed: number
+export interface Counters {
+  computed: number // # of builds computed
+  failed: number // # of computed builds that fail some constraints
+  skipped: number // # of builds not computed
+  remaining: number // # of unchecked/unskipped builds
 }
 
-// Store metadata in 'id' key
-export type EquipmentStats = Candidate<string>
+export function buildCount<V>(candidates: V[][]): number {
+  return candidates.reduce((num, cnds) => num * cnds.length, 1)
+}

@@ -1,0 +1,182 @@
+import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
+import { compile, prune } from '@genshin-optimizer/pando/engine'
+import type { BuildResult, Counters, Work } from './common'
+import { buildCount } from './common'
+import { splitCandidates } from './split'
+
+const splitThreshold = 20_000 // split if there are more possible builds than this
+const cleanThreshold = 3000 // clean results if there are more results than this
+
+export interface InitConfig {
+  nodes: NumTagFree[]
+  candidates: Candidate<string>[][]
+  minimum: number[]
+  topN: number
+}
+
+type Subwork = {
+  nodes: NumTagFree[]
+  minimum: number[]
+  candidates: Candidate<string>[][]
+  count: number
+}
+
+export class Worker {
+  candidates: Map<string, Candidate<string>>[]
+  nodes: NumTagFree[]
+  minimum: number[]
+  topN: number
+
+  works: Work[] = []
+  subworks: Subwork[] = []
+  results: BuildResult[] = []
+
+  counters: Counters = {
+    computed: 0,
+    failed: 0,
+    skipped: 0,
+    remaining: 0,
+  }
+
+  constructor(cfg: InitConfig) {
+    this.candidates = cfg.candidates.map(
+      (cnds) => new Map(cnds.map((c) => [c.id, c]))
+    )
+    this.nodes = cfg.nodes
+    this.minimum = cfg.minimum
+    this.topN = cfg.topN
+  }
+
+  add(works: Work[]) {
+    this.counters.remaining += works.reduce((c, w) => c + w.count, 0)
+    this.works.push(...works)
+  }
+
+  steal(maxKeep: number): Work[] {
+    let quota = this.counters.remaining - maxKeep // steal a little more than this
+    if (quota <= 0) return []
+
+    let numSteal = this.works.findIndex((w) => (quota -= w.count) <= 0) + 1
+    if (numSteal) {
+      this.counters.remaining = maxKeep + quota
+      return this.works.splice(0, numSteal)
+    }
+
+    numSteal = this.subworks.findIndex((w) => (quota -= w.count) <= 0) + 1
+    const extra = this.subworks.splice(0, numSteal || this.subworks.length)
+    const stealing = [
+      ...this.works,
+      ...extra.map(({ candidates, count }) => ({
+        ids: candidates.map((cnds) => cnds.map((c) => c.id)),
+        count,
+      })),
+    ]
+    this.works = []
+    this.counters.remaining = maxKeep + quota
+    return stealing
+  }
+
+  hasWork(): boolean {
+    return !!(this.subworks.length || this.works.length)
+  }
+
+  process(): void {
+    const { works, subworks, counters } = this
+    if (!subworks.length) {
+      const { ids, count } = works.pop() ?? {}
+      if (count === undefined) return
+      const candidates = ids!.map((ids, i) =>
+        ids.map((id) => this.candidates[i].get(id)!)
+      )
+      subworks.push({
+        nodes: this.nodes,
+        minimum: this.minimum,
+        candidates,
+        count,
+      })
+    }
+
+    let subwork: Subwork | undefined
+    while (true) {
+      subwork = subworks.pop()!
+      if (!subwork) return
+      subwork.minimum[0] = this.minimum[0] // in case threshold was updated
+
+      const { nodes, candidates, minimum, cndRanges, monotonicities } = prune(
+        subwork.nodes,
+        subwork.candidates,
+        'q',
+        subwork.minimum,
+        this.topN
+      )
+
+      const count = buildCount(candidates)
+      counters.skipped += subwork.count - count
+      counters.remaining -= subwork.count - count
+      if (!count) continue
+      if (count <= splitThreshold) {
+        subwork = { nodes, minimum, candidates, count }
+        break
+      }
+      subworks.push(
+        ...splitCandidates(candidates, cndRanges, monotonicities).map(
+          (candidates) => {
+            const count = buildCount(candidates)
+            return { nodes, candidates, minimum, count }
+          }
+        )
+      )
+    }
+
+    const { nodes, minimum, candidates, count } = subwork
+    const f = compile(nodes, 'q', candidates.length, {})
+    for (const build of allBuilds(candidates)) {
+      const vals = f(build)
+      // exclude `i === 0` as it is the opt-target, not an actual constraint
+      if (minimum.some((m, i) => i && vals[i] < m)) {
+        counters.failed += 1
+        continue
+      }
+      if (vals[0] >= minimum[0])
+        this.results.push({ value: vals[0], ids: build.map((b) => b.id) })
+    }
+    counters.computed += count
+    counters.remaining -= count
+    // NOTE: if workers end up using too much memory, move this into the loop (after push)
+    if (this.results.length > cleanThreshold) this.clean()
+  }
+
+  setOptThreshold(threshold: number) {
+    this.minimum[0] = threshold
+    this.results = this.results.filter((b) => b.value >= threshold)
+  }
+
+  progress(): { builds: BuildResult[] } & Counters {
+    this.clean()
+    const counters = this.counters
+    const result = { builds: [...this.results], ...counters }
+    counters.computed = 0
+    counters.failed = 0
+    counters.skipped = 0
+    return result
+  }
+
+  clean() {
+    this.results.sort((a, b) => b.value - a.value).splice(this.topN)
+    if (this.results.length >= this.topN)
+      this.minimum[0] = this.results[this.topN - 1].value
+  }
+}
+
+// Recursively generate all builds from given candidates
+function* allBuilds<V>(
+  candidates: V[][],
+  out: V[] = Array(candidates.length),
+  idx: number = candidates.length - 1
+): Generator<V[]> {
+  if (idx === -1) return yield out
+  for (const c of candidates[idx]) {
+    out[idx] = c
+    yield* allBuilds(candidates, out, idx - 1)
+  }
+}

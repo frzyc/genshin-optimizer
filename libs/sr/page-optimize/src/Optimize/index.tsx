@@ -1,7 +1,6 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { ProgressResult } from '@genshin-optimizer/game-opt/solver'
-import { MAX_BUILDS } from '@genshin-optimizer/game-opt/solver'
+import type { Counters } from '@genshin-optimizer/game-opt/solver'
 import {
   allRelicSlotKeys,
   type RelicSlotKey,
@@ -15,7 +14,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
-import { Solver } from '@genshin-optimizer/sr/solver'
+import { optimize } from '@genshin-optimizer/sr/solver'
 import { getCharStat, getLightConeStat } from '@genshin-optimizer/sr/stats'
 import { useSrCalcContext, WorkerSelector } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -67,9 +66,7 @@ function OptimizeWrapper() {
   const { key: characterKey } = useCharacterContext()!
   const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
-  const [progress, setProgress] = useState<ProgressResult | undefined>(
-    undefined
-  )
+  const [progress, setProgress] = useState<Counters | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
   const relicsBySlot = useMemo(
     () =>
@@ -127,7 +124,7 @@ function OptimizeWrapper() {
         value,
         isMax,
       }))
-    const optimizer = new Solver(
+    const optimizer = optimize(
       characterKey,
       calc,
       [
@@ -136,6 +133,7 @@ function OptimizeWrapper() {
           multiplier: 1,
         },
       ],
+      10, // TODO: topN
       statFilters,
       lightCones,
       relicsBySlot,
@@ -143,10 +141,10 @@ function OptimizeWrapper() {
       setProgress
     )
 
-    cancelled.then(async () => await optimizer.terminate())
-    const results = await optimizer.optimize()
+    cancelled.then(() => optimizer.terminate())
+    const results = await optimizer.results()
     // Clean up workers
-    await optimizer.terminate()
+    optimizer.terminate()
     cancelToken.current = () => {}
 
     setOptimizing(false)
@@ -218,23 +216,26 @@ function ProgressIndicator({
   progress,
   totalPermutations,
 }: {
-  progress: ProgressResult
+  progress: Counters
   totalPermutations: number
 }) {
   const { t } = useTranslation('optimize')
   return (
     <Box>
       <Typography>
-        {t('totalProgress')}: {progress.numBuildsComputed.toLocaleString()} /{' '}
-        {totalPermutations.toLocaleString()}
+        {t('computed')}: {progress.computed.toLocaleString()} /{' '}
+        {(progress.computed + progress.remaining).toLocaleString()}
       </Typography>
       <Typography>
-        {t('buildsKept')}: {progress.numBuildsKept.toLocaleString()} /{' '}
-        {MAX_BUILDS.toLocaleString()}
+        {t('computed + skipped')}:{' '}
+        {(progress.computed + progress.skipped).toLocaleString()} /{' '}
+        {totalPermutations.toLocaleString()}
       </Typography>
       <LinearProgress
         variant="determinate"
-        value={(progress.numBuildsComputed / totalPermutations) * 100}
+        value={
+          ((progress.computed + progress.skipped) / totalPermutations) * 100
+        }
       />
     </Box>
   )

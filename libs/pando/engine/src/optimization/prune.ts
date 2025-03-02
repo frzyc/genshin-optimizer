@@ -23,6 +23,15 @@ type CndRanges = Record<string, Range>[]
 type NodeRanges = Map<AnyNode<OP>, Range>
 type Monotonicities = Map<string, Monotonicity>
 
+type PruneResult<I extends OP, ID> = {
+  nodes: NumNode<I>[]
+  minimum: number[]
+  candidates: Candidate<ID>[][]
+
+  cndRanges: Record<string, Range>[]
+  monotonicities: Map<string, Monotonicity>
+}
+
 /**
  * Reduce the complexity of the optimization problem
  *
@@ -50,7 +59,7 @@ export function prune<I extends OP, ID>(
   dynTagCat: string,
   minimum: number[],
   topN: number
-): { nodes: NumNode<I>[]; candidates: Candidate<ID>[][]; minimum: number[] } {
+): PruneResult<I, ID> {
   // This `candidate` casting is fine as the rest of the code treats `id`
   // as an opaque object. The only thing that matter is that `id` field
   // exists in both outer- and inner-facing interfaces.

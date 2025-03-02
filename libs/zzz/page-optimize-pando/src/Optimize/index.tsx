@@ -1,5 +1,6 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
+import type { Counters } from '@genshin-optimizer/game-opt/solver'
 import {
   allDiscSlotKeys,
   type DiscSlotKey,
@@ -16,9 +17,7 @@ import {
   StatFilterCard,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
-import type { ProgressResult } from '@genshin-optimizer/zzz/solver'
-import { MAX_BUILDS } from '@genshin-optimizer/zzz/solver'
-import { Solver } from '@genshin-optimizer/zzz/solver-pando'
+import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -70,9 +69,7 @@ function OptimizeWrapper() {
   const { key: characterKey } = useCharacterContext()!
   const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
-  const [progress, setProgress] = useState<ProgressResult | undefined>(
-    undefined
-  )
+  const [progress, setProgress] = useState<Counters | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
   const discsBySlot = useMemo(
     () =>
@@ -130,7 +127,7 @@ function OptimizeWrapper() {
         value,
         isMax,
       }))
-    const optimizer = new Solver(
+    const optimizer = optimize(
       characterKey,
       calc,
       [
@@ -146,8 +143,8 @@ function OptimizeWrapper() {
       setProgress
     )
 
-    cancelled.then(async () => await optimizer.terminate())
-    const results = await optimizer.optimize()
+    cancelled.then(() => optimizer.terminate())
+    const results = await optimizer.results()
     // Clean up workers
     await optimizer.terminate()
     cancelToken.current = () => {}
@@ -218,23 +215,26 @@ function ProgressIndicator({
   progress,
   totalPermutations,
 }: {
-  progress: ProgressResult
+  progress: Counters
   totalPermutations: number
 }) {
   const { t } = useTranslation('optimize')
   return (
     <Box>
       <Typography>
-        {t('totalProgress')}: {progress.numBuildsComputed.toLocaleString()} /{' '}
-        {totalPermutations.toLocaleString()}
+        {t('computed')}: {progress.computed.toLocaleString()} /{' '}
+        {(progress.computed + progress.remaining).toLocaleString()}
       </Typography>
       <Typography>
-        {t('buildsKept')}: {progress.numBuildsKept.toLocaleString()} /{' '}
-        {MAX_BUILDS.toLocaleString()}
+        {t('computed + skipped')}:{' '}
+        {(progress.computed + progress.skipped).toLocaleString()} /{' '}
+        {totalPermutations.toLocaleString()}
       </Typography>
       <LinearProgress
         variant="determinate"
-        value={(progress.numBuildsComputed / totalPermutations) * 100}
+        value={
+          ((progress.computed + progress.skipped) / totalPermutations) * 100
+        }
       />
     </Box>
   )
