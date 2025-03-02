@@ -48,7 +48,7 @@ export class Worker {
   }
 
   add(works: Work[]) {
-    works.forEach((w) => this.counters.remaining + w.count)
+    works.forEach((w) => (this.counters.remaining += w.count))
     this.works.push(...works)
   }
 
