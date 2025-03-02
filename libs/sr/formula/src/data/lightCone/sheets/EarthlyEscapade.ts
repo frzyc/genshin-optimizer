@@ -1,7 +1,7 @@
 import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
+import { allBoolConditionals, notOwnBuff, own, registerBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'EarthlyEscapade'
@@ -20,14 +20,14 @@ const sheet = registerLightCone(
   // Conditional buffs
   registerBuff(
     'crit_',
-    teamBuff.premod.crit_.add(
+    notOwnBuff.premod.crit_.add(
       cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_)))
     ),
     cmpGE(lcCount, 1, 'unique', '')
   ),
   registerBuff(
     'crit_dmg_',
-    teamBuff.premod.crit_dmg_.add(
+    notOwnBuff.premod.crit_dmg_.add(
       cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_dmg_)))
     ),
     cmpGE(lcCount, 1, 'unique', '')

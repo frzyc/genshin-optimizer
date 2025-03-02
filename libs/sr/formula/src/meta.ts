@@ -479,66 +479,16 @@ export const conditionals = {
     mask: { sheet: 'EarthlyEscapade', name: 'mask', type: 'bool' },
   },
   EchoesOfTheCoffin: {
-    boolConditional: {
-      sheet: 'EchoesOfTheCoffin',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'EchoesOfTheCoffin',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'EchoesOfTheCoffin',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'EchoesOfTheCoffin', name: 'ultUsed', type: 'bool' },
   },
   EternalCalculus: {
-    boolConditional: {
+    enemiesHit: {
       sheet: 'EternalCalculus',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'EternalCalculus',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'EternalCalculus',
-      name: 'numConditional',
+      name: 'enemiesHit',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
-  EyesOfThePrey: {
-    boolConditional: {
-      sheet: 'EyesOfThePrey',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'EyesOfThePrey',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'EyesOfThePrey',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      max: 5,
     },
   },
   Feixiao: {
@@ -563,24 +513,10 @@ export const conditionals = {
     },
   },
   Fermata: {
-    boolConditional: {
+    affectedWithShockOrWindShear: {
       sheet: 'Fermata',
-      name: 'boolConditional',
+      name: 'affectedWithShockOrWindShear',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Fermata',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Fermata',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   FinalVictor: {
@@ -9319,107 +9255,53 @@ export const buffs = {
     },
   },
   EchoesOfTheCoffin: {
-    cond_dmg_: {
+    spd: {
       sheet: 'EchoesOfTheCoffin',
-      name: 'cond_dmg_',
+      name: 'spd',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd',
         sheet: 'EchoesOfTheCoffin',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'EchoesOfTheCoffin',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'EchoesOfTheCoffin',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'EchoesOfTheCoffin',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'EchoesOfTheCoffin',
-        name: 'team_dmg_',
+        name: 'spd',
       },
     },
   },
   EternalCalculus: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'EternalCalculus',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'EternalCalculus',
-        name: 'cond_dmg_',
+        name: 'atk_',
       },
     },
-    enemy_defRed_: {
+    spd_: {
       sheet: 'EternalCalculus',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'EternalCalculus',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'EternalCalculus',
-      name: 'team_dmg_',
+      name: 'spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'EternalCalculus',
-        name: 'team_dmg_',
+        name: 'spd_',
       },
     },
   },
   EyesOfThePrey: {
-    cond_dmg_: {
+    dot_dmg_: {
       sheet: 'EyesOfThePrey',
-      name: 'cond_dmg_',
+      name: 'dot_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'EyesOfThePrey',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'EyesOfThePrey',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'EyesOfThePrey',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'EyesOfThePrey',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'EyesOfThePrey',
-        name: 'team_dmg_',
+        damageType1: 'dot',
+        name: 'dot_dmg_',
       },
     },
   },
@@ -9613,37 +9495,15 @@ export const buffs = {
     },
   },
   Fermata: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'Fermata',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Fermata',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Fermata',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Fermata',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Fermata',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Fermata',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },

@@ -459,7 +459,6 @@ describe('Light Cone sheets test', () => {
 
     const char = convert(ownTag, { et: 'own', src: charKey })
 
-    // printDebug(calc, char.final.atk_)
     expect(calc.compute(char.final.atk_).val).toBeCloseTo(testCase.atk_)
     expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(
       testCase.crit_dmg_
@@ -714,12 +713,44 @@ describe('Light Cone sheets test', () => {
 
   it('EarthlyEscapade', () => {
     const charKey: CharacterKey = 'RuanMei'
-    const data = testCharacterData(charKey, 'EarthlyEscapade')
+    const otherCharKey: CharacterKey = 'Seele'
+    const data = testTeamData(charKey, otherCharKey, 'EarthlyEscapade')
     data.push(
       cond(
         charKey,
         'EarthlyEscapade',
         conditionals.EarthlyEscapade.mask.name,
+        1
+      )
+    )
+    const calcRuanMei = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const calcSeele = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: otherCharKey, dst: otherCharKey })
+
+    // Base + LC passive (no LC active)
+    expect(calcRuanMei.compute(own.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.6)
+    // Base + LC active effect not applied
+    expect(calcRuanMei.compute(own.final.crit_).val).toBeCloseTo(0.05)
+    // Base + LC active
+    expect(calcSeele.compute(own.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.56)
+    expect(calcSeele.compute(own.final.crit_).val).toBeCloseTo(0.05 + 0.14)
+  })
+
+  it('EchoesOfTheCoffin', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'EchoesOfTheCoffin')
+    data.push(
+      cond(
+        charKey,
+        'EchoesOfTheCoffin',
+        conditionals.EchoesOfTheCoffin.ultUsed.name,
         1
       )
     )
@@ -730,8 +761,67 @@ describe('Light Cone sheets test', () => {
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.4)
     // Base + LC bonus
-    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.6 + 0.56)
-    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.14)
+    expect(calc.compute(char.final.spd).val).toBeCloseTo(98 + 20)
+  })
+
+  it('EternalCalculus', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'EternalCalculus')
+    data.push(
+      cond(
+        charKey,
+        'EternalCalculus',
+        conditionals.EternalCalculus.enemiesHit.name,
+        5
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // LC passive + bonus
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.12 + 5 * 0.08)
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.16)
+  })
+
+  it('EyesOfThePrey', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'EyesOfThePrey')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.eff_).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.dmg_.dot[0]).val).toBeCloseTo(0.48)
+  })
+
+  it('Fermata', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'Fermata')
+    data.push(
+      cond(
+        charKey,
+        'Fermata',
+        conditionals.Fermata.affectedWithShockOrWindShear.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.32)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.32)
   })
 })
