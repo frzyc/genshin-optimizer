@@ -97,7 +97,7 @@ export class Solver<ID extends string> {
     return await this.donePromise
   }
 
-  terminate(reason = new Error('terminated')) {
+  terminate(reason: Error | string = new Error('terminated')) {
     this.info.forEach((_, w) => w.terminate())
     this.throws(reason)
   }
@@ -172,7 +172,7 @@ export class Solver<ID extends string> {
         break
       }
       case 'err':
-        throw msg.error
+        this.terminate(msg.msg + ' (Worker Error)')
     }
   }
 }

@@ -19,14 +19,14 @@ export type AddWorkMsg = { ty: 'add'; works: Work[] }
 /** progress report */
 export type ProgressMsg = { ty: 'progress'; builds: BuildResult[] } & Counters
 /** error message */
-export type ErrMsg = { ty: 'err'; error: any }
+export type ErrMsg = { ty: 'err'; msg: string }
 
 onmessage = async ({ data }: MessageEvent<Command>) => {
   try {
     const res = await processMsg(data)
     if (res) postMessage(res)
   } catch (error) {
-    postMessage({ ty: 'err', error }, [error])
+    postMessage({ ty: 'err', msg: `${error}` })
   }
 }
 
