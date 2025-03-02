@@ -1065,6 +1065,112 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.6 + 0.96)
   })
 
+  it('IncessantRain', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'IncessantRain')
+    data.push(
+      cond(
+        charKey,
+        'IncessantRain',
+        conditionals.IncessantRain.enemyDebuffsGE3.name,
+        1
+      ),
+      cond(
+        charKey,
+        'IncessantRain',
+        conditionals.IncessantRain.aetherCode.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.eff_).val).toBeCloseTo(0.4)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.2)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.2)
+  })
+
+  it('IndeliblePromise', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'IndeliblePromise')
+    data.push(
+      cond(
+        charKey,
+        'IndeliblePromise',
+        conditionals.IndeliblePromise.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.56)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.3)
+  })
+
+  it('InherentlyUnjustDestiny', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'InherentlyUnjustDestiny')
+    data.push(
+      cond(
+        charKey,
+        'InherentlyUnjustDestiny',
+        conditionals.InherentlyUnjustDestiny.shieldProvided.name,
+        1
+      ),
+      cond(
+        charKey,
+        'InherentlyUnjustDestiny',
+        conditionals.InherentlyUnjustDestiny.followUpHit.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.def_).val).toBeCloseTo(0.64)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.64)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.16)
+  })
+
+  it('InTheNameOfTheWorld', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'InTheNameOfTheWorld')
+    data.push(
+      cond(
+        charKey,
+        'InTheNameOfTheWorld',
+        conditionals.InTheNameOfTheWorld.enemyDebuffed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.eff_.skill[0]).val).toBeCloseTo(0.3)
+    expect(calc.compute(char.final.atk_.skill[0]).val).toBeCloseTo(0.4)
+  })
+
   it('IShallBeMyOwnSword', () => {
     const charKey: CharacterKey = 'Firefly'
     const data = testCharacterData(charKey, 'IShallBeMyOwnSword')

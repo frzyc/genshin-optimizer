@@ -880,24 +880,10 @@ export const conditionals = {
     presage: { sheet: 'IfTimeWereAFlower', name: 'presage', type: 'bool' },
   },
   InTheNameOfTheWorld: {
-    boolConditional: {
+    enemyDebuffed: {
       sheet: 'InTheNameOfTheWorld',
-      name: 'boolConditional',
+      name: 'enemyDebuffed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'InTheNameOfTheWorld',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'InTheNameOfTheWorld',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   InTheNight: {
@@ -922,66 +908,26 @@ export const conditionals = {
     },
   },
   IncessantRain: {
-    boolConditional: {
+    aetherCode: { sheet: 'IncessantRain', name: 'aetherCode', type: 'bool' },
+    enemyDebuffsGE3: {
       sheet: 'IncessantRain',
-      name: 'boolConditional',
+      name: 'enemyDebuffsGE3',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IncessantRain',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IncessantRain',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   IndeliblePromise: {
-    boolConditional: {
-      sheet: 'IndeliblePromise',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IndeliblePromise',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IndeliblePromise',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'IndeliblePromise', name: 'ultUsed', type: 'bool' },
   },
   InherentlyUnjustDestiny: {
-    boolConditional: {
+    followUpHit: {
       sheet: 'InherentlyUnjustDestiny',
-      name: 'boolConditional',
+      name: 'followUpHit',
       type: 'bool',
     },
-    listConditional: {
+    shieldProvided: {
       sheet: 'InherentlyUnjustDestiny',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'InherentlyUnjustDestiny',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'shieldProvided',
+      type: 'bool',
     },
   },
   IntoTheUnreachableVeil: {
@@ -11861,37 +11807,39 @@ export const buffs = {
     },
   },
   InTheNameOfTheWorld: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'InTheNameOfTheWorld',
-      name: 'cond_dmg_',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'InTheNameOfTheWorld',
+        damageType1: 'skill',
+        name: 'atk_',
+      },
+    },
+    common_dmg_: {
+      sheet: 'InTheNameOfTheWorld',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'InTheNameOfTheWorld',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    eff_: {
       sheet: 'InTheNameOfTheWorld',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'InTheNameOfTheWorld',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'InTheNameOfTheWorld',
-      name: 'team_dmg_',
+      name: 'eff_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'eff_',
         sheet: 'InTheNameOfTheWorld',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'eff_',
       },
     },
   },
@@ -11931,72 +11879,39 @@ export const buffs = {
     },
   },
   IncessantRain: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'IncessantRain',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IncessantRain',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    crit_: {
       sheet: 'IncessantRain',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'IncessantRain',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IncessantRain',
-      name: 'team_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'IncessantRain',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },
   IndeliblePromise: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'IndeliblePromise',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'IndeliblePromise',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'IndeliblePromise',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'IndeliblePromise',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IndeliblePromise',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'IndeliblePromise',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },
@@ -12027,37 +11942,26 @@ export const buffs = {
     },
   },
   InherentlyUnjustDestiny: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'InherentlyUnjustDestiny',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'InherentlyUnjustDestiny',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    crit_dmg_: {
       sheet: 'InherentlyUnjustDestiny',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'InherentlyUnjustDestiny',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'InherentlyUnjustDestiny',
-      name: 'team_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'InherentlyUnjustDestiny',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },
