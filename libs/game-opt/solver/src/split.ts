@@ -31,7 +31,11 @@ export function splitCandidates<ID>(
         // Split by the first axis by values of incomp `s`
         return [...groups.values()]
           .sort((a, b) => b.length - a.length) // smaller groups at the back
-          .map((cnds) => [...candidates].splice(i, 1, cnds))
+          .map((cnds) => {
+            const result = [...candidates]
+            result[i] = cnds
+            return result
+          })
       }
     }
   }
@@ -58,9 +62,9 @@ export function splitCandidates<ID>(
   const chunks: Candidate<ID>[][][] = []
   for (let i = 0; i < vals.length; i += chunkLen) {
     const chunk = vals.slice(i, i + chunkLen).map(([c]) => c)
-    const newCanidates = [...candidates]
-    newCanidates[slot] = chunk
-    chunks.push(newCanidates)
+    const result = [...candidates]
+    result[slot] = chunk
+    chunks.push(result)
   }
   return chunks
 }
