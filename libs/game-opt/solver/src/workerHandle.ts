@@ -56,7 +56,8 @@ function processAllWorks(): Promise<undefined> | undefined {
     while (worker.hasWork()) {
       // Make sure there is no await suspension until the first call
       // of this. Otherwise, the submitted work may get stolen before
-      // the worker gets a chance to split it.
+      // the worker gets a chance to split it, potentially stalling
+      // the system.
       worker.process()
 
       // Suspend here in case a new config/work stealing is sent over
@@ -67,7 +68,7 @@ function processAllWorks(): Promise<undefined> | undefined {
       // not be long enough.
       await new Promise((r) => setTimeout(r))
 
-      // pace the reporting to `reportInterval`
+      // Pace the reporting to `reportInterval`
       const currentTime = Date.now()
       if (currentTime >= nextReport) {
         nextReport = currentTime + reportInterval

@@ -9,6 +9,12 @@ export function splitCandidates<ID>(
   cndRanges: Record<string, Range>[],
   monotonicities: Map<string, Monotonicity>
 ): Candidate<ID>[][][] {
+  const withSlot = (slot: number, cnds: Candidate<ID>[]) => {
+    const result = [...candidates]
+    result[slot] = cnds
+    return result
+  }
+
   const incomp: string[] = []
   const inc: string[] = []
   const dec: string[] = []
@@ -18,25 +24,21 @@ export function splitCandidates<ID>(
     else incomp.push(k)
 
   if (incomp.length) {
-    for (let i = 0, len = cndRanges.length; i < len; i++) {
-      const ranges = cndRanges[i]
+    for (let slot = 0, len = cndRanges.length; slot < len; slot++) {
+      const ranges = cndRanges[slot]
       const s = incomp.find((s) => ranges[s].min !== ranges[s].max)
       if (s === undefined) continue
 
       const groups = new Map<any, Candidate<ID>[]>()
-      for (const c of candidates[i]) {
+      for (const c of candidates[slot]) {
         const old = groups.get(c[s])
         if (old) old.push(c)
         else groups.set(c[s], [c])
       }
-      // Split by the first axis by values of incomp `s`
+      // Split by the first axis by (incomp) `s`
       return [...groups.values()]
         .sort((a, b) => b.length - a.length) // smaller groups at the back
-        .map((cnds) => {
-          const result = [...candidates]
-          result[i] = cnds
-          return result
-        })
+        .map((cnds) => withSlot(slot, cnds))
     }
   }
 
@@ -46,25 +48,23 @@ export function splitCandidates<ID>(
     ...dec.map((i) => [i, -Math.random()] as const),
   ])
   const slot = candidates.reduce(
-    (best, cnds, i, arr) => (arr[best].length < cnds.length ? i : best),
+    (i, { length: lj }, j, arr) => (arr[i].length > lj ? i : j),
     0
   )
   const vals = candidates[slot].map((c) => {
     const val = Object.entries(c).reduce(
-      (s, [k, v]) => (typeof v === 'number' ? s + v * weights.get(k)! : s),
+      (s, [k, v]) => (weights.has(k) ? s + (v as number) * weights.get(k)! : s),
       0
     )
     return [c, val] as const
   })
   vals.sort((a, b) => a[1] - b[1]) // larger vals at the back
-  // Split the slot (roughly) into four equal slots
+  // Split into four (roughly) equal slots
   const chunkLen = Math.ceil(vals.length / 4)
   const chunks: Candidate<ID>[][][] = []
-  for (let i = 0; i < vals.length; i += chunkLen) {
-    const chunk = vals.slice(i, i + chunkLen).map(([c]) => c)
-    const result = [...candidates]
-    result[slot] = chunk
-    chunks.push(result)
+  for (let i = 0, len = vals.length; i < len; i += chunkLen) {
+    const cnds = vals.slice(i, i + chunkLen).map(([c]) => c)
+    chunks.push(withSlot(slot, cnds))
   }
   return chunks
 }

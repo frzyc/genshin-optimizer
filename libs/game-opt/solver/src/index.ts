@@ -10,7 +10,6 @@ import type { Command, ErrMsg, Response } from './workerHandle'
 export type { Candidate } from '@genshin-optimizer/pando/engine'
 export type * from './common'
 
-// TODO: tune this
 const lowWaterMark = 20000 // replenish if a worker has fewer than this
 const highWaterMark = 40000 // replenish until this many builds for each worker below `lowWaterMark`
 
@@ -34,7 +33,7 @@ export class Solver<ID extends string> {
   topN: number
   optThreshold = -Infinity
 
-  info = new Map<Worker, WorkerInfo<ID>>()
+  info: Map<Worker, WorkerInfo<ID>>
   state: IdleWorkers | ExcessWorks
 
   counters: Counters = {
@@ -51,15 +50,10 @@ export class Solver<ID extends string> {
 
   constructor(cfg: SolverConfig) {
     const counters = this.counters
-    const workerUrl = new URL('./workerHandle.ts', import.meta.url)
-    const workers = [...Array(cfg.numWorkers)].map(
-      (_) => new Worker(workerUrl, { type: 'module' })
-    )
     const pruned = prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, cfg.topN)
     const { nodes, candidates, minimum } = pruned
     counters.remaining = buildCount(candidates)
     counters.skipped = buildCount(cfg.candidates) - counters.remaining
-    this.state = { ty: 'idle', workers: new Set(workers) }
     this.topN = cfg.topN
     this.setProgress = cfg.setProgress
     this.donePromise = new Promise((res, rej) => {
@@ -67,11 +61,16 @@ export class Solver<ID extends string> {
       this.throws = rej
     })
 
+    const workerUrl = new URL('./workerHandle.ts', import.meta.url)
+    const workers = [...Array(cfg.numWorkers)].map(
+      () => new Worker(workerUrl, { type: 'module' })
+    )
+    this.info = new Map(workers.map((w) => [w, { builds: [], remaining: 0 }]))
+    this.state = { ty: 'idle', workers: new Set(workers) }
     for (const worker of workers) {
-      this.info.set(worker, { builds: [], remaining: 0 })
-      worker.onmessage = (msg) => {
+      worker.onmessage = ({ data }) => {
         try {
-          this.onChildMsg(msg.data, worker)
+          this.onChildMsg(data, worker)
         } catch (e) {
           this.throws(e)
         }
@@ -94,7 +93,7 @@ export class Solver<ID extends string> {
   }
 
   async results(): Promise<BuildResult[]> {
-    return await this.donePromise
+    return this.donePromise
   }
 
   terminate(reason = new Error('terminated')) {
@@ -110,7 +109,7 @@ export class Solver<ID extends string> {
     }
 
     for (const worker of state.workers)
-      if (this.reconcile(worker, works)) state.workers.delete(worker)
+      if (this.give(works, worker)) state.workers.delete(worker)
       else return
     this.state = { ty: 'work', works }
   }
@@ -118,23 +117,26 @@ export class Solver<ID extends string> {
   idle(worker: Worker) {
     const { state } = this
     if (state.ty === 'idle') state.workers.add(worker)
-    else if (!this.reconcile(worker, state.works))
+    else if (!this.give(state.works, worker))
       this.state = { ty: 'idle', workers: new Set([worker]) }
   }
 
-  // returns whether worker is now above low water mark. If `false`, `works` will be empty
-  reconcile(worker: Worker, works: Work[]) {
+  /**
+   * Give `works` to `worker`, returning whether the worker is now above water mark.
+   * If returned `false`, `works` will be empty.
+   */
+  give(works: Work[], worker: Worker) {
     if (!works.length) return false
     const info = this.info.get(worker)!
     let quota = highWaterMark - info.remaining
-    const numDist = works.findIndex((w) => (quota -= w.count) < 0) + 1
-    const toDist = works.splice(0, numDist || works.length)
+    const numGive = works.findIndex((w) => (quota -= w.count) < 0) + 1
+    const giving = works.splice(0, numGive || works.length)
 
     info.remaining = highWaterMark - quota
-    postMsg(worker, { ty: 'add', works: toDist })
+    postMsg(worker, { ty: 'add', works: giving })
     const avg = this.counters.remaining / this.info.size
     if (info.remaining > avg && avg > highWaterMark)
-      postMsg(worker, { ty: 'work?', maxKeep: avg }) // too many, taking it back
+      postMsg(worker, { ty: 'work?', maxKeep: avg }) // too many, taking some back
     return info.remaining >= lowWaterMark
   }
 
@@ -162,7 +164,8 @@ export class Solver<ID extends string> {
         }
 
         this.setProgress(this.counters)
-        if (!this.counters.remaining) this.finalize(bestBuilds)
+        if (!this.counters.remaining)
+          this.finalize(bestBuilds.splice(this.topN))
         break
       }
       case 'add': {

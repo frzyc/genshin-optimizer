@@ -27,7 +27,6 @@ export class Worker {
   candidates: Map<string, Candidate<string>>[]
   topN: number
 
-  works: Work[] = []
   subworks: Subwork[] = []
   results: BuildResult[] = []
 
@@ -48,37 +47,36 @@ export class Worker {
   }
 
   add(works: Work[]) {
-    works.forEach((w) => (this.counters.remaining += w.count))
-    this.works.push(...works)
+    for (const { ids, count } of works) {
+      const candidates = ids.map((ids, i) =>
+        ids.map((id) => this.candidates[i].get(id)!)
+      )
+      this.counters.remaining += count
+      this.subworks.push({
+        nodes: this.nodes,
+        minimum: this.minimum,
+        candidates,
+        count,
+      })
+    }
   }
 
   steal(maxKeep: number): Work[] {
-    const { works, subworks, counters } = this
+    const { subworks, counters } = this
     let quota = counters.remaining - maxKeep // steal a little more than this
     if (quota <= 0) return []
 
-    let numSteal = works.findIndex((w) => (quota -= w.count) <= 0) + 1
-    if (numSteal) {
-      counters.remaining = maxKeep + quota
-      return works.splice(0, numSteal)
-    }
-
-    numSteal = subworks.findIndex((w) => (quota -= w.count) <= 0) + 1
-    const extra = subworks.splice(0, numSteal || subworks.length)
-    const stealing = [
-      ...works,
-      ...extra.map(({ candidates, count }) => ({
-        ids: candidates.map((cnds) => cnds.map((c) => c.id)),
-        count,
-      })),
-    ]
-    this.works = []
+    const numSteal = subworks.findIndex((w) => (quota -= w.count) <= 0) + 1
+    const stealing = subworks.splice(0, numSteal || subworks.length)
     counters.remaining = maxKeep + quota
-    return stealing
+    return stealing.map(({ candidates, count }) => ({
+      ids: candidates.map((cnds) => cnds.map((c) => c.id)),
+      count,
+    }))
   }
 
   hasWork(): boolean {
-    return !!(this.subworks.length || this.works.length)
+    return !!this.subworks.length
   }
 
   process(): void {
@@ -126,24 +124,10 @@ export class Worker {
   }
 
   getSubwork(): Subwork | undefined {
-    const { works, subworks, counters } = this
-    if (!subworks.length) {
-      const { ids, count } = works.pop() ?? {}
-      if (count === undefined) return
-      const candidates = ids!.map((ids, i) =>
-        ids.map((id) => this.candidates[i].get(id)!)
-      )
-      subworks.push({
-        nodes: this.nodes,
-        minimum: this.minimum,
-        candidates,
-        count,
-      })
-    }
-
+    const { subworks, counters } = this
     while (subworks.length) {
       const subwork = subworks.pop()!
-      subwork.minimum[0] = this.minimum[0] // in case threshold was updated
+      subwork.minimum[0] = this.minimum[0] // in case opt threshold was updated
       const { nodes, candidates, minimum, cndRanges, monotonicities } = prune(
         subwork.nodes,
         subwork.candidates,
