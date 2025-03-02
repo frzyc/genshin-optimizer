@@ -82,10 +82,10 @@ export class Worker {
   }
 
   process(): void {
-    const { counters } = this
     const subwork = this.getSubwork()
     if (!subwork) return
 
+    const { counters } = this
     const { nodes, minimum, candidates, count } = subwork
     const f = compile(nodes, 'q', candidates.length, {})
     for (const build of allBuilds(candidates)) {
@@ -141,8 +141,8 @@ export class Worker {
       })
     }
 
-    let subwork: Subwork | undefined
-    while ((subwork = subworks.pop()!)) {
+    while (subworks.length) {
+      const subwork = subworks.pop()!
       subwork.minimum[0] = this.minimum[0] // in case threshold was updated
       const { nodes, candidates, minimum, cndRanges, monotonicities } = prune(
         subwork.nodes,
