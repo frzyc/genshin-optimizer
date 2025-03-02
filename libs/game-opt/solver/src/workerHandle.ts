@@ -50,7 +50,7 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
 
 let runner: Promise<undefined> | undefined
 function processAllWorks(): Promise<undefined> | undefined {
-  if (runner) return undefined // only one runner needed at a time
+  if (runner) return worker.process(), undefined // only one runner needed at a time
   return (runner = (async () => {
     let nextReport = Date.now()
     while (worker.hasWork()) {
