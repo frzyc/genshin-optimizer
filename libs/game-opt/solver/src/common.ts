@@ -6,9 +6,9 @@ export interface Work {
 
 export interface Counters {
   computed: number // # of builds computed
-  failed: number // # of computed builds that fail some constraints
-  skipped: number // # of builds not computed
-  remaining: number // # of unchecked/unskipped builds
+  failed: number // # of (computed) builds that fail some constraints
+  skipped: number // # of builds not computed e.g. via pruning
+  remaining: number // # of uncomputed and unskipped builds
 }
 
 export function buildCount<V>(candidates: V[][]): number {
