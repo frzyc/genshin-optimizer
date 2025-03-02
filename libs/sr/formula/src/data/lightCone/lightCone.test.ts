@@ -1004,4 +1004,88 @@ describe('Light Cone sheets test', () => {
     // Base + LC cond
     expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.48)
   })
+
+  it('GoodNightAndSleepWell', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'GoodNightAndSleepWell')
+    data.push(
+      cond(
+        charKey,
+        'GoodNightAndSleepWell',
+        conditionals.GoodNightAndSleepWell.debuffCount.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(3 * 0.24)
+  })
+
+  it('HeyOverHere', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'HeyOverHere')
+    data.push(
+      cond(charKey, 'HeyOverHere', conditionals.HeyOverHere.skillUsed.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.hp_).val).toBeCloseTo(0.12)
+    expect(calc.compute(char.final.heal_).val).toBeCloseTo(0.28)
+  })
+
+  it('IfTimeWereAFlower', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'IfTimeWereAFlower')
+    data.push(
+      cond(
+        charKey,
+        'IfTimeWereAFlower',
+        conditionals.IfTimeWereAFlower.presage.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC bonus
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.6 + 0.96)
+  })
+
+  it('IShallBeMyOwnSword', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'IShallBeMyOwnSword')
+    data.push(
+      cond(
+        charKey,
+        'IShallBeMyOwnSword',
+        conditionals.IShallBeMyOwnSword.eclipse.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.32)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(3 * 0.24)
+    expect(calc.compute(char.final.defIgn_).val).toBeCloseTo(0.2)
+  })
 })

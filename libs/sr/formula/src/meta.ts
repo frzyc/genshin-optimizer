@@ -696,24 +696,13 @@ export const conditionals = {
     },
   },
   GoodNightAndSleepWell: {
-    boolConditional: {
+    debuffCount: {
       sheet: 'GoodNightAndSleepWell',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GoodNightAndSleepWell',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GoodNightAndSleepWell',
-      name: 'numConditional',
+      name: 'debuffCount',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   Guinaifen: {
@@ -779,25 +768,7 @@ export const conditionals = {
     },
   },
   HeyOverHere: {
-    boolConditional: {
-      sheet: 'HeyOverHere',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HeyOverHere',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HeyOverHere',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    skillUsed: { sheet: 'HeyOverHere', name: 'skillUsed', type: 'bool' },
   },
   HiddenShadow: {
     boolConditional: {
@@ -875,24 +846,13 @@ export const conditionals = {
     },
   },
   IShallBeMyOwnSword: {
-    boolConditional: {
+    eclipse: {
       sheet: 'IShallBeMyOwnSword',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IShallBeMyOwnSword',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IShallBeMyOwnSword',
-      name: 'numConditional',
+      name: 'eclipse',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   IVentureForthToHunt: {
@@ -917,25 +877,7 @@ export const conditionals = {
     },
   },
   IfTimeWereAFlower: {
-    boolConditional: {
-      sheet: 'IfTimeWereAFlower',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IfTimeWereAFlower',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IfTimeWereAFlower',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    presage: { sheet: 'IfTimeWereAFlower', name: 'presage', type: 'bool' },
   },
   InTheNameOfTheWorld: {
     boolConditional: {
@@ -10610,37 +10552,15 @@ export const buffs = {
     },
   },
   GoodNightAndSleepWell: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'GoodNightAndSleepWell',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GoodNightAndSleepWell',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'GoodNightAndSleepWell',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'GoodNightAndSleepWell',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GoodNightAndSleepWell',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GoodNightAndSleepWell',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -11236,37 +11156,15 @@ export const buffs = {
     },
   },
   HeyOverHere: {
-    cond_dmg_: {
+    heal_: {
       sheet: 'HeyOverHere',
-      name: 'cond_dmg_',
+      name: 'heal_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'heal_',
         sheet: 'HeyOverHere',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'HeyOverHere',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'HeyOverHere',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HeyOverHere',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'HeyOverHere',
-        name: 'team_dmg_',
+        name: 'heal_',
       },
     },
   },
@@ -11891,37 +11789,26 @@ export const buffs = {
     },
   },
   IShallBeMyOwnSword: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'IShallBeMyOwnSword',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IShallBeMyOwnSword',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    defIgn_: {
       sheet: 'IShallBeMyOwnSword',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'IShallBeMyOwnSword',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IShallBeMyOwnSword',
-      name: 'team_dmg_',
+      name: 'defIgn_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'IShallBeMyOwnSword',
-        name: 'team_dmg_',
+        name: 'defIgn_',
       },
     },
   },
@@ -11961,37 +11848,15 @@ export const buffs = {
     },
   },
   IfTimeWereAFlower: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'IfTimeWereAFlower',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'IfTimeWereAFlower',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'IfTimeWereAFlower',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'IfTimeWereAFlower',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IfTimeWereAFlower',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'IfTimeWereAFlower',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },
