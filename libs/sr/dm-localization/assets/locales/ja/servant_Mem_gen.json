@@ -1,0 +1,39 @@
+{
+  "name": "ミュリオン",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "{RUBY_B#やっかい}厄介{RUBY_E#}な{RUBY_B#わるもの}悪者{RUBY_E#}さん！",
+        "fullDesc": "{{2}}回ダメージを与える。毎回ランダムな敵単体に「ミュリオン」の攻撃力<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>分の氷属性ダメージを与え、最後に敵全体にミュリオンの攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える、<orangeStrong>{{2}}</orangeStrong>回バウンドする。最後に敵全体に少量の氷属性ダメージを与える。",
+        "tag": "全体攻撃"
+      },
+      "1": {
+        "name": "あたしが{RUBY_B#たす}助{RUBY_E#}ける！",
+        "fullDesc": "指定した味方単体の行動順を{{3, percent}}%早め、「ミュリオンの応援」を付与する、{{2}}ターン継続。<br>「ミュリオンの応援」を持つ味方はダメージを1回与えるたびに、追加で本来のダメージ<orangeStrong>{{1, percent}}%</orangeStrong>分の確定ダメージを1回与える。<br>スキルターゲットがミュリオン自身の場合、行動順を早める効果は発動しない。",
+        "shortDesc": "味方単体の<orangeStrong>行動順を早め</orangeStrong>、「ミュリオンの応援」を付与する。<br>「ミュリオンの応援」を持つ味方は、ダメージを与えた後に追加で<orangeStrong>確定ダメージ</orangeStrong>を与える。",
+        "tag": "サポート"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#なかま}仲間{RUBY_E#}と{RUBY_B#いっしょ}一緒{RUBY_E#}に！",
+        "fullDesc": "味方全体の会心ダメージを、「ミュリオン」の会心ダメージ<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>分+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>アップする。<br>チャージが100%未満の場合、ミュリオンは行動する時に自動で「厄介な悪者さん！」を発動する。チャージが100%に達した時、ミュリオンは即座に行動し、指定した味方単体に「あたしが助ける！」を発動できるようになる。",
+        "shortDesc": "味方全体の会心ダメージをアップする。<br>行動時に自動で攻撃を行う。チャージが100%に達すると即座に行動し、別のスキルを発動できる。別スキルの効果：味方単体の<orangeStrong>行動順を早め</orangeStrong>、<orangeStrong>確定ダメージ</orangeStrong>を与えられるようにする。",
+        "tag": "サポート"
+      },
+      "1": {
+        "name": "がんばれミュリオン！",
+        "fullDesc": "「ミュリオン」が召喚された時、即座にチャージを{{1, percent}}%獲得する。",
+        "shortDesc": "ミュリオンが召喚された時、即座にチャージを獲得する。",
+        "tag": "強化"
+      },
+      "2": {
+        "name": "{RUBY_B#く}悔{RUBY_E#}いは…{RUBY_B#のこ}残{RUBY_E#}さないの",
+        "fullDesc": "「ミュリオン」が退場する時、開拓者の行動順を{{1, percent}}%早める。",
+        "shortDesc": "退場する時、開拓者の行動順を早める。",
+        "tag": "強化"
+      }
+    }
+  }
+}

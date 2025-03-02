@@ -15,12 +15,14 @@ export const otherStatKeys = [
   'enemyRes_', // Enemy Resistance
   'enemyResRed_', // Enemy Resistance Reduction
   'enemyResIgn_', // Enemy Resistance Ignore
+  'common_dmg_', // Common DMG bonus
   'dmg_', // Bonus DMG
 
   // Other stats
   'impact', // flat impact on character
   'anomMas', // flat Anomally Mastery on character
   'shield_', // Shield Effect
+  'enerRegen',
 ] as const
 
 export const unCondKeys = [
@@ -95,6 +97,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_: 'CRIT Rate',
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
+  enerRegen: 'Energy Regen',
   impact_: 'Impact',
   impact: 'Impact',
   daze_: 'Daze',
@@ -104,6 +107,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomProf: 'Anomaly Proficiency',
   anomBuild_: 'Anomaly Buildup',
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => `${dmg_} DMG Bonus`),
+  common_dmg_: 'DMG Bonus',
   dmg_: 'DMG Bonus',
   charLvl: 'Character Level',
   enemyDef: 'Enemy DEF',
@@ -129,7 +133,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   cond_anomMas: 'Combat Anomaly Mastery',
 }
 
-const elementalData: Record<AttributeKey, string> = {
+export const elementalData: Record<AttributeKey, string> = {
   electric: 'Electric',
   fire: 'Fire',
   ice: 'Ice',

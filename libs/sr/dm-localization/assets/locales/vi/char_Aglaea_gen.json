@@ -1,0 +1,107 @@
+{
+  "name": "Aglaea",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Mật Hoa Có Gai",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Aglaea.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
+      },
+      "1": {
+        "name": "Ngàn Nụ Hôn Trên Lưỡi Kiếm",
+        "fullDesc": "Aglaea và Thợ May thi triển Tấn Công Phối Hợp lên mục tiêu, lần lượt gây cho mục tiêu Sát Thương Lôi bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Aglaea và <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Thợ May. Đồng thời gây cho mục tiêu lân cận Sát Thương Lôi bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Aglaea và <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Thợ May.<br>Ngàn Nụ Hôn Trên Lưỡi Kiếm không thể hồi Điểm Chiến Kỹ.",
+        "shortDesc": "Aglaea và Thợ May thi triển <orangeStrong>Tấn Công Phối Hợp</orangeStrong> lên mục tiêu, gây ra Sát Thương Lôi cho 1 kẻ địch, gây ra lượng nhỏ Sát Thương Lôi cho mục tiêu lân cận.",
+        "tag": "Khuếch Tán"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Lên Nào, Danh Tiếng Thăng Hoa",
+        "fullDesc": "Giúp Thợ May Hồi HP bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của mình. Nếu Thợ May không ở trong trận, thì sẽ triệu hồi Linh Hồn Ký Ức Thợ May, và khiến bản thân lập tức hành động.",
+        "shortDesc": "Hồi HP cho Thợ May. Khi Thợ May không ở trong trận, sẽ <orangeStrong>Triệu Hồi Linh Hồn Ký Ức</orangeStrong> Thợ May và khiến bản thân lập tức hành động.",
+        "tag": "Triệu Hồi"
+      },
+      "1": {
+        "name": "Lên Nào, Danh Tiếng Thăng Hoa",
+        "shortDesc": "Hồi HP cho Thợ May. Khi Thợ May không ở trong trận, sẽ triệu hồi Linh Hồn Ký Ức Thợ May và khiến bản thân lập tức hành động.",
+        "tag": "Hồi Phục"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Cùng Nhảy Múa Nào, Thợ May Định Mệnh",
+        "fullDesc": "Triệu hồi Linh Hồn Ký Ức Thợ May, nếu Thợ May đã ở trong trận, thì sẽ hồi HP của đối tượng này đến mức tối đa. Aglaea vào trạng thái Tư Thế Tối Cao và khiến bản thân lập tức hành động.<br>Ở trạng thái Tư Thế Tối Cao, Aglaea sẽ nhận được số tầng tăng Tốc Độ của Thiên Phú Linh Hồn Ký Ức Thợ May, mỗi tầng khiến Tốc Độ của bản thân tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, Cường Hóa Tấn Công Thường thành Ngàn Nụ Hôn Trên Lưỡi Kiếm và không thể thi triển Chiến Kỹ, Thợ May miễn dịch Hiệu Ứng Xấu loại khống chế.<br>Thời gian đếm ngược xuất hiện trên thứ tự hành động, cố định là {{4}} Tốc Độ, trong thời gian vẫn còn đếm ngược nếu thi triển Tuyệt Kỹ lần nữa sẽ tái lập đếm ngược, Thợ May sẽ tự hủy khi bắt đầu hiệp. Khi Thợ May biến mất, Aglaea sẽ giải trừ trạng thái Tư Thế Tối Cao.",
+        "shortDesc": "<orangeStrong>Triệu hồi Linh Hồn Ký Ức</orangeStrong> Thợ May, khiến Aglaea vào trạng thái Tư Thế Tối Cao và khiến bản thân lập tức hành động, nhận Tấn Công Thường Cường Hóa.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ngón Tay Hoa Hồng Vàng",
+        "fullDesc": "Linh Hồn Ký Ức Thợ May ban đầu có Tốc Độ bằng {{4, percent}}% Tốc Độ của Aglaea và Giới Hạn HP bằng <orangeStrong>{{5, percent}}%</orangeStrong> Giới Hạn HP của Aglaea +<orangeStrong>{{6}}</orangeStrong>. Khi Thợ May trong trận, Aglaea tấn công sẽ khiến mục tiêu rơi vào trạng thái Đường Khâu, sau khi tấn công kẻ địch ở trạng thái Đường Khâu sẽ gây thêm Sát Thương Kèm Theo thuộc tính Lôi bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Aglaea. Đường Khâu chỉ có hiệu lực với mục tiêu được thi triển mới nhất.",
+        "shortDesc": "Lúc Thợ May ở trong trận, khi Aglaea thi triển tấn công, sẽ khiến mục tiêu rơi vào trạng thái \"Đường Khâu\". Sau khi tấn công kẻ địch trong trạng thái \"Đường Khâu\" sẽ gây lượng nhỏ Sát Thương Kèm Theo thuộc tính Lôi.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ngôi Sao Vụn Vỡ",
+        "fullDesc": "Triệu hồi Linh Hồn Ký Ức Thợ May và cùng tấn công về phía trước. Sau khi vào chiến đấu, hồi {{2}} điểm Năng Lượng, đồng thời gây Sát Thương Lôi bằng {{1, percent}}% Tấn Công của Aglaea cho toàn bộ mục tiêu phe địch, sau đó khiến mục tiêu ngẫu nhiên của phe địch rơi vào trạng thái \"Đường Khâu\".",
+        "shortDesc": "<orangeStrong>Triệu hồi Linh Hồn Ký Ức</orangeStrong> Thợ May và cùng tấn công về phía trước. Sau khi vào chiến đấu sẽ hồi Năng Lượng và gây lượng nhỏ Sát Thương Lôi cho toàn thể phe địch, sau đó khiến mục tiêu ngẫu nhiên của phe địch rơi vào trạng thái \"Đường Khâu\".",
+        "tag": ""
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Trừng Phạt Tầm Nhìn Hạn Hẹp",
+        "fullDesc": "Khi ở trạng thái Tư Thế Tối Cao, Tấn Công của Aglaea và Thợ May tăng. Mức tăng bằng {{1, percent}}% Tốc Độ của Aglaea + {{2, percent}}% Tốc Độ của Thợ May."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Kết Thúc Dệt Vận Mệnh",
+        "fullDesc": "Khi Thợ May biến mất, số tầng tăng Tốc Độ của Thiên Phú Linh Hồn Ký Ức tối đa bảo lưu {{1}} tầng. Khi Thợ May bị triệu hồi lần nữa, sẽ nhận được hiệu ứng tăng Tốc Độ số tầng tương ứng."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Mặt Trời Lao Vun Vút",
+        "fullDesc": "Khi bắt đầu chiến đấu, nếu Năng Lượng của bản thân không đủ {{1, percent}}%, sẽ hồi Năng Lượng của bản thân đến {{2, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Trôi Dạt Theo Sao Kim",
+      "desc": "Sát thương mà kẻ địch ở trạng thái Đường Khâu phải chịu tăng {{1, percent}}%, Aglaea hoặc Thợ May sau khi tấn công mục tiêu này, sẽ hồi thêm {{2}} điểm Năng Lượng."
+    },
+    "2": {
+      "name": "Du Hành Trên Mi Mắt Vận Mệnh",
+      "desc": "Khi Aglaea hoặc Thợ May hành động, Sát Thương gây ra của Aglaea và Thợ May sẽ bỏ qua {{1, percent}}% Phòng Thủ của mục tiêu, hiệu ứng này tối đa cộng dồn {{2}} tầng, duy trì đến khi đơn vị bất kỳ ngoại trừ bản thân và Thợ May chủ động thi triển kỹ năng."
+    },
+    "3": {
+      "name": "Món Quà Sương Đọng",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10; Cấp Thiên Phú Linh Hồn Ký Ức +1, tối đa không vượt quá cấp 10."
+    },
+    "4": {
+      "name": "Sự Lấp Lánh Trong Đá Cẩm Thạch",
+      "desc": "Giới hạn số tầng hiệu ứng tăng Tốc Độ của Thiên Phú Linh Hồn Ký Ức tăng {{1}} tầng. Sau khi Aglaea thi triển tấn công cũng có thể khiến Thợ May nhận được hiệu ứng tăng Tốc Độ của Thiên Phú Linh Hồn Ký Ức."
+    },
+    "5": {
+      "name": "Thợ Dệt Khổ Nạn Tăm Tối",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15; Cấp kỹ năng của Linh Hồn Ký Ức +1, tối đa không vượt quá cấp 10."
+    },
+    "6": {
+      "name": "Tơ Vàng Đầy Khuyết Vô Thường",
+      "desc": "Khi Aglaea ở trạng thái Tư Thế Tối Cao, Xuyên Kháng Lôi của bản thân và Thợ May tăng {{1, percent}}%. Khi Aglaea và Thợ May có tốc độ cao hơn 160/240/320 điểm, sát thương gây ra bởi Tấn Công Phối Hợp sẽ tăng {{2, percent}}%/{{3, percent}}%/{{4, percent}}%."
+    }
+  }
+}

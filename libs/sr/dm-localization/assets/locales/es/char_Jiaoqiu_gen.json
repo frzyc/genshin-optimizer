@@ -1,0 +1,96 @@
+{
+  "name": "Jiaoqiu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Corazón inflamado",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jiaoqiu como Daño de Fuego a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Asalto conflagrador",
+        "fullDesc": "Jiaoqiu inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Fuego a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Fuego a los enemigos adyacentes. Tiene una probabilidad base del {{3, percent}}% de aplicar una acumulación de Asado al rescoldo al objetivo principal.",
+        "shortDesc": "Inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes. Tiene una gran probabilidad aplicar 1 acumulación de Asado al rescoldo al objetivo principal.",
+        "tag": "Ráfaga"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Arcano pirográfico",
+        "fullDesc": "Iguala las acumulaciones de Asado al rescoldo que tiene cada enemigo a las que tenga el efecto de Asado al rescoldo con más acumulaciones en el campo de batalla. Luego, activa un campo e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jiaoqiu como Daño de Fuego a todos los enemigos.<br>Los enemigos dentro del campo reciben un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> más de daño de habilidad definitiva y tienen una probabilidad base del <orangeStrong>{{2, percent}}%</orangeStrong> de recibir 1 acumulación de Asado al rescoldo al actuar. Este efecto solo se puede activar {{5}} veces mientras dura el campo, y solo puede activarse 1 vez por cada turno de cada enemigo. El recuento de activaciones se reinicia cada vez que Jiaoqiu lanza la habilidad definitiva.<br>El campo dura {{4}} turnos. Al comienzo de cada turno de Jiaoqiu, los turnos del campo disminuyen en 1. Cuando Jiaoqiu es derrotado, el campo también se disipa.",
+        "shortDesc": "Iguala las acumulaciones de Asado al rescoldo que tenga cada enemigo a las que tenga el efecto de Asado al rescoldo con más acumulaciones en el campo de batalla. A continuación, activa un campo e Inflige Daño de Fuego a todos los enemigos. Los enemigos dentro del campo <orangeStrong>reciben más daño de habilidad definitiva</orangeStrong> y tienen una probabilidad de recibir 1 acumulación de Asado al rescoldo cuando actúan.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Superposición de poder exquisita",
+        "fullDesc": "Después de que Jiaoqiu golpee a un enemigo con el ATQ básico, la habilidad básica o la habilidad definitiva, tiene una probabilidad base del {{1, percent}}% de aplicarle 1 acumulación de Asado al rescoldo. Con 1 acumulación, el daño que recibe el enemigo aumenta en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, y cada acumulación posterior aumenta el daño que recibe en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Asado al rescoldo se puede acumular hasta {{4}} veces y dura {{5}} turnos.<br>Cuando un enemigo está en el estado de Asado al rescoldo, se considera que también está afectado con Quemadura. Al comienzo de cada turno, recibe un <orangeStrong>{{6, percent}}%</orangeStrong> del ATQ de Jiaoqiu como Daño de Fuego con el tiempo.",
+        "shortDesc": "Tras golpear al enemigo con el ATQ básico, la habilidad básica o la habilidad definitiva, tiene una gran probabilidad de aplicar 1 acumulación de Asado al rescoldo al objetivo. El daño que recibe el enemigo aumenta y se considera que también es afectado con Quemadura.",
+        "tag": "Alteración"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Llamas extintoras",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{2}} s. Tras entrar en combate con enemigos dentro de la zona especial, inflige un {{1, percent}}% del ATQ de Jiaoqiu como Daño de Fuego a todos los enemigos y tiene una probabilidad base del {{3, percent}}% de aplicarles 1 acumulación de Asado al rescoldo. Solo puede haber una zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial. Tras entrar en combate con los enemigos dentro de la zona, inflige una pequeña cantidad de Daño de Fuego a todos los enemigos y tiene una gran probabilidad de aplicarles 1 acumulación de Asado al rescoldo.",
+        "tag": "Alteración"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Prende la llama",
+        "fullDesc": "Recupera {{1}} pts. de energía al comenzar la batalla."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Saltea la comida",
+        "fullDesc": "Cuando el acierto de efecto de Jiaoqiu es superior al {{1, percent}}%, por cada {{2, percent}}% de exceso, el ATQ aumenta en un {{3, percent}}% adicional, hasta un máximo del {{4, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Guisa el aroma",
+        "fullDesc": "Mientras el campo está activo, los enemigos son afectados con Asado al rescoldo al entrar en combate. Las acumulaciones aplicadas son iguales a las que tenga el objetivo con más acumulaciones de Asado al rescoldo mientras el campo está activo, con un mínimo de {{1}} acumulación."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Transferencia pentapática",
+      "desc": "El daño que infligen los aliados a los enemigos afectados con Asado al rescoldo aumenta en un {{1, percent}}%. Cada vez que el objetivo es afectado con Asado al rescoldo por la activación del talento, se obtiene {{2}} acumulación adicional del efecto actual de Asado al rescoldo."
+    },
+    "2": {
+      "name": "Del sabor sale el dolor",
+      "desc": "Cuando un enemigo está en el estado de Asado al rescoldo, el multiplicador del Daño de Fuego con el tiempo que le inflige Asado al rescoldo aumenta en un {{1, percent}}%."
+    },
+    "3": {
+      "name": "Armonía de sabor irresistible",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Serenidad interior y lustre exterior",
+      "desc": "Mientras el campo está activo, el ATQ de los enemigos se reduce en un {{1, percent}}%."
+    },
+    "5": {
+      "name": "Lucha en la luz y asesta en las sombras",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Pirovínculo nonomorfo",
+      "desc": "Cuando un enemigo es derrotado, sus acumulaciones de Asado al rescoldo se agregan al enemigo con menos acumulaciones de Asado al rescoldo en el campo de batalla. El límite de acumulaciones de Asado al rescoldo aumenta a {{2}}. Cada acumulación de Asado al rescoldo reduce la RES a todos los tipos del objetivo en un {{3, percent}}%."
+    }
+  }
+}

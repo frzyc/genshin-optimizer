@@ -1,6 +1,6 @@
 {
   "character_one": "Персонажи",
-  "character_other": "Персонажи",
+  "character_other": "Персонаж",
   "eidolonLvl": "Уровень Эйдолона:",
   "traces": "Следы",
   "type": {
@@ -19,7 +19,8 @@
     "Nihility": "Небытие",
     "Destruction": "Разрушение",
     "Harmony": "Гармония",
-    "TheHunt": "Охота"
+    "TheHunt": "Охота",
+    "Remembrance": "Память"
   },
   "ability": {
     "basic": "Базовая атака",
@@ -34,6 +35,11 @@
     "bounce": "Отскок",
     "blast": "Взрывная атака",
     "support": "Поддержка",
-    "impair": "Ослабление"
+    "impair": "Ослабление",
+    "restore": "Восстановление",
+    "defense": "Защита",
+    "enhance": "Усиление",
+    "charging": "Заряд",
+    "summon": "Призыв"
   }
 }

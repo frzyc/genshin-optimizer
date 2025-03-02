@@ -1,8 +1,10 @@
 {
+  "id": "1201",
   "icon": "IconRole35",
   "rarity": "S",
   "attribute": "electric",
   "specialty": "attack",
+  "faction": "HollowSpecialOoperationsSection6",
   "fullname": "Asaba Harumasa",
   "stats": {
     "atk_base": 132,

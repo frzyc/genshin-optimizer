@@ -1,0 +1,14 @@
+{
+  "setEffects": [
+    {
+      "numRequired": 2,
+      "passiveStats": { "atk_": 0.12 },
+      "otherStats": [0.12]
+    },
+    {
+      "numRequired": 4,
+      "passiveStats": { "crit_": 0.06 },
+      "otherStats": [0.06, 0.36, 1]
+    }
+  ]
+}

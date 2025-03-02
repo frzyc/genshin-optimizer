@@ -1,0 +1,7 @@
+{
+  "name": "Victory In a Blink",
+  "passive": {
+    "name": "Final Hit",
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer's memosprite uses an ability on an ally target, increases the DMG dealt by all ally targets by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s)."
+  }
+}

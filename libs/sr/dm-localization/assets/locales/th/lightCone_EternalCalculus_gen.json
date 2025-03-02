@@ -1,0 +1,7 @@
+{
+  "name": "Eternal Calculus",
+  "passive": {
+    "name": "Boundless Thought",
+    "description": "ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หลังจากปล่อยการโจมตีแล้ว ศัตรูเป้าหมายแต่ละตัวที่ถูกโจมตี จะทำให้ ATK เพิ่มขึ้นอีก <orangeStrong>{{2, percent}}%</orangeStrong> โดยเอฟเฟกต์นี้ จะซ้อนทับได้มากสุด 5 ครั้ง ต่อเนื่องจนกว่าจะโจมตีครั้งถัดไป หากโจมตีศัตรูเป้าหมายมากกว่า หรือเท่ากับ {{3}} ตัว ความเร็วของตัวเองจะเพิ่มขึ้น <orangeStrong>{{4, percent}}%</orangeStrong> เป็นเวลา {{5}} เทิร์น"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Traummontage",
+  "passive": {
+    "name": "Akademischer Schnitt",
+    "description": "Erhöht die GES des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Stellt nach Angriffen auf Gegner mit Schwächebruch <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her. Dieser Effekt kann bis zu {{3}}-mal pro Runde ausgelöst werden."
+  }
+}

@@ -32,5 +32,8 @@ export function PathIcon({
       return <PreservationIcon {...iconProps} />
     case 'TheHunt':
       return <TheHuntIcon {...iconProps} />
+    case 'Remembrance':
+      // TODO: Get a real icon
+      return <TheHuntIcon {...iconProps} />
   }
 }

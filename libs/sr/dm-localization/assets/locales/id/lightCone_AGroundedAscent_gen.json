@@ -1,0 +1,7 @@
+{
+  "name": "A Grounded Ascent",
+  "passive": {
+    "name": "Departing Anew",
+    "description": "Setelah pengguna melancarkan Skill atau Ultimate pada 1 karakter tim, pengguna akan memulihkan <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Energy, dan di saat yang bersamaan akan membuat target kemampuan memperoleh 1 lapis \"Hymn\" selama {{4}} giliran, dapat ditumpuk hingga {{3}} lapis. Setiap lapis \"Hymn\" akan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> DMG yang diakibatkan pemiliknya. Setiap kali setelah pengguna melancarkan {{5}} kali Skill atau Ultimate pada 1 karakter tim, akan memulihkan 1 Poin Skill."
+  }
+}

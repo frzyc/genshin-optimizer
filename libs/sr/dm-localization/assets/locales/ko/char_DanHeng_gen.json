@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "잠룡",
-        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "절영",
-        "fullDesc": "공격 발동 후 {{1, percent}}%의 고정 확률로 자신의 속도가 {{2, percent}}% 증가한다. 지속 시간: {{3}}턴",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "공격 발동 후 {{1, percent}}%의 고정 확률로 자신의 속도가 {{2, percent}}% 증가한다. 지속 시간: {{3}}턴"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "세찬 바람",
-        "fullDesc": "일반 공격이 감속 상태의 적에게 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "일반 공격이 감속 상태의 적에게 가하는 피해가 {{1, percent}}% 증가한다"
       }
     }
   },

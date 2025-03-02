@@ -1,0 +1,7 @@
+{
+  "name": "Sangre y fuego, abran camino",
+  "passive": {
+    "name": "Contemplación",
+    "description": "Los PV máx. del portador aumentan en un <orangeStrong>{{1, percent}}%</orangeStrong> y la curación recibida aumenta en un <orangeStrong>{{6, percent}}%</orangeStrong>. Al lanzar la habilidad básica o la habilidad definitiva, consume un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de sus PV máx. y aumenta el daño que inflige ese ataque en un <orangeStrong>{{3, percent}}%</orangeStrong>. Si el efecto consume más de {{4}} PV, el daño aumenta en un <orangeStrong>{{5, percent}}%</orangeStrong> adicional.<br>Si los PV actuales del portador son insuficientes, este efecto reduce sus PV actuales a 1."
+  }
+}

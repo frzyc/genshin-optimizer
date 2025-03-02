@@ -1,0 +1,96 @@
+{
+  "name": "Tribbie",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fusée des étoiles",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Tribbie à un ennemi désigné. Inflige des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> des PV max de Tribbie aux cibles adjacentes.",
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi et aux cibles adjacentes.",
+        "tag": "Propagation"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "En avant les cadeaux",
+        "fullDesc": "Bénéficie de Révélation pour {{2}} tours. Cette durée diminue de 1 au début de chaque tour de cette unité. Lorsque Tribbie bénéficie de Révélation, la PÉN de RÉS à tous les types de toutes les cibles alliées augmente de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.",
+        "shortDesc": "Bénéficie de Révélation, ce qui augmente la PÉN de RÉS à tous les types de toutes les cibles alliées.",
+        "tag": "Soutien"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Ça va déménager",
+        "fullDesc": "Active une zone et inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Tribbie à tous les ennemis.<br>Tant que la zone est active, les cibles ennemies subissent <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de DGT supplémentaires. Lorsqu'une cible alliée attaque, la cible avec les PV les plus élevés parmi les cibles touchées subit des DGT additionnels de type quantique équivalents à <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des PV max de Tribbie pour chaque cible touchée.<br>La zone dure {{4}} tours. La durée diminue de 1 au début de chaque tour de cette unité.",
+        "shortDesc": "<orangeStrong>Active une zone</orangeStrong> et inflige des DGT quantiques mineurs à tous les ennemis. Tant que la zone est active, augmente les DGT subis par les ennemis et inflige des <orangeStrong>DGT additionnels</orangeStrong> quantiques mineurs à la cible qui a le plus de PV parmi les cibles touchées en fonction du <orangeStrong>nombre d'ennemis</orangeStrong> attaqués.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tribbie à la rescousse",
+        "fullDesc": "Après qu'un autre personnage allié a utilisé son ultime, Tribbie lance une ATQ de suivi qui inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de ses PV max à tous les ennemis. Cet effet se déclenche 1 fois maximum par personnage et le nombre de déclenchements est réinitialisé pour les autres alliés lorsque Tribbie utilise son ultime. Si la cible est vaincue avant que l'ATQ de suivi ne soit lancée, lance l'ATQ de suivi sur les nouvelles cibles ennemies qui entrent sur le champ de bataille.",
+        "shortDesc": "Après qu'un autre personnage allié a utilisé son ultime, Tribbie lance une <orangeStrong>ATQ de suivi</orangeStrong> qui inflige des DGT quantiques mineurs à <orangeStrong>tous les ennemis</orangeStrong>. Cet effet se déclenche 1 fois maximum par personnage et le nombre de déclenchements est réinitialisé pour les autres alliés lorsque Tribbie utilise son ultime.",
+        "tag": "ZdE"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Si tu es heureux tape dans tes mains",
+        "fullDesc": "Bénéficie de Révélation pendant {{1}} tours après avoir utilisé la technique et engagé le combat.",
+        "shortDesc": "Bénéficie de Révélation en entrant en combat.",
+        "tag": "Renforcement"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attaque",
+        "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Agneau égaré",
+        "fullDesc": "Après avoir utilisé l'ATQ de suivi du talent, les DGT infligés par Tribbie augmentent de {{1, percent}}%. Cet effet peut être cumulé jusqu'à {{2}} fois, et dure {{3}} tours."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Boule de cristal ailée",
+        "fullDesc": "Pendant la durée de la zone, les PV max de Tribbie augmentent d'un montant équivalent à {{1, percent}}% de la somme des PV max de tous les personnages alliés."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Galet à la croisée",
+        "fullDesc": "Tribbie régénère {{1}} points d'énergie en début de combat. Après qu'une autre cible alliée lance une attaque, Tribbie régénère {{2, fixed(fixed: 1)}} points d'énergie pour chaque cible touchée."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Fête de la cuillère à sucre",
+      "desc": "Lorsque la zone est active et après que des cibles alliées ont attaqué des ennemis, inflige des DGT réels supplémentaires équivalents à {{1, percent}}% du total des DGT de cette attaque aux cibles qui ont subi des DGT additionnels de la part de la zone."
+    },
+    "2": {
+      "name": "Guide d'exploration des rêves",
+      "desc": "Les DGT additionnels infligés par la zone augmentent à hauteur de {{1, percent}}% des DGT initiaux. Lorsque la zone inflige des DGT additionnels, elle inflige {{2}} instance supplémentaire de DGT additionnels."
+    },
+    "3": {
+      "name": "Trésor de l'aube stellaire",
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+    },
+    "4": {
+      "name": "Paix de l'harmonie des cœurs",
+      "desc": "Tant que l'effet Révélation est actif, les DGT infligés par tous les alliés ignorent {{1, percent}}% de la DÉF des cibles."
+    },
+    "5": {
+      "name": "Horloge des merveilles",
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
+    },
+    "6": {
+      "name": "Lendemain baigné d'étoiles",
+      "desc": "Après que Tribbie a utilisé son ultime, elle lance l'ATQ de suivi de son talent contre tous les ennemis. Les DGT infligés par l'ATQ de suivi de son talent augmentent de {{1, percent}}%."
+    }
+  }
+}

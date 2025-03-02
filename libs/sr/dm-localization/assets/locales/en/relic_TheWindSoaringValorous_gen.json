@@ -1,0 +1,7 @@
+{
+  "setName": "The Wind-Soaring Valorous",
+  "setEffects": {
+    "2": "Increases ATK by {{1, percent}}%.",
+    "4": "Increases the wearer's CRIT Rate by {{1, percent}}%. After the wearer uses a Follow-up ATK, increases DMG dealt by Ultimate by {{2, percent}}%, lasting for {{3}} turn(s)."
+  }
+}

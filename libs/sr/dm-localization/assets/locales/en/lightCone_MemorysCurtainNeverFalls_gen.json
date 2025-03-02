@@ -1,0 +1,7 @@
+{
+  "name": "Memory's Curtain Never Falls",
+  "passive": {
+    "name": "Reception",
+    "description": "Increases the wearer's SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. After the wearer uses Skill, increases the DMG dealt by all allies by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s)."
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Jiaoqiu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Heart Afire",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Jiaoqiu pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Scorch Onslaught",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Jiaoqiu pada 1 musuh yang ditargetkan, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Jiaoqiu pada musuh di sekitar target, serta memiliki {{3, percent}}% peluang dasar untuk menambahkan 1 lapis \"Ashen Roast\" pada target utama.",
+        "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh, dan mengakibatkan Fire DMG dalam jumlah kecil pada musuh di sekitar target. Berpeluang besar untuk menambahkan 1 lapis \"Ashen Roast\" pada target utama.",
+        "tag": "Blast"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Pyrograph Arcanum",
+        "fullDesc": "Menyesuaikan jumlah lapisan \"Ashen Roast\" yang dimiliki target musuh menjadi jumlah lapisan \"Ashen Roast\" tertinggi yang ada di medan pertempuran. Setelah itu, akan mengaktifkan area pembatas dan mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Jiaoqiu pada seluruh musuh.<br>Saat berada di dalam area pembatas, Ultimate DMG yang diterima target musuh meningkat <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, dan memiliki <orangeStrong>{{2, percent}}%</orangeStrong> peluang dasar untuk menambahkan 1 lapis \"Ashen Roast\" pada target musuh saat target beraksi. Selama durasi area pembatas, efek ini dapat dipicu maksimal {{5}} kali. Setiap kali Jiaoqiu melancarkan Ultimate, akan mereset jumlah pemicuan yang terhitung.<br>Area pembatas akan aktif selama {{4}} giliran, dan durasi giliran area pembatas akan berkurang 1 setiap saat giliran Jiaoqiu dimulai. Saat Jiaoqiu gugur, area pembatas juga akan dihapus.",
+        "shortDesc": "Menyesuaikan jumlah lapisan \"Ashen Roast\" yang dimiliki target musuh menjadi jumlah lapisan \"Ashen Roast\" tertinggi yang ada di medan pertempuran. Setelah itu, akan mengaktifkan area pembatas dan mengakibatkan Fire DMG pada seluruh musuh. Saat target musuh berada di dalam area pembatas, <orangeStrong>Ultimate DMG yang diterima target musuh akan meningkat</orangeStrong>, dan memiliki peluang untuk menambahkan 1 lapis \"Ashen Roast\" pada target musuh saat target beraksi.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Quartet Finesse, Octave Finery",
+        "fullDesc": "Saat Jiaoqiu menggunakan Basic Attack, Skill, atau Ultimate untuk menyerang musuh, memiliki {{1, percent}}% peluang dasar untuk menambahkan 1 lapis \"Ashen Roast\" pada target. Pada saat lapisan \"Ashen Roast\" berjumlah 1 lapis, akan meningkatkan DMG yang diterima musuh sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Setelah itu, setiap menumpuk 1 lapis akan meningkatkan <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> DMG yang diterima musuh.<br>\"Ashen Roast\" maksimal dapat ditumpuk hingga {{4}} lapis, dan berlangsung selama {{5}} giliran.<br>Saat target musuh berada dalam status \"Ashen Roast\", musuh tersebut juga akan dianggap memasuki status Burn. Setiap saat giliran musuh tersebut dimulai, ia akan menerima Fire DoT sebesar <orangeStrong>{{6, percent}}%</orangeStrong> ATK Jiaoqiu.",
+        "shortDesc": "Saat Basic Attack, Skill atau Ultimate mengenai musuh, berpeluang besar untuk menambahkan 1 lapis \"Ashen Roast\" pada target, membuat DMG yang diterima musuh meningkat, dan musuh juga akan dianggap memasuki status Burn.",
+        "tag": "Impair"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fiery Queller",
+        "fullDesc": "Setelah menggunakan Technique, Jiaoqiu akan menciptakan sebuah dimensi khusus selama {{2}} detik. Setelah memasuki pertempuran dengan musuh yang berada di dalam dimensi khusus, akan mengakibatkan Fire DMG sebesar {{1, percent}}% ATK Jiaoqiu pada seluruh musuh, dan memiliki {{3, percent}}% peluang dasar untuk menambahkan 1 lapis \"Ashen Roast\". Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan sebuah dimensi khusus. Setelah memasuki pertempuran dengan musuh di dalam dimensi khusus, akan mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh, dan berpeluang besar untuk menambahkan 1 lapis \"Ashen Roast\".",
+        "tag": "Impair"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pyre Cleanse",
+        "fullDesc": "Segera memulihkan {{1}} Energy saat pertempuran dimulai."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Hearth Kindle",
+        "fullDesc": "Saat Effect Hit Rate Jiaoqiu lebih besar dari {{1, percent}}%, untuk setiap {{2, percent}}% Effect Hit Rate yang berlebih, akan meningkatkan ekstra {{3, percent}}% ATK, maksimal tidak melebihi {{4, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Seared Scent",
+        "fullDesc": "Selama durasi area pembatas, saat target musuh memasuki pertempuran, akan memperoleh sejumlah lapisan \"Ashen Roast\" sebanyak jumlah lapisan \"Ashen Roast\" tertinggi saat area pembatas aktif, minimal memperoleh {{1}} lapis."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Pentapathic Transference",
+      "desc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan rekan tim pada target musuh berstatus \"Ashen Roast\". Setiap kali membuat target musuh memasuki status \"Ashen Roast\" melalui efek Talent, maka jumlah lapisan \"Ashen Roast\" yang ditambahkan kali ini bertambah ekstra {{2}} lapis."
+    },
+    "2": {
+      "name": "From Savor Comes Suffer",
+      "desc": "Saat target musuh berada dalam status \"Ashen Roast\", DMG Multiplier dari Fire DoT yang diakibatkan \"Ashen Roast\" pada target tersebut meningkat {{1, percent}}%."
+    },
+    "3": {
+      "name": "Flavored Euphony Reigns Supreme",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Leisure In, Luster Out",
+      "desc": "Selama area pembatas ada, ATK target musuh berkurang {{1, percent}}%."
+    },
+    "5": {
+      "name": "Duel in Dawn, Dash in Dusk",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "6": {
+      "name": "Nonamorphic Pyrobind",
+      "desc": "Saat target musuh dikalahkan, lapisan \"Ashen Roast\" yang dimilikinya akan ditumpuk ke musuh dengan jumlah lapisan \"Ashen Roast\" tersedikit yang masih hidup di medan pertempuran. Batas maksimum jumlah lapisan \"Ashen Roast\" bertambah menjadi {{2}}, dan setiap lapis \"Ashen Roast\" akan membuat RES Seluruh Tipe target berkurang {{3, percent}}%."
+    }
+  }
+}

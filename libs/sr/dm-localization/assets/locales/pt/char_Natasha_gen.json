@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Acalmar",
-        "fullDesc": "Ao usar a Perícia, remove {{1}} penalidade(s) de um aliado-alvo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia, remove {{1}} penalidade(s) de um aliado-alvo."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Curandeira",
-        "fullDesc": "A Cura Realizada de Natasha aumenta em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A Cura Realizada de Natasha aumenta em {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Recuperação",
-        "fullDesc": "Aumenta a duração do efeito da cura contínua da Perícia por {{1}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Aumenta a duração do efeito da cura contínua da Perícia por {{1}} rodada(s)."
       }
     }
   },

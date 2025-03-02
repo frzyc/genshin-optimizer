@@ -5,10 +5,10 @@
   "desc3": "Gather 'round, mortals! Turn up the music!",
   "phase": "Get Everyone Fired Up",
   "phaseDescs": [
-    "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6%</color>.",
-    "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6.9%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6.9%</color>.",
-    "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>7.8%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>7.8%</color>.",
-    "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>8.7%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>8.7%</color>.",
-    "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>9.6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>9.6%</color>."
+    "When an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Chain Attack</ct> hits an enemy, the equipper's ATK increases by <ct color=#2BAD00>6%</ct> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <ct color=#2BAD00>6%</ct>.",
+    "When an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Chain Attack</ct> hits an enemy, the equipper's ATK increases by <ct color=#2BAD00>6.9%</ct> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <ct color=#2BAD00>6.9%</ct>.",
+    "When an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Chain Attack</ct> hits an enemy, the equipper's ATK increases by <ct color=#2BAD00>7.8%</ct> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <ct color=#2BAD00>7.8%</ct>.",
+    "When an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Chain Attack</ct> hits an enemy, the equipper's ATK increases by <ct color=#2BAD00>8.7%</ct> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <ct color=#2BAD00>8.7%</ct>.",
+    "When an <ct color=#FFFFFF>EX Special Attack</ct> or <ct color=#FFFFFF>Chain Attack</ct> hits an enemy, the equipper's ATK increases by <ct color=#2BAD00>9.6%</ct> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <ct color=#2BAD00>9.6%</ct>."
   ]
 }

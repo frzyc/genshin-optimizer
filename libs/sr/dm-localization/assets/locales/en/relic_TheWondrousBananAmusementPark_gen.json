@@ -1,0 +1,6 @@
+{
+  "setName": "The Wondrous BananAmusement Park",
+  "setEffects": {
+    "2": "Increases the wearer's CRIT DMG by {{1, percent}}%. When a target summoned by the wearer is on the field, CRIT DMG additionally increases by {{2, percent}}%."
+  }
+}

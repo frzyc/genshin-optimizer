@@ -45,32 +45,25 @@
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#はんぴょう}頒氷{RUBY_E#}",
-        "fullDesc": "攻撃を行った後、氷属性の弱点がある敵に、彦卿の攻撃力{{1, percent}}%分の氷属性付加ダメージを与える。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "攻撃を行った後、氷属性の弱点がある敵に、彦卿の攻撃力{{1, percent}}%分の氷属性付加ダメージを与える。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#りょうそう}凌霜{RUBY_E#}",
-        "fullDesc": "「智剣連心」がある場合、効果抵抗+{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "「智剣連心」がある場合、効果抵抗+{{1, percent}}%。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#けいりょ}軽呂{RUBY_E#}",
-        "fullDesc": "会心が発生した時、速度+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "会心が発生した時、速度+{{1, percent}}%、{{2}}ターン継続。"
       }
     }
   },

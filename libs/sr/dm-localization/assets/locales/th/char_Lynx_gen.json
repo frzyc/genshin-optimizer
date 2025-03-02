@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": "",
         "tag": "โจมตีเดี่ยว"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Advance Surveying",
-        "fullDesc": "หลังจากเป้าหมายที่มี \"Survival Response\" โดนโจมตี Lynx จะฟื้นฟูพลังงาน {{1}} หน่วยทันที",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "หลังจากเป้าหมายที่มี \"Survival Response\" โดนโจมตี Lynx จะฟื้นฟูพลังงาน {{1}} หน่วยทันที"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Exploration Techniques",
-        "fullDesc": "โอกาสต้านทาน สถานะ Debuff ประเภทควบคุม เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "โอกาสต้านทาน สถานะ Debuff ประเภทควบคุม เพิ่มขึ้น {{1, percent}}%"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Survival in the Extreme",
-        "fullDesc": "ขยายระยะเวลาของ เอฟเฟกต์ฟื้นฟูต่อเนื่องจากพรสวรรค์<br>{{1}} เทิร์น",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "ขยายระยะเวลาของ เอฟเฟกต์ฟื้นฟูต่อเนื่องจากพรสวรรค์<br>{{1}} เทิร์น"
       }
     }
   },

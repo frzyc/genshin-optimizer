@@ -19,7 +19,8 @@
     "Nihility": "Nihilidad",
     "Destruction": "Destrucción",
     "Harmony": "Armonía",
-    "TheHunt": "Cacería"
+    "TheHunt": "Cacería",
+    "Remembrance": "Reminiscencia"
   },
   "ability": {
     "basic": "ATQ básico",
@@ -34,6 +35,11 @@
     "bounce": "Rebote",
     "blast": "Ráfaga",
     "support": "Apoyo",
-    "impair": "Alteración"
+    "impair": "Alteración",
+    "restore": "Regeneración",
+    "defense": "Defensa",
+    "enhance": "Potenciación",
+    "charging": "Recarga",
+    "summon": "Invocación"
   }
 }

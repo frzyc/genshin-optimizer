@@ -20,7 +20,11 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   117: 'PioneerDiverOfDeadWaters',
   118: 'WatchmakerMasterOfDreamMachinations',
   119: 'IronCavalryAgainstTheScourge',
-  120: 'TheWindSouringValorous',
+  120: 'TheWindSoaringValorous',
+  121: 'SacerdosRelivedOrdeal',
+  122: 'ScholarLostInErudition',
+  123: 'HeroOfTriumphantSong',
+  124: 'PoetOfMourningCollapse',
 
   301: 'SpaceSealingStation',
   302: 'FleetOfTheAgeless',
@@ -38,6 +42,10 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   314: 'IzumoGenseiAndTakamaDivineRealm',
   315: 'DuranDynastyOfRunningWolves',
   316: 'ForgeOfTheKalpagniLantern',
+  317: 'LushakaTheSunkenSeas',
+  318: 'TheWondrousBananAmusementPark',
+  319: 'BoneCollectionsSereneDemesne',
+  320: 'GiantTreeOfRaptBrooding',
 }
 export type RelicSetId = keyof typeof relicSetIdMap
 

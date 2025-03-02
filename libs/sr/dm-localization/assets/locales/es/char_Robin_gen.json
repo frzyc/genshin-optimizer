@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Obertura embriagadora",
-        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{1}} s. Los enemigos que estén en la zona no pueden atacar a Robin y la siguen mientras la zona permanezca activa. Tras entrar en combate mientras la zona especial está activa, Robin recupera {{2}} pts. de energía al comienzo de cada oleada. Solo puede haber 1 efecto del área creado por los aliados a la vez.",
+        "fullDesc": "Tras lanzar la técnica, crea una zona especial a su alrededor que dura {{1}} s. Los enemigos que estén en la zona no pueden atacar a Robin y la siguen mientras la zona permanezca activa. Tras entrar en combate mientras la zona especial está activa, Robin recupera {{2}} pts. de energía al comienzo de cada oleada. Solo puede haber una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona no pueden atacar a Robin. Tras entrar en combate mientras la zona especial está activa, Robin recupera <orangeStrong>{{2}}</orangeStrong> pts. de energía adicionales al comienzo de cada oleada.",
         "tag": "Apoyo"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Coloratura de cadenza",
-        "fullDesc": "Al comenzar la batalla, su acción se adelanta un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al comenzar la batalla, su acción se adelanta un {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Adorno improvisado",
-        "fullDesc": "Cuando está en el estado de Concierto, el Daño CRIT que infligen todos los aliados con sus ataques adicionales aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando está en el estado de Concierto, el Daño CRIT que infligen todos los aliados con sus ataques adicionales aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Pasaje secuencial",
-        "fullDesc": "Al usar la habilidad básica, recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Al usar la habilidad básica, recupera {{1}} pts. de energía adicionales."
       }
     }
   },

@@ -1,0 +1,96 @@
+{
+  "name": "Moze",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Fliegende Säge",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mozes ANG zu.",
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Federschneller Angriff",
+        "fullDesc": "Markiert einen anvisierten Gegner als Beute und fügt ihm Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mozes ANG zu. Erhält {{2}} Pkt. Aufladung.<br>Wenn sich keine anderen handlungsfähigen Figuren auf dem Kampffeld befinden, kann Moze seine Fertigkeit nicht einsetzen und der Status Beute wird vom Gegner entfernt.",
+        "shortDesc": "<orangeStrong>Markiert einen Gegner als Beute</orangeStrong> und fügt ihm Blitz-SCH zu. Erhält <orangeStrong>{{2}}</orangeStrong> Pkt. Aufladung.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Spitze Schatten verborgener Klingen",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mozes ANG zu und startet einen Folgeangriff seines Talents auf dieses Ziel. Wenn das Ziel vor dem Einsatz dieses Folgeangriffs besiegt wird, wird der Folgeangriff auf einen zufälligen Gegner ausgeübt.",
+        "shortDesc": "Fügt einem Gegner Blitz-SCH zu und startet den <orangeStrong>Folgeangriff</orangeStrong> des Talents.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Federstich im Sturzflug",
+        "fullDesc": "Wenn sich „Beute“ auf dem Kampffeld befindet, tritt Moze in den Status Abgang ein.<br>Nachdem ein Verbündeter die Beute angegriffen hat, verursacht Moze 1-mal zusätzlichen Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> seines ANG und verbraucht 1 Pkt. Aufladung. Für je {{2}} Pkt. verbrauchte Aufladung startet Moze 1-mal einen Folgeangriff auf die Beute, der Blitz-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> seines ANG verursacht. Wenn die Aufladung 0 erreicht, wird der Status Beute vom Ziel entfernt und der Zähler für die zum Folgeangriff benötigte Aufladung zurückgesetzt. Der Folgeangriff des Talents verbraucht keine Aufladung.",
+        "shortDesc": "Wenn sich „Beute“ auf dem Kampffeld befindet, tritt Moze in den Status <orangeStrong>Abgang</orangeStrong> ein.<br>Nachdem ein Verbündeter die Beute angegriffen hat, verursacht Moze <orangeStrong>zusätzlichen Blitz-SCH</orangeStrong> und verbraucht 1 Pkt. Aufladung. Für je <orangeStrong>{{2}}</orangeStrong> Pkt. verbrauchte Aufladung startet Moze einen <orangeStrong>Folgeangriff</orangeStrong> auf die Beute, der Blitz-SCH verursacht. Wenn die Aufladung 0 erreicht, wird der Status Beute vom Ziel entfernt.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Unsichtbare Flügel",
+        "fullDesc": "Nach dem Einsatz der Technik erhält Moze für {{1}} Sek. Tarnung. Während Tarnung aktiv ist, ist Moze für Gegner unsichtbar. Wenn er in diesem Status durch Angriffe auf Gegner einen Kampf einleitet, wird sein verursachter SCH für {{3}} Rd. um {{2, percent}}% erhöht.",
+        "shortDesc": "Tritt in den Status Tarnung ein. Wenn in diesem Status durch Angriff auf den Gegner ein Kampf eingeleitet wird, wird der verursachte SCH erhöht.",
+        "tag": "Verstärkung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tintenschwarzes Gewand",
+        "fullDesc": "Stellt nach dem Einsatz des Folgeangriffs des Talents {{1}} Fertigkeitspunkt wieder her. Dieser Effekt kann nach {{2}} Rd. erneut ausgelöst werden."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dolch in der Hand",
+        "fullDesc": "Wenn Mozes Status Abgang aufgehoben wird, wird seine Aktion um {{1, percent}}% vorgezogen. Zu Beginn jeder Kampfwelle wird Mozes Aktion um {{2, percent}}% vorgezogen."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gezielte Gerechtigkeit",
+        "fullDesc": "Wenn durch Ultimates SCH verursacht wird, wird der Angriff als Folgeangriff gewertet. „Beute“ erleidet {{1, percent}}% mehr Folgeangriff-SCH."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Eidschwur",
+      "desc": "Nach Kampfeintritt stellt Moze {{2}} Pkt. Energie wieder her. Jedes Mal, wenn zusätzlicher SCH des Talents verursacht wird, stellt er {{1}} Pkt. Energie wieder her."
+    },
+    "2": {
+      "name": "Geißelung",
+      "desc": "Erhöht den von allen Verbündeten verursachten KRIT-SCH gegen Ziele, die als „Beute“ markiert sind, um {{1, percent}}%."
+    },
+    "3": {
+      "name": "Verfolger",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Camouflage",
+      "desc": "Erhöht beim Einsatz des Ultimates Mozes verursachten SCH für {{2}} Rd. um {{1, percent(fixed: 1)}}%."
+    },
+    "5": {
+      "name": "Täuschung",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Loyalität",
+      "desc": "Erhöht den SCH-Multiplikator des Folgeangriffs des Talents um {{1, percent}}%."
+    }
+  }
+}

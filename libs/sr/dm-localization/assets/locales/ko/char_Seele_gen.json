@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "재현",
-        "fullDesc": "일반 공격, 전투 스킬, 필살기를 발동해 적을 처치한 후 즉시 보너스 턴을 1턴 획득하고 증폭 상태에 진입한다. 증폭 상태의 제레는 공격 발동으로 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴.<br>제레가 특성 [재현]으로 획득한 보너스 턴에서 적 처치 시 해당 특성은 적용되지 않는다",
+        "fullDesc": "일반 공격, 전투 스킬, 필살기를 발동해 적을 처치한 후 즉시 보너스 턴을 1턴 획득하고 증폭 상태에 진입한다. 증폭 상태의 제레는 공격 발동으로 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴<br>제레가 특성 [재현]으로 획득한 보너스 턴에서 적 처치 시 해당 특성은 적용되지 않는다",
         "shortDesc": "일반 공격, 전투 스킬, 필살기를 발동해 <orangeStrong>적 처치</orangeStrong> 시, <orangeStrong>보너스 턴을 획득하고 증폭 상태에 진입</orangeStrong>한다. 증폭 상태에서 자신이 가하는 피해가 증가한다",
         "tag": "강화"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "야행",
-        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "절단",
-        "fullDesc": "증폭 상태일 때 제레의 양자 속성 저항 관통이 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "증폭 상태일 때 제레의 양자 속성 저항 관통이 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "파문",
-        "fullDesc": "일반 공격 발동 후 제레의 다음 행동 게이지가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "일반 공격 발동 후 제레의 다음 행동 게이지가 {{1, percent}}% 증가한다"
       }
     }
   },

@@ -51,32 +51,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Unschuld",
-        "fullDesc": "Stellt bei Auslösung des Talents LP in Höhe von {{1, percent}}% von Hooks max. LP wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt bei Auslösung des Talents LP in Höhe von {{1, percent}}% von Hooks max. LP wieder her."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivität",
-        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Spiel mit dem Feuer",
-        "fullDesc": "Nach dem Einsatz des Ultimates wird Hooks Aktion um {{2, percent}}% vorgezogen. Stellt zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Nach dem Einsatz des Ultimates wird Hooks Aktion um {{2, percent}}% vorgezogen. Stellt zusätzlich {{1}} Pkt. Energie wieder her."
       }
     }
   },

@@ -1,8 +1,10 @@
 {
+  "id": "1141",
   "icon": "IconRole18",
   "rarity": "S",
   "attribute": "ice",
   "specialty": "stun",
+  "faction": "VictoriaHousekeepingCo",
   "fullname": "Von Lycaon",
   "stats": {
     "atk_base": 105,

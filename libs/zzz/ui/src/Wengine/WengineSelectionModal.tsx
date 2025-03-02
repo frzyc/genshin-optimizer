@@ -128,7 +128,6 @@ export function WengineSelectionModal({
             value={wengineFilter}
             totals={wengineTotals}
             onChange={setWenginefilter}
-            disabled={!!wengineTypeFilter}
             size="small"
           />
           <WengineRarityToggle

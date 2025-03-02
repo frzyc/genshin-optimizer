@@ -1,0 +1,7 @@
+{
+  "name": "{RUBY_B#にんじろく}忍事録{RUBY_E#}・{RUBY_B#おんりつしゅりょう}音律狩猟{RUBY_E#}",
+  "passive": {
+    "name": "{RUBY_B#かいえん}開演{RUBY_E#}！",
+    "description": "装備キャラの最大HP+<orangeStrong>{{1, percent}}%</orangeStrong>。HPを失う、または回復した後、会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、{{3}}ターン継続。この効果はターンが回ってくるたびに1回まで発動できる。"
+  }
+}

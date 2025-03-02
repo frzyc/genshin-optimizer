@@ -1,0 +1,117 @@
+{
+  "name": "Rappa",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ninjutsu: Alzarse tras tropezar",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Rappa como Daño Imaginario a un enemigo.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
+      },
+      "1": {
+        "name": "Instrumento ninja: Estrella matademonios",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo y una pequeña cantidad de Daño Imaginario a los objetivos adyacentes. Este ataque también puede reducir la Firmeza de los enemigos que no tengan Debilidad Imaginaria.",
+        "tag": "Ráfaga"
+      },
+      "2": {
+        "name": "Instrumento ninja: Estrella matademonios",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo y una pequeña cantidad de Daño Imaginario a los objetivos adyacentes. Este ataque también puede reducir la Firmeza de los enemigos que no tengan Debilidad Imaginaria.",
+        "tag": "Ráfaga"
+      },
+      "3": {
+        "name": "Instrumento ninja: Estrella matademonios",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a todos los enemigos. Este ataque también puede reducir la Firmeza de los enemigos que no tengan Debilidad Imaginaria.",
+        "tag": "ATQ AdE"
+      },
+      "4": {
+        "name": "Instrumento ninja: Estrella matademonios",
+        "fullDesc": "Lanza Instrumento ninja: Estrella matademonios. Los 2 primeros golpes infligen un Daño Imaginario equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> y al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Rappa a un enemigo determinado y a los objetivos adyacentes respectivamente, y el tercer golpe inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Rappa como Daño Imaginario a todos los enemigos.<br>El ATQ básico potenciado no recupera pts. de habilidad básica. Este ataque también puede reducir la Firmeza de los enemigos que no tengan Debilidad Imaginaria en un {{4, percent}}% de la Reducción de Firmeza original. Al romper la Debilidad, se activa el efecto de Ruptura de Debilidad Imaginaria.",
+        "shortDesc": "Los 2 primeros golpes infligen una pequeña cantidad de Daño Imaginario a un enemigo y una pequeña cantidad de Daño Imaginario a los objetivos adyacentes. El tercer golpe inflige una pequeña cantidad de Daño Imaginario a todos los enemigos. Este ataque también puede reducir la Firmeza de los enemigos que no tengan Debilidad Imaginaria.",
+        "tag": "Ráfaga"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Corte ninja: Voluntad inquebrantable",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Rappa como Daño Imaginario a todos los enemigos.",
+        "shortDesc": "Inflige Daño Imaginario a todos los enemigos.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Vía del ninja suprema: Aishiteru",
+        "fullDesc": "Entra en el estado de Forma de sello y obtiene inmediatamente 1 turno adicional y {{3}} pts. de Tinta cromática. Además, su eficiencia de la Ruptura de Debilidad y su efecto de Ruptura aumentan en un {{1, percent}}% y un <orangeStrong>{{2, percent}}%</orangeStrong> respectivamente.<br>En el estado de Sello, su ATQ básico se potencia y no puede lanzar la habilidad básica ni la habilidad definitiva. Tras lanzar un ATQ básico potenciado, consume 1 pt. de Tinta cromática, y sale del estado de Forma de sello cuando los gasta todos.",
+        "shortDesc": "Entra en el estado de Forma de sello y obtiene un <orangeStrong>turno adicional</orangeStrong> y 3 puntos de Tinta cromática. Además, <orangeStrong>aumenta su eficiencia de la Ruptura de Debilidad y su efecto de Ruptura</orangeStrong>.<br>En el estado de Forma de sello, <orangeStrong>su ATQ básico se potencia</orangeStrong>. Tras lanzar el ATQ básico potenciado, consume 1 punto de Tinta cromática, y sale del estado de Forma de sello cuando los gasta todos.",
+        "tag": "Potenciación"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tecnología ninja: Bolsa resistométrica",
+        "fullDesc": "Cuando se rompe la Debilidad de un enemigo, Rappa obtiene 1 pt. de carga, hasta un máximo de {{1}}. La siguiente vez que Rappa lance el tercer golpe de Instrumento ninja: Estrella matademonios, inflige adicionalmente un Daño de Ruptura equivalente al <orangeStrong>{{3, percent}}%</orangeStrong> del Daño de Ruptura Imaginario de Rappa a todos los enemigos y les reduce {{4}} pts. de Firmeza ignorando sus tipos de Debilidad, y consume todos los pts. de carga. Por cada pt. de carga, el multiplicador del Daño de Ruptura de este golpe aumenta en un <orangeStrong>{{5, percent}}%</orangeStrong> y la Reducción de Firmeza que ignora los tipos de Debilidad aumenta en {{6}} punto.<br>Al causar Ruptura de Debilidad, se activa el efecto de Ruptura de Debilidad Imaginaria.",
+        "shortDesc": "Cuando se rompe la Debilidad de un enemigo, Rappa obtiene 1 pt. de carga. Cuando lanza el tercer golpe de Instrumento ninja: Estrella matademonios, inflige adicionalmente a todos los enemigos Daño de Ruptura Imaginario que <orangeStrong>reduce la Firmeza ignorando los tipos de Debilidad</orangeStrong>. Además, consume todos los pts. de carga, con lo que el multiplicador del Daño de Ruptura y la Reducción de Firmeza de este golpe aumentan.",
+        "tag": "Potenciación"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Paso ninja: ¡Ahí te quedas!",
+        "fullDesc": "Tras usar la técnica, entra en el estado de Grafiti durante {{1}} segundos. En este estado, avanza rápidamente una cierta distancia y ataca a los enemigos con los que entra en contacto. Mientras avanza, bloquea todos los ataques de los enemigos. El estado de Grafiti se puede interrumpir lanzando un ataque. Al entrar en combate tras atacar al enemigo, reduce {{5}} pts. de Firmeza a cada enemigo ignorando sus tipos de Debilidad. Además, Rappa inflige un Daño de Ruptura equivalente al {{2, percent}}% y al {{3, percent}}% de su Daño de Ruptura Imaginario a los enemigos y a los objetivos adyacentes respectivamente, y recupera {{4}} pts. de energía.",
+        "shortDesc": "Entra en el estado de Grafiti, avanza rápidamente una cierta distancia y ataca a los enemigos con los que entra en contacto. Tras atacar al enemigo y entrar en combate, <orangeStrong>reduce la Firmeza ignorando los tipos de Debilidad</orangeStrong> a cada enemigo, e inflige Daño de Ruptura Imaginario a los enemigos y a los objetivos adyacentes. Además, recupera energía.",
+        "tag": "Potenciación"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pergamino ninja: Tocar el cielo",
+        "fullDesc": "Cuando se rompe la Debilidad de un enemigo de élite o superior, Rappa obtiene {{2}} pt. de carga adicional y recupera {{1}} pts. de energía."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Pergamino ninja: Eco del mar",
+        "fullDesc": "Mientras dura el estado de Forma de sello, después de que Rappa lance su ATQ básico potenciado e inflija daño a un enemigo con Ruptura de Debilidad, la Reducción de Firmeza de este daño se convierte 1 vez en un {{1, percent}}% de Daño de Ultrarruptura."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Pergamino ninja: Hoja seca",
+        "fullDesc": "Cuando se rompe la Debilidad de un enemigo, el Daño de Ruptura recibido aumenta en un {{1, percent}}%. Si el ATQ actual de Rappa es superior a {{2}} pts., ese Daño de Ruptura aumenta en un {{3, percent}}% adicional por cada 100 pts. de ATQ de exceso, hasta un máximo de {{4, percent}}%. Este efecto dura {{5}} turnos."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Sin pago para el trasbordo, los difuntos regresan",
+      "desc": "Mientras está en el estado de Forma de sello tras lanzar la habilidad definitiva, el daño que inflige Rappa ignora un {{1, percent}}% de la DEF de los objetivos. Tras salir del estado de Forma de sello, recupera {{2}} pts. de energía."
+    },
+    "2": {
+      "name": "Libre es la mente iluminada por haikus",
+      "desc": "Aumenta en un {{1, percent}}% la Reducción de Firmeza de los 2 primeros golpes del ATQ básico potenciado contra el enemigo designado."
+    },
+    "3": {
+      "name": "El infierno aguarda por santuarios que haya",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "4": {
+      "name": "El tiempo devora la vía del ninja",
+      "desc": "Durante el estado de Forma de sello, la VEL de todos los aliados aumenta en un {{1, percent}}%."
+    },
+    "5": {
+      "name": "El cazador decidido no yerra sus flechas",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "6": {
+      "name": "La justicia nunca se apiada del mal",
+      "desc": "Al comenzar la batalla, Rappa obtiene {{1}} pts. de carga del talento y el límite de carga aumenta en {{2}} pts. Tras lanzar el tercer golpe de Instrumento ninja: Estrella matademonios, obtiene {{1}} pts. de energía."
+    }
+  }
+}

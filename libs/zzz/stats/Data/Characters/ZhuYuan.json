@@ -1,8 +1,10 @@
 {
+  "id": "1241",
   "icon": "IconRole23",
   "rarity": "S",
   "attribute": "ether",
   "specialty": "attack",
+  "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Zhu Yuan",
   "stats": {
     "atk_base": 132,

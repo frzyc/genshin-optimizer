@@ -1,0 +1,7 @@
+{
+  "name": "Ngoại Suy Vô Tận",
+  "passive": {
+    "name": "Suy Tư Không Ranh Giới",
+    "description": "Khiến Tấn Công của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Sau khi thi triển tấn công, mỗi khi đánh trúng 1 kẻ địch sẽ tăng thêm <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công, hiệu ứng này tối đa cộng dồn 5 lần, duy trì cho đến sau lần tấn công tiếp theo, nếu đánh trúng {{3}} kẻ địch trở lên, sẽ tăng <orangeStrong>{{4, percent}}%</orangeStrong> Tốc Độ của bản thân, duy trì {{5}} hiệp."
+  }
+}

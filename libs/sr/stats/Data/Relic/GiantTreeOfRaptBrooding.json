@@ -1,0 +1,9 @@
+{
+  "setEffects": [
+    {
+      "numRequired": 2,
+      "passiveStats": { "spd_": 0.06 },
+      "otherStats": [0.06, 135, 180, 0.12, 0.2]
+    }
+  ]
+}

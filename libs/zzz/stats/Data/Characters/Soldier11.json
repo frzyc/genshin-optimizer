@@ -1,8 +1,10 @@
 {
+  "id": "1041",
   "icon": "IconRole05",
   "rarity": "S",
   "attribute": "fire",
   "specialty": "attack",
+  "faction": "ObolSquad",
   "fullname": "Soldier 11",
   "stats": {
     "atk_base": 128,

@@ -1,0 +1,6 @@
+{
+  "setName": "Bone Collection's Serene Demesne",
+  "setEffects": {
+    "2": "Increases the wearer's Max HP by {{1, percent}}%. When the wearer's Max HP is {{2}} or higher, increases the wearer's and their memosprite's CRIT DMG by {{3, percent}}%."
+  }
+}

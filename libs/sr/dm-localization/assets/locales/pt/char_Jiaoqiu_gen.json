@@ -1,0 +1,96 @@
+{
+  "name": "Jiaoqiu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Coração em Chamas",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jiaoqiu a um único inimigo-alvo.",
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Massacre em Brasas",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jiaoqiu a um único inimigo-alvo e Dano de Fogo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Jiaoqiu aos alvos adjacentes, com uma chance-base de {{3, percent}}% de infligir 1 acúmulo de Assado Acinzentado no alvo principal.",
+        "shortDesc": "Causa Dano de Fogo a um único inimigo e Dano de Fogo leve a alvos adjacentes, com altas chances de infligir 1 acúmulo de Assado Acinzentado ao alvo principal.",
+        "tag": "Explosão"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Arcano do Pirógrafo",
+        "fullDesc": "Define o número de acúmulos de Assado Acinzentado nos inimigos-alvo para o maior número de acúmulos de Assado Acinzentado presente no campo de batalha no momento. Então, ativa um Campo e causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jiaoqiu a todos os inimigos.<br>Enquanto estiverem dentro do campo, inimigos-alvo recebem <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> a mais de Dano de Perícia Suprema, com uma chance-base de <orangeStrong>{{2, percent}}%</orangeStrong> de serem infligidos com 1 acúmulo de Assado Acinzentado ao agir. Enquanto o Campo estiver ativo, este efeito pode acionar até {{5}} vez(es). E para cada inimigo-alvo, ele só pode ser acionado uma vez por rodada. Essa contagem de ativação reinicia toda vez que Jiaoqiu utiliza sua Perícia Suprema.<br>O Campo dura por {{4}} rodada(s), e sua duração diminui em 1 no início de toda rodada desta unidade. Se Jiaoqiu for derrubado, o Campo também será desfeito.",
+        "shortDesc": "Define o número de acúmulos de \"Assado Acinzentado\" nos inimigos-alvo para o maior número de acúmulos de \"Assado Acinzentado\" presente no campo de batalha no momento. Então, ativa um Campo e causa Dano de Fogo a todos os inimigos. Enquanto estiverem dentro do Campo, inimigos-alvo <orangeStrong>recebem mais Dano de Perícia Suprema</orangeStrong>, com uma chance de serem afligidos com 1 acúmulo de Assado Acinzentado ao agir.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fineza de um Quarteto, Elegância de um Octeto",
+        "fullDesc": "Quando Jiaoqiu atinge um inimigo com um ATQ Básico, Perícia ou Perícia Suprema, há uma chance-base de {{1, percent}}% de infligir 1 acúmulo de Assado Acinzentado a ele. Com 1 acúmulo, aumenta o Dano recebido pelo inimigo em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Então, cada acúmulo subsequente aumenta esse Dano em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Assado Acinzentado tem um limite de {{4}} acúmulo(s) e dura por {{5}} rodada(s).<br>Quando o inimigo-alvo é afligido com Assado Acinzentado, ele também é considerado como se estivesse afligido com o efeito de Queimadura, recebendo Dano de Fogo Contínuo igual a <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Jiaoqiu no início de cada rodada.",
+        "shortDesc": "Ao atacar com um ATQ Básico, Perícia ou Perícia Suprema, há uma chance alta de infligir 1 acúmulo de \"Assado Acinzentado\" no alvo, fazendo com que o inimigo receba Dano aumentado e também seja considerado com efeito de \"Queimadura\" ao mesmo tempo.",
+        "tag": "Incapacitação"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Amainador de Chamas",
+        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que dura por {{2}} segundo(s). Depois de iniciar uma batalha contra inimigos nesta dimensão especial, causa Dano de Fogo igual a {{1, percent}}% do ATQ de Jiaoqiu a todos os inimigos, com uma chance-base de {{3, percent}}% de aplicar 1 acúmulo de \"Assado Acinzentado\". Apenas 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial. Depois de iniciar uma batalha contra inimigos nesta dimensão, causa Dano de Fogo leve a todos os inimigos, com uma alta chance de aplicar 1 acúmulo de \"Assado Acinzentado\".",
+        "tag": "Incapacitação"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Limpeza Pelo Fogo",
+        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Brasa da Lareira",
+        "fullDesc": "Para cada {{2, percent}}% da Taxa de Acerto de Efeito de Jiaoqiu que exceda {{1, percent}}%, aumenta adicionalmente o ATQ em {{3, percent}}%, até um máximo de {{4, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Aroma Defumado",
+        "fullDesc": "Enquanto o Campo estiver ativo, inimigos entrando em combate serão infligidos com Assado Acinzentado. O número de acúmulos aplicados corresponderá ao número mais alto de acúmulos de \"Assado Acinzentado\" possuído por qualquer unidade enquanto o Campo estiver ativo, com um mínimo de {{1}} acúmulo(s)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Transferência Pentapática",
+      "desc": "Aliados causam {{1, percent}}% de Dano a mais aos inimigos-alvo afligidos com Assado Acinzentado. Sempre que infligir Assado Acinzentado em um inimigo-alvo através do acionamento do efeito do Talento, adicionalmente aumenta o número acúmulos de Assado Acinzentado aplicado desta vez em {{2}}."
+    },
+    "2": {
+      "name": "Do Sabor Vem o Sofrimento",
+      "desc": "Quando um inimigo-alvo é infligido com Assado Acinzentado, aumenta o Multiplicador do Dano de Fogo Contínuo causado pelo Assado Acinzentado ao alvo em {{1, percent}}%."
+    },
+    "3": {
+      "name": "Eufonia Saborosa Reina Soberana",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "4": {
+      "name": "Tranquilo por Dentro, Brilhante por Fora",
+      "desc": "Enquanto o Campo estiver ativo, reduz o ATQ do inimigo-alvo em {{1, percent}}%."
+    },
+    "5": {
+      "name": "Duelo ao Amanhecer, Fuga ao Entardecer",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "6": {
+      "name": "Enlace de Fogo Nonamórfico",
+      "desc": "Quando um inimigo-alvo é derrotado, os acúmulos de \"Assado Acinzentado\" dele serão transferidos ao inimigo com o menor número de acúmulos de \"Assado Acinzentado\" no campo de batalha. O limite máximo de acúmulos de Assado Acinzentado aumenta para {{2}}, e cada acúmulo de \"Assado Acinzentado\" reduz a RES a Todos os Tipos do alvo em {{3, percent}}%."
+    }
+  }
+}

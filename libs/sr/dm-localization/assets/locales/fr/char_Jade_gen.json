@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Pacte de l'abîme",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jade à tous les ennemis. D'autre part, renforce l'attaque de suivi du talent de Jade en augmentant son multiplicateur de DGT de <orangeStrong>{{1, percent}}%</orangeStrong>. Ce renforcement peut prendre effet {{2}} fois.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jade à tous les ennemis. D'autre part, renforce l'ATQ de suivi du talent de Jade en augmentant son multiplicateur de DGT de <orangeStrong>{{1, percent}}%</orangeStrong>. Ce renforcement peut prendre effet {{2}} fois.",
         "shortDesc": "Inflige des DGT quantiques à toutes les unités ennemies et le multiplicateur de DGT de l'<orangeStrong>ATQ de suivi</orangeStrong> du talent de cette unité augmente.",
         "tag": "ZdE"
       }
@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Crocs ravageurs",
-        "fullDesc": "Jade gagne 1 point de charge à chaque fois qu'une cible ennemie est touchée par une de ses attaques ou une attaque de l'Agent de recouvrement de dettes. À {{3}} points de charge, Jade consomme les {{3}} points pour déclencher 1 attaque de suivi qui inflige des DGT quantiques équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de son ATQ à tous les ennemis. Cette attaque de suivi ne génère pas de points de charge.<br>Jade gagne immédiatement {{4}} cumuls de Bien hypothéqué lorsqu'elle déclenche l'attaque de suivi de son talent et chaque cumul de Bien hypothéqué augmente ses DGT critiques de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Cet effet peut être cumulé jusqu'à {{2}} fois.",
-        "shortDesc": "Jade gagne 1 point de charge à chaque fois qu'une cible ennemie est touchée par une de ses attaques ou une attaque de l'<orangeStrong>Agent de recouvrement de dettes</orangeStrong>. À <orangeStrong>{{3}}</orangeStrong> points de charge, Jade consomme les <orangeStrong>{{3}}</orangeStrong> points pour déclencher 1 <orangeStrong>attaque de suivi</orangeStrong> qui inflige des DGT quantiques à tous les ennemis.<br>Jade gagne des cumuls de Bien hypothéqué lorsqu'elle déclenche l'<orangeStrong>attaque de suivi</orangeStrong>, ce qui augmente ses DGT critiques. Cet effet peut se cumuler jusqu'à <orangeStrong>{{2}}</orangeStrong> fois.",
+        "fullDesc": "Jade gagne 1 point de charge à chaque fois qu'une cible ennemie est touchée par une de ses attaques ou une attaque de l'Agent de recouvrement de dettes. À {{3}} points de charge, Jade consomme les {{3}} points pour déclencher 1 ATQ de suivi qui inflige des DGT quantiques équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de son ATQ à tous les ennemis. Cette ATQ de suivi ne génère pas de points de charge.<br>Jade gagne immédiatement {{4}} cumuls de Bien hypothéqué lorsqu'elle déclenche l'ATQ de suivi de son talent et chaque cumul de Bien hypothéqué augmente ses DGT critiques de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Cet effet peut être cumulé jusqu'à {{2}} fois.",
+        "shortDesc": "Jade gagne 1 point de charge à chaque fois qu'une cible ennemie est touchée par une de ses attaques ou une attaque de l'<orangeStrong>Agent de recouvrement de dettes</orangeStrong>. À <orangeStrong>{{3}}</orangeStrong> points de charge, Jade consomme les <orangeStrong>{{3}}</orangeStrong> points pour déclencher 1 <orangeStrong>ATQ de suivi</orangeStrong> qui inflige des DGT quantiques à tous les ennemis.<br>Jade gagne des cumuls de Bien hypothéqué lorsqu'elle déclenche l'<orangeStrong>ATQ de suivi</orangeStrong>, ce qui augmente ses DGT critiques. Cet effet peut se cumuler jusqu'à <orangeStrong>{{2}}</orangeStrong> fois.",
         "tag": "ZdE"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Accord de rachat",
-        "fullDesc": "Jade obtient {{2}} cumul de Bien hypothéqué lorsqu'une cible ennemie entre en combat. Jade obtient {{1}} cumuls de Bien hypothéqué supplémentaires au début du tour de l'Agent de recouvrement de dettes.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Jade obtient {{2}} cumul de Bien hypothéqué lorsqu'une cible ennemie entre en combat. Jade obtient {{1}} cumuls de Bien hypothéqué supplémentaires au début du tour de l'Agent de recouvrement de dettes."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Dépôt de garantie",
-        "fullDesc": "L'action de Jade est avancée de {{1, percent}}% en début de combat.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "L'action de Jade est avancée de {{1, percent}}% en début de combat."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gage d'exception",
-        "fullDesc": "Chaque cumul de l'effet Bien hypothéqué obtenu via le talent augmente l'ATQ de Jade de {{1, percent(fixed: 1)}}% supplémentaires.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Chaque cumul de l'effet Bien hypothéqué obtenu via le talent augmente l'ATQ de Jade de {{1, percent(fixed: 1)}}% supplémentaires."
       }
     }
   },

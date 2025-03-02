@@ -1,0 +1,7 @@
+{
+  "name": "夢的蒙太奇",
+  "passive": {
+    "name": "學院式剪接",
+    "description": "使裝備者的速度提高<orangeStrong>{{1, percent}}%</orangeStrong>，攻擊處於弱點擊破狀態下的敵方目標後，恢復<orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong>點能量，該效果每回合最多觸發{{3}}次。"
+  }
+}

@@ -1,8 +1,10 @@
 {
+  "id": "1181",
   "icon": "IconRole20",
   "rarity": "S",
   "attribute": "electric",
   "specialty": "anomaly",
+  "faction": "BelebogHeavyIndustries",
   "fullname": "Grace Howard",
   "stats": {
     "atk_base": 119,

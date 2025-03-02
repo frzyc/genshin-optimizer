@@ -2,20 +2,9 @@
   "setEffects": [
     {
       "numRequired": 2,
-      "passiveStats": {
-        "ice_dmg_": 0.1
-      },
-      "otherStats": [
-        0.1
-      ]
+      "passiveStats": { "ice_dmg_": 0.1 },
+      "otherStats": [0.1]
     },
-    {
-      "numRequired": 4,
-      "passiveStats": {},
-      "otherStats": [
-        0.25,
-        2
-      ]
-    }
+    { "numRequired": 4, "passiveStats": {}, "otherStats": [0.25, 2] }
   ]
 }

@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Arquera cortés",
-        "fullDesc": "Yukong puede resistir un estado negativo cuando se lo aplican. Este efecto puede volver a activarse tras {{1}} turnos.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Yukong puede resistir un estado negativo cuando se lo aplican. Este efecto puede volver a activarse tras {{1}} turnos."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Arco del legado",
-        "fullDesc": "Cuando Yukong está en la batalla, el Daño Imaginario que infligen todos los aliados aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando Yukong está en la batalla, el Daño Imaginario que infligen todos los aliados aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Porte noble",
-        "fullDesc": "Cuando tiene Sonido de cuerda, Yukong recupera {{1}} pts. de energía adicionales cada vez que un aliado realiza una acción.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando tiene Sonido de cuerda, Yukong recupera {{1}} pts. de energía adicionales cada vez que un aliado realiza una acción."
       }
     }
   },
@@ -81,7 +74,7 @@
     },
     "2": {
       "name": "Orden del firmamento",
-      "desc": "Cuando la energía de un aliado es igual a su límite de energía, Yukong recupera {{1}} pts. de energía adicionales. Este efecto solo se puede activar una vez por cada aliado. Cuando Yukong utiliza la habilidad definitiva, se reinicia el contador de activaciones."
+      "desc": "Cuando la energía de un aliado es igual a su energía máxima, Yukong recupera {{1}} pts. de energía adicionales. Este efecto solo se puede activar una vez por cada aliado. Cuando Yukong utiliza la habilidad definitiva, se reinicia el contador de activaciones."
     },
     "3": {
       "name": "Descarga torrencial",

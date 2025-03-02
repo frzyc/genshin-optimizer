@@ -12,12 +12,37 @@ import {
   sum,
   sumfrac,
 } from './construction'
-import { compile } from './transform'
-import type { AnyNode, OP } from './type'
+import type { AnyTagFree, NumTagFree } from './transform'
+import { compile, compileDiff } from './transform'
+
+const unused = () => {
+  throw new Error('unused')
+}
+addCustomOperation('foo', {
+  range: unused,
+  monotonicity: unused,
+  calc: function (args) {
+    const [a, b, _, d] = args as number[]
+    return a + b + d
+  },
+  diff: function (_x, dx) {
+    const [da, db, _, dd] = dx
+    return da + db + dd
+  },
+})
+addCustomOperation('bar', {
+  range: unused,
+  monotonicity: unused,
+  calc: function (args) {
+    const [a, b, c, d] = args as string[]
+    return [d, c, b, a].join('/')
+  },
+})
 
 describe('optimization', () => {
   const read0 = read({ q: '0' }, undefined)
   const read1 = read({ q: '1' }, undefined)
+  const read2 = read({ q: '2' }, undefined)
   const x = [
     sum(3, 4, 5, read0), // Multiple consts
     sum(3, sum(4, sum(5)), read1), // Nested consts
@@ -41,9 +66,7 @@ describe('optimization', () => {
     ).toEqual([15, 16, 3, 3])
   })
   describe('compile computation', () => {
-    function runCompile(
-      n: AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
-    ): number | string {
+    function runCompile(n: AnyTagFree): number | string {
       return compile([n], '', 0, {})([])[0]
     }
     test('arithmetic', () => {
@@ -73,32 +96,54 @@ describe('optimization', () => {
       expect(runCompile(lookup('X', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(NaN)
     })
     test('custom computation', () => {
-      addCustomOperation('foo', {
-        range: () => {
-          throw new Error('Unused')
-        },
-        monotonicity: () => {
-          throw new Error('Unused')
-        },
-        calc: function (args) {
-          const [a, b, _, d] = args as number[]
-          return a + b + d
-        },
-      })
-      addCustomOperation('bar', {
-        range: () => {
-          throw new Error('Unused')
-        },
-        monotonicity: () => {
-          throw new Error('Unused')
-        },
-        calc: function (args) {
-          const [a, b, c, d] = args as string[]
-          return [d, c, b, a].join('/')
-        },
-      })
       expect(runCompile(custom('foo', 1, 2, 3, 4))).toEqual(7)
       expect(runCompile(custom('bar', 'a', 'b', 'c', 'd'))).toEqual('d/c/b/a')
+    })
+  })
+  describe('compileDiff computation', () => {
+    const [v0, v1, v2] = [10, 20, 1]
+    function runDiff(n: NumTagFree): number[] {
+      return compileDiff(n, 'q', ['0', '1'], 0, { 0: v0, 1: v1, 2: v2 })([])
+    }
+    test('arithmetic', () => {
+      expect(runDiff(sum(5, read0, read1, read1, read2))).toEqual([1, 2])
+      expect(runDiff(prod(5, read0, read1, read1, read2))).toEqual([
+        5 * v1 * v1 * v2,
+        5 * v0 * 2 * v1 * v2,
+      ])
+      expect(runDiff(min(1, read0, read1))).toEqual([0, 0])
+      expect(runDiff(min(15, read0, read1))).toEqual([1, 0])
+      expect(runDiff(max(1, read0, read1))).toEqual([0, 1])
+      expect(runDiff(max(20, read0, read1))).toEqual([0, 0])
+      expect(runDiff(sumfrac(read0, 5))).toEqual([5 / (v0 + 5) / (v0 + 5), 0])
+      expect(runDiff(sumfrac(read0, read1))).toEqual([
+        v1 / (v0 + v1) / (v0 + v1),
+        -v0 / (v0 + v1) / (v0 + v1),
+      ])
+    })
+    test('branching', () => {
+      // Check all branches
+      expect(runDiff(cmpEq(1, 1, read0, read1))).toEqual([1, 0])
+      expect(runDiff(cmpEq(1, 2, read0, read1))).toEqual([0, 1])
+      expect(() => runDiff(cmpEq(read0, 0, 0, 1))).toThrow()
+      expect(() => runDiff(cmpEq(0, read1, 0, 1))).toThrow()
+      // Check trichotomy
+      expect(runDiff(cmpGE(1, 1, read0, read1))).toEqual([1, 0])
+      expect(runDiff(cmpGE(1, 2, read0, read1))).toEqual([0, 1])
+      expect(runDiff(cmpGE(2, 1, read0, read1))).toEqual([1, 0])
+      expect(() => runDiff(cmpGE(read0, 0, 0, 1))).toThrow()
+      expect(() => runDiff(cmpGE(0, read1, 0, 1))).toThrow()
+      // Check subscript & lookup
+      expect(runDiff(subscript(2, [1, 2, 3, 4]))).toEqual([0, 0])
+      expect(() => runDiff(subscript(read0, [1, 2, 3, 4]))).toThrow()
+      expect(runDiff(lookup('c', { a: 1, b: read0, c: read1 }))).toEqual([0, 1])
+      expect(runDiff(lookup('a', { a: 1, b: read0, c: read1 }))).toEqual([0, 0])
+      expect(() => runDiff(lookup(read0, { a: 1, b: 2, c: 3 }))).toThrow()
+      // Lookup default branch
+      expect(runDiff(lookup('X', { a: 1, b: 2, c: 3, d: 4 }))).toEqual([0, 0])
+    })
+    test('custom computation', () => {
+      expect(runDiff(custom('foo', read0, 2, read1, 4))).toEqual([1, 0])
     })
   })
 })

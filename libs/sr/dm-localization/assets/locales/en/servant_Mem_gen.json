@@ -1,0 +1,39 @@
+{
+  "name": "Mem",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Baddies! Trouble!",
+        "fullDesc": "Deals {{2}} instance(s) of DMG, with each instance dealing Ice DMG equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Mem's ATK to one random enemy. At the end, deals Ice DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Mem's ATK to all enemies.",
+        "shortDesc": "Deals minor Ice DMG that Bounces a total of <orangeStrong>{{2}}</orangeStrong> time(s). Deals minor Ice DMG to all enemies at the end.",
+        "tag": "AoE"
+      },
+      "1": {
+        "name": "Lemme! Help You!",
+        "fullDesc": "Advances the action of one designated ally by {{3, percent}}% and grants them \"Mem's Support,\" lasting for {{2}} turn(s).<br>For every 1 instance of DMG dealt by a target that has \"Mem's Support,\" additionally deals 1 instance of True DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the original DMG.<br>When using this ability on this unit, cannot trigger the action advance effect.",
+        "shortDesc": "<orangeStrong>Advances the action</orangeStrong> of one ally and grants \"Mem's Support\": Additionally deals <orangeStrong>True DMG</orangeStrong> after dealing DMG.",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Friends! Together!",
+        "fullDesc": "Increases all allies' CRIT DMG by an amount equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Mem's CRIT DMG plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.<br>If the Charge has yet to reach 100%, Mem automatically uses \"Baddies! Trouble!\" when taking action. When the Charge reaches 100%, Mem immediately takes action. In the next action, can select one ally and use \"Lemme! Help You!\".",
+        "shortDesc": "Increases all allies' CRIT DMG.<br>When taking action, automatically attacks. If the Charge reaches 100%, then immediately takes action and can use a new ability: <orangeStrong>Advances the action</orangeStrong> of one ally and deals <orangeStrong>True DMG</orangeStrong>.",
+        "tag": "Support"
+      },
+      "1": {
+        "name": "Go, Mem, Go!",
+        "fullDesc": "When Mem is summoned, immediately gains {{1, percent}}% Charge.",
+        "shortDesc": "When summoned, immediately gains Charge.",
+        "tag": "Enhance"
+      },
+      "2": {
+        "name": "No... Regrets",
+        "fullDesc": "When Mem disappears, Trailblazer's action advances by {{1, percent}}%.",
+        "shortDesc": "Upon disappearing, advances the action of Trailblazer.",
+        "tag": "Enhance"
+      }
+    }
+  }
+}

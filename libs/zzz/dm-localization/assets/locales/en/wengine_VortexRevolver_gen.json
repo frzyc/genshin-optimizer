@@ -5,10 +5,10 @@
   "desc3": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it all at once.",
   "phase": "Undercurrent",
   "phaseDescs": [
-    "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>10%</color> more Daze.",
-    "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>11.5%</color> more Daze.",
-    "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>13%</color> more Daze.",
-    "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>14.5%</color> more Daze.",
-    "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>16%</color> more Daze."
+    "<ct color=#FFFFFF>EX Special Attacks</ct> inflict <ct color=#2BAD00>10%</ct> more Daze.",
+    "<ct color=#FFFFFF>EX Special Attacks</ct> inflict <ct color=#2BAD00>11.5%</ct> more Daze.",
+    "<ct color=#FFFFFF>EX Special Attacks</ct> inflict <ct color=#2BAD00>13%</ct> more Daze.",
+    "<ct color=#FFFFFF>EX Special Attacks</ct> inflict <ct color=#2BAD00>14.5%</ct> more Daze.",
+    "<ct color=#FFFFFF>EX Special Attacks</ct> inflict <ct color=#2BAD00>16%</ct> more Daze."
   ]
 }

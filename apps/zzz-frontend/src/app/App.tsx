@@ -1,4 +1,6 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
+import { isDev } from '@genshin-optimizer/common/util'
+import { setDebugMode } from '@genshin-optimizer/pando/engine'
 import { DatabaseProvider } from '@genshin-optimizer/zzz/db-ui'
 import '@genshin-optimizer/zzz/i18n' // import to load translations
 import PageHome from '@genshin-optimizer/zzz/page-home'
@@ -17,11 +19,17 @@ import '../styles.scss'
 import Header from './Header'
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
 const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
+const PageOptimizePando = lazy(
+  () => import('@genshin-optimizer/zzz/page-optimize-pando')
+)
 const PageCharacters = lazy(
   () => import('@genshin-optimizer/zzz/page-characters')
 )
 const PageWengines = lazy(() => import('@genshin-optimizer/zzz/page-wengines'))
 const PageSettings = lazy(() => import('@genshin-optimizer/zzz/page-settings'))
+
+// Enable debug mode for Pando calcs
+setDebugMode(isDev)
 
 export default function App() {
   return (
@@ -63,6 +71,7 @@ function Content() {
             <Route index element={<PageHome />} />
             <Route path="/discs" element={<PageDiscs />} />
             <Route path="/optimize" element={<PageOptimize />} />
+            <Route path="/optimize-pando" element={<PageOptimizePando />} />
             <Route path="/characters/*" element={<PageCharacters />} />
             <Route path="/wengines" element={<PageWengines />} />
             <Route path="/settings" element={<PageSettings />} />

@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integridade",
-        "fullDesc": "Gepard tem mais chance de ser atacado por inimigos.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Gepard tem mais chance de ser atacado por inimigos."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Comandante",
-        "fullDesc": "Quando a \"Vontade Inabalável\" for ativada, a Energia de Gepard será restaurada para 100%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando a \"Vontade Inabalável\" for ativada, a Energia de Gepard será restaurada para 100%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bravura",
-        "fullDesc": "O ATQ de Gepard aumenta em {{1, percent}}% de sua DEF atual. Este efeito é renovado no início de cada rodada.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "O ATQ de Gepard aumenta em {{1, percent}}% de sua DEF atual. Este efeito é renovado no início de cada rodada."
       }
     }
   },

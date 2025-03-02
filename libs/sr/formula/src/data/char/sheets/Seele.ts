@@ -1,16 +1,13 @@
-import { cmpGE } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
-  allListConditionals,
   allNumConditionals,
-  enemyDebuff,
   own,
   ownBuff,
   register,
   registerBuff,
-  teamBuff,
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag } from '../util'
 
@@ -21,31 +18,61 @@ const baseTag = getBaseTag(data_gen)
 
 const { char } = own
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { amplification, enemyLowerThan80_ } = allBoolConditionals(key)
+const { skillStacks } = allNumConditionals(key, true, 0, 2)
 
 const sheet = register(
   key,
   // Handles base stats, StatBoosts and Eidolon 3 + 5
   entriesForChar(data_gen),
 
-  // TODO: Add formulas/buffs
   // Formulas
   ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
+  ...dmg('skillDmg', baseTag, 'atk', dm.skill.dmg, 'skill'),
+  ...dmg('ultDmg', baseTag, 'atk', dm.ult.dmg, 'ult'),
+  ...dmg(
+    'e6Dmg',
+    { ...baseTag, damageType1: 'elemental' },
+    'atk',
+    dm.ult.dmg,
+    'ult',
+    [dm.e6.dmg],
+    {
+      cond: cmpGE(char.eidolon, 6, 'unique', ''),
+    }
+  ),
 
   // Buffs
   registerBuff(
-    'e6_dmg_',
-    ownBuff.premod.common_dmg_.add(
-      cmpGE(char.eidolon, 6, boolConditional.ifOn(1))
+    'skill_spd_',
+    ownBuff.premod.spd_.add(
+      cmpGE(
+        skillStacks,
+        2,
+        cmpGE(own.char.eidolon, 2, dm.skill.spd_ * 2, dm.skill.spd_),
+        cmpGE(skillStacks, 1, dm.skill.spd_)
+      )
     )
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.premod.common_dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+    'amplification_dmg_',
+    ownBuff.premod.common_dmg_.add(
+      amplification.ifOn(subscript(char.talent, dm.talent.dmg_))
+    )
   ),
-  registerBuff('enemy_defIgn_', enemyDebuff.common.defIgn_.add(numConditional))
+  registerBuff(
+    'ba2_resPen_',
+    ownBuff.premod.resPen_.quantum.add(
+      cmpEq(char.bonusAbility1, 1, amplification.ifOn(dm.b2.resPen_quantum))
+    )
+  ),
+  registerBuff(
+    'e1_crit_',
+    ownBuff.premod.crit_.add(
+      enemyLowerThan80_.ifOn(cmpGE(char.eidolon, 1, dm.e1.crit_))
+    )
+  )
+  // TODO: Add E2 conditional conditional stacking
+  // registerBuff('e2_spd')
 )
 export default sheet

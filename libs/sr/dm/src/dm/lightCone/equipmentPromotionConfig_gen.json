@@ -5249,6 +5249,506 @@
       }
     }
   ],
+  "20021": [
+    {
+      "EquipmentID": 20021,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 3000
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 4
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 38.4
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 14.4
+      },
+      "BaseAttackAdd": {
+        "Value": 2.16
+      },
+      "BaseDefence": {
+        "Value": 12
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20021,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 6000
+        },
+        {
+          "ItemID": 110251,
+          "ItemNum": 2
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 84.48
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 31.68
+      },
+      "BaseAttackAdd": {
+        "Value": 2.16
+      },
+      "BaseDefence": {
+        "Value": 26.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20021,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 12000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 2
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 4
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 145.92
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 54.72
+      },
+      "BaseAttackAdd": {
+        "Value": 2.16
+      },
+      "BaseDefence": {
+        "Value": 45.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20021,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 30000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 207.36
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 77.76
+      },
+      "BaseAttackAdd": {
+        "Value": 2.16
+      },
+      "BaseDefence": {
+        "Value": 64.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20021,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 60000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 3
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 268.8
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 100.8
+      },
+      "BaseAttackAdd": {
+        "Value": 2.16
+      },
+      "BaseDefence": {
+        "Value": 84
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20021,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 120000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 330.24
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 123.84
+      },
+      "BaseAttackAdd": {
+        "Value": 2.16
+      },
+      "BaseDefence": {
+        "Value": 103.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20021,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 391.68
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 146.88
+      },
+      "BaseAttackAdd": {
+        "Value": 2.16
+      },
+      "BaseDefence": {
+        "Value": 122.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    }
+  ],
+  "20022": [
+    {
+      "EquipmentID": 20022,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 3000
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 4
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 28.8
+      },
+      "BaseHPAdd": {
+        "Value": 4.32
+      },
+      "BaseAttack": {
+        "Value": 19.2
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 12
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20022,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 6000
+        },
+        {
+          "ItemID": 110251,
+          "ItemNum": 2
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 63.36
+      },
+      "BaseHPAdd": {
+        "Value": 4.32
+      },
+      "BaseAttack": {
+        "Value": 42.24
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 26.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20022,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 12000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 2
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 4
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 109.44
+      },
+      "BaseHPAdd": {
+        "Value": 4.32
+      },
+      "BaseAttack": {
+        "Value": 72.96
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 45.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20022,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 30000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 155.52
+      },
+      "BaseHPAdd": {
+        "Value": 4.32
+      },
+      "BaseAttack": {
+        "Value": 103.68
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 64.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20022,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 60000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 3
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 201.6
+      },
+      "BaseHPAdd": {
+        "Value": 4.32
+      },
+      "BaseAttack": {
+        "Value": 134.4
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 84
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20022,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 120000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 247.68
+      },
+      "BaseHPAdd": {
+        "Value": 4.32
+      },
+      "BaseAttack": {
+        "Value": 165.12
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 103.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 20022,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 293.76
+      },
+      "BaseHPAdd": {
+        "Value": 4.32
+      },
+      "BaseAttack": {
+        "Value": 195.84
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 122.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    }
+  ],
   "21000": [
     {
       "EquipmentID": 21000,
@@ -16999,6 +17499,1256 @@
       }
     }
   ],
+  "21047": [
+    {
+      "EquipmentID": 21047,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 4000
+        },
+        {
+          "ItemID": 113011,
+          "ItemNum": 5
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 38.4
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21047,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 8000
+        },
+        {
+          "ItemID": 110191,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 113011,
+          "ItemNum": 10
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 84.48
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21047,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 16000
+        },
+        {
+          "ItemID": 110192,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 113012,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 145.92
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21047,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 40000
+        },
+        {
+          "ItemID": 110192,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 113012,
+          "ItemNum": 9
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 207.36
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21047,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 80000
+        },
+        {
+          "ItemID": 110193,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113013,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 268.8
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21047,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 160000
+        },
+        {
+          "ItemID": 110193,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 113013,
+          "ItemNum": 7
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 330.24
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21047,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 391.68
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    }
+  ],
+  "21048": [
+    {
+      "EquipmentID": 21048,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 4000
+        },
+        {
+          "ItemID": 114001,
+          "ItemNum": 5
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 19.2
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21048,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 8000
+        },
+        {
+          "ItemID": 110241,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 114001,
+          "ItemNum": 10
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 42.24
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21048,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 16000
+        },
+        {
+          "ItemID": 110242,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 114002,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 72.96
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21048,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 40000
+        },
+        {
+          "ItemID": 110242,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 114002,
+          "ItemNum": 9
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 103.68
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21048,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 80000
+        },
+        {
+          "ItemID": 110243,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 114003,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 134.4
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21048,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 160000
+        },
+        {
+          "ItemID": 110243,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 114003,
+          "ItemNum": 7
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 165.12
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21048,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 195.84
+      },
+      "BaseAttackAdd": {
+        "Value": 2.88
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    }
+  ],
+  "21050": [
+    {
+      "EquipmentID": 21050,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 4000
+        },
+        {
+          "ItemID": 111011,
+          "ItemNum": 5
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 38.4
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21050,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 8000
+        },
+        {
+          "ItemID": 110251,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 111011,
+          "ItemNum": 10
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 84.48
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21050,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 16000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 111012,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 145.92
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21050,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 40000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 111012,
+          "ItemNum": 9
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 207.36
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21050,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 80000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111013,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 268.8
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21050,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 160000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 111013,
+          "ItemNum": 7
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 330.24
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 21050,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 391.68
+      },
+      "BaseHPAdd": {
+        "Value": 5.76
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    }
+  ],
+  "21051": [
+    {
+      "EquipmentID": 21051,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 4000
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 5
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 15
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 21051,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 8000
+        },
+        {
+          "ItemID": 110251,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 10
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 33
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 21051,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 16000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 57
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 21051,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 40000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 9
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 81
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 21051,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 80000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 105
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 21051,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 160000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 7
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 129
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 21051,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 153
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    }
+  ],
+  "21052": [
+    {
+      "EquipmentID": 21052,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 4000
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 5
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 48
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 24
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 9
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.35
+      }
+    },
+    {
+      "EquipmentID": 21052,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 8000
+        },
+        {
+          "ItemID": 110251,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 10
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 105.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 52.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 19.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.35
+      }
+    },
+    {
+      "EquipmentID": 21052,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 16000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 182.4
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 91.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 34.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.35
+      }
+    },
+    {
+      "EquipmentID": 21052,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 40000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 9
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 259.2
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 129.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 48.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.35
+      }
+    },
+    {
+      "EquipmentID": 21052,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 80000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 336
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 168
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 63
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.35
+      }
+    },
+    {
+      "EquipmentID": 21052,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 160000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 7
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 412.8
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 206.4
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 77.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.35
+      }
+    },
+    {
+      "EquipmentID": 21052,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 489.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 244.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 91.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.35
+      }
+    }
+  ],
   "22000": [
     {
       "EquipmentID": 22000,
@@ -17496,6 +19246,506 @@
       },
       "BaseDefenceAdd": {
         "Value": 2.7
+      }
+    }
+  ],
+  "22002": [
+    {
+      "EquipmentID": 22002,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 4000
+        },
+        {
+          "ItemID": 114001,
+          "ItemNum": 5
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 15
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 22002,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 8000
+        },
+        {
+          "ItemID": 110231,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 114001,
+          "ItemNum": 10
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 33
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 22002,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 16000
+        },
+        {
+          "ItemID": 110232,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 114002,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 57
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 22002,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 40000
+        },
+        {
+          "ItemID": 110232,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 114002,
+          "ItemNum": 9
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 81
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 22002,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 80000
+        },
+        {
+          "ItemID": 110233,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 114003,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 105
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 22002,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 160000
+        },
+        {
+          "ItemID": 110233,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 114003,
+          "ItemNum": 7
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 129
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    },
+    {
+      "EquipmentID": 22002,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 153
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.25
+      }
+    }
+  ],
+  "22003": [
+    {
+      "EquipmentID": 22003,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 4000
+        },
+        {
+          "ItemID": 114011,
+          "ItemNum": 5
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 48
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 12
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 22003,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 8000
+        },
+        {
+          "ItemID": 110181,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 114011,
+          "ItemNum": 10
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 105.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 26.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 22003,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 16000
+        },
+        {
+          "ItemID": 110182,
+          "ItemNum": 3
+        },
+        {
+          "ItemID": 114012,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 182.4
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 45.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 22003,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 40000
+        },
+        {
+          "ItemID": 110182,
+          "ItemNum": 6
+        },
+        {
+          "ItemID": 114012,
+          "ItemNum": 9
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 259.2
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 64.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 22003,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 80000
+        },
+        {
+          "ItemID": 110183,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 114013,
+          "ItemNum": 5
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 336
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 84
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 22003,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 160000
+        },
+        {
+          "ItemID": 110183,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 114013,
+          "ItemNum": 7
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 412.8
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 103.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
+      }
+    },
+    {
+      "EquipmentID": 22003,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 489.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 122.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 1.8
       }
     }
   ],
@@ -24749,6 +26999,256 @@
       }
     }
   ],
+  "23029": [
+    {
+      "EquipmentID": 23029,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 113001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 26.4
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 24
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23029,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110221,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 58.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 52.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23029,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110222,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 100.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 91.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23029,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110222,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 113002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 142.56
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 129.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23029,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110223,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 113003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 184.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 168
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23029,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110223,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 113003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 227.04
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 206.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23029,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 269.28
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 244.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    }
+  ],
   "23030": [
     {
       "EquipmentID": 23030,
@@ -24996,6 +27496,2256 @@
       },
       "BaseDefenceAdd": {
         "Value": 3.15
+      }
+    }
+  ],
+  "23031": [
+    {
+      "EquipmentID": 23031,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 113011,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 28.8
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 21
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23031,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110191,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113011,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 63.36
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 46.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23031,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110192,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113012,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 109.44
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 79.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23031,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110192,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 113012,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 155.52
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 113.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23031,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110193,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 113013,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 201.6
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 147
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23031,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110193,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 113013,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 247.68
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 180.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23031,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 293.76
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 214.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    }
+  ],
+  "23032": [
+    {
+      "EquipmentID": 23032,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 113001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 48
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 24
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 24
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23032,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110241,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 105.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 52.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 52.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23032,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110242,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 182.4
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 91.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 91.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23032,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110242,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 113002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 259.2
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 129.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 129.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23032,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110243,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 113003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 336
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 168
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 168
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23032,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110243,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 113003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 412.8
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 206.4
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 206.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23032,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 489.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 244.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 244.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    }
+  ],
+  "23033": [
+    {
+      "EquipmentID": 23033,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 114001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 26.4
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 24
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23033,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110201,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 114001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 58.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 52.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23033,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110202,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 114002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 100.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 91.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23033,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110202,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 114002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 142.56
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 129.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23033,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110203,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 114003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 184.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 168
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23033,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110203,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 114003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 227.04
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 206.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23033,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 269.28
+      },
+      "BaseAttackAdd": {
+        "Value": 3.96
+      },
+      "BaseDefence": {
+        "Value": 244.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    }
+  ],
+  "23034": [
+    {
+      "EquipmentID": 23034,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 114011,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 52.8
+      },
+      "BaseHPAdd": {
+        "Value": 7.92
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 24
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23034,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110231,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 114011,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 116.16
+      },
+      "BaseHPAdd": {
+        "Value": 7.92
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 52.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23034,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110232,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 114012,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 200.64
+      },
+      "BaseHPAdd": {
+        "Value": 7.92
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 91.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23034,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110232,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 114012,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 285.12
+      },
+      "BaseHPAdd": {
+        "Value": 7.92
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 129.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23034,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110233,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 114013,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 369.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.92
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 168
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23034,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110233,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 114013,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 454.08
+      },
+      "BaseHPAdd": {
+        "Value": 7.92
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 206.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    },
+    {
+      "EquipmentID": 23034,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 538.56
+      },
+      "BaseHPAdd": {
+        "Value": 7.92
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 244.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.6
+      }
+    }
+  ],
+  "23035": [
+    {
+      "EquipmentID": 23035,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 113001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 30
+      },
+      "BaseDefenceAdd": {
+        "Value": 4.5
+      }
+    },
+    {
+      "EquipmentID": 23035,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110221,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 66
+      },
+      "BaseDefenceAdd": {
+        "Value": 4.5
+      }
+    },
+    {
+      "EquipmentID": 23035,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110222,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 113002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 114
+      },
+      "BaseDefenceAdd": {
+        "Value": 4.5
+      }
+    },
+    {
+      "EquipmentID": 23035,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110222,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 113002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 162
+      },
+      "BaseDefenceAdd": {
+        "Value": 4.5
+      }
+    },
+    {
+      "EquipmentID": 23035,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110223,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 113003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 210
+      },
+      "BaseDefenceAdd": {
+        "Value": 4.5
+      }
+    },
+    {
+      "EquipmentID": 23035,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110223,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 113003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 258
+      },
+      "BaseDefenceAdd": {
+        "Value": 4.5
+      }
+    },
+    {
+      "EquipmentID": 23035,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 306
+      },
+      "BaseDefenceAdd": {
+        "Value": 4.5
+      }
+    }
+  ],
+  "23036": [
+    {
+      "EquipmentID": 23036,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 48
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 28.8
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23036,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110251,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 105.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 63.36
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23036,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 182.4
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 109.44
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23036,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 259.2
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 155.52
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23036,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 336
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 201.6
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23036,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 412.8
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 247.68
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23036,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 489.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 293.76
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    }
+  ],
+  "23037": [
+    {
+      "EquipmentID": 23037,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 43.2
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 28.8
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 21
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23037,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110201,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 95.04
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 63.36
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 46.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23037,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110202,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 164.16
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 109.44
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 79.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23037,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110202,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 233.28
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 155.52
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 113.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23037,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110203,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 302.4
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 201.6
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 147
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23037,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110203,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 371.52
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 247.68
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 180.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    },
+    {
+      "EquipmentID": 23037,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 440.64
+      },
+      "BaseHPAdd": {
+        "Value": 6.48
+      },
+      "BaseAttack": {
+        "Value": 293.76
+      },
+      "BaseAttackAdd": {
+        "Value": 4.32
+      },
+      "BaseDefence": {
+        "Value": 214.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 3.15
+      }
+    }
+  ],
+  "23038": [
+    {
+      "EquipmentID": 23038,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 57.6
+      },
+      "BaseHPAdd": {
+        "Value": 8.64
+      },
+      "BaseAttack": {
+        "Value": 24
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23038,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110231,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 126.72
+      },
+      "BaseHPAdd": {
+        "Value": 8.64
+      },
+      "BaseAttack": {
+        "Value": 52.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23038,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110232,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 218.88
+      },
+      "BaseHPAdd": {
+        "Value": 8.64
+      },
+      "BaseAttack": {
+        "Value": 91.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23038,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110232,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 311.04
+      },
+      "BaseHPAdd": {
+        "Value": 8.64
+      },
+      "BaseAttack": {
+        "Value": 129.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23038,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110233,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 403.2
+      },
+      "BaseHPAdd": {
+        "Value": 8.64
+      },
+      "BaseAttack": {
+        "Value": 168
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23038,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110233,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 495.36
+      },
+      "BaseHPAdd": {
+        "Value": 8.64
+      },
+      "BaseAttack": {
+        "Value": 206.4
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23038,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 587.52
+      },
+      "BaseHPAdd": {
+        "Value": 8.64
+      },
+      "BaseAttack": {
+        "Value": 244.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    }
+  ],
+  "23039": [
+    {
+      "EquipmentID": 23039,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 62.4
+      },
+      "BaseHPAdd": {
+        "Value": 9.36
+      },
+      "BaseAttack": {
+        "Value": 21.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23039,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110181,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 137.28
+      },
+      "BaseHPAdd": {
+        "Value": 9.36
+      },
+      "BaseAttack": {
+        "Value": 47.52
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23039,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110182,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 237.12
+      },
+      "BaseHPAdd": {
+        "Value": 9.36
+      },
+      "BaseAttack": {
+        "Value": 82.08
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23039,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110182,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 115002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 336.96
+      },
+      "BaseHPAdd": {
+        "Value": 9.36
+      },
+      "BaseAttack": {
+        "Value": 116.64
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23039,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110183,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 436.8
+      },
+      "BaseHPAdd": {
+        "Value": 9.36
+      },
+      "BaseAttack": {
+        "Value": 151.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23039,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110183,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 115003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 536.64
+      },
+      "BaseHPAdd": {
+        "Value": 9.36
+      },
+      "BaseAttack": {
+        "Value": 185.76
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 23039,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 636.48
+      },
+      "BaseHPAdd": {
+        "Value": 9.36
+      },
+      "BaseAttack": {
+        "Value": 220.32
+      },
+      "BaseAttackAdd": {
+        "Value": 3.24
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
       }
     }
   ],
@@ -25975,6 +30725,506 @@
     },
     {
       "EquipmentID": 24003,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 489.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 244.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    }
+  ],
+  "24004": [
+    {
+      "EquipmentID": 24004,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 48
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 24
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24004,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110201,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 105.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 52.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24004,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110202,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 182.4
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 91.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24004,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110202,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 259.2
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 129.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24004,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110203,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 336
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 168
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24004,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110203,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 412.8
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 206.4
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24004,
+      "Promotion": 6,
+      "PromotionCostList": [],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 80,
+      "BaseHP": {
+        "Value": 489.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 244.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 183.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    }
+  ],
+  "24005": [
+    {
+      "EquipmentID": 24005,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 5000
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 8
+        }
+      ],
+      "PlayerLevelRequire": 15,
+      "MaxLevel": 20,
+      "BaseHP": {
+        "Value": 48
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 24
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 18
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24005,
+      "Promotion": 1,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 10000
+        },
+        {
+          "ItemID": 110251,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111001,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 1,
+      "MaxLevel": 30,
+      "BaseHP": {
+        "Value": 105.6
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 52.8
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 39.6
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24005,
+      "Promotion": 2,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 20000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 4
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 2,
+      "MaxLevel": 40,
+      "BaseHP": {
+        "Value": 182.4
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 91.2
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 68.4
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24005,
+      "Promotion": 3,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 50000
+        },
+        {
+          "ItemID": 110252,
+          "ItemNum": 8
+        },
+        {
+          "ItemID": 111002,
+          "ItemNum": 12
+        }
+      ],
+      "WorldLevelRequire": 3,
+      "MaxLevel": 50,
+      "BaseHP": {
+        "Value": 259.2
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 129.6
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 97.2
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24005,
+      "Promotion": 4,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 100000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 5
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 6
+        }
+      ],
+      "WorldLevelRequire": 4,
+      "MaxLevel": 60,
+      "BaseHP": {
+        "Value": 336
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 168
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 126
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24005,
+      "Promotion": 5,
+      "PromotionCostList": [
+        {
+          "ItemID": 2,
+          "ItemNum": 200000
+        },
+        {
+          "ItemID": 110253,
+          "ItemNum": 10
+        },
+        {
+          "ItemID": 111003,
+          "ItemNum": 8
+        }
+      ],
+      "WorldLevelRequire": 5,
+      "MaxLevel": 70,
+      "BaseHP": {
+        "Value": 412.8
+      },
+      "BaseHPAdd": {
+        "Value": 7.2
+      },
+      "BaseAttack": {
+        "Value": 206.4
+      },
+      "BaseAttackAdd": {
+        "Value": 3.6
+      },
+      "BaseDefence": {
+        "Value": 154.8
+      },
+      "BaseDefenceAdd": {
+        "Value": 2.7
+      }
+    },
+    {
+      "EquipmentID": 24005,
       "Promotion": 6,
       "PromotionCostList": [],
       "WorldLevelRequire": 5,

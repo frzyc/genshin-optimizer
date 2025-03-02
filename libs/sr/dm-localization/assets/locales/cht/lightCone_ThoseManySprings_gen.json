@@ -1,0 +1,7 @@
+{
+  "name": "那無數個春天",
+  "passive": {
+    "name": "世事無痕",
+    "description": "使裝備者的效果命中提高<orangeStrong>{{1, percent}}%</orangeStrong>，裝備者發動普通攻擊、施放戰技、終結技攻擊敵方目標後，有{{2, percent}}%的基礎機率使其陷入【卸甲】狀態。【卸甲】狀態下，敵方目標受到的傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，持續{{4}}回合。若目標處於裝備者施加的持續傷害狀態，則有{{5, percent}}%的基礎機率將裝備者施加的【卸甲】狀態升級成【窮寇】狀態，使敵方目標受到的傷害額外提高<orangeStrong>{{6, percent}}%</orangeStrong>，持續{{4}}回合，期間裝備者無法對其施加【卸甲】。"
+  }
+}

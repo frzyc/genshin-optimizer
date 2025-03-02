@@ -45,32 +45,25 @@
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#せいか}星火{RUBY_E#}",
-        "fullDesc": "攻撃を行った時、{{1, percent}}%の基礎確率で敵を燃焼状態にする、{{2}}ターン継続。<br>燃焼状態の敵はターンが回ってくるたびに、姫子の攻撃力{{3, percent}}%分の炎属性持続ダメージを受ける。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "攻撃を行った時、{{1, percent}}%の基礎確率で敵を燃焼状態にする、{{2}}ターン継続。<br>燃焼状態の敵はターンが回ってくるたびに、姫子の攻撃力{{3, percent}}%分の炎属性持続ダメージを受ける。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#しゃくねつ}灼熱{RUBY_E#}",
-        "fullDesc": "燃焼状態の敵に対する、戦闘スキルによるダメージ+{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "燃焼状態の敵に対する、戦闘スキルによるダメージ+{{1, percent}}%。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#みちしるべ}道標{RUBY_E#}",
-        "fullDesc": "残りHPが{{1, percent}}%以上の場合、会心率+{{2, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "残りHPが{{1, percent}}%以上の場合、会心率+{{2, percent}}%。"
       }
     }
   },

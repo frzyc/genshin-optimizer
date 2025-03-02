@@ -1,8 +1,10 @@
 {
+  "id": "1151",
   "icon": "IconRole27",
   "rarity": "A",
   "attribute": "fire",
   "specialty": "support",
+  "faction": "SonsOfCalydon",
   "fullname": "Luciana de Montefio",
   "stats": {
     "atk_base": 95,

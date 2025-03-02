@@ -15,9 +15,17 @@ import {
   type RarityKey,
   type StatKey,
 } from '@genshin-optimizer/sr/consts'
-import type { Anchor, Rank, SkillTreeType } from '@genshin-optimizer/sr/dm'
+import type {
+  Anchor,
+  AvatarSkillTreeConfig,
+  AvatarSkillTreeType,
+  Rank,
+  ServantSkillTreeType,
+  SkillTreeType,
+} from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
+  allAvatarSkillTreeTypes,
   allRanks,
   allSkillTreeTypes,
   avatarBaseTypeMap,
@@ -26,6 +34,7 @@ import {
   avatarPromotionConfig,
   avatarRankConfig,
   avatarRarityMap,
+  avatarServantSkillConfig,
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
@@ -70,45 +79,27 @@ export type CharacterDatum = {
   damageType: ElementalTypeKey
   path: PathKey
   ascension: Promotion[]
-  skillTree: Record<SkillTreeType, SkillTree>
+  skillTree: Record<AvatarSkillTreeType, SkillTree>
+  servantSkillTree?: Record<ServantSkillTreeType, SkillTree> | undefined
   rankMap: RankInfoMap
+  maxEnergy: number
 }
 
 export type CharacterData = Record<CharacterKey, CharacterDatum>
 export default function characterData(): CharacterData {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
-      ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
+      ([avatarid, { Rarity, DamageType, AvatarBaseType, SPNeed }]) => {
         const skillTree = Object.fromEntries(
           Object.entries(avatarSkillTreeConfig[avatarid]).map(
             ([pointId, skillTree], index) => {
               const { Anchor, PointType, LevelUpSkillID } = skillTree[0]
               const skillTreeType = allSkillTreeTypes[index]
-              const skillParamList =
-                LevelUpSkillID.length > 0
-                  ? // Grab from AvatarSkillConfig (basic, skill, ult, talent, technique)
-                    LevelUpSkillID.map((skillId) =>
-                      // Add -1 at the beginning of arrays for basic, skill, ult, talent
-                      transposeArray([
-                        ...(skillTreeType === 'technique'
-                          ? []
-                          : [
-                              range(
-                                1,
-                                avatarSkillConfig[skillId][0].ParamList!.length
-                              ).map(() => -1),
-                            ]),
-                        ...avatarSkillConfig[skillId]!.map(({ ParamList }) =>
-                          ParamList.map(({ Value }) => Value)
-                        ),
-                      ])
-                    )
-                  : // Grab from itself (AvatarSkillTreeConfig) (bonus abilities/stat boosts)
-                    [
-                      skillTree.map((config) => [
-                        ...config.ParamList.map(({ Value }) => Value),
-                      ]),
-                    ]
+              const skillParamList = getSkillParamList(
+                LevelUpSkillID,
+                skillTreeType,
+                skillTree
+              )
 
               const levels = skillTree.map(({ StatusAddList }) => {
                 if (!StatusAddList.length) return {}
@@ -136,7 +127,17 @@ export default function characterData(): CharacterData {
             }
           )
         )
-        verifyObjKeys(skillTree, allSkillTreeTypes)
+        const servantSkillTree:
+          | Record<ServantSkillTreeType, SkillTree>
+          | undefined = skillTree['servantSkill']
+          ? {
+              servantSkill: skillTree['servantSkill'],
+              servantTalent: skillTree['servantTalent'],
+            }
+          : undefined
+        delete skillTree['servantSkill']
+        delete skillTree['servantTalent']
+        verifyObjKeys(skillTree, allAvatarSkillTreeTypes)
 
         const ascension = avatarPromotionConfig[avatarid].map(
           ({
@@ -176,7 +177,10 @@ export default function characterData(): CharacterData {
             skillTypeAddLevel: Object.fromEntries(
               Object.entries(rankConfig.SkillAddLevelList).map(
                 ([skillId, levelBoost]) => {
-                  const attackType = avatarSkillConfig[skillId][0].AttackType
+                  const skillConfig =
+                    avatarSkillConfig[skillId] ??
+                    avatarServantSkillConfig[skillId]
+                  const attackType = skillConfig[0].AttackType
                   return [
                     // AttackType fallback to Talent if not defined
                     attackType ? DmAttackTypeMap[attackType] : 'talent',
@@ -194,8 +198,10 @@ export default function characterData(): CharacterData {
           damageType: avatarDamageTypeMap[DamageType],
           path: avatarBaseTypeMap[AvatarBaseType],
           skillTree,
+          servantSkillTree,
           ascension,
           rankMap,
+          maxEnergy: SPNeed.Value,
         }
         const genderedKey = characterIdMap[avatarid]
         // Assumes genders have the same stats
@@ -210,4 +216,64 @@ export default function characterData(): CharacterData {
   verifyObjKeys(data, allCharacterKeys)
 
   return data
+}
+
+function getSkillParamList(
+  LevelUpSkillID: number[],
+  skillTreeType: SkillTreeType,
+  skillTree: AvatarSkillTreeConfig[]
+): number[][][] {
+  if (LevelUpSkillID.length > 0) {
+    if (skillTree[0].PointType !== 4) {
+      // Character skill (basic, skill, ult, talent, technique)
+      return getSkillParamFromAvatarSkill(LevelUpSkillID, skillTreeType)
+    } else {
+      // Servant skill
+      return getSkillParamFromAvatarServantSkill(LevelUpSkillID)
+    }
+  } else {
+    // Grab from itself (AvatarSkillTreeConfig) (bonus abilities/stat boosts)
+    return getSkillParamFromAvatarSkillTree(skillTree)
+  }
+}
+
+function getSkillParamFromAvatarSkill(
+  LevelUpSkillID: number[],
+  skillTreeType: SkillTreeType
+) {
+  return LevelUpSkillID.map((skillId) =>
+    // Add -1 at the beginning of arrays for basic, skill, ult, talent
+    transposeArray([
+      ...(skillTreeType === 'technique'
+        ? []
+        : [
+            range(1, avatarSkillConfig[skillId][0].ParamList!.length).map(
+              () => -1
+            ),
+          ]),
+      ...avatarSkillConfig[skillId]!.map(({ ParamList }) =>
+        ParamList.map(({ Value }) => Value)
+      ),
+    ])
+  )
+}
+
+function getSkillParamFromAvatarSkillTree(skillTree: AvatarSkillTreeConfig[]) {
+  return [
+    skillTree.map((config) => [...config.ParamList.map(({ Value }) => Value)]),
+  ]
+}
+
+function getSkillParamFromAvatarServantSkill(LevelUpSkillID: number[]) {
+  return LevelUpSkillID.map((skillId) =>
+    transposeArray([
+      // Add in -1 for level 0
+      range(1, avatarServantSkillConfig[skillId][0].ParamList.length).map(
+        () => -1
+      ),
+      ...avatarServantSkillConfig[skillId].map(({ ParamList }) =>
+        ParamList.map(({ Value }) => Value)
+      ),
+    ])
+  )
 }

@@ -1,0 +1,6 @@
+{
+  "setName": "Lushaka, die versunkenen See",
+  "setEffects": {
+    "2": "Erhöht Die Energie-Wiederherstellungsrate des Trägers um {{1, percent}}%. Wenn der Träger nicht die erste Figur in der Teamformation ist, wird der ANG der ersten Figur in der Teamformation um {{2, percent}}% erhöht."
+  }
+}

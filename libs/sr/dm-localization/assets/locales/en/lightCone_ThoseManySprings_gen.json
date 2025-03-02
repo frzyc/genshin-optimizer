@@ -1,0 +1,7 @@
+{
+  "name": "Those Many Springs",
+  "passive": {
+    "name": "Worldly Affairs Leave No Mark",
+    "description": "Increases the wearer's Effect Hit Rate by <orangeStrong>{{1, percent}}%</orangeStrong>. After the wearer uses Basic ATK, Skill, or Ultimate to attack an enemy target, there is a {{2, percent}}% base chance to inflict \"Unarmored\" on the target. While in the Unarmored state, the enemy target receives <orangeStrong>{{3, percent}}%</orangeStrong> increased DMG, lasting for {{4}} turn(s). If the target is under a DoT state inflicted by the wearer, there is a {{5, percent}}% base chance to upgrade the \"Unarmored\" state inflicted by the wearer to the \"Cornered\" state, which additionally increases the DMG the enemy target receives by <orangeStrong>{{6, percent}}%</orangeStrong>, lasting for {{4}} turn(s). During this period, the wearer cannot inflict \"Unarmored\" on the target."
+  }
+}

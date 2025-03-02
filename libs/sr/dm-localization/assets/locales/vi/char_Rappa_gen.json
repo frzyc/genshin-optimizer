@@ -1,0 +1,117 @@
+{
+  "name": "Rappa",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Nhẫn Thuật: Gan Vàng Dạ Sắt",
+        "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Rappa.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định.",
+        "tag": "Đánh Đơn"
+      },
+      "1": {
+        "name": "Nhẫn Cụ: Lưỡi Xoáy Hàng Ma",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định và gây lượng nhỏ Sát Thương Số Ảo cho mục tiêu lân cận kẻ đó. Tấn công kẻ địch không có điểm yếu Số Ảo cũng có thể làm giảm Sức Bền.",
+        "tag": "Khuếch Tán"
+      },
+      "2": {
+        "name": "Nhẫn Cụ: Lưỡi Xoáy Hàng Ma",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định và gây lượng nhỏ Sát Thương Số Ảo cho mục tiêu lân cận kẻ đó. Tấn công kẻ địch không có điểm yếu Số Ảo cũng có thể làm giảm Sức Bền.",
+        "tag": "Khuếch Tán"
+      },
+      "3": {
+        "name": "Nhẫn Cụ: Lưỡi Xoáy Hàng Ma",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho toàn bộ kẻ địch. Tấn công kẻ địch không có điểm yếu Số Ảo cũng có thể làm giảm Sức Bền.",
+        "tag": "Đánh Lan"
+      },
+      "4": {
+        "name": "Nhẫn Cụ: Lưỡi Xoáy Hàng Ma",
+        "fullDesc": "Phát động Nhẫn Cụ: Lưỡi Xoáy Hàng Ma, 2 đòn tấn công đầu tiên gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của Rappa cho 1 kẻ địch chỉ định đồng thời gây Sát Thương Số Ảo bằng <orangeStrong>{{2, percent}}%</orangeStrong> tấn công của Rappa cho mục tiêu lân cận kẻ đó, đòn thứ 3 gây Sát Thương Số Ảo bằng <orangeStrong>{{3, percent}}%</orangeStrong> tấn công của Rappa cho toàn bộ kẻ địch.<br>Tấn Công Thường Cường Hóa không thể hồi Điểm Chiến Kỹ, tấn công kẻ địch không có điểm yếu Số Ảo cũng có thể làm giảm Sức Bền, hiệu ứng bằng {{4, percent}}% điểm Giảm Sức Bền ban đầu. Khi phá vỡ Điểm Yếu, sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Số Ảo.",
+        "shortDesc": "2 đòn tấn công đầu tiên sẽ gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định, và gây lượng nhỏ Sát Thương Số Ảo cho mục tiêu lân cận kẻ đó. Đòn tấn công thứ 3 sẽ gây lượng nhỏ Sát Thương Số Ảo cho toàn bộ kẻ địch. Tấn công kẻ địch không có điểm yếu Số Ảo cũng có thể làm giảm Sức Bền.",
+        "tag": "Khuếch Tán"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Nhẫn Thiết: Quán Triệt Tín Niệm",
+        "fullDesc": "Gây Sát Thương Số Ảo cho toàn bộ phe địch tương đương với <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Rappa.",
+        "shortDesc": "Gây Sát Thương Số Ảo cho toàn phe địch.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Nhẫn Đạo Tối Cao: Aishiteru",
+        "fullDesc": "Vào trạng thái Kết Ấn, nhận ngay 1 hiệp tăng thêm và nhận {{3}} điểm Sắc Mực, đồng thời Hiệu Suất Phá Vỡ Điểm Yếu tăng {{1, percent}}%, Tấn Công Kích Phá tăng <orangeStrong>{{2, percent}}%</orangeStrong>. <br>Tấn Công Thường ở trạng thái Kết Ấn nhận Cường Hóa đồng thời không thể thi triển Chiến Kỹ và Tuyệt Kỹ. Sau khi thi triển Tấn Công Thường Cường Hóa sẽ tiêu hao 1 điểm Sắc Mực, tiêu hao hết sẽ thoát trạng thái Kết Ấn.",
+        "shortDesc": "Vào trạng thái Kết Ấn, nhận <orangeStrong>hiệp tăng thêm</orangeStrong> và nhận 3 điểm Sắc Mực, đồng thời <orangeStrong>tăng Hiệu Suất Phá Vỡ Điểm Yếu, tăng Tấn Công Kích Phá</orangeStrong>. <br>Ở trạng thái Kết Ấn <orangeStrong>nhận Tấn Công Thường Cường Hóa</orangeStrong>, sau khi thi triển Tấn Công Thường Cường Hóa sẽ tiêu hao 1 điểm Sắc Mực, tiêu hao hết sẽ thoát trạng thái Kết Ấn.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Nhẫn-Khoa Học: Túi Kiên Nhẫn",
+        "fullDesc": "Khi điểm yếu của mục tiêu phe địch bị phá vỡ, Rappa sẽ nhận 1 điểm Nạp Năng Lượng, tối đa có {{1}} điểm Nạp Năng Lượng. Vào lần tiếp theo khi Rappa phát động đòn tấn công thứ 3 của Nhẫn Cụ: Lưỡi Xoáy Hàng Ma sẽ gây thêm cho toàn bộ phe địch Sát Thương Phá Vỡ bằng <orangeStrong>{{3, percent}}%</orangeStrong> Sát Thương Phá Vỡ Số Ảo của Rappa, sát thương này có thể bỏ qua thuộc tính điểm yếu và làm giảm {{4}} điểm Sức Bền, đồng thời tiêu hao tất cả Nạp Năng Lượng, mỗi điểm Nạp Năng Lượng sẽ khiến Bội Số Sát Thương Phá Vỡ lần này tăng <orangeStrong>{{5, percent}}%</orangeStrong>, đồng thời tăng {{6}} điểm Giảm Sức Bền bỏ qua thuộc tính điểm yếu.<br>Khi Phá Vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Số Ảo.",
+        "shortDesc": "Khi điểm yếu của mục tiêu phe địch bị phá vỡ, Rappa sẽ nhận 1 điểm Nạp Năng Lượng. Khi phát động đòn tấn công thứ 3 của Nhẫn Cụ: Lưỡi Xoáy Hàng Ma sẽ gây thêm cho toàn bộ phe địch Sát Thương Phá Vỡ Số Ảo, sát thương này có thể <orangeStrong>bỏ qua thuộc tính điểm yếu và làm giảm Sức Bền</orangeStrong>, đồng thời tiêu hao tất cả Nạp Năng Lượng, tăng Bội Số Sát Thương Phá Vỡ lần này và tăng điểm Giảm Sức Bền.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Nhẫn Bộ: Nhảy Vọt",
+        "fullDesc": "Sau khi sử dụng Bí Kỹ sẽ vào trạng thái Graffiti trong {{1}} giây liên tục. Ở trạng thái Graffiti sẽ di chuyển nhanh về phía trước một đoạn và tấn công kẻ địch tiếp xúc. Trong quá trình di chuyển nhanh, có thể đỡ tất cả tấn công của kẻ địch. Thi triển tấn công ở trạng thái Graffiti có thể kết thúc sớm thời gian duy trì. Sau khi chủ động tấn công kẻ địch vào chiến đấu, gây {{5}} điểm Giảm Sức Bền bỏ qua Thuộc Tính Điểm Yếu cho mỗi mục tiêu phe địch, đồng thời gây Sát Thương Phá Vỡ tương đương với {{2, percent}}% Sát Thương Phá Vỡ thuộc tính Số Ảo của Rappa, và gây Sát Thương Phá Vỡ tương đương với {{3, percent}}% Sát Thương Phá Vỡ thuộc tính Số Ảo của Rappa cho mục tiêu lân cận kẻ đó. Đồng thời khiến bản thân nhận {{4}} điểm Năng Lượng.",
+        "shortDesc": "Vào trạng thái Graffiti, di chuyển nhanh về phía trước một đoạn và tấn công kẻ địch tiếp xúc. Sau khi tấn công kẻ địch để vào trận, sẽ gây <orangeStrong>Giảm Sức Bền bỏ qua Thuộc Tính Điểm Yếu</orangeStrong> cho mỗi mục tiêu phe địch và Sát Thương Phá Vỡ thuộc tính Số Ảo, đồng thời gây Sát Thương Phá Vỡ thuộc tính Số Ảo cho mục tiêu lân cận kẻ đó, khiến bản thân nhận Năng Lượng.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của mục tiêu phe địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bí Kíp Nhẫn Pháp: Ma Thiên",
+        "fullDesc": "Khi điểm yếu của kẻ địch cấp Tinh Anh trở lên bị phá vỡ, Rappa sẽ nhận thêm {{2}} điểm Nạp Năng Lượng, và hồi phục {{1}} điểm Năng Lượng."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bí Kíp Nhẫn Pháp: Biển Rền",
+        "fullDesc": "Trong thời gian Kết Ấn, sau khi Rappa thi triển Tấn Công Thường Cường Hóa gây sát thương cho mục tiêu phe địch ở trạng thái Phá Vỡ Điểm Yếu, sẽ khiến điểm Giảm Sức Bền của lần sát thương này chuyển hóa thành 1 lần Siêu Sát Thương Phá Vỡ {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bí Kíp Nhẫn Pháp: Lá Khô",
+        "fullDesc": "Khi điểm yếu của mục tiêu phe địch bị phá vỡ, Sát Thương Phá Vỡ phải chịu tăng {{1, percent}}%, nếu Tấn Công hiện tại của Rappa trên {{2}} điểm, cứ vượt quá 100 điểm tấn công có thể khiến trị số này tăng thêm {{3, percent}}%, tối đa tăng thêm {{4, percent}}%. Hiệu ứng duy trì {{5}} hiệp."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Không Đủ Sáu Tiền, Trở Về Từ Âm Giới",
+      "desc": "Trong thời gian thi triển Tuyệt Kỹ để vào trạng thái Kết Ấn, sát thương Rappa gây ra bỏ qua {{1, percent}}% Phòng Thủ của mục tiêu. Sau khi thoát trạng thái Kết Ấn sẽ hồi {{2}} điểm Năng Lượng."
+    },
+    "2": {
+      "name": "Haiku Khai Tâm Trí, Tự Do Không Vướng Bận",
+      "desc": "2 đòn tấn công đầu tiên của Tấn Công Thường Cường Hóa sẽ tăng {{1, percent}}% Giảm Sức Bền của 1 kẻ địch chỉ định."
+    },
+    "3": {
+      "name": "Đền Miếu Bao La, Cũng Không Đẩy Lùi Địa Ngục",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không vượt quá cấp 15; Cấp Thiên Phú +2, tối đa không vượt quá cấp 15."
+    },
+    "4": {
+      "name": "Thời Gian Ăn Mòn Chính Đạo Của Nhẫn Hiệp",
+      "desc": "Trong thời gian Kết Ấn, Tốc Độ của toàn bộ phe ta tăng {{1, percent}}%."
+    },
+    "5": {
+      "name": "Nhất Tâm Bất Loạn, Mũi Tên Không Chệch Hướng",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15, cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "6": {
+      "name": "Phá Tà Hiển Chính, Báo Ứng Không Thương Xót",
+      "desc": "Khi bắt đầu chiến đấu, Rappa nhận được {{1}} điểm Nạp Năng Lượng của hiệu ứng Thiên Phú, đồng thời giới hạn Nạp Năng Lượng tăng {{2}} điểm. Sau khi phát động đòn tấn công thứ 3 của Nhẫn Cụ: Lưỡi Xoáy Hàng Ma, sẽ nhận được {{1}} điểm Nạp Năng Lượng."
+    }
+  }
+}

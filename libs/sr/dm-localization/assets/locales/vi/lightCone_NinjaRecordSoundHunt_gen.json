@@ -1,0 +1,7 @@
+{
+  "name": "Nhẫn Sự Lục-Săn Bắn Âm Luật",
+  "passive": {
+    "name": "Bắt Đầu Biểu Diễn!",
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của người trang bị. Sau khi tổn thất hoặc hồi HP của bản thân, Sát Thương Bạo Kích tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp, hiệu ứng này mỗi hiệp chỉ có thể kích hoạt 1 lần."
+  }
+}

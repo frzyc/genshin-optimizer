@@ -3,8 +3,15 @@ import {
   allCharacterGenderedKeys,
   allLightConeKeys,
   allRelicSetKeys,
+  allServantKeys,
 } from '@genshin-optimizer/sr/consts'
-import { allCharHashData, charHashData, charSheet } from './charHashData'
+import {
+  allCharHashData,
+  allServantHashData,
+  charHashData,
+  charSheet,
+  servantHashData,
+} from './charHashData'
 import { allLightConeHashData, lightConeHashData } from './lightConeHashData'
 import { allRelicHashData, relicHashData } from './relicHashData'
 import { uiHashData } from './uiHashData'
@@ -15,6 +22,11 @@ const charNames = Object.fromEntries(
   Object.entries(allCharHashData).map(([key, data]) => [key, data.name])
 )
 verifyObjKeys(charNames, allCharacterGenderedKeys)
+
+const servantNames = Object.fromEntries(
+  Object.entries(allServantHashData).map(([key, data]) => [key, data.name])
+)
+verifyObjKeys(servantNames, allServantKeys)
 
 const relicNames = Object.fromEntries(
   Object.entries(allRelicHashData).map(([key, data]) => [key, data.setName])
@@ -29,8 +41,11 @@ verifyObjKeys(lightConeNames, allLightConeKeys)
 export const HashData = {
   char: allCharHashData,
   charNames,
+  servant: allServantHashData,
+  servantNames,
   characters: charHashData,
   charSheet,
+  servants: servantHashData,
 
   relic: allRelicHashData,
   relicNames,
@@ -43,44 +58,44 @@ export const HashData = {
   ui: uiHashData,
 
   common: {
-    level: '-636045037', // Level
-    lv: '982642653', // Lv.
-    path_one: '-1952347303', // Path
-    path_other: '-815380608', // Paths
-    rarity: '1898197464',
+    level: '5833980347051014026', // Level
+    lv: '6432248371558474859', // Lv.
+    path_one: '16437605064767516057', // Path
+    path_other: '15566938724422251912', // Paths
+    rarity: '10776505875408737758',
   },
 
   statKey: {
-    spd: '461357812',
-    spd_: '461357812',
-    hp: '-1544419067',
-    hp_: '-1544419067',
-    atk: '-1126979077',
-    atk_: '-1126979077',
-    def: '-615378225',
-    def_: '-615378225',
-    crit_: '528301800',
-    crit_dmg_: '-220753499',
-    brEffect_: '-1668395853',
-    eff_: '284076746',
-    eff_res_: '-952827954',
-    enerRegen_: '-1155541365',
-    heal_: '799727458',
-    physical_dmg_: '-950888303',
-    fire_dmg_: '1202183228',
-    ice_dmg_: '1448585423',
-    wind_dmg_: '2017136070',
-    lightning_dmg_: '235195444',
-    quantum_dmg_: '1819458027',
-    imaginary_dmg_: '1031064451',
-    dmg_: '-907763317',
-    weakness_: '-1297647890',
-    resPen_: '-538204877',
+    spd: '1551664918081489046',
+    spd_: '1551664918081489046',
+    hp: '6221757978868999847',
+    hp_: '6221757978868999847',
+    atk: '5944307725021040882',
+    atk_: '5944307725021040882',
+    def: '8932885934187978117',
+    def_: '8932885934187978117',
+    crit_: '8920628846043734901',
+    crit_dmg_: '9616567210782620870',
+    brEffect_: '12291598457447136965',
+    eff_: '11272223239254419789',
+    eff_res_: '4333504174252709265',
+    enerRegen_: '9497329997440666192',
+    heal_: '6870358963948712726',
+    physical_dmg_: '12236102685634728712',
+    fire_dmg_: '6217159245313749913',
+    ice_dmg_: '14590633397294595254',
+    wind_dmg_: '17570598288988869779',
+    lightning_dmg_: '562985858704247780',
+    quantum_dmg_: '14382067715181772946',
+    imaginary_dmg_: '6916881987242258396',
+    dmg_: '15983140579213054709',
+    weakness_: '1118831856511100259',
+    resPen_: '908412531652996285',
   },
 
   teams: {
-    team: '-839489437', // Team
-    name: '858715661', // Team Name
-    editTeam: '-756448810',
+    team: '17397759760626194356', // Team
+    name: '17411511948024426109', // Team Name
+    editTeam: '5003704226092642529',
   },
 }

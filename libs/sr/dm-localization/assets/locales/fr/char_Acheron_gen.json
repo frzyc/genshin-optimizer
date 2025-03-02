@@ -13,7 +13,7 @@
       "0": {
         "name": "Éclair multiple",
         "fullDesc": "Gagne {{3}} point de Rêve flétri. Applique {{3}} cumul d'Étreinte écarlate à une cible ennemie unique, lui inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Achéron et des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ d'Achéron aux cibles adjacentes.",
-        "shortDesc": "Gagne <orangeStrong>{{3}}</orangeStrong> point de Rêve flétri. Applique <orangeStrong>{{3}}</orangeStrong> cumul d'Étreinte écarlate à un ennemi unique, lui inflige des DGT de foudre et inflige des DGT de foudre mineurs aux cibles adjacentes.",
+        "shortDesc": "Gagne <orangeStrong>{{3}}</orangeStrong> point de Rêve flétri. Applique <orangeStrong>{{3}}</orangeStrong> cumul d'Étreinte écarlate à un ennemi, lui inflige des DGT de foudre et inflige des DGT de foudre mineurs aux cibles adjacentes.",
         "tag": "Propagation"
       }
     },
@@ -26,25 +26,21 @@
       },
       "1": {
         "name": "Lame de pluie",
-        "fullDesc": "",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate de la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé.",
         "tag": "ZdE"
       },
       "2": {
         "name": "Lame de pluie",
-        "fullDesc": "",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate de la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé.",
         "tag": "ZdE"
       },
       "3": {
         "name": "Lame de pluie",
-        "fullDesc": "",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique, et supprime jusqu'à 3 cumuls d'Étreinte écarlate de la cible. Inflige 1 fois des DGT de foudre mineurs à tous les ennemis lorsque l'effet Étreinte écarlate est supprimé. Le multiplicateur de cette instance de DGT augmente pour chaque cumul d'Étreinte écarlate supprimé.",
         "tag": "ZdE"
       },
       "4": {
         "name": "Vengeance du Styx",
-        "fullDesc": "",
         "shortDesc": "Inflige des DGT de foudre à tous les ennemis et supprime tous les effets Étreinte écarlate.",
         "tag": "ZdE"
       }
@@ -69,32 +65,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Démon écarlate",
-        "fullDesc": "Obtient immédiatement {{1}} points de Rêve flétri en début de combat et applique {{1}} cumuls d'Étreinte écarlate à un ennemi aléatoire. Lorsque Rêve flétri atteint la limite, chaque point de Rêve flétri au-dessus de la limite accorde 1 cumul de Chemin de la réalisation. Permet à Chemin de la réalisation de se cumuler jusqu'à {{2}} fois de cette façon.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Obtient immédiatement {{1}} points de Rêve flétri en début de combat et applique {{1}} cumuls d'Étreinte écarlate à un ennemi aléatoire. Lorsque Rêve flétri atteint la limite, chaque point de Rêve flétri au-dessus de la limite accorde 1 cumul de Chemin de la réalisation. Permet à Chemin de la réalisation de se cumuler jusqu'à {{2}} fois de cette façon."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Abîme",
-        "fullDesc": "Lorsqu'il y a 1 ou 2 personnages de la Nihilité autres qu'Achéron dans l'équipe, les DGT infligés par l'ATQ normale, la compétence et l'ultime d'Achéron augmentent respectivement à hauteur de {{1, percent}}% ou {{2, percent}}% des DGT initiaux.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsqu'il y a 1 ou 2 personnages de la Nihilité autres qu'Achéron dans l'équipe, les DGT infligés par l'ATQ normale, la compétence et l'ultime d'Achéron augmentent respectivement à hauteur de {{1, percent}}% ou {{2, percent}}% des DGT initiaux."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Âme de tonnerre",
-        "fullDesc": "Augmente de {{1, percent}}% les DGT d'Achéron lorsque la Lame de pluie de son ultime touche des cibles ennemies affectées par Étreinte écarlate. Cumulable {{2}} fois et dure {{3}} tours. D'autre part, lorsque Vengeance du Styx se déclenche, inflige {{4}} frappes de DGT supplémentaires. Chaque frappe inflige des DGT de foudre équivalents à {{5, percent}}% de l'ATQ d'Achéron à un ennemi unique aléatoire et est considérée comme des DGT d'ultime.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente de {{1, percent}}% les DGT d'Achéron lorsque la Lame de pluie de son ultime touche des cibles ennemies affectées par Étreinte écarlate. Cumulable {{2}} fois et dure {{3}} tours. D'autre part, lorsque Vengeance du Styx se déclenche, inflige {{4}} frappes de DGT supplémentaires. Chaque frappe inflige des DGT de foudre équivalents à {{5, percent}}% de l'ATQ d'Achéron à un ennemi unique aléatoire et est considérée comme des DGT d'ultime."
       }
     }
   },

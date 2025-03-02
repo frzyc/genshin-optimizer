@@ -10,9 +10,10 @@ import {
 } from '@genshin-optimizer/game-opt/engine'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
-import type { Dst, Sheet, Src, Stat } from './listing'
+import type { Sheet, Stat } from './listing'
 import { bonusAbilities, statBoosts } from './listing'
-import { reader, type Read, type Tag } from './read'
+import type { Read, Tag } from './read'
+import { reader } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -68,7 +69,7 @@ export function priorityTable(
  * only include contributions from character and custom values.
  */
 
-type Desc = BaseDesc<Tag, Src, Dst, Sheet>
+type Desc = BaseDesc<Sheet>
 const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
 const iso: Desc = { sheet: 'iso', accu: 'unique' }
@@ -94,8 +95,10 @@ const stats: Record<Stat, Desc> = {
   eff_res_: agg,
   enerRegen_: agg,
   heal_: agg,
+  incHeal_: agg,
   dmg_: agg,
   resPen_: agg,
+  defIgn_: agg,
   common_dmg_: agg,
   weakness_: agg,
   brEfficiency_: agg,
@@ -109,18 +112,21 @@ export const ownTag = {
     ele: iso,
     path: iso,
     ascension: iso,
+    teamPosition: iso,
     eidolon: iso,
+    maxEnergy: iso,
     basic: agg,
     skill: agg,
     ult: agg,
     talent: agg,
+    servantSkill: agg,
+    servantTalent: agg,
     ...objKeyMap(bonusAbilities, () => isoSum),
     ...objKeyMap(statBoosts, () => isoSum),
   },
   lightCone: { lvl: iso, ascension: iso, superimpose: isoSum },
   common: {
     count: isoSum,
-    path: iso,
     critMode: fixed,
     cappedCrit_: iso,
   },
@@ -144,14 +150,13 @@ export const enemyTag = {
   common: {
     lvl: fixed,
     defRed_: agg,
-    defIgn_: agg,
     res: agg,
     maxToughness: iso,
     isBroken: iso,
   },
 } as const
 
-export const convert = createConvert<Read, Tag, Src, Dst, Sheet>()
+export const convert = createConvert<Read>()
 
 // Default queries
 const noName = { src: null, name: null }
@@ -175,7 +180,7 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(ownTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
-const nullTag = {
+const nullTag: Tag = {
   name: null,
   elementalType: null,
   damageType1: null,

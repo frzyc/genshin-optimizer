@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "Sư Phụ, Mời Uống Trà!",
-        "fullDesc": "Giúp 1 đồng đội phe ta (ngoại trừ bản thân) trở thành Sư Phụ, tốc độ của Sư Phụ tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Chỉ mục tiêu thi triển gần đây nhất của Chiến Kỹ được xem là Sư Phụ của March 7th.<br>Mỗi khi Tấn Công Thường hoặc gây ra 1 đòn sát thương Tấn Công Thường Cường Hóa, nếu trong trận có Sư Phụ thuộc Vận Mệnh được chỉ định, thì sẽ kích hoạt hiệu ứng tương ứng:<br>Tri Thức, Hủy Diệt, Săn Bắn: Gây thêm Sát Thương Kèm Theo tùy theo thuộc tính của Sư Phụ và bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của March 7th.<br>Hòa Hợp, Hư Vô, Bảo Hộ, Trù Phú: Tăng {{3, percent}}% điểm Giảm Sức Bền của lần sát thương này.",
-        "shortDesc": "Khiến 1 đồng đội phe ta trở thành Sư Phụ. Khi Tấn Công Thường hoặc gây sát thương Tấn Công Thường Cường Hóa, sẽ dựa vào <orangeStrong>vận mệnh Sư Phụ</orangeStrong> để kích hoạt hiệu ứng tương ứng:<br>Tri Thức, Hủy Diệt, Săn Bắn: Gây thêm <orangeStrong>Sát Thương Kèm Theo</orangeStrong> dựa trên thuộc tính Sư Phụ.<br>Hòa Hợp, Hư Vô, Bảo Hộ, Trù Phú: Tăng điểm <orangeStrong>Giảm Sức Bền</orangeStrong>.",
+        "fullDesc": "Giúp 1 đồng đội chỉ định (ngoại trừ bản thân) trở thành Sư Phụ, Tốc Độ của Sư Phụ tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Chỉ mục tiêu thi triển gần đây nhất của Chiến Kỹ được xem là Sư Phụ của March 7th.<br>Mỗi khi Tấn Công Thường hoặc gây ra 1 đòn sát thương Tấn Công Thường Cường Hóa, nếu trong trận có Sư Phụ thuộc Vận Mệnh được chỉ định, thì sẽ kích hoạt hiệu ứng tương ứng:<br>Tri Thức, Hủy Diệt, Săn Bắn, Ký Ức: Gây thêm Sát Thương Kèm Theo dựa theo thuộc tính của Sư Phụ và bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của March 7th.<br>Hòa Hợp, Hư Vô, Bảo Hộ, Trù Phú: Tăng {{3, percent}}% điểm Giảm Sức Bền của lần sát thương này.",
+        "shortDesc": "Khiến 1 đồng đội phe ta trở thành Sư Phụ. Khi Tấn Công Thường hoặc gây sát thương Tấn Công Thường Cường Hóa, sẽ dựa vào <orangeStrong>vận mệnh Sư Phụ</orangeStrong> để kích hoạt hiệu ứng tương ứng:<br>Tri Thức, Hủy Diệt, Săn Bắn, Ký Ức: Gây thêm <orangeStrong>Sát Thương Kèm Theo</orangeStrong> dựa trên thuộc tính Sư Phụ.<br>Hòa Hợp, Hư Vô, Bảo Hộ, Trù Phú: Tăng điểm <orangeStrong>Giảm Sức Bền</orangeStrong>.",
         "tag": "Hỗ Trợ"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Uyển Chuyển",
-        "fullDesc": "Khi bắt đầu trận, March 7th sẽ Ưu Tiên Hành Động {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Khi bắt đầu trận, March 7th sẽ Ưu Tiên Hành Động {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Hoạt Bát",
-        "fullDesc": "March 7th có thể làm giảm Sức Bền của mục tiêu địch có Điểm Yếu thuộc tính giống với Sư Phụ. Khi phá vỡ điểm yếu, sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Số Ảo.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "March 7th có thể làm giảm Sức Bền của mục tiêu địch có Điểm Yếu thuộc tính giống với Sư Phụ. Khi phá vỡ điểm yếu, sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Số Ảo."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sóng Xoáy",
-        "fullDesc": "Sau khi thi triển Tấn Công Thường Cường Hóa, khiến Sát Thương Bạo Kích của Sư Phụ tăng {{1, percent}}%, Tấn Công Kích Phá tăng {{2, percent}}%, duy trì {{3}} hiệp.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Sau khi thi triển Tấn Công Thường Cường Hóa, khiến Sát Thương Bạo Kích của Sư Phụ tăng {{1, percent}}%, Tấn Công Kích Phá tăng {{2, percent}}%, duy trì {{3}} hiệp."
       }
     }
   },

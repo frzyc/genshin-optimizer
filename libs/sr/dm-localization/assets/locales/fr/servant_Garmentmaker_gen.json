@@ -1,0 +1,33 @@
+{
+  "name": "La Costumière",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Piège de couture",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ à un ennemi et des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ aux cibles adjacentes.",
+        "shortDesc": "Inflige des DGT de foudre mineurs à une cible ennemie et aux cibles adjacentes.",
+        "tag": "Propagation"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Corps forgé par les larmes",
+        "fullDesc": "Augmente la VIT de cette unité de <orangeStrong>{{1}}</orangeStrong> après avoir attaqué l'ennemi affecté par Point de couture, cumulable jusqu'à {{3}} fois. La Costumière lance automatiquement Piège de couture au cours de son tour, en donnant la priorité à l'ennemi affecté par Point de couture.",
+        "shortDesc": "<orangeStrong>La VIT de cette unité augmente</orangeStrong> après avoir attaqué l'ennemi affecté par Point de couture. Lance automatiquement une attaque au cours de son tour, en donnant la priorité aux ennemis affectés par Point de couture.",
+        "tag": "Renforcement"
+      },
+      "1": {
+        "name": "Été fulgurant",
+        "fullDesc": "L'action de la Costumière est avancée de {{1, percent}}% lors de son invocation.",
+        "shortDesc": "L'action de cette unité est avancée lors de son invocation.",
+        "tag": "Renforcement"
+      },
+      "2": {
+        "name": "Floraison de l'herbe fanée",
+        "fullDesc": "La Costumière régénère {{1}} points d'énergie pour Aglaé lors de sa disparition.",
+        "shortDesc": "Régénère l'énergie d'Aglaé lors de sa disparition.",
+        "tag": "Renforcement"
+      }
+    }
+  }
+}

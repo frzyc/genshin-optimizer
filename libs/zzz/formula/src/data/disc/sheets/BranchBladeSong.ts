@@ -6,6 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'BranchBladeSong'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
 const { apply_or_trigger } = allBoolConditionals(key)
 
@@ -17,13 +18,15 @@ const sheet = registerDisc(
   registerBuff(
     'set4_passive',
     ownBuff.combat.crit_dmg_.add(
-      cmpGE(discCount, 4, cmpGE(own.initial.anomMas, 115, 0.3))
-    )
+      cmpGE(discCount, 4, cmpGE(own.final.anomMas, 115, 0.3))
+    ),
+    showCond4Set
   ),
   // Conditional buffs
   registerBuff(
     'set4_cond',
-    ownBuff.combat.crit_.add(cmpGE(discCount, 4, apply_or_trigger.ifOn(0.12)))
+    ownBuff.combat.crit_.add(cmpGE(discCount, 4, apply_or_trigger.ifOn(0.12))),
+    showCond4Set
   )
 )
 export default sheet

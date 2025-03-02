@@ -4,6 +4,7 @@ import {
   objFilterKeys,
   objKeyValMap,
 } from '@genshin-optimizer/common/util'
+import { parse } from 'json-bigint'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { LightConeId } from '../../mapping/lightCone'
@@ -47,7 +48,7 @@ type Rarity =
   | 'CombatPowerLightconeRarity4'
   | 'CombatPowerLightconeRarity5'
 
-const equipmentConfigSrc = JSON.parse(
+const equipmentConfigSrc = parse(
   readDMJSON('ExcelOutput/EquipmentConfig.json')
 ) as EquipmentConfig[]
 
@@ -55,7 +56,7 @@ dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/EquipmentConfig_idmap_gen.json`,
   objKeyValMap(equipmentConfigSrc, (config) => [
     config.EquipmentID,
-    nameToKey(TextMapEN[config.EquipmentName.Hash]),
+    nameToKey(TextMapEN[config.EquipmentName.Hash.toString()]),
   ])
 )
 dumpFile(
@@ -63,7 +64,7 @@ dumpFile(
   [
     ...new Set(
       Object.entries(equipmentConfigSrc).map(([, data]) =>
-        nameToKey(TextMapEN[data.EquipmentName.Hash])
+        nameToKey(TextMapEN[data.EquipmentName.Hash.toString()])
       )
     ),
   ]

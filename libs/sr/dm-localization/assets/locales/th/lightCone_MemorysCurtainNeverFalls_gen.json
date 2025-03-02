@@ -1,0 +1,7 @@
+{
+  "name": "Memory's Curtain Never Falls",
+  "passive": {
+    "name": "Reception",
+    "description": "ทำให้ความเร็วของผู้สวมใส่ เพิ่มขึ้น <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> หลังจากผู้สวมใส่ปล่อยสกิลต่อสู้ จะทำให้ฝ่ายเราทั้งหมดสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

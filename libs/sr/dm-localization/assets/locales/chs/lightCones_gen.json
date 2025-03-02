@@ -1,5 +1,5 @@
 {
-  "lightCone_one": "角色光锥",
+  "lightCone_one": "光锥",
   "lightCone_other": "光锥",
   "superimposition": "叠影",
   "path": {
@@ -9,6 +9,7 @@
     "Nihility": "虚无",
     "Destruction": "毁灭",
     "Harmony": "同谐",
-    "TheHunt": "巡猎"
+    "TheHunt": "巡猎",
+    "Remembrance": "「记忆」"
   }
 }

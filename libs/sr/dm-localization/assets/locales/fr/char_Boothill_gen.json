@@ -43,7 +43,7 @@
       "0": {
         "name": "Sourire carnassier",
         "fullDesc": "Après utilisation de la technique, lors de la première utilisation de la compétence au cours du prochain combat, applique une Faiblesse physique équivalente à celle appliquée par l'ultime à la cible pour {{1}} tours.",
-        "shortDesc": "Après utilisation de la technique, <orangeStrong>applique une Faiblesse physique</orangeStrong> à un ennemi unique lors de la première utilisation de la compétence au cours du prochain combat.",
+        "shortDesc": "Après utilisation de la technique, <orangeStrong>applique une Faiblesse physique</orangeStrong> à un ennemi lors de la première utilisation de la compétence au cours du prochain combat.",
         "tag": "Renforcement"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Réduit la robustesse de l'ennemi au type correspondant en entrant en combat après l'avoir attaqué.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Recharge fantôme",
-        "fullDesc": "Augmente les chances de coup critique / DGT critiques du personnage. L'augmentation est équivalente à {{1, percent}}% / {{3, percent}}% de l'effet de Rupture. Les chances de coup critique / DGT critiques peuvent être augmentés au maximum de {{2, percent}}% / {{4, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les chances de coup critique / DGT critiques du personnage. L'augmentation est équivalente à {{1, percent}}% / {{3, percent}}% de l'effet de Rupture. Les chances de coup critique / DGT critiques peuvent être augmentés au maximum de {{2, percent}}% / {{4, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Panier de crabes",
-        "fullDesc": "Lorsque le Fossoyeur est en état de Confrontation, réduit les DGT qu'il subit de la part des cibles qui ne sont pas en état de Confrontation de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque le Fossoyeur est en état de Confrontation, réduit les DGT qu'il subit de la part des cibles qui ne sont pas en état de Confrontation de {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "À bout portant",
-        "fullDesc": "Lorsque le Fossoyeur gagne Avantage en poche dans l'état Confrontation, il régénère {{1}} points d'énergie. Cet effet peut également se déclencher lors de l'obtention de cumuls d'Avantage en poche qui dépassent le maximum.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Lorsque le Fossoyeur gagne Avantage en poche dans l'état Confrontation, il régénère {{1}} points d'énergie. Cet effet peut également se déclencher lors de l'obtention de cumuls d'Avantage en poche qui dépassent le maximum."
       }
     }
   },

@@ -19,7 +19,8 @@
     "Nihility": "Die Nichtigkeit",
     "Destruction": "Die Zerstörung",
     "Harmony": "Die Harmonie",
-    "TheHunt": "Die Jagd"
+    "TheHunt": "Die Jagd",
+    "Remembrance": "Das Gedenken"
   },
   "ability": {
     "basic": "Standardangriff",
@@ -34,6 +35,11 @@
     "bounce": "Abpraller",
     "blast": "Ausdehnung",
     "support": "Unterstützung",
-    "impair": "Beeinträchtigung"
+    "impair": "Beeinträchtigen",
+    "restore": "Wiederherstellen",
+    "defense": "Verteidigung",
+    "enhance": "Verstärken",
+    "charging": "Aufladen",
+    "summon": "Beschwören"
   }
 }

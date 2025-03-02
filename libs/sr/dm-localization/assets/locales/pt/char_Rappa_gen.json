@@ -1,0 +1,117 @@
+{
+  "name": "Rappa",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ninjutsu: Eleve-se Sobre o Conflito",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Rappa a uma unidade inimiga designada.",
+        "shortDesc": "Causa Dano Imaginário leve a uma unidade inimiga designada.",
+        "tag": "Alvo Único"
+      },
+      "1": {
+        "name": "Ningu: Florilâmina Exorcista",
+        "shortDesc": "Causa Dano Imaginário leve a uma unidade inimiga designada e Dano Imaginário leve aos alvos adjacentes. Atacar inimigos sem Fraqueza contra Imaginário ainda pode reduzir a Tenacidade deles.",
+        "tag": "Explosão"
+      },
+      "2": {
+        "name": "Ningu: Florilâmina Exorcista",
+        "shortDesc": "Causa Dano Imaginário leve a uma unidade inimiga designada e Dano Imaginário leve aos alvos adjacentes. Atacar inimigos sem Fraqueza contra Imaginário ainda pode reduzir a Tenacidade deles.",
+        "tag": "Explosão"
+      },
+      "3": {
+        "name": "Ningu: Florilâmina Exorcista",
+        "shortDesc": "Causa Dano Imaginário leve a todas as unidades inimigas. Atacar inimigos sem Fraqueza contra Imaginário ainda pode reduzir a Tenacidade deles.",
+        "tag": "Área"
+      },
+      "4": {
+        "name": "Ningu: Florilâmina Exorcista",
+        "fullDesc": "Lança \"Ningu: Florilâmina Exorcista\". Os primeiros 2 golpes causam Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Rappa a uma unidade inimiga designada e Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Rappa aos alvos adjacentes, e o 3º golpe causa Dano Imaginário igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Rappa a todas as unidades inimigas.<br>O ATQ Básico Aprimorado não recupera Pontos de Perícia. Ao atacar inimigos que não têm Fraqueza contra Imaginário, o ATQ Básico Aprimorado ainda pode causar Redução de Tenacidade igual a {{4, percent}}% do valor original de Redução de Tenacidade. Ao aplicar Quebra de Fraqueza, desencadeia o efeito de Quebra de Fraqueza contra Imaginário.",
+        "shortDesc": "Os primeiros 2 golpes causam Dano Imaginário leve a uma unidade inimiga designada e Dano Imaginário leve aos alvos adjacentes. O terceiro golpe causa Dano Imaginário leve a todos os inimigos. Atacar inimigos sem Fraqueza contra Imaginário ainda pode reduzir a Tenacidade deles.",
+        "tag": "Explosão"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Golpe Ninja: Firmeza Enraizada",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Rappa a todas as unidades inimigas.",
+        "shortDesc": "Causa Dano Imaginário a todas as unidades inimigas.",
+        "tag": "Área"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Nindô Supremo: <i>Aishiteru</i>",
+        "fullDesc": "Entra no estado \"Selaforma\", ganha imediatamente 1 rodada extra, obtém {{3}} pontos de \"Tinta Cromática\" e aumenta a Eficiência de Quebra de Fraqueza em {{1, percent}}% e o Efeito de Quebra em <orangeStrong>{{2, percent}}%</orangeStrong>.<br>Enquanto estiver no estado \"Selaforma\", o ATQ Básico é aprimorado, e a Perícia e Perícia Suprema não podem ser usadas. Após usar o ATQ Básico Aprimorado, consome 1 ponto de \"Tinta Cromática\". Quando a \"Tinta Cromática\" for exaurida, o estado \"Selaforma\" termina.",
+        "shortDesc": "Entra no estado \"Selaforma\", ganha uma <orangeStrong>rodada extra</orangeStrong>, obtém 3 pontos de \"Tinta Cromática\" e <orangeStrong>aumenta a Eficiência de Quebra de Fraqueza e o Efeito de Quebra</orangeStrong>.<br>Enquanto estiver no estado \"Selaforma\", <orangeStrong>ganha ATQ Básico Aprimorado</orangeStrong>. Após usar o ATQ Básico Aprimorado, consome 1 ponto de \"Tinta Cromática\". Quando a \"Tinta Cromática\" for exaurida, o estado \"Selaforma\" termina.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tecnologia Ninja: Medidor de Resistência",
+        "fullDesc": "Cada vez que o inimigo-alvo sofre uma Quebra de Fraqueza, Rappa ganha 1 Carga até um máximo de {{1}} ponto(s) de Carga. Quando Rappa lançar o terceiro golpe de \"Ningu: Florilâmina Exorcista\", causa adicionalmente Dano de Quebra equivalente a <orangeStrong>{{3, percent}}%</orangeStrong> do Dano de Quebra Imaginário de Rappa a todos os inimigos. Esse Dano pode ignorar o Tipo de Fraqueza para reduzir a Tenacidade em {{4}} e consumir todos os pontos de Carga. Cada ponto de Carga aumentará o multiplicador de Dano de Quebra em <orangeStrong>{{5, percent}}%</orangeStrong> e aumentará a Redução de Tenacidade que pode ignorar o Tipo de Fraqueza em {{6}}.<br>Ao aplicar Quebra de Fraqueza em um inimigo, o efeito de Quebra de Fraqueza contra Imaginário será ativado.",
+        "shortDesc": "Quando o inimigo-alvo sofre uma Quebra de Fraqueza, Rappa ganha 1 ponto de Carga. Ao lançar o terceiro golpe de \"Ningu: Florilâmina Exorcista\", causa adicionalmente Dano de Quebra ImaginárioO em todos os inimigos. Esse Dano pode <orangeStrong>ignorar o Tipo de Fraqueza para reduzir a Tenacidade</orangeStrong> e consumir todas as Cargas, aumentando o multiplicador de Dano de Quebra e a Redução de Tenacidade do ataque.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Corrida Ninja: Indo Com Tudo",
+        "fullDesc": "Após usar a Técnica, entra no estado \"Grafite\" por {{1}} segundos. Enquanto estiver no estado \"Grafite\", avança rapidamente por uma distância definida e ataca quaisquer inimigos tocados. Durante o movimento rápido, pode bloquear todos os ataques inimigos. Usar um ataque no estado \"Grafite\" pode encerrar a duração do estado antecipadamente. Ao entrar em combate atacando inimigos, causa {{5}} de Redução de Tenacidade independentemente do Tipo de Fraqueza e causa Dano de Quebra igual a {{2, percent}}% do Dano de Quebra Imaginário de Rappa a cada inimigo-alvo, e causa Dano de Quebra igual a {{3, percent}}% do Dano de Quebra Imaginário de Rappa aos alvos adjacentes. Ao mesmo tempo, esta unidade regenera {{4}} de Energia.",
+        "shortDesc": "Entra no estado de \"Grafite\". Avança rapidamente por uma distância determinada e ataca quaisquer inimigos tocados. Ao entrar em combate atacando inimigos, causa <orangeStrong>Redução de Tenacidade independentemente do Tipo de Fraqueza</orangeStrong> e Dano de Quebra Imaginário a cada inimigo-alvo e causa Dano de Quebra Imaginário aos alvos adjacentes. Ao mesmo tempo, esta unidade regenera Energia.",
+        "tag": "Aprimoramento"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Inscrição do Ninjutsu: Subida Aos Céus",
+        "fullDesc": "Quando inimigos de Elite ou superiores são afligidos com Quebra de Fraqueza, Rappa ganha adicionalmente {{2}} Carga(s) e regenera {{1}} de Energia."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inscrição do Ninjutsu: Eco Marinho",
+        "fullDesc": "Enquanto estiver no estado \"Selaforma\", após Rappa usar o ATQ Básico Aprimorado para causar Dano a um inimigo-alvo afligido com Quebra de Fraqueza, converte a Redução de Tenacidade desta instância de Dano em 1 instância de Super Dano de Quebra de {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Inscrição do Ninjutsu: Folha Murcha",
+        "fullDesc": "Quando o inimigo-alvo sofre Quebra de Fraqueza, o Dano de Quebra recebido aumenta em {{1, percent}}%. Se o ATQ atual de Rappa for maior que {{2}}, para cada 100 de ATQ excedente, aumenta esse bônus em {{3, percent}}%, até um aumento adicional máximo de {{4, percent}}%. Esse efeito dura por {{5}} rodada(s)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "O Fantasma Está de Volta Sem o Tíquete",
+      "desc": "Durante o estado de \"Selaforma\" ativado ao usar a Perícia Suprema, o Dano causado por Rappa ignora {{1, percent}}% da DEF dos alvos. Após sair do estado de \"Selaforma\", regenera {{2}} de Energia."
+    },
+    "2": {
+      "name": "Livre É a Mente Iluminada por Haikus",
+      "desc": "Os 2 primeiros golpes do ATQ Básico Aprimorado têm sua Redução de Tenacidade contra o inimigo designado aumentada em {{1, percent}}%."
+    },
+    "3": {
+      "name": "Muitos São os Templos Que Não Protegem",
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
+    },
+    "4": {
+      "name": "Perdida no Nindô Devorado pelo Tempo",
+      "desc": "Enquanto está no estado de \"Selaforma\", aumenta a VEL de todas as unidades aliadas em {{1, percent}}%."
+    },
+    "5": {
+      "name": "Firme É a Vigia Com Flechas Sem Fim",
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
+    },
+    "6": {
+      "name": "Justa É a Ira Que Não Poupa Nenhum Mal",
+      "desc": "Quando a batalha começa, Rappa ganha {{1}} ponto(s) de Carga de seu Talento, e seu limite máximo aumenta em {{2}} ponto(s). Após lançar o terceiro golpe de \"Ningu: Florilâmina Exorcista\", ganha {{1}} ponto(s) de Carga."
+    }
+  }
+}

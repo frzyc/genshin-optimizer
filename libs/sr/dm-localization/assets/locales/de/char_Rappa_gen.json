@@ -1,0 +1,117 @@
+{
+  "name": "Rappa",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ninjutsu: Aufstieg und Fall",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Rappas ANG zu.",
+        "shortDesc": "Fügt einem anvisierten Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
+      },
+      "1": {
+        "name": "Ningu: Blüten der Waschung",
+        "shortDesc": "Fügt einem anvisierten Gegner und angrenzenden Einheiten geringen imaginären SCH zu. Angriffe auf Gegner ohne imaginäre Schwäche können ebenfalls WDS reduzieren.",
+        "tag": "Ausdehnung"
+      },
+      "2": {
+        "name": "Ningu: Blüten der Waschung",
+        "shortDesc": "Fügt einem anvisierten Gegner und angrenzenden Einheiten geringen imaginären SCH zu. Angriffe auf Gegner ohne imaginäre Schwäche können ebenfalls WDS reduzieren.",
+        "tag": "Ausdehnung"
+      },
+      "3": {
+        "name": "Ningu: Blüten der Waschung",
+        "shortDesc": "Fügt allen Gegnern geringen imaginären SCH zu. Angriffe auf Gegner ohne imaginäre Schwäche können ebenfalls WDS reduzieren.",
+        "tag": "Flächenangriff"
+      },
+      "4": {
+        "name": "Ningu: Blüten der Waschung",
+        "fullDesc": "Löst „Ningu: Blüten der Waschung“ aus. Die ersten 2 Treffer fügen einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Rappas ANG und angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Rappas ANG zu. Der dritte Treffer fügt allen Gegnern imaginären SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Rappas ANG zu.<br>Der verstärkte Standardangriff kann Fertigkeitspunkte nicht wiederherstellen. Angriffe können auch den WDS von Gegnern ohne imaginäre Schwäche reduzieren, wobei der Effekt {{4, percent}}% der ursprünglichen WDS-Reduzierung entspricht. Beim Verursachen von Schwächebruch wird der Effekt Schwächebruch: Imaginär ausgelöst.",
+        "shortDesc": "Die ersten 2 Treffer fügen einem anvisierten Gegner und angrenzenden Einheiten geringen imaginären SCH zu. Der dritte Treffer fügt allen Gegnern geringen imaginären SCH zu. Angriffe auf Gegner ohne imaginäre Schwäche können ebenfalls WDS reduzieren.",
+        "tag": "Ausdehnung"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ninja-Schlag: Von Wort zu Tat",
+        "fullDesc": "Fügt allen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Rappas ANG zu.",
+        "shortDesc": "Fügt allen Gegnern imaginären SCH zu.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Weg der Ninjas: Aishiteru",
+        "fullDesc": "Tritt in den Status „Siegelform“ ein und erhält sofort 1 zusätzliche Rd. sowie {{3}} Pkt. „Chromatische Farben“. Erhöht die Schwächebruch-Effizienz um {{1, percent}}% und den Brucheffekt um <orangeStrong>{{2, percent}}%</orangeStrong>.<br>Im Status Siegelform wird der Standardangriff verstärkt und Fertigkeit sowie Ultimate können nicht eingesetzt werden. Nach dem Einsatz des verstärkten Standardangriffs wird 1 Pkt. Chromatische Farben verbraucht. Wenn Chromatische Farben vollständig verbraucht ist, tritt diese Einheit aus dem Status Siegelform aus.",
+        "shortDesc": "Tritt in den Status „Siegelform“ ein und erhält <orangeStrong>zusätzliche Rd.</orangeStrong> sowie 3 Pkt. „Chromatische Farben“. <orangeStrong>Erhöht die Schwächebruch-Effizienz und den Brucheffekt.</orangeStrong><br>Erhält im Status Siegelform den <orangeStrong>verstärkten Standardangriff</orangeStrong>. Nach dem Einsatz des verstärkten Standardangriffs wird 1 Pkt. Chromatische Farben verbraucht. Wenn Chromatische Farben vollständig verbraucht ist, tritt diese Einheit aus dem Status Siegelform aus.",
+        "tag": "Verstärkung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ninja-Technik: Unendliche Geduld",
+        "fullDesc": "Jedes Mal, wenn einem Gegner Schwächebruch zugefügt wird, erhält Rappa 1 Pkt. Aufladung, bis zu {{1}} Pkt. Beim nächsten Einsatz des dritten Treffers von „Ningu: Blüten der Waschung“ wird allen Gegnern zusätzlich Bruch-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> des imaginären Bruch-SCH von Rappa zugefügt. Dieser SCH reduziert den WDS unabhängig vom Schwächetyp um {{4}} Pkt. und verbraucht alle Aufladungen. Jeder Punkt Aufladung erhöht den Multiplikator dieses Bruch-SCH um <orangeStrong>{{5, percent}}%</orangeStrong> und den WDS-Reduzierungswert unabhängig vom Schwächetyp um {{6}} Pkt.<br>Beim Verursachen von Schwächebruch wird der Effekt Schwächebruch: Imaginär ausgelöst.",
+        "shortDesc": "Wenn einem Gegner Schwächebruch zugefügt wird, erhält Rappa 1 Pkt. Aufladung. Beim Einsatz des dritten Treffers von „Ningu: Blüten der Waschung“ wird allen Gegnern zusätzlich imaginärer Bruch-SCH zugefügt. Dieser SCH reduziert den WDS <orangeStrong>unabhängig vom Schwächetyp</orangeStrong> und verbraucht alle Aufladungen. Außerdem wird der SCH-Multiplikator und der WDS-Reduzierungswert dieses Bruch-SCH erhöht.",
+        "tag": "Verstärkung"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ninja-Marsch: Mit Riesenschritten voran",
+        "fullDesc": "Tritt nach dem Einsatz der Technik für {{1}} Sek. in den Status „Graffiti“ ein. Bewegt sich eine bestimmte Strecke schnell vorwärts, greift alle berührten Gegner an und blockt dabei alle eingehenden Angriffe ab. Im Status Graffiti können Angriffe die Dauer des Status vorzeitig beenden. Nachdem durch einen Angriff auf Gegner aktiv ein Kampf eingeleitet wurde, werden jedem Gegner {{5}} Pkt. WDS-Reduzierung unabhängig vom Schwächetyp zugefügt. Außerdem wird bei ihnen Bruch-SCH in Höhe von {{2, percent}}% des imaginären Bruch-SCH von Rappa sowie bei angrenzenden Einheiten Bruch-SCH in Höhe von {{3, percent}}% des imaginären Bruch-SCH von Rappa verursacht. Gleichzeitig stellt diese Einheit {{4}} Pkt. Energie wieder her.",
+        "shortDesc": "Tritt in den Status „Graffiti“ ein. Bewegt sich eine bestimmte Strecke schnell vorwärts und greift alle berührten Gegner an. Nachdem durch Angriff auf Gegner ein Kampf eingeleitet wurde, wird jedem Gegner <orangeStrong>WDS-Reduzierung</orangeStrong> unabhängig vom Schwächetyp zugefügt. Verursacht außerdem bei ihnen sowie angrenzenden Einheiten imaginären Bruch-SCH. Gleichzeitig stellt diese Einheit Energie wieder her.",
+        "tag": "Verstärkung"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Angriff",
+        "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ninja-Kodex: Himmelhoch",
+        "fullDesc": "Wenn bei einem Elitegegner oder stärkeren Gegner Schwächebruch verursacht wird, stellt Rappa zusätzlich {{2}} Pkt. Aufladung und {{1}} Pkt. Energie wieder her."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ninja-Kodex: Tosen des Meeres",
+        "fullDesc": "Nachdem Rappa im Status „Siegelform“ ihren verstärkten Standardangriff eingesetzt hat, um einem Gegner mit Schwächebruch SCH zuzufügen, wird die WDS-Reduzierung dieses Treffers zu 1-mal Super-Bruch-SCH in Höhe von {{1, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ninja-Kodex: Verwelktes Blatt",
+        "fullDesc": "Wenn Gegner Schwächebruch erleiden, wird der erlittene Bruch-SCH um {{1, percent}}% erhöht. Liegt Rappas aktueller ANG über {{2}} Pkt., wird diese Erhöhung für je 100 Pkt. über diesem Wert um {{3, percent}}% erhöht, bis zu {{4, percent}}%. Dieser Effekt hält {{5}} Rd. an."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Zurückgekehrter Revenant ohne Fährgebühr",
+      "desc": "Im Status „Siegelform“, der durch den Ultimate ausgelöst wird, ignoriert Rappas verursachter SCH {{1, percent}}% der VTD des Ziels. Nachdem Rappa aus dem Status Siegelform ausgetreten ist, stellt sie {{2}} Pkt. Energie wieder her."
+    },
+    "2": {
+      "name": "Poetischer Scharfsinn ohne Lasten",
+      "desc": "Die WDS-Reduzierung der ersten 2 Treffer des verstärkten Standardangriffs gegen den anvisierten Gegner wird um {{1, percent}}% erhöht."
+    },
+    "3": {
+      "name": "Heiligtümer des Mappō ohne Stillstand",
+      "desc": "Fertigkeitsstufe +2 bis max. St. 15. Talentstufe +2 bis max. St. 15."
+    },
+    "4": {
+      "name": "Gefallene Rechtschaffenheit ohne Ehre",
+      "desc": "Erhöht im Status „Siegelform“ die GES aller Verbündeten um {{1, percent}}%."
+    },
+    "5": {
+      "name": "Unerschütterlich auf dem Pfad ohne Zögern",
+      "desc": "Ultimate-Stufe +2 bis max. St. 15. Standardangriff-Stufe +1 bis max. St. 10."
+    },
+    "6": {
+      "name": "Auslöschung der Bösen ohne Gnade",
+      "desc": "Zu Beginn des Kampfes erhält Rappa {{1}} Pkt. Aufladung des Talents und das Aufladungslimit wird um {{2}} Pkt. erhöht. Nach dem Einsatz des dritten Treffers von „Ningu: Blüten der Waschung“ wird {{1}} Pkt. Aufladung erhalten."
+    }
+  }
+}

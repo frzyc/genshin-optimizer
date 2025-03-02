@@ -2,6 +2,6 @@
   "setName": "Wastelander of Banditry Desert",
   "setEffects": {
     "2": "Increases Imaginary DMG by {{1, percent}}%.",
-    "4": "When attacking debuffed enemies, the wearer's CRIT Rate increases by {{1, percent}}%, and their CRIT DMG increases by {{2, percent}}% against Imprisoned enemies."
+    "4": "When dealing DMG to debuffed enemy targets, the wearer has their CRIT Rate increased by {{1, percent}}%. And when they deal DMG to Imprisoned enemy targets, their CRIT DMG increases by {{2, percent}}%."
   }
 }

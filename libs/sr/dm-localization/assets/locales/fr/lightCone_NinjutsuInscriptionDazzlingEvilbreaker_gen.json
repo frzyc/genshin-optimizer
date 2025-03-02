@@ -1,0 +1,7 @@
+{
+  "name": "Écritures ninjutsu : Justice éblouissante",
+  "passive": {
+    "name": "Exorcisme",
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Régénère immédiatement <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> points d'énergie en entrant en combat. Le porteur obtient l'effet Raijin après avoir utilisé son ultime. Après avoir utilisé 2 ATQ normales, avance l'action du porteur de <orangeStrong>{{3, percent}}%</orangeStrong> et supprime l'effet Raijin. Réinitialise Raijin après utilisation de l'ultime."
+  }
+}

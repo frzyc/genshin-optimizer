@@ -1,8 +1,10 @@
 {
+  "id": "1261",
   "icon": "IconRole24",
   "rarity": "S",
   "attribute": "physical",
   "specialty": "anomaly",
+  "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Jane Doe",
   "stats": {
     "atk_base": 127,

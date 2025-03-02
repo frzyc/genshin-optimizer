@@ -5,10 +5,10 @@
   "desc3": "A high-power W-Engine that boasts a cutting-edge energy conversion system. It collects excess heat and supplies it to the steamer.",
   "phase": "Thick Broth",
   "phaseDescs": [
-    "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-    "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.3%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-    "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.6%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-    "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.9%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-    "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>3.2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    "For every 10 Energy accumulated, the equipper's Impact is increased by <ct color=#2BAD00>2%</ct>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
+    "For every 10 Energy accumulated, the equipper's Impact is increased by <ct color=#2BAD00>2.3%</ct>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
+    "For every 10 Energy accumulated, the equipper's Impact is increased by <ct color=#2BAD00>2.6%</ct>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
+    "For every 10 Energy accumulated, the equipper's Impact is increased by <ct color=#2BAD00>2.9%</ct>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
+    "For every 10 Energy accumulated, the equipper's Impact is increased by <ct color=#2BAD00>3.2%</ct>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
   ]
 }

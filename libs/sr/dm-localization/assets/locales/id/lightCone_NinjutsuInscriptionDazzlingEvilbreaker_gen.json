@@ -1,0 +1,7 @@
+{
+  "name": "Ninjutsu Inscription: Dazzling Evilbreaker",
+  "passive": {
+    "name": "Exorcism",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Break Effect pengguna. Saat memasuki pertempuran, akan segera memulihkan <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> Energy. Setelah pengguna melancarkan Ultimate, akan memperoleh \"Raiton\": Setelah melancarkan 2 kali Basic Attack, akan mendahulukan aksi pengguna sebesar <orangeStrong>{{3, percent}}%</orangeStrong>, lalu menghapus \"Raiton\". Setelah pengguna melancarkan Ultimate, akan mereset \"Raiton\"."
+  }
+}

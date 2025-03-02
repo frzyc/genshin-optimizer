@@ -1,8 +1,10 @@
 {
+  "id": "1101",
   "icon": "IconRole14",
   "rarity": "S",
   "attribute": "fire",
   "specialty": "stun",
+  "faction": "BelebogHeavyIndustries",
   "fullname": "Koleda Belobog",
   "stats": {
     "atk_base": 106,

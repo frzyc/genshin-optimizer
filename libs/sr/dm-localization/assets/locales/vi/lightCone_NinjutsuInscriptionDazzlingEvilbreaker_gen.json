@@ -1,0 +1,7 @@
+{
+  "name": "Bí Kíp Nhẫn Pháp-Dazzling Phá Ma",
+  "passive": {
+    "name": "Trừ Tà",
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Khi vào chiến đấu, lập tức hồi <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> điểm Năng Lượng. Và sau khi người trang bị thi triển Tuyệt Kỹ, nhận Lôi Độn. Sau khi thi triển 2 lần Tấn Công Thường, người trang bị Ưu Tiên Hành Động <orangeStrong>{{3, percent}}%</orangeStrong>, và xóa Lôi Độn. Sau khi người trang bị thi triển Tuyệt Kỹ sẽ làm mới Lôi Độn."
+  }
+}

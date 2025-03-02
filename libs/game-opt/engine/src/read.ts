@@ -20,13 +20,13 @@ import type { IBaseConditionalData } from './IConditionalData'
 import type { EntryType, Preset } from './listing'
 
 export interface Tag<
-  Src extends string | null | null,
-  Dst extends string | null | null,
-  Sheet extends string
+  Sheet extends string = string,
+  Src extends string | null = string | null,
+  Dst extends string | null = string | null
 > extends BaseTag {
   preset?: Preset
-  src?: Src
-  dst?: Dst
+  src?: Src | null
+  dst?: Dst | null
   et?: EntryType
   sheet?: Sheet
   name?: string | null
@@ -34,26 +34,21 @@ export interface Tag<
   q?: string | null
   [condMeta: symbol]: IBaseConditionalData | undefined
 }
+export type Member<T extends Tag> = NonNullable<T['member']>
+export type Sheet<T extends Tag> = NonNullable<T['sheet']>
+export type Src<T extends Tag> = NonNullable<T['src']>
+export type Dst<T extends Tag> = NonNullable<T['dst']>
 
-export type TagMapNodeEntry<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
-> = TagMapEntry<AnyNode | ReRead, Tag_>
-export type TagMapNodeEntries<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
-> = TagMapEntries<AnyNode | ReRead, Tag_>
+export type TagMapNodeEntry<Tag_ extends Tag> = TagMapEntry<
+  AnyNode | ReRead,
+  Tag_
+>
+export type TagMapNodeEntries<Tag_ extends Tag> = TagMapEntries<
+  AnyNode | ReRead,
+  Tag_
+>
 
-export class Read<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
-> extends TypedRead<Tag_> {
+export class Read<Tag_ extends Tag = Tag> extends TypedRead<Tag_> {
   override register<C extends keyof Tag_ & string>(cat: C, val: Tag_[C]): void {
     if (val == null) return // null | undefined
     if (cat === 'name') usedNames.add(val)
@@ -63,19 +58,17 @@ export class Read<
   name(name: string): this {
     return super.with('name', name)
   }
-  sheet(sheet: Sheet): this {
+  sheet(sheet: Sheet<Tag_>): this {
     return super.with('sheet', sheet)
   }
 
-  add(
-    value: number | string | AnyNode
-  ): TagMapNodeEntry<Tag_, Src, Dst, Sheet> {
+  add(value: number | string | AnyNode): TagMapNodeEntry<Tag_> {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
   addOnce(
-    sheet: Sheet,
+    sheet: Sheet<Tag_>,
     value: number | NumNode
-  ): TagMapNodeEntries<Tag_, Src, Dst, Sheet> {
+  ): TagMapNodeEntries<Tag_> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
@@ -92,7 +85,7 @@ export class Read<
       this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })), // How should we get this reader? it should be a specific game's Read
     ]
   }
-  reread(r: this): TagMapNodeEntry<Tag_, Src, Dst, Sheet> {
+  reread(r: this): TagMapNodeEntry<Tag_> {
     return super.toEntry(reread(r.tag))
   }
 }
@@ -106,48 +99,32 @@ function uniqueId(namespace: string): number {
 }
 
 export let reader = new Read({}, undefined)
-export function setReader<
-  Tag_ extends Tag<Src, Dst, Sheet>,
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(reader_: Read<Tag_, Src, Dst, Sheet>) {
+export function setReader<Tag_ extends Tag>(reader_: Read<Tag_>) {
   reader = reader_
 }
 export const usedNames = new Set<string>()
 export const usedQ = new Set('_')
 
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(v: number | NumNode, tag: Tag<Src, Dst, Sheet>): TagOverride<NumNode>
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(v: string | StrNode, tag: Tag<Src, Dst, Sheet>): TagOverride<StrNode>
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(v: number | string | AnyNode, tag: Tag<Src, Dst, Sheet>): TagOverride<AnyNode>
-export function tag<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(
+export function tag<Tag_ extends Tag>(
+  v: number | NumNode,
+  tag: Tag_
+): TagOverride<NumNode>
+export function tag<Tag_ extends Tag>(
+  v: string | StrNode,
+  tag: Tag_
+): TagOverride<StrNode>
+export function tag<Tag_ extends Tag>(
   v: number | string | AnyNode,
-  tag: Tag<Src, Dst, Sheet>
+  tag: Tag_
+): TagOverride<AnyNode>
+export function tag<Tag_ extends Tag>(
+  v: number | string | AnyNode,
+  tag: Tag_
 ): TagOverride<AnyNode> {
   return typeof v == 'object' && v.op == 'tag'
     ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
     : baseTag(v, tag)
 }
-export function tagVal<
-  Src extends string | null,
-  Dst extends string | null,
-  Sheet extends string
->(cat: keyof Tag<Src, Dst, Sheet>): TagValRead {
-  return baseTagVal(cat as string) // idk why it thinks `cat` is number here
+export function tagVal<Tag_ extends Tag>(cat: string & keyof Tag_): TagValRead {
+  return baseTagVal(cat)
 }

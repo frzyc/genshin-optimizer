@@ -11,9 +11,9 @@ const {
   talent,
   technique,
   eidolon,
-  bonusAbility1,
+  // bonusAbility1,
   bonusAbility2,
-  bonusAbility3,
+  // bonusAbility3,
 } = scalingParams(data_gen)
 
 let s = 0,
@@ -27,27 +27,26 @@ const dm = {
   },
   skill: {
     dmg: skill[0][s++],
+    spd_: skill[0][s++][1],
+    duration: skill[0][s++][1],
   },
   ult: {
     dmg: ult[0][u++],
   },
   talent: {
-    dmg: talent[0][ta++],
+    dmg_: talent[0][ta++],
   },
   technique: {
-    dmg: technique[te++] ?? 0,
-  },
-  e1: {
-    dmg: eidolon[1][0] ?? 0,
-  },
-  b1: {
-    break_: bonusAbility1[0] ?? 0,
+    duration: technique[te++],
   },
   b2: {
-    energy: bonusAbility2[0] ?? 0,
+    resPen_quantum: bonusAbility2[0],
   },
-  b3: {
-    breakThreshold: bonusAbility3[0] ?? 0,
+  e1: {
+    crit_: eidolon[1][1],
+  },
+  e6: {
+    dmg: eidolon[6][0],
   },
 } as const
 

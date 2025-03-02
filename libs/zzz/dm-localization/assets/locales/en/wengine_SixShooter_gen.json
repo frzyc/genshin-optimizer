@@ -5,10 +5,10 @@
   "desc3": "A special W-Engine modeled after a revolver. It can load bullet-shaped condensed Ether batteries, which release a great amount of power when fired.",
   "phase": "Fire!",
   "phaseDescs": [
-    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4%</color>.",
-    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4.6%</color>.",
-    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.2%</color>.",
-    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.8%</color>.",
-    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>6.4%</color>."
+    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <ct color=#FFFFFF>EX Special Attack</ct>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <ct color=#2BAD00>4%</ct>.",
+    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <ct color=#FFFFFF>EX Special Attack</ct>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <ct color=#2BAD00>4.6%</ct>.",
+    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <ct color=#FFFFFF>EX Special Attack</ct>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <ct color=#2BAD00>5.2%</ct>.",
+    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <ct color=#FFFFFF>EX Special Attack</ct>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <ct color=#2BAD00>5.8%</ct>.",
+    "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <ct color=#FFFFFF>EX Special Attack</ct>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <ct color=#2BAD00>6.4%</ct>."
   ]
 }

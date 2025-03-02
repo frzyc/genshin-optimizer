@@ -43,7 +43,7 @@
       "0": {
         "name": "3-9× Smile",
         "fullDesc": "After the Technique is used, when casting the Skill for the first time in the next battle, applies the same Physical Weakness to the target as the one induced by the Ultimate, lasting for {{1}} turn(s).",
-        "shortDesc": "After the Technique is used, <orangeStrong>inflicts Physical Weakness</orangeStrong> on a single enemy when casting the Skill for the first time in the next battle.",
+        "shortDesc": "After the Technique is used, <orangeStrong>inflicts Physical Weakness</orangeStrong> on one enemy when casting the Skill for the first time in the next battle.",
         "tag": "Enhance"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ghost Load",
-        "fullDesc": "Increase this character's CRIT Rate/CRIT DMG, by an amount equal to {{1, percent}}%/{{3, percent}}% of Break Effect, up to a max increase of {{2, percent}}%/{{4, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increase this character's CRIT Rate/CRIT DMG, by an amount equal to {{1, percent}}%/{{3, percent}}% of Break Effect, up to a max increase of {{2, percent}}%/{{4, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Above Snakes",
-        "fullDesc": "While Boothill is in the Standoff, reduces the DMG he receives from targets that are not in the Standoff by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "While Boothill is in the Standoff, reduces the DMG he receives from targets that are not in the Standoff by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Point Blank",
-        "fullDesc": "When in Standoff and gaining Pocket Trickshot, regenerates {{1}} Energy. Can also trigger this effect when gaining Pocket Trickshot stacks that exceed the max limit.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When in Standoff and gaining Pocket Trickshot, regenerates {{1}} Energy. Can also trigger this effect when gaining Pocket Trickshot stacks that exceed the max limit."
       }
     }
   },

@@ -56,7 +56,7 @@ export function CharCalcProvider({
           })
         ),
       ]),
-    [member0, charOpt, character.key]
+    [character.key, member0, charOpt.conditionals, charOpt.bonusStats]
   )
 
   return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
@@ -83,7 +83,7 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
     if (!character) return []
     return withMember(
       character.key,
-      ...charTagMapNodeEntries(character),
+      ...charTagMapNodeEntries(character, 1),
       ...lcTagEntries,
       ...relicTagEntries
     )

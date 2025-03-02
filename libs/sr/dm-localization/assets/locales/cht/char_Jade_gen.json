@@ -45,32 +45,25 @@
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "逆回購",
-        "fullDesc": "在敵方目標進入戰鬥時，翡翠獲得{{2}}層【當品】。處於【收債人】狀態的角色回合開始時，額外獲得{{1}}層【當品】。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "在敵方目標進入戰鬥時，翡翠獲得{{2}}層【當品】。處於【收債人】狀態的角色回合開始時，額外獲得{{1}}層【當品】。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "折牙票",
-        "fullDesc": "戰鬥開始時，翡翠的行動提前{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "戰鬥開始時，翡翠的行動提前{{1, percent}}%。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "絕當品",
-        "fullDesc": "天賦中每層【當品】額外使翡翠的攻擊力提高{{1, percent(fixed: 1)}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "天賦中每層【當品】額外使翡翠的攻擊力提高{{1, percent(fixed: 1)}}%。"
       }
     }
   },

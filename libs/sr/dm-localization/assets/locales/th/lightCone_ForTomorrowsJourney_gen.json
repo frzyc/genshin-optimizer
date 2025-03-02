@@ -1,0 +1,7 @@
+{
+  "name": "For Tomorrow's Journey",
+  "passive": {
+    "name": "Bonds",
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หลังจากผู้สวมใส่ปล่อยท่าไม้ตายแล้ว จะสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+  }
+}

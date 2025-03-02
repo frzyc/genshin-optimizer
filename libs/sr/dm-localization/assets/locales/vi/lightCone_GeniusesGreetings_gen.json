@@ -1,0 +1,7 @@
+{
+  "name": "Lời Chào Hỏi Của Thiên Tài",
+  "passive": {
+    "name": "Chúc Mừng",
+    "description": "Khiến Tấn Công của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Sau khi người trang bị thi triển Tuyệt Kỹ, khiến sát thương Tấn Công Thường mà người trang bị và Linh Hồn Ký Ức gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp."
+  }
+}

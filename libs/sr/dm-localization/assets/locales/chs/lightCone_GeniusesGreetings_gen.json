@@ -1,0 +1,7 @@
+{
+  "name": "天才们的问候",
+  "passive": {
+    "name": "恭喜",
+    "description": "使装备者的攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>，装备者施放终结技后，使装备者与忆灵造成的普攻伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持续{{3}}回合。"
+  }
+}

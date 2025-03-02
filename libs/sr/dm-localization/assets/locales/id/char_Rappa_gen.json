@@ -1,0 +1,117 @@
+{
+  "name": "Rappa",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Ninjutsu: Rise Above Tumbles",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Rappa pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan.",
+        "tag": "Single Target"
+      },
+      "1": {
+        "name": "Ningu: Demonbane Petalblade",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan, serta mengakibatkan Imaginary DMG dalam jumlah kecil pada target di sekitarnya. Menyerang musuh yang tidak memiliki Imaginary Weakness tetap dapat mengurangi Toughness-nya.",
+        "tag": "Blast"
+      },
+      "2": {
+        "name": "Ningu: Demonbane Petalblade",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan, serta mengakibatkan Imaginary DMG dalam jumlah kecil pada target di sekitarnya. Menyerang musuh yang tidak memiliki Imaginary Weakness juga tetap dapat mengurangi Toughness-nya.",
+        "tag": "Blast"
+      },
+      "3": {
+        "name": "Ningu: Demonbane Petalblade",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada seluruh musuh. Menyerang musuh yang tidak memiliki Imaginary Weakness juga tetap dapat mengurangi Toughness-nya.",
+        "tag": "AoE"
+      },
+      "4": {
+        "name": "Ningu: Demonbane Petalblade",
+        "fullDesc": "Melancarkan \"Ningu: Demonbane Petalblade\". 2 Hit serangan pertama akan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Rappa pada 1 musuh yang ditargetkan, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Rappa pada target di sekitarnya. Hit ke-3 akan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Rappa pada seluruh musuh.<br>Enhanced Basic Attack tidak dapat memulihkan Poin Skill, dan tetap dapat mengurangi Toughness saat menyerang musuh yang tidak memiliki Imaginary Weakness, efeknya adalah sebesar {{4, percent}}% dari Pengurangan Toughness aslinya. Saat mengakibatkan Weakness Break, akan memicu efek Imaginary Weakness Break.",
+        "shortDesc": "2 Hit serangan pertama mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan, serta mengakibatkan Imaginary DMG dalam jumlah kecil pada target di sekitarnya. Hit ke-3 akan mengakibatkan Imaginary DMG dalam jumlah kecil pada seluruh musuh. Menyerang musuh yang tidak memiliki Imaginary Weakness tetap dapat mengurangi Toughness-nya.",
+        "tag": "Blast"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Ninja Strike: Rooted Resolute",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Rappa pada seluruh musuh.",
+        "shortDesc": "Mengakibatkan Imaginary DMG pada seluruh musuh.",
+        "tag": "AoE"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Nindō Supreme: Aishiteru",
+        "fullDesc": "Memasuki status \"Sealform\", segera memperoleh 1 Giliran Tambahan, memperoleh {{3}} poin \"Chroma Ink\", meningkatkan {{1, percent}}% Weakness Break Efficiency, dan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> Break Effect.<br>Saat berstatus \"Sealform\", akan memperoleh Enhanced Basic Attack dan tidak bisa melancarkan Skill dan Ultimate. Setelah melancarkan Enhanced Basic Attack, akan mengonsumsi 1 poin \"Chroma Ink\". Setelah \"Chroma Ink\" terkonsumsi habis, akan keluar dari status \"Sealform\".",
+        "shortDesc": "Memasuki status \"Sealform\", memperoleh <orangeStrong>Giliran Tambahan</orangeStrong>, memperoleh 3 poin \"Chroma Ink\", serta meningkatkan <orangeStrong>Weakness Break Efficiency dan Break Effect</orangeStrong>.<br>Saat berstatus \"Sealform\", akan <orangeStrong>memperoleh Enhanced Basic Attack</orangeStrong>. Setelah melancarkan Enhanced Basic Attack, akan mengonsumsi 1 poin \"Chroma Ink\". Setelah \"Chroma Ink\" terkonsumsi habis, akan keluar dari status \"Sealform\".",
+        "tag": "Enhance"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ninja Tech: Endurance Gauge",
+        "fullDesc": "Setiap saat target musuh terkena Weakness Break, Rappa akan memperoleh 1 poin Charge, maksimal dapat memiliki {{1}} poin Charge. Saat Rappa melancarkan Hit ke-3 dari \"Ningu: Demonbane Petalblade\" di kali berikutnya, akan mengakibatkan Break DMG tambahan pada seluruh musuh sebesar <orangeStrong>{{3, percent}}%</orangeStrong> Imaginary Break DMG Rappa. DMG tersebut dapat mengurangi {{4}} Toughness tanpa memedulikan Tipe Weakness, serta akan mengonsumsi seluruh poin Charge. Setiap poin Charge dapat meningkatkan <orangeStrong>{{5, percent}}%</orangeStrong> Break DMG Multiplier kali ini, dan meningkatkan Pengurangan Toughness yang tidak memedulikan Tipe Weakness sebesar {{6}}.<br>Saat mengakibatkan Weakness Break, akan memicu efek Imaginary Weakness Break.",
+        "shortDesc": "Saat target musuh terkena Weakness Break, Rappa akan memperoleh 1 poin Charge. Saat melancarkan Hit ke-3 dari \"Ningu: Demonbane Petalblade\", akan mengakibatkan Imaginary Break DMG tambahan pada seluruh musuh. DMG tersebut dapat <orangeStrong>mengurangi Toughness tanpa memedulikan Tipe Weakness</orangeStrong>, serta akan mengonsumsi seluruh poin Charge dan meningkatkan Break DMG Multiplier dan Pengurangan Toughness kali ini.",
+        "tag": "Enhance"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Ninja Dash: By Leaps and Bounds",
+        "fullDesc": "Setelah menggunakan Technique, akan memasuki status \"Graffiti\" selama {{1}} detik. Saat berstatus \"Graffiti\", dapat melaju dengan cepat sejauh jarak tertentu dan menyerang musuh yang tersentuh. Saat sedang melaju dengan cepat, dapat menahan semua serangan musuh. Melancarkan serangan saat berstatus \"Graffiti\" akan mengakhiri durasi status lebih awal. Setelah secara aktif menyerang musuh untuk memasuki pertempuran, akan mengurangi {{5}} Toughness tanpa memedulikan Tipe Weakness dan mengakibatkan Break DMG sebesar {{2, percent}}% Imaginary Break DMG Rappa pada setiap target musuh, serta mengakibatkan Break DMG sebesar {{3, percent}}% Imaginary Break DMG Rappa pada target di sekitarnya. Di saat yang bersamaan, Rappa akan memperoleh {{4}} Energy.",
+        "shortDesc": "Memasuki status \"Graffiti\" dan dapat melaju dengan cepat sejauh jarak tertentu, serta menyerang musuh yang tersentuh. Setelah menyerang musuh untuk memasuki pertempuran, akan <orangeStrong>mengurangi Toughness tanpa memedulikan Tipe Weakness</orangeStrong> dan mengakibatkan Imaginary Break DMG pada setiap target musuh, serta mengakibatkan Imaginary Break DMG pada target di sekitarnya. Di saat yang bersamaan, Rappa akan memperoleh Energy.",
+        "tag": "Enhance"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan Tipenya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ninjutsu Inscription: Sky High",
+        "fullDesc": "Saat target musuh tingkatan elite atau lebih terkena Weakness Break, Rappa akan memperoleh {{2}} poin Charge tambahan, dan akan memulihkan {{1}} Energy."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ninjutsu Inscription: Sea Echo",
+        "fullDesc": "Selama berstatus \"Sealform\", setelah Rappa melancarkan Enhanced Basic Attack untuk mengakibatkan DMG pada target musuh yang berstatus Weakness Break, akan mengonversi Pengurangan Toughness dari DMG kali ini menjadi 1 kali {{1, percent}}% Super Break DMG."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ninjutsu Inscription: Withered Leaf",
+        "fullDesc": "Saat target musuh terkena Weakness Break, Break DMG yang diterima meningkat {{1, percent}}%. Jika ATK Rappa saat ini lebih tinggi dari {{2}}, maka untuk setiap 100 ATK yang berlebih, akan meningkatkan peningkatan Break DMG tersebut sebanyak ekstra {{3, percent}}%, maksimal meningkat ekstra {{4, percent}}%. Efek berlangsung selama {{5}} giliran."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Returned Is the Revenant With No Ferry Toll",
+      "desc": "Selama berstatus \"Sealform\" setelah melancarkan Ultimate, DMG yang diakibatkan Rappa akan mengabaikan {{1, percent}}% DEF target. Setelah keluar dari status \"Sealform\", akan memulihkan {{2}} Energy."
+    },
+    "2": {
+      "name": "Free Is the Mind Enlightened by Haikus",
+      "desc": "Meningkatkan {{1, percent}}% Pengurangan Toughness untuk 2 Hit serangan pertama dari Enhanced Basic Attack pada 1 musuh yang ditargetkan."
+    },
+    "3": {
+      "name": "Many Are the Shrines That Repel No Hell",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15."
+    },
+    "4": {
+      "name": "Lost Is the Nindō Devoured by Time",
+      "desc": "Saat berstatus \"Sealform\", SPD seluruh rekan tim meningkat {{1, percent}}%."
+    },
+    "5": {
+      "name": "Steady Is The Ranger With Unerring Arrows",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Righteous Is the Wrath That Spares No Evil",
+      "desc": "Saat pertempuran dimulai, Rappa memperoleh {{1}} poin Charge untuk efek Talent, dan batas maksimum Charge bertambah {{2}} poin. Setelah melancarkan Hit ke-3 \"Ningu: Demonbane Petalblade\", akan memperoleh {{1}} poin Charge."
+    }
+  }
+}

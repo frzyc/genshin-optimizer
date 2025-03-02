@@ -1,3 +1,4 @@
+import { objFilterKeys } from '@genshin-optimizer/common/util'
 import {
   createAllBoolConditionals,
   createAllListConditionals,
@@ -9,7 +10,8 @@ import {
 } from '@genshin-optimizer/game-opt/engine'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
-import type { Dst, Sheet, Src, Stat } from './listing'
+import type { Sheet, Stat } from './listing'
+import { flatAndPercentStats, nonFlatAndPercentStats } from './listing'
 import type { Read, Tag } from './read'
 import { reader } from './read'
 
@@ -67,7 +69,7 @@ export function priorityTable(
  * only include contributions from character and custom values.
  */
 
-type Desc = BaseDesc<Tag, Src, Dst, Sheet>
+type Desc = BaseDesc<Sheet>
 const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
 const iso: Desc = { sheet: 'iso', accu: 'unique' }
@@ -98,9 +100,14 @@ const stats: Record<Stat, Desc> = {
   anomMas_: agg,
   dmg_: agg,
   common_dmg_: agg,
+  buff_: agg,
   resIgn_: agg,
   shield_: agg,
 } as const
+const finalStats = objFilterKeys(stats, [
+  ...flatAndPercentStats,
+  ...nonFlatAndPercentStats,
+])
 export const ownTag = {
   base: {
     atk: agg,
@@ -116,11 +123,12 @@ export const ownTag = {
   },
   initial: stats,
   combat: stats,
-  final: stats,
+  final: finalStats,
   char: {
     lvl: iso,
     attribute: iso,
     specialty: iso,
+    faction: iso,
     promotion: iso,
     mindscape: iso,
     basic: agg,
@@ -163,12 +171,13 @@ export const enemyTag = {
     dmgInc_: agg,
     dmgRed_: agg,
     stun_: agg,
+    unstun_: agg,
     isStunned: iso,
     anomTimePassed: iso,
   },
 } as const
 
-export const convert = createConvert<Read, Tag, Src, Dst, Sheet>()
+export const convert = createConvert<Read>()
 
 // Default queries
 const noName = { src: null, name: null }
@@ -185,7 +194,7 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(ownTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
-const nullTag = {
+const nullTag: Tag = {
   name: null,
   attribute: null,
   damageType1: null,

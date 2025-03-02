@@ -2,22 +2,13 @@
   "setEffects": [
     {
       "numRequired": 2,
-      "passiveStats": {
-        "brEffect_": 0.16
-      },
-      "otherStats": [
-        0.16
-      ]
+      "passiveStats": { "brEffect_": 0.16 },
+      "otherStats": [0.16]
     },
     {
       "numRequired": 4,
       "passiveStats": {},
-      "otherStats": [
-        1.5,
-        2.5,
-        0.1,
-        0.15
-      ]
+      "otherStats": [1.5, 2.5, 0.1, 0.15]
     }
   ]
 }

@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' Roll",
-        "fullDesc": "Saat melancarkan Skill, meningkatkan {{1, percent}}% peluang dasar untuk membuat target musuh yang terserang memasuki status Shock.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat melancarkan Skill, meningkatkan {{1, percent}}% peluang dasar untuk membuat target musuh yang terserang memasuki status Shock."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "String Vibration",
-        "fullDesc": "Segera memulihkan {{1}} Energy saat pertempuran dimulai.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Segera memulihkan {{1}} Energy saat pertempuran dimulai."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mania",
-        "fullDesc": "Meningkatkan {{1, percent}}% ATK selama {{2}} giliran setelah mengalahkan target musuh.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Meningkatkan {{1, percent}}% ATK selama {{2}} giliran setelah mengalahkan target musuh."
       }
     }
   },

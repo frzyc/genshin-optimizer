@@ -1,0 +1,6 @@
+{
+  "setName": "Lushaka, les mers englouties",
+  "setEffects": {
+    "2": "Augmente le taux de régénération d'énergie du porteur de {{1, percent}}%. Augmente l'ATQ du premier personnage de la composition d'équipe de {{2, percent}}% si le porteur n'est pas le premier personnage de la composition d'équipe."
+  }
+}

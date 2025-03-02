@@ -1,0 +1,7 @@
+{
+  "name": "Hacia lo inescrutable",
+  "passive": {
+    "name": "Juego mental",
+    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Cuando el portador lanza la habilidad definitiva, el daño de habilidad básica y habilidad definitiva que inflige aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong> durante {{5}} turnos. Si el portador consume {{3}} pts. de energía o más al lanzar la habilidad definitiva, recupera 1 pt. de habilidad básica."
+  }
+}

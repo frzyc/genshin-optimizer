@@ -1,0 +1,102 @@
+{
+  "name": "Fugue",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Radiant Streak",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Fugue's ATK to one designated enemy.",
+        "shortDesc": "Deals minor Fire DMG to one enemy.",
+        "tag": "Single Target"
+      },
+      "1": {
+        "name": "Fiery Caress",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Fugue's ATK to one designated enemy and Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Fugue's ATK to adjacent targets.",
+        "shortDesc": "Deals minor Fire DMG to one enemy and minor Fire DMG to adjacent targets.",
+        "tag": "Blast"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Virtue Beckons Bliss",
+        "fullDesc": "Grants one designated ally \"Foxian Prayer\". Enters the \"Torrid Scorch\" state, lasting for {{1}} turn(s). The duration reduces by 1 at the start of Fugue's every turn. \"Foxian Prayer\" only takes effect on the most recent target of Fugue's Skill.<br>The ally target with \"Foxian Prayer\" increases their Break Effect by <orangeStrong>{{2, percent}}%</orangeStrong> and can also reduce Toughness even when attacking enemies that don't have the corresponding Weakness Type, with the effect equivalent to {{6, percent}}% of the original Toughness Reduction value. This cannot stack with other Toughness Reduction effects that also ignore Weakness Type.<br>While in the \"Torrid Scorch\" state, Fugue enhances her Basic ATK. Every time an ally target with \"Foxian Prayer\" attacks, Fugue has a {{3, percent}}% base chance to reduce the attacked enemy target's DEF by <orangeStrong>{{4, percent}}%</orangeStrong>, lasting for {{5}} turn(s).",
+        "shortDesc": "Grants one ally \"Foxian Prayer\", which <orangeStrong>increases Break Effect</orangeStrong>, and <orangeStrong>enables to reduce Toughness when attacking enemies that don't have the corresponding Weakness Type</orangeStrong>.<br>Makes this unit enter the \"Torrid Scorch\" state, enhancing Basic ATK. When ally units with \"Foxian Prayer\" attack, Fugue has a high chance to reduce the enemy target's DEF.",
+        "tag": "Support"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Solar Splendor Shines Upon All",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Fugue's ATK to all enemies. This attack ignores Weakness Type to reduce all enemies' Toughness. And when breaking Weakness, triggers the Fire Weakness Break effect.",
+        "shortDesc": "Deals Fire DMG to all enemies. This attack <orangeStrong>ignores Weakness Type</orangeStrong> to reduce all enemies' Toughness.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fortune Follows Where Virtue Spreads",
+        "fullDesc": "While Fugue is on the field, enemy targets will get additionally afflicted with \"Cloudflame Luster,\" equal to {{2, percent}}% of their Max Toughness. When the initial Toughness is reduced to 0, \"Cloudflame Luster\" can continue to be reduced. When \"Cloudflame Luster\" is reduced to 0, the enemy will receive Weakness Break DMG again.<br>While Fugue is on the field and after allies attack Weakness Broken enemy targets, converts the Toughness Reduction of this attack into 1 instance of <orangeStrong>{{1, percent}}%</orangeStrong> Super Break DMG.",
+        "shortDesc": "While Fugue is on the field, enemy targets will get <orangeStrong>additionally afflicted with \"Cloudflame Luster.\"</orangeStrong> When \"Cloudflame Luster\" is reduced to 0, the enemy will <orangeStrong>take Weakness Break DMG again</orangeStrong>. After allies attack Weakness Broken enemy targets, additionally deals <orangeStrong>Super Break DMG</orangeStrong>.",
+        "tag": "Impair"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Percipient Shine",
+        "fullDesc": "After using Technique, inflicts Daze on enemies within a certain area, lasting for {{1}} second(s). While Dazed, enemies will not actively attack ally targets.<br>After entering battle via actively attacking Dazed enemies, Fugue's action advances by {{4, percent}}%, with a {{2, percent}}% base chance to inflict each enemy target with the same DEF Reduction state as that applied by Fugue's Skill, lasting for {{3}} turn(s).",
+        "shortDesc": "Inflicts Daze on enemies within a certain area. After entering battle via attacking Dazed enemies, Fugue's action advances, with a high chance to inflict each enemy target with the same DEF Reduction state as that applied by Fugue's Skill.",
+        "tag": "Impair"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Verdantia Renaissance",
+        "fullDesc": "After ally targets break weakness, additionally delays the action of the enemy target by {{1, percent}}%."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sylvan Enigma",
+        "fullDesc": "Increases this unit's Break Effect by {{1, percent}}%. After using Skill for the first time, immediately recovers {{2}} Skill Point(s)."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Phecda Primordia",
+        "fullDesc": "When an enemy target's Weakness gets broken, increases teammates' (i.e., excluding this unit) Break Effect by {{1, percent}}%. If Fugue's Break Effect is {{4, percent}}% or higher, the Break Effect increase is boosted by an additional {{5, percent}}%, lasting for {{2}} turn(s). This effect can stack up to {{3}} time(s)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Earthbound I Was, Cloudward I Be",
+      "desc": "Ally target with \"Foxian Prayer\" increases their Weakness Break Efficiency by {{1, percent}}%."
+    },
+    "2": {
+      "name": "Beatitude Dawns for the Worthy",
+      "desc": "When an enemy target's Weakness gets broken, Fugue regenerates {{1}} Energy. After using Ultimate, advances the action of all allies by {{2, percent}}%."
+    },
+    "3": {
+      "name": "Verity Weaves Thoughts to Blade",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Bereft of Form, Which Name to Bear",
+      "desc": "Ally target with \"Foxian Prayer\" increases their Break DMG dealt by {{1, percent}}%."
+    },
+    "5": {
+      "name": "Colored Cloud Rains Fortune",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Clairvoyance of Boom and Doom",
+      "desc": "Increases Fugue's Weakness Break Efficiency by {{1, percent}}%. While Fugue is in the \"Torrid Scorch\" state, \"Foxian Prayer\" takes effect on all allies."
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "name": "Trailblazer (Ice • \"Remembrance\")",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Leave It to Me!",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Trailblazer pada 1 musuh yang ditargetkan.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "I Choose You!",
+        "fullDesc": "Memanggil Memosprite Mem. Jika Mem sudah berada di medan pertempuran, maka akan memulihkan HP Mem sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Mem, dan membuat Mem memperoleh {{2, percent}}% Charge.",
+        "shortDesc": "<orangeStrong>Memanggil Memosprite</orangeStrong> Mem. Jika Mem sudah berada di medan pertempuran, maka akan memulihkan HP Mem, dan membuat Mem memperoleh <orangeStrong>Charge</orangeStrong>.",
+        "tag": "Panggil"
+      },
+      "1": {
+        "name": "I Choose You!",
+        "shortDesc": "<orangeStrong>Memanggil Memosprite</orangeStrong> Mem. Jika Mem sudah berada di medan pertempuran, maka akan memulihkan HP Mem, dan membuat Mem memperoleh <orangeStrong>Charge</orangeStrong>.",
+        "tag": "Restore"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Together, Mem!",
+        "fullDesc": "Memanggil Memosprite Mem. Membuat Mem memperoleh {{2, percent}}% Charge, kemudian membuat Mem mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Mem pada seluruh musuh.",
+        "shortDesc": "<orangeStrong>Memanggil Memosprite</orangeStrong> Mem. Membuat Mem memperoleh <orangeStrong>Charge</orangeStrong>, kemudian membuat Mem mengakibatkan Ice DMG dalam jumlah besar pada seluruh musuh.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Almighty Companion",
+        "fullDesc": "Memosprite Mem pada awalnya memiliki SPD sebesar {{1}} dan Max HP sebesar <orangeStrong>{{2, percent}}%</orangeStrong> Max HP Trailblazer + <orangeStrong>{{4}}</orangeStrong>. Setiap kali seluruh rekan tim memulihkan total {{3}} Energy, Mem akan memperoleh 1% Charge.",
+        "shortDesc": "Setiap kali seluruh rekan tim <orangeStrong>memulihkan Energy dalam jumlah tertentu</orangeStrong>, Mem akan memperoleh <orangeStrong>Charge</orangeStrong>.",
+        "tag": "Enhance"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Memories Back as Echoes",
+        "fullDesc": "Setelah menggunakan Technique, akan menciptakan sebuah dimensi khusus selama {{1}} detik. Musuh dalam dimensi khusus akan memasuki status Time Stop. Musuh yang berstatus Time Stop akan menghentikan semua aksinya.<br>Setelah memasuki pertempuran dengan musuh berstatus Time Stop, akan membuat aksi seluruh musuh tertunda sebesar {{2, percent}}%, kemudian mengakibatkan Ice DMG sebesar {{3, percent}}% ATK Trailblazer pada seluruh musuh.<br>Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan sebuah dimensi khusus. <orangeStrong>Aksi musuh dalam dimensi khusus akan terhenti</orangeStrong>. Setelah memasuki pertempuran dengan musuh di dalam dimensi khusus, akan membuat aksi seluruh musuh tertunda, dan mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh.",
+        "tag": "Impair"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rhapsode's Scepter",
+        "fullDesc": "Saat pertempuran dimulai, aksi Trailblazer akan didahulukan sebesar {{1, percent}}%. Saat memanggil Mem untuk pertama kalinya, Mem akan memperoleh {{2, percent}}% Charge."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Petite Parable",
+        "fullDesc": "Saat Mem melancarkan \"Baddies! Trouble!\", Mem akan segera memperoleh {{1, percent}}% Charge."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Magnets and Long Chains",
+        "fullDesc": "Saat Max Energy rekan tim yang memiliki \"Mem's Support\" lebih dari {{1}}, maka untuk setiap {{2}} Energy yang berlebih akan meningkatkan {{3, percent(fixed: 1)}}% True DMG Multiplier yang diakibatkan melalui \"Mem's Support\", maksimal hingga {{4, percent}}%."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Narrator of the Present",
+      "desc": "Meningkatkan {{1, percent}}% CRIT Rate rekan tim yang memiliki \"Mem's Support\". Saat rekan tim memiliki \"Mem's Support\", efek \"Mem's Support\" juga akan efektif pada Memosprite/pemilik Memosprite rekan tersebut. Efek ini tidak dapat ditumpuk."
+    },
+    "2": {
+      "name": "Gleaner of the Past",
+      "desc": "Saat Memosprite rekan tim (selain Mem) beraksi, Trailblazer akan memulihkan {{1}} Energy. Efek ini maksimal dapat dipicu hingga {{2}} kali di setiap giliran. Jumlah pemicuan akan direset saat giliran Trailblazer dimulai."
+    },
+    "3": {
+      "name": "Chanter of the Future",
+      "desc": "Level Skill +2, maksimal Lv. 15. Level Talent +2, maksimal Lv. 15. Level Talent Memosprite +1, maksimal Lv. 10."
+    },
+    "4": {
+      "name": "Dancer of the Muse",
+      "desc": "Saat rekan tim (yang Max Energy-nya adalah 0) melancarkan kemampuan secara aktif, Mem akan memperoleh {{1, percent}}% Charge dan True DMG Multiplier yang diakibatkan rekan tersebut melalui \"Mem's Support\" meningkat {{2, percent}}%."
+    },
+    "5": {
+      "name": "Seamster of the Ode",
+      "desc": "Level Ultimate +2, maksimal Lv. 15. Level Basic Attack +1, maksimal Lv. 10. Level Skill Memosprite +1, maksimal Lv. 10."
+    },
+    "6": {
+      "name": "Bearer of the Revelation",
+      "desc": "CRIT Rate Ultimate menjadi tetap sebesar 100%."
+    }
+  }
+}

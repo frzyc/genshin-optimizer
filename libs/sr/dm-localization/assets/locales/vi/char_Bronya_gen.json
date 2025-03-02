@@ -45,32 +45,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hiệu Lệnh",
-        "fullDesc": "Tỷ Lệ Bạo Kích tấn công thường tăng đến 100%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tỷ Lệ Bạo Kích tấn công thường tăng đến 100%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Trận Địa",
-        "fullDesc": "Khi bắt đầu chiến đấu, Phòng Thủ của toàn phe ta tăng {{2, percent}}%, duy trì {{1}} hiệp.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Khi bắt đầu chiến đấu, Phòng Thủ của toàn phe ta tăng {{2, percent}}%, duy trì {{1}} hiệp."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Quân Sự Mạnh Mẽ",
-        "fullDesc": "Khi Bronya trong trận, sát thương toàn phe ta gây ra tăng {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Khi Bronya trong trận, sát thương toàn phe ta gây ra tăng {{1, percent}}%."
       }
     }
   },

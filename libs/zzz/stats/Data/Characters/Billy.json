@@ -1,8 +1,10 @@
 {
+  "id": "1081",
   "icon": "IconRole10",
   "rarity": "A",
   "attribute": "physical",
   "specialty": "attack",
+  "faction": "CunningHares",
   "fullname": "Billy Kid",
   "stats": {
     "atk_base": 113,

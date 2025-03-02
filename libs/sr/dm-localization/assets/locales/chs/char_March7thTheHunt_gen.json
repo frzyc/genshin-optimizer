@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "师父，请喝茶！",
-        "fullDesc": "使除自身以外的我方指定单体成为【师父】，【师父】的速度提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。仅战技最新的施放目标被视为三月七的【师父】。<br>每当施放普攻或造成1段强化普攻的伤害时，若场上存在指定命途的【师父】，则触发对应效果：<br>「智识」、「毁灭」、「巡猎」：额外造成等同于三月七<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的基于【师父】属性的附加伤害。<br>「同谐」、「虚无」、「存护」、「丰饶」：本次伤害的削韧值提高{{3, percent}}%。",
-        "shortDesc": "使我方单体成为【师父】。施放普攻或造成强化普攻的伤害时，根据<orangeStrong>【师父】命途</orangeStrong>触发对应效果：<br>「智识」、「毁灭」、「巡猎」：额外造成基于【师父】属性的<orangeStrong>附加伤害</orangeStrong>。<br>「同谐」、「虚无」、「存护」、「丰饶」：<orangeStrong>削韧值</orangeStrong>提高。",
+        "fullDesc": "使除自身以外的我方指定单体成为【师父】，【师父】的速度提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。仅战技最新的施放目标被视为三月七的【师父】。<br>每当施放普攻或造成1段强化普攻的伤害时，若场上存在指定命途的【师父】，则触发对应效果：<br>「智识」、「毁灭」、「巡猎」、「记忆」：额外造成等同于三月七<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的基于【师父】属性的附加伤害。<br>「同谐」、「虚无」、「存护」、「丰饶」：本次伤害的削韧值提高{{3, percent}}%。",
+        "shortDesc": "使我方单体成为【师父】。施放普攻或造成强化普攻的伤害时，根据<orangeStrong>【师父】命途</orangeStrong>触发对应效果：<br>「智识」、「毁灭」、「巡猎」、「记忆」：额外造成基于【师父】属性的<orangeStrong>附加伤害</orangeStrong>。<br>「同谐」、「虚无」、「存护」、「丰饶」：<orangeStrong>削韧值</orangeStrong>提高。",
         "tag": "辅助"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "惊鸿",
-        "fullDesc": "战斗开始时，三月七的行动提前{{1, percent}}%。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "战斗开始时，三月七的行动提前{{1, percent}}%。"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "玲珑",
-        "fullDesc": "三月七能够削减具有【师父】属性弱点的敌方目标的韧性。击破弱点时，触发虚数属性的弱点击破效果。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "三月七能够削减具有【师父】属性弱点的敌方目标的韧性。击破弱点时，触发虚数属性的弱点击破效果。"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "斡波",
-        "fullDesc": "施放强化普攻后，使【师父】的暴击伤害提高{{1, percent}}%，击破特攻提高{{2, percent}}%，持续{{3}}回合。",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "施放强化普攻后，使【师父】的暴击伤害提高{{1, percent}}%，击破特攻提高{{2, percent}}%，持续{{3}}回合。"
       }
     }
   },

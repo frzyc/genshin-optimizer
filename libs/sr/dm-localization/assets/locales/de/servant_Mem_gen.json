@@ -1,0 +1,39 @@
+{
+  "name": "Memi",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Bösewichte! Ärger!",
+        "fullDesc": "Fügt insgesamt {{2}}-mal SCH zu, wobei jedes Mal einem zufälligen Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Memis ANG zufügt. Fügt am Ende allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Memis ANG zu.",
+        "shortDesc": "Fügt geringen Eis-SCH zu und prallt insgesamt <orangeStrong>{{2}}</orangeStrong>-mal ab. Fügt am Ende allen Gegnern geringen Eis-SCH zu.",
+        "tag": "Flächenangriff"
+      },
+      "1": {
+        "name": "Ich werde! Dir helfen!",
+        "fullDesc": "Lässt die Aktion eines anvisierten Verbündeten um {{3, percent}}% vorziehen und verleiht ihm für {{2}} Rd. „Memis Unterstützung“.<br>Jedes Mal, wenn ein Ziel mit Memis Unterstützung SCH verursacht, wird zusätzlich 1-mal Tatsächlicher SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ursprünglichen SCH verursacht.<br>Wenn Memi diese Fähigkeit an sich selbst einsetzt, wird der Aktionsvorzug nicht ausgelöst.",
+        "shortDesc": "Lässt die Aktion eines Verbündeten <orangeStrong>vorziehen</orangeStrong> und verleiht ihm „Memis Unterstützung“: Fügt nach dem Verursachen von SCH zusätzlich <orangeStrong>Tatsächlichen SCH</orangeStrong> zu.",
+        "tag": "Unterstützung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Freunde! Zusammen!",
+        "fullDesc": "Erhöht den KRIT-SCH aller Verbündeter in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Memis KRIT-SCH plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. <br>Solange die Aufladung nicht 100 % erreicht hat, wird während der Aktion automatisch „Bösewichte! Ärger!“ eingesetzt. Wenn die Aufladung 100 % erreicht, führt Memi sofort eine Aktion aus. In ihrer nächsten Aktion wird ein Verbündeter ausgewählt und „Ich werde! Dir helfen!“ eingesetzt.",
+        "shortDesc": "Erhöht den KRIT-SCH aller Verbündeten.<br>Greift während der Aktion automatisch an. Wenn die Aufladung 100 % erreicht, wird sofort eine Aktion ausgeführt und eine neue Fähigkeit eingesetzt: Die Aktion eines Verbündeten wird <orangeStrong>vorgezogen</orangeStrong> und er kann <orangeStrong>Tatsächlichen SCH</orangeStrong> verursachen.",
+        "tag": "Unterstützung"
+      },
+      "1": {
+        "name": "Memi, wir schaffen das!",
+        "fullDesc": "Memi erhält sofort nach der Beschwörung {{1, percent}}% Aufladung.",
+        "shortDesc": "Erhält sofort nach der Beschwörung Aufladung.",
+        "tag": "Verstärkung"
+      },
+      "2": {
+        "name": "Kein ... Bedauern",
+        "fullDesc": "Beim Verschwinden von Memi wird die Aktion {F#der Trailblazerin}{M#des Trailblazers} um {{1, percent}}% vorgezogen.",
+        "shortDesc": "Beim Verschwinden wird die Aktion {F#der Trailblazerin}{M#des Trailblazers} vorgezogen.",
+        "tag": "Verstärkung"
+      }
+    }
+  }
+}

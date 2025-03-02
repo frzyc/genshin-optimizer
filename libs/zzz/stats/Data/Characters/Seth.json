@@ -1,8 +1,10 @@
 {
+  "id": "1271",
   "icon": "IconRole30",
   "rarity": "A",
   "attribute": "electric",
   "specialty": "defense",
+  "faction": "CriminalInvestigationSpecialResponseTeam",
   "fullname": "Seth Lowell",
   "stats": {
     "atk_base": 93,

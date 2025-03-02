@@ -1,0 +1,7 @@
+{
+  "name": "Dream's Montage",
+  "passive": {
+    "name": "Academy-Style Edit",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> SPD pengguna. Setelah menyerang target musuh yang berstatus Weakness Break, akan memulihkan <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> Energy. Efek ini dapat dipicu hingga {{3}} kali di setiap giliran."
+  }
+}

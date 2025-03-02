@@ -23,6 +23,8 @@ const data: TagMapNodeEntries = [
     prod(
       // DMG Bonus Multiplier
       sum(percent(1), own.final.dmg_, own.final.common_dmg_),
+      // Buff Multiplier (e.g. Timeweaver Disorder DMG Bonus)
+      sum(percent(1), own.final.buff_),
       // DEF Multiplier
       // levelFactor / (max(def * (1 - pen_) - pen, 0) + levelFactor)
       sumfrac(
@@ -45,7 +47,7 @@ const data: TagMapNodeEntries = [
       // DMG Taken Multiplier
       sum(percent(1), enemy.common.dmgInc_, prod(-1, enemy.common.dmgRed_)),
       // Stunned Multiplier
-      cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, percent(1))
+      cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_)
     )
   ),
   ownBuff.dmg.critMulti.add(

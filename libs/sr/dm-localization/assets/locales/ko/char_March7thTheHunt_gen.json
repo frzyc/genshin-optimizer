@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "사부, 차 마셔!",
-        "fullDesc": "자신 이외의 지정된 단일 아군을 [사부]로 만들고, [사부]의 속도가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가한다. 최근 전투 스킬의 대상이 된 아군만이 Mar. 7th의 [사부]로 간주된다.<br>일반 공격을 발동하거나 강화된 일반 공격 피해를 1단 가할 시, 필드 위에 지정된 운명의 길의 [사부]가 존재하면 상응하는 효과를 발동한다.<br>「지식」, 「파멸」, 「수렵」: [사부] 속성에 따른 추가 피해를 Mar. 7th 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 추가로 가한다.<br>「화합」, 「공허」, 「보존」, 「풍요」: 이번 피해의 강인성 감소 수치가 {{3, percent}}% 증가한다",
-        "shortDesc": "단일 아군을 [사부]로 만든다. 일반 공격을 발동하거나 강화된 일반 공격으로 피해를 가할 시 <orangeStrong>[사부]의 운명의 길</orangeStrong>에 따라 상응하는 효과를 발동한다.<br>「지식」, 「파멸」, 「수렵」: [사부] 속성에 기반한 <orangeStrong>추가 피해</orangeStrong>를 추가로 가한다.<br>「화합」, 「공허」, 「보존」, 「풍요」: <orangeStrong>강인성 감소 수치</orangeStrong>가 증가한다",
+        "fullDesc": "자신 이외의 지정된 단일 아군을 [사부]로 만들고, [사부]의 속도가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가한다. 최근 전투 스킬의 대상이 된 아군만이 Mar. 7th의 [사부]로 간주된다.<br>일반 공격을 발동하거나 강화된 일반 공격 피해를 1단 가할 시, 필드 위에 지정된 운명의 길의 [사부]가 존재하면 상응하는 효과를 발동한다.<br>「지식」, 「파멸」, 「수렵」, 「기억」: [사부] 속성에 따른 추가 피해를 Mar. 7th 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 추가로 가한다.<br>「화합」, 「공허」, 「보존」, 「풍요」: 이번 피해의 강인성 감소 수치가 {{3, percent}}% 증가한다",
+        "shortDesc": "단일 아군을 [사부]로 만든다. 일반 공격을 발동하거나 강화된 일반 공격으로 피해를 가할 시 <orangeStrong>[사부]의 운명의 길</orangeStrong>에 따라 상응하는 효과를 발동한다.<br>「지식」, 「파멸」, 「수렵」, 「기억」: [사부] 속성에 기반한 <orangeStrong>추가 피해</orangeStrong>를 추가로 가한다.<br>「화합」, 「공허」, 「보존」, 「풍요」: <orangeStrong>강인성 감소 수치</orangeStrong>가 증가한다",
         "tag": "서포트"
       }
     },
@@ -51,32 +51,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "경홍",
-        "fullDesc": "전투 시작 시 Mar. 7th의 행동 게이지가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "전투 시작 시 Mar. 7th의 행동 게이지가 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "영롱",
-        "fullDesc": "Mar. 7th가 [사부]와 같은 속성의 약점을 보유한 적의 강인성을 소모할 수 있다. 약점 격파 시 허수 속성의 약점 격파 효과를 발동한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Mar. 7th가 [사부]와 같은 속성의 약점을 보유한 적의 강인성을 소모할 수 있다. 약점 격파 시 허수 속성의 약점 격파 효과를 발동한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "파랑",
-        "fullDesc": "강화된 일반 공격 발동 후 [사부]의 치명타 피해가 {{1, percent}}% 증가하고, 격파 특수효과가 {{2, percent}}% 증가한다. 지속 시간: {{3}}턴",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "강화된 일반 공격 발동 후 [사부]의 치명타 피해가 {{1, percent}}% 증가하고, 격파 특수효과가 {{2, percent}}% 증가한다. 지속 시간: {{3}}턴"
       }
     }
   },

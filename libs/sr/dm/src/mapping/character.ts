@@ -3,6 +3,7 @@ import type {
   ElementalTypeKey,
   PathKey,
   RarityKey,
+  ServantKey,
 } from '@genshin-optimizer/sr/consts'
 import type { AvatarRarity } from '../dm'
 import type { AvatarDamageType } from '../dm/character/AvatarConfig'
@@ -45,8 +46,13 @@ export const characterIdMap: Record<string, CharacterGenderedKey> = {
   1214: 'Xueyi',
   1215: 'Hanya',
   1217: 'Huohuo',
+  1218: 'Jiaoqiu',
+  1220: 'Feixiao',
   1221: 'Yunli',
+  1222: 'Lingsha',
+  1223: 'Moze',
   1224: 'March7thTheHunt',
+  1225: 'Fugue',
   1301: 'Gallagher',
   1302: 'Argenti',
   1303: 'RuanMei',
@@ -58,16 +64,30 @@ export const characterIdMap: Record<string, CharacterGenderedKey> = {
   1309: 'Robin',
   1310: 'Firefly',
   1312: 'Misha',
+  1313: 'Sunday',
   1314: 'Jade',
   1315: 'Boothill',
+  1317: 'Rappa',
+  1401: 'TheHerta',
+  1402: 'Aglaea',
+  1403: 'Tribbie',
+  1404: 'Mydei',
   8001: 'TrailblazerPhysicalM',
   8002: 'TrailblazerPhysicalF',
   8003: 'TrailblazerFireM',
   8004: 'TrailblazerFireF',
   8005: 'TrailblazerImaginaryM',
   8006: 'TrailblazerImaginaryF',
+  8007: 'TrailblazerIceM',
+  8008: 'TrailblazerIceF',
 } as const
 export type AvatarId = keyof typeof characterIdMap
+
+export const servantIdMap: Record<string, ServantKey> = {
+  11402: 'Garmentmaker',
+  18007: 'Mem',
+}
+export type ServantId = keyof typeof servantIdMap
 
 export const avatarBaseTypeMap: Record<string, PathKey> = {
   Mage: 'Erudition',
@@ -77,6 +97,7 @@ export const avatarBaseTypeMap: Record<string, PathKey> = {
   Warrior: 'Destruction',
   Shaman: 'Harmony',
   Rogue: 'TheHunt',
+  Memory: 'Remembrance',
 } as const
 
 export type AvatarBaseTypeKey = keyof typeof avatarBaseTypeMap

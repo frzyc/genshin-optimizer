@@ -51,32 +51,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Novel Concoction",
-        "fullDesc": "Increases this unit's Outgoing Healing by an amount equal to {{1, percent}}% of Break Effect, up to a maximum Outgoing Healing increase of {{2, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases this unit's Outgoing Healing by an amount equal to {{1, percent}}% of Break Effect, up to a maximum Outgoing Healing increase of {{2, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Organic Yeast",
-        "fullDesc": "After using the Ultimate, immediately advances action for this unit by 100%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "After using the Ultimate, immediately advances action for this unit by 100%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bottoms Up",
-        "fullDesc": "When Gallagher uses Nectar Blitz to attack Besotted enemies, the HP Restore effect of his Talent will also apply to teammates for this time.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When Gallagher uses Nectar Blitz to attack Besotted enemies, the HP Restore effect of his Talent will also apply to teammates for this time."
       }
     }
   },

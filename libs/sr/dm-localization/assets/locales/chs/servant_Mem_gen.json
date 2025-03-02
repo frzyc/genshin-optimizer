@@ -1,0 +1,39 @@
+{
+  "name": "迷迷",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "坏人！麻烦！",
+        "fullDesc": "造成{{2}}次伤害，每次对敌方随机单体造成等同于迷迷<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>攻击力的冰属性伤害。最后对敌方全体造成等同于迷迷<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的冰属性伤害。",
+        "shortDesc": "造成少量冰属性伤害，共弹射<orangeStrong>{{2}}</orangeStrong>次。最后对敌方全体造成少量冰属性伤害。",
+        "tag": "群攻"
+      },
+      "1": {
+        "name": "我会！帮你！",
+        "fullDesc": "使指定我方单体行动提前{{3, percent}}%并附上【迷迷的声援】，持续{{2}}回合。<br>持有【迷迷的声援】的目标每造成1次伤害，都会再额外造成1次等同于原伤害<orangeStrong>{{1, percent}}%</orangeStrong>的真实伤害。<br>当对自身施放该技能时，无法触发行动提前效果。",
+        "shortDesc": "使我方单体<orangeStrong>行动提前</orangeStrong>并附上【迷迷的声援】：造成伤害后额外造成<orangeStrong>真实伤害</orangeStrong>。",
+        "tag": "辅助"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "伙伴！一起！",
+        "fullDesc": "使我方全体的暴击伤害提高，提高数值等同于迷迷<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴击伤害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>。<br>若充能未达到100%，迷迷行动时自动施放【坏人！麻烦！】。充能达到100%时迷迷立即行动，下一次行动时能够选择我方单体并施放【我会！帮你！】。",
+        "shortDesc": "使我方全体暴击伤害提高。<br>行动时自动施放攻击。若充能达到100%则立即行动并可施放新技能：使我方单体<orangeStrong>行动提前</orangeStrong>并能造成<orangeStrong>真实伤害</orangeStrong>。",
+        "tag": "辅助"
+      },
+      "1": {
+        "name": "迷迷，加油！",
+        "fullDesc": "迷迷被召唤时，立即获得{{1, percent}}%充能。",
+        "shortDesc": "被召唤时，立即获得充能。",
+        "tag": "强化"
+      },
+      "2": {
+        "name": "遗憾…不留",
+        "fullDesc": "迷迷消失时，使开拓者行动提前{{1, percent}}%。",
+        "shortDesc": "消失时，使开拓者行动提前。",
+        "tag": "强化"
+      }
+    }
+  }
+}

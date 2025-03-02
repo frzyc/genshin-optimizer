@@ -1,8 +1,10 @@
 {
+  "id": "1211",
   "icon": "IconRole22",
   "rarity": "S",
   "attribute": "electric",
   "specialty": "support",
+  "faction": "VictoriaHousekeepingCo",
   "fullname": "Alexandrina Sebastiane",
   "stats": {
     "atk_base": 103,

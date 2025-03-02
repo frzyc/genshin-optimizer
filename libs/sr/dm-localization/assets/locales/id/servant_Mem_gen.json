@@ -1,0 +1,39 @@
+{
+  "name": "Mem",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Baddies! Trouble!",
+        "fullDesc": "Mengakibatkan {{2}} kali DMG, setiap kalinya akan mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Mem pada 1 musuh acak. Terakhir, mengakibatkan Ice DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Mem pada seluruh musuh.",
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil, total Bounce <orangeStrong>{{2}}</orangeStrong> kali. Terakhir, mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh.",
+        "tag": "AoE"
+      },
+      "1": {
+        "name": "Lemme! Help You!",
+        "fullDesc": "Membuat 1 rekan tim yang ditargetkan mengalami Pendahuluan Aksi sebesar {{3, percent}}% dan menambahkan \"Mem's Support\" selama {{2}} giliran.<br>Setiap kali target yang memiliki \"Mem's Support\" mengakibatkan 1 kali DMG, akan mengakibatkan tambahan 1 kali True DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> dari DMG aslinya.<br>Saat melancarkan kemampuan ini pada diri sendiri, efek Pendahuluan Aksi tidak dapat dipicu.",
+        "shortDesc": "Membuat 1 rekan tim mengalami <orangeStrong>Pendahuluan Aksi</orangeStrong> dan menambahkan \"Mem's Support\": Setelah mengakibatkan DMG, akan mengakibatkan tambahan <orangeStrong>True DMG</orangeStrong>.",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Friends! Together!",
+        "fullDesc": "Meningkatkan CRIT DMG seluruh rekan tim sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Mem + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.<br>Jika Charge belum mencapai 100%, saat Mem beraksi akan secara otomatis melancarkan \"Baddies! Trouble!\". Saat Charge mencapai 100%, Mem akan segera beraksi, dan di aksi berikutnya, Mem dapat memilih 1 rekan tim dan melancarkan \"Lemme! Help You!\".",
+        "shortDesc": "Meningkatkan CRIT DMG seluruh rekan tim.<br>Saat beraksi, akan melancarkan serangan secara otomatis. Jika Charge mencapai 100%, Mem akan segera beraksi dan melancarkan kemampuan baru: membuat 1 rekan tim mengalami <orangeStrong>Pendahuluan Aksi</orangeStrong> dan mengakibatkan <orangeStrong>True DMG</orangeStrong>.",
+        "tag": "Support"
+      },
+      "1": {
+        "name": "Go, Mem, Go!",
+        "fullDesc": "Saat Mem dipanggil, akan segera memperoleh {{1, percent}}% Charge.",
+        "shortDesc": "Saat dipanggil, akan segera memperoleh Charge.",
+        "tag": "Enhance"
+      },
+      "2": {
+        "name": "No... Regrets",
+        "fullDesc": "Saat Mem menghilang, Trailblazer akan mengalami Pendahuluan Aksi sebesar {{1, percent}}%.",
+        "shortDesc": "Saat menghilang, Trailblazer akan mengalami Pendahuluan Aksi.",
+        "tag": "Enhance"
+      }
+    }
+  }
+}

@@ -1,5 +1,11 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import { objKeyMap } from '@genshin-optimizer/common/util'
+import type { ProgressResult } from '@genshin-optimizer/game-opt/solver'
+import { MAX_BUILDS } from '@genshin-optimizer/game-opt/solver'
+import {
+  allRelicSlotKeys,
+  type RelicSlotKey,
+} from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
@@ -9,8 +15,7 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
-import type { ProgressResult } from '@genshin-optimizer/sr/solver'
-import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
+import { Solver } from '@genshin-optimizer/sr/solver'
 import { getCharStat, getLightConeStat } from '@genshin-optimizer/sr/stats'
 import { useSrCalcContext, WorkerSelector } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -66,8 +71,6 @@ function OptimizeWrapper() {
     undefined
   )
   const { optConfig, optConfigId } = useContext(OptConfigContext)
-  const character = useCharacterContext()!
-  const { equippedLightCone } = character
   const relicsBySlot = useMemo(
     () =>
       database.relics.values.reduce(
@@ -150,9 +153,12 @@ function OptimizeWrapper() {
     // Save results to optConfig
     if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.slice(0, 5).map(({ relicIds: ids, value }) => ({
-          lightConeId: equippedLightCone,
-          relicIds: ids,
+        builds: results.slice(0, 5).map(({ ids, value }) => ({
+          lightConeId: ids[0],
+          relicIds: objKeyMap(
+            allRelicSlotKeys,
+            (_slot, index) => ids[index + 1]
+          ),
           value,
         })),
         buildDate: Date.now(),
@@ -167,7 +173,6 @@ function OptimizeWrapper() {
     numWorkers,
     database.optConfigs,
     optConfigId,
-    equippedLightCone,
   ])
 
   const onCancel = useCallback(() => {

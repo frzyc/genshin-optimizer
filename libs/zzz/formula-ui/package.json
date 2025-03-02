@@ -1,0 +1,6 @@
+{
+  "name": "@genshin-optimizer/zzz/formula-ui",
+  "version": "0.0.1",
+  "generators": "./generators.json",
+  "type": "commonjs"
+}

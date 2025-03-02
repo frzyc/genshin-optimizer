@@ -128,9 +128,10 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
     SkillList.forEach((skillId) => {
       // Grab the first level; we just need the image names
       const { AttackType, SkillIcon } = avatarSkillConfig[skillId][0]
-      assets[AttackType ? DmAttackTypeMap[AttackType] : 'talent']?.push(
-        SkillIcon
-      )
+      const assetType = AttackType ? DmAttackTypeMap[AttackType] : 'talent'
+      // TODO: Add memosprite support
+      if (assetType === 'servantSkill' || assetType === 'servantTalent') return
+      assets[assetType]?.push(SkillIcon)
     })
 
     assetData.chars[characterIdMap[avatarId]] = assets

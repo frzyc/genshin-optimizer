@@ -45,32 +45,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hiệu Suất",
-        "fullDesc": "Khi thi triển Chiến Kỹ, hiệu ứng tăng sát thương gây lên mục tiêu sẽ tăng thêm {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Khi thi triển Chiến Kỹ, hiệu ứng tăng sát thương gây lên mục tiêu sẽ tăng thêm {{1, percent}}%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Con Rối",
-        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Kết Băng",
-        "fullDesc": "Khi thi triển Tuyệt Kỹ sẽ tăng {{1, percent}}% sát thương gây ra cho kẻ địch trong trạng thái Đóng Băng.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Khi thi triển Tuyệt Kỹ sẽ tăng {{1, percent}}% sát thương gây ra cho kẻ địch trong trạng thái Đóng Băng."
       }
     }
   },

@@ -1,0 +1,7 @@
+{
+  "name": "將光陰織成黃金",
+  "passive": {
+    "name": "創設",
+    "description": "使裝備者的基礎速度提高<orangeStrong>{{1}}</orangeStrong>，裝備者和裝備者的憶靈在攻擊後使裝備者獲得1層【織錦】，每層【織錦】使裝備者和裝備者的憶靈暴擊傷害提高<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>，最多疊加{{2}}層。疊加至上限時，每層【織錦】額外使造成的普通攻擊傷害提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>。"
+  }
+}

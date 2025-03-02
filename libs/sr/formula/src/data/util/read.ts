@@ -7,11 +7,19 @@ import {
   setReader,
 } from '@genshin-optimizer/game-opt/engine'
 import type { AnyNode } from '@genshin-optimizer/pando/engine'
-import type { DamageType, Dst, Src, TagMapNodeEntry } from '.'
+import type {
+  DamageType,
+  Dst,
+  ElementalType,
+  Path,
+  Src,
+  TagMapNodeEntry,
+} from '.'
 import {
   damageTypes,
   elementalTypes,
   members,
+  paths,
   sheets,
   type Sheet,
 } from './listing'
@@ -26,10 +34,20 @@ export const fixedTags = {
   elementalType: elementalTypes,
   damageType1: damageTypes,
   damageType2: damageTypes,
-}
-export type Tag = BaseTag<Src, Dst, Sheet>
 
-export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
+  // Count
+  path: paths,
+}
+export type Tag = BaseTag<Sheet, Src, Dst> & {
+  elementalType?: ElementalType | null
+  damageType1?: DamageType | null
+  damageType2?: DamageType | null
+
+  // Count
+  path?: Path | null
+}
+
+export class Read extends BaseRead<Tag> {
   override add(
     value: number | string | AnyNode,
     force = false
@@ -37,9 +55,9 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
     if (
       !force &&
       this.tag.q === 'dmg_' &&
-      !this.tag['elementalType'] &&
-      !this.tag['damageType1'] &&
-      !this.tag['damageType2']
+      !this.tag.elementalType &&
+      !this.tag.damageType1 &&
+      !this.tag.damageType2
     ) {
       throw new Error(
         'Tried to add to `dmg_` without optional modifier, use `common_dmg_` instead'
@@ -61,7 +79,7 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
   // Optional Modifiers
 
   // Elemental Type
-  get physical() {
+  get physical(): Read {
     return super.with('elementalType', 'physical')
   }
   get quantum(): Read {
@@ -126,10 +144,22 @@ export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
       super.with('damageType2', 'elemental'),
     ]
   }
+  get servantSkill(): Read[] {
+    return [
+      super.with('damageType1', 'servantSkill'),
+      super.with('damageType2', 'servantSkill'),
+    ]
+  }
+
+  // For `count` usage, use lighter footprint so it doesn't pollute autocomplete
+  // Path
+  withPath(path: Path): Read {
+    return super.with('path', path)
+  }
 }
 
 // Need to instantiate with sr-specific reader
-setReader<Tag, Src, Dst, Sheet>(new Read({}, undefined))
+setReader<Tag>(new Read({}, undefined))
 export const reader = baseReader as Read
 
 export function tagStr(tag: Tag, ex?: any): string {
@@ -145,6 +175,7 @@ export function tagStr(tag: Tag, ex?: any): string {
     elementalType,
     damageType1,
     damageType2,
+    path,
     ...remaining
   } = tag
 
@@ -179,6 +210,7 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(elementalType, 'ele')
   optional(damageType1 && `1:${damageType1}`, 'dmg1')
   optional(damageType2 && `2:${damageType2}`, 'dmg2')
+  optional(path && `p:{path}`, 'path')
   if (ex) result += `[${ex}] `
   return result + '}'
 }

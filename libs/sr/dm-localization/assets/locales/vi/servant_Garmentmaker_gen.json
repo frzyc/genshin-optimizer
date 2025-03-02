@@ -1,0 +1,33 @@
+{
+  "name": "Thợ May",
+  "abilities": {
+    "skill": {
+      "0": {
+        "name": "Bẫy Gai",
+        "fullDesc": "Gây cho 1 kẻ địch Sát Thương Lôi tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công, gây cho mục tiêu lân cận Sát Thương Lôi tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch và mục tiêu lân cận.",
+        "tag": "Khuếch Tán"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Thân Thể Rèn Từ Nước Mắt",
+        "fullDesc": "Sau khi tấn công kẻ địch ở trạng thái Đường Khâu, sẽ khiến Tốc Độ của bản thân tăng <orangeStrong>{{1}}</orangeStrong> điểm, hiệu ứng này tối đa cộng dồn {{3}} tầng. Khi Thợ May hành động sẽ tự động thi triển Bẫy Gai, ưu tiên tấn công kẻ địch ở trạng thái Đường Khâu.",
+        "shortDesc": "Sau khi tấn công kẻ địch ở trạng thái Đường Khâu, sẽ <orangeStrong>tăng tốc độ bản thân</orangeStrong>. Khi hành động sẽ tự động thi triển tấn công, ưu tiên tấn công kẻ địch ở trạng thái Đường Khâu.",
+        "tag": "Cường Hóa"
+      },
+      "1": {
+        "name": "Mùa Hè Lao Vun Vút",
+        "fullDesc": "Khi Thợ May được triệu hồi, khiến bản thân Ưu Tiên Hành Động {{1, percent}}%.",
+        "shortDesc": "Khi được triệu hồi, khiến bản thân Ưu Tiên Hành Động.",
+        "tag": "Cường Hóa"
+      },
+      "2": {
+        "name": "Cỏ Khô Nở Hoa",
+        "fullDesc": "Khi Thợ May biến mất, khiến Aglaea hồi {{1}} điểm Năng Lượng.",
+        "shortDesc": "Khi biến mất, khiến Aglaea hồi Năng Lượng.",
+        "tag": "Cường Hóa"
+      }
+    }
+  }
+}

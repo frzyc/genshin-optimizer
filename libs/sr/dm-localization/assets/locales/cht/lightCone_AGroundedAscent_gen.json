@@ -1,0 +1,7 @@
+{
+  "name": "回到大地的飛行",
+  "passive": {
+    "name": "再啟程",
+    "description": "當裝備者對我方單體角色施放戰技或終結技後，裝備者恢復<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>點能量，同時使技能目標獲得1層【聖詠】，持續{{4}}回合，最多疊加{{3}}層，每層【聖詠】使持有者造成的傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>。裝備者每對我方單體角色施放{{5}}次戰技或終結技後，恢復1個戰技點。"
+  }
+}

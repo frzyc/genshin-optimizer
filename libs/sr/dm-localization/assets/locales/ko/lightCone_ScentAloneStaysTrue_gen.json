@@ -1,0 +1,7 @@
+{
+  "name": "오직 향만이 변함없이",
+  "passive": {
+    "name": "안심",
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기를 발동하여 적 공격 후 해당 적을 [망우] 상태에 빠트린다, 지속 시간: {{5}}턴. [망우] 상태의 적은 받는 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가하고, 장착한 캐릭터의 현재 격파 특수효과가 {{3, percent}}% 이상이면 받는 피해 증가 효과가 추가로 <orangeStrong>{{4, percent}}%</orangeStrong> 증가한다"
+  }
+}

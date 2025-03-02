@@ -1,0 +1,7 @@
+{
+  "name": "Wenn Zeit eine Blume wäre",
+  "passive": {
+    "name": "Hoffnung",
+    "description": "Erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nachdem der Träger einen Folgeangriff ausgeführt hat, wird zusätzlich {{2}} Pkt. Energie wiederhergestellt und „Orakel“ für {{3}} Rd. erhalten. Wenn der Träger Orakel besitzt, wird der KRIT-SCH aller Verbündeten um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht. Beim Kampfeintritt stellt der Träger {{5}} Pkt. Energie wieder her und erhält für {{6}} Rd. Orakel."
+  }
+}

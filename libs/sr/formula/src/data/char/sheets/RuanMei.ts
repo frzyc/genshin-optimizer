@@ -13,7 +13,6 @@ import {
   allBoolConditionals,
   customBreakDmg,
   enemy,
-  enemyDebuff,
   notOwnBuff,
   own,
   ownBuff,
@@ -107,7 +106,7 @@ const sheet = register(
   ),
   registerBuff(
     'e1_defIgn_',
-    enemyDebuff.common.defIgn_.add(cmpGE(char.eidolon, 1, dm.e1.defIgn_))
+    teamBuff.premod.defIgn_.add(cmpGE(char.eidolon, 1, dm.e1.defIgn_))
   ),
   registerBuff(
     'e2_atk_',

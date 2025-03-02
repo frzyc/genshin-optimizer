@@ -1,8 +1,10 @@
 {
+  "id": "1191",
   "icon": "IconRole21",
   "rarity": "S",
   "attribute": "ice",
   "specialty": "attack",
+  "faction": "VictoriaHousekeepingCo",
   "fullname": "Ellen Joe",
   "stats": {
     "atk_base": 135,

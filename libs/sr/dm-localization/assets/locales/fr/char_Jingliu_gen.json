@@ -42,7 +42,7 @@
     "technique": {
       "0": {
         "name": "Éclat de la vérité",
-        "fullDesc": "Crée une dimension spéciale autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension spéciale sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2, percent}}% de chances de base de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension spéciale. Les cibles ennemies gelées ne peuvent pas agir et subissent des DGT de glace additionnels équivalents à {{5, percent}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension spéciale sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2, percent}}% de chances de base de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension spéciale. Les cibles ennemies gelées ne peuvent pas agir et subissent des DGT de glace additionnels équivalents à {{5, percent}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 effet de dimension créé par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale autour du personnage. Les ennemis qui s'y trouvent sont <orangeStrong>gelés</orangeStrong>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <orangeStrong>Gelé</orangeStrong> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension.",
         "tag": "Incapacitation"
       }
@@ -51,32 +51,25 @@
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Royaume des morts",
-        "fullDesc": "Augmente la RÉS aux effets de {{1, percent}}% dans l'état Migration spectrale.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente la RÉS aux effets de {{1, percent}}% dans l'état Migration spectrale."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Championne de l'épée",
-        "fullDesc": "La prochaine action est avancée de {{1, percent}}% après avoir utilisé Éclair transcendant.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "La prochaine action est avancée de {{1, percent}}% après avoir utilisé Éclair transcendant."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Spectre du froid",
-        "fullDesc": "Augmente les DGT infligés par l'ultime dans l'état Migration spectrale de {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Augmente les DGT infligés par l'ultime dans l'état Migration spectrale de {{1, percent}}%."
       }
     }
   },

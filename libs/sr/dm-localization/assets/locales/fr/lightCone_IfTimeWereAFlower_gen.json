@@ -1,0 +1,7 @@
+{
+  "name": "Si le temps était une fleur",
+  "passive": {
+    "name": "Aspiration",
+    "description": "Les DGT critiques du porteur augmentent de <orangeStrong>{{1, percent}}%</orangeStrong>. Après que le porteur lance une ATQ de suivi, il régénère {{2}} points d'énergie et obtient Présage pendant {{3}} tours. Lorsque le porteur bénéficie de Présage, les DGT critiques de toutes les cibles alliées augmentent de <orangeStrong>{{4, percent}}%</orangeStrong>. Le porteur régénère {{5}} points d'énergie et obtient Présage pendant {{6}} tours lorsque vous engagez le combat."
+  }
+}

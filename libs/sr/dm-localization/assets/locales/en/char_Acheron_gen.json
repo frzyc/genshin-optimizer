@@ -13,7 +13,7 @@
       "0": {
         "name": "Octobolt Flash",
         "fullDesc": "Gains {{3}} point(s) of Slashed Dream. Inflicts {{3}} stack(s) of Crimson Knot on a single target enemy, dealing Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Acheron's ATK to this target, as well as Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Acheron's ATK to adjacent targets.",
-        "shortDesc": "Gains <orangeStrong>{{3}}</orangeStrong> point(s) of Slashed Dream. Inflicts <orangeStrong>{{3}}</orangeStrong> stack(s) of Crimson Knot on a single enemy, dealing Lightning DMG to this target, as well as minor Lightning DMG to adjacent targets.",
+        "shortDesc": "Gains <orangeStrong>{{3}}</orangeStrong> point(s) of Slashed Dream. Inflicts <orangeStrong>{{3}}</orangeStrong> stack(s) of Crimson Knot on one enemy, dealing Lightning DMG to this target, as well as minor Lightning DMG to adjacent targets.",
         "tag": "Blast"
       }
     },
@@ -26,25 +26,21 @@
       },
       "1": {
         "name": "Rainblade",
-        "fullDesc": "",
         "shortDesc": "Deals minor Lightning DMG to a single enemy, and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, deals minor Lightning DMG to all enemies 1 time, with this DMG multiplier increased for every stack of Crimson Knot removed.",
         "tag": "AoE"
       },
       "2": {
         "name": "Rainblade",
-        "fullDesc": "",
         "shortDesc": "Deals minor Lightning DMG to a single enemy, and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, deals minor Lightning DMG to all enemies 1 time, with this DMG multiplier increased for every stack of Crimson Knot removed.",
         "tag": "AoE"
       },
       "3": {
         "name": "Rainblade",
-        "fullDesc": "",
         "shortDesc": "Deals minor Lightning DMG to a single enemy, and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, deals minor Lightning DMG to all enemies 1 time, with this DMG multiplier increased for every stack of Crimson Knot removed.",
         "tag": "AoE"
       },
       "4": {
         "name": "Stygian Resurge",
-        "fullDesc": "",
         "shortDesc": "Deals Lightning DMG to all enemies and removes all Crimson Knots.",
         "tag": "AoE"
       }
@@ -69,32 +65,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Red Oni",
-        "fullDesc": "When battle starts, immediately gains {{1}} point(s) of Slashed Dream and applies {{1}} stack(s) of Crimson Knot to a random enemy. When Slashed Dream reaches its upper limit, for every point of Slashed Dream that exceeds the limit, gains 1 stack of Quadrivalent Ascendance. Enables Quadrivalent Ascendance to stack up to {{2}} time(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When battle starts, immediately gains {{1}} point(s) of Slashed Dream and applies {{1}} stack(s) of Crimson Knot to a random enemy. When Slashed Dream reaches its upper limit, for every point of Slashed Dream that exceeds the limit, gains 1 stack of Quadrivalent Ascendance. Enables Quadrivalent Ascendance to stack up to {{2}} time(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Abyss",
-        "fullDesc": "When there are 1 or 2 Nihility characters other than Acheron in the team, the DMG dealt by Acheron's Basic ATK, Skill, and Ultimate increases to {{1, percent}}% or {{2, percent}}% of the original DMG respectively.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When there are 1 or 2 Nihility characters other than Acheron in the team, the DMG dealt by Acheron's Basic ATK, Skill, and Ultimate increases to {{1, percent}}% or {{2, percent}}% of the original DMG respectively."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Thunder Core",
-        "fullDesc": "When the Ultimate's Rainblade hits enemy targets that have Crimson Knot, the DMG dealt by Acheron increases by {{1, percent}}%, stacking up to {{2}} time(s) and lasting for {{3}} turn(s). And when Stygian Resurge triggers, additionally deals DMG for {{4}} times. Each time deals Lightning DMG equal to {{5, percent}}% of Acheron's ATK to a single random enemy and is considered as Ultimate DMG.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When the Ultimate's Rainblade hits enemy targets that have Crimson Knot, the DMG dealt by Acheron increases by {{1, percent}}%, stacking up to {{2}} time(s) and lasting for {{3}} turn(s). And when Stygian Resurge triggers, additionally deals DMG for {{4}} times. Each time deals Lightning DMG equal to {{5, percent}}% of Acheron's ATK to a single random enemy and is considered as Ultimate DMG."
       }
     }
   },

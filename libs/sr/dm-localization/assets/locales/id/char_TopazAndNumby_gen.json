@@ -36,8 +36,8 @@
     "technique": {
       "0": {
         "name": "Explicit Subsidy",
-        "fullDesc": "Saat Topaz adalah karakter yang digunakan di latar tempat, akan memanggil Numby. Numby akan secara otomatis mencari Peti Harta biasa dan Trotter dalam jangkauan tertentu.<br>Melancarkan Technique akan membuat Topaz memulihkan {{1}} Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.<br>Setelah melancarkan Technique ini, jika Topaz masih berada dalam tim setelah memenangkan pertempuran dengan musuh di latar tempat, kamu akan memperoleh Credit tambahan dalam jumlah kecil saat menerima Credit. Setiap hari dalam kalender bumi, kamu hanya dapat menerima maksimal {{2}} Credit tambahan.<br>Setelah melancarkan Technique ini dan mengalahkan musuh di Simulated Universe atau Divergent Universe, kamu akan memperoleh Cosmic Fragment tambahan dalam jumlah kecil, serta memiliki peluang kecil untuk memperoleh 1 Benda Langka acak.",
-        "shortDesc": "<orangeStrong>Memanggil Numby untuk mengikuti pergerakanmu</orangeStrong> di dalam latar tempat. Numby akan <orangeStrong>mencari Peti Harta biasa dan Trotter di sekitar</orangeStrong> secara otomatis. Melancarkan Technique akan membuat Topaz memulihkan Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.",
+        "fullDesc": "Saat Topaz adalah karakter yang digunakan di latar tempat, akan memanggil Numby. Numby akan secara otomatis mencari Peti Harta Biasa dan Trotter dalam jangkauan tertentu.<br>Melancarkan Technique akan membuat Topaz memulihkan {{1}} Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.<br>Setelah melancarkan Technique ini, jika Topaz masih berada dalam tim setelah memenangkan pertempuran dengan musuh di latar tempat, kamu akan memperoleh Credit tambahan dalam jumlah kecil saat menerima Credit. Setiap hari dalam kalender bumi, kamu hanya dapat menerima maksimal {{2}} Credit tambahan.<br>Setelah melancarkan Technique ini dan mengalahkan musuh di Simulated Universe atau Divergent Universe, kamu akan memperoleh Cosmic Fragment tambahan dalam jumlah kecil, serta memiliki peluang kecil untuk memperoleh 1 Benda Langka acak.",
+        "shortDesc": "<orangeStrong>Memanggil Numby untuk mengikuti pergerakanmu</orangeStrong> di dalam latar tempat. Numby akan <orangeStrong>mencari Peti Harta Biasa dan Trotter di sekitar</orangeStrong> secara otomatis. Melancarkan Technique akan membuat Topaz memulihkan Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.",
         "tag": "Enhance"
       }
     },
@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Overdraft",
-        "fullDesc": "Saat Topaz melancarkan Basic Attack untuk mengakibatkan DMG, serangan tersebut akan dianggap sebagai Serangan Lanjutan.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Saat Topaz melancarkan Basic Attack untuk mengakibatkan DMG, serangan tersebut akan dianggap sebagai Serangan Lanjutan."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Financial Turmoil",
-        "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Topaz dan Numby terhadap target musuh dengan Fire Weakness.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Topaz dan Numby terhadap target musuh dengan Fire Weakness."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stonks Market",
-        "fullDesc": "Setelah Numby melancarkan serangan saat berstatus \"Windfall Bonanza!\", Topaz akan memulihkan {{1}} Energy tambahan.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Setelah Numby melancarkan serangan saat berstatus \"Windfall Bonanza!\", Topaz akan memulihkan {{1}} Energy tambahan."
       }
     }
   },

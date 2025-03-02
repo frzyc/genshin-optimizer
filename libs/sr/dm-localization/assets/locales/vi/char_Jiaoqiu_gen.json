@@ -1,0 +1,96 @@
+{
+  "name": "Jiaoqiu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Nhân Hỏa Công Tâm",
+        "fullDesc": "Gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của Jiaoqiu cho 1 kẻ địch chỉ định.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Thiêu Đốt Tập Kích",
+        "fullDesc": "Gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Jiaoqiu cho 1 kẻ địch chỉ định, đồng thời gây Sát Thương Hỏa bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Jiaoqiu cho mục tiêu lân cận kẻ đó, có {{3, percent}}% xác suất cơ bản thi triển 1 tầng Nướng Tro lên mục tiêu chính.",
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận. Có xác suất lớn thi triển 1 tầng Nướng Tro cho mục tiêu chính.",
+        "tag": "Khuếch Tán"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Đỉnh Trận Diệu Pháp, Kỳ Chính Tương Sinh",
+        "fullDesc": "Lấy số tầng Nướng Tro vốn có của kẻ địch đặt làm số tầng Nướng Tro cao nhất của trận này, sau đó mở Kết Giới và gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của Jiaoqiu cho toàn phe địch.<br>Khi đang ở trong Kết Giới, Sát Thương Tuyệt Kỹ phải chịu của kẻ địch tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, và khi hành động có <orangeStrong>{{2, percent}}%</orangeStrong> xác suất cơ bản bị thi triển 1 tầng Nướng Tro, trong thời gian kết giới tồn tại, hiệu ứng này tối đa kích hoạt {{5}} lần, hơn nữa mỗi kẻ địch mỗi hiệp chỉ được kích hoạt 1 lần. Mỗi khi Jiaoqiu thi triển Tuyệt Kỹ sẽ làm mới lại số lần kích hoạt.<br>Kết Giới duy trì {{4}} hiệp, khi bắt đầu mỗi hiệp của bản thân sẽ giảm 1 hiệp duy trì Kết Giới. Khi Jiaoqiu rơi vào trạng thái không thể chiến đấu, Kết Giới cũng sẽ bị giải trừ.",
+        "shortDesc": "Lấy số tầng Nướng Tro vốn có của kẻ địch đặt làm số tầng Nướng Tro cao nhất của trận này, sau đó mở Kết Giới và gây cho toàn bộ kẻ địch Sát Thương Hỏa. Khi đang ở trong Kết Giới, kẻ địch <orangeStrong>sẽ bị tăng Sát Thương Tuyệt Kỹ phải chịu</orangeStrong>, và khi hành động sẽ có xác suất bị thi triển 1 tầng Nướng Tro.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tứ Thị Bát Quyền, Tiêm Tư Tinh Vị",
+        "fullDesc": "Khi Jiaoqiu đánh trúng kẻ địch bằng Tấn Công Thường, Chiến Kỹ và Tuyệt Kỹ, có {{1, percent}}% xác suất cơ bản gắn kèm 1 tầng Nướng Tro lên kẻ địch đó, tầng 1 sẽ khiến sát thương phải chịu của địch tăng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, sau đó cứ cộng dồn 1 tầng sẽ tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Nướng Tro cộng dồn tối đa {{4}} tầng, duy trì {{5}} hiệp.<br>Khi kẻ địch ở trạng thái Nướng Tro cũng sẽ bị xem là đồng thời rơi vào trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp sẽ chịu Sát Thương Hỏa Duy Trì bằng <orangeStrong>{{6, percent}}%</orangeStrong> Tấn Công của Jiaoqiu.",
+        "shortDesc": "Khi thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ đánh trúng kẻ địch, sẽ có xác suất lớn thi triển 1 tầng Nướng Tro lên mục tiêu, tăng sát thương kẻ địch phải chịu, và sẽ bị xem là đồng thời rơi vào trạng thái Thiêu Đốt.",
+        "tag": "Quấy Nhiễu"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Lửa Lớn Hỗn Loạn",
+        "fullDesc": "Sau khi dùng Bí Kỹ, sẽ tạo 1 vùng đặc biệt duy trì {{2}} giây. Sau khi vào trận cùng kẻ địch trong vùng đặc biệt, sẽ gây Sát Thương Hỏa bằng {{1, percent}}% tấn công của Jiaoqiu cho toàn phe địch, và có {{3, percent}}% xác suất cơ bản thi triển 1 tầng Nướng Tro. Tối đa chỉ tồn tại 1 hiệu ứng khu vực do phe ta tạo ra.",
+        "shortDesc": "Tạo vùng đặc biệt. Sau khi vào trận cùng kẻ địch đứng trong khu vực, sẽ gây lượng nhỏ Sát Thương Hỏa cho toàn phe địch, và có xác suất lớn thi triển 1 tầng Nướng Tro.",
+        "tag": "Quấy Nhiễu"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Tấn Công",
+        "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Thắp Lửa",
+        "fullDesc": "Khi bắt đầu trận, sẽ hồi ngay {{1}} điểm Năng Lượng."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Thổi Lửa",
+        "fullDesc": "Khi Chính Xác Hiệu Ứng của Jiaoqiu lớn hơn {{1, percent}}%, mỗi {{2, percent}}% vượt quá sẽ tăng thêm {{3, percent}}% Tấn Công, tối đa không vượt quá {{4, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Đốt Hương",
+        "fullDesc": "Khi Kết Giới tồn tại, mục tiêu địch vào trận sẽ bị thi triển Nướng Tro, số tầng bằng với số tầng của người có Nướng Tro nhiều tầng nhất trong thời gian mở Kết Giới, tối thiểu là {{1}} tầng."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Ngũ Vị Nhập Ngũ Tạng, Chín Sống Đã Định",
+      "desc": "Sát thương mục tiêu phe ta gây ra cho kẻ địch trong trạng thái Nướng Tro tăng {{1, percent}}%. Mỗi khi kích hoạt hiệu ứng Thiên Phú khiến kẻ địch rơi vào trạng thái Nướng Tro, sẽ giúp số tầng Nướng Tro được cộng dồn ở lần này tăng thêm {{2}} tầng."
+    },
+    "2": {
+      "name": "Sướng Miệng Hại Thân, Vị Nồng Trừ Độc",
+      "desc": "Khi kẻ địch ở trạng thái Nướng Tro, Bội Số Sát Thương Hỏa Duy Trì mà Nướng Tro gây ra cho kẻ đó tăng {{1, percent}}%."
+    },
+    "3": {
+      "name": "Hòa Hợp Diệu Kỳ, Địch Bất Khả Kháng",
+      "desc": "Cấp Chiến Kỹ +2, tối đa không quá cấp 15; Cấp Tấn Công Thường +1, tối đa không quá cấp 10."
+    },
+    "4": {
+      "name": "Tạng Phủ Hòa Bình, Khí Huyết Hưng Thịnh",
+      "desc": "Khi Kết Giới tồn tại, Tấn Công của kẻ địch giảm {{1, percent}}%."
+    },
+    "5": {
+      "name": "Minh Tranh Ám Đấu",
+      "desc": "Cấp Tuyệt Kỹ +2, tối đa không quá cấp 15; Cấp Thiên Phú +2, tối đa không quá cấp 15."
+    },
+    "6": {
+      "name": "Tùy Thuộc Độ Lửa",
+      "desc": "Khi mục tiêu địch bị tiêu diệt, Nướng Tro mà mục tiêu sở hữu sẽ cộng dồn cho kẻ địch có số tầng Nướng Tro thấp nhất hiện đang sống sót trong trận. Giới hạn số tầng Nướng Tro tăng lên {{2}}, mỗi tầng Nướng Tro sẽ làm Kháng Tất Cả Thuộc Tính của mục tiêu giảm {{3, percent}}%."
+    }
+  }
+}

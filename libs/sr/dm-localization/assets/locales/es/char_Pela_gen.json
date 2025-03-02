@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Escarcha",
-        "fullDesc": "Elimina {{2}} efecto positivo de un enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Pela como Daño de Hielo.",
+        "fullDesc": "Disipa {{2}} efecto positivo de un enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Pela como Daño de Hielo.",
         "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong>efecto positivo</orangeStrong> de un enemigo y le inflige Daño de Hielo.",
         "tag": "ATQ individual"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Porrazo",
-        "fullDesc": "Inflige un {{1, percent}}% más de daño a los enemigos afectados por estados negativos.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Inflige un {{1, percent}}% más de daño a los enemigos afectados por estados negativos."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Estrategia secreta",
-        "fullDesc": "Cuando Pela está en la batalla, el acierto de efecto de todos los aliados aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando Pela está en la batalla, el acierto de efecto de todos los aliados aumenta en un {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Barrido",
-        "fullDesc": "Cuando la habilidad básica disipa un efecto positivo, el daño del siguiente ataque aumenta en un {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Cuando la habilidad básica disipa un efecto positivo, el daño del siguiente ataque aumenta en un {{1, percent}}%."
       }
     }
   },

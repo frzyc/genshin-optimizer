@@ -1,0 +1,7 @@
+{
+  "name": "Chamas de Sangue, Incendeiem o Meu Caminho",
+  "passive": {
+    "name": "Vista",
+    "description": "Aumenta os PV máximos do usuário em <orangeStrong>{{1, percent}}%</orangeStrong> e a Cura Recebida em <orangeStrong>{{6, percent}}%</orangeStrong>. Ao usar a Perícia ou a Perícia Suprema, consome PV em um valor igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dos PV máximos do usuário e aumenta o Dano causado por este ataque em <orangeStrong>{{3, percent}}%</orangeStrong>. Se os PV consumidos deste efeito forem maiores que {{4}}, o Dano aumenta adicionalmente em <orangeStrong>{{5, percent}}%</orangeStrong>.<br>Se os PV atuais não forem suficientes, este efeito reduz os PV atuais do usuário para 1."
+  }
+}

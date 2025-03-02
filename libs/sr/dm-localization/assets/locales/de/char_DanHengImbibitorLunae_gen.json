@@ -37,7 +37,6 @@
       "1": {
         "name": "Abbrechen",
         "fullDesc": "Verstärkung abbrechen",
-        "shortDesc": "",
         "tag": "Abbrechen"
       }
     },
@@ -69,32 +68,25 @@
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Verborgener Stern",
-        "fullDesc": "Stellt zu Beginn des Kampfes unmittelbar {{1}} Pkt. Energie wieder her.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Stellt zu Beginn des Kampfes unmittelbar {{1}} Pkt. Energie wieder her."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Eindämmung der Flut",
-        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Unruhiger Drache, enthüllte Legende",
-        "fullDesc": "Erhöht den KRIT-SCH um {{1, percent}}%, wenn diese Figur Gegnern mit imaginärer Schwäche SCH zufügt.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Erhöht den KRIT-SCH um {{1, percent}}%, wenn diese Figur Gegnern mit imaginärer Schwäche SCH zufügt."
       }
     }
   },

@@ -1,0 +1,7 @@
+{
+  "name": "Into the Unreachable Veil",
+  "passive": {
+    "name": "Mind Game",
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> CRIT Rate pengguna. Saat pengguna melancarkan Ultimate, akan membuat Skill DMG dan Ultimate DMG yang diakibatkan pengguna meningkat <orangeStrong>{{4, percent}}%</orangeStrong>, berlangsung selama {{5}} giliran. Setelah pengguna melancarkan Ultimate, jika Energy yang dikonsumsi Ultimate kali ini lebih dari atau sama dengan {{3}}, maka akan memulihkan 1 Poin Skill."
+  }
+}

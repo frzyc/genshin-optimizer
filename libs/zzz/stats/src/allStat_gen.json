@@ -115,10 +115,12 @@
   },
   "char": {
     "Anby": {
+      "id": "1011",
       "icon": "IconRole01",
       "rarity": "A",
       "attribute": "electric",
       "specialty": "stun",
+      "faction": "CunningHares",
       "fullname": "Anby Demara",
       "stats": {
         "atk_base": 95,
@@ -1198,10 +1200,12 @@
       }
     },
     "Nekomata": {
+      "id": "1021",
       "icon": "IconRole11",
       "rarity": "S",
       "attribute": "physical",
       "specialty": "attack",
+      "faction": "CunningHares",
       "fullname": "Nekomiya Mana",
       "stats": {
         "atk_base": 131,
@@ -2313,10 +2317,12 @@
       }
     },
     "Nicole": {
+      "id": "1031",
       "icon": "IconRole12",
       "rarity": "A",
       "attribute": "ether",
       "specialty": "support",
+      "faction": "CunningHares",
       "fullname": "Nicole Demara",
       "stats": {
         "atk_base": 93,
@@ -4129,10 +4135,12 @@
       }
     },
     "Soldier11": {
+      "id": "1041",
       "icon": "IconRole05",
       "rarity": "S",
       "attribute": "fire",
       "specialty": "attack",
+      "faction": "ObolSquad",
       "fullname": "Soldier 11",
       "stats": {
         "atk_base": 128,
@@ -5385,10 +5393,12 @@
       }
     },
     "Corin": {
+      "id": "1061",
       "icon": "IconRole09",
       "rarity": "A",
       "attribute": "physical",
       "specialty": "attack",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Corin Wickes",
       "stats": {
         "atk_base": 116,
@@ -6683,10 +6693,12 @@
       }
     },
     "Caesar": {
+      "id": "1071",
       "icon": "IconRole25",
       "rarity": "S",
       "attribute": "physical",
       "specialty": "defense",
+      "faction": "SonsOfCalydon",
       "fullname": "Caesar King",
       "stats": {
         "atk_base": 101,
@@ -8139,10 +8151,12 @@
       }
     },
     "Billy": {
+      "id": "1081",
       "icon": "IconRole10",
       "rarity": "A",
       "attribute": "physical",
       "specialty": "attack",
+      "faction": "CunningHares",
       "fullname": "Billy Kid",
       "stats": {
         "atk_base": 113,
@@ -9306,10 +9320,12 @@
       }
     },
     "Miyabi": {
+      "id": "1091",
       "icon": "IconRole13",
       "rarity": "S",
       "attribute": "ice",
       "specialty": "anomaly",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Hoshimi Miyabi",
       "stats": {
         "atk_base": 127,
@@ -10688,10 +10704,12 @@
       }
     },
     "Koleda": {
+      "id": "1101",
       "icon": "IconRole14",
       "rarity": "S",
       "attribute": "fire",
       "specialty": "stun",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Koleda Belobog",
       "stats": {
         "atk_base": 106,
@@ -12064,10 +12082,12 @@
       }
     },
     "Anton": {
+      "id": "1111",
       "icon": "IconRole15",
       "rarity": "A",
       "attribute": "electric",
       "specialty": "attack",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Anton Ivanov",
       "stats": {
         "atk_base": 114,
@@ -13400,10 +13420,12 @@
       }
     },
     "Ben": {
+      "id": "1121",
       "icon": "IconRole16",
       "rarity": "A",
       "attribute": "fire",
       "specialty": "defense",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Ben Bigger",
       "stats": {
         "atk_base": 94,
@@ -14545,10 +14567,12 @@
       }
     },
     "Soukaku": {
+      "id": "1131",
       "icon": "IconRole17",
       "rarity": "A",
       "attribute": "ice",
       "specialty": "support",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Soukaku",
       "stats": {
         "atk_base": 96,
@@ -15987,10 +16011,12 @@
       }
     },
     "Lycaon": {
+      "id": "1141",
       "icon": "IconRole18",
       "rarity": "S",
       "attribute": "ice",
       "specialty": "stun",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Von Lycaon",
       "stats": {
         "atk_base": 105,
@@ -17530,10 +17556,12 @@
       }
     },
     "Lucy": {
+      "id": "1151",
       "icon": "IconRole27",
       "rarity": "A",
       "attribute": "fire",
       "specialty": "support",
+      "faction": "SonsOfCalydon",
       "fullname": "Luciana de Montefio",
       "stats": {
         "atk_base": 95,
@@ -18893,10 +18921,12 @@
       }
     },
     "Lighter": {
+      "id": "1161",
       "icon": "IconRole26",
       "rarity": "S",
       "attribute": "fire",
       "specialty": "stun",
+      "faction": "SonsOfCalydon",
       "fullname": "Lighter",
       "stats": {
         "atk_base": 109,
@@ -20496,10 +20526,12 @@
       }
     },
     "Burnice": {
+      "id": "1171",
       "icon": "IconRole32",
       "rarity": "S",
       "attribute": "fire",
       "specialty": "anomaly",
+      "faction": "SonsOfCalydon",
       "fullname": "Burnice White",
       "stats": {
         "atk_base": 124,
@@ -21851,10 +21883,12 @@
       }
     },
     "Grace": {
+      "id": "1181",
       "icon": "IconRole20",
       "rarity": "S",
       "attribute": "electric",
       "specialty": "anomaly",
+      "faction": "BelebogHeavyIndustries",
       "fullname": "Grace Howard",
       "stats": {
         "atk_base": 119,
@@ -22836,10 +22870,12 @@
       }
     },
     "Ellen": {
+      "id": "1191",
       "icon": "IconRole21",
       "rarity": "S",
       "attribute": "ice",
       "specialty": "attack",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Ellen Joe",
       "stats": {
         "atk_base": 135,
@@ -24245,10 +24281,12 @@
       }
     },
     "Harumasa": {
+      "id": "1201",
       "icon": "IconRole35",
       "rarity": "S",
       "attribute": "electric",
       "specialty": "attack",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Asaba Harumasa",
       "stats": {
         "atk_base": 132,
@@ -25631,10 +25669,12 @@
       }
     },
     "Rina": {
+      "id": "1211",
       "icon": "IconRole22",
       "rarity": "S",
       "attribute": "electric",
       "specialty": "support",
+      "faction": "VictoriaHousekeepingCo",
       "fullname": "Alexandrina Sebastiane",
       "stats": {
         "atk_base": 103,
@@ -26631,10 +26671,12 @@
       }
     },
     "Yanagi": {
+      "id": "1221",
       "icon": "IconRole31",
       "rarity": "S",
       "attribute": "electric",
       "specialty": "anomaly",
+      "faction": "HollowSpecialOoperationsSection6",
       "fullname": "Tsukishiro Yanagi",
       "stats": {
         "atk_base": 126,
@@ -27982,10 +28024,12 @@
       }
     },
     "ZhuYuan": {
+      "id": "1241",
       "icon": "IconRole23",
       "rarity": "S",
       "attribute": "ether",
       "specialty": "attack",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Zhu Yuan",
       "stats": {
         "atk_base": 132,
@@ -29349,10 +29393,12 @@
       }
     },
     "QingYi": {
+      "id": "1251",
       "icon": "IconRole29",
       "rarity": "S",
       "attribute": "electric",
       "specialty": "stun",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Qingyi",
       "stats": {
         "atk_base": 109,
@@ -30680,10 +30726,12 @@
       }
     },
     "Jane": {
+      "id": "1261",
       "icon": "IconRole24",
       "rarity": "S",
       "attribute": "physical",
       "specialty": "anomaly",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Jane Doe",
       "stats": {
         "atk_base": 127,
@@ -32131,10 +32179,12 @@
       }
     },
     "Seth": {
+      "id": "1271",
       "icon": "IconRole30",
       "rarity": "A",
       "attribute": "electric",
       "specialty": "defense",
+      "faction": "CriminalInvestigationSpecialResponseTeam",
       "fullname": "Seth Lowell",
       "stats": {
         "atk_base": 93,
@@ -33290,10 +33340,12 @@
       }
     },
     "Piper": {
+      "id": "1281",
       "icon": "IconRole28",
       "rarity": "A",
       "attribute": "physical",
       "specialty": "anomaly",
+      "faction": "SonsOfCalydon",
       "fullname": "Piper",
       "stats": {
         "atk_base": 109,
@@ -34521,10 +34573,12 @@
       }
     },
     "Astra": {
+      "id": "1311",
       "icon": "IconRole36",
       "rarity": "S",
       "attribute": "ether",
       "specialty": "support",
+      "faction": "StarsOfLyra",
       "fullname": "Astra Yao",
       "stats": {
         "atk_base": 103,
@@ -35875,10 +35929,12 @@
       }
     },
     "Evelyn": {
+      "id": "1321",
       "icon": "IconRole37",
       "rarity": "S",
       "attribute": "fire",
       "specialty": "attack",
+      "faction": "StarsOfLyra",
       "fullname": "Evelyn Chevalier",
       "stats": {
         "atk_base": 134,

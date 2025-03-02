@@ -1,8 +1,10 @@
 {
+  "id": "1061",
   "icon": "IconRole09",
   "rarity": "A",
   "attribute": "physical",
   "specialty": "attack",
+  "faction": "VictoriaHousekeepingCo",
   "fullname": "Corin Wickes",
   "stats": {
     "atk_base": 116,

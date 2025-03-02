@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "불티",
-        "fullDesc": "공격 발동 후 {{1, percent}}%의 기본 확률로 적을 연소 상태에 빠트린다. 지속 시간: {{2}}턴.<br>연소 상태의 적은 턴이 시작될 때마다 히메코 공격력의 {{3, percent}}%만큼 화염 속성 지속 피해를 받는다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "공격 발동 후 {{1, percent}}%의 기본 확률로 적을 연소 상태에 빠트린다. 지속 시간: {{2}}턴<br>연소 상태의 적은 턴이 시작될 때마다 히메코 공격력의 {{3, percent}}%만큼 화염 속성 지속 피해를 받는다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "작열",
-        "fullDesc": "전투 스킬이 연소 상태의 적에게 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "전투 스킬이 연소 상태의 적에게 가하는 피해가 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "도표",
-        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이상이면, 치명타 확률이 {{2, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이상이면, 치명타 확률이 {{2, percent}}% 증가한다"
       }
     }
   },

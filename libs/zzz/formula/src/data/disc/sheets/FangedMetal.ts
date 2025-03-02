@@ -6,6 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'FangedMetal'
 
 const discCount = own.common.count.sheet(key)
+const showCond4Set = cmpGE(discCount, 4, 'unique', '')
 
 const { inflict_assault } = allBoolConditionals(key)
 
@@ -18,7 +19,8 @@ const sheet = registerDisc(
     'set4_cond_inflict_assault',
     ownBuff.combat.common_dmg_.add(
       cmpGE(discCount, 4, inflict_assault.ifOn(0.35))
-    )
+    ),
+    showCond4Set
   )
 )
 export default sheet

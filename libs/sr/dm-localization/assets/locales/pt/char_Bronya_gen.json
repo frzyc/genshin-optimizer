@@ -13,7 +13,7 @@
       "0": {
         "name": "Redistribuição de Combate",
         "fullDesc": "Dissipa uma penalidade de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <orangeStrong>{{1, percent}}%</orangeStrong> por {{3}} rodada(s).<br>Quando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
-        "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong>penalidade</orangeStrong> de um único aliado, <orangeStrong>aumenta o dano que ele causa</orangeStrong> e permite que ele <orangeStrong>aja imediatamente</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong>penalidade</orangeStrong> de um único aliado, <orangeStrong>aumenta o Dano que ele causa</orangeStrong> e permite que ele <orangeStrong>aja imediatamente</orangeStrong>.",
         "tag": "Suporte"
       }
     },
@@ -45,39 +45,32 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Comando",
-        "fullDesc": "A Chance de CRIT do ATQ Básico aumenta para 100%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A Chance de CRIT do ATQ Básico aumenta para 100%."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Campo de Batalha",
-        "fullDesc": "No início da batalha, aumenta a DEF de todos os aliados em {{2, percent}}% por {{1}} rodada(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "No início da batalha, aumenta a DEF de todos os aliados em {{2, percent}}% por {{1}} rodada(s)."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Poder Militar",
-        "fullDesc": "Quando Bronya está no campo, todos os aliados causam {{1, percent}}% a mais de Dano.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Quando Bronya está no campo, todos os aliados causam {{1, percent}}% a mais de Dano."
       }
     }
   },
   "ranks": {
     "1": {
       "name": "Aprimore Sua Força",
-      "desc": "Ao usar a Perícia, há uma chance fixa{{1, percent}}% d de {{1, percent}}% de recuperar 1 Ponto de Perícia. Este efeito tem um tempo de recarga de 1 rodada."
+      "desc": "Ao usar a Perícia, há uma chance fixa de {{1, percent}}% de recuperar 1 Ponto de Perícia. Este efeito tem um tempo de recarga de 1 rodada."
     },
     "2": {
       "name": "Marcha Rápida",

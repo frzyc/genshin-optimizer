@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "지… 지각하겠어!",
-        "fullDesc": "기본 상태에서 공격 단수를 {{1}}단 보유한다. 우선 1단 공격을 발동하여 지정된 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가하고 나머지 단수별 공격은 랜덤 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가한다. 단수별 공격 전 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>의 기본 확률로 목표를 빙결 상태에 빠뜨린다. 지속 시간: 1턴.<br>빙결 상태에서 적은 행동할 수 없으며, 턴이 시작될 때마다 미샤 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>만큼 얼음 속성 추가 피해를 받는다.<br>필살기 공격 단수는 최대 {{5}}단까지 누적되며, 필살기 발동 후 공격 단수는 기본 상태로 복구된다",
+        "fullDesc": "기본 상태에서 공격 단수를 {{1}}단 보유한다. 우선 1단 공격을 발동하여 지정된 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가하고 나머지 단수별 공격은 랜덤 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가한다. 단수별 공격 전 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>의 기본 확률로 목표를 빙결 상태에 빠뜨린다. 지속 시간: 1턴<br>빙결 상태에서 적은 행동할 수 없으며, 턴이 시작될 때마다 미샤 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>만큼 얼음 속성 추가 피해를 받는다.<br>필살기 공격 단수는 최대 {{5}}단까지 누적되며, 필살기 발동 후 공격 단수는 기본 상태로 복구된다",
         "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가하고 기본 상태에서 총 <orangeStrong>{{1}}</orangeStrong>회 바운스하며, 최대 총 <orangeStrong>{{5}}</orangeStrong>회 바운스한다. 단수별 공격 전 낮은 확률로 목표를 <orangeStrong>빙결</orangeStrong>시킨다",
         "tag": "바운스"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "릴리즈",
-        "fullDesc": "필살기의 첫 1단 공격 전 목표가 빙결 상태에 빠질 기본 확률이 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "필살기의 첫 1단 공격 전 목표가 빙결 상태에 빠질 기본 확률이 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "인터로크",
-        "fullDesc": "필살기 발동 시 해당 필살기 행동이 종료될 때까지 효과 명중이 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "필살기 발동 시 해당 필살기 행동이 종료될 때까지 효과 명중이 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "트랜스미션",
-        "fullDesc": "빙결 상태에 빠진 적에게 피해를 가할 시 치명타 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "빙결 상태에 빠진 적에게 피해를 가할 시 치명타 피해가 {{1, percent}}% 증가한다"
       }
     }
   },

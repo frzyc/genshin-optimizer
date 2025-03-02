@@ -1,0 +1,96 @@
+{
+  "name": "Jiaoqiu",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Heart Afire",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Jiaoqiu's ATK to a single target enemy.",
+        "shortDesc": "Deals minor Fire DMG to a single enemy.",
+        "tag": "Single Target"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "Scorch Onslaught",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Jiaoqiu's ATK to a single target enemy and Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Jiaoqiu's ATK to adjacent targets, with a {{3, percent}}% base chance to inflict 1 stack of Ashen Roast on the primary target.",
+        "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to adjacent targets, with a high chance to inflict 1 stack of Ashen Roast on the primary target.",
+        "tag": "Blast"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Pyrograph Arcanum",
+        "fullDesc": "Sets the number of \"Ashen Roast\" stacks on enemy targets to the highest number of \"Ashen Roast\" stacks present on the battlefield. Then, activates a Zone and deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Jiaoqiu's ATK to all enemies.<br>While inside the Zone, enemy targets receive <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> increased Ultimate DMG, with a <orangeStrong>{{2, percent}}%</orangeStrong> base chance of being inflicted with 1 stack of Ashen Roast when taking action. While the Zone exists, this effect can trigger up to {{5}} time(s). And for each enemy target, it can only trigger once per turn. This trigger count resets every time Jiaoqiu uses Ultimate.<br>The Zone lasts for {{4}} turn(s), and its duration decreases by 1 at the start of this unit's every turn. If Jiaoqiu gets knocked down, the Zone will also be dispelled.",
+        "shortDesc": "Sets the number of \"Ashen Roast\" stacks on enemy targets to the highest number of \"Ashen Roast\" stacks present on the battlefield. Then, activates a Zone and deals Fire DMG to all enemies. While inside the Zone, enemy targets <orangeStrong>receive increased Ultimate DMG</orangeStrong>, with a chance of being inflicted with 1 stack of Ashen Roast when taking action.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Quartet Finesse, Octave Finery",
+        "fullDesc": "When Jiaoqiu hits an enemy with Basic ATK, Skill or Ultimate, there is a {{1, percent}}% base chance to inflict 1 stack of Ashen Roast on them. At 1 stack, increases DMG received by the enemy by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Then, each subsequent stack increases this by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Ashen Roast is capped at {{4}} stack(s) and lasts for {{5}} turn(s).<br>When an enemy target is afflicted with Ashen Roast, they are also considered as being Burned at the same time, taking Fire DoT equal to <orangeStrong>{{6, percent}}%</orangeStrong> of Jiaoqiu's ATK at the start of each turn.",
+        "shortDesc": "When attacking with Basic ATK, Skill, or Ultimate, there is a high chance to inflict 1 stack of \"Ashen Roast\" on the target, causing the enemy to take increased DMG and also be considered as Burned at the same time.",
+        "tag": "Impair"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Fiery Queller",
+        "fullDesc": "After using Technique, creates a Special Dimension that lasts for {{2}} second(s). After entering combat with enemies in this Special Dimension, deals Fire DMG equal to {{1, percent}}% of Jiaoqiu's ATK to all enemies, with a {{3, percent}}% base chance of applying 1 \"Ashen Roast\" stack. Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a Special Dimension. After entering combat with enemies in this dimension, deals minor Fire DMG to all enemies, with a high chance of applying 1 \"Ashen Roast\" stack.",
+        "tag": "Impair"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Attack",
+        "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pyre Cleanse",
+        "fullDesc": "When battle starts, immediately regenerates {{1}} Energy."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Hearth Kindle",
+        "fullDesc": "For every {{2, percent}}% of Jiaoqiu's Effect Hit Rate that exceeds {{1, percent}}%, additionally increases ATK by {{3, percent}}%, up to {{4, percent}}%."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Seared Scent",
+        "fullDesc": "While the Zone exists, enemies entering combat will be inflicted with Ashen Roast. The number of stacks applied will match the highest number of \"Ashen Roast\" stacks possessed by any unit while the Zone is active, with a minimum of {{1}} stack(s)."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Pentapathic Transference",
+      "desc": "Allies deal {{1, percent}}% increased DMG to enemy targets afflicted with Ashen Roast. Whenever inflicting Ashen Roast on an enemy target via triggering the Talent's effect, additionally increases the number of \"Ashen Roast\" stacks applied this time by {{2}}."
+    },
+    "2": {
+      "name": "From Savor Comes Suffer",
+      "desc": "When an enemy target is afflicted with Ashen Roast, increases the multiplier for the Fire DoT dealt by Ashen Roast to this target by {{1, percent}}%."
+    },
+    "3": {
+      "name": "Flavored Euphony Reigns Supreme",
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
+    },
+    "4": {
+      "name": "Leisure In, Luster Out",
+      "desc": "When the Zone exists, reduces enemy target's ATK by {{1, percent}}%."
+    },
+    "5": {
+      "name": "Duel in Dawn, Dash in Dusk",
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
+    },
+    "6": {
+      "name": "Nonamorphic Pyrobind",
+      "desc": "When an enemy target gets defeated, their accumulated \"Ashen Roast\" stacks will transfer to the enemy with the lowest number of \"Ashen Roast\" stacks on the battlefield. The maximum stack limit of Ashen Roast increases to {{2}}, and each \"Ashen Roast\" stack reduces the target's All-Type RES by {{3, percent}}%."
+    }
+  }
+}

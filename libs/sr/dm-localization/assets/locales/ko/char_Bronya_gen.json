@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "작전 재배치",
-        "fullDesc": "지정된 단일 아군의 디버프 효과를 1개 해제하며, 해당 목표는 즉시 행동하고, 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴.<br>자신에게 해당 스킬을 발동하면 즉시 행동 효과는 발동되지 않는다",
+        "fullDesc": "지정된 단일 아군의 디버프 효과를 1개 해제하며, 해당 목표는 즉시 행동하고, 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴<br>자신에게 해당 스킬을 발동하면 즉시 행동 효과는 발동되지 않는다",
         "shortDesc": "단일 아군의 <orangeStrong>디버프 효과</orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 해당 아군이 <orangeStrong>가하는 피해가 증가</orangeStrong>하며 <orangeStrong>즉시 행동</orangeStrong>한다",
         "tag": "서포트"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "호령",
-        "fullDesc": "일반 공격의 치명타 확률이 100%까지 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "일반 공격의 치명타 확률이 100%까지 증가한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "진영",
-        "fullDesc": "전투 시작 시 모든 아군의 방어력이 {{2, percent}}% 증가한다. 지속 시간: {{1}}턴",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "전투 시작 시 모든 아군의 방어력이 {{2, percent}}% 증가한다. 지속 시간: {{1}}턴"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "군세",
-        "fullDesc": "브로냐가 필드에 있으면 모든 아군이 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "브로냐가 필드에 있으면 모든 아군이 가하는 피해가 {{1, percent}}% 증가한다"
       }
     }
   },

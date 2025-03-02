@@ -1,0 +1,7 @@
+{
+  "name": "Dệt Thời Gian Thành Vàng",
+  "passive": {
+    "name": "Sáng Lập",
+    "description": "Tốc Độ Cơ Bản của người trang bị tăng <orangeStrong>{{1}}</orangeStrong>, người trang bị và Linh Hồn Ký Ức của người trang bị sau khi tấn công sẽ khiến người trang bị nhận 1 tầng Dệt Gấm, mỗi tầng Dệt Gấm khiến sát thương bạo kích của người trang bị và Linh Hồn Ký Ức của người trang bị tăng <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, tối đa cộng dồn {{2}} tầng. Khi cộng dồn đến tối đa, mỗi tầng Dệt Gấm sẽ khiến Sát Thương Tấn Công Thường gây ra tăng thêm <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>."
+  }
+}

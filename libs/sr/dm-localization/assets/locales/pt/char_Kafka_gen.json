@@ -45,32 +45,25 @@
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tortura",
-        "fullDesc": "Ao usar a Perícia Suprema, os inimigos-alvo receberão Dano imediatamente de todas as fontes de Dano Contínuo aplicadas no momento ao invés de só receberem Dano do estado de Choque aplicado no momento.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Ao usar a Perícia Suprema, os inimigos-alvo receberão Dano imediatamente de todas as fontes de Dano Contínuo aplicadas no momento ao invés de só receberem Dano do estado de Choque aplicado no momento."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Pilhagem",
-        "fullDesc": "Se um inimigo com Choque for derrotado, Kafka regenera adicionalmente {{1}} de Energia.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Se um inimigo com Choque for derrotado, Kafka regenera adicionalmente {{1}} de Energia."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Espinhos",
-        "fullDesc": "A chance-base de que os inimigos-alvo sejam afetados por Choque ao serem atingidos pela Perícia Suprema, Técnica e o Ataque Extra desencadeado pelo Talento aumenta em {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "A chance-base de que os inimigos-alvo sejam afetados por Choque ao serem atingidos pela Perícia Suprema, Técnica e o Ataque Extra desencadeado pelo Talento aumenta em {{1, percent}}%."
       }
     }
   },

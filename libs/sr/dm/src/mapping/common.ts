@@ -15,7 +15,9 @@ export const allStatDMKeys = [
   'StatusResistanceBase',
   'BreakDamageAddedRatioBase',
   'HealRatioBase',
+  'HealTakenRatio',
   'StatusProbabilityBase',
+  'BaseSpeed',
   'SpeedDelta',
   'PhysicalAddedRatio',
   'FireAddedRatio',
@@ -29,10 +31,7 @@ export const allStatDMKeys = [
 ] as const
 export type StatDMKey = (typeof allStatDMKeys)[number]
 
-export const statKeyMap: Record<
-  Exclude<StatDMKey, 'AllDamageTypeAddedRatio'>,
-  StatKey
-> = {
+export const statKeyMap: Record<StatDMKey, StatKey> = {
   HPDelta: 'hp',
   HPAddedRatio: 'hp_',
   AttackDelta: 'atk',
@@ -40,10 +39,12 @@ export const statKeyMap: Record<
   DefenceDelta: 'def',
   DefenceAddedRatio: 'def_',
   SpeedDelta: 'spd',
+  BaseSpeed: 'baseSpd',
   SpeedAddedRatio: 'spd_',
   CriticalChanceBase: 'crit_',
   CriticalDamageBase: 'crit_dmg_',
   HealRatioBase: 'heal_',
+  HealTakenRatio: 'incHeal_',
 
   PhysicalAddedRatio: 'physical_dmg_',
   FireAddedRatio: 'fire_dmg_',
@@ -52,6 +53,7 @@ export const statKeyMap: Record<
   ThunderAddedRatio: 'lightning_dmg_',
   QuantumAddedRatio: 'quantum_dmg_',
   ImaginaryAddedRatio: 'imaginary_dmg_',
+  AllDamageTypeAddedRatio: 'common_dmg_',
 
   StatusProbabilityBase: 'eff_',
   StatusResistanceBase: 'eff_res_',

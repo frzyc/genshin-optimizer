@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "명령 아닌 약속",
-        "fullDesc": "필살기 발동 후 클라라가 적에게 받는 피해가 추가로 <orangeStrong>{{4, percent}}%</orangeStrong> 감소하고, 적에게 피격될 확률이 대폭 증가한다. 지속 시간: {{3}}턴.<br>동시에 스바로그의 반격이 강화되어 임의의 아군이 피격 후 스바로그는 바로 반격하며, 적에게 가하는 피해 배율이 <orangeStrong>{{2, percent}}%</orangeStrong> 증가하고 인접한 목표에게 주목표에게 가하는 50%만큼의 피해를 준다. 강화 효과는 {{5}}회 적용된다",
+        "fullDesc": "필살기 발동 후 클라라가 적에게 받는 피해가 추가로 <orangeStrong>{{4, percent}}%</orangeStrong> 감소하고, 적에게 피격될 확률이 대폭 증가한다. 지속 시간: {{3}}턴<br>동시에 스바로그의 반격이 강화되어 임의의 아군이 피격 후 스바로그는 바로 반격하며, 적에게 가하는 피해 배율이 <orangeStrong>{{2, percent}}%</orangeStrong> 증가하고 인접한 목표에게 주목표에게 가하는 50%만큼의 피해를 준다. 강화 효과는 {{5}}회 적용된다",
         "shortDesc": "자신이 <orangeStrong>받는 피해가 감소</orangeStrong>하고 피격될 확률이 증가하며 반격 효과를 강화한다",
         "tag": "강화"
       }
@@ -45,32 +45,25 @@
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "가족",
-        "fullDesc": "피격 시 {{1, percent}}%의 고정 확률로 자신의 디버프 효과를 1개 해제한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "피격 시 {{1, percent}}%의 고정 확률로 자신의 디버프 효과를 1개 해제한다"
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "수호",
-        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1, percent}}% 증가한다"
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "복수",
-        "fullDesc": "스바로그의 반격이 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "스바로그의 반격이 가하는 피해가 {{1, percent}}% 증가한다"
       }
     }
   },

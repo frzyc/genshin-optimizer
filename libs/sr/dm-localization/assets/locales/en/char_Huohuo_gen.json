@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fearful to Act",
-        "fullDesc": "When battle starts, Huohuo gains Divine Provision, lasting for {{1}} turn(s).",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When battle starts, Huohuo gains Divine Provision, lasting for {{1}} turn(s)."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Cursed One",
-        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stress Reaction to Horror",
-        "fullDesc": "When her Talent is triggered to heal allies, Huohuo regenerates {{1}} Energy.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When her Talent is triggered to heal allies, Huohuo regenerates {{1}} Energy."
       }
     }
   },

@@ -45,32 +45,25 @@
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Xích Tử",
-        "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, sẽ giảm xác suất bị kẻ địch tấn công.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, sẽ giảm xác suất bị kẻ địch tấn công."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Đẩy Lui Kẻ Thù",
-        "fullDesc": "Mỗi khi kích hoạt 1 lần Kiếm Thế, sát thương do Kiếm Thế gây ra tăng {{1, percent}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Mỗi khi kích hoạt 1 lần Kiếm Thế, sát thương do Kiếm Thế gây ra tăng {{1, percent}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Phá Địch",
-        "fullDesc": "Sau khi thi triển Tấn Công Thường hoặc Chiến Kỹ, nếu trong trận có mục tiêu phe địch ở trạng thái Phá Vỡ Điểm Yếu thì Sushang sẽ Ưu Tiên Hành Động {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Sau khi thi triển Tấn Công Thường hoặc Chiến Kỹ, nếu trong trận có mục tiêu phe địch ở trạng thái Phá Vỡ Điểm Yếu thì Sushang sẽ Ưu Tiên Hành Động {{1, percent}}%."
       }
     }
   },

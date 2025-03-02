@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
@@ -67,6 +68,7 @@ import { DiscCard } from '../DiscCard'
 import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
+import { ScanInfoModal } from './ScanInfoModal'
 import { textsFromImage } from './ScanningUtil'
 import SubstatInput from './SubstatInput'
 
@@ -157,7 +159,6 @@ export function DiscEditor({
   cancelEdit?: () => void
 }) {
   const { t } = useTranslation('disc')
-
   const { database } = useDatabaseContext()
   const { disc, validatedDisc, setDisc, errors } =
     useDiscValidation(discFromProp)
@@ -183,7 +184,7 @@ export function DiscEditor({
 
   const { rarity = 'S', level = 0 } = disc ?? {}
   const slotKey = useMemo(() => {
-    return disc?.slotKey ?? fixedSlotKey
+    return fixedSlotKey ?? disc?.slotKey
   }, [fixedSlotKey, disc])
 
   const reset = useCallback(() => {
@@ -461,6 +462,9 @@ export function DiscEditor({
                               <DebugModal imgs={debugImgs} />
                             </Grid>
                           )}
+                          <Grid item>
+                            <ScanInfoModal />
+                          </Grid>
                           {/* <Grid item>
                           <Button
                             color="info"
@@ -688,9 +692,7 @@ export function DiscEditor({
 }
 
 function DebugModal({ imgs }: { imgs: Record<string, string> }) {
-  const [show, setshow] = useState(false)
-  const onOpen = () => setshow(true)
-  const onClose = () => setshow(false)
+  const [show, onOpen, onClose] = useBoolState()
   return (
     <>
       <Button color="warning" onClick={onOpen}>

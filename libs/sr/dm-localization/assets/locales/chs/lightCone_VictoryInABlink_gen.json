@@ -1,0 +1,7 @@
+{
+  "name": "胜利只在朝夕间",
+  "passive": {
+    "name": "最后一击",
+    "description": "使装备者的暴击伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>，当装备者的忆灵对我方目标施放技能时，使我方全体目标造成的伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持续{{3}}回合。"
+  }
+}

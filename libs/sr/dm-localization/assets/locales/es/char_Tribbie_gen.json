@@ -1,0 +1,96 @@
+{
+  "name": "Tribbie",
+  "abilities": {
+    "basic": {
+      "0": {
+        "name": "Cohetito de cien pisos",
+        "fullDesc": "Tribbie inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. como Daño Cuántico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de sus PV máx. como Daño Cuántico a los objetivos adyacentes.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo y a los objetivos adyacentes.",
+        "tag": "Ráfaga"
+      }
+    },
+    "skill": {
+      "0": {
+        "name": "¿Dónde están los regalos?",
+        "fullDesc": "Obtiene Numinosidad durante {{2}} turnos. La duración se reduce en 1 al comienzo de su turno. Cuando Tribbie tiene Numinosidad, la PEN de la RES a todos los tipos de todos los aliados aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.",
+        "shortDesc": "Obtiene Numinosidad. Mientras dura, la PEN de la RES a todos los tipos de todos los aliados aumenta.",
+        "tag": "Apoyo"
+      }
+    },
+    "ult": {
+      "0": {
+        "name": "Adivina quién vive aquí",
+        "fullDesc": "Crea un campo e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Tribbie como Daño Cuántico a todos los enemigos.<br>Mientras el campo esté activo, el daño que reciben los enemigos aumenta en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Cuando un aliado ataca, inflige al objetivo con los PV más altos de entre los atacados un Daño Cuántico adicional equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Tribbie por cada objetivo golpeado.<br>El campo dura {{4}} turnos. Al comienzo de cada turno de Tribbie, los turnos del campo disminuyen en 1.",
+        "shortDesc": "<orangeStrong>Crea un campo</orangeStrong> que inflige una pequeña cantidad de Daño Cuántico a todos los enemigos. Mientras el campo está activo, el daño que reciben los enemigos aumenta. Además, según la <orangeStrong>cantidad de enemigos</orangeStrong> atacados, inflige una pequeña cantidad de <orangeStrong>Daño Cuántico adicional</orangeStrong> al objetivo con más PV de entre los atacados.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "La atareada Tribbie",
+        "fullDesc": "Después de que otro personaje aliado lance la habilidad definitiva, Tribbie lanza un ataque adicional que inflige un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de sus PV máx. como Daño Cuántico a todos los enemigos. Este efecto solo se puede activar 1 vez por personaje. El contador de activaciones de otros personajes se reinicia cuando Tribbie lanza su habilidad definitiva. Si el objetivo es eliminado antes de lanzar el ataque adicional, entonces lo lanza contra un nuevo enemigo que haya entrado en el campo de batalla.",
+        "shortDesc": "Después de que otro personaje aliado lance la habilidad definitiva, Tribbie lanza un <orangeStrong>ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño Cuántico a <orangeStrong>todos los enemigos</orangeStrong>. Este efecto solo se puede activar 1 vez por personaje. El contador de activaciones de otros personajes se reinicia cuando Tribbie lanza su habilidad definitiva.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "technique": {
+      "0": {
+        "name": "Toca las palmas si estás feliz",
+        "fullDesc": "Al entrar en combate tras usar la técnica, obtiene Numinosidad durante {{1}} turnos.",
+        "shortDesc": "Obtiene Numinosidad al entrar en combate.",
+        "tag": "Potenciación"
+      }
+    },
+    "overworld": {
+      "0": {
+        "name": "Ataque",
+        "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
+        "tag": ""
+      }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Los corderitos afuera de las murallas...",
+        "fullDesc": "Después de lanzar el ataque adicional del talento, el daño que inflige Tribbie aumenta en un {{1, percent}}%. Este efecto se puede acumular hasta {{2}} veces y dura {{3}} turnos."
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "¡Canica con alas!",
+        "fullDesc": "Mientras el campo está activo, los PV máx. de Tribbie aumentan en un {{1, percent}}% de la suma de los PV máx. de todos los personajes aliados."
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "¿Y la piedra junto a la encrucijada?",
+        "fullDesc": "Tribbie recupera {{1}} pts. de energía al comenzar la batalla. Después de que otro aliado lance un ataque, Tribbie recupera {{2, fixed(fixed: 1)}} pts. de energía por cada objetivo golpeado."
+      }
+    }
+  },
+  "ranks": {
+    "1": {
+      "name": "Festival de recolecta de azúcar",
+      "desc": "Después de que un aliado ataque al enemigo mientras el campo está activo, inflige adicionalmente al objetivo que recibe el daño adicional del campo un Daño verdadero equivalente al {{1, percent}}% del daño total del ataque."
+    },
+    "2": {
+      "name": "Guía para visitar sueños",
+      "desc": "El daño adicional que inflige el campo aumenta al {{1, percent}}% del daño original. Cuando el campo inflige daño adicional, inflige daño adicional {{2}} vez más."
+    },
+    "3": {
+      "name": "Tesoro repleto de auroras",
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15). Niv. de ATQ básico +1 (máximo: nivel 10)."
+    },
+    "4": {
+      "name": "Paz de corazones afines",
+      "desc": "Mientras dura Numinosidad, el daño que infligen todos los aliados ignora un {{1, percent}}% de la DEF del objetivo."
+    },
+    "5": {
+      "name": "Reloj de las maravillas",
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15). Niv. de talento +2 (máximo: nivel 15)."
+    },
+    "6": {
+      "name": "Un mañana de luna y estrellas",
+      "desc": "Cuando Tribbie usa su habilidad definitiva, lanza el ataque adicional del talento contra todos los enemigos. El daño que inflige el ataque adicional del talento aumenta en un {{1, percent}}%."
+    }
+  }
+}

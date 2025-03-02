@@ -45,32 +45,25 @@
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": "",
         "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Kinship",
-        "fullDesc": "When attacked, this unit has a {{1, percent}}% fixed chance to dispel 1 debuff placed on them.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "When attacked, this unit has a {{1, percent}}% fixed chance to dispel 1 debuff placed on them."
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Under Protection",
-        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%."
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Revenge",
-        "fullDesc": "Increases DMG dealt by Svarog's Counter by {{1, percent}}%.",
-        "shortDesc": "",
-        "tag": ""
+        "fullDesc": "Increases DMG dealt by Svarog's Counter by {{1, percent}}%."
       }
     }
   },
