@@ -17,7 +17,11 @@ const sheet = registerLightCone(
 
   customHeal(
     'healing',
-    prod(own.final.hp, percent(subscript(superimpose, dm.healAmountByHp))),
+    cmpGE(
+      lcCount,
+      1,
+      prod(own.final.hp, percent(subscript(superimpose, dm.healAmountByHp)))
+    ),
     { cond: cmpGE(lcCount, 1, 'unique', '') }
   )
 )

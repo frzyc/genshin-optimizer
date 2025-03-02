@@ -520,45 +520,13 @@ export const conditionals = {
     },
   },
   FinalVictor: {
-    boolConditional: {
+    goodFortune: {
       sheet: 'FinalVictor',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FinalVictor',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FinalVictor',
-      name: 'numConditional',
+      name: 'goodFortune',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
-  FineFruit: {
-    boolConditional: {
-      sheet: 'FineFruit',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FineFruit',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FineFruit',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      max: 4,
     },
   },
   Firefly: {
@@ -577,46 +545,24 @@ export const conditionals = {
     ultUsed: { sheet: 'FiresmithOfLavaForging', name: 'ultUsed', type: 'bool' },
   },
   FlameOfBloodBlazeMyPath: {
-    boolConditional: {
+    hpConsumedMoreThan500: {
       sheet: 'FlameOfBloodBlazeMyPath',
-      name: 'boolConditional',
+      name: 'hpConsumedMoreThan500',
       type: 'bool',
     },
-    listConditional: {
+    skillUsed: {
       sheet: 'FlameOfBloodBlazeMyPath',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
+      name: 'skillUsed',
+      type: 'bool',
     },
-    numConditional: {
+    ultUsed: {
       sheet: 'FlameOfBloodBlazeMyPath',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      name: 'ultUsed',
+      type: 'bool',
     },
   },
   FlamesAfar: {
-    boolConditional: {
-      sheet: 'FlamesAfar',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FlamesAfar',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FlamesAfar',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    hpConsumed: { sheet: 'FlamesAfar', name: 'hpConsumed', type: 'bool' },
   },
   FlowingNightglow: {
     boolConditional: {
@@ -4134,6 +4080,32 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'technique',
         name: 'techDmg_0',
+      },
+    },
+  },
+  FlameOfBloodBlazeMyPath: {
+    hp_loss: {
+      sheet: 'FlameOfBloodBlazeMyPath',
+      name: 'hp_loss',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'base',
+        sheet: 'FlameOfBloodBlazeMyPath',
+        name: 'hp_loss',
+      },
+    },
+  },
+  FlamesAfar: {
+    healing: {
+      sheet: 'FlamesAfar',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'FlamesAfar',
+        name: 'healing',
       },
     },
   },
@@ -9508,72 +9480,15 @@ export const buffs = {
     },
   },
   FinalVictor: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'FinalVictor',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'FinalVictor',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'FinalVictor',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FinalVictor',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FinalVictor',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'FinalVictor',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  FineFruit: {
-    cond_dmg_: {
-      sheet: 'FineFruit',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'FineFruit',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'FineFruit',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FineFruit',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FineFruit',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'FineFruit',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },
@@ -9784,72 +9699,52 @@ export const buffs = {
     },
   },
   FlameOfBloodBlazeMyPath: {
-    cond_dmg_: {
+    hp_loss: {
       sheet: 'FlameOfBloodBlazeMyPath',
-      name: 'cond_dmg_',
+      name: 'hp_loss',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'base',
+        sheet: 'FlameOfBloodBlazeMyPath',
+        name: 'hp_loss',
+      },
+    },
+    skill_dmg_: {
+      sheet: 'FlameOfBloodBlazeMyPath',
+      name: 'skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'FlameOfBloodBlazeMyPath',
-        name: 'cond_dmg_',
+        damageType1: 'skill',
+        name: 'skill_dmg_',
       },
     },
-    enemy_defRed_: {
+    ult_dmg_: {
       sheet: 'FlameOfBloodBlazeMyPath',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FlameOfBloodBlazeMyPath',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FlameOfBloodBlazeMyPath',
-      name: 'team_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'FlameOfBloodBlazeMyPath',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
   FlamesAfar: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'FlamesAfar',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FlamesAfar',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'FlamesAfar',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FlamesAfar',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FlamesAfar',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'FlamesAfar',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },

@@ -824,4 +824,87 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.32)
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.32)
   })
+
+  it('FinalVictor', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'FinalVictor')
+    data.push(
+      cond(charKey, 'FinalVictor', conditionals.FinalVictor.goodFortune.name, 4)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.2)
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 4 * 0.12)
+  })
+
+  // Fine Fruit should be here but no conditionals
+
+  it('FlameOfBloodBlazeMyPath', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'FlameOfBloodBlazeMyPath')
+    data.push(
+      cond(
+        charKey,
+        'FlameOfBloodBlazeMyPath',
+        conditionals.FlameOfBloodBlazeMyPath.ultUsed.name,
+        1
+      ),
+      cond(
+        charKey,
+        'FlameOfBloodBlazeMyPath',
+        conditionals.FlameOfBloodBlazeMyPath.skillUsed.name,
+        1
+      ),
+      cond(
+        charKey,
+        'FlameOfBloodBlazeMyPath',
+        conditionals.FlameOfBloodBlazeMyPath.hpConsumedMoreThan500.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.hp_).val).toBeCloseTo(0.3)
+    expect(calc.compute(char.final.incHeal_).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.dmg_.skill[0]).val).toBeCloseTo(0.5 + 0.5)
+    expect(calc.compute(char.final.dmg_.ult[0]).val).toBeCloseTo(0.5 + 0.5)
+    expect(
+      calc
+        .withTag(formulas.FlameOfBloodBlazeMyPath.hp_loss.tag)
+        .compute(
+          new Read(formulas.FlameOfBloodBlazeMyPath.hp_loss.tag, undefined)
+        ).val
+    ).toBeCloseTo((814.968 + 1375.92) * 1.3 * 0.08)
+  })
+
+  it('FlamesAfar', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'FlamesAfar')
+    data.push(
+      cond(charKey, 'FlamesAfar', conditionals.FlamesAfar.hpConsumed.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.5)
+    expect(
+      calc
+        .withTag(formulas.FlamesAfar.healing.tag)
+        .compute(new Read(formulas.FlamesAfar.healing.tag, undefined)).val
+    ).toBeCloseTo((814.968 + 1058.4) * 0.15)
+  })
 })
