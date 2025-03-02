@@ -165,7 +165,7 @@ export class Solver<ID extends string> {
 
         this.setProgress(this.counters)
         if (!this.counters.remaining)
-          this.finalize(bestBuilds.splice(this.topN))
+          this.finalize(bestBuilds.slice(0, this.topN))
         break
       }
       case 'add': {
