@@ -6,6 +6,7 @@ import {
 import type { BuildResult, Counters, Work } from './common'
 import { buildCount } from './common'
 import type { Command, ErrMsg, Response } from './workerHandle'
+
 export type { Candidate } from '@genshin-optimizer/pando/engine'
 export type * from './common'
 
@@ -13,7 +14,7 @@ export type * from './common'
 const lowWaterMark = 20000 // replenish if a worker has fewer than this
 const highWaterMark = 40000 // replenish until this many builds for each worker below `lowWaterMark`
 
-export interface InitSolver {
+export interface SolverConfig {
   candidates: Candidate<string>[][]
   nodes: NumTagFree[]
   minimum: number[]
@@ -48,19 +49,19 @@ export class Solver<ID extends string> {
   throws: (_: any) => void = () => {}
   setProgress: (_: Counters) => void
 
-  constructor(cmd: InitSolver) {
+  constructor(cfg: SolverConfig) {
     const counters = this.counters
     const workerUrl = new URL('./workerHandle.ts', import.meta.url)
-    const workers = [...Array(cmd.numWorkers)].map(
+    const workers = [...Array(cfg.numWorkers)].map(
       (_) => new Worker(workerUrl, { type: 'module' })
     )
-    const pruned = prune(cmd.nodes, cmd.candidates, 'q', cmd.minimum, cmd.topN)
+    const pruned = prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, cfg.topN)
     const { nodes, candidates, minimum } = pruned
     counters.remaining = buildCount(candidates)
-    counters.skipped = buildCount(cmd.candidates) - counters.remaining
+    counters.skipped = buildCount(cfg.candidates) - counters.remaining
     this.state = { ty: 'idle', workers: new Set(workers) }
-    this.topN = cmd.topN
-    this.setProgress = cmd.setProgress
+    this.topN = cfg.topN
+    this.setProgress = cfg.setProgress
     this.donePromise = new Promise((res, rej) => {
       this.finalize = res
       this.throws = rej
@@ -80,7 +81,7 @@ export class Solver<ID extends string> {
         nodes,
         minimum,
         candidates,
-        topN: cmd.topN,
+        topN: cfg.topN,
       })
     }
 
@@ -133,7 +134,7 @@ export class Solver<ID extends string> {
     postMsg(worker, { ty: 'add', works: toDist })
     const avg = this.counters.remaining / this.info.size
     if (info.remaining > avg && avg > highWaterMark)
-      postMsg(worker, { ty: 'work?', maxKeep: avg }) // too much, taking it back
+      postMsg(worker, { ty: 'work?', maxKeep: avg }) // too many, taking it back
     return info.remaining >= lowWaterMark
   }
 

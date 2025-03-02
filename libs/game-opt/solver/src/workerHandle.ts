@@ -1,5 +1,5 @@
 import type { BuildResult, Counters, Work } from './common'
-import { type InitConfig, Worker } from './worker'
+import { type WorkerConfig, Worker } from './worker'
 
 const reportInterval = 20 // (minimum) progress report interval for each worker, in ms
 
@@ -9,7 +9,7 @@ export type Command = InitMsg | AddWorkMsg | ConfigMsg | ReqWorkMsg
 export type Response = AddWorkMsg | ProgressMsg | ErrMsg
 
 /** initialize the worker for a specific optimization problem */
-export type InitMsg = { ty: 'init' } & InitConfig
+export type InitMsg = { ty: 'init' } & WorkerConfig
 /** update opt target threshold */
 export type ConfigMsg = { ty: 'config'; threshold: number }
 /** requesting unperformed works. The worker can retain up to `maxKeep` builds */

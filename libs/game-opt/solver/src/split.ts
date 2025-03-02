@@ -20,23 +20,23 @@ export function splitCandidates<ID>(
   if (incomp.length) {
     for (let i = 0, len = cndRanges.length; i < len; i++) {
       const ranges = cndRanges[i]
-      for (const s of incomp) {
-        if (ranges[s].min === ranges[s].max) continue
-        const groups = new Map<any, Candidate<ID>[]>()
-        for (const c of candidates[i]) {
-          const old = groups.get(c[s])
-          if (old) old.push(c)
-          else groups.set(c[s], [c])
-        }
-        // Split by the first axis by values of incomp `s`
-        return [...groups.values()]
-          .sort((a, b) => b.length - a.length) // smaller groups at the back
-          .map((cnds) => {
-            const result = [...candidates]
-            result[i] = cnds
-            return result
-          })
+      const s = incomp.find((s) => ranges[s].min !== ranges[s].max)
+      if (s === undefined) continue
+
+      const groups = new Map<any, Candidate<ID>[]>()
+      for (const c of candidates[i]) {
+        const old = groups.get(c[s])
+        if (old) old.push(c)
+        else groups.set(c[s], [c])
       }
+      // Split by the first axis by values of incomp `s`
+      return [...groups.values()]
+        .sort((a, b) => b.length - a.length) // smaller groups at the back
+        .map((cnds) => {
+          const result = [...candidates]
+          result[i] = cnds
+          return result
+        })
     }
   }
 
