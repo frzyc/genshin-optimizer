@@ -565,46 +565,18 @@ export const conditionals = {
     hpConsumed: { sheet: 'FlamesAfar', name: 'hpConsumed', type: 'bool' },
   },
   FlowingNightglow: {
-    boolConditional: {
+    cadenza: { sheet: 'FlowingNightglow', name: 'cadenza', type: 'bool' },
+    cantillation: {
       sheet: 'FlowingNightglow',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'FlowingNightglow',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FlowingNightglow',
-      name: 'numConditional',
+      name: 'cantillation',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 5,
     },
   },
   ForTomorrowsJourney: {
-    boolConditional: {
-      sheet: 'ForTomorrowsJourney',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ForTomorrowsJourney',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ForTomorrowsJourney',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'ForTomorrowsJourney', name: 'ultUsed', type: 'bool' },
   },
   ForgeOfTheKalpagniLantern: {
     enemyHit: {
@@ -676,45 +648,13 @@ export const conditionals = {
     },
   },
   GeniusesGreetings: {
-    boolConditional: {
-      sheet: 'GeniusesGreetings',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GeniusesGreetings',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GeniusesGreetings',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'GeniusesGreetings', name: 'ultUsed', type: 'bool' },
   },
   GeniusesRepose: {
-    boolConditional: {
+    enemyDefeated: {
       sheet: 'GeniusesRepose',
-      name: 'boolConditional',
+      name: 'enemyDefeated',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GeniusesRepose',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GeniusesRepose',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Gepard: {
@@ -9762,72 +9702,50 @@ export const buffs = {
     },
   },
   FlowingNightglow: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'FlowingNightglow',
-      name: 'cond_dmg_',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'FlowingNightglow',
+        name: 'atk_',
+      },
+    },
+    common_dmg_: {
+      sheet: 'FlowingNightglow',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FlowingNightglow',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    enerRegen_: {
       sheet: 'FlowingNightglow',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'FlowingNightglow',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'FlowingNightglow',
-      name: 'team_dmg_',
+      name: 'enerRegen_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'enerRegen_',
         sheet: 'FlowingNightglow',
-        name: 'team_dmg_',
+        name: 'enerRegen_',
       },
     },
   },
   ForTomorrowsJourney: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ForTomorrowsJourney',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ForTomorrowsJourney',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ForTomorrowsJourney',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ForTomorrowsJourney',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ForTomorrowsJourney',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ForTomorrowsJourney',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -10436,72 +10354,29 @@ export const buffs = {
     },
   },
   GeniusesGreetings: {
-    cond_dmg_: {
+    basic_dmg_: {
       sheet: 'GeniusesGreetings',
-      name: 'cond_dmg_',
+      name: 'basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'GeniusesGreetings',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'GeniusesGreetings',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'GeniusesGreetings',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GeniusesGreetings',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GeniusesGreetings',
-        name: 'team_dmg_',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
       },
     },
   },
   GeniusesRepose: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'GeniusesRepose',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'GeniusesRepose',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'GeniusesRepose',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'GeniusesRepose',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GeniusesRepose',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GeniusesRepose',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },

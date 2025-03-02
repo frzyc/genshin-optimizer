@@ -907,4 +907,101 @@ describe('Light Cone sheets test', () => {
         .compute(new Read(formulas.FlamesAfar.healing.tag, undefined)).val
     ).toBeCloseTo((814.968 + 1058.4) * 0.15)
   })
+
+  it('FlowingNightglow', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'FlowingNightglow')
+    data.push(
+      cond(
+        charKey,
+        'FlowingNightglow',
+        conditionals.FlowingNightglow.cantillation.name,
+        5
+      ),
+      cond(
+        charKey,
+        'FlowingNightglow',
+        conditionals.FlowingNightglow.cadenza.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.enerRegen_).val).toBeCloseTo(5 * 0.05)
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.96)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
+  })
+
+  it('ForTomorrowsJourney', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'ForTomorrowsJourney')
+    data.push(
+      cond(
+        charKey,
+        'ForTomorrowsJourney',
+        conditionals.ForTomorrowsJourney.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.32)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.3)
+  })
+
+  it('GeniusesGreetings', () => {
+    const charKey: CharacterKey = 'Aglaea'
+    const data = testCharacterData(charKey, 'GeniusesGreetings')
+    data.push(
+      cond(
+        charKey,
+        'GeniusesGreetings',
+        conditionals.GeniusesGreetings.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.32)
+    expect(calc.compute(char.final.dmg_.basic[0]).val).toBeCloseTo(0.4)
+    // TODO: check memosprite
+  })
+
+  it('GeniusesRepose', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'GeniusesRepose')
+    data.push(
+      cond(
+        charKey,
+        'GeniusesRepose',
+        conditionals.GeniusesRepose.enemyDefeated.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.32)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.48)
+  })
 })
