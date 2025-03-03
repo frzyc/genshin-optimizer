@@ -1,6 +1,6 @@
 /**
  * Whether the function is `inc`reasing/`dec`reasing w.r.t. to an argument.
- * Note that both `inc` and `dec` means the the function is constant w.r.t.
+ * Note that both `inc` and `dec` mean the the function is constant w.r.t.
  * the argument, while neither means that the argument affects the function
  * result non-monotonically.
  */
@@ -8,7 +8,7 @@ export type Monotonicity = { inc: boolean; dec: boolean }
 export type Range = { min: number; max: number }
 
 export type CustomInfo = {
-  /** Given a range of each arguments, returns the range of the result */
+  /** Given a range of each argument, returns the range of the result */
   range: (r: Range[]) => Range
   /** Given the arguments ranges, returns the monotonicity w.r.t. each argument */
   monotonicity: (r: Range[]) => Monotonicity[]
