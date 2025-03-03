@@ -1171,6 +1171,53 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.atk_.skill[0]).val).toBeCloseTo(0.4)
   })
 
+  it('InTheNight', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'InTheNight')
+    data.push(
+      cond(charKey, 'InTheNight', conditionals.InTheNight.spdExceeded.name, 6)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.3)
+    expect(calc.compute(char.final.dmg_.basic[0]).val).toBeCloseTo(6 * 0.1)
+    expect(calc.compute(char.final.dmg_.skill[0]).val).toBeCloseTo(6 * 0.1)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_.ult[0]).val).toBeCloseTo(
+      0.5 + 6 * 0.2
+    )
+  })
+
+  it('IntoTheUnreachableVeil', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'IntoTheUnreachableVeil')
+    data.push(
+      cond(
+        charKey,
+        'IntoTheUnreachableVeil',
+        conditionals.IntoTheUnreachableVeil.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.2)
+    expect(calc.compute(char.final.dmg_.skill[0]).val).toBeCloseTo(1)
+    expect(calc.compute(char.final.dmg_.ult[0]).val).toBeCloseTo(1)
+  })
+
   it('IShallBeMyOwnSword', () => {
     const charKey: CharacterKey = 'Firefly'
     const data = testCharacterData(charKey, 'IShallBeMyOwnSword')
@@ -1193,5 +1240,49 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.32)
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(3 * 0.24)
     expect(calc.compute(char.final.defIgn_).val).toBeCloseTo(0.2)
+  })
+
+  it('ItsShowtime', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'ItsShowtime', [
+      ownBuff.premod.eff_.add(0.8),
+    ])
+    data.push(
+      cond(charKey, 'ItsShowtime', conditionals.ItsShowtime.trick.name, 3)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(3 * 0.1)
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.36)
+  })
+
+  it('IVentureForthToHunt', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'IVentureForthToHunt', [
+      ownBuff.premod.eff_.add(0.8),
+    ])
+    data.push(
+      cond(
+        charKey,
+        'IVentureForthToHunt',
+        conditionals.IVentureForthToHunt.luminflux.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.25)
+    expect(calc.compute(char.final.defIgn_.ult[0]).val).toBeCloseTo(2 * 0.39)
   })
 })

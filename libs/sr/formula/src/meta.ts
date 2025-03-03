@@ -856,20 +856,9 @@ export const conditionals = {
     },
   },
   IVentureForthToHunt: {
-    boolConditional: {
+    luminflux: {
       sheet: 'IVentureForthToHunt',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IVentureForthToHunt',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IVentureForthToHunt',
-      name: 'numConditional',
+      name: 'luminflux',
       type: 'num',
       int_only: true,
       min: 0,
@@ -887,24 +876,13 @@ export const conditionals = {
     },
   },
   InTheNight: {
-    boolConditional: {
+    spdExceeded: {
       sheet: 'InTheNight',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'InTheNight',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'InTheNight',
-      name: 'numConditional',
+      name: 'spdExceeded',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 6,
     },
   },
   IncessantRain: {
@@ -931,45 +909,16 @@ export const conditionals = {
     },
   },
   IntoTheUnreachableVeil: {
-    boolConditional: {
-      sheet: 'IntoTheUnreachableVeil',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'IntoTheUnreachableVeil',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'IntoTheUnreachableVeil',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'IntoTheUnreachableVeil', name: 'ultUsed', type: 'bool' },
   },
   ItsShowtime: {
-    boolConditional: {
+    trick: {
       sheet: 'ItsShowtime',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ItsShowtime',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ItsShowtime',
-      name: 'numConditional',
+      name: 'trick',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   Jade: {
@@ -11759,37 +11708,16 @@ export const buffs = {
     },
   },
   IVentureForthToHunt: {
-    cond_dmg_: {
+    ult_defIgn_: {
       sheet: 'IVentureForthToHunt',
-      name: 'cond_dmg_',
+      name: 'ult_defIgn_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'IVentureForthToHunt',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'IVentureForthToHunt',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'IVentureForthToHunt',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IVentureForthToHunt',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'IVentureForthToHunt',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_defIgn_',
       },
     },
   },
@@ -11844,37 +11772,40 @@ export const buffs = {
     },
   },
   InTheNight: {
-    cond_dmg_: {
+    basic_dmg_: {
       sheet: 'InTheNight',
-      name: 'cond_dmg_',
+      name: 'basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'InTheNight',
-        name: 'cond_dmg_',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
       },
     },
-    enemy_defRed_: {
+    skill_dmg_: {
       sheet: 'InTheNight',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'InTheNight',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'InTheNight',
-      name: 'team_dmg_',
+      name: 'skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'InTheNight',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'skill_dmg_',
+      },
+    },
+    ult_crit_dmg_: {
+      sheet: 'InTheNight',
+      name: 'ult_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'InTheNight',
+        damageType1: 'ult',
+        name: 'ult_crit_dmg_',
       },
     },
   },
@@ -11966,37 +11897,28 @@ export const buffs = {
     },
   },
   IntoTheUnreachableVeil: {
-    cond_dmg_: {
+    skill_dmg_: {
       sheet: 'IntoTheUnreachableVeil',
-      name: 'cond_dmg_',
+      name: 'skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'IntoTheUnreachableVeil',
-        name: 'cond_dmg_',
+        damageType1: 'skill',
+        name: 'skill_dmg_',
       },
     },
-    enemy_defRed_: {
+    ult_dmg_: {
       sheet: 'IntoTheUnreachableVeil',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'IntoTheUnreachableVeil',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'IntoTheUnreachableVeil',
-      name: 'team_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'IntoTheUnreachableVeil',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
@@ -12027,37 +11949,26 @@ export const buffs = {
     },
   },
   ItsShowtime: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'ItsShowtime',
-      name: 'cond_dmg_',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'ItsShowtime',
+        name: 'atk_',
+      },
+    },
+    common_dmg_: {
+      sheet: 'ItsShowtime',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ItsShowtime',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ItsShowtime',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ItsShowtime',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ItsShowtime',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ItsShowtime',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
