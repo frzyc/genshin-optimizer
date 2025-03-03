@@ -1,8 +1,9 @@
-import type {
-  AscensionKey,
-  CharacterKey,
-  RefinementKey,
-  WeaponKey,
+import {
+  sheetKeyToCharKey,
+  type AscensionKey,
+  type CharacterSheetKey,
+  type RefinementKey,
+  type WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
@@ -22,7 +23,7 @@ export function getFixed(key: StatKey) {
 }
 
 export function baseCharStats(
-  id: CharacterKey,
+  id: CharacterSheetKey,
   level = 90,
   ascension: AscensionKey = 6
 ) {
@@ -31,7 +32,7 @@ export function baseCharStats(
     ...withMember(
       '0',
       ...charData({
-        key: id,
+        key: sheetKeyToCharKey(id),
         level: level,
         ascension: ascension,
         constellation: 0,

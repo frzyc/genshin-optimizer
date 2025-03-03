@@ -99,9 +99,13 @@
   "TravelerGeoF": "루미네 (바위 원소)",
   "TravelerElectroF": "루미네 (번개)",
   "TravelerDendroF": "루미네 (풀 원소)",
+  "TravelerHydroF": "루미네 (물 원소)",
+  "TravelerPyroF": "루미네 (불)",
   "TravelerAnemoM": "아이테르 (바람)",
   "TravelerGeoM": "아이테르 (바위 원소)",
   "TravelerElectroM": "아이테르 (번개)",
   "TravelerDendroM": "아이테르 (풀 원소)",
+  "TravelerHydroM": "아이테르 (물 원소)",
+  "TravelerPyroM": "아이테르 (불)",
   "Somnia": "Somnia"
 }
