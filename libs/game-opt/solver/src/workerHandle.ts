@@ -46,27 +46,23 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     }
     case 'add':
       worker.add(msg.works)
+      process()
       return processAllWorks()
   }
 }
 
 let runner: Promise<undefined> | undefined
 function processAllWorks(): Promise<undefined> | undefined {
-  if (runner) return undefined // only one runner needed at a time
+  if (runner) return undefined // only one runner at a time
   return (runner = (async () => {
     let nextReport = Date.now()
-    while (worker.hasWork()) {
-      const works: Work[] = []
-      const subwork = worker.getSubwork(works)
-      if (works.length) postMessage({ ty: 'add', works })
-      if (subwork) worker.process(subwork)
-
+    do {
       // Suspend here in case a new config/work stealing is sent over
       //
-      // Make sure to use task-based mechanisms such as `setTimeout` so that
-      // this function suspends until the next event loop. If we instead use
-      // microtask-based ones such as `Promise.resolved`, the suspension will
-      // not be long enough.
+      // Make sure to use macrotask-based mechanisms such as `setTimeout` so
+      // that this function suspends until the next event loop. If we instead
+      // use microtask-based ones such as `Promise.resolved`, the suspension
+      // will not be long enough.
       await new Promise((r) => setTimeout(r))
 
       // pace the reporting to `reportInterval`
@@ -75,8 +71,16 @@ function processAllWorks(): Promise<undefined> | undefined {
         nextReport = currentTime + reportInterval
         postMessage({ ty: 'progress', ...worker.progress() })
       }
-    }
+      process()
+    } while (worker.hasWork())
     postMessage({ ty: 'progress', ...worker.progress() }) // final report
     return (runner = undefined)
   })())
+}
+
+function process() {
+  const works: Work[] = []
+  const subwork = worker.getSubwork(works)
+  if (works.length) postMessage({ ty: 'add', works })
+  if (subwork) worker.process(subwork)
 }

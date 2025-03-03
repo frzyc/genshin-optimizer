@@ -11,8 +11,8 @@ export type { Candidate } from '@genshin-optimizer/pando/engine'
 export type * from './common'
 
 // TODO: tune this
-const lowWaterMark = 20000 // replenish if a worker has fewer than this
-const highWaterMark = 40000 // replenish until this many builds for each worker below `lowWaterMark`
+const lowWaterMark = 35_000 // replenish if a worker has fewer than this
+const highWaterMark = 45_000 // replenish until this many builds for each worker below `lowWaterMark`
 
 export interface SolverConfig {
   candidates: Candidate<string>[][]
