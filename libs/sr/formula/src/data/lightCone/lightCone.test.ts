@@ -1263,9 +1263,7 @@ describe('Light Cone sheets test', () => {
 
   it('IVentureForthToHunt', () => {
     const charKey: CharacterKey = 'Seele'
-    const data = testCharacterData(charKey, 'IVentureForthToHunt', [
-      ownBuff.premod.eff_.add(0.8),
-    ])
+    const data = testCharacterData(charKey, 'IVentureForthToHunt')
     data.push(
       cond(
         charKey,
@@ -1284,5 +1282,86 @@ describe('Light Cone sheets test', () => {
     // Base + LC passive
     expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.25)
     expect(calc.compute(char.final.defIgn_.ult[0]).val).toBeCloseTo(2 * 0.39)
+  })
+
+  // Landau's Choice should be here, but no passives or conds
+
+  it('LongRoadLeadsHome', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'LongRoadLeadsHome')
+    data.push(
+      cond(
+        charKey,
+        'LongRoadLeadsHome',
+        conditionals.LongRoadLeadsHome.charring.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(1)
+    expect(calc.compute(char.final.dmg_.break[0]).val).toBeCloseTo(2 * 0.3)
+  })
+
+  it('Loop', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'Loop')
+    data.push(cond(charKey, 'Loop', conditionals.Loop.enemySlowed.name, 1))
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.48)
+  })
+
+  it('MakeTheWorldClamor', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'MakeTheWorldClamor')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.dmg_.ult[0]).val).toBeCloseTo(0.64)
+  })
+
+  it('Mediation', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'Mediation')
+    data.push(
+      cond(charKey, 'Mediation', conditionals.Mediation.enteringBattle.name, 1)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC buff
+    expect(calc.compute(char.final.spd).val).toBeCloseTo(104 + 20)
+  })
+
+  it('MemoriesOfThePast', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'MemoriesOfThePast')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.56)
   })
 })

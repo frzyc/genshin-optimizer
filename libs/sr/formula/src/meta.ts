@@ -1018,27 +1018,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  LandausChoice: {
-    boolConditional: {
-      sheet: 'LandausChoice',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LandausChoice',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LandausChoice',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Lingsha: {
     boolConditional: {
       sheet: 'Lingsha',
@@ -1061,20 +1040,9 @@ export const conditionals = {
     },
   },
   LongRoadLeadsHome: {
-    boolConditional: {
+    charring: {
       sheet: 'LongRoadLeadsHome',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LongRoadLeadsHome',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LongRoadLeadsHome',
-      name: 'numConditional',
+      name: 'charring',
       type: 'num',
       int_only: true,
       min: 0,
@@ -1091,23 +1059,7 @@ export const conditionals = {
       max: 2,
     },
   },
-  Loop: {
-    boolConditional: { sheet: 'Loop', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Loop',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Loop',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
+  Loop: { enemySlowed: { sheet: 'Loop', name: 'enemySlowed', type: 'bool' } },
   Luka: {
     boolConditional: { sheet: 'Luka', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -1180,27 +1132,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  MakeTheWorldClamor: {
-    boolConditional: {
-      sheet: 'MakeTheWorldClamor',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MakeTheWorldClamor',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MakeTheWorldClamor',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   March7thTheHunt: {
     boolConditional: {
       sheet: 'March7thTheHunt',
@@ -1223,45 +1154,10 @@ export const conditionals = {
     },
   },
   Mediation: {
-    boolConditional: {
+    enteringBattle: {
       sheet: 'Mediation',
-      name: 'boolConditional',
+      name: 'enteringBattle',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Mediation',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Mediation',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  MemoriesOfThePast: {
-    boolConditional: {
-      sheet: 'MemoriesOfThePast',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MemoriesOfThePast',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MemoriesOfThePast',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   MemorysCurtainNeverFalls: {
@@ -12938,41 +12834,6 @@ export const buffs = {
       },
     },
   },
-  LandausChoice: {
-    cond_dmg_: {
-      sheet: 'LandausChoice',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'LandausChoice',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'LandausChoice',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'LandausChoice',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LandausChoice',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'LandausChoice',
-        name: 'team_dmg_',
-      },
-    },
-  },
   Lingsha: {
     e6_dmg_: {
       sheet: 'Lingsha',
@@ -13163,37 +13024,16 @@ export const buffs = {
     },
   },
   LongRoadLeadsHome: {
-    cond_dmg_: {
+    break_dmg_: {
       sheet: 'LongRoadLeadsHome',
-      name: 'cond_dmg_',
+      name: 'break_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'LongRoadLeadsHome',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'LongRoadLeadsHome',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'LongRoadLeadsHome',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LongRoadLeadsHome',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'LongRoadLeadsHome',
-        name: 'team_dmg_',
+        damageType1: 'break',
+        name: 'break_dmg_',
       },
     },
   },
@@ -13211,37 +13051,15 @@ export const buffs = {
     },
   },
   Loop: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'Loop',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Loop',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Loop',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Loop',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Loop',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Loop',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -13848,37 +13666,16 @@ export const buffs = {
     },
   },
   MakeTheWorldClamor: {
-    cond_dmg_: {
+    ult_dmg_: {
       sheet: 'MakeTheWorldClamor',
-      name: 'cond_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'MakeTheWorldClamor',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'MakeTheWorldClamor',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MakeTheWorldClamor',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MakeTheWorldClamor',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MakeTheWorldClamor',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
@@ -14233,72 +14030,15 @@ export const buffs = {
     },
   },
   Mediation: {
-    cond_dmg_: {
+    spd: {
       sheet: 'Mediation',
-      name: 'cond_dmg_',
+      name: 'spd',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd',
         sheet: 'Mediation',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Mediation',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Mediation',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Mediation',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Mediation',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  MemoriesOfThePast: {
-    cond_dmg_: {
-      sheet: 'MemoriesOfThePast',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MemoriesOfThePast',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'MemoriesOfThePast',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MemoriesOfThePast',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MemoriesOfThePast',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MemoriesOfThePast',
-        name: 'team_dmg_',
+        name: 'spd',
       },
     },
   },
