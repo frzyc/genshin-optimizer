@@ -144,13 +144,6 @@ export class Worker {
 
     while (subworks.length) {
       const subwork = subworks.pop()!
-      if (subwork.count <= this.counters.remaining - this.maxKeep) {
-        const ids = subwork.candidates.map((cnds) => cnds.map((c) => c.id))
-        stolen.push({ ids, count: subwork.count })
-        this.counters.remaining -= subwork.count
-        continue
-      }
-
       subwork.minimum[0] = this.minimum[0] // in case threshold was updated
       const { nodes, candidates, minimum, cndRanges, monotonicities } = prune(
         subwork.nodes,
@@ -165,6 +158,12 @@ export class Worker {
       counters.remaining -= subwork.count - count
       if (!count) continue
       if (count <= splitThreshold) return { nodes, minimum, candidates, count }
+      if (count <= counters.remaining - this.maxKeep) {
+        const ids = candidates.map((cnds) => cnds.map((c) => c.id))
+        stolen.push({ ids, count })
+        counters.remaining -= count
+        continue
+      }
       subworks.push(
         ...splitCandidates(candidates, cndRanges, monotonicities).map(
           (candidates) => {
