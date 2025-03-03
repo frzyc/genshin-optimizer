@@ -1161,45 +1161,10 @@ export const conditionals = {
     },
   },
   MemorysCurtainNeverFalls: {
-    boolConditional: {
+    skillUsed: {
       sheet: 'MemorysCurtainNeverFalls',
-      name: 'boolConditional',
+      name: 'skillUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MemorysCurtainNeverFalls',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MemorysCurtainNeverFalls',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  MeshingCogs: {
-    boolConditional: {
-      sheet: 'MeshingCogs',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MeshingCogs',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MeshingCogs',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   MessengerTraversingHackerspace: {
@@ -1227,24 +1192,10 @@ export const conditionals = {
     },
   },
   MomentOfVictory: {
-    boolConditional: {
+    wearerAttacked: {
       sheet: 'MomentOfVictory',
-      name: 'boolConditional',
+      name: 'wearerAttacked',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MomentOfVictory',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MomentOfVictory',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Moze: {
@@ -1257,27 +1208,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Moze',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Multiplication: {
-    boolConditional: {
-      sheet: 'Multiplication',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Multiplication',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Multiplication',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -14043,72 +13973,15 @@ export const buffs = {
     },
   },
   MemorysCurtainNeverFalls: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'MemorysCurtainNeverFalls',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MemorysCurtainNeverFalls',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'MemorysCurtainNeverFalls',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MemorysCurtainNeverFalls',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MemorysCurtainNeverFalls',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MemorysCurtainNeverFalls',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  MeshingCogs: {
-    cond_dmg_: {
-      sheet: 'MeshingCogs',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MeshingCogs',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'MeshingCogs',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MeshingCogs',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MeshingCogs',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MeshingCogs',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -14320,37 +14193,15 @@ export const buffs = {
     },
   },
   MomentOfVictory: {
-    cond_dmg_: {
+    def_: {
       sheet: 'MomentOfVictory',
-      name: 'cond_dmg_',
+      name: 'def_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'def_',
         sheet: 'MomentOfVictory',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'MomentOfVictory',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MomentOfVictory',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MomentOfVictory',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MomentOfVictory',
-        name: 'team_dmg_',
+        name: 'def_',
       },
     },
   },
@@ -14539,41 +14390,6 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Moze',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  Multiplication: {
-    cond_dmg_: {
-      sheet: 'Multiplication',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Multiplication',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Multiplication',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Multiplication',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Multiplication',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Multiplication',
         name: 'team_dmg_',
       },
     },

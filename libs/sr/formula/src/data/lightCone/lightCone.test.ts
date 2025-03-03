@@ -1364,4 +1364,52 @@ describe('Light Cone sheets test', () => {
 
     expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.56)
   })
+
+  it('MemorysCurtainNeverFalls', () => {
+    const charKey: CharacterKey = 'Aglaea'
+    const data = testCharacterData(charKey, 'MemorysCurtainNeverFalls')
+    data.push(
+      cond(
+        charKey,
+        'MemorysCurtainNeverFalls',
+        conditionals.MemorysCurtainNeverFalls.skillUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.12)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.16)
+  })
+
+  // Meshing Cogs should be here but there are no conds
+
+  it('MomentOfVictory', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'MomentOfVictory')
+    data.push(
+      cond(
+        charKey,
+        'MomentOfVictory',
+        conditionals.MomentOfVictory.wearerAttacked.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.def_).val).toBeCloseTo(0.4 + 0.4)
+    expect(calc.compute(char.final.eff_).val).toBeCloseTo(0.4)
+  })
+
+  // Multiplication should be here but there are no conds
 })
