@@ -40,8 +40,10 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     case 'config':
       worker.setOptThreshold(msg.threshold)
       return
-    case 'work?':
-      return { ty: 'add', works: worker.steal(msg.maxKeep) }
+    case 'work?': {
+      const works = worker.steal(msg.maxKeep)
+      return works.length ? { ty: 'add', works } : undefined
+    }
     case 'add':
       worker.add(msg.works)
       return processAllWorks()
@@ -50,14 +52,14 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
 
 let runner: Promise<undefined> | undefined
 function processAllWorks(): Promise<undefined> | undefined {
-  if (runner) return worker.process(), undefined // only one runner needed at a time
+  if (runner) return undefined // only one runner needed at a time
   return (runner = (async () => {
     let nextReport = Date.now()
     while (worker.hasWork()) {
-      // Make sure there is no await suspension until the first call
-      // of this. Otherwise, the submitted work may get stolen before
-      // the worker gets a chance to split it.
-      worker.process()
+      const works: Work[] = []
+      const subwork = worker.getSubwork(works)
+      if (works.length) postMessage({ ty: 'add', works })
+      if (subwork) worker.process(subwork)
 
       // Suspend here in case a new config/work stealing is sent over
       //

@@ -67,6 +67,7 @@ export class Solver<ID extends string> {
       this.throws = rej
     })
 
+    const avg = counters.remaining / (cfg.numWorkers + 1)
     for (const worker of workers) {
       this.info.set(worker, { builds: [], remaining: 0 })
       worker.onmessage = (msg) => {
@@ -82,6 +83,7 @@ export class Solver<ID extends string> {
         minimum,
         candidates,
         topN: cfg.topN,
+        maxKeep: Math.max(avg, highWaterMark),
       })
     }
 
@@ -110,20 +112,25 @@ export class Solver<ID extends string> {
     }
 
     for (const worker of state.workers)
-      if (this.reconcile(worker, works)) state.workers.delete(worker)
+      if (this.give(works, worker)) state.workers.delete(worker)
       else return
     this.state = { ty: 'work', works }
   }
 
   idle(worker: Worker) {
-    const { state } = this
+    const { state, counters, info } = this
     if (state.ty === 'idle') state.workers.add(worker)
-    else if (!this.reconcile(worker, state.works))
+    else if (!this.give(state.works, worker))
       this.state = { ty: 'idle', workers: new Set([worker]) }
+    else return // no more idle workers
+    const avg = counters.remaining / (info.size + 1)
+    const maxKeep = Math.max(avg, highWaterMark)
+    const msg = { ty: 'work?' as const, maxKeep }
+    info.forEach((i, w) => i.remaining > maxKeep && postMsg(w, msg))
   }
 
   // returns whether worker is now above low water mark. If `false`, `works` will be empty
-  reconcile(worker: Worker, works: Work[]) {
+  give(works: Work[], worker: Worker) {
     if (!works.length) return false
     const info = this.info.get(worker)!
     let quota = highWaterMark - info.remaining
@@ -132,9 +139,6 @@ export class Solver<ID extends string> {
 
     info.remaining = highWaterMark - quota
     postMsg(worker, { ty: 'add', works: toDist })
-    const avg = this.counters.remaining / this.info.size
-    if (info.remaining > avg && avg > highWaterMark)
-      postMsg(worker, { ty: 'work?', maxKeep: avg }) // too many, taking it back
     return info.remaining >= lowWaterMark
   }
 
