@@ -1412,4 +1412,58 @@ describe('Light Cone sheets test', () => {
   })
 
   // Multiplication should be here but there are no conds
+
+  it('MutualDemise', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'MutualDemise')
+    data.push(
+      cond(
+        charKey,
+        'MutualDemise',
+        conditionals.MutualDemise.hpLowerThan80.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
+  })
+
+  it('NightOfFright', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const otherCharKey: CharacterKey = 'Seele'
+    const data = testTeamData(charKey, otherCharKey, 'NightOfFright')
+    data.push(
+      cond(
+        charKey,
+        'NightOfFright',
+        conditionals.NightOfFright.healingProvided.name,
+        5
+      )
+    )
+    const calcLingsha = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const calcSeele = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: otherCharKey, dst: otherCharKey })
+
+    expect(calcLingsha.compute(own.final.enerRegen_).val).toBeCloseTo(0.2)
+    expect(calcSeele.compute(own.final.atk_).val).toBeCloseTo(5 * 0.04)
+    expect(
+      calcSeele
+        .withTag({ src: charKey, dst: otherCharKey })
+        .compute(new Read(formulas.NightOfFright.healing.tag, undefined)).val
+    ).toBeCloseTo(1) // currently testing
+  })
 })

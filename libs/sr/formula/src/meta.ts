@@ -1216,24 +1216,10 @@ export const conditionals = {
     },
   },
   MutualDemise: {
-    boolConditional: {
+    hpLowerThan80: {
       sheet: 'MutualDemise',
-      name: 'boolConditional',
+      name: 'hpLowerThan80',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'MutualDemise',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'MutualDemise',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Mydei: {
@@ -1275,24 +1261,13 @@ export const conditionals = {
     },
   },
   NightOfFright: {
-    boolConditional: {
+    healingProvided: {
       sheet: 'NightOfFright',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'NightOfFright',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'NightOfFright',
-      name: 'numConditional',
+      name: 'healingProvided',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 5,
     },
   },
   NightOnTheMilkyWay: {
@@ -4546,6 +4521,19 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  NightOfFright: {
+    healing: {
+      sheet: 'NightOfFright',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'NightOfFright',
+        name: 'healing',
       },
     },
   },
@@ -14409,37 +14397,15 @@ export const buffs = {
     },
   },
   MutualDemise: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'MutualDemise',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'MutualDemise',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'MutualDemise',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'MutualDemise',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'MutualDemise',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'MutualDemise',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },
@@ -14822,37 +14788,15 @@ export const buffs = {
     },
   },
   NightOfFright: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'NightOfFright',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'NightOfFright',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'NightOfFright',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'NightOfFright',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'NightOfFright',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'NightOfFright',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
