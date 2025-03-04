@@ -1624,4 +1624,80 @@ describe('Light Cone sheets test', () => {
 
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.32)
   })
+
+  it('PastSelfInMirror', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'PastSelfInMirror')
+    data.push(
+      cond(
+        charKey,
+        'PastSelfInMirror',
+        conditionals.PastSelfInMirror.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(1)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
+  })
+
+  it('PatienceIsAllYouNeed', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'PatienceIsAllYouNeed')
+    data.push(
+      cond(
+        charKey,
+        'PatienceIsAllYouNeed',
+        conditionals.PatienceIsAllYouNeed.attackCount.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(3 * 0.08)
+  })
+
+  it('PerfectTiming', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'PerfectTiming', [
+      // Max out LC passive
+      ownBuff.premod.eff_res_.add(0.28),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // LC bonus + assumed
+    expect(calc.compute(char.final.eff_res_).val).toBeCloseTo(0.32 + 0.28)
+    expect(calc.compute(char.final.heal_).val).toBeCloseTo(0.27)
+  })
+
+  it('Pioneering', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'Pioneering')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+
+    expect(
+      calc.compute(new Read(formulas.Pioneering.healing.tag, undefined)).val
+    ).toBeCloseTo((1474.704 + 952.56) * 0.2)
+  })
 })

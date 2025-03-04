@@ -1314,31 +1314,16 @@ export const conditionals = {
     skillUsed: { sheet: 'PastAndFuture', name: 'skillUsed', type: 'bool' },
   },
   PastSelfInMirror: {
-    useUltimate: {
-      sheet: 'PastSelfInMirror',
-      name: 'useUltimate',
-      type: 'bool',
-    },
+    ultUsed: { sheet: 'PastSelfInMirror', name: 'ultUsed', type: 'bool' },
   },
   PatienceIsAllYouNeed: {
-    boolConditional: {
+    attackCount: {
       sheet: 'PatienceIsAllYouNeed',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PatienceIsAllYouNeed',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PatienceIsAllYouNeed',
-      name: 'numConditional',
+      name: 'attackCount',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   Pela: {
@@ -1351,27 +1336,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Pela',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  PerfectTiming: {
-    boolConditional: {
-      sheet: 'PerfectTiming',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PerfectTiming',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PerfectTiming',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1397,27 +1361,6 @@ export const conditionals = {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'wearerDebuff',
       type: 'bool',
-    },
-  },
-  Pioneering: {
-    boolConditional: {
-      sheet: 'Pioneering',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Pioneering',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Pioneering',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PlanetaryRendezvous: {
@@ -4425,6 +4368,21 @@ export const formulas = {
       },
     },
   },
+  PatienceIsAllYouNeed: {
+    erode_0: {
+      sheet: 'PatienceIsAllYouNeed',
+      name: 'erode_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'PatienceIsAllYouNeed',
+        damageType1: 'dot',
+        elementalType: 'lightning',
+        name: 'erode_0',
+      },
+    },
+  },
   Pela: {
     basicDmg_0: {
       sheet: 'Pela',
@@ -4450,6 +4408,19 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  Pioneering: {
+    healing: {
+      sheet: 'Pioneering',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'Pioneering',
+        name: 'healing',
       },
     },
   },
@@ -14789,50 +14760,28 @@ export const buffs = {
     },
   },
   PastSelfInMirror: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'PastSelfInMirror',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PastSelfInMirror',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
   PatienceIsAllYouNeed: {
-    cond_dmg_: {
+    spd_: {
       sheet: 'PatienceIsAllYouNeed',
-      name: 'cond_dmg_',
+      name: 'spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'PatienceIsAllYouNeed',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'PatienceIsAllYouNeed',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PatienceIsAllYouNeed',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PatienceIsAllYouNeed',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PatienceIsAllYouNeed',
-        name: 'team_dmg_',
+        name: 'spd_',
       },
     },
   },
@@ -15044,37 +14993,15 @@ export const buffs = {
     },
   },
   PerfectTiming: {
-    cond_dmg_: {
+    heal_: {
       sheet: 'PerfectTiming',
-      name: 'cond_dmg_',
+      name: 'heal_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'heal_',
         sheet: 'PerfectTiming',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'PerfectTiming',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PerfectTiming',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PerfectTiming',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PerfectTiming',
-        name: 'team_dmg_',
+        name: 'heal_',
       },
     },
   },
@@ -15110,41 +15037,6 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
         name: 'set4_crit_dmg_',
-      },
-    },
-  },
-  Pioneering: {
-    cond_dmg_: {
-      sheet: 'Pioneering',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Pioneering',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Pioneering',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Pioneering',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Pioneering',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Pioneering',
-        name: 'team_dmg_',
       },
     },
   },
