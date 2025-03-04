@@ -20,7 +20,14 @@ import discs from './gen/discs'
 import wengines from './gen/wengines'
 
 type CommonImagesKey = 'discDrive'
-export type WenginePhaseKey = 'p1' | 'p2' | 'p3' | 'p4' | 'p5'
+export type WenginePhaseKey =
+  | 'p1'
+  | 'p2'
+  | 'p3'
+  | 'p4'
+  | 'p5'
+  | 'singlePhase'
+  | 'singleNonPhase'
 
 export function characterAsset(
   ck: CharacterKey,

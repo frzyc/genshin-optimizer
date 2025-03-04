@@ -14,6 +14,7 @@ export function WengineSubstatDisplay({
 }: {
   substatKey: WengineSubStatKey
   substatValue: number
+  styleProps?: any
 }) {
   if (!substatKey) return null
   const displayValue = toPercent(substatValue, substatKey).toFixed(
@@ -24,12 +25,13 @@ export function WengineSubstatDisplay({
       variant="subtitle2"
       sx={{
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'space-between',
         fontWeight: 'bold',
+        width: '100%',
+        lineHeight: '1.60',
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <StatDisplay statKey={substatKey} />
       </Box>
       <span>

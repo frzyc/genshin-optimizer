@@ -26,7 +26,7 @@ import {
 import { Suspense, useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscCard, DiscEditor, DiscSwapModal } from '../Disc'
-import { WengineCard, WengineEditor, WengineSwapModal } from '../Wengine'
+import { EquippedWengine, WengineEditor, WengineSwapModal } from '../Wengine'
 
 const columns = {
   xs: 1,
@@ -99,7 +99,7 @@ export function EquippedGrid({
         {wengine &&
         wengine.id &&
         database.wengines.keys.includes(wengine.id) ? (
-          <WengineCard
+          <EquippedWengine
             wengineId={wengine.id}
             onEdit={() => onEditWengine(wengine.id)}
             extraButtons={

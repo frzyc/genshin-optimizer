@@ -17,10 +17,12 @@ const CharIconWrapper = styled(NextImage ? (NextImage as any) : 'img', {
 
 export function CharIconCircle({
   characterKey,
+  size,
 }: {
   characterKey: CharacterKey
+  size: number
 }) {
   const genshinAsset = characterAsset(characterKey, 'circle')
 
-  return <CharIconWrapper src={genshinAsset} />
+  return <CharIconWrapper src={genshinAsset} size={size} />
 }
