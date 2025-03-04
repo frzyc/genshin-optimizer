@@ -1271,88 +1271,22 @@ export const conditionals = {
     },
   },
   NightOnTheMilkyWay: {
-    boolConditional: {
+    enemiesOnField: {
       sheet: 'NightOnTheMilkyWay',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'NightOnTheMilkyWay',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'NightOnTheMilkyWay',
-      name: 'numConditional',
+      name: 'enemiesOnField',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 5,
+    },
+    enemyBroken: {
+      sheet: 'NightOnTheMilkyWay',
+      name: 'enemyBroken',
+      type: 'bool',
     },
   },
   NinjaRecordSoundHunt: {
-    boolConditional: {
-      sheet: 'NinjaRecordSoundHunt',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'NinjaRecordSoundHunt',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'NinjaRecordSoundHunt',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  NinjutsuInscriptionDazzlingEvilbreaker: {
-    boolConditional: {
-      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  NowhereToRun: {
-    boolConditional: {
-      sheet: 'NowhereToRun',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'NowhereToRun',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'NowhereToRun',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    hpLost: { sheet: 'NinjaRecordSoundHunt', name: 'hpLost', type: 'bool' },
   },
   OnTheFallOfAnAeon: {
     boolConditional: {
@@ -4533,6 +4467,19 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'NightOfFright',
+        name: 'healing',
+      },
+    },
+  },
+  NowhereToRun: {
+    healing: {
+      sheet: 'NowhereToRun',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'NowhereToRun',
         name: 'healing',
       },
     },
@@ -14801,142 +14748,39 @@ export const buffs = {
     },
   },
   NightOnTheMilkyWay: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'NightOnTheMilkyWay',
-      name: 'cond_dmg_',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'NightOnTheMilkyWay',
+        name: 'atk_',
+      },
+    },
+    common_dmg_: {
+      sheet: 'NightOnTheMilkyWay',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'NightOnTheMilkyWay',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'NightOnTheMilkyWay',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'NightOnTheMilkyWay',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'NightOnTheMilkyWay',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'NightOnTheMilkyWay',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
   NinjaRecordSoundHunt: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'NinjaRecordSoundHunt',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'NinjaRecordSoundHunt',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'NinjaRecordSoundHunt',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'NinjaRecordSoundHunt',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'NinjaRecordSoundHunt',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'NinjaRecordSoundHunt',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  NinjutsuInscriptionDazzlingEvilbreaker: {
-    cond_dmg_: {
-      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  NowhereToRun: {
-    cond_dmg_: {
-      sheet: 'NowhereToRun',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'NowhereToRun',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'NowhereToRun',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'NowhereToRun',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'NowhereToRun',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'NowhereToRun',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },

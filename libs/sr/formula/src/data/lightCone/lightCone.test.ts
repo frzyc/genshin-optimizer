@@ -1466,4 +1466,87 @@ describe('Light Cone sheets test', () => {
         .compute(new Read(formulas.NightOfFright.healing.tag, undefined)).val
     ).toBeCloseTo(1) // currently testing
   })
+
+  it('NightOnTheMilkyWay', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'NightOnTheMilkyWay')
+    data.push(
+      cond(
+        charKey,
+        'NightOnTheMilkyWay',
+        conditionals.NightOnTheMilkyWay.enemiesOnField.name,
+        5
+      ),
+      cond(
+        charKey,
+        'NightOnTheMilkyWay',
+        conditionals.NightOnTheMilkyWay.enemyBroken.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(5 * 0.15)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.5)
+  })
+
+  it('NinjaRecordSoundHunt', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'NinjaRecordSoundHunt')
+    data.push(
+      cond(
+        charKey,
+        'NinjaRecordSoundHunt',
+        conditionals.NinjaRecordSoundHunt.hpLost.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.hp_).val).toBeCloseTo(0.24)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.36)
+  })
+
+  it('NinjutsuInscriptionDazzlingEvilbreaker', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(
+      charKey,
+      'NinjutsuInscriptionDazzlingEvilbreaker'
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(1)
+  })
+
+  it('NowhereToRun', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'NowhereToRun')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.48)
+    expect(
+      calc.compute(new Read(formulas.NowhereToRun.healing.tag, undefined)).val
+    ).toBeCloseTo((523.908 + 529.2) * 1.48 * 0.24)
+  })
 })
