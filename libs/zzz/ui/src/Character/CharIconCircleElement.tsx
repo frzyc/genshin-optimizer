@@ -20,7 +20,7 @@ export function CharIconCircle({
   size,
 }: {
   characterKey: CharacterKey
-  size: number
+  size?: number
 }) {
   const genshinAsset = characterAsset(characterKey, 'circle')
 
