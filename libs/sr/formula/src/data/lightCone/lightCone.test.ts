@@ -1549,4 +1549,79 @@ describe('Light Cone sheets test', () => {
       calc.compute(new Read(formulas.NowhereToRun.healing.tag, undefined)).val
     ).toBeCloseTo((523.908 + 529.2) * 1.48 * 0.24)
   })
+
+  it('OnlySilenceRemains', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'OnlySilenceRemains')
+    data.push(
+      cond(
+        charKey,
+        'OnlySilenceRemains',
+        conditionals.OnlySilenceRemains.lessThan2Enemies.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.32)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
+  })
+
+  it('OnTheFallOfAnAeon', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'OnTheFallOfAnAeon')
+    data.push(
+      cond(
+        charKey,
+        'OnTheFallOfAnAeon',
+        conditionals.OnTheFallOfAnAeon.wearerAttacked.name,
+        4
+      ),
+      cond(
+        charKey,
+        'OnTheFallOfAnAeon',
+        conditionals.NightOnTheMilkyWay.enemyBroken.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(4 * 0.16)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.24)
+  })
+
+  // Passkey should be here but there are no conds
+
+  it('PastAndFuture', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const otherCharKey: CharacterKey = 'Seele'
+    const data = testTeamData(charKey, otherCharKey, 'PastAndFuture')
+    data.push(
+      cond(
+        charKey,
+        'PastAndFuture',
+        conditionals.PastAndFuture.skillUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: otherCharKey, dst: otherCharKey })
+    const char = convert(ownTag, { et: 'own', src: otherCharKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.32)
+  })
 })

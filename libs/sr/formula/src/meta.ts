@@ -1289,88 +1289,29 @@ export const conditionals = {
     hpLost: { sheet: 'NinjaRecordSoundHunt', name: 'hpLost', type: 'bool' },
   },
   OnTheFallOfAnAeon: {
-    boolConditional: {
+    enemyBroken: {
       sheet: 'OnTheFallOfAnAeon',
-      name: 'boolConditional',
+      name: 'enemyBroken',
       type: 'bool',
     },
-    listConditional: {
+    wearerAttacked: {
       sheet: 'OnTheFallOfAnAeon',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'OnTheFallOfAnAeon',
-      name: 'numConditional',
+      name: 'wearerAttacked',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 4,
     },
   },
   OnlySilenceRemains: {
-    boolConditional: {
+    lessThan2Enemies: {
       sheet: 'OnlySilenceRemains',
-      name: 'boolConditional',
+      name: 'lessThan2Enemies',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'OnlySilenceRemains',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'OnlySilenceRemains',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Passkey: {
-    boolConditional: {
-      sheet: 'Passkey',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Passkey',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Passkey',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PastAndFuture: {
-    boolConditional: {
-      sheet: 'PastAndFuture',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PastAndFuture',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PastAndFuture',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    skillUsed: { sheet: 'PastAndFuture', name: 'skillUsed', type: 'bool' },
   },
   PastSelfInMirror: {
     useUltimate: {
@@ -14785,72 +14726,39 @@ export const buffs = {
     },
   },
   OnTheFallOfAnAeon: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'OnTheFallOfAnAeon',
-      name: 'cond_dmg_',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'OnTheFallOfAnAeon',
+        name: 'atk_',
+      },
+    },
+    common_dmg_: {
+      sheet: 'OnTheFallOfAnAeon',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'OnTheFallOfAnAeon',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'OnTheFallOfAnAeon',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'OnTheFallOfAnAeon',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'OnTheFallOfAnAeon',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'OnTheFallOfAnAeon',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
   OnlySilenceRemains: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'OnlySilenceRemains',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'OnlySilenceRemains',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'OnlySilenceRemains',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'OnlySilenceRemains',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'OnlySilenceRemains',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'OnlySilenceRemains',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },
@@ -14867,73 +14775,16 @@ export const buffs = {
       },
     },
   },
-  Passkey: {
-    cond_dmg_: {
-      sheet: 'Passkey',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Passkey',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Passkey',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Passkey',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Passkey',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Passkey',
-        name: 'team_dmg_',
-      },
-    },
-  },
   PastAndFuture: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'PastAndFuture',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PastAndFuture',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'PastAndFuture',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PastAndFuture',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PastAndFuture',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PastAndFuture',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
