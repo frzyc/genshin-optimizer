@@ -34,11 +34,7 @@ const sheet = registerLightCone(
   registerBuff(
     'cond_dmg_',
     ownBuff.premod.common_dmg_.add(
-      cmpGE(
-        lcCount,
-        1,
-        boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_))
-      )
+      cmpGE(lcCount, 1, boolConditional.ifOn(subscript(superimpose, dm.dmg)))
     ),
     cmpGE(lcCount, 1, 'unique', '')
   ),

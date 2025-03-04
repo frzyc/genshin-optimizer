@@ -4,11 +4,13 @@ import { allStats } from '../../../allStats'
 const key: LightConeKey = 'EchoesOfTheCoffin'
 const data_gen = allStats.lightCone[key]
 
-let o = 0
-// TODO: Load scalings
+let o = 1
+
 const dm = {
-  cond_dmg_: data_gen.superimpose.otherStats[o++] ?? [-1, 1, 2, 3, 4, 5],
-  passive_atk: data_gen.superimpose.passiveStats.atk ?? [-1, 2, 4, 6, 8, 10],
+  passive_atk_: data_gen.superimpose.passiveStats.atk_,
+  spd: data_gen.superimpose.otherStats[o++],
+  energy: data_gen.superimpose.otherStats[o++],
+  maxProcs: data_gen.superimpose.otherStats[o++][1],
 } as const
 
 export default dm
