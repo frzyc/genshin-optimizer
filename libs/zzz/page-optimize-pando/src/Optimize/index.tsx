@@ -42,6 +42,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import { DiscFilter } from './DiscFilter'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
+import { WengineFilter } from './WengineFilter'
 
 export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
@@ -49,7 +50,9 @@ export default function Optimize() {
   const { database } = useDatabaseContext()
   useEffect(() => {
     if (optConfigId) return
-    const newOptConfigId = database.optConfigs.new()
+    const newOptConfigId = database.optConfigs.new({
+      wEngineTypes: [getCharStat(characterKey).specialty],
+    })
     database.charOpts.set(characterKey, {
       optConfigId: newOptConfigId,
     })
@@ -120,14 +123,40 @@ function OptimizeWrapper() {
     optConfig.slot6,
     optConfig.useEquipped,
   ])
+  const wengineDirty = useDataManagerBaseDirty(database.wengines)
   const wengines = useMemo(() => {
-    const { specialty } = getCharStat(characterKey)
-    return database.wengines.values.filter(({ key }) => {
-      // filter by path
-      const { type } = getWengineStat(key)
-      return specialty === type
-    })
-  }, [characterKey, database.wengines.values])
+    return (
+      wengineDirty &&
+      database.wengines.values.filter(({ key, level, location }) => {
+        // only return equipped wengine if not opting for wengine
+        if (!optConfig.optWengine) return location === characterKey
+
+        if (level < optConfig.levelLow || level > optConfig.levelHigh)
+          return false
+        if (
+          location &&
+          !optConfig.useEquippedWengine &&
+          location !== characterKey
+        )
+          return false
+
+        const { type } = getWengineStat(key)
+        // filter by path
+        if (!optConfig.wEngineTypes.includes(type)) return false
+        return true
+      })
+    )
+  }, [
+    characterKey,
+    database.wengines,
+    optConfig.levelLow,
+    optConfig.levelHigh,
+    optConfig.optWengine,
+    optConfig.wEngineTypes,
+    optConfig.useEquippedWengine,
+    wengineDirty,
+  ])
+
   const totalPermutations = useMemo(
     () =>
       Object.values(discsBySlot).reduce(
@@ -217,6 +246,7 @@ function OptimizeWrapper() {
       <CardContent>
         <Stack spacing={1}>
           <StatFilterCard />
+          <WengineFilter numWengine={wengines.length} />
           <DiscFilter discsBySlot={discsBySlot} />
           {progress && (
             <ProgressIndicator

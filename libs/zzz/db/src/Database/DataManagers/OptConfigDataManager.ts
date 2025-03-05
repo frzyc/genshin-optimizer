@@ -1,7 +1,9 @@
 import type { UnArray } from '@genshin-optimizer/common/util'
 import { validateArr } from '@genshin-optimizer/common/util'
+import type { SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
+  allSpecialityKeys,
   discSlotToMainStatKeys,
   type DiscMainStatKey,
   type DiscSetKey,
@@ -40,6 +42,12 @@ export interface OptConfig {
   levelLow: number
   levelHigh: number
 
+  optWengine: boolean
+  wlevelLow: number
+  wlevelHigh: number
+  wEngineTypes: SpecialityKey[]
+  useEquippedWengine: boolean
+
   //generated opt builds
   generatedBuildListId?: string
 }
@@ -68,6 +76,12 @@ export class OptConfigDataManager extends DataManager<
       discExclusionIds,
       levelLow,
       levelHigh,
+
+      optWengine,
+      wlevelLow,
+      wlevelHigh,
+      wEngineTypes,
+      useEquippedWengine,
 
       generatedBuildListId,
     } = obj as OptConfig
@@ -108,6 +122,13 @@ export class OptConfigDataManager extends DataManager<
     if (levelLow === undefined) levelLow = 0
     if (levelHigh === undefined) levelHigh = 20
 
+    optWengine = !!optWengine
+    if (wlevelLow === undefined) wlevelLow = 0
+    if (wlevelHigh === undefined) wlevelHigh = 60
+    wEngineTypes = validateArr(wEngineTypes, allSpecialityKeys, [])
+
+    useEquippedWengine = !!useEquippedWengine
+
     if (
       generatedBuildListId &&
       !this.database.generatedBuildList.get(generatedBuildListId)
@@ -127,6 +148,12 @@ export class OptConfigDataManager extends DataManager<
       discExclusionIds,
       levelLow,
       levelHigh,
+
+      optWengine,
+      wlevelLow,
+      wlevelHigh,
+      wEngineTypes,
+      useEquippedWengine,
 
       generatedBuildListId,
     }
@@ -191,6 +218,13 @@ function initialOptConfig(): OptConfig {
     useEquipped: false,
     // excludedLocations: [],
     // allowLocationsState: 'unequippedOnly',
+
+    optWengine: false,
+    wlevelLow: 0,
+    wlevelHigh: 60,
+    wEngineTypes: [],
+    useEquippedWengine: false,
+
     generatedBuildListId: undefined,
   }
 }
