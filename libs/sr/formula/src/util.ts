@@ -126,6 +126,12 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         .withTag({ et: 'target', dst })
         .reread(reader.withTag({ et: 'own', dst: null, src: dst }))
     ),
+    // Semi Own Entries
+    members.map((dst) =>
+      reader
+        .withTag({ et: 'target', dst })
+        .reread(reader.withTag({ et: 'semiOwn', src: dst }))
+    ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = own.with('src', dst)

@@ -164,6 +164,10 @@ export const own = convert(ownTag, {
   et: 'own',
   dst: null,
 })
+export const semiOwn = convert(ownTag, {
+  et: 'semiOwn',
+  dst: null,
+})
 export const team = convert(ownTag, {
   et: 'team',
   dst: null,
@@ -174,6 +178,7 @@ export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
 // Default tag DB keys
 export const ownBuff = convert(ownTag, { et: 'own' })
+export const semiOwnBuff = convert(ownTag, { et: 'semiOwn' })
 export const teamBuff = convert(ownTag, { et: 'teamBuff' })
 export const notOwnBuff = convert(ownTag, { et: 'notOwnBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })

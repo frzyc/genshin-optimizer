@@ -1,5 +1,6 @@
 export const entryTypes = [
   'own',
+  'semiOwn',
   'enemy',
   'team',
   'target',
