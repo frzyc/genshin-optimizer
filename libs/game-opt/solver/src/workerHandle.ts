@@ -6,7 +6,7 @@ const reportInterval = 20 // (minimum) progress report interval for each worker,
 declare function postMessage(res: Response): void
 
 export type Command = InitMsg | AddWorkMsg | ConfigMsg | ReqWorkMsg
-export type Response = AddWorkMsg | ProgressMsg | ErrMsg
+export type Response = AddWorkMsg | RecvWorkMsg | ProgressMsg | ErrMsg
 
 /** initialize the worker for a specific optimization problem */
 export type InitMsg = { ty: 'init' } & WorkerConfig
@@ -16,6 +16,8 @@ export type ConfigMsg = { ty: 'config'; threshold: number }
 export type ReqWorkMsg = { ty: 'work?'; maxKeep: number }
 /** submitting works */
 export type AddWorkMsg = { ty: 'add'; works: Work[] }
+/** notify that add-work message has been received */
+export type RecvWorkMsg = { ty: 'recv' }
 /** progress report */
 export type ProgressMsg = { ty: 'progress'; builds: BuildResult[] } & Progress
 /** error message */
@@ -46,13 +48,14 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     }
     case 'add':
       worker.add(msg.works)
-      return processAllWorks()
+      processAllWorks() // runs in the background
+      return { ty: 'recv' }
   }
 }
 
 let nextReport: number | undefined // `undefined` when not running
-async function processAllWorks(): Promise<undefined> {
-  if (nextReport !== undefined) return undefined // only one runner at a time
+async function processAllWorks(): Promise<void> {
+  if (nextReport !== undefined) return // only one runner at a time
   nextReport = Date.now()
   do {
     // Suspend here in case a new config/work stealing is sent over
@@ -61,9 +64,9 @@ async function processAllWorks(): Promise<undefined> {
     // will simply continue this loop.
     await new Promise((r) => setTimeout(r))
 
-    // pace the reporting to `reportInterval`
+    // pace the reporting to `reportInterval` (except when low on works)
     const now = Date.now()
-    if (now >= nextReport) {
+    if (now >= nextReport || worker.subworks.length < 4) {
       nextReport = now + reportInterval
       postMessage({ ty: 'progress', ...worker.resetProgress() })
     }

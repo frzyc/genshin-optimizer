@@ -18,7 +18,10 @@ export interface SolverConfig {
   setProgress: (_: Progress) => void
 }
 
-type WorkerInfo<ID extends string> = { builds: BuildResult<ID>[] }
+type WorkerInfo<ID extends string> = {
+  builds: BuildResult<ID>[]
+  giving: boolean
+}
 type IdleWorkers = { ty: 'idle'; workers: Set<Worker> }
 type ExcessWorks = { ty: 'work'; works: Work[] }
 
@@ -51,9 +54,9 @@ export class Solver<ID extends string> {
     const ids = candidates.map((cnds) => cnds.map((c) => c.id))
     this.topN = topN
     this.optThreshold = minimum[0]
-    this.info = new Map(workers.map((w) => [w, { builds: [] }]))
+    this.info = new Map(workers.map((w) => [w, { builds: [], giving: false }]))
     this.state = { ty: 'work', works: [{ ids, count: progress.remaining }] }
-    this.report = () => setProgress({ ...this.progress })
+    this.report = () => setProgress({ ...progress })
     this.results = new Promise((res, rej) => {
       this.finalize = (result) => (this.report(), res(result))
       this.terminate = rej
@@ -82,7 +85,7 @@ export class Solver<ID extends string> {
     }
 
     for (const worker of state.workers)
-      if (this.give(works, worker)) return
+      if (!this.give(works, worker)) return
       else state.workers.delete(worker)
     this.state = { ty: 'work', works }
   }
@@ -90,25 +93,24 @@ export class Solver<ID extends string> {
   idle(worker: Worker) {
     const { state, progress, info } = this
     if (state.ty === 'idle') state.workers.add(worker)
-    else if (this.give(state.works, worker))
-      this.state = { ty: 'idle', workers: new Set([worker]) }
-    else return // no more idle workers
+    else if (this.give(state.works, worker)) return
+    else this.state = { ty: 'idle', workers: new Set([worker]) }
 
     const maxKeep = progress.remaining / (info.size + 1) // one portion at `Solver`
     const msg = { ty: 'work?' as const, maxKeep }
     info.forEach((_, w) => postMsg(w, msg))
   }
 
-  /** returns whether `worker` needs more work (and `works` are emptied) */
+  /** returns whether some works are given (`false` implies empty `works`) */
   give(works: Work[], worker: Worker) {
-    if (!works.length) return true
-    const avg = this.progress.remaining / (this.info.size + 2) // lower than `maxKeep` in `idle`
-    const target = Math.ceil(Math.max(avg, waterMark))
-    let quota = target
+    if (!works.length) return false
+    const avg = this.progress.remaining / (this.info.size + 2) // smaller than `maxKeep` in `idle`
+    let quota = Math.ceil(Math.max(avg, waterMark))
     const giveLen = works.findIndex((w) => (quota -= w.count) < 0) + 1
     const giving = works.splice(0, giveLen || works.length)
+    this.info.get(worker)!.giving = true
     postMsg(worker, { ty: 'add', works: giving })
-    return target - quota < waterMark // implies `quota > target - waterMark >= 0`, i.e., `works` are emptied
+    return true
   }
 
   onWorkerMsg(msg: Response | ErrMsg, worker: Worker) {
@@ -122,7 +124,7 @@ export class Solver<ID extends string> {
         progress.skipped += msg.skipped
         info.builds = msg.builds as BuildResult<ID>[]
 
-        if (msg.remaining < waterMark) this.idle(worker)
+        if (msg.remaining < waterMark && !info.giving) this.idle(worker)
 
         const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
         bestBuilds.sort((a, b) => b.value - a.value)
@@ -137,10 +139,12 @@ export class Solver<ID extends string> {
         if (!this.progress.remaining) this.finalize(bestBuilds)
         break
       }
-      case 'add': {
+      case 'add':
         this.distribute(msg.works)
         break
-      }
+      case 'recv':
+        this.info.get(worker)!.giving = false
+        break
       case 'err':
         this.terminate(msg.msg + ' (Worker Error)')
     }
