@@ -29,7 +29,7 @@ import {
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useContext } from 'react'
-import { LevelFilter } from './LevelFilter'
+import { DiscLevelFilter } from './DiscLevelFilter'
 
 export function DiscFilter({
   discsBySlot,
@@ -104,7 +104,7 @@ function DiscFilterModal({
         <CardContent>
           <Suspense fallback={<Skeleton width="100%" height={'500px'} />}>
             <Stack spacing={1}>
-              <LevelFilter disabled={disabled} />
+              <DiscLevelFilter disabled={disabled} />
               <MainStatSelector discsBySlot={discsBySlot} disabled={disabled} />
               <SetFilter disabled={disabled} />
               <Button
