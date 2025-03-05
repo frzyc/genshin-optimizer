@@ -1,7 +1,14 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { Solver, type Counters } from '@genshin-optimizer/game-opt/solver'
 import type { Candidate } from '@genshin-optimizer/pando/engine'
-import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
+import {
+  constant,
+  detach,
+  max,
+  prod,
+  read,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   DiscSetKey,
@@ -27,9 +34,8 @@ export function optimize(
   calc: Calculator,
   frames: Frames,
   statFilters: Array<Omit<StatFilter, 'disabled'>>,
-  // TODO: Convert set fitlers to min constraint
-  _setFilter2: DiscSetKey[],
-  _setFilter4: DiscSetKey[],
+  setFilter2: DiscSetKey[],
+  setFilter4: DiscSetKey[],
   wengines: ICachedWengine[],
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
   numWorkers: number,
@@ -52,6 +58,14 @@ export function optimize(
       // Invert max constraints for pruning
       isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
     ),
+    // filter2: if not empty, at least one >= 2
+    setFilter2.length
+      ? max(...setFilter2.map((q) => read({ q }, 'sum')))
+      : constant(Infinity),
+    // filter4: if not empty, at least one >= 4
+    setFilter4.length
+      ? max(...setFilter4.map((q) => read({ q }, 'sum')))
+      : constant(Infinity),
     // other calcs (graph, etc)
   ]
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
@@ -93,6 +107,8 @@ export function optimize(
       ...statFilters.map((filter) =>
         filter.isMax ? filter.value * -1 : filter.value
       ),
+      2, // setFilter2
+      4, // setFilter4
     ],
     numWorkers,
     topN: 10, // TODO
