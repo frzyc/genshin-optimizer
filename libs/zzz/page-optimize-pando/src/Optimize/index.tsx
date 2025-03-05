@@ -89,7 +89,8 @@ function OptimizeWrapper() {
           const { slotKey, mainStatKey, level } = disc
           if (level < optConfig.levelLow || level > optConfig.levelHigh)
             return discsBySlot
-          if (!optConfig.useEquipped && disc.location) return discsBySlot
+          if (!optConfig.useEquipped && disc.location !== characterKey)
+            return discsBySlot
           if (
             isFilteredSlot(slotKey) &&
             !slotKeyMap[slotKey].includes(mainStatKey)
@@ -109,6 +110,7 @@ function OptimizeWrapper() {
       )
     )
   }, [
+    characterKey,
     discDirty,
     database.discs,
     optConfig.levelHigh,
