@@ -26,9 +26,8 @@ import {
   Box,
   Button,
   CardContent,
-  CardHeader,
-  Divider,
   LinearProgress,
+  Stack,
   Typography,
 } from '@mui/material'
 import {
@@ -40,6 +39,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { DiscFilter } from './DiscFilter'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
 
 export default function Optimize() {
@@ -61,7 +61,14 @@ export default function Optimize() {
     </OptConfigProvider>
   )
 }
-
+const slotKeyMap = {
+  4: 'slot4',
+  5: 'slot5',
+  6: 'slot6',
+} as const
+function isFilteredSlot(slotKey: DiscSlotKey): slotKey is '4' | '5' | '6' {
+  return ['4', '5', '6'].includes(slotKey)
+}
 function OptimizeWrapper() {
   const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
@@ -71,24 +78,31 @@ function OptimizeWrapper() {
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Counters | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
-  const discsBySlot = useMemo(
-    () =>
-      database.discs.values.reduce(
-        (discsBySlot, disc) => {
-          discsBySlot[disc.slotKey].push(disc)
+  const discsBySlot = useMemo(() => {
+    const { levelHigh, levelLow, useEquipped } = optConfig
+    return database.discs.values.reduce(
+      (discsBySlot, disc) => {
+        const { slotKey, mainStatKey, level } = disc
+        if (level < levelLow || level > levelHigh) return discsBySlot
+        if (!useEquipped && disc.location) return discsBySlot
+        if (
+          isFilteredSlot(slotKey) &&
+          !optConfig[slotKeyMap[slotKey]].includes(mainStatKey)
+        )
           return discsBySlot
-        },
-        {
-          1: [],
-          2: [],
-          3: [],
-          4: [],
-          5: [],
-          6: [],
-        } as Record<DiscSlotKey, ICachedDisc[]>
-      ),
-    [database.discs.values]
-  )
+        discsBySlot[disc.slotKey].push(disc)
+        return discsBySlot
+      },
+      {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+      } as Record<DiscSlotKey, ICachedDisc[]>
+    )
+  }, [database.discs.values, optConfig])
   const wengines = useMemo(() => {
     const { specialty } = getCharStat(characterKey)
     return database.wengines.values.filter(({ key }) => {
@@ -179,15 +193,23 @@ function OptimizeWrapper() {
 
   return (
     <CardThemed>
-      <CardHeader
-        title={t('optimize')}
-        action={
-          <Box>
+      <CardContent>
+        <Stack spacing={1}>
+          <StatFilterCard />
+          <DiscFilter discsBySlot={discsBySlot} />
+          {progress && (
+            <ProgressIndicator
+              progress={progress}
+              totalPermutations={totalPermutations}
+            />
+          )}
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
             />
             <Button
+              disabled={!totalPermutations}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -195,17 +217,7 @@ function OptimizeWrapper() {
               {optimizing ? t('cancel') : t('optimize')}
             </Button>
           </Box>
-        }
-      />
-      <Divider />
-      <CardContent>
-        <StatFilterCard />
-        {progress && (
-          <ProgressIndicator
-            progress={progress}
-            totalPermutations={totalPermutations}
-          />
-        )}
+        </Stack>
       </CardContent>
     </CardThemed>
   )
