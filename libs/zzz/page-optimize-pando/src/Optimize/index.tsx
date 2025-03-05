@@ -1,3 +1,4 @@
+import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { Counters } from '@genshin-optimizer/game-opt/solver'
@@ -61,14 +62,7 @@ export default function Optimize() {
     </OptConfigProvider>
   )
 }
-const slotKeyMap = {
-  4: 'slot4',
-  5: 'slot5',
-  6: 'slot6',
-} as const
-function isFilteredSlot(slotKey: DiscSlotKey): slotKey is '4' | '5' | '6' {
-  return ['4', '5', '6'].includes(slotKey)
-}
+
 function OptimizeWrapper() {
   const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
@@ -78,31 +72,52 @@ function OptimizeWrapper() {
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Counters | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
+  const discDirty = useDataManagerBaseDirty(database.discs)
   const discsBySlot = useMemo(() => {
-    const { levelHigh, levelLow, useEquipped } = optConfig
-    return database.discs.values.reduce(
-      (discsBySlot, disc) => {
-        const { slotKey, mainStatKey, level } = disc
-        if (level < levelLow || level > levelHigh) return discsBySlot
-        if (!useEquipped && disc.location) return discsBySlot
-        if (
-          isFilteredSlot(slotKey) &&
-          !optConfig[slotKeyMap[slotKey]].includes(mainStatKey)
-        )
+    const slotKeyMap = {
+      4: optConfig.slot4,
+      5: optConfig.slot5,
+      6: optConfig.slot6,
+    } as const
+    const isFilteredSlot = (slotKey: DiscSlotKey): slotKey is '4' | '5' | '6' =>
+      ['4', '5', '6'].includes(slotKey)
+
+    return (
+      discDirty &&
+      database.discs.values.reduce(
+        (discsBySlot, disc) => {
+          const { slotKey, mainStatKey, level } = disc
+          if (level < optConfig.levelLow || level > optConfig.levelHigh)
+            return discsBySlot
+          if (!optConfig.useEquipped && disc.location) return discsBySlot
+          if (
+            isFilteredSlot(slotKey) &&
+            !slotKeyMap[slotKey].includes(mainStatKey)
+          )
+            return discsBySlot
+          discsBySlot[disc.slotKey].push(disc)
           return discsBySlot
-        discsBySlot[disc.slotKey].push(disc)
-        return discsBySlot
-      },
-      {
-        1: [],
-        2: [],
-        3: [],
-        4: [],
-        5: [],
-        6: [],
-      } as Record<DiscSlotKey, ICachedDisc[]>
+        },
+        {
+          1: [],
+          2: [],
+          3: [],
+          4: [],
+          5: [],
+          6: [],
+        } as Record<DiscSlotKey, ICachedDisc[]>
+      )
     )
-  }, [database.discs.values, optConfig])
+  }, [
+    discDirty,
+    database.discs,
+    optConfig.levelHigh,
+    optConfig.levelLow,
+    optConfig.slot4,
+    optConfig.slot5,
+    optConfig.slot6,
+    optConfig.useEquipped,
+  ])
   const wengines = useMemo(() => {
     const { specialty } = getCharStat(characterKey)
     return database.wengines.values.filter(({ key }) => {
