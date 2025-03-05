@@ -1,5 +1,5 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import { Solver, type Counters } from '@genshin-optimizer/game-opt/solver'
+import { Solver, type Progress } from '@genshin-optimizer/game-opt/solver'
 import type { Candidate } from '@genshin-optimizer/pando/engine'
 import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
@@ -26,7 +26,7 @@ export function optimize(
   wengines: ICachedWengine[],
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
   numWorkers: number,
-  setProgress: (progress: Counters) => void
+  setProgress: (progress: Progress) => void
 ) {
   const discSetKeys = new Set(allDiscSetKeys)
   const wengineKeys = new Set(allWengineKeys)

@@ -4,7 +4,7 @@ export interface Work {
   count: number // # of possible builds
 }
 
-export interface Counters {
+export interface Progress {
   computed: number // # of builds computed
   failed: number // # of (computed) builds that fail some constraints
   skipped: number // # of builds not computed e.g. via pruning

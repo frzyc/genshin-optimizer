@@ -1,6 +1,6 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { Counters } from '@genshin-optimizer/game-opt/solver'
+import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import {
   allDiscSlotKeys,
   type DiscSlotKey,
@@ -69,7 +69,7 @@ function OptimizeWrapper() {
   const { key: characterKey } = useCharacterContext()!
   const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
-  const [progress, setProgress] = useState<Counters | undefined>(undefined)
+  const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
   const discsBySlot = useMemo(
     () =>
@@ -143,13 +143,16 @@ function OptimizeWrapper() {
       setProgress
     )
 
-    cancelled.then(() => optimizer.terminate())
-    const results = await optimizer.results()
-    // Clean up workers
-    await optimizer.terminate()
-    cancelToken.current = () => {}
-
-    setOptimizing(false)
+    cancelled.then(() => optimizer.terminate('user cancelled'))
+    let results: BuildResult[]
+    try {
+      results = await optimizer.results
+    } catch {
+      return
+    } finally {
+      cancelToken.current = () => {}
+      setOptimizing(false)
+    }
     // Save results to optConfig
     if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
@@ -215,7 +218,7 @@ function ProgressIndicator({
   progress,
   totalPermutations,
 }: {
-  progress: Counters
+  progress: Progress
   totalPermutations: number
 }) {
   const { t } = useTranslation('optimize')
