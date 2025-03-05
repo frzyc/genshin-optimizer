@@ -9,7 +9,6 @@ import { toggleInArr } from '@genshin-optimizer/common/util'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys } from '@genshin-optimizer/zzz/consts'
-import { DiscSetName } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -22,6 +21,7 @@ import {
   IconButton,
   MenuItem,
 } from '@mui/material'
+import { DiscSetName } from './DiscTrans'
 
 export function DiscSetFilter({
   disabled = false,
