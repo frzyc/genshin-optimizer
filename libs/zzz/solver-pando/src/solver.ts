@@ -2,7 +2,11 @@ import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { Solver, type Counters } from '@genshin-optimizer/game-opt/solver'
 import type { Candidate } from '@genshin-optimizer/pando/engine'
 import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
-import type { CharacterKey, DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  CharacterKey,
+  DiscSetKey,
+  DiscSlotKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
   allWengineKeys,
@@ -24,8 +28,8 @@ export function optimize(
   frames: Frames,
   statFilters: Array<Omit<StatFilter, 'disabled'>>,
   // TODO: Convert set fitlers to min constraint
-  _setFilter2:DiscSetKey[],
-  _setFilter4:DiscSetKey[],
+  _setFilter2: DiscSetKey[],
+  _setFilter4: DiscSetKey[],
   wengines: ICachedWengine[],
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
   numWorkers: number,
