@@ -1363,27 +1363,6 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  PlanetaryRendezvous: {
-    boolConditional: {
-      sheet: 'PlanetaryRendezvous',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PlanetaryRendezvous',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PlanetaryRendezvous',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   PoetOfMourningCollapse: {
     boolConditional: {
       sheet: 'PoetOfMourningCollapse',
@@ -1405,47 +1384,8 @@ export const conditionals = {
       max: 2,
     },
   },
-  PoisedToBloom: {
-    boolConditional: {
-      sheet: 'PoisedToBloom',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PoisedToBloom',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PoisedToBloom',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   PostOpConversation: {
-    boolConditional: {
-      sheet: 'PostOpConversation',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PostOpConversation',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PostOpConversation',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'PostOpConversation', name: 'ultUsed', type: 'bool' },
   },
   PrisonerInDeepConfinement: {
     dotCount: {
@@ -1471,27 +1411,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Qingque',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  QuidProQuo: {
-    boolConditional: {
-      sheet: 'QuidProQuo',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'QuidProQuo',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'QuidProQuo',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -15041,37 +14960,88 @@ export const buffs = {
     },
   },
   PlanetaryRendezvous: {
-    cond_dmg_: {
+    fire_dmg_: {
       sheet: 'PlanetaryRendezvous',
-      name: 'cond_dmg_',
+      name: 'fire_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
-        name: 'cond_dmg_',
+        elementalType: 'fire',
+        name: 'fire_dmg_',
       },
     },
-    enemy_defRed_: {
+    ice_dmg_: {
       sheet: 'PlanetaryRendezvous',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PlanetaryRendezvous',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PlanetaryRendezvous',
-      name: 'team_dmg_',
+      name: 'ice_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
-        name: 'team_dmg_',
+        elementalType: 'ice',
+        name: 'ice_dmg_',
+      },
+    },
+    imaginary_dmg_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'imaginary_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PlanetaryRendezvous',
+        elementalType: 'imaginary',
+        name: 'imaginary_dmg_',
+      },
+    },
+    lightning_dmg_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'lightning_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PlanetaryRendezvous',
+        elementalType: 'lightning',
+        name: 'lightning_dmg_',
+      },
+    },
+    physical_dmg_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'physical_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PlanetaryRendezvous',
+        elementalType: 'physical',
+        name: 'physical_dmg_',
+      },
+    },
+    quantum_dmg_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'quantum_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PlanetaryRendezvous',
+        elementalType: 'quantum',
+        name: 'quantum_dmg_',
+      },
+    },
+    wind_dmg_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'wind_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PlanetaryRendezvous',
+        elementalType: 'wind',
+        name: 'wind_dmg_',
       },
     },
   },
@@ -15111,72 +15081,28 @@ export const buffs = {
     },
   },
   PoisedToBloom: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'PoisedToBloom',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'PoisedToBloom',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'PoisedToBloom',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PoisedToBloom',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PoisedToBloom',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PoisedToBloom',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },
   PostOpConversation: {
-    cond_dmg_: {
+    heal_: {
       sheet: 'PostOpConversation',
-      name: 'cond_dmg_',
+      name: 'heal_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'heal_',
         sheet: 'PostOpConversation',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'PostOpConversation',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PostOpConversation',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PostOpConversation',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PostOpConversation',
-        name: 'team_dmg_',
+        name: 'heal_',
       },
     },
   },
@@ -15381,41 +15307,6 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Qingque',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  QuidProQuo: {
-    cond_dmg_: {
-      sheet: 'QuidProQuo',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'QuidProQuo',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'QuidProQuo',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'QuidProQuo',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'QuidProQuo',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'QuidProQuo',
         name: 'team_dmg_',
       },
     },

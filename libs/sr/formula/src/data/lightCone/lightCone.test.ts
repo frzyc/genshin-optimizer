@@ -1700,4 +1700,59 @@ describe('Light Cone sheets test', () => {
       calc.compute(new Read(formulas.Pioneering.healing.tag, undefined)).val
     ).toBeCloseTo((1474.704 + 952.56) * 0.2)
   })
+
+  it('PlanetaryRendezvous', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const data = testCharacterData(charKey, 'PlanetaryRendezvous')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.dmg_.ice).val).toBeCloseTo(0.24)
+    // Check that buff is not applied for other element damage
+    expect(calc.compute(char.final.dmg_.physical).val).toBeCloseTo(0)
+  })
+
+  it('PoisedToBloom', () => {
+    const charKey: CharacterKey = 'RuanMei'
+    const otherCharKey: CharacterKey = 'Robin'
+    const data = testTeamData(charKey, otherCharKey, 'PoisedToBloom')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.32)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.32)
+  })
+
+  it('PostOpConversation', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'PostOpConversation')
+    data.push(
+      cond(
+        charKey,
+        'PostOpConversation',
+        conditionals.PostOpConversation.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.enerRegen_).val).toBeCloseTo(0.16)
+    expect(calc.compute(char.final.heal_).val).toBeCloseTo(0.24)
+  })
+
+  // QuidProQuo should be here but there are no conditionals
 })
