@@ -11,8 +11,8 @@ export function LocationName({ location }: { location: LocationKey }) {
     <Typography component="span">
       {location ? (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <CharIconCircle characterKey={location} size={1.7} />
-          <Box sx={{ pl: 1 }} component="span">
+          <CharIconCircle characterKey={location} size={2} />
+          <Box sx={{ pl: 1, fontSize: '1rem' }} component="span">
             <CharacterName characterKey={location}></CharacterName>
           </Box>
         </Box>

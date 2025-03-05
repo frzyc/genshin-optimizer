@@ -162,6 +162,7 @@ export function EquippedWengineHeader({
           fontWeight: '900',
           display: 'flex',
           alignItems: 'center',
+          gap: 1,
         }}
       >
         <ImgIcon size={1.5} src={specialityDefIcon(type)} sx={{ mr: '4px' }} />
@@ -173,7 +174,7 @@ export function EquippedWengineHeader({
           alignItems: 'center',
           gap: '12px',
           background: '#2B364D',
-          borderRadius: '20px',
+          borderRadius: '12px',
           px: '16px',
         }}
       >
@@ -181,13 +182,12 @@ export function EquippedWengineHeader({
           sx={{
             fontWeight: '900',
             fontStyle: 'italic',
-            fontSize: '1.1rem',
           }}
           variant="subtitle1"
         >
           Lv.{level}
         </Typography>
-        <Box sx={{ display: 'flex', width: '9em' }}>
+        <Box sx={{ display: 'flex', width: '7em' }}>
           {range(1, 5).map((index: number) => {
             return index <= phase ? (
               <ImgIcon
@@ -222,9 +222,15 @@ export function EquippedWengineContent({
   const wengineStats = getWengineStats(key, level, phase, modification)
   return (
     <Box>
-      <ZCard
-        bgt="dark"
-        sx={{ display: 'flex', px: '16px', py: '4px', mb: '16px' }}
+      <Box
+        sx={{
+          display: 'flex',
+          px: '16px',
+          py: '8px',
+          mb: '12px',
+          background: '#2B364D',
+          borderRadius: '20px',
+        }}
       >
         <Typography
           variant="subtitle1"
@@ -241,10 +247,10 @@ export function EquippedWengineContent({
         <Typography variant="subtitle1" sx={{ fontWeight: '900' }}>
           {wengineStats['atk_base'].toFixed()}
         </Typography>
-      </ZCard>
+      </Box>
       <ZCard
         bgt="dark"
-        sx={{ display: 'flex', px: '16px', py: '4px', mb: '8px' }}
+        sx={{ display: 'flex', px: '16px', py: '6px', mb: '8px' }}
       >
         <WengineSubstatDisplay
           substatKey={secondStatKey}
@@ -279,12 +285,15 @@ export function EquippedWengineFooter({
       }}
     >
       <Box
-        display="flex"
         gap={1}
-        alignItems="center"
-        sx={{ '& .MuiButton-root': { minWidth: 0, height: '100%' } }}
+        sx={{
+          '& .MuiButton-root': { minWidth: 0, height: '100%' },
+          display: 'flex',
+          alignItems: 'center',
+          mt: '8px',
+        }}
       >
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ marginRight: '12px' }}>
           {setLocation ? (
             <LocationAutocomplete locKey={location} setLocKey={setLocation} />
           ) : (
