@@ -151,6 +151,8 @@ function OptimizeWrapper() {
         },
       ],
       statFilters,
+      optConfig.setFilter2,
+      optConfig.setFilter4,
       wengines,
       discsBySlot,
       numWorkers,
@@ -177,6 +179,8 @@ function OptimizeWrapper() {
   }, [
     calc,
     optConfig.statFilters,
+    optConfig.setFilter2,
+    optConfig.setFilter4,
     characterKey,
     target,
     wengines,
