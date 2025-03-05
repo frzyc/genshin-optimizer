@@ -84,40 +84,35 @@ export function EquippedWengine({
         />
       }
     >
-      <ZCard
-        bgt="dark"
-        sx={{
-          flexGrow: 1,
-        }}
-      >
+      <ZCard bgt="dark" sx={{ width: '100%' }}>
         <CardContent
           sx={{
             display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
           }}
         >
-          <CardThemed
+          <Box
+            component={NextImage ? NextImage : 'img'}
+            alt="Wengine Image"
+            src={wengineAsset(key, 'icon')}
             sx={(theme) => ({
               border: `4px solid ${
                 theme.palette[rarityColor[wengineStat.rarity]].main
               }`,
+              borderRadius: '12px',
+              background: '#2B364D',
               width: '193px',
               height: '193px',
             })}
-          >
-            <Box
-              component={NextImage ? NextImage : 'img'}
-              alt="Wengine Image"
-              src={wengineAsset(key, 'icon')}
-              sx={{
-                width: '100%',
-                height: '100%',
-              }}
-            />
-          </CardThemed>
+          />
           <Box
             sx={{
-              flexGrow: 1,
-              ml: '24px',
+              ml: {
+                xs: '0',
+                sm: '24px',
+              },
+              flex: 1,
             }}
           >
             <EquippedWengineHeader wengineHeaderInfo={wengineHeaderInfo} />
@@ -152,7 +147,7 @@ export function EquippedWengineHeader({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        mb: '16px',
+        mb: '12px',
       }}
     >
       <Typography
@@ -163,6 +158,8 @@ export function EquippedWengineHeader({
           display: 'flex',
           alignItems: 'center',
           gap: 1,
+          overflow: 'visible',
+          whiteSpace: 'wrap',
         }}
       >
         <ImgIcon size={1.5} src={specialityDefIcon(type)} sx={{ mr: '4px' }} />
@@ -230,6 +227,7 @@ export function EquippedWengineContent({
           mb: '12px',
           background: '#2B364D',
           borderRadius: '20px',
+          justifyContent: 'space-between',
         }}
       >
         <Typography
@@ -238,7 +236,6 @@ export function EquippedWengineContent({
           sx={{
             display: 'flex',
             alignItems: 'center',
-            flexGrow: 1,
             fontWeight: '900',
           }}
         >

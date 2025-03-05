@@ -160,7 +160,7 @@ export function CharacterCoverOptimize({
 }) {
   const character = getCharStat(characterKey)
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <CharImage characterKey={characterKey} character={character} />
       <CharInformation
         characterKey={characterKey}

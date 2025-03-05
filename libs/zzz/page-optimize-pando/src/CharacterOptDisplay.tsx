@@ -16,6 +16,7 @@ import {
   Button,
   CardActionArea,
   CardContent,
+  Grid,
   Stack,
   Typography,
 } from '@mui/material'
@@ -107,13 +108,15 @@ function CharacterSection() {
       <Box
         sx={{
           display: 'flex',
-          gap: 1,
+          flexWrap: 'wrap',
+          justifyContent: 'center',
           backgroundColor: '#1b263b',
         }}
       >
         <Box
           sx={{
-            margin: '24px 0 16px 24px',
+            padding: '24px',
+            width: '500px',
           }}
         >
           <Box
@@ -137,8 +140,12 @@ function CharacterSection() {
             Edit Character
           </Button>
         </Box>
-        <CurrentBuildDisplay />
+        <Box>
+          <CurrentBuildDisplay />
+        </Box>
+        <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}></Grid>
       </Box>
+
       <BonusStatsSection />
       <DebugListingsDisplay
         formulasRead={own.listing.formulas}
