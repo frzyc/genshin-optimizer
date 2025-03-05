@@ -86,10 +86,10 @@ function OptimizeWrapper() {
       discDirty &&
       database.discs.values.reduce(
         (discsBySlot, disc) => {
-          const { slotKey, mainStatKey, level } = disc
+          const { slotKey, mainStatKey, level, location } = disc
           if (level < optConfig.levelLow || level > optConfig.levelHigh)
             return discsBySlot
-          if (!optConfig.useEquipped && disc.location !== characterKey)
+          if (location && !optConfig.useEquipped && location !== characterKey)
             return discsBySlot
           if (
             isFilteredSlot(slotKey) &&

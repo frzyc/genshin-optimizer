@@ -71,7 +71,10 @@ function DiscTypo({
 }) {
   return (
     <Typography>
-      Disc {slotKey} <SqBadge>{discsBySlot[slotKey].length}</SqBadge>
+      Disc {slotKey}{' '}
+      <SqBadge color={discsBySlot[slotKey].length ? 'primary' : 'error'}>
+        {discsBySlot[slotKey].length}
+      </SqBadge>
     </Typography>
   )
 }
