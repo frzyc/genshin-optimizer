@@ -41,9 +41,8 @@ export class Solver<ID extends string> {
   constructor(cfg: SolverConfig) {
     const { progress } = this
     const { topN, numWorkers, setProgress } = cfg
-    const workerUrl = new URL('./workerHandle.ts', import.meta.url)
     const workers = [...Array(numWorkers)].map(
-      () => new Worker(workerUrl, { type: 'module' })
+      () => new Worker(new URL('./workerHandle.ts', import.meta.url), { type: 'module' })
     )
 
     const pruned = prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, topN)
