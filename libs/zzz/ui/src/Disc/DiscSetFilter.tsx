@@ -9,11 +9,6 @@ import { toggleInArr } from '@genshin-optimizer/common/util'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys } from '@genshin-optimizer/zzz/consts'
-import {
-  useCharacterContext,
-  useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
-import { DiscSetName } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
@@ -26,20 +21,32 @@ import {
   IconButton,
   MenuItem,
 } from '@mui/material'
+import { DiscSetName } from './DiscTrans'
 
-export function SetFilter({ disabled = false }: { disabled?: boolean }) {
-  const { database } = useDatabaseContext()
+export function DiscSetFilter({
+  disabled = false,
+  setFilter4,
+  setFilter2,
+  setSetFilter4,
+  setSetFilter2,
+}: {
+  disabled?: boolean
+  setFilter4: DiscSetKey[]
+  setFilter2: DiscSetKey[]
+  setSetFilter4: (setFilter4: DiscSetKey[]) => void
+  setSetFilter2: (setFilter2: DiscSetKey[]) => void
+}) {
   const [open, onOpen, onClose] = useBoolState()
-  const character = useCharacterContext()
-  const {
-    setFilter2 = [],
-    setFilter4 = [],
-    key: characterKey,
-  } = character ?? {}
   return (
     <CardThemed bgt="light">
       <ModalWrapper open={open} onClose={onClose}>
-        <AdvSetFilterCard onClose={onClose} />
+        <AdvSetFilterCard
+          onClose={onClose}
+          setFilter2={setFilter2}
+          setFilter4={setFilter4}
+          setSetFilter2={setSetFilter2}
+          setSetFilter4={setSetFilter4}
+        />
       </ModalWrapper>
       <CardContent sx={{ display: 'flex', gap: 1 }}>
         <Box
@@ -62,27 +69,10 @@ export function SetFilter({ disabled = false }: { disabled?: boolean }) {
               }
               sx={{ flexGrow: 1 }}
             >
-              <MenuItem
-                onClick={() =>
-                  characterKey &&
-                  database.chars.set(characterKey, {
-                    setFilter4: [],
-                  })
-                }
-              >
-                No 4-Set
-              </MenuItem>
+              <MenuItem onClick={() => setSetFilter4([])}>No 4-Set</MenuItem>
 
               {allDiscSetKeys.map((d) => (
-                <MenuItem
-                  key={d}
-                  onClick={() =>
-                    characterKey &&
-                    database.chars.set(characterKey, {
-                      setFilter4: [d],
-                    })
-                  }
-                >
+                <MenuItem key={d} onClick={() => setSetFilter4([d])}>
                   <DiscSetName setKey={d} />
                 </MenuItem>
               ))}
@@ -112,27 +102,10 @@ export function SetFilter({ disabled = false }: { disabled?: boolean }) {
               }
               sx={{ flexGrow: 1 }}
             >
-              <MenuItem
-                onClick={() =>
-                  characterKey &&
-                  database.chars.set(characterKey, {
-                    setFilter2: [],
-                  })
-                }
-              >
-                No 2-Set
-              </MenuItem>
+              <MenuItem onClick={() => setSetFilter2([])}>No 2-Set</MenuItem>
 
               {allDiscSetKeys.map((d) => (
-                <MenuItem
-                  key={d}
-                  onClick={() =>
-                    characterKey &&
-                    database.chars.set(characterKey, {
-                      setFilter2: [d],
-                    })
-                  }
-                >
+                <MenuItem key={d} onClick={() => setSetFilter2([d])}>
                   <DiscSetName setKey={d} />
                 </MenuItem>
               ))}
@@ -154,14 +127,19 @@ export function SetFilter({ disabled = false }: { disabled?: boolean }) {
     </CardThemed>
   )
 }
-function AdvSetFilterCard({ onClose }: { onClose: () => void }) {
-  const { database } = useDatabaseContext()
-  const character = useCharacterContext()
-  const {
-    setFilter2 = [],
-    setFilter4 = [],
-    key: characterKey,
-  } = character ?? {}
+function AdvSetFilterCard({
+  onClose,
+  setFilter4,
+  setFilter2,
+  setSetFilter4,
+  setSetFilter2,
+}: {
+  onClose: () => void
+  setFilter4: DiscSetKey[]
+  setFilter2: DiscSetKey[]
+  setSetFilter4: (setFilter4: DiscSetKey[]) => void
+  setSetFilter2: (setFilter2: DiscSetKey[]) => void
+}) {
   return (
     <CardThemed>
       <CardHeader
@@ -177,19 +155,13 @@ function AdvSetFilterCard({ onClose }: { onClose: () => void }) {
         <Box sx={{ display: 'flex', gap: 1, mb: 1 }}>
           <Button
             disabled={!setFilter4.length}
-            onClick={() =>
-              characterKey &&
-              database.chars.set(characterKey, { setFilter4: [] })
-            }
+            onClick={() => setSetFilter4([])}
           >
             Reset 4p filter
           </Button>
           <Button
             disabled={!setFilter2.length}
-            onClick={() =>
-              characterKey &&
-              database.chars.set(characterKey, { setFilter2: [] })
-            }
+            onClick={() => setSetFilter2([])}
           >
             Reset 2p filter
           </Button>
@@ -197,7 +169,13 @@ function AdvSetFilterCard({ onClose }: { onClose: () => void }) {
         <Grid container spacing={1}>
           {allDiscSetKeys.map((d) => (
             <Grid item key={d} xs={1} md={2} lg={3}>
-              <AdvSetFilterDiscCard setKey={d} />
+              <AdvSetFilterDiscCard
+                setKey={d}
+                setFilter4={setFilter4}
+                setFilter2={setFilter2}
+                setSetFilter4={setSetFilter4}
+                setSetFilter2={setSetFilter2}
+              />
             </Grid>
           ))}
         </Grid>
@@ -205,14 +183,19 @@ function AdvSetFilterCard({ onClose }: { onClose: () => void }) {
     </CardThemed>
   )
 }
-function AdvSetFilterDiscCard({ setKey }: { setKey: DiscSetKey }) {
-  const { database } = useDatabaseContext()
-  const character = useCharacterContext()
-  const {
-    setFilter2 = [],
-    setFilter4 = [],
-    key: characterKey,
-  } = character ?? {}
+function AdvSetFilterDiscCard({
+  setKey,
+  setFilter4,
+  setFilter2,
+  setSetFilter4,
+  setSetFilter2,
+}: {
+  setKey: DiscSetKey
+  setFilter4: DiscSetKey[]
+  setFilter2: DiscSetKey[]
+  setSetFilter4: (setFilter4: DiscSetKey[]) => void
+  setSetFilter2: (setFilter2: DiscSetKey[]) => void
+}) {
   return (
     <CardThemed bgt="light">
       <CardHeader
@@ -227,12 +210,11 @@ function AdvSetFilterDiscCard({ setKey }: { setKey: DiscSetKey }) {
               : 'secondary'
           }
           onClick={() =>
-            characterKey &&
-            database.chars.set(characterKey, {
-              setFilter4: setFilter4.length
+            setSetFilter4(
+              setFilter4.length
                 ? toggleInArr([...setFilter4], setKey)
-                : [setKey],
-            })
+                : [setKey]
+            )
           }
         >
           Allow 4p
@@ -244,12 +226,11 @@ function AdvSetFilterDiscCard({ setKey }: { setKey: DiscSetKey }) {
               : 'secondary'
           }
           onClick={() =>
-            characterKey &&
-            database.chars.set(characterKey, {
-              setFilter2: setFilter2.length
+            setSetFilter2(
+              setFilter2.length
                 ? toggleInArr([...setFilter2], setKey)
-                : [setKey],
-            })
+                : [setKey]
+            )
           }
         >
           Allow 2p

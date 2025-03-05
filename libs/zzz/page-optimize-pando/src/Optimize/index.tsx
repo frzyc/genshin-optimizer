@@ -1,3 +1,4 @@
+import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { Counters } from '@genshin-optimizer/game-opt/solver'
@@ -26,9 +27,8 @@ import {
   Box,
   Button,
   CardContent,
-  CardHeader,
-  Divider,
   LinearProgress,
+  Stack,
   Typography,
 } from '@mui/material'
 import {
@@ -40,6 +40,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { DiscFilter } from './DiscFilter'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
 
 export default function Optimize() {
@@ -71,10 +72,30 @@ function OptimizeWrapper() {
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Counters | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
-  const discsBySlot = useMemo(
-    () =>
+  const discDirty = useDataManagerBaseDirty(database.discs)
+  const discsBySlot = useMemo(() => {
+    const slotKeyMap = {
+      4: optConfig.slot4,
+      5: optConfig.slot5,
+      6: optConfig.slot6,
+    } as const
+    const isFilteredSlot = (slotKey: DiscSlotKey): slotKey is '4' | '5' | '6' =>
+      ['4', '5', '6'].includes(slotKey)
+
+    return (
+      discDirty &&
       database.discs.values.reduce(
         (discsBySlot, disc) => {
+          const { slotKey, mainStatKey, level, location } = disc
+          if (level < optConfig.levelLow || level > optConfig.levelHigh)
+            return discsBySlot
+          if (location && !optConfig.useEquipped && location !== characterKey)
+            return discsBySlot
+          if (
+            isFilteredSlot(slotKey) &&
+            !slotKeyMap[slotKey].includes(mainStatKey)
+          )
+            return discsBySlot
           discsBySlot[disc.slotKey].push(disc)
           return discsBySlot
         },
@@ -86,9 +107,19 @@ function OptimizeWrapper() {
           5: [],
           6: [],
         } as Record<DiscSlotKey, ICachedDisc[]>
-      ),
-    [database.discs.values]
-  )
+      )
+    )
+  }, [
+    characterKey,
+    discDirty,
+    database.discs,
+    optConfig.levelHigh,
+    optConfig.levelLow,
+    optConfig.slot4,
+    optConfig.slot5,
+    optConfig.slot6,
+    optConfig.useEquipped,
+  ])
   const wengines = useMemo(() => {
     const { specialty } = getCharStat(characterKey)
     return database.wengines.values.filter(({ key }) => {
@@ -137,6 +168,8 @@ function OptimizeWrapper() {
         },
       ],
       statFilters,
+      optConfig.setFilter2,
+      optConfig.setFilter4,
       wengines,
       discsBySlot,
       numWorkers,
@@ -163,6 +196,8 @@ function OptimizeWrapper() {
   }, [
     calc,
     optConfig.statFilters,
+    optConfig.setFilter2,
+    optConfig.setFilter4,
     characterKey,
     target,
     wengines,
@@ -179,15 +214,23 @@ function OptimizeWrapper() {
 
   return (
     <CardThemed>
-      <CardHeader
-        title={t('optimize')}
-        action={
-          <Box>
+      <CardContent>
+        <Stack spacing={1}>
+          <StatFilterCard />
+          <DiscFilter discsBySlot={discsBySlot} />
+          {progress && (
+            <ProgressIndicator
+              progress={progress}
+              totalPermutations={totalPermutations}
+            />
+          )}
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
             />
             <Button
+              disabled={!totalPermutations}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -195,17 +238,7 @@ function OptimizeWrapper() {
               {optimizing ? t('cancel') : t('optimize')}
             </Button>
           </Box>
-        }
-      />
-      <Divider />
-      <CardContent>
-        <StatFilterCard />
-        {progress && (
-          <ProgressIndicator
-            progress={progress}
-            totalPermutations={totalPermutations}
-          />
-        )}
+        </Stack>
       </CardContent>
     </CardThemed>
   )

@@ -98,7 +98,7 @@ export function DiscLevelSlider({
       />
       <CustomNumberInput
         value={sliderHigh}
-        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 20))}
+        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 15))}
         sx={{ px: 1, flex: '0 0 3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}
