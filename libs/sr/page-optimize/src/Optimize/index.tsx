@@ -38,7 +38,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
-import { LightConeFilter } from './LightconeFilter'
+import { LightConeFilter } from './LightConeFilter'
 import { RelicFilter } from './RelicFilter'
 
 export default function Optimize() {
