@@ -1,6 +1,6 @@
 import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile, prune } from '@genshin-optimizer/pando/engine'
-import type { BuildResult, Counters, Work } from './common'
+import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import { splitCandidates } from './split'
 
@@ -12,7 +12,6 @@ export interface WorkerConfig {
   minimum: number[]
   candidates: Candidate<string>[][]
   topN: number
-  maxKeep: number
 }
 
 type Subwork = {
@@ -28,12 +27,10 @@ export class Worker {
   candidates: Map<string, Candidate<string>>[]
   topN: number
 
-  maxKeep: number
-  works: Work[] = []
   subworks: Subwork[] = []
   results: BuildResult[] = []
 
-  counters: Counters = {
+  progress: Progress = {
     computed: 0,
     failed: 0,
     skipped: 0,
@@ -41,110 +38,98 @@ export class Worker {
   }
 
   constructor(cfg: WorkerConfig) {
-    this.candidates = cfg.candidates.map(
-      (cnds) => new Map(cnds.map((c) => [c.id, c]))
-    )
     this.nodes = cfg.nodes
     this.minimum = cfg.minimum
     this.topN = cfg.topN
-    this.maxKeep = cfg.maxKeep
+    this.candidates = cfg.candidates.map(
+      (cnds) => new Map(cnds.map((c) => [c.id, c]))
+    )
   }
 
-  add(works: Work[]) {
-    works.forEach((w) => (this.counters.remaining += w.count))
-    this.works.push(...works)
+  add(works: Work[]): void {
+    const { subworks, progress, candidates } = this
+    works.forEach((w) => (progress.remaining += w.count))
+    subworks.unshift(
+      ...works.map(({ ids, count }) => ({
+        nodes: this.nodes,
+        minimum: this.minimum,
+        candidates: ids.map((ids, slot) =>
+          ids.map((id) => candidates[slot].get(id)!)
+        ),
+        count,
+      }))
+    )
+    if (subworks.length === works.length) this.spreadSubworks()
   }
 
   steal(maxKeep: number): Work[] {
-    const { works, subworks, counters } = this
-    let quota = counters.remaining - maxKeep // steal a little more than this
+    const { subworks, progress } = this
+    maxKeep = Math.floor(Math.max(maxKeep, splitThreshold))
+    let quota = progress.remaining - maxKeep // steal a little more than this
     if (quota <= 0) return []
 
-    let numSteal = works.findIndex((w) => (quota -= w.count) <= 0) + 1
-    if (numSteal) {
-      counters.remaining = maxKeep + quota
-      return works.splice(0, numSteal)
-    }
-
-    numSteal = subworks.findIndex((w) => (quota -= w.count) <= 0) + 1
-    const extra = subworks.splice(0, numSteal || subworks.length)
-    const stealing = [
-      ...works,
-      ...extra.map(({ candidates, count }) => ({
-        ids: candidates.map((cnds) => cnds.map((c) => c.id)),
-        count,
-      })),
-    ]
-    this.works = []
-    this.maxKeep = maxKeep
-    counters.remaining = maxKeep + quota
-    return stealing
+    const stealLen = subworks.findIndex((w) => (quota -= w.count) <= 0) + 1
+    const stealing = subworks.splice(0, stealLen || subworks.length)
+    progress.remaining = maxKeep + quota
+    return stealing.map(({ candidates, count }) => ({
+      ids: candidates.map((cnds) => cnds.map((c) => c.id)),
+      count,
+    }))
   }
 
   hasWork(): boolean {
-    return !!(this.subworks.length || this.works.length)
+    return !!this.subworks.length
   }
 
-  process(subwork: Subwork): void {
-    const { counters, results } = this
+  process(): void {
+    const subwork = this.subworks.pop()
+    if (!subwork) return
+    this.spreadSubworks()
+
+    const { progress, results } = this
     const { nodes, minimum, candidates, count } = subwork
+    minimum[0] = this.minimum[0] // in case the threshold was updated
     const f = compile(nodes, 'q', candidates.length, {})
     for (const build of allBuilds(candidates)) {
       const vals = f(build)
       // exclude `i === 0` as it is the opt-target, not an actual constraint
-      if (minimum.some((m, i) => i && vals[i] < m)) {
-        counters.failed += 1
-        continue
-      }
-      if (vals[0] >= minimum[0])
+      if (minimum.some((m, i) => i && vals[i] < m)) progress.failed += 1
+      else if (vals[0] >= minimum[0])
         results.push({ value: vals[0], ids: build.map((b) => b.id) })
     }
-    counters.computed += count
-    counters.remaining -= count
-    // NOTE: if workers are using too much memory, move this into the loop (after push)
+    progress.computed += count
+    progress.remaining -= count
     if (results.length > cleanThreshold) this.clean()
   }
 
-  setOptThreshold(threshold: number) {
+  setOptThreshold(threshold: number): void {
     this.minimum[0] = threshold
     this.results = this.results.filter((b) => b.value >= threshold)
   }
 
-  progress(): { builds: BuildResult[] } & Counters {
+  resetProgress(): { builds: BuildResult[] } & Progress {
     this.clean()
-    const counters = this.counters
-    const result = { builds: [...this.results], ...counters }
-    counters.computed = 0
-    counters.failed = 0
-    counters.skipped = 0
+    const { progress } = this
+    const result = { builds: [...this.results], ...progress }
+    progress.computed = 0
+    progress.failed = 0
+    progress.skipped = 0
     return result
   }
 
-  clean() {
+  clean(): void {
     this.results.sort((a, b) => b.value - a.value).splice(this.topN)
     if (this.results.length === this.topN)
       this.minimum[0] = this.results[this.topN - 1].value
   }
 
-  getSubwork(stolen: Work[]): Subwork | undefined {
-    const { works, subworks, counters } = this
-    if (!subworks.length) {
-      if (!works.length) return
-      const { ids, count } = works.pop()!
-      const candidates = ids.map((ids, i) =>
-        ids.map((id) => this.candidates[i].get(id)!)
-      )
-      subworks.push({
-        nodes: this.nodes,
-        minimum: this.minimum,
-        candidates,
-        count,
-      })
-    }
-
+  /** Ensure the last subwork is `pruned` and smaller than `splitThreshold` */
+  spreadSubworks(): void {
+    const { subworks, progress } = this
     while (subworks.length) {
       const subwork = subworks.pop()!
-      subwork.minimum[0] = this.minimum[0] // in case threshold was updated
+      subwork.minimum[0] = this.minimum[0] // in case the threshold was updated
+
       const { nodes, candidates, minimum, cndRanges, monotonicities } = prune(
         subwork.nodes,
         subwork.candidates,
@@ -152,17 +137,14 @@ export class Worker {
         subwork.minimum,
         this.topN
       )
-
       const count = buildCount(candidates)
-      counters.skipped += subwork.count - count
-      counters.remaining -= subwork.count - count
+      progress.skipped += subwork.count - count
+      progress.remaining -= subwork.count - count
+
       if (!count) continue
-      if (count <= splitThreshold) return { nodes, minimum, candidates, count }
-      if (count <= counters.remaining - this.maxKeep) {
-        const ids = candidates.map((cnds) => cnds.map((c) => c.id))
-        stolen.push({ ids, count })
-        counters.remaining -= count
-        continue
+      if (subwork.count <= splitThreshold) {
+        subworks.push(subwork)
+        return
       }
       subworks.push(
         ...splitCandidates(candidates, cndRanges, monotonicities).map(
@@ -173,7 +155,6 @@ export class Worker {
         )
       )
     }
-    return undefined
   }
 }
 

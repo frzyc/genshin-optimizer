@@ -1,8 +1,19 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import { Solver, type Counters } from '@genshin-optimizer/game-opt/solver'
+import { Solver, type Progress } from '@genshin-optimizer/game-opt/solver'
 import type { Candidate } from '@genshin-optimizer/pando/engine'
-import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
-import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import {
+  constant,
+  detach,
+  max,
+  prod,
+  read,
+  sum,
+} from '@genshin-optimizer/pando/engine'
+import type {
+  CharacterKey,
+  DiscSetKey,
+  DiscSlotKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
   allWengineKeys,
@@ -23,10 +34,12 @@ export function optimize(
   calc: Calculator,
   frames: Frames,
   statFilters: Array<Omit<StatFilter, 'disabled'>>,
+  setFilter2: DiscSetKey[],
+  setFilter4: DiscSetKey[],
   wengines: ICachedWengine[],
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
   numWorkers: number,
-  setProgress: (progress: Counters) => void
+  setProgress: (progress: Progress) => void
 ) {
   const discSetKeys = new Set(allDiscSetKeys)
   const wengineKeys = new Set(allWengineKeys)
@@ -45,7 +58,7 @@ export function optimize(
       // Invert max constraints for pruning
       isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
     ),
-    // other calcs (graph, etc)
+    // other calcs (graph, etc) *go in* `nodes.push` below
   ]
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
     /**
@@ -68,6 +81,17 @@ export function optimize(
 
     return undefined
   })
+  nodes.push(
+    // filter2: if not empty, at least one >= 2
+    setFilter2.length
+      ? max(...setFilter2.map((q) => read({ q }, 'sum')))
+      : constant(Infinity),
+    // filter4: if not empty, at least one >= 4
+    setFilter4.length
+      ? max(...setFilter4.map((q) => read({ q }, 'sum')))
+      : constant(Infinity)
+    // other calcs (graph, etc)
+  )
 
   return new Solver({
     nodes,
@@ -86,6 +110,8 @@ export function optimize(
       ...statFilters.map((filter) =>
         filter.isMax ? filter.value * -1 : filter.value
       ),
+      2, // setFilter2
+      4, // setFilter4
     ],
     numWorkers,
     topN: 10, // TODO

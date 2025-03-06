@@ -1,12 +1,12 @@
-import type { BuildResult, Counters, Work } from './common'
+import type { BuildResult, Progress, Work } from './common'
 import { type WorkerConfig, Worker } from './worker'
 
 const reportInterval = 20 // (minimum) progress report interval for each worker, in ms
 
-declare function postMessage(res: Response, transfer?: any[]): void
+declare function postMessage(res: Response): void
 
 export type Command = InitMsg | AddWorkMsg | ConfigMsg | ReqWorkMsg
-export type Response = AddWorkMsg | ProgressMsg | ErrMsg
+export type Response = AddWorkMsg | RecvWorkMsg | ProgressMsg | ErrMsg
 
 /** initialize the worker for a specific optimization problem */
 export type InitMsg = { ty: 'init' } & WorkerConfig
@@ -16,8 +16,10 @@ export type ConfigMsg = { ty: 'config'; threshold: number }
 export type ReqWorkMsg = { ty: 'work?'; maxKeep: number }
 /** submitting works */
 export type AddWorkMsg = { ty: 'add'; works: Work[] }
+/** notify that add-work message has been received */
+export type RecvWorkMsg = { ty: 'recv' }
 /** progress report */
-export type ProgressMsg = { ty: 'progress'; builds: BuildResult[] } & Counters
+export type ProgressMsg = { ty: 'progress'; builds: BuildResult[] } & Progress
 /** error message */
 export type ErrMsg = { ty: 'err'; msg: string }
 
@@ -36,7 +38,7 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     case 'init':
       if (worker) throw new Error('Worker is already initialized')
       worker = new Worker(msg)
-      return
+      return { ty: 'progress', ...worker.resetProgress() } // ready
     case 'config':
       worker.setOptThreshold(msg.threshold)
       return
@@ -46,41 +48,30 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     }
     case 'add':
       worker.add(msg.works)
-      process()
-      return processAllWorks()
+      processAllWorks() // runs in the background
+      return { ty: 'recv' }
   }
 }
 
-let runner: Promise<undefined> | undefined
-function processAllWorks(): Promise<undefined> | undefined {
-  if (runner) return undefined // only one runner at a time
-  return (runner = (async () => {
-    let nextReport = Date.now()
-    do {
-      // Suspend here in case a new config/work stealing is sent over
-      //
-      // Make sure to use macrotask-based mechanisms such as `setTimeout` so
-      // that this function suspends until the next event loop. If we instead
-      // use microtask-based ones such as `Promise.resolved`, the suspension
-      // will not be long enough.
-      await new Promise((r) => setTimeout(r))
+let nextReport: number | undefined // `undefined` when not running
+async function processAllWorks(): Promise<void> {
+  if (nextReport !== undefined) return // only one runner at a time
+  nextReport = Date.now()
+  do {
+    // Suspend here in case a new config/work stealing is sent over
+    //
+    // Make sure to use task-based suspensions. Microtask-based ones
+    // will simply continue this loop.
+    await new Promise((r) => setTimeout(r))
 
-      // pace the reporting to `reportInterval`
-      const currentTime = Date.now()
-      if (currentTime >= nextReport) {
-        nextReport = currentTime + reportInterval
-        postMessage({ ty: 'progress', ...worker.progress() })
-      }
-      process()
-    } while (worker.hasWork())
-    postMessage({ ty: 'progress', ...worker.progress() }) // final report
-    return (runner = undefined)
-  })())
-}
-
-function process() {
-  const works: Work[] = []
-  const subwork = worker.getSubwork(works)
-  if (works.length) postMessage({ ty: 'add', works })
-  if (subwork) worker.process(subwork)
+    // pace the reporting to `reportInterval` (except when low on works)
+    const now = Date.now()
+    if (now >= nextReport || worker.subworks.length < 4) {
+      nextReport = now + reportInterval
+      postMessage({ ty: 'progress', ...worker.resetProgress() })
+    }
+    worker.process()
+  } while (worker.hasWork())
+  postMessage({ ty: 'progress', ...worker.resetProgress() }) // final report
+  nextReport = undefined
 }
