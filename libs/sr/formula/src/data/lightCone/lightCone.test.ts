@@ -1914,4 +1914,62 @@ describe('Light Cone sheets test', () => {
     // LC cond + LC extra cond
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.18 + 0.16)
   })
+
+  // Shadowburn should be here but no conditionals
+
+  it('ShadowedByNight', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'ShadowedByNight')
+    data.push(
+      cond(
+        charKey,
+        'ShadowedByNight',
+        conditionals.ShadowedByNight.enterBattleOrBreakDmg.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.56)
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.12)
+  })
+
+  it('SharedFeeling', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'SharedFeeling')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.heal_).val).toBeCloseTo(0.2)
+  })
+
+  it('ShatteredHome', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'ShatteredHome')
+    data.push(
+      cond(
+        charKey,
+        'ShatteredHome',
+        conditionals.ShatteredHome.enemyHpGE50.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
+  })
 })

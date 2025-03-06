@@ -1587,89 +1587,15 @@ export const conditionals = {
       max: 2,
     },
   },
-  Shadowburn: {
-    boolConditional: {
-      sheet: 'Shadowburn',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Shadowburn',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Shadowburn',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   ShadowedByNight: {
-    boolConditional: {
+    enterBattleOrBreakDmg: {
       sheet: 'ShadowedByNight',
-      name: 'boolConditional',
+      name: 'enterBattleOrBreakDmg',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ShadowedByNight',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ShadowedByNight',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  SharedFeeling: {
-    boolConditional: {
-      sheet: 'SharedFeeling',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SharedFeeling',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SharedFeeling',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ShatteredHome: {
-    boolConditional: {
-      sheet: 'ShatteredHome',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ShatteredHome',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ShatteredHome',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    enemyHpGE50: { sheet: 'ShatteredHome', name: 'enemyHpGE50', type: 'bool' },
   },
   SheAlreadyShutHerEyes: {
     boolConditional: {
@@ -16615,143 +16541,29 @@ export const buffs = {
       },
     },
   },
-  Shadowburn: {
-    cond_dmg_: {
-      sheet: 'Shadowburn',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Shadowburn',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Shadowburn',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Shadowburn',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Shadowburn',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Shadowburn',
-        name: 'team_dmg_',
-      },
-    },
-  },
   ShadowedByNight: {
-    cond_dmg_: {
+    spd_: {
       sheet: 'ShadowedByNight',
-      name: 'cond_dmg_',
+      name: 'spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'ShadowedByNight',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ShadowedByNight',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ShadowedByNight',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ShadowedByNight',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ShadowedByNight',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  SharedFeeling: {
-    cond_dmg_: {
-      sheet: 'SharedFeeling',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SharedFeeling',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'SharedFeeling',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SharedFeeling',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SharedFeeling',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SharedFeeling',
-        name: 'team_dmg_',
+        name: 'spd_',
       },
     },
   },
   ShatteredHome: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ShatteredHome',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ShatteredHome',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ShatteredHome',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ShatteredHome',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ShatteredHome',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ShatteredHome',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
