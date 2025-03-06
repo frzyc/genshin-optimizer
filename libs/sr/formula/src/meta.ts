@@ -1463,24 +1463,10 @@ export const conditionals = {
     },
   },
   RiverFlowsInSpring: {
-    boolConditional: {
+    notAttacked: {
       sheet: 'RiverFlowsInSpring',
-      name: 'boolConditional',
+      name: 'notAttacked',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'RiverFlowsInSpring',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'RiverFlowsInSpring',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Robin: {
@@ -1526,48 +1512,7 @@ export const conditionals = {
       max: 2,
     },
   },
-  Sagacity: {
-    boolConditional: {
-      sheet: 'Sagacity',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Sagacity',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Sagacity',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  SailingTowardsASecondLife: {
-    boolConditional: {
-      sheet: 'SailingTowardsASecondLife',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SailingTowardsASecondLife',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SailingTowardsASecondLife',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
+  Sagacity: { ultUsed: { sheet: 'Sagacity', name: 'ultUsed', type: 'bool' } },
   Sampo: {
     boolConditional: { sheet: 'Sampo', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -1586,25 +1531,7 @@ export const conditionals = {
     },
   },
   ScentAloneStaysTrue: {
-    boolConditional: {
-      sheet: 'ScentAloneStaysTrue',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ScentAloneStaysTrue',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ScentAloneStaysTrue',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    woefree: { sheet: 'ScentAloneStaysTrue', name: 'woefree', type: 'bool' },
   },
   ScholarLostInErudition: {
     boolConditional: {
@@ -15495,37 +15422,26 @@ export const buffs = {
     },
   },
   RiverFlowsInSpring: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'RiverFlowsInSpring',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'RiverFlowsInSpring',
-        name: 'cond_dmg_',
+        name: 'common_dmg_',
       },
     },
-    enemy_defRed_: {
+    spd_: {
       sheet: 'RiverFlowsInSpring',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'RiverFlowsInSpring',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'RiverFlowsInSpring',
-      name: 'team_dmg_',
+      name: 'spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'RiverFlowsInSpring',
-        name: 'team_dmg_',
+        name: 'spd_',
       },
     },
   },
@@ -16035,72 +15951,40 @@ export const buffs = {
     },
   },
   Sagacity: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'Sagacity',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'Sagacity',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Sagacity',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Sagacity',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Sagacity',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Sagacity',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
   SailingTowardsASecondLife: {
-    cond_dmg_: {
+    break_defIgn_: {
       sheet: 'SailingTowardsASecondLife',
-      name: 'cond_dmg_',
+      name: 'break_defIgn_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'SailingTowardsASecondLife',
-        name: 'cond_dmg_',
+        damageType1: 'break',
+        name: 'break_defIgn_',
       },
     },
-    enemy_defRed_: {
+    spd_: {
       sheet: 'SailingTowardsASecondLife',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SailingTowardsASecondLife',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SailingTowardsASecondLife',
-      name: 'team_dmg_',
+      name: 'spd_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'spd_',
         sheet: 'SailingTowardsASecondLife',
-        name: 'team_dmg_',
+        name: 'spd_',
       },
     },
   },
@@ -16294,37 +16178,15 @@ export const buffs = {
     },
   },
   ScentAloneStaysTrue: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ScentAloneStaysTrue',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ScentAloneStaysTrue',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ScentAloneStaysTrue',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ScentAloneStaysTrue',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ScentAloneStaysTrue',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ScentAloneStaysTrue',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },

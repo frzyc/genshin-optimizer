@@ -1834,4 +1834,84 @@ describe('Light Cone sheets test', () => {
     // Base + LC passive
     expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
   })
+
+  it('RiverFlowsInSpring', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'RiverFlowsInSpring')
+    data.push(
+      cond(
+        charKey,
+        'RiverFlowsInSpring',
+        conditionals.RiverFlowsInSpring.notAttacked.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.12)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.24)
+  })
+
+  it('Sagacity', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'Sagacity')
+    data.push(cond(charKey, 'Sagacity', conditionals.Sagacity.ultUsed.name, 1))
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.48)
+  })
+
+  it('SailingTowardsASecondLife', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'SailingTowardsASecondLife', [
+      ownBuff.premod.brEffect_.add(0.5),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Assumed + LC passive
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.5 + 1)
+    expect(calc.compute(char.final.defIgn_.break[0]).val).toBeCloseTo(0.32)
+    expect(calc.compute(char.final.spd_).val).toBeCloseTo(0.2)
+  })
+
+  it('ScentAloneStaysTrue', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'ScentAloneStaysTrue', [
+      ownBuff.premod.brEffect_.add(0.5),
+    ])
+    data.push(
+      cond(
+        charKey,
+        'ScentAloneStaysTrue',
+        conditionals.ScentAloneStaysTrue.woefree.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Assumed + LC passive
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.5 + 1)
+    // LC cond + LC extra cond
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.18 + 0.16)
+  })
 })
