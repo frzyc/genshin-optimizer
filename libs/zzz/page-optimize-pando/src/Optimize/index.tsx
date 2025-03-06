@@ -131,7 +131,7 @@ function OptimizeWrapper() {
         // only return equipped wengine if not opting for wengine
         if (!optConfig.optWengine) return location === characterKey
 
-        if (level < optConfig.levelLow || level > optConfig.levelHigh)
+        if (level < optConfig.wlevelLow || level > optConfig.wlevelHigh)
           return false
         if (
           location &&
@@ -149,8 +149,8 @@ function OptimizeWrapper() {
   }, [
     characterKey,
     database.wengines,
-    optConfig.levelLow,
-    optConfig.levelHigh,
+    optConfig.wlevelLow,
+    optConfig.wlevelHigh,
     optConfig.optWengine,
     optConfig.wEngineTypes,
     optConfig.useEquippedWengine,

@@ -147,7 +147,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
     return wengineDirty && optConfig.optWengine
       ? database.wengines.values.reduce(
           (totals, { key, level, location }) => {
-            if (level < optConfig.levelLow || level > optConfig.levelHigh)
+            if (level < optConfig.wlevelLow || level > optConfig.wlevelHigh)
               return totals
             if (
               location &&
@@ -167,8 +167,8 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
     characterKey,
     wengineDirty,
     database.wengines,
-    optConfig.levelLow,
-    optConfig.levelHigh,
+    optConfig.wlevelLow,
+    optConfig.wlevelHigh,
     optConfig.optWengine,
     optConfig.useEquippedWengine,
   ])
