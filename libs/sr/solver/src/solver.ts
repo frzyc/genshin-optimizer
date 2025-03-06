@@ -1,5 +1,5 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import type { Candidate, Counters } from '@genshin-optimizer/game-opt/solver'
+import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
 import { Solver } from '@genshin-optimizer/game-opt/solver'
 import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
@@ -22,7 +22,7 @@ export function optimize(
   lightCones: ICachedLightCone[],
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
   numWorkers: number,
-  setProgress: (progress: Counters) => void
+  setProgress: (progress: Progress) => void
 ): Solver<string> {
   // Step 2: Detach nodes from Calculator
   const relicSetKeys = new Set(allRelicSetKeys)
