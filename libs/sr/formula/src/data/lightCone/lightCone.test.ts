@@ -1464,7 +1464,7 @@ describe('Light Cone sheets test', () => {
       calcSeele
         .withTag({ src: charKey, dst: otherCharKey })
         .compute(new Read(formulas.NightOfFright.healing.tag, undefined)).val
-    ).toBeCloseTo(1) // currently testing
+    ).toBeCloseTo(931.392 * 0.14)
   })
 
   it('NightOnTheMilkyWay', () => {
@@ -1755,4 +1755,83 @@ describe('Light Cone sheets test', () => {
   })
 
   // QuidProQuo should be here but there are no conditionals
+
+  it('ReforgedRemembrance', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'ReforgedRemembrance')
+    data.push(
+      cond(
+        charKey,
+        'ReforgedRemembrance',
+        conditionals.ReforgedRemembrance.prophet.name,
+        4
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.eff_).val).toBeCloseTo(0.6)
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(4 * 0.09)
+    expect(calc.compute(char.final.defIgn_.dot[0]).val).toBeCloseTo(4 * 0.1)
+  })
+
+  it('Reminiscence', () => {
+    const charKey: CharacterKey = 'Aglaea'
+    const data = testCharacterData(charKey, 'Reminiscence')
+    data.push(
+      cond(
+        charKey,
+        'Reminiscence',
+        conditionals.Reminiscence.commemoration.name,
+        4
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(4 * 0.12)
+    // TODO: check memosprite
+  })
+
+  it('ResolutionShinesAsPearlsOfSweat', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'ResolutionShinesAsPearlsOfSweat')
+    data.push(
+      cond(
+        charKey,
+        'ResolutionShinesAsPearlsOfSweat',
+        conditionals.ResolutionShinesAsPearlsOfSweat.ensnared.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+
+    expect(calc.compute(enemy.common.defRed_).val).toBeCloseTo(0.16)
+  })
+
+  it('ReturnToDarkness', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'ReturnToDarkness')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
+  })
 })

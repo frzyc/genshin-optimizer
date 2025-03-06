@@ -31,7 +31,7 @@ const sheet = registerLightCone(
       1,
       prod(subscript(superimpose, dm.healAmount), target.final.hp)
     ),
-    { team: true, cond: cmpGE(lcCount, 1, 'unique', '') }
+    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'unique', '') }
   ),
 
   // Conditional buffs

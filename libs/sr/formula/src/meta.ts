@@ -1436,87 +1436,30 @@ export const conditionals = {
     },
   },
   ReforgedRemembrance: {
-    boolConditional: {
+    prophet: {
       sheet: 'ReforgedRemembrance',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ReforgedRemembrance',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ReforgedRemembrance',
-      name: 'numConditional',
+      name: 'prophet',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 4,
     },
   },
   Reminiscence: {
-    boolConditional: {
+    commemoration: {
       sheet: 'Reminiscence',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Reminiscence',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Reminiscence',
-      name: 'numConditional',
+      name: 'commemoration',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 4,
     },
   },
   ResolutionShinesAsPearlsOfSweat: {
-    boolConditional: {
+    ensnared: {
       sheet: 'ResolutionShinesAsPearlsOfSweat',
-      name: 'boolConditional',
+      name: 'ensnared',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ResolutionShinesAsPearlsOfSweat',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ResolutionShinesAsPearlsOfSweat',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  ReturnToDarkness: {
-    boolConditional: {
-      sheet: 'ReturnToDarkness',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ReturnToDarkness',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ReturnToDarkness',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   RiverFlowsInSpring: {
@@ -15501,142 +15444,53 @@ export const buffs = {
     },
   },
   ReforgedRemembrance: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'ReforgedRemembrance',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'ReforgedRemembrance',
-        name: 'cond_dmg_',
+        name: 'atk_',
       },
     },
-    enemy_defRed_: {
+    dot_defIgn_: {
       sheet: 'ReforgedRemembrance',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ReforgedRemembrance',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ReforgedRemembrance',
-      name: 'team_dmg_',
+      name: 'dot_defIgn_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'ReforgedRemembrance',
-        name: 'team_dmg_',
+        damageType1: 'dot',
+        name: 'dot_defIgn_',
       },
     },
   },
   Reminiscence: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'Reminiscence',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Reminiscence',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Reminiscence',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Reminiscence',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Reminiscence',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Reminiscence',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
   ResolutionShinesAsPearlsOfSweat: {
-    cond_dmg_: {
+    defRed_: {
       sheet: 'ResolutionShinesAsPearlsOfSweat',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ResolutionShinesAsPearlsOfSweat',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ResolutionShinesAsPearlsOfSweat',
-      name: 'enemy_defRed_',
+      name: 'defRed_',
       tag: {
         et: 'display',
         qt: 'common',
         q: 'defRed_',
         sheet: 'ResolutionShinesAsPearlsOfSweat',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ResolutionShinesAsPearlsOfSweat',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ResolutionShinesAsPearlsOfSweat',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  ReturnToDarkness: {
-    cond_dmg_: {
-      sheet: 'ReturnToDarkness',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ReturnToDarkness',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ReturnToDarkness',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ReturnToDarkness',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ReturnToDarkness',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ReturnToDarkness',
-        name: 'team_dmg_',
+        name: 'defRed_',
       },
     },
   },
