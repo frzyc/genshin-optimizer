@@ -2082,4 +2082,83 @@ describe('Light Cone sheets test', () => {
       ).val
     ).toBeCloseTo((523.908 + 582.12) * 1.4 * 0.12)
   })
+
+  it('SubscribeForMore', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'SubscribeForMore')
+    data.push(
+      cond(
+        charKey,
+        'SubscribeForMore',
+        conditionals.SubscribeForMore.maxEnergy.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.dmg_.basic[0]).val).toBeCloseTo(0.48 + 0.48)
+    expect(calc.compute(char.final.dmg_.skill[0]).val).toBeCloseTo(0.48 + 0.48)
+  })
+
+  it('SweatNowCryLess', () => {
+    const charKey: CharacterKey = 'Aglaea'
+    const data = testCharacterData(charKey, 'SweatNowCryLess')
+    data.push(
+      cond(
+        charKey,
+        'SweatNowCryLess',
+        conditionals.SweatNowCryLess.memospriteOnField.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.2)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.36)
+    // TODO: check memosprite
+  })
+
+  it('Swordplay', () => {
+    const charKey: CharacterKey = 'Aglaea'
+    const data = testCharacterData(charKey, 'Swordplay')
+    data.push(
+      cond(charKey, 'Swordplay', conditionals.Swordplay.sameTargetHit.name, 5)
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(5 * 0.16)
+  })
+
+  it('TextureOfMemories', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'TextureOfMemories')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.eff_res_).val).toBeCloseTo(0.16)
+    expect(
+      calc.compute(new Read(formulas.TextureOfMemories.shield.tag, undefined))
+        .val
+    ).toBeCloseTo((1474.704 + 1058.4) * 0.32)
+  })
 })

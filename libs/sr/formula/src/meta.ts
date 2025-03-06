@@ -1670,25 +1670,7 @@ export const conditionals = {
     },
   },
   SubscribeForMore: {
-    boolConditional: {
-      sheet: 'SubscribeForMore',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SubscribeForMore',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SubscribeForMore',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    maxEnergy: { sheet: 'SubscribeForMore', name: 'maxEnergy', type: 'bool' },
   },
   Sunday: {
     boolConditional: { sheet: 'Sunday', name: 'boolConditional', type: 'bool' },
@@ -1729,66 +1711,20 @@ export const conditionals = {
     },
   },
   SweatNowCryLess: {
-    boolConditional: {
+    memospriteOnField: {
       sheet: 'SweatNowCryLess',
-      name: 'boolConditional',
+      name: 'memospriteOnField',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SweatNowCryLess',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SweatNowCryLess',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Swordplay: {
-    boolConditional: {
+    sameTargetHit: {
       sheet: 'Swordplay',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Swordplay',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Swordplay',
-      name: 'numConditional',
+      name: 'sameTargetHit',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
-  TextureOfMemories: {
-    boolConditional: {
-      sheet: 'TextureOfMemories',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TextureOfMemories',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TextureOfMemories',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
+      max: 5,
     },
   },
   TheAshblazingGrandDuke: {
@@ -4482,6 +4418,19 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  TextureOfMemories: {
+    shield: {
+      sheet: 'TextureOfMemories',
+      name: 'shield',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'shield',
+        sheet: 'TextureOfMemories',
+        name: 'shield',
       },
     },
   },
@@ -16989,37 +16938,28 @@ export const buffs = {
     },
   },
   SubscribeForMore: {
-    cond_dmg_: {
+    basic_dmg_: {
       sheet: 'SubscribeForMore',
-      name: 'cond_dmg_',
+      name: 'basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'SubscribeForMore',
-        name: 'cond_dmg_',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
       },
     },
-    enemy_defRed_: {
+    skill_dmg_: {
       sheet: 'SubscribeForMore',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SubscribeForMore',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SubscribeForMore',
-      name: 'team_dmg_',
+      name: 'skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'SubscribeForMore',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'skill_dmg_',
       },
     },
   },
@@ -17402,72 +17342,28 @@ export const buffs = {
     },
   },
   SweatNowCryLess: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'SweatNowCryLess',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SweatNowCryLess',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'SweatNowCryLess',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SweatNowCryLess',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SweatNowCryLess',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SweatNowCryLess',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
   Swordplay: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'Swordplay',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Swordplay',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Swordplay',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Swordplay',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Swordplay',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Swordplay',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -17481,41 +17377,6 @@ export const buffs = {
         q: 'brEffect_',
         sheet: 'TaliaKingdomOfBanditry',
         name: 'set2_brEffect_',
-      },
-    },
-  },
-  TextureOfMemories: {
-    cond_dmg_: {
-      sheet: 'TextureOfMemories',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TextureOfMemories',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TextureOfMemories',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TextureOfMemories',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TextureOfMemories',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TextureOfMemories',
-        name: 'team_dmg_',
       },
     },
   },
