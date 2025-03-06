@@ -257,7 +257,7 @@ function CharInformation({
               fontStyle: 'italic',
               fontWeight: '900',
               whiteSpace: 'nowrap',
-              maxWidth: '230px',
+              maxWidth: '160px',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
             }}

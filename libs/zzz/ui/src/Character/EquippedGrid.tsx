@@ -166,7 +166,7 @@ export function WeaponSwapCard({
       sx={{
         height: '100%',
         width: '100%',
-        minHeight: 300,
+        minHeight: 233,
         display: 'flex',
         flexDirection: 'column',
       }}
@@ -193,7 +193,7 @@ export function WeaponSwapCard({
           onChangeId={onChangeId}
         />
         <Button onClick={onOpen} color="info" sx={{ borderRadius: '1em' }}>
-          <SwapHorizIcon sx={{ height: 100, width: 100 }} />
+          <SwapHorizIcon sx={{ height: 80, width: 80 }} />
         </Button>
       </Box>
     </CardThemed>

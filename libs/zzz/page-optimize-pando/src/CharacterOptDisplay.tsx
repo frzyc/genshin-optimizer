@@ -103,20 +103,34 @@ function CharacterSection() {
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
+  const currentDisplayColumns = {
+    xs: 12,
+    sm: 10,
+    md: 11,
+    lg: 12,
+    xl: 9,
+  }
   return (
     <Stack spacing={1}>
-      <Box
+      <Grid
+        container
+        spacing={1}
         sx={{
           display: 'flex',
-          flexWrap: 'wrap',
+          flexWrap: {
+            xs: 'wrap',
+            sm: 'wrap',
+            md: 'wrap',
+            lg: 'nowrap',
+          },
           justifyContent: 'center',
           backgroundColor: '#1b263b',
         }}
       >
-        <Box
+        <Grid
           sx={{
             padding: '24px',
-            width: '500px',
+            width: '523px',
           }}
         >
           <Box
@@ -139,13 +153,16 @@ function CharacterSection() {
           >
             Edit Character
           </Button>
-        </Box>
-        <Box>
-          <CurrentBuildDisplay />
-        </Box>
-        <Grid sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}></Grid>
-      </Box>
-
+        </Grid>
+        <Grid
+          columns={currentDisplayColumns}
+          sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+        >
+          <Box>
+            <CurrentBuildDisplay />
+          </Box>
+        </Grid>
+      </Grid>
       <BonusStatsSection />
       <DebugListingsDisplay
         formulasRead={own.listing.formulas}
