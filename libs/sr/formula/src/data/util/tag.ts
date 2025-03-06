@@ -164,6 +164,11 @@ export const own = convert(ownTag, {
   et: 'own',
   dst: null,
 })
+// `semiOwn` retains `dst`, so this can calculate a buff
+// that comes from charA (`own`) but scales off charB stats (`target`)
+export const semiOwn = convert(ownTag, {
+  et: 'own',
+})
 export const team = convert(ownTag, {
   et: 'team',
   dst: null,
@@ -174,6 +179,7 @@ export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
 // Default tag DB keys
 export const ownBuff = convert(ownTag, { et: 'own' })
+export const semiOwnBuff = ownBuff
 export const teamBuff = convert(ownTag, { et: 'teamBuff' })
 export const notOwnBuff = convert(ownTag, { et: 'notOwnBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
