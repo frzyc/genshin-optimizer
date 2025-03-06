@@ -1,14 +1,14 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { wengineMaxLevel } from '@genshin-optimizer/zzz/consts'
+import { relicMaxLevel } from '@genshin-optimizer/sr/consts'
 import {
   OptConfigContext,
   useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
-import { WengineLevelSlider } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/sr/db-ui'
+import { RelicLevelSlider } from '@genshin-optimizer/sr/ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { memo, useContext } from 'react'
 
-export const WengineLevelFilter = memo(function WengineLevelFilter({
+export const RelicLevelFilter = memo(function RelicLevelFilter({
   disabled = false,
 }: {
   disabled?: boolean
@@ -19,25 +19,25 @@ export const WengineLevelFilter = memo(function WengineLevelFilter({
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', gap: 1 }}>
         <Typography sx={{ fontWeight: 'bold' }}>
-          Wengine Level Filter
+          Relic Level Filter
           {/* TODO: Translate */}
           {/* {t('levelFilter')} */}
         </Typography>
       </CardContent>
       <Divider />
-      <WengineLevelSlider
-        levelLow={optConfig?.wlevelLow ?? wengineMaxLevel}
-        levelHigh={optConfig?.wlevelHigh ?? wengineMaxLevel}
-        setLow={(wlevelLow) =>
-          database.optConfigs.set(optConfigId, { wlevelLow })
+      <RelicLevelSlider
+        levelLow={optConfig?.levelLow ?? relicMaxLevel['5']}
+        levelHigh={optConfig?.levelHigh ?? relicMaxLevel['5']}
+        setLow={(levelLow) =>
+          database.optConfigs.set(optConfigId, { levelLow })
         }
-        setHigh={(wlevelHigh) =>
-          database.optConfigs.set(optConfigId, { wlevelHigh })
+        setHigh={(levelHigh) =>
+          database.optConfigs.set(optConfigId, { levelHigh })
         }
-        setBoth={(wlevelLow, wlevelHigh) =>
+        setBoth={(levelLow, levelHigh) =>
           database.optConfigs.set(optConfigId, {
-            wlevelLow,
-            wlevelHigh,
+            levelLow,
+            levelHigh,
           })
         }
         disabled={disabled}

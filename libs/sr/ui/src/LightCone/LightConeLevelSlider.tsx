@@ -1,12 +1,12 @@
 'use client'
 import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
-import { discMaxLevel } from '@genshin-optimizer/zzz/consts'
+import { lightConeMaxLevel } from '@genshin-optimizer/sr/consts'
 import { Box, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export function DiscLevelSlider({
+export function LightConeLevelSlider({
   levelLow,
   levelHigh,
   setLow,
@@ -25,7 +25,7 @@ export function DiscLevelSlider({
   disabled?: boolean
   showLevelText?: boolean
 }) {
-  const { t } = useTranslation('artifact')
+  const { t } = useTranslation('lightcone')
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
   const setSlider = useCallback(
@@ -84,7 +84,7 @@ export function DiscLevelSlider({
       </Box>
       <Slider
         sx={{ flex: '0 1 100%', mx: 2 }}
-        getAriaLabel={() => 'Arifact Level Range'}
+        getAriaLabel={() => 'LightCone Level Range'}
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
         onChangeCommitted={(_, value) =>
@@ -92,7 +92,7 @@ export function DiscLevelSlider({
         }
         valueLabelDisplay="auto"
         min={0}
-        max={discMaxLevel['S']}
+        max={lightConeMaxLevel}
         step={1}
         marks
         disabled={disabled}
@@ -100,7 +100,7 @@ export function DiscLevelSlider({
       <CustomNumberInput
         value={sliderHigh}
         onChange={(val) =>
-          setHigh(clamp(val ?? 0, levelLow, discMaxLevel['S']))
+          setHigh(clamp(val ?? 0, levelLow, lightConeMaxLevel))
         }
         sx={{ px: 1, flex: '0 0 3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}

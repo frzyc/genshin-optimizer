@@ -1,3 +1,4 @@
+import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
@@ -15,7 +16,7 @@ import {
 } from '@genshin-optimizer/sr/db-ui'
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
 import { optimize } from '@genshin-optimizer/sr/solver'
-import { getCharStat, getLightConeStat } from '@genshin-optimizer/sr/stats'
+import { getLightConeStat } from '@genshin-optimizer/sr/stats'
 import { useSrCalcContext, WorkerSelector } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
@@ -23,9 +24,8 @@ import {
   Box,
   Button,
   CardContent,
-  CardHeader,
-  Divider,
   LinearProgress,
+  Stack,
   Typography,
 } from '@mui/material'
 import {
@@ -38,6 +38,8 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
+import { LightConeFilter } from './LightconeFilter'
+import { RelicFilter } from './RelicFilter'
 
 export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
@@ -68,10 +70,32 @@ function OptimizeWrapper() {
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
-  const relicsBySlot = useMemo(
-    () =>
+  const relicDirty = useDataManagerBaseDirty(database.relics)
+  const relicsBySlot = useMemo(() => {
+    const slotKeyMap = {
+      body: optConfig.slotBodyKeys,
+      feet: optConfig.slotFeetKeys,
+      sphere: optConfig.slotSphereKeys,
+      rope: optConfig.slotRopeKeys,
+    } as const
+    const isFilteredSlot = (
+      slotKey: RelicSlotKey
+    ): slotKey is 'body' | 'feet' | 'sphere' | 'rope' =>
+      ['body', 'feet', 'sphere', 'rope'].includes(slotKey)
+    return (
+      relicDirty &&
       database.relics.values.reduce(
         (relicsBySlot, relic) => {
+          const { slotKey, mainStatKey, level, location } = relic
+          if (level < optConfig.levelLow || level > optConfig.levelHigh)
+            return relicsBySlot
+          if (location && !optConfig.useEquipped && location !== characterKey)
+            return relicsBySlot
+          if (
+            isFilteredSlot(slotKey) &&
+            !slotKeyMap[slotKey].includes(mainStatKey)
+          )
+            return relicsBySlot
           relicsBySlot[relic.slotKey].push(relic)
           return relicsBySlot
         },
@@ -83,17 +107,53 @@ function OptimizeWrapper() {
           sphere: [],
           rope: [],
         } as Record<RelicSlotKey, ICachedRelic[]>
-      ),
-    [database.relics.values]
-  )
+      )
+    )
+  }, [
+    characterKey,
+    database.relics,
+    optConfig.levelHigh,
+    optConfig.levelLow,
+    optConfig.slotBodyKeys,
+    optConfig.slotFeetKeys,
+    optConfig.slotRopeKeys,
+    optConfig.slotSphereKeys,
+    optConfig.useEquipped,
+    relicDirty,
+  ])
+  const lightConeDirty = useDataManagerBaseDirty(database.lightCones)
   const lightCones = useMemo(() => {
-    const { path } = getCharStat(characterKey)
-    return database.lightCones.values.filter(({ key }) => {
-      // filter by path
-      const { path: lcPath } = getLightConeStat(key)
-      return path === lcPath
-    })
-  }, [characterKey, database.lightCones.values])
+    return (
+      lightConeDirty &&
+      database.lightCones.values.filter(({ key, level, location }) => {
+        // only return equipped lightcone if not opting for lightcone
+        if (!optConfig.optLightCone) return location === characterKey
+
+        if (level < optConfig.lcLevelLow || level > optConfig.lcLevelHigh)
+          return false
+        if (
+          location &&
+          !optConfig.useEquippedLightCone &&
+          location !== characterKey
+        )
+          return false
+
+        const { path } = getLightConeStat(key)
+        // filter by path
+        if (!optConfig.lightConePaths.includes(path)) return false
+        return true
+      })
+    )
+  }, [
+    characterKey,
+    database.lightCones,
+    optConfig.lcLevelLow,
+    optConfig.lcLevelHigh,
+    optConfig.optLightCone,
+    optConfig.lightConePaths,
+    optConfig.useEquippedLightCone,
+    lightConeDirty,
+  ])
   const totalPermutations = useMemo(
     () =>
       Object.values(relicsBySlot).reduce(
@@ -135,6 +195,9 @@ function OptimizeWrapper() {
       ],
       10, // TODO: topN
       statFilters,
+      optConfig.setFilter2Cavern,
+      optConfig.setFilter4Cavern,
+      optConfig.setFilter2Planar,
       lightCones,
       relicsBySlot,
       numWorkers,
@@ -167,6 +230,9 @@ function OptimizeWrapper() {
   }, [
     calc,
     optConfig.statFilters,
+    optConfig.setFilter2Cavern,
+    optConfig.setFilter4Cavern,
+    optConfig.setFilter2Planar,
     characterKey,
     target,
     lightCones,
@@ -183,15 +249,24 @@ function OptimizeWrapper() {
 
   return (
     <CardThemed>
-      <CardHeader
-        title={t('optimize')}
-        action={
-          <Box>
+      <CardContent>
+        <Stack spacing={1}>
+          <StatFilterCard />
+          <LightConeFilter numLightCone={lightCones.length} />
+          <RelicFilter relicsBySlot={relicsBySlot} />
+          {progress && (
+            <ProgressIndicator
+              progress={progress}
+              totalPermutations={totalPermutations}
+            />
+          )}
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
             />
             <Button
+              disabled={!totalPermutations}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -199,17 +274,7 @@ function OptimizeWrapper() {
               {optimizing ? t('cancel') : t('optimize')}
             </Button>
           </Box>
-        }
-      />
-      <Divider />
-      <CardContent>
-        <StatFilterCard />
-        {progress && (
-          <ProgressIndicator
-            progress={progress}
-            totalPermutations={totalPermutations}
-          />
-        )}
+        </Stack>
       </CardContent>
     </CardThemed>
   )

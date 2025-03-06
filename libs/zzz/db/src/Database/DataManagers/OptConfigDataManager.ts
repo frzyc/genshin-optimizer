@@ -4,7 +4,9 @@ import type { SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
   allSpecialityKeys,
+  discMaxLevel,
   discSlotToMainStatKeys,
+  wengineMaxLevel,
   type DiscMainStatKey,
   type DiscSetKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -29,19 +31,22 @@ export type StatFilter = {
 export type StatFilters = Array<StatFilter>
 
 export interface OptConfig {
-  setFilter2: DiscSetKey[]
-  setFilter4: DiscSetKey[]
   statFilters: StatFilters
+
+  // Disc Filters
+  levelLow: number
+  levelHigh: number
   slot4: DiscMainStatKey[]
   slot5: DiscMainStatKey[]
   slot6: DiscMainStatKey[]
+  setFilter2: DiscSetKey[]
+  setFilter4: DiscSetKey[]
+  useEquipped: boolean
   // excludedLocations: CharacterKey[]
   // allowLocationsState: AllowLocationsState
-  useEquipped: boolean
-  discExclusionIds: string[]
-  levelLow: number
-  levelHigh: number
+  // discExclusionIds: string[]
 
+  // Wengine Filters
   optWengine: boolean
   wlevelLow: number
   wlevelHigh: number
@@ -64,18 +69,19 @@ export class OptConfigDataManager extends DataManager<
   override validate(obj: object): OptConfig | undefined {
     if (typeof obj !== 'object') return undefined
     let {
-      setFilter2,
-      setFilter4,
       statFilters,
+
+      levelLow,
+      levelHigh,
       slot4,
       slot5,
       slot6,
+      setFilter2,
+      setFilter4,
       useEquipped,
       // excludedLocations,
       // allowLocationsState,
-      discExclusionIds,
-      levelLow,
-      levelHigh,
+      // discExclusionIds,
 
       optWengine,
       wlevelLow,
@@ -102,12 +108,12 @@ export class OptConfigDataManager extends DataManager<
     slot5 = validateArr(slot5, discSlotToMainStatKeys['5'])
     slot6 = validateArr(slot6, discSlotToMainStatKeys['6'])
 
-    if (!discExclusionIds || !Array.isArray(discExclusionIds))
-      discExclusionIds = []
-    else
-      discExclusionIds = [...new Set(discExclusionIds)].filter((id) =>
-        this.database.discs.keys.includes(id)
-      )
+    // if (!discExclusionIds || !Array.isArray(discExclusionIds))
+    //   discExclusionIds = []
+    // else
+    //   discExclusionIds = [...new Set(discExclusionIds)].filter((id) =>
+    //     this.database.discs.keys.includes(id)
+    //   )
 
     useEquipped = !!useEquipped
     // excludedLocations = validateArr(
@@ -120,11 +126,11 @@ export class OptConfigDataManager extends DataManager<
     // if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
 
     if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = 20
+    if (levelHigh === undefined) levelHigh = discMaxLevel['S']
 
     optWengine = !!optWengine
     if (wlevelLow === undefined) wlevelLow = 0
-    if (wlevelHigh === undefined) wlevelHigh = 60
+    if (wlevelHigh === undefined) wlevelHigh = wengineMaxLevel
     wEngineTypes = validateArr(wEngineTypes, allSpecialityKeys, [])
 
     useEquippedWengine = !!useEquippedWengine
@@ -136,18 +142,19 @@ export class OptConfigDataManager extends DataManager<
       generatedBuildListId = undefined
 
     return {
-      setFilter2,
-      setFilter4,
       statFilters,
+
+      levelLow,
+      levelHigh,
       slot4,
       slot5,
       slot6,
+      setFilter2,
+      setFilter4,
       useEquipped,
       // excludedLocations,
       // allowLocationsState,
-      discExclusionIds,
-      levelLow,
-      levelHigh,
+      // discExclusionIds,
 
       optWengine,
       wlevelLow,
@@ -174,6 +181,7 @@ export class OptConfigDataManager extends DataManager<
     const {
       // remove user-specific data
       useEquipped,
+      useEquippedWengine,
       // excludedLocations,
       // allowLocationsState,
       generatedBuildListId,
@@ -207,21 +215,22 @@ export class OptConfigDataManager extends DataManager<
 function initialOptConfig(): OptConfig {
   return {
     statFilters: [],
+
+    levelLow: discMaxLevel['S'],
+    levelHigh: discMaxLevel['S'],
     slot4: [...discSlotToMainStatKeys['4']],
     slot5: [...discSlotToMainStatKeys['5']],
     slot6: [...discSlotToMainStatKeys['6']],
-    levelLow: 15,
-    levelHigh: 15,
     setFilter2: [],
     setFilter4: [],
-    discExclusionIds: [],
     useEquipped: false,
+    // discExclusionIds: [],
     // excludedLocations: [],
     // allowLocationsState: 'unequippedOnly',
 
     optWengine: false,
-    wlevelLow: 0,
-    wlevelHigh: 60,
+    wlevelLow: wengineMaxLevel,
+    wlevelHigh: wengineMaxLevel,
     wEngineTypes: [],
     useEquippedWengine: false,
 
