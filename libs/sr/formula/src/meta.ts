@@ -1793,24 +1793,10 @@ export const conditionals = {
     },
   },
   TheUnreachableSide: {
-    boolConditional: {
+    attackedOrConsumedHp: {
       sheet: 'TheUnreachableSide',
-      name: 'boolConditional',
+      name: 'attackedOrConsumedHp',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheUnreachableSide',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheUnreachableSide',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   TheWindSoaringValorous: {
@@ -1841,68 +1827,9 @@ export const conditionals = {
       max: 2,
     },
   },
-  ThisIsMe: {
-    boolConditional: {
-      sheet: 'ThisIsMe',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ThisIsMe',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ThisIsMe',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   ThoseManySprings: {
-    boolConditional: {
-      sheet: 'ThoseManySprings',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ThoseManySprings',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ThoseManySprings',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  TimeWaitsForNoOne: {
-    boolConditional: {
-      sheet: 'TimeWaitsForNoOne',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TimeWaitsForNoOne',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TimeWaitsForNoOne',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    cornered: { sheet: 'ThoseManySprings', name: 'cornered', type: 'bool' },
+    unarmored: { sheet: 'ThoseManySprings', name: 'unarmored', type: 'bool' },
   },
   TimeWovenIntoGold: {
     boolConditional: {
@@ -17603,37 +17530,15 @@ export const buffs = {
     },
   },
   TheUnreachableSide: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'TheUnreachableSide',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheUnreachableSide',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TheUnreachableSide',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheUnreachableSide',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheUnreachableSide',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheUnreachableSide',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -17687,107 +17592,29 @@ export const buffs = {
     },
   },
   ThisIsMe: {
-    cond_dmg_: {
+    ult_dmg_: {
       sheet: 'ThisIsMe',
-      name: 'cond_dmg_',
+      name: 'ult_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'ThisIsMe',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ThisIsMe',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ThisIsMe',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ThisIsMe',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ThisIsMe',
-        name: 'team_dmg_',
+        damageType1: 'ult',
+        name: 'ult_dmg_',
       },
     },
   },
   ThoseManySprings: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'ThoseManySprings',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ThoseManySprings',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'ThoseManySprings',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ThoseManySprings',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'ThoseManySprings',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ThoseManySprings',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  TimeWaitsForNoOne: {
-    cond_dmg_: {
-      sheet: 'TimeWaitsForNoOne',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TimeWaitsForNoOne',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TimeWaitsForNoOne',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TimeWaitsForNoOne',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TimeWaitsForNoOne',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TimeWaitsForNoOne',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
