@@ -2161,4 +2161,93 @@ describe('Light Cone sheets test', () => {
         .val
     ).toBeCloseTo((1474.704 + 1058.4) * 0.32)
   })
+
+  it('TheBirthOfTheSelf', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'TheBirthOfTheSelf')
+    data.push(
+      cond(
+        charKey,
+        'TheBirthOfTheSelf',
+        conditionals.TheBirthOfTheSelf.enemyHpLE50.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.dmg_.followUp[0]).val).toBeCloseTo(
+      0.48 + 0.48
+    )
+  })
+
+  it('TheDayTheCosmosFell', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'TheDayTheCosmosFell')
+    data.push(
+      cond(
+        charKey,
+        'TheDayTheCosmosFell',
+        conditionals.TheDayTheCosmosFell.twoEnemiesWeakness.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.24)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.4)
+  })
+
+  it('TheMolesWelcomeYou', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'TheMolesWelcomeYou')
+    data.push(
+      cond(
+        charKey,
+        'TheMolesWelcomeYou',
+        conditionals.TheMolesWelcomeYou.mischievous.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(3 * 0.24)
+  })
+
+  it('TheSeriousnessOfBreakfast', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'TheSeriousnessOfBreakfast')
+    data.push(
+      cond(
+        charKey,
+        'TheSeriousnessOfBreakfast',
+        conditionals.TheSeriousnessOfBreakfast.enemiesDefeated.name,
+        3
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.24)
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(3 * 0.08)
+  })
 })

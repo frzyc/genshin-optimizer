@@ -1738,45 +1738,17 @@ export const conditionals = {
     },
   },
   TheBirthOfTheSelf: {
-    boolConditional: {
+    enemyHpLE50: {
       sheet: 'TheBirthOfTheSelf',
-      name: 'boolConditional',
+      name: 'enemyHpLE50',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheBirthOfTheSelf',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheBirthOfTheSelf',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   TheDayTheCosmosFell: {
-    boolConditional: {
+    twoEnemiesWeakness: {
       sheet: 'TheDayTheCosmosFell',
-      name: 'boolConditional',
+      name: 'twoEnemiesWeakness',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheDayTheCosmosFell',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheDayTheCosmosFell',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   TheHerta: {
@@ -1801,45 +1773,23 @@ export const conditionals = {
     },
   },
   TheMolesWelcomeYou: {
-    boolConditional: {
+    mischievous: {
       sheet: 'TheMolesWelcomeYou',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheMolesWelcomeYou',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheMolesWelcomeYou',
-      name: 'numConditional',
+      name: 'mischievous',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   TheSeriousnessOfBreakfast: {
-    boolConditional: {
+    enemiesDefeated: {
       sheet: 'TheSeriousnessOfBreakfast',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheSeriousnessOfBreakfast',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheSeriousnessOfBreakfast',
-      name: 'numConditional',
+      name: 'enemiesDefeated',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   TheUnreachableSide: {
@@ -17406,72 +17356,29 @@ export const buffs = {
     },
   },
   TheBirthOfTheSelf: {
-    cond_dmg_: {
+    followUp_dmg_: {
       sheet: 'TheBirthOfTheSelf',
-      name: 'cond_dmg_',
+      name: 'followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'TheBirthOfTheSelf',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TheBirthOfTheSelf',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheBirthOfTheSelf',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheBirthOfTheSelf',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheBirthOfTheSelf',
-        name: 'team_dmg_',
+        damageType1: 'followUp',
+        name: 'followUp_dmg_',
       },
     },
   },
   TheDayTheCosmosFell: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'TheDayTheCosmosFell',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'TheDayTheCosmosFell',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TheDayTheCosmosFell',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheDayTheCosmosFell',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheDayTheCosmosFell',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheDayTheCosmosFell',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },
@@ -17670,72 +17577,28 @@ export const buffs = {
     },
   },
   TheMolesWelcomeYou: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'TheMolesWelcomeYou',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'TheMolesWelcomeYou',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TheMolesWelcomeYou',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheMolesWelcomeYou',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheMolesWelcomeYou',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheMolesWelcomeYou',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
   TheSeriousnessOfBreakfast: {
-    cond_dmg_: {
+    atk_: {
       sheet: 'TheSeriousnessOfBreakfast',
-      name: 'cond_dmg_',
+      name: 'atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'TheSeriousnessOfBreakfast',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TheSeriousnessOfBreakfast',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheSeriousnessOfBreakfast',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheSeriousnessOfBreakfast',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheSeriousnessOfBreakfast',
-        name: 'team_dmg_',
+        name: 'atk_',
       },
     },
   },
