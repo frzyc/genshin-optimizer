@@ -58,15 +58,7 @@ export function optimize(
       // Invert max constraints for pruning
       isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
     ),
-    // filter2: if not empty, at least one >= 2
-    setFilter2.length
-      ? max(...setFilter2.map((q) => read({ q }, 'sum')))
-      : constant(Infinity),
-    // filter4: if not empty, at least one >= 4
-    setFilter4.length
-      ? max(...setFilter4.map((q) => read({ q }, 'sum')))
-      : constant(Infinity),
-    // other calcs (graph, etc)
+    // other calcs (graph, etc) *go in* `nodes.push` below
   ]
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
     /**
@@ -89,6 +81,17 @@ export function optimize(
 
     return undefined
   })
+  nodes.push(
+    // filter2: if not empty, at least one >= 2
+    setFilter2.length
+      ? max(...setFilter2.map((q) => read({ q }, 'sum')))
+      : constant(Infinity),
+    // filter4: if not empty, at least one >= 4
+    setFilter4.length
+      ? max(...setFilter4.map((q) => read({ q }, 'sum')))
+      : constant(Infinity)
+    // other calcs (graph, etc)
+  )
 
   return new Solver({
     nodes,
