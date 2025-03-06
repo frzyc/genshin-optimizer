@@ -5,7 +5,7 @@ import { Box, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-export function DiscLevelSlider({
+export function WengineLevelSlider({
   levelLow,
   levelHigh,
   setLow,
@@ -24,7 +24,7 @@ export function DiscLevelSlider({
   disabled?: boolean
   showLevelText?: boolean
 }) {
-  const { t } = useTranslation('artifact')
+  const { t } = useTranslation('wengine')
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
   const setSlider = useCallback(
@@ -83,7 +83,7 @@ export function DiscLevelSlider({
       </Box>
       <Slider
         sx={{ flex: '0 1 100%', mx: 2 }}
-        getAriaLabel={() => 'Arifact Level Range'}
+        getAriaLabel={() => 'Wengine Level Range'}
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
         onChangeCommitted={(_, value) =>
@@ -91,14 +91,14 @@ export function DiscLevelSlider({
         }
         valueLabelDisplay="auto"
         min={0}
-        max={15}
+        max={60}
         step={1}
         marks
         disabled={disabled}
       />
       <CustomNumberInput
         value={sliderHigh}
-        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 15))}
+        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 60))}
         sx={{ px: 1, flex: '0 0 3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}

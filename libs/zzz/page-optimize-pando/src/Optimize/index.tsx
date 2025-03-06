@@ -1,5 +1,7 @@
+import { useDataManagerBaseDirty } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
+import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import {
   allDiscSlotKeys,
   type DiscSlotKey,
@@ -16,9 +18,7 @@ import {
   StatFilterCard,
   useZzzCalcContext,
 } from '@genshin-optimizer/zzz/formula-ui'
-import type { ProgressResult } from '@genshin-optimizer/zzz/solver'
-import { MAX_BUILDS } from '@genshin-optimizer/zzz/solver'
-import { Solver } from '@genshin-optimizer/zzz/solver-pando'
+import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { WorkerSelector } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -27,9 +27,8 @@ import {
   Box,
   Button,
   CardContent,
-  CardHeader,
-  Divider,
   LinearProgress,
+  Stack,
   Typography,
 } from '@mui/material'
 import {
@@ -41,7 +40,9 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { DiscFilter } from './DiscFilter'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
+import { WengineFilter } from './WengineFilter'
 
 export default function Optimize() {
   const { key: characterKey } = useCharacterContext()!
@@ -49,7 +50,9 @@ export default function Optimize() {
   const { database } = useDatabaseContext()
   useEffect(() => {
     if (optConfigId) return
-    const newOptConfigId = database.optConfigs.new()
+    const newOptConfigId = database.optConfigs.new({
+      wEngineTypes: [getCharStat(characterKey).specialty],
+    })
     database.charOpts.set(characterKey, {
       optConfigId: newOptConfigId,
     })
@@ -70,14 +73,32 @@ function OptimizeWrapper() {
   const { key: characterKey } = useCharacterContext()!
   const { target } = useCharOpt(characterKey)!
   const [numWorkers, setNumWorkers] = useState(8)
-  const [progress, setProgress] = useState<ProgressResult | undefined>(
-    undefined
-  )
+  const [progress, setProgress] = useState<Progress | undefined>(undefined)
   const { optConfig, optConfigId } = useContext(OptConfigContext)
-  const discsBySlot = useMemo(
-    () =>
+  const discDirty = useDataManagerBaseDirty(database.discs)
+  const discsBySlot = useMemo(() => {
+    const slotKeyMap = {
+      4: optConfig.slot4,
+      5: optConfig.slot5,
+      6: optConfig.slot6,
+    } as const
+    const isFilteredSlot = (slotKey: DiscSlotKey): slotKey is '4' | '5' | '6' =>
+      ['4', '5', '6'].includes(slotKey)
+
+    return (
+      discDirty &&
       database.discs.values.reduce(
         (discsBySlot, disc) => {
+          const { slotKey, mainStatKey, level, location } = disc
+          if (level < optConfig.levelLow || level > optConfig.levelHigh)
+            return discsBySlot
+          if (location && !optConfig.useEquipped && location !== characterKey)
+            return discsBySlot
+          if (
+            isFilteredSlot(slotKey) &&
+            !slotKeyMap[slotKey].includes(mainStatKey)
+          )
+            return discsBySlot
           discsBySlot[disc.slotKey].push(disc)
           return discsBySlot
         },
@@ -89,17 +110,53 @@ function OptimizeWrapper() {
           5: [],
           6: [],
         } as Record<DiscSlotKey, ICachedDisc[]>
-      ),
-    [database.discs.values]
-  )
+      )
+    )
+  }, [
+    characterKey,
+    discDirty,
+    database.discs,
+    optConfig.levelHigh,
+    optConfig.levelLow,
+    optConfig.slot4,
+    optConfig.slot5,
+    optConfig.slot6,
+    optConfig.useEquipped,
+  ])
+  const wengineDirty = useDataManagerBaseDirty(database.wengines)
   const wengines = useMemo(() => {
-    const { specialty } = getCharStat(characterKey)
-    return database.wengines.values.filter(({ key }) => {
-      // filter by path
-      const { type } = getWengineStat(key)
-      return specialty === type
-    })
-  }, [characterKey, database.wengines.values])
+    return (
+      wengineDirty &&
+      database.wengines.values.filter(({ key, level, location }) => {
+        // only return equipped wengine if not opting for wengine
+        if (!optConfig.optWengine) return location === characterKey
+
+        if (level < optConfig.wlevelLow || level > optConfig.wlevelHigh)
+          return false
+        if (
+          location &&
+          !optConfig.useEquippedWengine &&
+          location !== characterKey
+        )
+          return false
+
+        const { type } = getWengineStat(key)
+        // filter by path
+        if (!optConfig.wEngineTypes.includes(type)) return false
+        return true
+      })
+    )
+  }, [
+    characterKey,
+    database.wengines,
+    optConfig.wlevelLow,
+    optConfig.wlevelHigh,
+    optConfig.optWengine,
+    optConfig.wEngineTypes,
+    optConfig.useEquippedWengine,
+    wengineDirty,
+  ])
+
   const totalPermutations = useMemo(
     () =>
       Object.values(discsBySlot).reduce(
@@ -130,7 +187,7 @@ function OptimizeWrapper() {
         value,
         isMax,
       }))
-    const optimizer = new Solver(
+    const optimizer = optimize(
       characterKey,
       calc,
       [
@@ -140,19 +197,24 @@ function OptimizeWrapper() {
         },
       ],
       statFilters,
+      optConfig.setFilter2,
+      optConfig.setFilter4,
       wengines,
       discsBySlot,
       numWorkers,
       setProgress
     )
 
-    cancelled.then(async () => await optimizer.terminate())
-    const results = await optimizer.optimize()
-    // Clean up workers
-    await optimizer.terminate()
-    cancelToken.current = () => {}
-
-    setOptimizing(false)
+    cancelled.then(() => optimizer.terminate('user cancelled'))
+    let results: BuildResult[]
+    try {
+      results = await optimizer.results
+    } catch {
+      return
+    } finally {
+      cancelToken.current = () => {}
+      setOptimizing(false)
+    }
     // Save results to optConfig
     if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
@@ -166,6 +228,8 @@ function OptimizeWrapper() {
   }, [
     calc,
     optConfig.statFilters,
+    optConfig.setFilter2,
+    optConfig.setFilter4,
     characterKey,
     target,
     wengines,
@@ -182,15 +246,24 @@ function OptimizeWrapper() {
 
   return (
     <CardThemed>
-      <CardHeader
-        title={t('optimize')}
-        action={
-          <Box>
+      <CardContent>
+        <Stack spacing={1}>
+          <StatFilterCard />
+          <WengineFilter numWengine={wengines.length} />
+          <DiscFilter discsBySlot={discsBySlot} />
+          {progress && (
+            <ProgressIndicator
+              progress={progress}
+              totalPermutations={totalPermutations}
+            />
+          )}
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
             />
             <Button
+              disabled={!totalPermutations}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'primary'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -198,17 +271,7 @@ function OptimizeWrapper() {
               {optimizing ? t('cancel') : t('optimize')}
             </Button>
           </Box>
-        }
-      />
-      <Divider />
-      <CardContent>
-        <StatFilterCard />
-        {progress && (
-          <ProgressIndicator
-            progress={progress}
-            totalPermutations={totalPermutations}
-          />
-        )}
+        </Stack>
       </CardContent>
     </CardThemed>
   )
@@ -218,23 +281,26 @@ function ProgressIndicator({
   progress,
   totalPermutations,
 }: {
-  progress: ProgressResult
+  progress: Progress
   totalPermutations: number
 }) {
   const { t } = useTranslation('optimize')
   return (
     <Box>
       <Typography>
-        {t('totalProgress')}: {progress.numBuildsComputed.toLocaleString()} /{' '}
-        {totalPermutations.toLocaleString()}
+        {t('computed')}: {progress.computed.toLocaleString()} /{' '}
+        {(progress.computed + progress.remaining).toLocaleString()}
       </Typography>
       <Typography>
-        {t('buildsKept')}: {progress.numBuildsKept.toLocaleString()} /{' '}
-        {MAX_BUILDS.toLocaleString()}
+        {t('computed + skipped')}:{' '}
+        {(progress.computed + progress.skipped).toLocaleString()} /{' '}
+        {totalPermutations.toLocaleString()}
       </Typography>
       <LinearProgress
         variant="determinate"
-        value={(progress.numBuildsComputed / totalPermutations) * 100}
+        value={
+          ((progress.computed + progress.skipped) / totalPermutations) * 100
+        }
       />
     </Box>
   )

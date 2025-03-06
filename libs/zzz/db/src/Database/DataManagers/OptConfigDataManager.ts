@@ -1,10 +1,10 @@
 import type { UnArray } from '@genshin-optimizer/common/util'
 import { validateArr } from '@genshin-optimizer/common/util'
+import type { SpecialityKey } from '@genshin-optimizer/zzz/consts'
 import {
-  allCharacterKeys,
   allDiscSetKeys,
+  allSpecialityKeys,
   discSlotToMainStatKeys,
-  type CharacterKey,
   type DiscMainStatKey,
   type DiscSetKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -35,11 +35,18 @@ export interface OptConfig {
   slot4: DiscMainStatKey[]
   slot5: DiscMainStatKey[]
   slot6: DiscMainStatKey[]
-  excludedLocations: CharacterKey[]
-  allowLocationsState: AllowLocationsState
+  // excludedLocations: CharacterKey[]
+  // allowLocationsState: AllowLocationsState
+  useEquipped: boolean
   discExclusionIds: string[]
   levelLow: number
   levelHigh: number
+
+  optWengine: boolean
+  wlevelLow: number
+  wlevelHigh: number
+  wEngineTypes: SpecialityKey[]
+  useEquippedWengine: boolean
 
   //generated opt builds
   generatedBuildListId?: string
@@ -63,11 +70,18 @@ export class OptConfigDataManager extends DataManager<
       slot4,
       slot5,
       slot6,
-      excludedLocations,
-      allowLocationsState,
+      useEquipped,
+      // excludedLocations,
+      // allowLocationsState,
       discExclusionIds,
       levelLow,
       levelHigh,
+
+      optWengine,
+      wlevelLow,
+      wlevelHigh,
+      wEngineTypes,
+      useEquippedWengine,
 
       generatedBuildListId,
     } = obj as OptConfig
@@ -95,17 +109,25 @@ export class OptConfigDataManager extends DataManager<
         this.database.discs.keys.includes(id)
       )
 
-    excludedLocations = validateArr(
-      excludedLocations,
-      allCharacterKeys,
-      []
-    ).filter(
-      (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
-    )
-    if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
+    useEquipped = !!useEquipped
+    // excludedLocations = validateArr(
+    //   excludedLocations,
+    //   allCharacterKeys,
+    //   []
+    // ).filter(
+    //   (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
+    // )
+    // if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
 
     if (levelLow === undefined) levelLow = 0
     if (levelHigh === undefined) levelHigh = 20
+
+    optWengine = !!optWengine
+    if (wlevelLow === undefined) wlevelLow = 0
+    if (wlevelHigh === undefined) wlevelHigh = 60
+    wEngineTypes = validateArr(wEngineTypes, allSpecialityKeys, [])
+
+    useEquippedWengine = !!useEquippedWengine
 
     if (
       generatedBuildListId &&
@@ -120,11 +142,18 @@ export class OptConfigDataManager extends DataManager<
       slot4,
       slot5,
       slot6,
-      excludedLocations,
-      allowLocationsState,
+      useEquipped,
+      // excludedLocations,
+      // allowLocationsState,
       discExclusionIds,
       levelLow,
       levelHigh,
+
+      optWengine,
+      wlevelLow,
+      wlevelHigh,
+      wEngineTypes,
+      useEquippedWengine,
 
       generatedBuildListId,
     }
@@ -144,8 +173,9 @@ export class OptConfigDataManager extends DataManager<
     if (!optConfig) return {}
     const {
       // remove user-specific data
-      excludedLocations,
-      allowLocationsState,
+      useEquipped,
+      // excludedLocations,
+      // allowLocationsState,
       generatedBuildListId,
       ...rest
     } = optConfig
@@ -185,8 +215,16 @@ function initialOptConfig(): OptConfig {
     setFilter2: [],
     setFilter4: [],
     discExclusionIds: [],
-    excludedLocations: [],
-    allowLocationsState: 'unequippedOnly',
+    useEquipped: false,
+    // excludedLocations: [],
+    // allowLocationsState: 'unequippedOnly',
+
+    optWengine: false,
+    wlevelLow: 0,
+    wlevelHigh: 60,
+    wEngineTypes: [],
+    useEquippedWengine: false,
+
     generatedBuildListId: undefined,
   }
 }

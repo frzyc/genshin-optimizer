@@ -7,6 +7,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   DiscMainStatKey,
+  DiscSetKey,
   FormulaKey,
   LocationKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -21,7 +22,11 @@ import {
 } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
-import { StatDisplay, WorkerSelector } from '@genshin-optimizer/zzz/ui'
+import {
+  DiscSetFilter,
+  StatDisplay,
+  WorkerSelector,
+} from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -37,7 +42,6 @@ import { Stack } from '@mui/system'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LevelFilter } from './LevelFilter'
-import { SetFilter } from './SetFilter'
 import { StatFilterCard } from './StatFilterCard'
 
 export default function OptimizeWrapper({
@@ -293,5 +297,41 @@ function ProgressIndicator({
         value={(progress.numBuildsComputed / totalPermutations) * 100}
       />
     </Box>
+  )
+}
+
+function SetFilter({ disabled }: { disabled: boolean }) {
+  const { database } = useDatabaseContext()
+  const character = useCharacterContext()
+  const {
+    setFilter2 = [],
+    setFilter4 = [],
+    key: characterKey,
+  } = character ?? {}
+
+  const setSetFilter2 = useCallback(
+    (setFilter2: DiscSetKey[]) => {
+      if (characterKey) {
+        database.chars.set(characterKey, { setFilter2 })
+      }
+    },
+    [database, characterKey]
+  )
+  const setSetFilter4 = useCallback(
+    (setFilter4: DiscSetKey[]) => {
+      if (characterKey) {
+        database.chars.set(characterKey, { setFilter4 })
+      }
+    },
+    [database, characterKey]
+  )
+  return (
+    <DiscSetFilter
+      disabled={disabled}
+      setFilter2={setFilter2}
+      setFilter4={setFilter4}
+      setSetFilter2={setSetFilter2}
+      setSetFilter4={setSetFilter4}
+    />
   )
 }

@@ -1,20 +1,16 @@
-export const MAX_BUILDS = 50_000
-
-export interface BuildResult {
-  value: number
-  ids: string[]
+export type BuildResult<ID = string> = { value: number; ids: ID[] }
+export interface Work {
+  ids: string[][] // possible ids for each slot
+  count: number // # of possible builds
 }
 
-export interface BuildResultByIndex {
-  value: number
-  indices: number[]
+export interface Progress {
+  computed: number // # of builds computed
+  failed: number // # of (computed) builds that fail some constraints
+  skipped: number // # of builds not computed e.g. via pruning
+  remaining: number // # of uncomputed and unskipped builds
 }
 
-export interface ProgressResult {
-  numBuildsKept: number
-  numBuildsComputed: number
+export function buildCount<V>(candidates: V[][]): number {
+  return candidates.reduce((num, cnds) => num * cnds.length, 1)
 }
-
-// Store metadata in 'id' key
-// We will store some index information here, since it needs to be number type
-export type EquipmentStats = Record<string, number> & { id: number }
