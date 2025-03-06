@@ -1972,4 +1972,114 @@ describe('Light Cone sheets test', () => {
 
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
   })
+
+  it('SheAlreadyShutHerEyes', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const otherCharKey: CharacterKey = 'Seele'
+    const data = testTeamData(charKey, otherCharKey, 'SheAlreadyShutHerEyes')
+    data.push(
+      cond(
+        charKey,
+        'SheAlreadyShutHerEyes',
+        conditionals.SheAlreadyShutHerEyes.wearerHpReduced.name,
+        1
+      )
+    )
+    const calcFuXuan = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const calcSeele = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: otherCharKey })
+
+    expect(calcFuXuan.compute(own.final.hp_).val).toBeCloseTo(0.4)
+    expect(calcFuXuan.compute(own.final.enerRegen_).val).toBeCloseTo(0.2)
+    expect(calcFuXuan.compute(own.final.common_dmg_).val).toBeCloseTo(0.15)
+    expect(
+      calcFuXuan.compute(
+        new Read(formulas.SheAlreadyShutHerEyes.maxHeal.tag, undefined)
+      ).val
+    ).toBeCloseTo((1474.704 + 1270.08) * 1.4 * 1)
+    expect(
+      calcSeele.compute(
+        new Read(formulas.SheAlreadyShutHerEyes.maxHeal.tag, undefined)
+      ).val
+    ).toBeCloseTo(931.392 * 1)
+  })
+
+  it('SleepLikeTheDead', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'SleepLikeTheDead')
+    data.push(
+      cond(
+        charKey,
+        'SleepLikeTheDead',
+        conditionals.SleepLikeTheDead.notCrit.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.5)
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.6)
+  })
+
+  it('SolitaryHealing', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'SolitaryHealing')
+    data.push(
+      cond(
+        charKey,
+        'SolitaryHealing',
+        conditionals.SolitaryHealing.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.dmg_.dot[0]).val).toBeCloseTo(0.48)
+  })
+
+  it('SomethingIrreplaceable', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'SomethingIrreplaceable')
+    data.push(
+      cond(
+        charKey,
+        'SomethingIrreplaceable',
+        conditionals.SomethingIrreplaceable.wearerHit.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.4)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
+    expect(
+      calc.compute(
+        new Read(formulas.SomethingIrreplaceable.healing.tag, undefined)
+      ).val
+    ).toBeCloseTo((523.908 + 582.12) * 1.4 * 0.12)
+  })
 })

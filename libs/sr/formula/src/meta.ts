@@ -1598,24 +1598,10 @@ export const conditionals = {
     enemyHpGE50: { sheet: 'ShatteredHome', name: 'enemyHpGE50', type: 'bool' },
   },
   SheAlreadyShutHerEyes: {
-    boolConditional: {
+    wearerHpReduced: {
       sheet: 'SheAlreadyShutHerEyes',
-      name: 'boolConditional',
+      name: 'wearerHpReduced',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SheAlreadyShutHerEyes',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SheAlreadyShutHerEyes',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   SigoniaTheUnclaimedDesolation: {
@@ -1650,66 +1636,16 @@ export const conditionals = {
     },
   },
   SleepLikeTheDead: {
-    boolConditional: {
-      sheet: 'SleepLikeTheDead',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SleepLikeTheDead',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SleepLikeTheDead',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    notCrit: { sheet: 'SleepLikeTheDead', name: 'notCrit', type: 'bool' },
   },
   SolitaryHealing: {
-    boolConditional: {
-      sheet: 'SolitaryHealing',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SolitaryHealing',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SolitaryHealing',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'SolitaryHealing', name: 'ultUsed', type: 'bool' },
   },
   SomethingIrreplaceable: {
-    boolConditional: {
+    wearerHit: {
       sheet: 'SomethingIrreplaceable',
-      name: 'boolConditional',
+      name: 'wearerHit',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SomethingIrreplaceable',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SomethingIrreplaceable',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Sparkle: {
@@ -4411,6 +4347,19 @@ export const formulas = {
       },
     },
   },
+  SheAlreadyShutHerEyes: {
+    maxHeal: {
+      sheet: 'SheAlreadyShutHerEyes',
+      name: 'maxHeal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'SheAlreadyShutHerEyes',
+        name: 'maxHeal',
+      },
+    },
+  },
   SilverWolf: {
     basicDmg_0: {
       sheet: 'SilverWolf',
@@ -4436,6 +4385,19 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  SomethingIrreplaceable: {
+    healing: {
+      sheet: 'SomethingIrreplaceable',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'SomethingIrreplaceable',
+        name: 'healing',
       },
     },
   },
@@ -16568,37 +16530,15 @@ export const buffs = {
     },
   },
   SheAlreadyShutHerEyes: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'SheAlreadyShutHerEyes',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SheAlreadyShutHerEyes',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'SheAlreadyShutHerEyes',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SheAlreadyShutHerEyes',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SheAlreadyShutHerEyes',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SheAlreadyShutHerEyes',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -16807,107 +16747,42 @@ export const buffs = {
     },
   },
   SleepLikeTheDead: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'SleepLikeTheDead',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'SleepLikeTheDead',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'SleepLikeTheDead',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SleepLikeTheDead',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SleepLikeTheDead',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SleepLikeTheDead',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },
   SolitaryHealing: {
-    cond_dmg_: {
+    dot_dmg_: {
       sheet: 'SolitaryHealing',
-      name: 'cond_dmg_',
+      name: 'dot_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'SolitaryHealing',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'SolitaryHealing',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SolitaryHealing',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SolitaryHealing',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SolitaryHealing',
-        name: 'team_dmg_',
+        damageType1: 'dot',
+        name: 'dot_dmg_',
       },
     },
   },
   SomethingIrreplaceable: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'SomethingIrreplaceable',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SomethingIrreplaceable',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'SomethingIrreplaceable',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SomethingIrreplaceable',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'SomethingIrreplaceable',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SomethingIrreplaceable',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
