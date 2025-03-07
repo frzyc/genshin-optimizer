@@ -15,7 +15,6 @@ import {
   Box,
   Button,
   CardActionArea,
-  CardContent,
   Grid,
   Stack,
   Typography,
@@ -118,11 +117,12 @@ function CharacterSection() {
           },
           justifyContent: 'center',
           backgroundColor: '#1b263b',
+          padding: '24px',
         }}
       >
         <Grid
           sx={{
-            padding: '24px',
+            width: '550px',
           }}
         >
           <Box
@@ -152,8 +152,11 @@ function CharacterSection() {
           sm={10}
           md={11}
           lg={11}
-          xl={12}
-          sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+          xl={9}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
         >
           <Box>
             <CurrentBuildDisplay />
@@ -177,21 +180,17 @@ function CurrentBuildDisplay() {
   const character = useCharacterContext()!
   const { key: characterKey, equippedDiscs, equippedWengine } = character
   return (
-    <CardThemed sx={{ width: '100%' }}>
-      <CardContent>
-        <EquippedGrid
-          setDisc={(slotKey, id) =>
-            id
-              ? database.discs.set(id, { location: characterKey })
-              : database.discs.set(equippedDiscs[slotKey], { location: '' })
-          }
-          setWengine={(id) =>
-            id
-              ? database.wengines.set(id, { location: characterKey })
-              : database.wengines.set(equippedWengine, { location: '' })
-          }
-        />
-      </CardContent>
-    </CardThemed>
+    <EquippedGrid
+      setDisc={(slotKey, id) =>
+        id
+          ? database.discs.set(id, { location: characterKey })
+          : database.discs.set(equippedDiscs[slotKey], { location: '' })
+      }
+      setWengine={(id) =>
+        id
+          ? database.wengines.set(id, { location: characterKey })
+          : database.wengines.set(equippedWengine, { location: '' })
+      }
+    />
   )
 }

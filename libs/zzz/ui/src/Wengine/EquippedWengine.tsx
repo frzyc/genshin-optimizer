@@ -171,7 +171,7 @@ export function EquippedWengineHeader({
           alignItems: 'center',
           gap: '12px',
           background: '#2B364D',
-          borderRadius: '12px',
+          borderRadius: '20px',
           px: '16px',
         }}
       >

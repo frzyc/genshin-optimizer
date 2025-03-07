@@ -89,13 +89,7 @@ export function EquippedGrid({
           />
         )}
       </Suspense>
-      <Grid
-        item
-        columns={columns}
-        container
-        spacing={1}
-        sx={{ padding: '16px 0px 16px 8px' }}
-      >
+      <Grid columns={columns} container sx={{ pl: '20px' }}>
         {wengine &&
         wengine.id &&
         database.wengines.keys.includes(wengine.id) ? (
@@ -118,10 +112,14 @@ export function EquippedGrid({
           />
         )}
       </Grid>
-      <Grid item columns={columns} container spacing={1}>
+      <Grid columns={columns} container>
         {!!discs &&
           Object.entries(discs).map(([slotKey, disc]) => (
-            <Grid item xs={1} key={disc?.id || slotKey}>
+            <Grid
+              xs={1}
+              key={disc?.id || slotKey}
+              sx={{ pl: '20px', pt: '20px' }}
+            >
               {disc?.id && database.discs.keys.includes(disc.id) ? (
                 <DiscCard
                   disc={disc}
