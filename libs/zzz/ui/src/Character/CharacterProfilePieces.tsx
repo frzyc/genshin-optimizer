@@ -254,7 +254,6 @@ function CharInformation({
           <Typography
             variant="h5"
             sx={{
-              fontStyle: 'italic',
               fontWeight: '900',
               whiteSpace: 'nowrap',
               maxWidth: '160px',
@@ -264,7 +263,14 @@ function CharInformation({
           >
             <CharacterName characterKey={characterKey} />
           </Typography>
-          <ElementIcon ele={attribute} />
+          <ElementIcon
+            iconProps={{
+              sx: {
+                fontSize: '2em',
+              },
+            }}
+            ele={attribute}
+          />
           <ImgIcon size={2} src={specialityDefIcon(specialty)} />
         </Box>
         <Box

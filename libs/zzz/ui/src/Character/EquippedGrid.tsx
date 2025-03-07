@@ -94,7 +94,7 @@ export function EquippedGrid({
         columns={columns}
         container
         spacing={1}
-        sx={{ padding: '16px 8px' }}
+        sx={{ padding: '16px 0px 16px 8px' }}
       >
         {wengine &&
         wengine.id &&
@@ -303,7 +303,12 @@ function WengineSwapButton({
         placement="top"
         arrow
       >
-        <Button color="info" size="small" onClick={onOpen}>
+        <Button
+          color="info"
+          size="small"
+          onClick={onOpen}
+          sx={{ padding: '6px' }}
+        >
           <SwapHorizIcon />
         </Button>
       </Tooltip>

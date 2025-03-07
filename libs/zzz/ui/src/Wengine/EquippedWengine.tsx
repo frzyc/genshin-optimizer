@@ -178,7 +178,6 @@ export function EquippedWengineHeader({
         <Typography
           sx={{
             fontWeight: '900',
-            fontStyle: 'italic',
           }}
           variant="subtitle1"
         >
@@ -226,7 +225,7 @@ export function EquippedWengineContent({
           py: '8px',
           mb: '12px',
           background: '#2B364D',
-          borderRadius: '20px',
+          borderRadius: '30px',
           justifyContent: 'space-between',
         }}
       >
@@ -247,7 +246,13 @@ export function EquippedWengineContent({
       </Box>
       <ZCard
         bgt="dark"
-        sx={{ display: 'flex', px: '16px', py: '6px', mb: '8px' }}
+        sx={{
+          display: 'flex',
+          px: '16px',
+          py: '6px',
+          mb: '8px',
+          borderRadius: '30px',
+        }}
       >
         <WengineSubstatDisplay
           substatKey={secondStatKey}
@@ -303,7 +308,12 @@ export function EquippedWengineFooter({
             placement="top"
             arrow
           >
-            <Button color="info" size="small" onClick={() => onEdit(id)}>
+            <Button
+              color="info"
+              size="small"
+              onClick={() => onEdit(id)}
+              sx={{ padding: '6px' }}
+            >
               <Edit />
             </Button>
           </BootstrapTooltip>

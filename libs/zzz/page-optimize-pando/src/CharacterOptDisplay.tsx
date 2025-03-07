@@ -103,13 +103,6 @@ function CharacterSection() {
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
-  const currentDisplayColumns = {
-    xs: 12,
-    sm: 10,
-    md: 11,
-    lg: 12,
-    xl: 9,
-  }
   return (
     <Stack spacing={1}>
       <Grid
@@ -130,7 +123,6 @@ function CharacterSection() {
         <Grid
           sx={{
             padding: '24px',
-            width: '523px',
           }}
         >
           <Box
@@ -138,6 +130,7 @@ function CharacterSection() {
               border: '4px rgb(46, 54, 70) solid',
               borderRadius: '20px',
               overflow: 'hidden',
+              mb: '16px',
             }}
           >
             <CharacterCoverOptimize character={character} />
@@ -155,7 +148,11 @@ function CharacterSection() {
           </Button>
         </Grid>
         <Grid
-          columns={currentDisplayColumns}
+          xs={12}
+          sm={10}
+          md={11}
+          lg={11}
+          xl={12}
           sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
         >
           <Box>

@@ -12,7 +12,7 @@ export function LocationName({ location }: { location: LocationKey }) {
       {location ? (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <CharIconCircle characterKey={location} size={2} />
-          <Box sx={{ pl: 1, fontSize: '1rem' }} component="span">
+          <Box sx={{ ml: '12px', fontSize: '1rem' }} component="span">
             <CharacterName characterKey={location}></CharacterName>
           </Box>
         </Box>
