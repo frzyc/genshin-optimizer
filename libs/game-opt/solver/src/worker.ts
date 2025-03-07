@@ -178,9 +178,9 @@ function compileProcess(
   const body = `'use strict';
 const[${cnds}]=candidates,out=[];let m=${minimum[0]},failed=0
 ${forEachBuild.join('')}{
-  const ${str};
+  const ${str}
   if(${constraints.join('||')}){failed+=1;continue}
-  if(m>${names.get(nodes[0])})continue;
+  if(m>${names.get(nodes[0])})continue
   if(${cleanThreshold}<out.push({ids:[${ids}],value:${names.get(nodes[0])}})){
     out.sort((a,b)=>b.value-a.value).splice(${topN})
     m=out[${topN - 1}].value
