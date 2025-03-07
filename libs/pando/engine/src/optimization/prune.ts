@@ -71,20 +71,20 @@ export function prune<I extends OP, ID>(
     reaffine(state)
     pruneBottom(state, topN)
   }
-  state.setNodes(simplify(state.nodes))
+  state.nodes = simplify(state.nodes)
   return state as any // reverse the `candidates` casting earlier
 }
 
 export class State<I extends OP> {
-  nodes: NumNode<I>[]
+  #nodes: NumNode<I>[]
   minimum: number[]
-  candidates: Candidate[][]
+  #candidates: Candidate[][]
   cat: string
 
   progress = true
-  _cndRanges: CndRanges | undefined
-  _nodeRanges: NodeRanges | undefined
-  _monotonicities: Monotonicities | undefined
+  #cndRanges: CndRanges | undefined
+  #nodeRanges: NodeRanges | undefined
+  #monotonicities: Monotonicities | undefined
 
   constructor(
     nodes: NumNode<I>[],
@@ -92,41 +92,47 @@ export class State<I extends OP> {
     candidates: Candidate[][],
     cat: string
   ) {
-    this.nodes = nodes
+    this.#nodes = nodes
     this.minimum = minimum
-    this.candidates = candidates
+    this.#candidates = candidates
     this.cat = cat
   }
 
-  setNodes(nodes: NumNode<I>[], minimum?: number[]) {
-    if (this.nodes === nodes) return
-    this.progress = true
-    this.nodes = nodes
-    if (minimum !== undefined) this.minimum = minimum
-    this._nodeRanges = undefined
-    this._monotonicities = undefined
+  get nodes(): NumNode<I>[] {
+    return this.#nodes
   }
-  setCandidates(candidates: Candidate[][], cndRanges?: CndRanges) {
+  set nodes(nodes: NumNode<I>[]) {
+    if (this.#nodes === nodes) return
+    this.progress = true
+    this.#nodes = nodes
+    this.#nodeRanges = this.#monotonicities = undefined
+  }
+
+  get candidates(): Candidate[][] {
+    return this.#candidates
+  }
+  set candidates(candidates: Candidate[][]) {
     if (this.candidates === candidates) return
     this.progress = true
-    this.candidates = candidates
-    this._cndRanges = cndRanges
-    this._nodeRanges = undefined
-    this._monotonicities = undefined
+    this.#candidates = candidates
+    this.#cndRanges = this.#nodeRanges = this.#monotonicities = undefined
   }
 
   get cndRanges(): CndRanges {
-    return (this._cndRanges ??= this.candidates.map(computeCndRanges))
+    return (this.#cndRanges ??= this.candidates.map(computeCndRanges))
+  }
+  set cndRanges(cndRanges: CndRanges) {
+    this.#cndRanges = cndRanges
   }
   get nodeRanges(): NodeRanges {
-    return (this._nodeRanges ??= computeNodeRanges(
+    return (this.#nodeRanges ??= computeNodeRanges(
       this.nodes,
       this.cat,
       this.cndRanges
     ))
   }
   get monotonicities(): Monotonicities {
-    return (this._monotonicities ??= getMonotonicities(
+    return (this.#monotonicities ??= getMonotonicities(
       this.nodes.slice(0, this.minimum.length),
       this.cat,
       this.nodeRanges
@@ -172,7 +178,7 @@ export function pruneBranches(state: State<OP>) {
     }
     return n
   })
-  state.setNodes(result)
+  state.nodes = result
 }
 
 /**
@@ -195,7 +201,10 @@ export function pruneRange(state: State<OP>, numReq: number) {
     }
     nodes.push(n)
   })
-  if (minimum.length != oldMin.length) state.setNodes(nodes, minimum)
+  if (minimum.length != oldMin.length) {
+    state.nodes = nodes
+    state.minimum = minimum
+  }
 
   if (!hasNonTrivialConstraint) return
 
@@ -213,7 +222,10 @@ export function pruneRange(state: State<OP>, numReq: number) {
       progress = true
     } else cndRanges[i] = oldCndRange
   })
-  if (progress) state.setCandidates(candidates, cndRanges)
+  if (progress) {
+    state.candidates = candidates
+    state.cndRanges = cndRanges
+  }
 }
 
 /** Remove candidates that are never in the `topN` builds */
@@ -264,7 +276,7 @@ export function pruneBottom(state: State<OP>, topN: number) {
   })
 
   if (candidates.some((cnds, i) => cnds.length != state.candidates[i].length))
-    state.setCandidates(candidates.map((cnds) => cnds.map((val) => val.c)))
+    state.candidates = candidates.map((cnds) => cnds.map((val) => val.c))
 }
 
 const offset = Symbol()
@@ -391,13 +403,11 @@ export function reaffine(state: State<OP>) {
     weightNodes.set(w, node)
   }
 
-  state.setCandidates(newCandidates)
-  state.setNodes(
-    mapBottomUp(nodes, (n, o) => {
-      const w = topWeights.get(o)
-      return w ? weightNodes.get(w)! : n
-    })
-  )
+  state.candidates = newCandidates
+  state.nodes = mapBottomUp(nodes, (n, o) => {
+    const w = topWeights.get(o)
+    return w ? weightNodes.get(w)! : n
+  })
 }
 
 /** Get range assuming any item in `cnds` can be selected */
