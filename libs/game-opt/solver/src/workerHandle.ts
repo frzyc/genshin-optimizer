@@ -19,7 +19,11 @@ export type AddWorkMsg = { ty: 'add'; works: Work[] }
 /** notify that add-work message has been received */
 export type RecvWorkMsg = { ty: 'recv' }
 /** progress report */
-export type ProgressMsg = { ty: 'progress'; builds: BuildResult[] } & Progress
+export type ProgressMsg = {
+  ty: 'progress'
+  builds: BuildResult[]
+  low: boolean
+} & Progress
 /** error message */
 export type ErrMsg = { ty: 'err'; msg: string }
 
@@ -38,7 +42,7 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     case 'init':
       if (worker) throw new Error('Worker is already initialized')
       worker = new Worker(msg)
-      return { ty: 'progress', ...worker.resetProgress() } // ready
+      return { ty: 'progress', low: true, ...worker.resetProgress() } // ready
     case 'config':
       worker.setOptThreshold(msg.threshold)
       return
@@ -48,13 +52,12 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     }
     case 'add':
       worker.add(msg.works)
-      processAllWorks() // runs in the background
-      return { ty: 'recv' }
+      return processAllWorks() // runs in the background
   }
 }
 
 let nextReport: number | undefined // `undefined` when not running
-async function processAllWorks(): Promise<void> {
+async function processAllWorks(): Promise<Response | undefined> {
   if (nextReport !== undefined) return // only one runner at a time
   nextReport = Date.now()
   do {
@@ -66,12 +69,13 @@ async function processAllWorks(): Promise<void> {
 
     // pace the reporting to `reportInterval` (except when low on works)
     const now = Date.now()
-    if (now >= nextReport || worker.subworks.length < 4) {
+    const low = worker.subworks.length <= 1
+    if (now >= nextReport || low) {
       nextReport = now + reportInterval
-      postMessage({ ty: 'progress', ...worker.resetProgress() })
+      postMessage({ ty: 'progress', low, ...worker.resetProgress() })
     }
     worker.process()
   } while (worker.hasWork())
-  postMessage({ ty: 'progress', ...worker.resetProgress() }) // final report
   nextReport = undefined
+  return { ty: 'progress', low: true, ...worker.resetProgress() } // final report
 }

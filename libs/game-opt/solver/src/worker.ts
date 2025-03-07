@@ -142,8 +142,8 @@ export class Worker {
       progress.remaining -= subwork.count - count
 
       if (!count) continue
-      if (subwork.count <= splitThreshold) {
-        subworks.push(subwork)
+      if (count <= splitThreshold) {
+        subworks.push({ nodes, candidates, minimum, count })
         return
       }
       subworks.push(
