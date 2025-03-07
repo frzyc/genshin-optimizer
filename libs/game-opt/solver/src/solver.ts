@@ -7,6 +7,8 @@ import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import type { Command, ErrMsg, Response } from './workerHandle'
 
+const reportInterval = 30 // (minimum) progress report interval for solver, in ms
+
 export interface SolverConfig {
   candidates: Candidate<string>[][]
   nodes: NumTagFree[]
@@ -29,6 +31,7 @@ export class Solver<ID extends string> {
   progress: Progress = { computed: 0, failed: 0, skipped: 0, remaining: 0 }
 
   results: Promise<BuildResult[]>
+  nextReport = Date.now()
   report: () => void
   finalize: (result: BuildResult[]) => void = () => {}
   terminate: (reason: any) => void = () => {}
@@ -119,17 +122,23 @@ export class Solver<ID extends string> {
 
         if (msg.idle) this.idle(worker)
 
-        const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
-        bestBuilds.sort((a, b) => b.value - a.value)
-        const threshold = bestBuilds[this.topN]?.value ?? -Infinity
-        if (threshold > this.optThreshold) {
-          this.optThreshold = threshold
-          this.info.forEach((_, w) => postMsg(w, { ty: 'config', threshold }))
+        const now = Date.now()
+        if (this.nextReport <= now || !msg.remaining) {
+          this.nextReport = now + reportInterval
+          this.report()
+
+          const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
+          bestBuilds.sort((a, b) => b.value - a.value)
+          const threshold = bestBuilds[this.topN]?.value ?? -Infinity
+          if (threshold > this.optThreshold) {
+            this.optThreshold = threshold
+            this.info.forEach((_, w) => postMsg(w, { ty: 'config', threshold }))
+          }
+
+          if (!this.progress.remaining)
+            this.finalize(bestBuilds.slice(0, this.topN))
         }
 
-        this.report() // TODO: pace this?
-        if (this.state.workers?.size === this.info.size)
-          this.finalize(bestBuilds.slice(0, this.topN))
         break
       }
       case 'add':

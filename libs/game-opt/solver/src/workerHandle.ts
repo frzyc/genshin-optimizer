@@ -1,7 +1,7 @@
 import type { BuildResult, Progress, Work } from './common'
 import { type WorkerConfig, Worker } from './worker'
 
-const reportInterval = 20 // (minimum) progress report interval for each worker, in ms
+const reportInterval = 35 // (minimum) progress report interval for each worker, in ms
 
 declare function postMessage(res: Response): void
 

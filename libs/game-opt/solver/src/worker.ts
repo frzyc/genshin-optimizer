@@ -1,10 +1,10 @@
 import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
-import { compile, prune } from '@genshin-optimizer/pando/engine'
+import { compiledStr, customOps, prune } from '@genshin-optimizer/pando/engine'
 import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import { splitCandidates } from './split'
 
-const splitThreshold = 20_000 // split if there are more possible builds than this
+const splitThreshold = 200_000 // split if there are more possible builds than this
 const cleanThreshold = 3000 // clean results if there are more results than this
 
 export interface WorkerConfig {
@@ -86,20 +86,15 @@ export class Worker {
     if (!subwork) return
     this.spreadSubworks()
 
-    const { progress, results } = this
+    const { progress, topN } = this
     const { nodes, minimum, candidates, count } = subwork
     minimum[0] = this.minimum[0] // in case the threshold was updated
-    const f = compile(nodes, 'q', candidates.length, {})
-    for (const build of allBuilds(candidates)) {
-      const vals = f(build)
-      // exclude `i === 0` as it is the opt-target, not an actual constraint
-      if (minimum.some((m, i) => i && vals[i] < m)) progress.failed += 1
-      else if (vals[0] >= minimum[0])
-        results.push({ value: vals[0], ids: build.map((b) => b.id) })
-    }
+    const f = compileProcess(nodes, minimum, topN, 'q', candidates.length)
+    const { failed, results } = f(candidates)
     progress.computed += count
+    progress.failed += failed
     progress.remaining -= count
-    if (results.length > cleanThreshold) this.clean()
+    this.results.push(...results)
   }
 
   setOptThreshold(threshold: number): void {
@@ -158,15 +153,45 @@ export class Worker {
   }
 }
 
-// Recursively generate all builds from given candidates
-function* allBuilds<V>(
-  candidates: V[][],
-  out: V[] = Array(candidates.length),
-  idx: number = candidates.length - 1
-): Generator<V[]> {
-  if (idx === -1) return yield out
-  for (const c of candidates[idx]) {
-    out[idx] = c
-    yield* allBuilds(candidates, out, idx - 1)
-  }
+function compileProcess(
+  nodes: NumTagFree[],
+  minimum: number[],
+  topN: number,
+  dynTagCat: string,
+  slotCount: number
+): (candidates: Candidate<string>[][]) => {
+  failed: number
+  results: { ids: string[]; value: number }[]
+} {
+  const slotIds = [...new Array(slotCount)].map((_, i) => i)
+  const cnds = slotIds.map((i) => `i${i}`) // i0, i1, ..
+  const cs = slotIds.map((i) => `c${i}`) // c0, c1, ..
+  let body = `'use strict';const[${cnds}]=candidates,out=[];let m=${minimum[0]},failed=0;`
+  for (const [name, f] of Object.entries(customOps))
+    body += `,f${name}=${f.calc.toString()}` // custom ops `f{name}`
+  for (let i = 0; i < slotCount; i++) body += `for(const c${i} of i${i})`
+  body += '{const _=0'
+
+  // formula
+  const { str, names } = compiledStr(nodes, 'x', ({ tag }) => {
+    const vals = cs.map((c) => `(${c}['${tag[dynTagCat]}']??0)`)
+    return `+(${vals.join('+')}+0)`
+  })
+  body += str
+
+  // constraint checks and pass/fail logic
+  const nodeNames = nodes.map((n) => names.get(n)!)
+  const constraints = minimum.map((m, i) => !!i && `${m}>${nodeNames[i]}`) // exclude opt threshold
+  const ids = cs.map((c) => `${c}['id']`)
+  body += `;
+  if(${constraints.join('||')}){failed+=1;continue}
+  if(m>${names.get(nodes[0])})continue;
+  out.push({ids:[${ids}],value:${names.get(nodes[0])}})
+  if(out.length>${cleanThreshold}){
+    out.sort((a,b)=>b.value-a.value).splice(${topN})
+    m=out[${topN - 1}].value
+  }`
+
+  body += '}return{failed,results:out}'
+  return new Function('candidates', body) as any
 }

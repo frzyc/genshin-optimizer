@@ -249,7 +249,7 @@ export function compile(
   let body = `'use strict';const _=0` // making sure `const` has at least one entry
   for (const [name, f] of Object.entries(customOps))
     body += `,f${name}=${f.calc.toString()}`
-  const { str, names } = compiledStr(n, ({ tag }) => {
+  const { str, names } = compiledStr(n, 'x', ({ tag }) => {
     const arr = [...new Array(slotCount)].map(
       (_, i) => `(b[${i}]['${tag[dynTagCat]}'] ?? 0)`
     )
@@ -268,7 +268,7 @@ export function compileDiff(
   let body = `'use strict';const _=0` // making sure `const` has at least one entry
   for (const [name, f] of Object.entries(customOps))
     body += `,f${name}=${f.calc.toString()},g${name}=${f.diff?.toString()}`
-  const { str, names } = compiledStr([n], ({ tag }) => {
+  const { str, names } = compiledStr([n], 'x', ({ tag }) => {
     const arr = [...new Array(slotCount)].map(
       (_, i) => `(b[${i}]['${tag[dynTagCat]}'] ?? 0)`
     )
@@ -350,8 +350,9 @@ export function compileDiff(
   return new Function(`b`, body) as any
 }
 
-function compiledStr(
+export function compiledStr(
   n: AnyTagFree[],
+  varPrefix: string,
   read: (_: BaseRead) => string
 ): { str: string; names: Map<AnyTagFree, string> } {
   let body = ''
@@ -362,7 +363,7 @@ function compiledStr(
     n.br.forEach(visit)
     const x = n.x.map((x) => names.get(x)!)
     const br = n.br.map((n) => names.get(n)!)
-    const out = `x${names.size}`
+    const out = `${varPrefix}${names.size}`
     names.set(n, out)
 
     switch (op) {
