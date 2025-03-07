@@ -170,28 +170,22 @@ function compileProcess(
   for (const [name, f] of Object.entries(customOps))
     body += `,f${name}=${f.calc.toString()}` // custom ops `f{name}`
   for (let i = 0; i < slotCount; i++) body += `for(const c${i} of i${i})`
-  body += '{const _=0'
 
-  // formula
   const { str, names } = compiledStr(nodes, 'x', ({ tag }) => {
     const vals = cs.map((c) => `(${c}['${tag[dynTagCat]}']??0)`)
     return `+(${vals.join('+')}+0)`
   })
-  body += str
 
   // constraint checks and pass/fail logic
   const nodeNames = nodes.map((n) => names.get(n)!)
   const constraints = minimum.map((m, i) => !!i && `${m}>${nodeNames[i]}`) // exclude opt threshold
   const ids = cs.map((c) => `${c}['id']`)
-  body += `;
+  body += `{const _=0${str};
   if(${constraints.join('||')}){failed+=1;continue}
   if(m>${names.get(nodes[0])})continue;
-  out.push({ids:[${ids}],value:${names.get(nodes[0])}})
-  if(out.length>${cleanThreshold}){
+  if(${cleanThreshold}<out.push({ids:[${ids}],value:${names.get(nodes[0])}})){
     out.sort((a,b)=>b.value-a.value).splice(${topN})
     m=out[${topN - 1}].value
-  }`
-
-  body += '}return{failed,results:out}'
+  }}return{failed,results:out}`
   return new Function('candidates', body) as any
 }
