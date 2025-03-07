@@ -2407,4 +2407,88 @@ describe('Light Cone sheets test', () => {
     // Base + LC cond
     expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
   })
+
+  it('VictoryInABlink', () => {
+    const charKey: CharacterKey = 'Aglaea'
+    const data = testCharacterData(charKey, 'VictoryInABlink')
+    data.push(
+      cond(
+        charKey,
+        'VictoryInABlink',
+        conditionals.VictoryInABlink.memospriteAbilityUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.24)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.16)
+  })
+
+  it('Void', () => {
+    const charKey: CharacterKey = 'BlackSwan'
+    const data = testCharacterData(charKey, 'Void')
+    data.push(cond(charKey, 'Void', conditionals.Void.battleStart.name, 1))
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.eff_).val).toBeCloseTo(0.4)
+  })
+
+  it('WarmthShortensColdNights', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const otherCharKey: CharacterKey = 'Seele'
+    const data = testTeamData(charKey, otherCharKey, 'WarmthShortensColdNights')
+    const calcLingsha = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const calcSeele = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: otherCharKey })
+
+    expect(calcLingsha.compute(own.final.hp_).val).toBeCloseTo(0.32)
+    expect(
+      calcSeele.compute(
+        new Read(formulas.WarmthShortensColdNights.healing.tag, undefined)
+      ).val
+    ).toBeCloseTo(931.392 * 0.04)
+  })
+
+  it('WeAreWildfire', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const otherCharKey: CharacterKey = 'Seele'
+    const data = testTeamData(charKey, otherCharKey, 'WeAreWildfire')
+    data.push(
+      cond(
+        charKey,
+        'WeAreWildfire',
+        conditionals.WeAreWildfire.hpDifference.name,
+        99
+      )
+    )
+    const calcSeele = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: otherCharKey })
+
+    expect(
+      calcSeele.compute(new Read(formulas.WeAreWildfire.healing.tag, undefined))
+        .val
+    ).toBeCloseTo(931.392 * 0.99 * 0.5)
+  })
 })

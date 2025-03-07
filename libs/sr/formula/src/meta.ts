@@ -1996,64 +1996,13 @@ export const conditionals = {
     },
   },
   VictoryInABlink: {
-    boolConditional: {
+    memospriteAbilityUsed: {
       sheet: 'VictoryInABlink',
-      name: 'boolConditional',
+      name: 'memospriteAbilityUsed',
       type: 'bool',
     },
-    listConditional: {
-      sheet: 'VictoryInABlink',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'VictoryInABlink',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
   },
-  Void: {
-    boolConditional: { sheet: 'Void', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Void',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Void',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  WarmthShortensColdNights: {
-    boolConditional: {
-      sheet: 'WarmthShortensColdNights',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WarmthShortensColdNights',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WarmthShortensColdNights',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
+  Void: { battleStart: { sheet: 'Void', name: 'battleStart', type: 'bool' } },
   WastelanderOfBanditryDesert: {
     attackingDebuffed: {
       sheet: 'WastelanderOfBanditryDesert',
@@ -2074,24 +2023,13 @@ export const conditionals = {
     },
   },
   WeAreWildfire: {
-    boolConditional: {
+    hpDifference: {
       sheet: 'WeAreWildfire',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WeAreWildfire',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WeAreWildfire',
-      name: 'numConditional',
+      name: 'hpDifference',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 99,
     },
   },
   WeWillMeetAgain: {
@@ -4480,6 +4418,32 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  WarmthShortensColdNights: {
+    healing: {
+      sheet: 'WarmthShortensColdNights',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'WarmthShortensColdNights',
+        name: 'healing',
+      },
+    },
+  },
+  WeAreWildfire: {
+    healing: {
+      sheet: 'WeAreWildfire',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'WeAreWildfire',
+        name: 'healing',
       },
     },
   },
@@ -18962,107 +18926,28 @@ export const buffs = {
     },
   },
   VictoryInABlink: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'VictoryInABlink',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'VictoryInABlink',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'VictoryInABlink',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'VictoryInABlink',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'VictoryInABlink',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'VictoryInABlink',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
   Void: {
-    cond_dmg_: {
+    eff_: {
       sheet: 'Void',
-      name: 'cond_dmg_',
+      name: 'eff_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'eff_',
         sheet: 'Void',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'Void',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'Void',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Void',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'Void',
-        name: 'team_dmg_',
-      },
-    },
-  },
-  WarmthShortensColdNights: {
-    cond_dmg_: {
-      sheet: 'WarmthShortensColdNights',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WarmthShortensColdNights',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'WarmthShortensColdNights',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WarmthShortensColdNights',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WarmthShortensColdNights',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WarmthShortensColdNights',
-        name: 'team_dmg_',
+        name: 'eff_',
       },
     },
   },
@@ -19100,41 +18985,6 @@ export const buffs = {
         q: 'brEffect_',
         sheet: 'WatchmakerMasterOfDreamMachinations',
         name: 'set4_brEffect_',
-      },
-    },
-  },
-  WeAreWildfire: {
-    cond_dmg_: {
-      sheet: 'WeAreWildfire',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WeAreWildfire',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'WeAreWildfire',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WeAreWildfire',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WeAreWildfire',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WeAreWildfire',
-        name: 'team_dmg_',
       },
     },
   },
