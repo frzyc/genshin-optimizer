@@ -1,5 +1,5 @@
 import type { Candidate, NumTagFree } from '@genshin-optimizer/pando/engine'
-import { compiledStr, customOps, prune } from '@genshin-optimizer/pando/engine'
+import { executionStr, prune } from '@genshin-optimizer/pando/engine'
 import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import { splitCandidates } from './split'
@@ -166,26 +166,26 @@ function compileProcess(
   const slotIds = [...new Array(slotCount)].map((_, i) => i)
   const cnds = slotIds.map((i) => `i${i}`) // i0, i1, ..
   const cs = slotIds.map((i) => `c${i}`) // c0, c1, ..
-  let body = `'use strict';const[${cnds}]=candidates,out=[];let m=${minimum[0]},failed=0;`
-  for (const [name, f] of Object.entries(customOps))
-    body += `,f${name}=${f.calc.toString()}` // custom ops `f{name}`
-  for (let i = 0; i < slotCount; i++) body += `for(const c${i} of i${i})`
-
-  const { str, names } = compiledStr(nodes, 'x', ({ tag }) => {
+  const forEachBuild = slotIds.map((i) => `for(const c${i} of i${i})`)
+  const { str, names } = executionStr(nodes, 'x', ({ tag }) => {
     const vals = cs.map((c) => `(${c}['${tag[dynTagCat]}']??0)`)
     return `+(${vals.join('+')}+0)`
   })
-
-  // constraint checks and pass/fail logic
   const nodeNames = nodes.map((n) => names.get(n)!)
   const constraints = minimum.map((m, i) => !!i && `${m}>${nodeNames[i]}`) // exclude opt threshold
   const ids = cs.map((c) => `${c}['id']`)
-  body += `{const _=0${str};
+
+  const body = `'use strict';
+const[${cnds}]=candidates,out=[];let m=${minimum[0]},failed=0
+${forEachBuild.join('')}{
+  const ${str};
   if(${constraints.join('||')}){failed+=1;continue}
   if(m>${names.get(nodes[0])})continue;
   if(${cleanThreshold}<out.push({ids:[${ids}],value:${names.get(nodes[0])}})){
     out.sort((a,b)=>b.value-a.value).splice(${topN})
     m=out[${topN - 1}].value
-  }}return{failed,results:out}`
+  }
+}
+return{failed,results:out}`
   return new Function('candidates', body) as any
 }
