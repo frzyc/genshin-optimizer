@@ -229,31 +229,32 @@ function dedupMapArray<I, O>(x: I[], map: (_: I) => O): O[] {
 export function compile(
   n: NumTagFree[],
   dynTagCat: string,
-  slotCount: number,
-  initial: Record<string, number>
+  slotCount: number
 ): (_: Record<string, number>[]) => number[]
 export function compile(
   n: StrTagFree[],
   dynTagCat: string,
-  slotCount: number,
-  initial: Record<string, string>
+  slotCount: number
 ): (_: Record<string, string>[]) => string[]
 export function compile(
   n: AnyTagFree[],
   dynTagCat: string,
-  slotCount: number,
-  initial: Record<string, any>
+  slotCount: number
 ): (_: Record<string, any>[]) => any[]
 export function compile(
   n: AnyTagFree[],
   dynTagCat: string,
-  slotCount: number,
-  initial: Record<string, any>
+  slotCount: number
 ): (_: Record<string, any>[]) => any[] {
   let body = `'use strict';const _=0` // making sure `const` has at least one entry
   for (const [name, f] of Object.entries(customOps))
     body += `,f${name}=${f.calc.toString()}`
-  const { str, names } = compiledStr(n, dynTagCat, slotCount, initial)
+  const { str, names } = compiledStr(n, ({ tag }) => {
+    const arr = [...new Array(slotCount)].map(
+      (_, i) => `(b[${i}]['${tag[dynTagCat]}'] ?? 0)`
+    )
+    return `+(${arr.join('+')}+0)`
+  })
   body += `${str};return[${n.map((n) => names.get(n)!)}]`
   return new Function(`b`, body) as any
 }
@@ -262,13 +263,17 @@ export function compileDiff(
   n: AnyTagFree,
   dynTagCat: string,
   diffTags: string[],
-  slotCount: number,
-  initial: Record<string, any>
+  slotCount: number
 ): (_: Record<string, any>[]) => any[] {
   let body = `'use strict';const _=0` // making sure `const` has at least one entry
   for (const [name, f] of Object.entries(customOps))
     body += `,f${name}=${f.calc.toString()},g${name}=${f.diff?.toString()}`
-  const { str, names } = compiledStr([n], dynTagCat, slotCount, initial)
+  const { str, names } = compiledStr([n], ({ tag }) => {
+    const arr = [...new Array(slotCount)].map(
+      (_, i) => `(b[${i}]['${tag[dynTagCat]}'] ?? 0)`
+    )
+    return `+(${arr.join('+')}+0)`
+  })
   body += `${str},diff=(t)=>{const _=0`
   const discrete = new Set<string>() // values that must be discrete
   traverse([n], (n, visit) => {
@@ -347,9 +352,7 @@ export function compileDiff(
 
 function compiledStr(
   n: AnyTagFree[],
-  dynTagCat: string,
-  slotCount: number,
-  initial: Record<string, any>
+  read: (_: BaseRead) => string
 ): { str: string; names: Map<AnyTagFree, string> } {
   let body = ''
   const names = new Map<AnyTagFree, string>()
@@ -386,12 +389,7 @@ function compiledStr(
         body += `,${out}=${br[0]}>=${br[1]}?${x[0]}:${x[1]}`
         break
       case 'read': {
-        const key = n.tag[dynTagCat]!
-        let arr = [...new Array(slotCount)].map(
-          (_, i) => `(b[${i}]['${key}'] ?? 0)`
-        )
-        if (initial[key]) arr = [initial[key]!.toString(), ...arr]
-        body += `,${out}=+(${arr.join('+')}+0)`
+        body += `,${out}=${read(n)}`
         break
       }
       case 'subscript':
