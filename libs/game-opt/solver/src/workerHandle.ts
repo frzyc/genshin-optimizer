@@ -22,7 +22,7 @@ export type RecvWorkMsg = { ty: 'recv' }
 export type ProgressMsg = {
   ty: 'progress'
   builds: BuildResult[]
-  low: boolean
+  idle: boolean
 } & Progress
 /** error message */
 export type ErrMsg = { ty: 'err'; msg: string }
@@ -42,7 +42,7 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     case 'init':
       if (worker) throw new Error('Worker is already initialized')
       worker = new Worker(msg)
-      return { ty: 'progress', low: true, ...worker.resetProgress() } // ready
+      return { ty: 'progress', idle: true, ...worker.resetProgress() } // ready
     case 'config':
       worker.setOptThreshold(msg.threshold)
       return
@@ -60,6 +60,7 @@ let nextReport: number | undefined // `undefined` when not running
 async function processAllWorks(): Promise<Response | undefined> {
   if (nextReport !== undefined) return // only one runner at a time
   nextReport = Date.now()
+  let idle: boolean
   do {
     // Suspend here in case a new config/work stealing is sent over
     //
@@ -69,13 +70,13 @@ async function processAllWorks(): Promise<Response | undefined> {
 
     // pace the reporting to `reportInterval` (except when low on works)
     const now = Date.now()
-    const low = worker.subworks.length <= 1
-    if (now >= nextReport || low) {
+    idle = worker.subworks.length <= 1 // will `idle` after `process`, send msg first
+    if (now >= nextReport || idle) {
       nextReport = now + reportInterval
-      postMessage({ ty: 'progress', low, ...worker.resetProgress() })
+      postMessage({ ty: 'progress', idle, ...worker.resetProgress() })
     }
     worker.process()
   } while (worker.hasWork())
   nextReport = undefined
-  return { ty: 'progress', low: true, ...worker.resetProgress() } // final report
+  return { ty: 'progress', idle: !idle, ...worker.resetProgress() } // final report, `idle` if not already
 }
