@@ -2491,4 +2491,66 @@ describe('Light Cone sheets test', () => {
         .val
     ).toBeCloseTo(931.392 * 0.99 * 0.5)
   })
+
+  // WeWillMeetAgain should be here but no conds
+
+  it('WhatIsReal', () => {
+    const charKey: CharacterKey = 'Lingsha'
+    const data = testCharacterData(charKey, 'WhatIsReal')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.48)
+    expect(
+      calc.compute(new Read(formulas.WhatIsReal.healing.tag, undefined)).val
+    ).toBeCloseTo((1358.28 + 1058.4) * 0.04 + 800)
+  })
+
+  it('WhereaboutsShouldDreamsRest', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'WhereaboutsShouldDreamsRest')
+    data.push(
+      cond(
+        charKey,
+        'WhereaboutsShouldDreamsRest',
+        conditionals.WhereaboutsShouldDreamsRest.routed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(1)
+    expect(calc.compute(char.final.dmg_.break[0]).val).toBeCloseTo(0.4)
+  })
+
+  it('WoofWalkTime', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'WoofWalkTime')
+    data.push(
+      cond(
+        charKey,
+        'WoofWalkTime',
+        conditionals.WoofWalkTime.enemyAffectedByBurnOrBleed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.2)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.32)
+  })
 })

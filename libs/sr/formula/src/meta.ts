@@ -2032,27 +2032,6 @@ export const conditionals = {
       max: 99,
     },
   },
-  WeWillMeetAgain: {
-    boolConditional: {
-      sheet: 'WeWillMeetAgain',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WeWillMeetAgain',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WeWillMeetAgain',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Welt: {
     boolConditional: { sheet: 'Welt', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -2070,67 +2049,18 @@ export const conditionals = {
       max: 2,
     },
   },
-  WhatIsReal: {
-    boolConditional: {
-      sheet: 'WhatIsReal',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WhatIsReal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WhatIsReal',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   WhereaboutsShouldDreamsRest: {
-    boolConditional: {
+    routed: {
       sheet: 'WhereaboutsShouldDreamsRest',
-      name: 'boolConditional',
+      name: 'routed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WhereaboutsShouldDreamsRest',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WhereaboutsShouldDreamsRest',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   WoofWalkTime: {
-    boolConditional: {
+    enemyAffectedByBurnOrBleed: {
       sheet: 'WoofWalkTime',
-      name: 'boolConditional',
+      name: 'enemyAffectedByBurnOrBleed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WoofWalkTime',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WoofWalkTime',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   WorrisomeBlissful: {
@@ -4472,6 +4402,19 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  WhatIsReal: {
+    healing: {
+      sheet: 'WhatIsReal',
+      name: 'healing',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'WhatIsReal',
+        name: 'healing',
       },
     },
   },
@@ -18988,41 +18931,6 @@ export const buffs = {
       },
     },
   },
-  WeWillMeetAgain: {
-    cond_dmg_: {
-      sheet: 'WeWillMeetAgain',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WeWillMeetAgain',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'WeWillMeetAgain',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WeWillMeetAgain',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WeWillMeetAgain',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WeWillMeetAgain',
-        name: 'team_dmg_',
-      },
-    },
-  },
   Welt: {
     e6_dmg_: {
       sheet: 'Welt',
@@ -19215,108 +19123,30 @@ export const buffs = {
       },
     },
   },
-  WhatIsReal: {
-    cond_dmg_: {
-      sheet: 'WhatIsReal',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WhatIsReal',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'WhatIsReal',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WhatIsReal',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WhatIsReal',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WhatIsReal',
-        name: 'team_dmg_',
-      },
-    },
-  },
   WhereaboutsShouldDreamsRest: {
-    cond_dmg_: {
+    break_dmg_: {
       sheet: 'WhereaboutsShouldDreamsRest',
-      name: 'cond_dmg_',
+      name: 'break_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'WhereaboutsShouldDreamsRest',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'WhereaboutsShouldDreamsRest',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WhereaboutsShouldDreamsRest',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WhereaboutsShouldDreamsRest',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WhereaboutsShouldDreamsRest',
-        name: 'team_dmg_',
+        damageType1: 'break',
+        name: 'break_dmg_',
       },
     },
   },
   WoofWalkTime: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'WoofWalkTime',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WoofWalkTime',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'WoofWalkTime',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WoofWalkTime',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WoofWalkTime',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'WoofWalkTime',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },

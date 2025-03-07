@@ -9,5 +9,7 @@ const sheet = registerLightCone(
   key,
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen)
+
+  // TODO: add damage formula
 )
 export default sheet
