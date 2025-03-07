@@ -28,8 +28,8 @@ type PruneResult<I extends OP, ID> = {
   minimum: number[]
   candidates: Candidate<ID>[][]
 
-  cndRanges: Record<string, Range>[]
-  monotonicities: Map<string, Monotonicity>
+  cndRanges: CndRanges
+  monotonicities: Monotonicities
 }
 
 /**
@@ -60,10 +60,7 @@ export function prune<I extends OP, ID>(
   minimum: number[],
   topN: number
 ): PruneResult<I, ID> {
-  // This `candidate` casting is fine as the rest of the code treats `id`
-  // as an opaque object. The only thing that matter is that `id` field
-  // exists in both outer- and inner-facing interfaces.
-  const state = new State(nodes, minimum, candidates as any, dynTagCat)
+  const state = new State(nodes, minimum, candidates, dynTagCat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
@@ -72,13 +69,13 @@ export function prune<I extends OP, ID>(
     pruneBottom(state, topN)
   }
   state.nodes = simplify(state.nodes)
-  return state as any // reverse the `candidates` casting earlier
+  return state
 }
 
-export class State<I extends OP> {
+export class State<I extends OP, ID> implements PruneResult<I, ID> {
   #nodes: NumNode<I>[]
   minimum: number[]
-  #candidates: Candidate[][]
+  #candidates: Candidate<ID>[][]
   cat: string
 
   progress = true
@@ -89,7 +86,7 @@ export class State<I extends OP> {
   constructor(
     nodes: NumNode<I>[],
     minimum: number[],
-    candidates: Candidate[][],
+    candidates: Candidate<ID>[][],
     cat: string
   ) {
     this.#nodes = nodes
@@ -108,10 +105,10 @@ export class State<I extends OP> {
     this.#nodeRanges = this.#monotonicities = undefined
   }
 
-  get candidates(): Candidate[][] {
+  get candidates(): Candidate<ID>[][] {
     return this.#candidates
   }
-  set candidates(candidates: Candidate[][]) {
+  set candidates(candidates: Candidate<ID>[][]) {
     if (this.candidates === candidates) return
     this.progress = true
     this.#candidates = candidates
@@ -141,7 +138,7 @@ export class State<I extends OP> {
 }
 
 /** Remove branches that are never chosen */
-export function pruneBranches(state: State<OP>) {
+export function pruneBranches<ID>(state: State<OP, ID>) {
   const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
     const r = nodeRanges.get(o)!
@@ -185,7 +182,7 @@ export function pruneBranches(state: State<OP>) {
  * - Remove candidates that do not meet the `minimum` requirements in any builds
  * - Remove top-level nodes whose `minimum` requirements are met by every build
  */
-export function pruneRange(state: State<OP>, numReq: number) {
+export function pruneRange<ID>(state: State<OP, ID>, numReq: number) {
   const { nodeRanges, minimum: oldMin, cat } = state
   const candidates = [...state.candidates]
   const cndRanges = [...state.cndRanges]
@@ -229,9 +226,9 @@ export function pruneRange(state: State<OP>, numReq: number) {
 }
 
 /** Remove candidates that are never in the `topN` builds */
-export function pruneBottom(state: State<OP>, topN: number) {
+export function pruneBottom<ID>(state: State<OP, ID>, topN: number) {
   const monotonicities = [...state.monotonicities]
-  type Val = { incomp: number[]; inc: Record<string, number>; c: Candidate }
+  type Val = { incomp: number[]; inc: Record<string, number>; c: Candidate<ID> }
   const vals = state.candidates.map((comp) =>
     comp.map((c) => {
       const out: Val = { incomp: [], inc: {}, c }
@@ -284,7 +281,7 @@ const offset = Symbol()
  * Replace `read`/`sum`/`prod` combinations with smaller `read` nodes. If changes are made,
  * `candidates` will be replaced with new values with all string keys replaced, maintaining only 'id'.
  */
-export function reaffine(state: State<OP>) {
+export function reaffine<ID>(state: State<OP, ID>) {
   const { nodes, cat, candidates } = state
   type Weight = Record<string | typeof offset, number>
   const weights = new Map<AnyNode<OP>, Weight>()
@@ -357,7 +354,7 @@ export function reaffine(state: State<OP>) {
   }
   const newCandidates = candidates.map((cnds) =>
     cnds.map((c) => {
-      const result: Candidate = { id: c['id'] }
+      const result = { id: c['id'] } as Candidate<ID>
       readNames.forEach((name, w) => {
         if (name in result) return // same weight, different offsets
         result[name] = Object.entries(w).reduce(
@@ -411,13 +408,13 @@ export function reaffine(state: State<OP>) {
 }
 
 /** Get range assuming any item in `cnds` can be selected */
-function computeCndRanges(cnds: Candidate[]): CndRanges[number] {
+function computeCndRanges<ID>(cnds: Candidate<ID>[]): CndRanges[number] {
   // CAUTION:
   // This is the only place where `id` is treated as non-opaque (comparable)
   // objects. If `c1.id < c2.id` may crash, we have to change the algorithm
   // or exclude `id` specifically. We don't care if the comparison result is
   // gibberish, though, so long as it succeeds.
-  const iter = cnds.values()
+  const iter = (cnds as Candidate[]).values()
   const first: Candidate | undefined = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(
