@@ -2332,4 +2332,79 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.hp_).val).toBeCloseTo(0.3)
     expect(calc.compute(char.final.heal_).val).toBeCloseTo(0.2)
   })
+
+  it('TimeWovenIntoGold', () => {
+    const charKey: CharacterKey = 'Aglaea'
+    const data = testCharacterData(charKey, 'TimeWovenIntoGold')
+    data.push(
+      cond(
+        charKey,
+        'TimeWovenIntoGold',
+        conditionals.TimeWovenIntoGold.brocade.name,
+        6
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.spd).val).toBeCloseTo(102 + 20)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 6 * 0.15)
+    expect(calc.compute(char.final.dmg_.basic[0]).val).toBeCloseTo(6 * 0.15)
+    // TODO: check memosprite
+  })
+
+  it('TodayIsAnotherPeacefulDay', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'TodayIsAnotherPeacefulDay')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(140 * 0.004)
+  })
+
+  it('TrendOfTheUniversalMarket', () => {
+    const charKey: CharacterKey = 'FuXuan'
+    const data = testCharacterData(charKey, 'TrendOfTheUniversalMarket')
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.def_).val).toBeCloseTo(0.32)
+  })
+
+  it('UnderTheBlueSky', () => {
+    const charKey: CharacterKey = 'Firefly'
+    const data = testCharacterData(charKey, 'UnderTheBlueSky')
+    data.push(
+      cond(
+        charKey,
+        'UnderTheBlueSky',
+        conditionals.UnderTheBlueSky.enemyDefeated.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.32)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.24)
+  })
 })

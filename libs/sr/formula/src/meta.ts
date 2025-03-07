@@ -1832,24 +1832,13 @@ export const conditionals = {
     unarmored: { sheet: 'ThoseManySprings', name: 'unarmored', type: 'bool' },
   },
   TimeWovenIntoGold: {
-    boolConditional: {
+    brocade: {
       sheet: 'TimeWovenIntoGold',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TimeWovenIntoGold',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TimeWovenIntoGold',
-      name: 'numConditional',
+      name: 'brocade',
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 6,
     },
   },
   Tingyun: {
@@ -1866,27 +1855,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Tingyun',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  TodayIsAnotherPeacefulDay: {
-    boolConditional: {
-      sheet: 'TodayIsAnotherPeacefulDay',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TodayIsAnotherPeacefulDay',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TodayIsAnotherPeacefulDay',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1999,27 +1967,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  TrendOfTheUniversalMarket: {
-    boolConditional: {
-      sheet: 'TrendOfTheUniversalMarket',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TrendOfTheUniversalMarket',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TrendOfTheUniversalMarket',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Tribbie: {
     boolConditional: {
       sheet: 'Tribbie',
@@ -2042,24 +1989,10 @@ export const conditionals = {
     },
   },
   UnderTheBlueSky: {
-    boolConditional: {
+    enemyDefeated: {
       sheet: 'UnderTheBlueSky',
-      name: 'boolConditional',
+      name: 'enemyDefeated',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'UnderTheBlueSky',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'UnderTheBlueSky',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   VictoryInABlink: {
@@ -4504,6 +4437,21 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  TrendOfTheUniversalMarket: {
+    burn_0: {
+      sheet: 'TrendOfTheUniversalMarket',
+      name: 'burn_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TrendOfTheUniversalMarket',
+        damageType1: 'dot',
+        elementalType: 'fire',
+        name: 'burn_0',
       },
     },
   },
@@ -17619,37 +17567,27 @@ export const buffs = {
     },
   },
   TimeWovenIntoGold: {
-    cond_dmg_: {
+    basic_dmg_: {
       sheet: 'TimeWovenIntoGold',
-      name: 'cond_dmg_',
+      name: 'basic_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'TimeWovenIntoGold',
-        name: 'cond_dmg_',
+        damageType1: 'basic',
+        name: 'basic_dmg_',
       },
     },
-    enemy_defRed_: {
+    crit_dmg_: {
       sheet: 'TimeWovenIntoGold',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TimeWovenIntoGold',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TimeWovenIntoGold',
-      name: 'team_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'TimeWovenIntoGold',
-        name: 'team_dmg_',
+        name: 'crit_dmg_',
       },
     },
   },
@@ -17845,37 +17783,15 @@ export const buffs = {
     },
   },
   TodayIsAnotherPeacefulDay: {
-    cond_dmg_: {
+    common_dmg_: {
       sheet: 'TodayIsAnotherPeacefulDay',
-      name: 'cond_dmg_',
+      name: 'common_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TodayIsAnotherPeacefulDay',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TodayIsAnotherPeacefulDay',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TodayIsAnotherPeacefulDay',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TodayIsAnotherPeacefulDay',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TodayIsAnotherPeacefulDay',
-        name: 'team_dmg_',
+        name: 'common_dmg_',
       },
     },
   },
@@ -18843,41 +18759,6 @@ export const buffs = {
       },
     },
   },
-  TrendOfTheUniversalMarket: {
-    cond_dmg_: {
-      sheet: 'TrendOfTheUniversalMarket',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TrendOfTheUniversalMarket',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'TrendOfTheUniversalMarket',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TrendOfTheUniversalMarket',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TrendOfTheUniversalMarket',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TrendOfTheUniversalMarket',
-        name: 'team_dmg_',
-      },
-    },
-  },
   Tribbie: {
     e6_dmg_: {
       sheet: 'Tribbie',
@@ -19068,37 +18949,15 @@ export const buffs = {
     },
   },
   UnderTheBlueSky: {
-    cond_dmg_: {
+    crit_: {
       sheet: 'UnderTheBlueSky',
-      name: 'cond_dmg_',
+      name: 'crit_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_',
         sheet: 'UnderTheBlueSky',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'UnderTheBlueSky',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'UnderTheBlueSky',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'UnderTheBlueSky',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'UnderTheBlueSky',
-        name: 'team_dmg_',
+        name: 'crit_',
       },
     },
   },
