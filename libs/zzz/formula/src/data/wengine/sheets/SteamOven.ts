@@ -14,7 +14,7 @@ import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
   registerWengine,
-  showSpecialtyCount,
+  showSpecialtyAndEquipped,
 } from '../util'
 
 const key: WengineKey = 'SteamOven'
@@ -40,21 +40,21 @@ const sheet = registerWengine(
         boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
       )
     ),
-    showSpecialtyCount(key)
+    showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'team_dmg_',
     teamBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
     ),
-    showSpecialtyCount(key)
+    showSpecialtyAndEquipped(key)
   ),
   registerBuff(
     'enemy_defIgn_',
     enemyDebuff.common.dmgRed_.add(
       cmpSpecialtyAndEquipped(key, numConditional)
     ),
-    showSpecialtyCount(key)
+    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet

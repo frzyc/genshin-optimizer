@@ -11,7 +11,7 @@ import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
   registerWengine,
-  showSpecialtyCount,
+  showSpecialtyAndEquipped,
 } from '../util'
 
 const key: WengineKey = 'BashfulDemon'
@@ -33,7 +33,7 @@ const sheet = registerWengine(
         subscript(modification, [-1, 0.15, 0.175, 0.2, 0.22, 0.24])
       )
     ),
-    showSpecialtyCount(key)
+    showSpecialtyAndEquipped(key)
   ),
 
   // Conditional buffs
@@ -48,7 +48,7 @@ const sheet = registerWengine(
         )
       )
     ),
-    showSpecialtyCount(key)
+    showSpecialtyAndEquipped(key)
   )
 )
 export default sheet
