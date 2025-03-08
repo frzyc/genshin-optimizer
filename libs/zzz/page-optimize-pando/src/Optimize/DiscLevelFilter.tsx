@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { discMaxLevel } from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigContext,
   useDatabaseContext,
@@ -25,8 +26,8 @@ export const DiscLevelFilter = memo(function DiscLevelFilter({
       </CardContent>
       <Divider />
       <DiscLevelSlider
-        levelLow={optConfig?.levelLow ?? 15}
-        levelHigh={optConfig?.levelHigh ?? 15}
+        levelLow={optConfig?.levelLow ?? discMaxLevel['S']}
+        levelHigh={optConfig?.levelHigh ?? discMaxLevel['S']}
         setLow={(levelLow) =>
           database.optConfigs.set(optConfigId, { levelLow })
         }

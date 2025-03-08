@@ -4,7 +4,6 @@ import {
   allWengineKeys,
   wengineMaxLevel,
 } from '@genshin-optimizer/zzz/consts'
-import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
 import type { ICachedCharacter } from '../../Interfaces'
@@ -29,8 +28,7 @@ export class WengineDataManager extends DataManager<
     let { phase, location, lock } = obj as IWengine
 
     if (!allWengineKeys.includes(key)) return undefined
-    const { rarity } = getWengineStat(key)
-    if (rawLevel > wengineMaxLevel[rarity]) return undefined
+    if (rawLevel > wengineMaxLevel) return undefined
     const { sanitizedLevel, milestone: modification } = validateLevelMilestone(
       rawLevel,
       rawMod

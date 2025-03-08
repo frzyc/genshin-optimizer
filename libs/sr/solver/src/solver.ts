@@ -1,8 +1,20 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type { Candidate, Progress } from '@genshin-optimizer/game-opt/solver'
 import { Solver } from '@genshin-optimizer/game-opt/solver'
-import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
-import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import {
+  constant,
+  detach,
+  max,
+  prod,
+  read,
+  sum,
+} from '@genshin-optimizer/pando/engine'
+import type {
+  CharacterKey,
+  RelicCavernSetKey,
+  RelicPlanarSetKey,
+  RelicSlotKey,
+} from '@genshin-optimizer/sr/consts'
 import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type {
   ICachedLightCone,
@@ -19,6 +31,9 @@ export function optimize(
   frames: Team['frames'],
   topN: number,
   statFilters: Array<Omit<StatFilter, 'disabled'>>,
+  setFilter2Cavern: RelicCavernSetKey[],
+  setFilter4Cavern: RelicCavernSetKey[],
+  setFilter2Planar: RelicPlanarSetKey[],
   lightCones: ICachedLightCone[],
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
   numWorkers: number,
@@ -64,6 +79,20 @@ export function optimize(
 
     return undefined
   })
+  nodes.push(
+    // filter2: if not empty, at least one >= 2
+    setFilter2Cavern.length
+      ? max(...setFilter2Cavern.map((q) => read({ q }, 'sum')))
+      : constant(Infinity),
+    setFilter2Planar.length
+      ? max(...setFilter2Planar.map((q) => read({ q }, 'sum')))
+      : constant(Infinity),
+    // filter4: if not empty, at least one >= 4
+    setFilter4Cavern.length
+      ? max(...setFilter4Cavern.map((q) => read({ q }, 'sum')))
+      : constant(Infinity)
+    // other calcs (graph, etc)
+  )
   return new Solver({
     nodes,
     // Add -Infinity as the opt-target itself is also used as a min constraint

@@ -1,14 +1,14 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { wengineMaxLevel } from '@genshin-optimizer/zzz/consts'
+import { lightConeMaxLevel } from '@genshin-optimizer/sr/consts'
 import {
   OptConfigContext,
   useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
-import { WengineLevelSlider } from '@genshin-optimizer/zzz/ui'
+} from '@genshin-optimizer/sr/db-ui'
+import { LightConeLevelSlider } from '@genshin-optimizer/sr/ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { memo, useContext } from 'react'
 
-export const WengineLevelFilter = memo(function WengineLevelFilter({
+export const LightConeLevelFilter = memo(function LightConeLevelFilter({
   disabled = false,
 }: {
   disabled?: boolean
@@ -19,25 +19,25 @@ export const WengineLevelFilter = memo(function WengineLevelFilter({
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', gap: 1 }}>
         <Typography sx={{ fontWeight: 'bold' }}>
-          Wengine Level Filter
+          LightCone Level Filter
           {/* TODO: Translate */}
           {/* {t('levelFilter')} */}
         </Typography>
       </CardContent>
       <Divider />
-      <WengineLevelSlider
-        levelLow={optConfig?.wlevelLow ?? wengineMaxLevel}
-        levelHigh={optConfig?.wlevelHigh ?? wengineMaxLevel}
-        setLow={(wlevelLow) =>
-          database.optConfigs.set(optConfigId, { wlevelLow })
+      <LightConeLevelSlider
+        levelLow={optConfig?.lcLevelLow ?? lightConeMaxLevel}
+        levelHigh={optConfig?.lcLevelHigh ?? lightConeMaxLevel}
+        setLow={(lcLevelLow) =>
+          database.optConfigs.set(optConfigId, { lcLevelLow })
         }
-        setHigh={(wlevelHigh) =>
-          database.optConfigs.set(optConfigId, { wlevelHigh })
+        setHigh={(lcLevelHigh) =>
+          database.optConfigs.set(optConfigId, { lcLevelHigh })
         }
-        setBoth={(wlevelLow, wlevelHigh) =>
+        setBoth={(lcLevelLow, lcLevelHigh) =>
           database.optConfigs.set(optConfigId, {
-            wlevelLow,
-            wlevelHigh,
+            lcLevelLow,
+            lcLevelHigh,
           })
         }
         disabled={disabled}
