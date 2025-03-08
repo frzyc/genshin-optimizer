@@ -177,7 +177,7 @@ function compile(
   out.sort((a,b)=>b.value-a.value).splice(${topN})
   m=out[${topN - 1}].value
 }`
-  const forEachO = slotIds.map((i) => `for(const c${i} of i${i}){`)
+  const forEachO = slotIds.map((i) => `for(const ${cs[i]} of ${cnds[i]}){`)
   const forEachC = slotIds.map((i) => (i === 1 ? `}` + lenCheck : `}`))
   const body = `'use strict';
 const[${cnds}]=candidates,out=[];let failed=0
@@ -186,8 +186,7 @@ ${forEachO.join('')}
   if(${constraints.join('||')}){failed+=1;continue}
   if(m>${names.get(nodes[0])})continue
   out.push({ids:[${ids}],value:${names.get(nodes[0])}})
-${forEachC.join()}
-}
+${forEachC.join('')}
 return{failed,results:out}`
   return new Function('candidates', 'm', body) as any
 }
