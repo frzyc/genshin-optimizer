@@ -1,8 +1,6 @@
 import type { BuildResult, Progress, Work } from './common'
 import { type WorkerConfig, Worker } from './worker'
 
-const reportInterval = 35 // (minimum) progress report interval for each worker, in ms
-
 declare function postMessage(res: Response): void
 
 export type Command = InitMsg | AddWorkMsg | ConfigMsg | ReqWorkMsg
@@ -40,7 +38,7 @@ let worker: Worker
 async function processMsg(msg: Command): Promise<Response | undefined> {
   switch (msg.ty) {
     case 'init':
-      if (worker) throw new Error('Worker is already initialized')
+      if (worker) throw new Error('already initialized')
       worker = new Worker(msg)
       return { ty: 'progress', idle: true, ...worker.resetProgress() } // ready
     case 'config':
@@ -52,14 +50,14 @@ async function processMsg(msg: Command): Promise<Response | undefined> {
     }
     case 'add':
       worker.add(msg.works)
-      return processAllWorks() // runs in the background
+      return processAllWorks()
   }
 }
 
-let nextReport: number | undefined // `undefined` when not running
+let running = false
 async function processAllWorks(): Promise<Response | undefined> {
-  if (nextReport !== undefined) return // only one runner at a time
-  nextReport = Date.now()
+  if (running) return // only one runner at a time
+  running = true
   let idle: boolean
   do {
     // Suspend here in case a new config/work stealing is sent over
@@ -68,15 +66,10 @@ async function processAllWorks(): Promise<Response | undefined> {
     // will simply continue this loop.
     await new Promise((r) => setTimeout(r))
 
-    // pace the reporting to `reportInterval` (except when low on works)
-    const now = Date.now()
     idle = worker.subworks.length <= 1 // will `idle` after `process`, send msg first
-    if (now >= nextReport || idle) {
-      nextReport = now + reportInterval
-      postMessage({ ty: 'progress', idle, ...worker.resetProgress() })
-    }
+    postMessage({ ty: 'progress', idle, ...worker.resetProgress() })
     worker.process()
   } while (worker.hasWork())
-  nextReport = undefined
-  return { ty: 'progress', idle: !idle, ...worker.resetProgress() } // final report, `idle` if not already
+  running = false
+  return { ty: 'progress', idle: !idle, ...worker.resetProgress() } // `idle` if not already
 }

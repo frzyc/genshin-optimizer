@@ -4,7 +4,7 @@ import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import { splitCandidates } from './split'
 
-const splitThreshold = 200_000 // split if there are more possible builds than this
+const splitThreshold = 2000_000 // split if there are more possible builds than this
 const cleanThreshold = 3000 // clean results if there are more results than this
 
 export interface WorkerConfig {
@@ -88,9 +88,8 @@ export class Worker {
 
     const { progress, topN } = this
     const { nodes, minimum, candidates, count } = subwork
-    minimum[0] = this.minimum[0] // in case the threshold was updated
     const f = compileProcess(nodes, minimum, topN, 'q', candidates.length)
-    const { failed, results } = f(candidates)
+    const { failed, results } = f(candidates, this.minimum[0])
     progress.computed += count
     progress.failed += failed
     progress.remaining -= count
@@ -159,12 +158,15 @@ function compileProcess(
   topN: number,
   dynTagCat: string,
   slotCount: number
-): (candidates: Candidate<string>[][]) => {
+): (
+  candidates: Candidate<string>[][],
+  m0: number
+) => {
   failed: number
   results: { ids: string[]; value: number }[]
 } {
   const slotIds = [...new Array(slotCount)].map((_, i) => i)
-  const cnds = slotIds.map((i) => `i${i}`) // i0, i1, ..
+  const cnds = slotIds.map((i) => `cnds${i}`) // i0, i1, ..
   const cs = slotIds.map((i) => `c${i}`) // c0, c1, ..
   const forEachBuild = slotIds.map((i) => `for(const c${i} of i${i})`)
   const { str, names } = executionStr(nodes, 'x', ({ tag }) => {
@@ -176,7 +178,7 @@ function compileProcess(
   const ids = cs.map((c) => `${c}['id']`)
 
   const body = `'use strict';
-const[${cnds}]=candidates,out=[];let m=${minimum[0]},failed=0
+const[${cnds}]=candidates,out=[];let failed=0
 ${forEachBuild.join('')}{
   const ${str}
   if(${constraints.join('||')}){failed+=1;continue}
@@ -187,5 +189,5 @@ ${forEachBuild.join('')}{
   }
 }
 return{failed,results:out}`
-  return new Function('candidates', body) as any
+  return new Function('candidates', 'm', body) as any
 }
