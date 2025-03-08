@@ -7,14 +7,14 @@ import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import type { Command, ErrMsg, Response } from './workerHandle'
 
-const reportInterval = 30 // (minimum) progress report interval for solver, in ms
+const reportInterval = 50 // (minimum) progress report interval for solver, in ms
 
 export interface SolverConfig {
-  candidates: Candidate<string>[][]
   nodes: NumTagFree[]
   minimum: number[]
-  numWorkers: number
+  candidates: Candidate<string>[][]
   topN: number
+  numWorkers: number
   setProgress: (_: Progress) => void
 }
 
@@ -47,9 +47,13 @@ export class Solver<ID extends string> {
     )
 
     const pruned = prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, topN)
-    const { nodes, candidates, minimum } = pruned
+    const { nodes, minimum, candidates } = pruned
     progress.remaining = buildCount(candidates)
     progress.skipped = buildCount(cfg.candidates) - progress.remaining
+    if (progress.remaining > Number.MAX_SAFE_INTEGER)
+      // We use `remaining` to detect completion. Its accurate
+      // bookkeeping is essential to ensure this actually halts.
+      throw new Error('too many combinations')
 
     this.topN = topN
     this.optThreshold = minimum[0]
@@ -138,7 +142,6 @@ export class Solver<ID extends string> {
           if (!this.progress.remaining)
             this.finalize(bestBuilds.slice(0, this.topN))
         }
-
         break
       }
       case 'add':

@@ -4,7 +4,7 @@ import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import { splitCandidates } from './split'
 
-const splitThreshold = 2000_000 // split if there are more possible builds than this
+const splitThreshold = 2_000_000 // split if there are more possible builds than this
 const cleanThreshold = 3000 // clean results if there are more results than this
 
 export interface WorkerConfig {
@@ -28,7 +28,7 @@ export class Worker {
   topN: number
 
   subworks: Subwork[] = []
-  results: BuildResult[] = []
+  builds: BuildResult[] = []
 
   progress: Progress = {
     computed: 0,
@@ -40,10 +40,10 @@ export class Worker {
   constructor(cfg: WorkerConfig) {
     this.nodes = cfg.nodes
     this.minimum = cfg.minimum
-    this.topN = cfg.topN
     this.candidates = cfg.candidates.map(
       (cnds) => new Map(cnds.map((c) => [c.id, c]))
     )
+    this.topN = cfg.topN
   }
 
   add(works: Work[]): void {
@@ -81,40 +81,36 @@ export class Worker {
     return !!this.subworks.length
   }
 
-  process(): void {
+  compute(): void {
     const subwork = this.subworks.pop()
     if (!subwork) return
     this.spreadSubworks()
 
     const { progress, topN } = this
     const { nodes, minimum, candidates, count } = subwork
-    const f = compileProcess(nodes, minimum, topN, 'q', candidates.length)
+    const f = compile(nodes, minimum, topN, 'q', candidates.length)
     const { failed, results } = f(candidates, this.minimum[0])
     progress.computed += count
     progress.failed += failed
     progress.remaining -= count
-    this.results.push(...results)
+    this.builds.push(...results)
   }
 
   setOptThreshold(threshold: number): void {
     this.minimum[0] = threshold
-    this.results = this.results.filter((b) => b.value >= threshold)
+    this.builds = this.builds.filter((b) => b.value >= threshold)
   }
 
   resetProgress(): { builds: BuildResult[] } & Progress {
-    this.clean()
-    const { progress } = this
-    const result = { builds: [...this.results], ...progress }
+    const { progress, topN, builds, minimum } = this
+    builds.sort((a, b) => b.value - a.value).splice(topN)
+    if (builds.length === topN) minimum[0] = builds[topN - 1].value
+
+    const out = { builds: [...builds], ...progress }
     progress.computed = 0
     progress.failed = 0
     progress.skipped = 0
-    return result
-  }
-
-  clean(): void {
-    this.results.sort((a, b) => b.value - a.value).splice(this.topN)
-    if (this.results.length === this.topN)
-      this.minimum[0] = this.results[this.topN - 1].value
+    return out
   }
 
   /** Ensure the last subwork is `pruned` and smaller than `splitThreshold` */
@@ -152,7 +148,7 @@ export class Worker {
   }
 }
 
-function compileProcess(
+function compile(
   nodes: NumTagFree[],
   minimum: number[],
   topN: number,
@@ -168,7 +164,7 @@ function compileProcess(
   const slotIds = [...new Array(slotCount)].map((_, i) => i)
   const cnds = slotIds.map((i) => `cnds${i}`) // i0, i1, ..
   const cs = slotIds.map((i) => `c${i}`) // c0, c1, ..
-  const forEachBuild = slotIds.map((i) => `for(const c${i} of i${i})`)
+
   const { str, names } = executionStr(nodes, 'x', ({ tag }) => {
     const vals = cs.map((c) => `(${c}['${tag[dynTagCat]}']??0)`)
     return `+(${vals.join('+')}+0)`
@@ -177,16 +173,20 @@ function compileProcess(
   const constraints = minimum.map((m, i) => !!i && `${m}>${nodeNames[i]}`) // exclude opt threshold
   const ids = cs.map((c) => `${c}['id']`)
 
+  const lenCheck = `if(${cleanThreshold}<out.length){
+  out.sort((a,b)=>b.value-a.value).splice(${topN})
+  m=out[${topN - 1}].value
+}`
+  const forEachO = slotIds.map((i) => `for(const c${i} of i${i}){`)
+  const forEachC = slotIds.map((i) => (i === 1 ? `}` + lenCheck : `}`))
   const body = `'use strict';
 const[${cnds}]=candidates,out=[];let failed=0
-${forEachBuild.join('')}{
+${forEachO.join('')}
   const ${str}
   if(${constraints.join('||')}){failed+=1;continue}
   if(m>${names.get(nodes[0])})continue
-  if(${cleanThreshold}<out.push({ids:[${ids}],value:${names.get(nodes[0])}})){
-    out.sort((a,b)=>b.value-a.value).splice(${topN})
-    m=out[${topN - 1}].value
-  }
+  out.push({ids:[${ids}],value:${names.get(nodes[0])}})
+${forEachC.join()}
 }
 return{failed,results:out}`
   return new Function('candidates', 'm', body) as any

@@ -3,19 +3,17 @@ import { type WorkerConfig, Worker } from './worker'
 
 declare function postMessage(res: Response): void
 
-export type Command = InitMsg | AddWorkMsg | ConfigMsg | ReqWorkMsg
-export type Response = AddWorkMsg | RecvWorkMsg | ProgressMsg | ErrMsg
+export type Command = InitMsg | ConfigMsg | AddWorkMsg | ReqWorkMsg
+export type Response = AddWorkMsg | ProgressMsg | ErrMsg
 
 /** initialize the worker for a specific optimization problem */
 export type InitMsg = { ty: 'init' } & WorkerConfig
 /** update opt target threshold */
 export type ConfigMsg = { ty: 'config'; threshold: number }
-/** requesting unperformed works. The worker can retain up to `maxKeep` builds */
-export type ReqWorkMsg = { ty: 'work?'; maxKeep: number }
 /** submitting works */
 export type AddWorkMsg = { ty: 'add'; works: Work[] }
-/** notify that add-work message has been received */
-export type RecvWorkMsg = { ty: 'recv' }
+/** requesting unperformed works. The worker can retain up to `maxKeep` builds */
+export type ReqWorkMsg = { ty: 'work?'; maxKeep: number }
 /** progress report */
 export type ProgressMsg = {
   ty: 'progress'
@@ -68,7 +66,7 @@ async function processAllWorks(): Promise<Response | undefined> {
 
     idle = worker.subworks.length <= 1 // will `idle` after `process`, send msg first
     postMessage({ ty: 'progress', idle, ...worker.resetProgress() })
-    worker.process()
+    worker.compute()
   } while (worker.hasWork())
   running = false
   return { ty: 'progress', idle: !idle, ...worker.resetProgress() } // `idle` if not already
