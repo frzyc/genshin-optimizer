@@ -2064,20 +2064,9 @@ export const conditionals = {
     },
   },
   WorrisomeBlissful: {
-    boolConditional: {
+    tame: {
       sheet: 'WorrisomeBlissful',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'WorrisomeBlissful',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'WorrisomeBlissful',
-      name: 'numConditional',
+      name: 'tame',
       type: 'num',
       int_only: true,
       min: 0,
@@ -2123,24 +2112,10 @@ export const conditionals = {
     },
   },
   YetHopeIsPriceless: {
-    boolConditional: {
+    battleStartOrBasicUsed: {
       sheet: 'YetHopeIsPriceless',
-      name: 'boolConditional',
+      name: 'battleStartOrBasicUsed',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'YetHopeIsPriceless',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'YetHopeIsPriceless',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   Yukong: {
@@ -19151,37 +19126,27 @@ export const buffs = {
     },
   },
   WorrisomeBlissful: {
-    cond_dmg_: {
+    crit_dmg_: {
       sheet: 'WorrisomeBlissful',
-      name: 'cond_dmg_',
+      name: 'crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'WorrisomeBlissful',
-        name: 'cond_dmg_',
+        name: 'crit_dmg_',
       },
     },
-    enemy_defRed_: {
+    followUp_dmg_: {
       sheet: 'WorrisomeBlissful',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'WorrisomeBlissful',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'WorrisomeBlissful',
-      name: 'team_dmg_',
+      name: 'followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'WorrisomeBlissful',
-        name: 'team_dmg_',
+        damageType1: 'followUp',
+        name: 'followUp_dmg_',
       },
     },
   },
@@ -19569,37 +19534,40 @@ export const buffs = {
     },
   },
   YetHopeIsPriceless: {
-    cond_dmg_: {
+    followUp_defIgn_: {
       sheet: 'YetHopeIsPriceless',
-      name: 'cond_dmg_',
+      name: 'followUp_defIgn_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'defIgn_',
         sheet: 'YetHopeIsPriceless',
-        name: 'cond_dmg_',
+        damageType1: 'followUp',
+        name: 'followUp_defIgn_',
       },
     },
-    enemy_defRed_: {
+    followUp_dmg_: {
       sheet: 'YetHopeIsPriceless',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'YetHopeIsPriceless',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'YetHopeIsPriceless',
-      name: 'team_dmg_',
+      name: 'followUp_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'YetHopeIsPriceless',
-        name: 'team_dmg_',
+        damageType1: 'followUp',
+        name: 'followUp_dmg_',
+      },
+    },
+    ult_defIgn_: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'ult_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'defIgn_',
+        sheet: 'YetHopeIsPriceless',
+        damageType1: 'ult',
+        name: 'ult_defIgn_',
       },
     },
   },

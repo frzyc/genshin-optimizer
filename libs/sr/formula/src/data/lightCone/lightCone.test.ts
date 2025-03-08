@@ -2553,4 +2553,56 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.2)
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.32)
   })
+
+  it('WorrisomeBlissful', () => {
+    const charKey: CharacterKey = 'Seele'
+    const data = testCharacterData(charKey, 'WorrisomeBlissful')
+    data.push(
+      cond(
+        charKey,
+        'WorrisomeBlissful',
+        conditionals.WorrisomeBlissful.tame.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.3)
+    expect(calc.compute(char.final.dmg_.followUp[0]).val).toBeCloseTo(0.5)
+    // Base + LC cond
+    expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(0.5 + 2 * 0.2)
+  })
+
+  it('YetHopeIsPriceless', () => {
+    const charKey: CharacterKey = 'Qingque'
+    const data = testCharacterData(charKey, 'YetHopeIsPriceless', [
+      ownBuff.premod.crit_dmg_.add(1.6),
+    ])
+    data.push(
+      cond(
+        charKey,
+        'YetHopeIsPriceless',
+        conditionals.YetHopeIsPriceless.battleStartOrBasicUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
+    const char = convert(ownTag, { et: 'own', src: charKey })
+
+    // Base + LC passive
+    expect(calc.compute(char.final.crit_).val).toBeCloseTo(0.05 + 0.28)
+    expect(calc.compute(char.final.dmg_.followUp[0]).val).toBeCloseTo(4 * 0.2)
+    expect(calc.compute(char.final.defIgn_.ult[0]).val).toBeCloseTo(0.36)
+    expect(calc.compute(char.final.defIgn_.followUp[0]).val).toBeCloseTo(0.36)
+  })
 })
