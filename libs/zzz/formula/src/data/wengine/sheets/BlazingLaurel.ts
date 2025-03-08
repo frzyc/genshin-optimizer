@@ -11,7 +11,7 @@ import {
   teamBuff,
 } from '../../util'
 import {
-  cmpSpecialtyCount,
+  cmpSpecialtyAndEquipped,
   entriesForWengine,
   registerWengine,
   showSpecialtyCount,
@@ -35,7 +35,7 @@ const sheet = registerWengine(
   registerBuff(
     'cond_dmg_',
     ownBuff.combat.common_dmg_.add(
-      cmpSpecialtyCount(
+      cmpSpecialtyAndEquipped(
         key,
         boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
       )
@@ -45,13 +45,15 @@ const sheet = registerWengine(
   registerBuff(
     'team_dmg_',
     teamBuff.combat.common_dmg_.add(
-      cmpSpecialtyCount(key, listConditional.map({ val1: 1, val2: 2 }))
+      cmpSpecialtyAndEquipped(key, listConditional.map({ val1: 1, val2: 2 }))
     ),
     showSpecialtyCount(key)
   ),
   registerBuff(
     'enemy_defIgn_',
-    enemyDebuff.common.dmgRed_.add(cmpSpecialtyCount(key, numConditional)),
+    enemyDebuff.common.dmgRed_.add(
+      cmpSpecialtyAndEquipped(key, numConditional)
+    ),
     showSpecialtyCount(key)
   )
 )

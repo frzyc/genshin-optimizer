@@ -8,7 +8,7 @@ import {
   teamBuff,
 } from '../../util'
 import {
-  cmpSpecialtyCount,
+  cmpSpecialtyAndEquipped,
   entriesForWengine,
   registerWengine,
   showSpecialtyCount,
@@ -28,7 +28,7 @@ const sheet = registerWengine(
   registerBuff(
     'ice_dmg_',
     ownBuff.combat.dmg_.ice.add(
-      cmpSpecialtyCount(
+      cmpSpecialtyAndEquipped(
         key,
         subscript(modification, [-1, 0.15, 0.175, 0.2, 0.22, 0.24])
       )
@@ -40,7 +40,7 @@ const sheet = registerWengine(
   registerBuff(
     'team_atk_',
     teamBuff.combat.atk_.add(
-      cmpSpecialtyCount(
+      cmpSpecialtyAndEquipped(
         key,
         prod(
           launch_ex_attack,

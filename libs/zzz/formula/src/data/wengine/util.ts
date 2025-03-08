@@ -58,7 +58,7 @@ export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
   ]
 }
 
-export function cmpSpecialtyCount(key: WengineKey, num: NumNode) {
+export function cmpSpecialtyAndEquipped(key: WengineKey, num: NumNode) {
   const weCount = own.common.count.sheet(key)
   const type = getWengineStat(key).type
   return cmpEq(type, own.char.specialty, cmpGE(weCount, 1, num))
