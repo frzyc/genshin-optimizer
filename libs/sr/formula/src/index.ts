@@ -4,7 +4,6 @@ import type {
   TagMapEntries,
 } from '@genshin-optimizer/pando/engine'
 import {
-  addCustomOperation,
   compileTagMapValues,
   constant,
   TagMapSubset,
@@ -17,18 +16,6 @@ export * from './conditionalUtil'
 export * from './data/util'
 export * from './meta'
 export * from './util'
-
-{
-  const floorCalc = (args: (number | string)[]): number => {
-    const x = args[0] as number
-    return Math.floor(x)
-  }
-  addCustomOperation('floor', {
-    range: ([r]) => ({ min: floorCalc([r.max]), max: floorCalc([r.min]) }),
-    monotonicity: () => [{ inc: true, dec: false }],
-    calc: floorCalc,
-  })
-}
 
 export function srCalculatorWithValues(extras: TagMapEntries<number>) {
   return srCalculatorWithEntries(
