@@ -1,3 +1,4 @@
+import { assertUnreachable } from '@genshin-optimizer/common/util'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { PartialMeta } from './calculator'
 
@@ -37,6 +38,9 @@ export function translate(
 
   let formula: string, prec: number
   switch (op) {
+    // TODO: handle `subscript` and `vtag`
+    case 'subscript':
+    case 'vtag':
     case 'const':
       formula = `${val}` // TODO: Add % here if `tag` indicates percent constant
       prec = Infinity
@@ -62,12 +66,12 @@ export function translate(
     case 'floor': {
       const [floor] = ops
 
-      formula = `Floor(${floor})`
+      formula = `Floor\u230A${floor}\u230B`
       prec = Infinity
       break
     }
     default:
-      throw new Error('Unreachable')
+      assertUnreachable(op)
   }
   let name: string | undefined, sheet: string | undefined
   if (tag) {

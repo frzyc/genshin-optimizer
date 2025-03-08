@@ -25,7 +25,7 @@ export * from './util'
   }
   addCustomOperation('floor', {
     range: ([r]) => ({ min: floorCalc([r.max]), max: floorCalc([r.min]) }),
-    monotonicity: (_) => [{ inc: false, dec: true }],
+    monotonicity: () => [{ inc: true, dec: false }],
     calc: floorCalc,
   })
 }

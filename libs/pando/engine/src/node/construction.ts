@@ -55,7 +55,6 @@ export const sumfrac = <P extends OP = never>(
   x: Num<P>,
   c: Num<P>
 ): SumFrac<P | 'sumfrac'> => arithmetic('sumfrac', [x, c])
-export const floor = <P extends OP = never>(x: Num<P>) => custom('floor', x)
 function arithmetic<Op extends string, P extends OP>(op: Op, x: Num<P>[]) {
   return { op, x: toVs(x), br }
 }
