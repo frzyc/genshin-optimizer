@@ -57,7 +57,17 @@ export function translate(
 
       formula = `${dem} / (${num1} + ${num2})`
       prec = details.prod.prec
+      break
     }
+    case 'floor': {
+      const [floor] = ops
+
+      formula = `Floor(${floor})`
+      prec = Infinity
+      break
+    }
+    default:
+      throw new Error('Unreachable')
   }
   let name: string | undefined, sheet: string | undefined
   if (tag) {
