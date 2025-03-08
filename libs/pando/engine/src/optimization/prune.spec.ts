@@ -54,7 +54,7 @@ describe('pruning', () => {
     expect(state.progress).toBe(true)
     // Normally the reaffined keys are unspecified, but since the current
     // algorithm is deterministic, we can just run it and note the keys
-    // c0 <= c0 + 3c1 ; c1 = c0 + c1
+    // [c0, c1] = [c0 + 3c1, c0 + c1]
     expect(state.candidates).toEqual([
       [
         { id: 1, c0: 9, c1: 3 },
