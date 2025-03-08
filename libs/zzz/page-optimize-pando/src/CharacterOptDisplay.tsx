@@ -22,6 +22,7 @@ import {
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
 import { BonusStatsSection } from './BonusStats'
+import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import Optimize from './Optimize'
@@ -136,6 +137,7 @@ function CharacterSection() {
           >
             Edit Character
           </Button>
+          <CharStatsDisplay />
         </Box>
         <CurrentBuildDisplay />
       </Box>
