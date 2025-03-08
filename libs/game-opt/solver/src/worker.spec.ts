@@ -11,7 +11,7 @@ test('Worker', () => {
     ...[...Array(10)].map(
       (_, i) => ({ id: 't' + i, a: i, b: 10 - i } as any as Candidate<string>)
     ),
-    ...[...Array(10)].map(
+    ...[...Array(9)].map(
       (_, i) => ({ id: 'b' + i, a: i, b: 9 - i } as any as Candidate<string>)
     ),
   ])
@@ -40,8 +40,10 @@ test('Worker', () => {
     rem = report.remaining
   }
 
-  expect(totalProgress).toEqual(buildCount(ids))
   const { builds } = worker.resetProgress()
+  expect(totalProgress).toEqual(buildCount(ids))
+  expect(builds.length).toEqual(1)
+  expect(builds[0].ids).toHaveLength(7)
   expect(builds[0].value).toEqual(36 * 36)
 })
 
