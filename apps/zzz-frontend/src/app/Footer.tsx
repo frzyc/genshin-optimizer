@@ -1,7 +1,6 @@
 import { AppBar, Box, Skeleton, Typography } from '@mui/material'
 import { Suspense } from 'react'
 
-declare const __VERSION__: string
 export default function Footer() {
   return (
     <Suspense fallback={<Skeleton variant="rectangular" height={64} />}>
@@ -23,11 +22,8 @@ function FooterContent() {
         sx={{ px: 2, py: 1 }}
         gap={2}
       >
-        <Typography
-          variant="caption"
-          sx={{ color: 'neutral400.main', textAlign: 'right' }}
-        >
-          Version:
+        <Typography variant="caption" sx={{ color: 'neutral400.main' }}>
+          Build:
           <a
             href={
               process.env.NX_URL_GITHUB_GO_CURRENT_VERSION ||
@@ -37,7 +33,10 @@ function FooterContent() {
             rel="noreferrer"
             style={{ color: 'inherit' }}
           >
-            {__VERSION__}
+            {process.env.NX_URL_GITHUB_GO_CURRENT_VERSION?.replace(
+              /.*commit\//,
+              ''
+            ).substring(0, 7)}
           </a>
         </Typography>
       </Box>
