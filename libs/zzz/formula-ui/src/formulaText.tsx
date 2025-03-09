@@ -1,17 +1,20 @@
+import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import type { PartialMeta } from '@genshin-optimizer/game-opt/engine'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import type { PartialMeta } from './calculator'
-
-type Output = PartialMeta
+import type { Tag } from '@genshin-optimizer/zzz/formula'
+import { Fragment, type ReactNode } from 'react'
+import { TagDisplay } from './components'
+type Output = PartialMeta<Tag>
 
 type FormulaText = {
-  name: string | undefined
-  formula: string
+  name: ReactNode | undefined
+  formula: ReactNode
   sheet: string | undefined
   prec: number
 
   deps: FormulaText[]
 }
-export function translate(
+export function formulaText(
   data: CalcResult<number, Output>,
   cache: Map<CalcResult<number, Output>, FormulaText> = new Map()
 ): FormulaText {
@@ -21,24 +24,29 @@ export function translate(
     val,
     meta: { tag, op, ops },
   } = data
+  const displayVal = valueString(val, getUnitStr(tag?.name ?? tag?.q ?? ''))
 
   const deps = new Set<FormulaText>()
   function getString(
     ops: CalcResult<number, Output>[],
     prec: number
-  ): string[] {
+  ): ReactNode[] {
     return ops.map((op) => {
-      const text = translate(op, cache)
-      if (text.name) return deps.add(text), text.name
+      const text = formulaText(op, cache)
+      if (text.name) {
+        deps.add(text)
+        return text.name
+      }
       text.deps.forEach((dep) => deps.add(dep))
-      return text.prec >= prec ? text.formula : `(${text.formula})`
+      return text.prec >= prec ? text.formula : <span>({text.formula})</span>
     })
   }
 
-  let formula: string, prec: number
+  let formula: ReactNode,
+    prec = Infinity
   switch (op) {
     case 'const':
-      formula = `${val}` // TODO: Add % here if `tag` indicates percent constant
+      formula = displayVal
       prec = Infinity
       break
     case 'sum':
@@ -48,21 +56,40 @@ export function translate(
       {
         const { head, joiner, end } = details[op]
         prec = details[op].prec
-        formula = head + getString(ops, prec).join(joiner) + end
+        formula = (
+          <span>
+            {head}
+            {getString(ops, prec).map((x, i) => (
+              <Fragment key={i}>
+                {x}
+                {i < ops.length - 1 && joiner}
+              </Fragment>
+            ))}
+            {end}
+          </span>
+        )
       }
       break
     case 'sumfrac': {
       const [dem] = getString(ops, 2)
       const [num1, num2] = getString(ops, 1)
 
-      formula = `${dem} / (${num1} + ${num2})`
+      formula = (
+        <span>
+          {dem} / ({num1} + {num2})
+        </span>
+      )
       prec = details.prod.prec
     }
   }
-  let name: string | undefined, sheet: string | undefined
+  let name: ReactNode, sheet: string | undefined
   if (tag) {
-    // TODO: Compute from tag
-    name = `Untitled ${val}`
+    const { name: _, ...rest } = tag
+    name = (
+      <span>
+        <TagDisplay tag={rest} /> {displayVal}
+      </span>
+    )
     sheet = undefined
   }
 
