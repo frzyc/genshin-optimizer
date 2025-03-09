@@ -180,7 +180,13 @@ function DesktopHeader({
                 {/* TODO: {t('pageTitle')} */}
               </Typography>
               {shouldShowDevComponents && (
-                <Typography variant="body1">(Dev Mode)</Typography>
+                <Typography variant="body1">
+                  (Dev Mode -{' '}
+                  {process.env['NX_URL_GITHUB_GO_CURRENT_VERSION']
+                    ?.replace(/.*commit\//, '')
+                    .slice(0, 7)}
+                  )
+                </Typography>
               )}
             </Box>
           }
@@ -326,7 +332,13 @@ function MobileHeader({
               {t('pageTitle')}
             </Typography>
             {shouldShowDevComponents ? (
-              <Typography variant="body1">(Dev Mode)</Typography>
+              <Typography variant="body1">
+                (Dev Mode -{' '}
+                {process.env['NX_URL_GITHUB_GO_CURRENT_VERSION']
+                  ?.replace(/.*commit\//, '')
+                  .slice(0, 7)}
+                )
+              </Typography>
             ) : undefined}
           </Button>
           <Box flexGrow={1} />
