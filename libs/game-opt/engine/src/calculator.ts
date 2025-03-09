@@ -125,6 +125,7 @@ export class Calculator<
   }
   override markGathered(
     tag: Tag_,
+    _entryTag: Tag_,
     _n: AnyNode,
     result: CalcResult<string | number, CalcMeta<Tag_, COp>>
   ): CalcResult<string | number, CalcMeta<Tag_, COp>> {

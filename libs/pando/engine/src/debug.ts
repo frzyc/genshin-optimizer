@@ -52,7 +52,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
             const readSeq: ReadSeq = [...x.meta.readSeq!, { tag, value: n }]
             return Object.freeze({ ...x, meta: { ...x.meta, readSeq } })
           })
-        : [this.markGathered(cache.tag, n, this._compute(n, cache), tag)]
+        : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))]
     )
     return (cache.val = { pre })
   }
@@ -79,9 +79,9 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
 
   override markGathered(
     _tag: Tag,
+    entryTag: Tag,
     n: AnyNode | undefined,
-    { val, meta }: CalcResult<number | string, DebugMeta>,
-    entryTag?: Tag
+    { val, meta }: CalcResult<number | string, DebugMeta>
   ): CalcResult<number | string, DebugMeta> {
     meta = { ...meta, readSeq: [{ tag: entryTag!, value: n! }] }
     return Object.freeze({ val, meta })

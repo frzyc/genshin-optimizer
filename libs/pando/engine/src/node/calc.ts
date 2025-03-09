@@ -64,11 +64,11 @@ export class Calculator<M = any> {
   _gather(cache: TagCache<M>): PreRead<M> {
     if (cache.val) return cache.val
     const pre = this.nodes
-      .subset(cache.id)
-      .flatMap((n) =>
+      .entries(cache.id)
+      .flatMap(({ tag, value: n }) =>
         n.op === 'reread'
           ? this._gather(cache.with(n.tag)).pre
-          : [this.markGathered(cache.tag, n, this._compute(n, cache))]
+          : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))]
       )
     return (cache.val = { pre })
   }
@@ -147,6 +147,7 @@ export class Calculator<M = any> {
 
   markGathered(
     _tag: Tag,
+    _entryTag: Tag,
     _n: AnyNode | undefined,
     result: CalcResult<number | string, M>
   ): CalcResult<number | string, M> {
