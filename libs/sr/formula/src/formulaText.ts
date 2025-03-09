@@ -64,9 +64,9 @@ export function translate(
       break
     }
     case 'floor': {
-      const [floor] = ops
+      const [x] = ops
 
-      formula = `Floor\u230A${floor}\u230B`
+      formula = `\u230A${x}\u230B`
       prec = Infinity
       break
     }
