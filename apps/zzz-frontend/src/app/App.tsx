@@ -16,6 +16,7 @@ import {
 import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import '../styles.scss'
+import Footer from './Footer'
 import Header from './Header'
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
 const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
@@ -78,6 +79,9 @@ function Content() {
           </Routes>
         </Suspense>
       </Container>
+      {/* make sure footer is always at bottom */}
+      <Box flexGrow={1} />
+      <Footer />
     </Box>
   )
 }
