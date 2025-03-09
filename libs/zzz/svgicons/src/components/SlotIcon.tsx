@@ -16,7 +16,6 @@ export function SlotIcon({
   slotKey: DiscSlotKey
   iconProps?: SvgIconProps
 }) {
-  console.log(slotKey)
   switch (slotKey) {
     case '1':
       return <SlotOneIcon {...iconProps} />
