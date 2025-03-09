@@ -16,6 +16,7 @@ import {
   getDiscSubStatBaseVal,
   rarityColor,
 } from '@genshin-optimizer/zzz/consts'
+import { SlotIcon } from '@genshin-optimizer/zzz/svgicons'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { Theme } from '@mui/system'
@@ -89,10 +90,18 @@ export function CompactDiscCard({
               >
                 <Box
                   component="div"
-                  onMouseDown={handleMouseDown as any}
-                  onMouseMove={handleMouseMove as any}
-                  onMouseUp={handleMouseUp as any}
-                  onMouseLeave={handleMouseUp as any}
+                  onMouseDown={(e: React.MouseEvent) =>
+                    handleMouseDown(e.nativeEvent)
+                  }
+                  onMouseMove={(e: React.MouseEvent) =>
+                    handleMouseMove(e.nativeEvent)
+                  }
+                  onMouseUp={(e: React.MouseEvent) =>
+                    handleMouseUp(e.nativeEvent)
+                  }
+                  onMouseLeave={(e: React.MouseEvent) =>
+                    handleMouseUp(e.nativeEvent)
+                  }
                   sx={{
                     position: 'relative',
                     display: 'flex',
@@ -127,39 +136,27 @@ export function CompactDiscCard({
                       bottom: '70px',
                     }}
                   >
-                    <Box
-                      sx={{
-                        background: '#1B263B',
-                        borderRadius: '50%',
-                        border: '4px solid #1B263B',
+                    <SlotIcon
+                      slotKey={slotKey}
+                      iconProps={{
+                        sx: {
+                          border: '1px solid #1B263B',
+                          background: '#1B263B',
+                          borderRadius: '20px',
+                          fontSize: '2.5rem',
+                        },
                       }}
-                    >
-                      <Typography
-                        sx={(theme) => ({
-                          fontSize: '1rem',
-                          border: `4px solid ${
-                            theme.palette[rarityColor[rarity]].main
-                          }`,
-                          borderRadius: '50%',
-                          fontWeight: '900',
-                          px: '10px',
-                          fontFamily: 'Impact',
-                        })}
-                        variant="h6"
-                      >
-                        {slotKey}
-                      </Typography>
-                    </Box>
+                    ></SlotIcon>
                   </Box>
                   <Box sx={{ height: 0, position: 'absolute', bottom: 20 }}>
                     <Typography
-                      sx={{
-                        backgroundColor: '#1B263B',
+                      sx={(theme) => ({
+                        backgroundColor: `${theme.palette.contentNormal.main}`,
                         px: '20px',
                         borderRadius: '20px',
                         fontWeight: 'bold',
                         fontSize: '1rem',
-                      }}
+                      })}
                       variant="h6"
                     >
                       {level}

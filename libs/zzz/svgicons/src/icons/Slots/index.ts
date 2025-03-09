@@ -1,0 +1,6 @@
+export * from './SlotFiveIcon'
+export * from './SlotFourIcon'
+export * from './SlotOneIcon'
+export * from './SlotSixIcon'
+export * from './SlotThreeIcon'
+export * from './SlotTwoIcon'

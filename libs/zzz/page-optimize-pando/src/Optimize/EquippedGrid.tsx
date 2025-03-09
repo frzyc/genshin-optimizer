@@ -10,6 +10,7 @@ import {
   CharacterEditor,
   CompactDiscCard,
   CompactWengineCard,
+  EmptyCompactCard,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Grid } from '@mui/material'
 import { Suspense, useContext, useState } from 'react'
@@ -46,7 +47,7 @@ export function OptimizeEquippedGrid() {
         spacing={2.5}
         sx={{ pt: '8px', pb: '20px', flexDirection: 'row' }}
       >
-        <Grid item xs={1} key={wengine?.id}>
+        <Grid item xs={1} key={wengine?.id} sx={{ borderRadius: '20px' }}>
           {wengine &&
           wengine.id &&
           database.wengines.keys.includes(wengine.id) ? (
@@ -55,17 +56,25 @@ export function OptimizeEquippedGrid() {
               onClick={() => character?.key && setCharacterKey(character.key)}
             />
           ) : (
-            'No Wengine'
+            <EmptyCompactCard
+              placeholder={'No Wengine Equipped'}
+              onClick={() => character?.key && setCharacterKey(character.key)}
+            />
           )}
         </Grid>
-        <Grid item xs={1}>
+        <Grid item xs={1} sx={{ borderRadius: '20px' }}>
           Sets
         </Grid>
       </Grid>
       <Grid item columns={columns} container spacing={2.5}>
         {!!discs &&
           Object.entries(discs).map(([slotKey, disc]) => (
-            <Grid item xs={1} key={disc?.id || slotKey}>
+            <Grid
+              item
+              xs={1}
+              key={disc?.id || slotKey}
+              sx={{ borderRadius: '20px' }}
+            >
               {disc?.id && database.discs.keys.includes(disc.id) ? (
                 <CompactDiscCard
                   disc={disc}
@@ -74,7 +83,13 @@ export function OptimizeEquippedGrid() {
                   }
                 />
               ) : (
-                'No disc'
+                <EmptyCompactCard
+                  placeholder={'Disc Slot'}
+                  slotKey={slotKey}
+                  onClick={() =>
+                    character?.key && setCharacterKey(character.key)
+                  }
+                />
               )}
             </Grid>
           ))}

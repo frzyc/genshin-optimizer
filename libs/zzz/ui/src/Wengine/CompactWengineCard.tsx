@@ -140,11 +140,13 @@ export function CompactWengineCard({
               {range(1, 5).map((index: number) => {
                 return index <= phase ? (
                   <ImgIcon
+                    key={`phase-active-${index}`}
                     src={wenginePhaseIcon('singlePhase')}
                     sx={{ width: '5em', height: '1.5em' }}
                   />
                 ) : (
                   <ImgIcon
+                    key={`phase-inactive-${index}`}
                     src={wenginePhaseIcon('singleNonPhase')}
                     sx={{ width: '5em', height: '1.5em' }}
                   />
