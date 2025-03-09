@@ -5,10 +5,10 @@ const key: LightConeKey = 'Reminiscence'
 const data_gen = allStats.lightCone[key]
 
 let o = 0
-// TODO: Load scalings
+
 const dm = {
-  cond_dmg_: data_gen.superimpose.otherStats[o++] ?? [-1, 1, 2, 3, 4, 5],
-  passive_atk: data_gen.superimpose.passiveStats.atk ?? [-1, 2, 4, 6, 8, 10],
+  common_dmg_: data_gen.superimpose.otherStats[o++],
+  stacks: data_gen.superimpose.otherStats[o++][1],
 } as const
 
 export default dm
