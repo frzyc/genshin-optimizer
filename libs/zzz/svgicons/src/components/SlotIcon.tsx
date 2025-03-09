@@ -1,12 +1,12 @@
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import type { SvgIconProps } from '@mui/material'
 import {
-  SlotFiveIcon,
-  SlotFourIcon,
-  SlotOneIcon,
-  SlotSixIcon,
-  SlotThreeIcon,
-  SlotTwoIcon,
+  Slot1Icon,
+  Slot2Icon,
+  Slot3Icon,
+  Slot4Icon,
+  Slot5Icon,
+  Slot6Icon,
 } from '../icons'
 
 export function SlotIcon({
@@ -18,16 +18,16 @@ export function SlotIcon({
 }) {
   switch (slotKey) {
     case '1':
-      return <SlotOneIcon {...iconProps} />
+      return <Slot1Icon {...iconProps} />
     case '2':
-      return <SlotTwoIcon {...iconProps} />
+      return <Slot2Icon {...iconProps} />
     case '3':
-      return <SlotThreeIcon {...iconProps} />
+      return <Slot3Icon {...iconProps} />
     case '4':
-      return <SlotFourIcon {...iconProps} />
+      return <Slot4Icon {...iconProps} />
     case '5':
-      return <SlotFiveIcon {...iconProps} />
+      return <Slot5Icon {...iconProps} />
     case '6':
-      return <SlotSixIcon {...iconProps} />
+      return <Slot6Icon {...iconProps} />
   }
 }

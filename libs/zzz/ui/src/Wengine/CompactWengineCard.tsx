@@ -9,10 +9,10 @@ import { rarityColor } from '@genshin-optimizer/zzz/consts'
 import type { ICachedWengine } from '@genshin-optimizer/zzz/db'
 import { useWengine } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback } from 'react'
-import { StatDisplay } from '../Character'
 import { ZCard } from '../Components'
 import { WengineSubstatDisplay } from './WengineSubstatDisplay'
 
@@ -90,11 +90,9 @@ export function CompactWengineCard({
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    fontWeight: '900',
-                    fontSize: '1.5rem',
                   }}
                 >
-                  <StatDisplay statKey={'atk'} showStatName={false} />
+                  <StatIcon statKey={'atk'} />
                 </Typography>
                 <Typography variant="subtitle1" sx={{ fontWeight: '900' }}>
                   {wengineStats['atk_base'].toFixed()}

@@ -16,13 +16,12 @@ import {
   getDiscSubStatBaseVal,
   rarityColor,
 } from '@genshin-optimizer/zzz/consts'
-import { SlotIcon } from '@genshin-optimizer/zzz/svgicons'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Box, CardActionArea, Skeleton, Typography } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback } from 'react'
-import { StatDisplay } from '../Character'
 import { ZCard } from '../Components'
 import { useSpinner } from './util'
 
@@ -139,12 +138,13 @@ export function CompactDiscCard({
                     <SlotIcon
                       slotKey={slotKey}
                       iconProps={{
-                        sx: {
+                        sx: (theme) => ({
                           border: '1px solid #1B263B',
                           background: '#1B263B',
                           borderRadius: '20px',
                           fontSize: '2.5rem',
-                        },
+                          fill: `${theme.palette[rarityColor[rarity]].main}`,
+                        }),
                       }}
                     ></SlotIcon>
                   </Box>
@@ -183,7 +183,7 @@ export function CompactDiscCard({
                     fontWeight: 'bold',
                   }}
                 >
-                  <StatDisplay statKey={mainStatKey} showStatName={false} />
+                  <StatIcon statKey={mainStatKey}></StatIcon>
                 </Typography>
                 <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
                   {toPercent(
@@ -245,8 +245,8 @@ function SubstatDisplay({
         gap: 1,
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', fontSize: '1.5rem' }}>
-        <StatDisplay statKey={key} showStatName={false} />
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <StatIcon statKey={key} />
       </Box>
       <Box sx={{ fontSize: '1rem', display: 'flex', width: '100%', ml: '4px' }}>
         <Box sx={{ mr: '8px' }}>
