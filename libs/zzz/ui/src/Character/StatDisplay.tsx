@@ -8,10 +8,12 @@ export function StatDisplay({
   statKey,
   showPercent = false,
   disableIcon = false,
+  showStatName = true,
 }: {
   statKey: StatKey
   showPercent?: boolean
   disableIcon?: boolean
+  showStatName?: boolean
 }) {
   // const { t: tk } = useTranslation('statKey_gen')
   const text = (
@@ -27,7 +29,7 @@ export function StatDisplay({
       {!disableIcon && (
         <StatIcon statKey={statKey} iconProps={iconInlineProps} />
       )}
-      {text}
+      {showStatName ? text : ''}
     </Box>
   )
 }
