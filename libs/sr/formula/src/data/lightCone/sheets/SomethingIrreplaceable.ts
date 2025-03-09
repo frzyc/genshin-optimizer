@@ -6,6 +6,7 @@ import {
   customHeal,
   own,
   ownBuff,
+  percent,
   registerBuff,
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
@@ -28,7 +29,7 @@ const sheet = registerLightCone(
     cmpGE(
       lcCount,
       1,
-      prod(own.final.atk, subscript(superimpose, dm.healingScaling))
+      prod(own.final.atk, percent(subscript(superimpose, dm.healingScaling)))
     ),
     { cond: cmpGE(lcCount, 1, 'unique', '') }
   ),

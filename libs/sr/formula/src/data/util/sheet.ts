@@ -87,25 +87,28 @@ export function registerBuff(
  */
 export function registerBuffFormula(
   name: string,
-  entry: TagMapNodeEntry,
+  entries: TagMapNodeEntry | TagMapNodeEntry[],
   cond: string | StrNode = 'unique',
   team = false
 ): TagMapNodeEntries {
-  // Remove unused tags. We cannot use `sheet:null` here because
-  // `namedReader` is also used as a `Tag` inside `listingItem`.
-  const { sheet: _sheet, ...tag } = entry.tag
-  const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
-  const buffListing = (team ? teamBuff : ownBuff).listing.buffs
-  const formulaListing = (team ? teamBuff : ownBuff).listing.formulas
-  return [
-    // Add this buff to listing listing
-    buffListing.add(listingItem(namedReader, cond)),
-    formulaListing.add(listingItem(namedReader, cond)),
-    // Hook for listing
-    namedReader.toEntry(entry.value),
-    // Still include the original entry
-    entry,
-  ]
+  if (!Array.isArray(entries)) entries = [entries]
+  return entries.flatMap((entry) => {
+    // Remove unused tags. We cannot use `sheet:null` here because
+    // `namedReader` is also used as a `Tag` inside `listingItem`.
+    const { sheet: _sheet, ...tag } = entry.tag
+    const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
+    const buffListing = (team ? teamBuff : ownBuff).listing.buffs
+    const formulaListing = (team ? teamBuff : ownBuff).listing.formulas
+    return [
+      // Add this buff to listing listing
+      buffListing.add(listingItem(namedReader, cond)),
+      formulaListing.add(listingItem(namedReader, cond)),
+      // Hook for listing
+      namedReader.toEntry(entry.value),
+      // Still include the original entry
+      entry,
+    ]
+  })
 }
 
 function registerFormula(

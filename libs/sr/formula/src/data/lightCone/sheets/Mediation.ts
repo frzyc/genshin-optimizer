@@ -1,7 +1,7 @@
 import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allBoolConditionals, own, ownBuff, registerBuff } from '../../util'
+import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'Mediation'
@@ -20,7 +20,7 @@ const sheet = registerLightCone(
   // Conditional buffs
   registerBuff(
     'spd',
-    ownBuff.premod.spd.add(
+    teamBuff.premod.spd.add(
       cmpGE(lcCount, 1, enteringBattle.ifOn(subscript(superimpose, dm.spd)))
     ),
     cmpGE(lcCount, 1, 'unique', '')

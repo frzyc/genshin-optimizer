@@ -1,7 +1,12 @@
 import { cmpGE, subscript, sum } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
+import {
+  allBoolConditionals,
+  own,
+  registerBuffFormula,
+  teamBuff,
+} from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'ScentAloneStaysTrue'
@@ -18,7 +23,7 @@ const sheet = registerLightCone(
   entriesForLightCone(key, data_gen),
 
   // Conditional buffs
-  registerBuff(
+  registerBuffFormula(
     'common_dmg_',
     teamBuff.premod.common_dmg_.add(
       cmpGE(

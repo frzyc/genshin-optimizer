@@ -29,5 +29,6 @@ const sheet = registerLightCone(
     ),
     cmpGE(lcCount, 1, 'unique', '')
   )
+  // TODO: add memosprite buff
 )
 export default sheet

@@ -10,7 +10,7 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-const { luminflux } = allNumConditionals(key, true, 0, 2)
+const { luminflux } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerLightCone(
   key,

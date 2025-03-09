@@ -17,7 +17,6 @@ const sheet = registerLightCone(
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  // Conditional buffs
   registerBuff(
     'skill_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
@@ -34,6 +33,8 @@ const sheet = registerLightCone(
     ),
     cmpGE(lcCount, 1, 'unique', '')
   ),
+
+  // Conditional buffs
   registerBuff(
     'followUp_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(

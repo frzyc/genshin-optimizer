@@ -35,6 +35,7 @@ const sheet = registerLightCone(
     ),
     cmpGE(lcCount, 1, 'unique', '')
   ),
+
   // Conditional buffs
   registerBuff(
     'skill_dmg_',

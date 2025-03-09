@@ -4,10 +4,10 @@ import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allNumConditionals,
   customHeal,
-  notOwnBuff,
   own,
   registerBuff,
   target,
+  teamBuff,
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
@@ -37,7 +37,7 @@ const sheet = registerLightCone(
   // Conditional buffs
   registerBuff(
     'atk_',
-    notOwnBuff.premod.atk_.add(
+    teamBuff.premod.atk_.add(
       cmpGE(lcCount, 1, prod(healingProvided, subscript(superimpose, dm.atk_)))
     ),
     cmpGE(lcCount, 1, 'unique', '')

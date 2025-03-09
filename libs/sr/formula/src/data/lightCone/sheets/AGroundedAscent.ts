@@ -1,7 +1,7 @@
-import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
+import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allBoolConditionals, own, registerBuff, teamBuff } from '../../util'
+import { allNumConditionals, own, registerBuff, teamBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'AGroundedAscent'
@@ -10,7 +10,7 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-const { ultOrSkillUsed } = allBoolConditionals(key)
+const { hymn } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerLightCone(
   key,
@@ -21,11 +21,7 @@ const sheet = registerLightCone(
   registerBuff(
     'common_dmg_',
     teamBuff.premod.common_dmg_.add(
-      cmpGE(
-        lcCount,
-        1,
-        ultOrSkillUsed.ifOn(subscript(superimpose, dm.common_dmg_))
-      )
+      cmpGE(lcCount, 1, prod(hymn, subscript(superimpose, dm.common_dmg_)))
     ),
     cmpGE(lcCount, 1, 'unique', '')
   )

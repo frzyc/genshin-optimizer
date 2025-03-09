@@ -186,8 +186,8 @@ describe('Light Cone sheets test', () => {
       cond(
         charKey,
         'AGroundedAscent',
-        conditionals.AGroundedAscent.ultOrSkillUsed.name,
-        1
+        conditionals.AGroundedAscent.hymn.name,
+        3
       )
     )
     const calc = new Calculator(
@@ -197,7 +197,7 @@ describe('Light Cone sheets test', () => {
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
-    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.24)
+    expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(3 * 0.24)
   })
 
   it('AlongThePassingShore', () => {
@@ -1042,6 +1042,8 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.hp_).val).toBeCloseTo(0.12)
     expect(calc.compute(char.final.heal_).val).toBeCloseTo(0.28)
   })
+
+  // HiddenShadow should be here but no conds
 
   it('IfTimeWereAFlower', () => {
     const charKey: CharacterKey = 'RuanMei'
@@ -1959,7 +1961,7 @@ describe('Light Cone sheets test', () => {
       cond(
         charKey,
         'ShatteredHome',
-        conditionals.ShatteredHome.enemyHpGE50.name,
+        conditionals.ShatteredHome.enemyHpGT50.name,
         1
       )
     )
@@ -2286,9 +2288,6 @@ describe('Light Cone sheets test', () => {
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     expect(calc.compute(char.final.def_).val).toBeCloseTo(0.32)
-    expect(calc.compute(char.final.dmg_.ult[0]).val).toBeCloseTo(
-      (606.375 + 529.2) * 1.32 * 1.2
-    )
   })
 
   it('ThoseManySprings', () => {

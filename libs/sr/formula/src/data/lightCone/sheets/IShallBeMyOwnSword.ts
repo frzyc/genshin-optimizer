@@ -28,7 +28,11 @@ const sheet = registerLightCone(
   registerBuff(
     'defIgn_',
     ownBuff.premod.defIgn_.add(
-      cmpGE(lcCount, 1, cmpGE(eclipse, 3, subscript(superimpose, dm.defIgn_)))
+      cmpGE(
+        lcCount,
+        1,
+        cmpGE(eclipse, dm.stacks, subscript(superimpose, dm.defIgn_))
+      )
     ),
     cmpGE(lcCount, 1, 'unique', '')
   )

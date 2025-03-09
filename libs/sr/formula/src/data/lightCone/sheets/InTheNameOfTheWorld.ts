@@ -17,6 +17,23 @@ const sheet = registerLightCone(
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
+  registerBuff(
+    'eff_',
+    ownBuff.premod.eff_.addWithDmgType(
+      'skill',
+      cmpGE(lcCount, 1, subscript(superimpose, dm.eff_))
+    ),
+    cmpGE(lcCount, 1, 'unique', '')
+  ),
+  registerBuff(
+    'atk_',
+    ownBuff.premod.atk_.addWithDmgType(
+      'skill',
+      cmpGE(lcCount, 1, subscript(superimpose, dm.atk_))
+    ),
+    cmpGE(lcCount, 1, 'unique', '')
+  ),
+
   // Conditional buffs
   registerBuff(
     'common_dmg_',
@@ -26,22 +43,6 @@ const sheet = registerLightCone(
         1,
         enemyDebuffed.ifOn(subscript(superimpose, dm.common_dmg_))
       )
-    ),
-    cmpGE(lcCount, 1, 'unique', '')
-  ),
-  registerBuff(
-    'eff_',
-    ownBuff.premod.eff_.addWithDmgType(
-      'skill',
-      cmpGE(lcCount, 1, enemyDebuffed.ifOn(subscript(superimpose, dm.eff_)))
-    ),
-    cmpGE(lcCount, 1, 'unique', '')
-  ),
-  registerBuff(
-    'atk_',
-    ownBuff.premod.atk_.addWithDmgType(
-      'skill',
-      cmpGE(lcCount, 1, enemyDebuffed.ifOn(subscript(superimpose, dm.atk_)))
     ),
     cmpGE(lcCount, 1, 'unique', '')
   )

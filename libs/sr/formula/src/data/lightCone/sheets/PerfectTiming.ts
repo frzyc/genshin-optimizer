@@ -1,7 +1,7 @@
 import { cmpGE, min, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { own, ownBuff, registerBuff } from '../../util'
+import { own, ownBuff, registerBuffFormula } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'PerfectTiming'
@@ -15,7 +15,7 @@ const sheet = registerLightCone(
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  registerBuff(
+  registerBuffFormula(
     'heal_',
     ownBuff.premod.heal_.add(
       cmpGE(

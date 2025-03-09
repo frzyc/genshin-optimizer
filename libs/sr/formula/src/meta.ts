@@ -1,10 +1,13 @@
 // WARNING: Generated file, do not modify
 export const conditionals = {
   AGroundedAscent: {
-    ultOrSkillUsed: {
+    hymn: {
       sheet: 'AGroundedAscent',
-      name: 'ultOrSkillUsed',
-      type: 'bool',
+      name: 'hymn',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 3,
     },
   },
   ASecretVow: {
@@ -769,27 +772,6 @@ export const conditionals = {
   },
   HeyOverHere: {
     skillUsed: { sheet: 'HeyOverHere', name: 'skillUsed', type: 'bool' },
-  },
-  HiddenShadow: {
-    boolConditional: {
-      sheet: 'HiddenShadow',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'HiddenShadow',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'HiddenShadow',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
   },
   Himeko: {
     boolConditional: { sheet: 'Himeko', name: 'boolConditional', type: 'bool' },
@@ -1595,7 +1577,7 @@ export const conditionals = {
     },
   },
   ShatteredHome: {
-    enemyHpGE50: { sheet: 'ShatteredHome', name: 'enemyHpGE50', type: 'bool' },
+    enemyHpGT50: { sheet: 'ShatteredHome', name: 'enemyHpGT50', type: 'bool' },
   },
   SheAlreadyShutHerEyes: {
     wearerHpReduced: {
@@ -2559,6 +2541,19 @@ export const formulas = {
       },
     },
   },
+  DestinysThreadsForewoven: {
+    common_dmg_: {
+      sheet: 'DestinysThreadsForewoven',
+      name: 'common_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'DestinysThreadsForewoven',
+        name: 'common_dmg_',
+      },
+    },
+  },
   DrRatio: {
     basicDmg_0: {
       sheet: 'DrRatio',
@@ -3035,6 +3030,19 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  ItsShowtime: {
+    atk_: {
+      sheet: 'ItsShowtime',
+      name: 'atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'ItsShowtime',
+        name: 'atk_',
       },
     },
   },
@@ -3651,6 +3659,19 @@ export const formulas = {
       },
     },
   },
+  PerfectTiming: {
+    heal_: {
+      sheet: 'PerfectTiming',
+      name: 'heal_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'heal_',
+        sheet: 'PerfectTiming',
+        name: 'heal_',
+      },
+    },
+  },
   Pioneering: {
     healing: {
       sheet: 'Pioneering',
@@ -3813,6 +3834,19 @@ export const formulas = {
       },
     },
   },
+  SailingTowardsASecondLife: {
+    spd_: {
+      sheet: 'SailingTowardsASecondLife',
+      name: 'spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'SailingTowardsASecondLife',
+        name: 'spd_',
+      },
+    },
+  },
   Sampo: {
     basicDmg_0: {
       sheet: 'Sampo',
@@ -3838,6 +3872,19 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  ScentAloneStaysTrue: {
+    common_dmg_: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'common_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ScentAloneStaysTrue',
+        name: 'common_dmg_',
       },
     },
   },
@@ -4112,6 +4159,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  ThisIsMe: {
+    ult_dmg__0: {
+      sheet: 'ThisIsMe',
+      name: 'ult_dmg__0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'ThisIsMe',
+        damageType1: 'ult',
+        name: 'ult_dmg__0',
       },
     },
   },
@@ -4446,6 +4507,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  YetHopeIsPriceless: {
+    followUp_dmg_: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'followUp_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'YetHopeIsPriceless',
+        damageType2: 'followUp',
+        name: 'followUp_dmg_',
       },
     },
   },
@@ -10066,41 +10141,6 @@ export const buffs = {
         q: 'heal_',
         sheet: 'HeyOverHere',
         name: 'heal_',
-      },
-    },
-  },
-  HiddenShadow: {
-    cond_dmg_: {
-      sheet: 'HiddenShadow',
-      name: 'cond_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'HiddenShadow',
-        name: 'cond_dmg_',
-      },
-    },
-    enemy_defRed_: {
-      sheet: 'HiddenShadow',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'HiddenShadow',
-        name: 'enemy_defRed_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'HiddenShadow',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'HiddenShadow',
-        name: 'team_dmg_',
       },
     },
   },
@@ -17418,20 +17458,6 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
         name: 'team_dmg_',
-      },
-    },
-  },
-  ThisIsMe: {
-    ult_dmg_: {
-      sheet: 'ThisIsMe',
-      name: 'ult_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'dmg_',
-        sheet: 'ThisIsMe',
-        damageType1: 'ult',
-        name: 'ult_dmg_',
       },
     },
   },

@@ -1,7 +1,7 @@
 import { cmpGE, min, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { own, ownBuff, registerBuff } from '../../util'
+import { own, ownBuff, registerBuffFormula } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'DestinysThreadsForewoven'
@@ -15,7 +15,7 @@ const sheet = registerLightCone(
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  registerBuff(
+  registerBuffFormula(
     'common_dmg_',
     ownBuff.premod.common_dmg_.add(
       cmpGE(
@@ -23,7 +23,12 @@ const sheet = registerLightCone(
         1,
         min(
           subscript(superimpose, dm.max_common_dmg_),
-          prod(own.final.def, 0.01, subscript(superimpose, dm.common_dmg_))
+          // TODO: use floor
+          prod(
+            own.final.def,
+            1 / dm.step,
+            subscript(superimpose, dm.common_dmg_)
+          )
         )
       )
     ),

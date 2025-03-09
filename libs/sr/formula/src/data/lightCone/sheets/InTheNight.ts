@@ -10,7 +10,7 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-// TODO: change from conditional to calculation
+// TODO: change from conditional to calculation and register as buff formula
 const { spdExceeded } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerLightCone(

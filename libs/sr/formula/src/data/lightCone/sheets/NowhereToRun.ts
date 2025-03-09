@@ -1,7 +1,7 @@
 import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { customHeal, own } from '../../util'
+import { customHeal, own, percent } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'NowhereToRun'
@@ -17,7 +17,11 @@ const sheet = registerLightCone(
 
   customHeal(
     'healing',
-    cmpGE(lcCount, 1, prod(own.final.atk, subscript(superimpose, dm.healAtk_))),
+    cmpGE(
+      lcCount,
+      1,
+      prod(own.final.atk, percent(subscript(superimpose, dm.healAtk_)))
+    ),
     { cond: cmpGE(lcCount, 1, 'unique', '') }
   )
 )

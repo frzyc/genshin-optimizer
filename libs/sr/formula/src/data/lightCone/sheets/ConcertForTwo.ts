@@ -10,6 +10,7 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
+// TODO: see if it's possible to calculate this
 // With assumption that memosprites affect the buff
 const { shieldCount } = allNumConditionals(key, true, 0, 8)
 

@@ -1,4 +1,4 @@
-import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
@@ -29,7 +29,15 @@ const sheet = registerLightCone(
     'basic_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'basic',
-      cmpGE(lcCount, 1, prod(brocade, subscript(superimpose, dm.basic_dmg_)))
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(
+          brocade,
+          dm.stacks,
+          prod(brocade, subscript(superimpose, dm.basic_dmg_))
+        )
+      )
     ),
     cmpGE(lcCount, 1, 'unique', '')
   )

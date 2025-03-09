@@ -15,7 +15,6 @@ const sheet = registerLightCone(
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  // Conditional buffs
   registerBuff(
     'common_dmg_',
     ownBuff.premod.common_dmg_.add(

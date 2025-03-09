@@ -1,7 +1,7 @@
 import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { own, ownBuff, registerBuff } from '../../util'
+import { own, ownBuff, registerBuff, registerBuffFormula } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'SailingTowardsASecondLife'
@@ -15,7 +15,6 @@ const sheet = registerLightCone(
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  // Conditional buffs
   registerBuff(
     'break_defIgn_',
     ownBuff.premod.defIgn_.addWithDmgType(
@@ -24,7 +23,9 @@ const sheet = registerLightCone(
     ),
     cmpGE(lcCount, 1, 'unique', '')
   ),
-  registerBuff(
+
+  // Conditional buffs
+  registerBuffFormula(
     'spd_',
     ownBuff.premod.spd_.add(
       cmpGE(

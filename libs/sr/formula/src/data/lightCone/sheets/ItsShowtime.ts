@@ -1,7 +1,7 @@
 import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
+import { allNumConditionals, own, ownBuff, registerBuff, registerBuffFormula } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'ItsShowtime'
@@ -17,7 +17,15 @@ const sheet = registerLightCone(
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
+  // Conditional buffs
   registerBuff(
+    'common_dmg_',
+    ownBuff.premod.common_dmg_.add(
+      cmpGE(lcCount, 1, prod(trick, subscript(superimpose, dm.common_dmg_)))
+    ),
+    cmpGE(lcCount, 1, 'unique', '')
+  ),
+  registerBuffFormula(
     'atk_',
     ownBuff.premod.atk_.add(
       cmpGE(
@@ -28,14 +36,5 @@ const sheet = registerLightCone(
     ),
     cmpGE(lcCount, 1, 'unique', '')
   ),
-
-  // Conditional buffs
-  registerBuff(
-    'common_dmg_',
-    ownBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, prod(trick, subscript(superimpose, dm.common_dmg_)))
-    ),
-    cmpGE(lcCount, 1, 'unique', '')
-  )
 )
 export default sheet

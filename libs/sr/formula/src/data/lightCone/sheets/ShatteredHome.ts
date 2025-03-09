@@ -10,7 +10,7 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-const { enemyHpGE50 } = allBoolConditionals(key)
+const { enemyHpGT50 } = allBoolConditionals(key)
 
 const sheet = registerLightCone(
   key,
@@ -24,7 +24,7 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        enemyHpGE50.ifOn(subscript(superimpose, dm.common_dmg_))
+        enemyHpGT50.ifOn(subscript(superimpose, dm.common_dmg_))
       )
     ),
     cmpGE(lcCount, 1, 'unique', '')

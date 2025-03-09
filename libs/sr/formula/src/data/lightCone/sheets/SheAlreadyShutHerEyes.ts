@@ -5,6 +5,7 @@ import {
   allBoolConditionals,
   customHeal,
   own,
+  percent,
   registerBuff,
   target,
   teamBuff,
@@ -29,7 +30,7 @@ const sheet = registerLightCone(
     cmpGE(
       lcCount,
       1,
-      prod(subscript(superimpose, dm.healScaling), target.final.hp)
+      prod(percent(subscript(superimpose, dm.healScaling)), target.final.hp)
     ),
     { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'unique', '') }
   ),
