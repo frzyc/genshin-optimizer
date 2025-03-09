@@ -1,5 +1,6 @@
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
-import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
+import type { NumNode, OP } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpNE, custom } from '@genshin-optimizer/pando/engine'
 import type {
   AscensionKey,
   LightConeKey,
@@ -22,6 +23,9 @@ import {
   ownTag,
   reader,
 } from './data/util'
+
+export const floor = <P extends OP>(x: NumNode<P> | number) =>
+  custom('floor', x)
 
 export function withPreset(
   preset: Preset,
