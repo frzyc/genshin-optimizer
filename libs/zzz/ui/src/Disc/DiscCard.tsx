@@ -32,13 +32,14 @@ import {
 } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
+import { Suspense, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
 import { LocationName } from '../Character/LocationName'
 import { ZCard } from '../Components'
 import { DiscSet2p, DiscSet4p, DiscSetName } from './DiscTrans'
+import { useSpinner } from './util'
 
 export function DiscCard({
   disc,
@@ -362,79 +363,4 @@ function SubstatDisplay({
       </span>
     </Typography>
   )
-}
-
-function useSpinner() {
-  // spinner image state data
-  const [rotation, setRotation] = useState(0)
-  const [velocity, setVelocity] = useState(0)
-  const dragging = useRef(false)
-  const lastAngle = useRef(0)
-  const lastTime = useRef(Date.now())
-  const center = useRef({ x: 0, y: 0 })
-
-  const handleMouseDown = (e: MouseEvent) => {
-    e.preventDefault()
-
-    const rect = (e as any).target.getBoundingClientRect() as DOMRect
-    center.current = {
-      x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2,
-    }
-    dragging.current = true
-    lastAngle.current = Math.atan2(
-      e.clientY - center.current.y,
-      e.clientX - center.current.x
-    )
-    lastTime.current = Date.now()
-    setVelocity(0)
-  }
-
-  const handleMouseMove = (e: MouseEvent) => {
-    e.preventDefault()
-    if (!dragging.current) return
-    const now = Date.now()
-    const deltaTime = now - lastTime.current
-
-    const angle = Math.atan2(
-      e.clientY - center.current.y,
-      e.clientX - center.current.x
-    )
-    const deltaAngle = (angle - lastAngle.current) * (180 / Math.PI)
-
-    setRotation((prev) => prev + deltaAngle)
-    setVelocity((deltaAngle / deltaTime) * 20)
-    lastAngle.current = angle
-    lastTime.current = now
-  }
-
-  const handleMouseUp = (e: MouseEvent) => {
-    e.preventDefault()
-    dragging.current = false
-  }
-
-  useEffect(() => {
-    if (!dragging.current) {
-      const momentum = setInterval(() => {
-        setRotation((prev) => {
-          if (Math.abs(velocity) < 0.1) {
-            clearInterval(momentum)
-            return prev
-          }
-          setVelocity((v) => v * 0.98)
-          return prev + velocity
-        })
-      }, 16)
-      return () => clearInterval(momentum)
-    }
-    return () => {}
-  }, [velocity])
-
-  return {
-    rotation,
-    handleMouseDown,
-    handleMouseMove,
-    handleMouseUp,
-    isDragging: dragging.current,
-  }
 }
