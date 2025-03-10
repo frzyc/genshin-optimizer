@@ -6,9 +6,9 @@ import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type { Tag } from './data/util'
 import { tagStr } from './data/util'
 
-export type CalcMeta = CalcMetaBase<Tag>
+export type CalcMeta = CalcMetaBase<Tag, never>
 
-export class Calculator extends Base<Tag> {
+export class Calculator extends Base<Tag, never> {
   override toDebug(): DebugCalculator {
     return new DebugCalculator(
       this,

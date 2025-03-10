@@ -23,7 +23,7 @@ type CondInfo<Member extends string, Sheet extends string> = MemRec<
 
 /// `op`s that appear in `Meta['op']`, inserted by the Calculator.computeMeta
 type MetaOp = 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'const'
-export interface CalcMeta<Tag_ extends Tag, COp = never> extends Info<Tag_> {
+export interface CalcMeta<Tag_ extends Tag, COp> extends Info<Tag_> {
   tag?: Tag_
   op: MetaOp | COp
   ops: CalcResult<number, CalcMeta<Tag_, COp>>[]
@@ -37,7 +37,7 @@ const { arithmetic } = calculation
 
 export class Calculator<
   Tag_ extends Tag = Tag,
-  COp = never // values of supported `Custom['ex']` if any
+  COp extends string = string // values of supported `Custom['ex']` if any
 > extends BaseCalculator<CalcMeta<Tag_, COp>> {
   override computeMeta(
     { op, ex, tag: nTag }: AnyNode,
