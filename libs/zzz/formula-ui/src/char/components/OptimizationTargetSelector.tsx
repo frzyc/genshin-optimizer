@@ -5,8 +5,8 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { getDmgType } from '..'
+import { TagDisplay } from '../../components'
 import { useZzzCalcContext } from '../../hooks'
-import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 
 export function OptimizationTargetSelector({
   optTarget,
@@ -24,7 +24,7 @@ export function OptimizationTargetSelector({
       title={
         <Box sx={{ display: 'flex', gap: 1 }}>
           {t('optTarget')}
-          {optTarget ? <OptimizationTargetDisplay tag={optTarget} /> : null}
+          {optTarget ? <TagDisplay tag={optTarget} /> : null}
         </Box>
       }
       {...buttonProps}
@@ -35,7 +35,7 @@ export function OptimizationTargetSelector({
           onClick={() => setOptTarget(read.tag)}
         >
           <ListItemText>
-            <OptimizationTargetDisplay tag={read.tag} />
+            <TagDisplay tag={read.tag} />
           </ListItemText>
           {/* Show DMG type */}
           <Box sx={{ display: 'flex', gap: 1, ml: 1 }}>
