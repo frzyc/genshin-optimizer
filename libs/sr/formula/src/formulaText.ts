@@ -60,7 +60,7 @@ export function translate(
       break
     }
     case 'floor':
-      formula = `\u230A${ops}\u230B`
+      formula = `\u230A${ops[0].val}\u230B`
       prec = Infinity
       break
     default:
