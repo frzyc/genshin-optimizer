@@ -1,15 +1,11 @@
 import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
-import {
-  useCharacterContext,
-  useDatabaseContext,
-} from '@genshin-optimizer/zzz/db-ui'
+import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
   CharacterCoverOptimize,
   CharacterEditor,
-  EquippedGrid,
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -25,6 +21,7 @@ import { BonusStatsSection } from './BonusStats'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import Optimize from './Optimize'
+import { OptimizeEquippedGrid } from './Optimize/EquippedGrid'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
 
 const BOT_PX = 0
@@ -152,24 +149,10 @@ function OptimizeSection() {
   return <Optimize />
 }
 function CurrentBuildDisplay() {
-  const { database } = useDatabaseContext()
-  const character = useCharacterContext()!
-  const { key: characterKey, equippedDiscs, equippedWengine } = character
   return (
     <CardThemed sx={{ width: '100%' }}>
       <CardContent>
-        <EquippedGrid
-          setDisc={(slotKey, id) =>
-            id
-              ? database.discs.set(id, { location: characterKey })
-              : database.discs.set(equippedDiscs[slotKey], { location: '' })
-          }
-          setWengine={(id) =>
-            id
-              ? database.wengines.set(id, { location: characterKey })
-              : database.wengines.set(equippedWengine, { location: '' })
-          }
-        />
+        <OptimizeEquippedGrid />
       </CardContent>
     </CardThemed>
   )

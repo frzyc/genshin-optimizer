@@ -4,6 +4,7 @@ import { theme as commonTheme } from '@genshin-optimizer/common/ui'
 
 declare module '@mui/material/styles' {
   interface Palette {
+    contentZzz: Palette['primary']
     fire: Palette['primary']
     ice: Palette['primary']
     electric: Palette['primary']
@@ -16,6 +17,7 @@ declare module '@mui/material/styles' {
   }
 
   interface PaletteOptions {
+    contentZzz?: PaletteOptions['primary']
     fire?: PaletteOptions['primary']
     ice?: PaletteOptions['primary']
     electric?: PaletteOptions['primary']
@@ -76,6 +78,10 @@ export const theme = createTheme({
   ...commonTheme,
   palette: {
     ...commonTheme.palette,
+    contentZzz: commonTheme.palette.augmentColor({
+      color: { main: '#2B364D', contrastText: '#fff' },
+      name: 'contentZzz',
+    }),
     fire: commonTheme.palette.augmentColor({
       color: { main: '#FF5623', contrastText: '#fff' },
       name: 'fire',

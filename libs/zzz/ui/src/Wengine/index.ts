@@ -1,3 +1,4 @@
+export * from './CompactWengineCard'
 export * from './PhaseDropdown'
 export * from './WengineAutocomplete'
 export * from './WengineCard'
