@@ -1,4 +1,4 @@
-import type { DebugCalculator } from '../debug'
+import { DebugCalculator } from '../debug'
 import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
 import {
   DedupTags,
@@ -164,6 +164,6 @@ export class Calculator<M = any> {
   }
 
   toDebug(): DebugCalculator {
-    throw 'Not implemented'
+    return new DebugCalculator(this, tagString)
   }
 }
