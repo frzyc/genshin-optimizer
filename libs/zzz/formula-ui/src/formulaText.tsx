@@ -30,7 +30,12 @@ export function formulaText(
     val,
     meta: { tag, op, ops, usedCats },
   } = data
-  const displayVal = valueString(val, getUnitStr(tag?.name ?? tag?.q ?? ''))
+  const usedTag =
+    tag && (objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag)
+  const displayVal = valueString(
+    val,
+    getUnitStr(usedTag?.name ?? usedTag?.q ?? '')
+  )
 
   const deps = new Set<FormulaText>()
   function getString(
@@ -93,11 +98,10 @@ export function formulaText(
     }
   }
   let name: ReactNode, sheet: string | undefined
-  if (tag && usedCats.size > 0) {
-    const newTag = objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag
+  if (usedTag) {
     name = (
       <span>
-        <TagDisplay tag={newTag} /> {displayVal}
+        <TagDisplay tag={usedTag} /> {displayVal}
       </span>
     )
     sheet = undefined
