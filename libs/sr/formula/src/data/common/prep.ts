@@ -24,7 +24,12 @@ const data: TagMapNodeEntries = [
   // Formula calculations
   ownBuff.formula.dmg.add(
     dynTag(prod(own.dmg.out, own.dmg.critMulti, own.dmg.inDmg), {
-      elementalType: cmpNE(tagVal('elementalType'), '', tagVal('elementalType'), own.char.ele),
+      elementalType: cmpNE(
+        tagVal('elementalType'),
+        '',
+        tagVal('elementalType'),
+        own.char.ele
+      ),
     })
   ),
   ownBuff.formula.shield.add(
