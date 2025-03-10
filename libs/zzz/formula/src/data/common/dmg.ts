@@ -58,11 +58,11 @@ const data: TagMapNodeEntries = [
     )
   ),
   // DMG Taken Multiplier
-  ownBuff.dmg.dmg_taken_mult.add(
+  ownBuff.dmg.dmg_taken_mult_.add(
     sum(percent(1), enemy.common.dmgInc_, prod(-1, enemy.common.dmgRed_))
   ),
   // Stunned Multiplier
-  ownBuff.dmg.stunned_mult.add(
+  ownBuff.dmg.stunned_mult_.add(
     cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_)
   ),
 
