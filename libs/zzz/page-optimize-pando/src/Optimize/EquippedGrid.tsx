@@ -10,6 +10,7 @@ import {
   CharacterEditor,
   CompactDiscCard,
   CompactWengineCard,
+  DiscSetCardCompact,
   EmptyCompactCard,
 } from '@genshin-optimizer/zzz/ui'
 import { Box, Grid } from '@mui/material'
@@ -29,6 +30,7 @@ export function OptimizeEquippedGrid() {
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
+
   const discs = useDiscs(character?.equippedDiscs)
   const wengine = useWengine(character?.equippedWengine)
 
@@ -62,8 +64,8 @@ export function OptimizeEquippedGrid() {
             />
           )}
         </Grid>
-        <Grid item xs={1} sx={{ borderRadius: '20px' }}>
-          Sets
+        <Grid item xs={1} xl={2} sx={{ borderRadius: '20px' }}>
+          <DiscSetCardCompact discs={discs} />
         </Grid>
       </Grid>
       <Grid item columns={columns} container spacing={2.5}>
@@ -84,8 +86,7 @@ export function OptimizeEquippedGrid() {
                 />
               ) : (
                 <EmptyCompactCard
-                  placeholder={'Disc Slot'}
-                  slotKey={slotKey}
+                  placeholder={`Disc Slot ${slotKey}`}
                   onClick={() =>
                     character?.key && setCharacterKey(character.key)
                   }
