@@ -1,3 +1,4 @@
+export * from './CompactDiscCard'
 export * from './DiscCard'
 export * from './DiscEditor'
 export * from './DiscFilterDisplay'
