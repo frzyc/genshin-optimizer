@@ -24,8 +24,8 @@ const data: TagMapNodeEntries = [
     ownBuff.dmg.buff_mult_,
     ownBuff.dmg.def_mult_,
     ownBuff.dmg.res_mult_,
-    ownBuff.dmg.dmg_taken_mult,
-    ownBuff.dmg.stunned_mult,
+    ownBuff.dmg.dmg_taken_mult_,
+    ownBuff.dmg.stunned_mult_,
   ].map((buff) => ownBuff.dmg.shared.add(buff)),
 
   // DMG Bonus Multiplier
