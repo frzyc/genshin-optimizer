@@ -137,7 +137,7 @@ export function customDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'prod' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -217,7 +217,7 @@ export function customAnomalyDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode | number,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'prod' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
