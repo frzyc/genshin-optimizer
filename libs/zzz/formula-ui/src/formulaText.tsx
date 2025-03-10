@@ -1,4 +1,8 @@
-import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import {
+  getUnitStr,
+  objFilter,
+  valueString,
+} from '@genshin-optimizer/common/util'
 import type { CalcMeta } from '@genshin-optimizer/game-opt/engine'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
@@ -24,7 +28,7 @@ export function formulaText(
   if (old) return old
   const {
     val,
-    meta: { tag, op, ops },
+    meta: { tag, op, ops, usedCats },
   } = data
   const displayVal = valueString(val, getUnitStr(tag?.name ?? tag?.q ?? ''))
 
@@ -85,11 +89,11 @@ export function formulaText(
     }
   }
   let name: ReactNode, sheet: string | undefined
-  if (tag) {
-    const { name: _, ...rest } = tag
+  if (tag && usedCats.size > 0) {
+    const newTag = objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag
     name = (
       <span>
-        <TagDisplay tag={rest} /> {displayVal}
+        <TagDisplay tag={newTag} /> {displayVal}
       </span>
     )
     sheet = undefined
@@ -102,7 +106,6 @@ export function formulaText(
     sheet,
     deps: [...new Set(deps)],
   }
-  cache.set(data, result)
   return result
 }
 
