@@ -1,7 +1,14 @@
 import { registerEquipment } from '@genshin-optimizer/game-opt/formula'
-import { cmpGE, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
+import {
+  cmpEq,
+  cmpGE,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
-import { allStats } from '@genshin-optimizer/zzz/stats'
+import { allStats, getWengineStat } from '@genshin-optimizer/zzz/stats'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
 import { own, ownBuff } from '../util'
 
@@ -49,4 +56,16 @@ export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
       )
     ),
   ]
+}
+
+export function cmpSpecialtyAndEquipped(key: WengineKey, num: NumNode) {
+  const weCount = own.common.count.sheet(key)
+  const type = getWengineStat(key).type
+  return cmpEq(type, own.char.specialty, cmpGE(weCount, 1, num))
+}
+
+export function showSpecialtyAndEquipped(key: WengineKey) {
+  const weCount = own.common.count.sheet(key)
+  const type = getWengineStat(key).type
+  return cmpEq(type, own.char.specialty, cmpGE(weCount, 1, 'unique', ''), '')
 }

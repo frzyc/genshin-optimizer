@@ -149,6 +149,9 @@ function OptimizeWrapper() {
       team.frames,
       10, // TODO: topN
       statFilters,
+      [],
+      [],
+      [],
       lightCones,
       relicsBySlot,
       numWorkers,

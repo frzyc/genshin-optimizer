@@ -1,8 +1,8 @@
 /**
- * Whether the function is `inc`reasing/`dec`reasing w.r.t. to an argument.
- * Note that both `inc` and `dec` mean the the function is constant w.r.t.
- * the argument, while neither means that the argument affects the function
- * result non-monotonically.
+ * Whether the function is `inc`reasing/`dec`reasing in wide sense w.r.t. to
+ * an argument. Note that having both `inc` and `dec` means the function is
+ * constant w.r.t. the argument, while neither means that the argument affects
+ * the function result non-monotonically.
  */
 export type Monotonicity = { inc: boolean; dec: boolean }
 export type Range = { min: number; max: number }

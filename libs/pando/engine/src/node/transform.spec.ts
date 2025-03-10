@@ -51,7 +51,7 @@ describe('optimization', () => {
   ]
 
   test('compile', () => {
-    const compiled = compile(x, 'q', 2, {})
+    const compiled = compile(x, 'q', 2)
 
     // Empty entries
     expect(compiled([{}, {}])).toEqual([12, 12, 0, 3])
@@ -67,7 +67,7 @@ describe('optimization', () => {
   })
   describe('compile computation', () => {
     function runCompile(n: AnyTagFree): number | string {
-      return compile([n], '', 0, {})([])[0]
+      return compile([n], '', 0)([])[0]
     }
     test('arithmetic', () => {
       expect(runCompile(sum(1, 2, 3, 4))).toEqual(10)
@@ -103,7 +103,7 @@ describe('optimization', () => {
   describe('compileDiff computation', () => {
     const [v0, v1, v2] = [10, 20, 1]
     function runDiff(n: NumTagFree): number[] {
-      return compileDiff(n, 'q', ['0', '1'], 0, { 0: v0, 1: v1, 2: v2 })([])
+      return compileDiff(n, 'q', ['0', '1'], 1)([{ 0: v0, 1: v1, 2: v2 }])
     }
     test('arithmetic', () => {
       expect(runDiff(sum(5, read0, read1, read1, read2))).toEqual([1, 2])

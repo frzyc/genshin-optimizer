@@ -99,9 +99,13 @@
   "TravelerGeoF": "Lumina (Geo)",
   "TravelerElectroF": "Lumina (Electro)",
   "TravelerDendroF": "Lumina (Dendro)",
+  "TravelerHydroF": "Lumina (Hydro)",
+  "TravelerPyroF": "Lumina (Pyro)",
   "TravelerAnemoM": "Éter (Anemo)",
   "TravelerGeoM": "Éter (Geo)",
   "TravelerElectroM": "Éter (Electro)",
   "TravelerDendroM": "Éter (Dendro)",
+  "TravelerHydroM": "Éter (Hydro)",
+  "TravelerPyroM": "Éter (Pyro)",
   "Somnia": "Somnia"
 }

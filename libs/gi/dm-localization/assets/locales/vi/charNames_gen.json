@@ -99,9 +99,13 @@
   "TravelerGeoF": "Lumine (Nham)",
   "TravelerElectroF": "Lumine (Lôi)",
   "TravelerDendroF": "Lumine (Thảo)",
+  "TravelerHydroF": "Lumine (Thủy)",
+  "TravelerPyroF": "Lumine (Hỏa)",
   "TravelerAnemoM": "Aether (Phong)",
   "TravelerGeoM": "Aether (Nham)",
   "TravelerElectroM": "Aether (Lôi)",
   "TravelerDendroM": "Aether (Thảo)",
+  "TravelerHydroM": "Aether (Thủy)",
+  "TravelerPyroM": "Aether (Hỏa)",
   "Somnia": "Somnia"
 }
