@@ -1,7 +1,6 @@
 import type { AnyNode, CalcResult, PreRead, ReRead, TagCache } from './node'
 import { Calculator as BaseCalculator, map } from './node'
 import type { Tag, TagMapEntries, TagMapEntry } from './tag'
-import { entryRef } from './tag/symb'
 
 type TagStr = (tag: Tag, ex?: any) => string
 type Predicate = (debug: DebugMeta) => boolean
@@ -47,17 +46,14 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   __gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
     if (cache.val) return cache.val
 
-    const entries: TagMapEntries<AnyNode | ReRead> = []
-    this.nodes._subset(cache.id, (l) => entries.push(...(l[entryRef] ?? [])))
-
-    const pre = this.nodes
-      .subset(cache.id)
-      .flatMap((n, i) =>
-        n.op === 'reread'
-          ? this._gather(cache.with(n.tag)).pre.map((x) => [x, n, i] as const)
-          : [[this._compute(n, cache), n as AnyNode | ReRead, i] as const]
-      )
-      .map(([x, n, i]) => this.markGathered(cache.tag, n, x, entries[i]))
+    const pre = this.nodes.entries(cache.id).flatMap(({ tag, value: n }) =>
+      n.op === 'reread'
+        ? this._gather(cache.with(n.tag)).pre.map((x) => {
+            const readSeq: ReadSeq = [...x.meta.readSeq!, { tag, value: n }]
+            return Object.freeze({ ...x, meta: { ...x.meta, readSeq } })
+          })
+        : [this.markGathered(cache.tag, tag, n, this._compute(n, cache))]
+    )
     return (cache.val = { pre })
   }
   override _compute(
@@ -83,11 +79,11 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
 
   override markGathered(
     _tag: Tag,
-    _n: AnyNode | ReRead | undefined,
-    { val, meta }: CalcResult<number | string, DebugMeta>,
-    entry?: TagMapEntry<AnyNode | ReRead>
+    entryTag: Tag,
+    n: AnyNode | undefined,
+    { val, meta }: CalcResult<number | string, DebugMeta>
   ): CalcResult<number | string, DebugMeta> {
-    meta = { ...meta, readSeq: [...(meta.readSeq ?? []), entry] as ReadSeq }
+    meta = { ...meta, readSeq: [{ tag: entryTag!, value: n! }] }
     return Object.freeze({ val, meta })
   }
   override computeMeta(

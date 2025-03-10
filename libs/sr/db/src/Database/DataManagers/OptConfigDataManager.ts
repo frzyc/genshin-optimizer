@@ -1,16 +1,17 @@
 import type { UnArray } from '@genshin-optimizer/common/util'
-import {
-  deepClone,
-  deepFreeze,
-  validateArr,
-} from '@genshin-optimizer/common/util'
+import { deepFreeze, validateArr } from '@genshin-optimizer/common/util'
 import type {
-  CharacterKey,
+  PathKey,
+  RelicCavernSetKey,
   RelicMainStatKey,
+  RelicPlanarSetKey,
 } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterKeys,
-  allRelicSetKeys,
+  allPathKeys,
+  allRelicCavernSetKeys,
+  allRelicPlanarSetKeys,
+  lightConeMaxLevel,
+  relicMaxLevel,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Tag } from '@genshin-optimizer/sr/formula'
@@ -29,11 +30,6 @@ export const allAllowLocationsState = [
 ] as const
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 
-export const allRelicSetExclusionKeys = [...allRelicSetKeys, 'rainbow'] as const
-export type RelicSetExclusionKey = (typeof allRelicSetExclusionKeys)[number]
-
-export type RelicSetExclusion = Partial<Record<RelicSetExclusionKey, (2 | 4)[]>>
-
 export type StatFilter = {
   tag: Tag
   value: number
@@ -43,30 +39,35 @@ export type StatFilter = {
 export type StatFilters = Array<StatFilter>
 
 export interface OptConfig {
-  relicSetExclusion: RelicSetExclusion
   statFilters: StatFilters
-  mainStatKeys: {
-    body: RelicMainStatKey[]
-    feet: RelicMainStatKey[]
-    sphere: RelicMainStatKey[]
-    rope: RelicMainStatKey[]
-    head?: never
-    hands?: never
-  }
-  excludedLocations: CharacterKey[]
-  allowLocationsState: AllowLocationsState
-  relicExclusion: string[]
-  useExcludedRelics: boolean
-  mainStatAssumptionLevel: number
-  allowPartial: boolean
-  maxBuildsToShow: number
-  plotBase?: string[]
-  compareBuild: boolean
+
+  // Relic filters
   levelLow: number
   levelHigh: number
-  useTeammateBuild: boolean
+  slotBodyKeys: RelicMainStatKey[]
+  slotFeetKeys: RelicMainStatKey[]
+  slotSphereKeys: RelicMainStatKey[]
+  slotRopeKeys: RelicMainStatKey[]
+  setFilter2Cavern: RelicCavernSetKey[]
+  setFilter4Cavern: RelicCavernSetKey[]
+  setFilter2Planar: RelicPlanarSetKey[]
+  useEquipped: boolean
+
+  // excludedLocations: CharacterKey[]
+  // allowLocationsState: AllowLocationsState
+  // relicExclusion: string[]
+  // useExcludedRelics: boolean
+  // allowPartial: boolean
+
+  // LC Filters
+  optLightCone: boolean
+  lcLevelLow: number
+  lcLevelHigh: number
+  lightConePaths: PathKey[]
+  useEquippedLightCone: boolean
 
   //generated opt builds
+  maxBuildsToShow: number
   generatedBuildListId?: string
 }
 
@@ -82,22 +83,31 @@ export class OptConfigDataManager extends DataManager<
   override validate(obj: object): OptConfig | undefined {
     if (typeof obj !== 'object') return undefined
     let {
-      relicSetExclusion,
-      relicExclusion,
-      useExcludedRelics,
       statFilters,
-      mainStatKeys,
-      mainStatAssumptionLevel,
-      excludedLocations,
-      allowLocationsState,
-      allowPartial,
-      maxBuildsToShow,
-      plotBase,
-      compareBuild,
+
       levelLow,
       levelHigh,
-      useTeammateBuild,
+      slotBodyKeys,
+      slotFeetKeys,
+      slotSphereKeys,
+      slotRopeKeys,
+      setFilter2Cavern,
+      setFilter4Cavern,
+      setFilter2Planar,
+      useEquipped,
+      // relicExclusion,
+      // useExcludedRelics,
+      // excludedLocations,
+      // allowLocationsState,
+      // allowPartial,
 
+      optLightCone,
+      lcLevelLow,
+      lcLevelHigh,
+      lightConePaths,
+      useEquippedLightCone,
+
+      maxBuildsToShow,
       generatedBuildListId,
     } = obj as OptConfig
 
@@ -111,44 +121,42 @@ export class OptConfigDataManager extends DataManager<
       return true
     })
 
-    if (
-      !mainStatKeys ||
-      !mainStatKeys.body ||
-      !mainStatKeys.feet ||
-      !mainStatKeys.sphere ||
-      !mainStatKeys.rope
-    )
-      mainStatKeys = deepClone(initialBuildSettings.mainStatKeys)
-    else {
-      const slots = ['body', 'feet', 'sphere', 'rope'] as const
-      // make sure the arrays are not empty
-      slots.forEach((sk) => {
-        if (!mainStatKeys[sk].length)
-          mainStatKeys[sk] = [...relicSlotToMainStatKeys[sk]]
-      })
-    }
+    if (levelLow === undefined) levelLow = 0
+    if (levelHigh === undefined) levelHigh = relicMaxLevel['5']
 
-    if (
-      typeof mainStatAssumptionLevel !== 'number' ||
-      mainStatAssumptionLevel < 0 ||
-      mainStatAssumptionLevel > 15
-    )
-      mainStatAssumptionLevel = 0
-
-    if (!relicExclusion || !Array.isArray(relicExclusion)) relicExclusion = []
-    else
-      relicExclusion = [...new Set(relicExclusion)].filter((id) =>
-        this.database.relics.keys.includes(id)
-      )
-
-    excludedLocations = validateArr(
-      excludedLocations,
-      allCharacterKeys,
+    slotBodyKeys = validateArr(slotBodyKeys, relicSlotToMainStatKeys.body, [])
+    slotFeetKeys = validateArr(slotFeetKeys, relicSlotToMainStatKeys.feet, [])
+    slotSphereKeys = validateArr(
+      slotSphereKeys,
+      relicSlotToMainStatKeys.sphere,
       []
-    ).filter(
-      (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
     )
-    if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
+    slotRopeKeys = validateArr(slotRopeKeys, relicSlotToMainStatKeys.rope, [])
+    setFilter2Cavern = validateArr(setFilter2Cavern, allRelicCavernSetKeys, [])
+    setFilter4Cavern = validateArr(setFilter4Cavern, allRelicCavernSetKeys, [])
+    setFilter2Planar = validateArr(setFilter2Planar, allRelicPlanarSetKeys, [])
+    useEquipped = !!useEquipped
+
+    // if (!relicExclusion || !Array.isArray(relicExclusion)) relicExclusion = []
+    // else
+    //   relicExclusion = [...new Set(relicExclusion)].filter((id) =>
+    //     this.database.relics.keys.includes(id)
+    //   )
+
+    // excludedLocations = validateArr(
+    //   excludedLocations,
+    //   allCharacterKeys,
+    //   []
+    // ).filter(
+    //   (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
+    // )
+    // if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
+
+    optLightCone = !!optLightCone
+    if (lcLevelLow === undefined) lcLevelLow = 0
+    if (lcLevelHigh === undefined) lcLevelHigh = lightConeMaxLevel
+    lightConePaths = validateArr(lightConePaths, allPathKeys, [])
+    useEquippedLightCone = !!useEquippedLightCone
 
     if (
       !maxBuildsToShowList.includes(
@@ -156,19 +164,7 @@ export class OptConfigDataManager extends DataManager<
       )
     )
       maxBuildsToShow = maxBuildsToShowDefault
-    if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
-    if (compareBuild === undefined) compareBuild = false
-    if (levelLow === undefined) levelLow = 0
-    if (levelHigh === undefined) levelHigh = 20
-    if (!relicSetExclusion) relicSetExclusion = {}
-    if (useExcludedRelics === undefined) useExcludedRelics = false
-    if (!allowPartial) allowPartial = false
-    relicSetExclusion = Object.fromEntries(
-      Object.entries(relicSetExclusion as RelicSetExclusion)
-        .map(([k, r]) => [k, [...new Set(r)]])
-        .filter(([_, a]) => a.length)
-    )
-    if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
+    // if (!plotBase || !Array.isArray(plotBase)) plotBase = undefined
 
     if (
       generatedBuildListId &&
@@ -177,22 +173,31 @@ export class OptConfigDataManager extends DataManager<
       generatedBuildListId = undefined
 
     return {
-      relicSetExclusion,
-      relicExclusion,
-      useExcludedRelics,
       statFilters,
-      mainStatKeys,
-      mainStatAssumptionLevel,
-      excludedLocations,
-      allowLocationsState,
-      allowPartial,
-      maxBuildsToShow,
-      plotBase,
-      compareBuild,
+
       levelLow,
       levelHigh,
-      useTeammateBuild,
+      slotBodyKeys,
+      slotFeetKeys,
+      slotSphereKeys,
+      slotRopeKeys,
+      setFilter2Cavern,
+      setFilter4Cavern,
+      setFilter2Planar,
+      useEquipped,
+      // relicExclusion,
+      // useExcludedRelics,
+      // excludedLocations,
+      // allowLocationsState,
+      // allowPartial,
 
+      optLightCone,
+      lcLevelLow,
+      lcLevelHigh,
+      lightConePaths,
+      useEquippedLightCone,
+
+      maxBuildsToShow,
       generatedBuildListId,
     }
   }
@@ -211,10 +216,12 @@ export class OptConfigDataManager extends DataManager<
     if (!optConfig) return {}
     const {
       // remove user-specific data
-      useExcludedRelics,
-      excludedLocations,
-      allowLocationsState,
-      relicExclusion,
+      // useExcludedRelics,
+      // excludedLocations,
+      // allowLocationsState,
+      // relicExclusion,
+      useEquipped,
+      useEquippedLightCone: useEquippedLC,
       generatedBuildListId,
       ...rest
     } = optConfig
@@ -244,45 +251,24 @@ export class OptConfigDataManager extends DataManager<
 }
 
 const initialBuildSettings: OptConfig = deepFreeze({
-  relicSetExclusion: {},
-  relicExclusion: [],
-  useExcludedRelics: false,
   statFilters: [],
-  mainStatKeys: {
-    body: relicSlotToMainStatKeys.body,
-    feet: relicSlotToMainStatKeys.feet,
-    sphere: relicSlotToMainStatKeys.sphere,
-    rope: relicSlotToMainStatKeys.rope,
-  },
-  mainStatAssumptionLevel: 0,
-  excludedLocations: [],
-  allowLocationsState: 'unequippedOnly',
-  allowPartial: false,
+
+  levelLow: relicMaxLevel['5'],
+  levelHigh: relicMaxLevel['5'],
+  slotBodyKeys: [...relicSlotToMainStatKeys.body],
+  slotFeetKeys: [...relicSlotToMainStatKeys.feet],
+  slotSphereKeys: [...relicSlotToMainStatKeys.sphere],
+  slotRopeKeys: [...relicSlotToMainStatKeys.rope],
+  setFilter2Cavern: [],
+  setFilter4Cavern: [],
+  setFilter2Planar: [],
+  useEquipped: false,
+
+  optLightCone: false,
+  lcLevelLow: lightConeMaxLevel,
+  lcLevelHigh: lightConeMaxLevel,
+  lightConePaths: [],
+  useEquippedLightCone: false,
+
   maxBuildsToShow: 5,
-  plotBase: undefined,
-  compareBuild: true,
-  levelLow: 0,
-  levelHigh: 15,
-  useTeammateBuild: false,
-
-  builds: [],
-  buildDate: 0,
 })
-
-// TODO: Remove 4-set exclusion for planar relics
-export function handleRelicSetExclusion(
-  currentRelicSetExclusion: RelicSetExclusion,
-  setKey: RelicSetExclusionKey,
-  num: 2 | 4
-) {
-  const relicSetExclusion = deepClone(currentRelicSetExclusion)
-  const setExclusion = relicSetExclusion[setKey]
-  if (!setExclusion) relicSetExclusion[setKey] = [num]
-  else if (!setExclusion.includes(num))
-    relicSetExclusion[setKey] = [...setExclusion, num]
-  else {
-    relicSetExclusion[setKey] = setExclusion.filter((n) => n !== num)
-    if (!setExclusion.length) delete relicSetExclusion[setKey]
-  }
-  return relicSetExclusion
-}

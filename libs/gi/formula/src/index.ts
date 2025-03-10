@@ -17,17 +17,16 @@ export * from './meta'
 export * from './util'
 
 {
-  // Hook the custom formula once at  the beginning
-  const resCalc = (args: (number | string)[]): number => {
+  const res = (args: (number | string)[]): number => {
     const x = args[0] as number
     if (x >= 0.75) return 1 / (1 + 4 * x)
     if (x >= 0) return 1 - x
     return 1 - 0.5 * x
   }
   addCustomOperation('res', {
-    range: ([r]) => ({ min: resCalc([r.max]), max: resCalc([r.min]) }),
+    range: ([r]) => ({ min: res([r.max]), max: res([r.min]) }),
     monotonicity: (_) => [{ inc: false, dec: true }],
-    calc: resCalc,
+    calc: res,
   })
 }
 
