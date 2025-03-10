@@ -1,11 +1,15 @@
 'use client'
+
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { DiscSetName, EmptyCompactCard, ZCard } from '@genshin-optimizer/zzz/ui'
-import { Box, Stack, Typography } from '@mui/material'
+import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
+import { Typography } from '@mui/material'
+import { Box, Stack } from '@mui/system'
 import { useMemo } from 'react'
+import { ZCard } from '../Components'
+import { EmptyCompactCard } from '../util'
+import { DiscSetName } from './DiscTrans'
 
 export function DiscSetCardCompact({
   discs,
@@ -30,8 +34,6 @@ export function DiscSetCardCompact({
     ) as Partial<Record<DiscSetKey, 2 | 4>>
   }, [discs])
 
-  console.log(sets)
-
   return sets && Object.keys(sets).length ? (
     <ZCard
       bgt="dark"
@@ -45,6 +47,7 @@ export function DiscSetCardCompact({
           {/* TODO: translate */}
           {Object.entries(sets).map(([key, count]) => (
             <Box
+              key={key}
               component="div"
               sx={{
                 display: 'flex',
