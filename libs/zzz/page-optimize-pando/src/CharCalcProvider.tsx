@@ -1,4 +1,5 @@
 import { notEmpty, toDecimal } from '@genshin-optimizer/common/util'
+import type { Calculator } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
 import type {
@@ -74,7 +75,11 @@ export function CharCalcProvider({
     [member0, charOpt, character.key]
   )
 
-  return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
+  return (
+    <CalcContext.Provider value={calc as Calculator}>
+      {children}
+    </CalcContext.Provider>
+  )
 }
 
 function useCharacterAndEquipment(character: ICachedCharacter) {

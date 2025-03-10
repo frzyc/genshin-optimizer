@@ -1,8 +1,8 @@
 import { assertUnreachable } from '@genshin-optimizer/common/util'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import type { PartialMeta } from './calculator'
+import type { CalcMeta } from './calculator'
 
-type Output = PartialMeta
+type Output = CalcMeta
 
 type FormulaText = {
   name: string | undefined
@@ -38,9 +38,6 @@ export function translate(
 
   let formula: string, prec: number
   switch (op) {
-    // TODO: handle `subscript` and `vtag`
-    case 'subscript':
-    case 'vtag':
     case 'const':
       formula = `${val}` // TODO: Add % here if `tag` indicates percent constant
       prec = Infinity
@@ -58,18 +55,14 @@ export function translate(
     case 'sumfrac': {
       const [dem] = getString(ops, 2)
       const [num1, num2] = getString(ops, 1)
-
       formula = `${dem} / (${num1} + ${num2})`
       prec = details.prod.prec
       break
     }
-    case 'floor': {
-      const [x] = ops
-
-      formula = `\u230A${x}\u230B`
+    case 'floor':
+      formula = `\u230A${ops[0].val}\u230B`
       prec = Infinity
       break
-    }
     default:
       assertUnreachable(op)
   }
