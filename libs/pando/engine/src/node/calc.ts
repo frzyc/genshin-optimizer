@@ -1,4 +1,4 @@
-import { DebugCalculator } from '../debug'
+import type { DebugCalculator } from '../debug'
 import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
 import {
   DedupTags,
