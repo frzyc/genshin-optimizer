@@ -10,6 +10,7 @@ import {
   ownBuff,
   percent,
   reader,
+  semiOwnBuff,
   teamBuff,
   type TagMapNodeEntries,
   type TagMapNodeEntry,
@@ -18,6 +19,7 @@ import type { ElementalType, Sheet } from './listing'
 
 export type FormulaArg = {
   team?: boolean // true if applies to every member, and false (default) if applies only to self
+  isSemiOwn?: boolean
   cond?: string | StrNode
 }
 
@@ -144,7 +146,7 @@ export function customDmg(
   dmgTag: DmgTag,
   base: NumNode,
   splits: number[] = [1],
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   return splits.map((split, index) =>
@@ -153,7 +155,9 @@ export function customDmg(
       team,
       'dmg',
       tag(cond, dmgTag),
-      ownBuff.formula.base.add(prod(base, percent(split))),
+      (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(
+        prod(base, percent(split))
+      ),
       ...extra
     )
   )
@@ -172,7 +176,7 @@ export function customDmg(
 export function customShield(
   name: string,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -180,7 +184,7 @@ export function customShield(
     team,
     'shield',
     cond,
-    ownBuff.formula.base.add(base),
+    (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(base),
     ...extra
   )
 }
@@ -198,7 +202,7 @@ export function customShield(
 export function customHeal(
   name: string,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -206,7 +210,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    ownBuff.formula.base.add(base),
+    (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(base),
     ...extra
   )
 }
@@ -226,7 +230,7 @@ export function customBreakDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode | number,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -234,7 +238,7 @@ export function customBreakDmg(
     team,
     'breakDmg',
     tag(cond, dmgTag),
-    ownBuff.formula.base.add(base),
+    (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(base),
     ...extra
   )
 }

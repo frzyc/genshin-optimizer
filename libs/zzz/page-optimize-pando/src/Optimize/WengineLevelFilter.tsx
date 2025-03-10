@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { wengineMaxLevel } from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigContext,
   useDatabaseContext,
@@ -25,8 +26,8 @@ export const WengineLevelFilter = memo(function WengineLevelFilter({
       </CardContent>
       <Divider />
       <WengineLevelSlider
-        levelLow={optConfig?.wlevelLow ?? 60}
-        levelHigh={optConfig?.wlevelHigh ?? 60}
+        levelLow={optConfig?.wlevelLow ?? wengineMaxLevel}
+        levelHigh={optConfig?.wlevelHigh ?? wengineMaxLevel}
         setLow={(wlevelLow) =>
           database.optConfigs.set(optConfigId, { wlevelLow })
         }

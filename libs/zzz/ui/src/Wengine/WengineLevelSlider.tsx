@@ -1,6 +1,7 @@
 'use client'
 import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
+import { wengineMaxLevel } from '@genshin-optimizer/zzz/consts'
 import { Box, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -91,14 +92,14 @@ export function WengineLevelSlider({
         }
         valueLabelDisplay="auto"
         min={0}
-        max={60}
+        max={wengineMaxLevel}
         step={1}
         marks
         disabled={disabled}
       />
       <CustomNumberInput
         value={sliderHigh}
-        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 60))}
+        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, wengineMaxLevel))}
         sx={{ px: 1, flex: '0 0 3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}

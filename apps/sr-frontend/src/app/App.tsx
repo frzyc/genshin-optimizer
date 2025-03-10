@@ -14,6 +14,7 @@ import {
 } from '@mui/material'
 import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
+import Footer from './Footer'
 import Header from './Header'
 import PageHome from './PageHome'
 
@@ -83,6 +84,9 @@ function Content() {
           </Routes>
         </Suspense>
       </Container>
+      {/* make sure footer is always at bottom */}
+      <Box flexGrow={1} />
+      <Footer />
     </Box>
   )
 }

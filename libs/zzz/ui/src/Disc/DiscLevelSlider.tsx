@@ -1,6 +1,7 @@
 'use client'
 import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
+import { discMaxLevel } from '@genshin-optimizer/zzz/consts'
 import { Box, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -91,14 +92,16 @@ export function DiscLevelSlider({
         }
         valueLabelDisplay="auto"
         min={0}
-        max={15}
+        max={discMaxLevel['S']}
         step={1}
         marks
         disabled={disabled}
       />
       <CustomNumberInput
         value={sliderHigh}
-        onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 15))}
+        onChange={(val) =>
+          setHigh(clamp(val ?? 0, levelLow, discMaxLevel['S']))
+        }
         sx={{ px: 1, flex: '0 0 3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}

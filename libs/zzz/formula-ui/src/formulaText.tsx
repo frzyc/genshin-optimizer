@@ -1,10 +1,12 @@
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import type { PartialMeta } from '@genshin-optimizer/game-opt/engine'
+import type { CalcMeta } from '@genshin-optimizer/game-opt/engine'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
-import { Fragment, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import { Fragment } from 'react'
 import { TagDisplay } from './components'
-type Output = PartialMeta<Tag>
+
+type Output = CalcMeta<Tag, never>
 
 type FormulaText = {
   name: ReactNode | undefined

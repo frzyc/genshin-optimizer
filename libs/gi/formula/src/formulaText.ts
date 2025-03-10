@@ -1,7 +1,7 @@
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import type { PartialMeta } from './calculator'
+import type { CalcMeta } from './calculator'
 
-type Output = PartialMeta
+type Output = CalcMeta
 type FormulaText = {
   name: string | undefined
   formula: string

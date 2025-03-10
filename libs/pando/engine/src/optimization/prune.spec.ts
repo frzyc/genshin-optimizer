@@ -54,15 +54,15 @@ describe('pruning', () => {
     expect(state.progress).toBe(true)
     // Normally the reaffined keys are unspecified, but since the current
     // algorithm is deterministic, we can just run it and note the keys
+    // [c0, c1] = [c0 + 3c1, c0 + c1]
     expect(state.candidates).toEqual([
-      [{ id: 1 }, { id: 2, c0: 3, c1: 5 }, { id: 3, c0: 4, c1: 8 }],
+      [
+        { id: 1, c0: 9, c1: 3 },
+        { id: 2, c0: 12, c1: 8 },
+        { id: 3, c0: 13, c1: 11 },
+      ],
     ])
-    // reaffine nodes into different keys (c0 and c1, again, with different values)
-    // and leave the constant nodes alone
-    expect(state.nodes).toEqual([
-      prod(7, sum(15, r0), sum(5, r1)),
-      constant(11),
-    ])
+    expect(state.nodes).toEqual([prod(7, sum(6, r0), sum(2, r1)), constant(11)])
   })
   test('pruneBranches', () => {
     const nodes = [

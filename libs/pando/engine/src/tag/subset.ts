@@ -1,9 +1,8 @@
-import type { RawTagMapValues, TagMapEntry } from './compilation'
+import type { RawTagMapValues, TagMapEntries, TagMapEntry } from './compilation'
 import type { TagId } from './keys'
-import type { entryRef } from './symb'
-import { entryVal } from './symb'
+import { entryRef } from './symb'
 
-type Leaf<V> = { [entryVal]: V[]; [entryRef]?: TagMapEntry<V>[] }
+type Leaf<V> = { [entryRef]: TagMapEntry<V>[] }
 
 /**
  * `TagMap` specialized in finding entries with matching tags, ignoring
@@ -20,9 +19,16 @@ export class TagMapSubsetValues<V> {
   /** All entry values whose tags matching `id`. Missing entry tag categories are ignored */
   subset(id: TagId): V[] {
     const result: V[] = []
-    this._subset(id, (l) => result.push(...l[entryVal]))
+    this._subset(id, (l) => result.push(...l[entryRef].map((v) => v.value)))
     return result
   }
+  /** All entries whose tags matching `id`. Missing entry tag categories are ignored */
+  entries(id: TagId): TagMapEntries<V> {
+    const result: TagMapEntries<V> = []
+    this._subset(id, (l) => result.push(...l[entryRef]))
+    return result
+  }
+
   _subset(id: TagId, callback: (_: Leaf<V>) => void): void {
     const len = id.length
     function crawl(idx: number, internal: Internal<V>) {

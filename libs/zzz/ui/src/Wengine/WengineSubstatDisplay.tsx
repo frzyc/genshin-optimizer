@@ -4,6 +4,7 @@ import {
   toPercent,
 } from '@genshin-optimizer/common/util'
 import type { WengineSubStatKey } from '@genshin-optimizer/zzz/consts'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { StatDisplay } from '../Character'
@@ -11,9 +12,13 @@ import { StatDisplay } from '../Character'
 export function WengineSubstatDisplay({
   substatKey,
   substatValue,
+  showStatName,
+  styleProps,
 }: {
   substatKey: WengineSubStatKey
   substatValue: number
+  showStatName?: boolean
+  styleProps?: any
 }) {
   if (!substatKey) return null
   const displayValue = toPercent(substatValue, substatKey).toFixed(
@@ -26,16 +31,24 @@ export function WengineSubstatDisplay({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        fontWeight: 'bold',
+        fontWeight: '500',
+        fontSize: '1rem',
+        gap: 1.5,
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <StatDisplay statKey={substatKey} />
+      <Box
+        sx={{ display: 'flex', alignItems: 'center', gap: 1, ...styleProps }}
+      >
+        {showStatName ? (
+          <StatDisplay statKey={substatKey} />
+        ) : (
+          <StatIcon statKey={substatKey} />
+        )}
       </Box>
-      <span>
+      <Box component={'span'}>
         {displayValue}
         {getUnitStr(substatKey)}
-      </span>
+      </Box>
     </Typography>
   )
 }

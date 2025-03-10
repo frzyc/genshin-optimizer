@@ -20,7 +20,7 @@ export function splitCandidates<ID>(
   if (incomp.length) {
     for (let i = 0, len = cndRanges.length; i < len; i++) {
       const ranges = cndRanges[i]
-      const s = incomp.find((s) => ranges[s].min !== ranges[s].max)
+      const s = incomp.find((s) => ranges[s] && ranges[s].min !== ranges[s].max)
       if (s === undefined) continue
 
       const groups = new Map<any, Candidate<ID>[]>()

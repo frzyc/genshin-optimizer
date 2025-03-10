@@ -1,7 +1,9 @@
 import {
   cmpEq,
   compileTagMapValues,
+  prod,
   setDebugMode,
+  sum,
 } from '@genshin-optimizer/pando/engine'
 import {
   allCharacterKeys,
@@ -24,7 +26,10 @@ import {
   convert,
   enemyTag,
   own,
+  ownBuff,
   ownTag,
+  percent,
+  semiOwn,
   tagStr,
   target,
   team,
@@ -303,6 +308,68 @@ describe('team test', () => {
       calc.withTag({ src: 'Argenti' }).compute(own.char.maxEnergy).val
     ).toEqual(180)
     expect(calc.compute(team.char.maxEnergy.sum).val).toEqual(189)
+  })
+
+  it('can calculate heals based on target HP', () => {
+    const data: TagMapNodeEntries = [
+      ...teamData(['Acheron', 'Argenti']),
+      ...withMember(
+        'Acheron',
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Acheron',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        ),
+        ownBuff.premod.heal_.add(1.5)
+      ),
+      ...withMember(
+        'Argenti',
+        ...charTagMapNodeEntries(
+          {
+            level: 1,
+            ascension: 0,
+            key: 'Argenti',
+            eidolon: 0,
+            basic: 0,
+            skill: 0,
+            ult: 0,
+            talent: 0,
+            servantSkill: 0,
+            servantTalent: 0,
+            bonusAbilities: {},
+            statBoosts: {},
+          },
+          1
+        ),
+        ownBuff.premod.incHeal_.add(2.5)
+      ),
+      ownBuff.formula.base.add(target.final.hp),
+    ]
+    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const copiedHealFormula = prod(
+      semiOwn.formula.base,
+      sum(percent(1), own.final.heal_),
+      sum(percent(1), target.final.incHeal_)
+    )
+
+    expect(
+      calc
+        .withTag({ src: 'Acheron', dst: 'Argenti' })
+        .toDebug()
+        .compute(copiedHealFormula).val
+    ).toEqual(142.56 * (1 + 1.5) * (1 + 2.5))
   })
 })
 
