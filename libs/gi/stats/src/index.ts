@@ -1,7 +1,9 @@
 import type {
   ArtifactSetKey,
   CharacterKey,
+  CharacterSheetKey,
   ElementKey,
+  NonTravelerCharacterKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
@@ -19,29 +21,24 @@ const allStats = allStat_gen as AllStats
 
 export { allStats }
 
-export function getCharEle(ck: CharacterKey): ElementKey {
-  switch (ck) {
-    case 'TravelerAnemo':
-      return 'anemo'
-    case 'TravelerGeo':
-      return 'geo'
-    case 'TravelerElectro':
-      return 'electro'
-    case 'TravelerDendro':
-      return 'dendro'
-    case 'TravelerHydro':
-      return 'hydro'
-    case 'TravelerPyro':
-      return 'pyro'
-    default:
-      return allStats.char.data[ck].ele!
-  }
+export function getCharEle(ck: CharacterSheetKey | CharacterKey): ElementKey {
+  if (ck.startsWith('TravelerAnemo')) return 'anemo'
+  else if (ck.startsWith('TravelerGeo')) return 'geo'
+  else if (ck.startsWith('TravelerElectro')) return 'electro'
+  else if (ck.startsWith('TravelerDendro')) return 'dendro'
+  else if (ck.startsWith('TravelerHydro')) return 'hydro'
+  else if (ck.startsWith('TravelerPyro')) return 'pyro'
+  else return allStats.char.data[ck as NonTravelerCharacterKey].ele!
 }
 
 // Omit the ele, should use getCharEle to get char element.
 export function getCharStat(ck: CharacterKey): Omit<CharacterDataGen, 'ele'> {
   const locCharKey = charKeyToLocCharKey(ck)
   return allStats.char.data[locCharKey]
+}
+
+export function getCharParam(ck: CharacterSheetKey) {
+  return allStats.char.skillParam[ck]
 }
 
 export function isCharMelee(ck: CharacterKey) {

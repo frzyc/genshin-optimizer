@@ -28,8 +28,8 @@ type PruneResult<I extends OP, ID> = {
   minimum: number[]
   candidates: Candidate<ID>[][]
 
-  cndRanges: Record<string, Range>[]
-  monotonicities: Map<string, Monotonicity>
+  cndRanges: CndRanges
+  monotonicities: Monotonicities
 }
 
 /**
@@ -60,10 +60,7 @@ export function prune<I extends OP, ID>(
   minimum: number[],
   topN: number
 ): PruneResult<I, ID> {
-  // This `candidate` casting is fine as the rest of the code treats `id`
-  // as an opaque object. The only thing that matter is that `id` field
-  // exists in both outer- and inner-facing interfaces.
-  const state = new State(nodes, minimum, candidates as any, dynTagCat)
+  const state = new State(nodes, minimum, candidates, dynTagCat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
@@ -71,62 +68,68 @@ export function prune<I extends OP, ID>(
     reaffine(state)
     pruneBottom(state, topN)
   }
-  state.setNodes(simplify(state.nodes))
-  return state as any // reverse the `candidates` casting earlier
+  state.nodes = simplify(state.nodes)
+  return state
 }
 
-export class State<I extends OP> {
-  nodes: NumNode<I>[]
+export class State<I extends OP, ID> implements PruneResult<I, ID> {
+  #nodes: NumNode<I>[]
   minimum: number[]
-  candidates: Candidate[][]
+  #candidates: Candidate<ID>[][]
   cat: string
 
   progress = true
-  _cndRanges: CndRanges | undefined
-  _nodeRanges: NodeRanges | undefined
-  _monotonicities: Monotonicities | undefined
+  #cndRanges: CndRanges | undefined
+  #nodeRanges: NodeRanges | undefined
+  #monotonicities: Monotonicities | undefined
 
   constructor(
     nodes: NumNode<I>[],
     minimum: number[],
-    candidates: Candidate[][],
+    candidates: Candidate<ID>[][],
     cat: string
   ) {
-    this.nodes = nodes
+    this.#nodes = nodes
     this.minimum = minimum
-    this.candidates = candidates
+    this.#candidates = candidates
     this.cat = cat
   }
 
-  setNodes(nodes: NumNode<I>[], minimum?: number[]) {
-    if (this.nodes === nodes) return
-    this.progress = true
-    this.nodes = nodes
-    if (minimum !== undefined) this.minimum = minimum
-    this._nodeRanges = undefined
-    this._monotonicities = undefined
+  get nodes(): NumNode<I>[] {
+    return this.#nodes
   }
-  setCandidates(candidates: Candidate[][], cndRanges?: CndRanges) {
+  set nodes(nodes: NumNode<I>[]) {
+    if (this.#nodes === nodes) return
+    this.progress = true
+    this.#nodes = nodes
+    this.#nodeRanges = this.#monotonicities = undefined
+  }
+
+  get candidates(): Candidate<ID>[][] {
+    return this.#candidates
+  }
+  set candidates(candidates: Candidate<ID>[][]) {
     if (this.candidates === candidates) return
     this.progress = true
-    this.candidates = candidates
-    this._cndRanges = cndRanges
-    this._nodeRanges = undefined
-    this._monotonicities = undefined
+    this.#candidates = candidates
+    this.#cndRanges = this.#nodeRanges = this.#monotonicities = undefined
   }
 
   get cndRanges(): CndRanges {
-    return (this._cndRanges ??= this.candidates.map(computeCndRanges))
+    return (this.#cndRanges ??= this.candidates.map(computeCndRanges))
+  }
+  set cndRanges(cndRanges: CndRanges) {
+    this.#cndRanges = cndRanges
   }
   get nodeRanges(): NodeRanges {
-    return (this._nodeRanges ??= computeNodeRanges(
+    return (this.#nodeRanges ??= computeNodeRanges(
       this.nodes,
       this.cat,
       this.cndRanges
     ))
   }
   get monotonicities(): Monotonicities {
-    return (this._monotonicities ??= getMonotonicities(
+    return (this.#monotonicities ??= getMonotonicities(
       this.nodes.slice(0, this.minimum.length),
       this.cat,
       this.nodeRanges
@@ -135,7 +138,7 @@ export class State<I extends OP> {
 }
 
 /** Remove branches that are never chosen */
-export function pruneBranches(state: State<OP>) {
+export function pruneBranches<ID>(state: State<OP, ID>) {
   const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
     const r = nodeRanges.get(o)!
@@ -172,14 +175,14 @@ export function pruneBranches(state: State<OP>) {
     }
     return n
   })
-  state.setNodes(result)
+  state.nodes = result
 }
 
 /**
  * - Remove candidates that do not meet the `minimum` requirements in any builds
  * - Remove top-level nodes whose `minimum` requirements are met by every build
  */
-export function pruneRange(state: State<OP>, numReq: number) {
+export function pruneRange<ID>(state: State<OP, ID>, numReq: number) {
   const { nodeRanges, minimum: oldMin, cat } = state
   const candidates = [...state.candidates]
   const cndRanges = [...state.cndRanges]
@@ -195,7 +198,10 @@ export function pruneRange(state: State<OP>, numReq: number) {
     }
     nodes.push(n)
   })
-  if (minimum.length != oldMin.length) state.setNodes(nodes, minimum)
+  if (minimum.length != oldMin.length) {
+    state.nodes = nodes
+    state.minimum = minimum
+  }
 
   if (!hasNonTrivialConstraint) return
 
@@ -213,13 +219,16 @@ export function pruneRange(state: State<OP>, numReq: number) {
       progress = true
     } else cndRanges[i] = oldCndRange
   })
-  if (progress) state.setCandidates(candidates, cndRanges)
+  if (progress) {
+    state.candidates = candidates
+    state.cndRanges = cndRanges
+  }
 }
 
 /** Remove candidates that are never in the `topN` builds */
-export function pruneBottom(state: State<OP>, topN: number) {
+export function pruneBottom<ID>(state: State<OP, ID>, topN: number) {
   const monotonicities = [...state.monotonicities]
-  type Val = { incomp: number[]; inc: Record<string, number>; c: Candidate }
+  type Val = { incomp: number[]; inc: Record<string, number>; c: Candidate<ID> }
   const vals = state.candidates.map((comp) =>
     comp.map((c) => {
       const out: Val = { incomp: [], inc: {}, c }
@@ -264,7 +273,7 @@ export function pruneBottom(state: State<OP>, topN: number) {
   })
 
   if (candidates.some((cnds, i) => cnds.length != state.candidates[i].length))
-    state.setCandidates(candidates.map((cnds) => cnds.map((val) => val.c)))
+    state.candidates = candidates.map((cnds) => cnds.map((val) => val.c))
 }
 
 const offset = Symbol()
@@ -272,7 +281,7 @@ const offset = Symbol()
  * Replace `read`/`sum`/`prod` combinations with smaller `read` nodes. If changes are made,
  * `candidates` will be replaced with new values with all string keys replaced, maintaining only 'id'.
  */
-export function reaffine(state: State<OP>) {
+export function reaffine<ID>(state: State<OP, ID>) {
   const { nodes, cat, candidates } = state
   type Weight = Record<string | typeof offset, number>
   const weights = new Map<AnyNode<OP>, Weight>()
@@ -327,6 +336,14 @@ export function reaffine(state: State<OP>) {
       n.br.forEach(visit)
     }
   })
+  const shouldChange = [...topWeights.keys()].some((n) => {
+    if (n.op === 'const' || n.op === 'read') return false
+    if (n.op === 'sum' && n.x.length === 2)
+      if (n.x[0].op === 'const' && n.x[1].op === 'read') return false
+      else if (n.x[1].op === 'const' && n.x[0].op === 'read') return false
+    return true
+  })
+  if (!shouldChange) return
 
   // { cat1:w1 cat2:w2 .. } => "!cat1:<w1>:cat2:<w2>:.." with PUA chars
   // instead of `!` and `:` to minimize the chance of them being in some `cat`s
@@ -343,9 +360,15 @@ export function reaffine(state: State<OP>) {
     const map = new Map([...readNames.values()].map((id, i) => [id, `c${i}`]))
     readNames = new Map([...readNames].map(([w, id]) => [w, map.get(id)!]))
   }
-  const newCandidates = candidates.map((cnds) =>
+
+  const weightNodes = new Map<Weight, NumNode<OP>>()
+  for (const [w, name] of readNames) {
+    const node = read({ [cat]: name }, undefined)
+    weightNodes.set(w, w[offset] !== 0 ? sum(w[offset], node) : node)
+  }
+  state.candidates = candidates.map((cnds) =>
     cnds.map((c) => {
-      const result: Candidate = { id: c['id'] }
+      const result = { id: c['id'] } as Candidate<ID>
       readNames.forEach((name, w) => {
         if (name in result) return // same weight, different offsets
         result[name] = Object.entries(w).reduce(
@@ -356,58 +379,20 @@ export function reaffine(state: State<OP>) {
       return result
     })
   )
-
-  const uniqueNames = [...new Set(readNames.values())]
-  const offsetShift = new Map<string, number>()
-  for (const cnds of newCandidates) {
-    for (const name of uniqueNames) {
-      const freq = new Map<number, number>()
-      for (const c of cnds) freq.set(c[name], (freq.get(c[name]) ?? 0) + 1)
-      let [best, bestFreq] = [0, freq.get(0) ?? 0]
-      for (const [v, f] of freq) if (f > bestFreq) [best, bestFreq] = [v, f]
-      if (best !== 0) {
-        for (const c of cnds) c[name] -= best
-        offsetShift.set(name, (offsetShift.get(name) ?? 0) + best)
-      }
-      for (const c of cnds) if (c[name] === 0) delete c[name]
-    }
-  }
-
-  let shouldChange = !!offsetShift.size
-  shouldChange ||= [...topWeights.keys()].some((n) => {
-    if (n.op === 'const' || n.op === 'read') return false
-    if (n.op === 'sum' && n.x.length === 2)
-      if (n.x[0].op === 'const' && n.x[1].op === 'read') return false
-      else if (n.x[1].op === 'const' && n.x[0].op === 'read') return false
-    return true
+  state.nodes = mapBottomUp(nodes, (n, o) => {
+    const w = topWeights.get(o)
+    return w ? weightNodes.get(w)! : n
   })
-  if (!shouldChange) return
-
-  const weightNodes = new Map<Weight, NumNode<OP>>()
-  for (const [w, name] of readNames) {
-    let node: NumNode<OP> = read({ [cat]: name }, undefined)
-    w[offset] += offsetShift.get(name) ?? 0
-    if (w[offset] !== 0) node = sum(w[offset], node)
-    weightNodes.set(w, node)
-  }
-
-  state.setCandidates(newCandidates)
-  state.setNodes(
-    mapBottomUp(nodes, (n, o) => {
-      const w = topWeights.get(o)
-      return w ? weightNodes.get(w)! : n
-    })
-  )
 }
 
 /** Get range assuming any item in `cnds` can be selected */
-function computeCndRanges(cnds: Candidate[]): CndRanges[number] {
+function computeCndRanges<ID>(cnds: Candidate<ID>[]): CndRanges[number] {
   // CAUTION:
   // This is the only place where `id` is treated as non-opaque (comparable)
   // objects. If `c1.id < c2.id` may crash, we have to change the algorithm
   // or exclude `id` specifically. We don't care if the comparison result is
   // gibberish, though, so long as it succeeds.
-  const iter = cnds.values()
+  const iter = (cnds as Candidate[]).values()
   const first: Candidate | undefined = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(

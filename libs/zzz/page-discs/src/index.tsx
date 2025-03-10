@@ -34,6 +34,7 @@ export default function PageDiscs() {
         show={show}
         onClose={onClose}
         onShow={onOpen}
+        cancelEdit={() => setDisc({})}
       />
       <DiscInventory onAdd={onAddNew} onEdit={onEdit} />
     </Box>

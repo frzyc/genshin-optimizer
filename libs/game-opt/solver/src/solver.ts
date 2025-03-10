@@ -7,23 +7,20 @@ import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
 import type { Command, ErrMsg, Response } from './workerHandle'
 
-const waterMark = 40_000 // replenish if a worker has fewer than this
+const reportInterval = 50 // (minimum) progress report interval for solver, in ms
 
 export interface SolverConfig {
-  candidates: Candidate<string>[][]
   nodes: NumTagFree[]
   minimum: number[]
-  numWorkers: number
+  candidates: Candidate<string>[][]
   topN: number
+  numWorkers: number
   setProgress: (_: Progress) => void
 }
 
-type WorkerInfo<ID extends string> = {
-  builds: BuildResult<ID>[]
-  giving: boolean
-}
-type IdleWorkers = { ty: 'idle'; workers: Set<Worker> }
-type ExcessWorks = { ty: 'work'; works: Work[] }
+type WorkerInfo<ID extends string> = { builds: BuildResult<ID>[] }
+type IdleWorkers = { ty: 'idle'; workers: Set<Worker>; works?: never }
+type ExcessWorks = { ty: 'work'; workers?: never; works: Work[] }
 
 export class Solver<ID extends string> {
   topN: number
@@ -34,6 +31,7 @@ export class Solver<ID extends string> {
   progress: Progress = { computed: 0, failed: 0, skipped: 0, remaining: 0 }
 
   results: Promise<BuildResult[]>
+  nextReport = Date.now()
   report: () => void
   finalize: (result: BuildResult[]) => void = () => {}
   terminate: (reason: any) => void = () => {}
@@ -49,14 +47,18 @@ export class Solver<ID extends string> {
     )
 
     const pruned = prune(cfg.nodes, cfg.candidates, 'q', cfg.minimum, topN)
-    const { nodes, candidates, minimum } = pruned
+    const { nodes, minimum, candidates } = pruned
     progress.remaining = buildCount(candidates)
     progress.skipped = buildCount(cfg.candidates) - progress.remaining
+    if (progress.remaining > Number.MAX_SAFE_INTEGER)
+      // We use `remaining` to detect completion. Its accurate
+      // bookkeeping is essential to ensure this actually halts.
+      throw new Error('too many combinations')
 
-    const ids = candidates.map((cnds) => cnds.map((c) => c.id))
     this.topN = topN
     this.optThreshold = minimum[0]
-    this.info = new Map(workers.map((w) => [w, { builds: [], giving: false }]))
+    this.info = new Map(workers.map((w) => [w, { builds: [] }]))
+    const ids = candidates.map((cnds) => cnds.map((c) => c.id))
     this.state = { ty: 'work', works: [{ ids, count: progress.remaining }] }
     this.report = () => setProgress({ ...progress })
     this.results = new Promise((res, rej) => {
@@ -66,16 +68,15 @@ export class Solver<ID extends string> {
     const terminate = () => workers.forEach((w) => w.terminate())
     this.results.then(terminate, terminate)
 
-    const msg = { ty: 'init' as const, nodes, minimum, candidates, topN }
     for (const worker of workers) {
-      worker.onmessage = (msg) => {
+      worker.onmessage = ({ data }) => {
         try {
-          this.onWorkerMsg(msg.data, worker)
+          this.onWorkerMsg(data, worker)
         } catch (e) {
           this.terminate(e)
         }
       }
-      postMsg(worker, msg)
+      postMsg(worker, { ty: 'init', nodes, minimum, candidates, topN })
     }
   }
 
@@ -95,22 +96,19 @@ export class Solver<ID extends string> {
   idle(worker: Worker) {
     const { state, progress, info } = this
     if (state.ty === 'idle') state.workers.add(worker)
-    else if (this.give(state.works, worker)) return
-    else this.state = { ty: 'idle', workers: new Set([worker]) }
-
-    const maxKeep = progress.remaining / (info.size + 1) // one portion at `Solver`
-    const msg = { ty: 'work?' as const, maxKeep }
-    info.forEach((_, w) => postMsg(w, msg))
+    else if (this.give(state.works, worker)) {
+      const maxKeep = progress.remaining / (info.size + 0.5) // half a portion at `Solver`
+      info.forEach((_, w) => postMsg(w, { ty: 'work?', maxKeep }))
+    } else this.state = { ty: 'idle', workers: new Set([worker]) }
   }
 
   /** returns whether some works are given (`false` implies empty `works`) */
   give(works: Work[], worker: Worker) {
     if (!works.length) return false
-    const avg = this.progress.remaining / (this.info.size + 2) // smaller than `maxKeep` in `idle`
-    let quota = Math.ceil(Math.max(avg, waterMark))
-    const giveLen = works.findIndex((w) => (quota -= w.count) < 0) + 1
+    let quota = this.progress.remaining / (this.info.size + 0.5)
+    let giveLen = works.findIndex((w) => (quota -= w.count) < 0) + 1
+    if (giveLen > 1) giveLen -= 1
     const giving = works.splice(0, giveLen || works.length)
-    this.info.get(worker)!.giving = true
     postMsg(worker, { ty: 'add', works: giving })
     return true
   }
@@ -126,26 +124,28 @@ export class Solver<ID extends string> {
         progress.skipped += msg.skipped
         info.builds = msg.builds as BuildResult<ID>[]
 
-        if (msg.remaining < waterMark && !info.giving) this.idle(worker)
+        if (msg.idle) this.idle(worker)
 
-        const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
-        bestBuilds.sort((a, b) => b.value - a.value)
-        const threshold = bestBuilds[this.topN]?.value ?? -Infinity
-        if (threshold > this.optThreshold) {
-          this.optThreshold = threshold
-          const msg = { ty: 'config' as const, threshold }
-          this.info.forEach((_, w) => postMsg(w, msg))
+        const now = Date.now()
+        if (this.nextReport <= now || !msg.remaining) {
+          this.nextReport = now + reportInterval
+          this.report()
+
+          const bestBuilds = [...this.info.values()].flatMap((i) => i.builds)
+          bestBuilds.sort((a, b) => b.value - a.value)
+          const threshold = bestBuilds[this.topN]?.value ?? -Infinity
+          if (threshold > this.optThreshold) {
+            this.optThreshold = threshold
+            this.info.forEach((_, w) => postMsg(w, { ty: 'config', threshold }))
+          }
+
+          if (!this.progress.remaining)
+            this.finalize(bestBuilds.slice(0, this.topN))
         }
-
-        this.report() // TODO: pace this?
-        if (!this.progress.remaining) this.finalize(bestBuilds)
         break
       }
       case 'add':
         this.distribute(msg.works)
-        break
-      case 'recv':
-        this.info.get(worker)!.giving = false
         break
       case 'err':
         this.terminate(msg.msg + ' (Worker Error)')

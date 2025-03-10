@@ -1,13 +1,17 @@
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
-import type {
-  CharacterKey,
-  LocationGenderedCharacterKey,
-  TravelerKey,
+import {
+  sheetKeyToCharKey,
+  type CharacterSheetKey,
+  type LocationGenderedCharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
-import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
-import type { MessageReaction } from 'discord.js'
+import {
+  getCharEle,
+  getCharParam,
+  getCharStat,
+} from '@genshin-optimizer/gi/stats'
+import type { AnyComponentBuilder, MessageReaction } from 'discord.js'
 import {
   ActionRowBuilder,
   EmbedBuilder,
@@ -16,43 +20,92 @@ import {
 } from 'discord.js'
 import { elementColors } from '../../assets/assets'
 import { giURL } from '../../lib/util'
-import { clean, talentlist, translate } from '../archive'
+import { clean, slashcommand, talentlist, translate } from '../archive'
 import { baseCharStats, getFixed } from '../go/calculator'
 
 function getEmbed(
-  id: CharacterKey,
+  id: CharacterSheetKey,
   namespace: string,
-  lang: string,
-  arg: string
+  arg: string,
+  lang: string
 ) {
+  const res: { embed: EmbedBuilder; components: AnyComponentBuilder[] } = {
+    embed: {} as EmbedBuilder,
+    components: [],
+  }
+  //parse level
+  let level = arg.length > 1 ? parseInt(arg.substring(1)) : NaN
+
+  //talent level dropdown
+  if ('neq'.includes(arg[0])) {
+    if (isNaN(level)) level = 10
+
+    //create dropdown menu
+    const options = []
+    for (const tl of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) {
+      const menu = new StringSelectMenuOptionBuilder()
+        .setLabel('Talent Level ' + tl)
+        .setValue(arg[0] + tl)
+      if (tl === level) menu.setDefault(true)
+      options.push(menu)
+    }
+    res.components = [
+      new StringSelectMenuBuilder()
+        .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
+        .setPlaceholder('Talent Level ' + level)
+        .addOptions(options),
+    ]
+  }
+
   //character profile
-  if (arg === 'p') return profileEmbed(id, namespace, lang)
+  if (arg === 'p') res.embed = profileEmbed(id, namespace, lang)
   //normal/charged/plunging attacks
-  else if (arg === 'n') return normalsEmbed(id, namespace, lang)
+  else if (arg[0] === 'n') res.embed = normalsEmbed(id, namespace, level, lang)
   //elemental skill
-  else if (arg === 'e') return skillEmbed(id, namespace, lang)
+  else if (arg[0] === 'e') res.embed = skillEmbed(id, namespace, level, lang)
   //elemental burst
-  else if (arg === 'q') return burstEmbed(id, namespace, lang)
+  else if (arg[0] === 'q') res.embed = burstEmbed(id, namespace, level, lang)
   //passives
-  else if (arg.match(/^a[14]?$/)) return passivesEmbed(id, namespace, lang, arg)
+  else if (arg[0] === 'a') res.embed = passivesEmbed(id, namespace, level, lang)
   //constellations
-  else if (arg.match(/^c[123456]?$/))
-    return constellationsEmbed(id, namespace, lang, arg)
-  else throw 'Invalid talent name.'
+  else if (arg[0] === 'c') {
+    res.embed = constellationsEmbed(id, namespace, level, lang)
+
+    //create dropdown menu
+    const options = []
+    for (const cl of [0, 1, 2, 3, 4, 5, 6]) {
+      const label = cl ? 'Constellation ' + cl : 'All Constellations'
+      const value = cl ? 'c' + cl : 'c'
+      const menu = new StringSelectMenuOptionBuilder()
+        .setLabel(label)
+        .setValue(value)
+      if (value === arg) menu.setDefault(true)
+      options.push(menu)
+    }
+    const label = level ? 'Constellation ' + level : 'All Constellations'
+    res.components = [
+      new StringSelectMenuBuilder()
+        .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
+        .setPlaceholder(label)
+        .addOptions(options),
+    ]
+  } else throw 'Invalid talent name.'
+
+  return res
 }
 
-function getAssets(id: CharacterKey) {
-  let genderedId: LocationGenderedCharacterKey | TravelerKey = id
-  if (id.includes('Traveler')) genderedId = 'TravelerM'
-  return AssetData.chars[genderedId]
+function getAssets(id: CharacterSheetKey) {
+  if (id.includes('Traveler')) {
+    id = 'Traveler' + id.charAt(id.length - 1)
+  }
+  return AssetData.chars[id as LocationGenderedCharacterKey]
 }
 
-function getName(id: CharacterKey, lang: string) {
-  if (id.includes('Traveler')) return id.replace('Traveler', 'Traveler (') + ')'
-  else return translate(`char_${id}_gen`, 'name', lang)
+function getName(id: CharacterSheetKey, lang: string) {
+  return translate(`charNames_gen`, id, lang)
 }
 
-function baseEmbed(id: CharacterKey, lang: string) {
+function baseEmbed(id: CharacterSheetKey, lang: string) {
   const element = getCharEle(id)
   let icon = getAssets(id).icon
   if (!icon) icon = CommonAssetData.elemIcons[element]
@@ -67,7 +120,47 @@ function baseEmbed(id: CharacterKey, lang: string) {
     .setColor(elementColors[element])
 }
 
-function profileEmbed(id: CharacterKey, namespace: string, lang: string) {
+//get scalings
+function talentFields(
+  namespace: string,
+  skill: string,
+  params: number[][],
+  level: number,
+  lang: string
+) {
+  const scalings = Object.fromEntries(
+    params.map((hit, i) => [i, hit[level - 1]])
+  )
+  let text = ''
+  let val = ''
+  for (const index in scalings) {
+    text += translate(namespace, `${skill}.skillParams.${index}`, lang) + '\n'
+    val +=
+      translate(
+        namespace,
+        `${skill}.skillParamsEncoding.${index}`,
+        lang,
+        false,
+        scalings
+      ) + '\n'
+  }
+
+  //format to inline embed fields
+  return [
+    {
+      name: ' ',
+      value: clean(text),
+      inline: true,
+    },
+    {
+      name: ' ',
+      value: clean(val),
+      inline: true,
+    },
+  ]
+}
+
+function profileEmbed(id: CharacterSheetKey, namespace: string, lang: string) {
   const element = getCharEle(id)
   let text = ''
   //base stats
@@ -79,14 +172,17 @@ function profileEmbed(id: CharacterKey, namespace: string, lang: string) {
   })
   //description
   text +=
-    '\n-# *' +
-    i18nInstance.t(
-      [
-        `${namespace}:description`,
-        'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
-      ],
-      { lng: lang }
-    ) +
+    '\n*-# ' +
+    i18nInstance
+      .t(
+        [
+          `${namespace}:description`,
+          'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
+        ],
+        { lng: lang }
+      )
+      .trim()
+      .replaceAll('\n', '\n-# ') +
     '*'
   //make embed
   const embed = baseEmbed(id, lang)
@@ -103,9 +199,22 @@ function profileEmbed(id: CharacterKey, namespace: string, lang: string) {
   return embed
 }
 
-function normalsEmbed(id: CharacterKey, namespace: string, lang: string) {
-  const weapon = getCharStat(id).weaponType
+function normalsEmbed(
+  id: CharacterSheetKey,
+  namespace: string,
+  level: number,
+  lang: string
+) {
   const auto = translate(namespace, 'auto', lang, true)
+  const weapon = getCharStat(sheetKeyToCharKey(id)).weaponType
+  const scalings = talentFields(
+    namespace,
+    'auto',
+    getCharParam(id).auto,
+    level,
+    lang
+  )
+  //make embed
   return baseEmbed(id, lang)
     .setTitle(auto.name)
     .setDescription(
@@ -119,46 +228,74 @@ function normalsEmbed(id: CharacterKey, namespace: string, lang: string) {
       )
     )
     .setThumbnail(giURL(CommonAssetData.normalIcons[weapon]))
+    .addFields(scalings)
 }
 
-function skillEmbed(id: CharacterKey, namespace: string, lang: string) {
+function skillEmbed(
+  id: CharacterSheetKey,
+  namespace: string,
+  level: number,
+  lang: string
+) {
   const skill = translate(namespace, 'skill', lang, true)
+  const scalings = talentFields(
+    namespace,
+    'skill',
+    getCharParam(id).skill,
+    level,
+    lang
+  )
   const embed = baseEmbed(id, lang)
     .setTitle(skill.name)
     .setDescription(clean(Object.values(skill.description).flat().join('\n')))
+    .addFields(scalings)
   const thumbnail = getAssets(id).skill
   if (thumbnail) embed.setThumbnail(giURL(thumbnail))
+
   return embed
 }
 
-function burstEmbed(id: CharacterKey, namespace: string, lang: string) {
+function burstEmbed(
+  id: CharacterSheetKey,
+  namespace: string,
+  level: number,
+  lang: string
+) {
   const burst = translate(namespace, 'burst', lang, true)
+  const scalings = talentFields(
+    namespace,
+    'burst',
+    getCharParam(id).burst,
+    level,
+    lang
+  )
   const embed = baseEmbed(id, lang)
     .setTitle(burst.name)
     .setDescription(clean(Object.values(burst.description).flat().join('\n')))
+    .addFields(scalings)
   const thumbnail = getAssets(id).burst
   if (thumbnail) embed.setThumbnail(giURL(thumbnail))
   return embed
 }
 
 type Passives = 'passive1' | 'passive2' | 'passive3' | 'passive'
-function selectPassive(arg: string): Passives[] {
-  if (arg.length > 1) {
-    if (arg[1] === '1') return ['passive1']
-    if (arg[1] === '4') return ['passive2']
+function selectPassive(p: number): Passives[] {
+  if (p) {
+    if (p === 1) return ['passive1']
+    if (p === 4) return ['passive2']
   }
   return ['passive1', 'passive2', 'passive3', 'passive']
 }
 
 function passivesEmbed(
-  id: CharacterKey,
+  id: CharacterSheetKey,
   namespace: string,
-  lang: string,
-  arg: string
+  level: number,
+  lang: string
 ) {
   let text = ''
   //select passives
-  const showPassives = selectPassive(arg)
+  const showPassives = selectPassive(level)
   //make embed
   for (const passiveId of showPassives) {
     const passive = translate(namespace, passiveId, lang, true)
@@ -179,16 +316,16 @@ function passivesEmbed(
 }
 
 function constellationsEmbed(
-  id: CharacterKey,
+  id: CharacterSheetKey,
   namespace: string,
-  lang: string,
-  arg: string
+  level: number,
+  lang: string
 ) {
   let text = ''
   //select constellations
   const allCons = ['1', '2', '3', '4', '5', '6'] as const
-  const showCons =
-    arg.length > 1 ? allCons.filter((e) => e.includes(arg[1])) : allCons
+  if (level < 1 || level > 6) throw 'Invalid constellation.'
+  const showCons = level ? [allCons[level - 1]] : allCons
   for (const constellationId of showCons) {
     const constellation = translate(
       namespace,
@@ -212,15 +349,13 @@ function constellationsEmbed(
 }
 
 export async function charArchive(
-  id: CharacterKey,
-  lang: string,
-  args: string
+  id: CharacterSheetKey,
+  arg: string,
+  lang: string
 ) {
-  const namespace = id.includes('Traveler')
-    ? `char_${id}M_gen`
-    : `char_${id}_gen`
+  const namespace = `char_${id}_gen`
   await i18nInstance.loadNamespaces(namespace)
-  const embed = getEmbed(id, namespace, lang, args)
+  const res = getEmbed(id, namespace, arg, lang)
 
   //create dropdown menu
   const options = []
@@ -228,20 +363,24 @@ export async function charArchive(
     const menu = new StringSelectMenuOptionBuilder()
       .setLabel(talent.name)
       .setValue(talent.value)
-    if (talent.value === args) menu.setDefault(true)
+    if (talent.value === arg[0]) menu.setDefault(true)
     options.push(menu)
   }
-  const components = new ActionRowBuilder().addComponents(
-    new StringSelectMenuBuilder()
-      .setCustomId(`archive char ${id} ${lang} ${args}`)
-      .setPlaceholder(talentlist[args[0] as keyof typeof talentlist].name)
-      .addOptions(options)
-  )
+  const components = [
+    new ActionRowBuilder().addComponents(
+      new StringSelectMenuBuilder()
+        .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 0`)
+        .setPlaceholder(talentlist[arg[0] as keyof typeof talentlist].name)
+        .addOptions(options)
+    ),
+  ]
+  for (const component of res.components)
+    components.push(new ActionRowBuilder().addComponents(component))
 
   return {
     content: '',
-    embeds: [embed],
-    components: [components],
+    embeds: [res.embed],
+    components: components,
   }
 }
 

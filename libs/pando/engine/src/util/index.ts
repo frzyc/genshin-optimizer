@@ -27,8 +27,5 @@ export const extract = <V, K extends keyof V>(arr: V[], key: K): V[K][] =>
 
 export function addCustomOperation(name: string, info: CustomInfo) {
   if (name in customOps) throw new Error(`Already set custom formula: ${name}`)
-  if (/^x\d+$/g.test(name))
-    // this `name` may collides with temp variables in `compile`
-    throw new Error(`Invalid custom operation name: ${name}`)
   customOps[name] = info
 }
