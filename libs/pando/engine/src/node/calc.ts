@@ -164,6 +164,6 @@ export class Calculator<M = any> {
   }
 
   toDebug(): DebugCalculator {
-    return new DebugCalculator(this, tagString)
+    throw new Error('not implemented')
   }
 }
