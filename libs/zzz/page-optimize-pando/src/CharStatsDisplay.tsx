@@ -42,7 +42,7 @@ function StatLine({ read }: { read: Read<Tag> }) {
       {valueString(computed.val, getUnitStr(name ?? ''))}
       <BootstrapTooltip
         title={
-          <Typography>
+          <Typography component="div">
             <Box>{fText.name}</Box>
             <Divider />
             <Box>{fText.formula}</Box>

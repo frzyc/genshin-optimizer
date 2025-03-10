@@ -37,14 +37,18 @@ export function formulaText(
     ops: CalcResult<number, Output>[],
     prec: number
   ): ReactNode[] {
-    return ops.map((op) => {
+    return ops.map((op, i) => {
       const text = formulaText(op, cache)
       if (text.name) {
         deps.add(text)
         return text.name
       }
       text.deps.forEach((dep) => deps.add(dep))
-      return text.prec >= prec ? text.formula : <span>({text.formula})</span>
+      return text.prec >= prec ? (
+        text.formula
+      ) : (
+        <span key={i}>({text.formula})</span>
+      )
     })
   }
 
