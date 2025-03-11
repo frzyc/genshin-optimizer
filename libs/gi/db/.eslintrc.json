@@ -1,6 +1,10 @@
 {
   "extends": ["../../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": [
+    "!**/*",
+    "**/vite.config.*.timestamp*",
+    "**/vitest.config.*.timestamp*"
+  ],
   "parserOptions": {
     "project": "libs/gi/db/tsconfig.eslint.json"
   },
