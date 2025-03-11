@@ -562,7 +562,13 @@ export function DiscEditor({
                 sx={{ justifyContent: 'space-around' }}
                 spacing={1}
               >
-                <Grid item xs={12} md={5.5} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  md={5.5}
+                  lg={4}
+                  sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                >
                   <CardThemed bgt="light">
                     <Typography
                       sx={{ textAlign: 'center' }}
@@ -576,8 +582,8 @@ export function DiscEditor({
                           : t('editor.updateDisc')
                         : t('editor.beforeEdit')}
                     </Typography>
-                    <DiscCard disc={prev} />
                   </CardThemed>
+                  <DiscCard disc={prev} />
                 </Grid>
                 {grmd && (
                   <Grid
@@ -592,7 +598,13 @@ export function DiscEditor({
                     </CardThemed>
                   </Grid>
                 )}
-                <Grid item xs={12} md={5.5} lg={4}>
+                <Grid
+                  item
+                  xs={12}
+                  md={5.5}
+                  lg={4}
+                  sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                >
                   <CardThemed bgt="light">
                     <Typography
                       sx={{ textAlign: 'center' }}
@@ -602,8 +614,8 @@ export function DiscEditor({
                     >
                       {t('editor.preview')}
                     </Typography>
-                    {validatedDisc && <DiscCard disc={validatedDisc} />}
                   </CardThemed>
+                  {validatedDisc && <DiscCard disc={validatedDisc} />}
                 </Grid>
               </Grid>
             )}

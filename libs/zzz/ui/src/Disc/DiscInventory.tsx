@@ -125,23 +125,25 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
           />
         }
       >
-        <Grid container columns={columns} spacing={1}>
-          {discsIdsToShow.map((discId) => (
-            <Grid item key={discId} xs={1}>
-              <DiscCard
-                disc={database.discs.get(discId)!}
-                onEdit={() => onEdit?.(discId)}
-                onDelete={() => database.discs.remove(discId)}
-                setLocation={(location) =>
-                  database.discs.set(discId, { location })
-                }
-                onLockToggle={() =>
-                  database.discs.set(discId, ({ lock }) => ({ lock: !lock }))
-                }
-              />
-            </Grid>
-          ))}
-        </Grid>
+        <Box>
+          <Grid container columns={columns} spacing={1}>
+            {discsIdsToShow.map((discId) => (
+              <Grid item key={discId} xs={1}>
+                <DiscCard
+                  disc={database.discs.get(discId)!}
+                  onEdit={() => onEdit?.(discId)}
+                  onDelete={() => database.discs.remove(discId)}
+                  setLocation={(location) =>
+                    database.discs.set(discId, { location })
+                  }
+                  onLockToggle={() =>
+                    database.discs.set(discId, ({ lock }) => ({ lock: !lock }))
+                  }
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
         {discIds.length !== discsIdsToShow.length && (
           <Skeleton
             ref={(node) => {

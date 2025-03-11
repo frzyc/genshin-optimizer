@@ -7,7 +7,7 @@ import { CompactDiscCard, DiscSetCardCompact } from '../Disc'
 import { EmptyCompactCard } from '../util'
 import { CompactWengineCard } from '../Wengine'
 const emptyDiscs = objKeyMap(allDiscSlotKeys, () => undefined)
-export function EquipRow({
+export function EquipGrid({
   discIds = emptyDiscs,
   wengineId,
   columns,

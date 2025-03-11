@@ -85,6 +85,7 @@ export function DiscSetCardCompact({
       </Box>
     </ZCard>
   ) : (
+    // TODO: Translate
     <EmptyCompactCard placeholder="No Active Sets" />
   )
 }
