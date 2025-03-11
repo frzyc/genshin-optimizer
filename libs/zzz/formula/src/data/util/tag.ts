@@ -159,6 +159,10 @@ export const ownTag = {
   formula: {
     base: agg,
     listing: aggStr,
+    // Wrap the dmg in another node so we keep the top-level as 'unique'
+    // because we don't have a way of knowing which accu to use later from meta.ts
+    standardDmgListing: prep,
+    anomalyDmgListing: prep,
     standardDmg: prepProd,
     anomalyDmg: prepProd,
     shield: prep,

@@ -104,7 +104,7 @@ export function registerBuffFormula(
 function registerFormula(
   name: string,
   team: boolean | undefined,
-  q: 'standardDmg' | 'heal' | 'shield' | 'anomalyDmg',
+  q: 'standardDmgListing' | 'heal' | 'shield' | 'anomalyDmgListing',
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
@@ -137,13 +137,13 @@ export function customDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode,
-  { team, cond = 'prod' }: FormulaArg = {},
+  { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
     name,
     team,
-    'standardDmg',
+    'standardDmgListing',
     tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
     ...extra
@@ -217,13 +217,13 @@ export function customAnomalyDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode | number,
-  { team, cond = 'prod' }: FormulaArg = {},
+  { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
     name,
     team,
-    'anomalyDmg',
+    'anomalyDmgListing',
     tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
     ...extra
