@@ -1,14 +1,37 @@
-import type {
-  Candidate,
-  Monotonicity,
-  Range,
-} from '@genshin-optimizer/pando/engine'
+import type { Monotonicity, Range } from '@genshin-optimizer/pando/engine'
+import { prune } from '@genshin-optimizer/pando/engine'
+import { type Candidate, buildCount, splitThreshold } from './common'
+import type { Subwork, Worker } from './worker'
 
-export function splitCandidates<ID>(
-  candidates: Candidate<ID>[][],
+/** split `subwork` into smaller works, or only `prune` it if it is small enough */
+export function splitSubwork(
+  subwork: Subwork,
+  worker: Worker
+): Subwork | Subwork[] {
+  const { progress, topN } = worker
+  let { nodes, minimum, candidates } = subwork
+  const pruned = prune(nodes, candidates, 'q', minimum, topN)
+  ;({ nodes, minimum, candidates } = pruned)
+  const { cndRanges, monotonicities } = pruned
+  const count = buildCount(candidates)
+  progress.skipped += subwork.count - count
+  progress.remaining -= subwork.count - count
+
+  if (!count) return []
+  if (count <= splitThreshold) return { nodes, candidates, minimum, count }
+  return splitCandidates(candidates, cndRanges, monotonicities).map(
+    (candidates) => {
+      const count = buildCount(candidates)
+      return { nodes, candidates, minimum, count }
+    }
+  )
+}
+
+function splitCandidates(
+  candidates: Candidate[][],
   cndRanges: Record<string, Range>[],
   monotonicities: Map<string, Monotonicity>
-): Candidate<ID>[][][] {
+): Candidate[][][] {
   const incomp: string[] = []
   const inc: string[] = []
   const dec: string[] = []
@@ -23,7 +46,7 @@ export function splitCandidates<ID>(
       const s = incomp.find((s) => ranges[s] && ranges[s].min !== ranges[s].max)
       if (s === undefined) continue
 
-      const groups = new Map<any, Candidate<ID>[]>()
+      const groups = new Map<any, Candidate[]>()
       for (const c of candidates[i]) {
         const old = groups.get(c[s])
         if (old) old.push(c)
@@ -59,7 +82,7 @@ export function splitCandidates<ID>(
   vals.sort((a, b) => a[1] - b[1]) // larger vals at the back
   // Split the slot (roughly) into four equal slots
   const chunkLen = Math.ceil(vals.length / 4)
-  const chunks: Candidate<ID>[][][] = []
+  const chunks: Candidate[][][] = []
   for (let i = 0; i < vals.length; i += chunkLen) {
     const chunk = vals.slice(i, i + chunkLen).map(([c]) => c)
     const result = [...candidates]

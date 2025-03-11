@@ -205,7 +205,7 @@ function OptimizeWrapper() {
     )
 
     cancelled.then(() => optimizer.terminate('user cancelled'))
-    let results: BuildResult[]
+    let results: BuildResult<string>[]
     try {
       results = await optimizer.results
     } catch (e) {

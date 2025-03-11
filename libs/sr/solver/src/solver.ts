@@ -104,13 +104,13 @@ export function optimize(
       ),
     ],
     candidates: [
-      lightCones.map(convertLightConeToStats),
-      relicsBySlot.head.map(convertRelicToStats),
-      relicsBySlot.hands.map(convertRelicToStats),
-      relicsBySlot.body.map(convertRelicToStats),
-      relicsBySlot.feet.map(convertRelicToStats),
-      relicsBySlot.sphere.map(convertRelicToStats),
-      relicsBySlot.rope.map(convertRelicToStats),
+      lightCones.map(lightConeCandidate),
+      relicsBySlot.head.map(relicCandidate),
+      relicsBySlot.hands.map(relicCandidate),
+      relicsBySlot.body.map(relicCandidate),
+      relicsBySlot.feet.map(relicCandidate),
+      relicsBySlot.sphere.map(relicCandidate),
+      relicsBySlot.rope.map(relicCandidate),
     ],
     numWorkers,
     topN,
@@ -118,7 +118,7 @@ export function optimize(
   })
 }
 
-function convertRelicToStats(relic: ICachedRelic): Candidate<string> {
+function relicCandidate(relic: ICachedRelic): Candidate<string> {
   const { id, mainStatKey, level, rarity, setKey, substats } = relic
   return {
     id,
@@ -132,9 +132,7 @@ function convertRelicToStats(relic: ICachedRelic): Candidate<string> {
   } as Candidate<string>
 }
 
-function convertLightConeToStats(
-  lightCone: ICachedLightCone
-): Candidate<string> {
+function lightConeCandidate(lightCone: ICachedLightCone): Candidate<string> {
   const { id, key, level: lvl, ascension, superimpose } = lightCone
   return {
     id,
