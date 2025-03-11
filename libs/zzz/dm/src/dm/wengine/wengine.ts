@@ -73,13 +73,14 @@ export const wengineDetailedJSONData = Object.fromEntries(
       phase: Object.values(raw.Talents).map(({ Name, Desc }) => ({
         name: Name,
         desc: Desc,
-        params: [
-          ...Desc.matchAll(/<color=#2BAD00>(\d*\.?\d*)(%)?<\/color>/g),
-        ].map((matches) => {
-          const [_match, value, percent] = matches
-          if (percent) return parseFloatBetter(value)
-          return +value
-        }),
+        // Match (number with possible decimal portion)(% or s or word boundary) and not followed by '>' such as for color tags
+        params: [...Desc.matchAll(/(\d+\.?\d*)(?:(%)|s?\b)(?!>)/g)].map(
+          (matches) => {
+            const [_match, value, percent] = matches
+            if (percent) return parseFloatBetter(value)
+            return +value
+          }
+        ),
       })),
     }
     return [name, data] as const
