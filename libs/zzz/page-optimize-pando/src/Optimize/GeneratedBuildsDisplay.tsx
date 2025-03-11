@@ -7,7 +7,7 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/zzz/db-ui'
-import { EquipRow } from '@genshin-optimizer/zzz/ui'
+import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 import { memo, useCallback, useContext } from 'react'
@@ -17,6 +17,13 @@ function useGeneratedBuildList(listId: string) {
   const { database } = useDatabaseContext()
   return useDataManagerBase(database.generatedBuildList, listId)
 }
+const columns = {
+  xs: 2,
+  sm: 2,
+  md: 3,
+  lg: 4,
+  xl: 4,
+} as const
 /**
  * A UI component that renders a list of generated builds
  */
@@ -34,19 +41,25 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
           )}`}
         >
           <CardContent>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                gap: 1,
-              }}
-            >
-              <Typography>
-                Build {i + 1}: {valueString(build.value)}
-              </Typography>
-              <EquipBtn build={build} />
-            </Box>
-            <EquipRow discIds={build.discIds} wengineId={build.wengineId} />
+            <Stack spacing={1}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  gap: 1,
+                }}
+              >
+                <Typography>
+                  Build {i + 1}: {valueString(build.value)}
+                </Typography>
+                <EquipBtn build={build} />
+              </Box>
+              <EquipGrid
+                discIds={build.discIds}
+                wengineId={build.wengineId}
+                columns={columns}
+              />
+            </Stack>
           </CardContent>
         </CardThemed>
       ))}

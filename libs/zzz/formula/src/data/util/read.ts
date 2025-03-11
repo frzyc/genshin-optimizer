@@ -197,10 +197,10 @@ export class Read extends BaseRead<Tag> {
       super.with('damageType2', 'disorder'),
     ]
   }
-  get additional(): Read[] {
+  get aftershock(): Read[] {
     return [
-      super.with('damageType1', 'additional'),
-      super.with('damageType2', 'additional'),
+      super.with('damageType1', 'aftershock'),
+      super.with('damageType2', 'aftershock'),
     ]
   }
   get elemental(): Read[] {

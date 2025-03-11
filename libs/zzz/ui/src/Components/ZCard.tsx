@@ -15,7 +15,6 @@ interface StyledCardProps extends CardProps {
 }
 /**
  * A colored Card that is by default `contentNormal` colored.
- *
  * Use bgt=["light", "dark"] to use [`contentLight`, `contentDark`]
  */
 export const ZCard = styled(Card, {
@@ -25,6 +24,6 @@ export const ZCard = styled(Card, {
   const paletteColor = theme.palette[palette] as PaletteColor
   return {
     backgroundColor: paletteColor?.main,
-    border: `4px ${paletteColor?.light} solid`,
+    border: `${theme.spacing(0.5)} ${paletteColor?.light} solid`,
   }
 })
