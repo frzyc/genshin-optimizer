@@ -574,9 +574,9 @@ function somePerm(
   return false
 }
 
-describe.skip('Artifact Roll Model', () => {
+describe('Artifact Roll Model', () => {
   for (const [key, entries] of Object.entries(rolls)) {
-    const rolls = allStats.art.sub['5'][key]
+    const rolls = allStats.art.sub[5][key]
 
     type Model = (indices: number[]) => string
 
