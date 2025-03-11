@@ -1,7 +1,21 @@
-import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
+import {
+  cmpGE,
+  max,
+  min,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allBoolConditionals, own, ownBuff, registerBuff, registerBuffFormula } from '../../util'
+import { floor } from '../../../util'
+import {
+  allBoolConditionals,
+  own,
+  ownBuff,
+  registerBuff,
+  registerBuffFormula,
+} from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'YetHopeIsPriceless'
@@ -18,12 +32,26 @@ const sheet = registerLightCone(
   entriesForLightCone(key, data_gen),
 
   // Conditional buffs
-  // TODO: change to calculation
   registerBuffFormula(
     'followUp_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'followUp',
-      cmpGE(lcCount, 1, prod(subscript(superimpose, dm.followUp_dmg_)))
+      cmpGE(
+        lcCount,
+        1,
+        prod(
+          min(
+            dm.stacks,
+            floor(
+              prod(
+                max(0, sum(own.final.crit_dmg_, -dm.crit_dmg_threshold)),
+                1 / dm.step
+              )
+            )
+          ),
+          subscript(superimpose, dm.followUp_dmg_)
+        )
+      )
     ),
     cmpGE(lcCount, 1, 'unique', '')
   ),

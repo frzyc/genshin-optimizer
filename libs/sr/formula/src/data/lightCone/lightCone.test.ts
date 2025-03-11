@@ -6,6 +6,7 @@ import {
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
 import { data, keys, values } from '..'
 import { Calculator } from '../../calculator'
+import '../../index'
 import { conditionals, formulas } from '../../meta'
 import {
   charTagMapNodeEntries,
@@ -1175,10 +1176,9 @@ describe('Light Cone sheets test', () => {
 
   it('InTheNight', () => {
     const charKey: CharacterKey = 'Seele'
-    const data = testCharacterData(charKey, 'InTheNight')
-    data.push(
-      cond(charKey, 'InTheNight', conditionals.InTheNight.spdExceeded.name, 6)
-    )
+    const data = testCharacterData(charKey, 'InTheNight', [
+      ownBuff.premod.spd.add(45),
+    ])
     const calc = new Calculator(
       keys,
       values,

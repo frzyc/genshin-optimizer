@@ -1,7 +1,15 @@
-import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
+import {
+  cmpGE,
+  max,
+  min,
+  prod,
+  subscript,
+  sum,
+} from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allNumConditionals, own, ownBuff, registerBuff } from '../../util'
+import { floor } from '../../../util'
+import { own, ownBuff, registerBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'InTheNight'
@@ -9,9 +17,6 @@ const data_gen = allStats.lightCone[key]
 const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
-
-// TODO: change from conditional to calculation and register as buff formula
-const { spdExceeded } = allNumConditionals(key, true, 0, dm.stacks)
 
 const sheet = registerLightCone(
   key,
@@ -26,7 +31,13 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        prod(spdExceeded, subscript(superimpose, dm.basic_skill_dmg_))
+        prod(
+          min(
+            dm.stacks,
+            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep))
+          ),
+          subscript(superimpose, dm.basic_skill_dmg_)
+        )
       )
     ),
     cmpGE(lcCount, 1, 'unique', '')
@@ -38,7 +49,13 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        prod(spdExceeded, subscript(superimpose, dm.basic_skill_dmg_))
+        prod(
+          min(
+            dm.stacks,
+            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep))
+          ),
+          subscript(superimpose, dm.basic_skill_dmg_)
+        )
       )
     ),
     cmpGE(lcCount, 1, 'unique', '')
@@ -50,7 +67,13 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        prod(spdExceeded, subscript(superimpose, dm.ult_crit_dmg_))
+        prod(
+          min(
+            dm.stacks,
+            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep))
+          ),
+          subscript(superimpose, dm.ult_crit_dmg_)
+        )
       )
     ),
     cmpGE(lcCount, 1, 'unique', '')

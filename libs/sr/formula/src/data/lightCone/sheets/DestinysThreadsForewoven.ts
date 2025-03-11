@@ -1,6 +1,7 @@
 import { cmpGE, min, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
+import { floor } from '../../../util'
 import { own, ownBuff, registerBuffFormula } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
@@ -23,10 +24,8 @@ const sheet = registerLightCone(
         1,
         min(
           subscript(superimpose, dm.max_common_dmg_),
-          // TODO: use floor
           prod(
-            own.final.def,
-            1 / dm.step,
+            floor(prod(own.final.def, 1 / dm.step)),
             subscript(superimpose, dm.common_dmg_)
           )
         )

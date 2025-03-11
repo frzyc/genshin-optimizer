@@ -857,16 +857,6 @@ export const conditionals = {
       type: 'bool',
     },
   },
-  InTheNight: {
-    spdExceeded: {
-      sheet: 'InTheNight',
-      name: 'spdExceeded',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 6,
-    },
-  },
   IncessantRain: {
     aetherCode: { sheet: 'IncessantRain', name: 'aetherCode', type: 'bool' },
     enemyDebuffsGE3: {
@@ -1812,6 +1802,16 @@ export const conditionals = {
   ThoseManySprings: {
     cornered: { sheet: 'ThoseManySprings', name: 'cornered', type: 'bool' },
     unarmored: { sheet: 'ThoseManySprings', name: 'unarmored', type: 'bool' },
+  },
+  TimeWaitsForNoOne: {
+    recordedHealing: {
+      sheet: 'TimeWaitsForNoOne',
+      name: 'recordedHealing',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 20000,
+    },
   },
   TimeWovenIntoGold: {
     brocade: {
@@ -2946,6 +2946,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+    },
+  },
+  HiddenShadow: {
+    additional_dmg_0: {
+      sheet: 'HiddenShadow',
+      name: 'additional_dmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'HiddenShadow',
+        damageType1: 'elemental',
+        name: 'additional_dmg_0',
       },
     },
   },
@@ -4176,6 +4190,20 @@ export const formulas = {
       },
     },
   },
+  TimeWaitsForNoOne: {
+    additional_dmg_0: {
+      sheet: 'TimeWaitsForNoOne',
+      name: 'additional_dmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TimeWaitsForNoOne',
+        damageType1: 'elemental',
+        name: 'additional_dmg_0',
+      },
+    },
+  },
   Tingyun: {
     basicDmg_0: {
       sheet: 'Tingyun',
@@ -4410,6 +4438,20 @@ export const formulas = {
         q: 'heal',
         sheet: 'WeAreWildfire',
         name: 'healing',
+      },
+    },
+  },
+  WeWillMeetAgain: {
+    additional_dmg_0: {
+      sheet: 'WeWillMeetAgain',
+      name: 'additional_dmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'WeWillMeetAgain',
+        damageType1: 'elemental',
+        name: 'additional_dmg_0',
       },
     },
   },

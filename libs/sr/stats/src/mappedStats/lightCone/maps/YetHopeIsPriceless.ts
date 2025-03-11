@@ -8,7 +8,7 @@ let o = 1
 
 const dm = {
   passive_crit_: data_gen.superimpose.passiveStats.crit_,
-  crit_dmg_threshold: data_gen.superimpose.otherStats[o++],
+  crit_dmg_threshold: data_gen.superimpose.otherStats[o++][1],
   step: data_gen.superimpose.otherStats[o++][1],
   followUp_dmg_: data_gen.superimpose.otherStats[o++],
   stacks: data_gen.superimpose.otherStats[o++][1],
