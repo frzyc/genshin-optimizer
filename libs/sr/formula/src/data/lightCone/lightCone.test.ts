@@ -45,7 +45,7 @@ function testCharacterData(
           eidolon: 0,
           basic: 0,
           skill: 0,
-          ult: 0,
+          ult: 1,
           talent: 0,
           servantSkill: 0,
           servantTalent: 0,
@@ -58,6 +58,7 @@ function testCharacterData(
       ...otherCharData
     ),
     own.common.critMode.add('avg'),
+    enemy.common.lvl.add(80),
     enemy.common.res.add(0.1),
     enemy.common.isBroken.add(0),
   ]
@@ -116,6 +117,7 @@ function testTeamData(
       ...otherCharData
     ),
     own.common.critMode.add('avg'),
+    enemy.common.lvl.add(80),
     enemy.common.res.add(0.1),
     enemy.common.isBroken.add(0),
   ]
@@ -2286,8 +2288,24 @@ describe('Light Cone sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
+    const initialValue = calc.compute(
+      new Read(formulas.ThisIsMe.additive_ult_dmg.tag, undefined)
+    ).val
+    data.push(
+      cond(charKey, 'ThisIsMe', conditionals.ThisIsMe.addUltDmgBuff.name, 1)
+    )
+    const newCalc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: charKey, dst: charKey })
 
-    expect(calc.compute(char.final.def_).val).toBeCloseTo(0.32)
+    expect(newCalc.compute(char.final.def_).val).toBeCloseTo(0.32)
+    expect(
+      newCalc.compute(
+        new Read(formulas.ThisIsMe.additive_ult_dmg.tag, undefined)
+      ).val
+    ).toBeGreaterThan(initialValue)
   })
 
   it('ThoseManySprings', () => {

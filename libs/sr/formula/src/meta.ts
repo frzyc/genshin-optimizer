@@ -1799,6 +1799,9 @@ export const conditionals = {
       max: 2,
     },
   },
+  ThisIsMe: {
+    addUltDmgBuff: { sheet: 'ThisIsMe', name: 'addUltDmgBuff', type: 'bool' },
+  },
   ThoseManySprings: {
     cornered: { sheet: 'ThoseManySprings', name: 'cornered', type: 'bool' },
     unarmored: { sheet: 'ThoseManySprings', name: 'unarmored', type: 'bool' },
@@ -4177,16 +4180,17 @@ export const formulas = {
     },
   },
   ThisIsMe: {
-    ult_dmg__0: {
+    additive_ult_dmg: {
       sheet: 'ThisIsMe',
-      name: 'ult_dmg__0',
+      name: 'additive_ult_dmg',
       tag: {
-        et: 'own',
+        et: 'display',
         qt: 'formula',
-        q: 'dmg',
+        q: 'base',
         sheet: 'ThisIsMe',
-        damageType1: 'ult',
-        name: 'ult_dmg__0',
+        dst: null,
+        damageType2: 'ult',
+        name: 'additive_ult_dmg',
       },
     },
   },
@@ -17500,6 +17504,21 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
         name: 'team_dmg_',
+      },
+    },
+  },
+  ThisIsMe: {
+    additive_ult_dmg: {
+      sheet: 'ThisIsMe',
+      name: 'additive_ult_dmg',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'base',
+        sheet: 'ThisIsMe',
+        dst: null,
+        damageType1: 'ult',
+        name: 'additive_ult_dmg',
       },
     },
   },
