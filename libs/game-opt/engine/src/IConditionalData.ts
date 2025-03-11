@@ -1,7 +1,10 @@
+import { Read } from './read'
+
 export type IFormulaData<T> = {
   sheet: string // entity
   name: string // formula name
   tag: T // tag used to access value
+  accu: Read['accu'] // top-level accumulator
 }
 
 export type IBaseConditionalData =

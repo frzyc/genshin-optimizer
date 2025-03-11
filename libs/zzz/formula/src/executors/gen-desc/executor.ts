@@ -1,13 +1,14 @@
+import { Read } from '@genshin-optimizer/game-opt/engine'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
+  possibleValues,
 } from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
 import * as path from 'path'
 import * as prettier from 'prettier'
 import { data } from '../../data'
-import type { Tag } from '../../data/util'
 import type { GenDescExecutorSchema } from './schema'
 
 export default async function runExecutor(
@@ -19,7 +20,7 @@ export default async function runExecutor(
     sheet: sheet!,
     name: q!,
   }))
-  const formulas = extractFormulaMetadata(data, (tag: Tag, value) => {
+  const formulas = extractFormulaMetadata(data, (tag, value) => {
     if (
       // sheet-specific
       tag.sheet !== 'agg' &&
@@ -35,11 +36,18 @@ export default async function runExecutor(
     ) {
       const sheet = tag.sheet!
       const name = value.tag['name']!
-      return { sheet, name, tag: { ...tag, ...value.tag } }
+      const accus = new Set(possibleValues(value))
+      accus.delete('')
+      if (accus.size !== 1)
+        throw new Error(
+          `invalid conds values for ${sheet} ${name}: ${[...accus]}`
+        )
+      const accu = [...accus][0] as Read['accu']
+      return { sheet, name, accu, tag: { ...tag, ...value.tag } }
     }
     return undefined
   })
-  const buffs = extractFormulaMetadata(data, (tag: Tag, value) => {
+  const buffs = extractFormulaMetadata(data, (tag, value) => {
     if (
       // sheet-specific
       tag.sheet !== 'agg' &&
@@ -57,7 +65,14 @@ export default async function runExecutor(
     ) {
       const sheet = tag.sheet!
       const name = value.tag['name']!
-      return { sheet, name, tag: { ...tag, ...value.tag } }
+      const accus = new Set(possibleValues(value))
+      accus.delete('')
+      if (accus.size !== 1)
+        throw new Error(
+          `invalid conds values for ${sheet} ${name}: ${[...accus]}`
+        )
+      const accu = [...accus][0] as Read['accu']
+      return { sheet, name, accu, tag: { ...tag, ...value.tag } }
     }
     return undefined
   })

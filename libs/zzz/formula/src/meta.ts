@@ -1309,6 +1309,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Anby',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1322,6 +1323,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Anby',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1337,6 +1339,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Anton',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1350,6 +1353,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Anton',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1365,6 +1369,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Astra',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1378,6 +1383,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Astra',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1393,6 +1399,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Ben',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1406,6 +1413,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Ben',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1421,6 +1429,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Billy',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1434,6 +1443,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Billy',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1449,6 +1459,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Burnice',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1462,6 +1473,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Burnice',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1477,6 +1489,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Caesar',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1490,6 +1503,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Caesar',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1505,6 +1519,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Corin',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1518,6 +1533,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Corin',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1533,6 +1549,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Ellen',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1546,6 +1563,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Ellen',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1561,6 +1579,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Evelyn',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1574,6 +1593,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Evelyn',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1589,6 +1609,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Grace',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1602,6 +1623,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Grace',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1617,6 +1639,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Harumasa',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1630,6 +1653,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Harumasa',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1645,6 +1669,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Jane',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1658,6 +1683,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Jane',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1673,6 +1699,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Koleda',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1686,6 +1713,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Koleda',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1701,6 +1729,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Lighter',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1714,6 +1743,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Lighter',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1729,6 +1759,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Lucy',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1742,6 +1773,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Lucy',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1757,6 +1789,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Lycaon',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1770,6 +1803,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Lycaon',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1785,6 +1819,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Miyabi',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1798,6 +1833,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Miyabi',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1813,6 +1849,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Nekomata',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1826,6 +1863,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Nekomata',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1841,6 +1879,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Nicole',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1854,6 +1893,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Nicole',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1869,6 +1909,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Piper',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1882,6 +1923,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Piper',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1897,6 +1939,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'QingYi',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1910,6 +1953,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'QingYi',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1925,6 +1969,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Rina',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1938,6 +1983,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Rina',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1953,6 +1999,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Seth',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1966,6 +2013,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Seth',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1981,6 +2029,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Soldier11',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -1994,6 +2043,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Soldier11',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -2009,6 +2059,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Soukaku',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -2022,6 +2073,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Soukaku',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -2037,6 +2089,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'Yanagi',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -2050,6 +2103,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'Yanagi',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -2065,6 +2119,7 @@ export const formulas = {
     anomalyDmgInst: {
       sheet: 'ZhuYuan',
       name: 'anomalyDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -2078,6 +2133,7 @@ export const formulas = {
     standardDmgInst: {
       sheet: 'ZhuYuan',
       name: 'standardDmgInst',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -2095,6 +2151,7 @@ export const buffs = {
     set4_team_dmg_: {
       sheet: 'AstralVoice',
       name: 'set4_team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2108,6 +2165,7 @@ export const buffs = {
     ice_dmg_: {
       sheet: 'BashfulDemon',
       name: 'ice_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2120,6 +2178,7 @@ export const buffs = {
     team_atk_: {
       sheet: 'BashfulDemon',
       name: 'team_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2133,6 +2192,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'BigCylinder',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2144,6 +2204,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'BigCylinder',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2155,6 +2216,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'BigCylinder',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2168,6 +2230,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'BlazingLaurel',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2179,6 +2242,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'BlazingLaurel',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2190,6 +2254,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'BlazingLaurel',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2203,6 +2268,7 @@ export const buffs = {
     set4_cond: {
       sheet: 'BranchBladeSong',
       name: 'set4_cond',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2214,6 +2280,7 @@ export const buffs = {
     set4_passive: {
       sheet: 'BranchBladeSong',
       name: 'set4_passive',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2227,6 +2294,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'BunnyBand',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2238,6 +2306,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'BunnyBand',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2249,6 +2318,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'BunnyBand',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2262,6 +2332,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'CannonRotor',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2273,6 +2344,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'CannonRotor',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2284,6 +2356,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'CannonRotor',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2297,6 +2370,7 @@ export const buffs = {
     set4_off_field_assist_dmg_: {
       sheet: 'ChaosJazz',
       name: 'set4_off_field_assist_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2310,6 +2384,7 @@ export const buffs = {
     set4_off_field_special_dmg_: {
       sheet: 'ChaosJazz',
       name: 'set4_off_field_special_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2323,6 +2398,7 @@ export const buffs = {
     set4_passive_electric_dmg_: {
       sheet: 'ChaosJazz',
       name: 'set4_passive_electric_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2336,6 +2412,7 @@ export const buffs = {
     set4_passive_fire_dmg_: {
       sheet: 'ChaosJazz',
       name: 'set4_passive_fire_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2351,6 +2428,7 @@ export const buffs = {
     set4_cond_trigger_corruption: {
       sheet: 'ChaoticMetal',
       name: 'set4_cond_trigger_corruption',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2362,6 +2440,7 @@ export const buffs = {
     set4_passive: {
       sheet: 'ChaoticMetal',
       name: 'set4_passive',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2375,6 +2454,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DeepSeaVisitor',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2386,6 +2466,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'DeepSeaVisitor',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2397,6 +2478,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'DeepSeaVisitor',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2410,6 +2492,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DemaraBatteryMarkII',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2421,6 +2504,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'DemaraBatteryMarkII',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2432,6 +2516,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'DemaraBatteryMarkII',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2445,6 +2530,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DrillRigRedAxis',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2456,6 +2542,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'DrillRigRedAxis',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2467,6 +2554,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'DrillRigRedAxis',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2480,6 +2568,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ElectroLipGloss',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2491,6 +2580,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'ElectroLipGloss',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2502,6 +2592,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'ElectroLipGloss',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2515,6 +2606,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ElegantVanity',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2526,6 +2618,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'ElegantVanity',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2537,6 +2630,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'ElegantVanity',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2550,6 +2644,7 @@ export const buffs = {
     set4_cond_inflict_assault: {
       sheet: 'FangedMetal',
       name: 'set4_cond_inflict_assault',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2563,6 +2658,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'FlamemakerShaker',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2574,6 +2670,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'FlamemakerShaker',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2585,6 +2682,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'FlamemakerShaker',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2598,6 +2696,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'FusionCompiler',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2609,6 +2708,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'FusionCompiler',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2620,6 +2720,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'FusionCompiler',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2633,6 +2734,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'GildedBlossom',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2644,6 +2746,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'GildedBlossom',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2655,6 +2758,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'GildedBlossom',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2668,6 +2772,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'HailstormShrine',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2679,6 +2784,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'HailstormShrine',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2690,6 +2796,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'HailstormShrine',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2703,6 +2810,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'HeartstringNocturne',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2714,6 +2822,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'HeartstringNocturne',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2725,6 +2834,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'HeartstringNocturne',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2738,6 +2848,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'HellfireGears',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2749,6 +2860,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'HellfireGears',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2760,6 +2872,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'HellfireGears',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2773,6 +2886,7 @@ export const buffs = {
     set4_cond_entering_combat: {
       sheet: 'HormonePunk',
       name: 'set4_cond_entering_combat',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2786,6 +2900,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Housekeeper',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2797,6 +2912,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'Housekeeper',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2808,6 +2924,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'Housekeeper',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2821,6 +2938,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IceJadeTeapot',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2832,6 +2950,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'IceJadeTeapot',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2843,6 +2962,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'IceJadeTeapot',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2856,6 +2976,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IdentityBase',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2867,6 +2988,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'IdentityBase',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2878,6 +3000,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'IdentityBase',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2891,6 +3014,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IdentityInflection',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2902,6 +3026,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'IdentityInflection',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2913,6 +3038,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'IdentityInflection',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2926,6 +3052,7 @@ export const buffs = {
     set4_cond_hitting_burning_enemy: {
       sheet: 'InfernoMetal',
       name: 'set4_cond_hitting_burning_enemy',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2939,6 +3066,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'KaboomTheCannon',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2950,6 +3078,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'KaboomTheCannon',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2961,6 +3090,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'KaboomTheCannon',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2974,6 +3104,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'LunarDecrescent',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -2985,6 +3116,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'LunarDecrescent',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -2996,6 +3128,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'LunarDecrescent',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3009,6 +3142,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'LunarNoviluna',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3020,6 +3154,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'LunarNoviluna',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3031,6 +3166,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'LunarNoviluna',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3044,6 +3180,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'LunarPleniluna',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3055,6 +3192,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'LunarPleniluna',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3066,6 +3204,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'LunarPleniluna',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3079,6 +3218,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MagneticStormAlpha',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3090,6 +3230,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'MagneticStormAlpha',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3101,6 +3242,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'MagneticStormAlpha',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3114,6 +3256,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MagneticStormBravo',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3125,6 +3268,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'MagneticStormBravo',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3136,6 +3280,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'MagneticStormBravo',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3149,6 +3294,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MagneticStormCharlie',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3160,6 +3306,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'MagneticStormCharlie',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3171,6 +3318,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'MagneticStormCharlie',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3184,6 +3332,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MarcatoDesire',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3195,6 +3344,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'MarcatoDesire',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3206,6 +3356,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'MarcatoDesire',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3219,6 +3370,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'OriginalTransmorpher',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3230,6 +3382,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'OriginalTransmorpher',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3241,6 +3394,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'OriginalTransmorpher',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3254,6 +3408,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'PeacekeeperSpecialized',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3265,6 +3420,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'PeacekeeperSpecialized',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3276,6 +3432,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'PeacekeeperSpecialized',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3289,6 +3446,7 @@ export const buffs = {
     set4_basic_dmg_: {
       sheet: 'PolarMetal',
       name: 'set4_basic_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3301,6 +3459,7 @@ export const buffs = {
     set4_dash_dmg_: {
       sheet: 'PolarMetal',
       name: 'set4_dash_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3315,6 +3474,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'PreciousFossilizedCore',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3326,6 +3486,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'PreciousFossilizedCore',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3337,6 +3498,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'PreciousFossilizedCore',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3350,6 +3512,7 @@ export const buffs = {
     set4_cond_def_assist_or_evasive_assist_dmg_: {
       sheet: 'ProtoPunk',
       name: 'set4_cond_def_assist_or_evasive_assist_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3363,6 +3526,7 @@ export const buffs = {
     set4_cond_launching_ult_atk_: {
       sheet: 'PufferElectro',
       name: 'set4_cond_launching_ult_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3374,6 +3538,7 @@ export const buffs = {
     set4_dmg_: {
       sheet: 'PufferElectro',
       name: 'set4_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3388,6 +3553,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'RainforestGourmet',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3399,6 +3565,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'RainforestGourmet',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3410,6 +3577,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'RainforestGourmet',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3423,6 +3591,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ReverbMarkI',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3434,6 +3603,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'ReverbMarkI',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3445,6 +3615,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'ReverbMarkI',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3458,6 +3629,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ReverbMarkII',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3469,6 +3641,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'ReverbMarkII',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3480,6 +3653,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'ReverbMarkII',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3493,6 +3667,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ReverbMarkIII',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3504,6 +3679,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'ReverbMarkIII',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3515,6 +3691,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'ReverbMarkIII',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3528,6 +3705,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'RiotSuppressorMarkVI',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3539,6 +3717,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'RiotSuppressorMarkVI',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3550,6 +3729,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'RiotSuppressorMarkVI',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3563,6 +3743,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'RoaringRide',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3574,6 +3755,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'RoaringRide',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3585,6 +3767,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'RoaringRide',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3598,6 +3781,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SharpenedStinger',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3609,6 +3793,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'SharpenedStinger',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3620,6 +3805,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'SharpenedStinger',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3633,6 +3819,7 @@ export const buffs = {
     set4_basic_daze_: {
       sheet: 'ShockstarDisco',
       name: 'set4_basic_daze_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3645,6 +3832,7 @@ export const buffs = {
     set4_dash_daze_: {
       sheet: 'ShockstarDisco',
       name: 'set4_dash_daze_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3657,6 +3845,7 @@ export const buffs = {
     set4_dodgeCounter_daze_: {
       sheet: 'ShockstarDisco',
       name: 'set4_dodgeCounter_daze_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3671,6 +3860,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SixShooter',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3682,6 +3872,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'SixShooter',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3693,6 +3884,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'SixShooter',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3706,6 +3898,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SliceOfTime',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3717,6 +3910,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'SliceOfTime',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3728,6 +3922,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'SliceOfTime',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3741,6 +3936,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SpringEmbrace',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3752,6 +3948,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'SpringEmbrace',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3763,6 +3960,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'SpringEmbrace',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3776,6 +3974,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'StarlightEngine',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3787,6 +3986,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'StarlightEngine',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3798,6 +3998,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'StarlightEngine',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3811,6 +4012,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'StarlightEngineReplica',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3822,6 +4024,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'StarlightEngineReplica',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3833,6 +4036,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'StarlightEngineReplica',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3846,6 +4050,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SteamOven',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3857,6 +4062,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'SteamOven',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3868,6 +4074,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'SteamOven',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3881,6 +4088,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SteelCushion',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3892,6 +4100,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'SteelCushion',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3903,6 +4112,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'SteelCushion',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3916,6 +4126,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'StreetSuperstar',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3927,6 +4138,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'StreetSuperstar',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3938,6 +4150,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'StreetSuperstar',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3951,6 +4164,7 @@ export const buffs = {
     set4_cond_chain_or_ult: {
       sheet: 'SwingJazz',
       name: 'set4_cond_chain_or_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3964,6 +4178,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TheBrimstone',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3975,6 +4190,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'TheBrimstone',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -3986,6 +4202,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'TheBrimstone',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -3999,6 +4216,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TheRestrained',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4010,6 +4228,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'TheRestrained',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4021,6 +4240,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'TheRestrained',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4034,6 +4254,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TheVault',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4045,6 +4266,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'TheVault',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4056,6 +4278,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'TheVault',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4069,6 +4292,7 @@ export const buffs = {
     set4_cond_enemy_shocked_atk_: {
       sheet: 'ThunderMetal',
       name: 'set4_cond_enemy_shocked_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4082,6 +4306,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Timeweaver',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4093,6 +4318,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'Timeweaver',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4104,6 +4330,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'Timeweaver',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4117,6 +4344,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TusksOfFury',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4128,6 +4356,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'TusksOfFury',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4139,6 +4368,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'TusksOfFury',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4152,6 +4382,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'UnfetteredGameBall',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4163,6 +4394,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'UnfetteredGameBall',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4174,6 +4406,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'UnfetteredGameBall',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4187,6 +4420,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'VortexArrow',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4198,6 +4432,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'VortexArrow',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4209,6 +4444,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'VortexArrow',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4222,6 +4458,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'VortexHatchet',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4233,6 +4470,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'VortexHatchet',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4244,6 +4482,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'VortexHatchet',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4257,6 +4496,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'VortexRevolver',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4268,6 +4508,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'VortexRevolver',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4279,6 +4520,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'VortexRevolver',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4292,6 +4534,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WeepingCradle',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4303,6 +4546,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'WeepingCradle',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4314,6 +4558,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'WeepingCradle',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4327,6 +4572,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WeepingGemini',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4338,6 +4584,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'WeepingGemini',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4349,6 +4596,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'WeepingGemini',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4362,6 +4610,7 @@ export const buffs = {
     set4_cond_crit_basic_dodge_ex_atk_: {
       sheet: 'WoodpeckerElectro',
       name: 'set4_cond_crit_basic_dodge_ex_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4375,6 +4624,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ZanshinHerbCase',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',
@@ -4386,6 +4636,7 @@ export const buffs = {
     enemy_defIgn_: {
       sheet: 'ZanshinHerbCase',
       name: 'enemy_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -4397,6 +4648,7 @@ export const buffs = {
     team_dmg_: {
       sheet: 'ZanshinHerbCase',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'combat',

@@ -13,9 +13,9 @@ type Formulas<T> = Record<string, Record<string, IFormulaData<T>>>
 
 const condMeta = Symbol.for('condMeta')
 
-export function extractCondMetadata(
-  data: TagMapNodeEntries<Tag>,
-  extractCond: (tag: Tag) => { sheet: string; name: string }
+export function extractCondMetadata<T extends Tag>(
+  data: TagMapNodeEntries<T>,
+  extractCond: (tag: T) => { sheet: string; name: string }
 ) {
   const result: Conditionals = {}
   traverse(
@@ -27,7 +27,7 @@ export function extractCondMetadata(
         n.br.forEach(visit)
         return
       }
-      const { sheet, name } = extractCond(n.tag!)
+      const { sheet, name } = extractCond(n.tag! as T)
       result[sheet] ??= {}
       if (result[sheet][name])
         console.log(`Duplicated conditionals for ${sheet}:${name}`)
@@ -37,10 +37,10 @@ export function extractCondMetadata(
   return sortMeta(result)
 }
 
-export function extractFormulaMetadata<T>(
-  data: TagMapNodeEntries<Tag>,
+export function extractFormulaMetadata<T extends Tag>(
+  data: TagMapNodeEntries<T>,
   extractFormula: (
-    tag: Tag,
+    tag: T,
     value: AnyNode | ReRead
   ) => IFormulaData<T> | undefined
 ) {
@@ -55,6 +55,23 @@ export function extractFormulaMetadata<T>(
     result[sheet][name] = extracted
   }
   return sortMeta(result)
+}
+
+export function possibleValues(node: AnyNode): string[] {
+  switch (node.op) {
+    case 'const':
+      return [node.ex as string]
+    case 'subscript':
+      return node.ex as string[]
+    case 'lookup':
+    case 'thres':
+    case 'match':
+    case 'tag':
+    case 'dtag':
+      return node.x.flatMap(possibleValues)
+    default:
+      throw new Error(`unsupported node ${node.op} in conditional`)
+  }
 }
 
 function sortMeta<T>(

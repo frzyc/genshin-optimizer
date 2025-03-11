@@ -1,6 +1,8 @@
+import { Read } from '@genshin-optimizer/game-opt/engine'
 import {
   extractCondMetadata,
   extractFormulaMetadata,
+  possibleValues,
 } from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
@@ -34,7 +36,14 @@ export default async function runExecutor(
     ) {
       const sheet = tag.sheet!
       const name = value.tag['name']!
-      return { sheet, name, tag: { ...tag, ...value.tag } }
+      const accus = new Set(possibleValues(value))
+      accus.delete('')
+      if (accus.size !== 1)
+        throw new Error(
+          `invalid conds values for ${sheet} ${name}: ${[...accus]}`
+        )
+      const accu = [...accus][0] as Read['accu']
+      return { sheet, name, accu, tag: { ...tag, ...value.tag } }
     }
     return undefined
   })
