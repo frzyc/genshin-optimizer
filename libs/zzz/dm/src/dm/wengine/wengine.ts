@@ -1,4 +1,4 @@
-import { isPercentStat } from '@genshin-optimizer/common/util'
+import { isPercentStat, parseFloatBetter } from '@genshin-optimizer/common/util'
 import type {
   SpecialityKey,
   WengineKey,
@@ -45,7 +45,12 @@ export type WengineData = {
   desc: string
   desc2: string
   desc3: string
-  phase: Array<{ name: string; desc: string }>
+  phase: PhaseData[]
+}
+type PhaseData = {
+  name: string
+  desc: string
+  params: number[]
 }
 export const wengineDetailedJSONData = Object.fromEntries(
   Object.entries(WengineIdMap).map(([id, name]) => {
@@ -68,6 +73,13 @@ export const wengineDetailedJSONData = Object.fromEntries(
       phase: Object.values(raw.Talents).map(({ Name, Desc }) => ({
         name: Name,
         desc: Desc,
+        params: [
+          ...Desc.matchAll(/<color=#2BAD00>(\d*\.?\d*)(%)?<\/color>/g),
+        ].map((matches) => {
+          const [_match, value, percent] = matches
+          if (percent) return parseFloatBetter(value)
+          return +value
+        }),
       })),
     }
     return [name, data] as const
