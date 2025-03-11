@@ -13,27 +13,27 @@
     {
       "name": "Thick Broth",
       "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-      "params": [0.02]
+      "params": [10, 0.02, 8, 8]
     },
     {
       "name": "Thick Broth",
       "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.3%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-      "params": [0.023]
+      "params": [10, 0.023, 8, 8]
     },
     {
       "name": "Thick Broth",
       "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.6%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-      "params": [0.026]
+      "params": [10, 0.026, 8, 8]
     },
     {
       "name": "Thick Broth",
       "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.9%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-      "params": [0.029]
+      "params": [10, 0.029, 8, 8]
     },
     {
       "name": "Thick Broth",
       "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>3.2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-      "params": [0.032]
+      "params": [10, 0.032, 8, 8]
     }
   ]
 }

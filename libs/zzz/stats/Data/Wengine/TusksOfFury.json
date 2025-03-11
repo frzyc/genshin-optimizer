@@ -13,27 +13,27 @@
     {
       "name": "Invincible Rider",
       "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>30%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>18%</color> and Daze dealt increases by <color=#2BAD00>12%</color> for 20s. Passive effects of the same name do not stack.",
-      "params": [0.3, 0.18, 0.12]
+      "params": [0.3, 0.18, 0.12, 20]
     },
     {
       "name": "Invincible Rider",
       "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>38%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>22.5%</color> and Daze dealt increases by <color=#2BAD00>15%</color> for 20s. Passive effects of the same name do not stack.",
-      "params": [0.38, 0.225, 0.15]
+      "params": [0.38, 0.225, 0.15, 20]
     },
     {
       "name": "Invincible Rider",
       "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>46%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>27%</color> and Daze dealt increases by <color=#2BAD00>18%</color> for 20s. Passive effects of the same name do not stack.",
-      "params": [0.46, 0.27, 0.18]
+      "params": [0.46, 0.27, 0.18, 20]
     },
     {
       "name": "Invincible Rider",
       "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>52%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>31.5%</color> and Daze dealt increases by <color=#2BAD00>21%</color> for 20s. Passive effects of the same name do not stack.",
-      "params": [0.52, 0.315, 0.21]
+      "params": [0.52, 0.315, 0.21, 20]
     },
     {
       "name": "Invincible Rider",
       "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>60%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>36%</color> and Daze dealt increases by <color=#2BAD00>24%</color> for 20s. Passive effects of the same name do not stack.",
-      "params": [0.6, 0.36, 0.24]
+      "params": [0.6, 0.36, 0.24, 20]
     }
   ]
 }

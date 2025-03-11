@@ -13,27 +13,27 @@
     {
       "name": "Scorching Breath",
       "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>3.5%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-      "params": [0.035]
+      "params": [0.035, 8, 8, 0.5]
     },
     {
       "name": "Scorching Breath",
       "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>4.4%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-      "params": [0.044]
+      "params": [0.044, 8, 8, 0.5]
     },
     {
       "name": "Scorching Breath",
       "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>5.2%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-      "params": [0.052]
+      "params": [0.052, 8, 8, 0.5]
     },
     {
       "name": "Scorching Breath",
       "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-      "params": [0.06]
+      "params": [0.06, 8, 8, 0.5]
     },
     {
       "name": "Scorching Breath",
       "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>7%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-      "params": [0.07]
+      "params": [0.07, 8, 8, 0.5]
     }
   ]
 }

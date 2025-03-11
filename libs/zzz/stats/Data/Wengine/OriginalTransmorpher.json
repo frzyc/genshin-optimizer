@@ -13,27 +13,27 @@
     {
       "name": "Starlight Knight Flying Kick",
       "desc": "Increases Max HP by <color=#2BAD00>8%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 12s.",
-      "params": [0.08, 0.1]
+      "params": [0.08, 0.1, 12]
     },
     {
       "name": "Starlight Knight Flying Kick",
       "desc": "Increases Max HP by <color=#2BAD00>9%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>11.5%</color> for 12s.",
-      "params": [0.09, 0.115]
+      "params": [0.09, 0.115, 12]
     },
     {
       "name": "Starlight Knight Flying Kick",
       "desc": "Increases Max HP by <color=#2BAD00>10%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>13%</color> for 12s.",
-      "params": [0.1, 0.13]
+      "params": [0.1, 0.13, 12]
     },
     {
       "name": "Starlight Knight Flying Kick",
       "desc": "Increases Max HP by <color=#2BAD00>11%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>14.5%</color> for 12s.",
-      "params": [0.11, 0.145]
+      "params": [0.11, 0.145, 12]
     },
     {
       "name": "Starlight Knight Flying Kick",
       "desc": "Increases Max HP by <color=#2BAD00>12.5%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>16%</color> for 12s.",
-      "params": [0.125, 0.16]
+      "params": [0.125, 0.16, 12]
     }
   ]
 }

@@ -13,27 +13,27 @@
     {
       "name": "Stampede Accident",
       "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>2.5%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-      "params": [0.025]
+      "params": [0.025, 8, 4, 1]
     },
     {
       "name": "Stampede Accident",
       "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>2.8%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-      "params": [0.028]
+      "params": [0.028, 8, 4, 1]
     },
     {
       "name": "Stampede Accident",
       "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>3.2%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-      "params": [0.032]
+      "params": [0.032, 8, 4, 1]
     },
     {
       "name": "Stampede Accident",
       "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>3.6%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-      "params": [0.036]
+      "params": [0.036, 8, 4, 1]
     },
     {
       "name": "Stampede Accident",
       "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>4%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-      "params": [0.04]
+      "params": [0.04, 8, 4, 1]
     }
   ]
 }

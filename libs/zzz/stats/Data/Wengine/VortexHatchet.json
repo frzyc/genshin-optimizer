@@ -13,27 +13,27 @@
     {
       "name": "Riptide",
       "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s.",
-      "params": [0.09]
+      "params": [0.09, 10, 20]
     },
     {
       "name": "Riptide",
       "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s.",
-      "params": [0.1]
+      "params": [0.1, 10, 20]
     },
     {
       "name": "Riptide",
       "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s.",
-      "params": [0.11]
+      "params": [0.11, 10, 20]
     },
     {
       "name": "Riptide",
       "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s.",
-      "params": [0.12]
+      "params": [0.12, 10, 20]
     },
     {
       "name": "Riptide",
       "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>13%</color> for 10s. This effect can trigger once every 20s.",
-      "params": [0.13]
+      "params": [0.13, 10, 20]
     }
   ]
 }

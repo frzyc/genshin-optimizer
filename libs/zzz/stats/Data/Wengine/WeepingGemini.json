@@ -13,27 +13,27 @@
     {
       "name": "Lingering Cries",
       "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>30</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-      "params": [30]
+      "params": [30, 4]
     },
     {
       "name": "Lingering Cries",
       "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>34</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-      "params": [34]
+      "params": [34, 4]
     },
     {
       "name": "Lingering Cries",
       "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>38</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-      "params": [38]
+      "params": [38, 4]
     },
     {
       "name": "Lingering Cries",
       "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>42</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-      "params": [42]
+      "params": [42, 4]
     },
     {
       "name": "Lingering Cries",
       "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>48</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-      "params": [48]
+      "params": [48, 4]
     }
   ]
 }

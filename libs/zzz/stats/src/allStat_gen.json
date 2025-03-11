@@ -37382,27 +37382,27 @@
         {
           "name": "Waning Moon",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>15%</color> for 6s.",
-          "params": [0.15]
+          "params": [0.15, 6]
         },
         {
           "name": "Waning Moon",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>17.5%</color> for 6s.",
-          "params": [0.175]
+          "params": [0.175, 6]
         },
         {
           "name": "Waning Moon",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>20%</color> for 6s.",
-          "params": [0.2]
+          "params": [0.2, 6]
         },
         {
           "name": "Waning Moon",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>22.5%</color> for 6s.",
-          "params": [0.225]
+          "params": [0.225, 6]
         },
         {
           "name": "Waning Moon",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>25%</color> for 6s.",
-          "params": [0.25]
+          "params": [0.25, 6]
         }
       ]
     },
@@ -37421,27 +37421,27 @@
         {
           "name": "New Moon",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3</color> Energy for the equipper. This effect can trigger once every 12s.",
-          "params": [3]
+          "params": [3, 12]
         },
         {
           "name": "New Moon",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3.5</color> Energy for the equipper. This effect can trigger once every 12s.",
-          "params": [3.5]
+          "params": [3.5, 12]
         },
         {
           "name": "New Moon",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4</color> Energy for the equipper. This effect can trigger once every 12s.",
-          "params": [4]
+          "params": [4, 12]
         },
         {
           "name": "New Moon",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4.5</color> Energy for the equipper. This effect can trigger once every 12s.",
-          "params": [4.5]
+          "params": [4.5, 12]
         },
         {
           "name": "New Moon",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>5</color> Energy for the equipper. This effect can trigger once every 12s.",
-          "params": [5]
+          "params": [5, 12]
         }
       ]
     },
@@ -37460,27 +37460,27 @@
         {
           "name": "Changing Tides",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.08]
+          "params": [0.08, 10, 20]
         },
         {
           "name": "Changing Tides",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.09]
+          "params": [0.09, 10, 20]
         },
         {
           "name": "Changing Tides",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.1]
+          "params": [0.1, 10, 20]
         },
         {
           "name": "Changing Tides",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.11]
+          "params": [0.11, 10, 20]
         },
         {
           "name": "Changing Tides",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.12]
+          "params": [0.12, 10, 20]
         }
       ]
     },
@@ -37499,27 +37499,27 @@
         {
           "name": "Roaring Waves",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>10</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [10]
+          "params": [10, 10, 20]
         },
         {
           "name": "Roaring Waves",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>12</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [12]
+          "params": [12, 10, 20]
         },
         {
           "name": "Roaring Waves",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>13</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [13]
+          "params": [13, 10, 20]
         },
         {
           "name": "Roaring Waves",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>15</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [15]
+          "params": [15, 10, 20]
         },
         {
           "name": "Roaring Waves",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>16</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [16]
+          "params": [16, 10, 20]
         }
       ]
     },
@@ -37538,27 +37538,27 @@
         {
           "name": "Booming Sound",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.08]
+          "params": [0.08, 10, 20]
         },
         {
           "name": "Booming Sound",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.09]
+          "params": [0.09, 10, 20]
         },
         {
           "name": "Booming Sound",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.1]
+          "params": [0.1, 10, 20]
         },
         {
           "name": "Booming Sound",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.11]
+          "params": [0.11, 10, 20]
         },
         {
           "name": "Booming Sound",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-          "params": [0.12]
+          "params": [0.12, 10, 20]
         }
       ]
     },
@@ -37655,27 +37655,27 @@
         {
           "name": "Riptide",
           "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s.",
-          "params": [0.09]
+          "params": [0.09, 10, 20]
         },
         {
           "name": "Riptide",
           "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s.",
-          "params": [0.1]
+          "params": [0.1, 10, 20]
         },
         {
           "name": "Riptide",
           "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s.",
-          "params": [0.11]
+          "params": [0.11, 10, 20]
         },
         {
           "name": "Riptide",
           "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s.",
-          "params": [0.12]
+          "params": [0.12, 10, 20]
         },
         {
           "name": "Riptide",
           "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>13%</color> for 10s. This effect can trigger once every 20s.",
-          "params": [0.13]
+          "params": [0.13, 10, 20]
         }
       ]
     },
@@ -37694,27 +37694,27 @@
         {
           "name": "Disordered Current",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s. ",
-          "params": [25]
+          "params": [25, 10, 20]
         },
         {
           "name": "Disordered Current",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>28</color> for 10s. This effect can trigger once every 20s. ",
-          "params": [28]
+          "params": [28, 10, 20]
         },
         {
           "name": "Disordered Current",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>32</color> for 10s. This effect can trigger once every 20s. ",
-          "params": [32]
+          "params": [32, 10, 20]
         },
         {
           "name": "Disordered Current",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>36</color> for 10s. This effect can trigger once every 20s. ",
-          "params": [36]
+          "params": [36, 10, 20]
         },
         {
           "name": "Disordered Current",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>40</color> for 10s. This effect can trigger once every 20s. ",
-          "params": [40]
+          "params": [40, 10, 20]
         }
       ]
     },
@@ -37733,27 +37733,27 @@
         {
           "name": "High-Voltage Surge",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s.",
-          "params": [25]
+          "params": [25, 10, 20]
         },
         {
           "name": "High-Voltage Surge",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>28</color> for 10s. This effect can trigger once every 20s.",
-          "params": [28]
+          "params": [28, 10, 20]
         },
         {
           "name": "High-Voltage Surge",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>32</color> for 10s. This effect can trigger once every 20s.",
-          "params": [32]
+          "params": [32, 10, 20]
         },
         {
           "name": "High-Voltage Surge",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>36</color> for 10s. This effect can trigger once every 20s.",
-          "params": [36]
+          "params": [36, 10, 20]
         },
         {
           "name": "High-Voltage Surge",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>40</color> for 10s. This effect can trigger once every 20s.",
-          "params": [40]
+          "params": [40, 10, 20]
         }
       ]
     },
@@ -37772,27 +37772,27 @@
         {
           "name": "Charge Overload",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>3.5</color> Energy. This effect can trigger once every 12s.",
-          "params": [3.5]
+          "params": [3.5, 12]
         },
         {
           "name": "Charge Overload",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>4</color> Energy. This effect can trigger once every 12s.",
-          "params": [4]
+          "params": [4, 12]
         },
         {
           "name": "Charge Overload",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>4.5</color> Energy. This effect can trigger once every 12s.",
-          "params": [4.5]
+          "params": [4.5, 12]
         },
         {
           "name": "Charge Overload",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>5</color> Energy. This effect can trigger once every 12s.",
-          "params": [5]
+          "params": [5, 12]
         },
         {
           "name": "Charge Overload",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>5.5</color> Energy. This effect can trigger once every 12s.",
-          "params": [5.5]
+          "params": [5.5, 12]
         }
       ]
     },
@@ -37811,27 +37811,27 @@
         {
           "name": "Sinking Strike",
           "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>20%</color> for 8s.",
-          "params": [0.2]
+          "params": [0.2, 8]
         },
         {
           "name": "Sinking Strike",
           "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>23%</color> for 8s.",
-          "params": [0.23]
+          "params": [0.23, 8]
         },
         {
           "name": "Sinking Strike",
           "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>26%</color> for 8s.",
-          "params": [0.26]
+          "params": [0.26, 8]
         },
         {
           "name": "Sinking Strike",
           "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>29%</color> for 8s.",
-          "params": [0.29]
+          "params": [0.29, 8]
         },
         {
           "name": "Sinking Strike",
           "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>32%</color> for 8s.",
-          "params": [0.32]
+          "params": [0.32, 8]
         }
       ]
     },
@@ -37850,27 +37850,27 @@
         {
           "name": "Dazzle",
           "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>6%</color> for 12s.",
-          "params": [0.06]
+          "params": [0.06, 12]
         },
         {
           "name": "Dazzle",
           "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>7%</color> for 12s.",
-          "params": [0.07]
+          "params": [0.07, 12]
         },
         {
           "name": "Dazzle",
           "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>8%</color> for 12s.",
-          "params": [0.08]
+          "params": [0.08, 12]
         },
         {
           "name": "Dazzle",
           "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>9%</color> for 12s.",
-          "params": [0.09]
+          "params": [0.09, 12]
         },
         {
           "name": "Dazzle",
           "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>10%</color> for 12s.",
-          "params": [0.1]
+          "params": [0.1, 12]
         }
       ]
     },
@@ -37889,27 +37889,27 @@
         {
           "name": "Flaming Bars",
           "desc": "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>15%</color>.",
-          "params": [0.15]
+          "params": [1, 3, 0.15]
         },
         {
           "name": "Flaming Bars",
           "desc": "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>17.2%</color>.",
-          "params": [0.172]
+          "params": [1, 3, 0.172]
         },
         {
           "name": "Flaming Bars",
           "desc": "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>19.5%</color>.",
-          "params": [0.195]
+          "params": [1, 3, 0.195]
         },
         {
           "name": "Flaming Bars",
           "desc": "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>21.7%</color>.",
-          "params": [0.217]
+          "params": [1, 3, 0.217]
         },
         {
           "name": "Flaming Bars",
           "desc": "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>24%</color>.",
-          "params": [0.24]
+          "params": [1, 3, 0.24]
         }
       ]
     },
@@ -37928,27 +37928,27 @@
         {
           "name": "Say Cheese",
           "desc": "Any squad members' <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Attack</color>, or <color=#FFFFFF>Chain Attack</color> respectively generates <color=#2BAD00>20</color>/<color=#2BAD00>25</color>/<color=#2BAD00>30</color>/<color=#2BAD00>35</color> more Decibels and generates <color=#2BAD00>0.7</color> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack.",
-          "params": [20, 25, 30, 35, 0.7]
+          "params": [20, 25, 30, 35, 0.7, 12]
         },
         {
           "name": "Say Cheese",
           "desc": "Any squad members' <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Attack</color>, or <color=#FFFFFF>Chain Attack</color> respectively generates <color=#2BAD00>23</color>/<color=#2BAD00>28.5</color>/<color=#2BAD00>34.5</color>/<color=#2BAD00>40</color> more Decibels and generates <color=#2BAD00>0.8</color> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack.",
-          "params": [23, 28.5, 34.5, 40, 0.8]
+          "params": [23, 28.5, 34.5, 40, 0.8, 12]
         },
         {
           "name": "Say Cheese",
           "desc": "Any squad members' <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Attack</color>, or <color=#FFFFFF>Chain Attack</color> respectively generates <color=#2BAD00>26</color>/<color=#2BAD00>32</color>/<color=#2BAD00>39</color>/<color=#2BAD00>45</color> more Decibels and generates <color=#2BAD00>0.9</color> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack.",
-          "params": [26, 32, 39, 45, 0.9]
+          "params": [26, 32, 39, 45, 0.9, 12]
         },
         {
           "name": "Say Cheese",
           "desc": "Any squad members' <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Attack</color>, or <color=#FFFFFF>Chain Attack</color> respectively generates <color=#2BAD00>29</color>/<color=#2BAD00>35.5</color>/<color=#2BAD00>43.5</color>/<color=#2BAD00>50</color> more Decibels and generates <color=#2BAD00>1</color> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack.",
-          "params": [29, 35.5, 43.5, 50, 1]
+          "params": [29, 35.5, 43.5, 50, 1, 12]
         },
         {
           "name": "Say Cheese",
           "desc": "Any squad members' <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Attack</color>, or <color=#FFFFFF>Chain Attack</color> respectively generates <color=#2BAD00>32</color>/<color=#2BAD00>40</color>/<color=#2BAD00>48</color>/<color=#2BAD00>55</color> more Decibels and generates <color=#2BAD00>1.1</color> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack.",
-          "params": [32, 40, 48, 55, 1.1]
+          "params": [32, 40, 48, 55, 1.1, 12]
         }
       ]
     },
@@ -37967,27 +37967,27 @@
         {
           "name": "Dinner's Ready!",
           "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.5%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-          "params": [0.025]
+          "params": [10, 0.025, 10, 10]
         },
         {
           "name": "Dinner's Ready!",
           "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.8%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-          "params": [0.028]
+          "params": [10, 0.028, 10, 10]
         },
         {
           "name": "Dinner's Ready!",
           "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.2%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-          "params": [0.032]
+          "params": [10, 0.032, 10, 10]
         },
         {
           "name": "Dinner's Ready!",
           "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.6%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-          "params": [0.036]
+          "params": [10, 0.036, 10, 10]
         },
         {
           "name": "Dinner's Ready!",
           "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>4%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
-          "params": [0.04]
+          "params": [10, 0.04, 10, 10]
         }
       ]
     },
@@ -38006,27 +38006,27 @@
         {
           "name": "Knight's Combo",
           "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>12%</color> for 12s.",
-          "params": [0.12]
+          "params": [0.12, 12]
         },
         {
           "name": "Knight's Combo",
           "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>13.8%</color> for 12s.",
-          "params": [0.138]
+          "params": [0.138, 12]
         },
         {
           "name": "Knight's Combo",
           "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>15.6%</color> for 12s.",
-          "params": [0.156]
+          "params": [0.156, 12]
         },
         {
           "name": "Knight's Combo",
           "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>17.4%</color> for 12s.",
-          "params": [0.174]
+          "params": [0.174, 12]
         },
         {
           "name": "Knight's Combo",
           "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>19.2%</color> for 12s.",
-          "params": [0.192]
+          "params": [0.192, 12]
         }
       ]
     },
@@ -38045,27 +38045,27 @@
         {
           "name": "Thick Broth",
           "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-          "params": [0.02]
+          "params": [10, 0.02, 8, 8]
         },
         {
           "name": "Thick Broth",
           "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.3%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-          "params": [0.023]
+          "params": [10, 0.023, 8, 8]
         },
         {
           "name": "Thick Broth",
           "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.6%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-          "params": [0.026]
+          "params": [10, 0.026, 8, 8]
         },
         {
           "name": "Thick Broth",
           "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.9%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-          "params": [0.029]
+          "params": [10, 0.029, 8, 8]
         },
         {
           "name": "Thick Broth",
           "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>3.2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.",
-          "params": [0.032]
+          "params": [10, 0.032, 8, 8]
         }
       ]
     },
@@ -38084,27 +38084,27 @@
         {
           "name": "Behemoth Hunter",
           "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>10%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>10%</color>.",
-          "params": [0.1, 0.1]
+          "params": [0.5, 0.1, 0.75, 0.1]
         },
         {
           "name": "Behemoth Hunter",
           "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>11.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>11.5%</color>.",
-          "params": [0.115, 0.115]
+          "params": [0.5, 0.115, 0.75, 0.115]
         },
         {
           "name": "Behemoth Hunter",
           "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>13%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>13%</color>.",
-          "params": [0.13, 0.13]
+          "params": [0.5, 0.13, 0.75, 0.13]
         },
         {
           "name": "Behemoth Hunter",
           "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>14.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>14.5%</color>.",
-          "params": [0.145, 0.145]
+          "params": [0.5, 0.145, 0.75, 0.145]
         },
         {
           "name": "Behemoth Hunter",
           "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>16%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>16%</color>.",
-          "params": [0.16, 0.16]
+          "params": [0.5, 0.16, 0.75, 0.16]
         }
       ]
     },
@@ -38123,27 +38123,27 @@
         {
           "name": "Starlight Knight Flying Kick",
           "desc": "Increases Max HP by <color=#2BAD00>8%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 12s.",
-          "params": [0.08, 0.1]
+          "params": [0.08, 0.1, 12]
         },
         {
           "name": "Starlight Knight Flying Kick",
           "desc": "Increases Max HP by <color=#2BAD00>9%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>11.5%</color> for 12s.",
-          "params": [0.09, 0.115]
+          "params": [0.09, 0.115, 12]
         },
         {
           "name": "Starlight Knight Flying Kick",
           "desc": "Increases Max HP by <color=#2BAD00>10%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>13%</color> for 12s.",
-          "params": [0.1, 0.13]
+          "params": [0.1, 0.13, 12]
         },
         {
           "name": "Starlight Knight Flying Kick",
           "desc": "Increases Max HP by <color=#2BAD00>11%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>14.5%</color> for 12s.",
-          "params": [0.11, 0.145]
+          "params": [0.11, 0.145, 12]
         },
         {
           "name": "Starlight Knight Flying Kick",
           "desc": "Increases Max HP by <color=#2BAD00>12.5%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>16%</color> for 12s.",
-          "params": [0.125, 0.16]
+          "params": [0.125, 0.16, 12]
         }
       ]
     },
@@ -38162,27 +38162,27 @@
         {
           "name": "Lingering Cries",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>30</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-          "params": [30]
+          "params": [30, 4]
         },
         {
           "name": "Lingering Cries",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>34</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-          "params": [34]
+          "params": [34, 4]
         },
         {
           "name": "Lingering Cries",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>38</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-          "params": [38]
+          "params": [38, 4]
         },
         {
           "name": "Lingering Cries",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>42</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-          "params": [42]
+          "params": [42, 4]
         },
         {
           "name": "Lingering Cries",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>48</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.",
-          "params": [48]
+          "params": [48, 4]
         }
       ]
     },
@@ -38279,27 +38279,27 @@
         {
           "name": "Hot Spring Soup",
           "desc": "Reduces DMG taken by <color=#2BAD00>7.5%</color>. When attacked, the equipper's Energy Generation Rate increases by <color=#2BAD00>10%</color> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.",
-          "params": [0.075, 0.1]
+          "params": [0.075, 0.1, 12]
         },
         {
           "name": "Hot Spring Soup",
           "desc": "Reduces DMG taken by <color=#2BAD00>8.5%</color>. When attacked, the equipper's Energy Generation Rate increases by <color=#2BAD00>11.5%</color> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.",
-          "params": [0.085, 0.115]
+          "params": [0.085, 0.115, 12]
         },
         {
           "name": "Hot Spring Soup",
           "desc": "Reduces DMG taken by <color=#2BAD00>9.5%</color>. When attacked, the equipper's Energy Generation Rate increases by <color=#2BAD00>13%</color> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.",
-          "params": [0.095, 0.13]
+          "params": [0.095, 0.13, 12]
         },
         {
           "name": "Hot Spring Soup",
           "desc": "Reduces DMG taken by <color=#2BAD00>10.5%</color>. When attacked, the equipper's Energy Generation Rate increases by <color=#2BAD00>14.5%</color> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.",
-          "params": [0.105, 0.145]
+          "params": [0.105, 0.145, 12]
         },
         {
           "name": "Hot Spring Soup",
           "desc": "Reduces DMG taken by <color=#2BAD00>12%</color>. When attacked, the equipper's Energy Generation Rate increases by <color=#2BAD00>16%</color> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.",
-          "params": [0.12, 0.16]
+          "params": [0.12, 0.16, 12]
         }
       ]
     },
@@ -38357,27 +38357,27 @@
         {
           "name": "Get Everyone Fired Up",
           "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6%</color>.",
-          "params": [0.06, 0.06]
+          "params": [0.06, 8, 0.06]
         },
         {
           "name": "Get Everyone Fired Up",
           "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6.9%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6.9%</color>.",
-          "params": [0.069, 0.069]
+          "params": [0.069, 8, 0.069]
         },
         {
           "name": "Get Everyone Fired Up",
           "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>7.8%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>7.8%</color>.",
-          "params": [0.078, 0.078]
+          "params": [0.078, 8, 0.078]
         },
         {
           "name": "Get Everyone Fired Up",
           "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>8.7%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>8.7%</color>.",
-          "params": [0.087, 0.087]
+          "params": [0.087, 8, 0.087]
         },
         {
           "name": "Get Everyone Fired Up",
           "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>9.6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>9.6%</color>.",
-          "params": [0.096, 0.096]
+          "params": [0.096, 8, 0.096]
         }
       ]
     },
@@ -38396,27 +38396,27 @@
         {
           "name": "In a Flash of Light",
           "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>15%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>18%</color> for 8s.",
-          "params": [0.15, 0.18]
+          "params": [0.15, 0.18, 8]
         },
         {
           "name": "In a Flash of Light",
           "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>17.5%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>20.5%</color> for 8s.",
-          "params": [0.175, 0.205]
+          "params": [0.175, 0.205, 8]
         },
         {
           "name": "In a Flash of Light",
           "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>20%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>23%</color> for 8s.",
-          "params": [0.2, 0.23]
+          "params": [0.2, 0.23, 8]
         },
         {
           "name": "In a Flash of Light",
           "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>22%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>25%</color> for 8s.",
-          "params": [0.22, 0.25]
+          "params": [0.22, 0.25, 8]
         },
         {
           "name": "In a Flash of Light",
           "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>24%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>27.5%</color> for 8s.",
-          "params": [0.24, 0.275]
+          "params": [0.24, 0.275, 8]
         }
       ]
     },
@@ -38435,27 +38435,27 @@
         {
           "name": "Money-Lover",
           "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>15%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.5</color>/s for 2s. Passive effects of the same name do not stack.",
-          "params": [0.15, 0.5]
+          "params": [0.15, 0.5, 2]
         },
         {
           "name": "Money-Lover",
           "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>17.5%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.58</color>/s for 2s. Passive effects of the same name do not stack.",
-          "params": [0.175, 0.58]
+          "params": [0.175, 0.58, 2]
         },
         {
           "name": "Money-Lover",
           "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>20%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.65</color>/s for 2s. Passive effects of the same name do not stack.",
-          "params": [0.2, 0.65]
+          "params": [0.2, 0.65, 2]
         },
         {
           "name": "Money-Lover",
           "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>22%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.72</color>/s for 2s. Passive effects of the same name do not stack.",
-          "params": [0.22, 0.72]
+          "params": [0.22, 0.72, 2]
         },
         {
           "name": "Money-Lover",
           "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>24%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.8</color>/s for 2s. Passive effects of the same name do not stack.",
-          "params": [0.24, 0.8]
+          "params": [0.24, 0.8, 2]
         }
       ]
     },
@@ -38474,27 +38474,27 @@
         {
           "name": "Safe Household Saw",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.45</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
-          "params": [0.45, 0.03]
+          "params": [0.45, 0.03, 15, 1]
         },
         {
           "name": "Safe Household Saw",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.52</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3.5%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
-          "params": [0.52, 0.035]
+          "params": [0.52, 0.035, 15, 1]
         },
         {
           "name": "Safe Household Saw",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.58</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
-          "params": [0.58, 0.04]
+          "params": [0.58, 0.04, 15, 1]
         },
         {
           "name": "Safe Household Saw",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.65</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
-          "params": [0.65, 0.044]
+          "params": [0.65, 0.044, 15, 1]
         },
         {
           "name": "Safe Household Saw",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.72</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.8%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
-          "params": [0.72, 0.048]
+          "params": [0.72, 0.048, 15, 1]
         }
       ]
     },
@@ -38513,27 +38513,27 @@
         {
           "name": "Knight Beam: Change",
           "desc": "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>36%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
-          "params": [0.36]
+          "params": [0.36, 8, 6]
         },
         {
           "name": "Knight Beam: Change",
           "desc": "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>41%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
-          "params": [0.41]
+          "params": [0.41, 8, 6]
         },
         {
           "name": "Knight Beam: Change",
           "desc": "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>46.5%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
-          "params": [0.465]
+          "params": [0.465, 8, 6]
         },
         {
           "name": "Knight Beam: Change",
           "desc": "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>52%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
-          "params": [0.52]
+          "params": [0.52, 8, 6]
         },
         {
           "name": "Knight Beam: Change",
           "desc": "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>57.5%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>.",
-          "params": [0.575]
+          "params": [0.575, 8, 6]
         }
       ]
     },
@@ -38552,27 +38552,27 @@
         {
           "name": "Hell's Generator",
           "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>50%</color> for 10s. This effect can trigger once every 15s.",
-          "params": [0.5]
+          "params": [0.5, 10, 15]
         },
         {
           "name": "Hell's Generator",
           "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>57.5%</color> for 10s. This effect can trigger once every 15s.",
-          "params": [0.575]
+          "params": [0.575, 10, 15]
         },
         {
           "name": "Hell's Generator",
           "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>65%</color> for 10s. This effect can trigger once every 15s.",
-          "params": [0.65]
+          "params": [0.65, 10, 15]
         },
         {
           "name": "Hell's Generator",
           "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>72.5%</color> for 10s. This effect can trigger once every 15s.",
-          "params": [0.725]
+          "params": [0.725, 10, 15]
         },
         {
           "name": "Hell's Generator",
           "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>80%</color> for 10s. This effect can trigger once every 15s.",
-          "params": [0.8]
+          "params": [0.8, 10, 15]
         }
       ]
     },
@@ -38591,27 +38591,27 @@
         {
           "name": "Ten Ton Top",
           "desc": "Reduces DMG taken by <color=#2BAD00>7.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>600%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
-          "params": [0.075, 6]
+          "params": [0.075, 6, 7.5]
         },
         {
           "name": "Ten Ton Top",
           "desc": "Reduces DMG taken by <color=#2BAD00>8.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>690%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
-          "params": [0.085, 6.9]
+          "params": [0.085, 6.9, 7.5]
         },
         {
           "name": "Ten Ton Top",
           "desc": "Reduces DMG taken by <color=#2BAD00>9.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>780%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
-          "params": [0.095, 7.8]
+          "params": [0.095, 7.8, 7.5]
         },
         {
           "name": "Ten Ton Top",
           "desc": "Reduces DMG taken by <color=#2BAD00>10.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>870%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
-          "params": [0.105, 8.7]
+          "params": [0.105, 8.7, 7.5]
         },
         {
           "name": "Ten Ton Top",
           "desc": "Reduces DMG taken by <color=#2BAD00>12%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>960%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
-          "params": [0.12, 9.6]
+          "params": [0.12, 9.6, 7.5]
         }
       ]
     },
@@ -38630,27 +38630,27 @@
         {
           "name": "Visage of Greed",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>15%</color>. When launching an <color=#FFFFFF>EX Special Attack</color>, all squad members' ATK increases by <color=#2BAD00>2%</color> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.",
-          "params": [0.15, 0.02]
+          "params": [0.15, 0.02, 12, 4]
         },
         {
           "name": "Visage of Greed",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>17.5%</color>. When launching an <color=#FFFFFF>EX Special Attack</color>, all squad members' ATK increases by <color=#2BAD00>2.3%</color> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.",
-          "params": [0.175, 0.023]
+          "params": [0.175, 0.023, 12, 4]
         },
         {
           "name": "Visage of Greed",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>20%</color>. When launching an <color=#FFFFFF>EX Special Attack</color>, all squad members' ATK increases by <color=#2BAD00>2.6%</color> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.",
-          "params": [0.2, 0.026]
+          "params": [0.2, 0.026, 12, 4]
         },
         {
           "name": "Visage of Greed",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>22%</color>. When launching an <color=#FFFFFF>EX Special Attack</color>, all squad members' ATK increases by <color=#2BAD00>2.9%</color> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.",
-          "params": [0.22, 0.029]
+          "params": [0.22, 0.029, 12, 4]
         },
         {
           "name": "Visage of Greed",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>24%</color>. When launching an <color=#FFFFFF>EX Special Attack</color>, all squad members' ATK increases by <color=#2BAD00>3.2%</color> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.",
-          "params": [0.24, 0.032]
+          "params": [0.24, 0.032, 12, 4]
         }
       ]
     },
@@ -38669,27 +38669,27 @@
         {
           "name": "Stampede Accident",
           "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>2.5%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-          "params": [0.025]
+          "params": [0.025, 8, 4, 1]
         },
         {
           "name": "Stampede Accident",
           "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>2.8%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-          "params": [0.028]
+          "params": [0.028, 8, 4, 1]
         },
         {
           "name": "Stampede Accident",
           "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>3.2%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-          "params": [0.032]
+          "params": [0.032, 8, 4, 1]
         },
         {
           "name": "Stampede Accident",
           "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>3.6%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-          "params": [0.036]
+          "params": [0.036, 8, 4, 1]
         },
         {
           "name": "Stampede Accident",
           "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>4%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.",
-          "params": [0.04]
+          "params": [0.04, 8, 4, 1]
         }
       ]
     },
@@ -38747,27 +38747,27 @@
         {
           "name": "Collision Potential",
           "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>8%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>40</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>25%</color>.",
-          "params": [0.08, 40, 0.25]
+          "params": [5, 0.3, 0.08, 40, 0.25]
         },
         {
           "name": "Collision Potential",
           "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>9.2%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>46</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>28%</color>.",
-          "params": [0.092, 46, 0.28]
+          "params": [5, 0.3, 0.092, 46, 0.28]
         },
         {
           "name": "Collision Potential",
           "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>10.4%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>52</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>32%</color>.",
-          "params": [0.104, 52, 0.32]
+          "params": [5, 0.3, 0.104, 52, 0.32]
         },
         {
           "name": "Collision Potential",
           "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>11.6%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>58</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>36%</color>.",
-          "params": [0.116, 58, 0.36]
+          "params": [5, 0.3, 0.116, 58, 0.36]
         },
         {
           "name": "Collision Potential",
           "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>12.8%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>64</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>40%</color>.",
-          "params": [0.128, 64, 0.4]
+          "params": [5, 0.3, 0.128, 64, 0.4]
         }
       ]
     },
@@ -38786,27 +38786,27 @@
         {
           "name": "Oversized Barrel",
           "desc": "Increases ATK by <color=#2BAD00>7.5%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>8</color>s.",
-          "params": [0.075, 8]
+          "params": [0.075, 2, 8]
         },
         {
           "name": "Oversized Barrel",
           "desc": "Increases ATK by <color=#2BAD00>8.6%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7.5</color>s.",
-          "params": [0.086, 7.5]
+          "params": [0.086, 2, 7.5]
         },
         {
           "name": "Oversized Barrel",
           "desc": "Increases ATK by <color=#2BAD00>9.7%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7</color>s.",
-          "params": [0.097, 7]
+          "params": [0.097, 2, 7]
         },
         {
           "name": "Oversized Barrel",
           "desc": "Increases ATK by <color=#2BAD00>10.8%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6.5</color>s.",
-          "params": [0.108, 6.5]
+          "params": [0.108, 2, 6.5]
         },
         {
           "name": "Oversized Barrel",
           "desc": "Increases ATK by <color=#2BAD00>12%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6</color>s.",
-          "params": [0.12, 6]
+          "params": [0.12, 2, 6]
         }
       ]
     },
@@ -38825,27 +38825,27 @@
         {
           "name": "Game Start!",
           "desc": "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <color=#2BAD00>12%</color> for 12s. Passive effects of the same name do not stack.",
-          "params": [0.12]
+          "params": [0.12, 12]
         },
         {
           "name": "Game Start!",
           "desc": "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <color=#2BAD00>13.5%</color> for 12s. Passive effects of the same name do not stack.",
-          "params": [0.135]
+          "params": [0.135, 12]
         },
         {
           "name": "Game Start!",
           "desc": "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <color=#2BAD00>15.5%</color> for 12s. Passive effects of the same name do not stack.",
-          "params": [0.155]
+          "params": [0.155, 12]
         },
         {
           "name": "Game Start!",
           "desc": "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <color=#2BAD00>17.5%</color> for 12s. Passive effects of the same name do not stack.",
-          "params": [0.175]
+          "params": [0.175, 12]
         },
         {
           "name": "Game Start!",
           "desc": "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <color=#2BAD00>20%</color> for 12s. Passive effects of the same name do not stack.",
-          "params": [0.2]
+          "params": [0.2, 12]
         }
       ]
     },
@@ -38864,27 +38864,27 @@
         {
           "name": "Fire!",
           "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4%</color>.",
-          "params": [0.04]
+          "params": [1, 3, 6, 0.04]
         },
         {
           "name": "Fire!",
           "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4.6%</color>.",
-          "params": [0.046]
+          "params": [1, 3, 6, 0.046]
         },
         {
           "name": "Fire!",
           "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.2%</color>.",
-          "params": [0.052]
+          "params": [1, 3, 6, 0.052]
         },
         {
           "name": "Fire!",
           "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.8%</color>.",
-          "params": [0.058]
+          "params": [1, 3, 6, 0.058]
         },
         {
           "name": "Fire!",
           "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>6.4%</color>.",
-          "params": [0.064]
+          "params": [1, 3, 6, 0.064]
         }
       ]
     },
@@ -38942,27 +38942,27 @@
         {
           "name": "Scorching Breath",
           "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>3.5%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-          "params": [0.035]
+          "params": [0.035, 8, 8, 0.5]
         },
         {
           "name": "Scorching Breath",
           "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>4.4%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-          "params": [0.044]
+          "params": [0.044, 8, 8, 0.5]
         },
         {
           "name": "Scorching Breath",
           "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>5.2%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-          "params": [0.052]
+          "params": [0.052, 8, 8, 0.5]
         },
         {
           "name": "Scorching Breath",
           "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-          "params": [0.06]
+          "params": [0.06, 8, 8, 0.5]
         },
         {
           "name": "Scorching Breath",
           "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>7%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.",
-          "params": [0.07]
+          "params": [0.07, 8, 8, 0.5]
         }
       ]
     },
@@ -38981,27 +38981,27 @@
         {
           "name": "Invincible Rider",
           "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>30%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>18%</color> and Daze dealt increases by <color=#2BAD00>12%</color> for 20s. Passive effects of the same name do not stack.",
-          "params": [0.3, 0.18, 0.12]
+          "params": [0.3, 0.18, 0.12, 20]
         },
         {
           "name": "Invincible Rider",
           "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>38%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>22.5%</color> and Daze dealt increases by <color=#2BAD00>15%</color> for 20s. Passive effects of the same name do not stack.",
-          "params": [0.38, 0.225, 0.15]
+          "params": [0.38, 0.225, 0.15, 20]
         },
         {
           "name": "Invincible Rider",
           "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>46%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>27%</color> and Daze dealt increases by <color=#2BAD00>18%</color> for 20s. Passive effects of the same name do not stack.",
-          "params": [0.46, 0.27, 0.18]
+          "params": [0.46, 0.27, 0.18, 20]
         },
         {
           "name": "Invincible Rider",
           "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>52%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>31.5%</color> and Daze dealt increases by <color=#2BAD00>21%</color> for 20s. Passive effects of the same name do not stack.",
-          "params": [0.52, 0.315, 0.21]
+          "params": [0.52, 0.315, 0.21, 20]
         },
         {
           "name": "Invincible Rider",
           "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>60%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>36%</color> and Daze dealt increases by <color=#2BAD00>24%</color> for 20s. Passive effects of the same name do not stack.",
-          "params": [0.6, 0.36, 0.24]
+          "params": [0.6, 0.36, 0.24, 20]
         }
       ]
     },
@@ -39020,27 +39020,27 @@
         {
           "name": "Frost-Stained Star",
           "desc": "CRIT DMG increases by <color=#2BAD00>50%</color>. When using an <color=#FFFFFF>EX Special Attack</color> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <color=#98EFF0>Ice DMG</color> increases by <color=#2BAD00>20%</color>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.",
-          "params": [0.5, 0.2]
+          "params": [0.5, 0.2, 2, 15]
         },
         {
           "name": "Frost-Stained Star",
           "desc": "CRIT DMG increases by <color=#2BAD00>57%</color>. When using an <color=#FFFFFF>EX Special Attack</color> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <color=#98EFF0>Ice DMG</color> increases by <color=#2BAD00>23%</color>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.",
-          "params": [0.57, 0.23]
+          "params": [0.57, 0.23, 2, 15]
         },
         {
           "name": "Frost-Stained Star",
           "desc": "CRIT DMG increases by <color=#2BAD00>65%</color>. When using an <color=#FFFFFF>EX Special Attack</color> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <color=#98EFF0>Ice DMG</color> increases by <color=#2BAD00>26%</color>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.",
-          "params": [0.65, 0.26]
+          "params": [0.65, 0.26, 2, 15]
         },
         {
           "name": "Frost-Stained Star",
           "desc": "CRIT DMG increases by <color=#2BAD00>72%</color>. When using an <color=#FFFFFF>EX Special Attack</color> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <color=#98EFF0>Ice DMG</color> increases by <color=#2BAD00>29%</color>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.",
-          "params": [0.72, 0.29]
+          "params": [0.72, 0.29, 2, 15]
         },
         {
           "name": "Frost-Stained Star",
           "desc": "CRIT DMG increases by <color=#2BAD00>80%</color>. When using an <color=#FFFFFF>EX Special Attack</color> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <color=#98EFF0>Ice DMG</color> increases by <color=#2BAD00>32%</color>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.",
-          "params": [0.8, 0.32]
+          "params": [0.8, 0.32, 2, 15]
         }
       ]
     },
@@ -39059,27 +39059,27 @@
         {
           "name": "Passionate Construction",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-          "params": [0.6, 0.1]
+          "params": [0.6, 0.1, 10, 2]
         },
         {
           "name": "Passionate Construction",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>12.5%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-          "params": [0.75, 0.125]
+          "params": [0.75, 0.125, 10, 2]
         },
         {
           "name": "Passionate Construction",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>15%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-          "params": [0.9, 0.15]
+          "params": [0.9, 0.15, 10, 2]
         },
         {
           "name": "Passionate Construction",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>17.5%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-          "params": [1.05, 0.175]
+          "params": [1.05, 0.175, 10, 2]
         },
         {
           "name": "Passionate Construction",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>20%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
-          "params": [1.2, 0.2]
+          "params": [1.2, 0.2, 10, 2]
         }
       ]
     },
@@ -39098,27 +39098,27 @@
         {
           "name": "Binding Chains",
           "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>6%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-          "params": [0.06]
+          "params": [0.06, 8, 5]
         },
         {
           "name": "Binding Chains",
           "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>7.5%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-          "params": [0.075]
+          "params": [0.075, 8, 5]
         },
         {
           "name": "Binding Chains",
           "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>9%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-          "params": [0.09]
+          "params": [0.09, 8, 5]
         },
         {
           "name": "Binding Chains",
           "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>10.5%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-          "params": [0.105]
+          "params": [0.105, 8, 5]
         },
         {
           "name": "Binding Chains",
           "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>12%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-          "params": [0.12]
+          "params": [0.12, 8, 5]
         }
       ]
     },
@@ -39137,27 +39137,27 @@
         {
           "name": "Flowing Flame",
           "desc": "Upon launching a <color=#FFFFFF>Quick Assist</color> or <color=#FFFFFF>Perfect Assist</color>, the equipper's Impact increases by <color=#2BAD00>25%</color> for 8s. When the equipper launches and hits an enemy with a <color=#FFFFFF>Basic Attack</color>, apply <color=#FFFFFF>Wilt</color> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <color=#FFFFFF>Wilt</color> applied to the target, the CRIT DMG of the <color=#98EFF0>Ice DMG</color> and <color=#FF5521>Fire DMG</color> dealt by that attack increases by <color=#2BAD00>1.5%</color>. Only one instance of this effect can exist in the same squad.",
-          "params": [0.25, 0.015]
+          "params": [0.25, 8, 30, 20, 0.015]
         },
         {
           "name": "Flowing Flame",
           "desc": "Upon launching a <color=#FFFFFF>Quick Assist</color> or <color=#FFFFFF>Perfect Assist</color>, the equipper's Impact increases by <color=#2BAD00>28.75%</color> for 8s. When the equipper launches and hits an enemy with a <color=#FFFFFF>Basic Attack</color>, apply <color=#FFFFFF>Wilt</color> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <color=#FFFFFF>Wilt</color> applied to the target, the CRIT DMG of the <color=#98EFF0>Ice DMG</color> and <color=#FF5521>Fire DMG</color> dealt by that attack increases by <color=#2BAD00>1.72%</color>. Only one instance of this effect can exist in the same squad.",
-          "params": [0.2875, 0.0172]
+          "params": [0.2875, 8, 30, 20, 0.0172]
         },
         {
           "name": "Flowing Flame",
           "desc": "Upon launching a <color=#FFFFFF>Quick Assist</color> or <color=#FFFFFF>Perfect Assist</color>, the equipper's Impact increases by <color=#2BAD00>32.5%</color> for 8s. When the equipper launches and hits an enemy with a <color=#FFFFFF>Basic Attack</color>, apply <color=#FFFFFF>Wilt</color> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <color=#FFFFFF>Wilt</color> applied to the target, the CRIT DMG of the <color=#98EFF0>Ice DMG</color> and <color=#FF5521>Fire DMG</color> dealt by that attack increases by <color=#2BAD00>1.95%</color>. Only one instance of this effect can exist in the same squad.",
-          "params": [0.325, 0.0195]
+          "params": [0.325, 8, 30, 20, 0.0195]
         },
         {
           "name": "Flowing Flame",
           "desc": "Upon launching a <color=#FFFFFF>Quick Assist</color> or <color=#FFFFFF>Perfect Assist</color>, the equipper's Impact increases by <color=#2BAD00>36.25%</color> for 8s. When the equipper launches and hits an enemy with a <color=#FFFFFF>Basic Attack</color>, apply <color=#FFFFFF>Wilt</color> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <color=#FFFFFF>Wilt</color> applied to the target, the CRIT DMG of the <color=#98EFF0>Ice DMG</color> and <color=#FF5521>Fire DMG</color> dealt by that attack increases by <color=#2BAD00>2.17%</color>. Only one instance of this effect can exist in the same squad.",
-          "params": [0.3625, 0.0217]
+          "params": [0.3625, 8, 30, 20, 0.0217]
         },
         {
           "name": "Flowing Flame",
           "desc": "Upon launching a <color=#FFFFFF>Quick Assist</color> or <color=#FFFFFF>Perfect Assist</color>, the equipper's Impact increases by <color=#2BAD00>40%</color> for 8s. When the equipper launches and hits an enemy with a <color=#FFFFFF>Basic Attack</color>, apply <color=#FFFFFF>Wilt</color> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <color=#FFFFFF>Wilt</color> applied to the target, the CRIT DMG of the <color=#98EFF0>Ice DMG</color> and <color=#FF5521>Fire DMG</color> dealt by that attack increases by <color=#2BAD00>2.4%</color>. Only one instance of this effect can exist in the same squad.",
-          "params": [0.4, 0.024]
+          "params": [0.4, 8, 30, 20, 0.024]
         }
       ]
     },
@@ -39176,27 +39176,27 @@
         {
           "name": "Fuel on the Rocks",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>3.5%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>50</color>. This Anomaly Proficiency increase does not stack and lasts for 6s.",
-          "params": [0.6, 0.035, 50]
+          "params": [0.6, 0.035, 10, 6, 0.3, 5, 50, 6]
         },
         {
           "name": "Fuel on the Rocks",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>4.4%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>62</color>. This Anomaly Proficiency increase does not stack and lasts for 6s.",
-          "params": [0.75, 0.044, 62]
+          "params": [0.75, 0.044, 10, 6, 0.3, 5, 62, 6]
         },
         {
           "name": "Fuel on the Rocks",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>5.2%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>75</color>. This Anomaly Proficiency increase does not stack and lasts for 6s.",
-          "params": [0.9, 0.052, 75]
+          "params": [0.9, 0.052, 10, 6, 0.3, 5, 75, 6]
         },
         {
           "name": "Fuel on the Rocks",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>6.1%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>87</color>. This Anomaly Proficiency increase does not stack and lasts for 6s.",
-          "params": [1.05, 0.061, 87]
+          "params": [1.05, 0.061, 10, 6, 0.3, 5, 87, 6]
         },
         {
           "name": "Fuel on the Rocks",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>7%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>100</color>. This Anomaly Proficiency increase does not stack and lasts for 6s.",
-          "params": [1.2, 0.07, 100]
+          "params": [1.2, 0.07, 10, 6, 0.3, 5, 100, 6]
         }
       ]
     },
@@ -39215,27 +39215,27 @@
         {
           "name": "Data Flood",
           "desc": "Increases ATK by <color=#2BAD00>12%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>25</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-          "params": [0.12, 25]
+          "params": [0.12, 25, 8, 3]
         },
         {
           "name": "Data Flood",
           "desc": "Increases ATK by <color=#2BAD00>15%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>31</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-          "params": [0.15, 31]
+          "params": [0.15, 31, 8, 3]
         },
         {
           "name": "Data Flood",
           "desc": "Increases ATK by <color=#2BAD00>18%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>37</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-          "params": [0.18, 37]
+          "params": [0.18, 37, 8, 3]
         },
         {
           "name": "Data Flood",
           "desc": "Increases ATK by <color=#2BAD00>21%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>43</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-          "params": [0.21, 43]
+          "params": [0.21, 43, 8, 3]
         },
         {
           "name": "Data Flood",
           "desc": "Increases ATK by <color=#2BAD00>24%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>50</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
-          "params": [0.24, 50]
+          "params": [0.24, 50, 8, 3]
         }
       ]
     },
@@ -39254,27 +39254,27 @@
         {
           "name": "Lord of Seas",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>25%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>10%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>10%</color> for 15s. The duration of each effect is calculated separately.",
-          "params": [0.25, 0.1, 0.1]
+          "params": [0.25, 0.1, 8, 0.1, 15]
         },
         {
           "name": "Lord of Seas",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>31.5%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>12.5%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>12.5%</color> for 15s. The duration of each effect is calculated separately.",
-          "params": [0.315, 0.125, 0.125]
+          "params": [0.315, 0.125, 8, 0.125, 15]
         },
         {
           "name": "Lord of Seas",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>38%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>15%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>15%</color> for 15s. The duration of each effect is calculated separately.",
-          "params": [0.38, 0.15, 0.15]
+          "params": [0.38, 0.15, 8, 0.15, 15]
         },
         {
           "name": "Lord of Seas",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>44.5%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>17.5%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>17.5%</color> for 15s. The duration of each effect is calculated separately.",
-          "params": [0.445, 0.175, 0.175]
+          "params": [0.445, 0.175, 8, 0.175, 15]
         },
         {
           "name": "Lord of Seas",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>50%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>20%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>20%</color> for 15s. The duration of each effect is calculated separately.",
-          "params": [0.5, 0.2, 0.2]
+          "params": [0.5, 0.2, 8, 0.2, 15]
         }
       ]
     },
@@ -39293,27 +39293,27 @@
         {
           "name": "Growth Through Adversity",
           "desc": "CRIT Rate increases by <color=#2BAD00>10%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>40%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>10%</color> for 15s.",
-          "params": [0.1, 0.4, 0.1]
+          "params": [0.1, 0.4, 0.1, 15]
         },
         {
           "name": "Growth Through Adversity",
           "desc": "CRIT Rate increases by <color=#2BAD00>11.5%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>46%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>11.5%</color> for 15s.",
-          "params": [0.115, 0.46, 0.115]
+          "params": [0.115, 0.46, 0.115, 15]
         },
         {
           "name": "Growth Through Adversity",
           "desc": "CRIT Rate increases by <color=#2BAD00>13%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>52%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>13%</color> for 15s.",
-          "params": [0.13, 0.52, 0.13]
+          "params": [0.13, 0.52, 0.13, 15]
         },
         {
           "name": "Growth Through Adversity",
           "desc": "CRIT Rate increases by <color=#2BAD00>14.5%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>58%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>14.5%</color> for 15s.",
-          "params": [0.145, 0.58, 0.145]
+          "params": [0.145, 0.58, 0.145, 15]
         },
         {
           "name": "Growth Through Adversity",
           "desc": "CRIT Rate increases by <color=#2BAD00>16%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>64%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>16%</color> for 15s.",
-          "params": [0.16, 0.64, 0.16]
+          "params": [0.16, 0.64, 0.16, 15]
         }
       ]
     },
@@ -39332,27 +39332,27 @@
         {
           "name": "Punishment",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>10%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>1.7%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>10.2%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
-          "params": [0.6, 0.1, 0.017, 0.102]
+          "params": [0.6, 0.1, 3, 0.017, 0.5, 0.102]
         },
         {
           "name": "Punishment",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>12.5%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>2%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>12%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
-          "params": [0.75, 0.125, 0.02, 0.12]
+          "params": [0.75, 0.125, 3, 0.02, 0.5, 0.12]
         },
         {
           "name": "Punishment",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>15%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>2.5%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>15%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
-          "params": [0.9, 0.15, 0.025, 0.15]
+          "params": [0.9, 0.15, 3, 0.025, 0.5, 0.15]
         },
         {
           "name": "Punishment",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>17.5%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>3%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>18%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
-          "params": [1.05, 0.175, 0.03, 0.18]
+          "params": [1.05, 0.175, 3, 0.03, 0.5, 0.18]
         },
         {
           "name": "Punishment",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>20%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>3.3%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>19.8%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
-          "params": [1.2, 0.2, 0.033, 0.198]
+          "params": [1.2, 0.2, 3, 0.033, 0.5, 0.198]
         }
       ]
     },
@@ -39371,27 +39371,27 @@
         {
           "name": "Time-Devouring Stratagem",
           "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>30%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>75</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>25%</color>.",
-          "params": [0.3, 75, 0.25]
+          "params": [0.3, 75, 15, 375, 0.25]
         },
         {
           "name": "Time-Devouring Stratagem",
           "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>35%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>85</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>27.5%</color>.",
-          "params": [0.35, 85, 0.275]
+          "params": [0.35, 85, 15, 375, 0.275]
         },
         {
           "name": "Time-Devouring Stratagem",
           "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>40%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>95</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>30%</color>.",
-          "params": [0.4, 95, 0.3]
+          "params": [0.4, 95, 15, 375, 0.3]
         },
         {
           "name": "Time-Devouring Stratagem",
           "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>45%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>105</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>32.5%</color>.",
-          "params": [0.45, 105, 0.325]
+          "params": [0.45, 105, 15, 375, 0.325]
         },
         {
           "name": "Time-Devouring Stratagem",
           "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>50%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>115</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>35%</color>.",
-          "params": [0.5, 115, 0.35]
+          "params": [0.5, 115, 15, 375, 0.35]
         }
       ]
     },
@@ -39410,27 +39410,27 @@
         {
           "name": "Security Patrol",
           "desc": "Increases CRIT Rate by <color=#2BAD00>15%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>35%</color>.",
-          "params": [0.15, 0.35]
+          "params": [0.15, 8, 8, 0.35]
         },
         {
           "name": "Security Patrol",
           "desc": "Increases CRIT Rate by <color=#2BAD00>18.8%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>43.5%</color>.",
-          "params": [0.188, 0.435]
+          "params": [0.188, 8, 8, 0.435]
         },
         {
           "name": "Security Patrol",
           "desc": "Increases CRIT Rate by <color=#2BAD00>22.6%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>52%</color>.",
-          "params": [0.226, 0.52]
+          "params": [0.226, 8, 8, 0.52]
         },
         {
           "name": "Security Patrol",
           "desc": "Increases CRIT Rate by <color=#2BAD00>26.4%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>60.5%</color>.",
-          "params": [0.264, 0.605]
+          "params": [0.264, 8, 8, 0.605]
         },
         {
           "name": "Security Patrol",
           "desc": "Increases CRIT Rate by <color=#2BAD00>30%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>70%</color>.",
-          "params": [0.3, 0.7]
+          "params": [0.3, 8, 8, 0.7]
         }
       ]
     },
@@ -39449,27 +39449,27 @@
         {
           "name": "Ringing Melody",
           "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>0.7%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>20%</color> for 10s. Passive effects of the same name do not stack.",
-          "params": [0.007, 0.2]
+          "params": [1, 0.007, 30, 8, 15, 0.2, 10]
         },
         {
           "name": "Ringing Melody",
           "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>0.88%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>23%</color> for 10s. Passive effects of the same name do not stack.",
-          "params": [0.0088, 0.23]
+          "params": [1, 0.0088, 30, 8, 15, 0.23, 10]
         },
         {
           "name": "Ringing Melody",
           "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>1.05%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>26%</color> for 10s. Passive effects of the same name do not stack.",
-          "params": [0.0105, 0.26]
+          "params": [1, 0.0105, 30, 8, 15, 0.26, 10]
         },
         {
           "name": "Ringing Melody",
           "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>1.22%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>29%</color> for 10s. Passive effects of the same name do not stack.",
-          "params": [0.0122, 0.29]
+          "params": [1, 0.0122, 30, 8, 15, 0.29, 10]
         },
         {
           "name": "Ringing Melody",
           "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>1.4%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>32%</color> for 10s. Passive effects of the same name do not stack.",
-          "params": [0.014, 0.32]
+          "params": [1, 0.014, 30, 8, 15, 0.32, 10]
         }
       ]
     },
@@ -39488,27 +39488,27 @@
         {
           "name": "Indulge in the Hunt",
           "desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>12%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>40%</color>.",
-          "params": [0.12, 0.4]
+          "params": [1, 0.12, 10, 3, 0.5, 3, 0.4]
         },
         {
           "name": "Indulge in the Hunt",
           "desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>15%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>50%</color>.",
-          "params": [0.15, 0.5]
+          "params": [1, 0.15, 10, 3, 0.5, 3, 0.5]
         },
         {
           "name": "Indulge in the Hunt",
           "desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>18%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>60%</color>.",
-          "params": [0.18, 0.6]
+          "params": [1, 0.18, 10, 3, 0.5, 3, 0.6]
         },
         {
           "name": "Indulge in the Hunt",
           "desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>21%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>70%</color>.",
-          "params": [0.21, 0.7]
+          "params": [1, 0.21, 10, 3, 0.5, 3, 0.7]
         },
         {
           "name": "Indulge in the Hunt",
           "desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>24%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>80%</color>.",
-          "params": [0.24, 0.8]
+          "params": [1, 0.24, 10, 3, 0.5, 3, 0.8]
         }
       ]
     },
@@ -39527,27 +39527,27 @@
         {
           "name": "Untold Beauty",
           "desc": "When any squad member enters the field through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, the equipper gains <color=#2BAD00>5</color> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <color=#2BAD00>10%</color>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
-          "params": [5, 0.1]
+          "params": [5, 5, 25, 0.1, 2, 20]
         },
         {
           "name": "Untold Beauty",
           "desc": "When any squad member enters the field through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, the equipper gains <color=#2BAD00>5.5</color> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <color=#2BAD00>11.5%</color>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
-          "params": [5.5, 0.115]
+          "params": [5.5, 5, 25, 0.115, 2, 20]
         },
         {
           "name": "Untold Beauty",
           "desc": "When any squad member enters the field through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, the equipper gains <color=#2BAD00>6</color> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <color=#2BAD00>13%</color>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
-          "params": [6, 0.13]
+          "params": [6, 5, 25, 0.13, 2, 20]
         },
         {
           "name": "Untold Beauty",
           "desc": "When any squad member enters the field through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, the equipper gains <color=#2BAD00>6.5</color> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <color=#2BAD00>14.5%</color>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
-          "params": [6.5, 0.145]
+          "params": [6.5, 5, 25, 0.145, 2, 20]
         },
         {
           "name": "Untold Beauty",
           "desc": "When any squad member enters the field through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, the equipper gains <color=#2BAD00>7</color> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <color=#2BAD00>16%</color>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.",
-          "params": [7, 0.16]
+          "params": [7, 5, 25, 0.16, 2, 20]
         }
       ]
     },
@@ -39566,27 +39566,27 @@
         {
           "name": "String & Melody",
           "desc": "CRIT DMG increases by <color=#2BAD00>50%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>12.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-          "params": [0.5, 0.125]
+          "params": [0.5, 1, 0.125, 2, 30]
         },
         {
           "name": "String & Melody",
           "desc": "CRIT DMG increases by <color=#2BAD00>57.5%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>14.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-          "params": [0.575, 0.145]
+          "params": [0.575, 1, 0.145, 2, 30]
         },
         {
           "name": "String & Melody",
           "desc": "CRIT DMG increases by <color=#2BAD00>65%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>16.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-          "params": [0.65, 0.165]
+          "params": [0.65, 1, 0.165, 2, 30]
         },
         {
           "name": "String & Melody",
           "desc": "CRIT DMG increases by <color=#2BAD00>72.5%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>18.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-          "params": [0.725, 0.185]
+          "params": [0.725, 1, 0.185, 2, 30]
         },
         {
           "name": "String & Melody",
           "desc": "CRIT DMG increases by <color=#2BAD00>80%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>20%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.",
-          "params": [0.8, 0.2]
+          "params": [0.8, 1, 0.2, 2, 30]
         }
       ]
     }

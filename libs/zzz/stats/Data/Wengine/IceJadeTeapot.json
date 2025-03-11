@@ -13,27 +13,27 @@
     {
       "name": "Ringing Melody",
       "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>0.7%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>20%</color> for 10s. Passive effects of the same name do not stack.",
-      "params": [0.007, 0.2]
+      "params": [1, 0.007, 30, 8, 15, 0.2, 10]
     },
     {
       "name": "Ringing Melody",
       "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>0.88%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>23%</color> for 10s. Passive effects of the same name do not stack.",
-      "params": [0.0088, 0.23]
+      "params": [1, 0.0088, 30, 8, 15, 0.23, 10]
     },
     {
       "name": "Ringing Melody",
       "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>1.05%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>26%</color> for 10s. Passive effects of the same name do not stack.",
-      "params": [0.0105, 0.26]
+      "params": [1, 0.0105, 30, 8, 15, 0.26, 10]
     },
     {
       "name": "Ringing Melody",
       "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>1.22%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>29%</color> for 10s. Passive effects of the same name do not stack.",
-      "params": [0.0122, 0.29]
+      "params": [1, 0.0122, 30, 8, 15, 0.29, 10]
     },
     {
       "name": "Ringing Melody",
       "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>1.4%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>32%</color> for 10s. Passive effects of the same name do not stack.",
-      "params": [0.014, 0.32]
+      "params": [1, 0.014, 30, 8, 15, 0.32, 10]
     }
   ]
 }

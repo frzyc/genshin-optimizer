@@ -13,27 +13,27 @@
     {
       "name": "Waning Moon",
       "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>15%</color> for 6s.",
-      "params": [0.15]
+      "params": [0.15, 6]
     },
     {
       "name": "Waning Moon",
       "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>17.5%</color> for 6s.",
-      "params": [0.175]
+      "params": [0.175, 6]
     },
     {
       "name": "Waning Moon",
       "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>20%</color> for 6s.",
-      "params": [0.2]
+      "params": [0.2, 6]
     },
     {
       "name": "Waning Moon",
       "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>22.5%</color> for 6s.",
-      "params": [0.225]
+      "params": [0.225, 6]
     },
     {
       "name": "Waning Moon",
       "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>25%</color> for 6s.",
-      "params": [0.25]
+      "params": [0.25, 6]
     }
   ]
 }

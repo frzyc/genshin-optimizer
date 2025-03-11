@@ -13,27 +13,27 @@
     {
       "name": "Get Everyone Fired Up",
       "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6%</color>.",
-      "params": [0.06, 0.06]
+      "params": [0.06, 8, 0.06]
     },
     {
       "name": "Get Everyone Fired Up",
       "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6.9%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6.9%</color>.",
-      "params": [0.069, 0.069]
+      "params": [0.069, 8, 0.069]
     },
     {
       "name": "Get Everyone Fired Up",
       "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>7.8%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>7.8%</color>.",
-      "params": [0.078, 0.078]
+      "params": [0.078, 8, 0.078]
     },
     {
       "name": "Get Everyone Fired Up",
       "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>8.7%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>8.7%</color>.",
-      "params": [0.087, 0.087]
+      "params": [0.087, 8, 0.087]
     },
     {
       "name": "Get Everyone Fired Up",
       "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>9.6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>9.6%</color>.",
-      "params": [0.096, 0.096]
+      "params": [0.096, 8, 0.096]
     }
   ]
 }

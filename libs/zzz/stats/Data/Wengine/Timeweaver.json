@@ -13,27 +13,27 @@
     {
       "name": "Time-Devouring Stratagem",
       "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>30%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>75</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>25%</color>.",
-      "params": [0.3, 75, 0.25]
+      "params": [0.3, 75, 15, 375, 0.25]
     },
     {
       "name": "Time-Devouring Stratagem",
       "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>35%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>85</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>27.5%</color>.",
-      "params": [0.35, 85, 0.275]
+      "params": [0.35, 85, 15, 375, 0.275]
     },
     {
       "name": "Time-Devouring Stratagem",
       "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>40%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>95</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>30%</color>.",
-      "params": [0.4, 95, 0.3]
+      "params": [0.4, 95, 15, 375, 0.3]
     },
     {
       "name": "Time-Devouring Stratagem",
       "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>45%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>105</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>32.5%</color>.",
-      "params": [0.45, 105, 0.325]
+      "params": [0.45, 105, 15, 375, 0.325]
     },
     {
       "name": "Time-Devouring Stratagem",
       "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>50%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>115</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>35%</color>.",
-      "params": [0.5, 115, 0.35]
+      "params": [0.5, 115, 15, 375, 0.35]
     }
   ]
 }

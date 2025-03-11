@@ -13,27 +13,27 @@
     {
       "name": "Growth Through Adversity",
       "desc": "CRIT Rate increases by <color=#2BAD00>10%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>40%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>10%</color> for 15s.",
-      "params": [0.1, 0.4, 0.1]
+      "params": [0.1, 0.4, 0.1, 15]
     },
     {
       "name": "Growth Through Adversity",
       "desc": "CRIT Rate increases by <color=#2BAD00>11.5%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>46%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>11.5%</color> for 15s.",
-      "params": [0.115, 0.46, 0.115]
+      "params": [0.115, 0.46, 0.115, 15]
     },
     {
       "name": "Growth Through Adversity",
       "desc": "CRIT Rate increases by <color=#2BAD00>13%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>52%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>13%</color> for 15s.",
-      "params": [0.13, 0.52, 0.13]
+      "params": [0.13, 0.52, 0.13, 15]
     },
     {
       "name": "Growth Through Adversity",
       "desc": "CRIT Rate increases by <color=#2BAD00>14.5%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>58%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>14.5%</color> for 15s.",
-      "params": [0.145, 0.58, 0.145]
+      "params": [0.145, 0.58, 0.145, 15]
     },
     {
       "name": "Growth Through Adversity",
       "desc": "CRIT Rate increases by <color=#2BAD00>16%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>64%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>16%</color> for 15s.",
-      "params": [0.16, 0.64, 0.16]
+      "params": [0.16, 0.64, 0.16, 15]
     }
   ]
 }

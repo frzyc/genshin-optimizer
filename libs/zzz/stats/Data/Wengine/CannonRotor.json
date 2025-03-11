@@ -13,27 +13,27 @@
     {
       "name": "Oversized Barrel",
       "desc": "Increases ATK by <color=#2BAD00>7.5%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>8</color>s.",
-      "params": [0.075, 8]
+      "params": [0.075, 2, 8]
     },
     {
       "name": "Oversized Barrel",
       "desc": "Increases ATK by <color=#2BAD00>8.6%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7.5</color>s.",
-      "params": [0.086, 7.5]
+      "params": [0.086, 2, 7.5]
     },
     {
       "name": "Oversized Barrel",
       "desc": "Increases ATK by <color=#2BAD00>9.7%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>7</color>s.",
-      "params": [0.097, 7]
+      "params": [0.097, 2, 7]
     },
     {
       "name": "Oversized Barrel",
       "desc": "Increases ATK by <color=#2BAD00>10.8%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6.5</color>s.",
-      "params": [0.108, 6.5]
+      "params": [0.108, 2, 6.5]
     },
     {
       "name": "Oversized Barrel",
       "desc": "Increases ATK by <color=#2BAD00>12%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>6</color>s.",
-      "params": [0.12, 6]
+      "params": [0.12, 2, 6]
     }
   ]
 }

@@ -13,27 +13,27 @@
     {
       "name": "Roaring Waves",
       "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>10</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-      "params": [10]
+      "params": [10, 10, 20]
     },
     {
       "name": "Roaring Waves",
       "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>12</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-      "params": [12]
+      "params": [12, 10, 20]
     },
     {
       "name": "Roaring Waves",
       "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>13</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-      "params": [13]
+      "params": [13, 10, 20]
     },
     {
       "name": "Roaring Waves",
       "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>15</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-      "params": [15]
+      "params": [15, 10, 20]
     },
     {
       "name": "Roaring Waves",
       "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>16</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
-      "params": [16]
+      "params": [16, 10, 20]
     }
   ]
 }

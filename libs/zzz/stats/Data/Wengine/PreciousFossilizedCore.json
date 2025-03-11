@@ -13,27 +13,27 @@
     {
       "name": "Behemoth Hunter",
       "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>10%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>10%</color>.",
-      "params": [0.1, 0.1]
+      "params": [0.5, 0.1, 0.75, 0.1]
     },
     {
       "name": "Behemoth Hunter",
       "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>11.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>11.5%</color>.",
-      "params": [0.115, 0.115]
+      "params": [0.5, 0.115, 0.75, 0.115]
     },
     {
       "name": "Behemoth Hunter",
       "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>13%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>13%</color>.",
-      "params": [0.13, 0.13]
+      "params": [0.5, 0.13, 0.75, 0.13]
     },
     {
       "name": "Behemoth Hunter",
       "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>14.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>14.5%</color>.",
-      "params": [0.145, 0.145]
+      "params": [0.5, 0.145, 0.75, 0.145]
     },
     {
       "name": "Behemoth Hunter",
       "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>16%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>16%</color>.",
-      "params": [0.16, 0.16]
+      "params": [0.5, 0.16, 0.75, 0.16]
     }
   ]
 }

@@ -13,27 +13,27 @@
     {
       "name": "Binding Chains",
       "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>6%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-      "params": [0.06]
+      "params": [0.06, 8, 5]
     },
     {
       "name": "Binding Chains",
       "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>7.5%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-      "params": [0.075]
+      "params": [0.075, 8, 5]
     },
     {
       "name": "Binding Chains",
       "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>9%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-      "params": [0.09]
+      "params": [0.09, 8, 5]
     },
     {
       "name": "Binding Chains",
       "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>10.5%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-      "params": [0.105]
+      "params": [0.105, 8, 5]
     },
     {
       "name": "Binding Chains",
       "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>12%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.",
-      "params": [0.12]
+      "params": [0.12, 8, 5]
     }
   ]
 }
