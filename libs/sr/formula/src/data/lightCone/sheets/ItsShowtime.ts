@@ -1,7 +1,13 @@
 import { cmpGE, prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import { allNumConditionals, own, ownBuff, registerBuff, registerBuffFormula } from '../../util'
+import {
+  allNumConditionals,
+  own,
+  ownBuff,
+  registerBuff,
+  registerBuffFormula,
+} from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'ItsShowtime'
@@ -35,6 +41,6 @@ const sheet = registerLightCone(
       )
     ),
     cmpGE(lcCount, 1, 'unique', '')
-  ),
+  )
 )
 export default sheet
