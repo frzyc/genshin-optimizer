@@ -14,7 +14,7 @@ export default defineConfig({
   // },
 
   test: {
-    name: 'pando-engine',
+    name: 'game-opt-solver',
     globals: true,
     cache: { dir: '../../../node_modules/.vitest' },
     environment: 'jsdom',
