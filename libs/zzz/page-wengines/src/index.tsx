@@ -230,19 +230,21 @@ export default function PageWengine() {
       >
         {t('page_wengine:addWengine')}
       </Button>
-      <Grid container spacing={1} columns={columns}>
-        {wenginesIdsToShow.map((wengineId) => (
-          <Grid item key={wengineId} xs={1}>
-            <WengineCard
-              wengineId={wengineId}
-              onEdit={editWegine}
-              setLocation={(location) =>
-                database.wengines.set(wengineId, { location })
-              }
-            ></WengineCard>
-          </Grid>
-        ))}
-      </Grid>
+      <Box>
+        <Grid container spacing={1} columns={columns}>
+          {wenginesIdsToShow.map((wengineId) => (
+            <Grid item key={wengineId} xs={1}>
+              <WengineCard
+                wengineId={wengineId}
+                onEdit={editWegine}
+                setLocation={(location) =>
+                  database.wengines.set(wengineId, { location })
+                }
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
       {wengineIds.length !== wenginesIdsToShow.length && (
         <Skeleton
           ref={(node) => {
