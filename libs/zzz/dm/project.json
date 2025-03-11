@@ -6,7 +6,7 @@
   "targets": {
     "load-dm": {
       "options": {
-        "outputPath": "libs/zzz/dm/ZenlessData"
+        "outputPath": "ZenlessData"
       },
       "inputs": [
         {
