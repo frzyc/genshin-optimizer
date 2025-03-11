@@ -48,3 +48,14 @@ export function TagToTagField(tag: Tag): TagField {
     fieldRef: tag,
   }
 }
+
+export function getTagLabel(tag: Tag | undefined | null): string {
+  if (!tag) return ''
+  const { et, q, qt, name } = tag
+  if (et === 'own' && qt === 'formula' && q !== 'base') {
+    return name ?? q ?? ''
+  }
+  // TODO: Determine when we should return qt + q vs just q
+  // e.g. for qt: 'base', q: 'atk' we would want both
+  return q ?? ''
+}
