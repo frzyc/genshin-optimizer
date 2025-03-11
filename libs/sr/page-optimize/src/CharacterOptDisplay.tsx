@@ -108,7 +108,7 @@ function CharacterSection() {
     <Stack spacing={1}>
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Box sx={{ minWidth: '350px' }}>
-          <CharacterCard character={character!} disableStats />
+          <CharacterCard character={character!} hideStats />
           <CharacterEditor
             characterKey={editorKey}
             onClose={() => setCharacterKey(undefined)}

@@ -48,11 +48,11 @@ const stats = [
 export function CharacterCard({
   character,
   onClick,
-  disableStats = false,
+  hideStats = false,
 }: {
   character: ICachedCharacter
   onClick?: () => void
-  disableStats?: boolean
+  hideStats?: boolean
 }) {
   const calc =
     useSrCalcContext() ??
@@ -70,7 +70,7 @@ export function CharacterCard({
         )}
 
         <Divider />
-        {!disableStats && (
+        {!hideStats && (
           <CardContent>
             {stats.map((statKey) => (
               <StatLine
