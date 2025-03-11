@@ -6,6 +6,7 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import {
   CharacterCoverOptimize,
   CharacterEditor,
+  ZCard,
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -16,12 +17,19 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { createContext, useContext, useMemo, useState } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react'
 import { BonusStatsSection } from './BonusStats'
+import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import Optimize from './Optimize'
-import { OptimizeEquippedGrid } from './Optimize/EquippedGrid'
+import { EquippedGrid } from './Optimize/EquippedGrid'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
 
 const BOT_PX = 0
@@ -99,61 +107,47 @@ function CharacterSection() {
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
+  const onClick = useCallback(() => {
+    character?.key && setCharacterKey(character.key)
+  }, [character])
   return (
-    <Stack spacing={1}>
-      <Box
-        sx={{
-          display: 'flex',
-          gap: 1,
-          backgroundColor: '#1b263b',
-        }}
-      >
-        <Box
-          sx={{
-            margin: '24px 0 16px 24px',
-          }}
-        >
-          <Box
+    <>
+      <CharacterEditor
+        characterKey={editorKey}
+        onClose={() => setCharacterKey(undefined)}
+      />
+      <Stack spacing={1}>
+        <CardThemed>
+          <CardContent
             sx={{
-              border: '4px rgb(46, 54, 70) solid',
-              borderRadius: '20px',
-              overflow: 'hidden',
+              display: 'flex',
+              gap: 1,
+              backgroundColor: '#1b263b',
             }}
           >
-            <CharacterCoverOptimize character={character} />
-          </Box>
-          <CharacterEditor
-            characterKey={editorKey}
-            onClose={() => setCharacterKey(undefined)}
-          />
-          <Button
-            fullWidth
-            disabled={!characterKey}
-            onClick={() => characterKey && setCharacterKey(characterKey)}
-          >
-            Edit Character
-          </Button>
-        </Box>
-        <CurrentBuildDisplay />
-      </Box>
-      <BonusStatsSection />
-      <DebugListingsDisplay
-        formulasRead={own.listing.formulas}
-        buffsRead={own.listing.buffs}
-      />
-    </Stack>
+            <Stack spacing={1}>
+              <ZCard>
+                <CharacterCoverOptimize character={character} />
+              </ZCard>
+              <Button fullWidth disabled={!characterKey} onClick={onClick}>
+                {/* TODO: Translation */}
+                Edit Character
+              </Button>
+              <CharStatsDisplay />
+            </Stack>
+            <EquippedGrid onClick={onClick} />
+          </CardContent>
+        </CardThemed>
+        <BonusStatsSection />
+        <DebugListingsDisplay
+          formulasRead={own.listing.formulas}
+          buffsRead={own.listing.buffs}
+        />
+      </Stack>
+    </>
   )
 }
 
 function OptimizeSection() {
   return <Optimize />
-}
-function CurrentBuildDisplay() {
-  return (
-    <CardThemed sx={{ width: '100%' }}>
-      <CardContent>
-        <OptimizeEquippedGrid />
-      </CardContent>
-    </CardThemed>
-  )
 }
