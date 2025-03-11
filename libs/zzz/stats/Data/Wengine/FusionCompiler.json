@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Data Flood",
-      "desc": "Increases ATK by <color=#2BAD00>12%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>25</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+      "desc": "Increases ATK by <color=#2BAD00>12%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>25</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "params": [0.12, 25]
     },
     {
       "name": "Data Flood",
-      "desc": "Increases ATK by <color=#2BAD00>15%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>31</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+      "desc": "Increases ATK by <color=#2BAD00>15%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>31</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "params": [0.15, 31]
     },
     {
       "name": "Data Flood",
-      "desc": "Increases ATK by <color=#2BAD00>18%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>37</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+      "desc": "Increases ATK by <color=#2BAD00>18%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>37</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "params": [0.18, 37]
     },
     {
       "name": "Data Flood",
-      "desc": "Increases ATK by <color=#2BAD00>21%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>43</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+      "desc": "Increases ATK by <color=#2BAD00>21%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>43</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "params": [0.21, 43]
     },
     {
       "name": "Data Flood",
-      "desc": "Increases ATK by <color=#2BAD00>24%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>50</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
+      "desc": "Increases ATK by <color=#2BAD00>24%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>50</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.",
+      "params": [0.24, 50]
     }
   ]
 }

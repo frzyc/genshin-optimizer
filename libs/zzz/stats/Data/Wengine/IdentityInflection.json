@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Dazzle",
-      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>6%</color> for 12s."
+      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>6%</color> for 12s.",
+      "params": [0.06]
     },
     {
       "name": "Dazzle",
-      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>7%</color> for 12s."
+      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>7%</color> for 12s.",
+      "params": [0.07]
     },
     {
       "name": "Dazzle",
-      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>8%</color> for 12s."
+      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>8%</color> for 12s.",
+      "params": [0.08]
     },
     {
       "name": "Dazzle",
-      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>9%</color> for 12s."
+      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>9%</color> for 12s.",
+      "params": [0.09]
     },
     {
       "name": "Dazzle",
-      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>10%</color> for 12s."
+      "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>10%</color> for 12s.",
+      "params": [0.1]
     }
   ]
 }

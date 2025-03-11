@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Disordered Current",
-      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s. "
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s. ",
+      "params": [25]
     },
     {
       "name": "Disordered Current",
-      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>28</color> for 10s. This effect can trigger once every 20s. "
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>28</color> for 10s. This effect can trigger once every 20s. ",
+      "params": [28]
     },
     {
       "name": "Disordered Current",
-      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>32</color> for 10s. This effect can trigger once every 20s. "
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>32</color> for 10s. This effect can trigger once every 20s. ",
+      "params": [32]
     },
     {
       "name": "Disordered Current",
-      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>36</color> for 10s. This effect can trigger once every 20s. "
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>36</color> for 10s. This effect can trigger once every 20s. ",
+      "params": [36]
     },
     {
       "name": "Disordered Current",
-      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>40</color> for 10s. This effect can trigger once every 20s. "
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>40</color> for 10s. This effect can trigger once every 20s. ",
+      "params": [40]
     }
   ]
 }

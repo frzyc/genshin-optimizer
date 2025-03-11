@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Security Patrol",
-      "desc": "Increases CRIT Rate by <color=#2BAD00>15%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>35%</color>."
+      "desc": "Increases CRIT Rate by <color=#2BAD00>15%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>35%</color>.",
+      "params": [0.15, 0.35]
     },
     {
       "name": "Security Patrol",
-      "desc": "Increases CRIT Rate by <color=#2BAD00>18.8%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>43.5%</color>."
+      "desc": "Increases CRIT Rate by <color=#2BAD00>18.8%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>43.5%</color>.",
+      "params": [0.188, 0.435]
     },
     {
       "name": "Security Patrol",
-      "desc": "Increases CRIT Rate by <color=#2BAD00>22.6%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>52%</color>."
+      "desc": "Increases CRIT Rate by <color=#2BAD00>22.6%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>52%</color>.",
+      "params": [0.226, 0.52]
     },
     {
       "name": "Security Patrol",
-      "desc": "Increases CRIT Rate by <color=#2BAD00>26.4%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>60.5%</color>."
+      "desc": "Increases CRIT Rate by <color=#2BAD00>26.4%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>60.5%</color>.",
+      "params": [0.264, 0.605]
     },
     {
       "name": "Security Patrol",
-      "desc": "Increases CRIT Rate by <color=#2BAD00>30%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>70%</color>."
+      "desc": "Increases CRIT Rate by <color=#2BAD00>30%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>70%</color>.",
+      "params": [0.3, 0.7]
     }
   ]
 }

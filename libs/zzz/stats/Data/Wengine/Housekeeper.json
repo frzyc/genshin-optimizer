@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Safe Household Saw",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.45</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.45</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
+      "params": [0.45, 0.03]
     },
     {
       "name": "Safe Household Saw",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.52</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3.5%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.52</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3.5%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
+      "params": [0.52, 0.035]
     },
     {
       "name": "Safe Household Saw",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.58</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.58</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
+      "params": [0.58, 0.04]
     },
     {
       "name": "Safe Household Saw",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.65</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.65</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
+      "params": [0.65, 0.044]
     },
     {
       "name": "Safe Household Saw",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.72</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.8%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.72</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.8%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.",
+      "params": [0.72, 0.048]
     }
   ]
 }

@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Lord of Seas",
-      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>25%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>10%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>10%</color> for 15s. The duration of each effect is calculated separately."
+      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>25%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>10%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>10%</color> for 15s. The duration of each effect is calculated separately.",
+      "params": [0.25, 0.1, 0.1]
     },
     {
       "name": "Lord of Seas",
-      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>31.5%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>12.5%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>12.5%</color> for 15s. The duration of each effect is calculated separately."
+      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>31.5%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>12.5%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>12.5%</color> for 15s. The duration of each effect is calculated separately.",
+      "params": [0.315, 0.125, 0.125]
     },
     {
       "name": "Lord of Seas",
-      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>38%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>15%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>15%</color> for 15s. The duration of each effect is calculated separately."
+      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>38%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>15%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>15%</color> for 15s. The duration of each effect is calculated separately.",
+      "params": [0.38, 0.15, 0.15]
     },
     {
       "name": "Lord of Seas",
-      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>44.5%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>17.5%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>17.5%</color> for 15s. The duration of each effect is calculated separately."
+      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>44.5%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>17.5%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>17.5%</color> for 15s. The duration of each effect is calculated separately.",
+      "params": [0.445, 0.175, 0.175]
     },
     {
       "name": "Lord of Seas",
-      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>50%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>20%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>20%</color> for 15s. The duration of each effect is calculated separately."
+      "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>50%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>20%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>20%</color> for 15s. The duration of each effect is calculated separately.",
+      "params": [0.5, 0.2, 0.2]
     }
   ]
 }

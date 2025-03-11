@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Booming Sound",
-      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.08]
     },
     {
       "name": "Booming Sound",
-      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.09]
     },
     {
       "name": "Booming Sound",
-      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.1]
     },
     {
       "name": "Booming Sound",
-      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.11]
     },
     {
       "name": "Booming Sound",
-      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.12]
     }
   ]
 }

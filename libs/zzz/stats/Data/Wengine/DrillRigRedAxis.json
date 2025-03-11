@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>50%</color> for 10s. This effect can trigger once every 15s."
+      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>50%</color> for 10s. This effect can trigger once every 15s.",
+      "params": [0.5]
     },
     {
       "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>57.5%</color> for 10s. This effect can trigger once every 15s."
+      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>57.5%</color> for 10s. This effect can trigger once every 15s.",
+      "params": [0.575]
     },
     {
       "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>65%</color> for 10s. This effect can trigger once every 15s."
+      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>65%</color> for 10s. This effect can trigger once every 15s.",
+      "params": [0.65]
     },
     {
       "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>72.5%</color> for 10s. This effect can trigger once every 15s."
+      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>72.5%</color> for 10s. This effect can trigger once every 15s.",
+      "params": [0.725]
     },
     {
       "name": "Hell's Generator",
-      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>80%</color> for 10s. This effect can trigger once every 15s."
+      "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>80%</color> for 10s. This effect can trigger once every 15s.",
+      "params": [0.8]
     }
   ]
 }

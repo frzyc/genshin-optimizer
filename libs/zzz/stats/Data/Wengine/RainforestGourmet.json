@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Dinner's Ready!",
-      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.5%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
+      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.5%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+      "params": [0.025]
     },
     {
       "name": "Dinner's Ready!",
-      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.8%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
+      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.8%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+      "params": [0.028]
     },
     {
       "name": "Dinner's Ready!",
-      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.2%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
+      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.2%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+      "params": [0.032]
     },
     {
       "name": "Dinner's Ready!",
-      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.6%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
+      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>3.6%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+      "params": [0.036]
     },
     {
       "name": "Dinner's Ready!",
-      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>4%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
+      "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>4%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.",
+      "params": [0.04]
     }
   ]
 }

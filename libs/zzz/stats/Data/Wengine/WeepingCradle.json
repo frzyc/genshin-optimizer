@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Punishment",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>10%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>1.7%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>10.2%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>10%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>1.7%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>10.2%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
+      "params": [0.6, 0.1, 0.017, 0.102]
     },
     {
       "name": "Punishment",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>12.5%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>2%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>12%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>12.5%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>2%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>12%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
+      "params": [0.75, 0.125, 0.02, 0.12]
     },
     {
       "name": "Punishment",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>15%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>2.5%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>15%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>15%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>2.5%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>15%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
+      "params": [0.9, 0.15, 0.025, 0.15]
     },
     {
       "name": "Punishment",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>17.5%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>3%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>18%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>17.5%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>3%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>18%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
+      "params": [1.05, 0.175, 0.03, 0.18]
     },
     {
       "name": "Punishment",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>20%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>3.3%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>19.8%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>20%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>3.3%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>19.8%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.",
+      "params": [1.2, 0.2, 0.033, 0.198]
     }
   ]
 }
