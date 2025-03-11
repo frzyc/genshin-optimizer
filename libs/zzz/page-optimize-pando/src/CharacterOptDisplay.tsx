@@ -6,6 +6,7 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import {
   CharacterCoverOptimize,
   CharacterEditor,
+  ZCard,
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -24,6 +25,7 @@ import {
   useState,
 } from 'react'
 import { BonusStatsSection } from './BonusStats'
+import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import Optimize from './Optimize'
@@ -124,20 +126,14 @@ function CharacterSection() {
             }}
           >
             <Stack spacing={1}>
-              <Box
-                sx={{
-                  border: '4px rgb(46, 54, 70) solid',
-                  borderRadius: '20px',
-                  overflow: 'hidden',
-                }}
-              >
+              <ZCard>
                 <CharacterCoverOptimize character={character} />
-              </Box>
-
+              </ZCard>
               <Button fullWidth disabled={!characterKey} onClick={onClick}>
                 {/* TODO: Translation */}
                 Edit Character
               </Button>
+              <CharStatsDisplay />
             </Stack>
             <EquippedGrid onClick={onClick} />
           </CardContent>
