@@ -9,7 +9,7 @@ import type { AnyNode, ReRead } from '@genshin-optimizer/pando/engine'
 import { traverse } from '@genshin-optimizer/pando/engine'
 
 type Conditionals = Record<string, Record<string, IConditionalData>>
-type Formulas<T> = Record<string, Record<string, IFormulaData<T>>>
+type Formulas<T extends Tag> = Record<string, Record<string, IFormulaData<T>>>
 
 const condMeta = Symbol.for('condMeta')
 

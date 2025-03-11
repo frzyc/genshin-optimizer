@@ -1,10 +1,11 @@
-import { Read } from './read'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
+import type { Tag } from './read'
 
-export type IFormulaData<T> = {
+export type IFormulaData<T extends Tag> = {
   sheet: string // entity
   name: string // formula name
   tag: T // tag used to access value
-  accu: Read['accu'] // top-level accumulator
+  read: BaseRead // read used to access value
 }
 
 export type IBaseConditionalData =

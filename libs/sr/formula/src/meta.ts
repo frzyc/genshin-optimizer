@@ -4129,6 +4129,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Acheron',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4138,10 +4139,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Acheron',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Acheron',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4150,6 +4166,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Acheron',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4157,6 +4187,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Aglaea',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4166,10 +4197,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Aglaea',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Aglaea',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4178,6 +4224,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Aglaea',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4185,6 +4245,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Argenti',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4194,10 +4255,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Argenti',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Argenti',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4206,6 +4282,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Argenti',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4213,6 +4303,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Arlan',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4222,10 +4313,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Arlan',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Arlan',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4234,6 +4340,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Arlan',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4241,6 +4361,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Asta',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4250,10 +4371,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Asta',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Asta',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4262,6 +4398,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Asta',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4269,6 +4419,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Aventurine',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4278,10 +4429,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Aventurine',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Aventurine',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4290,6 +4456,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Aventurine',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4297,6 +4477,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Bailu',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4306,10 +4487,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Bailu',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Bailu',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4318,6 +4514,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Bailu',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4325,6 +4535,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'BlackSwan',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4334,10 +4545,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'BlackSwan',
+          elementalType: 'wind',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'BlackSwan',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4346,6 +4572,20 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'BlackSwan',
+          elementalType: 'wind',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4353,6 +4593,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Blade',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4362,10 +4603,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Blade',
+          elementalType: 'wind',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Blade',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4374,6 +4630,20 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Blade',
+          elementalType: 'wind',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4381,6 +4651,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Boothill',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4390,10 +4661,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Boothill',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Boothill',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4402,6 +4688,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Boothill',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4409,6 +4709,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Bronya',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4418,10 +4719,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Bronya',
+          elementalType: 'wind',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Bronya',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4430,6 +4746,20 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Bronya',
+          elementalType: 'wind',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4437,6 +4767,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Clara',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4446,10 +4777,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Clara',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Clara',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4458,6 +4804,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Clara',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4465,6 +4825,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'DanHeng',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4474,10 +4835,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'DanHeng',
+          elementalType: 'wind',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'DanHeng',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4486,6 +4862,20 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'DanHeng',
+          elementalType: 'wind',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4493,6 +4883,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'DanHengImbibitorLunae',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4502,10 +4893,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'DanHengImbibitorLunae',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'DanHengImbibitorLunae',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4514,6 +4920,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'DanHengImbibitorLunae',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4521,6 +4941,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'DrRatio',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4530,10 +4951,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'DrRatio',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'DrRatio',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4542,6 +4978,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'DrRatio',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4549,6 +4999,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Feixiao',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4558,10 +5009,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Feixiao',
+          elementalType: 'wind',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Feixiao',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4571,12 +5037,27 @@ export const formulas = {
         damageType1: 'break',
         name: 'breakDmg',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Feixiao',
+          elementalType: 'wind',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
+      },
     },
   },
   Firefly: {
     basic0Dmg_0: {
       sheet: 'Firefly',
       name: 'basic0Dmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4586,10 +5067,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basic0Dmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Firefly',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basic0Dmg_0',
+        },
+      },
     },
     basic1Dmg_0: {
       sheet: 'Firefly',
       name: 'basic1Dmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4599,10 +5095,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basic1Dmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Firefly',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basic1Dmg_0',
+        },
+      },
     },
     basic1Heal: {
       sheet: 'Firefly',
       name: 'basic1Heal',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4610,10 +5121,23 @@ export const formulas = {
         sheet: 'Firefly',
         name: 'basic1Heal',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'Firefly',
+          name: 'basic1Heal',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Firefly',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4623,10 +5147,25 @@ export const formulas = {
         damageType1: 'break',
         name: 'breakDmg',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Firefly',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
+      },
     },
     skill0Dmg_0: {
       sheet: 'Firefly',
       name: 'skill0Dmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4636,10 +5175,25 @@ export const formulas = {
         damageType1: 'skill',
         name: 'skill0Dmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Firefly',
+          elementalType: 'fire',
+          damageType1: 'skill',
+          name: 'skill0Dmg_0',
+        },
+      },
     },
     skill1DmgBlast_0: {
       sheet: 'Firefly',
       name: 'skill1DmgBlast_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4649,10 +5203,25 @@ export const formulas = {
         damageType1: 'skill',
         name: 'skill1DmgBlast_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Firefly',
+          elementalType: 'fire',
+          damageType1: 'skill',
+          name: 'skill1DmgBlast_0',
+        },
+      },
     },
     skill1Dmg_0: {
       sheet: 'Firefly',
       name: 'skill1Dmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4662,10 +5231,25 @@ export const formulas = {
         damageType1: 'skill',
         name: 'skill1Dmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Firefly',
+          elementalType: 'fire',
+          damageType1: 'skill',
+          name: 'skill1Dmg_0',
+        },
+      },
     },
     techDmg_0: {
       sheet: 'Firefly',
       name: 'techDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4675,12 +5259,27 @@ export const formulas = {
         damageType1: 'technique',
         name: 'techDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Firefly',
+          elementalType: 'fire',
+          damageType1: 'technique',
+          name: 'techDmg_0',
+        },
+      },
     },
   },
   FuXuan: {
     basicDmg_0: {
       sheet: 'FuXuan',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4690,10 +5289,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'FuXuan',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'FuXuan',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4702,6 +5316,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'FuXuan',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4709,6 +5337,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Fugue',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4718,10 +5347,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Fugue',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Fugue',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4730,6 +5374,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Fugue',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4737,6 +5395,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Gallagher',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4746,10 +5405,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Gallagher',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Gallagher',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4758,6 +5432,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Gallagher',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4765,6 +5453,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Gepard',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4774,10 +5463,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Gepard',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Gepard',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4786,6 +5490,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Gepard',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4793,6 +5511,7 @@ export const formulas = {
     set4_heal: {
       sheet: 'GuardOfWutheringSnow',
       name: 'set4_heal',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4800,12 +5519,25 @@ export const formulas = {
         sheet: 'GuardOfWutheringSnow',
         name: 'set4_heal',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'GuardOfWutheringSnow',
+          name: 'set4_heal',
+        },
+      },
     },
   },
   Guinaifen: {
     basicDmg_0: {
       sheet: 'Guinaifen',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4815,10 +5547,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Guinaifen',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Guinaifen',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4827,6 +5574,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Guinaifen',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4834,6 +5595,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Hanya',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4843,10 +5605,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Hanya',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Hanya',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4855,6 +5632,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Hanya',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4862,6 +5653,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Herta',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4871,10 +5663,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Herta',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Herta',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4883,6 +5690,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Herta',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4890,6 +5711,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Himeko',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4899,10 +5721,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Himeko',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Himeko',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4911,6 +5748,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Himeko',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4918,6 +5769,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Hook',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4927,10 +5779,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Hook',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Hook',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4939,6 +5806,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Hook',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4946,6 +5827,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Huohuo',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4955,10 +5837,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Huohuo',
+          elementalType: 'wind',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Huohuo',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4967,6 +5864,20 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Huohuo',
+          elementalType: 'wind',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -4974,6 +5885,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Jade',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4983,10 +5895,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Jade',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Jade',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -4995,6 +5922,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Jade',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5002,6 +5943,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Jiaoqiu',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5011,10 +5953,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Jiaoqiu',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Jiaoqiu',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5023,6 +5980,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Jiaoqiu',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5030,6 +6001,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'JingYuan',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5039,10 +6011,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'JingYuan',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'JingYuan',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5051,6 +6038,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'JingYuan',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5058,6 +6059,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Jingliu',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5067,10 +6069,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Jingliu',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Jingliu',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5079,6 +6096,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Jingliu',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5086,6 +6117,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Kafka',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5095,10 +6127,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Kafka',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Kafka',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5107,6 +6154,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Kafka',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5114,6 +6175,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Lingsha',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5123,10 +6185,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Lingsha',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Lingsha',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5135,6 +6212,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Lingsha',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5142,6 +6233,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Luka',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5151,10 +6243,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Luka',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Luka',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5163,6 +6270,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Luka',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5170,6 +6291,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Luocha',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5179,10 +6301,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Luocha',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Luocha',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5191,6 +6328,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Luocha',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5198,6 +6349,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Lynx',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5207,10 +6359,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Lynx',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Lynx',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5219,6 +6386,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Lynx',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5226,6 +6407,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'March7th',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5235,10 +6417,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'March7th',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5248,10 +6445,25 @@ export const formulas = {
         damageType1: 'break',
         name: 'breakDmg',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
+      },
     },
     e1Shield: {
       sheet: 'March7th',
       name: 'e1Shield',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5259,10 +6471,23 @@ export const formulas = {
         sheet: 'March7th',
         name: 'e1Shield',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'shield',
+          sheet: 'March7th',
+          name: 'e1Shield',
+        },
+      },
     },
     e6Heal: {
       sheet: 'March7th',
       name: 'e6Heal',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5270,10 +6495,23 @@ export const formulas = {
         sheet: 'March7th',
         name: 'e6Heal',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'heal',
+          sheet: 'March7th',
+          name: 'e6Heal',
+        },
+      },
     },
     skillShield: {
       sheet: 'March7th',
       name: 'skillShield',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5281,10 +6519,23 @@ export const formulas = {
         sheet: 'March7th',
         name: 'skillShield',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'shield',
+          sheet: 'March7th',
+          name: 'skillShield',
+        },
+      },
     },
     talentDmg_0: {
       sheet: 'March7th',
       name: 'talentDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5294,10 +6545,25 @@ export const formulas = {
         elementalType: 'ice',
         name: 'talentDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          damageType1: 'followUp',
+          elementalType: 'ice',
+          name: 'talentDmg_0',
+        },
+      },
     },
     techniqueFreeze_0: {
       sheet: 'March7th',
       name: 'techniqueFreeze_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5307,10 +6573,25 @@ export const formulas = {
         elementalType: 'ice',
         name: 'techniqueFreeze_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          damageType1: 'elemental',
+          elementalType: 'ice',
+          name: 'techniqueFreeze_0',
+        },
+      },
     },
     ultDmg_0: {
       sheet: 'March7th',
       name: 'ultDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5320,10 +6601,25 @@ export const formulas = {
         damageType1: 'ult',
         name: 'ultDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          damageType1: 'ult',
+          name: 'ultDmg_0',
+        },
+      },
     },
     ultDmg_1: {
       sheet: 'March7th',
       name: 'ultDmg_1',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5333,10 +6629,25 @@ export const formulas = {
         damageType1: 'ult',
         name: 'ultDmg_1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          damageType1: 'ult',
+          name: 'ultDmg_1',
+        },
+      },
     },
     ultDmg_2: {
       sheet: 'March7th',
       name: 'ultDmg_2',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5346,10 +6657,25 @@ export const formulas = {
         damageType1: 'ult',
         name: 'ultDmg_2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          damageType1: 'ult',
+          name: 'ultDmg_2',
+        },
+      },
     },
     ultDmg_3: {
       sheet: 'March7th',
       name: 'ultDmg_3',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5359,10 +6685,25 @@ export const formulas = {
         damageType1: 'ult',
         name: 'ultDmg_3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          damageType1: 'ult',
+          name: 'ultDmg_3',
+        },
+      },
     },
     ultFreeze_0: {
       sheet: 'March7th',
       name: 'ultFreeze_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5372,12 +6713,27 @@ export const formulas = {
         elementalType: 'ice',
         name: 'ultFreeze_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7th',
+          damageType1: 'elemental',
+          elementalType: 'ice',
+          name: 'ultFreeze_0',
+        },
+      },
     },
   },
   March7thTheHunt: {
     basicDmg_0: {
       sheet: 'March7thTheHunt',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5387,10 +6743,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'March7thTheHunt',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'March7thTheHunt',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5399,6 +6770,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'March7thTheHunt',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5406,6 +6791,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Misha',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5415,10 +6801,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Misha',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Misha',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5427,6 +6828,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Misha',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5434,6 +6849,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Moze',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5443,10 +6859,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Moze',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Moze',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5455,6 +6886,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Moze',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5462,6 +6907,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Mydei',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5471,10 +6917,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Mydei',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Mydei',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5483,6 +6944,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Mydei',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5490,6 +6965,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Natasha',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5499,10 +6975,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Natasha',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Natasha',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5511,6 +7002,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Natasha',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5518,6 +7023,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Pela',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5527,10 +7033,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Pela',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Pela',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5539,6 +7060,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Pela',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5546,6 +7081,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Qingque',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5555,10 +7091,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Qingque',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Qingque',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5567,6 +7118,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Qingque',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5574,6 +7139,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Rappa',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5583,10 +7149,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Rappa',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Rappa',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5595,6 +7176,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Rappa',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5602,6 +7197,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Robin',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5611,10 +7207,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Robin',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Robin',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5623,6 +7234,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Robin',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5630,6 +7255,7 @@ export const formulas = {
     ba3_dmg_: {
       sheet: 'RuanMei',
       name: 'ba3_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -5637,10 +7263,23 @@ export const formulas = {
         sheet: 'RuanMei',
         name: 'ba3_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'RuanMei',
+          name: 'ba3_dmg_',
+        },
+      },
     },
     basicDmg_0: {
       sheet: 'RuanMei',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5650,10 +7289,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'RuanMei',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'RuanMei',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5663,10 +7317,25 @@ export const formulas = {
         damageType1: 'break',
         name: 'breakDmg',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'RuanMei',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
+      },
     },
     talentBreakDmg: {
       sheet: 'RuanMei',
       name: 'talentBreakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5676,10 +7345,25 @@ export const formulas = {
         damageType1: 'break',
         name: 'talentBreakDmg',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'RuanMei',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'talentBreakDmg',
+        },
+      },
     },
     zoneBreakDmg: {
       sheet: 'RuanMei',
       name: 'zoneBreakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5689,12 +7373,27 @@ export const formulas = {
         damageType1: 'break',
         name: 'zoneBreakDmg',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'RuanMei',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'zoneBreakDmg',
+        },
+      },
     },
   },
   Sampo: {
     basicDmg_0: {
       sheet: 'Sampo',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5704,10 +7403,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Sampo',
+          elementalType: 'wind',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Sampo',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5716,6 +7430,20 @@ export const formulas = {
         elementalType: 'wind',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Sampo',
+          elementalType: 'wind',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5723,6 +7451,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Seele',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5732,10 +7461,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Seele',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Seele',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5745,10 +7489,25 @@ export const formulas = {
         damageType1: 'break',
         name: 'breakDmg',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Seele',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
+      },
     },
     e6Dmg_0: {
       sheet: 'Seele',
       name: 'e6Dmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5758,10 +7517,25 @@ export const formulas = {
         damageType1: 'elemental',
         name: 'e6Dmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Seele',
+          elementalType: 'quantum',
+          damageType1: 'elemental',
+          name: 'e6Dmg_0',
+        },
+      },
     },
     skillDmg_0: {
       sheet: 'Seele',
       name: 'skillDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5771,10 +7545,25 @@ export const formulas = {
         damageType1: 'skill',
         name: 'skillDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Seele',
+          elementalType: 'quantum',
+          damageType1: 'skill',
+          name: 'skillDmg_0',
+        },
+      },
     },
     ultDmg_0: {
       sheet: 'Seele',
       name: 'ultDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5784,12 +7573,27 @@ export const formulas = {
         damageType1: 'ult',
         name: 'ultDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Seele',
+          elementalType: 'quantum',
+          damageType1: 'ult',
+          name: 'ultDmg_0',
+        },
+      },
     },
   },
   Serval: {
     basicDmg_0: {
       sheet: 'Serval',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5799,10 +7603,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Serval',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Serval',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5811,6 +7630,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Serval',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5818,6 +7651,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'SilverWolf',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5827,10 +7661,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'SilverWolf',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'SilverWolf',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5839,6 +7688,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'SilverWolf',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5846,6 +7709,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Sparkle',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5855,10 +7719,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Sparkle',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Sparkle',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5867,6 +7746,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Sparkle',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5874,6 +7767,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Sunday',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5883,10 +7777,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Sunday',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Sunday',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5895,6 +7804,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Sunday',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5902,6 +7825,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Sushang',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5911,10 +7835,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Sushang',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Sushang',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5923,6 +7862,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Sushang',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5930,6 +7883,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'TheHerta',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5939,10 +7893,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TheHerta',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'TheHerta',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5951,6 +7920,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'TheHerta',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5958,6 +7941,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Tingyun',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5967,10 +7951,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Tingyun',
+          elementalType: 'lightning',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Tingyun',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5979,6 +7978,20 @@ export const formulas = {
         elementalType: 'lightning',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Tingyun',
+          elementalType: 'lightning',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -5986,6 +7999,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'TopazAndNumby',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -5995,10 +8009,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TopazAndNumby',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'TopazAndNumby',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6007,6 +8036,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'TopazAndNumby',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6014,6 +8057,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'TrailblazerFire',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6023,10 +8067,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TrailblazerFire',
+          elementalType: 'fire',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'TrailblazerFire',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6035,6 +8094,20 @@ export const formulas = {
         elementalType: 'fire',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'TrailblazerFire',
+          elementalType: 'fire',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6042,6 +8115,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'TrailblazerIce',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6051,10 +8125,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TrailblazerIce',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'TrailblazerIce',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6063,6 +8152,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'TrailblazerIce',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6070,6 +8173,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'TrailblazerImaginary',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6079,10 +8183,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TrailblazerImaginary',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'TrailblazerImaginary',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6091,6 +8210,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'TrailblazerImaginary',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6098,6 +8231,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'TrailblazerPhysical',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6107,10 +8241,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'TrailblazerPhysical',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'TrailblazerPhysical',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6119,6 +8268,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'TrailblazerPhysical',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6126,6 +8289,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Tribbie',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6135,10 +8299,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Tribbie',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Tribbie',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6147,6 +8326,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Tribbie',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6154,6 +8347,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Welt',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6163,10 +8357,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Welt',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Welt',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6175,6 +8384,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Welt',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6182,6 +8405,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Xueyi',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6191,10 +8415,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Xueyi',
+          elementalType: 'quantum',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Xueyi',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6203,6 +8442,20 @@ export const formulas = {
         elementalType: 'quantum',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Xueyi',
+          elementalType: 'quantum',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6210,6 +8463,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Yanqing',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6219,10 +8473,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Yanqing',
+          elementalType: 'ice',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Yanqing',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6231,6 +8500,20 @@ export const formulas = {
         elementalType: 'ice',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Yanqing',
+          elementalType: 'ice',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6238,6 +8521,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Yukong',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6247,10 +8531,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Yukong',
+          elementalType: 'imaginary',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Yukong',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6259,6 +8558,20 @@ export const formulas = {
         elementalType: 'imaginary',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Yukong',
+          elementalType: 'imaginary',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6266,6 +8579,7 @@ export const formulas = {
     basicDmg_0: {
       sheet: 'Yunli',
       name: 'basicDmg_0',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6275,10 +8589,25 @@ export const formulas = {
         damageType1: 'basic',
         name: 'basicDmg_0',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'dmg',
+          sheet: 'Yunli',
+          elementalType: 'physical',
+          damageType1: 'basic',
+          name: 'basicDmg_0',
+        },
+      },
     },
     breakDmg: {
       sheet: 'Yunli',
       name: 'breakDmg',
+      accu: 'unique',
       tag: {
         et: 'own',
         qt: 'formula',
@@ -6287,6 +8616,20 @@ export const formulas = {
         elementalType: 'physical',
         damageType1: 'break',
         name: 'breakDmg',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'own',
+          qt: 'formula',
+          q: 'breakDmg',
+          sheet: 'Yunli',
+          elementalType: 'physical',
+          damageType1: 'break',
+          name: 'breakDmg',
+        },
       },
     },
   },
@@ -6296,6 +8639,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'AGroundedAscent',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6303,10 +8647,23 @@ export const buffs = {
         sheet: 'AGroundedAscent',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AGroundedAscent',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'AGroundedAscent',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6314,16 +8671,41 @@ export const buffs = {
         sheet: 'AGroundedAscent',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'AGroundedAscent',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'AGroundedAscent',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AGroundedAscent',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AGroundedAscent',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6331,6 +8713,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ASecretVow',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6338,10 +8721,23 @@ export const buffs = {
         sheet: 'ASecretVow',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ASecretVow',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ASecretVow',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6349,16 +8745,41 @@ export const buffs = {
         sheet: 'ASecretVow',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ASecretVow',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ASecretVow',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ASecretVow',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ASecretVow',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6366,6 +8787,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Acheron',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6373,10 +8795,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Acheron',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Acheron',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6384,10 +8819,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Acheron',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Acheron',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6395,10 +8843,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Acheron',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Acheron',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6406,10 +8867,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Acheron',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Acheron',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6417,10 +8891,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Acheron',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Acheron',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6428,10 +8915,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Acheron',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Acheron',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6439,10 +8939,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Acheron',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Acheron',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6450,10 +8963,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Acheron',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Acheron',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6461,10 +8987,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Acheron',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Acheron',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6472,10 +9011,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Acheron',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Acheron',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6484,10 +9036,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Acheron',
+          elementalType: 'lightning',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Acheron',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6495,10 +9061,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Acheron',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Acheron',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6506,10 +9085,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Acheron',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Acheron',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6517,10 +9109,23 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Acheron',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Acheron',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6529,10 +9134,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Acheron',
+          elementalType: 'lightning',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Acheron',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6540,16 +9159,41 @@ export const buffs = {
         sheet: 'Acheron',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Acheron',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Acheron',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Acheron',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Acheron',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6557,6 +9201,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Adversarial',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6564,10 +9209,23 @@ export const buffs = {
         sheet: 'Adversarial',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Adversarial',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Adversarial',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6575,16 +9233,41 @@ export const buffs = {
         sheet: 'Adversarial',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Adversarial',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Adversarial',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Adversarial',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Adversarial',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6592,6 +9275,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'AfterTheCharmonyFall',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6599,10 +9283,23 @@ export const buffs = {
         sheet: 'AfterTheCharmonyFall',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AfterTheCharmonyFall',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'AfterTheCharmonyFall',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6610,16 +9307,41 @@ export const buffs = {
         sheet: 'AfterTheCharmonyFall',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'AfterTheCharmonyFall',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'AfterTheCharmonyFall',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AfterTheCharmonyFall',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AfterTheCharmonyFall',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6627,6 +9349,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Aglaea',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6634,10 +9357,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Aglaea',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Aglaea',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6645,10 +9381,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Aglaea',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Aglaea',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6656,10 +9405,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Aglaea',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Aglaea',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6667,10 +9429,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Aglaea',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_servantSkill: {
       sheet: 'Aglaea',
       name: 'eidolon5_servantSkill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6678,10 +9453,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'eidolon5_servantSkill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'servantSkill',
+          sheet: 'Aglaea',
+          name: 'eidolon5_servantSkill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Aglaea',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6689,10 +9477,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Aglaea',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Aglaea',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6700,10 +9501,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Aglaea',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Aglaea',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6711,10 +9525,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Aglaea',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Aglaea',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6723,10 +9550,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aglaea',
+          elementalType: 'lightning',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Aglaea',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6735,10 +9576,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aglaea',
+          elementalType: 'lightning',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Aglaea',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6746,10 +9601,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Aglaea',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Aglaea',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6758,10 +9626,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aglaea',
+          elementalType: 'lightning',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Aglaea',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6769,10 +9651,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Aglaea',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Aglaea',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6781,10 +9676,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aglaea',
+          elementalType: 'lightning',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Aglaea',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6792,10 +9701,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Aglaea',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Aglaea',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6804,10 +9726,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aglaea',
+          elementalType: 'lightning',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Aglaea',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6815,10 +9751,23 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Aglaea',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Aglaea',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6826,16 +9775,41 @@ export const buffs = {
         sheet: 'Aglaea',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Aglaea',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Aglaea',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Aglaea',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Aglaea',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6843,6 +9817,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'AlongThePassingShore',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6850,10 +9825,23 @@ export const buffs = {
         sheet: 'AlongThePassingShore',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AlongThePassingShore',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'AlongThePassingShore',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6861,16 +9849,41 @@ export const buffs = {
         sheet: 'AlongThePassingShore',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'AlongThePassingShore',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'AlongThePassingShore',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AlongThePassingShore',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AlongThePassingShore',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6878,6 +9891,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Amber',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6885,10 +9899,23 @@ export const buffs = {
         sheet: 'Amber',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Amber',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Amber',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6896,16 +9923,41 @@ export const buffs = {
         sheet: 'Amber',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Amber',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Amber',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Amber',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Amber',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6913,6 +9965,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'AnInstantBeforeAGaze',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6920,10 +9973,23 @@ export const buffs = {
         sheet: 'AnInstantBeforeAGaze',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AnInstantBeforeAGaze',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'AnInstantBeforeAGaze',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -6931,16 +9997,41 @@ export const buffs = {
         sheet: 'AnInstantBeforeAGaze',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'AnInstantBeforeAGaze',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'AnInstantBeforeAGaze',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AnInstantBeforeAGaze',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'AnInstantBeforeAGaze',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -6948,6 +10039,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Argenti',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -6955,10 +10047,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Argenti',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Argenti',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6966,10 +10071,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Argenti',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Argenti',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6977,10 +10095,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Argenti',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Argenti',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6988,10 +10119,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Argenti',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Argenti',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -6999,10 +10143,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Argenti',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Argenti',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -7010,10 +10167,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Argenti',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Argenti',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7021,10 +10191,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Argenti',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Argenti',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7032,10 +10215,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Argenti',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Argenti',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7044,10 +10240,24 @@ export const buffs = {
         elementalType: 'physical',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Argenti',
+          elementalType: 'physical',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Argenti',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7055,10 +10265,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Argenti',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Argenti',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7066,10 +10289,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Argenti',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Argenti',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7077,10 +10313,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Argenti',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Argenti',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7089,10 +10338,24 @@ export const buffs = {
         elementalType: 'physical',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Argenti',
+          elementalType: 'physical',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Argenti',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7100,10 +10363,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Argenti',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Argenti',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7111,10 +10387,23 @@ export const buffs = {
         sheet: 'Argenti',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Argenti',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Argenti',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7123,16 +10412,42 @@ export const buffs = {
         elementalType: 'physical',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Argenti',
+          elementalType: 'physical',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Argenti',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Argenti',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Argenti',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -7140,6 +10455,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Arlan',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7147,10 +10463,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Arlan',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Arlan',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7158,10 +10487,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Arlan',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Arlan',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7169,10 +10511,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Arlan',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Arlan',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7180,10 +10535,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Arlan',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Arlan',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7191,10 +10559,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Arlan',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Arlan',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -7202,10 +10583,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Arlan',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Arlan',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7213,10 +10607,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Arlan',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Arlan',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7224,10 +10631,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Arlan',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Arlan',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7235,10 +10655,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Arlan',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Arlan',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7246,10 +10679,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Arlan',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Arlan',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7257,10 +10703,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Arlan',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Arlan',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7268,10 +10727,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Arlan',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Arlan',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7279,10 +10751,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Arlan',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Arlan',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7290,10 +10775,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Arlan',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Arlan',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7301,10 +10799,23 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Arlan',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Arlan',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7312,16 +10823,41 @@ export const buffs = {
         sheet: 'Arlan',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Arlan',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Arlan',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Arlan',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Arlan',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -7329,6 +10865,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Arrows',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7336,10 +10873,23 @@ export const buffs = {
         sheet: 'Arrows',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Arrows',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Arrows',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -7347,16 +10897,41 @@ export const buffs = {
         sheet: 'Arrows',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Arrows',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Arrows',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Arrows',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Arrows',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -7364,6 +10939,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Asta',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7371,10 +10947,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Asta',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Asta',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7382,10 +10971,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Asta',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Asta',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7393,10 +10995,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Asta',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Asta',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7404,10 +11019,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Asta',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Asta',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7415,10 +11043,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Asta',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Asta',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -7426,10 +11067,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Asta',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Asta',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7438,10 +11092,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Asta',
+          elementalType: 'fire',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Asta',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7450,10 +11118,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Asta',
+          elementalType: 'fire',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Asta',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7461,10 +11143,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Asta',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Asta',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7473,10 +11168,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Asta',
+          elementalType: 'fire',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Asta',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7484,10 +11193,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Asta',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Asta',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7496,10 +11218,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Asta',
+          elementalType: 'fire',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Asta',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7507,10 +11243,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Asta',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Asta',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7519,10 +11268,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Asta',
+          elementalType: 'fire',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Asta',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7530,10 +11293,23 @@ export const buffs = {
         sheet: 'Asta',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Asta',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Asta',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7541,16 +11317,41 @@ export const buffs = {
         sheet: 'Asta',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Asta',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Asta',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Asta',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Asta',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -7558,6 +11359,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Aventurine',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7565,10 +11367,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Aventurine',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Aventurine',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7576,10 +11391,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Aventurine',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Aventurine',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7587,10 +11415,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Aventurine',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Aventurine',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7598,10 +11439,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Aventurine',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Aventurine',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7609,10 +11463,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Aventurine',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Aventurine',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -7620,10 +11487,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Aventurine',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Aventurine',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7631,10 +11511,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Aventurine',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Aventurine',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7642,10 +11535,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Aventurine',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Aventurine',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7654,10 +11560,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aventurine',
+          elementalType: 'imaginary',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Aventurine',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7665,10 +11585,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Aventurine',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Aventurine',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7676,10 +11609,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Aventurine',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Aventurine',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7687,10 +11633,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Aventurine',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Aventurine',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7699,10 +11658,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aventurine',
+          elementalType: 'imaginary',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Aventurine',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7710,10 +11683,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Aventurine',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Aventurine',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7721,10 +11707,23 @@ export const buffs = {
         sheet: 'Aventurine',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Aventurine',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Aventurine',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7733,16 +11732,42 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Aventurine',
+          elementalType: 'imaginary',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Aventurine',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Aventurine',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Aventurine',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -7750,6 +11775,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Bailu',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7757,10 +11783,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Bailu',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Bailu',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7768,10 +11807,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Bailu',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Bailu',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7779,10 +11831,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Bailu',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Bailu',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7790,10 +11855,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Bailu',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Bailu',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -7801,10 +11879,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Bailu',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Bailu',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -7812,10 +11903,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Bailu',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Bailu',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7823,10 +11927,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Bailu',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Bailu',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7834,10 +11951,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Bailu',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Bailu',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7845,10 +11975,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Bailu',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Bailu',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7856,10 +11999,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Bailu',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Bailu',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7867,10 +12023,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Bailu',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Bailu',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7878,10 +12047,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Bailu',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Bailu',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7889,10 +12071,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Bailu',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Bailu',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7900,10 +12095,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Bailu',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Bailu',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7911,10 +12119,23 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Bailu',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Bailu',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7922,16 +12143,41 @@ export const buffs = {
         sheet: 'Bailu',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Bailu',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Bailu',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Bailu',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Bailu',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -7939,6 +12185,7 @@ export const buffs = {
     set4_atk_: {
       sheet: 'BandOfSizzlingThunder',
       name: 'set4_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7946,12 +12193,25 @@ export const buffs = {
         sheet: 'BandOfSizzlingThunder',
         name: 'set4_atk_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'BandOfSizzlingThunder',
+          name: 'set4_atk_',
+        },
+      },
     },
   },
   BaptismOfPureThought: {
     cond_dmg_: {
       sheet: 'BaptismOfPureThought',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7959,10 +12219,23 @@ export const buffs = {
         sheet: 'BaptismOfPureThought',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BaptismOfPureThought',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'BaptismOfPureThought',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -7970,16 +12243,41 @@ export const buffs = {
         sheet: 'BaptismOfPureThought',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'BaptismOfPureThought',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'BaptismOfPureThought',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BaptismOfPureThought',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BaptismOfPureThought',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -7987,6 +12285,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'BeforeDawn',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -7994,10 +12293,23 @@ export const buffs = {
         sheet: 'BeforeDawn',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BeforeDawn',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'BeforeDawn',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8005,16 +12317,41 @@ export const buffs = {
         sheet: 'BeforeDawn',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'BeforeDawn',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'BeforeDawn',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BeforeDawn',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BeforeDawn',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8022,6 +12359,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'BeforeTheTutorialMissionStarts',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8029,10 +12367,23 @@ export const buffs = {
         sheet: 'BeforeTheTutorialMissionStarts',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BeforeTheTutorialMissionStarts',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'BeforeTheTutorialMissionStarts',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8040,16 +12391,41 @@ export const buffs = {
         sheet: 'BeforeTheTutorialMissionStarts',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'BeforeTheTutorialMissionStarts',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'BeforeTheTutorialMissionStarts',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BeforeTheTutorialMissionStarts',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BeforeTheTutorialMissionStarts',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8057,6 +12433,7 @@ export const buffs = {
     set2_def_: {
       sheet: 'BelobogOfTheArchitects',
       name: 'set2_def_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8064,12 +12441,25 @@ export const buffs = {
         sheet: 'BelobogOfTheArchitects',
         name: 'set2_def_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'BelobogOfTheArchitects',
+          name: 'set2_def_',
+        },
+      },
     },
   },
   BlackSwan: {
     e6_dmg_: {
       sheet: 'BlackSwan',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8077,10 +12467,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BlackSwan',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'BlackSwan',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8088,10 +12491,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'BlackSwan',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'BlackSwan',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8099,10 +12515,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'BlackSwan',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'BlackSwan',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8110,10 +12539,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'BlackSwan',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'BlackSwan',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8121,10 +12563,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'BlackSwan',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'BlackSwan',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8132,10 +12587,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'BlackSwan',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'BlackSwan',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8143,10 +12611,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'BlackSwan',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'BlackSwan',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8154,10 +12635,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'BlackSwan',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'BlackSwan',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8166,10 +12660,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'BlackSwan',
+          elementalType: 'wind',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'BlackSwan',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8177,10 +12685,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'BlackSwan',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'BlackSwan',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8188,10 +12709,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'BlackSwan',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'BlackSwan',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8199,10 +12733,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'BlackSwan',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'BlackSwan',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8211,10 +12758,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'BlackSwan',
+          elementalType: 'wind',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'BlackSwan',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8222,10 +12783,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'BlackSwan',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'BlackSwan',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8233,10 +12807,23 @@ export const buffs = {
         sheet: 'BlackSwan',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'BlackSwan',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'BlackSwan',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8245,16 +12832,42 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'BlackSwan',
+          elementalType: 'wind',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'BlackSwan',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BlackSwan',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BlackSwan',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8262,6 +12875,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Blade',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8269,10 +12883,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Blade',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Blade',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8280,10 +12907,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Blade',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Blade',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8291,10 +12931,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Blade',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Blade',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8302,10 +12955,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Blade',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Blade',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8313,10 +12979,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Blade',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Blade',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8324,10 +13003,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Blade',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Blade',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8335,10 +13027,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Blade',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Blade',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8346,10 +13051,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Blade',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Blade',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8357,10 +13075,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Blade',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Blade',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8368,10 +13099,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Blade',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Blade',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8379,10 +13123,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Blade',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Blade',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8390,10 +13147,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Blade',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Blade',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8401,10 +13171,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Blade',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Blade',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8412,10 +13195,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Blade',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Blade',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8423,10 +13219,23 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Blade',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Blade',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8434,16 +13243,41 @@ export const buffs = {
         sheet: 'Blade',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Blade',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Blade',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Blade',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Blade',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8451,6 +13285,7 @@ export const buffs = {
     enemy_defRed_: {
       sheet: 'BoneCollectionsSereneDemesne',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8458,10 +13293,23 @@ export const buffs = {
         sheet: 'BoneCollectionsSereneDemesne',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'BoneCollectionsSereneDemesne',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     set2_dmg_: {
       sheet: 'BoneCollectionsSereneDemesne',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8469,10 +13317,23 @@ export const buffs = {
         sheet: 'BoneCollectionsSereneDemesne',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BoneCollectionsSereneDemesne',
+          name: 'set2_dmg_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'BoneCollectionsSereneDemesne',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8480,12 +13341,25 @@ export const buffs = {
         sheet: 'BoneCollectionsSereneDemesne',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BoneCollectionsSereneDemesne',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   Boothill: {
     e6_dmg_: {
       sheet: 'Boothill',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8493,10 +13367,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Boothill',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Boothill',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8504,10 +13391,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Boothill',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Boothill',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8515,10 +13415,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Boothill',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Boothill',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8526,10 +13439,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Boothill',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Boothill',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8537,10 +13463,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Boothill',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Boothill',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8548,10 +13487,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Boothill',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Boothill',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8559,10 +13511,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Boothill',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Boothill',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8570,10 +13535,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Boothill',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Boothill',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8581,10 +13559,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Boothill',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Boothill',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8592,10 +13583,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Boothill',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Boothill',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8603,10 +13607,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Boothill',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Boothill',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8614,10 +13631,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Boothill',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Boothill',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8625,10 +13655,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Boothill',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Boothill',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8636,10 +13679,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Boothill',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Boothill',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8647,10 +13703,23 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Boothill',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Boothill',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8658,16 +13727,41 @@ export const buffs = {
         sheet: 'Boothill',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Boothill',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Boothill',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Boothill',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Boothill',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8675,6 +13769,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'BoundlessChoreo',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8682,10 +13777,23 @@ export const buffs = {
         sheet: 'BoundlessChoreo',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BoundlessChoreo',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'BoundlessChoreo',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8693,16 +13801,41 @@ export const buffs = {
         sheet: 'BoundlessChoreo',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'BoundlessChoreo',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'BoundlessChoreo',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BoundlessChoreo',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BoundlessChoreo',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8710,6 +13843,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'BrighterThanTheSun',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8717,10 +13851,23 @@ export const buffs = {
         sheet: 'BrighterThanTheSun',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BrighterThanTheSun',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'BrighterThanTheSun',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8728,16 +13875,41 @@ export const buffs = {
         sheet: 'BrighterThanTheSun',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'BrighterThanTheSun',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'BrighterThanTheSun',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BrighterThanTheSun',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'BrighterThanTheSun',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8745,6 +13917,7 @@ export const buffs = {
     set2_crit_dmg_: {
       sheet: 'BrokenKeel',
       name: 'set2_crit_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8752,12 +13925,25 @@ export const buffs = {
         sheet: 'BrokenKeel',
         name: 'set2_crit_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'BrokenKeel',
+          name: 'set2_crit_dmg_',
+        },
+      },
     },
   },
   Bronya: {
     e6_dmg_: {
       sheet: 'Bronya',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8765,10 +13951,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Bronya',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Bronya',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8776,10 +13975,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Bronya',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Bronya',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8787,10 +13999,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Bronya',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Bronya',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8798,10 +14023,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Bronya',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Bronya',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -8809,10 +14047,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Bronya',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Bronya',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8820,10 +14071,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Bronya',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Bronya',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8832,10 +14096,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Bronya',
+          elementalType: 'wind',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Bronya',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8844,10 +14122,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Bronya',
+          elementalType: 'wind',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Bronya',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8855,10 +14147,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Bronya',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Bronya',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8867,10 +14172,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Bronya',
+          elementalType: 'wind',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Bronya',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8878,10 +14197,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Bronya',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Bronya',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8890,10 +14222,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Bronya',
+          elementalType: 'wind',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Bronya',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8901,10 +14247,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Bronya',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Bronya',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8913,10 +14272,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Bronya',
+          elementalType: 'wind',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Bronya',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8924,10 +14297,23 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Bronya',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Bronya',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8935,16 +14321,41 @@ export const buffs = {
         sheet: 'Bronya',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Bronya',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Bronya',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Bronya',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Bronya',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8952,6 +14363,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ButTheBattleIsntOver',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8959,10 +14371,23 @@ export const buffs = {
         sheet: 'ButTheBattleIsntOver',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ButTheBattleIsntOver',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ButTheBattleIsntOver',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -8970,16 +14395,41 @@ export const buffs = {
         sheet: 'ButTheBattleIsntOver',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ButTheBattleIsntOver',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ButTheBattleIsntOver',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ButTheBattleIsntOver',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ButTheBattleIsntOver',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -8987,6 +14437,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'CarveTheMoonWeaveTheClouds',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -8994,10 +14445,23 @@ export const buffs = {
         sheet: 'CarveTheMoonWeaveTheClouds',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'CarveTheMoonWeaveTheClouds',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'CarveTheMoonWeaveTheClouds',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9005,16 +14469,41 @@ export const buffs = {
         sheet: 'CarveTheMoonWeaveTheClouds',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'CarveTheMoonWeaveTheClouds',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'CarveTheMoonWeaveTheClouds',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'CarveTheMoonWeaveTheClouds',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'CarveTheMoonWeaveTheClouds',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9022,6 +14511,7 @@ export const buffs = {
     set2_crit_rate_: {
       sheet: 'CelestialDifferentiator',
       name: 'set2_crit_rate_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9029,12 +14519,25 @@ export const buffs = {
         sheet: 'CelestialDifferentiator',
         name: 'set2_crit_rate_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'CelestialDifferentiator',
+          name: 'set2_crit_rate_',
+        },
+      },
     },
   },
   ChampionOfStreetwiseBoxing: {
     set4_atk_: {
       sheet: 'ChampionOfStreetwiseBoxing',
       name: 'set4_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9042,12 +14545,25 @@ export const buffs = {
         sheet: 'ChampionOfStreetwiseBoxing',
         name: 'set4_atk_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'ChampionOfStreetwiseBoxing',
+          name: 'set4_atk_',
+        },
+      },
     },
   },
   Chorus: {
     cond_dmg_: {
       sheet: 'Chorus',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9055,10 +14571,23 @@ export const buffs = {
         sheet: 'Chorus',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Chorus',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Chorus',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9066,16 +14595,41 @@ export const buffs = {
         sheet: 'Chorus',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Chorus',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Chorus',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Chorus',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Chorus',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9083,6 +14637,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Clara',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9090,10 +14645,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Clara',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Clara',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9101,10 +14669,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Clara',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Clara',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9112,10 +14693,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Clara',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Clara',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9123,10 +14717,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Clara',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Clara',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9134,10 +14741,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Clara',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Clara',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9145,10 +14765,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Clara',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Clara',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9156,10 +14789,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Clara',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Clara',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9167,10 +14813,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Clara',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Clara',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9179,10 +14838,24 @@ export const buffs = {
         elementalType: 'physical',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Clara',
+          elementalType: 'physical',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Clara',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9190,10 +14863,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Clara',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Clara',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9201,10 +14887,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Clara',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Clara',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9212,10 +14911,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Clara',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Clara',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9224,10 +14936,24 @@ export const buffs = {
         elementalType: 'physical',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Clara',
+          elementalType: 'physical',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Clara',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9235,10 +14961,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Clara',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Clara',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9246,10 +14985,23 @@ export const buffs = {
         sheet: 'Clara',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Clara',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Clara',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9258,16 +15010,42 @@ export const buffs = {
         elementalType: 'physical',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Clara',
+          elementalType: 'physical',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Clara',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Clara',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Clara',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9275,6 +15053,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'CollapsingSky',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9282,10 +15061,23 @@ export const buffs = {
         sheet: 'CollapsingSky',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'CollapsingSky',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'CollapsingSky',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9293,16 +15085,41 @@ export const buffs = {
         sheet: 'CollapsingSky',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'CollapsingSky',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'CollapsingSky',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'CollapsingSky',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'CollapsingSky',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9310,6 +15127,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ConcertForTwo',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9317,10 +15135,23 @@ export const buffs = {
         sheet: 'ConcertForTwo',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ConcertForTwo',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ConcertForTwo',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9328,16 +15159,41 @@ export const buffs = {
         sheet: 'ConcertForTwo',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ConcertForTwo',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ConcertForTwo',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ConcertForTwo',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ConcertForTwo',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9345,6 +15201,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Cornucopia',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9352,10 +15209,23 @@ export const buffs = {
         sheet: 'Cornucopia',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Cornucopia',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Cornucopia',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9363,16 +15233,41 @@ export const buffs = {
         sheet: 'Cornucopia',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Cornucopia',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Cornucopia',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Cornucopia',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Cornucopia',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9380,6 +15275,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'CruisingInTheStellarSea',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9387,10 +15283,23 @@ export const buffs = {
         sheet: 'CruisingInTheStellarSea',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'CruisingInTheStellarSea',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'CruisingInTheStellarSea',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9398,16 +15307,41 @@ export const buffs = {
         sheet: 'CruisingInTheStellarSea',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'CruisingInTheStellarSea',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'CruisingInTheStellarSea',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'CruisingInTheStellarSea',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'CruisingInTheStellarSea',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9415,6 +15349,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'DanHeng',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9422,10 +15357,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanHeng',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'DanHeng',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9433,10 +15381,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'DanHeng',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'DanHeng',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9444,10 +15405,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'DanHeng',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'DanHeng',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9455,10 +15429,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'DanHeng',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'DanHeng',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9466,10 +15453,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'DanHeng',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DanHeng',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9477,10 +15477,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DanHeng',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'DanHeng',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9489,10 +15502,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHeng',
+          elementalType: 'wind',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'DanHeng',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9501,10 +15528,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHeng',
+          elementalType: 'wind',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'DanHeng',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9512,10 +15553,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DanHeng',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'DanHeng',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9524,10 +15578,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHeng',
+          elementalType: 'wind',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'DanHeng',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9535,10 +15603,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'DanHeng',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'DanHeng',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9547,10 +15628,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHeng',
+          elementalType: 'wind',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'DanHeng',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9558,10 +15653,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DanHeng',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'DanHeng',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9570,10 +15678,24 @@ export const buffs = {
         elementalType: 'wind',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHeng',
+          elementalType: 'wind',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'DanHeng',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9581,10 +15703,23 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'DanHeng',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'DanHeng',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9592,16 +15727,41 @@ export const buffs = {
         sheet: 'DanHeng',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DanHeng',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DanHeng',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanHeng',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanHeng',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9609,6 +15769,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'DanHengImbibitorLunae',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9616,10 +15777,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'DanHengImbibitorLunae',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9627,10 +15801,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'DanHengImbibitorLunae',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9638,10 +15825,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'DanHengImbibitorLunae',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9649,10 +15849,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'DanHengImbibitorLunae',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -9660,10 +15873,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DanHengImbibitorLunae',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9671,10 +15897,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9683,10 +15922,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHengImbibitorLunae',
+          elementalType: 'imaginary',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9695,10 +15948,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHengImbibitorLunae',
+          elementalType: 'imaginary',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9706,10 +15973,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9718,10 +15998,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHengImbibitorLunae',
+          elementalType: 'imaginary',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9729,10 +16023,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9741,10 +16048,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHengImbibitorLunae',
+          elementalType: 'imaginary',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9752,10 +16073,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9764,10 +16098,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DanHengImbibitorLunae',
+          elementalType: 'imaginary',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9775,10 +16123,23 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'DanHengImbibitorLunae',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9786,16 +16147,41 @@ export const buffs = {
         sheet: 'DanHengImbibitorLunae',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DanHengImbibitorLunae',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanHengImbibitorLunae',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanHengImbibitorLunae',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9803,6 +16189,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DanceAtSunset',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9810,10 +16197,23 @@ export const buffs = {
         sheet: 'DanceAtSunset',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanceAtSunset',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DanceAtSunset',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9821,16 +16221,41 @@ export const buffs = {
         sheet: 'DanceAtSunset',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DanceAtSunset',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DanceAtSunset',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanceAtSunset',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanceAtSunset',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9838,6 +16263,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DanceDanceDance',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9845,10 +16271,23 @@ export const buffs = {
         sheet: 'DanceDanceDance',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanceDanceDance',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DanceDanceDance',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9856,16 +16295,41 @@ export const buffs = {
         sheet: 'DanceDanceDance',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DanceDanceDance',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DanceDanceDance',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanceDanceDance',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DanceDanceDance',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9873,6 +16337,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DartingArrow',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9880,10 +16345,23 @@ export const buffs = {
         sheet: 'DartingArrow',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DartingArrow',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DartingArrow',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9891,16 +16369,41 @@ export const buffs = {
         sheet: 'DartingArrow',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DartingArrow',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DartingArrow',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DartingArrow',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DartingArrow',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9908,6 +16411,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DataBank',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9915,10 +16419,23 @@ export const buffs = {
         sheet: 'DataBank',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DataBank',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DataBank',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9926,16 +16443,41 @@ export const buffs = {
         sheet: 'DataBank',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DataBank',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DataBank',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DataBank',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DataBank',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9943,6 +16485,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DayOneOfMyNewLife',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9950,10 +16493,23 @@ export const buffs = {
         sheet: 'DayOneOfMyNewLife',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DayOneOfMyNewLife',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DayOneOfMyNewLife',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9961,16 +16517,41 @@ export const buffs = {
         sheet: 'DayOneOfMyNewLife',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DayOneOfMyNewLife',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DayOneOfMyNewLife',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DayOneOfMyNewLife',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DayOneOfMyNewLife',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -9978,6 +16559,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Defense',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -9985,10 +16567,23 @@ export const buffs = {
         sheet: 'Defense',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Defense',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Defense',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -9996,16 +16591,41 @@ export const buffs = {
         sheet: 'Defense',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Defense',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Defense',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Defense',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Defense',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10013,6 +16633,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DestinysThreadsForewoven',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10020,10 +16641,23 @@ export const buffs = {
         sheet: 'DestinysThreadsForewoven',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DestinysThreadsForewoven',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DestinysThreadsForewoven',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10031,16 +16665,41 @@ export const buffs = {
         sheet: 'DestinysThreadsForewoven',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DestinysThreadsForewoven',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DestinysThreadsForewoven',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DestinysThreadsForewoven',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DestinysThreadsForewoven',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10048,6 +16707,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'DrRatio',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10055,10 +16715,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DrRatio',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'DrRatio',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10066,10 +16739,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'DrRatio',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'DrRatio',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10077,10 +16763,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'DrRatio',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'DrRatio',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10088,10 +16787,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'DrRatio',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'DrRatio',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10099,10 +16811,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'DrRatio',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DrRatio',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10110,10 +16835,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DrRatio',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'DrRatio',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10121,10 +16859,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DrRatio',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'DrRatio',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10132,10 +16883,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DrRatio',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'DrRatio',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10143,10 +16907,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'DrRatio',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'DrRatio',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10154,10 +16931,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DrRatio',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'DrRatio',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10165,10 +16955,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'DrRatio',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'DrRatio',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10176,10 +16979,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DrRatio',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'DrRatio',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10187,10 +17003,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'DrRatio',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'DrRatio',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10198,10 +17027,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'DrRatio',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'DrRatio',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10209,10 +17051,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'DrRatio',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'DrRatio',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10220,10 +17075,23 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'DrRatio',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DrRatio',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10231,12 +17099,25 @@ export const buffs = {
         sheet: 'DrRatio',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DrRatio',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   DreamsMontage: {
     cond_dmg_: {
       sheet: 'DreamsMontage',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10244,10 +17125,23 @@ export const buffs = {
         sheet: 'DreamsMontage',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DreamsMontage',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DreamsMontage',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10255,16 +17149,41 @@ export const buffs = {
         sheet: 'DreamsMontage',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DreamsMontage',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DreamsMontage',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DreamsMontage',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DreamsMontage',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10272,6 +17191,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'DreamvilleAdventure',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10279,10 +17199,23 @@ export const buffs = {
         sheet: 'DreamvilleAdventure',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DreamvilleAdventure',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'DreamvilleAdventure',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10290,10 +17223,23 @@ export const buffs = {
         sheet: 'DreamvilleAdventure',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'DreamvilleAdventure',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'DreamvilleAdventure',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10301,12 +17247,25 @@ export const buffs = {
         sheet: 'DreamvilleAdventure',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'DreamvilleAdventure',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   DuranDynastyOfRunningWolves: {
     set2_crit_dmg_: {
       sheet: 'DuranDynastyOfRunningWolves',
       name: 'set2_crit_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10314,10 +17273,23 @@ export const buffs = {
         sheet: 'DuranDynastyOfRunningWolves',
         name: 'set2_crit_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'DuranDynastyOfRunningWolves',
+          name: 'set2_crit_dmg_',
+        },
+      },
     },
     set2_followUp_dmg_: {
       sheet: 'DuranDynastyOfRunningWolves',
       name: 'set2_followUp_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10326,12 +17298,26 @@ export const buffs = {
         damageType1: 'followUp',
         name: 'set2_followUp_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'DuranDynastyOfRunningWolves',
+          damageType1: 'followUp',
+          name: 'set2_followUp_dmg_',
+        },
+      },
     },
   },
   EarthlyEscapade: {
     cond_dmg_: {
       sheet: 'EarthlyEscapade',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10339,10 +17325,23 @@ export const buffs = {
         sheet: 'EarthlyEscapade',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EarthlyEscapade',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'EarthlyEscapade',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10350,16 +17349,41 @@ export const buffs = {
         sheet: 'EarthlyEscapade',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'EarthlyEscapade',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'EarthlyEscapade',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'EarthlyEscapade',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EarthlyEscapade',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10367,6 +17391,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'EchoesOfTheCoffin',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10374,10 +17399,23 @@ export const buffs = {
         sheet: 'EchoesOfTheCoffin',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EchoesOfTheCoffin',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'EchoesOfTheCoffin',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10385,16 +17423,41 @@ export const buffs = {
         sheet: 'EchoesOfTheCoffin',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'EchoesOfTheCoffin',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'EchoesOfTheCoffin',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'EchoesOfTheCoffin',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EchoesOfTheCoffin',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10402,6 +17465,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'EternalCalculus',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10409,10 +17473,23 @@ export const buffs = {
         sheet: 'EternalCalculus',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EternalCalculus',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'EternalCalculus',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10420,16 +17497,41 @@ export const buffs = {
         sheet: 'EternalCalculus',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'EternalCalculus',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'EternalCalculus',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'EternalCalculus',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EternalCalculus',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10437,6 +17539,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'EyesOfThePrey',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10444,10 +17547,23 @@ export const buffs = {
         sheet: 'EyesOfThePrey',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EyesOfThePrey',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'EyesOfThePrey',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10455,16 +17571,41 @@ export const buffs = {
         sheet: 'EyesOfThePrey',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'EyesOfThePrey',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'EyesOfThePrey',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'EyesOfThePrey',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'EyesOfThePrey',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10472,6 +17613,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Feixiao',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10479,10 +17621,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Feixiao',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Feixiao',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10490,10 +17645,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Feixiao',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Feixiao',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10501,10 +17669,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Feixiao',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Feixiao',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10512,10 +17693,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Feixiao',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Feixiao',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10523,10 +17717,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Feixiao',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Feixiao',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10534,10 +17741,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Feixiao',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Feixiao',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10545,10 +17765,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Feixiao',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Feixiao',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10556,10 +17789,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Feixiao',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Feixiao',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10567,10 +17813,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Feixiao',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Feixiao',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10578,10 +17837,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Feixiao',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Feixiao',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10589,10 +17861,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Feixiao',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Feixiao',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10600,10 +17885,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Feixiao',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Feixiao',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10611,10 +17909,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Feixiao',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Feixiao',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10622,10 +17933,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Feixiao',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Feixiao',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10633,10 +17957,23 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Feixiao',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Feixiao',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10644,16 +17981,41 @@ export const buffs = {
         sheet: 'Feixiao',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Feixiao',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Feixiao',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Feixiao',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Feixiao',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10661,6 +18023,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Fermata',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10668,10 +18031,23 @@ export const buffs = {
         sheet: 'Fermata',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Fermata',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Fermata',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10679,16 +18055,41 @@ export const buffs = {
         sheet: 'Fermata',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Fermata',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Fermata',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Fermata',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Fermata',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10696,6 +18097,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'FinalVictor',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10703,10 +18105,23 @@ export const buffs = {
         sheet: 'FinalVictor',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FinalVictor',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'FinalVictor',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10714,16 +18129,41 @@ export const buffs = {
         sheet: 'FinalVictor',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'FinalVictor',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'FinalVictor',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FinalVictor',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FinalVictor',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -10731,6 +18171,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'FineFruit',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10738,10 +18179,23 @@ export const buffs = {
         sheet: 'FineFruit',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FineFruit',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'FineFruit',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10749,10 +18203,23 @@ export const buffs = {
         sheet: 'FineFruit',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'FineFruit',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'FineFruit',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10760,12 +18227,25 @@ export const buffs = {
         sheet: 'FineFruit',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FineFruit',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   Firefly: {
     ba3_brEffect_: {
       sheet: 'Firefly',
       name: 'ba3_brEffect_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10773,10 +18253,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'ba3_brEffect_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Firefly',
+          name: 'ba3_brEffect_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Firefly',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10784,10 +18277,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Firefly',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Firefly',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10795,10 +18301,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Firefly',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Firefly',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10806,10 +18325,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Firefly',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Firefly',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -10817,10 +18349,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Firefly',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Firefly',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10828,10 +18373,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Firefly',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Firefly',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10839,10 +18397,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Firefly',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Firefly',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10850,10 +18421,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Firefly',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Firefly',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10861,10 +18445,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Firefly',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Firefly',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10872,10 +18469,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Firefly',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Firefly',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10883,10 +18493,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Firefly',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Firefly',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10894,10 +18517,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Firefly',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Firefly',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10905,10 +18541,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Firefly',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Firefly',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10916,10 +18565,23 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Firefly',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Firefly',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10927,12 +18589,25 @@ export const buffs = {
         sheet: 'Firefly',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Firefly',
+          name: 'statBoost9',
+        },
+      },
     },
   },
   FiresmithOfLavaForging: {
     set4_fire_dmg_: {
       sheet: 'FiresmithOfLavaForging',
       name: 'set4_fire_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10941,10 +18616,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'set4_fire_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'FiresmithOfLavaForging',
+          elementalType: 'fire',
+          name: 'set4_fire_dmg_',
+        },
+      },
     },
     set4_skill_dmg_: {
       sheet: 'FiresmithOfLavaForging',
       name: 'set4_skill_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10953,12 +18642,26 @@ export const buffs = {
         damageType1: 'skill',
         name: 'set4_skill_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'FiresmithOfLavaForging',
+          damageType1: 'skill',
+          name: 'set4_skill_dmg_',
+        },
+      },
     },
   },
   FirmamentFrontlineGlamoth: {
     set2_dmg_: {
       sheet: 'FirmamentFrontlineGlamoth',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10966,12 +18669,25 @@ export const buffs = {
         sheet: 'FirmamentFrontlineGlamoth',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FirmamentFrontlineGlamoth',
+          name: 'set2_dmg_',
+        },
+      },
     },
   },
   FlameOfBloodBlazeMyPath: {
     cond_dmg_: {
       sheet: 'FlameOfBloodBlazeMyPath',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -10979,10 +18695,23 @@ export const buffs = {
         sheet: 'FlameOfBloodBlazeMyPath',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FlameOfBloodBlazeMyPath',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'FlameOfBloodBlazeMyPath',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -10990,16 +18719,41 @@ export const buffs = {
         sheet: 'FlameOfBloodBlazeMyPath',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'FlameOfBloodBlazeMyPath',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'FlameOfBloodBlazeMyPath',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FlameOfBloodBlazeMyPath',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FlameOfBloodBlazeMyPath',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11007,6 +18761,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'FlamesAfar',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11014,10 +18769,23 @@ export const buffs = {
         sheet: 'FlamesAfar',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FlamesAfar',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'FlamesAfar',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11025,16 +18793,41 @@ export const buffs = {
         sheet: 'FlamesAfar',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'FlamesAfar',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'FlamesAfar',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FlamesAfar',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FlamesAfar',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11042,6 +18835,7 @@ export const buffs = {
     set2_atk_: {
       sheet: 'FleetOfTheAgeless',
       name: 'set2_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11049,12 +18843,25 @@ export const buffs = {
         sheet: 'FleetOfTheAgeless',
         name: 'set2_atk_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'FleetOfTheAgeless',
+          name: 'set2_atk_',
+        },
+      },
     },
   },
   FlowingNightglow: {
     cond_dmg_: {
       sheet: 'FlowingNightglow',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11062,10 +18869,23 @@ export const buffs = {
         sheet: 'FlowingNightglow',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FlowingNightglow',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'FlowingNightglow',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11073,16 +18893,41 @@ export const buffs = {
         sheet: 'FlowingNightglow',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'FlowingNightglow',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'FlowingNightglow',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FlowingNightglow',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FlowingNightglow',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11090,6 +18935,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ForTomorrowsJourney',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11097,10 +18943,23 @@ export const buffs = {
         sheet: 'ForTomorrowsJourney',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ForTomorrowsJourney',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ForTomorrowsJourney',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11108,16 +18967,41 @@ export const buffs = {
         sheet: 'ForTomorrowsJourney',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ForTomorrowsJourney',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ForTomorrowsJourney',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ForTomorrowsJourney',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ForTomorrowsJourney',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11125,6 +19009,7 @@ export const buffs = {
     set2_brEffect_: {
       sheet: 'ForgeOfTheKalpagniLantern',
       name: 'set2_brEffect_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11132,12 +19017,25 @@ export const buffs = {
         sheet: 'ForgeOfTheKalpagniLantern',
         name: 'set2_brEffect_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'ForgeOfTheKalpagniLantern',
+          name: 'set2_brEffect_',
+        },
+      },
     },
   },
   FuXuan: {
     e6_dmg_: {
       sheet: 'FuXuan',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11145,10 +19043,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FuXuan',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'FuXuan',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11156,10 +19067,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'FuXuan',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'FuXuan',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11167,10 +19091,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'FuXuan',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'FuXuan',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11178,10 +19115,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'FuXuan',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'FuXuan',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11189,10 +19139,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'FuXuan',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'FuXuan',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11200,10 +19163,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'FuXuan',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'FuXuan',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11211,10 +19187,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'FuXuan',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'FuXuan',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11222,10 +19211,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'FuXuan',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'FuXuan',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11233,10 +19235,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'FuXuan',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'FuXuan',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11244,10 +19259,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'FuXuan',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'FuXuan',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11255,10 +19283,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'FuXuan',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'FuXuan',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11266,10 +19307,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'FuXuan',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'FuXuan',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11277,10 +19331,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'FuXuan',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'FuXuan',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11288,10 +19355,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'FuXuan',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'FuXuan',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11299,10 +19379,23 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'FuXuan',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'FuXuan',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11310,16 +19403,41 @@ export const buffs = {
         sheet: 'FuXuan',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'FuXuan',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'FuXuan',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FuXuan',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'FuXuan',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11327,6 +19445,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Fugue',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11334,10 +19453,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Fugue',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Fugue',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11345,10 +19477,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Fugue',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Fugue',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11356,10 +19501,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Fugue',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Fugue',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11367,10 +19525,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Fugue',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Fugue',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11378,10 +19549,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Fugue',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Fugue',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11389,10 +19573,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Fugue',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Fugue',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11400,10 +19597,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Fugue',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Fugue',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11411,10 +19621,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Fugue',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Fugue',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11422,10 +19645,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Fugue',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Fugue',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11433,10 +19669,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Fugue',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Fugue',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11444,10 +19693,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Fugue',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Fugue',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11455,10 +19717,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Fugue',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Fugue',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11466,10 +19741,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Fugue',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Fugue',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11477,10 +19765,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Fugue',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Fugue',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11488,10 +19789,23 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Fugue',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Fugue',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11499,16 +19813,41 @@ export const buffs = {
         sheet: 'Fugue',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Fugue',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Fugue',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Fugue',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Fugue',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11516,6 +19855,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Gallagher',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11523,10 +19863,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Gallagher',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Gallagher',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11534,10 +19887,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Gallagher',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Gallagher',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11545,10 +19911,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Gallagher',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Gallagher',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11556,10 +19935,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Gallagher',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Gallagher',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11567,10 +19959,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Gallagher',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Gallagher',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11578,10 +19983,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Gallagher',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Gallagher',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11589,10 +20007,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gallagher',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Gallagher',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11600,10 +20031,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Gallagher',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Gallagher',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11611,10 +20055,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Gallagher',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Gallagher',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11622,10 +20079,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gallagher',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Gallagher',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11633,10 +20103,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Gallagher',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Gallagher',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11644,10 +20127,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gallagher',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Gallagher',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11655,10 +20151,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Gallagher',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Gallagher',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11666,10 +20175,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gallagher',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Gallagher',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11677,10 +20199,23 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Gallagher',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Gallagher',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11688,16 +20223,41 @@ export const buffs = {
         sheet: 'Gallagher',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gallagher',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Gallagher',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Gallagher',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Gallagher',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11705,6 +20265,7 @@ export const buffs = {
     set4_addDefIgn_: {
       sheet: 'GeniusOfBrilliantStars',
       name: 'set4_addDefIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11712,10 +20273,23 @@ export const buffs = {
         sheet: 'GeniusOfBrilliantStars',
         name: 'set4_addDefIgn_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'defIgn_',
+          sheet: 'GeniusOfBrilliantStars',
+          name: 'set4_addDefIgn_',
+        },
+      },
     },
     set4_defIgn_: {
       sheet: 'GeniusOfBrilliantStars',
       name: 'set4_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11723,12 +20297,25 @@ export const buffs = {
         sheet: 'GeniusOfBrilliantStars',
         name: 'set4_defIgn_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'defIgn_',
+          sheet: 'GeniusOfBrilliantStars',
+          name: 'set4_defIgn_',
+        },
+      },
     },
   },
   GeniusesGreetings: {
     cond_dmg_: {
       sheet: 'GeniusesGreetings',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11736,10 +20323,23 @@ export const buffs = {
         sheet: 'GeniusesGreetings',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GeniusesGreetings',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'GeniusesGreetings',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11747,16 +20347,41 @@ export const buffs = {
         sheet: 'GeniusesGreetings',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'GeniusesGreetings',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'GeniusesGreetings',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GeniusesGreetings',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GeniusesGreetings',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11764,6 +20389,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'GeniusesRepose',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11771,10 +20397,23 @@ export const buffs = {
         sheet: 'GeniusesRepose',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GeniusesRepose',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'GeniusesRepose',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11782,16 +20421,41 @@ export const buffs = {
         sheet: 'GeniusesRepose',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'GeniusesRepose',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'GeniusesRepose',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GeniusesRepose',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GeniusesRepose',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11799,6 +20463,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Gepard',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11806,10 +20471,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Gepard',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Gepard',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11817,10 +20495,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Gepard',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Gepard',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11828,10 +20519,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Gepard',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Gepard',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11839,10 +20543,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Gepard',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Gepard',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -11850,10 +20567,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Gepard',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Gepard',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -11861,10 +20591,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Gepard',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Gepard',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11873,10 +20616,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Gepard',
+          elementalType: 'ice',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Gepard',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11885,10 +20642,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Gepard',
+          elementalType: 'ice',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Gepard',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11896,10 +20667,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gepard',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Gepard',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11908,10 +20692,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Gepard',
+          elementalType: 'ice',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Gepard',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11919,10 +20717,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Gepard',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Gepard',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11931,10 +20742,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Gepard',
+          elementalType: 'ice',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Gepard',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11942,10 +20767,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gepard',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Gepard',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11954,10 +20792,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Gepard',
+          elementalType: 'ice',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Gepard',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11965,10 +20817,23 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Gepard',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Gepard',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -11976,16 +20841,41 @@ export const buffs = {
         sheet: 'Gepard',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Gepard',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Gepard',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Gepard',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Gepard',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -11993,6 +20883,7 @@ export const buffs = {
     enemy_defRed_: {
       sheet: 'GiantTreeOfRaptBrooding',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12000,10 +20891,23 @@ export const buffs = {
         sheet: 'GiantTreeOfRaptBrooding',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'GiantTreeOfRaptBrooding',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     set2_dmg_: {
       sheet: 'GiantTreeOfRaptBrooding',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12011,10 +20915,23 @@ export const buffs = {
         sheet: 'GiantTreeOfRaptBrooding',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GiantTreeOfRaptBrooding',
+          name: 'set2_dmg_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'GiantTreeOfRaptBrooding',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12022,12 +20939,25 @@ export const buffs = {
         sheet: 'GiantTreeOfRaptBrooding',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GiantTreeOfRaptBrooding',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   GoodNightAndSleepWell: {
     cond_dmg_: {
       sheet: 'GoodNightAndSleepWell',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12035,10 +20965,23 @@ export const buffs = {
         sheet: 'GoodNightAndSleepWell',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GoodNightAndSleepWell',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'GoodNightAndSleepWell',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12046,16 +20989,41 @@ export const buffs = {
         sheet: 'GoodNightAndSleepWell',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'GoodNightAndSleepWell',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'GoodNightAndSleepWell',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GoodNightAndSleepWell',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'GoodNightAndSleepWell',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -12063,6 +21031,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Guinaifen',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12070,10 +21039,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Guinaifen',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Guinaifen',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12081,10 +21063,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Guinaifen',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Guinaifen',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12092,10 +21087,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Guinaifen',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Guinaifen',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12103,10 +21111,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Guinaifen',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Guinaifen',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12114,10 +21135,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Guinaifen',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Guinaifen',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12125,10 +21159,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Guinaifen',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Guinaifen',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12137,10 +21184,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Guinaifen',
+          elementalType: 'fire',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Guinaifen',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12149,10 +21210,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Guinaifen',
+          elementalType: 'fire',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Guinaifen',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12160,10 +21235,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Guinaifen',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Guinaifen',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12172,10 +21260,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Guinaifen',
+          elementalType: 'fire',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Guinaifen',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12183,10 +21285,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Guinaifen',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Guinaifen',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12195,10 +21310,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Guinaifen',
+          elementalType: 'fire',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Guinaifen',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12206,10 +21335,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Guinaifen',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Guinaifen',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12218,10 +21360,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Guinaifen',
+          elementalType: 'fire',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Guinaifen',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12229,10 +21385,23 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Guinaifen',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Guinaifen',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12240,16 +21409,41 @@ export const buffs = {
         sheet: 'Guinaifen',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Guinaifen',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Guinaifen',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Guinaifen',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Guinaifen',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -12257,6 +21451,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Hanya',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12264,10 +21459,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Hanya',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Hanya',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12275,10 +21483,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Hanya',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Hanya',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12286,10 +21507,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Hanya',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Hanya',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12297,10 +21531,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Hanya',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Hanya',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12308,10 +21555,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Hanya',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Hanya',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12319,10 +21579,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Hanya',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Hanya',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12330,10 +21603,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hanya',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Hanya',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12341,10 +21627,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hanya',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Hanya',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12352,10 +21651,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Hanya',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Hanya',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12363,10 +21675,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hanya',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Hanya',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12374,10 +21699,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Hanya',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Hanya',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12385,10 +21723,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hanya',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Hanya',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12396,10 +21747,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Hanya',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Hanya',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12407,10 +21771,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hanya',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Hanya',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12418,10 +21795,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Hanya',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Hanya',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12429,10 +21819,23 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Hanya',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Hanya',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12440,12 +21843,25 @@ export const buffs = {
         sheet: 'Hanya',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Hanya',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   HeroOfTriumphantSong: {
     set4_ult_dmg_: {
       sheet: 'HeroOfTriumphantSong',
       name: 'set4_ult_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12454,12 +21870,26 @@ export const buffs = {
         damageType1: 'ult',
         name: 'set4_ult_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'HeroOfTriumphantSong',
+          damageType1: 'ult',
+          name: 'set4_ult_dmg_',
+        },
+      },
     },
   },
   Herta: {
     e6_dmg_: {
       sheet: 'Herta',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12467,10 +21897,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Herta',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Herta',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12478,10 +21921,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Herta',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Herta',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12489,10 +21945,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Herta',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Herta',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12500,10 +21969,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Herta',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Herta',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12511,10 +21993,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Herta',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Herta',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12522,10 +22017,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Herta',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Herta',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12534,10 +22042,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Herta',
+          elementalType: 'ice',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Herta',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12546,10 +22068,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Herta',
+          elementalType: 'ice',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Herta',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12557,10 +22093,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Herta',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Herta',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12569,10 +22118,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Herta',
+          elementalType: 'ice',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Herta',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12580,10 +22143,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Herta',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Herta',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12592,10 +22168,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Herta',
+          elementalType: 'ice',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Herta',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12603,10 +22193,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Herta',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Herta',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12615,10 +22218,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Herta',
+          elementalType: 'ice',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Herta',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12626,10 +22243,23 @@ export const buffs = {
         sheet: 'Herta',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Herta',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Herta',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12637,16 +22267,41 @@ export const buffs = {
         sheet: 'Herta',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Herta',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Herta',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Herta',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Herta',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -12654,6 +22309,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'HeyOverHere',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12661,10 +22317,23 @@ export const buffs = {
         sheet: 'HeyOverHere',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'HeyOverHere',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'HeyOverHere',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12672,16 +22341,41 @@ export const buffs = {
         sheet: 'HeyOverHere',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'HeyOverHere',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'HeyOverHere',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'HeyOverHere',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'HeyOverHere',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -12689,6 +22383,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'HiddenShadow',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12696,10 +22391,23 @@ export const buffs = {
         sheet: 'HiddenShadow',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'HiddenShadow',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'HiddenShadow',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12707,16 +22415,41 @@ export const buffs = {
         sheet: 'HiddenShadow',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'HiddenShadow',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'HiddenShadow',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'HiddenShadow',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'HiddenShadow',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -12724,6 +22457,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Himeko',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12731,10 +22465,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Himeko',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Himeko',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12742,10 +22489,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Himeko',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Himeko',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12753,10 +22513,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Himeko',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Himeko',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12764,10 +22537,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Himeko',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Himeko',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12775,10 +22561,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Himeko',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Himeko',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12786,10 +22585,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Himeko',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Himeko',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12798,10 +22610,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Himeko',
+          elementalType: 'fire',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Himeko',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12810,10 +22636,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Himeko',
+          elementalType: 'fire',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Himeko',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12821,10 +22661,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Himeko',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Himeko',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12833,10 +22686,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Himeko',
+          elementalType: 'fire',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Himeko',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12844,10 +22711,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Himeko',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Himeko',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12856,10 +22736,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Himeko',
+          elementalType: 'fire',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Himeko',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12867,10 +22761,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Himeko',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Himeko',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12879,10 +22786,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Himeko',
+          elementalType: 'fire',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Himeko',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12890,10 +22811,23 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Himeko',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Himeko',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12901,16 +22835,41 @@ export const buffs = {
         sheet: 'Himeko',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Himeko',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Himeko',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Himeko',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Himeko',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -12918,6 +22877,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Hook',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12925,10 +22885,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Hook',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Hook',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12936,10 +22909,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Hook',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Hook',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12947,10 +22933,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Hook',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Hook',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12958,10 +22957,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Hook',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Hook',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -12969,10 +22981,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Hook',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Hook',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -12980,10 +23005,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Hook',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Hook',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -12991,10 +23029,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hook',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Hook',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13002,10 +23053,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hook',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Hook',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13013,10 +23077,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Hook',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Hook',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13024,10 +23101,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hook',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Hook',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13035,10 +23125,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Hook',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Hook',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13046,10 +23149,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hook',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Hook',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13057,10 +23173,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Hook',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Hook',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13068,10 +23197,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Hook',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Hook',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13079,10 +23221,23 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Hook',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Hook',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13090,16 +23245,41 @@ export const buffs = {
         sheet: 'Hook',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Hook',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Hook',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Hook',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Hook',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13107,6 +23287,7 @@ export const buffs = {
     set4_crit_dmg_: {
       sheet: 'HunterOfGlacialForest',
       name: 'set4_crit_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13114,12 +23295,25 @@ export const buffs = {
         sheet: 'HunterOfGlacialForest',
         name: 'set4_crit_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'HunterOfGlacialForest',
+          name: 'set4_crit_dmg_',
+        },
+      },
     },
   },
   Huohuo: {
     e6_dmg_: {
       sheet: 'Huohuo',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13127,10 +23321,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Huohuo',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Huohuo',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13138,10 +23345,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Huohuo',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Huohuo',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13149,10 +23369,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Huohuo',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Huohuo',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13160,10 +23393,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Huohuo',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Huohuo',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13171,10 +23417,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Huohuo',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Huohuo',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13182,10 +23441,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Huohuo',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Huohuo',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13193,10 +23465,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Huohuo',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Huohuo',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13204,10 +23489,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Huohuo',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Huohuo',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13215,10 +23513,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Huohuo',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Huohuo',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13226,10 +23537,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Huohuo',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Huohuo',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13237,10 +23561,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Huohuo',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Huohuo',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13248,10 +23585,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Huohuo',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Huohuo',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13259,10 +23609,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Huohuo',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Huohuo',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13270,10 +23633,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Huohuo',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Huohuo',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13281,10 +23657,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Huohuo',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Huohuo',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13292,10 +23681,23 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Huohuo',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Huohuo',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13303,12 +23705,25 @@ export const buffs = {
         sheet: 'Huohuo',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Huohuo',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   IShallBeMyOwnSword: {
     cond_dmg_: {
       sheet: 'IShallBeMyOwnSword',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13316,10 +23731,23 @@ export const buffs = {
         sheet: 'IShallBeMyOwnSword',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IShallBeMyOwnSword',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'IShallBeMyOwnSword',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13327,16 +23755,41 @@ export const buffs = {
         sheet: 'IShallBeMyOwnSword',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'IShallBeMyOwnSword',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'IShallBeMyOwnSword',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IShallBeMyOwnSword',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IShallBeMyOwnSword',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13344,6 +23797,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IVentureForthToHunt',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13351,10 +23805,23 @@ export const buffs = {
         sheet: 'IVentureForthToHunt',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IVentureForthToHunt',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'IVentureForthToHunt',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13362,16 +23829,41 @@ export const buffs = {
         sheet: 'IVentureForthToHunt',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'IVentureForthToHunt',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'IVentureForthToHunt',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IVentureForthToHunt',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IVentureForthToHunt',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13379,6 +23871,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IfTimeWereAFlower',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13386,10 +23879,23 @@ export const buffs = {
         sheet: 'IfTimeWereAFlower',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IfTimeWereAFlower',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'IfTimeWereAFlower',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13397,16 +23903,41 @@ export const buffs = {
         sheet: 'IfTimeWereAFlower',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'IfTimeWereAFlower',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'IfTimeWereAFlower',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IfTimeWereAFlower',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IfTimeWereAFlower',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13414,6 +23945,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'InTheNameOfTheWorld',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13421,10 +23953,23 @@ export const buffs = {
         sheet: 'InTheNameOfTheWorld',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'InTheNameOfTheWorld',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'InTheNameOfTheWorld',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13432,16 +23977,41 @@ export const buffs = {
         sheet: 'InTheNameOfTheWorld',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'InTheNameOfTheWorld',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'InTheNameOfTheWorld',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'InTheNameOfTheWorld',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'InTheNameOfTheWorld',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13449,6 +24019,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'InTheNight',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13456,10 +24027,23 @@ export const buffs = {
         sheet: 'InTheNight',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'InTheNight',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'InTheNight',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13467,16 +24051,41 @@ export const buffs = {
         sheet: 'InTheNight',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'InTheNight',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'InTheNight',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'InTheNight',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'InTheNight',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13484,6 +24093,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IncessantRain',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13491,10 +24101,23 @@ export const buffs = {
         sheet: 'IncessantRain',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IncessantRain',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'IncessantRain',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13502,16 +24125,41 @@ export const buffs = {
         sheet: 'IncessantRain',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'IncessantRain',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'IncessantRain',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IncessantRain',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IncessantRain',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13519,6 +24167,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IndeliblePromise',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13526,10 +24175,23 @@ export const buffs = {
         sheet: 'IndeliblePromise',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IndeliblePromise',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'IndeliblePromise',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13537,10 +24199,23 @@ export const buffs = {
         sheet: 'IndeliblePromise',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'IndeliblePromise',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'IndeliblePromise',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13548,12 +24223,25 @@ export const buffs = {
         sheet: 'IndeliblePromise',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IndeliblePromise',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   InertSalsotto: {
     set2_followUp_dmg_: {
       sheet: 'InertSalsotto',
       name: 'set2_followUp_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13562,10 +24250,24 @@ export const buffs = {
         damageType1: 'followUp',
         name: 'set2_followUp_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'InertSalsotto',
+          damageType1: 'followUp',
+          name: 'set2_followUp_dmg_',
+        },
+      },
     },
     set2_ult_dmg_: {
       sheet: 'InertSalsotto',
       name: 'set2_ult_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13574,12 +24276,26 @@ export const buffs = {
         damageType1: 'ult',
         name: 'set2_ult_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'InertSalsotto',
+          damageType1: 'ult',
+          name: 'set2_ult_dmg_',
+        },
+      },
     },
   },
   InherentlyUnjustDestiny: {
     cond_dmg_: {
       sheet: 'InherentlyUnjustDestiny',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13587,10 +24303,23 @@ export const buffs = {
         sheet: 'InherentlyUnjustDestiny',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'InherentlyUnjustDestiny',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'InherentlyUnjustDestiny',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13598,16 +24327,41 @@ export const buffs = {
         sheet: 'InherentlyUnjustDestiny',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'InherentlyUnjustDestiny',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'InherentlyUnjustDestiny',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'InherentlyUnjustDestiny',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'InherentlyUnjustDestiny',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13615,6 +24369,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'IntoTheUnreachableVeil',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13622,10 +24377,23 @@ export const buffs = {
         sheet: 'IntoTheUnreachableVeil',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IntoTheUnreachableVeil',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'IntoTheUnreachableVeil',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13633,10 +24401,23 @@ export const buffs = {
         sheet: 'IntoTheUnreachableVeil',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'IntoTheUnreachableVeil',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'IntoTheUnreachableVeil',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13644,12 +24425,25 @@ export const buffs = {
         sheet: 'IntoTheUnreachableVeil',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'IntoTheUnreachableVeil',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   IronCavalryAgainstTheScourge: {
     set4_break_defIgn_: {
       sheet: 'IronCavalryAgainstTheScourge',
       name: 'set4_break_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13658,10 +24452,24 @@ export const buffs = {
         damageType1: 'break',
         name: 'set4_break_defIgn_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'defIgn_',
+          sheet: 'IronCavalryAgainstTheScourge',
+          damageType1: 'break',
+          name: 'set4_break_defIgn_',
+        },
+      },
     },
     set4_superBreak_defIgn_: {
       sheet: 'IronCavalryAgainstTheScourge',
       name: 'set4_superBreak_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13670,12 +24478,26 @@ export const buffs = {
         damageType1: 'break',
         name: 'set4_superBreak_defIgn_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'defIgn_',
+          sheet: 'IronCavalryAgainstTheScourge',
+          damageType1: 'break',
+          name: 'set4_superBreak_defIgn_',
+        },
+      },
     },
   },
   ItsShowtime: {
     cond_dmg_: {
       sheet: 'ItsShowtime',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13683,10 +24505,23 @@ export const buffs = {
         sheet: 'ItsShowtime',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ItsShowtime',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ItsShowtime',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13694,16 +24529,41 @@ export const buffs = {
         sheet: 'ItsShowtime',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ItsShowtime',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ItsShowtime',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ItsShowtime',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ItsShowtime',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13711,6 +24571,7 @@ export const buffs = {
     set2_crit_: {
       sheet: 'IzumoGenseiAndTakamaDivineRealm',
       name: 'set2_crit_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13718,12 +24579,25 @@ export const buffs = {
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
         name: 'set2_crit_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'IzumoGenseiAndTakamaDivineRealm',
+          name: 'set2_crit_',
+        },
+      },
     },
   },
   Jade: {
     e6_dmg_: {
       sheet: 'Jade',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13731,10 +24605,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Jade',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Jade',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13742,10 +24629,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Jade',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Jade',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13753,10 +24653,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Jade',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Jade',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13764,10 +24677,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Jade',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Jade',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13775,10 +24701,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Jade',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Jade',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13786,10 +24725,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Jade',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Jade',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13798,10 +24750,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jade',
+          elementalType: 'quantum',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Jade',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13810,10 +24776,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jade',
+          elementalType: 'quantum',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Jade',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13821,10 +24801,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Jade',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Jade',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13833,10 +24826,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jade',
+          elementalType: 'quantum',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Jade',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13844,10 +24851,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Jade',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Jade',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13856,10 +24876,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jade',
+          elementalType: 'quantum',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Jade',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13867,10 +24901,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Jade',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Jade',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13879,10 +24926,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jade',
+          elementalType: 'quantum',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Jade',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13890,10 +24951,23 @@ export const buffs = {
         sheet: 'Jade',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Jade',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Jade',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13901,16 +24975,41 @@ export const buffs = {
         sheet: 'Jade',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Jade',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Jade',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jade',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Jade',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -13918,6 +25017,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Jiaoqiu',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13925,10 +25025,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Jiaoqiu',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Jiaoqiu',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13936,10 +25049,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Jiaoqiu',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Jiaoqiu',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13947,10 +25073,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Jiaoqiu',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Jiaoqiu',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13958,10 +25097,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Jiaoqiu',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Jiaoqiu',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -13969,10 +25121,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Jiaoqiu',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Jiaoqiu',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -13980,10 +25145,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Jiaoqiu',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Jiaoqiu',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -13991,10 +25169,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Jiaoqiu',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Jiaoqiu',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14002,10 +25193,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Jiaoqiu',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Jiaoqiu',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14014,10 +25218,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jiaoqiu',
+          elementalType: 'fire',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Jiaoqiu',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14025,10 +25243,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Jiaoqiu',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Jiaoqiu',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14036,10 +25267,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Jiaoqiu',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Jiaoqiu',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14047,10 +25291,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Jiaoqiu',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Jiaoqiu',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14059,10 +25316,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jiaoqiu',
+          elementalType: 'fire',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Jiaoqiu',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14070,10 +25341,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Jiaoqiu',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Jiaoqiu',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14081,10 +25365,23 @@ export const buffs = {
         sheet: 'Jiaoqiu',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Jiaoqiu',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Jiaoqiu',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14093,16 +25390,42 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Jiaoqiu',
+          elementalType: 'fire',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Jiaoqiu',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jiaoqiu',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Jiaoqiu',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14110,6 +25433,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'JingYuan',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14117,10 +25441,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'JingYuan',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'JingYuan',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14128,10 +25465,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'JingYuan',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'JingYuan',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14139,10 +25489,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'JingYuan',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'JingYuan',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14150,10 +25513,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'JingYuan',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'JingYuan',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14161,10 +25537,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'JingYuan',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'JingYuan',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -14172,10 +25561,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'JingYuan',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'JingYuan',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14183,10 +25585,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'JingYuan',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'JingYuan',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14194,10 +25609,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'JingYuan',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'JingYuan',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14205,10 +25633,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'JingYuan',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'JingYuan',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14216,10 +25657,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'JingYuan',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'JingYuan',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14227,10 +25681,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'JingYuan',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'JingYuan',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14238,10 +25705,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'JingYuan',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'JingYuan',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14249,10 +25729,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'JingYuan',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'JingYuan',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14260,10 +25753,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'JingYuan',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'JingYuan',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14271,10 +25777,23 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'JingYuan',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'JingYuan',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14282,16 +25801,41 @@ export const buffs = {
         sheet: 'JingYuan',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'JingYuan',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'JingYuan',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'JingYuan',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'JingYuan',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14299,6 +25843,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Jingliu',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14306,10 +25851,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Jingliu',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Jingliu',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14317,10 +25875,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Jingliu',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Jingliu',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14328,10 +25899,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Jingliu',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Jingliu',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14339,10 +25923,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Jingliu',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Jingliu',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14350,10 +25947,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Jingliu',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Jingliu',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -14361,10 +25971,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Jingliu',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Jingliu',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14372,10 +25995,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Jingliu',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Jingliu',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14383,10 +26019,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Jingliu',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Jingliu',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14394,10 +26043,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Jingliu',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Jingliu',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14405,10 +26067,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Jingliu',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Jingliu',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14416,10 +26091,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Jingliu',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Jingliu',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14427,10 +26115,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Jingliu',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Jingliu',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14438,10 +26139,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Jingliu',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Jingliu',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14449,10 +26163,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Jingliu',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Jingliu',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14460,10 +26187,23 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Jingliu',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Jingliu',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14471,16 +26211,41 @@ export const buffs = {
         sheet: 'Jingliu',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Jingliu',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Jingliu',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jingliu',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Jingliu',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14488,6 +26253,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Kafka',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14495,10 +26261,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Kafka',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Kafka',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14506,10 +26285,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Kafka',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Kafka',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14517,10 +26309,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Kafka',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Kafka',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14528,10 +26333,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Kafka',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Kafka',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14539,10 +26357,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Kafka',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Kafka',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -14550,10 +26381,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Kafka',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Kafka',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14561,10 +26405,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Kafka',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Kafka',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14572,10 +26429,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Kafka',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Kafka',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14583,10 +26453,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Kafka',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Kafka',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14594,10 +26477,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Kafka',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Kafka',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14605,10 +26501,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Kafka',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Kafka',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14616,10 +26525,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Kafka',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Kafka',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14627,10 +26549,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Kafka',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Kafka',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14638,10 +26573,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Kafka',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Kafka',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14649,10 +26597,23 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Kafka',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Kafka',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14660,16 +26621,41 @@ export const buffs = {
         sheet: 'Kafka',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Kafka',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Kafka',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Kafka',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Kafka',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14677,6 +26663,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'LandausChoice',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14684,10 +26671,23 @@ export const buffs = {
         sheet: 'LandausChoice',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'LandausChoice',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'LandausChoice',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -14695,16 +26695,41 @@ export const buffs = {
         sheet: 'LandausChoice',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'LandausChoice',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'LandausChoice',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'LandausChoice',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'LandausChoice',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14712,6 +26737,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Lingsha',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14719,10 +26745,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Lingsha',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Lingsha',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14730,10 +26769,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Lingsha',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Lingsha',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14741,10 +26793,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Lingsha',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Lingsha',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14752,10 +26817,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Lingsha',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Lingsha',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -14763,10 +26841,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Lingsha',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Lingsha',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -14774,10 +26865,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Lingsha',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Lingsha',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14785,10 +26889,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Lingsha',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Lingsha',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14796,10 +26913,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Lingsha',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Lingsha',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14807,10 +26937,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lingsha',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Lingsha',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14818,10 +26961,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Lingsha',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Lingsha',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14829,10 +26985,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Lingsha',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Lingsha',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14840,10 +27009,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Lingsha',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Lingsha',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14851,10 +27033,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lingsha',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Lingsha',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14862,10 +27057,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Lingsha',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Lingsha',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14873,10 +27081,23 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Lingsha',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Lingsha',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14884,16 +27105,41 @@ export const buffs = {
         sheet: 'Lingsha',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lingsha',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Lingsha',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Lingsha',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Lingsha',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14901,6 +27147,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'LongRoadLeadsHome',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14908,10 +27155,23 @@ export const buffs = {
         sheet: 'LongRoadLeadsHome',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'LongRoadLeadsHome',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'LongRoadLeadsHome',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -14919,16 +27179,41 @@ export const buffs = {
         sheet: 'LongRoadLeadsHome',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'LongRoadLeadsHome',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'LongRoadLeadsHome',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'LongRoadLeadsHome',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'LongRoadLeadsHome',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14936,6 +27221,7 @@ export const buffs = {
     set4_crit_: {
       sheet: 'LongevousDisciple',
       name: 'set4_crit_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14943,12 +27229,25 @@ export const buffs = {
         sheet: 'LongevousDisciple',
         name: 'set4_crit_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'LongevousDisciple',
+          name: 'set4_crit_',
+        },
+      },
     },
   },
   Loop: {
     cond_dmg_: {
       sheet: 'Loop',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14956,10 +27255,23 @@ export const buffs = {
         sheet: 'Loop',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Loop',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Loop',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -14967,16 +27279,41 @@ export const buffs = {
         sheet: 'Loop',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Loop',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Loop',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Loop',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Loop',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -14984,6 +27321,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Luka',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -14991,10 +27329,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Luka',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Luka',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15002,10 +27353,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Luka',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Luka',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15013,10 +27377,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Luka',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Luka',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15024,10 +27401,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Luka',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Luka',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15035,10 +27425,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Luka',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Luka',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -15046,10 +27449,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Luka',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Luka',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15057,10 +27473,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luka',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Luka',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15068,10 +27497,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luka',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Luka',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15079,10 +27521,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Luka',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Luka',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15090,10 +27545,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luka',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Luka',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15101,10 +27569,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Luka',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Luka',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15112,10 +27593,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luka',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Luka',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15123,10 +27617,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Luka',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Luka',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15134,10 +27641,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luka',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Luka',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15145,10 +27665,23 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Luka',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Luka',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15156,16 +27689,41 @@ export const buffs = {
         sheet: 'Luka',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Luka',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Luka',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Luka',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Luka',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -15173,6 +27731,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Luocha',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15180,10 +27739,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Luocha',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Luocha',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15191,10 +27763,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Luocha',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Luocha',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15202,10 +27787,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Luocha',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Luocha',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15213,10 +27811,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Luocha',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Luocha',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15224,10 +27835,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Luocha',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Luocha',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -15235,10 +27859,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Luocha',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Luocha',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15246,10 +27883,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luocha',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Luocha',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15257,10 +27907,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luocha',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Luocha',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15268,10 +27931,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Luocha',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Luocha',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15279,10 +27955,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luocha',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Luocha',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15290,10 +27979,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Luocha',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Luocha',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15301,10 +28003,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luocha',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Luocha',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15312,10 +28027,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Luocha',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Luocha',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15323,10 +28051,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Luocha',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Luocha',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15334,10 +28075,23 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Luocha',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Luocha',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15345,16 +28099,41 @@ export const buffs = {
         sheet: 'Luocha',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Luocha',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Luocha',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Luocha',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Luocha',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -15362,6 +28141,7 @@ export const buffs = {
     enemy_defRed_: {
       sheet: 'LushakaTheSunkenSeas',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -15369,10 +28149,23 @@ export const buffs = {
         sheet: 'LushakaTheSunkenSeas',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'LushakaTheSunkenSeas',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     set2_dmg_: {
       sheet: 'LushakaTheSunkenSeas',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15380,10 +28173,23 @@ export const buffs = {
         sheet: 'LushakaTheSunkenSeas',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'LushakaTheSunkenSeas',
+          name: 'set2_dmg_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'LushakaTheSunkenSeas',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15391,12 +28197,25 @@ export const buffs = {
         sheet: 'LushakaTheSunkenSeas',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'LushakaTheSunkenSeas',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   Lynx: {
     e6_dmg_: {
       sheet: 'Lynx',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15404,10 +28223,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Lynx',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Lynx',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15415,10 +28247,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Lynx',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Lynx',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15426,10 +28271,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Lynx',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Lynx',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15437,10 +28295,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Lynx',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Lynx',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15448,10 +28319,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Lynx',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Lynx',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -15459,10 +28343,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Lynx',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Lynx',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15470,10 +28367,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lynx',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Lynx',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15481,10 +28391,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lynx',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Lynx',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15492,10 +28415,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Lynx',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Lynx',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15503,10 +28439,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lynx',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Lynx',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15514,10 +28463,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Lynx',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Lynx',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15525,10 +28487,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lynx',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Lynx',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15536,10 +28511,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Lynx',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Lynx',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15547,10 +28535,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Lynx',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Lynx',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15558,10 +28559,23 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Lynx',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Lynx',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15569,16 +28583,41 @@ export const buffs = {
         sheet: 'Lynx',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Lynx',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Lynx',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Lynx',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Lynx',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -15586,6 +28625,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MakeTheWorldClamor',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15593,10 +28633,23 @@ export const buffs = {
         sheet: 'MakeTheWorldClamor',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MakeTheWorldClamor',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'MakeTheWorldClamor',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -15604,16 +28657,41 @@ export const buffs = {
         sheet: 'MakeTheWorldClamor',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'MakeTheWorldClamor',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'MakeTheWorldClamor',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MakeTheWorldClamor',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MakeTheWorldClamor',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -15621,6 +28699,7 @@ export const buffs = {
     eidolon3_basic: {
       sheet: 'March7th',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15628,10 +28707,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'March7th',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'March7th',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15639,10 +28731,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'March7th',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'March7th',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15650,10 +28755,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'March7th',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'March7th',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15661,10 +28779,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'March7th',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     statBoost1: {
       sheet: 'March7th',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15673,10 +28804,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'March7th',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15684,10 +28829,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'March7th',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'March7th',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15695,10 +28853,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'March7th',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'March7th',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15707,10 +28878,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'March7th',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15718,10 +28903,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'March7th',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'March7th',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15730,10 +28928,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'March7th',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15741,10 +28953,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'March7th',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'March7th',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15752,10 +28977,23 @@ export const buffs = {
         sheet: 'March7th',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'March7th',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'March7th',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15764,10 +29002,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'March7th',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15775,6 +29027,19 @@ export const buffs = {
         sheet: 'March7th',
         elementalType: 'ice',
         name: 'statBoost9',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'March7th',
+          elementalType: 'ice',
+          name: 'statBoost9',
+        },
       },
     },
   },
@@ -15782,6 +29047,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'March7thTheHunt',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15789,10 +29055,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'March7thTheHunt',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'March7thTheHunt',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15800,10 +29079,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'March7thTheHunt',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'March7thTheHunt',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15811,10 +29103,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'March7thTheHunt',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'March7thTheHunt',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15822,10 +29127,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'March7thTheHunt',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'March7thTheHunt',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -15833,10 +29151,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'March7thTheHunt',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'March7thTheHunt',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -15844,10 +29175,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'March7thTheHunt',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'March7thTheHunt',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15855,10 +29199,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'March7thTheHunt',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15866,10 +29223,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'March7thTheHunt',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15877,10 +29247,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'March7thTheHunt',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15888,10 +29271,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'March7thTheHunt',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15899,10 +29295,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'March7thTheHunt',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15910,10 +29319,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'March7thTheHunt',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15921,10 +29343,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'March7thTheHunt',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15932,10 +29367,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'March7thTheHunt',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15943,10 +29391,23 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'March7thTheHunt',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15954,16 +29415,41 @@ export const buffs = {
         sheet: 'March7thTheHunt',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'March7thTheHunt',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'March7thTheHunt',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'March7thTheHunt',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'March7thTheHunt',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -15971,6 +29457,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Mediation',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -15978,10 +29465,23 @@ export const buffs = {
         sheet: 'Mediation',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Mediation',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Mediation',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -15989,16 +29489,41 @@ export const buffs = {
         sheet: 'Mediation',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Mediation',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Mediation',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Mediation',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Mediation',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16006,6 +29531,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MemoriesOfThePast',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16013,10 +29539,23 @@ export const buffs = {
         sheet: 'MemoriesOfThePast',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MemoriesOfThePast',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'MemoriesOfThePast',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16024,16 +29563,41 @@ export const buffs = {
         sheet: 'MemoriesOfThePast',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'MemoriesOfThePast',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'MemoriesOfThePast',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MemoriesOfThePast',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MemoriesOfThePast',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16041,6 +29605,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MemorysCurtainNeverFalls',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16048,10 +29613,23 @@ export const buffs = {
         sheet: 'MemorysCurtainNeverFalls',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MemorysCurtainNeverFalls',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'MemorysCurtainNeverFalls',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16059,16 +29637,41 @@ export const buffs = {
         sheet: 'MemorysCurtainNeverFalls',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'MemorysCurtainNeverFalls',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'MemorysCurtainNeverFalls',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MemorysCurtainNeverFalls',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MemorysCurtainNeverFalls',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16076,6 +29679,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MeshingCogs',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16083,10 +29687,23 @@ export const buffs = {
         sheet: 'MeshingCogs',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MeshingCogs',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'MeshingCogs',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16094,16 +29711,41 @@ export const buffs = {
         sheet: 'MeshingCogs',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'MeshingCogs',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'MeshingCogs',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MeshingCogs',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MeshingCogs',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16111,6 +29753,7 @@ export const buffs = {
     set4_spd_: {
       sheet: 'MessengerTraversingHackerspace',
       name: 'set4_spd_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16118,12 +29761,25 @@ export const buffs = {
         sheet: 'MessengerTraversingHackerspace',
         name: 'set4_spd_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd_',
+          sheet: 'MessengerTraversingHackerspace',
+          name: 'set4_spd_',
+        },
+      },
     },
   },
   Misha: {
     e6_dmg_: {
       sheet: 'Misha',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16131,10 +29787,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Misha',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Misha',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16142,10 +29811,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Misha',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Misha',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16153,10 +29835,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Misha',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Misha',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16164,10 +29859,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Misha',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Misha',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16175,10 +29883,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Misha',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Misha',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16186,10 +29907,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Misha',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Misha',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16198,10 +29932,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Misha',
+          elementalType: 'ice',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Misha',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16210,10 +29958,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Misha',
+          elementalType: 'ice',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Misha',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16221,10 +29983,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Misha',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Misha',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16233,10 +30008,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Misha',
+          elementalType: 'ice',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Misha',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16244,10 +30033,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Misha',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Misha',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16256,10 +30058,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Misha',
+          elementalType: 'ice',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Misha',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16267,10 +30083,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Misha',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Misha',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16279,10 +30108,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Misha',
+          elementalType: 'ice',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Misha',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16290,10 +30133,23 @@ export const buffs = {
         sheet: 'Misha',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Misha',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Misha',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16301,16 +30157,41 @@ export const buffs = {
         sheet: 'Misha',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Misha',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Misha',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Misha',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Misha',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16318,6 +30199,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'MomentOfVictory',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16325,10 +30207,23 @@ export const buffs = {
         sheet: 'MomentOfVictory',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MomentOfVictory',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'MomentOfVictory',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16336,16 +30231,41 @@ export const buffs = {
         sheet: 'MomentOfVictory',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'MomentOfVictory',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'MomentOfVictory',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MomentOfVictory',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MomentOfVictory',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16353,6 +30273,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Moze',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16360,10 +30281,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Moze',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Moze',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16371,10 +30305,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Moze',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Moze',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16382,10 +30329,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Moze',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Moze',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16393,10 +30353,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Moze',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Moze',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16404,10 +30377,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Moze',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Moze',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16415,10 +30401,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Moze',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Moze',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16426,10 +30425,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Moze',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Moze',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16437,10 +30449,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Moze',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Moze',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16448,10 +30473,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Moze',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Moze',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16459,10 +30497,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Moze',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Moze',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16470,10 +30521,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Moze',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Moze',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16481,10 +30545,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Moze',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Moze',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16492,10 +30569,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Moze',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Moze',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16503,10 +30593,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Moze',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Moze',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16514,10 +30617,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Moze',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Moze',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16525,10 +30641,23 @@ export const buffs = {
         sheet: 'Moze',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Moze',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Moze',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16536,12 +30665,25 @@ export const buffs = {
         sheet: 'Moze',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Moze',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   Multiplication: {
     cond_dmg_: {
       sheet: 'Multiplication',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16549,10 +30691,23 @@ export const buffs = {
         sheet: 'Multiplication',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Multiplication',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Multiplication',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16560,10 +30715,23 @@ export const buffs = {
         sheet: 'Multiplication',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Multiplication',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Multiplication',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16571,12 +30739,25 @@ export const buffs = {
         sheet: 'Multiplication',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Multiplication',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   MusketeerOfWildWheat: {
     set4_basic_dmg_: {
       sheet: 'MusketeerOfWildWheat',
       name: 'set4_basic_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16585,12 +30766,26 @@ export const buffs = {
         damageType1: 'basic',
         name: 'set4_basic_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'MusketeerOfWildWheat',
+          damageType1: 'basic',
+          name: 'set4_basic_dmg_',
+        },
+      },
     },
   },
   MutualDemise: {
     cond_dmg_: {
       sheet: 'MutualDemise',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16598,10 +30793,23 @@ export const buffs = {
         sheet: 'MutualDemise',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MutualDemise',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'MutualDemise',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16609,16 +30817,41 @@ export const buffs = {
         sheet: 'MutualDemise',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'MutualDemise',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'MutualDemise',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MutualDemise',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'MutualDemise',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16626,6 +30859,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Mydei',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16633,10 +30867,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Mydei',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Mydei',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16644,10 +30891,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Mydei',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Mydei',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16655,10 +30915,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Mydei',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Mydei',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16666,10 +30939,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Mydei',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Mydei',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16677,10 +30963,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Mydei',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Mydei',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16688,10 +30987,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Mydei',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Mydei',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16699,10 +31011,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Mydei',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Mydei',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16710,10 +31035,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Mydei',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Mydei',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16721,10 +31059,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Mydei',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Mydei',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16732,10 +31083,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Mydei',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Mydei',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16743,10 +31107,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Mydei',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Mydei',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16754,10 +31131,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Mydei',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Mydei',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16765,10 +31155,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Mydei',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Mydei',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16776,10 +31179,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Mydei',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Mydei',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16787,10 +31203,23 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Mydei',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Mydei',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16798,16 +31227,41 @@ export const buffs = {
         sheet: 'Mydei',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Mydei',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Mydei',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Mydei',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Mydei',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -16815,6 +31269,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Natasha',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16822,10 +31277,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Natasha',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Natasha',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16833,10 +31301,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Natasha',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Natasha',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16844,10 +31325,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Natasha',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Natasha',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16855,10 +31349,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Natasha',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Natasha',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -16866,10 +31373,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Natasha',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Natasha',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -16877,10 +31397,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Natasha',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Natasha',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16888,10 +31421,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Natasha',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Natasha',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16899,10 +31445,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Natasha',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Natasha',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16910,10 +31469,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Natasha',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Natasha',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16921,10 +31493,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Natasha',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Natasha',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16932,10 +31517,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Natasha',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Natasha',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16943,10 +31541,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Natasha',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Natasha',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16954,10 +31565,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Natasha',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Natasha',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16965,10 +31589,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Natasha',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Natasha',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16976,10 +31613,23 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Natasha',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Natasha',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -16987,16 +31637,41 @@ export const buffs = {
         sheet: 'Natasha',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Natasha',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Natasha',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Natasha',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Natasha',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17004,6 +31679,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'NightOfFright',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17011,10 +31687,23 @@ export const buffs = {
         sheet: 'NightOfFright',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NightOfFright',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'NightOfFright',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17022,16 +31711,41 @@ export const buffs = {
         sheet: 'NightOfFright',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'NightOfFright',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'NightOfFright',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'NightOfFright',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NightOfFright',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17039,6 +31753,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'NightOnTheMilkyWay',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17046,10 +31761,23 @@ export const buffs = {
         sheet: 'NightOnTheMilkyWay',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NightOnTheMilkyWay',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'NightOnTheMilkyWay',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17057,16 +31785,41 @@ export const buffs = {
         sheet: 'NightOnTheMilkyWay',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'NightOnTheMilkyWay',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'NightOnTheMilkyWay',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'NightOnTheMilkyWay',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NightOnTheMilkyWay',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17074,6 +31827,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'NinjaRecordSoundHunt',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17081,10 +31835,23 @@ export const buffs = {
         sheet: 'NinjaRecordSoundHunt',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NinjaRecordSoundHunt',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'NinjaRecordSoundHunt',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17092,16 +31859,41 @@ export const buffs = {
         sheet: 'NinjaRecordSoundHunt',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'NinjaRecordSoundHunt',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'NinjaRecordSoundHunt',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'NinjaRecordSoundHunt',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NinjaRecordSoundHunt',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17109,6 +31901,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17116,10 +31909,23 @@ export const buffs = {
         sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17127,16 +31933,41 @@ export const buffs = {
         sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17144,6 +31975,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'NowhereToRun',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17151,10 +31983,23 @@ export const buffs = {
         sheet: 'NowhereToRun',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NowhereToRun',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'NowhereToRun',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17162,16 +32007,41 @@ export const buffs = {
         sheet: 'NowhereToRun',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'NowhereToRun',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'NowhereToRun',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'NowhereToRun',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'NowhereToRun',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17179,6 +32049,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'OnTheFallOfAnAeon',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17186,10 +32057,23 @@ export const buffs = {
         sheet: 'OnTheFallOfAnAeon',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'OnTheFallOfAnAeon',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'OnTheFallOfAnAeon',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17197,16 +32081,41 @@ export const buffs = {
         sheet: 'OnTheFallOfAnAeon',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'OnTheFallOfAnAeon',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'OnTheFallOfAnAeon',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'OnTheFallOfAnAeon',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'OnTheFallOfAnAeon',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17214,6 +32123,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'OnlySilenceRemains',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17221,10 +32131,23 @@ export const buffs = {
         sheet: 'OnlySilenceRemains',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'OnlySilenceRemains',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'OnlySilenceRemains',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17232,16 +32155,41 @@ export const buffs = {
         sheet: 'OnlySilenceRemains',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'OnlySilenceRemains',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'OnlySilenceRemains',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'OnlySilenceRemains',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'OnlySilenceRemains',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17249,6 +32197,7 @@ export const buffs = {
     set2_dmg_: {
       sheet: 'PanCosmicCommercialEnterprise',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17256,12 +32205,25 @@ export const buffs = {
         sheet: 'PanCosmicCommercialEnterprise',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'PanCosmicCommercialEnterprise',
+          name: 'set2_dmg_',
+        },
+      },
     },
   },
   Passkey: {
     cond_dmg_: {
       sheet: 'Passkey',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17269,10 +32231,23 @@ export const buffs = {
         sheet: 'Passkey',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Passkey',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Passkey',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17280,16 +32255,41 @@ export const buffs = {
         sheet: 'Passkey',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Passkey',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Passkey',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Passkey',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Passkey',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17297,6 +32297,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'PastAndFuture',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17304,10 +32305,23 @@ export const buffs = {
         sheet: 'PastAndFuture',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PastAndFuture',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'PastAndFuture',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17315,16 +32329,41 @@ export const buffs = {
         sheet: 'PastAndFuture',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'PastAndFuture',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'PastAndFuture',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PastAndFuture',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PastAndFuture',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17332,6 +32371,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'PastSelfInMirror',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17339,12 +32379,25 @@ export const buffs = {
         sheet: 'PastSelfInMirror',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PastSelfInMirror',
+          name: 'cond_dmg_',
+        },
+      },
     },
   },
   PatienceIsAllYouNeed: {
     cond_dmg_: {
       sheet: 'PatienceIsAllYouNeed',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17352,10 +32405,23 @@ export const buffs = {
         sheet: 'PatienceIsAllYouNeed',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PatienceIsAllYouNeed',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'PatienceIsAllYouNeed',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17363,16 +32429,41 @@ export const buffs = {
         sheet: 'PatienceIsAllYouNeed',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'PatienceIsAllYouNeed',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'PatienceIsAllYouNeed',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PatienceIsAllYouNeed',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PatienceIsAllYouNeed',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17380,6 +32471,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Pela',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17387,10 +32479,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Pela',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Pela',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17398,10 +32503,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Pela',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Pela',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17409,10 +32527,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Pela',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Pela',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17420,10 +32551,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Pela',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Pela',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17431,10 +32575,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Pela',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Pela',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17442,10 +32599,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Pela',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Pela',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17454,10 +32624,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Pela',
+          elementalType: 'ice',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Pela',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17466,10 +32650,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Pela',
+          elementalType: 'ice',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Pela',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17477,10 +32675,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Pela',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Pela',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17489,10 +32700,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Pela',
+          elementalType: 'ice',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Pela',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17500,10 +32725,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Pela',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Pela',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17512,10 +32750,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Pela',
+          elementalType: 'ice',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Pela',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17523,10 +32775,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Pela',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Pela',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17535,10 +32800,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Pela',
+          elementalType: 'ice',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Pela',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17546,10 +32825,23 @@ export const buffs = {
         sheet: 'Pela',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Pela',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Pela',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17557,16 +32849,41 @@ export const buffs = {
         sheet: 'Pela',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Pela',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Pela',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Pela',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Pela',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17574,6 +32891,7 @@ export const buffs = {
     set2_common_dmg_: {
       sheet: 'PenaconyLandOfTheDreams',
       name: 'set2_common_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17581,12 +32899,25 @@ export const buffs = {
         sheet: 'PenaconyLandOfTheDreams',
         name: 'set2_common_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PenaconyLandOfTheDreams',
+          name: 'set2_common_dmg_',
+        },
+      },
     },
   },
   PerfectTiming: {
     cond_dmg_: {
       sheet: 'PerfectTiming',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17594,10 +32925,23 @@ export const buffs = {
         sheet: 'PerfectTiming',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PerfectTiming',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'PerfectTiming',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17605,16 +32949,41 @@ export const buffs = {
         sheet: 'PerfectTiming',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'PerfectTiming',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'PerfectTiming',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PerfectTiming',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PerfectTiming',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17622,6 +32991,7 @@ export const buffs = {
     set2_common_dmg_: {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'set2_common_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17629,10 +32999,23 @@ export const buffs = {
         sheet: 'PioneerDiverOfDeadWaters',
         name: 'set2_common_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PioneerDiverOfDeadWaters',
+          name: 'set2_common_dmg_',
+        },
+      },
     },
     set4_crit_: {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'set4_crit_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17640,10 +33023,23 @@ export const buffs = {
         sheet: 'PioneerDiverOfDeadWaters',
         name: 'set4_crit_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'PioneerDiverOfDeadWaters',
+          name: 'set4_crit_',
+        },
+      },
     },
     set4_crit_dmg_: {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'set4_crit_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17651,12 +33047,25 @@ export const buffs = {
         sheet: 'PioneerDiverOfDeadWaters',
         name: 'set4_crit_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'PioneerDiverOfDeadWaters',
+          name: 'set4_crit_dmg_',
+        },
+      },
     },
   },
   Pioneering: {
     cond_dmg_: {
       sheet: 'Pioneering',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17664,10 +33073,23 @@ export const buffs = {
         sheet: 'Pioneering',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Pioneering',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Pioneering',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17675,16 +33097,41 @@ export const buffs = {
         sheet: 'Pioneering',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Pioneering',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Pioneering',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Pioneering',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Pioneering',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17692,6 +33139,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'PlanetaryRendezvous',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17699,10 +33147,23 @@ export const buffs = {
         sheet: 'PlanetaryRendezvous',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PlanetaryRendezvous',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'PlanetaryRendezvous',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17710,16 +33171,41 @@ export const buffs = {
         sheet: 'PlanetaryRendezvous',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'PlanetaryRendezvous',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'PlanetaryRendezvous',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PlanetaryRendezvous',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PlanetaryRendezvous',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17727,6 +33213,7 @@ export const buffs = {
     enemy_defRed_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17734,10 +33221,23 @@ export const buffs = {
         sheet: 'PoetOfMourningCollapse',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'PoetOfMourningCollapse',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     set2_dmg_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17745,10 +33245,23 @@ export const buffs = {
         sheet: 'PoetOfMourningCollapse',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PoetOfMourningCollapse',
+          name: 'set2_dmg_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17756,12 +33269,25 @@ export const buffs = {
         sheet: 'PoetOfMourningCollapse',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PoetOfMourningCollapse',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   PoisedToBloom: {
     cond_dmg_: {
       sheet: 'PoisedToBloom',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17769,10 +33295,23 @@ export const buffs = {
         sheet: 'PoisedToBloom',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PoisedToBloom',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'PoisedToBloom',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17780,16 +33319,41 @@ export const buffs = {
         sheet: 'PoisedToBloom',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'PoisedToBloom',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'PoisedToBloom',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PoisedToBloom',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PoisedToBloom',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17797,6 +33361,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'PostOpConversation',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17804,10 +33369,23 @@ export const buffs = {
         sheet: 'PostOpConversation',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PostOpConversation',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'PostOpConversation',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17815,16 +33393,41 @@ export const buffs = {
         sheet: 'PostOpConversation',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'PostOpConversation',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'PostOpConversation',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PostOpConversation',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'PostOpConversation',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -17832,6 +33435,7 @@ export const buffs = {
     set4_defIgn_: {
       sheet: 'PrisonerInDeepConfinement',
       name: 'set4_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17839,12 +33443,25 @@ export const buffs = {
         sheet: 'PrisonerInDeepConfinement',
         name: 'set4_defIgn_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'defIgn_',
+          sheet: 'PrisonerInDeepConfinement',
+          name: 'set4_defIgn_',
+        },
+      },
     },
   },
   Qingque: {
     e6_dmg_: {
       sheet: 'Qingque',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17852,10 +33469,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Qingque',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Qingque',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17863,10 +33493,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Qingque',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Qingque',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17874,10 +33517,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Qingque',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Qingque',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17885,10 +33541,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Qingque',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Qingque',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -17896,10 +33565,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Qingque',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Qingque',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -17907,10 +33589,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Qingque',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Qingque',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17918,10 +33613,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Qingque',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Qingque',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17929,10 +33637,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Qingque',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Qingque',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17941,10 +33662,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Qingque',
+          elementalType: 'quantum',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Qingque',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17952,10 +33687,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Qingque',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Qingque',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17963,10 +33711,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Qingque',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Qingque',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17974,10 +33735,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Qingque',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Qingque',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17986,10 +33760,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Qingque',
+          elementalType: 'quantum',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Qingque',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -17997,10 +33785,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Qingque',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Qingque',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18008,10 +33809,23 @@ export const buffs = {
         sheet: 'Qingque',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Qingque',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Qingque',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18020,16 +33834,42 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Qingque',
+          elementalType: 'quantum',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Qingque',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Qingque',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Qingque',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18037,6 +33877,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'QuidProQuo',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18044,10 +33885,23 @@ export const buffs = {
         sheet: 'QuidProQuo',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'QuidProQuo',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'QuidProQuo',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18055,16 +33909,41 @@ export const buffs = {
         sheet: 'QuidProQuo',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'QuidProQuo',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'QuidProQuo',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'QuidProQuo',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'QuidProQuo',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18072,6 +33951,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Rappa',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18079,10 +33959,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Rappa',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Rappa',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18090,10 +33983,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Rappa',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Rappa',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18101,10 +34007,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Rappa',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Rappa',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18112,10 +34031,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Rappa',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Rappa',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18123,10 +34055,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Rappa',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Rappa',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18134,10 +34079,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Rappa',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Rappa',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18145,10 +34103,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Rappa',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Rappa',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18156,10 +34127,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Rappa',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Rappa',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18167,10 +34151,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Rappa',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Rappa',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18178,10 +34175,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Rappa',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Rappa',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18189,10 +34199,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Rappa',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Rappa',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18200,10 +34223,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Rappa',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Rappa',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18211,10 +34247,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Rappa',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Rappa',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18222,10 +34271,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Rappa',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Rappa',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18233,10 +34295,23 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Rappa',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Rappa',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18244,16 +34319,41 @@ export const buffs = {
         sheet: 'Rappa',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Rappa',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Rappa',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Rappa',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Rappa',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18261,6 +34361,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ReforgedRemembrance',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18268,10 +34369,23 @@ export const buffs = {
         sheet: 'ReforgedRemembrance',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ReforgedRemembrance',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ReforgedRemembrance',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18279,16 +34393,41 @@ export const buffs = {
         sheet: 'ReforgedRemembrance',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ReforgedRemembrance',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ReforgedRemembrance',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ReforgedRemembrance',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ReforgedRemembrance',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18296,6 +34435,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Reminiscence',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18303,10 +34443,23 @@ export const buffs = {
         sheet: 'Reminiscence',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Reminiscence',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Reminiscence',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18314,16 +34467,41 @@ export const buffs = {
         sheet: 'Reminiscence',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Reminiscence',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Reminiscence',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Reminiscence',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Reminiscence',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18331,6 +34509,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ResolutionShinesAsPearlsOfSweat',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18338,10 +34517,23 @@ export const buffs = {
         sheet: 'ResolutionShinesAsPearlsOfSweat',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ResolutionShinesAsPearlsOfSweat',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ResolutionShinesAsPearlsOfSweat',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18349,16 +34541,41 @@ export const buffs = {
         sheet: 'ResolutionShinesAsPearlsOfSweat',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ResolutionShinesAsPearlsOfSweat',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ResolutionShinesAsPearlsOfSweat',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ResolutionShinesAsPearlsOfSweat',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ResolutionShinesAsPearlsOfSweat',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18366,6 +34583,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ReturnToDarkness',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18373,10 +34591,23 @@ export const buffs = {
         sheet: 'ReturnToDarkness',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ReturnToDarkness',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ReturnToDarkness',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18384,16 +34615,41 @@ export const buffs = {
         sheet: 'ReturnToDarkness',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ReturnToDarkness',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ReturnToDarkness',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ReturnToDarkness',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ReturnToDarkness',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18401,6 +34657,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'RiverFlowsInSpring',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18408,10 +34665,23 @@ export const buffs = {
         sheet: 'RiverFlowsInSpring',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'RiverFlowsInSpring',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'RiverFlowsInSpring',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18419,16 +34689,41 @@ export const buffs = {
         sheet: 'RiverFlowsInSpring',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'RiverFlowsInSpring',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'RiverFlowsInSpring',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'RiverFlowsInSpring',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'RiverFlowsInSpring',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18436,6 +34731,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Robin',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18443,10 +34739,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Robin',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Robin',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18454,10 +34763,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Robin',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Robin',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18465,10 +34787,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Robin',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Robin',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18476,10 +34811,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Robin',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Robin',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18487,10 +34835,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Robin',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Robin',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18498,10 +34859,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Robin',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Robin',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18509,10 +34883,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Robin',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Robin',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18520,10 +34907,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Robin',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Robin',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18531,10 +34931,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Robin',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Robin',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18542,10 +34955,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Robin',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Robin',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18553,10 +34979,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Robin',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Robin',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18564,10 +35003,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Robin',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Robin',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18575,10 +35027,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Robin',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Robin',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18586,10 +35051,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Robin',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Robin',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18597,10 +35075,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'Robin',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Robin',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18608,10 +35099,23 @@ export const buffs = {
         sheet: 'Robin',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Robin',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Robin',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18619,12 +35123,25 @@ export const buffs = {
         sheet: 'Robin',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Robin',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   RuanMei: {
     ba1_break_: {
       sheet: 'RuanMei',
       name: 'ba1_break_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18632,10 +35149,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'ba1_break_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'RuanMei',
+          name: 'ba1_break_',
+        },
+      },
     },
     ba3_dmg_: {
       sheet: 'RuanMei',
       name: 'ba3_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18643,10 +35173,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'ba3_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'RuanMei',
+          name: 'ba3_dmg_',
+        },
+      },
     },
     e1_defIgn_: {
       sheet: 'RuanMei',
       name: 'e1_defIgn_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18654,10 +35197,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'e1_defIgn_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'defIgn_',
+          sheet: 'RuanMei',
+          name: 'e1_defIgn_',
+        },
+      },
     },
     e2_atk_: {
       sheet: 'RuanMei',
       name: 'e2_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18665,10 +35221,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'e2_atk_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'RuanMei',
+          name: 'e2_atk_',
+        },
+      },
     },
     e4_break_: {
       sheet: 'RuanMei',
       name: 'e4_break_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18676,10 +35245,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'e4_break_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'RuanMei',
+          name: 'e4_break_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'RuanMei',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18687,10 +35269,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'RuanMei',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'RuanMei',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18698,10 +35293,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'RuanMei',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'RuanMei',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18709,10 +35317,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'RuanMei',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'RuanMei',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -18720,10 +35341,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'RuanMei',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     skillOvertone_dmg_: {
       sheet: 'RuanMei',
       name: 'skillOvertone_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18731,10 +35365,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'skillOvertone_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'RuanMei',
+          name: 'skillOvertone_dmg_',
+        },
+      },
     },
     skillOvertone_weakness_: {
       sheet: 'RuanMei',
       name: 'skillOvertone_weakness_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18742,10 +35389,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'skillOvertone_weakness_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'weakness_',
+          sheet: 'RuanMei',
+          name: 'skillOvertone_weakness_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'RuanMei',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18753,10 +35413,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'RuanMei',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'RuanMei',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18764,10 +35437,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'RuanMei',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'RuanMei',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18775,10 +35461,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'RuanMei',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'RuanMei',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18786,10 +35485,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'RuanMei',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'RuanMei',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18797,10 +35509,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'RuanMei',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'RuanMei',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18808,10 +35533,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'RuanMei',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'RuanMei',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18819,10 +35557,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'RuanMei',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'RuanMei',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18830,10 +35581,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'RuanMei',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'RuanMei',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18841,10 +35605,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'RuanMei',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'RuanMei',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18852,10 +35629,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'RuanMei',
+          name: 'statBoost9',
+        },
+      },
     },
     talent_spd_: {
       sheet: 'RuanMei',
       name: 'talent_spd_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18863,10 +35653,23 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'talent_spd_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd_',
+          sheet: 'RuanMei',
+          name: 'talent_spd_',
+        },
+      },
     },
     ultZone_resPen_: {
       sheet: 'RuanMei',
       name: 'ultZone_resPen_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18874,12 +35677,25 @@ export const buffs = {
         sheet: 'RuanMei',
         name: 'ultZone_resPen_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'resPen_',
+          sheet: 'RuanMei',
+          name: 'ultZone_resPen_',
+        },
+      },
     },
   },
   RutilantArena: {
     set4_basic_dmg_: {
       sheet: 'RutilantArena',
       name: 'set4_basic_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18888,10 +35704,24 @@ export const buffs = {
         damageType1: 'basic',
         name: 'set4_basic_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'RutilantArena',
+          damageType1: 'basic',
+          name: 'set4_basic_dmg_',
+        },
+      },
     },
     set4_skill_dmg_: {
       sheet: 'RutilantArena',
       name: 'set4_skill_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18900,12 +35730,26 @@ export const buffs = {
         damageType1: 'skill',
         name: 'set4_skill_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'RutilantArena',
+          damageType1: 'skill',
+          name: 'set4_skill_dmg_',
+        },
+      },
     },
   },
   SacerdosRelivedOrdeal: {
     enemy_defRed_: {
       sheet: 'SacerdosRelivedOrdeal',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18913,10 +35757,23 @@ export const buffs = {
         sheet: 'SacerdosRelivedOrdeal',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SacerdosRelivedOrdeal',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     set2_dmg_: {
       sheet: 'SacerdosRelivedOrdeal',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18924,16 +35781,41 @@ export const buffs = {
         sheet: 'SacerdosRelivedOrdeal',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SacerdosRelivedOrdeal',
+          name: 'set2_dmg_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SacerdosRelivedOrdeal',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SacerdosRelivedOrdeal',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SacerdosRelivedOrdeal',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18941,6 +35823,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Sagacity',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18948,10 +35831,23 @@ export const buffs = {
         sheet: 'Sagacity',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sagacity',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Sagacity',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18959,16 +35855,41 @@ export const buffs = {
         sheet: 'Sagacity',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Sagacity',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Sagacity',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sagacity',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sagacity',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -18976,6 +35897,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SailingTowardsASecondLife',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -18983,10 +35905,23 @@ export const buffs = {
         sheet: 'SailingTowardsASecondLife',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SailingTowardsASecondLife',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SailingTowardsASecondLife',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -18994,16 +35929,41 @@ export const buffs = {
         sheet: 'SailingTowardsASecondLife',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SailingTowardsASecondLife',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SailingTowardsASecondLife',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SailingTowardsASecondLife',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SailingTowardsASecondLife',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19011,6 +35971,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Sampo',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19018,10 +35979,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sampo',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Sampo',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19029,10 +36003,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Sampo',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Sampo',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19040,10 +36027,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Sampo',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Sampo',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19051,10 +36051,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Sampo',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Sampo',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19062,10 +36075,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Sampo',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Sampo',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19073,10 +36099,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Sampo',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Sampo',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19084,10 +36123,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sampo',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Sampo',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19095,10 +36147,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sampo',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Sampo',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19106,10 +36171,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Sampo',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Sampo',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19117,10 +36195,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sampo',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Sampo',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19128,10 +36219,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Sampo',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Sampo',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19139,10 +36243,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sampo',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Sampo',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19150,10 +36267,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Sampo',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Sampo',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19161,10 +36291,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sampo',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Sampo',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19172,10 +36315,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Sampo',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Sampo',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19183,10 +36339,23 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Sampo',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Sampo',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19194,12 +36363,25 @@ export const buffs = {
         sheet: 'Sampo',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sampo',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   ScentAloneStaysTrue: {
     cond_dmg_: {
       sheet: 'ScentAloneStaysTrue',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19207,10 +36389,23 @@ export const buffs = {
         sheet: 'ScentAloneStaysTrue',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ScentAloneStaysTrue',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ScentAloneStaysTrue',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19218,16 +36413,41 @@ export const buffs = {
         sheet: 'ScentAloneStaysTrue',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ScentAloneStaysTrue',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ScentAloneStaysTrue',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ScentAloneStaysTrue',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ScentAloneStaysTrue',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19235,6 +36455,7 @@ export const buffs = {
     enemy_defRed_: {
       sheet: 'ScholarLostInErudition',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19242,10 +36463,23 @@ export const buffs = {
         sheet: 'ScholarLostInErudition',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ScholarLostInErudition',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     set2_dmg_: {
       sheet: 'ScholarLostInErudition',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19253,10 +36487,23 @@ export const buffs = {
         sheet: 'ScholarLostInErudition',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ScholarLostInErudition',
+          name: 'set2_dmg_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ScholarLostInErudition',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19264,12 +36511,25 @@ export const buffs = {
         sheet: 'ScholarLostInErudition',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ScholarLostInErudition',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   Seele: {
     amplification_dmg_: {
       sheet: 'Seele',
       name: 'amplification_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19277,10 +36537,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'amplification_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Seele',
+          name: 'amplification_dmg_',
+        },
+      },
     },
     ba2_resPen_: {
       sheet: 'Seele',
       name: 'ba2_resPen_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19289,10 +36562,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'ba2_resPen_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'resPen_',
+          sheet: 'Seele',
+          elementalType: 'quantum',
+          name: 'ba2_resPen_',
+        },
+      },
     },
     e1_crit_: {
       sheet: 'Seele',
       name: 'e1_crit_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19300,10 +36587,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'e1_crit_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Seele',
+          name: 'e1_crit_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Seele',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19311,10 +36611,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Seele',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Seele',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19322,10 +36635,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Seele',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Seele',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19333,10 +36659,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Seele',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Seele',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19344,10 +36683,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Seele',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     skill_spd_: {
       sheet: 'Seele',
       name: 'skill_spd_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19355,10 +36707,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'skill_spd_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd_',
+          sheet: 'Seele',
+          name: 'skill_spd_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Seele',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19366,10 +36731,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Seele',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Seele',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19377,10 +36755,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Seele',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Seele',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19388,10 +36779,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Seele',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Seele',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19399,10 +36803,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Seele',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Seele',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19410,10 +36827,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Seele',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Seele',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19421,10 +36851,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Seele',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Seele',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19432,10 +36875,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Seele',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Seele',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19443,10 +36899,23 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Seele',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Seele',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19454,16 +36923,41 @@ export const buffs = {
         sheet: 'Seele',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Seele',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Seele',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Seele',
         name: 'statBoost9',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Seele',
+          name: 'statBoost9',
+        },
       },
     },
   },
@@ -19471,6 +36965,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Serval',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19478,10 +36973,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Serval',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Serval',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19489,10 +36997,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Serval',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Serval',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19500,10 +37021,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Serval',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Serval',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19511,10 +37045,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Serval',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Serval',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19522,10 +37069,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Serval',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Serval',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19533,10 +37093,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Serval',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Serval',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19544,10 +37117,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Serval',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Serval',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19555,10 +37141,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Serval',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Serval',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19566,10 +37165,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Serval',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Serval',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19577,10 +37189,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Serval',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Serval',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19588,10 +37213,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Serval',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Serval',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19599,10 +37237,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Serval',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Serval',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19610,10 +37261,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Serval',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Serval',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19621,10 +37285,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Serval',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Serval',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19632,10 +37309,23 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Serval',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Serval',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19643,16 +37333,41 @@ export const buffs = {
         sheet: 'Serval',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'Serval',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Serval',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Serval',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Serval',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19660,6 +37375,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Shadowburn',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19667,10 +37383,23 @@ export const buffs = {
         sheet: 'Shadowburn',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Shadowburn',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Shadowburn',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19678,16 +37407,41 @@ export const buffs = {
         sheet: 'Shadowburn',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Shadowburn',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Shadowburn',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Shadowburn',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Shadowburn',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19695,6 +37449,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ShadowedByNight',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19702,10 +37457,23 @@ export const buffs = {
         sheet: 'ShadowedByNight',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ShadowedByNight',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ShadowedByNight',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19713,16 +37481,41 @@ export const buffs = {
         sheet: 'ShadowedByNight',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ShadowedByNight',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ShadowedByNight',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ShadowedByNight',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ShadowedByNight',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19730,6 +37523,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SharedFeeling',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19737,10 +37531,23 @@ export const buffs = {
         sheet: 'SharedFeeling',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SharedFeeling',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SharedFeeling',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19748,16 +37555,41 @@ export const buffs = {
         sheet: 'SharedFeeling',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SharedFeeling',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SharedFeeling',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SharedFeeling',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SharedFeeling',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19765,6 +37597,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ShatteredHome',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19772,10 +37605,23 @@ export const buffs = {
         sheet: 'ShatteredHome',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ShatteredHome',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ShatteredHome',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19783,16 +37629,41 @@ export const buffs = {
         sheet: 'ShatteredHome',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ShatteredHome',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ShatteredHome',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ShatteredHome',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ShatteredHome',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19800,6 +37671,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SheAlreadyShutHerEyes',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19807,10 +37679,23 @@ export const buffs = {
         sheet: 'SheAlreadyShutHerEyes',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SheAlreadyShutHerEyes',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SheAlreadyShutHerEyes',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19818,16 +37703,41 @@ export const buffs = {
         sheet: 'SheAlreadyShutHerEyes',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SheAlreadyShutHerEyes',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SheAlreadyShutHerEyes',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SheAlreadyShutHerEyes',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SheAlreadyShutHerEyes',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -19835,6 +37745,7 @@ export const buffs = {
     set2_crit_dmg_: {
       sheet: 'SigoniaTheUnclaimedDesolation',
       name: 'set2_crit_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19842,12 +37753,25 @@ export const buffs = {
         sheet: 'SigoniaTheUnclaimedDesolation',
         name: 'set2_crit_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'SigoniaTheUnclaimedDesolation',
+          name: 'set2_crit_dmg_',
+        },
+      },
     },
   },
   SilverWolf: {
     e6_dmg_: {
       sheet: 'SilverWolf',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19855,10 +37779,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SilverWolf',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'SilverWolf',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19866,10 +37803,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'SilverWolf',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'SilverWolf',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19877,10 +37827,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'SilverWolf',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'SilverWolf',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19888,10 +37851,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'SilverWolf',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'SilverWolf',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -19899,10 +37875,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'SilverWolf',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SilverWolf',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -19910,10 +37899,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SilverWolf',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'SilverWolf',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19921,10 +37923,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'SilverWolf',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'SilverWolf',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19932,10 +37947,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'SilverWolf',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'SilverWolf',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19943,10 +37971,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'SilverWolf',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'SilverWolf',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19954,10 +37995,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'SilverWolf',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'SilverWolf',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19966,10 +38020,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'SilverWolf',
+          elementalType: 'quantum',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'SilverWolf',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19977,10 +38045,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'SilverWolf',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'SilverWolf',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19988,10 +38069,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'SilverWolf',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'SilverWolf',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -19999,10 +38093,23 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'SilverWolf',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'SilverWolf',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20011,10 +38118,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'SilverWolf',
+          elementalType: 'quantum',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'SilverWolf',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20022,16 +38143,41 @@ export const buffs = {
         sheet: 'SilverWolf',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_',
+          sheet: 'SilverWolf',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SilverWolf',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SilverWolf',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SilverWolf',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20039,6 +38185,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SleepLikeTheDead',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20046,10 +38193,23 @@ export const buffs = {
         sheet: 'SleepLikeTheDead',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SleepLikeTheDead',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SleepLikeTheDead',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20057,16 +38217,41 @@ export const buffs = {
         sheet: 'SleepLikeTheDead',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SleepLikeTheDead',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SleepLikeTheDead',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SleepLikeTheDead',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SleepLikeTheDead',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20074,6 +38259,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SolitaryHealing',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20081,10 +38267,23 @@ export const buffs = {
         sheet: 'SolitaryHealing',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SolitaryHealing',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SolitaryHealing',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20092,16 +38291,41 @@ export const buffs = {
         sheet: 'SolitaryHealing',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SolitaryHealing',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SolitaryHealing',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SolitaryHealing',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SolitaryHealing',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20109,6 +38333,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SomethingIrreplaceable',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20116,10 +38341,23 @@ export const buffs = {
         sheet: 'SomethingIrreplaceable',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SomethingIrreplaceable',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SomethingIrreplaceable',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20127,16 +38365,41 @@ export const buffs = {
         sheet: 'SomethingIrreplaceable',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SomethingIrreplaceable',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SomethingIrreplaceable',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SomethingIrreplaceable',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SomethingIrreplaceable',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20144,6 +38407,7 @@ export const buffs = {
     set2_atk_: {
       sheet: 'SpaceSealingStation',
       name: 'set2_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20151,12 +38415,25 @@ export const buffs = {
         sheet: 'SpaceSealingStation',
         name: 'set2_atk_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'SpaceSealingStation',
+          name: 'set2_atk_',
+        },
+      },
     },
   },
   Sparkle: {
     e6_dmg_: {
       sheet: 'Sparkle',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20164,10 +38441,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sparkle',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Sparkle',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20175,10 +38465,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Sparkle',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Sparkle',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20186,10 +38489,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Sparkle',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Sparkle',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20197,10 +38513,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Sparkle',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Sparkle',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20208,10 +38537,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Sparkle',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Sparkle',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20219,10 +38561,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Sparkle',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Sparkle',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20230,10 +38585,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sparkle',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Sparkle',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20241,10 +38609,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sparkle',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Sparkle',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20252,10 +38633,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sparkle',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Sparkle',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20263,10 +38657,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sparkle',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Sparkle',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20274,10 +38681,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Sparkle',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Sparkle',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20285,10 +38705,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sparkle',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Sparkle',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20296,10 +38729,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sparkle',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Sparkle',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20307,10 +38753,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sparkle',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Sparkle',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20318,10 +38777,23 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Sparkle',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Sparkle',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20329,16 +38801,41 @@ export const buffs = {
         sheet: 'Sparkle',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sparkle',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Sparkle',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sparkle',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sparkle',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20346,6 +38843,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'SubscribeForMore',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20353,10 +38851,23 @@ export const buffs = {
         sheet: 'SubscribeForMore',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SubscribeForMore',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SubscribeForMore',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20364,16 +38875,41 @@ export const buffs = {
         sheet: 'SubscribeForMore',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SubscribeForMore',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SubscribeForMore',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SubscribeForMore',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SubscribeForMore',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20381,6 +38917,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Sunday',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20388,10 +38925,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sunday',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Sunday',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20399,10 +38949,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Sunday',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Sunday',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20410,10 +38973,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Sunday',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Sunday',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20421,10 +38997,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Sunday',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Sunday',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20432,10 +39021,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Sunday',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Sunday',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20443,10 +39045,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Sunday',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Sunday',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20454,10 +39069,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sunday',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Sunday',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20465,10 +39093,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sunday',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Sunday',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20476,10 +39117,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Sunday',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Sunday',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20487,10 +39141,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sunday',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Sunday',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20498,10 +39165,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Sunday',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Sunday',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20509,10 +39189,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sunday',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Sunday',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20520,10 +39213,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Sunday',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Sunday',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20531,10 +39237,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Sunday',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Sunday',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20542,10 +39261,23 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Sunday',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Sunday',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20553,16 +39285,41 @@ export const buffs = {
         sheet: 'Sunday',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Sunday',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Sunday',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sunday',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sunday',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20570,6 +39327,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Sushang',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20577,10 +39335,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sushang',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'Sushang',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20588,10 +39359,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Sushang',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Sushang',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20599,10 +39383,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Sushang',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'Sushang',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20610,10 +39407,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Sushang',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Sushang',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20621,10 +39431,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Sushang',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Sushang',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20632,10 +39455,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Sushang',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Sushang',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20643,10 +39479,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sushang',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Sushang',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20654,10 +39503,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sushang',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Sushang',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20665,10 +39527,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sushang',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Sushang',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20676,10 +39551,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sushang',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Sushang',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20687,10 +39575,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Sushang',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Sushang',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20698,10 +39599,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sushang',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Sushang',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20709,10 +39623,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sushang',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Sushang',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20720,10 +39647,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Sushang',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Sushang',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20731,10 +39671,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Sushang',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Sushang',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20742,10 +39695,23 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Sushang',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Sushang',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20753,12 +39719,25 @@ export const buffs = {
         sheet: 'Sushang',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Sushang',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   SweatNowCryLess: {
     cond_dmg_: {
       sheet: 'SweatNowCryLess',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20766,10 +39745,23 @@ export const buffs = {
         sheet: 'SweatNowCryLess',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SweatNowCryLess',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'SweatNowCryLess',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20777,16 +39769,41 @@ export const buffs = {
         sheet: 'SweatNowCryLess',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'SweatNowCryLess',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'SweatNowCryLess',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SweatNowCryLess',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'SweatNowCryLess',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20794,6 +39811,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Swordplay',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20801,10 +39819,23 @@ export const buffs = {
         sheet: 'Swordplay',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Swordplay',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Swordplay',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20812,16 +39843,41 @@ export const buffs = {
         sheet: 'Swordplay',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Swordplay',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Swordplay',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Swordplay',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Swordplay',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20829,6 +39885,7 @@ export const buffs = {
     set2_brEffect_: {
       sheet: 'TaliaKingdomOfBanditry',
       name: 'set2_brEffect_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20836,12 +39893,25 @@ export const buffs = {
         sheet: 'TaliaKingdomOfBanditry',
         name: 'set2_brEffect_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'TaliaKingdomOfBanditry',
+          name: 'set2_brEffect_',
+        },
+      },
     },
   },
   TextureOfMemories: {
     cond_dmg_: {
       sheet: 'TextureOfMemories',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20849,10 +39919,23 @@ export const buffs = {
         sheet: 'TextureOfMemories',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TextureOfMemories',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TextureOfMemories',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20860,10 +39943,23 @@ export const buffs = {
         sheet: 'TextureOfMemories',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TextureOfMemories',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TextureOfMemories',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20871,12 +39967,25 @@ export const buffs = {
         sheet: 'TextureOfMemories',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TextureOfMemories',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   TheAshblazingGrandDuke: {
     set2_followUp_: {
       sheet: 'TheAshblazingGrandDuke',
       name: 'set2_followUp_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20885,10 +39994,24 @@ export const buffs = {
         damageType1: 'followUp',
         name: 'set2_followUp_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TheAshblazingGrandDuke',
+          damageType1: 'followUp',
+          name: 'set2_followUp_',
+        },
+      },
     },
     set4_atk_: {
       sheet: 'TheAshblazingGrandDuke',
       name: 'set4_atk_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20896,12 +40019,25 @@ export const buffs = {
         sheet: 'TheAshblazingGrandDuke',
         name: 'set4_atk_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TheAshblazingGrandDuke',
+          name: 'set4_atk_',
+        },
+      },
     },
   },
   TheBirthOfTheSelf: {
     cond_dmg_: {
       sheet: 'TheBirthOfTheSelf',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20909,10 +40045,23 @@ export const buffs = {
         sheet: 'TheBirthOfTheSelf',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheBirthOfTheSelf',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TheBirthOfTheSelf',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20920,16 +40069,41 @@ export const buffs = {
         sheet: 'TheBirthOfTheSelf',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TheBirthOfTheSelf',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TheBirthOfTheSelf',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheBirthOfTheSelf',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheBirthOfTheSelf',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -20937,6 +40111,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TheDayTheCosmosFell',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20944,10 +40119,23 @@ export const buffs = {
         sheet: 'TheDayTheCosmosFell',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheDayTheCosmosFell',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TheDayTheCosmosFell',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -20955,10 +40143,23 @@ export const buffs = {
         sheet: 'TheDayTheCosmosFell',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TheDayTheCosmosFell',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TheDayTheCosmosFell',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20966,12 +40167,25 @@ export const buffs = {
         sheet: 'TheDayTheCosmosFell',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheDayTheCosmosFell',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   TheHerta: {
     e6_dmg_: {
       sheet: 'TheHerta',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -20979,10 +40193,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheHerta',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'TheHerta',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -20990,10 +40217,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'TheHerta',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'TheHerta',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21001,10 +40241,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'TheHerta',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'TheHerta',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21012,10 +40265,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'TheHerta',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'TheHerta',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21023,10 +40289,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'TheHerta',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TheHerta',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21034,10 +40313,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TheHerta',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'TheHerta',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21046,10 +40338,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TheHerta',
+          elementalType: 'ice',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'TheHerta',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21058,10 +40364,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TheHerta',
+          elementalType: 'ice',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'TheHerta',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21069,10 +40389,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TheHerta',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'TheHerta',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21081,10 +40414,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TheHerta',
+          elementalType: 'ice',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'TheHerta',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21092,10 +40439,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'TheHerta',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'TheHerta',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21104,10 +40464,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TheHerta',
+          elementalType: 'ice',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'TheHerta',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21115,10 +40489,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TheHerta',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'TheHerta',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21127,10 +40514,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TheHerta',
+          elementalType: 'ice',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'TheHerta',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21138,10 +40539,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'spd',
+          sheet: 'TheHerta',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'TheHerta',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21149,10 +40563,23 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TheHerta',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TheHerta',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21160,12 +40587,25 @@ export const buffs = {
         sheet: 'TheHerta',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheHerta',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   TheMolesWelcomeYou: {
     cond_dmg_: {
       sheet: 'TheMolesWelcomeYou',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21173,10 +40613,23 @@ export const buffs = {
         sheet: 'TheMolesWelcomeYou',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheMolesWelcomeYou',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TheMolesWelcomeYou',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21184,16 +40637,41 @@ export const buffs = {
         sheet: 'TheMolesWelcomeYou',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TheMolesWelcomeYou',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TheMolesWelcomeYou',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheMolesWelcomeYou',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheMolesWelcomeYou',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21201,6 +40679,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TheSeriousnessOfBreakfast',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21208,10 +40687,23 @@ export const buffs = {
         sheet: 'TheSeriousnessOfBreakfast',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheSeriousnessOfBreakfast',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TheSeriousnessOfBreakfast',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21219,16 +40711,41 @@ export const buffs = {
         sheet: 'TheSeriousnessOfBreakfast',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TheSeriousnessOfBreakfast',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TheSeriousnessOfBreakfast',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheSeriousnessOfBreakfast',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheSeriousnessOfBreakfast',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21236,6 +40753,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TheUnreachableSide',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21243,10 +40761,23 @@ export const buffs = {
         sheet: 'TheUnreachableSide',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheUnreachableSide',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TheUnreachableSide',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21254,10 +40785,23 @@ export const buffs = {
         sheet: 'TheUnreachableSide',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TheUnreachableSide',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TheUnreachableSide',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21265,12 +40809,25 @@ export const buffs = {
         sheet: 'TheUnreachableSide',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheUnreachableSide',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   TheWindSoaringValorous: {
     set4_ult_dmg_: {
       sheet: 'TheWindSoaringValorous',
       name: 'set4_ult_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21279,12 +40836,26 @@ export const buffs = {
         damageType1: 'ult',
         name: 'set4_ult_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TheWindSoaringValorous',
+          damageType1: 'ult',
+          name: 'set4_ult_dmg_',
+        },
+      },
     },
   },
   TheWondrousBananAmusementPark: {
     enemy_defRed_: {
       sheet: 'TheWondrousBananAmusementPark',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21292,10 +40863,23 @@ export const buffs = {
         sheet: 'TheWondrousBananAmusementPark',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TheWondrousBananAmusementPark',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     set2_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
       name: 'set2_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21303,10 +40887,23 @@ export const buffs = {
         sheet: 'TheWondrousBananAmusementPark',
         name: 'set2_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheWondrousBananAmusementPark',
+          name: 'set2_dmg_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21314,12 +40911,25 @@ export const buffs = {
         sheet: 'TheWondrousBananAmusementPark',
         name: 'team_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TheWondrousBananAmusementPark',
+          name: 'team_dmg_',
+        },
+      },
     },
   },
   ThisIsMe: {
     cond_dmg_: {
       sheet: 'ThisIsMe',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21327,10 +40937,23 @@ export const buffs = {
         sheet: 'ThisIsMe',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ThisIsMe',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ThisIsMe',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21338,16 +40961,41 @@ export const buffs = {
         sheet: 'ThisIsMe',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ThisIsMe',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ThisIsMe',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ThisIsMe',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ThisIsMe',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21355,6 +41003,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'ThoseManySprings',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21362,10 +41011,23 @@ export const buffs = {
         sheet: 'ThoseManySprings',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ThoseManySprings',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'ThoseManySprings',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21373,16 +41035,41 @@ export const buffs = {
         sheet: 'ThoseManySprings',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'ThoseManySprings',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'ThoseManySprings',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ThoseManySprings',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'ThoseManySprings',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21390,6 +41077,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TimeWaitsForNoOne',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21397,10 +41085,23 @@ export const buffs = {
         sheet: 'TimeWaitsForNoOne',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TimeWaitsForNoOne',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TimeWaitsForNoOne',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21408,16 +41109,41 @@ export const buffs = {
         sheet: 'TimeWaitsForNoOne',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TimeWaitsForNoOne',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TimeWaitsForNoOne',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TimeWaitsForNoOne',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TimeWaitsForNoOne',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21425,6 +41151,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TimeWovenIntoGold',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21432,10 +41159,23 @@ export const buffs = {
         sheet: 'TimeWovenIntoGold',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TimeWovenIntoGold',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TimeWovenIntoGold',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21443,16 +41183,41 @@ export const buffs = {
         sheet: 'TimeWovenIntoGold',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TimeWovenIntoGold',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TimeWovenIntoGold',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TimeWovenIntoGold',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TimeWovenIntoGold',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21460,6 +41225,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Tingyun',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21467,10 +41233,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Tingyun',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Tingyun',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21478,10 +41257,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Tingyun',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Tingyun',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21489,10 +41281,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Tingyun',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Tingyun',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21500,10 +41305,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Tingyun',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Tingyun',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21511,10 +41329,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Tingyun',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Tingyun',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21522,10 +41353,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Tingyun',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Tingyun',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21533,10 +41377,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Tingyun',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Tingyun',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21544,10 +41401,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Tingyun',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Tingyun',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21555,10 +41425,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Tingyun',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Tingyun',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21566,10 +41449,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Tingyun',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Tingyun',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21578,10 +41474,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Tingyun',
+          elementalType: 'lightning',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Tingyun',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21589,10 +41499,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Tingyun',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Tingyun',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21600,10 +41523,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Tingyun',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Tingyun',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21611,10 +41547,23 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Tingyun',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Tingyun',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21623,10 +41572,24 @@ export const buffs = {
         elementalType: 'lightning',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Tingyun',
+          elementalType: 'lightning',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Tingyun',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21634,16 +41597,41 @@ export const buffs = {
         sheet: 'Tingyun',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'Tingyun',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Tingyun',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Tingyun',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Tingyun',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21651,6 +41639,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TodayIsAnotherPeacefulDay',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21658,10 +41647,23 @@ export const buffs = {
         sheet: 'TodayIsAnotherPeacefulDay',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TodayIsAnotherPeacefulDay',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TodayIsAnotherPeacefulDay',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21669,16 +41671,41 @@ export const buffs = {
         sheet: 'TodayIsAnotherPeacefulDay',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TodayIsAnotherPeacefulDay',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TodayIsAnotherPeacefulDay',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TodayIsAnotherPeacefulDay',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TodayIsAnotherPeacefulDay',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21686,6 +41713,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'TopazAndNumby',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21693,10 +41721,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TopazAndNumby',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'TopazAndNumby',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21704,10 +41745,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'TopazAndNumby',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'TopazAndNumby',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21715,10 +41769,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'TopazAndNumby',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'TopazAndNumby',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21726,10 +41793,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'TopazAndNumby',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'TopazAndNumby',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21737,10 +41817,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'TopazAndNumby',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TopazAndNumby',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21748,10 +41841,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TopazAndNumby',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'TopazAndNumby',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21760,10 +41866,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TopazAndNumby',
+          elementalType: 'fire',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'TopazAndNumby',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21772,10 +41892,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TopazAndNumby',
+          elementalType: 'fire',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'TopazAndNumby',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21783,10 +41917,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'TopazAndNumby',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'TopazAndNumby',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21795,10 +41942,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TopazAndNumby',
+          elementalType: 'fire',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'TopazAndNumby',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21806,10 +41967,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TopazAndNumby',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'TopazAndNumby',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21818,10 +41992,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TopazAndNumby',
+          elementalType: 'fire',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'TopazAndNumby',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21829,10 +42017,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'TopazAndNumby',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'TopazAndNumby',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21841,10 +42042,24 @@ export const buffs = {
         elementalType: 'fire',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TopazAndNumby',
+          elementalType: 'fire',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'TopazAndNumby',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21852,10 +42067,23 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TopazAndNumby',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'TopazAndNumby',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21863,16 +42091,41 @@ export const buffs = {
         sheet: 'TopazAndNumby',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'TopazAndNumby',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TopazAndNumby',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TopazAndNumby',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TopazAndNumby',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -21880,6 +42133,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'TrailblazerFire',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21887,10 +42141,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerFire',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'TrailblazerFire',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21898,10 +42165,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'TrailblazerFire',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'TrailblazerFire',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21909,10 +42189,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'TrailblazerFire',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'TrailblazerFire',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21920,10 +42213,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'TrailblazerFire',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'TrailblazerFire',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -21931,10 +42237,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'TrailblazerFire',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TrailblazerFire',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -21942,10 +42261,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TrailblazerFire',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'TrailblazerFire',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21953,10 +42285,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'TrailblazerFire',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21964,10 +42309,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'TrailblazerFire',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21975,10 +42333,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'TrailblazerFire',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21986,10 +42357,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'TrailblazerFire',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -21997,10 +42381,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'TrailblazerFire',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22008,10 +42405,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'TrailblazerFire',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22019,10 +42429,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'TrailblazerFire',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22030,10 +42453,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'TrailblazerFire',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22041,10 +42477,23 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'TrailblazerFire',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22052,16 +42501,41 @@ export const buffs = {
         sheet: 'TrailblazerFire',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerFire',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TrailblazerFire',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerFire',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerFire',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22069,6 +42543,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'TrailblazerIce',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22076,10 +42551,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerIce',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'TrailblazerIce',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22087,10 +42575,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'TrailblazerIce',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'TrailblazerIce',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22098,10 +42599,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'TrailblazerIce',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'TrailblazerIce',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22109,10 +42623,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'TrailblazerIce',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_servantSkill: {
       sheet: 'TrailblazerIce',
       name: 'eidolon5_servantSkill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22120,10 +42647,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'eidolon5_servantSkill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'servantSkill',
+          sheet: 'TrailblazerIce',
+          name: 'eidolon5_servantSkill',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'TrailblazerIce',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22131,10 +42671,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'TrailblazerIce',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TrailblazerIce',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22142,10 +42695,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TrailblazerIce',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'TrailblazerIce',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22153,10 +42719,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'TrailblazerIce',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22164,10 +42743,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'TrailblazerIce',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22175,10 +42767,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'TrailblazerIce',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22186,10 +42791,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'TrailblazerIce',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22197,10 +42815,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'TrailblazerIce',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22208,10 +42839,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'TrailblazerIce',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22219,10 +42863,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'TrailblazerIce',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22230,10 +42887,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'TrailblazerIce',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22241,10 +42911,23 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'TrailblazerIce',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22252,16 +42935,41 @@ export const buffs = {
         sheet: 'TrailblazerIce',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TrailblazerIce',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TrailblazerIce',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerIce',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerIce',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22269,6 +42977,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'TrailblazerImaginary',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22276,10 +42985,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerImaginary',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'TrailblazerImaginary',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22287,10 +43009,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'TrailblazerImaginary',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'TrailblazerImaginary',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22298,10 +43033,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'TrailblazerImaginary',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'TrailblazerImaginary',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22309,10 +43057,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'TrailblazerImaginary',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'TrailblazerImaginary',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22320,10 +43081,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'TrailblazerImaginary',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TrailblazerImaginary',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22331,10 +43105,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TrailblazerImaginary',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22342,10 +43129,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'TrailblazerImaginary',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22353,10 +43153,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'TrailblazerImaginary',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22365,10 +43178,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TrailblazerImaginary',
+          elementalType: 'imaginary',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22376,10 +43203,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'TrailblazerImaginary',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22387,10 +43227,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'TrailblazerImaginary',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22398,10 +43251,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'TrailblazerImaginary',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22410,10 +43276,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TrailblazerImaginary',
+          elementalType: 'imaginary',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22421,10 +43301,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'TrailblazerImaginary',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22432,10 +43325,23 @@ export const buffs = {
         sheet: 'TrailblazerImaginary',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'TrailblazerImaginary',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'TrailblazerImaginary',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22444,16 +43350,42 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'TrailblazerImaginary',
+          elementalType: 'imaginary',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TrailblazerImaginary',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerImaginary',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerImaginary',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22461,6 +43393,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'TrailblazerPhysical',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22468,10 +43401,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerPhysical',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'TrailblazerPhysical',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22479,10 +43425,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'TrailblazerPhysical',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon3_talent: {
       sheet: 'TrailblazerPhysical',
       name: 'eidolon3_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22490,10 +43449,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'eidolon3_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'TrailblazerPhysical',
+          name: 'eidolon3_talent',
+        },
+      },
     },
     eidolon5_basic: {
       sheet: 'TrailblazerPhysical',
       name: 'eidolon5_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22501,10 +43473,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'eidolon5_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'TrailblazerPhysical',
+          name: 'eidolon5_basic',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'TrailblazerPhysical',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22512,10 +43497,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'TrailblazerPhysical',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TrailblazerPhysical',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22523,10 +43521,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TrailblazerPhysical',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22534,10 +43545,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22545,10 +43569,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22556,10 +43593,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22567,10 +43617,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22578,10 +43641,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22589,10 +43665,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22600,10 +43689,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22611,10 +43713,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22622,10 +43737,23 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'def_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'TrailblazerPhysical',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22633,16 +43761,41 @@ export const buffs = {
         sheet: 'TrailblazerPhysical',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'TrailblazerPhysical',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TrailblazerPhysical',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerPhysical',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrailblazerPhysical',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22650,6 +43803,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'TrendOfTheUniversalMarket',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22657,10 +43811,23 @@ export const buffs = {
         sheet: 'TrendOfTheUniversalMarket',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrendOfTheUniversalMarket',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'TrendOfTheUniversalMarket',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22668,16 +43835,41 @@ export const buffs = {
         sheet: 'TrendOfTheUniversalMarket',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'TrendOfTheUniversalMarket',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'TrendOfTheUniversalMarket',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrendOfTheUniversalMarket',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'TrendOfTheUniversalMarket',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22685,6 +43877,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Tribbie',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22692,10 +43885,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Tribbie',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Tribbie',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22703,10 +43909,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Tribbie',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Tribbie',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22714,10 +43933,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Tribbie',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Tribbie',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22725,10 +43957,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Tribbie',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Tribbie',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -22736,10 +43981,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Tribbie',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Tribbie',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22747,10 +44005,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Tribbie',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Tribbie',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22758,10 +44029,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Tribbie',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Tribbie',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22769,10 +44053,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Tribbie',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Tribbie',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22780,10 +44077,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Tribbie',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Tribbie',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22791,10 +44101,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Tribbie',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Tribbie',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22802,10 +44125,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Tribbie',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Tribbie',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22813,10 +44149,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Tribbie',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Tribbie',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22824,10 +44173,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Tribbie',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Tribbie',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22835,10 +44197,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'Tribbie',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Tribbie',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22846,10 +44221,23 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Tribbie',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Tribbie',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22857,16 +44245,41 @@ export const buffs = {
         sheet: 'Tribbie',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Tribbie',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Tribbie',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Tribbie',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Tribbie',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22874,6 +44287,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'UnderTheBlueSky',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22881,10 +44295,23 @@ export const buffs = {
         sheet: 'UnderTheBlueSky',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'UnderTheBlueSky',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'UnderTheBlueSky',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22892,16 +44319,41 @@ export const buffs = {
         sheet: 'UnderTheBlueSky',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'UnderTheBlueSky',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'UnderTheBlueSky',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'UnderTheBlueSky',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'UnderTheBlueSky',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22909,6 +44361,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'VictoryInABlink',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22916,10 +44369,23 @@ export const buffs = {
         sheet: 'VictoryInABlink',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'VictoryInABlink',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'VictoryInABlink',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22927,16 +44393,41 @@ export const buffs = {
         sheet: 'VictoryInABlink',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'VictoryInABlink',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'VictoryInABlink',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'VictoryInABlink',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'VictoryInABlink',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22944,6 +44435,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'Void',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22951,10 +44443,23 @@ export const buffs = {
         sheet: 'Void',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Void',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Void',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22962,16 +44467,41 @@ export const buffs = {
         sheet: 'Void',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Void',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Void',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Void',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Void',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -22979,6 +44509,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WarmthShortensColdNights',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -22986,10 +44517,23 @@ export const buffs = {
         sheet: 'WarmthShortensColdNights',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WarmthShortensColdNights',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'WarmthShortensColdNights',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -22997,16 +44541,41 @@ export const buffs = {
         sheet: 'WarmthShortensColdNights',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'WarmthShortensColdNights',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'WarmthShortensColdNights',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WarmthShortensColdNights',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WarmthShortensColdNights',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23014,6 +44583,7 @@ export const buffs = {
     set4_crit_: {
       sheet: 'WastelanderOfBanditryDesert',
       name: 'set4_crit_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23021,10 +44591,23 @@ export const buffs = {
         sheet: 'WastelanderOfBanditryDesert',
         name: 'set4_crit_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'WastelanderOfBanditryDesert',
+          name: 'set4_crit_',
+        },
+      },
     },
     set4_crit_dmg_: {
       sheet: 'WastelanderOfBanditryDesert',
       name: 'set4_crit_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23032,12 +44615,25 @@ export const buffs = {
         sheet: 'WastelanderOfBanditryDesert',
         name: 'set4_crit_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_dmg_',
+          sheet: 'WastelanderOfBanditryDesert',
+          name: 'set4_crit_dmg_',
+        },
+      },
     },
   },
   WatchmakerMasterOfDreamMachinations: {
     set4_brEffect_: {
       sheet: 'WatchmakerMasterOfDreamMachinations',
       name: 'set4_brEffect_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23045,12 +44641,25 @@ export const buffs = {
         sheet: 'WatchmakerMasterOfDreamMachinations',
         name: 'set4_brEffect_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'WatchmakerMasterOfDreamMachinations',
+          name: 'set4_brEffect_',
+        },
+      },
     },
   },
   WeAreWildfire: {
     cond_dmg_: {
       sheet: 'WeAreWildfire',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23058,10 +44667,23 @@ export const buffs = {
         sheet: 'WeAreWildfire',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WeAreWildfire',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'WeAreWildfire',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23069,16 +44691,41 @@ export const buffs = {
         sheet: 'WeAreWildfire',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'WeAreWildfire',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'WeAreWildfire',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WeAreWildfire',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WeAreWildfire',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23086,6 +44733,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WeWillMeetAgain',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23093,10 +44741,23 @@ export const buffs = {
         sheet: 'WeWillMeetAgain',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WeWillMeetAgain',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'WeWillMeetAgain',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23104,16 +44765,41 @@ export const buffs = {
         sheet: 'WeWillMeetAgain',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'WeWillMeetAgain',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'WeWillMeetAgain',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WeWillMeetAgain',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WeWillMeetAgain',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23121,6 +44807,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Welt',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23128,10 +44815,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Welt',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Welt',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23139,10 +44839,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Welt',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Welt',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23150,10 +44863,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Welt',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Welt',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23161,10 +44887,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Welt',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Welt',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23172,10 +44911,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Welt',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Welt',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23183,10 +44935,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Welt',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Welt',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23194,10 +44959,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Welt',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Welt',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23205,10 +44983,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Welt',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Welt',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23217,10 +45008,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Welt',
+          elementalType: 'imaginary',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Welt',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23228,10 +45033,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Welt',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Welt',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23239,10 +45057,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Welt',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Welt',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23250,10 +45081,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Welt',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Welt',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23262,10 +45106,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Welt',
+          elementalType: 'imaginary',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Welt',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23273,10 +45131,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Welt',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Welt',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23284,10 +45155,23 @@ export const buffs = {
         sheet: 'Welt',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'eff_res_',
+          sheet: 'Welt',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Welt',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23296,16 +45180,42 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Welt',
+          elementalType: 'imaginary',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Welt',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Welt',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Welt',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23313,6 +45223,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WhatIsReal',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23320,10 +45231,23 @@ export const buffs = {
         sheet: 'WhatIsReal',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WhatIsReal',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'WhatIsReal',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23331,16 +45255,41 @@ export const buffs = {
         sheet: 'WhatIsReal',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'WhatIsReal',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'WhatIsReal',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WhatIsReal',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WhatIsReal',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23348,6 +45297,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WhereaboutsShouldDreamsRest',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23355,10 +45305,23 @@ export const buffs = {
         sheet: 'WhereaboutsShouldDreamsRest',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WhereaboutsShouldDreamsRest',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'WhereaboutsShouldDreamsRest',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23366,16 +45329,41 @@ export const buffs = {
         sheet: 'WhereaboutsShouldDreamsRest',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'WhereaboutsShouldDreamsRest',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'WhereaboutsShouldDreamsRest',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WhereaboutsShouldDreamsRest',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WhereaboutsShouldDreamsRest',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23383,6 +45371,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WoofWalkTime',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23390,10 +45379,23 @@ export const buffs = {
         sheet: 'WoofWalkTime',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WoofWalkTime',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'WoofWalkTime',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23401,16 +45403,41 @@ export const buffs = {
         sheet: 'WoofWalkTime',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'WoofWalkTime',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'WoofWalkTime',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WoofWalkTime',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WoofWalkTime',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23418,6 +45445,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'WorrisomeBlissful',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23425,10 +45453,23 @@ export const buffs = {
         sheet: 'WorrisomeBlissful',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WorrisomeBlissful',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'WorrisomeBlissful',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23436,16 +45477,41 @@ export const buffs = {
         sheet: 'WorrisomeBlissful',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'WorrisomeBlissful',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'WorrisomeBlissful',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WorrisomeBlissful',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'WorrisomeBlissful',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23453,6 +45519,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Xueyi',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23460,10 +45527,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Xueyi',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Xueyi',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23471,10 +45551,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Xueyi',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Xueyi',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23482,10 +45575,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Xueyi',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Xueyi',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23493,10 +45599,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Xueyi',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Xueyi',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23504,10 +45623,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Xueyi',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Xueyi',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23515,10 +45647,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Xueyi',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Xueyi',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23526,10 +45671,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Xueyi',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Xueyi',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23537,10 +45695,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Xueyi',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Xueyi',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23548,10 +45719,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Xueyi',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Xueyi',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23559,10 +45743,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Xueyi',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Xueyi',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23571,10 +45768,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Xueyi',
+          elementalType: 'quantum',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Xueyi',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23582,10 +45793,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Xueyi',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Xueyi',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23593,10 +45817,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Xueyi',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Xueyi',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23604,10 +45841,23 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'brEffect_',
+          sheet: 'Xueyi',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Xueyi',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23616,10 +45866,24 @@ export const buffs = {
         elementalType: 'quantum',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Xueyi',
+          elementalType: 'quantum',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Xueyi',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23627,16 +45891,41 @@ export const buffs = {
         sheet: 'Xueyi',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Xueyi',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Xueyi',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Xueyi',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Xueyi',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23644,6 +45933,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Yanqing',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23651,10 +45941,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Yanqing',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Yanqing',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23662,10 +45965,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Yanqing',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Yanqing',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23673,10 +45989,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Yanqing',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Yanqing',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23684,10 +46013,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Yanqing',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Yanqing',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23695,10 +46037,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Yanqing',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Yanqing',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23706,10 +46061,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Yanqing',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Yanqing',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23717,10 +46085,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yanqing',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Yanqing',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23728,10 +46109,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yanqing',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Yanqing',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23740,10 +46134,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yanqing',
+          elementalType: 'ice',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Yanqing',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23751,10 +46159,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yanqing',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Yanqing',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23762,10 +46183,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yanqing',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Yanqing',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23773,10 +46207,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yanqing',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Yanqing',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23785,10 +46232,24 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yanqing',
+          elementalType: 'ice',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Yanqing',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23796,10 +46257,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yanqing',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Yanqing',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23807,10 +46281,23 @@ export const buffs = {
         sheet: 'Yanqing',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yanqing',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Yanqing',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23819,16 +46306,42 @@ export const buffs = {
         elementalType: 'ice',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yanqing',
+          elementalType: 'ice',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Yanqing',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yanqing',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Yanqing',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23836,6 +46349,7 @@ export const buffs = {
     cond_dmg_: {
       sheet: 'YetHopeIsPriceless',
       name: 'cond_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23843,10 +46357,23 @@ export const buffs = {
         sheet: 'YetHopeIsPriceless',
         name: 'cond_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'YetHopeIsPriceless',
+          name: 'cond_dmg_',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'YetHopeIsPriceless',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23854,16 +46381,41 @@ export const buffs = {
         sheet: 'YetHopeIsPriceless',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'YetHopeIsPriceless',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'YetHopeIsPriceless',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'YetHopeIsPriceless',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'YetHopeIsPriceless',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -23871,6 +46423,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Yukong',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23878,10 +46431,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Yukong',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Yukong',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23889,10 +46455,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Yukong',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_skill: {
       sheet: 'Yukong',
       name: 'eidolon3_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23900,10 +46479,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'eidolon3_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Yukong',
+          name: 'eidolon3_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Yukong',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23911,10 +46503,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Yukong',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     eidolon5_ult: {
       sheet: 'Yukong',
       name: 'eidolon5_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -23922,10 +46527,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'eidolon5_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Yukong',
+          name: 'eidolon5_ult',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Yukong',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -23933,10 +46551,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Yukong',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Yukong',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23945,10 +46576,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yukong',
+          elementalType: 'imaginary',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Yukong',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23957,10 +46602,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yukong',
+          elementalType: 'imaginary',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Yukong',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23968,10 +46627,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yukong',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Yukong',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23980,10 +46652,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yukong',
+          elementalType: 'imaginary',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Yukong',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -23991,10 +46677,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yukong',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Yukong',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24003,10 +46702,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yukong',
+          elementalType: 'imaginary',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Yukong',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24014,10 +46727,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yukong',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Yukong',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24026,10 +46752,24 @@ export const buffs = {
         elementalType: 'imaginary',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'dmg_',
+          sheet: 'Yukong',
+          elementalType: 'imaginary',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Yukong',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24037,10 +46777,23 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yukong',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Yukong',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24048,16 +46801,41 @@ export const buffs = {
         sheet: 'Yukong',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yukong',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Yukong',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yukong',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Yukong',
+          name: 'team_dmg_',
+        },
       },
     },
   },
@@ -24065,6 +46843,7 @@ export const buffs = {
     e6_dmg_: {
       sheet: 'Yunli',
       name: 'e6_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24072,10 +46851,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'e6_dmg_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Yunli',
+          name: 'e6_dmg_',
+        },
+      },
     },
     eidolon3_basic: {
       sheet: 'Yunli',
       name: 'eidolon3_basic',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -24083,10 +46875,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'eidolon3_basic',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'basic',
+          sheet: 'Yunli',
+          name: 'eidolon3_basic',
+        },
+      },
     },
     eidolon3_ult: {
       sheet: 'Yunli',
       name: 'eidolon3_ult',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -24094,10 +46899,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'eidolon3_ult',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'ult',
+          sheet: 'Yunli',
+          name: 'eidolon3_ult',
+        },
+      },
     },
     eidolon5_skill: {
       sheet: 'Yunli',
       name: 'eidolon5_skill',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -24105,10 +46923,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'eidolon5_skill',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'skill',
+          sheet: 'Yunli',
+          name: 'eidolon5_skill',
+        },
+      },
     },
     eidolon5_talent: {
       sheet: 'Yunli',
       name: 'eidolon5_talent',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'char',
@@ -24116,10 +46947,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'eidolon5_talent',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'char',
+          q: 'talent',
+          sheet: 'Yunli',
+          name: 'eidolon5_talent',
+        },
+      },
     },
     enemy_defRed_: {
       sheet: 'Yunli',
       name: 'enemy_defRed_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'common',
@@ -24127,10 +46971,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'enemy_defRed_',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'common',
+          q: 'defRed_',
+          sheet: 'Yunli',
+          name: 'enemy_defRed_',
+        },
+      },
     },
     statBoost1: {
       sheet: 'Yunli',
       name: 'statBoost1',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24138,10 +46995,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost1',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yunli',
+          name: 'statBoost1',
+        },
+      },
     },
     statBoost10: {
       sheet: 'Yunli',
       name: 'statBoost10',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24149,10 +47019,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost10',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yunli',
+          name: 'statBoost10',
+        },
+      },
     },
     statBoost2: {
       sheet: 'Yunli',
       name: 'statBoost2',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24160,10 +47043,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost2',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yunli',
+          name: 'statBoost2',
+        },
+      },
     },
     statBoost3: {
       sheet: 'Yunli',
       name: 'statBoost3',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24171,10 +47067,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost3',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yunli',
+          name: 'statBoost3',
+        },
+      },
     },
     statBoost4: {
       sheet: 'Yunli',
       name: 'statBoost4',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24182,10 +47091,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost4',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Yunli',
+          name: 'statBoost4',
+        },
+      },
     },
     statBoost5: {
       sheet: 'Yunli',
       name: 'statBoost5',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24193,10 +47115,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost5',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yunli',
+          name: 'statBoost5',
+        },
+      },
     },
     statBoost6: {
       sheet: 'Yunli',
       name: 'statBoost6',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24204,10 +47139,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost6',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yunli',
+          name: 'statBoost6',
+        },
+      },
     },
     statBoost7: {
       sheet: 'Yunli',
       name: 'statBoost7',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24215,10 +47163,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost7',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'atk_',
+          sheet: 'Yunli',
+          name: 'statBoost7',
+        },
+      },
     },
     statBoost8: {
       sheet: 'Yunli',
       name: 'statBoost8',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24226,10 +47187,23 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost8',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'crit_',
+          sheet: 'Yunli',
+          name: 'statBoost8',
+        },
+      },
     },
     statBoost9: {
       sheet: 'Yunli',
       name: 'statBoost9',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
@@ -24237,16 +47211,41 @@ export const buffs = {
         sheet: 'Yunli',
         name: 'statBoost9',
       },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'hp_',
+          sheet: 'Yunli',
+          name: 'statBoost9',
+        },
+      },
     },
     team_dmg_: {
       sheet: 'Yunli',
       name: 'team_dmg_',
+      accu: 'unique',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yunli',
         name: 'team_dmg_',
+      },
+      read: {
+        op: 'read',
+        x: [],
+        br: [],
+        tag: {
+          et: 'display',
+          qt: 'premod',
+          q: 'common_dmg_',
+          sheet: 'Yunli',
+          name: 'team_dmg_',
+        },
       },
     },
   },
