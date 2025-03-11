@@ -6,11 +6,9 @@ import { ZCard } from '../Components'
 
 export function EmptyCompactCard({
   placeholder,
-  slotKey,
   onClick,
 }: {
   placeholder: string
-  slotKey?: string
   onClick?: () => void
 }) {
   const wrapperFunc = useCallback(
@@ -46,9 +44,10 @@ export function EmptyCompactCard({
           bgt="dark"
           sx={{
             display: 'flex',
-            py: slotKey ? '86px' : '72px',
-            px: slotKey ? '0' : '16px',
+            alignItems: 'center',
+            px: '16px',
             justifyContent: 'center',
+            height: '212px',
           }}
         >
           <Typography
@@ -60,7 +59,7 @@ export function EmptyCompactCard({
               textAlign: 'center',
             })}
           >
-            {placeholder} {slotKey}
+            {placeholder}
           </Typography>
         </ZCard>
       </ConditionalWrapper>
