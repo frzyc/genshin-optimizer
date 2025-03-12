@@ -30,7 +30,7 @@ const sheet = registerRelic(
     ownBuff.premod.crit_dmg_.add(
       cmpGE(relicCount, 4, memospriteAttacks.ifOn(dm[4].crit_dmg_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
   // TODO: add memosprite buff
 )

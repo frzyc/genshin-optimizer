@@ -35,7 +35,7 @@ const sheet = registerRelic(
     ownBuff.premod.common_dmg_.add(
       cmpGE(relicCount, 2, affectedByDebuff.ifOn(dm[2].dmg_))
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   ),
   registerBuff(
     'set4_crit_dmg_',
@@ -53,14 +53,14 @@ const sheet = registerRelic(
         )
       )
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   ),
   registerBuff(
     'set4_crit_',
     ownBuff.premod.crit_.add(
       cmpGE(relicCount, 4, wearerDebuff.ifOn(dm[4].crit_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

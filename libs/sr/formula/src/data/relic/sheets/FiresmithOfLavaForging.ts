@@ -24,14 +24,14 @@ const sheet = registerRelic(
       'skill',
       cmpGE(relicCount, 4, dm[4].skill_dmg)
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   ),
   registerBuff(
     'set4_fire_dmg_',
     ownBuff.premod.dmg_.fire.add(
       cmpGE(relicCount, 4, ultUsed.ifOn(dm[4].fire_dmg_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

@@ -136,6 +136,6 @@ export default register(
     { ele: 'hydro' }
   ),
   customDmg(`c6`, info.ele, 'burst', prod(dm.constellation6.dmg, final.hp), {
-    cond: cmpGE(own.char.constellation, 6, 'unique', ''),
+    cond: cmpGE(own.char.constellation, 6, 'infer', ''),
   })
 )
