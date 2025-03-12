@@ -9,7 +9,7 @@ import {
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import type { LightConeDatum } from '@genshin-optimizer/sr/stats'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
-import { getStatFromStatKey, own, ownBuff } from '../util'
+import { getStatFromStatKey, own, ownBuff, registerBuff } from '../util'
 
 export function registerLightCone(
   sheet: LightConeKey,
@@ -43,18 +43,22 @@ export function entriesForLightCone(
       )
     }),
     // Passive stats
-    ...Object.entries(dataGen.superimpose.passiveStats).map(
+    ...Object.entries(dataGen.superimpose.passiveStats).flatMap(
       ([statKey, values]) => {
         const stat =
           statKey === 'baseSpd'
             ? ownBuff.base.spd
             : getStatFromStatKey(ownBuff.premod, statKey)
-        return stat.add(
-          cmpGE(
-            lcCount,
-            1,
-            cmpEq(dataGen.path, own.char.path, subscript(superimpose, values))
-          )
+        return registerBuff(
+          `passive_${statKey}`,
+          stat.add(
+            cmpGE(
+              lcCount,
+              1,
+              cmpEq(dataGen.path, own.char.path, subscript(superimpose, values))
+            )
+          ),
+          cmpGE(lcCount, 1, 'unique', '')
         )
       }
     ),
