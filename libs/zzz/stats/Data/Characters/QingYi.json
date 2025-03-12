@@ -39,7 +39,7 @@
       "Description": [
         {
           "Name": "Basic Attack: Penultimate",
-          "Desc": "Press <IconMap:Icon_Normal> to activate:\nLaunch up to four strikes forward, dealing <color=#F0D12B>Physical DMG</color> and <color=#2EB6FF>Electric DMG</color>.\nDuring the 3rd-hit, repeatedly press <IconMap:Icon_Normal> to continue the attack, continuously striking the enemy. Using <color=#FFFFFF>Dodge</color> during this period will not interrupt Qingyi's <color=#FFFFFF>Basic Attack</color> combo count.\nDuring the 3rd hit, stop pressing <IconMap:Icon_Normal> to interrupt the continuous attack, transitioning automatically to the 4th hit. If the continuous attack lasts for a certain time, the 4th hit will be enhanced.\nAnti-Interrupt Level is increased and DMG received is reduced by 40% during the 3rd and 4th hit."
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nLaunch up to four strikes forward, dealing <color=#F0D12B>Physical DMG</color> and <color=#2EB6FF>Electric DMG</color>.\nDuring the 3rd hit, repeatedly press <IconMap:Icon_Normal> to continue the attack, continuously striking the enemy. Using <color=#FFFFFF>Dodge</color> during this period will not interrupt Qingyi's <color=#FFFFFF>Basic Attack</color> combo count.\nDuring the 3rd hit, stop pressing <IconMap:Icon_Normal> to interrupt the continuous attack, transitioning automatically to the 4th hit. If the continuous attack lasts for a certain time, the 4th hit will be enhanced.\nAnti-Interrupt Level is increased and DMG received is reduced by 40% during the 3rd and 4th hit."
         },
         {
           "Name": "Basic Attack: Enchanted Blossoms",
@@ -616,7 +616,7 @@
         },
         {
           "Name": "EX Special Attack: Moonlit Begonia",
-          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nQuickly swings upward and leaps into the air, turning around to launch a series of attacks, then follows up with a powerful downward smash, dealing massive <color=#2EB6FF>Electric DMG</color>.\nHold <IconMap:Icon_SpecialReady> to consume additional energy to increase the number of hits of the series of attacks.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd-hit of a <color=#FFFFFF>Basic Attack</color>."
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nQuickly swings upward and leaps into the air, turning around to launch a series of attacks, then follows up with a powerful downward smash, dealing massive <color=#2EB6FF>Electric DMG</color>.\nHold <IconMap:Icon_SpecialReady> to consume additional energy to increase the number of hits of the series of attacks.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd hit of a <color=#FFFFFF>Basic Attack</color>."
         },
         {
           "Name": "Special Attack: Sunlit Glory",

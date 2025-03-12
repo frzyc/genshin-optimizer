@@ -95,6 +95,18 @@
       "cd_s": "ItemSuitAstralVoice_S.png",
       "cd_a": "ItemSuitAstralVoice_A.png",
       "cd_b": "ItemSuitAstralVoice_B.png"
+    },
+    "ShadowHarmony": {
+      "circle": "SuitShadow.png",
+      "cd_s": "ItemSuitShadow_S.png",
+      "cd_a": "ItemSuitShadow_A.png",
+      "cd_b": "ItemSuitShadow_B.png"
+    },
+    "PhaethonsMelody": {
+      "circle": "SuitSavior.png",
+      "cd_s": "ItemSuitSavior_S.png",
+      "cd_a": "ItemSuitSavior_A.png",
+      "cd_b": "ItemSuitSavior_B.png"
     }
   },
   "chars": {
@@ -293,6 +305,27 @@
       "trap": "IconRoleGeneral37.png",
       "select": "IconRoleSelect37.png",
       "interknot": "IconInterKnotRole0037.png"
+    },
+    "Pulchra": {
+      "full": "IconRole38.png",
+      "circle": "IconRoleCircle38.png",
+      "trap": "IconRoleGeneral38.png",
+      "select": "IconRoleSelect38.png",
+      "interknot": "IconInterKnotRole0038.png"
+    },
+    "Trigger": {
+      "full": "IconRole39.png",
+      "circle": "IconRoleCircle39.png",
+      "trap": "IconRoleGeneral39.png",
+      "select": "IconRoleSelect39.png",
+      "interknot": "IconInterKnotRole0039.png"
+    },
+    "Soldier0Anby": {
+      "full": "IconRole40.png",
+      "circle": "IconRoleCircle40.png",
+      "trap": "IconRoleGeneral40.png",
+      "select": "IconRoleSelect40.png",
+      "interknot": "IconInterKnotRole0040.png"
     }
   },
   "wengines": {
@@ -444,6 +477,10 @@
       "icon": "Weapon_A_1281.png",
       "big": "Weapon_A_1281Big.png"
     },
+    "BoxCutter": {
+      "icon": "Weapon_A_1351.png",
+      "big": "Weapon_A_1351Big.png"
+    },
     "CannonRotor": {
       "icon": "Weapon_S_Common_01.png",
       "big": "Weapon_S_Common_01Big.png"
@@ -527,6 +564,14 @@
     "HeartstringNocturne": {
       "icon": "Weapon_S_1321.png",
       "big": "Weapon_S_1321Big.png"
+    },
+    "SpectralGaze": {
+      "icon": "Weapon_S_1361.png",
+      "big": "Weapon_S_1361Big.png"
+    },
+    "SeveredInnocence": {
+      "icon": "Weapon_S_1381.png",
+      "big": "Weapon_S_1381Big.png"
     }
   }
 }

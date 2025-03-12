@@ -1,14 +1,14 @@
 {
   "Id": 1381,
   "Icon": "IconRole40",
-  "Name": "Silver Soldier - Anby",
-  "CodeName": "SilverAnby",
+  "Name": "Soldier 0 - Anby",
+  "CodeName": "Soldier 0 - Anby",
   "Rarity": 4,
   "WeaponType": { "1": "Attack" },
   "ElementType": { "203": "Electric" },
   "SpecialElementType": {},
   "HitType": { "101": "Slash" },
-  "Camp": { "5": "Obol Squad" },
+  "Camp": { "5": "New Eridu Defense Force" },
   "Gender": 2,
   "PartnerInfo": {},
   "Skin": {},
@@ -225,35 +225,31 @@
     "Basic": {
       "Description": [
         {
-          "Name": "SilverAnby_Skill_Normal_Title",
-          "Desc": "SilverAnby_Skill_Normal_Desc"
+          "Name": "Basic Attack: Penetrating Shock",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nPerform up to five slashes ahead, dealing <color=#2EB6FF>Electric DMG</color>. After the 4th attack hits the enemy, repeatedly press or hold <IconMap:Icon_Normal> to quickly pass through enemies in front up to 5 times."
         },
         {
-          "Name": "SilverAnby_Skill_Normal_Mark01_Title",
-          "Desc": "SilverAnby_Skill_Normal_Mark01_Desc"
-        },
-        {
-          "Name": "SilverAnby_Skill_Normal_Title",
+          "Name": "Basic Attack: Penetrating Shock",
           "Param": [
             {
               "Name": "1st-Hit DMG Multiplier",
               "Desc": "{Skill:1381001, Prop:1001}",
               "Param": {
                 "1381001": {
-                  "Main": 4310,
-                  "Growth": 400,
+                  "Main": 3270,
+                  "Growth": 300,
                   "Format": "%",
-                  "DamagePercentage": 4310,
-                  "DamagePercentageGrowth": 400,
-                  "StunRatio": 2160,
-                  "StunRatioGrowth": 100,
-                  "SpRecovery": 7050,
+                  "DamagePercentage": 3270,
+                  "DamagePercentageGrowth": 300,
+                  "StunRatio": 2790,
+                  "StunRatioGrowth": 130,
+                  "SpRecovery": 9120,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 53900,
+                  "FeverRecovery": 69850,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 1958,
+                  "AttributeInfliction": 2532,
                   "SpConsume": 0,
-                  "AttackData": [55608]
+                  "AttackData": [47029]
                 }
               }
             },
@@ -262,20 +258,20 @@
               "Desc": "{Skill:1381002, Prop:1001}",
               "Param": {
                 "1381002": {
-                  "Main": 8750,
-                  "Growth": 800,
+                  "Main": 6220,
+                  "Growth": 570,
                   "Format": "%",
-                  "DamagePercentage": 8750,
-                  "DamagePercentageGrowth": 800,
-                  "StunRatio": 6750,
-                  "StunRatioGrowth": 310,
-                  "SpRecovery": 22070,
+                  "DamagePercentage": 6220,
+                  "DamagePercentageGrowth": 570,
+                  "StunRatio": 5450,
+                  "StunRatioGrowth": 250,
+                  "SpRecovery": 17840,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 168575,
+                  "FeverRecovery": 136400,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 6129,
+                  "AttributeInfliction": 4954,
                   "SpConsume": 0,
-                  "AttackData": [97524]
+                  "AttackData": [74633]
                 }
               }
             },
@@ -284,42 +280,86 @@
               "Desc": "{Skill:1381003, Prop:1001}",
               "Param": {
                 "1381003": {
-                  "Main": 17780,
-                  "Growth": 1620,
+                  "Main": 8010,
+                  "Growth": 730,
                   "Format": "%",
-                  "DamagePercentage": 17780,
-                  "DamagePercentageGrowth": 1620,
-                  "StunRatio": 12940,
-                  "StunRatioGrowth": 590,
-                  "SpRecovery": 42340,
+                  "DamagePercentage": 8010,
+                  "DamagePercentageGrowth": 730,
+                  "StunRatio": 7190,
+                  "StunRatioGrowth": 330,
+                  "SpRecovery": 23500,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 323675,
+                  "FeverRecovery": 179575,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 11760,
+                  "AttributeInfliction": 6527,
                   "SpConsume": 0,
-                  "AttackData": [178457]
+                  "AttackData": [80766]
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Finisher DMG Multiplier",
+              "Desc": "{Skill:1381004, Prop:1001}",
+              "Param": {
+                "1381004": {
+                  "Main": 3990,
+                  "Growth": 370,
+                  "Format": "%",
+                  "DamagePercentage": 3990,
+                  "DamagePercentageGrowth": 370,
+                  "StunRatio": 6210,
+                  "StunRatioGrowth": 290,
+                  "SpRecovery": 20310,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 155375,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5640,
+                  "SpConsume": 0,
+                  "AttackData": [73327]
                 }
               }
             },
             {
               "Name": "4th-Hit DMG Multiplier",
-              "Desc": "{Skill:1381004, Prop:1001}",
+              "Desc": "{Skill:1381005, Prop:1001}",
               "Param": {
-                "1381004": {
-                  "Main": 22420,
-                  "Growth": 2040,
+                "1381005": {
+                  "Main": 15450,
+                  "Growth": 1410,
                   "Format": "%",
-                  "DamagePercentage": 22420,
-                  "DamagePercentageGrowth": 2040,
-                  "StunRatio": 19130,
-                  "StunRatioGrowth": 870,
-                  "SpRecovery": 62580,
+                  "DamagePercentage": 15450,
+                  "DamagePercentageGrowth": 1410,
+                  "StunRatio": 13770,
+                  "StunRatioGrowth": 630,
+                  "SpRecovery": 45060,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 478225,
+                  "FeverRecovery": 344300,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 17382,
+                  "AttributeInfliction": 12516,
                   "SpConsume": 0,
-                  "AttackData": [197088]
+                  "AttackData": [162717]
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit DMG Multiplier",
+              "Desc": "{Skill:1381006, Prop:1001}",
+              "Param": {
+                "1381006": {
+                  "Main": 14850,
+                  "Growth": 1350,
+                  "Format": "%",
+                  "DamagePercentage": 14850,
+                  "DamagePercentageGrowth": 1350,
+                  "StunRatio": 13090,
+                  "StunRatioGrowth": 600,
+                  "SpRecovery": 42830,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 327250,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 11895,
+                  "SpConsume": 0,
+                  "AttackData": [171818]
                 }
               }
             },
@@ -328,20 +368,20 @@
               "Desc": "{Skill:1381001, Prop:1002}",
               "Param": {
                 "1381001": {
-                  "Main": 2160,
-                  "Growth": 100,
+                  "Main": 2790,
+                  "Growth": 130,
                   "Format": "%",
-                  "DamagePercentage": 4310,
-                  "DamagePercentageGrowth": 400,
-                  "StunRatio": 2160,
-                  "StunRatioGrowth": 100,
-                  "SpRecovery": 7050,
+                  "DamagePercentage": 3270,
+                  "DamagePercentageGrowth": 300,
+                  "StunRatio": 2790,
+                  "StunRatioGrowth": 130,
+                  "SpRecovery": 9120,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 53900,
+                  "FeverRecovery": 69850,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 1958,
+                  "AttributeInfliction": 2532,
                   "SpConsume": 0,
-                  "AttackData": [55608]
+                  "AttackData": [47029]
                 }
               }
             },
@@ -350,20 +390,20 @@
               "Desc": "{Skill:1381002, Prop:1002}",
               "Param": {
                 "1381002": {
-                  "Main": 6750,
-                  "Growth": 310,
+                  "Main": 5450,
+                  "Growth": 250,
                   "Format": "%",
-                  "DamagePercentage": 8750,
-                  "DamagePercentageGrowth": 800,
-                  "StunRatio": 6750,
-                  "StunRatioGrowth": 310,
-                  "SpRecovery": 22070,
+                  "DamagePercentage": 6220,
+                  "DamagePercentageGrowth": 570,
+                  "StunRatio": 5450,
+                  "StunRatioGrowth": 250,
+                  "SpRecovery": 17840,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 168575,
+                  "FeverRecovery": 136400,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 6129,
+                  "AttributeInfliction": 4954,
                   "SpConsume": 0,
-                  "AttackData": [97524]
+                  "AttackData": [74633]
                 }
               }
             },
@@ -372,91 +412,86 @@
               "Desc": "{Skill:1381003, Prop:1002}",
               "Param": {
                 "1381003": {
-                  "Main": 12940,
-                  "Growth": 590,
+                  "Main": 7190,
+                  "Growth": 330,
                   "Format": "%",
-                  "DamagePercentage": 17780,
-                  "DamagePercentageGrowth": 1620,
-                  "StunRatio": 12940,
-                  "StunRatioGrowth": 590,
-                  "SpRecovery": 42340,
+                  "DamagePercentage": 8010,
+                  "DamagePercentageGrowth": 730,
+                  "StunRatio": 7190,
+                  "StunRatioGrowth": 330,
+                  "SpRecovery": 23500,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 323675,
+                  "FeverRecovery": 179575,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 11760,
+                  "AttributeInfliction": 6527,
                   "SpConsume": 0,
-                  "AttackData": [178457]
+                  "AttackData": [80766]
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Finisher Daze Multiplier",
+              "Desc": "{Skill:1381004, Prop:1002}",
+              "Param": {
+                "1381004": {
+                  "Main": 6210,
+                  "Growth": 290,
+                  "Format": "%",
+                  "DamagePercentage": 3990,
+                  "DamagePercentageGrowth": 370,
+                  "StunRatio": 6210,
+                  "StunRatioGrowth": 290,
+                  "SpRecovery": 20310,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 155375,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5640,
+                  "SpConsume": 0,
+                  "AttackData": [73327]
                 }
               }
             },
             {
               "Name": "4th-Hit Daze Multiplier",
-              "Desc": "{Skill:1381004, Prop:1002}",
-              "Param": {
-                "1381004": {
-                  "Main": 19130,
-                  "Growth": 870,
-                  "Format": "%",
-                  "DamagePercentage": 22420,
-                  "DamagePercentageGrowth": 2040,
-                  "StunRatio": 19130,
-                  "StunRatioGrowth": 870,
-                  "SpRecovery": 62580,
-                  "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 478225,
-                  "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 17382,
-                  "SpConsume": 0,
-                  "AttackData": [197088]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "SilverAnby_Skill_Normal_Mark01_Title",
-          "Param": [
-            {
-              "Name": "SilverAnby_Property_Normal_Mark01_Desc_Dmg_01",
-              "Desc": "{Skill:1381005, Prop:1001}",
+              "Desc": "{Skill:1381005, Prop:1002}",
               "Param": {
                 "1381005": {
-                  "Main": 33000,
-                  "Growth": 3000,
+                  "Main": 13770,
+                  "Growth": 630,
                   "Format": "%",
-                  "DamagePercentage": 33000,
-                  "DamagePercentageGrowth": 3000,
-                  "StunRatio": 0,
-                  "StunRatioGrowth": 0,
-                  "SpRecovery": 0,
+                  "DamagePercentage": 15450,
+                  "DamagePercentageGrowth": 1410,
+                  "StunRatio": 13770,
+                  "StunRatioGrowth": 630,
+                  "SpRecovery": 45060,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
+                  "FeverRecovery": 344300,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
+                  "AttributeInfliction": 12516,
                   "SpConsume": 0,
-                  "AttackData": [0]
+                  "AttackData": [162717]
                 }
               }
             },
             {
-              "Name": "SilverAnby_Property_Normal_Mark01_Desc_Stun_01",
-              "Desc": "{Skill:1381005, Prop:1001}",
+              "Name": "5th-Hit Daze Multiplier",
+              "Desc": "{Skill:1381006, Prop:1002}",
               "Param": {
-                "1381005": {
-                  "Main": 33000,
-                  "Growth": 3000,
+                "1381006": {
+                  "Main": 13090,
+                  "Growth": 600,
                   "Format": "%",
-                  "DamagePercentage": 33000,
-                  "DamagePercentageGrowth": 3000,
-                  "StunRatio": 0,
-                  "StunRatioGrowth": 0,
-                  "SpRecovery": 0,
+                  "DamagePercentage": 14850,
+                  "DamagePercentageGrowth": 1350,
+                  "StunRatio": 13090,
+                  "StunRatioGrowth": 600,
+                  "SpRecovery": 42830,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 0,
+                  "FeverRecovery": 327250,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
+                  "AttributeInfliction": 11895,
                   "SpConsume": 0,
-                  "AttackData": [0]
+                  "AttackData": [171818]
                 }
               }
             }
@@ -481,30 +516,30 @@
     "Dodge": {
       "Description": [
         {
-          "Name": "SilverAnby_Skill_Evade_Title",
-          "Desc": "SilverAnby_Skill_Evade_Desc"
+          "Name": "Dodge: Strobe",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_Rush_Title",
-          "Desc": "SilverAnby_Skill_Rush_Desc"
+          "Name": "Dash Attack: Torrent",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nPerform a horizontal slash forward, then follow up with a thrust attack, dealing <color=#2EB6FF>Electric DMG</color>."
         },
         {
-          "Name": "SilverAnby_Skill_Counter_Title",
-          "Desc": "SilverAnby_Skill_Counter_Desc"
+          "Name": "Dodge Counter: Ground Flash Counter",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nRepeatedly slash enemies in front, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_Rush_Title",
+          "Name": "Dash Attack: Torrent",
           "Param": [
             {
               "Name": "DMG Multiplier",
-              "Desc": "{Skill:1381009, Prop:1001}",
+              "Desc": "{Skill:1381012, Prop:1001}",
               "Param": {
-                "1381009": {
-                  "Main": 24750,
-                  "Growth": 2250,
+                "1381012": {
+                  "Main": 8250,
+                  "Growth": 750,
                   "Format": "%",
-                  "DamagePercentage": 24750,
-                  "DamagePercentageGrowth": 2250,
+                  "DamagePercentage": 8250,
+                  "DamagePercentageGrowth": 750,
                   "StunRatio": 4130,
                   "StunRatioGrowth": 190,
                   "SpRecovery": 13500,
@@ -513,20 +548,20 @@
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 3748,
                   "SpConsume": 0,
-                  "AttackData": [53227]
+                  "AttackData": [48729]
                 }
               }
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381009, Prop:1002}",
+              "Desc": "{Skill:1381012, Prop:1002}",
               "Param": {
-                "1381009": {
+                "1381012": {
                   "Main": 4130,
                   "Growth": 190,
                   "Format": "%",
-                  "DamagePercentage": 24750,
-                  "DamagePercentageGrowth": 2250,
+                  "DamagePercentage": 8250,
+                  "DamagePercentageGrowth": 750,
                   "StunRatio": 4130,
                   "StunRatioGrowth": 190,
                   "SpRecovery": 13500,
@@ -535,56 +570,56 @@
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 3748,
                   "SpConsume": 0,
-                  "AttackData": [53227]
+                  "AttackData": [48729]
                 }
               }
             }
           ]
         },
         {
-          "Name": "SilverAnby_Skill_Counter_Title",
+          "Name": "Dodge Counter: Ground Flash Counter",
           "Param": [
             {
               "Name": "DMG Multiplier",
-              "Desc": "{Skill:1381010, Prop:1001}",
+              "Desc": "{Skill:1381013, Prop:1001}",
               "Param": {
-                "1381010": {
-                  "Main": 23870,
-                  "Growth": 2170,
+                "1381013": {
+                  "Main": 25060,
+                  "Growth": 2280,
                   "Format": "%",
-                  "DamagePercentage": 23870,
-                  "DamagePercentageGrowth": 2170,
-                  "StunRatio": 20900,
-                  "StunRatioGrowth": 950,
-                  "SpRecovery": 32400,
+                  "DamagePercentage": 25060,
+                  "DamagePercentageGrowth": 2280,
+                  "StunRatio": 21820,
+                  "StunRatioGrowth": 1000,
+                  "SpRecovery": 35390,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 495000,
+                  "FeverRecovery": 270600,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 9000,
+                  "AttributeInfliction": 9830,
                   "SpConsume": 0,
-                  "AttackData": [532500]
+                  "AttackData": [500000]
                 }
               }
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381010, Prop:1002}",
+              "Desc": "{Skill:1381013, Prop:1002}",
               "Param": {
-                "1381010": {
-                  "Main": 20900,
-                  "Growth": 950,
+                "1381013": {
+                  "Main": 21820,
+                  "Growth": 1000,
                   "Format": "%",
-                  "DamagePercentage": 23870,
-                  "DamagePercentageGrowth": 2170,
-                  "StunRatio": 20900,
-                  "StunRatioGrowth": 950,
-                  "SpRecovery": 32400,
+                  "DamagePercentage": 25060,
+                  "DamagePercentageGrowth": 2280,
+                  "StunRatio": 21820,
+                  "StunRatioGrowth": 1000,
+                  "SpRecovery": 35390,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 495000,
+                  "FeverRecovery": 270600,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 9000,
+                  "AttributeInfliction": 9830,
                   "SpConsume": 0,
-                  "AttackData": [532500]
+                  "AttackData": [500000]
                 }
               }
             }
@@ -609,99 +644,156 @@
     "Special": {
       "Description": [
         {
-          "Name": "SilverAnby_Skill_Special_Title",
-          "Desc": "SilverAnby_Skill_Special_Desc"
+          "Name": "Special Attack: Celestial Thunder",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nDash diagonally forward, then unleash a cross slash, dealing <color=#2EB6FF>Electric DMG</color>.\nAnti-Interrupt level is increased while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_ExSpecial_Title",
-          "Desc": "SilverAnby_Skill_ExSpecial_Desc"
+          "Name": "Special Attack: Azure Flash",
+          "Desc": "When Soldier 0 - Anby's attacks hit an enemy, they apply the <color=#FFFFFF>Silver Star</color> mark and charges the target \nFor every one-third of charge, the enemy receives 1 stack of <color=#FFFFFF>White Thunder</color>, stacking up to 3 times.\nWhen the enemy has <color=#FFFFFF>White Thunder</color>, press <IconMap:Icon_Special> to activate:\nQuickly dash forward, slashing through enemies and dealing multiple hits of <color=#2EB6FF>Electric DMG</color>.\nWhen the skill hits an enemy, it will consume 1 stack of <color=#FFFFFF>White Thunder</color> to trigger an <color=#FFFFFF>Aftershock</color> that deals 1 extra instance of <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_Special_Title",
+          "Name": "Special Attack: Thunder Smite",
+          "Desc": "When the additional damage from <color=#FFFFFF>White Thunder</color> triggers 3 times on the same enemy:\nA lightning strike will fall at the enemy's location, dealing <color=#2EB6FF>Electric DMG</color> to enemies within range.\nThis DMG is considered <color=#FFFFFF>Aftershock</color> DMG."
+        },
+        {
+          "Name": "EX Special Attack: Sundering Bolt",
+          "Desc": "With enough energy, hold <IconMap:Icon_SpecialReady> to activate:\nCombines her twin swords and throws them forward for a high-speed slash, dealing massive <color=#2EB6FF>Electric DMG</color>.\nWhen the skill hits an enemy, it will fully charge <color=#FFFFFF>Silver Star</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Special Attack: Celestial Thunder",
           "Param": [
             {
               "Name": "DMG Multiplier",
-              "Desc": "{Skill:1381006, Prop:1001}",
+              "Desc": "{Skill:1381010, Prop:1001}",
               "Param": {
-                "1381006": {
-                  "Main": 10820,
-                  "Growth": 990,
+                "1381010": {
+                  "Main": 5960,
+                  "Growth": 550,
                   "Format": "%",
-                  "DamagePercentage": 10820,
-                  "DamagePercentageGrowth": 990,
-                  "StunRatio": 5410,
-                  "StunRatioGrowth": 250,
+                  "DamagePercentage": 5960,
+                  "DamagePercentageGrowth": 550,
+                  "StunRatio": 5960,
+                  "StunRatioGrowth": 280,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 135300,
+                  "FeverRecovery": 149050,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 4916,
+                  "AttributeInfliction": 5416,
                   "SpConsume": 0,
-                  "AttackData": [69817]
+                  "AttackData": [140834]
                 }
               }
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381006, Prop:1002}",
+              "Desc": "{Skill:1381010, Prop:1002}",
               "Param": {
-                "1381006": {
-                  "Main": 5410,
-                  "Growth": 250,
+                "1381010": {
+                  "Main": 5960,
+                  "Growth": 280,
                   "Format": "%",
-                  "DamagePercentage": 10820,
-                  "DamagePercentageGrowth": 990,
-                  "StunRatio": 5410,
-                  "StunRatioGrowth": 250,
+                  "DamagePercentage": 5960,
+                  "DamagePercentageGrowth": 550,
+                  "StunRatio": 5960,
+                  "StunRatioGrowth": 280,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 135300,
+                  "FeverRecovery": 149050,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 4916,
+                  "AttributeInfliction": 5416,
                   "SpConsume": 0,
-                  "AttackData": [69817]
+                  "AttackData": [140834]
                 }
               }
-            },
+            }
+          ]
+        },
+        {
+          "Name": "Special Attack: Azure Flash",
+          "Param": [
             {
-              "Name": "SilverAnby_Property_Special_ChargeAttack_Desc_Dmg_03",
+              "Name": "White Thunder DMG Multiplier",
               "Desc": "{Skill:1381007, Prop:1001}",
               "Param": {
                 "1381007": {
-                  "Main": 3820,
-                  "Growth": 350,
+                  "Main": 16720,
+                  "Growth": 1520,
                   "Format": "%",
-                  "DamagePercentage": 3820,
-                  "DamagePercentageGrowth": 350,
-                  "StunRatio": 2940,
-                  "StunRatioGrowth": 140,
+                  "DamagePercentage": 16720,
+                  "DamagePercentageGrowth": 1520,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 73425,
+                  "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 2669,
+                  "AttributeInfliction": 0,
                   "SpConsume": 0,
                   "AttackData": [0]
                 }
               }
             },
             {
-              "Name": "SilverAnby_Property_Special_ChargeAttack_Desc_Stun_03",
+              "Name": "White Thunder Daze Multiplier",
               "Desc": "{Skill:1381007, Prop:1002}",
               "Param": {
                 "1381007": {
-                  "Main": 2940,
-                  "Growth": 140,
+                  "Main": 0,
+                  "Growth": 0,
                   "Format": "%",
-                  "DamagePercentage": 3820,
-                  "DamagePercentageGrowth": 350,
-                  "StunRatio": 2940,
-                  "StunRatioGrowth": 140,
+                  "DamagePercentage": 16720,
+                  "DamagePercentageGrowth": 1520,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 73425,
+                  "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 2669,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381009, Prop:1001}",
+              "Param": {
+                "1381009": {
+                  "Main": 4300,
+                  "Growth": 400,
+                  "Format": "%",
+                  "DamagePercentage": 4300,
+                  "DamagePercentageGrowth": 400,
+                  "StunRatio": 3310,
+                  "StunRatioGrowth": 160,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 82775,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3003,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1381009, Prop:1002}",
+              "Param": {
+                "1381009": {
+                  "Main": 3310,
+                  "Growth": 160,
+                  "Format": "%",
+                  "DamagePercentage": 4300,
+                  "DamagePercentageGrowth": 400,
+                  "StunRatio": 3310,
+                  "StunRatioGrowth": 160,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 82775,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3003,
                   "SpConsume": 0,
                   "AttackData": [0]
                 }
@@ -710,18 +802,67 @@
           ]
         },
         {
-          "Name": "SilverAnby_Skill_ExSpecial_Title",
+          "Name": "Special Attack: Thunder Smite",
           "Param": [
             {
-              "Name": "DMG Multiplier",
+              "Name": "Thunder Smite DMG Multiplier",
               "Desc": "{Skill:1381008, Prop:1001}",
               "Param": {
                 "1381008": {
-                  "Main": 47270,
-                  "Growth": 4300,
+                  "Main": 18810,
+                  "Growth": 1710,
                   "Format": "%",
-                  "DamagePercentage": 47270,
-                  "DamagePercentageGrowth": 4300,
+                  "DamagePercentage": 18810,
+                  "DamagePercentageGrowth": 1710,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            },
+            {
+              "Name": "Thunder Smite Daze Multiplier",
+              "Desc": "{Skill:1381008, Prop:1002}",
+              "Param": {
+                "1381008": {
+                  "Main": 0,
+                  "Growth": 0,
+                  "Format": "%",
+                  "DamagePercentage": 18810,
+                  "DamagePercentageGrowth": 1710,
+                  "StunRatio": 0,
+                  "StunRatioGrowth": 0,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": [0]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "EX Special Attack: Sundering Bolt",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1381011, Prop:1001}",
+              "Param": {
+                "1381011": {
+                  "Main": 37960,
+                  "Growth": 3460,
+                  "Format": "%",
+                  "DamagePercentage": 37960,
+                  "DamagePercentageGrowth": 3460,
                   "StunRatio": 45860,
                   "StunRatioGrowth": 2090,
                   "SpRecovery": 0,
@@ -730,20 +871,20 @@
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 46496,
                   "SpConsume": 0,
-                  "AttackData": [990000]
+                  "AttackData": [1000000]
                 }
               }
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381008, Prop:1002}",
+              "Desc": "{Skill:1381011, Prop:1002}",
               "Param": {
-                "1381008": {
+                "1381011": {
                   "Main": 45860,
                   "Growth": 2090,
                   "Format": "%",
-                  "DamagePercentage": 47270,
-                  "DamagePercentageGrowth": 4300,
+                  "DamagePercentage": 37960,
+                  "DamagePercentageGrowth": 3460,
                   "StunRatio": 45860,
                   "StunRatioGrowth": 2090,
                   "SpRecovery": 0,
@@ -752,14 +893,11 @@
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 46496,
                   "SpConsume": 0,
-                  "AttackData": [990000]
+                  "AttackData": [1000000]
                 }
               }
             },
-            {
-              "Name": "Energy Cost",
-              "Desc": "SilverAnby_Property_ExSpecial_SpCostValue_01"
-            }
+            { "Name": "Energy Cost", "Desc": "60" }
           ]
         }
       ],
@@ -781,82 +919,82 @@
     "Chain": {
       "Description": [
         {
-          "Name": "SilverAnby_Skill_QTE_Title",
-          "Desc": "SilverAnby_Skill_QTE_Desc"
+          "Name": "Chain Attack: Leaping Thunderstrike",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nLeap forward, then quickly dive and perform a cross slash, dealing massive <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_ExQTE_Title",
-          "Desc": "SilverAnby_Skill_ExQTE_Desc"
+          "Name": "Ultimate: Voidstrike",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nPerform a powerful series of slashes at a large area in front, followed by a lightning strike, dealing massive <color=#2EB6FF>Electric DMG</color>.\nWhen the skill hits an enemy, it will fully charge <color=#FFFFFF>Silver Star</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_QTE_Title",
+          "Name": "Chain Attack: Leaping Thunderstrike",
           "Param": [
             {
               "Name": "DMG Multiplier",
-              "Desc": "{Skill:1381011, Prop:1001}",
+              "Desc": "{Skill:1381014, Prop:1001}",
               "Param": {
-                "1381011": {
-                  "Main": 67000,
-                  "Growth": 6100,
+                "1381014": {
+                  "Main": 56380,
+                  "Growth": 5130,
                   "Format": "%",
-                  "DamagePercentage": 67000,
-                  "DamagePercentageGrowth": 6100,
-                  "StunRatio": 23110,
-                  "StunRatioGrowth": 1060,
+                  "DamagePercentage": 56380,
+                  "DamagePercentageGrowth": 5130,
+                  "StunRatio": 19810,
+                  "StunRatioGrowth": 910,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2406525,
+                  "FeverRecovery": 2324025,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 40950,
+                  "AttributeInfliction": 37950,
                   "SpConsume": 0,
-                  "AttackData": [298201]
+                  "AttackData": [234001]
                 }
               }
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381011, Prop:1002}",
+              "Desc": "{Skill:1381014, Prop:1002}",
               "Param": {
-                "1381011": {
-                  "Main": 23110,
-                  "Growth": 1060,
+                "1381014": {
+                  "Main": 19810,
+                  "Growth": 910,
                   "Format": "%",
-                  "DamagePercentage": 67000,
-                  "DamagePercentageGrowth": 6100,
-                  "StunRatio": 23110,
-                  "StunRatioGrowth": 1060,
+                  "DamagePercentage": 56380,
+                  "DamagePercentageGrowth": 5130,
+                  "StunRatio": 19810,
+                  "StunRatioGrowth": 910,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2406525,
+                  "FeverRecovery": 2324025,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 40950,
+                  "AttributeInfliction": 37950,
                   "SpConsume": 0,
-                  "AttackData": [298201]
+                  "AttackData": [234001]
                 }
               }
             }
           ]
         },
         {
-          "Name": "SilverAnby_Skill_ExQTE_Title",
+          "Name": "Ultimate: Voidstrike",
           "Param": [
             {
               "Name": "DMG Multiplier",
-              "Desc": "{Skill:1381012, Prop:1001}",
+              "Desc": "{Skill:1381015, Prop:1001}",
               "Param": {
-                "1381012": {
-                  "Main": 199560,
-                  "Growth": 18150,
+                "1381015": {
+                  "Main": 173490,
+                  "Growth": 15780,
                   "Format": "%",
-                  "DamagePercentage": 199560,
-                  "DamagePercentageGrowth": 18150,
-                  "StunRatio": 26590,
-                  "StunRatioGrowth": 1210,
+                  "DamagePercentage": 173490,
+                  "DamagePercentageGrowth": 15780,
+                  "StunRatio": 27690,
+                  "StunRatioGrowth": 1260,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 24166,
+                  "AttributeInfliction": 25166,
                   "SpConsume": 0,
                   "AttackData": [0]
                 }
@@ -864,21 +1002,21 @@
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381012, Prop:1002}",
+              "Desc": "{Skill:1381015, Prop:1002}",
               "Param": {
-                "1381012": {
-                  "Main": 26590,
-                  "Growth": 1210,
+                "1381015": {
+                  "Main": 27690,
+                  "Growth": 1260,
                   "Format": "%",
-                  "DamagePercentage": 199560,
-                  "DamagePercentageGrowth": 18150,
-                  "StunRatio": 26590,
-                  "StunRatioGrowth": 1210,
+                  "DamagePercentage": 173490,
+                  "DamagePercentageGrowth": 15780,
+                  "StunRatio": 27690,
+                  "StunRatioGrowth": 1260,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 24166,
+                  "AttributeInfliction": 25166,
                   "SpConsume": 0,
                   "AttackData": [0]
                 }
@@ -905,74 +1043,74 @@
     "Assist": {
       "Description": [
         {
-          "Name": "SilverAnby_Skill_BeHitAid_Title",
-          "Desc": "SilverAnby_Skill_BeHitAid_Desc"
+          "Name": "Quick Assist: Cloud Flash",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nRepeatedly slash enemies in front, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_ParryAid_Title",
-          "Desc": "SilverAnby_Skill_ParryAid_Desc"
+          "Name": "Defensive Assist: Counter Surge",
+          "Desc": "When the on-field character is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_AssaultAid_Title",
-          "Desc": "SilverAnby_Skill_AssaultAid_Desc"
+          "Name": "Assist Follow-Up: Conducting Blow",
+          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nDash forward and unleash a series of slashes at enemies ahead, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "SilverAnby_Skill_BeHitAid_Title",
+          "Name": "Quick Assist: Cloud Flash",
           "Param": [
             {
               "Name": "DMG Multiplier",
-              "Desc": "{Skill:1381013, Prop:1001}",
+              "Desc": "{Skill:1381016, Prop:1001}",
               "Param": {
-                "1381013": {
-                  "Main": 10270,
-                  "Growth": 940,
+                "1381016": {
+                  "Main": 10820,
+                  "Growth": 990,
                   "Format": "%",
-                  "DamagePercentage": 10270,
-                  "DamagePercentageGrowth": 940,
-                  "StunRatio": 10270,
-                  "StunRatioGrowth": 470,
-                  "SpRecovery": 16800,
+                  "DamagePercentage": 10820,
+                  "DamagePercentageGrowth": 990,
+                  "StunRatio": 10820,
+                  "StunRatioGrowth": 500,
+                  "SpRecovery": 17700,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 256850,
+                  "FeverRecovery": 270600,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 9333,
+                  "AttributeInfliction": 9830,
                   "SpConsume": 0,
-                  "AttackData": [132534]
+                  "AttackData": [63896]
                 }
               }
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381013, Prop:1002}",
+              "Desc": "{Skill:1381016, Prop:1002}",
               "Param": {
-                "1381013": {
-                  "Main": 10270,
-                  "Growth": 470,
+                "1381016": {
+                  "Main": 10820,
+                  "Growth": 500,
                   "Format": "%",
-                  "DamagePercentage": 10270,
-                  "DamagePercentageGrowth": 940,
-                  "StunRatio": 10270,
-                  "StunRatioGrowth": 470,
-                  "SpRecovery": 16800,
+                  "DamagePercentage": 10820,
+                  "DamagePercentageGrowth": 990,
+                  "StunRatio": 10820,
+                  "StunRatioGrowth": 500,
+                  "SpRecovery": 17700,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 256850,
+                  "FeverRecovery": 270600,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 9333,
+                  "AttributeInfliction": 9830,
                   "SpConsume": 0,
-                  "AttackData": [132534]
+                  "AttackData": [63896]
                 }
               }
             }
           ]
         },
         {
-          "Name": "SilverAnby_Skill_ParryAid_Title",
+          "Name": "Defensive Assist: Counter Surge",
           "Param": [
             {
               "Name": "Light Defensive Daze Multiplier",
-              "Desc": "{Skill:1381014, Prop:1002}",
+              "Desc": "{Skill:1381017, Prop:1002}",
               "Param": {
-                "1381014": {
+                "1381017": {
                   "Main": 27130,
                   "Growth": 1240,
                   "Format": "%",
@@ -992,14 +1130,14 @@
             },
             {
               "Name": "Heavy Defensive Daze Multiplier",
-              "Desc": "{Skill:1381015, Prop:1002}",
+              "Desc": "{Skill:1381018, Prop:1002}",
               "Param": {
-                "1381015": {
+                "1381018": {
                   "Main": 34280,
                   "Growth": 1560,
                   "Format": "%",
-                  "DamagePercentage": 11000,
-                  "DamagePercentageGrowth": 1000,
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
                   "StunRatio": 34280,
                   "StunRatioGrowth": 1560,
                   "SpRecovery": 0,
@@ -1014,14 +1152,14 @@
             },
             {
               "Name": "Chain Defensive Daze Multiplier",
-              "Desc": "{Skill:1381016, Prop:1002}",
+              "Desc": "{Skill:1381019, Prop:1002}",
               "Param": {
-                "1381016": {
+                "1381019": {
                   "Main": 16680,
                   "Growth": 760,
                   "Format": "%",
-                  "DamagePercentage": 12830,
-                  "DamagePercentageGrowth": 1170,
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
                   "StunRatio": 16680,
                   "StunRatioGrowth": 760,
                   "SpRecovery": 0,
@@ -1037,49 +1175,49 @@
           ]
         },
         {
-          "Name": "SilverAnby_Skill_AssaultAid_Title",
+          "Name": "Assist Follow-Up: Conducting Blow",
           "Param": [
             {
               "Name": "DMG Multiplier",
-              "Desc": "{Skill:1381017, Prop:1001}",
+              "Desc": "{Skill:1381020, Prop:1001}",
               "Param": {
-                "1381017": {
-                  "Main": 43280,
-                  "Growth": 3940,
+                "1381020": {
+                  "Main": 40710,
+                  "Growth": 3710,
                   "Format": "%",
-                  "DamagePercentage": 43280,
-                  "DamagePercentageGrowth": 3940,
-                  "StunRatio": 38010,
-                  "StunRatioGrowth": 1730,
+                  "DamagePercentage": 40710,
+                  "DamagePercentageGrowth": 3710,
+                  "StunRatio": 35620,
+                  "StunRatioGrowth": 1620,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1213850,
+                  "FeverRecovery": 1145100,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 36947,
+                  "AttributeInfliction": 34692,
                   "SpConsume": 0,
-                  "AttackData": [286367]
+                  "AttackData": [240457]
                 }
               }
             },
             {
               "Name": "Daze Multiplier",
-              "Desc": "{Skill:1381017, Prop:1002}",
+              "Desc": "{Skill:1381020, Prop:1002}",
               "Param": {
-                "1381017": {
-                  "Main": 38010,
-                  "Growth": 1730,
+                "1381020": {
+                  "Main": 35620,
+                  "Growth": 1620,
                   "Format": "%",
-                  "DamagePercentage": 43280,
-                  "DamagePercentageGrowth": 3940,
-                  "StunRatio": 38010,
-                  "StunRatioGrowth": 1730,
+                  "DamagePercentage": 40710,
+                  "DamagePercentageGrowth": 3710,
+                  "StunRatio": 35620,
+                  "StunRatioGrowth": 1620,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 1213850,
+                  "FeverRecovery": 1145100,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 36947,
+                  "AttributeInfliction": 34692,
                   "SpConsume": 0,
-                  "AttackData": [286367]
+                  "AttackData": [240457]
                 }
               }
             }
@@ -1102,50 +1240,165 @@
       }
     }
   },
-  "SkillList": {},
+  "SkillList": {
+    "1381001": {
+      "Name": "Basic Attack: Penetrating Shock",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381002": {
+      "Name": "Special Attack: Celestial Thunder",
+      "Desc": "<IconMap:Icon_Special>",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381003": {
+      "Name": "Special Attack: Azure Flash",
+      "Desc": "<IconMap:Icon_Special> (When the target has White Thunder stacks)",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381004": {
+      "Name": "Special Attack: Thunder Smite",
+      "Desc": "<IconMap:Icon_Special> ; <IconMap:Icon_Special> ; <IconMap:Icon_Special> (When the target has 3 stacks of White Thunder)",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381005": {
+      "Name": "EX Special Attack: Sundering Bolt",
+      "Desc": "<IconMap:Icon_SpecialReady> (Hold)",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381006": {
+      "Name": "Dash Attack: Torrent",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381007": {
+      "Name": "Dodge Counter: Ground Flash Counter",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381008": {
+      "Name": "Chain Attack: Leaping Thunderstrike",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381009": {
+      "Name": "Ultimate: Voidstrike",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381010": {
+      "Name": "Quick Assist: Cloud Flash",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381011": {
+      "Name": "Defensive Assist: Counter Surge",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1381012": {
+      "Name": "Assist Follow-Up: Conducting Blow",
+      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
+      "ElementType": 203,
+      "HitType": 101
+    }
+  },
   "Passive": {
     "Level": {
       "1": {
         "Level": 1,
         "Id": 1381501,
-        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
-        "Desc": ["SilverAnby_UniqueSkill_01_Desc", "SilverAnby_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Voltage Gap",
+          "Additional Ability: Voltage Surge"
+        ],
+        "Desc": [
+          "Soldier 0 - Anby's DMG against enemies with the <color=#FFFFFF>Silver Star</color> mark increases by <color=#FFFFFF>12.5%</color>. After an enemy is marked with <color=#FFFFFF>Silver Star</color>, the CRIT DMG received from <color=#FFFFFF>Aftershock</color> attacks is further increased by 15% of Soldier 0 - Anby's CRIT DMG.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <color=#FFFFFF>Aftershock</color> DMG to enemies with a <color=#FFFFFF>Silver Star</color> mark increases by 25%."
+        ]
       },
       "2": {
         "Level": 2,
         "Id": 1381502,
-        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
-        "Desc": ["SilverAnby_UniqueSkill_02_Desc", "SilverAnby_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Voltage Gap",
+          "Additional Ability: Voltage Surge"
+        ],
+        "Desc": [
+          "Soldier 0 - Anby's DMG against enemies with the <color=#FFFFFF>Silver Star</color> mark increases by <color=#FFFFFF>14.5%</color>. After an enemy is marked with <color=#FFFFFF>Silver Star</color>, the CRIT DMG received from <color=#FFFFFF>Aftershock</color> attacks is further increased by 17.5% of Soldier 0 - Anby's CRIT DMG.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <color=#FFFFFF>Aftershock</color> DMG to enemies with a <color=#FFFFFF>Silver Star</color> mark increases by 25%."
+        ]
       },
       "3": {
         "Level": 3,
         "Id": 1381503,
-        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
-        "Desc": ["SilverAnby_UniqueSkill_03_Desc", "SilverAnby_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Voltage Gap",
+          "Additional Ability: Voltage Surge"
+        ],
+        "Desc": [
+          "Soldier 0 - Anby's DMG against enemies with the <color=#FFFFFF>Silver Star</color> mark increases by <color=#FFFFFF>16.5%</color>. After an enemy is marked with <color=#FFFFFF>Silver Star</color>, the CRIT DMG received from <color=#FFFFFF>Aftershock</color> attacks is further increased by 20% of Soldier 0 - Anby's CRIT DMG.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <color=#FFFFFF>Aftershock</color> DMG to enemies with a <color=#FFFFFF>Silver Star</color> mark increases by 25%."
+        ]
       },
       "4": {
         "Level": 4,
         "Id": 1381504,
-        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
-        "Desc": ["SilverAnby_UniqueSkill_04_Desc", "SilverAnby_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Voltage Gap",
+          "Additional Ability: Voltage Surge"
+        ],
+        "Desc": [
+          "Soldier 0 - Anby's DMG against enemies with the <color=#FFFFFF>Silver Star</color> mark increases by <color=#FFFFFF>18.8%</color>. After an enemy is marked with <color=#FFFFFF>Silver Star</color>, the CRIT DMG received from <color=#FFFFFF>Aftershock</color> attacks is further increased by 22.5% of Soldier 0 - Anby's CRIT DMG.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <color=#FFFFFF>Aftershock</color> DMG to enemies with a <color=#FFFFFF>Silver Star</color> mark increases by 25%."
+        ]
       },
       "5": {
         "Level": 5,
         "Id": 1381505,
-        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
-        "Desc": ["SilverAnby_UniqueSkill_05_Desc", "SilverAnby_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Voltage Gap",
+          "Additional Ability: Voltage Surge"
+        ],
+        "Desc": [
+          "Soldier 0 - Anby's DMG against enemies with the <color=#FFFFFF>Silver Star</color> mark increases by <color=#FFFFFF>20.8%</color>. After an enemy is marked with <color=#FFFFFF>Silver Star</color>, the CRIT DMG received from <color=#FFFFFF>Aftershock</color> attacks is further increased by 25% of Soldier 0 - Anby's CRIT DMG.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <color=#FFFFFF>Aftershock</color> DMG to enemies with a <color=#FFFFFF>Silver Star</color> mark increases by 25%."
+        ]
       },
       "6": {
         "Level": 6,
         "Id": 1381506,
-        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
-        "Desc": ["SilverAnby_UniqueSkill_06_Desc", "SilverAnby_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Voltage Gap",
+          "Additional Ability: Voltage Surge"
+        ],
+        "Desc": [
+          "Soldier 0 - Anby's DMG against enemies with the <color=#FFFFFF>Silver Star</color> mark increases by <color=#FFFFFF>23%</color>. After an enemy is marked with <color=#FFFFFF>Silver Star</color>, the CRIT DMG received from <color=#FFFFFF>Aftershock</color> attacks is further increased by 27.5% of Soldier 0 - Anby's CRIT DMG.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <color=#FFFFFF>Aftershock</color> DMG to enemies with a <color=#FFFFFF>Silver Star</color> mark increases by 25%."
+        ]
       },
       "7": {
         "Level": 7,
         "Id": 1381507,
-        "Name": ["SilverAnby_UniqueSkill_Title", "SilverAnby_MathSkill_Title"],
-        "Desc": ["SilverAnby_UniqueSkill_07_Desc", "SilverAnby_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Voltage Gap",
+          "Additional Ability: Voltage Surge"
+        ],
+        "Desc": [
+          "Soldier 0 - Anby's DMG against enemies with the <color=#FFFFFF>Silver Star</color> mark increases by <color=#FFFFFF>25%</color>. After an enemy is marked with <color=#FFFFFF>Silver Star</color>, the CRIT DMG received from <color=#FFFFFF>Aftershock</color> attacks is further increased by 30% of Soldier 0 - Anby's CRIT DMG.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nSoldier 0 - Anby's CRIT Rate increases by 10%. When Soldier 0 - Anby is the active character, all squad members' <color=#FFFFFF>Aftershock</color> DMG to enemies with a <color=#FFFFFF>Silver Star</color> mark increases by 25%."
+        ]
       }
     },
     "Materials": {
@@ -1160,39 +1413,39 @@
   "Talent": {
     "1": {
       "Level": 1,
-      "Name": "SilverAnby_Talent_01_Title",
-      "Desc": "SilverAnby_Talent_01_Desc_01",
-      "Desc2": "SilverAnby_Talent_01_Desc_02"
+      "Name": "Static Charge",
+      "Desc": "When Soldier 0 - Anby uses an <color=#FFFFFF>EX Special Attack</color> to hit an enemy, it triggers the additional DMG from <color=#FFFFFF>White Thunder</color> 3 times. This effect does not consume any <color=#FFFFFF>White Thunder</color> stacks.",
+      "Desc2": "..."
     },
     "2": {
       "Level": 2,
-      "Name": "SilverAnby_Talent_02_Title",
-      "Desc": "SilverAnby_Talent_02_Desc_01",
-      "Desc2": "SilverAnby_Talent_02_Desc_02"
+      "Name": "Fail-Safe Protocol",
+      "Desc": "Soldier 0 - Anby's CRIT Rate increases by 12%. When she uses her <color=#FFFFFF>Ultimate</color>, she gains 6 stacks of <color=#FFFFFF>Thunder's Cry</color> (max 6 stacks). With <color=#FFFFFF>Thunder's Cry</color>, when using <color=#FFFFFF>Special Attack: Azure Flash</color> to hit an enemy with <color=#FFFFFF>White Thunder</color>, it will consume 1 stack of <color=#FFFFFF>Thunder's Cry</color> instead. Only 1 stack of <color=#FFFFFF>Thunder's Cry</color> will be consumed when a single use of a skill hits multiple enemies, and consuming <color=#FFFFFF>Thunder's Cry</color> will still activate the additional DMG from <color=#FFFFFF>White Thunder</color>.",
+      "Desc2": "..."
     },
     "3": {
       "Level": 3,
-      "Name": "SilverAnby_Talent_03_Title",
+      "Name": "Past Glory",
       "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "SilverAnby_Talent_03_Desc_02"
+      "Desc2": "..."
     },
     "4": {
       "Level": 4,
-      "Name": "SilverAnby_Talent_04_Title",
-      "Desc": "SilverAnby_Talent_04_Desc_01",
-      "Desc2": "SilverAnby_Talent_04_Desc_02"
+      "Name": "Silver Reverb",
+      "Desc": "When hitting an enemy marked with <color=#FFFFFF>Silver Star</color>, Soldier 0 - Anby ignores 12% of the target's <color=#2EB6FF>Electric RES</color>.",
+      "Desc2": "..."
     },
     "5": {
       "Level": 5,
-      "Name": "SilverAnby_Talent_05_Title",
+      "Name": "Director's Cut",
       "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "SilverAnby_Talent_05_Desc_02"
+      "Desc2": "..."
     },
     "6": {
       "Level": 6,
-      "Name": "SilverAnby_Talent_06_Title",
-      "Desc": "SilverAnby_Talent_06_Desc_01",
-      "Desc2": "SilverAnby_Talent_06_Desc_02"
+      "Name": "Prequel Protagonist",
+      "Desc": "Upon triggering 6 instances of <color=#FFFFFF>White Thunder</color>'s additional DMG, an electromagnetic vortex will be generated, dealing 1,000% of Soldier 0 - Anby's ATK as <color=#2EB6FF>Electric DMG</color>. This DMG is considered <color=#FFFFFF>Aftershock</color> DMG.",
+      "Desc2": "..."
     }
   }
 }
