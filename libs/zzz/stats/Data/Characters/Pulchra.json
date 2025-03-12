@@ -1,7 +1,11 @@
 {
+  "id": "1351",
+  "icon": "IconRole38",
   "rarity": "A",
   "attribute": "physical",
   "specialty": "stun",
+  "faction": "SonsOfCalydon",
+  "fullname": "Pulchra",
   "stats": {
     "atk_base": 96,
     "atk_growth": 5.4887,
@@ -9,7 +13,7 @@
     "def_growth": 6.6203,
     "hp_base": 612,
     "hp_growth": 83.0642,
-    "anomMas": 92,
+    "anomMas_base": 92,
     "anomProf": 90,
     "impact": 118,
     "enerRegen": 1.2
@@ -34,15 +38,15 @@
     "Basic": {
       "Description": [
         {
-          "Name": "Pulchra_Skill_Normal_Title",
-          "Desc": "Pulchra_Skill_Normal_Desc"
+          "Name": "Basic Attack: Swift Strike",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 3 attacks forward, dealing <color=#F0D12B>Physical DMG</color>."
         },
         {
-          "Name": "Pulchra_Skill_Normal_Charge_Title",
-          "Desc": "Pulchra_Skill_Normal_Charge_Desc"
+          "Name": "Basic Attack: Leaping Strike",
+          "Desc": "Hold <IconMap:Icon_Normal> to activate:\nLeap forward and unleash a series of slashes, dealing <color=#F0D12B>Physical DMG</color>."
         },
         {
-          "Name": "Pulchra_Skill_Normal_Title",
+          "Name": "Basic Attack: Swift Strike",
           "Param": [
             {
               "Name": "1st-Hit DMG Multiplier",
@@ -71,18 +75,18 @@
               "Desc": "{Skill:1351002, Prop:1001}",
               "Param": {
                 "1351002": {
-                  "Main": 113.5,
-                  "Growth": 0.104,
+                  "Main": 94.1,
+                  "Growth": 0.086,
                   "Format": "%",
-                  "DamagePercentage": 1.135,
-                  "DamagePercentageGrowth": 0.104,
-                  "StunRatio": 0.882,
-                  "StunRatioGrowth": 0.041,
-                  "SpRecovery": 317.5,
+                  "DamagePercentage": 0.941,
+                  "DamagePercentageGrowth": 0.086,
+                  "StunRatio": 0.753,
+                  "StunRatioGrowth": 0.035,
+                  "SpRecovery": 270.9,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2425.5,
+                  "FeverRecovery": 2070.75,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 88.19,
+                  "AttributeInfliction": 75.22,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -93,18 +97,18 @@
               "Desc": "{Skill:1351003, Prop:1001}",
               "Param": {
                 "1351003": {
-                  "Main": 237.3,
-                  "Growth": 0.216,
+                  "Main": 167.6,
+                  "Growth": 0.153,
                   "Format": "%",
-                  "DamagePercentage": 2.373,
-                  "DamagePercentageGrowth": 0.216,
-                  "StunRatio": 1.806,
-                  "StunRatioGrowth": 0.083,
-                  "SpRecovery": 650,
+                  "DamagePercentage": 1.676,
+                  "DamagePercentageGrowth": 0.153,
+                  "StunRatio": 1.341,
+                  "StunRatioGrowth": 0.061,
+                  "SpRecovery": 482.6,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4966.5,
+                  "FeverRecovery": 3687.75,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 180.52,
+                  "AttributeInfliction": 134.05,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -137,18 +141,18 @@
               "Desc": "{Skill:1351002, Prop:1002}",
               "Param": {
                 "1351002": {
-                  "Main": 88.2,
-                  "Growth": 0.041,
+                  "Main": 75.3,
+                  "Growth": 0.035,
                   "Format": "%",
-                  "DamagePercentage": 1.135,
-                  "DamagePercentageGrowth": 0.104,
-                  "StunRatio": 0.882,
-                  "StunRatioGrowth": 0.041,
-                  "SpRecovery": 317.5,
+                  "DamagePercentage": 0.941,
+                  "DamagePercentageGrowth": 0.086,
+                  "StunRatio": 0.753,
+                  "StunRatioGrowth": 0.035,
+                  "SpRecovery": 270.9,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2425.5,
+                  "FeverRecovery": 2070.75,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 88.19,
+                  "AttributeInfliction": 75.22,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -159,18 +163,18 @@
               "Desc": "{Skill:1351003, Prop:1002}",
               "Param": {
                 "1351003": {
-                  "Main": 180.6,
-                  "Growth": 0.083,
+                  "Main": 134.1,
+                  "Growth": 0.061,
                   "Format": "%",
-                  "DamagePercentage": 2.373,
-                  "DamagePercentageGrowth": 0.216,
-                  "StunRatio": 1.806,
-                  "StunRatioGrowth": 0.083,
-                  "SpRecovery": 650,
+                  "DamagePercentage": 1.676,
+                  "DamagePercentageGrowth": 0.153,
+                  "StunRatio": 1.341,
+                  "StunRatioGrowth": 0.061,
+                  "SpRecovery": 482.6,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4966.5,
+                  "FeverRecovery": 3687.75,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 180.52,
+                  "AttributeInfliction": 134.05,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -179,7 +183,7 @@
           ]
         },
         {
-          "Name": "Pulchra_Skill_Normal_Charge_Title",
+          "Name": "Basic Attack: Leaping Strike",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -246,19 +250,19 @@
     "Dodge": {
       "Description": [
         {
-          "Name": "Pulchra_Skill_Evade_Title",
-          "Desc": "Pulchra_Skill_Evade_Desc"
+          "Name": "Dodge: Reversal Shot",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_Rush_Title",
-          "Desc": "Pulchra_Skill_Rush_Desc"
+          "Name": "Dash Attack: First Strike Advantage",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nDash forward and slash, dealing <color=#F0D12B>Physical DMG</color>."
         },
         {
-          "Name": "Pulchra_Skill_Counter_Title",
-          "Desc": "Pulchra_Skill_Counter_Desc"
+          "Name": "Dodge Counter: Relentless Retribution",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nThrust at enemies in front, then follow up with a swift slash, dealing <color=#F0D12B>Physical DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_Rush_Title",
+          "Name": "Dash Attack: First Strike Advantage",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -307,7 +311,7 @@
           ]
         },
         {
-          "Name": "Pulchra_Skill_Counter_Title",
+          "Name": "Dodge Counter: Relentless Retribution",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -374,19 +378,19 @@
     "Special": {
       "Description": [
         {
-          "Name": "Pulchra_Skill_Special_Title",
-          "Desc": "Pulchra_Skill_Special_Desc"
+          "Name": "Special Attack: Rending Claw",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nPerform a rapid back-and-forth piercing attack, dealing <color=#F0D12B>Physical DMG</color>.\nAnti-Interrupt level is increased while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_Special_ChainAttack_Title",
-          "Desc": "Pulchra_Skill_Special_ChainAttack_Desc"
+          "Name": "Special Attack: Rending Claw - Nightmare Shadow",
+          "Desc": "While Pulchra is in the <color=#FFFFFF>Hunter's Gait</color> state, and when another active character in the squad hits an enemy with a heavy attack from a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>:\nDash back-and-forth piercing enemies surrounding the target, dealing <color=#F0D12B>Physical DMG</color>.\nAfter using this skill, if another active character in the squad hits an enemy, Pulchra will repeat the attack up to 5 additional times, with the final attack being a more powerful Finishing Move.\nCharacter is invulnerable while using this skill.\n<color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color> is an <color=#FFFFFF>Aftershock</color> attack."
         },
         {
-          "Name": "Pulchra_Skill_ExSpecial_Title",
-          "Desc": "Pulchra_Skill_ExSpecial_Desc"
+          "Name": "EX Special Attack: Rending Claw - Flashstep",
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nPierce back and forth times, dealing massive <color=#F0D12B>Physical DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_Special_Title",
+          "Name": "Special Attack: Rending Claw",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -435,47 +439,47 @@
           ]
         },
         {
-          "Name": "Pulchra_Skill_Special_ChainAttack_Title",
+          "Name": "Special Attack: Rending Claw - Nightmare Shadow",
           "Param": [
             {
               "Name": "DMG Multiplier",
               "Desc": "{Skill:1351006, Prop:1001}",
               "Param": {
                 "1351006": {
-                  "Main": 168.1,
-                  "Growth": 0.153,
+                  "Main": 46.3,
+                  "Growth": 0.043,
                   "Format": "%",
-                  "DamagePercentage": 1.681,
-                  "DamagePercentageGrowth": 0.153,
-                  "StunRatio": 0.917,
-                  "StunRatioGrowth": 0.042,
+                  "DamagePercentage": 0.463,
+                  "DamagePercentageGrowth": 0.043,
+                  "StunRatio": 0.29,
+                  "StunRatioGrowth": 0.014,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3286.25,
+                  "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 98.61,
+                  "AttributeInfliction": 17.36,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
             {
-              "Name": "Pulchra_Property_Special_ChainAttack_Desc_Dmg_01",
+              "Name": "Finishing Move DMG Multiplier",
               "Desc": "{Skill:1351007, Prop:1001}",
               "Param": {
                 "1351007": {
-                  "Main": 540.6,
-                  "Growth": 0.492,
+                  "Main": 53.5,
+                  "Growth": 0.049,
                   "Format": "%",
-                  "DamagePercentage": 5.406,
-                  "DamagePercentageGrowth": 0.492,
-                  "StunRatio": 2.262,
-                  "StunRatioGrowth": 0.103,
+                  "DamagePercentage": 0.535,
+                  "DamagePercentageGrowth": 0.049,
+                  "StunRatio": 0.348,
+                  "StunRatioGrowth": 0.016,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 7647.75,
+                  "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 239.13,
+                  "AttributeInfliction": 17.36,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -486,40 +490,40 @@
               "Desc": "{Skill:1351006, Prop:1002}",
               "Param": {
                 "1351006": {
-                  "Main": 91.7,
-                  "Growth": 0.042,
+                  "Main": 29,
+                  "Growth": 0.014,
                   "Format": "%",
-                  "DamagePercentage": 1.681,
-                  "DamagePercentageGrowth": 0.153,
-                  "StunRatio": 0.917,
-                  "StunRatioGrowth": 0.042,
+                  "DamagePercentage": 0.463,
+                  "DamagePercentageGrowth": 0.043,
+                  "StunRatio": 0.29,
+                  "StunRatioGrowth": 0.014,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3286.25,
+                  "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 98.61,
+                  "AttributeInfliction": 17.36,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
             {
-              "Name": "Pulchra_Property_Special_ChainAttack_Desc_Stun_01",
+              "Name": "Finishing Move Daze Multiplier",
               "Desc": "{Skill:1351007, Prop:1002}",
               "Param": {
                 "1351007": {
-                  "Main": 226.2,
-                  "Growth": 0.103,
+                  "Main": 34.8,
+                  "Growth": 0.016,
                   "Format": "%",
-                  "DamagePercentage": 5.406,
-                  "DamagePercentageGrowth": 0.492,
-                  "StunRatio": 2.262,
-                  "StunRatioGrowth": 0.103,
+                  "DamagePercentage": 0.535,
+                  "DamagePercentageGrowth": 0.049,
+                  "StunRatio": 0.348,
+                  "StunRatioGrowth": 0.016,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 7647.75,
+                  "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 239.13,
+                  "AttributeInfliction": 17.36,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -528,25 +532,25 @@
           ]
         },
         {
-          "Name": "Pulchra_Skill_ExSpecial_Title",
+          "Name": "EX Special Attack: Rending Claw - Flashstep",
           "Param": [
             {
               "Name": "DMG Multiplier",
               "Desc": "{Skill:1351008, Prop:1001}",
               "Param": {
                 "1351008": {
-                  "Main": 473.2,
-                  "Growth": 0.431,
+                  "Main": 347.7,
+                  "Growth": 0.317,
                   "Format": "%",
-                  "DamagePercentage": 4.732,
-                  "DamagePercentageGrowth": 0.431,
-                  "StunRatio": 1.874,
-                  "StunRatioGrowth": 0.086,
+                  "DamagePercentage": 3.477,
+                  "DamagePercentageGrowth": 0.317,
+                  "StunRatio": 2.117,
+                  "StunRatioGrowth": 0.097,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 7122.5,
+                  "FeverRecovery": 14264.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 205.26,
+                  "AttributeInfliction": 255.48,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -557,27 +561,24 @@
               "Desc": "{Skill:1351008, Prop:1002}",
               "Param": {
                 "1351008": {
-                  "Main": 187.4,
-                  "Growth": 0.086,
+                  "Main": 211.7,
+                  "Growth": 0.097,
                   "Format": "%",
-                  "DamagePercentage": 4.732,
-                  "DamagePercentageGrowth": 0.431,
-                  "StunRatio": 1.874,
-                  "StunRatioGrowth": 0.086,
+                  "DamagePercentage": 3.477,
+                  "DamagePercentageGrowth": 0.317,
+                  "StunRatio": 2.117,
+                  "StunRatioGrowth": 0.097,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 7122.5,
+                  "FeverRecovery": 14264.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 205.26,
+                  "AttributeInfliction": 255.48,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
-            {
-              "Name": "Energy Cost",
-              "Desc": "Pulchra_Property_ExSpecial_SpCostValue_01"
-            }
+            { "Name": "Energy Cost", "Desc": "60" }
           ]
         }
       ],
@@ -598,13 +599,16 @@
     },
     "Chain": {
       "Description": [
-        { "Name": "Pulchra_Skill_QTE_Title", "Desc": "Pulchra_Skill_QTE_Desc" },
         {
-          "Name": "Pulchra_Skill_ExQTE_Title",
-          "Desc": "Pulchra_Skill_ExQTE_Desc"
+          "Name": "Chain Attack: Hey, Didn't Expect That, Right?",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nUnleashes a charged shot forward, dealing massive <color=#F0D12B>Physical DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_QTE_Title",
+          "Name": "Ultimate: Oh, Time to Play?",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nUnleash a powerful shot at enemies in a large area ahead, dealing massive <color=#F0D12B>Physical DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Chain Attack: Hey, Didn't Expect That, Right?",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -653,25 +657,25 @@
           ]
         },
         {
-          "Name": "Pulchra_Skill_ExQTE_Title",
+          "Name": "Ultimate: Oh, Time to Play?",
           "Param": [
             {
               "Name": "DMG Multiplier",
               "Desc": "{Skill:1351012, Prop:1001}",
               "Param": {
                 "1351012": {
-                  "Main": 1510.5,
-                  "Growth": 1.374,
+                  "Main": 1393.8,
+                  "Growth": 1.268,
                   "Format": "%",
-                  "DamagePercentage": 15.105,
-                  "DamagePercentageGrowth": 1.374,
-                  "StunRatio": 9.897,
-                  "StunRatioGrowth": 0.45,
+                  "DamagePercentage": 13.938,
+                  "DamagePercentageGrowth": 1.268,
+                  "StunRatio": 8.823,
+                  "StunRatioGrowth": 0.402,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 208.36,
+                  "AttributeInfliction": 114.96,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -682,18 +686,18 @@
               "Desc": "{Skill:1351012, Prop:1002}",
               "Param": {
                 "1351012": {
-                  "Main": 989.7,
-                  "Growth": 0.45,
+                  "Main": 882.3,
+                  "Growth": 0.402,
                   "Format": "%",
-                  "DamagePercentage": 15.105,
-                  "DamagePercentageGrowth": 1.374,
-                  "StunRatio": 9.897,
-                  "StunRatioGrowth": 0.45,
+                  "DamagePercentage": 13.938,
+                  "DamagePercentageGrowth": 1.268,
+                  "StunRatio": 8.823,
+                  "StunRatioGrowth": 0.402,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 208.36,
+                  "AttributeInfliction": 114.96,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -720,19 +724,19 @@
     "Assist": {
       "Description": [
         {
-          "Name": "Pulchra_Skill_BeHitAid_Title",
-          "Desc": "Pulchra_Skill_BeHitAid_Desc"
+          "Name": "Quick Assist: Contract - Bodyguard",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nThrust at enemies in front, followed by rapid slashes, dealing <color=#F0D12B>Physical DMG</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_EvadeAid_Title",
-          "Desc": "Pulchra_Skill_EvadeAid_Desc"
+          "Name": "Evasive Assist: Contract - Outsourced Combat",
+          "Desc": "When the on-field character is about to be attacked, press <IconMap:Icon_Switch> to activate:\nDodges the enemy's attack and activates <color=#FFFFFF>Vital View</color>.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_AssaultAid_Title",
-          "Desc": "Pulchra_Skill_AssaultAid_Desc"
+          "Name": "Assist Follow-Up: Independent Pricing",
+          "Desc": "Press <IconMap:Icon_Normal> after an <color=#FFFFFF>Evasive Assist</color> to activate:\nLeap forward into the air and fire, dealing <color=#F0D12B>Physical DMG</color>.\nUpon activating this skill, consume 1 <color=#FFFFFF>Assist Point</color> to enter the <color=#FFFFFF>Hunter's Gait</color> state.\nCharacter is invulnerable while using this skill."
         },
         {
-          "Name": "Pulchra_Skill_BeHitAid_Title",
+          "Name": "Quick Assist: Contract - Bodyguard",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -781,7 +785,7 @@
           ]
         },
         {
-          "Name": "Pulchra_Skill_AssaultAid_Title",
+          "Name": "Assist Follow-Up: Independent Pricing",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -793,8 +797,8 @@
                   "Format": "%",
                   "DamagePercentage": 3.071,
                   "DamagePercentageGrowth": 0.28,
-                  "StunRatio": 5.578,
-                  "StunRatioGrowth": 0.254,
+                  "StunRatio": 2.653,
+                  "StunRatioGrowth": 0.121,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 9594.75,
@@ -810,13 +814,13 @@
               "Desc": "{Skill:1351014, Prop:1002}",
               "Param": {
                 "1351014": {
-                  "Main": 557.8,
-                  "Growth": 0.254,
+                  "Main": 265.3,
+                  "Growth": 0.121,
                   "Format": "%",
                   "DamagePercentage": 3.071,
                   "DamagePercentageGrowth": 0.28,
-                  "StunRatio": 5.578,
-                  "StunRatioGrowth": 0.254,
+                  "StunRatio": 2.653,
+                  "StunRatioGrowth": 0.121,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 9594.75,
@@ -846,50 +850,159 @@
       }
     }
   },
-  "skillList": {},
+  "skillList": {
+    "1351001": {
+      "Name": "Basic Attack: Swift Strike",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1351002": {
+      "Name": "Basic Attack: Leaping Strike",
+      "Desc": "<IconMap:Icon_Normal> (Hold)",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1351003": {
+      "Name": "Special Attack: Rending Claw",
+      "Desc": "<IconMap:Icon_Special>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1351004": {
+      "Name": "EX Special Attack: Rending Claw - Flashstep",
+      "Desc": "<IconMap:Icon_SpecialReady>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1351005": {
+      "Name": "Dash Attack: First Strike Advantage",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1351006": {
+      "Name": "Dodge Counter: Relentless Retribution",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1351007": {
+      "Name": "Chain Attack: Hey, Didn't Expect That, Right?",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 200,
+      "HitType": 102
+    },
+    "1351008": {
+      "Name": "Ultimate: Oh, Time to Play?",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 200,
+      "HitType": 102
+    },
+    "1351009": {
+      "Name": "Quick Assist: Contract - Bodyguard",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1351010": {
+      "Name": "Evasive Assist: Contract - Outsourced Combat",
+      "Desc": "<IconMap:Icon_Switch>(When Triggering Evasive Assist)",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1351011": {
+      "Name": "Assist Follow-Up: Independent Pricing",
+      "Desc": "<IconMap:Icon_Normal> (After Evasive Assist)",
+      "ElementType": 200,
+      "HitType": 102
+    }
+  },
   "cores": {
     "Level": {
       "1": {
         "Level": 1,
         "Id": 1351501,
-        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
-        "Desc": ["Pulchra_UniqueSkill_01_Desc", "Pulchra_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Hunter's Instinct",
+          "Additional Ability: Business Partner"
+        ],
+        "Desc": [
+          "When Pulchra activates an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she enters the <color=#FFFFFF>Hunter's Gait</color> state, increasing the Daze she deals by <color=#2BAD00>15%</color> for 6s. After switching to another character, if Pulchra is still in the <color=#FFFFFF>Hunter's Gait</color> state, the state will last until Pulchra switches back in. While in the <color=#FFFFFF>Hunter's Gait</color> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <color=#FFFFFF>Quick Assist</color> from the previous character in the squad.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same Faction:\nWhen Pulchra hits enemies with <color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color>, an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, it applies the <color=#FFFFFF>Binding Trap</color> effect for 15s. After applying <color=#FFFFFF>Binding Trap</color>, all units' <color=#FFFFFF>Aftershock</color> DMG against the target is increased by 30%."
+        ]
       },
       "2": {
         "Level": 2,
         "Id": 1351502,
-        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
-        "Desc": ["Pulchra_UniqueSkill_02_Desc", "Pulchra_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Hunter's Instinct",
+          "Additional Ability: Business Partner"
+        ],
+        "Desc": [
+          "When Pulchra activates an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she enters the <color=#FFFFFF>Hunter's Gait</color> state, increasing the Daze she deals by <color=#2BAD00>17.5%</color> for 6s. After switching to another character, if Pulchra is still in the <color=#FFFFFF>Hunter's Gait</color> state, the state will last until Pulchra switches back in. While in the <color=#FFFFFF>Hunter's Gait</color> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <color=#FFFFFF>Quick Assist</color> from the previous character in the squad.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same Faction:\nWhen Pulchra hits enemies with <color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color>, an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, it applies the <color=#FFFFFF>Binding Trap</color> effect for 15s. After applying <color=#FFFFFF>Binding Trap</color>, all units' <color=#FFFFFF>Aftershock</color> DMG against the target is increased by 30%."
+        ]
       },
       "3": {
         "Level": 3,
         "Id": 1351503,
-        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
-        "Desc": ["Pulchra_UniqueSkill_03_Desc", "Pulchra_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Hunter's Instinct",
+          "Additional Ability: Business Partner"
+        ],
+        "Desc": [
+          "When Pulchra activates an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she enters the <color=#FFFFFF>Hunter's Gait</color> state, increasing the Daze she deals by <color=#2BAD00>20%</color> for 6s. After switching to another character, if Pulchra is still in the <color=#FFFFFF>Hunter's Gait</color> state, the state will last until Pulchra switches back in. While in the <color=#FFFFFF>Hunter's Gait</color> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <color=#FFFFFF>Quick Assist</color> from the previous character in the squad.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same Faction:\nWhen Pulchra hits enemies with <color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color>, an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, it applies the <color=#FFFFFF>Binding Trap</color> effect for 15s. After applying <color=#FFFFFF>Binding Trap</color>, all units' <color=#FFFFFF>Aftershock</color> DMG against the target is increased by 30%."
+        ]
       },
       "4": {
         "Level": 4,
         "Id": 1351504,
-        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
-        "Desc": ["Pulchra_UniqueSkill_04_Desc", "Pulchra_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Hunter's Instinct",
+          "Additional Ability: Business Partner"
+        ],
+        "Desc": [
+          "When Pulchra activates an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she enters the <color=#FFFFFF>Hunter's Gait</color> state, increasing the Daze she deals by <color=#2BAD00>22.5%</color> for 6s. After switching to another character, if Pulchra is still in the <color=#FFFFFF>Hunter's Gait</color> state, the state will last until Pulchra switches back in. While in the <color=#FFFFFF>Hunter's Gait</color> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <color=#FFFFFF>Quick Assist</color> from the previous character in the squad.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same Faction:\nWhen Pulchra hits enemies with <color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color>, an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, it applies the <color=#FFFFFF>Binding Trap</color> effect for 15s. After applying <color=#FFFFFF>Binding Trap</color>, all units' <color=#FFFFFF>Aftershock</color> DMG against the target is increased by 30%."
+        ]
       },
       "5": {
         "Level": 5,
         "Id": 1351505,
-        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
-        "Desc": ["Pulchra_UniqueSkill_05_Desc", "Pulchra_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Hunter's Instinct",
+          "Additional Ability: Business Partner"
+        ],
+        "Desc": [
+          "When Pulchra activates an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she enters the <color=#FFFFFF>Hunter's Gait</color> state, increasing the Daze she deals by <color=#2BAD00>25%</color> for 6s. After switching to another character, if Pulchra is still in the <color=#FFFFFF>Hunter's Gait</color> state, the state will last until Pulchra switches back in. While in the <color=#FFFFFF>Hunter's Gait</color> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <color=#FFFFFF>Quick Assist</color> from the previous character in the squad.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same Faction:\nWhen Pulchra hits enemies with <color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color>, an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, it applies the <color=#FFFFFF>Binding Trap</color> effect for 15s. After applying <color=#FFFFFF>Binding Trap</color>, all units' <color=#FFFFFF>Aftershock</color> DMG against the target is increased by 30%."
+        ]
       },
       "6": {
         "Level": 6,
         "Id": 1351506,
-        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
-        "Desc": ["Pulchra_UniqueSkill_06_Desc", "Pulchra_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Hunter's Instinct",
+          "Additional Ability: Business Partner"
+        ],
+        "Desc": [
+          "When Pulchra activates an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she enters the <color=#FFFFFF>Hunter's Gait</color> state, increasing the Daze she deals by <color=#2BAD00>27.5%</color> for 6s. After switching to another character, if Pulchra is still in the <color=#FFFFFF>Hunter's Gait</color> state, the state will last until Pulchra switches back in. While in the <color=#FFFFFF>Hunter's Gait</color> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <color=#FFFFFF>Quick Assist</color> from the previous character in the squad.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same Faction:\nWhen Pulchra hits enemies with <color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color>, an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, it applies the <color=#FFFFFF>Binding Trap</color> effect for 15s. After applying <color=#FFFFFF>Binding Trap</color>, all units' <color=#FFFFFF>Aftershock</color> DMG against the target is increased by 30%."
+        ]
       },
       "7": {
         "Level": 7,
         "Id": 1351507,
-        "Name": ["Pulchra_UniqueSkill_Title", "Pulchra_MathSkill_Title"],
-        "Desc": ["Pulchra_UniqueSkill_07_Desc", "Pulchra_MathSkill_Desc"]
+        "Name": [
+          "Core Passive: Hunter's Instinct",
+          "Additional Ability: Business Partner"
+        ],
+        "Desc": [
+          "When Pulchra activates an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, she enters the <color=#FFFFFF>Hunter's Gait</color> state, increasing the Daze she deals by <color=#2BAD00>30%</color> for 6s. After switching to another character, if Pulchra is still in the <color=#FFFFFF>Hunter's Gait</color> state, the state will last until Pulchra switches back in. While in the <color=#FFFFFF>Hunter's Gait</color> state and as the active character, when Pulchra lands a heavy attack on enemies, she can trigger a <color=#FFFFFF>Quick Assist</color> from the previous character in the squad.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same Faction:\nWhen Pulchra hits enemies with <color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow</color>, an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color>, it applies the <color=#FFFFFF>Binding Trap</color> effect for 15s. After applying <color=#FFFFFF>Binding Trap</color>, all units' <color=#FFFFFF>Aftershock</color> DMG against the target is increased by 30%."
+        ]
       }
     },
     "Materials": {
@@ -904,39 +1017,39 @@
   "mindscapes": {
     "1": {
       "Level": 1,
-      "Name": "Pulchra_Talent_01_Title",
-      "Desc": "Pulchra_Talent_01_Desc_01",
-      "Desc2": "Pulchra_Talent_01_Desc_02"
+      "Name": "Self-Interest",
+      "Desc": "When dealing DMG to enemies affected by <color=#FFFFFF>Binding Trap</color>, increase own CRIT Rate by 10%.",
+      "Desc2": "..."
     },
     "2": {
       "Level": 2,
-      "Name": "Pulchra_Talent_02_Title",
-      "Desc": "Pulchra_Talent_02_Desc_01",
-      "Desc2": "Pulchra_Talent_02_Desc_02"
+      "Name": "Opportunistic",
+      "Desc": "While in the <color=#FFFFFF>Hunter's Gait</color> state from <color=#FFFFFF>Core Passive: Hunter's Instinct</color>, Pulchra's ATK is increased by an additional 10%.",
+      "Desc2": "..."
     },
     "3": {
       "Level": 3,
-      "Name": "Pulchra_Talent_03_Title",
+      "Name": "Territorial",
       "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "Pulchra_Talent_03_Desc_02"
+      "Desc2": "..."
     },
     "4": {
       "Level": 4,
-      "Name": "Pulchra_Talent_04_Title",
-      "Desc": "Pulchra_Talent_04_Desc_01",
-      "Desc2": "Pulchra_Talent_04_Desc_02"
+      "Name": "Joy of the Hunt",
+      "Desc": "Reduces Energy Cost of activating <color=#FFFFFF>EX Special Attack: Rending Claw - Flashstep</color> by 5.",
+      "Desc2": "..."
     },
     "5": {
       "Level": 5,
-      "Name": "Pulchra_Talent_05_Title",
+      "Name": "Tail Game",
       "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
-      "Desc2": "Pulchra_Talent_05_Desc_02"
+      "Desc2": "..."
     },
     "6": {
       "Level": 6,
-      "Name": "Pulchra_Talent_06_Title",
-      "Desc": "Pulchra_Talent_06_Desc_01",
-      "Desc2": "Pulchra_Talent_06_Desc_02"
+      "Name": "Behind the Mask",
+      "Desc": "<color=#FFFFFF>Special Attack: Rending Claw - Nightmare Shadow's</color> DMG is increased by 15%, and the number of times the repeated attack can trigger is increased by 2. <color=#FFFFFF>Additional Ability: Business Partner</color>'s <color=#FFFFFF>Binding Trap</color> effect now also applies to all damage types, not just <color=#FFFFFF>Aftershock</color> DMG.",
+      "Desc2": "..."
     }
   }
 }

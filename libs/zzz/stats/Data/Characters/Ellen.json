@@ -681,11 +681,11 @@
         },
         {
           "Name": "EX Special Attack: Tail Swipe",
-          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nPerform a forceful tail whip attack that deals massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd-hit of a <color=#FFFFFF>Basic Attack</color>."
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nPerform a forceful tail whip attack that deals massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd hit of a <color=#FFFFFF>Basic Attack</color>."
         },
         {
           "Name": "EX Special Attack: Sharknami",
-          "Desc": "With enough Energy and after executing <color=#FFFFFF>EX Special Attack: Tail Swipe</color>, press <IconMap:Icon_SpecialReady> to activate:\nPerform a powerful series of slashes ahead that deal massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd-hit of a <color=#FFFFFF>Basic Attack</color>."
+          "Desc": "With enough Energy and after executing <color=#FFFFFF>EX Special Attack: Tail Swipe</color>, press <IconMap:Icon_SpecialReady> to activate:\nPerform a powerful series of slashes ahead that deal massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd hit of a <color=#FFFFFF>Basic Attack</color>."
         },
         {
           "Name": "Special Attack: Drift",

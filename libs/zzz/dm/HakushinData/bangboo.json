@@ -106,7 +106,7 @@
     "EN": "Magnetiboo",
     "desc": "Suffering from anxiety caused by an attachment disorder. Treatment plan: Its master should refrain from wearing any metal accessories.",
     "KO": "자석부",
-    "CHS": "磁���布",
+    "CHS": "磁力布",
     "JA": "クッツキボンプ"
   },
   "53012": {
@@ -128,6 +128,16 @@
     "KO": "불량부",
     "CHS": "不良布",
     "JA": "カチコミボンプ"
+  },
+  "53014": {
+    "icon": "",
+    "rank": 3,
+    "codename": "Bangboo_Name_en_53014",
+    "EN": "Bangboo_Name_53014",
+    "desc": "Bangboo_Desc_53014",
+    "KO": "Bangboo_Name_53014",
+    "CHS": "Bangboo_Name_53014",
+    "JA": "Bangboo_Name_53014"
   },
   "53015": {
     "icon": "UI/Sprite/A1DynamicLoad/BangbooModGarage/UnPacker/BangbooRole/BangbooGarageRole29.png",
@@ -278,6 +288,16 @@
     "KO": "찰칵이",
     "CHS": "咔嚓仔",
     "JA": "カチャコ"
+  },
+  "54016": {
+    "icon": "",
+    "rank": 4,
+    "codename": "Bangboo_Name_en_54016",
+    "EN": "Bangboo_Name_54016",
+    "desc": "Bangboo_Desc_54016",
+    "KO": "Bangboo_Name_54016",
+    "CHS": "Bangboo_Name_54016",
+    "JA": "Bangboo_Name_54016"
   },
   "55001": {
     "icon": "",

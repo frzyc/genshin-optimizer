@@ -1,10 +1,10 @@
 {
   "Id": 30030,
-  "MonsterId": 11531,
+  "MonsterId": 11981,
   "MonsterInfo": {
-    "CodeName": "Monster_Nineveh",
-    "Icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/IconBossGeneral/UnPacker/IconMonster_Nineveh.png",
-    "Tag": ["Bios", "Gigantic"],
+    "CodeName": "Monster_HugoVlad",
+    "Icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/IconBossGeneral/UnPacker/IconMonster_HugoVlad.png",
+    "Tag": ["Bios", "Small", "Boss"],
     "Type": "Monster",
     "Element": {
       "Ice": 0,
@@ -14,8 +14,8 @@
       "Physical": 0
     },
     "Stats": {
-      "Hp": 21539,
-      "Attack": 120,
+      "Hp": 22398,
+      "Attack": 144,
       "Defence": 60,
       "Crit": 0,
       "CritDamage": 5000,
@@ -23,7 +23,7 @@
       "CritDmgRes": 0,
       "PenRate": 0,
       "PenDelta": 0,
-      "Stun": 10028,
+      "Stun": 6097,
       "BreakStun": 0
     },
     "Curves": {
@@ -83,15 +83,15 @@
       }
     }
   },
-  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_Slime.png",
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/monster_HugoVlad.png",
   "Tag": ["Ether", "NotPro"],
   "Tag2": ["Metro", "SkyScraper"],
-  "Name": "Ionized - Doppelganger",
-  "Desc": "CardDesc_30030",
-  "Rarity": 1,
+  "Name": "Abyssal Enforcer",
+  "Desc": "...",
+  "Rarity": 3,
   "GroupId": 290,
   "GroupDesc": "Special",
   "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
-  "CardQuote": "CardQuote_30030",
-  "CardSkillDesc": "CardSkillDesc_30030"
+  "CardQuote": "",
+  "CardSkillDesc": "In combat, the Abyssal Enforcer will actively evade enemies and activate Vital View, followed by a powerful rush attack. This skill can be countered with Perfect Dodge or Perfect Assist."
 }

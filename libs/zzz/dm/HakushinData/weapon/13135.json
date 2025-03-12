@@ -1,8 +1,8 @@
 {
   "Id": 13135,
   "CodeName": "Weapon_A_1351",
-  "Name": "Item_Weapon_A_1351_Name",
-  "Desc": "Item_Weapon_A_1351_Desc",
+  "Name": "Box Cutter",
+  "Desc": "...",
   "Desc2": "Equip to increase Stun Agents' combat capabilities",
   "Desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous.",
   "Rarity": 3,
@@ -94,24 +94,24 @@
   "Materials": "10:9600,101011:3|10:22400,101021:10|10:48000,101021:16|10:80000,101031:8|10:160000,101031:16",
   "Talents": {
     "1": {
-      "Name": "Weapon_TalentTitle_13135",
-      "Desc": "Weapon_TalentDes_81313501"
+      "Name": "Watch Your Fingers",
+      "Desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>15%</color>, and Daze increases by <color=#2BAD00>10%</color>, lasting 10s."
     },
     "2": {
-      "Name": "Weapon_TalentTitle_13135",
-      "Desc": "Weapon_TalentDes_81313502"
+      "Name": "Watch Your Fingers",
+      "Desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>17.3%</color>, and Daze increases by <color=#2BAD00>11.5%</color>, lasting 10s."
     },
     "3": {
-      "Name": "Weapon_TalentTitle_13135",
-      "Desc": "Weapon_TalentDes_81313503"
+      "Name": "Watch Your Fingers",
+      "Desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>19.5%</color>, and Daze increases by <color=#2BAD00>13%</color>, lasting 10s."
     },
     "4": {
-      "Name": "Weapon_TalentTitle_13135",
-      "Desc": "Weapon_TalentDes_81313504"
+      "Name": "Watch Your Fingers",
+      "Desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>21.8%</color>, and Daze increases by <color=#2BAD00>14.5%</color>, lasting 10s."
     },
     "5": {
-      "Name": "Weapon_TalentTitle_13135",
-      "Desc": "Weapon_TalentDes_81313505"
+      "Name": "Watch Your Fingers",
+      "Desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>24%</color>, and Daze increases by <color=#2BAD00>16%</color>, lasting 10s."
     }
   }
 }

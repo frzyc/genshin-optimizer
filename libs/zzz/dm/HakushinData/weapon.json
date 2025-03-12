@@ -76,7 +76,7 @@
     "EN": "[Vortex] Arrow",
     "desc": "A tactical W-Engine that locates enemies using high-frequency sound waves. Its aiming aid can make its operator's precision attack more deadly.",
     "KO": "「급류」-화살",
-    "CHS": "「湍流」-矢���",
+    "CHS": "「湍流」-矢型",
     "JA": "「激流」-矢型"
   },
   "12009": {
@@ -307,7 +307,7 @@
     "desc": "A customized supercomputing W-Engine, specialized in aim support and ballistic calculations. Modified by Billy, it now looks like some sort of knock-off Starlight Knight figurine.",
     "KO": "별빛 엔진 레플리카",
     "CHS": "仿制星徽引擎",
-    "JA": "なんちゃってスターラ���トエンジン"
+    "JA": "なんちゃってスターラ��トエンジン"
   },
   "13111": {
     "icon": "Weapon_A_1111",
@@ -326,7 +326,7 @@
     "EN": "Big Cylinder",
     "desc": "A powerful protection-type W-Engine, characterized by thick oil cylinders that ceaselessly roar inside it. It can provide sufficient power for heavy machinery.",
     "KO": "빅 실린더",
-    "CHS": "比格气缸",
+    "CHS": "比格气��",
     "JA": "ビガー・シリンダー"
   },
   "13113": {
@@ -373,11 +373,11 @@
     "icon": "Weapon_A_1351",
     "rank": 3,
     "type": 2,
-    "EN": "Item_Weapon_A_1351_Name",
+    "EN": "Box Cutter",
     "desc": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous.",
-    "KO": "Item_Weapon_A_1351_Name",
+    "KO": "커터칼",
     "CHS": "裁纸刀",
-    "JA": "Item_Weapon_A_1351_Name"
+    "JA": "ペーパーカッター"
   },
   "14001": {
     "icon": "Weapon_S_Common_01",
@@ -546,7 +546,7 @@
     "EN": "Riot Suppressor Mark VI",
     "desc": "The latest tactical W-Engine used by Public Security's elite Hollow squads, possessing a powerful Ether energy source. It's Zhu Yuan's favored model.",
     "KO": "서프레서 Ⅵ형",
-    "CHS": "防暴者Ⅵ��",
+    "CHS": "防暴者Ⅵ型",
     "JA": "サプレッサーⅥ型"
   },
   "14125": {
@@ -569,6 +569,16 @@
     "CHS": "淬锋钳刺",
     "JA": "磨き抜かれた切っ先"
   },
+  "14129": {
+    "icon": "Weapon_S_1291",
+    "rank": 4,
+    "type": 1,
+    "EN": "Item_Weapon_S_1291_Name",
+    "desc": "Item_Weapon_S_1291_ShortDesc",
+    "KO": "Item_Weapon_S_1291_Name",
+    "CHS": "雨果测试音擎",
+    "JA": "Item_Weapon_S_1291_Name"
+  },
   "14131": {
     "icon": "Weapon_S_1311",
     "rank": 4,
@@ -589,24 +599,34 @@
     "CHS": "心弦夜响",
     "JA": "心弦のノクターン"
   },
+  "14133": {
+    "icon": "Weapon_S_1331",
+    "rank": 4,
+    "type": 3,
+    "EN": "Item_Weapon_S_1331_Name",
+    "desc": "Item_Weapon_S_1331_ShortDesc",
+    "KO": "Item_Weapon_S_1331_Name",
+    "CHS": "薇薇安测试音擎",
+    "JA": "Item_Weapon_S_1331_Name"
+  },
   "14136": {
     "icon": "Weapon_S_1361",
     "rank": 4,
     "type": 2,
-    "EN": "Item_Weapon_S_1361_Name",
-    "desc": "Item_Weapon_S_1361_ShortDesc",
-    "KO": "Item_Weapon_S_1361_Name",
+    "EN": "Spectral Gaze",
+    "desc": "...",
+    "KO": "탐혼의 눈동자",
     "CHS": "索魂影眸",
-    "JA": "Item_Weapon_S_1361_Name"
+    "JA": "奪魂の瞑目"
   },
   "14138": {
     "icon": "Weapon_S_1381",
     "rank": 4,
     "type": 1,
-    "EN": "Item_Weapon_S_1381_Name",
-    "desc": "Item_Weapon_S_1381_ShortDesc",
-    "KO": "Item_Weapon_S_1381_Name",
+    "EN": "Severed Innocence",
+    "desc": "...",
+    "KO": "순결한 희생",
     "CHS": "牺牲洁纯",
-    "JA": "Item_Weapon_S_1381_Name"
+    "JA": "純然たる犠牲"
   }
 }

@@ -594,7 +594,7 @@
     "rarity": 2,
     "group": 202,
     "EN": "Bellum",
-    "desc": "As an arena champion with an impressive win streak, Bellum once called himself the number-one fighter in the Outer Ring... Until his win streak was ended.\nWhat was even more infuriating... was that arrogant guy didn't even remember his name.\nAngry, Bellum honed his fighting skills, swearing that he would make his name known throughout the Outer Ring once more and make the arrogant jerk who beat him pay.\nTo achieve his goal, Bellum joined The Vanquishers and helped Pompey defeat enemy after dangerous enemy. He could skillfully modify and operate a flamethrower, leading the charge to incinerate enemies in his path. He could also command his squad with seamless precision, organizing them into an unstoppable battle force. Every battle he led ended in victory.\nNow, Bellum no longer needs to make a name for himself.\nThough he's no longer that champion with an impressive win streak, in the Outer Ring, everyone knows the terror of gang wars, and as a member of The Vanquishers' core fighting force, Bellum was war itself.\n\"You don't wanna do menial jobs? Heh, you can complain about that you defeat boss Bellum!\"\n\"Now go clean the toilet!\"",
+    "desc": "As an arena champion with an impressive win streak, Bellum once called himself the number-one fighter in the Outer Ring... Until his win streak was ended.\nWhat was even more infuriating... was that arrogant guy didn't even remember his name.\nAngry, Bellum honed his fighting skills, swearing that he would make his name known throughout the Outer Ring once more and make the arrogant jerk who beat him pay.\nTo achieve his goal, Bellum joined The Vanquishers and helped Pompey defeat enemy after dangerous enemy. He could skillfully modify and operate a flamethrower, leading the charge to incinerate enemies in his path. He could also command his squad with seamless precision, organizing them into an unstoppable battle force. Every battle he led ended in victory.\nNow, Bellum no longer needs to make a name for himself.\nThough he's no longer that champion with an impressive win streak, in the Outer Ring, everyone knows the terror of gang wars, and as a member of The Vanquishers' core fighting force, Bellum was war itself.\n\"You don't wanna do menial jobs? Heh, you can complain about that once you defeat boss Bellum!\"\n\"Now go clean the toilet!\"",
     "KO": "벨룸",
     "CHS": "巴罗姆",
     "JA": "ベルラム"
@@ -717,7 +717,7 @@
     "desc": "Decades ago, two talented dancer sisters rose to fame overnight. Shining like a meteor, they attracted a massive fan base and held a magnificent performance at the bustling Ballet Twins.\nHowever, as the show neared its end, the Hollow Disaster struck, engulfing the Ballet Twins and plunging the sisters into eternal darkness. The news devastated countless people worldwide.\nRumors suggest that on the day of the performance, the sisters encountered three ominous signs of impending doom. However, driven by their obsession with the stage, applause, and glory, they chose to continue the performance despite the warnings.\nToday, only a few images of the elder sister remain, preserved in photographs on yellowed magazines.\nOnly a few elite Hollow Raiders know that when the shattered spotlight illuminates Ballet Twins once more, the enigmatic Black Veil Marionette emerges. This figure is believed to be connected to Augilia, the dancer from that fateful performance, attempting to finish the grand finale she was never able to complete.\nAs for those who have the \"fortune\" to witness her grand finale, they will be haunted by nightmares that last a lifetime.\n\"If you run into Marionette in the Ballet Twins, don't even think about running away.\"\n\"Just sit back and watch her grand finale!\" \"At least it's a graceful and decent way to die...\"",
     "KO": "마리오네트·검은 베일",
     "CHS": "冥宁芙·黑纱",
-    "JA": "マリオネット・ブラックベール"
+    "JA": "マ��オネット・ブラックベール"
   },
   "30011": {
     "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/Monster_LampasGrayVeil.png",
@@ -912,16 +912,40 @@
     "JA": "電離体・ドッペルゲンガー"
   },
   "30030": {
-    "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_Slime.png",
+    "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/monster_HugoVlad.png",
     "tag": ["Ether", "NotPro"],
     "tag2": ["Metro", "SkyScraper"],
-    "rarity": 1,
+    "rarity": 3,
     "group": 290,
-    "EN": "Ionized - Doppelganger",
-    "desc": "CardDesc_30030",
-    "KO": "플라스마·도플갱어",
-    "CHS": "离子体·多佩冈亚",
-    "JA": "電離体・ドッペルゲンガー"
+    "EN": "Abyssal Enforcer",
+    "desc": "...",
+    "KO": "암연 징벌자",
+    "CHS": "暗渊惩戒者",
+    "JA": "深淵の断罪者"
+  },
+  "30031": {
+    "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/Monster_Hecate.png",
+    "tag": ["Ether", "NotPro"],
+    "tag2": ["Metro", "SkyScraper"],
+    "rarity": 3,
+    "group": 201,
+    "EN": "Palicus",
+    "desc": "...",
+    "KO": "팔리쿠스",
+    "CHS": "帕里库斯",
+    "JA": "パリクス"
+  },
+  "30032": {
+    "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/Monster_Geppetto.png",
+    "tag": ["Ether", "NotPro"],
+    "tag2": ["Metro", "SkyScraper"],
+    "rarity": 4,
+    "group": 201,
+    "EN": "Geppetto",
+    "desc": "...",
+    "KO": "제페토",
+    "CHS": "杰佩托",
+    "JA": "ジェペット"
   },
   "35001": {
     "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/Monster_Nineveh.png",
@@ -1520,7 +1544,7 @@
     "EN": "Hati Pack Leader — Energized",
     "desc": "The HIA Phase-I Investigation Team has officially documented the existence of this sentient living Ether resembling a four-legged beast, which poses significant danger. \nAccording to rumors, the first sighting took place in the Nest Hollow, where individuals exploring the nearby wastes reported hearing ear-splitting roars reminiscent of wild animal growls.\n\"If I throw a stick or a ball, do you think that monster will catch it?\"\n\"You can give it a try, but I won't cover your medical bill.\"",
     "KO": "하티 리더·에너지형",
-    "CHS": "哈提头犬·蓄能型",
+    "CHS": "哈提头犬·���能型",
     "JA": "ハティアルファ・蓄エネ型"
   },
   "200021": {
@@ -1726,6 +1750,18 @@
     "KO": "돌격 사수",
     "CHS": "突击炮手",
     "JA": "突撃砲兵"
+  },
+  "200092": {
+    "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/Monster_TacticalAssaultGunner.png",
+    "tag": ["Ether", "Pro"],
+    "tag2": ["Metro", "SkyScraper"],
+    "rarity": 3,
+    "group": 205,
+    "EN": "Specialized Assault Bomber",
+    "desc": "...",
+    "KO": "특전 강습 폭파범",
+    "CHS": "特战强袭轰击者",
+    "JA": "特戦強襲爆撃手"
   },
   "200101": {
     "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_TarasqueMixerPro.png",
@@ -2108,7 +2144,7 @@
     "EN": "Autonomous Assault Unit - Typhon Destroyer",
     "desc": "As a heavy mech, the Typhon Destroyer is devoid of any added long-range firepower. Instead, its focus is on its Ether-Kinetic Armor.\nImpact attacks, heavy blows, crushing... The Typhon Destroyer employs simple yet efficient tactical maneuvers to maximize the destructive power afforded to it by its Ether-Kinetic Armor. The shockwave effects from its strikes can even intimidate larger Ethereals...\nEven the most seasoned Hollow Raiders can only let out a sigh of helplessness when confronted with the impenetrable Typhon Destroyer.\n\"The tall and robust physique, powerful and sturdy arms... It's my ideal type... I mean, ideal model.\"",
     "KO": "자율 강습 유닛·「티폰·디스트로이어」",
-    "CHS": "自律强袭单位��「提丰·破坏者型」",
+    "CHS": "自律强袭单位·「提丰·破坏者型」",
     "JA": "自律強襲ユニット・「テューポーン・デストロイヤー」"
   },
   "300121": {
@@ -2133,7 +2169,19 @@
     "desc": "People in the Outer Ring once called him the \"Overlord Pompey\" with true respect.\nBut now, his soul has been corrupted by potent Ether, his body polluted by sulfur and crude oil; the heart that once beat solely to protect the Outer Ring has turned into a supercritical Ether core filled with infinite power.\nThe former \"Lord of the Outer Ring\" has been reborn in flames, taking on a different form.\nFreedom, majesty... Violence, insanity.\nIt charges through the dust and flames, seizing anything that moves and then mercilessly tearing and shattering it.\nThose familiar with it before have guessed from its fractured whispers that what drives it is not a desire for petty revenge, but rather a desire to crush all outliers who dare to challenge the laws of the Outer Ring.\nMaybe it's the last vestige of the former Overlord Pompey's lingering will.\n\"Our leader has turned into that thing, but... he still feels like the same person.\"",
     "KO": "노토리우스·폼페이",
     "CHS": "恶名·庞培",
-    "JA": "���警戒・ポンペイ"
+    "JA": "要警戒・ポンペイ"
+  },
+  "300301": {
+    "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv03/monster_HugoVlad_Boss.png",
+    "tag": ["Ether", "NotPro"],
+    "tag2": ["Metro", "SkyScraper"],
+    "rarity": 3,
+    "group": 201,
+    "EN": "Doppelganger - Abyssal Enforcer",
+    "desc": "...",
+    "KO": "도플갱어·암연 징벌자",
+    "CHS": "多佩冈亚·暗渊惩戒者",
+    "JA": "ドッペルゲンガー・深淵の断罪者"
   },
   "930146": {
     "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_ClaymoreGrey.png",

@@ -21,6 +21,7 @@ const FLAT_SCALING = 100
 type CharacterRawData = {
   id: number
   Icon: string
+  Name: string
   Rarity: number
   ElementType: Record<string, string> // index, Attribute
   WeaponType: Record<string, string> // index, Specialty
@@ -188,6 +189,12 @@ export const charactersDetailedJSONData = Object.fromEntries(
       const raw = JSON.parse(
         readHakushinJSON(`character/${id}.json`)
       ) as CharacterRawData
+      // Not all agents have this info, or it is hidden for some reason
+      const fullname =
+        raw.PartnerInfo.FullName === undefined ||
+        raw.PartnerInfo.FullName === '...'
+          ? raw.Name
+          : raw.PartnerInfo.FullName
       const data: CharacterData = {
         id: id,
         icon: raw.Icon,
@@ -195,7 +202,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
         attribute: attributeMap[Object.keys(raw.ElementType)[0] as any],
         specialty: specialityMap[Object.keys(raw.WeaponType)[0] as any],
         faction: factionMap[Object.keys(raw.Camp)[0] as any],
-        fullname: raw.PartnerInfo.FullName,
+        fullname,
         stats: {
           atk_base: raw.Stats.Attack,
           atk_growth: raw.Stats.AttackGrowth / PERCENT_SCALING,
