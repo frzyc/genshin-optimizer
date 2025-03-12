@@ -18,7 +18,7 @@
     "ImpressionF": "Harumasa sure is good at slacking off... Hey Wise, maybe we should learn from him.",
     "ImpressionM": "Harumasa can only slack off because he manages to complete his work with efficiency. Let's try mastering that skill first...",
     "Name": "",
-    "OutlookDesc": "The information shows:\nExecutive officer Asaba Harumasa, possessing exceptional Ether aptitude, is allowed to perform basic tasks like investigating and extracting resources in known Hollows within the city (including Companion Hollows).\nFor more information, I suggest obtaining access to Asaba Harumasa's medical history.",
+    "OutlookDesc": "The information shows:\nExecutive officer Asaba Harumasa, possessing excellent Ether aptitude, is allowed to perform basic tasks like investigating and extracting resources in known Hollows within the city (including Companion Hollows).\nFor more information, I suggest obtaining access to Asaba Harumasa's medical history.",
     "ProfileDesc": "Asaba Harumasa, a member of Hollow Special Operations Section 6.\nPossessing exceptional Ether aptitude since he was young and being dubbed a prodigy, he entered HSO after graduating with outstanding merit.\nWas originally a member of a certain ace division within HSO, but later left due to various reasons, joining Miyabi's team instead.\n\nHe possesses a carefree and laidback attitude, and his only wish is to achieve acceptable results with minimum effort.\nAfter efficiently taking care of his work to the lowest acceptable standard, he will hurry to use all the remainder of his available time to rest (slack off).\nHe claims he uses a bow to better slack off, as it effectively lowers the amount of running he has to do.\n\nAsaba Harumasa has poor health, and over-exercise sometimes triggers his illness.\nHe often uses this reason to apply for sick leave, though no one knows what he does with this time off. Either way, it's probably not resting.",
     "Race": "Hollow Special Operations Section 6",
     "RoleIcon": "IconRole/UnPacker/IconRole35",
@@ -78,7 +78,7 @@
       "Electric",
       "Male",
       "Camp6",
-      "Size3",
+      "Size1",
       "AidTypeParry",
       "Harumasa"
     ]

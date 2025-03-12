@@ -20,11 +20,14 @@ import Miyabi from './Miyabi'
 import Nekomata from './Nekomata'
 import Nicole from './Nicole'
 import Piper from './Piper'
+import Pulchra from './Pulchra'
 import QingYi from './QingYi'
 import Rina from './Rina'
 import Seth from './Seth'
+import Soldier0Anby from './Soldier0Anby'
 import Soldier11 from './Soldier11'
 import Soukaku from './Soukaku'
+import Trigger from './Trigger'
 import Yanagi from './Yanagi'
 import ZhuYuan from './ZhuYuan'
 
@@ -50,11 +53,14 @@ const data = {
   Nekomata,
   Nicole,
   Piper,
+  Pulchra,
   QingYi,
   Rina,
   Seth,
+  Soldier0Anby,
   Soldier11,
   Soukaku,
+  Trigger,
   Yanagi,
   ZhuYuan,
 } as const

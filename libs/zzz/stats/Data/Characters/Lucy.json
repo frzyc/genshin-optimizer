@@ -1358,7 +1358,7 @@
     "6": {
       "Level": 6,
       "Name": "Fierce Fangs of Fire",
-      "Desc": "When an ally in the <color=#FFFFFF>Cheer On!</color> state hits an enemy with an <color=#FFFFFF>EX Special Attack</color>, a guard boar will drop from the sky and cause an explosion, dealing <color=#FF5521>Fire DMG</color> equal to 300% of the guard boar's ATK. This will extend the duration of the <color=#FFFFFF>Cheer On!</color> buff for all squad members by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the <color=#FFFFFF>Cheer On!</color> state resets the stack count. After the guard boar's explosion, it will launch <color=#FFFFFF>Guard Boars: Spinning Swing!</color>.",
+      "Desc": "When another squad member in the <color=#FFFFFF>Cheer On!</color> state hits an enemy with an <color=#FFFFFF>EX Special Attack</color>, a guard boar will drop from the sky and cause an explosion, dealing <color=#FF5521>Fire DMG</color> equal to 300% of the guard boar's ATK. This will extend the duration of the <color=#FFFFFF>Cheer On!</color> buff for all squad members by 5s. The duration can increase up to 3 times, with a maximum duration of 30s. Refreshing the <color=#FFFFFF>Cheer On!</color> state resets the stack count. After the guard boar's explosion, it will launch <color=#FFFFFF>Guard Boars: Spinning Swing!</color>.",
       "Desc2": "The little boar Thirens known as the Crimson Mane Guard are always at the forefront of battle!\nThough it's hard to tell if, at the moment they're launched by the bat, they feel total despair or just accept their fate.\nBrave little boars, leading the charge!"
     }
   }

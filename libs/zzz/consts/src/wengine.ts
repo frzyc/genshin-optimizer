@@ -1,5 +1,5 @@
 import { objSumInPlace } from '@genshin-optimizer/common/util'
-import type { CondKey } from './common'
+import { type CondKey, type PandoStatKey } from './common'
 
 export const allWengineRarityKeys = ['S', 'A', 'B'] as const
 export type WengineRarityKey = (typeof allWengineRarityKeys)[number]
@@ -8,6 +8,7 @@ export const allWengineKeys = [
   'BashfulDemon',
   'BigCylinder',
   'BlazingLaurel',
+  'BoxCutter',
   'BunnyBand',
   'CannonRotor',
   'DeepSeaVisitor',
@@ -42,9 +43,11 @@ export const allWengineKeys = [
   'ReverbMarkIII',
   'RiotSuppressorMarkVI',
   'RoaringRide',
+  'SeveredInnocence',
   'SharpenedStinger',
   'SixShooter',
   'SliceOfTime',
+  'SpectralGaze',
   'SpringEmbrace',
   'StarlightEngine',
   'StarlightEngineReplica',
@@ -104,6 +107,12 @@ export const allWengineCondKeys = {
     text: (val: number) => `${val}x Wilt`,
     min: 1,
     max: 20,
+  },
+  BoxCutter: {
+    key: 'BoxCutter',
+    text: 'Upon launching an Aftershock',
+    min: 1,
+    max: 1,
   },
   BunnyBand: {
     key: 'BunnyBand',
@@ -277,9 +286,27 @@ export const allWengineCondKeys = {
     min: 1,
     max: 1,
   },
+  SeveredInnocence: {
+    key: 'SeveredInnocence',
+    text: (val: number) => `${val} Stacks`,
+    min: 1,
+    max: 3,
+  },
   SharpenedStinger: {
     key: 'SharpenedStinger',
     text: (val: number) => `${val}x Predatory Instinct`,
+    min: 1,
+    max: 3,
+  },
+  // SpectralGazeElecAfter: {
+  //   key: 'SpectralGazeElecAfter',
+  //   text: 'Equipper hits an enemy with an Aftershock, causing Electric DMG',
+  //   min: 1,
+  //   max: 1,
+  // },
+  SpectralGazeSpiritLock: {
+    key: 'SpectralGazeSpiritLock',
+    text: (val: number) => `${val} Spirit Lock stacks`,
     min: 1,
     max: 3,
   },
@@ -417,6 +444,17 @@ export const wengineSheets: Partial<
           crit_dmg_: dmg_[p] * conds['BlazingLaurelCritDmg'],
         }) // TODO: Icon/Fire Crit DMG
       return ret
+    },
+  },
+  BoxCutter: {
+    condMeta: allWengineCondKeys.BoxCutter,
+    getStats: (conds, stats) => {
+      const p = stats['wenginePhase'] - 1
+      const phys_dmg_ = [0.15, 0.173, 0.195, 0.218, 0.24]
+      const daze_ = [0.1, 0.115, 0.13, 0.145, 0.16]
+      if (conds.BoxCutter)
+        return { physical_dmg_: phys_dmg_[p], daze_: daze_[p] }
+      return undefined
     },
   },
   BunnyBand: {
@@ -792,6 +830,25 @@ export const wengineSheets: Partial<
       return ret
     },
   },
+  SeveredInnocence: {
+    condMeta: allWengineCondKeys.SeveredInnocence,
+    getStats: (conds, stats) => {
+      const p = stats['wenginePhase'] - 1
+      const crit_dmg_ = [0.3, 0.345, 0.39, 0.435, 0.48]
+      const addl_crit_dmg_ = [0.1, 0.115, 0.13, 0.145, 0.16]
+      const electric_dmg_ = [0.2, 0.23, 0.26, 0.29, 0.32]
+      const buffs: Partial<Record<PandoStatKey, number>> = {
+        crit_dmg_: crit_dmg_[p],
+      }
+      if (conds.SeveredInnocence) {
+        buffs.crit_dmg_! += addl_crit_dmg_[p] * conds.SeveredInnocence
+        if (conds.SeveredInnocence === 3) {
+          buffs.electric_dmg_ = electric_dmg_[p]
+        }
+      }
+      return buffs
+    },
+  },
   SharpenedStinger: {
     condMeta: allWengineCondKeys.SharpenedStinger,
     getStats: (conds, stats) => {
@@ -809,6 +866,23 @@ export const wengineSheets: Partial<
         } as Record<string, number>
       }
       return undefined
+    },
+  },
+  SpectralGaze: {
+    // condMeta:[ allWengineCondKeys.SpectralGazeElecAfter, allWengineCondKeys.SpectralGazeSpritLock],
+    condMeta: allWengineCondKeys.SpectralGazeSpiritLock,
+    getStats: (conds, stats) => {
+      const p = stats['wenginePhase'] - 1
+      // const def_red_ = [0.25, 0.2875, 0.325, 0.3625, 0.4]
+      const impact_ = [0.04, 0.046, 0.052, 0.058, 0.064]
+      const full_impact_ = [0.08, 0.092, 0.104, 0.116, 0.128]
+      const buffs: Partial<Record<PandoStatKey, number>> = {}
+      // if (conds.SpectralGazeElecAfter) buffs.def_red_ = def_red_[p]
+      if (conds.SpectralGazeSpiritLock) {
+        buffs.impact_ = impact_[p] * conds.SpectralGazeSpiritLock
+        if (conds.SpectralGazeSpiritLock === 3) buffs.impact_ += full_impact_[p]
+      }
+      return buffs
     },
   },
   StarlightEngine: {

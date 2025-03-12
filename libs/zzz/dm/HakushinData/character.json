@@ -277,13 +277,13 @@
     "EN": "Ellen",
     "skin": {
       "3111910": {
-        "Name": "Ellen: Ellen Scissorhands",
-        "Desc": "The sharp scissors of Victoria Housekeeping, if only she weren't sleeping...",
+        "Name": "AvatarSkin_Ellen_Name_000",
+        "Desc": "AvatarSkin_Ellen_Desc_000",
         "Image": "IconRole21"
       },
       "3111911": {
-        "Name": "Ellen: On Campus",
-        "Desc": "The tail doesn't quite match the school uniform, but with just a little bit of needlework, it can become even cuter!",
+        "Name": "AvatarSkin_Ellen_Name_001",
+        "Desc": "AvatarSkin_Ellen_Desc_001",
         "Image": "IconRole21_01"
       }
     },
@@ -412,6 +412,21 @@
     "CHS": "派派",
     "JA": "パイパー"
   },
+  "1291": {
+    "code": "Hugo",
+    "rank": 4,
+    "type": 1,
+    "element": 202,
+    "hit": 101,
+    "camp": 9,
+    "icon": "IconRole42",
+    "EN": "Hugo",
+    "skin": {},
+    "desc": "",
+    "KO": "휴고",
+    "CHS": "雨果",
+    "JA": "ヒューゴ"
+  },
   "1311": {
     "code": "Astra",
     "rank": 4,
@@ -423,13 +438,13 @@
     "EN": "Astra Yao",
     "skin": {
       "3113110": {
-        "Name": "Astra Yao: Scarlet Rock",
-        "Desc": "The bold red is only to ignite the freedom deep within. On stage, nothing can overshadow her brilliance.",
+        "Name": "AvatarSkin_Astra_Name_000",
+        "Desc": "AvatarSkin_Astra_Desc_000",
         "Image": "IconRole36"
       },
       "3113111": {
-        "Name": "Astra Yao: Chandelier",
-        "Desc": "The black-and-white dress glimmers in both light and shadows. Every smile of hers seems to sink into the flowing light of the night, becoming a timeless classic.",
+        "Name": "AvatarSkin_Astra_Name_001",
+        "Desc": "AvatarSkin_Astra_Desc_001",
         "Image": "IconRole36_01"
       }
     },
@@ -453,8 +468,23 @@
     "CHS": "伊芙琳",
     "JA": "イヴリン"
   },
+  "1331": {
+    "code": "Vivian",
+    "rank": 4,
+    "type": 3,
+    "element": 205,
+    "hit": 101,
+    "camp": 9,
+    "icon": "IconRole41",
+    "EN": "Vivian",
+    "skin": {},
+    "desc": "Partner_ProfileDesc_1331",
+    "KO": "비비안",
+    "CHS": "薇薇安",
+    "JA": "ビビアン"
+  },
   "1351": {
-    "code": "Pulchra Feliny",
+    "code": "Pulchra",
     "rank": 3,
     "type": 2,
     "element": 200,
@@ -463,7 +493,7 @@
     "icon": "IconRole38",
     "EN": "Pulchra",
     "skin": {},
-    "desc": "",
+    "desc": "...",
     "KO": "펄크라",
     "CHS": "波可娜",
     "JA": "プルクラ"
@@ -478,25 +508,25 @@
     "icon": "IconRole39",
     "EN": "Trigger",
     "skin": {},
-    "desc": "",
+    "desc": "...",
     "KO": "「트리거」",
     "CHS": "「扳机」",
     "JA": "「トリガー」"
   },
   "1381": {
-    "code": "SilverAnby",
+    "code": "Soldier 0 - Anby",
     "rank": 4,
     "type": 1,
     "element": 203,
     "hit": 101,
     "camp": 5,
     "icon": "IconRole40",
-    "EN": "Silver Soldier - Anby",
+    "EN": "Soldier 0 - Anby",
     "skin": {},
     "desc": "",
-    "KO": "실버 솔져 엔비",
-    "CHS": "银心锡兵·安比",
-    "JA": "シルバーソルジャー・アンビー"
+    "KO": "0호·엔비",
+    "CHS": "零号·安比",
+    "JA": "0号・アンビー"
   },
   "2011": {
     "code": "Wise",
@@ -510,7 +540,7 @@
     "skin": {},
     "desc": "",
     "KO": "와이즈",
-    "CHS": "哲",
+    "CHS": "��",
     "JA": "アキラ"
   },
   "2021": {

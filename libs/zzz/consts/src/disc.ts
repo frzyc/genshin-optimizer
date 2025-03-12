@@ -17,9 +17,11 @@ export const allDiscSetKeys = [
   'FreedomBlues',
   'HormonePunk',
   'InfernoMetal',
+  'PhaethonsMelody',
   'PolarMetal',
   'ProtoPunk',
   'PufferElectro',
+  'ShadowHarmony',
   'ShockstarDisco',
   'SoulRock',
   'SwingJazz',
@@ -179,9 +181,11 @@ export const disc2pEffect: Record<
   FreedomBlues: { anomProf: 30 },
   HormonePunk: { atk_: 0.1 },
   InfernoMetal: { fire_dmg_: 0.1 },
+  PhaethonsMelody: { anomMas_: 0.08 },
   PolarMetal: { ice_dmg_: 0.1 },
   ProtoPunk: { shield_: 0.15 },
   PufferElectro: { pen_: 0.08 },
+  ShadowHarmony: { dmg_: 0.15 },
   ShockstarDisco: { impact_: 0.06 },
   SoulRock: { def_: 0.16 },
   SwingJazz: { enerRegen_: 0.2 },
@@ -207,6 +211,8 @@ export const discSetNames: Record<DiscSetKey, string> = {
   FangedMetal: 'Fanged Metal',
   BranchBladeSong: 'Branch & Blade Song',
   AstralVoice: 'Astral Voice',
+  ShadowHarmony: 'Shadow Harmony',
+  PhaethonsMelody: "Phaethon's Melody",
 }
 
 export const allDiscCondKeys = {
@@ -252,6 +258,18 @@ export const allDiscCondKeys = {
     min: 1,
     max: 1,
   },
+  PhaethonsMelodyAnyEx: {
+    key: 'PhaethonsMelodyAnyEx',
+    text: 'Any squad member uses EX Special Attack',
+    min: 1,
+    max: 1,
+  },
+  PhaethonsMelodyEquipEx: {
+    key: 'PhaethonsMelodyEquipEx',
+    text: 'Equipper uses EX Special Attack',
+    min: 1,
+    max: 1,
+  },
   PolarMetalBasicOrDash: {
     key: 'PolarMetalBasicOrDash',
     text: 'Optimizing for Basic Attack or Dash Attack',
@@ -281,6 +299,12 @@ export const allDiscCondKeys = {
     text: 'Launching an Ultimate',
     min: 1,
     max: 1,
+  },
+  ShadowHarmony: {
+    key: 'ShadowHarmony',
+    text: (val: number) => `${val} stacks`,
+    min: 1,
+    max: 3,
   },
   SwingJazz: {
     key: 'SwingJazz',
@@ -396,6 +420,18 @@ export const disc4PeffectSheets: Partial<
       return undefined
     },
   },
+  PhaethonsMelody: {
+    condMeta: [
+      allDiscCondKeys.PhaethonsMelodyAnyEx,
+      allDiscCondKeys.PhaethonsMelodyEquipEx,
+    ],
+    getStats: (conds) => {
+      const buffs: Partial<Record<PandoStatKey, number>> = {}
+      if (conds.PhaethonsMelodyAnyEx) buffs.anomProf = 45
+      if (conds.PhaethonsMelodyEquipEx) buffs.ether_dmg_ = 0.25
+      return buffs
+    },
+  },
   PolarMetal: {
     condMeta: [
       allDiscCondKeys.PolarMetalBasicOrDash,
@@ -427,6 +463,17 @@ export const disc4PeffectSheets: Partial<
       if (conds['PufferElectroUltimate']) ret['dmg_'] = 0.2 //Ultimate DMG increases by 20%
       if (conds['PufferElectro']) ret['cond_atk_'] = 0.15 // Launching an Ultimate increases the equipper's ATK by 15%
       return ret
+    },
+  },
+  ShadowHarmony: {
+    condMeta: allDiscCondKeys.ShadowHarmony,
+    getStats: (conds) => {
+      if (conds.ShadowHarmony)
+        return {
+          atk_: 0.04 * conds.ShadowHarmony,
+          crit_: 0.04 * conds.ShadowHarmony,
+        }
+      return undefined
     },
   },
   // ShockstarDisco: 15% more Daze

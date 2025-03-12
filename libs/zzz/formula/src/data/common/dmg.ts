@@ -19,38 +19,54 @@ const defLevelFactor = [
 
 const data: TagMapNodeEntries = [
   // Factors shared between standard and anomaly damage
-  ownBuff.dmg.shared.add(
-    prod(
-      // DMG Bonus Multiplier
-      sum(percent(1), own.final.dmg_, own.final.common_dmg_),
-      // Buff Multiplier (e.g. Timeweaver Disorder DMG Bonus)
-      sum(percent(1), own.final.buff_),
-      // DEF Multiplier
-      // levelFactor / (max(def * (1 - pen_) - pen, 0) + levelFactor)
-      sumfrac(
-        subscript(own.char.lvl, defLevelFactor),
-        max(
-          sum(
-            prod(enemy.common.def, sum(percent(1), prod(-1, own.final.pen_))),
-            prod(-1, own.final.pen)
-          ),
-          0
-        )
-      ),
-      // RES Multiplier
-      sum(
-        percent(1),
-        prod(-1, enemy.common.res_),
-        enemy.common.resRed_,
-        own.final.resIgn_
-      ),
-      // DMG Taken Multiplier
-      sum(percent(1), enemy.common.dmgInc_, prod(-1, enemy.common.dmgRed_)),
-      // Stunned Multiplier
-      cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_)
+  ...[
+    ownBuff.dmg.dmg_mult_,
+    ownBuff.dmg.buff_mult_,
+    ownBuff.dmg.def_mult_,
+    ownBuff.dmg.res_mult_,
+    ownBuff.dmg.dmg_taken_mult_,
+    ownBuff.dmg.stunned_mult_,
+  ].map((buff) => ownBuff.dmg.shared.add(buff)),
+
+  // DMG Bonus Multiplier
+  ownBuff.dmg.dmg_mult_.add(
+    sum(percent(1), own.final.dmg_, own.final.common_dmg_)
+  ),
+  // Buff Multiplier (e.g. Timeweaver Disorder DMG Bonus)
+  ownBuff.dmg.buff_mult_.add(sum(percent(1), own.final.buff_)),
+  // DEF Multiplier
+  // levelFactor / (max(def * (1 - pen_) - pen, 0) + levelFactor)
+  ownBuff.dmg.def_mult_.add(
+    sumfrac(
+      subscript(own.char.lvl, defLevelFactor),
+      max(
+        sum(
+          prod(enemy.common.def, sum(percent(1), prod(-1, own.final.pen_))),
+          prod(-1, own.final.pen)
+        ),
+        0
+      )
     )
   ),
-  ownBuff.dmg.critMulti.add(
+  // RES Multiplier
+  ownBuff.dmg.res_mult_.add(
+    sum(
+      percent(1),
+      prod(-1, enemy.common.res_),
+      enemy.common.resRed_,
+      own.final.resIgn_
+    )
+  ),
+  // DMG Taken Multiplier
+  ownBuff.dmg.dmg_taken_mult_.add(
+    sum(percent(1), enemy.common.dmgInc_, prod(-1, enemy.common.dmgRed_))
+  ),
+  // Stunned Multiplier
+  ownBuff.dmg.stunned_mult_.add(
+    cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_)
+  ),
+
+  ownBuff.dmg.crit_mult_.add(
     lookup(own.common.critMode, {
       crit: sum(percent(1), own.final.crit_dmg_),
       nonCrit: percent(1),

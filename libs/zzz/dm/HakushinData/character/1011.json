@@ -633,7 +633,7 @@
       "Description": [
         {
           "Name": "Special Attack: Fork Lightning",
-          "Desc": "Press <IconMap:Icon_Special> to activate:\nUnleashes an upward slash that deals <color=#2EB6FF>Electric DMG</color>.\nThis attack launches faster when used after the 3rd-hit of the <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Basic Attack: Thunderbolt</color>.\nAnti-Interrupt level is increased while using this skill."
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nUnleashes an upward slash that deals <color=#2EB6FF>Electric DMG</color>.\nThis attack launches faster when used after the 3rd hit of the <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Basic Attack: Thunderbolt</color>.\nAnti-Interrupt level is increased while using this skill."
         },
         {
           "Name": "EX Special Attack: Lightning Bolt",
@@ -1168,7 +1168,7 @@
           "Additional Ability: Parallel Connection"
         ],
         "Desc": [
-          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd-hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>32%</color> Daze.",
+          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>32%</color> Daze.",
           "When another character in your squad shares the same Attribute or Faction:\nWhen Anby's <color=#FFFFFF>Dodge Counter</color> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
         ]
       },
@@ -1180,7 +1180,7 @@
           "Additional Ability: Parallel Connection"
         ],
         "Desc": [
-          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd-hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>37.3%</color> Daze.",
+          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>37.3%</color> Daze.",
           "When another character in your squad shares the same Attribute or Faction:\nWhen Anby's <color=#FFFFFF>Dodge Counter</color> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
         ]
       },
@@ -1192,7 +1192,7 @@
           "Additional Ability: Parallel Connection"
         ],
         "Desc": [
-          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd-hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>42.6%</color> Daze.",
+          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>42.6%</color> Daze.",
           "When another character in your squad shares the same Attribute or Faction:\nWhen Anby's <color=#FFFFFF>Dodge Counter</color> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
         ]
       },
@@ -1204,7 +1204,7 @@
           "Additional Ability: Parallel Connection"
         ],
         "Desc": [
-          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd-hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>48%</color> Daze.",
+          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>48%</color> Daze.",
           "When another character in your squad shares the same Attribute or Faction:\nWhen Anby's <color=#FFFFFF>Dodge Counter</color> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
         ]
       },
@@ -1216,7 +1216,7 @@
           "Additional Ability: Parallel Connection"
         ],
         "Desc": [
-          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd-hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>53.3%</color> Daze.",
+          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>53.3%</color> Daze.",
           "When another character in your squad shares the same Attribute or Faction:\nWhen Anby's <color=#FFFFFF>Dodge Counter</color> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
         ]
       },
@@ -1228,7 +1228,7 @@
           "Additional Ability: Parallel Connection"
         ],
         "Desc": [
-          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd-hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>58.6%</color> Daze.",
+          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>58.6%</color> Daze.",
           "When another character in your squad shares the same Attribute or Faction:\nWhen Anby's <color=#FFFFFF>Dodge Counter</color> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
         ]
       },
@@ -1240,7 +1240,7 @@
           "Additional Ability: Parallel Connection"
         ],
         "Desc": [
-          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd-hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>64%</color> Daze.",
+          "Launch a <color=#FFFFFF>Basic Attack: Thunderbolt</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color> after the 3rd hit of Anby's <color=#FFFFFF>Basic Attack</color> for an extra <color=#2BAD00>64%</color> Daze.",
           "When another character in your squad shares the same Attribute or Faction:\nWhen Anby's <color=#FFFFFF>Dodge Counter</color> hits an enemy, she gains an extra 7.2 Energy. This effect can trigger once every 5s."
         ]
       }
@@ -1258,7 +1258,7 @@
     "1": {
       "Level": 1,
       "Name": "Rapid Charge Mode",
-      "Desc": "When the 4th-hit of Anby's <color=#FFFFFF>Basic Attack</color> hits an enemy, her Energy Generation Rate is increased by 12% for 30s.",
+      "Desc": "When the 4th hit of Anby's <color=#FFFFFF>Basic Attack</color> hits an enemy, her Energy Generation Rate is increased by 12% for 30s.",
       "Desc2": "\"Charge up for just a minute, and you're set to fight for an hour!\" That's the sales pitch for these weapon expansion modules.\nAnd they deliver exactly that."
     },
     "2": {
