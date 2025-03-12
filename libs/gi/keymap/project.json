@@ -4,6 +4,6 @@
   "sourceRoot": "libs/gi/keymap/src",
   "projectType": "library",
   "tags": [],
-  "// targets": "to see all targets run: nx show project jslibvitest --web",
+  "// targets": "to see all targets run: nx show project gi-keymap --web",
   "targets": {}
 }

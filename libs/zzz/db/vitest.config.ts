@@ -2,9 +2,9 @@ import { defineConfig } from 'vite'
 
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
-export default defineConfig({
+export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../../node_modules/.vite/libs/test',
+  cacheDir: '../../../node_modules/.vite/libs/zzz/db',
 
   plugins: [nxViteTsPaths()],
 
@@ -14,15 +14,14 @@ export default defineConfig({
   // },
 
   test: {
-    name: 'zzz-db',
+    watch: false,
     globals: true,
-    cache: { dir: '../../../node_modules/.vitest' },
-    environment: 'jsdom',
+    environment: 'node',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../../coverage/libs/test',
+      reportsDirectory: '../../../coverage/libs/zzz/db',
       provider: 'v8',
     },
   },
-})
+}))
