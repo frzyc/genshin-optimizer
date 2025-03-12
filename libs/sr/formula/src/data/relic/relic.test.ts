@@ -168,6 +168,22 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.def_).val).toBeCloseTo(0.3)
   })
 
+  it('BoneCollectionsSereneDemesne', () => {
+    const data = testCharacterData('BoneCollectionsSereneDemesne', undefined, [
+      ownBuff.premod.hp.add(5000),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.hp_).val).toBeCloseTo(0.12)
+    // Base + 2 piece cond
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.28)
+  })
+
   it('BrokenKeel', () => {
     const data = testCharacterData('BrokenKeel', undefined, [
       // Add 0.2 to check if the 2 set bonus is applied

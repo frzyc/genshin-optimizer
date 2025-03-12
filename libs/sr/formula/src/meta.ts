@@ -399,27 +399,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  BoneCollectionsSereneDemesne: {
-    boolConditional: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Boothill: {
     boolConditional: {
       sheet: 'Boothill',
@@ -8448,37 +8427,15 @@ export const buffs = {
     },
   },
   BoneCollectionsSereneDemesne: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'BoneCollectionsSereneDemesne',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'BoneCollectionsSereneDemesne',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'set2_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BoneCollectionsSereneDemesne',
-        name: 'team_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
   },
