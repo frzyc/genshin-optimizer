@@ -1312,7 +1312,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Anby',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -1325,7 +1325,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Anby',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -1340,7 +1340,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Anton',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -1353,7 +1353,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Anton',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -1368,7 +1368,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Astra',
         attribute: 'ether',
         damageType1: 'anomaly',
@@ -1381,7 +1381,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Astra',
         attribute: 'ether',
         damageType1: 'elemental',
@@ -1396,7 +1396,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Ben',
         attribute: 'fire',
         damageType1: 'anomaly',
@@ -1409,7 +1409,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Ben',
         attribute: 'fire',
         damageType1: 'elemental',
@@ -1424,7 +1424,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Billy',
         attribute: 'physical',
         damageType1: 'anomaly',
@@ -1437,7 +1437,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Billy',
         attribute: 'physical',
         damageType1: 'elemental',
@@ -1452,7 +1452,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Burnice',
         attribute: 'fire',
         damageType1: 'anomaly',
@@ -1465,7 +1465,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Burnice',
         attribute: 'fire',
         damageType1: 'elemental',
@@ -1480,7 +1480,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Caesar',
         attribute: 'physical',
         damageType1: 'anomaly',
@@ -1493,7 +1493,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Caesar',
         attribute: 'physical',
         damageType1: 'elemental',
@@ -1508,7 +1508,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Corin',
         attribute: 'physical',
         damageType1: 'anomaly',
@@ -1521,7 +1521,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Corin',
         attribute: 'physical',
         damageType1: 'elemental',
@@ -1536,7 +1536,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Ellen',
         attribute: 'ice',
         damageType1: 'anomaly',
@@ -1549,7 +1549,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Ellen',
         attribute: 'ice',
         damageType1: 'elemental',
@@ -1564,7 +1564,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Evelyn',
         attribute: 'fire',
         damageType1: 'anomaly',
@@ -1577,7 +1577,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Evelyn',
         attribute: 'fire',
         damageType1: 'elemental',
@@ -1592,7 +1592,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Grace',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -1605,7 +1605,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Grace',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -1620,7 +1620,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Harumasa',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -1633,7 +1633,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Harumasa',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -1648,7 +1648,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Jane',
         attribute: 'physical',
         damageType1: 'anomaly',
@@ -1661,7 +1661,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Jane',
         attribute: 'physical',
         damageType1: 'elemental',
@@ -1676,7 +1676,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Koleda',
         attribute: 'fire',
         damageType1: 'anomaly',
@@ -1689,7 +1689,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Koleda',
         attribute: 'fire',
         damageType1: 'elemental',
@@ -1704,7 +1704,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Lighter',
         attribute: 'fire',
         damageType1: 'anomaly',
@@ -1717,7 +1717,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Lighter',
         attribute: 'fire',
         damageType1: 'elemental',
@@ -1732,7 +1732,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Lucy',
         attribute: 'fire',
         damageType1: 'anomaly',
@@ -1745,7 +1745,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Lucy',
         attribute: 'fire',
         damageType1: 'elemental',
@@ -1760,7 +1760,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Lycaon',
         attribute: 'ice',
         damageType1: 'anomaly',
@@ -1773,7 +1773,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Lycaon',
         attribute: 'ice',
         damageType1: 'elemental',
@@ -1788,7 +1788,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Miyabi',
         attribute: 'ice',
         damageType1: 'anomaly',
@@ -1801,7 +1801,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Miyabi',
         attribute: 'ice',
         damageType1: 'elemental',
@@ -1816,7 +1816,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Nekomata',
         attribute: 'physical',
         damageType1: 'anomaly',
@@ -1829,7 +1829,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Nekomata',
         attribute: 'physical',
         damageType1: 'elemental',
@@ -1844,7 +1844,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Nicole',
         attribute: 'ether',
         damageType1: 'anomaly',
@@ -1857,7 +1857,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Nicole',
         attribute: 'ether',
         damageType1: 'elemental',
@@ -1872,7 +1872,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Piper',
         attribute: 'physical',
         damageType1: 'anomaly',
@@ -1885,7 +1885,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Piper',
         attribute: 'physical',
         damageType1: 'elemental',
@@ -1900,7 +1900,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'QingYi',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -1913,7 +1913,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'QingYi',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -1928,7 +1928,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Rina',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -1941,7 +1941,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Rina',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -1956,7 +1956,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Seth',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -1969,7 +1969,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Seth',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -1984,7 +1984,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Soldier11',
         attribute: 'fire',
         damageType1: 'anomaly',
@@ -1997,7 +1997,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Soldier11',
         attribute: 'fire',
         damageType1: 'elemental',
@@ -2012,7 +2012,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Soukaku',
         attribute: 'ice',
         damageType1: 'anomaly',
@@ -2025,7 +2025,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Soukaku',
         attribute: 'ice',
         damageType1: 'elemental',
@@ -2040,7 +2040,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'Yanagi',
         attribute: 'electric',
         damageType1: 'anomaly',
@@ -2053,7 +2053,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'Yanagi',
         attribute: 'electric',
         damageType1: 'elemental',
@@ -2068,7 +2068,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'anomalyDmgListing',
+        q: 'anomalyDmg',
         sheet: 'ZhuYuan',
         attribute: 'ether',
         damageType1: 'anomaly',
@@ -2081,7 +2081,7 @@ export const formulas = {
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'standardDmgListing',
+        q: 'standardDmg',
         sheet: 'ZhuYuan',
         attribute: 'ether',
         damageType1: 'elemental',
