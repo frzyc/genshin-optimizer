@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Full Moon",
-      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>12%</color>."
+      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>12%</color>.",
+      "params": [0.12]
     },
     {
       "name": "Full Moon",
-      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>14%</color>."
+      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>14%</color>.",
+      "params": [0.14]
     },
     {
       "name": "Full Moon",
-      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>16%</color>."
+      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>16%</color>.",
+      "params": [0.16]
     },
     {
       "name": "Full Moon",
-      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>18%</color>."
+      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>18%</color>.",
+      "params": [0.18]
     },
     {
       "name": "Full Moon",
-      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>20%</color>."
+      "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>20%</color>.",
+      "params": [0.2]
     }
   ]
 }

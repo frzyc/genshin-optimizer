@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Fire!",
-      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4%</color>."
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4%</color>.",
+      "params": [1, 3, 6, 0.04]
     },
     {
       "name": "Fire!",
-      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4.6%</color>."
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4.6%</color>.",
+      "params": [1, 3, 6, 0.046]
     },
     {
       "name": "Fire!",
-      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.2%</color>."
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.2%</color>.",
+      "params": [1, 3, 6, 0.052]
     },
     {
       "name": "Fire!",
-      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.8%</color>."
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.8%</color>.",
+      "params": [1, 3, 6, 0.058]
     },
     {
       "name": "Fire!",
-      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>6.4%</color>."
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>6.4%</color>.",
+      "params": [1, 3, 6, 0.064]
     }
   ]
 }

@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Ten Ton Top",
-      "desc": "Reduces DMG taken by <color=#2BAD00>7.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>600%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s."
+      "desc": "Reduces DMG taken by <color=#2BAD00>7.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>600%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+      "params": [0.075, 6, 7.5]
     },
     {
       "name": "Ten Ton Top",
-      "desc": "Reduces DMG taken by <color=#2BAD00>8.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>690%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s."
+      "desc": "Reduces DMG taken by <color=#2BAD00>8.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>690%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+      "params": [0.085, 6.9, 7.5]
     },
     {
       "name": "Ten Ton Top",
-      "desc": "Reduces DMG taken by <color=#2BAD00>9.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>780%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s."
+      "desc": "Reduces DMG taken by <color=#2BAD00>9.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>780%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+      "params": [0.095, 7.8, 7.5]
     },
     {
       "name": "Ten Ton Top",
-      "desc": "Reduces DMG taken by <color=#2BAD00>10.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>870%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s."
+      "desc": "Reduces DMG taken by <color=#2BAD00>10.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>870%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+      "params": [0.105, 8.7, 7.5]
     },
     {
       "name": "Ten Ton Top",
-      "desc": "Reduces DMG taken by <color=#2BAD00>12%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>960%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s."
+      "desc": "Reduces DMG taken by <color=#2BAD00>12%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>960%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.",
+      "params": [0.12, 9.6, 7.5]
     }
   ]
 }

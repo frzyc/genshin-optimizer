@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Sinking Strike",
-      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>20%</color> for 8s."
+      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>20%</color> for 8s.",
+      "params": [0.2, 8]
     },
     {
       "name": "Sinking Strike",
-      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>23%</color> for 8s."
+      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>23%</color> for 8s.",
+      "params": [0.23, 8]
     },
     {
       "name": "Sinking Strike",
-      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>26%</color> for 8s."
+      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>26%</color> for 8s.",
+      "params": [0.26, 8]
     },
     {
       "name": "Sinking Strike",
-      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>29%</color> for 8s."
+      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>29%</color> for 8s.",
+      "params": [0.29, 8]
     },
     {
       "name": "Sinking Strike",
-      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>32%</color> for 8s."
+      "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>32%</color> for 8s.",
+      "params": [0.32, 8]
     }
   ]
 }
