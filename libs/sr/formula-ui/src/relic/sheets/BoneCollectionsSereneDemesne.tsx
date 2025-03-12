@@ -2,17 +2,13 @@ import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { buffs } from '@genshin-optimizer/sr/formula'
-import {
-  getRelicInterpolateObject,
-  mappedStats,
-} from '@genshin-optimizer/sr/stats'
+import { getRelicInterpolateObject } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
 import { trans } from '../../util'
 
 const key: RelicSetKey = 'BoneCollectionsSereneDemesne'
 const [chg, _ch] = trans('relic', key)
-const dm = mappedStats.relic[key]
 const icon = relicAsset(key, getDefaultRelicSlot(key))
 const buff = buffs[key]
 
@@ -30,7 +26,7 @@ const sheet: UISheet<'2' | '4'> = {
         fields: [
           {
             title: <StatDisplay statKey="hp_" />,
-            fieldValue: dm[2].passive_hp_,
+            fieldRef: buff.set2_passive_hp_.tag,
           },
           {
             title: <StatDisplay statKey="hp_" />,

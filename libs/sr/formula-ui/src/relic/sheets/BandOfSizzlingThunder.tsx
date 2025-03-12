@@ -32,7 +32,7 @@ const sheet: UISheet<'2' | '4'> = {
         fields: [
           {
             title: <StatDisplay statKey="lightning_dmg_" />,
-            fieldValue: dm[2].passive_lightning_dmg_,
+            fieldRef: buff.set2_passive_lightning_dmg_.tag,
           },
         ],
       },
