@@ -35,7 +35,7 @@ import {
   Typography,
 } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
-import { StaticImageData } from 'next/image'
+import type { StaticImageData } from 'next/image'
 import { useContext } from 'react'
 import { DataContext, SillyContext } from '../../context'
 import { CharacterName } from './Trans'
