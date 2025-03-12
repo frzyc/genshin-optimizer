@@ -35,6 +35,7 @@ import {
   Typography,
 } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
+import { StaticImageData } from 'next/image'
 import { useContext } from 'react'
 import { DataContext, SillyContext } from '../../context'
 import { CharacterName } from './Trans'
@@ -167,7 +168,7 @@ function SillyCoverArea({
   level,
   ascension,
 }: {
-  src: string
+  src: string | StaticImageData
   level: number
   ascension: AscensionKey
 }) {
@@ -217,7 +218,7 @@ function CoverArea({
   level,
   ascension,
 }: {
-  src: string
+  src: string | StaticImageData
   level: number
   ascension: AscensionKey
 }) {
