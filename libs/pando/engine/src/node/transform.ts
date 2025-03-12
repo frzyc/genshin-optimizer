@@ -87,9 +87,11 @@ export function detach(
       case 'const':
         return n
       case 'read': {
-        const x = detachRead(cache.with(n.tag), n.ex)
-        if (n.ex === undefined) return x[0] ?? constant(undefined as any)
-        return fold(x as NumTagFree[], n.ex, n.ex)
+        const newCache = cache.with(n.tag)
+        const ex = n.ex ?? calc.defaultAccu(newCache.tag) ?? 'unique'
+        const x = detachRead(newCache, ex)
+        if (ex === 'unique') return x[0] ?? constant(undefined as any)
+        return fold(x as NumTagFree[], ex, n.ex)
       }
       case 'sum':
       case 'prod':

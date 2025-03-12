@@ -6,7 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'HormonePunk'
 
 const discCount = own.common.count.sheet(key)
-const showCond4Set = cmpGE(discCount, 4, 'unique', '')
+const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
 const { entering_combat } = allBoolConditionals(key)
 

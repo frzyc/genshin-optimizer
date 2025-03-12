@@ -6,7 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'InfernoMetal'
 
 const discCount = own.common.count.sheet(key)
-const showCond4Set = cmpGE(discCount, 4, 'unique', '')
+const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
 const { hitting_burning_enemy } = allBoolConditionals(key)
 

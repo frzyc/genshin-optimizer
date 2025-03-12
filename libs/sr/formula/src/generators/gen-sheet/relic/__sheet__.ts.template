@@ -36,19 +36,19 @@ const sheet = registerRelic(
     ownBuff.premod.common_dmg_.add(
       cmpGE(relicCount, 2, boolConditional.ifOn(dm[2].cond_dmg_))
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   ),
   registerBuff(
     'team_dmg_',
     teamBuff.premod.common_dmg_.add(
       cmpGE(relicCount, 4, listConditional.map({ val1: 1, val2: 2 }))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   ),
   registerBuff(
     'enemy_defRed_',
     enemyDebuff.common.defRed_.add(cmpGE(relicCount, 4, numConditional)),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

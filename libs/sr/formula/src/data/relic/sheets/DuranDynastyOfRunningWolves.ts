@@ -24,14 +24,14 @@ const sheet = registerRelic(
       'followUp',
       cmpGE(relicCount, 2, prod(dm[2].followUp_, merit))
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   ),
   registerBuff(
     'set2_crit_dmg_',
     ownBuff.premod.crit_dmg_.add(
       cmpGE(relicCount, 2, cmpEq(merit, 5, dm[2].crit_dmg_))
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet

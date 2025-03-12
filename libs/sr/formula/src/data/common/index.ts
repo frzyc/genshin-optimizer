@@ -19,10 +19,10 @@ const data: TagMapNodeEntries = [
   // Final <= Premod <= Base
   reader
     .withTag({ sheet: 'agg', et: 'own', qt: 'final' })
-    .add(reader.with('qt', 'premod').sum),
+    .add(reader.with('qt', 'premod')),
   reader
     .withTag({ sheet: 'agg', et: 'own', qt: 'premod' })
-    .add(reader.with('qt', 'base').sum),
+    .add(reader.with('qt', 'base').sum), // add `accu` because these aren't in `ownTag`
 
   // premod X += base X * premod X%
   ...(['atk', 'def', 'hp', 'spd'] as const).map((s) =>

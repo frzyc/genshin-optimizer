@@ -25,7 +25,7 @@ const sheet = registerRelic(
         cmpGE(own.final.spd, dm[2].spdThreshold, dm[2].brEffect_)
       )
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet

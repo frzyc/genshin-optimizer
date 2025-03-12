@@ -3,7 +3,7 @@ import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import type { RelicSetDatum } from '@genshin-optimizer/sr/stats'
 import type { Tag, TagMapNodeEntries, TagMapNodeEntry } from '../util'
-import { getStatFromStatKey, own, ownBuff } from '../util'
+import { getStatFromStatKey, own, ownBuff, registerBuff } from '../util'
 
 export function registerRelic(
   sheet: RelicSetKey,
@@ -20,9 +20,13 @@ export function entriesForRelic(
   return [
     // Passive stats
     ...dataGen.setEffects.flatMap(({ numRequired, passiveStats }) =>
-      Object.entries(passiveStats).map(([statKey, value]) =>
-        getStatFromStatKey(ownBuff.premod, statKey).add(
-          cmpGE(relicCount, numRequired, value)
+      Object.entries(passiveStats).flatMap(([statKey, value]) =>
+        registerBuff(
+          `set${numRequired}_passive_${statKey}`,
+          getStatFromStatKey(ownBuff.premod, statKey).add(
+            cmpGE(relicCount, numRequired, value)
+          ),
+          cmpGE(relicCount, numRequired, 'unique', '')
         )
       )
     ),
