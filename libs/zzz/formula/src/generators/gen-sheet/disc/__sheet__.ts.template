@@ -15,7 +15,7 @@ import { registerDisc } from '../util'
 const key: DiscSetKey = '<%= sheet %>'
 
 const discCount = own.common.count.sheet(key)
-const showCond4Set = cmpGE(discCount, 4, 'unique', '')
+const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)

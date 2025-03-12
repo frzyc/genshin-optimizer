@@ -69,10 +69,10 @@ describe('Calculator', () => {
     })
     it('shares the same cache', () => {
       // Check references rather than values
-      const ref = calc.compute(read({}, undefined))
-      const ref1 = calc.compute(read({ cat1: 'val1' }, undefined))
-      const refCalc1 = calc1.compute(read({ cat1: null }, undefined))
-      const ref1Calc1 = calc1.compute(read({}, undefined))
+      const ref = calc.compute(read({}))
+      const ref1 = calc.compute(read({ cat1: 'val1' }))
+      const refCalc1 = calc1.compute(read({ cat1: null }))
+      const ref1Calc1 = calc1.compute(read({}))
       expect(ref1Calc1).not.toBe(ref)
       expect(ref1Calc1).toBe(ref1)
       expect(refCalc1).toBe(ref)

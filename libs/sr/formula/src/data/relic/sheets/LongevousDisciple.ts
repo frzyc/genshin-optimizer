@@ -21,7 +21,7 @@ const sheet = registerRelic(
   registerBuff(
     'set4_crit_',
     ownBuff.premod.crit_.add(cmpGE(relicCount, 4, prod(stacks, dm[4].crit_))),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

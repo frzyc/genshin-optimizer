@@ -23,7 +23,7 @@ const sheet = registerRelic(
     ownBuff.premod.brEffect_.add(
       cmpGE(relicCount, 2, enemyHit.ifOn(dm[2].brEffect_))
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet

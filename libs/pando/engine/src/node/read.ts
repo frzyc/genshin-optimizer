@@ -68,7 +68,7 @@ export class TypedRead<T extends Tag> implements BaseRead {
 
   // Accumulator
   get accu() {
-    return this.ex ?? 'unique'
+    return this.ex ?? 'infer'
   }
   get prod() {
     return this.ctor(this.tag, 'prod')
@@ -84,5 +84,8 @@ export class TypedRead<T extends Tag> implements BaseRead {
   }
   get unique() {
     return this.ctor(this.tag, undefined)
+  }
+  get infer() {
+    return this
   }
 }
