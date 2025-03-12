@@ -63,7 +63,7 @@ export const damageTypes = [
   'assistFollowUp',
   'anomaly',
   'disorder',
-  'additional',
+  'aftershock',
   'elemental',
 ] as const
 

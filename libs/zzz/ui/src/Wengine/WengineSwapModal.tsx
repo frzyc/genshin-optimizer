@@ -278,65 +278,77 @@ export function WengineSwapModal({
             >
               {t('page_wengine:addWengine')}
             </Button>
-            <Grid container spacing={1}>
-              {/* only show "unequip" when a wengine is equipped */}
-              {wengineId && (
-                <Grid item xs={6} sm={6} md={4} lg={3}>
-                  <CardThemed
-                    bgt="light"
-                    sx={{ width: '100%', height: '100%' }}
-                  >
-                    <CardActionArea
-                      sx={{
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                      onClick={() => setSwapWengineId('unequip')}
-                    >
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                        }}
+            <Box mt={1}>
+              <Suspense
+                fallback={
+                  <Skeleton variant="rectangular" width="100%" height={1000} />
+                }
+              >
+                <Grid container spacing={1}>
+                  {/* only show "unequip" when a wengine is equipped */}
+                  {wengineId && (
+                    <Grid item xs={6} sm={6} md={4} lg={3}>
+                      <CardThemed
+                        bgt="light"
+                        sx={{ width: '100%', height: '100%' }}
                       >
-                        <RemoveCircleIcon sx={{ fontSize: '10em' }} />
-                        <Typography>
-                          {t('wengine:button.unequipWengine')}
-                        </Typography>
-                      </Box>
-                    </CardActionArea>
-                  </CardThemed>
+                        <CardActionArea
+                          sx={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          }}
+                          onClick={() => setSwapWengineId('unequip')}
+                        >
+                          <Box
+                            sx={{
+                              display: 'flex',
+                              flexDirection: 'column',
+                              alignItems: 'center',
+                            }}
+                          >
+                            <RemoveCircleIcon sx={{ fontSize: '10em' }} />
+                            <Typography>
+                              {t('wengine:button.unequipWengine')}
+                            </Typography>
+                          </Box>
+                        </CardActionArea>
+                      </CardThemed>
+                    </Grid>
+                  )}
+                  {wengineIdsToShow.map((id) => (
+                    <Grid
+                      item
+                      key={id}
+                      xs={6}
+                      sm={6}
+                      md={4}
+                      lg={3}
+                      sx={(theme) => ({
+                        ...(wengineId === id && {
+                          '> .MuiCard-root': {
+                            outline: `${theme.spacing(0.5)} solid ${
+                              theme.palette.warning.main
+                            }`,
+                          },
+                        }),
+                      })}
+                    >
+                      <WengineCard
+                        wengineId={id}
+                        onClick={
+                          wengineId === id
+                            ? undefined
+                            : () => setSwapWengineId(id)
+                        }
+                      />
+                    </Grid>
+                  ))}
                 </Grid>
-              )}
-              {wengineIdsToShow.map((id) => (
-                <Grid
-                  item
-                  key={id}
-                  xs={6}
-                  sm={6}
-                  md={4}
-                  lg={3}
-                  sx={(theme) => ({
-                    ...(wengineId === id && {
-                      '> .MuiCard-root': {
-                        outline: `solid ${theme.palette.warning.main}`,
-                      },
-                    }),
-                  })}
-                >
-                  <WengineCard
-                    wengineId={id}
-                    onClick={
-                      wengineId === id ? undefined : () => setSwapWengineId(id)
-                    }
-                  />
-                </Grid>
-              ))}
-            </Grid>
+              </Suspense>
+            </Box>
             {wengineIds.length !== wengineIdsToShow.length && (
               <Skeleton
                 ref={(node) => {

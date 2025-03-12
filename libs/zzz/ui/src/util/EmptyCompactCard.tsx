@@ -6,16 +6,16 @@ import { ZCard } from '../Components'
 
 export function EmptyCompactCard({
   placeholder,
-  slotKey,
   onClick,
 }: {
   placeholder: string
-  slotKey?: string
   onClick?: () => void
 }) {
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
-      <CardActionArea onClick={onClick}>{children}</CardActionArea>
+      <CardActionArea sx={{ borderRadius: 0 }} onClick={onClick}>
+        {children}
+      </CardActionArea>
     ),
     [onClick]
   )
@@ -29,41 +29,43 @@ export function EmptyCompactCard({
   )
 
   return (
-    <Suspense
-      fallback={
-        <Skeleton
-          variant="rectangular"
-          sx={{ width: '100%', height: '100%', minHeight: 350 }}
-        />
-      }
-    >
-      <ConditionalWrapper
-        condition={!!onClick}
-        wrapper={wrapperFunc}
-        falseWrapper={falseWrapperFunc}
+    <ZCard bgt="dark">
+      <Suspense
+        fallback={
+          <Skeleton
+            variant="rectangular"
+            sx={{ width: '100%', height: '100%', minHeight: 350 }}
+          />
+        }
       >
-        <ZCard
-          bgt="dark"
-          sx={{
-            display: 'flex',
-            py: slotKey ? '86px' : '72px',
-            px: slotKey ? '0' : '16px',
-            justifyContent: 'center',
-          }}
+        <ConditionalWrapper
+          condition={!!onClick}
+          wrapper={wrapperFunc}
+          falseWrapper={falseWrapperFunc}
         >
-          <Typography
-            variant="h5"
-            sx={(theme) => ({
-              textTransform: 'uppercase',
-              color: `${theme.palette.contentZzz.main}`,
-              fontWeight: '900',
-              textAlign: 'center',
-            })}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              px: '16px',
+              justifyContent: 'center',
+              height: '212px',
+            }}
           >
-            {placeholder} {slotKey}
-          </Typography>
-        </ZCard>
-      </ConditionalWrapper>
-    </Suspense>
+            <Typography
+              variant="h5"
+              sx={(theme) => ({
+                textTransform: 'uppercase',
+                color: `${theme.palette.contentZzz.main}`,
+                fontWeight: '900',
+                textAlign: 'center',
+              })}
+            >
+              {placeholder}
+            </Typography>
+          </Box>
+        </ConditionalWrapper>
+      </Suspense>
+    </ZCard>
   )
 }

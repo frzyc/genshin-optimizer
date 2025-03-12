@@ -6329,6 +6329,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_common_dmg_: {
+      sheet: 'ASecretVow',
+      name: 'passive_common_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'ASecretVow',
+        name: 'passive_common_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'ASecretVow',
       name: 'team_dmg_',
@@ -6590,6 +6601,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'AfterTheCharmonyFall',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'AfterTheCharmonyFall',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'AfterTheCharmonyFall',
       name: 'team_dmg_',
@@ -6841,6 +6863,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_dmg_: {
+      sheet: 'AlongThePassingShore',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'AlongThePassingShore',
+        name: 'passive_crit_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'AlongThePassingShore',
       name: 'team_dmg_',
@@ -6876,6 +6909,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_def_: {
+      sheet: 'Amber',
+      name: 'passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'Amber',
+        name: 'passive_def_',
+      },
+    },
     team_dmg_: {
       sheet: 'Amber',
       name: 'team_dmg_',
@@ -6909,6 +6953,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'AnInstantBeforeAGaze',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_dmg_: {
+      sheet: 'AnInstantBeforeAGaze',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'AnInstantBeforeAGaze',
+        name: 'passive_crit_dmg_',
       },
     },
     team_dmg_: {
@@ -7915,6 +7970,18 @@ export const buffs = {
     },
   },
   BandOfSizzlingThunder: {
+    set2_passive_lightning_dmg_: {
+      sheet: 'BandOfSizzlingThunder',
+      name: 'set2_passive_lightning_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BandOfSizzlingThunder',
+        elementalType: 'lightning',
+        name: 'set2_passive_lightning_dmg_',
+      },
+    },
     set4_atk_: {
       sheet: 'BandOfSizzlingThunder',
       name: 'set4_atk_',
@@ -7948,6 +8015,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'BaptismOfPureThought',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_dmg_: {
+      sheet: 'BaptismOfPureThought',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'BaptismOfPureThought',
+        name: 'passive_crit_dmg_',
       },
     },
     team_dmg_: {
@@ -7985,6 +8063,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_dmg_: {
+      sheet: 'BeforeDawn',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'BeforeDawn',
+        name: 'passive_crit_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'BeforeDawn',
       name: 'team_dmg_',
@@ -8020,6 +8109,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_eff_: {
+      sheet: 'BeforeTheTutorialMissionStarts',
+      name: 'passive_eff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'BeforeTheTutorialMissionStarts',
+        name: 'passive_eff_',
+      },
+    },
     team_dmg_: {
       sheet: 'BeforeTheTutorialMissionStarts',
       name: 'team_dmg_',
@@ -8042,6 +8142,17 @@ export const buffs = {
         q: 'def_',
         sheet: 'BelobogOfTheArchitects',
         name: 'set2_def_',
+      },
+    },
+    set2_passive_def_: {
+      sheet: 'BelobogOfTheArchitects',
+      name: 'set2_passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'BelobogOfTheArchitects',
+        name: 'set2_passive_def_',
       },
     },
   },
@@ -8435,7 +8546,29 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'set2_crit_dmg_',
+        name: 'set2_dmg_',
+      },
+    },
+    set2_passive_hp_: {
+      sheet: 'BoneCollectionsSereneDemesne',
+      name: 'set2_passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'BoneCollectionsSereneDemesne',
+        name: 'set2_passive_hp_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BoneCollectionsSereneDemesne',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'BoneCollectionsSereneDemesne',
+        name: 'team_dmg_',
       },
     },
   },
@@ -8651,6 +8784,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_: {
+      sheet: 'BoundlessChoreo',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'BoundlessChoreo',
+        name: 'passive_crit_',
+      },
+    },
     team_dmg_: {
       sheet: 'BoundlessChoreo',
       name: 'team_dmg_',
@@ -8686,6 +8830,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_: {
+      sheet: 'BrighterThanTheSun',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'BrighterThanTheSun',
+        name: 'passive_crit_',
+      },
+    },
     team_dmg_: {
       sheet: 'BrighterThanTheSun',
       name: 'team_dmg_',
@@ -8708,6 +8863,17 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'BrokenKeel',
         name: 'set2_crit_dmg_',
+      },
+    },
+    set2_passive_eff_res_: {
+      sheet: 'BrokenKeel',
+      name: 'set2_passive_eff_res_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_res_',
+        sheet: 'BrokenKeel',
+        name: 'set2_passive_eff_res_',
       },
     },
   },
@@ -8928,6 +9094,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_enerRegen_: {
+      sheet: 'ButTheBattleIsntOver',
+      name: 'passive_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'ButTheBattleIsntOver',
+        name: 'passive_enerRegen_',
+      },
+    },
     team_dmg_: {
       sheet: 'ButTheBattleIsntOver',
       name: 'team_dmg_',
@@ -8987,8 +9164,31 @@ export const buffs = {
         name: 'set2_crit_rate_',
       },
     },
+    set2_passive_crit_dmg_: {
+      sheet: 'CelestialDifferentiator',
+      name: 'set2_passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'CelestialDifferentiator',
+        name: 'set2_passive_crit_dmg_',
+      },
+    },
   },
   ChampionOfStreetwiseBoxing: {
+    set2_passive_physical_dmg_: {
+      sheet: 'ChampionOfStreetwiseBoxing',
+      name: 'set2_passive_physical_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ChampionOfStreetwiseBoxing',
+        elementalType: 'physical',
+        name: 'set2_passive_physical_dmg_',
+      },
+    },
     set4_atk_: {
       sheet: 'ChampionOfStreetwiseBoxing',
       name: 'set4_atk_',
@@ -9286,6 +9486,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_def_: {
+      sheet: 'ConcertForTwo',
+      name: 'passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'ConcertForTwo',
+        name: 'passive_def_',
+      },
+    },
     team_dmg_: {
       sheet: 'ConcertForTwo',
       name: 'team_dmg_',
@@ -9354,6 +9565,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'CruisingInTheStellarSea',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_: {
+      sheet: 'CruisingInTheStellarSea',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'CruisingInTheStellarSea',
+        name: 'passive_crit_',
       },
     },
     team_dmg_: {
@@ -9779,6 +10001,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_dmg_: {
+      sheet: 'DanceAtSunset',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'DanceAtSunset',
+        name: 'passive_crit_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'DanceAtSunset',
       name: 'team_dmg_',
@@ -9919,6 +10152,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_def_: {
+      sheet: 'DayOneOfMyNewLife',
+      name: 'passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'DayOneOfMyNewLife',
+        name: 'passive_def_',
+      },
+    },
     team_dmg_: {
       sheet: 'DayOneOfMyNewLife',
       name: 'team_dmg_',
@@ -9987,6 +10231,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'DestinysThreadsForewoven',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_eff_res_: {
+      sheet: 'DestinysThreadsForewoven',
+      name: 'passive_eff_res_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_res_',
+        sheet: 'DestinysThreadsForewoven',
+        name: 'passive_eff_res_',
       },
     },
     team_dmg_: {
@@ -10213,6 +10468,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_spd_: {
+      sheet: 'DreamsMontage',
+      name: 'passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'DreamsMontage',
+        name: 'passive_spd_',
+      },
+    },
     team_dmg_: {
       sheet: 'DreamsMontage',
       name: 'team_dmg_',
@@ -10285,6 +10551,20 @@ export const buffs = {
       },
     },
   },
+  EagleOfTwilightLine: {
+    set2_passive_wind_dmg_: {
+      sheet: 'EagleOfTwilightLine',
+      name: 'set2_passive_wind_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'EagleOfTwilightLine',
+        elementalType: 'wind',
+        name: 'set2_passive_wind_dmg_',
+      },
+    },
+  },
   EarthlyEscapade: {
     cond_dmg_: {
       sheet: 'EarthlyEscapade',
@@ -10306,6 +10586,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'EarthlyEscapade',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_dmg_: {
+      sheet: 'EarthlyEscapade',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'EarthlyEscapade',
+        name: 'passive_crit_dmg_',
       },
     },
     team_dmg_: {
@@ -10343,6 +10634,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'EchoesOfTheCoffin',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'EchoesOfTheCoffin',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'EchoesOfTheCoffin',
       name: 'team_dmg_',
@@ -10378,6 +10680,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'EternalCalculus',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'EternalCalculus',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'EternalCalculus',
       name: 'team_dmg_',
@@ -10411,6 +10724,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'EyesOfThePrey',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_eff_: {
+      sheet: 'EyesOfThePrey',
+      name: 'passive_eff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'EyesOfThePrey',
+        name: 'passive_eff_',
       },
     },
     team_dmg_: {
@@ -10637,6 +10961,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'Fermata',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'Fermata',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'Fermata',
       name: 'team_dmg_',
@@ -10670,6 +11005,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'FinalVictor',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_atk_: {
+      sheet: 'FinalVictor',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'FinalVictor',
+        name: 'passive_atk_',
       },
     },
     team_dmg_: {
@@ -10887,6 +11233,18 @@ export const buffs = {
     },
   },
   FiresmithOfLavaForging: {
+    set2_passive_fire_dmg_: {
+      sheet: 'FiresmithOfLavaForging',
+      name: 'set2_passive_fire_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FiresmithOfLavaForging',
+        elementalType: 'fire',
+        name: 'set2_passive_fire_dmg_',
+      },
+    },
     set4_fire_dmg_: {
       sheet: 'FiresmithOfLavaForging',
       name: 'set4_fire_dmg_',
@@ -10924,6 +11282,17 @@ export const buffs = {
         name: 'set2_dmg_',
       },
     },
+    set2_passive_atk_: {
+      sheet: 'FirmamentFrontlineGlamoth',
+      name: 'set2_passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'FirmamentFrontlineGlamoth',
+        name: 'set2_passive_atk_',
+      },
+    },
   },
   FlameOfBloodBlazeMyPath: {
     cond_dmg_: {
@@ -10946,6 +11315,28 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'FlameOfBloodBlazeMyPath',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_hp_: {
+      sheet: 'FlameOfBloodBlazeMyPath',
+      name: 'passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'FlameOfBloodBlazeMyPath',
+        name: 'passive_hp_',
+      },
+    },
+    passive_incHeal_: {
+      sheet: 'FlameOfBloodBlazeMyPath',
+      name: 'passive_incHeal_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'incHeal_',
+        sheet: 'FlameOfBloodBlazeMyPath',
+        name: 'passive_incHeal_',
       },
     },
     team_dmg_: {
@@ -11007,6 +11398,17 @@ export const buffs = {
         name: 'set2_atk_',
       },
     },
+    set2_passive_hp_: {
+      sheet: 'FleetOfTheAgeless',
+      name: 'set2_passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'FleetOfTheAgeless',
+        name: 'set2_passive_hp_',
+      },
+    },
   },
   FlowingNightglow: {
     cond_dmg_: {
@@ -11066,6 +11468,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'ForTomorrowsJourney',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'ForTomorrowsJourney',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'ForTomorrowsJourney',
       name: 'team_dmg_',
@@ -11088,6 +11501,17 @@ export const buffs = {
         q: 'brEffect_',
         sheet: 'ForgeOfTheKalpagniLantern',
         name: 'set2_brEffect_',
+      },
+    },
+    set2_passive_spd_: {
+      sheet: 'ForgeOfTheKalpagniLantern',
+      name: 'set2_passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'ForgeOfTheKalpagniLantern',
+        name: 'set2_passive_spd_',
       },
     },
   },
@@ -11659,6 +12083,18 @@ export const buffs = {
     },
   },
   GeniusOfBrilliantStars: {
+    set2_passive_quantum_dmg_: {
+      sheet: 'GeniusOfBrilliantStars',
+      name: 'set2_passive_quantum_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'GeniusOfBrilliantStars',
+        elementalType: 'quantum',
+        name: 'set2_passive_quantum_dmg_',
+      },
+    },
     set4_addDefIgn_: {
       sheet: 'GeniusOfBrilliantStars',
       name: 'set4_addDefIgn_',
@@ -11705,6 +12141,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'GeniusesGreetings',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'GeniusesGreetings',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'GeniusesGreetings',
       name: 'team_dmg_',
@@ -11738,6 +12185,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'GeniusesRepose',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_atk_: {
+      sheet: 'GeniusesRepose',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'GeniusesRepose',
+        name: 'passive_atk_',
       },
     },
     team_dmg_: {
@@ -11967,6 +12425,17 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'GiantTreeOfRaptBrooding',
         name: 'set2_dmg_',
+      },
+    },
+    set2_passive_spd_: {
+      sheet: 'GiantTreeOfRaptBrooding',
+      name: 'set2_passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'GiantTreeOfRaptBrooding',
+        name: 'set2_passive_spd_',
       },
     },
     team_dmg_: {
@@ -12400,6 +12869,17 @@ export const buffs = {
     },
   },
   HeroOfTriumphantSong: {
+    set2_passive_atk_: {
+      sheet: 'HeroOfTriumphantSong',
+      name: 'set2_passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'HeroOfTriumphantSong',
+        name: 'set2_passive_atk_',
+      },
+    },
     set4_ult_dmg_: {
       sheet: 'HeroOfTriumphantSong',
       name: 'set4_ult_dmg_',
@@ -12628,6 +13108,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'HeyOverHere',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_hp_: {
+      sheet: 'HeyOverHere',
+      name: 'passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'HeyOverHere',
+        name: 'passive_hp_',
       },
     },
     team_dmg_: {
@@ -13061,6 +13552,18 @@ export const buffs = {
     },
   },
   HunterOfGlacialForest: {
+    set2_passive_ice_dmg_: {
+      sheet: 'HunterOfGlacialForest',
+      name: 'set2_passive_ice_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'HunterOfGlacialForest',
+        elementalType: 'ice',
+        name: 'set2_passive_ice_dmg_',
+      },
+    },
     set4_crit_dmg_: {
       sheet: 'HunterOfGlacialForest',
       name: 'set4_crit_dmg_',
@@ -13285,6 +13788,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_dmg_: {
+      sheet: 'IShallBeMyOwnSword',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'IShallBeMyOwnSword',
+        name: 'passive_crit_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'IShallBeMyOwnSword',
       name: 'team_dmg_',
@@ -13320,6 +13834,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_: {
+      sheet: 'IVentureForthToHunt',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'IVentureForthToHunt',
+        name: 'passive_crit_',
+      },
+    },
     team_dmg_: {
       sheet: 'IVentureForthToHunt',
       name: 'team_dmg_',
@@ -13353,6 +13878,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'IfTimeWereAFlower',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_dmg_: {
+      sheet: 'IfTimeWereAFlower',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'IfTimeWereAFlower',
+        name: 'passive_crit_dmg_',
       },
     },
     team_dmg_: {
@@ -13425,6 +13961,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_: {
+      sheet: 'InTheNight',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'InTheNight',
+        name: 'passive_crit_',
+      },
+    },
     team_dmg_: {
       sheet: 'InTheNight',
       name: 'team_dmg_',
@@ -13458,6 +14005,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'IncessantRain',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_eff_: {
+      sheet: 'IncessantRain',
+      name: 'passive_eff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'IncessantRain',
+        name: 'passive_eff_',
       },
     },
     team_dmg_: {
@@ -13495,6 +14053,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'IndeliblePromise',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'IndeliblePromise',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'IndeliblePromise',
       name: 'team_dmg_',
@@ -13518,6 +14087,17 @@ export const buffs = {
         sheet: 'InertSalsotto',
         damageType1: 'followUp',
         name: 'set2_followUp_dmg_',
+      },
+    },
+    set2_passive_crit_: {
+      sheet: 'InertSalsotto',
+      name: 'set2_passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'InertSalsotto',
+        name: 'set2_passive_crit_',
       },
     },
     set2_ult_dmg_: {
@@ -13556,6 +14136,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_def_: {
+      sheet: 'InherentlyUnjustDestiny',
+      name: 'passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'InherentlyUnjustDestiny',
+        name: 'passive_def_',
+      },
+    },
     team_dmg_: {
       sheet: 'InherentlyUnjustDestiny',
       name: 'team_dmg_',
@@ -13591,6 +14182,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_: {
+      sheet: 'IntoTheUnreachableVeil',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'IntoTheUnreachableVeil',
+        name: 'passive_crit_',
+      },
+    },
     team_dmg_: {
       sheet: 'IntoTheUnreachableVeil',
       name: 'team_dmg_',
@@ -13604,6 +14206,17 @@ export const buffs = {
     },
   },
   IronCavalryAgainstTheScourge: {
+    set2_passive_brEffect_: {
+      sheet: 'IronCavalryAgainstTheScourge',
+      name: 'set2_passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'IronCavalryAgainstTheScourge',
+        name: 'set2_passive_brEffect_',
+      },
+    },
     set4_break_defIgn_: {
       sheet: 'IronCavalryAgainstTheScourge',
       name: 'set4_break_defIgn_',
@@ -13674,6 +14287,17 @@ export const buffs = {
         q: 'crit_',
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
         name: 'set2_crit_',
+      },
+    },
+    set2_passive_atk_: {
+      sheet: 'IzumoGenseiAndTakamaDivineRealm',
+      name: 'set2_passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'IzumoGenseiAndTakamaDivineRealm',
+        name: 'set2_passive_atk_',
       },
     },
   },
@@ -14630,6 +15254,19 @@ export const buffs = {
       },
     },
   },
+  KnightOfPurityPalace: {
+    set2_passive_def_: {
+      sheet: 'KnightOfPurityPalace',
+      name: 'set2_passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'KnightOfPurityPalace',
+        name: 'set2_passive_def_',
+      },
+    },
+  },
   LandausChoice: {
     cond_dmg_: {
       sheet: 'LandausChoice',
@@ -14877,6 +15514,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'LongRoadLeadsHome',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'LongRoadLeadsHome',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'LongRoadLeadsHome',
       name: 'team_dmg_',
@@ -14890,6 +15538,17 @@ export const buffs = {
     },
   },
   LongevousDisciple: {
+    set2_passive_hp_: {
+      sheet: 'LongevousDisciple',
+      name: 'set2_passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'LongevousDisciple',
+        name: 'set2_passive_hp_',
+      },
+    },
     set4_crit_: {
       sheet: 'LongevousDisciple',
       name: 'set4_crit_',
@@ -15336,6 +15995,17 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'LushakaTheSunkenSeas',
         name: 'set2_dmg_',
+      },
+    },
+    set2_passive_enerRegen_: {
+      sheet: 'LushakaTheSunkenSeas',
+      name: 'set2_passive_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'LushakaTheSunkenSeas',
+        name: 'set2_passive_enerRegen_',
       },
     },
     team_dmg_: {
@@ -15982,6 +16652,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'MemoriesOfThePast',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'MemoriesOfThePast',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'MemoriesOfThePast',
       name: 'team_dmg_',
@@ -16015,6 +16696,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'MemorysCurtainNeverFalls',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_spd_: {
+      sheet: 'MemorysCurtainNeverFalls',
+      name: 'passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'MemorysCurtainNeverFalls',
+        name: 'passive_spd_',
       },
     },
     team_dmg_: {
@@ -16065,6 +16757,17 @@ export const buffs = {
     },
   },
   MessengerTraversingHackerspace: {
+    set2_passive_spd_: {
+      sheet: 'MessengerTraversingHackerspace',
+      name: 'set2_passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'MessengerTraversingHackerspace',
+        name: 'set2_passive_spd_',
+      },
+    },
     set4_spd_: {
       sheet: 'MessengerTraversingHackerspace',
       name: 'set4_spd_',
@@ -16292,6 +16995,28 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'MomentOfVictory',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_def_: {
+      sheet: 'MomentOfVictory',
+      name: 'passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'MomentOfVictory',
+        name: 'passive_def_',
+      },
+    },
+    passive_eff_: {
+      sheet: 'MomentOfVictory',
+      name: 'passive_eff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'MomentOfVictory',
+        name: 'passive_eff_',
       },
     },
     team_dmg_: {
@@ -16531,6 +17256,17 @@ export const buffs = {
     },
   },
   MusketeerOfWildWheat: {
+    set2_passive_atk_: {
+      sheet: 'MusketeerOfWildWheat',
+      name: 'set2_passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'MusketeerOfWildWheat',
+        name: 'set2_passive_atk_',
+      },
+    },
     set4_basic_dmg_: {
       sheet: 'MusketeerOfWildWheat',
       name: 'set4_basic_dmg_',
@@ -16541,6 +17277,17 @@ export const buffs = {
         sheet: 'MusketeerOfWildWheat',
         damageType1: 'basic',
         name: 'set4_basic_dmg_',
+      },
+    },
+    set4_passive_spd_: {
+      sheet: 'MusketeerOfWildWheat',
+      name: 'set4_passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'MusketeerOfWildWheat',
+        name: 'set4_passive_spd_',
       },
     },
   },
@@ -16980,6 +17727,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_enerRegen_: {
+      sheet: 'NightOfFright',
+      name: 'passive_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'NightOfFright',
+        name: 'passive_enerRegen_',
+      },
+    },
     team_dmg_: {
       sheet: 'NightOfFright',
       name: 'team_dmg_',
@@ -17050,6 +17808,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_hp_: {
+      sheet: 'NinjaRecordSoundHunt',
+      name: 'passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'NinjaRecordSoundHunt',
+        name: 'passive_hp_',
+      },
+    },
     team_dmg_: {
       sheet: 'NinjaRecordSoundHunt',
       name: 'team_dmg_',
@@ -17085,6 +17854,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
       name: 'team_dmg_',
@@ -17118,6 +17898,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'NowhereToRun',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_atk_: {
+      sheet: 'NowhereToRun',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'NowhereToRun',
+        name: 'passive_atk_',
       },
     },
     team_dmg_: {
@@ -17190,6 +17981,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'OnlySilenceRemains',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'OnlySilenceRemains',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'OnlySilenceRemains',
       name: 'team_dmg_',
@@ -17212,6 +18014,30 @@ export const buffs = {
         q: 'atk_',
         sheet: 'PanCosmicCommercialEnterprise',
         name: 'set2_dmg_',
+      },
+    },
+    set2_passive_eff_: {
+      sheet: 'PanCosmicCommercialEnterprise',
+      name: 'set2_passive_eff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'PanCosmicCommercialEnterprise',
+        name: 'set2_passive_eff_',
+      },
+    },
+  },
+  PasserbyOfWanderingCloud: {
+    set2_passive_heal_: {
+      sheet: 'PasserbyOfWanderingCloud',
+      name: 'set2_passive_heal_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'heal_',
+        sheet: 'PasserbyOfWanderingCloud',
+        name: 'set2_passive_heal_',
       },
     },
   },
@@ -17297,6 +18123,17 @@ export const buffs = {
         name: 'cond_dmg_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'PastSelfInMirror',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'PastSelfInMirror',
+        name: 'passive_brEffect_',
+      },
+    },
   },
   PatienceIsAllYouNeed: {
     cond_dmg_: {
@@ -17319,6 +18156,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'PatienceIsAllYouNeed',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_common_dmg_: {
+      sheet: 'PatienceIsAllYouNeed',
+      name: 'passive_common_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'PatienceIsAllYouNeed',
+        name: 'passive_common_dmg_',
       },
     },
     team_dmg_: {
@@ -17539,6 +18387,17 @@ export const buffs = {
         name: 'set2_common_dmg_',
       },
     },
+    set2_passive_enerRegen_: {
+      sheet: 'PenaconyLandOfTheDreams',
+      name: 'set2_passive_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'PenaconyLandOfTheDreams',
+        name: 'set2_passive_enerRegen_',
+      },
+    },
   },
   PerfectTiming: {
     cond_dmg_: {
@@ -17561,6 +18420,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'PerfectTiming',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_eff_res_: {
+      sheet: 'PerfectTiming',
+      name: 'passive_eff_res_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_res_',
+        sheet: 'PerfectTiming',
+        name: 'passive_eff_res_',
       },
     },
     team_dmg_: {
@@ -17607,6 +18477,17 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
         name: 'set4_crit_dmg_',
+      },
+    },
+    set4_passive_crit_: {
+      sheet: 'PioneerDiverOfDeadWaters',
+      name: 'set4_passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'PioneerDiverOfDeadWaters',
+        name: 'set4_passive_crit_',
       },
     },
   },
@@ -17703,6 +18584,29 @@ export const buffs = {
         name: 'set2_dmg_',
       },
     },
+    set2_passive_quantum_dmg_: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'set2_passive_quantum_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PoetOfMourningCollapse',
+        elementalType: 'quantum',
+        name: 'set2_passive_quantum_dmg_',
+      },
+    },
+    set4_passive_spd_: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'set4_passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'PoetOfMourningCollapse',
+        name: 'set4_passive_spd_',
+      },
+    },
     team_dmg_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'team_dmg_',
@@ -17736,6 +18640,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'PoisedToBloom',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_atk_: {
+      sheet: 'PoisedToBloom',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'PoisedToBloom',
+        name: 'passive_atk_',
       },
     },
     team_dmg_: {
@@ -17773,6 +18688,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_enerRegen_: {
+      sheet: 'PostOpConversation',
+      name: 'passive_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'PostOpConversation',
+        name: 'passive_enerRegen_',
+      },
+    },
     team_dmg_: {
       sheet: 'PostOpConversation',
       name: 'team_dmg_',
@@ -17786,6 +18712,17 @@ export const buffs = {
     },
   },
   PrisonerInDeepConfinement: {
+    set2_passive_atk_: {
+      sheet: 'PrisonerInDeepConfinement',
+      name: 'set2_passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'PrisonerInDeepConfinement',
+        name: 'set2_passive_atk_',
+      },
+    },
     set4_defIgn_: {
       sheet: 'PrisonerInDeepConfinement',
       name: 'set4_defIgn_',
@@ -18237,6 +19174,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_eff_: {
+      sheet: 'ReforgedRemembrance',
+      name: 'passive_eff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'ReforgedRemembrance',
+        name: 'passive_eff_',
+      },
+    },
     team_dmg_: {
       sheet: 'ReforgedRemembrance',
       name: 'team_dmg_',
@@ -18340,6 +19288,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'ReturnToDarkness',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_: {
+      sheet: 'ReturnToDarkness',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'ReturnToDarkness',
+        name: 'passive_crit_',
       },
     },
     team_dmg_: {
@@ -18834,6 +19793,17 @@ export const buffs = {
     },
   },
   RutilantArena: {
+    set2_passive_crit_: {
+      sheet: 'RutilantArena',
+      name: 'set2_passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'RutilantArena',
+        name: 'set2_passive_crit_',
+      },
+    },
     set4_basic_dmg_: {
       sheet: 'RutilantArena',
       name: 'set4_basic_dmg_',
@@ -18880,6 +19850,17 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'SacerdosRelivedOrdeal',
         name: 'set2_dmg_',
+      },
+    },
+    set2_passive_spd_: {
+      sheet: 'SacerdosRelivedOrdeal',
+      name: 'set2_passive_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'SacerdosRelivedOrdeal',
+        name: 'set2_passive_spd_',
       },
     },
     team_dmg_: {
@@ -18950,6 +19931,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'SailingTowardsASecondLife',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_brEffect_: {
+      sheet: 'SailingTowardsASecondLife',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'SailingTowardsASecondLife',
+        name: 'passive_brEffect_',
       },
     },
     team_dmg_: {
@@ -19176,6 +20168,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'ScentAloneStaysTrue',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'ScentAloneStaysTrue',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'ScentAloneStaysTrue',
       name: 'team_dmg_',
@@ -19209,6 +20212,17 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'ScholarLostInErudition',
         name: 'set2_dmg_',
+      },
+    },
+    set2_passive_crit_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'set2_passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'ScholarLostInErudition',
+        name: 'set2_passive_crit_',
       },
     },
     team_dmg_: {
@@ -19671,6 +20685,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'ShadowedByNight',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'ShadowedByNight',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'ShadowedByNight',
       name: 'team_dmg_',
@@ -19704,6 +20729,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'SharedFeeling',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_heal_: {
+      sheet: 'SharedFeeling',
+      name: 'passive_heal_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'heal_',
+        sheet: 'SharedFeeling',
+        name: 'passive_heal_',
       },
     },
     team_dmg_: {
@@ -19776,6 +20812,28 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_enerRegen_: {
+      sheet: 'SheAlreadyShutHerEyes',
+      name: 'passive_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'SheAlreadyShutHerEyes',
+        name: 'passive_enerRegen_',
+      },
+    },
+    passive_hp_: {
+      sheet: 'SheAlreadyShutHerEyes',
+      name: 'passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'SheAlreadyShutHerEyes',
+        name: 'passive_hp_',
+      },
+    },
     team_dmg_: {
       sheet: 'SheAlreadyShutHerEyes',
       name: 'team_dmg_',
@@ -19798,6 +20856,17 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'SigoniaTheUnclaimedDesolation',
         name: 'set2_crit_dmg_',
+      },
+    },
+    set2_passive_crit_: {
+      sheet: 'SigoniaTheUnclaimedDesolation',
+      name: 'set2_passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'SigoniaTheUnclaimedDesolation',
+        name: 'set2_passive_crit_',
       },
     },
   },
@@ -20015,6 +21084,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_dmg_: {
+      sheet: 'SleepLikeTheDead',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'SleepLikeTheDead',
+        name: 'passive_crit_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'SleepLikeTheDead',
       name: 'team_dmg_',
@@ -20048,6 +21128,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'SolitaryHealing',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_brEffect_: {
+      sheet: 'SolitaryHealing',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'SolitaryHealing',
+        name: 'passive_brEffect_',
       },
     },
     team_dmg_: {
@@ -20085,6 +21176,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'SomethingIrreplaceable',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'SomethingIrreplaceable',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'SomethingIrreplaceable',
       name: 'team_dmg_',
@@ -20107,6 +21209,17 @@ export const buffs = {
         q: 'atk_',
         sheet: 'SpaceSealingStation',
         name: 'set2_atk_',
+      },
+    },
+    set2_passive_atk_: {
+      sheet: 'SpaceSealingStation',
+      name: 'set2_passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'SpaceSealingStation',
+        name: 'set2_passive_atk_',
       },
     },
   },
@@ -20296,6 +21409,19 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'Sparkle',
         name: 'team_dmg_',
+      },
+    },
+  },
+  SprightlyVonwacq: {
+    set2_passive_enerRegen_: {
+      sheet: 'SprightlyVonwacq',
+      name: 'set2_passive_enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'enerRegen_',
+        sheet: 'SprightlyVonwacq',
+        name: 'set2_passive_enerRegen_',
       },
     },
   },
@@ -20735,6 +21861,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_: {
+      sheet: 'SweatNowCryLess',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'SweatNowCryLess',
+        name: 'passive_crit_',
+      },
+    },
     team_dmg_: {
       sheet: 'SweatNowCryLess',
       name: 'team_dmg_',
@@ -20794,6 +21931,17 @@ export const buffs = {
         name: 'set2_brEffect_',
       },
     },
+    set2_passive_brEffect_: {
+      sheet: 'TaliaKingdomOfBanditry',
+      name: 'set2_passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'TaliaKingdomOfBanditry',
+        name: 'set2_passive_brEffect_',
+      },
+    },
   },
   TextureOfMemories: {
     cond_dmg_: {
@@ -20816,6 +21964,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'TextureOfMemories',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_eff_res_: {
+      sheet: 'TextureOfMemories',
+      name: 'passive_eff_res_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_res_',
+        sheet: 'TextureOfMemories',
+        name: 'passive_eff_res_',
       },
     },
     team_dmg_: {
@@ -20911,6 +22070,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'TheDayTheCosmosFell',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_atk_: {
+      sheet: 'TheDayTheCosmosFell',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TheDayTheCosmosFell',
+        name: 'passive_atk_',
       },
     },
     team_dmg_: {
@@ -21177,6 +22347,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_common_dmg_: {
+      sheet: 'TheSeriousnessOfBreakfast',
+      name: 'passive_common_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'common_dmg_',
+        sheet: 'TheSeriousnessOfBreakfast',
+        name: 'passive_common_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'TheSeriousnessOfBreakfast',
       name: 'team_dmg_',
@@ -21212,6 +22393,28 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_crit_: {
+      sheet: 'TheUnreachableSide',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'TheUnreachableSide',
+        name: 'passive_crit_',
+      },
+    },
+    passive_hp_: {
+      sheet: 'TheUnreachableSide',
+      name: 'passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'TheUnreachableSide',
+        name: 'passive_hp_',
+      },
+    },
     team_dmg_: {
       sheet: 'TheUnreachableSide',
       name: 'team_dmg_',
@@ -21225,6 +22428,28 @@ export const buffs = {
     },
   },
   TheWindSoaringValorous: {
+    set2_passive_atk_: {
+      sheet: 'TheWindSoaringValorous',
+      name: 'set2_passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'TheWindSoaringValorous',
+        name: 'set2_passive_atk_',
+      },
+    },
+    set4_passive_crit_: {
+      sheet: 'TheWindSoaringValorous',
+      name: 'set4_passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'TheWindSoaringValorous',
+        name: 'set4_passive_crit_',
+      },
+    },
     set4_ult_dmg_: {
       sheet: 'TheWindSoaringValorous',
       name: 'set4_ult_dmg_',
@@ -21261,6 +22486,17 @@ export const buffs = {
         name: 'set2_dmg_',
       },
     },
+    set2_passive_crit_dmg_: {
+      sheet: 'TheWondrousBananAmusementPark',
+      name: 'set2_passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'TheWondrousBananAmusementPark',
+        name: 'set2_passive_crit_dmg_',
+      },
+    },
     team_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
       name: 'team_dmg_',
@@ -21270,6 +22506,30 @@ export const buffs = {
         q: 'common_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
         name: 'team_dmg_',
+      },
+    },
+  },
+  ThiefOfShootingMeteor: {
+    set2_passive_brEffect_: {
+      sheet: 'ThiefOfShootingMeteor',
+      name: 'set2_passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'ThiefOfShootingMeteor',
+        name: 'set2_passive_brEffect_',
+      },
+    },
+    set4_passive_brEffect_: {
+      sheet: 'ThiefOfShootingMeteor',
+      name: 'set4_passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'ThiefOfShootingMeteor',
+        name: 'set4_passive_brEffect_',
       },
     },
   },
@@ -21294,6 +22554,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'ThisIsMe',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_def_: {
+      sheet: 'ThisIsMe',
+      name: 'passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'ThisIsMe',
+        name: 'passive_def_',
       },
     },
     team_dmg_: {
@@ -21331,6 +22602,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_eff_: {
+      sheet: 'ThoseManySprings',
+      name: 'passive_eff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'eff_',
+        sheet: 'ThoseManySprings',
+        name: 'passive_eff_',
+      },
+    },
     team_dmg_: {
       sheet: 'ThoseManySprings',
       name: 'team_dmg_',
@@ -21366,6 +22648,28 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_heal_: {
+      sheet: 'TimeWaitsForNoOne',
+      name: 'passive_heal_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'heal_',
+        sheet: 'TimeWaitsForNoOne',
+        name: 'passive_heal_',
+      },
+    },
+    passive_hp_: {
+      sheet: 'TimeWaitsForNoOne',
+      name: 'passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'TimeWaitsForNoOne',
+        name: 'passive_hp_',
+      },
+    },
     team_dmg_: {
       sheet: 'TimeWaitsForNoOne',
       name: 'team_dmg_',
@@ -21399,6 +22703,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'TimeWovenIntoGold',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_baseSpd: {
+      sheet: 'TimeWovenIntoGold',
+      name: 'passive_baseSpd',
+      tag: {
+        et: 'display',
+        qt: 'base',
+        q: 'spd',
+        sheet: 'TimeWovenIntoGold',
+        name: 'passive_baseSpd',
       },
     },
     team_dmg_: {
@@ -22626,6 +23941,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_def_: {
+      sheet: 'TrendOfTheUniversalMarket',
+      name: 'passive_def_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'def_',
+        sheet: 'TrendOfTheUniversalMarket',
+        name: 'passive_def_',
+      },
+    },
     team_dmg_: {
       sheet: 'TrendOfTheUniversalMarket',
       name: 'team_dmg_',
@@ -22850,6 +24176,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'UnderTheBlueSky',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'UnderTheBlueSky',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'UnderTheBlueSky',
       name: 'team_dmg_',
@@ -22883,6 +24220,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'VictoryInABlink',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_dmg_: {
+      sheet: 'VictoryInABlink',
+      name: 'passive_crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_dmg_',
+        sheet: 'VictoryInABlink',
+        name: 'passive_crit_dmg_',
       },
     },
     team_dmg_: {
@@ -22955,6 +24303,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_hp_: {
+      sheet: 'WarmthShortensColdNights',
+      name: 'passive_hp_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'hp_',
+        sheet: 'WarmthShortensColdNights',
+        name: 'passive_hp_',
+      },
+    },
     team_dmg_: {
       sheet: 'WarmthShortensColdNights',
       name: 'team_dmg_',
@@ -22968,6 +24327,18 @@ export const buffs = {
     },
   },
   WastelanderOfBanditryDesert: {
+    set2_passive_imaginary_dmg_: {
+      sheet: 'WastelanderOfBanditryDesert',
+      name: 'set2_passive_imaginary_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WastelanderOfBanditryDesert',
+        elementalType: 'imaginary',
+        name: 'set2_passive_imaginary_dmg_',
+      },
+    },
     set4_crit_: {
       sheet: 'WastelanderOfBanditryDesert',
       name: 'set4_crit_',
@@ -22992,6 +24363,17 @@ export const buffs = {
     },
   },
   WatchmakerMasterOfDreamMachinations: {
+    set2_passive_brEffect_: {
+      sheet: 'WatchmakerMasterOfDreamMachinations',
+      name: 'set2_passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'WatchmakerMasterOfDreamMachinations',
+        name: 'set2_passive_brEffect_',
+      },
+    },
     set4_brEffect_: {
       sheet: 'WatchmakerMasterOfDreamMachinations',
       name: 'set4_brEffect_',
@@ -23289,6 +24671,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_brEffect_: {
+      sheet: 'WhatIsReal',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'WhatIsReal',
+        name: 'passive_brEffect_',
+      },
+    },
     team_dmg_: {
       sheet: 'WhatIsReal',
       name: 'team_dmg_',
@@ -23322,6 +24715,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'WhereaboutsShouldDreamsRest',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_brEffect_: {
+      sheet: 'WhereaboutsShouldDreamsRest',
+      name: 'passive_brEffect_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'brEffect_',
+        sheet: 'WhereaboutsShouldDreamsRest',
+        name: 'passive_brEffect_',
       },
     },
     team_dmg_: {
@@ -23359,6 +24763,17 @@ export const buffs = {
         name: 'enemy_defRed_',
       },
     },
+    passive_atk_: {
+      sheet: 'WoofWalkTime',
+      name: 'passive_atk_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'atk_',
+        sheet: 'WoofWalkTime',
+        name: 'passive_atk_',
+      },
+    },
     team_dmg_: {
       sheet: 'WoofWalkTime',
       name: 'team_dmg_',
@@ -23392,6 +24807,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'WorrisomeBlissful',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_: {
+      sheet: 'WorrisomeBlissful',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'WorrisomeBlissful',
+        name: 'passive_crit_',
       },
     },
     team_dmg_: {
@@ -23810,6 +25236,17 @@ export const buffs = {
         q: 'defRed_',
         sheet: 'YetHopeIsPriceless',
         name: 'enemy_defRed_',
+      },
+    },
+    passive_crit_: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'passive_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'YetHopeIsPriceless',
+        name: 'passive_crit_',
       },
     },
     team_dmg_: {

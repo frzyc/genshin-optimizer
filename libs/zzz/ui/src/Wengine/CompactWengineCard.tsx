@@ -25,7 +25,9 @@ export function CompactWengineCard({
 }) {
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
-      <CardActionArea onClick={() => onClick?.()}>{children}</CardActionArea>
+      <CardActionArea sx={{ borderRadius: 0 }} onClick={() => onClick?.()}>
+        {children}
+      </CardActionArea>
     ),
     [onClick]
   )
@@ -43,117 +45,119 @@ export function CompactWengineCard({
   const wengineStats = getWengineStats(key, level, phase, modification)
 
   return (
-    <Suspense
-      fallback={
-        <Skeleton
-          variant="rectangular"
-          sx={{ width: '100%', height: '100%', minHeight: 350 }}
-        />
-      }
-    >
-      <ConditionalWrapper
-        condition={!!onClick}
-        wrapper={wrapperFunc}
-        falseWrapper={falseWrapperFunc}
+    <ZCard bgt="dark">
+      <Suspense
+        fallback={
+          <Skeleton
+            variant="rectangular"
+            sx={{ width: '100%', height: '100%', minHeight: 350 }}
+          />
+        }
       >
-        <ZCard bgt="dark" sx={{ padding: '12px' }}>
-          <Box component={'div'} sx={{ display: 'flex' }}>
-            <Box component={'div'}>
-              <Box
-                component={NextImage ? NextImage : 'img'}
-                alt="Wengine Image"
-                src={wengineAsset(key, 'icon')}
-                sx={(theme) => ({
-                  border: `4px solid ${
-                    theme.palette[rarityColor[wengineStat.rarity]].main
-                  }`,
-                  borderRadius: '12px',
-                  background: '#2B364D',
-                  width: '145px',
-                  height: '145px',
-                })}
-              />
-            </Box>
-            <Box component={'div'} sx={{ ml: '24px' }}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  width: '100%',
-                  mb: '16px',
-                }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  noWrap
+        <ConditionalWrapper
+          condition={!!onClick}
+          wrapper={wrapperFunc}
+          falseWrapper={falseWrapperFunc}
+        >
+          <Box sx={{ padding: '12px' }}>
+            <Box component={'div'} sx={{ display: 'flex' }}>
+              <Box component={'div'}>
+                <Box
+                  component={NextImage ? NextImage : 'img'}
+                  alt="Wengine Image"
+                  src={wengineAsset(key, 'icon')}
+                  sx={(theme) => ({
+                    border: `4px solid ${
+                      theme.palette[rarityColor[wengineStat.rarity]].main
+                    }`,
+                    borderRadius: '12px',
+                    background: '#2B364D',
+                    width: '145px',
+                    height: '145px',
+                  })}
+                />
+              </Box>
+              <Box component={'div'} sx={{ ml: '24px' }}>
+                <Box
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
+                    gap: '12px',
+                    width: '100%',
+                    mb: '16px',
                   }}
                 >
-                  <StatIcon statKey={'atk'} />
-                </Typography>
-                <Typography variant="subtitle1" sx={{ fontWeight: '900' }}>
-                  {wengineStats['atk_base'].toFixed()}
-                </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    noWrap
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <StatIcon statKey={'atk'} />
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: '900' }}>
+                    {wengineStats['atk_base'].toFixed()}
+                  </Typography>
+                </Box>
+                <WengineSubstatDisplay
+                  substatKey={wengineStat['second_statkey']}
+                  substatValue={wengineStats[wengineStat['second_statkey']]}
+                  showStatName={false}
+                  styleProps={{ fontSize: '1.2rem' }}
+                />
               </Box>
-              <WengineSubstatDisplay
-                substatKey={wengineStat['second_statkey']}
-                substatValue={wengineStats[wengineStat['second_statkey']]}
-                showStatName={false}
-                styleProps={{ fontSize: '1.2rem' }}
-              />
             </Box>
-          </Box>
-          <Box
-            component={'div'}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              background: '#2B364D',
-              borderRadius: '20px',
-              justifyContent: 'space-between',
-              mt: '8px',
-            }}
-          >
-            <Typography
-              sx={{
-                fontWeight: '900',
-                ml: '16px',
-              }}
-              variant="subtitle1"
-            >
-              Lv.{level}
-            </Typography>
             <Box
               component={'div'}
               sx={{
                 display: 'flex',
-                width: '5em',
-                padding: '4px 0',
-                mr: '42px',
+                alignItems: 'center',
+                background: '#2B364D',
+                borderRadius: '20px',
+                justifyContent: 'space-between',
+                mt: '8px',
               }}
             >
-              {range(1, 5).map((index: number) => {
-                return index <= phase ? (
-                  <ImgIcon
-                    key={`phase-active-${index}`}
-                    src={wenginePhaseIcon('singlePhase')}
-                    sx={{ width: '5em', height: '1.5em' }}
-                  />
-                ) : (
-                  <ImgIcon
-                    key={`phase-inactive-${index}`}
-                    src={wenginePhaseIcon('singleNonPhase')}
-                    sx={{ width: '5em', height: '1.5em' }}
-                  />
-                )
-              })}
+              <Typography
+                sx={{
+                  fontWeight: '900',
+                  ml: '16px',
+                }}
+                variant="subtitle1"
+              >
+                Lv.{level}
+              </Typography>
+              <Box
+                component={'div'}
+                sx={{
+                  display: 'flex',
+                  width: '5em',
+                  padding: '4px 0',
+                  mr: '42px',
+                }}
+              >
+                {range(1, 5).map((index: number) => {
+                  return index <= phase ? (
+                    <ImgIcon
+                      key={`phase-active-${index}`}
+                      src={wenginePhaseIcon('singlePhase')}
+                      sx={{ width: '5em', height: '1.5em' }}
+                    />
+                  ) : (
+                    <ImgIcon
+                      key={`phase-inactive-${index}`}
+                      src={wenginePhaseIcon('singleNonPhase')}
+                      sx={{ width: '5em', height: '1.5em' }}
+                    />
+                  )
+                })}
+              </Box>
             </Box>
           </Box>
-        </ZCard>
-      </ConditionalWrapper>
-    </Suspense>
+        </ConditionalWrapper>
+      </Suspense>
+    </ZCard>
   )
 }

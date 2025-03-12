@@ -43,7 +43,9 @@ export function CompactDiscCard({
 
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
-      <CardActionArea onClick={onClick}>{children}</CardActionArea>
+      <CardActionArea sx={{ borderRadius: 0 }} onClick={onClick}>
+        {children}
+      </CardActionArea>
     ),
     [onClick]
   )
@@ -57,167 +59,168 @@ export function CompactDiscCard({
   )
 
   return (
-    <Suspense
-      fallback={
-        <Skeleton
-          variant="rectangular"
-          sx={{ width: '100%', height: '100%', minHeight: 350 }}
-        />
-      }
-    >
-      <ConditionalWrapper
-        condition={!!onClick}
-        wrapper={wrapperFunc}
-        falseWrapper={falseWrapperFunc}
+    <ZCard bgt="dark">
+      <Suspense
+        fallback={
+          <Skeleton
+            variant="rectangular"
+            sx={{ width: '100%', height: '100%', minHeight: 350 }}
+          />
+        }
       >
-        <ZCard
-          bgt="dark"
-          sx={{
-            display: 'flex',
-            padding: '12px',
-          }}
+        <ConditionalWrapper
+          condition={!!onClick}
+          wrapper={wrapperFunc}
+          falseWrapper={falseWrapperFunc}
         >
-          <CardThemed bgt="light" sx={{ borderRadius: '12px' }}>
-            <Box sx={{ padding: '8px' }}>
-              <Box
-                sx={(theme: Theme) => ({
-                  border: `4px solid ${
-                    theme.palette[rarityColor[rarity]].main
-                  }`,
-                  borderRadius: '50%',
-                })}
-              >
-                <Box
-                  component="div"
-                  onMouseDown={(e: React.MouseEvent) =>
-                    handleMouseDown(e.nativeEvent)
-                  }
-                  onMouseMove={(e: React.MouseEvent) =>
-                    handleMouseMove(e.nativeEvent)
-                  }
-                  onMouseUp={(e: React.MouseEvent) =>
-                    handleMouseUp(e.nativeEvent)
-                  }
-                  onMouseLeave={(e: React.MouseEvent) =>
-                    handleMouseUp(e.nativeEvent)
-                  }
-                  sx={{
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    overflow: 'hidden',
-                    borderRadius: '50%',
-                    border: `4px solid #1B263B`,
-                  }}
-                >
-                  <Box
-                    component={NextImage ? NextImage : 'img'}
-                    alt="Disc Piece Image"
-                    src={discDefIcon(setKey)}
-                    style={{
-                      transform: `rotate(${rotation}deg)`,
-                    }}
-                    sx={{
-                      width: 'auto',
-                      float: 'right',
-                      height: '100px',
-                      transition: isDragging
-                        ? 'none'
-                        : 'transform 0.1s ease-out',
-                    }}
-                  />
-                  <Box
-                    sx={{
-                      height: 0,
-                      position: 'absolute',
-                      bottom: '70px',
-                    }}
-                  >
-                    <SlotIcon
-                      slotKey={slotKey}
-                      iconProps={{
-                        sx: (theme) => ({
-                          border: '1px solid #1B263B',
-                          background: '#1B263B',
-                          borderRadius: '20px',
-                          fontSize: '2.5rem',
-                          fill: `${theme.palette[rarityColor[rarity]].main}`,
-                        }),
-                      }}
-                    ></SlotIcon>
-                  </Box>
-                  <Box sx={{ height: 0, position: 'absolute', bottom: 20 }}>
-                    <Typography
-                      sx={(theme) => ({
-                        backgroundColor: `${theme.palette.contentNormal.main}`,
-                        px: '20px',
-                        borderRadius: '20px',
-                        fontWeight: 'bold',
-                        fontSize: '1rem',
-                      })}
-                      variant="h6"
-                    >
-                      {level}
-                    </Typography>
-                  </Box>
-                </Box>
-              </Box>
-              <CardThemed
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  padding: '4px 8px',
-                  width: '100%',
-                  justifyContent: 'space-around',
-                  mt: '12px',
-                }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  noWrap
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  <StatIcon statKey={mainStatKey}></StatIcon>
-                </Typography>
-                <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                  {toPercent(
-                    getDiscMainStatVal(rarity, mainStatKey, level),
-                    mainStatKey
-                  ).toFixed(statKeyToFixed(mainStatKey))}
-                  {getUnitStr(mainStatKey)}
-                </Typography>
-              </CardThemed>
-            </Box>
-          </CardThemed>
           <Box
             sx={{
               display: 'flex',
-              flexDirection: 'column',
-              gap: '20px',
-              ml: '24px',
-              mt: '8px',
+              padding: '12px',
             }}
           >
-            {substats.map(
-              (substat) =>
-                substat.key && (
-                  <SubstatDisplay
-                    key={substat.key}
-                    substat={substat}
-                    rarity={rarity}
-                  />
-                )
-            )}
+            <CardThemed bgt="light" sx={{ borderRadius: '12px' }}>
+              <Box sx={{ padding: '8px' }}>
+                <Box
+                  sx={(theme: Theme) => ({
+                    border: `4px solid ${
+                      theme.palette[rarityColor[rarity]].main
+                    }`,
+                    borderRadius: '50%',
+                  })}
+                >
+                  <Box
+                    component="div"
+                    onMouseDown={(e: React.MouseEvent) =>
+                      handleMouseDown(e.nativeEvent)
+                    }
+                    onMouseMove={(e: React.MouseEvent) =>
+                      handleMouseMove(e.nativeEvent)
+                    }
+                    onMouseUp={(e: React.MouseEvent) =>
+                      handleMouseUp(e.nativeEvent)
+                    }
+                    onMouseLeave={(e: React.MouseEvent) =>
+                      handleMouseUp(e.nativeEvent)
+                    }
+                    sx={{
+                      position: 'relative',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      overflow: 'hidden',
+                      borderRadius: '50%',
+                      border: `4px solid #1B263B`,
+                    }}
+                  >
+                    <Box
+                      component={NextImage ? NextImage : 'img'}
+                      alt="Disc Piece Image"
+                      src={discDefIcon(setKey)}
+                      style={{
+                        transform: `rotate(${rotation}deg)`,
+                      }}
+                      sx={{
+                        width: 'auto',
+                        float: 'right',
+                        height: '100px',
+                        transition: isDragging
+                          ? 'none'
+                          : 'transform 0.1s ease-out',
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        height: 0,
+                        position: 'absolute',
+                        bottom: '70px',
+                      }}
+                    >
+                      <SlotIcon
+                        slotKey={slotKey}
+                        iconProps={{
+                          sx: (theme) => ({
+                            border: '1px solid #1B263B',
+                            background: '#1B263B',
+                            borderRadius: '20px',
+                            fontSize: '2.5rem',
+                            fill: `${theme.palette[rarityColor[rarity]].main}`,
+                          }),
+                        }}
+                      ></SlotIcon>
+                    </Box>
+                    <Box sx={{ height: 0, position: 'absolute', bottom: 20 }}>
+                      <Typography
+                        sx={(theme) => ({
+                          backgroundColor: `${theme.palette.contentNormal.main}`,
+                          px: '20px',
+                          borderRadius: '20px',
+                          fontWeight: 'bold',
+                          fontSize: '1rem',
+                        })}
+                        variant="h6"
+                      >
+                        {level}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+                <CardThemed
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '4px 8px',
+                    width: '100%',
+                    justifyContent: 'space-around',
+                    mt: '12px',
+                  }}
+                >
+                  <Typography
+                    variant="subtitle1"
+                    noWrap
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    <StatIcon statKey={mainStatKey}></StatIcon>
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                    {toPercent(
+                      getDiscMainStatVal(rarity, mainStatKey, level),
+                      mainStatKey
+                    ).toFixed(statKeyToFixed(mainStatKey))}
+                    {getUnitStr(mainStatKey)}
+                  </Typography>
+                </CardThemed>
+              </Box>
+            </CardThemed>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '20px',
+                ml: '24px',
+                mt: '8px',
+              }}
+            >
+              {substats.map(
+                (substat) =>
+                  substat.key && (
+                    <SubstatDisplay
+                      key={substat.key}
+                      substat={substat}
+                      rarity={rarity}
+                    />
+                  )
+              )}
+            </Box>
           </Box>
-        </ZCard>
-      </ConditionalWrapper>
-    </Suspense>
+        </ConditionalWrapper>
+      </Suspense>
+    </ZCard>
   )
 }
 
