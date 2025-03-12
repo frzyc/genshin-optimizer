@@ -47,7 +47,7 @@ export function register(
 export function registerBuff(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
-  cond: string | StrNode = 'unique',
+  cond: string | StrNode = 'infer',
   team = false
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
@@ -81,7 +81,7 @@ export function registerBuff(
 export function registerBuffFormula(
   name: string,
   entry: TagMapNodeEntry,
-  cond: string | StrNode = 'unique',
+  cond: string | StrNode = 'infer',
   team = false
 ): TagMapNodeEntries {
   // Remove unused tags. We cannot use `sheet:null` here because
@@ -119,7 +119,7 @@ function registerFormula(
 }
 
 export function listingItem(t: Read, cond?: string | StrNode) {
-  return tag(cond ?? t.ex ?? 'unique', t.tag)
+  return tag(cond ?? t.ex ?? 'infer', t.tag)
 }
 
 /**
@@ -137,7 +137,7 @@ export function customDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -163,7 +163,7 @@ export function customDmg(
 export function customShield(
   name: string,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -189,7 +189,7 @@ export function customShield(
 export function customHeal(
   name: string,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -217,7 +217,7 @@ export function customAnomalyDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode | number,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(

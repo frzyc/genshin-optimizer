@@ -6,7 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'PufferElectro'
 
 const discCount = own.common.count.sheet(key)
-const showCond4Set = cmpGE(discCount, 4, 'unique', '')
+const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
 const { launching_ult } = allBoolConditionals(key)
 

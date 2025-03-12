@@ -38,7 +38,7 @@ const sheet = register(
     'ult',
     [dm.e6.dmg],
     {
-      cond: cmpGE(char.eidolon, 6, 'unique', ''),
+      cond: cmpGE(char.eidolon, 6, 'infer', ''),
     }
   ),
 

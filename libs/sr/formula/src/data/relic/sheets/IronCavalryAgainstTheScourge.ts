@@ -30,7 +30,7 @@ const sheet = registerRelic(
         )
       )
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   ),
   // TODO: Change to Super Break
   registerBuff(
@@ -47,7 +47,7 @@ const sheet = registerRelic(
         )
       )
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

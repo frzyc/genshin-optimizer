@@ -69,14 +69,14 @@ export function priorityTable(
  */
 
 type Desc = BaseDesc<Sheet>
-const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
+const aggStr: Desc = { sheet: 'agg' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
-const iso: Desc = { sheet: 'iso', accu: 'unique' }
+const iso: Desc = { sheet: 'iso' }
 const isoSum: Desc = { sheet: 'iso', accu: 'sum' }
 /** `sheet:`-agnostic calculation */
-const fixed: Desc = { sheet: 'static', accu: 'unique' }
+const fixed: Desc = { sheet: 'static' }
 /** The calculation must have a matching `sheet:` */
-const prep: Desc = { sheet: undefined, accu: 'unique' }
+const prep: Desc = { sheet: undefined }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,

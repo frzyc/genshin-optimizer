@@ -1,0 +1,34 @@
+{
+  "name": "Severed Innocence",
+  "rarity": "S",
+  "type": "attack",
+  "atk_base": 48,
+  "second_statkey": "crit_dmg_",
+  "second_statvalue": 0.192,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1381.png",
+  "desc": "...",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "...",
+  "phase": [
+    {
+      "name": "Tranquil Blossom",
+      "desc": "CRIT DMG is increased by <color=#2BAD00>30%</color>. When the equipper lands a hit with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>Aftershock</color>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <color=#2BAD00>10%</color>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>20%</color>."
+    },
+    {
+      "name": "Tranquil Blossom",
+      "desc": "CRIT DMG is increased by <color=#2BAD00>34.5%</color>. When the equipper lands a hit with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>Aftershock</color>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <color=#2BAD00>11.5%</color>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>23%</color>."
+    },
+    {
+      "name": "Tranquil Blossom",
+      "desc": "CRIT DMG is increased by <color=#2BAD00>39%</color>. When the equipper lands a hit with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>Aftershock</color>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <color=#2BAD00>13%</color>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>26%</color>."
+    },
+    {
+      "name": "Tranquil Blossom",
+      "desc": "CRIT DMG is increased by <color=#2BAD00>43.5%</color>. When the equipper lands a hit with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>Aftershock</color>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <color=#2BAD00>14.5%</color>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>29%</color>."
+    },
+    {
+      "name": "Tranquil Blossom",
+      "desc": "CRIT DMG is increased by <color=#2BAD00>48%</color>. When the equipper lands a hit with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>Aftershock</color>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <color=#2BAD00>16%</color>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>32%</color>."
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 import BashfulDemon from './BashfulDemon'
 import BigCylinder from './BigCylinder'
 import BlazingLaurel from './BlazingLaurel'
+import BoxCutter from './BoxCutter'
 import BunnyBand from './BunnyBand'
 import CannonRotor from './CannonRotor'
 import DeepSeaVisitor from './DeepSeaVisitor'
@@ -36,9 +37,11 @@ import ReverbMarkII from './ReverbMarkII'
 import ReverbMarkIII from './ReverbMarkIII'
 import RiotSuppressorMarkVI from './RiotSuppressorMarkVI'
 import RoaringRide from './RoaringRide'
+import SeveredInnocence from './SeveredInnocence'
 import SharpenedStinger from './SharpenedStinger'
 import SixShooter from './SixShooter'
 import SliceOfTime from './SliceOfTime'
+import SpectralGaze from './SpectralGaze'
 import SpringEmbrace from './SpringEmbrace'
 import StarlightEngine from './StarlightEngine'
 import StarlightEngineReplica from './StarlightEngineReplica'
@@ -62,6 +65,7 @@ const data = {
   BashfulDemon,
   BigCylinder,
   BlazingLaurel,
+  BoxCutter,
   BunnyBand,
   CannonRotor,
   DeepSeaVisitor,
@@ -96,9 +100,11 @@ const data = {
   ReverbMarkIII,
   RiotSuppressorMarkVI,
   RoaringRide,
+  SeveredInnocence,
   SharpenedStinger,
   SixShooter,
   SliceOfTime,
+  SpectralGaze,
   SpringEmbrace,
   StarlightEngine,
   StarlightEngineReplica,

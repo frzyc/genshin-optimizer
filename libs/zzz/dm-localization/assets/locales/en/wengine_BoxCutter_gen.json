@@ -1,0 +1,14 @@
+{
+  "name": "Box Cutter",
+  "desc": "...",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous.",
+  "phase": "Watch Your Fingers",
+  "phaseDescs": [
+    "Upon launching an <ct color=#FFFFFF>Aftershock</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>15%</ct>, and Daze increases by <ct color=#2BAD00>10%</ct>, lasting 10s.",
+    "Upon launching an <ct color=#FFFFFF>Aftershock</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>17.3%</ct>, and Daze increases by <ct color=#2BAD00>11.5%</ct>, lasting 10s.",
+    "Upon launching an <ct color=#FFFFFF>Aftershock</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>19.5%</ct>, and Daze increases by <ct color=#2BAD00>13%</ct>, lasting 10s.",
+    "Upon launching an <ct color=#FFFFFF>Aftershock</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>21.8%</ct>, and Daze increases by <ct color=#2BAD00>14.5%</ct>, lasting 10s.",
+    "Upon launching an <ct color=#FFFFFF>Aftershock</ct>, the equipper's <ct color=#F0D12B>Physical DMG</ct> increases by <ct color=#2BAD00>24%</ct>, and Daze increases by <ct color=#2BAD00>16%</ct>, lasting 10s."
+  ]
+}
