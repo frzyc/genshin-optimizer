@@ -304,7 +304,7 @@ export const allWengineCondKeys = {
   //   min: 1,
   //   max: 1,
   // },
-  SpectralGazeSpritLock: {
+  SpectralGazeSpiritLock: {
     key: 'SpectralGazeSpiritLock',
     text: (val: number) => `${val} Spirit Lock stacks`,
     min: 1,
@@ -870,7 +870,7 @@ export const wengineSheets: Partial<
   },
   SpectralGaze: {
     // condMeta:[ allWengineCondKeys.SpectralGazeElecAfter, allWengineCondKeys.SpectralGazeSpritLock],
-    condMeta: allWengineCondKeys.SpectralGazeSpritLock,
+    condMeta: allWengineCondKeys.SpectralGazeSpiritLock,
     getStats: (conds, stats) => {
       const p = stats['wenginePhase'] - 1
       // const def_red_ = [0.25, 0.2875, 0.325, 0.3625, 0.4]
@@ -878,9 +878,9 @@ export const wengineSheets: Partial<
       const full_impact_ = [0.08, 0.092, 0.104, 0.116, 0.128]
       const buffs: Partial<Record<PandoStatKey, number>> = {}
       // if (conds.SpectralGazeElecAfter) buffs.def_red_ = def_red_[p]
-      if (conds.SpectralGazeSpritLock) {
-        buffs.impact_ = impact_[p] * conds.SpectralGazeSpritLock
-        if (conds.SpectralGazeSpritLock === 3) buffs.impact_ += full_impact_[p]
+      if (conds.SpectralGazeSpiritLock) {
+        buffs.impact_ = impact_[p] * conds.SpectralGazeSpiritLock
+        if (conds.SpectralGazeSpiritLock === 3) buffs.impact_ += full_impact_[p]
       }
       return buffs
     },
