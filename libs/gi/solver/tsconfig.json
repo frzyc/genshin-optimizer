@@ -8,7 +8,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "downlevelIteration": true,
     "exactOptionalPropertyTypes": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true

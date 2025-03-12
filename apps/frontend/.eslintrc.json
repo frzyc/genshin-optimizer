@@ -5,9 +5,6 @@
     "**/vite.config.*.timestamp*",
     "**/vitest.config.*.timestamp*"
   ],
-  "parserOptions": {
-    "project": "tsconfig.eslint.json"
-  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

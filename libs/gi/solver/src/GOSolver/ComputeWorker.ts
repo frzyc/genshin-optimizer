@@ -1,6 +1,5 @@
 import type { OptNode } from '@genshin-optimizer/gi/wr'
 import { optimize, precompute } from '@genshin-optimizer/gi/wr'
-import type { Interim, Setup } from '..'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
@@ -9,6 +8,7 @@ import type {
   SolverBuild,
 } from '../common'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
+import type { Interim, Setup } from '../type'
 
 export class ComputeWorker {
   builds: SolverBuild[] = []

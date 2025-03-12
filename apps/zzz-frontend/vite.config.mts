@@ -8,17 +8,13 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import pkg from '../../package.json' assert { type: 'json' }
 
-export default defineConfig({
-  base: '',
+export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/viteapp',
+  cacheDir: '../../node_modules/.vite/apps/zzz-frontend',
 
   server: {
     port: 4200,
     host: 'localhost',
-    fs: {
-      cachedChecks: false,
-    },
   },
 
   preview: {
@@ -83,8 +79,8 @@ export default defineConfig({
   },
 
   test: {
+    watch: false,
     globals: true,
-    cache: { dir: '../../node_modules/.vitest' },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
@@ -93,4 +89,4 @@ export default defineConfig({
       provider: 'v8',
     },
   },
-})
+}))
