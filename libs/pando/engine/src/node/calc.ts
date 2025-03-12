@@ -18,7 +18,7 @@ import type { AnyNode, BaseRead, NumNode, ReRead, StrNode } from './type'
 
 export type TagCache<M> = DedupTag<PreRead<M>>
 export type PreRead<M> = Partial<
-  Record<NonNullable<BaseRead['ex']> | 'unique', CalcResult<number | string, M>>
+  Record<NonNullable<BaseRead['ex']>, CalcResult<number | string, M>>
 > & { pre: CalcResult<number | string, M>[] }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
