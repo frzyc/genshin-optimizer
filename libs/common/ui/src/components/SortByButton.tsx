@@ -12,7 +12,7 @@ export function SortByButton<Key extends string>({
   ascending,
   onChangeAsc,
   ...props
-}: ButtonGroupProps & {
+}: Omit<ButtonGroupProps,"onChange"> & {
   sortKeys: Key[]
   value: Key
   onChange: (value: Key) => void

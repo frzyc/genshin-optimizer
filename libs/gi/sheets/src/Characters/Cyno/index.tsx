@@ -362,10 +362,13 @@ const sheet: TalentSheet = {
     {
       fields: [
         ...dm.burst.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.burst[`normal_${i}`], {
-            name: ct.chg(`burst.skillParams.${i}`),
-            multi: i === 3 ? 2 : undefined,
-          }),
+          node: infoMut(
+            dmgFormulas.burst[`normal_${i}` as keyof typeof dmgFormulas.burst],
+            {
+              name: ct.chg(`burst.skillParams.${i}`),
+              multi: i === 3 ? 2 : undefined,
+            }
+          ),
         })),
         {
           node: infoMut(dmgFormulas.burst.charged, {
@@ -377,9 +380,14 @@ const sheet: TalentSheet = {
           value: dm.burst.charged.stamina,
         },
         ...Object.entries(dm.burst.plunging).map(([key]) => ({
-          node: infoMut(dmgFormulas.burst[`plunging_${key}`], {
-            name: stg(`plunging.${key}`),
-          }),
+          node: infoMut(
+            dmgFormulas.burst[
+              `plunging_${key}` as keyof typeof dmgFormulas.burst
+            ],
+            {
+              name: stg(`plunging.${key}`),
+            }
+          ),
         })),
         {
           text: ct.chg(`burst.skillParams.10`),

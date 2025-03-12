@@ -162,7 +162,15 @@ export function CharacterCoverArea() {
     <CoverArea src={card} level={level} ascension={ascension} />
   )
 }
-function SillyCoverArea({ src, level, ascension }) {
+function SillyCoverArea({
+  src,
+  level,
+  ascension,
+}: {
+  src: string
+  level: number
+  ascension: AscensionKey
+}) {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -204,7 +212,15 @@ function SillyCoverArea({ src, level, ascension }) {
   )
 }
 
-function CoverArea({ src, level, ascension }) {
+function CoverArea({
+  src,
+  level,
+  ascension,
+}: {
+  src: string
+  level: number
+  ascension: AscensionKey
+}) {
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)

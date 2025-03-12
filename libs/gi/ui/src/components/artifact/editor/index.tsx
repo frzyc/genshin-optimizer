@@ -327,7 +327,7 @@ export function ArtifactEditor({
     ? getArtifactEfficiency(cArtifact, allSubstatFilter)
     : {}
   const onClose = useCallback(
-    (e) => {
+    (e: React.MouseEvent<HTMLElement>) => {
       if (
         !artifactIdToEdit &&
         (queueTotal || artifact) &&
@@ -528,7 +528,9 @@ export function ArtifactEditor({
                     artifact?.setKey?.startsWith('Prayer')
                   }
                   slotKey={slotKey}
-                  onChange={(slotKey) => update({ slotKey })}
+                  onChange={(slotKey) =>
+                    update({ slotKey: slotKey ? slotKey : undefined })
+                  }
                 />
                 <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                   <Suspense fallback={<Skeleton width="60%" />}>

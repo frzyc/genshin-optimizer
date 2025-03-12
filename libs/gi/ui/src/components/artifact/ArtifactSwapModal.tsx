@@ -68,7 +68,11 @@ export function ArtifactSwapModal({
   const database = useDatabase()
 
   const filterOptionReducer = useCallback(
-    (state, action) => ({ ...state, ...action, slotKeys: [slotKey] }),
+    (state: ArtifactFilterOption, action: Partial<ArtifactFilterOption>) => ({
+      ...state,
+      ...action,
+      slotKeys: [slotKey],
+    }),
     [slotKey]
   )
 

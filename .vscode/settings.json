@@ -6,5 +6,6 @@
   "files.trimTrailingWhitespace": true,
   "typescript.preferences.importModuleSpecifier": "project-relative",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
