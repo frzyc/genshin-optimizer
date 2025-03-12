@@ -28,6 +28,7 @@ import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
+import { MindscapesDisplay } from './MindscapesDisplay'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
@@ -134,6 +135,7 @@ function CharacterSection() {
                 Edit Character
               </Button>
               <CharStatsDisplay />
+              <MindscapesDisplay character={character} />
             </Stack>
             <EquippedGrid onClick={onClick} />
           </CardContent>

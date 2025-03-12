@@ -7,8 +7,6 @@
   },
   "characterEditor": {
     "delete": "Delete Character",
-    "mindscapeTitle": "Mindscape Cinema",
-    "mindscape": "M{{level}}",
     "new": "NEW"
   },
   "basic": "Basic Lv. {{level}}",
@@ -20,5 +18,7 @@
   "tabEquip": {
     "swapDisc": "Swap Disc",
     "swapWengine": "Swap Wengine"
-  }
+  },
+  "mindscapeTitle": "Mindscape",
+  "mindscape": "M{{level}}"
 }
