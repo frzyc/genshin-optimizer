@@ -39,7 +39,7 @@ export function customDmg(
   eleOverride: ElementWithPhyKey | undefined,
   move: MoveKey,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -57,7 +57,7 @@ export function customShield(
   name: string,
   ele: ElementKey | undefined,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   switch (ele) {
@@ -83,7 +83,7 @@ export function customShield(
 export function customHeal(
   name: string,
   base: NumNode,
-  { team, cond = 'unique' }: FormulaArg = {},
+  { team, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -114,7 +114,7 @@ function registerFormula(
 }
 
 export function listingItem(t: Read, cond?: string | StrNode) {
-  return tag(cond ?? t.ex ?? 'unique', t.tag)
+  return tag(cond ?? t.ex ?? 'infer', t.tag)
 }
 
 export function readStat(

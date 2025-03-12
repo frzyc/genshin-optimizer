@@ -21,14 +21,14 @@ const sheet = registerRelic(
   registerBuff(
     'set4_defIgn_',
     ownBuff.premod.defIgn_.add(cmpGE(relicCount, 4, dm[4].defIgn_)),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   ),
   registerBuff(
     'set4_addDefIgn_',
     ownBuff.premod.defIgn_.add(
       cmpGE(relicCount, 4, hasQuantumWeakness.ifOn(dm[4].addDefIgn_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer' '')
   )
 )
 export default sheet
