@@ -21,7 +21,7 @@ const sheet = registerRelic(
     teamBuff.premod.atk_.add(
       cmpGE(relicCount, 2, cmpGE(own.final.spd, dm[2].spdBp, dm[2].atk_))
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet

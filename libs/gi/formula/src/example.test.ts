@@ -112,7 +112,7 @@ describe('example', () => {
     // NOT `team` since this uses a specific formula, but the value from every member is the same
     expect(mem0.compute(own.common.eleCount).val).toBe(2)
 
-    expect(calc.compute(team.final.eleMas).val).toEqual(
+    expect(calc.compute(team.final.eleMas.sum).val).toEqual(
       mem0.compute(own.final.eleMas).val + mem1.compute(own.final.eleMas).val
     )
   })

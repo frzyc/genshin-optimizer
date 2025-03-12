@@ -100,8 +100,7 @@ export function TagFieldDisplay({
   const calc = useContext(CalcContext)
   const tag = useContext(TagContext)
   const { setRead } = useContext(DebugReadContext)
-  //TODO: undefined: we assume "unique" accumulator
-  const calcRead = read(field.fieldRef, undefined)
+  const calcRead = read(field.fieldRef) // we assume default accumulator
 
   const onClick = useCallback(() => setRead(calcRead), [calcRead, setRead])
   // const compareCalc: null | Calculator = null //TODO: compare calcs

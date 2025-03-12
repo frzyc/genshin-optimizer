@@ -40,9 +40,9 @@ addCustomOperation('bar', {
 })
 
 describe('optimization', () => {
-  const read0 = read({ q: '0' }, undefined)
-  const read1 = read({ q: '1' }, undefined)
-  const read2 = read({ q: '2' }, undefined)
+  const read0 = read({ q: '0' })
+  const read1 = read({ q: '1' })
+  const read2 = read({ q: '2' })
   const x = [
     sum(3, 4, 5, read0), // Multiple consts
     sum(3, sum(4, sum(5)), read1), // Nested consts

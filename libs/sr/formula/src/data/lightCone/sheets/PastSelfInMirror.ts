@@ -23,7 +23,7 @@ const sheet = registerLightCone(
     teamBuff.premod.common_dmg_.add(
       cmpGE(lcCount, 1, useUltimate.ifOn(subscript(superimpose, dm.dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', ''),
+    cmpGE(lcCount, 1, 'infer', ''),
     true
   )
 )
