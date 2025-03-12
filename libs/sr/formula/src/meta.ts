@@ -1313,27 +1313,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  GiantTreeOfRaptBrooding: {
-    boolConditional: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   GoodNightAndSleepWell: {
     boolConditional: {
       sheet: 'GoodNightAndSleepWell',
@@ -1353,13 +1332,6 @@ export const conditionals = {
       int_only: true,
       min: 0,
       max: 2,
-    },
-  },
-  GuardOfWutheringSnow: {
-    hpLowerThan50: {
-      sheet: 'GuardOfWutheringSnow',
-      name: 'hpLowerThan50',
-      type: 'bool',
     },
   },
   Guinaifen: {
@@ -1401,9 +1373,14 @@ export const conditionals = {
     },
   },
   HeroOfTriumphantSong: {
-    followUpUsed: {
+    memospriteAttacks: {
       sheet: 'HeroOfTriumphantSong',
-      name: 'followUpUsed',
+      name: 'memospriteAttacks',
+      type: 'bool',
+    },
+    memospriteOnField: {
+      sheet: 'HeroOfTriumphantSong',
+      name: 'memospriteOnField',
       type: 'bool',
     },
   },
@@ -8546,7 +8523,7 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'set2_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
     set2_passive_hp_: {
@@ -8558,17 +8535,6 @@ export const buffs = {
         q: 'hp_',
         sheet: 'BoneCollectionsSereneDemesne',
         name: 'set2_passive_hp_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'BoneCollectionsSereneDemesne',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'BoneCollectionsSereneDemesne',
-        name: 'team_dmg_',
       },
     },
   },
@@ -12405,26 +12371,15 @@ export const buffs = {
     },
   },
   GiantTreeOfRaptBrooding: {
-    enemy_defRed_: {
+    set2_heal_: {
       sheet: 'GiantTreeOfRaptBrooding',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'GiantTreeOfRaptBrooding',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'set2_dmg_',
+      name: 'set2_heal_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'heal_',
         sheet: 'GiantTreeOfRaptBrooding',
-        name: 'set2_dmg_',
+        name: 'set2_heal_',
       },
     },
     set2_passive_spd_: {
@@ -12436,17 +12391,6 @@ export const buffs = {
         q: 'spd_',
         sheet: 'GiantTreeOfRaptBrooding',
         name: 'set2_passive_spd_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'GiantTreeOfRaptBrooding',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'GiantTreeOfRaptBrooding',
-        name: 'team_dmg_',
       },
     },
   },
@@ -12880,16 +12824,26 @@ export const buffs = {
         name: 'set2_passive_atk_',
       },
     },
-    set4_ult_dmg_: {
+    set4_crit_dmg_: {
       sheet: 'HeroOfTriumphantSong',
-      name: 'set4_ult_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'crit_dmg_',
         sheet: 'HeroOfTriumphantSong',
-        damageType1: 'ult',
-        name: 'set4_ult_dmg_',
+        name: 'set4_crit_dmg_',
+      },
+    },
+    set4_spd_: {
+      sheet: 'HeroOfTriumphantSong',
+      name: 'set4_spd_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'spd_',
+        sheet: 'HeroOfTriumphantSong',
+        name: 'set4_spd_',
       },
     },
   },

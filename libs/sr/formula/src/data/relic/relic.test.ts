@@ -344,6 +344,48 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(0.4)
   })
 
+  it('GiantTreeOfRaptBrooding', () => {
+    const data = testCharacterData('GiantTreeOfRaptBrooding', undefined, [
+      ownBuff.premod.spd.add(65),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
+    expect(calc.compute(seele.final.heal_).val).toBeCloseTo(0.2)
+  })
+
+  it('HeroOfTriumphantSong', () => {
+    const data = testCharacterData('HeroOfTriumphantSong')
+    data.push(
+      cond(
+        'HeroOfTriumphantSong',
+        conditionals.HeroOfTriumphantSong.memospriteOnField.name,
+        1
+      ),
+      cond(
+        'HeroOfTriumphantSong',
+        conditionals.HeroOfTriumphantSong.memospriteAttacks.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(0.12)
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
+    // Base + 4 piece cond
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 0.3)
+  })
+
   it('GeniusOfBrilliantStars', () => {
     const data = testCharacterData('GeniusOfBrilliantStars')
     data.push(
