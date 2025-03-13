@@ -51,7 +51,7 @@ export function CharacterCompactMindscapeSelector({
               textAlign: 'center',
             }}
           >
-            {t('characterEditor.mindscape', { level: i })}
+            {t('mindscape', { level: i })}
           </CardActionArea>
         </Grid>
       ))}
