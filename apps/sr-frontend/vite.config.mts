@@ -8,6 +8,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig(() => ({
+  base: '',
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/sr-frontend',
 
