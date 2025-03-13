@@ -27,9 +27,6 @@
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "cache": true
     },
-    "typecheck": {
-      "executor": "nx:run-commands"
-    },
     "publish": {
       "dependsOn": ["build"]
     },
