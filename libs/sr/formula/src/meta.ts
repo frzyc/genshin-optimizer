@@ -17927,15 +17927,15 @@ export const buffs = {
     },
   },
   PanCosmicCommercialEnterprise: {
-    set2_dmg_: {
+    set2_atk_: {
       sheet: 'PanCosmicCommercialEnterprise',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
         q: 'atk_',
         sheet: 'PanCosmicCommercialEnterprise',
-        name: 'set2_dmg_',
+        name: 'set2_atk_',
       },
     },
     set2_passive_eff_: {
