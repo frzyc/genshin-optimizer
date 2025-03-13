@@ -5,6 +5,7 @@ import type { ElementWithPhyKey } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type { Team } from '@genshin-optimizer/gi/db'
 import { useDatabase, useTeam } from '@genshin-optimizer/gi/db-ui'
+import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -180,7 +181,7 @@ export function EnemyEditor({
         />
       </Grid>
       {allElementWithPhyKeys.map((eleKey) => {
-        const statKey = `${eleKey}_enemyRes_`
+        const statKey = `${eleKey}_enemyRes_` as EleEnemyResKey
         const val = enemyOverride[statKey]
         const elementImmunity = val === Number.MAX_VALUE
         return (

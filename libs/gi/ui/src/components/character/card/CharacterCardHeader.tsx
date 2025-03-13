@@ -11,6 +11,7 @@ import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import { input } from '@genshin-optimizer/gi/wr'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
+import type { ReactNode } from 'react'
 import { useCallback, useContext } from 'react'
 import { DataContext, SillyContext } from '../../../context'
 import { iconAsset } from '../../../util/iconAsset'
@@ -31,7 +32,7 @@ export function CharacterCardHeader({
   const charStat = getCharStat(characterKey)
 
   const actionWrapperFunc = useCallback(
-    (children) => (
+    (children: ReactNode) => (
       <CardActionArea
         onClick={onClick}
         sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}

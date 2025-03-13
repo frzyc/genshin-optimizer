@@ -3,7 +3,7 @@
   "targetDefaults": {
     "load-dm": {
       "executor": "@genshin-optimizer/common/plugin:sync-repo",
-      "outputs": ["{workspaceRoot}/{options.outputPath}.hash"],
+      "outputs": ["{projectRoot}/{options.outputPath}.hash"],
       "cache": true
     },
     "gen-file": {
@@ -27,9 +27,6 @@
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "cache": true
     },
-    "typecheck": {
-      "executor": "nx:run-commands"
-    },
     "publish": {
       "dependsOn": ["build"]
     },
@@ -46,6 +43,9 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "e2e-ci--**/*": {
+      "dependsOn": ["^build"]
     }
   },
   "namedInputs": {

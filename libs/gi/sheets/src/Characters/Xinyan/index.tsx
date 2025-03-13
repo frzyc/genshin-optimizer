@@ -291,34 +291,52 @@ const sheet: TalentSheet = {
           }),
         },
         {
-          node: infoMut(dmgFormulas.skill['normShield1'], {
-            name: ct.chg('skill.skillParams.1'),
-          }),
+          node: infoMut(
+            dmgFormulas.skill['normShield1' as keyof typeof dmgFormulas.skill],
+            {
+              name: ct.chg('skill.skillParams.1'),
+            }
+          ),
         },
         {
-          node: infoMut(dmgFormulas.skill['pyroShield1'], {
-            name: ct.ch('skill.pyroShield.1'),
-          }),
+          node: infoMut(
+            dmgFormulas.skill['pyroShield1' as keyof typeof dmgFormulas.skill],
+            {
+              name: ct.ch('skill.pyroShield.1'),
+            }
+          ),
         },
         {
-          node: infoMut(dmgFormulas.skill['normShield2'], {
-            name: ct.chg('skill.skillParams.2'),
-          }),
+          node: infoMut(
+            dmgFormulas.skill['normShield2' as keyof typeof dmgFormulas.skill],
+            {
+              name: ct.chg('skill.skillParams.2'),
+            }
+          ),
         },
         {
-          node: infoMut(dmgFormulas.skill['pyroShield2'], {
-            name: ct.ch('skill.pyroShield.2'),
-          }),
+          node: infoMut(
+            dmgFormulas.skill['pyroShield2' as keyof typeof dmgFormulas.skill],
+            {
+              name: ct.ch('skill.pyroShield.2'),
+            }
+          ),
         },
         {
-          node: infoMut(dmgFormulas.skill['normShield3'], {
-            name: ct.chg('skill.skillParams.3'),
-          }),
+          node: infoMut(
+            dmgFormulas.skill['normShield3' as keyof typeof dmgFormulas.skill],
+            {
+              name: ct.chg('skill.skillParams.3'),
+            }
+          ),
         },
         {
-          node: infoMut(dmgFormulas.skill['pyroShield3'], {
-            name: ct.ch('skill.pyroShield.3'),
-          }),
+          node: infoMut(
+            dmgFormulas.skill['pyroShield3' as keyof typeof dmgFormulas.skill],
+            {
+              name: ct.ch('skill.pyroShield.3'),
+            }
+          ),
         },
         {
           node: infoMut(dmgFormulas.skill.lvl3Dmg, {

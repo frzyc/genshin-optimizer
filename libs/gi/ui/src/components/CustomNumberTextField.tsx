@@ -1,7 +1,7 @@
 import type { TextFieldProps } from '@mui/material'
 import { TextField } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
-type props = TextFieldProps & {
+type props = Omit<TextFieldProps, 'value' | 'onChange'> & {
   value?: number | undefined
   onChange: (newValue: number | undefined) => void
   disabled?: boolean

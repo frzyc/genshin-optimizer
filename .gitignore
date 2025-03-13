@@ -66,3 +66,6 @@ vitest.config.mts.timestamp-*
 
 # discord bot config
 apps/somnia/src/config.json
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*

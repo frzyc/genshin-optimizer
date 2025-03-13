@@ -108,7 +108,9 @@ const skillShotsFired = lookup(
   },
   constant(5)
 )
-const shotsHitArr = range(1, 11)
+const shotsHitArr = range(1, 11) as Array<
+  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
+>
 // TODO: Verify this
 const shotsHit_mult_map = {
   1: 0,
@@ -155,7 +157,9 @@ const a1AfterSkill_charged_dmg_ = { ...a1AfterSkill_auto_dmg_ }
 const a1AfterSkill_plunging_dmg_ = { ...a1AfterSkill_auto_dmg_ }
 
 const a4ElementArr = ['pyro', 'electro', 'cryo', 'hydro']
-const numTeammates = sum(...a4ElementArr.map((ele) => tally[ele]))
+const numTeammates = sum(
+  ...a4ElementArr.map((ele) => tally[ele as keyof typeof tally])
+)
 const a4Element_atk_ = greaterEq(
   input.asc,
   4,

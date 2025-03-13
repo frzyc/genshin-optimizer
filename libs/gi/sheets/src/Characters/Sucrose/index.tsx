@@ -274,9 +274,12 @@ const sheet: TalentSheet = {
             ),
             fields: [
               {
-                node: infoMut(dmgFormulas.burst[eleKey], {
-                  name: ct.chg(`burst.skillParams.1`),
-                }),
+                node: infoMut(
+                  dmgFormulas.burst[eleKey as keyof typeof dmgFormulas.burst],
+                  {
+                    name: ct.chg(`burst.skillParams.1`),
+                  }
+                ),
               },
             ],
           },
