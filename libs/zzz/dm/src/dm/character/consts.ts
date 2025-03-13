@@ -35,9 +35,9 @@ export const characterIdMap = {
   '1281': 'Piper',
   '1311': 'Astra',
   '1321': 'Evelyn',
-  '1351': 'PulchraFeliny',
+  '1351': 'Pulchra',
   '1361': 'Trigger',
-  '1381': 'SilverAnby',
+  '1381': 'Soldier0Anby',
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -60,7 +60,7 @@ export const factionMap: Record<number, FactionKey> = {
   2: 'VictoriaHousekeepingCo',
   3: 'BelebogHeavyIndustries',
   4: 'SonsOfCalydon',
-  5: 'ObolSquad',
+  5: 'NewEriduDefenseForce',
   6: 'HollowSpecialOoperationsSection6',
   7: 'CriminalInvestigationSpecialResponseTeam',
   8: 'StarsOfLyra',

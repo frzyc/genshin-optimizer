@@ -10,6 +10,7 @@ import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
 import { Fragment } from 'react'
 import { TagDisplay } from './components'
+import { getTagLabel } from './util'
 
 type Output = CalcMeta<Tag, never>
 
@@ -33,7 +34,8 @@ export function formulaText(
   } = data
   const usedTag =
     tag && (objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag)
-  const displayVal = valueString(val, getUnitStr(usedTag?.name ?? tag?.q ?? ''))
+  const tagLabel = getTagLabel(tag)
+  const displayVal = valueString(val, getUnitStr(tagLabel))
 
   const deps = new Set<FormulaText>()
   function getString(

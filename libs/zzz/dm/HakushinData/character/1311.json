@@ -37,13 +37,13 @@
   },
   "Skin": {
     "3113110": {
-      "Name": "Astra Yao: Scarlet Rock",
-      "Desc": "The bold red is only to ignite the freedom deep within. On stage, nothing can overshadow her brilliance.",
+      "Name": "AvatarSkin_Astra_Name_000",
+      "Desc": "AvatarSkin_Astra_Desc_000",
       "Image": "IconRole36"
     },
     "3113111": {
-      "Name": "Astra Yao: Chandelier",
-      "Desc": "The black-and-white dress glimmers in both light and shadows. Every smile of hers seems to sink into the flowing light of the night, becoming a timeless classic.",
+      "Name": "AvatarSkin_Astra_Name_001",
+      "Desc": "AvatarSkin_Astra_Desc_001",
       "Image": "IconRole36_01"
     }
   },
@@ -261,7 +261,7 @@
       "Description": [
         {
           "Name": "Basic Attack: \"Capriccio\"",
-          "Desc": "Press <IconMap:Icon_Normal> to activate:\nPerform up to three attacks forward, dealing <color=#FE437E>Ether DMG</color>.\nDuring the 3rd-hit, hold <IconMap:Icon_Normal> to charge, drawing enemies in and expanding the attack range for a stronger attack.\nAfter using other skills, hold <IconMap:Icon_Normal> to initiate the 3rd-hit directly."
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nPerform up to three attacks forward, dealing <color=#FE437E>Ether DMG</color>.\nDuring the 3rd hit, hold <IconMap:Icon_Normal> to charge, drawing enemies in and expanding the attack range for a stronger attack.\nAfter using other skills, hold <IconMap:Icon_Normal> to initiate the 3rd hit directly."
         },
         {
           "Name": "Basic Attack: Interlude",
@@ -273,7 +273,7 @@
         },
         {
           "Name": "Basic Attack: Finale",
-          "Desc": "While in the <color=#FFFFFF>Idyllic Cadenza</color> state, hold <IconMap:Icon_Normal> to activate:\nRelease <color=#FFFFFF>Tremolo</color> forward to attack, dealing <color=#FE437E>Ether DMG</color> and exit the <color=#FFFFFF>Idyllic Cadenza</color> state.\nUpon activation of the skill, it grants the buff from <color=#FFFFFF>Core Passive: \"Graceful Andante\"</color>.\nWith enough Energy, consumes Energy to follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>. This <color=#FFFFFF>Tremolo</color> attack released is considered an <color=#FFFFFF>EX Special Attack</color>."
+          "Desc": "While in the <color=#FFFFFF>Idyllic Cadenza</color> state, hold <IconMap:Icon_Normal> to activate:\nRelease <color=#FFFFFF>Tremolo</color> forward to attack, dealing <color=#FE437E>Ether DMG</color> and exit the <color=#FFFFFF>Idyllic Cadenza</color> state.\nUpon activation of the skill, it grants Astra Yao the buff from <color=#FFFFFF>Core Passive: \"Graceful Andante\"</color>.\nWith enough Energy, consumes Energy to follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>. This <color=#FFFFFF>Tremolo</color> attack released is considered an <color=#FFFFFF>EX Special Attack</color>."
         },
         {
           "Name": "Basic Attack: \"Capriccio\"",
@@ -803,7 +803,7 @@
         },
         {
           "Name": "Dash Attack: \"Lunar Eclipse Melody\"",
-          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nAttack ahead, dealing <color=#FE437E>Ether DMG</color>.\nWhen triggered, dragging the{LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} allows movement in the corresponding direction."
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nAttack ahead, dealing <color=#FE437E>Ether DMG</color>.\nWhen triggered, dragging the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} allows movement in the corresponding direction."
         },
         {
           "Name": "Dodge Counter: \"Umbrella Waltz\"",
@@ -1112,7 +1112,7 @@
         },
         {
           "Name": "Ultimate: \"Fantasian Sonata\"",
-          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nUse song to channel energy into a blast, dealing massive <color=#FE437E>Ether DMG</color>, and restoring <color=#2BAD00>{CAL:-50+AvatarSkillLevel(3)*250,1,2}</color> HP to all squad members.\nCharacter is invulnerable while using this skill.\nA <color=#ffffff>Quick Assist</color> is triggered when this skill hits an enemy.\nAfter the skill, Astra Yao enters the <color=#FFFFFF>Idyllic Cadenza</color> state.\nAfter the skill, the next two <color=#FFFFFF>Quick Assists</color> will be replaced by <color=#FFFFFF>Chain Attacks</color>.\nBefore all replacement chances are used up, a <color=#FFFFFF>Quick Assist</color> is triggered whenever any quad member hits an enemy with a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>."
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nUse song to channel energy into a blast, dealing massive <color=#FE437E>Ether DMG</color>, and restoring <color=#2BAD00>{CAL:-50+AvatarSkillLevel(3)*250,1,2}</color> HP to all squad members.\nCharacter is invulnerable while using this skill.\nA <color=#ffffff>Quick Assist</color> is triggered when this skill hits an enemy.\nAfter the skill, Astra Yao enters the <color=#FFFFFF>Idyllic Cadenza</color> state.\nAfter the skill, the next two <color=#FFFFFF>Quick Assists</color> will be replaced by <color=#FFFFFF>Chain Attacks</color>.\nBefore all replacement chances are used up, a <color=#FFFFFF>Quick Assist</color> is triggered whenever any squad member hits an enemy with a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>."
         },
         {
           "Name": "Chain Attack: \"Tipsy Concerto\"",
@@ -1451,7 +1451,7 @@
           "Additional Ability: \"Moonlit Frenzy\""
         ],
         "Desc": [
-          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and when Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>22%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
+          "During the <color=#FFFFFF>Idyllic Cadenza</color> state, when other squad members switch in through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, and if Astra Yao expends Energy to release <color=#FFFFFF>Tremolo</color> to attack, both Astra Yao and the incoming character's ATK are increased. The increase is equal to <color=#2BAD00>22%</color> of Astra Yao's initial ATK, up to a maximum of 1,200. The effect lasts for 20s and can be extended up to 30s with repeated triggers.",
           "When another character in your squad is an <color=#FFFFFF>Attack</color> or <color=#FFFFFF>Anomaly</color> character:\nWhen Energy is consumed to trigger a <color=#FFFFFF>Precise Assist</color> or <color=#FFFFFF>Basic Attack: Finale</color>, Astra Yao will additionally follow up with 1 <color=#FFFFFF>Tremolo</color> and 3 <color=#FFFFFF>Tone Clusters</color>."
         ]
       },

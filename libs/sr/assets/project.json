@@ -11,7 +11,7 @@
       "options": {
         "fetchAssets": "local"
       },
-      "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"],
+      "outputs": ["{projectRoot}/src/gen/**/*"],
       "dependsOn": ["sr-assets-data:gen-file"]
     }
   }

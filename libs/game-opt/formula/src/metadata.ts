@@ -37,10 +37,10 @@ export function extractCondMetadata(
   return sortMeta(result)
 }
 
-export function extractFormulaMetadata<T>(
-  data: TagMapNodeEntries<Tag>,
+export function extractFormulaMetadata<T, GenericTag extends Tag>(
+  data: TagMapNodeEntries<GenericTag>,
   extractFormula: (
-    tag: Tag,
+    tag: GenericTag,
     value: AnyNode | ReRead
   ) => IFormulaData<T> | undefined
 ) {

@@ -7,7 +7,7 @@ import type { ButtonProps } from '@mui/material'
 import { Divider, ListItemIcon, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-type ArtifactSlotDropdownProps = ButtonProps & {
+type ArtifactSlotDropdownProps = Omit<ButtonProps, 'onChange'> & {
   slotKey?: ArtifactSlotKey | ''
   onChange: (slotKey: ArtifactSlotKey | '') => void
   hasUnselect?: boolean

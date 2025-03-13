@@ -31,7 +31,7 @@ const sheet = registerRelic(
         )
       )
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet

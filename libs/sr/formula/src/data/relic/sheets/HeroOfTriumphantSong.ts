@@ -24,7 +24,7 @@ const sheet = registerRelic(
       'ult',
       cmpGE(relicCount, 4, followUpUsed.ifOn(dm[4].ult_dmg_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

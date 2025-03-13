@@ -9,6 +9,7 @@ import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,
   LocationCharacterKey,
+  WeaponTypeKey,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -98,7 +99,7 @@ export function WeaponCardObj({
 
   if (!weapon || !weaponSheet || !UIData) return null
   const { level, ascension, refinement, id, location = '', lock } = weapon
-  const weaponTypeKey = UIData.get(input.weapon.type).value!
+  const weaponTypeKey = UIData.get(input.weapon.type).value! as WeaponTypeKey
   const stats = [input.weapon.main, input.weapon.sub, input.weapon.sub2].map(
     (x) => UIData.get(x)
   )

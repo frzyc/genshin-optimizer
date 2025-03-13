@@ -316,10 +316,15 @@ const sheet: TalentSheet = {
           }),
         },
         ...dm.normal.hitArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.skill[`enhanced_${i}`], {
-            name: ct.chg(`auto.skillParams.${i}`),
-            multi: i === 3 ? 2 : undefined,
-          }),
+          node: infoMut(
+            dmgFormulas.skill[
+              `enhanced_${i}` as keyof typeof dmgFormulas.skill
+            ],
+            {
+              name: ct.chg(`auto.skillParams.${i}`),
+              multi: i === 3 ? 2 : undefined,
+            }
+          ),
         })),
         {
           text: stg('duration'),

@@ -68,12 +68,12 @@ const sheet = register(
   customShield(
     'e1Shield',
     sum(prod(own.final.def, dm.e2.shieldMult), dm.e2.shieldBase),
-    { cond: cmpGE(char.eidolon, 1, 'unique', '') }
+    { cond: cmpGE(char.eidolon, 1, 'infer', '') }
   ),
   customHeal(
     'e6Heal',
     sum(prod(target.final.hp, dm.e6.healMult), dm.e6.healBase),
-    { cond: cmpGE(char.eidolon, 6, 'unique', '') }
+    { cond: cmpGE(char.eidolon, 6, 'infer', '') }
   )
 )
 export default sheet

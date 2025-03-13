@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Knight's Combo",
-      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>12%</color> for 12s."
+      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>12%</color> for 12s.",
+      "params": [0.12, 12]
     },
     {
       "name": "Knight's Combo",
-      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>13.8%</color> for 12s."
+      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>13.8%</color> for 12s.",
+      "params": [0.138, 12]
     },
     {
       "name": "Knight's Combo",
-      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>15.6%</color> for 12s."
+      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>15.6%</color> for 12s.",
+      "params": [0.156, 12]
     },
     {
       "name": "Knight's Combo",
-      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>17.4%</color> for 12s."
+      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>17.4%</color> for 12s.",
+      "params": [0.174, 12]
     },
     {
       "name": "Knight's Combo",
-      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>19.2%</color> for 12s."
+      "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>19.2%</color> for 12s.",
+      "params": [0.192, 12]
     }
   ]
 }

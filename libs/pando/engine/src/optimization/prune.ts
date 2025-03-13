@@ -363,7 +363,7 @@ export function reaffine<ID>(state: State<OP, ID>) {
 
   const weightNodes = new Map<Weight, NumNode<OP>>()
   for (const [w, name] of readNames) {
-    const node = read({ [cat]: name }, undefined)
+    const node = read({ [cat]: name })
     weightNodes.set(w, w[offset] !== 0 ? sum(w[offset], node) : node)
   }
   state.candidates = candidates.map((cnds) =>

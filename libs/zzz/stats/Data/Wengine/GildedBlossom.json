@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Extraordinary Anti-Theft Measures",
-      "desc": "ATK increases by <color=#2BAD00>6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>15%</color>."
+      "desc": "ATK increases by <color=#2BAD00>6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>15%</color>.",
+      "params": [6, 0.15]
     },
     {
       "name": "Extraordinary Anti-Theft Measures",
-      "desc": "ATK increases by <color=#2BAD00>6.9</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>17.2%</color>."
+      "desc": "ATK increases by <color=#2BAD00>6.9</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>17.2%</color>.",
+      "params": [6.9, 0.172]
     },
     {
       "name": "Extraordinary Anti-Theft Measures",
-      "desc": "ATK increases by <color=#2BAD00>7.8</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>19.5%</color>."
+      "desc": "ATK increases by <color=#2BAD00>7.8</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>19.5%</color>.",
+      "params": [7.8, 0.195]
     },
     {
       "name": "Extraordinary Anti-Theft Measures",
-      "desc": "ATK increases by <color=#2BAD00>8.7</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>21.8%</color>."
+      "desc": "ATK increases by <color=#2BAD00>8.7</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>21.8%</color>.",
+      "params": [8.7, 0.218]
     },
     {
       "name": "Extraordinary Anti-Theft Measures",
-      "desc": "ATK increases by <color=#2BAD00>9.6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>24%</color>."
+      "desc": "ATK increases by <color=#2BAD00>9.6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>24%</color>.",
+      "params": [9.6, 0.24]
     }
   ]
 }

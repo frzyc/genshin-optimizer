@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>8%</color>. Increases the equipper's ATK by <color=#2BAD00>10%</color> when they are shielded."
+      "desc": "Increases Max HP by <color=#2BAD00>8%</color>. Increases the equipper's ATK by <color=#2BAD00>10%</color> when they are shielded.",
+      "params": [0.08, 0.1]
     },
     {
       "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>9.2%</color>. Increases the equipper's ATK by <color=#2BAD00>11.5%</color> when they are shielded."
+      "desc": "Increases Max HP by <color=#2BAD00>9.2%</color>. Increases the equipper's ATK by <color=#2BAD00>11.5%</color> when they are shielded.",
+      "params": [0.092, 0.115]
     },
     {
       "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>10.4%</color>. Increases the equipper's ATK by <color=#2BAD00>13%</color> when they are shielded."
+      "desc": "Increases Max HP by <color=#2BAD00>10.4%</color>. Increases the equipper's ATK by <color=#2BAD00>13%</color> when they are shielded.",
+      "params": [0.104, 0.13]
     },
     {
       "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>11.6%</color>. Increases the equipper's ATK by <color=#2BAD00>14.5%</color> when they are shielded."
+      "desc": "Increases Max HP by <color=#2BAD00>11.6%</color>. Increases the equipper's ATK by <color=#2BAD00>14.5%</color> when they are shielded.",
+      "params": [0.116, 0.145]
     },
     {
       "name": "Pet the Bunny",
-      "desc": "Increases Max HP by <color=#2BAD00>12.8%</color>. Increases the equipper's ATK by <color=#2BAD00>16%</color> when they are shielded."
+      "desc": "Increases Max HP by <color=#2BAD00>12.8%</color>. Increases the equipper's ATK by <color=#2BAD00>16%</color> when they are shielded.",
+      "params": [0.128, 0.16]
     }
   ]
 }

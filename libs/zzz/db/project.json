@@ -4,13 +4,6 @@
   "sourceRoot": "libs/zzz/db/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
-      "options": {
-        "reportsDirectory": "../../../coverage/libs/test"
-      }
-    }
-  }
+  "// targets": "to see all targets run: nx show project zzz-db --web",
+  "targets": {}
 }

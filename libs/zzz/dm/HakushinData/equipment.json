@@ -174,7 +174,7 @@
     },
     "CHS": {
       "name": "混沌爵士",
-      "desc2": "异常精通+30点。",
+      "desc2": "��常精通+30点。",
       "desc4": "<color=#FF5521>火属性伤害</color>和<color=#2EB6FF>电属性伤害</color>提升15%；位于后场时，<color=#FFFFFF>[强化特殊技]</color>和<color=#FFFFFF>[支援攻击]</color>造成的伤害提升20%，换入前场后，该增益效果仍然保留，持续5秒，保留效果7.5秒内最多触发一次。"
     },
     "JA": {
@@ -216,7 +216,7 @@
     "KO": {
       "name": "불지옥 메탈",
       "desc2": "<color=#FF5521>불 속성 피해</color>+10%",
-      "desc4": "공격이 <color=#FF5521>[연소]</color> 상���의 적에게 명중 시 착용자의 치명타 확률이 28% 증가한다. 지속 시간: 8초"
+      "desc4": "공격이 <color=#FF5521>[연소]</color> 상태의 적에게 명중 시 착용자의 치명타 확률이 28% 증가한다. 지속 시간: 8초"
     },
     "CHS": {
       "name": "炎狱重金属",
@@ -249,7 +249,7 @@
     "JA": {
       "name": "混沌のヘヴィメタル",
       "desc2": "<color=#FE437E>エーテル属性ダメージ</color>+10%。",
-      "desc4": "装備者の会心ダメージ+20%。任意のメンバーによって<color=#FE437E>[侵蝕]</color>効果の追加ダメージが発生した時、この効果がさらに+5.5%、最大6重まで重ね掛け可能、継続時間8秒。重複して発動すると継続時間が更新される。"
+      "desc4": "装備者の会心ダメージ+20%。任意のメンバーによって<color=#FE437E>[侵蝕]</color>効果の���加ダメージが発生した時、この効果がさらに+5.5%、最大6重まで重ね掛け可能、継続時間8秒。重複して発動すると継続時間が更新される。"
     }
   },
   "32400": {
@@ -267,7 +267,7 @@
     "CHS": {
       "name": "雷暴重金属",
       "desc2": "<color=#2EB6FF>电属性伤害</color>+10%。",
-      "desc4": "��场上存在处于<color=#2EB6FF>[感电]</color>状态下的敌人时，装备者的攻击力提升28%。"
+      "desc4": "当场上存在处于<color=#2EB6FF>[感电]</color>状态下的敌人时，装备者的攻击力提升28%。"
     },
     "JA": {
       "name": "霹靂のヘヴィメタル",
@@ -294,7 +294,7 @@
     },
     "JA": {
       "name": "極地のヘヴィメタル",
-      "desc2": "<color=#98EFF0>氷属性ダメージ</color>+10%。",
+      "desc2": "<color=#98EFF0>氷属性ダ��ージ</color>+10%。",
       "desc4": "<color=#FFFFFF>『通常攻撃』</color>と<color=#FFFFFF>『ダッシュ攻撃』</color>の与ダメージ+20%。任意のメンバーが敵に<color=#98EFF0>[凍結]</color>効果を付与した時、または<color=#98EFF0>[砕氷]</color>効果を発動した時、この効果がさらに+20%、継続時間12秒。"
     }
   },
@@ -341,7 +341,7 @@
     "JA": {
       "name": "折枝の刀歌",
       "desc2": "会心ダメージ+16%。",
-      "desc4": "異常掌握が115Pt以上の時、装備者の会心ダメージ+30%。任意のメンバーが敵に<color=#98EFF0>[凍結]</color>効果を付与した時、または<color=#98EFF0>[砕氷]</color>効果を発動した時、装備者の会心率+12%、継続��間15秒。"
+      "desc4": "異常掌握が115Pt以上の時、装備者の会心ダメージ+30%。任意のメンバーが敵に<color=#98EFF0>[凍結]</color>効果を付与した時、または<color=#98EFF0>[砕氷]</color>効果を発動した時、装備者の会心率+12%、継続時間15秒。"
     }
   },
   "32800": {
@@ -359,7 +359,7 @@
     "CHS": {
       "name": "静听嘉音",
       "desc2": "攻击力+10%。",
-      "desc4": "队伍中任意角色通过<color=#FFFFFF>[快速支援]</color>入场时，全队获得1层<color=#FFFFFF>[嘉音]</color>，最多叠加3层，持续15秒，重复触发时刷新持续时间，每拥有1层<color=#FFFFFF>[嘉音]</color>，通过<color=#FFFFFF>[快速支援]</color>入场的角色造成���伤害提升8%，该效果全队唯一。"
+      "desc4": "队伍中任意角色通过<color=#FFFFFF>[快速支援]</color>入场时，全队获得1层<color=#FFFFFF>[嘉音]</color>，最多叠加3层，持续15秒，重复触发时刷新持续时间，每拥有1层<color=#FFFFFF>[嘉音]</color>，通过<color=#FFFFFF>[快速支援]</color>入场的角色��成的伤害提升8%，该效果全队唯一。"
     },
     "JA": {
       "name": "静寂のアストラ",
@@ -368,45 +368,49 @@
     }
   },
   "32900": {
-    "icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitBranch&BladeSong.png",
+    "icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitShadow.png",
     "EN": {
-      "name": "EquipmentSuit_32900_name",
-      "desc2": "EquipmentSuit_32900_2_des",
-      "desc4": "EquipmentSuit_32900_4_des"
+      "name": "Shadow Harmony",
+      "desc2": "The DMG of <color=#FFFFFF>Aftershocks</color> and <color=#FFFFFF>Dash Attacks</color> is increased by 15%.",
+      "desc4": "Upon hitting an enemy with an <color=#FFFFFF>Aftershock</color> or <color=#FFFFFF>Dash Attack</color>, if the DMG dealt aligns with the equipper's attribute, the equipper gains 1 stack of a buff effect, at most once per use of a skill. For each stack, the equipper's ATK increases by 4%, and CRIT Rate increases by 4%. The effect can stack up to 3 times and lasts for 15s. Repeated triggers reset the duration."
     },
     "KO": {
-      "name": "EquipmentSuit_32900_name",
-      "desc2": "EquipmentSuit_32900_2_des",
-      "desc4": "EquipmentSuit_32900_4_des"
+      "name": "그림자처럼 함께",
+      "desc2": "<color=#FFFFFF>[여진 공격]</color> 및 <color=#FFFFFF>[대시 공격]</color>으로 주는 피해가 15% 증가한다.",
+      "desc4": "<color=#FFFFFF>[여진 공격]</color> 혹은 <color=#FFFFFF>[대시 공격]</color>이 적에게 명중 시, 만약 주는 피해가 착용자의 속성과 일치하면 버프 효과를 1스택 획득한다. 동일한 공격 한 번에 최대 1회 발동한다. 보유한 버프 효과 1스택당 착용자의 공격력이 4% 증가하고, 치명타 확률이 4% 증가한다. 최대 중첩: 3스택, 지속 시간: 15초, 중복 발동 시 지속 시간이 갱신된다."
     },
     "CHS": {
       "name": "如影相随",
-      "desc2": "<color=#FFFFFF>[追加攻击]</color> 和<color=#FFFFFF> [冲刺攻击] </color> 的伤害提升15%",
-      "desc4": "<color=#FFFFFF>[追加攻击]</color> 或<color=#FFFFFF> [冲刺攻击] </color>命中敌人时,装备者获得1层增益效果；每层增益效果使装备者的攻击力提升3%，暴击率提升4%；持续20秒，最多叠加4层，3秒内最多触发一次。"
+      "desc2": "<color=#FFFFFF>[追加攻击]</color>和<color=#FFFFFF>[冲刺攻击]</color>造成的伤害提升15%。",
+      "desc4": "<color=#FFFFFF>[追加攻击]</color>或<color=#FFFFFF>[冲刺攻击]</color>命中敌人时，若造成的伤害与装备者的属性一致，则获得1层增益效果，同一招式内最多触发一次；每拥有1层增益效果，装备者的攻击力提升4%，暴击率提升4%，最多叠加3层，持续15秒，重复触发时刷新持续时间。"
     },
     "JA": {
-      "name": "EquipmentSuit_32900_name",
-      "desc2": "EquipmentSuit_32900_2_des",
-      "desc4": "EquipmentSuit_32900_4_des"
+      "name": "シャドウハーモニー",
+      "desc2": "<color=#FFFFFF>『追加攻撃』</color>と<color=#FFFFFF>『ダッシュ攻撃』</color>の与ダメージ+15%。",
+      "desc4": "<color=#FFFFFF>『追加攻撃』</color>または<color=#FFFFFF>『ダッシュ攻撃』</color>が敵に命中した時、与えたダメージが装備者の属性と一致している場合、バフ効果を1重��得する、1回のスキルにおいて1回のみ発動可能。バフ効果1重につき、装備者の攻撃力+4%、会心率+4%。最大3重まで重ね掛け可能、継続時間15秒、重複して発動すると継続時間が更新される。"
     }
   },
   "33000": {
-    "icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitAstralVoice.png",
+    "icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitSavior.png",
     "EN": {
-      "name": "EquipmentSuit_33000_name",
-      "desc2": "EquipmentSuit_33000_2_des",
-      "desc4": "EquipmentSuit_33000_4_des"
+      "name": "Phaethon's Melody",
+      "desc2": "Anomaly Mastery +8%.",
+      "desc4": "When any squad member uses an <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency increases by 45 for 8s. If the character using the <color=#FFFFFF>EX Special Attack</color> is not the equipper, the equipper's <color=#FE437E>Ether DMG</color> is increased by 25%."
     },
     "KO": {
-      "name": "EquipmentSuit_33000_name",
-      "desc2": "EquipmentSuit_33000_2_des",
-      "desc4": "EquipmentSuit_33000_4_des"
+      "name": "파에톤의 노래",
+      "desc2": "이상 장악력+8%",
+      "desc4": "파티 내 임의의 캐릭터가 <color=#FFFFFF>[강화 특수 스킬]</color> 시전 시, 착용자의 이상 마스터리가 45pt 증가한다. 지속 시간: 8초. 만약 <color=#FFFFFF>[강화 특수 스킬]</color>을 시전한 캐릭터가 착용자 본인이 아닐 경우, 착용자가 주는 <color=#FE437E>에테르 피해</color>가 25% 증가한다."
     },
-    "CHS": { "name": "法厄同之歌", "desc2": "......", "desc4": "......" },
+    "CHS": {
+      "name": "法厄同之歌",
+      "desc2": "异常掌控+8%。",
+      "desc4": "队伍中任意角色发动<color=#FFFFFF>[强化特殊技]</color>时，装备者的异常精通提升45点，持续8秒；如果发动<color=#FFFFFF>[强化特殊技]</color>的角色不是装备者本人时，装备者造成的<color=#FE437E>以太伤害</color>提升25%。"
+    },
     "JA": {
-      "name": "EquipmentSuit_33000_name",
-      "desc2": "EquipmentSuit_33000_2_des",
-      "desc4": "EquipmentSuit_33000_4_des"
+      "name": "「パエトーン」の歌",
+      "desc2": "異常掌握+8%",
+      "desc4": "任意のメンバーが<color=#FFFFFF>『強化特殊スキル』</color>を発動した時、装備者の異常マスタリー+45Pt、継続時間8秒。<color=#FFFFFF>『強化特殊スキル』</color>を発動したエージェントが装備者本人でない場合、装備者による<color=#FE437E>エーテル属性ダメージ</color>+25%。"
     }
   }
 }

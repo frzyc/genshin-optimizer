@@ -1,4 +1,11 @@
-import type { AnyNode, CalcResult, PreRead, ReRead, TagCache } from './node'
+import type {
+  AnyNode,
+  BaseRead,
+  CalcResult,
+  PreRead,
+  ReRead,
+  TagCache,
+} from './node'
 import { Calculator as BaseCalculator, map } from './node'
 import type { Tag, TagMapEntries, TagMapEntry } from './tag'
 
@@ -18,6 +25,7 @@ export type DebugMeta = {
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   tagStr: TagStr
   filter: Predicate
+  override defaultAccu: (tag: Tag) => BaseRead['ex']
   gathering = new Set<TagCache<DebugMeta>>()
 
   constructor(
@@ -29,6 +37,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     this.nodes = calc.nodes
     this.tagStr = tagStr
     this.filter = filter
+    this.defaultAccu = (tag) => calc.defaultAccu(tag)
     this.cache = this.cache.with(calc.cache.tag)
   }
   override withTag(_tag: Tag): this {

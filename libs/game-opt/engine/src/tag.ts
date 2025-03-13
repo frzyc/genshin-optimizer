@@ -6,7 +6,7 @@ import { reader } from './read'
 
 export type Desc<Sheet extends string> = {
   sheet: Sheet | undefined
-  accu: Read['accu']
+  accu?: Read['ex']
 }
 
 export const createConvert =
@@ -26,10 +26,9 @@ export const createConvert =
       (r, qt) =>
         r.withAll('q', Object.keys(v[qt]), (r, q) => {
           if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
-          const { sheet, accu } = v[qt][q]
-          // `tag.sheet` overrides `Desc`
-          if (sheet && !tag['sheet']) r = r.sheet(sheet)
-          return r[accu]
+          const { sheet } = v[qt][q]
+          if (sheet && !tag['sheet']) r = r.sheet(sheet) // `tag.sheet` overrides `Desc`
+          return r
         }),
       { withTag: (tag: Read_['tag']) => r.withTag(tag) }
     ) as any

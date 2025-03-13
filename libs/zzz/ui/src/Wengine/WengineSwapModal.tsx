@@ -24,11 +24,6 @@ import type {
 import { allRaritykeys, allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
 import { initialWengine } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import {
-  wengineFilterConfigs,
-  wengineSortConfigs,
-  wengineSortMap,
-} from '@genshin-optimizer/zzz/util'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle'
@@ -59,6 +54,11 @@ import { useTranslation } from 'react-i18next'
 import { WengineCard } from './WengineCard'
 import { WengineEditor } from './WengineEditor'
 import { WengineSelectionModal } from './WengineSelectionModal'
+import {
+  wengineFilterConfigs,
+  wengineSortConfigs,
+  wengineSortMap,
+} from './wengineSortUtil'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
 const rarityHandler = handleMultiSelect([...allRaritykeys])

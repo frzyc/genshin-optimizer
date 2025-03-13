@@ -298,9 +298,12 @@ const sheet: TalentSheet = {
     {
       fields: [
         ...dm.skill.dmgArr.map((_, i) => ({
-          node: infoMut(dmgFormulas.skill[`dmg${i}`], {
-            name: ct.chg(`skill.skillParams.${i}`),
-          }),
+          node: infoMut(
+            dmgFormulas.skill[`dmg${i}` as keyof typeof dmgFormulas.skill],
+            {
+              name: ct.chg(`skill.skillParams.${i}`),
+            }
+          ),
         })),
         {
           node: infoMut(dmgFormulas.skill.illusionDmg, {

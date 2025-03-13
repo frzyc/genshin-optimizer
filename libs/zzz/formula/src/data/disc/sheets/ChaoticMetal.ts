@@ -6,7 +6,7 @@ import { entriesForDisc, registerDisc } from '../util'
 const key: DiscSetKey = 'ChaoticMetal'
 
 const discCount = own.common.count.sheet(key)
-const showCond4Set = cmpGE(discCount, 4, 'unique', '')
+const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
 const { trigger_corruption } = allNumConditionals(key, true, 0, 6)
 const sheet = registerDisc(

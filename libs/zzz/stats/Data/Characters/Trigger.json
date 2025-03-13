@@ -1,7 +1,11 @@
 {
+  "id": "1361",
+  "icon": "IconRole39",
   "rarity": "S",
   "attribute": "electric",
   "specialty": "stun",
+  "faction": "NewEriduDefenseForce",
+  "fullname": "Trigger",
   "stats": {
     "atk_base": 108,
     "atk_growth": 6.3517,
@@ -9,7 +13,7 @@
     "def_growth": 6.5524,
     "hp_base": 637,
     "hp_growth": 86.4437,
-    "anomMas": 96,
+    "anomMas_base": 96,
     "anomProf": 95,
     "impact": 113,
     "enerRegen": 1.2
@@ -33,11 +37,24 @@
   "skills": {
     "Basic": {
       "Description": [
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
         {
-          "Name": "...",
+          "Name": "Basic Attack: Cold-Bore Shot",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 4 shots ahead. The first 3 hits deal <color=#F0D12B>Physical DMG</color>, the 4th hit deals <color=#2EB6FF>Electric DMG</color>."
+        },
+        {
+          "Name": "Basic Attack: Silenced Shot",
+          "Desc": "Hold <IconMap:Icon_Normal> to activate:\nTrigger enters the <color=#FFFFFF>Sniper Stance</color> and fires forward continuously, dealing <color=#2EB6FF>Electric DMG</color>.\nWhile continually firing, when attacked by an enemy, Trigger will automatically evade. This effect can trigger once every 8s.\nWhile continually firing, you can drag the {LAYOUT_CONSOLECONTROLLER#stick}{LAYOUT_FALLBACK#joystick} to adjust her position to the left/right/back.\nAutomatically evading attacks or adjusting position when about to be hit will trigger a <color=#FFFFFF>Perfect Dodge</color>, followed by an automatic charged counter.\nAfter releasing <IconMap:Icon_Normal>, Trigger will step back, ready her weapon and unleash a Finishing Move, then exit <color=#FFFFFF>Sniper Stance</color>.\nCharacter is invulnerable during the charged counter and Finishing Move.\nWhen the continuous firing or the charged counter hits an enemy, Trigger gains 25 <color=#FFFFFF>Purge</color>, up to a maximum of 100 <color=#FFFFFF>Purge</color>.\nWhen the Finishing Move hits an enemy, it triggers the <color=#FFFFFF>Quick Assist</color> of the previous character in the squad."
+        },
+        {
+          "Name": "Basic Attack: Harmonizing Shot",
+          "Desc": "When Trigger has <color=#FFFFFF>Purge</color>, use another active character in the squad to hit an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>Special Attack</color>, <color=#FFFFFF>Dash Attack</color> or <color=#FFFFFF>Quick Assist</color> to activate:\nWhile encircling the enemy, rapidly fire two shots at the enemy, dealing <color=#2EB6FF>Electric DMG</color>.\nUpon activating this skill, consume 3 <color=#FFFFFF>Purge</color>.\nCharacter is invulnerable while using this skill.\n<color=#FFFFFF>Basic Attack: Harmonizing Shot</color> is an <color=#FFFFFF>Aftershock</color> attack.\nThe squad can trigger <color=#FFFFFF>Basic Attack: Harmonizing Shot</color> once every 3s."
+        },
+        {
+          "Name": "Basic Attack: Harmonizing Shot - Tartarus",
+          "Desc": "When Trigger has <color=#FFFFFF>Purge</color>, use another active character in the squad to hit an enemy with a heavy attack from an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Follow-Up</color>, or <color=#FFFFFF>Ultimate</color> to activate:\nWhile encircling the enemy, rapidly fires three shots at the enemy, followed by a Finishing Move, dealing <color=#2EB6FF>Electric DMG</color>.\nUpon activating this skill, consume 5 <color=#FFFFFF>Purge</color>.\nCharacter is invulnerable while using this skill.\n<color=#FFFFFF>Basic Attack: Harmonizing Shot - Tartarus</color> is an <color=#FFFFFF>Aftershock</color> attack.\nThe same skill type can trigger <color=#FFFFFF>Basic Attack: Harmonizing Shot - Tartarus</color> up to 2 times within 20s for the entire squad."
+        },
+        {
+          "Name": "Basic Attack: Cold-Bore Shot",
           "Param": [
             {
               "Name": "1st-Hit DMG Multiplier",
@@ -49,11 +66,11 @@
                   "Format": "%",
                   "DamagePercentage": 0.345,
                   "DamagePercentageGrowth": 0.032,
-                  "StunRatio": 0.216,
-                  "StunRatioGrowth": 0.01,
-                  "SpRecovery": 70.5,
+                  "StunRatio": 0.173,
+                  "StunRatioGrowth": 0.008,
+                  "SpRecovery": 98.7,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 539,
+                  "FeverRecovery": 756.25,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 0,
                   "SpConsume": 0,
@@ -71,11 +88,11 @@
                   "Format": "%",
                   "DamagePercentage": 0.569,
                   "DamagePercentageGrowth": 0.052,
-                  "StunRatio": 0.356,
-                  "StunRatioGrowth": 0.017,
-                  "SpRecovery": 116.3,
+                  "StunRatio": 0.285,
+                  "StunRatioGrowth": 0.013,
+                  "SpRecovery": 200.2,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 891,
+                  "FeverRecovery": 1531.75,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 0,
                   "SpConsume": 0,
@@ -93,11 +110,11 @@
                   "Format": "%",
                   "DamagePercentage": 1.109,
                   "DamagePercentageGrowth": 0.101,
-                  "StunRatio": 0.707,
-                  "StunRatioGrowth": 0.033,
-                  "SpRecovery": 335.7,
+                  "StunRatio": 0.608,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 328.1,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2565.75,
+                  "FeverRecovery": 2508,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 0,
                   "SpConsume": 0,
@@ -115,11 +132,11 @@
                   "Format": "%",
                   "DamagePercentage": 2.43,
                   "DamagePercentageGrowth": 0.221,
-                  "StunRatio": 1.556,
-                  "StunRatioGrowth": 0.071,
-                  "SpRecovery": 802.1,
+                  "StunRatio": 1.769,
+                  "StunRatioGrowth": 0.081,
+                  "SpRecovery": 697.6,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6127,
+                  "FeverRecovery": 5329.5,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 174.41,
                   "SpConsume": 0,
@@ -132,16 +149,16 @@
               "Desc": "{Skill:1361001, Prop:1002}",
               "Param": {
                 "1361001": {
-                  "Main": 21.6,
-                  "Growth": 0.01,
+                  "Main": 17.3,
+                  "Growth": 0.008,
                   "Format": "%",
                   "DamagePercentage": 0.345,
                   "DamagePercentageGrowth": 0.032,
-                  "StunRatio": 0.216,
-                  "StunRatioGrowth": 0.01,
-                  "SpRecovery": 70.5,
+                  "StunRatio": 0.173,
+                  "StunRatioGrowth": 0.008,
+                  "SpRecovery": 98.7,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 539,
+                  "FeverRecovery": 756.25,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 0,
                   "SpConsume": 0,
@@ -154,16 +171,16 @@
               "Desc": "{Skill:1361002, Prop:1002}",
               "Param": {
                 "1361002": {
-                  "Main": 35.6,
-                  "Growth": 0.017,
+                  "Main": 28.5,
+                  "Growth": 0.013,
                   "Format": "%",
                   "DamagePercentage": 0.569,
                   "DamagePercentageGrowth": 0.052,
-                  "StunRatio": 0.356,
-                  "StunRatioGrowth": 0.017,
-                  "SpRecovery": 116.3,
+                  "StunRatio": 0.285,
+                  "StunRatioGrowth": 0.013,
+                  "SpRecovery": 200.2,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 891,
+                  "FeverRecovery": 1531.75,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 0,
                   "SpConsume": 0,
@@ -176,16 +193,16 @@
               "Desc": "{Skill:1361003, Prop:1002}",
               "Param": {
                 "1361003": {
-                  "Main": 70.7,
-                  "Growth": 0.033,
+                  "Main": 60.8,
+                  "Growth": 0.028,
                   "Format": "%",
                   "DamagePercentage": 1.109,
                   "DamagePercentageGrowth": 0.101,
-                  "StunRatio": 0.707,
-                  "StunRatioGrowth": 0.033,
-                  "SpRecovery": 335.7,
+                  "StunRatio": 0.608,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 328.1,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 2565.75,
+                  "FeverRecovery": 2508,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 0,
                   "SpConsume": 0,
@@ -198,16 +215,16 @@
               "Desc": "{Skill:1361004, Prop:1002}",
               "Param": {
                 "1361004": {
-                  "Main": 155.6,
-                  "Growth": 0.071,
+                  "Main": 176.9,
+                  "Growth": 0.081,
                   "Format": "%",
                   "DamagePercentage": 2.43,
                   "DamagePercentageGrowth": 0.221,
-                  "StunRatio": 1.556,
-                  "StunRatioGrowth": 0.071,
-                  "SpRecovery": 802.1,
+                  "StunRatio": 1.769,
+                  "StunRatioGrowth": 0.081,
+                  "SpRecovery": 697.6,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 6127,
+                  "FeverRecovery": 5329.5,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 174.41,
                   "SpConsume": 0,
@@ -218,32 +235,32 @@
           ]
         },
         {
-          "Name": "...",
+          "Name": "Basic Attack: Silenced Shot",
           "Param": [
             {
-              "Name": "...",
+              "Name": "Shot DMG Multiplier",
               "Desc": "{Skill:1361005, Prop:1001}",
               "Param": {
                 "1361005": {
-                  "Main": 57.5,
-                  "Growth": 0.053,
+                  "Main": 47.6,
+                  "Growth": 0.044,
                   "Format": "%",
-                  "DamagePercentage": 0.575,
-                  "DamagePercentageGrowth": 0.053,
-                  "StunRatio": 0.36,
-                  "StunRatioGrowth": 0.017,
-                  "SpRecovery": 117.6,
+                  "DamagePercentage": 0.476,
+                  "DamagePercentageGrowth": 0.044,
+                  "StunRatio": 0.238,
+                  "StunRatioGrowth": 0.011,
+                  "SpRecovery": 136.2,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3594.25,
+                  "FeverRecovery": 4160.75,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 130.61,
+                  "AttributeInfliction": 108.03,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
             {
-              "Name": "...",
+              "Name": "Counter DMG Multiplier",
               "Desc": "{Skill:1361006, Prop:1001}",
               "Param": {
                 "1361006": {
@@ -265,51 +282,51 @@
               }
             },
             {
-              "Name": "...",
+              "Name": "Finishing Move DMG Multiplier",
               "Desc": "{Skill:1361007, Prop:1001}",
               "Param": {
                 "1361007": {
-                  "Main": 180.4,
-                  "Growth": 0.164,
+                  "Main": 131.2,
+                  "Growth": 0.12,
                   "Format": "%",
-                  "DamagePercentage": 1.804,
-                  "DamagePercentageGrowth": 0.164,
-                  "StunRatio": 1.148,
-                  "StunRatioGrowth": 0.053,
-                  "SpRecovery": 536.8,
+                  "DamagePercentage": 1.312,
+                  "DamagePercentageGrowth": 0.12,
+                  "StunRatio": 0.656,
+                  "StunRatioGrowth": 0.03,
+                  "SpRecovery": 448.9,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4100.25,
+                  "FeverRecovery": 3429.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 149.08,
+                  "AttributeInfliction": 119.26,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
             {
-              "Name": "...",
+              "Name": "Shot Daze Multiplier",
               "Desc": "{Skill:1361005, Prop:1002}",
               "Param": {
                 "1361005": {
-                  "Main": 36,
-                  "Growth": 0.017,
+                  "Main": 23.8,
+                  "Growth": 0.011,
                   "Format": "%",
-                  "DamagePercentage": 0.575,
-                  "DamagePercentageGrowth": 0.053,
-                  "StunRatio": 0.36,
-                  "StunRatioGrowth": 0.017,
-                  "SpRecovery": 117.6,
+                  "DamagePercentage": 0.476,
+                  "DamagePercentageGrowth": 0.044,
+                  "StunRatio": 0.238,
+                  "StunRatioGrowth": 0.011,
+                  "SpRecovery": 136.2,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3594.25,
+                  "FeverRecovery": 4160.75,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 130.61,
+                  "AttributeInfliction": 108.03,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
             {
-              "Name": "...",
+              "Name": "Counter Daze Multiplier",
               "Desc": "{Skill:1361006, Prop:1002}",
               "Param": {
                 "1361006": {
@@ -331,22 +348,22 @@
               }
             },
             {
-              "Name": "...",
+              "Name": "Finishing Move Daze Multiplier",
               "Desc": "{Skill:1361007, Prop:1002}",
               "Param": {
                 "1361007": {
-                  "Main": 114.8,
-                  "Growth": 0.053,
+                  "Main": 65.6,
+                  "Growth": 0.03,
                   "Format": "%",
-                  "DamagePercentage": 1.804,
-                  "DamagePercentageGrowth": 0.164,
-                  "StunRatio": 1.148,
-                  "StunRatioGrowth": 0.053,
-                  "SpRecovery": 536.8,
+                  "DamagePercentage": 1.312,
+                  "DamagePercentageGrowth": 0.12,
+                  "StunRatio": 0.656,
+                  "StunRatioGrowth": 0.03,
+                  "SpRecovery": 448.9,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 4100.25,
+                  "FeverRecovery": 3429.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 149.08,
+                  "AttributeInfliction": 119.26,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -355,47 +372,140 @@
           ]
         },
         {
-          "Name": "...",
+          "Name": "Basic Attack: Harmonizing Shot",
           "Param": [
             {
-              "Name": "1st-Hit DMG Multiplier",
-              "Desc": "{Skill:1361008, Prop:1001}",
+              "Name": "Continuous Fire DMG Multiplier",
+              "Desc": "{Skill:1361008, Prop:1001}*2",
               "Param": {
                 "1361008": {
-                  "Main": 71.6,
-                  "Growth": 0.066,
+                  "Main": 47.9,
+                  "Growth": 0.044,
                   "Format": "%",
-                  "DamagePercentage": 0.716,
-                  "DamagePercentageGrowth": 0.066,
-                  "StunRatio": 0.6017,
-                  "StunRatioGrowth": 0.028,
+                  "DamagePercentage": 0.479,
+                  "DamagePercentageGrowth": 0.044,
+                  "StunRatio": 0.359,
+                  "StunRatioGrowth": 0.017,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
+                  "AttributeInfliction": 10.86,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
             {
-              "Name": "1st-Hit Daze Multiplier",
-              "Desc": "{Skill:1361008, Prop:1002}",
+              "Name": "Continuous Fire Daze Multiplier",
+              "Desc": "{Skill:1361008, Prop:1002}*2",
               "Param": {
                 "1361008": {
-                  "Main": 60.17,
-                  "Growth": 0.028,
+                  "Main": 35.9,
+                  "Growth": 0.017,
                   "Format": "%",
-                  "DamagePercentage": 0.716,
-                  "DamagePercentageGrowth": 0.066,
-                  "StunRatio": 0.6017,
-                  "StunRatioGrowth": 0.028,
+                  "DamagePercentage": 0.479,
+                  "DamagePercentageGrowth": 0.044,
+                  "StunRatio": 0.359,
+                  "StunRatioGrowth": 0.017,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 0,
+                  "AttributeInfliction": 10.86,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Harmonizing Shot - Tartarus",
+          "Param": [
+            {
+              "Name": "Continuous Fire DMG Multiplier",
+              "Desc": "{Skill:1361020, Prop:1001}*3",
+              "Param": {
+                "1361020": {
+                  "Main": 22.6,
+                  "Growth": 0.021,
+                  "Format": "%",
+                  "DamagePercentage": 0.226,
+                  "DamagePercentageGrowth": 0.021,
+                  "StunRatio": 0.17,
+                  "StunRatioGrowth": 0.008,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 20.49,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Finishing Move DMG Multiplier",
+              "Desc": "{Skill:1361022, Prop:1001}",
+              "Param": {
+                "1361022": {
+                  "Main": 45.2,
+                  "Growth": 0.042,
+                  "Format": "%",
+                  "DamagePercentage": 0.452,
+                  "DamagePercentageGrowth": 0.042,
+                  "StunRatio": 0.34,
+                  "StunRatioGrowth": 0.016,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 40.98,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Continuous Fire Daze Multiplier",
+              "Desc": "{Skill:1361020, Prop:1002}*3",
+              "Param": {
+                "1361020": {
+                  "Main": 17,
+                  "Growth": 0.008,
+                  "Format": "%",
+                  "DamagePercentage": 0.226,
+                  "DamagePercentageGrowth": 0.021,
+                  "StunRatio": 0.17,
+                  "StunRatioGrowth": 0.008,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 20.49,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Finishing Move Daze Multiplier",
+              "Desc": "{Skill:1361022, Prop:1002}",
+              "Param": {
+                "1361022": {
+                  "Main": 34,
+                  "Growth": 0.016,
+                  "Format": "%",
+                  "DamagePercentage": 0.452,
+                  "DamagePercentageGrowth": 0.042,
+                  "StunRatio": 0.34,
+                  "StunRatioGrowth": 0.016,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 40.98,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -421,11 +531,20 @@
     },
     "Dodge": {
       "Description": [
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
         {
-          "Name": "...",
+          "Name": "Dodge: Phantom Concealment",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Vengeful Specter",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nRapidly lift the gun and fire, dealing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Dodge Counter: Condemned Soul",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nRotate and fire a quick shot at enemies in front, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Vengeful Specter",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -474,25 +593,25 @@
           ]
         },
         {
-          "Name": "...",
+          "Name": "Dodge Counter: Condemned Soul",
           "Param": [
             {
               "Name": "DMG Multiplier",
               "Desc": "{Skill:1361012, Prop:1001}",
               "Param": {
                 "1361012": {
-                  "Main": 269.7,
-                  "Growth": 0.246,
+                  "Main": 219.7,
+                  "Growth": 0.2,
                   "Format": "%",
-                  "DamagePercentage": 2.697,
-                  "DamagePercentageGrowth": 0.246,
-                  "StunRatio": 2.329,
-                  "StunRatioGrowth": 0.106,
-                  "SpRecovery": 402,
+                  "DamagePercentage": 2.197,
+                  "DamagePercentageGrowth": 0.2,
+                  "StunRatio": 1.944,
+                  "StunRatioGrowth": 0.089,
+                  "SpRecovery": 276,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3071.75,
+                  "FeverRecovery": 2109.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 111.66,
+                  "AttributeInfliction": 76.66,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -503,18 +622,18 @@
               "Desc": "{Skill:1361012, Prop:1002}",
               "Param": {
                 "1361012": {
-                  "Main": 232.9,
-                  "Growth": 0.106,
+                  "Main": 194.4,
+                  "Growth": 0.089,
                   "Format": "%",
-                  "DamagePercentage": 2.697,
-                  "DamagePercentageGrowth": 0.246,
-                  "StunRatio": 2.329,
-                  "StunRatioGrowth": 0.106,
-                  "SpRecovery": 402,
+                  "DamagePercentage": 2.197,
+                  "DamagePercentageGrowth": 0.2,
+                  "StunRatio": 1.944,
+                  "StunRatioGrowth": 0.089,
+                  "SpRecovery": 276,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 3071.75,
+                  "FeverRecovery": 2109.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 111.66,
+                  "AttributeInfliction": 76.66,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -540,10 +659,16 @@
     },
     "Special": {
       "Description": [
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
         {
-          "Name": "...",
+          "Name": "Special Attack: Spectral Flash",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nLunge forward with a slash, dealing <color=#2EB6FF>Electric DMG</color>.\nAnti-Interrupt level is increased while using this skill."
+        },
+        {
+          "Name": "EX Special Attack: Flash Burial",
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nLunge forward with a slash, then leap up with a powerful shot to the ground, dealing massive <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill.\nWhen this skill hits an enemy, it triggers the <color=#FFFFFF>Quick Assist</color> of the previous character in the squad\nWhen this skill hits an enemy, Trigger enters <color=#FFFFFF>Coordinated Support</color>. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a <color=#FFFFFF>Basic Attack: Harmonizing Shot</color> without consuming <color=#FFFFFF>Purge</color> and with no cooldown restrictions. This state lasts 8s and the effect can trigger up to 4 times. Each repeated trigger extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times."
+        },
+        {
+          "Name": "Special Attack: Spectral Flash",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -592,25 +717,25 @@
           ]
         },
         {
-          "Name": "...",
+          "Name": "EX Special Attack: Flash Burial",
           "Param": [
             {
               "Name": "DMG Multiplier",
               "Desc": "{Skill:1361010, Prop:1001}",
               "Param": {
                 "1361010": {
-                  "Main": 726,
-                  "Growth": 0.66,
+                  "Main": 634.4,
+                  "Growth": 0.577,
                   "Format": "%",
-                  "DamagePercentage": 7.26,
-                  "DamagePercentageGrowth": 0.66,
-                  "StunRatio": 6.087,
-                  "StunRatioGrowth": 0.277,
+                  "DamagePercentage": 6.344,
+                  "DamagePercentageGrowth": 0.577,
+                  "StunRatio": 4.327,
+                  "StunRatioGrowth": 0.197,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 21084.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 606.66,
+                  "AttributeInfliction": 356.66,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -621,24 +746,24 @@
               "Desc": "{Skill:1361010, Prop:1002}",
               "Param": {
                 "1361010": {
-                  "Main": 608.7,
-                  "Growth": 0.277,
+                  "Main": 432.7,
+                  "Growth": 0.197,
                   "Format": "%",
-                  "DamagePercentage": 7.26,
-                  "DamagePercentageGrowth": 0.66,
-                  "StunRatio": 6.087,
-                  "StunRatioGrowth": 0.277,
+                  "DamagePercentage": 6.344,
+                  "DamagePercentageGrowth": 0.577,
+                  "StunRatio": 4.327,
+                  "StunRatioGrowth": 0.197,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 21084.25,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 606.66,
+                  "AttributeInfliction": 356.66,
                   "SpConsume": 0,
                   "AttackData": []
                 }
               }
             },
-            { "Name": "Energy Cost", "Desc": "..." }
+            { "Name": "Energy Cost", "Desc": "60" }
           ]
         }
       ],
@@ -659,10 +784,16 @@
     },
     "Chain": {
       "Description": [
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
         {
-          "Name": "...",
+          "Name": "Chain Attack: Stygian Guide",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nUnleashes continuous powerful shots forward, dealing massive <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Ultimate: Underworld Requiem",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nDeliver a powerful shot at enemies in a large area ahead, dealing massive <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill.\nWhen the skill hits an enemy, it triggers the <color=#FFFFFF>Quick Assist</color> of the previous character in the squad.\nWhen the skill hits an enemy, Trigger enters <color=#FFFFFF>Coordinated Support</color>. While in this state, when another active character in the squad hits an enemy with any attack, it triggers a <color=#FFFFFF>Basic Attack: Harmonizing Shot</color> without consuming <color=#FFFFFF>Purge</color> and with no cooldown restrictions. This state lasts 12s and the effect can trigger up to 6 times. Each repeated trigger extends the duration and grants additional triggers, lasting a maximum of 20s and triggering up to a maximum of 10 times."
+        },
+        {
+          "Name": "Chain Attack: Stygian Guide",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -711,25 +842,25 @@
           ]
         },
         {
-          "Name": "...",
+          "Name": "Ultimate: Underworld Requiem",
           "Param": [
             {
               "Name": "DMG Multiplier",
               "Desc": "{Skill:1361014, Prop:1001}",
               "Param": {
                 "1361014": {
-                  "Main": 2107.7,
-                  "Growth": 1.917,
+                  "Main": 1480.5,
+                  "Growth": 1.346,
                   "Format": "%",
-                  "DamagePercentage": 21.077,
-                  "DamagePercentageGrowth": 1.917,
-                  "StunRatio": 12.299,
-                  "StunRatioGrowth": 0.56,
+                  "DamagePercentage": 14.805,
+                  "DamagePercentageGrowth": 1.346,
+                  "StunRatio": 9.22,
+                  "StunRatioGrowth": 0.42,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 320.03,
+                  "AttributeInfliction": 76.66,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -740,18 +871,18 @@
               "Desc": "{Skill:1361014, Prop:1002}",
               "Param": {
                 "1361014": {
-                  "Main": 1229.9,
-                  "Growth": 0.56,
+                  "Main": 922,
+                  "Growth": 0.42,
                   "Format": "%",
-                  "DamagePercentage": 21.077,
-                  "DamagePercentageGrowth": 1.917,
-                  "StunRatio": 12.299,
-                  "StunRatioGrowth": 0.56,
+                  "DamagePercentage": 14.805,
+                  "DamagePercentageGrowth": 1.346,
+                  "StunRatio": 9.22,
+                  "StunRatioGrowth": 0.42,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
                   "FeverRecovery": 0,
                   "FeverRecoveryGrowth": 0,
-                  "AttributeInfliction": 320.03,
+                  "AttributeInfliction": 76.66,
                   "SpConsume": 0,
                   "AttackData": []
                 }
@@ -777,11 +908,20 @@
     },
     "Assist": {
       "Description": [
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
-        { "Name": "...", "Desc": "..." },
         {
-          "Name": "...",
+          "Name": "Quick Assist: Cold-Bore Cover Fire",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nRotate and fire a quick shot at enemies in front, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Defensive Assist: Delaying Demise",
+          "Desc": "When the on-field character is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Assist Follow-Up: Piercing Thunder",
+          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nUnleash a series of slashes at enemies ahead, followed by a powerful charged shot after landing, dealing <color=#2EB6FF>Electric DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Quick Assist: Cold-Bore Cover Fire",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -830,7 +970,7 @@
           ]
         },
         {
-          "Name": "...",
+          "Name": "Defensive Assist: Delaying Demise",
           "Param": [
             {
               "Name": "Light Defensive Daze Multiplier",
@@ -901,7 +1041,7 @@
           ]
         },
         {
-          "Name": "...",
+          "Name": "Assist Follow-Up: Piercing Thunder",
           "Param": [
             {
               "Name": "DMG Multiplier",
@@ -917,7 +1057,7 @@
                   "StunRatioGrowth": 0.149,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 5546.75,
+                  "FeverRecovery": 2774.75,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 369.51,
                   "SpConsume": 0,
@@ -939,7 +1079,7 @@
                   "StunRatioGrowth": 0.149,
                   "SpRecovery": 0,
                   "SpRecoveryGrowth": 0,
-                  "FeverRecovery": 5546.75,
+                  "FeverRecovery": 2774.75,
                   "FeverRecoveryGrowth": 0,
                   "AttributeInfliction": 369.51,
                   "SpConsume": 0,
@@ -968,80 +1108,74 @@
   },
   "skillList": {
     "1361001": {
-      "Name": "Trigger_SkillList_1_Title",
-      "Desc": "Trigger_SkillList_1_Content",
+      "Name": "Basic Attack: Cold-Bore Shot (1st, 2nd, and 3rd hit)",
+      "Desc": "<IconMap:Icon_Normal>",
       "ElementType": 200,
       "HitType": 103
     },
     "1361002": {
-      "Name": "Trigger_SkillList_2_Title",
-      "Desc": "Trigger_SkillList_2_Content",
+      "Name": "Basic Attack: Cold-Bore Shot (4th hit)",
+      "Desc": "<IconMap:Icon_Normal>",
       "ElementType": 203,
       "HitType": 103
     },
     "1361003": {
-      "Name": "Trigger_SkillList_3_Title",
-      "Desc": "Trigger_SkillList_3_Content",
-      "ElementType": 203,
-      "HitType": 103
-    },
-    "1361004": {
-      "Name": "Trigger_SkillList_4_Title",
-      "Desc": "Trigger_SkillList_4_Content",
+      "Name": "Basic Attack: Silenced Shot",
+      "Desc": "<IconMap:Icon_Normal> (Press or Hold)",
       "ElementType": 203,
       "HitType": 103
     },
     "1361005": {
-      "Name": "Trigger_SkillList_5_Title",
-      "Desc": "Trigger_SkillList_5_Content",
+      "Name": "Special Attack: Spectral Flash",
+      "Desc": "<IconMap:Icon_Special>",
       "ElementType": 203,
       "HitType": 101
     },
     "1361006": {
-      "Name": "Trigger_SkillList_6_Title",
-      "Desc": "Trigger_SkillList_6_Content",
+      "Name": "EX Special Attack: Flash Burial",
+      "Desc": "<IconMap:Icon_SpecialReady>",
       "ElementType": 203,
       "HitType": 103
     },
     "1361007": {
-      "Name": "Trigger_SkillList_7_Title",
-      "Desc": "Trigger_SkillList_7_Content",
+      "Name": "Dash Attack: Vengeful Specter",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
       "ElementType": 200,
       "HitType": 103
     },
     "1361008": {
-      "Name": "Trigger_SkillList_8_Title",
-      "Desc": "Trigger_SkillList_8_Content",
+      "Name": "Dodge Counter: Condemned Soul",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
       "ElementType": 203,
       "HitType": 103
     },
     "1361009": {
-      "Name": "Trigger_SkillList_9_Title",
-      "Desc": "Trigger_SkillList_9_Content",
+      "Name": "Chain Attack: Stygian Guide",
+      "Desc": "<IconMap:Icon_QTE>",
       "ElementType": 203,
       "HitType": 103
     },
     "1361010": {
-      "Name": "Trigger_SkillList_10_Title",
-      "Desc": "Trigger_SkillList_10_Content",
+      "Name": "Ultimate: Underworld Requiem",
+      "Desc": "<IconMap:Icon_UltimateReady>",
       "ElementType": 203,
       "HitType": 103
     },
     "1361011": {
-      "Name": "Trigger_SkillList_11_Title",
-      "Desc": "Trigger_SkillList_11_Content",
+      "Name": "Quick Assist: Cold-Bore Cover Fire",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
       "ElementType": 203,
       "HitType": 103
     },
     "1361012": {
-      "Name": "Trigger_SkillList_12_Title",
-      "Desc": "Trigger_SkillList_12_Content",
-      "ElementType": 0,
-      "HitType": 0
+      "Name": "Defensive Assist: Delaying Demise",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
+      "ElementType": 203,
+      "HitType": 103
     },
     "1361013": {
-      "Name": "Trigger_SkillList_13_Title",
-      "Desc": "Trigger_SkillList_13_Content",
+      "Name": "Assist Follow-Up: Piercing Thunder",
+      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
       "ElementType": 203,
       "HitType": 103
     }
@@ -1051,44 +1185,86 @@
       "1": {
         "Level": 1,
         "Id": 1361501,
-        "Name": ["...", "..."],
-        "Desc": ["...", "..."]
+        "Name": [
+          "Core Passive: Soul-Searching Gaze",
+          "Additional Ability: Silver Lantern's Gaze"
+        ],
+        "Desc": [
+          "When Trigger's <color=#FFFFFF>Aftershock</color> hits an enemy, the target's Stun DMG Multiplier increases by 20% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same attribute:\nWhen Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <color=#FFFFFF>Aftershocks</color> by 1.5%, up to a maximum increase of 75%."
+        ]
       },
       "2": {
         "Level": 2,
         "Id": 1361502,
-        "Name": ["...", "..."],
-        "Desc": ["...", "..."]
+        "Name": [
+          "Core Passive: Soul-Searching Gaze",
+          "Additional Ability: Silver Lantern's Gaze"
+        ],
+        "Desc": [
+          "When Trigger's <color=#FFFFFF>Aftershock</color> hits an enemy, the target's Stun DMG Multiplier increases by 22.5% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same attribute:\nWhen Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <color=#FFFFFF>Aftershocks</color> by 1.5%, up to a maximum increase of 75%."
+        ]
       },
       "3": {
         "Level": 3,
         "Id": 1361503,
-        "Name": ["...", "..."],
-        "Desc": ["...", "..."]
+        "Name": [
+          "Core Passive: Soul-Searching Gaze",
+          "Additional Ability: Silver Lantern's Gaze"
+        ],
+        "Desc": [
+          "When Trigger's <color=#FFFFFF>Aftershock</color> hits an enemy, the target's Stun DMG Multiplier increases by 25% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same attribute:\nWhen Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <color=#FFFFFF>Aftershocks</color> by 1.5%, up to a maximum increase of 75%."
+        ]
       },
       "4": {
         "Level": 4,
         "Id": 1361504,
-        "Name": ["...", "..."],
-        "Desc": ["...", "..."]
+        "Name": [
+          "Core Passive: Soul-Searching Gaze",
+          "Additional Ability: Silver Lantern's Gaze"
+        ],
+        "Desc": [
+          "When Trigger's <color=#FFFFFF>Aftershock</color> hits an enemy, the target's Stun DMG Multiplier increases by 27.5% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same attribute:\nWhen Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <color=#FFFFFF>Aftershocks</color> by 1.5%, up to a maximum increase of 75%."
+        ]
       },
       "5": {
         "Level": 5,
         "Id": 1361505,
-        "Name": ["...", "..."],
-        "Desc": ["...", "..."]
+        "Name": [
+          "Core Passive: Soul-Searching Gaze",
+          "Additional Ability: Silver Lantern's Gaze"
+        ],
+        "Desc": [
+          "When Trigger's <color=#FFFFFF>Aftershock</color> hits an enemy, the target's Stun DMG Multiplier increases by 30% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same attribute:\nWhen Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <color=#FFFFFF>Aftershocks</color> by 1.5%, up to a maximum increase of 75%."
+        ]
       },
       "6": {
         "Level": 6,
         "Id": 1361506,
-        "Name": ["...", "..."],
-        "Desc": ["...", "..."]
+        "Name": [
+          "Core Passive: Soul-Searching Gaze",
+          "Additional Ability: Silver Lantern's Gaze"
+        ],
+        "Desc": [
+          "When Trigger's <color=#FFFFFF>Aftershock</color> hits an enemy, the target's Stun DMG Multiplier increases by 32.5% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same attribute:\nWhen Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <color=#FFFFFF>Aftershocks</color> by 1.5%, up to a maximum increase of 75%."
+        ]
       },
       "7": {
         "Level": 7,
         "Id": 1361507,
-        "Name": ["...", "..."],
-        "Desc": ["...", "..."]
+        "Name": [
+          "Core Passive: Soul-Searching Gaze",
+          "Additional Ability: Silver Lantern's Gaze"
+        ],
+        "Desc": [
+          "When Trigger's <color=#FFFFFF>Aftershock</color> hits an enemy, the target's Stun DMG Multiplier increases by 35% for 5s. This Stun DMG Multiplier increase will apply even if the target isn't stunned.",
+          "When another character in your squad is an <color=#FFFFFF>Attack</color> character or shares the same attribute:\nWhen Trigger's CRIT Rate exceeds 40%, each 1% CRIT Rate above this threshold increases her Daze dealt by <color=#FFFFFF>Aftershocks</color> by 1.5%, up to a maximum increase of 75%."
+        ]
       }
     },
     "Materials": {
@@ -1101,21 +1277,41 @@
     }
   },
   "mindscapes": {
-    "1": { "Level": 1, "Name": "...", "Desc": "...", "Desc2": "..." },
-    "2": { "Level": 2, "Name": "...", "Desc": "...", "Desc2": "..." },
+    "1": {
+      "Level": 1,
+      "Name": "Sharpened Senses",
+      "Desc": "The Stun DMG Multiplier applied through <color=#FFFFFF>Core Passive: Soul-Searching Gaze</color> is increased by an additional 20%. When activating <color=#FFFFFF>Basic Attack: Harmonizing Shot</color>, the cooldown is reduced to 2s. <color=#FFFFFF>Purge</color> gained upon hitting an enemy with the continuous fire or charged counter in <color=#FFFFFF>Sniper Stance</color> increases by 25%. Maximum <color=#FFFFFF>Purge</color> increases to 125.",
+      "Desc2": "..."
+    },
+    "2": {
+      "Level": 2,
+      "Name": "\"Ether Vision\"",
+      "Desc": "Upon using an <color=#FFFFFF>Aftershock</color>, Trigger gains 1 stack of <color=#FFFFFF>Hunter's Gaze</color>. When executing a Finishing Move in <color=#FFFFFF>Sniper Stance</color>, Trigger gains 2 stacks of <color=#FFFFFF>Hunter's Gaze</color>. Each stack of <color=#FFFFFF>Hunter's Gaze</color> increases all squad members' CRIT DMG by 6%, stacking up to 4 times, and lasting 10s. Repeated triggers reset the duration.",
+      "Desc2": "..."
+    },
     "3": {
       "Level": 3,
-      "Name": "...",
+      "Name": "\"Homecoming\"",
       "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
       "Desc2": "..."
     },
-    "4": { "Level": 4, "Name": "...", "Desc": "...", "Desc2": "..." },
+    "4": {
+      "Level": 4,
+      "Name": "Concealment",
+      "Desc": "When Trigger enters or extends <color=#FFFFFF>Coordinated Support</color>, while the state is active, the next time other squad members trigger <color=#FFFFFF>Basic Attack: Harmonizing Shot</color> or <color=#FFFFFF>Basic Attack: Harmonizing Shot - Tartarus</color>, it will trigger <color=#FFFFFF>Disconnect</color> upon hitting an enemy, dealing additional DMG equal to 200% of Trigger's ATK and inflict Daze equal to 120% of Trigger's Impact. This skill has a relatively high Interrupt Level.",
+      "Desc2": "..."
+    },
     "5": {
       "Level": 5,
-      "Name": "...",
+      "Name": "Locked In",
       "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
       "Desc2": "..."
     },
-    "6": { "Level": 6, "Name": "...", "Desc": "...", "Desc2": "..." }
+    "6": {
+      "Level": 6,
+      "Name": "Beyond the River of the Dead",
+      "Desc": "Upon entering the battlefield, Trigger gains 5 <color=#FFFFFF>Armor Break Rounds</color>. For every 25 <color=#FFFFFF>Purge</color> consumed, Trigger gains 1 additional <color=#FFFFFF>Armor Break Round</color>, up to a maximum of 5 rounds. While possessing <color=#FFFFFF>Armor Break Rounds</color>, when Trigger hits a target in <color=#FFFFFF>Sniper Stance</color>, 1 <color=#FFFFFF>Armor Break Round</color> is consumed to deal additional <color=#2EB6FF>Electric DMG</color> equal to 1,200% of Trigger's ATK. In addition, this instance of DMG is additionally increased by 50%. This effect can trigger once every 0.2s.",
+      "Desc2": "..."
+    }
   }
 }

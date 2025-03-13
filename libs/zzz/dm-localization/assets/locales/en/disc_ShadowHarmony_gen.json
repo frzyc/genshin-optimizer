@@ -1,0 +1,6 @@
+{
+  "name": "Shadow Harmony",
+  "desc2": "The DMG of <ct color=#FFFFFF>Aftershocks</ct> and <ct color=#FFFFFF>Dash Attacks</ct> is increased by 15%.",
+  "desc4": "Upon hitting an enemy with an <ct color=#FFFFFF>Aftershock</ct> or <ct color=#FFFFFF>Dash Attack</ct>, if the DMG dealt aligns with the equipper's attribute, the equipper gains 1 stack of a buff effect, at most once per use of a skill. For each stack, the equipper's ATK increases by 4%, and CRIT Rate increases by 4%. The effect can stack up to 3 times and lasts for 15s. Repeated triggers reset the duration.",
+  "story": "..."
+}

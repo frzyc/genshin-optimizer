@@ -70,14 +70,16 @@ export function priorityTable(
  */
 
 type Desc = BaseDesc<Sheet>
-const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
+const aggStr: Desc = { sheet: 'agg' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
-const iso: Desc = { sheet: 'iso', accu: 'unique' }
+const iso: Desc = { sheet: 'iso' }
 const isoSum: Desc = { sheet: 'iso', accu: 'sum' }
 /** `sheet:`-agnostic calculation */
-const fixed: Desc = { sheet: 'static', accu: 'unique' }
+const fixed: Desc = { sheet: 'static' }
+const fixedProd: Desc = { sheet: 'static', accu: 'prod' }
 /** The calculation must have a matching `sheet:` */
-const prep: Desc = { sheet: undefined, accu: 'unique' }
+const prep: Desc = { sheet: undefined }
+const prepProd: Desc = { sheet: undefined, accu: 'prod' }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
@@ -144,12 +146,21 @@ export const ownTag = {
     critMode: fixed,
     cappedCrit_: iso,
   },
-  dmg: { shared: fixed, critMulti: fixed },
+  dmg: {
+    shared: fixedProd,
+    crit_mult_: fixed,
+    dmg_mult_: fixed,
+    buff_mult_: fixed,
+    def_mult_: fixed,
+    res_mult_: fixed,
+    dmg_taken_mult_: fixed,
+    stunned_mult_: fixed,
+  },
   formula: {
     base: agg,
     listing: aggStr,
-    standardDmg: prep,
-    anomalyDmg: prep,
+    standardDmg: prepProd,
+    anomalyDmg: prepProd,
     shield: prep,
   },
   listing: {

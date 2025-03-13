@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Standard Blocking Technique",
-      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.4</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color> and <color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>36%</color>."
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.4</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color> and <color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>36%</color>.",
+      "params": [0.4, 0.36]
     },
     {
       "name": "Standard Blocking Technique",
-      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.46</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>40%</color>."
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.46</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>40%</color>.",
+      "params": [0.46, 0.4]
     },
     {
       "name": "Standard Blocking Technique",
-      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.52</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>45%</color>."
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.52</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>45%</color>.",
+      "params": [0.52, 0.45]
     },
     {
       "name": "Standard Blocking Technique",
-      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.58</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>50%</color>."
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.58</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>50%</color>.",
+      "params": [0.58, 0.5]
     },
     {
       "name": "Standard Blocking Technique",
-      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.64</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>55%</color>."
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.64</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>55%</color>.",
+      "params": [0.64, 0.55]
     }
   ]
 }

@@ -26,7 +26,7 @@ const sheet = registerRelic(
         cmpGE(own.final.crit_, dm[2].crit_threshold, dm[2].ult_and_followUp_)
       )
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   ),
   registerBuff(
     'set2_followUp_dmg_',
@@ -38,7 +38,7 @@ const sheet = registerRelic(
         cmpGE(own.final.crit_, dm[2].crit_threshold, dm[2].ult_and_followUp_)
       )
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet

@@ -23,7 +23,7 @@ const sheet = registerRelic(
       'followUp',
       cmpGE(relicCount, 4, dm[2].passive_followUp_)
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   ),
   // Conditional buffs
   registerBuff(
@@ -31,7 +31,7 @@ const sheet = registerRelic(
     ownBuff.premod.atk_.add(
       cmpGE(relicCount, 4, prod(followUpDmgDealt, dm[4].atk_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

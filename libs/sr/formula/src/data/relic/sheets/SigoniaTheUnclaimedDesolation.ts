@@ -23,7 +23,7 @@ const sheet = registerRelic(
     ownBuff.premod.crit_dmg_.add(
       cmpGE(relicCount, 2, prod(enemiesDefeated, dm[2].crit_dmg_))
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet
