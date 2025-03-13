@@ -1,7 +1,7 @@
 {
   "addNew": "Add Character",
+  "charLevel": "Lv. {{level}}",
   "characterCard": {
-    "charLevel": "Lv. {{level}}",
     "coreStat": "Core Stat",
     "notUnlocked": "Not Unlocked"
   },

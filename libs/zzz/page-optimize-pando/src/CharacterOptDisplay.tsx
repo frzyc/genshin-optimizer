@@ -28,7 +28,6 @@ import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
 import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
-import { MindscapesDisplay } from './MindscapesDisplay'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
@@ -128,14 +127,13 @@ function CharacterSection() {
           >
             <Stack spacing={1}>
               <ZCard>
-                <CharacterCoverOptimize character={character} />
+                <CharacterCoverOptimize characterKey={characterKey} />
               </ZCard>
               <Button fullWidth disabled={!characterKey} onClick={onClick}>
                 {/* TODO: Translation */}
                 Edit Character
               </Button>
               <CharStatsDisplay />
-              <MindscapesDisplay character={character} />
             </Stack>
             <EquippedGrid onClick={onClick} />
           </CardContent>
