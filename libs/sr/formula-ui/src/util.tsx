@@ -5,6 +5,7 @@ import type {
   RelicSetKey,
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
+import type { Tag } from '@genshin-optimizer/sr/formula'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 import type { ReactNode } from 'react'
 export const st = (
@@ -39,4 +40,15 @@ export function trans(
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
     ),
   ]
+}
+
+export function getTagLabel(tag: Tag | undefined | null): string {
+  if (!tag) return ''
+  const { et, q, qt, name } = tag
+  if (et === 'own' && qt === 'formula' && q !== 'base') {
+    return name ?? q ?? ''
+  }
+  // TODO: Determine when we should return qt + q vs just q
+  // e.g. for qt: 'base', q: 'atk' we would want both
+  return q ?? ''
 }

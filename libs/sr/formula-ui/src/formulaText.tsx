@@ -9,6 +9,7 @@ import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { Fragment, type ReactNode } from 'react'
 import { TagDisplay } from './components'
+import { getTagLabel } from './util'
 
 type Output = CalcMeta<Tag, 'floor'>
 
@@ -32,7 +33,7 @@ export function formulaText(
   } = data
   const usedTag =
     tag && (objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag)
-  const displayVal = valueString(val, getUnitStr(usedTag?.name ?? tag?.q ?? ''))
+  const displayVal = valueString(val, getUnitStr(getTagLabel(tag)))
 
   const deps = new Set<FormulaText>()
   function getString(

@@ -44,6 +44,7 @@ export function TagToTagField(tag: Tag): TagField {
   let q = tag.q
   if (q === 'dmg_' && tag.attribute) q = `${tag.attribute}_dmg_`
   return {
+    // TODO: will eventually use TagDisplay.
     title: <StatDisplay statKey={q as any} />,
     fieldRef: tag,
   }

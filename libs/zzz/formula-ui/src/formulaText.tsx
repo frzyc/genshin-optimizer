@@ -34,8 +34,7 @@ export function formulaText(
   } = data
   const usedTag =
     tag && (objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag)
-  const tagLabel = getTagLabel(tag)
-  const displayVal = valueString(val, getUnitStr(tagLabel))
+  const displayVal = valueString(val, getUnitStr(getTagLabel(tag)))
 
   const deps = new Set<FormulaText>()
   function getString(
