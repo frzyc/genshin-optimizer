@@ -18,7 +18,7 @@
     "ImpressionF": "I was somewhat surprised to see Ellen in her school uniform...\nFor her, working in Victoria Housekeeping is something like a part-time job outside of school, right? That's impressive!",
     "ImpressionM": "In a way, we're also working a part-time job, Belle...",
     "Name": "",
-    "OutlookDesc": "New Eridu Citizen Verification Profile:\nEllen, with a good aptitude for Ether, is authorized to perform basic tasks such as investigating and mining in identified Hollows (including Companion Hollows) within New Eridu.\nNote: The remaining information about Ellen is currently archived in a certain school in New Eridu.",
+    "OutlookDesc": "New Eridu Citizen Verification Profile:\nEllen, with a high aptitude for Ether, is authorized to perform basic tasks such as investigating and mining in identified Hollows (including Companion Hollows) within New Eridu.\nNote: The remaining information about Ellen is currently archived in a certain school in New Eridu.",
     "ProfileDesc": "Ellen is a maid working for Victoria Housekeeping Co. and its latest member.\nShe is a laid-back individual who dislikes activities that require energy. However, with the full support of her teammates, she can unleash her formidable power during critical moments.\nSince her fighting style leads to high energy consumption, she always carries a lollipop in her mouth to ensure an adequate sugar intake.\nWhile she frequently expresses her desire to change jobs due to the hassle, she genuinely values her companions at Victoria Housekeeping.\n\nEllen attends a school in New Eridu and has a group of ordinary friends.\nApart from her role as a maid at Victoria Housekeeping, Ellen spends a significant amount of time with her friends, leading an ordinary and contented student life.\n\nThoughts: As a multitasker, Ellen must balance her student life with her job at Victoria Housekeeping Co.\nPerhaps this is one of the reasons why she often feels tired?",
     "Race": "Victoria Housekeeping Co.",
     "RoleIcon": "IconRole/UnPacker/IconRole21",
@@ -33,13 +33,13 @@
   },
   "Skin": {
     "3111910": {
-      "Name": "Ellen: Ellen Scissorhands",
-      "Desc": "The sharp scissors of Victoria Housekeeping, if only she weren't sleeping...",
+      "Name": "AvatarSkin_Ellen_Name_000",
+      "Desc": "AvatarSkin_Ellen_Desc_000",
       "Image": "IconRole21"
     },
     "3111911": {
-      "Name": "Ellen: On Campus",
-      "Desc": "The tail doesn't quite match the school uniform, but with just a little bit of needlework, it can become even cuter!",
+      "Name": "AvatarSkin_Ellen_Name_001",
+      "Desc": "AvatarSkin_Ellen_Desc_001",
       "Image": "IconRole21_01"
     }
   },
@@ -899,11 +899,11 @@
         },
         {
           "Name": "EX Special Attack: Tail Swipe",
-          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nPerform a forceful tail whip attack that deals massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd-hit of a <color=#FFFFFF>Basic Attack</color>."
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nPerform a forceful tail whip attack that deals massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd hit of a <color=#FFFFFF>Basic Attack</color>."
         },
         {
           "Name": "EX Special Attack: Sharknami",
-          "Desc": "With enough Energy and after executing <color=#FFFFFF>EX Special Attack: Tail Swipe</color>, press <IconMap:Icon_SpecialReady> to activate:\nPerform a powerful series of slashes ahead that deal massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd-hit of a <color=#FFFFFF>Basic Attack</color>."
+          "Desc": "With enough Energy and after executing <color=#FFFFFF>EX Special Attack: Tail Swipe</color>, press <IconMap:Icon_SpecialReady> to activate:\nPerform a powerful series of slashes ahead that deal massive <color=#98EFF0>Ice DMG</color>.\nGain 1 <color=#FFFFFF>Flash Freeze Charge</color> upon striking an enemy.\nCharacter is invulnerable while using this skill.\nAfter executing the move, you can immediately follow up with the 3rd hit of a <color=#FFFFFF>Basic Attack</color>."
         },
         {
           "Name": "Special Attack: Drift",

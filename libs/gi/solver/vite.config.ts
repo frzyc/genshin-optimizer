@@ -7,7 +7,7 @@ import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/libs/gi/solver',
+  cacheDir: '../../../node_modules/.vite/libs/gi/solver',
 
   plugins: [
     react(),
@@ -24,8 +24,8 @@ export default defineConfig({
   },
 
   test: {
+    watch: false,
     globals: true,
-    cache: { dir: '../../../node_modules/.vitest' },
     environment: 'node',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],

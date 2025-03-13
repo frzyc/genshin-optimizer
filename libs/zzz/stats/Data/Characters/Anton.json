@@ -39,7 +39,7 @@
       "Description": [
         {
           "Name": "Basic Attack: Enthusiastic Drills",
-          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 4 mixed attacks in front, dealing <color=#F0D12B>Physical DMG</color>.\nThe 4th-hit is a <color=#FFFFFF>Piledriver Attack</color>."
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 4 mixed attacks in front, dealing <color=#F0D12B>Physical DMG</color>.\nThe 4th hit is a <color=#FFFFFF>Piledriver Attack</color>."
         },
         {
           "Name": "Basic Attack: Enthusiastic Drills (Burst Mode)",

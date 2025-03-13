@@ -329,6 +329,7 @@ function prodM(...monomials: Monomial[][]): Monomial[] {
   )
 }
 function foldLikeTerms(mon: Monomial[]): Monomial[] {
+  mon = mon.filter((m) => m.$k)
   mon.forEach((m) => m.terms.sort())
   mon.sort(({ terms: termsA }, { terms: termsB }) => {
     if (termsA.length !== termsB.length) return termsA.length - termsB.length

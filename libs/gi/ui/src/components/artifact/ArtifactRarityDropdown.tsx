@@ -4,7 +4,7 @@ import type { ButtonProps } from '@mui/material'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
-type props = ButtonProps & {
+type props = Omit<ButtonProps, 'onChange'> & {
   rarity?: ArtifactRarity
   onChange: (rarity: ArtifactRarity) => void
   filter: (rarity: ArtifactRarity) => boolean

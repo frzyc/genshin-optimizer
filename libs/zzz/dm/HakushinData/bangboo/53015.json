@@ -160,61 +160,61 @@
       "Level": {
         "1": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "2": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "3": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "4": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "5": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "6": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "7": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "8": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "9": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         },
         "10": {
           "Name": "Falling Bangboo Asteroid Strike!",
-          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering the <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
+          "Desc": "<color=#FFFFFF>Active Skill</color>\nCharges up and rises into the air, entering <color=#FFFFFF>Airborne</color> state. While in the <color=#FFFFFF>Airborne</color> state, Brawlerboo will dive attack enemies when they're hit by a heavy attack from an Agent, dealing <color=#FF5521>Fire DMG</color>.",
           "Property": ["DMG Multiplier", "Daze Multiplier", "Cooldown"],
           "Param": "{Skill:5301501, Prop:1001}|{Skill:5301501, Prop:1002}|28s"
         }

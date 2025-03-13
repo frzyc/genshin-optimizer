@@ -6,7 +6,7 @@
   "targets": {
     "load-dm": {
       "options": {
-        "outputPath": "libs/sr/dm/StarRailData"
+        "outputPath": "StarRailData"
       },
       "inputs": [
         {

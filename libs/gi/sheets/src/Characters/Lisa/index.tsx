@@ -185,7 +185,7 @@ const sheet: TalentSheet = {
             name: ct.chg(`skill.skillParams.0`),
           }),
         },
-        ...range(0, 3).map((i) => ({
+        ...(range(0, 3) as Array<0 | 1 | 2 | 3>).map((i) => ({
           node: infoMut(dmgFormulas.skill[`stack${i}`], {
             name: ct.chg(`skill.skillParams.${2 + i}`),
           }),

@@ -9,12 +9,11 @@ import {
   allSpecialityKeys,
   allWengineRarityKeys,
 } from '@genshin-optimizer/zzz/consts'
-import {
-  wengineSortKeys,
-  type WengineSortKey,
-} from '@genshin-optimizer/zzz/util'
 import type { ZzzDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
+
+export const wengineSortKeys = ['level', 'rarity', 'name'] as const
+export type WengineSortKey = (typeof wengineSortKeys)[number]
 
 export interface IDisplayWengine {
   editWengineId: string

@@ -199,17 +199,17 @@ const sheet: TalentSheet = {
     {
       fields: [
         {
-          node: infoMut(dmgFormulas.plunging.dmg, {
+          node: infoMut(dmgFormulas.plunging['dmg'], {
             name: stg('plunging.dmg'),
           }),
         },
         {
-          node: infoMut(dmgFormulas.plunging.low, {
+          node: infoMut(dmgFormulas.plunging['low'], {
             name: stg('plunging.low'),
           }),
         },
         {
-          node: infoMut(dmgFormulas.plunging.high, {
+          node: infoMut(dmgFormulas.plunging['high'], {
             name: stg('plunging.high'),
           }),
         },

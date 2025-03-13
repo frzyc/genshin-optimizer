@@ -4,5 +4,6 @@
   "sourceRoot": "libs/zzz/i18n/src",
   "projectType": "library",
   "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-i18n --web",
   "targets": {}
 }

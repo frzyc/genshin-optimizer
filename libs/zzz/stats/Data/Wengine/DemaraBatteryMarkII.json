@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "In a Flash of Light",
-      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>15%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>18%</color> for 8s."
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>15%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>18%</color> for 8s.",
+      "params": [0.15, 0.18, 8]
     },
     {
       "name": "In a Flash of Light",
-      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>17.5%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>20.5%</color> for 8s."
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>17.5%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>20.5%</color> for 8s.",
+      "params": [0.175, 0.205, 8]
     },
     {
       "name": "In a Flash of Light",
-      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>20%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>23%</color> for 8s."
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>20%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>23%</color> for 8s.",
+      "params": [0.2, 0.23, 8]
     },
     {
       "name": "In a Flash of Light",
-      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>22%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>25%</color> for 8s."
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>22%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>25%</color> for 8s.",
+      "params": [0.22, 0.25, 8]
     },
     {
       "name": "In a Flash of Light",
-      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>24%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>27.5%</color> for 8s."
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>24%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>27.5%</color> for 8s.",
+      "params": [0.24, 0.275, 8]
     }
   ]
 }

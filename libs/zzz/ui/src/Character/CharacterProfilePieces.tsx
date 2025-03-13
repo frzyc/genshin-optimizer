@@ -1,20 +1,33 @@
-import { ImgIcon, NextImage, SqBadge } from '@genshin-optimizer/common/ui'
+import {
+  ConditionalWrapper,
+  ImgIcon,
+  NextImage,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
-  factionDefIcon,
+  commonDefIcon,
   rarityDefIcon,
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey, MilestoneKey } from '@genshin-optimizer/zzz/consts'
+import {
+  allSkillKeys,
+  type CharacterKey,
+  type MilestoneKey,
+} from '@genshin-optimizer/zzz/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
+import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import type { CharacterData } from '@genshin-optimizer/zzz/dm'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { getLevelString, milestoneMaxLevel } from '@genshin-optimizer/zzz/util'
 import { Box, CardActionArea, Chip, Grid, Typography } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
+import type { ReactNode } from 'react'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ZCard } from '../Components'
 import { CharacterName } from './CharacterTrans'
 
 export function CharacterCompactMindscapeSelector({
@@ -39,7 +52,7 @@ export function CharacterCompactMindscapeSelector({
               textAlign: 'center',
             }}
           >
-            {t('characterEditor.mindscape', { level: i })}
+            {t('mindscape', { level: i })}
           </CardActionArea>
         </Grid>
       ))}
@@ -154,21 +167,43 @@ function LevelBadge({
 }
 
 export function CharacterCoverOptimize({
-  character: { level, promotion, key: characterKey },
+  characterKey,
+  onClick,
 }: {
-  character: ICachedCharacter
+  characterKey: CharacterKey
+  onClick?: (characterKey: CharacterKey) => void
 }) {
-  const character = getCharStat(characterKey)
+  const { level = 0, promotion = 0 } = useCharacter(characterKey) ?? {}
+  const characterStat = getCharStat(characterKey)
+  const onClickHandler = useCallback(
+    () => characterKey && onClick?.(characterKey),
+    [characterKey, onClick]
+  )
+  const actionWrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <CardActionArea
+        onClick={onClickHandler}
+        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+      >
+        {children}
+      </CardActionArea>
+    ),
+    [onClickHandler]
+  )
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
-      <CharImage characterKey={characterKey} character={character} />
-      <CharInformation
-        characterKey={characterKey}
-        character={character}
-        promotion={promotion}
-        level={level}
-      />
-    </Box>
+    <ZCard>
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
+          <CharImage characterKey={characterKey} character={characterStat} />
+          <CharInformation
+            characterKey={characterKey}
+            characterStat={characterStat}
+            promotion={promotion}
+            level={level}
+          />
+        </Box>
+      </ConditionalWrapper>
+    </ZCard>
   )
 }
 
@@ -221,16 +256,31 @@ function CharImage({
 }
 function CharInformation({
   characterKey,
-  character,
+  characterStat,
   promotion,
   level,
 }: {
   characterKey: CharacterKey
-  character: CharacterData
+  characterStat: CharacterData
   promotion: MilestoneKey
   level: number
 }) {
-  const { attribute, rarity, faction, specialty } = character
+  const { t } = useTranslation('page_characters')
+  const { attribute, rarity, specialty } = characterStat
+  const character = useCharacter(characterKey)
+  const skillStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    bottom: '-5px',
+    left: '-12px',
+    width: '1.9em',
+    height: '1.9em',
+    borderRadius: '20px',
+    fontWeight: '500',
+    fontSize: '0.9rem',
+  }
   return (
     <Box
       sx={{
@@ -254,40 +304,74 @@ function CharInformation({
           <Typography
             variant="h5"
             sx={{
-              fontStyle: 'italic',
               fontWeight: '900',
-              whiteSpace: 'nowrap',
-              maxWidth: '230px',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
             }}
           >
             <CharacterName characterKey={characterKey} />
           </Typography>
           <ElementIcon ele={attribute} />
           <ImgIcon size={2} src={specialityDefIcon(specialty)} />
-        </Box>
-        <Box
-          sx={{
-            border: '2px #2B364D solid',
-            borderRadius: '20px',
-            width: '130px',
-            display: 'flex',
-            marginTop: '16px',
-          }}
-        >
-          <Typography sx={{ fontWeight: '900', paddingLeft: '10px' }}>
-            Lv. {level}
-          </Typography>
           <Typography
-            sx={{ fontWeight: '900', color: '#1E78C8', paddingLeft: '14px' }}
+            variant="h5"
+            color="primary"
+            sx={{
+              fontWeight: '900',
+            }}
           >
-            / {milestoneMaxLevel[promotion]}
+            {t('mindscape', { level: character ? character.mindscape : 0 })}
           </Typography>
         </Box>
-      </Box>
-      <Box>
-        <ImgIcon size={5} src={factionDefIcon(faction)}></ImgIcon>
+        <Box sx={{ mt: '16px', display: 'flex', gap: 3 }}>
+          <Box
+            sx={(theme) => ({
+              border: `2px solid ${theme.palette.contentZzz.main}`,
+              borderRadius: '20px',
+              display: 'flex',
+            })}
+          >
+            <Typography
+              sx={{ fontWeight: '900', paddingLeft: '12px', fontSize: '16px' }}
+            >
+              {t('charLevel', { level })}
+            </Typography>
+            <Typography
+              color="primary"
+              sx={{
+                fontWeight: '900',
+                paddingLeft: '4px',
+                pr: '10px',
+              }}
+            >
+              / {milestoneMaxLevel[promotion]}
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', gap: 2 }}>
+            {allSkillKeys.map((item, index) => (
+              <Box key={index} sx={{ position: 'relative' }}>
+                <ImgIcon size={2} src={commonDefIcon(item)} />
+                <Box
+                  sx={(theme) => ({
+                    ...skillStyles,
+                    background: `${theme.palette.background.default}`,
+                  })}
+                >
+                  {character ? character[item] : 0}
+                </Box>
+              </Box>
+            ))}
+            <Box sx={{ position: 'relative' }}>
+              <ImgIcon size={2} src={commonDefIcon('core')} />
+              <Box
+                sx={(theme) => ({
+                  ...skillStyles,
+                  background: `${theme.palette.background.default}`,
+                })}
+              >
+                {character ? character.core : 0}
+              </Box>
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Box>
   )

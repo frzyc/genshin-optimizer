@@ -20,6 +20,7 @@ import type {
   TeamCharacter,
 } from '@genshin-optimizer/gi/db'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
+import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 import { input, nonStacking, tally } from './formula'
 import type { Data, Info, NumNode, ReadNode, StrNode } from './type'
@@ -160,7 +161,10 @@ export function dataObjForCharacterNew(
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
         (ele) =>
-          percent((enemyOverride[`${ele.slice(0, -5)}_enemyRes_`] ?? 10) / 100)
+          percent(
+            (enemyOverride[`${ele.slice(0, -5)}_enemyRes_` as EleEnemyResKey] ??
+              10) / 100
+          )
       ),
       level: constant(enemyOverride.enemyLevel ?? level),
     },
@@ -189,7 +193,7 @@ export function dataObjForCharacterNew(
   )
 
   if (sheetData?.display) {
-    sheetData.display.custom = {}
+    sheetData.display['custom'] = {}
     customMultiTargets.forEach(({ name, targets }, i) => {
       const targetNodes = targets.map(
         ({ weight, path, hitMode, reaction, infusionAura, bonusStats }) => {
@@ -225,7 +229,7 @@ export function dataObjForCharacterNew(
         name,
         variant: 'invalid',
       })
-      sheetData.display!.custom[i] = multiTargetNode
+      sheetData.display!['custom'][i] = multiTargetNode
     })
   }
   return result
