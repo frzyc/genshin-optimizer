@@ -2479,7 +2479,7 @@ export const conditionals = {
       name: 'debuffCount',
       type: 'num',
       int_only: true,
-      min: 2,
+      min: 0,
       max: 3,
     },
     wearerDebuff: {
@@ -2523,27 +2523,6 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'PlanetaryRendezvous',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  PoetOfMourningCollapse: {
-    boolConditional: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PoetOfMourningCollapse',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -18484,28 +18463,6 @@ export const buffs = {
     },
   },
   PoetOfMourningCollapse: {
-    enemy_defRed_: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'PoetOfMourningCollapse',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PoetOfMourningCollapse',
-        name: 'set2_dmg_',
-      },
-    },
     set2_passive_quantum_dmg_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'set2_passive_quantum_dmg_',
@@ -18518,6 +18475,17 @@ export const buffs = {
         name: 'set2_passive_quantum_dmg_',
       },
     },
+    set4_crit_: {
+      sheet: 'PoetOfMourningCollapse',
+      name: 'set4_crit_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'crit_',
+        sheet: 'PoetOfMourningCollapse',
+        name: 'set4_crit_',
+      },
+    },
     set4_passive_spd_: {
       sheet: 'PoetOfMourningCollapse',
       name: 'set4_passive_spd_',
@@ -18527,17 +18495,6 @@ export const buffs = {
         q: 'spd_',
         sheet: 'PoetOfMourningCollapse',
         name: 'set4_passive_spd_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PoetOfMourningCollapse',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'PoetOfMourningCollapse',
-        name: 'team_dmg_',
       },
     },
   },

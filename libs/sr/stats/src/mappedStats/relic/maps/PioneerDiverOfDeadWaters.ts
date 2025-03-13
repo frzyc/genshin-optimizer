@@ -11,7 +11,7 @@ const dm = {
     dmg_: data_gen.setEffects[0].otherStats[o++],
   },
   4: {
-    crit_: data_gen.setEffects[1].passiveStats.crit_ ?? 0,
+    crit_: data_gen.setEffects[1].otherStats[0],
     crit_dmg_1: data_gen.setEffects[1].otherStats[o++],
     crit_dmg_2: data_gen.setEffects[1].otherStats[o++],
     debuffThreshold1: data_gen.setEffects[1].otherStats[o++],

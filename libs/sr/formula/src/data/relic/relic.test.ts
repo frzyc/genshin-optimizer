@@ -657,6 +657,24 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 2 * 0.12)
   })
 
+  it('PoetOfMourningCollapse', () => {
+    const data = testCharacterData('PoetOfMourningCollapse', undefined, [
+      ownBuff.premod.spd.add(-11),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.dmg_.quantum).val).toBeCloseTo(0.1)
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(-0.08)
+    // Base + 4 piece cond
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.32)
+    // TODO: Check memosprite buff
+  })
+
   it('PrisonerInDeepConfinement', () => {
     const data = testCharacterData('PrisonerInDeepConfinement')
     data.push(
