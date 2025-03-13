@@ -1928,27 +1928,6 @@ export const conditionals = {
       max: 2,
     },
   },
-  LushakaTheSunkenSeas: {
-    boolConditional: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   Lynx: {
     boolConditional: { sheet: 'Lynx', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -15220,6 +15199,17 @@ export const buffs = {
         name: 'set2_passive_def_',
       },
     },
+    set4_shield_: {
+      sheet: 'KnightOfPurityPalace',
+      name: 'set4_shield_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'shield_',
+        sheet: 'KnightOfPurityPalace',
+        name: 'set4_shield_',
+      },
+    },
   },
   LandausChoice: {
     cond_dmg_: {
@@ -15929,26 +15919,15 @@ export const buffs = {
     },
   },
   LushakaTheSunkenSeas: {
-    enemy_defRed_: {
+    set2_atk_: {
       sheet: 'LushakaTheSunkenSeas',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'LushakaTheSunkenSeas',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'set2_dmg_',
+      name: 'set2_atk_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'atk_',
         sheet: 'LushakaTheSunkenSeas',
-        name: 'set2_dmg_',
+        name: 'set2_atk_',
       },
     },
     set2_passive_enerRegen_: {
@@ -15960,17 +15939,6 @@ export const buffs = {
         q: 'enerRegen_',
         sheet: 'LushakaTheSunkenSeas',
         name: 'set2_passive_enerRegen_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'LushakaTheSunkenSeas',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'LushakaTheSunkenSeas',
-        name: 'team_dmg_',
       },
     },
   },

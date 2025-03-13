@@ -525,6 +525,23 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.16)
   })
 
+  it('LushakaTheSunkenSeas', () => {
+    const data = testTeamData('LushakaTheSunkenSeas', undefined, [
+      // Register relics for all teammates
+      ...relicTagMapNodeEntries({}, { LushakaTheSunkenSeas: 4 }),
+    ])
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Multiply by 2 due to all teammates having the same relic bonus
+    expect(calc.compute(seele.final.enerRegen_).val).toBeCloseTo(2 * 0.05)
+    expect(calc.compute(seele.final.atk_).val).toBeCloseTo(2 * 0.12)
+  })
+
   it('MessengerTraversingHackerspace', () => {
     const data = testCharacterData('MessengerTraversingHackerspace')
     data.push(
