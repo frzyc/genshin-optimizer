@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Passionate Construction",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
+      "params": [0.6, 0.1, 10, 2]
     },
     {
       "name": "Passionate Construction",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>12.5%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>12.5%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
+      "params": [0.75, 0.125, 10, 2]
     },
     {
       "name": "Passionate Construction",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>15%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>15%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
+      "params": [0.9, 0.15, 10, 2]
     },
     {
       "name": "Passionate Construction",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>17.5%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>17.5%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
+      "params": [1.05, 0.175, 10, 2]
     },
     {
       "name": "Passionate Construction",
-      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>20%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>20%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.",
+      "params": [1.2, 0.2, 10, 2]
     }
   ]
 }

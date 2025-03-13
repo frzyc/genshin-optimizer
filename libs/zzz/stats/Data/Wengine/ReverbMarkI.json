@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Changing Tides",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.08, 10, 20]
     },
     {
       "name": "Changing Tides",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.09, 10, 20]
     },
     {
       "name": "Changing Tides",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.1, 10, 20]
     },
     {
       "name": "Changing Tides",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.11, 10, 20]
     },
     {
       "name": "Changing Tides",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.",
+      "params": [0.12, 10, 20]
     }
   ]
 }

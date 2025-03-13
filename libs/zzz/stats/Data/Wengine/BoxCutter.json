@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>15%</color>, and Daze increases by <color=#2BAD00>10%</color>, lasting 10s."
+      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>15%</color>, and Daze increases by <color=#2BAD00>10%</color>, lasting 10s.",
+      "params": [0.15, 0.1, 10]
     },
     {
       "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>17.3%</color>, and Daze increases by <color=#2BAD00>11.5%</color>, lasting 10s."
+      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>17.3%</color>, and Daze increases by <color=#2BAD00>11.5%</color>, lasting 10s.",
+      "params": [0.173, 0.115, 10]
     },
     {
       "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>19.5%</color>, and Daze increases by <color=#2BAD00>13%</color>, lasting 10s."
+      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>19.5%</color>, and Daze increases by <color=#2BAD00>13%</color>, lasting 10s.",
+      "params": [0.195, 0.13, 10]
     },
     {
       "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>21.8%</color>, and Daze increases by <color=#2BAD00>14.5%</color>, lasting 10s."
+      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>21.8%</color>, and Daze increases by <color=#2BAD00>14.5%</color>, lasting 10s.",
+      "params": [0.218, 0.145, 10]
     },
     {
       "name": "Watch Your Fingers",
-      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>24%</color>, and Daze increases by <color=#2BAD00>16%</color>, lasting 10s."
+      "desc": "Upon launching an <color=#FFFFFF>Aftershock</color>, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>24%</color>, and Daze increases by <color=#2BAD00>16%</color>, lasting 10s.",
+      "params": [0.24, 0.16, 10]
     }
   ]
 }

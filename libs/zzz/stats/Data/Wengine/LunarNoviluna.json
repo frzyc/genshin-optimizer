@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "New Moon",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3</color> Energy for the equipper. This effect can trigger once every 12s."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3</color> Energy for the equipper. This effect can trigger once every 12s.",
+      "params": [3, 12]
     },
     {
       "name": "New Moon",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3.5</color> Energy for the equipper. This effect can trigger once every 12s."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3.5</color> Energy for the equipper. This effect can trigger once every 12s.",
+      "params": [3.5, 12]
     },
     {
       "name": "New Moon",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4</color> Energy for the equipper. This effect can trigger once every 12s."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4</color> Energy for the equipper. This effect can trigger once every 12s.",
+      "params": [4, 12]
     },
     {
       "name": "New Moon",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4.5</color> Energy for the equipper. This effect can trigger once every 12s."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4.5</color> Energy for the equipper. This effect can trigger once every 12s.",
+      "params": [4.5, 12]
     },
     {
       "name": "New Moon",
-      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>5</color> Energy for the equipper. This effect can trigger once every 12s."
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>5</color> Energy for the equipper. This effect can trigger once every 12s.",
+      "params": [5, 12]
     }
   ]
 }
