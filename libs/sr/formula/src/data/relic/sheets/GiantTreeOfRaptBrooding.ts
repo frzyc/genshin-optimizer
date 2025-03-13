@@ -30,7 +30,7 @@ const sheet = registerRelic(
         )
       )
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
   // TODO: add memosprite buff
 )

@@ -20,7 +20,7 @@ const sheet = registerRelic(
     'set4_heal',
     cmpGE(relicCount, 4, prod(own.final.hp, percent(dm[4].hpRestore))),
     {
-      cond: cmpGE(relicCount, 4, 'unique', ''),
+      cond: cmpGE(relicCount, 4, 'infer', ''),
     }
   )
 )

@@ -23,7 +23,7 @@ const sheet = registerRelic(
     ownBuff.premod.spd_.add(
       cmpGE(relicCount, 4, memospriteOnField.ifOn(dm[4].spd_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   ),
   registerBuff(
     'set4_crit_dmg_',

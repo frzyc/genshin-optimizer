@@ -25,7 +25,7 @@ const sheet = registerRelic(
         cmpGE(own.final.hp, dm[2].hpThreshold, dm[2].crit_dmg_)
       )
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
   // TODO: Add memosprite buff
 )
