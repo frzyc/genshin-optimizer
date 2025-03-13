@@ -159,7 +159,7 @@ export default function PageCharacter() {
               <CharacterCoverOptimize
                 characterKey={charKey}
                 onClick={() => navigate(`${charKey}`)}
-              ></CharacterCoverOptimize>
+              />
             </Grid>
           ))}
         </Grid>

@@ -27,6 +27,7 @@ import { grey, yellow } from '@mui/material/colors'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ZCard } from '../Components'
 import { CharacterName } from './CharacterTrans'
 
 export function CharacterCompactMindscapeSelector({
@@ -190,17 +191,19 @@ export function CharacterCoverOptimize({
     [onClickHandler]
   )
   return (
-    <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
-        <CharImage characterKey={characterKey} character={characterStat} />
-        <CharInformation
-          characterKey={characterKey}
-          characterStat={characterStat}
-          promotion={promotion}
-          level={level}
-        />
-      </Box>
-    </ConditionalWrapper>
+    <ZCard>
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '500px' }}>
+          <CharImage characterKey={characterKey} character={characterStat} />
+          <CharInformation
+            characterKey={characterKey}
+            characterStat={characterStat}
+            promotion={promotion}
+            level={level}
+          />
+        </Box>
+      </ConditionalWrapper>
+    </ZCard>
   )
 }
 
