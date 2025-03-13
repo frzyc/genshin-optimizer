@@ -73,7 +73,7 @@ function testTeamData(
   otherCharData: TagMapNodeEntries = []
 ) {
   const data: TagMapNodeEntries = [
-    ...teamData(['Seele', 'SilverWolf']),
+    ...teamData(['Seele', 'SilverWolf', 'TopazAndNumby']),
     ...withMember(
       'Seele',
       ...charTagMapNodeEntries(
@@ -114,6 +114,27 @@ function testTeamData(
           statBoosts: {},
         },
         2
+      ),
+      ...otherCharData
+    ),
+    ...withMember(
+      'TopazAndNumby',
+      ...charTagMapNodeEntries(
+        {
+          level: 80,
+          ascension: 6,
+          key: 'TopazAndNumby',
+          eidolon: 0,
+          basic: 0,
+          skill: 0,
+          ult: 0,
+          talent: 0,
+          servantSkill: 0,
+          servantTalent: 0,
+          bonusAbilities: {},
+          statBoosts: {},
+        },
+        3
       ),
       ...otherCharData
     ),
@@ -462,7 +483,7 @@ describe('Relic sheets test', () => {
   })
 
   it('IzumoGenseiAndTakamaDivineRealm', () => {
-    const data = testCharacterData('IzumoGenseiAndTakamaDivineRealm')
+    const data = testTeamData('IzumoGenseiAndTakamaDivineRealm')
     const calc = new Calculator(
       keys,
       values,
