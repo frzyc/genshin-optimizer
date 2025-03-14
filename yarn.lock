@@ -14080,7 +14080,6 @@ __metadata:
     jsonc-eslint-parser: ^2.1.0
     next: 14.2.5
     nx: 20.5.0
-    prettier: ^2.8.4
     prettier-plugin-organize-imports: ^3.2.4
     react: 18.3.1
     react-dom: 18.3.1
@@ -20447,15 +20446,6 @@ __metadata:
     "@volar/vue-typescript":
       optional: true
   checksum: 57ae97d7e403445e650ae92b7da586761d1d88a47e46b3ea274baeb96782165bebd0132db9c652081e185c41b50701ba1d30d615ad1c9000300cc0c67eb12b7a
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.8.4":
-  version: 2.8.4
-  resolution: "prettier@npm:2.8.4"
-  bin:
-    prettier: bin-prettier.js
-  checksum: c173064bf3df57b6d93d19aa98753b9b9dd7657212e33b41ada8e2e9f9884066bb9ca0b4005b89b3ab137efffdf8fbe0b462785aba20364798ff4303aadda57e
   languageName: node
   linkType: hard
 
