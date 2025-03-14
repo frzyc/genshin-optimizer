@@ -16,9 +16,11 @@ import {
   registerWengine,
   showSpecialtyAndEquipped,
 } from '../util'
+import { getWengineParams } from '@genshin-optimizer/zzz/stats'
 
 const key: WengineKey = 'HeartstringNocturne'
 const { modification } = own.wengine
+const params = getWengineParams(key)
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -37,7 +39,7 @@ const sheet = registerWengine(
     ownBuff.combat.common_dmg_.add(
       cmpSpecialtyAndEquipped(
         key,
-        boolConditional.ifOn(subscript(modification, [0.1, 0.2, 0.3, 0.4, 0.5]))
+        boolConditional.ifOn(subscript(modification, params[0]))
       )
     ),
     showSpecialtyAndEquipped(key)

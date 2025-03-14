@@ -39,6 +39,7 @@ const specialityMap: Record<SpecialityKey, CharacterKey> = {
   support: 'Nicole',
   defense: 'Ben',
 }
+
 function testCharacterData(wengineKey: WengineKey) {
   const type = getWengineStat(wengineKey).type
   const characterKey = specialityMap[type]
@@ -71,6 +72,7 @@ function testCharacterData(wengineKey: WengineKey) {
   ]
   return { data, characterKey }
 }
+
 function cond(
   characterKey: CharacterKey,
   wKey: WengineKey,
@@ -79,10 +81,12 @@ function cond(
 ) {
   return conditionalEntries(wKey, characterKey, null)(name, value)
 }
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function printDebug(calc: Calculator, read: Read) {
   console.log(prettify(calc.toDebug().compute(read)))
 }
+
 describe('Disc sheets test', () => {
   it('BashfulDemon', () => {
     const { data, characterKey } = testCharacterData('BashfulDemon')
@@ -100,8 +104,8 @@ describe('Disc sheets test', () => {
       compileTagMapValues(keys, data)
     ).withTag({ src: characterKey, dst: characterKey })
     const char = convert(ownTag, { et: 'own', src: characterKey })
-    // printDebug(calc, char.combat.atk_)
+
     expect(calc.compute(char.final.dmg_.ice).val).toBeCloseTo(0.24) // passive
-    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(0.128) // cond
+    expect(calc.compute(char.combat.atk_).val).toBeCloseTo(4 * 0.032) // cond
   })
 })

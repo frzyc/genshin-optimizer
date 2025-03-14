@@ -18,7 +18,7 @@ import {
 } from '../util'
 import { getWengineParams } from '@genshin-optimizer/zzz/stats'
 
-const key: WengineKey = 'Timeweaver'
+const key: WengineKey = 'SeveredInnocence'
 const { modification } = own.wengine
 const params = getWengineParams(key)
 
