@@ -22,7 +22,7 @@ const sheet = registerLightCone(
       1,
       prod(percent(subscript(superimpose, dm.shieldScaling)), own.final.hp)
     ),
-    { cond: cmpGE(lcCount, 1, 'unique', '') }
+    { cond: cmpGE(lcCount, 1, 'infer', '') }
   )
 )
 export default sheet

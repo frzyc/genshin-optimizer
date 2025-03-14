@@ -23,7 +23,7 @@ const sheet = registerLightCone(
       'skill',
       cmpGE(lcCount, 1, subscript(superimpose, dm.eff_))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'atk_',
@@ -31,7 +31,7 @@ const sheet = registerLightCone(
       'skill',
       cmpGE(lcCount, 1, subscript(superimpose, dm.atk_))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
 
   // Conditional buffs
@@ -44,7 +44,7 @@ const sheet = registerLightCone(
         enemyDebuffed.ifOn(subscript(superimpose, dm.common_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

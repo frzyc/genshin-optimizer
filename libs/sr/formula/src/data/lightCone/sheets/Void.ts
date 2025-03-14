@@ -23,7 +23,7 @@ const sheet = registerLightCone(
     ownBuff.premod.eff_.add(
       cmpGE(lcCount, 1, battleStart.ifOn(subscript(superimpose, dm.eff_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

@@ -21,7 +21,7 @@ const sheet = registerLightCone(
       'break',
       cmpGE(lcCount, 1, subscript(superimpose, dm.break_defIgn_))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
 
   // Conditional buffs
@@ -38,7 +38,7 @@ const sheet = registerLightCone(
         )
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

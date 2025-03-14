@@ -20,7 +20,7 @@ const sheet = registerLightCone(
     teamBuff.premod.atk_.add(
       cmpGE(lcCount, 1, subscript(superimpose, dm.atk_))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

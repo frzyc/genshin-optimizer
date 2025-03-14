@@ -23,7 +23,7 @@ const sheet = registerLightCone(
       'skill',
       cmpGE(lcCount, 1, subscript(superimpose, dm.skill_ult_dmg_))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'ult_dmg_',
@@ -31,7 +31,7 @@ const sheet = registerLightCone(
       'ult',
       cmpGE(lcCount, 1, subscript(superimpose, dm.skill_ult_dmg_))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
 
   // Conditional buffs
@@ -45,7 +45,7 @@ const sheet = registerLightCone(
         followUpTriggered.ifOn(subscript(superimpose, dm.followUp_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

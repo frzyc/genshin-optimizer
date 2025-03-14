@@ -35,7 +35,7 @@ const sheet = registerLightCone(
         percent(prod(0.01, hpDifference))
       )
     ),
-    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'unique', '') }
+    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') }
   )
 )
 export default sheet

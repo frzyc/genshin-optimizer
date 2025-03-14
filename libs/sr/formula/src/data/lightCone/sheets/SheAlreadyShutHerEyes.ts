@@ -32,7 +32,7 @@ const sheet = registerLightCone(
       1,
       prod(percent(subscript(superimpose, dm.healScaling)), target.final.hp)
     ),
-    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'unique', '') }
+    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') }
   ),
 
   // Conditional buffs
@@ -45,7 +45,7 @@ const sheet = registerLightCone(
         wearerHpReduced.ifOn(subscript(superimpose, dm.common_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

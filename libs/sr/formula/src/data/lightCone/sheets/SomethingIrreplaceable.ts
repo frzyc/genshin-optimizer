@@ -31,7 +31,7 @@ const sheet = registerLightCone(
       1,
       prod(own.final.atk, percent(subscript(superimpose, dm.healingScaling)))
     ),
-    { cond: cmpGE(lcCount, 1, 'unique', '') }
+    { cond: cmpGE(lcCount, 1, 'infer', '') }
   ),
 
   // Conditional buffs
@@ -40,7 +40,7 @@ const sheet = registerLightCone(
     ownBuff.premod.common_dmg_.add(
       cmpGE(lcCount, 1, wearerHit.ifOn(subscript(superimpose, dm.common_dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

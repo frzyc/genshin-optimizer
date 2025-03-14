@@ -23,7 +23,7 @@ const sheet = registerLightCone(
     ownBuff.premod.heal_.add(
       cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.heal_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

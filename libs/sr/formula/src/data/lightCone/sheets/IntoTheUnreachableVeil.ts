@@ -32,7 +32,7 @@ const sheet = registerLightCone(
       'ult',
       cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.skill_ult_dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

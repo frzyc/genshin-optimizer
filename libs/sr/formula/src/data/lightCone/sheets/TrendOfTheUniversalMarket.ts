@@ -24,7 +24,7 @@ const sheet = registerLightCone(
       prod(own.final.def, subscript(superimpose, dm.dot_scaling_))
     ),
     [1],
-    { cond: cmpGE(lcCount, 1, 'unique', '') }
+    { cond: cmpGE(lcCount, 1, 'infer', '') }
   )
 )
 export default sheet

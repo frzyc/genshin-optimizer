@@ -27,7 +27,7 @@ const sheet = registerLightCone(
         memospriteOnField.ifOn(subscript(superimpose, dm.common_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
   // TODO: add memosprite buff
 )

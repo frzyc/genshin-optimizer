@@ -22,7 +22,7 @@ const sheet = registerLightCone(
       1,
       prod(subscript(superimpose, dm.healScaling), target.final.hp)
     ),
-    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'unique', '') }
+    { team: true, isSemiOwn: true, cond: cmpGE(lcCount, 1, 'infer', '') }
   )
 )
 export default sheet

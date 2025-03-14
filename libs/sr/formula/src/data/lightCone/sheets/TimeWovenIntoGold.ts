@@ -23,7 +23,7 @@ const sheet = registerLightCone(
     ownBuff.premod.crit_dmg_.add(
       cmpGE(lcCount, 1, prod(brocade, subscript(superimpose, dm.crit_dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'basic_dmg_',
@@ -39,7 +39,7 @@ const sheet = registerLightCone(
         )
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
   // TODO: add memosprite
 )

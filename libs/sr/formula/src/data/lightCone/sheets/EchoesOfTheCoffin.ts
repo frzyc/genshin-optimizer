@@ -23,7 +23,7 @@ const sheet = registerLightCone(
     teamBuff.premod.spd.add(
       cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.spd)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

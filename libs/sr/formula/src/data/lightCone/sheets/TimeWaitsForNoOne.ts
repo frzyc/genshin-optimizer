@@ -29,7 +29,7 @@ const sheet = registerLightCone(
       )
     ),
     [1],
-    { cond: cmpGE(lcCount, 1, 'unique', '') }
+    { cond: cmpGE(lcCount, 1, 'infer', '') }
   )
 )
 export default sheet

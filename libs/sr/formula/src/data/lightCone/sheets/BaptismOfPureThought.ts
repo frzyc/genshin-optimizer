@@ -30,14 +30,14 @@ const sheet = registerLightCone(
     ownBuff.premod.crit_dmg_.add(
       cmpGE(lcCount, 1, prod(debuffCount, subscript(superimpose, dm.crit_dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'common_dmg_',
     ownBuff.premod.common_dmg_.add(
       cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.common_dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'followUp_defIgn_',
@@ -49,7 +49,7 @@ const sheet = registerLightCone(
         ultUsed.ifOn(subscript(superimpose, dm.followUp_defIgn_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

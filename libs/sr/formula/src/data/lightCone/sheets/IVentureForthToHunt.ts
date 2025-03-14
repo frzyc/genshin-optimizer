@@ -24,7 +24,7 @@ const sheet = registerLightCone(
       'ult',
       cmpGE(lcCount, 1, prod(luminflux, subscript(superimpose, dm.ult_defIgn_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

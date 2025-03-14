@@ -30,7 +30,7 @@ const sheet = registerLightCone(
     notOwnBuff.premod.crit_dmg_.add(
       cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet

@@ -28,7 +28,7 @@ const sheet = registerLightCone(
     'healing',
     cmpGE(lcCount, 1, prod(own.final.hp, percent(dm.heal))),
     {
-      cond: cmpGE(lcCount, 1, 'unique', ''),
+      cond: cmpGE(lcCount, 1, 'infer', ''),
     }
   ),
 
@@ -38,7 +38,7 @@ const sheet = registerLightCone(
     ownBuff.premod.common_dmg_.add(
       cmpGE(lcCount, 1, hpConsumed.ifOn(subscript(superimpose, dm.common_dmg_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   )
 )
 export default sheet
