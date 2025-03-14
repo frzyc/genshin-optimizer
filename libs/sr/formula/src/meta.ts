@@ -3380,24 +3380,10 @@ export const conditionals = {
     },
   },
   TheWondrousBananAmusementPark: {
-    boolConditional: {
+    summonIsOnField: {
       sheet: 'TheWondrousBananAmusementPark',
-      name: 'boolConditional',
+      name: 'summonIsOnField',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   ThisIsMe: {
@@ -22295,26 +22281,15 @@ export const buffs = {
     },
   },
   TheWondrousBananAmusementPark: {
-    enemy_defRed_: {
+    set2_crit_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'TheWondrousBananAmusementPark',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'set2_dmg_',
+      name: 'set2_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
-        name: 'set2_dmg_',
+        name: 'set2_crit_dmg_',
       },
     },
     set2_passive_crit_dmg_: {
@@ -22326,17 +22301,6 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
         name: 'set2_passive_crit_dmg_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'TheWondrousBananAmusementPark',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'TheWondrousBananAmusementPark',
-        name: 'team_dmg_',
       },
     },
   },

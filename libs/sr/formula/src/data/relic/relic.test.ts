@@ -859,6 +859,28 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.dmg_.ult[0]).val).toBeCloseTo(0.36)
   })
 
+  it('TheWondrousBananAmusementPark', () => {
+    const data = testCharacterData('TheWondrousBananAmusementPark')
+    data.push(
+      cond(
+        'TheWondrousBananAmusementPark',
+        conditionals.TheWondrousBananAmusementPark.summonIsOnField.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Base + relic bonuses
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(
+      0.5 + 0.16 + 0.32
+    )
+  })
+
   it('ThiefOfShootingMeteor', () => {
     const data = testCharacterData('ThiefOfShootingMeteor')
     const calc = new Calculator(
