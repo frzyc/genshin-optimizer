@@ -91,23 +91,23 @@ const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const c4AfterBurst_eleMasDisp = greaterEq(
   input.constellation,
   4,
-  equal(condAfterBurst, 'on', dm.constellation4.eleMas)
+  equal(condAfterBurst, 'on', dm.constellation4.eleMas),
 )
 const c4AfterBurst_eleMas = unequal(
   target.charKey,
   key,
-  c4AfterBurst_eleMasDisp
+  c4AfterBurst_eleMasDisp,
 )
 const [condC1OffFieldPath, condC1OffField] = cond(key, 'offField')
 const c1_enerRech_ = greaterEq(
   input.constellation,
   1,
-  equal(condC1OffField, 'on', dm.constellation1.enerRech_)
+  equal(condC1OffField, 'on', dm.constellation1.enerRech_),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -130,8 +130,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.passive1.sproutDmg), input.total.atk),
         'skill',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
   constellation6: {
@@ -141,8 +141,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.anbarDmg), input.total.atk),
         'elemental',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ), // This is possibly burst damage
   },
 }

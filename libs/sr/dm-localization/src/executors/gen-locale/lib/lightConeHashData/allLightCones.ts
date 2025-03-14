@@ -35,7 +35,7 @@ const lightConeArray = Object.entries(equipmentConfig).map(
       },
     ]
     return tuple
-  }
+  },
 )
 
 const data = Object.fromEntries(lightConeArray)

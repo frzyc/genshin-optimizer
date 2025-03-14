@@ -40,7 +40,7 @@ export function CharacterCardHeader({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const banner = characterAsset(characterKey, 'banner', gender)
 

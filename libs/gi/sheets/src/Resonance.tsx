@@ -76,7 +76,7 @@ const protectiveCanopy: IResonance = {
 const [ffNodeDisp, ffNode] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.pyro, 2, percent(0.25))),
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 const ferventFlames: IResonance = {
   name: tr('FerventFlames.name'),
@@ -109,7 +109,7 @@ const ferventFlames: IResonance = {
 const [swNodeDisp, swNode] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.hydro, 2, percent(0.25))),
-  { path: 'hp_' }
+  { path: 'hp_' },
 )
 const soothingWaters: IResonance = {
   name: tr('SoothingWater.name'),
@@ -146,9 +146,9 @@ const [siNodeDisp, siNode] = activeCharBuff(
   greaterEq(
     teamSize,
     4,
-    greaterEq(tally.cryo, 2, equal(condSI, 'on', percent(0.15)))
+    greaterEq(tally.cryo, 2, equal(condSI, 'on', percent(0.15))),
   ),
-  { path: 'critRate_' }
+  { path: 'critRate_' },
 )
 const shatteringIce: IResonance = {
   name: tr('ShatteringIce.name'),
@@ -222,17 +222,17 @@ const highVoltage: IResonance = {
 const [iwNodeStamDisp, iwNodeStam] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.15))),
-  { path: 'staminaDec_' }
+  { path: 'staminaDec_' },
 )
 const [iwNodeMoveDisp, iwNodeMove] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(0.1))),
-  { path: 'moveSPD_' }
+  { path: 'moveSPD_' },
 )
 const [iwNodeCDDisp, iwNodeCD] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.anemo, 2, percent(-0.05))),
-  { path: 'cdRed_' }
+  { path: 'cdRed_' },
 )
 const impetuousWinds: IResonance = {
   name: tr('ImpetuousWinds.name'),
@@ -270,16 +270,16 @@ const condERHit = condReadNode(condERHitPath)
 const [erNodeshield_disp, erNodeshield_] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.geo, 2, percent(0.15))),
-  { path: 'shield_' }
+  { path: 'shield_' },
 )
 const [erNodeDMG_resonanceDisp, erNodeDMG_resonance] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
-    greaterEq(tally.geo, 2, equal(condERShield, 'on', percent(0.15)))
+    greaterEq(tally.geo, 2, equal(condERShield, 'on', percent(0.15))),
   ),
-  { path: 'all_dmg_' }
+  { path: 'all_dmg_' },
 )
 const [, erNodeDMG_] = activeCharBuff(target.charKey, erNodeDMG_resonance, {
   path: 'all_dmg_',
@@ -289,9 +289,9 @@ const [erNodeRes_disp, erNodeRes_] = activeCharBuff(
   greaterEq(
     teamSize,
     4,
-    greaterEq(tally.geo, 2, equal(condERHit, 'on', percent(-0.2)))
+    greaterEq(tally.geo, 2, equal(condERHit, 'on', percent(-0.2))),
   ),
-  { path: 'geo_enemyRes_' }
+  { path: 'geo_enemyRes_' },
 )
 const enduringRock: IResonance = {
   name: tr('EnduringRock.name'),
@@ -367,25 +367,25 @@ const condSG3ele = condReadNode(condSG3elePath)
 const [sgBase_eleMasDisp, sgBase_eleMas] = activeCharBuff(
   input.charKey,
   greaterEq(teamSize, 4, greaterEq(tally.dendro, 2, 50)),
-  { path: 'eleMas' }
+  { path: 'eleMas' },
 )
 const [sg2ele_eleMasDisp, sg2ele_eleMas] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
-    greaterEq(tally.dendro, 2, equal(condSG2ele, 'on', 30))
+    greaterEq(tally.dendro, 2, equal(condSG2ele, 'on', 30)),
   ),
-  { path: 'eleMas' }
+  { path: 'eleMas' },
 )
 const [sg3ele_eleMasDisp, sg3ele_eleMas] = activeCharBuff(
   input.charKey,
   greaterEq(
     teamSize,
     4,
-    greaterEq(tally.dendro, 2, equal(condSG3ele, 'on', 20))
+    greaterEq(tally.dendro, 2, equal(condSG3ele, 'on', 20)),
   ),
-  { path: 'eleMas' }
+  { path: 'eleMas' },
 )
 const sprawlingGreenery: IResonance = {
   name: tr('SprawlingGreenery.name'),

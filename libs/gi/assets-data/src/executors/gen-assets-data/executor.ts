@@ -71,7 +71,7 @@ type CharacterIconData = Record<
 >
 
 const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
-  options
+  options,
 ) => {
   console.log('Executor ran for GenAssetsData', options)
 
@@ -87,7 +87,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
           throw new Error(`No piece data with id ${pieceId} in setId ${setId}`)
         const { icon, equipType } = pieceData
         return [artifactSlotMap[equipType], icon]
-      })
+      }),
     ) as Partial<Record<ArtifactSlotKey, string>>
 
     assetData.artifacts[artifactIdMap[setId]] = pieces
@@ -159,39 +159,39 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       layeredAssignment(
         assetChar,
         [ck, 'skill'],
-        avatarSkillExcelConfigData[skill].skillIcon
+        avatarSkillExcelConfigData[skill].skillIcon,
       )
 
       // burst has a more detailed _HD version
       layeredAssignment(
         assetChar,
         [ck, 'burst'],
-        avatarSkillExcelConfigData[burst].skillIcon + '_HD'
+        avatarSkillExcelConfigData[burst].skillIcon + '_HD',
       )
       if (sprint)
         layeredAssignment(
           assetChar,
           [ck, 'sprint'],
-          avatarSkillExcelConfigData[sprint].skillIcon
+          avatarSkillExcelConfigData[sprint].skillIcon,
         )
 
       passive1.proudSkillGroupId &&
         layeredAssignment(
           assetChar,
           [ck, 'passive1'],
-          proudSkillExcelConfigData[passive1.proudSkillGroupId][0].icon
+          proudSkillExcelConfigData[passive1.proudSkillGroupId][0].icon,
         )
       passive2.proudSkillGroupId &&
         layeredAssignment(
           assetChar,
           [ck, 'passive2'],
-          proudSkillExcelConfigData[passive2.proudSkillGroupId][0].icon
+          proudSkillExcelConfigData[passive2.proudSkillGroupId][0].icon,
         )
       if (passive3?.proudSkillGroupId)
         layeredAssignment(
           assetChar,
           [ck, 'passive3'],
-          proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon
+          proudSkillExcelConfigData[passive3.proudSkillGroupId][0].icon,
         )
 
       // Seems to be only used by SangonomiyaKokomi
@@ -199,14 +199,14 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         layeredAssignment(
           assetChar,
           [ck, 'passive'],
-          proudSkillExcelConfigData[passive.proudSkillGroupId][0].icon
+          proudSkillExcelConfigData[passive.proudSkillGroupId][0].icon,
         )
 
       talents.forEach((skId, i) => {
         layeredAssignment(
           assetChar,
           [ck, `constellation${i + 1}`],
-          avatarTalentExcelConfigData[skId].icon
+          avatarTalentExcelConfigData[skId].icon,
         )
       })
     }

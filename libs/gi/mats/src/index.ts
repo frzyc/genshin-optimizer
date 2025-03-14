@@ -9,7 +9,7 @@ export { allCharacterMats }
 
 export function getCharAscMat(
   char: CharacterKey,
-  asc: AscensionKey
+  asc: AscensionKey,
 ): UpgradeCost | undefined {
   if (!(char in allCharacterMats)) return undefined
 

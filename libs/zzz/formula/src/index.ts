@@ -19,11 +19,11 @@ export * from './util'
 
 export function zzzCalculatorWithValues(extras: TagMapEntries<number>) {
   return zzzCalculatorWithEntries(
-    extras.map(({ tag, value }) => ({ tag, value: constant(value) }))
+    extras.map(({ tag, value }) => ({ tag, value: constant(value) })),
   )
 }
 export function zzzCalculatorWithEntries(
-  extras: TagMapEntries<AnyNode | ReRead>
+  extras: TagMapEntries<AnyNode | ReRead>,
 ) {
   const extraEntries = compileTagMapValues(keys, extras)
   return new Calculator(keys, values, extraEntries)

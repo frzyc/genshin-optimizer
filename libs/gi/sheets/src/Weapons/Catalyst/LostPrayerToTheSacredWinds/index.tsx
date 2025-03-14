@@ -29,16 +29,16 @@ const eleDmgStacks = Object.fromEntries(
       {
         ...objKeyMap(range(1, 4), (i) => prod(eleDmgInc, i)),
       },
-      naught
+      naught,
     ),
-  ])
+  ]),
 )
 
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     moveSPD_,
     ...Object.fromEntries(
-      allElementKeys.map((ele) => [`${ele}_dmg_`, eleDmgStacks[ele]])
+      allElementKeys.map((ele) => [`${ele}_dmg_`, eleDmgStacks[ele]]),
     ),
   },
 })

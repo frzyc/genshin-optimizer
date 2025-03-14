@@ -11,7 +11,7 @@ const critRate_arr = [-1, 0.04, 0.05, 0.06, 0.07, 0.08]
 const critRate_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, critRate_arr)
+  subscript(input.weapon.refinement, critRate_arr),
 )
 
 const [condAfterNormalElePath, condAfterNormalEle] = cond(key, 'afterNormalEle')
@@ -25,9 +25,9 @@ const normal_dmgInc = equal(
     'on',
     prod(
       subscript(input.weapon.refinement, dmgIncArr, { unit: '%' }),
-      input.total.eleMas
-    )
-  )
+      input.total.eleMas,
+    ),
+  ),
 )
 const skill_dmgInc = { ...normal_dmgInc }
 
@@ -43,7 +43,7 @@ const data = dataObjForWeaponSheet(
   {
     normal_dmgInc,
     skill_dmgInc,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {

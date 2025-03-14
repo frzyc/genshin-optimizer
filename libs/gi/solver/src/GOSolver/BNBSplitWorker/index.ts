@@ -57,7 +57,7 @@ export class BNBSplitWorker implements SplitWorker {
 
   constructor(
     { arts, optTarget, constraints, topN }: Setup,
-    callback: (interim: Interim) => void
+    callback: (interim: Interim) => void,
   ) {
     this.arts = arts
     this.min = [-Infinity, ...constraints.map((x) => x.min)]
@@ -160,7 +160,7 @@ export class BNBSplitWorker implements SplitWorker {
       arts,
       this.topN,
       {},
-      { pruneNodeRange: true }
+      { pruneNodeRange: true },
     ))
     nodes = optimize(nodes, {}, (_) => false)
     if (Object.values(arts.values).every((x) => x.length)) {
@@ -168,7 +168,7 @@ export class BNBSplitWorker implements SplitWorker {
       lins = data.lins
       approxs = data.approxs
       maxConts = approxs.map((approx) =>
-        objMap(arts.values, (val) => maxContribution(val, approx))
+        objMap(arts.values, (val) => maxContribution(val, approx)),
       )
     }
     // Removing artifacts that doesn't meet the required opt target contributions.
@@ -179,13 +179,13 @@ export class BNBSplitWorker implements SplitWorker {
     const leadingConts = maxConts.map((cont, i) =>
       Object.values(cont).reduce(
         (accu, val) => accu + val,
-        approxs[i].base - this.min[i]
-      )
+        approxs[i].base - this.min[i],
+      ),
     )
     const newValues = objMap(arts.values, (arts, slot) => {
       const requiredConts = leadingConts.map((lc, i) => maxConts[i][slot] - lc)
       return arts.filter(({ id }) =>
-        approxs.every(({ conts }, i) => conts[id] >= requiredConts[i])
+        approxs.every(({ conts }, i) => conts[id] >= requiredConts[i]),
       )
     })
     arts = { base: arts.base, values: newValues }
@@ -214,13 +214,13 @@ export class BNBSplitWorker implements SplitWorker {
 
 function maxContribution(
   arts: ArtifactBuildData[],
-  approximation: Approximation
+  approximation: Approximation,
 ): number {
   return Math.max(...arts.map(({ id }) => approximation.conts[id]!))
 }
 function approximation(
   nodes: OptNode[],
-  arts: ArtifactsBySlot
+  arts: ArtifactsBySlot,
 ): { lins: Linear[]; approxs: Approximation[] } {
   const lins = linearUB(nodes, arts)
   return {
@@ -237,6 +237,6 @@ function approximation(
 function dot(values: DynStat, lin: DynStat, c: number): number {
   return Object.entries(values).reduce(
     (accu, [k, v]) => accu + (lin[k] ?? 0) * v,
-    c
+    c,
   )
 }

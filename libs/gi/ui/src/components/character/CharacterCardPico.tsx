@@ -44,7 +44,7 @@ export function CharacterCardPico({
   const { silly } = useContext(SillyContext)
   const onClickHandler = useCallback(
     () => onClick?.(characterKey),
-    [characterKey, onClick]
+    [characterKey, onClick],
   )
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -56,7 +56,7 @@ export function CharacterCardPico({
         {children}
       </CardActionArea>
     ),
-    [onClickHandler, onMouseDown, onMouseEnter]
+    [onClickHandler, onMouseDown, onMouseEnter],
   )
   const [open, onTooltipOpen, onTooltipClose] = useBoolState()
 

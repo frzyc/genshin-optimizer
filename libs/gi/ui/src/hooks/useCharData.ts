@@ -43,7 +43,7 @@ export function useCharData(
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon
+  overrideWeapon?: ICachedWeapon,
 ): TeamData | undefined {
   const database = useDatabase()
   const [dbDirty, setDbDirty] = useForceUpdate()
@@ -58,7 +58,7 @@ export function useCharData(
         mainStatAssumptionLevel,
         gender,
         overrideArt,
-        overrideWeapon
+        overrideWeapon,
       ),
     [
       dbDirtyDeferred,
@@ -68,7 +68,7 @@ export function useCharData(
       mainStatAssumptionLevel,
       overrideArt,
       overrideWeapon,
-    ]
+    ],
   )
 
   useEffect(
@@ -76,7 +76,7 @@ export function useCharData(
       characterKey
         ? database.chars.follow(characterKey, setDbDirty)
         : undefined,
-    [characterKey, setDbDirty, database]
+    [characterKey, setDbDirty, database],
   )
 
   return data
@@ -114,7 +114,7 @@ function getTeamDataCalc(
   mainStatAssumptionLevel = 0,
   gender: GenderKey,
   overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon
+  overrideWeapon?: ICachedWeapon,
 ): TeamData | undefined {
   if (!characterKey) return undefined
 
@@ -129,7 +129,7 @@ function getTeamDataCalc(
       characterKey,
       mainStatAssumptionLevel,
       overrideArt,
-      overrideWeapon
+      overrideWeapon,
     ) ?? {}
   if (!teamData || !teamBundle) return undefined
 
@@ -151,7 +151,7 @@ function TeamDataBundle(
   characterKey: CharacterKey | '',
   mainStatAssumptionLevel = 0,
   overrideArt?: ICachedArtifact[] | Data,
-  overrideWeapon?: ICachedWeapon
+  overrideWeapon?: ICachedWeapon,
 ): TeamDataBundle | undefined {
   if (!characterKey) return undefined
   const character = database.chars.get(characterKey)
@@ -164,12 +164,12 @@ function TeamDataBundle(
     character,
     overrideWeapon
       ? overrideWeapon
-      : database.weapons.get(character.equippedWeapon) ??
-          defaultInitialWeapon(),
+      : (database.weapons.get(character.equippedWeapon) ??
+          defaultInitialWeapon()),
     overrideArt ??
       (Object.values(character.equippedArtifacts)
         .map((a) => database.arts.get(a))
-        .filter((a) => a) as ICachedArtifact[])
+        .filter((a) => a) as ICachedArtifact[]),
   )
   if (!char1DataBundle) return undefined
   const teamBundle = { [characterKey]: char1DataBundle }
@@ -193,7 +193,7 @@ function getCharDataBundle(
   mainStatAssumptionLevel: number,
   character: ICachedCharacter,
   weapon: ICachedWeapon,
-  artifacts: (ICachedArtifact | undefined)[] | Data
+  artifacts: (ICachedArtifact | undefined)[] | Data,
 ): CharBundle | undefined {
   const characterSheet = getCharSheet(character.key, database.gender)
   if (!characterSheet) return undefined

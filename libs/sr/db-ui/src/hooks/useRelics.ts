@@ -29,7 +29,7 @@ export function useRelics(relicIds: RelicIds | undefined = emptyRelicIds) {
             if (r === 'remove')
               setRelics((relics) => ({ ...relics, [v.slotKey]: undefined }))
           })
-        : () => {}
+        : () => {},
     )
     return () => unfollows.forEach((unfollow) => unfollow())
   }, [database, relicIds])

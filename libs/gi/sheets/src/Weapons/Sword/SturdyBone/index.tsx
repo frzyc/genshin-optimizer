@@ -15,8 +15,8 @@ const normal_dmgInc = equal(
   'on',
   prod(
     subscript(input.weapon.refinement, normal_dmgInc_arr, { unit: '%' }),
-    input.total.atk
-  )
+    input.total.atk,
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -26,7 +26,7 @@ const data = dataObjForWeaponSheet(
       normal_dmgInc,
     },
   },
-  { normal_dmgInc }
+  { normal_dmgInc },
 )
 const sheet: IWeaponSheet = {
   document: [

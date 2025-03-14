@@ -14,12 +14,12 @@ const [condPath, condNode] = cond(key, 'defeat')
 const set4Charged = greaterEq(
   input.artSet.BloodstainedChivalry,
   4,
-  equal('hit', condNode, percent(0.5))
+  equal('hit', condNode, percent(0.5)),
 )
 const set4StamDec = greaterEq(
   input.artSet.BloodstainedChivalry,
   4,
-  equal('hit', condNode, percent(1))
+  equal('hit', condNode, percent(1)),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

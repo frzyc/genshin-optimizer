@@ -77,8 +77,8 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     Object.entries(bonusStats).filter(
       ([key, value]) =>
         allInputPremodKeys.includes(key as InputPremodKey) &&
-        typeof value == 'number'
-    )
+        typeof value == 'number',
+    ),
   )
 
   return {
@@ -92,7 +92,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
   }
 }
 export function validateCustomMultiTarget(
-  cmt: unknown
+  cmt: unknown,
 ): CustomMultiTarget | undefined {
   if (typeof cmt !== 'object') return undefined
   let { name, description, targets } = cmt as CustomMultiTarget

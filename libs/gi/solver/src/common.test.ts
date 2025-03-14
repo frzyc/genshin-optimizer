@@ -17,7 +17,7 @@ import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
 
 function* allCombinations(
-  sets: Record<ArtifactSlotKey, ArtifactSetKey[]>
+  sets: Record<ArtifactSlotKey, ArtifactSetKey[]>,
 ): Iterable<Record<ArtifactSlotKey, ArtifactSetKey>> {
   for (const flower of sets.flower)
     for (const circlet of sets.circlet)
@@ -45,7 +45,7 @@ describe('common.ts', () => {
       allowedRainbows = exclusionToAllowed(filter.rainbow)
 
     for (const combination of allCombinations(
-      objKeyMap(allArtifactSlotKeys, (_) => artSets)
+      objKeyMap(allArtifactSlotKeys, (_) => artSets),
     )) {
       let shouldMatch = true,
         rainbowCount = 0
@@ -71,7 +71,7 @@ describe('common.ts', () => {
             case 'exclude':
               return !filter.sets.has(art)
           }
-        })
+        }),
       ).length
 
       test(`Set ${Object.values(combination)}`, () => {
@@ -82,19 +82,19 @@ describe('common.ts', () => {
 
   function testFormulasEqual(
     f1: { nodes: OptNode[]; arts: ArtifactsBySlot },
-    f2: { nodes: OptNode[]; arts: ArtifactsBySlot }
+    f2: { nodes: OptNode[]; arts: ArtifactsBySlot },
   ) {
     const compute1 = precompute(f1.nodes, f1.arts.base, (f) => f.path[1], 5)
     const compute2 = precompute(f2.nodes, f2.arts.base, (f) => f.path[1], 5)
     const truth = cartesian(
-      ...allArtifactSlotKeys.map((slot) => f1.arts.values[slot])
+      ...allArtifactSlotKeys.map((slot) => f1.arts.values[slot]),
     ).map((aa) => compute1(aa as any))
     const test = cartesian(
-      ...allArtifactSlotKeys.map((slot) => f2.arts.values[slot])
+      ...allArtifactSlotKeys.map((slot) => f2.arts.values[slot]),
     ).map((aa) => compute2(aa as any))
 
     truth.forEach((trut, i) =>
-      trut.forEach((tru, j) => expect(tru).toBeCloseTo(test[i][j]))
+      trut.forEach((tru, j) => expect(tru).toBeCloseTo(test[i][j])),
     )
   }
 
@@ -107,7 +107,7 @@ describe('common.ts', () => {
           [
             { id: '', values: { atk: 1, glad: 1 } },
             { id: '', values: { atk_: 1, clam: 1 } },
-          ] as ArtifactBuildData[]
+          ] as ArtifactBuildData[],
       ),
     }
     test('basic', () => {
@@ -124,7 +124,7 @@ describe('common.ts', () => {
         1,
         dynRead('atk'),
         prod(1500, dynRead('atk_')),
-        threshold(dynRead('glad'), 2, 0.18, 0)
+        threshold(dynRead('glad'), 2, 0.18, 0),
       )
       const z = pruneAll([node], [-Infinity], arts, 5, {}, { reaffine: true })
 

@@ -47,7 +47,7 @@ export function CompactDiscCard({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -55,7 +55,7 @@ export function CompactDiscCard({
         {children}
       </Box>
     ),
-    []
+    [],
   )
 
   return (
@@ -190,7 +190,7 @@ export function CompactDiscCard({
                   <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
                     {toPercent(
                       getDiscMainStatVal(rarity, mainStatKey, level),
-                      mainStatKey
+                      mainStatKey,
                     ).toFixed(statKeyToFixed(mainStatKey))}
                     {getUnitStr(mainStatKey)}
                   </Typography>
@@ -214,7 +214,7 @@ export function CompactDiscCard({
                       substat={substat}
                       rarity={rarity}
                     />
-                  )
+                  ),
               )}
             </Box>
           </Box>
@@ -235,7 +235,7 @@ function SubstatDisplay({
   if (!upgrades || !key) return null
   const displayValue = toPercent(
     getDiscSubStatBaseVal(key, rarity) * upgrades,
-    key
+    key,
   ).toFixed(statKeyToFixed(key))
   return (
     <Typography

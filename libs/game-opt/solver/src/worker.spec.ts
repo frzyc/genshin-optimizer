@@ -9,10 +9,10 @@ test('Worker', () => {
   const nodes = [prod(readA, sum(readB, 2))]
   const candidates = [...Array(7)].map((_) => [
     ...[...Array(10)].map(
-      (_, i) => ({ id: 't' + i, a: i, b: 10 - i } as any as Candidate<string>)
+      (_, i) => ({ id: 't' + i, a: i, b: 10 - i }) as any as Candidate<string>,
     ),
     ...[...Array(9)].map(
-      (_, i) => ({ id: 'b' + i, a: i, b: 9 - i } as any as Candidate<string>)
+      (_, i) => ({ id: 'b' + i, a: i, b: 9 - i }) as any as Candidate<string>,
     ),
   ])
   const ids = candidates.map((cnds) => cnds.map((c) => c.id))

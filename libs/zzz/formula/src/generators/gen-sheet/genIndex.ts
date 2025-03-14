@@ -25,7 +25,7 @@ export default async function genIndex(_tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -39,14 +39,14 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeDiscIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -60,14 +60,14 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
 
 async function writeWengineIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -82,7 +82,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

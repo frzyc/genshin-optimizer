@@ -94,7 +94,7 @@ function EquipButton({
   const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
   const artifactids = objMap(
     database.teams.getLoadoutArtifacts(loadoutDatum),
-    (art) => art?.id
+    (art) => art?.id,
   )
   const newArt = database.arts.get(newArtId)
   if (!newArt) return
@@ -109,7 +109,7 @@ function EquipButton({
         currentArtifactIds={artifactids}
         newWeaponId={weapon?.id}
         newArtifactIds={objMap(artifactids, (art, slotKey) =>
-          slotKey === newArt.slotKey ? newArtId : art
+          slotKey === newArt.slotKey ? newArtId : art,
         )}
         show={show}
         onEquip={() => {
@@ -164,9 +164,9 @@ function UpgradeOptChartCardGraph({
     () =>
       database.arts.follow(
         upArt.id,
-        (_, reason) => reason === 'update' && updateUpOpt()
+        (_, reason) => reason === 'update' && updateUpOpt(),
       ),
-    [database, updateUpOpt, upArt.id]
+    [database, updateUpOpt, upArt.id],
   )
 
   const constrained = thresholds.length > 1
@@ -204,7 +204,7 @@ function UpgradeOptChartCardGraph({
           estCons: integralCons(v, v + step),
         },
       ]
-    }
+    },
   )
   dataHist.unshift({ x: perc(objMin), est: 0, estCons: 0 })
   dataHist.push({ x: perc(objMax), est: 0, estCons: 0 })
@@ -392,7 +392,7 @@ function EquippedArtifact({ slotKey }: { slotKey: ArtifactSlotKey }) {
   const { data } = useContext(DataContext)
   const artifact = useMemo(
     () => database.arts.get(data.get(input.art[slotKey].id).value),
-    [slotKey, data, database]
+    [slotKey, data, database],
   )
   return <ArtifactCardPico slotKey={slotKey} artifactObj={artifact} />
 }

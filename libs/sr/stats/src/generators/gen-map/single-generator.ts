@@ -10,7 +10,7 @@ import genMap from './genMap'
 import type { GenMapGeneratorSchema } from './schema'
 export default async function genMapGenerator(
   tree: Tree,
-  options: GenMapGeneratorSchema
+  options: GenMapGeneratorSchema,
 ) {
   const { map_type, map } = options
   switch (map_type) {

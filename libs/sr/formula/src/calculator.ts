@@ -13,7 +13,7 @@ export class Calculator extends Base<Tag, 'floor'> {
     return new DebugCalculator(
       this,
       tagStr,
-      createFilterDebug([...allLightConeKeys, ...allRelicSetKeys])
+      createFilterDebug([...allLightConeKeys, ...allRelicSetKeys]),
     )
   }
   override defaultAccu(tag: Tag): Read['ex'] {

@@ -230,7 +230,7 @@ export function getCharSheet(charKey: CharacterKey, gender: GenderKey) {
 
 function charKeyToCharSheetKey(
   charKey: CharacterKey,
-  gender: GenderKey
+  gender: GenderKey,
 ): CharacterSheetKey {
   if (allTravelerKeys.includes(charKey as TravelerKey))
     return `${charKey}${gender}` as CharacterSheetKey

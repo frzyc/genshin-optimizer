@@ -70,7 +70,7 @@ function compileTagMapEntries<V>(entries: TagMapEntries<V>): {
     [...tags].map(([category, val]) => ({
       category,
       values: new Set([...val]),
-    }))
+    })),
   )
   const values = compileTagMapValues(new TagMapKeys(keys), entries)
   return { keys, values }

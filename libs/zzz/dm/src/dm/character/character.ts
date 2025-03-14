@@ -187,7 +187,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
     .filter(([_, name]) => allCharacterKeys.includes(name as CharacterKey))
     .map(([id, name]) => {
       const raw = JSON.parse(
-        readHakushinJSON(`character/${id}.json`)
+        readHakushinJSON(`character/${id}.json`),
       ) as CharacterRawData
       // Not all agents have this info, or it is hidden for some reason
       const fullname =
@@ -220,7 +220,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
             hp: HpMax,
             atk: Attack,
             def: Defence,
-          })
+          }),
         ),
         coreStats: Object.values(raw.ExtraLevel).map(
           ({ Extra }) =>
@@ -230,10 +230,10 @@ export const charactersDetailedJSONData = Object.fromEntries(
                 isPercentStat(coreStatMap[Name])
                   ? Value / PERCENT_SCALING
                   : Value,
-              ])
+              ]),
             ) as Partial<
               Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
-            >
+            >,
         ),
         skills: objMap(raw.Skill, (skill) => ({
           ...skill,
@@ -280,5 +280,5 @@ export const charactersDetailedJSONData = Object.fromEntries(
         mindscapes: raw.Talent,
       }
       return [name, data] as const
-    })
+    }),
 ) as Record<CharacterKey, CharacterData>

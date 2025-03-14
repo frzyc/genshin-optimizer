@@ -8,13 +8,13 @@ describe('frontend', () => {
     cy.contains('label', 'Upload Screenshot').selectFile('assets/em_155.png')
     cy.wait(5000)
     cy.contains('button', 'Add Artifact', { timeout: 60000 }).should(
-      'not.be.disabled'
+      'not.be.disabled',
     )
     cy.get(
-      '[data-testid="artifact-editor"] [data-testid="main-stat"] button'
+      '[data-testid="artifact-editor"] [data-testid="main-stat"] button',
     ).should('have.text', 'Elemental Mastery')
     cy.get(
-      '[data-testid="artifact-editor"] [data-testid="main-stat"] p'
+      '[data-testid="artifact-editor"] [data-testid="main-stat"] p',
     ).should('have.text', '155')
 
     cy.contains('button', 'Clear').click()
@@ -23,13 +23,13 @@ describe('frontend', () => {
     cy.contains('label', 'Upload Screenshot').selectFile('assets/def_p_8_7.png')
     cy.wait(5000)
     cy.contains('button', 'Add Artifact', { timeout: 60000 }).should(
-      'not.be.disabled'
+      'not.be.disabled',
     )
     cy.get(
-      '[data-testid="artifact-editor"] [data-testid="main-stat"] button'
+      '[data-testid="artifact-editor"] [data-testid="main-stat"] button',
     ).should('have.text', 'DEF%')
     cy.get(
-      '[data-testid="artifact-editor"] [data-testid="main-stat"] p'
+      '[data-testid="artifact-editor"] [data-testid="main-stat"] p',
     ).should('have.text', '8.7%')
   })
 })

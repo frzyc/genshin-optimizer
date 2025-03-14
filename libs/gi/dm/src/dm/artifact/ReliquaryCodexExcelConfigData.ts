@@ -12,7 +12,7 @@ type ReliquaryCodexExcelConfigData = {
   SortOrder: number
 }
 const reliquaryCodexExcelConfigData = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryCodexExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/ReliquaryCodexExcelConfigData.json'),
 ) as ReliquaryCodexExcelConfigData[]
 
 export { reliquaryCodexExcelConfigData }

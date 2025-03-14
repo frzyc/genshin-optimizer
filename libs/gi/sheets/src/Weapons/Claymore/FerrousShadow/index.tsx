@@ -14,7 +14,7 @@ const [condPassivePath, condPassive] = cond(key, 'Unbending')
 const charged_dmg_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, bonusInc)
+  subscript(input.weapon.refinement, bonusInc),
 )
 const data = dataObjForWeaponSheet(key, {
   premod: {

@@ -4,7 +4,7 @@ export function toMainSite() {
     window.location.pathname === '/genshin-optimizer/'
   )
     window.alert(
-      'Why did you click on this? You are already on Genshin Optimizer!'
+      'Why did you click on this? You are already on Genshin Optimizer!',
     )
   else window.open('https://frzyc.github.io/genshin-optimizer/', '_blank')
 }

@@ -68,7 +68,7 @@ export class SandboxStorage implements DBStorage {
   }
   removeForKeys(shouldRemove: (key: string) => boolean) {
     this.storage = Object.fromEntries(
-      Object.entries(this.storage).filter(([key]) => !shouldRemove(key))
+      Object.entries(this.storage).filter(([key]) => !shouldRemove(key)),
     )
   }
   getDBVersion(): number {

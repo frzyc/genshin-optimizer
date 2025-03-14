@@ -24,44 +24,44 @@ function evalPoly(polys: SumOfMonomials[], x: DynStat) {
     poly.reduce((tot, mon) => {
       const trm = mon.$k * mon.terms.reduce((v, k) => v * (x[k] ?? 0), 1)
       return tot + trm
-    }, 0)
+    }, 0),
   )
 }
 function evalLinear(lins: Linear[], x: DynStat) {
   return lins.map((lin) =>
-    Object.entries(lin).reduce((tot, [k, v]) => tot + v * (x[k] ?? 0), lin.$c)
+    Object.entries(lin).reduce((tot, [k, v]) => tot + v * (x[k] ?? 0), lin.$c),
   )
 }
 
 /* 90/90 Kokomi with Donut */
 const hp = sum(
   customRead(['dyn', 'hp']),
-  prod(13471, customRead(['dyn', 'hp_']))
+  prod(13471, customRead(['dyn', 'hp_'])),
 )
 const atk = sum(
   customRead(['dyn', 'atk']),
-  prod(842, customRead(['dyn', 'atk_']))
+  prod(842, customRead(['dyn', 'atk_'])),
 )
 const def = sum(
   customRead(['dyn', 'def']),
-  prod(657, customRead(['dyn', 'def_']))
+  prod(657, customRead(['dyn', 'def_'])),
 )
 const crcd = sum(
   1,
-  prod(customRead(['dyn', 'critRate_']), customRead(['dyn', 'critDMG_']))
+  prod(customRead(['dyn', 'critRate_']), customRead(['dyn', 'critDMG_'])),
 )
 const crcd0 = sum(
   1,
   prod(
     max(sum(customRead(['dyn', 'critRate_']), -0.3), 0),
-    customRead(['dyn', 'critDMG_'])
-  )
+    customRead(['dyn', 'critDMG_']),
+  ),
 )
 const dmg_ = sum(
   1,
   customRead(['dyn', 'hydroDmg_']),
   threshold(customRead(['dyn', 'HeartOfDepth']), 2, 0.2, 0),
-  threshold(customRead(['dyn', 'HeartOfDepth']), 4, 0.35, 0)
+  threshold(customRead(['dyn', 'HeartOfDepth']), 4, 0.35, 0),
 )
 const er = customRead(['dyn', 'enerRech_'])
 const em = prod(2.78, frac(customRead(['dyn', 'eleMas']), 1400))
@@ -293,18 +293,18 @@ function doTest(...nodes: OptNode[]) {
       const stats = { ...exampleArts.base }
       arts.forEach((art) =>
         Object.entries(art.values).forEach(
-          ([k, v]) => (stats[k] = v + (stats[k] ?? 0))
-        )
+          ([k, v]) => (stats[k] = v + (stats[k] ?? 0)),
+        ),
       )
       const ubsPoly = evalPoly(poly, stats)
       const ubsLin = evalLinear(linear, stats)
       ubsPoly.forEach((ub, i) =>
-        expect(ub).toBeGreaterThanOrEqual(out[i] - prettyMuchZero)
+        expect(ub).toBeGreaterThanOrEqual(out[i] - prettyMuchZero),
       )
       ubsLin.forEach((ub, i) =>
-        expect(ub).toBeGreaterThanOrEqual(out[i] - prettyMuchZero)
+        expect(ub).toBeGreaterThanOrEqual(out[i] - prettyMuchZero),
       )
-    }
+    },
   )
 }
 
@@ -362,7 +362,7 @@ describe('polyUB', () => {
 
         // test lower bound thresh
         prod(-1, threshold(ohc, 4, 1, 0)),
-        prod(-1, threshold(ohc, 4, 0, 1))
+        prod(-1, threshold(ohc, 4, 0, 1)),
       )
     })
   })
@@ -381,10 +381,10 @@ describe('polyUB', () => {
         sum(
           prod(
             min(1, customRead(['dyn', '0'])),
-            min(1, customRead(['dyn', '1']))
+            min(1, customRead(['dyn', '1'])),
           ),
-          -1
-        )
+          -1,
+        ),
       )
       const fakeArts = toFakeArts(
         [0, 0],
@@ -394,17 +394,17 @@ describe('polyUB', () => {
         [1.5, 1],
         [1, 0],
         [2, 1],
-        [2, 0]
+        [2, 0],
       )
       const p = polyUB([n], fakeArts)
       const l = linearUB([n], fakeArts)
       const compute = precompute([n], {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0]
+          compute([art] as const)[0],
         )
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0]
+          compute([art] as const)[0],
         )
       })
     })
@@ -414,10 +414,10 @@ describe('polyUB', () => {
         sum(
           prod(
             min(1, customRead(['dyn', '0'])),
-            min(1, customRead(['dyn', '1']))
+            min(1, customRead(['dyn', '1'])),
           ),
-          1
-        )
+          1,
+        ),
       )
       const fakeArts = toFakeArts(
         [0, 0],
@@ -427,7 +427,7 @@ describe('polyUB', () => {
         [1.5, 1],
         [1, 0],
         [2, 1],
-        [2, 0]
+        [2, 0],
       )
 
       const nodes = [
@@ -443,35 +443,35 @@ describe('polyUB', () => {
       const compute = precompute(nodes, {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero,
         )
         expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art] as const)[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero,
         )
         expect(evalPoly(p, art.values)[2]).toBeGreaterThanOrEqual(
-          compute([art] as const)[2] - prettyMuchZero
+          compute([art] as const)[2] - prettyMuchZero,
         )
         expect(evalPoly(p, art.values)[3]).toBeGreaterThanOrEqual(
-          compute([art] as const)[3] - prettyMuchZero
+          compute([art] as const)[3] - prettyMuchZero,
         )
         expect(evalPoly(p, art.values)[4]).toBeGreaterThanOrEqual(
-          compute([art] as const)[4] - prettyMuchZero
+          compute([art] as const)[4] - prettyMuchZero,
         )
 
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero,
         )
         expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art] as const)[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero,
         )
         expect(evalLinear(l, art.values)[2]).toBeGreaterThanOrEqual(
-          compute([art] as const)[2] - prettyMuchZero
+          compute([art] as const)[2] - prettyMuchZero,
         )
         expect(evalLinear(l, art.values)[3]).toBeGreaterThanOrEqual(
-          compute([art] as const)[3] - prettyMuchZero
+          compute([art] as const)[3] - prettyMuchZero,
         )
         expect(evalLinear(l, art.values)[4]).toBeGreaterThanOrEqual(
-          compute([art] as const)[4] - prettyMuchZero
+          compute([art] as const)[4] - prettyMuchZero,
         )
       })
     })
@@ -479,11 +479,11 @@ describe('polyUB', () => {
       // Boundable, but not currently handled
       const n = prod(
         sum(customRead(['dyn', '0']), -2),
-        customRead(['dyn', '1'])
+        customRead(['dyn', '1']),
       )
       const n2 = prod(
         sum(customRead(['dyn', '0']), -2),
-        min(1, customRead(['dyn', '1']))
+        min(1, customRead(['dyn', '1'])),
       )
       const fakeArts = toFakeArts(
         [0, 0],
@@ -493,7 +493,7 @@ describe('polyUB', () => {
         [1.5, 1],
         [1, 0],
         [2, 1],
-        [2, 0]
+        [2, 0],
       )
 
       const p = polyUB([n, n2], fakeArts)
@@ -501,17 +501,17 @@ describe('polyUB', () => {
       const compute = precompute([n, n2], {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero,
         )
         expect(evalPoly(p, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art] as const)[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero,
         )
 
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero,
         )
         expect(evalLinear(l, art.values)[1]).toBeGreaterThanOrEqual(
-          compute([art] as const)[1] - prettyMuchZero
+          compute([art] as const)[1] - prettyMuchZero,
         )
       })
     })
@@ -526,7 +526,7 @@ describe('polyUB', () => {
         z3,
         z4,
         prod(z1, z2, z3, z4),
-        sum(prod(z1, z2), prod(-0.3, z3, z4), z2)
+        sum(prod(z1, z2), prod(-0.3, z3, z4), z2),
       )
     })
   })
@@ -535,7 +535,7 @@ describe('polyUB', () => {
       // Could be boundable, but involves polynomial factorization.
       const n = prod(
         sum(customRead(['dyn', '0']), -1),
-        min(customRead(['dyn', '1']), 1.5)
+        min(customRead(['dyn', '1']), 1.5),
       )
       const fakeArts = toFakeArts(
         [0, 0],
@@ -545,7 +545,7 @@ describe('polyUB', () => {
         [1.5, 1],
         [1, 0],
         [2, 1],
-        [2, 0]
+        [2, 0],
       )
 
       expect(() => polyUB([n], fakeArts)).toThrow()
@@ -561,7 +561,7 @@ describe('polyUB', () => {
       const n = prod(
         -1,
         sum(min(0.1, customRead(['dyn', '0'])), -1.5),
-        sum(min(0.1, customRead(['dyn', '1'])), -1.5)
+        sum(min(0.1, customRead(['dyn', '1'])), -1.5),
       )
       const fakeArts = toFakeArts(
         [0, 0],
@@ -571,7 +571,7 @@ describe('polyUB', () => {
         [1.5, 1],
         [1, 0],
         [2, 1],
-        [2, 0]
+        [2, 0],
       )
 
       const p = polyUB([n], fakeArts)
@@ -579,11 +579,11 @@ describe('polyUB', () => {
       const compute = precompute([n], {}, (f) => f.path[1], 1)
       fakeArts.values.circlet.forEach((art) => {
         expect(evalPoly(p, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero,
         )
 
         expect(evalLinear(l, art.values)[0]).toBeGreaterThanOrEqual(
-          compute([art] as const)[0] - prettyMuchZero
+          compute([art] as const)[0] - prettyMuchZero,
         )
       })
     })
@@ -592,7 +592,7 @@ describe('polyUB', () => {
       const n = prod(
         -1,
         sum(min(0.1, customRead(['dyn', '0'])), -0.2),
-        sum(min(0.1, customRead(['dyn', '1'])), -0.2)
+        sum(min(0.1, customRead(['dyn', '1'])), -0.2),
       )
       const fakeArts = toFakeArts(
         [0, 0],
@@ -602,7 +602,7 @@ describe('polyUB', () => {
         [1.5, 1],
         [1, 0],
         [2, 1],
-        [2, 0]
+        [2, 0],
       )
 
       expect(() => polyUB([n], fakeArts)).toThrow()

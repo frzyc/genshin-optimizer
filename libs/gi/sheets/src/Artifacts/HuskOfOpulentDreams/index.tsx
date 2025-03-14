@@ -24,7 +24,7 @@ const set2 = greaterEq(
   input.artSet.HuskOfOpulentDreams,
   2,
   percent(0.3),
-  def_info
+  def_info,
 )
 const stackArr = range(1, 4)
 const set4Def = greaterEq(
@@ -33,9 +33,9 @@ const set4Def = greaterEq(
   lookup(
     condStack,
     Object.fromEntries(stackArr.map((i) => [i, percent(0.06 * i)])),
-    naught
+    naught,
   ),
-  def_info
+  def_info,
 )
 const set4Geo = greaterEq(
   input.artSet.HuskOfOpulentDreams,
@@ -43,8 +43,8 @@ const set4Geo = greaterEq(
   lookup(
     condStack,
     Object.fromEntries(stackArr.map((i) => [i, percent(0.06 * i)])),
-    naught
-  )
+    naught,
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -76,7 +76,7 @@ const sheet: SetEffectSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
       },
     ],

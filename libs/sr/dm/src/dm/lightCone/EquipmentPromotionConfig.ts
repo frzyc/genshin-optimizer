@@ -21,7 +21,7 @@ export type EquipmentPromotionConfig = {
 }
 
 const equipmentPromotionConfigSrc = JSON.parse(
-  readDMJSON('ExcelOutput/EquipmentPromotionConfig.json')
+  readDMJSON('ExcelOutput/EquipmentPromotionConfig.json'),
 ) as EquipmentPromotionConfig[]
 
 export const equipmentPromotionConfig = equipmentPromotionConfigSrc.reduce(
@@ -33,10 +33,10 @@ export const equipmentPromotionConfig = equipmentPromotionConfigSrc.reduce(
     fullConfig[config.EquipmentID].push(config)
     return fullConfig
   },
-  {} as Record<LightConeId, EquipmentPromotionConfig[]>
+  {} as Record<LightConeId, EquipmentPromotionConfig[]>,
 )
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/equipmentPromotionConfig_gen.json`,
-  equipmentPromotionConfig
+  equipmentPromotionConfig,
 )

@@ -81,13 +81,13 @@ const nodeA1 = greaterEq(
   equal(
     condSkill,
     'on',
-    equal(input.activeCharKey, target.charKey, dm.passive1.stam)
-  )
+    equal(input.activeCharKey, target.charKey, dm.passive1.stam),
+  ),
 )
 const nodeA1Display = greaterEq(
   input.asc,
   1,
-  equal(condSkill, 'on', dm.passive1.stam)
+  equal(condSkill, 'on', dm.passive1.stam),
 )
 
 const [condC2Path, condC2] = cond(key, 'c2')
@@ -97,17 +97,17 @@ const nodeC2 = greaterEq(
   equal(
     condC2,
     'on',
-    equal(input.activeCharKey, target.charKey, dm.constellation2.hydro_dmg_)
-  )
+    equal(input.activeCharKey, target.charKey, dm.constellation2.hydro_dmg_),
+  ),
 )
 const nodeC2Display = greaterEq(
   input.constellation,
   2,
-  equal(condC2, 'on', dm.constellation2.hydro_dmg_)
+  equal(condC2, 'on', dm.constellation2.hydro_dmg_),
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -119,7 +119,7 @@ const dmgFormulas = {
       'hp',
       dm.skill.cregen_hp_,
       dm.skill.cregen_hp,
-      'skill'
+      'skill',
     ),
     dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
   },

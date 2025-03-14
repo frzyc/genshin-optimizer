@@ -4,7 +4,7 @@ import { PROJROOT_PATH } from '../../consts'
 import { readHakushinJSON } from '../../util'
 
 const charctersJsonData = JSON.parse(
-  readHakushinJSON('character.json')
+  readHakushinJSON('character.json'),
 ) as Record<
   string,
   {
@@ -17,16 +17,16 @@ const charctersJsonData = JSON.parse(
 
 const characterIdMap = objFilter(
   objMap(charctersJsonData, ({ code }) => nameToKey(code)),
-  (key) => !!key && !['Belle', 'Wise'].includes(key)
+  (key) => !!key && !['Belle', 'Wise'].includes(key),
 )
 
 dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/character/characterIdMap.json`,
-  characterIdMap
+  characterIdMap,
 )
 dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/character/characterKeys.json`,
-  Object.values(characterIdMap).sort()
+  Object.values(characterIdMap).sort(),
 )
 
 export { charctersJsonData }

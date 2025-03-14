@@ -214,19 +214,19 @@ function SetFilter({ disabled }: { disabled?: boolean }) {
     (setFilter2Cavern: RelicCavernSetKey[]) => {
       database.optConfigs.set(optConfigId, { setFilter2Cavern })
     },
-    [database, optConfigId]
+    [database, optConfigId],
   )
   const setSetFilter4Cavern = useCallback(
     (setFilter4Cavern: RelicCavernSetKey[]) => {
       database.optConfigs.set(optConfigId, { setFilter4Cavern })
     },
-    [database, optConfigId]
+    [database, optConfigId],
   )
   const setSetFilter2Planar = useCallback(
     (setFilter2Planar: RelicPlanarSetKey[]) => {
       database.optConfigs.set(optConfigId, { setFilter2Planar })
     },
-    [database, optConfigId]
+    [database, optConfigId],
   )
   return (
     <RelicSetFilter

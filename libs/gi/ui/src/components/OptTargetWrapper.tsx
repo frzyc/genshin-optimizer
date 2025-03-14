@@ -27,7 +27,7 @@ export function OptTargetWrapper({ children }: { children: ReactNode }) {
       dataContextValue.teamData,
       characterKey,
       optimizationTarget,
-      statFilters
+      statFilters,
     )
     if (!nodes) return defOptTargetContextObj
 
@@ -49,7 +49,7 @@ function getScalesWith(nodes: OptNode[]) {
   const scalesWith = new Set<string>()
   forEachNodes(
     nodes,
-    (node) => node.operation === 'read' && scalesWith.add(node.path[1])
+    (node) => node.operation === 'read' && scalesWith.add(node.path[1]),
   )
   return scalesWith as Set<MainSubStatKey>
 }

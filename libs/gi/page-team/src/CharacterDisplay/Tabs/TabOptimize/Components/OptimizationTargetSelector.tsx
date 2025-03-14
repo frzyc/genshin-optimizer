@@ -30,7 +30,7 @@ export default function OptimizationTargetSelector({
       onClose()
       setTarget(target)
     },
-    [onClose, setTarget]
+    [onClose, setTarget],
   )
   return (
     <>

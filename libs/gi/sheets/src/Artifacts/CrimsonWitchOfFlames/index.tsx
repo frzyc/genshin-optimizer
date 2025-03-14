@@ -23,12 +23,12 @@ const set2 = greaterEq(
   input.artSet.CrimsonWitchOfFlames,
   2,
   percent(0.15),
-  pyro_dmg_info
+  pyro_dmg_info,
 )
 const set4Overload = greaterEq(
   input.artSet.CrimsonWitchOfFlames,
   4,
-  percent(0.4)
+  percent(0.4),
 )
 const set4Burning = { ...set4Overload }
 const set4Burgeon = { ...set4Overload }
@@ -41,9 +41,9 @@ const set4Pyro_dmg_ = greaterEq(
   lookup(
     condStack,
     Object.fromEntries(stackArr.map((i) => [i, percent((0.15 * i) / 2)])),
-    naught
+    naught,
   ),
-  pyro_dmg_info
+  pyro_dmg_info,
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -102,7 +102,7 @@ const sheet: SetEffectSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
       },
     ],

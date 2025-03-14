@@ -60,7 +60,7 @@ export default function OptimizeWrapper({
 
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(
-    undefined
+    undefined,
   )
   const character = useCharacterContext()
   useEffect(() => {
@@ -70,12 +70,12 @@ export default function OptimizeWrapper({
     (constraints: Constraints) => {
       character && database.chars.set(character.key, { constraints })
     },
-    [database, character]
+    [database, character],
   )
   const [discsDirty, setDiscsDirty] = useForceUpdate()
   useEffect(
     () => database.discs.followAny(setDiscsDirty),
-    [database.discs, setDiscsDirty]
+    [database.discs, setDiscsDirty],
   )
 
   const discsBySlot = useMemo(
@@ -106,18 +106,18 @@ export default function OptimizeWrapper({
           4: [],
           5: [],
           6: [],
-        } as Record<DiscSlotKey, ICachedDisc[]>
+        } as Record<DiscSlotKey, ICachedDisc[]>,
       ),
-    [discsDirty, database.discs.values, location, character]
+    [discsDirty, database.discs.values, location, character],
   )
 
   const totalPermutations = useMemo(
     () =>
       Object.values(discsBySlot).reduce(
         (total, discs) => total * discs.length,
-        1
+        1,
       ),
-    [discsBySlot]
+    [discsBySlot],
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -147,7 +147,7 @@ export default function OptimizeWrapper({
       setFilter4,
       discsBySlot,
       numWorkers,
-      setProgress
+      setProgress,
     )
 
     cancelled.then(async () => await optimizer.terminate())
@@ -315,7 +315,7 @@ function SetFilter({ disabled }: { disabled: boolean }) {
         database.chars.set(characterKey, { setFilter2 })
       }
     },
-    [database, characterKey]
+    [database, characterKey],
   )
   const setSetFilter4 = useCallback(
     (setFilter4: DiscSetKey[]) => {
@@ -323,7 +323,7 @@ function SetFilter({ disabled }: { disabled: boolean }) {
         database.chars.set(characterKey, { setFilter4 })
       }
     },
-    [database, characterKey]
+    [database, characterKey],
   )
   return (
     <DiscSetFilter

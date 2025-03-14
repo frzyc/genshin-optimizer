@@ -24,10 +24,10 @@ const skill_dmg_ = lookup(
   objKeyMap(selfHpChangeArr, (stack) =>
     prod(
       stack,
-      subscript(input.weapon.refinement, skill_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, skill_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 
 const [condTeamHpChangePath, condTeamHpChange] = cond(key, 'teamHpChange')
@@ -35,9 +35,9 @@ const teamHpChangeArr = range(1, 2)
 const hp_ = lookup(
   condTeamHpChange,
   objKeyMap(teamHpChangeArr, (stack) =>
-    prod(stack, subscript(input.weapon.refinement, hp_arr, { unit: '%' }))
+    prod(stack, subscript(input.weapon.refinement, hp_arr, { unit: '%' })),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

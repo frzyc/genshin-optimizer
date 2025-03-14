@@ -5,7 +5,7 @@ export class BorrowManager<T> {
 
   constructor(
     init: (key: string) => T,
-    deinit: (key: string, value: T) => void
+    deinit: (key: string, value: T) => void,
   ) {
     this.init = init
     this.deinit = deinit

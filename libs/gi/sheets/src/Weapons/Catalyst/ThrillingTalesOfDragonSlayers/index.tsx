@@ -23,12 +23,12 @@ const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
 const [atk_Disp, atk_dispInactive] = nonStackBuff(
   'ttds',
   'atk_',
-  subscript(input.weapon.refinement, atkSrc)
+  subscript(input.weapon.refinement, atkSrc),
 )
 const atk_ = unequal(
   input.activeCharKey,
   input.charKey, // Don't apply to wielding char
-  equal(input.activeCharKey, target.charKey, atk_Disp) // Only apply to active char
+  equal(input.activeCharKey, target.charKey, atk_Disp), // Only apply to active char
 )
 
 const data = dataObjForWeaponSheet(key, {

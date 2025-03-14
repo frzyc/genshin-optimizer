@@ -35,7 +35,7 @@ export function LightConeLevelSlider({
       setsliderLow(l)
       setsliderHigh(h)
     },
-    [setsliderLow, setsliderHigh]
+    [setsliderLow, setsliderHigh],
   )
   useEffect(() => setsliderLow(levelLow), [setsliderLow, levelLow])
 

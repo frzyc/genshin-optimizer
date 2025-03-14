@@ -24,7 +24,7 @@ const dmg = equal(
   key,
   customDmgNode(prod(dmgPerc, input.total.atk), 'elemental', {
     hit: { ele: constant('physical') },
-  })
+  }),
 )
 
 const data = dataObjForWeaponSheet(
@@ -36,7 +36,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     dmg,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {

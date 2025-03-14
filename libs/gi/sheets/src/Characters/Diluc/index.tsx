@@ -105,13 +105,13 @@ const nodeBurstInfusion = equalStr(condBurst, 'on', 'pyro')
 const nodeA4Bonus = greaterEq(
   input.asc,
   4,
-  equal(condBurst, 'on', dm.passive2.pyroInc)
+  equal(condBurst, 'on', dm.passive2.pyroInc),
 )
 
 const nodeC1Bonus = greaterEq(
   input.constellation,
   1,
-  equal(condC1, 'on', dm.constellation1.dmgInc)
+  equal(condC1, 'on', dm.constellation1.dmgInc),
 )
 const nodeC2AtkBonus = greaterEq(
   input.constellation,
@@ -122,11 +122,11 @@ const nodeC2AtkBonus = greaterEq(
       range(1, dm.constellation2.maxStack).map((i) => [
         i,
         constant(dm.constellation2.atkInc * i),
-      ])
+      ]),
     ),
     0,
-    { path: 'atk_' }
-  )
+    { path: 'atk_' },
+  ),
 )
 const nodeC2SpdBonus = greaterEq(
   input.constellation,
@@ -137,22 +137,22 @@ const nodeC2SpdBonus = greaterEq(
       range(1, dm.constellation2.maxStack).map((i) => [
         i,
         constant(dm.constellation2.atkSpdInc * i),
-      ])
+      ]),
     ),
     0,
-    { path: 'atkSPD_' }
-  )
+    { path: 'atkSPD_' },
+  ),
 )
 const nodeC6DmgBonus = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'on', dm.constellation6.dmgInc)
+  equal(condC6, 'on', dm.constellation6.dmgInc),
 )
 const nodeC6SpdBonus = greaterEq(
   input.constellation,
   6,
   equal(condC6, 'on', dm.constellation6.atkSpdInc),
-  { path: 'atkSPD_' }
+  { path: 'atkSPD_' },
 )
 
 const skillAdditional: Data = {
@@ -162,7 +162,7 @@ const skillAdditional: Data = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
@@ -183,12 +183,12 @@ const dmgFormulas = {
     secondHitBoost: greaterEq(
       input.constellation,
       4,
-      dmgNode('atk', dm.skill.secondHit, 'skill', skillAdditional)
+      dmgNode('atk', dm.skill.secondHit, 'skill', skillAdditional),
     ),
     thirdHitBoost: greaterEq(
       input.constellation,
       4,
-      dmgNode('atk', dm.skill.thridHit, 'skill', skillAdditional)
+      dmgNode('atk', dm.skill.thridHit, 'skill', skillAdditional),
     ),
   },
 }
@@ -432,7 +432,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

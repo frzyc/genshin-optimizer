@@ -104,7 +104,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   // update when a build is changed
   useEffect(() => {
     const unfollowBuilds = buildIds.map((buildId) =>
-      database.builds.follow(buildId, setDbDirty)
+      database.builds.follow(buildId, setDbDirty),
     )
     return () => unfollowBuilds.forEach((unFollow) => unFollow())
   }, [database, buildIds, setDbDirty])
@@ -115,7 +115,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
       oldId: compareData?.get(input.weapon.id)?.value,
       newId: data.get(input.weapon.id).value ?? '',
     }),
-    [data, compareData]
+    [data, compareData],
   )
 
   // state for showing weapon compare modal
@@ -128,7 +128,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
         oldId: compareData?.get(input.art[slotKey].id)?.value,
         newId: data.get(input.art[slotKey].id).value ?? '',
       })),
-    [data, compareData]
+    [data, compareData],
   )
 
   // state for showing art compare modal
@@ -140,7 +140,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
       database.builds.set(buildId, {
         weaponId: data.get(input.weapon.id).value,
         artifactIds: objKeyMap(allArtifactSlotKeys, (s) =>
-          data.get(input.art[s].id).value?.toString()
+          data.get(input.art[s].id).value?.toString(),
         ),
       })
       return
@@ -167,9 +167,9 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const artifactIds = useMemo(
     () =>
       objKeyMap(allArtifactSlotKeys, (slotKey) =>
-        data.get(input.art[slotKey].id).value?.toString()
+        data.get(input.art[slotKey].id).value?.toString(),
       ),
-    [data]
+    [data],
   )
   const artifacts = useMemo(
     () =>
@@ -177,13 +177,13 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
         .filter(notEmpty)
         .map((artiId: string) => database.arts.get(artiId))
         .filter(notEmpty),
-    [artifactIds, database.arts]
+    [artifactIds, database.arts],
   )
   const weaponId = data.get(input.weapon.id).value!
 
   const { weaponUsedInTeamCharKey, artUsedInTeamCharKeys } = useEquippedInTeam(
     weaponId!,
-    artifactIds
+    artifactIds,
   )
 
   const weapNano = useMemo(() => {
@@ -244,12 +244,12 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
       artifactIds,
       mainStatAssumptionLevel,
       artifactNewOldBySlot,
-    ]
+    ],
   )
 
   const currentlyEquipped =
     allArtifactSlotKeys.every(
-      (slotKey) => artifactIds[slotKey] === equippedArtifacts[slotKey]
+      (slotKey) => artifactIds[slotKey] === equippedArtifacts[slotKey],
     ) && data.get(input.weapon.id).value === equippedWeapon
 
   const sameAsBuildIds = useMemo(
@@ -261,11 +261,11 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
         const { artifactIds: buildArtIds, weaponId: buildWeaponId } = build
         return (
           allArtifactSlotKeys.every(
-            (slotKey) => artifactIds[slotKey] === buildArtIds[slotKey]
+            (slotKey) => artifactIds[slotKey] === buildArtIds[slotKey],
           ) && weaponId === buildWeaponId
         )
       }),
-    [dbDirty, database, buildIds, artifactIds, weaponId]
+    [dbDirty, database, buildIds, artifactIds, weaponId],
   )
 
   const isActiveBuild = buildType === 'real' && sameAsBuildIds.includes(buildId)
@@ -358,7 +358,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                   <span>
                     {
                       database.builds.get(
-                        isActiveBuild ? buildId : sameAsBuildIds[0]
+                        isActiveBuild ? buildId : sameAsBuildIds[0],
                       )?.name
                     }
                   </span>
@@ -407,7 +407,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               newWeaponId={data.get(input.weapon.id).value!}
               newArtifactIds={objKeyMap(
                 allArtifactSlotKeys,
-                (s) => data.get(input.art[s].id).value!
+                (s) => data.get(input.art[s].id).value!,
               )}
               show={showEquipChange}
               onEquip={equipBuild}
@@ -460,7 +460,7 @@ function CompareWeaponModal({
 
   const deleteWeapon = useCallback(
     (id: string) => database.weapons.remove(id),
-    [database]
+    [database],
   )
 
   return (
@@ -629,7 +629,7 @@ function CompareArtifactModal({
                 )}
                 {newArtifact &&
                   allArtifactSetExclusionKeys.includes(
-                    newArtifact.setKey as ArtSetExclusionKey
+                    newArtifact.setKey as ArtSetExclusionKey,
                   ) && (
                     <SetInclusionButton
                       setKey={newArtifact.setKey as ArtSetExclusionKey}
@@ -656,7 +656,7 @@ function ArtInclusionButton({ id }: { id: string }) {
       database.optConfigs.set(optConfigId, {
         artExclusion: toggleArr(artExclusion, id),
       }),
-    [id, artExclusion, database, optConfigId]
+    [id, artExclusion, database, optConfigId],
   )
   if (!optConfigId) return null
   return (
@@ -701,7 +701,7 @@ function ExcludeEquipButton({
       database.optConfigs.set(optConfigId, {
         excludedLocations: toggleArr(excludedLocations, locationKey),
       }),
-    [locationKey, excludedLocations, database, optConfigId]
+    [locationKey, excludedLocations, database, optConfigId],
   )
   if (!optConfigId) return null
   return (

@@ -10,7 +10,7 @@ import genSheet from './genSheet'
 import type { GenSheetGeneratorSchema } from './schema'
 export default async function genSheetGenerator(
   tree: Tree,
-  options: GenSheetGeneratorSchema
+  options: GenSheetGeneratorSchema,
 ) {
   const { sheet_type, sheet } = options
   switch (sheet_type) {

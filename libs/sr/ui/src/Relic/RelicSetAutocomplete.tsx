@@ -36,12 +36,12 @@ export function RelicSetAutocomplete({
         key: set,
         label: t(`relicNames_gen:${set}`),
       })),
-    [t]
+    [t],
   )
 
   const onChange = useCallback(
     (k: RelicSetKey | '' | null) => setRelicSetKey(k ?? ''),
-    [setRelicSetKey]
+    [setRelicSetKey],
   )
   return (
     <GeneralAutocomplete

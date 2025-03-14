@@ -15,8 +15,8 @@ const atk = equal(
   key,
   prod(
     subscript(input.weapon.refinement, atkSrc, { unit: '%' }),
-    input.premod.hp
-  )
+    input.premod.hp,
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -31,7 +31,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     atk,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {

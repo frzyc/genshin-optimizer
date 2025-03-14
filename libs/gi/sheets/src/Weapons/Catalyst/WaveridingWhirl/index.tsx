@@ -26,9 +26,9 @@ const hp_ = equal(
     subscript(input.weapon.refinement, hpArr, { unit: '%' }),
     prod(
       subscript(input.weapon.refinement, hpPerTeammateArr, { unit: '%' }),
-      min(tally.hydro, 2)
-    )
-  )
+      min(tally.hydro, 2),
+    ),
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -39,29 +39,29 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
   console.log(`Writing character data to ${path}/Characters`)
   await Promise.all(
     Object.entries(characterDataDump).map(([key, data]) =>
-      dumpPrettyFile(`${path}/Characters/${key}.json`, data)
-    )
+      dumpPrettyFile(`${path}/Characters/${key}.json`, data),
+    ),
   )
 
   console.log(`Writing lightCone data to ${path}/LightCone`)
   await Promise.all(
     Object.entries(lightConeDataDump).map(([key, data]) =>
-      dumpPrettyFile(`${path}/LightCone/${key}.json`, data)
-    )
+      dumpPrettyFile(`${path}/LightCone/${key}.json`, data),
+    ),
   )
 
   console.log(`Writing relic data to ${path}/Relic`)
   await Promise.all(
     Object.entries(relicDataDump).map(([key, data]) =>
-      dumpPrettyFile(`${path}/Relic/${key}.json`, data)
-    )
+      dumpPrettyFile(`${path}/Relic/${key}.json`, data),
+    ),
   )
 
   console.log(`Writing misc data to ${path}/misc`)
   await Promise.all(
     Object.entries(miscDataDump).map(([key, data]) =>
-      dumpPrettyFile(`${path}/misc/${key}.json`, data)
-    )
+      dumpPrettyFile(`${path}/misc/${key}.json`, data),
+    ),
   )
 
   console.log(`Writing combined data to ${proj_path}/src/allStat_gen.json`)

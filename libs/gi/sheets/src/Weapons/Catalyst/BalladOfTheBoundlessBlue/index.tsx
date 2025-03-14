@@ -24,20 +24,20 @@ const normal_dmg_ = lookup(
   objKeyMap(hitsArr, (symbol) =>
     prod(
       symbol,
-      subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 const charged_dmg_ = lookup(
   condHits,
   objKeyMap(hitsArr, (symbol) =>
     prod(
       symbol,
-      subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -30,28 +30,28 @@ const data: TagMapNodeEntries = [
 
   // premod X += base X * premod X%
   ...(['atk', 'def', 'hp'] as const).map((s) =>
-    ownBuff.premod[s].add(prod(own.base[s], own.premod[`${s}_`]))
+    ownBuff.premod[s].add(prod(own.base[s], own.premod[`${s}_`])),
   ),
 
   // Capped CR = Max(Min(Final CR, 1), 0)
   ownBuff.common.cappedCritRate_.add(
-    max(min(own.final.critRate_, percent(1)), percent(0))
+    max(min(own.final.critRate_, percent(1)), percent(0)),
   ),
   ownBuff.trans.cappedCritRate_.add(
-    max(min(own.trans.critRate_, percent(1)), percent(0))
+    max(min(own.trans.critRate_, percent(1)), percent(0)),
   ),
 
   // Char & weapon curves
   ...Object.entries(allStats.char.expCurve).map(([k, v]) =>
-    allStatics('static')[k].add(subscript(own.char.lvl, v))
+    allStatics('static')[k].add(subscript(own.char.lvl, v)),
   ),
   ...Object.entries(allStats.weapon.expCurve).map(([k, v]) =>
-    allStatics('static')[k].add(subscript(own.weapon.lvl, v))
+    allStatics('static')[k].add(subscript(own.weapon.lvl, v)),
   ),
 
   // Total element count; this is NOT a `team` stat
   ownBuff.common.eleCount.add(
-    sum(...allElementKeys.map((ele) => team.common.count[ele].max))
+    sum(...allElementKeys.map((ele) => team.common.count[ele].max)),
   ),
 
   // Default conditionals to 0

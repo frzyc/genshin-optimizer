@@ -14,7 +14,7 @@ export function preprocess(string: string): string {
         const tag = tagColor[color as keyof typeof tagColor]
         stack.push(tag)
         return `<${tag}>`
-      }
+      },
     )
   }
 
@@ -27,7 +27,7 @@ export function preprocess(string: string): string {
     string = string
       .substring(1)
       .replace(/\{LAYOUT_(PC|PS|MOBILE)#(.*?)\}/g, (_match, layout, text) =>
-        layout === 'PC' ? text : ''
+        layout === 'PC' ? text : '',
       ) // Use PC layout
   }
   return string
@@ -52,7 +52,7 @@ export function parseBulletPoints(strings: string[]): string[] {
       if (!isBullet) strs.push(str)
       return { strs, arr }
     },
-    { strs: [] as string[], arr: undefined as string[] | undefined }
+    { strs: [] as string[], arr: undefined as string[] | undefined },
   )
   strs.pop()
   return strs
@@ -189,7 +189,7 @@ export const parsingFunctions: {
     // Convert param1 to 0
     string = string.replace(
       /param(\d*)/g,
-      (_match, capture) => `${+capture - 1}`
+      (_match, capture) => `${+capture - 1}`,
     )
     // Handle formatting ':F1}}', ':F1P}}', ':I}}', ':P}}'
     string = string.replace(
@@ -209,7 +209,7 @@ export const parsingFunctions: {
         }
         // 'I' has no formatting
         return '}}'
-      }
+      },
     )
     return string
   },

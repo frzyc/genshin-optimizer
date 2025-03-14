@@ -40,19 +40,19 @@ export interface ICharacterTemplate {
   ch: (i18key: string) => ReactNode
   talentTem: (
     talentKey: TalentSheetElementKey,
-    docSections?: DocumentSection[]
+    docSections?: DocumentSection[],
   ) => TalentSheetElement
   headerTem: (
     talentKey: TalentSheetElementKey,
-    partialSection: DocumentSection
+    partialSection: DocumentSection,
   ) => DocumentSection
   fieldsTem: (
     talentKey: TalentSheetElementKey,
-    partialFields: IDocumentFields
+    partialFields: IDocumentFields,
   ) => IDocumentFields
   condTem: (
     talentKey: TalentSheetElementKey,
-    partialCond: DocumentConditionalBase
+    partialCond: DocumentConditionalBase,
   ) => DocumentConditional
 }
 export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
@@ -70,19 +70,19 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
     ch,
     talentTem: (
       talentKey: TalentSheetElementKey,
-      docSections?: DocumentSection[]
+      docSections?: DocumentSection[],
     ) => talentTemplate(talentKey, chg, img(talentKey), docSections),
     headerTem: (
       talentKey: TalentSheetElementKey,
-      partialSection: DocumentSection
+      partialSection: DocumentSection,
     ) => headerTemplate(talentKey, chg, img(talentKey), partialSection),
     fieldsTem: (
       talentKey: TalentSheetElementKey,
-      partialFields: IDocumentFields
+      partialFields: IDocumentFields,
     ) => fieldsTemplate(talentKey, partialFields),
     condTem: (
       talentKey: TalentSheetElementKey,
-      partialCond: DocumentConditionalBase
+      partialCond: DocumentConditionalBase,
     ) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey)),
   }
 }
@@ -91,7 +91,7 @@ const talentTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
   img: string | StaticImageData,
-  docSections?: DocumentSection[]
+  docSections?: DocumentSection[],
 ): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
@@ -104,7 +104,7 @@ const talentTemplate = (
 const talentHeader = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData
+  img: string | StaticImageData,
 ): IDocumentHeader => {
   return {
     title: tr(`${talentKey}.name`),
@@ -127,7 +127,7 @@ const headerTemplate = (
   talentKey: TalentSheetElementKey,
   tr: (i18key: string) => ReactNode,
   img: string | StaticImageData,
-  partialSection: DocumentSection
+  partialSection: DocumentSection,
 ): DocumentSection => ({
   ...partialSection,
   header: talentHeader(talentKey, tr, img),
@@ -136,7 +136,7 @@ const headerTemplate = (
 
 const fieldsTemplate = (
   talentKey: TalentSheetElementKey,
-  partialFields: IDocumentFields
+  partialFields: IDocumentFields,
 ): IDocumentFields => ({
   ...partialFields,
   canShow: canShowTemplate(talentKey, partialFields.canShow),
@@ -146,7 +146,7 @@ const conditionalTemplate = (
   talentKey: TalentSheetElementKey,
   partialCond: DocumentConditionalBase,
   tr: (i18key: string) => ReactNode,
-  img: string | StaticImageData
+  img: string | StaticImageData,
 ): DocumentConditional => ({
   ...partialCond,
   header: { ...talentHeader(talentKey, tr, img), ...partialCond.header },
@@ -154,7 +154,7 @@ const conditionalTemplate = (
 })
 function canShowTemplate(
   talentKey: TalentSheetElementKey,
-  canShow: NumNode | undefined
+  canShow: NumNode | undefined,
 ): NumNode | undefined {
   if (!canShowTalentsNodes[talentKey]) {
     return canShow

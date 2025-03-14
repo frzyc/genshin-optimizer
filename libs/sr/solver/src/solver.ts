@@ -37,7 +37,7 @@ export function optimize(
   lightCones: ICachedLightCone[],
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
   numWorkers: number,
-  setProgress: (progress: Progress) => void
+  setProgress: (progress: Progress) => void,
 ): Solver<string> {
   // Step 2: Detach nodes from Calculator
   const relicSetKeys = new Set(allRelicSetKeys)
@@ -48,13 +48,13 @@ export function optimize(
       ...frames.map((frame, i) =>
         prod(
           frame.multiplier,
-          new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset)
-        )
-      )
+          new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset),
+        ),
+      ),
     ),
     // min constraints from stat filters; invert max constraints if needed
     ...statFilters.map(({ tag, isMax }) =>
-      isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
+      isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum'),
     ),
     // other calcs (graph, etc)
   ]
@@ -90,7 +90,7 @@ export function optimize(
     // filter4: if not empty, at least one >= 4
     setFilter4Cavern.length
       ? max(...setFilter4Cavern.map((q) => read({ q }, 'sum')))
-      : constant(Infinity)
+      : constant(Infinity),
     // other calcs (graph, etc)
   )
   return new Solver({
@@ -100,7 +100,7 @@ export function optimize(
     minimum: [
       -Infinity,
       ...statFilters.map((filter) =>
-        filter.isMax ? filter.value * -1 : filter.value
+        filter.isMax ? filter.value * -1 : filter.value,
       ),
     ],
     candidates: [
@@ -126,14 +126,14 @@ function convertRelicToStats(relic: ICachedRelic): Candidate<string> {
     ...Object.fromEntries(
       substats
         .filter(({ key, value }) => key && value)
-        .map(({ key, value }) => [key, value])
+        .map(({ key, value }) => [key, value]),
     ),
     [setKey]: 1,
   } as Candidate<string>
 }
 
 function convertLightConeToStats(
-  lightCone: ICachedLightCone
+  lightCone: ICachedLightCone,
 ): Candidate<string> {
   const { id, key, level: lvl, ascension, superimpose } = lightCone
   return {

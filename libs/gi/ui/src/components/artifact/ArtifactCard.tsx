@@ -115,7 +115,7 @@ export function ArtifactCardObj({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   const falseWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -123,7 +123,7 @@ export function ArtifactCardObj({
         {children}
       </Box>
     ),
-    []
+    [],
   )
 
   const {
@@ -134,7 +134,7 @@ export function ArtifactCardObj({
   } = useMemo(() => {
     const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
       artifact,
-      effFilter
+      effFilter,
     )
     const {
       currentEfficiency: currentEfficiency_,
@@ -160,7 +160,7 @@ export function ArtifactCardObj({
   } = artifact
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
-    level
+    level,
   )
   const database = useDatabase()
   const builds: {
@@ -170,7 +170,7 @@ export function ArtifactCardObj({
   }[] = useMemo(() => {
     return database.builds.values
       .filter(
-        ({ artifactIds }) => artifactIds[artifact.slotKey] === artifact.id
+        ({ artifactIds }) => artifactIds[artifact.slotKey] === artifact.id,
       )
       .flatMap(({ id, name }) => {
         const buildName = name
@@ -345,7 +345,7 @@ export function ArtifactCardObj({
                     effFilter={effFilter}
                     rarity={rarity}
                   />
-                )
+                ),
             )}
             <Typography
               variant="caption"
@@ -493,7 +493,7 @@ function SubstatDisplay({
   const maxRoll = stat.key ? getSubstatValue(stat.key) : 0
   const rollData = useMemo(
     () => (stat.key ? getSubstatValuesPercent(stat.key, rarity) : []),
-    [stat.key, rarity]
+    [stat.key, rarity],
   )
   const rollOffset = 7 - rollData.length
   const rollColor = `roll${clamp(numRolls, 1, 6)}`
@@ -517,13 +517,13 @@ function SubstatDisplay({
               color={`roll${clamp(
                 rollOffset + rollData.indexOf(v),
                 1,
-                6
+                6,
               )}.main`}
             />
           ))}
         </Box>
       ),
-    [inFilter, stat.rolls, maxRoll, rollData, rollOffset]
+    [inFilter, stat.rolls, maxRoll, rollData, rollOffset],
   )
   return (
     <Box display="flex" gap={1} alignContent="center">

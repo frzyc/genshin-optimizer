@@ -28,7 +28,7 @@ export function DropdownButton({
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>) =>
       setAnchorEl(event.currentTarget),
-    [setAnchorEl]
+    [setAnchorEl],
   )
   const handleClose = useCallback(() => setAnchorEl(null), [setAnchorEl])
 

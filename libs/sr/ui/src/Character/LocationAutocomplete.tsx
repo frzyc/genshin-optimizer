@@ -32,13 +32,13 @@ export function LocationAutocomplete({
 
   const charInDb = useCallback(
     (characterKey: CharacterKey) => !!database.chars.get(characterKey),
-    [database.chars]
+    [database.chars],
   )
 
   const charIsFavorite = useCallback(
     (characterKey: CharacterKey) =>
       database.charMeta.get(characterKey).favorite,
-    [database.charMeta]
+    [database.charMeta],
   )
 
   const options: GeneralAutocompleteOption<CharacterKey | ''>[] = useMemo(
@@ -53,10 +53,10 @@ export function LocationAutocomplete({
           label: t(`charNames_gen:${key}`),
           favorite: charIsFavorite(key),
           color: charInDb(key) ? undefined : 'secondary',
-        })
+        }),
       ),
     ],
-    [charInDb, charIsFavorite, t]
+    [charInDb, charIsFavorite, t],
   )
 
   return (

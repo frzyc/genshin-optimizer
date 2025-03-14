@@ -102,13 +102,13 @@ const dm = {
 const phecElements = min(
   sum(
     ...absorbableEle.map((ele) => greaterEq(tally[ele], 1, 1)),
-    greaterEq(input.constellation, 2, 1)
+    greaterEq(input.constellation, 2, 1),
   ),
-  3
+  3,
 )
 const [condA1InMultitargetPath, condA1InMultitarget] = cond(
   key,
-  'a1InMultitarget'
+  'a1InMultitarget',
 )
 const a1InMultitarget_shining_dmg_ = greaterEq(
   input.asc,
@@ -119,16 +119,16 @@ const a1InMultitarget_shining_dmg_ = greaterEq(
     greaterEq(
       phecElements,
       1,
-      subscript(phecElements, dm.passive1.shining_dmg_)
-    )
-  )
+      subscript(phecElements, dm.passive1.shining_dmg_),
+    ),
+  ),
 )
 
 const [condC6FatalRoundsPath, condC6FatalRounds] = cond(key, 'c6FatalRounds')
 const c6FatalRounds_multi_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6FatalRounds, 'on', dm.constellation6.critDMG_)
+  equal(condC6FatalRounds, 'on', dm.constellation6.critDMG_),
 )
 const multiFireAddl = { premod: { critDMG_: c6FatalRounds_multi_critDMG_ } }
 const shiningAddl = {
@@ -140,7 +140,7 @@ const shiningAddl = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -155,7 +155,7 @@ const dmgFormulas = {
       'normal',
       { ...hitEle[ele], ...multiFireAddl },
       undefined,
-      'skill'
+      'skill',
     ),
     shellDmg: dmgNode(
       'atk',
@@ -163,7 +163,7 @@ const dmgFormulas = {
       'charged',
       hitEle[ele],
       undefined,
-      'skill'
+      'skill',
     ),
     ...objKeyValMap(absorbableEle, (eleKey) => [
       `shiningShellDmg_${eleKey}`,
@@ -176,7 +176,7 @@ const dmgFormulas = {
           ...shiningAddl,
         },
         undefined,
-        'skill'
+        'skill',
       ),
     ]),
   },
@@ -198,8 +198,8 @@ const dmgFormulas = {
         'charged',
         hitEle[ele],
         percent(dm.passive2.dmg),
-        'skill'
-      )
+        'skill',
+      ),
     ),
     ...objKeyMap(absorbableEle, (eleKey) =>
       greaterEq(
@@ -211,9 +211,9 @@ const dmgFormulas = {
           'charged',
           hitEle[eleKey],
           percent(dm.passive2.dmg),
-          'skill'
-        )
-      )
+          'skill',
+        ),
+      ),
     ),
   },
   constellation2: objKeyMap(absorbableEle, (eleKey) =>
@@ -223,9 +223,9 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation2.dmg), input.total.atk),
         'charged',
-        hitEle[eleKey]
-      )
-    )
+        hitEle[eleKey],
+      ),
+    ),
   ),
   constellation4: {
     ...objKeyMap(absorbableEle, (eleKey) =>
@@ -235,12 +235,12 @@ const dmgFormulas = {
         customDmgNode(
           prod(
             percent(dm.constellation4.dmg * dm.constellation2.dmg),
-            input.total.atk
+            input.total.atk,
           ),
           'charged',
-          hitEle[eleKey]
-        )
-      )
+          hitEle[eleKey],
+        ),
+      ),
     ),
   },
 }

@@ -16,6 +16,6 @@ export interface ICharacter {
 
 export function isTalentKey(tKey: string): tKey is keyof ICharacterTalent {
   return (['auto', 'skill', 'burst'] as const).includes(
-    tKey as keyof ICharacter['talent']
+    tKey as keyof ICharacter['talent'],
   )
 }

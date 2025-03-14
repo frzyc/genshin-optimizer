@@ -20,7 +20,7 @@ export class ArtifactSheet {
 }
 
 export const setHeaderTemplate = (
-  setKey: ArtifactSetKey
+  setKey: ArtifactSetKey,
 ): ((setNum: SetNum) => IDocumentHeader) => {
   const [tr] = trans('artifact', setKey)
   return (setNum: SetNum) => ({

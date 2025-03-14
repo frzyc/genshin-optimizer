@@ -10,7 +10,7 @@ import type { GenAssetsExecutorSchema } from './schema'
 const DEST_PROJ_PATH = `${workspaceRoot}/libs/zzz/assets/src` as const
 
 export default async function runExecutor(
-  options: GenAssetsExecutorSchema
+  options: GenAssetsExecutorSchema,
 ): Promise<{ success: boolean }> {
   function copyFile(src: string, dest: string) {
     if (!fs.existsSync(src)) {
@@ -38,17 +38,17 @@ export default async function runExecutor(
         if (typeof filePath === 'string') {
           copyFile(
             `${DM2D_PATH}/${filePath.toLocaleLowerCase()}`,
-            `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}.png`
+            `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}.png`,
           )
         } else {
           filePath.forEach((fp, index) =>
             copyFile(
               `${DM2D_PATH}/${fp.toLocaleLowerCase()}`,
-              `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}_${index}.png`
-            )
+              `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}_${index}.png`,
+            ),
           )
         }
-      }
+      },
     )
   } else {
     console.log('No assets will be copied.')
@@ -73,7 +73,7 @@ export default async function runExecutor(
           layeredAssignment(indexData, newKeys, `${fileName}_${index}`)
         })
       }
-    }
+    },
   )
   await generateIndexFromObj(indexData, `${DEST_PROJ_PATH}/gen`)
   return { success: true }

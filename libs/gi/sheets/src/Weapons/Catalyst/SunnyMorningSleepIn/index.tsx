@@ -13,7 +13,7 @@ const swirl_eleMas = equal(
   condSwirl,
   'on',
   subscript(input.weapon.refinement, swirl_eleMasArr),
-  { path: 'eleMas' }
+  { path: 'eleMas' },
 )
 
 const afterSkill_eleMasArr = [-1, 96, 120, 144, 168, 192]
@@ -22,7 +22,7 @@ const afterSkill_eleMas = equal(
   condAfterSkill,
   'on',
   subscript(input.weapon.refinement, afterSkill_eleMasArr),
-  { path: 'eleMas' }
+  { path: 'eleMas' },
 )
 
 const afterBurst_eleMasArr = [-1, 32, 40, 48, 56, 64]
@@ -31,7 +31,7 @@ const afterBurst_eleMas = equal(
   condAfterBurst,
   'on',
   subscript(input.weapon.refinement, afterBurst_eleMasArr),
-  { path: 'eleMas' }
+  { path: 'eleMas' },
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -49,7 +49,7 @@ export default function SubstatInput({
       range(1, discSubstatRollData[rarity].numUpgrades + 1).map((i) => ({
         value: i,
       })),
-    [rarity]
+    [rarity],
   )
   return (
     <Stack direction="row" sx={{ alignItems: 'center' }} gap={1}>
@@ -129,7 +129,7 @@ export default function SubstatInput({
               key &&
               valueString(
                 v * getDiscSubStatBaseVal(key, rarity),
-                getUnitStr(key)
+                getUnitStr(key),
               )
             }`
           }
@@ -151,7 +151,7 @@ export default function SubstatInput({
           {key &&
             valueString(
               (upgrades || 1) * getDiscSubStatBaseVal(key, rarity),
-              getUnitStr(key)
+              getUnitStr(key),
             )}
         </Typography>
       </CardThemed>

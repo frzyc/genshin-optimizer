@@ -80,7 +80,7 @@ export function RelicCard({
 
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 3),
-    level
+    level,
   )
 
   const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
@@ -224,7 +224,7 @@ export function RelicCard({
             (substat) =>
               substat.key && (
                 <SubstatDisplay key={substat.key} substat={substat} />
-              )
+              ),
           )}
           <Box flexGrow={1} />
           <Typography color="success.main">

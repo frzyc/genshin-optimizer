@@ -28,13 +28,13 @@ const teamGeo_mult = 1
 const teamGeo_normal_dmg_ = equal(
   condTeamGeo,
   'on',
-  prod(percent(teamGeo_mult), normal_dmg_)
+  prod(percent(teamGeo_mult), normal_dmg_),
 )
 
 const teamGeo_skill_dmg_ = equal(
   condTeamGeo,
   'on',
-  prod(percent(teamGeo_mult), skill_dmg_)
+  prod(percent(teamGeo_mult), skill_dmg_),
 )
 
 const def_ = subscript(input.weapon.refinement, def_arr)

@@ -14,7 +14,7 @@ const set2 = greaterEq(input.artSet.Lavawalker, 2, percent(0.4))
 const set4 = greaterEq(
   input.artSet.Lavawalker,
   4,
-  equal('on', condState, percent(0.35))
+  equal('on', condState, percent(0.35)),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

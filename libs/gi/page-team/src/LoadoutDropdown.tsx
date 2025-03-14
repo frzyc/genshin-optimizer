@@ -37,7 +37,7 @@ export function LoadoutDropdown({
   const { key: characterKey, name } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
   const teamCharIds = database.teamChars.keys.filter(
-    (teamCharId) => database.teamChars.get(teamCharId)!.key === characterKey
+    (teamCharId) => database.teamChars.get(teamCharId)!.key === characterKey,
   )
 
   const [show, onShow, onHide] = useBoolState()

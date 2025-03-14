@@ -31,14 +31,14 @@ export type WenginePhaseKey =
 
 export function characterAsset(
   ck: CharacterKey,
-  asset: keyof AssetDataType['chars'][CharacterKey]
+  asset: keyof AssetDataType['chars'][CharacterKey],
 ) {
   return (chars[ck]?.[asset] ?? '') as string | StaticImageData
 }
 
 export function wengineAsset(
   wk: WengineKey,
-  asset: keyof AssetDataType['wengines'][WengineKey]
+  asset: keyof AssetDataType['wengines'][WengineKey],
 ) {
   return (wengines[wk]?.[asset] ?? '') as string | StaticImageData
 }

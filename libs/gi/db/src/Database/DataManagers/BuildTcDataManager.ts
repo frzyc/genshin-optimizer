@@ -78,7 +78,7 @@ export class BuildTcDataManager extends DataManager<
     this.database.teamChars.entries.forEach(
       ([teamCharId, teamChar]) =>
         teamChar.buildTcIds.includes(key) &&
-        this.database.teamChars.set(teamCharId, {})
+        this.database.teamChars.set(teamCharId, {}),
     )
     // once teamChars are validated, teams can be validated as well
     this.database.teams.entries.forEach(
@@ -86,8 +86,8 @@ export class BuildTcDataManager extends DataManager<
         team.loadoutData?.some(
           (loadoutDatum) =>
             loadoutDatum?.buildTcId === key ||
-            loadoutDatum?.compareBuildTcId === key
-        ) && this.database.teams.set(teamId, {}) // trigger a validation
+            loadoutDatum?.compareBuildTcId === key,
+        ) && this.database.teams.set(teamId, {}), // trigger a validation
     )
 
     return buildTc
@@ -146,8 +146,8 @@ function initCharTCArtifactSlots() {
     statKey: (s === 'flower'
       ? 'hp'
       : s === 'plume'
-      ? 'atk'
-      : 'atk_') as MainStatKey,
+        ? 'atk'
+        : 'atk_') as MainStatKey,
   }))
 }
 function validateBuildTCChar(char: unknown): BuildTc['character'] {
@@ -189,13 +189,13 @@ function validateBuildTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
     refinement = 1
   const { level: _level, ascension: _ascension } = validateLevelAsc(
     level,
-    ascension
+    ascension,
   )
   ;[level, ascension] = [_level, _ascension]
   return { key, level, ascension, refinement }
 }
 function validateBuildTCArtifact(
-  artifact: unknown
+  artifact: unknown,
 ): BuildTc['artifact'] | undefined {
   if (typeof artifact !== 'object') return undefined
   let {
@@ -210,7 +210,7 @@ function validateBuildTCArtifact(
   if (!allArtifactRarityKeys.includes(rarity)) rarity = 5
   if (typeof stats !== 'object') stats = objKeyMap(allSubstatKeys, () => 0)
   stats = objKeyMap(allSubstatKeys, (k) =>
-    typeof stats[k] === 'number' ? stats[k] : 0
+    typeof stats[k] === 'number' ? stats[k] : 0,
   )
 
   if (typeof sets !== 'object') sets = {}
@@ -219,7 +219,7 @@ function validateBuildTCArtifact(
   return { slots, substats: { type, stats, rarity }, sets }
 }
 function validateBuildTCArtifactSlots(
-  slots: unknown
+  slots: unknown,
 ): BuildTc['artifact']['slots'] | undefined {
   if (typeof slots !== 'object') return initCharTCArtifactSlots()
 
@@ -227,7 +227,7 @@ function validateBuildTCArtifactSlots(
     Object.keys(slots as BuildTc['artifact']['slots']).length !==
       allArtifactSlotKeys.length ||
     Object.keys(slots as BuildTc['artifact']['slots']).some(
-      (s) => !allArtifactSlotKeys.includes(s as ArtifactSlotKey)
+      (s) => !allArtifactSlotKeys.includes(s as ArtifactSlotKey),
     )
   )
     return initCharTCArtifactSlots()
@@ -239,11 +239,11 @@ function validateBuildTCArtifactSlots(
         rarity,
         ...rest,
       }
-    }
+    },
   )
 }
 function validateBuildTcOptimization(
-  optimization: unknown
+  optimization: unknown,
 ): BuildTc['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
   let { distributedSubstats, maxSubstats } =
@@ -252,20 +252,20 @@ function validateBuildTcOptimization(
   if (typeof maxSubstats !== 'object')
     maxSubstats = initBuildTcOptimizationMaxSubstats()
   maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
-    typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
+    typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0,
   )
   return { distributedSubstats, maxSubstats }
 }
 function initBuildTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
   return objKeyMap(
     allSubstatKeys,
-    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
+    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5),
   )
 }
 export function toBuildTc(
   charTC: BuildTc,
   eWeapon: ICachedWeapon | undefined = undefined,
-  artifacts: Array<ICachedArtifact | undefined> = []
+  artifacts: Array<ICachedArtifact | undefined> = [],
 ) {
   if (eWeapon) {
     charTC.weapon.key = eWeapon.key
@@ -300,12 +300,12 @@ export function toBuildTc(
         value === 3
           ? 2
           : value === 5
-          ? 4
-          : value === 1 && !(key as string).startsWith('PrayersFor')
-          ? 0
-          : value,
+            ? 4
+            : value === 1 && !(key as string).startsWith('PrayersFor')
+              ? 0
+              : value,
       ])
-      .filter(([, value]) => value)
+      .filter(([, value]) => value),
   )
   return charTC
 }

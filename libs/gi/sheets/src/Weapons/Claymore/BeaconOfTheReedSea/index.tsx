@@ -17,8 +17,8 @@ const afterSkill_atk_ = equal(
     'on',
     subscript(input.weapon.refinement, afterSkillAtkArr, {
       path: 'atk_',
-    })
-  )
+    }),
+  ),
 )
 
 const afterDmgAtkArr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
@@ -31,8 +31,8 @@ const afterDmg_atk_ = equal(
     'on',
     subscript(input.weapon.refinement, afterDmgAtkArr, {
       path: 'atk_',
-    })
-  )
+    }),
+  ),
 )
 
 const noShieldHpArr = [-1, 0.32, 0.4, 0.48, 0.56, 0.64]
@@ -45,8 +45,8 @@ const noShield_hp_ = equal(
     'on',
     subscript(input.weapon.refinement, noShieldHpArr, {
       path: 'hp_',
-    })
-  )
+    }),
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -57,7 +57,7 @@ const data = dataObjForWeaponSheet(
       hp_: noShield_hp_,
     },
   },
-  {}
+  {},
 )
 const sheet: IWeaponSheet = {
   document: [

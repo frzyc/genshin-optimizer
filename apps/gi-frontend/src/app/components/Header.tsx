@@ -232,7 +232,7 @@ function UserAvatar() {
             >
               <Typography textAlign="center">{title}</Typography>
             </MenuItem>
-          )
+          ),
         )}
       </Menu>
     </>

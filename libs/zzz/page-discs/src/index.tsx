@@ -22,7 +22,7 @@ export default function PageDiscs() {
         onOpen()
       }
     },
-    [database.discs, onOpen]
+    [database.discs, onOpen],
   )
 
   return (

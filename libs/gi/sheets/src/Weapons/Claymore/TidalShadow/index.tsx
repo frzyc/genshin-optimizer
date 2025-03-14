@@ -13,7 +13,7 @@ const [condAfterHealPath, condAfterHeal] = cond(key, 'afterHeal')
 const atk_ = equal(
   condAfterHeal,
   'on',
-  subscript(input.weapon.refinement, atk_arr)
+  subscript(input.weapon.refinement, atk_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

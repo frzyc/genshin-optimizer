@@ -42,7 +42,7 @@ export type AvatarSkillDepotExcelConfigData = {
  */
 
 const avatarSkillDepotExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarSkillDepotExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/AvatarSkillDepotExcelConfigData.json'),
 ) as AvatarSkillDepotExcelConfigData[]
 
 const avatarSkillDepotExcelConfigData = Object.fromEntries(
@@ -55,7 +55,7 @@ const avatarSkillDepotExcelConfigData = Object.fromEntries(
       }
       return skill
     })
-    .map((skill) => [skill.id, skill])
+    .map((skill) => [skill.id, skill]),
 ) as { [id: number]: AvatarSkillDepotExcelConfigData }
 
 export { avatarSkillDepotExcelConfigData }

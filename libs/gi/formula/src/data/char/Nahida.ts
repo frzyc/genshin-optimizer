@@ -120,10 +120,10 @@ const burst_karma_dmg_ = partyInBurst.ifOn(
         pyroLevel,
         1,
         subscript(burst, dm.burst.dmg_1),
-        subscript(burst, dm.burst.dmg_2)
-      )
-    )
-  )
+        subscript(burst, dm.burst.dmg_2),
+      ),
+    ),
+  ),
 )
 
 const electroLevel = sum(count.electro, cmpGE(constellation, 1, 1))
@@ -136,10 +136,10 @@ const _burst_skillIntervalDec = partyInBurst.ifOn(
         electroLevel,
         1,
         subscript(burst, dm.burst.intervalDec_1),
-        subscript(burst, dm.burst.intervalDec_2)
-      )
-    )
-  )
+        subscript(burst, dm.burst.intervalDec_2),
+      ),
+    ),
+  ),
 )
 
 const hydroLevel = sum(count.hydro, cmpGE(constellation, 1, 1))
@@ -152,10 +152,10 @@ const _burst_durationInc = partyInBurst.ifOn(
         hydroLevel,
         1,
         subscript(burst, dm.burst.durationInc1),
-        subscript(burst, dm.burst.durationInc2)
-      )
-    )
-  )
+        subscript(burst, dm.burst.durationInc2),
+      ),
+    ),
+  ),
 )
 
 const a1InBurst_eleMas = cmpGE(
@@ -168,25 +168,25 @@ const a1InBurst_eleMas = cmpGE(
       1,
       min(
         prod(percent(dm.passive1.eleMas_), team.premod.eleMas.max),
-        dm.passive1.maxEleMas
-      )
-    )
-  )
+        dm.passive1.maxEleMas,
+      ),
+    ),
+  ),
 )
 
 const passive2Elemas = min(
   max(sum(final.eleMas, -dm.passive2.eleMas_min), 0),
-  dm.passive2.eleMas_maxCounted
+  dm.passive2.eleMas_maxCounted,
 )
 const a4Karma_dmg_ = percent(
-  cmpGE(ascension, 4, prod(percent(dm.passive2.eleMas_dmg_), passive2Elemas))
+  cmpGE(ascension, 4, prod(percent(dm.passive2.eleMas_dmg_), passive2Elemas)),
 )
 const a4Karma_critRate_ = percent(
   cmpGE(
     ascension,
     4,
-    prod(percent(dm.passive2.eleMas_critRate_), passive2Elemas)
-  )
+    prod(percent(dm.passive2.eleMas_critRate_), passive2Elemas),
+  ),
 )
 const t = register(
   info.key,
@@ -198,14 +198,14 @@ const t = register(
     cmpGE(
       constellation,
       4,
-      subscript(c4Count, [0, ...dm.constellation4.eleMas])
-    )
+      subscript(c4Count, [0, ...dm.constellation4.eleMas]),
+    ),
   ),
 
   teamBuff.final.eleMas.add(a1InBurst_eleMas),
 
   c2_critRate_.add(
-    cmpGE(constellation, 2, c2Bloom.ifOn(percent(dm.constellation2.critRate_)))
+    cmpGE(constellation, 2, c2Bloom.ifOn(percent(dm.constellation2.critRate_))),
   ),
   teamBuff.premod.critRate_.burning.reread(c2_critRate_),
   teamBuff.premod.critRate_.bloom.reread(c2_critRate_),
@@ -213,7 +213,7 @@ const t = register(
   teamBuff.premod.critRate_.burgeon.reread(c2_critRate_),
 
   c2_critDMG_.add(
-    cmpGE(constellation, 2, c2Bloom.ifOn(percent(dm.constellation2.critDMG_)))
+    cmpGE(constellation, 2, c2Bloom.ifOn(percent(dm.constellation2.critDMG_))),
   ),
   teamBuff.premod.critDMG_.burning.reread(c2_critDMG_),
   teamBuff.premod.critDMG_.bloom.reread(c2_critDMG_),
@@ -221,20 +221,20 @@ const t = register(
   teamBuff.premod.critDMG_.burgeon.reread(c2_critDMG_),
 
   c2qsa_defRed_.add(
-    cmpGE(constellation, 2, c2QSA.ifOn(percent(dm.constellation2.defDec_)))
+    cmpGE(constellation, 2, c2QSA.ifOn(percent(dm.constellation2.defDec_))),
   ),
   enemyDebuff.common.defRed_.reread(c2qsa_defRed_),
 
   // Formulas
   dm.normal.hitArr.flatMap((arr, i) =>
-    dmg(`normal_${i}`, info, 'atk', arr, 'normal')
+    dmg(`normal_${i}`, info, 'atk', arr, 'normal'),
   ),
   dmg(`charged`, info, 'atk', dm.charged.dmg, 'charged'),
   Object.entries(dm.plunging).flatMap(([k, v]) =>
-    dmg(`plunging_${k}`, info, 'atk', v, 'plunging')
+    dmg(`plunging_${k}`, info, 'atk', v, 'plunging'),
   ),
   (['press', 'hold'] as const).flatMap((k) =>
-    dmg(`skill_${k}`, info, 'atk', dm.skill[`${k}Dmg`], 'skill')
+    dmg(`skill_${k}`, info, 'atk', dm.skill[`${k}Dmg`], 'skill'),
   ),
   customDmg(
     'karma_dmg',
@@ -242,11 +242,11 @@ const t = register(
     'skill',
     sum(
       prod(percent(subscript(skill, dm.skill.karmaAtkDmg)), final.atk),
-      prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas)
+      prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas),
     ),
     undefined,
     ownBuff.premod.dmg_.add(sum(a4Karma_dmg_, burst_karma_dmg_)),
-    ownBuff.premod.critRate_.add(a4Karma_critRate_)
-  )
+    ownBuff.premod.critRate_.add(a4Karma_critRate_),
+  ),
 )
 export default t

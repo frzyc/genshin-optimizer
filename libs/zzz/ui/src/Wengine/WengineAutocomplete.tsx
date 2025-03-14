@@ -36,10 +36,10 @@ export function WengineAutocomplete({
         (key): GeneralAutocompleteOption<WengineKey | ''> => ({
           key,
           label: getWengineStat(key).name, //t(`charNames_gen:${key}`)
-        })
+        }),
       ),
     ],
-    []
+    [],
   )
   const toImg = useCallback(
     (key: WengineKey | '') =>
@@ -50,7 +50,7 @@ export function WengineAutocomplete({
           src={wengineAsset(key, 'icon')}
         />
       ),
-    []
+    [],
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

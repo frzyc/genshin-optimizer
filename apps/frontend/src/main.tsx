@@ -17,7 +17,7 @@ let root = createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 )
 
 // Detect a storage event, and unmount the main page to show a newTab event.
@@ -31,7 +31,7 @@ function handleStorage(this: Window, event: StorageEvent) {
   root.render(
     <React.StrictMode>
       <NewTab />
-    </React.StrictMode>
+    </React.StrictMode>,
   )
 }
 window.addEventListener('storage', handleStorage)

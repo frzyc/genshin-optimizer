@@ -53,7 +53,7 @@ export default function PageTeams() {
   useEffect(() => {
     return database.teams.followAny(
       (k, r) =>
-        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
+        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate(),
     )
   }, [forceUpdate, database])
 
@@ -101,14 +101,14 @@ export default function PageTeams() {
       .filter(
         filterFunction(
           { charKeys, name: deferredSearchTerm },
-          teamFilterConfigs(database)
-        )
+          teamFilterConfigs(database),
+        ),
       )
       .sort((k1, k2) => {
         return sortFunction(
           teamSortMap[sortType],
           ascending,
-          teamSortConfigs()
+          teamSortConfigs(),
         )(database.teams.get(k1)!, database.teams.get(k2)!)
       })
     return dbDirty && { teamIds, totalTeamNum }
@@ -117,12 +117,12 @@ export default function PageTeams() {
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    teamIds.length
+    teamIds.length,
   )
 
   const TeamIdsToShow = useMemo(
     () => teamIds.slice(0, numShow),
-    [teamIds, numShow]
+    [teamIds, numShow],
   )
 
   const totalShowing =

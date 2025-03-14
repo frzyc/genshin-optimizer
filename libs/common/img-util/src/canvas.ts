@@ -4,7 +4,7 @@ export function drawline(
   canvas: HTMLCanvasElement,
   a: number,
   color: Color,
-  xaxis = true
+  xaxis = true,
 ) {
   const width = canvas.width
   const height = canvas.height
@@ -21,7 +21,7 @@ export function drawHistogram(
   canvas: HTMLCanvasElement,
   histogram: number[],
   color: Color,
-  xaxis = true
+  xaxis = true,
 ): HTMLCanvasElement {
   const ctx = canvas.getContext('2d')
   if (!ctx) return canvas
@@ -29,7 +29,7 @@ export function drawHistogram(
     color.a ? color.a / 255 : 1
   })`
   histogram.forEach((val, i) =>
-    xaxis ? ctx.fillRect(i, 0, 1, val) : ctx.fillRect(0, i, val, 1)
+    xaxis ? ctx.fillRect(i, 0, 1, val) : ctx.fillRect(0, i, val, 1),
   )
   return canvas
 }

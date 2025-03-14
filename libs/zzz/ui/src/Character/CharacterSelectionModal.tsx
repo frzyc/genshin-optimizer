@@ -95,9 +95,9 @@ function CharacterSelectionModalBase({
           const wtk = getCharStat(ck).specialty
           ct[wtk].total++
           if (allCharacterKeys.includes(ck)) ct[wtk].current++
-        })
+        }),
       ),
-    []
+    [],
   )
 
   const attributeTotals = useMemo(
@@ -107,9 +107,9 @@ function CharacterSelectionModalBase({
           const attr = getCharStat(ck).attribute
           ct[attr].total++
           if (allCharacterKeys.includes(ck)) ct[attr].current++
-        })
+        }),
       ),
-    []
+    [],
   )
 
   return (

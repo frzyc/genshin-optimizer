@@ -72,7 +72,7 @@ describe('character test', () => {
             assist: 0,
             chain: 0,
             core,
-          })
+          }),
         ),
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -84,7 +84,7 @@ describe('character test', () => {
       expect(calc.compute(anby.final.impact).val).toBeCloseTo(impact)
       expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(anomMas)
       expect(calc.compute(anby.final.anomProf).val).toBeCloseTo(anomProf)
-    }
+    },
   )
 })
 
@@ -117,8 +117,8 @@ describe('wengine test', () => {
             wengKey,
             lvl,
             modification as MilestoneKey,
-            1
-          )
+            1,
+          ),
         ),
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -130,7 +130,7 @@ describe('wengine test', () => {
       })
       expect(calc.compute(wengine0.base.atk).val).toBeCloseTo(atk)
       expect(calc.compute(wengine0.initial.enerRegen_).val).toBeCloseTo(substat)
-    }
+    },
   )
 })
 
@@ -151,7 +151,7 @@ describe('char+wengine test', () => {
           chain: 0,
           core: 0,
         }),
-        ...wengineTagMapNodeEntries('SteamOven', 0, 0, 1)
+        ...wengineTagMapNodeEntries('SteamOven', 0, 0, 1),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -177,7 +177,7 @@ describe('char+wengine test', () => {
         ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
         ownBuff.initial.atk.add(25),
         ownBuff.combat.atk.add(100),
-        ownBuff.combat.atk_.add(0.08)
+        ownBuff.combat.atk_.add(0.08),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -221,7 +221,7 @@ describe('char+wengine test', () => {
           ownBuff.initial.pen_.add(0.05),
           ownBuff.initial.pen.add(90),
           ownBuff.initial.resIgn_.add(0.02),
-          ownBuff.initial.anomProf.add(338)
+          ownBuff.initial.anomProf.add(338),
         ),
         own.common.critMode.add(critMode),
         enemy.common.def.add(635),
@@ -247,7 +247,7 @@ describe('char+wengine test', () => {
       expect(
         calc
           .withTag({ src: 'Anby', dst: 'Anby' })
-          .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val
+          .compute(read(formulas.Anby.standardDmgInst.tag, undefined)).val,
       ).toBeCloseTo(expectedStandardDmg)
 
       const debug2 = calc
@@ -259,9 +259,9 @@ describe('char+wengine test', () => {
       expect(
         calc
           .withTag({ src: 'Anby', dst: 'Anby' })
-          .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined)).val
+          .compute(read(formulas.Anby.anomalyDmgInst.tag, undefined)).val,
       ).toBeCloseTo(expectedAnomalyDmg)
-    }
+    },
   )
   it('calculate specific elemental damage bonus separate from common', () => {
     const data: TagMapNodeEntries = [
@@ -292,7 +292,7 @@ describe('char+wengine test', () => {
         ownBuff.initial.pen_.add(0.05),
         ownBuff.initial.pen.add(90),
         ownBuff.initial.resIgn_.add(0.02),
-        ownBuff.initial.anomProf.add(338)
+        ownBuff.initial.anomProf.add(338),
       ),
       own.common.critMode.add('avgHit'),
       enemy.common.def.add(635),
@@ -333,13 +333,13 @@ describe('disc2p test', () => {
           chain: 0,
           core: 0,
         }),
-        ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
+        ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 }),
       ),
     ]
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     console.log(prettify(calc.toDebug().compute(anby.final.atk)))
@@ -365,7 +365,7 @@ describe('team', () => {
           assist: 0,
           chain: 0,
           core: 0,
-        })
+        }),
       ),
       ...withMember(
         'Anton',
@@ -380,25 +380,25 @@ describe('team', () => {
           assist: 0,
           chain: 0,
           core: 0,
-        })
+        }),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(calc.compute(team.common.count.withSpecialty('attack')).val).toEqual(
-      1
+      1,
     )
     expect(calc.compute(team.common.count.withSpecialty('stun')).val).toEqual(1)
     expect(
-      calc.compute(team.common.count.withSpecialty('anomaly')).val
+      calc.compute(team.common.count.withSpecialty('anomaly')).val,
     ).toEqual(0)
     expect(
-      calc.compute(team.common.count.withFaction('CunningHares')).val
+      calc.compute(team.common.count.withFaction('CunningHares')).val,
     ).toEqual(1)
     expect(
-      calc.compute(team.common.count.withFaction('BelebogHeavyIndustries')).val
+      calc.compute(team.common.count.withFaction('BelebogHeavyIndustries')).val,
     ).toEqual(1)
     expect(
-      calc.compute(team.common.count.withFaction('StarsOfLyra')).val
+      calc.compute(team.common.count.withFaction('StarsOfLyra')).val,
     ).toEqual(0)
   })
 })

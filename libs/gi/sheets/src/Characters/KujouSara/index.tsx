@@ -74,23 +74,23 @@ const dm = {
 
 const [condSkillTenguAmbushPath, condSkillTenguAmbush] = cond(
   key,
-  'TenguJuuraiAmbush'
+  'TenguJuuraiAmbush',
 )
 const atkIncRatio = subscript(
   input.total.skillIndex,
   dm.skill.atkBonus.map((x) => x),
-  { unit: '%' }
+  { unit: '%' },
 )
 const skillTenguAmbush_disp = equal(
   'TenguJuuraiAmbush',
   condSkillTenguAmbush,
   prod(input.base.atk, atkIncRatio),
-  { path: 'atk', isTeamBuff: true }
+  { path: 'atk', isTeamBuff: true },
 )
 const skillTenguAmbush_ = equal(
   input.activeCharKey,
   target.charKey,
-  skillTenguAmbush_disp
+  skillTenguAmbush_disp,
 )
 
 const [condC6Path, condC6] = cond(key, 'c6')
@@ -100,12 +100,12 @@ const c6ElectroCritDmg_ = greaterEq(
   equal(
     condSkillTenguAmbush,
     'TenguJuuraiAmbush',
-    equal('c6', condC6, percent(dm.constellation6.atkInc))
-  )
+    equal('c6', condC6, percent(dm.constellation6.atkInc)),
+  ),
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -127,9 +127,9 @@ const dmgFormulas = {
       greaterEq(
         input.asc,
         4,
-        prod(input.total.enerRech_, dm.passive2.energyGen)
+        prod(input.total.enerRech_, dm.passive2.energyGen),
       ),
-      { name: stg('energyRegen'), fixed: 2 }
+      { name: stg('energyRegen'), fixed: 2 },
     ),
   },
   constellation2: {
@@ -138,8 +138,8 @@ const dmgFormulas = {
       2,
       prod(
         dmgNode('atk', dm.skill.dmg, 'skill'),
-        percent(dm.constellation2.crowfeatherDmg)
-      )
+        percent(dm.constellation2.crowfeatherDmg),
+      ),
     ),
   },
 }

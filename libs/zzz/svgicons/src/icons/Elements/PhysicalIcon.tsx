@@ -42,5 +42,5 @@ export const PhysicalIcon = createSvgIcon(
       />
     </g>
   </svg>,
-  'Physical'
+  'Physical',
 )

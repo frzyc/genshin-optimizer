@@ -10,5 +10,5 @@ const { set4 } = allBoolConditionals(key)
 export default registerArt(
   key,
   ownBuff.premod.dmg_.burst.add(cmpGE(count, 2, percent(0.2))),
-  teamBuff.premod.atk_.addOnce(key, set4.ifOn(cmpGE(count, 4, percent(0.2))))
+  teamBuff.premod.atk_.addOnce(key, set4.ifOn(cmpGE(count, 4, percent(0.2)))),
 )

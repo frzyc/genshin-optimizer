@@ -87,18 +87,18 @@ const dm = {
 
 const [condA1NightsoulBurstPath, condA1NightsoulBurst] = cond(
   key,
-  'a1NightsoulBurst'
+  'a1NightsoulBurst',
 )
 const a1NightsoulBurst_geo_dmg_ = greaterEq(
   input.asc,
   1,
-  equal(condA1NightsoulBurst, 'on', dm.passive1.geo_dmg_)
+  equal(condA1NightsoulBurst, 'on', dm.passive1.geo_dmg_),
 )
 
 const a4_skill_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.dmgInc), input.total.def)
+  prod(percent(dm.passive2.dmgInc), input.total.def),
 )
 
 const c4OpponentsArr = range(1, 4)
@@ -106,14 +106,14 @@ const [condC4OpponentsPath, condC4Opponents] = cond(key, 'c4Opponents')
 const c4Opponents = lookup(
   condC4Opponents,
   objKeyMap(c4OpponentsArr, (opp) => constant(opp)),
-  naught
+  naught,
 )
 const c4Opponents_def_ = subscript(c4Opponents, [0, ...dm.constellation4.def_])
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -137,8 +137,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.def),
         'elemental',
-        { hit: { ele: constant('geo') } }
-      )
+        { hit: { ele: constant('geo') } },
+      ),
     ),
   },
 }

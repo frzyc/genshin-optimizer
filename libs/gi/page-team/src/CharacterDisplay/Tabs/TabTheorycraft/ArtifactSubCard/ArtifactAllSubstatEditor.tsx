@@ -21,14 +21,14 @@ function getMinRoll(charTC: BuildTc) {
   return Math.floor(
     Math.min(
       ...Object.entries(stats).map(
-        ([k, v]) => v / getSubstatValue(k, rarity, type)
-      )
-    )
+        ([k, v]) => v / getSubstatValue(k, rarity, type),
+      ),
+    ),
   )
 }
 function getMinMax(buildTc: BuildTc) {
   return Math.floor(
-    Math.min(...Object.values(buildTc.optimization.maxSubstats))
+    Math.min(...Object.values(buildTc.optimization.maxSubstats)),
   )
 }
 export function ArtifactAllSubstatEditor({
@@ -62,7 +62,7 @@ export function ArtifactAllSubstatEditor({
         buildTc.optimization.distributedSubstats = clamp(
           buildTc.optimization.distributedSubstats + statDiff,
           0,
-          45
+          45,
         )
         return newVal
       })
@@ -77,7 +77,7 @@ export function ArtifactAllSubstatEditor({
     setBuildTc((charTC) => {
       charTC.optimization.maxSubstats = objMap(
         charTC.optimization.maxSubstats,
-        (_val, _statKey) => maxSubstatDeferred[0]
+        (_val, _statKey) => maxSubstatDeferred[0],
       )
     })
     // disable triggering for isMount

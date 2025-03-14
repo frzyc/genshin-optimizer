@@ -44,7 +44,7 @@ export function AbilityDropdown({
             >
               {displayName} Lv. {level}
             </MenuItem>
-          )
+          ),
         )}
     </DropdownButton>
   )

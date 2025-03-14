@@ -119,7 +119,7 @@ export function getArtSheet(sKey: ArtifactSetKey) {
 }
 
 export const allArtifactData = mergeData(
-  Object.values(artifactSheets).map((s) => s.data)
+  Object.values(artifactSheets).map((s) => s.data),
 )
 export function dataSetEffects(data: UIData) {
   const artifactSetEffect: Partial<Record<ArtifactSetKey, SetNum[]>> = {}

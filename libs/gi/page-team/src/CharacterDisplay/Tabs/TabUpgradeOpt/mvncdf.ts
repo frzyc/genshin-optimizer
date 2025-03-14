@@ -9,7 +9,7 @@ import { erf, gaussPDF } from './mathUtil'
 export function gaussianPE(
   mu: number,
   variance: number,
-  x: number
+  x: number,
 ): { p: number; upAvg: number } {
   if (variance < 1e-5) {
     if (mu > x) return { p: 1, upAvg: mu - x }

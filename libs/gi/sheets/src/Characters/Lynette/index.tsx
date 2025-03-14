@@ -97,30 +97,30 @@ const [condA1AfterBurstPath, condA1AfterBurst] = cond(key, 'a1AfterBurst')
 const a1AfterBurst_atk_ = greaterEq(
   input.asc,
   1,
-  equal(condA1AfterBurst, 'on', subscript(tally.ele, [...dm.passive1.atk_]))
+  equal(condA1AfterBurst, 'on', subscript(tally.ele, [...dm.passive1.atk_])),
 )
 
 const a4BurstAbsorb_burst_dmg_ = greaterEq(
   input.asc,
   4,
-  unequal(condBurstAbsorb, undefined, dm.passive2.burst_dmg_)
+  unequal(condBurstAbsorb, undefined, dm.passive2.burst_dmg_),
 )
 
 const [condC6AfterThrustPath, condC6AfterThrust] = cond(key, 'c6AfterThrust')
 const c6AfterThrust_infusion = greaterEqStr(
   input.constellation,
   6,
-  equalStr(condC6AfterThrust, 'on', 'anemo')
+  equalStr(condC6AfterThrust, 'on', 'anemo'),
 )
 const c6AfterThrust_anemo_dmg_ = greaterEq(
   input.constellation,
   6,
-  equal(condC6AfterThrust, 'on', dm.constellation6.anemo_dmg_)
+  equal(condC6AfterThrust, 'on', dm.constellation6.anemo_dmg_),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -141,7 +141,7 @@ const dmgFormulas = {
       undefined,
       dmgNode('atk', dm.burst.shotDmg, 'burst', {
         hit: { ele: condBurstAbsorb },
-      })
+      }),
     ),
   },
 }

@@ -195,13 +195,13 @@ function CharacterEditorContent({
                       size={2}
                       src={characterAsset(
                         genderedKey,
-                        `bonusAbility${bonusAbility}`
+                        `bonusAbility${bonusAbility}`,
                       )}
                       sideMargin
                     />
                   </Button>
                 </Grid>
-              )
+              ),
             )}
           </Grid>
           <Typography variant="h6">Stat Boosts</Typography>
@@ -211,7 +211,7 @@ function CharacterEditorContent({
               ([statBoost, enabled]) => {
                 const { statKey, value } = getCharStatBoostStat(
                   characterKey,
-                  statBoost
+                  statBoost,
                 )
                 return (
                   <Grid item key={statBoost}>
@@ -244,7 +244,7 @@ function CharacterEditorContent({
                     </Button>
                   </Grid>
                 )
-              }
+              },
             )}
           </Grid>
         </Stack>

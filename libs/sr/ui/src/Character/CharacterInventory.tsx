@@ -19,7 +19,7 @@ export function CharacterInventory() {
 
   useEffect(
     () => database.chars.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+    [database, setDirtyDatabase],
   )
   const { characters } = useMemo(() => {
     const characters = database.chars.values
@@ -30,16 +30,16 @@ export function CharacterInventory() {
 
   const { numShow, setTriggerElement } = useInfScroll(
     amtPerSize[size],
-    characters.length
+    characters.length,
   )
 
   const charactersInView = useMemo(
     () => characters.slice(0, numShow),
-    [characters, numShow]
+    [characters, numShow],
   )
 
   const [characterKey, setCharacterKey] = useState<CharacterKey | undefined>(
-    undefined
+    undefined,
   )
 
   return (

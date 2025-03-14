@@ -159,21 +159,21 @@ export class ArtCharDatabase extends Database {
   importGOOD(
     good: IGOOD & IGO,
     keepNotInImport: boolean,
-    ignoreDups: boolean
+    ignoreDups: boolean,
   ): ImportResult {
     good = migrateGOOD(good)
     const source = good.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
     if (source !== 'Genshin Optimizer') {
       good.artifacts?.forEach(
-        (a) => delete (a as unknown as { id?: string }).id
+        (a) => delete (a as unknown as { id?: string }).id,
       )
       good.weapons?.forEach((a) => delete (a as unknown as { id?: string }).id)
     }
     const result: ImportResult = newImportResult(
       source,
       keepNotInImport,
-      ignoreDups
+      ignoreDups,
     )
 
     // Follow updates from char/art/weapon to gather import results
@@ -185,10 +185,10 @@ export class ArtCharDatabase extends Database {
         else arr[ind] = value
       }),
       this.arts.followAny((_key, reason, value) =>
-        result.artifacts[reason].push(value)
+        result.artifacts[reason].push(value),
       ),
       this.weapons.followAny((_key, reason, value) =>
-        result.weapons[reason].push(value)
+        result.weapons[reason].push(value),
       ),
     ]
 

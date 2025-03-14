@@ -22,7 +22,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
     case 'split':
       for (const filter of splitWorker.split(
         data.filter,
-        data.maxIterateSize
+        data.maxIterateSize,
       )) {
         postMessage({ command: 'iterate', filter })
         // Suspend here in case a `threshold` is sent over
@@ -54,10 +54,10 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
       const perms = filterFeasiblePerm(
         artSetPerm(exclusion, [
           ...new Set(
-            Object.values(arts.values).flatMap((x) => x.map((x) => x.set!))
+            Object.values(arts.values).flatMap((x) => x.map((x) => x.set!)),
           ),
         ]),
-        arts
+        arts,
       )
       let count = 0
       for (const filter of perms) {

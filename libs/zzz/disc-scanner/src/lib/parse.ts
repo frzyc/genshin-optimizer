@@ -21,7 +21,7 @@ function getBestKeyDist<T extends string>(hams: Array<KeyDist<T>>) {
 }
 function findBestKeyDist<T extends string>(
   str: string,
-  keys: readonly T[]
+  keys: readonly T[],
 ): T | undefined {
   if (!keys.length) return undefined
   if (keys.length === 1) return keys[0]
@@ -76,7 +76,7 @@ export function parseLvlRarity(texts: string[]) {
   if (level === -1 || maxLvl === -1)
     return { level: undefined, rarity: undefined }
   const rarity = Object.entries(discMaxLevel).find(
-    ([, max]) => maxLvl === max
+    ([, max]) => maxLvl === max,
   )?.[0] as DiscRarityKey
   if (!rarity) return { level: undefined, rarity: undefined }
   return { level, rarity }
@@ -107,7 +107,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
       const statStr = match[1].trim()
       const key = findBestKeyDist(
         statStr,
-        allDiscSubStatKeys.filter((key) => isPercent === key.endsWith('_'))
+        allDiscSubStatKeys.filter((key) => isPercent === key.endsWith('_')),
       )
       if (!key) continue
       substats.push({

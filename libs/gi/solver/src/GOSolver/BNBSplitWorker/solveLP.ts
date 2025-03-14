@@ -6,7 +6,7 @@ const zero = 1e-8 // Small number equivalent to 0 for numerical instability
 export function isFeasible(Ab: number[][], x: number[]): boolean {
   const b = x.length
   return Ab.every(
-    (row) => x.reduce((tot, xi, i) => tot + xi * row[i], 0) <= row[b] + zero
+    (row) => x.reduce((tot, xi, i) => tot + xi * row[i], 0) <= row[b] + zero,
   )
 }
 

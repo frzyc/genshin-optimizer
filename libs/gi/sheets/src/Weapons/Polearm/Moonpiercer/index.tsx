@@ -21,7 +21,7 @@ const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
 const [atk_disp, atk_dispInactive] = nonStackBuff(
   'leafRev',
   'atk_',
-  subscript(input.weapon.refinement, atk_arr, { unit: '%' })
+  subscript(input.weapon.refinement, atk_arr, { unit: '%' }),
 )
 const atk_ = equal(input.activeCharKey, target.charKey, atk_disp)
 const data = dataObjForWeaponSheet(key, {

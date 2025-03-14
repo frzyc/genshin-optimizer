@@ -88,15 +88,15 @@ const skillDream_swirl_dmg_ = equal(
   'on',
   prod(
     subscript(input.total.skillIndex, dm.skill.swirl_dmg_, { unit: '%' }),
-    input.total.eleMas
-  )
+    input.total.eleMas,
+  ),
 )
 
 const [condA4PhecPath, condA4Phec] = cond(key, 'a4Phec')
 const a4Phec_eleMas = greaterEq(
   input.asc,
   4,
-  equal(condA4Phec, 'on', dm.passive2.eleMas)
+  equal(condA4Phec, 'on', dm.passive2.eleMas),
 )
 
 const [condC1AwaitingPath, condC1Awaiting] = cond(key, 'c1Awaiting')
@@ -106,8 +106,8 @@ const c1Awaiting_swirl_dmgInc = greaterEq(
   equal(
     condC1Awaiting,
     'on',
-    prod(percent(dm.constellation1.swirl_dmgInc), input.total.eleMas)
-  )
+    prod(percent(dm.constellation1.swirl_dmgInc), input.total.eleMas),
+  ),
 )
 
 const c2Dream_dmg_ = objKeyValMap(absorbableEle, (ele) => [
@@ -118,26 +118,26 @@ const c2Dream_dmg_ = objKeyValMap(absorbableEle, (ele) => [
     equal(
       condSkillDream,
       'on',
-      prod(percent(dm.constellation2.phec_dmg_), input.total.eleMas)
-    )
+      prod(percent(dm.constellation2.phec_dmg_), input.total.eleMas),
+    ),
   ),
 ])
 
 const c6Dream_swirlCritRate_ = greaterEq(
   input.constellation,
   6,
-  equal(condSkillDream, 'on', dm.constellation6.swirl_critRate_)
+  equal(condSkillDream, 'on', dm.constellation6.swirl_critRate_),
 )
 const c6Dream_swirlCritDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condSkillDream, 'on', dm.constellation6.swirl_critDMG_)
+  equal(condSkillDream, 'on', dm.constellation6.swirl_critDMG_),
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -156,7 +156,7 @@ const dmgFormulas = {
       'eleMas',
       dm.burst.hpRegenMult,
       dm.burst.hpRegenFlat,
-      'burst'
+      'burst',
     ),
   },
   constellation1: {

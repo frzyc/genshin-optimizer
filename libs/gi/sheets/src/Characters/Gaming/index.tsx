@@ -92,36 +92,36 @@ const [condA4HpStatePath, condA4HpState] = cond(key, 'a4HpState')
 const a4HpState_heal_ = greaterEq(
   input.asc,
   4,
-  equal(condA4HpState, 'below', dm.passive2.heal_)
+  equal(condA4HpState, 'below', dm.passive2.heal_),
 )
 const a4HpState_cloudstrider_dmg_ = greaterEq(
   input.asc,
   4,
-  equal(condA4HpState, 'above', dm.passive2.cloudstrider_dmg_)
+  equal(condA4HpState, 'above', dm.passive2.cloudstrider_dmg_),
 )
 
 const [condC2OverhealPath, condC2Overheal] = cond(key, 'c2Overheal')
 const c2Overheal_atk_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2Overheal, 'on', dm.constellation2.atk_)
+  equal(condC2Overheal, 'on', dm.constellation2.atk_),
 )
 
 const c6_cloudstrider_critRate_ = greaterEq(
   input.constellation,
   6,
-  dm.constellation6.skill_critRate_
+  dm.constellation6.skill_critRate_,
 )
 const c6_cloudstrider_critDMG_ = greaterEq(
   input.constellation,
   6,
-  dm.constellation6.skill_critDMG_
+  dm.constellation6.skill_critDMG_,
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -135,7 +135,7 @@ const dmgFormulas = {
         subscript(input.total.skillIndex, dm.skill.cloudstriderDmg, {
           unit: '%',
         }),
-        input.total.atk
+        input.total.atk,
       ),
       'plunging_impact',
       {
@@ -145,7 +145,7 @@ const dmgFormulas = {
           plunging_critRate_: c6_cloudstrider_critRate_,
           plunging_critDMG_: c6_cloudstrider_critDMG_,
         },
-      }
+      },
     ),
   },
   burst: {
@@ -159,7 +159,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       1,
-      healNode('hp', percent(dm.constellation1.heal), 0)
+      healNode('hp', percent(dm.constellation1.heal), 0),
     ),
   },
 }

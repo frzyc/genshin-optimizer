@@ -33,22 +33,22 @@ export type AnyTagFree = AnyNode<OP>
 export function detach(
   n: NumNode[],
   calc: Calculator,
-  dynTag: (_: Tag) => Tag | undefined
+  dynTag: (_: Tag) => Tag | undefined,
 ): NumTagFree[]
 export function detach(
   n: StrNode[],
   calc: Calculator,
-  dynTag: (_: Tag) => Tag | undefined
+  dynTag: (_: Tag) => Tag | undefined,
 ): StrTagFree[]
 export function detach(
   n: AnyNode[],
   calc: Calculator,
-  dynTag: (_: Tag) => Tag | undefined
+  dynTag: (_: Tag) => Tag | undefined,
 ): AnyTagFree[]
 export function detach(
   n: AnyNode[],
   calc: Calculator,
-  dynTag: (_: Tag) => Tag | undefined
+  dynTag: (_: Tag) => Tag | undefined,
 ): AnyTagFree[] {
   type Cache = DedupTag<AnyTagFree[]>
   function detachRead(cache: Cache, ex: BaseRead['ex']): AnyTagFree[] {
@@ -66,14 +66,14 @@ export function detach(
   function fold(
     x: NumTagFree[],
     op: Exclude<keyof typeof arithmetic, 'unique'>,
-    ex: any
+    ex: any,
   ): NumTagFree {
     if (x.every((x) => x.op === 'const'))
       return constant(
         arithmetic[op](
           x.map((x) => x.ex),
-          ex
-        )
+          ex,
+        ),
       )
     return { op, x, br: [] }
   }
@@ -107,12 +107,12 @@ export function detach(
         // We don't eagerly fold `x`. If all `br` can be folded,
         // we can short-circuit and fold only the chosen branch.
         const br = n.br.map((br) =>
-          map(br, cache)
+          map(br, cache),
         ) as unknown as Const<string>[]
         if (br.every((n) => n.op === 'const')) {
           const branchID = branching[n.op](
             br.map((br) => br.ex),
-            n.ex
+            n.ex,
           )
           return map(n.x[branchID]!, cache)
         }
@@ -132,7 +132,7 @@ export function detach(
         if (tags.some((x) => x.op !== 'const'))
           throw new Error('Dynamic tag must be resolvable during detachment')
         const newCache = cache.with(
-          Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.ex]))
+          Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.ex])),
         )
         return map(n.x[0]!, newCache)
       }
@@ -147,19 +147,19 @@ export function detach(
 
 export function mapBottomUp<I extends OP, O extends OP>(
   n: NumNode<I>[],
-  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>
+  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>,
 ): NumNode<O>[]
 export function mapBottomUp<I extends OP, O extends OP>(
   n: StrNode<I>[],
-  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>
+  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>,
 ): StrNode<O>[]
 export function mapBottomUp<I extends OP, O extends OP>(
   n: AnyNode<I>[],
-  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>
+  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>,
 ): AnyNode<O>[]
 export function mapBottomUp<I extends OP, O extends OP>(
   n: AnyNode<I>[],
-  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>
+  map: (_: AnyNode<I>, old: AnyNode<I>) => AnyNode<O>,
 ): AnyNode<O>[] {
   const cache = new Map<AnyNode<I>, AnyNode<O>>()
 
@@ -181,7 +181,7 @@ export function mapBottomUp<I extends OP, O extends OP>(
 
 export function map<I extends TaggedOP, O>(
   n: AnyNode<I>[],
-  map: (n: AnyNode<I>, map: (n: AnyNode<I>) => O) => O
+  map: (n: AnyNode<I>, map: (n: AnyNode<I>) => O) => O,
 ): O[] {
   const cache = new Map<AnyNode<I>, O>()
 
@@ -199,7 +199,7 @@ export function map<I extends TaggedOP, O>(
 
 export function traverse<P extends TaggedOP>(
   n: AnyNode<P>[],
-  visit: (n: AnyNode<P>, visit: (n: AnyNode<P>) => void) => void
+  visit: (n: AnyNode<P>, visit: (n: AnyNode<P>) => void) => void,
 ) {
   const visited = new Set<AnyNode<P>>()
 
@@ -231,26 +231,26 @@ function dedupMapArray<I, O>(x: I[], map: (_: I) => O): O[] {
 export function compile(
   n: NumTagFree[],
   dynTagCat: string,
-  slotCount: number
+  slotCount: number,
 ): (_: Record<string, number>[]) => number[]
 export function compile(
   n: StrTagFree[],
   dynTagCat: string,
-  slotCount: number
+  slotCount: number,
 ): (_: Record<string, string>[]) => string[]
 export function compile(
   n: AnyTagFree[],
   dynTagCat: string,
-  slotCount: number
+  slotCount: number,
 ): (_: Record<string, any>[]) => any[]
 export function compile(
   n: AnyTagFree[],
   dynTagCat: string,
-  slotCount: number
+  slotCount: number,
 ): (_: Record<string, any>[]) => any[] {
   const { str, names } = executionStr(n, 'x', ({ tag }) => {
     const arr = [...new Array(slotCount)].map(
-      (_, i) => `(b[${i}]['${tag[dynTagCat]}']??0)`
+      (_, i) => `(b[${i}]['${tag[dynTagCat]}']??0)`,
     )
     return `+(${arr.join('+')}+0)`
   })
@@ -263,11 +263,11 @@ export function compileDiff(
   n: AnyTagFree,
   dynTagCat: string,
   diffTags: string[],
-  slotCount: number
+  slotCount: number,
 ): (_: Record<string, any>[]) => any[] {
   const { str, names } = executionStr([n], 'x', ({ tag }) => {
     const arr = [...new Array(slotCount)].map(
-      (_, i) => `(b[${i}]['${tag[dynTagCat]}']??0)`
+      (_, i) => `(b[${i}]['${tag[dynTagCat]}']??0)`,
     )
     return `+(${arr.join('+')}+0)`
   })
@@ -358,7 +358,7 @@ export function compileDiff(
 export function executionStr(
   n: AnyTagFree[],
   prefix: string,
-  readStr: (_: BaseRead) => string
+  readStr: (_: BaseRead) => string,
 ): { str: string; names: Map<AnyTagFree, string> } {
   let body = `${prefix}=undefined`
   for (const [name, f] of Object.entries(customOps))

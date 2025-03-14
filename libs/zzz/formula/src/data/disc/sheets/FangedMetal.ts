@@ -18,9 +18,9 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_inflict_assault',
     ownBuff.combat.common_dmg_.add(
-      cmpGE(discCount, 4, inflict_assault.ifOn(0.35))
+      cmpGE(discCount, 4, inflict_assault.ifOn(0.35)),
     ),
-    showCond4Set
-  )
+    showCond4Set,
+  ),
 )
 export default sheet

@@ -16,8 +16,8 @@ const normal_dmgInc = equal(
   key,
   prod(
     subscript(input.weapon.refinement, hp_conv, { unit: '%' }),
-    input.premod.hp
-  )
+    input.premod.hp,
+  ),
 )
 const heal_arr = data_gen.refinementBonus.heal_
 if (!heal_arr)
@@ -33,7 +33,7 @@ export const data = dataObjForWeaponSheet(
   },
   {
     normal_dmgInc,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

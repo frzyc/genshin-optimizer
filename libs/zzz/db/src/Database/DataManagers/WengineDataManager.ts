@@ -31,7 +31,7 @@ export class WengineDataManager extends DataManager<
     if (rawLevel > wengineMaxLevel) return undefined
     const { sanitizedLevel, milestone: modification } = validateLevelMilestone(
       rawLevel,
-      rawMod
+      rawMod,
     )
     if (typeof phase !== 'number' || phase < 1 || phase > 5) phase = 1
     if (location && !allLocationKeys.includes(location)) location = ''
@@ -47,7 +47,7 @@ export class WengineDataManager extends DataManager<
   }
   override toCache(
     storageObj: IWengine,
-    id: string
+    id: string,
   ): ICachedWengine | undefined {
     const newWengine = { ...storageObj, id }
     const oldWengine = super.get(id)
@@ -83,7 +83,7 @@ export class WengineDataManager extends DataManager<
       if (prevChar && prevWengine)
         this.database.chars.setEquippedWengine(
           prevChar.key,
-          prevWengine?.id as WengineKey
+          prevWengine?.id as WengineKey,
         )
     } else
       newWengine.location &&
@@ -110,7 +110,7 @@ export class WengineDataManager extends DataManager<
 
   findDups(
     wengine: IWengine,
-    idList = this.keys
+    idList = this.keys,
   ): { duplicated: ICachedWengine[]; upgraded: ICachedWengine[] } {
     const { key, level, modification, phase } = wengine
 
@@ -122,7 +122,7 @@ export class WengineDataManager extends DataManager<
         key === candidate.key &&
         level >= candidate.level &&
         modification >= candidate.modification &&
-        phase >= candidate.phase
+        phase >= candidate.phase,
     )
 
     // Strictly upgraded wengines
@@ -131,7 +131,7 @@ export class WengineDataManager extends DataManager<
         (candidate) =>
           level > candidate.level ||
           modification > candidate.modification ||
-          phase > candidate.phase
+          phase > candidate.phase,
       )
       .sort((candidates) => (candidates.location === wengine.location ? -1 : 1))
     // Strictly duplicated wengines
@@ -140,7 +140,7 @@ export class WengineDataManager extends DataManager<
         (candidate) =>
           level === candidate.level &&
           modification === candidate.modification &&
-          phase === candidate.phase
+          phase === candidate.phase,
       )
       .sort((candidates) => (candidates.location === wengine.location ? -1 : 1))
     return { duplicated, upgraded }

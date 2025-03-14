@@ -131,7 +131,7 @@ const mainSubKeys = [
   'heal_',
 ] as const
 const mainReadNodes = [...mainBaseKeys, ...mainSubKeys].map(
-  (k) => input.total[k]
+  (k) => input.total[k],
 )
 const mainEditKeys = [
   'atk_',
@@ -155,7 +155,7 @@ const otherStatKeys = [
 const miscStatkeys = allInputPremodKeys.filter(
   (k) =>
     !(mainEditKeys as readonly string[]).includes(k) &&
-    !(otherStatKeys as readonly string[]).includes(k)
+    !(otherStatKeys as readonly string[]).includes(k),
 )
 
 function StatDisplayContent({
@@ -206,7 +206,7 @@ function MainStatsCards() {
   const miscStatReadNodes = useMemo(
     () =>
       miscStatkeys.map((k) => input.total[k]).filter((n) => data.get(n).value),
-    [data]
+    [data],
   )
   const { icon, variant, name } =
     (specialNode && resolveInfo(specialNode.info)) ?? {}

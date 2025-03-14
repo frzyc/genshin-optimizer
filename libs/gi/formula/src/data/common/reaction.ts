@@ -220,7 +220,7 @@ function eleMasMulti(a: number, b: number): NumNode {
 
 const _crystallizeHit = prod(
   subscript(lvl, cryLvlMultis),
-  eleMasMulti(40 / 9, 1400)
+  eleMasMulti(40 / 9, 1400),
 )
 
 type TransInfo = {
@@ -286,12 +286,12 @@ const transInfo: Record<TransformativeReactionKey, TransInfo> = {
   },
 }
 const transTriggerByEle = Object.fromEntries(
-  allElementWithPhyKeys.map((ele) => [ele, new Set()])
+  allElementWithPhyKeys.map((ele) => [ele, new Set()]),
 ) as Record<ElementWithPhyKey, Set<TransformativeReactionKey>>
 function trigger(
   ele: ElementWithPhyKey,
   trans: TransformativeReactionKey,
-  immediateFromEle: Record<ElementWithPhyKey, Set<TransformativeReactionKey>>
+  immediateFromEle: Record<ElementWithPhyKey, Set<TransformativeReactionKey>>,
 ) {
   if (transTriggerByEle[ele].has(trans)) return
   transTriggerByEle[ele].add(trans)
@@ -302,7 +302,7 @@ function trigger(
 }
 {
   const immediateFromEle = Object.fromEntries(
-    allElementWithPhyKeys.map((ele) => [ele, new Set()])
+    allElementWithPhyKeys.map((ele) => [ele, new Set()]),
   ) as Record<ElementWithPhyKey, Set<TransformativeReactionKey>>
   for (const trans of allTransformativeReactionKeys)
     for (const ele of transInfo[trans].triggeredBy)
@@ -322,24 +322,24 @@ const data: TagMapNodeEntries = [
 
   ownBuff.reaction.cataBase.add(eleMasMulti(5, 1200)),
   ownBuff.reaction.cataAddi.spread.dendro.add(
-    prod(subscript(own.char.lvl, transLvlMultis), 1.25, cataBase)
+    prod(subscript(own.char.lvl, transLvlMultis), 1.25, cataBase),
   ),
   ownBuff.reaction.cataAddi.aggravate.electro.add(
-    prod(subscript(own.char.lvl, transLvlMultis), 1.15, cataBase)
+    prod(subscript(own.char.lvl, transLvlMultis), 1.15, cataBase),
   ),
 
   ownBuff.reaction.transBase.add(
-    prod(subscript(lvl, transLvlMultis), eleMasMulti(16, 2000))
+    prod(subscript(lvl, transLvlMultis), eleMasMulti(16, 2000)),
   ),
   ownBuff.trans.critMulti.add(
     lookup(own.common.critMode, {
       crit: sum(1, own.trans.cappedCritRate_),
       nonCrit: 1,
       avg: sum(1, prod(own.trans.cappedCritRate_, own.trans.critDMG_)),
-    })
+    }),
   ),
   ...allTransformativeReactionKeys.map((trans) =>
-    ownBuff.trans.multi[trans].add(transInfo[trans].multi)
+    ownBuff.trans.multi[trans].add(transInfo[trans].multi),
   ),
 
   // Trans listing
@@ -348,7 +348,7 @@ const data: TagMapNodeEntries = [
     const q = trans === 'swirl' ? 'swirl' : canCrit ? 'transCrit' : 'trans'
     let cond: string | StrNode = 'infer'
     const available = allElementKeys.filter((ele) =>
-      transTriggerByEle[ele].has(trans)
+      transTriggerByEle[ele].has(trans),
     )
     if (
       !transTriggerByEle['physical'].has(trans) &&
@@ -360,13 +360,13 @@ const data: TagMapNodeEntries = [
           : lookup(
               own.char.ele,
               Object.fromEntries(available.map((k) => [k, cond])),
-              ''
+              '',
             )
     return variants.flatMap((ele) => {
       const name = trans === 'swirl' ? `swirl_${ele}` : trans
       return [
         ownBuff.listing.formulas.add(
-          tag(cond, { trans, qt: 'formula', q, ele, sheet: 'static', name })
+          tag(cond, { trans, qt: 'formula', q, ele, sheet: 'static', name }),
         ),
         ownBuff.prep.ele.name(name).add(ele),
       ]

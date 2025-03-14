@@ -45,7 +45,7 @@ export function NumberInputLazy({
   }
 
   const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const val = event.target.value
 
@@ -57,7 +57,7 @@ export function NumberInputLazy({
   }
 
   const onFocus = (
-    event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     event.target.select()
   }

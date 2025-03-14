@@ -109,7 +109,7 @@ function OptimizeWrapper() {
           4: [],
           5: [],
           6: [],
-        } as Record<DiscSlotKey, ICachedDisc[]>
+        } as Record<DiscSlotKey, ICachedDisc[]>,
       )
     )
   }, [
@@ -161,9 +161,9 @@ function OptimizeWrapper() {
     () =>
       Object.values(discsBySlot).reduce(
         (total, discs) => total * discs.length,
-        1
+        1,
       ) * wengines.length,
-    [wengines.length, discsBySlot]
+    [wengines.length, discsBySlot],
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -202,7 +202,7 @@ function OptimizeWrapper() {
       wengines,
       discsBySlot,
       numWorkers,
-      setProgress
+      setProgress,
     )
 
     cancelled.then(() => optimizer.terminate('user cancelled'))

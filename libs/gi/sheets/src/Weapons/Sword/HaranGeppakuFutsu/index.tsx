@@ -24,14 +24,14 @@ const passive_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
     subscript(input.weapon.refinement, passiveRefine, { path: `${ele}_dmg_` }),
-  ])
+  ]),
 )
 const normal_dmg_ = lookup(
   condNode,
   objKeyMap(range(1, 2), (i) =>
-    prod(i, subscript(input.weapon.refinement, stack_normal_dmg_))
+    prod(i, subscript(input.weapon.refinement, stack_normal_dmg_)),
   ),
-  naught
+  naught,
 )
 
 export const data = dataObjForWeaponSheet(key, {

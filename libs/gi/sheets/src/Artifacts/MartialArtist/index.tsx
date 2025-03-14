@@ -19,12 +19,12 @@ const set2CA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), {
 const set4NA = greaterEq(
   input.artSet.MartialArtist,
   4,
-  equal('on', condState, percent(0.25), { path: 'normal_dmg_' })
+  equal('on', condState, percent(0.25), { path: 'normal_dmg_' }),
 )
 const set4CA = greaterEq(
   input.artSet.MartialArtist,
   4,
-  equal('on', condState, percent(0.25), { path: 'charged_dmg_' })
+  equal('on', condState, percent(0.25), { path: 'charged_dmg_' }),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

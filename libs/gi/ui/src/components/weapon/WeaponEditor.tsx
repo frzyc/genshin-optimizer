@@ -82,17 +82,17 @@ export function WeaponEditor({
     (newWeapon: Partial<ICachedWeapon>) => {
       database.weapons.set(propWeaponId, newWeapon)
     },
-    [propWeaponId, database]
+    [propWeaponId, database],
   )
 
   const setLocation = useCallback(
     (k: LocationCharacterKey | '') =>
       id && database.weapons.set(id, { location: k }),
-    [database, id]
+    [database, id],
   )
   const filter = useCallback(
     (ck: CharacterKey) => weaponType === getCharStat(ck).weaponType,
-    [weaponType]
+    [weaponType],
   )
 
   const [showModal, onShowModal, onHideModal] = useBoolState()
@@ -103,7 +103,7 @@ export function WeaponEditor({
       weaponSheet &&
       weapon &&
       computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]),
-    [weaponSheet, weapon]
+    [weaponSheet, weapon],
   )
 
   return (

@@ -39,7 +39,7 @@ export function pruneAll(
   arts: ArtifactsBySlot,
   numTop: number,
   exclusion: ArtSetExclusion,
-  forced: Partial<Record<MicropassOperation, boolean>>
+  forced: Partial<Record<MicropassOperation, boolean>>,
 ): { nodes: OptNode[]; arts: ArtifactsBySlot } {
   let should = forced
   /** If `key` makes progress, all operations in `value` should be performed */
@@ -93,7 +93,7 @@ export function pruneAll(
 
 export function pruneExclusion(
   nodes: OptNode[],
-  exclusion: ArtSetExclusion
+  exclusion: ArtSetExclusion,
 ): OptNode[] {
   const maxValues: Partial<Record<keyof typeof exclusion, number>> = {}
   for (const [key, e] of Object.entries(exclusion)) {
@@ -121,14 +121,14 @@ export function pruneExclusion(
         }
       }
       return f
-    }
+    },
   )
 }
 
 function reaffine(
   nodes: OptNode[],
   arts: ArtifactsBySlot,
-  forceRename = false
+  forceRename = false,
 ): { nodes: OptNode[]; arts: ArtifactsBySlot } {
   const affineNodes = new Set<OptNode>(),
     topLevelAffine = new Set<OptNode>()
@@ -137,7 +137,7 @@ function reaffine(
     if (isAffine) affineNodes.add(node)
     else
       node.operands.forEach(
-        (op) => affineNodes.has(op) && topLevelAffine.add(op)
+        (op) => affineNodes.has(op) && topLevelAffine.add(op),
       )
     return node
   }
@@ -166,7 +166,7 @@ function reaffine(
           return visit(
             f,
             nonConst.length === 0 ||
-              (nonConst.length === 1 && affineNodes.has(nonConst[0]))
+              (nonConst.length === 1 && affineNodes.has(nonConst[0])),
           )
         }
         case 'const':
@@ -180,7 +180,7 @@ function reaffine(
         default:
           assertUnreachable(operation)
       }
-    }
+    },
   )
 
   nodes
@@ -188,7 +188,7 @@ function reaffine(
     .forEach((node) => topLevelAffine.add(node))
   if (
     [...topLevelAffine].every(
-      ({ operation }) => operation === 'read' || operation === 'const'
+      ({ operation }) => operation === 'read' || operation === 'const',
     ) &&
     Object.keys(arts.base).length === dynKeys.size
   )
@@ -207,12 +207,12 @@ function reaffine(
       !forceRename && node.operation === 'read' && node.path[0] === 'dyn'
         ? node
         : dynRead(nextDynKey()),
-    ])
+    ]),
   )
   nodes = mapFormulas(
     nodes,
     (f) => affineMap.get(f) ?? f,
-    (f) => f
+    (f) => f,
   )
 
   function reaffineArt(stat: DynStat): DynStat {
@@ -221,13 +221,13 @@ function reaffine(
       {
         dyn: objMap(stat, (value) => constant(value)),
       } as any,
-      (_) => true
+      (_) => true,
     )
     return Object.fromEntries(
       [...affineMap.values()].map((v, i) => [
         v.path[1],
         (values[i] as ConstantNode<number>).value,
-      ])
+      ]),
     )
   }
   const result = {
@@ -239,7 +239,7 @@ function reaffine(
           id,
           set,
           values: reaffineArt(values),
-        }))
+        })),
       ),
     },
   }
@@ -253,7 +253,7 @@ function reaffine(
 function pruneOrder(
   arts: ArtifactsBySlot,
   numTop: number,
-  exclusion: ArtSetExclusion
+  exclusion: ArtSetExclusion,
 ): ArtifactsBySlot {
   let progress = false
   /**
@@ -268,12 +268,12 @@ function pruneOrder(
   const noSwitchIn = new Set(
     Object.entries(exclusion)
       .filter(([_, v]) => v.length)
-      .map(([k]) => k) as ArtifactSetKey[]
+      .map(([k]) => k) as ArtifactSetKey[],
   )
   const noSwitchOut = new Set(
     Object.entries(exclusion)
       .filter(([_, v]) => v.includes(2) && !v.includes(4))
-      .map(([k]) => k) as ArtifactSetKey[]
+      .map(([k]) => k) as ArtifactSetKey[],
   )
   const values = objKeyMap(allArtifactSlotKeys, (slot) => {
     const list = arts.values[slot]
@@ -281,10 +281,10 @@ function pruneOrder(
       let count = 0
       return list.every((other) => {
         const otherBetterEqual = keys.every(
-          (k) => (other.values[k] ?? 0) >= (art.values[k] ?? 0)
+          (k) => (other.values[k] ?? 0) >= (art.values[k] ?? 0),
         )
         const otherMaybeBetter = keys.some(
-          (k) => (other.values[k] ?? 0) > (art.values[k] ?? 0)
+          (k) => (other.values[k] ?? 0) > (art.values[k] ?? 0),
         )
         const otherBetter =
           otherBetterEqual && (otherMaybeBetter || other.id > art.id)
@@ -306,22 +306,22 @@ function pruneOrder(
 function pruneArtRange(
   nodes: OptNode[],
   arts: ArtifactsBySlot,
-  minimum: number[]
+  minimum: number[],
 ): ArtifactsBySlot {
   const baseRange = Object.fromEntries(
-    Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }])
+    Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]),
   )
   const wrap = { arts }
   while (true) {
     const artRanges = objKeyMap(allArtifactSlotKeys, (slot) =>
-      computeArtRange(wrap.arts.values[slot])
+      computeArtRange(wrap.arts.values[slot]),
     )
     const otherArtRanges = objKeyMap(allArtifactSlotKeys, (key) =>
       addArtRange(
         Object.entries(artRanges)
           .map((a) => (a[0] === key ? baseRange : a[1]))
-          .filter((x) => x)
-      )
+          .filter((x) => x),
+      ),
     )
 
     let progress = false
@@ -330,7 +330,7 @@ function pruneArtRange(
         const read = addArtRange([computeArtRange([art]), otherArtRanges[slot]])
         const newRange = computeNodeRange(nodes, read)
         return nodes.every(
-          (node, i) => newRange.get(node)!.max >= (minimum[i] ?? -Infinity)
+          (node, i) => newRange.get(node)!.max >= (minimum[i] ?? -Infinity),
         )
       })
       if (result.length !== wrap.arts.values[slot].length) progress = true
@@ -343,7 +343,7 @@ function pruneArtRange(
 }
 function pruneNodeRange(nodes: OptNode[], arts: ArtifactsBySlot): OptNode[] {
   const baseRange = Object.fromEntries(
-    Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }])
+    Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]),
   )
   const reads = addArtRange([
     baseRange,
@@ -395,7 +395,7 @@ function pruneNodeRange(nodes: OptNode[], arts: ArtifactsBySlot): OptNode[] {
       }
       return f
     },
-    (f) => f
+    (f) => f,
   )
 }
 function addArtRange(ranges: DynMinMax[]): DynMinMax {
@@ -417,7 +417,10 @@ function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
       .filter((key) => arts.every((art) => art.values[key]))
       .forEach(
         (key) =>
-          (result[key] = { min: arts[0].values[key], max: arts[0].values[key] })
+          (result[key] = {
+            min: arts[0].values[key],
+            max: arts[0].values[key],
+          }),
       )
     arts.forEach(({ values }) => {
       for (const [key, value] of Object.entries(values)) {
@@ -433,7 +436,7 @@ function computeArtRange(arts: ArtifactBuildData[]): DynMinMax {
 }
 export function computeFullArtRange(arts: ArtifactsBySlot): DynMinMax {
   const baseRange = Object.fromEntries(
-    Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }])
+    Object.entries(arts.base).map(([key, x]) => [key, { min: x, max: x }]),
   )
   return addArtRange([
     baseRange,
@@ -442,7 +445,7 @@ export function computeFullArtRange(arts: ArtifactsBySlot): DynMinMax {
 }
 export function computeNodeRange(
   nodes: OptNode[],
-  reads: DynMinMax
+  reads: DynMinMax,
 ): Map<OptNode, MinMax> {
   const range = new Map<OptNode, MinMax>()
 
@@ -457,7 +460,7 @@ export function computeNodeRange(
         case 'read':
           if (f.path[0] !== 'dyn')
             throw new Error(
-              `Found non-dyn path ${f.path} while computing range`
+              `Found non-dyn path ${f.path} while computing range`,
             )
           current = reads[f.path[1]] ?? { min: 0, max: 0 }
           break
@@ -485,7 +488,7 @@ export function computeNodeRange(
               accu.min * current.max,
               accu.max * current.min,
               accu.max * current.max,
-            ])
+            ]),
           )
           break
         case 'threshold':
@@ -515,13 +518,13 @@ export function computeNodeRange(
           assertUnreachable(operation)
       }
       range.set(f, current)
-    }
+    },
   )
   return range
 }
 function computeMinMax(
   values: readonly number[],
-  minMaxes: readonly MinMax[] = []
+  minMaxes: readonly MinMax[] = [],
 ): MinMax {
   const max = Math.max(...values, ...minMaxes.map((x) => x.max))
   const min = Math.min(...values, ...minMaxes.map((x) => x.min))
@@ -530,7 +533,7 @@ function computeMinMax(
 
 export function filterArts(
   arts: ArtifactsBySlot,
-  filters: RequestFilter
+  filters: RequestFilter,
 ): ArtifactsBySlot {
   return {
     base: arts.base,
@@ -550,7 +553,7 @@ export function filterArts(
 
 export function mergeBuilds(
   builds: SolverBuild[][],
-  maxNum: number
+  maxNum: number,
 ): SolverBuild[] {
   return builds
     .flatMap((x) => x)
@@ -563,15 +566,15 @@ export function mergePlot(plots: PlotData[]): PlotData {
     maxCount = 1500
   let keys = new Set(
     plots.flatMap((x) =>
-      Object.values(x).map((v) => v && Math.round(v.plot! / scale))
-    )
+      Object.values(x).map((v) => v && Math.round(v.plot! / scale)),
+    ),
   )
   while (keys.size > maxCount) {
     scale *= reductionScaling
     keys = new Set(
       [...keys]
         .filter(notEmpty)
-        .map((key) => Math.round(key / reductionScaling))
+        .map((key) => Math.round(key / reductionScaling)),
     )
   }
   const result: PlotData = {}
@@ -587,17 +590,17 @@ export function mergePlot(plots: PlotData[]): PlotData {
 export function countBuilds(arts: ArtifactsBySlot): number {
   return allArtifactSlotKeys.reduce(
     (_count, slot) => _count * arts.values[slot].length,
-    1
+    1,
   )
 }
 
 export function* filterFeasiblePerm(
   filters: Iterable<RequestFilter>,
-  _artSets: ArtifactsBySlot
+  _artSets: ArtifactsBySlot,
 ): Iterable<RequestFilter> {
   const artSets = objMap(
     _artSets.values,
-    (values) => new Set(values.map((v) => v.set))
+    (values) => new Set(values.map((v) => v.set)),
   )
   filter_loop: for (const filter of filters) {
     for (const [slot, f] of Object.entries(filter)) {
@@ -617,7 +620,7 @@ export function* filterFeasiblePerm(
   }
 }
 export function exclusionToAllowed(
-  exclusion: number[] | undefined
+  exclusion: number[] | undefined,
 ): Set<number> {
   return new Set(
     exclusion?.includes(2)
@@ -625,14 +628,14 @@ export function exclusionToAllowed(
         ? [0, 1]
         : [0, 1, 4, 5]
       : exclusion?.includes(4)
-      ? [0, 1, 2, 3]
-      : [0, 1, 2, 3, 4, 5]
+        ? [0, 1, 2, 3]
+        : [0, 1, 2, 3, 4, 5],
   )
 }
 /** A *disjoint* set of `RequestFilter` satisfying the exclusion rules */
 export function* artSetPerm(
   exclusion: ArtSetExclusion,
-  _artSets: ArtifactSetKey[]
+  _artSets: ArtifactSetKey[],
 ): Iterable<RequestFilter> {
   /**
    * This generation algorithm is separated into two parts:
@@ -650,7 +653,7 @@ export function* artSetPerm(
   function populateShapes(
     current: number[],
     list: Set<number>,
-    rainbows: number[]
+    rainbows: number[],
   ) {
     if (current.length === 5) {
       if (allowedRainbows.has(rainbows.length)) shapes.push(current)
@@ -660,12 +663,12 @@ export function* artSetPerm(
       populateShapes(
         [...current, i],
         list,
-        rainbows.filter((j) => j !== i)
+        rainbows.filter((j) => j !== i),
       )
     populateShapes(
       [...current, current.length],
       new Set([...list, current.length]),
-      [...rainbows, current.length]
+      [...rainbows, current.length],
     )
   }
   populateShapes([0], new Set([0]), [0])
@@ -682,7 +685,7 @@ export function* artSetPerm(
       if (id === undefined) continue
       required.set(
         id,
-        (required.get(id) ?? new Set(shape.slice(0, replacing)).size + 1) - 1
+        (required.get(id) ?? new Set(shape.slice(0, replacing)).size + 1) - 1,
       )
     }
     for (const [id, remaining] of required.entries()) {
@@ -708,7 +711,7 @@ export function* artSetPerm(
   }
   const allowedCounts = objMap(
     exclusion as Record<ArtSetExclusionKey, (2 | 4)[]>,
-    exclusionToAllowed
+    exclusionToAllowed,
   )
 
   function* check(shape: number[]) {
@@ -749,7 +752,7 @@ export function* artSetPerm(
             (result[allArtifactSlotKeys[j]] = {
               kind: 'required',
               sets: new Set([set]),
-            })
+            }),
         )
         usableRainbows -= requiredRainbows
 

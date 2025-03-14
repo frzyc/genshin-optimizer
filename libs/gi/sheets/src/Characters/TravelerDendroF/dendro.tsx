@@ -26,7 +26,7 @@ import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 export default function dendro(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  dmgForms: { [key: string]: DisplaySub }
+  dmgForms: { [key: string]: DisplaySub },
 ) {
   const condCharKey = 'TravelerDendro'
   const ct = charTemplates(key)
@@ -75,11 +75,11 @@ export default function dendro(
     lookup(
       condA1Stacks,
       Object.fromEntries(
-        a1StacksArr.map((stack) => [stack, prod(dm.passive1.eleMas, stack)])
+        a1StacksArr.map((stack) => [stack, prod(dm.passive1.eleMas, stack)]),
       ),
-      naught
+      naught,
     ),
-    { path: 'eleMas' }
+    { path: 'eleMas' },
   )
   const a1_eleMas = equal(input.activeCharKey, target.charKey, a1_eleMas_disp)
 
@@ -87,29 +87,29 @@ export default function dendro(
     input.asc,
     4,
     prod(percent(dm.passive2.skill_dmgInc, { fixed: 2 }), input.total.eleMas),
-    { unit: '%' }
+    { unit: '%' },
   )
   const a4_burst_dmg_ = greaterEq(
     input.asc,
     4,
     prod(percent(dm.passive2.burst_dmgInc), input.total.eleMas),
-    { unit: '%' }
+    { unit: '%' },
   )
 
   const [condC6BurstEffectPath, condC6BurstEffect] = cond(
     condCharKey,
-    'c6BurstEffect'
+    'c6BurstEffect',
   )
   const [condC6BurstElePath, condC6BurstEle] = cond(condCharKey, 'c6BurstEle')
   const c6_dendro_dmg_disp = greaterEq(
     input.constellation,
     6,
-    equal(condC6BurstEffect, 'on', percent(dm.constellation6.ele_dmg_))
+    equal(condC6BurstEffect, 'on', percent(dm.constellation6.ele_dmg_)),
   )
   const c6_dendro_dmg_ = equal(
     input.activeCharKey,
     target.charKey,
-    c6_dendro_dmg_disp
+    c6_dendro_dmg_disp,
   )
   const c6_ele_dmg_disp = Object.fromEntries(
     ['hydro', 'pyro', 'electro'].map((ele) => [
@@ -120,16 +120,16 @@ export default function dendro(
         equal(
           condC6BurstEffect,
           'on',
-          equal(condC6BurstEle, ele, percent(dm.constellation6.ele_dmg_))
-        )
+          equal(condC6BurstEle, ele, percent(dm.constellation6.ele_dmg_)),
+        ),
       ),
-    ])
+    ]),
   )
   const c6_ele_dmg_ = Object.fromEntries(
     Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
       `${ele}_dmg_`,
       equal(input.activeCharKey, target.charKey, node),
-    ])
+    ]),
   )
 
   const dmgFormulas = {
@@ -230,7 +230,7 @@ export default function dendro(
                 },
               ],
             },
-          ])
+          ]),
         ),
       }),
       ct.headerTem('constellation2', {
@@ -284,7 +284,7 @@ export default function dendro(
                 },
               ],
             },
-          ])
+          ]),
         ),
       }),
     ]),

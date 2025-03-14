@@ -32,7 +32,7 @@ export function BonusStatsSection() {
   const setStat = useCallback(
     (tag: Tag, value: number | null, index?: number) =>
       database.charOpts.setBonusStat(characterKey, tag, value, index),
-    [database, characterKey]
+    [database, characterKey],
   )
   const newTarget = (q: InitialStats) => {
     const tag = newTag(q, characterKey)

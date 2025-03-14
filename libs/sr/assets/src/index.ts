@@ -33,12 +33,12 @@ type characterAssetKey =
 
 export function characterAsset(
   ck: CharacterGenderedKey,
-  asset: characterAssetKey
+  asset: characterAssetKey,
 ) {
   return chars[ck][asset]
 }
 export function characterKeyToGenderedKey(
-  ck: CharacterKey
+  ck: CharacterKey,
 ): CharacterGenderedKey {
   if (isTrailblazerKey(ck)) {
     // TODO: implement gender

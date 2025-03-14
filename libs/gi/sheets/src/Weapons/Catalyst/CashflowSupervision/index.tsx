@@ -27,7 +27,7 @@ const atkSPD_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const atk_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, atk_arr)
+  subscript(input.weapon.refinement, atk_arr),
 )
 
 const [condHpChangesPath, condHpChanges] = cond(key, 'hpChanges')
@@ -37,25 +37,25 @@ const normal_dmg_ = lookup(
   objKeyMap(hpChangesArr, (symbol) =>
     prod(
       symbol,
-      subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 const charged_dmg_ = lookup(
   condHpChanges,
   objKeyMap(hpChangesArr, (symbol) =>
     prod(
       symbol,
-      subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, charged_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 const atkSPD_ = equal(
   condHpChanges,
   '3',
-  subscript(input.weapon.refinement, atkSPD_arr)
+  subscript(input.weapon.refinement, atkSPD_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

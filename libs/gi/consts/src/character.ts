@@ -225,7 +225,7 @@ export type CharacterRarityKey = (typeof allCharacterRarityKeys)[number]
 
 export function charKeyToLocGenderedCharKey(
   charKey: CharacterKey,
-  gender: GenderKey
+  gender: GenderKey,
 ): LocationGenderedCharacterKey {
   if (allTravelerKeys.includes(charKey as TravelerKey))
     return `Traveler${gender}`
@@ -233,7 +233,7 @@ export function charKeyToLocGenderedCharKey(
 }
 
 export function charKeyToLocCharKey(
-  charKey: CharacterKey
+  charKey: CharacterKey,
 ): LocationCharacterKey {
   if (allTravelerKeys.includes(charKey as TravelerKey)) return 'Traveler'
   return charKey as LocationCharacterKey
@@ -241,7 +241,7 @@ export function charKeyToLocCharKey(
 
 export function locCharKeyToCharKey(
   locKey: LocationCharacterKey,
-  travelerEle: ElementKey = 'anemo'
+  travelerEle: ElementKey = 'anemo',
 ): CharacterKey {
   if (locKey === 'Traveler') return travelerEleMap[travelerEle] as CharacterKey
   return locKey as CharacterKey

@@ -85,7 +85,7 @@ export class BuildTcDataManager extends DataManager<
   }
   getBuildTcIds(characterKey: CharacterKey) {
     return this.keys.filter(
-      (key) => this.get(key)?.characterKey === characterKey
+      (key) => this.get(key)?.characterKey === characterKey,
     )
   }
 }
@@ -116,14 +116,14 @@ function initCharTCRelicSlots(): Record<RelicSlotKey, BuildTcRelicSlot> {
     statKey: (s === 'head'
       ? 'hp'
       : s === 'hands'
-      ? 'atk'
-      : 'atk_') as RelicMainStatKey,
+        ? 'atk'
+        : 'atk_') as RelicMainStatKey,
     rarity: 5,
   }))
 }
 
 function validateCharTCLightCone(
-  lightCone: unknown
+  lightCone: unknown,
 ): IBuildTc['lightCone'] | undefined {
   if (typeof lightCone !== 'object') return undefined
   const { key } = lightCone as Exclude<IBuildTc['lightCone'], undefined>
@@ -136,7 +136,7 @@ function validateCharTCLightCone(
     superimpose = 1
   const { level: _level, ascension: _ascension } = validateLevelAsc(
     level,
-    ascension
+    ascension,
   )
   ;[level, ascension] = [_level, _ascension]
   return { key, level, ascension, superimpose }
@@ -154,7 +154,7 @@ function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
   if (!relicSubstatTypeKeys.includes(type)) type = 'max'
   if (typeof stats !== 'object') stats = objKeyMap(allRelicSubStatKeys, () => 0)
   stats = objKeyMap(allRelicSubStatKeys, (k) =>
-    typeof stats[k] === 'number' ? stats[k] : 0
+    typeof stats[k] === 'number' ? stats[k] : 0,
   )
   rarity = validateRelicRarity(rarity)
 
@@ -168,7 +168,7 @@ function validateRelicRarity(rarity: unknown): RelicRarityKey {
   return isRelicRarityKey(rarity) ? rarity : 5
 }
 function validateCharTCRelicSlots(
-  slots: unknown
+  slots: unknown,
 ): IBuildTc['relic']['slots'] | undefined {
   if (typeof slots !== 'object') return initCharTCRelicSlots()
 
@@ -176,7 +176,7 @@ function validateCharTCRelicSlots(
     Object.keys(slots as IBuildTc['relic']['slots']).length !==
       allRelicSlotKeys.length ||
     Object.keys(slots as IBuildTc['relic']['slots']).some(
-      (s) => !allRelicSlotKeys.includes(s as RelicSlotKey)
+      (s) => !allRelicSlotKeys.includes(s as RelicSlotKey),
     )
   )
     return initCharTCRelicSlots()
@@ -189,11 +189,11 @@ function validateCharTCRelicSlots(
         rarity,
         ...rest,
       }
-    }
+    },
   )
 }
 function validateCharTcOptimization(
-  optimization: unknown
+  optimization: unknown,
 ): IBuildTc['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
   let { distributedSubstats, maxSubstats } =
@@ -202,7 +202,7 @@ function validateCharTcOptimization(
   if (typeof maxSubstats !== 'object')
     maxSubstats = initCharTcOptimizationMaxSubstats()
   maxSubstats = objKeyMap([...allRelicSubStatKeys], (k) =>
-    typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
+    typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0,
   )
 
   return { distributedSubstats, maxSubstats }
@@ -210,13 +210,13 @@ function validateCharTcOptimization(
 function initCharTcOptimizationMaxSubstats(): IBuildTc['optimization']['maxSubstats'] {
   return objKeyMap(
     allRelicSubStatKeys,
-    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5)
+    (k) => 6 * (k === 'hp' || k === 'atk' ? 4 : k === 'atk_' ? 2 : 5),
   )
 }
 export function toBuildTc(
   charTC: IBuildTc,
   eLightCone: ICachedLightCone | undefined = undefined,
-  relics: Array<ICachedRelic | undefined> = []
+  relics: Array<ICachedRelic | undefined> = [],
 ) {
   if (eLightCone) {
     charTC.lightCone = {
@@ -248,7 +248,7 @@ export function toBuildTc(
   charTC.relic.sets = Object.fromEntries(
     Object.entries(sets)
       .map(([key, value]) => [key, value === 3 ? 2 : value === 5 ? 4 : value])
-      .filter(([, value]) => value)
+      .filter(([, value]) => value),
   )
   return charTC
 }

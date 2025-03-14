@@ -13,12 +13,12 @@ const [condPassivePath, condPassive] = cond(key, 'GuerillaTactics')
 const atk_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, refineInc)
+  subscript(input.weapon.refinement, refineInc),
 )
 const moveSPD_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, refineInc)
+  subscript(input.weapon.refinement, refineInc),
 )
 
 const data = dataObjForWeaponSheet(key, {

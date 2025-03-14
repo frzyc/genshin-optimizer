@@ -90,7 +90,7 @@ function SimpleConditionalSelector({
           teamChar.conditional = conditionalValues
         })
     },
-    [database, conditional.path, teamCharId, teamId]
+    [database, conditional.path, teamCharId, teamId],
   )
 
   const conditionalValue = data.get(conditional.value).value
@@ -148,7 +148,7 @@ function ExclusiveConditionalSelector({
           teamChar.conditional = conditionalValues
         })
     },
-    [database, conditional.path, teamCharId, teamId]
+    [database, conditional.path, teamCharId, teamId],
   )
 
   const conditionalValue = data.get(conditional.value).value
@@ -229,7 +229,7 @@ function MultipleConditionalSelector({
           teamChar.conditional = conditionalValues
         })
     },
-    [database, teamCharId, teamId]
+    [database, teamCharId, teamId],
   )
 
   return (
@@ -261,7 +261,7 @@ function MultipleConditionalSelector({
               {getCondName(st.name)}
             </Button>
           )
-        }
+        },
       )}
     </ButtonGroup>
   )

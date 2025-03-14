@@ -61,7 +61,7 @@ export default function PageCharacter() {
       }
       navigate(`/characters/${characterKey}`)
     },
-    [database.chars, navigate]
+    [database.chars, navigate],
   )
 
   const attributeTotals = useMemo(
@@ -71,9 +71,9 @@ export default function PageCharacter() {
           const attribute = getCharStat(ck).attribute
           ct[attribute].total++
           if (database.chars.keys.includes(ck)) ct[attribute].current++
-        })
+        }),
       ),
-    [database]
+    [database],
   )
 
   const rarityTotals = useMemo(
@@ -83,9 +83,9 @@ export default function PageCharacter() {
           const rarity = getCharStat(ck).rarity
           ct[rarity].total++
           if (database.chars.keys.includes(ck)) ct[rarity].current++
-        })
+        }),
       ),
-    [database]
+    [database],
   )
 
   return (

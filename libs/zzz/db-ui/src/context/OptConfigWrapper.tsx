@@ -18,7 +18,7 @@ export function OptConfigProvider({
   const optConfig = useDataManagerBase(database.optConfigs, optConfigId)!
   const providerValue = useMemo(
     () => ({ optConfigId, optConfig }),
-    [optConfigId, optConfig]
+    [optConfigId, optConfig],
   )
   return (
     <OptConfigContext.Provider value={providerValue}>

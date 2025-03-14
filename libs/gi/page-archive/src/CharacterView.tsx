@@ -59,7 +59,7 @@ export function CharacterView({
   const passivesList: [
     tKey: TalentSheetElementKey,
     tText: string,
-    asc: number
+    asc: number,
   ][] = [
     ['passive1', t('unlockPassive1'), 1],
     ['passive2', t('unlockPassive2'), 4],
@@ -75,7 +75,7 @@ export function CharacterView({
           subtitle={t('constellationLvl', { level: i })}
         />
       )),
-    [t, characterKey]
+    [t, characterKey],
   )
   return (
     <ModalWrapper

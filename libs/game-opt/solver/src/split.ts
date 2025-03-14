@@ -7,7 +7,7 @@ import type {
 export function splitCandidates<ID>(
   candidates: Candidate<ID>[][],
   cndRanges: Record<string, Range>[],
-  monotonicities: Map<string, Monotonicity>
+  monotonicities: Map<string, Monotonicity>,
 ): Candidate<ID>[][][] {
   const incomp: string[] = []
   const inc: string[] = []
@@ -47,12 +47,12 @@ export function splitCandidates<ID>(
   ])
   const slot = candidates.reduce(
     (best, cnds, i, arr) => (arr[best].length < cnds.length ? i : best),
-    0
+    0,
   )
   const vals = candidates[slot].map((c) => {
     const val = Object.entries(c).reduce(
       (s, [k, v]) => (typeof v === 'number' ? s + v * weights.get(k)! : s),
-      0
+      0,
     )
     return [c, val] as const
   })

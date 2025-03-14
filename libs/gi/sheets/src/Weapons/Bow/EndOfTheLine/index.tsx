@@ -21,10 +21,10 @@ const dmg = equal(
   customDmgNode(
     prod(
       subscript(input.weapon.refinement, dmgArr, { unit: '%' }),
-      input.total.atk
+      input.total.atk,
     ),
-    'elemental'
-  )
+    'elemental',
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, undefined, { dmg })

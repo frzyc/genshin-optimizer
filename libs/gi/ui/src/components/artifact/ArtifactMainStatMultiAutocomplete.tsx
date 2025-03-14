@@ -26,7 +26,7 @@ export function ArtifactMainStatMultiAutocomplete({
         label: `${tk(key)}${statPercent(key)}`,
         variant: KeyMap.getVariant(key),
       })),
-    [tk]
+    [tk],
   )
   const toImg = useCallback(
     (key: MainStatKey) => (
@@ -35,15 +35,15 @@ export function ArtifactMainStatMultiAutocomplete({
         iconProps={{ sx: { ml: 1, color: KeyMap.getVariant(key) } }}
       />
     ),
-    []
+    [],
   )
   const toExLabel = useCallback(
     (key: MainStatKey) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: MainStatKey) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
   return (
     <GeneralAutocompleteMulti

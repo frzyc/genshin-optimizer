@@ -114,8 +114,8 @@ const superposition_normCharged_dmgInc = equal(
     subscript(input.total.skillIndex, dm.skill.norm_charged_dmgInc, {
       unit: '%',
     }),
-    input.total.eleMas
-  )
+    input.total.eleMas,
+  ),
 )
 
 const [condCycloneActivePath, condCycloneActive] = cond(key, 'cycloneActive')
@@ -132,12 +132,12 @@ const multiplication_infusion = equalStr(
       lookup(
         target.weaponType,
         { sword: one, claymore: one, polearm: one },
-        naught
+        naught,
       ),
       one,
-      constant(elementKey)
-    )
-  )
+      constant(elementKey),
+    ),
+  ),
 )
 
 const [condSubtractionPath, condSubtraction] = cond(key, 'subtraction')
@@ -150,9 +150,9 @@ const subtraction_normCharged_dmgInc = equal(
     'on',
     prod(
       subscript(input.total.burstIndex, dm.burst.subDmgInc, { unit: '%' }),
-      input.total.eleMas
-    )
-  )
+      input.total.eleMas,
+    ),
+  ),
 )
 
 const [condLessThan3Path, condLessThan3] = cond(key, 'lessThan3')
@@ -161,8 +161,8 @@ const lessThan3_eleRes_ = equal(
   'on',
   prod(
     subscript(input.total.burstIndex, dm.burst.subElemRes, { unit: '%' }),
-    input.total.eleMas
-  )
+    input.total.eleMas,
+  ),
 )
 
 const [condA4EnemiesHitPath, condA4EnemiesHit] = cond(key, 'a4EnemiesHit')
@@ -181,11 +181,11 @@ const c1ModeMult = infoMut(
           average: constant(dm.constellation1.chance * dm.constellation1.dmg),
           always: constant(dm.constellation1.dmg),
         },
-        naught
-      )
-    )
+        naught,
+      ),
+    ),
   ),
-  { name: ct.ch('c1Key'), unit: '%', asConst: true }
+  { name: ct.ch('c1Key'), unit: '%', asConst: true },
 )
 
 const [condC2PrimePath, condC2Prime] = cond(key, 'c2Prime')
@@ -195,8 +195,8 @@ const c2PrimeDmgInc = greaterEq(
   equal(
     condSuperposition,
     'on',
-    equal(condC2Prime, 'on', { ...superposition_normCharged_dmgInc })
-  )
+    equal(condC2Prime, 'on', { ...superposition_normCharged_dmgInc }),
+  ),
 )
 
 const [condC6StacksPath, condC6Stacks] = cond(key, 'c6Stacks')
@@ -207,10 +207,10 @@ const c6_critRate_ = greaterEq(
   lookup(
     condC6Stacks,
     objKeyMap(c6StacksArr, (stack) =>
-      prod(percent(dm.constellation6.critRate_), stack)
+      prod(percent(dm.constellation6.critRate_), stack),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 const c6_critDMG_ = greaterEq(
   input.constellation,
@@ -218,10 +218,10 @@ const c6_critDMG_ = greaterEq(
   lookup(
     condC6Stacks,
     objKeyMap(c6StacksArr, (stack) =>
-      prod(percent(dm.constellation6.critDMG_), stack)
+      prod(percent(dm.constellation6.critDMG_), stack),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
@@ -229,7 +229,7 @@ const dmgFormulas = {
     dm.normal.hitArr.map((arr, i) => [
       i,
       dmgNode('atk', arr, 'normal', undefined, c1ModeMult),
-    ])
+    ]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged', undefined, c1ModeMult),
@@ -252,8 +252,8 @@ const dmgFormulas = {
       'on',
       prod(
         subscript(input.total.burstIndex, dm.burst.eleMas_, { unit: '%' }),
-        input.premod.eleMas
-      )
+        input.premod.eleMas,
+      ),
     ),
     sub_normal_dmgInc: subtraction_normCharged_dmgInc,
     sub_charged_dmgInc: { ...subtraction_normCharged_dmgInc },
@@ -269,11 +269,11 @@ const dmgFormulas = {
         lookup(
           condA4EnemiesHit,
           objKeyMap(a4EnemiesArr, (stack) =>
-            prod(percent(dm.passive2.elemas), stack, input.premod.eleMas)
+            prod(percent(dm.passive2.elemas), stack, input.premod.eleMas),
           ),
-          naught
-        )
-      )
+          naught,
+        ),
+      ),
     ),
   },
   constellation2: {
@@ -292,12 +292,12 @@ const data = dataObjForCharacterSheet(key, dmgFormulas, {
     normal_dmgInc: sum(
       dmgFormulas.skill.normal_dmgInc,
       dmgFormulas.burst.sub_normal_dmgInc,
-      dmgFormulas.constellation2.normal_dmgInc
+      dmgFormulas.constellation2.normal_dmgInc,
     ),
     charged_dmgInc: sum(
       dmgFormulas.skill.charged_dmgInc,
       dmgFormulas.burst.sub_charged_dmgInc,
-      dmgFormulas.constellation2.charged_dmgInc
+      dmgFormulas.constellation2.charged_dmgInc,
     ),
     critRate_: c6_critRate_,
     critDMG_: c6_critDMG_,
@@ -308,7 +308,7 @@ const data = dataObjForCharacterSheet(key, dmgFormulas, {
         allElementWithPhyKeys.map((ele) => [
           `${ele}_enemyRes_`,
           dmgFormulas.burst[ele],
-        ])
+        ]),
       ),
     },
     infusion: {
@@ -532,7 +532,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condCycloneActive,
         'on',
-        equal(input.activeCharKey, key, 1)
+        equal(input.activeCharKey, key, 1),
       ),
       name: ct.ch('subCond'),
       states: {
@@ -560,7 +560,7 @@ const sheet: TalentSheet = {
       canShow: equal(
         condCycloneActive,
         'on',
-        unequal(input.activeCharKey, key, 1)
+        unequal(input.activeCharKey, key, 1),
       ),
       name: ct.ch('multCond'),
       states: {

@@ -104,7 +104,7 @@ export const discSlotToMainStatKeys: Record<DiscSlotKey, DiscMainStatKey[]> = {
 }
 
 export const allDiscMainSubStatKeys = Array.from(
-  new Set([...allDiscSubStatKeys, ...allDiscMainStatKeys] as const)
+  new Set([...allDiscSubStatKeys, ...allDiscMainStatKeys] as const),
 )
 export type DiscMainSubStatKey = (typeof allDiscMainSubStatKeys)[number]
 
@@ -123,7 +123,7 @@ const subData = {
 } as const
 export function getDiscSubStatBaseVal(
   statKey: DiscSubStatKey,
-  rarity: DiscRarityKey
+  rarity: DiscRarityKey,
 ) {
   return subData[statKey][rarity]
 }
@@ -158,7 +158,7 @@ const mainData = {
 export function getDiscMainStatVal(
   rarity: DiscRarityKey,
   mainStatKey: DiscMainStatKey,
-  level: number
+  level: number,
 ): number {
   const maxVal = (mainData as any)[mainStatKey][rarity]
   if (!maxVal) return 0
@@ -337,7 +337,7 @@ export const disc4PeffectSheets: Partial<
         | Array<(typeof allDiscCondKeys)[DiscCondKey]>
       getStats: (
         conds: Partial<Record<DiscCondKey, number>>,
-        stats: Record<string, number>
+        stats: Record<string, number>,
       ) => Record<string, number> | undefined
     }
   >
@@ -392,8 +392,8 @@ export const disc4PeffectSheets: Partial<
           ret,
           objMultiplication(
             { crit_dmg_: 0.055 },
-            conds['ChaoticMetal']
-          ) as Record<string, number>
+            conds['ChaoticMetal'],
+          ) as Record<string, number>,
         )
       return ret
     },
@@ -498,7 +498,7 @@ export const disc4PeffectSheets: Partial<
       if (conds['WoodpeckerElectro'])
         return objMultiplication(
           { cond_atk_: 0.09 },
-          conds['WoodpeckerElectro']
+          conds['WoodpeckerElectro'],
         ) as Record<string, number>
       return undefined
     },

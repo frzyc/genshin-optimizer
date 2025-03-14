@@ -21,7 +21,7 @@ export const data: Data = dataObjForArtifactSheet(
   },
   {
     heal,
-  }
+  },
 )
 
 const sheet: SetEffectSheet = {

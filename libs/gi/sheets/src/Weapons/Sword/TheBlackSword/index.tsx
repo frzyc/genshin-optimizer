@@ -24,9 +24,9 @@ const heal = equal(
   customHealNode(
     prod(
       subscript(input.weapon.refinement, hpRegenSrc, { unit: '%' }),
-      input.total.atk
-    )
-  )
+      input.total.atk,
+    ),
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -37,7 +37,7 @@ const data = dataObjForWeaponSheet(
       charged_dmg_,
     },
   },
-  { heal }
+  { heal },
 )
 const sheet: IWeaponSheet = {
   document: [

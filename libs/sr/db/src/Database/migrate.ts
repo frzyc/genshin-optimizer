@@ -12,7 +12,7 @@ import type { ISroDatabase } from '../Interfaces'
 export const currentDBVersion = 1
 
 export function migrateSr(
-  sr: ISrObjectDescription & ISroDatabase
+  sr: ISrObjectDescription & ISroDatabase,
 ): ISrObjectDescription & ISroDatabase {
   const version = sr.dbVersion ?? 0
   // function migrateVersion(version: number, cb: () => void) {

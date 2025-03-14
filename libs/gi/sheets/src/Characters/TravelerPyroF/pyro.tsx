@@ -24,7 +24,7 @@ import { dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 export default function pyro(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  dmgForms: { [key: string]: DisplaySub }
+  dmgForms: { [key: string]: DisplaySub },
 ) {
   const condCharKey = 'TravelerPyro'
   const ct = charTemplates(key)
@@ -62,14 +62,14 @@ export default function pyro(
 
   const [condC1SkillActivePath, condC1SkillActive] = cond(
     condCharKey,
-    'c1SkillActive'
+    'c1SkillActive',
   )
   const [condC1NsPath, condC1Ns] = cond(condCharKey, 'c1Ns')
   const c1SkillActive_all_dmg_disp = greaterEq(
     input.constellation,
     1,
     equal(condC1SkillActive, 'on', dm.constellation1.dmg_),
-    { path: 'all_dmg_', isTeamBuff: true }
+    { path: 'all_dmg_', isTeamBuff: true },
   )
   const c1Ns_all_dmg_disp = greaterEq(
     input.constellation,
@@ -77,41 +77,41 @@ export default function pyro(
     equal(
       condC1SkillActive,
       'on',
-      equal(condC1Ns, 'on', dm.constellation1.ns_dmg_)
+      equal(condC1Ns, 'on', dm.constellation1.ns_dmg_),
     ),
-    { path: 'all_dmg_', isTeamBuff: true }
+    { path: 'all_dmg_', isTeamBuff: true },
   )
   const c1SkillActive_all_dmg_ = equal(
     input.activeCharKey,
     target.charKey,
-    c1SkillActive_all_dmg_disp
+    c1SkillActive_all_dmg_disp,
   )
   const c1Ns_all_dmg_ = equal(
     input.activeCharKey,
     target.charKey,
-    c1Ns_all_dmg_disp
+    c1Ns_all_dmg_disp,
   )
 
   const [condC4AfterBurstPath, condC4AfterBurst] = cond(
     condCharKey,
-    'c4AfterBurst'
+    'c4AfterBurst',
   )
   const c4AfterBurst_pyro_dmg_ = greaterEq(
     input.constellation,
     4,
-    equal(condC4AfterBurst, 'on', dm.constellation4.pyro_dmg_)
+    equal(condC4AfterBurst, 'on', dm.constellation4.pyro_dmg_),
   )
 
   const [condC6InNsPath, condC6InNs] = cond(condCharKey, 'c6InNs')
   const c6InNs_infusion = greaterEqStr(
     input.constellation,
     6,
-    equalStr(condC6InNs, 'on', constant('pyro'))
+    equalStr(condC6InNs, 'on', constant('pyro')),
   )
   const c6InNs_normal_critDMG_ = greaterEq(
     input.constellation,
     6,
-    equal(condC6InNs, 'on', dm.constellation6.crit_dmg_)
+    equal(condC6InNs, 'on', dm.constellation6.crit_dmg_),
   )
   const c6InNs_charged_critDMG_ = { ...c6InNs_normal_critDMG_ }
   const c6InNs_plunging_critDMG_ = { ...c6InNs_normal_critDMG_ }
@@ -123,7 +123,7 @@ export default function pyro(
       scorchingInstantDmg: dmgNode(
         'atk',
         dm.skill.scorchingInstantDmg,
-        'skill'
+        'skill',
       ),
       scorchingDmg: dmgNode('atk', dm.skill.scorchingDmg, 'skill'),
     },

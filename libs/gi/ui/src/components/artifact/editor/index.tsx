@@ -103,7 +103,7 @@ type UpdateMessage = { type: 'update'; artifact: Partial<IArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
 function artifactReducer(
   state: IArtifact | undefined,
-  action: Message
+  action: Message,
 ): IArtifact | undefined {
   const handle = () => {
     switch (action.type) {
@@ -142,7 +142,7 @@ const InputInvis = styled('input')({
 const LineBreak = styled('br')()
 
 function getDefaultSlotKey(
-  artifactSet?: ArtifactSetKey
+  artifactSet?: ArtifactSetKey,
 ): Extract<ArtifactSlotKey, 'flower' | 'circlet'> {
   if (artifactSet?.startsWith('Prayers')) {
     return 'circlet'
@@ -168,7 +168,7 @@ export function ArtifactEditor({
   fixedSlotKey,
 }: ArtifactEditorProps) {
   const queueRef = useRef(
-    new ScanningQueue(textsFromImage, shouldShowDevComponents)
+    new ScanningQueue(textsFromImage, shouldShowDevComponents),
   )
   const queue = queueRef.current
   const { t } = useTranslation('artifact')
@@ -180,7 +180,7 @@ export function ArtifactEditor({
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
   useEffect(
     () => database.arts.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+    [database, setDirtyDatabase],
   )
 
   const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
@@ -191,7 +191,7 @@ export function ArtifactEditor({
     useState({ processedNum: 0, outstandingNum: 0, scanningNum: 0 })
 
   const [scannedData, setScannedData] = useState(
-    undefined as undefined | Omit<Processed, 'artifact'>
+    undefined as undefined | Omit<Processed, 'artifact'>,
   )
 
   const { fileName, imageURL, debugImgs, texts } = scannedData ?? {}
@@ -209,7 +209,7 @@ export function ArtifactEditor({
       setShow(true)
       queue.addFiles(Array.from(files).map((f) => ({ f, fName: f.name })))
     },
-    [setShow, queue]
+    [setShow, queue],
   )
   const clearQueue = useCallback(() => {
     queue.clearQueue()
@@ -221,7 +221,7 @@ export function ArtifactEditor({
       uploadFiles(e.target.files)
       e.target.value = '' // reset the value so the same file can be uploaded again...
     },
-    [uploadFiles]
+    [uploadFiles],
   )
 
   const {
@@ -263,18 +263,18 @@ export function ArtifactEditor({
       function pick<T>(
         value: T | undefined,
         available: readonly T[],
-        prefer?: T
+        prefer?: T,
       ): T {
         return value && available.includes(value)
           ? value
-          : prefer ?? available[0]
+          : (prefer ?? available[0])
       }
 
       if (newValue.setKey && newStat) {
         newValue.rarity = pick(
           artifact?.rarity,
           newStat.rarities,
-          Math.max(...newStat.rarities)
+          Math.max(...newStat.rarities),
         ) as ArtifactRarity
         // If we're updating an existing artifact, then slotKey should immediately be set to the artifact's slot.
         // Otherwise, if slot selection is disabled but a key has been provided in fixedSlotKey, we assign that
@@ -290,30 +290,30 @@ export function ArtifactEditor({
         newValue.level = clamp(
           newValue.level,
           0,
-          4 * (newValue.rarity ?? artifact!.rarity)
+          4 * (newValue.rarity ?? artifact!.rarity),
         )
       if (newValue.slotKey)
         newValue.mainStatKey = pick(
           artifact?.mainStatKey,
-          artSlotMainKeys[newValue.slotKey]
+          artSlotMainKeys[newValue.slotKey],
         )
 
       if (newValue.mainStatKey) {
         newValue.substats = [0, 1, 2, 3].map((i) =>
           artifact && artifact.substats[i].key !== newValue.mainStatKey
             ? artifact!.substats[i]
-            : { key: '', value: 0 }
+            : { key: '', value: 0 },
         )
       }
       artifactDispatch({ type: 'update', artifact: newValue })
     },
-    [artifact, artStat, artifactDispatch, fixedSlotKey]
+    [artifact, artStat, artifactDispatch, fixedSlotKey],
   )
   const setSubstat = useCallback(
     (index: number, substat: ISubstat) => {
       artifactDispatch({ type: 'substat', index, substat })
     },
-    [artifactDispatch]
+    [artifactDispatch],
   )
   const isValid = !errors.length
   const canClearArtifact = (): boolean =>
@@ -340,7 +340,7 @@ export function ArtifactEditor({
       queue.clearQueue()
       reset()
     },
-    [t, artifactIdToEdit, queue, artifact, queueTotal, setShow, reset]
+    [t, artifactIdToEdit, queue, artifact, queueTotal, setShow, reset],
   )
 
   const theme = useTheme()
@@ -349,12 +349,12 @@ export function ArtifactEditor({
   const element = artifact
     ? allElementWithPhyKeys.find((ele) => artifact.mainStatKey.includes(ele))
     : undefined
-  const color = artifact ? element ?? 'success' : 'primary'
+  const color = artifact ? (element ?? 'success') : 'primary'
 
   const updateSetKey = useCallback(
     (setKey: ArtifactSetKey | '') =>
       update({ setKey: setKey as ArtifactSetKey }),
-    [update]
+    [update],
   )
   const setACDisable = useCallback(
     (key: ArtifactSetKey | '') => {
@@ -371,7 +371,7 @@ export function ArtifactEditor({
         return true
       return false
     },
-    [disableEditSlot, slotKey]
+    [disableEditSlot, slotKey],
   )
 
   useEffect(() => {
@@ -541,7 +541,7 @@ export function ArtifactEditor({
                             size={2}
                             src={artifactAsset(
                               artifact.setKey,
-                              artifact.slotKey
+                              artifact.slotKey,
                             )}
                           />
                           <ArtifactSetSlotName
@@ -599,7 +599,7 @@ export function ArtifactEditor({
                       ? getMainStatDisplayStr(
                           artifact.mainStatKey,
                           rarity,
-                          level
+                          level,
                         )
                       : t('mainStat')}
                   </Typography>

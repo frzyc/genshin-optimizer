@@ -22,7 +22,7 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
   const setStatFilters = useCallback(
     (statFilters: StatFilters) =>
       database.optConfigs.set(optConfigId, { statFilters }),
-    [database, optConfigId]
+    [database, optConfigId],
   )
   return (
     <Box>

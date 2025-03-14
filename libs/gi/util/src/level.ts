@@ -32,12 +32,12 @@ export const milestoneLevels = [
 
 export const getLevelString = (
   level: number,
-  ascension: AscensionKey
+  ascension: AscensionKey,
 ): string => `${level}/${ascensionMaxLevel[ascension]}`
 
 export function validateLevelAsc(
   level: number,
-  ascension: AscensionKey
+  ascension: AscensionKey,
 ): { level: number; ascension: AscensionKey } {
   if (typeof level !== 'number' || level < 1 || level > 90) level = 1
   if (typeof ascension !== 'number' || ascension < 0 || ascension > 6)
@@ -48,7 +48,7 @@ export function validateLevelAsc(
     level < (ascensionMaxLevel[ascension - 1] ?? 0)
   )
     ascension = ascensionMaxLevel.findIndex(
-      (maxLvl) => level <= maxLvl
+      (maxLvl) => level <= maxLvl,
     ) as AscensionKey
   return { level, ascension }
 }

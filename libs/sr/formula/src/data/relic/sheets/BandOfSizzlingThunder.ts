@@ -21,7 +21,7 @@ const sheet = registerRelic(
   registerBuff(
     'set4_atk_',
     ownBuff.premod.atk_.add(cmpGE(relicCount, 4, skillUsed.ifOn(dm[4].atk_))),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

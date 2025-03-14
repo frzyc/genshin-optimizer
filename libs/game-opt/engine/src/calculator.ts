@@ -37,14 +37,14 @@ const { arithmetic } = calculation
 
 export class Calculator<
   Tag_ extends Tag = Tag,
-  COp extends string = string // values of supported `Custom['ex']` if any
+  COp extends string = string, // values of supported `Custom['ex']` if any
 > extends BaseCalculator<CalcMeta<Tag_, COp>> {
   override computeMeta(
     { op, ex, tag: nTag }: AnyNode,
     val: number | string,
     _x: (CalcResult<number | string, CalcMeta<Tag_, COp>> | undefined)[],
     br: CalcResult<number | string, CalcMeta<Tag_, COp>>[],
-    tag: Tag_ | undefined
+    tag: Tag_ | undefined,
   ): CalcMeta<Tag_, COp> {
     let x = _x.filter((x) => !!x) as CalcResult<number, CalcMeta<Tag_, COp>>[]
     const info = extractInfo(x, br)
@@ -55,13 +55,13 @@ export class Calculator<
 
     function newMeta(
       op: MetaOp | COp,
-      ops: CalcResult<number, CalcMeta<Tag_, COp>>[]
+      ops: CalcResult<number, CalcMeta<Tag_, COp>>[],
     ): CalcMeta<Tag_, COp> {
       return finalize({ op, ops, ...info })
     }
     function wrap(
       result: CalcResult<number | string, CalcMeta<Tag_, COp>>,
-      extraCats?: (keyof Tag_)[]
+      extraCats?: (keyof Tag_)[],
     ): CalcMeta<Tag_, COp> {
       let { meta } = result
       if (extraCats?.some((c) => !meta.usedCats.has(c)))
@@ -115,7 +115,7 @@ export class Calculator<
     _tag: Tag_,
     entryTag: Tag_,
     _n: AnyNode,
-    result: CalcResult<string | number, CalcMeta<Tag_, COp>>
+    result: CalcResult<string | number, CalcMeta<Tag_, COp>>,
   ): CalcResult<string | number, CalcMeta<Tag_, COp>> {
     const { val } = result
     const meta = { ...result.meta }
@@ -134,11 +134,11 @@ export class Calculator<
       .filter((x) => x.val)
       .map(
         ({ val, meta }) =>
-          (reader as Read<Tag_>).withTag(meta.tag!)[val as Read['accu']]
+          (reader as Read<Tag_>).withTag(meta.tag!)[val as Read['accu']],
       )
   }
   listCondFormulas(
-    read: Read<Tag_>
+    read: Read<Tag_>,
   ): CondInfo<Member<Tag_> | 'All', Sheet<Tag_>> {
     return this.listFormulas(read)
       .map((x) => this.compute(x).meta.conds)
@@ -148,7 +148,7 @@ export class Calculator<
 
 function extractInfo<Tag_ extends Tag, COp>(
   x: CalcResult<any, CalcMeta<Tag_, COp>>[],
-  br: CalcResult<any, CalcMeta<Tag_, COp>>[]
+  br: CalcResult<any, CalcMeta<Tag_, COp>>[],
 ): Info<Tag_> {
   const metas = [...x.map((x) => x.meta), ...br.map((br) => br.meta)]
   let conds: Info<Tag_>['conds'] = {}

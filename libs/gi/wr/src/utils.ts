@@ -31,15 +31,15 @@ export const none = constant('none')
 export function constant(value: number, info?: Info): ConstantNode<number>
 export function constant(
   value: string | undefined,
-  info?: Info
+  info?: Info,
 ): ConstantNode<string | undefined>
 export function constant(
   value: number | string | undefined,
-  info?: Info
+  info?: Info,
 ): ConstantNode<number> | ConstantNode<string | undefined>
 export function constant(
   value: number | string | undefined,
-  info?: Info
+  info?: Info,
 ): ConstantNode<number | string | undefined> {
   return typeof value === 'number'
     ? { operation: 'const', operands: [], type: 'number', value, info }
@@ -85,19 +85,19 @@ export function lookup(
   index: StrNode,
   table: Record<string, NumNode>,
   defaultV: Num | 'none',
-  info?: Info
+  info?: Info,
 ): LookupNode<NumNode>
 export function lookup(
   index: StrNode,
   table: Record<string, StrNode>,
   defaultV: Str | 'none',
-  info?: Info
+  info?: Info,
 ): LookupNode<StrNode>
 export function lookup(
   index: StrNode,
   table: Record<string, AnyNode>,
   defaultV: N_S | 'none',
-  info?: Info
+  info?: Info,
 ): LookupNode<AnyNode> {
   return {
     operation: 'lookup',
@@ -150,35 +150,35 @@ export function compareEq(
   v2: Num,
   eq: Num,
   neq: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode>
 export function compareEq(
   v1: Num,
   v2: Num,
   eq: Str,
   neq: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode>
 export function compareEq(
   v1: Str,
   v2: Str,
   eq: Num,
   neq: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode>
 export function compareEq(
   v1: Str,
   v2: Str,
   eq: Str,
   neq: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode>
 export function compareEq(
   v1: N_S,
   v2: N_S,
   eq: N_S,
   neq: N_S,
-  info?: Info
+  info?: Info,
 ): MatchNode<AnyNode> {
   return {
     operation: 'match',
@@ -191,19 +191,19 @@ export function equal(
   v1: Num,
   v2: Num,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode>
 export function equal(
   v1: Str,
   v2: Str,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode>
 export function equal(
   v1: N_S,
   v2: N_S,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode> {
   return {
     operation: 'match',
@@ -216,19 +216,19 @@ export function equalStr(
   v1: Num,
   v2: Num,
   pass: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode>
 export function equalStr(
   v1: Str,
   v2: Str,
   pass: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode>
 export function equalStr(
   v1: N_S,
   v2: N_S,
   pass: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode> {
   return {
     operation: 'match',
@@ -246,19 +246,19 @@ export function unequal(
   v1: Num,
   v2: Num,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode>
 export function unequal(
   v1: Str,
   v2: Str,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode>
 export function unequal(
   v1: N_S,
   v2: N_S,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): MatchNode<NumNode> {
   return {
     operation: 'match',
@@ -271,19 +271,19 @@ export function unequalStr(
   v1: Num,
   v2: Num,
   pass: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode>
 export function unequalStr(
   v1: Str,
   v2: Str,
   pass: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode>
 export function unequalStr(
   v1: N_S,
   v2: N_S,
   pass: Str,
-  info?: Info
+  info?: Info,
 ): MatchNode<StrNode> {
   return {
     operation: 'match',
@@ -301,19 +301,19 @@ export function greaterEq(
   v1: Opt,
   v2: Opt,
   pass: Opt,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<OptNode, OptNode, OptNode>
 export function greaterEq(
   v1: Num,
   v2: Num,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<NumNode>
 export function greaterEq(
   v1: Num,
   v2: Num,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<NumNode> {
   return {
     operation: 'threshold',
@@ -326,7 +326,7 @@ export function greaterEqStr(
   v1: Num,
   v2: Num,
   pass: Str,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<StrNode> {
   return {
     operation: 'threshold',
@@ -344,19 +344,19 @@ export function lessThan(
   v1: Opt,
   v2: Opt,
   pass: Opt,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<OptNode, OptNode, OptNode>
 export function lessThan(
   v1: Num,
   v2: Num,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<NumNode>
 export function lessThan(
   v1: Num,
   v2: Num,
   pass: Num,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<NumNode> {
   return {
     operation: 'threshold',
@@ -370,21 +370,21 @@ export function threshold(
   v2: Opt,
   ge: Opt,
   le: Opt,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<OptNode, OptNode, OptNode>
 export function threshold(
   v1: Num,
   v2: Num,
   ge: Num,
   le: Num,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<NumNode>
 export function threshold(
   v1: Num,
   v2: Num,
   ge: Num,
   le: Num,
-  info?: Info
+  info?: Info,
 ): ThresholdNode<NumNode> {
   return {
     operation: 'threshold',
@@ -395,17 +395,17 @@ export function threshold(
 
 export function setReadNodeKeys<T extends NodeList>(
   nodeList: T,
-  prefix: string[] = []
+  prefix: string[] = [],
 ): T {
   if (nodeList.operation) {
     if (nodeList.operation !== 'read')
       throw new Error(
-        `Found ${(nodeList as any).operation} node while making reader`
+        `Found ${(nodeList as any).operation} node while making reader`,
       )
     return { ...nodeList, path: prefix }
   } else {
     return objKeyMap(Object.keys(nodeList), (key) =>
-      setReadNodeKeys(nodeList[key], [...prefix, key])
+      setReadNodeKeys(nodeList[key], [...prefix, key]),
     ) as any
   }
 }
@@ -413,33 +413,33 @@ export function data(base: NumNode, data: Data): DataNode<NumNode>
 export function data(base: StrNode, data: Data): DataNode<StrNode>
 export function data(
   base: AnyNode,
-  data: Data
+  data: Data,
 ): DataNode<NumNode> | DataNode<StrNode>
 export function data(
   base: AnyNode,
-  data: Data
+  data: Data,
 ): DataNode<NumNode> | DataNode<StrNode> {
   return { operation: 'data', operands: [base as any], data }
 }
 export function resetData(
   base: NumNode,
   data: Data,
-  info?: Info
+  info?: Info,
 ): DataNode<NumNode>
 export function resetData(
   base: StrNode,
   data: Data,
-  info?: Info
+  info?: Info,
 ): DataNode<StrNode>
 export function resetData(
   base: AnyNode,
   data: Data,
-  info?: Info
+  info?: Info,
 ): DataNode<AnyNode>
 export function resetData(
   base: AnyNode,
   data: Data,
-  info?: Info
+  info?: Info,
 ): DataNode<AnyNode> {
   return { operation: 'data', operands: [base], data, reset: true, info }
 }
@@ -447,7 +447,7 @@ export function resetData(
 export function dynRead(
   name: string,
   accu: ReadNode<number>['accu'] = 'add',
-  info?: Info
+  info?: Info,
 ): ReadNode<number> {
   return {
     operation: 'read',
@@ -460,7 +460,7 @@ export function dynRead(
 }
 export function customRead(
   path: readonly string[],
-  info?: Info
+  info?: Info,
 ): ReadNode<number> {
   return { operation: 'read', operands: [], path, info, type: 'number' }
 }
@@ -469,7 +469,7 @@ export function customStringRead(path: readonly string[]): ReadNode<string> {
 }
 export function read(
   accu?: ReadNode<number>['accu'],
-  info?: Info
+  info?: Info,
 ): ReadNode<number> {
   return {
     operation: 'read',
@@ -484,7 +484,7 @@ export function read(
  * CAUTION: Use `prio` accumulation sparingly. WR don't assume the reading order, so the result may be unstable
  */
 export function stringRead(
-  accu?: ReadNode<string | undefined>['accu']
+  accu?: ReadNode<string | undefined>['accu'],
 ): ReadNode<string | undefined> {
   return { operation: 'read', operands: [], path: [], accu, type: 'string' }
 }
@@ -495,7 +495,7 @@ export function stringPrio(...operands: Str[]): StrPrioNode {
 export function subscript<V>(
   index: NumNode,
   list: V[],
-  info?: Info
+  info?: Info,
 ): SubscriptNode<V> {
   return { operation: 'subscript', operands: [index], list, info }
 }
@@ -504,7 +504,7 @@ function intoOps(values: Num[]): NumNode[]
 function intoOps(values: Str[]): StrNode[]
 function intoOps(values: N_S[]): AnyNode[] {
   return values.map((value) =>
-    typeof value === 'object' ? value : constant(value)
+    typeof value === 'object' ? value : constant(value),
   )
 }
 function intoV(value: Num): NumNode

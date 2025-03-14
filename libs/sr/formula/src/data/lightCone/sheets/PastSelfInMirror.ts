@@ -21,10 +21,10 @@ const sheet = registerLightCone(
   registerBuff(
     'cond_dmg_',
     teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, useUltimate.ifOn(subscript(superimpose, dm.dmg_)))
+      cmpGE(lcCount, 1, useUltimate.ifOn(subscript(superimpose, dm.dmg_))),
     ),
     cmpGE(lcCount, 1, 'infer', ''),
-    true
-  )
+    true,
+  ),
 )
 export default sheet

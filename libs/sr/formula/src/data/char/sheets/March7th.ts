@@ -23,7 +23,7 @@ const { char } = own
 const e4_counter_dmgInc = cmpGE(
   char.eidolon,
   4,
-  prod(own.final.def, percent(dm.e4.dmgInc))
+  prod(own.final.def, percent(dm.e4.dmgInc)),
 )
 
 const sheet = register(
@@ -38,7 +38,7 @@ const sheet = register(
     'def',
     dm.skill.shieldMult,
     dm.skill.shieldBase,
-    'skill'
+    'skill',
   ),
   ...dmg('ultDmg', baseTag, 'atk', dm.ult.dmg, 'ult', [0.25, 0.25, 0.25, 0.25]),
   ...dmg(
@@ -47,7 +47,7 @@ const sheet = register(
     'atk',
     dm.ult.freezeDmg,
     'ult',
-    undefined
+    undefined,
   ),
   ...dmg(
     'talentDmg',
@@ -57,23 +57,23 @@ const sheet = register(
     'talent',
     undefined,
     undefined,
-    ownBuff.formula.base.add(e4_counter_dmgInc)
+    ownBuff.formula.base.add(e4_counter_dmgInc),
   ),
   ...customDmg(
     'techniqueFreeze',
     { damageType1: 'elemental', ...baseTag },
-    prod(own.final.atk, percent(dm.technique.dmg))
+    prod(own.final.atk, percent(dm.technique.dmg)),
   ),
   // Eidolon formulas
   customShield(
     'e1Shield',
     sum(prod(own.final.def, dm.e2.shieldMult), dm.e2.shieldBase),
-    { cond: cmpGE(char.eidolon, 1, 'infer', '') }
+    { cond: cmpGE(char.eidolon, 1, 'infer', '') },
   ),
   customHeal(
     'e6Heal',
     sum(prod(target.final.hp, dm.e6.healMult), dm.e6.healBase),
-    { cond: cmpGE(char.eidolon, 6, 'infer', '') }
-  )
+    { cond: cmpGE(char.eidolon, 6, 'infer', '') },
+  ),
 )
 export default sheet

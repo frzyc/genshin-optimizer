@@ -23,7 +23,7 @@ const hp_arr = [-1, 0.2, 0.25, 0.3, 0.35, 0.4]
 const hp_ = equal(
   input.weapon.key,
   key,
-  subscript(input.weapon.refinement, hp_arr, { unit: '%' })
+  subscript(input.weapon.refinement, hp_arr, { unit: '%' }),
 )
 
 const [condAfterSkillStacksPath, condAfterSkillStacks] = cond(key, 'afterSkill')
@@ -41,12 +41,12 @@ const selfEleMas = equal(
             unit: '%',
             fixed: 2,
           }),
-          input.total.hp
+          input.total.hp,
         ),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const nonstackWrite = equalStr(condAfterSkillStacks, '3', input.charKey)
@@ -55,8 +55,8 @@ const [teamEleMas, teamEleMasInactive] = nonStackBuff(
   'eleMas',
   prod(
     subscript(input.weapon.refinement, teamEmSrc, { unit: '%', fixed: 2 }),
-    input.total.hp
-  )
+    input.total.hp,
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -80,7 +80,7 @@ const data = dataObjForWeaponSheet(
   {
     selfEleMas,
     teamEleMas,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {
@@ -111,7 +111,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
     {

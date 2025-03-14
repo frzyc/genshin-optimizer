@@ -78,14 +78,14 @@ export class CharacterDataManager extends DataManager<
             (sk) =>
               Object.values(this.database.arts?.data ?? {}).find(
                 (a) =>
-                  a?.location === charKeyToLocCharKey(id) && a.slotKey === sk
-              )?.id ?? ''
+                  a?.location === charKeyToLocCharKey(id) && a.slotKey === sk,
+              )?.id ?? '',
           ),
       equippedWeapon: oldChar
         ? oldChar.equippedWeapon
-        : Object.values(this.database.weapons?.data ?? {}).find(
-            (w) => w?.location === charKeyToLocCharKey(id)
-          )?.id ?? '',
+        : (Object.values(this.database.weapons?.data ?? {}).find(
+            (w) => w?.location === charKeyToLocCharKey(id),
+          )?.id ?? ''),
       ...storageObj,
     }
   }
@@ -164,7 +164,7 @@ export class CharacterDataManager extends DataManager<
   setEquippedArtifact(
     key: LocationCharacterKey,
     slotKey: ArtifactSlotKey,
-    artid: string
+    artid: string,
   ) {
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)
@@ -184,7 +184,7 @@ export class CharacterDataManager extends DataManager<
    */
   setEquippedWeapon(
     key: LocationCharacterKey,
-    equippedWeapon: ICachedCharacter['equippedWeapon']
+    equippedWeapon: ICachedCharacter['equippedWeapon'],
   ) {
     const setEq = (k: CharacterKey) => {
       const char = super.get(k)

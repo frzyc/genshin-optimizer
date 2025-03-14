@@ -47,17 +47,17 @@ export function CharCalcProvider({
           ({ sheet, src, dst, condKey, condValue }) =>
             withPreset(
               `preset0`,
-              conditionalEntries(sheet, src, dst)(condKey, condValue)
-            )
+              conditionalEntries(sheet, src, dst)(condKey, condValue),
+            ),
         ),
         ...charOpt.bonusStats.flatMap(({ tag, value }) =>
           withPreset(`preset0`, {
             tag: { ...tag },
             value: constant(value),
-          })
+          }),
         ),
       ]),
-    [character.key, member0, charOpt.conditionals, charOpt.bonusStats]
+    [character.key, member0, charOpt.conditionals, charOpt.bonusStats],
   )
 
   return (
@@ -77,7 +77,7 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
       lc.key,
       lc.level,
       lc.ascension,
-      lc.superimpose
+      lc.superimpose,
     )
   }, [lightCone])
   const relicTagEntries = useMemo(() => {
@@ -90,7 +90,7 @@ function useCharacterAndEquipment(character: ICachedCharacter) {
       character.key,
       ...charTagMapNodeEntries(character, 1),
       ...lcTagEntries,
-      ...relicTagEntries
+      ...relicTagEntries,
     )
   }, [character, lcTagEntries, relicTagEntries])
 }

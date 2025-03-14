@@ -91,7 +91,7 @@ const normalEle_dmg_ = equal(
   condAfterBurst,
   'on',
   percent(dm.burst.dmg_bonus_),
-  { path: 'normalEle_dmg_' }
+  { path: 'normalEle_dmg_' },
 )
 
 const hydroInfusion = equalStr(
@@ -104,8 +104,8 @@ const hydroInfusion = equalStr(
       claymore: constant('hydro'),
       polearm: constant('hydro'),
     },
-    constant('')
-  )
+    constant(''),
+  ),
 )
 
 const a4_normalEle_dmg_ = infoMut(
@@ -115,25 +115,25 @@ const a4_normalEle_dmg_ = infoMut(
     equal(
       condAfterBurst,
       'on',
-      prod(percent(dm.passive2.normalEle_dmg_), input.total.hp, 1 / 1000)
-    )
+      prod(percent(dm.passive2.normalEle_dmg_), input.total.hp, 1 / 1000),
+    ),
   ),
-  { path: 'normalEle_dmg_' }
+  { path: 'normalEle_dmg_' },
 )
 
 const [condC2AfterSkillHitPath, condC2AfterSkillHit] = cond(
   key,
-  'c2AfterSkillHit'
+  'c2AfterSkillHit',
 )
 const c2_hp_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2AfterSkillHit, 'on', percent(dm.constellation2.hp_))
+  equal(condC2AfterSkillHit, 'on', percent(dm.constellation2.hp_)),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -144,11 +144,16 @@ const dmgFormulas = {
       'hp',
       dm.skill.shield_hp_,
       dm.skill.shield_base,
-      'skill'
+      'skill',
     ),
     hydroShield: shieldElement(
       'hydro',
-      shieldNodeTalent('hp', dm.skill.shield_hp_, dm.skill.shield_base, 'skill')
+      shieldNodeTalent(
+        'hp',
+        dm.skill.shield_hp_,
+        dm.skill.shield_base,
+        'skill',
+      ),
     ),
     basicDmg: dmgNode('hp', dm.skill.basic_dmg, 'skill'),
     chargedDmg: dmgNode('hp', dm.skill.charged_dmg, 'skill'),
@@ -166,8 +171,8 @@ const dmgFormulas = {
       6,
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.hp),
-        'burst'
-      )
+        'burst',
+      ),
     ),
   },
 }
@@ -386,7 +391,7 @@ const sheet: TalentSheet = {
       canShow: unequal(
         input.activeCharKey,
         key,
-        greaterEq(input.asc, 4, equal(condAfterBurst, 'on', 1))
+        greaterEq(input.asc, 4, equal(condAfterBurst, 'on', 1)),
       ),
       states: {
         on: {

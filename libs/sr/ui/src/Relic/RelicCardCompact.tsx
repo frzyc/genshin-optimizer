@@ -76,7 +76,7 @@ export function RelicCardCompactObj({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
 
   const { slotKey, rarity, level, mainStatKey, substats, location, setKey } =
@@ -153,7 +153,7 @@ export function RelicCardCompactObj({
                       }}
                       src={characterAsset(
                         characterKeyToGenderedKey(location),
-                        'icon'
+                        'icon',
                       )}
                     />
                   ) : (
@@ -230,7 +230,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
           <StatIcon statKey={statKey} iconProps={{ fontSize: 'inherit' }} />
         </Box>
         <span>{`${toPercent(value, statKey).toFixed(
-          statToFixed(statKey)
+          statToFixed(statKey),
         )}${statUnit}`}</span>
       </Typography>
     </Box>
@@ -279,7 +279,7 @@ export function RelicSubCard({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   return (
     <CardThemed
@@ -338,7 +338,7 @@ export function RelicSetCardCompact({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   return (
     <CardThemed
@@ -387,7 +387,7 @@ export function RelicMainsCardCompact({
         {children}
       </CardActionArea>
     ),
-    [onClick]
+    [onClick],
   )
   return (
     <CardThemed

@@ -13,7 +13,7 @@ type ReliquaryLevelExcelConfigData = {
   }[]
 }
 const artifactMainstatDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryLevelExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/ReliquaryLevelExcelConfigData.json'),
 ) as ReliquaryLevelExcelConfigData[]
 
 export type artifaceMainstatData = {
@@ -42,7 +42,7 @@ artifactMainstatDataSrc.forEach(({ rank = 0, level, addProps }) => {
       layeredAssignment(
         artifactMainstatData,
         [rank, propTypeMap[propType], level - 1],
-        value
+        value,
       )
     else console.warn(`MainPropMap.${propType} is not a valid key.`)
   })

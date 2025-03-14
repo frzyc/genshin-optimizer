@@ -21,7 +21,7 @@ export const charBaseUiSheet: TagField[] = (
 ).map((statKey) => {
   if (
     allAttributeDamageKeys.includes(
-      statKey as (typeof allAttributeDamageKeys)[number]
+      statKey as (typeof allAttributeDamageKeys)[number],
     )
   ) {
     const tag = {

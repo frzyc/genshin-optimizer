@@ -102,38 +102,38 @@ const [condP2ShieldPath, condP2Shield] = cond(key, 'p2Shield')
 const p2Shield_physical_dmg_Disp = greaterEq(
   input.asc,
   4,
-  equal(condP2Shield, 'on', dm.passive2.physical_dmg_)
+  equal(condP2Shield, 'on', dm.passive2.physical_dmg_),
 )
 const p2Shield_physical_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  p2Shield_physical_dmg_Disp
+  p2Shield_physical_dmg_Disp,
 )
 
 const [condC1CritPath, condC1Crit] = cond(key, 'c1Crit')
 const c1Crit_atkSPD_ = greaterEq(
   input.constellation,
   1,
-  equal(condC1Crit, 'on', dm.c1.atkSPD_)
+  equal(condC1Crit, 'on', dm.c1.atkSPD_),
 )
 
 const c2BurstPhysical_critRate_ = greaterEq(
   input.constellation,
   2,
-  dm.c2.burstphysical_critRate_
+  dm.c2.burstphysical_critRate_,
 )
 
 const [condC4SkillHitPath, condC4SkillHit] = cond(key, 'c4Burst')
 const c4SkillHit_physical_enemyRes_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4SkillHit, 'on', dm.c4.physical_enemyRes_)
+  equal(condC4SkillHit, 'on', dm.c4.physical_enemyRes_),
 )
 
 const c6_staminaChargedDec_ = greaterEq(
   input.constellation,
   6,
-  dm.c6.staminaChargedDec_
+  dm.c6.staminaChargedDec_,
 )
 const [condC6ChargedPath, condC6Charged] = cond(key, 'c6Charged')
 const c6_chargedAtkBonus = greaterEq(
@@ -142,13 +142,13 @@ const c6_chargedAtkBonus = greaterEq(
   equal(
     condC6Charged,
     'on',
-    prod(input.total.def, percent(dm.c6.charged_atkBonus))
-  )
+    prod(input.total.def, percent(dm.c6.charged_atkBonus)),
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spin: dmgNode('atk', dm.charged.spin, 'charged'),
@@ -161,16 +161,16 @@ const dmgFormulas = {
       dm.skill.shieldArr.map((data, i) => [
         `normShield${i + 1}`,
         shieldNodeTalent('def', data.defShield_, data.baseShield, 'skill'),
-      ])
+      ]),
     ),
     ...Object.fromEntries(
       dm.skill.shieldArr.map((data, i) => [
         `pyroShield${i + 1}`,
         shieldElement(
           elementKey,
-          shieldNodeTalent('def', data.defShield_, data.baseShield, 'skill')
+          shieldNodeTalent('def', data.defShield_, data.baseShield, 'skill'),
         ),
-      ])
+      ]),
     ),
     lvl3Dmg: dmgNode('atk', dm.skill.lvl3Dmg, 'skill'),
   },
@@ -295,7 +295,7 @@ const sheet: TalentSheet = {
             dmgFormulas.skill['normShield1' as keyof typeof dmgFormulas.skill],
             {
               name: ct.chg('skill.skillParams.1'),
-            }
+            },
           ),
         },
         {
@@ -303,7 +303,7 @@ const sheet: TalentSheet = {
             dmgFormulas.skill['pyroShield1' as keyof typeof dmgFormulas.skill],
             {
               name: ct.ch('skill.pyroShield.1'),
-            }
+            },
           ),
         },
         {
@@ -311,7 +311,7 @@ const sheet: TalentSheet = {
             dmgFormulas.skill['normShield2' as keyof typeof dmgFormulas.skill],
             {
               name: ct.chg('skill.skillParams.2'),
-            }
+            },
           ),
         },
         {
@@ -319,7 +319,7 @@ const sheet: TalentSheet = {
             dmgFormulas.skill['pyroShield2' as keyof typeof dmgFormulas.skill],
             {
               name: ct.ch('skill.pyroShield.2'),
-            }
+            },
           ),
         },
         {
@@ -327,7 +327,7 @@ const sheet: TalentSheet = {
             dmgFormulas.skill['normShield3' as keyof typeof dmgFormulas.skill],
             {
               name: ct.chg('skill.skillParams.3'),
-            }
+            },
           ),
         },
         {
@@ -335,7 +335,7 @@ const sheet: TalentSheet = {
             dmgFormulas.skill['pyroShield3' as keyof typeof dmgFormulas.skill],
             {
               name: ct.ch('skill.pyroShield.3'),
-            }
+            },
           ),
         },
         {

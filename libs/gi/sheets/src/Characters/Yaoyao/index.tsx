@@ -101,7 +101,7 @@ const [condAdeptalLegacyPath, condAdeptalLegacy] = cond(key, 'adeptalLegacy')
 const adeptalLegacy_dendro_res_ = equal(
   condAdeptalLegacy,
   'on',
-  dm.burst.dendro_res_
+  dm.burst.dendro_res_,
 )
 const adeptalLegacy_moveSPD_ = equal(condAdeptalLegacy, 'on', dm.burst.moveSPD_)
 
@@ -110,17 +110,17 @@ const c1Explode_dendro_dmg_disp = greaterEq(
   input.constellation,
   1,
   equal(condC1Explode, 'on', dm.constellation1.dendro_dmg_),
-  { path: 'dendro_dmg_', isTeamBuff: true }
+  { path: 'dendro_dmg_', isTeamBuff: true },
 )
 const c1Explode_dendro_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  c1Explode_dendro_dmg_disp
+  c1Explode_dendro_dmg_disp,
 )
 
 const [condC4AfterSkillBurstPath, condC4AfterSkillBurst] = cond(
   key,
-  'c4AfterSkillBurst'
+  'c4AfterSkillBurst',
 )
 const c4AfterSkillBurst_eleMas = greaterEq(
   input.constellation,
@@ -130,14 +130,14 @@ const c4AfterSkillBurst_eleMas = greaterEq(
     'on',
     min(
       prod(percent(dm.constellation4.eleMas_Hp), input.premod.hp),
-      dm.constellation4.maxEleMas
-    )
-  )
+      dm.constellation4.maxEleMas,
+    ),
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -154,14 +154,14 @@ const dmgFormulas = {
       'hp',
       dm.burst.radish_heal_hp,
       dm.burst.radish_heal_flat,
-      'burst'
+      'burst',
     ),
   },
   passive2: {
     heal: greaterEq(
       input.asc,
       4,
-      customHealNode(prod(percent(dm.passive2.heal_hp), input.total.hp))
+      customHealNode(prod(percent(dm.passive2.heal_hp), input.total.hp)),
     ),
   },
   constellation4: {
@@ -173,13 +173,13 @@ const dmgFormulas = {
       6,
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
-        'burst'
-      )
+        'burst',
+      ),
     ),
     heal: greaterEq(
       input.constellation,
       6,
-      customHealNode(prod(percent(dm.constellation6.heal_hp), input.total.hp))
+      customHealNode(prod(percent(dm.constellation6.heal_hp), input.total.hp)),
     ),
   },
 }

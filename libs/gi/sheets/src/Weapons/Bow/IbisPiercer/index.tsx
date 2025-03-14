@@ -21,9 +21,9 @@ const [condPassiveStacksPath, condPassiveStacks] = cond(key, 'passiveStacks')
 const eleMas = lookup(
   condPassiveStacks,
   objKeyMap(stacksArr, (stack) =>
-    prod(subscript(input.weapon.refinement, emArr), stack)
+    prod(subscript(input.weapon.refinement, emArr), stack),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -55,7 +55,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

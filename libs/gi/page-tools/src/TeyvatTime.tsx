@@ -20,23 +20,26 @@ export default function TeyvatTime() {
   const [{ timeZoneKey }, setState] = useState(() => database.displayTool.get())
   useEffect(
     () => database.displayTool.follow((r, s) => setState(s)),
-    [database]
+    [database],
   )
   const setTimeZoneKey = useCallback(
     (timeZoneKey: TimeZoneKey) => database.displayTool.set({ timeZoneKey }),
-    [database]
+    [database],
   )
 
   const [time, setTime] = useState(
-    new Date(Date.now() + timeZones[timeZoneKey])
+    new Date(Date.now() + timeZones[timeZoneKey]),
   )
   //set a timer. timer resets when timezone is changed.
   useEffect(() => {
     const setSecondTimeout = () => {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
-      return setTimeout(() => {
-        interval = setSecondTimeout()
-      }, SECOND_MS - (Date.now() % SECOND_MS))
+      return setTimeout(
+        () => {
+          interval = setSecondTimeout()
+        },
+        SECOND_MS - (Date.now() % SECOND_MS),
+      )
     }
     let interval = setSecondTimeout()
     return () => clearTimeout(interval)

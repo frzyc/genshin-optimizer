@@ -59,14 +59,16 @@ export class CharacterDataManager extends DataManager<
       bonusAbilities = objKeyMap(allBonusAbilityKeys, (key) =>
         typeof bonusAbilities[key] !== 'boolean'
           ? false
-          : bonusAbilities[key] ?? false
+          : (bonusAbilities[key] ?? false),
       )
     }
     if (typeof statBoosts !== 'object')
       statBoosts = objKeyMap(allStatBoostKeys, (_key) => false)
     else {
       statBoosts = objKeyMap(allStatBoostKeys, (key) =>
-        typeof statBoosts[key] !== 'boolean' ? false : statBoosts[key] ?? false
+        typeof statBoosts[key] !== 'boolean'
+          ? false
+          : (statBoosts[key] ?? false),
       )
     }
     basic = typeof basic !== 'number' ? 1 : clamp(basic, 1, 6)
@@ -103,13 +105,13 @@ export class CharacterDataManager extends DataManager<
             allRelicSlotKeys,
             (sk) =>
               Object.values(this.database.relics?.data ?? {}).find(
-                (r) => r?.location === id && r.slotKey === sk
-              )?.id
+                (r) => r?.location === id && r.slotKey === sk,
+              )?.id,
           ),
       equippedLightCone: oldChar
         ? oldChar.equippedLightCone
         : Object.values(this.database.lightCones?.data ?? {}).find(
-            (lc) => lc?.location === id
+            (lc) => lc?.location === id,
           )?.id,
       ...storageObj,
     }
@@ -192,7 +194,7 @@ export class CharacterDataManager extends DataManager<
   setEquippedRelic(
     key: CharacterKey,
     slotKey: RelicSlotKey,
-    relicId: string | undefined
+    relicId: string | undefined,
   ) {
     const char = super.get(key)
     if (!char) return
@@ -208,7 +210,7 @@ export class CharacterDataManager extends DataManager<
    */
   setEquippedLightCone(
     key: CharacterKey,
-    equippedLightCone: ICachedCharacter['equippedLightCone']
+    equippedLightCone: ICachedCharacter['equippedLightCone'],
   ) {
     const char = super.get(key)
     if (!char) return
@@ -277,7 +279,7 @@ export class CharacterDataManager extends DataManager<
   }
   override importSROD(
     sr: ISrObjectDescription & ISroDatabase,
-    result: ImportResult
+    result: ImportResult,
   ) {
     result.characters.beforeMerge = this.values.length
 
@@ -292,7 +294,7 @@ export class CharacterDataManager extends DataManager<
         if (
           this.hasDup(
             { ...initialCharacter(c.key), ...c },
-            source === SroSource
+            source === SroSource,
           )
         )
           result.characters.unchanged.push(c as ICharacter)

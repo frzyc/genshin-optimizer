@@ -92,7 +92,7 @@ const dm = {
 const [condGrimheartStacksPath, condGrimheartStacks] = cond(key, 'Grimheart')
 const [condGrimheartConsumedPath, condGrimheartConsumed] = cond(
   key,
-  'grimheartConsumed'
+  'grimheartConsumed',
 )
 const [condLightfallSwordPath, condLightfallSword] = cond(key, 'LightfallSword')
 const [condC4Path, condC4] = cond(key, 'LightfallSwordC4')
@@ -109,10 +109,10 @@ const lightfallSwordBonusScaling = prod(
     lookup(
       condLightfallSword,
       objKeyMap(lightfallSwordStacks, (stack) => constant(stack)),
-      naught
+      naught,
     ),
-    { name: ct.ch('burstC.name') }
-  )
+    { name: ct.ch('burstC.name') },
+  ),
 )
 
 const def_ = lookup(
@@ -121,31 +121,31 @@ const def_ = lookup(
     stack1: percent(dm.skill.defBonus),
     stack2: percent(2 * dm.skill.defBonus),
   },
-  naught
+  naught,
 )
 const cryo_enemyRes_ = equal(
   'on',
   condGrimheartConsumed,
-  subscript(input.total.skillIndex, dm.skill.cryoResDecNegative)
+  subscript(input.total.skillIndex, dm.skill.cryoResDecNegative),
 )
 const physical_enemyRes_ = equal(
   'on',
   condGrimheartConsumed,
-  subscript(input.total.skillIndex, dm.skill.physResDecNegative)
+  subscript(input.total.skillIndex, dm.skill.physResDecNegative),
 )
 const physical_dmg_ = greaterEq(
   input.constellation,
   1,
-  equal('on', condTidalIllusion, percent(dm.constellation1.physInc))
+  equal('on', condTidalIllusion, percent(dm.constellation1.physInc)),
 )
 
 const c4_sword_dmg_ = infoMut(
   greaterEq(
     input.constellation,
     4,
-    equal(condC4, 'on', constant(dm.constellation4.dmgInc))
+    equal(condC4, 'on', constant(dm.constellation4.dmgInc)),
   ),
-  { name: ct.ch('c4C.dmgBonus') }
+  { name: ct.ch('c4C.dmgBonus') },
 )
 const lightSwordAdditional: Data = {
   premod: { burst_dmg_: c4_sword_dmg_ },
@@ -154,7 +154,7 @@ const lightSwordAdditional: Data = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
@@ -174,12 +174,12 @@ const dmgFormulas = {
           subscript(input.total.burstIndex, dm.burst.lightfallDmg, {
             unit: '%',
           }),
-          lightfallSwordBonusScaling
+          lightfallSwordBonusScaling,
         ),
-        input.total.atk
+        input.total.atk,
       ),
       'burst',
-      lightSwordAdditional
+      lightSwordAdditional,
     ),
   },
   passive1: {
@@ -192,9 +192,9 @@ const dmgFormulas = {
           dm.burst.lightfallDmg,
           'burst',
           lightSwordAdditional,
-          percent(dm.passive1.percentage)
-        )
-      )
+          percent(dm.passive1.percentage),
+        ),
+      ),
     ),
   },
 }

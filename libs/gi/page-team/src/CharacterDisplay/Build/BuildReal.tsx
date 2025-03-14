@@ -97,7 +97,7 @@ export default function BuildReal({
       teamCharId,
       weaponTypeKey,
       database.weapons.get(weaponId),
-      Object.values(artifactIds).map((id) => database.arts.get(id))
+      Object.values(artifactIds).map((id) => database.arts.get(id)),
     )
     if (!newBuildTcId) return
     // copy over name/desc
@@ -115,7 +115,7 @@ export default function BuildReal({
 
   const { weaponUsedInTeamCharKey, artUsedInTeamCharKeys } = useEquippedInTeam(
     weaponId!,
-    artifactIds
+    artifactIds,
   )
 
   const [show, onShow, onHide] = useBoolState()

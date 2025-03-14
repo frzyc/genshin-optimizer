@@ -25,7 +25,7 @@ const all_dmg_stack = lookup(
   {
     ...objKeyMap(range(1, 5), (i) => prod(all_dmg_, i)),
   },
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -26,12 +26,12 @@ const data: TagMapNodeEntries = [
 
   // premod X += base X * premod X%
   ...(['atk', 'def', 'hp', 'spd'] as const).map((s) =>
-    ownBuff.premod[s].add(prod(own.base[s], own.premod[`${s}_`]))
+    ownBuff.premod[s].add(prod(own.base[s], own.premod[`${s}_`])),
   ),
 
   // Capped CR = Max(Min(Final CR, 1), 0)
   ownBuff.common.cappedCrit_.add(
-    max(min(own.final.crit_, percent(1)), percent(0))
+    max(min(own.final.crit_, percent(1)), percent(0)),
   ),
 
   // Default conditionals to 0

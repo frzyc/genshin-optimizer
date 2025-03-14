@@ -32,8 +32,8 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
     getRandomElementFromArray(
       data.rarities.filter((r: number) =>
         // GO only supports artifacts from 3 to 5 stars
-        allArtifactRarityKeys.includes(r as ArtifactRarity)
-      )
+        allArtifactRarityKeys.includes(r as ArtifactRarity),
+      ),
     )) as ArtifactRarity
   const slot: ArtifactSlotKey =
     base.slotKey ?? getRandomElementFromArray(data.slots)
@@ -65,7 +65,7 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
     if (substat.key) {
       const value = artDisplayValue(substat.value, getUnitStr(substat.key))
       substat.value = parseFloat(
-        allStats.art.subRollCorrection[rarity]?.[substat.key]?.[value] ?? value
+        allStats.art.subRollCorrection[rarity]?.[substat.key]?.[value] ?? value,
       )
     }
 

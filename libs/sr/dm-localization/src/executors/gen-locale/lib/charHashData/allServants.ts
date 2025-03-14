@@ -51,7 +51,7 @@ const servantsArray = Object.entries(avatarServantConfig).map(
       },
     ]
     return tuple
-  }
+  },
 )
 
 const data = Object.fromEntries(servantsArray)

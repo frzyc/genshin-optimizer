@@ -26,9 +26,9 @@ const atk_ = subscript(input.weapon.refinement, atk_arr)
 const dmg_ = lookup(
   condStacks,
   objKeyMap(stacksArr, (stack) =>
-    prod(subscript(input.weapon.refinement, dmg_arr, { unit: '%' }), stack)
+    prod(subscript(input.weapon.refinement, dmg_arr, { unit: '%' }), stack),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

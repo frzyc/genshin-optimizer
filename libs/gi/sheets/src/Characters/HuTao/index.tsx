@@ -104,8 +104,8 @@ const atk = equal(
   condAfterlife,
   min(
     prod(subscript(input.total.skillIndex, dm.skill.atkInc), input.premod.hp),
-    prod(percent(dm.skill.maxAtkInc), input.base.atk)
-  )
+    prod(percent(dm.skill.maxAtkInc), input.base.atk),
+  ),
 )
 const infusion = equalStr('on', condAfterlife, elementKey)
 
@@ -116,7 +116,7 @@ const critRateTeam_1Disp = greaterEq(
   equal('on', condA1, percent(dm.passive1.critRateInc), {
     path: 'critRate_',
     isTeamBuff: true,
-  })
+  }),
 )
 const critRateTeam_1 = unequal(key, target.charKey, critRateTeam_1Disp, {
   path: 'critRate_',
@@ -126,7 +126,7 @@ const [condA4Path, condA4] = cond(key, 'SanguineRouge')
 const pyro_dmg_ = greaterEq(
   input.asc,
   4,
-  equal('on', condA4, percent(dm.passive2.pyroDmgInc))
+  equal('on', condA4, percent(dm.passive2.pyroDmgInc)),
 )
 
 const [condC4Path, condC4] = cond(key, 'GardenOfEternalRest')
@@ -136,7 +136,7 @@ const critRateTeam_2Disp = greaterEq(
   equal('on', condC4, percent(dm.constellation4.critRateInc), {
     path: 'critRate_',
     isTeamBuff: true,
-  })
+  }),
 )
 const critRateTeam_2 = unequal(key, target.charKey, critRateTeam_2Disp, {
   path: 'critRate_',
@@ -147,7 +147,7 @@ const [condC6Path, condC6] = cond(key, 'ButterflysEmbrace')
 const critRate_ = greaterEq(
   input.constellation,
   6,
-  equal('on', condC6, percent(dm.constellation6.critRateInc))
+  equal('on', condC6, percent(dm.constellation6.critRateInc)),
 )
 const ele_res_s = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [
@@ -155,14 +155,14 @@ const ele_res_s = Object.fromEntries(
     greaterEq(
       input.constellation,
       6,
-      equal('on', condC6, percent(dm.constellation6.elePhysResInc))
+      equal('on', condC6, percent(dm.constellation6.elePhysResInc)),
     ),
-  ])
+  ]),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -178,21 +178,21 @@ const dmgFormulas = {
     regen: customHealNode(
       prod(
         input.total.hp,
-        subscript(input.total.burstIndex, dm.burst.regen, { unit: '%' })
-      )
+        subscript(input.total.burstIndex, dm.burst.regen, { unit: '%' }),
+      ),
     ),
     lowHpRegen: customHealNode(
       prod(
         input.total.hp,
-        subscript(input.total.burstIndex, dm.burst.lowHpRegen, { unit: '%' })
-      )
+        subscript(input.total.burstIndex, dm.burst.lowHpRegen, { unit: '%' }),
+      ),
     ),
   },
   constellation2: {
     skill_dmgInc: greaterEq(
       input.constellation,
       2,
-      prod(input.total.hp, percent(dm.constellation2.bloodBlossomDmgInc))
+      prod(input.total.hp, percent(dm.constellation2.bloodBlossomDmgInc)),
     ),
   },
 }
@@ -205,7 +205,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     burstBoost: nodeC5,
     pyro_dmg_,
     ...Object.fromEntries(
-      allElementWithPhyKeys.map((ele) => [`${ele}_res_`, ele_res_s[ele]])
+      allElementWithPhyKeys.map((ele) => [`${ele}_res_`, ele_res_s[ele]]),
     ),
     critRate_,
     skill_dmgInc: dmgFormulas.constellation2.skill_dmgInc,

@@ -8,7 +8,7 @@ import { Translate } from '@genshin-optimizer/gi/i18n'
 import type { ReactNode } from 'react'
 export const st = (
   strKey: string,
-  values?: Record<string, string | number>
+  values?: Record<string, string | number>,
 ) => <Translate ns="sheet" key18={strKey} values={values} />
 export const stg = (strKey: string) => (
   <Translate ns="sheet_gen" key18={strKey} />
@@ -16,7 +16,7 @@ export const stg = (strKey: string) => (
 
 type Translated = [
   trg: (i18key: string) => ReactNode,
-  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode
+  tr: (i18key: string, values?: Record<string, string | number>) => ReactNode,
 ]
 type CharTransKey =
   | CharacterSheetKey
@@ -33,7 +33,7 @@ export function trans(typeKey: 'weapon', key: WeaponKey): Translated
 export function trans(typeKey: 'artifact', key: ArtifactSetKey): Translated
 export function trans(
   typeKey: 'char' | 'weapon' | 'artifact',
-  key: CharTransKey | WeaponKey | ArtifactSetKey
+  key: CharTransKey | WeaponKey | ArtifactSetKey,
 ): Translated {
   const nogen =
     (typeKey === 'char' && key === 'Somnia') ||

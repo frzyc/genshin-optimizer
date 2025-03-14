@@ -19,7 +19,7 @@ const eleMasArr = [-1, 60, 80, 100, 120, 140]
 const eleMas = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr),
 )
 const dmg_arr = [-1, 1, 1.2, 1.4, 1.6, 1.8]
 const dmg = equal(
@@ -28,10 +28,10 @@ const dmg = equal(
   customDmgNode(
     prod(
       subscript(input.weapon.refinement, dmg_arr, { unit: '%' }),
-      input.total.atk
+      input.total.atk,
     ),
-    'elemental'
-  )
+    'elemental',
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -43,7 +43,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     dmg,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {

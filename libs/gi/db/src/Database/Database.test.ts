@@ -54,15 +54,15 @@ describe('Database', () => {
         ([k]) =>
           k.startsWith('weapon_') ||
           k.startsWith('character_') ||
-          k.startsWith('artifact_')
-      )
+          k.startsWith('artifact_'),
+      ),
     ).toEqual(
       newDB.storage.entries.filter(
         ([k]) =>
           k.startsWith('weapon_') ||
           k.startsWith('character_') ||
-          k.startsWith('artifact_')
-      )
+          k.startsWith('artifact_'),
+      ),
     )
     expect(database.chars.values).toEqual(newDB.chars.values)
     expect(database.weapons.values).toEqual(newDB.weapons.values)
@@ -73,7 +73,7 @@ describe('Database', () => {
   test('Does not crash from invalid storage', () => {
     function tryStorage(
       setup: (storage: Storage) => void,
-      verify: (storage: Storage) => void = () => null
+      verify: (storage: Storage) => void = () => null,
     ) {
       localStorage.clear()
       setup(localStorage)
@@ -88,7 +88,7 @@ describe('Database', () => {
       },
       (storage) => {
         expect(storage.getItem('char_x')).toBeNull()
-      }
+      },
     )
     for (let i = 2; i < 5; i++) {
       tryStorage(
@@ -101,7 +101,7 @@ describe('Database', () => {
         (storage) => {
           expect(storage.getItem('char_x')).toBeNull()
           expect(storage.getItem('artifact_x')).toBeNull()
-        }
+        },
       )
     }
     tryStorage(
@@ -113,18 +113,18 @@ describe('Database', () => {
       (storage) => {
         expect(storage.getItem('char_x')).toBeNull()
         expect(storage.getItem('artifact_x')).toBeNull()
-      }
+      },
     )
   })
   test('Ensure Equipment', () => {
     const newKeys: CharacterKey[] = []
     const unfollow = database.chars.followAny(
-      (k, reason, _value) => reason === 'new' && newKeys.push(k)
+      (k, reason, _value) => reason === 'new' && newKeys.push(k),
     )
     database.arts.new({ ...randomizeArtifact(), location: 'Amber' })
     expect(database.chars.get('Amber')).toBeTruthy()
     expect(
-      database.weapons.get(database.chars.get('Amber')!.equippedWeapon)
+      database.weapons.get(database.chars.get('Amber')!.equippedWeapon),
     ).toBeTruthy()
     expect(newKeys).toEqual(['Amber'])
     const weaponid = database.weapons.new({ ...defaultInitialWeapon('sword') })
@@ -146,13 +146,13 @@ describe('Database', () => {
     art1.location = 'Albedo'
     const art1id = database.arts.new(art1)
     expect(database.chars.get('Albedo')!.equippedArtifacts.circlet).toEqual(
-      art1id
+      art1id,
     )
     const art2 = randomizeArtifact({ slotKey: 'circlet' })
     art2.location = 'Albedo'
     const art2id = database.arts.new(art2)
     expect(database.chars.get('Albedo')!.equippedArtifacts.circlet).toEqual(
-      art2id
+      art2id,
     )
     expect(database.arts.get(art1id)?.location).toEqual('')
 
@@ -162,15 +162,15 @@ describe('Database', () => {
     expect(database.chars.get('Amber')!.equippedWeapon).toEqual(bowid)
     database.arts.set(art1id, { location: 'Amber' })
     expect(database.chars.get('Amber')!.equippedArtifacts.circlet).toEqual(
-      art1id
+      art1id,
     )
 
     database.arts.set(art2id, { location: 'Amber' })
     expect(database.chars.get('Albedo')!.equippedArtifacts.circlet).toEqual(
-      art1id
+      art1id,
     )
     expect(database.chars.get('Amber')!.equippedArtifacts.circlet).toEqual(
-      art2id
+      art2id,
     )
     expect(database.arts.get(art1id)!.location).toEqual('Albedo')
   })
@@ -201,7 +201,7 @@ describe('Database', () => {
       location: 'Albedo',
     })
     expect(database.chars.get('Albedo')!.equippedArtifacts.circlet).toEqual(
-      art1id
+      art1id,
     )
     expect(database.arts.get(art1id)?.location).toEqual('Albedo')
     database.arts.remove(art1id)
@@ -270,7 +270,7 @@ describe('Database', () => {
 
     const art1id = database.arts.new(art1)
     expect(database.chars.get('Albedo')?.equippedArtifacts.circlet).toEqual(
-      art1id
+      art1id,
     )
     expect(database.chars.get('Albedo')?.equippedWeapon).toEqual(weaponid)
     const good1: IGOOD = {
@@ -297,14 +297,14 @@ describe('Database', () => {
     expect(
       database.arts.values.reduce(
         (t, art) => t + (art.location === 'Albedo' ? 1 : 0),
-        0
-      )
+        0,
+      ),
     ).toEqual(1)
     const circletId = database.chars.get('Albedo')?.equippedArtifacts.circlet
     expect(circletId).toBeTruthy()
     expect(database.arts.get(circletId)?.setKey).toEqual('Adventurer')
     expect(
-      database.weapons.get(database.chars.get('Albedo')?.equippedWeapon)?.key
+      database.weapons.get(database.chars.get('Albedo')?.equippedWeapon)?.key,
     ).toEqual('CinnabarSpindle')
   })
 
@@ -528,10 +528,10 @@ describe('Database', () => {
       expect(database.arts.get(oldId2)?.slotKey).toEqual('circlet')
       // Expect old artifacts to have new id
       expect(
-        database.arts.values.find((a) => a.slotKey === 'plume')?.id
+        database.arts.values.find((a) => a.slotKey === 'plume')?.id,
       ).not.toEqual(oldId1)
       expect(
-        database.arts.values.find((a) => a.slotKey === 'flower')?.id
+        database.arts.values.find((a) => a.slotKey === 'flower')?.id,
       ).not.toEqual(oldId2)
     })
 
@@ -563,10 +563,10 @@ describe('Database', () => {
       expect(database.weapons.get(oldId2)?.key).toEqual('Deathmatch')
       // Expect old artifacts to have new id
       expect(
-        database.weapons.values.find((a) => a.key === 'AmenomaKageuchi')?.id
+        database.weapons.values.find((a) => a.key === 'AmenomaKageuchi')?.id,
       ).not.toEqual(oldId1)
       expect(
-        database.weapons.values.find((a) => a.key === 'BlackcliffSlasher')?.id
+        database.weapons.values.find((a) => a.key === 'BlackcliffSlasher')?.id,
       ).not.toEqual(oldId2)
     })
   })
@@ -583,20 +583,20 @@ describe('Database', () => {
       database.chars.set('TravelerElectro', initialCharacter('TravelerElectro'))
 
       expect(
-        database.chars.get('TravelerAnemo')!.equippedArtifacts.circlet
+        database.chars.get('TravelerAnemo')!.equippedArtifacts.circlet,
       ).toEqual(art1Id)
       expect(
-        database.chars.get('TravelerGeo')!.equippedArtifacts.circlet
+        database.chars.get('TravelerGeo')!.equippedArtifacts.circlet,
       ).toEqual(art1Id)
       expect(
-        database.chars.get('TravelerElectro')!.equippedArtifacts.circlet
+        database.chars.get('TravelerElectro')!.equippedArtifacts.circlet,
       ).toEqual(art1Id)
       const weapon1Id = database.chars.get('TravelerAnemo')!.equippedWeapon
       expect(database.chars.get('TravelerGeo')!.equippedWeapon).toEqual(
-        weapon1Id
+        weapon1Id,
       )
       expect(database.chars.get('TravelerElectro')!.equippedWeapon).toEqual(
-        weapon1Id
+        weapon1Id,
       )
 
       const art2 = randomizeArtifact({
@@ -605,13 +605,13 @@ describe('Database', () => {
       })
       const art2Id = database.arts.new({ ...art2, location: 'Traveler' })
       expect(
-        database.chars.get('TravelerAnemo')!.equippedArtifacts.circlet
+        database.chars.get('TravelerAnemo')!.equippedArtifacts.circlet,
       ).toEqual(art2Id)
       expect(
-        database.chars.get('TravelerGeo')!.equippedArtifacts.circlet
+        database.chars.get('TravelerGeo')!.equippedArtifacts.circlet,
       ).toEqual(art2Id)
       expect(
-        database.chars.get('TravelerElectro')!.equippedArtifacts.circlet
+        database.chars.get('TravelerElectro')!.equippedArtifacts.circlet,
       ).toEqual(art2Id)
 
       const weapon2Id = database.weapons.new({
@@ -619,13 +619,13 @@ describe('Database', () => {
         location: 'Traveler',
       })
       expect(database.chars.get('TravelerAnemo')!.equippedWeapon).toEqual(
-        weapon2Id
+        weapon2Id,
       )
       expect(database.chars.get('TravelerGeo')!.equippedWeapon).toEqual(
-        weapon2Id
+        weapon2Id,
       )
       expect(database.chars.get('TravelerElectro')!.equippedWeapon).toEqual(
-        weapon2Id
+        weapon2Id,
       )
 
       // deletion dont remove equipment until all traveler is gone
@@ -633,10 +633,10 @@ describe('Database', () => {
       database.chars.remove('TravelerGeo')
 
       expect(
-        database.chars.get('TravelerAnemo')!.equippedArtifacts.circlet
+        database.chars.get('TravelerAnemo')!.equippedArtifacts.circlet,
       ).toEqual(art2Id)
       expect(database.chars.get('TravelerAnemo')!.equippedWeapon).toEqual(
-        weapon2Id
+        weapon2Id,
       )
       expect(database.arts.get(art2Id)!.location).toEqual('Traveler')
       expect(database.weapons.get(weapon2Id)!.location).toEqual('Traveler')
@@ -662,7 +662,7 @@ describe('Database', () => {
       expect(cachArt).toBeTruthy()
       expect(cachArt?.location).toEqual('Albedo')
       expect(database.chars.get('Albedo')?.equippedArtifacts.flower).toEqual(
-        newId
+        newId,
       )
     })
     test('should changeId for weapons', () => {
@@ -705,7 +705,7 @@ describe('Database', () => {
     expect(importResult.weapons.invalid.length).toEqual(1)
     expect(importResult.characters.new.length).toEqual(0)
     expect(
-      database.weapons.get(database.chars.get('Albedo')?.equippedWeapon)?.key
+      database.weapons.get(database.chars.get('Albedo')?.equippedWeapon)?.key,
     ).toEqual('DullBlade')
   })
 })

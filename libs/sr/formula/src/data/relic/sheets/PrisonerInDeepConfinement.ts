@@ -21,9 +21,9 @@ const sheet = registerRelic(
   registerBuff(
     'set4_defIgn_',
     ownBuff.premod.defIgn_.add(
-      cmpGE(relicCount, 4, prod(dm[4].defIgn_, dotCount))
+      cmpGE(relicCount, 4, prod(dm[4].defIgn_, dotCount)),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

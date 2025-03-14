@@ -99,14 +99,14 @@ const nodeP1 = greaterEq(
   lookup(
     condP1,
     objKeyMap(range(1, 5), (i) => percent(dm.passive1.shield_ * i)),
-    naught
-  )
+    naught,
+  ),
 )
 
 const p4AutoDmgInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.auto_), input.premod.hp)
+  prod(percent(dm.passive2.auto_), input.premod.hp),
 )
 const p4normalDmgInc = { ...p4AutoDmgInc }
 const p4ChargedDmgInc = { ...p4AutoDmgInc }
@@ -114,23 +114,23 @@ const p4PlungingDmgInc = { ...p4AutoDmgInc }
 const p4SKillDmgInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.skill_), input.premod.hp)
+  prod(percent(dm.passive2.skill_), input.premod.hp),
 )
 const p4BurstDmgInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.burst_), input.premod.hp)
+  prod(percent(dm.passive2.burst_), input.premod.hp),
 )
 
 const nodeC6 = greaterEq(
   input.constellation,
   6,
-  customHealNode(prod(percent(dm.constellation6.hp_), input.total.hp))
+  customHealNode(prod(percent(dm.constellation6.hp_), input.total.hp)),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -142,7 +142,7 @@ const dmgFormulas = {
     holdDMG: dmgNode('atk', dm.skill.holdDMG, 'skill'),
     shield: shieldElement(
       'geo',
-      shieldNodeTalent('hp', dm.skill.shield_, dm.skill.shield, 'skill')
+      shieldNodeTalent('hp', dm.skill.shield_, dm.skill.shield, 'skill'),
     ),
   },
   burst: {

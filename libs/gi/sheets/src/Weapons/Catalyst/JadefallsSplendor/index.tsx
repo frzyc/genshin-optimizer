@@ -25,16 +25,16 @@ const ele_dmg_ = equal(
         // TODO: verify this... there is no way to atm. Pretty sure this is premod,
         // but lets leave it as total because it is prettier formatted
         input.total.hp,
-        1 / 1000
-      )
-    )
-  )
+        1 / 1000,
+      ),
+    ),
+  ),
 )
 const ele_dmg_nodes = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
     equal(ele, input.charEle, ele_dmg_),
-  ])
+  ]),
 )
 
 export const data = dataObjForWeaponSheet(
@@ -46,7 +46,7 @@ export const data = dataObjForWeaponSheet(
   },
   {
     ...ele_dmg_nodes,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

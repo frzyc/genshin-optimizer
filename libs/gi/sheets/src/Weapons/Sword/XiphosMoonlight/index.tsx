@@ -25,13 +25,13 @@ const selfEnerRech_ = equal(
       unit: '%',
       fixed: 3,
     }),
-    input.premod.eleMas
-  )
+    input.premod.eleMas,
+  ),
 )
 const teamEnerRech_disp = equal(
   input.weapon.key,
   key,
-  prod(percent(0.3), selfEnerRech_)
+  prod(percent(0.3), selfEnerRech_),
 )
 // Apply to non-equipped character
 const teamEnerRech_ = unequal(input.charKey, target.charKey, teamEnerRech_disp)
@@ -51,7 +51,7 @@ const data = dataObjForWeaponSheet(
   {
     selfEnerRech_,
     teamEnerRech_disp,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {

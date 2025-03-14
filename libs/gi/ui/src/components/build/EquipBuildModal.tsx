@@ -312,7 +312,7 @@ function DataWrapper(props: Props & { children: ReactNode }) {
   return null
 }
 function useArtifacts(
-  artifacts: Record<ArtifactSlotKey, string | undefined> | undefined
+  artifacts: Record<ArtifactSlotKey, string | undefined> | undefined,
 ) {
   const database = useDatabase()
   return useMemo(
@@ -323,7 +323,7 @@ function useArtifacts(
             .map((id) => database.arts.get(id))
             .filter(notEmpty)
         : undefined,
-    [database, artifacts]
+    [database, artifacts],
   )
 }
 function TeamDataWrapper(props: Props & { children: ReactNode }) {
@@ -354,7 +354,7 @@ function TeamDataWrapper(props: Props & { children: ReactNode }) {
 }
 
 function CharacterDataWrapper(
-  props: Props & { children: ReactNode; currentData?: TeamData }
+  props: Props & { children: ReactNode; currentData?: TeamData },
 ) {
   const { children, ...rest } = props
   const {

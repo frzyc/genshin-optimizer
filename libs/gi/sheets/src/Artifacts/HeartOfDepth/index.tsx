@@ -14,7 +14,7 @@ const [condPath, condNode] = cond(key, 'skill')
 const set4Norm = greaterEq(
   input.artSet.HeartOfDepth,
   4,
-  equal('cast', condNode, percent(0.3))
+  equal('cast', condNode, percent(0.3)),
 )
 const set4Charged = { ...set4Norm }
 

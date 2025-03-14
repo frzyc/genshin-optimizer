@@ -36,7 +36,7 @@ export type AvatarServantConfig = {
 }
 
 const avatarServantConfigSrc = parse(
-  readDMJSON('ExcelOutput/AvatarServantConfig.json')
+  readDMJSON('ExcelOutput/AvatarServantConfig.json'),
 ) as AvatarServantConfig[]
 
 dumpFile(
@@ -45,24 +45,24 @@ dumpFile(
     Object.values(avatarServantConfigSrc).map((data) => [
       data.ServantID,
       nameToKey(TextMapEN[data.ServantName.Hash.toString()]),
-    ])
-  )
+    ]),
+  ),
 )
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarServantConfig_CharacterKey_gen.json`,
   [
     ...new Set(
       avatarServantConfigSrc.map((config) =>
-        nameToKey(TextMapEN[config.ServantName.Hash.toString()])
-      )
+        nameToKey(TextMapEN[config.ServantName.Hash.toString()]),
+      ),
     ),
   ]
     .filter((s) => s)
-    .sort()
+    .sort(),
 )
 
 const avatarServantConfig = objFilterKeys(
   objKeyValMap(avatarServantConfigSrc, (config) => [config.ServantID, config]),
-  Object.keys(servantIdMap) as ServantId[]
+  Object.keys(servantIdMap) as ServantId[],
 ) as Record<ServantId, AvatarServantConfig>
 export { avatarServantConfig }

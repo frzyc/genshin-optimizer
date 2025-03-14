@@ -77,7 +77,7 @@ function multinomial4(
   n2: number,
   n3: number,
   n4: number,
-  N: number
+  N: number,
 ) {
   if (n1 + n2 + n3 + n4 !== N) return 0
 
@@ -94,7 +94,7 @@ function multinomial4(
 /** Crawl the upgrade distribution for `n` upgrades, with a callback function that accepts fn([n1, n2, n3, n4], prob) */
 export function crawlUpgrades(
   n: number,
-  fn: (n1234: number[], p: number) => void
+  fn: (n1234: number[], p: number) => void,
 ) {
   if (n === 0) {
     fn([0, 0, 0, 0], 1)

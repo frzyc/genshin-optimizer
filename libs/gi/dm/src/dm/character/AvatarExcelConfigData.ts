@@ -66,7 +66,7 @@ type AvatarExcelConfigData = {
     {
       type: 'FIGHT_PROP_BASE_DEFENSE'
       growCurve: CharacterGrowCurveKey //"GROW_CURVE_HP_S4"
-    }
+    },
   ]
   prefabPathRagdollHashSuffix: number //3565889523,
   prefabPathRagdollHashPre: number //122,
@@ -84,13 +84,13 @@ type AvatarExcelConfigData = {
 }
 
 const avatarExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/AvatarExcelConfigData.json'),
 ) as AvatarExcelConfigData[]
 //character data
 const avatarExcelConfigData = Object.fromEntries(
   avatarExcelConfigDataSrc
     .filter(({ id }) => id in characterIdMap)
-    .map((data) => [data.id, data])
+    .map((data) => [data.id, data]),
 ) as Record<CharacterId, AvatarExcelConfigData>
 
 dumpFile(
@@ -99,8 +99,8 @@ dumpFile(
     avatarExcelConfigDataSrc.map((data) => [
       data.id,
       nameToKey(TextMapEN[data.nameTextMapHash]),
-    ])
-  )
+    ]),
+  ),
 )
 
 export { avatarExcelConfigData }

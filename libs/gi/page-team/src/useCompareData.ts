@@ -34,7 +34,7 @@ export default function useCompareData(): undefined | UIData {
 
   useEffect(
     () => (teamId ? database.teams.follow(teamId, setDbDirty) : undefined),
-    [teamId, setDbDirty, database]
+    [teamId, setDbDirty, database],
   )
 
   useEffect(() => {
@@ -116,7 +116,7 @@ export default function useCompareData(): undefined | UIData {
       0,
       overrideArt,
       overrideWeapon,
-      overrideCharacter
+      overrideCharacter,
     )
     if (!teamData) return undefined
     const charUIData = teamData[characterKey]!.target

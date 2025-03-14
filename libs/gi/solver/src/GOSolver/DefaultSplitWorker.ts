@@ -17,7 +17,7 @@ export class DefaultSplitWorker implements SplitWorker {
   setThreshold(_newThreshold: number): void {}
   add(
     filter: RequestFilter,
-    splittedBy: (typeof this.stack)[number]['splittedBy']
+    splittedBy: (typeof this.stack)[number]['splittedBy'],
   ) {
     this.stack.push({
       filter,
@@ -59,13 +59,13 @@ export class DefaultSplitWorker implements SplitWorker {
     if (!candidates.length) return this.add(filter, 'id')
 
     const { sets, slot } = candidates.reduce((a, b) =>
-      a.sets.size < b.sets.size ? a : b
+      a.sets.size < b.sets.size ? a : b,
     )
     sets.forEach((set) =>
       this.add(
         { ...filter, [slot]: { kind: 'required', sets: new Set([set]) } },
-        'set'
-      )
+        'set',
+      ),
     )
   }
   splitByID(filter: RequestFilter, count: number, minCount: number): void {
@@ -82,10 +82,10 @@ export class DefaultSplitWorker implements SplitWorker {
       .fill(0)
       .map((_) => new Set<string>())
     arts.values[slot].forEach(({ id }, i) =>
-      chunk[i % boundedNumChunks].add(id)
+      chunk[i % boundedNumChunks].add(id),
     )
     chunk.forEach((ids) =>
-      this.add({ ...filter, [slot]: { kind: 'id', ids } }, 'id')
+      this.add({ ...filter, [slot]: { kind: 'id', ids } }, 'id'),
     )
   }
 }

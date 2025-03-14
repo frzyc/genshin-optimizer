@@ -15,7 +15,7 @@ export function getRelicInterpolateObject(rk: RelicSetKey, numRequired: 2 | 4) {
   const setEffectIndex = numRequired === 2 ? 0 : 1
   return Object.fromEntries(
     allStats.relic[rk].setEffects[setEffectIndex].otherStats.map(
-      (param, index) => [index + 1, param]
-    )
+      (param, index) => [index + 1, param],
+    ),
   )
 }

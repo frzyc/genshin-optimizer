@@ -6,5 +6,5 @@ export type DebugReadContextObj = {
   setRead: (read: BaseRead | undefined) => void
 }
 export const DebugReadContext = createContext<DebugReadContextObj>(
-  {} as DebugReadContextObj
+  {} as DebugReadContextObj,
 )

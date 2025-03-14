@@ -40,7 +40,7 @@ export default function Content({
         },
         (payload) => {
           if (payload.new) setTeams((teams) => [...teams, payload.new] as Teams)
-        }
+        },
       )
       .subscribe()
 

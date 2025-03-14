@@ -23,11 +23,11 @@ const atk_ = equal(
   min(
     prod(
       subscript(input.weapon.refinement, atk),
-      sum(input.premod.enerRech_, percent(-1))
+      sum(input.premod.enerRech_, percent(-1)),
     ),
-    subscript(input.weapon.refinement, atkMax)
+    subscript(input.weapon.refinement, atkMax),
   ),
-  { pivot: true }
+  { pivot: true },
 )
 
 const enerRech = [-1, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55]
@@ -35,7 +35,7 @@ const [condPassivePath, condPassive] = cond(key, 'TimelessDream')
 const enerRech_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, enerRech)
+  subscript(input.weapon.refinement, enerRech),
 )
 
 export const data = dataObjForWeaponSheet(
@@ -48,7 +48,7 @@ export const data = dataObjForWeaponSheet(
   },
   {
     atk_,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

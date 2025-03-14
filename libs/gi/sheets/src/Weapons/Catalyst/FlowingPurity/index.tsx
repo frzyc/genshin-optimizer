@@ -26,11 +26,11 @@ const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const base_ele_dmg_ = equal(
   condAfterSkill,
   'on',
-  subscript(input.weapon.refinement, all_ele_dmg_arr)
+  subscript(input.weapon.refinement, all_ele_dmg_arr),
 )
 const allEleNoPhysDmgKeys = allElementKeys.map((ele) => `${ele}_dmg_`)
 const afterSkill_all_ele_dmg_map = objKeyMap(allEleNoPhysDmgKeys, (ele_dmg_) =>
-  infoMut({ ...base_ele_dmg_ }, { path: ele_dmg_ })
+  infoMut({ ...base_ele_dmg_ }, { path: ele_dmg_ }),
 )
 
 const hpConsumed = prod(percent(0.24), input.total.hp)
@@ -44,14 +44,14 @@ const bond_all_ele_dmg_ = equal(
     min(
       prod(
         subscript(input.weapon.refinement, bond_all_ele_dmg_arr, { unit: '%' }),
-        prod(hpConsumed, percent(1 / 1000))
+        prod(hpConsumed, percent(1 / 1000)),
       ),
-      subscript(input.weapon.refinement, bond_max_ele_dmg_arr, { unit: '%' })
-    )
-  )
+      subscript(input.weapon.refinement, bond_max_ele_dmg_arr, { unit: '%' }),
+    ),
+  ),
 )
 const bond_all_ele_dmg_map = objKeyMap(allEleNoPhysDmgKeys, (ele_dmg_) =>
-  infoMut({ ...bond_all_ele_dmg_ }, { path: ele_dmg_ })
+  infoMut({ ...bond_all_ele_dmg_ }, { path: ele_dmg_ }),
 )
 
 const data = dataObjForWeaponSheet(
@@ -61,12 +61,12 @@ const data = dataObjForWeaponSheet(
       ...objKeyMap(allEleNoPhysDmgKeys, (ele_dmg_) =>
         sum(
           afterSkill_all_ele_dmg_map[ele_dmg_],
-          bond_all_ele_dmg_map[ele_dmg_]
-        )
+          bond_all_ele_dmg_map[ele_dmg_],
+        ),
       ),
     },
   },
-  bond_all_ele_dmg_map
+  bond_all_ele_dmg_map,
 )
 
 const sheet: IWeaponSheet = {

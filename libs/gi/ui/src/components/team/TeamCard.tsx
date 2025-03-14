@@ -242,20 +242,20 @@ function CharacterArea({
   const buildname = database.teams.getActiveBuildName(loadoutDatum)
   const weapon = useMemo(
     () => database.teams.getLoadoutWeapon(loadoutDatum),
-    [loadoutDatum, database]
+    [loadoutDatum, database],
   )
   const arts = (() => {
     const { buildType, buildTcId } = loadoutDatum
     if (buildType === 'tc' && buildTcId)
       return getBuildTcArtifactData(database.buildTcs.get(buildTcId)!)
     return Object.values(
-      database.teams.getLoadoutArtifacts(loadoutDatum)
+      database.teams.getLoadoutArtifacts(loadoutDatum),
     ).filter((a) => a) as ICachedArtifact[]
   })()
 
   const artifactData = useMemo(
     () => database.teams.getLoadoutArtifactData(loadoutDatum),
-    [database, loadoutDatum]
+    [database, loadoutDatum],
   )
 
   const teamData = useCharData(characterKey, undefined, arts, weapon)
@@ -266,7 +266,7 @@ function CharacterArea({
       character && {
         character,
       },
-    [character]
+    [character],
   )
   const dataContextObj: dataContextObj | undefined = useMemo(
     () =>
@@ -275,7 +275,7 @@ function CharacterArea({
         data,
         teamData,
       },
-    [data, teamData]
+    [data, teamData],
   )
   const banner = characterAsset(characterKey, 'banner', gender)
   const element = getCharEle(characterKey)
@@ -318,10 +318,10 @@ function CharacterArea({
                 backdropFilter: 'blur(3px)',
                 background: `linear-gradient(to right, ${colorToRgbaString(
                   hexToColor(theme.palette.neutral600.main as string)!,
-                  0.8
+                  0.8,
                 )}, ${colorToRgbaString(
                   hexToColor(theme.palette.neutral600.main as string)!,
-                  0.4
+                  0.4,
                 )} 100% )`,
               })}
             />
@@ -335,7 +335,7 @@ function CharacterArea({
                 // dark gradient
                 background: `linear-gradient(to top, ${colorToRgbaString(
                   hexToColor(theme.palette.neutral600.main as string)!,
-                  0.9
+                  0.9,
                 )}, rgba(0,0,0,0) 25% )`,
               })}
             />
@@ -635,7 +635,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
           textAlign: 'center',
           backgroundColor: colorToRgbaString(
             hexToColor(theme.palette.primary.main as string)!,
-            0.4
+            0.4,
           ),
           borderRadius: '100%',
         })}
@@ -653,7 +653,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
           textAlign: 'center',
           backgroundColor: colorToRgbaString(
             hexToColor(theme.palette.primary.main as string)!,
-            0.4
+            0.4,
           ),
           borderRadius: '100%',
         })}
@@ -676,7 +676,7 @@ function Set4({ set, num }: { set: ArtifactSetKey; num: number }) {
           textAlign: 'center',
           backgroundColor: colorToRgbaString(
             hexToColor(theme.palette.primary.main as string)!,
-            0.4
+            0.4,
           ),
           borderRadius: '100%',
         })}

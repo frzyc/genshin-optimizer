@@ -44,27 +44,27 @@ export function inferInfoMut(data: Data, source?: Info['source']): Data {
         x.info = { ...x.info, ...reference.info, prefix: undefined, source }
       else if (path[0] !== 'tally' && path[0] !== 'nonStacking')
         console.error(
-          `Detect ${source} buff into non-existant key path ${path}`
+          `Detect ${source} buff into non-existant key path ${path}`,
         )
-    }
+    },
   )
 
   return data
 }
 export function dataObjForArtifact(
   art: ICachedArtifact,
-  mainStatAssumptionLevel = 0
+  mainStatAssumptionLevel = 0,
 ): Data {
   const mainStatVal = getMainStatValue(
     art.mainStatKey,
     art.rarity,
-    Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)
+    Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level),
   )
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
   stats.push([art.mainStatKey, mainStatVal])
   art.substats.forEach(
     ({ key, accurateValue }) =>
-      key && stats.push([key, toDecimal(accurateValue, key)])
+      key && stats.push([key, toDecimal(accurateValue, key)]),
   )
   return {
     art: {
@@ -72,7 +72,7 @@ export function dataObjForArtifact(
         stats.map(([key, value]) => [
           key,
           key.endsWith('_') ? percent(value) : constant(value),
-        ])
+        ]),
       ),
       [art.slotKey]: {
         id: constant(art.id),
@@ -104,7 +104,7 @@ export function dataObjForCharacter(char: ICachedCharacter): Data {
     enemy: {
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
-        () => percent(10 / 100)
+        () => percent(10 / 100),
       ),
       level: constant(100),
     },
@@ -143,7 +143,7 @@ export function dataObjForCharacterNew(
     hitMode: globalHitMode,
     reaction,
   }: CharInfo,
-  sheetData?: Data
+  sheetData?: Data,
 ): Data {
   const result: Data = {
     lvl: constant(level),
@@ -163,8 +163,8 @@ export function dataObjForCharacterNew(
         (ele) =>
           percent(
             (enemyOverride[`${ele.slice(0, -5)}_enemyRes_` as EleEnemyResKey] ??
-              10) / 100
-          )
+              10) / 100,
+          ),
       ),
       level: constant(enemyOverride.enemyLevel ?? level),
     },
@@ -189,7 +189,7 @@ export function dataObjForCharacterNew(
     conditional,
     ['conditional'],
     (x: any) => typeof x === 'string',
-    (x: string, keys: string[]) => layeredAssignment(result, keys, constant(x))
+    (x: string, keys: string[]) => layeredAssignment(result, keys, constant(x)),
   )
 
   if (sheetData?.display) {
@@ -208,7 +208,7 @@ export function dataObjForCharacterNew(
             infoMut(
               data(targetNode, {
                 premod: objMap(bonusStats, (v, k) =>
-                  k.endsWith('_') ? percent(v / 100) : constant(v)
+                  k.endsWith('_') ? percent(v / 100) : constant(v),
                 ),
                 hit: {
                   hitMode: constant(hitMode),
@@ -218,10 +218,10 @@ export function dataObjForCharacterNew(
                   team: infusionAura ? constant(infusionAura) : none,
                 },
               }),
-              { pivot: true }
-            )
+              { pivot: true },
+            ),
           )
-        }
+        },
       )
 
       // Make the variant "invalid" because its not easy to determine variants in multitarget
@@ -254,8 +254,8 @@ export function mergeData(data: Data[]): Data {
         path[0] === 'tally'
           ? tally
           : path[0] === 'nonStacking'
-          ? nonStacking
-          : input
+            ? nonStacking
+            : input
       if (path[0] === 'tally' || path[0] === 'nonStacking') path = path.slice(1)
       /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =
@@ -277,10 +277,10 @@ export function mergeData(data: Data[]): Data {
             key,
             internal(
               data.map((x) => x[key]).filter((x) => x),
-              [...path, key]
+              [...path, key],
             ),
-          ]
-        )
+          ],
+        ),
       )
     }
   }

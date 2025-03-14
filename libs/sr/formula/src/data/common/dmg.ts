@@ -13,30 +13,30 @@ const data: TagMapNodeEntries = [
           sum(
             percent(1),
             prod(-1, enemy.common.defRed_),
-            prod(-1, own.final.defIgn_)
-          )
-        )
+            prod(-1, own.final.defIgn_),
+          ),
+        ),
       ),
       // RES Multiplier
       sum(
         percent(1),
-        prod(-1, sum(enemyDebuff.common.res, prod(-1, own.final.resPen_)))
-      )
+        prod(-1, sum(enemyDebuff.common.res, prod(-1, own.final.resPen_))),
+      ),
       // TODO: Vulnerability, DMG Reduction and Broken multipliers
-    )
+    ),
   ),
   ownBuff.dmg.out.add(
     prod(
       own.formula.base,
-      sum(percent(1), own.final.dmg_, own.final.common_dmg_)
-    )
+      sum(percent(1), own.final.dmg_, own.final.common_dmg_),
+    ),
   ),
   ownBuff.dmg.critMulti.add(
     lookup(own.common.critMode, {
       crit: sum(percent(1), own.final.crit_dmg_),
       nonCrit: percent(1),
       avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
-    })
+    }),
   ),
 ]
 export default data

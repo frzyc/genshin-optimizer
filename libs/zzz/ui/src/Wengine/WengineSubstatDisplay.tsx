@@ -22,7 +22,7 @@ export function WengineSubstatDisplay({
 }) {
   if (!substatKey) return null
   const displayValue = toPercent(substatValue, substatKey).toFixed(
-    statKeyToFixed(substatKey)
+    statKeyToFixed(substatKey),
   )
   return (
     <Typography

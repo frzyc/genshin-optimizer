@@ -39,21 +39,21 @@ export function CharacterMultiAutocomplete({
 
   const charIsFavorite = useCallback(
     (charKey: CharacterKey) => database.charMeta.get(charKey).favorite,
-    [database.charMeta]
+    [database.charMeta],
   )
 
   const toImg = useCallback(
     (key: CharacterKey) => <CharIconSide characterKey={key} />,
-    []
+    [],
   )
   const toLabel = useCallback(
     (key: CharacterKey, silly: boolean): string =>
       t(
         `${
           silly ? 'sillyWisher_charNames' : 'charNames_gen'
-        }:${charKeyToLocGenderedCharKey(key, gender)}`
+        }:${charKeyToLocGenderedCharKey(key, gender)}`,
       ),
-    [gender, t]
+    [gender, t],
   )
 
   const toVariant = getCharEle
@@ -62,14 +62,14 @@ export function CharacterMultiAutocomplete({
   useEffect(
     () =>
       database.chars.followAny(
-        (_, r) => ['new', 'remove'].includes(r) && setDirty()
+        (_, r) => ['new', 'remove'].includes(r) && setDirty(),
       ),
-    [database.chars, setDirty]
+    [database.chars, setDirty],
   )
 
   const allCharKeys = useMemo(
     () => dbDirty && database.chars.keys,
-    [database, dbDirty]
+    [database, dbDirty],
   )
 
   const { characterTeamTotal } = useMemo(() => {
@@ -102,13 +102,13 @@ export function CharacterMultiAutocomplete({
 
   const toExLabel = useCallback(
     (key: CharacterKey) => <strong>{characterTeamTotal[key]}</strong>,
-    [characterTeamTotal]
+    [characterTeamTotal],
   )
   const toExItemLabel = useCallback(
     (key: CharacterKey) => (
       <Chip size="small" label={characterTeamTotal[key]} />
     ),
-    [characterTeamTotal]
+    [characterTeamTotal],
   )
 
   const options: GeneralAutocompleteOption<CharacterKey>[] = useMemo(
@@ -121,14 +121,14 @@ export function CharacterMultiAutocomplete({
             alternateNames: silly ? [toLabel(ck, !silly)] : undefined,
             favorite: charIsFavorite(ck),
             color: toVariant(ck),
-          })
+          }),
         )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
-    [silly, toLabel, toVariant, charIsFavorite, allCharKeys]
+    [silly, toLabel, toVariant, charIsFavorite, allCharKeys],
   )
 
   return (

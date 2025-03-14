@@ -91,13 +91,13 @@ export default function MTargetEditor({
 
   const setWeight = useCallback(
     (weight: number) => setCustomTarget({ ...customTarget, weight }),
-    [customTarget, setCustomTarget]
+    [customTarget, setCustomTarget],
   )
   const node = objPathValue(data.getDisplay(), path) as CalcResult | undefined
   const setFilter = useCallback(
     (bonusStats: CustomTarget['bonusStats']) =>
       setCustomTarget({ ...customTarget, bonusStats }),
-    [customTarget, setCustomTarget]
+    [customTarget, setCustomTarget],
   )
   // Expand editor on change of custom target
   useEffect(() => {
@@ -114,7 +114,7 @@ export default function MTargetEditor({
         label={t('addStats.label')}
       />
     ),
-    [bonusStats, setFilter, t]
+    [bonusStats, setFilter, t],
   )
 
   const isMeleeAuto =
@@ -323,7 +323,7 @@ function ReactionDropdown({
 
   if (
     !['pyro', 'hydro', 'cryo', 'electro', 'dendro'].some(
-      (e) => e === ele || e === infusionAura
+      (e) => e === ele || e === infusionAura,
     )
   )
     return null

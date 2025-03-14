@@ -16,5 +16,5 @@ export default register(
   teamBuff.premod.critRate_.add(cmpGE(count.cryo, 2, enemyFrozen.ifOn(0.15))),
   teamBuff.premod.dmg_.add(cmpGE(count.geo, 2, hasShield.ifOn(0.2))),
   teamBuff.premod.eleMas.add(cmpGE(count.dendro, 2, nearbyDendro1.ifOn(30))),
-  teamBuff.premod.eleMas.add(cmpGE(count.dendro, 2, nearbyDendro2.ifOn(20)))
+  teamBuff.premod.eleMas.add(cmpGE(count.dendro, 2, nearbyDendro2.ifOn(20))),
 )

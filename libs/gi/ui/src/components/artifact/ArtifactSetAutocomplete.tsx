@@ -39,20 +39,20 @@ export function ArtifactSetAutocomplete({
             key: set,
             label: t(`artifactNames_gen:${set}`),
             grouper: +rarity as ArtifactRarity,
-          }))
+          })),
         )
         .sort(sortByRarityAndName),
-    [t]
+    [t],
   )
 
   const toImg = useCallback(
     (key: ArtifactSetKey | '') =>
       key ? <ImgIcon src={artifactDefIcon(key)} size={2} /> : undefined,
-    []
+    [],
   )
   const onChange = useCallback(
     (k: ArtifactSetKey | '' | null) => setArtSetKey(k ?? ''),
-    [setArtSetKey]
+    [setArtSetKey],
   )
   return (
     <GeneralAutocomplete

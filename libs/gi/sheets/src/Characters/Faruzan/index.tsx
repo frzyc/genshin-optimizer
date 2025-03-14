@@ -80,14 +80,14 @@ const [condBurstBenefitPath, condBurstBenefit] = cond(key, 'burstBenefit')
 const burstBenefit_anemo_dmg_ = equal(
   condBurstBenefit,
   'on',
-  subscript(input.total.burstIndex, datamine.burst.anemo_dmg_)
+  subscript(input.total.burstIndex, datamine.burst.anemo_dmg_),
 )
 
 const [condBurstHitPath, condBurstHit] = cond(key, 'burstHit')
 const burstHit_anemo_enemyRes_ = equal(
   condBurstHit,
   'on',
-  datamine.burst.anemo_enemyRes_
+  datamine.burst.anemo_enemyRes_,
 )
 
 const [condA4ActivePath, condA4Active] = cond(key, 'a4Active')
@@ -99,13 +99,13 @@ const c6Benefit_anemo_critDMG_ = greaterEq(
   equal(
     condBurstBenefit,
     'on',
-    equal(condC6Crit, 'on', datamine.constellation6.anemo_critDMG_)
-  )
+    equal(condC6Crit, 'on', datamine.constellation6.anemo_critDMG_),
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    datamine.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    datamine.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', datamine.charged.aimed, 'charged'),
@@ -119,9 +119,9 @@ const dmgFormulas = {
       dmgNode(
         'atk',
         value,
-        key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
+        key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
       ),
-    ])
+    ]),
   ),
   skill: {
     skillDmg: dmgNode('atk', datamine.skill.skill_dmg, 'skill'),
@@ -140,9 +140,9 @@ const dmgFormulas = {
         equal(
           condA4Active,
           'on',
-          prod(percent(datamine.passive2.gift_dmgInc), input.base.atk)
-        )
-      )
+          prod(percent(datamine.passive2.gift_dmgInc), input.base.atk),
+        ),
+      ),
     ),
   },
 }

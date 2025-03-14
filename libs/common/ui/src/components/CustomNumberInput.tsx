@@ -25,7 +25,7 @@ export const StyledInputBase = styled(InputBase)(
     '&.Mui-disabled': {
       backgroundColor: theme.palette[color].dark,
     },
-  })
+  }),
 )
 
 const Wrapper = styled(Button)(({ theme }) => ({
@@ -67,12 +67,12 @@ export function CustomNumberInput({
   const onInputChange = useCallback(
     (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setDisplay(e.target.value),
-    []
+    [],
   )
 
   const parseFunc = useCallback(
     (val: string) => (float ? parseFloat(val) : parseInt(val)),
-    [float]
+    [float],
   )
   const onValidate = useCallback(() => {
     const change = (v: number) => {
@@ -90,7 +90,7 @@ export function CustomNumberInput({
   const onKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       e.key === 'Enter' && onValidate(),
-    [onValidate]
+    [onValidate],
   )
 
   return (

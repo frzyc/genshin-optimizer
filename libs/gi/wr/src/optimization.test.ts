@@ -63,8 +63,8 @@ describe('optimization', () => {
     expect(dedup).toEqual(
       sum(
         prod(r2, r3, sum(1, prod(r0, r1))),
-        prod(r2, r3, sum(1, prod(r0, r1)))
-      )
+        prod(r2, r3, sum(1, prod(r0, r1))),
+      ),
     )
   })
   test('constant folding', () => {
@@ -96,7 +96,7 @@ describe('optimization', () => {
       forEachNodes<AnyNode>(
         [node],
         (_) => _,
-        (f) => (info ||= f.info)
+        (f) => (info ||= f.info),
       )
       expect(info).toBeTruthy()
 
@@ -104,7 +104,7 @@ describe('optimization', () => {
       forEachNodes(
         constantFold([node], {}),
         (_) => _,
-        (f) => (info ||= f.info)
+        (f) => (info ||= f.info),
       )
       expect(info).toBeFalsy()
     }
@@ -118,8 +118,8 @@ describe('optimization', () => {
 
     expect(
       constantFold([resetData(t1, {}), t1], data0).map(
-        (x) => (x as ConstantNode<number>).value
-      )
+        (x) => (x as ConstantNode<number>).value,
+      ),
     ).toEqual([77, 66 + 77])
   })
   describe('precomputing', () => {
@@ -135,7 +135,7 @@ describe('optimization', () => {
         [output1] as OptNode[],
         {},
         (x) => x.path[1],
-        1
+        1,
       )
       expect([
         ...compute([{ values: { 0: 32, 1: 77 } }] as const).slice(0, 1),
@@ -177,7 +177,7 @@ describe('optimization', () => {
         [output3, output3] as OptNode[],
         {},
         (x) => x.path[1],
-        1
+        1,
       )
       expect([
         ...compute([{ values: { 0: 2, 1: 44, 2: 7 } }] as const).slice(0, 2),

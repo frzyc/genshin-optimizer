@@ -107,7 +107,7 @@ export default function UseEquipped({
             Object.entries(database.chars.data)
               .filter(
                 ([ck]) =>
-                  charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+                  charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey),
               )
               .filter(([ck]) =>
                 filterFunction(
@@ -117,11 +117,11 @@ export default function UseEquipped({
                     rarity: deferredCharacterRarityKeys,
                     name: deferredSearchTerm,
                   },
-                  characterFilterConfigs(database, silly)
-                )(ck)
-              )
-          )
-        )
+                  characterFilterConfigs(database, silly),
+                )(ck),
+              ),
+          ),
+        ),
       ),
     [
       deferredDbDirty,
@@ -132,7 +132,7 @@ export default function UseEquipped({
       deferredCharacterRarityKeys,
       deferredSearchTerm,
       silly,
-    ]
+    ],
   )
 
   const locListLength = useMemo(
@@ -142,11 +142,11 @@ export default function UseEquipped({
         Object.keys(database.chars.data)
           .filter(
             (ck) =>
-              charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+              charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey),
           )
-          .map(charKeyToLocCharKey)
+          .map(charKeyToLocCharKey),
       ).size,
-    [characterKey, database.chars.data, deferredDbDirty]
+    [characterKey, database.chars.data, deferredDbDirty],
   )
 
   const locList = Array.from(
@@ -161,17 +161,17 @@ export default function UseEquipped({
           else if (c2f && !c1f) return choosec2
 
           const art1 = Object.values(c1.equippedArtifacts).filter(
-            (id) => id
+            (id) => id,
           ).length
           const art2 = Object.values(c2.equippedArtifacts).filter(
-            (id) => id
+            (id) => id,
           ).length
           if (art1 > art2) return choosec1
           else if (art2 > art1) return choosec2
           return ck1.localeCompare(ck2)
         })
-        .map(([ck]) => charKeyToLocCharKey(ck))
-    )
+        .map(([ck]) => charKeyToLocCharKey(ck)),
+    ),
   )
 
   const {
@@ -192,7 +192,7 @@ export default function UseEquipped({
       Object.entries(database.chars.data)
         .filter(
           ([ck]) =>
-            charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey)
+            charKeyToLocCharKey(ck) !== charKeyToLocCharKey(characterKey),
         )
         .forEach(([ck]) => {
           const eleKey = getCharEle(ck)
@@ -236,17 +236,17 @@ export default function UseEquipped({
               ctMap.locListTotals.allowed.current++
             else ctMap.locListTotals.excluded.current++
           }
-        })
+        }),
     )
   }, [charKeyMap, characterKey, database, excludedLocations, locList])
 
   useEffect(
     () => database.charMeta.followAny((_) => forceUpdate()),
-    [forceUpdate, database]
+    [forceUpdate, database],
   )
   useEffect(
     () => database.chars.followAny((_) => forceUpdate()),
-    [forceUpdate, database]
+    [forceUpdate, database],
   )
 
   const [mouseUpDetected, setMouseUpDetected] = useState(false)
@@ -255,19 +255,19 @@ export default function UseEquipped({
     () =>
       database.optConfigs.set(optConfigId, {
         excludedLocations: excludedLocations.filter(
-          (key) => !locList.includes(key)
+          (key) => !locList.includes(key),
         ),
       }),
-    [database, optConfigId, excludedLocations, locList]
+    [database, optConfigId, excludedLocations, locList],
   )
   const disallowAll = useCallback(
     () =>
       database.optConfigs.set(optConfigId, {
         excludedLocations: Array.from(
-          new Set(excludedLocations.concat(locList))
+          new Set(excludedLocations.concat(locList)),
         ),
       }),
-    [database, optConfigId, excludedLocations, locList]
+    [database, optConfigId, excludedLocations, locList],
   )
 
   const toggleList = useCallback(
@@ -280,7 +280,7 @@ export default function UseEquipped({
         excludedLocations: newExcludedLocations,
       })
     },
-    [database, optConfigId, excludedLocations]
+    [database, optConfigId, excludedLocations],
   )
 
   const onMouseUp = useCallback(() => setMouseUpDetected(true), [])
@@ -493,7 +493,7 @@ function SelectItem({
       ((charListMode === CharListMode.ToggleToAllow && !selected) ||
         (charListMode === CharListMode.ToggleToExclude && selected)) &&
       setCharList(new Set([...charList]).add(locKey)),
-    [charListMode, selected, setCharList, charList, locKey]
+    [charListMode, selected, setCharList, charList, locKey],
   )
   const onMouseDown = useCallback(() => {
     const mode = selected
@@ -537,7 +537,7 @@ function SelectItem({
         ))}
       </Box>
     ),
-    [char?.equippedArtifacts]
+    [char?.equippedArtifacts],
   )
   const characterKey = database.chars.LocationToCharacterKey(locKey)
   return (

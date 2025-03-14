@@ -93,7 +93,7 @@ async function start({
   formulaKey,
 }: ParentCommandStart) {
   const discStatsBySlot = objKeyMap(allDiscSlotKeys, (slot) =>
-    discsBySlot[slot].map(convertDiscToStats)
+    discsBySlot[slot].map(convertDiscToStats),
   )
 
   // Split work on the largest slot to reduce variance in work between workers
@@ -105,22 +105,22 @@ async function start({
             largestSize: discs.length,
           }
         : { largestSlot, largestSize },
-    { largestSlot: 'head' as DiscSlotKey, largestSize: -1 }
+    { largestSlot: 'head' as DiscSlotKey, largestSize: -1 },
   )
   // Split work
   const chunkedDiscStatsBySlot: Record<DiscSlotKey, DiscStats[]>[] = range(
     0,
-    numWorkers - 1
+    numWorkers - 1,
   ).map((worker) =>
     objKeyMap(allDiscSlotKeys, (slot) =>
       slot === largestSlot
         ? // For largest slot, only give ~1/numWorkers amount of discs
           discStatsBySlot[slot].filter(
-            (_, index) => index % numWorkers === worker
+            (_, index) => index % numWorkers === worker,
           )
         : // For other slots, give all discs
-          discStatsBySlot[slot]
-    )
+          discStatsBySlot[slot],
+    ),
   )
 
   // Spawn child workers to calculate builds
@@ -128,7 +128,7 @@ async function start({
     () =>
       new Worker(new URL('./childWorker.ts', import.meta.url), {
         type: 'module',
-      })
+      }),
   )
 
   let results: BuildResult[] = []
@@ -194,7 +194,7 @@ async function start({
         }
         worker.postMessage(message)
       })
-    })
+    }),
   )
 
   // Send back results, which can take a few seconds

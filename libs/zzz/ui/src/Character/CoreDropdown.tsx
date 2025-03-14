@@ -21,7 +21,7 @@ export function CoreDropdown() {
       database.chars.set(characterKey, {
         core: val,
       }),
-    [database, characterKey]
+    [database, characterKey],
   )
   return (
     <DropdownButton

@@ -15,12 +15,12 @@ const [condOffFieldPath, condOffField] = cond(key, 'offField')
 const hp_ = equal(
   condOffField,
   'on',
-  subscript(input.weapon.refinement, hp_arr)
+  subscript(input.weapon.refinement, hp_arr),
 )
 const eleMas = equal(
   condOffField,
   'on',
-  subscript(input.weapon.refinement, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr),
 )
 
 const data = dataObjForWeaponSheet(key, {

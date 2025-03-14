@@ -74,7 +74,7 @@ function SourceDisplay({ source }: { source: string | undefined }) {
 }
 
 export function GetCalcDisplay(
-  node: CalcResult<number | string | undefined>
+  node: CalcResult<number | string | undefined>,
 ): CalcDisplay {
   if ((node as any)[displayKey]) {
     return (node as any)[displayKey]
@@ -84,7 +84,7 @@ export function GetCalcDisplay(
   return result
 }
 function _getCalcDisplay(
-  node: CalcResult<number | string | undefined>
+  node: CalcResult<number | string | undefined>,
 ): CalcDisplay {
   const { info, value } = node
   if (typeof value !== 'number') {
@@ -137,7 +137,7 @@ function _getCalcDisplay(
 
 function computeFormulaDisplay(
   node: CalcResult<number>,
-  info: Info & InfoExtra
+  info: Info & InfoExtra,
 ): CalcDisplay {
   const details = {
     add: { head: '', sep: ' + ', tail: '', prec: 1 },
@@ -163,7 +163,7 @@ function computeFormulaDisplay(
         <>
           <span style={{ fontSize: '85%' }}>{display.name}</span>{' '}
           {display.valueString}
-        </>
+        </>,
       )
     else components.push(display.formula)
     if (p > display.prec) components.push(')')

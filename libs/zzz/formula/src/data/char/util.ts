@@ -42,7 +42,7 @@ export function dmg(
 ): TagMapNodeEntries {
   if (!dmgTag.damageType1)
     throw Error(
-      `No damageType specified on ${name}. Please specify at least one.`
+      `No damageType specified on ${name}. Please specify at least one.`,
     )
   const multi = percent(subscript(own.char[abilityScalingType], levelScaling))
   const base = prod(own.final[stat], multi)
@@ -134,7 +134,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       })
       return coreStatsArrs
     },
-    {} as Partial<Record<CoreStatKey, number[]>>
+    {} as Partial<Record<CoreStatKey, number[]>>,
   )
 
   return [
@@ -150,13 +150,13 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         sum(
           data_gen.stats[`${sk}_base`],
           subscript(promotion, addPerPromo),
-          prod(readLvl, data_gen.stats[`${sk}_growth`])
-        )
+          prod(readLvl, data_gen.stats[`${sk}_growth`]),
+        ),
       )
     }),
     // Other base stats
     ...(['anomProf', 'impact', 'enerRegen'] as const).map((stat) =>
-      ownBuff.base[stat].add(data_gen.stats[stat])
+      ownBuff.base[stat].add(data_gen.stats[stat]),
     ),
     ownBuff.base.anomMas.add(data_gen.stats.anomMas_base),
     // Core skill stat boost
@@ -180,7 +180,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         attribute: data_gen.attribute,
         damageType1: 'elemental',
       },
-      prod(percent(1.5), own.final.atk)
+      prod(percent(1.5), own.final.atk),
     ),
     // Anomaly DMG
     ...customAnomalyDmg(
@@ -189,7 +189,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         attribute: data_gen.attribute,
         damageType1: 'anomaly',
       },
-      prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk)
+      prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk),
     ),
     // Formula listings for stats
     // TODO: Reorder this
@@ -205,7 +205,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.anomProf)),
     ownBuff.listing.formulas.add(listingItem(own.final.anomMas)),
     ownBuff.listing.formulas.add(
-      listingItem(own.final.dmg_[data_gen.attribute])
+      listingItem(own.final.dmg_[data_gen.attribute]),
     ),
   ]
 }

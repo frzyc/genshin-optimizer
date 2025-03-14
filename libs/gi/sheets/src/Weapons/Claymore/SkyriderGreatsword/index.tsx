@@ -19,9 +19,9 @@ const bonusInc = [-1, 0.06, 0.07, 0.08, 0.09, 0.1]
 const atk_ = lookup(
   condStack,
   objKeyMap(range(1, 4), (i) =>
-    prod(subscript(input.weapon.refinement, bonusInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refinement, bonusInc, { unit: '%' }), i),
   ),
-  naught
+  naught,
 )
 
 export const data = dataObjForWeaponSheet(key, {
@@ -52,7 +52,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

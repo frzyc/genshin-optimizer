@@ -101,7 +101,7 @@ const nodeC5 = greaterEq(input.constellation, 5, 3)
 const nodeC2skillDmg_ = greaterEq(
   input.constellation,
   2,
-  percent(dm.constellation2.icyPawDmg_)
+  percent(dm.constellation2.icyPawDmg_),
 )
 // Hold shield bonus is a separate multiplier
 const holdSkillShieldStr_ = percent(1.75)
@@ -109,28 +109,28 @@ const holdSkillShieldStr_ = percent(1.75)
 // 100% if not C2, 175% if C2 or higher
 const nodeC2shieldStr_ = sum(
   percent(1),
-  greaterEq(input.constellation, 2, percent(dm.constellation2.icyPawShield_))
+  greaterEq(input.constellation, 2, percent(dm.constellation2.icyPawShield_)),
 )
 const nodeSkillShieldPress = prod(
   nodeC2shieldStr_,
-  shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldFlat, 'skill')
+  shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldFlat, 'skill'),
 )
 const nodeSkillShieldHold = prod(
   nodeC2shieldStr_,
   holdSkillShieldStr_,
-  shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldFlat, 'skill')
+  shieldNodeTalent('hp', dm.skill.shieldHp_, dm.skill.shieldFlat, 'skill'),
 )
 const nodeC2ShieldPress = prod(
   percent(dm.constellation2.coopShield_),
-  nodeSkillShieldPress
+  nodeSkillShieldPress,
 )
 const nodeC2ShieldHold = prod(
   percent(dm.constellation2.coopShield_),
-  nodeSkillShieldHold
+  nodeSkillShieldHold,
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -156,13 +156,13 @@ const dmgFormulas = {
     pressCryoShield: greaterEq(
       input.constellation,
       2,
-      shieldElement(elementKey, nodeC2ShieldPress)
+      shieldElement(elementKey, nodeC2ShieldPress),
     ),
     holdShield: greaterEq(input.constellation, 2, nodeC2ShieldHold),
     holdCryoShield: greaterEq(
       input.constellation,
       2,
-      shieldElement(elementKey, nodeC2ShieldHold)
+      shieldElement(elementKey, nodeC2ShieldHold),
     ),
   },
 }
@@ -170,28 +170,28 @@ const dmgFormulas = {
 const nodeA1MoveSpeed = greaterEq(
   input.asc,
   1,
-  equal(condA1, 'on', percent(dm.passive1.moveSpeed_))
+  equal(condA1, 'on', percent(dm.passive1.moveSpeed_)),
 )
 const nodeA1Stamina = greaterEq(
   input.asc,
   1,
-  equal(condA1, 'on', percent(dm.passive1.stamRed_))
+  equal(condA1, 'on', percent(dm.passive1.stamRed_)),
 )
 
 const nodeC6healing_Disp = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'lower', percent(dm.constellation6.healingBonus_))
+  equal(condC6, 'lower', percent(dm.constellation6.healingBonus_)),
 )
 const nodeC6healing_ = equal(
   input.activeCharKey,
   target.charKey,
-  nodeC6healing_Disp
+  nodeC6healing_Disp,
 )
 const nodeC6emDisp = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'higher', dm.constellation6.emBonus)
+  equal(condC6, 'higher', dm.constellation6.emBonus),
 )
 const nodeC6em = equal(input.activeCharKey, target.charKey, nodeC6emDisp)
 

@@ -5,7 +5,7 @@ import { dumpWengines } from './lib/dumpWengines'
 import type { GenLocaleExecutorSchema } from './schema'
 
 const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
-  options
+  options,
 ) => {
   console.log('Executor ran for GenLocale', options)
 

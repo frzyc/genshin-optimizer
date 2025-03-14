@@ -36,15 +36,15 @@ export function LevelSelect({
     (level = 1) => {
       level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
       const ascension = ascensionMaxLevels.findIndex(
-        (ascenML) => level <= ascenML
+        (ascenML) => level <= ascenML,
       ) as AscensionKey
       setBoth({ level, ascension })
     },
-    [setBoth, ascensionMaxLevels, useLow]
+    [setBoth, ascensionMaxLevels, useLow],
   )
   const setAscension = useCallback(() => {
     const lowerAscension = ascensionMaxLevels.findIndex(
-      (ascenML) => level !== 90 && level === ascenML
+      (ascenML) => level !== 90 && level === ascenML,
     ) as AscensionKey
     if (ascension === lowerAscension)
       setBoth({ ascension: (ascension + 1) as AscensionKey })
@@ -108,7 +108,7 @@ export function LevelSelect({
                   : `Lv. ${lv}/${ascensionMaxLevels[as]}`}
               </MenuItem>
             )
-          }
+          },
         )}
       </DropdownButton>
     </Box>

@@ -61,7 +61,7 @@ export class ArtifactDataManager extends DataManager<
   }
   override toCache(
     storageObj: IArtifact,
-    id: string
+    id: string,
   ): ICachedArtifact | undefined {
     // Generate cache fields
     const newArt = cachedArtifact(storageObj, id).artifact
@@ -72,12 +72,12 @@ export class ArtifactDataManager extends DataManager<
       const slotKey = newArt.slotKey
       const prevChar = oldArt?.location
         ? this.database.chars.getWithInitWeapon(
-            this.database.chars.LocationToCharacterKey(oldArt.location)
+            this.database.chars.LocationToCharacterKey(oldArt.location),
           )
         : undefined
       const newChar = newArt.location
         ? this.database.chars.getWithInitWeapon(
-            this.database.chars.LocationToCharacterKey(newArt.location)
+            this.database.chars.LocationToCharacterKey(newArt.location),
           )
         : undefined
 
@@ -96,13 +96,13 @@ export class ArtifactDataManager extends DataManager<
         this.database.chars.setEquippedArtifact(
           charKeyToLocCharKey(newChar.key),
           slotKey,
-          newArt.id
+          newArt.id,
         )
       if (prevChar)
         this.database.chars.setEquippedArtifact(
           charKeyToLocCharKey(prevChar.key),
           slotKey,
-          prevArt?.id ?? ''
+          prevArt?.id ?? '',
         )
     } else
       newArt.location &&
@@ -185,7 +185,7 @@ export class ArtifactDataManager extends DataManager<
       if (!result.ignoreDups) {
         const { duplicated, upgraded } = this.findDups(
           art,
-          Array.from(idsToRemove)
+          Array.from(idsToRemove),
         )
         if (duplicated[0] || upgraded[0]) {
           foundDupOrUpgrade = true
@@ -196,8 +196,8 @@ export class ArtifactDataManager extends DataManager<
             upgraded[0]?.location === art.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((a) => a.id === importId)
@@ -249,7 +249,7 @@ export class ArtifactDataManager extends DataManager<
   }
   findDups(
     editorArt: IArtifact,
-    idList = this.keys
+    idList = this.keys,
   ): { duplicated: ICachedArtifact[]; upgraded: ICachedArtifact[] } {
     const { setKey, rarity, level, slotKey, mainStatKey, substats } = editorArt
 
@@ -267,8 +267,8 @@ export class ArtifactDataManager extends DataManager<
           (substat, i) =>
             !candidate.substats[i].key || // Candidate doesn't have anything on this slot
             (substat.key === candidate.substats[i].key && // Or editor simply has better substat
-              substat.value >= candidate.substats[i].value)
-        )
+              substat.value >= candidate.substats[i].value),
+        ),
     )
 
     // Strictly upgraded artifact
@@ -280,23 +280,23 @@ export class ArtifactDataManager extends DataManager<
             ? substats.every(
                 (
                   substat,
-                  i // Has no extra roll
+                  i, // Has no extra roll
                 ) =>
                   substat.key === candidate.substats[i].key &&
-                  substat.value === candidate.substats[i].value
+                  substat.value === candidate.substats[i].value,
               )
             : substats.some(
                 (
                   substat,
-                  i // Has extra rolls
+                  i, // Has extra rolls
                 ) =>
                   candidate.substats[i].key
                     ? substat.value > candidate.substats[i].value // Extra roll to existing substat
-                    : substat.key // Extra roll to new substat
-              ))
+                    : substat.key, // Extra roll to new substat
+              )),
       )
       .sort((candidates) =>
-        candidates.location === editorArt.location ? -1 : 1
+        candidates.location === editorArt.location ? -1 : 1,
       )
     // Strictly duplicated artifact
     const duplicated = candidates
@@ -309,12 +309,12 @@ export class ArtifactDataManager extends DataManager<
               candidate.substats.some(
                 (candidateSubstat) =>
                   substat.key === candidateSubstat.key && // Or same slot
-                  substat.value === candidateSubstat.value
-              )
-          )
+                  substat.value === candidateSubstat.value,
+              ),
+          ),
       )
       .sort((candidates) =>
-        candidates.location === editorArt.location ? -1 : 1
+        candidates.location === editorArt.location ? -1 : 1,
       )
     return { duplicated, upgraded }
   }
@@ -322,11 +322,11 @@ export class ArtifactDataManager extends DataManager<
 
 export function cachedArtifact(
   flex: IArtifact,
-  id: string
+  id: string,
 ): { artifact: ICachedArtifact; errors: string[] } {
   const { location, lock, setKey, slotKey, rarity, mainStatKey } = flex
   const level = Math.round(
-    Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4)
+    Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4),
   )
   const mainStatVal = getMainStatDisplayValue(mainStatKey, rarity, level)
 
@@ -380,15 +380,15 @@ export function cachedArtifact(
       }
 
       substat.rolls = possibleRolls.reduce((best, current) =>
-        best.length < current.length ? best : current
+        best.length < current.length ? best : current,
       )
       substat.efficiency = efficiency(
         substat.rolls.reduce((a: number, b: number) => a + b, 0),
-        key
+        key,
       )
       substat.accurateValue = substat.rolls.reduce(
         (a: number, b: number) => a + b,
-        0
+        0,
       )
     } else {
       // Invalid Substat
@@ -396,7 +396,7 @@ export function cachedArtifact(
       errors.push(
         `Invalid substat ${
           statMap[substat.key as keyof typeof statMap] ?? substat.key
-        }`
+        }`,
       )
     }
   })
@@ -411,7 +411,7 @@ export function cachedArtifact(
   const tryAllSubstats = (
     rolls: { index: number; roll: number[] }[],
     currentScore: number,
-    total: number
+    total: number,
   ) => {
     if (rolls.length === allPossibleRolls.length) {
       if (
@@ -447,16 +447,16 @@ export function cachedArtifact(
 
   const totalRolls = substats.reduce(
     (accu, { rolls }) => accu + rolls.length,
-    0
+    0,
   )
 
   if (totalRolls > upperBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`,
     )
   else if (totalRolls < lowerBound)
     errors.push(
-      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`
+      `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`,
     )
 
   if (substats.some((substat) => !substat.key)) {
@@ -465,7 +465,7 @@ export function cachedArtifact(
       errors.push(
         `Substat ${
           statMap[substat.key as keyof typeof statMap] ?? substat.key
-        } has > 1 roll, but not all substats are unlocked.`
+        } has > 1 roll, but not all substats are unlocked.`,
       )
   }
 
@@ -474,7 +474,7 @@ export function cachedArtifact(
 
 export function validateArtifact(
   obj: unknown = {},
-  allowZeroSub = false
+  allowZeroSub = false,
 ): IArtifact | undefined {
   if (!obj || typeof obj !== 'object') return undefined
   const { setKey, rarity, slotKey } = obj as IArtifact
@@ -522,7 +522,7 @@ function defSub(): ISubstat {
 function parseSubstats(
   obj: unknown,
   rarity: ArtifactRarity,
-  allowZeroSub = false
+  allowZeroSub = false,
 ): ISubstat[] {
   if (!Array.isArray(obj)) return new Array(4).map((_) => defSub())
   const substats = (obj as ISubstat[])

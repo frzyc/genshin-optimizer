@@ -119,7 +119,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
               size="small"
               label={`Lv. ${getLevelString(
                 character.level,
-                character.ascension
+                character.ascension,
               )}`}
               sx={{ color: 'yellow' }}
             />

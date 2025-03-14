@@ -53,12 +53,12 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     layeredAssignment(
       mapHashData,
       ['char', charKey, 'title'],
-      avatarTitleTextMapHash
+      avatarTitleTextMapHash,
     )
     layeredAssignment(
       mapHashData,
       ['char', charKey, 'description'],
-      descTextMapHash
+      descTextMapHash,
     )
     // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], avatarDetailTextMapHash)
     // Don't override constellation name if manually specified. For Zhongli
@@ -66,11 +66,11 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       layeredAssignment(
         mapHashData,
         ['char', charKey, 'constellationName'],
-        avatarConstellationBeforTextMapHash
+        avatarConstellationBeforTextMapHash,
       )
     function genTalentHash(
       keys: string[],
-      depot: AvatarSkillDepotExcelConfigData
+      depot: AvatarSkillDepotExcelConfigData,
     ) {
       const {
         energySkill: burst,
@@ -81,88 +81,88 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       layeredAssignment(
         mapHashData,
         [...keys, 'auto', 'name'],
-        [avatarSkillExcelConfigData[normal].nameTextMapHash, 'autoName']
+        [avatarSkillExcelConfigData[normal].nameTextMapHash, 'autoName'],
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'auto', 'fields'],
-        [avatarSkillExcelConfigData[normal].descTextMapHash, 'autoFields']
+        [avatarSkillExcelConfigData[normal].descTextMapHash, 'autoFields'],
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'auto', 'skillParams'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[normal].proudSkillGroupId
-        ][0].paramDescList.map((id) => [id, 'skillParam'])
+        ][0].paramDescList.map((id) => [id, 'skillParam']),
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'auto', 'skillParamsEncoding'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[normal].proudSkillGroupId
-        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding']),
       )
 
       layeredAssignment(
         mapHashData,
         [...keys, 'skill', 'name'],
-        avatarSkillExcelConfigData[skill].nameTextMapHash
+        avatarSkillExcelConfigData[skill].nameTextMapHash,
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'skill', 'description'],
-        [avatarSkillExcelConfigData[skill].descTextMapHash, 'paragraph']
+        [avatarSkillExcelConfigData[skill].descTextMapHash, 'paragraph'],
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'skill', 'skillParams'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[skill].proudSkillGroupId
-        ][0].paramDescList.map((id) => [id, 'skillParam'])
+        ][0].paramDescList.map((id) => [id, 'skillParam']),
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'skill', 'skillParamsEncoding'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[skill].proudSkillGroupId
-        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding']),
       )
 
       layeredAssignment(
         mapHashData,
         [...keys, 'burst', 'name'],
-        avatarSkillExcelConfigData[burst].nameTextMapHash
+        avatarSkillExcelConfigData[burst].nameTextMapHash,
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'burst', 'description'],
-        [avatarSkillExcelConfigData[burst].descTextMapHash, 'paragraph']
+        [avatarSkillExcelConfigData[burst].descTextMapHash, 'paragraph'],
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'burst', 'skillParams'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[burst].proudSkillGroupId
-        ][0].paramDescList.map((id) => [id, 'skillParam'])
+        ][0].paramDescList.map((id) => [id, 'skillParam']),
       )
       layeredAssignment(
         mapHashData,
         [...keys, 'burst', 'skillParamsEncoding'],
         proudSkillExcelConfigData[
           avatarSkillExcelConfigData[burst].proudSkillGroupId
-        ][0].paramDescList.map((id) => [id, 'skillParamEncoding'])
+        ][0].paramDescList.map((id) => [id, 'skillParamEncoding']),
       )
 
       if (sprint) {
         layeredAssignment(
           mapHashData,
           [...keys, 'sprint', 'name'],
-          avatarSkillExcelConfigData[sprint].nameTextMapHash
+          avatarSkillExcelConfigData[sprint].nameTextMapHash,
         )
         layeredAssignment(
           mapHashData,
           [...keys, 'sprint', 'description'],
-          [avatarSkillExcelConfigData[sprint].descTextMapHash, 'paragraph']
+          [avatarSkillExcelConfigData[sprint].descTextMapHash, 'paragraph'],
         )
       }
 
@@ -171,7 +171,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           mapHashData,
           [...keys, 'passive1', 'name'],
           proudSkillExcelConfigData[passive1.proudSkillGroupId][0]
-            .nameTextMapHash
+            .nameTextMapHash,
         )
       passive1.proudSkillGroupId &&
         layeredAssignment(
@@ -181,7 +181,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
             proudSkillExcelConfigData[passive1.proudSkillGroupId][0]
               .descTextMapHash,
             'paragraph',
-          ]
+          ],
         )
 
       passive2.proudSkillGroupId &&
@@ -189,7 +189,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           mapHashData,
           [...keys, 'passive2', 'name'],
           proudSkillExcelConfigData[passive2.proudSkillGroupId][0]
-            .nameTextMapHash
+            .nameTextMapHash,
         )
       passive2.proudSkillGroupId &&
         layeredAssignment(
@@ -199,7 +199,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
             proudSkillExcelConfigData[passive2.proudSkillGroupId][0]
               .descTextMapHash,
             'paragraph',
-          ]
+          ],
         )
 
       if (passive3?.proudSkillGroupId) {
@@ -207,7 +207,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           mapHashData,
           [...keys, 'passive3', 'name'],
           proudSkillExcelConfigData[passive3.proudSkillGroupId][0]
-            .nameTextMapHash
+            .nameTextMapHash,
         )
         layeredAssignment(
           mapHashData,
@@ -216,7 +216,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
             proudSkillExcelConfigData[passive3.proudSkillGroupId][0]
               .descTextMapHash,
             'paragraph',
-          ]
+          ],
         )
       }
       //seems to be only used by SangonomiyaKokomi
@@ -225,7 +225,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           mapHashData,
           [...keys, 'passive', 'name'],
           proudSkillExcelConfigData[passive.proudSkillGroupId][0]
-            .nameTextMapHash
+            .nameTextMapHash,
         )
         layeredAssignment(
           mapHashData,
@@ -234,7 +234,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
             proudSkillExcelConfigData[passive.proudSkillGroupId][0]
               .descTextMapHash,
             'paragraph',
-          ]
+          ],
         )
       }
 
@@ -242,12 +242,12 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         layeredAssignment(
           mapHashData,
           [...keys, `constellation${i + 1}`, 'name'],
-          avatarTalentExcelConfigData[skId].nameTextMapHash
+          avatarTalentExcelConfigData[skId].nameTextMapHash,
         )
         layeredAssignment(
           mapHashData,
           [...keys, `constellation${i + 1}`, 'description'],
-          [avatarTalentExcelConfigData[skId].descTextMapHash, 'paragraph']
+          [avatarTalentExcelConfigData[skId].descTextMapHash, 'paragraph'],
         )
       })
     }
@@ -259,32 +259,32 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
         ['char', 'TravelerAnemo' + gender],
-        avatarSkillDepotExcelConfigData[anemo]
+        avatarSkillDepotExcelConfigData[anemo],
       )
       genTalentHash(
         ['char', 'TravelerGeo' + gender],
-        avatarSkillDepotExcelConfigData[geo]
+        avatarSkillDepotExcelConfigData[geo],
       )
       genTalentHash(
         ['char', 'TravelerElectro' + gender],
-        avatarSkillDepotExcelConfigData[electro]
+        avatarSkillDepotExcelConfigData[electro],
       )
       genTalentHash(
         ['char', 'TravelerDendro' + gender],
-        avatarSkillDepotExcelConfigData[dendro]
+        avatarSkillDepotExcelConfigData[dendro],
       )
       genTalentHash(
         ['char', 'TravelerHydro' + gender],
-        avatarSkillDepotExcelConfigData[hydro]
+        avatarSkillDepotExcelConfigData[hydro],
       )
       genTalentHash(
         ['char', 'TravelerPyro' + gender],
-        avatarSkillDepotExcelConfigData[pyro]
+        avatarSkillDepotExcelConfigData[pyro],
       )
     } else {
       genTalentHash(
         ['char', charKey],
-        avatarSkillDepotExcelConfigData[skillDepotId]
+        avatarSkillDepotExcelConfigData[skillDepotId],
       )
     }
   })
@@ -300,7 +300,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         if (!equipAffixData)
           throw `No data for EquipAffixId ${equipAffixId} for setEffect ${setNeed}`
         return [setNeed, equipAffixData.descTextMapHash]
-      })
+      }),
     )
 
     const pieces = Object.fromEntries(
@@ -316,7 +316,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
             desc: descTextMapHash,
           },
         ]
-      })
+      }),
     )
 
     const setName =
@@ -345,7 +345,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       passiveName: ascData ? ascData[0].nameTextMapHash : 0,
       passiveDescription: ascData
         ? ascData.map(
-            (asc) => [asc.descTextMapHash, 'paragraph'] as [number, string]
+            (asc) => [asc.descTextMapHash, 'paragraph'] as [number, string],
           )
         : [0, 0, 0, 0, 0],
     }
@@ -407,12 +407,12 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         const string = parsingFunctions[processing](
           lang as Language,
           preprocess(rawString),
-          keys
+          keys,
         )
         if (string === undefined)
           throw `Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`
         layeredAssignment(languageData, [lang, ...keys], string)
-      }
+      },
     )
 
     // Add the traveler variants to charNames_gen
@@ -437,7 +437,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         layeredAssignment(
           languageData,
           [lang, 'charNames', `Traveler${ele}${gender}`],
-          `${transLocGenKey} (${transEleKey})`
+          `${transLocGenKey} (${transEleKey})`,
         )
       })
     })
@@ -471,7 +471,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
 
       //weapons/characters/artifacts
       Object.entries(typeData as any).forEach(([itemKey, data]) =>
-        dumpFile(`${fileDir}/${type}_${itemKey}_gen.json`, data)
+        dumpFile(`${fileDir}/${type}_${itemKey}_gen.json`, data),
       )
     })
   })

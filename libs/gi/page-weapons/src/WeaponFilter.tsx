@@ -74,9 +74,9 @@ function WeaponFilter({
           const wtk = getWeaponStat(weapon.key).weaponType
           ct[wtk].total++
           if (weaponIds.includes(id)) ct[wtk].current++
-        })
+        }),
       ),
-    [database, weaponIds]
+    [database, weaponIds],
   )
 
   const weaponRarityTotals = useMemo(
@@ -86,9 +86,9 @@ function WeaponFilter({
           const wr = getWeaponStat(weapon.key).rarity
           ct[wr].total++
           if (weaponIds.includes(id)) ct[wr].current++
-        })
+        }),
       ),
-    [database, weaponIds]
+    [database, weaponIds],
   )
 
   const { lockedTotal, equippedTotal, locationTotal } = useMemo(() => {
@@ -110,7 +110,7 @@ function WeaponFilter({
           ctMap['equippedTotal'][equipped].current++
           ctMap['locationTotal'][location].current++
         }
-      })
+      }),
     )
   }, [database, weaponIds])
 
@@ -269,16 +269,16 @@ function WeaponRedButtons({ weaponIds }: { weaponIds: string[] }) {
   const database = useDatabase()
   const { numDelete, numUnlock, numLock } = useMemo(() => {
     const weapons = weaponIds.map((id) =>
-      database.weapons.get(id)
+      database.weapons.get(id),
     ) as ICachedWeapon[]
     const numUnlock = weapons.reduce(
       (w, weapon) => w + (weapon.lock ? 0 : 1),
-      0
+      0,
     )
     const numLock = weapons.length - numUnlock
     const numDelete = weapons.reduce(
       (w, weapon) => w + (weapon.lock || weapon.location ? 0 : 1),
-      0
+      0,
     )
     return { numDelete, numUnlock, numLock }
   }, [weaponIds, database])

@@ -30,10 +30,10 @@ const sheet = registerWengine(
     ownBuff.combat.dmg_.ice.add(
       cmpSpecialtyAndEquipped(
         key,
-        subscript(modification, [-1, 0.15, 0.175, 0.2, 0.22, 0.24])
-      )
+        subscript(modification, [-1, 0.15, 0.175, 0.2, 0.22, 0.24]),
+      ),
     ),
-    showSpecialtyAndEquipped(key)
+    showSpecialtyAndEquipped(key),
   ),
 
   // Conditional buffs
@@ -44,11 +44,11 @@ const sheet = registerWengine(
         key,
         prod(
           launch_ex_attack,
-          subscript(modification, [-1, 0.02, 0.023, 0.026, 0.029, 0.032])
-        )
-      )
+          subscript(modification, [-1, 0.02, 0.023, 0.026, 0.029, 0.032]),
+        ),
+      ),
     ),
-    showSpecialtyAndEquipped(key)
-  )
+    showSpecialtyAndEquipped(key),
+  ),
 )
 export default sheet

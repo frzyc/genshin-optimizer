@@ -21,7 +21,7 @@ const hp_ = subscript(input.weapon.refinement, hpInc, { unit: '%' })
 const [condPassivePath, condPassive] = cond(key, 'RecklessCinnabar')
 const atk1 = prod(
   subscript(input.weapon.refinement, atkInc, { unit: '%' }),
-  input.premod.hp
+  input.premod.hp,
 )
 const atk2 = equal(
   input.weapon.key,
@@ -31,10 +31,10 @@ const atk2 = equal(
     condPassive,
     prod(
       subscript(input.weapon.refinement, lowHpAtkInc, { unit: '%' }),
-      input.premod.hp
+      input.premod.hp,
     ),
-    { path: 'atk' }
-  )
+    { path: 'atk' },
+  ),
 )
 const data = dataObjForWeaponSheet(
   key,
@@ -48,7 +48,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     atk2_: atk2,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {

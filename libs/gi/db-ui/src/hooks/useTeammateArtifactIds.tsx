@@ -17,13 +17,13 @@ export function useTeammateArtifactIds() {
             .filter(notEmpty)
             .filter((loadoutDatum) => loadoutDatum.teamCharId !== teamCharId)
             .map((loadoutDatum) =>
-              database.teams.getLoadoutArtifacts(loadoutDatum)
+              database.teams.getLoadoutArtifacts(loadoutDatum),
             )
             .flatMap((arts) => Object.values(arts))
             .filter(notEmpty)
-            .map(({ id }) => id)
-        )
+            .map(({ id }) => id),
+        ),
       ),
-    [database, loadoutData, teamCharId]
+    [database, loadoutData, teamCharId],
   )
 }

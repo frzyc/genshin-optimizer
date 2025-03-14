@@ -53,9 +53,9 @@ export default function Content({
           if (payload.new)
             setCharacters(
               (character) =>
-                [...character, payload.new] as Array<Tables<'characters'>>
+                [...character, payload.new] as Array<Tables<'characters'>>,
             )
-        }
+        },
       )
       .subscribe()
 

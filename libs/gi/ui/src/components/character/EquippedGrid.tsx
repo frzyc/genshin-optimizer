@@ -60,7 +60,7 @@ export function EquippedGrid({
 
   const showWeapon = useCallback(
     () => weaponId && setEditorWeaponId(weaponId),
-    [weaponId]
+    [weaponId],
   )
   const hideWeapon = useCallback(() => setEditorWeaponId(''), [])
 

@@ -16,7 +16,7 @@ const [condPassivePath, condPassive] = cond(key, 'Debut')
 const atk_ = equal(
   'recitative',
   condPassive,
-  subscript(input.weapon.refinement, refinementAtkVals)
+  subscript(input.weapon.refinement, refinementAtkVals),
 )
 const eleBonus_ = Object.fromEntries(
   allElementKeys.map((ele) => [
@@ -24,21 +24,21 @@ const eleBonus_ = Object.fromEntries(
     equal(
       'aria',
       condPassive,
-      subscript(input.weapon.refinement, refinementEleDmgVals)
+      subscript(input.weapon.refinement, refinementEleDmgVals),
     ),
-  ])
+  ]),
 )
 const eleMas = equal(
   'interlude',
   condPassive,
-  subscript(input.weapon.refinement, refinementEleMasVals)
+  subscript(input.weapon.refinement, refinementEleMasVals),
 )
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
     ...Object.fromEntries(
-      allElementKeys.map((ele) => [`${ele}_dmg_`, eleBonus_[ele]])
+      allElementKeys.map((ele) => [`${ele}_dmg_`, eleBonus_[ele]]),
     ),
     eleMas,
   },

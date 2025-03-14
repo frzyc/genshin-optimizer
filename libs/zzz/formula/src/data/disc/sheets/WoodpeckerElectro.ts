@@ -19,9 +19,9 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_crit_basic_dodge_ex_atk_',
     ownBuff.combat.atk_.add(
-      cmpGE(discCount, 4, prod(0.09, crit_basic_dodge_ex))
+      cmpGE(discCount, 4, prod(0.09, crit_basic_dodge_ex)),
     ),
-    showCond4Set
-  )
+    showCond4Set,
+  ),
 )
 export default sheet

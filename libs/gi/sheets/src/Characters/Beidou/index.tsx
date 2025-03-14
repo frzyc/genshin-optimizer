@@ -97,49 +97,49 @@ const nodeC3 = greaterEq(input.constellation, 3, 3)
 const nodeC5 = greaterEq(input.constellation, 5, 3)
 
 const skillDmgOneHit = dm.skill.dmgBase.map(
-  (dmg, i) => dmg + dm.skill.onHitDmgBonus[i]
+  (dmg, i) => dmg + dm.skill.onHitDmgBonus[i],
 )
 const skillDmgTwoHits = dm.skill.dmgBase.map(
-  (dmg, i) => dmg + 2 * dm.skill.onHitDmgBonus[i]
+  (dmg, i) => dmg + 2 * dm.skill.onHitDmgBonus[i],
 )
 
 const nodeBurstDmgRed_ = equal(
   condBurst,
   'on',
-  subscript(input.total.burstIndex, dm.burst.damageReduction)
+  subscript(input.total.burstIndex, dm.burst.damageReduction),
 )
 const nodeBurstElectroResRed_ = greaterEq(
   input.constellation,
   6,
-  equal(condBurst, 'on', percent(dm.constellation6.electroResShred_))
+  equal(condBurst, 'on', percent(dm.constellation6.electroResShred_)),
 )
 const nodeSkillNormalDmg_ = greaterEq(
   input.asc,
   4,
-  equal(condA4, 'on', percent(dm.ascension4.normalDmg_))
+  equal(condA4, 'on', percent(dm.ascension4.normalDmg_)),
 )
 const nodeSkillChargeDmg_ = greaterEq(
   input.asc,
   4,
-  equal(condA4, 'on', percent(dm.ascension4.chargeDmg_))
+  equal(condA4, 'on', percent(dm.ascension4.chargeDmg_)),
 )
 const nodeSkillAttackSpeed_ = greaterEq(
   input.asc,
   4,
-  equal(condA4, 'on', percent(dm.ascension4.attackSpeed))
+  equal(condA4, 'on', percent(dm.ascension4.attackSpeed)),
 )
 
 const skillShieldNode = shieldNodeTalent(
   'hp',
   dm.skill.shieldHp_,
   dm.skill.shieldFlat,
-  'skill'
+  'skill',
 )
 const c1ShieldNode = shieldNode('hp', percent(dm.constellation1.shieldHp_), 0)
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
@@ -162,7 +162,7 @@ const dmgFormulas = {
     electroShield: greaterEq(
       input.constellation,
       1,
-      shieldElement('electro', c1ShieldNode)
+      shieldElement('electro', c1ShieldNode),
     ),
   },
   constellation4: {
@@ -172,8 +172,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(input.total.atk, percent(dm.constellation4.skillDmg)),
         'elemental',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }

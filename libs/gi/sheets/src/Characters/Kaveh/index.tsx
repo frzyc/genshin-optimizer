@@ -97,7 +97,7 @@ const afterBurst_infusion = equalStr(condAfterBurst, 'on', constant(elementKey))
 const afterBurst_bloom_dmg_ = equal(
   condAfterBurst,
   'on',
-  subscript(input.total.burstIndex, dm.burst.bloom_dmg_)
+  subscript(input.total.burstIndex, dm.burst.bloom_dmg_),
 )
 
 const [condA4StacksPath, condA4Stacks] = cond(key, 'a4Stacks')
@@ -111,34 +111,34 @@ const a4_eleMas = greaterEq(
     lookup(
       condA4Stacks,
       objKeyMap(a4StacksArr, (stack) => prod(stack, dm.passive2.eleMas)),
-      naught
-    )
-  )
+      naught,
+    ),
+  ),
 )
 
 const [condC1AfterSkillPath, condC1AfterSkill] = cond(key, 'c1AfterSkill')
 const c1AfterSkill_dendro_res_ = greaterEq(
   input.constellation,
   1,
-  equal(condC1AfterSkill, 'on', percent(dm.c1.dendro_res_))
+  equal(condC1AfterSkill, 'on', percent(dm.c1.dendro_res_)),
 )
 const c1AfterSkill_incHeal_ = greaterEq(
   input.constellation,
   1,
-  equal(condC1AfterSkill, 'on', percent(dm.c1.incHeal_))
+  equal(condC1AfterSkill, 'on', percent(dm.c1.incHeal_)),
 )
 
 const c2_atkSPD_ = greaterEq(
   input.constellation,
   2,
-  equal(condAfterBurst, 'on', dm.c2.atkSPD_)
+  equal(condAfterBurst, 'on', dm.c2.atkSPD_),
 )
 
 const c4_bloom_dmg_ = greaterEq(input.constellation, 4, dm.c4.bloom_dmg_)
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spin: dmgNode('atk', dm.charged.spin, 'charged'),
@@ -155,7 +155,9 @@ const dmgFormulas = {
     heal: greaterEq(
       input.asc,
       1,
-      customHealNode(prod(percent(dm.passive1.heal_eleMas), input.total.eleMas))
+      customHealNode(
+        prod(percent(dm.passive1.heal_eleMas), input.total.eleMas),
+      ),
     ),
   },
   constellation6: {
@@ -164,7 +166,7 @@ const dmgFormulas = {
       6,
       customDmgNode(prod(percent(dm.c6.dmg_), input.total.atk), 'elemental', {
         hit: { ele: constant(elementKey) },
-      })
+      }),
     ),
   },
 } as const

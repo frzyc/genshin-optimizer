@@ -15,5 +15,5 @@ export default register(
   entriesForWeapon(key),
   customHeal('heal', prod(target.final.hp, subscript(refinement, heal_arr)), {
     team: true,
-  })
+  }),
 )

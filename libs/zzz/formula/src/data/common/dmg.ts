@@ -30,7 +30,7 @@ const data: TagMapNodeEntries = [
 
   // DMG Bonus Multiplier
   ownBuff.dmg.dmg_mult_.add(
-    sum(percent(1), own.final.dmg_, own.final.common_dmg_)
+    sum(percent(1), own.final.dmg_, own.final.common_dmg_),
   ),
   // Buff Multiplier (e.g. Timeweaver Disorder DMG Bonus)
   ownBuff.dmg.buff_mult_.add(sum(percent(1), own.final.buff_)),
@@ -42,11 +42,11 @@ const data: TagMapNodeEntries = [
       max(
         sum(
           prod(enemy.common.def, sum(percent(1), prod(-1, own.final.pen_))),
-          prod(-1, own.final.pen)
+          prod(-1, own.final.pen),
         ),
-        0
-      )
-    )
+        0,
+      ),
+    ),
   ),
   // RES Multiplier
   ownBuff.dmg.res_mult_.add(
@@ -54,16 +54,16 @@ const data: TagMapNodeEntries = [
       percent(1),
       prod(-1, enemy.common.res_),
       enemy.common.resRed_,
-      own.final.resIgn_
-    )
+      own.final.resIgn_,
+    ),
   ),
   // DMG Taken Multiplier
   ownBuff.dmg.dmg_taken_mult_.add(
-    sum(percent(1), enemy.common.dmgInc_, prod(-1, enemy.common.dmgRed_))
+    sum(percent(1), enemy.common.dmgInc_, prod(-1, enemy.common.dmgRed_)),
   ),
   // Stunned Multiplier
   ownBuff.dmg.stunned_mult_.add(
-    cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_)
+    cmpEq(enemy.common.isStunned, 1, enemy.common.stun_, enemy.common.unstun_),
   ),
 
   ownBuff.dmg.crit_mult_.add(
@@ -71,7 +71,7 @@ const data: TagMapNodeEntries = [
       crit: sum(percent(1), own.final.crit_dmg_),
       nonCrit: percent(1),
       avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
-    })
+    }),
   ),
 ]
 export default data

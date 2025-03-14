@@ -17,7 +17,7 @@ export function TravelerGenderSelect() {
   const { gender } = useDBMeta()
   const toggleGender = useCallback(
     () => database.dbMeta.set({ gender: gender === 'F' ? 'M' : 'F' }),
-    [gender, database]
+    [gender, database],
   )
   if (!key.startsWith('Traveler')) return null
   return (

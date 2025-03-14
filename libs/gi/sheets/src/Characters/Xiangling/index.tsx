@@ -90,9 +90,9 @@ const [afterChiliDisp, afterChili] = activeCharBuff(
   greaterEq(
     input.asc,
     4,
-    equal('afterChili', condAfterChili, percent(dm.passive2.atk_bonus))
+    equal('afterChili', condAfterChili, percent(dm.passive2.atk_bonus)),
   ),
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 
 // C1
@@ -100,7 +100,11 @@ const [condAfterGuobaHitPath, condAfterGuobaHit] = cond(key, 'afterGuobaHit')
 const afterGuobaHit = greaterEq(
   input.constellation,
   1,
-  equal('afterGuobaHit', condAfterGuobaHit, percent(-dm.constellation1.pyroRes))
+  equal(
+    'afterGuobaHit',
+    condAfterGuobaHit,
+    percent(-dm.constellation1.pyroRes),
+  ),
 )
 
 // C6
@@ -111,14 +115,14 @@ const duringPyronado = greaterEq(
   equal(
     'duringPyronado',
     condDuringPyronado,
-    percent(dm.constellation6.pyroDmg)
-  )
+    percent(dm.constellation6.pyroDmg),
+  ),
 )
 const antiC6 = prod(duringPyronado, -1)
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -146,8 +150,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(input.total.atk, percent(dm.constellation2.dmg)),
         'elemental',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }

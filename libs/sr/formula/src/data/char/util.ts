@@ -166,8 +166,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       return ownBuff.base[sk].add(
         sum(
           subscript(ascension, basePerAsc),
-          prod(readLvl, subscript(ascension, addPerAsc))
-        )
+          prod(readLvl, subscript(ascension, addPerAsc)),
+        ),
       )
     }),
     ...(['crit_', 'crit_dmg_'] as const).map((sk) => {
@@ -177,8 +177,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.base.spd.add(
       subscript(
         ascension,
-        data_gen.ascension.map((p) => p.spd)
-      )
+        data_gen.ascension.map((p) => p.spd),
+      ),
     ),
     // Small trace stat boosts
     ...statBoosts.flatMap((statBoost, index) =>
@@ -186,10 +186,10 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         const sbKey = `statBoost${(index + 1) as StatBoostKey}` as const
         const buff = getStatFromStatKey(ownBuff.premod, key).add(
           // TODO: Add automatic ascension/level/previous node requirement
-          cmpEq(char[sbKey], 1, amt)
+          cmpEq(char[sbKey], 1, amt),
         )
         return registerBuff(sbKey, buff)
-      })
+      }),
     ),
     // Eidolon 3 and 5 ability level boosts
     ...([3, 5] as const).flatMap((ei) =>
@@ -197,9 +197,9 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         ([abilityKey, levelBoost]) =>
           registerBuff(
             `eidolon${ei}_${abilityKey}`,
-            ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
-          )
-      )
+            ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost)),
+          ),
+      ),
     ),
     // Break base DMG
     ...customBreakDmg(
@@ -208,7 +208,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         elementalType: data_gen.damageType,
         damageType1: 'break',
       },
-      1
+      1,
     ),
     // Formula listings for stats
     // TODO: Reorder this
@@ -224,7 +224,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.heal_)),
     ownBuff.listing.formulas.add(
-      listingItem(own.final.dmg_[data_gen.damageType])
+      listingItem(own.final.dmg_[data_gen.damageType]),
     ),
     ownBuff.listing.formulas.add(listingItem(own.final.weakness_)),
     ownBuff.listing.formulas.add(listingItem(own.final.resPen_)),

@@ -96,7 +96,7 @@ export function RelicEditor({
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
   useEffect(
     () => database.relics.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+    [database, setDirtyDatabase],
   )
 
   const [showEditor, setShowEditor] = useState(false)
@@ -164,18 +164,18 @@ export function RelicEditor({
       function pick<T>(
         value: T | undefined,
         available: readonly T[],
-        prefer?: T
+        prefer?: T,
       ): T {
         return value && available.includes(value)
           ? value
-          : prefer ?? available[0]
+          : (prefer ?? available[0])
       }
 
       if (newValue.setKey) {
         newValue.rarity = pick(
           relic?.rarity,
           newSheet.rarity,
-          Math.max(...newSheet.rarity) as RelicRarityKey
+          Math.max(...newSheet.rarity) as RelicRarityKey,
         )
         newValue.slotKey = pick(relic?.slotKey, ['head', 'hands'])
       }
@@ -184,24 +184,24 @@ export function RelicEditor({
         newValue.level = clamp(
           newValue.level,
           0,
-          3 * (newValue.rarity ?? relic!.rarity)
+          3 * (newValue.rarity ?? relic!.rarity),
         )
       if (newValue.slotKey)
         newValue.mainStatKey = pick(
           relic?.mainStatKey,
-          relicSlotToMainStatKeys[newValue.slotKey]
+          relicSlotToMainStatKeys[newValue.slotKey],
         )
 
       if (newValue.mainStatKey) {
         newValue.substats = [0, 1, 2, 3].map((i) =>
           relic && relic.substats[i].key !== newValue.mainStatKey
             ? relic!.substats[i]
-            : { key: '', value: 0 }
+            : { key: '', value: 0 },
         )
       }
       dispatchRelic({ type: 'update', relic: newValue })
     },
-    [relic, sheet, dispatchRelic]
+    [relic, sheet, dispatchRelic],
   )
 
   const reset = useCallback(() => {
@@ -212,7 +212,7 @@ export function RelicEditor({
   const setSubstat = useCallback(
     (index: number, substat: ISubstat) =>
       dispatchRelic({ type: 'substat', index, substat }),
-    []
+    [],
   )
   const isValid = !errors.length
   const onClose = useCallback(
@@ -228,7 +228,7 @@ export function RelicEditor({
       setShowEditor(false)
       reset()
     },
-    [t, relicIdToEdit, relic, setShowEditor, reset]
+    [t, relicIdToEdit, relic, setShowEditor, reset],
   )
 
   const theme = useTheme()
@@ -373,7 +373,7 @@ export function RelicEditor({
                         ? getRelicMainStatDisplayVal(
                             rarity,
                             relic.mainStatKey,
-                            level
+                            level,
                           )
                         : t('mainStat')}
                     </Typography>

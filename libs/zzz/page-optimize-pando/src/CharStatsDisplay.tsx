@@ -17,9 +17,9 @@ export function CharStatsDisplay() {
     <ZCard>
       <CardThemed>
         <CardContent>
-          {calc?.listFormulas(own.listing.formulas).map((read, index) => (
-            <StatLine key={index} read={read} />
-          ))}
+          {calc
+            ?.listFormulas(own.listing.formulas)
+            .map((read, index) => <StatLine key={index} read={read} />)}
         </CardContent>
       </CardThemed>
     </ZCard>

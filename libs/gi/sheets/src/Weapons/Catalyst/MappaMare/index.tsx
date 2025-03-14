@@ -26,7 +26,7 @@ const eleDmgs = objKeyValMap(allElementKeys, (e) => [
     {
       ...objKeyMap(range(1, 2), (i) => prod(allDmgInc, i)),
     },
-    naught
+    naught,
   ),
 ])
 

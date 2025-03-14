@@ -27,8 +27,8 @@ const data: TagMapNodeEntries = [
   // initial x += base x * initial x%
   ...flatAndPercentStats.map((s) =>
     ownBuff.initial[s].add(
-      prod(own.base[s], sum(percent(1), own.initial[`${s}_`]))
-    )
+      prod(own.base[s], sum(percent(1), own.initial[`${s}_`])),
+    ),
   ),
 
   // For stats with a flat and percent variant
@@ -37,9 +37,9 @@ const data: TagMapNodeEntries = [
     ownBuff.final[s].add(
       sum(
         prod(own.initial[s], sum(percent(1), own.combat[`${s}_`])),
-        own.combat[s]
-      )
-    )
+        own.combat[s],
+      ),
+    ),
   ),
 
   // For stats with only 1 variant
@@ -50,17 +50,17 @@ const data: TagMapNodeEntries = [
       (s) =>
         ownBuff.initial[s].add(
           ownBuff.base[s as keyof typeof ownBuff.base],
-          true
-        ) // Validated with filter
+          true,
+        ), // Validated with filter
     ),
   // final x += initial X + combat X
   ...nonFlatAndPercentStats.map((s) =>
-    ownBuff.final[s].add(sum(own.initial[s], own.combat[s]), true)
+    ownBuff.final[s].add(sum(own.initial[s], own.combat[s]), true),
   ),
 
   // Capped CR = Max(Min(Final CR, 1), 0)
   ownBuff.common.cappedCrit_.add(
-    max(min(own.final.crit_, percent(1)), percent(0))
+    max(min(own.final.crit_, percent(1)), percent(0)),
   ),
 
   // Default conditionals to 0

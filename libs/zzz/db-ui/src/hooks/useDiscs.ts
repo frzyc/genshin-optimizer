@@ -11,7 +11,7 @@ const emptydiscIds = objKeyMap(allDiscSlotKeys, () => undefined)
  * A hook to keep a "build" of discs in sync with the database
  */
 export function useDiscs(
-  discIds: Record<DiscSlotKey, string | undefined> | undefined = emptydiscIds
+  discIds: Record<DiscSlotKey, string | undefined> | undefined = emptydiscIds,
 ) {
   const { database } = useDatabaseContext()
   const [discs, setDiscs] = useState<
@@ -29,7 +29,7 @@ export function useDiscs(
             if (r === 'remove')
               setDiscs((discs) => ({ ...discs, [v.slotKey]: undefined }))
           })
-        : () => {}
+        : () => {},
     )
     return () => unfollows.forEach((unfollow) => unfollow())
   }, [database, discIds])

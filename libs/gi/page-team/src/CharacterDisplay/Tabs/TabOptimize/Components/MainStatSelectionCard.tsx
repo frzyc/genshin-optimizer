@@ -59,7 +59,7 @@ export default function MainStatSelectionCard({
         const { slotKey, mainStatKey } = art
         if (
           (artifactsSlotsToSelectMainStats as readonly string[]).includes(
-            slotKey
+            slotKey,
           )
         ) {
           ctMap.slotTots[slotKey].total++
@@ -68,7 +68,7 @@ export default function MainStatSelectionCard({
         ctMap[`${slotKey}MainStatTots`][mainStatKey].total++
         if (filteredArtIdMap[id])
           ctMap[`${slotKey}MainStatTots`][mainStatKey].current++
-      })
+      }),
     )
     return {
       mainStatSlotTots: {
@@ -147,10 +147,10 @@ export default function MainStatSelectionCard({
               <Grid container spacing={1}>
                 {mainKeys.map((mainStatKey, i) => {
                   const element = allElementWithPhyKeys.find((ele) =>
-                    mainStatKey.includes(ele)
+                    mainStatKey.includes(ele),
                   )
                   const color = selectedMainKeys.includes(mainStatKey)
-                    ? element ?? 'success'
+                    ? (element ?? 'success')
                     : 'secondary'
                   return (
                     <Grid
@@ -190,7 +190,7 @@ export default function MainStatSelectionCard({
                                 ...mainStatKeys,
                                 [slotKey]: mainKeysHandler(
                                   selectedMainKeys,
-                                  mainStatKey
+                                  mainStatKey,
                                 ),
                               },
                             })

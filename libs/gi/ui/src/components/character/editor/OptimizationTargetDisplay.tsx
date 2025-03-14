@@ -18,13 +18,13 @@ export function OptimizationTargetDisplay({
   const database = useDatabase()
   const displayHeader = useMemo(
     () => getDisplayHeader(data, optimizationTarget[0], database),
-    [data, optimizationTarget, database]
+    [data, optimizationTarget, database],
   )
 
   const { title, icon, action } = displayHeader ?? {}
   const node: CalcResult | undefined = objPathValue(
     data.getDisplay(),
-    optimizationTarget
+    optimizationTarget,
   ) as any
 
   const {

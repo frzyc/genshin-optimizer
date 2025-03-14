@@ -23,14 +23,14 @@ function useGeneratedBuildList(listId: string) {
 const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const { optConfig } = useContext(OptConfigContext)
   const generatedBuildList = useGeneratedBuildList(
-    optConfig.generatedBuildListId ?? ''
+    optConfig.generatedBuildListId ?? '',
   )
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
         <CardThemed
           key={`${i}-${build.lightConeId}-${Object.values(build.relicIds).join(
-            '-'
+            '-',
           )}`}
         >
           <CardContent>
@@ -69,7 +69,7 @@ function EquipBtn({
   const { key: characterKey } = useCharacterContext()!
   const onEquip = useCallback(() => {
     Object.entries(relicIds).forEach(([slotKey, relicId]) =>
-      database.chars.setEquippedRelic(characterKey, slotKey, relicId)
+      database.chars.setEquippedRelic(characterKey, slotKey, relicId),
     )
     database.chars.setEquippedLightCone(characterKey, lightConeId)
   }, [characterKey, database.chars, lightConeId, relicIds])

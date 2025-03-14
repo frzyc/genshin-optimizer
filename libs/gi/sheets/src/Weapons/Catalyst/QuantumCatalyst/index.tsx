@@ -28,16 +28,16 @@ const normal_dmgInc = equal(
   key,
   prod(
     subscript(input.weapon.refinement, normCharged_dmgIncArr, { unit: '%' }),
-    input.total.eleMas
-  )
+    input.total.eleMas,
+  ),
 )
 const charged_dmgInc = { ...normal_dmgInc }
 const eleMas = lookup(
   condStacks,
   objKeyMap(eleMas_stacks, (stack) =>
-    prod(subscript(input.weapon.refinement, eleMas_arr), stack)
+    prod(subscript(input.weapon.refinement, eleMas_arr), stack),
   ),
-  naught
+  naught,
 )
 
 export const data = dataObjForWeaponSheet(
@@ -53,7 +53,7 @@ export const data = dataObjForWeaponSheet(
   {
     normal_dmgInc,
     charged_dmgInc,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

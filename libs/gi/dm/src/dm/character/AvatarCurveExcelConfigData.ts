@@ -23,7 +23,7 @@ type AvatarCurveExcelConfigData = {
       type: 'GROW_CURVE_ATTACK_S5'
       arith: 'ARITH_MULTI'
       value: number //1.0829999446868896
-    }
+    },
   ]
 }
 
@@ -34,7 +34,7 @@ export type CharacterGrowCurveKey =
   | 'GROW_CURVE_ATTACK_S5'
 
 const avatarCurveExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/AvatarCurveExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/AvatarCurveExcelConfigData.json'),
 ) as AvatarCurveExcelConfigData[]
 
 export type CharacterExpCurveData = {
@@ -57,7 +57,7 @@ avatarCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
   curveInfos.forEach(({ type, value }) => {
     if (!avatarCurveExcelConfigData[type]) avatarCurveExcelConfigData[type] = {} // TODO: [0]
     avatarCurveExcelConfigData[type][level] = value
-  })
+  }),
 )
 
 export { avatarCurveExcelConfigData }

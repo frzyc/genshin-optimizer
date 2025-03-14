@@ -92,7 +92,7 @@ type WeaponCurveExcelConfigData = {
       type: 'GROW_CURVE_CRITICAL_301'
       arith: 'ARITH_MULTI'
       value: number //1.0
-    }
+    },
   ]
 }
 
@@ -117,7 +117,7 @@ export type WeaponGrowCurveKey =
   | 'GROW_CURVE_CRITICAL_301'
 
 const weaponCurveExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/WeaponCurveExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/WeaponCurveExcelConfigData.json'),
 ) as WeaponCurveExcelConfigData[]
 
 export type WeaponExpCurveData = Record<
@@ -130,7 +130,7 @@ weaponCurveExcelConfigDataSrc.forEach(({ level, curveInfos }) =>
   curveInfos.forEach(({ type, value }) => {
     if (!weaponCurveExcelConfigData[type]) weaponCurveExcelConfigData[type] = {} // TODO: [0]
     weaponCurveExcelConfigData[type][level] = value
-  })
+  }),
 )
 
 export { weaponCurveExcelConfigData }

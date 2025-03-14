@@ -46,12 +46,12 @@ export function CustomMultiTargetModal({
   const { t } = useTranslation('page_character')
   const { teamChar, teamCharId } = useContext(TeamCharacterContext)
   const [customMultiTargets, setCustomTargets] = useState(
-    () => teamChar.customMultiTargets
+    () => teamChar.customMultiTargets,
   )
 
   useEffect(
     () => setCustomTargets(teamChar.customMultiTargets),
-    [setCustomTargets, teamChar.customMultiTargets]
+    [setCustomTargets, teamChar.customMultiTargets],
   )
 
   const addNewCustomMultiTarget = useCallback(() => {
@@ -63,14 +63,14 @@ export function CustomMultiTargetModal({
       customTargets_[ind] = newTarget
       setCustomTargets(customTargets_)
     },
-    [customMultiTargets, setCustomTargets]
+    [customMultiTargets, setCustomTargets],
   )
   const deleteCustomMultiTarget = useCallback(
     (ind: number) => () => {
       if (
         customMultiTargets[ind].targets.length &&
         !window.confirm(
-          `Are you sure you want to delete "${customMultiTargets[ind].name}"?`
+          `Are you sure you want to delete "${customMultiTargets[ind].name}"?`,
         )
       )
         return
@@ -78,7 +78,7 @@ export function CustomMultiTargetModal({
       customTargets_.splice(ind, 1)
       setCustomTargets(customTargets_)
     },
-    [customMultiTargets, setCustomTargets]
+    [customMultiTargets, setCustomTargets],
   )
   const dupCustomMultiTarget = useCallback(
     (ind: number) => () => {
@@ -88,7 +88,7 @@ export function CustomMultiTargetModal({
       customTargets_.splice(ind, 0, newTarget)
       setCustomTargets(customTargets_)
     },
-    [customMultiTargets, setCustomTargets]
+    [customMultiTargets, setCustomTargets],
   )
   const onClose = useCallback(() => {
     onCloseModal()
@@ -138,7 +138,7 @@ export function CustomMultiTargetModal({
       deleteCustomMultiTarget,
       dupCustomMultiTarget,
       setCustomMultiTarget,
-    ]
+    ],
   )
 
   return (
@@ -215,7 +215,7 @@ export function CustomMultiTargetModal({
                   <Grid item xs={1}>
                     <CustomMultiTargetImportBtn
                       setCustomMultiTarget={setCustomMultiTarget(
-                        customMultiTargets.length
+                        customMultiTargets.length,
                       )}
                       btnProps={{ fullWidth: true }}
                     />

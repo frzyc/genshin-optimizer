@@ -4,7 +4,7 @@ import type { Profile } from './getProfile'
 
 export default async function getAccount(
   supabase: SupabaseClient,
-  profile: Profile | null
+  profile: Profile | null,
 ) {
   if (!profile) return null
   const { data } = await supabase

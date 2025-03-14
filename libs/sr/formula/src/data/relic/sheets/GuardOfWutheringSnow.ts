@@ -21,7 +21,7 @@ const sheet = registerRelic(
   customHeal(
     'set4_heal',
     hpLowerThan50.ifOn(prod(own.final.hp, dm[4].hpRestore)),
-    { cond: cmpGE(relicCount, 4, 'infer', '') }
-  )
+    { cond: cmpGE(relicCount, 4, 'infer', '') },
+  ),
 )
 export default sheet

@@ -74,7 +74,7 @@ export type AvatarDamageType =
   | 'Imaginary'
 
 const avatarConfigSrc = parse(
-  readDMJSON('ExcelOutput/AvatarConfig.json')
+  readDMJSON('ExcelOutput/AvatarConfig.json'),
 ) as AvatarConfig[]
 
 dumpFile(
@@ -83,24 +83,24 @@ dumpFile(
     Object.values(avatarConfigSrc).map((data) => [
       data.AvatarID,
       nameToKey(TextMapEN[data.AvatarName.Hash.toString()]),
-    ])
-  )
+    ]),
+  ),
 )
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/AvatarConfig_CharacterKey_gen.json`,
   [
     ...new Set(
       avatarConfigSrc.map((config) =>
-        nameToKey(TextMapEN[config.AvatarName.Hash.toString()])
-      )
+        nameToKey(TextMapEN[config.AvatarName.Hash.toString()]),
+      ),
     ),
   ]
     .filter((s) => s)
-    .sort()
+    .sort(),
 )
 
 const avatarConfig = objFilterKeys(
   objKeyValMap(avatarConfigSrc, (config) => [config.AvatarID, config]),
-  Object.keys(characterIdMap) as AvatarId[]
+  Object.keys(characterIdMap) as AvatarId[],
 ) as Record<AvatarId, AvatarConfig>
 export { avatarConfig }

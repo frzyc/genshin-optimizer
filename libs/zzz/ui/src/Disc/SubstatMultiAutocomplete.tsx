@@ -8,7 +8,7 @@ import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export function SubstatMultiAutocomplete<
-  SubstatKeyParam extends DiscSubStatKey
+  SubstatKeyParam extends DiscSubStatKey,
 >({
   substatKeys,
   setSubstatKeys,
@@ -30,21 +30,21 @@ export function SubstatMultiAutocomplete<
         key,
         label: `${tk(key)}${getUnitStr(key)}`,
       })),
-    [allSubstatKeys, tk]
+    [allSubstatKeys, tk],
   )
   const toImg = useCallback(
     (key: DiscSubStatKey) => (
       <StatIcon statKey={key} iconProps={iconInlineProps} />
     ),
-    []
+    [],
   )
   const toExLabel = useCallback(
     (key: SubstatKeyParam) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: SubstatKeyParam) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
   return (
     <GeneralAutocompleteMulti

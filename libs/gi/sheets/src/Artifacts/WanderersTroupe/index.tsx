@@ -21,8 +21,8 @@ const set4 = greaterEq(
   lookup(
     input.weaponType,
     { catalyst: percent(0.35), bow: percent(0.35) },
-    naught
-  )
+    naught,
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

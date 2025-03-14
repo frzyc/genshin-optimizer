@@ -15,7 +15,7 @@ const condMeta = Symbol.for('condMeta')
 
 export function extractCondMetadata(
   data: TagMapNodeEntries<Tag>,
-  extractCond: (tag: Tag) => { sheet: string; name: string }
+  extractCond: (tag: Tag) => { sheet: string; name: string },
 ) {
   const result: Conditionals = {}
   traverse(
@@ -32,7 +32,7 @@ export function extractCondMetadata(
       if (result[sheet][name])
         console.log(`Duplicated conditionals for ${sheet}:${name}`)
       result[sheet][name] = { sheet, name, ...meta! }
-    }
+    },
   )
   return sortMeta(result)
 }
@@ -41,8 +41,8 @@ export function extractFormulaMetadata<T, GenericTag extends Tag>(
   data: TagMapNodeEntries<GenericTag>,
   extractFormula: (
     tag: GenericTag,
-    value: AnyNode | ReRead
-  ) => IFormulaData<T> | undefined
+    value: AnyNode | ReRead,
+  ) => IFormulaData<T> | undefined,
 ) {
   const result: Formulas<T> = {}
   for (const { tag, value } of data) {
@@ -58,11 +58,11 @@ export function extractFormulaMetadata<T, GenericTag extends Tag>(
 }
 
 function sortMeta<T>(
-  obj: Record<string, Record<string, T>>
+  obj: Record<string, Record<string, T>>,
 ): Record<string, Record<string, T>> {
   return Object.fromEntries(
     Object.entries(obj)
       .map(([k, v]) => [k, Object.fromEntries(Object.entries(v).sort())])
-      .sort()
+      .sort(),
   )
 }

@@ -44,14 +44,14 @@ export default function TabArtifact() {
   const { t } = useTranslation(
     allArtifactSetKeys.map((key) => {
       return `artifact_${key}_gen`
-    })
+    }),
   )
 
   const { artifact } = archive
   const artifactOptionDispatch = useCallback(
     (option: Partial<ArchiveArtifactOption>) =>
       database.displayArchive.set({ artifact: { ...artifact, ...option } }),
-    [database, artifact]
+    [database, artifact],
   )
 
   const artSetKeys = useMemo(() => {
@@ -59,7 +59,7 @@ export default function TabArtifact() {
       const { rarities } = getArtSetStat(setKey)
       if (
         !artifact.rarity.includes(
-          Math.max(...rarities) as (typeof maxRarities)[number]
+          Math.max(...rarities) as (typeof maxRarities)[number],
         )
       )
         return false
@@ -85,19 +85,19 @@ export default function TabArtifact() {
   }, [artifact, searchTermDeferred, t])
   const artSetKeysWithoutPrayer = useMemo(
     () => artSetKeys.filter((sk) => !sk.startsWith('Prayers')),
-    [artSetKeys]
+    [artSetKeys],
   )
   const artSetKeysOnlyPrayer = useMemo(
     () => artSetKeys.filter((sk) => sk.startsWith('Prayers')),
-    [artSetKeys]
+    [artSetKeys],
   )
   const { numShow, setTriggerElement } = useInfScroll(
     10,
-    artSetKeysWithoutPrayer.length
+    artSetKeysWithoutPrayer.length,
   )
   const artSetKeysToShow = useMemo(
     () => artSetKeysWithoutPrayer.slice(0, numShow),
-    [artSetKeysWithoutPrayer, numShow]
+    [artSetKeysWithoutPrayer, numShow],
   )
   return (
     <Box>

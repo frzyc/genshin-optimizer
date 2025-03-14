@@ -55,7 +55,7 @@ export default function EquipmentSection() {
           </Box>
         </CardThemed>
       ),
-    [weaponSheet]
+    [weaponSheet],
   )
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
@@ -64,9 +64,9 @@ export default function EquipmentSection() {
     () =>
       objKeyMap(
         allArtifactSlotKeys,
-        (slotKey) => data.get(input.art[slotKey].id).value
+        (slotKey) => data.get(input.art[slotKey].id).value,
       ),
-    [data]
+    [data],
   )
 
   const editBuildId = buildType === 'equipped' ? 'equipped' : buildId
@@ -163,7 +163,7 @@ function ArtifactSectionCard() {
       })
     else
       Object.values(equippedArtifacts).forEach((aid) =>
-        database.arts.set(aid, { location: '' })
+        database.arts.set(aid, { location: '' }),
       )
   }
 
@@ -191,7 +191,7 @@ function ArtifactSectionCard() {
                   setKey={setKey}
                   setNumKey={setNumKey}
                 />
-              ))
+              )),
             )}
         </Stack>
       </Box>

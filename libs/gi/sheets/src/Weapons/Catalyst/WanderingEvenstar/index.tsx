@@ -21,8 +21,8 @@ const selfAtk = equal(
   key,
   prod(
     subscript(input.weapon.refinement, atkArr, { unit: '%' }),
-    input.premod.eleMas
-  )
+    input.premod.eleMas,
+  ),
 )
 const teamAtkDisp = equal(input.weapon.key, key, prod(percent(0.3), selfAtk))
 // Apply to non-equipped character
@@ -43,7 +43,7 @@ const data = dataObjForWeaponSheet(
   {
     selfAtk,
     teamAtkDisp,
-  }
+  },
 )
 
 const sheet: IWeaponSheet = {
