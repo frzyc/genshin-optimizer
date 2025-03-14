@@ -712,6 +712,49 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.dmg_.skill[0]).val).toBeCloseTo(0.2)
   })
 
+  it('SacerdosRelivedOrdeal', () => {
+    const data = testCharacterData('SacerdosRelivedOrdeal')
+    data.push(
+      cond(
+        'SacerdosRelivedOrdeal',
+        conditionals.SacerdosRelivedOrdeal.skillOrUltUsed.name,
+        2
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    expect(calc.compute(seele.final.spd_).val).toBeCloseTo(0.06)
+    // Base + 4 piece cond
+    expect(calc.compute(seele.final.crit_dmg_).val).toBeCloseTo(0.5 + 2 * 0.18)
+  })
+
+  it('ScholarLostInErudition', () => {
+    const data = testCharacterData('ScholarLostInErudition')
+    data.push(
+      cond(
+        'ScholarLostInErudition',
+        conditionals.ScholarLostInErudition.ultUsed.name,
+        1
+      )
+    )
+    const calc = new Calculator(
+      keys,
+      values,
+      compileTagMapValues(keys, data)
+    ).withTag({ src: 'Seele', dst: 'Seele' })
+    const seele = convert(ownTag, { et: 'own', src: 'Seele' })
+
+    // Base + 2 piece passive
+    expect(calc.compute(seele.final.crit_).val).toBeCloseTo(0.05 + 0.08)
+    expect(calc.compute(seele.final.dmg_.skill[0]).val).toBeCloseTo(0.2 + 0.25)
+    expect(calc.compute(seele.final.dmg_.ult[0]).val).toBeCloseTo(0.2)
+  })
+
   it('SigoniaTheUnclaimedDesolation', () => {
     const data = testCharacterData('SigoniaTheUnclaimedDesolation')
     data.push(

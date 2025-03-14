@@ -2769,20 +2769,9 @@ export const conditionals = {
     ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
   },
   SacerdosRelivedOrdeal: {
-    boolConditional: {
+    skillOrUltUsed: {
       sheet: 'SacerdosRelivedOrdeal',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'numConditional',
+      name: 'skillOrUltUsed',
       type: 'num',
       int_only: true,
       min: 0,
@@ -2870,25 +2859,7 @@ export const conditionals = {
     },
   },
   ScholarLostInErudition: {
-    boolConditional: {
-      sheet: 'ScholarLostInErudition',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'ScholarLostInErudition',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'ScholarLostInErudition',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    ultUsed: { sheet: 'ScholarLostInErudition', name: 'ultUsed', type: 'bool' },
   },
   Seele: {
     amplification: { sheet: 'Seele', name: 'amplification', type: 'bool' },
@@ -19709,28 +19680,6 @@ export const buffs = {
     },
   },
   SacerdosRelivedOrdeal: {
-    enemy_defRed_: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'SacerdosRelivedOrdeal',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'SacerdosRelivedOrdeal',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'SacerdosRelivedOrdeal',
-        name: 'set2_dmg_',
-      },
-    },
     set2_passive_spd_: {
       sheet: 'SacerdosRelivedOrdeal',
       name: 'set2_passive_spd_',
@@ -19742,15 +19691,15 @@ export const buffs = {
         name: 'set2_passive_spd_',
       },
     },
-    team_dmg_: {
+    set4_crit_dmg_: {
       sheet: 'SacerdosRelivedOrdeal',
-      name: 'team_dmg_',
+      name: 'set4_crit_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'crit_dmg_',
         sheet: 'SacerdosRelivedOrdeal',
-        name: 'team_dmg_',
+        name: 'set4_crit_dmg_',
       },
     },
   },
@@ -20071,28 +20020,6 @@ export const buffs = {
     },
   },
   ScholarLostInErudition: {
-    enemy_defRed_: {
-      sheet: 'ScholarLostInErudition',
-      name: 'enemy_defRed_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defRed_',
-        sheet: 'ScholarLostInErudition',
-        name: 'enemy_defRed_',
-      },
-    },
-    set2_dmg_: {
-      sheet: 'ScholarLostInErudition',
-      name: 'set2_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'common_dmg_',
-        sheet: 'ScholarLostInErudition',
-        name: 'set2_dmg_',
-      },
-    },
     set2_passive_crit_: {
       sheet: 'ScholarLostInErudition',
       name: 'set2_passive_crit_',
@@ -20104,15 +20031,40 @@ export const buffs = {
         name: 'set2_passive_crit_',
       },
     },
-    team_dmg_: {
+    set4_extra_skill_dmg_: {
       sheet: 'ScholarLostInErudition',
-      name: 'team_dmg_',
+      name: 'set4_extra_skill_dmg_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'common_dmg_',
+        q: 'dmg_',
         sheet: 'ScholarLostInErudition',
-        name: 'team_dmg_',
+        damageType1: 'skill',
+        name: 'set4_extra_skill_dmg_',
+      },
+    },
+    set4_skill_dmg_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'set4_skill_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ScholarLostInErudition',
+        damageType1: 'skill',
+        name: 'set4_skill_dmg_',
+      },
+    },
+    set4_ult_dmg_: {
+      sheet: 'ScholarLostInErudition',
+      name: 'set4_ult_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ScholarLostInErudition',
+        damageType1: 'ult',
+        name: 'set4_ult_dmg_',
       },
     },
   },
