@@ -131,6 +131,12 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   cond_atk_: 'Combat ATK%',
   cond_anomMas_: 'Combat Anomaly Mastery%',
   cond_anomMas: 'Combat Anomaly Mastery',
+
+  // Formula display stuff
+  crit_mult_: 'CRIT Multiplier',
+  dmg_mult_: 'DMG Multiplier',
+  def_mult_: 'DEF Multiplier',
+  base: 'Base Damage',
 }
 
 export const elementalData: Record<AttributeKey, string> = {
