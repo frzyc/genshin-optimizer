@@ -8,7 +8,7 @@ export function weaponSortConfigs(): SortConfigs<WeaponSortKey, IWeapon> {
   return {
     level: (wp) => wp.level * (wp.ascension + 1),
     rarity: (wp) => allStats.weapon.data[wp.key].rarity,
-    name: (wp) => i18n.t(`weaponNames_gen:${wp.key}`) as string,
+    name: (wp) => i18n.t(`weaponNames_gen:${wp.key}`) as string
   }
 }
 export function weaponFilterConfigs(): FilterConfigs<
@@ -41,12 +41,12 @@ export function weaponFilterConfigs(): FilterConfigs<
     locations: (wp, filter, filters) =>
       wp.location && !filters['showEquipped']
         ? filter.includes(wp.location)
-        : true,
+        : true
   }
 }
 
 export const weaponSortMap: Partial<Record<WeaponSortKey, WeaponSortKey[]>> = {
   name: ['name'],
   level: ['level', 'rarity', 'name'],
-  rarity: ['rarity', 'level', 'name'],
+  rarity: ['rarity', 'level', 'name']
 }

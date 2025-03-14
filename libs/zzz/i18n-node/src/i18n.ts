@@ -40,11 +40,11 @@ i18nInstance.init({
 
   backend: {
     // Path to load localization data from.
-    loadPath: `${__dirname}/assets/zzz/locales/{{lng}}/{{ns}}.json`,
+    loadPath: `${__dirname}/assets/zzz/locales/{{lng}}/{{ns}}.json`
   },
   interpolation: {
-    escapeValue: false, //react does interlopation already
-  },
+    escapeValue: false //react does interlopation already
+  }
 })
 
 // https://www.i18next.com/translation-function/formatting#adding-custom-format-function

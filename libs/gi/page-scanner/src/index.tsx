@@ -9,7 +9,7 @@ import {
   SendToMobile,
   SportsEsports,
   Warning,
-  YouTube,
+  YouTube
 } from '@mui/icons-material'
 import {
   Box,
@@ -20,7 +20,7 @@ import {
   IconButton,
   Link,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import ReactGA from 'react-ga4'
 import { Trans, useTranslation } from 'react-i18next'

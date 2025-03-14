@@ -12,7 +12,7 @@ import {
   ModalWrapper,
   NextImage,
   SqBadge,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
@@ -20,11 +20,11 @@ import type {
   ArtifactRarity,
   CharacterKey,
   LocationKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
-  allSubstatKeys,
+  allSubstatKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
 import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -34,7 +34,7 @@ import {
   getArtifactEfficiency,
   getMainStatDisplayStr,
   getSubstatValue,
-  getSubstatValuesPercent,
+  getSubstatValuesPercent
 } from '@genshin-optimizer/gi/util'
 import { Lock, LockOpen } from '@mui/icons-material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -53,7 +53,7 @@ import {
   ListItemText,
   Skeleton,
   SvgIcon,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
@@ -65,7 +65,7 @@ import { ArtifactSetTooltipContent } from './ArtifactSetTooltip'
 import {
   ArtifactSetName,
   ArtifactSetSlotDesc,
-  ArtifactSetSlotName,
+  ArtifactSetSlotName
 } from './ArtifactTrans'
 import { SmolProgress } from './SmolProgress'
 import { artifactLevelVariant } from './util'
@@ -99,7 +99,7 @@ export function ArtifactCardObj({
   mainStatAssumptionLevel = 0,
   effFilter = allSubstatFilter,
   extraButtons,
-  excluded = false,
+  excluded = false
 }: {
   artifact: ICachedArtifact
 } & Data) {
@@ -130,7 +130,7 @@ export function ArtifactCardObj({
     currentEfficiency,
     maxEfficiency,
     currentEfficiency_,
-    maxEfficiency_,
+    maxEfficiency_
   } = useMemo(() => {
     const { currentEfficiency, maxEfficiency } = getArtifactEfficiency(
       artifact,
@@ -138,13 +138,13 @@ export function ArtifactCardObj({
     )
     const {
       currentEfficiency: currentEfficiency_,
-      maxEfficiency: maxEfficiency_,
+      maxEfficiency: maxEfficiency_
     } = getArtifactEfficiency(artifact, new Set(allSubstatKeys))
     return {
       currentEfficiency,
       maxEfficiency,
       currentEfficiency_,
-      maxEfficiency_,
+      maxEfficiency_
     }
   }, [artifact, effFilter])
 
@@ -156,7 +156,7 @@ export function ArtifactCardObj({
     level,
     mainStatKey,
     substats,
-    location = '',
+    location = ''
   } = artifact
   const mainStatLevel = Math.max(
     Math.min(mainStatAssumptionLevel, rarity * 4),
@@ -180,7 +180,7 @@ export function ArtifactCardObj({
             return {
               charKey: key,
               buildName,
-              loadoutName: name,
+              loadoutName: name
             }
           })
       })
@@ -267,7 +267,7 @@ export function ArtifactCardObj({
                       textAlign: 'center',
                       backgroundColor: 'rgba(100,100,100,0.35)',
                       borderRadius: '1em',
-                      px: 1.5,
+                      px: 1.5
                     }}
                   >
                     <strong>{slotName}</strong>
@@ -321,7 +321,7 @@ export function ArtifactCardObj({
                   float: 'right',
                   marginBottom: '-5%',
                   marginTop: '-5%',
-                  marginRight: '-5%',
+                  marginRight: '-5%'
                 }}
               />
             </Box>
@@ -333,7 +333,7 @@ export function ArtifactCardObj({
               flexDirection: 'column',
               pt: 1,
               pb: '0!important',
-              width: '100%',
+              width: '100%'
             }}
           >
             {substats.map(
@@ -395,7 +395,7 @@ export function ArtifactCardObj({
                 display: 'flex',
                 gap: 1,
                 alignItems: 'center',
-                mt: 1,
+                mt: 1
               }}
             >
               {(setKey && <ArtifactSetName setKey={setKey} />) ||
@@ -408,7 +408,7 @@ export function ArtifactCardObj({
               <SqBadge
                 sx={{
                   ml: 'auto',
-                  cursor: builds.length ? 'pointer' : 'default',
+                  cursor: builds.length ? 'pointer' : 'default'
                 }}
                 color={builds.length ? 'success' : 'secondary'}
                 onClick={builds.length ? onShowUsage : undefined}
@@ -424,7 +424,7 @@ export function ArtifactCardObj({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
@@ -482,7 +482,7 @@ export function ArtifactCardObj({
 function SubstatDisplay({
   stat,
   effFilter,
-  rarity,
+  rarity
 }: {
   stat: ICachedSubstat
   effFilter: Set<SubstatKey>
@@ -550,7 +550,7 @@ function ArtifactBuildUsageModal({
   show,
   onHide,
   usageText,
-  builds,
+  builds
 }: {
   show: boolean
   onHide: () => void

@@ -1,6 +1,6 @@
 import {
   extractCondMetadata,
-  extractFormulaMetadata,
+  extractFormulaMetadata
 } from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
@@ -17,7 +17,7 @@ export default async function runExecutor(
 
   const conditionals = extractCondMetadata(entries, ({ sheet, q }) => ({
     sheet: sheet!,
-    name: q!,
+    name: q!
   }))
   const formulas = extractFormulaMetadata(entries, (tag: Tag, value) => {
     if (

@@ -12,13 +12,13 @@ import {
   HPIcon,
   ImpactIcon,
   PenIcon,
-  PenRatioIcon,
+  PenRatioIcon
 } from '../icons'
 import { ElementIcon } from './ElementIcon'
 
 export function StatIcon({
   statKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   statKey: string
   iconProps?: SvgIconProps

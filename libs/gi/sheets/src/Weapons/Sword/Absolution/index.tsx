@@ -6,7 +6,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -33,8 +33,8 @@ const bondStacks_dmg_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     critDMG_,
-    all_dmg_: bondStacks_dmg_,
-  },
+    all_dmg_: bondStacks_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -43,9 +43,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: critDMG_,
-        },
-      ],
+          node: critDMG_
+        }
+      ]
     },
     {
       value: condBondStacks,
@@ -56,16 +56,16 @@ const sheet: IWeaponSheet = {
         name: st('times', { count: stack }),
         fields: [
           {
-            node: bondStacks_dmg_,
+            node: bondStacks_dmg_
           },
           {
             text: stg('duration'),
             value: 6,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

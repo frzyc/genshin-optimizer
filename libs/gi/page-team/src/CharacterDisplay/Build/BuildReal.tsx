@@ -6,7 +6,7 @@ import {
   TeamCharacterContext,
   useBuild,
   useDatabase,
-  useEquippedInTeam,
+  useEquippedInTeam
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -16,7 +16,7 @@ import {
   EquipBuildModal,
   EquippedGrid,
   TeammateEquippedAlert,
-  WeaponCardNano,
+  WeaponCardNano
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -26,21 +26,21 @@ import {
   Divider,
   Grid,
   IconButton,
-  TextField,
+  TextField
 } from '@mui/material'
 import {
   useContext,
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildReal({
   buildId,
   active = false,
-  onChangeBuild,
+  onChangeBuild
 }: {
   buildId: string
   active?: boolean
@@ -51,10 +51,10 @@ export default function BuildReal({
   const {
     teamId,
     teamCharId,
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey }
   } = useContext(TeamCharacterContext)
   const {
-    character: { equippedWeapon, equippedArtifacts },
+    character: { equippedWeapon, equippedArtifacts }
   } = useContext(CharacterContext)
   const database = useDatabase()
 
@@ -64,7 +64,7 @@ export default function BuildReal({
     return () => {
       database.teams.setLoadoutDatum(teamId, teamCharId, {
         buildType: 'real',
-        buildId,
+        buildId
       })
       onChangeBuild?.()
     }
@@ -84,7 +84,7 @@ export default function BuildReal({
     })
     if (weaponId)
       database.weapons.set(weaponId, {
-        location: charKeyToLocCharKey(characterKey),
+        location: charKeyToLocCharKey(characterKey)
       })
   }
   const onRemove = () => {
@@ -103,14 +103,14 @@ export default function BuildReal({
     // copy over name/desc
     database.buildTcs.set(newBuildTcId, {
       name: t('buildRealCard.copy.nameTc', { name }),
-      description,
+      description
     })
   }
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
       name: t('buildRealCard.copy.nameReal', { name }),
       artifactIds: artifactIds,
-      weaponId: weaponId,
+      weaponId: weaponId
     })
 
   const { weaponUsedInTeamCharKey, artUsedInTeamCharKeys } = useEquippedInTeam(
@@ -150,7 +150,7 @@ export default function BuildReal({
             display: 'flex',
             flexDirection: 'column',
             gap: 1,
-            alignItems: 'stretch',
+            alignItems: 'stretch'
           }}
         >
           <Grid
@@ -165,7 +165,7 @@ export default function BuildReal({
                   maxHeight: '8em',
                   boxShadow: weaponUsedInTeamCharKey
                     ? '0px 0px 0px 2px yellow'
-                    : undefined,
+                    : undefined
                 }}
               >
                 <WeaponCardNano
@@ -182,7 +182,7 @@ export default function BuildReal({
                     maxHeight: '8em',
                     boxShadow: artUsedInTeamCharKeys[slotKey]
                       ? '0px 0px 0px 2px yellow'
-                      : undefined,
+                      : undefined
                   }}
                 >
                   <ArtifactCardNano artifactId={id} slotKey={slotKey} />
@@ -202,14 +202,14 @@ export default function BuildReal({
 
 function BuildEditor({
   buildId,
-  onClose,
+  onClose
 }: {
   buildId: string
   onClose: () => void
 }) {
   const { t } = useTranslation('build')
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const weaponTypeKey = getCharStat(characterKey).weaponType
   const database = useDatabase()

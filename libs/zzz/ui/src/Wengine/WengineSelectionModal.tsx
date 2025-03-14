@@ -3,20 +3,20 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { catTotal } from '@genshin-optimizer/common/util'
 import {
   rarityDefIcon,
   specialityDefIcon,
-  wengineAsset,
+  wengineAsset
 } from '@genshin-optimizer/zzz/assets'
 import type { SpecialityKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allRaritykeys,
   allSpecialityKeys,
   allWengineKeys,
-  allWengineRarityKeys,
+  allWengineRarityKeys
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -29,7 +29,7 @@ import {
   Grid,
   IconButton,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
@@ -48,7 +48,7 @@ export function WengineSelectionModal({
   show,
   onHide,
   onSelect,
-  wengineTypeFilter,
+  wengineTypeFilter
 }: WengineSelectionModalProps) {
   const { t } = useTranslation(['page_wengine'])
   const [wengineFilter, setWenginefilter] = useState<SpecialityKey[]>(
@@ -147,7 +147,7 @@ export function WengineSelectionModal({
             label={t('wengineName')}
             sx={{ height: '100%' }}
             InputProps={{
-              sx: { height: '100%' },
+              sx: { height: '100%' }
             }}
           />
           <IconButton onClick={onHide} sx={{ ml: 'auto' }}>

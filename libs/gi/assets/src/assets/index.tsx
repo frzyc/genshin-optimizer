@@ -30,21 +30,21 @@ export const imgAssets = {
     plume,
     sands,
     goblet,
-    circlet,
+    circlet
   },
   resin: {
     fragile,
-    condensed,
+    condensed
   },
   exp_books: {
     advice,
     wit,
-    experience,
+    experience
   },
   team: {
     team1,
     team2,
     team3,
-    team4,
-  },
+    team4
+  }
 } as const

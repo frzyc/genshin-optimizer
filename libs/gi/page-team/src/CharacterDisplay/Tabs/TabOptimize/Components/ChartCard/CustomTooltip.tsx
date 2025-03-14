@@ -1,7 +1,7 @@
 import {
   BootstrapTooltip,
   CardThemed,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { objKeyMap, objMap, valueString } from '@genshin-optimizer/common/util'
 import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
@@ -13,7 +13,7 @@ import {
   ArtifactCardPico,
   ArtifactSetBadges,
   DataContext,
-  WeaponCardPico,
+  WeaponCardPico
 } from '@genshin-optimizer/gi/ui'
 import { input } from '@genshin-optimizer/gi/wr'
 import CloseIcon from '@mui/icons-material/Close'
@@ -25,7 +25,7 @@ import {
   IconButton,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useContext, useMemo } from 'react'
@@ -56,7 +56,7 @@ export default function CustomTooltip({
   const { data } = useContext(DataContext)
   const { t } = useTranslation('page_character_optimize')
   const {
-    character: { equippedArtifacts, equippedWeapon },
+    character: { equippedArtifacts, equippedWeapon }
   } = useContext(CharacterContext)
   const artifactsBySlot: Record<ArtifactSlotKey, ICachedArtifact | undefined> =
     useMemo(

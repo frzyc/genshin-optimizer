@@ -5,7 +5,7 @@ import {
   infoMut,
   input,
   percent,
-  prod,
+  prod
 } from '@genshin-optimizer/gi/wr'
 import { stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -26,11 +26,11 @@ export const data: Data = dataObjForArtifactSheet(
   key,
   {
     premod: {
-      hp: set2,
-    },
+      hp: set2
+    }
   },
   {
-    heal,
+    heal
   }
 )
 
@@ -42,11 +42,11 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: infoMut(heal, { name: stg('healing'), variant: 'heal' }),
-          },
-        ],
-      },
-    ],
-  },
+            node: infoMut(heal, { name: stg('healing'), variant: 'heal' })
+          }
+        ]
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

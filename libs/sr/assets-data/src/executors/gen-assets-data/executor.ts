@@ -5,7 +5,7 @@ import type {
   RelicCavernSetKey,
   RelicCavernSlotKey,
   RelicPlanarSetKey,
-  RelicPlanarSlotKey,
+  RelicPlanarSlotKey
 } from '@genshin-optimizer/sr/consts'
 import type { RelicSlotDMKey } from '@genshin-optimizer/sr/dm'
 import {
@@ -19,7 +19,7 @@ import {
   lightConeIdMap,
   relicDataInfo,
   relicSetIdMap,
-  relicSlotMap,
+  relicSlotMap
 } from '@genshin-optimizer/sr/dm'
 import type { PromiseExecutor } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
@@ -63,7 +63,7 @@ const assetData = {
   // artifacts: {},
   lightCones: {} as Record<LightConeKey, LightConeIcon>,
   chars: {} as Record<CharacterGenderedKey, CharacterIcon>,
-  relics: {} as RelicIcons,
+  relics: {} as RelicIcons
 }
 export type AssetData = typeof assetData
 
@@ -81,9 +81,9 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         Object.fromEntries(
           Object.entries(relicDatas).map(([relicSlotKey, relicData]) => [
             relicSlotMap[relicSlotKey as RelicSlotDMKey],
-            relicData.ItemFigureIconPath,
+            relicData.ItemFigureIconPath
           ])
-        ),
+        )
       ])
   ) as RelicIcons
 
@@ -101,7 +101,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       _technique,
       bonusAbility1,
       bonusAbility2,
-      bonusAbility3,
+      bonusAbility3
     ] = Object.values(avatarSkillTreeConfig[avatarId]).map(
       // Grab the first level; we just need the image names
       (skillTree) => skillTree[0].IconPath
@@ -123,7 +123,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       eidolon3,
       eidolon4,
       eidolon5,
-      eidolon6,
+      eidolon6
     }
 
     SkillList.forEach((skillId) => {
@@ -143,7 +143,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
 
     const assets: LightConeIcon = {
       icon: ThumbnailPath,
-      cover: ImagePath,
+      cover: ImagePath
     }
     assetData.lightCones[lightConeIdMap[id]] = assets
   })
@@ -155,7 +155,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   )
 
   return {
-    success: true,
+    success: true
   }
 }
 

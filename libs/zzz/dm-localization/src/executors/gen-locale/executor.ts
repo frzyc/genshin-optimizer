@@ -17,7 +17,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
   dumpWengines(fileDir)
 
   return {
-    success: true,
+    success: true
   }
 }
 

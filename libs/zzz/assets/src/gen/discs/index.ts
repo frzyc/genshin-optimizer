@@ -36,6 +36,6 @@ const data = {
   SoulRock,
   SwingJazz,
   ThunderMetal,
-  WoodpeckerElectro,
+  WoodpeckerElectro
 } as const
 export default data

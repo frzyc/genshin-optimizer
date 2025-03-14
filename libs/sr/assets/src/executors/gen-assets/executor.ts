@@ -2,7 +2,7 @@ import { generateIndexFromObj } from '@genshin-optimizer/common/pipeline'
 import {
   crawlObject,
   crawlObjectAsync,
-  layeredAssignment,
+  layeredAssignment
 } from '@genshin-optimizer/common/util'
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
 import { DM2D_PATH } from '@genshin-optimizer/sr/dm'

@@ -1,20 +1,20 @@
 import {
   crawlObject,
   layeredAssignment,
-  verifyObjKeys,
+  verifyObjKeys
 } from '@genshin-optimizer/common/util'
 import {
   TrailblazerPathMap,
   allElementalTypeKeys,
   allTrailblazerGenderedKeys,
-  allTrailblazerKeys,
+  allTrailblazerKeys
 } from '@genshin-optimizer/sr/consts'
 import type { LanguageKey } from '@genshin-optimizer/sr/dm'
 import { allLanguageKeys, languageMap } from '@genshin-optimizer/sr/dm'
 import { HashData, type LanguageData } from './hashData'
 
 export const interpolationTags = {
-  orangeStrong: 'orangeStrong',
+  orangeStrong: 'orangeStrong'
 }
 export type InterpolationTag = keyof typeof interpolationTags
 
@@ -138,9 +138,8 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
     const pathString = strings[HashData.characters.path[path]]
 
     // Override name to something like 'Trailblazer (Physical • Destruction)'
-    data.char[
-      key
-    ].name = `${data.char[key].name} (${typeString} • ${pathString})`
+    data.char[key].name =
+      `${data.char[key].name} (${typeString} • ${pathString})`
     data.charNames[key] = data.char[key].name
   })
 

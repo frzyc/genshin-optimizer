@@ -27,6 +27,6 @@ export const setHeaderTemplate = (
     title: tr('setName'),
     icon: <ImgIcon size={2} src={artifactDefIcon(setKey)} />,
     action: <SqBadge color="success">{st(`${setNum}set`)}</SqBadge>,
-    description: tr(`setEffects.${setNum}`),
+    description: tr(`setEffects.${setNum}`)
   })
 }

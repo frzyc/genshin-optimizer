@@ -4,19 +4,19 @@ import {
   CardThemed,
   ColorText,
   ConditionalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   statKeyToFixed,
-  toPercent,
+  toPercent
 } from '@genshin-optimizer/common/util'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
-  rarityColor,
+  rarityColor
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Edit } from '@mui/icons-material'
@@ -28,7 +28,7 @@ import {
   ClickAwayListener,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { Theme } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -46,7 +46,7 @@ export function DiscCard({
   onClick,
   onEdit,
   setLocation,
-  extraButtons,
+  extraButtons
 }: {
   disc: IDisc
   onClick?: () => void
@@ -62,7 +62,7 @@ export function DiscCard({
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-    isDragging,
+    isDragging
   } = useSpinner()
   const { slotKey, setKey, rarity, level, mainStatKey, substats, location } =
     disc
@@ -113,7 +113,7 @@ export function DiscCard({
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          flexGrow: 1,
+          flexGrow: 1
         }}
       >
         <ConditionalWrapper
@@ -127,7 +127,7 @@ export function DiscCard({
                 sx={{
                   display: 'flex',
                   flexDirection: 'column',
-                  alignItems: 'center',
+                  alignItems: 'center'
                 }}
               >
                 <ClickAwayListener onClickAway={onHide}>
@@ -150,8 +150,8 @@ export function DiscCard({
                       }
                       slotProps={{
                         popper: {
-                          disablePortal: true,
-                        },
+                          disablePortal: true
+                        }
                       }}
                     >
                       <Typography
@@ -172,7 +172,7 @@ export function DiscCard({
                     border: `4px solid ${
                       theme.palette[rarityColor[rarity]].main
                     }`,
-                    borderRadius: '50%',
+                    borderRadius: '50%'
                   })}
                 >
                   <Box
@@ -189,7 +189,7 @@ export function DiscCard({
                       justifyContent: 'center',
                       overflow: 'hidden',
                       borderRadius: '50%',
-                      border: `2px solid black`,
+                      border: `2px solid black`
                     }}
                   >
                     <Box
@@ -197,7 +197,7 @@ export function DiscCard({
                       alt="Disc Piece Image"
                       src={discDefIcon(setKey)}
                       style={{
-                        transform: `rotate(${rotation}deg)`,
+                        transform: `rotate(${rotation}deg)`
                       }}
                       sx={{
                         width: 'auto',
@@ -205,7 +205,7 @@ export function DiscCard({
                         height: '150px',
                         transition: isDragging
                           ? 'none'
-                          : 'transform 0.1s ease-out',
+                          : 'transform 0.1s ease-out'
                       }}
                     />
                     <Box sx={{ height: 0, position: 'absolute', bottom: 30 }}>
@@ -215,7 +215,7 @@ export function DiscCard({
                           py: '3px',
                           px: '30px',
                           borderRadius: '20px',
-                          fontWeight: 'bold',
+                          fontWeight: 'bold'
                         }}
                         variant="h6"
                       >
@@ -242,7 +242,7 @@ export function DiscCard({
                     display: 'flex',
                     alignItems: 'center',
                     flexGrow: 1,
-                    fontWeight: 'bold',
+                    fontWeight: 'bold'
                   }}
                 >
                   <StatDisplay statKey={mainStatKey} />
@@ -276,7 +276,7 @@ export function DiscCard({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
@@ -331,7 +331,7 @@ export function DiscCard({
 }
 function SubstatDisplay({
   substat,
-  rarity,
+  rarity
 }: {
   substat: ISubstat
   rarity: DiscRarityKey
@@ -350,7 +350,7 @@ function SubstatDisplay({
         alignItems: 'center',
         justifyContent: 'space-between',
         fontWeight: 'bold',
-        gap: 1,
+        gap: 1
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

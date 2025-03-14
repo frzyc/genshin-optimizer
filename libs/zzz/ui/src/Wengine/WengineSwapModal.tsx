@@ -1,6 +1,6 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
@@ -8,18 +8,18 @@ import {
   ModalWrapper,
   ShowingAndSortOptionSelect,
   SolidToggleButtonGroup,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import {
   filterFunction,
   handleMultiSelect,
-  sortFunction,
+  sortFunction
 } from '@genshin-optimizer/common/util'
 import { specialityDefIcon } from '@genshin-optimizer/zzz/assets'
 import type {
   Raritykey,
   SpecialityKey,
-  WengineKey,
+  WengineKey
 } from '@genshin-optimizer/zzz/consts'
 import { allRaritykeys, allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
 import { initialWengine } from '@genshin-optimizer/zzz/db'
@@ -39,7 +39,7 @@ import {
   Skeleton,
   TextField,
   ToggleButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -48,7 +48,7 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { WengineCard } from './WengineCard'
@@ -57,7 +57,7 @@ import { WengineSelectionModal } from './WengineSelectionModal'
 import {
   wengineFilterConfigs,
   wengineSortConfigs,
-  wengineSortMap,
+  wengineSortMap
 } from './wengineSortUtil'
 
 const numToShowMap = { xs: 2 * 3, sm: 2 * 3, md: 3 * 3, lg: 4 * 3, xl: 4 * 3 }
@@ -69,7 +69,7 @@ export function WengineSwapModal({
   onChangeId,
   wengineTypeKey,
   show,
-  onClose,
+  onClose
 }: {
   wengineId: string
   onChangeId: (id: string) => void
@@ -100,7 +100,7 @@ export function WengineSwapModal({
 
   const [rarity, setRarity] = useState<Raritykey[]>(['S', 'A', 'B'])
   const [speciality, setWengineType] = useState<SpecialityKey[]>([
-    wengineTypeKey,
+    wengineTypeKey
   ])
   const [searchTerm, setSearchTerm] = useState('')
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -131,7 +131,7 @@ export function WengineSwapModal({
     deferredSearchTerm,
     database.wengines,
     wengineId,
-    dbDirty,
+    dbDirty
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(
@@ -150,7 +150,7 @@ export function WengineSwapModal({
     numShowing: wengineIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_wengine',
+    namespace: 'page_wengine'
   }
   const [swapWengineId, setSwapWengineId] = useState('')
 
@@ -257,7 +257,7 @@ export function WengineSwapModal({
                   label={t('page_wengine:wengineName')}
                   sx={{ height: '100%' }}
                   InputProps={{
-                    sx: { height: '100%' },
+                    sx: { height: '100%' }
                   }}
                 />
               </Grid>
@@ -298,7 +298,7 @@ export function WengineSwapModal({
                             height: '100%',
                             display: 'flex',
                             justifyContent: 'center',
-                            alignItems: 'center',
+                            alignItems: 'center'
                           }}
                           onClick={() => setSwapWengineId('unequip')}
                         >
@@ -306,7 +306,7 @@ export function WengineSwapModal({
                             sx={{
                               display: 'flex',
                               flexDirection: 'column',
-                              alignItems: 'center',
+                              alignItems: 'center'
                             }}
                           >
                             <RemoveCircleIcon sx={{ fontSize: '10em' }} />
@@ -331,9 +331,9 @@ export function WengineSwapModal({
                           '> .MuiCard-root': {
                             outline: `${theme.spacing(0.5)} solid ${
                               theme.palette.warning.main
-                            }`,
-                          },
-                        }),
+                            }`
+                          }
+                        })
                       })}
                     >
                       <WengineCard

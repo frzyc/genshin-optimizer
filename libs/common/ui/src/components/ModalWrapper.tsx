@@ -8,13 +8,13 @@ const ModalContainer = styled(Container)(() => ({
   justifyContent: 'center',
   minHeight: '100vh',
   ':focus': {
-    outline: 'None',
+    outline: 'None'
   },
   // Allow clicking on the Container to exit modal
   pointerEvents: 'none',
   '& > *': {
-    pointerEvents: 'auto',
-  },
+    pointerEvents: 'auto'
+  }
 }))
 
 type ModalWrapperProps = ModalProps & {
@@ -28,7 +28,7 @@ export function ModalWrapper({
   return (
     <Modal
       sx={{
-        overflow: 'auto',
+        overflow: 'auto'
       }}
       {...props}
     >

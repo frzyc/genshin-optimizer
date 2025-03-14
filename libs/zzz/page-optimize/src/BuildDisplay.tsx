@@ -2,7 +2,7 @@ import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   notEmpty,
   objFilter,
-  valueString,
+  valueString
 } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
@@ -10,7 +10,7 @@ import {
   useCharacterContext,
   useDatabaseContext,
   useDisc,
-  useDiscs,
+  useDiscs
 } from '@genshin-optimizer/zzz/db-ui'
 import { applyCalc, convertDiscToStats } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
@@ -22,7 +22,7 @@ export function BuildDisplay({
   index,
   result,
   discIds,
-  baseStats,
+  baseStats
 }: {
   index?: number
   result?: number

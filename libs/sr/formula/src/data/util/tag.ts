@@ -6,7 +6,7 @@ import {
   createAllNumConditionals,
   createConditionalEntries,
   createConvert,
-  tag,
+  tag
 } from '@genshin-optimizer/game-opt/engine'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
@@ -101,7 +101,7 @@ const stats: Record<Stat, Desc> = {
   defIgn_: agg,
   common_dmg_: agg,
   weakness_: agg,
-  brEfficiency_: agg,
+  brEfficiency_: agg
 } as const
 export const ownTag = {
   base: { atk: agg, def: agg, hp: agg, spd: agg },
@@ -122,13 +122,13 @@ export const ownTag = {
     servantSkill: agg,
     servantTalent: agg,
     ...objKeyMap(bonusAbilities, () => isoSum),
-    ...objKeyMap(statBoosts, () => isoSum),
+    ...objKeyMap(statBoosts, () => isoSum)
   },
   lightCone: { lvl: iso, ascension: iso, superimpose: isoSum },
   common: {
     count: isoSum,
     critMode: fixed,
-    cappedCrit_: iso,
+    cappedCrit_: iso
   },
   dmg: { out: fixed, inDmg: fixed, critMulti: fixed },
   formula: {
@@ -137,14 +137,14 @@ export const ownTag = {
     dmg: prep,
     shield: prep,
     heal: prep,
-    breakDmg: prep,
+    breakDmg: prep
   },
   listing: {
     // Anything that is intended to be allowed as an optimization target.
     formulas: aggStr,
     // Flat buffs that don't scale off of a stat.
-    buffs: aggStr,
-  },
+    buffs: aggStr
+  }
 } as const
 export const enemyTag = {
   common: {
@@ -152,8 +152,8 @@ export const enemyTag = {
     defRed_: agg,
     res: agg,
     maxToughness: iso,
-    isBroken: iso,
-  },
+    isBroken: iso
+  }
 } as const
 
 export const convert = createConvert<Read>()
@@ -181,7 +181,7 @@ const nullTag: Tag = {
   name: null,
   elementalType: null,
   damageType1: null,
-  damageType2: null,
+  damageType2: null
 }
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'own', sheet, qt: 'misc' }).withAll('q', [])
@@ -197,7 +197,7 @@ export const queryTypes = new Set([
   'misc',
   'stackIn',
   'stackTmp',
-  'stackOut',
+  'stackOut'
 ])
 
 // Register q:

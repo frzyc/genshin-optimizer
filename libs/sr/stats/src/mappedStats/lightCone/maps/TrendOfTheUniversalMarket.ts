@@ -10,7 +10,7 @@ const dm = {
   passive_def_: data_gen.superimpose.passiveStats.def_,
   baseChance: data_gen.superimpose.otherStats[o++],
   dot_scaling_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++][1],
+  duration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

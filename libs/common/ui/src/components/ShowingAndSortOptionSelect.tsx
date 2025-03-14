@@ -20,7 +20,7 @@ type SortByButtonProps = {
 
 export function ShowingAndSortOptionSelect({
   showingTextProps,
-  sortByButtonProps = undefined,
+  sortByButtonProps = undefined
 }: {
   showingTextProps: ShowingItemProps
   sortByButtonProps?: SortByButtonProps
@@ -50,7 +50,7 @@ function ShowingItem({
   numShowing,
   total,
   t,
-  namespace,
+  namespace
 }: {
   numShowing: number
   total: string

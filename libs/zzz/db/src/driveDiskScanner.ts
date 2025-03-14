@@ -3,14 +3,14 @@
 import {
   isPercentStat,
   notEmpty,
-  objFindValue,
+  objFindValue
 } from '@genshin-optimizer/common/util'
 import type { DiscRarityKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSubStatKeys,
   discSetNames,
   discSlotToMainStatKeys,
-  statKeyTextMap,
+  statKeyTextMap
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import type { IZenlessObjectDescription } from './Interfaces'
@@ -41,7 +41,7 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
         drive_current_level,
         drive_rarity,
         drive_base_stat,
-        random_stats,
+        random_stats
       }) => {
         const setKey = objFindValue(discSetNames, set_name)
         if (!setKey) return null
@@ -99,7 +99,7 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
           location: '',
           lock: false,
           trash: false,
-          substats,
+          substats
         } as IDisc
       }
     )
@@ -109,6 +109,6 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
     format: 'ZOD',
     source: 'ZZZ-Drive-Disk-Scanner',
     version: 1,
-    discs,
+    discs
   }
 }

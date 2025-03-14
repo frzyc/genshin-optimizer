@@ -18,9 +18,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc2'),
-      },
-    ],
+        text: chg('desc2')
+      }
+    ]
   },
   4: {
     title: <Set4Display />,
@@ -28,29 +28,29 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc4'),
+        text: chg('desc4')
       },
       {
         type: 'conditional',
         conditional: {
           label: ch('set4_cond'),
-          metadata: cond.freeze_shatter,
-        },
+          metadata: cond.freeze_shatter
+        }
       },
       {
         type: 'fields',
         fields: [
           {
             title: 'Basic Attack DMG', // TODO: L10n
-            fieldRef: buff.set4_basic_dmg_.tag,
+            fieldRef: buff.set4_basic_dmg_.tag
           },
           {
             title: 'Dash Attack DMG', // TODO: L10n
-            fieldRef: buff.set4_dash_dmg_.tag,
-          },
-        ],
-      },
-    ],
-  },
+            fieldRef: buff.set4_dash_dmg_.tag
+          }
+        ]
+      }
+    ]
+  }
 }
 export default sheet

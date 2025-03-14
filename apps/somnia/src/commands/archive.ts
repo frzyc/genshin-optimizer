@@ -5,12 +5,12 @@ import type {
   MessageReaction,
   PartialUser,
   StringSelectMenuInteraction,
-  User,
+  User
 } from 'discord.js'
 import {
   ApplicationIntegrationType,
   InteractionContextType,
-  SlashCommandBuilder,
+  SlashCommandBuilder
 } from 'discord.js'
 
 import { error } from '../lib/message'
@@ -21,7 +21,7 @@ import {
   allWeaponKeys,
   type ArtifactSetKey,
   type CharacterSheetKey,
-  type WeaponKey,
+  type WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import permissions from '../lib/permissions'
@@ -32,12 +32,12 @@ import { weaponArchive } from './archive/weapon'
 export const slashcommand = new SlashCommandBuilder()
   .setIntegrationTypes([
     ApplicationIntegrationType.GuildInstall,
-    ApplicationIntegrationType.UserInstall,
+    ApplicationIntegrationType.UserInstall
   ])
   .setContexts([
     InteractionContextType.Guild,
     InteractionContextType.BotDM,
-    InteractionContextType.PrivateChannel,
+    InteractionContextType.PrivateChannel
   ])
   .setName('archive')
   .setDescription('Genshin Archive')
@@ -108,7 +108,7 @@ type ArchiveSubcommand = 'char' | 'weapon' | 'artifact'
 const archive = {
   char: allCharacterSheetKeys,
   weapon: allWeaponKeys,
-  artifact: allArtifactSetKeys,
+  artifact: allArtifactSetKeys
 }
 function translate(
   namespace: string,
@@ -120,7 +120,7 @@ function translate(
   return i18nInstance.t(`${namespace}:${key}`, {
     returnObjects: object,
     lng: lang,
-    ...options,
+    ...options
   })
 }
 export { translate }
@@ -131,7 +131,7 @@ export const talentlist = {
   e: { name: 'Elemental Skill', value: 'e' },
   q: { name: 'Elemental Burst', value: 'q' },
   a: { name: 'Ascension Passives', value: 'a' },
-  c: { name: 'Constellations', value: 'c' },
+  c: { name: 'Constellations', value: 'c' }
 }
 
 //clean tags from input

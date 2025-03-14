@@ -10,6 +10,6 @@ const data = {
   full,
   interknot,
   select,
-  trap,
+  trap
 } as const
 export default data

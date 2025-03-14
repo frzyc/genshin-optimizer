@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   2: {
-    dmg_: data_gen.setEffects[0].otherStats[o++],
+    dmg_: data_gen.setEffects[0].otherStats[o++]
   },
   4: {
     crit_: data_gen.setEffects[1].passiveStats.crit_ ?? 0,
@@ -16,8 +16,8 @@ const dm = {
     crit_dmg_2: data_gen.setEffects[1].otherStats[o++],
     debuffThreshold1: data_gen.setEffects[1].otherStats[o++],
     debuffThreshold2: data_gen.setEffects[1].otherStats[o++],
-    duration: data_gen.setEffects[1].otherStats[o++],
-  },
+    duration: data_gen.setEffects[1].otherStats[o++]
+  }
 } as const
 
 export default dm

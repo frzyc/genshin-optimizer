@@ -33,7 +33,7 @@ const ele_dmg_ = equal(
 const ele_dmg_nodes = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
-    equal(ele, input.charEle, ele_dmg_),
+    equal(ele, input.charEle, ele_dmg_)
   ])
 )
 
@@ -41,11 +41,11 @@ export const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      ...ele_dmg_nodes,
-    },
+      ...ele_dmg_nodes
+    }
   },
   {
-    ...ele_dmg_nodes,
+    ...ele_dmg_nodes
   }
 )
 const sheet: IWeaponSheet = {
@@ -62,12 +62,12 @@ const sheet: IWeaponSheet = {
             {
               text: stg('duration'),
               value: 3,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

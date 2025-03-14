@@ -10,6 +10,6 @@ const data = {
   flower,
   goblet,
   plume,
-  sands,
+  sands
 } as const
 export default data

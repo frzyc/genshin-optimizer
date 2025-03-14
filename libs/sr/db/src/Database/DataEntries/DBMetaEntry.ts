@@ -17,7 +17,7 @@ function dbMetaInit(database: Database): IDBMeta {
   return {
     name: `Database ${database.storage.getDBIndex()}`,
     lastEdit: 0,
-    gender: 'F',
+    gender: 'F'
   }
 }
 

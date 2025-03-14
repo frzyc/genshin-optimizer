@@ -1,7 +1,7 @@
 import {
   CardThemed,
   ModalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
@@ -13,7 +13,7 @@ import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import {
   CharIconSide,
   CharacterName,
-  DocumentDisplay,
+  DocumentDisplay
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -24,20 +24,20 @@ import {
   IconButton,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 const talentSpacing = {
   xs: 12,
   sm: 6,
-  md: 4,
+  md: 4
 }
 
 export function CharacterView({
   show,
   character,
-  onClose,
+  onClose
 }: {
   show: boolean
   character: ICachedCharacter
@@ -54,7 +54,7 @@ export function CharacterView({
   const skillBurstList = [
     ['auto', t('talents.auto')],
     ['skill', t('talents.skill')],
-    ['burst', t('talents.burst')],
+    ['burst', t('talents.burst')]
   ] as [TalentSheetElementKey, string][]
   const passivesList: [
     tKey: TalentSheetElementKey,
@@ -63,7 +63,7 @@ export function CharacterView({
   ][] = [
     ['passive1', t('unlockPassive1'), 1],
     ['passive2', t('unlockPassive2'), 4],
-    ['passive3', t('unlockPassive3'), 0],
+    ['passive3', t('unlockPassive3'), 0]
   ]
 
   const constellationCards = useMemo(
@@ -198,7 +198,7 @@ export function CharacterView({
 function SkillDisplayCard({
   characterKey,
   talentKey,
-  subtitle,
+  subtitle
 }: {
   characterKey: CharacterKey
   talentKey: TalentSheetElementKey

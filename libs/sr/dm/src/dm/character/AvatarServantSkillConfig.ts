@@ -6,7 +6,7 @@ import type { HashId, Value } from '../common'
 import type {
   AttackType,
   SkillEffect,
-  StanceDamageType,
+  StanceDamageType
 } from './AvatarSkillConfig'
 
 export type AvatarServantSkillConfig = {

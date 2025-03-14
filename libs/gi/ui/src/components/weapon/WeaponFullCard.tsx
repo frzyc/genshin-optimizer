@@ -21,7 +21,7 @@ export function WeaponFullCard({ weaponId }: { weaponId: string }) {
 }
 export function WeaponFullCardObj({
   weapon,
-  bgt = 'normal',
+  bgt = 'normal'
 }: {
   weapon: IWeapon
   bgt?: CardBackgroundColor
@@ -33,7 +33,7 @@ export function WeaponFullCardObj({
       weapon &&
       computeUIData([
         weaponSheet.data,
-        dataObjForWeapon(weapon as ICachedWeapon),
+        dataObjForWeapon(weapon as ICachedWeapon)
       ]),
     [weaponSheet, weapon]
   )

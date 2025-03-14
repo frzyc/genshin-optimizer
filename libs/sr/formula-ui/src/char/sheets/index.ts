@@ -136,5 +136,5 @@ export const uiSheets: Record<CharacterKey, UISheet<TalentSheetElementKey>> = {
   TrailblazerPhysical,
   TrailblazerFire,
   TrailblazerImaginary,
-  TrailblazerIce,
+  TrailblazerIce
 } as const

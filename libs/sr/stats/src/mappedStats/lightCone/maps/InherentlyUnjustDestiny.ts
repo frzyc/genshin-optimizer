@@ -12,7 +12,7 @@ const dm = {
   duration: data_gen.superimpose.otherStats[o++][1],
   baseChance: data_gen.superimpose.otherStats[o++],
   common_dmg_: data_gen.superimpose.otherStats[o++],
-  otherDuration: data_gen.superimpose.otherStats[o++][1],
+  otherDuration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

@@ -5,20 +5,20 @@ import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
   allArtifactSlotKeys,
   allElementKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   ElementIcon,
   FlowerIcon,
-  SlotIcon,
+  SlotIcon
 } from '@genshin-optimizer/gi/svgicons'
 import {
   BuildIcon,
   LoadoutIcon,
   TeamCardCompact,
-  TeamIcon,
+  TeamIcon
 } from '@genshin-optimizer/gi/ui'
 import { BusinessCenter, People } from '@mui/icons-material'
 
@@ -31,7 +31,7 @@ import {
   Grid,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -100,7 +100,7 @@ export default function InventoryCard() {
               justifyContent: 'space-between',
               p: 2,
               gap: 1,
-              flexWrap: 'wrap',
+              flexWrap: 'wrap'
             }}
             component={RouterLink}
             to="/characters"
@@ -115,7 +115,7 @@ export default function InventoryCard() {
               sx={{
                 flexBasis: smaller ? '100%' : 'auto',
                 flexGrow: 1,
-                cursor: 'pointer',
+                cursor: 'pointer'
               }}
               color={characterTotal ? 'primary' : 'secondary'}
             />
@@ -137,7 +137,7 @@ export default function InventoryCard() {
               justifyContent: 'space-between',
               p: 2,
               gap: 1,
-              flexWrap: 'wrap',
+              flexWrap: 'wrap'
             }}
             component={RouterLink}
             to="/weapons"
@@ -152,7 +152,7 @@ export default function InventoryCard() {
               sx={{
                 flexBasis: smaller ? '100%' : 'auto',
                 flexGrow: 1,
-                cursor: 'pointer',
+                cursor: 'pointer'
               }}
               color={weaponTotal ? 'primary' : 'secondary'}
             />
@@ -174,7 +174,7 @@ export default function InventoryCard() {
               justifyContent: 'space-between',
               p: 2,
               gap: 1,
-              flexWrap: 'wrap',
+              flexWrap: 'wrap'
             }}
             component={RouterLink}
             to="/artifacts"
@@ -189,7 +189,7 @@ export default function InventoryCard() {
               sx={{
                 flexBasis: smaller ? '100%' : 'auto',
                 flexGrow: 1,
-                cursor: 'pointer',
+                cursor: 'pointer'
               }}
               color={artifactTotal ? 'primary' : 'secondary'}
             />
@@ -211,7 +211,7 @@ export default function InventoryCard() {
               justifyContent: 'space-between',
               p: 2,
               gap: 1,
-              flexWrap: 'wrap',
+              flexWrap: 'wrap'
             }}
             component={RouterLink}
             to="/teams"

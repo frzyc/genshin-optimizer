@@ -4,7 +4,7 @@ import type {
   ArtifactsBySlot,
   PlotData,
   RequestFilter,
-  SolverBuild,
+  SolverBuild
 } from './common'
 
 export type OptProblemInput = {

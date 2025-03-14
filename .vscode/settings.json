@@ -5,7 +5,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "typescript.preferences.importModuleSpecifier": "project-relative",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

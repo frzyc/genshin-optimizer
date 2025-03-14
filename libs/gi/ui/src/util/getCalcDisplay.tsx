@@ -3,12 +3,12 @@ import { valueString } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   CharacterSheetKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allCharacterSheetKeys,
-  allWeaponKeys,
+  allWeaponKeys
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
@@ -36,7 +36,7 @@ const subKeyMap: Record<KeyMapPrefix, string> = {
   char: 'Char.',
   art: 'Art.',
   weapon: 'Weapon',
-  teamBuff: 'Team',
+  teamBuff: 'Team'
 }
 
 const displayKey = Symbol()
@@ -93,7 +93,7 @@ function _getCalcDisplay(
       prec: Infinity,
       valueString: str,
       formula: str,
-      formulas: [],
+      formulas: []
     }
   }
 
@@ -143,7 +143,7 @@ function computeFormulaDisplay(
     add: { head: '', sep: ' + ', tail: '', prec: 1 },
     mul: { head: '', sep: ' * ', tail: '', prec: 2 },
     max: { head: 'Max(', sep: ', ', tail: ')', prec: Infinity },
-    min: { head: 'Min(', sep: ', ', tail: ')', prec: Infinity },
+    min: { head: 'Min(', sep: ', ', tail: ')', prec: Infinity }
   } as const
 
   const { op, ops } = node.meta
@@ -151,7 +151,7 @@ function computeFormulaDisplay(
     prec: Infinity,
     formula: '',
     valueString: valueString(node.value, info.unit, info.fixed),
-    formulas: [...new Set(ops.flatMap((op) => GetCalcDisplay(op).formulas))],
+    formulas: [...new Set(ops.flatMap((op) => GetCalcDisplay(op).formulas))]
   }
   const components: ReactNode[] = []
 
@@ -224,7 +224,7 @@ function computeFormulaDisplay(
       {components.map((x, i) => (
         <span
           style={{
-            textDecoration: info.strikethrough ? 'line-through' : undefined,
+            textDecoration: info.strikethrough ? 'line-through' : undefined
           }}
           key={i}
         >

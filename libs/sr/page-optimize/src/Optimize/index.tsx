@@ -4,7 +4,7 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import {
   allRelicSlotKeys,
-  type RelicSlotKey,
+  type RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
@@ -12,7 +12,7 @@ import {
   OptConfigProvider,
   useCharacterContext,
   useCharOpt,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
 import { optimize } from '@genshin-optimizer/sr/solver'
@@ -26,7 +26,7 @@ import {
   CardContent,
   LinearProgress,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   useCallback,
@@ -34,7 +34,7 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
@@ -49,7 +49,7 @@ export default function Optimize() {
     if (optConfigId) return
     const newOptConfigId = database.optConfigs.new()
     database.charOpts.set(characterKey, {
-      optConfigId: newOptConfigId,
+      optConfigId: newOptConfigId
     })
   }, [database, optConfigId, characterKey])
   if (!optConfigId) return null
@@ -76,7 +76,7 @@ function OptimizeWrapper() {
       body: optConfig.slotBodyKeys,
       feet: optConfig.slotFeetKeys,
       sphere: optConfig.slotSphereKeys,
-      rope: optConfig.slotRopeKeys,
+      rope: optConfig.slotRopeKeys
     } as const
     const isFilteredSlot = (
       slotKey: RelicSlotKey
@@ -105,7 +105,7 @@ function OptimizeWrapper() {
           feet: [],
           body: [],
           sphere: [],
-          rope: [],
+          rope: []
         } as Record<RelicSlotKey, ICachedRelic[]>
       )
     )
@@ -119,7 +119,7 @@ function OptimizeWrapper() {
     optConfig.slotRopeKeys,
     optConfig.slotSphereKeys,
     optConfig.useEquipped,
-    relicDirty,
+    relicDirty
   ])
   const lightConeDirty = useDataManagerBaseDirty(database.lightCones)
   const lightCones = useMemo(() => {
@@ -152,7 +152,7 @@ function OptimizeWrapper() {
     optConfig.optLightCone,
     optConfig.lightConePaths,
     optConfig.useEquippedLightCone,
-    lightConeDirty,
+    lightConeDirty
   ])
   const totalPermutations = useMemo(
     () =>
@@ -182,7 +182,7 @@ function OptimizeWrapper() {
       .map(({ tag, value, isMax }) => ({
         tag,
         value,
-        isMax,
+        isMax
       }))
     const optimizer = optimize(
       characterKey,
@@ -190,8 +190,8 @@ function OptimizeWrapper() {
       [
         {
           tag: target,
-          multiplier: 1,
-        },
+          multiplier: 1
+        }
       ],
       10, // TODO: topN
       statFilters,
@@ -223,9 +223,9 @@ function OptimizeWrapper() {
             allRelicSlotKeys,
             (_slot, index) => ids[index + 1]
           ),
-          value,
+          value
         })),
-        buildDate: Date.now(),
+        buildDate: Date.now()
       })
   }, [
     calc,
@@ -239,7 +239,7 @@ function OptimizeWrapper() {
     relicsBySlot,
     numWorkers,
     database.optConfigs,
-    optConfigId,
+    optConfigId
   ])
 
   const onCancel = useCallback(() => {
@@ -282,7 +282,7 @@ function OptimizeWrapper() {
 
 function ProgressIndicator({
   progress,
-  totalPermutations,
+  totalPermutations
 }: {
   progress: Progress
   totalPermutations: number

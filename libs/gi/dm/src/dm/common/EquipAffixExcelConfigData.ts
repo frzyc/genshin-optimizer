@@ -57,7 +57,7 @@ dumpFile(
   Object.fromEntries(
     equipAffixExcelConfigDataSrc.map((data) => [
       data.id,
-      nameToKey(TextMapEN[data.nameTextMapHash]),
+      nameToKey(TextMapEN[data.nameTextMapHash])
     ])
   )
 )

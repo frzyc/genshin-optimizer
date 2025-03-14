@@ -1,7 +1,7 @@
 import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
-  setDebugMode,
+  setDebugMode
 } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
 import { data, keys, values } from '..'
@@ -12,7 +12,7 @@ import {
   charTagMapNodeEntries,
   lightConeTagMapNodeEntries,
   teamData,
-  withMember,
+  withMember
 } from '../../util'
 import type { TagMapNodeEntries } from '../util'
 import {
@@ -22,7 +22,7 @@ import {
   own,
   ownBuff,
   ownTag,
-  Read,
+  Read
 } from '../util'
 
 setDebugMode(true)
@@ -50,7 +50,7 @@ function testCharacterData(
           servantSkill: 0,
           servantTalent: 0,
           bonusAbilities: {},
-          statBoosts: {},
+          statBoosts: {}
         },
         1
       ),
@@ -60,7 +60,7 @@ function testCharacterData(
     own.common.critMode.add('avg'),
     enemy.common.lvl.add(80),
     enemy.common.res.add(0.1),
-    enemy.common.isBroken.add(0),
+    enemy.common.isBroken.add(0)
   ]
   return data
 }
@@ -88,7 +88,7 @@ function testTeamData(
           servantSkill: 0,
           servantTalent: 0,
           bonusAbilities: {},
-          statBoosts: {},
+          statBoosts: {}
         },
         1
       ),
@@ -110,7 +110,7 @@ function testTeamData(
           servantSkill: 0,
           servantTalent: 0,
           bonusAbilities: {},
-          statBoosts: {},
+          statBoosts: {}
         },
         2
       ),
@@ -119,7 +119,7 @@ function testTeamData(
     own.common.critMode.add('avg'),
     enemy.common.lvl.add(80),
     enemy.common.res.add(0.1),
-    enemy.common.isBroken.add(0),
+    enemy.common.isBroken.add(0)
   ]
   return data
 }
@@ -441,7 +441,7 @@ describe('Light Cone sheets test', () => {
   it.each([
     { atk_: 0.2, crit_dmg_: 0.5, enerRegen_: 0, index: 1 },
     { atk_: 0, crit_dmg_: 0.74, enerRegen_: 0, index: 2 },
-    { atk_: 0, crit_dmg_: 0.5, enerRegen_: 0.12, index: 3 },
+    { atk_: 0, crit_dmg_: 0.5, enerRegen_: 0.12, index: 3 }
   ])('CarveTheMoonWeaveTheClouds', (testCase) => {
     setDebugMode(true)
     const charKey: CharacterKey = 'RuanMei'
@@ -661,7 +661,7 @@ describe('Light Cone sheets test', () => {
   it('DestinysThreadsForewoven', () => {
     const charKey: CharacterKey = 'FuXuan'
     const data = testCharacterData(charKey, 'DestinysThreadsForewoven', [
-      ownBuff.premod.def.add(4000), // Adding def for maximum buff increase
+      ownBuff.premod.def.add(4000) // Adding def for maximum buff increase
     ])
     const calc = new Calculator(
       keys,
@@ -690,7 +690,7 @@ describe('Light Cone sheets test', () => {
   it.each([
     { basic: 0.2, skill: 0, ult: 0, index: 1 },
     { basic: 0, skill: 0.2, ult: 0, index: 2 },
-    { basic: 0, skill: 0, ult: 0.2, index: 3 },
+    { basic: 0, skill: 0, ult: 0.2, index: 3 }
   ])('DreamvilleAdventure', (attack) => {
     const charKey: CharacterKey = 'RuanMei'
     const data = testCharacterData(charKey, 'DreamvilleAdventure')
@@ -1179,7 +1179,7 @@ describe('Light Cone sheets test', () => {
   it('InTheNight', () => {
     const charKey: CharacterKey = 'Seele'
     const data = testCharacterData(charKey, 'InTheNight', [
-      ownBuff.premod.spd.add(45),
+      ownBuff.premod.spd.add(45)
     ])
     const calc = new Calculator(
       keys,
@@ -1249,7 +1249,7 @@ describe('Light Cone sheets test', () => {
   it('ItsShowtime', () => {
     const charKey: CharacterKey = 'BlackSwan'
     const data = testCharacterData(charKey, 'ItsShowtime', [
-      ownBuff.premod.eff_.add(0.8),
+      ownBuff.premod.eff_.add(0.8)
     ])
     data.push(
       cond(charKey, 'ItsShowtime', conditionals.ItsShowtime.trick.name, 3)
@@ -1677,7 +1677,7 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Lingsha'
     const data = testCharacterData(charKey, 'PerfectTiming', [
       // Max out LC passive
-      ownBuff.premod.eff_res_.add(0.28),
+      ownBuff.premod.eff_res_.add(0.28)
     ])
     const calc = new Calculator(
       keys,
@@ -1878,7 +1878,7 @@ describe('Light Cone sheets test', () => {
   it('SailingTowardsASecondLife', () => {
     const charKey: CharacterKey = 'Seele'
     const data = testCharacterData(charKey, 'SailingTowardsASecondLife', [
-      ownBuff.premod.brEffect_.add(0.5),
+      ownBuff.premod.brEffect_.add(0.5)
     ])
     const calc = new Calculator(
       keys,
@@ -1896,7 +1896,7 @@ describe('Light Cone sheets test', () => {
   it('ScentAloneStaysTrue', () => {
     const charKey: CharacterKey = 'Lingsha'
     const data = testCharacterData(charKey, 'ScentAloneStaysTrue', [
-      ownBuff.premod.brEffect_.add(0.5),
+      ownBuff.premod.brEffect_.add(0.5)
     ])
     data.push(
       cond(
@@ -2599,7 +2599,7 @@ describe('Light Cone sheets test', () => {
   it('YetHopeIsPriceless', () => {
     const charKey: CharacterKey = 'Qingque'
     const data = testCharacterData(charKey, 'YetHopeIsPriceless', [
-      ownBuff.premod.crit_dmg_.add(1.6),
+      ownBuff.premod.crit_dmg_.add(1.6)
     ])
     data.push(
       cond(

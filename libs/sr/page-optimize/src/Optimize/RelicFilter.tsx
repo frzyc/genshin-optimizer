@@ -5,16 +5,16 @@ import type {
   RelicCavernSetKey,
   RelicMainStatKey,
   RelicPlanarSetKey,
-  RelicSlotKey,
+  RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allRelicSlotKeys,
-  relicSlotToMainStatKeys,
+  relicSlotToMainStatKeys
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -26,7 +26,7 @@ import {
   IconButton,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useContext } from 'react'
@@ -34,7 +34,7 @@ import { RelicLevelFilter } from './RelicLevelFilter'
 import { RelicSetFilter } from './RelicSetFilter'
 
 export function RelicFilter({
-  relicsBySlot,
+  relicsBySlot
 }: {
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
 }) {
@@ -66,7 +66,7 @@ export function RelicFilter({
 }
 function RelicTypo({
   relicsBySlot,
-  slotKey,
+  slotKey
 }: {
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   slotKey: RelicSlotKey
@@ -85,7 +85,7 @@ function RelicFilterModal({
   relicsBySlot,
   show,
   onClose,
-  disabled,
+  disabled
 }: {
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   show: boolean
@@ -119,7 +119,7 @@ function RelicFilterModal({
                 disabled={disabled}
                 onClick={() =>
                   database.optConfigs.set(optConfigId, {
-                    useEquipped: !optConfig.useEquipped,
+                    useEquipped: !optConfig.useEquipped
                   })
                 }
                 color={optConfig.useEquipped ? 'success' : 'secondary'}
@@ -136,7 +136,7 @@ function RelicFilterModal({
 
 function MainStatSelector({
   relicsBySlot,
-  disabled,
+  disabled
 }: {
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   disabled?: boolean
@@ -145,13 +145,13 @@ function MainStatSelector({
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   const relicSlotBtns = (slotKey: 'body' | 'feet' | 'sphere' | 'rope') => {
     const mainKeysHandler = handleMultiSelect([
-      ...relicSlotToMainStatKeys[slotKey],
+      ...relicSlotToMainStatKeys[slotKey]
     ])
     const keysMap = {
       body: optConfig.slotBodyKeys ?? [],
       feet: optConfig.slotFeetKeys ?? [],
       sphere: optConfig.slotSphereKeys ?? [],
-      rope: optConfig.slotRopeKeys ?? [],
+      rope: optConfig.slotRopeKeys ?? []
     } as Record<'body' | 'feet' | 'sphere' | 'rope', RelicMainStatKey[]>
     const funcMap = {
       body: (slotBodyKeys: RelicMainStatKey[]) =>
@@ -161,7 +161,7 @@ function MainStatSelector({
       sphere: (slotSphereKeys: RelicMainStatKey[]) =>
         database.optConfigs.set(optConfigId, { slotSphereKeys }),
       rope: (slotRopeKeys: RelicMainStatKey[]) =>
-        database.optConfigs.set(optConfigId, { slotRopeKeys }),
+        database.optConfigs.set(optConfigId, { slotRopeKeys })
     } as Record<
       'body' | 'feet' | 'sphere' | 'rope',
       (slots: RelicMainStatKey[]) => void

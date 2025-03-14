@@ -4,6 +4,6 @@ import sphere from './sphere.png'
 
 const data = {
   rope,
-  sphere,
+  sphere
 } as const
 export default data

@@ -2,7 +2,7 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
-  useForceUpdate,
+  useForceUpdate
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
@@ -10,30 +10,30 @@ import {
   NextImage,
   SortByButton,
   SqBadge,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import {
   catTotal,
   filterFunction,
-  sortFunction,
+  sortFunction
 } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,
   ElementKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterKeys,
   allElementKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   useCharMeta,
   useCharacter,
   useDBMeta,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
@@ -53,7 +53,7 @@ import {
   Typography,
   keyframes,
   styled,
-  tooltipClasses,
+  tooltipClasses
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import React, {
@@ -61,7 +61,7 @@ import React, {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext, SillyContext } from '../../context'
@@ -72,7 +72,7 @@ import type { CharacterSortKey } from './CharacterSort'
 import {
   characterFilterConfigs,
   characterSortConfigs,
-  characterSortMap,
+  characterSortMap
 } from './CharacterSort'
 import { CharacterName } from './Trans'
 
@@ -82,7 +82,7 @@ export function CharacterSingleSelectionModal({
   onSelect,
   selectedIndex = -1,
   loadoutData = [undefined, undefined, undefined, undefined],
-  newFirst = false,
+  newFirst = false
 }: {
   show: boolean
   onHide: () => void
@@ -116,7 +116,7 @@ export function CharacterSingleSelectionModal({
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [
       ...(newFirst ? ['new'] : []),
-      ...(characterSortMap[sortType] ?? []),
+      ...(characterSortMap[sortType] ?? [])
     ] as CharacterSortKey[]
     const filteredKeys =
       deferredDbDirty &&
@@ -144,7 +144,7 @@ export function CharacterSingleSelectionModal({
     deferredSearchTerm,
     database,
     teamCharKeys,
-    silly,
+    silly
   ])
 
   const onClose = () => {
@@ -168,7 +168,7 @@ export function CharacterSingleSelectionModal({
     },
     onChangeAsc: (ascending: boolean) => {
       database.displayCharacter.set({ ascending })
-    },
+    }
   }
 
   return (
@@ -209,7 +209,7 @@ export function CharacterMultiSelectionModal({
   onHide,
   onSelect,
   loadoutData = [undefined, undefined, undefined, undefined],
-  newFirst = false,
+  newFirst = false
 }: {
   show: boolean
   onHide: () => void
@@ -243,7 +243,7 @@ export function CharacterMultiSelectionModal({
     '',
     '',
     '',
-    '',
+    ''
   ] as (CharacterKey | '')[])
   useEffect(
     () =>
@@ -272,7 +272,7 @@ export function CharacterMultiSelectionModal({
     const { element, weaponType, sortType, ascending } = deferredState
     const sortByKeys = [
       ...(newFirst ? ['new'] : []),
-      ...(characterSortMap[sortType] ?? []),
+      ...(characterSortMap[sortType] ?? [])
     ] as CharacterSortKey[]
     const filteredKeys =
       deferredDbDirty &&
@@ -300,7 +300,7 @@ export function CharacterMultiSelectionModal({
     deferredSearchTerm,
     database,
     cachedTeamCharKeys,
-    silly,
+    silly
   ])
 
   const onClick = (key: CharacterKey) => {
@@ -312,7 +312,7 @@ export function CharacterMultiSelectionModal({
       setTeamCharKeys([
         ...teamCharKeys.slice(0, firstOpenIndex),
         key,
-        ...teamCharKeys.slice(firstOpenIndex + 1),
+        ...teamCharKeys.slice(firstOpenIndex + 1)
       ])
     } else {
       // Selected character was previously selected, so replace the slot with
@@ -320,7 +320,7 @@ export function CharacterMultiSelectionModal({
       setTeamCharKeys([
         ...teamCharKeys.slice(0, keySlotIndex),
         '',
-        ...teamCharKeys.slice(keySlotIndex + 1),
+        ...teamCharKeys.slice(keySlotIndex + 1)
       ])
     }
   }
@@ -352,7 +352,7 @@ export function CharacterMultiSelectionModal({
     onChangeAsc: (ascending: boolean) => {
       database.displayCharacter.set({ ascending })
       setCachedTeamCharKeys(teamCharKeys)
-    },
+    }
   }
 
   return (
@@ -406,13 +406,13 @@ function CharacterSelectionModalBase({
   charactersToShow,
   filterSearchSortProps,
   onClose,
-  children,
+  children
 }: CharacterSelectionModalBaseProps) {
   const { t } = useTranslation([
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
     'sillyWisher_charNames',
-    'charNames_gen',
+    'charNames_gen'
   ])
   const database = useDatabase()
   const state = useDataEntryBase(database.displayCharacter)
@@ -450,22 +450,22 @@ function CharacterSelectionModalBase({
       containerProps={{
         sx: {
           height: '100vh',
-          p: { xs: 1 },
-        },
+          p: { xs: 1 }
+        }
       }}
     >
       <CardThemed
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          height: '100%',
+          height: '100%'
         }}
       >
         <CardContent
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 1,
+            gap: 1
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -502,7 +502,7 @@ function CharacterSelectionModalBase({
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
               InputProps={{
-                sx: { height: '100%' },
+                sx: { height: '100%' }
               }}
             />
             <SortByButton
@@ -531,8 +531,8 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))({
   [`& .${tooltipClasses.tooltip}`]: {
-    padding: 0,
-  },
+    padding: 0
+  }
 })
 
 // used for wrapping SelectionCards for the single selection variant - passing
@@ -543,7 +543,7 @@ function SingleSelectCardWrapper({
   characterKey,
   children,
   selectedIndex = -1,
-  teamSlotIndex = -1,
+  teamSlotIndex = -1
 }: {
   characterKey: CharacterKey
   children: React.ReactNode
@@ -591,7 +591,7 @@ function SingleSelectCardWrapper({
             animation:
               isInTeam && selectedIndex === teamSlotIndex
                 ? `${flash} 3s ease infinite`
-                : undefined,
+                : undefined
           }
         }}
       >
@@ -616,7 +616,7 @@ function SingleSelectCardWrapper({
 function MultiSelectCardWrapper({
   characterKey,
   teamSlotIndex,
-  children,
+  children
 }: {
   characterKey: CharacterKey
   teamSlotIndex: number
@@ -650,7 +650,7 @@ function MultiSelectCardWrapper({
           flexGrow: 1,
           display: 'flex',
           flexDirection: 'column',
-          outline: isInTeam ? `solid ${theme.palette.warning.main}` : undefined,
+          outline: isInTeam ? `solid ${theme.palette.warning.main}` : undefined
         })}
       >
         <IconButton
@@ -671,7 +671,7 @@ function MultiSelectCardWrapper({
                 top: 60,
                 left: 204,
                 zIndex: 2,
-                textShadow: '0 0 5px gray',
+                textShadow: '0 0 5px gray'
               }}
             >
               {teamSlotIndex + 1}
@@ -686,7 +686,7 @@ function MultiSelectCardWrapper({
 
 function SelectionCard({
   characterKey,
-  onClick,
+  onClick
 }: {
   characterKey: CharacterKey
   onClick: () => void
@@ -717,8 +717,8 @@ function SelectionCard({
             opacity: 0.7,
             backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
-            backgroundSize: 'cover',
-          },
+            backgroundSize: 'cover'
+          }
         }}
         width="100%"
       >

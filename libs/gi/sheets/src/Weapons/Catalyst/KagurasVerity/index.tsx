@@ -26,7 +26,7 @@ const skill_dmg_s = totems.map((i) =>
 const ele_dmg_s = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
-    equal(condNode, '3', subscript(input.weapon.refinement, dmg_)),
+    equal(condNode, '3', subscript(input.weapon.refinement, dmg_))
   ])
 )
 
@@ -35,8 +35,8 @@ export const data = dataObjForWeaponSheet(key, {
     skill_dmg_: sum(...skill_dmg_s),
     ...Object.fromEntries(
       allElementKeys.map((ele) => [`${ele}_dmg_`, ele_dmg_s[ele]])
-    ),
-  },
+    )
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -52,14 +52,14 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: i }),
             fields: [
               {
-                node: skill_dmg_s[i - 1],
+                node: skill_dmg_s[i - 1]
               },
-              ...allElementKeys.map((ele) => ({ node: ele_dmg_s[ele] })),
-            ],
-          },
+              ...allElementKeys.map((ele) => ({ node: ele_dmg_s[ele] }))
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

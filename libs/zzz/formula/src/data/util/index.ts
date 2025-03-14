@@ -1,6 +1,6 @@
 import type {
   TagMapNodeEntries as BaseTagMapNodeEntries,
-  TagMapNodeEntry as BaseTagMapNodeEntry,
+  TagMapNodeEntry as BaseTagMapNodeEntry
 } from '@genshin-optimizer/game-opt/engine'
 import type { Tag } from './read'
 

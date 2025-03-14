@@ -3,26 +3,26 @@ import {
   CardThemed,
   ColorText,
   NextImage,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import {
   allElementalDamageKeys,
-  type LocationKey,
+  type LocationKey
 } from '@genshin-optimizer/sr/consts'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
 import {
   getRelicMainStatDisplayVal,
-  statToFixed,
+  statToFixed
 } from '@genshin-optimizer/sr/util'
 import {
   DeleteForever,
   Edit,
   DoNotDisturb as Exclude,
   Lock,
-  LockOpen,
+  LockOpen
 } from '@mui/icons-material'
 import {
   Box,
@@ -32,7 +32,7 @@ import {
   IconButton,
   Skeleton,
   SvgIcon,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -62,7 +62,7 @@ export function RelicCard({
   setLocation,
   mainStatAssumptionLevel = 0,
   extraButtons,
-  excluded = false,
+  excluded = false
 }: RelicCardProps) {
   const { t } = useTranslation('relic')
   const { t: tk } = useTranslation(['relics_gen', 'statKey_gen'])
@@ -75,7 +75,7 @@ export function RelicCard({
     level,
     mainStatKey,
     substats,
-    location = '',
+    location = ''
   } = relic
 
   const mainStatLevel = Math.max(
@@ -153,7 +153,7 @@ export function RelicCard({
                   textAlign: 'center',
                   backgroundColor: 'rgba(100,100,100,0.35)',
                   borderRadius: '1em',
-                  px: 1.5,
+                  px: 1.5
                 }}
               >
                 <strong>
@@ -205,7 +205,7 @@ export function RelicCard({
                 float: 'right',
                 marginBottom: '5%',
                 marginTop: '5%',
-                marginRight: '10%',
+                marginRight: '10%'
               }}
             />
           </Box>
@@ -217,7 +217,7 @@ export function RelicCard({
             flexDirection: 'column',
             pt: 1,
             pb: '0!important',
-            width: '100%',
+            width: '100%'
           }}
         >
           {substats.map(
@@ -244,7 +244,7 @@ export function RelicCard({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Box sx={{ flexGrow: 1 }}>

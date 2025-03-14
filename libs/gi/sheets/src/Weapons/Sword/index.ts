@@ -94,6 +94,6 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   TravelersHandySword,
   UrakuMisugiri,
   WolfFang,
-  XiphosMoonlight,
+  XiphosMoonlight
 } as const
 export default sword

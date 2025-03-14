@@ -23,7 +23,7 @@ export class TagMapKeys {
         // Make sure `category` existed during compilation. Otherwise, it
         // would crash here, and this non-shaming text would be visible.
         offset,
-        ids: { [value]: word },
+        ids: { [value]: word }
       } = entry
       id[offset] |= word! // non-existent `value` is treated as zero
 
@@ -45,7 +45,7 @@ export class TagMapKeys {
         // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value]: word },
-        mask,
+        mask
       } = entry
       id[offset] |= word! // non-existent `value` is treated as zero
       maskArr[offset] |= mask
@@ -67,7 +67,7 @@ export class TagMapKeys {
         // would crash here, and this non-shaming text would be visible.
         offset,
         ids: { [value!]: word },
-        mask,
+        mask
       } = entry
       firstReplacedByte = Math.min(firstReplacedByte, offset)
       id[offset] &= ~mask

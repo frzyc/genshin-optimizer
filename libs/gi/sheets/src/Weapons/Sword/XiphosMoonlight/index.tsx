@@ -7,7 +7,7 @@ import {
   prod,
   subscript,
   target,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -23,7 +23,7 @@ const selfEnerRech_ = equal(
   prod(
     subscript(input.weapon.refinement, enerRech_arr, {
       unit: '%',
-      fixed: 3,
+      fixed: 3
     }),
     input.premod.eleMas
   )
@@ -40,17 +40,17 @@ const data = dataObjForWeaponSheet(
   key,
   {
     total: {
-      enerRech_: selfEnerRech_,
+      enerRech_: selfEnerRech_
     },
     teamBuff: {
       total: {
-        enerRech_: teamEnerRech_,
-      },
-    },
+        enerRech_: teamEnerRech_
+      }
+    }
   },
   {
     selfEnerRech_,
-    teamEnerRech_disp,
+    teamEnerRech_disp
   }
 )
 
@@ -60,9 +60,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: selfEnerRech_,
-        },
-      ],
+          node: selfEnerRech_
+        }
+      ]
     },
     {
       header: headerTemplate(key, st('teamBuff')),
@@ -71,11 +71,11 @@ const sheet: IWeaponSheet = {
         {
           node: infoMut(teamEnerRech_disp, {
             path: 'enerRech_',
-            isTeamBuff: true,
-          }),
-        },
-      ],
-    },
-  ],
+            isTeamBuff: true
+          })
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

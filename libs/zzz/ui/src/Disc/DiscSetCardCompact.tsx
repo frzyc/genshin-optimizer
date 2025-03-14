@@ -12,7 +12,7 @@ import { EmptyCompactCard } from '../util'
 import { DiscSetName } from './DiscTrans'
 
 export function DiscSetCardCompact({
-  discs,
+  discs
 }: {
   discs: Record<DiscSlotKey, ICachedDisc | undefined>
 }) {
@@ -39,7 +39,7 @@ export function DiscSetCardCompact({
       bgt="dark"
       sx={{
         height: '100%',
-        width: '100%',
+        width: '100%'
       }}
     >
       <Box component="div" sx={{ px: '8px', py: '6px' }}>
@@ -55,7 +55,7 @@ export function DiscSetCardCompact({
                 background: '#2B364D',
                 py: '16px',
                 px: '5px',
-                borderRadius: '12px',
+                borderRadius: '12px'
               }}
             >
               <Box
@@ -74,7 +74,7 @@ export function DiscSetCardCompact({
                   backgroundColor: '#46A046',
                   px: '10px',
                   py: '5px',
-                  fontWeight: '900',
+                  fontWeight: '900'
                 }}
               >
                 {count}pc

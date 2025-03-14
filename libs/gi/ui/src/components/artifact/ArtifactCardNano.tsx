@@ -2,7 +2,7 @@ import {
   BootstrapTooltip,
   ColorText,
   ConditionalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset, imgAssets } from '@genshin-optimizer/gi/assets'
@@ -13,7 +13,7 @@ import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
-  getMainStatDisplayStr,
+  getMainStatDisplayStr
 } from '@genshin-optimizer/gi/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import {
@@ -22,7 +22,7 @@ import {
   Chip,
   Typography,
   alpha,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
@@ -44,7 +44,7 @@ export function ArtifactCardNano({
   slotKey: pSlotKey,
   mainStatAssumptionLevel = 0,
   showLocation = false,
-  onClick,
+  onClick
 }: Data) {
   const art = useArtifact(artifactId)
   const database = useDatabase()
@@ -65,7 +65,7 @@ export function ArtifactCardNano({
           height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
-          py: 2,
+          py: 2
         }}
       >
         <Box
@@ -98,7 +98,7 @@ export function ArtifactCardNano({
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
         >
           <ArtifactTooltip art={art}>
@@ -117,7 +117,7 @@ export function ArtifactCardNano({
               opacity: 0.85,
               display: 'flex',
               justifyContent: 'space-between',
-              pointerEvents: 'none',
+              pointerEvents: 'none'
             }}
           >
             <Chip
@@ -143,8 +143,8 @@ export function ArtifactCardNano({
                 sx={{
                   overflow: 'visible',
                   '.MuiChip-label': {
-                    overflow: 'visible',
-                  },
+                    overflow: 'visible'
+                  }
                 }}
               />
             )}
@@ -157,7 +157,7 @@ export function ArtifactCardNano({
               bottom: 0,
               mb: 1,
               backgroundColor: color,
-              p: 1,
+              p: 1
             }}
             icon={
               <BootstrapTooltip

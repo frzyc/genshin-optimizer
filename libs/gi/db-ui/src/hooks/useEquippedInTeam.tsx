@@ -13,7 +13,7 @@ export function useEquippedInTeam(
   const database = useDatabase()
   const {
     teamCharId,
-    team: { loadoutData },
+    team: { loadoutData }
   } = useContext(TeamCharacterContext)
   const weaponUsedInLoadoutDatum = loadoutData?.find(
     (loadoutDatum) =>
@@ -46,6 +46,6 @@ export function useEquippedInTeam(
 
   return {
     weaponUsedInTeamCharKey,
-    artUsedInTeamCharKeys,
+    artUsedInTeamCharKeys
   }
 }

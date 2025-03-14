@@ -1,6 +1,6 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
@@ -11,7 +11,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -58,7 +58,7 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
   )
   const showingTextProps = {
     numShowing: relicsIdsToShow.length,
-    totalShowing: totalShowing,
+    totalShowing: totalShowing
   }
 
   return (

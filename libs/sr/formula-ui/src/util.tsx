@@ -3,7 +3,7 @@ import type {
   LightConeKey,
   NonTrailblazerCharacterKey,
   RelicSetKey,
-  TrailblazerGenderedKey,
+  TrailblazerGenderedKey
 } from '@genshin-optimizer/sr/consts'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 import type { ReactNode } from 'react'
@@ -37,6 +37,6 @@ export function trans(
     ),
     (strKey: string, values?: Record<string, string | number>) => (
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
-    ),
+    )
   ]
 }

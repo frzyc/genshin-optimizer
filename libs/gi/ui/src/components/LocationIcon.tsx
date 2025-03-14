@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material'
 import { CharIconSide, CharacterName } from './character'
 
 export function LocationIcon({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey | ''
 }) {

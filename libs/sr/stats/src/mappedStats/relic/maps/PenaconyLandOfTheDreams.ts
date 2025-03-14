@@ -9,8 +9,8 @@ let o = 1
 const dm = {
   2: {
     passive_enerRegen_: data_gen.setEffects[0].passiveStats.enerRegen_,
-    common_dmg_: data_gen.setEffects[0].otherStats[o++],
-  },
+    common_dmg_: data_gen.setEffects[0].otherStats[o++]
+  }
 } as const
 
 export default dm

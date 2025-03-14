@@ -11,7 +11,7 @@ import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 export function OptimizationTargetSelector({
   optTarget,
   setOptTarget,
-  buttonProps = {},
+  buttonProps = {}
 }: {
   optTarget?: Tag
   setOptTarget: (o: Tag) => void

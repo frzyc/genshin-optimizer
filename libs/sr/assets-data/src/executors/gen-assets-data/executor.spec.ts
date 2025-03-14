@@ -10,13 +10,13 @@ const context: ExecutorContext = {
   isVerbose: false,
   projectGraph: {
     nodes: {},
-    dependencies: {},
+    dependencies: {}
   },
   projectsConfigurations: {
     projects: {},
-    version: 2,
+    version: 2
   },
-  nxJsonConfiguration: {},
+  nxJsonConfiguration: {}
 }
 
 describe('Echo Executor', () => {

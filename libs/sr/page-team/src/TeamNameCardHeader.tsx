@@ -2,7 +2,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
-  TextFieldLazy,
+  TextFieldLazy
 } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
@@ -15,7 +15,7 @@ import {
   CardHeader,
   Divider,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -58,9 +58,9 @@ export default function TeamNameCardHeader() {
               display: 'flex',
               justifyContent: 'center',
               '&:hover': {
-                color: 'info.light',
+                color: 'info.light'
               },
-              py: 1,
+              py: 1
             }}
           >
             <Typography
@@ -70,7 +70,7 @@ export default function TeamNameCardHeader() {
                 gap: 1,
                 alignItems: 'center',
                 justifyContent: 'center',
-                textShadow: '#000 0 0 10px !important',
+                textShadow: '#000 0 0 10px !important'
               }}
             >
               <GroupsIcon />

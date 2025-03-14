@@ -4,7 +4,7 @@ import {
   allDiscSetKeys,
   allFactionKeys,
   allSpecialityKeys,
-  allWengineKeys,
+  allWengineKeys
 } from '@genshin-optimizer/zzz/consts'
 
 export const stats = [
@@ -30,7 +30,7 @@ export const stats = [
   'common_dmg_',
   'buff_',
   'resIgn_',
-  'shield_',
+  'shield_'
 ] as const
 
 export const flatAndPercentStats = [
@@ -40,7 +40,7 @@ export const flatAndPercentStats = [
   'impact',
   'anomProf',
   'anomMas',
-  'enerRegen',
+  'enerRegen'
 ] as const
 export const nonFlatAndPercentStats = stats.filter(
   (stat) =>
@@ -64,7 +64,7 @@ export const damageTypes = [
   'anomaly',
   'disorder',
   'aftershock',
-  'elemental',
+  'elemental'
 ] as const
 
 export const skillTypes = [
@@ -72,7 +72,7 @@ export const skillTypes = [
   'dodgeSkill',
   'specialSkill',
   'chainSkill',
-  'assistSkill',
+  'assistSkill'
 ] as const
 
 export const sheets = [
@@ -87,7 +87,7 @@ export const sheets = [
   'disc',
   'dyn',
   'enemy',
-  'custom',
+  'custom'
 ] as const
 
 export const members = [...allCharacterKeys] as const

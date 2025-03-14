@@ -1,14 +1,14 @@
 import {
   CardThemed,
   ColorText,
-  DropdownButton,
+  DropdownButton
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
 import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSubStatKeys,
   discSubstatRollData,
-  getDiscSubStatBaseVal,
+  getDiscSubStatBaseVal
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
@@ -20,7 +20,7 @@ import {
   MenuItem,
   Slider,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -31,7 +31,7 @@ export default function SubstatInput({
   rarity,
   index,
   disc,
-  setSubstat,
+  setSubstat
 }: {
   rarity: DiscRarityKey
   index: number
@@ -47,7 +47,7 @@ export default function SubstatInput({
   const marks = useMemo(
     () =>
       range(1, discSubstatRollData[rarity].numUpgrades + 1).map((i) => ({
-        value: i,
+        value: i
       })),
     [rarity]
   )
@@ -98,7 +98,7 @@ export default function SubstatInput({
           alignItems: 'center',
           overflow: 'visible',
           height: '100%',
-          width: '2em',
+          width: '2em'
         }}
       >
         {!!upgrades && (
@@ -114,7 +114,7 @@ export default function SubstatInput({
           display: 'flex',
           alignItems: 'center',
           overflow: 'visible',
-          height: '100%',
+          height: '100%'
         }}
       >
         <SliderWrapper
@@ -144,7 +144,7 @@ export default function SubstatInput({
           justifyContent: 'center',
           overflow: 'visible',
           height: '100%',
-          width: '4em',
+          width: '4em'
         }}
       >
         <Typography>
@@ -163,7 +163,7 @@ function SliderWrapper({
   setValue,
   marks,
   disabled = false,
-  valueLabelFormat,
+  valueLabelFormat
 }: {
   value: number
   setValue: (v: number) => void

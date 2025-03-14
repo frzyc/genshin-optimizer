@@ -2,7 +2,7 @@ import { DropdownButton, StarsDisplay } from '@genshin-optimizer/common/ui'
 import type { RarityKey } from '@genshin-optimizer/sr/consts'
 import {
   allRelicRarityKeys,
-  type RelicRarityKey,
+  type RelicRarityKey
 } from '@genshin-optimizer/sr/consts'
 import type { ButtonProps } from '@mui/material'
 import { MenuItem } from '@mui/material'
@@ -49,7 +49,7 @@ export function RelicRarityDropdown({
 }
 function StarNumDisplay({
   stars,
-  showNumber,
+  showNumber
 }: {
   stars: RarityKey
   showNumber?: boolean

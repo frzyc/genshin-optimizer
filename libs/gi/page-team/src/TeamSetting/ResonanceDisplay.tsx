@@ -1,7 +1,7 @@
 import {
   CardThemed,
   ColorText,
-  InfoTooltipInline,
+  InfoTooltipInline
 } from '@genshin-optimizer/common/ui'
 import type { Team } from '@genshin-optimizer/gi/db'
 import type { TeamCharacterContextObj } from '@genshin-optimizer/gi/db-ui'
@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next'
 export function ResonanceDisplay({
   teamId,
   team,
-  dataContextValue,
+  dataContextValue
 }: {
   teamId: string
   team: Team
@@ -34,8 +34,8 @@ export function ResonanceDisplay({
         teamId,
         team,
         teamCharId: '', // can be left blank since its only modifying team conditional
-        teamChar: {},
-      } as TeamCharacterContextObj),
+        teamChar: {}
+      }) as TeamCharacterContextObj,
     [team, teamId]
   )
 

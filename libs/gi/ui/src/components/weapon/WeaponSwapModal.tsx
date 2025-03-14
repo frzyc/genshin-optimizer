@@ -1,6 +1,6 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
@@ -8,18 +8,18 @@ import {
   ModalWrapper,
   ShowingAndSortOptionSelect,
   SolidToggleButtonGroup,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import {
   filterFunction,
   handleMultiSelect,
-  sortFunction,
+  sortFunction
 } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   RarityKey,
   WeaponKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import { allRarityKeys } from '@genshin-optimizer/gi/consts'
 import { initialWeapon } from '@genshin-optimizer/gi/db'
@@ -38,7 +38,7 @@ import {
   Skeleton,
   TextField,
   ToggleButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -47,13 +47,13 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   weaponFilterConfigs,
   weaponSortConfigs,
-  weaponSortMap,
+  weaponSortMap
 } from '../../util'
 import { CompareBuildWrapper } from '../build/CompareBuildWrapper'
 import { WeaponCard } from './WeaponCard'
@@ -68,7 +68,7 @@ export function WeaponSwapModal({
   onChangeId,
   weaponTypeKey,
   show,
-  onClose,
+  onClose
 }: {
   weaponId: string
   onChangeId: (id: string) => void
@@ -79,7 +79,7 @@ export function WeaponSwapModal({
   const { t } = useTranslation([
     'page_character',
     'page_weapon',
-    'weaponNames_gen',
+    'weaponNames_gen'
   ])
   const database = useDatabase()
   const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
@@ -131,7 +131,7 @@ export function WeaponSwapModal({
     deferredSearchTerm,
     database.weapons,
     weaponId,
-    dbDirty,
+    dbDirty
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(
@@ -150,7 +150,7 @@ export function WeaponSwapModal({
     numShowing: weaponIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_weapon',
+    namespace: 'page_weapon'
   }
   const [swapWeaponId, setSwapWeaponId] = useState('')
   const clickHandler = useCallback(() => {
@@ -232,7 +232,7 @@ export function WeaponSwapModal({
                   label={t('page_weapon:weaponName')}
                   sx={{ height: '100%' }}
                   InputProps={{
-                    sx: { height: '100%' },
+                    sx: { height: '100%' }
                   }}
                 />
               </Grid>
@@ -270,9 +270,9 @@ export function WeaponSwapModal({
                   sx={(theme) => ({
                     ...(weaponId === id && {
                       '> .MuiCard-root': {
-                        outline: `solid ${theme.palette.warning.main}`,
-                      },
-                    }),
+                        outline: `solid ${theme.palette.warning.main}`
+                      }
+                    })
                   })}
                 >
                   <WeaponCard

@@ -11,7 +11,7 @@ import { useZzzCalcContext } from '../../hooks'
 export function OptimizationTargetSelector({
   optTarget,
   setOptTarget,
-  buttonProps = {},
+  buttonProps = {}
 }: {
   optTarget?: Tag
   setOptTarget: (o: Tag) => void

@@ -6,7 +6,7 @@ export const allWeaponTypeKeys = [
   'claymore',
   'polearm',
   'bow',
-  'catalyst',
+  'catalyst'
 ] as const
 export type WeaponTypeKey = (typeof allWeaponTypeKeys)[number]
 
@@ -57,7 +57,7 @@ export const allWeaponSwordKeys = [
   'TravelersHandySword',
   'UrakuMisugiri',
   'WolfFang',
-  'XiphosMoonlight',
+  'XiphosMoonlight'
 ] as const
 export type WeaponSwordKey = (typeof allWeaponSwordKeys)[number]
 
@@ -100,7 +100,7 @@ export const allWeaponClaymoreKeys = [
   'WasterGreatsword',
   'Whiteblind',
   'WhiteIronGreatsword',
-  'WolfsGravestone',
+  'WolfsGravestone'
 ] as const
 export type WeaponClaymoreKey = (typeof allWeaponClaymoreKeys)[number]
 
@@ -139,7 +139,7 @@ export const allWeaponPolearmKeys = [
   'TheCatch',
   'VortexVanquisher',
   'WavebreakersFin',
-  'WhiteTassel',
+  'WhiteTassel'
 ] as const
 export type WeaponPoleArmKey = (typeof allWeaponPolearmKeys)[number]
 
@@ -185,7 +185,7 @@ export const allWeaponBowKeys = [
   'TheStringless',
   'TheViridescentHunt',
   'ThunderingPulse',
-  'WindblumeOde',
+  'WindblumeOde'
 ] as const
 export type WeaponBowKey = (typeof allWeaponBowKeys)[number]
 
@@ -233,7 +233,7 @@ export const allWeaponCatalystKeys = [
   'TwinNephrite',
   'WanderingEvenstar',
   'WaveridingWhirl',
-  'WineAndSong',
+  'WineAndSong'
 ] as const
 export type WeaponCatalystKey = (typeof allWeaponCatalystKeys)[number]
 
@@ -242,7 +242,7 @@ export const allWeaponKeys = [
   ...allWeaponClaymoreKeys,
   ...allWeaponPolearmKeys,
   ...allWeaponBowKeys,
-  ...allWeaponCatalystKeys,
+  ...allWeaponCatalystKeys
 ] as const
 export type WeaponKey =
   | WeaponSwordKey
@@ -256,7 +256,7 @@ export const weaponMaxLevel: Record<RarityKey, number> = {
   2: 70,
   3: 90,
   4: 90,
-  5: 90,
+  5: 90
 } as const
 
 export const weaponMaxAscension: Record<RarityKey, AscensionKey> = {
@@ -264,7 +264,7 @@ export const weaponMaxAscension: Record<RarityKey, AscensionKey> = {
   2: 4,
   3: 6,
   4: 6,
-  5: 6,
+  5: 6
 } as const
 
 export const allRefinementKeys = [1, 2, 3, 4, 5] as const
@@ -278,6 +278,6 @@ export const allWeaponSubstatKeys = [
   'eleMas',
   'enerRech_',
   'hp_',
-  'physical_dmg_',
+  'physical_dmg_'
 ] as const
 export type WeaponSubstatKey = (typeof allWeaponSubstatKeys)[number]

@@ -8,12 +8,12 @@ let o = 0
 
 const dm = {
   2: {
-    passive_physical_dmg_: data_gen.setEffects[0].passiveStats.physical_dmg_,
+    passive_physical_dmg_: data_gen.setEffects[0].passiveStats.physical_dmg_
   },
   4: {
     atk_: data_gen.setEffects[1].otherStats[o++],
-    stacks: data_gen.setEffects[1].otherStats[o++],
-  },
+    stacks: data_gen.setEffects[1].otherStats[o++]
+  }
 } as const
 
 export default dm

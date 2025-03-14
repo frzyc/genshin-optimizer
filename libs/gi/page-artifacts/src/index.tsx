@@ -1,12 +1,12 @@
 import {
   useBoolState,
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
@@ -15,13 +15,13 @@ import {
   AddArtInfo,
   ArtifactCard,
   ArtifactEditor,
-  InfoComponent,
+  InfoComponent
 } from '@genshin-optimizer/gi/ui'
 import {
   artifactFilterConfigs,
   artifactSortConfigs,
   artifactSortKeys,
-  artifactSortMap,
+  artifactSortMap
 } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import DifferenceIcon from '@mui/icons-material/Difference'
@@ -76,7 +76,7 @@ export default function PageArtifact() {
     const {
       sortType = artifactSortKeys[0],
       ascending = false,
-      filterOption,
+      filterOption
     } = deferredArtifactDisplayState
     const allArtifacts = database.arts.values
     const artifactIds = allArtifacts
@@ -91,7 +91,7 @@ export default function PageArtifact() {
     dbDirtyDeferred,
     database,
     sortConfigs,
-    filterConfigs,
+    filterConfigs
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(
@@ -111,14 +111,14 @@ export default function PageArtifact() {
     numShowing: artifactIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'artifact',
+    namespace: 'artifact'
   }
   const sortByButtonProps = {
     sortKeys: [...artifactSortKeys],
     value: sortType,
     onChange: (sortType) => database.displayArtifact.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayArtifact.set({ ascending }),
+    onChangeAsc: (ascending) => database.displayArtifact.set({ ascending })
   }
   return (
     <Box display="flex" flexDirection="column" gap={1}>

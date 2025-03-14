@@ -21,22 +21,22 @@ export function initialBuildStatus(): BuildStatus {
     tested: 0,
     failed: 0,
     skipped: 0,
-    total: 0,
+    total: 0
   }
 }
 
 const Monospace = styled('strong')({
-  fontFamily: 'monospace',
+  fontFamily: 'monospace'
 })
 
 const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 10,
-  borderRadius: 5,
+  borderRadius: 5
 }))
 export function BuildAlert({
   status: { type, tested, failed: _, skipped, total, startTime, finishTime },
   characterKey,
-  gender,
+  gender
 }: {
   status: BuildStatus
   characterKey: CharacterKey
@@ -105,8 +105,8 @@ export function BuildAlert({
       variant="filled"
       sx={{
         '& .MuiAlert-message': {
-          flexGrow: 1,
-        },
+          flexGrow: 1
+        }
       }}
     >
       {title}

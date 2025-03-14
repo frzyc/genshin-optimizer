@@ -4,13 +4,13 @@ import {
   CardThemed,
   ConditionalWrapper,
   ImgIcon,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import type { WenginePhaseKey } from '@genshin-optimizer/zzz/assets'
 import {
   specialityDefIcon,
   wengineAsset,
-  wenginePhaseIcon,
+  wenginePhaseIcon
 } from '@genshin-optimizer/zzz/assets'
 import type { PhaseKey } from '@genshin-optimizer/zzz/consts'
 import { rarityColor, type LocationKey } from '@genshin-optimizer/zzz/consts'
@@ -25,7 +25,7 @@ import {
   ClickAwayListener,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback } from 'react'
@@ -42,7 +42,7 @@ const wenginePhaseIconsMap: Record<PhaseKey, WenginePhaseKey> = {
   2: 'p2',
   3: 'p3',
   4: 'p4',
-  5: 'p5',
+  5: 'p5'
 }
 
 export function WengineCard({
@@ -50,7 +50,7 @@ export function WengineCard({
   onClick,
   onEdit,
   setLocation,
-  extraButtons,
+  extraButtons
 }: {
   wengineId: string
   onClick?: () => void
@@ -76,7 +76,7 @@ export function WengineCard({
     level = 0,
     phase = 1,
     location = '',
-    modification = 0,
+    modification = 0
   } = useWengine(wengineId) ?? {}
   if (!key)
     return (
@@ -102,7 +102,7 @@ export function WengineCard({
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          flexGrow: 1,
+          flexGrow: 1
         }}
       >
         <ConditionalWrapper
@@ -117,7 +117,7 @@ export function WengineCard({
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  paddingBottom: '0 !important',
+                  paddingBottom: '0 !important'
                 }}
               >
                 <ClickAwayListener onClickAway={onHide}>
@@ -135,8 +135,8 @@ export function WengineCard({
                       }
                       slotProps={{
                         popper: {
-                          disablePortal: true,
-                        },
+                          disablePortal: true
+                        }
                       }}
                     >
                       <Typography
@@ -167,7 +167,7 @@ export function WengineCard({
                     sx={{
                       width: 'auto',
                       float: 'right',
-                      height: '150px',
+                      height: '150px'
                     }}
                   />
                 </Box>
@@ -179,7 +179,7 @@ export function WengineCard({
                 >
                   <Typography
                     sx={{
-                      fontWeight: 'bold',
+                      fontWeight: 'bold'
                     }}
                     variant="h6"
                   >
@@ -211,7 +211,7 @@ export function WengineCard({
                     display: 'flex',
                     alignItems: 'center',
                     flexGrow: 1,
-                    fontWeight: 'bold',
+                    fontWeight: 'bold'
                   }}
                 >
                   <StatDisplay statKey={'atk'} />
@@ -235,7 +235,7 @@ export function WengineCard({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Box sx={{ flexGrow: 1 }}>

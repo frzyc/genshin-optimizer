@@ -2,12 +2,12 @@ import type { GeneralAutocompleteProps } from '@genshin-optimizer/common/ui'
 import {
   GeneralAutocomplete,
   ImgIcon,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
-  ArtifactSetKey,
+  ArtifactSetKey
 } from '@genshin-optimizer/gi/consts'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
 import type { AutocompleteRenderGroupParams } from '@mui/material'
@@ -38,7 +38,7 @@ export function ArtifactSetAutocomplete({
           sets.map((set) => ({
             key: set,
             label: t(`artifactNames_gen:${set}`),
-            grouper: +rarity as ArtifactRarity,
+            grouper: +rarity as ArtifactRarity
           }))
         )
         .sort(sortByRarityAndName),

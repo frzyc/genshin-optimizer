@@ -13,7 +13,7 @@ import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 export function LoadoutHeaderContent({
   teamCharId,
   showSetting = false,
-  children,
+  children
 }: {
   teamCharId: string
   showSetting?: boolean
@@ -27,7 +27,7 @@ export function LoadoutHeaderContent({
     buildIds,
     buildTcIds,
     optConfigId,
-    customMultiTargets,
+    customMultiTargets
   } = database.teamChars.get(teamCharId)!
   const { optimizationTarget } = useOptConfig(optConfigId)!
 

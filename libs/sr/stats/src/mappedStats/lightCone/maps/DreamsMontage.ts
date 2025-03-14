@@ -9,7 +9,7 @@ let o = 1
 const dm = {
   passive_spd_: data_gen.superimpose.passiveStats.spd_,
   energy: data_gen.superimpose.otherStats[o++],
-  maxTriggers: data_gen.superimpose.otherStats[o++][1],
+  maxTriggers: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

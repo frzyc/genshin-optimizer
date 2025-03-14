@@ -63,7 +63,7 @@ export class CharacterOptManager extends DataManager<
           src,
           dst,
           condKey,
-          condValue,
+          condValue
         }
       })
       .filter(notEmpty)
@@ -89,7 +89,7 @@ export class CharacterOptManager extends DataManager<
       conditionals,
       bonusStats,
       statConstraints,
-      optConfigId,
+      optConfigId
     }
     return charOpt
   }
@@ -131,7 +131,7 @@ export class CharacterOptManager extends DataManager<
           src,
           dst,
           condKey,
-          condValue,
+          condValue
         })
       } else {
         const cond = conditionals[condIndex]
@@ -183,7 +183,7 @@ function defOptTarget(key: CharacterKey): CharOpt['target'] {
     et: 'own',
     qt: 'final',
     q: 'atk',
-    sheet: 'agg',
+    sheet: 'agg'
   }
 }
 export function initialCharOpt(key: CharacterKey): CharOpt {
@@ -191,6 +191,6 @@ export function initialCharOpt(key: CharacterKey): CharOpt {
     target: defOptTarget(key),
     conditionals: [],
     bonusStats: [],
-    statConstraints: [],
+    statConstraints: []
   }
 }

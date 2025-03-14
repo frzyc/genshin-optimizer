@@ -5,7 +5,7 @@ import {
   type AttributeKey,
   type CharacterKey,
   type CharacterRarityKey,
-  type SpecialityKey,
+  type SpecialityKey
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
 import {
@@ -14,7 +14,7 @@ import {
   characterRarityMap,
   coreStatMap,
   factionMap,
-  specialityMap,
+  specialityMap
 } from './consts'
 const PERCENT_SCALING = 10000
 const FLAT_SCALING = 100
@@ -213,13 +213,13 @@ export const charactersDetailedJSONData = Object.fromEntries(
           anomMas_base: raw.Stats.ElementAbnormalPower,
           anomProf: raw.Stats.ElementMystery,
           impact: raw.Stats.BreakStun,
-          enerRegen: raw.Stats.SpRecover / FLAT_SCALING,
+          enerRegen: raw.Stats.SpRecover / FLAT_SCALING
         },
         promotionStats: Object.values(raw.Level).map(
           ({ HpMax, Attack, Defence }) => ({
             hp: HpMax,
             atk: Attack,
-            def: Defence,
+            def: Defence
           })
         ),
         coreStats: Object.values(raw.ExtraLevel).map(
@@ -229,7 +229,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
                 coreStatMap[Name],
                 isPercentStat(coreStatMap[Name])
                   ? Value / PERCENT_SCALING
-                  : Value,
+                  : Value
               ])
             ) as Partial<
               Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
@@ -264,20 +264,20 @@ export const charactersDetailedJSONData = Object.fromEntries(
                           param2.FeverRecoveryGrowth / PERCENT_SCALING,
                         AttributeInfliction:
                           param2.AttributeInfliction / FLAT_SCALING,
-                        SpConsume: param2.SpConsume / FLAT_SCALING,
-                      })),
+                        SpConsume: param2.SpConsume / FLAT_SCALING
+                      }))
                     }
                   }
                   return param
-                }),
+                })
               }
             }
             return desc
-          }),
+          })
         })),
         skillList: raw.SkillList,
         cores: raw.Passive,
-        mindscapes: raw.Talent,
+        mindscapes: raw.Talent
       }
       return [name, data] as const
     })

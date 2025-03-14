@@ -7,7 +7,7 @@ import type {
   RefinementKey,
   SubstatKey,
   SubstatTypeKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 export type BuildTcArtifactSlot = {

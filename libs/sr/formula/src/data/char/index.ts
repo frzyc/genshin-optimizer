@@ -134,6 +134,6 @@ const data: TagMapNodeEntries[] = [
   TrailblazerPhysical,
   TrailblazerFire,
   TrailblazerImaginary,
-  TrailblazerIce,
+  TrailblazerIce
 ]
 export default data.flat()

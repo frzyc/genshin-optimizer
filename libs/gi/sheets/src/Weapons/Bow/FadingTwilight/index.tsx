@@ -21,14 +21,14 @@ const state_dmg_dict = {
   dawnblaze: subscript(
     input.weapon.refinement,
     [-1, 0.14, 0.175, 0.21, 0.245, 0.28]
-  ),
+  )
 }
 const state_dmg_ = lookup(condState, state_dmg_dict, naught)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    all_dmg_: state_dmg_,
-  },
+    all_dmg_: state_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -43,11 +43,11 @@ const sheet: IWeaponSheet = {
           state,
           {
             name: trm(`states.${state}`),
-            fields: [{ node: state_dmg_ }],
-          },
+            fields: [{ node: state_dmg_ }]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

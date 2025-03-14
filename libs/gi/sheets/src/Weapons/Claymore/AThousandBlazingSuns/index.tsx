@@ -5,7 +5,7 @@ import {
   percent,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -22,7 +22,7 @@ const atk_arr = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 const nsFactor = percent(0.75)
 
 const base_critDMG_ = subscript(input.weapon.refinement, critDMG_arr, {
-  unit: '%',
+  unit: '%'
 })
 const critDMG1_ = equal(condPassive, 'on', base_critDMG_, { path: 'critDMG_' })
 const critDMG2_ = equal(
@@ -43,8 +43,8 @@ const atk2_ = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     critDMG_: sum(critDMG1_, critDMG2_),
-    atk_: sum(atk1_, atk2_),
-  },
+    atk_: sum(atk1_, atk2_)
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -58,19 +58,19 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: critDMG1_,
+              node: critDMG1_
             },
             {
-              node: atk1_,
+              node: atk1_
             },
             {
               text: stg('duration'),
               value: 6,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       value: condNightsoul,
@@ -82,20 +82,20 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: critDMG2_,
+              node: critDMG2_
             },
             {
-              node: atk2_,
+              node: atk2_
             },
             {
               text: stg('duration'),
               value: 6,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

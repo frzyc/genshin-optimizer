@@ -5,7 +5,7 @@ import {
   greaterEq,
   greaterEqStr,
   input,
-  percent,
+  percent
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -31,17 +31,17 @@ const [set4Shield, set4ShieldInactive] = nonStackBuff(
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    hp_,
+    hp_
   },
   teamBuff: {
     premod: {
       atk_: set4Atk,
-      shield_: set4Shield,
+      shield_: set4Shield
     },
     nonStacking: {
-      totm4: set4TallyWrite,
-    },
-  },
+      totm4: set4TallyWrite
+    }
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -58,27 +58,27 @@ const sheet: SetEffectSheet = {
           cast: {
             fields: [
               {
-                node: set4Atk,
+                node: set4Atk
               },
               {
-                node: set4Shield,
+                node: set4Shield
               },
               {
-                node: set4AtkInactive,
+                node: set4AtkInactive
               },
               {
-                node: set4ShieldInactive,
+                node: set4ShieldInactive
               },
               {
                 text: stg('duration'),
                 value: 3,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                unit: 's'
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

@@ -88,6 +88,6 @@ const data = {
   TheWondrousBananAmusementPark,
   ThiefOfShootingMeteor,
   WastelanderOfBanditryDesert,
-  WatchmakerMasterOfDreamMachinations,
+  WatchmakerMasterOfDreamMachinations
 } as const
 export default data

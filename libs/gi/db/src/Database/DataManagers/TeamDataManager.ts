@@ -2,17 +2,17 @@ import {
   deepClone,
   objKeyMap,
   objMap,
-  range,
+  range
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-  MainStatKey,
+  MainStatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   allElementWithPhyKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
@@ -60,7 +60,7 @@ export const defLoadoutExportSetting = (): LoadoutExportSetting => ({
   convertEquipped: false,
   convertbuilds: [],
   convertTcBuilds: [],
-  exportCustomMultiTarget: [],
+  exportCustomMultiTarget: []
 })
 export type LoadoutDataExportSetting = Array<LoadoutExportSetting>
 export class TeamDataManager extends DataManager<
@@ -91,7 +91,7 @@ export class TeamDataManager extends DataManager<
       enemyOverride,
       conditional,
       loadoutData,
-      lastEdit,
+      lastEdit
     } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
@@ -133,7 +133,7 @@ export class TeamDataManager extends DataManager<
           compare,
           compareType,
           compareBuildId,
-          compareBuildTcId,
+          compareBuildTcId
         } = loadoutDatum
         const teamChar = this.database.teamChars.get(teamCharId)
         if (!teamChar) return undefined
@@ -183,7 +183,7 @@ export class TeamDataManager extends DataManager<
           compare,
           compareType,
           compareBuildId,
-          compareBuildTcId,
+          compareBuildTcId
         } as LoadoutDatum
       })
 
@@ -203,7 +203,7 @@ export class TeamDataManager extends DataManager<
       enemyOverride,
       conditional,
       loadoutData,
-      lastEdit,
+      lastEdit
     }
   }
   new(value: Partial<Team> = {}): string {
@@ -238,7 +238,7 @@ export class TeamDataManager extends DataManager<
             loadoutData?.teamCharId,
             loadoutDataExportSetting[i]
           )
-      ),
+      )
     }
   }
   import(data: object): string {
@@ -251,9 +251,9 @@ export class TeamDataManager extends DataManager<
         loadoutData: loadoutData.map(
           (obj) =>
             obj && {
-              teamCharId: this.database.teamChars.import(obj),
+              teamCharId: this.database.teamChars.import(obj)
             }
-        ),
+        )
       } as Team)
     )
       return ''
@@ -283,7 +283,7 @@ export class TeamDataManager extends DataManager<
   getLoadoutWeaponId({
     buildType,
     buildId,
-    teamCharId,
+    teamCharId
   }: LoadoutDatum): string | undefined {
     return this.#getWeaponId(teamCharId, buildType, buildId)
   }
@@ -332,7 +332,7 @@ export class TeamDataManager extends DataManager<
         ...buildTc.weapon,
         location: charKeyToLocCharKey(teamChar.key),
         lock: false,
-        id: 'invalid',
+        id: 'invalid'
       }
     }
     return (
@@ -360,7 +360,7 @@ export class TeamDataManager extends DataManager<
 
       team.loadoutData[loadoutDataInd]! = {
         ...team.loadoutData[loadoutDataInd]!,
-        ...data,
+        ...data
       }
     })
   }
@@ -371,7 +371,7 @@ export class TeamDataManager extends DataManager<
   getLoadoutArtifactIds({
     buildType,
     buildId,
-    teamCharId,
+    teamCharId
   }: LoadoutDatum): Record<ArtifactSlotKey, string | undefined> {
     return this.#getArtifactIds(teamCharId, buildType, buildId)
   }
@@ -426,22 +426,25 @@ export class TeamDataManager extends DataManager<
         mains: {
           sands: buildTc.artifact.slots.sands.statKey,
           goblet: buildTc.artifact.slots.goblet.statKey,
-          circlet: buildTc.artifact.slots.circlet.statKey,
-        },
+          circlet: buildTc.artifact.slots.circlet.statKey
+        }
       }
     }
     const artifacts = this.getLoadoutArtifacts(loadoutDatum)
     return {
-      setNum: Object.values(artifacts).reduce((acc, art) => {
-        if (!art) return acc
-        acc[art.setKey] = (acc[art.setKey] ?? 0) + 1
-        return acc
-      }, {} as Exclude<ArtifactData['setNum'], undefined>),
+      setNum: Object.values(artifacts).reduce(
+        (acc, art) => {
+          if (!art) return acc
+          acc[art.setKey] = (acc[art.setKey] ?? 0) + 1
+          return acc
+        },
+        {} as Exclude<ArtifactData['setNum'], undefined>
+      ),
       mains: {
         sands: artifacts.sands?.mainStatKey,
         goblet: artifacts.goblet?.mainStatKey,
-        circlet: artifacts.circlet?.mainStatKey,
-      },
+        circlet: artifacts.circlet?.mainStatKey
+      }
     }
   }
 

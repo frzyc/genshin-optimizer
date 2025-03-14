@@ -28,7 +28,7 @@ function getRolls(
     fastValue: 0,
     fastString: '',
     rolls: [],
-    badChildCount: 0,
+    badChildCount: 0
   }
 
   const allRolls = [root]
@@ -58,7 +58,7 @@ function getRolls(
         fastValue,
         fastString,
         rolls: [...rolls, i],
-        badChildCount: 0,
+        badChildCount: 0
       }
 
       current[i] = newEntry
@@ -131,7 +131,7 @@ function getRolls(
   return Object.fromEntries(
     Object.entries(outputRolls).map(([key, value]) => [
       key,
-      value.map((roll) => roll.rolls),
+      value.map((roll) => roll.rolls)
     ])
   )
 }
@@ -143,10 +143,10 @@ export const artifactSubstatRollData = Object.fromEntries(
       Object.entries(artifactSubstatData[parseInt(rarity)]).map(
         ([statKey, rolls]) => [
           statKey,
-          getRolls(statKey, rolls as number[], maxRolls, rarity),
+          getRolls(statKey, rolls as number[], maxRolls, rarity)
         ]
       )
-    ),
+    )
   ])
 )
 

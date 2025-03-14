@@ -87,7 +87,7 @@ export class ZzzDatabase extends Database {
       this.charMeta,
       this.generatedBuildList,
       this.optConfigs,
-      this.charOpts,
+      this.charOpts
     ] as const
   }
   get dataEntries() {
@@ -103,7 +103,7 @@ export class ZzzDatabase extends Database {
       format: 'ZOD',
       dbVersion: currentDBVersion,
       source: zzzSource,
-      version: 1,
+      version: 1
     }
     this.dataManagers.map((dm) => dm.exportZOD(zod))
     this.dataEntries.map((de) => de.exportZOD(zod))
@@ -140,7 +140,7 @@ export class ZzzDatabase extends Database {
       ),
       this.discs.followAny((_key, reason, value) =>
         result.discs[reason].push(value)
-      ),
+      )
       // TODO:
       /* this.wengines.followAny((_key, reason, value) =>
         result.wengines[reason].push(value)

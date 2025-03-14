@@ -8,7 +8,7 @@ import {
   naught,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -45,8 +45,8 @@ const atk_2 = lookup(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    atk_: sum(atk_, atk_2),
-  },
+    atk_: sum(atk_, atk_2)
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -55,9 +55,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: atk_,
-        },
-      ],
+          node: atk_
+        }
+      ]
     },
     {
       value: condMelusines,
@@ -68,11 +68,11 @@ const sheet: IWeaponSheet = {
         name: `${melusines}`,
         fields: [
           {
-            node: atk_2,
-          },
-        ],
-      })),
-    },
-  ],
+            node: atk_2
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

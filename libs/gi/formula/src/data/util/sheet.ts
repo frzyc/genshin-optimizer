@@ -3,7 +3,7 @@ import type {
   ArtifactSetKey,
   ElementKey,
   ElementWithPhyKey,
-  MoveKey,
+  MoveKey
 } from '@genshin-optimizer/gi/consts'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
@@ -109,7 +109,7 @@ function registerFormula(
     listing.add(
       listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
     ),
-    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
+    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value }))
   ]
 }
 

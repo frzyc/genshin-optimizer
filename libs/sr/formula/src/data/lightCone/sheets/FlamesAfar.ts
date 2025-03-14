@@ -7,7 +7,7 @@ import {
   own,
   ownBuff,
   percent,
-  registerBuff,
+  registerBuff
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
@@ -28,7 +28,7 @@ const sheet = registerLightCone(
     'healing',
     cmpGE(lcCount, 1, prod(own.final.hp, percent(dm.heal))),
     {
-      cond: cmpGE(lcCount, 1, 'infer', ''),
+      cond: cmpGE(lcCount, 1, 'infer', '')
     }
   ),
 

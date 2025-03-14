@@ -4,7 +4,7 @@ import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
 import {
   getRelicInterpolateObject,
-  mappedStats,
+  mappedStats
 } from '@genshin-optimizer/sr/stats'
 import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
 import { trans } from '../../util'
@@ -35,9 +35,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('setEffects.2', getRelicInterpolateObject(key, 2)),
-      },
-    ],
-  },
+        text: chg('setEffects.2', getRelicInterpolateObject(key, 2))
+      }
+    ]
+  }
 }
 export default sheet

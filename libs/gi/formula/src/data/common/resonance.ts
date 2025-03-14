@@ -6,7 +6,7 @@ const count = team.common.count
 
 export const {
   nearbyDendro1, // Burning, Quicken, Bloom
-  nearbyDendro2, // Aggravate, Spread, Hyperbloom, Burgeon
+  nearbyDendro2 // Aggravate, Spread, Hyperbloom, Burgeon
 } = allBoolConditionals('reso', 'dst')
 
 export default register(

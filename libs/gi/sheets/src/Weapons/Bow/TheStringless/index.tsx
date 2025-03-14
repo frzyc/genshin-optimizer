@@ -14,8 +14,8 @@ const burst_dmg_ = subscript(input.weapon.refinement, refinementVals)
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_,
-    burst_dmg_,
-  },
+    burst_dmg_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -23,13 +23,13 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: skill_dmg_,
+          node: skill_dmg_
         },
         {
-          node: burst_dmg_,
-        },
-      ],
-    },
-  ],
+          node: burst_dmg_
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

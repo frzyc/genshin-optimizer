@@ -4,7 +4,7 @@ import {
   dynTag,
   lookup,
   prod,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import { enemy, own, ownBuff, percent } from '../util'
@@ -18,7 +18,7 @@ const data: TagMapNodeEntries = [
     dynTag(prod(own.dmg.out, own.dmg.critMulti, own.dmg.inDmg), {
       ele,
       amp,
-      cata /* `move` is fixed */,
+      cata /* `move` is fixed */
     })
   ),
   ownBuff.formula.shield.add(
@@ -69,7 +69,7 @@ const data: TagMapNodeEntries = [
           enemy.reaction.amp,
           { melt: 'melt', vaporize: 'vaporize' },
           ''
-        ),
+        )
       },
       ''
     )
@@ -79,10 +79,10 @@ const data: TagMapNodeEntries = [
       own.prep.ele,
       {
         dendro: cmpEq(enemy.reaction.cata, 'spread', 'spread', ''),
-        electro: cmpEq(enemy.reaction.cata, 'aggravate', 'aggravate', ''),
+        electro: cmpEq(enemy.reaction.cata, 'aggravate', 'aggravate', '')
       },
       ''
     )
-  ),
+  )
 ]
 export default data

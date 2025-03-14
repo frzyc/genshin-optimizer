@@ -8,7 +8,7 @@ import {
   DBMetaEntry,
   DisplayCharacterEntry,
   DisplayLightConeEntry,
-  DisplayRelicEntry,
+  DisplayRelicEntry
 } from './DataEntries/'
 import {
   BuildDataManager,
@@ -19,7 +19,7 @@ import {
   LightConeDataManager,
   OptConfigDataManager,
   RelicDataManager,
-  TeamDataManager,
+  TeamDataManager
 } from './DataManagers/'
 import { CharacterOptManager } from './DataManagers/CharacterOptManager'
 import type { ImportResult } from './exim'
@@ -27,7 +27,7 @@ import { newImportResult } from './exim'
 import {
   currentDBVersion,
   migrateSr as migrateSROD,
-  migrateStorage,
+  migrateStorage
 } from './migrate'
 export class SroDatabase extends Database {
   relics: RelicDataManager
@@ -113,7 +113,7 @@ export class SroDatabase extends Database {
       this.charMeta,
       this.builds,
       this.teams,
-      this.charOpts,
+      this.charOpts
     ] as const
   }
   get dataEntries() {
@@ -121,7 +121,7 @@ export class SroDatabase extends Database {
       this.dbMeta,
       this.displayCharacter,
       this.displayLightCone,
-      this.displayRelic,
+      this.displayRelic
     ] as const
   }
 
@@ -138,7 +138,7 @@ export class SroDatabase extends Database {
       format: 'SROD',
       dbVersion: currentDBVersion,
       source: SroSource,
-      version: 1,
+      version: 1
     }
     this.dataManagers.map((dm) => dm.exportSROD(srod))
     this.dataEntries.map((de) => de.exportSROD(srod))
@@ -177,7 +177,7 @@ export class SroDatabase extends Database {
       ),
       this.lightCones.followAny((_key, reason, value) =>
         result.lightCones[reason].push(value)
-      ),
+      )
     ]
 
     this.dataManagers.map((dm) => dm.importSROD(srod, result))

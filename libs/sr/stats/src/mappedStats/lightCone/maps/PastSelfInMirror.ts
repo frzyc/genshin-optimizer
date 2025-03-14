@@ -11,7 +11,7 @@ const dm = {
   common_dmg_: data_gen.superimpose.otherStats[o++],
   duration: data_gen.superimpose.otherStats[o++][1],
   brEffect_threshold: data_gen.superimpose.otherStats[o++][1],
-  energy: data_gen.superimpose.otherStats[o++],
+  energy: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

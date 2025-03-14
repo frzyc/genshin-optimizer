@@ -5,7 +5,7 @@ import type { GeneratedBuild } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { EquipRow } from '@genshin-optimizer/sr/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -38,7 +38,7 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
               sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
-                gap: 1,
+                gap: 1
               }}
             >
               <Typography>
@@ -59,7 +59,7 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
 export default GeneratedBuildsDisplay
 
 function EquipBtn({
-  build: { relicIds, lightConeId },
+  build: { relicIds, lightConeId }
 }: {
   build: GeneratedBuild
 }) {

@@ -4,7 +4,7 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
 import { rarityDefIcon, wengineAsset } from '@genshin-optimizer/zzz/assets'
@@ -24,7 +24,7 @@ import {
   Divider,
   Grid,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -46,7 +46,7 @@ export function WengineEditor({
   wengineId: propWengineId,
   footer = false,
   onClose,
-  extraButtons,
+  extraButtons
 }: WengineStatsEditorCardProps) {
   const { t } = useTranslation(['page_wengine'])
   const { database } = useDatabaseContext()
@@ -58,7 +58,7 @@ export function WengineEditor({
     modification = 0,
     lock,
     location = '',
-    id,
+    id
   } = wengine ?? {}
   const wengineStat = key ? getWengineStat(key) : undefined
   const wengineType = wengineStat?.type
@@ -124,7 +124,7 @@ export function WengineEditor({
                           maxWidth: 256,
                           width: '100%',
                           height: 'auto',
-                          borderRadius: 1,
+                          borderRadius: 1
                         }}
                       />
                       <IconButton
@@ -136,7 +136,7 @@ export function WengineEditor({
                           position: 'absolute',
                           right: 0,
                           bottom: 0,
-                          zIndex: 2,
+                          zIndex: 2
                         }}
                       >
                         {lock ? <Lock /> : <LockOpen />}
@@ -213,7 +213,7 @@ export function WengineEditor({
                           display: 'flex',
                           alignItems: 'center',
                           flexGrow: 1,
-                          fontWeight: 'bold',
+                          fontWeight: 'bold'
                         }}
                       >
                         <Typography
@@ -223,7 +223,7 @@ export function WengineEditor({
                             display: 'flex',
                             alignItems: 'center',
                             flexGrow: 1,
-                            fontWeight: 'bold',
+                            fontWeight: 'bold'
                           }}
                         >
                           <StatDisplay statKey={'atk'} />

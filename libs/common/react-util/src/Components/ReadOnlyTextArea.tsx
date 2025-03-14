@@ -4,10 +4,10 @@ const TextArea = styled('textarea')({
   width: '100%',
   fontFamily: 'monospace',
   resize: 'vertical',
-  minHeight: '5em',
+  minHeight: '5em'
 })
 export function ReadOnlyTextArea({
-  value,
+  value
 }: {
   value: string | number | string[]
 }) {

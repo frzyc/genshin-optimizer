@@ -4,7 +4,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { st, stg } from '../../../SheetUtil'
@@ -34,8 +34,8 @@ const data = dataObjForWeaponSheet(
   {
     premod: {
       normal_dmg_,
-      charged_dmg_,
-    },
+      charged_dmg_
+    }
   },
   { heal }
 )
@@ -45,16 +45,16 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: normal_dmg_,
+          node: normal_dmg_
         },
         {
-          node: charged_dmg_,
+          node: charged_dmg_
         },
         {
-          node: infoMut(heal, { name: stg('healing'), variant: 'heal' }),
-        },
-      ],
-    },
-  ],
+          node: infoMut(heal, { name: stg('healing'), variant: 'heal' })
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

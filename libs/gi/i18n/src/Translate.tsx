@@ -21,7 +21,7 @@ const textComponents = {
   shattered: <ColorText color="shattered" />,
   bloom: <ColorText color="bloom" />,
   burgeon: <ColorText color="burgeon" />,
-  hyperbloom: <ColorText color="hyperbloom" />,
+  hyperbloom: <ColorText color="hyperbloom" />
 }
 
 const badgeComponents = {
@@ -42,7 +42,7 @@ const badgeComponents = {
   shattered: <SqBadge color="shattered" />,
   bloom: <SqBadge color="bloom" />,
   burgeon: <SqBadge color="burgeon" />,
-  hyperbloom: <SqBadge color="hyperbloom" />,
+  hyperbloom: <SqBadge color="hyperbloom" />
 }
 
 export function Translate({
@@ -50,7 +50,7 @@ export function Translate({
   key18,
   values,
   children,
-  useBadge,
+  useBadge
 }: {
   ns: string
   key18: string

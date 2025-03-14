@@ -6,7 +6,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -33,8 +33,8 @@ const all_dmg_ = equal(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    all_dmg_,
-  },
+    all_dmg_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -49,11 +49,11 @@ const sheet: IWeaponSheet = {
           i,
           {
             name: st('hits', { count: i }),
-            fields: [{ node: atk_ }, { node: all_dmg_ }],
-          },
+            fields: [{ node: atk_ }, { node: all_dmg_ }]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

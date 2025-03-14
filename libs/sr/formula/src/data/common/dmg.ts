@@ -35,8 +35,8 @@ const data: TagMapNodeEntries = [
     lookup(own.common.critMode, {
       crit: sum(percent(1), own.final.crit_dmg_),
       nonCrit: percent(1),
-      avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
+      avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_))
     })
-  ),
+  )
 ]
 export default data

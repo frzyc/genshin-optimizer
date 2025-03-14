@@ -9,7 +9,7 @@ let o = 0
 const dm = {
   atk_: data_gen.superimpose.otherStats[o++],
   crit_dmg_: data_gen.superimpose.otherStats[o++],
-  enerRegen_: data_gen.superimpose.otherStats[o++],
+  enerRegen_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

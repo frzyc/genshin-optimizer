@@ -16,6 +16,6 @@ export const charSheet = {
     wind_dmg_: '6606492075145117353', //  "DMG Boost: Wind",
     quantum_dmg_: '9196243449136572920', // "DMG Boost: Quantum"
     imaginary_dmg_: '5193172221868884154', //  "DMG Boost: Imaginary",
-    brEffect_: '10557455392766315121', //  "Break Effect Boost"
-  },
+    brEffect_: '10557455392766315121' //  "Break Effect Boost"
+  }
 }

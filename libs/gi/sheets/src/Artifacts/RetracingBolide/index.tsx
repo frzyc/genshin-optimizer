@@ -27,8 +27,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     shield_: set2,
     normal_dmg_: set4NA,
-    charged_dmg_: set4CA,
-  },
+    charged_dmg_: set4CA
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -44,16 +44,16 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: set4NA,
+                node: set4NA
               },
               {
-                node: set4CA,
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                node: set4CA
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

@@ -1,6 +1,6 @@
 import type {
   DiscMainStatKey,
-  DiscSubStatKey,
+  DiscSubStatKey
 } from '@genshin-optimizer/zzz/consts'
 import { useEffect, useRef, useState } from 'react'
 
@@ -13,7 +13,7 @@ export const allRollColorKeys = [
   'roll3',
   'roll4',
   'roll5',
-  'roll6',
+  'roll6'
 ] as const
 export type RollColorKey = (typeof allRollColorKeys)[number]
 
@@ -42,7 +42,7 @@ export function useSpinner() {
     const rect = (e as any).target.getBoundingClientRect() as DOMRect
     center.current = {
       x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2,
+      y: rect.top + rect.height / 2
     }
     dragging.current = true
     lastAngle.current = Math.atan2(
@@ -98,6 +98,6 @@ export function useSpinner() {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-    isDragging: dragging.current,
+    isDragging: dragging.current
   }
 }

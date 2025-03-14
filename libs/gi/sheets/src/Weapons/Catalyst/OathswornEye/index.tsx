@@ -15,8 +15,8 @@ const enerRech_ = equal('skillBurst', condSkillBurst, refineVal)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    enerRech_,
-  },
+    enerRech_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -30,12 +30,12 @@ const sheet: IWeaponSheet = {
         skillBurst: {
           fields: [
             {
-              node: enerRech_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: enerRech_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

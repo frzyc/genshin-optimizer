@@ -31,11 +31,11 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      normal_dmg_: afterSkill_normal_dmg_,
-    },
+      normal_dmg_: afterSkill_normal_dmg_
+    }
   },
   {
-    afterSkill_normal_dmg_,
+    afterSkill_normal_dmg_
   }
 )
 
@@ -50,17 +50,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: afterSkill_normal_dmg_,
+              node: afterSkill_normal_dmg_
             },
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

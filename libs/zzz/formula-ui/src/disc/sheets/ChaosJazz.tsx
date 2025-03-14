@@ -19,9 +19,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc2'),
-      },
-    ],
+        text: chg('desc2')
+      }
+    ]
   },
   4: {
     title: <Set4Display />,
@@ -29,14 +29,14 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc4'),
+        text: chg('desc4')
       },
       {
         type: 'fields',
         fields: [
           TagToTagField(buff.set4_passive_fire_dmg_.tag),
-          TagToTagField(buff.set4_passive_electric_dmg_.tag),
-        ],
+          TagToTagField(buff.set4_passive_electric_dmg_.tag)
+        ]
       },
       {
         type: 'conditional',
@@ -46,16 +46,16 @@ const sheet: UISheet<'2' | '4'> = {
           fields: [
             {
               title: 'EX Special Attack DMG', // TODO: L10n
-              fieldRef: buff.set4_off_field_special_dmg_.tag,
+              fieldRef: buff.set4_off_field_special_dmg_.tag
             },
             {
               title: 'Assist Attack Attack DMG', // TODO: L10n
-              fieldRef: buff.set4_off_field_assist_dmg_.tag,
-            },
-          ],
-        },
-      },
-    ],
-  },
+              fieldRef: buff.set4_off_field_assist_dmg_.tag
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
 export default sheet

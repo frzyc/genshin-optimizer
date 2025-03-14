@@ -9,7 +9,7 @@ import {
   greaterEqStr,
   input,
   percent,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -34,20 +34,20 @@ const set4TallyWrite = greaterEqStr(
 const set4Nodes = Object.fromEntries(
   absorbableEle.map((e) => [
     `${e}_dmg_`,
-    nonStackBuff('ap4', `${e}_dmg_`, equal(condNode, e, percent(0.35))),
+    nonStackBuff('ap4', `${e}_dmg_`, equal(condNode, e, percent(0.35)))
   ])
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    geo_dmg_: set2,
+    geo_dmg_: set2
   },
   teamBuff: {
     premod: objMap(set4Nodes, (nodes) => nodes[0]), // First node is active node
     nonStacking: {
-      ap4: set4TallyWrite,
-    },
-  },
+      ap4: set4TallyWrite
+    }
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -70,14 +70,14 @@ const sheet: SetEffectSheet = {
                 {
                   text: stg('duration'),
                   value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+                  unit: 's'
+                }
+              ]
+            }
           ])
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

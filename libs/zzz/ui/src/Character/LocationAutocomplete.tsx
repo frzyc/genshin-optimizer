@@ -45,16 +45,16 @@ export function LocationAutocomplete({
     () => [
       {
         key: '',
-        label: t('inventory'),
+        label: t('inventory')
       },
       ...allCharacterKeys.map(
         (key): GeneralAutocompleteOption<CharacterKey | ''> => ({
           key,
           label: t(`charNames_gen:${key}`),
           favorite: charIsFavorite(key),
-          color: charInDb(key) ? undefined : 'secondary',
+          color: charInDb(key) ? undefined : 'secondary'
         })
-      ),
+      )
     ],
     [charInDb, charIsFavorite, t]
   )

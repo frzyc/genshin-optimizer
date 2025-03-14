@@ -16,7 +16,7 @@ import {
   Divider,
   Stack,
   StyledEngineProvider,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ErrorInfo, ReactNode } from 'react'
 import { Component, Suspense } from 'react'
@@ -34,7 +34,7 @@ interface State {
 
 class ErrorBoundary extends Component<Props, State> {
   public override state: State = {
-    error: undefined,
+    error: undefined
   }
 
   public static getDerivedStateFromError(error: Error): State {
@@ -83,7 +83,7 @@ class ErrorBoundary extends Component<Props, State> {
                         display: 'flex',
                         gap: 2,
                         alignItems: 'center',
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-between'
                       }}
                     >
                       <Typography variant="h6">{t`title`}</Typography>

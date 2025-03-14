@@ -14,7 +14,7 @@ import {
   sum,
   tally,
   unequal,
-  zero,
+  zero
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -80,8 +80,8 @@ const set4_eleMas = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     eleMas: sum(set2, set4_eleMas),
-    atk_: set4_atk_,
-  },
+    atk_: set4_atk_
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -98,24 +98,24 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: set4_atk_,
+                node: set4_atk_
               },
               {
-                node: set4_eleMas,
+                node: set4_eleMas
               },
               {
                 text: stg('duration'),
                 value: 8,
-                unit: 's',
+                unit: 's'
               },
               {
                 text: stg('cd'),
                 value: 8,
-                unit: 's',
-              },
-            ],
-          },
-        },
+                unit: 's'
+              }
+            ]
+          }
+        }
       },
       {
         header: setHeader(4),
@@ -125,8 +125,8 @@ const sheet: SetEffectSheet = {
         name: trm('overrideSameCond'),
         states: objKeyMap(overrideArr, (override) => ({
           name: st('members', { count: override }),
-          fields: [],
-        })),
+          fields: []
+        }))
       },
       {
         header: setHeader(4),
@@ -136,10 +136,10 @@ const sheet: SetEffectSheet = {
         name: trm('overrideOtherCond'),
         states: objKeyMap(overrideArr, (override) => ({
           name: st('members', { count: override }),
-          fields: [],
-        })),
-      },
-    ],
-  },
+          fields: []
+        }))
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

@@ -18,9 +18,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc2'),
-      },
-    ],
+        text: chg('desc2')
+      }
+    ]
   },
   4: {
     title: <Set4Display />,
@@ -28,7 +28,7 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc4'),
+        text: chg('desc4')
       },
       {
         type: 'conditional',
@@ -36,11 +36,11 @@ const sheet: UISheet<'2' | '4'> = {
           label: ch('set4_cond'),
           metadata: cond.def_assist_or_evasive_assist,
           fields: [
-            TagToTagField(buff.set4_cond_def_assist_or_evasive_assist_dmg_.tag),
-          ],
-        },
-      },
-    ],
-  },
+            TagToTagField(buff.set4_cond_def_assist_or_evasive_assist_dmg_.tag)
+          ]
+        }
+      }
+    ]
+  }
 }
 export default sheet

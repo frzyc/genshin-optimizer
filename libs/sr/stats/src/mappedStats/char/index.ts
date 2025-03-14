@@ -133,6 +133,6 @@ const maps = {
   TrailblazerPhysical,
   TrailblazerFire,
   TrailblazerImaginary,
-  TrailblazerIce,
+  TrailblazerIce
 }
 export default maps

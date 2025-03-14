@@ -34,7 +34,7 @@ export function RelicSetAutocomplete({
     () =>
       allRelicSetKeys.map((set) => ({
         key: set,
-        label: t(`relicNames_gen:${set}`),
+        label: t(`relicNames_gen:${set}`)
       })),
     [t]
   )

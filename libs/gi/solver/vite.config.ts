@@ -14,13 +14,13 @@ export default defineConfig({
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
-    }),
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
+    })
   ],
 
   // Uncomment this if you are using workers.
   worker: {
-    plugins: () => [nxViteTsPaths()],
+    plugins: () => [nxViteTsPaths()]
   },
 
   test: {
@@ -31,7 +31,7 @@ export default defineConfig({
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../../coverage/libs/gi/solver',
-      provider: 'v8',
-    },
-  },
+      provider: 'v8'
+    }
+  }
 })

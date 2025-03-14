@@ -36,13 +36,13 @@ dumpFile(
 )
 
 dumpFile(`${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_keys_gen.json`, [
-  ...new Set(relicSubAffixConfigFlat.map(({ Property }) => Property)),
+  ...new Set(relicSubAffixConfigFlat.map(({ Property }) => Property))
 ])
 dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicSubAffixConfig_keysmapped_gen.json`,
   [
     ...new Set(
       relicSubAffixConfigFlat.map(({ Property }) => statKeyMap[Property])
-    ),
+    )
   ]
 )

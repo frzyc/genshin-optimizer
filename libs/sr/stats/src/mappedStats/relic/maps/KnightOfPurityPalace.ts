@@ -8,11 +8,11 @@ let o = 0
 
 const dm = {
   2: {
-    passive_def_: data_gen.setEffects[0].passiveStats.def_,
+    passive_def_: data_gen.setEffects[0].passiveStats.def_
   },
   4: {
-    shield_: data_gen.setEffects[1].otherStats[o++],
-  },
+    shield_: data_gen.setEffects[1].otherStats[o++]
+  }
 } as const
 
 export default dm

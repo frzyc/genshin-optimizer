@@ -1,13 +1,13 @@
 import {
   BootstrapTooltip,
   ColorText,
-  type CardBackgroundColor,
+  type CardBackgroundColor
 } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
 import {
   CalcContext,
   DebugReadContext,
-  TagContext,
+  TagContext
 } from '@genshin-optimizer/game-opt/formula-ui'
 import { read } from '@genshin-optimizer/pando/engine'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -20,7 +20,7 @@ import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({
   fields,
-  bgt = 'normal',
+  bgt = 'normal'
 }: {
   fields: Field[]
   bgt?: CardBackgroundColor
@@ -36,7 +36,7 @@ export function FieldsDisplay({
 
 function FieldDisplay({
   field,
-  component = ListItem,
+  component = ListItem
 }: {
   field: Field
   component?: React.ElementType
@@ -51,7 +51,7 @@ function FieldDisplay({
 
 export function TextFieldDisplay({
   field,
-  component,
+  component
 }: {
   field: TextField
   component?: React.ElementType
@@ -66,7 +66,7 @@ export function TextFieldDisplay({
         display: 'flex',
         justifyContent: 'space-between',
         gap: 1,
-        py: 0.25,
+        py: 0.25
       }}
       component={component}
     >
@@ -88,7 +88,7 @@ export function TagFieldDisplay({
   field,
   component = ListItem,
   emphasize,
-  showZero = process.env['NODE_ENV'] === 'development',
+  showZero = process.env['NODE_ENV'] === 'development'
 }: {
   field: TagField
   component?: React.ElementType
@@ -153,7 +153,7 @@ export function TagFieldDisplay({
               gap: 0.5,
               alignItems: 'center',
               justifyContent: 'flex-end',
-              flexWrap: 'wrap',
+              flexWrap: 'wrap'
             }}
           >
             <span>
@@ -180,7 +180,7 @@ export function TagFieldDisplay({
         justifyContent: 'space-between',
         gap: 1,
         boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
-        py: 0.25,
+        py: 0.25
       }}
       component={component}
     >
@@ -190,7 +190,7 @@ export function TagFieldDisplay({
           display: 'flex',
           gap: 1,
           alignItems: 'center',
-          marginRight: 'auto',
+          marginRight: 'auto'
         }}
       >
         {!!isTeamBuff && <GroupsIcon />}
@@ -206,7 +206,7 @@ export function TagFieldDisplay({
           gap: 0.5,
           alignItems: 'center',
           justifyContent: 'flex-end',
-          flexWrap: 'wrap',
+          flexWrap: 'wrap'
         }}
       >
         {multiDisplay}
@@ -262,18 +262,18 @@ export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
       bgt === 'light'
         ? 'contentLight'
         : bgt === 'dark'
-        ? 'contentDark'
-        : 'contentNormal'
+          ? 'contentDark'
+          : 'contentNormal'
     return {
       borderRadius: theme.shape.borderRadius,
       overflow: 'hidden',
       margin: 0,
       '> .MuiListItem-root:nth-of-type(even)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['main'],
+        backgroundColor: (theme.palette[palette] as PaletteColor)['main']
       },
       '> .MuiListItem-root:nth-of-type(odd)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['dark'],
-      },
+        backgroundColor: (theme.palette[palette] as PaletteColor)['dark']
+      }
     }
   }
 )

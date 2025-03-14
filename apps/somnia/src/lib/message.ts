@@ -2,7 +2,7 @@ import type { EmbedBuilder } from '@discordjs/builders'
 import type {
   ActionRowBuilder,
   ChatInputCommandInteraction,
-  Interaction,
+  Interaction
 } from 'discord.js'
 
 export async function send(
@@ -30,7 +30,7 @@ export function error(interaction: Interaction, e: any, ephemeral = true) {
   if (!interaction.isAutocomplete())
     return interaction.reply({
       content: e.slice(0, 2000),
-      ephemeral: ephemeral,
+      ephemeral: ephemeral
     })
   return
 }

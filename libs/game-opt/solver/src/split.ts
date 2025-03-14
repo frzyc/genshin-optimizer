@@ -1,7 +1,7 @@
 import type {
   Candidate,
   Monotonicity,
-  Range,
+  Range
 } from '@genshin-optimizer/pando/engine'
 
 export function splitCandidates<ID>(
@@ -43,7 +43,7 @@ export function splitCandidates<ID>(
   // TODO: this weight favors values with large magnitudes
   const weights = new Map([
     ...inc.map((i) => [i, Math.random()] as const),
-    ...dec.map((i) => [i, -Math.random()] as const),
+    ...dec.map((i) => [i, -Math.random()] as const)
   ])
   const slot = candidates.reduce(
     (best, cnds, i, arr) => (arr[best].length < cnds.length ? i : best),

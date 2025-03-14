@@ -5,12 +5,12 @@ import type {
   ArtifactSlotKey,
   LocationGenderedCharacterKey,
   TravelerKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import type {
   AvatarSkillDepotExcelConfigData,
   CharacterId,
-  WeaponId,
+  WeaponId
 } from '@genshin-optimizer/gi/dm'
 import {
   artifactIdMap,
@@ -27,7 +27,7 @@ import {
   reliquarySetExcelConfigData,
   rewardExcelConfigData,
   weaponExcelConfigData,
-  weaponIdMap,
+  weaponIdMap
 } from '@genshin-optimizer/gi/dm'
 import type { PromiseExecutor } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
@@ -42,7 +42,7 @@ const assetData = {
     ArtifactSetKey,
     Partial<Record<ArtifactSlotKey, string>>
   >,
-  chars: {} as CharacterIconData,
+  chars: {} as CharacterIconData
 }
 export type AssetData = typeof assetData
 
@@ -98,7 +98,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
     const { icon, awakenIcon } = weaponData
     assetData.weapons[weaponIdMap[weaponid as WeaponId]] = {
       icon,
-      awakenIcon,
+      awakenIcon
     }
   })
 
@@ -112,7 +112,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       const { rewardItemList } = rewardExcelConfigData[rewardId]
       const { itemId } = rewardItemList[0]
       ;({
-        picPath: [bar, banner],
+        picPath: [bar, banner]
       } = materialExcelConfigData[itemId])
     }
     const assets = banner
@@ -120,11 +120,11 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
           icon: iconName,
           iconSide: sideIconName,
           banner,
-          bar: bar!,
+          bar: bar!
         }
       : {
           icon: iconName,
-          iconSide: sideIconName,
+          iconSide: sideIconName
         }
     assetData.chars[characterIdMap[charid]] = assets
   })
@@ -142,7 +142,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       const { rewardItemList } = rewardExcelConfigData[rewardId]
       const { itemId } = rewardItemList[0]
       const {
-        picPath: [bar, banner],
+        picPath: [bar, banner]
       } = materialExcelConfigData[itemId]
       bar && layeredAssignment(assetChar, [cKey, 'bar'], bar)
       banner && layeredAssignment(assetChar, [cKey, 'banner'], banner)
@@ -152,7 +152,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         energySkill: burst,
         skills: [_normal, skill, sprint],
         talents,
-        inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        inherentProudSkillOpens: [passive1, passive2, passive3, , passive]
       } = depot
 
       // skill icon
@@ -238,7 +238,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   dumpFile(`${proj_path}/src/AssetsData_gen.json`, assetData)
 
   return {
-    success: true,
+    success: true
   }
 }
 

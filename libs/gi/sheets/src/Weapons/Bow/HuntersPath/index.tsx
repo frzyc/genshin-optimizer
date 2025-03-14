@@ -12,7 +12,7 @@ const allEle_dmg_arr = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const allEle_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
-    subscript(input.weapon.refinement, allEle_dmg_arr, { unit: '%' }),
+    subscript(input.weapon.refinement, allEle_dmg_arr, { unit: '%' })
   ])
 )
 
@@ -30,8 +30,8 @@ const charged_dmgInc = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     ...allEle_dmg_,
-    charged_dmgInc,
-  },
+    charged_dmgInc
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -39,8 +39,8 @@ const sheet: IWeaponSheet = {
     {
       header: headerTemplate(key, st('base')),
       fields: Object.values(allEle_dmg_).map((node) => ({
-        node,
-      })),
+        node
+      }))
     },
     {
       value: condPassive,
@@ -51,26 +51,26 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: charged_dmgInc,
+              node: charged_dmgInc
             },
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
+              unit: 's'
             },
             {
               text: st('charges'),
-              value: 12,
+              value: 12
             },
             {
               text: stg('cd'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -28,23 +28,23 @@ const atkSPD_ = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    atk_,
+    atk_
   },
   teamBuff: {
     premod: {
       atk_: atkTeam_,
-      atkSPD_,
+      atkSPD_
     },
     nonStacking: {
-      millenialatk: nonstackWrite,
-    },
-  },
+      millenialatk: nonstackWrite
+    }
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: atk_ }],
+      fields: [{ node: atk_ }]
     },
     {
       value: condPassive,
@@ -56,23 +56,23 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atkSPD_,
+              node: atkSPD_
             },
             {
-              node: atkTeam_,
+              node: atkTeam_
             },
             {
-              node: atkTeam_inactive,
+              node: atkTeam_inactive
             },
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

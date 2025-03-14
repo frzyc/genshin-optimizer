@@ -6,7 +6,7 @@ import {
   input,
   subscript,
   target,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -34,12 +34,12 @@ const atk_ = unequal(
 const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
-      atk_,
+      atk_
     },
     nonStacking: {
-      ttds: nonstackWrite,
-    },
-  },
+      ttds: nonstackWrite
+    }
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -54,20 +54,20 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(atk_Disp, { path: 'atk_', isTeamBuff: true }),
+              node: infoMut(atk_Disp, { path: 'atk_', isTeamBuff: true })
             },
             {
-              node: atk_dispInactive,
+              node: atk_dispInactive
             },
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

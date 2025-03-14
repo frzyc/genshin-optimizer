@@ -194,7 +194,7 @@ const charCards = {
   Yoimiya,
   YumemizukiMizuki,
   YunJin,
-  Zhongli,
+  Zhongli
 } as const
 
 export function charCard(charKey: CharacterKey, gender: GenderKey) {

@@ -7,7 +7,7 @@ const data_gen = allStats.lightCone[key]
 let o = 0
 
 const dm = {
-  dmg: data_gen.superimpose.otherStats[o++],
+  dmg: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

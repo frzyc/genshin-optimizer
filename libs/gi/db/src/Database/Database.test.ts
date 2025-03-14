@@ -1,6 +1,6 @@
 import {
   DBLocalStorage,
-  SandboxStorage,
+  SandboxStorage
 } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
@@ -9,7 +9,7 @@ import { ArtCharDatabase } from './ArtCharDatabase'
 import { initialCharacter } from './DataManagers/CharacterDataManager'
 import {
   defaultInitialWeapon,
-  initialWeapon,
+  initialWeapon
 } from './DataManagers/WeaponDataManager'
 import type { IGO } from './exim'
 
@@ -139,7 +139,7 @@ describe('Database', () => {
     database.chars.set('Albedo', initialCharacter('Albedo'))
     database.weapons.new({
       ...defaultInitialWeapon('sword'),
-      location: 'Albedo',
+      location: 'Albedo'
     })
 
     const art1 = randomizeArtifact({ slotKey: 'circlet' })
@@ -179,7 +179,7 @@ describe('Database', () => {
     database.chars.set('Albedo', initialCharacter('Albedo'))
     const sword1 = database.weapons.new({
       ...defaultInitialWeapon('sword'),
-      location: 'Albedo',
+      location: 'Albedo'
     })
     database.weapons.remove(sword1)
     expect(database.weapons.get(sword1)).toBeTruthy()
@@ -187,7 +187,7 @@ describe('Database', () => {
 
     const sword2 = database.weapons.new({
       ...defaultInitialWeapon('sword'),
-      location: 'Albedo',
+      location: 'Albedo'
     })
     database.weapons.remove(sword1)
     expect(database.weapons.get(sword1)).toBeFalsy()
@@ -198,7 +198,7 @@ describe('Database', () => {
     database.chars.set('Albedo', initialCharacter('Albedo'))
     const art1id = database.arts.new({
       ...randomizeArtifact({ slotKey: 'circlet' }),
-      location: 'Albedo',
+      location: 'Albedo'
     })
     expect(database.chars.get('Albedo')!.equippedArtifacts.circlet).toEqual(
       art1id
@@ -222,7 +222,7 @@ describe('Database', () => {
       version: 1,
       source: 'Scanner',
       artifacts: [art1, art2],
-      weapons: [amberWeapon],
+      weapons: [amberWeapon]
     }
     const importResult = database.importGOOD(good as IGOOD & IGO, false, false)
     expect(importResult.characters?.new?.length).toEqual(2)
@@ -244,7 +244,7 @@ describe('Database', () => {
       format: 'GOOD',
       version: 1,
       source: 'Scanner',
-      artifacts: [art1],
+      artifacts: [art1]
     }
 
     // Import the new artifact, with no location. this should respect current equipment
@@ -261,7 +261,7 @@ describe('Database', () => {
     const art1 = randomizeArtifact({
       slotKey: 'circlet',
       setKey: 'EmblemOfSeveredFate',
-      location: 'Albedo',
+      location: 'Albedo'
     })
 
     database.chars.set(albedo.key, albedo)
@@ -282,10 +282,10 @@ describe('Database', () => {
         randomizeArtifact({
           slotKey: 'circlet',
           setKey: 'Adventurer',
-          location: 'Albedo',
-        }),
+          location: 'Albedo'
+        })
       ],
-      weapons: [{ ...initialWeapon('CinnabarSpindle'), location: 'Albedo' }],
+      weapons: [{ ...initialWeapon('CinnabarSpindle'), location: 'Albedo' }]
     }
     const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
     expect(importResult.artifacts.new.length).toEqual(2)
@@ -323,7 +323,7 @@ describe('Database', () => {
       format: 'GOOD',
       version: 1,
       source: 'Scanner',
-      weapons: [a1, a2new, a4],
+      weapons: [a1, a2new, a4]
     }
     const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
     expect(importResult.weapons.upgraded.length).toEqual(1)
@@ -349,7 +349,7 @@ describe('Database', () => {
       rarity: 3,
       setKey: 'Instructor',
       slotKey: 'plume',
-      substats: [{ key: 'atk_', value: 5 }],
+      substats: [{ key: 'atk_', value: 5 }]
     }
     const a2new: IArtifact = {
       // upgrade
@@ -362,8 +362,8 @@ describe('Database', () => {
       slotKey: 'plume',
       substats: [
         { key: 'atk_', value: 5 },
-        { key: 'def_', value: 5 },
-      ],
+        { key: 'def_', value: 5 }
+      ]
     }
     const a3 = randomizeArtifact({ slotKey: 'goblet' }) // in db but not in import
     const a4 = randomizeArtifact({ slotKey: 'circlet' }) // in import but not in db
@@ -375,7 +375,7 @@ describe('Database', () => {
       format: 'GOOD',
       version: 1,
       source: 'Scanner',
-      artifacts: [a1, a2new, a4],
+      artifacts: [a1, a2new, a4]
     }
     const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
     expect(importResult.artifacts.upgraded.length).toEqual(1)
@@ -403,10 +403,10 @@ describe('Database', () => {
           talent: {
             auto: 1,
             skill: 1,
-            burst: 1,
-          },
-        },
-      ],
+            burst: 1
+          }
+        }
+      ]
     }
     const importResult = database.importGOOD(good as IGOOD & IGO, false, false)
     expect(importResult.weapons.new.length).toEqual(1)
@@ -428,7 +428,7 @@ describe('Database', () => {
         'artifact_0',
         'artifact_1',
         'artifact_2',
-        'artifact_3',
+        'artifact_3'
       ])
 
       const good: IGOOD = {
@@ -441,8 +441,8 @@ describe('Database', () => {
 
           //swap these two
           { ...old4, id: oldId3 } as IArtifact,
-          { ...old3, id: oldId4 } as IArtifact,
-        ],
+          { ...old3, id: oldId4 } as IArtifact
+        ]
       }
 
       const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
@@ -470,7 +470,7 @@ describe('Database', () => {
         'weapon_0',
         'weapon_1',
         'weapon_2',
-        'weapon_3',
+        'weapon_3'
       ])
 
       const good: IGOOD = {
@@ -483,8 +483,8 @@ describe('Database', () => {
 
           //swap these two
           { ...old4, id: oldId3 } as IWeapon,
-          { ...old3, id: oldId4 } as IWeapon,
-        ],
+          { ...old3, id: oldId4 } as IWeapon
+        ]
       }
 
       const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
@@ -516,8 +516,8 @@ describe('Database', () => {
         source: 'Genshin Optimizer',
         artifacts: [
           { ...new1, id: oldId1 } as IArtifact,
-          { ...new2, id: oldId2 } as IArtifact,
-        ],
+          { ...new2, id: oldId2 } as IArtifact
+        ]
       }
 
       const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
@@ -551,8 +551,8 @@ describe('Database', () => {
         source: 'Genshin Optimizer',
         weapons: [
           { ...new1, id: oldId1 } as IWeapon,
-          { ...new2, id: oldId2 } as IWeapon,
-        ],
+          { ...new2, id: oldId2 } as IWeapon
+        ]
       }
 
       const importResult = database.importGOOD(good as IGOOD & IGO, true, false)
@@ -577,7 +577,7 @@ describe('Database', () => {
       database.chars.set('TravelerGeo', initialCharacter('TravelerGeo'))
       const art1 = randomizeArtifact({
         slotKey: 'circlet',
-        setKey: 'EmblemOfSeveredFate',
+        setKey: 'EmblemOfSeveredFate'
       })
       const art1Id = database.arts.new({ ...art1, location: 'Traveler' })
       database.chars.set('TravelerElectro', initialCharacter('TravelerElectro'))
@@ -601,7 +601,7 @@ describe('Database', () => {
 
       const art2 = randomizeArtifact({
         slotKey: 'circlet',
-        setKey: 'ArchaicPetra',
+        setKey: 'ArchaicPetra'
       })
       const art2Id = database.arts.new({ ...art2, location: 'Traveler' })
       expect(
@@ -616,7 +616,7 @@ describe('Database', () => {
 
       const weapon2Id = database.weapons.new({
         ...initialWeapon('SkywardBlade'),
-        location: 'Traveler',
+        location: 'Traveler'
       })
       expect(database.chars.get('TravelerAnemo')!.equippedWeapon).toEqual(
         weapon2Id
@@ -698,8 +698,8 @@ describe('Database', () => {
       source: 'Scanner',
       weapons: [
         //invalid bow on sword char
-        { ...initialWeapon('AlleyHunter'), location: 'Albedo' },
-      ],
+        { ...initialWeapon('AlleyHunter'), location: 'Albedo' }
+      ]
     }
     const importResult = database.importGOOD(good1 as IGOOD & IGO, true, false)
     expect(importResult.weapons.invalid.length).toEqual(1)

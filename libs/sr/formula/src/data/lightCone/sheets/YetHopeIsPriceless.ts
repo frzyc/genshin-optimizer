@@ -4,7 +4,7 @@ import {
   min,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
@@ -14,7 +14,7 @@ import {
   own,
   ownBuff,
   registerBuff,
-  registerBuffFormula,
+  registerBuffFormula
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

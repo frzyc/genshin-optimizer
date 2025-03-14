@@ -2,12 +2,12 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   CardThemed,
   DropdownButton,
-  NumberInputLazy,
+  NumberInputLazy
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
-  ArtifactSlotKey,
+  ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import { artMaxLevel, artSlotMainKeys } from '@genshin-optimizer/gi/consts'
 import type { BuildTcArtifactSlot } from '@genshin-optimizer/gi/db'
@@ -16,11 +16,11 @@ import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   StatColoredWithUnit,
   StatWithUnit,
-  artifactLevelVariant,
+  artifactLevelVariant
 } from '@genshin-optimizer/gi/ui'
 import {
   artDisplayValue,
-  getMainStatDisplayValue,
+  getMainStatDisplayValue
 } from '@genshin-optimizer/gi/util'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
 import { Box, MenuItem } from '@mui/material'
@@ -30,16 +30,16 @@ import { BuildTcContext } from '../../../../BuildTcContext'
 
 export function ArtifactMainLevelSlot({
   slotKey,
-  disabled = false,
+  disabled = false
 }: {
   slotKey: ArtifactSlotKey
   disabled?: boolean
 }) {
   const {
     buildTc: {
-      artifact: { slots },
+      artifact: { slots }
     },
-    setBuildTc,
+    setBuildTc
   } = useContext(BuildTcContext)
   const { level, statKey, rarity } = slots[slotKey]
   const keys = artSlotMainKeys[slotKey]
@@ -133,10 +133,10 @@ export function ArtifactMainLevelSlot({
         inputProps={{
           sx: { width: '2ch' },
           max: 20,
-          min: 0,
+          min: 0
         }}
         InputProps={{
-          startAdornment: <InputAdornment position="start">+</InputAdornment>,
+          startAdornment: <InputAdornment position="start">+</InputAdornment>
         }}
         focused
       />

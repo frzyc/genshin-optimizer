@@ -10,7 +10,7 @@ import {
   ownBuff,
   percent,
   register,
-  registerBuff,
+  registerBuff
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag, isBonusAbilityActive } from '../util'
 

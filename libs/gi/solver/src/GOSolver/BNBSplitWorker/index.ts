@@ -1,7 +1,7 @@
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
-  ArtifactSlotKey,
+  ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import { allArtifactSetKeys } from '@genshin-optimizer/gi/consts'
 import { optimize, type OptNode } from '@genshin-optimizer/gi/wr'
@@ -9,7 +9,7 @@ import type {
   ArtifactBuildData,
   ArtifactsBySlot,
   DynStat,
-  RequestFilter,
+  RequestFilter
 } from '../../common'
 import { countBuilds, filterArts, pruneAll } from '../../common'
 import type { Interim, Setup } from '../../type'
@@ -79,7 +79,7 @@ export class BNBSplitWorker implements SplitWorker {
         maxConts: [],
         lins: [],
         approxs: [],
-        count,
+        count
       })
   }
   setThreshold(newThreshold: number): void {
@@ -105,7 +105,7 @@ export class BNBSplitWorker implements SplitWorker {
         this.reportInterim(false)
         yield objMap(arts.values, (arts) => ({
           kind: 'id' as const,
-          ids: new Set(arts.map((art) => art.id)),
+          ids: new Set(arts.map((art) => art.id))
         }))
       } else this.splitOldFilter(filter)
     }
@@ -137,7 +137,7 @@ export class BNBSplitWorker implements SplitWorker {
         maxConts: [],
         lins: [],
         approxs: [],
-        count,
+        count
       })
     }
   }
@@ -198,7 +198,7 @@ export class BNBSplitWorker implements SplitWorker {
           buildValues: undefined,
           tested: 0,
           failed: 0,
-          skipped: oldCount - newCount,
+          skipped: oldCount - newCount
         }
     this.filters[i] = {
       nodes,
@@ -207,7 +207,7 @@ export class BNBSplitWorker implements SplitWorker {
       lins,
       approxs,
       count: newCount,
-      calculated: true,
+      calculated: true
     }
   }
 }
@@ -229,9 +229,9 @@ function approximation(
       base: dot(arts.base, weight, weight.$c),
       conts: objKeyValMap(Object.values(arts.values).flat(), (data) => [
         data.id,
-        dot(data.values, weight, 0),
-      ]),
-    })),
+        dot(data.values, weight, 0)
+      ])
+    }))
   }
 }
 function dot(values: DynStat, lin: DynStat, c: number): number {

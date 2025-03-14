@@ -17,8 +17,8 @@ const critRate_ = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    critRate_,
-  },
+    critRate_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -31,12 +31,12 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: critRate_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: critRate_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

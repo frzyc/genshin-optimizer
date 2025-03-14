@@ -3,7 +3,7 @@ import {
   objKeyMap,
   range,
   transposeArray,
-  verifyObjKeys,
+  verifyObjKeys
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr/consts'
 import {
@@ -13,7 +13,7 @@ import {
   type ElementalTypeKey,
   type PathKey,
   type RarityKey,
-  type StatKey,
+  type StatKey
 } from '@genshin-optimizer/sr/consts'
 import type {
   Anchor,
@@ -21,7 +21,7 @@ import type {
   AvatarSkillTreeType,
   Rank,
   ServantSkillTreeType,
-  SkillTreeType,
+  SkillTreeType
 } from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
@@ -38,7 +38,7 @@ import {
   avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
-  statKeyMap,
+  statKeyMap
 } from '@genshin-optimizer/sr/dm'
 
 type Promotion = {
@@ -120,8 +120,8 @@ export default function characterData(): CharacterData {
                     ? undefined
                     : levels,
                   pointType: PointType,
-                  skillParamList,
-                },
+                  skillParamList
+                }
               ]
               return tuple
             }
@@ -132,7 +132,7 @@ export default function characterData(): CharacterData {
           | undefined = skillTree['servantSkill']
           ? {
               servantSkill: skillTree['servantSkill'],
-              servantTalent: skillTree['servantTalent'],
+              servantTalent: skillTree['servantTalent']
             }
           : undefined
         delete skillTree['servantSkill']
@@ -150,24 +150,24 @@ export default function characterData(): CharacterData {
             SpeedBase,
             CriticalChance,
             CriticalDamage,
-            BaseAggro,
+            BaseAggro
           }) => ({
             atk: {
               base: AttackBase.Value,
-              add: AttackAdd.Value,
+              add: AttackAdd.Value
             },
             def: {
               base: DefenceBase.Value,
-              add: DefenceAdd.Value,
+              add: DefenceAdd.Value
             },
             hp: {
               base: HPBase.Value,
-              add: HPAdd.Value,
+              add: HPAdd.Value
             },
             spd: SpeedBase.Value,
             crit_: CriticalChance.Value,
             crit_dmg_: CriticalDamage.Value,
-            taunt: BaseAggro.Value,
+            taunt: BaseAggro.Value
           })
         )
 
@@ -184,12 +184,12 @@ export default function characterData(): CharacterData {
                   return [
                     // AttackType fallback to Talent if not defined
                     attackType ? DmAttackTypeMap[attackType] : 'talent',
-                    levelBoost,
+                    levelBoost
                   ]
                 }
               )
             ),
-            params: rankConfig.Param.map((p) => p.Value),
+            params: rankConfig.Param.map((p) => p.Value)
           }
         })
 
@@ -201,7 +201,7 @@ export default function characterData(): CharacterData {
           servantSkillTree,
           ascension,
           rankMap,
-          maxEnergy: SPNeed.Value,
+          maxEnergy: SPNeed.Value
         }
         const genderedKey = characterIdMap[avatarid]
         // Assumes genders have the same stats
@@ -249,18 +249,18 @@ function getSkillParamFromAvatarSkill(
         : [
             range(1, avatarSkillConfig[skillId][0].ParamList!.length).map(
               () => -1
-            ),
+            )
           ]),
       ...avatarSkillConfig[skillId]!.map(({ ParamList }) =>
         ParamList.map(({ Value }) => Value)
-      ),
+      )
     ])
   )
 }
 
 function getSkillParamFromAvatarSkillTree(skillTree: AvatarSkillTreeConfig[]) {
   return [
-    skillTree.map((config) => [...config.ParamList.map(({ Value }) => Value)]),
+    skillTree.map((config) => [...config.ParamList.map(({ Value }) => Value)])
   ]
 }
 
@@ -273,7 +273,7 @@ function getSkillParamFromAvatarServantSkill(LevelUpSkillID: number[]) {
       ),
       ...avatarServantSkillConfig[skillId].map(({ ParamList }) =>
         ParamList.map(({ Value }) => Value)
-      ),
+      )
     ])
   )
 }

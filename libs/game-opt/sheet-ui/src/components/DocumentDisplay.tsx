@@ -14,7 +14,7 @@ import { HeaderDisplay } from './HeaderDisplay'
 export function DocumentDisplay({
   document,
   bgt = 'normal',
-  collapse = false,
+  collapse = false
 }: {
   document: Document
   bgt?: CardBackgroundColor
@@ -46,7 +46,7 @@ export function DocumentDisplay({
 
 function FieldsSectionDisplay({
   fieldsDocument,
-  bgt = 'normal',
+  bgt = 'normal'
 }: {
   fieldsDocument: FieldsDocument
   bgt?: CardBackgroundColor
@@ -75,7 +75,7 @@ function TextSectionDisplay({ textDocument }: { textDocument: TextDocument }) {
   )
 }
 function TextSectionDisplayCollapse({
-  textDocument,
+  textDocument
 }: {
   textDocument: TextDocument
 }) {
@@ -96,7 +96,7 @@ function TextSectionDisplayCollapse({
             alignItems: 'flex-end',
             zIndex: '10',
             transition: 'transform 0.3s ease',
-            transform: hover ? 'translate(0,-5px)' : undefined,
+            transform: hover ? 'translate(0,-5px)' : undefined
           }}
         >
           <KeyboardArrowDownIcon />
@@ -117,8 +117,8 @@ function TextSectionDisplayCollapse({
           '&:hover': {
             maskImage: expanded
               ? undefined
-              : 'linear-gradient(to bottom, black 50%, transparent 100%)',
-          },
+              : 'linear-gradient(to bottom, black 50%, transparent 100%)'
+          }
         }}
       >
         <TextSectionDisplay textDocument={textDocument} />

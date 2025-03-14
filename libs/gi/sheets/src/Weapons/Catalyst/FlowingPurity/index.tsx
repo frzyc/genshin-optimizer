@@ -8,7 +8,7 @@ import {
   percent,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -63,8 +63,8 @@ const data = dataObjForWeaponSheet(
           afterSkill_all_ele_dmg_map[ele_dmg_],
           bond_all_ele_dmg_map[ele_dmg_]
         )
-      ),
-    },
+      )
+    }
   },
   bond_all_ele_dmg_map
 )
@@ -80,21 +80,21 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             ...Object.values(afterSkill_all_ele_dmg_map).map((node) => ({
-              node,
+              node
             })),
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
+              unit: 's'
             },
             {
               text: stg('cd'),
               value: 10,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -105,17 +105,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             ...Object.values(bond_all_ele_dmg_map).map((node) => ({
-              node,
+              node
             })),
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -64,7 +64,7 @@ function linbound(
   const scaleProd = boundScale.reduce((prod, v) => prod * v, 1)
   bounds = bounds.map(({ min, max }, i) => ({
     min: min / boundScale[i],
-    max: max / boundScale[i],
+    max: max / boundScale[i]
   }))
   // Setting up the linear program in terms of constraints.
   //   cartesian(bounds) loops 2^nVar times
@@ -76,12 +76,12 @@ function linbound(
         case 'upper':
           return [
             [...coords, -1, 0, sum - prod - nVar],
-            [...coords.map((v) => -v), 1, -1, nVar + prod - sum],
+            [...coords.map((v) => -v), 1, -1, nVar + prod - sum]
           ]
         case 'lower':
           return [
             [...coords.map((v) => -v), -1, 0, prod - sum - nVar],
-            [...coords, 1, -1, nVar + sum - prod],
+            [...coords, 1, -1, nVar + sum - prod]
           ]
         default:
           assertUnreachable(direction)
@@ -99,7 +99,7 @@ function linbound(
             .slice(0, nVar)
             .map((wi, i) => ((1 - wi) * scaleProd) / boundScale[i]),
           $c: scaleProd * (soln[nVar] - nVar),
-          err: scaleProd * soln[nVar + 1],
+          err: scaleProd * soln[nVar + 1]
         }
       case 'lower':
         return {
@@ -107,7 +107,7 @@ function linbound(
             .slice(0, nVar)
             .map((wi, i) => ((1 - wi) * scaleProd) / boundScale[i]),
           $c: scaleProd * (nVar - soln[nVar]),
-          err: scaleProd * soln[nVar + 1],
+          err: scaleProd * soln[nVar + 1]
         }
       default:
         assertUnreachable(direction)

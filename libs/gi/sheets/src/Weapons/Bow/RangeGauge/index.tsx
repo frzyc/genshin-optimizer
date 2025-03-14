@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -45,8 +45,8 @@ const all_ele_dmg_ = objKeyMap(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    ...all_ele_dmg_,
-  },
+    ...all_ele_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -61,22 +61,22 @@ const sheet: IWeaponSheet = {
         name: `${mark}`,
         fields: [
           {
-            node: atk_,
+            node: atk_
           },
           ...Object.values(all_ele_dmg_).map((node) => ({ node })),
           {
             text: stg('duration'),
             value: 10,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: 15,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

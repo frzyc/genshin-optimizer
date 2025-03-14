@@ -5,7 +5,7 @@ import type {
   PartialMessage,
   PartialUser,
   PermissionsBitField,
-  User,
+  User
 } from 'discord.js'
 import { readFileSync } from 'fs'
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
@@ -20,7 +20,7 @@ export default {
       return true
     interaction.reply({
       content: `You do not have permission to use this command.`,
-      ephemeral: true,
+      ephemeral: true
     })
     return false
   },
@@ -46,5 +46,5 @@ export default {
     if ('bot' in x) return x.bot
     if ('author' in x) return x.author?.bot
     return false
-  },
+  }
 }

@@ -5,18 +5,18 @@ import type { SortConfigs } from '@genshin-optimizer/common/util'
 import {
   catTotal,
   handleMultiSelect,
-  sortFunction,
+  sortFunction
 } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponKey, WeaponSubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allWeaponKeys,
   allWeaponSubstatKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import type {
   ArchiveWeaponOption,
-  ICachedWeapon,
+  ICachedWeapon
 } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { i18n } from '@genshin-optimizer/gi/i18n'
@@ -26,7 +26,7 @@ import {
   GetCalcDisplay,
   SubstatMultiAutocomplete,
   WeaponName,
-  resolveInfo,
+  resolveInfo
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
@@ -48,7 +48,7 @@ import {
   TextField,
   ToggleButton,
   ToggleButtonGroup,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   Suspense,
@@ -56,7 +56,7 @@ import {
   useCallback,
   useDeferredValue,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { WeaponView } from './WeaponView'
 
@@ -101,7 +101,7 @@ export default function TabWeapon() {
     const isAsc = weapon.sortOrderBy === property && weapon.sortOrder === 'asc'
     weaponOptionDispatch({
       sortOrder: isAsc ? 'desc' : 'asc',
-      sortOrderBy: property,
+      sortOrderBy: property
     })
   }
 
@@ -117,17 +117,17 @@ export default function TabWeapon() {
           level: rarity > 2 ? 90 : 70,
           refinement: 1,
           location: '',
-          lock: false,
+          lock: false
         }
         const weaponUIData = computeUIData([
           getWeaponSheet(wKey).data,
-          dataObjForWeapon(weapon),
+          dataObjForWeapon(weapon)
         ])
         const mainNode = weaponUIData.get(input.weapon.main)
         const subNode = weaponUIData.get(input.weapon.sub)
         cache.set(wKey, {
           main: GetCalcDisplay(mainNode).valueString,
-          sub: GetCalcDisplay(subNode).valueString,
+          sub: GetCalcDisplay(subNode).valueString
         })
       })
       return cache
@@ -146,7 +146,7 @@ export default function TabWeapon() {
           rarity: (wKey: WeaponKey) => getWeaponStat(wKey).rarity,
           main: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.main ?? '',
           sub: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.sub ?? '',
-          subType: (wKey: WeaponKey) => getWeaponStat(wKey).subStat?.type ?? '',
+          subType: (wKey: WeaponKey) => getWeaponStat(wKey).subStat?.type ?? ''
         } as SortConfigs<SortKey, WeaponKey>
       ),
     [weapon.sortOrder, weapon.sortOrderBy, weaponDataCache]
@@ -175,7 +175,7 @@ export default function TabWeapon() {
     { key: 'type', label: 'Type', width: 10 },
     { key: 'rarity', label: 'Rarity', width: 10 },
     { key: 'main', label: 'Main', width: 20 },
-    { key: 'sub', label: 'Secondary', width: 30 },
+    { key: 'sub', label: 'Secondary', width: 30 }
   ]
   return (
     <Box>
@@ -202,7 +202,7 @@ export default function TabWeapon() {
               value={wt}
               onClick={() =>
                 weaponOptionDispatch({
-                  weaponType: handleType(weapon.weaponType, wt),
+                  weaponType: handleType(weapon.weaponType, wt)
                 })
               }
             >
@@ -229,7 +229,7 @@ export default function TabWeapon() {
               <InputAdornment position="start">
                 <SearchIcon />
               </InputAdornment>
-            ),
+            )
           }}
         />
       </CardContent>
@@ -282,7 +282,7 @@ export default function TabWeapon() {
   )
 }
 const WeaponRow = memo(function WeaponRow({
-  weaponKey: wKey,
+  weaponKey: wKey
 }: {
   weaponKey: WeaponKey
 }) {
@@ -297,8 +297,8 @@ const WeaponRow = memo(function WeaponRow({
         level: rarity > 2 ? 90 : 70,
         refinement: 1,
         location: '',
-        lock: false,
-      } as ICachedWeapon),
+        lock: false
+      }) as ICachedWeapon,
     [rarity, wKey]
   )
   const weaponUIData = useMemo(

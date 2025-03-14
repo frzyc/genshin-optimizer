@@ -5,7 +5,7 @@ import {
   CustomNumberInputButtonGroupWrapper,
   ImgFullwidth,
   ImgIcon,
-  TextButton,
+  TextButton
 } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
@@ -18,7 +18,7 @@ import {
   CardContent,
   Divider,
   Grid,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useState } from 'react'
@@ -27,20 +27,20 @@ const booksData = {
     name: "Wanderer's Advice",
     exp: 1000,
     cost: 200,
-    img: imgAssets.exp_books.advice,
+    img: imgAssets.exp_books.advice
   },
   experience: {
     name: "Adventurer's Experience",
     exp: 5000,
     cost: 1000,
-    img: imgAssets.exp_books.experience,
+    img: imgAssets.exp_books.experience
   },
   wit: {
     name: "Hero's Wit",
     exp: 20000,
     cost: 4000,
-    img: imgAssets.exp_books.wit,
-  },
+    img: imgAssets.exp_books.wit
+  }
 }
 const levelExp = [
   0, 1000, 1325, 1700, 2150, 2625, 3150, 3725, 4350, 5000, 5700, 6450, 7225,
@@ -51,7 +51,7 @@ const levelExp = [
   92400, 95175, 98000, 100875, 108950, 112050, 115175, 118325, 121525, 124775,
   128075, 131400, 134775, 138175, 148700, 152375, 156075, 159825, 163600,
   167425, 171300, 175225, 179175, 183175, 216225, 243025, 273100, 306800,
-  344600, 386950, 434425, 487625, 547200,
+  344600, 386950, 434425, 487625, 547200
 ]
 const milestone = [20, 40, 50, 60, 70, 80, 90]
 
@@ -61,7 +61,7 @@ function initExpCalc() {
     level: 1,
     curExp: 0,
     goUnder: false,
-    books: { advice: 0, experience: 0, wit: 0 },
+    books: { advice: 0, experience: 0, wit: 0 }
   }
 }
 
@@ -73,7 +73,7 @@ export default function EXPCalc() {
     curExp,
     goUnder,
     books,
-    books: { advice, experience, wit },
+    books: { advice, experience, wit }
   } = state
 
   const milestoneLvl = milestone.find((lvl) => lvl > level)!
@@ -86,7 +86,7 @@ export default function EXPCalc() {
   const bookResultObj = {
     advice: numAdvice,
     experience: numExperience,
-    wit: numWit,
+    wit: numWit
   }
   const expFromBooks = numWit * 20000 + numExperience * 5000 + numAdvice * 1000
   const moraCost = expFromBooks / 5
@@ -185,7 +185,7 @@ export default function EXPCalc() {
                   onChange={(val) =>
                     setState({
                       ...state,
-                      curExp: clamp(val ?? 0, 0, (levelExp[level] || 1) - 1),
+                      curExp: clamp(val ?? 0, 0, (levelExp[level] || 1) - 1)
                     })
                   }
                   endAdornment={`/${levelExp[level] || 0}`}
@@ -348,7 +348,7 @@ export default function EXPCalc() {
                     bookResultObj,
                     (val, bookKey) => books[bookKey] - val
                   ) as any,
-                  mora: finalMora,
+                  mora: finalMora
                 })
               }
               color="success"

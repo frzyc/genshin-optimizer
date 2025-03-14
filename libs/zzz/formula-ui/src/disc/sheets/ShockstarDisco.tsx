@@ -17,9 +17,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc2'),
-      },
-    ],
+        text: chg('desc2')
+      }
+    ]
   },
   4: {
     title: <Set4Display />,
@@ -27,26 +27,26 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc4'),
+        text: chg('desc4')
       },
       {
         type: 'fields',
         fields: [
           {
             title: 'Basic Attack Daze', // TODO: L10n
-            fieldRef: buff.set4_basic_daze_.tag,
+            fieldRef: buff.set4_basic_daze_.tag
           },
           {
             title: 'Dash Attack Daze', // TODO: L10n
-            fieldRef: buff.set4_dash_daze_.tag,
+            fieldRef: buff.set4_dash_daze_.tag
           },
           {
             title: 'Dodge Counter Daze', // TODO: L10n
-            fieldRef: buff.set4_dodgeCounter_daze_.tag,
-          },
-        ],
-      },
-    ],
-  },
+            fieldRef: buff.set4_dodgeCounter_daze_.tag
+          }
+        ]
+      }
+    ]
+  }
 }
 export default sheet

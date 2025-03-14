@@ -11,7 +11,7 @@ const dm = {
   shieldScaling: data_gen.superimpose.otherStats[o++],
   duration: data_gen.superimpose.otherStats[o++][1],
   cooldown: data_gen.superimpose.otherStats[o++][1],
-  dmgRed_: data_gen.superimpose.otherStats[o++],
+  dmgRed_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

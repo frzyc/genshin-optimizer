@@ -6,7 +6,7 @@ import {
   max,
   min,
   prod,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
@@ -16,7 +16,7 @@ import {
   percent,
   register,
   team,
-  teamBuff,
+  teamBuff
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
@@ -32,18 +32,18 @@ export const dm = {
     hitArr: [
       skillParam_gen.auto[a++], // 1
       skillParam_gen.auto[a++], // 2
-      skillParam_gen.auto[a++], // 3
-    ],
+      skillParam_gen.auto[a++] // 3
+    ]
   },
   charged: {
     hit1: skillParam_gen.auto[a++],
     hit2: skillParam_gen.auto[a++],
-    stamina: skillParam_gen.auto[a++][0],
+    stamina: skillParam_gen.auto[a++][0]
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
     low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++]
   },
   skill: {
     skillDmg: skillParam_gen.skill[s++],
@@ -56,50 +56,50 @@ export const dm = {
     tranquilityAuraDuration: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
     lunarPrayerDuration: skillParam_gen.skill[s++][0],
-    pirouetteDuration: skillParam_gen.skill[s++][0],
+    pirouetteDuration: skillParam_gen.skill[s++][0]
   },
   burst: {
     skillDmg: skillParam_gen.burst[b++],
     aeonDmg: skillParam_gen.burst[b++],
     cd: skillParam_gen.burst[b++][0],
-    cost: skillParam_gen.burst[b++][0],
+    cost: skillParam_gen.burst[b++][0]
   },
   passive1: {
     bountyDuration: skillParam_gen.passive1[0][0],
     eleMas: skillParam_gen.passive1[1][0],
-    buffDuration: skillParam_gen.passive1[2][0],
+    buffDuration: skillParam_gen.passive1[2][0]
   },
   passive2: {
     dmg_: skillParam_gen.passive2[0][0],
     minHp: -skillParam_gen.passive2[1][0],
-    maxDmg_: skillParam_gen.passive2[2][0],
+    maxDmg_: skillParam_gen.passive2[2][0]
   },
   constellation1: {
     moon_dmg_: skillParam_gen.constellation1[0],
-    durationInc: skillParam_gen.constellation1[1],
+    durationInc: skillParam_gen.constellation1[1]
   },
   constellation2: {
     hydro_enemyRes_: -skillParam_gen.constellation2[0],
     dendro_enemyRes_: -skillParam_gen.constellation2[1],
-    duration: skillParam_gen.constellation2[2],
+    duration: skillParam_gen.constellation2[2]
   },
   constellation4: {
     energyRegen: skillParam_gen.constellation4[0],
     burst_dmg_: skillParam_gen.constellation4[1],
-    duration: skillParam_gen.constellation4[2],
+    duration: skillParam_gen.constellation4[2]
   },
   constellation6: {
     critRate_: skillParam_gen.constellation6[0],
     critDmg_: skillParam_gen.constellation6[1],
     maxCritRate_: skillParam_gen.constellation6[2],
-    maxCritDmg_: skillParam_gen.constellation6[3],
-  },
+    maxCritDmg_: skillParam_gen.constellation6[3]
+  }
 } as const
 
 const info = dataGenToCharInfo(data_gen)
 const {
   final,
-  char: { ascension, constellation },
+  char: { ascension, constellation }
 } = own
 const { a1AfterSkill, a1AfterHit, c4AfterPirHit } = allBoolConditionals(
   info.key

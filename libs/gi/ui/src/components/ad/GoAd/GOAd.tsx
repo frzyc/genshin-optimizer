@@ -22,7 +22,7 @@ export function GOAd({ children }: { children: ReactNode }) {
         minWidth: '100%',
         height: '100%',
         flexDirection: height > 90 ? 'column' : 'row',
-        gap: 1,
+        gap: 1
       }}
       onClick={toMainSite}
     >

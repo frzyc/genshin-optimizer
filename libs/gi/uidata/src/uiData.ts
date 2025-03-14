@@ -3,7 +3,7 @@ import {
   crawlObject,
   getUnitStr,
   layeredAssignment,
-  objPathValue,
+  objPathValue
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey, GenderKey } from '@genshin-optimizer/gi/consts'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
@@ -20,7 +20,7 @@ import type {
   StrNode,
   SubscriptNode,
   ThresholdNode,
-  UIInput,
+  UIInput
 } from '@genshin-optimizer/gi/wr'
 import {
   allOperations,
@@ -33,7 +33,7 @@ import {
   resetData,
   setReadNodeKeys,
   tally,
-  uiInput,
+  uiInput
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
 
@@ -134,7 +134,7 @@ export class UIData {
         constellation: this.get(input.constellation),
         talentAuto: this.get(input.total.auto),
         talentSkill: this.get(input.total.skill),
-        talentBurst: this.get(input.total.burst),
+        talentBurst: this.get(input.total.burst)
       }
     return this.characterStats
   }
@@ -225,7 +225,7 @@ export class UIData {
         result.meta = {
           op: 'const',
           ops: [],
-          conds: [],
+          conds: []
         }
 
       if (path && KeyMap.getStr(path)) {
@@ -333,8 +333,8 @@ export class UIData {
         ? makeEmpty(result.value)
         : result
       : node.emptyOn === 'l'
-      ? makeEmpty(result.value)
-      : result
+        ? makeEmpty(result.value)
+        : result
   }
   private _data(
     node: DataNode<NumNode | StrNode>
@@ -363,7 +363,7 @@ export class UIData {
       value,
       meta: { op: 'const', ops: [], conds: [] },
       info: {},
-      isEmpty: false,
+      isEmpty: false
     }
   }
   private _accumulate(
@@ -389,10 +389,10 @@ export class UIData {
       meta: {
         op: operation,
         ops: operands,
-        conds: operands.flatMap((op) => op.meta.conds),
+        conds: operands.flatMap((op) => op.meta.conds)
       },
       info,
-      isEmpty,
+      isEmpty
     }
   }
 }
@@ -455,24 +455,24 @@ const illformed: CalcResult<number> = {
   meta: {
     op: 'const',
     ops: [],
-    conds: [],
+    conds: []
   },
   info: {
-    pivot: true,
+    pivot: true
   },
-  isEmpty: false,
+  isEmpty: false
 }
 const illformedStr: CalcResult<string | undefined> = {
   value: undefined,
   meta: {
     op: 'const',
     ops: [],
-    conds: [],
+    conds: []
   },
   info: {
-    pivot: true,
+    pivot: true
   },
-  isEmpty: false,
+  isEmpty: false
 }
 function makeEmpty(value: number): CalcResult<number>
 function makeEmpty(value: string | undefined): CalcResult<string | undefined>
@@ -487,10 +487,10 @@ function makeEmpty(
     meta: {
       op: 'const',
       ops: [],
-      conds: [],
+      conds: []
     },
     info: {},
-    isEmpty: true,
+    isEmpty: true
   }
 }
 
@@ -521,8 +521,8 @@ export function uiDataForTeam(
       {
         targetRef: {} as Data,
         buffs: [] as Data[],
-        calcs: {} as Partial<Record<CharacterKey, Data>>,
-      },
+        calcs: {} as Partial<Record<CharacterKey, Data>>
+      }
     ])
   )
 
@@ -573,7 +573,7 @@ export function uiDataForTeam(
             ...objPathValue(input, path)?.info,
             source: sourceKeyWithGender,
             prefix: undefined,
-            asConst,
+            asConst
           }
           layeredAssignment(
             buff,
@@ -623,7 +623,7 @@ export function uiDataForTeam(
           ...(objPathValue(teamBuff, path) as ReadNode<number> | undefined)
             ?.info,
           prefix: 'teamBuff',
-          pivot,
+          pivot
         }
       }
     )
@@ -632,7 +632,7 @@ export function uiDataForTeam(
       mergeData([
         data,
         buff,
-        { teamBuff: buff, activeCharKey: constant(activeCharKey) },
+        { teamBuff: buff, activeCharKey: constant(activeCharKey) }
       ])
     )
     ;(targetRef as any)['target'] = targetRef
@@ -646,10 +646,10 @@ export function uiDataForTeam(
         buffs: Object.fromEntries(
           Object.entries(value.calcs).map(([key, value]) => [
             key,
-            new UIData(value, origin),
+            new UIData(value, origin)
           ])
-        ),
-      },
+        )
+      }
     ])
   )
 }
@@ -685,7 +685,7 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       isEmpty: true,
       formulas: [],
       ...d1,
-      diff: (d2?.value ?? 0) - (d1?.value ?? 0),
+      diff: (d2?.value ?? 0) - (d1?.value ?? 0)
     }
     if (typeof d1?.value === 'string' || typeof d2?.value === 'string') {
       // In case `string` got involved, just use the other value
@@ -698,7 +698,7 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
   if (data1 || data2) {
     const keys = new Set([
       ...Object.keys(data1 ?? {}),
-      ...Object.keys(data2 ?? {}),
+      ...Object.keys(data2 ?? {})
     ])
     return Object.fromEntries(
       [...keys].map((key) => [key, compareInternal(data1?.[key], data2?.[key])])

@@ -7,11 +7,11 @@ import type {
   RelicMainStatKey,
   RelicSetKey,
   RelicSubStatKey,
-  SuperimposeKey,
+  SuperimposeKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
-  allStatBoostKeys,
+  allStatBoostKeys
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter } from '@genshin-optimizer/sr/srod'
 import type { Member, TagMapNodeEntries } from './data/util'
@@ -21,7 +21,7 @@ import {
   own,
   ownBuff,
   ownTag,
-  reader,
+  reader
 } from './data/util'
 
 export const floor = <P extends OP>(x: NumNode<P> | number) =>
@@ -67,7 +67,7 @@ export function charTagMapNodeEntries(
       ownBuff.char[`bonusAbility${index}`].add(
         data.bonusAbilities[index] ? 1 : 0
       )
-    ),
+    )
   ]
 }
 
@@ -79,13 +79,17 @@ export function lightConeTagMapNodeEntries(
 ): TagMapNodeEntries {
   return [
     // Opt-in for light cone buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('lightCone')),
+    reader
+      .sheet('agg')
+      .reread(reader.sheet('lightCone')),
 
     // Mark light cones as used
-    own.common.count.sheet(key).add(1),
+    own.common.count
+      .sheet(key)
+      .add(1),
     own.lightCone.lvl.add(level),
     own.lightCone.ascension.add(ascension),
-    own.lightCone.superimpose.add(superimpose),
+    own.lightCone.superimpose.add(superimpose)
   ]
 }
 
@@ -95,14 +99,16 @@ export function relicTagMapNodeEntries(
 ): TagMapNodeEntries {
   const {
     common: { count },
-    premod,
+    premod
   } = convert(ownTag, {
     sheet: 'relic',
-    et: 'own',
+    et: 'own'
   })
   return [
     // Opt-in for relic buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('relic')),
+    reader
+      .sheet('agg')
+      .reread(reader.sheet('relic')),
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
     reader
@@ -114,7 +120,7 @@ export function relicTagMapNodeEntries(
 
     ...Object.entries(sets).map(([k, v]) =>
       count.sheet(k as RelicSetKey).add(v)
-    ),
+    )
   ]
 }
 
@@ -162,11 +168,11 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
         own
           .with('qt', 'stackOut')
-          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
+          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn))
       ]
     }),
 
     // Total Team Stat
-    members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }))),
+    members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' })))
   ].flat()
 }

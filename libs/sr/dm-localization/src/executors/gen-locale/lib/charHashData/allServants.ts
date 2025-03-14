@@ -4,7 +4,7 @@ import { allServantKeys } from '@genshin-optimizer/sr/consts'
 import {
   avatarServantConfig,
   avatarServantSkillConfig,
-  servantIdMap,
+  servantIdMap
 } from '@genshin-optimizer/sr/dm'
 
 type ServantData = {
@@ -29,7 +29,7 @@ const servantsArray = Object.entries(avatarServantConfig).map(
 
     const abilities: AbilitiesData = {
       skill: [],
-      talent: [],
+      talent: []
     }
     SkillIDList.forEach((skillId) => {
       const { SkillName, SkillTag, SkillDesc, SimpleSkillDesc, AttackType } =
@@ -39,7 +39,7 @@ const servantsArray = Object.entries(avatarServantConfig).map(
         name: SkillName.Hash.toString(),
         fullDesc: SkillDesc?.Hash.toString() ?? '',
         shortDesc: SimpleSkillDesc?.Hash.toString() ?? '',
-        tag: SkillTag.Hash.toString(),
+        tag: SkillTag.Hash.toString()
       })
     })
 
@@ -47,8 +47,8 @@ const servantsArray = Object.entries(avatarServantConfig).map(
       servantKey,
       {
         name: ServantName.Hash.toString(),
-        abilities,
-      },
+        abilities
+      }
     ]
     return tuple
   }

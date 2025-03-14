@@ -6,7 +6,7 @@ import { ZCard } from '../Components'
 
 export function EmptyCompactCard({
   placeholder,
-  onClick,
+  onClick
 }: {
   placeholder: string
   onClick?: () => void
@@ -50,7 +50,7 @@ export function EmptyCompactCard({
               px: '40px',
               py: '12px',
               justifyContent: 'center',
-              height: '204px',
+              height: '204px'
             }}
           >
             <Typography
@@ -59,7 +59,7 @@ export function EmptyCompactCard({
                 textTransform: 'uppercase',
                 color: `${theme.palette.contentZzz.main}`,
                 fontWeight: '900',
-                textAlign: 'center',
+                textAlign: 'center'
               })}
             >
               {placeholder}

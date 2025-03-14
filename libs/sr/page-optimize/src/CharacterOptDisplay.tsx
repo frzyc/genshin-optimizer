@@ -6,7 +6,7 @@ import { own } from '@genshin-optimizer/sr/formula'
 import {
   CharacterCard,
   CharacterEditor,
-  EquipRow,
+  EquipRow
 } from '@genshin-optimizer/sr/ui'
 import {
   Box,
@@ -14,7 +14,7 @@ import {
   CardActionArea,
   CardContent,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo, useState } from 'react'
@@ -36,14 +36,14 @@ export function CharacterOptDisplay() {
         [
           'relicCond',
           'Relic Conditionals',
-          <RelicSheetsDisplay key="relicCond" />,
+          <RelicSheetsDisplay key="relicCond" />
         ],
         [
           'lightConeCond',
           'Light Cone Conditionals',
-          <LightConeSheetsDisplay key="lightConeCond" />,
+          <LightConeSheetsDisplay key="lightConeCond" />
         ],
-        ['opt', 'Optimize', <OptimizeSection key="opt" />],
+        ['opt', 'Optimize', <OptimizeSection key="opt" />]
       ] as const
     }, [])
 
@@ -62,7 +62,7 @@ export function CharacterOptDisplay() {
 function Section({
   index,
   title,
-  children,
+  children
 }: {
   index: number
   title: React.ReactNode
@@ -79,7 +79,7 @@ function Section({
           position: 'sticky',
           top: headerHeight + index * SECTION_SPACING_PX,
           bottom: BOT_PX + (numSections - 1 - index) * SECTION_SPACING_PX,
-          zIndex: 100,
+          zIndex: 100
         })}
       >
         <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
@@ -89,7 +89,7 @@ function Section({
       <Box
         ref={charScrollRef}
         sx={{
-          scrollMarginTop: headerHeight + (index + 1) * SECTION_SPACING_PX,
+          scrollMarginTop: headerHeight + (index + 1) * SECTION_SPACING_PX
         }}
       >
         {children}

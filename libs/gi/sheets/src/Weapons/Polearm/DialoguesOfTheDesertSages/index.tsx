@@ -8,6 +8,6 @@ const key: WeaponKey = 'DialoguesOfTheDesertSages'
 const data = dataObjForWeaponSheet(key)
 
 const sheet: IWeaponSheet = {
-  document: [{ header: headerTemplate(key), fields: [] }],
+  document: [{ header: headerTemplate(key), fields: [] }]
 }
 export default new WeaponSheet(sheet, data)

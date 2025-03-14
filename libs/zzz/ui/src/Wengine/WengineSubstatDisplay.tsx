@@ -1,7 +1,7 @@
 import {
   getUnitStr,
   statKeyToFixed,
-  toPercent,
+  toPercent
 } from '@genshin-optimizer/common/util'
 import type { WengineSubStatKey } from '@genshin-optimizer/zzz/consts'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
@@ -13,7 +13,7 @@ export function WengineSubstatDisplay({
   substatKey,
   substatValue,
   showStatName,
-  styleProps,
+  styleProps
 }: {
   substatKey: WengineSubStatKey
   substatValue: number
@@ -33,7 +33,7 @@ export function WengineSubstatDisplay({
         justifyContent: 'space-between',
         fontWeight: '500',
         fontSize: '1rem',
-        gap: 1.5,
+        gap: 1.5
       }}
     >
       <Box

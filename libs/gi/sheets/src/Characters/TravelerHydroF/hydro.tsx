@@ -1,7 +1,7 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
-  CharacterSheetKey,
+  CharacterSheetKey
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -16,7 +16,7 @@ import {
   naught,
   percent,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
@@ -26,7 +26,7 @@ import {
   dmgNode,
   healNode,
   shieldElement,
-  shieldNode,
+  shieldNode
 } from '../dataUtil'
 
 export default function dendro(
@@ -51,38 +51,38 @@ export default function dendro(
       dmgBonus: skillParam_gen.skill[s++],
       suffusionLimit: skillParam_gen.skill[s++][0],
       cd: skillParam_gen.skill[s++][0],
-      holdDuration: skillParam_gen.skill[s++][0],
+      holdDuration: skillParam_gen.skill[s++][0]
     },
     burst: {
       dmg: skillParam_gen.burst[b++],
       duration: skillParam_gen.burst[b++][0],
       cd: skillParam_gen.burst[b++][0],
-      enerCost: skillParam_gen.burst[b++][0],
+      enerCost: skillParam_gen.burst[b++][0]
     },
     passive1: {
       numDropsPerSec: skillParam_gen.passive1[0][0],
       maxDrops: skillParam_gen.passive1[1][0],
-      heal: skillParam_gen.passive1[2][0],
+      heal: skillParam_gen.passive1[2][0]
     },
     passive2: {
       surge_dmgInc: skillParam_gen.passive2[0][0],
-      maxSurge_dmgInc: skillParam_gen.passive2[1][0],
+      maxSurge_dmgInc: skillParam_gen.passive2[1][0]
     },
     constellation1: {
-      energyRegen: skillParam_gen.constellation1[0],
+      energyRegen: skillParam_gen.constellation1[0]
     },
     constellation2: {
       movementSpdDec: skillParam_gen.constellation2[0],
-      durationInc: skillParam_gen.constellation2[1],
+      durationInc: skillParam_gen.constellation2[1]
     },
     constellation4: {
       shield_: skillParam_gen.constellation4[0],
       restoreInterval: skillParam_gen.constellation4[1],
-      restore_: 0.1,
+      restore_: 0.1
     },
     constellation6: {
-      heal: skillParam_gen.constellation6[0],
-    },
+      heal: skillParam_gen.constellation6[0]
+    }
   } as const
 
   const [condSkillSuffusionPath, condSkillSuffusion] = cond(
@@ -106,7 +106,7 @@ export default function dendro(
     3 * dm.skill.hpCost,
     4 * dm.skill.hpCost,
     5 * dm.skill.hpCost,
-    6 * dm.skill.hpCost,
+    6 * dm.skill.hpCost
   ]
   const [condA4HpConsumedPercentPath, condA4HpConsumedPercent] = cond(
     condCharKey,
@@ -149,28 +149,28 @@ export default function dendro(
     ...dmgForms,
     skill: {
       surgeDmg: dmgNode('atk', dm.skill.surgeDmg, 'skill', {
-        premod: { skill_dmgInc: a4HpConsumed_surge_dmgInc },
+        premod: { skill_dmgInc: a4HpConsumed_surge_dmgInc }
       }),
       dewdropDmg: dmgNode('atk', dm.skill.dewdropDmg, 'skill', {
-        premod: { skill_dmgInc: suffusion_dewdrop_dmgInc },
+        premod: { skill_dmgInc: suffusion_dewdrop_dmgInc }
       }),
       thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),
       suffusion_hpCost,
-      suffusion_dewdrop_dmgInc,
+      suffusion_dewdrop_dmgInc
     },
     burst: {
-      dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
+      dmg: dmgNode('atk', dm.burst.dmg, 'burst')
     },
     passive1: {
-      heal: greaterEq(input.asc, 1, healNode('hp', dm.passive1.heal, 0)),
+      heal: greaterEq(input.asc, 1, healNode('hp', dm.passive1.heal, 0))
     },
     passive2: {
-      a4HpConsumed_surge_dmgInc,
+      a4HpConsumed_surge_dmgInc
     },
     constellation4: {
       c4Shield,
-      c4HydroShield,
-    },
+      c4HydroShield
+    }
   } as const
 
   const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -179,8 +179,8 @@ export default function dendro(
   const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
     premod: {
       burstBoost: burstC5,
-      skillBoost: skillC3,
-    },
+      skillBoost: skillC3
+    }
   })
 
   const talent: TalentSheet = {
@@ -189,40 +189,40 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.surgeDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
+              name: ct.chg(`skill.skillParams.0`)
+            })
           },
           {
             node: infoMut(dmgFormulas.skill.dewdropDmg, {
-              name: ct.chg(`skill.skillParams.1`),
-            }),
+              name: ct.chg(`skill.skillParams.1`)
+            })
           },
           {
             node: infoMut(dmgFormulas.skill.thornDmg, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
+              name: ct.chg(`skill.skillParams.2`)
+            })
           },
           {
             text: ct.chg('skill.skillParams.3'),
             value: dm.skill.thornInterval,
-            unit: 's',
+            unit: 's'
           },
           {
             node: infoMut(dmgFormulas.skill.suffusion_hpCost, {
-              name: ct.chg('skill.skillParams.4'),
-            }),
+              name: ct.chg('skill.skillParams.4')
+            })
           },
           {
             text: ct.chg('skill.skillParams.6'),
             value: dm.skill.holdDuration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
+            unit: 's'
+          }
+        ]
       },
       ct.condTem('skill', {
         value: condSkillSuffusion,
@@ -233,12 +233,12 @@ export default function dendro(
             fields: [
               {
                 node: infoMut(dmgFormulas.skill.suffusion_dewdrop_dmgInc, {
-                  name: ch('dewdropDmgInc'),
-                }),
-              },
-            ],
-          },
-        },
+                  name: ch('dewdropDmgInc')
+                })
+              }
+            ]
+          }
+        }
       }),
       ct.condTem('passive2', {
         value: condA4HpConsumedPercent,
@@ -249,26 +249,26 @@ export default function dendro(
           fields: [
             {
               node: infoMut(dmgFormulas.passive2.a4HpConsumed_surge_dmgInc, {
-                name: ch('surgeDmgInc'),
-              }),
-            },
-          ],
-        })),
+                name: ch('surgeDmgInc')
+              })
+            }
+          ]
+        }))
       }),
       ct.headerTem('constellation4', {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation4.c4Shield, {
-              name: st('dmgAbsorption.none'),
-            }),
+              name: st('dmgAbsorption.none')
+            })
           },
           {
             node: infoMut(dmgFormulas.constellation4.c4HydroShield, {
-              name: st('dmgAbsorption.hydro'),
-            }),
-          },
-        ],
-      }),
+              name: st('dmgAbsorption.hydro')
+            })
+          }
+        ]
+      })
     ]),
 
     burst: ct.talentTem('burst', [
@@ -276,8 +276,8 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
+              name: ct.chg(`burst.skillParams.0`)
+            })
           },
           {
             text: stg('duration'),
@@ -287,77 +287,77 @@ export default function dendro(
                     dm.constellation2.durationInc
                   }s = ${dm.burst.duration + dm.constellation2.durationInc}`
                 : dm.burst.duration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: dm.burst.cd,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
+            value: dm.burst.enerCost
+          }
+        ]
       },
       ct.headerTem('constellation2', {
         fields: [
           {
             node: constant(dm.constellation2.movementSpdDec * -100, {
-              path: 'moveSPD_',
-            }),
+              path: 'moveSPD_'
+            })
           },
           {
             text: st('durationInc'),
             value: dm.constellation2.durationInc,
-            unit: 's',
-          },
-        ],
-      }),
+            unit: 's'
+          }
+        ]
+      })
     ]),
 
     passive1: ct.talentTem('passive1', [
       {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') }),
-          },
-        ],
+            node: infoMut(dmgFormulas.passive1.heal, { name: stg('healing') })
+          }
+        ]
       },
       ct.headerTem('constellation1', {
         fields: [
           {
             text: stg('energyRegen'),
-            value: dm.constellation1.energyRegen,
-          },
-        ],
-      }),
+            value: dm.constellation1.energyRegen
+          }
+        ]
+      })
     ]),
     passive2: ct.talentTem('passive2'),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: skillC3 }] },
+      { fields: [{ node: skillC3 }] }
     ]),
     constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: burstC5 }] },
+      { fields: [{ node: burstC5 }] }
     ]),
     constellation6: ct.talentTem('constellation6', [
       ct.headerTem('constellation6', {
         fields: [
           {
             node: infoMut(c6healing, {
-              name: stg('healing'),
-            }),
-          },
-        ],
-      }),
-    ]),
+              name: stg('healing')
+            })
+          }
+        ]
+      })
+    ])
   }
 
   return {
     talent,
-    data,
+    data
   }
 }

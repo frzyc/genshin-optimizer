@@ -12,7 +12,7 @@ const dm = {
   consumedHp_: data_gen.superimpose.otherStats[o++],
   skill_ult_dmg_: data_gen.superimpose.otherStats[o++],
   consumedHpThreshold: data_gen.superimpose.otherStats[o++][1],
-  bonus_skill_ult_dmg_: data_gen.superimpose.otherStats[o++],
+  bonus_skill_ult_dmg_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

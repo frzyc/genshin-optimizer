@@ -8,7 +8,7 @@ export function SubstatEfficiencyDisplayCard({
   efficiency,
   max = false,
   t,
-  valid,
+  valid
 }: {
   efficiency: number
   max?: boolean

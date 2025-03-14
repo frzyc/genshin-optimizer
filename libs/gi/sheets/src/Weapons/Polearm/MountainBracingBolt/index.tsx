@@ -13,7 +13,7 @@ const skill_dmg_ = equal(
   key,
   subscript(input.weapon.refinement, skill_dmg_arr, {
     path: 'skill_dmg_',
-    unit: '%',
+    unit: '%'
   })
 )
 
@@ -30,8 +30,8 @@ const skill_dmg_2 = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    skill_dmg_: sum(skill_dmg_, skill_dmg_2),
-  },
+    skill_dmg_: sum(skill_dmg_, skill_dmg_2)
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -40,9 +40,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: skill_dmg_,
-        },
-      ],
+          node: skill_dmg_
+        }
+      ]
     },
     {
       value: condAfterOtherSkill,
@@ -53,17 +53,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: skill_dmg_2,
+              node: skill_dmg_2
             },
             {
               text: stg('duration'),
               value: 8,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

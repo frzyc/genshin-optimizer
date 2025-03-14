@@ -1,12 +1,12 @@
 import { tag } from '@genshin-optimizer/game-opt/engine'
 import type {
   ElementWithPhyKey,
-  TransformativeReactionKey,
+  TransformativeReactionKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allElementKeys,
   allElementWithPhyKeys,
-  allTransformativeReactionKeys,
+  allTransformativeReactionKeys
 } from '@genshin-optimizer/gi/consts'
 import type { NumNode, StrNode } from '@genshin-optimizer/pando/engine'
 import {
@@ -15,7 +15,7 @@ import {
   prod,
   subscript,
   sum,
-  sumfrac,
+  sumfrac
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent } from '../util'
@@ -111,7 +111,7 @@ const transLvlMultis = [
   1325.4841,
   1363.4569,
   1405.0974,
-  1446.8535,
+  1446.8535
 ]
 // PlayerShieldLevelCo
 const cryLvlMultis = [
@@ -205,13 +205,13 @@ const cryLvlMultis = [
   1754.6715,
   1785.8666,
   1817.1375,
-  1851.0603,
+  1851.0603
 ]
 
 const {
   final: { eleMas },
   char: { lvl },
-  reaction: { ampBase, cataBase, bonus },
+  reaction: { ampBase, cataBase, bonus }
 } = own
 
 function eleMasMulti(a: number, b: number): NumNode {
@@ -234,56 +234,56 @@ const transInfo: Record<TransformativeReactionKey, TransInfo> = {
     multi: 2,
     canCrit: false,
     triggeredBy: ['pyro'],
-    variants: ['pyro'],
+    variants: ['pyro']
   },
   shattered: {
     multi: 1.5,
     canCrit: false,
     triggeredBy: ['physical'],
-    variants: ['physical'],
+    variants: ['physical']
   },
   electrocharged: {
     multi: 1.2,
     canCrit: false,
     triggeredBy: ['electro'],
-    variants: ['electro'],
+    variants: ['electro']
   },
   superconduct: {
     multi: 0.5,
     canCrit: false,
     triggeredBy: ['cryo'],
-    variants: ['cryo'],
+    variants: ['cryo']
   },
   swirl: {
     multi: 0.6,
     canCrit: false,
     triggeredBy: ['anemo'],
-    variants: ['pyro', 'hydro', 'electro', 'cryo'],
+    variants: ['pyro', 'hydro', 'electro', 'cryo']
   },
   burning: {
     multi: 0.25,
     canCrit: true,
     triggeredBy: ['pyro', 'dendro'],
-    variants: ['pyro'],
+    variants: ['pyro']
   },
   bloom: {
     multi: 2,
     canCrit: true,
     triggeredBy: ['dendro', 'hydro'],
-    variants: ['dendro'],
+    variants: ['dendro']
   },
   burgeon: {
     multi: 3,
     canCrit: true,
     triggeredBy: ['pyro'],
-    variants: ['dendro'],
+    variants: ['dendro']
   },
   hyperbloom: {
     multi: 3,
     canCrit: true,
     triggeredBy: ['electro'],
-    variants: ['dendro'],
-  },
+    variants: ['dendro']
+  }
 }
 const transTriggerByEle = Object.fromEntries(
   allElementWithPhyKeys.map((ele) => [ele, new Set()])
@@ -335,7 +335,7 @@ const data: TagMapNodeEntries = [
     lookup(own.common.critMode, {
       crit: sum(1, own.trans.cappedCritRate_),
       nonCrit: 1,
-      avg: sum(1, prod(own.trans.cappedCritRate_, own.trans.critDMG_)),
+      avg: sum(1, prod(own.trans.cappedCritRate_, own.trans.critDMG_))
     })
   ),
   ...allTransformativeReactionKeys.map((trans) =>
@@ -368,10 +368,10 @@ const data: TagMapNodeEntries = [
         ownBuff.listing.formulas.add(
           tag(cond, { trans, qt: 'formula', q, ele, sheet: 'static', name })
         ),
-        ownBuff.prep.ele.name(name).add(ele),
+        ownBuff.prep.ele.name(name).add(ele)
       ]
     })
-  }),
+  })
 ]
 
 export default data

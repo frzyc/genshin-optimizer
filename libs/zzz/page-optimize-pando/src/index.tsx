@@ -4,13 +4,13 @@ import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui
 import {
   DebugReadContext,
   DebugReadModal,
-  TagContext,
+  TagContext
 } from '@genshin-optimizer/game-opt/formula-ui'
 import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
-  SrcDstDisplayContext,
+  SrcDstDisplayContext
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
@@ -19,13 +19,13 @@ import {
   CharacterContext,
   useCharacter,
   useCharOpt,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import {
   getConditional,
   isMember,
   isSheet,
-  type Tag,
+  type Tag
 } from '@genshin-optimizer/zzz/formula'
 import { CharacterName, LocationAutocomplete } from '@genshin-optimizer/zzz/ui'
 import { Box } from '@mui/material'
@@ -64,7 +64,7 @@ export default function PageOptimize() {
     ))
     return {
       srcDisplay: charDisplay,
-      dstDisplay: charDisplay,
+      dstDisplay: charDisplay
     }
   }, [characterKey])
 
@@ -96,7 +96,7 @@ export default function PageOptimize() {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset0`,
+      preset: `preset0`
     }),
     [characterKey]
   )
@@ -105,7 +105,7 @@ export default function PageOptimize() {
   const debugObj = useMemo<DebugReadContextObj>(
     () => ({
       read: debugRead,
-      setRead: setDebugRead,
+      setRead: setDebugRead
     }),
     [debugRead]
   )
@@ -129,7 +129,7 @@ export default function PageOptimize() {
                           display: 'flex',
                           gap: 1,
                           flexDirection: 'column',
-                          mt: 2,
+                          mt: 2
                         }}
                       >
                         <OptSelector character={character} charOpt={charOpt} />

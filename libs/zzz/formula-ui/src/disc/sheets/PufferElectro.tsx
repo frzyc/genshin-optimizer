@@ -18,9 +18,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc2'),
-      },
-    ],
+        text: chg('desc2')
+      }
+    ]
   },
   4: {
     title: <Set4Display />,
@@ -28,26 +28,26 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc4'),
+        text: chg('desc4')
       },
       {
         type: 'fields',
         fields: [
           {
             title: 'Ultimate DMG', // TODO: L10n
-            fieldRef: buff.set4_dmg_.tag,
-          },
-        ],
+            fieldRef: buff.set4_dmg_.tag
+          }
+        ]
       },
       {
         type: 'conditional',
         conditional: {
           label: ch('set4_cond'),
           metadata: cond.launching_ult,
-          fields: [TagToTagField(buff.set4_cond_launching_ult_atk_.tag)],
-        },
-      },
-    ],
-  },
+          fields: [TagToTagField(buff.set4_cond_launching_ult_atk_.tag)]
+        }
+      }
+    ]
+  }
 }
 export default sheet

@@ -27,7 +27,7 @@ export const discsDetailedJSONData = Object.fromEntries(
       desc2: raw.Desc2,
       desc4: raw.Desc4,
       story: raw.Story,
-      icon: raw.Icon,
+      icon: raw.Icon
     }
     return [name, data] as const
   })

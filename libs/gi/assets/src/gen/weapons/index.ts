@@ -414,6 +414,6 @@ const data = {
   WineAndSong,
   WolfFang,
   WolfsGravestone,
-  XiphosMoonlight,
+  XiphosMoonlight
 } as const
 export default data

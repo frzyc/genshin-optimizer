@@ -2,7 +2,7 @@ import type {
   AdditiveReactionKey,
   AmpReactionKey,
   InfusionAuraElementKey,
-  MultiOptHitModeKey,
+  MultiOptHitModeKey
 } from '@genshin-optimizer/gi/consts'
 import type { InputPremodKey } from '../legacy/keys'
 

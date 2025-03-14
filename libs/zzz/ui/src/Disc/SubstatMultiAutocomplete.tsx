@@ -14,7 +14,7 @@ export function SubstatMultiAutocomplete<
   setSubstatKeys,
   totals,
   fullWidth = false,
-  allSubstatKeys,
+  allSubstatKeys
 }: {
   substatKeys: SubstatKeyParam[]
   setSubstatKeys: (keys: SubstatKeyParam[]) => void
@@ -28,7 +28,7 @@ export function SubstatMultiAutocomplete<
     () =>
       allSubstatKeys.map((key) => ({
         key,
-        label: `${tk(key)}${getUnitStr(key)}`,
+        label: `${tk(key)}${getUnitStr(key)}`
       })),
     [allSubstatKeys, tk]
   )

@@ -6,7 +6,7 @@ import {
   input,
   percent,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
@@ -23,7 +23,7 @@ const dmg = equal(
   input.weapon.key,
   key,
   customDmgNode(prod(dmgPerc, input.total.atk), 'elemental', {
-    hit: { ele: constant('physical') },
+    hit: { ele: constant('physical') }
   })
 )
 
@@ -31,11 +31,11 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      critDMG_,
-    },
+      critDMG_
+    }
   },
   {
-    dmg,
+    dmg
   }
 )
 
@@ -45,14 +45,14 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: critDMG_,
+          node: critDMG_
         },
         {
-          node: infoMut(dmg, { name: st('dmg') }),
-        },
-      ],
-    },
-  ],
+          node: infoMut(dmg, { name: st('dmg') })
+        }
+      ]
+    }
+  ]
 }
 
 export default new WeaponSheet(sheet, data)

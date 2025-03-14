@@ -1,7 +1,7 @@
 import {
   prune,
   type Candidate,
-  type NumTagFree,
+  type NumTagFree
 } from '@genshin-optimizer/pando/engine'
 import type { BuildResult, Progress, Work } from './common'
 import { buildCount } from './common'
@@ -42,7 +42,7 @@ export class Solver<ID extends string> {
     const workers = [...Array(numWorkers)].map(
       () =>
         new Worker(new URL('./workerHandle.ts', import.meta.url), {
-          type: 'module',
+          type: 'module'
         })
     )
 

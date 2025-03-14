@@ -1,7 +1,7 @@
 import {
   CardThemed,
   NumberInputLazy,
-  useIsMount,
+  useIsMount
 } from '@genshin-optimizer/common/ui'
 import { clamp, objMap } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
@@ -15,8 +15,8 @@ import { BuildTcContext } from '../../../../BuildTcContext'
 function getMinRoll(charTC: BuildTc) {
   const {
     artifact: {
-      substats: { stats, rarity, type },
-    },
+      substats: { stats, rarity, type }
+    }
   } = charTC
   return Math.floor(
     Math.min(
@@ -32,7 +32,7 @@ function getMinMax(buildTc: BuildTc) {
   )
 }
 export function ArtifactAllSubstatEditor({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {
@@ -50,8 +50,8 @@ export function ArtifactAllSubstatEditor({
     setBuildTc((buildTc) => {
       const {
         artifact: {
-          substats: { stats, type, rarity },
-        },
+          substats: { stats, type, rarity }
+        }
       } = buildTc
       buildTc.artifact.substats.stats = objMap(stats, (val, statKey) => {
         const old = val
@@ -104,7 +104,7 @@ export function ArtifactAllSubstatEditor({
           gap: 1,
           alignItems: 'center',
           justifyContent: 'center',
-          overflow: 'visible',
+          overflow: 'visible'
         }}
       >
         <Slider
@@ -129,14 +129,14 @@ export function ArtifactAllSubstatEditor({
         inputProps={{
           sx: { textAlign: 'right', width: '1.5em' },
           min: 0,
-          max: 99,
+          max: 99
         }}
         InputProps={{
           startAdornment: (
             <Box sx={{ whiteSpace: 'nowrap' }}>
               {t('tabTheorycraft.all.rolls')}
             </Box>
-          ),
+          )
         }}
         focused
       />
@@ -148,14 +148,14 @@ export function ArtifactAllSubstatEditor({
         inputProps={{
           sx: { textAlign: 'right', width: '1.5em' },
           min: 0,
-          max: 99,
+          max: 99
         }}
         InputProps={{
           startAdornment: (
             <Box sx={{ whiteSpace: 'nowrap' }}>
               {t('tabTheorycraft.all.max')}
             </Box>
-          ),
+          )
         }}
         focused
       />

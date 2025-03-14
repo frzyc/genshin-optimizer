@@ -3,7 +3,7 @@ import {
   CardThemed,
   DropdownButton,
   ImgIcon,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { toggleInArr } from '@genshin-optimizer/common/util'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
@@ -19,7 +19,7 @@ import {
   Divider,
   Grid,
   IconButton,
-  MenuItem,
+  MenuItem
 } from '@mui/material'
 import { DiscSetName } from './DiscTrans'
 
@@ -28,7 +28,7 @@ export function DiscSetFilter({
   setFilter4,
   setFilter2,
   setSetFilter4,
-  setSetFilter2,
+  setSetFilter2
 }: {
   disabled?: boolean
   setFilter4: DiscSetKey[]
@@ -132,7 +132,7 @@ function AdvSetFilterCard({
   setFilter4,
   setFilter2,
   setSetFilter4,
-  setSetFilter2,
+  setSetFilter2
 }: {
   onClose: () => void
   setFilter4: DiscSetKey[]
@@ -188,7 +188,7 @@ function AdvSetFilterDiscCard({
   setFilter4,
   setFilter2,
   setSetFilter4,
-  setSetFilter2,
+  setSetFilter2
 }: {
   setKey: DiscSetKey
   setFilter4: DiscSetKey[]

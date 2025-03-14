@@ -5,7 +5,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st, stg } from '../../../SheetUtil'
@@ -35,32 +35,32 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      burst_dmg_,
-    },
+      burst_dmg_
+    }
   },
   {
-    dmg,
+    dmg
   }
 )
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: burst_dmg_ }],
+      fields: [{ node: burst_dmg_ }]
     },
     {
       header: headerTemplate(key, st('conditional')),
       fields: [
         {
-          node: infoMut(dmg, { name: st('dmg') }),
+          node: infoMut(dmg, { name: st('dmg') })
         },
         {
           text: stg('cd'),
           value: 15,
-          unit: 's',
-        },
-      ],
-    },
-  ],
+          unit: 's'
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

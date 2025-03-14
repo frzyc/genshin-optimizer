@@ -4,7 +4,7 @@ import type {
   CharacterSheetKey,
   ElementKey,
   NonTravelerCharacterKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import * as allStat_gen from './allStat_gen.json'
@@ -14,7 +14,7 @@ import type { AllStats, CharacterDataGen } from './executors/gen-stats/executor'
 // Importing the executor is quite costly.
 export type {
   CharacterDataGen,
-  WeaponDataGen,
+  WeaponDataGen
 } from './executors/gen-stats/executor'
 
 const allStats = allStat_gen as AllStats

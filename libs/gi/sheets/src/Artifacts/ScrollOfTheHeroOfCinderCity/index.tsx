@@ -1,7 +1,7 @@
 import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
 import {
   allElementKeys,
-  type ArtifactSetKey,
+  type ArtifactSetKey
 } from '@genshin-optimizer/gi/consts'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { Data } from '@genshin-optimizer/gi/wr'
@@ -13,7 +13,7 @@ import {
   infoMut,
   input,
   percent,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { condReadNode, nonStackBuff, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -52,7 +52,7 @@ const set4BaseTallyWrites = objKeyValMap(allElementKeys, (ele) => [
     input.artSet[key],
     4,
     greaterEqStr(isReactEleBuffed[ele], 1, input.charKey)
-  ),
+  )
 ])
 
 const condReactBuffs = objKeyMap(allElementKeys, (ele) =>
@@ -61,7 +61,7 @@ const condReactBuffs = objKeyMap(allElementKeys, (ele) =>
 
 const condNightsoulPaths = objKeyMap(allElementKeys, (ele) => [
   key,
-  `nightsoul_${ele}`,
+  `nightsoul_${ele}`
 ])
 const condNightsouls = objKeyMap(allElementKeys, (ele) =>
   condReadNode(condNightsoulPaths[ele])
@@ -92,7 +92,7 @@ const set4NsTallyWrites = objKeyValMap(allElementKeys, (ele) => [
     input.artSet[key],
     4,
     equalStr(isNsEleBuffed[ele], 1, input.charKey)
-  ),
+  )
 ])
 
 const condNightsoulBuffs = objKeyMap(allElementKeys, (ele) =>
@@ -101,19 +101,19 @@ const condNightsoulBuffs = objKeyMap(allElementKeys, (ele) =>
 
 const totalBuffs = objKeyValMap(allElementKeys, (ele) => [
   `${ele}_dmg_`,
-  sum(condReactBuffs[ele][0], condNightsoulBuffs[ele][0]),
+  sum(condReactBuffs[ele][0], condNightsoulBuffs[ele][0])
 ])
 
 export const data: Data = dataObjForArtifactSheet(key, {
   teamBuff: {
     premod: {
-      ...totalBuffs,
+      ...totalBuffs
     },
     nonStacking: {
       ...set4BaseTallyWrites,
-      ...set4NsTallyWrites,
-    },
-  },
+      ...set4NsTallyWrites
+    }
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -133,9 +133,9 @@ const sheet: SetEffectSheet = {
               value: condReacts[ele],
               path: condReactPaths[ele],
               name: st(`elementalReaction.${ele}`),
-              fields: [],
+              fields: []
             })
-          ),
+          )
       },
       {
         teamBuff: true,
@@ -145,19 +145,19 @@ const sheet: SetEffectSheet = {
             nodes.map((node) => ({
               node: infoMut(node, {
                 path: `${key}_dmg_`,
-                isTeamBuff: true,
+                isTeamBuff: true
               }),
               // Hide buffs that aren't enabled by conditionals, since we are showing the buffs separately from the checkboxes
               canShow: (data: UIData) =>
-                data.get(isReactEleBuffed[key]).value >= 1,
+                data.get(isReactEleBuffed[key]).value >= 1
             }))
           ),
           {
             text: stg('duration'),
             value: 15,
-            unit: 's',
-          },
-        ],
+            unit: 's'
+          }
+        ]
       },
       {
         header: setHeader(4),
@@ -171,9 +171,9 @@ const sheet: SetEffectSheet = {
               value: condNightsouls[ele],
               path: condNightsoulPaths[ele],
               name: st(`elementalReaction.nightsoul.${ele}`),
-              fields: [],
+              fields: []
             })
-          ),
+          )
       },
       {
         teamBuff: true,
@@ -183,21 +183,20 @@ const sheet: SetEffectSheet = {
             nodes.map((node) => ({
               node: infoMut(node, {
                 path: `${key}_dmg_`,
-                isTeamBuff: true,
+                isTeamBuff: true
               }),
               // Hide buffs that aren't enabled by conditionals, since we are showing the buffs separately from the checkboxes
-              canShow: (data: UIData) =>
-                data.get(isNsEleBuffed[key]).value >= 1,
+              canShow: (data: UIData) => data.get(isNsEleBuffed[key]).value >= 1
             }))
           ),
           {
             text: stg('duration'),
             value: 20,
-            unit: 's',
-          },
-        ],
-      },
-    ],
-  },
+            unit: 's'
+          }
+        ]
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

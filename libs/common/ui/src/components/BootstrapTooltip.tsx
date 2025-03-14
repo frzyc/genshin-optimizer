@@ -8,10 +8,10 @@ export const BootstrapTooltip = styled(
   )
 )(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
-    color: theme.palette.common.black,
+    color: theme.palette.common.black
   },
   [`& .${tooltipClasses.tooltip}`]: {
     backgroundColor: theme.palette.common.black,
-    maxWidth: 500,
-  },
+    maxWidth: 500
+  }
 }))

@@ -9,7 +9,7 @@ import { CharacterCardContent, CharacterCardEquipment } from './card'
 
 export function CharacterCard({
   characterKey,
-  onClick,
+  onClick
 }: {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
@@ -41,7 +41,7 @@ export function CharacterCard({
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          borderRadius: '24px',
+          borderRadius: '24px'
         }}
       >
         <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -58,7 +58,7 @@ type ExistingCharacterCardContentProps = {
   characterKey: CharacterKey
 }
 function ExistingCharacterCardContent({
-  characterKey,
+  characterKey
 }: ExistingCharacterCardContentProps) {
   const charStat = getCharStat(characterKey)
   return (
@@ -74,7 +74,7 @@ function ExistingCharacterCardContent({
           position: 'relative',
           background: `${theme.palette[charStat.attribute].main}`,
           height: '270px',
-          padding: 0,
+          padding: 0
         })}
       >
         <CharacterCardEquipment characterKey={characterKey} />
@@ -88,7 +88,7 @@ function ExistingCharacterCardContent({
           gap: 1,
           flexGrow: 1,
           position: 'relative',
-          background: '#1A263A',
+          background: '#1A263A'
         })}
       >
         <CharacterCardContent characterKey={characterKey} />

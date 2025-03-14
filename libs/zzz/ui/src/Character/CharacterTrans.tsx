@@ -2,13 +2,13 @@
 import {
   elementalData,
   type AttributeKey,
-  type CharacterKey,
+  type CharacterKey
 } from '@genshin-optimizer/zzz/consts'
 // use client due to hydration difference between client rendering and server in translation
 import { Translate } from '@genshin-optimizer/zzz/i18n'
 
 export function CharacterName({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {

@@ -13,7 +13,7 @@ import {
   NodeFieldDisplay,
   RefinementDropdown,
   WeaponName,
-  WeaponSelectionModal,
+  WeaponSelectionModal
 } from '@genshin-optimizer/gi/ui'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -23,14 +23,14 @@ import {
   CardHeader,
   Divider,
   ListItem,
-  Stack,
+  Stack
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { BuildTcContext } from '../../../BuildTcContext'
 
 export function WeaponEditorCard({
   weaponTypeKey,
-  disabled,
+  disabled
 }: {
   weaponTypeKey: WeaponTypeKey
   disabled: boolean
@@ -49,7 +49,7 @@ export function WeaponEditorCard({
       ...buildTc.weapon,
       location: '',
       lock: false,
-      id: '',
+      id: ''
     }),
     [buildTc]
   )
@@ -81,7 +81,7 @@ export function WeaponEditorCard({
               flexshrink: 1,
               flexBasis: 0,
               maxWidth: '30%',
-              borderRadius: 1,
+              borderRadius: 1
             }}
           />
           <Stack spacing={1} flexGrow={1}>

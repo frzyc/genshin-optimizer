@@ -85,6 +85,6 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   TheStringless,
   TheViridescentHunt,
   ThunderingPulse,
-  WindblumeOde,
+  WindblumeOde
 } as const
 export default bow

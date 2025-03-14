@@ -57,7 +57,7 @@ export class GeneratedBuildListDataManager extends DataManager<
 
     return {
       builds,
-      buildDate,
+      buildDate
     }
   }
   new(data: GeneratedBuildList) {

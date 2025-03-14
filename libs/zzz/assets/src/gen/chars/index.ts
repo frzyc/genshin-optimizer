@@ -62,6 +62,6 @@ const data = {
   Soukaku,
   Trigger,
   Yanagi,
-  ZhuYuan,
+  ZhuYuan
 } as const
 export default data

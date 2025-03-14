@@ -1,7 +1,7 @@
 import type {
   ArtifactSetKey,
   CharacterSheetKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 
@@ -47,6 +47,6 @@ export function trans(
     ),
     (strKey: string, values?: Record<string, string | number>) => (
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
-    ),
+    )
   ]
 }

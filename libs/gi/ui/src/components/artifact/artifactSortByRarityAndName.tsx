@@ -1,6 +1,6 @@
 import type {
   ArtifactRarity,
-  ArtifactSetKey,
+  ArtifactSetKey
 } from '@genshin-optimizer/gi/consts'
 import { i18n } from '@genshin-optimizer/gi/i18n'
 

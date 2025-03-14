@@ -3,13 +3,13 @@ import { range } from '@genshin-optimizer/common/util'
 import type { CondMeta } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { Button, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
 
 export function ConditionalToggles({
-  condMetas,
+  condMetas
 }: {
   condMetas: CondMeta[] | CondMeta
 }) {
@@ -27,8 +27,8 @@ function ConditionalToggle({ condMeta }: { condMeta: CondMeta }) {
       database.chars.set(characterKey, (chars) => ({
         conditionals: {
           ...chars.conditionals,
-          [condMeta.key]: value,
-        },
+          [condMeta.key]: value
+        }
       })),
     [database.chars, characterKey, condMeta.key]
   )

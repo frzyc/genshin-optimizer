@@ -6,13 +6,13 @@ import {
   CardActionArea,
   CardContent,
   Grid,
-  Typography,
+  Typography
 } from '@mui/material'
 
 export function TeamCard({
   teamId,
   bgTheme = 'light',
-  onClick,
+  onClick
 }: {
   teamId: string
   bgTheme?: 'light' | 'dark'
@@ -25,20 +25,20 @@ export function TeamCard({
       bgt={bgTheme}
       sx={{
         height: '100%',
-        border: '1px rgba(200,200,200,0.4) solid',
+        border: '1px rgba(200,200,200,0.4) solid'
       }}
     >
       <Box
         sx={{
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
         }}
       >
         <Box
           sx={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'row'
           }}
         >
           <CardActionArea onClick={() => onClick()} sx={{ p: 1 }}>

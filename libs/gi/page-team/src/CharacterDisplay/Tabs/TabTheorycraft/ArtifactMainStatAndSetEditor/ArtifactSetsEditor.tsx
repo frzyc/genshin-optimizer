@@ -8,15 +8,15 @@ import { BuildTcContext } from '../../../../BuildTcContext'
 import { ArtifactSetEditor } from './ArtifactSetEditor'
 
 export function ArtifactSetsEditor({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {
   const {
     buildTc: {
-      artifact: { sets: artSet },
+      artifact: { sets: artSet }
     },
-    setBuildTc,
+    setBuildTc
   } = useContext(BuildTcContext)
   const setSet = useCallback(
     (setKey: ArtifactSetKey | '') => {

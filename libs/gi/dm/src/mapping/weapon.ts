@@ -240,6 +240,6 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   15511: 'HuntersPath',
   15512: 'TheFirstGreatMagic',
   15513: 'SilvershowerHeartstrings',
-  15514: 'AstralVulturesCrimsonPlumage',
+  15514: 'AstralVulturesCrimsonPlumage'
 } as const
 export type WeaponId = keyof typeof weaponIdMap

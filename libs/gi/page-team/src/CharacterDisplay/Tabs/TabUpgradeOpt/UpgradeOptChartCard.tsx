@@ -1,19 +1,19 @@
 import {
   useBoolState,
-  useForceUpdate,
+  useForceUpdate
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { linspace, objMap } from '@genshin-optimizer/common/util'
 import {
   charKeyToLocCharKey,
-  type ArtifactSlotKey,
+  type ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
   ArtifactCardPico,
   DataContext,
-  EquipBuildModal,
+  EquipBuildModal
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -29,7 +29,7 @@ import {
   ReferenceLine,
   ResponsiveContainer,
   XAxis,
-  YAxis,
+  YAxis
 } from 'recharts'
 import { erf } from './mathUtil'
 import type { UpOptCalculator } from './upOpt'
@@ -79,7 +79,7 @@ export default function UpgradeOptChartCard(props: Props) {
 }
 function EquipButton({
   newArtId,
-  disabled,
+  disabled
 }: {
   newArtId: string
   disabled: boolean
@@ -88,7 +88,7 @@ function EquipButton({
   const {
     loadoutDatum,
     loadoutDatum: { buildType, buildId },
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey }
   } = useContext(TeamCharacterContext)
   const [show, onShow, onHide] = useBoolState()
   const weapon = database.teams.getLoadoutWeapon(loadoutDatum)
@@ -115,7 +115,7 @@ function EquipButton({
         onEquip={() => {
           if (buildType === 'equipped')
             database.arts.set(newArtId, {
-              location: charKeyToLocCharKey(characterKey),
+              location: charKeyToLocCharKey(characterKey)
             })
           else if (buildType === 'real')
             database.builds.set(buildId, (build) => {
@@ -145,7 +145,7 @@ function UpgradeOptChartCardGraph({
   objMin,
   objMax,
   upOptCalc,
-  ix,
+  ix
 }: Props) {
   const { t } = useTranslation('page_character_optimize')
   const upArt = upOptCalc.artifacts[ix]
@@ -196,13 +196,13 @@ function UpgradeOptChartCardGraph({
         {
           x: perc(v),
           est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
+          estCons: integralCons(v, v + step)
         },
         {
           x: perc(v + step),
           est: integral(v, v + step),
-          estCons: integralCons(v, v + step),
-        },
+          estCons: integralCons(v, v + step)
+        }
       ]
     }
   )
@@ -259,7 +259,7 @@ function UpgradeOptChartCardGraph({
             alignItems: 'center',
             gap: 2,
             px: 2,
-            py: 1,
+            py: 1
           }}
         >
           <Box flexGrow={1}>
@@ -363,7 +363,7 @@ function UpgradeOptChartCardGraph({
             name={
               isExact
                 ? t('upOptChart.exactDist', {
-                    const: constrained ? t('upOptChart.const') : '',
+                    const: constrained ? t('upOptChart.const') : ''
                   })
                 : t('upOptChart.estimatedDist')
             }

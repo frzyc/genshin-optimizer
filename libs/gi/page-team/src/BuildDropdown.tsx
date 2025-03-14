@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 export default function BuildDropdown({
   teamId,
   loadoutDatum,
-  dropdownBtnProps = {},
+  dropdownBtnProps = {}
 }: {
   teamId: string
   loadoutDatum: LoadoutDatum

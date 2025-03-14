@@ -5,7 +5,7 @@ import {
   NodeFieldDisplayText,
   getDisplayHeader,
   getDisplaySections,
-  resolveInfo,
+  resolveInfo
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -17,7 +17,7 @@ import {
   Divider,
   IconButton,
   MenuItem,
-  MenuList,
+  MenuList
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -38,7 +38,7 @@ export function TargetSelectorModal({
   showEmptyTargets = false,
   flatOnly = false,
   excludeSections = [],
-  excludeHeal = false,
+  excludeHeal = false
 }: TargetSelectorModalProps) {
   const { data } = useContext(DataContext)
   const { t } = useTranslation('page_character_optimize')
@@ -64,7 +64,7 @@ export function TargetSelectorModal({
 
                   return true
                 })
-              ) as DisplaySub<CalcResult>,
+              ) as DisplaySub<CalcResult>
             ] as [string, DisplaySub<CalcResult>]
         )
         // Determine if a section has all empty entries
@@ -103,7 +103,7 @@ export function TargetSelectorModal({
 function SelectorSection({
   displayNs,
   sectionKey,
-  setTarget,
+  setTarget
 }: {
   displayNs: DisplaySub<CalcResult>
   sectionKey: string
@@ -142,7 +142,7 @@ function SelectorSection({
 
 function TargetSelectorMenuItem({
   node,
-  onClick,
+  onClick
 }: {
   node: CalcResult
   onClick: () => void

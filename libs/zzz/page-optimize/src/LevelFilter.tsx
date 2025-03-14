@@ -7,7 +7,7 @@ import { memo } from 'react'
 
 export const LevelFilter = memo(function LevelFilter({
   locationKey,
-  disabled = false,
+  disabled = false
 }: {
   locationKey: LocationKey
   disabled?: boolean
@@ -37,7 +37,7 @@ export const LevelFilter = memo(function LevelFilter({
           character &&
           database.chars.set(character.key, {
             levelLow,
-            levelHigh,
+            levelHigh
           })
         }
         disabled={disabled || !character}

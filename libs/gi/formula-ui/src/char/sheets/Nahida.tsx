@@ -9,7 +9,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   auto: ct.talentTem('auto', [
     {
       type: 'text',
-      text: ct.chg('auto.fields.normal'),
+      text: ct.chg('auto.fields.normal')
     },
     {
       type: 'fields',
@@ -17,13 +17,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
         .filter(([key]) => key.startsWith('normal'))
         .map(([_, { tag }], i) => ({
           title: ct.chg(`auto.skillParams.${i}`),
-          fieldRef: tag,
-        })),
+          fieldRef: tag
+        }))
     },
     {
       type: 'text',
-      text: ct.chg('auto.fields.charged'),
-    },
+      text: ct.chg('auto.fields.charged')
+    }
     // {
     //   fields: [
     //     {
@@ -59,7 +59,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     //     },
     //   ],
     // },
-  ]),
+  ])
 }
 
 export default sheet

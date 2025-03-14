@@ -1,11 +1,11 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { type WeaponKey } from '@genshin-optimizer/gi/consts'
@@ -17,7 +17,7 @@ import {
   WeaponSelectionModal,
   weaponFilterConfigs,
   weaponSortConfigs,
-  weaponSortMap,
+  weaponSortMap
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -26,7 +26,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  TextField,
+  TextField
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -35,7 +35,7 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
@@ -106,7 +106,7 @@ export default function PageWeapon() {
     locked,
     showEquipped,
     showInventory,
-    locations,
+    locations
   } = state
 
   const { weaponIds, totalWeaponNum } = useMemo(() => {
@@ -122,7 +122,7 @@ export default function PageWeapon() {
             locked,
             showInventory,
             showEquipped,
-            locations,
+            locations
           },
           weaponFilterConfigs()
         )
@@ -147,7 +147,7 @@ export default function PageWeapon() {
     showInventory,
     showEquipped,
     locations,
-    deferredSearchTerm,
+    deferredSearchTerm
   ])
 
   const { numShow, setTriggerElement } = useInfScroll(
@@ -182,7 +182,7 @@ export default function PageWeapon() {
     numShowing: weaponIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_weapon',
+    namespace: 'page_weapon'
   }
 
   const sortByButtonProps = {
@@ -190,7 +190,7 @@ export default function PageWeapon() {
     value: sortType,
     onChange: (sortType) => database.displayWeapon.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayWeapon.set({ ascending }),
+    onChangeAsc: (ascending) => database.displayWeapon.set({ ascending })
   }
 
   return (

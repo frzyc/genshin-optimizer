@@ -6,6 +6,6 @@ import relics from './relics'
 const data = {
   chars,
   lightCones,
-  relics,
+  relics
 } as const
 export default data

@@ -6,7 +6,7 @@ import type {
   ArtCharDatabase,
   ICachedArtifact,
   ICachedCharacter,
-  ICachedWeapon,
+  ICachedWeapon
 } from '@genshin-optimizer/gi/db'
 import { defaultInitialWeapon } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -16,7 +16,7 @@ import {
   displayDataMap,
   getCharSheet,
   getWeaponSheet,
-  resonanceData,
+  resonanceData
 } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
@@ -26,7 +26,7 @@ import {
   dataObjForArtifact,
   dataObjForCharacter,
   dataObjForWeapon,
-  mergeData,
+  mergeData
 } from '@genshin-optimizer/gi/wr'
 import { useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../type/TeamData'
@@ -67,7 +67,7 @@ export function useCharData(
       database,
       mainStatAssumptionLevel,
       overrideArt,
-      overrideWeapon,
+      overrideWeapon
     ]
   )
 
@@ -164,8 +164,8 @@ function TeamDataBundle(
     character,
     overrideWeapon
       ? overrideWeapon
-      : database.weapons.get(character.equippedWeapon) ??
-          defaultInitialWeapon(),
+      : (database.weapons.get(character.equippedWeapon) ??
+          defaultInitialWeapon()),
     overrideArt ??
       (Object.values(character.equippedArtifacts)
         .map((a) => database.arts.get(a))
@@ -174,7 +174,7 @@ function TeamDataBundle(
   if (!char1DataBundle) return undefined
   const teamBundle = { [characterKey]: char1DataBundle }
   const teamData: Partial<Record<CharacterKey, Data[]>> = {
-    [characterKey]: char1DataBundle.data,
+    [characterKey]: char1DataBundle.data
   }
 
   return { teamData, teamBundle }
@@ -214,7 +214,7 @@ function getCharDataBundle(
   const sheetData = mergeData([
     characterSheet.data,
     weaponSheetsData,
-    allArtifactData,
+    allArtifactData
   ])
   const artifactData = Array.isArray(artifacts)
     ? artifacts
@@ -227,7 +227,7 @@ function getCharDataBundle(
     dataObjForWeapon(weapon),
     sheetData,
     common, // NEED TO PUT THIS AT THE END
-    resonanceData,
+    resonanceData
   ]
   return { character, weapon, characterSheet, weaponSheet, data }
 }

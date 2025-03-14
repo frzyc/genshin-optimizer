@@ -5,7 +5,7 @@ import type {
   RelicSetKey,
   RelicSlotKey,
   RelicSubStatKey,
-  RelicSubstatTypeKey,
+  RelicSubstatTypeKey
 } from '@genshin-optimizer/sr/consts'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 

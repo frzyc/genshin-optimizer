@@ -4,6 +4,6 @@ import icon from './icon.png'
 
 const data = {
   big,
-  icon,
+  icon
 } as const
 export default data

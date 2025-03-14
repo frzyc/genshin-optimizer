@@ -1,11 +1,11 @@
 import type {
   ArtifactSetKey,
-  ArtifactSlotKey,
+  ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import {
   artifactIdMap,
   reliquaryCodexExcelConfigData,
-  reliquarySetExcelConfigData,
+  reliquarySetExcelConfigData
 } from '@genshin-optimizer/gi/dm'
 
 export type ArtifactDataGen = {
@@ -26,13 +26,13 @@ export default function artifactData() {
         ...(codexInSet[0].leatherId ? (['plume'] as ArtifactSlotKey[]) : []),
         ...(codexInSet[0].capId ? (['circlet'] as ArtifactSlotKey[]) : []),
         ...(codexInSet[0].flowerId ? (['flower'] as ArtifactSlotKey[]) : []),
-        ...(codexInSet[0].sandId ? (['sands'] as ArtifactSlotKey[]) : []),
+        ...(codexInSet[0].sandId ? (['sands'] as ArtifactSlotKey[]) : [])
       ] as ArtifactSlotKey[]
       const rarities = codexInSet.map((r) => r.level)
       const result: ArtifactDataGen = {
         setNum: setNeedNum,
         rarities,
-        slots,
+        slots
       }
       return [artifactIdMap[setid], result]
     })

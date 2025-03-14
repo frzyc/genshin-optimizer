@@ -4,7 +4,7 @@ import {
   CardThemed,
   DropdownButton,
   ModalWrapper,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { CharacterName } from '@genshin-optimizer/gi/ui'
@@ -16,7 +16,7 @@ import {
   CardHeader,
   Divider,
   MenuItem,
-  TextField,
+  TextField
 } from '@mui/material'
 import { useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -25,7 +25,7 @@ export function LoadoutDropdown({
   teamCharId,
   onChangeTeamCharId,
   dropdownBtnProps = {},
-  label = false,
+  label = false
 }: {
   teamCharId: string
   onChangeTeamCharId: (teamCharId: string) => void
@@ -47,7 +47,7 @@ export function LoadoutDropdown({
   const newLoadout = () => {
     const teamCharId = database.teamChars.new(characterKey, {
       name: newName,
-      description: newDesc,
+      description: newDesc
     })
     if (teamCharId) onChangeTeamCharId(teamCharId)
     onHide()
@@ -110,7 +110,7 @@ export function LoadoutDropdown({
               justifyContent: 'center',
               textOverflow: 'ellipsis',
               overflow: 'hidden',
-              whiteSpace: 'nowrap',
+              whiteSpace: 'nowrap'
             }}
           >
             {label ? (

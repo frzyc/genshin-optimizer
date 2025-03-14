@@ -6,7 +6,7 @@ import {
   allNumConditionals,
   own,
   ownBuff,
-  registerBuff,
+  registerBuff
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

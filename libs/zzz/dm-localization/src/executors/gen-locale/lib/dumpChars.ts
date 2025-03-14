@@ -8,7 +8,7 @@ export function dumpChars(fileDir: string) {
     charNames[charKey] = charData.fullname
 
     dumpFile(`${fileDir}/char_${charKey}_gen.json`, {
-      name: charData.fullname,
+      name: charData.fullname
       // TODO: actual skill/core data
     })
   })

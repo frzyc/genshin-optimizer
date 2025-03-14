@@ -1,6 +1,6 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { sortFunction } from '@genshin-optimizer/common/util'
@@ -9,7 +9,7 @@ import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
   lightConeSortConfigs,
   lightConeSortKeys,
-  lightConeSortMap,
+  lightConeSortMap
 } from '@genshin-optimizer/sr/util'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -18,7 +18,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -42,7 +42,7 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
     sortType: lightConeSortKeys[0],
     ascending: false,
     rarity: [...allRarityKeys],
-    path: [...allPathKeys],
+    path: [...allPathKeys]
   })
 
   // no way to currently change state of sort until
@@ -88,7 +88,7 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
 
   const showingTextProps = {
     numShowing: lightConeIdsToShow.length,
-    total: totalShowing,
+    total: totalShowing
   }
 
   return (

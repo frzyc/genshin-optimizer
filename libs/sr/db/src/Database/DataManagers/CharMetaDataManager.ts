@@ -8,7 +8,7 @@ interface ICharMeta {
   favorite: boolean
 }
 const initCharMeta: ICharMeta = deepFreeze({
-  favorite: false,
+  favorite: false
 })
 
 export class CharMetaDataManager extends DataManager<

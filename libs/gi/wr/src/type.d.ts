@@ -2,12 +2,12 @@ import type {
   ArtifactSetKey,
   CharacterSheetKey,
   ElementWithPhyKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
-  TransformativeReactionsKey,
+  TransformativeReactionsKey
 } from '@genshin-optimizer/gi/keymap'
 import type { input, NonStackBuff, uiInput } from './formula'
 
@@ -137,8 +137,8 @@ export interface ReadNode<Value> extends Base<any> {
   type: Value extends number
     ? 'number'
     : Value extends string
-    ? 'string'
-    : undefined
+      ? 'string'
+      : undefined
 }
 export interface ConstantNode<Value> extends Base<any> {
   operation: 'const'
@@ -147,20 +147,20 @@ export interface ConstantNode<Value> extends Base<any> {
   type: Value extends number
     ? 'number'
     : Value extends string
-    ? 'string'
-    : undefined
+      ? 'string'
+      : undefined
 }
 
 type _StrictInput<T, Num, Str> = T extends ReadNode<number>
   ? Num
   : T extends ReadNode<string>
-  ? Str
-  : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
+    ? Str
+    : { [key in keyof T]: _StrictInput<T[key], Num, Str> }
 type _Input<T, Num, Str> = T extends ReadNode<number>
   ? Num
   : T extends ReadNode<string>
-  ? Str
-  : { [key in keyof T]?: _Input<T[key], Num, Str> }
+    ? Str
+    : { [key in keyof T]?: _Input<T[key], Num, Str> }
 export type StrictInput<Num = NumNode, Str = StrNode> = _StrictInput<
   typeof input,
   Num,

@@ -11,10 +11,10 @@ const setHeader = setHeaderTemplate(key)
 const [condStatePath, condState] = cond(key, 'state')
 
 const set2NA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), {
-  path: 'normal_dmg_',
+  path: 'normal_dmg_'
 })
 const set2CA = greaterEq(input.artSet.MartialArtist, 2, percent(0.15), {
-  path: 'charged_dmg_',
+  path: 'charged_dmg_'
 })
 const set4NA = greaterEq(
   input.artSet.MartialArtist,
@@ -30,15 +30,15 @@ const set4CA = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     normal_dmg_: sum(set2NA, set4NA),
-    charged_dmg_: sum(set2CA, set4CA),
-  },
+    charged_dmg_: sum(set2CA, set4CA)
+  }
 })
 
 const sheet: SetEffectSheet = {
   2: {
     document: [
-      { header: setHeader(2), fields: [{ node: set2NA }, { node: set2CA }] },
-    ],
+      { header: setHeader(2), fields: [{ node: set2NA }, { node: set2CA }] }
+    ]
   },
   4: {
     document: [
@@ -51,21 +51,21 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: set4NA,
+                node: set4NA
               },
               {
-                node: set4CA,
+                node: set4CA
               },
               {
                 text: stg('duration'),
                 value: 8,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                unit: 's'
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

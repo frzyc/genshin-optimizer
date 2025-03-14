@@ -2,7 +2,7 @@ import type {
   ApplicationCommandOptionChoiceData,
   AutocompleteInteraction,
   ChatInputCommandInteraction,
-  Client,
+  Client
 } from 'discord.js'
 import { ChannelType, EmbedBuilder, SlashCommandBuilder } from 'discord.js'
 

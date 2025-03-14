@@ -28,7 +28,7 @@ export function resolveInfo(info: Info): Info & InfoExtra {
         info = {
           variant: KeyMap.getVariant(path),
           unit: getUnitStr(path),
-          ...info,
+          ...info
         }
     }
 

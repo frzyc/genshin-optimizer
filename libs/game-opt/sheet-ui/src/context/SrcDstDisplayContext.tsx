@@ -7,5 +7,5 @@ export type SrcDstDisplayContextObj = {
 }
 export const SrcDstDisplayContext = createContext<SrcDstDisplayContextObj>({
   srcDisplay: {},
-  dstDisplay: {},
+  dstDisplay: {}
 })

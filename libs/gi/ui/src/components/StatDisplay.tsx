@@ -8,7 +8,7 @@ import { Box } from '@mui/material'
 
 export function StatWithUnit({
   statKey,
-  disableIcon = false,
+  disableIcon = false
 }: {
   statKey: StatKey
   disableIcon?: boolean
@@ -27,7 +27,7 @@ export function StatWithUnit({
 }
 export function StatColoredWithUnit({
   statKey,
-  disableIcon = false,
+  disableIcon = false
 }: {
   statKey: StatKey
   disableIcon?: boolean

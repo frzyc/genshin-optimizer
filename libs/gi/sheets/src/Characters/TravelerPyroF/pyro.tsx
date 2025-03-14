@@ -1,7 +1,7 @@
 import { ColorText } from '@genshin-optimizer/common/ui'
 import type {
   CharacterKey,
-  CharacterSheetKey,
+  CharacterSheetKey
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -14,7 +14,7 @@ import {
   infoMut,
   input,
   sum,
-  target,
+  target
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
@@ -39,25 +39,25 @@ export default function pyro(
       scorchingInstantDmg: skillParam_gen.skill[s++],
       scorchingDmg: skillParam_gen.skill[s++],
       nsLimit: skillParam_gen.skill[s++][0],
-      cd: skillParam_gen.skill[s++][0],
+      cd: skillParam_gen.skill[s++][0]
     },
     burst: {
       dmg: skillParam_gen.burst[b++],
       cd: skillParam_gen.burst[b++][0],
-      enerCost: skillParam_gen.burst[b++][0],
+      enerCost: skillParam_gen.burst[b++][0]
     },
     // TODO
     constellation1: {
       dmg_: 0.06, // skillParam_gen.constellation1[0],
-      ns_dmg_: 0.09, // skillParam_gen.constellation1[1],
+      ns_dmg_: 0.09 // skillParam_gen.constellation1[1],
     },
     constellation4: {
       pyro_dmg_: 0.2, //skillParam_gen.constellation4[0],
-      duration: 9, //skillParam_gen.constellation4[1],
+      duration: 9 //skillParam_gen.constellation4[1],
     },
     constellation6: {
-      crit_dmg_: 0.4, //skillParam_gen.constellation6[0],
-    },
+      crit_dmg_: 0.4 //skillParam_gen.constellation6[0],
+    }
   } as const
 
   const [condC1SkillActivePath, condC1SkillActive] = cond(
@@ -125,11 +125,11 @@ export default function pyro(
         dm.skill.scorchingInstantDmg,
         'skill'
       ),
-      scorchingDmg: dmgNode('atk', dm.skill.scorchingDmg, 'skill'),
+      scorchingDmg: dmgNode('atk', dm.skill.scorchingDmg, 'skill')
     },
     burst: {
-      dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
-    },
+      dmg: dmgNode('atk', dm.burst.dmg, 'burst')
+    }
   } as const
 
   const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -142,16 +142,16 @@ export default function pyro(
       pyro_dmg_: c4AfterBurst_pyro_dmg_,
       normal_critDMG_: c6InNs_normal_critDMG_,
       charged_critDMG_: c6InNs_charged_critDMG_,
-      plunging_critDMG_: c6InNs_plunging_critDMG_,
+      plunging_critDMG_: c6InNs_plunging_critDMG_
     },
     infusion: {
-      nonOverridableSelf: c6InNs_infusion,
+      nonOverridableSelf: c6InNs_infusion
     },
     teamBuff: {
       premod: {
-        all_dmg_: sum(c1SkillActive_all_dmg_, c1Ns_all_dmg_),
-      },
-    },
+        all_dmg_: sum(c1SkillActive_all_dmg_, c1Ns_all_dmg_)
+      }
+    }
   })
 
   const talent: TalentSheet = {
@@ -160,29 +160,29 @@ export default function pyro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.blazingDmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
+              name: ct.chg(`skill.skillParams.0`)
+            })
           },
           {
             node: infoMut(dmgFormulas.skill.scorchingInstantDmg, {
-              name: ct.chg(`skill.skillParams.1`),
-            }),
+              name: ct.chg(`skill.skillParams.1`)
+            })
           },
           {
             node: infoMut(dmgFormulas.skill.scorchingDmg, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
+              name: ct.chg(`skill.skillParams.2`)
+            })
           },
           {
             text: ct.chg('skill.skillParams.3'),
-            value: dm.skill.nsLimit,
+            value: dm.skill.nsLimit
           },
           {
             text: stg('cd'),
             value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
+            unit: 's'
+          }
+        ]
       },
       ct.condTem('constellation1', {
         path: condC1SkillActivePath,
@@ -193,11 +193,11 @@ export default function pyro(
           on: {
             fields: [
               {
-                node: c1SkillActive_all_dmg_disp,
-              },
-            ],
-          },
-        },
+                node: c1SkillActive_all_dmg_disp
+              }
+            ]
+          }
+        }
       }),
       ct.condTem('constellation1', {
         path: condC1NsPath,
@@ -209,12 +209,12 @@ export default function pyro(
           on: {
             fields: [
               {
-                node: c1Ns_all_dmg_disp,
-              },
-            ],
-          },
-        },
-      }),
+                node: c1Ns_all_dmg_disp
+              }
+            ]
+          }
+        }
+      })
     ]),
 
     burst: ct.talentTem('burst', [
@@ -222,19 +222,19 @@ export default function pyro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
+              name: ct.chg(`burst.skillParams.0`)
+            })
           },
           {
             text: stg('cd'),
             value: dm.burst.cd,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
+            value: dm.burst.enerCost
+          }
+        ]
       },
       ct.condTem('constellation4', {
         path: condC4AfterBurstPath,
@@ -244,17 +244,17 @@ export default function pyro(
           on: {
             fields: [
               {
-                node: c4AfterBurst_pyro_dmg_,
+                node: c4AfterBurst_pyro_dmg_
               },
               {
                 text: stg('duration'),
                 value: dm.constellation4.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
+                unit: 's'
+              }
+            ]
+          }
+        }
+      })
     ]),
 
     passive1: ct.talentTem('passive1'),
@@ -262,11 +262,11 @@ export default function pyro(
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: skillC3 }] },
+      { fields: [{ node: skillC3 }] }
     ]),
     constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: burstC5 }] },
+      { fields: [{ node: burstC5 }] }
     ]),
     constellation6: ct.talentTem('constellation6', [
       ct.condTem('constellation6', {
@@ -277,26 +277,26 @@ export default function pyro(
           on: {
             fields: [
               {
-                text: <ColorText color="pyro">{st('infusion.pyro')}</ColorText>,
+                text: <ColorText color="pyro">{st('infusion.pyro')}</ColorText>
               },
               {
-                node: c6InNs_normal_critDMG_,
+                node: c6InNs_normal_critDMG_
               },
               {
-                node: c6InNs_charged_critDMG_,
+                node: c6InNs_charged_critDMG_
               },
               {
-                node: c6InNs_plunging_critDMG_,
-              },
-            ],
-          },
-        },
-      }),
-    ]),
+                node: c6InNs_plunging_critDMG_
+              }
+            ]
+          }
+        }
+      })
+    ])
   }
 
   return {
     talent,
-    data,
+    data
   }
 }

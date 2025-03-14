@@ -11,7 +11,7 @@ import {
   CardHeader,
   Divider,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { relicUiSheets } from '../sheets'
 
@@ -28,7 +28,7 @@ export function RelicSheetDisplay({ setKey }: { setKey: RelicSetKey }) {
             src={relicAsset(setKey, getDefaultRelicSlot(setKey))}
             sx={{
               maxHeight: '5em',
-              width: 'auto',
+              width: 'auto'
             }}
           />
           <Box>
@@ -51,7 +51,7 @@ export function RelicSheetDisplay({ setKey }: { setKey: RelicSetKey }) {
   )
 }
 export function RelicUiSheetElement({
-  uiSheetElement,
+  uiSheetElement
 }: {
   uiSheetElement: UISheetElement
 }) {

@@ -3,7 +3,7 @@ import type { DiscCondKey } from './disc'
 import {
   allDiscCondKeys,
   allDiscMainStatKeys,
-  allDiscSubStatKeys,
+  allDiscSubStatKeys
 } from './disc'
 import type { WengineCondKey } from './wengine'
 
@@ -22,7 +22,7 @@ export const otherStatKeys = [
   'impact', // flat impact on character
   'anomMas', // flat Anomally Mastery on character
   'shield_', // Shield Effect
-  'enerRegen',
+  'enerRegen'
 ] as const
 
 export const unCondKeys = [
@@ -33,7 +33,7 @@ export const unCondKeys = [
   'cond_def_',
   'cond_atk_',
   'cond_anomMas',
-  'cond_anomMas_',
+  'cond_anomMas_'
 ] as const
 
 export const allStatKeys = Array.from(
@@ -49,7 +49,7 @@ export const allPandoStatKeys = Array.from(
   new Set([
     ...allDiscMainStatKeys,
     ...allDiscSubStatKeys,
-    ...extraPandoStatKeys,
+    ...extraPandoStatKeys
   ])
 )
 export type PandoStatKey = (typeof allPandoStatKeys)[number]
@@ -59,7 +59,7 @@ export const allAttributeKeys = [
   'fire',
   'ice',
   'physical',
-  'ether',
+  'ether'
 ] as const
 export type AttributeKey = (typeof allAttributeKeys)[number]
 
@@ -68,7 +68,7 @@ export const allAttributeDamageKeys = [
   'fire_dmg_',
   'ice_dmg_',
   'physical_dmg_',
-  'ether_dmg_',
+  'ether_dmg_'
 ] as const
 export type AttributeDamageKey = (typeof allAttributeDamageKeys)[number]
 
@@ -77,7 +77,7 @@ export const allAnomalyDmgKeys = [
   'shock',
   'corruption',
   'shatter',
-  'assault',
+  'assault'
 ] as const
 export type AnomalyDamageKey = (typeof allAnomalyDmgKeys)[number]
 
@@ -136,7 +136,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_mult_: 'CRIT Multiplier',
   dmg_mult_: 'DMG Multiplier',
   def_mult_: 'DEF Multiplier',
-  base: 'Base Damage',
+  base: 'Base Damage'
 }
 
 export const elementalData: Record<AttributeKey, string> = {
@@ -144,7 +144,7 @@ export const elementalData: Record<AttributeKey, string> = {
   fire: 'Fire',
   ice: 'Ice',
   physical: 'Physical',
-  ether: 'Ether',
+  ether: 'Ether'
 } as const
 
 Object.entries(elementalData).forEach(([e, name]) => {
@@ -163,7 +163,7 @@ export type CondMeta = {
 export const rarityColor = {
   S: 'rankS',
   A: 'rankA',
-  B: 'rankB',
+  B: 'rankB'
 } as const
 
 export const allRaritykeys = ['S', 'A', 'B'] as const

@@ -19,21 +19,21 @@ describe('export and import test', () => {
       buildIds: [database.builds.new()],
       buildTcIds: [database.buildTcs.new(initCharTC('EngulfingLightning'))],
       optConfigId: database.optConfigs.new({
-        optimizationTarget: ['test'],
-      }),
+        optimizationTarget: ['test']
+      })
     })
     expect(database.teamChars.get(raidenId)?.buildIds.length).toEqual(1)
     expect(database.teamChars.get(raidenId)?.buildTcIds.length).toEqual(1)
     const bennettId = database.teamChars.new('Bennett', {
       buildIds: [database.builds.new()],
-      buildTcIds: [database.buildTcs.new(initCharTC('SapwoodBlade'))],
+      buildTcIds: [database.buildTcs.new(initCharTC('SapwoodBlade'))]
     })
     const teamId = database.teams.new({
       loadoutData: [
         { teamCharId: raidenId } as LoadoutDatum,
         undefined,
-        { teamCharId: bennettId } as LoadoutDatum,
-      ],
+        { teamCharId: bennettId } as LoadoutDatum
+      ]
     })
 
     const dbTeam = database.teams.get(teamId)!
@@ -46,25 +46,25 @@ describe('export and import test', () => {
         convertbuilds: [],
         convertEquipped: true,
         convertTcBuilds: [],
-        exportCustomMultiTarget: [],
+        exportCustomMultiTarget: []
       },
       {
         convertbuilds: [],
         convertEquipped: true,
         convertTcBuilds: [],
-        exportCustomMultiTarget: [],
+        exportCustomMultiTarget: []
       },
       {
         convertbuilds: [],
         convertEquipped: true,
         convertTcBuilds: [],
-        exportCustomMultiTarget: [],
-      },
+        exportCustomMultiTarget: []
+      }
     ])
     expect(exp).toBeTruthy()
     expect((exp as any).loadoutData[0].key).toEqual('RaidenShogun')
     expect((exp as any).loadoutData[0].optConfig.optimizationTarget).toEqual([
-      'test',
+      'test'
     ])
 
     let res: object | undefined = undefined

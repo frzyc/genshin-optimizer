@@ -2,12 +2,12 @@ import {
   CardThemed,
   ColorText,
   NextImage,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
-  characterKeyToGenderedKey,
+  characterKeyToGenderedKey
 } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
@@ -15,7 +15,7 @@ import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
   charTagMapNodeEntries,
   own,
-  srCalculatorWithEntries,
+  srCalculatorWithEntries
 } from '@genshin-optimizer/sr/formula'
 import { getCharStat } from '@genshin-optimizer/sr/stats'
 import { ElementIcon, PathIcon } from '@genshin-optimizer/sr/svgicons'
@@ -26,7 +26,7 @@ import {
   CardContent,
   Divider,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useSrCalcContext } from '../Hook'
 import { CharacterName } from './CharacterTrans'
@@ -43,11 +43,11 @@ const stats = [
   'heal_',
   'enerRegen_',
   'eff_',
-  'eff_res_',
+  'eff_res_'
 ] as const
 export function CharacterCard({
   character,
-  onClick,
+  onClick
 }: {
   character: ICachedCharacter
   onClick?: () => void
@@ -95,7 +95,7 @@ function Header({ character }: { character: ICachedCharacter }) {
         src={characterAsset(genderedKey, 'icon')}
         sx={{
           maxHeight: '10em',
-          width: 'auto',
+          width: 'auto'
         }}
       />
       <Box sx={{ px: 2, pt: 1 }}>
@@ -119,7 +119,7 @@ function Header({ character }: { character: ICachedCharacter }) {
 function StatLine({
   characterKey,
   calc,
-  statKey,
+  statKey
 }: {
   characterKey: CharacterKey
   calc: Calculator
@@ -131,7 +131,7 @@ function StatLine({
         display: 'flex',
         alignItems: 'center',
         gap: 1,
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
       }}
     >
       <StatDisplay statKey={statKey} />

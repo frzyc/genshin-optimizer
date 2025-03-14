@@ -4,13 +4,13 @@ import {
   CharacterCardEquipmentRow,
   CharacterCardHeader,
   CharacterCardHeaderContent,
-  CharacterCardStats,
+  CharacterCardStats
 } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, memo } from 'react'
 
 export const OptCharacterCard = memo(function OptCharacterCard({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {
@@ -28,7 +28,7 @@ export const OptCharacterCard = memo(function OptCharacterCard({
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
-            gap: 1,
+            gap: 1
           }}
         >
           <CharacterCardEquipmentRow />

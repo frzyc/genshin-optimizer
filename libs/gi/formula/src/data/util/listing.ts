@@ -1,7 +1,7 @@
 import {
   allArtifactSetKeys,
   allCharacterKeys,
-  allWeaponKeys,
+  allWeaponKeys
 } from '@genshin-optimizer/gi/consts'
 
 const stats = [
@@ -16,7 +16,7 @@ const stats = [
   'critRate_',
   'critDMG_',
   'dmg_',
-  'heal_',
+  'heal_'
 ] as const
 
 export const sheets = [
@@ -30,7 +30,7 @@ export const sheets = [
   'reso',
   'dyn',
   'enemy',
-  'custom',
+  'custom'
 ] as const
 export const members = ['0', '1', '2', '3'] as const
 

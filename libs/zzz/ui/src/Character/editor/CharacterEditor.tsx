@@ -8,7 +8,7 @@ import { Content } from './Content'
 
 export function CharacterEditor({
   characterKey,
-  onClose,
+  onClose
 }: {
   characterKey?: CharacterKey
   onClose: () => void
@@ -36,7 +36,7 @@ type CharacterDisplayCardProps = {
 }
 function CharacterEditorContent({
   characterKey,
-  onClose,
+  onClose
 }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
 

@@ -10,8 +10,8 @@ const dm = {
   2: {
     passive_crit_: data_gen.setEffects[0].passiveStats.crit_,
     crit_threshold: data_gen.setEffects[0].otherStats[o++],
-    ult_and_followUp_: data_gen.setEffects[0].otherStats[o++],
-  },
+    ult_and_followUp_: data_gen.setEffects[0].otherStats[o++]
+  }
 } as const
 
 export default dm

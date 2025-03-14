@@ -2,11 +2,11 @@ import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
 import type {
   DiscMainStatKey,
-  DiscSlotKey,
+  DiscSlotKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   discSlotToMainStatKeys,
-  statKeyTextMap,
+  statKeyTextMap
 } from '@genshin-optimizer/zzz/consts'
 import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Button, ButtonGroup } from '@mui/material'
@@ -16,7 +16,7 @@ import { StatDisplay } from '../Character'
 export function DiscMainStatGroup({
   statKey,
   slotKey,
-  setStatKey,
+  setStatKey
 }: {
   statKey?: DiscMainStatKey
   slotKey?: DiscSlotKey

@@ -11,7 +11,7 @@ import {
   sum,
   tally,
   target,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -29,7 +29,7 @@ const numSameElement = lookup(
   Object.fromEntries(
     allElementKeys.map((ele) => [
       ele,
-      infoMut(sum(tally[ele], -1), { asConst: true }), // Subtract wielder from count
+      infoMut(sum(tally[ele], -1), { asConst: true }) // Subtract wielder from count
     ])
   ),
   naught
@@ -47,11 +47,11 @@ const self_eleDmg_ = Object.fromEntries(
       ele,
       prod(
         infoMut(sum(partySize, -1, prod(numSameElement, -1)), {
-          asConst: true,
+          asConst: true
         }),
         subscript(input.weapon.refinement, self_eleDmg_arr, { unit: '%' })
       )
-    ),
+    )
   ])
 )
 
@@ -67,13 +67,13 @@ const team_eleMas = unequal(input.charKey, target.charKey, team_eleMasDisp)
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     eleMas: self_eleMas,
-    ...self_eleDmg_,
+    ...self_eleDmg_
   },
   teamBuff: {
     premod: {
-      eleMas: team_eleMas,
-    },
-  },
+      eleMas: team_eleMas
+    }
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -81,20 +81,20 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: self_eleMas,
+          node: self_eleMas
         },
-        ...Object.values(self_eleDmg_).map((node) => ({ node })),
-      ],
+        ...Object.values(self_eleDmg_).map((node) => ({ node }))
+      ]
     },
     {
       header: headerTemplate(key, st('teamBuff')),
       teamBuff: true,
       fields: [
         {
-          node: team_eleMasDisp,
-        },
-      ],
-    },
-  ],
+          node: team_eleMasDisp
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

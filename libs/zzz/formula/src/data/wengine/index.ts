@@ -117,7 +117,7 @@ const data: TagMapNodeEntries[] = [
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
-  ZanshinHerbCase,
+  ZanshinHerbCase
 ]
 
 export default data.flat()

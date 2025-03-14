@@ -8,7 +8,7 @@ import {
   percent,
   registerBuff,
   target,
-  teamBuff,
+  teamBuff
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

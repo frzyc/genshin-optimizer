@@ -7,7 +7,7 @@ import { AdWrapper } from './AdWrapper'
 export function AdResponsive({
   dataAdSlot,
   bgt = 'normal',
-  maxHeight = 350,
+  maxHeight = 350
 }: {
   dataAdSlot: string
   bgt?: CardBackgroundColor

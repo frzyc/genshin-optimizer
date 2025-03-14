@@ -1,7 +1,7 @@
 import { cartesian, objMap, range } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
-  ArtifactSlotKey,
+  ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import { allSubstatKeys, artMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
@@ -10,14 +10,14 @@ import type { ArtifactBuildData, DynStat } from '@genshin-optimizer/gi/solver'
 import {
   getMainStatValue,
   getRollsRemaining,
-  getSubstatValue,
+  getSubstatValue
 } from '@genshin-optimizer/gi/util'
 import {
   ddx,
   optimize,
   precompute,
   zero_deriv,
-  type OptNode,
+  type OptNode
 } from '@genshin-optimizer/gi/wr'
 import { crawlUpgrades, quadrinomial } from './mathUtil'
 import { gaussianPE, mvnPE_bad } from './mvncdf'
@@ -82,7 +82,7 @@ const W = (up_rv_mean / 4) ** 2
 export enum ResultType {
   Fast,
   Slow,
-  Exact,
+  Exact
 }
 export type UpOptBuild = Record<ArtifactSlotKey, ArtifactBuildData>
 export type UpOptArtifact = {
@@ -126,7 +126,7 @@ const fWeight: Record<SubstatKey, number> = {
   eleMas: 4,
   enerRech_: 4,
   critRate_: 3,
-  critDMG_: 3,
+  critDMG_: 3
 }
 
 /* Gets "0.1x" 1 roll value for a stat w/ the given rarity. */
@@ -207,7 +207,7 @@ export class UpOptCalculator {
         const ix = i * (1 + allSubstatKeys.length)
         return {
           v: out[ix],
-          grads: allSubstatKeys.map((sub, si) => out[ix + 1 + si]),
+          grads: allSubstatKeys.map((sub, si) => out[ix + 1 + si])
         }
       })
     }
@@ -241,10 +241,10 @@ export class UpOptCalculator {
             .filter(({ key }) => key !== '')
             .map((substat) => [
               substat.key,
-              toDecimal(substat.key, substat.accurateValue),
+              toDecimal(substat.key, substat.accurateValue)
             ])
-        ), // Assumes substats cannot match main stat key
-      },
+        ) // Assumes substats cannot match main stat key
+      }
     }
   }
   reCalc(ix: number, art: ICachedArtifact) {
@@ -330,7 +330,7 @@ export class UpOptCalculator {
       p: ptot,
       upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
       distr: { gmm, lower: Math.min(...lowers), upper: Math.max(...uppers) },
-      evalMode: ResultType.Fast,
+      evalMode: ResultType.Fast
     }
   }
 
@@ -372,8 +372,8 @@ export class UpOptCalculator {
       {
         prob: 1,
         mu: gaussians.map(({ mu }) => mu),
-        cov: gaussians.map(({ sig2 }) => sig2),
-      },
+        cov: gaussians.map(({ sig2 }) => sig2)
+      }
     ])
   }
 
@@ -415,7 +415,7 @@ export class UpOptCalculator {
       return {
         prob,
         mu: gaussians.map(({ mu }) => mu),
-        cov: gaussians.map(({ sig2 }) => sig2),
+        cov: gaussians.map(({ sig2 }) => sig2)
       }
     })
 
@@ -447,9 +447,9 @@ export class UpOptCalculator {
       distr: {
         gmm,
         lower: Math.min(...lowers, this.thresholds[0]),
-        upper: Math.max(...uppers, this.thresholds[0]),
+        upper: Math.max(...uppers, this.thresholds[0])
       },
-      evalMode: ResultType.Slow,
+      evalMode: ResultType.Slow
     }
   }
 
@@ -566,7 +566,7 @@ export class UpOptCalculator {
       p: ptot,
       upAvg: ptot < 1e-6 ? 0 : upAvgtot / ptot,
       distr: { gmm, lower: Math.min(...vals), upper: Math.max(...vals) },
-      evalMode: ResultType.Exact,
+      evalMode: ResultType.Exact
     }
   }
 
@@ -614,7 +614,7 @@ export class UpOptCalculator {
 
         distrs.push({
           prob: prob * p_upVals,
-          val: this.eval(stats, slotKey).map((n) => n.v),
+          val: this.eval(stats, slotKey).map((n) => n.v)
         })
       })
     })
@@ -677,7 +677,7 @@ export class UpOptCalculator {
 
           distrs.push({
             prob: prob_sub * prob * p_upVals,
-            val: this.eval(stats, slotKey).map((n) => n.v),
+            val: this.eval(stats, slotKey).map((n) => n.v)
           })
         })
       })
@@ -701,15 +701,15 @@ export class UpOptCalculator {
           art.substats
             .map((substat) => [
               substat.key,
-              toDecimal(substat.key, substat.accurateValue),
+              toDecimal(substat.key, substat.accurateValue)
             ])
             .filter(([, value]) => value !== 0)
-        ),
+        )
       },
       subs: art.substats.reduce((sub: SubstatKey[], x) => {
         if (x.key !== '') sub.push(x.key)
         return sub
-      }, []),
+      }, [])
     }
     delete buildData.values['']
     return buildData

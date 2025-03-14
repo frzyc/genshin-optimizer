@@ -2,14 +2,14 @@ import { isPercentStat, parseFloatBetter } from '@genshin-optimizer/common/util'
 import type {
   SpecialityKey,
   WengineKey,
-  WengineRarityKey,
+  WengineRarityKey
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
 import {
   specialityMap,
   subStatMap,
   WengineIdMap,
-  wengineRarityMap,
+  wengineRarityMap
 } from './consts'
 const SCALING = 10000
 type WengineRawData = {
@@ -80,8 +80,8 @@ export const wengineDetailedJSONData = Object.fromEntries(
             if (percent) return parseFloatBetter(value)
             return +value
           }
-        ),
-      })),
+        )
+      }))
     }
     return [name, data] as const
   })

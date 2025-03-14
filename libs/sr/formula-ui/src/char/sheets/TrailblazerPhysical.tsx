@@ -1,7 +1,7 @@
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type {
   CharacterGenderedKey,
-  CharacterKey,
+  CharacterKey
 } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/sr/formula'
 import { mappedStats } from '@genshin-optimizer/sr/stats'
@@ -11,7 +11,7 @@ import {
   bonusAbilitySheet,
   bonusStatsSheets,
   eidolonSheet,
-  talentSheet,
+  talentSheet
 } from '../sheetUtil'
 
 const key: CharacterKey = 'TrailblazerPhysical'
@@ -42,10 +42,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: chg('abilities.basic.0.name'),
-          fieldRef: formula.basicDmg_0.tag,
-        },
-      ],
-    },
+          fieldRef: formula.basicDmg_0.tag
+        }
+      ]
+    }
   ]),
   skill: talentSheet(genderedKey, 'skill', []),
   ult: talentSheet(genderedKey, 'ult', []),
@@ -93,6 +93,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
     //   ],
     // },
   ]),
-  eidolon6: eidolonSheet(genderedKey, 'eidolon6'),
+  eidolon6: eidolonSheet(genderedKey, 'eidolon6')
 }
 export default sheet

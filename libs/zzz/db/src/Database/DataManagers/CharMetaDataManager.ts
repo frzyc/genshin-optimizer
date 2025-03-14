@@ -5,7 +5,7 @@ import type { ZzzDatabase } from '../Database'
 import { DataManager } from '../DataManager'
 
 const initCharMeta: ICharMeta = deepFreeze({
-  description: '',
+  description: ''
 })
 export class CharMetaDataManager extends DataManager<
   CharacterKey,

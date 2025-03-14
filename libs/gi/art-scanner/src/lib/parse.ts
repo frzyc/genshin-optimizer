@@ -3,14 +3,14 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   LocationCharacterKey,
-  MainStatKey,
+  MainStatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
   allMainStatKeys,
-  allSubstatKeys,
+  allSubstatKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
 import { misreadCharactersInSubstatMap } from './consts'
@@ -33,7 +33,7 @@ export function parseSetKeys(texts: string[]): Set<ArtifactSetKey> {
         levenshteinDistance(
           text.replace(/\W/g, ''),
           key //TODO: use the translated set name?
-        ),
+        )
       ])
   return getBestKeyDist(kdist)
 }
@@ -47,7 +47,7 @@ export function parseSlotKeys(texts: string[]): Set<ArtifactSlotKey> {
         levenshteinDistance(
           text.replace(/\W/g, ''),
           artSlotNames[key].replace(/\W/g, '')
-        ),
+        )
       ])
   return getBestKeyDist(kdist)
 }
@@ -64,7 +64,7 @@ export function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
           levenshteinDistance(
             text.replace(/\W/g, ''),
             (statMap[key] ?? '').replace(/\W/g, '')
-          ),
+          )
         ])
     }
   return getBestKeyDist(kdist)
@@ -81,13 +81,13 @@ export function parseMainStatValues(
         mainStatValue: parseFloat(
           match[1].replace(/,/g, '.').replace(/\.{2,}/g, '.')
         ),
-        unit: '%',
+        unit: '%'
       })
     regex = /(\d+[,|\\.]\d{3}|\d{2,3})/
     match = regex.exec(text)
     if (match)
       results.push({
-        mainStatValue: parseInt(match[1].replace(/[,|\\.]+/g, '')),
+        mainStatValue: parseInt(match[1].replace(/[,|\\.]+/g, ''))
       })
   }
   return results
@@ -117,7 +117,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
               .replace(/(,|\.)(\d{3}(?!\d))/g, '$2')
               .replace(/,/g, '.')
               .replace(/\.{2,}/g, '.')
-          ),
+          )
         })
     })
   }
@@ -138,7 +138,7 @@ export function parseLocation(texts: string[]): LocationCharacterKey {
         levenshteinDistance(
           text.replace(/\W/g, ''),
           key //TODO: use the translated character name?
-        ),
+        )
       ])
   }
 

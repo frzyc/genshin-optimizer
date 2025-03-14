@@ -1,13 +1,13 @@
 import {
   GeneralAutocompleteMulti,
   ImgIcon,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import {
   allArtifactRarityKeys,
   type ArtifactRarity,
-  type ArtifactSetKey,
+  type ArtifactSetKey
 } from '@genshin-optimizer/gi/consts'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
 import type { AutocompleteRenderGroupParams } from '@mui/material'
@@ -20,7 +20,7 @@ export function ArtifactSetMultiAutocomplete({
   allowRarities = [...allArtifactRarityKeys],
   artSetKeys,
   setArtSetKeys,
-  totals,
+  totals
 }: {
   allowRarities?: ArtifactRarity[]
   artSetKeys: ArtifactSetKey[]
@@ -49,7 +49,7 @@ export function ArtifactSetMultiAutocomplete({
           sets.map((set) => ({
             key: set,
             grouper: +rarity as ArtifactRarity,
-            label: t(`artifactNames_gen:${set}`),
+            label: t(`artifactNames_gen:${set}`)
           }))
         )
         .filter((group) => allowRarities.includes(group.grouper))

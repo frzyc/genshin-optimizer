@@ -1,27 +1,27 @@
 import {
   useBoolState,
-  useForceUpdate,
+  useForceUpdate
 } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, ModalWrapper, SqBadge } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, filterFunction } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
-  LocationCharacterKey,
+  LocationCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
@@ -32,7 +32,7 @@ import {
   ElementToggle,
   SillyContext,
   WeaponToggle,
-  characterFilterConfigs,
+  characterFilterConfigs
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -47,7 +47,7 @@ import {
   IconButton,
   Stack,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ChangeEvent, MouseEvent } from 'react'
 import {
@@ -56,18 +56,18 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 
 enum CharListMode {
   ToggleToAllow,
-  ToggleToExclude,
+  ToggleToExclude
 }
 
 export default function UseEquipped({
   disabled = false,
-  allowListTotal,
+  allowListTotal
 }: {
   disabled?: boolean
   allowListTotal: string
@@ -75,10 +75,10 @@ export default function UseEquipped({
   const { t } = useTranslation('page_character_optimize')
   const { t: t_pc } = useTranslation('page_character')
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { silly } = useContext(SillyContext)
   const { excludedLocations } = useOptConfig(optConfigId)!
@@ -94,7 +94,7 @@ export default function UseEquipped({
   const [weaponTypeKeys, setWeaponTypeKeys] = useState([...allWeaponTypeKeys])
   const deferredWeaponTypeKeys = useDeferredValue(weaponTypeKeys)
   const [characterRarityKeys, setCharacterRarityKeys] = useState([
-    ...allCharacterRarityKeys,
+    ...allCharacterRarityKeys
   ])
   const deferredCharacterRarityKeys = useDeferredValue(characterRarityKeys)
 
@@ -115,7 +115,7 @@ export default function UseEquipped({
                     element: deferredElementKeys,
                     weaponType: deferredWeaponTypeKeys,
                     rarity: deferredCharacterRarityKeys,
-                    name: deferredSearchTerm,
+                    name: deferredSearchTerm
                   },
                   characterFilterConfigs(database, silly)
                 )(ck)
@@ -131,7 +131,7 @@ export default function UseEquipped({
       deferredWeaponTypeKeys,
       deferredCharacterRarityKeys,
       deferredSearchTerm,
-      silly,
+      silly
     ]
   )
 
@@ -178,13 +178,13 @@ export default function UseEquipped({
     elementTotals,
     weaponTypeTotals,
     characterRarityTotals,
-    locListTotals,
+    locListTotals
   } = useMemo(() => {
     const catKeys = {
       elementTotals: [...allElementKeys],
       weaponTypeTotals: [...allWeaponTypeKeys],
       characterRarityTotals: [...allCharacterRarityKeys],
-      locListTotals: ['allowed', 'excluded'],
+      locListTotals: ['allowed', 'excluded']
     } as const
     let travelerProcessed = false
 
@@ -256,7 +256,7 @@ export default function UseEquipped({
       database.optConfigs.set(optConfigId, {
         excludedLocations: excludedLocations.filter(
           (key) => !locList.includes(key)
-        ),
+        )
       }),
     [database, optConfigId, excludedLocations, locList]
   )
@@ -265,7 +265,7 @@ export default function UseEquipped({
       database.optConfigs.set(optConfigId, {
         excludedLocations: Array.from(
           new Set(excludedLocations.concat(locList))
-        ),
+        )
       }),
     [database, optConfigId, excludedLocations, locList]
   )
@@ -277,7 +277,7 @@ export default function UseEquipped({
         .filter((lk) => !excludedLocations.includes(lk))
         .concat(excludedLocations.filter((lk) => !lkArray.includes(lk)))
       database.optConfigs.set(optConfigId, {
-        excludedLocations: newExcludedLocations,
+        excludedLocations: newExcludedLocations
       })
     },
     [database, optConfigId, excludedLocations]
@@ -348,7 +348,7 @@ export default function UseEquipped({
                   size="small"
                   sx={{ height: '100%' }}
                   InputProps={{
-                    sx: { height: '100%' },
+                    sx: { height: '100%' }
                   }}
                 />
               </Box>
@@ -426,7 +426,7 @@ function SelectItemGrid({
   excludedLocations,
   mouseUpDetected,
   setMouseUpDetected,
-  toggleList,
+  toggleList
 }: {
   locList: LocationCharacterKey[]
   excludedLocations: LocationCharacterKey[]
@@ -474,7 +474,7 @@ function SelectItem({
   charList,
   charListMode,
   setCharList,
-  setCharListMode,
+  setCharListMode
 }: {
   locKey: LocationCharacterKey
   selected: boolean
@@ -515,7 +515,7 @@ function SelectItem({
     borderColor: allowed ? 'rgb(100,200,100)' : 'rgb(200,100,100)',
     borderWidth: '3px',
     borderStyle: 'solid',
-    borderRadius: '8px',
+    borderRadius: '8px'
   }
   const content = useMemo(
     () => (
@@ -531,7 +531,7 @@ function SelectItem({
             slotKey={s}
             iconProps={{
               fontSize: 'inherit',
-              sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 },
+              sx: { opacity: char?.equippedArtifacts[s] ? undefined : 0.5 }
             }}
           />
         ))}

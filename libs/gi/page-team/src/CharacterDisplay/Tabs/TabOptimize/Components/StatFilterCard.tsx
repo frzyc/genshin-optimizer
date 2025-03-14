@@ -3,7 +3,7 @@ import type { StatFilters } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
@@ -11,13 +11,13 @@ import { useTranslation } from 'react-i18next'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 
 export default function StatFilterCard({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {
   const { t } = useTranslation('page_character_optimize')
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const { statFilters } = useOptConfig(optConfigId)!
   const database = useDatabase()
@@ -35,7 +35,7 @@ export default function StatFilterCard({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            flexDirection: 'column',
+            flexDirection: 'column'
           }}
         >
           <Box display="flex" justifyContent="space-between">

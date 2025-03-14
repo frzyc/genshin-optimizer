@@ -9,7 +9,7 @@ import {
   lookup,
   prod,
   subscript,
-  target,
+  target
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -28,7 +28,7 @@ const atk_ = [-1, 0.032, 0.04, 0.048, 0.056, 0.064]
 const dmg_Nodes = Object.fromEntries(
   allElementKeys.map((e) => [
     `${e}_dmg_`,
-    subscript(input.weapon.refinement, dmg_),
+    subscript(input.weapon.refinement, dmg_)
   ])
 )
 const atkInc = prod(
@@ -49,14 +49,14 @@ const atkInc = prod(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     ...dmg_Nodes,
-    atk_: atkInc,
-  },
+    atk_: atkInc
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: Object.values(dmg_Nodes).map((node) => ({ node })),
+      fields: Object.values(dmg_Nodes).map((node) => ({ node }))
     },
     {
       value: condStack,
@@ -71,13 +71,13 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: i }),
             fields: [
               {
-                node: atkInc,
-              },
-            ],
-          },
+                node: atkInc
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

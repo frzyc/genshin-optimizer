@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 export function ArtifactSetTooltip({
   children,
   setKey,
-  numInSet = 5,
+  numInSet = 5
 }: {
   children: JSX.Element
   setKey: ArtifactSetKey
@@ -27,7 +27,7 @@ export function ArtifactSetTooltip({
 }
 export function ArtifactSetTooltipContent({
   setKey,
-  numInSet = 5,
+  numInSet = 5
 }: {
   setKey: ArtifactSetKey
   numInSet?: number
@@ -42,7 +42,7 @@ export function ArtifactSetTooltipContent({
 }
 function SetToolTipTitle({
   setKey,
-  numInSet = 5,
+  numInSet = 5
 }: {
   setKey: ArtifactSetKey
   numInSet?: number

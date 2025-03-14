@@ -4,7 +4,7 @@ import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/
 import {
   crystallizeLevelMultipliers,
   transformativeReactionLevelMultipliers,
-  transformativeReactions,
+  transformativeReactions
 } from '@genshin-optimizer/gi/keymap'
 import { infusionNode, input } from './formula'
 import { info } from './info'
@@ -23,7 +23,7 @@ import {
   percent,
   prod,
   subscript,
-  sum,
+  sum
 } from './utils'
 
 const crystallizeMulti1 = subscript(
@@ -36,7 +36,7 @@ const crystallizeHit = infoMut(
   prod(
     infoMut(sum(one, /** + Crystallize bonus */ crystallizeElemas), {
       pivot: true,
-      ...info('base_crystallize_multi_'),
+      ...info('base_crystallize_multi_')
     }),
     crystallizeMulti1
   ),
@@ -58,7 +58,7 @@ const trans = {
         sum(
           infoMut(sum(one, transMulti2), {
             pivot: true,
-            ...info('base_transformative_multi_'),
+            ...info('base_transformative_multi_')
           }),
           input.total[`${reaction}_dmg_`]
         ),
@@ -98,7 +98,7 @@ const trans = {
                             reaction as CrittableTransformativeReactionsKey
                           }_critRate_`
                         ].info,
-                        pivot: true,
+                        pivot: true
                       }
                     ),
                     input.total[
@@ -108,7 +108,7 @@ const trans = {
                     ]
                   )
                 )
-              : one,
+              : one
           },
           NaN
         ),
@@ -128,7 +128,7 @@ const trans = {
         sum(
           infoMut(sum(one, transMulti2), {
             pivot: true,
-            ...info('base_transformative_multi_'),
+            ...info('base_transformative_multi_')
           }),
           input.total.swirl_dmg_
         )
@@ -142,7 +142,7 @@ const trans = {
       prod(
         infoMut(max(min(input.total.swirl_critRate_, sum(one, one)), naught), {
           ...input.total.swirl_critRate_.info,
-          pivot: true,
+          pivot: true
         }),
         input.total.swirl_critDMG_
       )
@@ -152,7 +152,7 @@ const trans = {
       {
         critHit: crit,
         avgHit: avgCrit,
-        hit: one,
+        hit: one
       },
       NaN
     )
@@ -166,16 +166,16 @@ const trans = {
         ? ele === 'electro'
           ? // Additive reactions apply the additive term before resistance, but after swirl bonuses
             data(prod(sum(base, input.hit.addTerm), critFactor, res), {
-              hit: { ele: constant(ele) },
+              hit: { ele: constant(ele) }
             })
           : // Amp reaction
             data(prod(base, critFactor, res, input.hit.ampMulti), {
-              hit: { ele: constant(ele) },
+              hit: { ele: constant(ele) }
             })
         : prod(base, res),
       info(`${ele}_swirl_hit`)
     )
-  }),
+  })
 } as any
 const infusionReactions = {
   overloaded: infoMut(
@@ -210,7 +210,7 @@ const infusionReactions = {
   hyperbloom: infoMut(
     equal(infusionNode, 'electro', trans.hyperbloom),
     info('hyperbloom_hit')
-  ),
+  )
 }
 export const reactions = {
   anemo: {
@@ -225,13 +225,13 @@ export const reactions = {
     burning: trans.burning,
     bloom: trans.bloom,
     burgeon: trans.burgeon,
-    hyperbloom: trans.hyperbloom,
+    hyperbloom: trans.hyperbloom
   },
   geo: {
     crystallize: crystallizeHit,
     ...objKeyValMap(absorbableEle, (e) => [
       `${e}Crystallize`,
-      infoMut(prod(percent(2.5), crystallizeHit), info(`${e}_crystallize`)),
+      infoMut(prod(percent(2.5), crystallizeHit), info(`${e}_crystallize`))
     ]),
     shattered: trans.shattered,
     overloaded: infusionReactions.overloaded,
@@ -240,7 +240,7 @@ export const reactions = {
     burning: infusionReactions.burning,
     bloom: infusionReactions.bloom,
     burgeon: infusionReactions.burgeon,
-    hyperbloom: infusionReactions.hyperbloom,
+    hyperbloom: infusionReactions.hyperbloom
   },
   electro: {
     overloaded: trans.overloaded,
@@ -250,7 +250,7 @@ export const reactions = {
     hyperbloom: trans.hyperbloom,
     burning: infusionReactions.burning,
     bloom: infusionReactions.bloom,
-    burgeon: infusionReactions.burgeon,
+    burgeon: infusionReactions.burgeon
   },
   hydro: {
     electrocharged: trans.electrocharged,
@@ -260,7 +260,7 @@ export const reactions = {
     superconduct: infusionReactions.superconduct,
     burning: infusionReactions.burning,
     burgeon: infusionReactions.burgeon,
-    hyperbloom: infusionReactions.hyperbloom,
+    hyperbloom: infusionReactions.hyperbloom
   },
   pyro: {
     overloaded: trans.overloaded,
@@ -270,7 +270,7 @@ export const reactions = {
     electrocharged: infusionReactions.electrocharged,
     superconduct: infusionReactions.superconduct,
     bloom: infusionReactions.bloom,
-    hyperbloom: infusionReactions.hyperbloom,
+    hyperbloom: infusionReactions.hyperbloom
   },
   cryo: {
     superconduct: trans.superconduct,
@@ -280,7 +280,7 @@ export const reactions = {
     burning: infusionReactions.burning,
     bloom: infusionReactions.bloom,
     burgeon: infusionReactions.burgeon,
-    hyperbloom: infusionReactions.hyperbloom,
+    hyperbloom: infusionReactions.hyperbloom
   },
   dendro: {
     shattered: trans.shattered,
@@ -290,6 +290,6 @@ export const reactions = {
     electrocharged: infusionReactions.electrocharged,
     superconduct: infusionReactions.superconduct,
     burgeon: infusionReactions.burgeon,
-    hyperbloom: infusionReactions.hyperbloom,
-  },
+    hyperbloom: infusionReactions.hyperbloom
+  }
 }

@@ -4,7 +4,7 @@ import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
   FieldDisplayList,
-  NodeFieldDisplay,
+  NodeFieldDisplay
 } from '@genshin-optimizer/gi/ui'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -17,7 +17,7 @@ export default function BonusStatsCard() {
   const { t } = useTranslation(['page_character_optimize', 'common'])
   const [show, onShow, onHide] = useBoolState()
   const {
-    teamChar: { bonusStats },
+    teamChar: { bonusStats }
   } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const bonusStatsKeys = Object.keys(bonusStats)

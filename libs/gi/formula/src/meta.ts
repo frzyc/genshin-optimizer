@@ -4,43 +4,43 @@ export const conditionals = {
     someBoolConditional: {
       sheet: 'Adventurer',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ArchaicPetra: {
     someBoolConditional: {
       sheet: 'ArchaicPetra',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Berserker: {
     someBoolConditional: {
       sheet: 'Berserker',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   BlizzardStrayer: {
     someBoolConditional: {
       sheet: 'BlizzardStrayer',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   BloodstainedChivalry: {
     someBoolConditional: {
       sheet: 'BloodstainedChivalry',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   BraveHeart: {
     someBoolConditional: {
       sheet: 'BraveHeart',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   CalamityQueller: {
     isActive: { sheet: 'CalamityQueller', name: 'isActive', type: 'bool' },
@@ -50,121 +50,121 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 6,
-    },
+      max: 6
+    }
   },
   Candace: {
     afterBurst: { sheet: 'Candace', name: 'afterBurst', type: 'bool' },
     c2AfterSkillHit: {
       sheet: 'Candace',
       name: 'c2AfterSkillHit',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   CrimsonWitchOfFlames: {
     someBoolConditional: {
       sheet: 'CrimsonWitchOfFlames',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   DeepwoodMemories: {
     someBoolConditional: {
       sheet: 'DeepwoodMemories',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   DefendersWill: {
     someBoolConditional: {
       sheet: 'DefendersWill',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   DesertPavilionChronicle: {
     someBoolConditional: {
       sheet: 'DesertPavilionChronicle',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   EchoesOfAnOffering: {
     someBoolConditional: {
       sheet: 'EchoesOfAnOffering',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   EmblemOfSeveredFate: {
     someBoolConditional: {
       sheet: 'EmblemOfSeveredFate',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   FlowerOfParadiseLost: {
     someBoolConditional: {
       sheet: 'FlowerOfParadiseLost',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   FragmentOfHarmonicWhimsy: {
     someBoolConditional: {
       sheet: 'FragmentOfHarmonicWhimsy',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Gambler: {
     someBoolConditional: {
       sheet: 'Gambler',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   GildedDreams: {
     someBoolConditional: {
       sheet: 'GildedDreams',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   GladiatorsFinale: {
     someBoolConditional: {
       sheet: 'GladiatorsFinale',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   GoldenTroupe: {
     someBoolConditional: {
       sheet: 'GoldenTroupe',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   HeartOfDepth: {
     someBoolConditional: {
       sheet: 'HeartOfDepth',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   HuskOfOpulentDreams: {
     someBoolConditional: {
       sheet: 'HuskOfOpulentDreams',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Instructor: {
     someBoolConditional: {
       sheet: 'Instructor',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   KeyOfKhajNisut: {
     afterSkillStacks: {
@@ -173,43 +173,43 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   Lavawalker: {
     someBoolConditional: {
       sheet: 'Lavawalker',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   LuckyDog: {
     someBoolConditional: {
       sheet: 'LuckyDog',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   MaidenBeloved: {
     someBoolConditional: {
       sheet: 'MaidenBeloved',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   MarechausseeHunter: {
     someBoolConditional: {
       sheet: 'MarechausseeHunter',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   MartialArtist: {
     someBoolConditional: {
       sheet: 'MartialArtist',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Nahida: {
     a1ActiveInBurst: { sheet: 'Nahida', name: 'a1ActiveInBurst', type: 'bool' },
@@ -221,167 +221,167 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 4,
+      max: 4
     },
     isActive: { sheet: 'Nahida', name: 'isActive', type: 'bool' },
-    partyInBurst: { sheet: 'Nahida', name: 'partyInBurst', type: 'bool' },
+    partyInBurst: { sheet: 'Nahida', name: 'partyInBurst', type: 'bool' }
   },
   NighttimeWhispersInTheEchoingWoods: {
     someBoolConditional: {
       sheet: 'NighttimeWhispersInTheEchoingWoods',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Nilou: {
     a1AfterHit: { sheet: 'Nilou', name: 'a1AfterHit', type: 'bool' },
     a1AfterSkill: { sheet: 'Nilou', name: 'a1AfterSkill', type: 'bool' },
     c2Dendro: { sheet: 'Nilou', name: 'c2Dendro', type: 'bool' },
     c2Hydro: { sheet: 'Nilou', name: 'c2Hydro', type: 'bool' },
-    c4AfterPirHit: { sheet: 'Nilou', name: 'c4AfterPirHit', type: 'bool' },
+    c4AfterPirHit: { sheet: 'Nilou', name: 'c4AfterPirHit', type: 'bool' }
   },
   NoblesseOblige: {
-    set4: { sheet: 'NoblesseOblige', name: 'set4', type: 'bool' },
+    set4: { sheet: 'NoblesseOblige', name: 'set4', type: 'bool' }
   },
   NymphsDream: {
     someBoolConditional: {
       sheet: 'NymphsDream',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ObsidianCodex: {
     someBoolConditional: {
       sheet: 'ObsidianCodex',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   OceanHuedClam: {
     someBoolConditional: {
       sheet: 'OceanHuedClam',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   PaleFlame: {
     someBoolConditional: {
       sheet: 'PaleFlame',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   PrayersForDestiny: {
     someBoolConditional: {
       sheet: 'PrayersForDestiny',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   PrayersForIllumination: {
     someBoolConditional: {
       sheet: 'PrayersForIllumination',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   PrayersForWisdom: {
     someBoolConditional: {
       sheet: 'PrayersForWisdom',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   PrayersToSpringtime: {
     someBoolConditional: {
       sheet: 'PrayersToSpringtime',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ResolutionOfSojourner: {
     someBoolConditional: {
       sheet: 'ResolutionOfSojourner',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   RetracingBolide: {
     someBoolConditional: {
       sheet: 'RetracingBolide',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Scholar: {
     someBoolConditional: {
       sheet: 'Scholar',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ScrollOfTheHeroOfCinderCity: {
     someBoolConditional: {
       sheet: 'ScrollOfTheHeroOfCinderCity',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ShimenawasReminiscence: {
     someBoolConditional: {
       sheet: 'ShimenawasReminiscence',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   SongOfDaysPast: {
     someBoolConditional: {
       sheet: 'SongOfDaysPast',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TenacityOfTheMillelith: {
     someBoolConditional: {
       sheet: 'TenacityOfTheMillelith',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TheExile: {
     someBoolConditional: {
       sheet: 'TheExile',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ThunderingFury: {
     someBoolConditional: {
       sheet: 'ThunderingFury',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Thundersoother: {
     someBoolConditional: {
       sheet: 'Thundersoother',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TinyMiracle: {
     someBoolConditional: {
       sheet: 'TinyMiracle',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TravelingDoctor: {
     someBoolConditional: {
       sheet: 'TravelingDoctor',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TulaytullahsRemembrance: {
     hitPassive: {
@@ -390,7 +390,7 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
+      max: 5
     },
     timePassive: {
       sheet: 'TulaytullahsRemembrance',
@@ -398,52 +398,52 @@ export const conditionals = {
       type: 'num',
       int_only: false,
       min: 0,
-      max: 12,
-    },
+      max: 12
+    }
   },
   UnfinishedReverie: {
     someBoolConditional: {
       sheet: 'UnfinishedReverie',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   VermillionHereafter: {
     someBoolConditional: {
       sheet: 'VermillionHereafter',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ViridescentVenerer: {
     someBoolConditional: {
       sheet: 'ViridescentVenerer',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   VourukashasGlow: {
     someBoolConditional: {
       sheet: 'VourukashasGlow',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   WanderersTroupe: {
     someBoolConditional: {
       sheet: 'WanderersTroupe',
       name: 'someBoolConditional',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   reso: {
     nearbyDendro1: { sheet: 'reso', name: 'nearbyDendro1', type: 'bool' },
-    nearbyDendro2: { sheet: 'reso', name: 'nearbyDendro2', type: 'bool' },
+    nearbyDendro2: { sheet: 'reso', name: 'nearbyDendro2', type: 'bool' }
   },
   static: {
     enemyFrozen: { sheet: 'static', name: 'enemyFrozen', type: 'bool' },
-    hasShield: { sheet: 'static', name: 'hasShield', type: 'bool' },
-  },
+    hasShield: { sheet: 'static', name: 'hasShield', type: 'bool' }
+  }
 } as const
 export const formulas = {
   Albedo: {
@@ -456,9 +456,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Albedo',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Alhaitham: {
     normal1: {
@@ -470,9 +470,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Alhaitham',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Aloy: {
     normal1: {
@@ -484,9 +484,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Aloy',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Amber: {
     normal1: {
@@ -498,9 +498,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Amber',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   AratakiItto: {
     normal1: {
@@ -512,9 +512,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'AratakiItto',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Arlecchino: {
     normal1: {
@@ -526,9 +526,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Arlecchino',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Baizhu: {
     normal1: {
@@ -540,9 +540,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Baizhu',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Barbara: {
     normal1: {
@@ -554,9 +554,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Barbara',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Beidou: {
     normal1: {
@@ -568,9 +568,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Beidou',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Bennett: {
     normal1: {
@@ -582,9 +582,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Bennett',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Candace: {
     burst_skill: {
@@ -596,8 +596,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'burst',
-        name: 'burst_skill',
-      },
+        name: 'burst_skill'
+      }
     },
     burst_wave: {
       sheet: 'Candace',
@@ -608,8 +608,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'burst',
-        name: 'burst_wave',
-      },
+        name: 'burst_wave'
+      }
     },
     c6: {
       sheet: 'Candace',
@@ -620,8 +620,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'burst',
-        name: 'c6',
-      },
+        name: 'c6'
+      }
     },
     charged: {
       sheet: 'Candace',
@@ -632,8 +632,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'charged',
-        name: 'charged',
-      },
+        name: 'charged'
+      }
     },
     normal_0: {
       sheet: 'Candace',
@@ -644,8 +644,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'normal',
-        name: 'normal_0',
-      },
+        name: 'normal_0'
+      }
     },
     normal_1: {
       sheet: 'Candace',
@@ -656,8 +656,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'normal',
-        name: 'normal_1',
-      },
+        name: 'normal_1'
+      }
     },
     normal_2: {
       sheet: 'Candace',
@@ -668,8 +668,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'normal',
-        name: 'normal_2',
-      },
+        name: 'normal_2'
+      }
     },
     normal_3: {
       sheet: 'Candace',
@@ -680,8 +680,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'normal',
-        name: 'normal_3',
-      },
+        name: 'normal_3'
+      }
     },
     normal_4: {
       sheet: 'Candace',
@@ -692,8 +692,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'normal',
-        name: 'normal_4',
-      },
+        name: 'normal_4'
+      }
     },
     plunging_dmg: {
       sheet: 'Candace',
@@ -704,8 +704,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'plunging',
-        name: 'plunging_dmg',
-      },
+        name: 'plunging_dmg'
+      }
     },
     plunging_high: {
       sheet: 'Candace',
@@ -716,8 +716,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'plunging',
-        name: 'plunging_high',
-      },
+        name: 'plunging_high'
+      }
     },
     plunging_low: {
       sheet: 'Candace',
@@ -728,8 +728,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'plunging',
-        name: 'plunging_low',
-      },
+        name: 'plunging_low'
+      }
     },
     skill_basic: {
       sheet: 'Candace',
@@ -740,8 +740,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'skill',
-        name: 'skill_basic',
-      },
+        name: 'skill_basic'
+      }
     },
     skill_charged: {
       sheet: 'Candace',
@@ -752,8 +752,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Candace',
         move: 'skill',
-        name: 'skill_charged',
-      },
+        name: 'skill_charged'
+      }
     },
     skill_hydroShield: {
       sheet: 'Candace',
@@ -764,8 +764,8 @@ export const formulas = {
         q: 'shield',
         sheet: 'Candace',
         ele: 'hydro',
-        name: 'skill_hydroShield',
-      },
+        name: 'skill_hydroShield'
+      }
     },
     skill_shield: {
       sheet: 'Candace',
@@ -775,9 +775,9 @@ export const formulas = {
         qt: 'formula',
         q: 'shield',
         sheet: 'Candace',
-        name: 'skill_shield',
-      },
-    },
+        name: 'skill_shield'
+      }
+    }
   },
   Charlotte: {
     normal1: {
@@ -789,9 +789,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Charlotte',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Chasca: {
     normal1: {
@@ -803,9 +803,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Chasca',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Chevreuse: {
     normal1: {
@@ -817,9 +817,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Chevreuse',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Chiori: {
     normal1: {
@@ -831,9 +831,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Chiori',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Chongyun: {
     normal1: {
@@ -845,9 +845,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Chongyun',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Citlali: {
     normal1: {
@@ -859,9 +859,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Citlali',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Clorinde: {
     normal1: {
@@ -873,9 +873,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Clorinde',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Collei: {
     normal1: {
@@ -887,9 +887,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Collei',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Cyno: {
     normal1: {
@@ -901,9 +901,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Cyno',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Dehya: {
     normal1: {
@@ -915,9 +915,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Dehya',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Diluc: {
     normal1: {
@@ -929,9 +929,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Diluc',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Diona: {
     normal1: {
@@ -943,9 +943,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Diona',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Dori: {
     normal1: {
@@ -957,9 +957,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Dori',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Emilie: {
     normal1: {
@@ -971,9 +971,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Emilie',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Eula: {
     normal1: {
@@ -985,9 +985,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Eula',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Faruzan: {
     normal1: {
@@ -999,9 +999,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Faruzan',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Fischl: {
     normal1: {
@@ -1013,9 +1013,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Fischl',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Freminet: {
     normal1: {
@@ -1027,9 +1027,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Freminet',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Furina: {
     normal1: {
@@ -1041,9 +1041,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Furina',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Gaming: {
     normal1: {
@@ -1055,9 +1055,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Gaming',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Ganyu: {
     normal1: {
@@ -1069,9 +1069,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Ganyu',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Gorou: {
     normal1: {
@@ -1083,9 +1083,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Gorou',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   HuTao: {
     normal1: {
@@ -1097,9 +1097,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'HuTao',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Jean: {
     normal1: {
@@ -1111,9 +1111,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Jean',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Kachina: {
     normal1: {
@@ -1125,9 +1125,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Kachina',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   KaedeharaKazuha: {
     normal1: {
@@ -1139,9 +1139,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'KaedeharaKazuha',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Kaeya: {
     normal1: {
@@ -1153,9 +1153,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Kaeya',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   KamisatoAyaka: {
     normal1: {
@@ -1167,9 +1167,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'KamisatoAyaka',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   KamisatoAyato: {
     normal1: {
@@ -1181,9 +1181,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'KamisatoAyato',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Kaveh: {
     normal1: {
@@ -1195,9 +1195,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Kaveh',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Keqing: {
     normal1: {
@@ -1209,9 +1209,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Keqing',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Kinich: {
     normal1: {
@@ -1223,9 +1223,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Kinich',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Kirara: {
     normal1: {
@@ -1237,9 +1237,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Kirara',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Klee: {
     normal1: {
@@ -1251,9 +1251,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Klee',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   KujouSara: {
     normal1: {
@@ -1265,9 +1265,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'KujouSara',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   KukiShinobu: {
     normal1: {
@@ -1279,9 +1279,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'KukiShinobu',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   LanYan: {
     normal1: {
@@ -1293,9 +1293,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'LanYan',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Layla: {
     normal1: {
@@ -1307,9 +1307,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Layla',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Lisa: {
     normal1: {
@@ -1321,9 +1321,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Lisa',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Lynette: {
     normal1: {
@@ -1335,9 +1335,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Lynette',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Lyney: {
     normal1: {
@@ -1349,9 +1349,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Lyney',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Mavuika: {
     normal1: {
@@ -1363,9 +1363,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Mavuika',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Mika: {
     normal1: {
@@ -1377,9 +1377,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Mika',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Mona: {
     normal1: {
@@ -1391,9 +1391,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Mona',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Mualani: {
     normal1: {
@@ -1405,9 +1405,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Mualani',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Nahida: {
     charged: {
@@ -1419,8 +1419,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'charged',
-        name: 'charged',
-      },
+        name: 'charged'
+      }
     },
     karma_dmg: {
       sheet: 'Nahida',
@@ -1431,8 +1431,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'skill',
-        name: 'karma_dmg',
-      },
+        name: 'karma_dmg'
+      }
     },
     normal_0: {
       sheet: 'Nahida',
@@ -1443,8 +1443,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'normal',
-        name: 'normal_0',
-      },
+        name: 'normal_0'
+      }
     },
     normal_1: {
       sheet: 'Nahida',
@@ -1455,8 +1455,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'normal',
-        name: 'normal_1',
-      },
+        name: 'normal_1'
+      }
     },
     normal_2: {
       sheet: 'Nahida',
@@ -1467,8 +1467,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'normal',
-        name: 'normal_2',
-      },
+        name: 'normal_2'
+      }
     },
     normal_3: {
       sheet: 'Nahida',
@@ -1479,8 +1479,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'normal',
-        name: 'normal_3',
-      },
+        name: 'normal_3'
+      }
     },
     plunging_dmg: {
       sheet: 'Nahida',
@@ -1491,8 +1491,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'plunging',
-        name: 'plunging_dmg',
-      },
+        name: 'plunging_dmg'
+      }
     },
     plunging_high: {
       sheet: 'Nahida',
@@ -1503,8 +1503,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'plunging',
-        name: 'plunging_high',
-      },
+        name: 'plunging_high'
+      }
     },
     plunging_low: {
       sheet: 'Nahida',
@@ -1515,8 +1515,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'plunging',
-        name: 'plunging_low',
-      },
+        name: 'plunging_low'
+      }
     },
     skill_hold: {
       sheet: 'Nahida',
@@ -1527,8 +1527,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'skill',
-        name: 'skill_hold',
-      },
+        name: 'skill_hold'
+      }
     },
     skill_press: {
       sheet: 'Nahida',
@@ -1539,9 +1539,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nahida',
         move: 'skill',
-        name: 'skill_press',
-      },
-    },
+        name: 'skill_press'
+      }
+    }
   },
   Navia: {
     normal1: {
@@ -1553,9 +1553,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Navia',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Neuvillette: {
     normal1: {
@@ -1567,9 +1567,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Neuvillette',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Nilou: {
     burst_aeon: {
@@ -1581,8 +1581,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'burst',
-        name: 'burst_aeon',
-      },
+        name: 'burst_aeon'
+      }
     },
     burst_skill: {
       sheet: 'Nilou',
@@ -1593,8 +1593,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'burst',
-        name: 'burst_skill',
-      },
+        name: 'burst_skill'
+      }
     },
     charged_1: {
       sheet: 'Nilou',
@@ -1605,8 +1605,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'charged',
-        name: 'charged_1',
-      },
+        name: 'charged_1'
+      }
     },
     charged_2: {
       sheet: 'Nilou',
@@ -1617,8 +1617,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'charged',
-        name: 'charged_2',
-      },
+        name: 'charged_2'
+      }
     },
     normal_0: {
       sheet: 'Nilou',
@@ -1629,8 +1629,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'normal',
-        name: 'normal_0',
-      },
+        name: 'normal_0'
+      }
     },
     normal_1: {
       sheet: 'Nilou',
@@ -1641,8 +1641,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'normal',
-        name: 'normal_1',
-      },
+        name: 'normal_1'
+      }
     },
     normal_2: {
       sheet: 'Nilou',
@@ -1653,8 +1653,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'normal',
-        name: 'normal_2',
-      },
+        name: 'normal_2'
+      }
     },
     plunging_dmg: {
       sheet: 'Nilou',
@@ -1665,8 +1665,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'plunging',
-        name: 'plunging_dmg',
-      },
+        name: 'plunging_dmg'
+      }
     },
     plunging_high: {
       sheet: 'Nilou',
@@ -1677,8 +1677,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'plunging',
-        name: 'plunging_high',
-      },
+        name: 'plunging_high'
+      }
     },
     plunging_low: {
       sheet: 'Nilou',
@@ -1689,8 +1689,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'plunging',
-        name: 'plunging_low',
-      },
+        name: 'plunging_low'
+      }
     },
     skill_dance1: {
       sheet: 'Nilou',
@@ -1701,8 +1701,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'skill',
-        name: 'skill_dance1',
-      },
+        name: 'skill_dance1'
+      }
     },
     skill_dance2: {
       sheet: 'Nilou',
@@ -1713,8 +1713,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'skill',
-        name: 'skill_dance2',
-      },
+        name: 'skill_dance2'
+      }
     },
     skill_moon: {
       sheet: 'Nilou',
@@ -1725,8 +1725,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'skill',
-        name: 'skill_moon',
-      },
+        name: 'skill_moon'
+      }
     },
     skill_skill: {
       sheet: 'Nilou',
@@ -1737,8 +1737,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'skill',
-        name: 'skill_skill',
-      },
+        name: 'skill_skill'
+      }
     },
     skill_wheel: {
       sheet: 'Nilou',
@@ -1749,8 +1749,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'skill',
-        name: 'skill_wheel',
-      },
+        name: 'skill_wheel'
+      }
     },
     skill_whirl1: {
       sheet: 'Nilou',
@@ -1761,8 +1761,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'skill',
-        name: 'skill_whirl1',
-      },
+        name: 'skill_whirl1'
+      }
     },
     skill_whirl2: {
       sheet: 'Nilou',
@@ -1773,9 +1773,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Nilou',
         move: 'skill',
-        name: 'skill_whirl2',
-      },
-    },
+        name: 'skill_whirl2'
+      }
+    }
   },
   Ningguang: {
     normal1: {
@@ -1787,9 +1787,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Ningguang',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Noelle: {
     normal1: {
@@ -1801,9 +1801,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Noelle',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Ororon: {
     normal1: {
@@ -1815,9 +1815,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Ororon',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   PrototypeAmber: {
     heal: {
@@ -1828,9 +1828,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'PrototypeAmber',
-        name: 'heal',
-      },
-    },
+        name: 'heal'
+      }
+    }
   },
   Qiqi: {
     normal1: {
@@ -1842,9 +1842,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Qiqi',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   RaidenShogun: {
     normal1: {
@@ -1856,9 +1856,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'RaidenShogun',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Razor: {
     normal1: {
@@ -1870,9 +1870,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Razor',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Rosaria: {
     normal1: {
@@ -1884,9 +1884,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Rosaria',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   SangonomiyaKokomi: {
     normal1: {
@@ -1898,9 +1898,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'SangonomiyaKokomi',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Sayu: {
     normal1: {
@@ -1912,9 +1912,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Sayu',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Sethos: {
     normal1: {
@@ -1926,9 +1926,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Sethos',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Shenhe: {
     normal1: {
@@ -1940,9 +1940,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Shenhe',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   ShikanoinHeizou: {
     normal1: {
@@ -1954,9 +1954,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'ShikanoinHeizou',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Sigewinne: {
     normal1: {
@@ -1968,9 +1968,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Sigewinne',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Somnia: {
     normal1: {
@@ -1982,9 +1982,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Somnia',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Sucrose: {
     normal1: {
@@ -1996,9 +1996,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Sucrose',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Tartaglia: {
     normal1: {
@@ -2010,9 +2010,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Tartaglia',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Thoma: {
     normal1: {
@@ -2024,9 +2024,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Thoma',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Tighnari: {
     normal1: {
@@ -2038,9 +2038,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Tighnari',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   TravelerAnemo: {
     normal1: {
@@ -2052,9 +2052,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'TravelerAnemo',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   TravelerDendro: {
     normal1: {
@@ -2066,9 +2066,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'TravelerDendro',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   TravelerElectro: {
     normal1: {
@@ -2080,9 +2080,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'TravelerElectro',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   TravelerGeo: {
     normal1: {
@@ -2094,9 +2094,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'TravelerGeo',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   TravelerHydro: {
     normal1: {
@@ -2108,9 +2108,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'TravelerHydro',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Venti: {
     normal1: {
@@ -2122,9 +2122,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Venti',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Wanderer: {
     normal1: {
@@ -2136,9 +2136,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Wanderer',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Wriothesley: {
     normal1: {
@@ -2150,9 +2150,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Wriothesley',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Xiangling: {
     normal1: {
@@ -2164,9 +2164,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Xiangling',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Xianyun: {
     normal1: {
@@ -2178,9 +2178,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Xianyun',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Xiao: {
     normal1: {
@@ -2192,9 +2192,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Xiao',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Xilonen: {
     normal1: {
@@ -2206,9 +2206,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Xilonen',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Xingqiu: {
     normal1: {
@@ -2220,9 +2220,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Xingqiu',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Xinyan: {
     normal1: {
@@ -2234,9 +2234,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Xinyan',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   YaeMiko: {
     normal1: {
@@ -2248,9 +2248,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'YaeMiko',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Yanfei: {
     normal1: {
@@ -2262,9 +2262,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Yanfei',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Yaoyao: {
     normal1: {
@@ -2276,9 +2276,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Yaoyao',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Yelan: {
     normal1: {
@@ -2290,9 +2290,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Yelan',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Yoimiya: {
     normal1: {
@@ -2304,9 +2304,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Yoimiya',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   YumemizukiMizuki: {
     normal1: {
@@ -2318,9 +2318,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'YumemizukiMizuki',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   YunJin: {
     normal1: {
@@ -2332,9 +2332,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'YunJin',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
+        name: 'normal1'
+      }
+    }
   },
   Zhongli: {
     normal1: {
@@ -2346,8 +2346,8 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Zhongli',
         move: 'normal',
-        name: 'normal1',
-      },
-    },
-  },
+        name: 'normal1'
+      }
+    }
+  }
 } as const

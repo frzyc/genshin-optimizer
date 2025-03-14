@@ -4,14 +4,14 @@ import type {
   CharacterRarityKey,
   RarityKey,
   WeaponSubstatKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allCharacterRarityKeys,
   allRarityKeys,
   allWeaponSubstatKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
@@ -42,14 +42,14 @@ export interface IDisplayArchiveEntry {
 }
 
 const initialArtifactOption = (): ArchiveArtifactOption => ({
-  rarity: [...allArtifactRarityKeys],
+  rarity: [...allArtifactRarityKeys]
 })
 
 const initialCharacterOption = (): ArchiveCharacterOption => ({
   rarity: [...allCharacterRarityKeys],
   weaponType: [...allWeaponTypeKeys],
   sortOrder: 'desc',
-  sortOrderBy: 'name',
+  sortOrderBy: 'name'
 })
 
 const initialWeaponOption = (): ArchiveWeaponOption => ({
@@ -57,13 +57,13 @@ const initialWeaponOption = (): ArchiveWeaponOption => ({
   weaponType: [...allWeaponTypeKeys],
   subStat: [],
   sortOrder: 'desc',
-  sortOrderBy: 'name',
+  sortOrderBy: 'name'
 })
 
 const initialState = (): IDisplayArchiveEntry => ({
   artifact: initialArtifactOption(),
   character: initialCharacterOption(),
-  weapon: initialWeaponOption(),
+  weapon: initialWeaponOption()
 })
 
 export class DisplayArchiveEntry extends DataEntry<
@@ -85,7 +85,7 @@ export class DisplayArchiveEntry extends DataEntry<
       rarity = validateArr(rarity, allArtifactRarityKeys)
 
       artifact = {
-        rarity,
+        rarity
       }
 
       if (typeof character !== 'object') character = initialCharacterOption()
@@ -103,7 +103,7 @@ export class DisplayArchiveEntry extends DataEntry<
           rarity,
           weaponType,
           sortOrder,
-          sortOrderBy,
+          sortOrderBy
         }
       }
 
@@ -125,7 +125,7 @@ export class DisplayArchiveEntry extends DataEntry<
           subStat,
           weaponType,
           sortOrder,
-          sortOrderBy,
+          sortOrderBy
         }
       }
     }
@@ -133,7 +133,7 @@ export class DisplayArchiveEntry extends DataEntry<
     return {
       artifact,
       character,
-      weapon,
+      weapon
     }
   }
 }

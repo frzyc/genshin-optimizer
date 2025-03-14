@@ -3,7 +3,7 @@ import { objKeyValMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   CharacterSheetKey,
-  ElementKey,
+  ElementKey
 } from '@genshin-optimizer/gi/consts'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
@@ -16,7 +16,7 @@ import {
   input,
   percent,
   prod,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet'
@@ -25,7 +25,7 @@ import {
   customDmgNode,
   customHealNode,
   dataObjForCharacterSheet,
-  dmgNode,
+  dmgNode
 } from '../dataUtil'
 
 export default function anemo(
@@ -49,27 +49,27 @@ export default function anemo(
       storm_dmg: skillParam_gen.skill[s++],
       storm_max: skillParam_gen.skill[s++],
       cd: skillParam_gen.skill[s++][0],
-      maxCd: skillParam_gen.skill[s++][0],
+      maxCd: skillParam_gen.skill[s++][0]
     },
     burst: {
       dmg: skillParam_gen.burst[b++],
       absorbDmg: skillParam_gen.burst[b++],
       duration: skillParam_gen.burst[b++][0],
       cd: skillParam_gen.burst[b++][0],
-      enerCost: skillParam_gen.burst[b++][0],
+      enerCost: skillParam_gen.burst[b++][0]
     },
     passive1: {
-      dmg: 0.6,
+      dmg: 0.6
     },
     passive2: {
-      heal_: 0.02,
+      heal_: 0.02
     },
     constellation2: {
-      enerRech_: 0.16,
+      enerRech_: 0.16
     },
     constellation6: {
-      enemyRes_: -0.2,
-    },
+      enemyRes_: -0.2
+    }
   } as const
 
   const [condSkillAbsorptionPath, condSkillAbsorption] = cond(
@@ -100,7 +100,7 @@ export default function anemo(
         'on',
         equal(condBurstAbsorption, ele, dm.constellation6.enemyRes_)
       )
-    ),
+    )
   ])
 
   const absorptionData: Data = { hit: { ele: condSkillAbsorption } }
@@ -155,7 +155,7 @@ export default function anemo(
           absorptionData,
           constant(dm.skill.ele_dmg, { unit: '%' })
         )
-      ),
+      )
     },
     burst: {
       dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
@@ -163,26 +163,26 @@ export default function anemo(
         condBurstAbsorption,
         undefined,
         dmgNode('atk', dm.burst.absorbDmg, 'burst', {
-          hit: { ele: condBurstAbsorption },
+          hit: { ele: condBurstAbsorption }
         })
-      ),
+      )
     },
     passive1: {
       dmg: greaterEq(
         input.asc,
         1,
         customDmgNode(prod(input.total.atk, dm.passive1.dmg), 'elemental', {
-          hit: { ele: constant(elementKey) },
+          hit: { ele: constant(elementKey) }
         })
-      ),
+      )
     },
     passive2: {
       heal: greaterEq(
         input.asc,
         2,
         customHealNode(prod(percent(dm.passive2.heal_), input.total.hp))
-      ),
-    },
+      )
+    }
   } as const
 
   const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -191,14 +191,14 @@ export default function anemo(
     premod: {
       skillBoost: nodeC5,
       burstBoost: nodeC3,
-      enerRech_: nodeC2,
+      enerRech_: nodeC2
     },
     teamBuff: {
       premod: {
         ...nodesC6,
-        anemo_enemyRes_: nodeC6,
-      },
-    },
+        anemo_enemyRes_: nodeC6
+      }
+    }
   })
 
   const talent: TalentSheet = {
@@ -208,36 +208,36 @@ export default function anemo(
           {
             node: infoMut(dmgFormulas.skill.initial_dmg, {
               name: ct.chg(`skill.skillParams.0`),
-              multi: 2,
-            }),
+              multi: 2
+            })
           },
           {
             node: infoMut(dmgFormulas.skill.initial_max, {
               name: ct.chg(`skill.skillParams.1`),
-              multi: 4,
-            }),
+              multi: 4
+            })
           },
           {
             node: infoMut(dmgFormulas.skill.storm_dmg, {
-              name: ct.chg(`skill.skillParams.2`),
-            }),
+              name: ct.chg(`skill.skillParams.2`)
+            })
           },
           {
             node: infoMut(dmgFormulas.skill.storm_max, {
-              name: ct.chg(`skill.skillParams.3`),
-            }),
+              name: ct.chg(`skill.skillParams.3`)
+            })
           },
           {
             text: ct.chg('skill.skillParams.4'),
             value: dm.skill.cd,
-            unit: 's',
+            unit: 's'
           },
           {
             text: ct.chg('skill.skillParams.5'),
             value: dm.skill.maxCd,
-            unit: 's',
-          },
-        ],
+            unit: 's'
+          }
+        ]
       },
       ct.condTem('skill', {
         value: condSkillAbsorption,
@@ -253,39 +253,39 @@ export default function anemo(
               fields: [
                 {
                   node: infoMut(dmgFormulas.skill.initial_ele_dmg, {
-                    name: ch('initialEleDmg'),
-                  }),
+                    name: ch('initialEleDmg')
+                  })
                 },
                 {
                   node: infoMut(dmgFormulas.skill.max_ele_dmg, {
                     name: ch('maxEleDmg'),
-                    multi: 4,
-                  }),
+                    multi: 4
+                  })
                 },
                 {
                   node: infoMut(dmgFormulas.skill.storm_ele_dmg, {
-                    name: ch('stormEleDmg'),
-                  }),
+                    name: ch('stormEleDmg')
+                  })
                 },
                 {
                   node: infoMut(dmgFormulas.skill.storm_ele_max, {
-                    name: ch('stormEleMaxDmg'),
-                  }),
-                },
-              ],
-            },
+                    name: ch('stormEleMaxDmg')
+                  })
+                }
+              ]
+            }
           ])
-        ),
+        )
       }),
       ct.headerTem('constellation4', {
         fields: [
           {
             text: ch('c4'),
             value: 10,
-            unit: '%',
-          },
-        ],
-      }),
+            unit: '%'
+          }
+        ]
+      })
     ]),
 
     burst: ct.talentTem('burst', [
@@ -293,24 +293,24 @@ export default function anemo(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.dmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
+              name: ct.chg(`burst.skillParams.0`)
+            })
           },
           {
             text: ct.chg('burst.skillParams.2'),
             value: dm.burst.duration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: ct.chg('burst.skillParams.3'),
             value: dm.burst.cd,
-            unit: 's',
+            unit: 's'
           },
           {
             text: ct.chg('burst.skillParams.4'),
-            value: dm.burst.enerCost,
-          },
-        ],
+            value: dm.burst.enerCost
+          }
+        ]
       },
       ct.condTem('burst', {
         value: condBurstAbsorption,
@@ -326,13 +326,13 @@ export default function anemo(
               fields: [
                 {
                   node: infoMut(dmgFormulas.burst.absorb, {
-                    name: ct.chg(`burst.skillParams.1`),
-                  }),
-                },
-              ],
-            },
+                    name: ct.chg(`burst.skillParams.1`)
+                  })
+                }
+              ]
+            }
           ])
-        ),
+        )
       }),
       ct.condTem('constellation6', {
         // C6 anemo
@@ -344,16 +344,16 @@ export default function anemo(
           on: {
             fields: [
               {
-                node: infoMut(nodeC6, { path: 'anemo_enemyRes_' }),
+                node: infoMut(nodeC6, { path: 'anemo_enemyRes_' })
               },
               {
                 text: stg('duration'),
                 value: 10,
-                unit: 's',
-              },
-            ],
-          },
-        },
+                unit: 's'
+              }
+            ]
+          }
+        }
       }),
       ct.condTem('constellation6', {
         // C6 elemental
@@ -371,52 +371,52 @@ export default function anemo(
               ),
               fields: [
                 {
-                  node: nodesC6[`${eleKey}_enemyRes_`],
+                  node: nodesC6[`${eleKey}_enemyRes_`]
                 },
                 {
                   text: stg('duration'),
                   value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+                  unit: 's'
+                }
+              ]
+            }
           ])
-        ),
-      }),
+        )
+      })
     ]),
     passive1: ct.talentTem('passive1', [
       ct.fieldsTem('passive1', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive1.dmg, { name: ch('p1') }),
-          },
-        ],
-      }),
+            node: infoMut(dmgFormulas.passive1.dmg, { name: ch('p1') })
+          }
+        ]
+      })
     ]),
     passive2: ct.talentTem('passive2', [
       ct.fieldsTem('passive2', {
         fields: [
           {
-            node: infoMut(dmgFormulas.passive2.heal, { name: stg(`healing`) }),
-          },
-        ],
-      }),
+            node: infoMut(dmgFormulas.passive2.heal, { name: stg(`healing`) })
+          }
+        ]
+      })
     ]),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2', [
-      { fields: [{ node: nodeC2 }] },
+      { fields: [{ node: nodeC2 }] }
     ]),
     constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: nodeC3 }] },
+      { fields: [{ node: nodeC3 }] }
     ]),
     constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: nodeC5 }] },
+      { fields: [{ node: nodeC5 }] }
     ]),
-    constellation6: ct.talentTem('constellation6'),
+    constellation6: ct.talentTem('constellation6')
   }
   return {
     talent,
-    data,
+    data
   }
 }

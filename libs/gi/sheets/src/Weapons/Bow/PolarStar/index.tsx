@@ -24,7 +24,7 @@ const atk_ = lookup(
     '1': subscript(input.weapon.refinement, ashenStack1),
     '2': subscript(input.weapon.refinement, ashenStack2),
     '3': subscript(input.weapon.refinement, ashenStack3),
-    '4': subscript(input.weapon.refinement, ashenStack4),
+    '4': subscript(input.weapon.refinement, ashenStack4)
   },
   naught
 )
@@ -33,8 +33,8 @@ const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_,
     burst_dmg_,
-    atk_,
-  },
+    atk_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -43,12 +43,12 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: skill_dmg_,
+          node: skill_dmg_
         },
         {
-          node: burst_dmg_,
-        },
-      ],
+          node: burst_dmg_
+        }
+      ]
     },
     {
       value: condPassive,
@@ -59,11 +59,11 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: i }),
         fields: [
           {
-            node: atk_,
-          },
-        ],
-      })),
-    },
-  ],
+            node: atk_
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

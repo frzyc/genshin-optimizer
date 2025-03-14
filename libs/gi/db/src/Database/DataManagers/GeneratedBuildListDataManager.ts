@@ -1,7 +1,7 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
-  type ArtifactSlotKey,
+  type ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -60,7 +60,7 @@ export class GeneratedBuildListDataManager extends DataManager<
 
     return {
       buildDate,
-      builds,
+      builds
     }
   }
 

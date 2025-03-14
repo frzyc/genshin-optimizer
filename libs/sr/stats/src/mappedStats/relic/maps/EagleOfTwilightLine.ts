@@ -8,11 +8,11 @@ let o = 0
 
 const dm = {
   2: {
-    wind_dmg_: data_gen.setEffects[0].passiveStats.wind_dmg_,
+    wind_dmg_: data_gen.setEffects[0].passiveStats.wind_dmg_
   },
   4: {
-    advance_: data_gen.setEffects[1].otherStats[o++],
-  },
+    advance_: data_gen.setEffects[1].otherStats[o++]
+  }
 } as const
 
 export default dm

@@ -2,7 +2,7 @@ import {
   DiscordIcon,
   PatreonIcon,
   PaypalIcon,
-  TwitchIcon,
+  TwitchIcon
 } from '@genshin-optimizer/common/svgicons'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
@@ -13,7 +13,7 @@ import {
   InsertLink,
   Scanner,
   Twitter,
-  YouTube,
+  YouTube
 } from '@mui/icons-material'
 import {
   Box,
@@ -22,7 +22,7 @@ import {
   CardHeader,
   Divider,
   Link,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { useTranslation } from 'react-i18next'
@@ -32,69 +32,69 @@ const genshin_optimizer_links = [
   {
     title: () => 'Discord',
     icon: <DiscordIcon />,
-    url: process.env['NX_URL_DISCORD_GO'],
+    url: process.env['NX_URL_DISCORD_GO']
   },
   {
     title: () => 'Github',
     icon: <GitHub />,
-    url: process.env['NX_URL_GITHUB_GO'],
+    url: process.env['NX_URL_GITHUB_GO']
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.patchNotes.title'),
     icon: <Description />,
-    url: `${process.env['NX_URL_GITHUB_GO']}/releases`,
+    url: `${process.env['NX_URL_GITHUB_GO']}/releases`
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.tyGuide.title'),
     icon: <YouTube />,
-    url: process.env['NX_URL_YOUTUBE_TUTPL'],
-  },
+    url: process.env['NX_URL_YOUTUBE_TUTPL']
+  }
 ]
 
 const frzyc_links = [
   {
     title: () => 'Twitch',
     icon: <TwitchIcon />,
-    url: process.env['NX_URL_TWITCH_FRZYC'],
+    url: process.env['NX_URL_TWITCH_FRZYC']
   },
   {
     title: () => 'Twitter',
     icon: <Twitter />,
-    url: process.env['NX_URL_TWITTER_FRZYC'],
+    url: process.env['NX_URL_TWITTER_FRZYC']
   },
   {
     title: () => 'Patreon',
     icon: <PatreonIcon />,
-    url: process.env['NX_URL_PATREON_FRZYC'],
+    url: process.env['NX_URL_PATREON_FRZYC']
   },
   {
     title: () => 'PayPal',
     icon: <PaypalIcon />,
-    url: process.env['NX_URL_PAYPAL_FRZYC'],
-  },
+    url: process.env['NX_URL_PAYPAL_FRZYC']
+  }
 ]
 
 const other_links = [
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.scanners.title'),
     icon: <Scanner />,
-    to: '/scanner',
+    to: '/scanner'
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.kqm.title'),
     icon: <Handshake />,
-    url: process.env['NX_URL_WEBSITE_KQM'],
+    url: process.env['NX_URL_WEBSITE_KQM']
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.devDiscord.title'),
     icon: <DiscordIcon />,
-    url: process.env['NX_URL_DISCORD_GDEV'],
+    url: process.env['NX_URL_DISCORD_GDEV']
   },
   {
     title: (t: TFunction) => t('quickLinksCard.buttons.good.title'),
     icon: <Article />,
-    to: '/doc',
-  },
+    to: '/doc'
+  }
 ]
 
 export default function QuickLinksCard() {
@@ -121,7 +121,7 @@ export default function QuickLinksCard() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
-                gap: 0.5,
+                gap: 0.5
               }}
             >
               {genshin_optimizer_links.map((link) => {
@@ -135,7 +135,7 @@ export default function QuickLinksCard() {
                     sx={{
                       display: 'flex',
                       gap: 1,
-                      justifyContent: 'flex-start',
+                      justifyContent: 'flex-start'
                     }}
                   >
                     {icon}
@@ -163,7 +163,7 @@ export default function QuickLinksCard() {
                     sx={{
                       display: 'flex',
                       gap: 1,
-                      justifyContent: 'flex-start',
+                      justifyContent: 'flex-start'
                     }}
                   >
                     {icon}
@@ -194,7 +194,7 @@ export default function QuickLinksCard() {
                       sx={{
                         display: 'flex',
                         gap: 1,
-                        justifyContent: 'flex-start',
+                        justifyContent: 'flex-start'
                       }}
                     >
                       {icon}

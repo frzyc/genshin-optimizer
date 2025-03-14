@@ -11,7 +11,7 @@ export const TeamHeaderHeightContext = createContext(DEFAULT_HEADER_HEIGHT_PX)
 export function TeamHeader({
   teamId,
   characterKey,
-  headerRef,
+  headerRef
 }: {
   teamId: string
   characterKey?: CharacterKey
@@ -24,7 +24,7 @@ export function TeamHeader({
         overflow: 'visible',
         top: HEADER_TOP_PX,
         position: 'sticky',
-        zIndex: 101,
+        zIndex: 101
       }}
     >
       <CardThemed

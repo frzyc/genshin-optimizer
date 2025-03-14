@@ -4,7 +4,7 @@ import { Button, ButtonGroup, styled } from '@mui/material'
 import type { ReactNode } from 'react'
 import {
   CustomNumberInput,
-  CustomNumberInputButtonGroupWrapper,
+  CustomNumberInputButtonGroupWrapper
 } from './CustomNumberInput'
 import { TextButton } from './TextButton'
 
@@ -20,7 +20,7 @@ type StatInputInput = ButtonGroupProps & {
   onReset?: () => void
 }
 const FlexButtonGroup = styled(ButtonGroup)({
-  display: 'flex',
+  display: 'flex'
 })
 
 export function StatInput({
@@ -45,7 +45,7 @@ export function StatInput({
         <CustomNumberInput
           sx={{ px: 1 }}
           inputProps={{
-            sx: { textAlign: 'right' },
+            sx: { textAlign: 'right' }
           }}
           float={percent}
           placeholder={placeholder}

@@ -2,20 +2,20 @@ import { useRefSize, useTitle } from '@genshin-optimizer/common/ui'
 import {
   moveToFront,
   notEmpty,
-  objKeyMap,
+  objKeyMap
 } from '@genshin-optimizer/common/util'
 import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
   DebugReadContext,
   DebugReadModal,
-  TagContext,
+  TagContext
 } from '@genshin-optimizer/game-opt/formula-ui'
 import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
-  SrcDstDisplayContext,
+  SrcDstDisplayContext
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
@@ -23,13 +23,13 @@ import {
   CharacterContext,
   useCharacter,
   useDatabaseContext,
-  useTeam,
+  useTeam
 } from '@genshin-optimizer/sr/db-ui'
 import {
   getConditional,
   isMember,
   isSheet,
-  type Tag,
+  type Tag
 } from '@genshin-optimizer/sr/formula'
 import { CharacterName } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
@@ -41,7 +41,7 @@ import {
   Routes,
   useMatch,
   useNavigate,
-  useParams,
+  useParams
 } from 'react-router-dom'
 import type { PresetContextObj } from './context'
 import { PresetContext, TeamContext } from './context'
@@ -51,7 +51,7 @@ import {
   DEFAULT_HEADER_HEIGHT_PX,
   HEADER_TOP_PX,
   TeamHeader,
-  TeamHeaderHeightContext,
+  TeamHeaderHeightContext
 } from './TeamHeader'
 import TeammateDisplay from './TeammateDisplay'
 
@@ -87,17 +87,17 @@ function Page({ teamId }: { teamId: string }) {
     () =>
       ({
         presetIndex,
-        setPresetIndex,
-      } as PresetContextObj),
+        setPresetIndex
+      }) as PresetContextObj,
     [presetIndex, setPresetIndex]
   )
   const team = useTeam(teamId)!
   const { teamMetadata } = team
   // use the current URL as the "source of truth" for characterKey.
   const {
-    params: { characterKey: characterKeyRaw },
+    params: { characterKey: characterKeyRaw }
   } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
-    params: {},
+    params: {}
   }
 
   // validate characterKey
@@ -134,7 +134,7 @@ function Page({ teamId }: { teamId: string }) {
   const teamContextObj = useMemo(
     () => ({
       teamId,
-      team,
+      team
     }),
     [team, teamId]
   )
@@ -148,7 +148,7 @@ function Page({ teamId }: { teamId: string }) {
     ))
     return {
       srcDisplay: charDisplay,
-      dstDisplay: charDisplay,
+      dstDisplay: charDisplay
     }
   }, [team.teamMetadata, characterKey])
   const conditionals = useMemo(
@@ -158,7 +158,7 @@ function Page({ teamId }: { teamId: string }) {
         src,
         dst,
         condKey,
-        condValue: condValues[presetIndex],
+        condValue: condValues[presetIndex]
       })),
     [presetIndex, team.conditionals]
   )
@@ -191,7 +191,7 @@ function Page({ teamId }: { teamId: string }) {
     () => ({
       src: characterKey,
       dst: characterKey,
-      preset: `preset${presetIndex}` as Preset,
+      preset: `preset${presetIndex}` as Preset
     }),
     [characterKey, presetIndex]
   )
@@ -200,7 +200,7 @@ function Page({ teamId }: { teamId: string }) {
   const debugObj = useMemo<DebugReadContextObj>(
     () => ({
       read: debugRead,
-      setRead: setDebugRead,
+      setRead: setDebugRead
     }),
     [debugRead]
   )
@@ -222,7 +222,7 @@ function Page({ teamId }: { teamId: string }) {
                         gap: 1,
                         flexDirection: 'column',
                         mx: 1,
-                        mt: 2,
+                        mt: 2
                       }}
                     >
                       <TeamHeader

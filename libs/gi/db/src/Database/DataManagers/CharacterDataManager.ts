@@ -4,13 +4,13 @@ import type {
   ArtifactSlotKey,
   CharacterKey,
   LocationCharacterKey,
-  TravelerKey,
+  TravelerKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
   allCharacterKeys,
   allTravelerKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import { validateLevelAsc, validateTalent } from '@genshin-optimizer/gi/util'
@@ -43,7 +43,7 @@ export class CharacterDataManager extends DataManager<
     const {
       key: characterKey,
       level: rawLevel,
-      ascension: rawAscension,
+      ascension: rawAscension
     } = obj as ICharacter
     let { talent, constellation } = obj as ICharacter
 
@@ -64,7 +64,7 @@ export class CharacterDataManager extends DataManager<
       level,
       ascension,
       talent,
-      constellation,
+      constellation
     }
     return char
   }
@@ -83,10 +83,10 @@ export class CharacterDataManager extends DataManager<
           ),
       equippedWeapon: oldChar
         ? oldChar.equippedWeapon
-        : Object.values(this.database.weapons?.data ?? {}).find(
+        : (Object.values(this.database.weapons?.data ?? {}).find(
             (w) => w?.location === charKeyToLocCharKey(id)
-          )?.id ?? '',
-      ...storageObj,
+          )?.id ?? ''),
+      ...storageObj
     }
   }
   override deCache(char: ICachedCharacter): ICharacter {
@@ -96,7 +96,7 @@ export class CharacterDataManager extends DataManager<
       level,
       ascension,
       talent,
-      constellation,
+      constellation
     }
     return result
   }
@@ -145,7 +145,7 @@ export class CharacterDataManager extends DataManager<
     )
       this.database.weapons.setCached(char.equippedWeapon, {
         ...weapon,
-        location: '',
+        location: ''
       })
 
     this.database.teamChars.entries.forEach(([teamCharId, teamChar]) => {
@@ -253,8 +253,8 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     talent: {
       auto: 1,
       skill: 1,
-      burst: 1,
+      burst: 1
     },
-    constellation: 0,
+    constellation: 0
   }
 }

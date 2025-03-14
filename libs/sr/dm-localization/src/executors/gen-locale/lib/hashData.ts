@@ -3,14 +3,14 @@ import {
   allCharacterGenderedKeys,
   allLightConeKeys,
   allRelicSetKeys,
-  allServantKeys,
+  allServantKeys
 } from '@genshin-optimizer/sr/consts'
 import {
   allCharHashData,
   allServantHashData,
   charHashData,
   charSheet,
-  servantHashData,
+  servantHashData
 } from './charHashData'
 import { allLightConeHashData, lightConeHashData } from './lightConeHashData'
 import { allRelicHashData, relicHashData } from './relicHashData'
@@ -62,7 +62,7 @@ export const HashData = {
     lv: '6432248371558474859', // Lv.
     path_one: '16437605064767516057', // Path
     path_other: '15566938724422251912', // Paths
-    rarity: '10776505875408737758',
+    rarity: '10776505875408737758'
   },
 
   statKey: {
@@ -90,12 +90,12 @@ export const HashData = {
     imaginary_dmg_: '6916881987242258396',
     dmg_: '15983140579213054709',
     weakness_: '1118831856511100259',
-    resPen_: '908412531652996285',
+    resPen_: '908412531652996285'
   },
 
   teams: {
     team: '17397759760626194356', // Team
     name: '17411511948024426109', // Team Name
-    editTeam: '5003704226092642529',
-  },
+    editTeam: '5003704226092642529'
+  }
 }

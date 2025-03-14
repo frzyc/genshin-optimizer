@@ -3,18 +3,18 @@ import {
   KeyMap,
   allEleDmgKeys,
   allEleEnemyResKeys,
-  allEleResKeys,
+  allEleResKeys
 } from './KeyMap'
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
-  CrittableTransformativeReactionsKey,
+  CrittableTransformativeReactionsKey
 } from './StatConstants'
 import {
   crittableTransformativeReactions,
   crystallizeLevelMultipliers,
   transformativeReactionLevelMultipliers,
-  transformativeReactions,
+  transformativeReactions
 } from './StatConstants'
 export {
   KeyMap,
@@ -24,7 +24,7 @@ export {
   crittableTransformativeReactions,
   crystallizeLevelMultipliers,
   transformativeReactionLevelMultipliers,
-  transformativeReactions,
+  transformativeReactions
 }
 export type {
   AdditiveReactionsKey,
@@ -32,5 +32,5 @@ export type {
   CrittableTransformativeReactionsKey,
   EleEnemyResKey,
   StatKey,
-  Unit,
+  Unit
 }

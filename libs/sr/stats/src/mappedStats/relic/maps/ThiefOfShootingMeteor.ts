@@ -8,12 +8,12 @@ let o = 1
 
 const dm = {
   2: {
-    passive_brEffect_: data_gen.setEffects[0].passiveStats.brEffect_,
+    passive_brEffect_: data_gen.setEffects[0].passiveStats.brEffect_
   },
   4: {
     passive_brEffect_: data_gen.setEffects[1].passiveStats.brEffect_,
-    energy: data_gen.setEffects[1].otherStats[o++],
-  },
+    energy: data_gen.setEffects[1].otherStats[o++]
+  }
 } as const
 
 export default dm

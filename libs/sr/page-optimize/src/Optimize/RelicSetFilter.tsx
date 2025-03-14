@@ -3,17 +3,17 @@ import {
   CardThemed,
   DropdownButton,
   ImgIcon,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { toggleInArr } from '@genshin-optimizer/common/util'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type {
   RelicCavernSetKey,
-  RelicPlanarSetKey,
+  RelicPlanarSetKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allRelicCavernSetKeys,
-  allRelicPlanarSetKeys,
+  allRelicPlanarSetKeys
 } from '@genshin-optimizer/sr/consts'
 import { RelicSetName } from '@genshin-optimizer/sr/ui'
 import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
@@ -28,7 +28,7 @@ import {
   Grid,
   IconButton,
   MenuItem,
-  Typography,
+  Typography
 } from '@mui/material'
 
 export function RelicSetFilter({
@@ -38,7 +38,7 @@ export function RelicSetFilter({
   setFilter2Planar,
   setSetFilter4Cavern,
   setSetFilter2Cavern,
-  setSetFilter2Planar,
+  setSetFilter2Planar
 }: {
   disabled?: boolean
   setFilter4Cavern: RelicCavernSetKey[]
@@ -188,7 +188,7 @@ function AdvSetFilterCard({
   setFilter2Planar,
   setSetFilter4Cavern,
   setSetFilter2Cavern,
-  setSetFilter2Planar,
+  setSetFilter2Planar
 }: {
   onClose: () => void
   setFilter4Cavern: RelicCavernSetKey[]
@@ -269,7 +269,7 @@ function AdvSetFilterRelicCavernCard({
   setFilter4Cavern,
   setFilter2Cavern,
   setSetFilter4Cavern,
-  setSetFilter2Cavern,
+  setSetFilter2Cavern
 }: {
   setKey: RelicCavernSetKey
   setFilter4Cavern: RelicCavernSetKey[]
@@ -328,7 +328,7 @@ function AdvSetFilterRelicCavernCard({
 function AdvSetFilterRelicPlanarCard({
   setKey,
   setFilter2Planar,
-  setSetFilter2Planar,
+  setSetFilter2Planar
 }: {
   setKey: RelicPlanarSetKey
   setFilter2Planar: RelicPlanarSetKey[]

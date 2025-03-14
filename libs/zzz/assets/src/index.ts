@@ -6,7 +6,7 @@ import type {
   Raritykey,
   SkillKey,
   SpecialityKey,
-  WengineKey,
+  WengineKey
 } from '@genshin-optimizer/zzz/consts'
 import type { StaticImageData } from 'next/image'
 import commonImages from './common'

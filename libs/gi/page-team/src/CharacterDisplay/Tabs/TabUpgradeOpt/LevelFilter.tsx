@@ -11,7 +11,7 @@ export const LevelFilter = memo(function LevelFilter({
   upOptLevelLow,
   upOptLevelHigh,
   disabled,
-  optConfigId,
+  optConfigId
 }: {
   levelTotal: string
   upOptLevelLow: number
@@ -45,7 +45,7 @@ export const LevelFilter = memo(function LevelFilter({
         setBoth={(upOptLevelLow, upOptLevelHigh) =>
           database.optConfigs.set(optConfigId, {
             upOptLevelLow,
-            upOptLevelHigh,
+            upOptLevelHigh
           })
         }
         disabled={disabled}

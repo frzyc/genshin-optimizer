@@ -1,7 +1,7 @@
 import {
   CardThemed,
   CodeBlock,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { prettify } from '@genshin-optimizer/common/util'
 import type { Read } from '@genshin-optimizer/game-opt/engine'
@@ -15,7 +15,7 @@ import {
   CardHeader,
   Divider,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import type { SyntheticEvent } from 'react'
@@ -24,7 +24,7 @@ import { CalcContext, DebugReadContext, TagContext } from './context'
 
 export function DebugListingsDisplay({
   formulasRead,
-  buffsRead,
+  buffsRead
 }: {
   formulasRead: Read
   buffsRead: Read

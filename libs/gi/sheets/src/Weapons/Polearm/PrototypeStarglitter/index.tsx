@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -33,8 +33,8 @@ const charged_dmg_ = lookup(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_,
-    charged_dmg_,
-  },
+    charged_dmg_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -48,11 +48,11 @@ const sheet: IWeaponSheet = {
           i,
           {
             name: st('stack', { count: i }),
-            fields: [{ node: normal_dmg_ }, { node: charged_dmg_ }],
-          },
+            fields: [{ node: normal_dmg_ }, { node: charged_dmg_ }]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

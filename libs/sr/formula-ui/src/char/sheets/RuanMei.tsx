@@ -11,7 +11,7 @@ import {
   bonusAbilitySheet,
   bonusStatsSheets,
   eidolonSheet,
-  talentSheet,
+  talentSheet
 } from '../sheetUtil'
 
 const key: CharacterKey = 'RuanMei'
@@ -28,10 +28,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: chg('abilities.basic.0.name'),
-          fieldRef: formula.basicDmg_0.tag,
-        },
-      ],
-    },
+          fieldRef: formula.basicDmg_0.tag
+        }
+      ]
+    }
   ]),
   skill: talentSheet(key, 'skill', [
     {
@@ -41,7 +41,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
           icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
           // TODO: translate
           text: 'skill active',
-          additional: <SqBadge>Skill</SqBadge>,
+          additional: <SqBadge>Skill</SqBadge>
         },
         metadata: cond.skillOvertone,
         label: 'Overtone',
@@ -49,17 +49,17 @@ const sheet: UISheet<TalentSheetElementKey> = {
           {
             // TODO: translate
             title: 'Ally DMG Increase',
-            fieldRef: buff.skillOvertone_dmg_.tag,
+            fieldRef: buff.skillOvertone_dmg_.tag
           },
           {
             title: <StatDisplay statKey="weakness_" />,
-            fieldRef: buff.skillOvertone_weakness_.tag,
+            fieldRef: buff.skillOvertone_weakness_.tag
           },
           // TODO: translate DM "Duration"
-          { title: 'Duration', fieldValue: dm.skill.duration },
-        ],
-      },
-    },
+          { title: 'Duration', fieldValue: dm.skill.duration }
+        ]
+      }
+    }
   ]),
   ult: talentSheet(key, 'ult', [
     {
@@ -68,14 +68,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
         header: {
           icon: <ImgIcon src={characterAsset(key, 'ult_0')} />,
           text: 'ult active',
-          additional: <SqBadge>Ult</SqBadge>,
+          additional: <SqBadge>Ult</SqBadge>
         },
         metadata: cond.ultZone,
         label: 'Ult zone',
         fields: [
           {
             title: <StatDisplay statKey="resPen_" />,
-            fieldRef: buff.ultZone_resPen_.tag,
+            fieldRef: buff.ultZone_resPen_.tag
           },
           // TODO: action delay % on Thanatoplum Rebloom trigger
           {
@@ -85,15 +85,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
                 Thanatoplum Rebloom Break Damage
               </ColorText>
             ),
-            fieldRef: formula.zoneBreakDmg.tag,
+            fieldRef: formula.zoneBreakDmg.tag
           },
           // TODO: show the increase of dmg multipler from e6
           // TODO: translate DM "Duration"
           // TODO: show the increase of zone duration from e6
-          { title: 'Duration', fieldValue: dm.ult.duration },
-        ],
-      },
-    },
+          { title: 'Duration', fieldValue: dm.ult.duration }
+        ]
+      }
+    }
   ]),
   talent: talentSheet(key, 'talent', [
     {
@@ -101,17 +101,17 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: <StatDisplay statKey="spd_" />,
-          fieldRef: buff.talent_spd_.tag,
+          fieldRef: buff.talent_spd_.tag
         },
         {
           //TODO: translate
           title: (
             <ColorText color="ice">Somatotypical Helix Break DMG</ColorText>
           ),
-          fieldRef: formula.talentBreakDmg.tag,
-        },
-      ],
-    },
+          fieldRef: formula.talentBreakDmg.tag
+        }
+      ]
+    }
   ]),
   technique: talentSheet(key, 'technique'),
   bonusAbility1: bonusAbilitySheet(key, 'bonusAbility1'),
@@ -122,14 +122,14 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: 'bonus ability 3 buff',
-          fieldRef: buff.ba3_dmg_.tag,
+          fieldRef: buff.ba3_dmg_.tag
         },
         {
           title: 'bonus ability 3 formula',
-          fieldRef: formula.ba3_dmg_.tag,
-        },
-      ],
-    },
+          fieldRef: formula.ba3_dmg_.tag
+        }
+      ]
+    }
   ]),
 
   ...bonusStatsSheets(key),
@@ -140,10 +140,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           // TODO: defIgn_ translation
           title: 'Ignore DEF',
-          fieldRef: buff.e1_defIgn_.tag,
-        },
-      ],
-    },
+          fieldRef: buff.e1_defIgn_.tag
+        }
+      ]
+    }
   ]),
   eidolon2: eidolonSheet(key, 'eidolon2', [
     {
@@ -151,10 +151,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: 'atk_',
-          fieldRef: buff.e2_atk_.tag,
-        },
-      ],
-    },
+          fieldRef: buff.e2_atk_.tag
+        }
+      ]
+    }
   ]),
   eidolon3: eidolonSheet(key, 'eidolon3', [
     {
@@ -163,15 +163,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           //TODO: Translate
           title: 'talent',
-          fieldRef: buff.eidolon3_talent.tag,
+          fieldRef: buff.eidolon3_talent.tag
         },
         {
           //TODO: Translate
           title: 'ult',
-          fieldRef: buff.eidolon3_ult.tag,
-        },
-      ],
-    },
+          fieldRef: buff.eidolon3_ult.tag
+        }
+      ]
+    }
   ]),
   eidolon4: eidolonSheet(key, 'eidolon4', [
     {
@@ -180,7 +180,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         header: {
           icon: <ImgIcon src={characterAsset(key, 'eidolon4')} />,
           text: chg('ranks.4.name'),
-          additional: <SqBadge>Eidolon 4</SqBadge>,
+          additional: <SqBadge>Eidolon 4</SqBadge>
         },
         metadata: cond.e4Broken,
         label: 'Enemy Weakness Broken',
@@ -188,10 +188,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
           // TODO: Translation
           { title: 'Break Effect', fieldRef: buff.e4_break_.tag },
           // TODO: Translation? duration?
-          { title: 'Turns', fieldValue: dm.e4.duration },
-        ],
-      },
-    },
+          { title: 'Turns', fieldValue: dm.e4.duration }
+        ]
+      }
+    }
   ]),
   eidolon5: eidolonSheet(key, 'eidolon5', [
     {
@@ -200,16 +200,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
         {
           //TODO: Translate
           title: 'basic',
-          fieldRef: buff.eidolon5_basic.tag,
+          fieldRef: buff.eidolon5_basic.tag
         },
         {
           //TODO: Translate
           title: 'skill',
-          fieldRef: buff.eidolon5_skill.tag,
-        },
-      ],
-    },
+          fieldRef: buff.eidolon5_skill.tag
+        }
+      ]
+    }
   ]),
-  eidolon6: eidolonSheet(key, 'eidolon6'),
+  eidolon6: eidolonSheet(key, 'eidolon6')
 }
 export default sheet

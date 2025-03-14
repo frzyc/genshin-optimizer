@@ -16,7 +16,7 @@ const discDataDump = getDiscsData()
 const allStat = {
   disc: discDataDump,
   char: characterDataDump,
-  wengine: wengineDataDump,
+  wengine: wengineDataDump
 } as const
 
 export type AllStats = typeof allStat

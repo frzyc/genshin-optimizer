@@ -6,7 +6,7 @@ import {
   ListItem,
   ListItemText,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 
 export function Roadmap() {

@@ -30,6 +30,6 @@ const data = {
   passive1,
   passive2,
   passive3,
-  skill,
+  skill
 } as const
 export default data

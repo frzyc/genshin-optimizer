@@ -10,7 +10,7 @@ import {
   Divider,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense } from 'react'
 import card from './card-sc.png'
@@ -50,7 +50,7 @@ export function ScanInfoModal() {
                     component="img"
                     src={full}
                     sx={{
-                      height: '300px',
+                      height: '300px'
                     }}
                   />
                 </Box>
@@ -64,7 +64,7 @@ export function ScanInfoModal() {
                     component="img"
                     src={card}
                     sx={{
-                      height: '400px',
+                      height: '400px'
                     }}
                   />
                 </Box>

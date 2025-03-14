@@ -6,6 +6,6 @@ export type OptTargetContextObj = {
 }
 export const defOptTargetContextObj = {
   target: undefined,
-  scalesWith: new Set(),
+  scalesWith: new Set()
 } as OptTargetContextObj
 export const OptTargetContext = createContext(defOptTargetContextObj)

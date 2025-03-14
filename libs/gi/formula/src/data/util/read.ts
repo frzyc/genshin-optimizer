@@ -4,7 +4,7 @@ import {
   reader as baseReader,
   entryTypes,
   presets,
-  setReader,
+  setReader
 } from '@genshin-optimizer/game-opt/engine'
 import {
   allAmplifyingReactionKeys,
@@ -12,7 +12,7 @@ import {
   allElementWithPhyKeys,
   allMoveKeys,
   allRegionKeys,
-  allTransformativeReactionKeys,
+  allTransformativeReactionKeys
 } from '@genshin-optimizer/gi/consts'
 import type { Dst, Sheet, Src } from './listing'
 import { members, sheets } from './listing'
@@ -29,7 +29,7 @@ export const fixedTags = {
   move: allMoveKeys,
   trans: allTransformativeReactionKeys,
   amp: [...allAmplifyingReactionKeys, ''],
-  cata: [...allCatalyzeReactionKeys, ''],
+  cata: [...allCatalyzeReactionKeys, '']
 } as const
 export type Tag = BaseTag<Sheet, Src, Dst>
 

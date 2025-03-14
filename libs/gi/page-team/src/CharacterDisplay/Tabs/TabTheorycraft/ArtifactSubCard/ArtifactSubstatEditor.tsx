@@ -2,7 +2,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-  NumberInputLazy,
+  NumberInputLazy
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import { artMaxLevel, type SubstatKey } from '@genshin-optimizer/gi/consts'
@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../../../../BuildTcContext'
 export function ArtifactSubstatEditor({
   statKey,
-  disabled = false,
+  disabled = false
 }: {
   statKey: SubstatKey
   disabled?: boolean
@@ -27,11 +27,11 @@ export function ArtifactSubstatEditor({
     buildTc: {
       artifact: {
         slots,
-        substats: { type: substatsType, stats: substats, rarity },
+        substats: { type: substatsType, stats: substats, rarity }
       },
-      optimization: { maxSubstats },
+      optimization: { maxSubstats }
     },
-    setBuildTc,
+    setBuildTc
   } = useContext(BuildTcContext)
   const mainStatKeys = Object.values(slots).map((s) => s.statKey)
   const value = substats[statKey]
@@ -104,15 +104,15 @@ export function ArtifactSubstatEditor({
           inputProps={{
             sx: {
               width: '4em',
-              textAlign: 'right',
+              textAlign: 'right'
             },
             min: 0,
-            max: 9999,
+            max: 9999
           }}
           InputProps={{
             endAdornment: getUnitStr(statKey) || (
               <Box width="0.8em" component="span" />
-            ),
+            )
           }}
           focused
         />
@@ -124,7 +124,7 @@ export function ArtifactSubstatEditor({
             display: 'flex',
             gap: 1,
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
         >
           <StatIcon statKey={statKey} iconProps={{ fontSize: 'inherit' }} />
@@ -140,10 +140,10 @@ export function ArtifactSubstatEditor({
           inputProps={{
             sx: {
               width: '2em',
-              textAlign: 'right',
+              textAlign: 'right'
             },
             min: 0,
-            max: 99, // 3 digits aren't visible
+            max: 99 // 3 digits aren't visible
           }}
           InputProps={{
             startAdornment: (
@@ -153,7 +153,7 @@ export function ArtifactSubstatEditor({
                     whiteSpace: 'nowrap',
                     width: '3em',
                     display: 'flex',
-                    justifyContent: 'space-between',
+                    justifyContent: 'space-between'
                   }}
                 >
                   <span>
@@ -163,7 +163,7 @@ export function ArtifactSubstatEditor({
                   <span>x</span>
                 </Box>
               </InputAdornment>
-            ),
+            )
           }}
           focused
         />
@@ -202,7 +202,7 @@ export function ArtifactSubstatEditor({
             gap: 1,
             alignItems: 'center',
             justifyContent: 'center',
-            overflow: 'visible',
+            overflow: 'visible'
           }}
         >
           <Slider
@@ -227,21 +227,21 @@ export function ArtifactSubstatEditor({
             rolls - 0.0001 > maxSubstat
               ? 'error'
               : maxSubstat > maxRolls
-              ? 'warning'
-              : 'success'
+                ? 'warning'
+                : 'success'
           }
           focused
           inputProps={{
             sx: { width: '2ch' },
             min: 0,
-            max: 99, // 3 digits aren't visible
+            max: 99 // 3 digits aren't visible
           }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
                 {t('tabTheorycraft.substat.max')}
               </InputAdornment>
-            ),
+            )
           }}
         />
       </Box>

@@ -5,7 +5,7 @@ import {
   min,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
@@ -19,7 +19,7 @@ import {
   register,
   registerBuff,
   registerBuffFormula,
-  teamBuff,
+  teamBuff
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag } from '../util'
 

@@ -10,7 +10,7 @@ export default defineConfig(() => ({
 
   // Uncomment this if you are using workers.
   worker: {
-    plugins: () => [nxViteTsPaths()],
+    plugins: () => [nxViteTsPaths()]
   },
 
   test: {
@@ -21,7 +21,7 @@ export default defineConfig(() => ({
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../../coverage/libs/gi/ui',
-      provider: 'v8',
-    },
-  },
+      provider: 'v8'
+    }
+  }
 }))

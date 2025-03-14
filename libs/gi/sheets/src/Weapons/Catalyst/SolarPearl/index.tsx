@@ -20,8 +20,8 @@ const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_,
     burst_dmg_,
-    normal_dmg_,
-  },
+    normal_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -35,14 +35,14 @@ const sheet: IWeaponSheet = {
         normal: {
           fields: [
             {
-              node: skill_dmg_,
+              node: skill_dmg_
             },
             {
-              node: burst_dmg_,
-            },
-          ],
-        },
-      },
+              node: burst_dmg_
+            }
+          ]
+        }
+      }
     },
     {
       value: condSkillBurst,
@@ -53,12 +53,12 @@ const sheet: IWeaponSheet = {
         skillBurst: {
           fields: [
             {
-              node: normal_dmg_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: normal_dmg_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

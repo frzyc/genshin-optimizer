@@ -10,7 +10,7 @@ import {
   useDatabaseContext,
   useDisc,
   useDiscs,
-  useWengine,
+  useWengine
 } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
@@ -22,7 +22,7 @@ import {
   Grid,
   Stack,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -35,11 +35,11 @@ const columns = {
   sm: 2,
   md: 3,
   lg: 3,
-  xl: 3,
+  xl: 3
 } as const
 export function EquippedGrid({
   setWengine,
-  setDisc,
+  setDisc
 }: {
   setWengine: (id: string) => void
   setDisc: (slotKey: DiscSlotKey, id: string | null) => void
@@ -133,7 +133,7 @@ export function EquippedGrid({
                       onEdit={() => onEditDisc(disc.id)}
                       onLockToggle={() =>
                         database.discs.set(disc.id, ({ lock }) => ({
-                          lock: !lock,
+                          lock: !lock
                         }))
                       }
                     />
@@ -155,7 +155,7 @@ export function EquippedGrid({
 export function WeaponSwapCard({
   wengineId,
   wengineTypeKey,
-  onChangeId,
+  onChangeId
 }: {
   wengineId: string
   wengineTypeKey: SpecialityKey
@@ -170,7 +170,7 @@ export function WeaponSwapCard({
         width: '100%',
         minHeight: 300,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column'
       }}
     >
       <CardContent>
@@ -184,7 +184,7 @@ export function WeaponSwapCard({
           flexGrow: 1,
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <WengineSwapModal
@@ -204,7 +204,7 @@ export function WeaponSwapCard({
 
 export function DiscSwapCard({
   slotKey,
-  onChangeId,
+  onChangeId
 }: {
   slotKey: DiscSlotKey
   onChangeId: (id: string | null) => void
@@ -219,7 +219,7 @@ export function DiscSwapCard({
         width: '100%',
         minHeight: 300,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column'
       }}
     >
       <CardContent>
@@ -231,7 +231,7 @@ export function DiscSwapCard({
           flexGrow: 1,
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <DiscSwapModal
@@ -251,7 +251,7 @@ export function DiscSwapCard({
 function DiscSwapButtonButton({
   disc,
   slotKey,
-  onChangeId,
+  onChangeId
 }: {
   disc: ICachedDisc
   slotKey: DiscSlotKey
@@ -289,7 +289,7 @@ function DiscSwapButtonButton({
 function WengineSwapButton({
   wengineId,
   wengineTypeKey,
-  onChangeId,
+  onChangeId
 }: {
   wengineId: string
   wengineTypeKey: SpecialityKey
@@ -323,7 +323,7 @@ function WengineSwapButton({
 function LargeWeaponSwapButton({
   wengineId,
   wengineTypeKey,
-  onChangeId,
+  onChangeId
 }: {
   wengineId: string
   wengineTypeKey: SpecialityKey

@@ -10,7 +10,7 @@ const textComponents = {
   frost: <ColorText color="frost" />,
   physical: <ColorText color="physical" />,
   ether: <ColorText color="ether" />,
-  ct: <ColorText />,
+  ct: <ColorText />
 }
 
 const badgeComponents = {
@@ -20,7 +20,7 @@ const badgeComponents = {
   frost: <SqBadge color="frost" />,
   physical: <SqBadge color="physical" />,
   ether: <SqBadge color="ether" />,
-  ct: <ColorText />,
+  ct: <ColorText />
 }
 
 export function Translate({
@@ -28,7 +28,7 @@ export function Translate({
   key18,
   values,
   children,
-  useBadge,
+  useBadge
 }: {
   ns: string
   key18: string

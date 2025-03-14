@@ -12,10 +12,10 @@ const normal_dmg_s = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const charged_dmg_s = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 
 const normal_dmg = subscript(input.weapon.refinement, normal_dmg_s, {
-  path: 'normal_dmg_',
+  path: 'normal_dmg_'
 })
 const charged_dmg = subscript(input.weapon.refinement, charged_dmg_s, {
-  path: 'charged_dmg_',
+  path: 'charged_dmg_'
 })
 
 const [condPassivePath, condPassive] = cond(key, 'FullDraw')
@@ -33,8 +33,8 @@ const charged_passive = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_: sum(normal_dmg, normal_passive),
-    charged_dmg_: sum(charged_dmg, charged_passive),
-  },
+    charged_dmg_: sum(charged_dmg, charged_passive)
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -43,12 +43,12 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: normal_dmg,
+          node: normal_dmg
         },
         {
-          node: charged_dmg,
-        },
-      ],
+          node: charged_dmg
+        }
+      ]
     },
     {
       value: condPassive,
@@ -59,16 +59,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: normal_passive,
+              node: normal_passive
             },
             {
-              node: charged_passive,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: charged_passive
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 
 export default new WeaponSheet(sheet, data)

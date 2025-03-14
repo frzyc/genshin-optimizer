@@ -4,7 +4,7 @@ import {
   allLightConeKeys,
   type LightConeKey,
   type PathKey,
-  type RarityKey,
+  type RarityKey
 } from '@genshin-optimizer/sr/consts'
 import {
   avatarBaseTypeMap,
@@ -13,7 +13,7 @@ import {
   equipmentSkillConfig_bySuperimpose,
   lightConeIdMap,
   lightConeRarityMap,
-  statKeyMap,
+  statKeyMap
 } from '@genshin-optimizer/sr/dm'
 
 type Promotion = {
@@ -49,10 +49,10 @@ export default function LightConeData(): LightConeData {
             superimpose.flatMap((abilityProperty) => [
               {
                 ...abilityProperty,
-                key: statKeyMap[abilityProperty.PropertyType],
-              },
+                key: statKeyMap[abilityProperty.PropertyType]
+              }
             ])
-          ),
+          )
         }
         // Transpose the config so each param has its own array so we can use subscript() on it
         expandedConfig.ParamList = range(
@@ -78,34 +78,34 @@ export default function LightConeData(): LightConeData {
               BaseAttack,
               BaseAttackAdd,
               BaseDefence,
-              BaseDefenceAdd,
+              BaseDefenceAdd
             }) => ({
               atk: {
                 base: BaseAttack.Value,
-                add: BaseAttackAdd.Value,
+                add: BaseAttackAdd.Value
               },
               def: {
                 base: BaseDefence.Value,
-                add: BaseDefenceAdd.Value,
+                add: BaseDefenceAdd.Value
               },
               hp: {
                 base: BaseHP.Value,
-                add: BaseHPAdd.Value,
-              },
+                add: BaseHPAdd.Value
+              }
             })
           ),
           superimpose: {
             otherStats: expandedConfig.ParamList.map((superimpose) => [
               -1,
-              ...superimpose.map((param) => param.Value),
+              ...superimpose.map((param) => param.Value)
             ]),
             passiveStats: Object.fromEntries(
               expandedConfig.AbilityProperty.map((superimpose) => [
                 superimpose[0].key,
-                [-1, ...superimpose.map((prop) => prop.Value.Value)],
+                [-1, ...superimpose.map((prop) => prop.Value.Value)]
               ])
-            ),
-          },
+            )
+          }
         }
         const lightConeKey = lightConeIdMap[lightConeId]
         return [lightConeKey, result] as const

@@ -1,10 +1,10 @@
 import {
   default as burst,
-  default as constellation3,
+  default as constellation3
 } from './Skill_E_Somnia_01_HD.png'
 import {
   default as constellation5,
-  default as skill,
+  default as skill
 } from './Skill_S_Somnia_01.png'
 import iconSide from './UI_AvatarIcon_Side_Somnia.png'
 import icon from './UI_AvatarIcon_Somnia.png'
@@ -33,6 +33,6 @@ const data = {
   passive1,
   passive2,
   passive3,
-  skill,
+  skill
 } as const
 export default data

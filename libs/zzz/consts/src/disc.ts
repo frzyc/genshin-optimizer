@@ -1,6 +1,6 @@
 import {
   objMultiplication,
-  objSumInPlace,
+  objSumInPlace
 } from '@genshin-optimizer/common/util'
 import type { PandoStatKey } from './common'
 
@@ -26,7 +26,7 @@ export const allDiscSetKeys = [
   'SoulRock',
   'SwingJazz',
   'ThunderMetal',
-  'WoodpeckerElectro',
+  'WoodpeckerElectro'
 ] as const
 export type DiscSetKey = (typeof allDiscSetKeys)[number]
 
@@ -44,7 +44,7 @@ export const allDiscSubStatKeys = [
   'pen',
   'crit_',
   'crit_dmg_',
-  'anomProf',
+  'anomProf'
 ] as const
 export type DiscSubStatKey = (typeof allDiscSubStatKeys)[number]
 export const allElementalDmgMainStatKeys = [
@@ -52,7 +52,7 @@ export const allElementalDmgMainStatKeys = [
   'fire_dmg_',
   'ice_dmg_',
   'physical_dmg_',
-  'ether_dmg_',
+  'ether_dmg_'
 ] as const
 export const allDiscMainStatKeys = [
   'hp',
@@ -68,7 +68,7 @@ export const allDiscMainStatKeys = [
   'pen_', // PEN Ratio
   'anomMas_', // Anomaly Mastery%
   'impact_', // Impact%
-  'enerRegen_', // Energy Regen
+  'enerRegen_' // Energy Regen
 ] as const
 
 export type DiscMainStatKey = (typeof allDiscMainStatKeys)[number]
@@ -82,7 +82,7 @@ export type DiscSetCountKey = (typeof allDiscSetCountKeys)[number]
 export const discMaxLevel: Record<DiscRarityKey, number> = {
   S: 15,
   A: 12,
-  B: 9,
+  B: 9
 } as const
 
 export const discSubstatRollData: Record<
@@ -91,7 +91,7 @@ export const discSubstatRollData: Record<
 > = {
   S: { low: 3, high: 4, numUpgrades: 5 },
   A: { low: 2, high: 3, numUpgrades: 4 },
-  B: { low: 1, high: 2, numUpgrades: 3 },
+  B: { low: 1, high: 2, numUpgrades: 3 }
 } as const
 
 export const discSlotToMainStatKeys: Record<DiscSlotKey, DiscMainStatKey[]> = {
@@ -100,7 +100,7 @@ export const discSlotToMainStatKeys: Record<DiscSlotKey, DiscMainStatKey[]> = {
   '3': ['def'],
   '4': ['hp_', 'atk_', 'def_', 'crit_', 'crit_dmg_', 'anomProf'],
   '5': ['hp_', 'atk_', 'def_', 'pen_', ...allElementalDmgMainStatKeys],
-  '6': ['hp_', 'atk_', 'def_', 'anomMas_', 'impact_', 'enerRegen_'],
+  '6': ['hp_', 'atk_', 'def_', 'anomMas_', 'impact_', 'enerRegen_']
 }
 
 export const allDiscMainSubStatKeys = Array.from(
@@ -119,7 +119,7 @@ const subData = {
   pen: { B: 3, A: 6, S: 9 },
   crit_: { B: 0.008, A: 0.016, S: 0.024 },
   crit_dmg_: { B: 0.016, A: 0.032, S: 0.048 },
-  anomProf: { B: 3, A: 6, S: 9 },
+  anomProf: { B: 3, A: 6, S: 9 }
 } as const
 export function getDiscSubStatBaseVal(
   statKey: DiscSubStatKey,
@@ -149,7 +149,7 @@ const mainData = {
   ether_dmg_: m123,
   anomMas_: m123,
   enerRegen_: { B: 0.2, A: 0.4, S: 0.6 },
-  impact_: { B: 0.06, A: 0.12, S: 0.18 },
+  impact_: { B: 0.06, A: 0.12, S: 0.18 }
 } as const
 
 /**
@@ -190,7 +190,7 @@ export const disc2pEffect: Record<
   SoulRock: { def_: 0.16 },
   SwingJazz: { enerRegen_: 0.2 },
   ThunderMetal: { electric_dmg_: 0.1 },
-  WoodpeckerElectro: { crit_: 0.08 },
+  WoodpeckerElectro: { crit_: 0.08 }
 }
 
 // Copied from libs\zzz\dm\src\dm\disc\discNames.json, mainly used for scanner.
@@ -212,7 +212,7 @@ export const discSetNames: Record<DiscSetKey, string> = {
   BranchBladeSong: 'Branch & Blade Song',
   AstralVoice: 'Astral Voice',
   ShadowHarmony: 'Shadow Harmony',
-  PhaethonsMelody: "Phaethon's Melody",
+  PhaethonsMelody: "Phaethon's Melody"
 }
 
 export const allDiscCondKeys = {
@@ -220,111 +220,111 @@ export const allDiscCondKeys = {
     key: 'AstralVoice',
     text: (val: number) => `${val} Stacks of Astral`,
     min: 1,
-    max: 3,
+    max: 3
   },
   BranchBladeSong: {
     key: 'BranchBladeSong',
     text: `When any squad member applies Freeze or triggers the Shatter effect on an enemy`,
     min: 1,
-    max: 1,
+    max: 1
   },
   ChaosJazz: {
     key: 'ChaosJazz',
     text: 'When off-field',
     min: 1,
-    max: 1,
+    max: 1
   },
   ChaoticMetal: {
     key: 'ChaoticMetal',
     text: (val: number) => `${val}x Corruption Triggers`,
     min: 1,
-    max: 6,
+    max: 6
   },
   FangedMetal: {
     key: 'FangedMetal',
     text: 'Whenever a squad member inflicts Assault on an enemy',
     min: 1,
-    max: 1,
+    max: 1
   },
   HormonePunk: {
     key: 'HormonePunk',
     text: 'Upon entering or switching into combat',
     min: 1,
-    max: 1,
+    max: 1
   },
   InfernoMetal: {
     key: 'InfernoMetal',
     text: 'Upon hitting a Burning enemy',
     min: 1,
-    max: 1,
+    max: 1
   },
   PhaethonsMelodyAnyEx: {
     key: 'PhaethonsMelodyAnyEx',
     text: 'Any squad member uses EX Special Attack',
     min: 1,
-    max: 1,
+    max: 1
   },
   PhaethonsMelodyEquipEx: {
     key: 'PhaethonsMelodyEquipEx',
     text: 'Equipper uses EX Special Attack',
     min: 1,
-    max: 1,
+    max: 1
   },
   PolarMetalBasicOrDash: {
     key: 'PolarMetalBasicOrDash',
     text: 'Optimizing for Basic Attack or Dash Attack',
     min: 1,
-    max: 1,
+    max: 1
   },
   PolarMetal: {
     key: 'PolarMetal',
     text: 'Whenever a squad member Freezes or Shatters an enemy',
     min: 1,
-    max: 1,
+    max: 1
   },
   ProtoPunk: {
     key: 'ProtoPunk',
     text: 'When any squad member triggers a Defensive Assist or Evasive Assist',
     min: 1,
-    max: 1,
+    max: 1
   },
   PufferElectroUltimate: {
     key: 'PufferElectroUltimate',
     text: 'Optimizing for Ultimate Damage',
     min: 1,
-    max: 1,
+    max: 1
   },
   PufferElectro: {
     key: 'PufferElectro',
     text: 'Launching an Ultimate',
     min: 1,
-    max: 1,
+    max: 1
   },
   ShadowHarmony: {
     key: 'ShadowHarmony',
     text: (val: number) => `${val} stacks`,
     min: 1,
-    max: 3,
+    max: 3
   },
   SwingJazz: {
     key: 'SwingJazz',
     text: 'Launching a Chain Attack or Ultimate',
     min: 1,
-    max: 1,
+    max: 1
   },
   ThunderMetal: {
     key: 'ThunderMetal',
     text: 'As long as an enemy in combat is Shocked',
     min: 1,
-    max: 1,
+    max: 1
   },
   WoodpeckerElectro: {
     key: 'WoodpeckerElectro',
     text: (val: number) =>
       `${val}x Triggering a critical hit with a Basic Attack, Dodge Counter, or EX Special Attack`,
     min: 1,
-    max: 3,
-  },
+    max: 3
+  }
 } as const
 
 export type DiscCondKey = keyof typeof allDiscCondKeys
@@ -351,7 +351,7 @@ export const disc4PeffectSheets: Partial<
             number
           >)
         : undefined
-    },
+    }
   },
   BranchBladeSong: {
     condMeta: allDiscCondKeys.BranchBladeSong,
@@ -368,24 +368,24 @@ export const disc4PeffectSheets: Partial<
         ret['crit_dmg_'] = 0.3
       if (conds['BranchBladeSong']) ret['crit_'] = 0.12
       return ret
-    },
+    }
   },
   ChaosJazz: {
     condMeta: allDiscCondKeys.ChaosJazz,
     getStats: (conds) => {
       const ret: Record<string, number> = {
         fire_dmg_: 0.15,
-        electric_dmg_: 0.15,
+        electric_dmg_: 0.15
       }
       if (conds['ChaosJazz']) ret['dmg_'] = 0.2 // TODO: Should be EX Special Attacks and Assist Attacks
       return ret
-    },
+    }
   },
   ChaoticMetal: {
     condMeta: allDiscCondKeys.ChaoticMetal,
     getStats: (conds) => {
       const ret: Record<string, number> = {
-        crit_dmg_: 0.2,
+        crit_dmg_: 0.2
       }
       if (conds['ChaoticMetal'])
         objSumInPlace(
@@ -396,14 +396,14 @@ export const disc4PeffectSheets: Partial<
           ) as Record<string, number>
         )
       return ret
-    },
+    }
   },
   FangedMetal: {
     condMeta: allDiscCondKeys.FangedMetal,
     getStats: (conds) => {
       if (conds['FangedMetal']) return { dmg_: 0.35 } // equipper deals 35% additional DMG
       return undefined
-    },
+    }
   },
   // FreedomBlues: reduce the target's Anomaly Buildup RES to the equipper's Attribute by 35%
   HormonePunk: {
@@ -411,31 +411,31 @@ export const disc4PeffectSheets: Partial<
     getStats: (conds) => {
       if (conds['HormonePunk']) return { cond_atk_: 0.25 } // ATK increased by 25%
       return undefined
-    },
+    }
   },
   InfernoMetal: {
     condMeta: allDiscCondKeys.InfernoMetal,
     getStats: (conds) => {
       if (conds['InfernoMetal']) return { crit_: 0.28 } //equipper's CRIT Rate is increased by 28%
       return undefined
-    },
+    }
   },
   PhaethonsMelody: {
     condMeta: [
       allDiscCondKeys.PhaethonsMelodyAnyEx,
-      allDiscCondKeys.PhaethonsMelodyEquipEx,
+      allDiscCondKeys.PhaethonsMelodyEquipEx
     ],
     getStats: (conds) => {
       const buffs: Partial<Record<PandoStatKey, number>> = {}
       if (conds.PhaethonsMelodyAnyEx) buffs.anomProf = 45
       if (conds.PhaethonsMelodyEquipEx) buffs.ether_dmg_ = 0.25
       return buffs
-    },
+    }
   },
   PolarMetal: {
     condMeta: [
       allDiscCondKeys.PolarMetalBasicOrDash,
-      allDiscCondKeys.PolarMetal,
+      allDiscCondKeys.PolarMetal
     ],
     getStats: (conds) => {
       if (!conds['PolarMetalBasicOrDash']) return {}
@@ -444,26 +444,26 @@ export const disc4PeffectSheets: Partial<
         objMultiplication(ret, 2)
       }
       return ret
-    },
+    }
   },
   ProtoPunk: {
     condMeta: allDiscCondKeys.ProtoPunk,
     getStats: (conds) => {
       if (conds['ProtoPunk']) return { dmg_: 0.15 } //  all squad members deal 15% increased DMG
       return undefined
-    },
+    }
   },
   PufferElectro: {
     condMeta: [
       allDiscCondKeys.PufferElectroUltimate,
-      allDiscCondKeys.PufferElectro,
+      allDiscCondKeys.PufferElectro
     ],
     getStats: (conds) => {
       const ret: Record<string, number> = {}
       if (conds['PufferElectroUltimate']) ret['dmg_'] = 0.2 //Ultimate DMG increases by 20%
       if (conds['PufferElectro']) ret['cond_atk_'] = 0.15 // Launching an Ultimate increases the equipper's ATK by 15%
       return ret
-    },
+    }
   },
   ShadowHarmony: {
     condMeta: allDiscCondKeys.ShadowHarmony,
@@ -471,10 +471,10 @@ export const disc4PeffectSheets: Partial<
       if (conds.ShadowHarmony)
         return {
           atk_: 0.04 * conds.ShadowHarmony,
-          crit_: 0.04 * conds.ShadowHarmony,
+          crit_: 0.04 * conds.ShadowHarmony
         }
       return undefined
-    },
+    }
   },
   // ShockstarDisco: 15% more Daze
   // SoulRock: the equipper takes 40% less DMG
@@ -483,14 +483,14 @@ export const disc4PeffectSheets: Partial<
     getStats: (conds) => {
       if (conds['SwingJazz']) return { dmg_: 0.15 } //increases all squad members' DMG by 15%
       return undefined
-    },
+    }
   },
   ThunderMetal: {
     condMeta: allDiscCondKeys.ThunderMetal,
     getStats: (conds) => {
       if (conds['ThunderMetal']) return { cond_atk_: 0.27 } // equipper's ATK is increased by 27%
       return undefined
-    },
+    }
   },
   WoodpeckerElectro: {
     condMeta: allDiscCondKeys.WoodpeckerElectro,
@@ -501,6 +501,6 @@ export const disc4PeffectSheets: Partial<
           conds['WoodpeckerElectro']
         ) as Record<string, number>
       return undefined
-    },
-  },
+    }
+  }
 } as const

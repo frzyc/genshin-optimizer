@@ -1,7 +1,7 @@
 import {
   ConditionalWrapper,
   ImgIcon,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { wengineAsset, wenginePhaseIcon } from '@genshin-optimizer/zzz/assets'
@@ -18,7 +18,7 @@ import { WengineSubstatDisplay } from './WengineSubstatDisplay'
 
 export function CompactWengineCard({
   wengineId,
-  onClick,
+  onClick
 }: {
   wengineId: string
   onClick?: () => void
@@ -39,7 +39,7 @@ export function CompactWengineCard({
     key,
     level = 0,
     phase = 1,
-    modification = 0,
+    modification = 0
   } = useWengine(wengineId) as ICachedWengine
   const wengineStat = getWengineStat(key)
   const wengineStats = getWengineStats(key, level, phase, modification)
@@ -73,7 +73,7 @@ export function CompactWengineCard({
                     borderRadius: '12px',
                     background: '#2B364D',
                     width: '145px',
-                    height: '145px',
+                    height: '145px'
                   })}
                 />
               </Box>
@@ -84,7 +84,7 @@ export function CompactWengineCard({
                     alignItems: 'center',
                     gap: '12px',
                     width: '100%',
-                    mb: '16px',
+                    mb: '16px'
                   }}
                 >
                   <Typography
@@ -92,7 +92,7 @@ export function CompactWengineCard({
                     noWrap
                     sx={{
                       display: 'flex',
-                      alignItems: 'center',
+                      alignItems: 'center'
                     }}
                   >
                     <StatIcon statKey={'atk'} />
@@ -117,13 +117,13 @@ export function CompactWengineCard({
                 background: '#2B364D',
                 borderRadius: '20px',
                 justifyContent: 'space-between',
-                mt: '8px',
+                mt: '8px'
               }}
             >
               <Typography
                 sx={{
                   fontWeight: '900',
-                  ml: '16px',
+                  ml: '16px'
                 }}
                 variant="subtitle1"
               >
@@ -135,7 +135,7 @@ export function CompactWengineCard({
                   display: 'flex',
                   width: '5em',
                   padding: '4px 0',
-                  mr: '42px',
+                  mr: '42px'
                 }}
               >
                 {range(1, 5).map((index: number) => {

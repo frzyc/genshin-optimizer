@@ -4,7 +4,7 @@ import type {
   ArtifactSetKey,
   HitModeKey,
   WeaponKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allAdditiveReactions,
@@ -15,7 +15,7 @@ import {
   type AdditiveReactionKey,
   type AmpReactionKey,
   type CharacterKey,
-  type InfusionAuraElementKey,
+  type InfusionAuraElementKey
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD } from '@genshin-optimizer/gi/good'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
@@ -23,7 +23,7 @@ import type {
   BuildTc,
   CustomMultiTarget,
   ICachedArtifact,
-  ICachedWeapon,
+  ICachedWeapon
 } from '../../Interfaces'
 import type { InputPremodKey } from '../../legacy/keys'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -41,7 +41,7 @@ export type IConditionalValues = Partial<
 >
 const validReactionKeys = [
   ...allAmpReactionKeys,
-  ...allAdditiveReactions,
+  ...allAdditiveReactions
 ] as const
 export interface TeamCharacter {
   key: CharacterKey
@@ -114,7 +114,7 @@ export class TeamCharacterDataManager extends DataManager<
 
       buildIds,
       buildTcIds,
-      optConfigId,
+      optConfigId
     } = obj as TeamCharacter
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
@@ -186,7 +186,7 @@ export class TeamCharacterDataManager extends DataManager<
 
       buildIds,
       buildTcIds,
-      optConfigId,
+      optConfigId
     }
   }
 
@@ -304,7 +304,7 @@ export class TeamCharacterDataManager extends DataManager<
       convertEquipped,
       convertbuilds,
       convertTcBuilds,
-      exportCustomMultiTarget,
+      exportCustomMultiTarget
     } = settings
 
     const equippedBuildToTCBuild = () => {
@@ -364,15 +364,12 @@ export class TeamCharacterDataManager extends DataManager<
       buildTcs: [
         ...(convertEquipped ? [equippedBuildToTCBuild()] : []),
         ...convertedBuilds,
-        ...convertedTcBuilds,
+        ...convertedTcBuilds
       ].filter(notEmpty),
       customMultiTargets: customMultiTargets.filter((_, i) =>
         exportCustomMultiTarget.includes(i)
       ),
-      optConfig: this.database.optConfigs.export(
-        optConfigId,
-        overrideOptTarget
-      ),
+      optConfig: this.database.optConfigs.export(optConfigId, overrideOptTarget)
     }
   }
   import(data: object): string {
@@ -386,7 +383,7 @@ export class TeamCharacterDataManager extends DataManager<
       !this.set(id, {
         ...rest,
         buildTcIds: buildTcs.map((obj) => this.database.buildTcs.import(obj)),
-        optConfigId: this.database.optConfigs.import(optConfig),
+        optConfigId: this.database.optConfigs.import(optConfig)
       })
     )
       return ''

@@ -11,7 +11,7 @@ import {
   Divider,
   StyledEngineProvider,
   ThemeProvider,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import derp from './derp.jpeg'
@@ -36,7 +36,7 @@ export default function NewTab() {
                   display: 'flex',
                   gap: 2,
                   alignItems: 'center',
-                  justifyContent: 'space-between',
+                  justifyContent: 'space-between'
                 }}
               >
                 <Typography variant="h6">{t`title`}</Typography>

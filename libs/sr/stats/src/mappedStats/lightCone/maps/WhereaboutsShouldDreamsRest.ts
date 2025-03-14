@@ -10,7 +10,7 @@ const dm = {
   passive_brEffect_: data_gen.superimpose.passiveStats.brEffect_,
   break_dmg_: data_gen.superimpose.otherStats[o++],
   spdRed_: data_gen.superimpose.otherStats[o++][1],
-  duration: data_gen.superimpose.otherStats[o++][1],
+  duration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

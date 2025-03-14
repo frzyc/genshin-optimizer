@@ -8,7 +8,7 @@ export async function login(formData: FormData) {
   const supabase = getSupabase()
   const data = {
     email: String(formData.get('email')),
-    password: String(formData.get('password')),
+    password: String(formData.get('password'))
   }
 
   const { error } = await supabase.auth.signInWithPassword(data)
@@ -26,7 +26,7 @@ export async function signup(formData: FormData) {
 
   const data = {
     email: String(formData.get('email')),
-    password: String(formData.get('password')),
+    password: String(formData.get('password'))
   }
 
   const { error } = await supabase.auth.signUp(data)

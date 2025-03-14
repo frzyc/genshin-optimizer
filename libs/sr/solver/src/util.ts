@@ -1,7 +1,7 @@
 import type {
   RelicMainStatKey,
   RelicSetKey,
-  RelicSubStatKey,
+  RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 import type { IBuildTc, ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { TagMapNodeEntries } from '@genshin-optimizer/sr/formula'
@@ -28,7 +28,7 @@ export function relicTcTagMapNodes(
   const {
     slots,
     substats: { stats: substats },
-    sets,
+    sets
   } = relic
   const stats = { ...substats } as Record<
     RelicMainStatKey | RelicSubStatKey,

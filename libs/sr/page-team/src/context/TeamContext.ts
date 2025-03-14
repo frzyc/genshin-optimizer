@@ -8,7 +8,7 @@ export type TeamContextObj = {
 
 export const TeamContext = createContext({
   teamId: '',
-  team: {},
+  team: {}
 } as TeamContextObj)
 
 export function useTeamContext() {

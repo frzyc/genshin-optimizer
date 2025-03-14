@@ -6,7 +6,7 @@ import {
   allDiscSubStatKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
-  type DiscSetKey,
+  type DiscSetKey
 } from '@genshin-optimizer/zzz/consts'
 import type { ISubstat } from '@genshin-optimizer/zzz/zood'
 import { misreadCharactersInSubstatMap } from './consts'
@@ -112,7 +112,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
       if (!key) continue
       substats.push({
         key,
-        upgrades: match[3] ? parseInt(match[3]) + 1 : 1,
+        upgrades: match[3] ? parseInt(match[3]) + 1 : 1
       })
     }
   }

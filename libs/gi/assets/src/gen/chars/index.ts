@@ -206,6 +206,6 @@ const data = {
   Yoimiya,
   YumemizukiMizuki,
   YunJin,
-  Zhongli,
+  Zhongli
 } as const
 export default data

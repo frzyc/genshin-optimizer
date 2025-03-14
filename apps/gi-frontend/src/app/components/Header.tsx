@@ -31,28 +31,28 @@ const artifacts: ITab = {
   i18Key: 'tabs.artifacts',
   icon: <FlowerIcon />,
   to: '/artifacts',
-  value: 'artifacts',
+  value: 'artifacts'
   // textSuffix: <ArtifactChip key="weaponAdd" />, //TODO: header tally
 }
 const weapons: ITab = {
   i18Key: 'tabs.weapons',
   icon: <AnvilIcon />,
   to: '/weapons',
-  value: 'weapons',
+  value: 'weapons'
   // textSuffix: <WeaponChip key="weaponAdd" />, //TODO: header tally
 }
 const characters: ITab = {
   i18Key: 'tabs.characters',
   icon: <PeopleIcon />,
   to: '/characters',
-  value: 'characters',
+  value: 'characters'
   // textSuffix: <CharacterChip key="charAdd" />, //TODO: header tally
 }
 const teams: ITab = {
   i18Key: 'tabs.teams',
   icon: <GroupsIcon />,
   to: '/teams',
-  value: 'teams',
+  value: 'teams'
   // textSuffix: <TeamChip key="charAdd" />, //TODO: header tally
 }
 const maincontent: ITab[] = [artifacts, weapons, characters, teams] as const
@@ -63,8 +63,8 @@ const settings = [
   { title: 'Dashboard', href: '/dashboard' },
   {
     title: 'Logout',
-    action: '/auth/signout',
-  },
+    action: '/auth/signout'
+  }
 ]
 export default function Header() {
   return (
@@ -99,18 +99,18 @@ function HeaderContent() {
               '& .MuiTab-root': {
                 p: 1,
                 minWidth: 'auto',
-                minHeight: 'auto',
+                minHeight: 'auto'
               },
               '& .MuiTab-root:hover': {
                 transition: 'background-color 0.5s ease',
-                backgroundColor: 'rgba(255,255,255,0.1)',
+                backgroundColor: 'rgba(255,255,255,0.1)'
               },
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to top, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
                 color: `${theme.palette.neutral100.main} !important`,
                 textShadow:
-                  '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
-              },
+                  '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0'
+              }
             })}
           >
             <Tab
@@ -125,7 +125,7 @@ function HeaderContent() {
                     sx={(theme) => ({
                       height: '24px',
                       width: '24px',
-                      boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
+                      boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`
                     })}
                   />
                   <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
@@ -202,12 +202,12 @@ function UserAvatar() {
         anchorEl={anchorElUser}
         anchorOrigin={{
           vertical: 'top',
-          horizontal: 'right',
+          horizontal: 'right'
         }}
         keepMounted
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'right',
+          horizontal: 'right'
         }}
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}

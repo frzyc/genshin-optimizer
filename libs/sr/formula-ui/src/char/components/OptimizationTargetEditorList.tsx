@@ -5,14 +5,14 @@ import type { Tag } from '@genshin-optimizer/sr/formula'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
-  DeleteForever,
+  DeleteForever
 } from '@mui/icons-material'
 import {
   Box,
   Button,
   ButtonGroup,
   IconButton,
-  InputAdornment,
+  InputAdornment
 } from '@mui/material'
 import { useCallback } from 'react'
 import { OptimizationTargetSelector } from './OptimizationTargetSelector'
@@ -26,7 +26,7 @@ type OptimizationTargetEditorListProps = {
 export function OptimizationTargetEditorList({
   statFilters,
   setStatFilters,
-  disabled = false,
+  disabled = false
 }: OptimizationTargetEditorListProps) {
   const setTarget = useCallback(
     (tag: Tag, oldIndex?: number) => {
@@ -36,7 +36,7 @@ export function OptimizationTargetEditorList({
           tag,
           value: 0,
           isMax: false,
-          disabled: false,
+          disabled: false
         })
       else statFilters_[oldIndex].tag = tag
       setStatFilters(statFilters_)
@@ -105,7 +105,7 @@ function OptimizationTargetEditorItem({
   setTargetValue,
   setTargetisMax,
   setDisabled,
-  disabled,
+  disabled
 }: {
   statFilter: UnArray<StatFilters>
   setTarget: (tag: Tag) => void
@@ -124,7 +124,7 @@ function OptimizationTargetEditorItem({
         sx={{
           '& .MuiButtonGroup-grouped': { minWidth: 24 },
           width: '100%',
-          flexGrow: 1,
+          flexGrow: 1
         }}
       >
         <Button
@@ -167,7 +167,7 @@ function OptimizationTargetEditorItem({
                 <DeleteForever fontSize="small" />
               </IconButton>
             </InputAdornment>
-          ),
+          )
         }}
       />
     </Box>

@@ -16,7 +16,7 @@ const afterSkill_atk_ = equal(
     condAfterSkill,
     'on',
     subscript(input.weapon.refinement, afterSkillAtkArr, {
-      path: 'atk_',
+      path: 'atk_'
     })
   )
 )
@@ -30,7 +30,7 @@ const afterDmg_atk_ = equal(
     condAfterDmg,
     'on',
     subscript(input.weapon.refinement, afterDmgAtkArr, {
-      path: 'atk_',
+      path: 'atk_'
     })
   )
 )
@@ -44,7 +44,7 @@ const noShield_hp_ = equal(
     condNoShield,
     'on',
     subscript(input.weapon.refinement, noShieldHpArr, {
-      path: 'hp_',
+      path: 'hp_'
     })
   )
 )
@@ -54,8 +54,8 @@ const data = dataObjForWeaponSheet(
   {
     premod: {
       atk_: sum(afterSkill_atk_, afterDmg_atk_),
-      hp_: noShield_hp_,
-    },
+      hp_: noShield_hp_
+    }
   },
   {}
 )
@@ -70,16 +70,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: afterSkill_atk_,
+              node: afterSkill_atk_
             },
             {
               text: stg('duration'),
               value: 8,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -90,16 +90,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: afterDmg_atk_,
+              node: afterDmg_atk_
             },
             {
               text: stg('duration'),
               value: 8,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -110,12 +110,12 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: noShield_hp_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: noShield_hp_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

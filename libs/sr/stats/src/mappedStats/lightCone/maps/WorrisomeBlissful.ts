@@ -10,7 +10,7 @@ const dm = {
   passive_crit_: data_gen.superimpose.passiveStats.crit_,
   followUp_dmg_: data_gen.superimpose.otherStats[o++],
   crit_dmg_: data_gen.superimpose.otherStats[o++],
-  stacks: data_gen.superimpose.otherStats[o++][1],
+  stacks: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

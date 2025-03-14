@@ -32,8 +32,8 @@ const crystallize_geo_dmg_ = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     atk_: set2,
-    geo_dmg_: sum(afterSkill_geo_dmg_, crystallize_geo_dmg_),
-  },
+    geo_dmg_: sum(afterSkill_geo_dmg_, crystallize_geo_dmg_)
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -49,11 +49,11 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: afterSkill_geo_dmg_,
-              },
-            ],
-          },
-        },
+                node: afterSkill_geo_dmg_
+              }
+            ]
+          }
+        }
       },
       {
         header: setHeader(4),
@@ -65,13 +65,13 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: crystallize_geo_dmg_,
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                node: crystallize_geo_dmg_
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

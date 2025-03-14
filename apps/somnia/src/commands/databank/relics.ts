@@ -15,7 +15,7 @@ export function relicBank(id: RelicSetKey, name: string, data: any) {
   const embed = new EmbedBuilder()
     .setTitle(name)
     .setFooter({
-      text: 'Relic Databank',
+      text: 'Relic Databank'
     })
     .setDescription(clean(text))
   const relic = AssetData.relics[id]
@@ -26,6 +26,6 @@ export function relicBank(id: RelicSetKey, name: string, data: any) {
 
   return {
     content: '',
-    embeds: [embed],
+    embeds: [embed]
   }
 }

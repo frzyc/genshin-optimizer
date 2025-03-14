@@ -25,7 +25,7 @@ const eleBonus_ = Object.fromEntries(
       'aria',
       condPassive,
       subscript(input.weapon.refinement, refinementEleDmgVals)
-    ),
+    )
   ])
 )
 const eleMas = equal(
@@ -40,8 +40,8 @@ const data = dataObjForWeaponSheet(key, {
     ...Object.fromEntries(
       allElementKeys.map((ele) => [`${ele}_dmg_`, eleBonus_[ele]])
     ),
-    eleMas,
-  },
+    eleMas
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -60,38 +60,38 @@ const sheet: IWeaponSheet = {
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
-            },
-          ],
+              unit: 's'
+            }
+          ]
         },
         interlude: {
           name: trm('interlude'),
           fields: [
             {
-              node: eleMas,
+              node: eleMas
             },
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
-            },
-          ],
+              unit: 's'
+            }
+          ]
         },
         recitative: {
           name: trm('recitative'),
           fields: [
             {
-              node: atk_,
+              node: atk_
             },
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

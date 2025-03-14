@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   percent,
-  prod,
+  prod
 } from '@genshin-optimizer/gi/wr'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -30,7 +30,7 @@ const normal_dmgInc = greaterEq(
       {
         on: percent(0.7),
         avg: percent(0.7 * 0.50204),
-        ...objKeyMap(triggerArr, (chance) => percent(0.7 * chance)),
+        ...objKeyMap(triggerArr, (chance) => percent(0.7 * chance))
       },
       naught
     ),
@@ -41,8 +41,8 @@ const normal_dmgInc = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     atk_: set2,
-    normal_dmgInc,
-  },
+    normal_dmgInc
+  }
 })
 const sheet: SetEffectSheet = {
   2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
@@ -56,23 +56,23 @@ const sheet: SetEffectSheet = {
         states: {
           on: {
             name: trm('always'),
-            fields: [{ node: normal_dmgInc }],
+            fields: [{ node: normal_dmgInc }]
           },
           avg: {
             name: trm('avg'),
-            fields: [{ node: normal_dmgInc }],
+            fields: [{ node: normal_dmgInc }]
           },
           ...objKeyMap(triggerArr, (chance) => ({
             name: `${(chance * 100).toFixed(2)}%`,
             fields: [
               {
-                node: normal_dmgInc,
-              },
-            ],
-          })),
-        },
-      },
-    ],
-  },
+                node: normal_dmgInc
+              }
+            ]
+          }))
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

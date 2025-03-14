@@ -2,7 +2,7 @@ import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type {
   CharacterKey,
   DiscSetKey,
-  WengineKey,
+  WengineKey
 } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import { Translate } from '@genshin-optimizer/zzz/i18n'
@@ -34,7 +34,7 @@ export function trans(
     ),
     (strKey: string, values?: Record<string, string | number>) => (
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
-    ),
+    )
   ]
 }
 /**
@@ -45,7 +45,7 @@ export function TagToTagField(tag: Tag): TagField {
   if (q === 'dmg_' && tag.attribute) q = `${tag.attribute}_dmg_`
   return {
     title: <StatDisplay statKey={q as any} />,
-    fieldRef: tag,
+    fieldRef: tag
   }
 }
 

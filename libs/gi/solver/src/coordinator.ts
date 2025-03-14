@@ -56,7 +56,7 @@ export class WorkerCoordinator<
             (res) => (this.notifyNonEmpty = () => res(true))
           ),
           Promise.all([...this.workers, processingInput]).then((_) => false),
-          this.cancelled,
+          this.cancelled
         ])
 
         this.notifyNonEmpty = undefined
@@ -66,7 +66,7 @@ export class WorkerCoordinator<
 
       const { i, w } = await Promise.race([
         ...this.workers.map((w, i) => w.then((w) => ({ i, w }))),
-        this.cancelled,
+        this.cancelled
       ])
       this.workers[i] = new Promise((res) => this.workDone.set(w, () => res(w)))
       w.postMessage(command)

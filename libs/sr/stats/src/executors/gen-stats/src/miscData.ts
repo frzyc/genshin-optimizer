@@ -8,7 +8,7 @@ export function MiscData(): MiscData {
   return {
     breakLevelMulti: [
       -1,
-      ...avatarBreakDamage.map((config) => config.BreakBaseDamage.Value),
-    ],
+      ...avatarBreakDamage.map((config) => config.BreakBaseDamage.Value)
+    ]
   }
 }

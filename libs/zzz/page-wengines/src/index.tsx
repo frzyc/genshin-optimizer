@@ -1,12 +1,12 @@
 import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
@@ -19,7 +19,7 @@ import {
   wengineFilterConfigs,
   WengineSelectionModal,
   wengineSortConfigs,
-  wengineSortMap,
+  wengineSortMap
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -27,7 +27,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  TextField,
+  TextField
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -36,7 +36,7 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import WengineFilter from './WengineFilter'
@@ -84,7 +84,7 @@ export default function PageWengine() {
     locked,
     showEquipped,
     showInventory,
-    locations,
+    locations
   } = state
 
   const { wengineIds, totalWengineNum } = useMemo(() => {
@@ -100,7 +100,7 @@ export default function PageWengine() {
             locked,
             showInventory,
             showEquipped,
-            locations,
+            locations
           },
           wengineFilterConfigs()
         )
@@ -125,7 +125,7 @@ export default function PageWengine() {
     locations,
     sortType,
     ascending,
-    dbDirty,
+    dbDirty
   ])
 
   const brPt = useMediaQueryUp()
@@ -162,7 +162,7 @@ export default function PageWengine() {
     numShowing: wenginesIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_wengine',
+    namespace: 'page_wengine'
   }
 
   const sortByButtonProps = {
@@ -172,7 +172,7 @@ export default function PageWengine() {
       database.displayWengine.set({ sortType: sortType as WengineSortKey }),
     ascending: ascending,
     onChangeAsc: (ascending: boolean) =>
-      database.displayWengine.set({ ascending }),
+      database.displayWengine.set({ ascending })
   }
   return (
     <Box display="flex" flexDirection="column" gap={1}>

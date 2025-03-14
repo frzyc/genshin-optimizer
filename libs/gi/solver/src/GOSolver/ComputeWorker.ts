@@ -5,7 +5,7 @@ import type {
   ArtifactsBySlot,
   PlotData,
   RequestFilter,
-  SolverBuild,
+  SolverBuild
 } from '../common'
 import { countBuilds, filterArts, mergePlot, pruneAll } from '../common'
 import type { Interim, Setup } from '../type'
@@ -58,7 +58,7 @@ export class ComputeWorker {
       {},
       {
         pruneArtRange: true,
-        pruneNodeRange: true,
+        pruneNodeRange: true
       }
     ))
     const arts = Object.values(preArts.values).sort(
@@ -75,7 +75,7 @@ export class ComputeWorker {
     const count = {
       tested: 0,
       failed: 0,
-      skipped: totalCount - countBuilds(preArts),
+      skipped: totalCount - countBuilds(preArts)
     }
 
     const permute = (i: number) => {
@@ -88,7 +88,7 @@ export class ComputeWorker {
           if (value >= this.threshold) {
             build = {
               value,
-              artifactIds: buffer.map((x) => x.id).filter((id) => id),
+              artifactIds: buffer.map((x) => x.id).filter((id) => id)
             }
             builds.push(build)
           }
@@ -98,7 +98,7 @@ export class ComputeWorker {
               if (!build)
                 build = {
                   value,
-                  artifactIds: buffer.map((x) => x.id).filter((id) => id),
+                  artifactIds: buffer.map((x) => x.id).filter((id) => id)
                 }
               build.plot = x
               plotData[x] = build
@@ -143,7 +143,7 @@ export class ComputeWorker {
     this.callback({
       resultType: 'interim',
       buildValues: this.buildValues,
-      ...count,
+      ...count
     })
     this.buildValues = undefined
     count.tested = 0

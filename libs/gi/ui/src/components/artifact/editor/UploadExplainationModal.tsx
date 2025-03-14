@@ -1,7 +1,7 @@
 import {
   CardThemed,
   ModalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import {
@@ -11,14 +11,14 @@ import {
   Divider,
   Grid,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 import Snippet from './fullscreen.png'
 import scan_art_main from './scanned.png'
 export function UploadExplainationModal({
   modalShow,
-  hide,
+  hide
 }: {
   modalShow: boolean
   hide: () => void

@@ -12,7 +12,7 @@ const atk_multiplier = [
   36068, 37636, 39204, 40772, 42341, 43909, 45477, 47045, 48613, 50181, 51750,
   53318, 54886, 56454, 58022, 59590, 61159, 62727, 64295, 65863, 67431, 68999,
   70568, 72136, 73704, 75272, 76840, 78408, 79977, 81545, 83113, 84681, 86249,
-  87817, 89386, 90954, 92522, 94090,
+  87817, 89386, 90954, 92522, 94090
 ] as const
 export function getWengineStats(
   wk: WengineKey,
@@ -27,7 +27,7 @@ export function getWengineStats(
       atk_base * (1 + atk_multiplier[level] / 10000 + 0.8922 * ascension),
     [second_statkey]: second_statvalue * (1 + 0.3 * ascension),
     wenginePhase,
-    wengineIndex: allWengineKeys.findIndex((k) => k === wk),
+    wengineIndex: allWengineKeys.findIndex((k) => k === wk)
   }
 
   return stats

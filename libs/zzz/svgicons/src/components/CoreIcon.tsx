@@ -6,12 +6,12 @@ import {
   CCoreIcon,
   DCoreIcon,
   ECoreIcon,
-  FCoreIcon,
+  FCoreIcon
 } from '../icons'
 
 export function CoreIcon({
   slotKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   slotKey: CoreKey
   iconProps?: SvgIconProps

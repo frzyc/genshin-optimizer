@@ -13,7 +13,7 @@ const { superimpose } = own.lightCone
 const { atk_crit_dmg_enerRegen_ } = allListConditionals(key, [
   'atk_',
   'crit_dmg_',
-  'enerRegen_',
+  'enerRegen_'
 ])
 
 const sheet = registerLightCone(

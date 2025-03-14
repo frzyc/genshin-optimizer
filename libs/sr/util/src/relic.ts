@@ -4,12 +4,12 @@ import {
   getUnitStr,
   range,
   statKeyToFixed,
-  toPercent,
+  toPercent
 } from '@genshin-optimizer/common/util'
 import type {
   RelicCavernSetKey,
   RelicSetKey,
-  RelicSlotKey,
+  RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allRelicCavernSetKeys,
@@ -25,7 +25,7 @@ import {
   relicSubstatRollData,
   type RelicMainStatKey,
   type RelicRarityKey,
-  type RelicSubStatKey,
+  type RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { allStats } from '@genshin-optimizer/sr/stats'
@@ -85,7 +85,7 @@ export function getSubstatRange(
     getSubstatValue(rarity, statKey, 'high', false) * (numUpgrades + 1)
   return {
     low: getSubstatValue(rarity, statKey, 'low', round),
-    high: round ? roundStat(high, statKey) : high,
+    high: round ? roundStat(high, statKey) : high
   }
 }
 
@@ -140,7 +140,7 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
     level,
     substats,
     location: base.location ?? '',
-    lock: false,
+    lock: false
   }
 }
 

@@ -1,6 +1,6 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'

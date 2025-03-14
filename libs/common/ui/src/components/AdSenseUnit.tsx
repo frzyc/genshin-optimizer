@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 export function AdSenseUnit({
   dataAdSlot,
   sx = {},
-  fullWidth = false,
+  fullWidth = false
 }: {
   dataAdSlot: string
   sx?: BoxProps['sx']

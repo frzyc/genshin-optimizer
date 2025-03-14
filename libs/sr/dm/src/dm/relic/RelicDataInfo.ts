@@ -16,10 +16,13 @@ const relicDataInfoSrc = JSON.parse(
   readDMJSON('ExcelOutput/RelicDataInfo.json')
 ) as RelicDataInfo[]
 
-export const relicDataInfo = relicDataInfoSrc.reduce((fullInfo, info) => {
-  const { SetID, Type } = info
-  if (!fullInfo[SetID])
-    fullInfo[SetID] = {} as Partial<Record<RelicSlotDMKey, RelicDataInfo>>
-  fullInfo[SetID][Type] = info
-  return fullInfo
-}, {} as Record<RelicSetId, Partial<Record<RelicSlotDMKey, RelicDataInfo>>>)
+export const relicDataInfo = relicDataInfoSrc.reduce(
+  (fullInfo, info) => {
+    const { SetID, Type } = info
+    if (!fullInfo[SetID])
+      fullInfo[SetID] = {} as Partial<Record<RelicSlotDMKey, RelicDataInfo>>
+    fullInfo[SetID][Type] = info
+    return fullInfo
+  },
+  {} as Record<RelicSetId, Partial<Record<RelicSlotDMKey, RelicDataInfo>>>
+)

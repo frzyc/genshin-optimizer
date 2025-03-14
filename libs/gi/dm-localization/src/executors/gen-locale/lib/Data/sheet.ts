@@ -5,7 +5,7 @@ const data = {
     hit3: [2305589495, 'skillParam'],
     hit4: [3199213815, 'skillParam'],
     hit5: [2341141698, 'skillParam'],
-    hit6: [3407801690, 'skillParam'],
+    hit6: [3407801690, 'skillParam']
   },
   charged: {
     //Charged Attack DMG
@@ -19,12 +19,12 @@ const data = {
     //Aimed Shot
     aimed: [552178514, 'skillParam'],
     //Fully-Charged Aimed Shot
-    fullyAimed: [2413134783, 'skillParam'],
+    fullyAimed: [2413134783, 'skillParam']
   },
   plunging: {
     dmg: [1427729869, 'skillParam'],
     low: [3909231348, 'plungeLow'],
-    high: [3909231348, 'plungeHigh'],
+    high: [3909231348, 'plungeHigh']
   },
 
   //COMMON
@@ -63,13 +63,13 @@ const data = {
     //Press DMG
     dmg: [3774314422, 'skillParam'],
     //Press CD
-    cd: [956030924, 'skillParam'],
+    cd: [956030924, 'skillParam']
   },
   hold: {
     //Hold DMG
     dmg: [1066722967, 'skillParam'],
     //CD (Hold)
-    cd: [824598127, 'skillParam'],
+    cd: [824598127, 'skillParam']
   },
   element: {
     anemo: 126875444,
@@ -78,7 +78,7 @@ const data = {
     hydro: 514679490,
     cryo: 1695600284,
     electro: 1821644548,
-    dendro: 3552853794,
+    dendro: 3552853794
   },
   reaction: {
     swirl: 3332129203,
@@ -94,16 +94,16 @@ const data = {
     hyperbloom: 2697794115,
     quicken: 347446227,
     aggravate: 2961120579,
-    spread: 2191579811,
+    spread: 2191579811
   },
   stat: {
     def: 3591287138, //maybe it's 527947494 or 1575853882
     dmgBonus: {},
     base: {
-      atk: 2634860079, //maybe it's 2334963823
+      atk: 2634860079 //maybe it's 2334963823
     },
     res: {},
-    misc: {},
+    misc: {}
   },
   // Constellation Lv. {{level}}
   constellationLvl: [892900816, 'constellation'],
@@ -117,13 +117,13 @@ const data = {
     // Elemental Burst
     burst: 3250738285, // 2453877364 3626565793 3152729845
     // Altenate Sprint
-    altSprint: [3378550992, 'altSprint'], // mona's desc
+    altSprint: [3378550992, 'altSprint'] // mona's desc
   },
   // Unlocks at Character Ascension Phase 1
   unlockPassive1: [941237898, 'passive1'],
   // Unlocks at Character Ascension Phase 4
   unlockPassive2: [941237898, 'passive4'],
   // Passive Talent
-  unlockPassive3: 2602723764,
+  unlockPassive3: 2602723764
 } as const
 export default data

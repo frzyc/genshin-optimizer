@@ -189,7 +189,7 @@ const charCards = {
   Yelan,
   Yoimiya,
   YunJin,
-  Zhongli,
+  Zhongli
 } as const
 
 export function splash(charKey: CharacterKey, gender: GenderKey) {

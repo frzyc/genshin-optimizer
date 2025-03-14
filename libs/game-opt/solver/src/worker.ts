@@ -34,7 +34,7 @@ export class Worker {
     computed: 0,
     failed: 0,
     skipped: 0,
-    remaining: 0,
+    remaining: 0
   }
 
   constructor(cfg: WorkerConfig) {
@@ -56,7 +56,7 @@ export class Worker {
         candidates: ids.map((ids, slot) =>
           ids.map((id) => candidates[slot].get(id)!)
         ),
-        count,
+        count
       }))
     )
     if (subworks.length === works.length) this.spreadSubworks()
@@ -73,7 +73,7 @@ export class Worker {
     progress.remaining = maxKeep + quota
     return stealing.map(({ candidates, count }) => ({
       ids: candidates.map((cnds) => cnds.map((c) => c.id)),
-      count,
+      count
     }))
   }
 

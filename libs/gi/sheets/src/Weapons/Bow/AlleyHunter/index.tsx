@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -22,15 +22,15 @@ const all_dmg_ = lookup(
   {
     ...objKeyMap(range(1, 10), (i) =>
       prod(subscript(input.weapon.refinement, dmgInc), i)
-    ),
+    )
   },
   naught
 )
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    all_dmg_,
-  },
+    all_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -47,14 +47,14 @@ const sheet: IWeaponSheet = {
             name: st('seconds', { count: c }),
             fields: [
               {
-                node: all_dmg_,
-              },
-            ],
-          },
+                node: all_dmg_
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 
 export default new WeaponSheet(sheet, data)

@@ -20,7 +20,7 @@ export const languageCodeList = [
   'ru',
   'th',
   'tr',
-  'vi',
+  'vi'
 ]
 
 /**
@@ -60,11 +60,11 @@ i18n
       // Path to load localization data from.
       loadPath: NextImage
         ? '/locales/{{lng}}/{{ns}}.json'
-        : './assets/locales/{{lng}}/{{ns}}.json',
+        : './assets/locales/{{lng}}/{{ns}}.json'
     },
     interpolation: {
-      escapeValue: false, //react does interlopation already
-    },
+      escapeValue: false //react does interlopation already
+    }
   })
 i18n.services.formatter?.add('percent', (value, _lng, options) => {
   return (value * 100).toFixed(options.fixed)

@@ -17,8 +17,8 @@ const afterSkill_def_ = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    def_: afterSkill_def_,
-  },
+    def_: afterSkill_def_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -32,17 +32,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: afterSkill_def_,
+              node: afterSkill_def_
             },
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

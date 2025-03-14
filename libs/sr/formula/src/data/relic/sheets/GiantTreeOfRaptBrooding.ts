@@ -9,7 +9,7 @@ import {
   own,
   ownBuff,
   registerBuff,
-  teamBuff,
+  teamBuff
 } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'
 

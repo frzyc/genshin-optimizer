@@ -3,7 +3,7 @@ export * from './DataManagers'
 import type {
   ImportResult,
   ImportResultCounter,
-  MergeResultCounter,
+  MergeResultCounter
 } from './exim'
 
 import { ArtCharDatabase } from './ArtCharDatabase'

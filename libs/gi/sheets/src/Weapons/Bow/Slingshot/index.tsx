@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   percent,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -23,7 +23,7 @@ const normal_dmg_ = lookup(
   condPassive,
   {
     less: subscript(input.weapon.refinement, dmg_arr, { path: 'normal_dmg_' }),
-    more: percent(-0.1, { path: 'normal_dmg_' }),
+    more: percent(-0.1, { path: 'normal_dmg_' })
   },
   naught
 )
@@ -32,8 +32,8 @@ const charged_dmg_ = { ...normal_dmg_ }
 const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_,
-    charged_dmg_,
-  },
+    charged_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -47,14 +47,14 @@ const sheet: IWeaponSheet = {
         name: trm(state),
         fields: [
           {
-            node: normal_dmg_,
+            node: normal_dmg_
           },
           {
-            node: charged_dmg_,
-          },
-        ],
-      })),
-    },
-  ],
+            node: charged_dmg_
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

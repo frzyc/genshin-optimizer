@@ -3,13 +3,13 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import {
   allRelicSlotKeys,
-  type RelicSlotKey,
+  type RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
   OptConfigProvider,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { StatFilterCard } from '@genshin-optimizer/sr/formula-ui'
 import { optimize } from '@genshin-optimizer/sr/solver'
@@ -24,7 +24,7 @@ import {
   CardHeader,
   Divider,
   LinearProgress,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   useCallback,
@@ -32,7 +32,7 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TeamContext, useTeammateContext } from '../context'
@@ -100,7 +100,7 @@ function OptimizeWrapper() {
           feet: [],
           body: [],
           sphere: [],
-          rope: [],
+          rope: []
         } as Record<RelicSlotKey, ICachedRelic[]>
       ),
     [database.relics.values]
@@ -141,7 +141,7 @@ function OptimizeWrapper() {
       .map(({ tag, value, isMax }) => ({
         tag,
         value,
-        isMax,
+        isMax
       }))
     const optimizer = optimize(
       characterKey,
@@ -177,9 +177,9 @@ function OptimizeWrapper() {
             allRelicSlotKeys,
             (_slot, index) => ids[index + 1]
           ),
-          value,
+          value
         })),
-        buildDate: Date.now(),
+        buildDate: Date.now()
       })
   }, [
     calc,
@@ -190,7 +190,7 @@ function OptimizeWrapper() {
     relicsBySlot,
     numWorkers,
     database.optConfigs,
-    optConfigId,
+    optConfigId
   ])
 
   const onCancel = useCallback(() => {
@@ -234,7 +234,7 @@ function OptimizeWrapper() {
 
 function ProgressIndicator({
   progress,
-  totalPermutations,
+  totalPermutations
 }: {
   progress: Progress
   totalPermutations: number

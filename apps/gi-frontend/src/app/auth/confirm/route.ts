@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
 
     const { error } = await supabase.auth.verifyOtp({
       type,
-      token_hash,
+      token_hash
     })
     if (!error) {
       redirectTo.searchParams.delete('next')

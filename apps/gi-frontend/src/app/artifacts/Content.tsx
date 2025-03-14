@@ -15,7 +15,7 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 
 export default function Content({
   artifacts: serverArtifacts,
-  accountId,
+  accountId
 }: {
   artifacts: Artifacts
   accountId: string
@@ -32,7 +32,7 @@ export default function Content({
         .from('artifacts')
         .insert({
           ...rest,
-          account_id: accountId,
+          account_id: accountId
         } as any)
         .select()
       if (error) return console.error(error)
@@ -44,7 +44,7 @@ export default function Content({
         const { error } = await supabase.from('substats').insert({
           ...substat,
           index,
-          artifact_id: art.id,
+          artifact_id: art.id
         } as any)
         if (error) return console.error(error)
       })
@@ -61,7 +61,7 @@ export default function Content({
           event: '*',
           schema: 'public',
           table: 'artifacts',
-          filter: `account_id=eq.${accountId}`,
+          filter: `account_id=eq.${accountId}`
         },
         async (payload) => {
           // TODO: probably need to listen to other changes? the issue is that we are not listening to changes to substats
@@ -129,7 +129,7 @@ function artifactToCached(artifact: Artifact): ICachedArtifact {
     slotKey,
     rarity,
     lock,
-    character,
+    character
   } = artifact
   const { artifact: ret } = cachedArtifact(
     {
@@ -140,7 +140,7 @@ function artifactToCached(artifact: Artifact): ICachedArtifact {
       level,
       rarity: rarity as ArtifactRarity,
       lock,
-      location: character ? charKeyToLocCharKey(character.key) : '',
+      location: character ? charKeyToLocCharKey(character.key) : ''
     },
     artifact.id
   )

@@ -1,7 +1,7 @@
 import {
   CardThemed,
   ModalWrapper,
-  TextFieldLazy,
+  TextFieldLazy
 } from '@genshin-optimizer/common/ui'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -17,7 +17,7 @@ import { DetailStatButton } from './DetailStatButton'
 
 export function LoadoutEditorModal({
   open,
-  onClose,
+  onClose
 }: {
   open: boolean
   onClose: () => void
@@ -67,14 +67,14 @@ export function LoadoutEditorModal({
             buttonProps={{
               sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
               color: elementKey ?? 'info',
-              variant: 'outlined',
+              variant: 'outlined'
             }}
           />
           <CustomMultiTargetButton
             buttonProps={{
               sx: { backgroundColor: 'contentLight.main', flexGrow: 1 },
               color: elementKey ?? 'info',
-              variant: 'outlined',
+              variant: 'outlined'
             }}
           />
           <LoadoutDropdown
@@ -84,7 +84,7 @@ export function LoadoutEditorModal({
               fullWidth: true,
               sx: { flexGrow: 1, backgroundColor: 'contentLight.main' },
               color: elementKey ?? 'info',
-              variant: 'outlined',
+              variant: 'outlined'
             }}
             label
           />

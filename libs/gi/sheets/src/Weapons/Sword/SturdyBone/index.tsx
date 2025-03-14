@@ -23,8 +23,8 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      normal_dmgInc,
-    },
+      normal_dmgInc
+    }
   },
   { normal_dmgInc }
 )
@@ -39,21 +39,21 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: normal_dmgInc,
+              node: normal_dmgInc
             },
             {
               text: st('triggerQuota'),
-              value: 18,
+              value: 18
             },
             {
               text: stg('duration'),
               value: 7,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

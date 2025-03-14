@@ -22,11 +22,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
           header: {
             icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
             text: 'Bool Conditional',
-            additional: <SqBadge>conditional</SqBadge>,
+            additional: <SqBadge>conditional</SqBadge>
           },
           metadata: conditionals.Arlan.boolConditional,
-          label: 'Bool Conditional',
-        },
+          label: 'Bool Conditional'
+        }
       },
       {
         type: 'conditional',
@@ -34,13 +34,13 @@ const sheet: UISheet<TalentSheetElementKey> = {
           header: {
             icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
             text: 'List Conditional',
-            additional: <SqBadge>Skill</SqBadge>,
+            additional: <SqBadge>Skill</SqBadge>
           },
           metadata: conditionals.Arlan.listConditional,
           label: (_, value) =>
             value === 0 ? 'Not Enabled' : value === 1 ? 'Value 1' : 'Value 2',
-          badge: (_, value) => (value === 0 ? null : value === 1 ? '1' : '2'),
-        },
+          badge: (_, value) => (value === 0 ? null : value === 1 ? '1' : '2')
+        }
       },
       {
         type: 'conditional',
@@ -48,15 +48,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
           header: {
             icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
             text: 'Num Conditional',
-            additional: <SqBadge>Skill</SqBadge>,
+            additional: <SqBadge>Skill</SqBadge>
           },
           metadata: conditionals.Arlan.numConditional,
           label: 'Number of stacks',
-          badge: 'Stacks',
-        },
-      },
-    ],
-  },
+          badge: 'Stacks'
+        }
+      }
+    ]
+  }
 }
 
 export default sheet

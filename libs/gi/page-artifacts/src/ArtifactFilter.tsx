@@ -15,7 +15,7 @@ import { Trans, useTranslation } from 'react-i18next'
 export default function ArtifactFilter({
   numShowing,
   total,
-  artifactIds,
+  artifactIds
 }: {
   numShowing: number
   total: number
@@ -27,7 +27,7 @@ export default function ArtifactFilter({
   const filterOptionDispatch = useCallback(
     (option: Partial<ArtifactFilterOption>) =>
       database.displayArtifact.set({
-        filterOption: { ...filterOption, ...option },
+        filterOption: { ...filterOption, ...option }
       }),
     [database, filterOption]
   )

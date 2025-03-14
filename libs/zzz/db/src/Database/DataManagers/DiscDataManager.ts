@@ -2,7 +2,7 @@ import { notEmpty } from '@genshin-optimizer/common/util'
 import type {
   DiscMainStatKey,
   DiscRarityKey,
-  DiscSubStatKey,
+  DiscSubStatKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allCharacterKeys,
@@ -13,13 +13,13 @@ import {
   discMaxLevel,
   discSlotToMainStatKeys,
   discSubstatRollData,
-  statKeyTextMap,
+  statKeyTextMap
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import type {
   ICachedDisc,
   IZenlessObjectDescription,
-  IZZZDatabase,
+  IZZZDatabase
 } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
@@ -59,7 +59,7 @@ export class DiscDataManager extends DataManager<
       if (prevDisc)
         super.setCached(prevDisc.id, {
           ...prevDisc,
-          location: prevChar?.key ?? '',
+          location: prevChar?.key ?? ''
         })
       if (newChar)
         this.database.chars.setEquippedDisc(newChar.key, slotKey, newDisc.id)
@@ -85,7 +85,7 @@ export class DiscDataManager extends DataManager<
       substats,
       location,
       lock,
-      trash,
+      trash
     } = disc
     return {
       setKey,
@@ -95,11 +95,11 @@ export class DiscDataManager extends DataManager<
       mainStatKey,
       substats: substats.map(({ key, upgrades }) => ({
         key,
-        upgrades,
+        upgrades
       })),
       location,
       lock,
-      trash,
+      trash
     }
   }
 
@@ -163,8 +163,8 @@ export class DiscDataManager extends DataManager<
             upgraded[0]?.location === disc.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((a) => a.id === importId)
@@ -182,7 +182,7 @@ export class DiscDataManager extends DataManager<
           if (!importId) importId = match.id // always resolve some id
           importDisc = {
             ...disc,
-            location: hasEquipment ? disc.location : match.location,
+            location: hasEquipment ? disc.location : match.location
           }
         }
       }
@@ -220,7 +220,7 @@ export class DiscDataManager extends DataManager<
       level = 0,
       slotKey,
       mainStatKey,
-      substats = [],
+      substats = []
     } = editorDisc
 
     const discs = idList
@@ -305,7 +305,7 @@ export function validateDisc(
     substats,
     location,
     lock,
-    trash,
+    trash
   } = obj as IDisc
 
   if (!allDiscSetKeys.includes(setKey)) setKey = allDiscSetKeys[0]
@@ -337,7 +337,7 @@ export function validateDisc(
     substats,
     location,
     lock,
-    trash,
+    trash
   }
 }
 

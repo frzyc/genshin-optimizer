@@ -3,7 +3,7 @@ import { artMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type {
   ArtifactBuildData,
-  ArtifactsBySlot,
+  ArtifactsBySlot
 } from '@genshin-optimizer/gi/solver'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
 
@@ -14,7 +14,7 @@ export function compactArtifacts(
 ): ArtifactsBySlot {
   const result: ArtifactsBySlot = {
     base: {},
-    values: { flower: [], plume: [], goblet: [], circlet: [], sands: [] },
+    values: { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
   }
   const keys = new Set<string>()
 
@@ -39,10 +39,10 @@ export function compactArtifacts(
             substat.key,
             substat.key.endsWith('_')
               ? substat.accurateValue / 100
-              : substat.accurateValue,
+              : substat.accurateValue
           ])
-        ),
-      },
+        )
+      }
     }
     delete data.values['']
     result.values[art.slotKey].push(data)

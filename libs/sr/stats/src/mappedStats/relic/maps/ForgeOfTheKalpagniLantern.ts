@@ -10,8 +10,8 @@ const dm = {
   2: {
     spd_: data_gen.setEffects[0].passiveStats.spd_,
     brEffect_: data_gen.setEffects[0].otherStats[o++],
-    duration: data_gen.setEffects[0].otherStats[o++],
-  },
+    duration: data_gen.setEffects[0].otherStats[o++]
+  }
 } as const
 
 export default dm

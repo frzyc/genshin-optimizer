@@ -1,13 +1,13 @@
 import {
   DBLocalStorage,
-  SandboxStorage,
+  SandboxStorage
 } from '@genshin-optimizer/common/database'
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import type {
   ILightCone,
   IRelic,
-  ISrObjectDescription,
+  ISrObjectDescription
 } from '@genshin-optimizer/sr/srod'
 import { randomizeRelic } from '@genshin-optimizer/sr/util'
 import type { ICachedLightCone, ISroDatabase } from '../Interfaces'
@@ -27,7 +27,7 @@ function newLightCone(key: LightConeKey): ICachedLightCone {
     superimpose: 1,
     location: '',
     lock: false,
-    id: '',
+    id: ''
   }
 }
 
@@ -121,7 +121,7 @@ describe('Database', () => {
     database.chars.set('March7th', initialCharacter('March7th'))
     database.lightCones.new({
       ...newLightCone('TrendOfTheUniversalMarket'),
-      location: 'March7th',
+      location: 'March7th'
     })
 
     const relic1 = randomizeRelic({ slotKey: 'body' })
@@ -157,7 +157,7 @@ describe('Database', () => {
     database.chars.set('March7th', initialCharacter('March7th'))
     const sword1 = database.lightCones.new({
       ...newLightCone('TrendOfTheUniversalMarket'),
-      location: 'March7th',
+      location: 'March7th'
     })
     database.lightCones.remove(sword1)
     expect(database.lightCones.get(sword1)).toBeFalsy()
@@ -168,7 +168,7 @@ describe('Database', () => {
     database.chars.set('March7th', initialCharacter('March7th'))
     const relic1id = database.relics.new({
       ...randomizeRelic({ slotKey: 'body' }),
-      location: 'March7th',
+      location: 'March7th'
     })
     expect(database.chars.get('March7th')!.equippedRelics.body).toEqual(
       relic1id
@@ -192,7 +192,7 @@ describe('Database', () => {
       version: 1,
       source: 'Scanner',
       relics: [relic1, relic2],
-      lightCones: [tingyunLightCone],
+      lightCones: [tingyunLightCone]
     }
     const importResult = database.importSROD(
       srod as ISrObjectDescription & ISroDatabase,
@@ -218,7 +218,7 @@ describe('Database', () => {
       format: 'SROD',
       version: 1,
       source: 'Scanner',
-      relics: [relic1],
+      relics: [relic1]
     }
 
     // Import the new relic, with no location. this should respect current equipment
@@ -239,7 +239,7 @@ describe('Database', () => {
     const relic1 = randomizeRelic({
       slotKey: 'body',
       setKey: 'GuardOfWutheringSnow',
-      location: 'March7th',
+      location: 'March7th'
     })
 
     database.chars.set(march7th.key, march7th)
@@ -262,10 +262,10 @@ describe('Database', () => {
         randomizeRelic({
           slotKey: 'body',
           setKey: 'BandOfSizzlingThunder',
-          location: 'March7th',
-        }),
+          location: 'March7th'
+        })
       ],
-      lightCones: [{ ...newLightCone('WeAreWildfire'), location: 'March7th' }],
+      lightCones: [{ ...newLightCone('WeAreWildfire'), location: 'March7th' }]
     }
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,
@@ -308,7 +308,7 @@ describe('Database', () => {
       format: 'SROD',
       version: 1,
       source: 'Scanner',
-      lightCones: [a1, a2new, a4],
+      lightCones: [a1, a2new, a4]
     }
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,
@@ -330,7 +330,7 @@ describe('Database', () => {
   test('should merge scanner with dups for relics', () => {
     const a1 = randomizeRelic({
       setKey: 'EagleOfTwilightLine',
-      slotKey: 'head',
+      slotKey: 'head'
     }) // dup
     const a2old: IRelic = {
       // before
@@ -341,7 +341,7 @@ describe('Database', () => {
       rarity: 3,
       setKey: 'BandOfSizzlingThunder',
       slotKey: 'hands',
-      substats: [{ key: 'atk_', value: 5 }],
+      substats: [{ key: 'atk_', value: 5 }]
     }
     const a2new: IRelic = {
       // upgrade
@@ -354,8 +354,8 @@ describe('Database', () => {
       slotKey: 'hands',
       substats: [
         { key: 'atk_', value: 5 },
-        { key: 'def_', value: 5 },
-      ],
+        { key: 'def_', value: 5 }
+      ]
     }
     const a3 = randomizeRelic({ slotKey: 'sphere' }) // in db but not in import
     const a4 = randomizeRelic({ slotKey: 'body' }) // in import but not in db
@@ -367,7 +367,7 @@ describe('Database', () => {
       format: 'SROD',
       version: 1,
       source: 'Scanner',
-      relics: [a1, a2new, a4],
+      relics: [a1, a2new, a4]
     }
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,
@@ -401,9 +401,9 @@ describe('Database', () => {
           ult: 1,
           talent: 1,
           bonusAbilities: objKeyMap(range(1, 3), () => false),
-          statBoosts: objKeyMap(range(1, 10), () => false),
-        },
-      ],
+          statBoosts: objKeyMap(range(1, 10), () => false)
+        }
+      ]
     }
     const importResult = database.importSROD(
       srod as ISrObjectDescription & ISroDatabase,
@@ -429,7 +429,7 @@ describe('Database', () => {
         'sro_relic_0',
         'sro_relic_1',
         'sro_relic_2',
-        'sro_relic_3',
+        'sro_relic_3'
       ])
 
       const srod: ISrObjectDescription = {
@@ -442,8 +442,8 @@ describe('Database', () => {
 
           //swap these two
           { ...old4, id: oldId3 } as IRelic,
-          { ...old3, id: oldId4 } as IRelic,
-        ],
+          { ...old3, id: oldId4 } as IRelic
+        ]
       }
 
       const importResult = database.importSROD(
@@ -475,7 +475,7 @@ describe('Database', () => {
         'sro_lightCone_0',
         'sro_lightCone_1',
         'sro_lightCone_2',
-        'sro_lightCone_3',
+        'sro_lightCone_3'
       ])
 
       const srod: ISrObjectDescription = {
@@ -488,8 +488,8 @@ describe('Database', () => {
 
           //swap these two
           { ...old4, id: oldId3 } as ILightCone,
-          { ...old3, id: oldId4 } as ILightCone,
-        ],
+          { ...old3, id: oldId4 } as ILightCone
+        ]
       }
 
       const importResult = database.importSROD(
@@ -527,8 +527,8 @@ describe('Database', () => {
         source: SroSource,
         relics: [
           { ...new1, id: oldId1 } as IRelic,
-          { ...new2, id: oldId2 } as IRelic,
-        ],
+          { ...new2, id: oldId2 } as IRelic
+        ]
       }
 
       const importResult = database.importSROD(
@@ -566,8 +566,8 @@ describe('Database', () => {
         source: SroSource,
         lightCones: [
           { ...new1, id: oldId1 } as ILightCone,
-          { ...new2, id: oldId2 } as ILightCone,
-        ],
+          { ...new2, id: oldId2 } as ILightCone
+        ]
       }
 
       const importResult = database.importSROD(
@@ -599,11 +599,11 @@ describe('Database', () => {
       database.chars.set('TrailblazerFire', initialCharacter('TrailblazerFire'))
       const relic1 = randomizeRelic({
         slotKey: 'body',
-        setKey: 'BandOfSizzlingThunder',
+        setKey: 'BandOfSizzlingThunder'
       })
       const relic1Id = database.relics.new({
         ...relic1,
-        location: 'TrailblazerFire',
+        location: 'TrailblazerFire'
       })
 
       expect(
@@ -621,11 +621,11 @@ describe('Database', () => {
 
       const relic2 = randomizeRelic({
         slotKey: 'body',
-        setKey: 'BelobogOfTheArchitects',
+        setKey: 'BelobogOfTheArchitects'
       })
       const relic2Id = database.relics.new({
         ...relic2,
-        location: 'TrailblazerPhysical',
+        location: 'TrailblazerPhysical'
       })
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedRelics.body
@@ -636,7 +636,7 @@ describe('Database', () => {
 
       const lightCone2Id = database.lightCones.new({
         ...newLightCone('Chorus'),
-        location: 'TrailblazerPhysical',
+        location: 'TrailblazerPhysical'
       })
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedLightCone
@@ -716,8 +716,8 @@ describe('Database', () => {
       source: 'Scanner',
       lightCones: [
         // Invalid Abundance on Preservation char
-        { ...newLightCone('Chorus'), location: 'March7th' },
-      ],
+        { ...newLightCone('Chorus'), location: 'March7th' }
+      ]
     }
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,

@@ -2,7 +2,7 @@ import { clamp } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
@@ -14,7 +14,7 @@ import {
   artMaxLevel,
   artSlotMainKeys,
   artSubstatRollData,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, IGOOD, ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
@@ -22,7 +22,7 @@ import {
   getMainStatDisplayValue,
   getSubstatRange,
   getSubstatRolls,
-  getSubstatValue,
+  getSubstatValue
 } from '@genshin-optimizer/gi/util'
 import type { ICachedArtifact, ICachedSubstat } from '../../Interfaces'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -40,7 +40,7 @@ const statMap = {
   enerRech_: 'Energy Recharge',
   critRate_: 'Crit Rate',
   critDMG_: 'Crit DMG',
-  heal_: 'Healing Bonus',
+  heal_: 'Healing Bonus'
 } as const
 
 export class ArtifactDataManager extends DataManager<
@@ -90,7 +90,7 @@ export class ArtifactDataManager extends DataManager<
       if (prevArt)
         super.setCached(prevArt.id, {
           ...prevArt,
-          location: prevChar?.key ? charKeyToLocCharKey(prevChar.key) : '',
+          location: prevChar?.key ? charKeyToLocCharKey(prevChar.key) : ''
         })
       if (newChar)
         this.database.chars.setEquippedArtifact(
@@ -118,7 +118,7 @@ export class ArtifactDataManager extends DataManager<
       mainStatKey,
       substats,
       location,
-      lock,
+      lock
     } = artifact
     return {
       setKey,
@@ -128,10 +128,10 @@ export class ArtifactDataManager extends DataManager<
       mainStatKey,
       substats: substats.map((substat) => ({
         key: substat.key,
-        value: substat.value,
+        value: substat.value
       })),
       location,
-      lock,
+      lock
     }
   }
 
@@ -196,8 +196,8 @@ export class ArtifactDataManager extends DataManager<
             upgraded[0]?.location === art.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((a) => a.id === importId)
@@ -217,7 +217,7 @@ export class ArtifactDataManager extends DataManager<
             ...art,
             location: hasEquipment ? art.location : match.location,
             // Preserve existing lock state for artifacts reported as unlocked or when the scanner doesn't detect locks ("lock": false JSON)
-            lock: hasLock ? art.lock : match.lock,
+            lock: hasLock ? art.lock : match.lock
           }
         }
       }
@@ -335,7 +335,7 @@ export function cachedArtifact(
     ...substat,
     rolls: [],
     efficiency: 0,
-    accurateValue: substat.value,
+    accurateValue: substat.value
   }))
   const validated: ICachedArtifact = {
     id,
@@ -347,7 +347,7 @@ export function cachedArtifact(
     rarity,
     level,
     substats,
-    mainStatVal,
+    mainStatVal
   }
 
   const allPossibleRolls: { index: number; substatRolls: number[][] }[] = []
@@ -513,7 +513,7 @@ export function validateArtifact(
     mainStatKey,
     substats,
     location,
-    lock,
+    lock
   }
 }
 function defSub(): ISubstat {

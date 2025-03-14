@@ -7,13 +7,13 @@ import {
   notEmpty,
   objKeyMap,
   objPathValue,
-  range,
+  range
 } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { type ICachedArtifact } from '@genshin-optimizer/gi/db'
@@ -22,7 +22,7 @@ import {
   useBuildArtifacts,
   useDBMeta,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
@@ -37,13 +37,13 @@ import {
   ReactionToggle,
   getTeamData,
   resolveInfo,
-  useTeamData,
+  useTeamData
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import {
   artifactFilterConfigs,
-  initialArtifactFilterOption,
+  initialArtifactFilterOption
 } from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
@@ -56,7 +56,7 @@ import {
   Grid,
   Pagination,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ButtonProps } from '@mui/material/Button'
 import Button from '@mui/material/Button'
@@ -68,7 +68,7 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
+  useState
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
@@ -106,7 +106,7 @@ export default function TabUpopt() {
     teamId,
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
-    loadoutDatum,
+    loadoutDatum
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
@@ -147,7 +147,7 @@ export default function TabUpopt() {
       artExclusion,
       upOptLevelLow,
       upOptLevelHigh,
-      useExcludedArts,
+      useExcludedArts
     } = optConfig
     const filterFunc = filterFunction(filterOption, artifactFilterConfigs())
 
@@ -190,7 +190,7 @@ export default function TabUpopt() {
     const catKeys = {
       levelTotal: ['in'],
       setTotal: allArtifactSetKeys,
-      slotTotal: allArtifactSlotKeys,
+      slotTotal: allArtifactSlotKeys
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
@@ -219,7 +219,7 @@ export default function TabUpopt() {
       mainStatKeys,
       upOptLevelLow,
       upOptLevelHigh,
-      artSetExclusion,
+      artSetExclusion
     } = optConfig
 
     if (!optimizationTarget) return
@@ -349,7 +349,7 @@ export default function TabUpopt() {
     activeCharKey,
     characterKey,
     filteredArts,
-    equippedArts,
+    equippedArts
   ])
 
   // Paging logic
@@ -370,7 +370,7 @@ export default function TabUpopt() {
           currentPageIndex: 0,
           toShow: 0,
           minObj0: 0,
-          maxObj0: 0,
+          maxObj0: 0
         }
 
       const numPages = Math.ceil(
@@ -401,7 +401,7 @@ export default function TabUpopt() {
         maxObj0: toShow.reduce(
           (a, b) => Math.max(b.result!.distr.upper, a),
           thr
-        ),
+        )
       }
     }, [pageIdex, upOptCalc])
   const setPage = useCallback(
@@ -528,12 +528,12 @@ export default function TabUpopt() {
                 optimizationTarget={optimizationTarget}
                 setTarget={(target) =>
                   database.optConfigs.set(optConfigId, {
-                    optimizationTarget: target,
+                    optimizationTarget: target
                   })
                 }
                 disabled={false}
                 targetSelectorModalProps={{
-                  excludeSections: ['character', 'bonusStats', 'teamBuff'],
+                  excludeSections: ['character', 'bonusStats', 'teamBuff']
                 }}
               />
             </ButtonGroup>
@@ -616,7 +616,7 @@ export default function TabUpopt() {
 
 function ShowingArt({
   numShowing,
-  total,
+  total
 }: {
   numShowing: number
   total: number

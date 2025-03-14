@@ -1,22 +1,22 @@
 'use client'
 import {
   useBoolState,
-  useForceUpdate,
+  useForceUpdate
 } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { notEmpty, objKeyMap, toggleArr } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSlotKey,
-  LocationCharacterKey,
+  LocationCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import { allArtifactSetExclusionKeys } from '@genshin-optimizer/gi/db'
@@ -27,7 +27,7 @@ import {
   useDBMeta,
   useDatabase,
   useEquippedInTeam,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Checkroom, ChevronRight } from '@mui/icons-material'
@@ -42,7 +42,7 @@ import {
   Grid,
   Skeleton,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import {
@@ -52,7 +52,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../context'
@@ -60,7 +60,7 @@ import {
   ArtifactCard,
   ArtifactCardNano,
   ArtifactEditor,
-  SetInclusionButton,
+  SetInclusionButton
 } from '../artifact'
 import { ArtifactSetBadges } from '../artifact/ArtifactSetBadges'
 import { CharacterName } from '../character'
@@ -87,15 +87,15 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   extraButtonsRight,
   extraButtonsLeft,
   disabled,
-  mainStatAssumptionLevel,
+  mainStatAssumptionLevel
 }: BuildDisplayItemProps) {
   const { t } = useTranslation('build')
   const {
     loadoutDatum: { buildType, buildId },
-    teamChar: { buildIds = [] },
+    teamChar: { buildIds = [] }
   } = useContext(TeamCharacterContext)
   const {
-    character: { key: characterKey, equippedArtifacts, equippedWeapon },
+    character: { key: characterKey, equippedArtifacts, equippedWeapon }
   } = useContext(CharacterContext)
   const database = useDatabase()
   const { data, compareData } = useContext(DataContext)
@@ -113,7 +113,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   const weaponNewOld = useMemo(
     () => ({
       oldId: compareData?.get(input.weapon.id)?.value,
-      newId: data.get(input.weapon.id).value ?? '',
+      newId: data.get(input.weapon.id).value ?? ''
     }),
     [data, compareData]
   )
@@ -126,7 +126,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
     () =>
       objKeyMap(allArtifactSlotKeys, (slotKey) => ({
         oldId: compareData?.get(input.art[slotKey].id)?.value,
-        newId: data.get(input.art[slotKey].id).value ?? '',
+        newId: data.get(input.art[slotKey].id).value ?? ''
       })),
     [data, compareData]
   )
@@ -141,7 +141,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
         weaponId: data.get(input.weapon.id).value,
         artifactIds: objKeyMap(allArtifactSlotKeys, (s) =>
           data.get(input.art[s].id).value?.toString()
-        ),
+        )
       })
       return
     }
@@ -160,7 +160,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
     const weapon = data.get(input.weapon.id).value
     if (weapon)
       database.weapons.set(weapon, {
-        location: charKeyToLocCharKey(characterKey),
+        location: charKeyToLocCharKey(characterKey)
       })
   }, [characterKey, buildEquip, buildId, data, database])
 
@@ -195,7 +195,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
             maxHeight: '8em',
             boxShadow: weaponUsedInTeamCharKey
               ? '0px 0px 0px 2px yellow'
-              : undefined,
+              : undefined
           }}
         >
           <WeaponCardNano
@@ -219,7 +219,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               maxHeight: '8em',
               boxShadow: artUsedInTeamCharKeys[slotKey]
                 ? '0px 0px 0px 2px yellow'
-                : undefined,
+                : undefined
             }}
           >
             <ArtifactCardNano
@@ -232,7 +232,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                 const newId = artifactNewOldBySlot[slotKey].newId!
                 setArtNewOld({
                   oldId: oldId !== newId ? oldId : undefined,
-                  newId,
+                  newId
                 })
               }}
             />
@@ -243,7 +243,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
       artUsedInTeamCharKeys,
       artifactIds,
       mainStatAssumptionLevel,
-      artifactNewOldBySlot,
+      artifactNewOldBySlot
     ]
   )
 
@@ -290,7 +290,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
     buildType,
     buildId,
     equippedWeapon,
-    compareFromCharEditor,
+    compareFromCharEditor
   ])
 
   const currentArtifactIds = useMemo(() => {
@@ -307,7 +307,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
     buildType,
     buildId,
     equippedArtifacts,
-    compareFromCharEditor,
+    compareFromCharEditor
   ])
 
   const [showEquipChange, onShowEquipChange, onHideEquipChange] = useBoolState()
@@ -318,7 +318,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
       sx={{
         boxShadow: isActiveBuildOrEquip
           ? '0px 0px 0px 2px green inset'
-          : undefined,
+          : undefined
       }}
     >
       <Suspense
@@ -375,7 +375,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                               sx={{
                                 display: 'flex',
                                 gap: 1,
-                                alignItems: 'center',
+                                alignItems: 'center'
                               }}
                             >
                               <CheckroomIcon />
@@ -448,7 +448,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
 function CompareWeaponModal({
   newOld: { newId, oldId },
   showWeapon,
-  onClose,
+  onClose
 }: {
   newOld: NewOld
   showWeapon: boolean
@@ -475,7 +475,7 @@ function CompareWeaponModal({
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'stretch',
-            gap: 2,
+            gap: 2
           }}
         >
           {diffCurrentWeap && (
@@ -519,7 +519,7 @@ function CompareArtifactModal({
   newOld: { newId, oldId },
   mainStatAssumptionLevel,
   onClose,
-  compareFromCharEditor,
+  compareFromCharEditor
 }: {
   newOld: NewOld
   mainStatAssumptionLevel: number
@@ -529,7 +529,7 @@ function CompareArtifactModal({
   const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
 
   const newLoc = database.arts.get(newId)?.location ?? ''
@@ -552,7 +552,7 @@ function CompareArtifactModal({
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'stretch',
-            gap: 2,
+            gap: 2
           }}
         >
           <Suspense fallback={false}>
@@ -646,7 +646,7 @@ function CompareArtifactModal({
 function ArtInclusionButton({ id }: { id: string }) {
   const { t } = useTranslation('page_character_optimize')
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { artExclusion } = useOptConfig(optConfigId)!
@@ -654,7 +654,7 @@ function ArtInclusionButton({ id }: { id: string }) {
   const toggle = useCallback(
     () =>
       database.optConfigs.set(optConfigId, {
-        artExclusion: toggleArr(artExclusion, id),
+        artExclusion: toggleArr(artExclusion, id)
       }),
     [id, artExclusion, database, optConfigId]
   )
@@ -681,25 +681,25 @@ function ArtInclusionButton({ id }: { id: string }) {
   )
 }
 function ExcludeEquipButton({
-  locationKey,
+  locationKey
 }: {
   locationKey: LocationCharacterKey
 }) {
   const { t } = useTranslation('page_character_optimize')
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
   const characterKey = database.chars.LocationToCharacterKey(locationKey)
   const { excludedLocations } = useOptConfig(optConfigId) ?? {
-    excludedLocations: [] as LocationCharacterKey[],
+    excludedLocations: [] as LocationCharacterKey[]
   }
   const excluded = excludedLocations.includes(locationKey)
   const toggle = useCallback(
     () =>
       database.optConfigs.set(optConfigId, {
-        excludedLocations: toggleArr(excludedLocations, locationKey),
+        excludedLocations: toggleArr(excludedLocations, locationKey)
       }),
     [locationKey, excludedLocations, database, optConfigId]
   )

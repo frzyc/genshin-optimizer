@@ -1,12 +1,12 @@
 import type {
   Document,
   TextDocument,
-  UISheetElement,
+  UISheetElement
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,
-  CharacterSheetKey,
+  CharacterSheetKey
 } from '@genshin-optimizer/gi/consts'
 import { travelerFKeys, travelerMKeys } from '@genshin-optimizer/gi/consts'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
@@ -48,7 +48,7 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
     chg,
     ch,
     talentTem: (talentKey: TalentSheetElementKey, docSections?: Document[]) =>
-      talentTemplate(talentKey, chg, img(talentKey), docSections),
+      talentTemplate(talentKey, chg, img(talentKey), docSections)
     // headerTem: (
     //   talentKey: TalentSheetElementKey,
     //   partialSection: DocumentSection
@@ -76,8 +76,8 @@ const talentTemplate = (
     ...(talentKey !== 'auto'
       ? [{ type: 'text', text: tr(`${talentKey}.description`) } as TextDocument]
       : []),
-    ...(documents || []),
-  ],
+    ...(documents || [])
+  ]
 })
 
 function charSheetKeyToCharKey(csk: CharacterSheetKey): CharacterKey {

@@ -122,7 +122,7 @@ export class ArtCharDatabase extends Database {
       this.charMeta,
       this.builds,
       this.teamChars,
-      this.teams,
+      this.teams
     ] as const
   }
   get dataEntries() {
@@ -133,7 +133,7 @@ export class ArtCharDatabase extends Database {
       this.displayCharacter,
       this.displayTool,
       this.displayTeam,
-      this.displayArchive,
+      this.displayArchive
     ] as const
   }
 
@@ -150,7 +150,7 @@ export class ArtCharDatabase extends Database {
       format: 'GOOD',
       dbVersion: currentDBVersion,
       source: GOSource,
-      version: 1,
+      version: 1
     }
     this.dataManagers.map((dm) => dm.exportGOOD(good))
     this.dataEntries.map((de) => de.exportGOOD(good))
@@ -189,7 +189,7 @@ export class ArtCharDatabase extends Database {
       ),
       this.weapons.followAny((_key, reason, value) =>
         result.weapons[reason].push(value)
-      ),
+      )
     ]
 
     this.dataManagers.map((dm) => dm.importGOOD(good, result))

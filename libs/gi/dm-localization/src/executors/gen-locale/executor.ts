@@ -3,12 +3,12 @@ import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import {
   crawlObject,
   layeredAssignment,
-  nameToKey,
+  nameToKey
 } from '@genshin-optimizer/common/util'
 import type {
   ElementKey,
   LocationGenderedCharacterKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import { allGenderKeys } from '@genshin-optimizer/gi/consts'
 import type { AvatarSkillDepotExcelConfigData } from '@genshin-optimizer/gi/dm'
@@ -29,7 +29,7 @@ import {
   reliquaryExcelConfigData,
   reliquarySetExcelConfigData,
   weaponExcelConfigData,
-  weaponIdMap,
+  weaponIdMap
 } from '@genshin-optimizer/gi/dm'
 import { mapHashData, mapHashDataOverride } from './lib/Data'
 import { parsingFunctions, preprocess } from './lib/parseUtil'
@@ -42,7 +42,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
       nameTextMapHash,
       descTextMapHash,
       skillDepotId,
-      candSkillDepotIds,
+      candSkillDepotIds
     } = charData
     const { avatarTitleTextMapHash, avatarConstellationBeforTextMapHash } =
       fetterInfoExcelConfigData[charid]
@@ -76,7 +76,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         energySkill: burst,
         skills: [normal, skill, sprint],
         talents,
-        inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+        inherentProudSkillOpens: [passive1, passive2, passive3, , passive]
       } = depot
       layeredAssignment(
         mapHashData,
@@ -180,7 +180,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           [
             proudSkillExcelConfigData[passive1.proudSkillGroupId][0]
               .descTextMapHash,
-            'paragraph',
+            'paragraph'
           ]
         )
 
@@ -198,7 +198,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           [
             proudSkillExcelConfigData[passive2.proudSkillGroupId][0]
               .descTextMapHash,
-            'paragraph',
+            'paragraph'
           ]
         )
 
@@ -215,7 +215,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           [
             proudSkillExcelConfigData[passive3.proudSkillGroupId][0]
               .descTextMapHash,
-            'paragraph',
+            'paragraph'
           ]
         )
       }
@@ -233,7 +233,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           [
             proudSkillExcelConfigData[passive.proudSkillGroupId][0]
               .descTextMapHash,
-            'paragraph',
+            'paragraph'
           ]
         )
       }
@@ -313,8 +313,8 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           artifactSlotMap[equipType],
           {
             name: nameTextMapHash,
-            desc: descTextMapHash,
-          },
+            desc: descTextMapHash
+          }
         ]
       })
     )
@@ -326,7 +326,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     mapHashData.artifact[artifactIdMap[setId]] = {
       setName,
       setEffects,
-      pieces,
+      pieces
     }
   })
 
@@ -347,7 +347,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         ? ascData.map(
             (asc) => [asc.descTextMapHash, 'paragraph'] as [number, string]
           )
-        : [0, 0, 0, 0, 0],
+        : [0, 0, 0, 0, 0]
     }
   })
 
@@ -358,7 +358,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
     const key = nameToKey(TextMapEN[nameTextMapHash])
     if (!key || mapHashData.material[key]) return
     mapHashData.material[key] = {
-      name: nameTextMapHash,
+      name: nameTextMapHash
     }
   })
 
@@ -423,7 +423,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
         'Electro',
         'Dendro',
         'Hydro',
-        'Pyro',
+        'Pyro'
       ] as const
       keys.forEach((ele) => {
         const transLocGenKey =
@@ -464,7 +464,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           'weaponNames',
           'artifactNames',
           'statKey',
-          'teams',
+          'teams'
         ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)

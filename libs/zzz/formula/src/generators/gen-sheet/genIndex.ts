@@ -1,7 +1,7 @@
 import {
   allCharacterKeys,
   allDiscSetKeys,
-  allWengineKeys,
+  allWengineKeys
 } from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'

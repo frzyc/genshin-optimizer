@@ -22,8 +22,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     hydro_dmg_: set2,
     normal_dmg_: set4Norm,
-    charged_dmg_: set4Charged,
-  },
+    charged_dmg_: set4Charged
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -39,21 +39,21 @@ const sheet: SetEffectSheet = {
           cast: {
             fields: [
               {
-                node: set4Norm,
+                node: set4Norm
               },
               {
-                node: set4Charged,
+                node: set4Charged
               },
               {
                 text: stg('duration'),
                 value: 15,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                unit: 's'
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

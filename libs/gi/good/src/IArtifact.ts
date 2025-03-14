@@ -4,7 +4,7 @@ import type {
   ArtifactSlotKey,
   LocationCharacterKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 
 export interface IArtifact {

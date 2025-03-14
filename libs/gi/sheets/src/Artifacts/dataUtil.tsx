@@ -3,7 +3,7 @@ import {
   inferInfoMut,
   mergeData,
   type Data,
-  type DisplaySub,
+  type DisplaySub
 } from '@genshin-optimizer/gi/wr'
 
 export function dataObjForArtifactSheet(
@@ -15,8 +15,8 @@ export function dataObjForArtifactSheet(
     inferInfoMut(data, key),
     {
       display: {
-        [`artifact:${key}`]: displayArtifact,
-      },
-    },
+        [`artifact:${key}`]: displayArtifact
+      }
+    }
   ])
 }

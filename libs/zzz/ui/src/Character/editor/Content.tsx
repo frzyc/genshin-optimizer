@@ -2,7 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { allSkillKeys } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -14,7 +14,7 @@ import { LevelSelect } from '../../LevelSelect'
 import { CharacterCardStats } from '../card'
 import {
   CharacterCompactMindscapeSelector,
-  CharacterCoverArea,
+  CharacterCoverArea
 } from '../CharacterProfilePieces'
 import { CoreDropdown } from '../CoreDropdown'
 import { EquippedGrid } from '../EquippedGrid'
@@ -58,7 +58,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 1,
+                gap: 1
               }}
             >
               <CharacterCoverArea character={character} />
@@ -80,7 +80,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   mindscape={character.mindscape}
                   setMindscape={(mindscape) =>
                     database.chars.set(characterKey, {
-                      mindscape,
+                      mindscape
                     })
                   }
                 />
@@ -114,7 +114,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                     database.wengines.set(equippedWengine, { location: '' })
                   } else {
                     database.wengines.set(id, {
-                      location: characterKey,
+                      location: characterKey
                     })
                   }
                 }}
@@ -123,7 +123,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                     database.discs.set(equippedDiscs[slotKey], { location: '' })
                   else
                     database.discs.set(id, {
-                      location: characterKey,
+                      location: characterKey
                     })
                 }}
               />

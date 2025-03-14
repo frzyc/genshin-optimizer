@@ -9,7 +9,7 @@ import { statPercent } from '../util'
 
 // Special consideration for artifact stats, by displaying % behind hp_, atk_ and def_.
 export function ArtifactStatWithUnit({
-  statKey,
+  statKey
 }: {
   statKey: MainStatKey | SubstatKey
 }) {
@@ -23,7 +23,7 @@ export function ArtifactStatWithUnit({
 }
 export function ArtifactIconStatWithUnit({
   statKey,
-  disableIcon = false,
+  disableIcon = false
 }: {
   statKey: MainStatKey | SubstatKey
   disableIcon?: boolean
@@ -40,7 +40,7 @@ export function ArtifactIconStatWithUnit({
 
 export function ArtifactColoredIconStatWithUnit({
   statKey,
-  disableIcon = false,
+  disableIcon = false
 }: {
   statKey: MainStatKey | SubstatKey
   disableIcon?: boolean

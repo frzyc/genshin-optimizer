@@ -7,7 +7,7 @@ import {
   own,
   registerBuff,
   target,
-  teamBuff,
+  teamBuff
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

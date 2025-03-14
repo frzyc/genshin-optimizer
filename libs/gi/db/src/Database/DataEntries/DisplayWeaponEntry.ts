@@ -2,12 +2,12 @@ import { validateArr } from '@genshin-optimizer/common/util'
 import type {
   LocationCharacterKey,
   RarityKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allRarityKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
@@ -33,13 +33,13 @@ const initialOption = (): Omit<IDisplayWeapon, 'ascending' | 'sortType'> => ({
   locked: ['locked', 'unlocked'],
   showEquipped: true,
   showInventory: true,
-  locations: [],
+  locations: []
 })
 
 const initialState = (): IDisplayWeapon => ({
   ...initialOption(),
   sortType: weaponSortKeys[0],
-  ascending: false,
+  ascending: false
 })
 
 export class DisplayWeaponEntry extends DataEntry<
@@ -61,7 +61,7 @@ export class DisplayWeaponEntry extends DataEntry<
       locked,
       showEquipped,
       showInventory,
-      locations,
+      locations
     } = obj
     const { editWeaponId } = obj
     if (typeof editWeaponId !== 'string') return editWeaponId
@@ -88,7 +88,7 @@ export class DisplayWeaponEntry extends DataEntry<
       locked,
       showEquipped,
       showInventory,
-      locations,
+      locations
     }
     return data
   }

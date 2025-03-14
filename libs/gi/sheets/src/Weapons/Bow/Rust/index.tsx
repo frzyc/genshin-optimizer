@@ -15,8 +15,8 @@ const charged_dmg_ = constant(-0.1)
 const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_,
-    charged_dmg_,
-  },
+    charged_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -25,13 +25,13 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: normal_dmg_,
+          node: normal_dmg_
         },
         {
-          node: charged_dmg_,
-        },
-      ],
-    },
-  ],
+          node: charged_dmg_
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

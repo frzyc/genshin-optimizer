@@ -5,16 +5,16 @@ import { constant } from '@genshin-optimizer/pando/engine'
 import type {
   DiscMainStatKey,
   DiscSetKey,
-  DiscSubStatKey,
+  DiscSubStatKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
-  getDiscSubStatBaseVal,
+  getDiscSubStatBaseVal
 } from '@genshin-optimizer/zzz/consts'
 import type {
   CharOpt,
   ICachedCharacter,
-  ICachedDisc,
+  ICachedDisc
 } from '@genshin-optimizer/zzz/db'
 import { useDiscs, useWengine } from '@genshin-optimizer/zzz/db-ui'
 import type { TagMapNodeEntries } from '@genshin-optimizer/zzz/formula'
@@ -28,7 +28,7 @@ import {
   wengineTagMapNodeEntries,
   withMember,
   withPreset,
-  zzzCalculatorWithEntries,
+  zzzCalculatorWithEntries
 } from '@genshin-optimizer/zzz/formula'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
@@ -36,7 +36,7 @@ import { useMemo } from 'react'
 export function CharCalcProvider({
   character,
   charOpt,
-  children,
+  children
 }: {
   character: ICachedCharacter
   charOpt: CharOpt
@@ -68,9 +68,9 @@ export function CharCalcProvider({
         ...charOpt.bonusStats.flatMap(({ tag, value }) =>
           withPreset(`preset0`, {
             tag: { ...tag },
-            value: constant(toDecimal(value, tag.q ?? '')),
+            value: constant(toDecimal(value, tag.q ?? ''))
           })
-        ),
+        )
       ]),
     [member0, charOpt, character.key]
   )

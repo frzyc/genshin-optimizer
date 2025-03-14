@@ -4,29 +4,29 @@ import {
   CardThemed,
   ConditionalWrapper,
   NextImage,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
   characterKeyToGenderedKey,
-  relicAsset,
+  relicAsset
 } from '@genshin-optimizer/sr/assets'
 import type {
   RelicSetKey,
   RelicSlotKey,
-  RelicSubStatKey,
+  RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 import type {
   IBuildTc,
   ICachedRelic,
-  ICachedSubstat,
+  ICachedSubstat
 } from '@genshin-optimizer/sr/db'
 import { useRelic } from '@genshin-optimizer/sr/db-ui'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
 import {
   getRelicMainStatDisplayVal,
-  statToFixed,
+  statToFixed
 } from '@genshin-optimizer/sr/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
@@ -40,7 +40,7 @@ export function RelicCardCompact({
   slotKey,
   bgt,
   onClick,
-  showLocation = false,
+  showLocation = false
 }: {
   relicId?: string
   slotKey: RelicSlotKey
@@ -63,7 +63,7 @@ export function RelicCardCompactObj({
   relic,
   showLocation = false,
   bgt,
-  onClick,
+  onClick
 }: {
   relic: ICachedRelic
   onClick?: () => void
@@ -87,7 +87,7 @@ export function RelicCardCompactObj({
       bgt={bgt}
       sx={{
         height: COMPACT_ELE_HEIGHT,
-        width: COMPACT_ELE_WIDTH,
+        width: COMPACT_ELE_WIDTH
       }}
     >
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -97,7 +97,7 @@ export function RelicCardCompactObj({
             height: '100%',
             width: '100%',
             borderLeft: '5px solid',
-            borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`,
+            borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`
           })}
         >
           <Box
@@ -107,7 +107,7 @@ export function RelicCardCompactObj({
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <Box
@@ -118,7 +118,7 @@ export function RelicCardCompactObj({
                 maxHeight: '100%',
                 maxWidth: '100%',
                 maskImage:
-                  'linear-gradient( to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0))',
+                  'linear-gradient( to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0))'
               }}
             />
             <Box
@@ -130,7 +130,7 @@ export function RelicCardCompactObj({
                 opacity: 0.85,
                 display: 'flex',
                 justifyContent: 'space-between',
-                pointerEvents: 'none',
+                pointerEvents: 'none'
               }}
             >
               {showLocation && (
@@ -139,7 +139,7 @@ export function RelicCardCompactObj({
                     position: 'absolute',
                     display: 'flex',
                     top: '3px',
-                    right: '3px',
+                    right: '3px'
                   }}
                 >
                   {location ? (
@@ -149,7 +149,7 @@ export function RelicCardCompactObj({
                         borderRadius: '50%',
                         width: '2em',
                         height: '2em',
-                        backgroundColor: 'rgba(0,0,0,0.3)',
+                        backgroundColor: 'rgba(0,0,0,0.3)'
                       }}
                       src={characterAsset(
                         characterKeyToGenderedKey(location),
@@ -170,7 +170,7 @@ export function RelicCardCompactObj({
                 top: 3,
                 left: 3,
                 backgroundColor: 'rgba(0,0,0,0.3)',
-                backdropFilter: 'blur(2px)',
+                backdropFilter: 'blur(2px)'
               }}
             />
             {/* mainstats */}
@@ -183,7 +183,7 @@ export function RelicCardCompactObj({
                 bottom: '3px',
                 px: 0.5,
                 borderRadius: '1em',
-                backdropFilter: 'blur(2px)',
+                backdropFilter: 'blur(2px)'
               }}
             >
               <StatIcon
@@ -238,7 +238,7 @@ function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
 }
 export function RelicCardCompactEmpty({
   slotKey,
-  bgt,
+  bgt
 }: {
   slotKey: RelicSlotKey
   bgt?: CardBackgroundColor
@@ -251,7 +251,7 @@ export function RelicCardCompactEmpty({
         height: COMPACT_ELE_HEIGHT,
         width: COMPACT_ELE_WIDTH,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
       }}
     >
       <SlotIcon
@@ -266,7 +266,7 @@ export function RelicSubCard({
   relic,
   keys,
   bgt,
-  onClick,
+  onClick
 }: {
   relic: IBuildTc['relic']
   keys: RelicSubStatKey[]
@@ -286,7 +286,7 @@ export function RelicSubCard({
       bgt={bgt}
       sx={{
         height: COMPACT_ELE_HEIGHT,
-        width: COMPACT_ELE_HEIGHT,
+        width: COMPACT_ELE_HEIGHT
       }}
     >
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -298,7 +298,7 @@ export function RelicSubCard({
             flexDirection: 'column',
             alignItems: 'stretch',
             justifyContent: 'space-between',
-            p: 1,
+            p: 1
           }}
         >
           {keys.map((key) => (
@@ -308,7 +308,7 @@ export function RelicSubCard({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                whiteSpace: 'nowrap',
+                whiteSpace: 'nowrap'
               }}
             >
               <StatIcon statKey={key} />
@@ -326,7 +326,7 @@ export function RelicSubCard({
 export function RelicSetCardCompact({
   sets,
   bgt,
-  onClick,
+  onClick
 }: {
   sets: Partial<Record<RelicSetKey, 2 | 4>>
   bgt?: CardBackgroundColor
@@ -345,7 +345,7 @@ export function RelicSetCardCompact({
       bgt={bgt}
       sx={{
         width: COMPACT_ELE_WIDTH,
-        height: COMPACT_ELE_HEIGHT,
+        height: COMPACT_ELE_HEIGHT
       }}
     >
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -356,7 +356,7 @@ export function RelicSetCardCompact({
             p: 1,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
+            justifyContent: 'space-between'
           }}
         >
           {/* TODO: translate */}
@@ -375,7 +375,7 @@ export function RelicSetCardCompact({
 export function RelicMainsCardCompact({
   slots,
   bgt,
-  onClick,
+  onClick
 }: {
   slots: IBuildTc['relic']['slots']
   bgt?: CardBackgroundColor
@@ -394,7 +394,7 @@ export function RelicMainsCardCompact({
       bgt={bgt}
       sx={{
         width: COMPACT_ELE_WIDTH,
-        height: COMPACT_ELE_HEIGHT,
+        height: COMPACT_ELE_HEIGHT
       }}
     >
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -407,7 +407,7 @@ export function RelicMainsCardCompact({
             flexDirection: 'column',
             justifyContent: 'space-between',
             alignContent: 'space-between',
-            flexWrap: 'wrap',
+            flexWrap: 'wrap'
           }}
         >
           {Object.entries(slots).map(([slotKey, { level, statKey }]) => (

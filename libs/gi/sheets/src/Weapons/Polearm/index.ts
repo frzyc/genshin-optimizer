@@ -70,6 +70,6 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   TheCatch,
   VortexVanquisher,
   WavebreakersFin,
-  WhiteTassel,
+  WhiteTassel
 } as const
 export default polearm

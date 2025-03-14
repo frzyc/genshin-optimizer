@@ -5,7 +5,7 @@ import {
   CharacterContext,
   useCharMeta,
   useCharacter,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -14,7 +14,7 @@ import {
   CardActionArea,
   CardContent,
   IconButton,
-  Skeleton,
+  Skeleton
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
@@ -26,14 +26,14 @@ import {
   CharacterCardHeader,
   CharacterCardHeaderContent,
   CharacterCardStats,
-  HeaderContentNew,
+  HeaderContentNew
 } from './card'
 
 export function CharacterCard({
   characterKey,
   onClick,
   onClickHeader,
-  hideStats,
+  hideStats
 }: {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
@@ -63,7 +63,7 @@ export function CharacterCard({
   const characterContextObj: CharacterContextObj | undefined = useMemo(
     () =>
       character && {
-        character,
+        character
       },
     [character]
   )
@@ -72,7 +72,7 @@ export function CharacterCard({
       data &&
       teamData && {
         data,
-        teamData,
+        teamData
       },
     [data, teamData]
   )
@@ -96,8 +96,8 @@ export function CharacterCard({
           flexDirection: 'column',
           border: '1px solid rgba(200,200,200,0.3)',
           ':hover': {
-            border: '1px solid rgba(200,200,200,0.8)',
-          },
+            border: '1px solid rgba(200,200,200,0.8)'
+          }
         }}
       >
         <Box
@@ -105,7 +105,7 @@ export function CharacterCard({
             display: 'flex',
             position: 'absolute',
             zIndex: 2,
-            opacity: 0.7,
+            opacity: 0.7
           }}
         >
           <IconButton
@@ -150,7 +150,7 @@ function ExistingCharacterCardContent({
   characterKey,
   onClick,
   onClickHeader,
-  hideStats,
+  hideStats
 }: ExistingCharacterCardContentProps) {
   return (
     <CharacterContext.Provider value={characterContextObj}>
@@ -169,7 +169,7 @@ function ExistingCharacterCardContent({
             flexDirection: 'column',
             gap: 1,
             flexGrow: 1,
-            padding: hideStats ? `${theme.spacing(1)}!important` : undefined,
+            padding: hideStats ? `${theme.spacing(1)}!important` : undefined
           })}
         >
           <CharacterCardEquipmentRow />
@@ -181,7 +181,7 @@ function ExistingCharacterCardContent({
 }
 
 function NewCharacterCardContent({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {
@@ -197,7 +197,7 @@ function NewCharacterCardContent({
           flexDirection: 'column',
           gap: 1,
           flexGrow: 1,
-          height: '100%',
+          height: '100%'
         }}
       ></CardContent>
     </>

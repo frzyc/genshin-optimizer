@@ -3,7 +3,7 @@ import type { ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { useContext } from 'react'
 import { EquipBuildModal } from '.'
@@ -38,8 +38,8 @@ function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
     slot === artIdOrSlot
       ? undefined
       : newArt?.slotKey === slot
-      ? artIdOrSlot
-      : id
+        ? artIdOrSlot
+        : id
   )
   const currentWeaponId = database.teams.getEditWeaponId(
     buildToEdit,
@@ -64,11 +64,11 @@ function CharacterWrapper({
   artIdOrSlot,
   weaponId,
   onHide,
-  onEquip,
+  onEquip
 }: WrapperProps) {
   const database = useDatabase()
   const {
-    character: { equippedArtifacts, equippedWeapon },
+    character: { equippedArtifacts, equippedWeapon }
   } = useContext(CharacterContext)
   const newArt = database.arts.get(artIdOrSlot ?? '')
   const currentArtifactIds = equippedArtifacts
@@ -76,8 +76,8 @@ function CharacterWrapper({
     slot === artIdOrSlot
       ? undefined
       : newArt?.slotKey === slot
-      ? artIdOrSlot
-      : art
+        ? artIdOrSlot
+        : art
   )
   const currentWeaponId = equippedWeapon
   const newWeaponId = weaponId ?? currentWeaponId

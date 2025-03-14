@@ -9,7 +9,7 @@ export const CommonAssetData = {
     bow: 'Skill_A_02',
     polearm: 'Skill_A_03',
     claymore: 'Skill_A_04',
-    catalyst: 'Skill_A_Catalyst_MD',
+    catalyst: 'Skill_A_Catalyst_MD'
   },
   elemIcons: {
     anemo: 'UI_Buff_Element_Wind',
@@ -18,6 +18,6 @@ export const CommonAssetData = {
     hydro: 'UI_Buff_Element_Water',
     pyro: 'UI_Buff_Element_Fire',
     cryo: 'UI_Buff_Element_Ice',
-    dendro: 'UI_Buff_Element_Grass',
-  },
+    dendro: 'UI_Buff_Element_Grass'
+  }
 }

@@ -5,7 +5,7 @@ import type { Document, Header } from '../types'
 
 export function HeaderDisplay({
   header,
-  hideDivider,
+  hideDivider
 }: {
   header: Header
   hideDivider?: boolean | ((section: Document) => boolean)

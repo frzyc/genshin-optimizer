@@ -11,7 +11,7 @@ export const allElementKeys = [
   'hydro',
   'pyro',
   'cryo',
-  'dendro',
+  'dendro'
 ] as const
 export type ElementKey = (typeof allElementKeys)[number]
 
@@ -26,7 +26,7 @@ export const allRegionKeys = [
   'fontaine',
   'natlan',
   'snezhnaya',
-  'khaenriah',
+  'khaenriah'
 ] as const
 export type RegionKey = (typeof allRegionKeys)[number]
 
@@ -39,7 +39,7 @@ export const allMoveKeys = [
   'plunging',
   'skill',
   'burst',
-  'elemental',
+  'elemental'
 ] as const
 export type MoveKey = (typeof allMoveKeys)[number]
 
@@ -61,7 +61,7 @@ export const characterSpecializedStatKeys = [
   'hydro_dmg_',
   'pyro_dmg_',
   'cryo_dmg_',
-  'dendro_dmg_',
+  'dendro_dmg_'
 ] as const
 export type CharacterSpecializedStatKey =
   (typeof characterSpecializedStatKeys)[number]
@@ -161,7 +161,7 @@ export const nonTravelerCharacterKeys = [
   'Yoimiya',
   'YumemizukiMizuki',
   'YunJin',
-  'Zhongli',
+  'Zhongli'
 ] as const
 export type NonTravelerCharacterKey = (typeof nonTravelerCharacterKeys)[number]
 
@@ -171,7 +171,7 @@ export const travelerElements = [
   'electro',
   'dendro',
   'hydro',
-  'pyro',
+  'pyro'
 ] as const
 export type TravelerElementKey = (typeof travelerElements)[number]
 
@@ -181,7 +181,7 @@ export const allTravelerKeys = [
   'TravelerElectro',
   'TravelerDendro',
   'TravelerHydro',
-  'TravelerPyro',
+  'TravelerPyro'
 ] as const
 export type TravelerKey = (typeof allTravelerKeys)[number]
 
@@ -191,20 +191,20 @@ export const travelerEleMap: Partial<Record<ElementKey, TravelerKey>> = {
   electro: 'TravelerElectro',
   dendro: 'TravelerDendro',
   hydro: 'TravelerHydro',
-  pyro: 'TravelerPyro',
+  pyro: 'TravelerPyro'
 } as const
 
 export const locationGenderedCharacterKeys = [
   ...nonTravelerCharacterKeys,
   'TravelerF',
-  'TravelerM',
+  'TravelerM'
 ] as const
 export type LocationGenderedCharacterKey =
   (typeof locationGenderedCharacterKeys)[number]
 
 export const allCharacterKeys = [
   ...nonTravelerCharacterKeys,
-  ...allTravelerKeys,
+  ...allTravelerKeys
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 export function isCharacterKey(key: string): key is CharacterKey {
@@ -213,7 +213,7 @@ export function isCharacterKey(key: string): key is CharacterKey {
 
 export const allLocationCharacterKeys = [
   ...nonTravelerCharacterKeys,
-  'Traveler',
+  'Traveler'
 ] as const
 export type LocationCharacterKey = (typeof allLocationCharacterKeys)[number]
 
@@ -267,7 +267,7 @@ export const travelerFKeys = [
   'TravelerElectroF',
   'TravelerDendroF',
   'TravelerHydroF',
-  'TravelerPyroF',
+  'TravelerPyroF'
 ] as const
 export const travelerMKeys = [
   'TravelerAnemoM',
@@ -275,12 +275,12 @@ export const travelerMKeys = [
   'TravelerElectroM',
   'TravelerDendroM',
   'TravelerHydroM',
-  'TravelerPyroM',
+  'TravelerPyroM'
 ] as const
 export const allCharacterSheetKeys = [
   ...nonTravelerCharacterKeys,
   ...travelerFKeys,
-  ...travelerMKeys,
+  ...travelerMKeys
 ]
 export type CharacterSheetKey = (typeof allCharacterSheetKeys)[number]
 
@@ -290,12 +290,12 @@ export const allowedAmpReactions: Partial<
   pyro: ['vaporize', 'melt'],
   hydro: ['vaporize'],
   cryo: ['melt'],
-  anemo: ['vaporize', 'melt'],
+  anemo: ['vaporize', 'melt']
 }
 export const allowedAdditiveReactions: Partial<
   Record<ElementKey, AdditiveReactionKey[]>
 > = {
   dendro: ['spread'],
   electro: ['aggravate'],
-  anemo: ['aggravate'],
+  anemo: ['aggravate']
 }

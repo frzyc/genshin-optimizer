@@ -11,7 +11,7 @@ const dm = {
   baseChance: data_gen.superimpose.otherStats[o++][1],
   crit_: data_gen.superimpose.otherStats[o++],
   debuffCount: data_gen.superimpose.otherStats[o++][1],
-  common_dmg_: data_gen.superimpose.otherStats[o++],
+  common_dmg_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

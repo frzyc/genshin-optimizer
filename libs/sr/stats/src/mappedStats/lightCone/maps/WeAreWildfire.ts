@@ -9,7 +9,7 @@ let o = 0
 const dm = {
   healScaling: data_gen.superimpose.otherStats[o++],
   dmgRed_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++],
+  duration: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

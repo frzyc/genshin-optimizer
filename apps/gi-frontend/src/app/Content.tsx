@@ -12,7 +12,7 @@ export default function Content({ children }: { children: React.ReactNode }) {
       minHeight="100vh"
       position="relative"
       sx={(theme) => ({
-        background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`,
+        background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`
       })}
     >
       <Header />

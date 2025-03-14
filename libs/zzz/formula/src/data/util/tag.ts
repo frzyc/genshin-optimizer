@@ -6,7 +6,7 @@ import {
   createConditionalEntries,
   createConvert,
   tag,
-  type Desc as BaseDesc,
+  type Desc as BaseDesc
 } from '@genshin-optimizer/game-opt/engine'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
@@ -104,11 +104,11 @@ const stats: Record<Stat, Desc> = {
   common_dmg_: agg,
   buff_: agg,
   resIgn_: agg,
-  shield_: agg,
+  shield_: agg
 } as const
 const finalStats = objFilterKeys(stats, [
   ...flatAndPercentStats,
-  ...nonFlatAndPercentStats,
+  ...nonFlatAndPercentStats
 ])
 export const ownTag = {
   base: {
@@ -121,7 +121,7 @@ export const ownTag = {
     pen_: agg,
     anomProf: agg,
     anomMas: agg,
-    enerRegen: agg,
+    enerRegen: agg
   },
   initial: stats,
   combat: stats,
@@ -138,13 +138,13 @@ export const ownTag = {
     special: agg,
     chain: agg,
     assist: agg,
-    core: agg,
+    core: agg
   },
   wengine: { lvl: iso, modification: iso, phase: isoSum },
   common: {
     count: isoSum,
     critMode: fixed,
-    cappedCrit_: iso,
+    cappedCrit_: iso
   },
   dmg: {
     shared: fixedProd,
@@ -154,21 +154,21 @@ export const ownTag = {
     def_mult_: fixed,
     res_mult_: fixed,
     dmg_taken_mult_: fixed,
-    stunned_mult_: fixed,
+    stunned_mult_: fixed
   },
   formula: {
     base: agg,
     listing: aggStr,
     standardDmg: prepProd,
     anomalyDmg: prepProd,
-    shield: prep,
+    shield: prep
   },
   listing: {
     // Anything that is intended to be allowed as an optimization target.
     formulas: aggStr,
     // Flat buffs that don't scale off of a stat.
-    buffs: aggStr,
-  },
+    buffs: aggStr
+  }
 } as const
 export const enemyTag = {
   // Possible TODO: Add another set of `stats` here to replicate in-game
@@ -184,8 +184,8 @@ export const enemyTag = {
     stun_: agg,
     unstun_: agg,
     isStunned: iso,
-    anomTimePassed: iso,
-  },
+    anomTimePassed: iso
+  }
 } as const
 
 export const convert = createConvert<Read>()
@@ -209,7 +209,7 @@ const nullTag: Tag = {
   name: null,
   attribute: null,
   damageType1: null,
-  damageType2: null,
+  damageType2: null
 }
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'own', sheet, qt: 'misc' }).withAll('q', [])
@@ -225,7 +225,7 @@ export const queryTypes = new Set([
   'misc',
   'stackIn',
   'stackTmp',
-  'stackOut',
+  'stackOut'
 ])
 
 // Register q:

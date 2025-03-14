@@ -27,8 +27,8 @@ const normal_dmg_ = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_,
-    normal_dmg_,
-  },
+    normal_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -42,16 +42,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: normal_dmg_,
+              node: normal_dmg_
             },
             {
               text: stg('duration'),
               value: 5,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       value: condSkill,
@@ -62,17 +62,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: skill_dmg_,
+              node: skill_dmg_
             },
             {
               text: stg('duration'),
               value: 5,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

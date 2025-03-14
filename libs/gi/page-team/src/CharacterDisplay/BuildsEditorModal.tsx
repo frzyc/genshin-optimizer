@@ -5,7 +5,7 @@ import {
   AdResponsive,
   BuildInfoAlert,
   EquippedBuildInfoAlert,
-  TCBuildInfoAlert,
+  TCBuildInfoAlert
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -18,7 +18,7 @@ import {
   Divider,
   Grid,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -28,7 +28,7 @@ import BuildTc from './Build/BuildTc'
 
 export function BuildsEditorModal({
   open,
-  onClose,
+  onClose
 }: {
   open: boolean
   onClose: () => void
@@ -63,7 +63,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
   const {
     teamCharId,
     loadoutDatum,
-    teamChar: { key: characterKey, buildIds, buildTcIds },
+    teamChar: { key: characterKey, buildIds, buildTcIds }
   } = useContext(TeamCharacterContext)
 
   const weaponTypeKey = getCharStat(characterKey).weaponType

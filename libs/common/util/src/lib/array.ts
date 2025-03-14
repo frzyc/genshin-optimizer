@@ -26,7 +26,7 @@ export function toggleInArr<T>(arr: T[], value: T) {
 // cartesian product of list of arrays
 export function cartesian<T>(...q: T[][]): T[][] {
   return q.reduce((a, b) => a.flatMap((d) => b.map((e) => [d, [e]].flat())), [
-    [],
+    []
   ] as T[][])
 }
 

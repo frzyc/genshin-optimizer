@@ -1,7 +1,7 @@
 import type {
   DamageType,
   ElementalType,
-  Tag,
+  Tag
 } from '@genshin-optimizer/sr/formula'
 
 export function getVariant(tag: Tag) {

@@ -2,14 +2,14 @@ import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
   read,
-  setDebugMode,
+  setDebugMode
 } from '@genshin-optimizer/pando/engine'
 import type { MilestoneKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCharacterKeys,
   allDiscSetKeys,
   allWengineKeys,
-  type CharacterKey,
+  type CharacterKey
 } from '@genshin-optimizer/zzz/consts'
 import { fail } from 'assert'
 import {
@@ -18,7 +18,7 @@ import {
   formulas,
   teamData,
   wengineTagMapNodeEntries,
-  withMember,
+  withMember
 } from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
@@ -32,7 +32,7 @@ import {
   ownTag,
   tagStr,
   team,
-  type TagMapNodeEntries,
+  type TagMapNodeEntries
 } from './data/util'
 
 setDebugMode(true)
@@ -53,7 +53,7 @@ describe('character test', () => {
     [20, 2, 0, 266.037, 244.0758, 2986.0094, 118, 94, 93],
     [60, 5, 0, 583.957, 612.6038, 7500.7134, 118, 94, 93],
     [60, 5, 3, 608.957, 612.6038, 7500.7134, 130, 94, 93],
-    [60, 5, 6, 658.957, 612.6038, 7500.7134, 136, 94, 93],
+    [60, 5, 6, 658.957, 612.6038, 7500.7134, 136, 94, 93]
   ])(
     'Calculate character base stats for lvl %i, promo %i, core %i',
     (lvl, promotion, core, atk, def, hp, impact, anomMas, anomProf) => {
@@ -71,9 +71,9 @@ describe('character test', () => {
             special: 0,
             assist: 0,
             chain: 0,
-            core,
+            core
           })
-        ),
+        )
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
@@ -93,7 +93,7 @@ describe('wengine test', () => {
     [0, 0, 40, 0.2],
     [10, 0, 102.728, 0.2],
     [10, 1, 138.416, 0.26],
-    [60, 5, 594.8, 0.5],
+    [60, 5, 594.8, 0.5]
   ])(
     'Calculate wengine base stats for lvl %i, mod %i',
     (lvl, modification, atk, substat) => {
@@ -111,7 +111,7 @@ describe('wengine test', () => {
             special: 0,
             assist: 0,
             chain: 0,
-            core: 0,
+            core: 0
           }),
           ...wengineTagMapNodeEntries(
             wengKey,
@@ -119,14 +119,14 @@ describe('wengine test', () => {
             modification as MilestoneKey,
             1
           )
-        ),
+        )
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
       const wengine0 = convert(ownTag, {
         et: 'own',
         src: 'Anby',
-        sheet: 'wengine',
+        sheet: 'wengine'
       })
       expect(calc.compute(wengine0.base.atk).val).toBeCloseTo(atk)
       expect(calc.compute(wengine0.initial.enerRegen_).val).toBeCloseTo(substat)
@@ -149,10 +149,10 @@ describe('char+wengine test', () => {
           special: 0,
           assist: 0,
           chain: 0,
-          core: 0,
+          core: 0
         }),
         ...wengineTagMapNodeEntries('SteamOven', 0, 0, 1)
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
@@ -172,13 +172,13 @@ describe('char+wengine test', () => {
           special: 0,
           assist: 0,
           chain: 0,
-          core: 6,
+          core: 6
         }),
         ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
         ownBuff.initial.atk.add(25),
         ownBuff.combat.atk.add(100),
         ownBuff.combat.atk_.add(0.08)
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
@@ -191,7 +191,7 @@ describe('char+wengine test', () => {
     [false, 'nonCrit', 2071.49, 14880.20606],
     [true, 'avg', 6696.093, 22320.30908],
     [true, 'crit', 7892.378, 22320.30908],
-    [true, 'nonCrit', 3107.236, 22320.30908],
+    [true, 'nonCrit', 3107.236, 22320.30908]
   ])(
     'calculate standard+anomaly damage, stunned: %o, critMode: %s',
     (isStunned, critMode, expectedStandardDmg, expectedAnomalyDmg) => {
@@ -208,7 +208,7 @@ describe('char+wengine test', () => {
             special: 0,
             assist: 0,
             chain: 0,
-            core: 6,
+            core: 6
           }),
           ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
 
@@ -231,7 +231,7 @@ describe('char+wengine test', () => {
         enemyDebuff.common.dmgInc_.add(0.1),
         enemyDebuff.common.dmgRed_.add(0.15),
         enemyDebuff.common.stun_.add(1.5),
-        enemyDebuff.common.unstun_.add(1),
+        enemyDebuff.common.unstun_.add(1)
       ]
       const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
       const anby = convert(ownTag, { et: 'own', src: 'Anby' })
@@ -277,7 +277,7 @@ describe('char+wengine test', () => {
           special: 0,
           assist: 0,
           chain: 0,
-          core: 6,
+          core: 6
         }),
         ...wengineTagMapNodeEntries('VortexRevolver', 60, 5, 1),
 
@@ -302,7 +302,7 @@ describe('char+wengine test', () => {
       enemyDebuff.common.dmgInc_.add(0.1),
       enemyDebuff.common.dmgRed_.add(0.15),
       enemyDebuff.common.stun_.add(1.5),
-      enemyDebuff.common.unstun_.add(1),
+      enemyDebuff.common.unstun_.add(1)
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
@@ -331,10 +331,10 @@ describe('disc2p test', () => {
           special: 0,
           assist: 0,
           chain: 0,
-          core: 0,
+          core: 0
         }),
         ...discTagMapNodeEntries({ atk: 100 }, { BranchBladeSong: 2 })
-      ),
+      )
     ]
     const calc = new Calculator(
       keys,
@@ -364,7 +364,7 @@ describe('team', () => {
           special: 0,
           assist: 0,
           chain: 0,
-          core: 0,
+          core: 0
         })
       ),
       ...withMember(
@@ -379,9 +379,9 @@ describe('team', () => {
           special: 0,
           assist: 0,
           chain: 0,
-          core: 0,
+          core: 0
         })
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(calc.compute(team.common.count.withSpecialty('attack')).val).toEqual(
@@ -410,7 +410,7 @@ describe('sheet', () => {
       'wengine',
       ...allWengineKeys,
       'disc',
-      ...allDiscSetKeys,
+      ...allDiscSetKeys
     ])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {

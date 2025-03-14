@@ -4,16 +4,16 @@ import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import type {
   DiscMainStatKey,
   DiscSetKey,
-  DiscSlotKey,
+  DiscSlotKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSlotKeys,
-  discSlotToMainStatKeys,
+  discSlotToMainStatKeys
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { DiscSetFilter, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -25,14 +25,14 @@ import {
   IconButton,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useCallback, useContext } from 'react'
 import { DiscLevelFilter } from './DiscLevelFilter'
 
 export function DiscFilter({
-  discsBySlot,
+  discsBySlot
 }: {
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
 }) {
@@ -64,7 +64,7 @@ export function DiscFilter({
 }
 function DiscTypo({
   discsBySlot,
-  slotKey,
+  slotKey
 }: {
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   slotKey: DiscSlotKey
@@ -83,7 +83,7 @@ function DiscFilterModal({
   discsBySlot,
   show,
   onClose,
-  disabled,
+  disabled
 }: {
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   show: boolean
@@ -114,7 +114,7 @@ function DiscFilterModal({
                 disabled={disabled}
                 onClick={() =>
                   database.optConfigs.set(optConfigId, {
-                    useEquipped: !optConfig.useEquipped,
+                    useEquipped: !optConfig.useEquipped
                   })
                 }
                 color={optConfig.useEquipped ? 'success' : 'secondary'}
@@ -131,7 +131,7 @@ function DiscFilterModal({
 
 function MainStatSelector({
   discsBySlot,
-  disabled,
+  disabled
 }: {
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   disabled?: boolean
@@ -140,12 +140,12 @@ function MainStatSelector({
   const { optConfigId, optConfig } = useContext(OptConfigContext)
   const discSlotBtns = (slotKey: '4' | '5' | '6') => {
     const mainKeysHandler = handleMultiSelect([
-      ...discSlotToMainStatKeys[slotKey],
+      ...discSlotToMainStatKeys[slotKey]
     ])
     const keysMap = {
       '4': optConfig.slot4 ?? [],
       '5': optConfig.slot5 ?? [],
-      '6': optConfig.slot6 ?? [],
+      '6': optConfig.slot6 ?? []
     } as Record<'4' | '5' | '6', DiscMainStatKey[]>
     const funcMap = {
       '4': (slot4: DiscMainStatKey[]) =>
@@ -153,7 +153,7 @@ function MainStatSelector({
       '5': (slot5: DiscMainStatKey[]) =>
         database.optConfigs.set(optConfigId, { slot5 }),
       '6': (slot6: DiscMainStatKey[]) =>
-        database.optConfigs.set(optConfigId, { slot6 }),
+        database.optConfigs.set(optConfigId, { slot6 })
     } as Record<'4' | '5' | '6', (slots: DiscMainStatKey[]) => void>
     return (
       <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>

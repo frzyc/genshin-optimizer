@@ -6,7 +6,7 @@ import {
   CharacterIcon,
   LightConeIcon,
   RelicIcon,
-  TeamsIcon,
+  TeamsIcon
 } from '@genshin-optimizer/sr/svgicons'
 import { Settings } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -25,7 +25,7 @@ import {
   Tooltip,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useState } from 'react'
@@ -43,7 +43,7 @@ const relics: ITab = {
   icon: <RelicIcon />,
   to: '/relics',
   value: 'relics',
-  textSuffix: <RelicsTab key="relicsAdd" />,
+  textSuffix: <RelicsTab key="relicsAdd" />
 }
 
 const lightCones: ITab = {
@@ -51,7 +51,7 @@ const lightCones: ITab = {
   icon: <LightConeIcon />,
   to: '/lightcones',
   value: 'lightcones',
-  textSuffix: <LightConesTab key="lightConeAdd" />,
+  textSuffix: <LightConesTab key="lightConeAdd" />
 }
 
 const characters: ITab = {
@@ -59,7 +59,7 @@ const characters: ITab = {
   icon: <CharacterIcon />,
   to: '/characters',
   value: 'characters',
-  textSuffix: <CharactersTab key="charAdd" />,
+  textSuffix: <CharactersTab key="charAdd" />
 }
 
 const teams: ITab = {
@@ -67,7 +67,7 @@ const teams: ITab = {
   icon: <TeamsIcon />,
   to: '/teams',
   value: 'teams',
-  textSuffix: <TeamsTab key="teamAdd" />,
+  textSuffix: <TeamsTab key="teamAdd" />
 }
 
 const settings: ITab = {
@@ -75,14 +75,14 @@ const settings: ITab = {
   icon: <Settings />,
   to: '/settings',
   value: 'settings',
-  textSuffix: <SettingsChip />,
+  textSuffix: <SettingsChip />
 }
 
 const optimize: ITab = {
   i18Key: 'tabs.optimize',
   icon: <CalculateIcon />,
   to: '/optimize',
-  value: 'optimize',
+  value: 'optimize'
 }
 
 function SettingsChip() {
@@ -125,7 +125,7 @@ const maincontent = [
   characters,
   ...(shouldShowDevComponents ? [teams] : []),
   optimize,
-  settings,
+  settings
 ] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
@@ -133,9 +133,9 @@ function HeaderContent({ anchor }: { anchor: string }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   const {
-    params: { currentTab },
+    params: { currentTab }
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
-    params: { currentTab: '' },
+    params: { currentTab: '' }
   }
   if (isMobile)
     return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
@@ -144,7 +144,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
 
 function DesktopHeader({
   anchor,
-  currentTab,
+  currentTab
 }: {
   anchor: string
   currentTab: string
@@ -165,18 +165,18 @@ function DesktopHeader({
           '& .MuiTab-root': {
             p: 1,
             minWidth: 'auto',
-            minHeight: 'auto',
+            minHeight: 'auto'
           },
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.5s ease',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(255,255,255,0.1)'
           },
           '& .Mui-selected': {
             backgroundImage: `linear-gradient(to top, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
             color: `${theme.palette.neutral100.main} !important`,
             textShadow:
-              '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
-          },
+              '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0'
+          }
         })}
       >
         <Tab
@@ -233,11 +233,11 @@ const mobileContent = [
   characters,
   ...(shouldShowDevComponents ? [teams] : []),
   optimize,
-  settings,
+  settings
 ] as const
 function MobileHeader({
   anchor,
-  currentTab,
+  currentTab
 }: {
   anchor: string
   currentTab: string
@@ -262,13 +262,13 @@ function MobileHeader({
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true // Better open performance on mobile.
           }}
           PaperProps={{
             sx: (theme) => ({
               // backgroundColor: 'neutral700.main',
-              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
-            }),
+              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`
+            })
           }}
         >
           <Tabs
@@ -279,16 +279,16 @@ function MobileHeader({
             TabIndicatorProps={{
               sx: {
                 left: 0,
-                width: '4px',
-              },
+                width: '4px'
+              }
             }}
             sx={(theme) => ({
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
                 color: `${theme.palette.neutral100.main} !important`,
                 textShadow:
-                  '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
-              },
+                  '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0'
+              }
             })}
           >
             <Tab
@@ -322,7 +322,7 @@ function MobileHeader({
           <Button
             variant="text"
             sx={(theme) => ({
-              color: `${theme.palette.neutral200.main} !important`,
+              color: `${theme.palette.neutral200.main} !important`
             })}
             component={RouterLink}
             to="/"

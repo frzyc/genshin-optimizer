@@ -2,14 +2,14 @@ import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
   ShowingAndSortOptionSelect,
   useInfScroll,
-  useTitle,
+  useTitle
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import { teamSortKeys } from '@genshin-optimizer/gi/db'
@@ -26,7 +26,7 @@ import {
   Grid,
   Skeleton,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
@@ -43,7 +43,7 @@ export default function PageTeams() {
     'page_teams',
     // Always load these 2 so character names are loaded for searching/sorting
     'sillyWisher_charNames',
-    'charNames_gen',
+    'charNames_gen'
   ])
   const database = useDatabase()
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -134,7 +134,7 @@ export default function PageTeams() {
     numShowing: TeamIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_teams',
+    namespace: 'page_teams'
   }
 
   const sortByButtonProps = {
@@ -142,7 +142,7 @@ export default function PageTeams() {
     value: sortType,
     onChange: (sortType) => database.displayTeam.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayTeam.set({ ascending }),
+    onChangeAsc: (ascending) => database.displayTeam.set({ ascending })
   }
 
   return (
@@ -166,7 +166,7 @@ export default function PageTeams() {
               // size="small"
               sx={{ height: '100%', flexGrow: 1 }}
               InputProps={{
-                sx: { height: '100%' },
+                sx: { height: '100%' }
               }}
             />
           </Box>

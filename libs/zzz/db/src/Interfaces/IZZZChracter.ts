@@ -4,7 +4,7 @@ import type {
   DiscSetKey,
   DiscSlotKey,
   FormulaKey,
-  WengineKey,
+  WengineKey
 } from '@genshin-optimizer/zzz/consts'
 import type { ICharacter } from '@genshin-optimizer/zzz/zood'
 

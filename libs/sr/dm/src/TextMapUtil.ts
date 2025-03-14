@@ -29,7 +29,7 @@ export const allLanguageKeys = [
   'pt',
   'ru',
   'th',
-  'vi',
+  'vi'
 ] as const
 export type LanguageKey = (typeof allLanguageKeys)[number]
 
@@ -48,5 +48,5 @@ export const languageMap: Record<LanguageKey, Record<string, string>> = {
   ru: TextMapRU,
   th: TextMapTH,
   // tr: TextMapTR,
-  vi: TextMapVI,
+  vi: TextMapVI
 } as const

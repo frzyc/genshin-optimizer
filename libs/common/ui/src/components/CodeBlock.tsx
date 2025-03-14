@@ -4,7 +4,7 @@ import { Box, IconButton, styled } from '@mui/material'
 
 const CodeArea = styled('code')(({ theme }) => ({
   '&:disabled': {
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent'
   },
   lineHeight: 1,
   width: '100%',
@@ -26,8 +26,8 @@ const CodeArea = styled('code')(({ theme }) => ({
     display: 'inline-block',
     paddingRight: '1em',
     opacity: 0.5,
-    color: 'white',
-  },
+    color: 'white'
+  }
 }))
 
 export function CodeBlock({ text }: { text: string }) {
@@ -62,7 +62,7 @@ export function CodeBlock({ text }: { text: string }) {
                 display: 'block',
                 // Makes it so wrapped lines start with some amount of indentation
                 paddingLeft: `${numSpaces * 7.5 + 20}px`,
-                textIndent: `-${numSpaces * 7.5 + 20}px`,
+                textIndent: `-${numSpaces * 7.5 + 20}px`
               }}
             >
               {l}

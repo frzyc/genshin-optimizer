@@ -3,7 +3,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  StyledInputBase,
+  StyledInputBase
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
@@ -16,7 +16,7 @@ import {
   Chip,
   Divider,
   Grid,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -47,7 +47,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const {
     databases,
     database: mainDB,
-    setDatabase,
+    setDatabase
   } = useContext(DatabaseContext)
   const database = databases[index]
   const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
@@ -127,7 +127,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
     <CardThemed
       sx={{
         height: '100%',
-        boxShadow: current ? '0px 0px 0px 2px green inset' : undefined,
+        boxShadow: current ? '0px 0px 0px 2px green inset' : undefined
       }}
     >
       <CardContent

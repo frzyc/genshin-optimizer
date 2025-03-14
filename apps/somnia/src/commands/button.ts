@@ -3,7 +3,7 @@ import {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
-  SlashCommandBuilder,
+  SlashCommandBuilder
 } from 'discord.js'
 
 export const slashcommand = new SlashCommandBuilder()

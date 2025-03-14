@@ -6,5 +6,5 @@ export * from './wengine'
 export type {
   CharacterDatum,
   DiscDatum,
-  WengineDatum,
+  WengineDatum
 } from './executors/gen-stats/executor'

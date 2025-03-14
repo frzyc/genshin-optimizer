@@ -2,7 +2,7 @@ import { assertUnreachable } from '@genshin-optimizer/common/util'
 import type { AnyNode, CalcResult } from '@genshin-optimizer/pando/engine'
 import {
   Calculator as BaseCalculator,
-  calculation,
+  calculation
 } from '@genshin-optimizer/pando/engine'
 import type { Member, Read, Sheet, Tag } from './read'
 import { reader } from './read'
@@ -73,7 +73,7 @@ export class Calculator<
       const { src, dst, sheet, q } = tag
       if (src && sheet && q)
         info.conds = merge(info.conds, {
-          [dst ?? 'All']: { [src]: { [sheet!]: { [q!]: val } } },
+          [dst ?? 'All']: { [src]: { [sheet!]: { [q!]: val } } }
         })
     }
     if (op === 'read')

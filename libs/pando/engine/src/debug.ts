@@ -4,7 +4,7 @@ import type {
   CalcResult,
   PreRead,
   ReRead,
-  TagCache,
+  TagCache
 } from './node'
 import { Calculator as BaseCalculator, map } from './node'
 import type { Tag, TagMapEntries, TagMapEntry } from './tag'
@@ -80,8 +80,8 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
           )}: ${nodeString(n, this.tagStr)}`,
           deps: [],
           isRead: true,
-          toJSON: metaToJSON(this.tagStr),
-        },
+          toJSON: metaToJSON(this.tagStr)
+        }
       }
     }
   }
@@ -110,10 +110,10 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       formula: `[${val}] ${nodeString(n, this.tagStr)}`,
       deps: [
         ...x.map((x) => x?.meta).filter((x) => !!x),
-        ...br.map((br) => br.meta),
+        ...br.map((br) => br.meta)
       ].flatMap((x) => (x.isRead ? [x] : x.deps)),
       isRead: n.op === 'read',
-      toJSON: metaToJSON(this.tagStr),
+      toJSON: metaToJSON(this.tagStr)
     }
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))

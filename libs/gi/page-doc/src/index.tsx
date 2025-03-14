@@ -3,7 +3,7 @@ import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
   allWeaponKeys,
-  charKeyToLocGenderedCharKey,
+  charKeyToLocGenderedCharKey
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { allStats } from '@genshin-optimizer/gi/stats'
@@ -18,7 +18,7 @@ import {
   Skeleton,
   Tab,
   Tabs,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense } from 'react'
 import ReactGA from 'react-ga4'
@@ -30,7 +30,7 @@ export default function PageDocumentation() {
   ReactGA.send({ hitType: 'pageview', page: '/doc' })
 
   const {
-    params: { currentTab },
+    params: { currentTab }
   } = useMatch('/doc/:currentTab') ?? { params: { currentTab: '' } }
 
   return (
@@ -286,7 +286,7 @@ function StatKeyPane() {
     'hydro_dmg_',
     'pyro_dmg_',
     'cryo_dmg_',
-    'dendro_dmg_',
+    'dendro_dmg_'
   ] as const
   const statKeysCode = `type StatKey\n  = ${statKeys
     .map((k) => `"${k}" //${tk(k)}${statPercent(k)}`)
@@ -303,7 +303,7 @@ function StatKeyPane() {
 function ArtifactSetKeyPane() {
   const { t } = useTranslation('artifactNames_gen')
   const artSetKeysCode = `type ArtifactSetKey\n  = ${[
-    ...new Set(allArtifactSetKeys),
+    ...new Set(allArtifactSetKeys)
   ]
     .sort()
     .map((k) => `"${k}" //${t(`artifactNames_gen:${k}`)}`)
@@ -322,7 +322,7 @@ function CharacterKeyPane() {
   const database = useDatabase()
   const { gender } = useDBMeta()
   const charKeysCode = `type CharacterKey\n  = ${[
-    ...new Set(allLocationCharacterKeys),
+    ...new Set(allLocationCharacterKeys)
   ]
     .sort()
     .map(

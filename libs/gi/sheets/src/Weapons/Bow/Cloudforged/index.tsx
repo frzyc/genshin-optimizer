@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -28,8 +28,8 @@ const eleMas = lookup(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    eleMas,
-  },
+    eleMas
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -43,16 +43,16 @@ const sheet: IWeaponSheet = {
         name: st('times', { count: stack }),
         fields: [
           {
-            node: eleMas,
+            node: eleMas
           },
           {
             text: stg('duration'),
             value: 10,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

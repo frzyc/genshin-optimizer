@@ -4,7 +4,7 @@ import { artifactDefIcon, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   CharacterKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
@@ -17,7 +17,7 @@ import GroupsIcon from '@mui/icons-material/Groups'
 import type { ReactNode } from 'react'
 import { ArtifactSetName, WeaponName } from '../components'
 const errHeader = {
-  title: <ColorText color="warning">ERROR</ColorText>,
+  title: <ColorText color="warning">ERROR</ColorText>
 }
 
 const talentMap = {
@@ -32,7 +32,7 @@ const talentMap = {
   passive3: 'Util. Pass.',
   ...Object.fromEntries(
     range(1, 6).map((i) => [`constellation${i}`, `Const. ${i}`])
-  ),
+  )
 }
 
 export function getDisplayHeader(
@@ -60,15 +60,13 @@ export function getDisplayHeader(
     if (namespace === 'artifact') {
       return {
         title: <ArtifactSetName setKey={key as ArtifactSetKey} />,
-        icon: <ImgIcon size={2} src={artifactDefIcon(key as ArtifactSetKey)} />,
+        icon: <ImgIcon size={2} src={artifactDefIcon(key as ArtifactSetKey)} />
       }
     } else if (namespace === 'weapon') {
       const asc = data.get(input.weapon.asc).value
       return {
         title: <WeaponName weaponKey={key as WeaponKey} />,
-        icon: (
-          <ImgIcon size={2} src={weaponAsset(key as WeaponKey, asc >= 2)} />
-        ),
+        icon: <ImgIcon size={2} src={weaponAsset(key as WeaponKey, asc >= 2)} />
       }
     }
   } else {
@@ -84,7 +82,7 @@ export function getDisplayHeader(
     return {
       icon: <ImgIcon size={2} src={talent.img} />,
       title: talent.name,
-      action: actionText,
+      action: actionText
     }
   }
   return errHeader
@@ -127,8 +125,8 @@ export function getDisplaySections(data: UIData): DisplaySections {
       [
         ...Object.values(teamBuff.total ?? {}),
         ...Object.values(teamBuff.premod ?? {}),
-        ...Object.values(teamBuff.enemy ?? {}),
-      ],
-    ],
+        ...Object.values(teamBuff.enemy ?? {})
+      ]
+    ]
   ] as DisplaySections
 }

@@ -8,7 +8,7 @@ describe('optimization', () => {
     sum(3, 4, 5, read0), // Multiple consts
     sum(3, sum(4, sum(5)), read1), // Nested consts
     cmpGE(2, 1, read0, read1), // Const branching
-    cmpGE(read1, 1, 3, 3), // Futile branching
+    cmpGE(read1, 1, 3, 3) // Futile branching
   ]
 
   test('flatten', () => {
@@ -16,7 +16,7 @@ describe('optimization', () => {
       sum(3, 4, 5, read0), // Does NOT combine multiple consts
       sum(3, 4, 5, read1), // Flatten only
       cmpGE(2, 1, read0, read1),
-      cmpGE(read1, 1, 3, 3),
+      cmpGE(read1, 1, 3, 3)
     ])
   })
   test('combineConst', () => {
@@ -24,7 +24,7 @@ describe('optimization', () => {
       sum(12, read0), // Does NOT combine multiple consts
       sum(3, sum(4, sum(5)), read1), // Ignore nested operations
       cmpGE(2, 1, read0, read1),
-      cmpGE(read1, 1, 3, 3),
+      cmpGE(read1, 1, 3, 3)
     ])
   })
   test('deduplicate', () => {
@@ -39,7 +39,7 @@ describe('optimization', () => {
       cmpGE(read0, read1, 0, 1),
       cmpGE(read0, read1, 0, 1),
       cmpGE(read1, read0, 0, 1),
-      cmpGE(read0, read1, 1, 0),
+      cmpGE(read0, read1, 1, 0)
     ])
     expect(s0).toBe(s1)
     expect(m0).toBe(m1)

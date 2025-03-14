@@ -3,20 +3,20 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import {
   artifactAsset,
   characterAsset,
   imgAssets,
-  weaponAsset,
+  weaponAsset
 } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
   ArtifactData,
   ICachedArtifact,
-  ICachedWeapon,
+  ICachedWeapon
 } from '@genshin-optimizer/gi/db'
 import type { CharacterContextObj } from '@genshin-optimizer/gi/db-ui'
 import {
@@ -25,12 +25,12 @@ import {
   useDBMeta,
   useDatabase,
   useTeam,
-  useTeamChar,
+  useTeamChar
 } from '@genshin-optimizer/gi/db-ui'
 import {
   getCharEle,
   getCharStat,
-  weaponHasRefinement,
+  weaponHasRefinement
 } from '@genshin-optimizer/gi/stats'
 import { ElementIcon, SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import { getLevelString } from '@genshin-optimizer/gi/util'
@@ -43,7 +43,7 @@ import {
   Button,
   CardActionArea,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -57,7 +57,7 @@ import { TeamDelModal } from './TeamDelModal'
 export function TeamCard({
   teamId,
   onClick,
-  bgt,
+  bgt
 }: {
   teamId: string
   bgt?: 'light' | 'dark'
@@ -73,20 +73,20 @@ export function TeamCard({
       bgt={bgt}
       sx={{
         height: '100%',
-        border: '1px rgba(200,200,200,0.4) solid',
+        border: '1px rgba(200,200,200,0.4) solid'
       }}
     >
       <Box
         sx={{
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
         }}
       >
         <Box
           sx={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'row'
           }}
         >
           <Button
@@ -97,14 +97,14 @@ export function TeamCard({
             sx={{
               borderTopRightRadius: 0,
               borderBottomRightRadius: 0,
-              borderBottomLeftRadius: 0,
+              borderBottomLeftRadius: 0
             }}
           >
             <Typography
               sx={{
                 display: 'flex',
                 gap: 1,
-                alignItems: 'center',
+                alignItems: 'center'
               }}
               variant="h6"
             >
@@ -133,7 +133,7 @@ export function TeamCard({
             sx={{
               borderTopLeftRadius: 0,
               borderBottomRightRadius: 0,
-              borderBottomLeftRadius: 0,
+              borderBottomLeftRadius: 0
             }}
           >
             <DeleteForeverIcon />
@@ -141,7 +141,7 @@ export function TeamCard({
         </Box>
         <Box
           sx={{
-            marginTop: 'auto',
+            marginTop: 'auto'
           }}
         >
           {loadoutData.map((loadoutDatum, i) => {
@@ -154,8 +154,8 @@ export function TeamCard({
                 sx={{
                   border: '1px rgba(200,200,200,0.3) solid',
                   '&:hover': {
-                    border: '1px rgba(200,200,200,0.8) solid',
-                  },
+                    border: '1px rgba(200,200,200,0.8) solid'
+                  }
                 }}
               >
                 {characterKey ? (
@@ -178,7 +178,7 @@ export function TeamCard({
                         justifyContent: 'center',
                         // py: '12.5%',
                         height: 120,
-                        backgroundColor: 'neutral600.main',
+                        backgroundColor: 'neutral600.main'
                       }}
                     >
                       <Box
@@ -193,7 +193,7 @@ export function TeamCard({
                           my: '15px',
                           height: 90,
                           opacity: 0.7,
-                          mx: 'auto',
+                          mx: 'auto'
                         }}
                       />
                     </Box>
@@ -220,12 +220,12 @@ const zVals = {
   bannerFilter: 1,
   characterIcon: 2,
   darkDRop: 3,
-  other: 4,
+  other: 4
 }
 function CharacterArea({
   characterKey,
   teamId,
-  teamCharId,
+  teamCharId
 }: {
   characterKey: CharacterKey
   teamId: string
@@ -264,7 +264,7 @@ function CharacterArea({
   const characterContextObj: CharacterContextObj | undefined = useMemo(
     () =>
       character && {
-        character,
+        character
       },
     [character]
   )
@@ -273,7 +273,7 @@ function CharacterArea({
       data &&
       teamData && {
         data,
-        teamData,
+        teamData
       },
     [data, teamData]
   )
@@ -304,8 +304,8 @@ function CharacterArea({
                 backgroundImage: `url(${banner})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                zIndex: zVals.banner,
-              },
+                zIndex: zVals.banner
+              }
             }}
           >
             {/* Gradient + filter */}
@@ -322,7 +322,7 @@ function CharacterArea({
                 )}, ${colorToRgbaString(
                   hexToColor(theme.palette.neutral600.main as string)!,
                   0.4
-                )} 100% )`,
+                )} 100% )`
               })}
             />
             {/* Bottom Gradient */}
@@ -336,7 +336,7 @@ function CharacterArea({
                 background: `linear-gradient(to top, ${colorToRgbaString(
                   hexToColor(theme.palette.neutral600.main as string)!,
                   0.9
-                )}, rgba(0,0,0,0) 25% )`,
+                )}, rgba(0,0,0,0) 25% )`
               })}
             />
             {/* Left */}
@@ -345,7 +345,7 @@ function CharacterArea({
                 height: 120,
                 width: 120,
                 position: 'absolute',
-                zIndex: zVals.other,
+                zIndex: zVals.other
               }}
             >
               {character && (
@@ -355,7 +355,7 @@ function CharacterArea({
                     lineHeight: 1,
                     bottom: 0,
                     p: 0.5,
-                    textShadow: '0 0 5px black',
+                    textShadow: '0 0 5px black'
                   }}
                 >
                   {getLevelString(character.level, character.ascension)}
@@ -369,7 +369,7 @@ function CharacterArea({
                     bottom: 0,
                     right: 0,
                     p: 0.5,
-                    textShadow: '0 0 5px black',
+                    textShadow: '0 0 5px black'
                   }}
                 >
                   C{character.constellation}
@@ -383,7 +383,7 @@ function CharacterArea({
                     top: 0,
                     left: 0,
                     p: 0.5,
-                    textShadow: '0 0 5px black',
+                    textShadow: '0 0 5px black'
                   }}
                 >
                   <ColorText color={element}>
@@ -399,7 +399,7 @@ function CharacterArea({
               sx={{
                 height: 120,
                 width: 120,
-                zIndex: zVals.characterIcon,
+                zIndex: zVals.characterIcon
               }}
             />
             {/* Right */}
@@ -414,7 +414,7 @@ function CharacterArea({
                 width: '100%',
                 minWidth: 0,
                 justifyContent: 'space-between',
-                zIndex: zVals.other,
+                zIndex: zVals.other
               }}
             >
               <Typography
@@ -423,7 +423,7 @@ function CharacterArea({
                   display: 'flex',
                   gap: 1,
                   alignItems: 'center',
-                  textShadow: '0 0 5px black',
+                  textShadow: '0 0 5px black'
                 }}
               >
                 <PersonIcon />
@@ -436,7 +436,7 @@ function CharacterArea({
                   display: 'flex',
                   gap: 1,
                   alignItems: 'center',
-                  textShadow: '0 0 5px black',
+                  textShadow: '0 0 5px black'
                 }}
               >
                 <CheckroomIcon />
@@ -461,7 +461,7 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
         height: '100%',
         display: 'flex',
         flexDirection: 'horizontal',
-        boxShadow: `0 0 10px rgba(0,0,0,0.4)`,
+        boxShadow: `0 0 10px rgba(0,0,0,0.4)`
       }}
     >
       <Box
@@ -477,7 +477,7 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-evenly',
-          color: 'neutral200.main',
+          color: 'neutral200.main'
         }}
       >
         <Typography sx={{}}>
@@ -507,7 +507,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
         display: 'flex',
         flexDirection: 'horizontal',
         boxShadow: `0 0 10px rgba(0,0,0,0.4)`,
-        flexGrow: 1,
+        flexGrow: 1
       }}
     >
       <Box
@@ -515,7 +515,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
           Width: '50px',
           minWidth: '50px',
           height: '50px',
-          position: 'relative',
+          position: 'relative'
         }}
       >
         {processedSetNum.length === 2 ? (
@@ -532,7 +532,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
           flexGrow: 1,
           position: 'relative',
           justifyContent: 'space-around',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         {Object.entries(mains)
@@ -561,7 +561,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
                         sx={{
                           display: 'flex',
                           gap: 1,
-                          alignItems: 'center',
+                          alignItems: 'center'
                         }}
                       >
                         {slotIcon}
@@ -571,7 +571,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
                         sx={{
                           display: 'flex',
                           gap: 1,
-                          alignItems: 'center',
+                          alignItems: 'center'
                         }}
                       >
                         {statIcon}
@@ -606,7 +606,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
           left: 0,
           Width: '50px',
           height: '50px',
-          clipPath: `polygon(0 0, 0 100%, 100% 0)`,
+          clipPath: `polygon(0 0, 0 100%, 100% 0)`
         }}
         src={artifactAsset(set1, 'flower')}
       />
@@ -619,7 +619,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
           left: 0,
           Width: '50px',
           height: '50px',
-          clipPath: `polygon(100% 100%, 0 100%, 100% 0)`,
+          clipPath: `polygon(100% 100%, 0 100%, 100% 0)`
         }}
         src={artifactAsset(set2, 'flower')}
       />
@@ -637,7 +637,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
             hexToColor(theme.palette.primary.main as string)!,
             0.4
           ),
-          borderRadius: '100%',
+          borderRadius: '100%'
         })}
       >
         2
@@ -655,7 +655,7 @@ function Set22({ sets }: { sets: ArtifactSetKey[] }) {
             hexToColor(theme.palette.primary.main as string)!,
             0.4
           ),
-          borderRadius: '100%',
+          borderRadius: '100%'
         })}
       >
         2
@@ -678,7 +678,7 @@ function Set4({ set, num }: { set: ArtifactSetKey; num: number }) {
             hexToColor(theme.palette.primary.main as string)!,
             0.4
           ),
-          borderRadius: '100%',
+          borderRadius: '100%'
         })}
       >
         {num}

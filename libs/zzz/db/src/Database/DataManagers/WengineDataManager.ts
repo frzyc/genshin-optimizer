@@ -2,7 +2,7 @@ import type { CharacterKey, WengineKey } from '@genshin-optimizer/zzz/consts'
 import {
   allLocationKeys,
   allWengineKeys,
-  wengineMaxLevel,
+  wengineMaxLevel
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { IWengine } from '@genshin-optimizer/zzz/zood'
@@ -42,7 +42,7 @@ export class WengineDataManager extends DataManager<
       modification,
       phase,
       location,
-      lock,
+      lock
     }
   }
   override toCache(
@@ -74,7 +74,7 @@ export class WengineDataManager extends DataManager<
       if (prevWengine)
         super.setCached(prevWengine.id, {
           ...prevWengine,
-          location: prevChar?.key ?? '',
+          location: prevChar?.key ?? ''
         })
       else if (prevChar?.key) prevWengine = undefined
 
@@ -154,5 +154,5 @@ export const initialWengine = (key: WengineKey): ICachedWengine => ({
   modification: 0,
   phase: 1,
   location: '',
-  lock: false,
+  lock: false
 })

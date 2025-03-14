@@ -2,14 +2,14 @@ import type {
   CondKey,
   DiscSetKey,
   DiscSlotKey,
-  FormulaKey,
+  FormulaKey
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import type { BuildResult } from './common'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,
-  ParentMessage,
+  ParentMessage
 } from './parentWorker'
 
 export interface ProgressResult {
@@ -52,7 +52,7 @@ export class Solver {
 
     // Spawn a parent worker to compile nodes, split/filter discs and spawn child workers for calculating results
     this.worker = new Worker(new URL('./parentWorker.ts', import.meta.url), {
-      type: 'module',
+      type: 'module'
     })
   }
 
@@ -84,7 +84,7 @@ export class Solver {
         numWorkers: this.numWorkers,
         formulaKey: this.formulaKey,
         setFilter2: this.setFilter2,
-        setFilter4: this.setFilter4,
+        setFilter4: this.setFilter4
       }
       this.worker.postMessage(message)
     })
@@ -94,7 +94,7 @@ export class Solver {
 
   async terminate() {
     const message: ParentCommandTerminate = {
-      command: 'terminate',
+      command: 'terminate'
     }
     this.worker.postMessage(message)
     // Wait for child workers to finish terminating

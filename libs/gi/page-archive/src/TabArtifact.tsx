@@ -23,14 +23,14 @@ import {
   TableRow,
   TextField,
   ToggleButton,
-  ToggleButtonGroup,
+  ToggleButtonGroup
 } from '@mui/material'
 import {
   Suspense,
   useCallback,
   useDeferredValue,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 const maxRarities = [5, 4, 3] as const
@@ -68,10 +68,10 @@ export default function TabArtifact() {
         .t(`artifactNames_gen:${setKey}`)
         .toLocaleLowerCase()
       const set4KeyDesc = t('setEffects.4', {
-        ns: `artifact_${setKey}_gen`,
+        ns: `artifact_${setKey}_gen`
       }).toLocaleLowerCase()
       const set2KeyDesc = t('setEffects.2', {
-        ns: `artifact_${setKey}_gen`,
+        ns: `artifact_${setKey}_gen`
       }).toLocaleLowerCase()
       if (
         searchTermDeferred &&
@@ -109,7 +109,7 @@ export default function TabArtifact() {
               value={r}
               onClick={() =>
                 artifactOptionDispatch({
-                  rarity: handleRarity(artifact.rarity, r),
+                  rarity: handleRarity(artifact.rarity, r)
                 })
               }
             >
@@ -129,7 +129,7 @@ export default function TabArtifact() {
               <InputAdornment position="start">
                 <SearchIcon />
               </InputAdornment>
-            ),
+            )
           }}
         />
       </CardContent>

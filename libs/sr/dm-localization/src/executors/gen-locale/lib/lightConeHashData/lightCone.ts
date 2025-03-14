@@ -10,6 +10,6 @@ export const lightConeHashData = {
     Destruction: '10116566940563878966',
     Harmony: '232967775503330328',
     TheHunt: '4367365179576232430',
-    Remembrance: '14203301811540184423',
-  },
+    Remembrance: '14203301811540184423'
+  }
 }

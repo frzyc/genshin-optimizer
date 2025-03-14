@@ -29,6 +29,6 @@ export function entriesForRelic(
           cmpGE(relicCount, numRequired, 'unique', '')
         )
       )
-    ),
+    )
   ]
 }

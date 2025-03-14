@@ -24,16 +24,16 @@ const [shield_dmg_, shield_dmg_inactive] = nonStackBuff(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    eleMas,
+    eleMas
   },
   teamBuff: {
     premod: {
-      all_dmg_: shield_dmg_,
+      all_dmg_: shield_dmg_
     },
     nonStacking: {
-      starcaller: nonstackWrite,
-    },
-  },
+      starcaller: nonstackWrite
+    }
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -42,9 +42,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: eleMas,
-        },
-      ],
+          node: eleMas
+        }
+      ]
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -56,15 +56,15 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: shield_dmg_,
+              node: shield_dmg_
             },
             {
-              node: shield_dmg_inactive,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: shield_dmg_inactive
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

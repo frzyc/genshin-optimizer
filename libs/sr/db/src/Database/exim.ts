@@ -10,7 +10,7 @@ function newCounter<T>(): ImportResultCounter<T> {
     upgraded: [],
     remove: [],
     notInImport: 0,
-    beforeMerge: 0,
+    beforeMerge: 0
   }
 }
 
@@ -26,7 +26,7 @@ export function newImportResult(
     lightCones: newCounter(),
     characters: newCounter(),
     keepNotInImport,
-    ignoreDups,
+    ignoreDups
   }
 }
 

@@ -31,7 +31,7 @@ export class DataManager<
     const key = this.dataKey
     sro[key] = Object.entries(this.data).map(([id, value]) => ({
       ...this.deCache(value),
-      id,
+      id
     }))
   }
   importSROD(sro: ISrObjectDescription & ISroDatabase, _result: ImportResult) {

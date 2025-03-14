@@ -191,7 +191,7 @@ const data = {
   Yelan,
   Yoimiya,
   YunJin,
-  Zhongli,
+  Zhongli
 } as const
 
 export function portrait(charKey: CharacterKey, gender: GenderKey) {

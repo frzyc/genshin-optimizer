@@ -14,7 +14,7 @@ export function dumpWengines(fileDir: string) {
       desc2: processText(wengineData.desc2),
       desc3: processText(wengineData.desc3),
       phase: wengineData.phase[0].name,
-      phaseDescs: wengineData.phase.map((phase) => processText(phase.desc)),
+      phaseDescs: wengineData.phase.map((phase) => processText(phase.desc))
     })
   })
   dumpFile(`${fileDir}/wengineNames_gen.json`, wengineNames)

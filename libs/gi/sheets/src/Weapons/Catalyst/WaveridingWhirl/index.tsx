@@ -6,7 +6,7 @@ import {
   prod,
   subscript,
   sum,
-  tally,
+  tally
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -33,8 +33,8 @@ const hp_ = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    hp_,
-  },
+    hp_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -48,22 +48,22 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: hp_,
+              node: hp_
             },
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
+              unit: 's'
             },
             {
               text: stg('cd'),
               value: 15,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

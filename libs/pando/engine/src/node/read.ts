@@ -58,8 +58,8 @@ export class TypedRead<T extends Tag> implements BaseRead {
       getOwnPropertyDescriptor: (old, p: T[C] & string) => ({
         enumerable: true,
         configurable: true,
-        get: () => old[p] ?? (old[p] = transform(this.with(cat, p), p)),
-      }),
+        get: () => old[p] ?? (old[p] = transform(this.with(cat, p), p))
+      })
     })
   }
   toEntry<V>(value: V): TagMapEntry<V, T> {

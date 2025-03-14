@@ -78,54 +78,54 @@ export const theme = createTheme({
   ...commonTheme,
   typography: {
     button: {
-      textTransform: 'none',
+      textTransform: 'none'
     },
-    fontFamily: '"Inter", sans-serif',
+    fontFamily: '"Inter", sans-serif'
   },
   palette: {
     ...commonTheme.palette,
     contentZzz: commonTheme.palette.augmentColor({
       color: { main: '#2B364D', contrastText: '#fff' },
-      name: 'contentZzz',
+      name: 'contentZzz'
     }),
     fire: commonTheme.palette.augmentColor({
       color: { main: '#FF5623', contrastText: '#fff' },
-      name: 'fire',
+      name: 'fire'
     }),
     ice: commonTheme.palette.augmentColor({
       color: { main: '#95EAE9', contrastText: '#fff' },
-      name: 'ice',
+      name: 'ice'
     }),
     electric: commonTheme.palette.augmentColor({
       color: { main: '#0177FF', contrastText: '#fff' },
-      name: 'electric',
+      name: 'electric'
     }),
     frost: commonTheme.palette.augmentColor({
       color: { main: '#719EF8', contrastText: '#fff' },
-      name: 'frost',
+      name: 'frost'
     }),
     physical: commonTheme.palette.augmentColor({
       color: { main: '#EDCC2C', contrastText: '#fff' },
-      name: 'physical',
+      name: 'physical'
     }),
     ether: commonTheme.palette.augmentColor({
       color: { main: '#FE427E', contrastText: '#fff' },
-      name: 'ether',
+      name: 'ether'
     }),
     rankS: commonTheme.palette.augmentColor({
       color: { main: '#FF9100', contrastText: '#fff' },
-      name: 'rankS',
+      name: 'rankS'
     }),
     rankA: commonTheme.palette.augmentColor({
       color: { main: '#E900FF', contrastText: '#fff' },
-      name: 'rankA',
+      name: 'rankA'
     }),
     rankB: commonTheme.palette.augmentColor({
       color: { main: '#14a9fe', contrastText: '#fff' },
-      name: 'rankB',
-    }),
+      name: 'rankB'
+    })
   },
   shape: {
-    borderRadius: 20,
-  },
+    borderRadius: 20
+  }
 })

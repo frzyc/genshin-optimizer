@@ -4,7 +4,7 @@ import { OptimizationTargetSelector } from '@genshin-optimizer/zzz/formula-ui'
 
 export function OptSelector({
   character: { key: characterKey },
-  charOpt: { target },
+  charOpt: { target }
 }: {
   charOpt: CharOpt
   character: ICachedCharacter
@@ -15,7 +15,7 @@ export function OptSelector({
       optTarget={target}
       setOptTarget={(tag) =>
         database.charOpts.set(characterKey, {
-          target: tag,
+          target: tag
         })
       }
       buttonProps={{ fullWidth: true, sx: { height: '100%' } }}

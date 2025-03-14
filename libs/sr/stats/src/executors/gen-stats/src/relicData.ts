@@ -7,14 +7,14 @@ import {
   type RelicRarityKey,
   type RelicSetKey,
   type RelicSubStatKey,
-  type StatKey,
+  type StatKey
 } from '@genshin-optimizer/sr/consts'
 import {
   relicMainAffixConfig,
   relicSetIdMap,
   relicSetSkillConfig_bySet,
   relicSubAffixConfig,
-  statKeyMap,
+  statKeyMap
 } from '@genshin-optimizer/sr/dm'
 
 type SubStat = {
@@ -58,14 +58,14 @@ export function RelicData(): RelicData {
           Property,
           BaseValue: { Value: base },
           StepValue: { Value: step },
-          StepNum: numSteps,
+          StepNum: numSteps
         }) => [
           statKeyMap[Property],
           {
             base,
             step,
-            numSteps,
-          },
+            numSteps
+          }
         ]
       )
     )
@@ -84,16 +84,16 @@ export function RelicData(): RelicData {
             ({
               Property,
               BaseValue: { Value: base },
-              LevelAdd: { Value: add },
+              LevelAdd: { Value: add }
             }) => [
               statKeyMap[Property],
               {
                 base,
-                add,
-              },
+                add
+              }
             ]
           )
-      ),
+      )
     ])
   )
 
@@ -115,10 +115,10 @@ export function RelicData(): RelicData {
                 // Map to desired object shape
                 .map((property) => [property.key, property.Value.Value])
             ),
-            otherStats: config.AbilityParamList.map((param) => param.Value),
+            otherStats: config.AbilityParamList.map((param) => param.Value)
           })
-        ),
-      },
+        )
+      }
     ])
   )
 
@@ -131,7 +131,7 @@ export function RelicData(): RelicData {
   const data = {
     sub,
     main,
-    ...relicSetData,
+    ...relicSetData
   }
 
   return data

@@ -4,12 +4,12 @@ import {
   CardThemed,
   ModalWrapper,
   NextImage,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,
-  LocationCharacterKey,
+  LocationCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -17,7 +17,7 @@ import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import {
   getCharStat,
   getWeaponStat,
-  weaponHasRefinement,
+  weaponHasRefinement
 } from '@genshin-optimizer/gi/stats'
 import { computeUIData } from '@genshin-optimizer/gi/uidata'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -33,7 +33,7 @@ import {
   Grid,
   IconButton,
   ListItem,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useCallback, useContext, useMemo } from 'react'
 import { DataContext } from '../../context'
@@ -47,7 +47,7 @@ import {
   WeaponDesc,
   WeaponName,
   WeaponPassiveDesc,
-  WeaponPassiveName,
+  WeaponPassiveName
 } from './WeaponTrans'
 
 type WeaponStatsEditorCardProps = {
@@ -60,7 +60,7 @@ export function WeaponEditor({
   weaponId: propWeaponId,
   footer = false,
   onClose,
-  extraButtons,
+  extraButtons
 }: WeaponStatsEditorCardProps) {
   const { data } = useContext(DataContext)
 
@@ -73,7 +73,7 @@ export function WeaponEditor({
     ascension = 0,
     lock,
     location = '',
-    id,
+    id
   } = weapon ?? {}
   const weaponSheet = key && getWeaponSheet(key)
   const weaponStat = key && getWeaponStat(key)
@@ -137,7 +137,7 @@ export function WeaponEditor({
                           maxWidth: 256,
                           width: '100%',
                           height: 'auto',
-                          borderRadius: 1,
+                          borderRadius: 1
                         }}
                       />
                       <IconButton
@@ -149,7 +149,7 @@ export function WeaponEditor({
                           position: 'absolute',
                           right: 0,
                           bottom: 0,
-                          zIndex: 2,
+                          zIndex: 2
                         }}
                       >
                         {lock ? <Lock /> : <LockOpen />}
@@ -228,7 +228,7 @@ export function WeaponEditor({
                       {[
                         input.weapon.main,
                         input.weapon.sub,
-                        input.weapon.sub2,
+                        input.weapon.sub2
                       ].map((node) => {
                         const n = weaponUIData.get(node)
                         if (n.isEmpty || !n.value) return null
@@ -260,7 +260,7 @@ export function WeaponEditor({
                   filter={filter}
                   autoCompleteProps={{
                     getOptionDisabled: (t) => !t.key,
-                    disableClearable: true,
+                    disableClearable: true
                   }}
                 />
               </Grid>

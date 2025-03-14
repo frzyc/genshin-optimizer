@@ -1,19 +1,19 @@
 import {
   CardThemed,
   DropdownButton,
-  TextFieldLazy,
+  TextFieldLazy
 } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
-  InfusionAuraElementKey,
+  InfusionAuraElementKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allAmpReactionKeys,
   allMultiOptHitModeKeys,
   allowedAdditiveReactions,
-  allowedAmpReactions,
+  allowedAmpReactions
 } from '@genshin-optimizer/gi/consts'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import { CharacterContext } from '@genshin-optimizer/gi/db-ui'
@@ -23,7 +23,7 @@ import {
   AmpReactionModeText,
   DataContext,
   StatEditorList,
-  infusionVals,
+  infusionVals
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { allInputPremodKeys } from '@genshin-optimizer/gi/wr'
@@ -42,7 +42,7 @@ import {
   MenuItem,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -62,7 +62,7 @@ export default function MTargetEditor({
   rank,
   maxRank,
   setTargetIndex,
-  onDup,
+  onDup
 }: {
   customTarget: CustomTarget
   setCustomTarget: (t: CustomTarget) => void
@@ -74,7 +74,7 @@ export default function MTargetEditor({
 }) {
   const { t } = useTranslation(['page_character', 'loadout'])
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const {
@@ -84,7 +84,7 @@ export default function MTargetEditor({
     reaction,
     infusionAura,
     bonusStats,
-    description,
+    description
   } = customTarget
 
   const [collapse, setcollapse] = useState(true)
@@ -131,7 +131,7 @@ export default function MTargetEditor({
         boxShadow: '0 0 10px black',
         position: 'sticky',
         bottom: `10px`,
-        zIndex: 1000,
+        zIndex: 1000
       }}
     >
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
@@ -142,7 +142,7 @@ export default function MTargetEditor({
             gap: 1,
             height: '100%',
             py: 1,
-            alignItems: 'center',
+            alignItems: 'center'
           }}
           onClick={() => setcollapse((c) => !c)}
         >
@@ -159,12 +159,12 @@ export default function MTargetEditor({
                   ? t('loadout:mTargetEditor.rankMobile')
                   : t('loadout:mTargetEditor.rank')}
               </InputAdornment>
-            ),
+            )
           }}
           inputProps={{
             sx: { width: '2em' },
             min: 1,
-            max: maxRank,
+            max: maxRank
           }}
           type="number"
           value={rank.toString()}
@@ -189,10 +189,10 @@ export default function MTargetEditor({
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">x</InputAdornment>
-                  ),
+                  )
                 }}
                 inputProps={{
-                  sx: { width: '2em' },
+                  sx: { width: '2em' }
                 }}
                 type="number"
                 value={weight.toString()}
@@ -206,7 +206,7 @@ export default function MTargetEditor({
                     ...customTarget,
                     path,
                     reaction: undefined,
-                    infusionAura: undefined,
+                    infusionAura: undefined
                   })
                 }
                 showEmptyTargets
@@ -217,8 +217,8 @@ export default function MTargetEditor({
                     'bonusStats',
                     'custom',
                     'character',
-                    'teamBuff',
-                  ],
+                    'teamBuff'
+                  ]
                 }}
               />
               {node && (
@@ -273,7 +273,7 @@ export default function MTargetEditor({
                                 setCustomTarget({
                                   ...customTarget,
                                   infusionAura: key ? key : undefined,
-                                  reaction: undefined,
+                                  reaction: undefined
                                 })
                               }
                             >
@@ -311,7 +311,7 @@ function ReactionDropdown({
   node,
   reaction,
   setReactionMode,
-  infusionAura,
+  infusionAura
 }: {
   node: CalcResult
   reaction?: AmpReactionKey | AdditiveReactionKey
@@ -332,8 +332,8 @@ function ReactionDropdown({
       ...(allowedAmpReactions[ele] ?? []),
       ...(allowedAmpReactions[infusionAura ?? ''] ?? []),
       ...(allowedAdditiveReactions[ele] ?? []),
-      ...(allowedAdditiveReactions[infusionAura ?? ''] ?? []),
-    ]),
+      ...(allowedAdditiveReactions[infusionAura ?? ''] ?? [])
+    ])
   ]
   const title = reaction ? (
     ([...allAmpReactionKeys] as string[]).includes(reaction) ? (

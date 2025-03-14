@@ -1,7 +1,7 @@
 'use client'
 import type {
   DataManagerBase,
-  Database,
+  Database
 } from '@genshin-optimizer/common/database'
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { useEffect, useMemo } from 'react'

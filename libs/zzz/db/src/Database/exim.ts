@@ -10,7 +10,7 @@ function newCounter<T>(): ImportResultCounter<T> {
     upgraded: [],
     remove: [],
     notInImport: 0,
-    beforeMerge: 0,
+    beforeMerge: 0
   }
 }
 
@@ -27,7 +27,7 @@ export function newImportResult(
     // wengines: newCounter(),
     characters: newCounter(),
     keepNotInImport,
-    ignoreDups,
+    ignoreDups
   }
 }
 

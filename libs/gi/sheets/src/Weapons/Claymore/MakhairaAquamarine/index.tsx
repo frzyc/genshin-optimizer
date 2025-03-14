@@ -6,7 +6,7 @@ import {
   percent,
   prod,
   subscript,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -32,17 +32,17 @@ const data = dataObjForWeaponSheet(
   key,
   {
     total: {
-      atk: selfAtk,
+      atk: selfAtk
     },
     teamBuff: {
       total: {
-        atk: teamAtk,
-      },
-    },
+        atk: teamAtk
+      }
+    }
   },
   {
     selfAtk,
-    teamAtkDisp,
+    teamAtkDisp
   }
 )
 
@@ -52,9 +52,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: selfAtk,
-        },
-      ],
+          node: selfAtk
+        }
+      ]
     },
     {
       header: headerTemplate(key, st('teamBuff')),
@@ -63,11 +63,11 @@ const sheet: IWeaponSheet = {
         {
           node: infoMut(teamAtkDisp, {
             path: 'atk',
-            isTeamBuff: true,
-          }),
-        },
-      ],
-    },
-  ],
+            isTeamBuff: true
+          })
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -9,6 +9,6 @@ const data = {
   anomaly,
   defense,
   stun,
-  support,
+  support
 } as const
 export default data

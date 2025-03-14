@@ -7,18 +7,18 @@ import {
   max,
   prod,
   read,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   DiscSetKey,
-  DiscSlotKey,
+  DiscSlotKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
   allWengineKeys,
   getDiscMainStatVal,
-  getDiscSubStatBaseVal,
+  getDiscSubStatBaseVal
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc, ICachedWengine } from '@genshin-optimizer/zzz/db'
 import { Read, type Calculator, type Tag } from '@genshin-optimizer/zzz/formula'
@@ -57,7 +57,7 @@ export function optimize(
     ...statFilters.map(({ tag, isMax }) =>
       // Invert max constraints for pruning
       isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
-    ),
+    )
     // other calcs (graph, etc) *go in* `nodes.push` below
   ]
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
@@ -102,7 +102,7 @@ export function optimize(
       discsBySlot['3'].map(convertDiscToStats),
       discsBySlot['4'].map(convertDiscToStats),
       discsBySlot['5'].map(convertDiscToStats),
-      discsBySlot['6'].map(convertDiscToStats),
+      discsBySlot['6'].map(convertDiscToStats)
     ],
     minimum: [
       -Infinity, // opt-target itself is also used as a min constraint
@@ -111,11 +111,11 @@ export function optimize(
         filter.isMax ? filter.value * -1 : filter.value
       ),
       2, // setFilter2
-      4, // setFilter4
+      4 // setFilter4
     ],
     numWorkers,
     topN: 10, // TODO
-    setProgress,
+    setProgress
   })
 }
 
@@ -129,10 +129,10 @@ function convertDiscToStats(disc: ICachedDisc): Candidate<string> {
         .filter(({ key, upgrades }) => key && upgrades)
         .map(({ key, upgrades }) => [
           key,
-          getDiscSubStatBaseVal(key, rarity) * upgrades,
+          getDiscSubStatBaseVal(key, rarity) * upgrades
         ])
     ),
-    [setKey]: 1,
+    [setKey]: 1
   } as Candidate<string>
 }
 
@@ -143,6 +143,6 @@ function convertWengineToStats(wengine: ICachedWengine): Candidate<string> {
     lvl,
     modification,
     phase,
-    [key]: 1,
+    [key]: 1
   } as Candidate<string>
 }

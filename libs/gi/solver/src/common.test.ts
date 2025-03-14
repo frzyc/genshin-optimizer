@@ -2,7 +2,7 @@ import { cartesian, objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   type ArtifactSetKey,
-  type ArtifactSlotKey,
+  type ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusion } from '@genshin-optimizer/gi/db'
 import type { OptNode } from '@genshin-optimizer/gi/wr'
@@ -11,7 +11,7 @@ import {
   precompute,
   prod,
   sum,
-  threshold,
+  threshold
 } from '@genshin-optimizer/gi/wr'
 import type { ArtifactBuildData, ArtifactsBySlot } from './common'
 import { artSetPerm, exclusionToAllowed, pruneAll } from './common'
@@ -33,13 +33,13 @@ describe('common.ts', () => {
       Adventurer: [2, 4],
       ArchaicPetra: [4],
       Berserker: [2, 4],
-      rainbow: [2, 4],
+      rainbow: [2, 4]
     }
     const artSets: ArtifactSetKey[] = [
       'Adventurer',
       'ArchaicPetra',
       'Berserker',
-      'BloodstainedChivalry',
+      'BloodstainedChivalry'
     ]
     const perm = [...artSetPerm(filter, artSets)],
       allowedRainbows = exclusionToAllowed(filter.rainbow)
@@ -51,7 +51,7 @@ describe('common.ts', () => {
         rainbowCount = 0
       for (const key of new Set([
         ...Object.keys(filter),
-        ...Object.values(combination),
+        ...Object.values(combination)
       ])) {
         const allowed = exclusionToAllowed(filter[key as keyof typeof filter])
         const count = Object.values(combination).filter((x) => x === key).length
@@ -106,9 +106,9 @@ describe('common.ts', () => {
         () =>
           [
             { id: '', values: { atk: 1, glad: 1 } },
-            { id: '', values: { atk_: 1, clam: 1 } },
+            { id: '', values: { atk_: 1, clam: 1 } }
           ] as ArtifactBuildData[]
-      ),
+      )
     }
     test('basic', () => {
       const node = sum(1, dynRead('atk'), prod(1500, dynRead('atk_')))

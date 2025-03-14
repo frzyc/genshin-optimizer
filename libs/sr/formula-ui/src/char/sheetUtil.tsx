@@ -1,26 +1,26 @@
 import { getUnitStr, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   Document,
-  UISheetElement,
+  UISheetElement
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import {
   characterGenderedKeyToCharacterKey,
   type CharacterGenderedKey,
-  type StatKey,
+  type StatKey
 } from '@genshin-optimizer/sr/consts'
 import { buffs, own } from '@genshin-optimizer/sr/formula'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 import {
   getCharInterpolateObject,
-  getCharStat,
+  getCharStat
 } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../util'
 import type {
   TalentSheetElementBonusAbilityKey,
   TalentSheetElementEidolonKey,
-  TalentSheetElementStatBoostKey,
+  TalentSheetElementStatBoostKey
 } from './consts'
 import { allTalentSheetElementStatBoostKey, getEidolonKey } from './consts'
 import { EidolonSubtitle } from './EidolonSubtitle'
@@ -54,10 +54,10 @@ export function talentSheet(
                 ? 1
                 : calc.compute(own.char[talentKey]).val
             )
-          ),
+          )
       },
-      ...docs,
-    ],
+      ...docs
+    ]
   }
 }
 export function bonusAbilitySheet(
@@ -81,10 +81,10 @@ export function bonusAbilitySheet(
               talentKey,
               0
             ) // TODO: FIXME: does not seem to work for bonus Stats (wrong array format)
-          ),
+          )
       },
-      ...docs,
-    ],
+      ...docs
+    ]
   }
 }
 export function bonusStatsSheets(
@@ -106,11 +106,11 @@ export function bonusStatsSheets(
             {
               title: <StatDisplay statKey={statKey as StatKey} />,
               fieldRef: buff[key].tag,
-              unit: getUnitStr(statKey),
-            },
-          ],
-        },
-      ],
+              unit: getUnitStr(statKey)
+            }
+          ]
+        }
+      ]
     }
   })
 }
@@ -135,9 +135,9 @@ export function eidolonSheet(
             'eidolon',
             eidolonNum
           )
-        ),
+        )
       },
-      ...docs,
-    ],
+      ...docs
+    ]
   }
 }

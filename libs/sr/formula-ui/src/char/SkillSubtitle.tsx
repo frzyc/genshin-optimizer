@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 export function SkillSubtitle({
   talentKey,
-  children,
+  children
 }: {
   talentKey: 'basic' | 'skill' | 'ult' | 'talent' | 'technique'
   children: ReactNode

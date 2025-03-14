@@ -1,7 +1,7 @@
 import { usedNames, usedQ } from '@genshin-optimizer/game-opt/engine'
 import {
   compileTagMapKeys,
-  compileTagMapValues,
+  compileTagMapValues
 } from '@genshin-optimizer/pando/engine'
 import artifact from './artifact'
 import character from './char'
@@ -14,7 +14,7 @@ const entries: TagMapNodeEntries = [
   ...common,
   ...artifact,
   ...character,
-  ...weapon,
+  ...weapon
 ]
 const keys = compileTagMapKeys([
   { category: 'qt', values: queryTypes },
@@ -22,9 +22,9 @@ const keys = compileTagMapKeys([
   undefined,
   ...Object.entries(fixedTags).map(([k, v]) => ({
     category: k,
-    values: new Set(v),
+    values: new Set(v)
   })),
-  { category: 'name', values: usedNames },
+  { category: 'name', values: usedNames }
 ]) // TODO: Find optimum tag order
 const values = compileTagMapValues(keys, entries)
 

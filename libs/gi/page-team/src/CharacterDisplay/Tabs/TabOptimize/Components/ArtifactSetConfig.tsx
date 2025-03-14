@@ -6,32 +6,32 @@ import {
   InfoTooltipInline,
   ModalWrapper,
   NextImage,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   deepClone,
-  objKeyMap,
+  objKeyMap
 } from '@genshin-optimizer/common/util'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSetKey,
   ArtifactSlotKey,
-  SetNum,
+  SetNum
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
-  allArtifactSlotKeys,
+  allArtifactSlotKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ArtSetExclusionKey } from '@genshin-optimizer/gi/db'
 import {
   allArtifactSetExclusionKeys,
-  handleArtSetExclusion,
+  handleArtSetExclusion
 } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import { getArtSheet } from '@genshin-optimizer/gi/sheets'
@@ -42,7 +42,7 @@ import {
   ArtifactSetName,
   DataContext,
   SetEffectDisplay,
-  SetInclusionButton,
+  SetInclusionButton
 } from '@genshin-optimizer/gi/ui'
 import { UIData } from '@genshin-optimizer/gi/uidata'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
@@ -62,7 +62,7 @@ import {
   IconButton,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   Suspense,
@@ -70,12 +70,12 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 export default function ArtifactSetConfig({
-  disabled,
+  disabled
 }: {
   disabled?: boolean
 }) {
@@ -84,7 +84,7 @@ export default function ArtifactSetConfig({
   const database = useDatabase()
   const {
     teamChar: { conditional, optConfigId },
-    teamCharId,
+    teamCharId
   } = useContext(TeamCharacterContext)
   const { artSetExclusion } = useOptConfig(optConfigId)!
   const [open, setOpen] = useState(false)
@@ -151,10 +151,10 @@ export default function ArtifactSetConfig({
       data: new UIData(
         {
           ...dataContext.data.data[0],
-          artSet: objKeyMap(allArtifactSetKeys, (_) => constant(4)),
+          artSet: objKeyMap(allArtifactSetKeys, (_) => constant(4))
         },
         undefined
-      ),
+      )
     }),
     [dataContext]
   )
@@ -178,7 +178,7 @@ export default function ArtifactSetConfig({
           artSetExclusion_[k] = artSetExclusion_[k].filter((n) => n !== setnum)
       })
       database.optConfigs.set(optConfigId, {
-        artSetExclusion: artSetExclusion_,
+        artSetExclusion: artSetExclusion_
       })
     },
     [artKeysByRarity, artSetExclusion, database, optConfigId]
@@ -450,7 +450,7 @@ export default function ArtifactSetConfig({
                               artSetExclusion,
                               'rainbow',
                               2
-                            ),
+                            )
                           })
                         }
                         color={allowRainbow2 ? 'success' : 'secondary'}
@@ -475,7 +475,7 @@ export default function ArtifactSetConfig({
                               artSetExclusion,
                               'rainbow',
                               4
-                            ),
+                            )
                           })
                         }
                         color={allowRainbow4 ? 'success' : 'secondary'}
@@ -516,7 +516,7 @@ export default function ArtifactSetConfig({
 function AllSetAllowExcludeCard({
   allowTotal,
   setNum,
-  setAllExclusion,
+  setAllExclusion
 }: {
   allowTotal: string
   setNum: 2 | 4
@@ -562,7 +562,7 @@ function AllSetAllowExcludeCard({
 function ArtifactSetCard({
   setKey,
   fakeDataContextObj,
-  slotCount,
+  slotCount
 }: {
   setKey: ArtifactSetKey
   fakeDataContextObj: dataContextObj
@@ -570,7 +570,7 @@ function ArtifactSetCard({
 }) {
   const { t } = useTranslation('sheet')
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const { artSetExclusion } = useOptConfig(optConfigId)!
   const setExclusionSet = useMemo(
@@ -625,7 +625,7 @@ function ArtifactSetCard({
               px: 1,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <Typography variant="h6">
@@ -674,7 +674,7 @@ function ArtifactSetCard({
                         <Box
                           paddingTop={2}
                           sx={{
-                            opacity: setExclusionSet.includes(4) ? 0.6 : 1,
+                            opacity: setExclusionSet.includes(4) ? 0.6 : 1
                           }}
                         >
                           <Typography>

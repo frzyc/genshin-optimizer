@@ -89,15 +89,15 @@ export const allAvatarSkillTreeTypes = [
   'statBoost7',
   'statBoost8',
   'statBoost9',
-  'statBoost10',
+  'statBoost10'
 ] as const
 export const allServantSkillTreeTypes = [
   'servantSkill',
-  'servantTalent',
+  'servantTalent'
 ] as const
 export const allSkillTreeTypes = [
   ...allAvatarSkillTreeTypes,
-  ...allServantSkillTreeTypes,
+  ...allServantSkillTreeTypes
 ] as const
 export type AvatarSkillTreeType = (typeof allAvatarSkillTreeTypes)[number]
 export type ServantSkillTreeType = (typeof allServantSkillTreeTypes)[number]

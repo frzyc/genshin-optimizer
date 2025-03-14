@@ -7,12 +7,12 @@ import {
   HarmonyIcon,
   NihilityIcon,
   PreservationIcon,
-  TheHuntIcon,
+  TheHuntIcon
 } from '..'
 
 export function PathIcon({
   pathKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   pathKey: PathKey
   iconProps?: SvgIconProps

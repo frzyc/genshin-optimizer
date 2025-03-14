@@ -4,7 +4,7 @@ import {
   ImgIcon,
   ModalWrapper,
   NextImage,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { catTotal } from '@genshin-optimizer/common/util'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
@@ -12,7 +12,7 @@ import type { WeaponKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import {
   allRarityKeys,
   allWeaponKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { WeaponSheet } from '@genshin-optimizer/gi/sheets'
@@ -27,7 +27,7 @@ import {
   Grid,
   IconButton,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
@@ -50,7 +50,7 @@ export function WeaponSelectionModal({
   onHide,
   onSelect,
   filter = () => true,
-  weaponTypeFilter,
+  weaponTypeFilter
 }: WeaponSelectionModalProps) {
   const { t } = useTranslation(['page_weapon', 'weaponNames_gen'])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(
@@ -141,7 +141,7 @@ export function WeaponSelectionModal({
             label={t('weaponName')}
             sx={{ height: '100%' }}
             InputProps={{
-              sx: { height: '100%' },
+              sx: { height: '100%' }
             }}
           />
           <IconButton onClick={onHide} sx={{ ml: 'auto' }}>

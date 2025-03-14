@@ -7,7 +7,7 @@ import {
   naught,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -37,8 +37,8 @@ const atkStacks = prod(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     shield_,
-    atk_: atkStacks,
-  },
+    atk_: atkStacks
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -47,9 +47,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: shield_,
-        },
-      ],
+          node: shield_
+        }
+      ]
     },
     {
       value: condPassive,
@@ -63,17 +63,17 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: i }),
             fields: [
               {
-                node: atkStacks,
+                node: atkStacks
               },
               {
                 text: stg('duration'),
                 value: 8,
-                unit: 's',
-              },
-            ],
-          },
+                unit: 's'
+              }
+            ]
+          }
         ])
-      ),
+      )
     },
     {
       value: condWithShield,
@@ -86,12 +86,12 @@ const sheet: IWeaponSheet = {
             {
               text: trm('atkEffInc'),
               value: 100,
-              unit: '%',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: '%'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

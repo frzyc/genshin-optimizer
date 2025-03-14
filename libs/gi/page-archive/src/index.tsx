@@ -11,7 +11,7 @@ import {
   Route,
   Link as RouterLink,
   Routes,
-  useMatch,
+  useMatch
 } from 'react-router-dom'
 import TabArtifact from './TabArtifact'
 import TabCharacter from './TabCharacter'
@@ -26,20 +26,20 @@ const artifacts: Tab = {
   i18Key: 'tabs.artifacts',
   icon: <FlowerIcon />,
   value: 'artifacts',
-  to: '/artifacts',
+  to: '/artifacts'
 }
 const weapons: Tab = {
   i18Key: 'tabs.weapons',
   icon: <AnvilIcon />,
   value: 'weapons',
-  to: '/weapons',
+  to: '/weapons'
 }
 
 const characters: Tab = {
   i18Key: 'tabs.characters',
   icon: <People />,
   value: 'characters',
-  to: '/characters',
+  to: '/characters'
 }
 
 const tabs = [artifacts, weapons, characters] as const
@@ -48,9 +48,9 @@ export default function PageArchive() {
   const { t } = useTranslation('ui')
 
   const {
-    params: { tab: tabRaw },
+    params: { tab: tabRaw }
   } = useMatch({ path: '/archive/:tab', end: false }) ?? {
-    params: {},
+    params: {}
   }
   const tab = useMemo(() => {
     const tab = tabValues.find((tv) => tv === tabRaw)
@@ -65,14 +65,14 @@ export default function PageArchive() {
         sx={{
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.25s ease',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(255,255,255,0.1)'
           },
           '& .Mui-selected': {
-            color: 'white !important',
+            color: 'white !important'
           },
           '& .MuiTabs-indicator': {
-            height: '4px',
-          },
+            height: '4px'
+          }
         }}
       >
         {tabs.map(({ i18Key, icon, value, to }) => {

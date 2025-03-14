@@ -9,7 +9,7 @@ import { WeaponCardNano } from '../../weapon'
 
 export function BuildRealSimplified({
   buildId,
-  characterKey,
+  characterKey
 }: {
   buildId: string
   characterKey: CharacterKey
@@ -25,7 +25,7 @@ export function BuildRealSimplified({
           display: 'flex',
           flexDirection: 'column',
           gap: 1,
-          alignItems: 'stretch',
+          alignItems: 'stretch'
         }}
       >
         <Grid

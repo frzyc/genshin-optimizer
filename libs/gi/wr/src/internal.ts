@@ -15,7 +15,7 @@ export function deepNodeClone<
       : Object.fromEntries(
           Object.entries(orig).map(([key, val]) => [
             key,
-            key === 'info' ? val : internal(val),
+            key === 'info' ? val : internal(val)
           ])
         )
     map.set(orig, cache)

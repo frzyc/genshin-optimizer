@@ -10,8 +10,8 @@ export function getBuildTcArtifactData(buildTc: BuildTc): Data {
     artifact: {
       slots,
       substats: { stats: substats },
-      sets,
-    },
+      sets
+    }
   } = buildTc
   const allStats: Partial<Record<MainStatKey | SubstatKey, number>> = objMap(
     substats,
@@ -26,13 +26,13 @@ export function getBuildTcArtifactData(buildTc: BuildTc): Data {
     art: objMap(allStats, (v, k) =>
       k.endsWith('_') ? percent(v) : constant(v)
     ),
-    artSet: objMap(sets, (v) => constant(v)),
+    artSet: objMap(sets, (v) => constant(v))
   }
 }
 
 export function getBuildTcWeaponData(buildTc: BuildTc): ICachedWeapon {
   const {
-    weapon: { key, level, ascension, refinement },
+    weapon: { key, level, ascension, refinement }
   } = buildTc
   return {
     id: '',
@@ -41,6 +41,6 @@ export function getBuildTcWeaponData(buildTc: BuildTc): ICachedWeapon {
     level,
     ascension,
     refinement,
-    lock: false,
+    lock: false
   }
 }

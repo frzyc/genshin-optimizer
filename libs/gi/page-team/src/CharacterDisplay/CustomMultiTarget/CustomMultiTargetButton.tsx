@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { CustomMultiTargetModal } from './CustomMultiTargetModal'
 
 export function CustomMultiTargetButton({
-  buttonProps = {},
+  buttonProps = {}
 }: {
   buttonProps?: ButtonProps
 }) {

@@ -3,7 +3,7 @@ import { AssetData } from '@genshin-optimizer/gi/assets-data'
 import {
   weaponMaxAscension,
   weaponMaxLevel,
-  type WeaponKey,
+  type WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import { allStats, getWeaponStat } from '@genshin-optimizer/gi/stats'
@@ -11,7 +11,7 @@ import {
   ActionRowBuilder,
   EmbedBuilder,
   StringSelectMenuBuilder,
-  StringSelectMenuOptionBuilder,
+  StringSelectMenuOptionBuilder
 } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
 import { giURL } from '../../lib/util'
@@ -23,7 +23,7 @@ const refinedisplay: Record<string, string> = {
   1: '2',
   2: '3',
   3: '4',
-  4: '5',
+  4: '5'
 }
 
 function getDropdown(id: string, lang: string, refine: string) {
@@ -42,7 +42,7 @@ function getDropdown(id: string, lang: string, refine: string) {
         .setCustomId(`${slashcommand.name} weapon ${id} ${lang} ${refine}`)
         .setPlaceholder(`Refinement ${refine}`)
         .addOptions(options)
-    ),
+    )
   ]
 }
 
@@ -110,10 +110,10 @@ export async function weaponArchive(id: WeaponKey, args: string, lang: string) {
       .setTitle(name)
       .setColor(rarityColors[rarity - 1])
       .setFooter({
-        text: 'Weapon Archive',
+        text: 'Weapon Archive'
       })
       .setDescription(clean(text))
-      .setThumbnail(giURL(AssetData.weapons[id].icon)),
+      .setThumbnail(giURL(AssetData.weapons[id].icon))
   ]
   return msg
 }

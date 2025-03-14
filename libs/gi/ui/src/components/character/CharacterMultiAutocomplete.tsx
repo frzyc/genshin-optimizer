@@ -2,7 +2,7 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import type {
   GeneralAutocompleteMultiProps,
-  GeneralAutocompleteOption,
+  GeneralAutocompleteOption
 } from '@genshin-optimizer/common/ui'
 import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, notEmpty } from '@genshin-optimizer/common/util'
@@ -20,7 +20,7 @@ export function CharacterMultiAutocomplete({
   teamIds,
   charKeys,
   setCharKey,
-  acProps,
+  acProps
 }: {
   teamIds: string[]
   charKeys: CharacterKey[]
@@ -30,7 +30,7 @@ export function CharacterMultiAutocomplete({
   const { t } = useTranslation([
     'page_team',
     'sillyWisher_charNames',
-    'charNames_gen',
+    'charNames_gen'
   ])
 
   const { silly } = useContext(SillyContext)
@@ -74,7 +74,7 @@ export function CharacterMultiAutocomplete({
 
   const { characterTeamTotal } = useMemo(() => {
     const catKeys = {
-      characterTeamTotal: allCharKeys,
+      characterTeamTotal: allCharKeys
     } as const
     return bulkCatTotal(catKeys, (ctMap) => {
       database.teams.values.forEach((team) => {
@@ -120,7 +120,7 @@ export function CharacterMultiAutocomplete({
             label: toLabel(ck, silly),
             alternateNames: silly ? [toLabel(ck, !silly)] : undefined,
             favorite: charIsFavorite(ck),
-            color: toVariant(ck),
+            color: toVariant(ck)
           })
         )
         .sort((a, b) => {

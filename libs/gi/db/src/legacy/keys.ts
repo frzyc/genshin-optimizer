@@ -1,7 +1,7 @@
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import {
   allEleEnemyResKeys,
-  crittableTransformativeReactions,
+  crittableTransformativeReactions
 } from '@genshin-optimizer/gi/keymap'
 /**
  * Copied from Formula
@@ -15,7 +15,7 @@ const allMoves = [
   'plunging_impact',
   'skill',
   'burst',
-  'elemental',
+  'elemental'
 ] as const
 const allArtModStats = [
   'hp',
@@ -36,7 +36,7 @@ const allArtModStats = [
   'anemo_dmg_',
   'geo_dmg_',
   'dendro_dmg_',
-  'heal_',
+  'heal_'
 ] as const
 const allTransformative = [
   'overloaded',
@@ -47,7 +47,7 @@ const allTransformative = [
   'burning',
   'bloom',
   'burgeon',
-  'hyperbloom',
+  'hyperbloom'
 ] as const
 const allAmplifying = ['vaporize', 'melt'] as const
 const allAdditive = ['spread', 'aggravate'] as const
@@ -64,7 +64,7 @@ const allMisc = [
   'atkSPD_',
   'weakspotDMG_',
   'dmgRed_',
-  'healInc',
+  'healInc'
 ] as const
 const allBase = ['base_atk', 'base_hp', 'base_def'] as const
 
@@ -78,32 +78,32 @@ const allModStats = [
       ...allAdditive,
       ...allMoves,
       'plunging',
-      'normalEle',
+      'normalEle'
     ] as const
-  ).map((x) => `${x}_dmg_` as const),
+  ).map((x) => `${x}_dmg_` as const)
 ] as const
 const allNonModStats = [
   ...allElements.flatMap((x) => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
-    `${x}_res_` as const,
+    `${x}_res_` as const
   ]),
   ...allTalents.map((x) => `${x}Boost` as const),
   ...([...allMoves, 'plunging'] as const).flatMap((x) => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
-    `${x}_critRate_` as const,
+    `${x}_critRate_` as const
   ]),
   ...crittableTransformativeReactions.flatMap((x) => [
     `${x}_critRate_` as const,
-    `${x}_critDMG_` as const,
+    `${x}_critDMG_` as const
   ]),
   'all_dmgInc' as const,
   ...allEleEnemyResKeys,
   'enemyDefRed_' as const,
   'enemyDefIgn_' as const,
   ...allMisc,
-  ...allBase,
+  ...allBase
 ] as const
 /**
  * @deprecated

@@ -6,7 +6,7 @@ import {
   lookup,
   naught,
   percent,
-  prod,
+  prod
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -21,14 +21,14 @@ const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const normal_dmg_ = lookup(
   condPassive,
   {
-    ...objKeyMap(range(1, 2), (i) => prod(normalInc, i)),
+    ...objKeyMap(range(1, 2), (i) => prod(normalInc, i))
   },
   naught
 )
 const charged_dmg_ = lookup(
   condPassive,
   {
-    ...objKeyMap(range(1, 2), (i) => prod(chargedInc, i)),
+    ...objKeyMap(range(1, 2), (i) => prod(chargedInc, i))
   },
   naught
 )
@@ -38,8 +38,8 @@ const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_,
     charged_dmg_,
-    atk,
-  },
+    atk
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -56,22 +56,22 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: c }),
             fields: [
               {
-                node: normal_dmg_,
+                node: normal_dmg_
               },
               {
-                node: charged_dmg_,
+                node: charged_dmg_
               },
               {
                 text: stg('duration'),
                 value: 6,
-                unit: 's',
-              },
-            ],
-          },
+                unit: 's'
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 
 export default new WeaponSheet(sheet, data)

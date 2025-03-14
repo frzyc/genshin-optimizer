@@ -2,20 +2,20 @@ import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { toggleInArr } from '@genshin-optimizer/common/util'
 import {
   defLoadoutExportSetting,
   type LoadoutDataExportSetting,
   type LoadoutDatum,
-  type LoadoutExportSetting,
+  type LoadoutExportSetting
 } from '@genshin-optimizer/gi/db'
 import {
   useDatabase,
   useOptConfig,
   useTeam,
-  useTeamChar,
+  useTeamChar
 } from '@genshin-optimizer/gi/db-ui'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
@@ -26,7 +26,7 @@ import {
   FieldDisplayList,
   OptimizationIcon,
   OptimizationTargetDisplay,
-  useCharData,
+  useCharData
 } from '@genshin-optimizer/gi/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import InfoIcon from '@mui/icons-material/Info'
@@ -45,7 +45,7 @@ import {
   ListItemText,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -53,7 +53,7 @@ import { Trans, useTranslation } from 'react-i18next'
 export default function TeamExportModal({
   show,
   onHide,
-  teamId,
+  teamId
 }: {
   show: boolean
   onHide: () => void
@@ -123,7 +123,7 @@ export default function TeamExportModal({
           convertEquipped: true,
           convertbuilds: buildIds,
           convertTcBuilds: buildTcIds,
-          exportCustomMultiTarget: customMultiTargets?.map((_, i) => i) ?? [],
+          exportCustomMultiTarget: customMultiTargets?.map((_, i) => i) ?? []
         })
       })
     )
@@ -148,7 +148,7 @@ export default function TeamExportModal({
             sx={{
               display: 'flex',
               gap: 1,
-              flexDirection: isMobile ? 'column' : 'row',
+              flexDirection: isMobile ? 'column' : 'row'
             }}
           >
             <Alert severity="info">
@@ -181,7 +181,7 @@ export default function TeamExportModal({
                           const data = structuredClone(settings)
                           data[i] = {
                             ...data[i],
-                            ...loadoutExportSetting,
+                            ...loadoutExportSetting
                           }
                           return data
                         })
@@ -207,7 +207,7 @@ export default function TeamExportModal({
 function LoadoutSetting({
   loadout,
   setting,
-  setSetting,
+  setSetting
 }: {
   loadout: LoadoutDatum
   setting: LoadoutExportSetting
@@ -222,7 +222,7 @@ function LoadoutSetting({
     description,
     buildIds,
     buildTcIds,
-    customMultiTargets,
+    customMultiTargets
   } = teamChar
   const optConfig = useOptConfig(teamChar.optConfigId)!
   const { optimizationTarget } = optConfig
@@ -242,7 +242,7 @@ function LoadoutSetting({
     return {
       data: charUIData,
       teamData,
-      compareData: undefined,
+      compareData: undefined
     }
   }, [charUIData, teamData])
 
@@ -298,7 +298,7 @@ function LoadoutSetting({
                   key={i}
                   sx={{
                     p: 0,
-                    border: selMtargetInd === i ? '2px solid green' : undefined,
+                    border: selMtargetInd === i ? '2px solid green' : undefined
                   }}
                 >
                   <ListItemButton
@@ -308,7 +308,7 @@ function LoadoutSetting({
                         exportCustomMultiTarget: toggleInArr(
                           setting.exportCustomMultiTarget,
                           i
-                        ),
+                        )
                       })
                     }
                   >
@@ -361,7 +361,7 @@ function LoadoutSetting({
               <ListItemButton
                 onClick={() =>
                   setSetting({
-                    convertbuilds: toggleInArr(setting.convertbuilds, buildId),
+                    convertbuilds: toggleInArr(setting.convertbuilds, buildId)
                   })
                 }
               >
@@ -391,7 +391,7 @@ function LoadoutSetting({
                     convertTcBuilds: toggleInArr(
                       setting.convertTcBuilds,
                       buildTcId
-                    ),
+                    )
                   })
                 }
               >

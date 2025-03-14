@@ -6,12 +6,12 @@ import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
 import {
   TCWorker,
-  getMinSubAndOtherRolls,
+  getMinSubAndOtherRolls
 } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
@@ -25,7 +25,7 @@ import {
   getBuildTcWeaponData,
   getTeamDataCalc,
   initialBuildStatus,
-  optimizeNodesForScaling,
+  optimizeNodesForScaling
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -54,7 +54,7 @@ export default function TabTheorycraft() {
   const {
     teamId,
     teamCharId,
-    teamChar: { key: characterKey, optConfigId },
+    teamChar: { key: characterKey, optConfigId }
   } = useContext(TeamCharacterContext)
   const { buildTc, setBuildTc } = useContext(BuildTcContext)
   const optConfig = useOptConfig(optConfigId)!
@@ -69,7 +69,7 @@ export default function TabTheorycraft() {
       if (!dataContextValue) return undefined
       return {
         ...dataContextValue,
-        compareData,
+        compareData
       }
     }, [dataContextValue, compareData])
 
@@ -143,7 +143,7 @@ export default function TabTheorycraft() {
       ...s,
       type: 'active',
       startTime: performance.now(),
-      finishTime: undefined,
+      finishTime: undefined
     }))
 
     workerRef.current.onmessage = ({ data }: MessageEvent<TCWorkerResult>) => {
@@ -156,7 +156,7 @@ export default function TabTheorycraft() {
           setStatus((s) => ({
             ...s,
             tested: data.tested,
-            failed: data.failed,
+            failed: data.failed
           }))
           break
         case 'finalize': {
@@ -167,7 +167,7 @@ export default function TabTheorycraft() {
             tested,
             failed,
             skipped,
-            finishTime: performance.now(),
+            finishTime: performance.now()
           }))
 
           if (!apply) {
@@ -176,7 +176,7 @@ export default function TabTheorycraft() {
               distributed,
               tested,
               failed,
-              skipped,
+              skipped
             })
             break
           }
@@ -204,8 +204,8 @@ export default function TabTheorycraft() {
       const {
         artifact: {
           slots,
-          substats: { stats, type, rarity },
-        },
+          substats: { stats, type, rarity }
+        }
       } = buildTc
       buildTc.optimization.distributedSubstats =
         20 - (rarity === 5 ? 0 : rarity === 4 ? 10 : 15)
@@ -311,7 +311,7 @@ export default function TabTheorycraft() {
                 optimizationTarget={optimizationTarget}
                 setTarget={(target) => setOptimizationTarget(target)}
                 targetSelectorModalProps={{
-                  excludeSections: ['character', 'bonusStats', 'teamBuff'],
+                  excludeSections: ['character', 'bonusStats', 'teamBuff']
                 }}
               />
               <CustomNumberInput
@@ -323,16 +323,16 @@ export default function TabTheorycraft() {
                   borderRadius: 1,
                   px: 1,
                   textWrap: 'nowrap',
-                  flexShrink: 1,
+                  flexShrink: 1
                 }}
                 inputProps={{
                   sx: {
                     textAlign: 'right',
                     px: 1,
                     width: '3em',
-                    minWidth: '3em',
+                    minWidth: '3em'
                   },
-                  min: 0,
+                  min: 0
                 }}
               />
               {!solving ? (

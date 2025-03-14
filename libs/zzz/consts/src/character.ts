@@ -30,7 +30,7 @@ export const allCharacterKeys = [
   'Soukaku',
   'Trigger',
   'Yanagi',
-  'ZhuYuan',
+  'ZhuYuan'
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
@@ -42,7 +42,7 @@ export const allSpecialityKeys = [
   'stun',
   'anomaly',
   'support',
-  'defense',
+  'defense'
 ] as const
 export type SpecialityKey = (typeof allSpecialityKeys)[number]
 
@@ -55,7 +55,7 @@ export const allFactionKeys = [
   'CriminalInvestigationSpecialResponseTeam',
   'SonsOfCalydon',
   'HollowSpecialOoperationsSection6',
-  'StarsOfLyra',
+  'StarsOfLyra'
 ] as const
 export type FactionKey = (typeof allFactionKeys)[number]
 
@@ -77,7 +77,7 @@ export const allCoreKeysWithNone = [
   'C',
   'D',
   'E',
-  'F',
+  'F'
 ] as const
 
 export const allSkillKeys = [
@@ -85,7 +85,7 @@ export const allSkillKeys = [
   'dodge',
   'assist',
   'special',
-  'chain',
+  'chain'
 ] as const
 export type SkillKey = (typeof allSkillKeys)[number]
 export function isSkillKey(tKey: string): tKey is SkillKey {

@@ -16,7 +16,7 @@ export function SetEffectDisplay({
   setNumKey,
   hideHeader = false,
   conditionalsOnly = false,
-  disabled = false,
+  disabled = false
 }: Data) {
   const sheet = getArtSheet(setKey)
 

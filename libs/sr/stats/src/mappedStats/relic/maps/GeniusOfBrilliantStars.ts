@@ -8,12 +8,12 @@ let o = 0
 
 const dm = {
   2: {
-    passive_quantum_dmg_: data_gen.setEffects[0].passiveStats.quantum_dmg_,
+    passive_quantum_dmg_: data_gen.setEffects[0].passiveStats.quantum_dmg_
   },
   4: {
     defIgn_: data_gen.setEffects[1].otherStats[o++],
-    addDefIgn_: data_gen.setEffects[1].otherStats[o++],
-  },
+    addDefIgn_: data_gen.setEffects[1].otherStats[o++]
+  }
 } as const
 
 export default dm

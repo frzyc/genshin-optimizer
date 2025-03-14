@@ -5,7 +5,7 @@ import {
   input,
   lookup,
   naught,
-  percent,
+  percent
 } from '@genshin-optimizer/gi/wr'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'
@@ -28,12 +28,12 @@ const set4 = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     eleMas: set2,
-    charged_dmg_: set4,
-  },
+    charged_dmg_: set4
+  }
 })
 
 const sheet: SetEffectSheet = {
   2: { document: [{ header: setHeader(2), fields: [{ node: set2 }] }] },
-  4: { document: [{ header: setHeader(4), fields: [{ node: set4 }] }] },
+  4: { document: [{ header: setHeader(4), fields: [{ node: set4 }] }] }
 }
 export default new ArtifactSheet(sheet, data)

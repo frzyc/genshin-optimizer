@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   basic_skill_dmg_: data_gen.superimpose.otherStats[o++],
-  extra_basic_skill_dmg_: data_gen.superimpose.otherStats[o++],
+  extra_basic_skill_dmg_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

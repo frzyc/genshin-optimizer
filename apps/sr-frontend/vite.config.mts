@@ -14,12 +14,12 @@ export default defineConfig(() => ({
 
   server: {
     port: 4200,
-    host: 'localhost',
+    host: 'localhost'
   },
 
   preview: {
     port: 4300,
-    host: 'localhost',
+    host: 'localhost'
   },
 
   plugins: [
@@ -33,48 +33,48 @@ export default defineConfig(() => ({
           src: normalizePath(
             resolve('../../libs/common/localization/assets/locales')
           ),
-          dest: 'assets',
+          dest: 'assets'
         },
         {
           src: normalizePath(
             resolve('../../libs/sr/localization/assets/locales')
           ),
-          dest: 'assets',
+          dest: 'assets'
         },
         {
           src: normalizePath(
             resolve('../../libs/sr/dm-localization/assets/locales')
           ),
-          dest: 'assets',
+          dest: 'assets'
         },
         {
           src: normalizePath(resolve('../../apps/sr-frontend/assets/*')),
-          dest: 'assets',
-        },
+          dest: 'assets'
+        }
       ],
       // Force page to reload if we change any of the above files
       watch: {
-        reloadPageOnChange: true,
-      },
-    }),
+        reloadPageOnChange: true
+      }
+    })
   ],
 
   define: {
-    'process.env': process.env,
+    'process.env': process.env
   },
 
   // Uncomment this if you are using workers.
   worker: {
     // https://vitejs.dev/guide/migration#worker-plugins-is-now-a-function
-    plugins: () => [nxViteTsPaths()],
+    plugins: () => [nxViteTsPaths()]
   },
 
   build: {
     outDir: '../../dist/apps/sr-frontend',
     reportCompressedSize: true,
     commonjsOptions: {
-      transformMixedEsModules: true,
-    },
+      transformMixedEsModules: true
+    }
   },
 
   test: {
@@ -85,7 +85,7 @@ export default defineConfig(() => ({
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../coverage/apps/sr-frontend',
-      provider: 'v8',
-    },
-  },
+      provider: 'v8'
+    }
+  }
 }))

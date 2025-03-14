@@ -5,7 +5,7 @@ import {
   prod,
   subscript,
   sum,
-  sumfrac,
+  sumfrac
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
 import { enemy, own, ownBuff, percent } from '../util'
@@ -14,7 +14,7 @@ const defLevelFactor = [
   -1, 50, 54, 58, 62, 66, 71, 76, 82, 88, 94, 100, 107, 114, 121, 129, 137, 145,
   153, 162, 172, 181, 191, 201, 211, 222, 233, 245, 256, 268, 281, 293, 306,
   319, 333, 347, 361, 375, 390, 405, 421, 436, 452, 469, 485, 502, 519, 537,
-  555, 573, 592, 610, 629, 649, 669, 689, 709, 730, 751, 772, 794,
+  555, 573, 592, 610, 629, 649, 669, 689, 709, 730, 751, 772, 794
 ]
 
 const data: TagMapNodeEntries = [
@@ -25,7 +25,7 @@ const data: TagMapNodeEntries = [
     ownBuff.dmg.def_mult_,
     ownBuff.dmg.res_mult_,
     ownBuff.dmg.dmg_taken_mult_,
-    ownBuff.dmg.stunned_mult_,
+    ownBuff.dmg.stunned_mult_
   ].map((buff) => ownBuff.dmg.shared.add(buff)),
 
   // DMG Bonus Multiplier
@@ -70,8 +70,8 @@ const data: TagMapNodeEntries = [
     lookup(own.common.critMode, {
       crit: sum(percent(1), own.final.crit_dmg_),
       nonCrit: percent(1),
-      avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
+      avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_))
     })
-  ),
+  )
 ]
 export default data

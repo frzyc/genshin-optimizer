@@ -6,6 +6,6 @@ import wengines from './wengines'
 const data = {
   chars,
   discs,
-  wengines,
+  wengines
 } as const
 export default data

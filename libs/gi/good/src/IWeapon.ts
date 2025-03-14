@@ -2,7 +2,7 @@ import type {
   AscensionKey,
   LocationKey,
   RefinementKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 
 export interface IWeapon {

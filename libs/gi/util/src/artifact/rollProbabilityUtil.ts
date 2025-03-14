@@ -44,7 +44,7 @@ const fWeight: Record<SubstatKey, Weight> = {
   eleMas: 4,
   enerRech_: 4,
   critRate_: 3,
-  critDMG_: 3,
+  critDMG_: 3
 }
 
 /**

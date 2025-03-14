@@ -2,7 +2,7 @@ import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
 import type { StatFilters } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
@@ -14,7 +14,7 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
   // const [statFilters, setStatFilters] = useState<StatFilters>({})
   const {
     optConfigId,
-    optConfig: { statFilters },
+    optConfig: { statFilters }
   } = useContext(OptConfigContext)
 
   const { database } = useDatabaseContext()
@@ -32,7 +32,7 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            flexDirection: 'column',
+            flexDirection: 'column'
           }}
         >
           <Box display="flex" justifyContent="space-between">

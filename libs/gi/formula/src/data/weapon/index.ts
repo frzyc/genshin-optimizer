@@ -414,7 +414,7 @@ const data: TagMapNodeEntries[] = [
   TwinNephrite,
   WanderingEvenstar,
   WaveridingWhirl,
-  WineAndSong,
+  WineAndSong
 ]
 
 export default data.flat()

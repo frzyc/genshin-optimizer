@@ -5,11 +5,11 @@ import type {
   DiscSetKey,
   DiscSlotKey,
   DiscSubStatKey,
-  LocationKey,
+  LocationKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscRarityKeys,
-  allDiscSlotKeys,
+  allDiscSlotKeys
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/zood'
 
@@ -49,12 +49,12 @@ export function initialDiscFilterOption(): DiscFilterOption {
     rvHigh: 900,
     useMaxRV: false,
     lines: [1, 2, 3, 4],
-    excluded: ['excluded', 'included'],
+    excluded: ['excluded', 'included']
   }
 }
 
 export function discFilterConfigs({
-  excludedIds = [],
+  excludedIds = []
 }: {
   excludedIds?: string[]
 } = {}): FilterConfigs<keyof DiscFilterOption, IDisc & { id: string }> {
@@ -103,6 +103,6 @@ export function discFilterConfigs({
       if (!filter.includes('included') && !excludedIds.includes(disc.id))
         return false
       return true
-    },
+    }
   }
 }

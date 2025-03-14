@@ -1,12 +1,12 @@
 import {
   useBoolState,
-  useForceUpdate,
+  useForceUpdate
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
   NumberInputLazy,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type {
@@ -15,28 +15,28 @@ import type {
   RelicSetKey,
   RelicSlotKey,
   RelicSubStatKey,
-  RelicSubstatTypeKey,
+  RelicSubstatTypeKey
 } from '@genshin-optimizer/sr/consts'
 import {
   isCavernRelicSetKey,
   isPlanarRelicSetKey,
-  relicMaxLevel,
+  relicMaxLevel
 } from '@genshin-optimizer/sr/consts'
 import type {
   BuildTCLightCone,
   BuildTcRelicSlot,
-  IBuildTc,
+  IBuildTc
 } from '@genshin-optimizer/sr/db'
 import {
   initCharTC,
   type ICachedLightCone,
-  type TeammateDatum,
+  type TeammateDatum
 } from '@genshin-optimizer/sr/db'
 import {
   useBuild,
   useBuildTc,
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { SlotIcon } from '@genshin-optimizer/sr/svgicons'
 import {
@@ -51,7 +51,7 @@ import {
   RelicSetCardCompact,
   RelicSetName,
   RelicSubCard,
-  StatDisplay,
+  StatDisplay
 } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -66,7 +66,7 @@ import {
   IconButton,
   InputAdornment,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -144,8 +144,8 @@ function useActiveBuildSwap(
         buildType === 'equipped'
           ? buildType === newBuildType
           : buildType === 'real'
-          ? buildId === newBuildId
-          : buildType === 'tc' && buildTcId === newBuildId,
+            ? buildId === newBuildId
+            : buildType === 'tc' && buildTcId === newBuildId,
       onActive: () => {
         database.teams.set(teamId, (team) => {
           const teammateDatum = team.teamMetadata.find(
@@ -163,7 +163,7 @@ function useActiveBuildSwap(
           else if (newBuildType === 'tc' && newBuildId)
             teammateDatum.buildTcId = newBuildId
         })
-      },
+      }
     }),
     [
       buildId,
@@ -173,7 +173,7 @@ function useActiveBuildSwap(
       database.teams,
       newBuildId,
       newBuildType,
-      teamId,
+      teamId
     ]
   )
 }
@@ -211,7 +211,7 @@ function BuildBase({
   description,
   buildGrid,
   active,
-  onActive: onEquip,
+  onActive: onEquip
 }: {
   name: string
   description?: string
@@ -223,7 +223,7 @@ function BuildBase({
   return (
     <CardThemed
       sx={(theme) => ({
-        outline: active ? `solid ${theme.palette.success.main}` : undefined,
+        outline: active ? `solid ${theme.palette.success.main}` : undefined
       })}
     >
       <Box display={'flex'}>
@@ -273,7 +273,7 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
   const onUpdate = useCallback(
     (data: Partial<BuildTCLightCone>) => {
       database.buildTcs.set(buildTcId, (buildTc) => ({
-        lightCone: { ...buildTc.lightCone, ...data } as BuildTCLightCone,
+        lightCone: { ...buildTc.lightCone, ...data } as BuildTCLightCone
       }))
     },
     [buildTcId, database.buildTcs]
@@ -285,9 +285,9 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
           ...buildTc.relic,
           slots: {
             ...buildTc.relic.slots,
-            [slotKey]: { ...buildTc.relic.slots[slotKey], ...data },
-          },
-        },
+            [slotKey]: { ...buildTc.relic.slots[slotKey], ...data }
+          }
+        }
       }))
     },
     [buildTcId, database.buildTcs]
@@ -301,10 +301,10 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
             ...buildTc.relic.substats,
             stats: {
               ...buildTc.relic.substats.stats,
-              [statKey]: value,
-            },
-          },
-        },
+              [statKey]: value
+            }
+          }
+        }
       }))
     },
     [buildTcId, database.buildTcs]
@@ -316,9 +316,9 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
           ...buildTc.relic,
           substats: {
             ...buildTc.relic.substats,
-            type,
-          },
-        },
+            type
+          }
+        }
       }))
     },
     [buildTcId, database.buildTcs]
@@ -330,9 +330,9 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
           ...buildTc.relic,
           sets: {
             ...buildTc.relic.sets,
-            [setKey]: count,
-          },
-        },
+            [setKey]: count
+          }
+        }
       }))
     },
     [buildTcId, database.buildTcs]
@@ -345,8 +345,8 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         return {
           relic: {
             ...buildTc.relic,
-            sets,
-          },
+            sets
+          }
         }
       })
     },
@@ -425,7 +425,7 @@ function TCLightconeEditor({
   lightCone = {},
   onUpdate,
   show,
-  onClose,
+  onClose
 }: {
   lightCone?: Partial<BuildTCLightCone>
   onUpdate: (lightCone: Partial<BuildTCLightCone>) => void
@@ -447,7 +447,7 @@ function TCMainsEditor({
   slots,
   show,
   onClose,
-  setSlot,
+  setSlot
 }: {
   slots: IBuildTc['relic']['slots']
   show: boolean
@@ -505,7 +505,7 @@ function SlotEditor({
   statKey,
   setStatKey,
   setRarity,
-  setLevel,
+  setLevel
 }: {
   slotKey: RelicSlotKey
   level: number
@@ -521,7 +521,7 @@ function SlotEditor({
         display: 'flex',
         gap: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
       }}
     >
       <SlotIcon slotKey={slotKey} />
@@ -543,12 +543,12 @@ function SlotEditor({
         inputProps={{
           sx: { width: '2ch' },
           max: relicMaxLevel[rarity],
-          min: 0,
+          min: 0
         }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">Level</InputAdornment>
-          ),
+          )
         }}
         size="small"
         onChange={setLevel}
@@ -560,7 +560,7 @@ function TCSubsEditor({
   show,
   onClose,
   stats,
-  setStat,
+  setStat
 }: {
   show: boolean
   onClose: () => void
@@ -593,7 +593,7 @@ function TCSubsEditor({
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
                 rowGap: 1,
-                columnGap: 2,
+                columnGap: 2
               }}
             >
               {Object.entries(stats).map(([statKey, value]) => (
@@ -616,7 +616,7 @@ function TCSubsEditor({
 function TCSubstatEditor({
   statKey,
   value,
-  setValue,
+  setValue
 }: {
   statKey: RelicSubStatKey
   value: number
@@ -628,7 +628,7 @@ function TCSubstatEditor({
         display: 'flex',
         alignItems: 'center',
         gap: 1,
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
       }}
     >
       <StatDisplay statKey={statKey} />
@@ -640,15 +640,15 @@ function TCSubstatEditor({
         inputProps={{
           sx: {
             width: '4em',
-            textAlign: 'right',
+            textAlign: 'right'
           },
           min: 0,
-          max: 9999,
+          max: 9999
         }}
         InputProps={{
           endAdornment: getUnitStr(statKey) || (
             <Box width="0.8em" component="span" />
-          ),
+          )
         }}
       />
     </Box>
@@ -659,7 +659,7 @@ function TCRelicSetEditor({
   onClose,
   sets,
   setSets,
-  removeSet,
+  removeSet
 }: {
   show: boolean
   onClose: () => void

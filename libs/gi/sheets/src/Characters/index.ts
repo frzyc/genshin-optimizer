@@ -2,7 +2,7 @@ import type {
   CharacterKey,
   CharacterSheetKey,
   GenderKey,
-  TravelerKey,
+  TravelerKey
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterSheet } from './CharacterSheet'
@@ -222,7 +222,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Yoimiya,
   YumemizukiMizuki,
   YunJin,
-  Zhongli,
+  Zhongli
 } as const
 export function getCharSheet(charKey: CharacterKey, gender: GenderKey) {
   return characters[charKeyToCharSheetKey(charKey, gender)]

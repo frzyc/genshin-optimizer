@@ -10,7 +10,7 @@ import {
   ownBuff,
   register,
   registerBuff,
-  teamBuff,
+  teamBuff
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag } from '../util'
 

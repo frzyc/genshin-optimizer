@@ -11,7 +11,7 @@ import {
   CharacterSingleSelectionModal,
   EnemyExpandCard,
   TeamDelModal,
-  TeamInfoAlert,
+  TeamInfoAlert
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
@@ -26,7 +26,7 @@ import {
   Button,
   CardContent,
   Grid,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -39,7 +39,7 @@ import TeamExportModal from './TeamExportModal'
 
 export default function TeamSetting({
   teamId,
-  teamData,
+  teamData
 }: {
   teamId: string
   teamData?: TeamData
@@ -107,7 +107,7 @@ export default function TeamSetting({
 }
 function TeamEditor({
   teamId,
-  teamData,
+  teamData
 }: {
   teamId: string
   teamData?: TeamData
@@ -210,7 +210,7 @@ function TeamEditor({
     return {
       data: charUIData,
       teamData,
-      compareData: undefined,
+      compareData: undefined
     }
   }, [charUIData, teamData])
   return (
@@ -299,7 +299,7 @@ function CharSelButton({
   teamId,
   loadoutDatum,
   teamData,
-  onClickChar,
+  onClickChar
 }: {
   index: number
   teamId: string
@@ -339,7 +339,7 @@ function CharSelButton({
     return {
       data: charUIData,
       teamData,
-      compareData: undefined,
+      compareData: undefined
     }
   }, [charUIData, teamData])
 

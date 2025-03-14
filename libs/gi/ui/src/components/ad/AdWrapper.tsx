@@ -3,7 +3,7 @@ import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   AdSenseUnit,
   CardThemed,
-  IsAdBlockedContext,
+  IsAdBlockedContext
 } from '@genshin-optimizer/common/ui'
 import { getRandomElementFromArray } from '@genshin-optimizer/common/util'
 import type { BoxProps } from '@mui/material'
@@ -20,7 +20,7 @@ export function AdWrapper({
   fullWidth = false,
   sx,
   onClose,
-  bgt = 'light',
+  bgt = 'light'
 }: {
   dataAdSlot: string
   height?: number
@@ -54,7 +54,7 @@ export function AdWrapper({
 function GOAdWrapper({
   sx = {},
   bgt = 'light',
-  children,
+  children
 }: {
   sx?: BoxProps['sx']
   bgt?: CardBackgroundColor

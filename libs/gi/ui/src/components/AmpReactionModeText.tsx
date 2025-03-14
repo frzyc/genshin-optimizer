@@ -8,17 +8,17 @@ import { useTranslation } from 'react-i18next'
 export const ampReactionMap = {
   melt: {
     cryo: 'pyro',
-    pyro: 'cryo',
+    pyro: 'cryo'
   },
   vaporize: {
     hydro: 'pyro',
-    pyro: 'hydro',
-  },
+    pyro: 'hydro'
+  }
 } as const
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
 export function AmpReactionModeText({
   reaction,
-  trigger,
+  trigger
 }: {
   reaction: AmpReactionKey
   trigger?: 'cryo' | 'pyro' | 'hydro'

@@ -11,7 +11,7 @@ import { statPercent } from '../util'
 export function ArtifactMainStatMultiAutocomplete({
   mainStatKeys,
   setMainStatKeys,
-  totals,
+  totals
 }: {
   mainStatKeys: MainStatKey[]
   setMainStatKeys: (keys: MainStatKey[]) => void
@@ -24,7 +24,7 @@ export function ArtifactMainStatMultiAutocomplete({
       allMainStatKeys.map((key) => ({
         key,
         label: `${tk(key)}${statPercent(key)}`,
-        variant: KeyMap.getVariant(key),
+        variant: KeyMap.getVariant(key)
       })),
     [tk]
   )

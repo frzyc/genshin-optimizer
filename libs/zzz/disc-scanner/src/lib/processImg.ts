@@ -10,7 +10,7 @@ import {
   invertColors,
   lighterColor,
   thresholdFilter,
-  urlToImageData,
+  urlToImageData
 } from '@genshin-optimizer/common/img-util'
 import { levenshteinDistance } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
@@ -24,7 +24,7 @@ import {
   parseMainStatKeys,
   parseSet,
   parseSetSlot,
-  parseSubstats,
+  parseSubstats
 } from './parse'
 
 export type Processed = {
@@ -66,7 +66,7 @@ export async function processEntry(
     fileName: fName,
     imageURL: imageDataToCanvas(discCardImageData).toDataURL(),
     texts: [],
-    debugImgs,
+    debugImgs
   }
 
   const bwHeader = zzzPreprocessImage(discCardImageData)
@@ -162,7 +162,7 @@ export async function processEntry(
     location: '',
     lock: false,
     trash: false,
-    substats,
+    substats
   }
   retProcessed.disc = disc
   return retProcessed
@@ -202,7 +202,7 @@ function cropDiscCard(
       r: 255,
       g: 0,
       b: 0,
-      a: 100,
+      a: 100
     })
     drawline(canvas, a, { r: 0, g: 255, b: 0, a: 150 })
     drawline(canvas, b, { r: 0, g: 0, b: 255, a: 150 })
@@ -237,7 +237,7 @@ function cropDiscCard(
         r: 255,
         g: 0,
         b: 0,
-        a: 100,
+        a: 100
       },
       false
     )

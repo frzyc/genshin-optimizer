@@ -6,6 +6,6 @@ import weapons from './weapons'
 const data = {
   artifacts,
   chars,
-  weapons,
+  weapons
 } as const
 export default data

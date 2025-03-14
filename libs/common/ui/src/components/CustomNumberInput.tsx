@@ -17,14 +17,14 @@ export const StyledInputBase = styled(InputBase)(
     backgroundColor: theme.palette[color].main,
     transition: 'all 0.5s ease',
     '&:hover': {
-      backgroundColor: theme.palette[color].dark,
+      backgroundColor: theme.palette[color].dark
     },
     '&.Mui-focused': {
-      backgroundColor: theme.palette[color].dark,
+      backgroundColor: theme.palette[color].dark
     },
     '&.Mui-disabled': {
-      backgroundColor: theme.palette[color].dark,
-    },
+      backgroundColor: theme.palette[color].dark
+    }
   })
 )
 
@@ -34,8 +34,8 @@ const Wrapper = styled(Button)(({ theme }) => ({
   overflow: 'hidden',
   div: {
     width: '100%',
-    height: '100%',
-  },
+    height: '100%'
+  }
 }))
 
 // wrap the Input with this when using the input in a buttongroup

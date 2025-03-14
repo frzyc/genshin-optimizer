@@ -5,7 +5,7 @@ import type { SvgIconProps } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 export default function ElementCycle({
-  iconProps,
+  iconProps
 }: {
   iconProps: SvgIconProps
 }) {

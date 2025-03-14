@@ -4,7 +4,7 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
@@ -14,7 +14,7 @@ import {
   artMaxLevel,
   substatTypeKeys,
   weaponMaxAscension,
-  weaponMaxLevel,
+  weaponMaxLevel
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
@@ -59,7 +59,7 @@ export class BuildTcDataManager extends DataManager<
       character: _character,
       artifact: _artifact,
       weapon: _weapon,
-      optimization: _optimization,
+      optimization: _optimization
     }
   }
   new(data: Partial<BuildTc>) {
@@ -122,21 +122,21 @@ export function initCharTC(weaponKey: WeaponKey): BuildTc {
       key: weaponKey,
       level: 1,
       ascension: 0,
-      refinement: 1,
+      refinement: 1
     },
     artifact: {
       slots: initCharTCArtifactSlots(),
       substats: {
         type: 'max',
         stats: objKeyMap(allSubstatKeys, () => 0),
-        rarity: 5,
+        rarity: 5
       },
-      sets: {},
+      sets: {}
     },
     optimization: {
       distributedSubstats: 45,
-      maxSubstats: initBuildTcOptimizationMaxSubstats(),
-    },
+      maxSubstats: initBuildTcOptimizationMaxSubstats()
+    }
   }
 }
 function initCharTCArtifactSlots() {
@@ -146,8 +146,8 @@ function initCharTCArtifactSlots() {
     statKey: (s === 'flower'
       ? 'hp'
       : s === 'plume'
-      ? 'atk'
-      : 'atk_') as MainStatKey,
+        ? 'atk'
+        : 'atk_') as MainStatKey
   }))
 }
 function validateBuildTCChar(char: unknown): BuildTc['character'] {
@@ -171,7 +171,7 @@ function validateBuildTCChar(char: unknown): BuildTc['character'] {
     level,
     ascension,
     talent,
-    constellation,
+    constellation
   }
 }
 function validateBuildTCWeapon(weapon: unknown): BuildTc['weapon'] | undefined {
@@ -201,7 +201,7 @@ function validateBuildTCArtifact(
   let {
     slots,
     substats: { type, stats, rarity },
-    sets,
+    sets
   } = artifact as BuildTc['artifact']
   const _slots = validateBuildTCArtifactSlots(slots)
   if (!_slots) return undefined
@@ -237,7 +237,7 @@ function validateBuildTCArtifactSlots(
       return {
         level: clamp(level, 0, artMaxLevel[rarity]),
         rarity,
-        ...rest,
+        ...rest
       }
     }
   )
@@ -300,10 +300,10 @@ export function toBuildTc(
         value === 3
           ? 2
           : value === 5
-          ? 4
-          : value === 1 && !(key as string).startsWith('PrayersFor')
-          ? 0
-          : value,
+            ? 4
+            : value === 1 && !(key as string).startsWith('PrayersFor')
+              ? 0
+              : value
       ])
       .filter(([, value]) => value)
   )

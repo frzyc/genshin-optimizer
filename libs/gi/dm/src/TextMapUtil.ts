@@ -15,7 +15,7 @@ export const TextMapPT = JSON.parse(readDMJSON('TextMap/TextMapPT.json'))
 export const TextMapRU = JSON.parse(readDMJSON('TextMap/TextMapRU.json'))
 export const TextMapTH = {
   ...JSON.parse(readDMJSON('TextMap/TextMapTH_0.json')),
-  ...JSON.parse(readDMJSON('TextMap/TextMapTH_1.json')),
+  ...JSON.parse(readDMJSON('TextMap/TextMapTH_1.json'))
 }
 export const TextMapTR = JSON.parse(readDMJSON('TextMap/TextMapTR.json'))
 export const TextMapVI = JSON.parse(readDMJSON('TextMap/TextMapVI.json'))
@@ -35,5 +35,5 @@ export const languageMap = {
   ru: TextMapRU,
   th: TextMapTH,
   tr: TextMapTR,
-  vi: TextMapVI,
+  vi: TextMapVI
 } as Record<Language, Record<string, string>>

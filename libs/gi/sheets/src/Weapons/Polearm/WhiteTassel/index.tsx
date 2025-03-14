@@ -10,8 +10,8 @@ const dmgInc = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
 const normal_dmg_ = subscript(input.weapon.refinement, dmgInc)
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    normal_dmg_,
-  },
+    normal_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -20,10 +20,10 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: normal_dmg_,
-        },
-      ],
-    },
-  ],
+          node: normal_dmg_
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -22,7 +22,7 @@ export class DefaultSplitWorker implements SplitWorker {
     this.stack.push({
       filter,
       count: countBuilds(filterArts(this.arts, filter)),
-      splittedBy,
+      splittedBy
     })
   }
   *split(filter: RequestFilter, minCount: number): Generator<RequestFilter> {
@@ -52,7 +52,7 @@ export class DefaultSplitWorker implements SplitWorker {
     const candidates = allArtifactSlotKeys
       .map((slot) => ({
         slot,
-        sets: new Set(arts.values[slot].map((x) => x.set)),
+        sets: new Set(arts.values[slot].map((x) => x.set))
       }))
       .filter(({ sets }) => sets.size > 1)
 

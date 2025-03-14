@@ -3,7 +3,7 @@ import {
   DAY_MS,
   MINUTE_MS,
   SECOND_MS,
-  timeString,
+  timeString
 } from '@genshin-optimizer/common/util'
 import type { TimeZoneKey } from '@genshin-optimizer/gi/db'
 import { timeZones } from '@genshin-optimizer/gi/db'
@@ -34,9 +34,12 @@ export default function TeyvatTime() {
   useEffect(() => {
     const setSecondTimeout = () => {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
-      return setTimeout(() => {
-        interval = setSecondTimeout()
-      }, SECOND_MS - (Date.now() % SECOND_MS))
+      return setTimeout(
+        () => {
+          interval = setSecondTimeout()
+        },
+        SECOND_MS - (Date.now() % SECOND_MS)
+      )
     }
     let interval = setSecondTimeout()
     return () => clearTimeout(interval)

@@ -7,7 +7,7 @@ import {
   getBuildTcArtifactData,
   getBuildTcWeaponData,
   getTeamDataCalc,
-  optimizeNodesForScaling,
+  optimizeNodesForScaling
 } from '../'
 
 describe('A general optimizeTC usecase', () => {
@@ -22,7 +22,7 @@ describe('A general optimizeTC usecase', () => {
           plume: { level: 20, rarity: 5, statKey: 'atk' },
           sands: { level: 20, rarity: 5, statKey: 'hp_' },
           goblet: { level: 20, rarity: 5, statKey: 'pyro_dmg_' },
-          circlet: { level: 20, rarity: 5, statKey: 'critDMG_' },
+          circlet: { level: 20, rarity: 5, statKey: 'critDMG_' }
         },
         substats: {
           type: 'mid',
@@ -36,11 +36,11 @@ describe('A general optimizeTC usecase', () => {
             eleMas: 39.63,
             enerRech_: 49.545, // very close to 50%
             critRate_: 6.609999999999999,
-            critDMG_: 13.209999999999999,
+            critDMG_: 13.209999999999999
           },
-          rarity: 5,
+          rarity: 5
         },
-        sets: { CrimsonWitchOfFlames: 4 },
+        sets: { CrimsonWitchOfFlames: 4 }
       },
       weapon: { key: 'StaffOfHoma', level: 90, ascension: 6, refinement: 1 },
       optimization: {
@@ -55,9 +55,9 @@ describe('A general optimizeTC usecase', () => {
           eleMas: 10,
           enerRech_: 10,
           critRate_: 10,
-          critDMG_: 10,
-        },
-      },
+          critDMG_: 10
+        }
+      }
     })
     const buildTc: BuildTc = database.buildTcs.get(buildTcId)!
     expect(buildTc).toBeTruthy()
@@ -69,35 +69,35 @@ describe('A general optimizeTC usecase', () => {
       ascension: 6,
       refinement: 1,
       location: 'HuTao',
-      lock: true,
+      lock: true
     })
     database.chars.set(characterKey, {
       key: 'HuTao',
       level: 89,
       ascension: 6,
 
-      talent: { auto: 9, skill: 9, burst: 9 },
+      talent: { auto: 9, skill: 9, burst: 9 }
     })
     database.chars.set('Xingqiu', {
       key: 'Xingqiu',
       level: 89,
       ascension: 6,
       talent: { auto: 9, skill: 9, burst: 9 },
-      constellation: 0,
+      constellation: 0
     })
     database.chars.set('Yelan', {
       key: 'Yelan',
       level: 89,
       ascension: 6,
       talent: { auto: 9, skill: 9, burst: 9 },
-      constellation: 0,
+      constellation: 0
     })
     database.chars.set('Xiangling', {
       key: 'Xiangling',
       level: 89,
       ascension: 6,
       talent: { auto: 9, skill: 9, burst: 9 },
-      constellation: 0,
+      constellation: 0
     })
     const HuTaoTeamCharId = database.teamChars.new(characterKey, {
       bonusStats: {},
@@ -108,11 +108,11 @@ describe('A general optimizeTC usecase', () => {
         CrimsonWitchOfFlames: { stack: '1' },
         GildedDreams: { passive: 'on' },
         DesertPavilionChronicle: { set4: 'on' },
-        DragonsBane: { BaneOfFlameAndWater: 'on' },
+        DragonsBane: { BaneOfFlameAndWater: 'on' }
       },
       infusionAura: '',
       hitMode: 'avgHit',
-      reaction: 'vaporize',
+      reaction: 'vaporize'
     })
     const loadoutData = [
       { teamCharId: HuTaoTeamCharId },
@@ -120,14 +120,14 @@ describe('A general optimizeTC usecase', () => {
         teamCharId: database.teamChars.new('Xingqiu', {
           conditional: {
             NoblesseOblige: { set4: 'on' },
-            Xingqiu: { c2: 'on', skill: 'on' },
-          },
-        }),
+            Xingqiu: { c2: 'on', skill: 'on' }
+          }
+        })
       },
       {
         teamCharId: database.teamChars.new('Yelan', {
-          conditional: { Yelan: { a4Stacks: '9' } },
-        }),
+          conditional: { Yelan: { a4Stacks: '9' } }
+        })
       },
       {
         teamCharId: database.teamChars.new('Xiangling', {
@@ -135,14 +135,14 @@ describe('A general optimizeTC usecase', () => {
             Xiangling: {
               afterGuobaHit: 'afterGuobaHit',
               afterPyronado: 'duringPyronado',
-              afterChili: 'afterChili',
-            },
-          },
-        }),
-      },
+              afterChili: 'afterChili'
+            }
+          }
+        })
+      }
     ] as LoadoutDatum[]
     const teamId = database.teams.new({
-      loadoutData,
+      loadoutData
     })
     expect(teamId).toBeTruthy()
     const overrideArt = getBuildTcArtifactData(buildTc)
@@ -162,9 +162,9 @@ describe('A general optimizeTC usecase', () => {
       '["basic","enerRech_"]': [
         {
           value: 150,
-          disabled: false,
-        },
-      ],
+          disabled: false
+        }
+      ]
     }
     const { nodes, valueFilter } = optimizeNodesForScaling(
       teamData,
@@ -185,7 +185,7 @@ describe('A general optimizeTC usecase', () => {
           enerRech_: 1, // assigned to enerRech for 150
           hp: 0,
           hp_: 0,
-          other: 0,
+          other: 0
         })
       })
   })

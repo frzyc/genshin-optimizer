@@ -5,7 +5,7 @@ import type {
   MessageReactionEventDetails,
   PartialMessageReaction,
   PartialUser,
-  User,
+  User
 } from 'discord.js'
 import { Commands } from '../main'
 import perms from './permissions'

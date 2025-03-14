@@ -1,12 +1,12 @@
 import {
   BootstrapTooltip,
   SolidToggleButtonGroup,
-  theme,
+  theme
 } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   handleMultiSelect,
-  objKeyMap,
+  objKeyMap
 } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
@@ -15,7 +15,7 @@ import {
   allDiscSetKeys,
   allDiscSlotKeys,
   allDiscSubStatKeys,
-  allLocationKeys,
+  allLocationKeys
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { type DiscFilterOption } from '@genshin-optimizer/zzz/util'
@@ -30,7 +30,7 @@ import {
   Chip,
   Divider,
   Grid,
-  ToggleButton,
+  ToggleButton
 } from '@mui/material'
 import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
@@ -63,7 +63,7 @@ export function DiscFilterDisplay({
   filteredIds,
   disableSlotFilter = false,
   enableExclusionFilter = false,
-  excludedIds = [],
+  excludedIds = []
 }: DiscFilterDisplayProps) {
   const { t } = useTranslation(['disc', 'ui'])
 
@@ -84,7 +84,7 @@ export function DiscFilterDisplay({
     showInventory,
     locked = [...lockedValues],
     lines = [],
-    excluded = [...excludedValues],
+    excluded = [...excludedValues]
   } = filterOption
 
   const { database } = useDatabaseContext()
@@ -99,7 +99,7 @@ export function DiscFilterDisplay({
     mainStatTotal,
     subStatTotal,
     locationTotal,
-    excludedTotal,
+    excludedTotal
   } = useMemo(() => {
     const catKeys = {
       rarityTotal: allDiscRarityKeys,
@@ -111,7 +111,7 @@ export function DiscFilterDisplay({
       mainStatTotal: allDiscMainStatKeys,
       subStatTotal: allDiscSubStatKeys,
       locationTotal: [...allLocationKeys, ''],
-      excludedTotal: ['excluded', 'included'],
+      excludedTotal: ['excluded', 'included']
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.discs.entries.forEach(([id, disc]) => {
@@ -159,7 +159,7 @@ export function DiscFilterDisplay({
     disableSlotFilter,
     excludedIds,
     filterOption.slotKeys,
-    filteredIdMap,
+    filteredIdMap
   ])
   return (
     <Box>
@@ -191,7 +191,7 @@ export function DiscFilterDisplay({
                   value={rarityKey}
                   onClick={() =>
                     filterOptionDispatch({
-                      rarity: rarityHandler(rarity, rarityKey),
+                      rarity: rarityHandler(rarity, rarityKey)
                     })
                   }
                 >
@@ -209,7 +209,7 @@ export function DiscFilterDisplay({
                   value={line}
                   onClick={() =>
                     filterOptionDispatch({
-                      lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4>,
+                      lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4>
                     })
                   }
                 >
@@ -291,7 +291,7 @@ export function DiscFilterDisplay({
                       sx={{ display: 'flex', gap: 1 }}
                       onClick={() =>
                         filterOptionDispatch({
-                          excluded: excludedHandler(excluded, v),
+                          excluded: excludedHandler(excluded, v)
                         })
                       }
                     >

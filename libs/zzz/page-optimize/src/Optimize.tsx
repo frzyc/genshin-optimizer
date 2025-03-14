@@ -3,29 +3,29 @@ import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import {
   handleMultiSelect,
   objMap,
-  toDecimal,
+  toDecimal
 } from '@genshin-optimizer/common/util'
 import type {
   DiscMainStatKey,
   DiscSetKey,
   FormulaKey,
-  LocationKey,
+  LocationKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   discSlotToMainStatKeys,
-  type DiscSlotKey,
+  type DiscSlotKey
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import {
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
 import {
   DiscSetFilter,
   StatDisplay,
-  WorkerSelector,
+  WorkerSelector
 } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
@@ -36,7 +36,7 @@ import {
   CardHeader,
   Divider,
   LinearProgress,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Stack } from '@mui/system'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
@@ -48,7 +48,7 @@ export default function OptimizeWrapper({
   formulaKey,
   location,
   baseStats,
-  setResults,
+  setResults
 }: {
   formulaKey: FormulaKey
   location: LocationKey
@@ -105,7 +105,7 @@ export default function OptimizeWrapper({
           3: [],
           4: [],
           5: [],
-          6: [],
+          6: []
         } as Record<DiscSlotKey, ICachedDisc[]>
       ),
     [discsDirty, database.discs.values, location, character]
@@ -141,7 +141,7 @@ export default function OptimizeWrapper({
       character.conditionals,
       objMap(character.constraints, (c, k) => ({
         ...c,
-        value: toDecimal(c.value, k),
+        value: toDecimal(c.value, k)
       })),
       setFilter2,
       setFilter4,
@@ -171,12 +171,12 @@ export default function OptimizeWrapper({
   )
   const discSlotBtns = (slotKey: '4' | '5' | '6') => {
     const mainKeysHandler = handleMultiSelect([
-      ...discSlotToMainStatKeys[slotKey],
+      ...discSlotToMainStatKeys[slotKey]
     ])
     const keysMap = {
       '4': character?.slot4 ?? [],
       '5': character?.slot5 ?? [],
-      '6': character?.slot6 ?? [],
+      '6': character?.slot6 ?? []
     } as Record<'4' | '5' | '6', DiscMainStatKey[]>
     const funcMap = {
       '4': (slot4: DiscMainStatKey[]) =>
@@ -184,7 +184,7 @@ export default function OptimizeWrapper({
       '5': (slot5: DiscMainStatKey[]) =>
         character && database.chars.set(character.key, { slot5 }),
       '6': (slot6: DiscMainStatKey[]) =>
-        character && database.chars.set(character.key, { slot6 }),
+        character && database.chars.set(character.key, { slot6 })
     } as Record<'4' | '5' | '6', (slots: DiscMainStatKey[]) => void>
     return (
       <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
@@ -239,7 +239,7 @@ export default function OptimizeWrapper({
             onClick={() =>
               character &&
               database.chars.set(character.key, {
-                useEquipped: !character.useEquipped,
+                useEquipped: !character.useEquipped
               })
             }
             color={character?.useEquipped ? 'success' : 'secondary'}
@@ -276,7 +276,7 @@ export default function OptimizeWrapper({
 
 function ProgressIndicator({
   progress,
-  totalPermutations,
+  totalPermutations
 }: {
   progress: ProgressResult
   totalPermutations: number
@@ -306,7 +306,7 @@ function SetFilter({ disabled }: { disabled: boolean }) {
   const {
     setFilter2 = [],
     setFilter4 = [],
-    key: characterKey,
+    key: characterKey
   } = character ?? {}
 
   const setSetFilter2 = useCallback(

@@ -1,13 +1,13 @@
 import {
   layeredAssignment,
   objKeyMap,
-  verifyObjKeys,
+  verifyObjKeys
 } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   ElementKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import { allElementKeys, allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
@@ -28,7 +28,7 @@ import {
   reactions,
   stringPrio,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 
 const commonBasic = objKeyMap(
@@ -37,7 +37,7 @@ const commonBasic = objKeyMap(
 )
 
 export const hitEle = objKeyMap(allElementKeys, (ele) => ({
-  hit: { ele: constant(ele) },
+  hit: { ele: constant(ele) }
 }))
 
 const inferredHitEle = stringPrio(
@@ -45,7 +45,7 @@ const inferredHitEle = stringPrio(
     input.hit.move,
     {
       skill: input.charEle,
-      burst: input.charEle,
+      burst: input.charEle
     },
     undefined
   ),
@@ -55,7 +55,7 @@ const inferredHitEle = stringPrio(
       sword: infusionNode,
       claymore: infusionNode,
       polearm: infusionNode,
-      catalyst: input.charEle,
+      catalyst: input.charEle
     },
     undefined
   ),
@@ -104,10 +104,10 @@ export function customDmgNode(
         hit: {
           base,
           move: constant(move),
-          ele: additional?.hit?.ele ? undefined : inferredHitEle,
-        },
+          ele: additional?.hit?.ele ? undefined : inferredHitEle
+        }
       },
-      additional,
+      additional
     ])
   )
 }
@@ -155,7 +155,7 @@ export function dmgNode(
   return customDmgNode(
     prod(
       subscript(input.total[`${talentType}Index`], lvlMultiplier, {
-        unit: '%',
+        unit: '%'
       }),
       input.total[base],
       ...(specialMultiplier ? [infoMut(specialMultiplier, { unit: '%' })] : [])
@@ -184,7 +184,7 @@ export function splitScaleDmgNode(
       ...bases.map((base, i) =>
         prod(
           subscript(input.total[`${talentType}Index`], lvlMultipliers[i], {
-            unit: '%',
+            unit: '%'
           }),
           input.total[base],
           ...(specialMultiplier
@@ -214,7 +214,7 @@ export function plungingDmgNodes(
         key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
         additional,
         specialMultiplier
-      ),
+      )
     ])
   )
   verifyObjKeys(nodes, allPlungingDmgKeys)
@@ -273,7 +273,7 @@ export function shieldNodeTalent(
 }
 export function shieldElement(element: ElementKey, shieldNode: NumNode) {
   return infoMut(prod(percent(element === 'geo' ? 1.5 : 2.5), shieldNode), {
-    variant: element,
+    variant: element
   })
 }
 /** Note: `additional` applies only to this formula */
@@ -324,7 +324,7 @@ export function dataObjForCharacterSheet(
     base: {},
     weaponType: constant(weaponType),
     premod: {},
-    display,
+    display
   }
   if (element) {
     data.charEle = constant(element)
@@ -358,7 +358,7 @@ export function dataObjForCharacterSheet(
     const result = infoMut(list.length === 1 ? list[0] : sum(...list), {
       path: stat,
       prefix: 'char',
-      asConst: true,
+      asConst: true
     })
     if (stat.endsWith('_dmg_')) result.info!.variant = stat.slice(0, -5) as any
     if (stat === 'atk' || stat === 'def' || stat === 'hp')

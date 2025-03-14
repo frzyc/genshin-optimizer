@@ -1,14 +1,14 @@
 import {
   clamp01,
   objKeyMap,
-  objSumInPlace,
+  objSumInPlace
 } from '@genshin-optimizer/common/util'
 import type {
   AnomalyDamageKey,
   AttributeDamageKey,
   CondKey,
   DiscSetKey,
-  FormulaKey,
+  FormulaKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allAnomalyDmgKeys,
@@ -16,7 +16,7 @@ import {
   allWengineKeys,
   disc2pEffect,
   disc4PeffectSheets,
-  wengineSheets,
+  wengineSheets
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import type { DiscStats } from './common'
@@ -155,7 +155,7 @@ const formulas: Record<FormulaKey, (sums: Record<string, number>) => number> = {
       // DMG Taken Multipler skipped
       // Stunned Multiplier skipped
     )
-  }),
+  })
 }
 function defMulti(s: (k: string) => number) {
   const lvlFactor = getLvlFactor(s('charLvl'))
@@ -234,7 +234,7 @@ const lvlFactorMap = {
   '57': 730,
   '58': 751,
   '59': 772,
-  '60': 794,
+  '60': 794
 } as const
 
 const anomalyDmgMap: Record<AnomalyDamageKey, AttributeDamageKey> = {
@@ -242,12 +242,12 @@ const anomalyDmgMap: Record<AnomalyDamageKey, AttributeDamageKey> = {
   shock: 'electric_dmg_',
   corruption: 'ether_dmg_',
   shatter: 'ice_dmg_',
-  assault: 'physical_dmg_',
+  assault: 'physical_dmg_'
 } as const
 const anomalyBaseDmg: Record<AnomalyDamageKey, number> = {
   burn: 0.5,
   shock: 1.25,
   corruption: 0.625,
   shatter: 5.0,
-  assault: 7.13,
+  assault: 7.13
 }

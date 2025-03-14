@@ -13,17 +13,17 @@ describe('test  @genshin_optimizer/util/string', () => {
 
   it('test extractJSON', () => {
     expect(extractJSON('Leading text {"key": "value"} trailing text')).toEqual({
-      key: 'value',
+      key: 'value'
     })
     expect(extractJSON('{"escaped": "He said \\"hello\\"."}')).toEqual({
-      escaped: 'He said "hello".',
+      escaped: 'He said "hello".'
     })
     expect(extractJSON('{"nested": {"key": "value", "list": [1, 2]}}')).toEqual(
       { nested: { key: 'value', list: [1, 2] } }
     )
     expect(extractJSON('{"bool": true, "nullValue": null}')).toEqual({
       bool: true,
-      nullValue: null,
+      nullValue: null
     })
     expect(extractJSON('{key: "value"}')).toEqual(null)
     expect(extractJSON('{"a": "b"} {"c": "d"}')).toEqual({ a: 'b' })

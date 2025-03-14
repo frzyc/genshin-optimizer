@@ -2,12 +2,12 @@ import {
   CardThemed,
   DropdownButton,
   ImgIcon,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
-  characterKeyToGenderedKey,
+  characterKeyToGenderedKey
 } from '@genshin-optimizer/sr/assets'
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allEidolonKeys } from '@genshin-optimizer/sr/consts'
@@ -26,7 +26,7 @@ import {
   Skeleton,
   Stack,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense } from 'react'
 import { AbilityDropdown } from './AbilityDropdown'
@@ -34,7 +34,7 @@ import { CharacterName } from './CharacterTrans'
 
 export function CharacterEditor({
   characterKey,
-  onClose,
+  onClose
 }: {
   characterKey: CharacterKey | undefined
   onClose: () => void
@@ -51,7 +51,7 @@ export function CharacterEditor({
 }
 
 function CharacterEditorContent({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {
@@ -72,7 +72,7 @@ function CharacterEditorContent({
           value={character?.level || 0}
           onChange={(e) =>
             database.chars.set(characterKey, {
-              level: parseInt(e.target.value),
+              level: parseInt(e.target.value)
             })
           }
           disabled={!character}
@@ -85,7 +85,7 @@ function CharacterEditorContent({
           value={character?.ascension || 0}
           onChange={(e) =>
             database.chars.set(characterKey, {
-              ascension: parseInt(e.target.value) as AscensionKey,
+              ascension: parseInt(e.target.value) as AscensionKey
             })
           }
           disabled={!character}
@@ -121,7 +121,7 @@ function CharacterEditorContent({
                       sideMargin
                       src={characterAsset(genderedKey, 'basic_0')}
                     />
-                  ),
+                  )
                 }}
               />
             </Grid>
@@ -136,7 +136,7 @@ function CharacterEditorContent({
                       sideMargin
                       src={characterAsset(genderedKey, 'skill_0')}
                     />
-                  ),
+                  )
                 }}
               />
             </Grid>
@@ -151,7 +151,7 @@ function CharacterEditorContent({
                       sideMargin
                       src={characterAsset(genderedKey, 'ult_0')}
                     />
-                  ),
+                  )
                 }}
               />
             </Grid>
@@ -166,7 +166,7 @@ function CharacterEditorContent({
                       sideMargin
                       src={characterAsset(genderedKey, 'talent_0')}
                     />
-                  ),
+                  )
                 }}
               />
             </Grid>
@@ -183,8 +183,8 @@ function CharacterEditorContent({
                       database.chars.set(characterKey, {
                         bonusAbilities: {
                           ...character?.bonusAbilities,
-                          [bonusAbility]: !enabled,
-                        },
+                          [bonusAbility]: !enabled
+                        }
                       })
                     }}
                     startIcon={
@@ -221,8 +221,8 @@ function CharacterEditorContent({
                         database.chars.set(characterKey, {
                           statBoosts: {
                             ...character?.statBoosts,
-                            [statBoost]: !enabled,
-                          },
+                            [statBoost]: !enabled
+                          }
                         })
                       }}
                       startIcon={

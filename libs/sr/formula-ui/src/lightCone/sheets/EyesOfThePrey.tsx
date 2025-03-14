@@ -4,7 +4,7 @@ import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
 import {
   getLightConeInterpolateObject,
-  mappedStats,
+  mappedStats
 } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'
 import { SuperImposeWrapper } from '../util'
@@ -43,9 +43,9 @@ const sheet: UISheetElement = {
             )
           }
         </SuperImposeWrapper>
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 
 export default sheet

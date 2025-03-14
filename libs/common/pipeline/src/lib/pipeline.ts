@@ -13,6 +13,6 @@ export const langKeys = [
   'ru',
   'th',
   'tr',
-  'vi',
+  'vi'
 ] as const
 export type Language = (typeof langKeys)[number]

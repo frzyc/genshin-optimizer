@@ -2,14 +2,14 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { relicMaxLevel } from '@genshin-optimizer/sr/consts'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { RelicLevelSlider } from '@genshin-optimizer/sr/ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { memo, useContext } from 'react'
 
 export const RelicLevelFilter = memo(function RelicLevelFilter({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {
@@ -37,7 +37,7 @@ export const RelicLevelFilter = memo(function RelicLevelFilter({
         setBoth={(levelLow, levelHigh) =>
           database.optConfigs.set(optConfigId, {
             levelLow,
-            levelHigh,
+            levelHigh
           })
         }
         disabled={disabled}

@@ -4,7 +4,7 @@ import { commonDefIcon } from '@genshin-optimizer/zzz/assets'
 import { coreLimits } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { MenuItem } from '@mui/material'
 import { useCallback } from 'react'
@@ -19,7 +19,7 @@ export function CoreDropdown() {
     (val: number) =>
       characterKey &&
       database.chars.set(characterKey, {
-        core: val,
+        core: val
       }),
     [database, characterKey]
   )

@@ -9,7 +9,7 @@ import {
   milestoneLevels,
   milestoneLevelsLow,
   milestoneMaxLevel,
-  milestoneMaxLevelLow,
+  milestoneMaxLevelLow
 } from '@genshin-optimizer/zzz/util'
 import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
@@ -21,7 +21,7 @@ export function LevelSelect({
   setBoth,
   useLow = false,
   disabled = false,
-  warning = false,
+  warning = false
 }: {
   level: number
   milestone: MilestoneKey
@@ -64,7 +64,7 @@ export function LevelSelect({
           inputProps: {
             min: 0,
             max: 60,
-            sx: { width: '4em' },
+            sx: { width: '4em' }
           },
           endAdornment: (
             <InputAdornment position="end" sx={{ width: '100%' }}>
@@ -80,7 +80,7 @@ export function LevelSelect({
                 <strong>/ {milestoneMaxLevel[milestone]}</strong>
               </Button>
             </InputAdornment>
-          ),
+          )
         }}
         color={warning ? 'warning' : undefined}
         focused={warning ? true : undefined}

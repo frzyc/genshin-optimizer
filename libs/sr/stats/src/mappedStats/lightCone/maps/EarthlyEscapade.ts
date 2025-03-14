@@ -12,7 +12,7 @@ const dm = {
   stacks: data_gen.superimpose.otherStats[o++][1],
   duration: data_gen.superimpose.otherStats[o++][1],
   crit_: data_gen.superimpose.otherStats[o++],
-  initialDuration: data_gen.superimpose.otherStats[o++][1],
+  initialDuration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

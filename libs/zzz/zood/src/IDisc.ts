@@ -4,7 +4,7 @@ import type {
   DiscSetKey,
   DiscSlotKey,
   DiscSubStatKey,
-  LocationKey,
+  LocationKey
 } from '@genshin-optimizer/zzz/consts'
 
 export interface ISubstat {

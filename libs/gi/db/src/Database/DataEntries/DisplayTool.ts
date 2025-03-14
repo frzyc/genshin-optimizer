@@ -7,7 +7,7 @@ export const timeZones = {
   America: -5 * HOUR_MS,
   Europe: HOUR_MS,
   Asia: 8 * HOUR_MS,
-  'TW, HK, MO': 8 * HOUR_MS,
+  'TW, HK, MO': 8 * HOUR_MS
 }
 export type TimeZoneKey = keyof typeof timeZones
 
@@ -21,7 +21,7 @@ function initialTabOptimize(): IDisplayToolEntry {
   return {
     resin: RESIN_MAX,
     resinDate: new Date().getTime(),
-    timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey,
+    timeZoneKey: Object.keys(timeZones)[0] as TimeZoneKey
   }
 }
 

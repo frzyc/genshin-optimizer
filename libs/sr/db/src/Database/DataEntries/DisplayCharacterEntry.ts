@@ -2,12 +2,12 @@ import { validateArr } from '@genshin-optimizer/common/util'
 import type {
   ElementalTypeKey,
   PathKey,
-  RarityKey,
+  RarityKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allElementalTypeKeys,
   allPathKeys,
-  allRarityKeys,
+  allRarityKeys
 } from '@genshin-optimizer/sr/consts'
 import { DataEntry } from '../DataEntry'
 import type { SroDatabase } from '../Database'
@@ -17,7 +17,7 @@ export const characterSortKeys = [
   'level',
   'rarity',
   'name',
-  'favorite',
+  'favorite'
 ] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
@@ -34,7 +34,7 @@ const initialState = (): IDisplayCharacterEntry => ({
   ascending: false,
   path: [...allPathKeys],
   elementalType: [...allElementalTypeKeys],
-  rarity: [...allRarityKeys],
+  rarity: [...allRarityKeys]
 })
 
 export class DisplayCharacterEntry extends DataEntry<
@@ -63,7 +63,7 @@ export class DisplayCharacterEntry extends DataEntry<
       ascending,
       path,
       elementalType,
-      rarity,
+      rarity
     }
     return data
   }

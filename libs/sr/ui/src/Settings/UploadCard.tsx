@@ -3,7 +3,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type {
   ImportResult,
-  ImportResultCounter,
+  ImportResultCounter
 } from '@genshin-optimizer/sr/db'
 import { SroDatabase } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
@@ -19,7 +19,7 @@ import {
   Grid,
   Tooltip,
   Typography,
-  styled,
+  styled
 } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -28,7 +28,7 @@ const InvisInput = styled('input')({ display: 'none' })
 
 export function UploadCard({
   index,
-  onReplace,
+  onReplace
 }: {
   index: number
   onReplace: () => void
@@ -204,7 +204,7 @@ export function UploadCard({
             fontFamily: 'monospace',
             minHeight: '10em',
             mb: 2,
-            resize: 'vertical',
+            resize: 'vertical'
           }}
           value={data}
           onChange={(e) => setData(e.target.value)}
@@ -229,7 +229,7 @@ export function UploadCard({
 
 function SRODUploadInfo({
   importResult: { source, relics, characters, lightCones },
-  importedDatabase,
+  importedDatabase
 }: {
   importResult: ImportResult
   importedDatabase: SroDatabase
@@ -278,7 +278,7 @@ function SRODUploadInfo({
 function MergeResult({
   result,
   dbTotal,
-  type,
+  type
 }: {
   result: ImportResultCounter<any>
   dbTotal: number
@@ -341,7 +341,7 @@ function MergeResult({
                 width: '100%',
                 fontFamily: 'monospace',
                 minHeight: '10em',
-                resize: 'vertical',
+                resize: 'vertical'
               }}
               value={JSON.stringify(result.invalid, undefined, 2)}
               disabled
@@ -356,7 +356,7 @@ function MergeResult({
 function SROUploadAction({
   index,
   importedDatabase,
-  reset,
+  reset
 }: {
   index: number
   importedDatabase?: SroDatabase

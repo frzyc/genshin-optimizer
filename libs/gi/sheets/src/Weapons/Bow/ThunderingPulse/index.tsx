@@ -21,7 +21,7 @@ const normal_dmg_ = lookup(
   {
     '1': subscript(input.weapon.refinement, naStack1),
     '2': subscript(input.weapon.refinement, naStack2),
-    '3': subscript(input.weapon.refinement, naStack3),
+    '3': subscript(input.weapon.refinement, naStack3)
   },
   naught
 )
@@ -29,8 +29,8 @@ const normal_dmg_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    normal_dmg_,
-  },
+    normal_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -39,9 +39,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: atk_,
-        },
-      ],
+          node: atk_
+        }
+      ]
     },
     {
       value: condPassive,
@@ -52,11 +52,11 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: i }),
         fields: [
           {
-            node: normal_dmg_,
-          },
-        ],
-      })),
-    },
-  ],
+            node: normal_dmg_
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

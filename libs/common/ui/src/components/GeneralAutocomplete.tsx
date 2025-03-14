@@ -5,7 +5,7 @@ import type {
   ChipPropsColorOverrides,
   Palette,
   PaletteColor,
-  TextFieldProps,
+  TextFieldProps
 } from '@mui/material'
 import {
   Autocomplete,
@@ -15,7 +15,7 @@ import {
   MenuItem,
   Skeleton,
   TextField,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useMemo } from 'react'
@@ -87,12 +87,12 @@ export function GeneralAutocomplete<T extends string>({
             InputProps={{
               ...InputProps,
               startAdornment:
-                typeof valueKey === 'string' ? toImg(valueKey) : undefined,
+                typeof valueKey === 'string' ? toImg(valueKey) : undefined
             }}
             inputProps={{
               ...inputProps,
               autoComplete: 'new-password', // disable autocomplete and autofill
-              style: { color },
+              style: { color }
             }}
             color={valueKey ? 'success' : 'primary'}
           />
@@ -190,7 +190,7 @@ export function GeneralAutocompleteMulti<T extends string>({
           label={label}
           inputProps={{
             ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
+            autoComplete: 'new-password' // disable autocomplete and autofill
           }}
           color={keys.length ? 'success' : 'primary'}
         />

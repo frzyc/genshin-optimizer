@@ -5,14 +5,14 @@ import type {
   RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
-  RelicSubStatKey,
+  RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allLocationKeys,
   allRelicRarityKeys,
   allRelicSetKeys,
   allRelicSlotKeys,
-  allRelicSubStatKeys,
+  allRelicSubStatKeys
 } from '@genshin-optimizer/sr/consts'
 
 import { DataEntry } from '../DataEntry'
@@ -23,7 +23,7 @@ export const relicSortKeys = [
   'level',
   'relicsetkey',
   'efficiency',
-  'mefficiency',
+  'mefficiency'
 ] as const
 export type RelicSortKey = (typeof relicSortKeys)[number]
 
@@ -68,7 +68,7 @@ export function initialFilterOption(): FilterOption {
     rvLow: 0,
     rvHigh: 900, // TODO: Figure out RVs for SRO
     useMaxRV: false,
-    lines: [1, 2, 3, 4],
+    lines: [1, 2, 3, 4]
   }
 }
 
@@ -77,7 +77,7 @@ function initialState(): IDisplayRelic {
     filterOption: initialFilterOption(),
     ascending: false,
     sortType: relicSortKeys[0],
-    effFilter: [...allRelicSubStatKeys],
+    effFilter: [...allRelicSubStatKeys]
   }
 }
 
@@ -111,7 +111,7 @@ export class DisplayRelicEntry extends DataEntry<
         rvLow,
         rvHigh,
         useMaxRV,
-        lines,
+        lines
       } = filterOption
       relicSetKeys = validateArr(relicSetKeys, allRelicSetKeys, [])
       rarity = validateArr(rarity, allRelicRarityKeys)
@@ -151,7 +151,7 @@ export class DisplayRelicEntry extends DataEntry<
         rvLow,
         rvHigh,
         useMaxRV,
-        lines,
+        lines
       } as FilterOption
     }
 
@@ -164,7 +164,7 @@ export class DisplayRelicEntry extends DataEntry<
       filterOption,
       ascending,
       sortType,
-      effFilter,
+      effFilter
     } as IDisplayRelic
   }
   override set(

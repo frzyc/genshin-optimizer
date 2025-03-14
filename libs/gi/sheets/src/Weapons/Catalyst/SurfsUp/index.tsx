@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -45,8 +45,8 @@ const normal_dmg_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     hp_,
-    normal_dmg_,
-  },
+    normal_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -55,9 +55,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: hp_,
-        },
-      ],
+          node: hp_
+        }
+      ]
     },
     {
       value: condStacks,
@@ -68,11 +68,11 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: stack }),
         fields: [
           {
-            node: normal_dmg_,
-          },
-        ],
-      })),
-    },
-  ],
+            node: normal_dmg_
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -3,7 +3,7 @@ import type { NonTravelerCharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
   AvatarSkillDepotExcelConfigData,
   CharacterId,
-  ProudSkillExcelConfigData,
+  ProudSkillExcelConfigData
 } from '@genshin-optimizer/gi/dm'
 import {
   avatarExcelConfigData,
@@ -11,7 +11,7 @@ import {
   avatarSkillExcelConfigData,
   avatarTalentExcelConfigData,
   characterIdMap,
-  proudSkillExcelConfigData,
+  proudSkillExcelConfigData
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/skillParam.json'
 
@@ -61,7 +61,7 @@ export default function characterSkillParam() {
       energySkill: burst,
       skills: [normal, skill, sprint],
       talents,
-      inherentProudSkillOpens: [passive1, passive2, passive3, , passive],
+      inherentProudSkillOpens: [passive1, passive2, passive3, , passive]
     } = depot
 
     function parseSkillParams(

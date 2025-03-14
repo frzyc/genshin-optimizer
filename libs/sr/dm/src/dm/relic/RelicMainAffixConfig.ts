@@ -23,7 +23,7 @@ dumpFile(
   [...new Set(relicMainAffixConfig.map(({ GroupID }) => GroupID.toString()))]
 )
 dumpFile(`${PROJROOT_PATH}/src/dm/relic/RelicMainAffixConfig_keys_gen.json`, [
-  ...new Set(relicMainAffixConfig.map(({ Property }) => Property)),
+  ...new Set(relicMainAffixConfig.map(({ Property }) => Property))
 ])
 dumpFile(
   `${PROJROOT_PATH}/src/dm/relic/RelicMainAffixConfig_keysmapped_gen.json`,

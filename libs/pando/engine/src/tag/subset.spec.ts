@@ -2,7 +2,7 @@ import { TagMapKeys, TagMapSubset } from './'
 import type {
   RawTagMapKeys,
   RawTagMapValues,
-  TagMapEntries,
+  TagMapEntries
 } from './compilation'
 import { compileTagMapKeys, compileTagMapValues } from './compilation'
 
@@ -18,7 +18,7 @@ describe('TagMapValues', () => {
         { value: 3, tag: { cat1: 'val3', cat2: 'val1' } },
         { value: 4, tag: { cat1: 'val1', cat2: 'val2' } },
         { value: 5, tag: { cat1: 'val2', cat2: 'val2' } },
-        { value: 6, tag: { cat1: 'val3', cat2: 'val2' } },
+        { value: 6, tag: { cat1: 'val3', cat2: 'val2' } }
       ]),
       map = new TagMapSubset(keys, values)
 
@@ -30,7 +30,7 @@ describe('TagMapValues', () => {
   it('can combine duplicate entries', () => {
     const { keys, values } = compileTagMapEntries([
         { value: 1, tag: { cat1: 'val1' } },
-        { value: 2, tag: { cat1: 'val1' } },
+        { value: 2, tag: { cat1: 'val1' } }
       ]),
       map = new TagMapSubset(keys, values)
 
@@ -40,11 +40,11 @@ describe('TagMapValues', () => {
     const keys = compileTagMapKeys([
       tagList('cat1', 8),
       undefined,
-      tagList('cat2', 16),
+      tagList('cat2', 16)
     ])
     const values = compileTagMapValues(keys, [
         { value: 1, tag: { cat1: 'val0' } },
-        { value: 2, tag: { cat1: 'val1', cat2: 'val0' } },
+        { value: 2, tag: { cat1: 'val1', cat2: 'val0' } }
       ]),
       map = new TagMapSubset(keys, values)
 
@@ -69,7 +69,7 @@ function compileTagMapEntries<V>(entries: TagMapEntries<V>): {
   const keys = compileTagMapKeys(
     [...tags].map(([category, val]) => ({
       category,
-      values: new Set([...val]),
+      values: new Set([...val])
     }))
   )
   const values = compileTagMapValues(new TagMapKeys(keys), entries)

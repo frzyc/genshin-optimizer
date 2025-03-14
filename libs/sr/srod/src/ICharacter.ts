@@ -2,7 +2,7 @@ import type {
   AscensionKey,
   BonusAbilityKey,
   CharacterKey,
-  StatBoostKey,
+  StatBoostKey
 } from '@genshin-optimizer/sr/consts'
 
 export interface ICharacter {

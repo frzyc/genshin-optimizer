@@ -2,7 +2,7 @@ import type { Preset, SrcCondInfo } from '@genshin-optimizer/game-opt/engine'
 import type {
   ArtifactSetKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
@@ -14,7 +14,7 @@ import {
   ownBuff,
   ownTag,
   readStat,
-  reader,
+  reader
 } from './data/util'
 
 export function withPreset(
@@ -47,7 +47,7 @@ export function charData(data: ICharacter): TagMapNodeEntries {
 
     // Default char
     ownBuff.premod.critRate_.add(0.05),
-    ownBuff.premod.critDMG_.add(0.5),
+    ownBuff.premod.critDMG_.add(0.5)
   ]
 }
 
@@ -59,7 +59,7 @@ export function weaponData(data: IWeapon): TagMapNodeEntries {
 
     lvl.add(data.level),
     ascension.add(data.ascension),
-    refinement.add(data.refinement),
+    refinement.add(data.refinement)
   ]
 }
 
@@ -71,7 +71,7 @@ export function artifactsData(
 ): TagMapNodeEntries {
   const {
     common: { count },
-    premod,
+    premod
   } = convert(ownTag, { sheet: 'art', et: 'own' })
   const { agg, art, dyn } = reader.withAll('sheet', [])
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
@@ -91,7 +91,9 @@ export function artifactsData(
     agg.reread(art), // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
-    art.with('qt', 'premod').reread(dyn),
+    art
+      .with('qt', 'premod')
+      .reread(dyn),
     ...Object.entries(stats).map(([k, v]) =>
       readStat(premod, k as MainStatKey | SubstatKey)
         .sheet('dyn')
@@ -100,7 +102,7 @@ export function artifactsData(
 
     ...Object.entries(sets).map(([k, v]) =>
       count.sheet(k as ArtifactSetKey).add(v)
-    ),
+    )
   ]
 }
 
@@ -169,13 +171,13 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
         own
           .with('qt', 'stackOut')
-          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
+          .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn))
       ]
     }),
 
     // Total Team Stat
     members.map((src) =>
       teamEntry.add(reader.withTag({ et: 'own', src, dst: null }))
-    ),
+    )
   ].flat()
 }

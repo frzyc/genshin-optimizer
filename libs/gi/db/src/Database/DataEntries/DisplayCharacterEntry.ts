@@ -2,12 +2,12 @@ import { validateArr } from '@genshin-optimizer/common/util'
 import type {
   CharacterRarityKey,
   ElementKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
   allElementKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
@@ -17,7 +17,7 @@ export const characterSortKeys = [
   'level',
   'rarity',
   'name',
-  'favorite',
+  'favorite'
 ] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
@@ -34,7 +34,7 @@ const initialState = (): IDisplayCharacterEntry => ({
   ascending: false,
   weaponType: [...allWeaponTypeKeys],
   element: [...allElementKeys],
-  rarity: [...allCharacterRarityKeys],
+  rarity: [...allCharacterRarityKeys]
 })
 
 export class DisplayCharacterEntry extends DataEntry<
@@ -63,7 +63,7 @@ export class DisplayCharacterEntry extends DataEntry<
       ascending,
       weaponType,
       element,
-      rarity,
+      rarity
     }
     return data
   }

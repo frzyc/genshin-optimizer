@@ -5,7 +5,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
@@ -27,7 +27,7 @@ const hit = equal(
     ),
     'elemental',
     {
-      hit: { ele: constant('physical') },
+      hit: { ele: constant('physical') }
     }
   )
 )
@@ -39,10 +39,10 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('talents.passive')),
       fields: [
         {
-          node: infoMut(hit, { name: st('dmg') }),
-        },
-      ],
-    },
-  ],
+          node: infoMut(hit, { name: st('dmg') })
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

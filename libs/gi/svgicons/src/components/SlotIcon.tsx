@@ -4,7 +4,7 @@ import { CircletIcon, FlowerIcon, GobletIcon, PlumeIcon, SandsIcon } from '../'
 
 export function SlotIcon({
   slotKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   slotKey: ArtifactSlotKey
   iconProps?: SvgIconProps

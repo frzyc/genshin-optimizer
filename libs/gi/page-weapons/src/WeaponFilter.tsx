@@ -3,17 +3,17 @@ import {
   CardThemed,
   SolidToggleButtonGroup,
   SqBadge,
-  theme,
+  theme
 } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   catTotal,
-  handleMultiSelect,
+  handleMultiSelect
 } from '@genshin-optimizer/common/util'
 import {
   allLocationCharacterKeys,
   allRarityKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
@@ -21,7 +21,7 @@ import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
   LocationFilterMultiAutocomplete,
   WeaponRarityToggle,
-  WeaponToggle,
+  WeaponToggle
 } from '@genshin-optimizer/gi/ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -38,7 +38,7 @@ import {
   Grid,
   Stack,
   ToggleButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -50,7 +50,7 @@ const lockedHandler = handleMultiSelect([...lockedValues])
 function WeaponFilter({
   numShowing,
   total,
-  weaponIds,
+  weaponIds
 }: {
   numShowing: number
   total: number
@@ -95,7 +95,7 @@ function WeaponFilter({
     const catKeys = {
       lockedTotal: ['locked', 'unlocked'],
       equippedTotal: ['equipped', 'unequipped'],
-      locationTotal: [...allLocationCharacterKeys, ''],
+      locationTotal: [...allLocationCharacterKeys, '']
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.weapons.entries.forEach(([id, weapon]) => {
@@ -190,7 +190,7 @@ function WeaponFilter({
                         sx={{ display: 'flex', gap: 1 }}
                         onClick={() =>
                           database.displayWeapon.set({
-                            locked: lockedHandler(locked, v),
+                            locked: lockedHandler(locked, v)
                           })
                         }
                       >
@@ -208,7 +208,7 @@ function WeaponFilter({
                     color={showInventory ? 'success' : 'secondary'}
                     onClick={() =>
                       database.displayWeapon.set({
-                        showInventory: !showInventory,
+                        showInventory: !showInventory
                       })
                     }
                   >
@@ -224,7 +224,7 @@ function WeaponFilter({
                     color={showEquipped ? 'success' : 'secondary'}
                     onClick={() =>
                       database.displayWeapon.set({
-                        showEquipped: !showEquipped,
+                        showEquipped: !showEquipped
                       })
                     }
                   >

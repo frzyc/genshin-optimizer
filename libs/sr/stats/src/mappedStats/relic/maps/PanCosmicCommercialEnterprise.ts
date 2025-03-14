@@ -10,8 +10,8 @@ const dm = {
   2: {
     passive_eff_: data_gen.setEffects[0].passiveStats.eff_,
     scaling: data_gen.setEffects[0].otherStats[o++],
-    atk_cap: data_gen.setEffects[0].otherStats[o++],
-  },
+    atk_cap: data_gen.setEffects[0].otherStats[o++]
+  }
 } as const
 
 export default dm

@@ -18,7 +18,7 @@ describe('TagMapKeys', () => {
       test('automatically', () => {
         const keys = compileTagMapKeys([
           ...[...Array(7)].map((_, i) => tagList(`cat${i}`, 8)),
-          tagList('cat8', 16),
+          tagList('cat8', 16)
         ])
         // Each of the first seven categories requires 4 bit, and the last category requires 5 bits
         expect(keys.tagLen).toEqual(2)
@@ -27,7 +27,7 @@ describe('TagMapKeys', () => {
         const keys = compileTagMapKeys([
           tagList('cat1', 8),
           undefined, // Jump to the next byte
-          tagList('cat2', 16),
+          tagList('cat2', 16)
         ])
         expect(keys.tagLen).toEqual(2)
       })
@@ -35,7 +35,7 @@ describe('TagMapKeys', () => {
     it('can support full tag list', () => {
       const compiled = compileTagMapKeys([
           tagList('cat1', 15),
-          tagList('cat2', 15),
+          tagList('cat2', 15)
         ]),
         keys = new TagMapKeys(compiled)
 
@@ -60,7 +60,7 @@ describe('TagMapKeys', () => {
   describe('combine', () => {
     const compiled = compileTagMapKeys([
         tagList('cat1', 4),
-        tagList('cat2', 4),
+        tagList('cat2', 4)
       ]),
       keys = new TagMapKeys(compiled)
     it('can combine simple tags', () => {

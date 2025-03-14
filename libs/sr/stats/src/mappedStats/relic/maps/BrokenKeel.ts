@@ -10,8 +10,8 @@ const dm = {
   2: {
     passive_eff_res_: data_gen.setEffects[0].passiveStats.eff_res_,
     eff_res_threshold: data_gen.setEffects[0].otherStats[o++],
-    team_crit_dmg_: data_gen.setEffects[0].otherStats[o++],
-  },
+    team_crit_dmg_: data_gen.setEffects[0].otherStats[o++]
+  }
 } as const
 
 export default dm

@@ -1,7 +1,7 @@
 import { ImgIcon } from '@genshin-optimizer/common/ui'
 import {
   characterAsset,
-  characterKeyToGenderedKey,
+  characterKeyToGenderedKey
 } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { useTeam } from '@genshin-optimizer/sr/db-ui'
@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 
 export function TeamCharacterSelector({
   teamId,
-  charKey,
+  charKey
 }: {
   teamId: string
   charKey?: CharacterKey | undefined
@@ -34,16 +34,16 @@ export function TeamCharacterSelector({
           borderBottom: '1px rgb(200,200,200,0.3) solid',
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.25s ease',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(255,255,255,0.1)'
           },
           '& .Mui-selected': {
-            color: 'white !important',
+            color: 'white !important'
           },
           '& .MuiTabs-indicator': {
             height: '4px',
-            backgroundColor: 'rgb(200,200,200,0.5)', //team settings
+            backgroundColor: 'rgb(200,200,200,0.5)' //team settings
           },
-          minHeight: '1em',
+          minHeight: '1em'
         }
       }}
     >

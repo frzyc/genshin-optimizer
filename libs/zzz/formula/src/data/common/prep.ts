@@ -19,7 +19,7 @@ const data: TagMapNodeEntries = [
   ownBuff.formula.anomalyDmg.add(sum(1, prod(1 / 59, sum(own.char.lvl, -1)))),
   ownBuff.formula.shield.add(
     prod(own.formula.base, sum(percent(1), own.final.shield_))
-  ),
+  )
   // ownBuff.formula.heal.add(
   //   prod(own.formula.base, sum(percent(1), own.final.heal_))
   // ),

@@ -18,7 +18,7 @@ const nativeLanguages = {
   ru: 'Русский язык',
   th: 'ภาษาไทย',
   tr: 'Türkçe',
-  vi: 'Tiếng Việt',
+  vi: 'Tiếng Việt'
 }
 export default function LanguageCard() {
   const { t, i18n } = useTranslation(['ui', 'settings'])
@@ -28,7 +28,7 @@ export default function LanguageCard() {
     <DropdownButton
       fullWidth
       title={t('settings:languageCard.languageFormat', {
-        language: t(`languages:${currentLang}`),
+        language: t(`languages:${currentLang}`)
       })}
     >
       {languageCodeList.map((lang) => (

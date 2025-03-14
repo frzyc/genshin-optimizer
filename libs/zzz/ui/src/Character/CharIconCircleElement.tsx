@@ -8,15 +8,15 @@ interface ImgIconProps {
 const CharIconWrapper = styled(NextImage ? (NextImage as any) : 'img', {
   name: 'ImgIcon',
   slot: 'Root',
-  shouldForwardProp: (pn: string) => !['size'].includes(pn),
+  shouldForwardProp: (pn: string) => !['size'].includes(pn)
 })<ImgIconProps>(({ size = 1.5 }) => ({
   display: 'flex',
   width: `${size}em`,
-  height: `${size}em`,
+  height: `${size}em`
 }))
 
 export function CharIconCircle({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {

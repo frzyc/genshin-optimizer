@@ -38,5 +38,5 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   SoulRock,
   SwingJazz,
   ThunderMetal,
-  WoodpeckerElectro,
+  WoodpeckerElectro
 }

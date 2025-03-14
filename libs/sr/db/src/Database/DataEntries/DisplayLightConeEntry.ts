@@ -16,7 +16,7 @@ const initialState = () => ({
   sortType: lightConeSortKeys[0],
   ascending: false,
   rarity: [...allRarityKeys],
-  path: [...allPathKeys],
+  path: [...allPathKeys]
 })
 
 export class DisplayLightConeEntry extends DataEntry<
@@ -45,7 +45,7 @@ export class DisplayLightConeEntry extends DataEntry<
       sortType,
       ascending,
       rarity,
-      path,
+      path
     }
     return data
   }

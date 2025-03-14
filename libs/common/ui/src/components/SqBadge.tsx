@@ -9,7 +9,7 @@ interface ColorTextProps extends HTMLAttributes<HTMLSpanElement> {
 
 export const SqBadge = styled('span', {
   name: 'SqBadge',
-  slot: 'Root',
+  slot: 'Root'
 })<ColorTextProps>(({ theme, color = 'primary' }) => ({
   display: 'inline-block',
   padding: '.25em .4em',
@@ -19,5 +19,5 @@ export const SqBadge = styled('span', {
   verticalAlign: 'baseline',
   borderRadius: '.25em',
   backgroundColor: (theme.palette[color] as PaletteColor | undefined)?.main,
-  color: (theme.palette[color] as PaletteColor | undefined)?.contrastText,
+  color: (theme.palette[color] as PaletteColor | undefined)?.contrastText
 }))

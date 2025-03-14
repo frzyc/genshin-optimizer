@@ -5,7 +5,7 @@ import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactSlotKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
@@ -17,7 +17,7 @@ import {
   Divider,
   Grid,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -32,14 +32,14 @@ const columns = {
   sm: 2,
   md: 3,
   lg: 3,
-  xl: 3,
+  xl: 3
 } as const
 export function EquippedGrid({
   weaponTypeKey,
   weaponId,
   artifactIds,
   setWeapon,
-  setArtifact,
+  setArtifact
 }: {
   weaponTypeKey: WeaponTypeKey
   weaponId?: string
@@ -141,7 +141,7 @@ export function EquippedGrid({
 export function WeaponSwapCard({
   weaponId,
   weaponTypeKey,
-  onChangeId,
+  onChangeId
 }: {
   weaponId: string
   weaponTypeKey: WeaponTypeKey
@@ -157,7 +157,7 @@ export function WeaponSwapCard({
         width: '100%',
         minHeight: 300,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column'
       }}
     >
       <CardContent>
@@ -172,7 +172,7 @@ export function WeaponSwapCard({
           flexGrow: 1,
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <WeaponSwapModal
@@ -192,7 +192,7 @@ export function WeaponSwapCard({
 
 export function ArtSwapCard({
   slotKey,
-  onChangeId,
+  onChangeId
 }: {
   slotKey: ArtifactSlotKey
   onChangeId: (id: string | null) => void
@@ -207,7 +207,7 @@ export function ArtSwapCard({
         width: '100%',
         minHeight: 300,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column'
       }}
     >
       <CardContent>
@@ -222,7 +222,7 @@ export function ArtSwapCard({
           flexGrow: 1,
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <ArtifactSwapModal
@@ -242,7 +242,7 @@ export function ArtSwapCard({
 function ArtifactSwapButton({
   artifactId,
   slotKey,
-  onChangeId,
+  onChangeId
 }: {
   artifactId: string
   slotKey: ArtifactSlotKey
@@ -274,7 +274,7 @@ function ArtifactSwapButton({
 function WeaponSwapButton({
   weaponId,
   weaponTypeKey,
-  onChangeId,
+  onChangeId
 }: {
   weaponId: string
   weaponTypeKey: WeaponTypeKey
@@ -307,7 +307,7 @@ function WeaponSwapButton({
 function LargeWeaponSwapButton({
   weaponId,
   weaponTypeKey,
-  onChangeId,
+  onChangeId
 }: {
   weaponId: string
   weaponTypeKey: WeaponTypeKey

@@ -11,7 +11,7 @@ import {
   CardHeader,
   Divider,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -19,7 +19,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function CustomMultiTargetImportBtn({
   setCustomMultiTarget,
-  btnProps = {},
+  btnProps = {}
 }: {
   setCustomMultiTarget: (t: CustomMultiTarget) => void
   btnProps?: ButtonProps
@@ -41,8 +41,8 @@ export default function CustomMultiTargetImportBtn({
             navigate('/teams', {
               state: {
                 openImportModal: true,
-                teamData: JSON.stringify(dataObj),
-              },
+                teamData: JSON.stringify(dataObj)
+              }
             }) // Redirect and automatically open the team import form
           }
         } else window.alert(t('mTargetImport.invalid'))

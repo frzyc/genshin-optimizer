@@ -5,7 +5,7 @@ import { constant, read } from './construction'
 const keys = compileTagMapKeys([
   { category: 'cat1', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
   { category: 'cat2', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
-  { category: 'cat3', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
+  { category: 'cat3', values: new Set([...Array(4)].map((_, i) => `val${i}`)) }
 ])
 
 describe('Calculator', () => {
@@ -19,8 +19,8 @@ describe('Calculator', () => {
         { tag: { cat1: 'val1', cat2: 'val1' }, value: constant(3) },
         {
           tag: { cat1: 'val1', cat2: 'val1', cat3: 'val2' },
-          value: constant(4),
-        },
+          value: constant(4)
+        }
       ])
     )
 
@@ -39,8 +39,8 @@ describe('Calculator', () => {
         { tag: { cat1: 'val1' }, value: constant(3) },
         {
           tag: { cat1: 'val1', cat2: 'val1', cat3: 'val2' },
-          value: constant(4),
-        },
+          value: constant(4)
+        }
       ])
     )
 

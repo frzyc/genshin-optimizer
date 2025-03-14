@@ -1,11 +1,11 @@
 import type {
   ArchiveArtifactOption,
   ArchiveCharacterOption,
-  ArchiveWeaponOption,
+  ArchiveWeaponOption
 } from './DisplayArchiveEntry'
 import {
   characterSortKeys,
-  type CharacterSortKey,
+  type CharacterSortKey
 } from './DisplayCharacterEntry'
 import { teamSortKeys, type TeamSortKey } from './DisplayTeamEntry'
 import type { TimeZoneKey } from './DisplayTool'
@@ -19,5 +19,5 @@ export type {
   CharacterSortKey,
   TeamSortKey,
   TimeZoneKey,
-  WeaponSortKey,
+  WeaponSortKey
 }

@@ -2,13 +2,13 @@ import type {
   CharacterKey,
   LocationCharacterKey,
   WeaponKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allWeaponKeys,
   charKeyToLocCharKey,
-  weaponMaxLevel,
+  weaponMaxLevel
 } from '@genshin-optimizer/gi/consts'
 import type { IGOOD, IWeapon } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
@@ -107,7 +107,7 @@ export class WeaponDataManager extends DataManager<
       if (prevWeapon)
         super.setCached(prevWeapon.id, {
           ...prevWeapon,
-          location: prevChar?.key ? charKeyToLocCharKey(prevChar.key) : '',
+          location: prevChar?.key ? charKeyToLocCharKey(prevChar.key) : ''
         })
       else if (prevChar?.key)
         prevWeapon = this.get(
@@ -197,8 +197,8 @@ export class WeaponDataManager extends DataManager<
             upgraded[0]?.location === weapon.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((w) => w.id === importId)
@@ -216,7 +216,7 @@ export class WeaponDataManager extends DataManager<
           if (!importId) importId = match.id // always resolve some id
           importWeapon = {
             ...weapon,
-            location: hasEquipment ? weapon.location : match.location,
+            location: hasEquipment ? weapon.location : match.location
           }
         }
       }
@@ -318,5 +318,5 @@ export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({
   ascension: 0,
   refinement: 1,
   location: '',
-  lock: false,
+  lock: false
 })

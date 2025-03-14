@@ -4,7 +4,7 @@ import {
   artSetPerm,
   countBuilds,
   filterArts,
-  filterFeasiblePerm,
+  filterFeasiblePerm
 } from '../common'
 import type { WorkerCommand, WorkerResult } from '../type'
 import { BNBSplitWorker } from './BNBSplitWorker'
@@ -55,7 +55,7 @@ async function handleEvent(e: MessageEvent<WorkerCommand>): Promise<void> {
         artSetPerm(exclusion, [
           ...new Set(
             Object.values(arts.values).flatMap((x) => x.map((x) => x.set!))
-          ),
+          )
         ]),
         arts
       )

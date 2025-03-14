@@ -8,7 +8,7 @@ export type SnowContextObj = {
 
 export const SnowContext = createContext({
   snow: false,
-  setSnow: () => {},
+  setSnow: () => {}
 } as SnowContextObj)
 
 const lsKey = 'snow_effect_enabled'

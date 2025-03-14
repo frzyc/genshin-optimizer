@@ -22,14 +22,14 @@ const enerRech_ = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_critRate_,
-    enerRech_,
-  },
+    enerRech_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: skill_critRate_ }],
+      fields: [{ node: skill_critRate_ }]
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -40,17 +40,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: enerRech_,
+              node: enerRech_
             },
             {
               text: stg('duration'),
               value: 5,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

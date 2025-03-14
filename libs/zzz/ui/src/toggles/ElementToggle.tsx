@@ -33,7 +33,7 @@ export function ElementToggle({
           sx={{
             p: sm ? 1 : undefined,
             minWidth: sm ? 0 : '6em',
-            display: 'flex',
+            display: 'flex'
           }}
           selectedColor={atr}
           onClick={() => onChange(elementHandler(value, atr))}

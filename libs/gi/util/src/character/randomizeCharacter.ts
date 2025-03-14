@@ -1,6 +1,6 @@
 import {
   getRandomElementFromArray,
-  getRandomIntInclusive,
+  getRandomIntInclusive
 } from '@genshin-optimizer/common/util'
 import { allCharacterKeys } from '@genshin-optimizer/gi/consts'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
@@ -23,6 +23,6 @@ export function randomizeCharacter(base: Partial<ICharacter> = {}): ICharacter {
     level,
     ascension,
     constellation,
-    talent,
+    talent
   }
 }

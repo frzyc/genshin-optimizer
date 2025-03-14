@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   hp_threshold: data_gen.superimpose.otherStats[o++],
-  crit_: data_gen.superimpose.otherStats[o++],
+  crit_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

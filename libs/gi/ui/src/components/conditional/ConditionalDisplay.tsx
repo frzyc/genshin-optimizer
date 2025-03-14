@@ -4,7 +4,7 @@ import { evalIfFunc } from '@genshin-optimizer/common/util'
 import { TeamCharacterContext } from '@genshin-optimizer/gi/db-ui'
 import type {
   DocumentConditional,
-  DocumentSection,
+  DocumentSection
 } from '@genshin-optimizer/gi/sheets'
 import { CardContent } from '@mui/material'
 import { useContext } from 'react'
@@ -26,7 +26,7 @@ export function ConditionalDisplay({
   hideHeader = false,
   hideDesc = false,
   disabled = false,
-  bgt = 'normal',
+  bgt = 'normal'
 }: ConditionalDisplayProps) {
   const { data } = useContext(DataContext)
   const { teamId } = useContext(TeamCharacterContext)

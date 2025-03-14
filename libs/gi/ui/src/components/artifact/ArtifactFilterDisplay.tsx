@@ -2,12 +2,12 @@ import {
   BootstrapTooltip,
   SolidToggleButtonGroup,
   StarsDisplay,
-  theme,
+  theme
 } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   handleMultiSelect,
-  objKeyMap,
+  objKeyMap
 } from '@genshin-optimizer/common/util'
 import {
   allArtifactRarityKeys,
@@ -15,7 +15,7 @@ import {
   allArtifactSlotKeys,
   allLocationCharacterKeys,
   allMainStatKeys,
-  allSubstatKeys,
+  allSubstatKeys
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase, useDisplayArtifact } from '@genshin-optimizer/gi/db-ui'
 import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
@@ -30,7 +30,7 @@ import {
   Chip,
   Divider,
   Grid,
-  ToggleButton,
+  ToggleButton
 } from '@mui/material'
 import Stack from '@mui/system/Stack'
 import { Suspense, useMemo } from 'react'
@@ -67,7 +67,7 @@ export function ArtifactFilterDisplay({
   filteredIds,
   disableSlotFilter = false,
   enableExclusionFilter = false,
-  excludedIds = [],
+  excludedIds = []
 }: ArtifactFilterDisplayProps) {
   const { t } = useTranslation(['artifact', 'ui'])
 
@@ -92,7 +92,7 @@ export function ArtifactFilterDisplay({
     rvHigh = 900,
     useMaxRV = false,
     lines = [],
-    excluded = [...excludedValues],
+    excluded = [...excludedValues]
   } = filterOption
 
   const database = useDatabase()
@@ -107,7 +107,7 @@ export function ArtifactFilterDisplay({
     mainStatTotal,
     subStatTotal,
     locationTotal,
-    excludedTotal,
+    excludedTotal
   } = useMemo(() => {
     const catKeys = {
       rarityTotal: allArtifactRarityKeys,
@@ -119,7 +119,7 @@ export function ArtifactFilterDisplay({
       mainStatTotal: allMainStatKeys,
       subStatTotal: allSubstatKeys,
       locationTotal: [...allLocationCharacterKeys, ''],
-      excludedTotal: ['excluded', 'included'],
+      excludedTotal: ['excluded', 'included']
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
@@ -198,7 +198,7 @@ export function ArtifactFilterDisplay({
                   value={star}
                   onClick={() =>
                     filterOptionDispatch({
-                      rarity: rarityHandler(rarity, star),
+                      rarity: rarityHandler(rarity, star)
                     })
                   }
                 >
@@ -216,7 +216,7 @@ export function ArtifactFilterDisplay({
                   value={line}
                   onClick={() =>
                     filterOptionDispatch({
-                      lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4>,
+                      lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4>
                     })
                   }
                 >
@@ -296,7 +296,7 @@ export function ArtifactFilterDisplay({
                       sx={{ display: 'flex', gap: 1 }}
                       onClick={() =>
                         filterOptionDispatch({
-                          excluded: excludedHandler(excluded, v),
+                          excluded: excludedHandler(excluded, v)
                         })
                       }
                     >

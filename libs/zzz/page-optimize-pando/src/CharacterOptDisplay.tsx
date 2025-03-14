@@ -5,7 +5,7 @@ import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
   CharacterCoverOptimize,
-  CharacterEditor,
+  CharacterEditor
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -13,7 +13,7 @@ import {
   CardActionArea,
   CardContent,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import {
@@ -21,7 +21,7 @@ import {
   useCallback,
   useContext,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { BonusStatsSection } from './BonusStats'
 import { CharStatsDisplay } from './CharStatsDisplay'
@@ -44,9 +44,9 @@ export function CharacterOptDisplay() {
         [
           'wengineCond',
           'Wengine Conditionals',
-          <WengineSheetsDisplay key="wengineCond" />,
+          <WengineSheetsDisplay key="wengineCond" />
         ],
-        ['opt', 'Optimize', <OptimizeSection key="opt" />],
+        ['opt', 'Optimize', <OptimizeSection key="opt" />]
       ] as const
     }, [])
 
@@ -65,7 +65,7 @@ export function CharacterOptDisplay() {
 function Section({
   index,
   title,
-  children,
+  children
 }: {
   index: number
   title: React.ReactNode
@@ -82,7 +82,7 @@ function Section({
           position: 'sticky',
           top: headerHeight + index * SECTION_SPACING_PX,
           bottom: BOT_PX + (numSections - 1 - index) * SECTION_SPACING_PX,
-          zIndex: 100,
+          zIndex: 100
         })}
       >
         <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
@@ -92,7 +92,7 @@ function Section({
       <Box
         ref={charScrollRef}
         sx={{
-          scrollMarginTop: headerHeight + (index + 1) * SECTION_SPACING_PX,
+          scrollMarginTop: headerHeight + (index + 1) * SECTION_SPACING_PX
         }}
       >
         {children}
@@ -121,7 +121,7 @@ function CharacterSection() {
             sx={{
               display: 'flex',
               gap: 1,
-              backgroundColor: '#1b263b',
+              backgroundColor: '#1b263b'
             }}
           >
             <Stack spacing={1}>

@@ -11,7 +11,7 @@ const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 
 export default function Content({
   characters: serverCharacters,
-  accountId,
+  accountId
 }: {
   characters: Array<Tables<'characters'>>
   accountId: string
@@ -31,7 +31,7 @@ export default function Content({
 
       const { error } = await supabase.from('characters').insert({
         ...ranChar,
-        account_id: accountId,
+        account_id: accountId
       } as any)
       if (error) console.error(error)
     } catch (error) {
@@ -47,7 +47,7 @@ export default function Content({
           event: '*',
           schema: 'public',
           table: 'characters',
-          filter: `account_id=eq.${accountId}`,
+          filter: `account_id=eq.${accountId}`
         },
         (payload) => {
           if (payload.new)

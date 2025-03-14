@@ -8,7 +8,7 @@ import {
   prod,
   res,
   sum,
-  threshold,
+  threshold
 } from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot, DynStat } from '../../common'
 import type { Linear } from './linearUB'
@@ -29,25 +29,25 @@ describe('linearUpperBound can transform', () => {
       values: {
         flower: [
           { id: '-0', values: {} },
-          { id: '0', values: { x: 1 } },
+          { id: '0', values: { x: 1 } }
         ],
         circlet: [
           { id: '-1', values: {} },
-          { id: '1', values: { x: 1 } },
+          { id: '1', values: { x: 1 } }
         ],
         sands: [
           { id: '-2', values: {} },
-          { id: '2', values: { x: 1 } },
+          { id: '2', values: { x: 1 } }
         ],
         goblet: [
           { id: '-3', values: {} },
-          { id: '3', values: { x: 1 } },
+          { id: '3', values: { x: 1 } }
         ],
         plume: [
           { id: '-4', values: {} },
-          { id: '4', values: { x: 1 } },
-        ],
-      },
+          { id: '4', values: { x: 1 } }
+        ]
+      }
     }
 
   test('constant nodes', () => {
@@ -114,7 +114,7 @@ describe('linearUpperBound can transform', () => {
         threshold(rx, 4, 5, 10),
         threshold(rx, 4, 10, 5),
         prod(-1, threshold(rx, 4, -5, -10)),
-        prod(-1, threshold(rx, 4, -10, -5)),
+        prod(-1, threshold(rx, 4, -10, -5))
       ],
       arts
     )
@@ -143,25 +143,25 @@ describe('linearUpperBound can transform', () => {
         values: {
           flower: [
             { id: '-0', values: { y: 1 } },
-            { id: '0', values: { x: 1 } },
+            { id: '0', values: { x: 1 } }
           ],
           circlet: [
             { id: '-1', values: { y: 1 } },
-            { id: '1', values: { x: 1 } },
+            { id: '1', values: { x: 1 } }
           ],
           sands: [
             { id: '-2', values: { y: 1 } },
-            { id: '2', values: { x: 1 } },
+            { id: '2', values: { x: 1 } }
           ],
           goblet: [
             { id: '-3', values: { y: 1 } },
-            { id: '3', values: { x: 1 } },
+            { id: '3', values: { x: 1 } }
           ],
           plume: [
             { id: '-4', values: { y: 1 } },
-            { id: '4', values: { x: 1 } },
-          ],
-        },
+            { id: '4', values: { x: 1 } }
+          ]
+        }
       }
 
     const bounds = linearUpperBound([prod(rx, ry)], arts)

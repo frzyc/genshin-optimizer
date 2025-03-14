@@ -11,7 +11,7 @@ import {
   own,
   ownBuff,
   percent,
-  type TagMapNodeEntries,
+  type TagMapNodeEntries
 } from '../util'
 
 type AbilityScalingType = Exclude<SkillKey, 'core'>
@@ -109,7 +109,7 @@ const anomalyMultipliers: Record<AttributeKey, number> = {
   electric: 1.25,
   ether: 0.625,
   ice: 5,
-  physical: 7.13,
+  physical: 7.13
 }
 
 /**
@@ -178,7 +178,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       'standardDmgInst',
       {
         attribute: data_gen.attribute,
-        damageType1: 'elemental',
+        damageType1: 'elemental'
       },
       prod(percent(1.5), own.final.atk)
     ),
@@ -187,7 +187,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       'anomalyDmgInst',
       {
         attribute: data_gen.attribute,
-        damageType1: 'anomaly',
+        damageType1: 'anomaly'
       },
       prod(percent(anomalyMultipliers[data_gen.attribute]), own.final.atk)
     ),
@@ -206,6 +206,6 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.anomMas)),
     ownBuff.listing.formulas.add(
       listingItem(own.final.dmg_[data_gen.attribute])
-    ),
+    )
   ]
 }

@@ -21,7 +21,7 @@ export const milestoneLevelsLow = [
   [20, 1],
   [10, 1],
   [10, 0],
-  [1, 0],
+  [1, 0]
 ] as const
 export const milestoneLevels = [[60, 5], ...milestoneLevelsLow] as const
 

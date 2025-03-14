@@ -8,7 +8,7 @@ let o = 1
 
 const dm = {
   passive_eff_: data_gen.superimpose.passiveStats.eff_,
-  energy: data_gen.superimpose.otherStats[o++],
+  energy: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

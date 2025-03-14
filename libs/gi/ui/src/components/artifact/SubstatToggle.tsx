@@ -12,7 +12,7 @@ const keys1 = allSubstatKeys.slice(0, 6)
 const keys2 = allSubstatKeys.slice(6)
 export function SubstatToggle({
   selectedKeys,
-  onChange,
+  onChange
 }: {
   selectedKeys: SubstatKey[]
   onChange: (keys: SubstatKey[]) => void

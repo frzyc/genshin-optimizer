@@ -33,6 +33,6 @@ const data: TagMapNodeEntries[] = [
   SoulRock,
   SwingJazz,
   ThunderMetal,
-  WoodpeckerElectro,
+  WoodpeckerElectro
 ]
 export default data.flat()

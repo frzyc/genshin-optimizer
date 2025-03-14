@@ -73,7 +73,7 @@ const materialType = new Set(
   materialExcelConfigDataSrc.map((data) => data.materialType)
 )
 dumpFile(`${__dirname}/MaterialExcelConfigData_MaterialType_gen.json`, [
-  ...materialType,
+  ...materialType
 ])
 
 dumpFile(
@@ -81,7 +81,7 @@ dumpFile(
   Object.fromEntries(
     materialExcelConfigDataSrc.map((data) => [
       data.id,
-      nameToKey(TextMapEN[data.nameTextMapHash]),
+      nameToKey(TextMapEN[data.nameTextMapHash])
     ])
   )
 )

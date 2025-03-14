@@ -9,7 +9,7 @@ import {
   mergeData,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 
 export function dataObjForWeaponSheet(
@@ -24,11 +24,11 @@ export function dataObjForWeaponSheet(
     total: {},
     weapon: {
       key: constant(key),
-      type: constant(weaponType),
+      type: constant(weaponType)
     },
     display: {
-      [`weapon:${key}`]: displayWeapon,
-    },
+      [`weapon:${key}`]: displayWeapon
+    }
   }
   const merging = [result]
 
@@ -50,7 +50,7 @@ export function dataObjForWeaponSheet(
   )
   merging.push({
     base: { [mainStat.type]: input.weapon.main },
-    weapon: { main: mainStatNode },
+    weapon: { main: mainStatNode }
   })
 
   if (subStat) {
@@ -69,7 +69,7 @@ export function dataObjForWeaponSheet(
     )
     merging.push({
       premod: { [subStat.type]: input.weapon.sub },
-      weapon: { sub: substatNode },
+      weapon: { sub: substatNode }
     })
   }
   return mergeData([...merging, inferInfoMut(additional, key)])

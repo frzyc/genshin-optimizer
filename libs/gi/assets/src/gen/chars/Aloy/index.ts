@@ -14,7 +14,7 @@ import {
   default as constellation3,
   default as constellation4,
   default as constellation5,
-  default as constellation6,
+  default as constellation6
 } from './UI_Talent_S_Aloy_Lock.png'
 
 const data = {
@@ -32,6 +32,6 @@ const data = {
   passive1,
   passive2,
   passive3,
-  skill,
+  skill
 } as const
 export default data

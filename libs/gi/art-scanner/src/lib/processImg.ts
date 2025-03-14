@@ -16,7 +16,7 @@ import {
   imageDataToCanvas,
   lighterColor,
   preprocessImage,
-  urlToImageData,
+  urlToImageData
 } from '@genshin-optimizer/common/img-util'
 import {
   blueTitleDarkerColor,
@@ -31,7 +31,7 @@ import {
   purpleTitleLighterColor,
   starColor,
   textColorDark,
-  textColorLight,
+  textColorLight
 } from './consts'
 import type { TextKey } from './findBestArtifact'
 import { findBestArtifact } from './findBestArtifact'
@@ -41,7 +41,7 @@ import {
   parseMainStatValues,
   parseSetKeys,
   parseSlotKeys,
-  parseSubstats,
+  parseSubstats
 } from './parse'
 
 export type Processed = {
@@ -127,13 +127,13 @@ export async function processEntry(
 
   const artifactCardCropped = crop(artifactCardCanvas, {
     y1: titleTop,
-    y2: whiteCardBot,
+    y2: whiteCardBot
   })
 
   const equippedCropped = hasEquip
     ? crop(artifactCardCanvas, {
         y1: equipTop,
-        y2: equipBot,
+        y2: equipBot
       })
     : undefined
   /**
@@ -154,7 +154,7 @@ export async function processEntry(
     x1: 0,
     x2: artifactCardCanvas.width * 0.6,
     y1: titleBot,
-    y2: whiteCardTop,
+    y2: whiteCardTop
   })
 
   if (debugImgs) {
@@ -167,7 +167,7 @@ export async function processEntry(
           r: 0,
           g: 150,
           b: 150,
-          a: 100,
+          a: 100
         },
         false
       )
@@ -197,7 +197,7 @@ export async function processEntry(
 
   const whiteCardCropped = crop(artifactCardCanvas, {
     y1: whiteCardTop,
-    y2: whiteCardBot,
+    y2: whiteCardBot
   })
 
   const greentextHisto = histogramAnalysis(
@@ -221,11 +221,11 @@ export async function processEntry(
 
   const greenTextCropped = crop(imageDataToCanvas(whiteCardCropped), {
     y1: greenTextTop - greenTextBuffer,
-    y2: greenTextBot + greenTextBuffer,
+    y2: greenTextBot + greenTextBuffer
   })
 
   const substatsCardCropped = crop(imageDataToCanvas(whiteCardCropped), {
-    y2: greenTextTop,
+    y2: greenTextTop
   })
   const lockHisto = histogramAnalysis(
     whiteCardCropped,
@@ -273,7 +273,7 @@ export async function processEntry(
       // artifact set, look for greenish texts
       textsFromImage(bwGreenText),
       // equipment
-      bwEquipped && textsFromImage(bwEquipped),
+      bwEquipped && textsFromImage(bwEquipped)
     ])
 
   const rarity = parseRarity(headerCropped, debugImgs)
@@ -294,7 +294,7 @@ export async function processEntry(
     imageURL: imageDataToCanvas(artifactCardCropped).toDataURL(),
     artifact,
     texts,
-    debugImgs,
+    debugImgs
   }
 }
 function verticallyCropArtifactCard(
@@ -318,7 +318,7 @@ function verticallyCropArtifactCard(
       r: 255,
       g: 0,
       b: 0,
-      a: 100,
+      a: 100
     })
     drawline(canvas, a, { r: 0, g: 255, b: 0, a: 150 })
     drawline(canvas, b, { r: 0, g: 0, b: 255, a: 150 })
@@ -345,7 +345,7 @@ function parseRarity(
 
   const stars = crop(imageDataToCanvas(headerData), {
     y1: starTop,
-    y2: starBot,
+    y2: starBot
   })
 
   const starsHistogram = histogramContAnalysis(
@@ -394,7 +394,7 @@ function findTitle(artifactCardImageData: ImageData) {
   const titleColors = [
     [goldenTitleDarkerColor, goldenTitleLighterColor],
     [purpleTitleDarkerColor, purpleTitleLighterColor],
-    [blueTitleDarkerColor, blueTitleLighterColor],
+    [blueTitleDarkerColor, blueTitleLighterColor]
   ] as const
   // Return first detected title color
   return titleColors.reduce(

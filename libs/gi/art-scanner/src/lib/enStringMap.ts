@@ -10,7 +10,7 @@ const elementalData: Record<ElementWithPhyKey, string> = {
   hydro: 'Hydro',
   pyro: 'Pyro',
   cryo: 'Cryo',
-  dendro: 'Dendro',
+  dendro: 'Dendro'
 } as const
 
 export const statMap = {
@@ -24,7 +24,7 @@ export const statMap = {
   enerRech_: 'Energy Recharge',
   critRate_: 'Crit Rate',
   critDMG_: 'Crit DMG',
-  heal_: 'Healing Bonus',
+  heal_: 'Healing Bonus'
 } as Record<string, string>
 
 Object.entries(elementalData).forEach(([e, name]) => {
@@ -36,5 +36,5 @@ export const artSlotNames = {
   plume: 'Plume of Death',
   sands: 'Sands of Eon',
   goblet: 'Goblet of Eonothem',
-  circlet: 'Circlet of Logos',
+  circlet: 'Circlet of Logos'
 }

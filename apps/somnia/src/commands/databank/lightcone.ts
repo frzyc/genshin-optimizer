@@ -6,7 +6,7 @@ import {
   ActionRowBuilder,
   EmbedBuilder,
   StringSelectMenuBuilder,
-  StringSelectMenuOptionBuilder,
+  StringSelectMenuOptionBuilder
 } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
 import { hsrURL } from '../../lib/util'
@@ -17,7 +17,7 @@ const superimpositions: Record<string, string> = {
   1: '2',
   2: '3',
   3: '4',
-  4: '5',
+  4: '5'
 }
 
 function getDropdown(id: string, superimposition: string) {
@@ -36,7 +36,7 @@ function getDropdown(id: string, superimposition: string) {
         .setCustomId(`databank lightcone ${id} ${superimposition}`)
         .setPlaceholder(`Superimposition ${superimposition}`)
         .addOptions(options)
-    ),
+    )
   ]
 }
 
@@ -68,10 +68,10 @@ export function lightconeBank(
       .setTitle(name)
       .setColor(rarityColors[rarity - 1])
       .setFooter({
-        text: 'Light Cone Databank',
+        text: 'Light Cone Databank'
       })
       .setDescription(clean(text))
-      .setThumbnail(hsrURL('equipment/medium', thumbnail)),
+      .setThumbnail(hsrURL('equipment/medium', thumbnail))
   ]
   return msg
 }

@@ -56,7 +56,7 @@ export class ScanningQueue {
     this.callback({
       processedNum: this.processed.length,
       outstandingNum: this.outstanding.length,
-      scanningNum: this.scanning.length,
+      scanningNum: this.scanning.length
     })
   }
   shiftProcessed(): Processed | undefined {

@@ -167,95 +167,95 @@ export const theme = createTheme({
     ...commonTheme.palette,
     geo: commonTheme.palette.augmentColor({
       color: { main: '#f8ba4e', contrastText: '#fff' },
-      name: 'geo',
+      name: 'geo'
     }),
     dendro: commonTheme.palette.augmentColor({
       color: { main: '#a5c83b', contrastText: '#fff' },
-      name: 'dendro',
+      name: 'dendro'
     }),
     pyro: commonTheme.palette.augmentColor({
       color: { main: '#FF3C32' },
-      name: 'pyro',
+      name: 'pyro'
     }),
     hydro: commonTheme.palette.augmentColor({
       color: { main: '#5680ff' },
-      name: 'hydro',
+      name: 'hydro'
     }),
     cryo: commonTheme.palette.augmentColor({
       color: { main: '#77a2e6', contrastText: '#fff' },
-      name: 'cryo',
+      name: 'cryo'
     }),
     electro: commonTheme.palette.augmentColor({
       color: { main: '#b25dcd' },
-      name: 'electro',
+      name: 'electro'
     }),
     anemo: commonTheme.palette.augmentColor({
       color: { main: '#61dbbb', contrastText: '#fff' },
-      name: 'anemo',
+      name: 'anemo'
     }),
     physical: commonTheme.palette.augmentColor({
       color: { main: '#aaaaaa' },
-      name: 'physical',
+      name: 'physical'
     }),
     vaporize: commonTheme.palette.augmentColor({
       color: { main: '#ffcb65' },
-      name: 'vaporize',
+      name: 'vaporize'
     }),
     melt: commonTheme.palette.augmentColor({
       color: { main: '#ffcb65' },
-      name: 'melt',
+      name: 'melt'
     }),
     spread: commonTheme.palette.augmentColor({
       color: { main: '#3bc8a7', contrastText: '#fff' },
-      name: 'spread',
+      name: 'spread'
     }),
     aggravate: commonTheme.palette.augmentColor({
       color: { main: '#3ba0c8', contrastText: '#fff' },
-      name: 'aggravate',
+      name: 'aggravate'
     }),
     overloaded: commonTheme.palette.augmentColor({
       color: { main: '#ff7e9a' },
-      name: 'overloaded',
+      name: 'overloaded'
     }),
     superconduct: commonTheme.palette.augmentColor({
       color: { main: '#b7b1ff' },
-      name: 'superconduct',
+      name: 'superconduct'
     }),
     electrocharged: commonTheme.palette.augmentColor({
       color: { main: '#e299fd' },
-      name: 'electrocharged',
+      name: 'electrocharged'
     }),
     shattered: commonTheme.palette.augmentColor({
       color: { main: '#98fffd' },
-      name: 'shattered',
+      name: 'shattered'
     }),
     swirl: commonTheme.palette.augmentColor({
       color: { main: '#66ffcb' },
-      name: 'swirl',
+      name: 'swirl'
     }),
     burning: commonTheme.palette.augmentColor({
       color: { main: '#bf2818' },
-      name: 'burning',
+      name: 'burning'
     }),
     crystallize: commonTheme.palette.augmentColor({
       color: { main: '#f8ba4e' },
-      name: 'crystallize',
+      name: 'crystallize'
     }),
     heal: commonTheme.palette.augmentColor({
       color: { main: '#c0e86c' },
-      name: 'heal',
+      name: 'heal'
     }),
     bloom: commonTheme.palette.augmentColor({
       color: { main: '#47c83b', contrastText: '#fff' },
-      name: 'bloom',
+      name: 'bloom'
     }),
     burgeon: commonTheme.palette.augmentColor({
       color: { main: '#c8b33b', contrastText: '#fff' },
-      name: 'burgeon',
+      name: 'burgeon'
     }),
     hyperbloom: commonTheme.palette.augmentColor({
       color: { main: '#3b8dc8', contrastText: '#fff' },
-      name: 'hyperbloom',
-    }),
-  },
+      name: 'hyperbloom'
+    })
+  }
 })

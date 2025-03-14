@@ -1,12 +1,12 @@
 import {
   DBLocalStorage,
-  SandboxStorage,
+  SandboxStorage
 } from '@genshin-optimizer/common/database'
 import {
   AdBlockContextWrapper,
   ScrollTop,
   useRefSize,
-  useTitle,
+  useTitle
 } from '@genshin-optimizer/common/ui'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
@@ -17,7 +17,7 @@ import {
   SillyContext,
   SnowContext,
   useSilly,
-  useSnow,
+  useSnow
 } from '@genshin-optimizer/gi/ui'
 import {
   Box,
@@ -26,7 +26,7 @@ import {
   Skeleton,
   StyledEngineProvider,
   ThemeProvider,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { Suspense, lazy, useCallback, useMemo, useState } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
@@ -122,7 +122,7 @@ function Content() {
       minHeight="100vh"
       position="relative"
       sx={(theme) => ({
-        background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`,
+        background: `radial-gradient(ellipse at top, ${theme.palette.neutral700.main} 0%, ${theme.palette.neutral800.main} 100%)`
       })}
     >
       <Header anchor="back-to-top-anchor" />
@@ -136,7 +136,7 @@ function Content() {
               height: 90,
               minWidth: 300,
               maxWidth: Math.min(1000, width - 20),
-              width: '100%',
+              width: '100%'
             }}
           />
         )}
@@ -161,7 +161,7 @@ function Content() {
                   AD_RAIL_MAXWIDTH
                 ),
                 height: AD_RAIL_HEIGHT,
-                width: '100%',
+                width: '100%'
               }}
             />
           )}
@@ -206,7 +206,7 @@ function Content() {
                 minWidth: 160,
                 maxWidth: Math.min(adWidth * 0.5, AD_RAIL_MAXWIDTH),
                 height: AD_RAIL_HEIGHT,
-                width: '100%',
+                width: '100%'
               }}
             />
           )}
@@ -227,7 +227,7 @@ function Content() {
               height: 90,
               minWidth: 300,
               maxWidth: Math.min(1000, width - 20),
-              width: '100%',
+              width: '100%'
             }}
           />
         )}

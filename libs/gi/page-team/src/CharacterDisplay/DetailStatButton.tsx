@@ -9,14 +9,14 @@ import { useTranslation } from 'react-i18next'
 import BonusStatsModal from './BonusStatsModal'
 
 export function DetailStatButton({
-  buttonProps = {},
+  buttonProps = {}
 }: {
   buttonProps?: ButtonProps
 }) {
   const { t } = useTranslation('page_character')
   const [open, onOpen, onClose] = useBoolState()
   const {
-    teamChar: { bonusStats },
+    teamChar: { bonusStats }
   } = useContext(TeamCharacterContext)
   const bStatsNum = Object.keys(bonusStats).length
   return (

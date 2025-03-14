@@ -6,7 +6,7 @@ import {
   naught,
   percent,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -24,7 +24,7 @@ const eleMas = lookup(
   Object.fromEntries(
     stacksArr.map((stacks) => [
       stacks,
-      prod(subscript(input.weapon.refinement, eleMasArr), stacks),
+      prod(subscript(input.weapon.refinement, eleMasArr), stacks)
     ])
   ),
   naught
@@ -41,8 +41,8 @@ const atk_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     eleMas,
-    atk_,
-  },
+    atk_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -60,16 +60,16 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: stack }),
             fields: [
               {
-                node: eleMas,
+                node: eleMas
               },
               {
-                node: atk_,
-              },
-            ],
-          },
+                node: atk_
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

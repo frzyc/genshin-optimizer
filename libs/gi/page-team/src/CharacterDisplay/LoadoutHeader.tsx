@@ -44,7 +44,7 @@ export function LoadoutHeader({ elementKey }: { elementKey: ElementKey }) {
           sx={{
             borderBottomLeftRadius: 0,
             borderBottomRightRadius: 0,
-            borderTopRightRadius: 0,
+            borderTopRightRadius: 0
           }}
           onClick={onShowLoadout}
         >
@@ -78,7 +78,7 @@ export function LoadoutHeader({ elementKey }: { elementKey: ElementKey }) {
           sx={{
             borderBottomLeftRadius: 0,
             borderBottomRightRadius: 0,
-            borderTopLeftRadius: 0,
+            borderTopLeftRadius: 0
           }}
           onClick={onShowBuild}
         >

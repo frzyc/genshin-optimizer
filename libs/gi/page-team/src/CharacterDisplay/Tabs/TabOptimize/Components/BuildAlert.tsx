@@ -16,12 +16,12 @@ export type BuildStatus = {
 }
 
 const Monospace = styled('strong')({
-  fontFamily: 'monospace',
+  fontFamily: 'monospace'
 })
 
 const BorderLinearProgress = styled(LinearProgress)(() => ({
   height: 10,
-  borderRadius: 5,
+  borderRadius: 5
 }))
 export default function BuildAlert({
   status: {
@@ -33,9 +33,9 @@ export default function BuildAlert({
     testedPerSecond,
     skippedPerSecond,
     startTime,
-    finishTime,
+    finishTime
   },
-  characterName,
+  characterName
 }: {
   status: BuildStatus
   characterName: ReactNode
@@ -130,8 +130,8 @@ export default function BuildAlert({
       variant="filled"
       sx={{
         '& .MuiAlert-message': {
-          flexGrow: 1,
-        },
+          flexGrow: 1
+        }
       }}
     >
       {title}

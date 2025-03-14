@@ -8,7 +8,7 @@ import {
   naught,
   percent,
   prod,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -29,11 +29,11 @@ const base_bloom_dmg_ = greaterEq(
 )
 const base_hyperbloom_dmg_ = {
   ...base_bloom_dmg_,
-  info: { path: 'hyperbloom_dmg_' },
+  info: { path: 'hyperbloom_dmg_' }
 }
 const base_burgeon_dmg_ = {
   ...base_bloom_dmg_,
-  info: { path: 'burgeon_dmg_' },
+  info: { path: 'burgeon_dmg_' }
 }
 
 const [condStacksPath, condStacks] = cond(key, 'stacks')
@@ -52,11 +52,11 @@ const stack_bloom_dmg_ = greaterEq(
 )
 const stack_hyperbloom_dmg_ = {
   ...stack_bloom_dmg_,
-  info: { path: 'hyperbloom_dmg_' },
+  info: { path: 'hyperbloom_dmg_' }
 }
 const stack_burgeon_dmg_ = {
   ...stack_bloom_dmg_,
-  info: { path: 'burgeon_dmg_' },
+  info: { path: 'burgeon_dmg_' }
 }
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -64,8 +64,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
     eleMas: set2,
     bloom_dmg_: sum(base_bloom_dmg_, stack_bloom_dmg_),
     hyperbloom_dmg_: sum(base_hyperbloom_dmg_, stack_hyperbloom_dmg_),
-    burgeon_dmg_: sum(base_burgeon_dmg_, stack_burgeon_dmg_),
-  },
+    burgeon_dmg_: sum(base_burgeon_dmg_, stack_burgeon_dmg_)
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -76,15 +76,15 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: base_bloom_dmg_,
+            node: base_bloom_dmg_
           },
           {
-            node: base_hyperbloom_dmg_,
+            node: base_hyperbloom_dmg_
           },
           {
-            node: base_burgeon_dmg_,
-          },
-        ],
+            node: base_burgeon_dmg_
+          }
+        ]
       },
       {
         header: setHeader(4),
@@ -98,25 +98,25 @@ const sheet: SetEffectSheet = {
               name: st('stack', { count: stack }),
               fields: [
                 {
-                  node: stack_bloom_dmg_,
+                  node: stack_bloom_dmg_
                 },
                 {
-                  node: stack_hyperbloom_dmg_,
+                  node: stack_hyperbloom_dmg_
                 },
                 {
-                  node: stack_burgeon_dmg_,
+                  node: stack_burgeon_dmg_
                 },
                 {
                   text: stg('duration'),
                   value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+                  unit: 's'
+                }
+              ]
+            }
           ])
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

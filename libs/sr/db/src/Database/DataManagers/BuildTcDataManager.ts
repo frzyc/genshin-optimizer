@@ -4,7 +4,7 @@ import type {
   RelicMainStatKey,
   RelicRarityKey,
   RelicSetKey,
-  RelicSlotKey,
+  RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
@@ -13,13 +13,13 @@ import {
   allRelicSubStatKeys,
   isRelicRarityKey,
   relicMaxLevel,
-  relicSubstatTypeKeys,
+  relicSubstatTypeKeys
 } from '@genshin-optimizer/sr/consts'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   BuildTcRelicSlot,
   ICachedLightCone,
-  ICachedRelic,
+  ICachedRelic
 } from '../../Interfaces'
 import { type IBuildTc } from '../../Interfaces/IBuildTc'
 import { DataManager } from '../DataManager'
@@ -60,7 +60,7 @@ export class BuildTcDataManager extends DataManager<
       description,
       relic: _relic,
       lightCone: _lightCone,
-      optimization: _optimization,
+      optimization: _optimization
     }
   }
   new(data: Partial<IBuildTc>) {
@@ -100,14 +100,14 @@ export function initCharTC(characterKey: CharacterKey): IBuildTc {
       substats: {
         type: 'max',
         stats: objKeyMap(allRelicSubStatKeys, () => 0),
-        rarity: 5,
+        rarity: 5
       },
-      sets: {},
+      sets: {}
     },
     optimization: {
       distributedSubstats: 45,
-      maxSubstats: initCharTcOptimizationMaxSubstats(),
-    },
+      maxSubstats: initCharTcOptimizationMaxSubstats()
+    }
   }
 }
 function initCharTCRelicSlots(): Record<RelicSlotKey, BuildTcRelicSlot> {
@@ -116,9 +116,9 @@ function initCharTCRelicSlots(): Record<RelicSlotKey, BuildTcRelicSlot> {
     statKey: (s === 'head'
       ? 'hp'
       : s === 'hands'
-      ? 'atk'
-      : 'atk_') as RelicMainStatKey,
-    rarity: 5,
+        ? 'atk'
+        : 'atk_') as RelicMainStatKey,
+    rarity: 5
   }))
 }
 
@@ -146,7 +146,7 @@ function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
   let {
     slots,
     substats: { type, stats, rarity },
-    sets,
+    sets
   } = relic as IBuildTc['relic']
   const _slots = validateCharTCRelicSlots(slots)
   if (!_slots) return undefined
@@ -187,7 +187,7 @@ function validateCharTCRelicSlots(
       return {
         level: clamp(level, 0, relicMaxLevel[rarity]),
         rarity,
-        ...rest,
+        ...rest
       }
     }
   )
@@ -223,7 +223,7 @@ export function toBuildTc(
       key: eLightCone.key,
       level: eLightCone.level,
       ascension: eLightCone.ascension,
-      superimpose: eLightCone.superimpose,
+      superimpose: eLightCone.superimpose
     }
   }
 
