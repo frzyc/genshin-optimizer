@@ -25,7 +25,7 @@ export default async function genIndex(_tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -46,7 +46,7 @@ export default data.flat()
 
 async function writeDiscIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'
@@ -67,7 +67,7 @@ export default data.flat()
 
 async function writeWengineIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { TagMapNodeEntries } from '../util'

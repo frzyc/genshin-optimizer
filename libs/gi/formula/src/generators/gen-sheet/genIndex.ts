@@ -25,7 +25,7 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allCharacterKeys
@@ -45,7 +45,7 @@ export default data.flat()
 
 async function writeArtifactIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allArtifactSetKeys
@@ -65,7 +65,7 @@ export default data.flat()
 
 async function writeWeaponIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
 ${allWeaponKeys

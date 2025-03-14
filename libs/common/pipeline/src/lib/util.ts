@@ -11,7 +11,7 @@ export function dumpFile(filename: string, obj: unknown, print = false) {
 export async function dumpPrettyFile(filename: string, obj: unknown) {
   mkdirSync(dirname(filename), { recursive: true })
   const prettierRc = await prettier.resolveConfig(filename)
-  const fileStr = prettier.format(JSON.stringify(obj), {
+  const fileStr = await prettier.format(JSON.stringify(obj), {
     ...prettierRc,
     parser: 'json',
   })
@@ -39,7 +39,7 @@ export async function generateIndexFromObj(obj: object, path: string) {
     .join('\n')
 
   const prettierRc = await prettier.resolveConfig(path)
-  const indexContent = prettier.format(
+  const indexContent = await prettier.format(
     `// This is a generated index file.
 ${imports}
 

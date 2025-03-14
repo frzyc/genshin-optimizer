@@ -64,7 +64,7 @@ export default async function runExecutor(
 
   const cwd = path.join(workspaceRoot, outputPath)
   const prettierRc = await prettier.resolveConfig(cwd)
-  const str = prettier.format(
+  const str = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 export const conditionals = ${JSON.stringify(conditionals)} as const

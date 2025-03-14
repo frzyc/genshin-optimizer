@@ -25,7 +25,7 @@ export default async function genIndex(tree: Tree, map_type: string) {
 
 async function writeIndex(path: string, keys: readonly string[]) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 ${keys.map((key) => `import ${key} from './maps/${key}'`).join('\n')}
 

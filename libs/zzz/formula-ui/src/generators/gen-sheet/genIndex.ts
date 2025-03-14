@@ -25,7 +25,7 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -49,7 +49,7 @@ export const uiSheets: Record<
 
 async function writeDiscIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -69,7 +69,7 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
 
 async function writeWengineIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  const index = prettier.format(
+  const index = await prettier.format(
     `
 // WARNING: Generated file, do not modify
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
