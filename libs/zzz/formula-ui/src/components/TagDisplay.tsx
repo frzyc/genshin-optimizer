@@ -33,7 +33,6 @@ function TagStrDisplay({ tag }: { tag: Tag }) {
 
   const label = getTagLabel(tag)
 
-  if (label === 'atk') console.log({ label, tag })
   if (isExtraHandlingStats(label))
     return (
       <span>
