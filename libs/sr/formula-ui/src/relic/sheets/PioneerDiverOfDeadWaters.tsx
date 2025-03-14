@@ -33,10 +33,10 @@ const sheet: UISheet<'2' | '4'> = {
           header: {
             icon: <ImgIcon src={icon} />,
             text: 'Enemy affected by a debuff', // TODO: L10n
-            additional: <SqBadge>4-Set</SqBadge>, // TODO: L10n
+            additional: <SqBadge>2-Set</SqBadge>, // TODO: L10n
           },
           metadata: cond.affectedByDebuff,
-          label: '4-Set',
+          label: '2-Set',
           fields: [
             {
               title: <StatDisplay statKey="dmg_" />,

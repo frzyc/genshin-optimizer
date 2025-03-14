@@ -42,10 +42,10 @@ const sheet: UISheet<'2' | '4'> = {
           header: {
             icon: <ImgIcon src={icon} />,
             text: 'Hits enemy with Fire Weakness', // TODO: L10n
-            additional: <SqBadge>4-Set</SqBadge>, // TODO: L10n
+            additional: <SqBadge>2-Set</SqBadge>, // TODO: L10n
           },
           metadata: cond.enemyHit,
-          label: '4-Set',
+          label: '2-Set',
           fields: [
             {
               title: <StatDisplay statKey="brEffect_" />,

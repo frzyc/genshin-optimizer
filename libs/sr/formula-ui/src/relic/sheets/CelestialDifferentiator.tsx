@@ -38,10 +38,10 @@ const sheet: UISheet<'2' | '4'> = {
           header: {
             icon: <ImgIcon src={icon} />,
             text: 'First Attack',
-            additional: <SqBadge>4-Set</SqBadge>,
+            additional: <SqBadge>2-Set</SqBadge>,
           },
           metadata: cond.firstAttack,
-          label: '4-Set',
+          label: '2-Set',
           fields: [
             {
               title: <StatDisplay statKey="crit_" />,
