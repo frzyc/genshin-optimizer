@@ -22,9 +22,13 @@ const sheet = registerLightCone(
     'ult_defIgn_',
     ownBuff.premod.defIgn_.addWithDmgType(
       'ult',
-      cmpGE(lcCount, 1, prod(luminflux, subscript(superimpose, dm.ult_defIgn_)))
+      cmpGE(
+        lcCount,
+        1,
+        prod(luminflux, subscript(superimpose, dm.ult_defIgn_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

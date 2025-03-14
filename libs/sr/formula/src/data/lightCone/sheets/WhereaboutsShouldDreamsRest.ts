@@ -22,9 +22,9 @@ const sheet = registerLightCone(
     'break_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'break',
-      cmpGE(lcCount, 1, routed.ifOn(subscript(superimpose, dm.break_dmg_)))
+      cmpGE(lcCount, 1, routed.ifOn(subscript(superimpose, dm.break_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

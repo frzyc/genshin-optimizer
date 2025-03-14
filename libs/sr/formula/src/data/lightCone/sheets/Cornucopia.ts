@@ -21,9 +21,9 @@ const sheet = registerLightCone(
   registerBuff(
     'heal_',
     ownBuff.premod.heal_.add(
-      cmpGE(lcCount, 1, skillOrUltUsed.ifOn(subscript(superimpose, dm.heal_)))
+      cmpGE(lcCount, 1, skillOrUltUsed.ifOn(subscript(superimpose, dm.heal_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

@@ -45,15 +45,15 @@ const sheet = registerLightCone(
             floor(
               prod(
                 max(0, sum(own.final.crit_dmg_, -dm.crit_dmg_threshold)),
-                1 / dm.step
-              )
-            )
+                1 / dm.step,
+              ),
+            ),
           ),
-          subscript(superimpose, dm.followUp_dmg_)
-        )
-      )
+          subscript(superimpose, dm.followUp_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'ult_defIgn_',
@@ -63,11 +63,11 @@ const sheet = registerLightCone(
         lcCount,
         1,
         battleStartOrBasicUsed.ifOn(
-          subscript(superimpose, dm.ult_followUp_defIgn_)
-        )
-      )
+          subscript(superimpose, dm.ult_followUp_defIgn_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'followUp_defIgn_',
@@ -77,11 +77,11 @@ const sheet = registerLightCone(
         lcCount,
         1,
         battleStartOrBasicUsed.ifOn(
-          subscript(superimpose, dm.ult_followUp_defIgn_)
-        )
-      )
+          subscript(superimpose, dm.ult_followUp_defIgn_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

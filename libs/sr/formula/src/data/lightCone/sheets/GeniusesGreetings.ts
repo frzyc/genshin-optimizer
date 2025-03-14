@@ -22,10 +22,10 @@ const sheet = registerLightCone(
     'basic_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'basic',
-      cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.basic_dmg_)))
+      cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.basic_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
   // TODO: add memosprite buff
 )
 export default sheet

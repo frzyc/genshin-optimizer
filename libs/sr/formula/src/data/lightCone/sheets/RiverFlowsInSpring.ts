@@ -21,9 +21,9 @@ const sheet = registerLightCone(
   registerBuff(
     'spd_',
     ownBuff.premod.spd_.add(
-      cmpGE(lcCount, 1, notAttacked.ifOn(subscript(superimpose, dm.spd_)))
+      cmpGE(lcCount, 1, notAttacked.ifOn(subscript(superimpose, dm.spd_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'common_dmg_',
@@ -31,10 +31,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        notAttacked.ifOn(subscript(superimpose, dm.common_dmg_))
-      )
+        notAttacked.ifOn(subscript(superimpose, dm.common_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

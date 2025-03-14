@@ -37,7 +37,7 @@ export function register(
     return { tag: { ...tag, sheet }, value }
   }
   return data.flatMap((data) =>
-    Array.isArray(data) ? data.map(internal) : internal(data)
+    Array.isArray(data) ? data.map(internal) : internal(data),
   )
 }
 
@@ -55,7 +55,7 @@ export function registerBuff(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
   cond: string | StrNode = 'infer',
-  team = false
+  team = false,
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
   return entries.flatMap((entry) => {
@@ -89,7 +89,7 @@ export function registerBuffFormula(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
   cond: string | StrNode = 'unique',
-  team = false
+  team = false,
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
   return entries.flatMap((entry) => {
@@ -122,7 +122,7 @@ function registerFormula(
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
-      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
+      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond),
     ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
@@ -159,10 +159,10 @@ export function customDmg(
       'dmg',
       tag(cond, dmgTag),
       (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(
-        prod(base, percent(split))
+        prod(base, percent(split)),
       ),
-      ...extra
-    )
+      ...extra,
+    ),
   )
 }
 
@@ -188,7 +188,7 @@ export function customShield(
     'shield',
     cond,
     (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
@@ -214,7 +214,7 @@ export function customHeal(
     'heal',
     cond,
     (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
@@ -242,13 +242,13 @@ export function customBreakDmg(
     'breakDmg',
     tag(cond, dmgTag),
     (isSemiOwn ? semiOwnBuff : ownBuff).formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
 export function getStatFromStatKey(
   buff: typeof ownBuff.premod,
-  statKey: StatKey
+  statKey: StatKey,
 ) {
   switch (statKey) {
     case 'physical_dmg_':
@@ -264,7 +264,7 @@ export function getStatFromStatKey(
       ]
     case 'baseSpd':
       throw new Error(
-        'Attempted to use baseSpd to index premod; possibly a mistake?'
+        'Attempted to use baseSpd to index premod; possibly a mistake?',
       )
     default:
       return buff[statKey]

@@ -21,17 +21,17 @@ const sheet = registerLightCone(
   registerBuff(
     'common_dmg_',
     ownBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, enemyHit.ifOn(subscript(superimpose, dm.common_dmg_)))
+      cmpGE(lcCount, 1, enemyHit.ifOn(subscript(superimpose, dm.common_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'ult_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'ult',
-      cmpGE(lcCount, 1, enemyHit.ifOn(subscript(superimpose, dm.ult_dmg_)))
+      cmpGE(lcCount, 1, enemyHit.ifOn(subscript(superimpose, dm.ult_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

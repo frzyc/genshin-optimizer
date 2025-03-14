@@ -21,10 +21,10 @@ const sheet = registerLightCone(
     cmpGE(
       lcCount,
       1,
-      prod(own.final.atk, percent(subscript(superimpose, dm.dmg_scaling_)))
+      prod(own.final.atk, percent(subscript(superimpose, dm.dmg_scaling_))),
     ),
     [1],
-    { cond: cmpGE(lcCount, 1, 'infer', '') }
-  )
+    { cond: cmpGE(lcCount, 1, 'infer', '') },
+  ),
 )
 export default sheet

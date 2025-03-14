@@ -22,9 +22,9 @@ const sheet = registerLightCone(
   registerBuff(
     'atk_',
     ownBuff.premod.atk_.add(
-      cmpGE(lcCount, 1, prod(enemiesHit, subscript(superimpose, dm.atk_)))
+      cmpGE(lcCount, 1, prod(enemiesHit, subscript(superimpose, dm.atk_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'spd_',
@@ -32,10 +32,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        cmpGE(enemiesHit, dm.stackThreshold, subscript(superimpose, dm.spd_))
-      )
+        cmpGE(enemiesHit, dm.stackThreshold, subscript(superimpose, dm.spd_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

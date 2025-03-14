@@ -34,13 +34,13 @@ const sheet = registerLightCone(
         prod(
           min(
             dm.stacks,
-            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep))
+            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep)),
           ),
-          subscript(superimpose, dm.basic_skill_dmg_)
-        )
-      )
+          subscript(superimpose, dm.basic_skill_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'skill_dmg_',
@@ -52,13 +52,13 @@ const sheet = registerLightCone(
         prod(
           min(
             dm.stacks,
-            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep))
+            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep)),
           ),
-          subscript(superimpose, dm.basic_skill_dmg_)
-        )
-      )
+          subscript(superimpose, dm.basic_skill_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'ult_crit_dmg_',
@@ -70,13 +70,13 @@ const sheet = registerLightCone(
         prod(
           min(
             dm.stacks,
-            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep))
+            floor(prod(max(0, sum(own.final.spd, -100)), 1 / dm.spdStep)),
           ),
-          subscript(superimpose, dm.ult_crit_dmg_)
-        )
-      )
+          subscript(superimpose, dm.ult_crit_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

@@ -24,11 +24,11 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        memospriteOnField.ifOn(subscript(superimpose, dm.common_dmg_))
-      )
+        memospriteOnField.ifOn(subscript(superimpose, dm.common_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
   // TODO: add memosprite buff
 )
 export default sheet

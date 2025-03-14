@@ -177,7 +177,7 @@ export function CharacterCoverOptimize({
   const characterStat = getCharStat(characterKey)
   const onClickHandler = useCallback(
     () => characterKey && onClick?.(characterKey),
-    [characterKey, onClick]
+    [characterKey, onClick],
   )
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -188,7 +188,7 @@ export function CharacterCoverOptimize({
         {children}
       </CardActionArea>
     ),
-    [onClickHandler]
+    [onClickHandler],
   )
   return (
     <ZCard>

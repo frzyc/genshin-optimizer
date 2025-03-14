@@ -21,9 +21,9 @@ const sheet = registerLightCone(
   registerBuff(
     'spd',
     teamBuff.premod.spd.add(
-      cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.spd)))
+      cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.spd))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

@@ -32,24 +32,24 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        prod(cantillation, subscript(superimpose, dm.enerRegen_))
-      )
+        prod(cantillation, subscript(superimpose, dm.enerRegen_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'atk_',
     ownBuff.premod.atk_.add(
-      cmpGE(lcCount, 1, cadenza.ifOn(subscript(superimpose, dm.atk_)))
+      cmpGE(lcCount, 1, cadenza.ifOn(subscript(superimpose, dm.atk_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'common_dmg_',
     teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, cadenza.ifOn(subscript(superimpose, dm.common_dmg_)))
+      cmpGE(lcCount, 1, cadenza.ifOn(subscript(superimpose, dm.common_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

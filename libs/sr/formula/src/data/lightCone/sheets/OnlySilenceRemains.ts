@@ -21,9 +21,13 @@ const sheet = registerLightCone(
   registerBuff(
     'crit_',
     ownBuff.premod.crit_.add(
-      cmpGE(lcCount, 1, lessThan2Enemies.ifOn(subscript(superimpose, dm.crit_)))
+      cmpGE(
+        lcCount,
+        1,
+        lessThan2Enemies.ifOn(subscript(superimpose, dm.crit_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

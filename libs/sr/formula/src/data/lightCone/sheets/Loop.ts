@@ -24,10 +24,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        enemySlowed.ifOn(subscript(superimpose, dm.common_dmg_))
-      )
+        enemySlowed.ifOn(subscript(superimpose, dm.common_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

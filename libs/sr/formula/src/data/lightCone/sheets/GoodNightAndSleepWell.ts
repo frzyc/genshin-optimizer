@@ -24,10 +24,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        prod(debuffCount, subscript(superimpose, dm.common_dmg_))
-      )
+        prod(debuffCount, subscript(superimpose, dm.common_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

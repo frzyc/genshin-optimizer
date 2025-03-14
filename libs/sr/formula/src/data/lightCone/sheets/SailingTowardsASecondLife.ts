@@ -19,9 +19,9 @@ const sheet = registerLightCone(
     'break_defIgn_',
     ownBuff.premod.defIgn_.addWithDmgType(
       'break',
-      cmpGE(lcCount, 1, subscript(superimpose, dm.break_defIgn_))
+      cmpGE(lcCount, 1, subscript(superimpose, dm.break_defIgn_)),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
 
   // Conditional buffs
@@ -34,11 +34,11 @@ const sheet = registerLightCone(
         cmpGE(
           own.final.brEffect_,
           dm.brEffect_threshold,
-          subscript(superimpose, dm.spd_)
-        )
-      )
+          subscript(superimpose, dm.spd_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

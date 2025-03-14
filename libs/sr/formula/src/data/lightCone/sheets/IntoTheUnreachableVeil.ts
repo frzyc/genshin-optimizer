@@ -22,17 +22,25 @@ const sheet = registerLightCone(
     'skill_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'skill',
-      cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.skill_ult_dmg_)))
+      cmpGE(
+        lcCount,
+        1,
+        ultUsed.ifOn(subscript(superimpose, dm.skill_ult_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'ult_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'ult',
-      cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.skill_ult_dmg_)))
+      cmpGE(
+        lcCount,
+        1,
+        ultUsed.ifOn(subscript(superimpose, dm.skill_ult_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

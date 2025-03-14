@@ -31,7 +31,7 @@ Object.assign(values, compileTagMapValues(keys, data))
 function testCharacterData(
   charKey: CharacterKey,
   lightConekey: LightConeKey,
-  otherCharData: TagMapNodeEntries = []
+  otherCharData: TagMapNodeEntries = [],
 ) {
   const data: TagMapNodeEntries = [
     ...teamData([charKey]),
@@ -52,10 +52,10 @@ function testCharacterData(
           bonusAbilities: {},
           statBoosts: {},
         },
-        1
+        1,
       ),
       ...lightConeTagMapNodeEntries(lightConekey, 80, 6, 5),
-      ...otherCharData
+      ...otherCharData,
     ),
     own.common.critMode.add('avg'),
     enemy.common.lvl.add(80),
@@ -69,7 +69,7 @@ function testTeamData(
   charKey: CharacterKey,
   otherCharKey: CharacterKey,
   lightConeKey: LightConeKey,
-  otherCharData: TagMapNodeEntries = []
+  otherCharData: TagMapNodeEntries = [],
 ) {
   const data: TagMapNodeEntries = [
     ...teamData([charKey, otherCharKey]),
@@ -90,10 +90,10 @@ function testTeamData(
           bonusAbilities: {},
           statBoosts: {},
         },
-        1
+        1,
       ),
       ...lightConeTagMapNodeEntries(lightConeKey, 80, 6, 5),
-      ...otherCharData
+      ...otherCharData,
     ),
     ...withMember(
       otherCharKey,
@@ -112,9 +112,9 @@ function testTeamData(
           bonusAbilities: {},
           statBoosts: {},
         },
-        2
+        2,
       ),
-      ...otherCharData
+      ...otherCharData,
     ),
     own.common.critMode.add('avg'),
     enemy.common.lvl.add(80),
@@ -128,7 +128,7 @@ function cond(
   charKey: CharacterKey,
   setKey: LightConeKey,
   name: string,
-  value: number | string
+  value: number | string,
 ) {
   return conditionalEntries(setKey, charKey, null)(name, value)
 }
@@ -147,13 +147,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'Adversarial',
         conditionals.Adversarial.enemyDefeated.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -168,13 +168,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'AfterTheCharmonyFall',
         conditionals.AfterTheCharmonyFall.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -190,13 +190,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'AGroundedAscent',
         conditionals.AGroundedAscent.hymn.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -211,13 +211,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'AlongThePassingShore',
         conditionals.AlongThePassingShore.enemyHit.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -234,7 +234,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -248,7 +248,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -262,12 +262,12 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Seele'
     const data = testCharacterData(charKey, 'Arrows')
     data.push(
-      cond(charKey, 'Arrows', conditionals.Arrows.startOfBattle.name, 1)
+      cond(charKey, 'Arrows', conditionals.Arrows.startOfBattle.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -279,12 +279,12 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Firefly'
     const data = testCharacterData(charKey, 'ASecretVow')
     data.push(
-      cond(charKey, 'ASecretVow', conditionals.ASecretVow.enemyHpGEOwn.name, 1)
+      cond(charKey, 'ASecretVow', conditionals.ASecretVow.enemyHpGEOwn.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -300,25 +300,25 @@ describe('Light Cone sheets test', () => {
         charKey,
         'BaptismOfPureThought',
         conditionals.BaptismOfPureThought.debuffCount.name,
-        3
+        3,
       ),
       cond(
         charKey,
         'BaptismOfPureThought',
         conditionals.BaptismOfPureThought.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     // Base + LC passive + LC bonus
     expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(
-      0.5 + 0.32 + 3 * 0.12
+      0.5 + 0.32 + 3 * 0.12,
     )
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.6)
     expect(calc.compute(char.final.defIgn_.followUp[0]).val).toBeCloseTo(0.4)
@@ -332,13 +332,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'BeforeDawn',
         conditionals.BeforeDawn.followUpTriggered.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -355,7 +355,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -370,13 +370,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'BoundlessChoreo',
         conditionals.BoundlessChoreo.enemySlowedOrRedDef.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -393,13 +393,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'BrighterThanTheSun',
         conditionals.BrighterThanTheSun.basicsUsed.name,
-        2
-      )
+        2,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -418,18 +418,18 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ButTheBattleIsntOver',
         conditionals.ButTheBattleIsntOver.skillUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calcRuanMei = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const calcSeele = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: otherCharKey, dst: otherCharKey })
 
     expect(calcRuanMei.compute(own.final.enerRegen_).val).toBeCloseTo(0.18)
@@ -451,23 +451,23 @@ describe('Light Cone sheets test', () => {
         charKey,
         'CarveTheMoonWeaveTheClouds',
         conditionals.CarveTheMoonWeaveTheClouds.atk_crit_dmg_enerRegen_.name,
-        testCase.index
-      )
+        testCase.index,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
 
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     expect(calc.compute(char.final.atk_).val).toBeCloseTo(testCase.atk_)
     expect(calc.compute(char.final.crit_dmg_).val).toBeCloseTo(
-      testCase.crit_dmg_
+      testCase.crit_dmg_,
     )
     expect(calc.compute(char.final.enerRegen_).val).toBeCloseTo(
-      testCase.enerRegen_
+      testCase.enerRegen_,
     )
   })
 
@@ -477,7 +477,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -490,7 +490,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -506,13 +506,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ConcertForTwo',
         conditionals.ConcertForTwo.shieldCount.name,
-        8
-      )
+        8,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -528,13 +528,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'Cornucopia',
         conditionals.Cornucopia.skillOrUltUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -549,19 +549,19 @@ describe('Light Cone sheets test', () => {
         charKey,
         'CruisingInTheStellarSea',
         conditionals.CruisingInTheStellarSea.enemyHpLEHalf.name,
-        1
+        1,
       ),
       cond(
         charKey,
         'CruisingInTheStellarSea',
         conditionals.CruisingInTheStellarSea.enemyDefeated.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -578,13 +578,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'DanceAtSunset',
         conditionals.DanceAtSunset.ultsUsed.name,
-        2
-      )
+        2,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -603,13 +603,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'DartingArrow',
         conditionals.DartingArrow.enemyDefeated.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -622,7 +622,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -635,7 +635,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -648,13 +648,13 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
 
     expect(
       calc
         .withTag(formulas.Defense.healing.tag)
-        .compute(new Read(formulas.Defense.healing.tag, undefined)).val
+        .compute(new Read(formulas.Defense.healing.tag, undefined)).val,
     ).toBeCloseTo((1474.704 + 952.56) * 0.3)
   })
 
@@ -666,7 +666,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -680,7 +680,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -699,13 +699,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'DreamvilleAdventure',
         conditionals.DreamvilleAdventure.childishness.name,
-        attack.index
-      )
+        attack.index,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -723,18 +723,18 @@ describe('Light Cone sheets test', () => {
         charKey,
         'EarthlyEscapade',
         conditionals.EarthlyEscapade.mask.name,
-        1
-      )
+        1,
+      ),
     )
     const calcRuanMei = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const calcSeele = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: otherCharKey, dst: otherCharKey })
 
     // Base + LC passive (no LC active)
@@ -754,13 +754,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'EchoesOfTheCoffin',
         conditionals.EchoesOfTheCoffin.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -777,13 +777,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'EternalCalculus',
         conditionals.EternalCalculus.enemiesHit.name,
-        5
-      )
+        5,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -798,7 +798,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -814,13 +814,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'Fermata',
         conditionals.Fermata.affectedWithShockOrWindShear.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -832,12 +832,17 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Seele'
     const data = testCharacterData(charKey, 'FinalVictor')
     data.push(
-      cond(charKey, 'FinalVictor', conditionals.FinalVictor.goodFortune.name, 4)
+      cond(
+        charKey,
+        'FinalVictor',
+        conditionals.FinalVictor.goodFortune.name,
+        4,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -855,25 +860,25 @@ describe('Light Cone sheets test', () => {
         charKey,
         'FlameOfBloodBlazeMyPath',
         conditionals.FlameOfBloodBlazeMyPath.ultUsed.name,
-        1
+        1,
       ),
       cond(
         charKey,
         'FlameOfBloodBlazeMyPath',
         conditionals.FlameOfBloodBlazeMyPath.skillUsed.name,
-        1
+        1,
       ),
       cond(
         charKey,
         'FlameOfBloodBlazeMyPath',
         conditionals.FlameOfBloodBlazeMyPath.hpConsumedMoreThan500.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -885,8 +890,8 @@ describe('Light Cone sheets test', () => {
       calc
         .withTag(formulas.FlameOfBloodBlazeMyPath.hp_loss.tag)
         .compute(
-          new Read(formulas.FlameOfBloodBlazeMyPath.hp_loss.tag, undefined)
-        ).val
+          new Read(formulas.FlameOfBloodBlazeMyPath.hp_loss.tag, undefined),
+        ).val,
     ).toBeCloseTo((814.968 + 1375.92) * 1.3 * 0.08)
   })
 
@@ -894,12 +899,12 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Firefly'
     const data = testCharacterData(charKey, 'FlamesAfar')
     data.push(
-      cond(charKey, 'FlamesAfar', conditionals.FlamesAfar.hpConsumed.name, 1)
+      cond(charKey, 'FlamesAfar', conditionals.FlamesAfar.hpConsumed.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -907,7 +912,7 @@ describe('Light Cone sheets test', () => {
     expect(
       calc
         .withTag(formulas.FlamesAfar.healing.tag)
-        .compute(new Read(formulas.FlamesAfar.healing.tag, undefined)).val
+        .compute(new Read(formulas.FlamesAfar.healing.tag, undefined)).val,
     ).toBeCloseTo((814.968 + 1058.4) * 0.15)
   })
 
@@ -919,19 +924,19 @@ describe('Light Cone sheets test', () => {
         charKey,
         'FlowingNightglow',
         conditionals.FlowingNightglow.cantillation.name,
-        5
+        5,
       ),
       cond(
         charKey,
         'FlowingNightglow',
         conditionals.FlowingNightglow.cadenza.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -948,13 +953,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ForTomorrowsJourney',
         conditionals.ForTomorrowsJourney.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -970,13 +975,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'GeniusesGreetings',
         conditionals.GeniusesGreetings.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -993,13 +998,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'GeniusesRepose',
         conditionals.GeniusesRepose.enemyDefeated.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1016,13 +1021,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'GoodNightAndSleepWell',
         conditionals.GoodNightAndSleepWell.debuffCount.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1033,12 +1038,12 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Lingsha'
     const data = testCharacterData(charKey, 'HeyOverHere')
     data.push(
-      cond(charKey, 'HeyOverHere', conditionals.HeyOverHere.skillUsed.name, 1)
+      cond(charKey, 'HeyOverHere', conditionals.HeyOverHere.skillUsed.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1056,13 +1061,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'IfTimeWereAFlower',
         conditionals.IfTimeWereAFlower.presage.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1078,19 +1083,19 @@ describe('Light Cone sheets test', () => {
         charKey,
         'IncessantRain',
         conditionals.IncessantRain.enemyDebuffsGE3.name,
-        1
+        1,
       ),
       cond(
         charKey,
         'IncessantRain',
         conditionals.IncessantRain.aetherCode.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1108,13 +1113,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'IndeliblePromise',
         conditionals.IndeliblePromise.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1131,19 +1136,19 @@ describe('Light Cone sheets test', () => {
         charKey,
         'InherentlyUnjustDestiny',
         conditionals.InherentlyUnjustDestiny.shieldProvided.name,
-        1
+        1,
       ),
       cond(
         charKey,
         'InherentlyUnjustDestiny',
         conditionals.InherentlyUnjustDestiny.followUpHit.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1161,13 +1166,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'InTheNameOfTheWorld',
         conditionals.InTheNameOfTheWorld.enemyDebuffed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1184,7 +1189,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1194,7 +1199,7 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.dmg_.skill[0]).val).toBeCloseTo(6 * 0.1)
     // Base + LC cond
     expect(calc.compute(char.final.crit_dmg_.ult[0]).val).toBeCloseTo(
-      0.5 + 6 * 0.2
+      0.5 + 6 * 0.2,
     )
   })
 
@@ -1206,13 +1211,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'IntoTheUnreachableVeil',
         conditionals.IntoTheUnreachableVeil.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1230,13 +1235,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'IShallBeMyOwnSword',
         conditionals.IShallBeMyOwnSword.eclipse.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1252,12 +1257,12 @@ describe('Light Cone sheets test', () => {
       ownBuff.premod.eff_.add(0.8),
     ])
     data.push(
-      cond(charKey, 'ItsShowtime', conditionals.ItsShowtime.trick.name, 3)
+      cond(charKey, 'ItsShowtime', conditionals.ItsShowtime.trick.name, 3),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1273,13 +1278,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'IVentureForthToHunt',
         conditionals.IVentureForthToHunt.luminflux.name,
-        2
-      )
+        2,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1298,13 +1303,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'LongRoadLeadsHome',
         conditionals.LongRoadLeadsHome.charring.name,
-        2
-      )
+        2,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1319,7 +1324,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1332,7 +1337,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1343,12 +1348,12 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'RuanMei'
     const data = testCharacterData(charKey, 'Mediation')
     data.push(
-      cond(charKey, 'Mediation', conditionals.Mediation.enteringBattle.name, 1)
+      cond(charKey, 'Mediation', conditionals.Mediation.enteringBattle.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1362,7 +1367,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1377,13 +1382,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'MemorysCurtainNeverFalls',
         conditionals.MemorysCurtainNeverFalls.skillUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1401,13 +1406,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'MomentOfVictory',
         conditionals.MomentOfVictory.wearerAttacked.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1425,13 +1430,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'MutualDemise',
         conditionals.MutualDemise.hpLowerThan80.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1448,18 +1453,18 @@ describe('Light Cone sheets test', () => {
         charKey,
         'NightOfFright',
         conditionals.NightOfFright.healingProvided.name,
-        5
-      )
+        5,
+      ),
     )
     const calcLingsha = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const calcSeele = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: otherCharKey, dst: otherCharKey })
 
     expect(calcLingsha.compute(own.final.enerRegen_).val).toBeCloseTo(0.2)
@@ -1467,7 +1472,7 @@ describe('Light Cone sheets test', () => {
     expect(
       calcSeele
         .withTag({ src: charKey, dst: otherCharKey })
-        .compute(new Read(formulas.NightOfFright.healing.tag, undefined)).val
+        .compute(new Read(formulas.NightOfFright.healing.tag, undefined)).val,
     ).toBeCloseTo(931.392 * 0.14)
   })
 
@@ -1479,19 +1484,19 @@ describe('Light Cone sheets test', () => {
         charKey,
         'NightOnTheMilkyWay',
         conditionals.NightOnTheMilkyWay.enemiesOnField.name,
-        5
+        5,
       ),
       cond(
         charKey,
         'NightOnTheMilkyWay',
         conditionals.NightOnTheMilkyWay.enemyBroken.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1507,13 +1512,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'NinjaRecordSoundHunt',
         conditionals.NinjaRecordSoundHunt.hpLost.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1526,12 +1531,12 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Qingque'
     const data = testCharacterData(
       charKey,
-      'NinjutsuInscriptionDazzlingEvilbreaker'
+      'NinjutsuInscriptionDazzlingEvilbreaker',
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1544,13 +1549,13 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     expect(calc.compute(char.final.atk_).val).toBeCloseTo(0.48)
     expect(
-      calc.compute(new Read(formulas.NowhereToRun.healing.tag, undefined)).val
+      calc.compute(new Read(formulas.NowhereToRun.healing.tag, undefined)).val,
     ).toBeCloseTo((523.908 + 529.2) * 1.48 * 0.24)
   })
 
@@ -1562,13 +1567,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'OnlySilenceRemains',
         conditionals.OnlySilenceRemains.lessThan2Enemies.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1585,19 +1590,19 @@ describe('Light Cone sheets test', () => {
         charKey,
         'OnTheFallOfAnAeon',
         conditionals.OnTheFallOfAnAeon.wearerAttacked.name,
-        4
+        4,
       ),
       cond(
         charKey,
         'OnTheFallOfAnAeon',
         conditionals.NightOnTheMilkyWay.enemyBroken.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1616,13 +1621,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'PastAndFuture',
         conditionals.PastAndFuture.skillUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: otherCharKey, dst: otherCharKey })
     const char = convert(ownTag, { et: 'own', src: otherCharKey })
 
@@ -1637,13 +1642,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'PastSelfInMirror',
         conditionals.PastSelfInMirror.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1659,13 +1664,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'PatienceIsAllYouNeed',
         conditionals.PatienceIsAllYouNeed.attackCount.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1682,7 +1687,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1697,11 +1702,11 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
 
     expect(
-      calc.compute(new Read(formulas.Pioneering.healing.tag, undefined)).val
+      calc.compute(new Read(formulas.Pioneering.healing.tag, undefined)).val,
     ).toBeCloseTo((1474.704 + 952.56) * 0.2)
   })
 
@@ -1711,7 +1716,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1727,7 +1732,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1744,13 +1749,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'PostOpConversation',
         conditionals.PostOpConversation.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1768,13 +1773,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ReforgedRemembrance',
         conditionals.ReforgedRemembrance.prophet.name,
-        4
-      )
+        4,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1791,13 +1796,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'Reminiscence',
         conditionals.Reminiscence.commemoration.name,
-        4
-      )
+        4,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1813,13 +1818,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ResolutionShinesAsPearlsOfSweat',
         conditionals.ResolutionShinesAsPearlsOfSweat.ensnared.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
 
     expect(calc.compute(enemy.common.defRed_).val).toBeCloseTo(0.16)
@@ -1831,7 +1836,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1847,13 +1852,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'RiverFlowsInSpring',
         conditionals.RiverFlowsInSpring.notAttacked.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1868,7 +1873,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1883,7 +1888,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1903,13 +1908,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ScentAloneStaysTrue',
         conditionals.ScentAloneStaysTrue.woefree.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1929,13 +1934,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ShadowedByNight',
         conditionals.ShadowedByNight.enterBattleOrBreakDmg.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1949,7 +1954,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1964,13 +1969,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ShatteredHome',
         conditionals.ShatteredHome.enemyHpGT50.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -1986,18 +1991,18 @@ describe('Light Cone sheets test', () => {
         charKey,
         'SheAlreadyShutHerEyes',
         conditionals.SheAlreadyShutHerEyes.wearerHpReduced.name,
-        1
-      )
+        1,
+      ),
     )
     const calcFuXuan = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const calcSeele = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: otherCharKey })
 
     expect(calcFuXuan.compute(own.final.hp_).val).toBeCloseTo(0.4)
@@ -2005,13 +2010,13 @@ describe('Light Cone sheets test', () => {
     expect(calcFuXuan.compute(own.final.common_dmg_).val).toBeCloseTo(0.15)
     expect(
       calcFuXuan.compute(
-        new Read(formulas.SheAlreadyShutHerEyes.maxHeal.tag, undefined)
-      ).val
+        new Read(formulas.SheAlreadyShutHerEyes.maxHeal.tag, undefined),
+      ).val,
     ).toBeCloseTo((1474.704 + 1270.08) * 1.4 * 1)
     expect(
       calcSeele.compute(
-        new Read(formulas.SheAlreadyShutHerEyes.maxHeal.tag, undefined)
-      ).val
+        new Read(formulas.SheAlreadyShutHerEyes.maxHeal.tag, undefined),
+      ).val,
     ).toBeCloseTo(931.392 * 1)
   })
 
@@ -2023,13 +2028,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'SleepLikeTheDead',
         conditionals.SleepLikeTheDead.notCrit.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2046,13 +2051,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'SolitaryHealing',
         conditionals.SolitaryHealing.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2068,13 +2073,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'SomethingIrreplaceable',
         conditionals.SomethingIrreplaceable.wearerHit.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2082,8 +2087,8 @@ describe('Light Cone sheets test', () => {
     expect(calc.compute(char.final.common_dmg_).val).toBeCloseTo(0.4)
     expect(
       calc.compute(
-        new Read(formulas.SomethingIrreplaceable.healing.tag, undefined)
-      ).val
+        new Read(formulas.SomethingIrreplaceable.healing.tag, undefined),
+      ).val,
     ).toBeCloseTo((523.908 + 582.12) * 1.4 * 0.12)
   })
 
@@ -2095,13 +2100,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'SubscribeForMore',
         conditionals.SubscribeForMore.maxEnergy.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2117,13 +2122,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'SweatNowCryLess',
         conditionals.SweatNowCryLess.memospriteOnField.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2137,12 +2142,12 @@ describe('Light Cone sheets test', () => {
     const charKey: CharacterKey = 'Aglaea'
     const data = testCharacterData(charKey, 'Swordplay')
     data.push(
-      cond(charKey, 'Swordplay', conditionals.Swordplay.sameTargetHit.name, 5)
+      cond(charKey, 'Swordplay', conditionals.Swordplay.sameTargetHit.name, 5),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2155,14 +2160,14 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     expect(calc.compute(char.final.eff_res_).val).toBeCloseTo(0.16)
     expect(
       calc.compute(new Read(formulas.TextureOfMemories.shield.tag, undefined))
-        .val
+        .val,
     ).toBeCloseTo((1474.704 + 1058.4) * 0.32)
   })
 
@@ -2174,18 +2179,18 @@ describe('Light Cone sheets test', () => {
         charKey,
         'TheBirthOfTheSelf',
         conditionals.TheBirthOfTheSelf.enemyHpLE50.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     expect(calc.compute(char.final.dmg_.followUp[0]).val).toBeCloseTo(
-      0.48 + 0.48
+      0.48 + 0.48,
     )
   })
 
@@ -2197,13 +2202,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'TheDayTheCosmosFell',
         conditionals.TheDayTheCosmosFell.twoEnemiesWeakness.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2220,13 +2225,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'TheMolesWelcomeYou',
         conditionals.TheMolesWelcomeYou.mischievous.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2241,13 +2246,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'TheSeriousnessOfBreakfast',
         conditionals.TheSeriousnessOfBreakfast.enemiesDefeated.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2263,13 +2268,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'TheUnreachableSide',
         conditionals.TheUnreachableSide.attackedOrConsumedHp.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2285,26 +2290,26 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
     const initialValue = calc.compute(
-      new Read(formulas.ThisIsMe.additive_ult_dmg.tag, undefined)
+      new Read(formulas.ThisIsMe.additive_ult_dmg.tag, undefined),
     ).val
     data.push(
-      cond(charKey, 'ThisIsMe', conditionals.ThisIsMe.addUltDmgBuff.name, 1)
+      cond(charKey, 'ThisIsMe', conditionals.ThisIsMe.addUltDmgBuff.name, 1),
     )
     const newCalc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
 
     expect(newCalc.compute(char.final.def_).val).toBeCloseTo(0.32)
     expect(
       newCalc.compute(
-        new Read(formulas.ThisIsMe.additive_ult_dmg.tag, undefined)
-      ).val
+        new Read(formulas.ThisIsMe.additive_ult_dmg.tag, undefined),
+      ).val,
     ).toBeGreaterThan(initialValue)
   })
 
@@ -2316,19 +2321,19 @@ describe('Light Cone sheets test', () => {
         charKey,
         'ThoseManySprings',
         conditionals.ThoseManySprings.unarmored.name,
-        1
+        1,
       ),
       cond(
         charKey,
         'ThoseManySprings',
         conditionals.ThoseManySprings.cornered.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2342,7 +2347,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2358,13 +2363,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'TimeWovenIntoGold',
         conditionals.TimeWovenIntoGold.brocade.name,
-        6
-      )
+        6,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2382,7 +2387,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2395,7 +2400,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2410,13 +2415,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'UnderTheBlueSky',
         conditionals.UnderTheBlueSky.enemyDefeated.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2433,13 +2438,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'VictoryInABlink',
         conditionals.VictoryInABlink.memospriteAbilityUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2455,7 +2460,7 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2469,19 +2474,19 @@ describe('Light Cone sheets test', () => {
     const calcLingsha = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const calcSeele = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: otherCharKey })
 
     expect(calcLingsha.compute(own.final.hp_).val).toBeCloseTo(0.32)
     expect(
       calcSeele.compute(
-        new Read(formulas.WarmthShortensColdNights.healing.tag, undefined)
-      ).val
+        new Read(formulas.WarmthShortensColdNights.healing.tag, undefined),
+      ).val,
     ).toBeCloseTo(931.392 * 0.04)
   })
 
@@ -2494,18 +2499,18 @@ describe('Light Cone sheets test', () => {
         charKey,
         'WeAreWildfire',
         conditionals.WeAreWildfire.hpDifference.name,
-        99
-      )
+        99,
+      ),
     )
     const calcSeele = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: otherCharKey })
 
     expect(
       calcSeele.compute(new Read(formulas.WeAreWildfire.healing.tag, undefined))
-        .val
+        .val,
     ).toBeCloseTo(931.392 * 0.99 * 0.5)
   })
 
@@ -2517,13 +2522,13 @@ describe('Light Cone sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
     expect(calc.compute(char.final.brEffect_).val).toBeCloseTo(0.48)
     expect(
-      calc.compute(new Read(formulas.WhatIsReal.healing.tag, undefined)).val
+      calc.compute(new Read(formulas.WhatIsReal.healing.tag, undefined)).val,
     ).toBeCloseTo((1358.28 + 1058.4) * 0.04 + 800)
   })
 
@@ -2535,13 +2540,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'WhereaboutsShouldDreamsRest',
         conditionals.WhereaboutsShouldDreamsRest.routed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2557,13 +2562,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'WoofWalkTime',
         conditionals.WoofWalkTime.enemyAffectedByBurnOrBleed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2579,13 +2584,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'WorrisomeBlissful',
         conditionals.WorrisomeBlissful.tame.name,
-        2
-      )
+        2,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 
@@ -2606,13 +2611,13 @@ describe('Light Cone sheets test', () => {
         charKey,
         'YetHopeIsPriceless',
         conditionals.YetHopeIsPriceless.battleStartOrBasicUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: charKey, dst: charKey })
     const char = convert(ownTag, { et: 'own', src: charKey })
 

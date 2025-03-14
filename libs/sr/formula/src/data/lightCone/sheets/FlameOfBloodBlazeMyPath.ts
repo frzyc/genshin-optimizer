@@ -30,10 +30,10 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        prod(own.final.hp, percent(subscript(superimpose, dm.consumedHp_)))
-      )
+        prod(own.final.hp, percent(subscript(superimpose, dm.consumedHp_))),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
 
   // Conditional buffs
@@ -48,13 +48,13 @@ const sheet = registerLightCone(
           sum(
             subscript(superimpose, dm.skill_ult_dmg_),
             hpConsumedMoreThan500.ifOn(
-              subscript(superimpose, dm.bonus_skill_ult_dmg_)
-            )
-          )
-        )
-      )
+              subscript(superimpose, dm.bonus_skill_ult_dmg_),
+            ),
+          ),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'ult_dmg_',
@@ -67,13 +67,13 @@ const sheet = registerLightCone(
           sum(
             subscript(superimpose, dm.skill_ult_dmg_),
             hpConsumedMoreThan500.ifOn(
-              subscript(superimpose, dm.bonus_skill_ult_dmg_)
-            )
-          )
-        )
-      )
+              subscript(superimpose, dm.bonus_skill_ult_dmg_),
+            ),
+          ),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

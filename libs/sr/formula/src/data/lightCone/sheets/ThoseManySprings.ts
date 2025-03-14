@@ -27,12 +27,12 @@ const sheet = registerLightCone(
         unarmored.ifOn(
           sum(
             subscript(superimpose, dm.common_dmg_),
-            cornered.ifOn(subscript(superimpose, dm.extra_common_dmg_))
-          )
-        )
-      )
+            cornered.ifOn(subscript(superimpose, dm.extra_common_dmg_)),
+          ),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

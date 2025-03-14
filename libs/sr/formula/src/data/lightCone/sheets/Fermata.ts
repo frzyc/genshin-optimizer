@@ -25,11 +25,11 @@ const sheet = registerLightCone(
         lcCount,
         1,
         affectedWithShockOrWindShear.ifOn(
-          subscript(superimpose, dm.common_dmg_)
-        )
-      )
+          subscript(superimpose, dm.common_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

@@ -27,11 +27,11 @@ const sheet = registerLightCone(
         1,
         sum(
           subscript(superimpose, dm.followUp_dmg_),
-          enemyHpLE50.ifOn(subscript(superimpose, dm.extra_followUp_dmg_))
-        )
-      )
+          enemyHpLE50.ifOn(subscript(superimpose, dm.extra_followUp_dmg_)),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

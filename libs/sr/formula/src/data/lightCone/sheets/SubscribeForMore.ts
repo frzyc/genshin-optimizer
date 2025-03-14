@@ -27,11 +27,11 @@ const sheet = registerLightCone(
         1,
         sum(
           subscript(superimpose, dm.basic_skill_dmg_),
-          maxEnergy.ifOn(subscript(superimpose, dm.extra_basic_skill_dmg_))
-        )
-      )
+          maxEnergy.ifOn(subscript(superimpose, dm.extra_basic_skill_dmg_)),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'skill_dmg_',
@@ -42,11 +42,11 @@ const sheet = registerLightCone(
         1,
         sum(
           subscript(superimpose, dm.basic_skill_dmg_),
-          maxEnergy.ifOn(subscript(superimpose, dm.extra_basic_skill_dmg_))
-        )
-      )
+          maxEnergy.ifOn(subscript(superimpose, dm.extra_basic_skill_dmg_)),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

@@ -24,11 +24,11 @@ const sheet = registerLightCone(
         1,
         prod(
           min(own.char.maxEnergy, dm.maxEnergy),
-          subscript(superimpose, dm.ult_dmg_)
-        )
-      )
+          subscript(superimpose, dm.ult_dmg_),
+        ),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

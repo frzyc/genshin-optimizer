@@ -27,18 +27,18 @@ const sheet = registerLightCone(
     'followUp_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'followUp',
-      cmpGE(lcCount, 1, subscript(superimpose, dm.followUp_dmg_))
+      cmpGE(lcCount, 1, subscript(superimpose, dm.followUp_dmg_)),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
 
   // Conditional buffs
   registerBuff(
     'crit_dmg_',
     teamBuff.premod.crit_dmg_.add(
-      cmpGE(lcCount, 1, prod(tame, subscript(superimpose, dm.crit_dmg_)))
+      cmpGE(lcCount, 1, prod(tame, subscript(superimpose, dm.crit_dmg_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

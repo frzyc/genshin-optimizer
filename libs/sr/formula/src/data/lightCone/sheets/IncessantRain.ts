@@ -27,16 +27,20 @@ const sheet = registerLightCone(
   registerBuff(
     'crit_',
     ownBuff.premod.crit_.add(
-      cmpGE(lcCount, 1, enemyDebuffsGE3.ifOn(subscript(superimpose, dm.crit_)))
+      cmpGE(lcCount, 1, enemyDebuffsGE3.ifOn(subscript(superimpose, dm.crit_))),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'common_dmg_',
     teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, aetherCode.ifOn(subscript(superimpose, dm.common_dmg_)))
+      cmpGE(
+        lcCount,
+        1,
+        aetherCode.ifOn(subscript(superimpose, dm.common_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet
