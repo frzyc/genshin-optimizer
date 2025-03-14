@@ -26,3 +26,6 @@ export function within(val: number, a: number, b: number, inclusive = true) {
   if (inclusive) return val >= a && val <= b
   return val > a && val < b
 }
+export function fixFloat(val: number, precision = 100, factor = 1) {
+  return Math.round(val * precision) / (precision / factor)
+}

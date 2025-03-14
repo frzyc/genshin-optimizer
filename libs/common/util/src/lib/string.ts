@@ -1,3 +1,5 @@
+import { fixFloat } from './number'
+
 //use to pretty print timestamps, or anything really.
 export function strPadLeft(string: string, pad: string, length: number) {
   return (new Array(length + 1).join(pad) + string).slice(-length)
@@ -51,4 +53,8 @@ export function extractJSON(s: string): object | null {
   } else {
     return null
   }
+}
+
+export function parseFloatBetter(s: string, precision = 100, factor = 0.01) {
+  return fixFloat(+s, precision, factor)
 }

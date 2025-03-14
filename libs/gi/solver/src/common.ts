@@ -111,9 +111,12 @@ export function pruneExclusion(
         const key = v.path[v.path.length - 1],
           thres = t.value
         if (key in maxValues) {
-          const max: number = maxValues[key]
+          const max: number = maxValues[key as keyof typeof maxValues] ?? 0
           if (max < thres) return fail
-          if (thres === 2 && exclusion[key]!.includes(2))
+          if (
+            thres === 2 &&
+            (exclusion[key as keyof typeof exclusion] ?? []).includes(2)
+          )
             return threshold(v, 4, pass, fail)
         }
       }
@@ -723,13 +726,13 @@ export function* artSetPerm(
     let usableRainbows = rainbows.length
 
     // Inception.. because js doesn't like functions inside a for-loop
-    function* check(i: number) {
+    function* check(i: number): IterableIterator<RequestFilter> {
       if (i === groupped.length) return yield* check_free(0)
 
       for (const set of artSets) {
         if (used.has(set)) continue
         const length = groupped[i].length,
-          allowedSet = allowedCounts[set]
+          allowedSet = allowedCounts[set as ArtSetExclusionKey]
         let requiredRainbows = 0
 
         if (allowedSet && !allowedSet.has(length)) {
@@ -759,14 +762,14 @@ export function* artSetPerm(
     }
     // We separate filling rainbow slots from groupped slots because it has an entirely
     // different set of rules regarding what can be filled and what states to be kept.
-    function* check_free(i: number) {
+    function* check_free(i: number): IterableIterator<RequestFilter> {
       const remaining = rainbows.length - i,
         isolated: ArtifactSetKey[] = [],
         missing: ArtifactSetKey[] = [],
         rejected: ArtifactSetKey[] = []
       let required = 0
       for (const set of artSets) {
-        const allowedSet = allowedCounts[set],
+        const allowedSet = allowedCounts[set as ArtSetExclusionKey],
           count = counts[set]
         if (!allowedSet) continue
         if (range(1, remaining).every((j) => !allowedSet.has(count + j)))

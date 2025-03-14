@@ -10,19 +10,17 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { filterFunction, sortFunction } from '@genshin-optimizer/common/util'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
+import type { WengineSortKey } from '@genshin-optimizer/zzz/db'
 import { initialWengine } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import {
   WengineCard,
   WengineEditor,
-  WengineSelectionModal,
-} from '@genshin-optimizer/zzz/ui'
-import type { WengineSortKey } from '@genshin-optimizer/zzz/util'
-import {
   wengineFilterConfigs,
+  WengineSelectionModal,
   wengineSortConfigs,
   wengineSortMap,
-} from '@genshin-optimizer/zzz/util'
+} from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   Button,

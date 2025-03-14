@@ -18,7 +18,7 @@
     "ImpressionF": "Anton keeps saying he's the \"second-best driller in the company.\"\nSo... who's the first?",
     "ImpressionM": "I think it's the heavy drill machine from their company. I've heard him say something like \"I gotta win next time\" against it.",
     "Name": "",
-    "OutlookDesc": "New Eridu Citizen Verification Profile Info:\nHollow Investigator — Anton, possessing good Ether aptitude, is allowed to perform basic tasks like investigating and extracting resources in known Hollows within the city (including Companion Hollows).\nNote: Besides himself, Anton's bro also possesses relatively good Ether aptitude.",
+    "OutlookDesc": "New Eridu Citizen Verification Profile Info:\nHollow Investigator — Anton, possessing high Ether aptitude, is allowed to perform basic tasks like investigating and extracting resources in known Hollows within the city (including Companion Hollows).\nNote: Besides himself, Anton's bro also possesses relatively high Ether aptitude.",
     "ProfileDesc": "Anton is a key member of construction staff at Belobog Industries and one of Koleda's trusted aides.\n\"Got a job you can't handle? Leave it to me!\"\n Anton is one of the top brass at Belobog, handpicked by its former president Khors, which makes him a \"senior employee.\"\nA genuine, straightforward man, always boosting the morale of his coworkers with his surplus of energy.\n\nApart from this, it seems Anton is always talking to his jackhammer, affectionately calling it, \"Bro.\"\nAn instance from Anton's everyday life goes like this:\nAnton, seemingly in dialogue with himself, asks, \"Whaddaya think, Bro?\" \nThe jackhammer replies, \"Vroom vroom vroom—\"\nAnton, apparently enlightened, responds, \"I see, I see! You still got it, Bro!\"\nUnfortunately, I have not collected enough information on such occurrences and am not able to deliver further analysis.",
     "Race": "Belobog Heavy Industries",
     "RoleIcon": "IconRole/UnPacker/IconRole15",
@@ -78,7 +78,7 @@
       "Electric",
       "Male",
       "Camp3",
-      "Size3",
+      "Size2",
       "AidTypeParry",
       "Anton"
     ]
@@ -250,7 +250,7 @@
       "Description": [
         {
           "Name": "Basic Attack: Enthusiastic Drills",
-          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 4 mixed attacks in front, dealing <color=#F0D12B>Physical DMG</color>.\nThe 4th-hit is a <color=#FFFFFF>Piledriver Attack</color>."
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 4 mixed attacks in front, dealing <color=#F0D12B>Physical DMG</color>.\nThe 4th hit is a <color=#FFFFFF>Piledriver Attack</color>."
         },
         {
           "Name": "Basic Attack: Enthusiastic Drills (Burst Mode)",

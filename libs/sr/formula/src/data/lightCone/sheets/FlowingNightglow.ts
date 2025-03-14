@@ -35,14 +35,14 @@ const sheet = registerLightCone(
         prod(cantillation, subscript(superimpose, dm.enerRegen_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'atk_',
     ownBuff.premod.atk_.add(
       cmpGE(lcCount, 1, cadenza.ifOn(subscript(superimpose, dm.atk_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'common_dmg_',

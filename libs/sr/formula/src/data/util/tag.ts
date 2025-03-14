@@ -70,14 +70,14 @@ export function priorityTable(
  */
 
 type Desc = BaseDesc<Sheet>
-const aggStr: Desc = { sheet: 'agg', accu: 'unique' }
+const aggStr: Desc = { sheet: 'agg' }
 const agg: Desc = { sheet: 'agg', accu: 'sum' }
-const iso: Desc = { sheet: 'iso', accu: 'unique' }
+const iso: Desc = { sheet: 'iso' }
 const isoSum: Desc = { sheet: 'iso', accu: 'sum' }
 /** `sheet:`-agnostic calculation */
-const fixed: Desc = { sheet: 'static', accu: 'unique' }
+const fixed: Desc = { sheet: 'static' }
 /** The calculation must have a matching `sheet:` */
-const prep: Desc = { sheet: undefined, accu: 'unique' }
+const prep: Desc = { sheet: undefined }
 
 const stats: Record<Stat, Desc> = {
   hp: agg,
@@ -160,20 +160,11 @@ export const convert = createConvert<Read>()
 
 // Default queries
 const noName = { src: null, name: null }
-export const own = convert(ownTag, {
-  et: 'own',
-  dst: null,
-})
+export const own = convert(ownTag, { et: 'own', dst: null })
 // `semiOwn` retains `dst`, so this can calculate a buff
 // that comes from charA (`own`) but scales off charB stats (`target`)
-export const semiOwn = convert(ownTag, {
-  et: 'own',
-})
-export const team = convert(ownTag, {
-  et: 'team',
-  dst: null,
-  ...noName,
-})
+export const semiOwn = convert(ownTag, { et: 'own' })
+export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
 export const target = convert(ownTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 

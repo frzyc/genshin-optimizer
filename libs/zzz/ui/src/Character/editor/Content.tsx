@@ -73,7 +73,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
               </Box>
               <CharacterCardStats bgt="light" character={character} />
               <Typography sx={{ textAlign: 'center', pb: -1 }} variant="h6">
-                {t('characterEditor.mindscapeTitle')}
+                {t('mindscapeTitle')}
               </Typography>
               <Box sx={{ px: 1 }}>
                 <CharacterCompactMindscapeSelector

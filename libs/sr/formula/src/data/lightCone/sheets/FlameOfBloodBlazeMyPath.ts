@@ -54,7 +54,7 @@ const sheet = registerLightCone(
         )
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'ult_dmg_',

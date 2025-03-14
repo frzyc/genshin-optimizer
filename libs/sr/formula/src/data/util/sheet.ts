@@ -54,7 +54,7 @@ export function register(
 export function registerBuff(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
-  cond: string | StrNode = 'unique',
+  cond: string | StrNode = 'infer',
   team = false
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
@@ -129,7 +129,7 @@ function registerFormula(
 }
 
 export function listingItem(t: Read, cond?: string | StrNode) {
-  return tag(cond ?? t.ex ?? 'unique', t.tag)
+  return tag(cond ?? t.ex ?? 'infer', t.tag)
 }
 
 /**
@@ -149,7 +149,7 @@ export function customDmg(
   dmgTag: DmgTag,
   base: NumNode,
   splits: number[] = [1],
-  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
   return splits.map((split, index) =>
@@ -179,7 +179,7 @@ export function customDmg(
 export function customShield(
   name: string,
   base: NumNode,
-  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -205,7 +205,7 @@ export function customShield(
 export function customHeal(
   name: string,
   base: NumNode,
-  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(
@@ -233,7 +233,7 @@ export function customBreakDmg(
   name: string,
   dmgTag: DmgTag,
   base: NumNode | number,
-  { team, isSemiOwn, cond = 'unique' }: FormulaArg = {},
+  { team, isSemiOwn, cond = 'infer' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   return registerFormula(

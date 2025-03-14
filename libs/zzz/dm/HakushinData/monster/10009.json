@@ -4,7 +4,7 @@
   "MonsterInfo": {
     "CodeName": "Monster_GrenadierJaegerCam",
     "Icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/IconBossGeneral/UnPacker/IconMonster_TyrantPompeyPro.png",
-    "Tag": ["Bios", "Demote", "Middle"],
+    "Tag": ["Bios", "Demote", "Small"],
     "Type": "Monster",
     "Element": {
       "Ice": 0,

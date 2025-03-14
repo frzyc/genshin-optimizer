@@ -363,7 +363,7 @@ const sheet: TalentSheet = {
     },
     {
       fields: dm.normal.hitArr.map((_, i) => ({
-        node: infoMut(dmgFormulas.normal[i], {
+        node: infoMut((dmgFormulas.normal as any)[i], {
           name: ct.chg(`auto.skillParams.${i}`),
         }),
       })),

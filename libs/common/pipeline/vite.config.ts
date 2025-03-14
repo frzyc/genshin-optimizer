@@ -4,7 +4,7 @@ import * as path from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
-export default defineConfig({
+export default defineConfig(() => ({
   root: __dirname,
   cacheDir: '../../../node_modules/.vite/libs/common/pipeline',
 
@@ -22,17 +22,14 @@ export default defineConfig({
   // },
 
   test: {
+    watch: false,
     globals: true,
-    cache: {
-      dir: '../../../node_modules/.vitest',
-    },
     environment: 'node',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../../coverage/libs/common/pipeline',
-      provider: 'v8',
+      provider: 'v8' as const,
     },
   },
-})
+}))

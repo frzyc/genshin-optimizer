@@ -43,7 +43,9 @@ function StatLine({ read }: { read: Read<Tag> }) {
       <BootstrapTooltip
         title={
           <Typography component="div">
-            <Box>{fText.name}</Box>
+            <Box>
+              <TagDisplay tag={read.tag} />
+            </Box>
             <Divider />
             <Box>{fText.formula}</Box>
 

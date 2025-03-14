@@ -22,7 +22,7 @@ const sheet = registerRelic(
     teamBuff.premod.brEffect_.add(
       cmpGE(relicCount, 4, useUltimateOnAlly.ifOn(dm[4].brEffect_))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

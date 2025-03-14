@@ -6,7 +6,7 @@ const key: DiscSetKey = 'AstralVoice'
 const { astral } = allNumConditionals(key, true, 0, 3)
 
 const discCount = own.common.count.sheet(key)
-const showCond4Set = cmpGE(discCount, 4, 'unique', '')
+const showCond4Set = cmpGE(discCount, 4, 'infer', '')
 
 const sheet = registerDisc(
   key,

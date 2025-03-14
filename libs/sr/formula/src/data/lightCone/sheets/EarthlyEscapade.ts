@@ -23,7 +23,7 @@ const sheet = registerLightCone(
     notOwnBuff.premod.crit_.add(
       cmpGE(lcCount, 1, mask.ifOn(subscript(superimpose, dm.crit_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'crit_dmg_',

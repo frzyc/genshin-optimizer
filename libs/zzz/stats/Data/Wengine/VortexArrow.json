@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Tsunami",
-      "desc": "The equipper's attacks inflict <color=#2BAD00>8%</color> more Daze on their main target."
+      "desc": "The equipper's attacks inflict <color=#2BAD00>8%</color> more Daze on their main target.",
+      "params": [0.08]
     },
     {
       "name": "Tsunami",
-      "desc": "The equipper's attacks inflict <color=#2BAD00>9%</color> more Daze on their main target."
+      "desc": "The equipper's attacks inflict <color=#2BAD00>9%</color> more Daze on their main target.",
+      "params": [0.09]
     },
     {
       "name": "Tsunami",
-      "desc": "The equipper's attacks inflict <color=#2BAD00>10%</color> more Daze on their main target."
+      "desc": "The equipper's attacks inflict <color=#2BAD00>10%</color> more Daze on their main target.",
+      "params": [0.1]
     },
     {
       "name": "Tsunami",
-      "desc": "The equipper's attacks inflict <color=#2BAD00>11%</color> more Daze on their main target."
+      "desc": "The equipper's attacks inflict <color=#2BAD00>11%</color> more Daze on their main target.",
+      "params": [0.11]
     },
     {
       "name": "Tsunami",
-      "desc": "The equipper's attacks inflict <color=#2BAD00>12%</color> more Daze on their main target."
+      "desc": "The equipper's attacks inflict <color=#2BAD00>12%</color> more Daze on their main target.",
+      "params": [0.12]
     }
   ]
 }

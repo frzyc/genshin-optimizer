@@ -315,7 +315,7 @@ export function tagVal(cat: string): TagValRead {
 }
 
 /** Gather entries matching `{current tag}/Tag`, then combine the results with `ex` */
-export function read(tag: Tag, ex: BaseRead['ex']): BaseRead {
+export function read(tag: Tag, ex?: BaseRead['ex']): BaseRead {
   return { op: 'read', x, br, tag, ex }
 }
 /** (Entry-only) trigger another gather with `{current tag}/tag` */

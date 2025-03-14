@@ -31,7 +31,7 @@ const sheet = registerLightCone(
         cmpEq(atk_crit_dmg_enerRegen_.value, 1, subscript(superimpose, dm.atk_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'crit_dmg_',
@@ -46,7 +46,7 @@ const sheet = registerLightCone(
         )
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'enerRegen_',

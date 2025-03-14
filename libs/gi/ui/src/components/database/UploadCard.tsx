@@ -23,6 +23,7 @@ import {
   Typography,
   styled,
 } from '@mui/material'
+import type { ChangeEventHandler, DragEventHandler } from 'react'
 import { useCallback, useContext, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
@@ -88,18 +89,17 @@ export function UploadCard({
     setfilename('')
     onReplace()
   }
-  const onUpload = async (e) => {
-    const file = e.target.files[0]
-    e.target.value = null // reset the value so the same file can be uploaded again...
+  const onUpload: ChangeEventHandler<HTMLInputElement> = async (e) => {
+    const file = e.target.files?.[0]
+    e.target.value = '' // reset the value so the same file can be uploaded again...
     if (file) setfilename(file.name)
     const reader = new FileReader()
     reader.onload = () => setdata(reader.result as string)
-    reader.readAsText(file)
+    file && reader.readAsText(file)
   }
-  const onDrop = async (e) => {
+  const onDrop: DragEventHandler<HTMLDivElement> = async (e) => {
     e.preventDefault()
     const file = e.dataTransfer.files[0]
-    e.target.value = null // reset the value so the same file can be uploaded again...
     if (file) setfilename(file.name)
     const reader = new FileReader()
     reader.onload = () => setdata(reader.result as string)

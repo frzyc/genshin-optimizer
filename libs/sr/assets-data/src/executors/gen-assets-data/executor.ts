@@ -7,6 +7,7 @@ import type {
   RelicPlanarSetKey,
   RelicPlanarSlotKey,
 } from '@genshin-optimizer/sr/consts'
+import type { RelicSlotDMKey } from '@genshin-optimizer/sr/dm'
 import {
   avatarConfig,
   avatarRankConfig,
@@ -79,7 +80,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         relicSetIdMap[relicSetId],
         Object.fromEntries(
           Object.entries(relicDatas).map(([relicSlotKey, relicData]) => [
-            relicSlotMap[relicSlotKey],
+            relicSlotMap[relicSlotKey as RelicSlotDMKey],
             relicData.ItemFigureIconPath,
           ])
         ),

@@ -23,7 +23,7 @@ const sheet = registerRelic(
     ownBuff.premod.defIgn_.add(
       cmpGE(relicCount, 4, prod(dm[4].defIgn_, dotCount))
     ),
-    cmpGE(relicCount, 4, 'unique', '')
+    cmpGE(relicCount, 4, 'infer', '')
   )
 )
 export default sheet

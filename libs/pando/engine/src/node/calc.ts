@@ -18,7 +18,7 @@ import type { AnyNode, BaseRead, NumNode, ReRead, StrNode } from './type'
 
 export type TagCache<M> = DedupTag<PreRead<M>>
 export type PreRead<M> = Partial<
-  Record<NonNullable<BaseRead['ex']> | 'unique', CalcResult<number | string, M>>
+  Record<NonNullable<BaseRead['ex']>, CalcResult<number | string, M>>
 > & { pre: CalcResult<number | string, M>[] }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
@@ -127,8 +127,8 @@ export class Calculator<M = any> {
       case 'read': {
         const newCache = cache.with(n.tag)
         const computed = this._gather(newCache)
-        const { pre } = computed,
-          ex = n.ex ?? 'unique'
+        const { pre } = computed
+        const ex = n.ex ?? this.defaultAccu(newCache.tag) ?? 'unique'
 
         if (computed[ex]) return computed[ex]
         if (isDebug('calc') && ex === 'unique' && pre.length !== 1)
@@ -145,6 +145,9 @@ export class Calculator<M = any> {
     }
   }
 
+  defaultAccu(_tag: Tag): BaseRead['ex'] {
+    return
+  }
   markGathered(
     _tag: Tag,
     _entryTag: Tag,

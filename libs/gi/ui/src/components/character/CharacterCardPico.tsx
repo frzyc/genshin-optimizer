@@ -156,7 +156,7 @@ export function BlankCharacterCardPico({ index }: { index: number }) {
     >
       <Box
         component={NextImage ? NextImage : 'img'}
-        src={imgAssets.team[`team${index + 1}`]}
+        src={imgAssets.team[`team${index + 1}` as keyof typeof imgAssets.team]}
         sx={{ width: '75%', height: 'auto', opacity: 0.7 }}
       />
     </CardThemed>

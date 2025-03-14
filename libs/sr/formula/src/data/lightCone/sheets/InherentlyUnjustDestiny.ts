@@ -33,7 +33,7 @@ const sheet = registerLightCone(
         shieldProvided.ifOn(subscript(superimpose, dm.crit_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'common_dmg_',

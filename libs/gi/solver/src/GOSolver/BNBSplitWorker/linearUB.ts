@@ -10,7 +10,7 @@ export type Linear = DynStat & { $c: number }
 function weightedSum(
   ...entries: readonly (readonly [number, Linear])[]
 ): Linear {
-  const result = { $c: 0 }
+  const result: Linear = { $c: 0 }
   for (const [weight, entry] of entries)
     for (const [k, v] of Object.entries(entry))
       result[k] = (result[k] ?? 0) + weight * v

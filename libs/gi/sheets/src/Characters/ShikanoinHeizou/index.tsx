@@ -360,9 +360,14 @@ const sheet: TalentSheet = {
           }),
         },
         ...absorbableEle.map((ele) => ({
-          node: infoMut(dmgFormulas.burst[`${ele}_iris_dmg`], {
-            name: ct.chg(`burst.skillParams.1`),
-          }),
+          node: infoMut(
+            dmgFormulas.burst[
+              `${ele}_iris_dmg` as keyof typeof dmgFormulas.burst
+            ],
+            {
+              name: ct.chg(`burst.skillParams.1`),
+            }
+          ),
         })),
         {
           text: stg('cd'),

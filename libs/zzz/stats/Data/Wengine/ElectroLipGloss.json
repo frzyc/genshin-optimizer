@@ -12,23 +12,28 @@
   "phase": [
     {
       "name": "Kiss of Death",
-      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>10%</color> and they deal an additional <color=#2BAD00>15%</color> more DMG to the target."
+      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>10%</color> and they deal an additional <color=#2BAD00>15%</color> more DMG to the target.",
+      "params": [0.1, 0.15]
     },
     {
       "name": "Kiss of Death",
-      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>11.5%</color> and they deal an additional <color=#2BAD00>17.5%</color> more DMG to the target."
+      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>11.5%</color> and they deal an additional <color=#2BAD00>17.5%</color> more DMG to the target.",
+      "params": [0.115, 0.175]
     },
     {
       "name": "Kiss of Death",
-      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>13%</color> and they deal an additional <color=#2BAD00>20%</color> more DMG to the target."
+      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>13%</color> and they deal an additional <color=#2BAD00>20%</color> more DMG to the target.",
+      "params": [0.13, 0.2]
     },
     {
       "name": "Kiss of Death",
-      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>14.5%</color> and they deal an additional <color=#2BAD00>22.5%</color> more DMG to the target."
+      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>14.5%</color> and they deal an additional <color=#2BAD00>22.5%</color> more DMG to the target.",
+      "params": [0.145, 0.225]
     },
     {
       "name": "Kiss of Death",
-      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>16%</color> and they deal an additional <color=#2BAD00>25%</color> more DMG to the target."
+      "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>16%</color> and they deal an additional <color=#2BAD00>25%</color> more DMG to the target.",
+      "params": [0.16, 0.25]
     }
   ]
 }

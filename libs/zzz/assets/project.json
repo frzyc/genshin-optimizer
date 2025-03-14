@@ -10,7 +10,7 @@
       "options": {
         "fetchAssets": "local"
       },
-      "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"],
+      "outputs": ["{projectRoot}/src/gen/**/*"],
       "dependsOn": ["zzz-assets-data:gen-file"]
     }
   }

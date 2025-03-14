@@ -76,6 +76,12 @@ declare module '@mui/material/SvgIcon' {
 
 export const theme = createTheme({
   ...commonTheme,
+  typography: {
+    button: {
+      textTransform: 'none',
+    },
+    fontFamily: '"Inter", sans-serif',
+  },
   palette: {
     ...commonTheme.palette,
     contentZzz: commonTheme.palette.augmentColor({

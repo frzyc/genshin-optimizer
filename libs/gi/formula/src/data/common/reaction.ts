@@ -346,7 +346,7 @@ const data: TagMapNodeEntries = [
   ...allTransformativeReactionKeys.flatMap((trans) => {
     const { canCrit, variants } = transInfo[trans]
     const q = trans === 'swirl' ? 'swirl' : canCrit ? 'transCrit' : 'trans'
-    let cond: string | StrNode = 'unique'
+    let cond: string | StrNode = 'infer'
     const available = allElementKeys.filter((ele) =>
       transTriggerByEle[ele].has(trans)
     )

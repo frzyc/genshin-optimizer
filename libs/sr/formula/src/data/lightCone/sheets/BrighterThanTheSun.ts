@@ -23,7 +23,7 @@ const sheet = registerLightCone(
     ownBuff.premod.atk_.add(
       cmpGE(lcCount, 1, prod(basicsUsed, subscript(superimpose, dm.atk_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'enerRegen_',

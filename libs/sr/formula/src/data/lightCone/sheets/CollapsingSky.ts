@@ -21,7 +21,7 @@ const sheet = registerLightCone(
       'basic',
       cmpGE(lcCount, 1, subscript(superimpose, dm.basic_skill_dmg_))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'skill_dmg_',

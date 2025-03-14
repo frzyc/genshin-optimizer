@@ -16,9 +16,9 @@ import {
 import { addCustomOperation, type Monotonicity } from '../util'
 import { pruneBranches, pruneRange, reaffine, State } from './prune'
 
-const r0 = read({ q: 'c0' }, undefined)
-const r1 = read({ q: 'c1' }, undefined)
-const r2 = read({ q: 'c2' }, undefined)
+const r0 = read({ q: 'c0' })
+const r1 = read({ q: 'c1' })
+const r2 = read({ q: 'c2' })
 
 addCustomOperation('sqrt', {
   range: ([r]) => {

@@ -2,7 +2,7 @@ import BelebogHeavyIndustries from './IconCampBelobogIndustries.png'
 import CunningHares from './IconCampGentleHouse.png'
 import HollowSpecialOoperationsSection6 from './IconCampH.S.O-S6.png'
 import CriminalInvestigationSpecialResponseTeam from './IconCampN.E.P.S..png'
-import ObolSquad from './IconCampObols.png'
+import NewEriduDefenseForce from './IconCampObols.png'
 import RandomPlay from './IconCampRandomPlay.png'
 import SonsOfCalydon from './IconCampSonsOfCalydon.png'
 import StarsOfLyra from './IconCampStarsOfLyra.png'
@@ -13,7 +13,7 @@ const data = {
   CunningHares,
   HollowSpecialOoperationsSection6,
   CriminalInvestigationSpecialResponseTeam,
-  ObolSquad,
+  NewEriduDefenseForce,
   SonsOfCalydon,
   StarsOfLyra,
   VictoriaHousekeepingCo,

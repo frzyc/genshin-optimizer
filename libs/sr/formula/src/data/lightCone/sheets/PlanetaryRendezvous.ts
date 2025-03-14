@@ -25,7 +25,7 @@ const sheet = registerLightCone(
         cmpEq(own.char.ele, 'physical', subscript(superimpose, dm.ele_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'quantum_dmg_',
@@ -36,7 +36,7 @@ const sheet = registerLightCone(
         cmpEq(own.char.ele, 'quantum', subscript(superimpose, dm.ele_dmg_))
       )
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'lightning_dmg_',

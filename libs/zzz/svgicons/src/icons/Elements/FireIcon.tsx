@@ -1,7 +1,8 @@
+import type { SvgIconProps } from '@mui/material'
 import { SvgIcon } from '@mui/material'
 
-export const FireIcon = () => (
-  <SvgIcon>
+export const FireIcon = (props: SvgIconProps) => (
+  <SvgIcon {...props}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24px"

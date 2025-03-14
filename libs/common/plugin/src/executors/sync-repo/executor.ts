@@ -1,3 +1,4 @@
+import type { ExecutorContext } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
 import { execSync } from 'child_process'
 import * as fs from 'fs'
@@ -5,10 +6,17 @@ import * as path from 'path'
 import type { SyncRepoExecutorSchema } from './schema'
 
 export default async function runExecutor(
-  options: SyncRepoExecutorSchema
+  options: SyncRepoExecutorSchema,
+  context: ExecutorContext
 ): Promise<{ success: boolean }> {
   const { outputPath, prefixPath: prefix = true } = options
-  const cwd = prefix ? path.join(workspaceRoot, outputPath) : outputPath
+
+  const projRoot =
+    context.projectsConfigurations.projects[context.projectName ?? '']?.root
+  if (!projRoot) return { success: false }
+  const cwd = prefix
+    ? path.join(workspaceRoot, projRoot, outputPath)
+    : outputPath
   const remoteHash = getRemoteRepoHash(cwd)
   const name = path.basename(cwd)
 

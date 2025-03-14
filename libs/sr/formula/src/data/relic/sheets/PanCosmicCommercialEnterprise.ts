@@ -25,7 +25,7 @@ const sheet = registerRelic(
         min(prod(dm[2].scaling, own.final.eff_), dm[2].atk_cap)
       )
     ),
-    cmpGE(relicCount, 2, 'unique', '')
+    cmpGE(relicCount, 2, 'infer', '')
   )
 )
 export default sheet

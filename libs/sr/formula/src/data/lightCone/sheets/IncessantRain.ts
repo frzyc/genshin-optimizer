@@ -29,7 +29,7 @@ const sheet = registerLightCone(
     ownBuff.premod.crit_.add(
       cmpGE(lcCount, 1, enemyDebuffsGE3.ifOn(subscript(superimpose, dm.crit_)))
     ),
-    cmpGE(lcCount, 1, 'unique', '')
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
     'common_dmg_',
