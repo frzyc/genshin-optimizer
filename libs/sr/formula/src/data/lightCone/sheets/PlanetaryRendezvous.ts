@@ -1,16 +1,7 @@
-import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
+import { own, registerBuff, teamBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'PlanetaryRendezvous'
@@ -19,39 +10,87 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
-
 const sheet = registerLightCone(
   key,
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.premod.common_dmg_.add(
+    'physical_dmg_',
+    teamBuff.premod.dmg_.physical.add(
       cmpGE(
         lcCount,
         1,
-        boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_))
+        cmpEq(own.char.ele, 'physical', subscript(superimpose, dm.ele_dmg_))
       )
     ),
     cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 }))
+    'quantum_dmg_',
+    teamBuff.premod.dmg_.quantum.add(
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(own.char.ele, 'quantum', subscript(superimpose, dm.ele_dmg_))
+      )
     ),
     cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
-    'enemy_defRed_',
-    enemyDebuff.common.defRed_.add(cmpGE(lcCount, 1, numConditional)),
+    'lightning_dmg_',
+    teamBuff.premod.dmg_.lightning.add(
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(own.char.ele, 'lightning', subscript(superimpose, dm.ele_dmg_))
+      )
+    ),
+    cmpGE(lcCount, 1, 'infer', '')
+  ),
+  registerBuff(
+    'ice_dmg_',
+    teamBuff.premod.dmg_.ice.add(
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(own.char.ele, 'ice', subscript(superimpose, dm.ele_dmg_))
+      )
+    ),
+    cmpGE(lcCount, 1, 'infer', '')
+  ),
+  registerBuff(
+    'wind_dmg_',
+    teamBuff.premod.dmg_.wind.add(
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(own.char.ele, 'wind', subscript(superimpose, dm.ele_dmg_))
+      )
+    ),
+    cmpGE(lcCount, 1, 'infer', '')
+  ),
+  registerBuff(
+    'fire_dmg_',
+    teamBuff.premod.dmg_.fire.add(
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(own.char.ele, 'fire', subscript(superimpose, dm.ele_dmg_))
+      )
+    ),
+    cmpGE(lcCount, 1, 'infer', '')
+  ),
+  registerBuff(
+    'imaginary_dmg_',
+    teamBuff.premod.dmg_.imaginary.add(
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(own.char.ele, 'imaginary', subscript(superimpose, dm.ele_dmg_))
+      )
+    ),
     cmpGE(lcCount, 1, 'infer', '')
   )
 )
