@@ -3,20 +3,20 @@ import {
   clampPercent,
   getUnitStr,
   objKeyMap,
-  toPercent,
+  toPercent
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
   allSubstatKeys,
   artMaxLevel,
-  artSubstatRollData,
+  artSubstatRollData
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import { allStats, getArtSetStat } from '@genshin-optimizer/gi/stats'
@@ -88,8 +88,8 @@ export function getSubstatValue(
       type === 'max'
         ? Math.max(...substats)
         : type === 'min'
-        ? Math.min(...substats)
-        : substats.reduce((a, b) => a + b, 0) / substats.length
+          ? Math.min(...substats)
+          : substats.reduce((a, b) => a + b, 0) / substats.length
     substatCache.set(cacheKey, value)
   }
   return percent ? toPercent(value, substatKey) : value

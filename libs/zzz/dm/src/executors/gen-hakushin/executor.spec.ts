@@ -7,7 +7,7 @@ const options: GenHakushinDataExecutorSchema = {}
 const context: ExecutorContext = {
   root: '',
   cwd: process.cwd(),
-  isVerbose: false,
+  isVerbose: false
 }
 
 describe('GenHakushinData Executor', () => {

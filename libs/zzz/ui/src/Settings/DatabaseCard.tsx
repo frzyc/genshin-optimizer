@@ -2,7 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  StyledInputBase,
+  StyledInputBase
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
@@ -15,7 +15,7 @@ import {
   Chip,
   Divider,
   Grid,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -118,14 +118,14 @@ function DataCard({ index }: { index: number }) {
     <CardThemed
       sx={{
         height: '100%',
-        boxShadow: current ? '0px 0px 0px 2px green inset' : undefined,
+        boxShadow: current ? '0px 0px 0px 2px green inset' : undefined
       }}
     >
       <CardContent
         sx={{
           display: 'flex',
           gap: 1,
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         }}
       >
         <StyledInputBase

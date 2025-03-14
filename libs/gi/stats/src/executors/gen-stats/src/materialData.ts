@@ -9,7 +9,7 @@ export default function materialData() {
     const key = nameToKey(TextMapEN[nameTextMapHash])
     if (!key) return
     materialData[key] = {
-      type: materialType,
+      type: materialType
     }
   })
   return materialData

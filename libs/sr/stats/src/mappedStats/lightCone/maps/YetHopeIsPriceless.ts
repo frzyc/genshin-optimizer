@@ -13,7 +13,7 @@ const dm = {
   followUp_dmg_: data_gen.superimpose.otherStats[o++],
   stacks: data_gen.superimpose.otherStats[o++][1],
   ult_followUp_defIgn_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++][1],
+  duration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

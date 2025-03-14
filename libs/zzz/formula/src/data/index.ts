@@ -1,6 +1,6 @@
 import {
   compileTagMapKeys,
-  compileTagMapValues,
+  compileTagMapValues
 } from '@genshin-optimizer/pando/engine'
 import { fixedTags, queryTypes, type TagMapNodeEntries } from './util'
 
@@ -14,7 +14,7 @@ export const data: TagMapNodeEntries = [
   ...charData,
   ...disc,
   ...wengine,
-  ...common,
+  ...common
 ]
 export const keys = compileTagMapKeys([
   { category: 'qt', values: queryTypes },
@@ -22,8 +22,8 @@ export const keys = compileTagMapKeys([
   undefined,
   ...Object.entries(fixedTags).map(([k, v]) => ({
     category: k,
-    values: new Set(v),
+    values: new Set(v)
   })),
-  { category: 'name', values: usedNames },
+  { category: 'name', values: usedNames }
 ])
 export const values = compileTagMapValues(keys, data)

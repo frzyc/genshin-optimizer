@@ -10,7 +10,7 @@ import {
   Button,
   CardContent,
   Divider,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'

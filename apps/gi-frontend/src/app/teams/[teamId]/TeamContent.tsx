@@ -11,7 +11,7 @@ import {
   MenuItem,
   Select,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { Dispatch, SetStateAction } from 'react'
 import { useEffect, useState } from 'react'
@@ -37,7 +37,7 @@ export function TeamContent({
   accountId,
   team,
   loadouts,
-  characters,
+  characters
 }: {
   accountId: string
   team: Team
@@ -53,12 +53,12 @@ export function TeamContent({
         const {
           loadout: { id, character_id, character_key, name, description },
           index,
-          build_type,
+          build_type
         } = team_loadout
         return {
           loadout: { id, character_id, character_key, name, description },
           index,
-          build_type,
+          build_type
         } as TeamLoadoutData
       })
   )
@@ -77,7 +77,7 @@ export function TeamContent({
                   character_key: loadout.character_key,
                   name: loadout.name,
                   description: loadout.description,
-                  account_id: accountId,
+                  account_id: accountId
                 })
                 .select()
                 .maybeSingle()
@@ -86,7 +86,7 @@ export function TeamContent({
                 return null
               }
               teamLoadout.loadout = {
-                ...data,
+                ...data
               }
             }
 
@@ -94,7 +94,7 @@ export function TeamContent({
               loadout_id: teamLoadout.loadout!.id,
               team_id: team.id,
               index: teamLoadout.index,
-              build_type: teamLoadout?.build_type ?? null,
+              build_type: teamLoadout?.build_type ?? null
             }
           })
         )
@@ -116,7 +116,7 @@ export function TeamContent({
             const { error } = await supabase
               .from('teams')
               .update({
-                name: newName,
+                name: newName
               })
               .eq('id', team.id)
             if (error) console.error(error)
@@ -147,7 +147,7 @@ function Teammate({
   characters,
   loadouts,
   teamLoadout,
-  setTeamLoadouts,
+  setTeamLoadouts
 }: {
   index: number
   characters: Characters
@@ -177,7 +177,7 @@ function Teammate({
       teamLoadout ||
       ({
         index,
-        build_type: 'equipped',
+        build_type: 'equipped'
       } as TeamLoadoutData)
     if (selectedLoadoutId === 'new') {
       const selectedChar = characters.find(({ id }) => id === selectedCharId)
@@ -187,7 +187,7 @@ function Teammate({
         character_id: selectedCharId,
         character_key: selectedChar.key,
         name: null,
-        description: null,
+        description: null
       }
     } else {
       const selectedLoadout = loadouts.find(
@@ -199,7 +199,7 @@ function Teammate({
         character_id: selectedLoadout.character_id,
         character_key: selectedLoadout.character_key,
         name: selectedLoadout.name,
-        description: selectedLoadout.description,
+        description: selectedLoadout.description
       }
     }
 
@@ -215,7 +215,7 @@ function Teammate({
     selectedCharId,
     selectedLoadoutId,
     setTeamLoadouts,
-    teamLoadout,
+    teamLoadout
   ])
   return (
     <CardThemed bgt="light">

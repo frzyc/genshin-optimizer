@@ -8,7 +8,7 @@ const columns = {
   sm: 1,
   md: 1,
   lg: 2,
-  xl: 3,
+  xl: 3
 } as const
 
 export function EquippedGrid({ onClick }: { onClick?: () => void }) {

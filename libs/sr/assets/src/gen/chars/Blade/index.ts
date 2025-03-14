@@ -34,6 +34,6 @@ const data = {
   skill_0,
   talent_0,
   technique_0,
-  ult_0,
+  ult_0
 } as const
 export default data

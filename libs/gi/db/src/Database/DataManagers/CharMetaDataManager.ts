@@ -1,7 +1,7 @@
 import { deepFreeze } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
-  LocationCharacterKey,
+  LocationCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
@@ -11,7 +11,7 @@ export interface ICharMeta {
   favorite: boolean
 }
 const initCharMeta: ICharMeta = deepFreeze({
-  favorite: false,
+  favorite: false
 })
 const storageHash = 'charMeta_'
 export class CharMetaDataManager extends DataManager<

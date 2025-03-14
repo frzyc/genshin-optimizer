@@ -6,12 +6,12 @@ import {
   HandsIcon,
   HeadIcon,
   RopeIcon,
-  SphereIcon,
+  SphereIcon
 } from '../'
 
 export function SlotIcon({
   slotKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   slotKey: RelicSlotKey
   iconProps?: SvgIconProps

@@ -12,7 +12,7 @@ export function TeamLoadoutCharacterToICharacter(
     talent_burst,
     talent_skill,
     ascension,
-    constellation,
+    constellation
   } = character
   return {
     key,
@@ -22,7 +22,7 @@ export function TeamLoadoutCharacterToICharacter(
     talent: {
       auto: talent_auto,
       skill: talent_skill,
-      burst: talent_burst,
-    },
+      burst: talent_burst
+    }
   }
 }

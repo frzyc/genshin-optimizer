@@ -53,7 +53,7 @@ describe('Substat Rolls/efficiency', () => {
   describe('getSubstatRolls()', () => {
     test('should get simple rolls', () => {
       expect(getSubstatRolls('def_', 5.8, 4)).toEqual([
-        expect.arrayContaining([5.83]),
+        expect.arrayContaining([5.83])
       ])
     })
     test('should get multiple rolls', () => {

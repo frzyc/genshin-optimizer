@@ -6,7 +6,7 @@ import {
   ArtCharDatabase,
   type ImportResult,
   type ImportResultCounter,
-  type MergeResultCounter,
+  type MergeResultCounter
 } from '@genshin-optimizer/gi/db'
 import { DatabaseContext } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
@@ -21,19 +21,19 @@ import {
   Grid,
   Tooltip,
   Typography,
-  styled,
+  styled
 } from '@mui/material'
 import type { ChangeEventHandler, DragEventHandler } from 'react'
 import { useCallback, useContext, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 const InvisInput = styled('input')({
-  display: 'none',
+  display: 'none'
 })
 
 export function UploadCard({
   index,
-  onReplace,
+  onReplace
 }: {
   index: number
   onReplace: () => void
@@ -207,7 +207,7 @@ export function UploadCard({
             fontFamily: 'monospace',
             minHeight: '10em',
             mb: 2,
-            resize: 'vertical',
+            resize: 'vertical'
           }}
           value={data}
           onChange={(e) => setdata(e.target.value)}
@@ -239,9 +239,9 @@ function GOODUploadInfo({
     builds,
     buildTcs,
     teamChars,
-    teams,
+    teams
   },
-  importedDatabase,
+  importedDatabase
 }: {
   importResult: ImportResult
   importedDatabase: ArtCharDatabase
@@ -319,7 +319,7 @@ function GOODUploadInfo({
 function MergeResult({
   result,
   dbTotal,
-  type,
+  type
 }: {
   result: MergeResultCounter<any> | ImportResultCounter
   dbTotal: number
@@ -388,7 +388,7 @@ function MergeResult({
                 width: '100%',
                 fontFamily: 'monospace',
                 minHeight: '10em',
-                resize: 'vertical',
+                resize: 'vertical'
               }}
               value={JSON.stringify(result.invalid, undefined, 2)}
               disabled
@@ -403,7 +403,7 @@ function MergeResult({
 function GOUploadAction({
   index,
   importedDatabase,
-  reset,
+  reset
 }: {
   index: number
   importedDatabase?: ArtCharDatabase

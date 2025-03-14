@@ -2,24 +2,24 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   range,
   shouldShowDevComponents,
   statKeyToFixed,
-  toPercent,
+  toPercent
 } from '@genshin-optimizer/common/util'
 import type { DiscSetKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSlotKeys,
   discMaxLevel,
-  getDiscMainStatVal,
+  getDiscMainStatVal
 } from '@genshin-optimizer/zzz/consts'
 import {
   validateDiscBasedOnRarity,
-  type ICachedDisc,
+  type ICachedDisc
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type { Processed } from '@genshin-optimizer/zzz/disc-scanner'
@@ -49,7 +49,7 @@ import {
   TextField,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { Stack, styled } from '@mui/system'
 import type { ChangeEvent, MouseEvent } from 'react'
@@ -60,7 +60,7 @@ import {
   useMemo,
   useReducer,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
@@ -74,7 +74,7 @@ import SubstatInput from './SubstatInput'
 
 // for pasting in screenshots
 const InputInvis = styled('input')({
-  display: 'none',
+  display: 'none'
 })
 
 interface DiscReducerState {
@@ -97,7 +97,7 @@ function handleSubstats(
     else
       [substats[index], substats[oldIndex]] = [
         substats[oldIndex],
-        substats[index],
+        substats[index]
       ]
 
     if (oldIndex !== -1 && substats[oldIndex] === undefined) {
@@ -115,7 +115,7 @@ function reducer(
 ): DiscReducerState {
   if (!action || Object.keys(action).length === 0)
     return {
-      disc: {} as Partial<ICachedDisc>,
+      disc: {} as Partial<ICachedDisc>
     }
   const disc = { ...state.disc, ...action }
   const { validatedDisc, errors } = validateDiscBasedOnRarity(disc)
@@ -124,14 +124,14 @@ function reducer(
     // Combine because validatedDisc:IDisc is missing the `id` field in ICachedDisc
     disc: { ...disc, ...(validatedDisc || {}) } as Partial<ICachedDisc>,
     validatedDisc,
-    errors,
+    errors
   }
 }
 function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
   const [{ disc, validatedDisc, errors }, setDisc] = useReducer(reducer, {
     disc: discFromProp,
     validatedDisc: undefined,
-    errors: [],
+    errors: []
   })
   useEffect(() => setDisc(discFromProp), [discFromProp])
 
@@ -146,7 +146,7 @@ export function DiscEditor({
   fixedSlotKey,
   allowEmpty = false,
   disableSet = false,
-  cancelEdit,
+  cancelEdit
 }: {
   disc: Partial<ICachedDisc>
   show: boolean
@@ -164,7 +164,7 @@ export function DiscEditor({
     useDiscValidation(discFromProp)
   const {
     prev,
-    prevEditType,
+    prevEditType
   }: {
     prev: ICachedDisc | undefined
     prevEditType: 'edit' | 'duplicate' | 'upgrade' | ''
@@ -178,7 +178,7 @@ export function DiscEditor({
     )
     return {
       prev: duplicated[0] ?? upgraded[0],
-      prevEditType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
+      prevEditType: duplicated.length !== 0 ? 'duplicate' : 'upgrade'
     }
   }, [disc, database])
 

@@ -2,14 +2,14 @@ import {
   CardThemed,
   DropdownButton,
   NumberInputLazy,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import type { ElementalTypeKey, StatKey } from '@genshin-optimizer/sr/consts'
 import { allElementalTypeKeys } from '@genshin-optimizer/sr/consts'
 import {
   useCharacterContext,
   useCharOpt,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import type { Member, Tag } from '@genshin-optimizer/sr/formula'
 import { tagFieldMap } from '@genshin-optimizer/sr/formula-ui'
@@ -21,7 +21,7 @@ import {
   IconButton,
   InputAdornment,
   MenuItem,
-  Stack,
+  Stack
 } from '@mui/material'
 import { useCallback } from 'react'
 
@@ -67,7 +67,7 @@ function newTag(q: Tag['q'], member: Member): Tag {
     et: 'own',
     q,
     qt: 'premod',
-    sheet: 'agg',
+    sheet: 'agg'
   }
 }
 const initialStats: StatKey[] = [
@@ -86,12 +86,12 @@ const initialStats: StatKey[] = [
   'crit_dmg_',
   'eff_',
   'eff_res_',
-  'heal_',
+  'heal_'
 ] as const
 type InitialStats = (typeof initialStats)[number]
 function InitialStatDropdown({
   tag = {},
-  onSelect,
+  onSelect
 }: {
   tag?: Tag
   onSelect: (key: (typeof initialStats)[number]) => void
@@ -114,7 +114,7 @@ function BonusStatDisplay({
   setTag,
   value,
   setValue,
-  onDelete,
+  onDelete
 }: {
   tag: Tag
   setTag: (tag: Tag) => void
@@ -159,7 +159,7 @@ function BonusStatDisplay({
                   <DeleteForever fontSize="small" />
                 </IconButton>
               </InputAdornment>
-            ),
+            )
           }}
         />
       </CardContent>
@@ -169,7 +169,7 @@ function BonusStatDisplay({
 
 function ElementTypeDropdown({
   tag,
-  setElementalType,
+  setElementalType
 }: {
   tag: Tag
   setElementalType: (ele: ElementalTypeKey | null) => void

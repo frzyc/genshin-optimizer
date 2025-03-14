@@ -4,12 +4,12 @@ import {
   CardThemed,
   DropdownButton,
   NumberInputLazy,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type {
   IListConditionalData,
-  INumConditionalData,
+  INumConditionalData
 } from '@genshin-optimizer/game-opt/engine'
 import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
@@ -23,14 +23,14 @@ import {
   MenuItem,
   Slider,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { memo, useCallback, useContext, useMemo, useState } from 'react'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
-  SrcDstDisplayContext,
+  SrcDstDisplayContext
 } from '../context'
 import {} from '../context/SetConditionalContext'
 import {} from '../context/SrcDstDisplayContext'
@@ -40,7 +40,7 @@ import { HeaderDisplay } from './HeaderDisplay'
 
 export function ConditionalsDisplay({
   conditional,
-  bgt,
+  bgt
 }: {
   bgt?: CardBackgroundColor
   conditional: Conditional
@@ -49,7 +49,7 @@ export function ConditionalsDisplay({
   const setConditional = useContext(SetConditionalContext)
   const {
     metadata: { sheet, name },
-    targeted,
+    targeted
   } = conditional
   const conditionals = useContext(ConditionalValuesContext)
   // Allowing showing an "empty" conditional UI for user to add new conditionals
@@ -113,7 +113,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   value,
   setValue,
   bgt = 'normal',
-  disabled,
+  disabled
 }: {
   conditional: Conditional
   src: string
@@ -132,7 +132,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
     () => ({
       ...tag,
       src,
-      dst,
+      dst
     }),
     [tag, src, dst]
   )
@@ -190,7 +190,7 @@ function BoolConditional({
   conditional,
   setValue,
   value,
-  disabled,
+  disabled
 }: ConditionalProps) {
   const calc = useContext(CalcContext)
   const { label, badge } = conditional
@@ -219,14 +219,14 @@ function ListConditional({
   conditional,
   setValue,
   value,
-  disabled,
+  disabled
 }: ConditionalProps) {
   const calc = useContext(CalcContext)
   const { label, badge } = conditional
   const {
     sheet: sheetKey,
     name: condKey,
-    list,
+    list
   } = conditional.metadata as IListConditionalData
   if (!sheetKey || !condKey) throw new Error('metadata missing')
   if (!calc) return null
@@ -265,7 +265,7 @@ function NumConditional({
   conditional,
   setValue,
   value,
-  disabled,
+  disabled
 }: ConditionalProps) {
   const calc = useContext(CalcContext)
   const { label, badge } = conditional
@@ -274,7 +274,7 @@ function NumConditional({
     name: condKey,
     int_only,
     min,
-    max,
+    max
   } = conditional.metadata as INumConditionalData
   if (!sheetKey || !condKey) throw new Error('metadata missing')
   if (!calc) return null
@@ -289,7 +289,7 @@ function NumConditional({
         inputProps={{ min, max }}
         InputProps={{
           startAdornment: labelEle && <Box sx={{ mr: 1 }}>{labelEle}</Box>,
-          endAdornment: <Badge>{evalIfFunc(badge, calc, value)}</Badge>,
+          endAdornment: <Badge>{evalIfFunc(badge, calc, value)}</Badge>
         }}
         value={value}
         onChange={(newVal) => setValue(newVal)}
@@ -332,7 +332,7 @@ function CondSrcDst<S extends string, D extends string>({
   setSrc,
   dst,
   dstDisplay,
-  setDst,
+  setDst
 }: {
   src: S
   srcDisplay: Record<S, ReactNode>
@@ -355,7 +355,7 @@ function CondSrcDst<S extends string, D extends string>({
 function SrcDisplay<T extends string>({
   target,
   targetMap,
-  setTarget,
+  setTarget
 }: {
   target: T
   targetMap: Record<T, ReactNode>
@@ -371,7 +371,7 @@ function SrcDisplay<T extends string>({
 function SrcDropDown<K extends string>({
   target,
   targetMap,
-  onChange,
+  onChange
 }: {
   target: K
   targetMap: Record<K, ReactNode>
@@ -393,7 +393,7 @@ function SrcDropDown<K extends string>({
 function DstDisplay<T extends string>({
   target,
   targetMap,
-  setTarget,
+  setTarget
 }: {
   target: T | null
   targetMap: Record<T, ReactNode>
@@ -410,7 +410,7 @@ function DstDisplay<T extends string>({
 function DstDropDown<K extends string>({
   target,
   targetMap,
-  onChange,
+  onChange
 }: {
   target: K | null
   targetMap: Record<K, ReactNode>

@@ -3,7 +3,7 @@ import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
 import type {
   CharacterDatum,
-  SkillTreeNodeBonusStat,
+  SkillTreeNodeBonusStat
 } from './src/characterData'
 import CharacterData from './src/characterData'
 import type { LightConeDatum } from './src/lightConeData'
@@ -23,14 +23,14 @@ export type {
   CharacterDatum,
   LightConeDatum,
   RelicSetDatum,
-  SkillTreeNodeBonusStat,
+  SkillTreeNodeBonusStat
 }
 
 const allStat = {
   char: characterDataDump,
   lightCone: lightConeDataDump,
   relic: relicDataDump,
-  misc: miscDataDump,
+  misc: miscDataDump
 } as const
 
 export type AllStats = typeof allStat

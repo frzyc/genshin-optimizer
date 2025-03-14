@@ -4,7 +4,7 @@ import {
   travelerFKeys,
   travelerMKeys,
   type CharacterKey,
-  type CharacterSheetKey,
+  type CharacterSheetKey
 } from '@genshin-optimizer/gi/consts'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
@@ -17,11 +17,11 @@ import type {
   DocumentConditionalBase,
   DocumentSection,
   IDocumentFields,
-  IDocumentHeader,
+  IDocumentHeader
 } from '../sheet'
 import type {
   TalentSheetElement,
-  TalentSheetElementKey,
+  TalentSheetElementKey
 } from './ICharacterSheet.d'
 
 const canShowTalentsNodes: Partial<Record<TalentSheetElementKey, NumNode>> = {
@@ -32,7 +32,7 @@ const canShowTalentsNodes: Partial<Record<TalentSheetElementKey, NumNode>> = {
   constellation3: greaterEq(input.constellation, 3, 1),
   constellation4: greaterEq(input.constellation, 4, 1),
   constellation5: greaterEq(input.constellation, 5, 1),
-  constellation6: greaterEq(input.constellation, 6, 1),
+  constellation6: greaterEq(input.constellation, 6, 1)
 }
 
 export interface ICharacterTemplate {
@@ -83,7 +83,7 @@ export const charTemplates = (cKey: CharacterSheetKey): ICharacterTemplate => {
     condTem: (
       talentKey: TalentSheetElementKey,
       partialCond: DocumentConditionalBase
-    ) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey)),
+    ) => conditionalTemplate(talentKey, partialCond, chg, img(talentKey))
   }
 }
 
@@ -97,8 +97,8 @@ const talentTemplate = (
   img,
   sections: [
     ...(talentKey !== 'auto' ? [{ text: tr(`${talentKey}.description`) }] : []),
-    ...(docSections || []),
-  ],
+    ...(docSections || [])
+  ]
 })
 
 const talentHeader = (
@@ -110,7 +110,7 @@ const talentHeader = (
     title: tr(`${talentKey}.name`),
     icon: <ImgIcon size={2} src={img} />,
     action: <SqBadge color="success">{st(`talents.${talentKey}`)}</SqBadge>,
-    description: tr(`${talentKey}.description`),
+    description: tr(`${talentKey}.description`)
   }
 }
 
@@ -131,7 +131,7 @@ const headerTemplate = (
 ): DocumentSection => ({
   ...partialSection,
   header: talentHeader(talentKey, tr, img),
-  canShow: canShowTemplate(talentKey, partialSection.canShow),
+  canShow: canShowTemplate(talentKey, partialSection.canShow)
 })
 
 const fieldsTemplate = (
@@ -139,7 +139,7 @@ const fieldsTemplate = (
   partialFields: IDocumentFields
 ): IDocumentFields => ({
   ...partialFields,
-  canShow: canShowTemplate(talentKey, partialFields.canShow),
+  canShow: canShowTemplate(talentKey, partialFields.canShow)
 })
 
 const conditionalTemplate = (
@@ -150,7 +150,7 @@ const conditionalTemplate = (
 ): DocumentConditional => ({
   ...partialCond,
   header: { ...talentHeader(talentKey, tr, img), ...partialCond.header },
-  canShow: canShowTemplate(talentKey, partialCond.canShow),
+  canShow: canShowTemplate(talentKey, partialCond.canShow)
 })
 function canShowTemplate(
   talentKey: TalentSheetElementKey,

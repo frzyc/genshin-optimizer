@@ -2,7 +2,7 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
-  allRelicSlotKeys,
+  allRelicSlotKeys
 } from '@genshin-optimizer/sr/consts'
 import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
@@ -56,7 +56,7 @@ export class BuildDataManager extends DataManager<
       teamId,
       description,
       lightConeId,
-      relicIds,
+      relicIds
     }
   }
 

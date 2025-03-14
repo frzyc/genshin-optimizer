@@ -6,7 +6,7 @@ import {
   allNumConditionals,
   own,
   ownBuff,
-  register,
+  register
 } from '../util'
 import { entriesForWeapon } from './util'
 
@@ -15,7 +15,7 @@ const dmg_ = [NaN, 0.12, 0.15, 0.18, 0.21, 0.24]
 const atk_ = [NaN, 0.032, 0.04, 0.048, 0.056, 0.064]
 
 const {
-  weapon: { refinement },
+  weapon: { refinement }
 } = own
 const { stack } = allNumConditionals(key, true, 0, 6)
 const { isActive } = allBoolConditionals(key)

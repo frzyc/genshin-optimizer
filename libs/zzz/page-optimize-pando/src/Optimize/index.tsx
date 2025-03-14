@@ -4,7 +4,7 @@ import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { BuildResult, Progress } from '@genshin-optimizer/game-opt/solver'
 import {
   allDiscSlotKeys,
-  type DiscSlotKey,
+  type DiscSlotKey
 } from '@genshin-optimizer/zzz/consts'
 import { type ICachedDisc } from '@genshin-optimizer/zzz/db'
 import {
@@ -12,11 +12,11 @@ import {
   OptConfigProvider,
   useCharacterContext,
   useCharOpt,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import {
   StatFilterCard,
-  useZzzCalcContext,
+  useZzzCalcContext
 } from '@genshin-optimizer/zzz/formula-ui'
 import { optimize } from '@genshin-optimizer/zzz/solver-pando'
 import { getCharStat, getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -29,7 +29,7 @@ import {
   CardContent,
   LinearProgress,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   useCallback,
@@ -37,7 +37,7 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscFilter } from './DiscFilter'
@@ -51,10 +51,10 @@ export default function Optimize() {
   useEffect(() => {
     if (optConfigId) return
     const newOptConfigId = database.optConfigs.new({
-      wEngineTypes: [getCharStat(characterKey).specialty],
+      wEngineTypes: [getCharStat(characterKey).specialty]
     })
     database.charOpts.set(characterKey, {
-      optConfigId: newOptConfigId,
+      optConfigId: newOptConfigId
     })
   }, [database, optConfigId, characterKey])
   if (!optConfigId) return null
@@ -80,7 +80,7 @@ function OptimizeWrapper() {
     const slotKeyMap = {
       4: optConfig.slot4,
       5: optConfig.slot5,
-      6: optConfig.slot6,
+      6: optConfig.slot6
     } as const
     const isFilteredSlot = (slotKey: DiscSlotKey): slotKey is '4' | '5' | '6' =>
       ['4', '5', '6'].includes(slotKey)
@@ -108,7 +108,7 @@ function OptimizeWrapper() {
           3: [],
           4: [],
           5: [],
-          6: [],
+          6: []
         } as Record<DiscSlotKey, ICachedDisc[]>
       )
     )
@@ -121,7 +121,7 @@ function OptimizeWrapper() {
     optConfig.slot4,
     optConfig.slot5,
     optConfig.slot6,
-    optConfig.useEquipped,
+    optConfig.useEquipped
   ])
   const wengineDirty = useDataManagerBaseDirty(database.wengines)
   const wengines = useMemo(() => {
@@ -154,7 +154,7 @@ function OptimizeWrapper() {
     optConfig.optWengine,
     optConfig.wEngineTypes,
     optConfig.useEquippedWengine,
-    wengineDirty,
+    wengineDirty
   ])
 
   const totalPermutations = useMemo(
@@ -185,7 +185,7 @@ function OptimizeWrapper() {
       .map(({ tag, value, isMax }) => ({
         tag,
         value,
-        isMax,
+        isMax
       }))
     const optimizer = optimize(
       characterKey,
@@ -193,8 +193,8 @@ function OptimizeWrapper() {
       [
         {
           tag: target,
-          multiplier: 1,
-        },
+          multiplier: 1
+        }
       ],
       statFilters,
       optConfig.setFilter2,
@@ -221,9 +221,9 @@ function OptimizeWrapper() {
         builds: results.slice(0, 5).map(({ ids, value }) => ({
           wengineId: ids[0],
           discIds: objKeyMap(allDiscSlotKeys, (_slot, index) => ids[index + 1]),
-          value,
+          value
         })),
-        buildDate: Date.now(),
+        buildDate: Date.now()
       })
   }, [
     calc,
@@ -236,7 +236,7 @@ function OptimizeWrapper() {
     discsBySlot,
     numWorkers,
     database.optConfigs,
-    optConfigId,
+    optConfigId
   ])
 
   const onCancel = useCallback(() => {
@@ -279,7 +279,7 @@ function OptimizeWrapper() {
 
 function ProgressIndicator({
   progress,
-  totalPermutations,
+  totalPermutations
 }: {
   progress: Progress
   totalPermutations: number

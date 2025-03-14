@@ -13,7 +13,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Link,
+  Link
 } from '@mui/material'
 import { useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -40,7 +40,7 @@ const GOODtoSRL: Record<MainStatKey | SubstatKey, string> = {
   anemo_dmg_: 'anemo%',
   geo_dmg_: 'geo%',
   dendro_dmg_: 'dendro%',
-  physical_dmg_: 'phys%',
+  physical_dmg_: 'phys%'
   // "atkspd%",
   // "dmg%",
 }
@@ -54,8 +54,8 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
       level,
       ascension,
       constellation,
-      talent: { auto, skill, burst },
-    },
+      talent: { auto, skill, burst }
+    }
   } = useContext(CharacterContext)
   const {
     buildTc: {
@@ -63,14 +63,14 @@ export default function GcsimButton({ disabled }: { disabled: boolean }) {
         key: weaponKey,
         level: wLevel,
         ascension: wAscension,
-        refinement: wRefinement,
+        refinement: wRefinement
       },
       artifact: {
         slots,
         substats: { stats: substats },
-        sets,
-      },
-    },
+        sets
+      }
+    }
   } = useContext(BuildTcContext)
 
   const charKeyLow = characterKey.toLowerCase()

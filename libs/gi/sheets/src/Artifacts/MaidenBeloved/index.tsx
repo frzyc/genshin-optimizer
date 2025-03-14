@@ -19,13 +19,13 @@ const set4 = greaterEq(
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    heal_: set2,
+    heal_: set2
   },
   teamBuff: {
     premod: {
-      incHeal_: set4,
-    },
-  },
+      incHeal_: set4
+    }
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -42,18 +42,18 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: set4,
+                node: set4
               },
               {
                 text: stg('duration'),
                 value: 10,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                unit: 's'
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

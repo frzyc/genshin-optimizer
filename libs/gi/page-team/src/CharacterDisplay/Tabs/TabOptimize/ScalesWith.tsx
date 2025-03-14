@@ -2,7 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   ArtifactStatWithUnit,
-  OptTargetContext,
+  OptTargetContext
 } from '@genshin-optimizer/gi/ui'
 import { Alert } from '@mui/material'
 import { useContext } from 'react'

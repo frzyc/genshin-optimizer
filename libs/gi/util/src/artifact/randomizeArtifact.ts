@@ -1,14 +1,14 @@
 import {
   getRandomElementFromArray,
   getRandomIntInclusive,
-  getUnitStr,
+  getUnitStr
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactRarity,
   ArtifactSlotKey,
   MainStatKey,
   RarityKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
@@ -16,7 +16,7 @@ import {
   allSubstatKeys,
   artMaxLevel,
   artSlotMainKeys,
-  artSubstatRollData,
+  artSubstatRollData
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
 import { allStats } from '@genshin-optimizer/gi/stats'
@@ -77,6 +77,6 @@ export function randomizeArtifact(base: Partial<IArtifact> = {}): IArtifact {
     level,
     substats,
     location: base.location ?? '',
-    lock: false,
+    lock: false
   }
 }

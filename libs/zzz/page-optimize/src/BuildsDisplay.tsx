@@ -5,7 +5,7 @@ import { BuildDisplay } from './BuildDisplay'
 
 export function BuildsDisplay({
   builds,
-  stats,
+  stats
 }: {
   builds: BuildResult[]
   stats: Stats

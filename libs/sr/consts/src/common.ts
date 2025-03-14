@@ -11,7 +11,7 @@ export const otherStatKeys = [
   'resPen_',
   'incHeal_',
   'baseSpd',
-  'common_dmg_',
+  'common_dmg_'
 ] as const
 
 export const allStatKeys = Array.from(
@@ -26,7 +26,7 @@ export const allElementalDamageKeys = [
   'wind_dmg_',
   'lightning_dmg_',
   'quantum_dmg_',
-  'imaginary_dmg_',
+  'imaginary_dmg_'
 ] as const
 export type ElementalDamageKey = (typeof allElementalDamageKeys)[number]
 
@@ -45,7 +45,7 @@ export const allAbilityLimits: Record<
   talent: abilityLimits,
   // TODO: validate this
   servantSkill: abilityLimits,
-  servantTalent: abilityLimits,
+  servantTalent: abilityLimits
 } as const
 
 export const allPathKeys = [
@@ -56,6 +56,6 @@ export const allPathKeys = [
   'Destruction',
   'Harmony',
   'TheHunt',
-  'Remembrance',
+  'Remembrance'
 ] as const
 export type PathKey = (typeof allPathKeys)[number]

@@ -21,11 +21,11 @@ export const data: Data = dataObjForArtifactSheet(
   {
     premod: {
       enerRech_: set2,
-      burst_dmg_: burstBonus,
-    },
+      burst_dmg_: burstBonus
+    }
   },
   {
-    burstBonus,
+    burstBonus
   }
 )
 
@@ -37,11 +37,11 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: burstBonus,
-          },
-        ],
-      },
-    ],
-  },
+            node: burstBonus
+          }
+        ]
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

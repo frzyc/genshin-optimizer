@@ -2,7 +2,7 @@ import type {
   CondKey,
   DiscSetKey,
   DiscSlotKey,
-  FormulaKey,
+  FormulaKey
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, Stats } from '@genshin-optimizer/zzz/db'
 import { applyCalc, calcFormula, passSetFilter } from './calc'
@@ -89,7 +89,7 @@ async function init({
   constraints: initCons,
   formulaKey: fk,
   setFilter2,
-  setFilter4,
+  setFilter4
 }: ChildCommandInit) {
   baseStats = bs
   conditionals = conds
@@ -122,7 +122,7 @@ function* generateCombinations(): Generator<{
                 d3,
                 d4,
                 d5,
-                d6,
+                d6
               }
             }
           }
@@ -145,7 +145,7 @@ async function start() {
     postMessage({
       resultType: 'results',
       builds,
-      numBuildsComputed: numBuildsComputed + skipped,
+      numBuildsComputed: numBuildsComputed + skipped
     })
     builds = []
     skipped = 0
@@ -185,8 +185,8 @@ async function start() {
           3: d3.id,
           4: d4.id,
           5: d5.id,
-          6: d6.id,
-        },
+          6: d6.id
+        }
       })
     } else {
       skipped++
@@ -201,6 +201,6 @@ async function start() {
   }
 
   postMessage({
-    resultType: 'done',
+    resultType: 'done'
   })
 }

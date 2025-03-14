@@ -33,8 +33,8 @@ const set4_critRate_ = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     all_dmg_: set2_dmg_,
-    critRate_: set4_critRate_,
-  },
+    critRate_: set4_critRate_
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -49,13 +49,13 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: set2_dmg_,
-              },
-            ],
-          },
-        },
-      },
-    ],
+                node: set2_dmg_
+              }
+            ]
+          }
+        }
+      }
+    ]
   },
   4: {
     document: [
@@ -68,18 +68,18 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: set4_critRate_,
+                node: set4_critRate_
               },
               {
                 text: stg('duration'),
                 value: 6,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                unit: 's'
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

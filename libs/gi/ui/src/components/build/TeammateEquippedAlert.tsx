@@ -1,6 +1,6 @@
 import type {
   ArtifactSlotKey,
-  CharacterKey,
+  CharacterKey
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { Alert, Typography } from '@mui/material'
@@ -10,7 +10,7 @@ import { CharacterName } from '../character'
 
 export function TeammateEquippedAlert({
   weaponUsedInTeamCharKey,
-  artUsedInTeamCharKeys,
+  artUsedInTeamCharKeys
 }: {
   weaponUsedInTeamCharKey: CharacterKey | undefined
   artUsedInTeamCharKeys: Record<ArtifactSlotKey, CharacterKey | undefined>

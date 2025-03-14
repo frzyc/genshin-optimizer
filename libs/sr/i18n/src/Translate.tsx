@@ -11,7 +11,7 @@ const textComponents = {
   physical: <ColorText color="physical" />,
   quantum: <ColorText color="quantum" />,
   wind: <ColorText color="wind" />,
-  orangeStrong: <ColorText color="orange" sx={{ fontWeight: 'bold' }} />,
+  orangeStrong: <ColorText color="orange" sx={{ fontWeight: 'bold' }} />
 }
 
 const badgeComponents = {
@@ -21,7 +21,7 @@ const badgeComponents = {
   lightning: <SqBadge color="lightning" />,
   physical: <SqBadge color="physical" />,
   quantum: <SqBadge color="quantum" />,
-  wind: <SqBadge color="wind" />,
+  wind: <SqBadge color="wind" />
 }
 
 export function Translate({
@@ -29,7 +29,7 @@ export function Translate({
   key18,
   values,
   children,
-  useBadge,
+  useBadge
 }: {
   ns: string
   key18: string

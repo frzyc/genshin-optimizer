@@ -13,6 +13,6 @@ const data = {
   p4,
   p5,
   singleNonPhase,
-  singlePhase,
+  singlePhase
 } as const
 export default data

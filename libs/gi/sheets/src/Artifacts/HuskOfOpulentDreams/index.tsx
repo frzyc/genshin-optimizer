@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   percent,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -50,8 +50,8 @@ const set4Geo = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     def_: sum(set2, set4Def),
-    geo_dmg_: set4Geo,
-  },
+    geo_dmg_: set4Geo
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -72,14 +72,14 @@ const sheet: SetEffectSheet = {
               fields: [
                 { node: set4Def },
                 {
-                  node: set4Geo,
-                },
-              ],
-            },
+                  node: set4Geo
+                }
+              ]
+            }
           ])
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

@@ -28,8 +28,8 @@ const data = dataObjForWeaponSheet(key, {
     normal_dmg_,
     charged_dmg_,
     normal_critRate_,
-    charged_critRate_,
-  },
+    charged_critRate_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -42,21 +42,21 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: normal_dmg_,
+              node: normal_dmg_
             },
             {
-              node: charged_dmg_,
+              node: charged_dmg_
             },
             {
-              node: normal_critRate_,
+              node: normal_critRate_
             },
             {
-              node: charged_critRate_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: charged_critRate_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -34,12 +34,12 @@ const data = dataObjForWeaponSheet(
     premod: {
       def_,
       normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
-      charged_dmgInc, // TODO: technically should be in "total", but should be fine as premod
-    },
+      charged_dmgInc // TODO: technically should be in "total", but should be fine as premod
+    }
   },
   {
     normal_dmgInc,
-    charged_dmgInc,
+    charged_dmgInc
   }
 )
 const sheet: IWeaponSheet = {
@@ -48,16 +48,16 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: def_,
+          node: def_
         },
         {
-          node: normal_dmgInc,
+          node: normal_dmgInc
         },
         {
-          node: charged_dmgInc,
-        },
-      ],
-    },
-  ],
+          node: charged_dmgInc
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

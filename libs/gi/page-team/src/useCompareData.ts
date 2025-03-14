@@ -4,12 +4,12 @@ import type { ICachedArtifact, ICachedWeapon } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import {
   getBuildTcArtifactData,
-  getTeamDataCalc,
+  getTeamDataCalc
 } from '@genshin-optimizer/gi/ui'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { Data } from '@genshin-optimizer/gi/wr'
@@ -25,7 +25,7 @@ export default function useCompareData(): undefined | UIData {
     teamCharId,
     loadoutDatum,
     team: { loadoutData },
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey }
   } = useContext(TeamCharacterContext)
 
   const { gender } = useDBMeta()
@@ -82,7 +82,7 @@ export default function useCompareData(): undefined | UIData {
               .map((id) => database.arts.get(id))
               .filter((a) => a) as ICachedArtifact[],
             overrideWeapon: database.weapons.get(char.equippedWeapon)!,
-            overrideCharacter: char,
+            overrideCharacter: char
           }
         }
         case 'real': {
@@ -92,7 +92,7 @@ export default function useCompareData(): undefined | UIData {
               .map((id) => database.arts.get(id))
               .filter((a) => a) as ICachedArtifact[],
             overrideWeapon: database.weapons.get(build.weaponId)!,
-            overrideCharacter: char,
+            overrideCharacter: char
           }
         }
         case 'tc': {
@@ -101,9 +101,9 @@ export default function useCompareData(): undefined | UIData {
             overrideArt: getBuildTcArtifactData(buildTc),
             overrideWeapon: {
               ...buildTc.weapon,
-              location: charKeyToLocCharKey(characterKey),
+              location: charKeyToLocCharKey(characterKey)
             } as ICachedWeapon,
-            overrideCharacter: buildTc.character ?? char,
+            overrideCharacter: buildTc.character ?? char
           }
         }
       }
@@ -128,6 +128,6 @@ export default function useCompareData(): undefined | UIData {
     teamId,
     gender,
     teamCharId,
-    characterKey,
+    characterKey
   ])
 }

@@ -6,7 +6,7 @@ import {
   percent,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -43,8 +43,8 @@ const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_: sum(normal_dmg_, teamGeo_normal_dmg_),
     skill_dmg_: sum(skill_dmg_, teamGeo_skill_dmg_),
-    def_,
-  },
+    def_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -53,15 +53,15 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: def_,
+          node: def_
         },
         {
-          node: infoMut(normal_dmg_, { path: 'normal_dmg_' }),
+          node: infoMut(normal_dmg_, { path: 'normal_dmg_' })
         },
         {
-          node: infoMut(skill_dmg_, { path: 'skill_dmg_' }),
-        },
-      ],
+          node: infoMut(skill_dmg_, { path: 'skill_dmg_' })
+        }
+      ]
     },
     {
       value: condTeamGeo,
@@ -72,20 +72,20 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(teamGeo_normal_dmg_, { path: 'normal_dmg_' }),
+              node: infoMut(teamGeo_normal_dmg_, { path: 'normal_dmg_' })
             },
             {
-              node: infoMut(teamGeo_skill_dmg_, { path: 'skill_dmg_' }),
+              node: infoMut(teamGeo_skill_dmg_, { path: 'skill_dmg_' })
             },
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

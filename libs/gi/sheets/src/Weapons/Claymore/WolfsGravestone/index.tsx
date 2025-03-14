@@ -20,22 +20,22 @@ const [atkTeam_, atkTeam_inactive] = nonStackBuff(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    atk_: atk_,
+    atk_: atk_
   },
   teamBuff: {
     premod: {
-      atk_: atkTeam_,
+      atk_: atkTeam_
     },
     nonStacking: {
-      wolf: nonstackWrite,
-    },
-  },
+      wolf: nonstackWrite
+    }
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: atk_ }],
+      fields: [{ node: atk_ }]
     },
     {
       value: condPassive,
@@ -47,20 +47,20 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atkTeam_,
+              node: atkTeam_
             },
             {
-              node: atkTeam_inactive,
+              node: atkTeam_inactive
             },
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

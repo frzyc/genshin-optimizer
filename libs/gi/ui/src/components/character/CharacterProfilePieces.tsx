@@ -2,7 +2,7 @@ import {
   ImgIcon,
   NextImage,
   SqBadge,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
@@ -12,11 +12,11 @@ import {
   CharacterContext,
   useCharMeta,
   useDBMeta,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import {
   getCharSheet,
-  type TalentSheetElementKey,
+  type TalentSheetElementKey
 } from '@genshin-optimizer/gi/sheets'
 import { splash } from '@genshin-optimizer/gi/silly-wisher'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
@@ -32,7 +32,7 @@ import {
   Chip,
   Grid,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { grey, yellow } from '@mui/material/colors'
 import type { StaticImageData } from 'next/image'
@@ -42,7 +42,7 @@ import { CharacterName } from './Trans'
 
 export function CharacterCompactTalent() {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
@@ -50,12 +50,12 @@ export function CharacterCompactTalent() {
   const tlvl = {
     auto: data.get(input.total.auto).value,
     skill: data.get(input.total.skill).value,
-    burst: data.get(input.total.burst).value,
+    burst: data.get(input.total.burst).value
   }
   const tBoost = {
     auto: data.get(input.total.autoBoost).value,
     skill: data.get(input.total.skillBoost).value,
-    burst: data.get(input.total.burstBoost).value,
+    burst: data.get(input.total.burstBoost).value
   }
   return (
     <Box>
@@ -70,7 +70,7 @@ export function CharacterCompactTalent() {
                 overlap="circular"
                 anchorOrigin={{
                   vertical: 'bottom',
-                  horizontal: 'right',
+                  horizontal: 'right'
                 }}
                 sx={{
                   width: '100%',
@@ -81,8 +81,8 @@ export function CharacterCompactTalent() {
                     borderRadius: '.5em',
                     lineHeight: 1,
                     height: '1.25em',
-                    right: '25%',
-                  },
+                    right: '25%'
+                  }
                 }}
               >
                 <Box
@@ -101,13 +101,13 @@ export function CharacterCompactTalent() {
 }
 export function CharacterCompactConstSelector({
   setConstellation,
-  warning = false,
+  warning = false
 }: {
   setConstellation: (constellation: number) => void
   warning?: boolean
 }) {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const constellation = data.get(input.constellation).value
@@ -122,7 +122,7 @@ export function CharacterCompactConstSelector({
             style={{
               border: `1px solid ${warning ? yellow[200] : grey[200]}`,
               borderRadius: '4px',
-              overflow: 'hidden',
+              overflow: 'hidden'
             }}
           >
             <Box
@@ -133,7 +133,7 @@ export function CharacterCompactConstSelector({
                 )?.img
               }
               sx={{
-                ...(constellation >= i ? {} : { filter: 'brightness(50%)' }),
+                ...(constellation >= i ? {} : { filter: 'brightness(50%)' })
               }}
               width="100%"
               height="auto"
@@ -148,7 +148,7 @@ export function CharacterCompactConstSelector({
 export function CharacterCoverArea() {
   const { silly } = useContext(SillyContext)
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const { data } = useContext(DataContext)
@@ -166,14 +166,14 @@ export function CharacterCoverArea() {
 function SillyCoverArea({
   src,
   level,
-  ascension,
+  ascension
 }: {
   src: string | StaticImageData
   level: number
   ascension: AscensionKey
 }) {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
 
   return (
@@ -191,7 +191,7 @@ function SillyCoverArea({
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
-            px: 1,
+            px: 1
           }}
         >
           <CharChip />
@@ -201,7 +201,7 @@ function SillyCoverArea({
           sx={{
             width: '100%',
             opacity: 0.75,
-            textAlign: 'center',
+            textAlign: 'center'
           }}
         >
           <StarsDisplay stars={getCharStat(characterKey).rarity} colored />
@@ -216,14 +216,14 @@ function SillyCoverArea({
 function CoverArea({
   src,
   level,
-  ascension,
+  ascension
 }: {
   src: string | StaticImageData
   level: number
   ascension: AscensionKey
 }) {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
 
   return (
@@ -238,7 +238,7 @@ function CoverArea({
             bottom: 0,
             transform: 'translate(-50%, -50%)',
             opacity: 0.75,
-            textAlign: 'center',
+            textAlign: 'center'
           }}
         >
           <StarsDisplay stars={getCharStat(characterKey).rarity} colored />
@@ -253,7 +253,7 @@ function CoverArea({
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
-            px: 1,
+            px: 1
           }}
         >
           <CharChip />
@@ -273,7 +273,7 @@ function CoverArea({
 
 function CharChip() {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const charEle = getCharEle(characterKey)
@@ -299,7 +299,7 @@ function CharChip() {
 }
 function LevelBadge({
   level,
-  ascension,
+  ascension
 }: {
   level: number
   ascension: AscensionKey
@@ -314,7 +314,7 @@ function LevelBadge({
 }
 function FavoriteButton() {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const database = useDatabase()
   const { favorite } = useCharMeta(characterKey)

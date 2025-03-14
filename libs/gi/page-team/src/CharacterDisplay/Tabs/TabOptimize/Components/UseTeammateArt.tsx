@@ -12,7 +12,7 @@ import {
   Grid,
   Skeleton,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, memo, useContext } from 'react'
@@ -20,7 +20,7 @@ import { useTranslation } from 'react-i18next'
 export const UseTeammateArt = memo(function UseTeammateArt({
   totalTally,
   useTeammateBuild,
-  disabled = false,
+  disabled = false
 }: {
   totalTally: ReactNode
   useTeammateBuild: boolean
@@ -31,7 +31,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
   const {
     teamCharId,
     teamChar: { optConfigId },
-    team: { loadoutData },
+    team: { loadoutData }
   } = useContext(TeamCharacterContext)
   return (
     <Tooltip
@@ -47,7 +47,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 1,
+                gap: 1
               }}
             >
               {loadoutData
@@ -69,7 +69,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
                         p: 1,
                         display: 'flex',
                         flexDirection: 'column',
-                        gap: 1,
+                        gap: 1
                       }}
                       key={loadoutDatum.teamCharId}
                     >
@@ -118,7 +118,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
           color={useTeammateBuild ? 'success' : 'secondary'}
           onClick={() => {
             database.optConfigs.set(optConfigId, {
-              useTeammateBuild: !useTeammateBuild,
+              useTeammateBuild: !useTeammateBuild
             })
           }}
           disabled={disabled}

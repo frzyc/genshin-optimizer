@@ -3,7 +3,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { notEmpty, toggleArr } from '@genshin-optimizer/common/util'
 import type { Team } from '@genshin-optimizer/gi/db'
@@ -19,7 +19,7 @@ import {
   CardHeader,
   Divider,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -31,7 +31,7 @@ export function TeamDelModal({
   teamId,
   show,
   onHide,
-  onDel,
+  onDel
 }: {
   teamId: string
   show: boolean
@@ -76,7 +76,7 @@ export function TeamDelModal({
               sx={{
                 display: 'flex',
                 gap: 1,
-                alignItems: 'center',
+                alignItems: 'center'
               }}
             >
               <Box>{t('teamDelModal.teamName')}</Box>
@@ -133,7 +133,7 @@ function LoadoutDisplay({
   teamCharId,
   selected,
   onClick,
-  inTeams,
+  inTeams
 }: {
   teamCharId: string
   selected: boolean
@@ -151,7 +151,7 @@ function LoadoutDisplay({
     return {
       data: charUIData,
       teamData,
-      compareData: undefined,
+      compareData: undefined
     }
   }, [charUIData, teamData])
   if (!dataContextValue) return

@@ -5,7 +5,7 @@ import {
   computeFullArtRange,
   countBuilds,
   type ArtifactBuildData,
-  type ArtifactsBySlot,
+  type ArtifactsBySlot
 } from '../../common'
 import type { Linear } from './linearUB'
 
@@ -24,7 +24,7 @@ export function pickSplitKey(
   const allKeys = [
     ...new Set(
       appxs.flatMap((appx) => Object.keys(appx).filter((k) => k !== '$c'))
-    ),
+    )
   ]
 
   const { bestKey } = allKeys.reduce(
@@ -46,7 +46,7 @@ export function pickSplitKey(
           // Heuristic could be improved by tracking lowerRange & upperRange for all stats.
           return {
             lowerRange: lowerRange + (glb - minv),
-            upperRange: upperRange + (maxv - lub),
+            upperRange: upperRange + (maxv - lub)
           }
         },
         { lowerRange: 0, upperRange: 0 }
@@ -70,7 +70,7 @@ export function pickSplitKey(
   // Pick key that gives minimum heur (maximum reduction old -> new)
   return {
     splitOn: bestKey,
-    splitVal: (minMax[bestKey].min + minMax[bestKey].max) / 2,
+    splitVal: (minMax[bestKey].min + minMax[bestKey].max) / 2
   }
 }
 
@@ -131,13 +131,13 @@ function splitArts(
     const group = predicate(arts, si)
     return [
       arts.filter((_, i) => group[i]),
-      arts.filter((_, i) => !group[i]),
+      arts.filter((_, i) => !group[i])
     ].filter((a) => a.length)
   })
   return cartesian(...partition)
     .map((partition) => ({
       base,
-      values: objKeyMap(allArtifactSlotKeys, (_, i) => partition[i]),
+      values: objKeyMap(allArtifactSlotKeys, (_, i) => partition[i])
     }))
     .sort((a, b) => countBuilds(b) - countBuilds(a))
 }

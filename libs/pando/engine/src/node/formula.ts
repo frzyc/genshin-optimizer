@@ -6,7 +6,7 @@ import type {
   Prod,
   Sum,
   SumFrac,
-  Threshold,
+  Threshold
 } from '../node'
 
 type Arithmetics = Sum | Prod | Min | Max | SumFrac
@@ -21,7 +21,7 @@ export const arithmetic: Record<
   min: (x) => Math.min(...x),
   max: (x) => Math.max(...x),
   sumfrac: ([x, c]) => x! / (x! + c!),
-  unique: ([x]) => x!,
+  unique: ([x]) => x!
 }
 export const branching: Record<
   Branching<unknown>['op'],
@@ -29,5 +29,5 @@ export const branching: Record<
 > = {
   match: ([v1, v2]) => (v1 === v2 ? 0 : 1),
   thres: ([v1, v2]) => (v1 >= v2 ? 0 : 1),
-  lookup: ([v1], table) => table[v1] ?? 0,
+  lookup: ([v1], table) => table[v1] ?? 0
 }

@@ -115,54 +115,54 @@ export const theme = createTheme({
     ...commonTheme.palette,
     fire: commonTheme.palette.augmentColor({
       color: { main: '#e83e3e', contrastText: '#fff' },
-      name: 'fire',
+      name: 'fire'
     }),
     ice: commonTheme.palette.augmentColor({
       color: { main: '#1fb6d1' },
-      name: 'ice',
+      name: 'ice'
     }),
     imaginary: commonTheme.palette.augmentColor({
       color: { main: '#d6c146' },
-      name: 'imaginary',
+      name: 'imaginary'
     }),
     lightning: commonTheme.palette.augmentColor({
       color: { main: '#bb4cd3' },
-      name: 'lightning',
+      name: 'lightning'
     }),
     physical: commonTheme.palette.augmentColor({
       color: { main: '#acabab' },
-      name: 'physical',
+      name: 'physical'
     }),
     quantum: commonTheme.palette.augmentColor({
       color: { main: '#736ae6', contrastText: '#fff' },
-      name: 'quantum',
+      name: 'quantum'
     }),
     wind: commonTheme.palette.augmentColor({
       color: { main: '#3cc088', contrastText: '#fff' },
-      name: 'wind',
+      name: 'wind'
     }),
     orange: commonTheme.palette.augmentColor({
       color: { main: '#f29e38', contrastText: '#fff' },
-      name: 'orange',
+      name: 'orange'
     }),
     heal: commonTheme.palette.augmentColor({
       color: { main: '#c0e86c' },
-      name: 'heal',
+      name: 'heal'
     }),
     grad1: {
-      gradient: 'linear-gradient(to bottom right, #4f5864, #838f99)',
+      gradient: 'linear-gradient(to bottom right, #4f5864, #838f99)'
     },
     grad2: {
-      gradient: 'linear-gradient(to bottom right, #48575c, #5e966c)',
+      gradient: 'linear-gradient(to bottom right, #48575c, #5e966c)'
     },
     grad3: {
-      gradient: 'linear-gradient(to bottom right, #515474, #499fb3)',
+      gradient: 'linear-gradient(to bottom right, #515474, #499fb3)'
     },
     grad4: {
-      gradient: 'linear-gradient(to bottom right, #595482, #b886ca)',
+      gradient: 'linear-gradient(to bottom right, #595482, #b886ca)'
     },
     grad5: {
-      gradient: 'linear-gradient(to bottom right, #695453, #e6ac54)',
-    },
-  },
+      gradient: 'linear-gradient(to bottom right, #695453, #e6ac54)'
+    }
+  }
 })

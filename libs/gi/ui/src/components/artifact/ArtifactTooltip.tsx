@@ -2,7 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   SqBadge,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
@@ -20,7 +20,7 @@ import { artifactLevelVariant } from './util'
 
 export function ArtifactTooltip({
   art,
-  children,
+  children
 }: {
   art: ICachedArtifact
   children: JSX.Element
@@ -62,7 +62,7 @@ function ArtifactData({ art }: { art: ICachedArtifact }) {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: 'center'
         }}
       >
         <StarsDisplay stars={rarity} />

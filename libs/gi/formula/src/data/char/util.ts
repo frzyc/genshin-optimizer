@@ -4,7 +4,7 @@ import type {
   ElementWithPhyKey,
   MoveKey,
   RegionKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import { locCharKeyToCharKey } from '@genshin-optimizer/gi/consts'
 import type { CharacterDataGen } from '@genshin-optimizer/gi/stats'
@@ -19,7 +19,7 @@ import {
   own,
   ownBuff,
   percent,
-  readStat,
+  readStat
 } from '../util'
 
 export interface CharInfo {
@@ -36,7 +36,7 @@ export function dataGenToCharInfo(
     key: locCharKeyToCharKey(data_gen.key, travelerEle),
     ele: data_gen.ele ?? travelerEle,
     weaponType: data_gen.weaponType,
-    region: data_gen.region ?? '',
+    region: data_gen.region ?? ''
   }
 }
 
@@ -69,14 +69,14 @@ export function dmg(
 
   const {
     char: { auto, skill, burst },
-    final,
+    final
   } = own
   const talentByMove = {
     normal: auto,
     charged: auto,
     plunging: auto,
     skill,
-    burst,
+    burst
   } as const
   const talentMulti = percent(subscript(talentByMove[move], levelScaling))
   const base = prod(
@@ -174,6 +174,6 @@ export function entriesForChar(
     // Read from `ownBuff` to include only sheet's contribution.
     ...[...specialized].map((stat) =>
       ownBuff.char.specialized.add(readStat(ownBuff.premod, stat).sheet(key))
-    ),
+    )
   ]
 }

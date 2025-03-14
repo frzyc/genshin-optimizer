@@ -1,7 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   useDatabaseContext,
-  useDisplayDisc,
+  useDisplayDisc
 } from '@genshin-optimizer/zzz/db-ui'
 import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import ReplayIcon from '@mui/icons-material/Replay'
@@ -14,7 +14,7 @@ import { DiscFilterDisplay } from './DiscFilterDisplay'
 export default function DiscFilter({
   numShowing,
   total,
-  discIds,
+  discIds
 }: {
   numShowing: number
   total: number
@@ -27,8 +27,8 @@ export default function DiscFilter({
       database.displayDisc.set({
         filterOption: {
           ...filterOption,
-          ...option,
-        },
+          ...option
+        }
       }),
     [database, filterOption]
   )

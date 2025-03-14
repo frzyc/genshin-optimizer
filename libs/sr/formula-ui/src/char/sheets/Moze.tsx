@@ -8,7 +8,7 @@ import {
   bonusAbilitySheet,
   bonusStatsSheets,
   eidolonSheet,
-  talentSheet,
+  talentSheet
 } from '../sheetUtil'
 
 const key: CharacterKey = 'Moze'
@@ -37,10 +37,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: chg('abilities.basic.0.name'),
-          fieldRef: formula.basicDmg_0.tag,
-        },
-      ],
-    },
+          fieldRef: formula.basicDmg_0.tag
+        }
+      ]
+    }
   ]),
   skill: talentSheet(key, 'skill', []),
   ult: talentSheet(key, 'ult', []),
@@ -88,6 +88,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
     //   ],
     // },
   ]),
-  eidolon6: eidolonSheet(key, 'eidolon6'),
+  eidolon6: eidolonSheet(key, 'eidolon6')
 }
 export default sheet

@@ -89,5 +89,5 @@ export const relicUiSheets: Record<RelicSetKey, UISheet<'2' | '4'>> = {
   SpaceSealingStation,
   SprightlyVonwacq,
   TaliaKingdomOfBanditry,
-  TheWondrousBananAmusementPark,
+  TheWondrousBananAmusementPark
 }

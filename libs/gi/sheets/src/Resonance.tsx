@@ -2,7 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import {
   allElementKeys,
-  allElementWithPhyKeys,
+  allElementWithPhyKeys
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import {
@@ -12,7 +12,7 @@ import {
   ElectroIcon,
   GeoIcon,
   HydroIcon,
-  PyroIcon,
+  PyroIcon
 } from '@genshin-optimizer/gi/svgicons'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
@@ -24,7 +24,7 @@ import {
   percent,
   sum,
   tally,
-  target,
+  target
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
 import ElementCycle from './ElementCycle'
@@ -51,8 +51,8 @@ const teamSize = sum(...allElementKeys.map((ele) => tally[ele]))
 const pcNodes = objKeyValMap(allElementWithPhyKeys, (e) => [
   `${e}_res_`,
   activeCharBuff(input.charKey, greaterEq(tally.ele, 4, percent(0.15)), {
-    path: `${e}_res_`,
-  }),
+    path: `${e}_res_`
+  })
 ])
 
 const protectiveCanopy: IResonance = {
@@ -67,9 +67,9 @@ const protectiveCanopy: IResonance = {
   sections: [
     {
       teamBuff: true,
-      fields: Object.values(pcNodes).map(([_n, node]) => ({ node })),
-    },
-  ],
+      fields: Object.values(pcNodes).map(([_n, node]) => ({ node }))
+    }
+  ]
 }
 
 // Fervent Flames
@@ -95,14 +95,14 @@ const ferventFlames: IResonance = {
         {
           text: st('effectDuration.cryo'),
           value: -40,
-          unit: '%',
+          unit: '%'
         },
         {
-          node: ffNodeDisp,
-        },
-      ],
-    },
-  ],
+          node: ffNodeDisp
+        }
+      ]
+    }
+  ]
 }
 
 // Soothing Waters
@@ -128,14 +128,14 @@ const soothingWaters: IResonance = {
         {
           text: st('effectDuration.pyro'),
           value: -40,
-          unit: '%',
+          unit: '%'
         },
         {
-          node: swNodeDisp,
-        },
-      ],
-    },
-  ],
+          node: swNodeDisp
+        }
+      ]
+    }
+  ]
 }
 
 //ShatteringIce
@@ -167,9 +167,9 @@ const shatteringIce: IResonance = {
         {
           text: st('effectDuration.electro'),
           value: -40,
-          unit: '%',
-        },
-      ],
+          unit: '%'
+        }
+      ]
     },
     {
       teamBuff: true,
@@ -178,19 +178,19 @@ const shatteringIce: IResonance = {
       name: st('enemyAffected.frozenOrCryo'),
       header: {
         title: tr('ShatteringIce.name'),
-        icon: <CryoIcon />,
+        icon: <CryoIcon />
       },
       states: {
         on: {
           fields: [
             {
-              node: siNodeDisp,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: siNodeDisp
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 
 // High Voltage
@@ -211,11 +211,11 @@ const highVoltage: IResonance = {
         {
           text: st('effectDuration.hydro'),
           value: -40,
-          unit: '%',
-        },
-      ],
-    },
-  ],
+          unit: '%'
+        }
+      ]
+    }
+  ]
 }
 
 // Impetuous Winds
@@ -249,17 +249,17 @@ const impetuousWinds: IResonance = {
       teamBuff: true,
       fields: [
         {
-          node: iwNodeStamDisp,
+          node: iwNodeStamDisp
         },
         {
-          node: iwNodeMoveDisp,
+          node: iwNodeMoveDisp
         },
         {
-          node: iwNodeCDDisp,
-        },
-      ],
-    },
-  ],
+          node: iwNodeCDDisp
+        }
+      ]
+    }
+  ]
 }
 
 // Enduring Rock
@@ -282,7 +282,7 @@ const [erNodeDMG_resonanceDisp, erNodeDMG_resonance] = activeCharBuff(
   { path: 'all_dmg_' }
 )
 const [, erNodeDMG_] = activeCharBuff(target.charKey, erNodeDMG_resonance, {
-  path: 'all_dmg_',
+  path: 'all_dmg_'
 })
 const [erNodeRes_disp, erNodeRes_] = activeCharBuff(
   input.charKey,
@@ -309,9 +309,9 @@ const enduringRock: IResonance = {
       text: tr('EnduringRock.desc'),
       fields: [
         {
-          node: erNodeshield_disp,
-        },
-      ],
+          node: erNodeshield_disp
+        }
+      ]
     },
     {
       teamBuff: true,
@@ -319,18 +319,18 @@ const enduringRock: IResonance = {
       value: condERShield,
       header: {
         title: tr('EnduringRock.name'),
-        icon: <GeoIcon />,
+        icon: <GeoIcon />
       },
       name: st('protectedByShield'),
       states: {
         on: {
           fields: [
             {
-              node: infoMut(erNodeDMG_resonanceDisp, { isTeamBuff: false }),
-            },
-          ],
-        },
-      },
+              node: infoMut(erNodeDMG_resonanceDisp, { isTeamBuff: false })
+            }
+          ]
+        }
+      }
     },
     {
       teamBuff: true,
@@ -338,25 +338,25 @@ const enduringRock: IResonance = {
       value: condERHit,
       header: {
         title: tr('EnduringRock.name'),
-        icon: <GeoIcon />,
+        icon: <GeoIcon />
       },
       name: trm('EnduringRock.hitCond'),
       states: {
         on: {
           fields: [
             {
-              node: erNodeRes_disp,
+              node: erNodeRes_disp
             },
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 
 // Sprawling Greenery
@@ -401,7 +401,7 @@ const sprawlingGreenery: IResonance = {
     {
       teamBuff: true,
       text: tr('SprawlingGreenery.desc'),
-      fields: [{ node: sgBase_eleMasDisp }],
+      fields: [{ node: sgBase_eleMasDisp }]
     },
     {
       teamBuff: true,
@@ -409,23 +409,23 @@ const sprawlingGreenery: IResonance = {
       value: condSG2ele,
       header: {
         title: tr('SprawlingGreenery.name'),
-        icon: <DendroIcon />,
+        icon: <DendroIcon />
       },
       name: trm('SprawlingGreenery.cond2ele'),
       states: {
         on: {
           fields: [
             {
-              node: sg2ele_eleMasDisp,
+              node: sg2ele_eleMasDisp
             },
             {
               text: stg('duration'),
               value: 6,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       teamBuff: true,
@@ -433,25 +433,25 @@ const sprawlingGreenery: IResonance = {
       value: condSG3ele,
       header: {
         title: tr('SprawlingGreenery.name'),
-        icon: <DendroIcon />,
+        icon: <DendroIcon />
       },
       name: trm('SprawlingGreenery.cond3ele'),
       states: {
         on: {
           fields: [
             {
-              node: sg3ele_eleMasDisp,
+              node: sg3ele_eleMasDisp
             },
             {
               text: stg('duration'),
               value: 6,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 
 export const resonanceSheets: IResonance[] = [
@@ -462,7 +462,7 @@ export const resonanceSheets: IResonance[] = [
   highVoltage,
   impetuousWinds,
   enduringRock,
-  sprawlingGreenery,
+  sprawlingGreenery
 ]
 
 export const resonanceData = inferInfoMut({
@@ -477,13 +477,13 @@ export const resonanceData = inferInfoMut({
       shield_: erNodeshield_,
       geo_enemyRes_: erNodeRes_,
       eleMas: infoMut(sum(sgBase_eleMas, sg2ele_eleMas, sg3ele_eleMas), {
-        pivot: true,
+        pivot: true
       }),
-      all_dmg_: erNodeDMG_,
+      all_dmg_: erNodeDMG_
     },
     total: {
       // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
-      critRate_: siNode,
-    },
-  },
+      critRate_: siNode
+    }
+  }
 })

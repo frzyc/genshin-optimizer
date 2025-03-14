@@ -3,12 +3,12 @@ import {
   allAdditiveReactions,
   allAmpReactionKeys,
   allInfusionAuraElementKeys,
-  allMultiOptHitModeKeys,
+  allMultiOptHitModeKeys
 } from '@genshin-optimizer/gi/consts'
 
 import type {
   CustomMultiTarget,
-  CustomTarget,
+  CustomTarget
 } from '../../Interfaces/CustomMultiTarget'
 import type { InputPremodKey } from '../../legacy/keys'
 import { allInputPremodKeys } from '../../legacy/keys'
@@ -18,7 +18,7 @@ export const MAX_DESC_LENGTH = 2000
 export function initCustomMultiTarget() {
   return {
     name: 'New Custom Target',
-    targets: [],
+    targets: []
   }
 }
 export function initCustomTarget(path: string[], multi = 1): CustomTarget {
@@ -27,7 +27,7 @@ export function initCustomTarget(path: string[], multi = 1): CustomTarget {
     path,
     hitMode: 'avgHit',
     bonusStats: {},
-    description: '',
+    description: ''
   }
 }
 function validateOptTarget(path: string[]): string[] {
@@ -43,7 +43,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     reaction,
     infusionAura,
     bonusStats,
-    description,
+    description
   } = ct as CustomTarget
 
   if (typeof weight !== 'number' || weight <= 0) weight = 1
@@ -88,7 +88,7 @@ function validateCustomTarget(ct: unknown): CustomTarget | undefined {
     reaction,
     infusionAura,
     bonusStats,
-    description,
+    description
   }
 }
 export function validateCustomMultiTarget(

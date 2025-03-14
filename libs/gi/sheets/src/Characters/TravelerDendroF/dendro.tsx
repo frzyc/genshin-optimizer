@@ -2,7 +2,7 @@ import { ColorText } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
-  CharacterSheetKey,
+  CharacterSheetKey
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -15,7 +15,7 @@ import {
   naught,
   percent,
   prod,
-  target,
+  target
 } from '@genshin-optimizer/gi/wr'
 import type { Palette } from '@mui/material'
 import { cond, st, stg } from '../../SheetUtil'
@@ -37,7 +37,7 @@ export default function dendro(
   const dm = {
     skill: {
       dmg: skillParam_gen.skill[s++],
-      cd: skillParam_gen.skill[s++][0],
+      cd: skillParam_gen.skill[s++][0]
     },
     burst: {
       lampDmg: skillParam_gen.burst[b++],
@@ -46,25 +46,25 @@ export default function dendro(
       unknown2: skillParam_gen.burst[b++],
       lampDuration: skillParam_gen.burst[b++][0],
       cd: skillParam_gen.burst[b++][0],
-      enerCost: skillParam_gen.burst[b++][0],
+      enerCost: skillParam_gen.burst[b++][0]
     },
     passive1: {
       eleMas: skillParam_gen.passive1[0][0],
-      maxStacks: 10,
+      maxStacks: 10
     },
     passive2: {
       skill_dmgInc: skillParam_gen.passive2[0][0],
-      burst_dmgInc: skillParam_gen.passive2[1][0],
+      burst_dmgInc: skillParam_gen.passive2[1][0]
     },
     constellation1: {
-      energyRegen: 1,
+      energyRegen: 1
     },
     constellation2: {
-      durationInc: skillParam_gen.constellation2[0],
+      durationInc: skillParam_gen.constellation2[0]
     },
     constellation6: {
-      ele_dmg_: skillParam_gen.constellation6[0],
-    },
+      ele_dmg_: skillParam_gen.constellation6[0]
+    }
   } as const
 
   const [condA1StacksPath, condA1Stacks] = cond(condCharKey, 'a1Stacks')
@@ -122,25 +122,25 @@ export default function dendro(
           'on',
           equal(condC6BurstEle, ele, percent(dm.constellation6.ele_dmg_))
         )
-      ),
+      )
     ])
   )
   const c6_ele_dmg_ = Object.fromEntries(
     Object.entries(c6_ele_dmg_disp).map(([ele, node]) => [
       `${ele}_dmg_`,
-      equal(input.activeCharKey, target.charKey, node),
+      equal(input.activeCharKey, target.charKey, node)
     ])
   )
 
   const dmgFormulas = {
     ...dmgForms,
     skill: {
-      dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
+      dmg: dmgNode('atk', dm.skill.dmg, 'skill')
     },
     burst: {
       lampDmg: dmgNode('atk', dm.burst.lampDmg, 'burst'),
-      explosionDmg: dmgNode('atk', dm.burst.explosionDmg, 'burst'),
-    },
+      explosionDmg: dmgNode('atk', dm.burst.explosionDmg, 'burst')
+    }
   } as const
 
   const skillC3 = greaterEq(input.constellation, 3, 3)
@@ -151,15 +151,15 @@ export default function dendro(
       burstBoost: burstC5,
       skillBoost: skillC3,
       skill_dmg_: a4_skill_dmg_,
-      burst_dmg_: a4_burst_dmg_,
+      burst_dmg_: a4_burst_dmg_
     },
     teamBuff: {
       premod: {
         eleMas: a1_eleMas,
         dendro_dmg_: c6_dendro_dmg_,
-        ...c6_ele_dmg_,
-      },
-    },
+        ...c6_ele_dmg_
+      }
+    }
   })
 
   const talent: TalentSheet = {
@@ -168,16 +168,16 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
+              name: ct.chg(`skill.skillParams.0`)
+            })
           },
           {
             text: stg('cd'),
             value: dm.skill.cd,
-            unit: 's',
-          },
-        ],
-      },
+            unit: 's'
+          }
+        ]
+      }
     ]),
 
     burst: ct.talentTem('burst', [
@@ -185,13 +185,13 @@ export default function dendro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.lampDmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
+              name: ct.chg(`burst.skillParams.0`)
+            })
           },
           {
             node: infoMut(dmgFormulas.burst.explosionDmg, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
+              name: ct.chg(`burst.skillParams.1`)
+            })
           },
           {
             text: ct.chg('burst.skillParams.2'),
@@ -201,18 +201,18 @@ export default function dendro(
                     dm.constellation2.durationInc
                   }s = ${dm.burst.lampDuration + dm.constellation2.durationInc}`
                 : dm.burst.lampDuration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: dm.burst.cd,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
+            value: dm.burst.enerCost
+          }
+        ]
       },
       ct.condTem('passive1', {
         path: condA1StacksPath,
@@ -226,21 +226,21 @@ export default function dendro(
               name: st('stack', { count: stack }),
               fields: [
                 {
-                  node: a1_eleMas_disp,
-                },
-              ],
-            },
+                  node: a1_eleMas_disp
+                }
+              ]
+            }
           ])
-        ),
+        )
       }),
       ct.headerTem('constellation2', {
         fields: [
           {
             text: st('durationInc'),
             value: dm.constellation2.durationInc,
-            unit: 's',
-          },
-        ],
+            unit: 's'
+          }
+        ]
       }),
       ct.condTem('constellation6', {
         path: condC6BurstEffectPath,
@@ -253,12 +253,12 @@ export default function dendro(
               {
                 node: infoMut(c6_dendro_dmg_disp, {
                   path: 'dendro_dmg_',
-                  isTeamBuff: true,
-                }),
-              },
-            ],
-          },
-        },
+                  isTeamBuff: true
+                })
+              }
+            ]
+          }
+        }
       }),
       ct.condTem('constellation6', {
         path: condC6BurstElePath,
@@ -279,14 +279,14 @@ export default function dendro(
                 {
                   node: infoMut(node, {
                     path: `${ele}_dmg_`,
-                    isTeamBuff: true,
-                  }),
-                },
-              ],
-            },
+                    isTeamBuff: true
+                  })
+                }
+              ]
+            }
           ])
-        ),
-      }),
+        )
+      })
     ]),
 
     passive1: ct.talentTem('passive1'),
@@ -294,28 +294,28 @@ export default function dendro(
       ct.fieldsTem('passive2', {
         fields: [
           {
-            node: a4_skill_dmg_,
+            node: a4_skill_dmg_
           },
           {
-            node: a4_burst_dmg_,
-          },
-        ],
-      }),
+            node: a4_burst_dmg_
+          }
+        ]
+      })
     ]),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: skillC3 }] },
+      { fields: [{ node: skillC3 }] }
     ]),
     constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: burstC5 }] },
+      { fields: [{ node: burstC5 }] }
     ]),
-    constellation6: ct.talentTem('constellation6'),
+    constellation6: ct.talentTem('constellation6')
   }
 
   return {
     talent,
-    data,
+    data
   }
 }

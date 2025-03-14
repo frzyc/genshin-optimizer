@@ -13,7 +13,7 @@ type CharacterAutocompleteProps = {
 }
 export function CharacterAutocomplete({
   charKey,
-  setCharKey,
+  setCharKey
 }: CharacterAutocompleteProps) {
   const { t } = useTranslation(['character', 'charNames_gen'])
   const { database } = useDatabaseContext()
@@ -31,16 +31,16 @@ export function CharacterAutocomplete({
     () => [
       {
         key: '',
-        label: t('character:autocomplete.none'),
+        label: t('character:autocomplete.none')
       },
       ...allCharacterKeys.map(
         (key): GeneralAutocompleteOption<CharacterKey | ''> => ({
           key,
           label: t(`charNames_gen:${key}`),
           favorite: charIsFavorite(key),
-          color: charInDb(key) ? undefined : 'secondary',
+          color: charInDb(key) ? undefined : 'secondary'
         })
-      ),
+      )
     ],
     [charInDb, charIsFavorite, t]
   )

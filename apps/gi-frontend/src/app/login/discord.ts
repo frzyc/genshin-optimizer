@@ -7,8 +7,8 @@ export async function discordOAuth() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'discord',
     options: {
-      redirectTo: 'http://localhost:3000/auth/callback',
-    },
+      redirectTo: 'http://localhost:3000/auth/callback'
+    }
   })
   if (error) console.error(error)
   if (data.url) {

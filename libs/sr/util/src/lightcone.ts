@@ -16,7 +16,7 @@ export function lightConeSortConfigs(): SortConfigs<
   return {
     level: (lc) => lc.level * (lc.ascension + 1),
     name: (lc) => `lightConeNames_gen:${lc.key}` as string,
-    rarity: (lc) => allStats.lightCone[lc.key].rarity,
+    rarity: (lc) => allStats.lightCone[lc.key].rarity
   }
 }
 export function lightConeFilterConfigs(): FilterConfigs<
@@ -29,7 +29,7 @@ export function lightConeFilterConfigs(): FilterConfigs<
       `lightConeNames_gen:${lc.key}`
         .toLowerCase()
         .includes(filter.toLowerCase()),
-    path: (lc, filter) => filter.includes(allStats.lightCone[lc.key].path),
+    path: (lc, filter) => filter.includes(allStats.lightCone[lc.key].path)
   }
 }
 
@@ -38,5 +38,5 @@ export const lightConeSortMap: Partial<
 > = {
   name: ['name'],
   level: ['level', 'rarity', 'name'],
-  rarity: ['rarity', 'level', 'name'],
+  rarity: ['rarity', 'level', 'name']
 }

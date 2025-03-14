@@ -4,12 +4,12 @@ import {
   objKeyMap,
   objMap,
   objPathValue,
-  toDecimal,
+  toDecimal
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 import type {
@@ -17,7 +17,7 @@ import type {
   ICachedCharacter,
   ICachedWeapon,
   Team,
-  TeamCharacter,
+  TeamCharacter
 } from '@genshin-optimizer/gi/db'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { EleEnemyResKey } from '@genshin-optimizer/gi/keymap'
@@ -71,17 +71,17 @@ export function dataObjForArtifact(
       ...Object.fromEntries(
         stats.map(([key, value]) => [
           key,
-          key.endsWith('_') ? percent(value) : constant(value),
+          key.endsWith('_') ? percent(value) : constant(value)
         ])
       ),
       [art.slotKey]: {
         id: constant(art.id),
-        set: constant(art.setKey),
-      },
+        set: constant(art.setKey)
+      }
     },
     artSet: {
-      [art.setKey]: constant(1),
-    },
+      [art.setKey]: constant(1)
+    }
   }
 }
 
@@ -94,24 +94,24 @@ export function dataObjForCharacter(char: ICachedCharacter): Data {
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
     infusion: {
-      team: undefined,
+      team: undefined
     },
     premod: {
       auto: constant(char.talent.auto),
       skill: constant(char.talent.skill),
-      burst: constant(char.talent.burst),
+      burst: constant(char.talent.burst)
     },
     enemy: {
       ...objKeyMap(
         allElementWithPhyKeys.map((ele) => `${ele}_res_`),
         () => percent(10 / 100)
       ),
-      level: constant(100),
+      level: constant(100)
     },
     hit: {
-      hitMode: constant('avgHit'),
+      hitMode: constant('avgHit')
     },
-    customBonus: {},
+    customBonus: {}
   }
   return result
 }
@@ -141,7 +141,7 @@ export function dataObjForCharacterNew(
     bonusStats,
     enemyOverride,
     hitMode: globalHitMode,
-    reaction,
+    reaction
   }: CharInfo,
   sheetData?: Data
 ): Data {
@@ -150,12 +150,12 @@ export function dataObjForCharacterNew(
     constellation: constant(constellation),
     asc: constant(ascension),
     infusion: {
-      team: infusionAura ? constant(infusionAura) : undefined,
+      team: infusionAura ? constant(infusionAura) : undefined
     },
     premod: {
       auto: constant(talent.auto),
       skill: constant(talent.skill),
-      burst: constant(talent.burst),
+      burst: constant(talent.burst)
     },
     enemy: {
       ...objKeyMap(
@@ -166,13 +166,13 @@ export function dataObjForCharacterNew(
               10) / 100
           )
       ),
-      level: constant(enemyOverride.enemyLevel ?? level),
+      level: constant(enemyOverride.enemyLevel ?? level)
     },
     hit: {
       hitMode: constant(globalHitMode),
-      reaction: constant(reaction),
+      reaction: constant(reaction)
     },
-    customBonus: {},
+    customBonus: {}
   }
 
   for (const [key, value] of Object.entries(bonusStats))
@@ -212,11 +212,11 @@ export function dataObjForCharacterNew(
                 ),
                 hit: {
                   hitMode: constant(hitMode),
-                  reaction: reaction ? constant(reaction) : none,
+                  reaction: reaction ? constant(reaction) : none
                 },
                 infusion: {
-                  team: infusionAura ? constant(infusionAura) : none,
-                },
+                  team: infusionAura ? constant(infusionAura) : none
+                }
               }),
               { pivot: true }
             )
@@ -227,7 +227,7 @@ export function dataObjForCharacterNew(
       // Make the variant "invalid" because its not easy to determine variants in multitarget
       const multiTargetNode = infoMut(sum(...targetNodes), {
         name,
-        variant: 'invalid',
+        variant: 'invalid'
       })
       sheetData.display!['custom'][i] = multiTargetNode
     })
@@ -240,8 +240,8 @@ export function dataObjForWeapon(weapon: ICachedWeapon): Data {
       id: constant(weapon.id),
       lvl: constant(weapon.level),
       asc: constant(weapon.ascension),
-      refinement: constant(weapon.refinement),
-    },
+      refinement: constant(weapon.refinement)
+    }
   }
 }
 
@@ -254,8 +254,8 @@ export function mergeData(data: Data[]): Data {
         path[0] === 'tally'
           ? tally
           : path[0] === 'nonStacking'
-          ? nonStacking
-          : input
+            ? nonStacking
+            : input
       if (path[0] === 'tally' || path[0] === 'nonStacking') path = path.slice(1)
       /*eslint prefer-const: ["error", {"destructuring": "all"}]*/
       let { accu, type } =
@@ -278,7 +278,7 @@ export function mergeData(data: Data[]): Data {
             internal(
               data.map((x) => x[key]).filter((x) => x),
               [...path, key]
-            ),
+            )
           ]
         )
       )

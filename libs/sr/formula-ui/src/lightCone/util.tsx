@@ -5,7 +5,7 @@ import type { ReactNode } from 'react'
 
 export function SuperImposeWrapper({
   lcKey,
-  children,
+  children
 }: {
   lcKey: LightConeKey
   children: (superimpose: number) => ReactNode

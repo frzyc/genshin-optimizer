@@ -14,7 +14,7 @@ const WeaponData: Record<WeaponKey, WeaponSheet> = {
   ...claymore,
   ...polearm,
   ...bow,
-  ...catalyst,
+  ...catalyst
 } as const
 
 // This is the weapon Data.displays merged together for each weapons.
@@ -25,7 +25,7 @@ export const displayDataMap = Object.fromEntries(
       Object.entries(WeaponData)
         .filter(([wKey, _]) => getWeaponStat(wKey).weaponType === k)
         .map(([_, sheet]) => ({ display: sheet.data.display }))
-    ),
+    )
   ])
 ) as Record<WeaponTypeKey, Data>
 

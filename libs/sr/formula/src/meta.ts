@@ -7,23 +7,23 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   ASecretVow: {
-    enemyHpGEOwn: { sheet: 'ASecretVow', name: 'enemyHpGEOwn', type: 'bool' },
+    enemyHpGEOwn: { sheet: 'ASecretVow', name: 'enemyHpGEOwn', type: 'bool' }
   },
   Acheron: {
     boolConditional: {
       sheet: 'Acheron',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Acheron',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Acheron',
@@ -31,18 +31,18 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Adversarial: {
     enemyDefeated: {
       sheet: 'Adversarial',
       name: 'enemyDefeated',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   AfterTheCharmonyFall: {
-    ultUsed: { sheet: 'AfterTheCharmonyFall', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'AfterTheCharmonyFall', name: 'ultUsed', type: 'bool' }
   },
   Aglaea: {
     boolConditional: { sheet: 'Aglaea', name: 'boolConditional', type: 'bool' },
@@ -50,7 +50,7 @@ export const conditionals = {
       sheet: 'Aglaea',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Aglaea',
@@ -58,26 +58,26 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   AlongThePassingShore: {
-    enemyHit: { sheet: 'AlongThePassingShore', name: 'enemyHit', type: 'bool' },
+    enemyHit: { sheet: 'AlongThePassingShore', name: 'enemyHit', type: 'bool' }
   },
   Amber: {
-    hpLowerThan50: { sheet: 'Amber', name: 'hpLowerThan50', type: 'bool' },
+    hpLowerThan50: { sheet: 'Amber', name: 'hpLowerThan50', type: 'bool' }
   },
   Argenti: {
     boolConditional: {
       sheet: 'Argenti',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Argenti',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Argenti',
@@ -85,8 +85,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Arlan: {
     boolConditional: { sheet: 'Arlan', name: 'boolConditional', type: 'bool' },
@@ -94,7 +94,7 @@ export const conditionals = {
       sheet: 'Arlan',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Arlan',
@@ -102,11 +102,11 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Arrows: {
-    startOfBattle: { sheet: 'Arrows', name: 'startOfBattle', type: 'bool' },
+    startOfBattle: { sheet: 'Arrows', name: 'startOfBattle', type: 'bool' }
   },
   Asta: {
     boolConditional: { sheet: 'Asta', name: 'boolConditional', type: 'bool' },
@@ -114,7 +114,7 @@ export const conditionals = {
       sheet: 'Asta',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Asta',
@@ -122,20 +122,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Aventurine: {
     boolConditional: {
       sheet: 'Aventurine',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Aventurine',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Aventurine',
@@ -143,8 +143,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Bailu: {
     boolConditional: { sheet: 'Bailu', name: 'boolConditional', type: 'bool' },
@@ -152,7 +152,7 @@ export const conditionals = {
       sheet: 'Bailu',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Bailu',
@@ -160,15 +160,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   BandOfSizzlingThunder: {
     skillUsed: {
       sheet: 'BandOfSizzlingThunder',
       name: 'skillUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   BaptismOfPureThought: {
     debuffCount: {
@@ -177,28 +177,28 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
+      max: 3
     },
-    ultUsed: { sheet: 'BaptismOfPureThought', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'BaptismOfPureThought', name: 'ultUsed', type: 'bool' }
   },
   BeforeDawn: {
     followUpTriggered: {
       sheet: 'BeforeDawn',
       name: 'followUpTriggered',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   BlackSwan: {
     boolConditional: {
       sheet: 'BlackSwan',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'BlackSwan',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'BlackSwan',
@@ -206,8 +206,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Blade: {
     boolConditional: { sheet: 'Blade', name: 'boolConditional', type: 'bool' },
@@ -215,7 +215,7 @@ export const conditionals = {
       sheet: 'Blade',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Blade',
@@ -223,20 +223,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   BoneCollectionsSereneDemesne: {
     boolConditional: {
       sheet: 'BoneCollectionsSereneDemesne',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'BoneCollectionsSereneDemesne',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'BoneCollectionsSereneDemesne',
@@ -244,20 +244,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Boothill: {
     boolConditional: {
       sheet: 'Boothill',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Boothill',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Boothill',
@@ -265,15 +265,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   BoundlessChoreo: {
     enemySlowedOrRedDef: {
       sheet: 'BoundlessChoreo',
       name: 'enemySlowedOrRedDef',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   BrighterThanTheSun: {
     basicsUsed: {
@@ -282,8 +282,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Bronya: {
     boolConditional: { sheet: 'Bronya', name: 'boolConditional', type: 'bool' },
@@ -291,7 +291,7 @@ export const conditionals = {
       sheet: 'Bronya',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Bronya',
@@ -299,30 +299,30 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   ButTheBattleIsntOver: {
     skillUsed: {
       sheet: 'ButTheBattleIsntOver',
       name: 'skillUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   CarveTheMoonWeaveTheClouds: {
     atk_crit_dmg_enerRegen_: {
       sheet: 'CarveTheMoonWeaveTheClouds',
       name: 'atk_crit_dmg_enerRegen_',
       type: 'list',
-      list: ['atk_', 'crit_dmg_', 'enerRegen_'],
-    },
+      list: ['atk_', 'crit_dmg_', 'enerRegen_']
+    }
   },
   CelestialDifferentiator: {
     firstAttack: {
       sheet: 'CelestialDifferentiator',
       name: 'firstAttack',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ChampionOfStreetwiseBoxing: {
     hits: {
@@ -331,8 +331,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
-    },
+      max: 5
+    }
   },
   Clara: {
     boolConditional: { sheet: 'Clara', name: 'boolConditional', type: 'bool' },
@@ -340,7 +340,7 @@ export const conditionals = {
       sheet: 'Clara',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Clara',
@@ -348,8 +348,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   ConcertForTwo: {
     shieldCount: {
@@ -358,39 +358,39 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 8,
-    },
+      max: 8
+    }
   },
   Cornucopia: {
     skillOrUltUsed: {
       sheet: 'Cornucopia',
       name: 'skillOrUltUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   CruisingInTheStellarSea: {
     enemyDefeated: {
       sheet: 'CruisingInTheStellarSea',
       name: 'enemyDefeated',
-      type: 'bool',
+      type: 'bool'
     },
     enemyHpLEHalf: {
       sheet: 'CruisingInTheStellarSea',
       name: 'enemyHpLEHalf',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   DanHeng: {
     boolConditional: {
       sheet: 'DanHeng',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'DanHeng',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'DanHeng',
@@ -398,20 +398,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   DanHengImbibitorLunae: {
     boolConditional: {
       sheet: 'DanHengImbibitorLunae',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'DanHengImbibitorLunae',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'DanHengImbibitorLunae',
@@ -419,8 +419,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   DanceAtSunset: {
     ultsUsed: {
@@ -429,27 +429,27 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   DartingArrow: {
     enemyDefeated: {
       sheet: 'DartingArrow',
       name: 'enemyDefeated',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   DrRatio: {
     boolConditional: {
       sheet: 'DrRatio',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'DrRatio',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'DrRatio',
@@ -457,16 +457,16 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   DreamvilleAdventure: {
     childishness: {
       sheet: 'DreamvilleAdventure',
       name: 'childishness',
       type: 'list',
-      list: ['basic', 'skill', 'ult'],
-    },
+      list: ['basic', 'skill', 'ult']
+    }
   },
   DuranDynastyOfRunningWolves: {
     merit: {
@@ -475,14 +475,14 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
-    },
+      max: 5
+    }
   },
   EarthlyEscapade: {
-    mask: { sheet: 'EarthlyEscapade', name: 'mask', type: 'bool' },
+    mask: { sheet: 'EarthlyEscapade', name: 'mask', type: 'bool' }
   },
   EchoesOfTheCoffin: {
-    ultUsed: { sheet: 'EchoesOfTheCoffin', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'EchoesOfTheCoffin', name: 'ultUsed', type: 'bool' }
   },
   EternalCalculus: {
     enemiesHit: {
@@ -491,20 +491,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
-    },
+      max: 5
+    }
   },
   Feixiao: {
     boolConditional: {
       sheet: 'Feixiao',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Feixiao',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Feixiao',
@@ -512,15 +512,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Fermata: {
     affectedWithShockOrWindShear: {
       sheet: 'Fermata',
       name: 'affectedWithShockOrWindShear',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   FinalVictor: {
     goodFortune: {
@@ -529,43 +529,43 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 4,
-    },
+      max: 4
+    }
   },
   Firefly: {
     techFireWeakness: {
       sheet: 'Firefly',
       name: 'techFireWeakness',
-      type: 'bool',
+      type: 'bool'
     },
     ultInCompleteCombustion: {
       sheet: 'Firefly',
       name: 'ultInCompleteCombustion',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   FiresmithOfLavaForging: {
-    ultUsed: { sheet: 'FiresmithOfLavaForging', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'FiresmithOfLavaForging', name: 'ultUsed', type: 'bool' }
   },
   FlameOfBloodBlazeMyPath: {
     hpConsumedMoreThan500: {
       sheet: 'FlameOfBloodBlazeMyPath',
       name: 'hpConsumedMoreThan500',
-      type: 'bool',
+      type: 'bool'
     },
     skillUsed: {
       sheet: 'FlameOfBloodBlazeMyPath',
       name: 'skillUsed',
-      type: 'bool',
+      type: 'bool'
     },
     ultUsed: {
       sheet: 'FlameOfBloodBlazeMyPath',
       name: 'ultUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   FlamesAfar: {
-    hpConsumed: { sheet: 'FlamesAfar', name: 'hpConsumed', type: 'bool' },
+    hpConsumed: { sheet: 'FlamesAfar', name: 'hpConsumed', type: 'bool' }
   },
   FlowingNightglow: {
     cadenza: { sheet: 'FlowingNightglow', name: 'cadenza', type: 'bool' },
@@ -575,18 +575,18 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
-    },
+      max: 5
+    }
   },
   ForTomorrowsJourney: {
-    ultUsed: { sheet: 'ForTomorrowsJourney', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'ForTomorrowsJourney', name: 'ultUsed', type: 'bool' }
   },
   ForgeOfTheKalpagniLantern: {
     enemyHit: {
       sheet: 'ForgeOfTheKalpagniLantern',
       name: 'enemyHit',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   FuXuan: {
     boolConditional: { sheet: 'FuXuan', name: 'boolConditional', type: 'bool' },
@@ -594,7 +594,7 @@ export const conditionals = {
       sheet: 'FuXuan',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'FuXuan',
@@ -602,8 +602,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Fugue: {
     boolConditional: { sheet: 'Fugue', name: 'boolConditional', type: 'bool' },
@@ -611,7 +611,7 @@ export const conditionals = {
       sheet: 'Fugue',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Fugue',
@@ -619,20 +619,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Gallagher: {
     boolConditional: {
       sheet: 'Gallagher',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Gallagher',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Gallagher',
@@ -640,25 +640,25 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   GeniusOfBrilliantStars: {
     hasQuantumWeakness: {
       sheet: 'GeniusOfBrilliantStars',
       name: 'hasQuantumWeakness',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   GeniusesGreetings: {
-    ultUsed: { sheet: 'GeniusesGreetings', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'GeniusesGreetings', name: 'ultUsed', type: 'bool' }
   },
   GeniusesRepose: {
     enemyDefeated: {
       sheet: 'GeniusesRepose',
       name: 'enemyDefeated',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Gepard: {
     boolConditional: { sheet: 'Gepard', name: 'boolConditional', type: 'bool' },
@@ -666,7 +666,7 @@ export const conditionals = {
       sheet: 'Gepard',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Gepard',
@@ -674,20 +674,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   GiantTreeOfRaptBrooding: {
     boolConditional: {
       sheet: 'GiantTreeOfRaptBrooding',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'GiantTreeOfRaptBrooding',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'GiantTreeOfRaptBrooding',
@@ -695,8 +695,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   GoodNightAndSleepWell: {
     debuffCount: {
@@ -705,20 +705,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   Guinaifen: {
     boolConditional: {
       sheet: 'Guinaifen',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Guinaifen',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Guinaifen',
@@ -726,8 +726,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Hanya: {
     boolConditional: { sheet: 'Hanya', name: 'boolConditional', type: 'bool' },
@@ -735,7 +735,7 @@ export const conditionals = {
       sheet: 'Hanya',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Hanya',
@@ -743,15 +743,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   HeroOfTriumphantSong: {
     followUpUsed: {
       sheet: 'HeroOfTriumphantSong',
       name: 'followUpUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Herta: {
     boolConditional: { sheet: 'Herta', name: 'boolConditional', type: 'bool' },
@@ -759,7 +759,7 @@ export const conditionals = {
       sheet: 'Herta',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Herta',
@@ -767,11 +767,11 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   HeyOverHere: {
-    skillUsed: { sheet: 'HeyOverHere', name: 'skillUsed', type: 'bool' },
+    skillUsed: { sheet: 'HeyOverHere', name: 'skillUsed', type: 'bool' }
   },
   Himeko: {
     boolConditional: { sheet: 'Himeko', name: 'boolConditional', type: 'bool' },
@@ -779,7 +779,7 @@ export const conditionals = {
       sheet: 'Himeko',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Himeko',
@@ -787,8 +787,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Hook: {
     boolConditional: { sheet: 'Hook', name: 'boolConditional', type: 'bool' },
@@ -796,7 +796,7 @@ export const conditionals = {
       sheet: 'Hook',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Hook',
@@ -804,11 +804,11 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   HunterOfGlacialForest: {
-    ultUsed: { sheet: 'HunterOfGlacialForest', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'HunterOfGlacialForest', name: 'ultUsed', type: 'bool' }
   },
   Huohuo: {
     boolConditional: { sheet: 'Huohuo', name: 'boolConditional', type: 'bool' },
@@ -816,7 +816,7 @@ export const conditionals = {
       sheet: 'Huohuo',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Huohuo',
@@ -824,8 +824,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   IShallBeMyOwnSword: {
     eclipse: {
@@ -834,8 +834,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   IVentureForthToHunt: {
     luminflux: {
@@ -844,44 +844,44 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   IfTimeWereAFlower: {
-    presage: { sheet: 'IfTimeWereAFlower', name: 'presage', type: 'bool' },
+    presage: { sheet: 'IfTimeWereAFlower', name: 'presage', type: 'bool' }
   },
   InTheNameOfTheWorld: {
     enemyDebuffed: {
       sheet: 'InTheNameOfTheWorld',
       name: 'enemyDebuffed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   IncessantRain: {
     aetherCode: { sheet: 'IncessantRain', name: 'aetherCode', type: 'bool' },
     enemyDebuffsGE3: {
       sheet: 'IncessantRain',
       name: 'enemyDebuffsGE3',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   IndeliblePromise: {
-    ultUsed: { sheet: 'IndeliblePromise', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'IndeliblePromise', name: 'ultUsed', type: 'bool' }
   },
   InherentlyUnjustDestiny: {
     followUpHit: {
       sheet: 'InherentlyUnjustDestiny',
       name: 'followUpHit',
-      type: 'bool',
+      type: 'bool'
     },
     shieldProvided: {
       sheet: 'InherentlyUnjustDestiny',
       name: 'shieldProvided',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   IntoTheUnreachableVeil: {
-    ultUsed: { sheet: 'IntoTheUnreachableVeil', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'IntoTheUnreachableVeil', name: 'ultUsed', type: 'bool' }
   },
   ItsShowtime: {
     trick: {
@@ -890,8 +890,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   Jade: {
     boolConditional: { sheet: 'Jade', name: 'boolConditional', type: 'bool' },
@@ -899,7 +899,7 @@ export const conditionals = {
       sheet: 'Jade',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Jade',
@@ -907,20 +907,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Jiaoqiu: {
     boolConditional: {
       sheet: 'Jiaoqiu',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Jiaoqiu',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Jiaoqiu',
@@ -928,20 +928,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   JingYuan: {
     boolConditional: {
       sheet: 'JingYuan',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'JingYuan',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'JingYuan',
@@ -949,20 +949,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Jingliu: {
     boolConditional: {
       sheet: 'Jingliu',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Jingliu',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Jingliu',
@@ -970,8 +970,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Kafka: {
     boolConditional: { sheet: 'Kafka', name: 'boolConditional', type: 'bool' },
@@ -979,7 +979,7 @@ export const conditionals = {
       sheet: 'Kafka',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Kafka',
@@ -987,20 +987,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Lingsha: {
     boolConditional: {
       sheet: 'Lingsha',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Lingsha',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Lingsha',
@@ -1008,8 +1008,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   LongRoadLeadsHome: {
     charring: {
@@ -1018,8 +1018,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   LongevousDisciple: {
     stacks: {
@@ -1028,8 +1028,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Loop: { enemySlowed: { sheet: 'Loop', name: 'enemySlowed', type: 'bool' } },
   Luka: {
@@ -1038,7 +1038,7 @@ export const conditionals = {
       sheet: 'Luka',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Luka',
@@ -1046,8 +1046,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Luocha: {
     boolConditional: { sheet: 'Luocha', name: 'boolConditional', type: 'bool' },
@@ -1055,7 +1055,7 @@ export const conditionals = {
       sheet: 'Luocha',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Luocha',
@@ -1063,20 +1063,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   LushakaTheSunkenSeas: {
     boolConditional: {
       sheet: 'LushakaTheSunkenSeas',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'LushakaTheSunkenSeas',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'LushakaTheSunkenSeas',
@@ -1084,8 +1084,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Lynx: {
     boolConditional: { sheet: 'Lynx', name: 'boolConditional', type: 'bool' },
@@ -1093,7 +1093,7 @@ export const conditionals = {
       sheet: 'Lynx',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Lynx',
@@ -1101,20 +1101,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   March7thTheHunt: {
     boolConditional: {
       sheet: 'March7thTheHunt',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'March7thTheHunt',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'March7thTheHunt',
@@ -1122,29 +1122,29 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Mediation: {
     enteringBattle: {
       sheet: 'Mediation',
       name: 'enteringBattle',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   MemorysCurtainNeverFalls: {
     skillUsed: {
       sheet: 'MemorysCurtainNeverFalls',
       name: 'skillUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   MessengerTraversingHackerspace: {
     ultUsed: {
       sheet: 'MessengerTraversingHackerspace',
       name: 'ultUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Misha: {
     boolConditional: { sheet: 'Misha', name: 'boolConditional', type: 'bool' },
@@ -1152,7 +1152,7 @@ export const conditionals = {
       sheet: 'Misha',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Misha',
@@ -1160,15 +1160,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   MomentOfVictory: {
     wearerAttacked: {
       sheet: 'MomentOfVictory',
       name: 'wearerAttacked',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Moze: {
     boolConditional: { sheet: 'Moze', name: 'boolConditional', type: 'bool' },
@@ -1176,7 +1176,7 @@ export const conditionals = {
       sheet: 'Moze',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Moze',
@@ -1184,15 +1184,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   MutualDemise: {
     hpLowerThan80: {
       sheet: 'MutualDemise',
       name: 'hpLowerThan80',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Mydei: {
     boolConditional: { sheet: 'Mydei', name: 'boolConditional', type: 'bool' },
@@ -1200,7 +1200,7 @@ export const conditionals = {
       sheet: 'Mydei',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Mydei',
@@ -1208,20 +1208,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Natasha: {
     boolConditional: {
       sheet: 'Natasha',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Natasha',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Natasha',
@@ -1229,8 +1229,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   NightOfFright: {
     healingProvided: {
@@ -1239,8 +1239,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
-    },
+      max: 5
+    }
   },
   NightOnTheMilkyWay: {
     enemiesOnField: {
@@ -1249,22 +1249,22 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
+      max: 5
     },
     enemyBroken: {
       sheet: 'NightOnTheMilkyWay',
       name: 'enemyBroken',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   NinjaRecordSoundHunt: {
-    hpLost: { sheet: 'NinjaRecordSoundHunt', name: 'hpLost', type: 'bool' },
+    hpLost: { sheet: 'NinjaRecordSoundHunt', name: 'hpLost', type: 'bool' }
   },
   OnTheFallOfAnAeon: {
     enemyBroken: {
       sheet: 'OnTheFallOfAnAeon',
       name: 'enemyBroken',
-      type: 'bool',
+      type: 'bool'
     },
     wearerAttacked: {
       sheet: 'OnTheFallOfAnAeon',
@@ -1272,21 +1272,21 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 4,
-    },
+      max: 4
+    }
   },
   OnlySilenceRemains: {
     lessThan2Enemies: {
       sheet: 'OnlySilenceRemains',
       name: 'lessThan2Enemies',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   PastAndFuture: {
-    skillUsed: { sheet: 'PastAndFuture', name: 'skillUsed', type: 'bool' },
+    skillUsed: { sheet: 'PastAndFuture', name: 'skillUsed', type: 'bool' }
   },
   PastSelfInMirror: {
-    ultUsed: { sheet: 'PastSelfInMirror', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'PastSelfInMirror', name: 'ultUsed', type: 'bool' }
   },
   PatienceIsAllYouNeed: {
     attackCount: {
@@ -1295,8 +1295,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   Pela: {
     boolConditional: { sheet: 'Pela', name: 'boolConditional', type: 'bool' },
@@ -1304,7 +1304,7 @@ export const conditionals = {
       sheet: 'Pela',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Pela',
@@ -1312,14 +1312,14 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   PioneerDiverOfDeadWaters: {
     affectedByDebuff: {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'affectedByDebuff',
-      type: 'bool',
+      type: 'bool'
     },
     debuffCount: {
       sheet: 'PioneerDiverOfDeadWaters',
@@ -1327,25 +1327,25 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 2,
-      max: 3,
+      max: 3
     },
     wearerDebuff: {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'wearerDebuff',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   PoetOfMourningCollapse: {
     boolConditional: {
       sheet: 'PoetOfMourningCollapse',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'PoetOfMourningCollapse',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'PoetOfMourningCollapse',
@@ -1353,11 +1353,11 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   PostOpConversation: {
-    ultUsed: { sheet: 'PostOpConversation', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'PostOpConversation', name: 'ultUsed', type: 'bool' }
   },
   PrisonerInDeepConfinement: {
     dotCount: {
@@ -1366,20 +1366,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   Qingque: {
     boolConditional: {
       sheet: 'Qingque',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Qingque',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Qingque',
@@ -1387,8 +1387,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Rappa: {
     boolConditional: { sheet: 'Rappa', name: 'boolConditional', type: 'bool' },
@@ -1396,7 +1396,7 @@ export const conditionals = {
       sheet: 'Rappa',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Rappa',
@@ -1404,8 +1404,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   ReforgedRemembrance: {
     prophet: {
@@ -1414,8 +1414,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 4,
-    },
+      max: 4
+    }
   },
   Reminiscence: {
     commemoration: {
@@ -1424,22 +1424,22 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 4,
-    },
+      max: 4
+    }
   },
   ResolutionShinesAsPearlsOfSweat: {
     ensnared: {
       sheet: 'ResolutionShinesAsPearlsOfSweat',
       name: 'ensnared',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   RiverFlowsInSpring: {
     notAttacked: {
       sheet: 'RiverFlowsInSpring',
       name: 'notAttacked',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Robin: {
     boolConditional: { sheet: 'Robin', name: 'boolConditional', type: 'bool' },
@@ -1447,7 +1447,7 @@ export const conditionals = {
       sheet: 'Robin',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Robin',
@@ -1455,25 +1455,25 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   RuanMei: {
     e4Broken: { sheet: 'RuanMei', name: 'e4Broken', type: 'bool' },
     skillOvertone: { sheet: 'RuanMei', name: 'skillOvertone', type: 'bool' },
-    ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
+    ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' }
   },
   SacerdosRelivedOrdeal: {
     boolConditional: {
       sheet: 'SacerdosRelivedOrdeal',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'SacerdosRelivedOrdeal',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'SacerdosRelivedOrdeal',
@@ -1481,8 +1481,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Sagacity: { ultUsed: { sheet: 'Sagacity', name: 'ultUsed', type: 'bool' } },
   Sampo: {
@@ -1491,7 +1491,7 @@ export const conditionals = {
       sheet: 'Sampo',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Sampo',
@@ -1499,23 +1499,23 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   ScentAloneStaysTrue: {
-    woefree: { sheet: 'ScentAloneStaysTrue', name: 'woefree', type: 'bool' },
+    woefree: { sheet: 'ScentAloneStaysTrue', name: 'woefree', type: 'bool' }
   },
   ScholarLostInErudition: {
     boolConditional: {
       sheet: 'ScholarLostInErudition',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'ScholarLostInErudition',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'ScholarLostInErudition',
@@ -1523,15 +1523,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Seele: {
     amplification: { sheet: 'Seele', name: 'amplification', type: 'bool' },
     enemyLowerThan80_: {
       sheet: 'Seele',
       name: 'enemyLowerThan80_',
-      type: 'bool',
+      type: 'bool'
     },
     skillStacks: {
       sheet: 'Seele',
@@ -1539,8 +1539,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Serval: {
     boolConditional: { sheet: 'Serval', name: 'boolConditional', type: 'bool' },
@@ -1548,7 +1548,7 @@ export const conditionals = {
       sheet: 'Serval',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Serval',
@@ -1556,25 +1556,25 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   ShadowedByNight: {
     enterBattleOrBreakDmg: {
       sheet: 'ShadowedByNight',
       name: 'enterBattleOrBreakDmg',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   ShatteredHome: {
-    enemyHpGT50: { sheet: 'ShatteredHome', name: 'enemyHpGT50', type: 'bool' },
+    enemyHpGT50: { sheet: 'ShatteredHome', name: 'enemyHpGT50', type: 'bool' }
   },
   SheAlreadyShutHerEyes: {
     wearerHpReduced: {
       sheet: 'SheAlreadyShutHerEyes',
       name: 'wearerHpReduced',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   SigoniaTheUnclaimedDesolation: {
     enemiesDefeated: {
@@ -1583,20 +1583,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 10,
-    },
+      max: 10
+    }
   },
   SilverWolf: {
     boolConditional: {
       sheet: 'SilverWolf',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'SilverWolf',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'SilverWolf',
@@ -1604,33 +1604,33 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   SleepLikeTheDead: {
-    notCrit: { sheet: 'SleepLikeTheDead', name: 'notCrit', type: 'bool' },
+    notCrit: { sheet: 'SleepLikeTheDead', name: 'notCrit', type: 'bool' }
   },
   SolitaryHealing: {
-    ultUsed: { sheet: 'SolitaryHealing', name: 'ultUsed', type: 'bool' },
+    ultUsed: { sheet: 'SolitaryHealing', name: 'ultUsed', type: 'bool' }
   },
   SomethingIrreplaceable: {
     wearerHit: {
       sheet: 'SomethingIrreplaceable',
       name: 'wearerHit',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Sparkle: {
     boolConditional: {
       sheet: 'Sparkle',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Sparkle',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Sparkle',
@@ -1638,11 +1638,11 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   SubscribeForMore: {
-    maxEnergy: { sheet: 'SubscribeForMore', name: 'maxEnergy', type: 'bool' },
+    maxEnergy: { sheet: 'SubscribeForMore', name: 'maxEnergy', type: 'bool' }
   },
   Sunday: {
     boolConditional: { sheet: 'Sunday', name: 'boolConditional', type: 'bool' },
@@ -1650,7 +1650,7 @@ export const conditionals = {
       sheet: 'Sunday',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Sunday',
@@ -1658,20 +1658,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Sushang: {
     boolConditional: {
       sheet: 'Sushang',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Sushang',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Sushang',
@@ -1679,15 +1679,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   SweatNowCryLess: {
     memospriteOnField: {
       sheet: 'SweatNowCryLess',
       name: 'memospriteOnField',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Swordplay: {
     sameTargetHit: {
@@ -1696,8 +1696,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 5,
-    },
+      max: 5
+    }
   },
   TheAshblazingGrandDuke: {
     followUpDmgDealt: {
@@ -1706,34 +1706,34 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 8,
-    },
+      max: 8
+    }
   },
   TheBirthOfTheSelf: {
     enemyHpLE50: {
       sheet: 'TheBirthOfTheSelf',
       name: 'enemyHpLE50',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TheDayTheCosmosFell: {
     twoEnemiesWeakness: {
       sheet: 'TheDayTheCosmosFell',
       name: 'twoEnemiesWeakness',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TheHerta: {
     boolConditional: {
       sheet: 'TheHerta',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'TheHerta',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'TheHerta',
@@ -1741,8 +1741,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   TheMolesWelcomeYou: {
     mischievous: {
@@ -1751,8 +1751,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   TheSeriousnessOfBreakfast: {
     enemiesDefeated: {
@@ -1761,34 +1761,34 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 3,
-    },
+      max: 3
+    }
   },
   TheUnreachableSide: {
     attackedOrConsumedHp: {
       sheet: 'TheUnreachableSide',
       name: 'attackedOrConsumedHp',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TheWindSoaringValorous: {
     followUpUsed: {
       sheet: 'TheWindSoaringValorous',
       name: 'followUpUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   TheWondrousBananAmusementPark: {
     boolConditional: {
       sheet: 'TheWondrousBananAmusementPark',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'TheWondrousBananAmusementPark',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'TheWondrousBananAmusementPark',
@@ -1796,15 +1796,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   ThisIsMe: {
-    addUltDmgBuff: { sheet: 'ThisIsMe', name: 'addUltDmgBuff', type: 'bool' },
+    addUltDmgBuff: { sheet: 'ThisIsMe', name: 'addUltDmgBuff', type: 'bool' }
   },
   ThoseManySprings: {
     cornered: { sheet: 'ThoseManySprings', name: 'cornered', type: 'bool' },
-    unarmored: { sheet: 'ThoseManySprings', name: 'unarmored', type: 'bool' },
+    unarmored: { sheet: 'ThoseManySprings', name: 'unarmored', type: 'bool' }
   },
   TimeWaitsForNoOne: {
     recordedHealing: {
@@ -1813,8 +1813,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 20000,
-    },
+      max: 20000
+    }
   },
   TimeWovenIntoGold: {
     brocade: {
@@ -1823,20 +1823,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 6,
-    },
+      max: 6
+    }
   },
   Tingyun: {
     boolConditional: {
       sheet: 'Tingyun',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Tingyun',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Tingyun',
@@ -1844,20 +1844,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   TopazAndNumby: {
     boolConditional: {
       sheet: 'TopazAndNumby',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'TopazAndNumby',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'TopazAndNumby',
@@ -1865,20 +1865,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   TrailblazerFire: {
     boolConditional: {
       sheet: 'TrailblazerFire',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'TrailblazerFire',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'TrailblazerFire',
@@ -1886,20 +1886,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   TrailblazerIce: {
     boolConditional: {
       sheet: 'TrailblazerIce',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'TrailblazerIce',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'TrailblazerIce',
@@ -1907,20 +1907,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   TrailblazerImaginary: {
     boolConditional: {
       sheet: 'TrailblazerImaginary',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'TrailblazerImaginary',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'TrailblazerImaginary',
@@ -1928,20 +1928,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   TrailblazerPhysical: {
     boolConditional: {
       sheet: 'TrailblazerPhysical',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'TrailblazerPhysical',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'TrailblazerPhysical',
@@ -1949,20 +1949,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Tribbie: {
     boolConditional: {
       sheet: 'Tribbie',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Tribbie',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Tribbie',
@@ -1970,42 +1970,42 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   UnderTheBlueSky: {
     enemyDefeated: {
       sheet: 'UnderTheBlueSky',
       name: 'enemyDefeated',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   VictoryInABlink: {
     memospriteAbilityUsed: {
       sheet: 'VictoryInABlink',
       name: 'memospriteAbilityUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Void: { battleStart: { sheet: 'Void', name: 'battleStart', type: 'bool' } },
   WastelanderOfBanditryDesert: {
     attackingDebuffed: {
       sheet: 'WastelanderOfBanditryDesert',
       name: 'attackingDebuffed',
-      type: 'bool',
+      type: 'bool'
     },
     enemyImprisoned: {
       sheet: 'WastelanderOfBanditryDesert',
       name: 'enemyImprisoned',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   WatchmakerMasterOfDreamMachinations: {
     useUltimateOnAlly: {
       sheet: 'WatchmakerMasterOfDreamMachinations',
       name: 'useUltimateOnAlly',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   WeAreWildfire: {
     hpDifference: {
@@ -2014,8 +2014,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 99,
-    },
+      max: 99
+    }
   },
   Welt: {
     boolConditional: { sheet: 'Welt', name: 'boolConditional', type: 'bool' },
@@ -2023,7 +2023,7 @@ export const conditionals = {
       sheet: 'Welt',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Welt',
@@ -2031,22 +2031,22 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   WhereaboutsShouldDreamsRest: {
     routed: {
       sheet: 'WhereaboutsShouldDreamsRest',
       name: 'routed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   WoofWalkTime: {
     enemyAffectedByBurnOrBleed: {
       sheet: 'WoofWalkTime',
       name: 'enemyAffectedByBurnOrBleed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   WorrisomeBlissful: {
     tame: {
@@ -2055,8 +2055,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Xueyi: {
     boolConditional: { sheet: 'Xueyi', name: 'boolConditional', type: 'bool' },
@@ -2064,7 +2064,7 @@ export const conditionals = {
       sheet: 'Xueyi',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Xueyi',
@@ -2072,20 +2072,20 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Yanqing: {
     boolConditional: {
       sheet: 'Yanqing',
       name: 'boolConditional',
-      type: 'bool',
+      type: 'bool'
     },
     listConditional: {
       sheet: 'Yanqing',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Yanqing',
@@ -2093,15 +2093,15 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   YetHopeIsPriceless: {
     battleStartOrBasicUsed: {
       sheet: 'YetHopeIsPriceless',
       name: 'battleStartOrBasicUsed',
-      type: 'bool',
-    },
+      type: 'bool'
+    }
   },
   Yukong: {
     boolConditional: { sheet: 'Yukong', name: 'boolConditional', type: 'bool' },
@@ -2109,7 +2109,7 @@ export const conditionals = {
       sheet: 'Yukong',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Yukong',
@@ -2117,8 +2117,8 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
+      max: 2
+    }
   },
   Yunli: {
     boolConditional: { sheet: 'Yunli', name: 'boolConditional', type: 'bool' },
@@ -2126,7 +2126,7 @@ export const conditionals = {
       sheet: 'Yunli',
       name: 'listConditional',
       type: 'list',
-      list: ['val1', 'val2'],
+      list: ['val1', 'val2']
     },
     numConditional: {
       sheet: 'Yunli',
@@ -2134,9 +2134,9 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
-    },
-  },
+      max: 2
+    }
+  }
 } as const
 export const formulas = {
   Acheron: {
@@ -2150,8 +2150,8 @@ export const formulas = {
         sheet: 'Acheron',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Acheron',
@@ -2163,9 +2163,9 @@ export const formulas = {
         sheet: 'Acheron',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Aglaea: {
     basicDmg_0: {
@@ -2178,8 +2178,8 @@ export const formulas = {
         sheet: 'Aglaea',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Aglaea',
@@ -2191,9 +2191,9 @@ export const formulas = {
         sheet: 'Aglaea',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Argenti: {
     basicDmg_0: {
@@ -2206,8 +2206,8 @@ export const formulas = {
         sheet: 'Argenti',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Argenti',
@@ -2219,9 +2219,9 @@ export const formulas = {
         sheet: 'Argenti',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Arlan: {
     basicDmg_0: {
@@ -2234,8 +2234,8 @@ export const formulas = {
         sheet: 'Arlan',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Arlan',
@@ -2247,9 +2247,9 @@ export const formulas = {
         sheet: 'Arlan',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Asta: {
     basicDmg_0: {
@@ -2262,8 +2262,8 @@ export const formulas = {
         sheet: 'Asta',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Asta',
@@ -2275,9 +2275,9 @@ export const formulas = {
         sheet: 'Asta',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Aventurine: {
     basicDmg_0: {
@@ -2290,8 +2290,8 @@ export const formulas = {
         sheet: 'Aventurine',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Aventurine',
@@ -2303,9 +2303,9 @@ export const formulas = {
         sheet: 'Aventurine',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Bailu: {
     basicDmg_0: {
@@ -2318,8 +2318,8 @@ export const formulas = {
         sheet: 'Bailu',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Bailu',
@@ -2331,9 +2331,9 @@ export const formulas = {
         sheet: 'Bailu',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   BlackSwan: {
     basicDmg_0: {
@@ -2346,8 +2346,8 @@ export const formulas = {
         sheet: 'BlackSwan',
         elementalType: 'wind',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'BlackSwan',
@@ -2359,9 +2359,9 @@ export const formulas = {
         sheet: 'BlackSwan',
         elementalType: 'wind',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Blade: {
     basicDmg_0: {
@@ -2374,8 +2374,8 @@ export const formulas = {
         sheet: 'Blade',
         elementalType: 'wind',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Blade',
@@ -2387,9 +2387,9 @@ export const formulas = {
         sheet: 'Blade',
         elementalType: 'wind',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Boothill: {
     basicDmg_0: {
@@ -2402,8 +2402,8 @@ export const formulas = {
         sheet: 'Boothill',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Boothill',
@@ -2415,9 +2415,9 @@ export const formulas = {
         sheet: 'Boothill',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Bronya: {
     basicDmg_0: {
@@ -2430,8 +2430,8 @@ export const formulas = {
         sheet: 'Bronya',
         elementalType: 'wind',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Bronya',
@@ -2443,9 +2443,9 @@ export const formulas = {
         sheet: 'Bronya',
         elementalType: 'wind',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Clara: {
     basicDmg_0: {
@@ -2458,8 +2458,8 @@ export const formulas = {
         sheet: 'Clara',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Clara',
@@ -2471,9 +2471,9 @@ export const formulas = {
         sheet: 'Clara',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   DanHeng: {
     basicDmg_0: {
@@ -2486,8 +2486,8 @@ export const formulas = {
         sheet: 'DanHeng',
         elementalType: 'wind',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'DanHeng',
@@ -2499,9 +2499,9 @@ export const formulas = {
         sheet: 'DanHeng',
         elementalType: 'wind',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   DanHengImbibitorLunae: {
     basicDmg_0: {
@@ -2514,8 +2514,8 @@ export const formulas = {
         sheet: 'DanHengImbibitorLunae',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'DanHengImbibitorLunae',
@@ -2527,9 +2527,9 @@ export const formulas = {
         sheet: 'DanHengImbibitorLunae',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Defense: {
     healing: {
@@ -2540,9 +2540,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'Defense',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   DestinysThreadsForewoven: {
     common_dmg_: {
@@ -2553,9 +2553,9 @@ export const formulas = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DestinysThreadsForewoven',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   DrRatio: {
     basicDmg_0: {
@@ -2568,8 +2568,8 @@ export const formulas = {
         sheet: 'DrRatio',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'DrRatio',
@@ -2581,9 +2581,9 @@ export const formulas = {
         sheet: 'DrRatio',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Feixiao: {
     basicDmg_0: {
@@ -2596,8 +2596,8 @@ export const formulas = {
         sheet: 'Feixiao',
         elementalType: 'wind',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Feixiao',
@@ -2609,9 +2609,9 @@ export const formulas = {
         sheet: 'Feixiao',
         elementalType: 'wind',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Firefly: {
     basic0Dmg_0: {
@@ -2624,8 +2624,8 @@ export const formulas = {
         sheet: 'Firefly',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basic0Dmg_0',
-      },
+        name: 'basic0Dmg_0'
+      }
     },
     basic1Dmg_0: {
       sheet: 'Firefly',
@@ -2637,8 +2637,8 @@ export const formulas = {
         sheet: 'Firefly',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basic1Dmg_0',
-      },
+        name: 'basic1Dmg_0'
+      }
     },
     basic1Heal: {
       sheet: 'Firefly',
@@ -2648,8 +2648,8 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'Firefly',
-        name: 'basic1Heal',
-      },
+        name: 'basic1Heal'
+      }
     },
     breakDmg: {
       sheet: 'Firefly',
@@ -2661,8 +2661,8 @@ export const formulas = {
         sheet: 'Firefly',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
+        name: 'breakDmg'
+      }
     },
     skill0Dmg_0: {
       sheet: 'Firefly',
@@ -2674,8 +2674,8 @@ export const formulas = {
         sheet: 'Firefly',
         elementalType: 'fire',
         damageType1: 'skill',
-        name: 'skill0Dmg_0',
-      },
+        name: 'skill0Dmg_0'
+      }
     },
     skill1DmgBlast_0: {
       sheet: 'Firefly',
@@ -2687,8 +2687,8 @@ export const formulas = {
         sheet: 'Firefly',
         elementalType: 'fire',
         damageType1: 'skill',
-        name: 'skill1DmgBlast_0',
-      },
+        name: 'skill1DmgBlast_0'
+      }
     },
     skill1Dmg_0: {
       sheet: 'Firefly',
@@ -2700,8 +2700,8 @@ export const formulas = {
         sheet: 'Firefly',
         elementalType: 'fire',
         damageType1: 'skill',
-        name: 'skill1Dmg_0',
-      },
+        name: 'skill1Dmg_0'
+      }
     },
     techDmg_0: {
       sheet: 'Firefly',
@@ -2713,9 +2713,9 @@ export const formulas = {
         sheet: 'Firefly',
         elementalType: 'fire',
         damageType1: 'technique',
-        name: 'techDmg_0',
-      },
-    },
+        name: 'techDmg_0'
+      }
+    }
   },
   FlameOfBloodBlazeMyPath: {
     hp_loss: {
@@ -2726,9 +2726,9 @@ export const formulas = {
         qt: 'formula',
         q: 'base',
         sheet: 'FlameOfBloodBlazeMyPath',
-        name: 'hp_loss',
-      },
-    },
+        name: 'hp_loss'
+      }
+    }
   },
   FlamesAfar: {
     healing: {
@@ -2739,9 +2739,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'FlamesAfar',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   FuXuan: {
     basicDmg_0: {
@@ -2754,8 +2754,8 @@ export const formulas = {
         sheet: 'FuXuan',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'FuXuan',
@@ -2767,9 +2767,9 @@ export const formulas = {
         sheet: 'FuXuan',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Fugue: {
     basicDmg_0: {
@@ -2782,8 +2782,8 @@ export const formulas = {
         sheet: 'Fugue',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Fugue',
@@ -2795,9 +2795,9 @@ export const formulas = {
         sheet: 'Fugue',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Gallagher: {
     basicDmg_0: {
@@ -2810,8 +2810,8 @@ export const formulas = {
         sheet: 'Gallagher',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Gallagher',
@@ -2823,9 +2823,9 @@ export const formulas = {
         sheet: 'Gallagher',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Gepard: {
     basicDmg_0: {
@@ -2838,8 +2838,8 @@ export const formulas = {
         sheet: 'Gepard',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Gepard',
@@ -2851,9 +2851,9 @@ export const formulas = {
         sheet: 'Gepard',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   GuardOfWutheringSnow: {
     set4_heal: {
@@ -2864,9 +2864,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'GuardOfWutheringSnow',
-        name: 'set4_heal',
-      },
-    },
+        name: 'set4_heal'
+      }
+    }
   },
   Guinaifen: {
     basicDmg_0: {
@@ -2879,8 +2879,8 @@ export const formulas = {
         sheet: 'Guinaifen',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Guinaifen',
@@ -2892,9 +2892,9 @@ export const formulas = {
         sheet: 'Guinaifen',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Hanya: {
     basicDmg_0: {
@@ -2907,8 +2907,8 @@ export const formulas = {
         sheet: 'Hanya',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Hanya',
@@ -2920,9 +2920,9 @@ export const formulas = {
         sheet: 'Hanya',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Herta: {
     basicDmg_0: {
@@ -2935,8 +2935,8 @@ export const formulas = {
         sheet: 'Herta',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Herta',
@@ -2948,9 +2948,9 @@ export const formulas = {
         sheet: 'Herta',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   HiddenShadow: {
     additional_dmg_0: {
@@ -2962,9 +2962,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'HiddenShadow',
         damageType1: 'elemental',
-        name: 'additional_dmg_0',
-      },
-    },
+        name: 'additional_dmg_0'
+      }
+    }
   },
   Himeko: {
     basicDmg_0: {
@@ -2977,8 +2977,8 @@ export const formulas = {
         sheet: 'Himeko',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Himeko',
@@ -2990,9 +2990,9 @@ export const formulas = {
         sheet: 'Himeko',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Hook: {
     basicDmg_0: {
@@ -3005,8 +3005,8 @@ export const formulas = {
         sheet: 'Hook',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Hook',
@@ -3018,9 +3018,9 @@ export const formulas = {
         sheet: 'Hook',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Huohuo: {
     basicDmg_0: {
@@ -3033,8 +3033,8 @@ export const formulas = {
         sheet: 'Huohuo',
         elementalType: 'wind',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Huohuo',
@@ -3046,9 +3046,9 @@ export const formulas = {
         sheet: 'Huohuo',
         elementalType: 'wind',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   ItsShowtime: {
     atk_: {
@@ -3059,9 +3059,9 @@ export const formulas = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'ItsShowtime',
-        name: 'atk_',
-      },
-    },
+        name: 'atk_'
+      }
+    }
   },
   Jade: {
     basicDmg_0: {
@@ -3074,8 +3074,8 @@ export const formulas = {
         sheet: 'Jade',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Jade',
@@ -3087,9 +3087,9 @@ export const formulas = {
         sheet: 'Jade',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Jiaoqiu: {
     basicDmg_0: {
@@ -3102,8 +3102,8 @@ export const formulas = {
         sheet: 'Jiaoqiu',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Jiaoqiu',
@@ -3115,9 +3115,9 @@ export const formulas = {
         sheet: 'Jiaoqiu',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   JingYuan: {
     basicDmg_0: {
@@ -3130,8 +3130,8 @@ export const formulas = {
         sheet: 'JingYuan',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'JingYuan',
@@ -3143,9 +3143,9 @@ export const formulas = {
         sheet: 'JingYuan',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Jingliu: {
     basicDmg_0: {
@@ -3158,8 +3158,8 @@ export const formulas = {
         sheet: 'Jingliu',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Jingliu',
@@ -3171,9 +3171,9 @@ export const formulas = {
         sheet: 'Jingliu',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Kafka: {
     basicDmg_0: {
@@ -3186,8 +3186,8 @@ export const formulas = {
         sheet: 'Kafka',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Kafka',
@@ -3199,9 +3199,9 @@ export const formulas = {
         sheet: 'Kafka',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Lingsha: {
     basicDmg_0: {
@@ -3214,8 +3214,8 @@ export const formulas = {
         sheet: 'Lingsha',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Lingsha',
@@ -3227,9 +3227,9 @@ export const formulas = {
         sheet: 'Lingsha',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Luka: {
     basicDmg_0: {
@@ -3242,8 +3242,8 @@ export const formulas = {
         sheet: 'Luka',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Luka',
@@ -3255,9 +3255,9 @@ export const formulas = {
         sheet: 'Luka',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Luocha: {
     basicDmg_0: {
@@ -3270,8 +3270,8 @@ export const formulas = {
         sheet: 'Luocha',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Luocha',
@@ -3283,9 +3283,9 @@ export const formulas = {
         sheet: 'Luocha',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Lynx: {
     basicDmg_0: {
@@ -3298,8 +3298,8 @@ export const formulas = {
         sheet: 'Lynx',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Lynx',
@@ -3311,9 +3311,9 @@ export const formulas = {
         sheet: 'Lynx',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   March7th: {
     basicDmg_0: {
@@ -3326,8 +3326,8 @@ export const formulas = {
         sheet: 'March7th',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'March7th',
@@ -3339,8 +3339,8 @@ export const formulas = {
         sheet: 'March7th',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
+        name: 'breakDmg'
+      }
     },
     e1Shield: {
       sheet: 'March7th',
@@ -3350,8 +3350,8 @@ export const formulas = {
         qt: 'formula',
         q: 'shield',
         sheet: 'March7th',
-        name: 'e1Shield',
-      },
+        name: 'e1Shield'
+      }
     },
     e6Heal: {
       sheet: 'March7th',
@@ -3361,8 +3361,8 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'March7th',
-        name: 'e6Heal',
-      },
+        name: 'e6Heal'
+      }
     },
     skillShield: {
       sheet: 'March7th',
@@ -3372,8 +3372,8 @@ export const formulas = {
         qt: 'formula',
         q: 'shield',
         sheet: 'March7th',
-        name: 'skillShield',
-      },
+        name: 'skillShield'
+      }
     },
     talentDmg_0: {
       sheet: 'March7th',
@@ -3385,8 +3385,8 @@ export const formulas = {
         sheet: 'March7th',
         damageType1: 'followUp',
         elementalType: 'ice',
-        name: 'talentDmg_0',
-      },
+        name: 'talentDmg_0'
+      }
     },
     techniqueFreeze_0: {
       sheet: 'March7th',
@@ -3398,8 +3398,8 @@ export const formulas = {
         sheet: 'March7th',
         damageType1: 'elemental',
         elementalType: 'ice',
-        name: 'techniqueFreeze_0',
-      },
+        name: 'techniqueFreeze_0'
+      }
     },
     ultDmg_0: {
       sheet: 'March7th',
@@ -3411,8 +3411,8 @@ export const formulas = {
         sheet: 'March7th',
         elementalType: 'ice',
         damageType1: 'ult',
-        name: 'ultDmg_0',
-      },
+        name: 'ultDmg_0'
+      }
     },
     ultDmg_1: {
       sheet: 'March7th',
@@ -3424,8 +3424,8 @@ export const formulas = {
         sheet: 'March7th',
         elementalType: 'ice',
         damageType1: 'ult',
-        name: 'ultDmg_1',
-      },
+        name: 'ultDmg_1'
+      }
     },
     ultDmg_2: {
       sheet: 'March7th',
@@ -3437,8 +3437,8 @@ export const formulas = {
         sheet: 'March7th',
         elementalType: 'ice',
         damageType1: 'ult',
-        name: 'ultDmg_2',
-      },
+        name: 'ultDmg_2'
+      }
     },
     ultDmg_3: {
       sheet: 'March7th',
@@ -3450,8 +3450,8 @@ export const formulas = {
         sheet: 'March7th',
         elementalType: 'ice',
         damageType1: 'ult',
-        name: 'ultDmg_3',
-      },
+        name: 'ultDmg_3'
+      }
     },
     ultFreeze_0: {
       sheet: 'March7th',
@@ -3463,9 +3463,9 @@ export const formulas = {
         sheet: 'March7th',
         damageType1: 'elemental',
         elementalType: 'ice',
-        name: 'ultFreeze_0',
-      },
-    },
+        name: 'ultFreeze_0'
+      }
+    }
   },
   March7thTheHunt: {
     basicDmg_0: {
@@ -3478,8 +3478,8 @@ export const formulas = {
         sheet: 'March7thTheHunt',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'March7thTheHunt',
@@ -3491,9 +3491,9 @@ export const formulas = {
         sheet: 'March7thTheHunt',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Misha: {
     basicDmg_0: {
@@ -3506,8 +3506,8 @@ export const formulas = {
         sheet: 'Misha',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Misha',
@@ -3519,9 +3519,9 @@ export const formulas = {
         sheet: 'Misha',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Moze: {
     basicDmg_0: {
@@ -3534,8 +3534,8 @@ export const formulas = {
         sheet: 'Moze',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Moze',
@@ -3547,9 +3547,9 @@ export const formulas = {
         sheet: 'Moze',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Mydei: {
     basicDmg_0: {
@@ -3562,8 +3562,8 @@ export const formulas = {
         sheet: 'Mydei',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Mydei',
@@ -3575,9 +3575,9 @@ export const formulas = {
         sheet: 'Mydei',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Natasha: {
     basicDmg_0: {
@@ -3590,8 +3590,8 @@ export const formulas = {
         sheet: 'Natasha',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Natasha',
@@ -3603,9 +3603,9 @@ export const formulas = {
         sheet: 'Natasha',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   NightOfFright: {
     healing: {
@@ -3616,9 +3616,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'NightOfFright',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   NowhereToRun: {
     healing: {
@@ -3629,9 +3629,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'NowhereToRun',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   PatienceIsAllYouNeed: {
     erode_0: {
@@ -3644,9 +3644,9 @@ export const formulas = {
         sheet: 'PatienceIsAllYouNeed',
         damageType1: 'dot',
         elementalType: 'lightning',
-        name: 'erode_0',
-      },
-    },
+        name: 'erode_0'
+      }
+    }
   },
   Pela: {
     basicDmg_0: {
@@ -3659,8 +3659,8 @@ export const formulas = {
         sheet: 'Pela',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Pela',
@@ -3672,9 +3672,9 @@ export const formulas = {
         sheet: 'Pela',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   PerfectTiming: {
     heal_: {
@@ -3685,9 +3685,9 @@ export const formulas = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'PerfectTiming',
-        name: 'heal_',
-      },
-    },
+        name: 'heal_'
+      }
+    }
   },
   Pioneering: {
     healing: {
@@ -3698,9 +3698,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'Pioneering',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   Qingque: {
     basicDmg_0: {
@@ -3713,8 +3713,8 @@ export const formulas = {
         sheet: 'Qingque',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Qingque',
@@ -3726,9 +3726,9 @@ export const formulas = {
         sheet: 'Qingque',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Rappa: {
     basicDmg_0: {
@@ -3741,8 +3741,8 @@ export const formulas = {
         sheet: 'Rappa',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Rappa',
@@ -3754,9 +3754,9 @@ export const formulas = {
         sheet: 'Rappa',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Robin: {
     basicDmg_0: {
@@ -3769,8 +3769,8 @@ export const formulas = {
         sheet: 'Robin',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Robin',
@@ -3782,9 +3782,9 @@ export const formulas = {
         sheet: 'Robin',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   RuanMei: {
     ba3_dmg_: {
@@ -3795,8 +3795,8 @@ export const formulas = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'RuanMei',
-        name: 'ba3_dmg_',
-      },
+        name: 'ba3_dmg_'
+      }
     },
     basicDmg_0: {
       sheet: 'RuanMei',
@@ -3808,8 +3808,8 @@ export const formulas = {
         sheet: 'RuanMei',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'RuanMei',
@@ -3821,8 +3821,8 @@ export const formulas = {
         sheet: 'RuanMei',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
+        name: 'breakDmg'
+      }
     },
     talentBreakDmg: {
       sheet: 'RuanMei',
@@ -3834,8 +3834,8 @@ export const formulas = {
         sheet: 'RuanMei',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'talentBreakDmg',
-      },
+        name: 'talentBreakDmg'
+      }
     },
     zoneBreakDmg: {
       sheet: 'RuanMei',
@@ -3847,9 +3847,9 @@ export const formulas = {
         sheet: 'RuanMei',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'zoneBreakDmg',
-      },
-    },
+        name: 'zoneBreakDmg'
+      }
+    }
   },
   SailingTowardsASecondLife: {
     spd_: {
@@ -3860,9 +3860,9 @@ export const formulas = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'SailingTowardsASecondLife',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   Sampo: {
     basicDmg_0: {
@@ -3875,8 +3875,8 @@ export const formulas = {
         sheet: 'Sampo',
         elementalType: 'wind',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Sampo',
@@ -3888,9 +3888,9 @@ export const formulas = {
         sheet: 'Sampo',
         elementalType: 'wind',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   ScentAloneStaysTrue: {
     common_dmg_: {
@@ -3901,9 +3901,9 @@ export const formulas = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ScentAloneStaysTrue',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   Seele: {
     basicDmg_0: {
@@ -3916,8 +3916,8 @@ export const formulas = {
         sheet: 'Seele',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Seele',
@@ -3929,8 +3929,8 @@ export const formulas = {
         sheet: 'Seele',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
+        name: 'breakDmg'
+      }
     },
     e6Dmg_0: {
       sheet: 'Seele',
@@ -3942,8 +3942,8 @@ export const formulas = {
         sheet: 'Seele',
         elementalType: 'quantum',
         damageType1: 'elemental',
-        name: 'e6Dmg_0',
-      },
+        name: 'e6Dmg_0'
+      }
     },
     skillDmg_0: {
       sheet: 'Seele',
@@ -3955,8 +3955,8 @@ export const formulas = {
         sheet: 'Seele',
         elementalType: 'quantum',
         damageType1: 'skill',
-        name: 'skillDmg_0',
-      },
+        name: 'skillDmg_0'
+      }
     },
     ultDmg_0: {
       sheet: 'Seele',
@@ -3968,9 +3968,9 @@ export const formulas = {
         sheet: 'Seele',
         elementalType: 'quantum',
         damageType1: 'ult',
-        name: 'ultDmg_0',
-      },
-    },
+        name: 'ultDmg_0'
+      }
+    }
   },
   Serval: {
     basicDmg_0: {
@@ -3983,8 +3983,8 @@ export const formulas = {
         sheet: 'Serval',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Serval',
@@ -3996,9 +3996,9 @@ export const formulas = {
         sheet: 'Serval',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   SheAlreadyShutHerEyes: {
     maxHeal: {
@@ -4009,9 +4009,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'SheAlreadyShutHerEyes',
-        name: 'maxHeal',
-      },
-    },
+        name: 'maxHeal'
+      }
+    }
   },
   SilverWolf: {
     basicDmg_0: {
@@ -4024,8 +4024,8 @@ export const formulas = {
         sheet: 'SilverWolf',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'SilverWolf',
@@ -4037,9 +4037,9 @@ export const formulas = {
         sheet: 'SilverWolf',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   SomethingIrreplaceable: {
     healing: {
@@ -4050,9 +4050,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'SomethingIrreplaceable',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   Sparkle: {
     basicDmg_0: {
@@ -4065,8 +4065,8 @@ export const formulas = {
         sheet: 'Sparkle',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Sparkle',
@@ -4078,9 +4078,9 @@ export const formulas = {
         sheet: 'Sparkle',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Sunday: {
     basicDmg_0: {
@@ -4093,8 +4093,8 @@ export const formulas = {
         sheet: 'Sunday',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Sunday',
@@ -4106,9 +4106,9 @@ export const formulas = {
         sheet: 'Sunday',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Sushang: {
     basicDmg_0: {
@@ -4121,8 +4121,8 @@ export const formulas = {
         sheet: 'Sushang',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Sushang',
@@ -4134,9 +4134,9 @@ export const formulas = {
         sheet: 'Sushang',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   TextureOfMemories: {
     shield: {
@@ -4147,9 +4147,9 @@ export const formulas = {
         qt: 'formula',
         q: 'shield',
         sheet: 'TextureOfMemories',
-        name: 'shield',
-      },
-    },
+        name: 'shield'
+      }
+    }
   },
   TheHerta: {
     basicDmg_0: {
@@ -4162,8 +4162,8 @@ export const formulas = {
         sheet: 'TheHerta',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'TheHerta',
@@ -4175,9 +4175,9 @@ export const formulas = {
         sheet: 'TheHerta',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   ThisIsMe: {
     additive_ult_dmg: {
@@ -4190,9 +4190,9 @@ export const formulas = {
         sheet: 'ThisIsMe',
         dst: null,
         damageType2: 'ult',
-        name: 'additive_ult_dmg',
-      },
-    },
+        name: 'additive_ult_dmg'
+      }
+    }
   },
   TimeWaitsForNoOne: {
     additional_dmg_0: {
@@ -4204,9 +4204,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'TimeWaitsForNoOne',
         damageType1: 'elemental',
-        name: 'additional_dmg_0',
-      },
-    },
+        name: 'additional_dmg_0'
+      }
+    }
   },
   Tingyun: {
     basicDmg_0: {
@@ -4219,8 +4219,8 @@ export const formulas = {
         sheet: 'Tingyun',
         elementalType: 'lightning',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Tingyun',
@@ -4232,9 +4232,9 @@ export const formulas = {
         sheet: 'Tingyun',
         elementalType: 'lightning',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   TopazAndNumby: {
     basicDmg_0: {
@@ -4247,8 +4247,8 @@ export const formulas = {
         sheet: 'TopazAndNumby',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'TopazAndNumby',
@@ -4260,9 +4260,9 @@ export const formulas = {
         sheet: 'TopazAndNumby',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   TrailblazerFire: {
     basicDmg_0: {
@@ -4275,8 +4275,8 @@ export const formulas = {
         sheet: 'TrailblazerFire',
         elementalType: 'fire',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'TrailblazerFire',
@@ -4288,9 +4288,9 @@ export const formulas = {
         sheet: 'TrailblazerFire',
         elementalType: 'fire',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   TrailblazerIce: {
     basicDmg_0: {
@@ -4303,8 +4303,8 @@ export const formulas = {
         sheet: 'TrailblazerIce',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'TrailblazerIce',
@@ -4316,9 +4316,9 @@ export const formulas = {
         sheet: 'TrailblazerIce',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   TrailblazerImaginary: {
     basicDmg_0: {
@@ -4331,8 +4331,8 @@ export const formulas = {
         sheet: 'TrailblazerImaginary',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'TrailblazerImaginary',
@@ -4344,9 +4344,9 @@ export const formulas = {
         sheet: 'TrailblazerImaginary',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   TrailblazerPhysical: {
     basicDmg_0: {
@@ -4359,8 +4359,8 @@ export const formulas = {
         sheet: 'TrailblazerPhysical',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'TrailblazerPhysical',
@@ -4372,9 +4372,9 @@ export const formulas = {
         sheet: 'TrailblazerPhysical',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   TrendOfTheUniversalMarket: {
     burn_0: {
@@ -4387,9 +4387,9 @@ export const formulas = {
         sheet: 'TrendOfTheUniversalMarket',
         damageType1: 'dot',
         elementalType: 'fire',
-        name: 'burn_0',
-      },
-    },
+        name: 'burn_0'
+      }
+    }
   },
   Tribbie: {
     basicDmg_0: {
@@ -4402,8 +4402,8 @@ export const formulas = {
         sheet: 'Tribbie',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Tribbie',
@@ -4415,9 +4415,9 @@ export const formulas = {
         sheet: 'Tribbie',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   WarmthShortensColdNights: {
     healing: {
@@ -4428,9 +4428,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'WarmthShortensColdNights',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   WeAreWildfire: {
     healing: {
@@ -4441,9 +4441,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'WeAreWildfire',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   WeWillMeetAgain: {
     additional_dmg_0: {
@@ -4455,9 +4455,9 @@ export const formulas = {
         q: 'dmg',
         sheet: 'WeWillMeetAgain',
         damageType1: 'elemental',
-        name: 'additional_dmg_0',
-      },
-    },
+        name: 'additional_dmg_0'
+      }
+    }
   },
   Welt: {
     basicDmg_0: {
@@ -4470,8 +4470,8 @@ export const formulas = {
         sheet: 'Welt',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Welt',
@@ -4483,9 +4483,9 @@ export const formulas = {
         sheet: 'Welt',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   WhatIsReal: {
     healing: {
@@ -4496,9 +4496,9 @@ export const formulas = {
         qt: 'formula',
         q: 'heal',
         sheet: 'WhatIsReal',
-        name: 'healing',
-      },
-    },
+        name: 'healing'
+      }
+    }
   },
   Xueyi: {
     basicDmg_0: {
@@ -4511,8 +4511,8 @@ export const formulas = {
         sheet: 'Xueyi',
         elementalType: 'quantum',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Xueyi',
@@ -4524,9 +4524,9 @@ export const formulas = {
         sheet: 'Xueyi',
         elementalType: 'quantum',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Yanqing: {
     basicDmg_0: {
@@ -4539,8 +4539,8 @@ export const formulas = {
         sheet: 'Yanqing',
         elementalType: 'ice',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Yanqing',
@@ -4552,9 +4552,9 @@ export const formulas = {
         sheet: 'Yanqing',
         elementalType: 'ice',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   YetHopeIsPriceless: {
     followUp_dmg_: {
@@ -4566,9 +4566,9 @@ export const formulas = {
         q: 'dmg_',
         sheet: 'YetHopeIsPriceless',
         damageType2: 'followUp',
-        name: 'followUp_dmg_',
-      },
-    },
+        name: 'followUp_dmg_'
+      }
+    }
   },
   Yukong: {
     basicDmg_0: {
@@ -4581,8 +4581,8 @@ export const formulas = {
         sheet: 'Yukong',
         elementalType: 'imaginary',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Yukong',
@@ -4594,9 +4594,9 @@ export const formulas = {
         sheet: 'Yukong',
         elementalType: 'imaginary',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
+        name: 'breakDmg'
+      }
+    }
   },
   Yunli: {
     basicDmg_0: {
@@ -4609,8 +4609,8 @@ export const formulas = {
         sheet: 'Yunli',
         elementalType: 'physical',
         damageType1: 'basic',
-        name: 'basicDmg_0',
-      },
+        name: 'basicDmg_0'
+      }
     },
     breakDmg: {
       sheet: 'Yunli',
@@ -4622,10 +4622,10 @@ export const formulas = {
         sheet: 'Yunli',
         elementalType: 'physical',
         damageType1: 'break',
-        name: 'breakDmg',
-      },
-    },
-  },
+        name: 'breakDmg'
+      }
+    }
+  }
 } as const
 export const buffs = {
   AGroundedAscent: {
@@ -4637,9 +4637,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AGroundedAscent',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   ASecretVow: {
     common_dmg_: {
@@ -4650,8 +4650,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ASecretVow',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_common_dmg_: {
       sheet: 'ASecretVow',
@@ -4661,9 +4661,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ASecretVow',
-        name: 'passive_common_dmg_',
-      },
-    },
+        name: 'passive_common_dmg_'
+      }
+    }
   },
   Acheron: {
     e6_dmg_: {
@@ -4674,8 +4674,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Acheron',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Acheron',
@@ -4685,8 +4685,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Acheron',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Acheron',
@@ -4696,8 +4696,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Acheron',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Acheron',
@@ -4707,8 +4707,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Acheron',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Acheron',
@@ -4718,8 +4718,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Acheron',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Acheron',
@@ -4729,8 +4729,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Acheron',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Acheron',
@@ -4740,8 +4740,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Acheron',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Acheron',
@@ -4751,8 +4751,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Acheron',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Acheron',
@@ -4762,8 +4762,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Acheron',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Acheron',
@@ -4773,8 +4773,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Acheron',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Acheron',
@@ -4785,8 +4785,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Acheron',
         elementalType: 'lightning',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Acheron',
@@ -4796,8 +4796,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Acheron',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Acheron',
@@ -4807,8 +4807,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Acheron',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Acheron',
@@ -4818,8 +4818,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Acheron',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Acheron',
@@ -4830,8 +4830,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Acheron',
         elementalType: 'lightning',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Acheron',
@@ -4841,8 +4841,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Acheron',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Acheron',
@@ -4852,9 +4852,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Acheron',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Adversarial: {
     spd_: {
@@ -4865,9 +4865,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'Adversarial',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   AfterTheCharmonyFall: {
     passive_brEffect_: {
@@ -4878,8 +4878,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'AfterTheCharmonyFall',
-        name: 'passive_brEffect_',
-      },
+        name: 'passive_brEffect_'
+      }
     },
     spd_: {
       sheet: 'AfterTheCharmonyFall',
@@ -4889,9 +4889,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'AfterTheCharmonyFall',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   Aglaea: {
     e6_dmg_: {
@@ -4902,8 +4902,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Aglaea',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Aglaea',
@@ -4913,8 +4913,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Aglaea',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Aglaea',
@@ -4924,8 +4924,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Aglaea',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Aglaea',
@@ -4935,8 +4935,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Aglaea',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_servantSkill: {
       sheet: 'Aglaea',
@@ -4946,8 +4946,8 @@ export const buffs = {
         qt: 'char',
         q: 'servantSkill',
         sheet: 'Aglaea',
-        name: 'eidolon5_servantSkill',
-      },
+        name: 'eidolon5_servantSkill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Aglaea',
@@ -4957,8 +4957,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Aglaea',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Aglaea',
@@ -4968,8 +4968,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Aglaea',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Aglaea',
@@ -4979,8 +4979,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Aglaea',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Aglaea',
@@ -4991,8 +4991,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aglaea',
         elementalType: 'lightning',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Aglaea',
@@ -5003,8 +5003,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aglaea',
         elementalType: 'lightning',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Aglaea',
@@ -5014,8 +5014,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Aglaea',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Aglaea',
@@ -5026,8 +5026,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aglaea',
         elementalType: 'lightning',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Aglaea',
@@ -5037,8 +5037,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Aglaea',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Aglaea',
@@ -5049,8 +5049,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aglaea',
         elementalType: 'lightning',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Aglaea',
@@ -5060,8 +5060,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Aglaea',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Aglaea',
@@ -5072,8 +5072,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aglaea',
         elementalType: 'lightning',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Aglaea',
@@ -5083,8 +5083,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Aglaea',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Aglaea',
@@ -5094,8 +5094,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Aglaea',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Aglaea',
@@ -5105,9 +5105,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Aglaea',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   AlongThePassingShore: {
     common_dmg_: {
@@ -5118,8 +5118,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'AlongThePassingShore',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'AlongThePassingShore',
@@ -5129,8 +5129,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'AlongThePassingShore',
-        name: 'passive_crit_dmg_',
-      },
+        name: 'passive_crit_dmg_'
+      }
     },
     ult_dmg_: {
       sheet: 'AlongThePassingShore',
@@ -5141,9 +5141,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'AlongThePassingShore',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   Amber: {
     def_: {
@@ -5154,8 +5154,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Amber',
-        name: 'def_',
-      },
+        name: 'def_'
+      }
     },
     passive_def_: {
       sheet: 'Amber',
@@ -5165,9 +5165,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Amber',
-        name: 'passive_def_',
-      },
-    },
+        name: 'passive_def_'
+      }
+    }
   },
   AnInstantBeforeAGaze: {
     passive_crit_dmg_: {
@@ -5178,8 +5178,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'AnInstantBeforeAGaze',
-        name: 'passive_crit_dmg_',
-      },
+        name: 'passive_crit_dmg_'
+      }
     },
     ult_dmg_: {
       sheet: 'AnInstantBeforeAGaze',
@@ -5190,9 +5190,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'AnInstantBeforeAGaze',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   Argenti: {
     e6_dmg_: {
@@ -5203,8 +5203,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Argenti',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Argenti',
@@ -5214,8 +5214,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Argenti',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Argenti',
@@ -5225,8 +5225,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Argenti',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'Argenti',
@@ -5236,8 +5236,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Argenti',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'Argenti',
@@ -5247,8 +5247,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Argenti',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Argenti',
@@ -5258,8 +5258,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Argenti',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Argenti',
@@ -5269,8 +5269,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Argenti',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Argenti',
@@ -5280,8 +5280,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Argenti',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Argenti',
@@ -5292,8 +5292,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Argenti',
         elementalType: 'physical',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Argenti',
@@ -5303,8 +5303,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Argenti',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Argenti',
@@ -5314,8 +5314,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Argenti',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Argenti',
@@ -5325,8 +5325,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Argenti',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Argenti',
@@ -5337,8 +5337,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Argenti',
         elementalType: 'physical',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Argenti',
@@ -5348,8 +5348,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Argenti',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Argenti',
@@ -5359,8 +5359,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Argenti',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Argenti',
@@ -5371,8 +5371,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Argenti',
         elementalType: 'physical',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Argenti',
@@ -5382,9 +5382,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Argenti',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Arlan: {
     e6_dmg_: {
@@ -5395,8 +5395,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Arlan',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Arlan',
@@ -5406,8 +5406,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Arlan',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Arlan',
@@ -5417,8 +5417,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Arlan',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Arlan',
@@ -5428,8 +5428,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Arlan',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Arlan',
@@ -5439,8 +5439,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Arlan',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Arlan',
@@ -5450,8 +5450,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Arlan',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Arlan',
@@ -5461,8 +5461,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Arlan',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Arlan',
@@ -5472,8 +5472,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Arlan',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Arlan',
@@ -5483,8 +5483,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Arlan',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Arlan',
@@ -5494,8 +5494,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Arlan',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Arlan',
@@ -5505,8 +5505,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Arlan',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Arlan',
@@ -5516,8 +5516,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Arlan',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Arlan',
@@ -5527,8 +5527,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Arlan',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Arlan',
@@ -5538,8 +5538,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Arlan',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Arlan',
@@ -5549,8 +5549,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Arlan',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Arlan',
@@ -5560,8 +5560,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Arlan',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Arlan',
@@ -5571,9 +5571,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Arlan',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Arrows: {
     crit_: {
@@ -5584,9 +5584,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Arrows',
-        name: 'crit_',
-      },
-    },
+        name: 'crit_'
+      }
+    }
   },
   Asta: {
     e6_dmg_: {
@@ -5597,8 +5597,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Asta',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Asta',
@@ -5608,8 +5608,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Asta',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Asta',
@@ -5619,8 +5619,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Asta',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'Asta',
@@ -5630,8 +5630,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Asta',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'Asta',
@@ -5641,8 +5641,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Asta',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Asta',
@@ -5652,8 +5652,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Asta',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Asta',
@@ -5664,8 +5664,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Asta',
         elementalType: 'fire',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Asta',
@@ -5676,8 +5676,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Asta',
         elementalType: 'fire',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Asta',
@@ -5687,8 +5687,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Asta',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Asta',
@@ -5699,8 +5699,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Asta',
         elementalType: 'fire',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Asta',
@@ -5710,8 +5710,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Asta',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Asta',
@@ -5722,8 +5722,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Asta',
         elementalType: 'fire',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Asta',
@@ -5733,8 +5733,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Asta',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Asta',
@@ -5745,8 +5745,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Asta',
         elementalType: 'fire',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Asta',
@@ -5756,8 +5756,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Asta',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Asta',
@@ -5767,8 +5767,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Asta',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Asta',
@@ -5778,9 +5778,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Asta',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Aventurine: {
     e6_dmg_: {
@@ -5791,8 +5791,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Aventurine',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Aventurine',
@@ -5802,8 +5802,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Aventurine',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Aventurine',
@@ -5813,8 +5813,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Aventurine',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Aventurine',
@@ -5824,8 +5824,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Aventurine',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Aventurine',
@@ -5835,8 +5835,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Aventurine',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Aventurine',
@@ -5846,8 +5846,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Aventurine',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Aventurine',
@@ -5857,8 +5857,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Aventurine',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Aventurine',
@@ -5868,8 +5868,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Aventurine',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Aventurine',
@@ -5880,8 +5880,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aventurine',
         elementalType: 'imaginary',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Aventurine',
@@ -5891,8 +5891,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Aventurine',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Aventurine',
@@ -5902,8 +5902,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Aventurine',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Aventurine',
@@ -5913,8 +5913,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Aventurine',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Aventurine',
@@ -5925,8 +5925,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aventurine',
         elementalType: 'imaginary',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Aventurine',
@@ -5936,8 +5936,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Aventurine',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Aventurine',
@@ -5947,8 +5947,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Aventurine',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Aventurine',
@@ -5959,8 +5959,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Aventurine',
         elementalType: 'imaginary',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Aventurine',
@@ -5970,9 +5970,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Aventurine',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Bailu: {
     e6_dmg_: {
@@ -5983,8 +5983,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Bailu',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Bailu',
@@ -5994,8 +5994,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Bailu',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Bailu',
@@ -6005,8 +6005,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Bailu',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'Bailu',
@@ -6016,8 +6016,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Bailu',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'Bailu',
@@ -6027,8 +6027,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Bailu',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Bailu',
@@ -6038,8 +6038,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Bailu',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Bailu',
@@ -6049,8 +6049,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Bailu',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Bailu',
@@ -6060,8 +6060,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Bailu',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Bailu',
@@ -6071,8 +6071,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Bailu',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Bailu',
@@ -6082,8 +6082,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Bailu',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Bailu',
@@ -6093,8 +6093,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Bailu',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Bailu',
@@ -6104,8 +6104,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Bailu',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Bailu',
@@ -6115,8 +6115,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Bailu',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Bailu',
@@ -6126,8 +6126,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Bailu',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Bailu',
@@ -6137,8 +6137,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Bailu',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Bailu',
@@ -6148,8 +6148,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Bailu',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Bailu',
@@ -6159,9 +6159,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Bailu',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   BandOfSizzlingThunder: {
     set2_passive_lightning_dmg_: {
@@ -6173,8 +6173,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'BandOfSizzlingThunder',
         elementalType: 'lightning',
-        name: 'set2_passive_lightning_dmg_',
-      },
+        name: 'set2_passive_lightning_dmg_'
+      }
     },
     set4_atk_: {
       sheet: 'BandOfSizzlingThunder',
@@ -6184,9 +6184,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'BandOfSizzlingThunder',
-        name: 'set4_atk_',
-      },
-    },
+        name: 'set4_atk_'
+      }
+    }
   },
   BaptismOfPureThought: {
     common_dmg_: {
@@ -6197,8 +6197,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BaptismOfPureThought',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     crit_dmg_: {
       sheet: 'BaptismOfPureThought',
@@ -6208,8 +6208,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'BaptismOfPureThought',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     followUp_defIgn_: {
       sheet: 'BaptismOfPureThought',
@@ -6220,8 +6220,8 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'BaptismOfPureThought',
         damageType1: 'followUp',
-        name: 'followUp_defIgn_',
-      },
+        name: 'followUp_defIgn_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'BaptismOfPureThought',
@@ -6231,9 +6231,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'BaptismOfPureThought',
-        name: 'passive_crit_dmg_',
-      },
-    },
+        name: 'passive_crit_dmg_'
+      }
+    }
   },
   BeforeDawn: {
     followUp_dmg_: {
@@ -6245,8 +6245,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'BeforeDawn',
         damageType1: 'followUp',
-        name: 'followUp_dmg_',
-      },
+        name: 'followUp_dmg_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'BeforeDawn',
@@ -6256,8 +6256,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'BeforeDawn',
-        name: 'passive_crit_dmg_',
-      },
+        name: 'passive_crit_dmg_'
+      }
     },
     skill_dmg_: {
       sheet: 'BeforeDawn',
@@ -6268,8 +6268,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'BeforeDawn',
         damageType1: 'skill',
-        name: 'skill_dmg_',
-      },
+        name: 'skill_dmg_'
+      }
     },
     ult_dmg_: {
       sheet: 'BeforeDawn',
@@ -6280,9 +6280,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'BeforeDawn',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   BeforeTheTutorialMissionStarts: {
     passive_eff_: {
@@ -6293,9 +6293,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'BeforeTheTutorialMissionStarts',
-        name: 'passive_eff_',
-      },
-    },
+        name: 'passive_eff_'
+      }
+    }
   },
   BelobogOfTheArchitects: {
     set2_def_: {
@@ -6306,8 +6306,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'BelobogOfTheArchitects',
-        name: 'set2_def_',
-      },
+        name: 'set2_def_'
+      }
     },
     set2_passive_def_: {
       sheet: 'BelobogOfTheArchitects',
@@ -6317,9 +6317,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'BelobogOfTheArchitects',
-        name: 'set2_passive_def_',
-      },
-    },
+        name: 'set2_passive_def_'
+      }
+    }
   },
   BlackSwan: {
     e6_dmg_: {
@@ -6330,8 +6330,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BlackSwan',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'BlackSwan',
@@ -6341,8 +6341,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'BlackSwan',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'BlackSwan',
@@ -6352,8 +6352,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'BlackSwan',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'BlackSwan',
@@ -6363,8 +6363,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'BlackSwan',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'BlackSwan',
@@ -6374,8 +6374,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'BlackSwan',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'BlackSwan',
@@ -6385,8 +6385,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'BlackSwan',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'BlackSwan',
@@ -6396,8 +6396,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'BlackSwan',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'BlackSwan',
@@ -6407,8 +6407,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'BlackSwan',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'BlackSwan',
@@ -6419,8 +6419,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'BlackSwan',
         elementalType: 'wind',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'BlackSwan',
@@ -6430,8 +6430,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'BlackSwan',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'BlackSwan',
@@ -6441,8 +6441,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'BlackSwan',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'BlackSwan',
@@ -6452,8 +6452,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'BlackSwan',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'BlackSwan',
@@ -6464,8 +6464,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'BlackSwan',
         elementalType: 'wind',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'BlackSwan',
@@ -6475,8 +6475,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'BlackSwan',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'BlackSwan',
@@ -6486,8 +6486,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'BlackSwan',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'BlackSwan',
@@ -6498,8 +6498,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'BlackSwan',
         elementalType: 'wind',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'BlackSwan',
@@ -6509,9 +6509,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BlackSwan',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Blade: {
     e6_dmg_: {
@@ -6522,8 +6522,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Blade',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Blade',
@@ -6533,8 +6533,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Blade',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Blade',
@@ -6544,8 +6544,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Blade',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Blade',
@@ -6555,8 +6555,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Blade',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Blade',
@@ -6566,8 +6566,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Blade',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Blade',
@@ -6577,8 +6577,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Blade',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Blade',
@@ -6588,8 +6588,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Blade',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Blade',
@@ -6599,8 +6599,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Blade',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Blade',
@@ -6610,8 +6610,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Blade',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Blade',
@@ -6621,8 +6621,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Blade',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Blade',
@@ -6632,8 +6632,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Blade',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Blade',
@@ -6643,8 +6643,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Blade',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Blade',
@@ -6654,8 +6654,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Blade',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Blade',
@@ -6665,8 +6665,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Blade',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Blade',
@@ -6676,8 +6676,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Blade',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Blade',
@@ -6687,8 +6687,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Blade',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Blade',
@@ -6698,9 +6698,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Blade',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   BoneCollectionsSereneDemesne: {
     enemy_defRed_: {
@@ -6711,8 +6711,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     set2_dmg_: {
       sheet: 'BoneCollectionsSereneDemesne',
@@ -6722,8 +6722,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_hp_: {
       sheet: 'BoneCollectionsSereneDemesne',
@@ -6733,8 +6733,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'set2_passive_hp_',
-      },
+        name: 'set2_passive_hp_'
+      }
     },
     team_dmg_: {
       sheet: 'BoneCollectionsSereneDemesne',
@@ -6744,9 +6744,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'BoneCollectionsSereneDemesne',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Boothill: {
     e6_dmg_: {
@@ -6757,8 +6757,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Boothill',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Boothill',
@@ -6768,8 +6768,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Boothill',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Boothill',
@@ -6779,8 +6779,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Boothill',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Boothill',
@@ -6790,8 +6790,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Boothill',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Boothill',
@@ -6801,8 +6801,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Boothill',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Boothill',
@@ -6812,8 +6812,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Boothill',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Boothill',
@@ -6823,8 +6823,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Boothill',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Boothill',
@@ -6834,8 +6834,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Boothill',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Boothill',
@@ -6845,8 +6845,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Boothill',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Boothill',
@@ -6856,8 +6856,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Boothill',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Boothill',
@@ -6867,8 +6867,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Boothill',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Boothill',
@@ -6878,8 +6878,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Boothill',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Boothill',
@@ -6889,8 +6889,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Boothill',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Boothill',
@@ -6900,8 +6900,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Boothill',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Boothill',
@@ -6911,8 +6911,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Boothill',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Boothill',
@@ -6922,8 +6922,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Boothill',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Boothill',
@@ -6933,9 +6933,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Boothill',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   BoundlessChoreo: {
     crit_dmg_: {
@@ -6946,8 +6946,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'BoundlessChoreo',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_crit_: {
       sheet: 'BoundlessChoreo',
@@ -6957,9 +6957,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'BoundlessChoreo',
-        name: 'passive_crit_',
-      },
-    },
+        name: 'passive_crit_'
+      }
+    }
   },
   BrighterThanTheSun: {
     atk_: {
@@ -6970,8 +6970,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'BrighterThanTheSun',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     enerRegen_: {
       sheet: 'BrighterThanTheSun',
@@ -6981,8 +6981,8 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'BrighterThanTheSun',
-        name: 'enerRegen_',
-      },
+        name: 'enerRegen_'
+      }
     },
     passive_crit_: {
       sheet: 'BrighterThanTheSun',
@@ -6992,9 +6992,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'BrighterThanTheSun',
-        name: 'passive_crit_',
-      },
-    },
+        name: 'passive_crit_'
+      }
+    }
   },
   BrokenKeel: {
     set2_crit_dmg_: {
@@ -7005,8 +7005,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'BrokenKeel',
-        name: 'set2_crit_dmg_',
-      },
+        name: 'set2_crit_dmg_'
+      }
     },
     set2_passive_eff_res_: {
       sheet: 'BrokenKeel',
@@ -7016,9 +7016,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'BrokenKeel',
-        name: 'set2_passive_eff_res_',
-      },
-    },
+        name: 'set2_passive_eff_res_'
+      }
+    }
   },
   Bronya: {
     e6_dmg_: {
@@ -7029,8 +7029,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Bronya',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Bronya',
@@ -7040,8 +7040,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Bronya',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Bronya',
@@ -7051,8 +7051,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Bronya',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Bronya',
@@ -7062,8 +7062,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Bronya',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Bronya',
@@ -7073,8 +7073,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Bronya',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Bronya',
@@ -7084,8 +7084,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Bronya',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Bronya',
@@ -7096,8 +7096,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Bronya',
         elementalType: 'wind',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Bronya',
@@ -7108,8 +7108,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Bronya',
         elementalType: 'wind',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Bronya',
@@ -7119,8 +7119,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Bronya',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Bronya',
@@ -7131,8 +7131,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Bronya',
         elementalType: 'wind',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Bronya',
@@ -7142,8 +7142,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Bronya',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Bronya',
@@ -7154,8 +7154,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Bronya',
         elementalType: 'wind',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Bronya',
@@ -7165,8 +7165,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Bronya',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Bronya',
@@ -7177,8 +7177,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Bronya',
         elementalType: 'wind',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Bronya',
@@ -7188,8 +7188,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Bronya',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Bronya',
@@ -7199,8 +7199,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Bronya',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Bronya',
@@ -7210,9 +7210,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Bronya',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   ButTheBattleIsntOver: {
     common_dmg_: {
@@ -7223,8 +7223,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ButTheBattleIsntOver',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_enerRegen_: {
       sheet: 'ButTheBattleIsntOver',
@@ -7234,9 +7234,9 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'ButTheBattleIsntOver',
-        name: 'passive_enerRegen_',
-      },
-    },
+        name: 'passive_enerRegen_'
+      }
+    }
   },
   CarveTheMoonWeaveTheClouds: {
     atk_: {
@@ -7247,8 +7247,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'CarveTheMoonWeaveTheClouds',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     crit_dmg_: {
       sheet: 'CarveTheMoonWeaveTheClouds',
@@ -7258,8 +7258,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'CarveTheMoonWeaveTheClouds',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     enerRegen_: {
       sheet: 'CarveTheMoonWeaveTheClouds',
@@ -7269,9 +7269,9 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'CarveTheMoonWeaveTheClouds',
-        name: 'enerRegen_',
-      },
-    },
+        name: 'enerRegen_'
+      }
+    }
   },
   CelestialDifferentiator: {
     set2_crit_rate_: {
@@ -7282,8 +7282,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'CelestialDifferentiator',
-        name: 'set2_crit_rate_',
-      },
+        name: 'set2_crit_rate_'
+      }
     },
     set2_passive_crit_dmg_: {
       sheet: 'CelestialDifferentiator',
@@ -7293,9 +7293,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'CelestialDifferentiator',
-        name: 'set2_passive_crit_dmg_',
-      },
-    },
+        name: 'set2_passive_crit_dmg_'
+      }
+    }
   },
   ChampionOfStreetwiseBoxing: {
     set2_passive_physical_dmg_: {
@@ -7307,8 +7307,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'ChampionOfStreetwiseBoxing',
         elementalType: 'physical',
-        name: 'set2_passive_physical_dmg_',
-      },
+        name: 'set2_passive_physical_dmg_'
+      }
     },
     set4_atk_: {
       sheet: 'ChampionOfStreetwiseBoxing',
@@ -7318,9 +7318,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'ChampionOfStreetwiseBoxing',
-        name: 'set4_atk_',
-      },
-    },
+        name: 'set4_atk_'
+      }
+    }
   },
   Chorus: {
     atk_: {
@@ -7331,9 +7331,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Chorus',
-        name: 'atk_',
-      },
-    },
+        name: 'atk_'
+      }
+    }
   },
   Clara: {
     e6_dmg_: {
@@ -7344,8 +7344,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Clara',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Clara',
@@ -7355,8 +7355,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Clara',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Clara',
@@ -7366,8 +7366,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Clara',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Clara',
@@ -7377,8 +7377,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Clara',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Clara',
@@ -7388,8 +7388,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Clara',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Clara',
@@ -7399,8 +7399,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Clara',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Clara',
@@ -7410,8 +7410,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Clara',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Clara',
@@ -7421,8 +7421,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Clara',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Clara',
@@ -7433,8 +7433,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Clara',
         elementalType: 'physical',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Clara',
@@ -7444,8 +7444,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Clara',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Clara',
@@ -7455,8 +7455,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Clara',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Clara',
@@ -7466,8 +7466,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Clara',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Clara',
@@ -7478,8 +7478,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Clara',
         elementalType: 'physical',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Clara',
@@ -7489,8 +7489,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Clara',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Clara',
@@ -7500,8 +7500,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Clara',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Clara',
@@ -7512,8 +7512,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Clara',
         elementalType: 'physical',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Clara',
@@ -7523,9 +7523,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Clara',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   CollapsingSky: {
     basic_dmg_: {
@@ -7537,8 +7537,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'CollapsingSky',
         damageType1: 'basic',
-        name: 'basic_dmg_',
-      },
+        name: 'basic_dmg_'
+      }
     },
     skill_dmg_: {
       sheet: 'CollapsingSky',
@@ -7549,9 +7549,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'CollapsingSky',
         damageType1: 'skill',
-        name: 'skill_dmg_',
-      },
-    },
+        name: 'skill_dmg_'
+      }
+    }
   },
   ConcertForTwo: {
     common_dmg_: {
@@ -7562,8 +7562,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ConcertForTwo',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_def_: {
       sheet: 'ConcertForTwo',
@@ -7573,9 +7573,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'ConcertForTwo',
-        name: 'passive_def_',
-      },
-    },
+        name: 'passive_def_'
+      }
+    }
   },
   Cornucopia: {
     heal_: {
@@ -7586,9 +7586,9 @@ export const buffs = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'Cornucopia',
-        name: 'heal_',
-      },
-    },
+        name: 'heal_'
+      }
+    }
   },
   CruisingInTheStellarSea: {
     atk_: {
@@ -7599,8 +7599,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'CruisingInTheStellarSea',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     crit_: {
       sheet: 'CruisingInTheStellarSea',
@@ -7610,8 +7610,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'CruisingInTheStellarSea',
-        name: 'crit_',
-      },
+        name: 'crit_'
+      }
     },
     passive_crit_: {
       sheet: 'CruisingInTheStellarSea',
@@ -7621,9 +7621,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'CruisingInTheStellarSea',
-        name: 'passive_crit_',
-      },
-    },
+        name: 'passive_crit_'
+      }
+    }
   },
   DanHeng: {
     e6_dmg_: {
@@ -7634,8 +7634,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanHeng',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'DanHeng',
@@ -7645,8 +7645,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'DanHeng',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'DanHeng',
@@ -7656,8 +7656,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'DanHeng',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'DanHeng',
@@ -7667,8 +7667,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'DanHeng',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'DanHeng',
@@ -7678,8 +7678,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'DanHeng',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'DanHeng',
@@ -7689,8 +7689,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'DanHeng',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'DanHeng',
@@ -7701,8 +7701,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHeng',
         elementalType: 'wind',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'DanHeng',
@@ -7713,8 +7713,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHeng',
         elementalType: 'wind',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'DanHeng',
@@ -7724,8 +7724,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DanHeng',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'DanHeng',
@@ -7736,8 +7736,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHeng',
         elementalType: 'wind',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'DanHeng',
@@ -7747,8 +7747,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'DanHeng',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'DanHeng',
@@ -7759,8 +7759,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHeng',
         elementalType: 'wind',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'DanHeng',
@@ -7770,8 +7770,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DanHeng',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'DanHeng',
@@ -7782,8 +7782,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHeng',
         elementalType: 'wind',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'DanHeng',
@@ -7793,8 +7793,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'DanHeng',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'DanHeng',
@@ -7804,8 +7804,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DanHeng',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'DanHeng',
@@ -7815,9 +7815,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanHeng',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   DanHengImbibitorLunae: {
     e6_dmg_: {
@@ -7828,8 +7828,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'DanHengImbibitorLunae',
@@ -7839,8 +7839,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'DanHengImbibitorLunae',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'DanHengImbibitorLunae',
@@ -7850,8 +7850,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'DanHengImbibitorLunae',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'DanHengImbibitorLunae',
@@ -7861,8 +7861,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'DanHengImbibitorLunae',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'DanHengImbibitorLunae',
@@ -7872,8 +7872,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'DanHengImbibitorLunae',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'DanHengImbibitorLunae',
@@ -7883,8 +7883,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'DanHengImbibitorLunae',
@@ -7895,8 +7895,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHengImbibitorLunae',
         elementalType: 'imaginary',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'DanHengImbibitorLunae',
@@ -7907,8 +7907,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHengImbibitorLunae',
         elementalType: 'imaginary',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'DanHengImbibitorLunae',
@@ -7918,8 +7918,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'DanHengImbibitorLunae',
@@ -7930,8 +7930,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHengImbibitorLunae',
         elementalType: 'imaginary',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'DanHengImbibitorLunae',
@@ -7941,8 +7941,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'DanHengImbibitorLunae',
@@ -7953,8 +7953,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHengImbibitorLunae',
         elementalType: 'imaginary',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'DanHengImbibitorLunae',
@@ -7964,8 +7964,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'DanHengImbibitorLunae',
@@ -7976,8 +7976,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanHengImbibitorLunae',
         elementalType: 'imaginary',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'DanHengImbibitorLunae',
@@ -7987,8 +7987,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'DanHengImbibitorLunae',
@@ -7998,8 +7998,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'DanHengImbibitorLunae',
@@ -8009,9 +8009,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DanHengImbibitorLunae',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   DanceAtSunset: {
     followUp_dmg_: {
@@ -8023,8 +8023,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DanceAtSunset',
         damageType1: 'followUp',
-        name: 'followUp_dmg_',
-      },
+        name: 'followUp_dmg_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'DanceAtSunset',
@@ -8034,9 +8034,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'DanceAtSunset',
-        name: 'passive_crit_dmg_',
-      },
-    },
+        name: 'passive_crit_dmg_'
+      }
+    }
   },
   DartingArrow: {
     atk_: {
@@ -8047,9 +8047,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DartingArrow',
-        name: 'atk_',
-      },
-    },
+        name: 'atk_'
+      }
+    }
   },
   DataBank: {
     ult_dmg_: {
@@ -8061,9 +8061,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DataBank',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   DayOneOfMyNewLife: {
     passive_def_: {
@@ -8074,9 +8074,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'DayOneOfMyNewLife',
-        name: 'passive_def_',
-      },
-    },
+        name: 'passive_def_'
+      }
+    }
   },
   DestinysThreadsForewoven: {
     common_dmg_: {
@@ -8087,8 +8087,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DestinysThreadsForewoven',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_eff_res_: {
       sheet: 'DestinysThreadsForewoven',
@@ -8098,9 +8098,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'DestinysThreadsForewoven',
-        name: 'passive_eff_res_',
-      },
-    },
+        name: 'passive_eff_res_'
+      }
+    }
   },
   DrRatio: {
     e6_dmg_: {
@@ -8111,8 +8111,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DrRatio',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'DrRatio',
@@ -8122,8 +8122,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'DrRatio',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'DrRatio',
@@ -8133,8 +8133,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'DrRatio',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'DrRatio',
@@ -8144,8 +8144,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'DrRatio',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'DrRatio',
@@ -8155,8 +8155,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'DrRatio',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'DrRatio',
@@ -8166,8 +8166,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'DrRatio',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'DrRatio',
@@ -8177,8 +8177,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DrRatio',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'DrRatio',
@@ -8188,8 +8188,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DrRatio',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'DrRatio',
@@ -8199,8 +8199,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'DrRatio',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'DrRatio',
@@ -8210,8 +8210,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DrRatio',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'DrRatio',
@@ -8221,8 +8221,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'DrRatio',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'DrRatio',
@@ -8232,8 +8232,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DrRatio',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'DrRatio',
@@ -8243,8 +8243,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'DrRatio',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'DrRatio',
@@ -8254,8 +8254,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'DrRatio',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'DrRatio',
@@ -8265,8 +8265,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'DrRatio',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'DrRatio',
@@ -8276,8 +8276,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'DrRatio',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'DrRatio',
@@ -8287,9 +8287,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'DrRatio',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   DreamsMontage: {
     passive_spd_: {
@@ -8300,9 +8300,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'DreamsMontage',
-        name: 'passive_spd_',
-      },
-    },
+        name: 'passive_spd_'
+      }
+    }
   },
   DreamvilleAdventure: {
     basic_dmg_: {
@@ -8314,8 +8314,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DreamvilleAdventure',
         damageType1: 'basic',
-        name: 'basic_dmg_',
-      },
+        name: 'basic_dmg_'
+      }
     },
     skill_dmg_: {
       sheet: 'DreamvilleAdventure',
@@ -8326,8 +8326,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DreamvilleAdventure',
         damageType1: 'skill',
-        name: 'skill_dmg_',
-      },
+        name: 'skill_dmg_'
+      }
     },
     ult_dmg_: {
       sheet: 'DreamvilleAdventure',
@@ -8338,9 +8338,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DreamvilleAdventure',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   DuranDynastyOfRunningWolves: {
     set2_crit_dmg_: {
@@ -8351,8 +8351,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
-        name: 'set2_crit_dmg_',
-      },
+        name: 'set2_crit_dmg_'
+      }
     },
     set2_followUp_dmg_: {
       sheet: 'DuranDynastyOfRunningWolves',
@@ -8363,9 +8363,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'DuranDynastyOfRunningWolves',
         damageType1: 'followUp',
-        name: 'set2_followUp_dmg_',
-      },
-    },
+        name: 'set2_followUp_dmg_'
+      }
+    }
   },
   EagleOfTwilightLine: {
     set2_passive_wind_dmg_: {
@@ -8377,9 +8377,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'EagleOfTwilightLine',
         elementalType: 'wind',
-        name: 'set2_passive_wind_dmg_',
-      },
-    },
+        name: 'set2_passive_wind_dmg_'
+      }
+    }
   },
   EarthlyEscapade: {
     crit_: {
@@ -8390,8 +8390,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'EarthlyEscapade',
-        name: 'crit_',
-      },
+        name: 'crit_'
+      }
     },
     crit_dmg_: {
       sheet: 'EarthlyEscapade',
@@ -8401,8 +8401,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'EarthlyEscapade',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'EarthlyEscapade',
@@ -8412,9 +8412,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'EarthlyEscapade',
-        name: 'passive_crit_dmg_',
-      },
-    },
+        name: 'passive_crit_dmg_'
+      }
+    }
   },
   EchoesOfTheCoffin: {
     passive_atk_: {
@@ -8425,8 +8425,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'EchoesOfTheCoffin',
-        name: 'passive_atk_',
-      },
+        name: 'passive_atk_'
+      }
     },
     spd: {
       sheet: 'EchoesOfTheCoffin',
@@ -8436,9 +8436,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'EchoesOfTheCoffin',
-        name: 'spd',
-      },
-    },
+        name: 'spd'
+      }
+    }
   },
   EternalCalculus: {
     atk_: {
@@ -8449,8 +8449,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'EternalCalculus',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     passive_atk_: {
       sheet: 'EternalCalculus',
@@ -8460,8 +8460,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'EternalCalculus',
-        name: 'passive_atk_',
-      },
+        name: 'passive_atk_'
+      }
     },
     spd_: {
       sheet: 'EternalCalculus',
@@ -8471,9 +8471,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'EternalCalculus',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   EyesOfThePrey: {
     dot_dmg_: {
@@ -8485,8 +8485,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'EyesOfThePrey',
         damageType1: 'dot',
-        name: 'dot_dmg_',
-      },
+        name: 'dot_dmg_'
+      }
     },
     passive_eff_: {
       sheet: 'EyesOfThePrey',
@@ -8496,9 +8496,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'EyesOfThePrey',
-        name: 'passive_eff_',
-      },
-    },
+        name: 'passive_eff_'
+      }
+    }
   },
   Feixiao: {
     e6_dmg_: {
@@ -8509,8 +8509,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Feixiao',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Feixiao',
@@ -8520,8 +8520,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Feixiao',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Feixiao',
@@ -8531,8 +8531,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Feixiao',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Feixiao',
@@ -8542,8 +8542,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Feixiao',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Feixiao',
@@ -8553,8 +8553,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Feixiao',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Feixiao',
@@ -8564,8 +8564,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Feixiao',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Feixiao',
@@ -8575,8 +8575,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Feixiao',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Feixiao',
@@ -8586,8 +8586,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Feixiao',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Feixiao',
@@ -8597,8 +8597,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Feixiao',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Feixiao',
@@ -8608,8 +8608,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Feixiao',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Feixiao',
@@ -8619,8 +8619,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Feixiao',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Feixiao',
@@ -8630,8 +8630,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Feixiao',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Feixiao',
@@ -8641,8 +8641,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Feixiao',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Feixiao',
@@ -8652,8 +8652,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Feixiao',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Feixiao',
@@ -8663,8 +8663,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Feixiao',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Feixiao',
@@ -8674,8 +8674,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Feixiao',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Feixiao',
@@ -8685,9 +8685,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Feixiao',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Fermata: {
     common_dmg_: {
@@ -8698,8 +8698,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Fermata',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_brEffect_: {
       sheet: 'Fermata',
@@ -8709,9 +8709,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Fermata',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   FinalVictor: {
     crit_dmg_: {
@@ -8722,8 +8722,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'FinalVictor',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'FinalVictor',
@@ -8733,9 +8733,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'FinalVictor',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   Firefly: {
     ba3_brEffect_: {
@@ -8746,8 +8746,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Firefly',
-        name: 'ba3_brEffect_',
-      },
+        name: 'ba3_brEffect_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Firefly',
@@ -8757,8 +8757,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Firefly',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Firefly',
@@ -8768,8 +8768,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Firefly',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Firefly',
@@ -8779,8 +8779,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Firefly',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Firefly',
@@ -8790,8 +8790,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Firefly',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     statBoost1: {
       sheet: 'Firefly',
@@ -8801,8 +8801,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Firefly',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Firefly',
@@ -8812,8 +8812,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Firefly',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Firefly',
@@ -8823,8 +8823,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Firefly',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Firefly',
@@ -8834,8 +8834,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Firefly',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Firefly',
@@ -8845,8 +8845,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Firefly',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Firefly',
@@ -8856,8 +8856,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Firefly',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Firefly',
@@ -8867,8 +8867,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Firefly',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Firefly',
@@ -8878,8 +8878,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Firefly',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Firefly',
@@ -8889,8 +8889,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Firefly',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Firefly',
@@ -8900,9 +8900,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Firefly',
-        name: 'statBoost9',
-      },
-    },
+        name: 'statBoost9'
+      }
+    }
   },
   FiresmithOfLavaForging: {
     set2_passive_fire_dmg_: {
@@ -8914,8 +8914,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'FiresmithOfLavaForging',
         elementalType: 'fire',
-        name: 'set2_passive_fire_dmg_',
-      },
+        name: 'set2_passive_fire_dmg_'
+      }
     },
     set4_fire_dmg_: {
       sheet: 'FiresmithOfLavaForging',
@@ -8926,8 +8926,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'FiresmithOfLavaForging',
         elementalType: 'fire',
-        name: 'set4_fire_dmg_',
-      },
+        name: 'set4_fire_dmg_'
+      }
     },
     set4_skill_dmg_: {
       sheet: 'FiresmithOfLavaForging',
@@ -8938,9 +8938,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'FiresmithOfLavaForging',
         damageType1: 'skill',
-        name: 'set4_skill_dmg_',
-      },
-    },
+        name: 'set4_skill_dmg_'
+      }
+    }
   },
   FirmamentFrontlineGlamoth: {
     set2_dmg_: {
@@ -8951,8 +8951,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FirmamentFrontlineGlamoth',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_atk_: {
       sheet: 'FirmamentFrontlineGlamoth',
@@ -8962,9 +8962,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'FirmamentFrontlineGlamoth',
-        name: 'set2_passive_atk_',
-      },
-    },
+        name: 'set2_passive_atk_'
+      }
+    }
   },
   FlameOfBloodBlazeMyPath: {
     hp_loss: {
@@ -8975,8 +8975,8 @@ export const buffs = {
         qt: 'formula',
         q: 'base',
         sheet: 'FlameOfBloodBlazeMyPath',
-        name: 'hp_loss',
-      },
+        name: 'hp_loss'
+      }
     },
     passive_hp_: {
       sheet: 'FlameOfBloodBlazeMyPath',
@@ -8986,8 +8986,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'FlameOfBloodBlazeMyPath',
-        name: 'passive_hp_',
-      },
+        name: 'passive_hp_'
+      }
     },
     passive_incHeal_: {
       sheet: 'FlameOfBloodBlazeMyPath',
@@ -8997,8 +8997,8 @@ export const buffs = {
         qt: 'premod',
         q: 'incHeal_',
         sheet: 'FlameOfBloodBlazeMyPath',
-        name: 'passive_incHeal_',
-      },
+        name: 'passive_incHeal_'
+      }
     },
     skill_dmg_: {
       sheet: 'FlameOfBloodBlazeMyPath',
@@ -9009,8 +9009,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'FlameOfBloodBlazeMyPath',
         damageType1: 'skill',
-        name: 'skill_dmg_',
-      },
+        name: 'skill_dmg_'
+      }
     },
     ult_dmg_: {
       sheet: 'FlameOfBloodBlazeMyPath',
@@ -9021,9 +9021,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'FlameOfBloodBlazeMyPath',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   FlamesAfar: {
     common_dmg_: {
@@ -9034,9 +9034,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FlamesAfar',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   FleetOfTheAgeless: {
     set2_atk_: {
@@ -9047,8 +9047,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'FleetOfTheAgeless',
-        name: 'set2_atk_',
-      },
+        name: 'set2_atk_'
+      }
     },
     set2_passive_hp_: {
       sheet: 'FleetOfTheAgeless',
@@ -9058,9 +9058,9 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'FleetOfTheAgeless',
-        name: 'set2_passive_hp_',
-      },
-    },
+        name: 'set2_passive_hp_'
+      }
+    }
   },
   FlowingNightglow: {
     atk_: {
@@ -9071,8 +9071,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'FlowingNightglow',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     common_dmg_: {
       sheet: 'FlowingNightglow',
@@ -9082,8 +9082,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FlowingNightglow',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     enerRegen_: {
       sheet: 'FlowingNightglow',
@@ -9093,9 +9093,9 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'FlowingNightglow',
-        name: 'enerRegen_',
-      },
-    },
+        name: 'enerRegen_'
+      }
+    }
   },
   ForTomorrowsJourney: {
     common_dmg_: {
@@ -9106,8 +9106,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ForTomorrowsJourney',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'ForTomorrowsJourney',
@@ -9117,9 +9117,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'ForTomorrowsJourney',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   ForgeOfTheKalpagniLantern: {
     set2_brEffect_: {
@@ -9130,8 +9130,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'ForgeOfTheKalpagniLantern',
-        name: 'set2_brEffect_',
-      },
+        name: 'set2_brEffect_'
+      }
     },
     set2_passive_spd_: {
       sheet: 'ForgeOfTheKalpagniLantern',
@@ -9141,9 +9141,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'ForgeOfTheKalpagniLantern',
-        name: 'set2_passive_spd_',
-      },
-    },
+        name: 'set2_passive_spd_'
+      }
+    }
   },
   FuXuan: {
     e6_dmg_: {
@@ -9154,8 +9154,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FuXuan',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'FuXuan',
@@ -9165,8 +9165,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'FuXuan',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'FuXuan',
@@ -9176,8 +9176,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'FuXuan',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'FuXuan',
@@ -9187,8 +9187,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'FuXuan',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'FuXuan',
@@ -9198,8 +9198,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'FuXuan',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'FuXuan',
@@ -9209,8 +9209,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'FuXuan',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'FuXuan',
@@ -9220,8 +9220,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'FuXuan',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'FuXuan',
@@ -9231,8 +9231,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'FuXuan',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'FuXuan',
@@ -9242,8 +9242,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'FuXuan',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'FuXuan',
@@ -9253,8 +9253,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'FuXuan',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'FuXuan',
@@ -9264,8 +9264,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'FuXuan',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'FuXuan',
@@ -9275,8 +9275,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'FuXuan',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'FuXuan',
@@ -9286,8 +9286,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'FuXuan',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'FuXuan',
@@ -9297,8 +9297,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'FuXuan',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'FuXuan',
@@ -9308,8 +9308,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'FuXuan',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'FuXuan',
@@ -9319,8 +9319,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'FuXuan',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'FuXuan',
@@ -9330,9 +9330,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'FuXuan',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Fugue: {
     e6_dmg_: {
@@ -9343,8 +9343,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Fugue',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Fugue',
@@ -9354,8 +9354,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Fugue',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Fugue',
@@ -9365,8 +9365,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Fugue',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Fugue',
@@ -9376,8 +9376,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Fugue',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Fugue',
@@ -9387,8 +9387,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Fugue',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Fugue',
@@ -9398,8 +9398,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Fugue',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Fugue',
@@ -9409,8 +9409,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Fugue',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Fugue',
@@ -9420,8 +9420,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Fugue',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Fugue',
@@ -9431,8 +9431,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Fugue',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Fugue',
@@ -9442,8 +9442,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Fugue',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Fugue',
@@ -9453,8 +9453,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Fugue',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Fugue',
@@ -9464,8 +9464,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Fugue',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Fugue',
@@ -9475,8 +9475,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Fugue',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Fugue',
@@ -9486,8 +9486,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Fugue',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Fugue',
@@ -9497,8 +9497,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Fugue',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Fugue',
@@ -9508,8 +9508,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Fugue',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Fugue',
@@ -9519,9 +9519,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Fugue',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Gallagher: {
     e6_dmg_: {
@@ -9532,8 +9532,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Gallagher',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Gallagher',
@@ -9543,8 +9543,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Gallagher',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Gallagher',
@@ -9554,8 +9554,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Gallagher',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Gallagher',
@@ -9565,8 +9565,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Gallagher',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Gallagher',
@@ -9576,8 +9576,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Gallagher',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Gallagher',
@@ -9587,8 +9587,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Gallagher',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Gallagher',
@@ -9598,8 +9598,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gallagher',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Gallagher',
@@ -9609,8 +9609,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Gallagher',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Gallagher',
@@ -9620,8 +9620,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Gallagher',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Gallagher',
@@ -9631,8 +9631,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gallagher',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Gallagher',
@@ -9642,8 +9642,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Gallagher',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Gallagher',
@@ -9653,8 +9653,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gallagher',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Gallagher',
@@ -9664,8 +9664,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Gallagher',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Gallagher',
@@ -9675,8 +9675,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gallagher',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Gallagher',
@@ -9686,8 +9686,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Gallagher',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Gallagher',
@@ -9697,8 +9697,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gallagher',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Gallagher',
@@ -9708,9 +9708,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Gallagher',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   GeniusOfBrilliantStars: {
     set2_passive_quantum_dmg_: {
@@ -9722,8 +9722,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'GeniusOfBrilliantStars',
         elementalType: 'quantum',
-        name: 'set2_passive_quantum_dmg_',
-      },
+        name: 'set2_passive_quantum_dmg_'
+      }
     },
     set4_addDefIgn_: {
       sheet: 'GeniusOfBrilliantStars',
@@ -9733,8 +9733,8 @@ export const buffs = {
         qt: 'premod',
         q: 'defIgn_',
         sheet: 'GeniusOfBrilliantStars',
-        name: 'set4_addDefIgn_',
-      },
+        name: 'set4_addDefIgn_'
+      }
     },
     set4_defIgn_: {
       sheet: 'GeniusOfBrilliantStars',
@@ -9744,9 +9744,9 @@ export const buffs = {
         qt: 'premod',
         q: 'defIgn_',
         sheet: 'GeniusOfBrilliantStars',
-        name: 'set4_defIgn_',
-      },
-    },
+        name: 'set4_defIgn_'
+      }
+    }
   },
   GeniusesGreetings: {
     basic_dmg_: {
@@ -9758,8 +9758,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'GeniusesGreetings',
         damageType1: 'basic',
-        name: 'basic_dmg_',
-      },
+        name: 'basic_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'GeniusesGreetings',
@@ -9769,9 +9769,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'GeniusesGreetings',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   GeniusesRepose: {
     crit_dmg_: {
@@ -9782,8 +9782,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'GeniusesRepose',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'GeniusesRepose',
@@ -9793,9 +9793,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'GeniusesRepose',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   Gepard: {
     e6_dmg_: {
@@ -9806,8 +9806,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Gepard',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Gepard',
@@ -9817,8 +9817,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Gepard',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Gepard',
@@ -9828,8 +9828,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Gepard',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Gepard',
@@ -9839,8 +9839,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Gepard',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Gepard',
@@ -9850,8 +9850,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Gepard',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Gepard',
@@ -9861,8 +9861,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Gepard',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Gepard',
@@ -9873,8 +9873,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Gepard',
         elementalType: 'ice',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Gepard',
@@ -9885,8 +9885,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Gepard',
         elementalType: 'ice',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Gepard',
@@ -9896,8 +9896,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gepard',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Gepard',
@@ -9908,8 +9908,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Gepard',
         elementalType: 'ice',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Gepard',
@@ -9919,8 +9919,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Gepard',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Gepard',
@@ -9931,8 +9931,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Gepard',
         elementalType: 'ice',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Gepard',
@@ -9942,8 +9942,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gepard',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Gepard',
@@ -9954,8 +9954,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Gepard',
         elementalType: 'ice',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Gepard',
@@ -9965,8 +9965,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Gepard',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Gepard',
@@ -9976,8 +9976,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Gepard',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Gepard',
@@ -9987,9 +9987,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Gepard',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   GiantTreeOfRaptBrooding: {
     enemy_defRed_: {
@@ -10000,8 +10000,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'GiantTreeOfRaptBrooding',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     set2_dmg_: {
       sheet: 'GiantTreeOfRaptBrooding',
@@ -10011,8 +10011,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GiantTreeOfRaptBrooding',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_spd_: {
       sheet: 'GiantTreeOfRaptBrooding',
@@ -10022,8 +10022,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'GiantTreeOfRaptBrooding',
-        name: 'set2_passive_spd_',
-      },
+        name: 'set2_passive_spd_'
+      }
     },
     team_dmg_: {
       sheet: 'GiantTreeOfRaptBrooding',
@@ -10033,9 +10033,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GiantTreeOfRaptBrooding',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   GoodNightAndSleepWell: {
     common_dmg_: {
@@ -10046,9 +10046,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'GoodNightAndSleepWell',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   Guinaifen: {
     e6_dmg_: {
@@ -10059,8 +10059,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Guinaifen',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Guinaifen',
@@ -10070,8 +10070,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Guinaifen',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Guinaifen',
@@ -10081,8 +10081,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Guinaifen',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Guinaifen',
@@ -10092,8 +10092,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Guinaifen',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Guinaifen',
@@ -10103,8 +10103,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Guinaifen',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Guinaifen',
@@ -10114,8 +10114,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Guinaifen',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Guinaifen',
@@ -10126,8 +10126,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Guinaifen',
         elementalType: 'fire',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Guinaifen',
@@ -10138,8 +10138,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Guinaifen',
         elementalType: 'fire',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Guinaifen',
@@ -10149,8 +10149,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Guinaifen',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Guinaifen',
@@ -10161,8 +10161,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Guinaifen',
         elementalType: 'fire',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Guinaifen',
@@ -10172,8 +10172,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Guinaifen',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Guinaifen',
@@ -10184,8 +10184,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Guinaifen',
         elementalType: 'fire',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Guinaifen',
@@ -10195,8 +10195,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Guinaifen',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Guinaifen',
@@ -10207,8 +10207,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Guinaifen',
         elementalType: 'fire',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Guinaifen',
@@ -10218,8 +10218,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Guinaifen',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Guinaifen',
@@ -10229,8 +10229,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Guinaifen',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Guinaifen',
@@ -10240,9 +10240,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Guinaifen',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Hanya: {
     e6_dmg_: {
@@ -10253,8 +10253,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Hanya',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Hanya',
@@ -10264,8 +10264,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Hanya',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Hanya',
@@ -10275,8 +10275,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Hanya',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Hanya',
@@ -10286,8 +10286,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Hanya',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Hanya',
@@ -10297,8 +10297,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Hanya',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Hanya',
@@ -10308,8 +10308,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Hanya',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Hanya',
@@ -10319,8 +10319,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hanya',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Hanya',
@@ -10330,8 +10330,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hanya',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Hanya',
@@ -10341,8 +10341,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Hanya',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Hanya',
@@ -10352,8 +10352,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hanya',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Hanya',
@@ -10363,8 +10363,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Hanya',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Hanya',
@@ -10374,8 +10374,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hanya',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Hanya',
@@ -10385,8 +10385,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Hanya',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Hanya',
@@ -10396,8 +10396,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hanya',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Hanya',
@@ -10407,8 +10407,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Hanya',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Hanya',
@@ -10418,8 +10418,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Hanya',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Hanya',
@@ -10429,9 +10429,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Hanya',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   HeroOfTriumphantSong: {
     set2_passive_atk_: {
@@ -10442,8 +10442,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'HeroOfTriumphantSong',
-        name: 'set2_passive_atk_',
-      },
+        name: 'set2_passive_atk_'
+      }
     },
     set4_ult_dmg_: {
       sheet: 'HeroOfTriumphantSong',
@@ -10454,9 +10454,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'HeroOfTriumphantSong',
         damageType1: 'ult',
-        name: 'set4_ult_dmg_',
-      },
-    },
+        name: 'set4_ult_dmg_'
+      }
+    }
   },
   Herta: {
     e6_dmg_: {
@@ -10467,8 +10467,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Herta',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Herta',
@@ -10478,8 +10478,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Herta',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Herta',
@@ -10489,8 +10489,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Herta',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Herta',
@@ -10500,8 +10500,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Herta',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Herta',
@@ -10511,8 +10511,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Herta',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Herta',
@@ -10522,8 +10522,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Herta',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Herta',
@@ -10534,8 +10534,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Herta',
         elementalType: 'ice',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Herta',
@@ -10546,8 +10546,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Herta',
         elementalType: 'ice',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Herta',
@@ -10557,8 +10557,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Herta',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Herta',
@@ -10569,8 +10569,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Herta',
         elementalType: 'ice',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Herta',
@@ -10580,8 +10580,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Herta',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Herta',
@@ -10592,8 +10592,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Herta',
         elementalType: 'ice',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Herta',
@@ -10603,8 +10603,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Herta',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Herta',
@@ -10615,8 +10615,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Herta',
         elementalType: 'ice',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Herta',
@@ -10626,8 +10626,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Herta',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Herta',
@@ -10637,8 +10637,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Herta',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Herta',
@@ -10648,9 +10648,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Herta',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   HeyOverHere: {
     heal_: {
@@ -10661,8 +10661,8 @@ export const buffs = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'HeyOverHere',
-        name: 'heal_',
-      },
+        name: 'heal_'
+      }
     },
     passive_hp_: {
       sheet: 'HeyOverHere',
@@ -10672,9 +10672,9 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'HeyOverHere',
-        name: 'passive_hp_',
-      },
-    },
+        name: 'passive_hp_'
+      }
+    }
   },
   Himeko: {
     e6_dmg_: {
@@ -10685,8 +10685,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Himeko',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Himeko',
@@ -10696,8 +10696,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Himeko',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Himeko',
@@ -10707,8 +10707,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Himeko',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Himeko',
@@ -10718,8 +10718,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Himeko',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Himeko',
@@ -10729,8 +10729,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Himeko',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Himeko',
@@ -10740,8 +10740,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Himeko',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Himeko',
@@ -10752,8 +10752,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Himeko',
         elementalType: 'fire',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Himeko',
@@ -10764,8 +10764,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Himeko',
         elementalType: 'fire',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Himeko',
@@ -10775,8 +10775,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Himeko',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Himeko',
@@ -10787,8 +10787,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Himeko',
         elementalType: 'fire',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Himeko',
@@ -10798,8 +10798,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Himeko',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Himeko',
@@ -10810,8 +10810,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Himeko',
         elementalType: 'fire',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Himeko',
@@ -10821,8 +10821,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Himeko',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Himeko',
@@ -10833,8 +10833,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Himeko',
         elementalType: 'fire',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Himeko',
@@ -10844,8 +10844,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Himeko',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Himeko',
@@ -10855,8 +10855,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Himeko',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Himeko',
@@ -10866,9 +10866,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Himeko',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Hook: {
     e6_dmg_: {
@@ -10879,8 +10879,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Hook',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Hook',
@@ -10890,8 +10890,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Hook',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Hook',
@@ -10901,8 +10901,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Hook',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Hook',
@@ -10912,8 +10912,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Hook',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Hook',
@@ -10923,8 +10923,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Hook',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Hook',
@@ -10934,8 +10934,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Hook',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Hook',
@@ -10945,8 +10945,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hook',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Hook',
@@ -10956,8 +10956,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hook',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Hook',
@@ -10967,8 +10967,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Hook',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Hook',
@@ -10978,8 +10978,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hook',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Hook',
@@ -10989,8 +10989,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Hook',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Hook',
@@ -11000,8 +11000,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hook',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Hook',
@@ -11011,8 +11011,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Hook',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Hook',
@@ -11022,8 +11022,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Hook',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Hook',
@@ -11033,8 +11033,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Hook',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Hook',
@@ -11044,8 +11044,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Hook',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Hook',
@@ -11055,9 +11055,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Hook',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   HunterOfGlacialForest: {
     set2_passive_ice_dmg_: {
@@ -11069,8 +11069,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'HunterOfGlacialForest',
         elementalType: 'ice',
-        name: 'set2_passive_ice_dmg_',
-      },
+        name: 'set2_passive_ice_dmg_'
+      }
     },
     set4_crit_dmg_: {
       sheet: 'HunterOfGlacialForest',
@@ -11080,9 +11080,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'HunterOfGlacialForest',
-        name: 'set4_crit_dmg_',
-      },
-    },
+        name: 'set4_crit_dmg_'
+      }
+    }
   },
   Huohuo: {
     e6_dmg_: {
@@ -11093,8 +11093,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Huohuo',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Huohuo',
@@ -11104,8 +11104,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Huohuo',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Huohuo',
@@ -11115,8 +11115,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Huohuo',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Huohuo',
@@ -11126,8 +11126,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Huohuo',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Huohuo',
@@ -11137,8 +11137,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Huohuo',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Huohuo',
@@ -11148,8 +11148,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Huohuo',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Huohuo',
@@ -11159,8 +11159,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Huohuo',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Huohuo',
@@ -11170,8 +11170,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Huohuo',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Huohuo',
@@ -11181,8 +11181,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Huohuo',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Huohuo',
@@ -11192,8 +11192,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Huohuo',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Huohuo',
@@ -11203,8 +11203,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Huohuo',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Huohuo',
@@ -11214,8 +11214,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Huohuo',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Huohuo',
@@ -11225,8 +11225,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Huohuo',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Huohuo',
@@ -11236,8 +11236,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Huohuo',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Huohuo',
@@ -11247,8 +11247,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Huohuo',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Huohuo',
@@ -11258,8 +11258,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Huohuo',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Huohuo',
@@ -11269,9 +11269,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Huohuo',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   IShallBeMyOwnSword: {
     common_dmg_: {
@@ -11282,8 +11282,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IShallBeMyOwnSword',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     defIgn_: {
       sheet: 'IShallBeMyOwnSword',
@@ -11293,8 +11293,8 @@ export const buffs = {
         qt: 'premod',
         q: 'defIgn_',
         sheet: 'IShallBeMyOwnSword',
-        name: 'defIgn_',
-      },
+        name: 'defIgn_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'IShallBeMyOwnSword',
@@ -11304,9 +11304,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'IShallBeMyOwnSword',
-        name: 'passive_crit_dmg_',
-      },
-    },
+        name: 'passive_crit_dmg_'
+      }
+    }
   },
   IVentureForthToHunt: {
     passive_crit_: {
@@ -11317,8 +11317,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'IVentureForthToHunt',
-        name: 'passive_crit_',
-      },
+        name: 'passive_crit_'
+      }
     },
     ult_defIgn_: {
       sheet: 'IVentureForthToHunt',
@@ -11329,9 +11329,9 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'IVentureForthToHunt',
         damageType1: 'ult',
-        name: 'ult_defIgn_',
-      },
-    },
+        name: 'ult_defIgn_'
+      }
+    }
   },
   IfTimeWereAFlower: {
     crit_dmg_: {
@@ -11342,8 +11342,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'IfTimeWereAFlower',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'IfTimeWereAFlower',
@@ -11353,9 +11353,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'IfTimeWereAFlower',
-        name: 'passive_crit_dmg_',
-      },
-    },
+        name: 'passive_crit_dmg_'
+      }
+    }
   },
   InTheNameOfTheWorld: {
     atk_: {
@@ -11367,8 +11367,8 @@ export const buffs = {
         q: 'atk_',
         sheet: 'InTheNameOfTheWorld',
         damageType1: 'skill',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     common_dmg_: {
       sheet: 'InTheNameOfTheWorld',
@@ -11378,8 +11378,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'InTheNameOfTheWorld',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     eff_: {
       sheet: 'InTheNameOfTheWorld',
@@ -11390,9 +11390,9 @@ export const buffs = {
         q: 'eff_',
         sheet: 'InTheNameOfTheWorld',
         damageType1: 'skill',
-        name: 'eff_',
-      },
-    },
+        name: 'eff_'
+      }
+    }
   },
   InTheNight: {
     basic_dmg_: {
@@ -11404,8 +11404,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'InTheNight',
         damageType1: 'basic',
-        name: 'basic_dmg_',
-      },
+        name: 'basic_dmg_'
+      }
     },
     passive_crit_: {
       sheet: 'InTheNight',
@@ -11415,8 +11415,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'InTheNight',
-        name: 'passive_crit_',
-      },
+        name: 'passive_crit_'
+      }
     },
     skill_dmg_: {
       sheet: 'InTheNight',
@@ -11427,8 +11427,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'InTheNight',
         damageType1: 'skill',
-        name: 'skill_dmg_',
-      },
+        name: 'skill_dmg_'
+      }
     },
     ult_crit_dmg_: {
       sheet: 'InTheNight',
@@ -11439,9 +11439,9 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'InTheNight',
         damageType1: 'ult',
-        name: 'ult_crit_dmg_',
-      },
-    },
+        name: 'ult_crit_dmg_'
+      }
+    }
   },
   IncessantRain: {
     common_dmg_: {
@@ -11452,8 +11452,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'IncessantRain',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     crit_: {
       sheet: 'IncessantRain',
@@ -11463,8 +11463,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'IncessantRain',
-        name: 'crit_',
-      },
+        name: 'crit_'
+      }
     },
     passive_eff_: {
       sheet: 'IncessantRain',
@@ -11474,9 +11474,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'IncessantRain',
-        name: 'passive_eff_',
-      },
-    },
+        name: 'passive_eff_'
+      }
+    }
   },
   IndeliblePromise: {
     crit_: {
@@ -11487,8 +11487,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'IndeliblePromise',
-        name: 'crit_',
-      },
+        name: 'crit_'
+      }
     },
     passive_brEffect_: {
       sheet: 'IndeliblePromise',
@@ -11498,9 +11498,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'IndeliblePromise',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   InertSalsotto: {
     set2_followUp_dmg_: {
@@ -11512,8 +11512,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'InertSalsotto',
         damageType1: 'followUp',
-        name: 'set2_followUp_dmg_',
-      },
+        name: 'set2_followUp_dmg_'
+      }
     },
     set2_passive_crit_: {
       sheet: 'InertSalsotto',
@@ -11523,8 +11523,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'InertSalsotto',
-        name: 'set2_passive_crit_',
-      },
+        name: 'set2_passive_crit_'
+      }
     },
     set2_ult_dmg_: {
       sheet: 'InertSalsotto',
@@ -11535,9 +11535,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'InertSalsotto',
         damageType1: 'ult',
-        name: 'set2_ult_dmg_',
-      },
-    },
+        name: 'set2_ult_dmg_'
+      }
+    }
   },
   InherentlyUnjustDestiny: {
     common_dmg_: {
@@ -11548,8 +11548,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'InherentlyUnjustDestiny',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     crit_dmg_: {
       sheet: 'InherentlyUnjustDestiny',
@@ -11559,8 +11559,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'InherentlyUnjustDestiny',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_def_: {
       sheet: 'InherentlyUnjustDestiny',
@@ -11570,9 +11570,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'InherentlyUnjustDestiny',
-        name: 'passive_def_',
-      },
-    },
+        name: 'passive_def_'
+      }
+    }
   },
   IntoTheUnreachableVeil: {
     passive_crit_: {
@@ -11583,8 +11583,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'IntoTheUnreachableVeil',
-        name: 'passive_crit_',
-      },
+        name: 'passive_crit_'
+      }
     },
     skill_dmg_: {
       sheet: 'IntoTheUnreachableVeil',
@@ -11595,8 +11595,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'IntoTheUnreachableVeil',
         damageType1: 'skill',
-        name: 'skill_dmg_',
-      },
+        name: 'skill_dmg_'
+      }
     },
     ult_dmg_: {
       sheet: 'IntoTheUnreachableVeil',
@@ -11607,9 +11607,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'IntoTheUnreachableVeil',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   IronCavalryAgainstTheScourge: {
     set2_passive_brEffect_: {
@@ -11620,8 +11620,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'IronCavalryAgainstTheScourge',
-        name: 'set2_passive_brEffect_',
-      },
+        name: 'set2_passive_brEffect_'
+      }
     },
     set4_break_defIgn_: {
       sheet: 'IronCavalryAgainstTheScourge',
@@ -11632,8 +11632,8 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'IronCavalryAgainstTheScourge',
         damageType1: 'break',
-        name: 'set4_break_defIgn_',
-      },
+        name: 'set4_break_defIgn_'
+      }
     },
     set4_superBreak_defIgn_: {
       sheet: 'IronCavalryAgainstTheScourge',
@@ -11644,9 +11644,9 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'IronCavalryAgainstTheScourge',
         damageType1: 'break',
-        name: 'set4_superBreak_defIgn_',
-      },
-    },
+        name: 'set4_superBreak_defIgn_'
+      }
+    }
   },
   ItsShowtime: {
     atk_: {
@@ -11657,8 +11657,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'ItsShowtime',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     common_dmg_: {
       sheet: 'ItsShowtime',
@@ -11668,9 +11668,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ItsShowtime',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   IzumoGenseiAndTakamaDivineRealm: {
     set2_crit_: {
@@ -11681,8 +11681,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'set2_crit_',
-      },
+        name: 'set2_crit_'
+      }
     },
     set2_passive_atk_: {
       sheet: 'IzumoGenseiAndTakamaDivineRealm',
@@ -11692,9 +11692,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'IzumoGenseiAndTakamaDivineRealm',
-        name: 'set2_passive_atk_',
-      },
-    },
+        name: 'set2_passive_atk_'
+      }
+    }
   },
   Jade: {
     e6_dmg_: {
@@ -11705,8 +11705,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jade',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Jade',
@@ -11716,8 +11716,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Jade',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Jade',
@@ -11727,8 +11727,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Jade',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'Jade',
@@ -11738,8 +11738,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Jade',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'Jade',
@@ -11749,8 +11749,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Jade',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Jade',
@@ -11760,8 +11760,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Jade',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Jade',
@@ -11772,8 +11772,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jade',
         elementalType: 'quantum',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Jade',
@@ -11784,8 +11784,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jade',
         elementalType: 'quantum',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Jade',
@@ -11795,8 +11795,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Jade',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Jade',
@@ -11807,8 +11807,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jade',
         elementalType: 'quantum',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Jade',
@@ -11818,8 +11818,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Jade',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Jade',
@@ -11830,8 +11830,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jade',
         elementalType: 'quantum',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Jade',
@@ -11841,8 +11841,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Jade',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Jade',
@@ -11853,8 +11853,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jade',
         elementalType: 'quantum',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Jade',
@@ -11864,8 +11864,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Jade',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Jade',
@@ -11875,8 +11875,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Jade',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Jade',
@@ -11886,9 +11886,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jade',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Jiaoqiu: {
     e6_dmg_: {
@@ -11899,8 +11899,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jiaoqiu',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Jiaoqiu',
@@ -11910,8 +11910,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Jiaoqiu',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Jiaoqiu',
@@ -11921,8 +11921,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Jiaoqiu',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Jiaoqiu',
@@ -11932,8 +11932,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Jiaoqiu',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Jiaoqiu',
@@ -11943,8 +11943,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Jiaoqiu',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Jiaoqiu',
@@ -11954,8 +11954,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Jiaoqiu',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Jiaoqiu',
@@ -11965,8 +11965,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Jiaoqiu',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Jiaoqiu',
@@ -11976,8 +11976,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Jiaoqiu',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Jiaoqiu',
@@ -11988,8 +11988,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jiaoqiu',
         elementalType: 'fire',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Jiaoqiu',
@@ -11999,8 +11999,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Jiaoqiu',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Jiaoqiu',
@@ -12010,8 +12010,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Jiaoqiu',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Jiaoqiu',
@@ -12021,8 +12021,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Jiaoqiu',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Jiaoqiu',
@@ -12033,8 +12033,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jiaoqiu',
         elementalType: 'fire',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Jiaoqiu',
@@ -12044,8 +12044,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Jiaoqiu',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Jiaoqiu',
@@ -12055,8 +12055,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Jiaoqiu',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Jiaoqiu',
@@ -12067,8 +12067,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Jiaoqiu',
         elementalType: 'fire',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Jiaoqiu',
@@ -12078,9 +12078,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jiaoqiu',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   JingYuan: {
     e6_dmg_: {
@@ -12091,8 +12091,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'JingYuan',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'JingYuan',
@@ -12102,8 +12102,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'JingYuan',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'JingYuan',
@@ -12113,8 +12113,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'JingYuan',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'JingYuan',
@@ -12124,8 +12124,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'JingYuan',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'JingYuan',
@@ -12135,8 +12135,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'JingYuan',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'JingYuan',
@@ -12146,8 +12146,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'JingYuan',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'JingYuan',
@@ -12157,8 +12157,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'JingYuan',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'JingYuan',
@@ -12168,8 +12168,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'JingYuan',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'JingYuan',
@@ -12179,8 +12179,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'JingYuan',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'JingYuan',
@@ -12190,8 +12190,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'JingYuan',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'JingYuan',
@@ -12201,8 +12201,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'JingYuan',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'JingYuan',
@@ -12212,8 +12212,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'JingYuan',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'JingYuan',
@@ -12223,8 +12223,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'JingYuan',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'JingYuan',
@@ -12234,8 +12234,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'JingYuan',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'JingYuan',
@@ -12245,8 +12245,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'JingYuan',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'JingYuan',
@@ -12256,8 +12256,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'JingYuan',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'JingYuan',
@@ -12267,9 +12267,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'JingYuan',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Jingliu: {
     e6_dmg_: {
@@ -12280,8 +12280,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jingliu',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Jingliu',
@@ -12291,8 +12291,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Jingliu',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Jingliu',
@@ -12302,8 +12302,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Jingliu',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Jingliu',
@@ -12313,8 +12313,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Jingliu',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Jingliu',
@@ -12324,8 +12324,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Jingliu',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Jingliu',
@@ -12335,8 +12335,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Jingliu',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Jingliu',
@@ -12346,8 +12346,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Jingliu',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Jingliu',
@@ -12357,8 +12357,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Jingliu',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Jingliu',
@@ -12368,8 +12368,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Jingliu',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Jingliu',
@@ -12379,8 +12379,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Jingliu',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Jingliu',
@@ -12390,8 +12390,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Jingliu',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Jingliu',
@@ -12401,8 +12401,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Jingliu',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Jingliu',
@@ -12412,8 +12412,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Jingliu',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Jingliu',
@@ -12423,8 +12423,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Jingliu',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Jingliu',
@@ -12434,8 +12434,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Jingliu',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Jingliu',
@@ -12445,8 +12445,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Jingliu',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Jingliu',
@@ -12456,9 +12456,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Jingliu',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Kafka: {
     e6_dmg_: {
@@ -12469,8 +12469,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Kafka',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Kafka',
@@ -12480,8 +12480,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Kafka',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Kafka',
@@ -12491,8 +12491,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Kafka',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Kafka',
@@ -12502,8 +12502,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Kafka',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Kafka',
@@ -12513,8 +12513,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Kafka',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Kafka',
@@ -12524,8 +12524,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Kafka',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Kafka',
@@ -12535,8 +12535,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Kafka',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Kafka',
@@ -12546,8 +12546,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Kafka',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Kafka',
@@ -12557,8 +12557,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Kafka',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Kafka',
@@ -12568,8 +12568,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Kafka',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Kafka',
@@ -12579,8 +12579,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Kafka',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Kafka',
@@ -12590,8 +12590,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Kafka',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Kafka',
@@ -12601,8 +12601,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Kafka',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Kafka',
@@ -12612,8 +12612,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Kafka',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Kafka',
@@ -12623,8 +12623,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Kafka',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Kafka',
@@ -12634,8 +12634,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Kafka',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Kafka',
@@ -12645,9 +12645,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Kafka',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   KnightOfPurityPalace: {
     set2_passive_def_: {
@@ -12658,9 +12658,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'KnightOfPurityPalace',
-        name: 'set2_passive_def_',
-      },
-    },
+        name: 'set2_passive_def_'
+      }
+    }
   },
   Lingsha: {
     e6_dmg_: {
@@ -12671,8 +12671,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Lingsha',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Lingsha',
@@ -12682,8 +12682,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Lingsha',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Lingsha',
@@ -12693,8 +12693,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Lingsha',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Lingsha',
@@ -12704,8 +12704,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Lingsha',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Lingsha',
@@ -12715,8 +12715,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Lingsha',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Lingsha',
@@ -12726,8 +12726,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Lingsha',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Lingsha',
@@ -12737,8 +12737,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Lingsha',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Lingsha',
@@ -12748,8 +12748,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Lingsha',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Lingsha',
@@ -12759,8 +12759,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lingsha',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Lingsha',
@@ -12770,8 +12770,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Lingsha',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Lingsha',
@@ -12781,8 +12781,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Lingsha',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Lingsha',
@@ -12792,8 +12792,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Lingsha',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Lingsha',
@@ -12803,8 +12803,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lingsha',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Lingsha',
@@ -12814,8 +12814,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Lingsha',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Lingsha',
@@ -12825,8 +12825,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Lingsha',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Lingsha',
@@ -12836,8 +12836,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lingsha',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Lingsha',
@@ -12847,9 +12847,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Lingsha',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   LongRoadLeadsHome: {
     break_dmg_: {
@@ -12861,8 +12861,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'LongRoadLeadsHome',
         damageType1: 'break',
-        name: 'break_dmg_',
-      },
+        name: 'break_dmg_'
+      }
     },
     passive_brEffect_: {
       sheet: 'LongRoadLeadsHome',
@@ -12872,9 +12872,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'LongRoadLeadsHome',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   LongevousDisciple: {
     set2_passive_hp_: {
@@ -12885,8 +12885,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'LongevousDisciple',
-        name: 'set2_passive_hp_',
-      },
+        name: 'set2_passive_hp_'
+      }
     },
     set4_crit_: {
       sheet: 'LongevousDisciple',
@@ -12896,9 +12896,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'LongevousDisciple',
-        name: 'set4_crit_',
-      },
-    },
+        name: 'set4_crit_'
+      }
+    }
   },
   Loop: {
     common_dmg_: {
@@ -12909,9 +12909,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Loop',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   Luka: {
     e6_dmg_: {
@@ -12922,8 +12922,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Luka',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Luka',
@@ -12933,8 +12933,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Luka',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Luka',
@@ -12944,8 +12944,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Luka',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'Luka',
@@ -12955,8 +12955,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Luka',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'Luka',
@@ -12966,8 +12966,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Luka',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Luka',
@@ -12977,8 +12977,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Luka',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Luka',
@@ -12988,8 +12988,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luka',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Luka',
@@ -12999,8 +12999,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luka',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Luka',
@@ -13010,8 +13010,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Luka',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Luka',
@@ -13021,8 +13021,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luka',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Luka',
@@ -13032,8 +13032,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Luka',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Luka',
@@ -13043,8 +13043,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luka',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Luka',
@@ -13054,8 +13054,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Luka',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Luka',
@@ -13065,8 +13065,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luka',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Luka',
@@ -13076,8 +13076,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Luka',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Luka',
@@ -13087,8 +13087,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Luka',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Luka',
@@ -13098,9 +13098,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Luka',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Luocha: {
     e6_dmg_: {
@@ -13111,8 +13111,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Luocha',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Luocha',
@@ -13122,8 +13122,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Luocha',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Luocha',
@@ -13133,8 +13133,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Luocha',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Luocha',
@@ -13144,8 +13144,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Luocha',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Luocha',
@@ -13155,8 +13155,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Luocha',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Luocha',
@@ -13166,8 +13166,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Luocha',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Luocha',
@@ -13177,8 +13177,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luocha',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Luocha',
@@ -13188,8 +13188,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luocha',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Luocha',
@@ -13199,8 +13199,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Luocha',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Luocha',
@@ -13210,8 +13210,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luocha',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Luocha',
@@ -13221,8 +13221,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Luocha',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Luocha',
@@ -13232,8 +13232,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luocha',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Luocha',
@@ -13243,8 +13243,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Luocha',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Luocha',
@@ -13254,8 +13254,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Luocha',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Luocha',
@@ -13265,8 +13265,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Luocha',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Luocha',
@@ -13276,8 +13276,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Luocha',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Luocha',
@@ -13287,9 +13287,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Luocha',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   LushakaTheSunkenSeas: {
     enemy_defRed_: {
@@ -13300,8 +13300,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'LushakaTheSunkenSeas',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     set2_dmg_: {
       sheet: 'LushakaTheSunkenSeas',
@@ -13311,8 +13311,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'LushakaTheSunkenSeas',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_enerRegen_: {
       sheet: 'LushakaTheSunkenSeas',
@@ -13322,8 +13322,8 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'LushakaTheSunkenSeas',
-        name: 'set2_passive_enerRegen_',
-      },
+        name: 'set2_passive_enerRegen_'
+      }
     },
     team_dmg_: {
       sheet: 'LushakaTheSunkenSeas',
@@ -13333,9 +13333,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'LushakaTheSunkenSeas',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Lynx: {
     e6_dmg_: {
@@ -13346,8 +13346,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Lynx',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Lynx',
@@ -13357,8 +13357,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Lynx',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Lynx',
@@ -13368,8 +13368,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Lynx',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Lynx',
@@ -13379,8 +13379,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Lynx',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Lynx',
@@ -13390,8 +13390,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Lynx',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Lynx',
@@ -13401,8 +13401,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Lynx',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Lynx',
@@ -13412,8 +13412,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lynx',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Lynx',
@@ -13423,8 +13423,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lynx',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Lynx',
@@ -13434,8 +13434,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Lynx',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Lynx',
@@ -13445,8 +13445,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lynx',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Lynx',
@@ -13456,8 +13456,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Lynx',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Lynx',
@@ -13467,8 +13467,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lynx',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Lynx',
@@ -13478,8 +13478,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Lynx',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Lynx',
@@ -13489,8 +13489,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Lynx',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Lynx',
@@ -13500,8 +13500,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Lynx',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Lynx',
@@ -13511,8 +13511,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Lynx',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Lynx',
@@ -13522,9 +13522,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Lynx',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   MakeTheWorldClamor: {
     ult_dmg_: {
@@ -13536,9 +13536,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'MakeTheWorldClamor',
         damageType1: 'ult',
-        name: 'ult_dmg_',
-      },
-    },
+        name: 'ult_dmg_'
+      }
+    }
   },
   March7th: {
     eidolon3_basic: {
@@ -13549,8 +13549,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'March7th',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'March7th',
@@ -13560,8 +13560,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'March7th',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'March7th',
@@ -13571,8 +13571,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'March7th',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'March7th',
@@ -13582,8 +13582,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'March7th',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     statBoost1: {
       sheet: 'March7th',
@@ -13594,8 +13594,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'March7th',
         elementalType: 'ice',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'March7th',
@@ -13605,8 +13605,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'March7th',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'March7th',
@@ -13616,8 +13616,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'March7th',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'March7th',
@@ -13628,8 +13628,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'March7th',
         elementalType: 'ice',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'March7th',
@@ -13639,8 +13639,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'March7th',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'March7th',
@@ -13651,8 +13651,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'March7th',
         elementalType: 'ice',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'March7th',
@@ -13662,8 +13662,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'March7th',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'March7th',
@@ -13673,8 +13673,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'March7th',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'March7th',
@@ -13685,8 +13685,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'March7th',
         elementalType: 'ice',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'March7th',
@@ -13697,9 +13697,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'March7th',
         elementalType: 'ice',
-        name: 'statBoost9',
-      },
-    },
+        name: 'statBoost9'
+      }
+    }
   },
   March7thTheHunt: {
     e6_dmg_: {
@@ -13710,8 +13710,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'March7thTheHunt',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'March7thTheHunt',
@@ -13721,8 +13721,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'March7thTheHunt',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'March7thTheHunt',
@@ -13732,8 +13732,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'March7thTheHunt',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'March7thTheHunt',
@@ -13743,8 +13743,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'March7thTheHunt',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'March7thTheHunt',
@@ -13754,8 +13754,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'March7thTheHunt',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'March7thTheHunt',
@@ -13765,8 +13765,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'March7thTheHunt',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'March7thTheHunt',
@@ -13776,8 +13776,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'March7thTheHunt',
@@ -13787,8 +13787,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'March7thTheHunt',
@@ -13798,8 +13798,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'March7thTheHunt',
@@ -13809,8 +13809,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'March7thTheHunt',
@@ -13820,8 +13820,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'March7thTheHunt',
@@ -13831,8 +13831,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'March7thTheHunt',
@@ -13842,8 +13842,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'March7thTheHunt',
@@ -13853,8 +13853,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'March7thTheHunt',
@@ -13864,8 +13864,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'March7thTheHunt',
@@ -13875,8 +13875,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'March7thTheHunt',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'March7thTheHunt',
@@ -13886,9 +13886,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'March7thTheHunt',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Mediation: {
     spd: {
@@ -13899,9 +13899,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Mediation',
-        name: 'spd',
-      },
-    },
+        name: 'spd'
+      }
+    }
   },
   MemoriesOfThePast: {
     passive_brEffect_: {
@@ -13912,9 +13912,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'MemoriesOfThePast',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   MemorysCurtainNeverFalls: {
     common_dmg_: {
@@ -13925,8 +13925,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'MemorysCurtainNeverFalls',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_spd_: {
       sheet: 'MemorysCurtainNeverFalls',
@@ -13936,9 +13936,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'MemorysCurtainNeverFalls',
-        name: 'passive_spd_',
-      },
-    },
+        name: 'passive_spd_'
+      }
+    }
   },
   MessengerTraversingHackerspace: {
     set2_passive_spd_: {
@@ -13949,8 +13949,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'MessengerTraversingHackerspace',
-        name: 'set2_passive_spd_',
-      },
+        name: 'set2_passive_spd_'
+      }
     },
     set4_spd_: {
       sheet: 'MessengerTraversingHackerspace',
@@ -13960,9 +13960,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'MessengerTraversingHackerspace',
-        name: 'set4_spd_',
-      },
-    },
+        name: 'set4_spd_'
+      }
+    }
   },
   Misha: {
     e6_dmg_: {
@@ -13973,8 +13973,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Misha',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Misha',
@@ -13984,8 +13984,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Misha',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Misha',
@@ -13995,8 +13995,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Misha',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Misha',
@@ -14006,8 +14006,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Misha',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Misha',
@@ -14017,8 +14017,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Misha',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Misha',
@@ -14028,8 +14028,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Misha',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Misha',
@@ -14040,8 +14040,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Misha',
         elementalType: 'ice',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Misha',
@@ -14052,8 +14052,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Misha',
         elementalType: 'ice',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Misha',
@@ -14063,8 +14063,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Misha',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Misha',
@@ -14075,8 +14075,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Misha',
         elementalType: 'ice',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Misha',
@@ -14086,8 +14086,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Misha',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Misha',
@@ -14098,8 +14098,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Misha',
         elementalType: 'ice',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Misha',
@@ -14109,8 +14109,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Misha',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Misha',
@@ -14121,8 +14121,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Misha',
         elementalType: 'ice',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Misha',
@@ -14132,8 +14132,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Misha',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Misha',
@@ -14143,8 +14143,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Misha',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Misha',
@@ -14154,9 +14154,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Misha',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   MomentOfVictory: {
     def_: {
@@ -14167,8 +14167,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'MomentOfVictory',
-        name: 'def_',
-      },
+        name: 'def_'
+      }
     },
     passive_def_: {
       sheet: 'MomentOfVictory',
@@ -14178,8 +14178,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'MomentOfVictory',
-        name: 'passive_def_',
-      },
+        name: 'passive_def_'
+      }
     },
     passive_eff_: {
       sheet: 'MomentOfVictory',
@@ -14189,9 +14189,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'MomentOfVictory',
-        name: 'passive_eff_',
-      },
-    },
+        name: 'passive_eff_'
+      }
+    }
   },
   Moze: {
     e6_dmg_: {
@@ -14202,8 +14202,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Moze',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Moze',
@@ -14213,8 +14213,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Moze',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Moze',
@@ -14224,8 +14224,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Moze',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Moze',
@@ -14235,8 +14235,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Moze',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Moze',
@@ -14246,8 +14246,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Moze',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Moze',
@@ -14257,8 +14257,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Moze',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Moze',
@@ -14268,8 +14268,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Moze',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Moze',
@@ -14279,8 +14279,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Moze',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Moze',
@@ -14290,8 +14290,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Moze',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Moze',
@@ -14301,8 +14301,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Moze',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Moze',
@@ -14312,8 +14312,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Moze',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Moze',
@@ -14323,8 +14323,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Moze',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Moze',
@@ -14334,8 +14334,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Moze',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Moze',
@@ -14345,8 +14345,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Moze',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Moze',
@@ -14356,8 +14356,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Moze',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Moze',
@@ -14367,8 +14367,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Moze',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Moze',
@@ -14378,9 +14378,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Moze',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   MusketeerOfWildWheat: {
     set2_passive_atk_: {
@@ -14391,8 +14391,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'MusketeerOfWildWheat',
-        name: 'set2_passive_atk_',
-      },
+        name: 'set2_passive_atk_'
+      }
     },
     set4_basic_dmg_: {
       sheet: 'MusketeerOfWildWheat',
@@ -14403,8 +14403,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'MusketeerOfWildWheat',
         damageType1: 'basic',
-        name: 'set4_basic_dmg_',
-      },
+        name: 'set4_basic_dmg_'
+      }
     },
     set4_passive_spd_: {
       sheet: 'MusketeerOfWildWheat',
@@ -14414,9 +14414,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'MusketeerOfWildWheat',
-        name: 'set4_passive_spd_',
-      },
-    },
+        name: 'set4_passive_spd_'
+      }
+    }
   },
   MutualDemise: {
     crit_: {
@@ -14427,9 +14427,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'MutualDemise',
-        name: 'crit_',
-      },
-    },
+        name: 'crit_'
+      }
+    }
   },
   Mydei: {
     e6_dmg_: {
@@ -14440,8 +14440,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Mydei',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Mydei',
@@ -14451,8 +14451,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Mydei',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Mydei',
@@ -14462,8 +14462,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Mydei',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Mydei',
@@ -14473,8 +14473,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Mydei',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Mydei',
@@ -14484,8 +14484,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Mydei',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Mydei',
@@ -14495,8 +14495,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Mydei',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Mydei',
@@ -14506,8 +14506,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Mydei',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Mydei',
@@ -14517,8 +14517,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Mydei',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Mydei',
@@ -14528,8 +14528,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Mydei',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Mydei',
@@ -14539,8 +14539,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Mydei',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Mydei',
@@ -14550,8 +14550,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Mydei',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Mydei',
@@ -14561,8 +14561,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Mydei',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Mydei',
@@ -14572,8 +14572,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Mydei',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Mydei',
@@ -14583,8 +14583,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Mydei',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Mydei',
@@ -14594,8 +14594,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Mydei',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Mydei',
@@ -14605,8 +14605,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Mydei',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Mydei',
@@ -14616,9 +14616,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Mydei',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Natasha: {
     e6_dmg_: {
@@ -14629,8 +14629,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Natasha',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Natasha',
@@ -14640,8 +14640,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Natasha',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Natasha',
@@ -14651,8 +14651,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Natasha',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Natasha',
@@ -14662,8 +14662,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Natasha',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Natasha',
@@ -14673,8 +14673,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Natasha',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Natasha',
@@ -14684,8 +14684,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Natasha',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Natasha',
@@ -14695,8 +14695,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Natasha',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Natasha',
@@ -14706,8 +14706,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Natasha',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Natasha',
@@ -14717,8 +14717,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Natasha',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Natasha',
@@ -14728,8 +14728,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Natasha',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Natasha',
@@ -14739,8 +14739,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Natasha',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Natasha',
@@ -14750,8 +14750,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Natasha',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Natasha',
@@ -14761,8 +14761,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Natasha',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Natasha',
@@ -14772,8 +14772,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Natasha',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Natasha',
@@ -14783,8 +14783,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Natasha',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Natasha',
@@ -14794,8 +14794,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Natasha',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Natasha',
@@ -14805,9 +14805,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Natasha',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   NightOfFright: {
     atk_: {
@@ -14818,8 +14818,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'NightOfFright',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     passive_enerRegen_: {
       sheet: 'NightOfFright',
@@ -14829,9 +14829,9 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'NightOfFright',
-        name: 'passive_enerRegen_',
-      },
-    },
+        name: 'passive_enerRegen_'
+      }
+    }
   },
   NightOnTheMilkyWay: {
     atk_: {
@@ -14842,8 +14842,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'NightOnTheMilkyWay',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     common_dmg_: {
       sheet: 'NightOnTheMilkyWay',
@@ -14853,9 +14853,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'NightOnTheMilkyWay',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   NinjaRecordSoundHunt: {
     crit_dmg_: {
@@ -14866,8 +14866,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'NinjaRecordSoundHunt',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_hp_: {
       sheet: 'NinjaRecordSoundHunt',
@@ -14877,9 +14877,9 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'NinjaRecordSoundHunt',
-        name: 'passive_hp_',
-      },
-    },
+        name: 'passive_hp_'
+      }
+    }
   },
   NinjutsuInscriptionDazzlingEvilbreaker: {
     passive_brEffect_: {
@@ -14890,9 +14890,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'NinjutsuInscriptionDazzlingEvilbreaker',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   NowhereToRun: {
     passive_atk_: {
@@ -14903,9 +14903,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'NowhereToRun',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   OnTheFallOfAnAeon: {
     atk_: {
@@ -14916,8 +14916,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'OnTheFallOfAnAeon',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     common_dmg_: {
       sheet: 'OnTheFallOfAnAeon',
@@ -14927,9 +14927,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'OnTheFallOfAnAeon',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   OnlySilenceRemains: {
     crit_: {
@@ -14940,8 +14940,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'OnlySilenceRemains',
-        name: 'crit_',
-      },
+        name: 'crit_'
+      }
     },
     passive_atk_: {
       sheet: 'OnlySilenceRemains',
@@ -14951,9 +14951,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'OnlySilenceRemains',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   PanCosmicCommercialEnterprise: {
     set2_dmg_: {
@@ -14964,8 +14964,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'PanCosmicCommercialEnterprise',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_eff_: {
       sheet: 'PanCosmicCommercialEnterprise',
@@ -14975,9 +14975,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'PanCosmicCommercialEnterprise',
-        name: 'set2_passive_eff_',
-      },
-    },
+        name: 'set2_passive_eff_'
+      }
+    }
   },
   PasserbyOfWanderingCloud: {
     set2_passive_heal_: {
@@ -14988,9 +14988,9 @@ export const buffs = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'PasserbyOfWanderingCloud',
-        name: 'set2_passive_heal_',
-      },
-    },
+        name: 'set2_passive_heal_'
+      }
+    }
   },
   PastAndFuture: {
     common_dmg_: {
@@ -15001,9 +15001,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PastAndFuture',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   PastSelfInMirror: {
     common_dmg_: {
@@ -15014,8 +15014,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PastSelfInMirror',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_brEffect_: {
       sheet: 'PastSelfInMirror',
@@ -15025,9 +15025,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'PastSelfInMirror',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   PatienceIsAllYouNeed: {
     passive_common_dmg_: {
@@ -15038,8 +15038,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PatienceIsAllYouNeed',
-        name: 'passive_common_dmg_',
-      },
+        name: 'passive_common_dmg_'
+      }
     },
     spd_: {
       sheet: 'PatienceIsAllYouNeed',
@@ -15049,9 +15049,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'PatienceIsAllYouNeed',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   Pela: {
     e6_dmg_: {
@@ -15062,8 +15062,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Pela',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Pela',
@@ -15073,8 +15073,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Pela',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Pela',
@@ -15084,8 +15084,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Pela',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Pela',
@@ -15095,8 +15095,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Pela',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Pela',
@@ -15106,8 +15106,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Pela',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Pela',
@@ -15117,8 +15117,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Pela',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Pela',
@@ -15129,8 +15129,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Pela',
         elementalType: 'ice',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Pela',
@@ -15141,8 +15141,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Pela',
         elementalType: 'ice',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Pela',
@@ -15152,8 +15152,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Pela',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Pela',
@@ -15164,8 +15164,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Pela',
         elementalType: 'ice',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Pela',
@@ -15175,8 +15175,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Pela',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Pela',
@@ -15187,8 +15187,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Pela',
         elementalType: 'ice',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Pela',
@@ -15198,8 +15198,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Pela',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Pela',
@@ -15210,8 +15210,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Pela',
         elementalType: 'ice',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Pela',
@@ -15221,8 +15221,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Pela',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Pela',
@@ -15232,8 +15232,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Pela',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Pela',
@@ -15243,9 +15243,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Pela',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   PenaconyLandOfTheDreams: {
     set2_common_dmg_: {
@@ -15256,8 +15256,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PenaconyLandOfTheDreams',
-        name: 'set2_common_dmg_',
-      },
+        name: 'set2_common_dmg_'
+      }
     },
     set2_passive_enerRegen_: {
       sheet: 'PenaconyLandOfTheDreams',
@@ -15267,9 +15267,9 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'PenaconyLandOfTheDreams',
-        name: 'set2_passive_enerRegen_',
-      },
-    },
+        name: 'set2_passive_enerRegen_'
+      }
+    }
   },
   PerfectTiming: {
     heal_: {
@@ -15280,8 +15280,8 @@ export const buffs = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'PerfectTiming',
-        name: 'heal_',
-      },
+        name: 'heal_'
+      }
     },
     passive_eff_res_: {
       sheet: 'PerfectTiming',
@@ -15291,9 +15291,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'PerfectTiming',
-        name: 'passive_eff_res_',
-      },
-    },
+        name: 'passive_eff_res_'
+      }
+    }
   },
   PioneerDiverOfDeadWaters: {
     set2_common_dmg_: {
@@ -15304,8 +15304,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'set2_common_dmg_',
-      },
+        name: 'set2_common_dmg_'
+      }
     },
     set4_crit_: {
       sheet: 'PioneerDiverOfDeadWaters',
@@ -15315,8 +15315,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'set4_crit_',
-      },
+        name: 'set4_crit_'
+      }
     },
     set4_crit_dmg_: {
       sheet: 'PioneerDiverOfDeadWaters',
@@ -15326,8 +15326,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'set4_crit_dmg_',
-      },
+        name: 'set4_crit_dmg_'
+      }
     },
     set4_passive_crit_: {
       sheet: 'PioneerDiverOfDeadWaters',
@@ -15337,9 +15337,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'PioneerDiverOfDeadWaters',
-        name: 'set4_passive_crit_',
-      },
-    },
+        name: 'set4_passive_crit_'
+      }
+    }
   },
   PlanetaryRendezvous: {
     fire_dmg_: {
@@ -15351,8 +15351,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
         elementalType: 'fire',
-        name: 'fire_dmg_',
-      },
+        name: 'fire_dmg_'
+      }
     },
     ice_dmg_: {
       sheet: 'PlanetaryRendezvous',
@@ -15363,8 +15363,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
         elementalType: 'ice',
-        name: 'ice_dmg_',
-      },
+        name: 'ice_dmg_'
+      }
     },
     imaginary_dmg_: {
       sheet: 'PlanetaryRendezvous',
@@ -15375,8 +15375,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
         elementalType: 'imaginary',
-        name: 'imaginary_dmg_',
-      },
+        name: 'imaginary_dmg_'
+      }
     },
     lightning_dmg_: {
       sheet: 'PlanetaryRendezvous',
@@ -15387,8 +15387,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
         elementalType: 'lightning',
-        name: 'lightning_dmg_',
-      },
+        name: 'lightning_dmg_'
+      }
     },
     physical_dmg_: {
       sheet: 'PlanetaryRendezvous',
@@ -15399,8 +15399,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
         elementalType: 'physical',
-        name: 'physical_dmg_',
-      },
+        name: 'physical_dmg_'
+      }
     },
     quantum_dmg_: {
       sheet: 'PlanetaryRendezvous',
@@ -15411,8 +15411,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
         elementalType: 'quantum',
-        name: 'quantum_dmg_',
-      },
+        name: 'quantum_dmg_'
+      }
     },
     wind_dmg_: {
       sheet: 'PlanetaryRendezvous',
@@ -15423,9 +15423,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PlanetaryRendezvous',
         elementalType: 'wind',
-        name: 'wind_dmg_',
-      },
-    },
+        name: 'wind_dmg_'
+      }
+    }
   },
   PoetOfMourningCollapse: {
     enemy_defRed_: {
@@ -15436,8 +15436,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'PoetOfMourningCollapse',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     set2_dmg_: {
       sheet: 'PoetOfMourningCollapse',
@@ -15447,8 +15447,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PoetOfMourningCollapse',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_quantum_dmg_: {
       sheet: 'PoetOfMourningCollapse',
@@ -15459,8 +15459,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PoetOfMourningCollapse',
         elementalType: 'quantum',
-        name: 'set2_passive_quantum_dmg_',
-      },
+        name: 'set2_passive_quantum_dmg_'
+      }
     },
     set4_passive_spd_: {
       sheet: 'PoetOfMourningCollapse',
@@ -15470,8 +15470,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'PoetOfMourningCollapse',
-        name: 'set4_passive_spd_',
-      },
+        name: 'set4_passive_spd_'
+      }
     },
     team_dmg_: {
       sheet: 'PoetOfMourningCollapse',
@@ -15481,9 +15481,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'PoetOfMourningCollapse',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   PoisedToBloom: {
     crit_dmg_: {
@@ -15494,8 +15494,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'PoisedToBloom',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'PoisedToBloom',
@@ -15505,9 +15505,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'PoisedToBloom',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   PostOpConversation: {
     heal_: {
@@ -15518,8 +15518,8 @@ export const buffs = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'PostOpConversation',
-        name: 'heal_',
-      },
+        name: 'heal_'
+      }
     },
     passive_enerRegen_: {
       sheet: 'PostOpConversation',
@@ -15529,9 +15529,9 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'PostOpConversation',
-        name: 'passive_enerRegen_',
-      },
-    },
+        name: 'passive_enerRegen_'
+      }
+    }
   },
   PrisonerInDeepConfinement: {
     set2_passive_atk_: {
@@ -15542,8 +15542,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'PrisonerInDeepConfinement',
-        name: 'set2_passive_atk_',
-      },
+        name: 'set2_passive_atk_'
+      }
     },
     set4_defIgn_: {
       sheet: 'PrisonerInDeepConfinement',
@@ -15553,9 +15553,9 @@ export const buffs = {
         qt: 'premod',
         q: 'defIgn_',
         sheet: 'PrisonerInDeepConfinement',
-        name: 'set4_defIgn_',
-      },
-    },
+        name: 'set4_defIgn_'
+      }
+    }
   },
   Qingque: {
     e6_dmg_: {
@@ -15566,8 +15566,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Qingque',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Qingque',
@@ -15577,8 +15577,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Qingque',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Qingque',
@@ -15588,8 +15588,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Qingque',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Qingque',
@@ -15599,8 +15599,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Qingque',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Qingque',
@@ -15610,8 +15610,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Qingque',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Qingque',
@@ -15621,8 +15621,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Qingque',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Qingque',
@@ -15632,8 +15632,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Qingque',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Qingque',
@@ -15643,8 +15643,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Qingque',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Qingque',
@@ -15655,8 +15655,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Qingque',
         elementalType: 'quantum',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Qingque',
@@ -15666,8 +15666,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Qingque',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Qingque',
@@ -15677,8 +15677,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Qingque',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Qingque',
@@ -15688,8 +15688,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Qingque',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Qingque',
@@ -15700,8 +15700,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Qingque',
         elementalType: 'quantum',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Qingque',
@@ -15711,8 +15711,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Qingque',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Qingque',
@@ -15722,8 +15722,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Qingque',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Qingque',
@@ -15734,8 +15734,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Qingque',
         elementalType: 'quantum',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Qingque',
@@ -15745,9 +15745,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Qingque',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Rappa: {
     e6_dmg_: {
@@ -15758,8 +15758,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Rappa',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Rappa',
@@ -15769,8 +15769,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Rappa',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Rappa',
@@ -15780,8 +15780,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Rappa',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'Rappa',
@@ -15791,8 +15791,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Rappa',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'Rappa',
@@ -15802,8 +15802,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Rappa',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Rappa',
@@ -15813,8 +15813,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Rappa',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Rappa',
@@ -15824,8 +15824,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Rappa',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Rappa',
@@ -15835,8 +15835,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Rappa',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Rappa',
@@ -15846,8 +15846,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Rappa',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Rappa',
@@ -15857,8 +15857,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Rappa',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Rappa',
@@ -15868,8 +15868,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Rappa',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Rappa',
@@ -15879,8 +15879,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Rappa',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Rappa',
@@ -15890,8 +15890,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Rappa',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Rappa',
@@ -15901,8 +15901,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Rappa',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Rappa',
@@ -15912,8 +15912,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Rappa',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Rappa',
@@ -15923,8 +15923,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Rappa',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Rappa',
@@ -15934,9 +15934,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Rappa',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   ReforgedRemembrance: {
     atk_: {
@@ -15947,8 +15947,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'ReforgedRemembrance',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     dot_defIgn_: {
       sheet: 'ReforgedRemembrance',
@@ -15959,8 +15959,8 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'ReforgedRemembrance',
         damageType1: 'dot',
-        name: 'dot_defIgn_',
-      },
+        name: 'dot_defIgn_'
+      }
     },
     passive_eff_: {
       sheet: 'ReforgedRemembrance',
@@ -15970,9 +15970,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'ReforgedRemembrance',
-        name: 'passive_eff_',
-      },
-    },
+        name: 'passive_eff_'
+      }
+    }
   },
   Reminiscence: {
     common_dmg_: {
@@ -15983,9 +15983,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Reminiscence',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   ResolutionShinesAsPearlsOfSweat: {
     defRed_: {
@@ -15996,9 +15996,9 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'ResolutionShinesAsPearlsOfSweat',
-        name: 'defRed_',
-      },
-    },
+        name: 'defRed_'
+      }
+    }
   },
   ReturnToDarkness: {
     passive_crit_: {
@@ -16009,9 +16009,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'ReturnToDarkness',
-        name: 'passive_crit_',
-      },
-    },
+        name: 'passive_crit_'
+      }
+    }
   },
   RiverFlowsInSpring: {
     common_dmg_: {
@@ -16022,8 +16022,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'RiverFlowsInSpring',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     spd_: {
       sheet: 'RiverFlowsInSpring',
@@ -16033,9 +16033,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'RiverFlowsInSpring',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   Robin: {
     e6_dmg_: {
@@ -16046,8 +16046,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Robin',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Robin',
@@ -16057,8 +16057,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Robin',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_ult: {
       sheet: 'Robin',
@@ -16068,8 +16068,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Robin',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Robin',
@@ -16079,8 +16079,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Robin',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_talent: {
       sheet: 'Robin',
@@ -16090,8 +16090,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Robin',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Robin',
@@ -16101,8 +16101,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Robin',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Robin',
@@ -16112,8 +16112,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Robin',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Robin',
@@ -16123,8 +16123,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Robin',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Robin',
@@ -16134,8 +16134,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Robin',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Robin',
@@ -16145,8 +16145,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Robin',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Robin',
@@ -16156,8 +16156,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Robin',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Robin',
@@ -16167,8 +16167,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Robin',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Robin',
@@ -16178,8 +16178,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Robin',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Robin',
@@ -16189,8 +16189,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Robin',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Robin',
@@ -16200,8 +16200,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'Robin',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Robin',
@@ -16211,8 +16211,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Robin',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Robin',
@@ -16222,9 +16222,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Robin',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   RuanMei: {
     ba1_break_: {
@@ -16235,8 +16235,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'RuanMei',
-        name: 'ba1_break_',
-      },
+        name: 'ba1_break_'
+      }
     },
     ba3_dmg_: {
       sheet: 'RuanMei',
@@ -16246,8 +16246,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'RuanMei',
-        name: 'ba3_dmg_',
-      },
+        name: 'ba3_dmg_'
+      }
     },
     e1_defIgn_: {
       sheet: 'RuanMei',
@@ -16257,8 +16257,8 @@ export const buffs = {
         qt: 'premod',
         q: 'defIgn_',
         sheet: 'RuanMei',
-        name: 'e1_defIgn_',
-      },
+        name: 'e1_defIgn_'
+      }
     },
     e2_atk_: {
       sheet: 'RuanMei',
@@ -16268,8 +16268,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'RuanMei',
-        name: 'e2_atk_',
-      },
+        name: 'e2_atk_'
+      }
     },
     e4_break_: {
       sheet: 'RuanMei',
@@ -16279,8 +16279,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'RuanMei',
-        name: 'e4_break_',
-      },
+        name: 'e4_break_'
+      }
     },
     eidolon3_talent: {
       sheet: 'RuanMei',
@@ -16290,8 +16290,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'RuanMei',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'RuanMei',
@@ -16301,8 +16301,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'RuanMei',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'RuanMei',
@@ -16312,8 +16312,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'RuanMei',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'RuanMei',
@@ -16323,8 +16323,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'RuanMei',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     skillOvertone_dmg_: {
       sheet: 'RuanMei',
@@ -16334,8 +16334,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'RuanMei',
-        name: 'skillOvertone_dmg_',
-      },
+        name: 'skillOvertone_dmg_'
+      }
     },
     skillOvertone_weakness_: {
       sheet: 'RuanMei',
@@ -16345,8 +16345,8 @@ export const buffs = {
         qt: 'premod',
         q: 'weakness_',
         sheet: 'RuanMei',
-        name: 'skillOvertone_weakness_',
-      },
+        name: 'skillOvertone_weakness_'
+      }
     },
     statBoost1: {
       sheet: 'RuanMei',
@@ -16356,8 +16356,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'RuanMei',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'RuanMei',
@@ -16367,8 +16367,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'RuanMei',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'RuanMei',
@@ -16378,8 +16378,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'RuanMei',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'RuanMei',
@@ -16389,8 +16389,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'RuanMei',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'RuanMei',
@@ -16400,8 +16400,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'RuanMei',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'RuanMei',
@@ -16411,8 +16411,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'RuanMei',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'RuanMei',
@@ -16422,8 +16422,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'RuanMei',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'RuanMei',
@@ -16433,8 +16433,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'RuanMei',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'RuanMei',
@@ -16444,8 +16444,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'RuanMei',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'RuanMei',
@@ -16455,8 +16455,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'RuanMei',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     talent_spd_: {
       sheet: 'RuanMei',
@@ -16466,8 +16466,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'RuanMei',
-        name: 'talent_spd_',
-      },
+        name: 'talent_spd_'
+      }
     },
     ultZone_resPen_: {
       sheet: 'RuanMei',
@@ -16477,9 +16477,9 @@ export const buffs = {
         qt: 'premod',
         q: 'resPen_',
         sheet: 'RuanMei',
-        name: 'ultZone_resPen_',
-      },
-    },
+        name: 'ultZone_resPen_'
+      }
+    }
   },
   RutilantArena: {
     set2_passive_crit_: {
@@ -16490,8 +16490,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'RutilantArena',
-        name: 'set2_passive_crit_',
-      },
+        name: 'set2_passive_crit_'
+      }
     },
     set4_basic_dmg_: {
       sheet: 'RutilantArena',
@@ -16502,8 +16502,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'RutilantArena',
         damageType1: 'basic',
-        name: 'set4_basic_dmg_',
-      },
+        name: 'set4_basic_dmg_'
+      }
     },
     set4_skill_dmg_: {
       sheet: 'RutilantArena',
@@ -16514,9 +16514,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'RutilantArena',
         damageType1: 'skill',
-        name: 'set4_skill_dmg_',
-      },
-    },
+        name: 'set4_skill_dmg_'
+      }
+    }
   },
   SacerdosRelivedOrdeal: {
     enemy_defRed_: {
@@ -16527,8 +16527,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'SacerdosRelivedOrdeal',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     set2_dmg_: {
       sheet: 'SacerdosRelivedOrdeal',
@@ -16538,8 +16538,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SacerdosRelivedOrdeal',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_spd_: {
       sheet: 'SacerdosRelivedOrdeal',
@@ -16549,8 +16549,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'SacerdosRelivedOrdeal',
-        name: 'set2_passive_spd_',
-      },
+        name: 'set2_passive_spd_'
+      }
     },
     team_dmg_: {
       sheet: 'SacerdosRelivedOrdeal',
@@ -16560,9 +16560,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SacerdosRelivedOrdeal',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Sagacity: {
     atk_: {
@@ -16573,9 +16573,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sagacity',
-        name: 'atk_',
-      },
-    },
+        name: 'atk_'
+      }
+    }
   },
   SailingTowardsASecondLife: {
     break_defIgn_: {
@@ -16587,8 +16587,8 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'SailingTowardsASecondLife',
         damageType1: 'break',
-        name: 'break_defIgn_',
-      },
+        name: 'break_defIgn_'
+      }
     },
     passive_brEffect_: {
       sheet: 'SailingTowardsASecondLife',
@@ -16598,8 +16598,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'SailingTowardsASecondLife',
-        name: 'passive_brEffect_',
-      },
+        name: 'passive_brEffect_'
+      }
     },
     spd_: {
       sheet: 'SailingTowardsASecondLife',
@@ -16609,9 +16609,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'SailingTowardsASecondLife',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   Sampo: {
     e6_dmg_: {
@@ -16622,8 +16622,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sampo',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Sampo',
@@ -16633,8 +16633,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Sampo',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Sampo',
@@ -16644,8 +16644,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Sampo',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Sampo',
@@ -16655,8 +16655,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Sampo',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Sampo',
@@ -16666,8 +16666,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Sampo',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Sampo',
@@ -16677,8 +16677,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Sampo',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Sampo',
@@ -16688,8 +16688,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sampo',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Sampo',
@@ -16699,8 +16699,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sampo',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Sampo',
@@ -16710,8 +16710,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Sampo',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Sampo',
@@ -16721,8 +16721,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sampo',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Sampo',
@@ -16732,8 +16732,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Sampo',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Sampo',
@@ -16743,8 +16743,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sampo',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Sampo',
@@ -16754,8 +16754,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Sampo',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Sampo',
@@ -16765,8 +16765,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sampo',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Sampo',
@@ -16776,8 +16776,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Sampo',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Sampo',
@@ -16787,8 +16787,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Sampo',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Sampo',
@@ -16798,9 +16798,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sampo',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   ScentAloneStaysTrue: {
     common_dmg_: {
@@ -16811,8 +16811,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ScentAloneStaysTrue',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_brEffect_: {
       sheet: 'ScentAloneStaysTrue',
@@ -16822,9 +16822,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'ScentAloneStaysTrue',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   ScholarLostInErudition: {
     enemy_defRed_: {
@@ -16835,8 +16835,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'ScholarLostInErudition',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     set2_dmg_: {
       sheet: 'ScholarLostInErudition',
@@ -16846,8 +16846,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ScholarLostInErudition',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_crit_: {
       sheet: 'ScholarLostInErudition',
@@ -16857,8 +16857,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'ScholarLostInErudition',
-        name: 'set2_passive_crit_',
-      },
+        name: 'set2_passive_crit_'
+      }
     },
     team_dmg_: {
       sheet: 'ScholarLostInErudition',
@@ -16868,9 +16868,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ScholarLostInErudition',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Seele: {
     amplification_dmg_: {
@@ -16881,8 +16881,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Seele',
-        name: 'amplification_dmg_',
-      },
+        name: 'amplification_dmg_'
+      }
     },
     ba2_resPen_: {
       sheet: 'Seele',
@@ -16893,8 +16893,8 @@ export const buffs = {
         q: 'resPen_',
         sheet: 'Seele',
         elementalType: 'quantum',
-        name: 'ba2_resPen_',
-      },
+        name: 'ba2_resPen_'
+      }
     },
     e1_crit_: {
       sheet: 'Seele',
@@ -16904,8 +16904,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Seele',
-        name: 'e1_crit_',
-      },
+        name: 'e1_crit_'
+      }
     },
     eidolon3_skill: {
       sheet: 'Seele',
@@ -16915,8 +16915,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Seele',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'Seele',
@@ -16926,8 +16926,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Seele',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'Seele',
@@ -16937,8 +16937,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Seele',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'Seele',
@@ -16948,8 +16948,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Seele',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     skill_spd_: {
       sheet: 'Seele',
@@ -16959,8 +16959,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'Seele',
-        name: 'skill_spd_',
-      },
+        name: 'skill_spd_'
+      }
     },
     statBoost1: {
       sheet: 'Seele',
@@ -16970,8 +16970,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Seele',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Seele',
@@ -16981,8 +16981,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Seele',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Seele',
@@ -16992,8 +16992,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Seele',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Seele',
@@ -17003,8 +17003,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Seele',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Seele',
@@ -17014,8 +17014,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Seele',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Seele',
@@ -17025,8 +17025,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Seele',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Seele',
@@ -17036,8 +17036,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Seele',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Seele',
@@ -17047,8 +17047,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Seele',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Seele',
@@ -17058,8 +17058,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Seele',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Seele',
@@ -17069,9 +17069,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Seele',
-        name: 'statBoost9',
-      },
-    },
+        name: 'statBoost9'
+      }
+    }
   },
   Serval: {
     e6_dmg_: {
@@ -17082,8 +17082,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Serval',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Serval',
@@ -17093,8 +17093,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Serval',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Serval',
@@ -17104,8 +17104,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Serval',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Serval',
@@ -17115,8 +17115,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Serval',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Serval',
@@ -17126,8 +17126,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Serval',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Serval',
@@ -17137,8 +17137,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Serval',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Serval',
@@ -17148,8 +17148,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Serval',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Serval',
@@ -17159,8 +17159,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Serval',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Serval',
@@ -17170,8 +17170,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Serval',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Serval',
@@ -17181,8 +17181,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Serval',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Serval',
@@ -17192,8 +17192,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Serval',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Serval',
@@ -17203,8 +17203,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Serval',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Serval',
@@ -17214,8 +17214,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Serval',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Serval',
@@ -17225,8 +17225,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Serval',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Serval',
@@ -17236,8 +17236,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Serval',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Serval',
@@ -17247,8 +17247,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Serval',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Serval',
@@ -17258,9 +17258,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Serval',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   ShadowedByNight: {
     passive_brEffect_: {
@@ -17271,8 +17271,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'ShadowedByNight',
-        name: 'passive_brEffect_',
-      },
+        name: 'passive_brEffect_'
+      }
     },
     spd_: {
       sheet: 'ShadowedByNight',
@@ -17282,9 +17282,9 @@ export const buffs = {
         qt: 'premod',
         q: 'spd_',
         sheet: 'ShadowedByNight',
-        name: 'spd_',
-      },
-    },
+        name: 'spd_'
+      }
+    }
   },
   SharedFeeling: {
     passive_heal_: {
@@ -17295,9 +17295,9 @@ export const buffs = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'SharedFeeling',
-        name: 'passive_heal_',
-      },
-    },
+        name: 'passive_heal_'
+      }
+    }
   },
   ShatteredHome: {
     common_dmg_: {
@@ -17308,9 +17308,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ShatteredHome',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   SheAlreadyShutHerEyes: {
     common_dmg_: {
@@ -17321,8 +17321,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SheAlreadyShutHerEyes',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_enerRegen_: {
       sheet: 'SheAlreadyShutHerEyes',
@@ -17332,8 +17332,8 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'SheAlreadyShutHerEyes',
-        name: 'passive_enerRegen_',
-      },
+        name: 'passive_enerRegen_'
+      }
     },
     passive_hp_: {
       sheet: 'SheAlreadyShutHerEyes',
@@ -17343,9 +17343,9 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'SheAlreadyShutHerEyes',
-        name: 'passive_hp_',
-      },
-    },
+        name: 'passive_hp_'
+      }
+    }
   },
   SigoniaTheUnclaimedDesolation: {
     set2_crit_dmg_: {
@@ -17356,8 +17356,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'set2_crit_dmg_',
-      },
+        name: 'set2_crit_dmg_'
+      }
     },
     set2_passive_crit_: {
       sheet: 'SigoniaTheUnclaimedDesolation',
@@ -17367,9 +17367,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'SigoniaTheUnclaimedDesolation',
-        name: 'set2_passive_crit_',
-      },
-    },
+        name: 'set2_passive_crit_'
+      }
+    }
   },
   SilverWolf: {
     e6_dmg_: {
@@ -17380,8 +17380,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SilverWolf',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'SilverWolf',
@@ -17391,8 +17391,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'SilverWolf',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'SilverWolf',
@@ -17402,8 +17402,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'SilverWolf',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'SilverWolf',
@@ -17413,8 +17413,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'SilverWolf',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'SilverWolf',
@@ -17424,8 +17424,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'SilverWolf',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'SilverWolf',
@@ -17435,8 +17435,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'SilverWolf',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'SilverWolf',
@@ -17446,8 +17446,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SilverWolf',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'SilverWolf',
@@ -17457,8 +17457,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SilverWolf',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'SilverWolf',
@@ -17468,8 +17468,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'SilverWolf',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'SilverWolf',
@@ -17479,8 +17479,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SilverWolf',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'SilverWolf',
@@ -17491,8 +17491,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'SilverWolf',
         elementalType: 'quantum',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'SilverWolf',
@@ -17502,8 +17502,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SilverWolf',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'SilverWolf',
@@ -17513,8 +17513,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'SilverWolf',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'SilverWolf',
@@ -17524,8 +17524,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SilverWolf',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'SilverWolf',
@@ -17536,8 +17536,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'SilverWolf',
         elementalType: 'quantum',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'SilverWolf',
@@ -17547,8 +17547,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'SilverWolf',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'SilverWolf',
@@ -17558,9 +17558,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SilverWolf',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   SleepLikeTheDead: {
     crit_: {
@@ -17571,8 +17571,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'SleepLikeTheDead',
-        name: 'crit_',
-      },
+        name: 'crit_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'SleepLikeTheDead',
@@ -17582,9 +17582,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'SleepLikeTheDead',
-        name: 'passive_crit_dmg_',
-      },
-    },
+        name: 'passive_crit_dmg_'
+      }
+    }
   },
   SolitaryHealing: {
     dot_dmg_: {
@@ -17596,8 +17596,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'SolitaryHealing',
         damageType1: 'dot',
-        name: 'dot_dmg_',
-      },
+        name: 'dot_dmg_'
+      }
     },
     passive_brEffect_: {
       sheet: 'SolitaryHealing',
@@ -17607,9 +17607,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'SolitaryHealing',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   SomethingIrreplaceable: {
     common_dmg_: {
@@ -17620,8 +17620,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SomethingIrreplaceable',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'SomethingIrreplaceable',
@@ -17631,9 +17631,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SomethingIrreplaceable',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   SpaceSealingStation: {
     set2_atk_: {
@@ -17644,8 +17644,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SpaceSealingStation',
-        name: 'set2_atk_',
-      },
+        name: 'set2_atk_'
+      }
     },
     set2_passive_atk_: {
       sheet: 'SpaceSealingStation',
@@ -17655,9 +17655,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'SpaceSealingStation',
-        name: 'set2_passive_atk_',
-      },
-    },
+        name: 'set2_passive_atk_'
+      }
+    }
   },
   Sparkle: {
     e6_dmg_: {
@@ -17668,8 +17668,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sparkle',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Sparkle',
@@ -17679,8 +17679,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Sparkle',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Sparkle',
@@ -17690,8 +17690,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Sparkle',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Sparkle',
@@ -17701,8 +17701,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Sparkle',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Sparkle',
@@ -17712,8 +17712,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Sparkle',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Sparkle',
@@ -17723,8 +17723,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Sparkle',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Sparkle',
@@ -17734,8 +17734,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sparkle',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Sparkle',
@@ -17745,8 +17745,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sparkle',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Sparkle',
@@ -17756,8 +17756,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sparkle',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Sparkle',
@@ -17767,8 +17767,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sparkle',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Sparkle',
@@ -17778,8 +17778,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Sparkle',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Sparkle',
@@ -17789,8 +17789,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sparkle',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Sparkle',
@@ -17800,8 +17800,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sparkle',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Sparkle',
@@ -17811,8 +17811,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sparkle',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Sparkle',
@@ -17822,8 +17822,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Sparkle',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Sparkle',
@@ -17833,8 +17833,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sparkle',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Sparkle',
@@ -17844,9 +17844,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sparkle',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   SprightlyVonwacq: {
     set2_passive_enerRegen_: {
@@ -17857,9 +17857,9 @@ export const buffs = {
         qt: 'premod',
         q: 'enerRegen_',
         sheet: 'SprightlyVonwacq',
-        name: 'set2_passive_enerRegen_',
-      },
-    },
+        name: 'set2_passive_enerRegen_'
+      }
+    }
   },
   SubscribeForMore: {
     basic_dmg_: {
@@ -17871,8 +17871,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'SubscribeForMore',
         damageType1: 'basic',
-        name: 'basic_dmg_',
-      },
+        name: 'basic_dmg_'
+      }
     },
     skill_dmg_: {
       sheet: 'SubscribeForMore',
@@ -17883,9 +17883,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'SubscribeForMore',
         damageType1: 'skill',
-        name: 'skill_dmg_',
-      },
-    },
+        name: 'skill_dmg_'
+      }
+    }
   },
   Sunday: {
     e6_dmg_: {
@@ -17896,8 +17896,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sunday',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Sunday',
@@ -17907,8 +17907,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Sunday',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Sunday',
@@ -17918,8 +17918,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Sunday',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Sunday',
@@ -17929,8 +17929,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Sunday',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Sunday',
@@ -17940,8 +17940,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Sunday',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Sunday',
@@ -17951,8 +17951,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Sunday',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Sunday',
@@ -17962,8 +17962,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sunday',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Sunday',
@@ -17973,8 +17973,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sunday',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Sunday',
@@ -17984,8 +17984,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Sunday',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Sunday',
@@ -17995,8 +17995,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sunday',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Sunday',
@@ -18006,8 +18006,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Sunday',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Sunday',
@@ -18017,8 +18017,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sunday',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Sunday',
@@ -18028,8 +18028,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Sunday',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Sunday',
@@ -18039,8 +18039,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Sunday',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Sunday',
@@ -18050,8 +18050,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Sunday',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Sunday',
@@ -18061,8 +18061,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Sunday',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Sunday',
@@ -18072,9 +18072,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sunday',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Sushang: {
     e6_dmg_: {
@@ -18085,8 +18085,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sushang',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_talent: {
       sheet: 'Sushang',
@@ -18096,8 +18096,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Sushang',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon3_ult: {
       sheet: 'Sushang',
@@ -18107,8 +18107,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Sushang',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_basic: {
       sheet: 'Sushang',
@@ -18118,8 +18118,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Sushang',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_skill: {
       sheet: 'Sushang',
@@ -18129,8 +18129,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Sushang',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     enemy_defRed_: {
       sheet: 'Sushang',
@@ -18140,8 +18140,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Sushang',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Sushang',
@@ -18151,8 +18151,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sushang',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Sushang',
@@ -18162,8 +18162,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sushang',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Sushang',
@@ -18173,8 +18173,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sushang',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Sushang',
@@ -18184,8 +18184,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sushang',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Sushang',
@@ -18195,8 +18195,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Sushang',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Sushang',
@@ -18206,8 +18206,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sushang',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Sushang',
@@ -18217,8 +18217,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sushang',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Sushang',
@@ -18228,8 +18228,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Sushang',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Sushang',
@@ -18239,8 +18239,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Sushang',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Sushang',
@@ -18250,8 +18250,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Sushang',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Sushang',
@@ -18261,9 +18261,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Sushang',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   SweatNowCryLess: {
     common_dmg_: {
@@ -18274,8 +18274,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'SweatNowCryLess',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_crit_: {
       sheet: 'SweatNowCryLess',
@@ -18285,9 +18285,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'SweatNowCryLess',
-        name: 'passive_crit_',
-      },
-    },
+        name: 'passive_crit_'
+      }
+    }
   },
   Swordplay: {
     common_dmg_: {
@@ -18298,9 +18298,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Swordplay',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   TaliaKingdomOfBanditry: {
     set2_brEffect_: {
@@ -18311,8 +18311,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'TaliaKingdomOfBanditry',
-        name: 'set2_brEffect_',
-      },
+        name: 'set2_brEffect_'
+      }
     },
     set2_passive_brEffect_: {
       sheet: 'TaliaKingdomOfBanditry',
@@ -18322,9 +18322,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'TaliaKingdomOfBanditry',
-        name: 'set2_passive_brEffect_',
-      },
-    },
+        name: 'set2_passive_brEffect_'
+      }
+    }
   },
   TextureOfMemories: {
     passive_eff_res_: {
@@ -18335,9 +18335,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'TextureOfMemories',
-        name: 'passive_eff_res_',
-      },
-    },
+        name: 'passive_eff_res_'
+      }
+    }
   },
   TheAshblazingGrandDuke: {
     set2_followUp_: {
@@ -18349,8 +18349,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheAshblazingGrandDuke',
         damageType1: 'followUp',
-        name: 'set2_followUp_',
-      },
+        name: 'set2_followUp_'
+      }
     },
     set4_atk_: {
       sheet: 'TheAshblazingGrandDuke',
@@ -18360,9 +18360,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheAshblazingGrandDuke',
-        name: 'set4_atk_',
-      },
-    },
+        name: 'set4_atk_'
+      }
+    }
   },
   TheBirthOfTheSelf: {
     followUp_dmg_: {
@@ -18374,9 +18374,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheBirthOfTheSelf',
         damageType1: 'followUp',
-        name: 'followUp_dmg_',
-      },
-    },
+        name: 'followUp_dmg_'
+      }
+    }
   },
   TheDayTheCosmosFell: {
     crit_dmg_: {
@@ -18387,8 +18387,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TheDayTheCosmosFell',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'TheDayTheCosmosFell',
@@ -18398,9 +18398,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheDayTheCosmosFell',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   TheHerta: {
     e6_dmg_: {
@@ -18411,8 +18411,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheHerta',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'TheHerta',
@@ -18422,8 +18422,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'TheHerta',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'TheHerta',
@@ -18433,8 +18433,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'TheHerta',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'TheHerta',
@@ -18444,8 +18444,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'TheHerta',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'TheHerta',
@@ -18455,8 +18455,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'TheHerta',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'TheHerta',
@@ -18466,8 +18466,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'TheHerta',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'TheHerta',
@@ -18478,8 +18478,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheHerta',
         elementalType: 'ice',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'TheHerta',
@@ -18490,8 +18490,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheHerta',
         elementalType: 'ice',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'TheHerta',
@@ -18501,8 +18501,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheHerta',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'TheHerta',
@@ -18513,8 +18513,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheHerta',
         elementalType: 'ice',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'TheHerta',
@@ -18524,8 +18524,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'TheHerta',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'TheHerta',
@@ -18536,8 +18536,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheHerta',
         elementalType: 'ice',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'TheHerta',
@@ -18547,8 +18547,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheHerta',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'TheHerta',
@@ -18559,8 +18559,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheHerta',
         elementalType: 'ice',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'TheHerta',
@@ -18570,8 +18570,8 @@ export const buffs = {
         qt: 'premod',
         q: 'spd',
         sheet: 'TheHerta',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'TheHerta',
@@ -18581,8 +18581,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheHerta',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'TheHerta',
@@ -18592,9 +18592,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheHerta',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   TheMolesWelcomeYou: {
     atk_: {
@@ -18605,9 +18605,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheMolesWelcomeYou',
-        name: 'atk_',
-      },
-    },
+        name: 'atk_'
+      }
+    }
   },
   TheSeriousnessOfBreakfast: {
     atk_: {
@@ -18618,8 +18618,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheSeriousnessOfBreakfast',
-        name: 'atk_',
-      },
+        name: 'atk_'
+      }
     },
     passive_common_dmg_: {
       sheet: 'TheSeriousnessOfBreakfast',
@@ -18629,9 +18629,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheSeriousnessOfBreakfast',
-        name: 'passive_common_dmg_',
-      },
-    },
+        name: 'passive_common_dmg_'
+      }
+    }
   },
   TheUnreachableSide: {
     common_dmg_: {
@@ -18642,8 +18642,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheUnreachableSide',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_crit_: {
       sheet: 'TheUnreachableSide',
@@ -18653,8 +18653,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'TheUnreachableSide',
-        name: 'passive_crit_',
-      },
+        name: 'passive_crit_'
+      }
     },
     passive_hp_: {
       sheet: 'TheUnreachableSide',
@@ -18664,9 +18664,9 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TheUnreachableSide',
-        name: 'passive_hp_',
-      },
-    },
+        name: 'passive_hp_'
+      }
+    }
   },
   TheWindSoaringValorous: {
     set2_passive_atk_: {
@@ -18677,8 +18677,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TheWindSoaringValorous',
-        name: 'set2_passive_atk_',
-      },
+        name: 'set2_passive_atk_'
+      }
     },
     set4_passive_crit_: {
       sheet: 'TheWindSoaringValorous',
@@ -18688,8 +18688,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'TheWindSoaringValorous',
-        name: 'set4_passive_crit_',
-      },
+        name: 'set4_passive_crit_'
+      }
     },
     set4_ult_dmg_: {
       sheet: 'TheWindSoaringValorous',
@@ -18700,9 +18700,9 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TheWindSoaringValorous',
         damageType1: 'ult',
-        name: 'set4_ult_dmg_',
-      },
-    },
+        name: 'set4_ult_dmg_'
+      }
+    }
   },
   TheWondrousBananAmusementPark: {
     enemy_defRed_: {
@@ -18713,8 +18713,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'TheWondrousBananAmusementPark',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     set2_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
@@ -18724,8 +18724,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
-        name: 'set2_dmg_',
-      },
+        name: 'set2_dmg_'
+      }
     },
     set2_passive_crit_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
@@ -18735,8 +18735,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
-        name: 'set2_passive_crit_dmg_',
-      },
+        name: 'set2_passive_crit_dmg_'
+      }
     },
     team_dmg_: {
       sheet: 'TheWondrousBananAmusementPark',
@@ -18746,9 +18746,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TheWondrousBananAmusementPark',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   ThiefOfShootingMeteor: {
     set2_passive_brEffect_: {
@@ -18759,8 +18759,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'ThiefOfShootingMeteor',
-        name: 'set2_passive_brEffect_',
-      },
+        name: 'set2_passive_brEffect_'
+      }
     },
     set4_passive_brEffect_: {
       sheet: 'ThiefOfShootingMeteor',
@@ -18770,9 +18770,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'ThiefOfShootingMeteor',
-        name: 'set4_passive_brEffect_',
-      },
-    },
+        name: 'set4_passive_brEffect_'
+      }
+    }
   },
   ThisIsMe: {
     additive_ult_dmg: {
@@ -18785,8 +18785,8 @@ export const buffs = {
         sheet: 'ThisIsMe',
         dst: null,
         damageType1: 'ult',
-        name: 'additive_ult_dmg',
-      },
+        name: 'additive_ult_dmg'
+      }
     },
     passive_def_: {
       sheet: 'ThisIsMe',
@@ -18796,9 +18796,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'ThisIsMe',
-        name: 'passive_def_',
-      },
-    },
+        name: 'passive_def_'
+      }
+    }
   },
   ThoseManySprings: {
     common_dmg_: {
@@ -18809,8 +18809,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'ThoseManySprings',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_eff_: {
       sheet: 'ThoseManySprings',
@@ -18820,9 +18820,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'ThoseManySprings',
-        name: 'passive_eff_',
-      },
-    },
+        name: 'passive_eff_'
+      }
+    }
   },
   TimeWaitsForNoOne: {
     passive_heal_: {
@@ -18833,8 +18833,8 @@ export const buffs = {
         qt: 'premod',
         q: 'heal_',
         sheet: 'TimeWaitsForNoOne',
-        name: 'passive_heal_',
-      },
+        name: 'passive_heal_'
+      }
     },
     passive_hp_: {
       sheet: 'TimeWaitsForNoOne',
@@ -18844,9 +18844,9 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TimeWaitsForNoOne',
-        name: 'passive_hp_',
-      },
-    },
+        name: 'passive_hp_'
+      }
+    }
   },
   TimeWovenIntoGold: {
     basic_dmg_: {
@@ -18858,8 +18858,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TimeWovenIntoGold',
         damageType1: 'basic',
-        name: 'basic_dmg_',
-      },
+        name: 'basic_dmg_'
+      }
     },
     crit_dmg_: {
       sheet: 'TimeWovenIntoGold',
@@ -18869,8 +18869,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TimeWovenIntoGold',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     passive_baseSpd: {
       sheet: 'TimeWovenIntoGold',
@@ -18880,9 +18880,9 @@ export const buffs = {
         qt: 'base',
         q: 'spd',
         sheet: 'TimeWovenIntoGold',
-        name: 'passive_baseSpd',
-      },
-    },
+        name: 'passive_baseSpd'
+      }
+    }
   },
   Tingyun: {
     e6_dmg_: {
@@ -18893,8 +18893,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Tingyun',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Tingyun',
@@ -18904,8 +18904,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Tingyun',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Tingyun',
@@ -18915,8 +18915,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Tingyun',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Tingyun',
@@ -18926,8 +18926,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Tingyun',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Tingyun',
@@ -18937,8 +18937,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Tingyun',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Tingyun',
@@ -18948,8 +18948,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Tingyun',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Tingyun',
@@ -18959,8 +18959,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Tingyun',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Tingyun',
@@ -18970,8 +18970,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Tingyun',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Tingyun',
@@ -18981,8 +18981,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Tingyun',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Tingyun',
@@ -18992,8 +18992,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Tingyun',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Tingyun',
@@ -19004,8 +19004,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Tingyun',
         elementalType: 'lightning',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Tingyun',
@@ -19015,8 +19015,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Tingyun',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Tingyun',
@@ -19026,8 +19026,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Tingyun',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Tingyun',
@@ -19037,8 +19037,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Tingyun',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Tingyun',
@@ -19049,8 +19049,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Tingyun',
         elementalType: 'lightning',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Tingyun',
@@ -19060,8 +19060,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'Tingyun',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Tingyun',
@@ -19071,9 +19071,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Tingyun',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   TodayIsAnotherPeacefulDay: {
     common_dmg_: {
@@ -19084,9 +19084,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TodayIsAnotherPeacefulDay',
-        name: 'common_dmg_',
-      },
-    },
+        name: 'common_dmg_'
+      }
+    }
   },
   TopazAndNumby: {
     e6_dmg_: {
@@ -19097,8 +19097,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TopazAndNumby',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'TopazAndNumby',
@@ -19108,8 +19108,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'TopazAndNumby',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'TopazAndNumby',
@@ -19119,8 +19119,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'TopazAndNumby',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'TopazAndNumby',
@@ -19130,8 +19130,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'TopazAndNumby',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'TopazAndNumby',
@@ -19141,8 +19141,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'TopazAndNumby',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'TopazAndNumby',
@@ -19152,8 +19152,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'TopazAndNumby',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'TopazAndNumby',
@@ -19164,8 +19164,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TopazAndNumby',
         elementalType: 'fire',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'TopazAndNumby',
@@ -19176,8 +19176,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TopazAndNumby',
         elementalType: 'fire',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'TopazAndNumby',
@@ -19187,8 +19187,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'TopazAndNumby',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'TopazAndNumby',
@@ -19199,8 +19199,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TopazAndNumby',
         elementalType: 'fire',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'TopazAndNumby',
@@ -19210,8 +19210,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TopazAndNumby',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'TopazAndNumby',
@@ -19222,8 +19222,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TopazAndNumby',
         elementalType: 'fire',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'TopazAndNumby',
@@ -19233,8 +19233,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'TopazAndNumby',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'TopazAndNumby',
@@ -19245,8 +19245,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TopazAndNumby',
         elementalType: 'fire',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'TopazAndNumby',
@@ -19256,8 +19256,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TopazAndNumby',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'TopazAndNumby',
@@ -19267,8 +19267,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'TopazAndNumby',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'TopazAndNumby',
@@ -19278,9 +19278,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TopazAndNumby',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   TrailblazerFire: {
     e6_dmg_: {
@@ -19291,8 +19291,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerFire',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'TrailblazerFire',
@@ -19302,8 +19302,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'TrailblazerFire',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'TrailblazerFire',
@@ -19313,8 +19313,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'TrailblazerFire',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'TrailblazerFire',
@@ -19324,8 +19324,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'TrailblazerFire',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'TrailblazerFire',
@@ -19335,8 +19335,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'TrailblazerFire',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'TrailblazerFire',
@@ -19346,8 +19346,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'TrailblazerFire',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'TrailblazerFire',
@@ -19357,8 +19357,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'TrailblazerFire',
@@ -19368,8 +19368,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'TrailblazerFire',
@@ -19379,8 +19379,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'TrailblazerFire',
@@ -19390,8 +19390,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'TrailblazerFire',
@@ -19401,8 +19401,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'TrailblazerFire',
@@ -19412,8 +19412,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'TrailblazerFire',
@@ -19423,8 +19423,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'TrailblazerFire',
@@ -19434,8 +19434,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'TrailblazerFire',
@@ -19445,8 +19445,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'TrailblazerFire',
@@ -19456,8 +19456,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerFire',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'TrailblazerFire',
@@ -19467,9 +19467,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerFire',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   TrailblazerIce: {
     e6_dmg_: {
@@ -19480,8 +19480,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerIce',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'TrailblazerIce',
@@ -19491,8 +19491,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'TrailblazerIce',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'TrailblazerIce',
@@ -19502,8 +19502,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'TrailblazerIce',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'TrailblazerIce',
@@ -19513,8 +19513,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'TrailblazerIce',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_servantSkill: {
       sheet: 'TrailblazerIce',
@@ -19524,8 +19524,8 @@ export const buffs = {
         qt: 'char',
         q: 'servantSkill',
         sheet: 'TrailblazerIce',
-        name: 'eidolon5_servantSkill',
-      },
+        name: 'eidolon5_servantSkill'
+      }
     },
     eidolon5_ult: {
       sheet: 'TrailblazerIce',
@@ -19535,8 +19535,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'TrailblazerIce',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'TrailblazerIce',
@@ -19546,8 +19546,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'TrailblazerIce',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'TrailblazerIce',
@@ -19557,8 +19557,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'TrailblazerIce',
@@ -19568,8 +19568,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'TrailblazerIce',
@@ -19579,8 +19579,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'TrailblazerIce',
@@ -19590,8 +19590,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'TrailblazerIce',
@@ -19601,8 +19601,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'TrailblazerIce',
@@ -19612,8 +19612,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'TrailblazerIce',
@@ -19623,8 +19623,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'TrailblazerIce',
@@ -19634,8 +19634,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'TrailblazerIce',
@@ -19645,8 +19645,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'TrailblazerIce',
@@ -19656,8 +19656,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TrailblazerIce',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'TrailblazerIce',
@@ -19667,9 +19667,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerIce',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   TrailblazerImaginary: {
     e6_dmg_: {
@@ -19680,8 +19680,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerImaginary',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'TrailblazerImaginary',
@@ -19691,8 +19691,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'TrailblazerImaginary',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'TrailblazerImaginary',
@@ -19702,8 +19702,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'TrailblazerImaginary',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'TrailblazerImaginary',
@@ -19713,8 +19713,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'TrailblazerImaginary',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'TrailblazerImaginary',
@@ -19724,8 +19724,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'TrailblazerImaginary',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'TrailblazerImaginary',
@@ -19735,8 +19735,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'TrailblazerImaginary',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'TrailblazerImaginary',
@@ -19746,8 +19746,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'TrailblazerImaginary',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'TrailblazerImaginary',
@@ -19757,8 +19757,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'TrailblazerImaginary',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'TrailblazerImaginary',
@@ -19769,8 +19769,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TrailblazerImaginary',
         elementalType: 'imaginary',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'TrailblazerImaginary',
@@ -19780,8 +19780,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'TrailblazerImaginary',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'TrailblazerImaginary',
@@ -19791,8 +19791,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'TrailblazerImaginary',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'TrailblazerImaginary',
@@ -19802,8 +19802,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'TrailblazerImaginary',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'TrailblazerImaginary',
@@ -19814,8 +19814,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TrailblazerImaginary',
         elementalType: 'imaginary',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'TrailblazerImaginary',
@@ -19825,8 +19825,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'TrailblazerImaginary',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'TrailblazerImaginary',
@@ -19836,8 +19836,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'TrailblazerImaginary',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'TrailblazerImaginary',
@@ -19848,8 +19848,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'TrailblazerImaginary',
         elementalType: 'imaginary',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'TrailblazerImaginary',
@@ -19859,9 +19859,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerImaginary',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   TrailblazerPhysical: {
     e6_dmg_: {
@@ -19872,8 +19872,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerPhysical',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_skill: {
       sheet: 'TrailblazerPhysical',
@@ -19883,8 +19883,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'TrailblazerPhysical',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon3_talent: {
       sheet: 'TrailblazerPhysical',
@@ -19894,8 +19894,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'TrailblazerPhysical',
-        name: 'eidolon3_talent',
-      },
+        name: 'eidolon3_talent'
+      }
     },
     eidolon5_basic: {
       sheet: 'TrailblazerPhysical',
@@ -19905,8 +19905,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'TrailblazerPhysical',
-        name: 'eidolon5_basic',
-      },
+        name: 'eidolon5_basic'
+      }
     },
     eidolon5_ult: {
       sheet: 'TrailblazerPhysical',
@@ -19916,8 +19916,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'TrailblazerPhysical',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'TrailblazerPhysical',
@@ -19927,8 +19927,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'TrailblazerPhysical',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'TrailblazerPhysical',
@@ -19938,8 +19938,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'TrailblazerPhysical',
@@ -19949,8 +19949,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'TrailblazerPhysical',
@@ -19960,8 +19960,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'TrailblazerPhysical',
@@ -19971,8 +19971,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'TrailblazerPhysical',
@@ -19982,8 +19982,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'TrailblazerPhysical',
@@ -19993,8 +19993,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'TrailblazerPhysical',
@@ -20004,8 +20004,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'TrailblazerPhysical',
@@ -20015,8 +20015,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'TrailblazerPhysical',
@@ -20026,8 +20026,8 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'TrailblazerPhysical',
@@ -20037,8 +20037,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'TrailblazerPhysical',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'TrailblazerPhysical',
@@ -20048,9 +20048,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'TrailblazerPhysical',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   TrendOfTheUniversalMarket: {
     passive_def_: {
@@ -20061,9 +20061,9 @@ export const buffs = {
         qt: 'premod',
         q: 'def_',
         sheet: 'TrendOfTheUniversalMarket',
-        name: 'passive_def_',
-      },
-    },
+        name: 'passive_def_'
+      }
+    }
   },
   Tribbie: {
     e6_dmg_: {
@@ -20074,8 +20074,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Tribbie',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Tribbie',
@@ -20085,8 +20085,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Tribbie',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Tribbie',
@@ -20096,8 +20096,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Tribbie',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Tribbie',
@@ -20107,8 +20107,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Tribbie',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Tribbie',
@@ -20118,8 +20118,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Tribbie',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Tribbie',
@@ -20129,8 +20129,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Tribbie',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Tribbie',
@@ -20140,8 +20140,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Tribbie',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Tribbie',
@@ -20151,8 +20151,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Tribbie',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Tribbie',
@@ -20162,8 +20162,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Tribbie',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Tribbie',
@@ -20173,8 +20173,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Tribbie',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Tribbie',
@@ -20184,8 +20184,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Tribbie',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Tribbie',
@@ -20195,8 +20195,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Tribbie',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Tribbie',
@@ -20206,8 +20206,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Tribbie',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Tribbie',
@@ -20217,8 +20217,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'Tribbie',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Tribbie',
@@ -20228,8 +20228,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Tribbie',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Tribbie',
@@ -20239,8 +20239,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Tribbie',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Tribbie',
@@ -20250,9 +20250,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Tribbie',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   UnderTheBlueSky: {
     crit_: {
@@ -20263,8 +20263,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'UnderTheBlueSky',
-        name: 'crit_',
-      },
+        name: 'crit_'
+      }
     },
     passive_atk_: {
       sheet: 'UnderTheBlueSky',
@@ -20274,9 +20274,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'UnderTheBlueSky',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   VictoryInABlink: {
     common_dmg_: {
@@ -20287,8 +20287,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'VictoryInABlink',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_crit_dmg_: {
       sheet: 'VictoryInABlink',
@@ -20298,9 +20298,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'VictoryInABlink',
-        name: 'passive_crit_dmg_',
-      },
-    },
+        name: 'passive_crit_dmg_'
+      }
+    }
   },
   Void: {
     eff_: {
@@ -20311,9 +20311,9 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_',
         sheet: 'Void',
-        name: 'eff_',
-      },
-    },
+        name: 'eff_'
+      }
+    }
   },
   WarmthShortensColdNights: {
     passive_hp_: {
@@ -20324,9 +20324,9 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'WarmthShortensColdNights',
-        name: 'passive_hp_',
-      },
-    },
+        name: 'passive_hp_'
+      }
+    }
   },
   WastelanderOfBanditryDesert: {
     set2_passive_imaginary_dmg_: {
@@ -20338,8 +20338,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'WastelanderOfBanditryDesert',
         elementalType: 'imaginary',
-        name: 'set2_passive_imaginary_dmg_',
-      },
+        name: 'set2_passive_imaginary_dmg_'
+      }
     },
     set4_crit_: {
       sheet: 'WastelanderOfBanditryDesert',
@@ -20349,8 +20349,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'WastelanderOfBanditryDesert',
-        name: 'set4_crit_',
-      },
+        name: 'set4_crit_'
+      }
     },
     set4_crit_dmg_: {
       sheet: 'WastelanderOfBanditryDesert',
@@ -20360,9 +20360,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'WastelanderOfBanditryDesert',
-        name: 'set4_crit_dmg_',
-      },
-    },
+        name: 'set4_crit_dmg_'
+      }
+    }
   },
   WatchmakerMasterOfDreamMachinations: {
     set2_passive_brEffect_: {
@@ -20373,8 +20373,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'WatchmakerMasterOfDreamMachinations',
-        name: 'set2_passive_brEffect_',
-      },
+        name: 'set2_passive_brEffect_'
+      }
     },
     set4_brEffect_: {
       sheet: 'WatchmakerMasterOfDreamMachinations',
@@ -20384,9 +20384,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'WatchmakerMasterOfDreamMachinations',
-        name: 'set4_brEffect_',
-      },
-    },
+        name: 'set4_brEffect_'
+      }
+    }
   },
   Welt: {
     e6_dmg_: {
@@ -20397,8 +20397,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Welt',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Welt',
@@ -20408,8 +20408,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Welt',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Welt',
@@ -20419,8 +20419,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Welt',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Welt',
@@ -20430,8 +20430,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Welt',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Welt',
@@ -20441,8 +20441,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Welt',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Welt',
@@ -20452,8 +20452,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Welt',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Welt',
@@ -20463,8 +20463,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Welt',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Welt',
@@ -20474,8 +20474,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Welt',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Welt',
@@ -20486,8 +20486,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Welt',
         elementalType: 'imaginary',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Welt',
@@ -20497,8 +20497,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Welt',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Welt',
@@ -20508,8 +20508,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Welt',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Welt',
@@ -20519,8 +20519,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Welt',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Welt',
@@ -20531,8 +20531,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Welt',
         elementalType: 'imaginary',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Welt',
@@ -20542,8 +20542,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Welt',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Welt',
@@ -20553,8 +20553,8 @@ export const buffs = {
         qt: 'premod',
         q: 'eff_res_',
         sheet: 'Welt',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Welt',
@@ -20565,8 +20565,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Welt',
         elementalType: 'imaginary',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Welt',
@@ -20576,9 +20576,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Welt',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   WhatIsReal: {
     passive_brEffect_: {
@@ -20589,9 +20589,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'WhatIsReal',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   WhereaboutsShouldDreamsRest: {
     break_dmg_: {
@@ -20603,8 +20603,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'WhereaboutsShouldDreamsRest',
         damageType1: 'break',
-        name: 'break_dmg_',
-      },
+        name: 'break_dmg_'
+      }
     },
     passive_brEffect_: {
       sheet: 'WhereaboutsShouldDreamsRest',
@@ -20614,9 +20614,9 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'WhereaboutsShouldDreamsRest',
-        name: 'passive_brEffect_',
-      },
-    },
+        name: 'passive_brEffect_'
+      }
+    }
   },
   WoofWalkTime: {
     common_dmg_: {
@@ -20627,8 +20627,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'WoofWalkTime',
-        name: 'common_dmg_',
-      },
+        name: 'common_dmg_'
+      }
     },
     passive_atk_: {
       sheet: 'WoofWalkTime',
@@ -20638,9 +20638,9 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'WoofWalkTime',
-        name: 'passive_atk_',
-      },
-    },
+        name: 'passive_atk_'
+      }
+    }
   },
   WorrisomeBlissful: {
     crit_dmg_: {
@@ -20651,8 +20651,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_dmg_',
         sheet: 'WorrisomeBlissful',
-        name: 'crit_dmg_',
-      },
+        name: 'crit_dmg_'
+      }
     },
     followUp_dmg_: {
       sheet: 'WorrisomeBlissful',
@@ -20663,8 +20663,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'WorrisomeBlissful',
         damageType1: 'followUp',
-        name: 'followUp_dmg_',
-      },
+        name: 'followUp_dmg_'
+      }
     },
     passive_crit_: {
       sheet: 'WorrisomeBlissful',
@@ -20674,9 +20674,9 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'WorrisomeBlissful',
-        name: 'passive_crit_',
-      },
-    },
+        name: 'passive_crit_'
+      }
+    }
   },
   Xueyi: {
     e6_dmg_: {
@@ -20687,8 +20687,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Xueyi',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Xueyi',
@@ -20698,8 +20698,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Xueyi',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Xueyi',
@@ -20709,8 +20709,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Xueyi',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Xueyi',
@@ -20720,8 +20720,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Xueyi',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Xueyi',
@@ -20731,8 +20731,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Xueyi',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Xueyi',
@@ -20742,8 +20742,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Xueyi',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Xueyi',
@@ -20753,8 +20753,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Xueyi',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Xueyi',
@@ -20764,8 +20764,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Xueyi',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Xueyi',
@@ -20775,8 +20775,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Xueyi',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Xueyi',
@@ -20786,8 +20786,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Xueyi',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Xueyi',
@@ -20798,8 +20798,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Xueyi',
         elementalType: 'quantum',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Xueyi',
@@ -20809,8 +20809,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Xueyi',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Xueyi',
@@ -20820,8 +20820,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Xueyi',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Xueyi',
@@ -20831,8 +20831,8 @@ export const buffs = {
         qt: 'premod',
         q: 'brEffect_',
         sheet: 'Xueyi',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Xueyi',
@@ -20843,8 +20843,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Xueyi',
         elementalType: 'quantum',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Xueyi',
@@ -20854,8 +20854,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Xueyi',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Xueyi',
@@ -20865,9 +20865,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Xueyi',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Yanqing: {
     e6_dmg_: {
@@ -20878,8 +20878,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yanqing',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Yanqing',
@@ -20889,8 +20889,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Yanqing',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Yanqing',
@@ -20900,8 +20900,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Yanqing',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Yanqing',
@@ -20911,8 +20911,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Yanqing',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Yanqing',
@@ -20922,8 +20922,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Yanqing',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Yanqing',
@@ -20933,8 +20933,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Yanqing',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Yanqing',
@@ -20944,8 +20944,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yanqing',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Yanqing',
@@ -20955,8 +20955,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yanqing',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Yanqing',
@@ -20967,8 +20967,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yanqing',
         elementalType: 'ice',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Yanqing',
@@ -20978,8 +20978,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yanqing',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Yanqing',
@@ -20989,8 +20989,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yanqing',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Yanqing',
@@ -21000,8 +21000,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yanqing',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Yanqing',
@@ -21012,8 +21012,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yanqing',
         elementalType: 'ice',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Yanqing',
@@ -21023,8 +21023,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yanqing',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Yanqing',
@@ -21034,8 +21034,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yanqing',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Yanqing',
@@ -21046,8 +21046,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yanqing',
         elementalType: 'ice',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Yanqing',
@@ -21057,9 +21057,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yanqing',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   YetHopeIsPriceless: {
     followUp_defIgn_: {
@@ -21071,8 +21071,8 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'YetHopeIsPriceless',
         damageType1: 'followUp',
-        name: 'followUp_defIgn_',
-      },
+        name: 'followUp_defIgn_'
+      }
     },
     followUp_dmg_: {
       sheet: 'YetHopeIsPriceless',
@@ -21083,8 +21083,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'YetHopeIsPriceless',
         damageType1: 'followUp',
-        name: 'followUp_dmg_',
-      },
+        name: 'followUp_dmg_'
+      }
     },
     passive_crit_: {
       sheet: 'YetHopeIsPriceless',
@@ -21094,8 +21094,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'YetHopeIsPriceless',
-        name: 'passive_crit_',
-      },
+        name: 'passive_crit_'
+      }
     },
     ult_defIgn_: {
       sheet: 'YetHopeIsPriceless',
@@ -21106,9 +21106,9 @@ export const buffs = {
         q: 'defIgn_',
         sheet: 'YetHopeIsPriceless',
         damageType1: 'ult',
-        name: 'ult_defIgn_',
-      },
-    },
+        name: 'ult_defIgn_'
+      }
+    }
   },
   Yukong: {
     e6_dmg_: {
@@ -21119,8 +21119,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yukong',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Yukong',
@@ -21130,8 +21130,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Yukong',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_skill: {
       sheet: 'Yukong',
@@ -21141,8 +21141,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Yukong',
-        name: 'eidolon3_skill',
-      },
+        name: 'eidolon3_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Yukong',
@@ -21152,8 +21152,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Yukong',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     eidolon5_ult: {
       sheet: 'Yukong',
@@ -21163,8 +21163,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Yukong',
-        name: 'eidolon5_ult',
-      },
+        name: 'eidolon5_ult'
+      }
     },
     enemy_defRed_: {
       sheet: 'Yukong',
@@ -21174,8 +21174,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Yukong',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Yukong',
@@ -21186,8 +21186,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yukong',
         elementalType: 'imaginary',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Yukong',
@@ -21198,8 +21198,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yukong',
         elementalType: 'imaginary',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Yukong',
@@ -21209,8 +21209,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yukong',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Yukong',
@@ -21221,8 +21221,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yukong',
         elementalType: 'imaginary',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Yukong',
@@ -21232,8 +21232,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yukong',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Yukong',
@@ -21244,8 +21244,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yukong',
         elementalType: 'imaginary',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Yukong',
@@ -21255,8 +21255,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yukong',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Yukong',
@@ -21267,8 +21267,8 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'Yukong',
         elementalType: 'imaginary',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Yukong',
@@ -21278,8 +21278,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yukong',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Yukong',
@@ -21289,8 +21289,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yukong',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Yukong',
@@ -21300,9 +21300,9 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yukong',
-        name: 'team_dmg_',
-      },
-    },
+        name: 'team_dmg_'
+      }
+    }
   },
   Yunli: {
     e6_dmg_: {
@@ -21313,8 +21313,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yunli',
-        name: 'e6_dmg_',
-      },
+        name: 'e6_dmg_'
+      }
     },
     eidolon3_basic: {
       sheet: 'Yunli',
@@ -21324,8 +21324,8 @@ export const buffs = {
         qt: 'char',
         q: 'basic',
         sheet: 'Yunli',
-        name: 'eidolon3_basic',
-      },
+        name: 'eidolon3_basic'
+      }
     },
     eidolon3_ult: {
       sheet: 'Yunli',
@@ -21335,8 +21335,8 @@ export const buffs = {
         qt: 'char',
         q: 'ult',
         sheet: 'Yunli',
-        name: 'eidolon3_ult',
-      },
+        name: 'eidolon3_ult'
+      }
     },
     eidolon5_skill: {
       sheet: 'Yunli',
@@ -21346,8 +21346,8 @@ export const buffs = {
         qt: 'char',
         q: 'skill',
         sheet: 'Yunli',
-        name: 'eidolon5_skill',
-      },
+        name: 'eidolon5_skill'
+      }
     },
     eidolon5_talent: {
       sheet: 'Yunli',
@@ -21357,8 +21357,8 @@ export const buffs = {
         qt: 'char',
         q: 'talent',
         sheet: 'Yunli',
-        name: 'eidolon5_talent',
-      },
+        name: 'eidolon5_talent'
+      }
     },
     enemy_defRed_: {
       sheet: 'Yunli',
@@ -21368,8 +21368,8 @@ export const buffs = {
         qt: 'common',
         q: 'defRed_',
         sheet: 'Yunli',
-        name: 'enemy_defRed_',
-      },
+        name: 'enemy_defRed_'
+      }
     },
     statBoost1: {
       sheet: 'Yunli',
@@ -21379,8 +21379,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yunli',
-        name: 'statBoost1',
-      },
+        name: 'statBoost1'
+      }
     },
     statBoost10: {
       sheet: 'Yunli',
@@ -21390,8 +21390,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yunli',
-        name: 'statBoost10',
-      },
+        name: 'statBoost10'
+      }
     },
     statBoost2: {
       sheet: 'Yunli',
@@ -21401,8 +21401,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yunli',
-        name: 'statBoost2',
-      },
+        name: 'statBoost2'
+      }
     },
     statBoost3: {
       sheet: 'Yunli',
@@ -21412,8 +21412,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yunli',
-        name: 'statBoost3',
-      },
+        name: 'statBoost3'
+      }
     },
     statBoost4: {
       sheet: 'Yunli',
@@ -21423,8 +21423,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Yunli',
-        name: 'statBoost4',
-      },
+        name: 'statBoost4'
+      }
     },
     statBoost5: {
       sheet: 'Yunli',
@@ -21434,8 +21434,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yunli',
-        name: 'statBoost5',
-      },
+        name: 'statBoost5'
+      }
     },
     statBoost6: {
       sheet: 'Yunli',
@@ -21445,8 +21445,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yunli',
-        name: 'statBoost6',
-      },
+        name: 'statBoost6'
+      }
     },
     statBoost7: {
       sheet: 'Yunli',
@@ -21456,8 +21456,8 @@ export const buffs = {
         qt: 'premod',
         q: 'atk_',
         sheet: 'Yunli',
-        name: 'statBoost7',
-      },
+        name: 'statBoost7'
+      }
     },
     statBoost8: {
       sheet: 'Yunli',
@@ -21467,8 +21467,8 @@ export const buffs = {
         qt: 'premod',
         q: 'crit_',
         sheet: 'Yunli',
-        name: 'statBoost8',
-      },
+        name: 'statBoost8'
+      }
     },
     statBoost9: {
       sheet: 'Yunli',
@@ -21478,8 +21478,8 @@ export const buffs = {
         qt: 'premod',
         q: 'hp_',
         sheet: 'Yunli',
-        name: 'statBoost9',
-      },
+        name: 'statBoost9'
+      }
     },
     team_dmg_: {
       sheet: 'Yunli',
@@ -21489,8 +21489,8 @@ export const buffs = {
         qt: 'premod',
         q: 'common_dmg_',
         sheet: 'Yunli',
-        name: 'team_dmg_',
-      },
-    },
-  },
+        name: 'team_dmg_'
+      }
+    }
+  }
 } as const

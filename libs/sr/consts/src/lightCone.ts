@@ -123,7 +123,7 @@ export const allLightConeKeys = [
   'WhereaboutsShouldDreamsRest',
   'WoofWalkTime',
   'WorrisomeBlissful',
-  'YetHopeIsPriceless',
+  'YetHopeIsPriceless'
 ] as const
 
 export type LightConeKey = (typeof allLightConeKeys)[number]

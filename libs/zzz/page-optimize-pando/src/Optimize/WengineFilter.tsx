@@ -6,7 +6,7 @@ import { allSpecialityKeys } from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigContext,
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { WengineToggle } from '@genshin-optimizer/zzz/ui'
@@ -20,14 +20,14 @@ import {
   Divider,
   IconButton,
   Skeleton,
-  Stack,
+  Stack
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useContext, useMemo } from 'react'
 import { WengineLevelFilter } from './WengineLevelFilter'
 export function WengineFilter({
   numWengine,
-  disabled,
+  disabled
 }: {
   numWengine: number
   disabled?: boolean
@@ -44,7 +44,7 @@ export function WengineFilter({
               display: 'flex',
               gap: 2,
               justifyContent: 'space-between',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
             <Box
@@ -67,7 +67,7 @@ export function WengineFilter({
               color={optConfig.optWengine ? 'success' : 'secondary'}
               onClick={() =>
                 database.optConfigs.set(optConfigId, {
-                  optWengine: !optConfig.optWengine,
+                  optWengine: !optConfig.optWengine
                 })
               }
             >
@@ -93,7 +93,7 @@ export function WengineFilter({
 function WengineFilterModal({
   show,
   onClose,
-  disabled,
+  disabled
 }: {
   show: boolean
   onClose: () => void
@@ -122,7 +122,7 @@ function WengineFilterModal({
                 disabled={disabled}
                 onClick={() =>
                   database.optConfigs.set(optConfigId, {
-                    useEquippedWengine: !optConfig.useEquippedWengine,
+                    useEquippedWengine: !optConfig.useEquippedWengine
                   })
                 }
                 color={optConfig.useEquippedWengine ? 'success' : 'secondary'}
@@ -170,7 +170,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
     optConfig.wlevelLow,
     optConfig.wlevelHigh,
     optConfig.optWengine,
-    optConfig.useEquippedWengine,
+    optConfig.useEquippedWengine
   ])
   return (
     <WengineToggle

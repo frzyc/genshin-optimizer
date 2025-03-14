@@ -1,12 +1,12 @@
 import type {
   AnyNode,
   ReRead,
-  TagMapEntries,
+  TagMapEntries
 } from '@genshin-optimizer/pando/engine'
 import {
   addCustomOperation,
   compileTagMapValues,
-  constant,
+  constant
 } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
@@ -26,7 +26,7 @@ export * from './util'
   addCustomOperation('res', {
     range: ([r]) => ({ min: res([r.max]), max: res([r.min]) }),
     monotonicity: (_) => [{ inc: false, dec: true }],
-    calc: res,
+    calc: res
   })
 }
 

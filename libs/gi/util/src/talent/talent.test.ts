@@ -12,7 +12,7 @@ describe('Test character talent validation', () => {
     const invalidTalent = {
       auto: 3,
       skill: 10,
-      burst: 0,
+      burst: 0
     }
     const result = validateTalent(3, invalidTalent)
     expect(result.auto).toEqual(3)

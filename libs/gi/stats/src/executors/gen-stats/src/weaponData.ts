@@ -2,7 +2,7 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import type {
   StatKey,
   WeaponGrowCurveKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/dm'
 import {
   equipAffixExcelConfigData,
@@ -10,7 +10,7 @@ import {
   weaponExcelConfigData,
   weaponIdMap,
   weaponMap,
-  weaponPromoteExcelConfigData,
+  weaponPromoteExcelConfigData
 } from '@genshin-optimizer/gi/dm'
 import * as quantumCatalystData from './QuantumCatalyst/data.json'
 
@@ -72,33 +72,33 @@ export default function weaponData() {
         mainStat: {
           type: propTypeMap[main.propType],
           base: main.initValue,
-          curve: main.type,
+          curve: main.type
         },
         subStat: sub.propType
           ? {
               type: propTypeMap[sub.propType],
               base: sub.initValue,
-              curve: sub.type,
+              curve: sub.type
             }
           : undefined,
         lvlCurves: [
           {
             key: propTypeMap[main.propType],
             base: main.initValue,
-            curve: main.type,
+            curve: main.type
           },
           ...(sub.propType
             ? [
                 {
                   key: propTypeMap[sub.propType],
                   base: sub.initValue,
-                  curve: sub.type,
-                },
+                  curve: sub.type
+                }
               ]
-            : []),
+            : [])
         ],
         refinementBonus,
-        ascensionBonus,
+        ascensionBonus
       }
       return [weaponIdMap[weaponid], result]
     })

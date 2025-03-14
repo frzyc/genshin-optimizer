@@ -9,7 +9,7 @@ import {
   maxLevel,
   maxLevelLow,
   milestoneLevels,
-  milestoneLevelsLow,
+  milestoneLevelsLow
 } from '@genshin-optimizer/gi/util'
 import { Box, Button, InputAdornment, MenuItem } from '@mui/material'
 import { useCallback } from 'react'
@@ -21,7 +21,7 @@ export function LevelSelect({
   setBoth,
   useLow = false,
   disabled = false,
-  warning = false,
+  warning = false
 }: {
   level: number
   ascension: AscensionKey
@@ -64,7 +64,7 @@ export function LevelSelect({
           inputProps: {
             min: 0,
             max: 90,
-            sx: { width: '4em' },
+            sx: { width: '4em' }
           },
           endAdornment: (
             <InputAdornment position="end" sx={{ width: '100%' }}>
@@ -80,7 +80,7 @@ export function LevelSelect({
                 <strong>/ {ascensionMaxLevel[ascension]}</strong>
               </Button>
             </InputAdornment>
-          ),
+          )
         }}
         color={warning ? 'warning' : undefined}
         focused={warning ? true : undefined}

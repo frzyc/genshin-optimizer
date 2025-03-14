@@ -8,6 +8,6 @@ const data = {
   cd_a,
   cd_b,
   cd_s,
-  circle,
+  circle
 } as const
 export default data

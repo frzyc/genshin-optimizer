@@ -79,6 +79,6 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   WasterGreatsword,
   Whiteblind,
   WhiteIronGreatsword,
-  WolfsGravestone,
+  WolfsGravestone
 } as const
 export default claymore

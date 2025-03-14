@@ -64,7 +64,7 @@ export class BuildDataManager extends DataManager<
       description,
       weaponId,
       artifactIds,
-      id,
+      id
     }
   }
 

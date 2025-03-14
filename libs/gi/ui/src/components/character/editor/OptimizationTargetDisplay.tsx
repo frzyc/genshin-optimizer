@@ -9,7 +9,7 @@ import { DataContext } from '../../../context'
 import { getDisplayHeader, resolveInfo } from '../../../util'
 export function OptimizationTargetDisplay({
   optimizationTarget,
-  customMultiTargets,
+  customMultiTargets
 }: {
   optimizationTarget: string[]
   customMultiTargets: CustomMultiTarget[]
@@ -33,7 +33,7 @@ export function OptimizationTargetDisplay({
     // Since mtargets are not passed in the character UIData, retrieve the name manually.
     name = optimizationTarget[0] === 'custom'
       ? customMultiTargets[parseInt(optimizationTarget[1] ?? '')]?.name
-      : undefined,
+      : undefined
   } = (node && resolveInfo(node.info)) ?? {}
 
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>

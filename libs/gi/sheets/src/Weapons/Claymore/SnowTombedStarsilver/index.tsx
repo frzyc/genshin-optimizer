@@ -5,7 +5,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st, trans } from '../../../SheetUtil'
@@ -27,7 +27,7 @@ const dmgAoe = equal(
     ),
     'elemental',
     {
-      hit: { ele: constant('physical') },
+      hit: { ele: constant('physical') }
     }
   )
 )
@@ -41,14 +41,14 @@ const dmgOnCryoOp = equal(
     ),
     'elemental',
     {
-      hit: { ele: constant('physical') },
+      hit: { ele: constant('physical') }
     }
   )
 )
 
 const data = dataObjForWeaponSheet(key, undefined, {
   dmgAoe,
-  dmgOnCryoOp,
+  dmgOnCryoOp
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -56,15 +56,15 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: infoMut(dmgAoe, { name: trm('aoeDmg') }),
+          node: infoMut(dmgAoe, { name: trm('aoeDmg') })
         },
         {
           node: infoMut(dmgOnCryoOp, {
-            name: trm('cryoAffectedDmg'),
-          }),
-        },
-      ],
-    },
-  ],
+            name: trm('cryoAffectedDmg')
+          })
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

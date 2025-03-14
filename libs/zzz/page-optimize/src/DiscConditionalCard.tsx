@@ -11,7 +11,7 @@ import {
   CardHeader,
   Divider,
   Grid,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useMemo } from 'react'
 import { ConditionalToggles } from './ConditionalToggle'
@@ -46,7 +46,7 @@ export function DiscConditionalsCard({ baseStats }: { baseStats: Stats }) {
 }
 export function DiscConditionalCard({
   setKey,
-  baseStats,
+  baseStats
 }: {
   setKey: DiscSetKey
   baseStats: Stats

@@ -1,18 +1,18 @@
 import {
   crawlObject,
   objKeyMap,
-  objKeyValMap,
+  objKeyValMap
 } from '@genshin-optimizer/common/util'
 import {
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allElementWithPhyKeys,
-  allRegionKeys,
+  allRegionKeys
 } from '@genshin-optimizer/gi/consts'
 import {
   allEleEnemyResKeys,
   crittableTransformativeReactions,
-  transformativeReactionLevelMultipliers,
+  transformativeReactionLevelMultipliers
 } from '@genshin-optimizer/gi/keymap'
 import { info } from './info'
 import { deepNodeClone } from './internal'
@@ -38,7 +38,7 @@ import {
   subscript,
   sum,
   unequal,
-  unequalStr,
+  unequalStr
 } from './utils'
 
 const asConst = true as const,
@@ -85,7 +85,7 @@ const allNonstackBuffs = [
   'hakushingeo',
   'hakushindendro',
   'ttds',
-  'wolf',
+  'wolf'
 ] as const
 export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
@@ -95,7 +95,7 @@ const allMoves = [
   'plunging_impact',
   'skill',
   'burst',
-  'elemental',
+  'elemental'
 ] as const
 const allArtModStats = [
   'hp',
@@ -116,7 +116,7 @@ const allArtModStats = [
   'anemo_dmg_',
   'geo_dmg_',
   'dendro_dmg_',
-  'heal_',
+  'heal_'
 ] as const
 const allTransformative = [
   'overloaded',
@@ -127,7 +127,7 @@ const allTransformative = [
   'burning',
   'bloom',
   'burgeon',
-  'hyperbloom',
+  'hyperbloom'
 ] as const
 const allAmplifying = ['vaporize', 'melt'] as const
 const allAdditive = ['spread', 'aggravate'] as const
@@ -144,7 +144,7 @@ const allMisc = [
   'atkSPD_',
   'weakspotDMG_',
   'dmgRed_',
-  'healInc',
+  'healInc'
 ] as const
 const allBase = ['base_atk', 'base_hp', 'base_def'] as const
 
@@ -158,25 +158,25 @@ const allModStats = [
       ...allAdditive,
       ...allMoves,
       'plunging',
-      'normalEle',
+      'normalEle'
     ] as const
-  ).map((x) => `${x}_dmg_` as const),
+  ).map((x) => `${x}_dmg_` as const)
 ] as const
 const allNonModStats = [
   ...allElements.flatMap((x) => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
-    `${x}_res_` as const,
+    `${x}_res_` as const
   ]),
   ...allTalents.map((x) => `${x}Boost` as const),
   ...([...allMoves, 'plunging'] as const).flatMap((x) => [
     `${x}_dmgInc` as const,
     `${x}_critDMG_` as const,
-    `${x}_critRate_` as const,
+    `${x}_critRate_` as const
   ]),
   ...crittableTransformativeReactions.flatMap((x) => [
     `${x}_critRate_` as const,
-    `${x}_critDMG_` as const,
+    `${x}_critDMG_` as const
   ]),
   'swirl_dmgInc' as const,
   'all_dmgInc' as const,
@@ -184,7 +184,7 @@ const allNonModStats = [
   'enemyDefRed_' as const,
   'enemyDefIgn_' as const,
   ...allMisc,
-  ...allBase,
+  ...allBase
 ] as const
 
 export const allInputPremodKeys = [...allModStats, ...allNonModStats] as const
@@ -211,7 +211,7 @@ for (const ele of allElements) {
 for (const reaction of [
   ...allTransformative,
   ...allAmplifying,
-  ...allAdditive,
+  ...allAdditive
 ]) {
   allModStatNodes[`${reaction}_dmg_`].info!.variant = reaction
 }
@@ -261,7 +261,7 @@ const inputBase = {
   infusion: {
     overridableSelf: stringRead('small'),
     nonOverridableSelf: stringRead('small'),
-    team: stringRead('small'),
+    team: stringRead('small')
   },
 
   base: objKeyMap(['atk', 'hp', 'def'], (key) => read('add', info(key))),
@@ -269,7 +269,7 @@ const inputBase = {
     { prefix: 'custom', pivot },
     {
       ...allModStatNodes,
-      ...allNonModStatNodes,
+      ...allNonModStatNodes
     }
   ),
   premod: { ...talent, ...allModStatNodes, ...allNonModStatNodes },
@@ -281,7 +281,7 @@ const inputBase = {
       ...allModStatNodes,
       ...allNonModStatNodes,
       /** Total Crit Rate capped to [0%, 100%] */
-      cappedCritRate: read(undefined, info('critRate_')),
+      cappedCritRate: read(undefined, info('critRate_'))
     }
   ),
 
@@ -291,8 +291,8 @@ const inputBase = {
       ...objKeyMap(allArtModStats, (key) => allModStatNodes[key]),
       ...objKeyMap(allArtifactSlotKeys, (_) => ({
         id: stringRead(),
-        set: stringRead(),
-      })),
+        set: stringRead()
+      }))
     }
   ),
   artSet: objKeyMap(allArtifactSetKeys, (set) => read('add', { path: set })),
@@ -309,7 +309,7 @@ const inputBase = {
       refinement: read(),
       main: read(),
       sub: read(),
-      sub2: read(),
+      sub2: read()
     }
   ),
 
@@ -324,10 +324,10 @@ const inputBase = {
     level: read(undefined, info('enemyLevel')),
     ...objKeyValMap(allElements, (ele) => [
       `${ele}_res_`,
-      read(undefined, { prefix: 'base', ...info(`${ele}_enemyRes_`) }),
+      read(undefined, { prefix: 'base', ...info(`${ele}_enemyRes_`) })
     ]),
     defRed: read(undefined),
-    defIgn: read(undefined),
+    defIgn: read(undefined)
   },
 
   hit: {
@@ -341,8 +341,8 @@ const inputBase = {
 
     dmgBonus: read('add', { ...info('dmg_'), pivot }),
     dmgInc: read('add', info('dmgInc')),
-    dmg: read(),
-  },
+    dmg: read()
+  }
 }
 const input = setReadNodeKeys(deepNodeClone(inputBase))
 const { base, customBonus, premod, total, art, hit, enemy } = input
@@ -352,7 +352,7 @@ markAccu('add', {
   customBonus,
   premod,
   art,
-  total: objKeyMap(allModStats, (stat) => total[stat]),
+  total: objKeyMap(allModStats, (stat) => total[stat])
 })
 base.atk.info = { ...info('atk'), prefix: 'base', pivot }
 delete total.critRate_.info!.pivot
@@ -363,7 +363,7 @@ total.critRate_.info!.prefix = 'uncapped'
 /** Base Amplifying Bonus */
 const baseAmpBonus = infoMut(sum(one, prod(25 / 9, frac(total.eleMas, 1400))), {
   ...info('base_amplifying_multi_'),
-  pivot,
+  pivot
 })
 
 /** Base Additive Bonus */
@@ -438,10 +438,10 @@ const common: Data = {
       const list = [
         ...operands,
         art[key as keyof typeof art] as NumNode,
-        customBonus[key],
+        customBonus[key]
       ].filter((x) => x)
       return list.length === 1 ? list[0] : sum(...list)
-    }),
+    })
   },
   total: {
     ...objKeyMap(allTalents, (talent) => premod[talent]),
@@ -449,14 +449,14 @@ const common: Data = {
     ...objKeyMap(allNonModStats, (key) => premod[key]),
     ...objKeyValMap(allTalents, (talent) => [
       `${talent}Index`,
-      sum(total[talent], -1),
+      sum(total[talent], -1)
     ]),
     stamina: sum(
       constant(100, { ...info('stamina'), prefix: 'default' }),
       customBonus.stamina
     ),
 
-    cappedCritRate: max(min(total.critRate_, one), naught),
+    cappedCritRate: max(min(total.critRate_, one), naught)
   },
 
   hit: {
@@ -529,7 +529,7 @@ const common: Data = {
             sum(baseAddBonus, total.aggravate_dmg_)
           ),
           info('aggravate_dmgInc')
-        ),
+        )
       },
       naught
     ),
@@ -541,7 +541,7 @@ const common: Data = {
         {
           hit: one,
           critHit: sum(one, total.critDMG_),
-          avgHit: sum(one, prod(total.cappedCritRate, total.critDMG_)),
+          avgHit: sum(one, prod(total.cappedCritRate, total.critDMG_))
         },
         NaN
       ),
@@ -566,7 +566,7 @@ const common: Data = {
             pyro: prod(
               constant(1.5, info('vaporize_multi_')),
               sum(baseAmpBonus, total.vaporize_dmg_)
-            ),
+            )
           },
           one
         ),
@@ -580,13 +580,13 @@ const common: Data = {
             cryo: prod(
               constant(1.5, info('melt_multi_')),
               sum(baseAmpBonus, total.melt_dmg_)
-            ),
+            )
           },
           one
-        ),
+        )
       },
       one
-    ),
+    )
   },
 
   enemy: {
@@ -610,24 +610,24 @@ const common: Data = {
     defRed: total.enemyDefRed_,
     ...objKeyValMap(allElements, (ele) => [
       `${ele}_resMulti_`,
-      res(total[`${ele}_enemyRes_`]),
+      res(total[`${ele}_enemyRes_`])
     ]),
-    defIgn: total.enemyDefIgn_,
-  },
+    defIgn: total.enemyDefIgn_
+  }
 }
 
 const target = setReadNodeKeys(deepNodeClone(input), ['target'])
 const _tally = setReadNodeKeys(
   {
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
-    maxEleMas: read('max'),
+    maxEleMas: read('max')
   },
   ['tally']
 )
 const tally = {
   ..._tally,
   // Special handling since it's not a `ReadNode`
-  ele: sum(...allElements.map((ele) => min(_tally[ele], 1))),
+  ele: sum(...allElements.map((ele) => min(_tally[ele], 1)))
 }
 
 const nonStacking = setReadNodeKeys(

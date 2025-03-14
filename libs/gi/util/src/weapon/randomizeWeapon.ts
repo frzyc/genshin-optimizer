@@ -1,7 +1,7 @@
 import {
   getRandBool,
   getRandomElementFromArray,
-  getRandomIntInclusive,
+  getRandomIntInclusive
 } from '@genshin-optimizer/common/util'
 import type { RefinementKey } from '@genshin-optimizer/gi/consts'
 import { allWeaponKeys } from '@genshin-optimizer/gi/consts'
@@ -20,7 +20,7 @@ const weaponKeys = allWeaponKeys.filter(
       'ApprenticesNotes',
       'PocketGrimoire',
       'HuntersBow',
-      'SeasonedHuntersBow',
+      'SeasonedHuntersBow'
     ].includes(k)
 )
 export function randomizeWeapon(base: Partial<IWeapon> = {}): IWeapon {
@@ -36,6 +36,6 @@ export function randomizeWeapon(base: Partial<IWeapon> = {}): IWeapon {
     ascension,
     refinement,
     location: base.location ?? '',
-    lock,
+    lock
   }
 }

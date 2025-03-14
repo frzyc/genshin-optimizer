@@ -19,7 +19,7 @@ import type {
   SumFrac,
   TagOverride,
   TagValRead,
-  Threshold,
+  Threshold
 } from './type'
 
 type _value = number | string
@@ -240,7 +240,7 @@ export function lookup<P extends OP>(
     op: 'lookup',
     br: [toV(index)],
     ex: Object.fromEntries(Object.keys(table).map((key, i) => [key, i + 1])),
-    x: toVs([defaultV ?? NaN, ...Object.values(table)]),
+    x: toVs([defaultV ?? NaN, ...Object.values(table)])
   }
 }
 /** table[index] */
@@ -306,7 +306,7 @@ export function dynTag<P extends OP = never>(
     op: 'dtag',
     x: [toV(v)],
     br: toVs(Object.values(tag)),
-    ex: Object.keys(tag),
+    ex: Object.keys(tag)
   }
 }
 /** Current tag value at `cat:`, or `''` of not available */

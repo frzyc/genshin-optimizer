@@ -6,7 +6,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -47,8 +47,8 @@ const data = dataObjForWeaponSheet(key, {
     skill_dmg_,
     burst_dmg_,
     skill_critRate_,
-    burst_critRate_,
-  },
+    burst_critRate_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -56,12 +56,12 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: skill_dmg_,
+          node: skill_dmg_
         },
         {
-          node: burst_dmg_,
-        },
-      ],
+          node: burst_dmg_
+        }
+      ]
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -72,15 +72,15 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: stack }),
         fields: [
           {
-            node: skill_critRate_,
+            node: skill_critRate_
           },
           {
             text: stg('duration'),
             value: 10,
-            unit: 's',
-          },
-        ],
-      })),
+            unit: 's'
+          }
+        ]
+      }))
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -91,16 +91,16 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: stack }),
         fields: [
           {
-            node: burst_critRate_,
+            node: burst_critRate_
           },
           {
             text: stg('duration'),
             value: 10,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -21,15 +21,15 @@ const critRate_ = lookup(
   {
     ...objKeyMap(range(1, 5), (i) =>
       prod(subscript(input.weapon.refinement, critRate_s), i)
-    ),
+    )
   },
   naught
 )
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    critRate_,
-  },
+    critRate_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -46,13 +46,13 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: i }),
             fields: [
               {
-                node: critRate_,
-              },
-            ],
-          },
+                node: critRate_
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

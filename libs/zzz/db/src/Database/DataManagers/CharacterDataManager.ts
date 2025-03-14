@@ -5,7 +5,7 @@ import {
   objFilter,
   objFilterKeys,
   objKeyMap,
-  validateArr,
+  validateArr
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
@@ -17,7 +17,7 @@ import {
   allWengineKeys,
   coreLimits,
   discSlotToMainStatKeys,
-  skillLimits,
+  skillLimits
 } from '@genshin-optimizer/zzz/consts'
 import { validateLevelMilestone } from '@genshin-optimizer/zzz/util'
 import type { ICachedCharacter, IDbCharacter } from '../../Interfaces'
@@ -57,7 +57,7 @@ export class CharacterDataManager extends DataManager<
       basic,
       chain,
       special,
-      assist,
+      assist
     } = obj as IDbCharacter
     const { level: rawLevel, promotion: rawAscension } = obj as IDbCharacter
 
@@ -118,7 +118,7 @@ export class CharacterDataManager extends DataManager<
         'crit_dmg_',
         'anomProf',
         'pen',
-        ...allAttributeDamageKeys,
+        ...allAttributeDamageKeys
       ]
     )
     useEquipped = !!useEquipped
@@ -164,7 +164,7 @@ export class CharacterDataManager extends DataManager<
       chain,
       special,
       assist,
-      promotion,
+      promotion
     }
     return char
   }
@@ -186,10 +186,10 @@ export class CharacterDataManager extends DataManager<
           ),
       equippedWengine: oldChar
         ? oldChar.equippedWengine
-        : Object.values(this.database.wengines?.data ?? {}).find(
+        : (Object.values(this.database.wengines?.data ?? {}).find(
             (w) => w?.location === id
-          )?.id ?? '',
-      ...storageObj,
+          )?.id ?? ''),
+      ...storageObj
     }
   }
   // These overrides allow CharacterKey to be used as id.
@@ -281,7 +281,7 @@ export class CharacterDataManager extends DataManager<
     if (wengine && wengine.location === key)
       this.database.wengines.setCached(char.equippedWengine, {
         ...wengine,
-        location: '',
+        location: ''
       })
 
     return super.remove(key)
@@ -325,7 +325,7 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     wenginePhase: 1,
     stats: {
       // in percent
-      enemyDef: 953, // default enemy DEF
+      enemyDef: 953 // default enemy DEF
     },
     formulaKey: allFormulaKeys[0],
     constraints: {}, // in percent
@@ -346,6 +346,6 @@ export function initialCharacterData(key: CharacterKey): ICachedCharacter {
     special: 1,
     assist: 1,
     equippedDiscs: objKeyMap(allDiscSlotKeys, () => ''),
-    equippedWengine: '',
+    equippedWengine: ''
   }
 }

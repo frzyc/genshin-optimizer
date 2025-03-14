@@ -8,7 +8,7 @@ import { ArtifactTooltip } from './ArtifactTooltip'
 
 export function ArtifactCardPico({
   artifactObj: art,
-  slotKey: key,
+  slotKey: key
 }: {
   artifactObj: ICachedArtifact | undefined
   slotKey: ArtifactSlotKey
@@ -28,7 +28,7 @@ export function ArtifactCardPico({
               left: '50%',
               top: '50%',
               transform: 'translate(-50%, -50%)',
-              opacity: 0.7,
+              opacity: 0.7
             }}
             component={NextImage ? NextImage : 'img'}
             src={imgAssets.slot[key]}
@@ -59,7 +59,7 @@ export function ArtifactCardPico({
             lineHeight: 1,
             opacity: 0.85,
             pointerEvents: 'none',
-            p: 0.25,
+            p: 0.25
           }}
         >
           <strong>+{level}</strong>
@@ -72,7 +72,7 @@ export function ArtifactCardPico({
             pointerEvents: 'none',
             bottom: 0,
             right: 0,
-            p: 0.25,
+            p: 0.25
           }}
         >
           <StatIcon statKey={mainStatKey} iconProps={{ fontSize: 'inherit' }} />

@@ -11,12 +11,12 @@ import { LoadoutEditor } from './LoadoutEditor'
 import { LoadoutHeaderContent } from './LoadoutHeaderContent'
 const columns = {
   xs: 1,
-  md: 2,
+  md: 2
 } as const
 
 export function LoadoutCard({
   teamCharId,
-  teamIds,
+  teamIds
 }: {
   teamCharId: string
   teamIds: string[]
@@ -48,7 +48,7 @@ export function LoadoutCard({
             p: 0,
             display: 'flex',
             borderBottomLeftRadius: 0,
-            borderBottomRightRadius: 0,
+            borderBottomRightRadius: 0
           }}
           color="neutral100"
           variant="outlined"

@@ -23,14 +23,14 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      hp_,
+      hp_
     },
     total: {
-      atk,
-    },
+      atk
+    }
   },
   {
-    atk,
+    atk
   }
 )
 
@@ -38,8 +38,8 @@ const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: hp_ }, { node: atk }],
-    },
-  ],
+      fields: [{ node: hp_ }, { node: atk }]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

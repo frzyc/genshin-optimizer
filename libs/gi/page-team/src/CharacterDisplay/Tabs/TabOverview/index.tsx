@@ -6,7 +6,7 @@ import {
   HitModeToggle,
   ReactionToggle,
   StatDisplayComponent,
-  WeaponCardNano,
+  WeaponCardNano
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
@@ -26,7 +26,7 @@ export default function TabOverview() {
   const dataContextObj = useMemo(
     () => ({
       ...data,
-      compareData,
+      compareData
     }),
     [data, compareData]
   )
@@ -53,7 +53,7 @@ export default function TabOverview() {
                 p: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 1,
+                gap: 1
               }}
             >
               <Box
@@ -61,7 +61,7 @@ export default function TabOverview() {
                   display: 'flex',
                   justifyContent: 'flex-end',
                   gap: 1,
-                  flexWrap: 'wrap',
+                  flexWrap: 'wrap'
                 }}
               >
                 <HitModeToggle size="small" />

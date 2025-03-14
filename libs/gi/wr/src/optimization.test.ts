@@ -12,7 +12,7 @@ import {
   min,
   prod,
   resetData,
-  sum,
+  sum
 } from './utils'
 
 const { constantFold } = testing
@@ -73,14 +73,14 @@ describe('optimization', () => {
       r3 = inputs[2]
 
     expect(constantFold([sum(1, -1, r1, r2, r3)], {})).toEqual([
-      sum(r1, r2, r3),
+      sum(r1, r2, r3)
     ])
     expect(constantFold([prod(1, r1, r2, r3)], {})).toEqual([prod(r1, r2, r3)])
     expect(constantFold([min(Infinity, r1, r2, r3)], {})).toEqual([
-      min(r1, r2, r3),
+      min(r1, r2, r3)
     ])
     expect(constantFold([max(-Infinity, r1, r2, r3)], {})).toEqual([
-      max(r1, r2, r3),
+      max(r1, r2, r3)
     ])
 
     // Degenerate case
@@ -138,7 +138,7 @@ describe('optimization', () => {
         1
       )
       expect([
-        ...compute([{ values: { 0: 32, 1: 77 } }] as const).slice(0, 1),
+        ...compute([{ values: { 0: 32, 1: 77 } }] as const).slice(0, 1)
       ]).toEqual([1 + 32 + 77])
     })
     test('Output is read node', () => {
@@ -151,7 +151,7 @@ describe('optimization', () => {
 
       const compute = precompute([r1], {}, (x) => x.path[1], 1)
       expect([
-        ...compute([{ values: { 0: 32 } }] as const).slice(0, 1),
+        ...compute([{ values: { 0: 32 } }] as const).slice(0, 1)
       ]).toEqual([32])
     })
     test('Output is constant node', () => {
@@ -180,7 +180,7 @@ describe('optimization', () => {
         1
       )
       expect([
-        ...compute([{ values: { 0: 2, 1: 44, 2: 7 } }] as const).slice(0, 2),
+        ...compute([{ values: { 0: 2, 1: 44, 2: 7 } }] as const).slice(0, 2)
       ]).toEqual([1 + 2 + 44 + 44 * 7, 1 + 2 + 44 + 44 * 7])
     })
   })

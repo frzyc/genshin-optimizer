@@ -17,8 +17,8 @@ const set2Nodes = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
     greaterEq(input.artSet.TinyMiracle, 2, percent(0.2), {
-      path: `${ele}_res_`,
-    }),
+      path: `${ele}_res_`
+    })
   ])
 )
 
@@ -26,8 +26,8 @@ const set4Nodes = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
     greaterEq(input.artSet.TinyMiracle, 4, equal(condEle, ele, percent(0.3)), {
-      path: `${ele}_res_`,
-    }),
+      path: `${ele}_res_`
+    })
   ])
 )
 
@@ -35,9 +35,9 @@ export const data: Data = dataObjForArtifactSheet(key, {
   premod: Object.fromEntries(
     allElementKeys.map((ele) => [
       `${ele}_res_`,
-      sum(set2Nodes[ele], set4Nodes[ele]),
+      sum(set2Nodes[ele], set4Nodes[ele])
     ])
-  ),
+  )
 })
 
 const sheet: SetEffectSheet = {
@@ -45,9 +45,9 @@ const sheet: SetEffectSheet = {
     document: [
       {
         header: setHeader(2),
-        fields: Object.values(set2Nodes).map((n) => ({ node: n })),
-      },
-    ],
+        fields: Object.values(set2Nodes).map((n) => ({ node: n }))
+      }
+    ]
   },
   4: {
     document: [
@@ -67,14 +67,14 @@ const sheet: SetEffectSheet = {
                 {
                   text: stg('duration'),
                   value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+                  unit: 's'
+                }
+              ]
+            }
           ])
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

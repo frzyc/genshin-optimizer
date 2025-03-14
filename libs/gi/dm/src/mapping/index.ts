@@ -11,7 +11,7 @@ export const tagColor = {
   FF9999FF: 'pyro',
   FFACFFFF: 'electro',
   '99FF88FF': 'dendro',
-  '00FFFFFF': 'strong',
+  '00FFFFFF': 'strong'
 } as const
 export type ColorTag = (typeof tagColor)[keyof typeof tagColor]
 
@@ -20,7 +20,7 @@ export const weaponMap = {
   WEAPON_CATALYST: 'catalyst',
   WEAPON_CLAYMORE: 'claymore',
   WEAPON_BOW: 'bow',
-  WEAPON_POLE: 'polearm',
+  WEAPON_POLE: 'polearm'
 } as const
 export type DWeaponTypeKey = keyof typeof weaponMap
 export type WeaponTypeKey = (typeof weaponMap)[keyof typeof weaponMap]
@@ -35,7 +35,7 @@ export const SubStatPropTypeMap = {
   FIGHT_PROP_CRITICAL: 'critRate_',
   FIGHT_PROP_CRITICAL_HURT: 'critDMG_',
   FIGHT_PROP_ELEMENT_MASTERY: 'eleMas',
-  FIGHT_PROP_CHARGE_EFFICIENCY: 'enerRech_',
+  FIGHT_PROP_CHARGE_EFFICIENCY: 'enerRech_'
 } as const
 export type DSubstatKey = keyof typeof SubStatPropTypeMap
 export type SubstatKey =
@@ -52,7 +52,7 @@ export const MainPropMap = {
   FIGHT_PROP_WATER_ADD_HURT: 'hydro_dmg_',
   FIGHT_PROP_ICE_ADD_HURT: 'cryo_dmg_',
   FIGHT_PROP_WIND_ADD_HURT: 'anemo_dmg_',
-  FIGHT_PROP_GRASS_ADD_HURT: 'dendro_dmg_',
+  FIGHT_PROP_GRASS_ADD_HURT: 'dendro_dmg_'
   // FIGHT_PROP_FIRE_SUB_HURT:"" //
 } as const
 export type MainStatKey = (typeof MainPropMap)[keyof typeof MainPropMap]
@@ -64,7 +64,7 @@ export const propTypeMap = {
   FIGHT_PROP_BASE_HP: 'hp',
   FIGHT_PROP_BASE_ATTACK: 'atk',
   FIGHT_PROP_BASE_DEFENSE: 'def',
-  FIGHT_PROP_SHIELD_COST_MINUS_RATIO: 'shield_',
+  FIGHT_PROP_SHIELD_COST_MINUS_RATIO: 'shield_'
 } as const
 export type PropTypeKey = keyof typeof propTypeMap
 export type StatKey = (typeof propTypeMap)[keyof typeof propTypeMap]
@@ -73,6 +73,6 @@ export const QualityTypeMap = {
   QUALITY_ORANGE: 5,
   QUALITY_PURPLE: 4,
   QUALITY_BLUE: 3,
-  QUALITY_GREEN: 2,
+  QUALITY_GREEN: 2
 } as const
 export type DQualityKey = keyof typeof QualityTypeMap

@@ -15,16 +15,16 @@ const burst_critRate_ = subscript(input.weapon.refinement, burstCritSrc_)
 const data = dataObjForWeaponSheet(key, {
   premod: {
     burst_dmg_,
-    burst_critRate_,
-  },
+    burst_critRate_
+  }
 })
 
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: burst_dmg_ }, { node: burst_critRate_ }],
-    },
-  ],
+      fields: [{ node: burst_dmg_ }, { node: burst_critRate_ }]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

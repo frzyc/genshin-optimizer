@@ -2,12 +2,12 @@ import { verifyObjKeys } from '@genshin-optimizer/common/util'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import {
   allRelicSetKeys,
-  type RelicSetCountKey,
+  type RelicSetCountKey
 } from '@genshin-optimizer/sr/consts'
 import {
   relicSetConfig,
   relicSetIdMap,
-  relicSetSkillConfig,
+  relicSetSkillConfig
 } from '@genshin-optimizer/sr/dm'
 import { convertToHash } from '../util'
 
@@ -35,8 +35,8 @@ const relicArray = Object.entries(relicSetConfig).map(([setId, setConfig]) => {
     relicKey,
     {
       setName: SetName.Hash.toString(),
-      setEffects: skills,
-    },
+      setEffects: skills
+    }
   ]
   return tuple
 })

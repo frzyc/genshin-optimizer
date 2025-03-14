@@ -32,6 +32,6 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
     ownBuff.weapon.primary.add(ownBuff.base[primaryStat].sheet(key)),
     ...[...nonPrimaryStat].map((stat) =>
       ownBuff.weapon.secondary.add(readStat(ownBuff.premod, stat).sheet(key))
-    ),
+    )
   ]
 }

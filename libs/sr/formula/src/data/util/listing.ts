@@ -3,7 +3,7 @@ import {
   allElementalTypeKeys,
   allLightConeKeys,
   allPathKeys,
-  allRelicSetKeys,
+  allRelicSetKeys
 } from '@genshin-optimizer/sr/consts'
 
 const stats = [
@@ -28,13 +28,13 @@ const stats = [
   'resPen_',
   'defIgn_',
   'weakness_',
-  'brEfficiency_',
+  'brEfficiency_'
 ] as const
 
 export const bonusAbilities = [
   'bonusAbility1',
   'bonusAbility2',
-  'bonusAbility3',
+  'bonusAbility3'
 ] as const
 
 export const statBoosts = [
@@ -47,7 +47,7 @@ export const statBoosts = [
   'statBoost7',
   'statBoost8',
   'statBoost9',
-  'statBoost10',
+  'statBoost10'
 ] as const
 
 export const elementalTypes = [...allElementalTypeKeys] as const
@@ -61,7 +61,7 @@ export const damageTypes = [
   'dot',
   'break', // elementDamage
   'elemental', // pursued
-  'servantSkill', // TODO: This probably isn't right
+  'servantSkill' // TODO: This probably isn't right
 ] as const
 
 export const sheets = [
@@ -76,7 +76,7 @@ export const sheets = [
   'relic',
   'dyn',
   'enemy',
-  'custom',
+  'custom'
 ] as const
 
 export const paths = [...allPathKeys] as const

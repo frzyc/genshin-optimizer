@@ -3,7 +3,7 @@ import { type CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   statKeyToFixed,
-  toPercent,
+  toPercent
 } from '@genshin-optimizer/common/util'
 import { FieldDisplayList } from '@genshin-optimizer/game-opt/sheet-ui'
 import { statKeyTextMap } from '@genshin-optimizer/zzz/consts'
@@ -21,12 +21,12 @@ const coreStatMap = {
   'Base Energy Regen': 'base_enerRegen',
   'Anomaly Proficiency': 'anomProf',
   'Anomaly Mastery': 'anomMas_base',
-  'PEN Ratio': 'pen_',
+  'PEN Ratio': 'pen_'
 } as const
 
 export function CharacterCardStats({
   bgt,
-  character,
+  character
 }: {
   bgt?: CardBackgroundColor
   character: ICachedCharacter
@@ -42,10 +42,10 @@ export function CharacterCardStats({
     'crit_',
     'crit_dmg_',
     'def_base',
-    'hp_base',
+    'hp_base'
   ]
   const coreStat = [
-    ...new Set(characterStat.coreStats.flatMap(Object.keys)),
+    ...new Set(characterStat.coreStats.flatMap(Object.keys))
   ][1] as (typeof coreStatMap)[keyof typeof coreStatMap]
 
   return (
@@ -80,7 +80,7 @@ export function CharacterCardStats({
 
 function SubstatDisplay({
   substat,
-  value,
+  value
 }: {
   substat: string
   value: number | undefined
@@ -97,7 +97,7 @@ function SubstatDisplay({
         alignItems: 'center',
         justifyContent: 'space-between',
         fontWeight: 'bold',
-        gap: 1,
+        gap: 1
       }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

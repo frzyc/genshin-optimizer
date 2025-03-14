@@ -7,7 +7,7 @@ import {
   naught,
   percent,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -27,10 +27,10 @@ const eleDmgStacks = Object.fromEntries(
     lookup(
       condPassive,
       {
-        ...objKeyMap(range(1, 4), (i) => prod(eleDmgInc, i)),
+        ...objKeyMap(range(1, 4), (i) => prod(eleDmgInc, i))
       },
       naught
-    ),
+    )
   ])
 )
 
@@ -39,14 +39,14 @@ export const data = dataObjForWeaponSheet(key, {
     moveSPD_,
     ...Object.fromEntries(
       allElementKeys.map((ele) => [`${ele}_dmg_`, eleDmgStacks[ele]])
-    ),
-  },
+    )
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: moveSPD_ }],
+      fields: [{ node: moveSPD_ }]
     },
     {
       value: condPassive,
@@ -55,9 +55,9 @@ const sheet: IWeaponSheet = {
       name: st('timeOnField'),
       states: objKeyMap(range(1, 4), (i) => ({
         name: st('seconds', { count: i * 4 }),
-        fields: allElementKeys.map((ele) => ({ node: eleDmgStacks[ele] })),
-      })),
-    },
-  ],
+        fields: allElementKeys.map((ele) => ({ node: eleDmgStacks[ele] }))
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

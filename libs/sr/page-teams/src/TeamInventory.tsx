@@ -1,6 +1,6 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
@@ -10,7 +10,7 @@ import {
   CardContent,
   CardHeader,
   Grid,
-  Skeleton,
+  Skeleton
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'

@@ -38,12 +38,12 @@ export const relicSetSkillConfig = relicSetSkillConfigSrc.reduce(
       const fields = Object.values(prop) as unknown as [StatDMKey, Value]
       return {
         PropertyName: fields[0],
-        Value: fields[1],
+        Value: fields[1]
       }
     })
     const unobfConfig = {
       ...config,
-      PropertyList: unobfPropertyList,
+      PropertyList: unobfPropertyList
     }
     if (!configMap[SetID])
       configMap[SetID] = {} as Record<RelicSetCountKey, RelicSetSkillConfig>

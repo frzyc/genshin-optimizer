@@ -6,12 +6,12 @@ import type {
   ArtifactSlotKey,
   LocationKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSlotKeys,
-  artSlotMainKeys,
+  artSlotMainKeys
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact, ISubstat } from '@genshin-optimizer/gi/good'
 import { Translate } from '@genshin-optimizer/gi/i18n'
@@ -20,7 +20,7 @@ import {
   artDisplayValue,
   getMainStatDisplayValue,
   getMainStatDisplayValues,
-  getSubstatRolls,
+  getSubstatRolls
 } from '@genshin-optimizer/gi/util'
 import type { ReactNode } from 'react'
 import { statMap } from './enStringMap'
@@ -47,9 +47,7 @@ export function findBestArtifact(
   lock = false
 ): [IArtifact, Partial<Record<TextKey, ReactNode>>] {
   const texts = {
-    lock: detectedText(lock, 'Lock', (value) =>
-      value ? 'Locked' : 'Unlocked'
-    ),
+    lock: detectedText(lock, 'Lock', (value) => (value ? 'Locked' : 'Unlocked'))
   } as Partial<Record<TextKey, ReactNode>>
   if (location)
     texts.location = detectedText(location, 'Location', (value) => value)
@@ -68,8 +66,8 @@ export function findBestArtifact(
         mainStatKey: 'hp',
         substats: [],
         location: location ?? '',
-        lock,
-      },
+        lock
+      }
     ]
 
   // Rate each rarity
@@ -151,7 +149,7 @@ export function findBestArtifact(
                 mainStatKey,
                 substats: [],
                 location: location ?? '',
-                lock,
+                lock
               })
             }
           }
@@ -171,7 +169,7 @@ export function findBestArtifact(
               mainStatKey,
               substats: [],
               location: location ?? '',
-              lock,
+              lock
             })
           }
         }
@@ -185,7 +183,7 @@ export function findBestArtifact(
     level: new Set(),
     slotKey: new Set(),
     mainStatKey: new Set(),
-    mainStatVal: new Set(),
+    mainStatVal: new Set()
   } as Partial<Record<TextKey, Set<string>>>
 
   const result = bestArtifacts[0],

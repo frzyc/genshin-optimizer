@@ -11,7 +11,7 @@ import {
   ownBuff,
   teamData,
   weaponData,
-  withMember,
+  withMember
 } from '@genshin-optimizer/gi/formula'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
@@ -22,7 +22,7 @@ import { TeamLoadoutCharacterToICharacter } from './teamUtil'
 
 export function CalcWrapper({
   children,
-  src,
+  src
 }: {
   children: ReactNode
   src: '1' | '2' | '3' | '0'
@@ -57,13 +57,13 @@ export function CalcWrapper({
                           art.mainStatKey,
                           art.rarity as any,
                           art.level
-                        ),
+                        )
                       },
                       ...art.substats.map(({ value, key }) => ({
                         key,
-                        value,
-                      })),
-                    ],
+                        value
+                      }))
+                    ]
                   }))
                 )
               : [])
@@ -76,7 +76,7 @@ export function CalcWrapper({
       enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
-      ownBuff.common.critMode.add('avg'),
+      ownBuff.common.critMode.add('avg')
     ]
     return genshinCalculatorWithEntries(data)
   }, [team])

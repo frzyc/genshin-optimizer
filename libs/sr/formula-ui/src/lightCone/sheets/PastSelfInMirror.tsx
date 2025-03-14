@@ -5,7 +5,7 @@ import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
 import {
   getLightConeInterpolateObject,
-  mappedStats,
+  mappedStats
 } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../../util'
@@ -34,7 +34,7 @@ const sheet: UISheetElement = {
             )
           }
         </SuperImposeWrapper>
-      ),
+      )
     },
     {
       type: 'conditional',
@@ -42,27 +42,27 @@ const sheet: UISheetElement = {
         targeted: true,
         header: {
           icon: <ImgIcon src={icon} sx={{ width: 'auto' }} size={2} />,
-          text: chg('passive.name'),
+          text: chg('passive.name')
         },
         metadata: cond.ultUsed,
         label: 'Wearer used their Ultimate',
         fields: [
           {
             title: <StatDisplay statKey="dmg_" />,
-            fieldRef: buff.common_dmg_.tag,
+            fieldRef: buff.common_dmg_.tag
           },
           // TODO: translate DM "Duration"
           {
             title: 'Duration',
-            fieldValue: `${dm.duration}`,
+            fieldValue: `${dm.duration}`
           },
           {
             // TODO: should only show when wearer brEffect_ > dm.brEffect_thresh_[superimpose]
             title: 'Skill Point recovered',
-            fieldValue: 1,
-          },
-        ],
-      },
+            fieldValue: 1
+          }
+        ]
+      }
     },
     {
       type: 'fields',
@@ -73,11 +73,11 @@ const sheet: UISheetElement = {
             <SuperImposeWrapper lcKey={key}>
               {(superimpose) => dm.energy[superimpose]}
             </SuperImposeWrapper>
-          ),
-        },
-      ],
-    },
-  ],
+          )
+        }
+      ]
+    }
+  ]
 }
 
 export default sheet

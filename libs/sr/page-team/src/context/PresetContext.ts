@@ -7,5 +7,5 @@ export type PresetContextObj = {
 
 export const PresetContext = createContext<PresetContextObj>({
   presetIndex: 0,
-  setPresetIndex: () => {},
+  setPresetIndex: () => {}
 })

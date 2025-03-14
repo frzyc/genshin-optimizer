@@ -10,7 +10,7 @@ import {
   read,
   subscript,
   sum,
-  sumfrac,
+  sumfrac
 } from './construction'
 import type { AnyTagFree, NumTagFree } from './transform'
 import { compile, compileDiff } from './transform'
@@ -28,7 +28,7 @@ addCustomOperation('foo', {
   diff: function (_x, dx) {
     const [da, db, _, dd] = dx
     return da + db + dd
-  },
+  }
 })
 addCustomOperation('bar', {
   range: unused,
@@ -36,7 +36,7 @@ addCustomOperation('bar', {
   calc: function (args) {
     const [a, b, c, d] = args as string[]
     return [d, c, b, a].join('/')
-  },
+  }
 })
 
 describe('optimization', () => {
@@ -47,7 +47,7 @@ describe('optimization', () => {
     sum(3, 4, 5, read0), // Multiple consts
     sum(3, sum(4, sum(5)), read1), // Nested consts
     cmpGE(2, 1, read0, read1), // Const branching
-    cmpGE(read1, 1, 3, 3), // Futile branching
+    cmpGE(read1, 1, 3, 3) // Futile branching
   ]
 
   test('compile', () => {
@@ -61,7 +61,7 @@ describe('optimization', () => {
     expect(
       compiled([
         { 0: 1, 1: 2 },
-        { 0: 2, 1: 2 },
+        { 0: 2, 1: 2 }
       ])
     ).toEqual([15, 16, 3, 3])
   })
@@ -109,7 +109,7 @@ describe('optimization', () => {
       expect(runDiff(sum(5, read0, read1, read1, read2))).toEqual([1, 2])
       expect(runDiff(prod(5, read0, read1, read1, read2))).toEqual([
         5 * v1 * v1 * v2,
-        5 * v0 * 2 * v1 * v2,
+        5 * v0 * 2 * v1 * v2
       ])
       expect(runDiff(min(1, read0, read1))).toEqual([0, 0])
       expect(runDiff(min(15, read0, read1))).toEqual([1, 0])
@@ -118,7 +118,7 @@ describe('optimization', () => {
       expect(runDiff(sumfrac(read0, 5))).toEqual([5 / (v0 + 5) / (v0 + 5), 0])
       expect(runDiff(sumfrac(read0, read1))).toEqual([
         v1 / (v0 + v1) / (v0 + v1),
-        -v0 / (v0 + v1) / (v0 + v1),
+        -v0 / (v0 + v1) / (v0 + v1)
       ])
     })
     test('branching', () => {

@@ -6,14 +6,14 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Link,
+  Link
 } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 import kqmIcon from './kqm.png'
 
 export default function KQMSButton({
   action,
-  disabled,
+  disabled
 }: {
   action: () => void
   disabled: boolean

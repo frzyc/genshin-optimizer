@@ -7,7 +7,7 @@ import {
   CardHeader,
   Grid,
   Link,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { useTranslation } from 'react-i18next'
@@ -22,36 +22,36 @@ const team = [
     img: frzyc,
     title: (t: TFunction) => t('teamCard.jobTitle.leadDev'),
     subtitle: 'Chief Corner Cutter',
-    url: process.env['NX_URL_GITHUB_FRZYC'],
+    url: process.env['NX_URL_GITHUB_FRZYC']
   },
   {
     name: 'Van',
     img: van,
     title: (t: TFunction) => t('teamCard.jobTitle.dev'),
     subtitle: 'Pando Cultivator',
-    url: process.env['NX_URL_GITHUB_VAN'],
+    url: process.env['NX_URL_GITHUB_VAN']
   },
   {
     name: 'Lantua',
     img: lantua,
     title: (t: TFunction) => t('teamCard.jobTitle.dev'),
     subtitle: 'Pando Arboreal Architect',
-    url: process.env['NX_URL_GITHUB_LANTUA'],
+    url: process.env['NX_URL_GITHUB_LANTUA']
   },
   {
     name: 'Failchon',
     img: failchon,
     title: (t: TFunction) => t('teamCard.jobTitle.dev'),
     subtitle: 'TODO Deletist',
-    url: '',
+    url: ''
   },
   {
     name: 'Lunik',
     img: lunik,
     title: (t: TFunction) => t('teamCard.jobTitle.designer'),
     subtitle: 'Figma Finger Painter',
-    url: '',
-  },
+    url: ''
+  }
 ] as const
 
 export default function TeamCard() {
@@ -100,7 +100,7 @@ export default function TeamCard() {
                     <Typography
                       variant="subtitle2"
                       sx={{
-                        textAlign: 'center',
+                        textAlign: 'center'
                       }}
                       color="secondary.light"
                     >

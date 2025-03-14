@@ -28,11 +28,11 @@ export const data = dataObjForWeaponSheet(
   {
     premod: {
       normal_dmgInc, // TODO: technically should be in "total", but should be fine as premod
-      heal_,
-    },
+      heal_
+    }
   },
   {
-    normal_dmgInc,
+    normal_dmgInc
   }
 )
 const sheet: IWeaponSheet = {
@@ -41,14 +41,14 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: heal_,
+          node: heal_
         },
         {
           text: trm('name'),
-          node: normal_dmgInc,
-        },
-      ],
-    },
-  ],
+          node: normal_dmgInc
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

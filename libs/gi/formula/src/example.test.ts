@@ -5,7 +5,7 @@ import {
   compileTagMapValues,
   detach,
   setDebugMode,
-  simplify,
+  simplify
 } from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
@@ -19,7 +19,7 @@ import {
   conditionalData,
   teamData,
   weaponData,
-  withMember,
+  withMember
 } from './util'
 
 setDebugMode(true)
@@ -62,7 +62,7 @@ describe('example', () => {
       enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
-      ownBuff.common.critMode.add('avg'),
+      ownBuff.common.critMode.add('avg')
     ],
     calc = genshinCalculatorWithEntries(data)
 
@@ -146,7 +146,7 @@ describe('example', () => {
           et: 'own',
           sheet: 'Nahida',
           qt: 'formula',
-          q: 'dmg', // DMG formula
+          q: 'dmg' // DMG formula
         })
       })
     }
@@ -161,7 +161,7 @@ describe('example', () => {
       'plunging_high',
       'plunging_low',
       'skill_hold',
-      'skill_press',
+      'skill_press'
     ])
     expect(listing.filter((x) => x.sheet === 'static').length).toEqual(6)
   })
@@ -212,7 +212,7 @@ describe('example', () => {
         .listFormulas(own.listing.formulas)
         .find((x) => x.tag.name === 'normal_0')!,
       own.char.auto,
-      own.final.atk,
+      own.final.atk
     ]
 
     // Step 2: Detach nodes from Calculator

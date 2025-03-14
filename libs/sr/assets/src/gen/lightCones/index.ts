@@ -250,6 +250,6 @@ const data = {
   WhereaboutsShouldDreamsRest,
   WoofWalkTime,
   WorrisomeBlissful,
-  YetHopeIsPriceless,
+  YetHopeIsPriceless
 } as const
 export default data

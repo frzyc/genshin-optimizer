@@ -7,7 +7,7 @@ import {
   input,
   lookup,
   naught,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -19,7 +19,7 @@ const setHeader = setHeaderTemplate(key)
 const [, trm] = trans('artifact', key)
 
 const set2 = greaterEq(input.artSet.NymphsDream, 2, 0.15, {
-  path: 'hydro_dmg_',
+  path: 'hydro_dmg_'
 })
 
 const [condSet4Path, condSet4] = cond(key, 'set4')
@@ -49,8 +49,8 @@ const set4_hydro_dmg_ = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     hydro_dmg_: sum(set2, set4_hydro_dmg_),
-    atk_: set4_atk_,
-  },
+    atk_: set4_atk_
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -67,20 +67,20 @@ const sheet: SetEffectSheet = {
           name: st('stack', { count: stack }),
           fields: [
             {
-              node: set4_atk_,
+              node: set4_atk_
             },
             {
-              node: set4_hydro_dmg_,
+              node: set4_hydro_dmg_
             },
             {
               text: stg('duration'),
               value: 8,
-              unit: 's',
-            },
-          ],
-        })),
-      },
-    ],
-  },
+              unit: 's'
+            }
+          ]
+        }))
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

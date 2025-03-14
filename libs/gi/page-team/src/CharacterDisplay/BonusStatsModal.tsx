@@ -1,13 +1,13 @@
 import {
   CardThemed,
   ColorText,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import type { TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
   TeamCharacterContext,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { allEleDmgKeys, allEleResKeys } from '@genshin-optimizer/gi/keymap'
 import { getCharEle, isCharMelee } from '@genshin-optimizer/gi/stats'
@@ -17,7 +17,7 @@ import {
   GetCalcDisplay,
   NodeFieldDisplay,
   resolveInfo,
-  StatEditorList,
+  StatEditorList
 } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -32,7 +32,7 @@ import {
   IconButton,
   ListItem,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
@@ -40,11 +40,11 @@ import { Trans, useTranslation } from 'react-i18next'
 const cols = {
   xs: 1,
   md: 2,
-  lg: 3,
+  lg: 3
 }
 export default function BonusStatsModal({
   open,
-  onClose,
+  onClose
 }: {
   open: boolean
   onClose: () => void
@@ -87,7 +87,7 @@ function BonusStatsEditor() {
   const database = useDatabase()
   const {
     teamCharId,
-    teamChar: { bonusStats },
+    teamChar: { bonusStats }
   } = useContext(TeamCharacterContext)
   const setFilter = (bonusStats: TeamCharacter['bonusStats']) =>
     database.teamChars.set(teamCharId, { bonusStats })
@@ -128,7 +128,7 @@ const mainSubKeys = [
   'critRate_',
   'critDMG_',
   'enerRech_',
-  'heal_',
+  'heal_'
 ] as const
 const mainReadNodes = [...mainBaseKeys, ...mainSubKeys].map(
   (k) => input.total[k]
@@ -140,7 +140,7 @@ const mainEditKeys = [
   'hp',
   'def_',
   'def',
-  ...mainSubKeys,
+  ...mainSubKeys
 ] as const
 
 const otherStatKeys = [
@@ -149,7 +149,7 @@ const otherStatKeys = [
   'stamina',
   'incHeal_',
   'shield_',
-  'cdRed_',
+  'cdRed_'
 ] as const
 
 const miscStatkeys = allInputPremodKeys.filter(
@@ -160,7 +160,7 @@ const miscStatkeys = allInputPremodKeys.filter(
 
 function StatDisplayContent({
   nodes,
-  extra,
+  extra
 }: {
   nodes: ReadNode<number>[]
   extra?: ReactNode
@@ -184,7 +184,7 @@ function StatDisplayContent({
 function MainStatsCards() {
   const { t } = useTranslation('page_character')
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const specialNode = data.get(input.special)
@@ -263,7 +263,7 @@ function MainStatsCards() {
 }
 function StatDisplayCard({
   title,
-  children,
+  children
 }: {
   title: string
   children: ReactNode

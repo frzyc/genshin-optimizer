@@ -15,7 +15,7 @@ type LightConeAutocompleteProps = {
 export function LightConeAutocomplete({
   lcKey,
   setLCKey,
-  label = '',
+  label = ''
 }: LightConeAutocompleteProps) {
   const { t } = useTranslation(['lightCone', 'lightConeNames_gen'])
   label = label ? label : t('editor.lightConeName')
@@ -25,7 +25,7 @@ export function LightConeAutocomplete({
       allLightConeKeys.map(
         (key): GeneralAutocompleteOption<LightConeKey | ''> => ({
           key,
-          label: t(`lightConeNames_gen:${key}`),
+          label: t(`lightConeNames_gen:${key}`)
         })
       ),
     [t]

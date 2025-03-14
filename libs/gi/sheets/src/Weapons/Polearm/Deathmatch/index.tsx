@@ -4,7 +4,7 @@ import {
   input,
   lookup,
   naught,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -22,7 +22,7 @@ const atk_ = lookup(
   condStack,
   {
     oneOrNone: subscript(input.weapon.refinement, atkInc, { unit: '%' }),
-    moreThanOne: subscript(input.weapon.refinement, atkDefInc, { unit: '%' }),
+    moreThanOne: subscript(input.weapon.refinement, atkDefInc, { unit: '%' })
   },
   naught
 )
@@ -35,8 +35,8 @@ const def_ = equal(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    def_,
-  },
+    def_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -49,14 +49,14 @@ const sheet: IWeaponSheet = {
       states: {
         oneOrNone: {
           name: '≤1',
-          fields: [{ node: atk_ }, { node: def_ }],
+          fields: [{ node: atk_ }, { node: def_ }]
         },
         moreThanOne: {
           name: '≥2',
-          fields: [{ node: atk_ }, { node: def_ }],
-        },
-      },
-    },
-  ],
+          fields: [{ node: atk_ }, { node: def_ }]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

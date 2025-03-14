@@ -28,7 +28,7 @@ import {
   Tooltip,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
 import { Suspense, useContext, useState } from 'react'
@@ -48,59 +48,59 @@ const artifacts: ITab = {
   icon: <FlowerIcon />,
   to: '/artifacts',
   value: 'artifacts',
-  textSuffix: <ArtifactChip key="weaponAdd" />,
+  textSuffix: <ArtifactChip key="weaponAdd" />
 }
 const weapons: ITab = {
   i18Key: 'tabs.weapons',
   icon: <AnvilIcon />,
   to: '/weapons',
   value: 'weapons',
-  textSuffix: <WeaponChip key="weaponAdd" />,
+  textSuffix: <WeaponChip key="weaponAdd" />
 }
 const archive: ITab = {
   i18Key: 'tabs.archive',
   icon: <BookIcon />,
   to: '/archive',
-  value: 'archive',
+  value: 'archive'
 }
 const characters: ITab = {
   i18Key: 'tabs.characters',
   icon: <PeopleIcon />,
   to: '/characters',
   value: 'characters',
-  textSuffix: <CharacterChip key="charAdd" />,
+  textSuffix: <CharacterChip key="charAdd" />
 }
 const teams: ITab = {
   i18Key: 'tabs.teams',
   icon: <GroupsIcon />,
   to: '/teams',
   value: 'teams',
-  textSuffix: <TeamChip key="charAdd" />,
+  textSuffix: <TeamChip key="charAdd" />
 }
 const tools: ITab = {
   i18Key: 'tabs.tools',
   icon: <ConstructionIcon />,
   to: '/tools',
-  value: 'tools',
+  value: 'tools'
 }
 const scanner: ITab = {
   i18Key: 'tabs.scanner',
   icon: <ScannerIcon />,
   to: '/scanner',
-  value: 'scanner',
+  value: 'scanner'
 }
 const doc: ITab = {
   i18Key: 'tabs.doc',
   icon: <ArticleIcon />,
   to: '/doc',
-  value: 'doc',
+  value: 'doc'
 }
 const setting: ITab = {
   i18Key: 'tabs.setting',
   icon: <SettingsIcon />,
   to: '/setting',
   value: 'setting',
-  textSuffix: <DBChip />,
+  textSuffix: <DBChip />
 }
 
 function DBChip() {
@@ -142,16 +142,16 @@ const maincontent = [
   tools,
   scanner,
   doc,
-  setting,
+  setting
 ] as const
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   const {
-    params: { currentTab },
+    params: { currentTab }
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
-    params: { currentTab: '' },
+    params: { currentTab: '' }
   }
   if (isMobile)
     return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
@@ -159,7 +159,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
 }
 function DesktopHeader({
   anchor,
-  currentTab,
+  currentTab
 }: {
   anchor: string
   currentTab: string
@@ -181,18 +181,18 @@ function DesktopHeader({
           '& .MuiTab-root': {
             p: 1,
             minWidth: 'auto',
-            minHeight: 'auto',
+            minHeight: 'auto'
           },
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.5s ease',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(255,255,255,0.1)'
           },
           '& .Mui-selected': {
             backgroundImage: `linear-gradient(to top, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
             color: `${theme.palette.neutral100.main} !important`,
             textShadow:
-              '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
-          },
+              '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0'
+          }
         })}
       >
         <Tab
@@ -207,7 +207,7 @@ function DesktopHeader({
                 sx={(theme) => ({
                   height: '24px',
                   width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
+                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`
                 })}
               />
               <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
@@ -261,11 +261,11 @@ const mobileContent = [
   tools,
   scanner,
   doc,
-  setting,
+  setting
 ] as const
 function MobileHeader({
   anchor,
-  currentTab,
+  currentTab
 }: {
   anchor: string
   currentTab: string
@@ -291,13 +291,13 @@ function MobileHeader({
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true // Better open performance on mobile.
           }}
           PaperProps={{
             sx: (theme) => ({
               // backgroundColor: 'neutral700.main',
-              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
-            }),
+              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`
+            })
           }}
         >
           <Tabs
@@ -308,16 +308,16 @@ function MobileHeader({
             TabIndicatorProps={{
               sx: {
                 left: 0,
-                width: '4px',
-              },
+                width: '4px'
+              }
             }}
             sx={(theme) => ({
               '& .Mui-selected': {
                 backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
                 color: `${theme.palette.neutral100.main} !important`,
                 textShadow:
-                  '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
-              },
+                  '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0'
+              }
             })}
           >
             <Tab
@@ -332,7 +332,7 @@ function MobileHeader({
                   sx={(theme) => ({
                     height: '24px',
                     width: '24px',
-                    boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
+                    boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`
                   })}
                 />
               }
@@ -367,7 +367,7 @@ function MobileHeader({
           <Button
             variant="text"
             sx={(theme) => ({
-              color: `${theme.palette.neutral200.main} !important`,
+              color: `${theme.palette.neutral200.main} !important`
             })}
             component={RouterLink}
             to="/"
@@ -378,7 +378,7 @@ function MobileHeader({
                 sx={(theme) => ({
                   height: '24px',
                   width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
+                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`
                 })}
               />
             }

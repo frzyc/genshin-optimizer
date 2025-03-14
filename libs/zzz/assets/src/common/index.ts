@@ -1,6 +1,6 @@
 import discDrive from './drive.png'
 
 const data = {
-  discDrive,
+  discDrive
 } as const
 export default data

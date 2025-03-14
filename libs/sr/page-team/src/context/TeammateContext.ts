@@ -3,7 +3,7 @@ import { createContext, useContext } from 'react'
 
 export const TeammateContext = createContext({
   buildType: 'equipped',
-  buildId: '',
+  buildId: ''
 } as TeammateDatum)
 
 export function useTeammateContext() {

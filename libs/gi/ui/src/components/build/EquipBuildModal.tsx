@@ -6,7 +6,7 @@ import {
   CharacterContext,
   TeamCharacterContext,
   useDatabase,
-  useWeapon,
+  useWeapon
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -23,7 +23,7 @@ import {
   Grid,
   IconButton,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useContext, useMemo, useState } from 'react'
@@ -66,7 +66,7 @@ function Content(props: Props) {
     newWeaponId,
     newArtifactIds,
     onHide,
-    onEquip,
+    onEquip
   } = props
   const [name, setName] = useState('')
   const [copyCurrent, setCopyCurrent] = useState(false)
@@ -74,7 +74,7 @@ function Content(props: Props) {
   const database = useDatabase()
   const { teamCharId } = useContext(TeamCharacterContext)
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
@@ -85,7 +85,7 @@ function Content(props: Props) {
         name:
           name !== '' ? name : t('equipBuildModal.newName', { currentName }),
         artifactIds: currentArtifactIds,
-        weaponId: currentWeaponId,
+        weaponId: currentWeaponId
       })
     }
 
@@ -125,7 +125,7 @@ function Content(props: Props) {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          gap: 1,
+          gap: 1
         }}
       >
         {/* Confirmation Message */}
@@ -165,7 +165,7 @@ function Content(props: Props) {
             display: 'flex',
             justifyContent: 'flex-end',
             gap: 1,
-            marginTop: 4,
+            marginTop: 4
           }}
         >
           <Button color="error" onClick={onHide}>
@@ -182,7 +182,7 @@ function Content(props: Props) {
               display: 'flex',
               flexDirection: 'row',
               gap: 1,
-              alignItems: 'stretch',
+              alignItems: 'stretch'
             }}
           >
             <Grid
@@ -195,7 +195,7 @@ function Content(props: Props) {
                   sx={{
                     height: '100%',
                     maxHeight: '8em',
-                    opacity: isWeaponChanged ? 1 : 0.5,
+                    opacity: isWeaponChanged ? 1 : 0.5
                   }}
                 >
                   <WeaponCardNano
@@ -213,7 +213,7 @@ function Content(props: Props) {
                       maxHeight: '8em',
                       opacity: isArtifactChanged(slotKey as ArtifactSlotKey)
                         ? 1
-                        : 0.5,
+                        : 0.5
                     }}
                   >
                     <ArtifactCardNano
@@ -234,7 +234,7 @@ function Content(props: Props) {
           alignItems="center"
           sx={{
             height: 0,
-            my: -0.5,
+            my: -0.5
           }}
         >
           <KeyboardDoubleArrowDownIcon
@@ -248,7 +248,7 @@ function Content(props: Props) {
               display: 'flex',
               flexDirection: 'column',
               gap: 1,
-              alignItems: 'stretch',
+              alignItems: 'stretch'
             }}
           >
             <Grid
@@ -261,7 +261,7 @@ function Content(props: Props) {
                   sx={{
                     height: '100%',
                     maxHeight: '8em',
-                    opacity: isWeaponChanged ? 1 : 0.5,
+                    opacity: isWeaponChanged ? 1 : 0.5
                   }}
                 >
                   <WeaponCardNano
@@ -279,7 +279,7 @@ function Content(props: Props) {
                       maxHeight: '8em',
                       opacity: isArtifactChanged(slotKey as ArtifactSlotKey)
                         ? 1
-                        : 0.5,
+                        : 0.5
                     }}
                   >
                     <ArtifactCardNano
@@ -304,7 +304,7 @@ function DataWrapper(props: Props & { children: ReactNode }) {
   const { children, ...rest } = props
   const { teamId } = useContext(TeamCharacterContext)
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   if (teamId) return <TeamDataWrapper {...props}>{children}</TeamDataWrapper>
   if (characterKey)
@@ -329,7 +329,7 @@ function useArtifacts(
 function TeamDataWrapper(props: Props & { children: ReactNode }) {
   const { children, ...rest } = props
   const {
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey }
   } = useContext(TeamCharacterContext)
   const curArtifacts = useArtifacts(rest.currentArtifactIds)
   const newArtifacts = useArtifacts(rest.newArtifactIds)
@@ -345,7 +345,7 @@ function TeamDataWrapper(props: Props & { children: ReactNode }) {
       ({
         data: data,
         compareData: curData?.[characterKey]?.target,
-        teamData: newData,
+        teamData: newData
       } as dataContextObj)
     )
   }, [newData, characterKey, curData])
@@ -358,7 +358,7 @@ function CharacterDataWrapper(
 ) {
   const { children, ...rest } = props
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const curArtifacts = useArtifacts(rest.currentArtifactIds)
   const newArtifacts = useArtifacts(rest.newArtifactIds)
@@ -374,7 +374,7 @@ function CharacterDataWrapper(
       ({
         data: data,
         compareData: curData?.[characterKey]?.target,
-        teamData: newData,
+        teamData: newData
       } as dataContextObj)
     )
   }, [newData, characterKey, curData])

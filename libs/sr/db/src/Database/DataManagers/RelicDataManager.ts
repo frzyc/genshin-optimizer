@@ -2,7 +2,7 @@ import { clamp, pruneOrPadArray } from '@genshin-optimizer/common/util'
 import type {
   RelicMainStatKey,
   RelicRarityKey,
-  RelicSubStatKey,
+  RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
@@ -12,21 +12,21 @@ import {
   allRelicSlotKeys,
   allRelicSubStatKeys,
   relicMaxLevel,
-  relicSlotToMainStatKeys,
+  relicSlotToMainStatKeys
 } from '@genshin-optimizer/sr/consts'
 import type {
   IRelic,
   ISrObjectDescription,
-  ISubstat,
+  ISubstat
 } from '@genshin-optimizer/sr/srod'
 import {
   getRelicMainStatVal,
-  getSubstatRange,
+  getSubstatRange
 } from '@genshin-optimizer/sr/util'
 import type {
   ICachedRelic,
   ICachedSubstat,
-  ISroDatabase,
+  ISroDatabase
 } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
@@ -68,7 +68,7 @@ export class RelicDataManager extends DataManager<
       if (prevRelic)
         super.setCached(prevRelic.id, {
           ...prevRelic,
-          location: prevChar?.key ?? '',
+          location: prevChar?.key ?? ''
         })
       if (newChar)
         this.database.chars.setEquippedRelic(newChar.key, slotKey, newRelic.id)
@@ -92,7 +92,7 @@ export class RelicDataManager extends DataManager<
       mainStatKey,
       substats,
       location,
-      lock,
+      lock
     } = relic
     return {
       setKey,
@@ -102,10 +102,10 @@ export class RelicDataManager extends DataManager<
       mainStatKey,
       substats: substats.map((substat) => ({
         key: substat.key,
-        value: substat.value,
+        value: substat.value
       })),
       location,
-      lock,
+      lock
     }
   }
 
@@ -169,8 +169,8 @@ export class RelicDataManager extends DataManager<
             upgraded[0]?.location === relic.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((a) => a.id === importId)
@@ -188,7 +188,7 @@ export class RelicDataManager extends DataManager<
           if (!importId) importId = match.id // always resolve some id
           importRelic = {
             ...relic,
-            location: hasEquipment ? relic.location : match.location,
+            location: hasEquipment ? relic.location : match.location
           }
         }
       }
@@ -305,7 +305,7 @@ export function cachedRelic(
     ...substat,
     rolls: [],
     efficiency: 0,
-    accurateValue: substat.value,
+    accurateValue: substat.value
   }))
 
   const validated: ICachedRelic = {
@@ -318,7 +318,7 @@ export function cachedRelic(
     rarity,
     level,
     substats,
-    mainStatVal,
+    mainStatVal
   }
 
   // TODO: Validate rolls
@@ -476,7 +476,7 @@ export function validateRelic(
     mainStatKey,
     substats,
     location,
-    lock,
+    lock
   }
 }
 function defSub(): ISubstat {

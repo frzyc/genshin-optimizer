@@ -2,7 +2,7 @@ import type {
   AscensionKey,
   LightConeKey,
   LocationKey,
-  SuperimposeKey,
+  SuperimposeKey
 } from '@genshin-optimizer/sr/consts'
 
 export interface ILightCone {

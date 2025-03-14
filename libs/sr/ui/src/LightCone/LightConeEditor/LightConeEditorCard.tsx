@@ -2,7 +2,7 @@ import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
 import type {
   AscensionKey,
   LightConeKey,
-  SuperimposeKey,
+  SuperimposeKey
 } from '@genshin-optimizer/sr/consts'
 import { allSuperimposeKeys } from '@genshin-optimizer/sr/consts'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
@@ -15,7 +15,7 @@ import {
   IconButton,
   MenuItem,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { MouseEvent, ReactNode } from 'react'
 import { Suspense } from 'react'
@@ -28,7 +28,7 @@ export function LightConeEditorCard({
   lightCone,
   setLightCone,
   footer,
-  hideLocation = false,
+  hideLocation = false
 }: {
   onClose: (e: MouseEvent) => void
   lightCone: Partial<ILightCone>
@@ -129,7 +129,7 @@ type SuperimpositionDropdownProps = {
 function SuperimpositionDropdown({
   superimpose,
   setSuperimposition,
-  disabled = false,
+  disabled = false
 }: SuperimpositionDropdownProps) {
   const { t } = useTranslation('lightCone_gen')
   return (
@@ -167,7 +167,7 @@ function LevelDropdown({
   level,
   ascension,
   setLevelAscension,
-  disabled = false,
+  disabled = false
 }: LevelDropdownProps) {
   const { t } = useTranslation(['common_gen', 'common'])
 

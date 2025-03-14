@@ -1,7 +1,7 @@
 import {
   allCharacterKeys,
   allLightConeKeys,
-  allRelicSetKeys,
+  allRelicSetKeys
 } from '@genshin-optimizer/sr/consts'
 import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'

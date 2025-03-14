@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   energy_threshold: data_gen.superimpose.otherStats[o++],
-  energy: data_gen.superimpose.otherStats[o++],
+  energy: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

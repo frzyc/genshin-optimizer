@@ -4,7 +4,7 @@ import { allLightConeKeys } from '@genshin-optimizer/sr/consts'
 import {
   equipmentConfig,
   equipmentSkillConfig,
-  lightConeIdMap,
+  lightConeIdMap
 } from '@genshin-optimizer/sr/dm'
 
 type LightConeData = {
@@ -24,15 +24,15 @@ const lightConeArray = Object.entries(equipmentConfig).map(
     const { SkillName, SkillDesc } = equipmentSkillConfig[lcId][0]
     const passive = {
       name: SkillName.Hash.toString(),
-      description: SkillDesc.Hash.toString(),
+      description: SkillDesc.Hash.toString()
     }
 
     const tuple: [LightConeKey, LightConeData] = [
       lcKey,
       {
         name: EquipmentName.Hash.toString(),
-        passive,
-      },
+        passive
+      }
     ]
     return tuple
   }

@@ -7,7 +7,7 @@ import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Read } from '@genshin-optimizer/sr/formula'
 import {
   OptimizationTargetDisplay,
-  OptimizationTargetSelector,
+  OptimizationTargetSelector
 } from '@genshin-optimizer/sr/formula-ui'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import { Box, CardActionArea, Divider, Typography } from '@mui/material'
@@ -25,7 +25,7 @@ export function ComboEditor() {
         gap: 1,
         overflowX: 'auto',
         overflowY: 'visible',
-        p: 1,
+        p: 1
       }}
     >
       {team.frames.map((frame, i) => (
@@ -42,9 +42,9 @@ export function ComboEditor() {
                   tag: {
                     ...tag,
                     // TODO: This is going to cause collision issues when frame deletion is implemented
-                    preset: `preset${team.frames.length}` as Preset,
-                  },
-                },
+                    preset: `preset${team.frames.length}` as Preset
+                  }
+                }
               ]
             })
           }
@@ -83,7 +83,7 @@ function Combo({ frame, index }: { frame: Frame; index: number }) {
         outline:
           presetIndex === index
             ? `solid ${theme.palette.success.main}`
-            : undefined,
+            : undefined
       })}
     >
       <CardActionArea onClick={handleClick}>

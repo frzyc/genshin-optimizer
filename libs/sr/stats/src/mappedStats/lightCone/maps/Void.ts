@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   eff_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++][1],
+  duration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

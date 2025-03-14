@@ -12,15 +12,15 @@ const skill_dmg_ = subscript(input.weapon.refinement, skill_dmg_Src)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    skill_dmg_,
-  },
+    skill_dmg_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: skill_dmg_ }],
-    },
-  ],
+      fields: [{ node: skill_dmg_ }]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

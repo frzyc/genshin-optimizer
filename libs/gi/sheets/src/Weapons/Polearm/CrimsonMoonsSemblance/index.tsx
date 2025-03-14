@@ -29,8 +29,8 @@ const all_dmg_ = sum(dmg_1, dmg_2)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    all_dmg_: all_dmg_,
-  },
+    all_dmg_: all_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -45,20 +45,20 @@ const sheet: IWeaponSheet = {
           name: '< 30%',
           fields: [
             {
-              node: dmg_1,
-            },
-          ],
+              node: dmg_1
+            }
+          ]
         },
         '2': {
           name: '>= 30%',
           fields: [
             {
-              node: all_dmg_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: all_dmg_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

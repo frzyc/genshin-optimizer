@@ -33,8 +33,8 @@ const all_ele_dmg_map = objKeyMap(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    ...all_ele_dmg_map,
-  },
+    ...all_ele_dmg_map
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -47,21 +47,21 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atk_,
+              node: atk_
             },
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
+              unit: 's'
             },
             {
               text: stg('cd'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       value: condAffectedOther,
@@ -75,17 +75,17 @@ const sheet: IWeaponSheet = {
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
+              unit: 's'
             },
             {
               text: stg('cd'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

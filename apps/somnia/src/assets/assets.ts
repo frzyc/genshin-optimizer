@@ -7,5 +7,5 @@ export const elementColors = {
   hydro: 0x5680ff,
   pyro: 0xff3c32,
   cryo: 0x77a2e6,
-  dendro: 0xa5c83b,
+  dendro: 0xa5c83b
 }

@@ -14,7 +14,7 @@ export function RVSlide({
   setHigh,
   setBoth,
   dark = false,
-  disabled = false,
+  disabled = false
 }: {
   rvLow: number
   rvHigh: number
@@ -52,7 +52,7 @@ export function RVSlide({
         display: 'flex',
         alignItems: 'center',
         bgcolor: dark ? 'contentNormal.main' : 'contentLight.main',
-        overflow: 'visible',
+        overflow: 'visible'
       }}
     >
       <Box sx={{ width: 'max-content', height: 32, display: 'flex' }}>
@@ -65,7 +65,7 @@ export function RVSlide({
             fontWeight: 400,
             fontSize: '16px',
             textAlign: 'center',
-            color: 'rgba(255,255,255,0.9)',
+            color: 'rgba(255,255,255,0.9)'
           }}
         >
           {MRV_RV ? t('rvSliderBtn.maximum') : t('rvSliderBtn.current')}
@@ -78,7 +78,7 @@ export function RVSlide({
           onChange={(val) => setLow(clamp(val ?? 0, 0, sliderHigh))}
           sx={{
             pr: 1,
-            width: 50,
+            width: 50
           }}
           inputProps={{ sx: { textAlign: 'right' } }}
           disabled={disabled}

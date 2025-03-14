@@ -9,8 +9,8 @@ let o = 1
 const dm = {
   2: {
     passive_atk_: data_gen.setEffects[0].passiveStats.atk_,
-    crit_: data_gen.setEffects[0].otherStats[o++],
-  },
+    crit_: data_gen.setEffects[0].otherStats[o++]
+  }
 } as const
 
 export default dm

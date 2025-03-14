@@ -2,7 +2,7 @@
 import type {
   LoadoutDatum,
   Team,
-  TeamCharacter,
+  TeamCharacter
 } from '@genshin-optimizer/gi/db'
 import { createContext } from 'react'
 export type TeamCharacterContextObj = {
@@ -18,5 +18,5 @@ export type TeamCharacterContextObj = {
 export const TeamCharacterContext = createContext({
   teamChar: {},
   team: {},
-  loadoutDatum: {},
+  loadoutDatum: {}
 } as TeamCharacterContextObj)

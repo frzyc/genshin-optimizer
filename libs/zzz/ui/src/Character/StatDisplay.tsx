@@ -6,7 +6,7 @@ import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 export function StatDisplay({
   statKey,
   showPercent = false,
-  disableIcon = false,
+  disableIcon = false
 }: {
   statKey: StatKey
   showPercent?: boolean

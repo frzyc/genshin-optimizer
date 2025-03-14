@@ -4,7 +4,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customHealNode } from '../../../Characters/dataUtil'
 import { cond, st, stg } from '../../../SheetUtil'
@@ -43,12 +43,12 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(heal, { name: stg('healing'), variant: 'heal' }),
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: infoMut(heal, { name: stg('healing'), variant: 'heal' })
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

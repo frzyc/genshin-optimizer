@@ -5,7 +5,7 @@ import {
   GatewayIntentBits,
   Partials,
   REST,
-  Routes,
+  Routes
 } from 'discord.js'
 import { readFileSync } from 'fs'
 import * as http from 'http'
@@ -23,9 +23,9 @@ const client = new Client({
     GatewayIntentBits.GuildMessageReactions,
     GatewayIntentBits.DirectMessages,
     GatewayIntentBits.DirectMessageReactions,
-    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.MessageContent
   ],
-  partials: [Partials.Message, Partials.Channel, Partials.Reaction],
+  partials: [Partials.Message, Partials.Channel, Partials.Reaction]
 })
 
 import * as events from './lib/events'
@@ -58,7 +58,7 @@ const setcommands = [
   button.slashcommand.toJSON(),
   // databank.slashcommand.toJSON(),
   debug.slashcommand.toJSON(),
-  multi.slashcommand.toJSON(),
+  multi.slashcommand.toJSON()
 ]
 
 //register commands

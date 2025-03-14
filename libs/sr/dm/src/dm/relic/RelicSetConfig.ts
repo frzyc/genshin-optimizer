@@ -2,7 +2,7 @@ import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import {
   nameToKey,
   objFilterKeys,
-  objKeyValMap,
+  objKeyValMap
 } from '@genshin-optimizer/common/util'
 import { parse } from 'json-bigint'
 import { TextMapEN } from '../../TextMapUtil'
@@ -32,7 +32,7 @@ dumpFile(
   `${prePath}_idmap_gen.json`,
   objKeyValMap(relicSetConfigSrc, (config) => [
     config.SetID,
-    nameToKey(TextMapEN[config.SetName.Hash.toString()]),
+    nameToKey(TextMapEN[config.SetName.Hash.toString()])
   ])
 )
 dumpFile(
@@ -42,7 +42,7 @@ dumpFile(
       relicSetConfigSrc.map((data) =>
         nameToKey(TextMapEN[data.SetName.Hash.toString()])
       )
-    ),
+    )
   ]
     .filter((s) => s)
     .sort()
@@ -55,7 +55,7 @@ dumpFile(
       relicSetConfigSrc
         .filter((d) => d.IsPlanarSuit)
         .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()]))
-    ),
+    )
   ]
     .filter((s) => s)
     .sort()
@@ -68,7 +68,7 @@ dumpFile(
       relicSetConfigSrc
         .filter((d) => !d.IsPlanarSuit)
         .map((data) => nameToKey(TextMapEN[data.SetName.Hash.toString()]))
-    ),
+    )
   ]
     .filter((s) => s)
     .sort()

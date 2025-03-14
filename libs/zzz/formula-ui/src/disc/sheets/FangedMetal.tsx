@@ -18,9 +18,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc2'),
-      },
-    ],
+        text: chg('desc2')
+      }
+    ]
   },
   4: {
     title: <Set4Display />,
@@ -28,17 +28,17 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc4'),
+        text: chg('desc4')
       },
       {
         type: 'conditional',
         conditional: {
           label: ch('set4_cond'),
           metadata: cond.inflict_assault,
-          fields: [TagToTagField(buff.set4_cond_inflict_assault.tag)],
-        },
-      },
-    ],
-  },
+          fields: [TagToTagField(buff.set4_cond_inflict_assault.tag)]
+        }
+      }
+    ]
+  }
 }
 export default sheet

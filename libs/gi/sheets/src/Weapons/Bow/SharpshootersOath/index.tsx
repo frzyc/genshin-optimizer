@@ -12,8 +12,8 @@ const weakspotDMG_ = subscript(input.weapon.refinement, weakspotDMG_s)
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    weakspotDMG_,
-  },
+    weakspotDMG_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -22,10 +22,10 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: weakspotDMG_,
-        },
-      ],
-    },
-  ],
+          node: weakspotDMG_
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

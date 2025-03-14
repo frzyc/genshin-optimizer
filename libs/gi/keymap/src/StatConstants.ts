@@ -1,12 +1,12 @@
 import type {
   ElementWithPhyKey,
-  TransformativeReactionKey,
+  TransformativeReactionKey
 } from '@genshin-optimizer/gi/consts'
 
 export const hitTypes = {
   hit: 'DMG',
   avgHit: 'Avg. DMG',
-  critHit: 'CRIT Hit DMG',
+  critHit: 'CRIT Hit DMG'
 } as const
 export const hitMoves = {
   normal: 'Normal Att.',
@@ -16,7 +16,7 @@ export const hitMoves = {
   plunging_impact: 'Plunging Impact',
   elemental: 'Elemental Att.',
   skill: 'Ele. Skill',
-  burst: 'Ele. Burst',
+  burst: 'Ele. Burst'
 } as const
 export type HitMoveKey = keyof typeof hitMoves
 type TransformativeReaction = {
@@ -35,82 +35,82 @@ export const transformativeReactions: Record<
     multi: 2.75,
     variants: ['pyro'],
     resist: 'pyro',
-    canCrit: false,
+    canCrit: false
   },
   shattered: {
     name: 'Shattered',
     multi: 3,
     variants: ['physical'],
     resist: 'physical',
-    canCrit: false,
+    canCrit: false
   },
   electrocharged: {
     name: 'Electro-Charged',
     multi: 2,
     variants: ['electro'],
     resist: 'electro',
-    canCrit: false,
+    canCrit: false
   },
   superconduct: {
     name: 'Superconduct',
     multi: 1.5,
     variants: ['cryo'],
     resist: 'cryo',
-    canCrit: false,
+    canCrit: false
   },
   swirl: {
     name: 'Swirl',
     multi: 0.6,
     variants: ['pyro', 'hydro', 'electro', 'cryo'],
     resist: 'pyro',
-    canCrit: false,
+    canCrit: false
   },
   burning: {
     name: 'Burning',
     multi: 0.25,
     variants: ['pyro', 'dendro'],
     resist: 'pyro',
-    canCrit: true,
+    canCrit: true
   },
   bloom: {
     name: 'Bloom',
     multi: 2,
     variants: ['dendro', 'hydro'],
     resist: 'dendro',
-    canCrit: true,
+    canCrit: true
   },
   burgeon: {
     name: 'Burgeon',
     multi: 3,
     variants: ['pyro'],
     resist: 'dendro',
-    canCrit: true,
+    canCrit: true
   },
   hyperbloom: {
     name: 'Hyperbloom',
     multi: 3,
     variants: ['electro'],
     resist: 'dendro',
-    canCrit: true,
-  },
+    canCrit: true
+  }
 } as const
 export const crittableTransformativeReactions = [
   'burning',
   'bloom',
   'burgeon',
   'hyperbloom',
-  'swirl',
+  'swirl'
 ] as const
 export type CrittableTransformativeReactionsKey =
   (typeof crittableTransformativeReactions)[number]
 export const amplifyingReactions = {
   vaporize: { name: 'Vaporize', variants: { pyro: 1.5, hydro: 2 } },
-  melt: { name: 'Melt', variants: { pyro: 2, cryo: 1.5 } },
+  melt: { name: 'Melt', variants: { pyro: 2, cryo: 1.5 } }
 } as const
 export type AmplifyingReactionsKey = keyof typeof amplifyingReactions
 export const additiveReactions = {
   spread: { name: 'Spread', multi: 1.25 },
-  aggravate: { name: 'Aggravate', multi: 1.15 },
+  aggravate: { name: 'Aggravate', multi: 1.15 }
 }
 export type AdditiveReactionsKey = keyof typeof additiveReactions
 //
@@ -206,7 +206,7 @@ export const transformativeReactionLevelMultipliers = [
   1325.4841,
   1363.4569,
   1405.0974,
-  1446.8535,
+  1446.8535
 ]
 // PlayerShieldLevelCo
 export const crystallizeLevelMultipliers = [
@@ -300,5 +300,5 @@ export const crystallizeLevelMultipliers = [
   1754.6715,
   1785.8666,
   1817.1375,
-  1851.0603,
+  1851.0603
 ]

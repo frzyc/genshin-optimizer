@@ -12,7 +12,7 @@ export default function Content({
   team: serverTeam,
   characters: serverCharacters,
   loadouts: serverLoadouts,
-  accountId,
+  accountId
 }: {
   team: Team
   characters: Characters

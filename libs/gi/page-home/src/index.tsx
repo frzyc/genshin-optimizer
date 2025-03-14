@@ -10,7 +10,7 @@ import {
   Link,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useEffect, useState } from 'react'
 import ReactGA from 'react-ga4'

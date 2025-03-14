@@ -22,7 +22,7 @@ function useIntentAdHandler() {
     )
     observer.observe(document.body, {
       attributes: true,
-      attributeFilter: ['style'],
+      attributeFilter: ['style']
     })
     return () => observer.disconnect()
   }, [])

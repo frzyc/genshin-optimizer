@@ -6,7 +6,7 @@ import { useDatabase } from './useDatabase'
 export function useTeammateArtifactIds() {
   const {
     teamCharId,
-    team: { loadoutData },
+    team: { loadoutData }
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   return useMemo(

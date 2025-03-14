@@ -26,8 +26,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
     atk_: set2,
     normal_dmg_: set4Norm,
     charged_dmg_: set4Charged,
-    plunging_dmg_: set4Plunge,
-  },
+    plunging_dmg_: set4Plunge
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -43,24 +43,24 @@ const sheet: SetEffectSheet = {
           used: {
             fields: [
               {
-                node: set4Norm,
+                node: set4Norm
               },
               {
-                node: set4Charged,
+                node: set4Charged
               },
               {
-                node: set4Plunge,
+                node: set4Plunge
               },
               {
                 text: stg('duration'),
                 value: 10,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                unit: 's'
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

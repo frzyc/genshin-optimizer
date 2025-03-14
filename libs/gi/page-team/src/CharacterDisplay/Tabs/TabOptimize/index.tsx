@@ -1,7 +1,7 @@
 import {
   useBoolState,
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
@@ -10,19 +10,19 @@ import {
   InfoTooltip,
   ModalWrapper,
   SqBadge,
-  useConstObj,
+  useConstObj
 } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   notEmpty,
   objKeyMap,
   objPathValue,
-  range,
+  range
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSlotKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild, ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { maxBuildsToShowList } from '@genshin-optimizer/gi/db'
@@ -32,7 +32,7 @@ import {
   useDatabase,
   useGeneratedBuildList,
   useOptConfig,
-  useTeammateArtifactIds,
+  useTeammateArtifactIds
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
@@ -53,7 +53,7 @@ import {
   statFilterToNumNode,
   useGlobalError,
   useNumWorkers,
-  useTeamData,
+  useTeamData
 } from '@genshin-optimizer/gi/ui'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
@@ -65,7 +65,7 @@ import {
   Close,
   DeleteForever,
   Science,
-  TrendingUp,
+  TrendingUp
 } from '@mui/icons-material'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import CloseIcon from '@mui/icons-material/Close'
@@ -83,7 +83,7 @@ import {
   MenuItem,
   Skeleton,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { FormEventHandler, ReactNode } from 'react'
 import React, {
@@ -95,7 +95,7 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import useCompareData from '../../../useCompareData'
@@ -123,7 +123,7 @@ export default function TabBuild() {
     loadoutDatum,
     teamCharId,
     teamChar: { optConfigId, key: characterKey },
-    teamId,
+    teamId
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { setChartData, graphBuilds, setGraphBuilds } = useContext(GraphContext)
@@ -144,7 +144,7 @@ export default function TabBuild() {
     skipped: 0,
     total: 0,
     testedPerSecond: 0,
-    skippedPerSecond: 0,
+    skippedPerSecond: 0
   } as BuildStatus)
   const generatingBuilds = buildStatus.type !== 'inactive'
 
@@ -161,7 +161,7 @@ export default function TabBuild() {
       skipped: 0,
       total: 0,
       testedPerSecond: 0,
-      skippedPerSecond: 0,
+      skippedPerSecond: 0
     })
   }, [characterKey])
 
@@ -177,7 +177,7 @@ export default function TabBuild() {
     levelLow,
     levelHigh,
     generatedBuildListId,
-    useTeammateBuild,
+    useTeammateBuild
   } = buildSetting
   const { builds: buildsDb, buildDate } = useGeneratedBuildList(
     generatedBuildListId ?? ''
@@ -208,7 +208,7 @@ export default function TabBuild() {
       levelLow,
       levelHigh,
       useExcludedArts,
-      useTeammateBuild,
+      useTeammateBuild
     } = deferredArtsDirty && deferredBuildSetting
 
     return database.arts.values.filter((art) => {
@@ -237,7 +237,7 @@ export default function TabBuild() {
     deferredBuildSetting,
     database,
     teammateArtifactIds,
-    characterKey,
+    characterKey
   ])
 
   const filteredArtIdMap = useMemo(
@@ -254,7 +254,7 @@ export default function TabBuild() {
         levelTotal: ['in'],
         allowListTotal: ['in'],
         excludedTotal: ['in'],
-        teammateBuildTotal: ['in'],
+        teammateBuildTotal: ['in']
       } as const
       return bulkCatTotal(catKeys, (ctMap) =>
         database.arts.entries.forEach(([id, art]) => {
@@ -291,7 +291,7 @@ export default function TabBuild() {
       deferredArtsDirty,
       deferredBuildSetting,
       filteredArtIdMap,
-      teammateArtifactIds,
+      teammateArtifactIds
     ])
 
   const tabFocused = useRef(true)
@@ -320,7 +320,7 @@ export default function TabBuild() {
       optimizationTarget,
       mainStatAssumptionLevel,
       allowPartial,
-      maxBuildsToShow,
+      maxBuildsToShow
     } = buildSetting
     if (!characterKey || !optimizationTarget) return
 
@@ -357,7 +357,7 @@ export default function TabBuild() {
 
     const unoptimizedNodes = [
       ...valueFilter.map((x) => x.value),
-      unoptimizedOptimizationTargetNode,
+      unoptimizedOptimizationTargetNode
     ]
     const minimum = [...valueFilter.map((x) => x.minimum), -Infinity]
     const plotBaseNumNode: NumNode =
@@ -382,7 +382,7 @@ export default function TabBuild() {
       constraints: nodes.map((value, i) => ({ value, min: minimum[i] })),
 
       topN: maxBuildsToShow,
-      plotBase: plotBaseNode,
+      plotBase: plotBaseNode
     }
     const status: Omit<BuildStatus, 'type'> = {
       tested: 0,
@@ -391,7 +391,7 @@ export default function TabBuild() {
       total: 0,
       testedPerSecond: 0,
       skippedPerSecond: 0,
-      startTime: performance.now(),
+      startTime: performance.now()
     }
     const statusUpdateTimer = setInterval(
       () => setBuildStatus({ type: 'active', ...status }),
@@ -437,8 +437,8 @@ export default function TabBuild() {
               ),
               weaponId,
               value,
-              plot,
-            })),
+              plot
+            }))
         })
       }
       const builds = mergeBuilds(
@@ -455,9 +455,9 @@ export default function TabBuild() {
               (aId) => database.arts.get(aId)?.slotKey === slotKey
             )
           ),
-          weaponId,
+          weaponId
         })),
-        buildDate: Date.now(),
+        buildDate: Date.now()
       })
 
       setTimeout(() => {
@@ -486,7 +486,7 @@ export default function TabBuild() {
       setBuildStatus({
         type: 'inactive',
         ...status,
-        finishTime: performance.now(),
+        finishTime: performance.now()
       })
     }
   }, [
@@ -503,7 +503,7 @@ export default function TabBuild() {
     loadoutDatum,
     optConfigId,
     t,
-    throwGlobalError,
+    throwGlobalError
   ])
 
   const characterName = (
@@ -526,7 +526,7 @@ export default function TabBuild() {
       }
       disabled={!!generatingBuilds}
       targetSelectorModalProps={{
-        excludeSections: ['character', 'bonusStats', 'teamBuff'],
+        excludeSections: ['character', 'bonusStats', 'teamBuff']
       }}
     />
   )
@@ -598,7 +598,7 @@ export default function TabBuild() {
                     mainStatAssumptionLevel: number
                   ) =>
                     database.optConfigs.set(optConfigId, {
-                      mainStatAssumptionLevel,
+                      mainStatAssumptionLevel
                     })
                   }
                   disabled={generatingBuilds}
@@ -640,7 +640,7 @@ export default function TabBuild() {
             color={allowPartial ? 'success' : 'secondary'}
             onClick={() =>
               database.optConfigs.set(optConfigId, {
-                allowPartial: !allowPartial,
+                allowPartial: !allowPartial
               })
             }
             disabled={generatingBuilds}
@@ -822,7 +822,7 @@ export default function TabBuild() {
                   setGraphBuilds(undefined)
                   database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
                     builds: [],
-                    buildDate: 0,
+                    buildDate: 0
                   })
                 }}
               >
@@ -871,7 +871,7 @@ const LevelFilter = memo(function LevelFilter({
   levelLow,
   levelHigh,
   disabled,
-  optConfigId,
+  optConfigId
 }: {
   levelTotal: string
   levelLow: number
@@ -900,7 +900,7 @@ const LevelFilter = memo(function LevelFilter({
         setBoth={(levelLow, levelHigh) =>
           database.optConfigs.set(optConfigId, {
             levelLow,
-            levelHigh,
+            levelHigh
           })
         }
         disabled={disabled}
@@ -915,7 +915,7 @@ const BuildList = memo(function BuildList({
   compareData,
   disabled,
   getLabel,
-  mainStatAssumptionLevel,
+  mainStatAssumptionLevel
 }: {
   builds: GeneratedBuild[]
   setBuilds?: (builds: GeneratedBuild[] | undefined) => void
@@ -937,7 +937,7 @@ const BuildList = memo(function BuildList({
   // retrive this value because inner calcs depends on this
   const teamCharacterContextValue = useContext(TeamCharacterContext)
   const {
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey }
   } = teamCharacterContextValue
   return (
     <Suspense
@@ -970,7 +970,7 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   build,
   disabled,
   deleteBuild,
-  mainStatAssumptionLevel,
+  mainStatAssumptionLevel
 }: {
   index: number
   label: ReactNode
@@ -1016,7 +1016,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
   const {
     teamCharId,
     loadoutDatum,
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey }
   } = useContext(TeamCharacterContext)
 
   const toTc = () => {
@@ -1030,7 +1030,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
     )
     if (buildTcId)
       database.buildTcs.set(buildTcId, {
-        name,
+        name
       })
 
     setName('')
@@ -1085,7 +1085,7 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
   )
 }
 function CopyBuildButton({
-  build: { artifactIds, weaponId },
+  build: { artifactIds, weaponId }
 }: {
   build: GeneratedBuild
 }) {
@@ -1101,7 +1101,7 @@ function CopyBuildButton({
     database.teamChars.newBuild(teamCharId, {
       name,
       artifactIds,
-      weaponId,
+      weaponId
     })
 
     setName('')
@@ -1174,7 +1174,7 @@ const DataContextWrapper = memo(function DataContextWrapper({
   characterKey,
   build,
   compareData,
-  mainStatAssumptionLevel,
+  mainStatAssumptionLevel
 }: Prop) {
   const { artifactIds, weaponId } = build
   const database = useDatabase()

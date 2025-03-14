@@ -3,14 +3,14 @@ import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   CardHeaderCustom,
   CardThemed,
-  InfoTooltipInline,
+  InfoTooltipInline
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import type {
   DocumentSection,
   IDocumentFields,
   IDocumentHeader,
-  IDocumentText,
+  IDocumentText
 } from '@genshin-optimizer/gi/sheets'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Collapse, Divider, Typography } from '@mui/material'
@@ -26,7 +26,7 @@ export function DocumentDisplay({
   hideHeader = false,
   disabled = false,
   bgt = 'normal',
-  collapse = false,
+  collapse = false
 }: {
   sections: DocumentSection[]
   teamBuffOnly?: boolean
@@ -71,7 +71,7 @@ function SectionDisplay({
   hideHeader = false,
   disabled = false,
   bgt = 'normal',
-  collapse = false,
+  collapse = false
 }: {
   section: DocumentSection
   hideDesc?: boolean
@@ -111,7 +111,7 @@ function FieldsSectionDisplay({
   section,
   hideDesc,
   hideHeader,
-  bgt = 'normal',
+  bgt = 'normal'
 }: {
   section: IDocumentFields
   hideDesc?: boolean
@@ -157,7 +157,7 @@ function TextSectionDisplayCollapse({ section }: { section: IDocumentText }) {
             alignItems: 'flex-end',
             zIndex: '10',
             transition: 'transform 0.3s ease',
-            transform: hover ? 'translate(0,-5px)' : undefined,
+            transform: hover ? 'translate(0,-5px)' : undefined
           }}
         >
           <KeyboardArrowDownIcon />
@@ -178,8 +178,8 @@ function TextSectionDisplayCollapse({ section }: { section: IDocumentText }) {
           '&:hover': {
             maskImage: expanded
               ? undefined
-              : 'linear-gradient(to bottom, black 50%, transparent 100%)',
-          },
+              : 'linear-gradient(to bottom, black 50%, transparent 100%)'
+          }
         }}
       >
         <div>{evalIfFunc(section.text, data)}</div>
@@ -191,7 +191,7 @@ function TextSectionDisplayCollapse({ section }: { section: IDocumentText }) {
 export function HeaderDisplay({
   header,
   hideDesc,
-  hideDivider,
+  hideDivider
 }: {
   header: IDocumentHeader
   hideDesc?: boolean

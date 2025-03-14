@@ -2,7 +2,7 @@ import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import {
   nameToKey,
   objFilterKeys,
-  objKeyValMap,
+  objKeyValMap
 } from '@genshin-optimizer/common/util'
 import { parse } from 'json-bigint'
 import { PROJROOT_PATH } from '../../consts'
@@ -44,7 +44,7 @@ dumpFile(
   Object.fromEntries(
     Object.values(avatarServantConfigSrc).map((data) => [
       data.ServantID,
-      nameToKey(TextMapEN[data.ServantName.Hash.toString()]),
+      nameToKey(TextMapEN[data.ServantName.Hash.toString()])
     ])
   )
 )
@@ -55,7 +55,7 @@ dumpFile(
       avatarServantConfigSrc.map((config) =>
         nameToKey(TextMapEN[config.ServantName.Hash.toString()])
       )
-    ),
+    )
   ]
     .filter((s) => s)
     .sort()

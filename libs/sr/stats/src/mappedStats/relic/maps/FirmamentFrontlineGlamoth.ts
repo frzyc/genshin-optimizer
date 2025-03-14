@@ -12,8 +12,8 @@ const dm = {
     spdBp1: data_gen.setEffects[0].otherStats[o++],
     spdBp2: data_gen.setEffects[0].otherStats[o++],
     common_dmg_1: data_gen.setEffects[0].otherStats[o++],
-    common_dmg_2: data_gen.setEffects[0].otherStats[o++],
-  },
+    common_dmg_2: data_gen.setEffects[0].otherStats[o++]
+  }
 } as const
 
 export default dm

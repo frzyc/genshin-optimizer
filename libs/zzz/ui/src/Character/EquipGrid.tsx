@@ -12,7 +12,7 @@ export function EquipGrid({
   wengineId,
   columns,
   onClick,
-  spacing = 1,
+  spacing = 1
 }: {
   discIds?: DiscIds
   wengineId?: string

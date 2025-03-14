@@ -2,7 +2,7 @@ import type {
   DBStorage,
   DbIndexKey,
   DbVersionKey,
-  StorageType,
+  StorageType
 } from './DBStorage'
 
 export class SandboxStorage implements DBStorage {

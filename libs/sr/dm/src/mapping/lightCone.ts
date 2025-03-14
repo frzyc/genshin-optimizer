@@ -126,7 +126,7 @@ export const lightConeIdMap: Record<string, LightConeKey> = {
   24002: 'TextureOfMemories',
   24003: 'SolitaryHealing',
   24004: 'EternalCalculus',
-  24005: 'MemorysCurtainNeverFalls',
+  24005: 'MemorysCurtainNeverFalls'
 }
 export type LightConeId = keyof typeof lightConeIdMap
 
@@ -134,5 +134,5 @@ export const lightConeRarityMap: Record<EquipmentConfig['Rarity'], 3 | 4 | 5> =
   {
     CombatPowerLightconeRarity3: 3,
     CombatPowerLightconeRarity4: 4,
-    CombatPowerLightconeRarity5: 5,
+    CombatPowerLightconeRarity5: 5
   }

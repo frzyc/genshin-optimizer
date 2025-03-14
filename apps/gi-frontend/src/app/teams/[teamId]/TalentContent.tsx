@@ -2,7 +2,7 @@ import {
   CardThemed,
   ConditionalWrapper,
   DropdownButton,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -19,7 +19,7 @@ import {
   MenuItem,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
@@ -29,12 +29,12 @@ import type { TeamLoadoutCharacter } from './getTeam'
 const talentSpacing = {
   xs: 12,
   sm: 6,
-  md: 4,
+  md: 4
 }
 
 export default function CharacterTalentPane({
   character,
-  calc,
+  calc
 }: {
   character: TeamLoadoutCharacter
   calc: Calculator
@@ -219,7 +219,7 @@ type SkillDisplayCardProps = {
 }
 function SkillDisplayCard({
   sheetElement,
-  onClickTitle,
+  onClickTitle
 }: SkillDisplayCardProps) {
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -307,7 +307,7 @@ function SkillDisplayCard({
 }
 
 export function ConstellationDropdown({
-  calc,
+  calc
 }: {
   character: TeamLoadoutCharacter
   calc: Calculator

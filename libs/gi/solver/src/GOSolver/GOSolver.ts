@@ -8,7 +8,7 @@ import type {
   OptProblemInput,
   Setup,
   WorkerCommand,
-  WorkerResult,
+  WorkerResult
 } from '../type'
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
@@ -37,7 +37,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       .map(
         (_) =>
           new Worker(new URL('./BackgroundWorker.ts', import.meta.url), {
-            type: 'module',
+            type: 'module'
           })
       )
     super(workers, ['iterate', 'split', 'count'], (r, w) => {
@@ -88,7 +88,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     arts,
     topN,
     exclusion,
-    constraints,
+    constraints
   }: OptProblemInput): Setup {
     constraints = constraints.filter((x) => x.min > -Infinity)
 
@@ -105,7 +105,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       reaffine: true,
       pruneArtRange: true,
       pruneNodeRange: true,
-      pruneOrder: true,
+      pruneOrder: true
     }))
     nodes = optimize(nodes, {}, (_) => false)
 
@@ -118,7 +118,7 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       optTarget,
       plotBase,
       topN,
-      constraints: nodes.map((value, i) => ({ value, min: minimums[i] })),
+      constraints: nodes.map((value, i) => ({ value, min: minimums[i] }))
     }
   }
 

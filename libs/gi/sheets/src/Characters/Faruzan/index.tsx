@@ -8,7 +8,7 @@ import {
   input,
   percent,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -32,23 +32,23 @@ const datamine = {
       skillParam_gen.auto[a++], // 1
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
-      skillParam_gen.auto[a++], // 4
-    ],
+      skillParam_gen.auto[a++] // 4
+    ]
   },
   charged: {
     aimed: skillParam_gen.auto[a++],
-    aimedCharged: skillParam_gen.auto[a++],
+    aimedCharged: skillParam_gen.auto[a++]
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
     low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++]
   },
   skill: {
     skill_dmg: skillParam_gen.skill[s++],
     vortex_dmg: skillParam_gen.skill[s++],
     galeDuration: skillParam_gen.skill[s++][0],
-    cd: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0]
   },
   burst: {
     dmg: skillParam_gen.burst[b++],
@@ -58,22 +58,22 @@ const datamine = {
     riftDuration: skillParam_gen.burst[b++][0],
     polyDuration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    enerCost: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0]
   },
   passive1: {
-    chargeShotDec_: skillParam_gen.passive1[p1++][0],
+    chargeShotDec_: skillParam_gen.passive1[p1++][0]
   },
   passive2: {
     gift_dmgInc: skillParam_gen.passive2[p2++][0],
-    cd: skillParam_gen.passive2[p2++][0],
+    cd: skillParam_gen.passive2[p2++][0]
   },
   constellation2: {
-    durationInc: skillParam_gen.constellation2[0],
+    durationInc: skillParam_gen.constellation2[0]
   },
   constellation6: {
     anemo_critDMG_: skillParam_gen.constellation6[0],
-    duration: skillParam_gen.constellation6[0],
-  },
+    duration: skillParam_gen.constellation6[0]
+  }
 } as const
 
 const [condBurstBenefitPath, condBurstBenefit] = cond(key, 'burstBenefit')
@@ -110,8 +110,8 @@ const dmgFormulas = {
   charged: {
     aimed: dmgNode('atk', datamine.charged.aimed, 'charged'),
     aimedCharged: dmgNode('atk', datamine.charged.aimedCharged, 'charged', {
-      hit: { ele: constant(elementKey) },
-    }),
+      hit: { ele: constant(elementKey) }
+    })
   },
   plunging: Object.fromEntries(
     Object.entries(datamine.plunging).map(([key, value]) => [
@@ -120,15 +120,15 @@ const dmgFormulas = {
         'atk',
         value,
         key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-      ),
+      )
     ])
   ),
   skill: {
     skillDmg: dmgNode('atk', datamine.skill.skill_dmg, 'skill'),
-    vortexDmg: dmgNode('atk', datamine.skill.vortex_dmg, 'skill'),
+    vortexDmg: dmgNode('atk', datamine.skill.vortex_dmg, 'skill')
   },
   burst: {
-    dmg: dmgNode('atk', datamine.burst.dmg, 'burst'),
+    dmg: dmgNode('atk', datamine.burst.dmg, 'burst')
   },
   passive2: {
     anemo_dmgInc: greaterEq(
@@ -143,8 +143,8 @@ const dmgFormulas = {
           prod(percent(datamine.passive2.gift_dmgInc), input.base.atk)
         )
       )
-    ),
-  },
+    )
+  }
 }
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
@@ -152,69 +152,69 @@ const burstC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     burstBoost: burstC5,
-    skillBoost: skillC3,
+    skillBoost: skillC3
   },
   teamBuff: {
     premod: {
       anemo_dmgInc: dmgFormulas.passive2.anemo_dmgInc,
       anemo_dmg_: burstBenefit_anemo_dmg_,
       anemo_enemyRes_: burstHit_anemo_enemyRes_,
-      anemo_critDMG_: c6Benefit_anemo_critDMG_,
-    },
-  },
+      anemo_critDMG_: c6Benefit_anemo_critDMG_
+    }
+  }
 })
 
 const sheet: TalentSheet = {
   auto: ct.talentTem('auto', [
     {
-      text: ct.chg('auto.fields.normal'),
+      text: ct.chg('auto.fields.normal')
     },
     {
       fields: datamine.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
-          name: ct.chg(`auto.skillParams.${i}`),
-        }),
-      })),
+          name: ct.chg(`auto.skillParams.${i}`)
+        })
+      }))
     },
     {
-      text: ct.chg('auto.fields.charged'),
+      text: ct.chg('auto.fields.charged')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.aimed, {
-            name: ct.chg(`auto.skillParams.4`),
-          }),
+            name: ct.chg(`auto.skillParams.4`)
+          })
         },
         {
           node: infoMut(dmgFormulas.charged.aimedCharged, {
-            name: ct.chg(`auto.skillParams.5`),
-          }),
-        },
-      ],
+            name: ct.chg(`auto.skillParams.5`)
+          })
+        }
+      ]
     },
     {
-      text: ct.chg('auto.fields.plunging'),
+      text: ct.chg('auto.fields.plunging')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.plunging['dmg'], {
-            name: stg('plunging.dmg'),
-          }),
+            name: stg('plunging.dmg')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging['low'], {
-            name: stg('plunging.low'),
-          }),
+            name: stg('plunging.low')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging['high'], {
-            name: stg('plunging.high'),
-          }),
-        },
-      ],
-    },
+            name: stg('plunging.high')
+          })
+        }
+      ]
+    }
   ]),
 
   skill: ct.talentTem('skill', [
@@ -222,26 +222,26 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.skillDmg, {
-            name: ct.chg(`skill.skillParams.0`),
-          }),
+            name: ct.chg(`skill.skillParams.0`)
+          })
         },
         {
           node: infoMut(dmgFormulas.skill.vortexDmg, {
-            name: ct.chg(`skill.skillParams.1`),
-          }),
+            name: ct.chg(`skill.skillParams.1`)
+          })
         },
         {
           text: ct.chg('skill.skillParams.2'),
           value: datamine.skill.galeDuration,
-          unit: 's',
+          unit: 's'
         },
         {
           text: stg('cd'),
           value: datamine.skill.cd,
-          unit: 's',
-        },
-      ],
-    },
+          unit: 's'
+        }
+      ]
+    }
   ]),
 
   burst: ct.talentTem('burst', [
@@ -249,8 +249,8 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.dmg, {
-            name: ct.chg(`burst.skillParams.0`),
-          }),
+            name: ct.chg(`burst.skillParams.0`)
+          })
         },
         {
           text: ct.chg('burst.skillParams.5'),
@@ -263,18 +263,18 @@ const sheet: TalentSheet = {
                   datamine.constellation2.durationInc
                 }`
               : datamine.burst.polyDuration,
-          unit: 's',
+          unit: 's'
         },
         {
           text: stg('cd'),
           value: datamine.burst.cd,
-          unit: 's',
+          unit: 's'
         },
         {
           text: stg('energyCost'),
-          value: datamine.burst.enerCost,
-        },
-      ],
+          value: datamine.burst.enerCost
+        }
+      ]
     },
     ct.condTem('burst', {
       teamBuff: true,
@@ -285,16 +285,16 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: burstBenefit_anemo_dmg_,
+              node: burstBenefit_anemo_dmg_
             },
             {
               text: ct.chg('burst.skillParams.2'),
               value: datamine.burst.giftDuration,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     }),
     ct.condTem('burst', {
       teamBuff: true,
@@ -305,16 +305,16 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: burstHit_anemo_enemyRes_,
+              node: burstHit_anemo_enemyRes_
             },
             {
               text: ct.chg('burst.skillParams.4'),
               value: datamine.burst.riftDuration,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     }),
     ct.condTem('passive2', {
       canShow: equal(condBurstBenefit, 'on', 1),
@@ -326,26 +326,26 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: dmgFormulas.passive2.anemo_dmgInc,
+              node: dmgFormulas.passive2.anemo_dmgInc
             },
             {
               text: stg('cd'),
               value: datamine.passive2.cd,
               unit: 's',
-              fixed: 1,
-            },
-          ],
-        },
-      },
+              fixed: 1
+            }
+          ]
+        }
+      }
     }),
     ct.headerTem('constellation2', {
       fields: [
         {
           text: ct.ch('c2DurationInc'),
           value: datamine.constellation2.durationInc,
-          unit: 's',
-        },
-      ],
+          unit: 's'
+        }
+      ]
     }),
     ct.condTem('constellation6', {
       teamBuff: true,
@@ -357,17 +357,17 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: c6Benefit_anemo_critDMG_,
+              node: c6Benefit_anemo_critDMG_
             },
             {
               // Only show on Faruzan's page
               canShow: (data) => data.get(input.activeCharKey).value === key,
-              text: ct.ch('c6Arrow'),
-            },
-          ],
-        },
-      },
-    }),
+              text: ct.ch('c6Arrow')
+            }
+          ]
+        }
+      }
+    })
   ]),
 
   passive1: ct.talentTem('passive1'),
@@ -376,12 +376,12 @@ const sheet: TalentSheet = {
   constellation1: ct.talentTem('constellation1'),
   constellation2: ct.talentTem('constellation2'),
   constellation3: ct.talentTem('constellation3', [
-    { fields: [{ node: skillC3 }] },
+    { fields: [{ node: skillC3 }] }
   ]),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5', [
-    { fields: [{ node: burstC5 }] },
+    { fields: [{ node: burstC5 }] }
   ]),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6')
 }
 export default new CharacterSheet(sheet, data)

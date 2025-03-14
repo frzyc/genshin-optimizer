@@ -13,7 +13,7 @@ import {
   srCalculatorWithEntries,
   teamData,
   withMember,
-  withPreset,
+  withPreset
 } from '@genshin-optimizer/sr/formula'
 import { relicsTagMapNodes } from '@genshin-optimizer/sr/solver'
 import type { ReactNode } from 'react'
@@ -22,7 +22,7 @@ import { useMemo } from 'react'
 export function CharCalcProvider({
   character,
   charOpt,
-  children,
+  children
 }: {
   character: ICachedCharacter
   charOpt: CharOpt
@@ -53,9 +53,9 @@ export function CharCalcProvider({
         ...charOpt.bonusStats.flatMap(({ tag, value }) =>
           withPreset(`preset0`, {
             tag: { ...tag },
-            value: constant(value),
+            value: constant(value)
           })
-        ),
+        )
       ]),
     [character.key, member0, charOpt.conditionals, charOpt.bonusStats]
   )

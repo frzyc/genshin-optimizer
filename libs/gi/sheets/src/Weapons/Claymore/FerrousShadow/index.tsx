@@ -18,8 +18,8 @@ const charged_dmg_ = equal(
 )
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    charged_dmg_,
-  },
+    charged_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -35,15 +35,15 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: charged_dmg_,
+              node: charged_dmg_
             },
             {
-              text: trm('resistance'),
-            },
-          ],
-        },
-      },
-    },
-  ],
+              text: trm('resistance')
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

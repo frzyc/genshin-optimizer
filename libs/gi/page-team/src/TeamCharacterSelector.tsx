@@ -3,7 +3,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   ModalWrapper,
-  TextFieldLazy,
+  TextFieldLazy
 } from '@genshin-optimizer/common/ui'
 import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
@@ -24,14 +24,14 @@ import {
   Tab,
   Tabs,
   Typography,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 export default function TeamCharacterSelector({
   teamId,
   characterKey,
-  tab = '',
+  tab = ''
 }: {
   teamId: string
   characterKey?: CharacterKey
@@ -79,7 +79,7 @@ export default function TeamCharacterSelector({
             const color = hexToColor(hex)
             if (!color) return `rgba(0,0,0,0)`
             return colorToRgbaString(color, selectedIndex === i ? 0.5 : 0.15)
-          }),
+          })
         ]
         const selectedRgb =
           selectedEle && hexToColor(theme.palette[selectedEle].main)
@@ -97,17 +97,17 @@ export default function TeamCharacterSelector({
           borderBottom: `2px ${rgba} solid`,
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.25s ease',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: 'rgba(255,255,255,0.1)'
           },
           '& .Mui-selected': {
-            color: 'white !important',
+            color: 'white !important'
           },
           '& .MuiTabs-indicator': {
             height: '4px',
             backgroundColor:
               (selectedEle && theme.palette[selectedEle]?.main) ??
-              'rgb(200,200,200,0.5)', //team settings
-          },
+              'rgb(200,200,200,0.5)' //team settings
+          }
         }
       }}
     >
@@ -124,7 +124,7 @@ export default function TeamCharacterSelector({
               sx={{
                 display: 'flex',
                 color: 'info.light',
-                gap: 1,
+                gap: 1
               }}
             >
               <BorderColorIcon />
@@ -143,7 +143,7 @@ export default function TeamCharacterSelector({
           color="neutral200"
           sx={{
             borderBottomLeftRadius: 0,
-            borderBottomRightRadius: 0,
+            borderBottomRightRadius: 0
           }}
           onClick={onShowEditor}
         >
@@ -159,8 +159,8 @@ export default function TeamCharacterSelector({
           minHeight: 0,
           '& .MuiTab-root': {
             minHeight: '2em',
-            py: 1,
-          },
+            py: 1
+          }
         }}
       >
         <Tab
@@ -170,7 +170,7 @@ export default function TeamCharacterSelector({
           label={t('teamSettings.tab.team')}
           onClick={() => navigate(`/teams/${teamId}/`)}
           sx={{
-            border: '1px solid rgba(255,255,255,0.3)',
+            border: '1px solid rgba(255,255,255,0.3)'
           }}
         />
         {loadoutData.map((loadoutDatum, ind) => {
@@ -196,8 +196,8 @@ export default function TeamCharacterSelector({
               sx={{
                 border: `1px solid ${colorrbga(0.3)}`,
                 '&:hover': {
-                  border: `1px solid ${colorrbga(0.8)}`,
-                },
+                  border: `1px solid ${colorrbga(0.8)}`
+                }
               }}
               iconPosition="start"
               value={teamCharKey ?? ind}
@@ -225,7 +225,7 @@ export default function TeamCharacterSelector({
 function TeamEditorModal({
   teamId,
   show,
-  onClose,
+  onClose
 }: {
   teamId: string
   show: boolean

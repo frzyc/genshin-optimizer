@@ -13,7 +13,7 @@ export async function dumpPrettyFile(filename: string, obj: unknown) {
   const prettierRc = await prettier.resolveConfig(filename)
   const fileStr = prettier.format(JSON.stringify(obj), {
     ...prettierRc,
-    parser: 'json',
+    parser: 'json'
   })
 
   writeFileSync(filename, fileStr)

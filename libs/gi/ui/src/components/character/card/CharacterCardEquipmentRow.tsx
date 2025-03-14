@@ -11,7 +11,7 @@ import { ArtifactCardPico } from '../../artifact'
 import { WeaponCardPico, WeaponCardPicoObj } from '../../weapon'
 
 export function CharacterCardEquipmentRow({
-  hideWeapon = false,
+  hideWeapon = false
 }: {
   hideWeapon?: boolean
 }) {
@@ -37,7 +37,7 @@ function Artifacts() {
   const artifacts: Array<[ArtifactSlotKey, ICachedArtifact | undefined]> =
     allArtifactSlotKeys.map((k) => [
       k,
-      database.arts.get(data.get(input.art[k].id).value?.toString() ?? ''),
+      database.arts.get(data.get(input.art[k].id).value?.toString() ?? '')
     ])
 
   return (
@@ -53,7 +53,7 @@ function Artifacts() {
   )
 }
 export function CharacterCardEquipmentRowTC({
-  weapon,
+  weapon
 }: {
   weapon: ICachedWeapon
 }) {
@@ -73,7 +73,7 @@ export function CharacterCardEquipmentRowTC({
               height: '100%',
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
             <Typography>

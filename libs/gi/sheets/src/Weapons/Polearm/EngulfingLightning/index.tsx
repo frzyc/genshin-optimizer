@@ -6,7 +6,7 @@ import {
   percent,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -43,11 +43,11 @@ export const data = dataObjForWeaponSheet(
   {
     premod: {
       atk_,
-      enerRech_,
-    },
+      enerRech_
+    }
   },
   {
-    atk_,
+    atk_
   }
 )
 const sheet: IWeaponSheet = {
@@ -56,9 +56,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: atk_,
-        },
-      ],
+          node: atk_
+        }
+      ]
     },
     {
       teamBuff: true,
@@ -70,17 +70,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: enerRech_,
+              node: enerRech_
             },
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -21,12 +21,12 @@ import {
   PhysicalIcon,
   PyroIcon,
   ShieldStrIcon,
-  StaminaIcon,
+  StaminaIcon
 } from '../'
 
 export function StatIcon({
   statKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   statKey: string
   iconProps?: SvgIconProps
@@ -72,7 +72,7 @@ export function StatIcon({
 
 export function ElementIcon({
   ele,
-  iconProps = {},
+  iconProps = {}
 }: {
   ele: ElementWithPhyKey
   iconProps?: SvgIconProps

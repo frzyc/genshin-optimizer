@@ -14,7 +14,7 @@ export function TranslateBase({
   key18,
   values,
   children,
-  components,
+  components
 }: {
   ns: string
   key18: string
@@ -56,7 +56,7 @@ function T({
   li,
   t,
   values,
-  components,
+  components
 }: {
   key18: string
   obj: any

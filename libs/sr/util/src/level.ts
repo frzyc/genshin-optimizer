@@ -21,7 +21,7 @@ export const milestoneLevels = [
   [30, 1],
   [20, 1],
   [20, 0],
-  [1, 0],
+  [1, 0]
 ] as const
 
 export const getLevelString = (

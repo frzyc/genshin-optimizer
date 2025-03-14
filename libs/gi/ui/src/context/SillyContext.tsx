@@ -8,5 +8,5 @@ export type SillyContextObj = {
 
 export const SillyContext = createContext({
   silly: false,
-  setSilly: () => {},
+  setSilly: () => {}
 } as SillyContextObj)

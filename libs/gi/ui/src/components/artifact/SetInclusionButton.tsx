@@ -3,7 +3,7 @@ import { handleArtSetExclusion } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import { CheckBox, CheckBoxOutlineBlank } from '@mui/icons-material'
 import BlockIcon from '@mui/icons-material/Block'
@@ -15,14 +15,14 @@ import { useTranslation } from 'react-i18next'
 
 export function SetInclusionButton({
   setKey,
-  buttonGroupSx,
+  buttonGroupSx
 }: {
   setKey: ArtSetExclusionKey
   buttonGroupSx?: SxProps<Theme>
 }) {
   const { t } = useTranslation('sheet')
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const { artSetExclusion } = useOptConfig(optConfigId)!
   const setExclusionSet = artSetExclusion?.[setKey] ?? []
@@ -36,7 +36,7 @@ export function SetInclusionButton({
         startIcon={exclude2 ? <CheckBoxOutlineBlank /> : <CheckBox />}
         onClick={() =>
           database.optConfigs.set(optConfigId, {
-            artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 2),
+            artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 2)
           })
         }
         color={exclude2 ? 'secondary' : 'success'}
@@ -48,7 +48,7 @@ export function SetInclusionButton({
         startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />}
         onClick={() =>
           database.optConfigs.set(optConfigId, {
-            artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 4),
+            artSetExclusion: handleArtSetExclusion(artSetExclusion, setKey, 4)
           })
         }
         color={exclude4 ? 'secondary' : 'success'}

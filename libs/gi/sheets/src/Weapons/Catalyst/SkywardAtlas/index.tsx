@@ -6,7 +6,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
@@ -20,7 +20,7 @@ const dmgBonus = [-1, 0.12, 0.15, 0.18, 0.21, 0.24]
 const eleBonus_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     ele,
-    subscript(input.weapon.refinement, dmgBonus),
+    subscript(input.weapon.refinement, dmgBonus)
   ])
 )
 const dmgPerc = [-1, 1.6, 2, 2.4, 2.8, 3.2]
@@ -35,7 +35,7 @@ const dmg = equal(
     ),
     'elemental',
     {
-      hit: { ele: constant('physical') },
+      hit: { ele: constant('physical') }
     }
   )
 )
@@ -45,8 +45,8 @@ const data = dataObjForWeaponSheet(
     premod: {
       ...Object.fromEntries(
         allElementKeys.map((ele) => [`${ele}_dmg_`, eleBonus_[ele]])
-      ),
-    },
+      )
+    }
   },
   { dmg }
 )
@@ -58,10 +58,10 @@ const sheet: IWeaponSheet = {
       fields: [
         ...allElementKeys.map((ele) => ({ node: eleBonus_[ele] })),
         {
-          node: infoMut(dmg, { name: st('dmg') }),
-        },
-      ],
-    },
-  ],
+          node: infoMut(dmg, { name: st('dmg') })
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

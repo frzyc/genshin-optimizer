@@ -12,7 +12,7 @@ export function dumpDiscs(fileDir: string) {
       name: discData.name,
       desc2: processText(discData.desc2),
       desc4: processText(discData.desc4),
-      story: processText(discData.story),
+      story: processText(discData.story)
     })
   })
   dumpFile(`${fileDir}/discNames_gen.json`, discNames)

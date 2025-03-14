@@ -12,7 +12,7 @@ export function DiscSetMultiAutocomplete({
   allowRarities = [...allDiscRarityKeys],
   discSetKeys,
   setDiscSetKeys,
-  totals,
+  totals
 }: {
   allowRarities?: DiscRarityKey[]
   discSetKeys: DiscSetKey[]
@@ -42,7 +42,7 @@ export function DiscSetMultiAutocomplete({
           return sets.map((set) => ({
             key: set,
             grouper: rarity as DiscRarityKey,
-            label: t(`discNames_gen:${set}`),
+            label: t(`discNames_gen:${set}`)
           }))
         })
         .filter((group) => allowRarities.includes(group.grouper))

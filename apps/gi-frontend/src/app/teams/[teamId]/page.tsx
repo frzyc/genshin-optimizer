@@ -8,7 +8,7 @@ import Content from './Content'
 import getTeam from './getTeam'
 
 export default async function Teams({
-  params: { teamId },
+  params: { teamId }
 }: {
   params: { teamId: string }
 }) {

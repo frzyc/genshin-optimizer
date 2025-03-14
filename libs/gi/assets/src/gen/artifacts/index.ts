@@ -106,6 +106,6 @@ const data = {
   VermillionHereafter,
   ViridescentVenerer,
   VourukashasGlow,
-  WanderersTroupe,
+  WanderersTroupe
 } as const
 export default data

@@ -7,7 +7,7 @@ import {
   greaterEq,
   greaterEqStr,
   input,
-  percent,
+  percent
 } from '@genshin-optimizer/gi/wr'
 import { condReadNode, nonStackBuff, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -26,23 +26,23 @@ const condSwirls = objKeyMap(absorbableEle, (e) =>
 )
 const set4TallyWrites = objKeyValMap(absorbableEle, (e) => [
   `vv4${e}`,
-  greaterEqStr(input.artSet[key], 4, equalStr(condSwirls[e], e, input.charKey)),
+  greaterEqStr(input.artSet[key], 4, equalStr(condSwirls[e], e, input.charKey))
 ])
 
 const condSwirlNodes = objKeyValMap(absorbableEle, (e) => [
   `${e}_enemyRes_`,
-  nonStackBuff(`vv4${e}`, `${e}_enemyRes_`, percent(-0.4)),
+  nonStackBuff(`vv4${e}`, `${e}_enemyRes_`, percent(-0.4))
 ])
 
 const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     anemo_dmg_,
-    swirl_dmg_,
+    swirl_dmg_
   },
   teamBuff: {
     premod: objMap(condSwirlNodes, (nodes) => nodes[0]), // First node is active node
-    nonStacking: set4TallyWrites,
-  },
+    nonStacking: set4TallyWrites
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -50,15 +50,15 @@ const sheet: SetEffectSheet = {
     document: [
       {
         header: setHeader(2),
-        fields: [{ node: anemo_dmg_ }],
-      },
-    ],
+        fields: [{ node: anemo_dmg_ }]
+      }
+    ]
   },
   4: {
     document: [
       {
         header: setHeader(4),
-        fields: [{ node: swirl_dmg_ }],
+        fields: [{ node: swirl_dmg_ }]
       },
       {
         header: setHeader(4),
@@ -77,14 +77,14 @@ const sheet: SetEffectSheet = {
                 {
                   text: st(`effectDuration.${eleKey}`),
                   value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+                  unit: 's'
+                }
+              ]
+            }
           ])
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

@@ -54,7 +54,7 @@ dumpFile(
   Object.fromEntries(
     reliquaryExcelConfigDataSrc.map((data) => [
       data.id,
-      [data.setId, nameToKey(TextMapEN[data.nameTextMapHash])],
+      [data.setId, nameToKey(TextMapEN[data.nameTextMapHash])]
     ])
   )
 )

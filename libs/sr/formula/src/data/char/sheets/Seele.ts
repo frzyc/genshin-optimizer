@@ -7,7 +7,7 @@ import {
   own,
   ownBuff,
   register,
-  registerBuff,
+  registerBuff
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag } from '../util'
 
@@ -38,7 +38,7 @@ const sheet = register(
     'ult',
     [dm.e6.dmg],
     {
-      cond: cmpGE(char.eidolon, 6, 'infer', ''),
+      cond: cmpGE(char.eidolon, 6, 'infer', '')
     }
   ),
 

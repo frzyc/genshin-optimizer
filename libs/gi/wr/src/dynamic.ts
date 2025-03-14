@@ -13,5 +13,5 @@ export const dynamicData = {
     [...allMainStatKeys, ...allSubstatKeys],
     (key) => dynamic.dyn[key]
   ),
-  artSet: objMap(input.artSet, (_, key) => dynamic.dyn[key]),
+  artSet: objMap(input.artSet, (_, key) => dynamic.dyn[key])
 }

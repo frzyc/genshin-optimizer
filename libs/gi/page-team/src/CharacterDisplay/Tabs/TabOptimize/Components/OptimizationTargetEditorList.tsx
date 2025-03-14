@@ -6,14 +6,14 @@ import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
-  DeleteForever,
+  DeleteForever
 } from '@mui/icons-material'
 import {
   Box,
   Button,
   ButtonGroup,
   IconButton,
-  InputAdornment,
+  InputAdornment
 } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -28,7 +28,7 @@ type OptimizationTargetEditorListProps = {
 export default function OptimizationTargetEditorList({
   statFilters,
   setStatFilters,
-  disabled = false,
+  disabled = false
 }: OptimizationTargetEditorListProps) {
   const { t } = useTranslation('page_character_optimize')
   const setTarget = useCallback(
@@ -114,7 +114,7 @@ export default function OptimizationTargetEditorList({
         defaultText={t('targetSelector.selectBuildTarget')}
         disabled={disabled}
         targetSelectorModalProps={{
-          excludeSections: ['custom', 'bonusStats', 'character', 'teamBuff'],
+          excludeSections: ['custom', 'bonusStats', 'character', 'teamBuff']
         }}
       />
     </>
@@ -139,7 +139,7 @@ function OptimizationTargetEditorItem({
   delTarget,
   setValue,
   setDisabled,
-  disabled,
+  disabled
 }: OptimizationTargetEditorItemProps) {
   const { t } = useTranslation('page_character_optimize')
   const { data } = useContext(DataContext)
@@ -175,7 +175,7 @@ function OptimizationTargetEditorItem({
           defaultText={t('targetSelector.selectBuildTarget')}
           disabled={disabled}
           targetSelectorModalProps={{
-            excludeSections: ['custom', 'bonusStats', 'character', 'teamBuff'],
+            excludeSections: ['custom', 'bonusStats', 'character', 'teamBuff']
           }}
         />
       </ButtonGroup>
@@ -200,7 +200,7 @@ function OptimizationTargetEditorItem({
                 <DeleteForever fontSize="small" />
               </IconButton>
             </InputAdornment>
-          ),
+          )
         }}
       />
     </Box>

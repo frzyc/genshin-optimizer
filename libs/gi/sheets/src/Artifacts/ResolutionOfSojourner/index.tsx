@@ -14,8 +14,8 @@ const set4 = greaterEq(input.artSet.ResolutionOfSojourner, 4, percent(0.3))
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     atk_: set2,
-    charged_critRate_: set4,
-  },
+    charged_critRate_: set4
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -26,11 +26,11 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: set4,
-          },
-        ],
-      },
-    ],
-  },
+            node: set4
+          }
+        ]
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

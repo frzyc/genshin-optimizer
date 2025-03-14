@@ -9,14 +9,14 @@ import {
   ownTag,
   sheets,
   tagStr,
-  teamBuff,
+  teamBuff
 } from './data/util'
 import { teamData, withMember } from './util'
 
 import {
   allArtifactSetKeys,
   allCharacterKeys,
-  allWeaponKeys,
+  allWeaponKeys
 } from '@genshin-optimizer/gi/consts'
 import { fail } from 'assert'
 
@@ -57,7 +57,7 @@ describe('calculator', () => {
             ...withMember('0', ownBuff.premod.hp.add(5)),
             ...withMember('1', ownBuff.premod.hp.add(3)),
             ...withMember('2', ownBuff.premod.hp.add(4)),
-            ...stack,
+            ...stack
           ],
           calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
@@ -69,7 +69,7 @@ describe('calculator', () => {
         const data: TagMapNodeEntries = [
             ...teamData(members),
             // No members with non-zero values
-            ...stack,
+            ...stack
           ],
           calc = new Calculator(keys, values, compileTagMapValues(keys, data))
         for (const src of members)
@@ -85,7 +85,7 @@ describe('sheet', () => {
       ...allCharacterKeys,
       ...allWeaponKeys,
       'art',
-      'reso',
+      'reso'
     ])
     for (const { tag } of entries) {
       if (tag.et && tag.qt && tag.q) {

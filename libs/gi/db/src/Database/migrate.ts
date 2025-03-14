@@ -6,11 +6,11 @@ import type {
   ElementKey,
   HitModeKey,
   LocationCharacterKey,
-  TravelerKey,
+  TravelerKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
-  travelerElements,
+  travelerElements
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IGOOD } from '@genshin-optimizer/gi/good'
 import type { CustomMultiTarget } from '../Interfaces/CustomMultiTarget'
@@ -62,7 +62,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       characters.push({
         ...character,
         customMultiTarget: targets,
-        key: `Traveler${ele[0].toUpperCase() + ele.slice(1)}` as TravelerKey,
+        key: `Traveler${ele[0].toUpperCase() + ele.slice(1)}` as TravelerKey
       } as ICharacter)
     })
   })
@@ -113,9 +113,9 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
               [
                 {
                   value: value,
-                  disabled: false,
-                },
-              ],
+                  disabled: false
+                }
+              ]
             ])
         )
         return { ...b, statFilters: newStatFilters }
@@ -167,7 +167,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         infusionAura,
         customMultiTarget,
         team: charTeam,
-        teamConditional,
+        teamConditional
       } = char as IGOCharacter
       const optConfig =
         buildSettings.find(({ id }: { id: string }) => id === characterKey) ??
@@ -187,7 +187,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         hitMode,
         reaction,
         infusionAura,
-        optConfigId,
+        optConfigId
       } as TeamCharacter
       const teamCharMainId = `teamchar_${teamCharInd++}`
       ;(good as any).teamchars.push({ ...teamCharMain, id: teamCharMainId })
@@ -198,7 +198,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
             key: charK,
             conditional: teamConditional[charK] as any,
             bonusStats,
-            hitMode,
+            hitMode
           } as TeamCharacter
           const teamCharId = `teamchar_${teamCharInd++}`
           ;(good as any).teamchars.push({ ...teamChar, id: teamCharId })
@@ -213,7 +213,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
         enemyOverride,
         teamCharIds,
         conditional: { resonance: {} },
-        lastEdit: 0,
+        lastEdit: 0
       }
       const teamId = `team_${teamInd++}`
       ;(good as any).teams.push({ ...team, id: teamId })
@@ -246,7 +246,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
             compare,
             compareType,
             compareBuildId,
-            compareBuildTcId,
+            compareBuildTcId
           } = teamChar
           return {
             teamCharId,
@@ -256,7 +256,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
             compare,
             compareType,
             compareBuildId,
-            compareBuildTcId,
+            compareBuildTcId
           } as LoadoutDatum
         })
       }
@@ -322,7 +322,7 @@ export function migrate(storage: DBStorage) {
       storage.set(`char_${charKey}`, {
         ...character,
         customMultiTarget: targets,
-        key: charKey,
+        key: charKey
       })
     })
   })
@@ -363,9 +363,9 @@ export function migrate(storage: DBStorage) {
               [
                 {
                   value: value,
-                  disabled: false,
-                },
-              ],
+                  disabled: false
+                }
+              ]
             ])
         )
         storage.set(key, { ...buildSettings, statFilters: newStatFilters })
@@ -388,7 +388,7 @@ export function migrate(storage: DBStorage) {
           delete b.allowLocations
           storage.set(key, {
             ...b,
-            excludedLocations,
+            excludedLocations
           })
         }
       }
@@ -414,7 +414,7 @@ export function migrate(storage: DBStorage) {
           infusionAura,
           customMultiTarget,
           team: charTeam,
-          teamConditional,
+          teamConditional
         } = storage.get(key) as IGOCharacter
         const optConfig = storage.get(`buildSetting_${characterKey}`) ?? {}
         // Only migrate characters with either a mtarget or an opttarget
@@ -433,7 +433,7 @@ export function migrate(storage: DBStorage) {
           hitMode,
           reaction,
           infusionAura,
-          optConfigId,
+          optConfigId
         } as TeamCharacter
         const teamCharMainId = `teamchar_${teamCharInd++}`
         storage.set(teamCharMainId, teamCharMain)
@@ -444,7 +444,7 @@ export function migrate(storage: DBStorage) {
               key: charK,
               conditional: teamConditional[charK] as any,
               bonusStats,
-              hitMode,
+              hitMode
             } as TeamCharacter
             const teamCharId = `teamchar_${teamCharInd++}`
             storage.set(teamCharId, teamChar)
@@ -459,7 +459,7 @@ export function migrate(storage: DBStorage) {
           enemyOverride,
           teamCharIds,
           conditional: { resonance: {} },
-          lastEdit: 0,
+          lastEdit: 0
         }
         storage.set(`team_${teamInd++}`, team)
       }
@@ -487,7 +487,7 @@ export function migrate(storage: DBStorage) {
             compare,
             compareType,
             compareBuildId,
-            compareBuildTcId,
+            compareBuildTcId
           } = teamChar
           return {
             teamCharId,
@@ -497,7 +497,7 @@ export function migrate(storage: DBStorage) {
             compare,
             compareType,
             compareBuildId,
-            compareBuildTcId,
+            compareBuildTcId
           } as LoadoutDatum
         })
 

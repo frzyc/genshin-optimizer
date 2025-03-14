@@ -3,7 +3,7 @@ import {
   compileTagMapValues,
   prod,
   setDebugMode,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import {
   allCharacterKeys,
@@ -11,14 +11,14 @@ import {
   allRelicSetKeys,
   type AscensionKey,
   type CharacterKey,
-  type LightConeKey,
+  type LightConeKey
 } from '@genshin-optimizer/sr/consts'
 import { fail } from 'assert'
 import {
   charTagMapNodeEntries,
   lightConeTagMapNodeEntries,
   teamData,
-  withMember,
+  withMember
 } from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
@@ -34,7 +34,7 @@ import {
   target,
   team,
   teamBuff,
-  type TagMapNodeEntries,
+  type TagMapNodeEntries
 } from './data/util'
 
 setDebugMode(true)
@@ -46,7 +46,7 @@ describe('character test', () => {
     [1, 0, 69.6, 78, 144, 101],
     [20, 0, 135.72, 152.1, 280.8, 101],
     [20, 1, 163.56, 183.3, 338.4, 101],
-    [80, 6, 511.56, 573.3, 1058.4, 101],
+    [80, 6, 511.56, 573.3, 1058.4, 101]
   ])('Calculate character base stats', (lvl, ascension, atk, def, hp, spd) => {
     const charKey: CharacterKey = 'March7th'
     const data: TagMapNodeEntries = [
@@ -65,11 +65,11 @@ describe('character test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         )
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
@@ -85,7 +85,7 @@ describe('lightCone test', () => {
   it.each([
     [1, 0, 14.4, 12, 38.4],
     [20, 0, 55.44, 46.2, 147.84],
-    [20, 1, 72.72, 60.6, 193.92],
+    [20, 1, 72.72, 60.6, 193.92]
   ])('Calculate lightCone base stats', (lvl, ascension, atk, def, hp) => {
     const lcKey: LightConeKey = 'Arrows'
     const data: TagMapNodeEntries = [
@@ -104,19 +104,19 @@ describe('lightCone test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         ),
         ...lightConeTagMapNodeEntries(lcKey, lvl, ascension as AscensionKey, 1)
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
     const lightCone0 = convert(ownTag, {
       et: 'own',
       src: 'March7th',
-      sheet: 'lightCone',
+      sheet: 'lightCone'
     })
     expect(calc.compute(lightCone0.base.atk).val).toBeCloseTo(atk)
     expect(calc.compute(lightCone0.base.def).val).toBeCloseTo(def)
@@ -145,12 +145,12 @@ describe('char+lightCone test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         ),
         ...lightConeTagMapNodeEntries(lcKey, 1, 0, 1)
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const m7 = convert(ownTag, { et: 'own', src: 'March7th' })
@@ -177,7 +177,7 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         )
@@ -197,11 +197,11 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           2
         )
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(calc.compute(team.common.count.withPath('Nihility')).val).toEqual(1)
@@ -226,7 +226,7 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         )
@@ -246,12 +246,12 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           2
         ),
         teamBuff.premod.atk.add(cmpEq(target.char.teamPosition, 1, 10000))
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const acheron = convert(ownTag, { et: 'own', src: 'Acheron' })
@@ -277,7 +277,7 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         )
@@ -297,11 +297,11 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           2
         )
-      ),
+      )
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(
@@ -328,7 +328,7 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         ),
@@ -349,13 +349,13 @@ describe('team test', () => {
             servantSkill: 0,
             servantTalent: 0,
             bonusAbilities: {},
-            statBoosts: {},
+            statBoosts: {}
           },
           1
         ),
         ownBuff.premod.incHeal_.add(2.5)
       ),
-      ownBuff.formula.base.add(target.final.hp),
+      ownBuff.formula.base.add(target.final.hp)
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     const copiedHealFormula = prod(
@@ -380,7 +380,7 @@ describe('sheet', () => {
       ...allLightConeKeys,
       ...allRelicSetKeys,
       'relic',
-      'lightCone',
+      'lightCone'
     ])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {

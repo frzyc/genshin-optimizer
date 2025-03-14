@@ -5,7 +5,7 @@ export type {
   CharacterDatum,
   LightConeDatum,
   RelicSetDatum,
-  SkillTreeNodeBonusStat,
+  SkillTreeNodeBonusStat
 } from './executors/gen-stats/executor'
 export { allStats, mappedStats }
 

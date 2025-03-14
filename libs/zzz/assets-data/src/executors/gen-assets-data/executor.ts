@@ -3,12 +3,12 @@ import { objMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   DiscSetKey,
-  WengineKey,
+  WengineKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   charactersDetailedJSONData,
   discsDetailedJSONData,
-  wengineDetailedJSONData,
+  wengineDetailedJSONData
 } from '@genshin-optimizer/zzz/dm'
 import type { PromiseExecutor } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
@@ -55,7 +55,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         circle: `Suit${strKey}.png`,
         cd_s: `ItemSuit${strKey}_S.png`,
         cd_a: `ItemSuit${strKey}_A.png`,
-        cd_b: `ItemSuit${strKey}_B.png`,
+        cd_b: `ItemSuit${strKey}_B.png`
       }
     }),
 
@@ -68,7 +68,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         circle: `IconRoleCircle${strKey}.png`,
         trap: `IconRoleGeneral${strKey}.png`,
         select: `IconRoleSelect${strKey}.png`,
-        interknot: `IconInterKnotRole00${strKey}.png`,
+        interknot: `IconInterKnotRole00${strKey}.png`
       }
     }),
     wengines: objMap(wengineDetailedJSONData, ({ icon }) => {
@@ -76,9 +76,9 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       if (!strKey) throw Error(`Failed to parse wengine icon name: ${icon}`)
       return {
         icon: `${strKey}.png`,
-        big: `${strKey}Big.png`,
+        big: `${strKey}Big.png`
       }
-    }),
+    })
   } as const
 
   // Dump out the asset List.
@@ -88,7 +88,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   )
 
   return {
-    success: true,
+    success: true
   }
 }
 

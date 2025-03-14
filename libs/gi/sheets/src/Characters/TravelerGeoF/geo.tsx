@@ -1,7 +1,7 @@
 import type {
   CharacterKey,
   CharacterSheetKey,
-  ElementKey,
+  ElementKey
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -13,7 +13,7 @@ import {
   input,
   percent,
   prod,
-  target,
+  target
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
@@ -36,32 +36,32 @@ export default function geo(
     skill: {
       dmg: skillParam_gen.skill[s++],
       duration: skillParam_gen.skill[s++][0],
-      cd: skillParam_gen.skill[s++][0],
+      cd: skillParam_gen.skill[s++][0]
     },
     burst: {
       dmg: skillParam_gen.burst[b++],
       numShockwaves: 4,
       duration: skillParam_gen.burst[b++][0],
       cd: skillParam_gen.burst[b++][0],
-      enerCost: skillParam_gen.burst[b++][0],
+      enerCost: skillParam_gen.burst[b++][0]
     },
     passive1: {
-      skill_cdRed: 2,
+      skill_cdRed: 2
     },
     passive2: {
-      geoDmg: percent(0.6),
+      geoDmg: percent(0.6)
     },
     constellation1: {
-      critRate_: percent(0.1),
+      critRate_: percent(0.1)
     },
     constellation4: {
       energyRestore: 5,
-      maxTriggers: 5,
+      maxTriggers: 5
     },
     constellation6: {
       burstDuration: 5,
-      skillDuration: 10,
-    },
+      skillDuration: 10
+    }
   } as const
 
   const [condC1BurstAreaPath, condC1BurstArea] = cond(
@@ -82,25 +82,25 @@ export default function geo(
   const dmgFormulas = {
     ...dmgForms,
     skill: {
-      dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
+      dmg: dmgNode('atk', dm.skill.dmg, 'skill')
     },
     burst: {
-      dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
+      dmg: dmgNode('atk', dm.burst.dmg, 'burst')
     },
     passive2: {
       dmg: customDmgNode(
         prod(input.total.atk, dm.passive2.geoDmg),
         'elemental',
         { hit: { ele: constant('geo') } }
-      ),
+      )
     },
     constellation2: {
       dmg: greaterEq(
         input.constellation,
         2,
         dmgNode('atk', dm.skill.dmg, 'skill')
-      ),
-    },
+      )
+    }
   } as const
 
   const burstC3 = greaterEq(input.constellation, 3, 3)
@@ -109,13 +109,13 @@ export default function geo(
   const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
     premod: {
       skillBoost: skillC5,
-      burstBoost: burstC3,
+      burstBoost: burstC3
     },
     teamBuff: {
       premod: {
-        critRate_: c1BurstArea_critRate_,
-      },
-    },
+        critRate_: c1BurstArea_critRate_
+      }
+    }
   })
 
   const talent: TalentSheet = {
@@ -124,8 +124,8 @@ export default function geo(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
+              name: ct.chg(`skill.skillParams.0`)
+            })
           },
           {
             text: ct.chg('skill.skillParams.1'),
@@ -135,7 +135,7 @@ export default function geo(
                     dm.constellation6.skillDuration
                   }s = ${dm.skill.duration + dm.constellation6.skillDuration}`
                 : dm.skill.duration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
@@ -145,37 +145,37 @@ export default function geo(
                     dm.skill.cd - dm.passive1.skill_cdRed
                   }`
                 : dm.skill.cd,
-            unit: 's',
-          },
-        ],
+            unit: 's'
+          }
+        ]
       },
       ct.headerTem('passive1', {
         fields: [
           {
             text: st('skillCDRed'),
             value: dm.passive1.skill_cdRed,
-            unit: 's',
-          },
-        ],
+            unit: 's'
+          }
+        ]
       }),
       ct.headerTem('constellation2', {
         fields: [
           {
             node: infoMut(dmgFormulas.constellation2.dmg, {
-              name: ch('c2.key'),
-            }),
-          },
-        ],
+              name: ch('c2.key')
+            })
+          }
+        ]
       }),
       ct.headerTem('constellation6', {
         fields: [
           {
             text: st('durationInc'),
             value: dm.constellation6.skillDuration,
-            unit: 's',
-          },
-        ],
-      }),
+            unit: 's'
+          }
+        ]
+      })
     ]),
 
     burst: ct.talentTem('burst', [
@@ -184,8 +184,8 @@ export default function geo(
           {
             node: infoMut(dmgFormulas.burst.dmg, {
               name: ct.chg('burst.skillParams.0'),
-              multi: dm.burst.numShockwaves,
-            }),
+              multi: dm.burst.numShockwaves
+            })
           },
           {
             text: ct.chg('burst.skillParams.1'),
@@ -195,18 +195,18 @@ export default function geo(
                     dm.constellation6.burstDuration
                   }s = ${dm.burst.duration + dm.constellation6.burstDuration}`
                 : dm.burst.duration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: dm.burst.cd,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
+            value: dm.burst.enerCost
+          }
+        ]
       },
       ct.condTem('constellation1', {
         value: condC1BurstArea,
@@ -217,32 +217,32 @@ export default function geo(
           on: {
             fields: [
               {
-                node: infoMut(c1BurstArea_critRate_Disp, { path: 'critRate_' }),
+                node: infoMut(c1BurstArea_critRate_Disp, { path: 'critRate_' })
               },
               {
-                text: st('incInterRes'),
-              },
-            ],
-          },
-        },
+                text: st('incInterRes')
+              }
+            ]
+          }
+        }
       }),
       ct.headerTem('constellation4', {
         fields: [
           {
             text: st('enerRegenPerHit'),
-            value: dm.constellation4.energyRestore,
-          },
-        ],
+            value: dm.constellation4.energyRestore
+          }
+        ]
       }),
       ct.headerTem('constellation6', {
         fields: [
           {
             text: st('durationInc'),
             value: dm.constellation6.burstDuration,
-            unit: 's',
-          },
-        ],
-      }),
+            unit: 's'
+          }
+        ]
+      })
     ]),
 
     passive1: ct.talentTem('passive1'),
@@ -251,25 +251,25 @@ export default function geo(
         fields: [
           {
             node: infoMut(dmgFormulas.passive2.dmg, {
-              name: ch('passive2.key'),
-            }),
-          },
-        ],
-      }),
+              name: ch('passive2.key')
+            })
+          }
+        ]
+      })
     ]),
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: burstC3 }] },
+      { fields: [{ node: burstC3 }] }
     ]),
     constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: skillC5 }] },
+      { fields: [{ node: skillC5 }] }
     ]),
-    constellation6: ct.talentTem('constellation6'),
+    constellation6: ct.talentTem('constellation6')
   }
   return {
     talent,
-    data,
+    data
   }
 }

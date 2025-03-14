@@ -9,7 +9,7 @@ import {
   ownBuff,
   percent,
   register,
-  target,
+  target
 } from '../../util'
 import { dmg, entriesForChar, getBaseTag, shield } from '../util'
 

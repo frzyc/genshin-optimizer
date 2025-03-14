@@ -5,7 +5,7 @@ const elementalData: Record<string, string> = {
   fire: 'Fire',
   ice: 'Ice',
   physical: 'Physical',
-  ether: 'Ether',
+  ether: 'Ether'
 } as const
 
 export const statMapEngMap = {
@@ -23,7 +23,7 @@ export const statMapEngMap = {
   impact_: 'Impact',
   anomMas: 'Anomaly Mastery',
   anomMas_: 'Anomaly Mastery',
-  anomProf: 'Anomaly Proficiency',
+  anomProf: 'Anomaly Proficiency'
 } as Record<string, string>
 
 Object.entries(elementalData).forEach(([e, name]) => {

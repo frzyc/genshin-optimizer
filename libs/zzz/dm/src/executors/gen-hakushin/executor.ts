@@ -10,7 +10,7 @@ const runExecutor: PromiseExecutor<GenHakushinDataExecutorSchema> = async (
   console.log('Running Executor for GenHakushinData', options)
   await getDataFromHakushin()
   return {
-    success: true,
+    success: true
   }
 }
 

@@ -2,7 +2,7 @@ import { objPathValue } from '@genshin-optimizer/common/util'
 import type { MainSubStatKey } from '@genshin-optimizer/gi/consts'
 import {
   allMainSubStatKeys,
-  type CharacterKey,
+  type CharacterKey
 } from '@genshin-optimizer/gi/consts'
 import type { OptConfig } from '@genshin-optimizer/gi/db'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
@@ -30,7 +30,7 @@ export function optimizeNodesForScaling(
 
   const unoptimizedNodes = [
     unoptimizedOptimizationTargetNode,
-    ...valueFilter.map((x) => x.value),
+    ...valueFilter.map((x) => x.value)
   ]
 
   const nodes = optimize(

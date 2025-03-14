@@ -2,7 +2,7 @@ import { isIn } from '@genshin-optimizer/common/util'
 import {
   allCharacterKeys,
   allDiscSetKeys,
-  allWengineKeys,
+  allWengineKeys
 } from '@genshin-optimizer/zzz/consts'
 import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'

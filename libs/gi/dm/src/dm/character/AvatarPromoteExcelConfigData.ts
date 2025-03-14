@@ -79,7 +79,7 @@ ascensionSrc.forEach((asc) => {
     promoteLevel = 0,
     addProps,
     scoinCost,
-    costItems,
+    costItems
   } = asc
   if (!ascensionData[avatarPromoteId]) ascensionData[avatarPromoteId] = []
   ascensionData[avatarPromoteId][promoteLevel] = {
@@ -88,7 +88,7 @@ ascensionSrc.forEach((asc) => {
     ),
     scoinCost: scoinCost ?? 0,
     costItems,
-    promoteLevel,
+    promoteLevel
   }
 })
 

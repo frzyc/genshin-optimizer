@@ -29,7 +29,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
           'servantNames',
           'statKey',
           'teams',
-          'ui',
+          'ui'
         ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
@@ -42,7 +42,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
   })
 
   return {
-    success: true,
+    success: true
   }
 }
 

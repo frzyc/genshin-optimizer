@@ -3,7 +3,7 @@ import type {
   ElementalTypeKey,
   PathKey,
   RarityKey,
-  ServantKey,
+  ServantKey
 } from '@genshin-optimizer/sr/consts'
 import type { AvatarRarity } from '../dm'
 import type { AvatarDamageType } from '../dm/character/AvatarConfig'
@@ -79,13 +79,13 @@ export const characterIdMap: Record<string, CharacterGenderedKey> = {
   8005: 'TrailblazerImaginaryM',
   8006: 'TrailblazerImaginaryF',
   8007: 'TrailblazerIceM',
-  8008: 'TrailblazerIceF',
+  8008: 'TrailblazerIceF'
 } as const
 export type AvatarId = keyof typeof characterIdMap
 
 export const servantIdMap: Record<string, ServantKey> = {
   11402: 'Garmentmaker',
-  18007: 'Mem',
+  18007: 'Mem'
 }
 export type ServantId = keyof typeof servantIdMap
 
@@ -97,14 +97,14 @@ export const avatarBaseTypeMap: Record<string, PathKey> = {
   Warrior: 'Destruction',
   Shaman: 'Harmony',
   Rogue: 'TheHunt',
-  Memory: 'Remembrance',
+  Memory: 'Remembrance'
 } as const
 
 export type AvatarBaseTypeKey = keyof typeof avatarBaseTypeMap
 
 export const avatarRarityMap: Record<AvatarRarity, RarityKey> = {
   CombatPowerAvatarRarityType4: 4,
-  CombatPowerAvatarRarityType5: 5,
+  CombatPowerAvatarRarityType5: 5
 }
 
 export const avatarDamageTypeMap: Record<AvatarDamageType, ElementalTypeKey> = {
@@ -114,5 +114,5 @@ export const avatarDamageTypeMap: Record<AvatarDamageType, ElementalTypeKey> = {
   Ice: 'ice',
   Wind: 'wind',
   Fire: 'fire',
-  Imaginary: 'imaginary',
+  Imaginary: 'imaginary'
 }

@@ -1,13 +1,13 @@
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
 import type {
   AbilityKey,
-  CharacterGenderedKey,
+  CharacterGenderedKey
 } from '@genshin-optimizer/sr/consts'
 import {
   ActionRowBuilder,
   EmbedBuilder,
   StringSelectMenuBuilder,
-  StringSelectMenuOptionBuilder,
+  StringSelectMenuOptionBuilder
 } from 'discord.js'
 import { hsrURL } from '../../lib/util'
 import { clean, skillsList } from '../databank'
@@ -46,11 +46,11 @@ function baseEmbed(id: CharacterGenderedKey, name: string) {
   const thumbnail = getAssets(id).icon
   return new EmbedBuilder()
     .setFooter({
-      text: 'Character Databank',
+      text: 'Character Databank'
     })
     .setAuthor({
       name: name,
-      iconURL: hsrURL('avatar/medium', thumbnail),
+      iconURL: hsrURL('avatar/medium', thumbnail)
     })
   //.setColor(elementColors[element])
 }
@@ -129,6 +129,6 @@ export function charBank(
   return {
     content: '',
     embeds: [embed],
-    components: [components],
+    components: [components]
   }
 }

@@ -2,7 +2,7 @@ import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import {
   allLocationKeys,
-  type LocationKey,
+  type LocationKey
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { Box, Chip, Skeleton } from '@mui/material'
@@ -21,7 +21,7 @@ export function LocationFilterMultiAutocomplete({
   locations,
   setLocations,
   totals,
-  disabled,
+  disabled
 }: {
   locations: LocationKey[]
   setLocations: (v: LocationKey[]) => void
@@ -65,7 +65,7 @@ export function LocationFilterMultiAutocomplete({
             key: v,
             label: t(v),
             favorite: false,
-            alternateNames: [v],
+            alternateNames: [v]
           })
         )
         .sort((a, b) => {

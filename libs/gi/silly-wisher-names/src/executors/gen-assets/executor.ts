@@ -20,7 +20,7 @@ const languages = [
   'ru',
   'vi',
   'pl',
-  'tr',
+  'tr'
 ] as const
 type LangKey = (typeof languages)[number]
 const data = Object.fromEntries(languages.map((l) => [l, {}])) as Record<
@@ -110,7 +110,7 @@ const swKeyMap = {
   yelan: 'Yelan',
   yoimiya: 'Yoimiya',
   yunjin: 'YunJin',
-  zhongli: 'Zhongli',
+  zhongli: 'Zhongli'
 } as const
 
 interface AssetSource {
@@ -158,6 +158,6 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
     console.log('Generated JSON at', fileName)
   })
   return {
-    success: true,
+    success: true
   }
 }

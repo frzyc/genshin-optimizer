@@ -4,7 +4,7 @@ import {
   entryTypes,
   presets,
   setReader,
-  type Tag as BaseTag,
+  type Tag as BaseTag
 } from '@genshin-optimizer/game-opt/engine'
 import type { AnyNode } from '@genshin-optimizer/pando/engine'
 import type {
@@ -15,7 +15,7 @@ import type {
   SkillType,
   Specialty,
   Src,
-  TagMapNodeEntry,
+  TagMapNodeEntry
 } from '.'
 import {
   attributes,
@@ -25,7 +25,7 @@ import {
   sheets,
   skillTypes,
   specialties,
-  type Sheet,
+  type Sheet
 } from './listing'
 
 export const fixedTags = {
@@ -42,7 +42,7 @@ export const fixedTags = {
 
   // For `count`
   specialty: specialties,
-  faction: factions,
+  faction: factions
 }
 export type Tag = BaseTag<Sheet, Src, Dst> & {
   attribute?: Attribute | null
@@ -125,37 +125,37 @@ export class Read extends BaseRead<Tag> {
   get basic(): Read[] {
     return [
       super.with('damageType1', 'basic'),
-      super.with('damageType2', 'basic'),
+      super.with('damageType2', 'basic')
     ]
   }
   get dash(): Read[] {
     return [
       super.with('damageType1', 'dash'),
-      super.with('damageType2', 'dash'),
+      super.with('damageType2', 'dash')
     ]
   }
   get dodgeCounter(): Read[] {
     return [
       super.with('damageType1', 'dodgeCounter'),
-      super.with('damageType2', 'dodgeCounter'),
+      super.with('damageType2', 'dodgeCounter')
     ]
   }
   get special(): Read[] {
     return [
       super.with('damageType1', 'special'),
-      super.with('damageType2', 'special'),
+      super.with('damageType2', 'special')
     ]
   }
   get exSpecial(): Read[] {
     return [
       super.with('damageType1', 'exSpecial'),
-      super.with('damageType2', 'exSpecial'),
+      super.with('damageType2', 'exSpecial')
     ]
   }
   get chain(): Read[] {
     return [
       super.with('damageType1', 'chain'),
-      super.with('damageType2', 'chain'),
+      super.with('damageType2', 'chain')
     ]
   }
   get ult(): Read[] {
@@ -164,49 +164,49 @@ export class Read extends BaseRead<Tag> {
   get quickAssist(): Read[] {
     return [
       super.with('damageType1', 'quickAssist'),
-      super.with('damageType2', 'quickAssist'),
+      super.with('damageType2', 'quickAssist')
     ]
   }
   get defensiveAssist(): Read[] {
     return [
       super.with('damageType1', 'defensiveAssist'),
-      super.with('damageType2', 'defensiveAssist'),
+      super.with('damageType2', 'defensiveAssist')
     ]
   }
   get evasiveAssist(): Read[] {
     return [
       super.with('damageType1', 'evasiveAssist'),
-      super.with('damageType2', 'evasiveAssist'),
+      super.with('damageType2', 'evasiveAssist')
     ]
   }
   get assistFollowUp(): Read[] {
     return [
       super.with('damageType1', 'assistFollowUp'),
-      super.with('damageType2', 'assistFollowUp'),
+      super.with('damageType2', 'assistFollowUp')
     ]
   }
   get anomaly(): Read[] {
     return [
       super.with('damageType1', 'anomaly'),
-      super.with('damageType2', 'anomaly'),
+      super.with('damageType2', 'anomaly')
     ]
   }
   get disorder(): Read[] {
     return [
       super.with('damageType1', 'disorder'),
-      super.with('damageType2', 'disorder'),
+      super.with('damageType2', 'disorder')
     ]
   }
   get aftershock(): Read[] {
     return [
       super.with('damageType1', 'aftershock'),
-      super.with('damageType2', 'aftershock'),
+      super.with('damageType2', 'aftershock')
     ]
   }
   get elemental(): Read[] {
     return [
       super.with('damageType1', 'elemental'),
-      super.with('damageType2', 'elemental'),
+      super.with('damageType2', 'elemental')
     ]
   }
 

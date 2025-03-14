@@ -3,7 +3,7 @@ import {
   type AscensionKey,
   type CharacterSheetKey,
   type RefinementKey,
-  type WeaponKey,
+  type WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
@@ -15,7 +15,7 @@ import {
   tagToStat,
   teamData,
   weaponData,
-  withMember,
+  withMember
 } from '@genshin-optimizer/gi/formula'
 
 export function getFixed(key: StatKey) {
@@ -39,17 +39,17 @@ export function baseCharStats(
         talent: {
           auto: 1,
           skill: 1,
-          burst: 1,
-        },
+          burst: 1
+        }
       })
-    ),
+    )
   ]
   const member0 = convert(ownTag, { et: 'own', src: '0' })
   const calc = genshinCalculatorWithEntries(data)
   const stats: Partial<Record<StatKey, number>> = {
     hp: calc.compute(member0.base.hp).val,
     atk: calc.compute(member0.base.atk).val,
-    def: calc.compute(member0.base.def).val,
+    def: calc.compute(member0.base.def).val
   }
   const specialized = calc.compute(member0.char.specialized)
   stats[tagToStat(specialized.meta.tag!)] = specialized.val
@@ -71,14 +71,14 @@ export function baseWeaponStats(
         ascension: ascension,
         refinement: refine,
         location: '',
-        lock: false,
+        lock: false
       })
-    ),
+    )
   ]
   const member0 = convert(ownTag, { et: 'own', src: '0' })
   const calc = genshinCalculatorWithEntries(data)
   const stats: Partial<Record<StatKey, number>> = {
-    atk: calc.compute(member0.base.atk).val,
+    atk: calc.compute(member0.base.atk).val
   }
   return stats
 }

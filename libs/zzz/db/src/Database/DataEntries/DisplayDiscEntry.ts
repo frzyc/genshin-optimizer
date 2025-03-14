@@ -6,14 +6,14 @@ import type {
   DiscSetKey,
   DiscSlotKey,
   DiscSubStatKey,
-  LocationKey,
+  LocationKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscRarityKeys,
   allDiscSetKeys,
   allDiscSlotKeys,
   allDiscSubStatKeys,
-  allLocationKeys,
+  allLocationKeys
 } from '@genshin-optimizer/zzz/consts'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
@@ -23,7 +23,7 @@ export const discSortKeys = [
   'level',
   'discsetkey',
   'efficiency',
-  'mefficiency',
+  'mefficiency'
 ] as const
 export type DiscSortKey = (typeof discSortKeys)[number]
 
@@ -68,7 +68,7 @@ export function initialFilterOption(): FilterOption {
     rvLow: 0,
     rvHigh: 900, // TODO: Figure out RVs for ZZZ
     useMaxRV: false,
-    lines: [1, 2, 3, 4],
+    lines: [1, 2, 3, 4]
   }
 }
 
@@ -77,7 +77,7 @@ function initialState(): IDisplayDisc {
     filterOption: initialFilterOption(),
     ascending: false,
     sortType: discSortKeys[0],
-    effFilter: [...allDiscSubStatKeys],
+    effFilter: [...allDiscSubStatKeys]
   }
 }
 
@@ -111,7 +111,7 @@ export class DisplayDiscEntry extends DataEntry<
         rvLow,
         rvHigh,
         useMaxRV,
-        lines,
+        lines
       } = filterOption
       discSetKeys = validateArr(discSetKeys, allDiscSetKeys, [])
       rarity = validateArr(rarity, allDiscRarityKeys)
@@ -151,7 +151,7 @@ export class DisplayDiscEntry extends DataEntry<
         rvLow,
         rvHigh,
         useMaxRV,
-        lines,
+        lines
       } as FilterOption
     }
 
@@ -164,7 +164,7 @@ export class DisplayDiscEntry extends DataEntry<
       filterOption,
       ascending,
       sortType,
-      effFilter,
+      effFilter
     } as IDisplayDisc
   }
   override set(

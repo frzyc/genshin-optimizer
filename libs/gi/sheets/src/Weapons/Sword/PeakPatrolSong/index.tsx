@@ -2,7 +2,7 @@ import {
   objKeyMap,
   objKeyValMap,
   objMap,
-  range,
+  range
 } from '@genshin-optimizer/common/util'
 import { allElementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
@@ -12,7 +12,7 @@ import {
   min,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -44,7 +44,7 @@ const odeStacks_ele_dmg_ = objKeyValMap(allElementKeys, (ele) => [
       )
     ),
     naught
-  ),
+  )
 ])
 
 const [condOdeMaxedPath, condOdeMaxed] = cond(key, 'odeMaxed')
@@ -60,20 +60,20 @@ const ele_dmg_ = objKeyValMap(allElementKeys, (key) => [
       defFactor,
       subscript(input.weapon.refinement, ele_dmg_arr, { unit: '%' })
     )
-  ),
+  )
 ])
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
     def_: odeStacks_def_,
-    ...odeStacks_ele_dmg_,
+    ...odeStacks_ele_dmg_
   },
   teamBuff: {
     premod: objMap(ele_dmg_, (nodes) => nodes[0]), // First node is active node
     nonStacking: {
-      patrol: nonstackWrite,
-    },
-  },
+      patrol: nonstackWrite
+    }
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -87,16 +87,16 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: stack }),
         fields: [
           {
-            node: odeStacks_def_,
+            node: odeStacks_def_
           },
           ...Object.values(odeStacks_ele_dmg_).map((node) => ({ node })),
           {
             text: stg('duration'),
             value: 6,
-            unit: 's',
-          },
-        ],
-      })),
+            unit: 's'
+          }
+        ]
+      }))
     },
     {
       value: condOdeMaxed,
@@ -111,11 +111,11 @@ const sheet: IWeaponSheet = {
             ...Object.values(ele_dmg_).flatMap((nodes) =>
               nodes.map((node) => ({ node }))
             ),
-            { text: stg('duration'), value: 15, unit: 's' },
-          ],
-        },
-      },
-    },
-  ],
+            { text: stg('duration'), value: 15, unit: 's' }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

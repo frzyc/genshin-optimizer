@@ -2,7 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardHeaderCustom,
   CardThemed,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
@@ -24,7 +24,7 @@ type EditorModalProps = {
 export function StatDisplayComponent({
   columns = { xs: 1, sm: 2, md: 3, xl: 4 },
   BonusStatEditor,
-  CustomMTargetEditor,
+  CustomMTargetEditor
 }: {
   columns?: MasonryProps['columns']
   BonusStatEditor?: FC<EditorModalProps>
@@ -74,8 +74,8 @@ export function StatDisplayComponent({
               key === 'bonusStats'
                 ? BonusStatEditor
                 : key === 'custom'
-                ? CustomMTargetEditor
-                : undefined
+                  ? CustomMTargetEditor
+                  : undefined
             }
           />
         ))}
@@ -88,7 +88,7 @@ function Section({
   displayNs,
   compareDisplayNs,
   sectionKey,
-  Editor,
+  Editor
 }: {
   displayNs?: DisplaySub<CalcResult>
   compareDisplayNs?: DisplaySub<CalcResult>

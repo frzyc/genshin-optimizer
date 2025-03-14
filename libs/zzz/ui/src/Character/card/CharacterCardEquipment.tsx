@@ -2,7 +2,7 @@ import { NextImage } from '@genshin-optimizer/common/ui'
 import {
   characterAsset,
   commonDefImages,
-  discDefIcon,
+  discDefIcon
 } from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSlotKeys, rarityColor } from '@genshin-optimizer/zzz/consts'
@@ -16,39 +16,39 @@ const commonStyles = Object.freeze({
   position: 'absolute' as const,
   borderRadius: '50%',
   width: '34px',
-  height: '34px',
+  height: '34px'
 })
 const stylesMap = {
   '1': {
     top: '5px',
     left: '29px',
-    ...commonStyles,
+    ...commonStyles
   },
   '2': {
     top: '42px',
     left: '10px',
-    ...commonStyles,
+    ...commonStyles
   },
   '3': {
     top: '81px',
     left: '29px',
-    ...commonStyles,
+    ...commonStyles
   },
   '4': {
     top: '81px',
     left: '84px',
-    ...commonStyles,
+    ...commonStyles
   },
   '5': {
     top: '42px',
     left: '103px',
-    ...commonStyles,
+    ...commonStyles
   },
   '6': {
     top: '5px',
     left: '84px',
-    ...commonStyles,
-  },
+    ...commonStyles
+  }
 }
 
 type CommonStyles = typeof commonStyles
@@ -62,7 +62,7 @@ type DiscInfo = {
 }
 
 export function CharacterCardEquipment({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {
@@ -75,7 +75,7 @@ export function CharacterCardEquipment({
   return (
     <Box
       sx={{
-        position: 'relative',
+        position: 'relative'
       }}
     >
       <Box
@@ -97,7 +97,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
   const mappedDiscs: DiscInfo[] = allDiscSlotKeys.map((slotKey) => ({
     key: slotKey,
     styles: stylesMap[slotKey] || {},
-    disc: discs?.find((disc) => disc.slotKey === slotKey),
+    disc: discs?.find((disc) => disc.slotKey === slotKey)
   }))
   return (
     <Box
@@ -110,7 +110,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
         background: `url(${commonDefImages('discDrive')})`,
         backgroundSize: '100% 100%',
         zIndex: '10',
-        transform: 'scale(1.96)',
+        transform: 'scale(1.96)'
       }}
     >
       {mappedDiscs.map((discInfo: DiscInfo) =>
@@ -123,7 +123,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                     ? theme.palette[rarityColor[discInfo.disc.rarity]].main
                     : ''
                 }`,
-                ...discInfo.styles,
+                ...discInfo.styles
               })}
             >
               <Box
@@ -134,7 +134,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                 sx={{
                   position: 'relative',
                   borderRadius: '50%',
-                  overflow: 'hidden',
+                  overflow: 'hidden'
                 }}
               >
                 <Box
@@ -152,7 +152,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                       borderRadius: '20px',
                       fontWeight: 'bold',
                       lineHeight: '6px',
-                      fontSize: '8px',
+                      fontSize: '8px'
                     }}
                     variant="subtitle2"
                   >

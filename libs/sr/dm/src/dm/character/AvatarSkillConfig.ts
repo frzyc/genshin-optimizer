@@ -55,7 +55,7 @@ export const DmAttackTypeMap: Record<AttackType, AbilityKey> = {
   Ultra: 'ult',
   MazeNormal: 'overworld',
   Maze: 'technique',
-  Servant: 'servantSkill',
+  Servant: 'servantSkill'
 }
 
 export type SkillEffect =

@@ -18,14 +18,14 @@ const res_ = objKeyValMap(allElementKeys, (ele) => [
     input.artSet.DefendersWill,
     4,
     greaterEq(tally[ele], 1, percent(0.3))
-  ),
+  )
 ])
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     def_: set2,
-    ...res_,
-  },
+    ...res_
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -34,9 +34,9 @@ const sheet: SetEffectSheet = {
     document: [
       {
         header: setHeader(4),
-        fields: Object.values(res_).map((node) => ({ node })),
-      },
-    ],
-  },
+        fields: Object.values(res_).map((node) => ({ node }))
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

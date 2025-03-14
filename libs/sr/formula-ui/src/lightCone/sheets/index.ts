@@ -252,5 +252,5 @@ export const lightConeUiSheets: Record<LightConeKey, UISheetElement> = {
   WhereaboutsShouldDreamsRest,
   WoofWalkTime,
   WorrisomeBlissful,
-  YetHopeIsPriceless,
+  YetHopeIsPriceless
 }

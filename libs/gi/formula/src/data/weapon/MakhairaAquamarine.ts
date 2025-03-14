@@ -5,14 +5,14 @@ import {
   allListConditionals,
   allNumConditionals,
   own,
-  register,
+  register
 } from '../util'
 import { entriesForWeapon } from './util'
 
 const key: WeaponKey = 'MakhairaAquamarine'
 
 const {
-  weapon: { refinement: _refinement },
+  weapon: { refinement: _refinement }
 } = own
 // TODO: Conditionals
 const { _someBoolConditional } = allBoolConditionals(key)

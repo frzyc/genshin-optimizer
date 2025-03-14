@@ -23,7 +23,7 @@ export const elementMap: Record<InternalElement, ElementKey> = {
   Wind: 'anemo',
   Ice: 'cryo',
   Water: 'hydro',
-  Rock: 'geo',
+  Rock: 'geo'
 }
 
 export type AvatarAssocType =
@@ -56,7 +56,7 @@ export const regionMap: Record<AvatarAssocType, Regionkey | undefined> = {
   ASSOC_TYPE_FATUI: 'snezhnaya',
   ASSOC_TYPE_KHAENRIAH: 'khaenriah',
   ASSOC_TYPE_MAINACTOR: undefined, // Traveler
-  ASSOC_TYPE_RANGER: undefined, // Aloy
+  ASSOC_TYPE_RANGER: undefined // Aloy
 }
 
 export const characterIdMap: Record<
@@ -160,7 +160,7 @@ export const characterIdMap: Record<
   10000106: 'Mavuika',
   10000107: 'Citlali',
   10000108: 'LanYan',
-  10000109: 'YumemizukiMizuki',
+  10000109: 'YumemizukiMizuki'
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",

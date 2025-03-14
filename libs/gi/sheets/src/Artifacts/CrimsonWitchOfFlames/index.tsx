@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   percent,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -53,8 +53,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
     burning_dmg_: set4Burning,
     vaporize_dmg_: set4Vape,
     melt_dmg_: set4Melt,
-    burgeon_dmg_: set4Burgeon,
-  },
+    burgeon_dmg_: set4Burgeon
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -65,21 +65,21 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: set4Overload,
+            node: set4Overload
           },
           {
-            node: set4Burning,
+            node: set4Burning
           },
           {
-            node: set4Burgeon,
+            node: set4Burgeon
           },
           {
-            node: set4Vape,
+            node: set4Vape
           },
           {
-            node: set4Melt,
-          },
-        ],
+            node: set4Melt
+          }
+        ]
       },
       {
         header: setHeader(4),
@@ -93,19 +93,19 @@ const sheet: SetEffectSheet = {
               name: st('stack', { count: i }),
               fields: [
                 {
-                  node: set4Pyro_dmg_,
+                  node: set4Pyro_dmg_
                 },
                 {
                   text: stg('duration'),
                   value: 10,
-                  unit: 's',
-                },
-              ],
-            },
+                  unit: 's'
+                }
+              ]
+            }
           ])
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

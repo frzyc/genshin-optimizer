@@ -1,6 +1,6 @@
 import type {
   CharacterGenderedKey,
-  CharacterKey,
+  CharacterKey
 } from '@genshin-optimizer/sr/consts'
 import {
   isTrailblazerKey,
@@ -8,7 +8,7 @@ import {
   type NonTrailblazerCharacterKey,
   type RelicSetKey,
   type RelicSlotKey,
-  type TrailblazerGenderedKey,
+  type TrailblazerGenderedKey
 } from '@genshin-optimizer/sr/consts'
 import chars from './gen/chars'
 import lightCones from './gen/lightCones'

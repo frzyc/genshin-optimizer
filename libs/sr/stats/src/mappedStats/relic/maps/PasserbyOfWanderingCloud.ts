@@ -6,9 +6,9 @@ const data_gen = allStats.relic[key]
 
 const dm = {
   2: {
-    passive_heal_: data_gen.setEffects[0].passiveStats.heal_,
+    passive_heal_: data_gen.setEffects[0].passiveStats.heal_
   },
-  4: {},
+  4: {}
 } as const
 
 export default dm

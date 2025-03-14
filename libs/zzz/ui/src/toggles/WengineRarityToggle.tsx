@@ -32,7 +32,7 @@ export function WengineRarityToggle({
             p: xs ? 1 : undefined,
             minWidth: xs ? 0 : '6em',
             display: 'flex',
-            gap: xs ? 0 : 1,
+            gap: xs ? 0 : 1
           }}
           onClick={() => onChange(rarityHandler(value, wrk))}
         >

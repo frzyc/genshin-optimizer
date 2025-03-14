@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -43,8 +43,8 @@ const hp_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     hp_,
-    skill_dmg_,
-  },
+    skill_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -58,15 +58,15 @@ const sheet: IWeaponSheet = {
         name: st('times', { count: changes }),
         fields: [
           {
-            node: skill_dmg_,
+            node: skill_dmg_
           },
           {
             text: stg('duration'),
             value: 6,
-            unit: 's',
-          },
-        ],
-      })),
+            unit: 's'
+          }
+        ]
+      }))
     },
     {
       value: condTeamHpChange,
@@ -77,16 +77,16 @@ const sheet: IWeaponSheet = {
         name: st('times', { count: changes }),
         fields: [
           {
-            node: hp_,
+            node: hp_
           },
           {
             text: stg('duration'),
             value: 6,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

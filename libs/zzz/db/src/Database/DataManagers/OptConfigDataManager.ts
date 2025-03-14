@@ -8,7 +8,7 @@ import {
   discSlotToMainStatKeys,
   wengineMaxLevel,
   type DiscMainStatKey,
-  type DiscSetKey,
+  type DiscSetKey
 } from '@genshin-optimizer/zzz/consts'
 import type { Tag } from '@genshin-optimizer/zzz/formula'
 import type { ZzzDatabase } from '../..'
@@ -19,7 +19,7 @@ import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 export const allAllowLocationsState = [
   'unequippedOnly',
   'customList',
-  'all',
+  'all'
 ] as const
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 export type StatFilter = {
@@ -89,7 +89,7 @@ export class OptConfigDataManager extends DataManager<
       wEngineTypes,
       useEquippedWengine,
 
-      generatedBuildListId,
+      generatedBuildListId
     } = obj as OptConfig
 
     if (!Array.isArray(statFilters)) statFilters = []
@@ -162,7 +162,7 @@ export class OptConfigDataManager extends DataManager<
       wEngineTypes,
       useEquippedWengine,
 
-      generatedBuildListId,
+      generatedBuildListId
     }
   }
   new(data: Partial<OptConfig> = {}) {
@@ -207,7 +207,7 @@ export class OptConfigDataManager extends DataManager<
       return this.database.generatedBuildList.set(listId, list)
     else
       return this.database.optConfigs.set(optConfigId, {
-        generatedBuildListId: this.database.generatedBuildList.new(list),
+        generatedBuildListId: this.database.generatedBuildList.new(list)
       }) // Create a new list
   }
 }
@@ -234,6 +234,6 @@ function initialOptConfig(): OptConfig {
     wEngineTypes: [],
     useEquippedWengine: false,
 
-    generatedBuildListId: undefined,
+    generatedBuildListId: undefined
   }
 }

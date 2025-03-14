@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -22,7 +22,7 @@ const atk_ = lookup(
   {
     ...objKeyMap(range(1, 4), (i) =>
       prod(subscript(input.weapon.refinement, atk_s), i)
-    ),
+    )
   },
   naught
 )
@@ -31,7 +31,7 @@ const atkSPD_ = lookup(
   {
     ...objKeyMap(range(1, 4), (i) =>
       prod(subscript(input.weapon.refinement, atkSPD_s), i)
-    ),
+    )
   },
   naught
 )
@@ -39,8 +39,8 @@ const atkSPD_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    atkSPD_,
-  },
+    atkSPD_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -57,16 +57,16 @@ const sheet: IWeaponSheet = {
             name: st('hits', { count: i }),
             fields: [
               {
-                node: atk_,
+                node: atk_
               },
               {
-                node: atkSPD_,
-              },
-            ],
-          },
+                node: atkSPD_
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

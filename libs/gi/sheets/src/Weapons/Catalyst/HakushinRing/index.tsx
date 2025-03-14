@@ -9,7 +9,7 @@ import {
   subscript,
   target,
   unequal,
-  unequalStr,
+  unequalStr
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -28,14 +28,14 @@ const nonstackWrites = objKeyValMap(allElementKeys, (key) => [
   `hakushin${key}`,
   key === 'electro'
     ? unequalStr(condPassive, undefined, input.charKey)
-    : equalStr(condPassive, key, input.charKey),
+    : equalStr(condPassive, key, input.charKey)
 ])
 const nonElectro_dmg_disp = objKeyMap(nonElectroEle, (key) =>
   nonStackBuff(`hakushin${key}`, `${key}_dmg_`, equal(key, condPassive, eleDmg))
 )
 const nonElectro_dmg_ = objKeyValMap(nonElectroEle, (key) => [
   `${key}_dmg_`,
-  equal(key, target.charEle, nonElectro_dmg_disp[key][0]), // 1st node is active
+  equal(key, target.charEle, nonElectro_dmg_disp[key][0]) // 1st node is active
 ])
 
 const [electro_dmg_disp, electro_dmg_dispInactive] = nonStackBuff(
@@ -49,10 +49,10 @@ const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
       electro_dmg_,
-      ...nonElectro_dmg_,
+      ...nonElectro_dmg_
     },
-    nonStacking: nonstackWrites,
-  },
+    nonStacking: nonstackWrites
+  }
 })
 
 const condNames = {
@@ -67,7 +67,7 @@ const condNames = {
       {stg('reaction.electrocharged')}
     </ColorText>
   ),
-  dendro: <ColorText color="aggravate">{stg('reaction.aggravate')}</ColorText>,
+  dendro: <ColorText color="aggravate">{stg('reaction.aggravate')}</ColorText>
 }
 
 const sheet: IWeaponSheet = {
@@ -84,29 +84,29 @@ const sheet: IWeaponSheet = {
           {
             node: infoMut(nonElectro_dmg_disp[ele][0], {
               path: `${ele}_dmg_`,
-              isTeamBuff: true,
-            }),
+              isTeamBuff: true
+            })
           },
           {
-            node: nonElectro_dmg_disp[ele][1],
+            node: nonElectro_dmg_disp[ele][1]
           },
           {
             node: infoMut(electro_dmg_disp, {
               path: 'electro_dmg_',
-              isTeamBuff: true,
-            }),
+              isTeamBuff: true
+            })
           },
           {
-            node: electro_dmg_dispInactive,
+            node: electro_dmg_dispInactive
           },
           {
             text: stg('duration'),
             value: 6,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

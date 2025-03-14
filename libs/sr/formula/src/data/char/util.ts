@@ -5,15 +5,15 @@ import {
   constant,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import {
   type AbilityKey,
-  type StatBoostKey,
+  type StatBoostKey
 } from '@genshin-optimizer/sr/consts'
 import {
   type CharacterDatum,
-  type SkillTreeNodeBonusStat,
+  type SkillTreeNodeBonusStat
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
@@ -27,7 +27,7 @@ import {
   ownBuff,
   percent,
   registerBuff,
-  type TagMapNodeEntries,
+  type TagMapNodeEntries
 } from '../util'
 
 type AbilityScalingType = Exclude<
@@ -206,7 +206,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       'breakDmg',
       {
         elementalType: data_gen.damageType,
-        damageType1: 'break',
+        damageType1: 'break'
       },
       1
     ),
@@ -227,6 +227,6 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       listingItem(own.final.dmg_[data_gen.damageType])
     ),
     ownBuff.listing.formulas.add(listingItem(own.final.weakness_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.resPen_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.resPen_))
   ]
 }

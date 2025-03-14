@@ -26,8 +26,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     physical_dmg_: set2,
     charged_dmg_: set4Charged,
-    staminaChargedDec_: set4StamDec,
-  },
+    staminaChargedDec_: set4StamDec
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -43,21 +43,21 @@ const sheet: SetEffectSheet = {
           hit: {
             fields: [
               {
-                node: set4Charged,
+                node: set4Charged
               },
               {
-                node: set4StamDec,
+                node: set4StamDec
               },
               {
                 text: stg('duration'),
                 value: 10,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                unit: 's'
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

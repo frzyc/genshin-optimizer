@@ -5,12 +5,12 @@ import type {
   ArtifactSlotKey,
   LocationCharacterKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSlotKeys,
-  allSubstatKeys,
+  allSubstatKeys
 } from '@genshin-optimizer/gi/consts'
 import type { IArtifact } from '@genshin-optimizer/gi/good'
 import { getArtifactEfficiency } from './artifact'
@@ -19,7 +19,7 @@ export const artifactSortKeys = [
   'level',
   'artsetkey',
   'efficiency',
-  'mefficiency',
+  'mefficiency'
 ] as const
 export type ArtifactSortKey = (typeof artifactSortKeys)[number]
 
@@ -59,7 +59,7 @@ export function initialArtifactFilterOption(): ArtifactFilterOption {
     rvHigh: 900,
     useMaxRV: false,
     lines: [1, 2, 3, 4],
-    excluded: ['excluded', 'included'],
+    excluded: ['excluded', 'included']
   }
 }
 
@@ -72,13 +72,12 @@ export function artifactSortConfigs(
     artsetkey: (art) => art.setKey ?? '',
     efficiency: (art) =>
       getArtifactEfficiency(art, effFilterSet).currentEfficiency,
-    mefficiency: (art) =>
-      getArtifactEfficiency(art, effFilterSet).maxEfficiency,
+    mefficiency: (art) => getArtifactEfficiency(art, effFilterSet).maxEfficiency
   }
 }
 export function artifactFilterConfigs({
   effFilterSet = new Set(allSubstatKeys),
-  excludedIds = [],
+  excludedIds = []
 }: {
   effFilterSet?: Set<SubstatKey>
   excludedIds?: string[]
@@ -144,7 +143,7 @@ export function artifactFilterConfigs({
       if (!filter.includes('included') && !excludedIds.includes(art.id))
         return false
       return true
-    },
+    }
   }
 }
 export const artifactSortMap: Partial<
@@ -154,5 +153,5 @@ export const artifactSortMap: Partial<
   rarity: ['rarity', 'level', 'artsetkey'],
   artsetkey: ['artsetkey', 'rarity', 'level'],
   efficiency: ['efficiency'],
-  mefficiency: ['mefficiency'],
+  mefficiency: ['mefficiency']
 }

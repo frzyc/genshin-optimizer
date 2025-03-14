@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
  */
 
 export default function CompareBtn({
-  buttonGroupProps = {},
+  buttonGroupProps = {}
 }: {
   buttonGroupProps?: ButtonGroupProps
 }) {
@@ -23,7 +23,7 @@ export default function CompareBtn({
     teamId,
     teamCharId,
     loadoutDatum,
-    teamChar: { buildIds, buildTcIds },
+    teamChar: { buildIds, buildTcIds }
   } = useContext(TeamCharacterContext)
   const {
     buildType,
@@ -32,11 +32,11 @@ export default function CompareBtn({
     compare,
     compareType,
     compareBuildId,
-    compareBuildTcId,
+    compareBuildTcId
   } = loadoutDatum
   const selectedLabel =
     compareType === 'real' ? (
-      database.builds.get(compareBuildId)?.name ?? ''
+      (database.builds.get(compareBuildId)?.name ?? '')
     ) : compareType === 'tc' ? (
       <span>
         {database.buildTcs.get(compareBuildTcId)?.name ?? ''}{' '}
@@ -62,7 +62,7 @@ export default function CompareBtn({
         color={compare ? 'success' : 'secondary'}
         onClick={() =>
           database.teams.setLoadoutDatum(teamId, teamCharId, {
-            compare: !compare,
+            compare: !compare
           })
         }
       >
@@ -84,7 +84,7 @@ export default function CompareBtn({
         <MenuItem
           onClick={() =>
             database.teams.setLoadoutDatum(teamId, teamCharId, {
-              compareType: 'equipped',
+              compareType: 'equipped'
             })
           }
         >
@@ -102,7 +102,7 @@ export default function CompareBtn({
             onClick={() =>
               database.teams.setLoadoutDatum(teamId, teamCharId, {
                 compareType: 'real',
-                compareBuildId: bId,
+                compareBuildId: bId
               })
             }
           >
@@ -120,7 +120,7 @@ export default function CompareBtn({
             onClick={() =>
               database.teams.setLoadoutDatum(teamId, teamCharId, {
                 compareType: 'tc',
-                compareBuildTcId: bTcId,
+                compareBuildTcId: bTcId
               })
             }
           >

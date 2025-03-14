@@ -6,7 +6,7 @@ import {
   CardContent,
   CardHeader,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
@@ -14,13 +14,13 @@ const links = [
   {
     title: () => 'Gacha Optimizer Discord',
     icon: <DiscordIcon />,
-    url: process.env['NX_URL_DISCORD_GO'],
+    url: process.env['NX_URL_DISCORD_GO']
   },
   {
     title: () => 'Github',
     icon: <GitHub />,
-    url: process.env['NX_URL_GITHUB_GO'],
-  },
+    url: process.env['NX_URL_GITHUB_GO']
+  }
 ] as const
 
 export default function QuickLinksCard() {

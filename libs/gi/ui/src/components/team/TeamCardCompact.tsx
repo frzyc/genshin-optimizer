@@ -8,7 +8,7 @@ import {
   useCharacter,
   useDatabase,
   useTeam,
-  useTeamChar,
+  useTeamChar
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -26,14 +26,14 @@ import {
   CharacterCardEquipmentRowTC,
   CharacterCardHeader,
   CharacterCardHeaderContent,
-  CharacterCardPico,
+  CharacterCardPico
 } from '../character'
 
 export function TeamCardCompact({
   teamId,
   onClick,
   hoverCard = false,
-  bgt,
+  bgt
 }: {
   teamId: string
   bgt?: 'light' | 'dark'
@@ -56,7 +56,7 @@ export function TeamCardCompact({
     <CardThemed
       bgt={bgt}
       sx={{
-        height: '100%',
+        height: '100%'
       }}
     >
       <Box
@@ -76,7 +76,7 @@ export function TeamCardCompact({
             // will be in the form of `linear-gradient(to right, red 12.5%, orange 27.5%, yellow 62.5%, green 87.5%)`
             background: `linear-gradient(to right, ${rgbas
               .map((rgba, i) => `${rgba} ${i * 25 + 12.5}%`)
-              .join(', ')})`,
+              .join(', ')})`
           }
         }}
       >
@@ -132,7 +132,7 @@ export function TeamCardCompact({
 function HoverCard({
   characterKey,
   teamId,
-  teamCharId,
+  teamCharId
 }: {
   characterKey: CharacterKey
   teamId: string
@@ -162,7 +162,7 @@ function HoverCard({
   const characterContextObj: CharacterContextObj | undefined = useMemo(
     () =>
       character && {
-        character,
+        character
       },
     [character]
   )
@@ -171,7 +171,7 @@ function HoverCard({
       data &&
       teamData && {
         data,
-        teamData,
+        teamData
       },
     [data, teamData]
   )

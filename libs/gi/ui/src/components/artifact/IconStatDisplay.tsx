@@ -12,7 +12,7 @@ export function IconStatDisplay({
   value,
   color,
   prefix = '',
-  typographyProps = {},
+  typographyProps = {}
 }: {
   statKey: MainStatKey | SubstatKey
   value: number

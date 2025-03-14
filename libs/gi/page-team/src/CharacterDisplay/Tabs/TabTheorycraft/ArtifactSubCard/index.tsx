@@ -2,15 +2,15 @@ import {
   BootstrapTooltip,
   CardThemed,
   ColorText,
-  DropdownButton,
+  DropdownButton
 } from '@genshin-optimizer/common/ui'
 import type {
   ArtifactRarity,
-  SubstatTypeKey,
+  SubstatTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   artSubstatRollData,
-  substatTypeKeys,
+  substatTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import { ArtifactRarityDropdown } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -23,7 +23,7 @@ import { ArtifactSubstatEditor } from './ArtifactSubstatEditor'
 
 export function ArtifactSubCard({
   maxTotalRolls,
-  disabled = false,
+  disabled = false
 }: {
   maxTotalRolls: number
   disabled?: boolean
@@ -32,10 +32,10 @@ export function ArtifactSubCard({
   const {
     buildTc: {
       artifact: {
-        substats: { type: substatsType, stats: substats, rarity },
-      },
+        substats: { type: substatsType, stats: substats, rarity }
+      }
     },
-    setBuildTc,
+    setBuildTc
   } = useContext(BuildTcContext)
   const setSubstatsType = useCallback(
     (t: SubstatTypeKey) => {
@@ -112,7 +112,7 @@ export function ArtifactSubCard({
                 gap: 2,
                 justifyContent: 'flex-end',
                 alignItems: 'center',
-                flexShrink: 1,
+                flexShrink: 1
               }}
             >
               <ColorText color={rolls > maxRolls ? 'error' : undefined}>

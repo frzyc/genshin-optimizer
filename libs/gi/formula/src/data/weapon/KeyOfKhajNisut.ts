@@ -6,7 +6,7 @@ import {
   ownBuff,
   percent,
   register,
-  teamBuff,
+  teamBuff
 } from '../util'
 import { entriesForWeapon } from './util'
 
@@ -16,7 +16,7 @@ const teamEmSrc = [NaN, 0.002, 0.0025, 0.003, 0.0035, 0.004]
 
 const {
   final,
-  weapon: { refinement },
+  weapon: { refinement }
 } = own
 const { afterSkillStacks } = allNumConditionals(key, true, 0, 3)
 const selfElemas = prod(

@@ -22,7 +22,7 @@ import {
   Grid,
   IconButton,
   Typography,
-  styled,
+  styled
 } from '@mui/material'
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -37,8 +37,8 @@ const ExpandButton = styled((props: ExpandMoreProps) => {
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
   marginLeft: 'auto',
   transition: (theme as any).transitions.create('transform', {
-    duration: (theme as any).transitions.duration.shortest,
-  }),
+    duration: (theme as any).transitions.duration.shortest
+  })
 }))
 
 export default ExpandButton
@@ -51,7 +51,7 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
   )
   const {
     enemyOverride,
-    enemyOverride: { enemyLevel, enemyDefRed_, enemyDefIgn_ },
+    enemyOverride: { enemyLevel, enemyDefRed_, enemyDefIgn_ }
   } = useTeam(teamId)!
 
   return (
@@ -62,7 +62,7 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
             display: 'flex',
             gap: 1,
             alignItems: 'center',
-            flexWrap: 'wrap',
+            flexWrap: 'wrap'
           }}
         >
           <Chip
@@ -111,7 +111,7 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
 
 export function EnemyResText({
   enemyOverride,
-  element,
+  element
 }: {
   enemyOverride: Team['enemyOverride']
   element: ElementWithPhyKey
@@ -132,7 +132,7 @@ export function EnemyResText({
 export function EnemyEditor({
   teamId,
   enemyOverride,
-  bsProps = { xs: 12, md: 6 },
+  bsProps = { xs: 12, md: 6 }
 }: {
   teamId: string
   enemyOverride: Team['enemyOverride']
@@ -189,7 +189,7 @@ export function EnemyEditor({
             <StatInput
               sx={{
                 bgcolor: (t) => t.palette.contentLight.main,
-                width: '100%',
+                width: '100%'
               }}
               name={
                 <ColorText color={eleKey}>

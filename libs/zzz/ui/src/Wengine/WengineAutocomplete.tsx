@@ -30,14 +30,14 @@ export function WengineAutocomplete({
     () => [
       {
         key: '',
-        label: 'Select a Wengine', //t('inventory') // TODO: Translation
+        label: 'Select a Wengine' //t('inventory') // TODO: Translation
       },
       ...allWengineKeys.map(
         (key): GeneralAutocompleteOption<WengineKey | ''> => ({
           key,
-          label: getWengineStat(key).name, //t(`charNames_gen:${key}`)
+          label: getWengineStat(key).name //t(`charNames_gen:${key}`)
         })
-      ),
+      )
     ],
     []
   )

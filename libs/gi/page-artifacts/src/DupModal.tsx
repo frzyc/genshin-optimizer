@@ -12,14 +12,14 @@ import {
   Divider,
   IconButton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 export default function DupModal({
   setArtifactIdToEdit,
   show,
-  onHide,
+  onHide
 }: {
   setArtifactIdToEdit: (id: string | undefined) => void
   show: boolean
@@ -56,7 +56,7 @@ export default function DupModal({
   )
 }
 function DupContent({
-  setArtifactIdToEdit,
+  setArtifactIdToEdit
 }: {
   setArtifactIdToEdit: (id: string | undefined) => void
 }) {
@@ -81,7 +81,7 @@ function DupContent({
       dups.push(
         [artKey, ...dupKeys]
           // sort the keys so equipped artifacts show up 1st.
-          .sort((a) => (database.arts.get(a)?.location ?? '' ? -1 : 1))
+          .sort((a) => ((database.arts.get(a)?.location ?? '') ? -1 : 1))
       )
       artKeys = artKeys.filter((id) => !dupKeys.includes(id))
     }

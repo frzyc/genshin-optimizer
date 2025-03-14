@@ -4,7 +4,7 @@ import {
   ImgIcon,
   ModalWrapper,
   NextImage,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { catTotal } from '@genshin-optimizer/common/util'
 import { characterAsset, rarityDefIcon } from '@genshin-optimizer/zzz/assets'
@@ -12,7 +12,7 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
   allCharacterKeys,
-  allSpecialityKeys,
+  allSpecialityKeys
 } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
@@ -25,7 +25,7 @@ import {
   Divider,
   Grid,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import React, { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -34,7 +34,7 @@ import { ElementToggle, WengineToggle } from '../toggles'
 export function CharacterSingleSelectionModal({
   show,
   onHide,
-  onSelect,
+  onSelect
 }: {
   show: boolean
   onHide: () => void
@@ -57,7 +57,7 @@ export function CharacterSingleSelectionModal({
                     position: 'relative',
                     flexGrow: 1,
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'column'
                   }
                 }}
               >
@@ -86,7 +86,7 @@ type CharacterSelectionModalBaseProps = {
 function CharacterSelectionModalBase({
   show,
   onClose,
-  children,
+  children
 }: CharacterSelectionModalBaseProps) {
   const weaponTotals = useMemo(
     () =>
@@ -119,22 +119,22 @@ function CharacterSelectionModalBase({
       containerProps={{
         sx: {
           height: '100vh',
-          p: { xs: 1 },
-        },
+          p: { xs: 1 }
+        }
       }}
     >
       <CardThemed
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          height: '100%',
+          height: '100%'
         }}
       >
         <CardContent
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 1,
+            gap: 1
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -166,7 +166,7 @@ function CharacterSelectionModalBase({
 
 function SelectionCard({
   characterKey,
-  onClick,
+  onClick
 }: {
   characterKey: CharacterKey
   onClick: () => void
@@ -190,8 +190,8 @@ function SelectionCard({
             top: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.7,
-          },
+            opacity: 0.7
+          }
         }}
         width="100%"
       >

@@ -2,12 +2,12 @@ import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   CardThemed,
   ConditionalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import {
   characterAsset,
   characterKeyToGenderedKey,
-  lightConeAsset,
+  lightConeAsset
 } from '@genshin-optimizer/sr/assets'
 import type { ICachedLightCone } from '@genshin-optimizer/sr/db'
 import { useLightCone } from '@genshin-optimizer/sr/db-ui'
@@ -15,7 +15,7 @@ import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
   lightConeTagMapNodeEntries,
   own,
-  srCalculatorWithEntries,
+  srCalculatorWithEntries
 } from '@genshin-optimizer/sr/formula'
 import { getLightConeStat } from '@genshin-optimizer/sr/stats'
 import { LightConeIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
@@ -25,7 +25,7 @@ import {
   CardActionArea,
   CardContent,
   Chip,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
@@ -34,7 +34,7 @@ import { COMPACT_ELE_HEIGHT, COMPACT_ELE_WIDTH } from '../compactConst'
 export function LightConeCardCompact({
   lightConeId,
   bgt,
-  onClick,
+  onClick
 }: {
   lightConeId?: string
   bgt?: CardBackgroundColor
@@ -54,7 +54,7 @@ export function LightConeCardCompactObj({
   lightCone,
   showLocation = false,
   bgt,
-  onClick,
+  onClick
 }: {
   lightCone: ICachedLightCone
   onClick?: () => void
@@ -84,7 +84,7 @@ export function LightConeCardCompactObj({
       bgt={bgt}
       sx={{
         height: COMPACT_ELE_HEIGHT,
-        width: COMPACT_ELE_WIDTH,
+        width: COMPACT_ELE_WIDTH
       }}
     >
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -94,7 +94,7 @@ export function LightConeCardCompactObj({
             height: '100%',
             width: '100%',
             borderLeft: '5px solid',
-            borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`,
+            borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`
           })}
         >
           <Box
@@ -104,7 +104,7 @@ export function LightConeCardCompactObj({
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <Box
@@ -121,7 +121,7 @@ export function LightConeCardCompactObj({
                 opacity: 0.85,
                 display: 'flex',
                 justifyContent: 'space-between',
-                pointerEvents: 'none',
+                pointerEvents: 'none'
               }}
             >
               {showLocation && (
@@ -130,7 +130,7 @@ export function LightConeCardCompactObj({
                     position: 'absolute',
                     display: 'flex',
                     top: 0,
-                    right: 0,
+                    right: 0
                   }}
                 >
                   {location ? (
@@ -140,7 +140,7 @@ export function LightConeCardCompactObj({
                         borderRadius: '50%',
                         width: '2em',
                         height: '2em',
-                        backgroundColor: 'rgba(0,0,0,0.3)',
+                        backgroundColor: 'rgba(0,0,0,0.3)'
                       }}
                       src={characterAsset(
                         characterKeyToGenderedKey(location),
@@ -161,7 +161,7 @@ export function LightConeCardCompactObj({
                 top: 3,
                 left: 3,
                 backgroundColor: 'rgba(0,0,0,0.3)',
-                backdropFilter: 'blur(2px)',
+                backdropFilter: 'blur(2px)'
               }}
             />
           </Box>
@@ -183,7 +183,7 @@ export function LightConeCardCompactObj({
 }
 function SubstatDisplay({
   calc,
-  stat,
+  stat
 }: {
   calc: Calculator
   stat: 'hp' | 'atk' | 'def'
@@ -211,7 +211,7 @@ function SubstatDisplay({
 }
 export function LightConeCardCompactEmpty({
   bgt,
-  onClick,
+  onClick
 }: {
   bgt?: CardBackgroundColor
   onClick?: () => void
@@ -229,7 +229,7 @@ export function LightConeCardCompactEmpty({
       bgt={bgt}
       sx={{
         height: COMPACT_ELE_HEIGHT,
-        width: COMPACT_ELE_WIDTH,
+        width: COMPACT_ELE_WIDTH
       }}
     >
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
@@ -239,7 +239,7 @@ export function LightConeCardCompactEmpty({
             height: COMPACT_ELE_HEIGHT,
             width: COMPACT_ELE_WIDTH,
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
         >
           <LightConeIcon sx={{ height: '2em', width: 'auto', opacity: 0.7 }} />

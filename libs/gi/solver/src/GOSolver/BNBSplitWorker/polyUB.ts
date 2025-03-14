@@ -6,7 +6,7 @@ import {
   customMapFormula,
   forEachNodes,
   prod,
-  threshold,
+  threshold
 } from '@genshin-optimizer/gi/wr'
 import type { ArtifactsBySlot, MinMax } from '../../common'
 import { computeFullArtRange, computeNodeRange } from '../../common'
@@ -56,7 +56,7 @@ function sumP(...terms: (PolynomialWithBounds | number)[]): PolySum {
     terms: poly,
     $c: c,
     min: poly.reduce((a, { min }) => a + min, c),
-    max: poly.reduce((a, { max }) => a + max, c),
+    max: poly.reduce((a, { max }) => a + max, c)
   }
 }
 function prodP(...terms: (PolynomialWithBounds | number)[]): PolyProd {
@@ -71,7 +71,7 @@ function prodP(...terms: (PolynomialWithBounds | number)[]): PolyProd {
     ({ min: min1, max: max1 }, { min: min2, max: max2 }) => {
       return {
         min: Math.min(min1 * min2, min1 * max2, max1 * min2, max1 * max2),
-        max: Math.max(min1 * min2, min1 * max2, max1 * min2, max1 * max2),
+        max: Math.max(min1 * min2, min1 * max2, max1 * min2, max1 * max2)
       }
     },
     { min: k, max: k }
@@ -275,7 +275,7 @@ export function polyUB(
             minMaxes.set(threshOp, { min: 0, max: 1 })
             minMaxes.set(mulOp, {
               min: Math.min(min, 0),
-              max: Math.max(max, 0),
+              max: Math.max(max, 0)
             })
             return map(mulOp)
           }

@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next'
 export function DiscMainStatMultiAutocomplete({
   mainStatKeys,
   setMainStatKeys,
-  totals,
+  totals
 }: {
   mainStatKeys: any[]
   setMainStatKeys: (keys: DiscMainStatKey[]) => void
@@ -24,7 +24,7 @@ export function DiscMainStatMultiAutocomplete({
       allDiscMainStatKeys.map((key) => ({
         key,
         label: `${tk(key)}${getUnitStr(key)}`,
-        variant: 'fix variant',
+        variant: 'fix variant'
       })),
     [tk]
   )

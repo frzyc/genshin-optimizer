@@ -2,13 +2,13 @@
 // use client due to hydration difference between client rendering and server in translation
 import type {
   ArtifactSetKey,
-  ArtifactSlotKey,
+  ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 
 export function ArtifactSetSlotName({
   setKey,
-  slotKey,
+  slotKey
 }: {
   setKey: ArtifactSetKey
   slotKey: ArtifactSlotKey
@@ -20,7 +20,7 @@ export function ArtifactSetSlotName({
 
 export function ArtifactSetSlotDesc({
   setKey,
-  slotKey,
+  slotKey
 }: {
   setKey: ArtifactSetKey
   slotKey: ArtifactSlotKey

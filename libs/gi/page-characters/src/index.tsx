@@ -1,29 +1,29 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ShowingAndSortOptionSelect,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import {
   catTotal,
   filterFunction,
-  sortFunction,
+  sortFunction
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  isCharacterKey,
+  isCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   getCharEle,
   getCharStat,
-  getWeaponStat,
+  getWeaponStat
 } from '@genshin-optimizer/gi/stats'
 import {
   CharacterCard,
@@ -36,7 +36,7 @@ import {
   characterFilterConfigs,
   characterSortConfigs,
   characterSortMap,
-  useCharSelectionCallback,
+  useCharSelectionCallback
 } from '@genshin-optimizer/gi/ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
@@ -45,7 +45,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  TextField,
+  TextField
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
 import {
@@ -54,7 +54,7 @@ import {
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import ReactGA from 'react-ga4'
 import { useTranslation } from 'react-i18next'
@@ -67,9 +67,9 @@ export default function PageCharacter() {
   const database = useDatabase()
   const navigate = useNavigate()
   const {
-    params: { characterKey: characterKeyRaw },
+    params: { characterKey: characterKeyRaw }
   } = useMatch({ path: '/characters/:characterKey', end: false }) ?? {
-    params: {},
+    params: {}
   }
   const characterKey = useMemo(() => {
     if (!characterKeyRaw) return null
@@ -86,7 +86,7 @@ export default function PageCharacter() {
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
     'sillyWisher_charNames',
-    'charNames_gen',
+    'charNames_gen'
   ])
   const { silly } = useContext(SillyContext)
 
@@ -202,7 +202,7 @@ export default function PageCharacter() {
     numShowing: charKeysToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'page_character',
+    namespace: 'page_character'
   }
 
   const sortByButtonProps = {
@@ -210,7 +210,7 @@ export default function PageCharacter() {
     value: sortType,
     onChange: (sortType) => database.displayCharacter.set({ sortType }),
     ascending: ascending,
-    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending }),
+    onChangeAsc: (ascending) => database.displayCharacter.set({ ascending })
   }
 
   return (
@@ -275,7 +275,7 @@ export default function PageCharacter() {
                 size="small"
                 sx={{ height: '100%' }}
                 InputProps={{
-                  sx: { height: '100%' },
+                  sx: { height: '100%' }
                 }}
               />
             </Grid>

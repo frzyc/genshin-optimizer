@@ -23,8 +23,8 @@ const cond_dmg_ = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     hp_: base_hp_,
-    all_dmg_: cond_dmg_,
-  },
+    all_dmg_: cond_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -33,9 +33,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: base_hp_,
-        },
-      ],
+          node: base_hp_
+        }
+      ]
     },
     {
       value: condPassive,
@@ -46,12 +46,12 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: cond_dmg_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: cond_dmg_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

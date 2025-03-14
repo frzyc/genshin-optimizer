@@ -8,7 +8,7 @@ let o = 1
 
 const dm = {
   passive_atk_: data_gen.superimpose.passiveStats.atk_,
-  healAtk_: data_gen.superimpose.otherStats[o++],
+  healAtk_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

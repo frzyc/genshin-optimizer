@@ -3,20 +3,20 @@ import { AssetData, CommonAssetData } from '@genshin-optimizer/gi/assets-data'
 import {
   sheetKeyToCharKey,
   type CharacterSheetKey,
-  type LocationGenderedCharacterKey,
+  type LocationGenderedCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import {
   getCharEle,
   getCharParam,
-  getCharStat,
+  getCharStat
 } from '@genshin-optimizer/gi/stats'
 import type { AnyComponentBuilder, MessageReaction } from 'discord.js'
 import {
   ActionRowBuilder,
   EmbedBuilder,
   StringSelectMenuBuilder,
-  StringSelectMenuOptionBuilder,
+  StringSelectMenuOptionBuilder
 } from 'discord.js'
 import { elementColors } from '../../assets/assets'
 import { giURL } from '../../lib/util'
@@ -31,7 +31,7 @@ function getEmbed(
 ) {
   const res: { embed: EmbedBuilder; components: AnyComponentBuilder[] } = {
     embed: {} as EmbedBuilder,
-    components: [],
+    components: []
   }
   //parse level
   let level = arg.length > 1 ? parseInt(arg.substring(1)) : NaN
@@ -53,7 +53,7 @@ function getEmbed(
       new StringSelectMenuBuilder()
         .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
         .setPlaceholder('Talent Level ' + level)
-        .addOptions(options),
+        .addOptions(options)
     ]
   }
 
@@ -87,7 +87,7 @@ function getEmbed(
       new StringSelectMenuBuilder()
         .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 1`)
         .setPlaceholder(label)
-        .addOptions(options),
+        .addOptions(options)
     ]
   } else throw 'Invalid talent name.'
 
@@ -111,11 +111,11 @@ function baseEmbed(id: CharacterSheetKey, lang: string) {
   if (!icon) icon = CommonAssetData.elemIcons[element]
   return new EmbedBuilder()
     .setFooter({
-      text: 'Character Archive',
+      text: 'Character Archive'
     })
     .setAuthor({
       name: getName(id, lang),
-      iconURL: giURL(icon),
+      iconURL: giURL(icon)
     })
     .setColor(elementColors[element])
 }
@@ -150,13 +150,13 @@ function talentFields(
     {
       name: ' ',
       value: clean(text),
-      inline: true,
+      inline: true
     },
     {
       name: ' ',
       value: clean(val),
-      inline: true,
-    },
+      inline: true
+    }
   ]
 }
 
@@ -177,7 +177,7 @@ function profileEmbed(id: CharacterSheetKey, namespace: string, lang: string) {
       .t(
         [
           `${namespace}:description`,
-          'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.',
+          'A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.'
         ],
         { lng: lang }
       )
@@ -191,7 +191,7 @@ function profileEmbed(id: CharacterSheetKey, namespace: string, lang: string) {
   embed
     .setAuthor({
       name: getName(id, lang),
-      iconURL: giURL(CommonAssetData.elemIcons[element]),
+      iconURL: giURL(CommonAssetData.elemIcons[element])
     })
     .setDescription(clean(text))
   const thumbnail = getAssets(id).icon
@@ -372,7 +372,7 @@ export async function charArchive(
         .setCustomId(`${slashcommand.name} char ${id} ${arg} ${lang} 0`)
         .setPlaceholder(talentlist[arg[0] as keyof typeof talentlist].name)
         .addOptions(options)
-    ),
+    )
   ]
   for (const component of res.components)
     components.push(new ActionRowBuilder().addComponents(component))
@@ -380,7 +380,7 @@ export async function charArchive(
   return {
     content: '',
     embeds: [res.embed],
-    components: components,
+    components: components
   }
 }
 

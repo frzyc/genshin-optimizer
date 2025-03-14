@@ -10,11 +10,11 @@ const key: ArtifactSetKey = 'GoldenTroupe'
 const setHeader = setHeaderTemplate(key)
 
 const set2 = greaterEq(input.artSet.GoldenTroupe, 2, 0.2, {
-  path: 'skill_dmg_',
+  path: 'skill_dmg_'
 })
 
 const set4 = greaterEq(input.artSet.GoldenTroupe, 4, 0.25, {
-  path: 'skill_dmg_',
+  path: 'skill_dmg_'
 })
 const [condSet4Path, condSet4] = cond(key, 'set4')
 const set4Cond = greaterEq(
@@ -25,8 +25,8 @@ const set4Cond = greaterEq(
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    skill_dmg_: sum(set2, set4, set4Cond),
-  },
+    skill_dmg_: sum(set2, set4, set4Cond)
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -37,9 +37,9 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: set4,
-          },
-        ],
+            node: set4
+          }
+        ]
       },
       {
         header: setHeader(4),
@@ -50,13 +50,13 @@ const sheet: SetEffectSheet = {
           on: {
             fields: [
               {
-                node: set4Cond,
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                node: set4Cond
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

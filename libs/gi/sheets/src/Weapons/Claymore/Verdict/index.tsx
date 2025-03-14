@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -45,8 +45,8 @@ const skill_dmg_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    skill_dmg_,
-  },
+    skill_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -55,9 +55,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: atk_,
-        },
-      ],
+          node: atk_
+        }
+      ]
     },
     {
       value: condSeals,
@@ -68,11 +68,11 @@ const sheet: IWeaponSheet = {
         name: `${seals}`,
         fields: [
           {
-            node: skill_dmg_,
-          },
-        ],
-      })),
-    },
-  ],
+            node: skill_dmg_
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

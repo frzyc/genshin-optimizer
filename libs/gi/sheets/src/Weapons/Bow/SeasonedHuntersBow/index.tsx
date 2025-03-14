@@ -6,6 +6,6 @@ import { dataObjForWeaponSheet } from '../../util'
 const key: WeaponKey = 'SeasonedHuntersBow'
 export const data = dataObjForWeaponSheet(key)
 const sheet: IWeaponSheet = {
-  document: [],
+  document: []
 }
 export default new WeaponSheet(sheet, data)

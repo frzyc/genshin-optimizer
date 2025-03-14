@@ -6,7 +6,7 @@ import {
   greaterEq,
   input,
   lookup,
-  naught,
+  naught
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -35,8 +35,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     normal_dmg_: set2_normal_dmg_,
     charged_dmg_: set2_charged_dmg_,
-    critRate_: set4_critRate_,
-  },
+    critRate_: set4_critRate_
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -44,9 +44,9 @@ const sheet: SetEffectSheet = {
     document: [
       {
         header: setHeader(2),
-        fields: [{ node: set2_normal_dmg_ }, { node: set2_charged_dmg_ }],
-      },
-    ],
+        fields: [{ node: set2_normal_dmg_ }, { node: set2_charged_dmg_ }]
+      }
+    ]
   },
   4: {
     document: [
@@ -59,17 +59,17 @@ const sheet: SetEffectSheet = {
           name: st('stack', { count: stack }),
           fields: [
             {
-              node: set4_critRate_,
+              node: set4_critRate_
             },
             {
               text: stg('duration'),
               value: 5,
-              unit: 's',
-            },
-          ],
-        })),
-      },
-    ],
-  },
+              unit: 's'
+            }
+          ]
+        }))
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

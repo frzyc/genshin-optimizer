@@ -8,11 +8,11 @@ export default defineConfig({
       bundler: 'vite',
       webServerCommands: {
         default: 'yarn nx run frontend:dev',
-        production: 'yarn nx run frontend:preview',
+        production: 'yarn nx run frontend:preview'
       },
       ciWebServerCommand: 'yarn nx run frontend:preview',
-      ciBaseUrl: 'http://localhost:4300',
+      ciBaseUrl: 'http://localhost:4300'
     }),
-    baseUrl: 'http://localhost:4200',
-  },
+    baseUrl: 'http://localhost:4200'
+  }
 })

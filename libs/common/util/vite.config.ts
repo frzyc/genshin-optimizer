@@ -21,7 +21,7 @@ export default defineConfig(() => ({
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../../coverage/libs/common/util',
-      provider: 'v8',
-    },
-  },
+      provider: 'v8'
+    }
+  }
 }))

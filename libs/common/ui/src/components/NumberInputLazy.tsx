@@ -72,7 +72,7 @@ export function NumberInputLazy({
       {...props}
       inputProps={{
         inputMode: 'numeric',
-        ...(props.inputProps ?? {}),
+        ...(props.inputProps ?? {})
       }}
     />
   )

@@ -7,7 +7,7 @@ const options: GenAssetsDataExecutorSchema = {}
 const context: ExecutorContext = {
   root: '',
   cwd: process.cwd(),
-  isVerbose: false,
+  isVerbose: false
 }
 
 describe('GenAssetsData Executor', () => {

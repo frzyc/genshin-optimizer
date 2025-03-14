@@ -20,14 +20,14 @@ export const milestoneLevelsLow = [
   [40, 1],
   [20, 1],
   [20, 0],
-  [1, 0],
+  [1, 0]
 ] as const
 export const milestoneLevels = [
   [90, 6],
   [80, 6],
   [80, 5],
   [70, 5],
-  ...milestoneLevelsLow,
+  ...milestoneLevelsLow
 ] as const
 
 export const getLevelString = (

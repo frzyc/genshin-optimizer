@@ -11,6 +11,6 @@ const data = {
   chain,
   special,
   core,
-  assist,
+  assist
 } as const
 export default data

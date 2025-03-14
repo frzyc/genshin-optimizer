@@ -66,7 +66,7 @@ export const nonTrailblazerCharacterKeys = [
   'Xueyi',
   'Yanqing',
   'Yukong',
-  'Yunli',
+  'Yunli'
 ] as const
 export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
@@ -78,7 +78,7 @@ export const allElementalTypeKeys = [
   'ice',
   'wind',
   'fire',
-  'imaginary',
+  'imaginary'
 ] as const
 export type ElementalTypeKey = (typeof allElementalTypeKeys)[number]
 
@@ -90,7 +90,7 @@ export const allTrailblazerGenderedKeys = [
   'TrailblazerImaginaryM',
   'TrailblazerImaginaryF',
   'TrailblazerIceM',
-  'TrailblazerIceF',
+  'TrailblazerIceF'
 ] as const
 export type TrailblazerGenderedKey = (typeof allTrailblazerGenderedKeys)[number]
 
@@ -98,25 +98,25 @@ export const allTrailblazerKeys = [
   'TrailblazerPhysical',
   'TrailblazerFire',
   'TrailblazerImaginary',
-  'TrailblazerIce',
+  'TrailblazerIce'
 ] as const
 export type TrailblazerKey = (typeof allTrailblazerKeys)[number]
 export const TrailblazerPathMap: Record<TrailblazerKey, PathKey> = {
   TrailblazerPhysical: 'Destruction',
   TrailblazerFire: 'Preservation',
   TrailblazerImaginary: 'Harmony',
-  TrailblazerIce: 'Remembrance',
+  TrailblazerIce: 'Remembrance'
 }
 
 export const allCharacterKeys = [
   ...nonTrailblazerCharacterKeys,
-  ...allTrailblazerKeys,
+  ...allTrailblazerKeys
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
 export const allCharacterGenderedKeys = [
   ...nonTrailblazerCharacterKeys,
-  ...allTrailblazerGenderedKeys,
+  ...allTrailblazerGenderedKeys
 ] as const
 export type CharacterGenderedKey = (typeof allCharacterGenderedKeys)[number]
 
@@ -154,7 +154,7 @@ export const allAbilityKeys = [
   'technique', // MAZE
   'overworld', // MAZE_NORMAL
   'servantSkill',
-  'servantTalent',
+  'servantTalent'
 ] as const
 export type AbilityKey = (typeof allAbilityKeys)[number]
 

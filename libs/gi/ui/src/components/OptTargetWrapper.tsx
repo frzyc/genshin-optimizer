@@ -8,13 +8,13 @@ import { DataContext } from '../context/DataContext'
 import type { OptTargetContextObj } from '../context/OptTargetContext'
 import {
   defOptTargetContextObj,
-  OptTargetContext,
+  OptTargetContext
 } from '../context/OptTargetContext'
 import { optimizeNodesForScaling } from '../util'
 
 export function OptTargetWrapper({ children }: { children: ReactNode }) {
   const {
-    teamChar: { optConfigId, key: characterKey },
+    teamChar: { optConfigId, key: characterKey }
   } = useContext(TeamCharacterContext)
 
   const buildSetting = useOptConfig(optConfigId)!
@@ -33,7 +33,7 @@ export function OptTargetWrapper({ children }: { children: ReactNode }) {
 
     return {
       target: optimizationTarget,
-      scalesWith: getScalesWith(nodes),
+      scalesWith: getScalesWith(nodes)
     }
   }, [buildSetting, characterKey, dataContextValue.teamData])
 

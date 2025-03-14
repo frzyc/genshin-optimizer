@@ -111,7 +111,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   VermillionHereafter,
   ViridescentVenerer,
   VourukashasGlow,
-  WanderersTroupe,
+  WanderersTroupe
 } as const
 
 export function getArtSheet(sKey: ArtifactSetKey) {

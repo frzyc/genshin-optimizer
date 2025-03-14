@@ -11,7 +11,7 @@ import {
   CssBaseline,
   Skeleton,
   StyledEngineProvider,
-  ThemeProvider,
+  ThemeProvider
 } from '@mui/material'
 import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'

@@ -2,11 +2,11 @@ import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type {
   CondKey,
   DiscSetKey,
-  FormulaKey,
+  FormulaKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSlotKeys,
-  type DiscSlotKey,
+  type DiscSlotKey
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
@@ -90,7 +90,7 @@ async function start({
   setFilter2,
   setFilter4,
   numWorkers,
-  formulaKey,
+  formulaKey
 }: ParentCommandStart) {
   const discStatsBySlot = objKeyMap(allDiscSlotKeys, (slot) =>
     discsBySlot[slot].map(convertDiscToStats)
@@ -102,7 +102,7 @@ async function start({
       discs.length > largestSize
         ? {
             largestSlot: currentSlot as DiscSlotKey,
-            largestSize: discs.length,
+            largestSize: discs.length
           }
         : { largestSlot, largestSize },
     { largestSlot: 'head' as DiscSlotKey, largestSize: -1 }
@@ -127,7 +127,7 @@ async function start({
   workers = range(1, numWorkers).map(
     () =>
       new Worker(new URL('./childWorker.ts', import.meta.url), {
-        type: 'module',
+        type: 'module'
       })
   )
 
@@ -138,8 +138,8 @@ async function start({
     resultType: 'progress',
     progress: {
       numBuildsKept: 0,
-      numBuildsComputed: 0,
-    },
+      numBuildsComputed: 0
+    }
   })
 
   // Wait for all workers to finish optimizing
@@ -165,8 +165,8 @@ async function start({
                 resultType: 'progress',
                 progress: {
                   numBuildsKept: Math.min(results.length, MAX_BUILDS),
-                  numBuildsComputed,
-                },
+                  numBuildsComputed
+                }
               })
               // TODO: Send message to child workers with the lowest build so far.
               // Then, children can automatically filter out any builds less than that.
@@ -190,7 +190,7 @@ async function start({
           constraints,
           formulaKey,
           setFilter2,
-          setFilter4,
+          setFilter4
         }
         worker.postMessage(message)
       })
@@ -200,13 +200,13 @@ async function start({
   // Send back results, which can take a few seconds
   postMessage({
     resultType: 'done',
-    buildResults: results.sort((a, b) => b.value - a.value).slice(0, 10), // TODO: take numBuilds from opt UI
+    buildResults: results.sort((a, b) => b.value - a.value).slice(0, 10) // TODO: take numBuilds from opt UI
   })
 }
 
 function terminate() {
   workers.forEach((w) => w.terminate())
   postMessage({
-    resultType: 'terminated',
+    resultType: 'terminated'
   })
 }

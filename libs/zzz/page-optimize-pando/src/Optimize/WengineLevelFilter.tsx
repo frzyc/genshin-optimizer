@@ -2,14 +2,14 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { wengineMaxLevel } from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { WengineLevelSlider } from '@genshin-optimizer/zzz/ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { memo, useContext } from 'react'
 
 export const WengineLevelFilter = memo(function WengineLevelFilter({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {
@@ -37,7 +37,7 @@ export const WengineLevelFilter = memo(function WengineLevelFilter({
         setBoth={(wlevelLow, wlevelHigh) =>
           database.optConfigs.set(optConfigId, {
             wlevelLow,
-            wlevelHigh,
+            wlevelHigh
           })
         }
         disabled={disabled}

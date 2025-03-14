@@ -1,6 +1,6 @@
 import type {
   ElementWithPhyKey,
-  TransformativeReactionKey,
+  TransformativeReactionKey
 } from '@genshin-optimizer/gi/consts'
 import { allElementWithPhyKeys } from '@genshin-optimizer/gi/consts'
 
@@ -9,14 +9,14 @@ import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
   CrittableTransformativeReactionsKey,
-  HitMoveKey,
+  HitMoveKey
 } from './StatConstants'
 import {
   additiveReactions,
   amplifyingReactions,
   crittableTransformativeReactions,
   hitMoves,
-  transformativeReactions,
+  transformativeReactions
 } from './StatConstants'
 
 const baseMap = {
@@ -95,7 +95,7 @@ const baseMap = {
   constellation: 'Constellation',
   auto: 'Normal Attack Lv.',
   skill: 'Elemental Skill Lv.',
-  burst: 'Elemental Burst Lv.',
+  burst: 'Elemental Burst Lv.'
 } as const
 
 const statMap = { ...baseMap } as Record<StatKey, string>
@@ -197,12 +197,10 @@ type TransformativeReactionsCritDMGKey =
   `${CrittableTransformativeReactionsKey}_critDMG_`
 
 crittableTransformativeReactions.forEach((reaction) => {
-  statMap[
-    `${reaction}_critRate_`
-  ] = `${transformativeReactions[reaction].name} Crit Rate`
-  statMap[
-    `${reaction}_critDMG_`
-  ] = `${transformativeReactions[reaction].name} Crit DMG`
+  statMap[`${reaction}_critRate_`] =
+    `${transformativeReactions[reaction].name} Crit Rate`
+  statMap[`${reaction}_critDMG_`] =
+    `${transformativeReactions[reaction].name} Crit DMG`
 })
 const crystallizeElements = ['cryo', 'hydro', 'pyro', 'electro'] as const
 export type CrystallizeKey =
@@ -275,9 +273,9 @@ export class KeyMap {
       key.startsWith(e)
     ) as undefined | keyof typeof amplifyingReactions
     if (amp) return amp
-    const add = Object.keys(additiveReactions).find((e) =>
-      key.startsWith(e)
-    ) as undefined | keyof typeof additiveReactions
+    const add = Object.keys(additiveReactions).find((e) => key.startsWith(e)) as
+      | undefined
+      | keyof typeof additiveReactions
     if (add) return add
     if (key.includes('heal')) return 'heal'
     return allElementWithPhyKeys.find((e) => key.startsWith(e))

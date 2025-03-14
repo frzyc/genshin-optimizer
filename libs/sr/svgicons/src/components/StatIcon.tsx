@@ -19,12 +19,12 @@ import {
   PhysicalIcon,
   QuantumIcon,
   SpdIcon,
-  WindIcon,
+  WindIcon
 } from '../'
 
 export function StatIcon({
   statKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   statKey: string
   iconProps?: SvgIconProps
@@ -69,7 +69,7 @@ export function StatIcon({
 
 export function ElementIcon({
   ele,
-  iconProps = {},
+  iconProps = {}
 }: {
   ele: ElementalTypeKey
   iconProps?: SvgIconProps

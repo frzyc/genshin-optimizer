@@ -19,7 +19,7 @@ function initialState(): IDisplayTeamEntry {
     ascending: false,
     sortType: teamSortKeys[0],
     charKeys: [],
-    searchTerm: '',
+    searchTerm: ''
   }
 }
 
@@ -45,7 +45,7 @@ export class DisplayTeamEntry extends DataEntry<
       ascending,
       sortType,
       charKeys,
-      searchTerm,
+      searchTerm
     }
   }
 }

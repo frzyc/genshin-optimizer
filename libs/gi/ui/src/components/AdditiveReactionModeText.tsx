@@ -4,14 +4,14 @@ import type { AdditiveReactionKey } from '@genshin-optimizer/gi/consts'
 import {
   DendroIcon,
   ElectroIcon,
-  ElementIcon,
+  ElementIcon
 } from '@genshin-optimizer/gi/svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
 const sqBadgeStyle = { mx: 0.25, px: 0.25 }
 export function AdditiveReactionModeText({
-  reaction,
+  reaction
 }: {
   reaction: AdditiveReactionKey
 }) {

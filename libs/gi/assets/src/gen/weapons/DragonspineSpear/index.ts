@@ -4,6 +4,6 @@ import awakenIcon from './UI_EquipIcon_Pole_Everfrost_Awaken.png'
 
 const data = {
   awakenIcon,
-  icon,
+  icon
 } as const
 export default data

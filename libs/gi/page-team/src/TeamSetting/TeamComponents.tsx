@@ -4,7 +4,7 @@ import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import type {
   CharacterContextObj,
-  TeamCharacterContextObj,
+  TeamCharacterContextObj
 } from '@genshin-optimizer/gi/db-ui'
 import {
   CharacterContext,
@@ -13,7 +13,7 @@ import {
   useCharacter,
   useDatabase,
   useTeam,
-  useTeamChar,
+  useTeamChar
 } from '@genshin-optimizer/gi/db-ui'
 import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
 import { dataSetEffects, getArtSheet } from '@genshin-optimizer/gi/sheets'
@@ -28,7 +28,7 @@ import {
   DocumentDisplay,
   FieldDisplayList,
   NodeFieldDisplay,
-  WeaponFullCardObj,
+  WeaponFullCardObj
 } from '@genshin-optimizer/gi/ui'
 import { input } from '@genshin-optimizer/gi/wr'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -40,7 +40,7 @@ import {
   CardActionArea,
   Divider,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -54,7 +54,7 @@ export function TeamBuffDisplay() {
     const nodes = [
       ...Object.values(teamBuffs.total ?? {}),
       ...Object.values(teamBuffs.premod ?? {}),
-      ...Object.values(teamBuffs.enemy ?? {}),
+      ...Object.values(teamBuffs.enemy ?? {})
     ] as const
 
     return nodes.filter((node) => !node.isEmpty && node.value !== 0)
@@ -67,8 +67,8 @@ export function TeamBuffDisplay() {
         bgcolor: theme.palette.contentLight.main,
         borderRadius: '4px',
         '&:before': {
-          display: 'none',
-        },
+          display: 'none'
+        }
       })}
       disableGutters
     >
@@ -94,7 +94,7 @@ export function TeamBuffDisplay() {
 export function TeammateDisplay({
   teamCharId,
   dataContextValue,
-  teamId,
+  teamId
 }: {
   teamCharId: string
   teamId: string
@@ -117,13 +117,13 @@ export function TeammateDisplay({
         team,
         teamCharId,
         teamChar,
-        loadoutDatum,
+        loadoutDatum
       },
     [teamId, team, teamCharId, teamChar, dataBundle, loadoutDatum]
   )
   const characterContext: CharacterContextObj | undefined = useMemo(
     () => ({
-      character,
+      character
     }),
     [character]
   )
@@ -131,7 +131,7 @@ export function TeammateDisplay({
     () =>
       dataBundle && {
         data: dataBundle.target,
-        teamData: teamData,
+        teamData: teamData
       },
     [dataBundle, teamData]
   )
@@ -168,8 +168,8 @@ export function TeammateDisplay({
                 return {
                   border: `1px solid ${colorrbga(0.3)}`,
                   '&:hover': {
-                    border: `1px solid ${colorrbga(0.8)}`,
-                  },
+                    border: `1px solid ${colorrbga(0.8)}`
+                  }
                 }
               }}
             >
@@ -201,7 +201,7 @@ export function TeammateDisplay({
 }
 function EquipmentRow({
   loadoutDatum,
-  loadoutDatum: { buildType },
+  loadoutDatum: { buildType }
 }: {
   loadoutDatum: LoadoutDatum
 }) {
@@ -209,13 +209,13 @@ function EquipmentRow({
   else return <TcEquipmentRow loadoutDatum={loadoutDatum} />
 }
 function TcEquipmentRow({
-  loadoutDatum: { buildTcId },
+  loadoutDatum: { buildTcId }
 }: {
   loadoutDatum: LoadoutDatum
 }) {
   const { t } = useTranslation('page_team')
   const {
-    artifact: { sets },
+    artifact: { sets }
   } = useBuildTc(buildTcId)!
   return (
     <CardThemed bgt="light" sx={{ flexGrow: 1 }}>
@@ -224,7 +224,7 @@ function TcEquipmentRow({
           p: 1,
           display: 'flex',
           flexDirection: 'column',
-          gap: 1,
+          gap: 1
         }}
       >
         <SqBadge color="info">{t('teamComponents.tcBadge')}</SqBadge>
@@ -245,7 +245,7 @@ function TcEquipmentRow({
   )
 }
 function CharacterCardWeaponFull({
-  loadoutDatum,
+  loadoutDatum
 }: {
   loadoutDatum: LoadoutDatum
 }) {
@@ -275,7 +275,7 @@ function CharArtifactCondDisplay() {
 }
 function CharWeaponCondDisplay() {
   const {
-    character: { key: charKey },
+    character: { key: charKey }
   } = useContext(CharacterContext)
   const { teamData } = useContext(DataContext)
   const weaponSheet = teamData[charKey]!.weaponSheet
@@ -290,7 +290,7 @@ function CharWeaponCondDisplay() {
 }
 function CharTalentCondDisplay() {
   const {
-    character: { key: charKey },
+    character: { key: charKey }
   } = useContext(CharacterContext)
   const { teamData } = useContext(DataContext)
   const characterSheet = teamData[charKey]!.characterSheet as CharacterSheet

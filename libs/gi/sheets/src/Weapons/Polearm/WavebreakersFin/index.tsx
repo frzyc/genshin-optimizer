@@ -6,7 +6,7 @@ import {
   min,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -28,15 +28,15 @@ const burst_dmg_ = lookup(
       min(
         prod(subscript(input.weapon.refinement, ratio, { unit: '%' }), i),
         subscript(input.weapon.refinement, max, { unit: '%' })
-      ),
+      )
     ])
   ),
   naught
 )
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    burst_dmg_,
-  },
+    burst_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -51,11 +51,11 @@ const sheet: IWeaponSheet = {
           i,
           {
             name: i.toString(),
-            fields: [{ node: burst_dmg_ }],
-          },
+            fields: [{ node: burst_dmg_ }]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

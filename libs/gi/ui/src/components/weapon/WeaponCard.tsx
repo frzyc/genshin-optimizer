@@ -3,13 +3,13 @@ import {
   ConditionalWrapper,
   ImgIcon,
   NextImage,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,
   LocationCharacterKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import { useDatabase, useWeapon } from '@genshin-optimizer/gi/db-ui'
@@ -29,7 +29,7 @@ import {
   IconButton,
   Skeleton,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
@@ -57,7 +57,7 @@ export function WeaponCardObj({
   onEdit,
   onDelete,
   canEquip = false,
-  extraButtons,
+  extraButtons
 }: Props & { weapon: ICachedWeapon }) {
   const { t } = useTranslation(['page_weapon', 'ui'])
   const database = useDatabase()
@@ -120,7 +120,7 @@ export function WeaponCardObj({
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         }}
       >
         <ConditionalWrapper
@@ -153,7 +153,7 @@ export function WeaponCardObj({
                     textAlign: 'center',
                     backgroundColor: 'rgba(100,100,100,0.35)',
                     borderRadius: '1em',
-                    px: 1,
+                    px: 1
                   }}
                 >
                   <strong>
@@ -207,7 +207,7 @@ export function WeaponCardObj({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
@@ -218,7 +218,7 @@ export function WeaponCardObj({
                 filter={filter}
                 autoCompleteProps={{
                   getOptionDisabled: (t) => !t.key,
-                  disableClearable: true,
+                  disableClearable: true
                 }}
               />
             ) : (

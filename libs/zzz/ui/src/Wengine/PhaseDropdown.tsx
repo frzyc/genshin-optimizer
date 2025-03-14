@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 export function PhaseDropdown({
   phase,
   setPhase,
-  disabled = false,
+  disabled = false
 }: {
   phase: PhaseKey
   setPhase: (r: PhaseKey) => void

@@ -1,7 +1,7 @@
 import {
   BootstrapTooltip,
   ConditionalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { imgAssets, weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { WeaponTypeKey } from '@genshin-optimizer/gi/consts'
@@ -33,7 +33,7 @@ export function WeaponCardNano({
   weaponId,
   showLocation = false,
   onClick,
-  weaponTypeKey = 'sword',
+  weaponTypeKey = 'sword'
 }: Data) {
   const weapon = useWeapon(weaponId)
   const weaponSheet = weapon?.key && getWeaponSheet(weapon.key)
@@ -46,7 +46,7 @@ export function WeaponCardNano({
           height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
-          py: 2,
+          py: 2
         }}
       >
         <Box
@@ -70,7 +70,7 @@ export function WeaponCardNanoObj({
   weapon,
   weaponSheet,
   showLocation = false,
-  onClick,
+  onClick
 }: {
   weapon: ICachedWeapon
   weaponSheet: WeaponSheet
@@ -106,7 +106,7 @@ export function WeaponCardNanoObj({
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-end'
           }}
         >
           <WeaponNameTooltip weaponKey={weapon.key}>
@@ -125,7 +125,7 @@ export function WeaponCardNanoObj({
               opacity: 0.85,
               display: 'flex',
               justifyContent: 'space-between',
-              pointerEvents: 'none',
+              pointerEvents: 'none'
             }}
           >
             <Chip
@@ -155,8 +155,8 @@ export function WeaponCardNanoObj({
                 sx={{
                   overflow: 'visible',
                   '.MuiChip-label': {
-                    overflow: 'visible',
-                  },
+                    overflow: 'visible'
+                  }
                 }}
               />
             )}
@@ -170,7 +170,7 @@ export function WeaponCardNanoObj({
               opacity: 0.85,
               display: 'flex',
               justifyContent: 'flex-end',
-              alignItems: 'flex-end',
+              alignItems: 'flex-end'
             }}
           >
             {weaponHasRefinement(weapon.key) && (

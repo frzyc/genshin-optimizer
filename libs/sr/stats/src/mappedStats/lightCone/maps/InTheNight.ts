@@ -11,7 +11,7 @@ const dm = {
   spdStep: data_gen.superimpose.otherStats[o++][1],
   basic_skill_dmg_: data_gen.superimpose.otherStats[o++],
   ult_crit_dmg_: data_gen.superimpose.otherStats[o++],
-  stacks: data_gen.superimpose.otherStats[o++][1],
+  stacks: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

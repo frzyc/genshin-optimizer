@@ -2,7 +2,7 @@ import {
   BootstrapTooltip,
   CardThemed,
   NextImage,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LocationKey } from '@genshin-optimizer/sr/consts'
@@ -10,7 +10,7 @@ import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
   lightConeTagMapNodeEntries,
   own,
-  srCalculatorWithEntries,
+  srCalculatorWithEntries
 } from '@genshin-optimizer/sr/formula'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import { getLightConeStat } from '@genshin-optimizer/sr/stats'
@@ -23,7 +23,7 @@ import {
   CardContent,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -50,7 +50,7 @@ export function LightConeCard({
   onLockToggle,
   canEquip = false,
   setLocation,
-  extraButtons,
+  extraButtons
 }: LightConeCardProps) {
   const { t } = useTranslation(['lightCone', 'lightCones_gen', 'common_gen'])
 
@@ -105,7 +105,7 @@ export function LightConeCard({
                   textAlign: 'center',
                   backgroundColor: 'rgba(100,100,100,0.35)',
                   borderRadius: '1em',
-                  px: 1,
+                  px: 1
                 }}
               >
                 <strong>
@@ -135,7 +135,7 @@ export function LightConeCard({
                 float: 'right',
                 marginBottom: '5%',
                 marginTop: '5%',
-                marginRight: '5%',
+                marginRight: '5%'
               }}
             />
           </Box>
@@ -147,7 +147,7 @@ export function LightConeCard({
             flexDirection: 'column',
             pt: 1,
             pb: '0!important',
-            width: '100%',
+            width: '100%'
           }}
         >
           {(['hp', 'atk', 'def'] as const).map((stat) => (
@@ -160,7 +160,7 @@ export function LightConeCard({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Box sx={{ flexGrow: 1 }}>
@@ -220,7 +220,7 @@ export function LightConeCard({
 }
 function StatRow({
   calc,
-  stat,
+  stat
 }: {
   calc: Calculator
   stat: 'hp' | 'atk' | 'def'

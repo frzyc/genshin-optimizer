@@ -3,7 +3,7 @@ import {
   CardThemed,
   ConditionalWrapper,
   DropdownButton,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
@@ -11,7 +11,7 @@ import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { maxEidolonCount, talentLimits } from '@genshin-optimizer/sr/consts'
 import {
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
@@ -27,7 +27,7 @@ import {
   isTalentSheetElementEidolonKey,
   isTalentSheetElementStatBoostKey,
   uiSheets,
-  type TalentSheetElementKey,
+  type TalentSheetElementKey
 } from '@genshin-optimizer/sr/formula-ui'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import {
@@ -37,7 +37,7 @@ import {
   MenuItem,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
@@ -47,7 +47,7 @@ import { useTeammateContext } from './context'
 const talentSpacing = {
   xs: 12,
   sm: 6,
-  md: 4,
+  md: 4
 }
 
 export default function CharacterTalentPane() {
@@ -66,7 +66,7 @@ export default function CharacterTalentPane() {
     'bonusAbility1',
     'bonusAbility2',
     'bonusAbility3',
-    ...allTalentSheetElementStatBoostKey,
+    ...allTalentSheetElementStatBoostKey
   ] as const
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
@@ -236,7 +236,7 @@ export default function CharacterTalentPane() {
 
 function SkillDisplayCard({
   sheetElement,
-  talentKey,
+  talentKey
 }: {
   sheetElement: UISheetElement
   talentKey: TalentSheetElementKey
@@ -264,7 +264,7 @@ function SkillDisplayCard({
           const statBoostKey = getStatBoostKey(talentKey)
           char.statBoosts = {
             ...char.statBoosts,
-            [statBoostKey]: !char.statBoosts[statBoostKey],
+            [statBoostKey]: !char.statBoosts[statBoostKey]
           }
         })
     } else if (
@@ -276,7 +276,7 @@ function SkillDisplayCard({
           const bonusAbilityKey = getBonusAbilityKey(talentKey)
           char.bonusAbilities = {
             ...char.bonusAbilities,
-            [bonusAbilityKey]: !char.bonusAbilities[bonusAbilityKey],
+            [bonusAbilityKey]: !char.bonusAbilities[bonusAbilityKey]
           }
         })
     } else if (isTalentSheetElementEidolonKey(talentKey)) {
@@ -289,7 +289,7 @@ function SkillDisplayCard({
         //     })
         //   :
         database.chars.set(characterKey, {
-          eidolon: eidolonKey === eidolon ? eidolonKey - 1 : eidolonKey,
+          eidolon: eidolonKey === eidolon ? eidolonKey - 1 : eidolonKey
         })
     }
     return undefined
@@ -310,9 +310,9 @@ function SkillDisplayCard({
         talentKey={talentKey}
         dropDownButtonProps={{
           sx: {
-            borderRadius: 0,
+            borderRadius: 0
             // color: buildTc?.character ? 'yellow' : undefined,
-          },
+          }
         }}
         setTalent={(talent) =>
           // buildTc?.character
@@ -409,7 +409,7 @@ export function EidolonDropdown({ eidolon }: { eidolon: number }) {
             //     })
             //   :
             database.chars.set(characterKey, {
-              eidolon: i,
+              eidolon: i
             })
           }
         >
@@ -425,7 +425,7 @@ export function EidolonDropdown({ eidolon }: { eidolon: number }) {
 export function TalentDropdown({
   talentKey,
   setTalent,
-  dropDownButtonProps,
+  dropDownButtonProps
 }: {
   talentKey: 'basic' | 'skill' | 'ult' | 'talent'
   setTalent: (talent: number) => void

@@ -10,7 +10,7 @@ import {
   ownBuff,
   percent,
   register,
-  teamBuff,
+  teamBuff
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar, shield } from './util'
 
@@ -28,17 +28,17 @@ const dm = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3.1
       skillParam_gen.auto[a++], // 3.2
-      skillParam_gen.auto[a++], // 4
-    ],
+      skillParam_gen.auto[a++] // 4
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
-    stamina: skillParam_gen.auto[a++][0],
+    stamina: skillParam_gen.auto[a++][0]
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
     low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++]
   },
   skill: {
     shield_hp_: skillParam_gen.skill[s++],
@@ -46,7 +46,7 @@ const dm = {
     basic_dmg: skillParam_gen.skill[s++],
     charged_dmg: skillParam_gen.skill[s++],
     pressCd: skillParam_gen.skill[s++][0],
-    holdCd: skillParam_gen.skill[s++][0],
+    holdCd: skillParam_gen.skill[s++][0]
   },
   burst: {
     skill_dmg: skillParam_gen.burst[b++],
@@ -55,28 +55,28 @@ const dm = {
     wave_dmg: skillParam_gen.burst[b++],
     num_waves: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    cost: skillParam_gen.burst[b++][0],
+    cost: skillParam_gen.burst[b++][0]
   },
   passive2: {
-    normalEle_dmg_: skillParam_gen.passive2[0][0],
+    normalEle_dmg_: skillParam_gen.passive2[0][0]
   },
   constellation1: {
-    durationInc: skillParam_gen.constellation1[0],
+    durationInc: skillParam_gen.constellation1[0]
   },
   constellation2: {
     hp_: skillParam_gen.constellation2[0],
-    duration: skillParam_gen.constellation2[1],
+    duration: skillParam_gen.constellation2[1]
   },
   constellation6: {
     dmg: skillParam_gen.constellation6[0],
-    cd: skillParam_gen.constellation6[1],
-  },
+    cd: skillParam_gen.constellation6[1]
+  }
 } as const
 
 const info = dataGenToCharInfo(data_gen)
 const {
   final,
-  char: { ascension, constellation },
+  char: { ascension, constellation }
 } = own
 const { afterBurst, c2AfterSkillHit } = allBoolConditionals(info.key)
 
@@ -136,6 +136,6 @@ export default register(
     { ele: 'hydro' }
   ),
   customDmg(`c6`, info.ele, 'burst', prod(dm.constellation6.dmg, final.hp), {
-    cond: cmpGE(own.char.constellation, 6, 'infer', ''),
+    cond: cmpGE(own.char.constellation, 6, 'infer', '')
   })
 )

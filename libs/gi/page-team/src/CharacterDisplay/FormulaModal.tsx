@@ -2,7 +2,7 @@ import {
   CardHeaderCustom,
   CardThemed,
   ModalWrapper,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
@@ -14,7 +14,7 @@ import {
   GetCalcDisplay,
   getDisplayHeader,
   getDisplaySections,
-  resolveInfo,
+  resolveInfo
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -30,7 +30,7 @@ import {
   Divider,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { MutableRefObject } from 'react'
 import {
@@ -40,7 +40,7 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 export default function FormulaModal() {
@@ -88,7 +88,7 @@ function CalculationDisplay() {
 }
 function FormulaCalc({
   sectionKey,
-  displayNs,
+  displayNs
 }: {
   displayNs: DisplaySub<CalcResult>
   sectionKey: string

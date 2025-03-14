@@ -2,14 +2,14 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  TextFieldLazy,
+  TextFieldLazy
 } from '@genshin-optimizer/common/ui'
 import { crawlObject, getUnitStr } from '@genshin-optimizer/common/util'
 import type { LoadoutDatum, TeamCharacter } from '@genshin-optimizer/gi/db'
 import {
   useDatabase,
   useOptConfig,
-  useTeamChar,
+  useTeamChar
 } from '@genshin-optimizer/gi/db-ui'
 import { KeyMap } from '@genshin-optimizer/gi/keymap'
 import AddIcon from '@mui/icons-material/Add'
@@ -31,7 +31,7 @@ import {
   IconButton,
   Stack,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -50,7 +50,7 @@ export function LoadoutEditor({
   show,
   onHide,
   teamCharId,
-  teamIds,
+  teamIds
 }: {
   show: boolean
   onHide: () => void
@@ -70,7 +70,7 @@ export function LoadoutEditor({
     customMultiTargets,
     bonusStats,
     optConfigId,
-    conditional,
+    conditional
   } = useTeamChar(teamCharId)!
   const { optimizationTarget } = useOptConfig(optConfigId)!
   const onDelete = () => {
@@ -188,7 +188,7 @@ export function LoadoutEditor({
                           sx={{
                             display: 'flex',
                             alignItems: 'center',
-                            gap: 1,
+                            gap: 1
                           }}
                         >
                           <OptimizationIcon />
@@ -309,7 +309,7 @@ export function LoadoutEditor({
 }
 
 function BonusStatsCard({
-  bonusStats,
+  bonusStats
 }: {
   bonusStats: TeamCharacter['bonusStats']
 }) {
@@ -322,7 +322,7 @@ function BonusStatsCard({
             sx={{
               display: 'flex',
               alignItems: 'center',
-              gap: 1,
+              gap: 1
             }}
           >
             <BarChartIcon />
@@ -339,16 +339,16 @@ function BonusStatsCard({
             fields: Object.entries(bonusStats).map(([key, value]) => ({
               text: KeyMap.getStr(key) ?? key,
               value: value,
-              unit: getUnitStr(key),
-            })),
-          },
+              unit: getUnitStr(key)
+            }))
+          }
         ]}
       />
     </CardThemed>
   )
 }
 function MultiTargetCard({
-  customMultiTargets,
+  customMultiTargets
 }: {
   customMultiTargets: TeamCharacter['customMultiTargets']
 }) {
@@ -361,7 +361,7 @@ function MultiTargetCard({
             sx={{
               display: 'flex',
               alignItems: 'center',
-              gap: 1,
+              gap: 1
             }}
           >
             <DashboardCustomizeIcon />
@@ -381,9 +381,9 @@ function MultiTargetCard({
                 <Tooltip title={description}>
                   <InfoIcon />
                 </Tooltip>
-              ) : undefined,
-            })),
-          },
+              ) : undefined
+            }))
+          }
         ]}
       />
     </CardThemed>

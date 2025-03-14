@@ -16,7 +16,7 @@ export const allInfusionAuraElementKeys = [
   'pyro',
   'cryo',
   'hydro',
-  'electro',
+  'electro'
 ] as const
 export type InfusionAuraElementKey = (typeof allInfusionAuraElementKeys)[number]
 

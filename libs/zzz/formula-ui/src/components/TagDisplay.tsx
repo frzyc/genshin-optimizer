@@ -25,7 +25,7 @@ const qtMap = {
   initial: 'Initial',
   combat: 'Combat',
   final: 'Final',
-  base: 'Base',
+  base: 'Base'
 }
 function TagStrDisplay({ tag }: { tag: Tag }) {
   const title = tagFieldMap.subset(tag)[0]?.title

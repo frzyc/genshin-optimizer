@@ -17,7 +17,7 @@ import {
   List,
   ListItem,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useCallback } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -28,7 +28,7 @@ export function RemoveLoadout({
   teamCharId,
   onDelete,
   teamIds,
-  conditionalCount,
+  conditionalCount
 }: {
   show: boolean
   onHide: () => void
@@ -45,7 +45,7 @@ export function RemoveLoadout({
     buildIds,
     buildTcIds,
     customMultiTargets,
-    bonusStats,
+    bonusStats
   } = database.teamChars.get(teamCharId)!
 
   const onDeleteLoadout = useCallback(() => {
@@ -96,7 +96,7 @@ export function RemoveLoadout({
                             sx={{
                               display: 'flex',
                               alignItems: 'center',
-                              gap: 1,
+                              gap: 1
                             }}
                           >
                             <CheckroomIcon />
@@ -126,7 +126,7 @@ export function RemoveLoadout({
                             sx={{
                               display: 'flex',
                               alignItems: 'center',
-                              gap: 1,
+                              gap: 1
                             }}
                           >
                             <CheckroomIcon />
@@ -156,7 +156,7 @@ export function RemoveLoadout({
                             sx={{
                               display: 'flex',
                               alignItems: 'center',
-                              gap: 1,
+                              gap: 1
                             }}
                           >
                             <DashboardCustomizeIcon />
@@ -205,7 +205,7 @@ export function RemoveLoadout({
                             sx={{
                               display: 'flex',
                               alignItems: 'center',
-                              gap: 1,
+                              gap: 1
                             }}
                           >
                             <GroupsIcon />

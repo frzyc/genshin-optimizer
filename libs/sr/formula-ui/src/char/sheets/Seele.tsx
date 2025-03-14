@@ -11,7 +11,7 @@ import {
   bonusAbilitySheet,
   bonusStatsSheets,
   eidolonSheet,
-  talentSheet,
+  talentSheet
 } from '../sheetUtil'
 
 const key: CharacterKey = 'Seele'
@@ -40,10 +40,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: chg('abilities.basic.0.name'),
-          fieldRef: formula.basicDmg_0.tag,
-        },
-      ],
-    },
+          fieldRef: formula.basicDmg_0.tag
+        }
+      ]
+    }
   ]),
   skill: talentSheet(key, 'skill', [
     {
@@ -51,9 +51,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: chg('abilities.skill.0.name'),
-          fieldRef: formula.skillDmg_0.tag,
-        },
-      ],
+          fieldRef: formula.skillDmg_0.tag
+        }
+      ]
     },
     {
       type: 'conditional',
@@ -61,22 +61,22 @@ const sheet: UISheet<TalentSheetElementKey> = {
         header: {
           icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
           text: 'Skill Used',
-          additional: <SqBadge>Skill</SqBadge>,
+          additional: <SqBadge>Skill</SqBadge>
         },
         metadata: cond.skillStacks,
         label: 'Skill SPD Stacks',
         fields: [
           {
             title: <StatDisplay statKey="spd_" />,
-            fieldRef: buff.skill_spd_.tag,
+            fieldRef: buff.skill_spd_.tag
           },
           {
             title: 'Duration',
-            fieldValue: dm.skill.duration,
-          },
-        ],
-      },
-    },
+            fieldValue: dm.skill.duration
+          }
+        ]
+      }
+    }
   ]),
   ult: talentSheet(key, 'ult', [
     {
@@ -84,10 +84,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: chg('abilities.ult.0.name'),
-          fieldRef: formula.ultDmg_0.tag,
-        },
-      ],
-    },
+          fieldRef: formula.ultDmg_0.tag
+        }
+      ]
+    }
   ]),
   talent: talentSheet(key, 'talent', [
     {
@@ -96,18 +96,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
         header: {
           icon: <ImgIcon src={characterAsset(key, 'talent_0')} />,
           text: 'Amplification State',
-          additional: <SqBadge>Talent</SqBadge>,
+          additional: <SqBadge>Talent</SqBadge>
         },
         metadata: cond.amplification,
         label: 'Enemy Defeated',
         fields: [
           {
             title: <StatDisplay statKey="dmg_" />,
-            fieldRef: buff.amplification_dmg_.tag,
-          },
-        ],
-      },
-    },
+            fieldRef: buff.amplification_dmg_.tag
+          }
+        ]
+      }
+    }
   ]),
   technique: talentSheet(key, 'technique'),
   bonusAbility1: bonusAbilitySheet(key, 'bonusAbility1'),
@@ -117,7 +117,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
       conditional: {
         header: {
           icon: <ImgIcon src={characterAsset(key, 'bonusAbility2')} />,
-          text: 'Lacerate',
+          text: 'Lacerate'
         },
         metadata: cond.amplification,
         label: 'Enemy Defeated',
@@ -125,11 +125,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
           {
             // TODO: Add Quantum type to resPen_
             title: <StatDisplay statKey="resPen_" />,
-            fieldRef: buff.ba2_resPen_.tag,
-          },
-        ],
-      },
-    },
+            fieldRef: buff.ba2_resPen_.tag
+          }
+        ]
+      }
+    }
   ]),
   bonusAbility3: bonusAbilitySheet(key, 'bonusAbility3', []),
 
@@ -141,18 +141,18 @@ const sheet: UISheet<TalentSheetElementKey> = {
         header: {
           icon: <ImgIcon src={characterAsset(key, 'eidolon1')} />,
           text: 'Enemy HP <= 80%',
-          additional: <SqBadge>Eidolon 1</SqBadge>,
+          additional: <SqBadge>Eidolon 1</SqBadge>
         },
         metadata: cond.enemyLowerThan80_,
         label: 'Enemy HP <= 80%',
         fields: [
           {
             title: <StatDisplay statKey="crit_" />,
-            fieldRef: buff.e1_crit_.tag,
-          },
-        ],
-      },
-    },
+            fieldRef: buff.e1_crit_.tag
+          }
+        ]
+      }
+    }
   ]),
   eidolon2: eidolonSheet(key, 'eidolon2', []),
   eidolon3: eidolonSheet(key, 'eidolon3', [
@@ -196,10 +196,10 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: chg('ranks.6.name'),
-          fieldRef: formula.e6Dmg_0.tag,
-        },
-      ],
-    },
-  ]),
+          fieldRef: formula.e6Dmg_0.tag
+        }
+      ]
+    }
+  ])
 }
 export default sheet

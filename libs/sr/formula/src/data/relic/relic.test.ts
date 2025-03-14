@@ -1,12 +1,12 @@
 import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
-  setDebugMode,
+  setDebugMode
 } from '@genshin-optimizer/pando/engine'
 import type {
   RelicMainStatKey,
   RelicSetKey,
-  RelicSubStatKey,
+  RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 import { data, keys, values } from '..'
 import { conditionals } from '../..'
@@ -15,7 +15,7 @@ import {
   charTagMapNodeEntries,
   relicTagMapNodeEntries,
   teamData,
-  withMember,
+  withMember
 } from '../../util'
 import type { Read } from '../util'
 import {
@@ -25,7 +25,7 @@ import {
   own,
   ownBuff,
   ownTag,
-  type TagMapNodeEntries,
+  type TagMapNodeEntries
 } from '../util'
 
 setDebugMode(true)
@@ -53,7 +53,7 @@ function testCharacterData(
           servantSkill: 0,
           servantTalent: 0,
           bonusAbilities: {},
-          statBoosts: {},
+          statBoosts: {}
         },
         1
       ),
@@ -62,7 +62,7 @@ function testCharacterData(
     ),
     own.common.critMode.add('avg'),
     enemy.common.res.quantum.add(0.1),
-    enemy.common.isBroken.add(0),
+    enemy.common.isBroken.add(0)
   ]
   return data
 }
@@ -89,7 +89,7 @@ function testTeamData(
           servantSkill: 0,
           servantTalent: 0,
           bonusAbilities: {},
-          statBoosts: {},
+          statBoosts: {}
         },
         1
       ),
@@ -111,7 +111,7 @@ function testTeamData(
           servantSkill: 0,
           servantTalent: 0,
           bonusAbilities: {},
-          statBoosts: {},
+          statBoosts: {}
         },
         2
       ),
@@ -119,7 +119,7 @@ function testTeamData(
     ),
     own.common.critMode.add('avg'),
     enemy.common.res.quantum.add(0.1),
-    enemy.common.isBroken.add(0),
+    enemy.common.isBroken.add(0)
   ]
   return data
 }
@@ -156,7 +156,7 @@ describe('Relic sheets test', () => {
 
   it('BelobogOfTheArchitects', () => {
     const data = testCharacterData('BelobogOfTheArchitects', undefined, [
-      ownBuff.premod.eff_.add(0.5),
+      ownBuff.premod.eff_.add(0.5)
     ])
     const calc = new Calculator(
       keys,
@@ -171,7 +171,7 @@ describe('Relic sheets test', () => {
   it('BrokenKeel', () => {
     const data = testCharacterData('BrokenKeel', undefined, [
       // Add 0.2 to check if the 2 set bonus is applied
-      ownBuff.premod.eff_res_.add(0.2),
+      ownBuff.premod.eff_res_.add(0.2)
     ])
     const calc = new Calculator(
       keys,
@@ -187,7 +187,7 @@ describe('Relic sheets test', () => {
   it('CelestialDifferentiator', () => {
     const data = testCharacterData('CelestialDifferentiator', undefined, [
       // Add 0.54 to check if the 2 set bonus is applied
-      ownBuff.premod.crit_dmg_.add(0.54),
+      ownBuff.premod.crit_dmg_.add(0.54)
     ])
     data.push(
       cond(
@@ -281,7 +281,7 @@ describe('Relic sheets test', () => {
 
   it('FirmamentFrontlineGlamoth', () => {
     const data = testCharacterData('FirmamentFrontlineGlamoth', undefined, [
-      ownBuff.premod.spd.add(45),
+      ownBuff.premod.spd.add(45)
     ])
     const calc = new Calculator(
       keys,
@@ -295,7 +295,7 @@ describe('Relic sheets test', () => {
 
   it('FleetOfTheAgeless', () => {
     const data = testCharacterData('FleetOfTheAgeless', undefined, [
-      ownBuff.premod.spd.add(5),
+      ownBuff.premod.spd.add(5)
     ])
     const calc = new Calculator(
       keys,
@@ -370,7 +370,7 @@ describe('Relic sheets test', () => {
 
   it('InertSalsotto', () => {
     const data = testCharacterData('InertSalsotto', undefined, [
-      ownBuff.premod.crit_.add(0.37),
+      ownBuff.premod.crit_.add(0.37)
     ])
     const calc = new Calculator(
       keys,
@@ -386,7 +386,7 @@ describe('Relic sheets test', () => {
 
   it('IronCavalryAgainstTheScourge', () => {
     const data = testCharacterData('IronCavalryAgainstTheScourge', undefined, [
-      ownBuff.premod.brEffect_.add(2.34),
+      ownBuff.premod.brEffect_.add(2.34)
     ])
     const calc = new Calculator(
       keys,
@@ -482,7 +482,7 @@ describe('Relic sheets test', () => {
 
   it('PanCosmicCommercialEnterprise', () => {
     const data = testCharacterData('PanCosmicCommercialEnterprise', undefined, [
-      ownBuff.premod.eff_.add(0.5),
+      ownBuff.premod.eff_.add(0.5)
     ])
     const calc = new Calculator(
       keys,
@@ -583,7 +583,7 @@ describe('Relic sheets test', () => {
 
   it('RutilantArena', () => {
     const data = testCharacterData('RutilantArena', undefined, [
-      ownBuff.premod.crit_.add(0.57),
+      ownBuff.premod.crit_.add(0.57)
     ])
     const calc = new Calculator(
       keys,
@@ -622,7 +622,7 @@ describe('Relic sheets test', () => {
 
   it('SpaceSealingStation', () => {
     const data = testCharacterData('SpaceSealingStation', undefined, [
-      ownBuff.premod.spd.add(5),
+      ownBuff.premod.spd.add(5)
     ])
     const calc = new Calculator(
       keys,
@@ -648,7 +648,7 @@ describe('Relic sheets test', () => {
 
   it('TaliaKingdomOfBanditry', () => {
     const data = testCharacterData('TaliaKingdomOfBanditry', undefined, [
-      ownBuff.premod.spd.add(30),
+      ownBuff.premod.spd.add(30)
     ])
     const calc = new Calculator(
       keys,

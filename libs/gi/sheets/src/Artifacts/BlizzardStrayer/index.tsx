@@ -5,7 +5,7 @@ import {
   input,
   lookup,
   naught,
-  percent,
+  percent
 } from '@genshin-optimizer/gi/wr'
 import { cond, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -27,12 +27,12 @@ const set4 = greaterEq(
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    cryo_dmg_: set2,
+    cryo_dmg_: set2
   },
   total: {
     // TODO: this crit rate is on-hit. Might put it in a `hit.critRate_` namespace later.
-    critRate_: set4,
-  },
+    critRate_: set4
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -47,15 +47,15 @@ const sheet: SetEffectSheet = {
         states: {
           cryo: {
             name: trm('condCryo'),
-            fields: [{ node: set4 }],
+            fields: [{ node: set4 }]
           },
           frozen: {
             name: trm('condFrozen'),
-            fields: [{ node: set4 }],
-          },
-        },
-      },
-    ],
-  },
+            fields: [{ node: set4 }]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

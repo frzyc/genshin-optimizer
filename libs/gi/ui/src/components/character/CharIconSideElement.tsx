@@ -17,7 +17,7 @@ const CharIconSideWrapper = styled(NextImage ? (NextImage as any) : 'img', {
   name: 'ImgIcon',
   slot: 'Root',
   shouldForwardProp: (pn) =>
-    !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin'),
+    !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin')
 })<ImgIconProps>(({ size = 3, sideMargin = false }) => ({
   display: 'inline-block',
   width: `${size}em`,
@@ -26,7 +26,7 @@ const CharIconSideWrapper = styled(NextImage ? (NextImage as any) : 'img', {
   marginBottom: `${0.15 * (1 - size)}em`,
   marginLeft: sideMargin ? undefined : `${0.3 * (1 - size)}em`,
   marginRight: sideMargin ? undefined : `${0.3 * (1 - size)}em`,
-  verticalAlign: 'text-bottom',
+  verticalAlign: 'text-bottom'
 }))
 
 /**
@@ -38,7 +38,7 @@ const SillyCharIconSideWrapper = styled(
     name: 'ImgIcon',
     slot: 'Root',
     shouldForwardProp: (pn) =>
-      !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin'),
+      !['size', 'sideMargin'].includes(pn as 'size' | 'sideMargin')
   }
 )<ImgIconProps>(({ size = 2, sideMargin = false }) => ({
   display: 'inline-block',
@@ -48,12 +48,12 @@ const SillyCharIconSideWrapper = styled(
   marginBottom: `${0.5 * (1 - size)}em`,
   marginLeft: sideMargin ? undefined : `${0.5 * (1 - size)}em`,
   marginRight: sideMargin ? undefined : `${0.5 * (1 - size)}em`,
-  verticalAlign: 'text-bottom',
+  verticalAlign: 'text-bottom'
 }))
 
 export function CharIconSide({
   characterKey,
-  sideMargin = false,
+  sideMargin = false
 }: {
   characterKey: CharacterKey
   sideMargin?: boolean

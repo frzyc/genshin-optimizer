@@ -3,7 +3,7 @@ import { getUnitStr, isPercentStat } from '@genshin-optimizer/common/util'
 import type { LocationKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
-  unCondKeys,
+  unCondKeys
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
@@ -24,19 +24,19 @@ const statKeys: StatKey[] = [
   'anomMas',
   'anomProf',
   'pen_',
-  'pen',
+  'pen'
 ] as const
 const enemyKeys: StatKey[] = [
   'enemyDef',
   'enemyDefRed_',
   'enemyRes_',
   'enemyResRed_',
-  'enemyResIgn_',
+  'enemyResIgn_'
 ] as const
 export default function BaseStatCard({
   locationKey,
   baseStats,
-  setBaseStats,
+  setBaseStats
 }: {
   locationKey: LocationKey
   baseStats: Stats
@@ -51,14 +51,14 @@ export default function BaseStatCard({
       onChange={(v) =>
         setBaseStats({
           ...baseStats,
-          [key]: v,
+          [key]: v
         })
       }
       float={isPercentStat(key)}
       inputProps={{ sx: { textAlign: 'right', minWidth: '5em' } }}
       InputProps={{
         startAdornment: <StatDisplay statKey={key as StatKey} />,
-        endAdornment: getUnitStr(key),
+        endAdornment: getUnitStr(key)
       }}
     />
   )

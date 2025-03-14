@@ -1,7 +1,7 @@
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import {
   GeneralAutocomplete,
-  NumberInputLazy,
+  NumberInputLazy
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
@@ -19,7 +19,7 @@ import {
   ListSubheader,
   Popper,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -31,7 +31,7 @@ export function StatEditorList({
   setStatFilters,
   disabled = false,
   wrapperFunc = (ele) => ele,
-  label,
+  label
 }: {
   statKeys: InputPremodKey[]
   statFilters: Partial<Record<InputPremodKey, number>>
@@ -54,8 +54,8 @@ export function StatEditorList({
               ? `${tk(statKey as MainStatKey | SubstatKey)}${statPercent(
                   statKey as MainStatKey | SubstatKey
                 )}`
-              : KeyMap.getStr(statKey) ?? 'ERROR',
-            color: KeyMap.getVariant(statKey),
+              : (KeyMap.getStr(statKey) ?? 'ERROR'),
+            color: KeyMap.getVariant(statKey)
           })
         )
         .sort(
@@ -78,7 +78,7 @@ export function StatEditorList({
           Object.fromEntries(
             Object.entries(statFilters).map(([k, v]) => [
               k === oldk ? newk : k,
-              v,
+              v
             ])
           )
         )
@@ -154,7 +154,7 @@ function StatFilterItem({
   setValue,
   disabled = false,
   getOptionDisabled,
-  label,
+  label
 }: {
   statKey: InputPremodKey | null
   statKeyOptions: StatOption[]
@@ -223,9 +223,9 @@ function StatFilterItem({
               gridTemplateColumns: isOneCol
                 ? '100%'
                 : isThreeCol
-                ? '33% 33% 33%'
-                : '50% 50%',
-            },
+                  ? '33% 33% 33%'
+                  : '50% 50%'
+            }
           }}
           // This needs to be done with `style` prop, not `sx` prop, or it doesn't work
           PopperComponent={(props) => (
@@ -233,7 +233,7 @@ function StatFilterItem({
           )}
           sx={{ flexGrow: 1, flexBasis: 150 }}
           textFieldProps={{
-            sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } },
+            sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } }
           }}
           label={label}
         />
@@ -244,7 +244,7 @@ function StatFilterItem({
           float={isFloat}
           sx={{
             flexBasis: 30,
-            flexGrow: 1,
+            flexGrow: 1
           }}
           disabled={disabled}
           onChange={onValueChange}
@@ -254,7 +254,7 @@ function StatFilterItem({
           InputProps={{
             sx: {
               borderTopLeftRadius: 0,
-              borderBottomLeftRadius: 0,
+              borderBottomLeftRadius: 0
             },
             endAdornment: (
               <InputAdornment position="end" sx={{ ml: 0 }}>
@@ -267,7 +267,7 @@ function StatFilterItem({
                   <DeleteForeverIcon fontSize="small" />
                 </IconButton>
               </InputAdornment>
-            ),
+            )
           }}
         />
       )}
@@ -290,7 +290,7 @@ const allGroupKeys = [
   'talent_level_boost',
   'base_stat_mod',
   'stamina_buffs',
-  'misc',
+  'misc'
 ] as const
 type GroupKey = (typeof allGroupKeys)[number]
 
@@ -425,5 +425,5 @@ const inputPremodKeyToGroupMap: Record<InputPremodKey, GroupKey> = {
   healInc: 'misc',
   base_atk: 'base_stat_mod',
   base_hp: 'base_stat_mod',
-  base_def: 'base_stat_mod',
+  base_def: 'base_stat_mod'
 }

@@ -1,26 +1,26 @@
 import {
   useBoolState,
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
   ShowingAndSortOptionSelect,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import {
   allArtifactSlotKeys,
-  type ArtifactSlotKey,
+  type ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import {
   artifactFilterConfigs,
-  initialArtifactFilterOption,
+  initialArtifactFilterOption
 } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
@@ -34,7 +34,7 @@ import {
   Grid,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   Suspense,
@@ -42,7 +42,7 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CompareBuildWrapper } from '../build/CompareBuildWrapper'
@@ -56,7 +56,7 @@ export function ArtifactSwapModal({
   onChangeId,
   slotKey,
   show,
-  onClose,
+  onClose
 }: {
   artId: string
   onChangeId: (id: string | null) => void
@@ -71,7 +71,7 @@ export function ArtifactSwapModal({
     (state: ArtifactFilterOption, action: Partial<ArtifactFilterOption>) => ({
       ...state,
       ...action,
-      slotKeys: [slotKey],
+      slotKeys: [slotKey]
     }),
     [slotKey]
   )
@@ -83,7 +83,7 @@ export function ArtifactSwapModal({
     (action: any) => void
   ] = useReducer(filterOptionReducer, {
     ...initialArtifactFilterOption(),
-    slotKeys: [slotKey],
+    slotKeys: [slotKey]
   })
 
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -130,7 +130,7 @@ export function ArtifactSwapModal({
     numShowing: artifactIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'artifact',
+    namespace: 'artifact'
   }
   const [swapArtId, setSwapArtId] = useState<string | ArtifactSlotKey>('')
   const clickHandler = useCallback(() => {
@@ -163,7 +163,7 @@ export function ArtifactSwapModal({
           sx={{
             py: 1,
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Typography variant="h6">
@@ -233,7 +233,7 @@ export function ArtifactSwapModal({
                           height: '100%',
                           display: 'flex',
                           justifyContent: 'center',
-                          alignItems: 'center',
+                          alignItems: 'center'
                         }}
                         onClick={() => setSwapArtId(slotKey)}
                       >
@@ -241,7 +241,7 @@ export function ArtifactSwapModal({
                           sx={{
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'center',
+                            alignItems: 'center'
                           }}
                         >
                           <RemoveCircleIcon sx={{ fontSize: '10em' }} />
@@ -261,9 +261,9 @@ export function ArtifactSwapModal({
                     sx={(theme) => ({
                       ...(artId === id && {
                         '> .MuiCard-root': {
-                          outline: `solid ${theme.palette.warning.main}`,
-                        },
-                      }),
+                          outline: `solid ${theme.palette.warning.main}`
+                        }
+                      })
                     })}
                   >
                     <ArtifactCard

@@ -8,7 +8,7 @@ import {
   CharacterCompactTalent,
   CharacterConstellationName,
   CharacterCoverArea,
-  DataContext,
+  DataContext
 } from '@genshin-optimizer/gi/ui'
 import { input } from '@genshin-optimizer/gi/wr'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
@@ -21,7 +21,7 @@ import { CharProfileCharEditor } from './CharProfileCharEditor'
 export default function CharacterProfileCard() {
   const { t } = useTranslation('common')
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
 
@@ -58,7 +58,7 @@ export default function CharacterProfileCard() {
 
 export function CharacterCompactConstellation() {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const constellation = data.get(input.constellation).value
@@ -76,7 +76,7 @@ export function CharacterCompactConstellation() {
               )?.img
             }
             sx={{
-              ...(constellation >= i ? {} : { filter: 'brightness(50%)' }),
+              ...(constellation >= i ? {} : { filter: 'brightness(50%)' })
             }}
             width="100%"
             height="auto"

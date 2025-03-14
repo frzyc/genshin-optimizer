@@ -7,11 +7,11 @@ import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterKeys,
-  allWeaponTypeKeys,
+  allWeaponTypeKeys
 } from '@genshin-optimizer/gi/consts'
 import type {
   ArchiveCharacterOption,
-  ICachedCharacter,
+  ICachedCharacter
 } from '@genshin-optimizer/gi/db'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { i18n } from '@genshin-optimizer/gi/i18n'
@@ -20,7 +20,7 @@ import { ElementIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   CharacterName,
   SillyContext,
-  iconAsset,
+  iconAsset
 } from '@genshin-optimizer/gi/ui'
 import SearchIcon from '@mui/icons-material/Search'
 import StarRoundedIcon from '@mui/icons-material/StarRounded'
@@ -38,7 +38,7 @@ import {
   TableSortLabel,
   TextField,
   ToggleButton,
-  ToggleButtonGroup,
+  ToggleButtonGroup
 } from '@mui/material'
 import {
   Suspense,
@@ -47,7 +47,7 @@ import {
   useContext,
   useDeferredValue,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { CharacterView } from './CharacterView'
 const rarties = [5, 4] as const
@@ -99,7 +99,7 @@ export default function TabCharacter() {
       character.sortOrderBy === property && character.sortOrder === 'asc'
     characterOptionDispatch({
       sortOrder: isAsc ? 'desc' : 'asc',
-      sortOrderBy: property,
+      sortOrderBy: property
     })
   }
 
@@ -112,7 +112,7 @@ export default function TabCharacter() {
             : i18n.t(`charNames_gen:${cKey}`),
         rarity: (cKey: CharacterKey) => getCharStat(cKey).rarity,
         element: (cKey: CharacterKey) => getCharEle(cKey),
-        type: (cKey: CharacterKey) => getCharStat(cKey).weaponType,
+        type: (cKey: CharacterKey) => getCharStat(cKey).weaponType
       } as SortConfigs<SortKey, CharacterKey>),
     [character.sortOrder, character.sortOrderBy, silly]
   )
@@ -124,7 +124,7 @@ export default function TabCharacter() {
     { key: 'name', label: 'Name', width: 40 },
     { key: 'rarity', label: 'Rarity', width: 20 },
     { key: 'element', label: 'Element', width: 20 },
-    { key: 'type', label: 'Type', width: 20 },
+    { key: 'type', label: 'Type', width: 20 }
   ]
   return (
     <Box>
@@ -136,7 +136,7 @@ export default function TabCharacter() {
               value={r}
               onClick={() =>
                 characterOptionDispatch({
-                  rarity: handleRarity(character.rarity, r),
+                  rarity: handleRarity(character.rarity, r)
                 })
               }
             >
@@ -153,7 +153,7 @@ export default function TabCharacter() {
               value={wt}
               onClick={() =>
                 characterOptionDispatch({
-                  weaponType: handleType(character.weaponType, wt),
+                  weaponType: handleType(character.weaponType, wt)
                 })
               }
             >
@@ -171,7 +171,7 @@ export default function TabCharacter() {
               <InputAdornment position="start">
                 <SearchIcon />
               </InputAdornment>
-            ),
+            )
           }}
         />
       </CardContent>
@@ -224,7 +224,7 @@ export default function TabCharacter() {
   )
 }
 const CharacterRow = memo(function CharacterRow({
-  characterKey: cKey,
+  characterKey: cKey
 }: {
   characterKey: CharacterKey
 }) {
@@ -243,9 +243,9 @@ const CharacterRow = memo(function CharacterRow({
         talent: {
           auto: 10,
           skill: 10,
-          burst: 10,
-        },
-      } as ICachedCharacter),
+          burst: 10
+        }
+      }) as ICachedCharacter,
     [cKey]
   )
   return (

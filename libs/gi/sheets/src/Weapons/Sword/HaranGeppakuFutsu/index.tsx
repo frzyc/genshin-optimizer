@@ -6,7 +6,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -23,7 +23,7 @@ const [condPath, condNode] = cond(key, 'HonedFlow')
 const passive_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
-    subscript(input.weapon.refinement, passiveRefine, { path: `${ele}_dmg_` }),
+    subscript(input.weapon.refinement, passiveRefine, { path: `${ele}_dmg_` })
   ])
 )
 const normal_dmg_ = lookup(
@@ -37,8 +37,8 @@ const normal_dmg_ = lookup(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     ...passive_dmg_,
-    normal_dmg_,
-  },
+    normal_dmg_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -48,8 +48,8 @@ const sheet: IWeaponSheet = {
         // Passive
         ...allElementKeys.map((ele) => {
           return { node: passive_dmg_[`${ele}_dmg_`] }
-        }),
-      ],
+        })
+      ]
     },
     {
       value: condNode,
@@ -58,9 +58,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('conditional')),
       states: objKeyMap(range(1, 2), (i) => ({
         name: st('stack', { count: i }),
-        fields: [{ node: normal_dmg_ }],
-      })),
-    },
-  ],
+        fields: [{ node: normal_dmg_ }]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

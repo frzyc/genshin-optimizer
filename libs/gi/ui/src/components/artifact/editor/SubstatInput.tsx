@@ -3,12 +3,12 @@ import {
   DropdownButton,
   NumberInputLazy,
   SqBadge,
-  TextButton,
+  TextButton
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr } from '@genshin-optimizer/common/util'
 import {
   allSubstatKeys,
-  artSubstatRollData,
+  artSubstatRollData
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
@@ -17,7 +17,7 @@ import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
   getSubstatSummedRolls,
-  getSubstatValuesPercent,
+  getSubstatValuesPercent
 } from '@genshin-optimizer/gi/util'
 import {
   Box,
@@ -28,7 +28,7 @@ import {
   ListItemText,
   MenuItem,
   Slider,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -38,7 +38,7 @@ import type { RollColorKey } from '../util'
 export function SubstatInput({
   index,
   artifact,
-  setSubstat,
+  setSubstat
 }: {
   index: number
   artifact: ICachedArtifact | undefined
@@ -50,7 +50,7 @@ export function SubstatInput({
     key = '',
     value = 0,
     rolls = [],
-    efficiency = 0,
+    efficiency = 0
   } = artifact?.substats[index] ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
@@ -83,7 +83,7 @@ export function SubstatInput({
       key
         ? [
             { value: 0 },
-            ...getSubstatSummedRolls(rarity, key).map((v) => ({ value: v })),
+            ...getSubstatSummedRolls(rarity, key).map((v) => ({ value: v }))
           ]
         : [{ value: 0 }],
     [key, rarity]
@@ -138,8 +138,8 @@ export function SubstatInput({
               padding: 0,
               div: {
                 width: '100%',
-                height: '100%',
-              },
+                height: '100%'
+              }
             }}
             float={unit === '%'}
             placeholder={t('editor.substat.selectSub')}
@@ -148,7 +148,7 @@ export function SubstatInput({
             disabled={!key}
             error={!!error}
             inputProps={{
-              sx: { textAlign: 'right' },
+              sx: { textAlign: 'right' }
             }}
           />
           {!!rollData.length && (
@@ -249,7 +249,7 @@ function SliderWrapper({
   value,
   setValue,
   marks,
-  disabled = false,
+  disabled = false
 }: {
   value: number
   setValue: (v: number) => void

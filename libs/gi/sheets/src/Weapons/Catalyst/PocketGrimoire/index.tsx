@@ -7,6 +7,6 @@ const key: WeaponKey = 'PocketGrimoire'
 const data = dataObjForWeaponSheet(key)
 
 const sheet: IWeaponSheet = {
-  document: [],
+  document: []
 }
 export default new WeaponSheet(sheet, data)

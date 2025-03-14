@@ -27,7 +27,7 @@ export const allStatDMKeys = [
   'QuantumAddedRatio',
   'ImaginaryAddedRatio',
   'SPRatioBase',
-  'AllDamageTypeAddedRatio',
+  'AllDamageTypeAddedRatio'
 ] as const
 export type StatDMKey = (typeof allStatDMKeys)[number]
 
@@ -59,5 +59,5 @@ export const statKeyMap: Record<StatDMKey, StatKey> = {
   StatusResistanceBase: 'eff_res_',
   BreakDamageAddedRatioBase: 'brEffect_',
 
-  SPRatioBase: 'enerRegen_',
+  SPRatioBase: 'enerRegen_'
 } as const

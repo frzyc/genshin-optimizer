@@ -12,7 +12,7 @@ import {
   Grid,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useState } from 'react'
@@ -20,7 +20,7 @@ export function initialInfoShownState() {
   return {
     artifactPage: true,
     buildPage: true,
-    characterPage: true,
+    characterPage: true
   }
 }
 type StateInfoShown = ReturnType<typeof initialInfoShownState>
@@ -30,7 +30,7 @@ export function InfoComponent({
   pageKey,
   text = '',
   modalTitle = '',
-  children,
+  children
 }: {
   pageKey: InfoShownPageKey
   text: ReactNode

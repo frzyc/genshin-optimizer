@@ -16,7 +16,7 @@ export type LightConeEditorProps = {
 
 export function LightConeEditor({
   lightConeIdToEdit = '',
-  cancelEdit,
+  cancelEdit
 }: LightConeEditorProps) {
   const { t } = useTranslation(['lightCone', 'common'])
   const { database } = useDatabaseContext()
@@ -33,7 +33,7 @@ export function LightConeEditor({
       setLightConeState({
         level: 1,
         ascension: 0,
-        superimpose: 1,
+        superimpose: 1
       })
   }, [lightConeIdToEdit])
 

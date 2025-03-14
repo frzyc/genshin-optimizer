@@ -3,20 +3,20 @@ import {
   BootstrapTooltip,
   CardThemed,
   SolidToggleButtonGroup,
-  theme,
+  theme
 } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
 import {
   allLocationKeys,
   allSpecialityKeys,
-  allWengineRarityKeys,
+  allWengineRarityKeys
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import {
   LocationFilterMultiAutocomplete,
   WengineRarityToggle,
-  WengineToggle,
+  WengineToggle
 } from '@genshin-optimizer/zzz/ui'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import LockIcon from '@mui/icons-material/Lock'
@@ -32,7 +32,7 @@ import {
   Grid,
   Stack,
   ToggleButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -44,7 +44,7 @@ const lockedHandler = handleMultiSelect([...lockedValues])
 export default function WengineFilter({
   numShowing,
   total,
-  wengineIds,
+  wengineIds
 }: {
   numShowing: number
   total: number
@@ -62,14 +62,14 @@ export default function WengineFilter({
     equippedTotal,
     locationTotal,
     wengineTotals,
-    wengineRarityTotals,
+    wengineRarityTotals
   } = useMemo(() => {
     const catKeys = {
       lockedTotal: ['locked', 'unlocked'],
       equippedTotal: ['equipped', 'unequipped'],
       locationTotal: [...allLocationKeys, ''],
       wengineTotals: [...allSpecialityKeys],
-      wengineRarityTotals: [...allWengineRarityKeys],
+      wengineRarityTotals: [...allWengineRarityKeys]
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.wengines.entries.forEach(([id, wengine]) => {
@@ -171,7 +171,7 @@ export default function WengineFilter({
                         sx={{ display: 'flex', gap: 1 }}
                         onClick={() =>
                           database.displayWengine.set({
-                            locked: lockedHandler(locked, v),
+                            locked: lockedHandler(locked, v)
                           })
                         }
                       >
@@ -189,7 +189,7 @@ export default function WengineFilter({
                     color={showInventory ? 'success' : 'secondary'}
                     onClick={() =>
                       database.displayWengine.set({
-                        showInventory: !showInventory,
+                        showInventory: !showInventory
                       })
                     }
                   >
@@ -205,7 +205,7 @@ export default function WengineFilter({
                     color={showEquipped ? 'success' : 'secondary'}
                     onClick={() =>
                       database.displayWengine.set({
-                        showEquipped: !showEquipped,
+                        showEquipped: !showEquipped
                       })
                     }
                   >

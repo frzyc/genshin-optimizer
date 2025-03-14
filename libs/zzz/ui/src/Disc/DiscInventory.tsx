@@ -1,12 +1,12 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import {
   useDatabaseContext,
-  useDisplayDisc,
+  useDisplayDisc
 } from '@genshin-optimizer/zzz/db-ui'
 import { discFilterConfigs } from '@genshin-optimizer/zzz/util'
 import AddIcon from '@mui/icons-material/Add'
@@ -16,7 +16,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useDeferredValue, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -54,13 +54,13 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
     return {
       discIds: allDiscids,
       totalDiscsNum: allDiscs.length,
-      ...dbDirtyDeferred,
+      ...dbDirtyDeferred
     } //use dbDirty to shoo away warnings!
   }, [
     database.discs.values,
     dbDirtyDeferred,
     deferredDiscDisplayState,
-    filterConfigs,
+    filterConfigs
   ])
 
   const brPt = useMediaQueryUp()
@@ -79,7 +79,7 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
   )
   const showingTextProps = {
     numShowing: discsIdsToShow.length,
-    totalShowing: totalShowing,
+    totalShowing: totalShowing
   }
 
   return (

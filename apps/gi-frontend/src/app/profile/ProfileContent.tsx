@@ -3,7 +3,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
-  TextFieldLazy,
+  TextFieldLazy
 } from '@genshin-optimizer/common/ui'
 import type { Unpromise } from '@genshin-optimizer/common/util'
 import {
@@ -13,7 +13,7 @@ import {
   CardContent,
   Container,
   Divider,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { useCallback, useContext, useEffect, useState } from 'react'
@@ -31,7 +31,7 @@ export default function ProfileContent() {
       const { error } = await supabase.from('profiles').upsert({
         id: user?.id as string,
         username,
-        updated_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
       })
       if (error) throw error
       alert('Profile updated!')
@@ -129,7 +129,7 @@ function Accounts() {
         const { error } = await supabase.from('accounts').upsert({
           name,
           uid,
-          profile: profile?.id,
+          profile: profile?.id
         })
         if (error) throw error
         alert('Profile updated!')
@@ -148,7 +148,7 @@ function Accounts() {
         const { error } = await supabase.from('profiles').upsert({
           id: profile?.id as string,
           active_account: accountId,
-          updated_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
         })
         if (error) throw error
         alert('Profile updated!')
@@ -180,7 +180,7 @@ function Accounts() {
 function AccountModal({
   show,
   onHide,
-  onUpSert,
+  onUpSert
 }: {
   show: boolean
   onHide: () => void
@@ -199,7 +199,7 @@ function AccountModal({
               onUpSert({
                 name: name,
                 uid: uid ? uid : null,
-                id: null,
+                id: null
               })
             }
           >
@@ -213,7 +213,7 @@ function AccountModal({
 function Account({
   account,
   active,
-  onClick,
+  onClick
 }: {
   account: TAccount
   active?: boolean
@@ -223,7 +223,7 @@ function Account({
     <CardThemed
       bgt="light"
       sx={{
-        border: active ? '2px solid green' : null,
+        border: active ? '2px solid green' : null
       }}
     >
       <CardActionArea onClick={onClick}>

@@ -2,7 +2,7 @@ import type {
   Sheet,
   Tag,
   TagMapNodeEntries,
-  TagMapNodeEntry,
+  TagMapNodeEntry
 } from '@genshin-optimizer/game-opt/engine'
 import { tag } from '@genshin-optimizer/game-opt/engine'
 
@@ -20,7 +20,7 @@ export function registerEquipment<Tag_ extends Tag>(
    */
   function internal({
     tag: oldTag,
-    value,
+    value
   }: TagMapNodeEntry<Tag_>): TagMapNodeEntries<Tag_> {
     // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
     if (oldTag.et === 'enemy') oldTag = { ...oldTag, et: 'enemyDeBuff' }
@@ -39,7 +39,7 @@ export function registerEquipment<Tag_ extends Tag>(
     else value = tag(value, { sheet: specificSheet })
     return [
       { tag: { ...oldTag, sheet: equipmentSheet }, value },
-      { tag: { ...oldTag, sheet: specificSheet }, value },
+      { tag: { ...oldTag, sheet: specificSheet }, value }
     ]
   }
   return data.flatMap((data) =>

@@ -16,11 +16,11 @@ export const data: Data = dataObjForArtifactSheet(
   key,
   {
     premod: {
-      def: set2,
-    },
+      def: set2
+    }
   },
   {
-    heal,
+    heal
   }
 )
 
@@ -32,11 +32,11 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: infoMut(heal, { name: stg('healing'), variant: 'heal' }),
-          },
-        ],
-      },
-    ],
-  },
+            node: infoMut(heal, { name: stg('healing'), variant: 'heal' })
+          }
+        ]
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

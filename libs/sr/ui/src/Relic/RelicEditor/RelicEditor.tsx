@@ -2,17 +2,17 @@ import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   DropdownButton,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { clamp, deepClone } from '@genshin-optimizer/common/util'
 import type {
   RelicRarityKey,
   RelicSetKey,
-  RelicSlotKey,
+  RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allRelicSlotKeys,
-  relicSlotToMainStatKeys,
+  relicSlotToMainStatKeys
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import { cachedRelic } from '@genshin-optimizer/sr/db'
@@ -43,7 +43,7 @@ import {
   TextField,
   Typography,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { MouseEvent } from 'react'
 import {
@@ -52,7 +52,7 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
@@ -71,7 +71,7 @@ interface IRelicSheet {
 }
 const tempRelicSheet: IRelicSheet = {
   rarity: [5, 4, 3, 2],
-  setEffects: {},
+  setEffects: {}
 }
 
 // TODO: relic sheets, errors, autocomplete, display text, i18n, ...
@@ -87,7 +87,7 @@ export function RelicEditor({
   cancelEdit,
   fixedSlotKey,
   allowEmpty = false,
-  disableSet = false,
+  disableSet = false
 }: RelicEditorProps) {
   const { t } = useTranslation('relic')
   const { t: tk } = useTranslation(['relics_gen', 'statKey_gen'])
@@ -112,7 +112,7 @@ export function RelicEditor({
       setShowEditor(true)
       dispatchRelic({
         type: 'overwrite',
-        relic: deepClone(dbRelic),
+        relic: deepClone(dbRelic)
       })
     }
   }, [relicIdToEdit, database, dirtyDatabase])
@@ -126,7 +126,7 @@ export function RelicEditor({
 
   const {
     prev,
-    prevEditType,
+    prevEditType
   }: {
     prev: ICachedRelic | undefined
     prevEditType: 'edit' | 'duplicate' | 'upgrade' | ''
@@ -139,7 +139,7 @@ export function RelicEditor({
       dirtyDatabase && database.relics.findDups(relic)
     return {
       prev: duplicated[0] ?? upgraded[0],
-      prevEditType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
+      prevEditType: duplicated.length !== 0 ? 'duplicate' : 'upgrade'
     }
   }, [relic, relicIdToEdit, database, dirtyDatabase])
 
@@ -168,7 +168,7 @@ export function RelicEditor({
       ): T {
         return value && available.includes(value)
           ? value
-          : prefer ?? available[0]
+          : (prefer ?? available[0])
       }
 
       if (newValue.setKey) {
@@ -364,7 +364,7 @@ export function RelicEditor({
                     defText={t('mainStat')}
                     dropdownButtonProps={{
                       disabled: !sheet,
-                      color: relic ? 'success' : 'primary',
+                      color: relic ? 'success' : 'primary'
                     }}
                   />
                   <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>

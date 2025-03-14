@@ -3,13 +3,13 @@ import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
-  TextFieldLazy,
+  TextFieldLazy
 } from '@genshin-optimizer/common/ui'
 import { arrayMove, clamp, deepClone } from '@genshin-optimizer/common/util'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import {
   initCustomTarget,
-  type CustomMultiTarget,
+  type CustomMultiTarget
 } from '@genshin-optimizer/gi/db'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
@@ -25,7 +25,7 @@ import {
   Chip,
   Divider,
   IconButton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -37,7 +37,7 @@ export default function CustomMultiTargetCard({
   customMultiTarget: targetProp,
   setTarget: setTargetProp,
   onDelete,
-  onDup: onDupProp,
+  onDup: onDupProp
 }: {
   customMultiTarget: CustomMultiTarget
   setTarget: (t: CustomMultiTarget) => void
@@ -197,7 +197,7 @@ export default function CustomMultiTargetCard({
               onChange={(name) =>
                 setTarget((target) => ({
                   ...target,
-                  name,
+                  name
                 }))
               }
             />
@@ -221,7 +221,7 @@ export default function CustomMultiTargetCard({
                 )
                 setTarget((target) => ({
                   ...target,
-                  description,
+                  description
                 }))
               }}
               multiline
@@ -256,7 +256,7 @@ export default function CustomMultiTargetCard({
               display: 'flex',
               flexDirection: 'column',
               gap: 1,
-              position: 'relative',
+              position: 'relative'
             }}
           >
             {customTargetDisplays}
@@ -280,7 +280,7 @@ export default function CustomMultiTargetCard({
 }
 
 function AddCustomTargetBtn({
-  setTarget,
+  setTarget
 }: {
   setTarget: (t: string[], m?: number) => void
 }) {
@@ -311,7 +311,7 @@ function AddCustomTargetBtn({
           'bonusStats',
           'custom',
           'character',
-          'teamBuff',
+          'teamBuff'
         ]}
       />
     </>

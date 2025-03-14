@@ -4,7 +4,7 @@ import {
   reader as baseReader,
   entryTypes,
   presets,
-  setReader,
+  setReader
 } from '@genshin-optimizer/game-opt/engine'
 import type { AnyNode } from '@genshin-optimizer/pando/engine'
 import type {
@@ -13,7 +13,7 @@ import type {
   ElementalType,
   Path,
   Src,
-  TagMapNodeEntry,
+  TagMapNodeEntry
 } from '.'
 import {
   damageTypes,
@@ -21,7 +21,7 @@ import {
   members,
   paths,
   sheets,
-  type Sheet,
+  type Sheet
 } from './listing'
 
 export const fixedTags = {
@@ -36,7 +36,7 @@ export const fixedTags = {
   damageType2: damageTypes,
 
   // Count
-  path: paths,
+  path: paths
 }
 export type Tag = BaseTag<Sheet, Src, Dst> & {
   elementalType?: ElementalType | null
@@ -105,13 +105,13 @@ export class Read extends BaseRead<Tag> {
   get basic(): Read[] {
     return [
       super.with('damageType1', 'basic'),
-      super.with('damageType2', 'basic'),
+      super.with('damageType2', 'basic')
     ]
   }
   get skill(): Read[] {
     return [
       super.with('damageType1', 'skill'),
-      super.with('damageType2', 'skill'),
+      super.with('damageType2', 'skill')
     ]
   }
   get ult(): Read[] {
@@ -120,13 +120,13 @@ export class Read extends BaseRead<Tag> {
   get technique(): Read[] {
     return [
       super.with('damageType1', 'technique'),
-      super.with('damageType2', 'technique'),
+      super.with('damageType2', 'technique')
     ]
   }
   get followUp(): Read[] {
     return [
       super.with('damageType1', 'followUp'),
-      super.with('damageType2', 'followUp'),
+      super.with('damageType2', 'followUp')
     ]
   }
   get dot(): Read[] {
@@ -135,19 +135,19 @@ export class Read extends BaseRead<Tag> {
   get break(): Read[] {
     return [
       super.with('damageType1', 'break'),
-      super.with('damageType2', 'break'),
+      super.with('damageType2', 'break')
     ]
   }
   get elemental(): Read[] {
     return [
       super.with('damageType1', 'elemental'),
-      super.with('damageType2', 'elemental'),
+      super.with('damageType2', 'elemental')
     ]
   }
   get servantSkill(): Read[] {
     return [
       super.with('damageType1', 'servantSkill'),
-      super.with('damageType2', 'servantSkill'),
+      super.with('damageType2', 'servantSkill')
     ]
   }
 

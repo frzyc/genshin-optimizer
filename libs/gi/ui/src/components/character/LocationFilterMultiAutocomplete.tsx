@@ -4,7 +4,7 @@ import type { LocationCharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
-  charKeyToLocGenderedCharKey,
+  charKeyToLocGenderedCharKey
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
@@ -18,7 +18,7 @@ export function LocationFilterMultiAutocomplete({
   locations,
   setLocations,
   totals,
-  disabled,
+  disabled
 }: {
   locations: LocationCharacterKey[]
   setLocations: (v: LocationCharacterKey[]) => void
@@ -28,7 +28,7 @@ export function LocationFilterMultiAutocomplete({
   const { t } = useTranslation([
     'artifact',
     'sillyWisher_charNames',
-    'charNames_gen',
+    'charNames_gen'
   ])
   const database = useDatabase()
   const { gender } = useDBMeta()
@@ -67,8 +67,8 @@ export function LocationFilterMultiAutocomplete({
       key === 'Traveler'
         ? allTravelerKeys.some((key) => database.charMeta.get(key).favorite)
         : key
-        ? database.charMeta.get(key).favorite
-        : false,
+          ? database.charMeta.get(key).favorite
+          : false,
     [database]
   )
 
@@ -90,7 +90,7 @@ export function LocationFilterMultiAutocomplete({
             label: namesCB(v, silly),
             favorite: isFavorite(v),
             color: toVariant(v),
-            alternateNames: [namesCB(v, false)],
+            alternateNames: [namesCB(v, false)]
           })
         )
         .sort((a, b) => {

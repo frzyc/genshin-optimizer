@@ -15,7 +15,7 @@ export function scalingParams(data_gen: CharacterDatum) {
     technique,
     bonusAbility1,
     bonusAbility2,
-    bonusAbility3,
+    bonusAbility3
   } = data_gen.skillTree
   const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
@@ -31,6 +31,6 @@ export function scalingParams(data_gen: CharacterDatum) {
     bonusAbility1: bonusAbility1.skillParamList[0][0],
     bonusAbility2: bonusAbility2.skillParamList[0][0],
     bonusAbility3: bonusAbility3.skillParamList[0][0],
-    eidolon,
+    eidolon
   }
 }

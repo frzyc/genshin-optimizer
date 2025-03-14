@@ -34,25 +34,25 @@ const plunging_dmg_ = { ...normal_dmg_ }
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    all_dmg_: dmg_,
+    all_dmg_: dmg_
   },
   teamBuff: {
     premod: {
       atk_,
       normal_dmg_,
       charged_dmg_,
-      plunging_dmg_,
+      plunging_dmg_
     },
     nonStacking: {
-      millenialatk: nonstackWrite,
-    },
-  },
+      millenialatk: nonstackWrite
+    }
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: dmg_ }],
+      fields: [{ node: dmg_ }]
     },
     {
       value: condPassive,
@@ -64,29 +64,29 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: normal_dmg_,
+              node: normal_dmg_
             },
             {
-              node: charged_dmg_,
+              node: charged_dmg_
             },
             {
-              node: plunging_dmg_,
+              node: plunging_dmg_
             },
             {
-              node: atk_,
+              node: atk_
             },
             {
-              node: atk_inactive,
+              node: atk_inactive
             },
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

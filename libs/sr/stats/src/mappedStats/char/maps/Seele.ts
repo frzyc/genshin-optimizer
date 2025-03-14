@@ -12,7 +12,7 @@ const {
   technique,
   eidolon,
   // bonusAbility1,
-  bonusAbility2,
+  bonusAbility2
   // bonusAbility3,
 } = scalingParams(data_gen)
 
@@ -23,31 +23,31 @@ let s = 0,
 // TODO: Load scalings
 const dm = {
   basic: {
-    dmg: basic[0][0],
+    dmg: basic[0][0]
   },
   skill: {
     dmg: skill[0][s++],
     spd_: skill[0][s++][1],
-    duration: skill[0][s++][1],
+    duration: skill[0][s++][1]
   },
   ult: {
-    dmg: ult[0][u++],
+    dmg: ult[0][u++]
   },
   talent: {
-    dmg_: talent[0][ta++],
+    dmg_: talent[0][ta++]
   },
   technique: {
-    duration: technique[te++],
+    duration: technique[te++]
   },
   b2: {
-    resPen_quantum: bonusAbility2[0],
+    resPen_quantum: bonusAbility2[0]
   },
   e1: {
-    crit_: eidolon[1][1],
+    crit_: eidolon[1][1]
   },
   e6: {
-    dmg: eidolon[6][0],
-  },
+    dmg: eidolon[6][0]
+  }
 } as const
 
 export default dm

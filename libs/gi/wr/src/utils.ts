@@ -13,7 +13,7 @@ import type {
   StrNode,
   StrPrioNode,
   SubscriptNode,
-  ThresholdNode,
+  ThresholdNode
 } from './type'
 
 type Opt = number | OptNode
@@ -104,7 +104,7 @@ export function lookup(
     operands:
       defaultV !== 'none' ? [intoV(index), intoV(defaultV)] : [intoV(index)],
     table,
-    info,
+    info
   }
 }
 
@@ -183,7 +183,7 @@ export function compareEq(
   return {
     operation: 'match',
     operands: [intoV(v1), intoV(v2), intoV(eq), intoV(neq)],
-    info,
+    info
   }
 }
 /** v1 == v2 ? pass : 0 */
@@ -208,7 +208,7 @@ export function equal(
   return {
     operation: 'match',
     operands: [intoV(v1), intoV(v2), intoVInfo(pass, info), intoV(0)],
-    emptyOn: 'unmatch',
+    emptyOn: 'unmatch'
   }
 }
 /** v1 == v2 ? pass : `undefined` */
@@ -236,9 +236,9 @@ export function equalStr(
       intoV(v1),
       intoV(v2),
       intoVInfo(pass, info),
-      intoV(undefined) as StrNode,
+      intoV(undefined) as StrNode
     ],
-    emptyOn: 'unmatch',
+    emptyOn: 'unmatch'
   }
 }
 /** v1 != v2 ? pass : 0 */
@@ -263,7 +263,7 @@ export function unequal(
   return {
     operation: 'match',
     operands: [intoV(v1), intoV(v2), intoV(0), intoVInfo(pass, info)],
-    emptyOn: 'match',
+    emptyOn: 'match'
   }
 }
 /** v1 != v2 ? pass : `undefined` */
@@ -291,9 +291,9 @@ export function unequalStr(
       intoV(v1),
       intoV(v2),
       intoV(undefined) as StrNode,
-      intoVInfo(pass, info),
+      intoVInfo(pass, info)
     ],
-    emptyOn: 'match',
+    emptyOn: 'match'
   }
 }
 /** v1 >= v2 ? pass : 0 */
@@ -318,7 +318,7 @@ export function greaterEq(
   return {
     operation: 'threshold',
     operands: [intoV(v1), intoV(v2), intoVInfo(pass, info), intoV(0)],
-    emptyOn: 'l',
+    emptyOn: 'l'
   }
 }
 /** v1 >= v2 ? pass : `undefined` */
@@ -334,9 +334,9 @@ export function greaterEqStr(
       intoV(v1),
       intoV(v2),
       intoVInfo(pass, info),
-      intoV(undefined) as StrNode,
+      intoV(undefined) as StrNode
     ],
-    emptyOn: 'l',
+    emptyOn: 'l'
   }
 }
 /** v1 < v2 ? pass : 0 */
@@ -361,7 +361,7 @@ export function lessThan(
   return {
     operation: 'threshold',
     operands: [intoV(v1), intoV(v2), intoV(0), intoVInfo(pass, info)],
-    emptyOn: 'ge',
+    emptyOn: 'ge'
   }
 }
 /** v1 >= v2 ? ge : le */
@@ -389,7 +389,7 @@ export function threshold(
   return {
     operation: 'threshold',
     operands: [intoV(v1), intoV(v2), intoV(ge), intoV(le)],
-    info,
+    info
   }
 }
 
@@ -455,7 +455,7 @@ export function dynRead(
     path: ['dyn', name],
     accu,
     type: 'number',
-    info,
+    info
   }
 }
 export function customRead(
@@ -477,7 +477,7 @@ export function read(
     path: [],
     accu,
     info,
-    type: 'number',
+    type: 'number'
   }
 }
 /**

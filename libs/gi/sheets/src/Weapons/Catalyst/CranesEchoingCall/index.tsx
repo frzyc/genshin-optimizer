@@ -20,12 +20,12 @@ const [plunging_dmg_, plunging_dmg_inactive] = nonStackBuff(
 const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
-      plunging_dmg_,
+      plunging_dmg_
     },
     nonStacking: {
-      crane: nonstackWrite,
-    },
-  },
+      crane: nonstackWrite
+    }
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -40,20 +40,20 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: plunging_dmg_,
+              node: plunging_dmg_
             },
             {
-              node: plunging_dmg_inactive,
+              node: plunging_dmg_inactive
             },
             {
               text: stg('duration'),
               value: 20,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

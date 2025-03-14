@@ -6,7 +6,7 @@ import {
   allNumConditionals,
   own,
   ownBuff,
-  registerBuff,
+  registerBuff
 } from '../../util'
 import { entriesForRelic, registerRelic } from '../util'
 

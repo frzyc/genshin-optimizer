@@ -2,7 +2,7 @@ import {
   charKeyToLocGenderedCharKey,
   type CharacterKey,
   type GenderKey,
-  type LocationGenderedCharacterKey,
+  type LocationGenderedCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import { useContext } from 'react'
@@ -11,7 +11,7 @@ import { SillyContext } from '../../context'
 
 export function CharacterName({
   characterKey,
-  gender = 'F',
+  gender = 'F'
 }: {
   characterKey: CharacterKey
   gender: GenderKey
@@ -33,7 +33,7 @@ export function CharacterName({
 }
 export function CharacterConstellationName({
   characterKey,
-  gender = 'F',
+  gender = 'F'
 }: {
   characterKey: CharacterKey
   gender: GenderKey
@@ -44,7 +44,7 @@ export function CharacterConstellationName({
 }
 
 export function CharacterTitle({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {

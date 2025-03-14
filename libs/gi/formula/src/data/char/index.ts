@@ -202,6 +202,6 @@ const data: TagMapNodeEntries[] = [
   TravelerElectro,
   TravelerDendro,
   TravelerHydro,
-  TravelerPyro,
+  TravelerPyro
 ]
 export default data.flat()

@@ -10,7 +10,7 @@ import {
   ownBuff,
   register,
   team,
-  teamBuff,
+  teamBuff
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar } from './util'
 
@@ -22,18 +22,18 @@ const skillParam_gen = allStats.char.skillParam['TravelerDendroF']
 // TODO: Fill data-mine values here
 const _dm = {
   normal: {
-    dmg1: skillParam_gen.auto[0],
+    dmg1: skillParam_gen.auto[0]
   },
   charged: {},
   plunging: {},
   skill: {},
-  burst: {},
+  burst: {}
 } as const
 
 const info = dataGenToCharInfo(data_gen, 'dendro')
 const {
   final: _final,
-  char: { ascension: _ascension, constellation },
+  char: { ascension: _ascension, constellation }
 } = own
 // TODO: Conditionals
 const { _someBoolConditional } = allBoolConditionals(info.key)

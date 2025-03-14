@@ -11,7 +11,7 @@ import {
   read,
   subscript,
   sum,
-  sumfrac,
+  sumfrac
 } from '../node'
 import { addCustomOperation, type Monotonicity } from '../util'
 import { pruneBranches, pruneRange, reaffine, State } from './prune'
@@ -32,7 +32,7 @@ addCustomOperation('sqrt', {
     if (r.max > 0) result.dec = false
     return [result]
   },
-  calc: ([x]) => (x as number) * (x as number),
+  calc: ([x]) => (x as number) * (x as number)
 })
 
 describe('pruning', () => {
@@ -40,13 +40,13 @@ describe('pruning', () => {
     [
       { id: 1, c0: 0, c1: 3, c2: 4 },
       { id: 2, c0: 6, c1: 2, c2: 6 },
-      { id: 3, c0: 10, c1: 1, c2: 6 },
-    ],
+      { id: 3, c0: 10, c1: 1, c2: 6 }
+    ]
   ]
   test('reaffine', () => {
     const nodes = [
       prod(7, sum(r0, prod(3, r1), 6), sum(r0, r1, 2)),
-      constant(11),
+      constant(11)
     ]
     const state = new State(nodes, [], candidates, 'q')
     state.progress = false
@@ -59,8 +59,8 @@ describe('pruning', () => {
       [
         { id: 1, c0: 9, c1: 3 },
         { id: 2, c0: 12, c1: 8 },
-        { id: 3, c0: 13, c1: 11 },
-      ],
+        { id: 3, c0: 13, c1: 11 }
+      ]
     ])
     expect(state.nodes).toEqual([prod(7, sum(6, r0), sum(2, r1)), constant(11)])
   })
@@ -72,7 +72,7 @@ describe('pruning', () => {
       min(r0, r1, r2),
       max(r0, r1, r2),
       cmpEq(1, 1, r0, r1),
-      lookup(subscript(2, ['a', 'b', 'c']), { a: 0, b: 11, c: 22 }),
+      lookup(subscript(2, ['a', 'b', 'c']), { a: 0, b: 11, c: 22 })
     ]
     const state = new State(nodes, [], candidates, 'q')
     state.progress = false
@@ -116,18 +116,18 @@ describe('state', () => {
     sumfrac(r0, r1),
     subscript(r0, [44, 2, 3, 4, 5, 22, 7, 8]),
     lookup(subscript(r0, ['a', 'b', 'c']), { a: r1, b: r2, c: 6 }),
-    custom('sqrt', sum(r0, -3)),
+    custom('sqrt', sum(r0, -3))
   ]
 
   const candidates = [
     [
       { id: 1, c1: 10, c2: 4 },
-      { id: 2, c0: 3, c1: 9, c2: 4 },
+      { id: 2, c0: 3, c1: 9, c2: 4 }
     ],
     [
       { id: 3, c0: 4, c1: 1, c2: 4 },
-      { id: 4, c0: 2, c2: 4 },
-    ],
+      { id: 4, c0: 2, c2: 4 }
+    ]
   ]
   const state = new State(nodes, [], candidates, 'q')
 
@@ -138,13 +138,13 @@ describe('state', () => {
       c0: { min: 0, max: 3 },
       c1: { min: 9, max: 10 },
       c2: { min: 4, max: 4 },
-      id: { min: 1, max: 2 },
+      id: { min: 1, max: 2 }
     })
     expect(cndRanges[1]).toEqual({
       c0: { min: 2, max: 4 },
       c1: { min: 0, max: 1 },
       c2: { min: 4, max: 4 },
-      id: { min: 3, max: 4 },
+      id: { min: 3, max: 4 }
     })
   })
   test('node ranges', () => {

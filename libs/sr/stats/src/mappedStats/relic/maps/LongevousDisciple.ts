@@ -8,13 +8,13 @@ let o = 0
 
 const dm = {
   2: {
-    hp_: data_gen.setEffects[0].passiveStats.hp_,
+    hp_: data_gen.setEffects[0].passiveStats.hp_
   },
   4: {
     crit_: data_gen.setEffects[1].otherStats[o++],
     duration: data_gen.setEffects[1].otherStats[o++],
-    stacks: data_gen.setEffects[1].otherStats[o++],
-  },
+    stacks: data_gen.setEffects[1].otherStats[o++]
+  }
 } as const
 
 export default dm

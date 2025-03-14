@@ -5,7 +5,7 @@ import {
   input,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -40,14 +40,14 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      hp_,
+      hp_
     },
     total: {
-      atk: sum(atk1, atk2),
-    },
+      atk: sum(atk1, atk2)
+    }
   },
   {
-    atk2_: atk2,
+    atk2_: atk2
   }
 )
 
@@ -57,12 +57,12 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: hp_,
+          node: hp_
         },
         {
-          node: infoMut(atk1, { path: 'atk' }),
-        },
-      ],
+          node: infoMut(atk1, { path: 'atk' })
+        }
+      ]
     },
     {
       value: condPassive,
@@ -74,12 +74,12 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(atk2, { path: 'atk' }),
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: infoMut(atk2, { path: 'atk' })
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

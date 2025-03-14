@@ -53,7 +53,7 @@ export const allArtifactSetKeys = [
   'VermillionHereafter',
   'ViridescentVenerer',
   'VourukashasGlow',
-  'WanderersTroupe',
+  'WanderersTroupe'
 ] as const
 export type ArtifactSetKey = (typeof allArtifactSetKeys)[number]
 
@@ -62,7 +62,7 @@ export const allArtifactSlotKeys = [
   'plume',
   'sands',
   'goblet',
-  'circlet',
+  'circlet'
 ] as const
 export type ArtifactSlotKey = (typeof allArtifactSlotKeys)[number]
 
@@ -71,7 +71,7 @@ export const artMaxLevel: Record<RarityKey, number> = {
   2: 4,
   3: 12,
   4: 16,
-  5: 20,
+  5: 20
 } as const
 
 export const artSubstatRollData: Record<
@@ -82,7 +82,7 @@ export const artSubstatRollData: Record<
   2: { low: 0, high: 1, numUpgrades: 2 },
   3: { low: 1, high: 2, numUpgrades: 3 },
   4: { low: 2, high: 3, numUpgrades: 4 },
-  5: { low: 3, high: 4, numUpgrades: 5 },
+  5: { low: 3, high: 4, numUpgrades: 5 }
 } as const
 
 export const artifactSandsStatKeys = [
@@ -90,7 +90,7 @@ export const artifactSandsStatKeys = [
   'def_',
   'atk_',
   'eleMas',
-  'enerRech_',
+  'enerRech_'
 ] as const
 export type ArtifactSandsStatKey = (typeof artifactSandsStatKeys)[number]
 
@@ -106,7 +106,7 @@ export const artifactGobletStatKeys = [
   'hydro_dmg_',
   'pyro_dmg_',
   'cryo_dmg_',
-  'dendro_dmg_',
+  'dendro_dmg_'
 ] as const
 export type ArtifactGobletStatKey = (typeof artifactGobletStatKeys)[number]
 
@@ -117,7 +117,7 @@ export const artifactCircletStatKeys = [
   'eleMas',
   'critRate_',
   'critDMG_',
-  'heal_',
+  'heal_'
 ] as const
 export type ArtifactCircletStatKey = (typeof artifactCircletStatKeys)[number]
 
@@ -126,7 +126,7 @@ export const artSlotMainKeys = {
   plume: ['atk'] as readonly MainStatKey[],
   sands: artifactSandsStatKeys as readonly MainStatKey[],
   goblet: artifactGobletStatKeys as readonly MainStatKey[],
-  circlet: artifactCircletStatKeys as readonly MainStatKey[],
+  circlet: artifactCircletStatKeys as readonly MainStatKey[]
 } as const
 
 export const allMainStatKeys = [
@@ -147,7 +147,7 @@ export const allMainStatKeys = [
   'pyro_dmg_',
   'cryo_dmg_',
   'dendro_dmg_',
-  'heal_',
+  'heal_'
 ] as const
 export const allSubstatKeys = [
   'hp',
@@ -159,7 +159,7 @@ export const allSubstatKeys = [
   'eleMas',
   'enerRech_',
   'critRate_',
-  'critDMG_',
+  'critDMG_'
 ] as const
 export type MainStatKey = (typeof allMainStatKeys)[number]
 export type SubstatKey = (typeof allSubstatKeys)[number]

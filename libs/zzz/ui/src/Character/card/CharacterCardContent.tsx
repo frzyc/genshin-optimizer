@@ -2,7 +2,7 @@ import { ImgIcon } from '@genshin-optimizer/common/ui'
 import {
   commonDefIcon,
   rarityDefIcon,
-  specialityDefIcon,
+  specialityDefIcon
 } from '@genshin-optimizer/zzz/assets'
 import { allSkillKeys, type CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
 import { CharacterName } from '../CharacterTrans'
 
 export function CharacterCardContent({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {
@@ -42,7 +42,7 @@ export function CharacterCardContent({
             fontWeight="bold"
             fontSize="1.625rem"
             sx={{
-              textShadow: 'none',
+              textShadow: 'none'
             }}
           >
             <strong>{t('characterCard.charLevel', { level: level })}</strong>
@@ -65,7 +65,7 @@ export function CharacterCardContent({
                 fontWeight="bold"
                 fontSize="0.8rem"
                 sx={{
-                  background: '#1C1C1C',
+                  background: '#1C1C1C'
                 }}
               >
                 {character[item]}
@@ -87,7 +87,7 @@ export function CharacterCardContent({
               fontWeight="bold"
               fontSize="0.8rem"
               sx={{
-                background: '#1C1C1C',
+                background: '#1C1C1C'
               }}
             >
               {core}

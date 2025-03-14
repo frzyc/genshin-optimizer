@@ -4,7 +4,7 @@ import type {
   RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
-  RelicSubStatKey,
+  RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 
 export interface IRelic {

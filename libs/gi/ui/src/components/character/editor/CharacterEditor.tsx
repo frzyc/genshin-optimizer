@@ -15,7 +15,7 @@ import { Content } from './Content'
 
 export function CharacterEditor({
   characterKey,
-  onClose,
+  onClose
 }: {
   characterKey?: CharacterKey
   onClose: () => void
@@ -43,7 +43,7 @@ type CharacterDisplayCardProps = {
 }
 function CharacterEditorContent({
   characterKey,
-  onClose,
+  onClose
 }: CharacterDisplayCardProps) {
   const character = useCharacter(characterKey)
   const teamData = useCharData(characterKey)
@@ -54,14 +54,14 @@ function CharacterEditorContent({
     return {
       data: charUIData,
       teamData,
-      compareData: undefined,
+      compareData: undefined
     }
   }, [charUIData, teamData])
 
   const characterContextValue: CharacterContextObj | undefined = useMemo(
     () =>
       character && {
-        character,
+        character
       },
     [character]
   )
@@ -73,7 +73,7 @@ function CharacterEditorContent({
       chartData,
       setChartData,
       graphBuilds,
-      setGraphBuilds,
+      setGraphBuilds
     }
   }, [chartData, graphBuilds])
 

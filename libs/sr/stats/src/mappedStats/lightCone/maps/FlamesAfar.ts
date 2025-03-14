@@ -11,7 +11,7 @@ const dm = {
   common_dmg_: data_gen.superimpose.otherStats[o++],
   heal: data_gen.superimpose.otherStats[o++][1],
   duration: data_gen.superimpose.otherStats[o++][1],
-  coolDown: data_gen.superimpose.otherStats[o++][1],
+  coolDown: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

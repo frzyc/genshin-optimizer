@@ -4,7 +4,7 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
   getDisplayHeader,
-  resolveInfo,
+  resolveInfo
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import { Box, Divider, Stack, useMediaQuery, useTheme } from '@mui/material'
@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
 
 export default function OptimizationTargetDisplay({
   optimizationTarget,
-  defaultText,
+  defaultText
 }: {
   optimizationTarget?: string[]
   showEmptyTargets?: boolean
@@ -43,7 +43,7 @@ export default function OptimizationTargetDisplay({
     name,
     textSuffix,
     icon: nodeIcon,
-    variant = invalidTarget ? 'secondary' : undefined,
+    variant = invalidTarget ? 'secondary' : undefined
   } = (node?.info && resolveInfo(node?.info)) ?? {}
 
   const suffixDisplay = textSuffix && <span> {textSuffix}</span>

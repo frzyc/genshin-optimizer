@@ -29,8 +29,8 @@ const data = dataObjForWeaponSheet(key, {
     plunging_critRate_,
     normal_dmg_,
     charged_dmg_,
-    plunging_dmg_,
-  },
+    plunging_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -39,9 +39,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: plunging_critRate_,
-        },
-      ],
+          node: plunging_critRate_
+        }
+      ]
     },
     {
       value: condAfterPlunging,
@@ -53,17 +53,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             ...[normal_dmg_, charged_dmg_, plunging_dmg_].map((node) => ({
-              node,
+              node
             })),
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

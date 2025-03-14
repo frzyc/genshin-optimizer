@@ -1,7 +1,7 @@
 import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
 import {
   DocumentDisplay,
-  type UISheetElement,
+  type UISheetElement
 } from '@genshin-optimizer/game-opt/sheet-ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
@@ -12,7 +12,7 @@ import {
   CardHeader,
   Divider,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { lightConeUiSheets } from '../sheets'
 
@@ -29,7 +29,7 @@ export function LightConeSheetDisplay({ lcKey }: { lcKey: LightConeKey }) {
             src={lightConeAsset(lcKey, 'cover')}
             sx={{
               maxHeight: '5em',
-              width: 'auto',
+              width: 'auto'
             }}
           />
           <Typography variant="h6">
@@ -42,7 +42,7 @@ export function LightConeSheetDisplay({ lcKey }: { lcKey: LightConeKey }) {
   )
 }
 function LightConeUiSheetElement({
-  uiSheetElement,
+  uiSheetElement
 }: {
   uiSheetElement: UISheetElement
 }) {

@@ -7,13 +7,13 @@ const key: WeaponKey = 'PrototypeAmber'
 const heal_arr = [0.04, 0.045, 0.05, 0.055, 0.06]
 
 const {
-  weapon: { refinement },
+  weapon: { refinement }
 } = own
 
 export default register(
   key,
   entriesForWeapon(key),
   customHeal('heal', prod(target.final.hp, subscript(refinement, heal_arr)), {
-    team: true,
+    team: true
   })
 )

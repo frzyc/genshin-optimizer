@@ -1,6 +1,6 @@
 import type {
   CharacterKey,
-  CharacterSheetKey,
+  CharacterSheetKey
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -9,7 +9,7 @@ import { stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
 import type {
   TalentSheetElement,
-  TalentSheetElementKey,
+  TalentSheetElementKey
 } from '../ICharacterSheet.d'
 import { charTemplates } from '../charTemplates'
 import { dmgNode } from '../dataUtil'
@@ -35,19 +35,19 @@ export function travelerSheet(
         skillParam_gen.auto[1] as number[],
         skillParam_gen.auto[2] as number[],
         skillParam_gen.auto[3] as number[],
-        skillParam_gen.auto[4] as number[],
-      ],
+        skillParam_gen.auto[4] as number[]
+      ]
     },
     charged: {
       hit1: skillParam_gen.auto[5] as number[],
       hit2: skillParam_gen.auto[6] as number[],
-      stamina: skillParam_gen.auto[7][0],
+      stamina: skillParam_gen.auto[7][0]
     },
     plunging: {
       dmg: skillParam_gen.auto[8] as number[],
       low: skillParam_gen.auto[9] as number[],
-      high: skillParam_gen.auto[10] as number[],
-    },
+      high: skillParam_gen.auto[10] as number[]
+    }
   } as const
 
   const dmgFormulas = {
@@ -56,7 +56,7 @@ export function travelerSheet(
     ),
     charged: {
       dmg1: dmgNode('atk', dm.charged.hit1, 'charged'),
-      dmg2: dmgNode('atk', dm.charged.hit2, 'charged'),
+      dmg2: dmgNode('atk', dm.charged.hit2, 'charged')
     },
     plunging: Object.fromEntries(
       Object.entries(dm.plunging).map(([key, value]) => [
@@ -65,9 +65,9 @@ export function travelerSheet(
           'atk',
           value,
           key === 'dmg' ? 'plunging_collision' : 'plunging_impact'
-        ),
+        )
       ])
-    ),
+    )
   } as const
 
   const { talent, data } = talentFunc(key, charKey, dmgFormulas)
@@ -75,60 +75,60 @@ export function travelerSheet(
 
   talent.auto = ct.talentTem('auto', [
     {
-      text: ct.chg('auto.fields.normal'),
+      text: ct.chg('auto.fields.normal')
     },
     {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
-          name: ct.chg(`auto.skillParams.${i}`),
-        }),
-      })),
+          name: ct.chg(`auto.skillParams.${i}`)
+        })
+      }))
     },
     {
-      text: ct.chg('auto.fields.charged'),
+      text: ct.chg('auto.fields.charged')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg1, {
             name: ct.chg(`auto.skillParams.5`),
-            textSuffix: '(1)',
-          }),
+            textSuffix: '(1)'
+          })
         },
         {
           node: infoMut(dmgFormulas.charged.dmg2, {
             name: ct.chg(`auto.skillParams.5`),
-            textSuffix: '(2)',
-          }),
+            textSuffix: '(2)'
+          })
         },
         {
           text: ct.chg('auto.skillParams.6'),
-          value: dm.charged.stamina,
-        },
-      ],
+          value: dm.charged.stamina
+        }
+      ]
     },
     {
-      text: ct.chg('auto.fields.plunging'),
+      text: ct.chg('auto.fields.plunging')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.plunging['dmg'], {
-            name: stg('plunging.dmg'),
-          }),
+            name: stg('plunging.dmg')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging['low'], {
-            name: stg('plunging.low'),
-          }),
+            name: stg('plunging.low')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging['high'], {
-            name: stg('plunging.high'),
-          }),
-        },
-      ],
-    },
+            name: stg('plunging.high')
+          })
+        }
+      ]
+    }
   ])
 
   return new CharacterSheet(talent, data)

@@ -38,6 +38,6 @@ const data = {
   ult_0,
   ult_1,
   ult_2,
-  ult_3,
+  ult_3
 } as const
 export default data

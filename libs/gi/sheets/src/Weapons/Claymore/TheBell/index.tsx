@@ -4,7 +4,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customShieldNode } from '../../../Characters/dataUtil'
 import { cond, st, stg } from '../../../SheetUtil'
@@ -42,11 +42,11 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      all_dmg_,
-    },
+      all_dmg_
+    }
   },
   {
-    shield,
+    shield
   }
 )
 const sheet: IWeaponSheet = {
@@ -60,16 +60,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(shield, { name: stg(`dmgAbsorption`) }),
+              node: infoMut(shield, { name: stg(`dmgAbsorption`) })
             },
             {
               text: stg('cd'),
               value: 45,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       value: condWithShield,
@@ -80,12 +80,12 @@ const sheet: IWeaponSheet = {
         protected: {
           fields: [
             {
-              node: all_dmg_,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: all_dmg_
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

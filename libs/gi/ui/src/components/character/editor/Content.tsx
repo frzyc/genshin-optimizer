@@ -5,13 +5,13 @@ import {
   allArtifactSlotKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
-  charKeyToLocGenderedCharKey,
+  charKeyToLocGenderedCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   CharacterContext,
   useDBMeta,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
@@ -28,7 +28,7 @@ import { AddTeamInfo } from '../../AddTeamInfo'
 import { LevelSelect } from '../../LevelSelect'
 import {
   CharacterCompactConstSelector,
-  CharacterCoverArea,
+  CharacterCoverArea
 } from '../CharacterProfilePieces'
 import { EquippedGrid } from '../EquippedGrid'
 import { TalentDropdown } from '../TalentDropdown'
@@ -42,13 +42,13 @@ export function Content({ onClose }: { onClose?: () => void }) {
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
     'sillyWisher_charNames',
-    'charNames_gen',
+    'charNames_gen'
   ])
   const navigate = useNavigate()
   const database = useDatabase()
   const {
     character,
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { gender } = useDBMeta()
   const characterSheet = getCharSheet(characterKey, gender)
@@ -92,7 +92,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 1,
+                gap: 1
               }}
             >
               <CharacterCoverArea />
@@ -122,7 +122,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 <CharacterCompactConstSelector
                   setConstellation={(constellation) =>
                     database.chars.set(characterKey, {
-                      constellation,
+                      constellation
                     })
                   }
                 />
@@ -151,7 +151,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                             size={1.75}
                             sideMargin
                           />
-                        ),
+                        )
                       }}
                       setTalent={(talent) =>
                         database.chars.set(characterKey, (char) => {
@@ -174,7 +174,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
 
 function EquipmentSection() {
   const {
-    character: { key: characterKey, equippedArtifacts },
+    character: { key: characterKey, equippedArtifacts }
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
 
@@ -200,7 +200,7 @@ function EquipmentSection() {
           artifactIds={artifactIds}
           setWeapon={(id) => {
             database.weapons.set(id, {
-              location: charKeyToLocCharKey(characterKey),
+              location: charKeyToLocCharKey(characterKey)
             })
           }}
           setArtifact={(slotKey, id) => {
@@ -208,7 +208,7 @@ function EquipmentSection() {
               database.arts.set(equippedArtifacts[slotKey], { location: '' })
             else
               database.arts.set(id, {
-                location: charKeyToLocCharKey(characterKey),
+                location: charKeyToLocCharKey(characterKey)
               })
           }}
         />
@@ -221,7 +221,7 @@ function InTeam() {
   const navigate = useNavigate()
 
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()

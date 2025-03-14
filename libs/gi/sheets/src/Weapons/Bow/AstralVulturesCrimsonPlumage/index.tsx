@@ -8,7 +8,7 @@ import {
   tally,
   target,
   threshold,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -57,8 +57,8 @@ const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
     charged_dmg_,
-    burst_dmg_,
-  },
+    burst_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -72,28 +72,28 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atk_,
+              node: atk_
             },
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       header: headerTemplate(key, st('stacks')),
       fields: [
         {
-          node: charged_dmg_,
+          node: charged_dmg_
         },
         {
-          node: burst_dmg_,
-        },
-      ],
-    },
-  ],
+          node: burst_dmg_
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

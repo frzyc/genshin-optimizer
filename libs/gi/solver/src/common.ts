@@ -3,16 +3,16 @@ import {
   notEmpty,
   objKeyMap,
   objMap,
-  range,
+  range
 } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
   type ArtifactSetKey,
-  type ArtifactSlotKey,
+  type ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import type {
   ArtSetExclusion,
-  ArtSetExclusionKey,
+  ArtSetExclusionKey
 } from '@genshin-optimizer/gi/db'
 import type { ConstantNode, OptNode } from '@genshin-optimizer/gi/wr'
 import {
@@ -25,7 +25,7 @@ import {
   max,
   min,
   sum,
-  threshold,
+  threshold
 } from '@genshin-optimizer/gi/wr'
 
 type MicropassOperation =
@@ -50,7 +50,7 @@ export function pruneAll(
     pruneOrder: { pruneNodeRange: true },
     pruneArtRange: { pruneNodeRange: true },
     pruneNodeRange: { reaffine: true },
-    reaffine: { pruneOrder: true, pruneArtRange: true, pruneNodeRange: true },
+    reaffine: { pruneOrder: true, pruneArtRange: true, pruneNodeRange: true }
   }
   let count = 0
   while (Object.values(should).some((x) => x) && count++ < 20) {
@@ -206,7 +206,7 @@ function reaffine(
       node as OptNode,
       !forceRename && node.operation === 'read' && node.path[0] === 'dyn'
         ? node
-        : dynRead(nextDynKey()),
+        : dynRead(nextDynKey())
     ])
   )
   nodes = mapFormulas(
@@ -219,14 +219,14 @@ function reaffine(
     const values = constantFold(
       [...affineMap.keys()],
       {
-        dyn: objMap(stat, (value) => constant(value)),
+        dyn: objMap(stat, (value) => constant(value))
       } as any,
       (_) => true
     )
     return Object.fromEntries(
       [...affineMap.values()].map((v, i) => [
         v.path[1],
-        (values[i] as ConstantNode<number>).value,
+        (values[i] as ConstantNode<number>).value
       ])
     )
   }
@@ -238,10 +238,10 @@ function reaffine(
         arts.values[slot].map(({ id, set, values }) => ({
           id,
           set,
-          values: reaffineArt(values),
+          values: reaffineArt(values)
         }))
-      ),
-    },
+      )
+    }
   }
   const offsets = Object.entries(reaffineArt({}))
   for (const arts of Object.values(result.arts.values))
@@ -347,7 +347,7 @@ function pruneNodeRange(nodes: OptNode[], arts: ArtifactsBySlot): OptNode[] {
   )
   const reads = addArtRange([
     baseRange,
-    ...Object.values(arts.values).map((values) => computeArtRange(values)),
+    ...Object.values(arts.values).map((values) => computeArtRange(values))
   ])
   const nodeRange = computeNodeRange(nodes, reads)
 
@@ -437,7 +437,7 @@ export function computeFullArtRange(arts: ArtifactsBySlot): DynMinMax {
   )
   return addArtRange([
     baseRange,
-    ...Object.values(arts.values).map((values) => computeArtRange(values)),
+    ...Object.values(arts.values).map((values) => computeArtRange(values))
   ])
 }
 export function computeNodeRange(
@@ -469,13 +469,13 @@ export function computeNodeRange(
         case 'max':
           current = {
             min: allOperations[operation](operands.map((x) => x.min)),
-            max: allOperations[operation](operands.map((x) => x.max)),
+            max: allOperations[operation](operands.map((x) => x.max))
           }
           break
         case 'res':
           current = {
             min: allOperations[operation]([operands[0].max]),
-            max: allOperations[operation]([operands[0].min]),
+            max: allOperations[operation]([operands[0].min])
           }
           break
         case 'mul':
@@ -484,7 +484,7 @@ export function computeNodeRange(
               accu.min * current.min,
               accu.min * current.max,
               accu.max * current.min,
-              accu.max * current.max,
+              accu.max * current.max
             ])
           )
           break
@@ -507,7 +507,7 @@ export function computeNodeRange(
               x.min / sum.min,
               x.min / sum.max,
               x.max / sum.min,
-              x.max / sum.max,
+              x.max / sum.max
             ])
           break
         }
@@ -544,7 +544,7 @@ export function filterArts(
         case 'required':
           return arts.values[slot].filter((art) => filter.sets.has(art.set!))
       }
-    }),
+    })
   }
 }
 
@@ -625,8 +625,8 @@ export function exclusionToAllowed(
         ? [0, 1]
         : [0, 1, 4, 5]
       : exclusion?.includes(4)
-      ? [0, 1, 2, 3]
-      : [0, 1, 2, 3, 4, 5]
+        ? [0, 1, 2, 3]
+        : [0, 1, 2, 3, 4, 5]
   )
 }
 /** A *disjoint* set of `RequestFilter` satisfying the exclusion rules */
@@ -688,7 +688,7 @@ export function* artSetPerm(
     for (const [id, remaining] of required.entries()) {
       if (remaining === 0) {
         const shape = [
-          ...shapes.find((shape) => indexOfShape(shape, replacing) === id)!,
+          ...shapes.find((shape) => indexOfShape(shape, replacing) === id)!
         ]
         shape[replacing] = 5
         shapes = shapes.filter((shape) => indexOfShape(shape, replacing) !== id)
@@ -704,7 +704,7 @@ export function* artSetPerm(
 
   const counts = {
     ...objMap(exclusion as Record<ArtSetExclusionKey, (2 | 4)[]>, (_) => 0),
-    ...objKeyMap(artSets, (_) => 0),
+    ...objKeyMap(artSets, (_) => 0)
   }
   const allowedCounts = objMap(
     exclusion as Record<ArtSetExclusionKey, (2 | 4)[]>,
@@ -748,7 +748,7 @@ export function* artSetPerm(
           (j) =>
             (result[allArtifactSlotKeys[j]] = {
               kind: 'required',
-              sets: new Set([set]),
+              sets: new Set([set])
             })
         )
         usableRainbows -= requiredRainbows
@@ -790,7 +790,7 @@ export function* artSetPerm(
           counts[set]++
           result[allArtifactSlotKeys[rainbows[i]]] = {
             kind: 'required',
-            sets: new Set([set]),
+            sets: new Set([set])
           }
           yield* check_free(i + 1)
           counts[set]--
@@ -801,14 +801,14 @@ export function* artSetPerm(
         counts[set]++
         result[allArtifactSlotKeys[rainbows[i]]] = {
           kind: 'required',
-          sets: new Set([set]),
+          sets: new Set([set])
         }
         yield* check_free(i + 1)
         counts[set]--
       }
       result[allArtifactSlotKeys[rainbows[i]]] = {
         kind: 'exclude',
-        sets: new Set([...missing, ...rejected, ...isolated]),
+        sets: new Set([...missing, ...rejected, ...isolated])
       }
       yield* check_free(i + 1)
     }

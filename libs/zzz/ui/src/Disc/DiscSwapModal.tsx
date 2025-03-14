@@ -1,12 +1,12 @@
 import {
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   ModalWrapper,
   ShowingAndSortOptionSelect,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
@@ -16,7 +16,7 @@ import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import {
   discFilterConfigs,
-  initialDiscFilterOption,
+  initialDiscFilterOption
 } from '@genshin-optimizer/zzz/util'
 import type { IDisc } from '@genshin-optimizer/zzz/zood'
 import CloseIcon from '@mui/icons-material/Close'
@@ -29,7 +29,7 @@ import {
   Grid,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   Suspense,
@@ -37,7 +37,7 @@ import {
   useEffect,
   useMemo,
   useReducer,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscCard } from './DiscCard'
@@ -49,7 +49,7 @@ export function DiscSwapModal({
   onChangeId,
   slotKey,
   show,
-  onClose,
+  onClose
 }: {
   disc: ICachedDisc | undefined
   onChangeId: (id: string | null) => void
@@ -71,7 +71,7 @@ export function DiscSwapModal({
     (action: any) => void
   ] = useReducer(filterOptionReducer, {
     ...initialDiscFilterOption(),
-    slotKeys: [slotKey],
+    slotKeys: [slotKey]
   })
 
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -118,7 +118,7 @@ export function DiscSwapModal({
     numShowing: discIdsToShow.length,
     total: totalShowing,
     t: t,
-    namespace: 'disc',
+    namespace: 'disc'
   }
   const [swapDiscId, setSwapDiscId] = useState<string | DiscSlotKey>('')
 
@@ -146,7 +146,7 @@ export function DiscSwapModal({
           sx={{
             py: 1,
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Typography variant="h6">{t('tabEquip.swapDisc')}</Typography>
@@ -200,7 +200,7 @@ export function DiscSwapModal({
                           height: '100%',
                           display: 'flex',
                           justifyContent: 'center',
-                          alignItems: 'center',
+                          alignItems: 'center'
                         }}
                         onClick={() => setSwapDiscId(slotKey)}
                       >
@@ -208,7 +208,7 @@ export function DiscSwapModal({
                           sx={{
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'center',
+                            alignItems: 'center'
                           }}
                         >
                           <RemoveCircleIcon sx={{ fontSize: '10em' }} />
@@ -230,9 +230,9 @@ export function DiscSwapModal({
                         '> .MuiCard-root': {
                           outline: `${theme.spacing(0.5)} solid ${
                             theme.palette.warning.main
-                          }`,
-                        },
-                      }),
+                          }`
+                        }
+                      })
                     })}
                   >
                     <DiscCard

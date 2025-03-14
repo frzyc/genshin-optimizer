@@ -23,7 +23,7 @@ export default function TeamSelectors({ teamId }: { teamId: string }) {
 
 const TeammateSelector = memo(function TeammateSelector({
   teamMetadataIndex,
-  teamId,
+  teamId
 }: {
   teamMetadataIndex: number
   teamId: string
@@ -54,7 +54,7 @@ const TeammateSelector = memo(function TeammateSelector({
       database.teams.set(teamId, (team) => {
         // Let the validator handle default properties for everything else
         team.teamMetadata[teamMetadataIndex] = {
-          characterKey: cKey,
+          characterKey: cKey
         } as TeammateDatum
       })
     }

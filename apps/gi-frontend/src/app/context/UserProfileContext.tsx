@@ -21,7 +21,7 @@ const init: UserProfileContextType = {
   account: null,
   setUser: () => {},
   setProfile: () => {},
-  setAccount: () => {},
+  setAccount: () => {}
 }
 
 // Create the context
@@ -31,7 +31,7 @@ export function UserProfileContextProvider({
   children,
   user: propUser,
   profile: propProfile,
-  account: propAccount,
+  account: propAccount
 }: {
   children: React.ReactNode
   user: User | null

@@ -18,8 +18,8 @@ const atk_ = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    atk_,
-  },
+    atk_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -33,17 +33,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atk_,
+              node: atk_
             },
             {
               text: stg('duration'),
               value: 8,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

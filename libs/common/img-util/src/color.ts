@@ -20,7 +20,7 @@ export function modColor(color: Color, value = 10) {
     r: clamp(r + value, 0, 255),
     g: clamp(g + value, 0, 255),
     b: clamp(b + value, 0, 255),
-    a,
+    a
   }
 }
 

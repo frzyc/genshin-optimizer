@@ -3,7 +3,7 @@ import type {
   AutocompleteInteraction,
   ChatInputCommandInteraction,
   MessageReaction,
-  StringSelectMenuInteraction,
+  StringSelectMenuInteraction
 } from 'discord.js'
 import { SlashCommandBuilder } from 'discord.js'
 import * as fs from 'fs'
@@ -15,7 +15,7 @@ import { cwd } from '../lib/util'
 import type {
   CharacterGenderedKey,
   LightConeKey,
-  RelicSetKey,
+  RelicSetKey
 } from '@genshin-optimizer/sr/consts'
 import { charBank } from './databank/char'
 import { lightconeBank } from './databank/lightcone'
@@ -88,11 +88,11 @@ const databank: Record<string, any> = {
   key: {
     char: require(path.join(databankPath, '/charNames_gen.json')),
     lightcone: require(path.join(databankPath, '/lightConeNames_gen.json')),
-    relic: require(path.join(databankPath, '/relicNames_gen.json')),
+    relic: require(path.join(databankPath, '/relicNames_gen.json'))
   },
   char: {},
   lightcone: {},
-  relic: {},
+  relic: {}
 }
 //traveler data
 for (const name in databank['key']['char']) {
@@ -118,7 +118,7 @@ export const skillsList = {
   u: { name: 'Ultimate', value: 'u' },
   t: { name: 'Technique', value: 't' },
   o: { name: 'Overworld', value: 'o' },
-  c: { name: 'Eidolons', value: 'c' },
+  c: { name: 'Eidolons', value: 'c' }
 }
 
 //clean tags from input

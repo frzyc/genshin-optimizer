@@ -13,7 +13,7 @@ import {
   useDatabase,
   useTeam,
   useTeamChar,
-  type TeamCharacterContextObj,
+  type TeamCharacterContextObj
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import {
@@ -25,7 +25,7 @@ import {
   useTeamDataNoContext,
   type ChartData,
   type GraphContextObj,
-  type dataContextObj,
+  type dataContextObj
 } from '@genshin-optimizer/gi/ui'
 import { Box, Skeleton } from '@mui/material'
 import {
@@ -34,7 +34,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
@@ -43,7 +43,7 @@ import {
   Routes,
   useMatch,
   useNavigate,
-  useParams,
+  useParams
 } from 'react-router-dom'
 import type { BuildTcContexObj, SetBuildTcAction } from './BuildTcContext'
 import { BuildTcContext } from './BuildTcContext'
@@ -90,14 +90,14 @@ function Page({ teamId }: { teamId: string }) {
   const { loadoutData } = team
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
-    params: { characterKey: characterKeyRaw },
+    params: { characterKey: characterKeyRaw }
   } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
-    params: {},
+    params: {}
   }
   const {
-    params: { tab },
+    params: { tab }
   } = useMatch({ path: '/teams/:teamId/:characterKey/:tab' }) ?? {
-    params: {},
+    params: {}
   }
 
   // validate characterKey
@@ -127,7 +127,7 @@ function Page({ teamId }: { teamId: string }) {
     'sillyWisher_charNames',
     'charNames_gen',
     'page_character',
-    'page_team',
+    'page_team'
   ])
 
   useTitle(
@@ -142,8 +142,8 @@ function Page({ teamId }: { teamId: string }) {
       const tabName = tab
         ? t(`page_character:tabs.${tab}`)
         : characterKey
-        ? t('page_character:tabs.setting')
-        : tab
+          ? t('page_character:tabs.setting')
+          : tab
       return tabName
         ? `${team.name} - ${charName} - ${tabName}`
         : `${team.name} - ${charName}`
@@ -158,7 +158,7 @@ function Page({ teamId }: { teamId: string }) {
         team,
         teamCharId,
         teamChar,
-        loadoutDatum,
+        loadoutDatum
       }
     }, [teamId, team, teamCharId, teamChar, loadoutDatum])
 
@@ -171,7 +171,7 @@ function Page({ teamId }: { teamId: string }) {
     return {
       data: charUIData,
       teamData,
-      compareData: undefined,
+      compareData: undefined
     }
   }, [charUIData, teamData])
 
@@ -192,7 +192,7 @@ function Page({ teamId }: { teamId: string }) {
             if (!color) return {}
             const rgba = colorToRgbaString(color, 0.1)
             return {
-              background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+              background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`
             }
           }}
         >
@@ -205,7 +205,7 @@ function Page({ teamId }: { teamId: string }) {
                       display: 'flex',
                       flexDirection: 'column',
                       gap: 1,
-                      p: 1,
+                      p: 1
                     }}
                   >
                     <InnerContent tab={tab} />
@@ -228,13 +228,13 @@ function InnerContent({ tab }: { tab?: string }) {
   const {
     teamCharId,
     teamChar: { key: characterKey },
-    loadoutDatum,
+    loadoutDatum
   } = useContext(TeamCharacterContext)
   const character = useCharacter(characterKey as CharacterKey)
   const CharacterContextValue: CharacterContextObj | undefined = useMemo(
     () =>
       character && {
-        character,
+        character
       },
     [character]
   )
@@ -261,14 +261,14 @@ function InnerContent({ tab }: { tab?: string }) {
       setGraphBuilds: (data) => {
         if (data) graphBuildAll[teamCharId] = data
         setGraphBuildState(data)
-      },
+      }
     }
   }, [
     teamCharId,
     chartData,
     graphBuilds,
     setChartDataState,
-    setGraphBuildState,
+    setGraphBuildState
   ])
   const buildTc = useBuildTc(loadoutDatum.buildTcId)!
   const setBuildTc = useCallback(
@@ -281,8 +281,8 @@ function InnerContent({ tab }: { tab?: string }) {
     () =>
       ({
         buildTc: loadoutDatum.buildType === 'tc' ? buildTc : undefined,
-        setBuildTc,
-      } as BuildTcContexObj),
+        setBuildTc
+      }) as BuildTcContexObj,
     [buildTc, loadoutDatum.buildType, setBuildTc]
   )
   if (!CharacterContextValue) return fallback

@@ -15,7 +15,7 @@ export function GODevAd({ children }: { children: ReactNode }) {
         p: '10px',
         cursor: 'pointer',
         minHeight: '100%',
-        minWidth: '100%',
+        minWidth: '100%'
       }}
       onClick={toDiscord}
     >

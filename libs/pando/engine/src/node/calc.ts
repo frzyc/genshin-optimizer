@@ -4,14 +4,14 @@ import {
   DedupTags,
   mergeTagMapValues,
   TagMapKeys,
-  TagMapSubsetValues,
+  TagMapSubsetValues
 } from '../tag'
 import {
   assertUnreachable,
   customOps,
   extract,
   isDebug,
-  tagString,
+  tagString
 } from '../util'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, BaseRead, NumNode, ReRead, StrNode } from './type'

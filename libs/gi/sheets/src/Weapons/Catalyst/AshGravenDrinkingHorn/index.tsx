@@ -5,7 +5,7 @@ import {
   infoMut,
   input,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { customDmgNode } from '../../../Characters/dataUtil'
 import { st } from '../../../SheetUtil'
@@ -30,7 +30,7 @@ const dmg = equal(
 )
 
 const data = dataObjForWeaponSheet(key, undefined, {
-  dmg,
+  dmg
 })
 
 const sheet: IWeaponSheet = {
@@ -39,10 +39,10 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('dmg')),
       fields: [
         {
-          node: infoMut(dmg, { name: st('dmg') }),
-        },
-      ],
-    },
-  ],
+          node: infoMut(dmg, { name: st('dmg') })
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

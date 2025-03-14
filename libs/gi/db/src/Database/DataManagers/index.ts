@@ -5,7 +5,7 @@ import {
   MAX_NAME_LENGTH,
   initCustomMultiTarget,
   initCustomTarget,
-  validateCustomMultiTarget,
+  validateCustomMultiTarget
 } from './CustomMultiTarget'
 import type { GeneratedBuild } from './GeneratedBuildListDataManager'
 import type {
@@ -13,12 +13,12 @@ import type {
   ArtSetExclusionKey,
   OptConfig,
   StatFilterSetting,
-  StatFilters,
+  StatFilters
 } from './OptConfigDataManager'
 import {
   allArtifactSetExclusionKeys,
   handleArtSetExclusion,
-  maxBuildsToShowList,
+  maxBuildsToShowList
 } from './OptConfigDataManager'
 import type { TeamCharacter } from './TeamCharacterDataManager'
 import type {
@@ -26,13 +26,13 @@ import type {
   LoadoutDataExportSetting,
   LoadoutDatum,
   LoadoutExportSetting,
-  Team,
+  Team
 } from './TeamDataManager'
 import { defLoadoutExportSetting } from './TeamDataManager'
 import {
   defaultInitialWeapon,
   defaultInitialWeaponKey,
-  initialWeapon,
+  initialWeapon
 } from './WeaponDataManager'
 export {
   MAX_DESC_LENGTH,
@@ -50,7 +50,7 @@ export {
   maxBuildsToShowList,
   toBuildTc,
   validateArtifact,
-  validateCustomMultiTarget,
+  validateCustomMultiTarget
 }
 export type {
   ArtSetExclusion,
@@ -64,5 +64,5 @@ export type {
   StatFilterSetting,
   StatFilters,
   Team,
-  TeamCharacter,
+  TeamCharacter
 }

@@ -154,215 +154,215 @@ declare module '@mui/material/TextField' {
 const defaultTheme = createTheme({
   palette: {
     tonalOffset: 0.1,
-    mode: `dark`,
-  },
+    mode: `dark`
+  }
 })
 export const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: defaultTheme.palette.augmentColor({
       color: { main: '#1e78c8' },
-      name: 'primary',
+      name: 'primary'
     }),
     secondary: defaultTheme.palette.augmentColor({
       color: { main: '#6c757d' },
-      name: 'secondary',
+      name: 'secondary'
     }),
     success: defaultTheme.palette.augmentColor({
       color: { main: '#46a046' },
-      name: 'success',
+      name: 'success'
     }),
     warning: defaultTheme.palette.augmentColor({
       color: { main: `#ffc107` },
-      name: 'warning',
+      name: 'warning'
     }),
     error: defaultTheme.palette.augmentColor({
       color: { main: `#c83c3c` },
-      name: 'error',
+      name: 'error'
     }),
     background: {
       default: '#0C1020',
-      paper: '#0C1020',
+      paper: '#0C1020'
     },
     info: defaultTheme.palette.augmentColor({
       color: { main: '#17a2b8' },
-      name: 'info',
+      name: 'info'
     }),
     text: {
-      primary: 'rgba(255,255,255,0.9)',
+      primary: 'rgba(255,255,255,0.9)'
     },
     contentNormal: defaultTheme.palette.augmentColor({
       color: { main: '#1b263b' },
-      name: 'contentNormal',
+      name: 'contentNormal'
     }),
     contentDark: defaultTheme.palette.augmentColor({
       color: { main: '#172032' },
-      name: 'contentDark',
+      name: 'contentDark'
     }),
     contentLight: defaultTheme.palette.augmentColor({
       color: { main: '#2a364d' },
-      name: 'contentLight',
+      name: 'contentLight'
     }),
 
     white: defaultTheme.palette.augmentColor({
       color: { main: '#FFFFFF' },
-      name: 'white',
+      name: 'white'
     }),
     red: defaultTheme.palette.augmentColor({
       color: { main: '#ff0000' },
-      name: 'red',
+      name: 'red'
     }),
 
     discord: defaultTheme.palette.augmentColor({
       color: { main: '#5663F7' },
-      name: 'discord',
+      name: 'discord'
     }),
     patreon: defaultTheme.palette.augmentColor({
       color: { main: '#f96854', contrastText: '#ffffff' },
-      name: 'patreon',
+      name: 'patreon'
     }),
     twitch: defaultTheme.palette.augmentColor({
       color: { main: '#6441a5' },
-      name: 'twitch',
+      name: 'twitch'
     }),
     twitter: defaultTheme.palette.augmentColor({
       color: { main: '#55acee', contrastText: '#ffffff' },
-      name: 'twitter',
+      name: 'twitter'
     }),
     paypal: defaultTheme.palette.augmentColor({
       color: { main: '#00457C' },
-      name: 'paypal',
+      name: 'paypal'
     }),
     keqing: defaultTheme.palette.augmentColor({
       color: { main: '#584862' },
-      name: 'keqing',
+      name: 'keqing'
     }),
 
     brand500: defaultTheme.palette.augmentColor({
       color: { main: '#324599' },
-      name: 'primary',
+      name: 'primary'
     }),
     neutral100: defaultTheme.palette.augmentColor({
-      color: { main: '#E9EBF5' },
+      color: { main: '#E9EBF5' }
     }),
     neutral200: defaultTheme.palette.augmentColor({
-      color: { main: '#CBCFE1' },
+      color: { main: '#CBCFE1' }
     }),
     neutral300: defaultTheme.palette.augmentColor({
-      color: { main: '#A2A6BB' },
+      color: { main: '#A2A6BB' }
     }),
     neutral400: defaultTheme.palette.augmentColor({
-      color: { main: '#777B8E' },
+      color: { main: '#777B8E' }
     }),
     neutral500: defaultTheme.palette.augmentColor({
-      color: { main: '#393C4F' },
+      color: { main: '#393C4F' }
     }),
     neutral600: defaultTheme.palette.augmentColor({
-      color: { main: '#222533' },
+      color: { main: '#222533' }
     }),
     neutral700: defaultTheme.palette.augmentColor({
       color: { main: '#191C2B' },
-      name: 'primary',
+      name: 'primary'
     }),
     neutral800: defaultTheme.palette.augmentColor({
       color: { main: '#0C0F1A' },
-      name: 'primary',
+      name: 'primary'
     }),
     neutral900: defaultTheme.palette.augmentColor({
       color: { main: '#020515' },
-      name: 'primary',
+      name: 'primary'
     }),
 
     roll1: defaultTheme.palette.augmentColor({
       color: { main: '#a3a7a9' },
-      name: 'roll1',
+      name: 'roll1'
     }),
     roll2: defaultTheme.palette.augmentColor({
       color: { main: '#6fa376' },
-      name: 'roll2',
+      name: 'roll2'
     }),
     roll3: defaultTheme.palette.augmentColor({
       color: { main: '#8eea83' },
-      name: 'roll3',
+      name: 'roll3'
     }),
     roll4: defaultTheme.palette.augmentColor({
       color: { main: '#31e09d' },
-      name: 'roll4',
+      name: 'roll4'
     }),
     roll5: defaultTheme.palette.augmentColor({
       color: { main: '#27bbe4' },
-      name: 'roll5',
+      name: 'roll5'
     }),
     roll6: defaultTheme.palette.augmentColor({
       color: { main: '#de79f0' },
-      name: 'roll6',
+      name: 'roll6'
     }),
 
     rarity1: defaultTheme.palette.augmentColor({
       color: { main: '#838f99', contrastText: '#fff' },
-      name: 'rarity1',
+      name: 'rarity1'
     }),
     rarity2: defaultTheme.palette.augmentColor({
       color: { main: '#5e966c', contrastText: '#fff' },
-      name: 'rarity2',
+      name: 'rarity2'
     }),
     rarity3: defaultTheme.palette.augmentColor({
       color: { main: '#499fb3', contrastText: '#fff' },
-      name: 'rarity3',
+      name: 'rarity3'
     }),
     rarity4: defaultTheme.palette.augmentColor({
       color: { main: '#b886ca', contrastText: '#fff' },
-      name: 'rarity4',
+      name: 'rarity4'
     }),
     rarity5: defaultTheme.palette.augmentColor({
       color: { main: '#e6ac54', contrastText: '#fff' },
-      name: 'rarity5',
-    }),
+      name: 'rarity5'
+    })
   },
   typography: {
     button: {
-      textTransform: 'none',
-    },
+      textTransform: 'none'
+    }
   },
   components: {
     MuiAppBar: {
       defaultProps: {
-        enableColorOnDark: true,
-      },
+        enableColorOnDark: true
+      }
     },
     MuiPaper: {
       defaultProps: {
-        elevation: 0,
-      },
+        elevation: 0
+      }
     },
     MuiButton: {
       defaultProps: {
-        variant: 'contained',
-      },
+        variant: 'contained'
+      }
     },
     MuiButtonGroup: {
       defaultProps: {
-        variant: 'contained',
-      },
+        variant: 'contained'
+      }
     },
     MuiList: {
       styleOverrides: {
         root: {
           padding: 0,
           marginTop: defaultTheme.spacing(1),
-          marginBottom: defaultTheme.spacing(1),
-        },
-      },
+          marginBottom: defaultTheme.spacing(1)
+        }
+      }
     },
     MuiTypography: {
       styleOverrides: {
         root: {
           '& ul': {
             margin: 0,
-            paddingLeft: defaultTheme.spacing(3),
-          },
-        },
-      },
+            paddingLeft: defaultTheme.spacing(3)
+          }
+        }
+      }
     },
     MuiCardContent: {
       styleOverrides: {
@@ -370,16 +370,16 @@ export const theme = createTheme({
           [defaultTheme.breakpoints.down('sm')]: {
             padding: defaultTheme.spacing(1),
             '&:last-child': {
-              paddingBottom: defaultTheme.spacing(1),
-            },
+              paddingBottom: defaultTheme.spacing(1)
+            }
           },
           [defaultTheme.breakpoints.up('sm')]: {
             '&:last-child': {
-              paddingBottom: defaultTheme.spacing(2),
-            },
-          },
-        },
-      },
-    },
-  },
+              paddingBottom: defaultTheme.spacing(2)
+            }
+          }
+        }
+      }
+    }
+  }
 })

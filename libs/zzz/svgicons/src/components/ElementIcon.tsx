@@ -6,12 +6,12 @@ import {
   FireIcon,
   FrostIcon,
   IceIcon,
-  PhysicalIcon,
+  PhysicalIcon
 } from '../icons'
 
 export function ElementIcon({
   ele,
-  iconProps = {},
+  iconProps = {}
 }: {
   ele: AttributeKey | 'frost'
   iconProps?: SvgIconProps

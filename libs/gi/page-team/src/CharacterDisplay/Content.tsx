@@ -23,7 +23,7 @@ import TabUpopt from './Tabs/TabUpgradeOpt'
 export default function Content({ tab }: { tab?: string }) {
   const {
     loadoutDatum,
-    teamChar: { key: characterKey },
+    teamChar: { key: characterKey }
   } = useContext(TeamCharacterContext)
   const isTCBuild = !!(
     loadoutDatum.buildTcId && loadoutDatum.buildType === 'tc'
@@ -78,7 +78,7 @@ function TabNav({
   characterKey,
   isTCBuild,
   hideTitle = false,
-  onChange,
+  onChange
 }: {
   tab?: string
   characterKey: CharacterKey
@@ -109,8 +109,8 @@ function TabNav({
             opacity: 0.3,
             backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
-            backgroundSize: 'cover',
-          },
+            backgroundSize: 'cover'
+          }
         }
       }}
     >
@@ -129,7 +129,7 @@ function LoadoutTabs({
   tab,
   elementKey,
   isTCBuild,
-  onChange,
+  onChange
 }: {
   tab?: string
   elementKey?: ElementKey
@@ -158,20 +158,20 @@ function LoadoutTabs({
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.25s ease',
             backgroundColor: colorrbga(0.1),
-            border: `1px solid ${colorrbga(0.8)}`,
+            border: `1px solid ${colorrbga(0.8)}`
           },
           '& .MuiTab-root.Mui-selected': {
-            color: `${color} !important`,
+            color: `${color} !important`
           },
           '& .MuiTab-root': {
             textShadow: '#000 0 0 10px !important',
             border: `1px solid ${colorrbga(0.3)}`,
-            minHeight: 0,
+            minHeight: 0
           },
           '& .MuiTabs-indicator': {
             backgroundColor: color,
-            height: '4px',
-          },
+            height: '4px'
+          }
         }
       }}
     >

@@ -7,7 +7,7 @@ import {
   min,
   read,
   sum,
-  traverse,
+  traverse
 } from '../node'
 import type { Monotonicity, Range } from '../util'
 import { ArrayMap, assertUnreachable, customOps, isDebug } from '../util'
@@ -233,8 +233,10 @@ export function pruneBottom<ID>(state: State<OP, ID>, topN: number) {
     comp.map((c) => {
       const out: Val = { incomp: [], inc: {}, c }
       for (const [cat, m] of monotonicities)
-        if (m.inc) out.inc[cat] = c[cat] ?? 0 // increasing
-        else if (m.dec) out.inc[cat] = -(c[cat] ?? 0) // decreasing
+        if (m.inc)
+          out.inc[cat] = c[cat] ?? 0 // increasing
+        else if (m.dec)
+          out.inc[cat] = -(c[cat] ?? 0) // decreasing
         else out.incomp.push(c[cat] ?? 0) // incomparable
       return out
     })
@@ -434,7 +436,7 @@ function computeNodeRanges(
         calc([x0.min, x1.min], undefined),
         calc([x0.min, x1.max], undefined),
         calc([x0.max, x1.min], undefined),
-        calc([x0.max, x1.max], undefined),
+        calc([x0.max, x1.max], undefined)
       ]
       return { min: Math.min(...vals), max: Math.max(...vals) }
     }
@@ -448,7 +450,7 @@ function computeNodeRanges(
       case 'sum':
         r = {
           min: mins.reduce((a, b) => a + b, 0),
-          max: maxs.reduce((a, b) => a + b, 0),
+          max: maxs.reduce((a, b) => a + b, 0)
         }
         break
       case 'prod':
@@ -597,7 +599,7 @@ function getMonotonicities(
       case 'subscript': {
         const {
           br: [br],
-          ex: arr,
+          ex: arr
         } = node
         if (typeof arr[0] === 'number') {
           let { min: start, max: last } = nodeRanges.get(br)!

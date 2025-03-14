@@ -1,12 +1,12 @@
 import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
-  setDebugMode,
+  setDebugMode
 } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   SpecialityKey,
-  WengineKey,
+  WengineKey
 } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
 import { data, keys, values } from '..'
@@ -15,7 +15,7 @@ import {
   conditionals,
   teamData,
   wengineTagMapNodeEntries,
-  withMember,
+  withMember
 } from '../..'
 import { Calculator } from '../../calculator'
 import type { Read } from '../util'
@@ -26,7 +26,7 @@ import {
   enemyDebuff,
   own,
   ownTag,
-  type TagMapNodeEntries,
+  type TagMapNodeEntries
 } from '../util'
 
 setDebugMode(true)
@@ -37,7 +37,7 @@ const specialityMap: Record<SpecialityKey, CharacterKey> = {
   stun: 'Anby',
   anomaly: 'Piper',
   support: 'Nicole',
-  defense: 'Ben',
+  defense: 'Ben'
 }
 function testCharacterData(wengineKey: WengineKey) {
   const type = getWengineStat(wengineKey).type
@@ -56,7 +56,7 @@ function testCharacterData(wengineKey: WengineKey) {
         special: 0,
         assist: 0,
         chain: 0,
-        core: 6,
+        core: 6
       }),
       ...wengineTagMapNodeEntries(wengineKey, 60, 5, 5)
     ),
@@ -67,7 +67,7 @@ function testCharacterData(wengineKey: WengineKey) {
     enemyDebuff.common.resRed_.electric.add(0.15),
     enemyDebuff.common.dmgInc_.add(0.1),
     enemyDebuff.common.dmgRed_.add(0.15),
-    enemyDebuff.common.stun_.add(1.5),
+    enemyDebuff.common.stun_.add(1.5)
   ]
   return { data, characterKey }
 }

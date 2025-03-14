@@ -4,7 +4,7 @@ import type { IArtifact } from '@genshin-optimizer/gi/good'
 import {
   getMainStatDisplayValue,
   getSubstatRolls,
-  getSubstatValue,
+  getSubstatValue
 } from './artifact'
 
 export interface ArtifactMeta {
@@ -21,7 +21,7 @@ export interface SubstatMeta {
 const defSubMeta = () => ({
   rolls: [],
   efficiency: 0,
-  accurateValue: 0,
+  accurateValue: 0
 })
 /**
  * Generate meta data for artifacts, and also output some errors during meta generation
@@ -69,7 +69,7 @@ export function getArtifactMeta(flex: IArtifact): {
       return {
         rolls,
         efficiency,
-        accurateValue,
+        accurateValue
       }
     } else {
       // Invalid Substat
@@ -80,7 +80,7 @@ export function getArtifactMeta(flex: IArtifact): {
 
   const validated = {
     mainStatVal,
-    substats,
+    substats
   }
 
   if (errors.length) return { artifactMeta: validated, errors }

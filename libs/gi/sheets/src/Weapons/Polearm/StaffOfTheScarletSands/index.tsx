@@ -7,7 +7,7 @@ import {
   naught,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -39,7 +39,7 @@ const stacksAtk = lookup(
         stack,
         subscript(input.weapon.refinement, stacksAttArr, { unit: '%' }),
         input.premod.eleMas
-      ),
+      )
     ])
   ),
   naught,
@@ -51,11 +51,11 @@ const data = dataObjForWeaponSheet(
   key,
   {
     total: {
-      atk,
-    },
+      atk
+    }
   },
   {
-    atk,
+    atk
   }
 )
 
@@ -65,9 +65,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: baseAtk,
-        },
-      ],
+          node: baseAtk
+        }
+      ]
     },
     {
       value: condStacks,
@@ -81,18 +81,18 @@ const sheet: IWeaponSheet = {
             name: st('hits', { count: i }),
             fields: [
               {
-                node: stacksAtk,
+                node: stacksAtk
               },
               {
                 text: stg('duration'),
                 value: 10,
-                unit: 's',
-              },
-            ],
-          },
+                unit: 's'
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

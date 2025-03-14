@@ -5,7 +5,7 @@ import {
   allBoolConditionals,
   own,
   registerBuffFormula,
-  teamBuff,
+  teamBuff
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

@@ -44,7 +44,7 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
         maxWidth: 128,
         position: 'relative',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column'
       }}
     >
       <Box
@@ -70,7 +70,7 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
           lineHeight: 1,
           opacity: 0.85,
           pointerEvents: 'none',
-          p: 0.25,
+          p: 0.25
         }}
       >
         <strong>{getLevelString(weapon.level, weapon.ascension)}</strong>
@@ -85,7 +85,7 @@ export function WeaponCardPicoObj({ weapon }: { weapon: ICachedWeapon }) {
             pointerEvents: 'none',
             bottom: 0,
             right: 0,
-            p: 0.25,
+            p: 0.25
           }}
         >
           <strong>R{weapon.refinement}</strong>

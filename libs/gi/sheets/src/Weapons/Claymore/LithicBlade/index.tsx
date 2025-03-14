@@ -20,15 +20,15 @@ const critRate_ = prod(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    critRate_,
-  },
+    critRate_
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('stacks')),
-      fields: [{ node: atk_ }, { node: critRate_ }],
-    },
-  ],
+      fields: [{ node: atk_ }, { node: critRate_ }]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

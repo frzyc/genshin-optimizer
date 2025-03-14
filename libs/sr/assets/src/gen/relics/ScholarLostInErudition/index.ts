@@ -8,6 +8,6 @@ const data = {
   body,
   feet,
   hands,
-  head,
+  head
 } as const
 export default data

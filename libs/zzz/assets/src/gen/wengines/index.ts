@@ -122,6 +122,6 @@ const data = {
   VortexRevolver,
   WeepingCradle,
   WeepingGemini,
-  ZanshinHerbCase,
+  ZanshinHerbCase
 } as const
 export default data

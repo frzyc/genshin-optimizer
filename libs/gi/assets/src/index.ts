@@ -3,7 +3,7 @@ import type {
   ArtifactSlotKey,
   CharacterKey,
   GenderKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import { charKeyToLocGenderedCharKey } from '@genshin-optimizer/gi/consts'
 import type { StaticImageData } from 'next/image'

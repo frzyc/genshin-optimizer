@@ -5,7 +5,7 @@ import {
   cmpGE,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { allStats, getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -19,7 +19,7 @@ const atk_multiplier = [
   4.7045, 4.8613, 5.0181, 5.175, 5.3318, 5.4886, 5.6454, 5.8022, 5.959, 6.1159,
   6.2727, 6.4295, 6.5863, 6.7431, 6.8999, 7.0568, 7.2136, 7.3704, 7.5272, 7.684,
   7.8408, 7.9977, 8.1545, 8.3113, 8.4681, 8.6249, 8.7817, 8.9386, 9.0954,
-  9.2522, 9.409,
+  9.2522, 9.409
 ]
 
 export function registerWengine(
@@ -54,7 +54,7 @@ export function entriesForWengine(key: WengineKey): TagMapNodeEntries {
         1,
         prod(second_statvalue, sum(1, prod(0.3, modification)))
       )
-    ),
+    )
   ]
 }
 

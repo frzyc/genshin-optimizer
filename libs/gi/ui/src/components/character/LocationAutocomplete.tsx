@@ -5,13 +5,13 @@ import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type {
   CharacterKey,
   LocationCharacterKey,
-  LocationKey,
+  LocationKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allLocationCharacterKeys,
   allTravelerKeys,
   charKeyToLocCharKey,
-  charKeyToLocGenderedCharKey,
+  charKeyToLocGenderedCharKey
 } from '@genshin-optimizer/gi/consts'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import type { Variant } from '@genshin-optimizer/gi/wr'
@@ -40,13 +40,13 @@ export function LocationAutocomplete({
   location,
   setLocation,
   filter = () => true,
-  autoCompleteProps = {},
+  autoCompleteProps = {}
 }: LocationAutocompleteProps) {
   const { t } = useTranslation([
     'ui',
     'artifact',
     'sillyWisher_charNames',
-    'charNames_gen',
+    'charNames_gen'
   ])
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
@@ -98,8 +98,8 @@ export function LocationAutocomplete({
       key === 'Traveler'
         ? allTravelerKeys.some((key) => database.charMeta.get(key).favorite)
         : key
-        ? database.charMeta.get(key).favorite
-        : false,
+          ? database.charMeta.get(key).favorite
+          : false,
     [database]
   )
 
@@ -107,7 +107,7 @@ export function LocationAutocomplete({
     () => [
       {
         key: '',
-        label: t('artifact:filterLocation.inventory'),
+        label: t('artifact:filterLocation.inventory')
       },
       ...Array.from(
         new Set(
@@ -122,7 +122,7 @@ export function LocationAutocomplete({
             label: toText(silly)(v),
             favorite: isFavorite(v),
             alternateNames: silly ? [toText(!silly)(v)] : undefined,
-            color: charInDb.includes(v) ? undefined : ('secondary' as Variant),
+            color: charInDb.includes(v) ? undefined : ('secondary' as Variant)
           })
         )
         .sort((a, b) => {
@@ -131,7 +131,7 @@ export function LocationAutocomplete({
           if (!a.color && b.color) return -1
           if (a.color && !b.color) return 1
           return a.label.localeCompare(b.label)
-        }),
+        })
     ],
     [t, database, charInDb, filter, toText, silly, isFavorite]
   )

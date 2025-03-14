@@ -15,7 +15,7 @@ import {
   sum,
   tally,
   target,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -27,7 +27,7 @@ import {
   dmgNode,
   healNode,
   healNodeTalent,
-  plungingDmgNodes,
+  plungingDmgNodes
 } from '../dataUtil'
 
 const key: CharacterKey = 'Chevreuse'
@@ -44,17 +44,17 @@ const dm = {
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3.1
       skillParam_gen.auto[a++], // 3.2
-      skillParam_gen.auto[a++], // 4
-    ],
+      skillParam_gen.auto[a++] // 4
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
-    stam: skillParam_gen.auto[a++][0],
+    stam: skillParam_gen.auto[a++][0]
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
     low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++]
   },
   skill: {
     pressDmg: skillParam_gen.skill[s++],
@@ -65,38 +65,38 @@ const dm = {
     healFlat: skillParam_gen.skill[s++],
     bladeDmg: skillParam_gen.skill[s++],
     bladeInterval: skillParam_gen.skill[s++][0],
-    cd: skillParam_gen.skill[s++][0],
+    cd: skillParam_gen.skill[s++][0]
   },
   burst: {
     grenadeDmg: skillParam_gen.burst[b++],
     shellDmg: skillParam_gen.burst[b++],
     cd: skillParam_gen.burst[b++][0],
-    enerCost: skillParam_gen.burst[b++][0],
+    enerCost: skillParam_gen.burst[b++][0]
   },
   passive1: {
     pyroElectro_enemyRes_: skillParam_gen.passive1[0][0],
-    duration: skillParam_gen.passive1[1][0],
+    duration: skillParam_gen.passive1[1][0]
   },
   passive2: {
     atk_: skillParam_gen.passive2[0][0],
     duration: skillParam_gen.passive2[1][0],
-    max_atk_: skillParam_gen.passive2[2][0],
+    max_atk_: skillParam_gen.passive2[2][0]
   },
   constellation1: {
     energyRegen: skillParam_gen.constellation1[0],
-    cd: skillParam_gen.constellation1[1],
+    cd: skillParam_gen.constellation1[1]
   },
   constellation2: {
     dmg: skillParam_gen.constellation2[0],
-    cd: skillParam_gen.constellation2[1],
+    cd: skillParam_gen.constellation2[1]
   },
   constellation6: {
     triggerLength: skillParam_gen.constellation6[0],
     heal: skillParam_gen.constellation6[1],
     pyroElectro_dmg_: skillParam_gen.constellation6[2],
     duration: skillParam_gen.constellation6[3],
-    maxStacks: skillParam_gen.constellation6[4],
-  },
+    maxStacks: skillParam_gen.constellation6[4]
+  }
 } as const
 
 const onlyPyroElectroTeam = greaterEq(tally.electro, 1, equal(tally.ele, 2, 1))
@@ -164,10 +164,10 @@ const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
       dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
-    ),
+    )
   },
   charged: {
-    dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
+    dmg: dmgNode('atk', dm.charged.dmg, 'charged')
   },
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
@@ -175,14 +175,14 @@ const dmgFormulas = {
     holdDmg: dmgNode('atk', dm.skill.holdDmg, 'skill'),
     ballDmg: dmgNode('atk', dm.skill.ballDmg, 'skill'),
     heal: healNodeTalent('hp', dm.skill.healBase, dm.skill.healFlat, 'skill'),
-    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
+    bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill')
   },
   burst: {
     grenadeDmg: dmgNode('atk', dm.burst.grenadeDmg, 'burst'),
-    shellDmg: dmgNode('atk', dm.burst.shellDmg, 'burst'),
+    shellDmg: dmgNode('atk', dm.burst.shellDmg, 'burst')
   },
   passive2: {
-    a4AfterBall_atk_,
+    a4AfterBall_atk_
   },
   constellation2: {
     dmg: greaterEq(
@@ -193,15 +193,15 @@ const dmgFormulas = {
         'skill',
         { hit: { ele: constant('pyro') } }
       )
-    ),
+    )
   },
   constellation6: {
     heal: greaterEq(
       input.constellation,
       6,
       healNode('hp', dm.constellation6.heal, 0)
-    ),
-  },
+    )
+  }
 }
 const skillC3 = greaterEq(input.constellation, 3, 3)
 const burstC5 = greaterEq(input.constellation, 5, 3)
@@ -209,7 +209,7 @@ const burstC5 = greaterEq(input.constellation, 5, 3)
 export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     skillBoost: skillC3,
-    burstBoost: burstC5,
+    burstBoost: burstC5
   },
   teamBuff: {
     premod: {
@@ -217,62 +217,62 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
       electro_enemyRes_: a1AfterOverload_electro_enemyRes_,
       pyro_dmg_: c6AfterHeal_pyro_dmg_,
       electro_dmg_: c6AfterHeal_electro_dmg_,
-      atk_: a4AfterBall_atk_,
-    },
-  },
+      atk_: a4AfterBall_atk_
+    }
+  }
 })
 
 const sheet: TalentSheet = {
   auto: ct.talentTem('auto', [
     {
-      text: ct.chg('auto.fields.normal'),
+      text: ct.chg('auto.fields.normal')
     },
     {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
           name: ct.chg(`auto.skillParams.${i > 2 ? i - 1 : i}`),
-          textSuffix: i === 2 || i === 3 ? `(${i - 1})` : undefined,
-        }),
-      })),
+          textSuffix: i === 2 || i === 3 ? `(${i - 1})` : undefined
+        })
+      }))
     },
     {
-      text: ct.chg('auto.fields.charged'),
+      text: ct.chg('auto.fields.charged')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
-          }),
+            name: ct.chg(`auto.skillParams.4`)
+          })
         },
         {
           text: ct.chg('auto.skillParams.5'),
-          value: dm.charged.stam,
-        },
-      ],
+          value: dm.charged.stam
+        }
+      ]
     },
     {
-      text: ct.chg('auto.fields.plunging'),
+      text: ct.chg('auto.fields.plunging')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.plunging.dmg, {
-            name: stg('plunging.dmg'),
-          }),
+            name: stg('plunging.dmg')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging.low, {
-            name: stg('plunging.low'),
-          }),
+            name: stg('plunging.low')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging.high, {
-            name: stg('plunging.high'),
-          }),
-        },
-      ],
-    },
+            name: stg('plunging.high')
+          })
+        }
+      ]
+    }
   ]),
 
   skill: ct.talentTem('skill', [
@@ -280,45 +280,45 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.pressDmg, {
-            name: ct.chg(`skill.skillParams.0`),
-          }),
+            name: ct.chg(`skill.skillParams.0`)
+          })
         },
         {
           node: infoMut(dmgFormulas.skill.holdDmg, {
-            name: ct.chg(`skill.skillParams.1`),
-          }),
+            name: ct.chg(`skill.skillParams.1`)
+          })
         },
         {
           node: infoMut(dmgFormulas.skill.ballDmg, {
-            name: ct.chg(`skill.skillParams.2`),
-          }),
+            name: ct.chg(`skill.skillParams.2`)
+          })
         },
         {
           node: infoMut(dmgFormulas.skill.heal, {
-            name: ct.chg(`skill.skillParams.3`),
-          }),
+            name: ct.chg(`skill.skillParams.3`)
+          })
         },
         {
           text: ct.chg('skill.skillParams.4'),
           value: dm.skill.duration,
-          unit: 's',
+          unit: 's'
         },
         {
           node: infoMut(dmgFormulas.skill.bladeDmg, {
-            name: ct.chg(`skill.skillParams.5`),
-          }),
+            name: ct.chg(`skill.skillParams.5`)
+          })
         },
         {
           text: ct.chg('skill.skillParams.6'),
           value: dm.skill.bladeInterval,
-          unit: 's',
+          unit: 's'
         },
         {
           text: stg('cd'),
           value: dm.skill.cd,
-          unit: 's',
-        },
-      ],
+          unit: 's'
+        }
+      ]
     },
     ct.condTem('passive2', {
       value: condA4AfterBall,
@@ -334,16 +334,16 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: a4AfterBall_atk_,
+              node: a4AfterBall_atk_
             },
             {
               text: stg('duration'),
               value: dm.passive2.duration,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     }),
     ct.condTem('constellation6', {
       value: condC6AfterHealStacks,
@@ -354,19 +354,19 @@ const sheet: TalentSheet = {
         name: st('stack', { count: stack }),
         fields: [
           {
-            node: c6AfterHeal_pyro_dmg_,
+            node: c6AfterHeal_pyro_dmg_
           },
           {
-            node: c6AfterHeal_electro_dmg_,
+            node: c6AfterHeal_electro_dmg_
           },
           {
             text: stg('duration'),
             value: dm.constellation6.duration,
-            unit: 's',
-          },
-        ],
-      })),
-    }),
+            unit: 's'
+          }
+        ]
+      }))
+    })
   ]),
 
   burst: ct.talentTem('burst', [
@@ -374,25 +374,25 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.grenadeDmg, {
-            name: ct.chg(`burst.skillParams.0`),
-          }),
+            name: ct.chg(`burst.skillParams.0`)
+          })
         },
         {
           node: infoMut(dmgFormulas.burst.shellDmg, {
-            name: ct.chg(`burst.skillParams.1`),
-          }),
+            name: ct.chg(`burst.skillParams.1`)
+          })
         },
         {
           text: stg('cd'),
           value: dm.burst.cd,
-          unit: 's',
+          unit: 's'
         },
         {
           text: stg('energyCost'),
-          value: dm.burst.enerCost,
-        },
-      ],
-    },
+          value: dm.burst.enerCost
+        }
+      ]
+    }
   ]),
 
   passive1: ct.talentTem('passive1', [
@@ -401,9 +401,9 @@ const sheet: TalentSheet = {
       canShow: unequal(onlyPyroElectroTeam, 1, 1),
       fields: [
         {
-          text: ct.ch('notPyroElectroTeam'),
-        },
-      ],
+          text: ct.ch('notPyroElectroTeam')
+        }
+      ]
     }),
     ct.condTem('passive1', {
       value: condA1AfterOverload,
@@ -415,20 +415,20 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: a1AfterOverload_pyro_enemyRes_,
+              node: a1AfterOverload_pyro_enemyRes_
             },
             {
-              node: a1AfterOverload_electro_enemyRes_,
+              node: a1AfterOverload_electro_enemyRes_
             },
             {
               text: stg('duration'),
               value: dm.passive1.duration,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    }),
+              unit: 's'
+            }
+          ]
+        }
+      }
+    })
   ]),
   passive2: ct.talentTem('passive2'),
   passive3: ct.talentTem('passive3'),
@@ -437,33 +437,33 @@ const sheet: TalentSheet = {
     ct.fieldsTem('constellation2', {
       fields: [
         {
-          node: infoMut(dmgFormulas.constellation2.dmg, { name: st('dmg') }),
+          node: infoMut(dmgFormulas.constellation2.dmg, { name: st('dmg') })
         },
         {
           text: stg('cd'),
           value: dm.constellation2.cd,
-          unit: 's',
-        },
-      ],
-    }),
+          unit: 's'
+        }
+      ]
+    })
   ]),
   constellation3: ct.talentTem('constellation3', [
-    { fields: [{ node: skillC3 }] },
+    { fields: [{ node: skillC3 }] }
   ]),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5', [
-    { fields: [{ node: burstC5 }] },
+    { fields: [{ node: burstC5 }] }
   ]),
   constellation6: ct.talentTem('constellation6', [
     ct.fieldsTem('constellation6', {
       fields: [
         {
           node: infoMut(dmgFormulas.constellation6.heal, {
-            name: stg('healing'),
-          }),
-        },
-      ],
-    }),
-  ]),
+            name: stg('healing')
+          })
+        }
+      ]
+    })
+  ])
 }
 export default new CharacterSheet(sheet, data)

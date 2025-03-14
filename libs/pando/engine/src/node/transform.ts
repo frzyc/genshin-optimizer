@@ -9,7 +9,7 @@ import type {
   Const,
   NumNode,
   StrNode,
-  OP as TaggedOP,
+  OP as TaggedOP
 } from './type'
 
 /**

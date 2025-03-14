@@ -2,17 +2,17 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allLightConeKeys,
-  lightConeMaxLevel,
+  lightConeMaxLevel
 } from '@genshin-optimizer/sr/consts'
 import type {
   ILightCone,
-  ISrObjectDescription,
+  ISrObjectDescription
 } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
   ICachedCharacter,
   ICachedLightCone,
-  ISroDatabase,
+  ISroDatabase
 } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
@@ -61,7 +61,7 @@ export class LightConeDataManager extends DataManager<
       if (prevLightCone)
         super.setCached(prevLightCone.id, {
           ...prevLightCone,
-          location: prevChar?.key ?? '',
+          location: prevChar?.key ?? ''
         })
       else if (prevChar?.key) prevLightCone = undefined
 
@@ -141,8 +141,8 @@ export class LightConeDataManager extends DataManager<
             upgraded[0]?.location === lightCone.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((w) => w.id === importId)
@@ -160,7 +160,7 @@ export class LightConeDataManager extends DataManager<
           if (!importId) importId = match.id // always resolve some id
           importLightCone = {
             ...lightCone,
-            location: hasEquipment ? lightCone.location : match.location,
+            location: hasEquipment ? lightCone.location : match.location
           }
         }
       }

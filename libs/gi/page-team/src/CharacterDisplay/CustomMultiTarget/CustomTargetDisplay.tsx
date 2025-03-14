@@ -3,14 +3,14 @@ import { objPathValue } from '@genshin-optimizer/common/util'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
-  InfusionAuraElementKey,
+  InfusionAuraElementKey
 } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import type { CustomTarget } from '@genshin-optimizer/gi/db'
 import {
   AdditiveReactionModeText,
   AmpReactionModeText,
-  DataContext,
+  DataContext
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import BarChartIcon from '@mui/icons-material/BarChart'
@@ -21,7 +21,7 @@ import {
   CardActionArea,
   Chip,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -31,7 +31,7 @@ export default function CustomTargetDisplay({
   selected,
   setSelect,
   customTarget,
-  rank,
+  rank
 }: {
   selected: boolean
   setSelect: () => void
@@ -47,7 +47,7 @@ export default function CustomTargetDisplay({
     reaction,
     infusionAura,
     bonusStats,
-    description,
+    description
   } = customTarget
 
   const node = objPathValue(data.getDisplay(), path) as CalcResult | undefined
@@ -64,7 +64,7 @@ export default function CustomTargetDisplay({
             display: 'flex',
             gap: 1,
             flexWrap: 'wrap',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <Chip label={`#${rank}`} sx={{ minWidth: '4em' }} />
@@ -112,7 +112,7 @@ export default function CustomTargetDisplay({
 function ReactionChip({
   node,
   reaction,
-  infusionAura,
+  infusionAura
 }: {
   node: CalcResult
   reaction?: AmpReactionKey | AdditiveReactionKey

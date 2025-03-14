@@ -5,5 +5,5 @@ import relic from './relic'
 export const mappedStats = {
   char,
   lightCone,
-  relic,
+  relic
 }

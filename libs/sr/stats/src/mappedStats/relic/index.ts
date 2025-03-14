@@ -87,6 +87,6 @@ const maps = {
   SpaceSealingStation,
   SprightlyVonwacq,
   TaliaKingdomOfBanditry,
-  TheWondrousBananAmusementPark,
+  TheWondrousBananAmusementPark
 }
 export default maps

@@ -5,12 +5,12 @@ import {
   DropdownButton,
   ImgIcon,
   ModalWrapper,
-  NextImage,
+  NextImage
 } from '@genshin-optimizer/common/ui'
 import {
   clamp,
   deepClone,
-  shouldShowDevComponents,
+  shouldShowDevComponents
 } from '@genshin-optimizer/common/util'
 import type { Processed } from '@genshin-optimizer/gi/art-scanner'
 import { ScanningQueue } from '@genshin-optimizer/gi/art-scanner'
@@ -18,12 +18,12 @@ import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
   ArtifactSetKey,
-  ArtifactSlotKey,
+  ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allElementWithPhyKeys,
   allSubstatKeys,
-  artSlotMainKeys,
+  artSlotMainKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { cachedArtifact, validateArtifact } from '@genshin-optimizer/gi/db'
@@ -34,7 +34,7 @@ import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   getArtifactEfficiency,
   getMainStatDisplayStr,
-  randomizeArtifact,
+  randomizeArtifact
 } from '@genshin-optimizer/gi/util'
 import {
   Add,
@@ -42,7 +42,7 @@ import {
   PhotoCamera,
   Replay,
   Shuffle,
-  Update,
+  Update
 } from '@mui/icons-material'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
@@ -66,7 +66,7 @@ import {
   Typography,
   styled,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import type { ChangeEvent, ReactNode } from 'react'
 import {
@@ -76,7 +76,7 @@ import {
   useMemo,
   useReducer,
   useRef,
-  useState,
+  useState
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { CustomNumberTextField } from '../../CustomNumberTextField'
@@ -87,7 +87,7 @@ import { ArtifactSetAutocomplete } from '../ArtifactSetAutocomplete'
 import { ArtifactSlotDropdown } from '../ArtifactSlotDropdown'
 import {
   ArtifactColoredIconStatWithUnit,
-  ArtifactStatWithUnit,
+  ArtifactStatWithUnit
 } from '../ArtifactStatKeyDisplay'
 import { ArtifactSetSlotName } from '../ArtifactTrans'
 import { textsFromImage } from './ScanningUtil'
@@ -120,7 +120,7 @@ function artifactReducer(
         else
           [state!.substats[index], state!.substats[oldIndex]] = [
             state!.substats[oldIndex],
-            state!.substats[index],
+            state!.substats[index]
           ]
         return { ...state! }
       }
@@ -136,7 +136,7 @@ function artifactReducer(
 }
 
 const InputInvis = styled('input')({
-  display: 'none',
+  display: 'none'
 })
 
 const LineBreak = styled('br')()
@@ -165,7 +165,7 @@ export function ArtifactEditor({
   allowUpload = false,
   allowEmpty = false,
   disableSet = false,
-  fixedSlotKey,
+  fixedSlotKey
 }: ArtifactEditorProps) {
   const queueRef = useRef(
     new ScanningQueue(textsFromImage, shouldShowDevComponents)
@@ -226,7 +226,7 @@ export function ArtifactEditor({
 
   const {
     old,
-    oldType,
+    oldType
   }: {
     old: ICachedArtifact | undefined
     oldType: 'edit' | 'duplicate' | 'upgrade' | ''
@@ -239,7 +239,7 @@ export function ArtifactEditor({
       dirtyDatabase && database.arts.findDups(artifact)
     return {
       old: duplicated[0] ?? upgraded[0],
-      oldType: duplicated.length !== 0 ? 'duplicate' : 'upgrade',
+      oldType: duplicated.length !== 0 ? 'duplicate' : 'upgrade'
     }
   }, [artifact, artifactIdToEdit, database, dirtyDatabase])
 
@@ -267,7 +267,7 @@ export function ArtifactEditor({
       ): T {
         return value && available.includes(value)
           ? value
-          : prefer ?? available[0]
+          : (prefer ?? available[0])
       }
 
       if (newValue.setKey && newStat) {
@@ -349,7 +349,7 @@ export function ArtifactEditor({
   const element = artifact
     ? allElementWithPhyKeys.find((ele) => artifact.mainStatKey.includes(ele))
     : undefined
-  const color = artifact ? element ?? 'success' : 'primary'
+  const color = artifact ? (element ?? 'success') : 'primary'
 
   const updateSetKey = useCallback(
     (setKey: ArtifactSetKey | '') =>
@@ -385,7 +385,7 @@ export function ArtifactEditor({
       setShow(true)
       artifactDispatch({
         type: 'overwrite',
-        artifact: deepClone(databaseArtifact),
+        artifact: deepClone(databaseArtifact)
       })
     }
   }, [artifactIdToEdit, database, dirtyDatabase])
@@ -399,7 +399,7 @@ export function ArtifactEditor({
     setScannedData(rest)
     artifactDispatch({
       type: 'overwrite',
-      artifact: scannedArt,
+      artifact: scannedArt
     })
   }, [queue, processedNum, scannedData])
 
@@ -867,7 +867,7 @@ export function ArtifactEditor({
                 onClick={() =>
                   artifactDispatch({
                     type: 'overwrite',
-                    artifact: randomizeArtifact(),
+                    artifact: randomizeArtifact()
                   })
                 }
               >

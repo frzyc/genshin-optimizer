@@ -1,7 +1,7 @@
 import type {
   BonusAbilityKey,
   EidolonKey,
-  StatBoostKey,
+  StatBoostKey
 } from '@genshin-optimizer/sr/consts'
 
 export const allTalentSheetElementStatBoostKey = [
@@ -14,7 +14,7 @@ export const allTalentSheetElementStatBoostKey = [
   'statBoost7',
   'statBoost8',
   'statBoost9',
-  'statBoost10',
+  'statBoost10'
 ] as const
 export type TalentSheetElementStatBoostKey =
   (typeof allTalentSheetElementStatBoostKey)[number]
@@ -32,7 +32,7 @@ export const allTalentSheetElementEidolonKey = [
   'eidolon3',
   'eidolon4',
   'eidolon5',
-  'eidolon6',
+  'eidolon6'
 ] as const
 export type TalentSheetElementEidolonKey =
   (typeof allTalentSheetElementEidolonKey)[number]
@@ -46,7 +46,7 @@ export function isTalentSheetElementEidolonKey(
 export const allTalentSheetElementBonusAbilityKey = [
   'bonusAbility1',
   'bonusAbility2',
-  'bonusAbility3',
+  'bonusAbility3'
 ] as const
 export type TalentSheetElementBonusAbilityKey =
   (typeof allTalentSheetElementBonusAbilityKey)[number]
@@ -67,7 +67,7 @@ export const allTalentSheetElementKey = [
   'overworld',
   ...allTalentSheetElementBonusAbilityKey,
   ...allTalentSheetElementStatBoostKey,
-  ...allTalentSheetElementEidolonKey,
+  ...allTalentSheetElementEidolonKey
 ] as const
 
 export type TalentSheetElementKey = (typeof allTalentSheetElementKey)[number]

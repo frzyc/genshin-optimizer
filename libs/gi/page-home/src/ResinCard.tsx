@@ -10,7 +10,7 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
@@ -31,9 +31,12 @@ export default function ResinCard() {
   useEffect(() => {
     const setSecondTimeout = () => {
       setTime(new Date(Date.now() + timeZones[timeZoneKey]))
-      return setTimeout(() => {
-        interval = setSecondTimeout()
-      }, SECOND_MS - (Date.now() % SECOND_MS))
+      return setTimeout(
+        () => {
+          interval = setSecondTimeout()
+        },
+        SECOND_MS - (Date.now() % SECOND_MS)
+      )
     }
     let interval = setSecondTimeout()
     return () => clearTimeout(interval)
@@ -52,7 +55,7 @@ export default function ResinCard() {
       )
     database.displayTool.set({
       resin: newResin,
-      resinDate: new Date().getTime(),
+      resinDate: new Date().getTime()
     })
   }
 

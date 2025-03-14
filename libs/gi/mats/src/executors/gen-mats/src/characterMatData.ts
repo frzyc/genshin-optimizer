@@ -4,7 +4,7 @@ import type {
   AscensionRecord,
   AvatarSkillDepotExcelConfigData,
   CharacterId,
-  ProudSkillExcelConfigData,
+  ProudSkillExcelConfigData
 } from '@genshin-optimizer/gi/dm'
 import {
   TextMapEN,
@@ -14,7 +14,7 @@ import {
   avatarSkillExcelConfigData,
   characterIdMap,
   materialExcelConfigData,
-  proudSkillExcelConfigData,
+  proudSkillExcelConfigData
 } from '@genshin-optimizer/gi/dm'
 import type { UpgradeCost } from '.'
 import * as somniaData from './Somnia/data.json'
@@ -40,7 +40,7 @@ export default function characterMatData(): CharacterMatDatas {
   ) {
     const {
       energySkill: burst,
-      skills: [normal, skill],
+      skills: [normal, skill]
     } = depot
 
     const talents = [...keys, 'talents']
@@ -62,10 +62,10 @@ export default function characterMatData(): CharacterMatDatas {
                 item: nameToKey(
                   TextMapEN[materialExcelConfigData[item.id].nameTextMapHash]
                 ),
-                amount: item.count,
+                amount: item.count
               })),
-            cost: skill.coinCost ?? 0,
-          },
+            cost: skill.coinCost ?? 0
+          }
         ])
       )
       layeredAssignment(data, keys, levels)
@@ -107,10 +107,10 @@ export default function characterMatData(): CharacterMatDatas {
                 item: nameToKey(
                   TextMapEN[materialExcelConfigData[item.id].nameTextMapHash]
                 ),
-                amount: item.count,
+                amount: item.count
               }
-            }),
-        },
+            })
+        }
       ])
     )
 

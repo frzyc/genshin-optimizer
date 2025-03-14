@@ -8,7 +8,7 @@ import {
   infoMut,
   input,
   percent,
-  prod,
+  prod
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -18,7 +18,7 @@ import {
   customDmgNode,
   dataObjForCharacterSheet,
   dmgNode,
-  plungingDmgNodes,
+  plungingDmgNodes
 } from '../dataUtil'
 
 const key: CharacterKey = 'Lisa'
@@ -35,17 +35,17 @@ const dm = {
       skillParam_gen.auto[a++], // 1
       skillParam_gen.auto[a++], // 2
       skillParam_gen.auto[a++], // 3
-      skillParam_gen.auto[a++], // 4
-    ],
+      skillParam_gen.auto[a++] // 4
+    ]
   },
   charged: {
     dmg: skillParam_gen.auto[a++],
-    stamina: skillParam_gen.auto[a++][0],
+    stamina: skillParam_gen.auto[a++][0]
   },
   plunging: {
     dmg: skillParam_gen.auto[a++],
     low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++]
   },
   skill: {
     stack0: skillParam_gen.skill[s++],
@@ -54,22 +54,22 @@ const dm = {
     stack3: skillParam_gen.skill[s++],
     holdCD: skillParam_gen.skill[s++][0],
     press: skillParam_gen.skill[s++],
-    pressCD: skillParam_gen.skill[s++][0],
+    pressCD: skillParam_gen.skill[s++][0]
   },
   burst: {
     summon: 0.1, //not in skillParam
     tick: skillParam_gen.burst[b++],
     duration: skillParam_gen.burst[b++][0],
     cd: skillParam_gen.burst[b++][0],
-    cost: skillParam_gen.burst[b++][0],
+    cost: skillParam_gen.burst[b++][0]
   },
   passive1: {
-    unknown: skillParam_gen.passive1[0][0], // I have no idea what this is
+    unknown: skillParam_gen.passive1[0][0] // I have no idea what this is
   },
   passive2: {
     defShred: skillParam_gen.passive2[p2++][0],
-    duration: skillParam_gen.passive2[p2++][0],
-  },
+    duration: skillParam_gen.passive2[p2++][0]
+  }
 } as const
 
 const [condA4Path, condA4] = cond(key, 'LisaA4')
@@ -91,7 +91,7 @@ const dmgFormulas = {
     dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
   ),
   charged: {
-    dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
+    dmg: dmgNode('atk', dm.charged.dmg, 'charged')
   },
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
@@ -99,15 +99,15 @@ const dmgFormulas = {
     stack1: dmgNode('atk', dm.skill.stack1, 'skill'),
     stack2: dmgNode('atk', dm.skill.stack2, 'skill'),
     stack3: dmgNode('atk', dm.skill.stack3, 'skill'),
-    press: dmgNode('atk', dm.skill.press, 'skill'),
+    press: dmgNode('atk', dm.skill.press, 'skill')
   },
   burst: {
     summon: customDmgNode(
       prod(percent(dm.burst.summon), input.total.atk),
       'burst'
     ),
-    tick: dmgNode('atk', dm.burst.tick, 'burst'),
-  },
+    tick: dmgNode('atk', dm.burst.tick, 'burst')
+  }
 }
 
 const nodeC3 = greaterEq(input.constellation, 3, 3)
@@ -116,65 +116,65 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     burstBoost: nodeC3,
     skillBoost: nodeC5,
-    def_: nodeC2DefIncrease,
+    def_: nodeC2DefIncrease
   },
   teamBuff: {
     premod: {
-      enemyDefRed_: nodeA4DefShred,
-    },
-  },
+      enemyDefRed_: nodeA4DefShred
+    }
+  }
 })
 
 const sheet: TalentSheet = {
   auto: ct.talentTem('auto', [
     {
-      text: ct.chg('auto.fields.normal'),
+      text: ct.chg('auto.fields.normal')
     },
     {
       fields: dm.normal.hitArr.map((_, i) => ({
         node: infoMut(dmgFormulas.normal[i], {
-          name: ct.chg(`auto.skillParams.${i}`),
-        }),
-      })),
+          name: ct.chg(`auto.skillParams.${i}`)
+        })
+      }))
     },
     {
-      text: ct.chg('auto.fields.charged'),
+      text: ct.chg('auto.fields.charged')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.charged.dmg, {
-            name: ct.chg(`auto.skillParams.4`),
-          }),
+            name: ct.chg(`auto.skillParams.4`)
+          })
         },
         {
           text: ct.chg('auto.skillParams.5'),
-          value: dm.charged.stamina,
-        },
-      ],
+          value: dm.charged.stamina
+        }
+      ]
     },
     {
-      text: ct.chg('auto.fields.plunging'),
+      text: ct.chg('auto.fields.plunging')
     },
     {
       fields: [
         {
           node: infoMut(dmgFormulas.plunging.dmg, {
-            name: stg('plunging.dmg'),
-          }),
+            name: stg('plunging.dmg')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging.low, {
-            name: stg('plunging.low'),
-          }),
+            name: stg('plunging.low')
+          })
         },
         {
           node: infoMut(dmgFormulas.plunging.high, {
-            name: stg('plunging.high'),
-          }),
-        },
-      ],
-    },
+            name: stg('plunging.high')
+          })
+        }
+      ]
+    }
   ]),
 
   skill: ct.talentTem('skill', [
@@ -182,26 +182,26 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.skill.press, {
-            name: ct.chg(`skill.skillParams.0`),
-          }),
+            name: ct.chg(`skill.skillParams.0`)
+          })
         },
         ...(range(0, 3) as Array<0 | 1 | 2 | 3>).map((i) => ({
           node: infoMut(dmgFormulas.skill[`stack${i}`], {
-            name: ct.chg(`skill.skillParams.${2 + i}`),
-          }),
+            name: ct.chg(`skill.skillParams.${2 + i}`)
+          })
         })),
         {
           text: stg('press.cd'),
           value: dm.skill.pressCD,
-          unit: 's',
+          unit: 's'
         },
         {
           text: stg('hold.cd'),
           value: dm.skill.holdCD,
-          unit: 's',
-        },
-      ],
-    },
+          unit: 's'
+        }
+      ]
+    }
   ]),
 
   burst: ct.talentTem('burst', [
@@ -209,30 +209,30 @@ const sheet: TalentSheet = {
       fields: [
         {
           node: infoMut(dmgFormulas.burst.summon, {
-            name: stg('skillDMG'),
-          }),
+            name: stg('skillDMG')
+          })
         },
         {
           node: infoMut(dmgFormulas.burst.tick, {
-            name: ct.chg('burst.skillParams.0'),
-          }),
+            name: ct.chg('burst.skillParams.0')
+          })
         },
         {
           text: ct.chg('burst.skillParams.1'),
           value: dm.burst.duration,
-          unit: 's',
+          unit: 's'
         },
         {
           text: ct.chg('burst.skillParams.2'),
           value: dm.burst.cd,
-          unit: 's',
+          unit: 's'
         },
         {
           text: ct.chg('burst.skillParams.3'),
-          value: dm.burst.cost,
-        },
-      ],
-    },
+          value: dm.burst.cost
+        }
+      ]
+    }
   ]),
 
   passive1: ct.talentTem('passive1'),
@@ -246,17 +246,17 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: nodeA4DefShred,
+              node: nodeA4DefShred
             },
             {
               text: stg('duration'),
               value: dm.passive2.duration,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    }),
+              unit: 's'
+            }
+          ]
+        }
+      }
+    })
   ]),
   passive3: ct.talentTem('passive3'),
   constellation1: ct.talentTem('constellation1'),
@@ -269,23 +269,23 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: nodeC2DefIncrease,
+              node: nodeC2DefIncrease
             },
             {
-              text: st('incInterRes'),
-            },
-          ],
-        },
-      },
-    }),
+              text: st('incInterRes')
+            }
+          ]
+        }
+      }
+    })
   ]),
   constellation3: ct.talentTem('constellation3', [
-    { fields: [{ node: nodeC3 }] },
+    { fields: [{ node: nodeC3 }] }
   ]),
   constellation4: ct.talentTem('constellation4'),
   constellation5: ct.talentTem('constellation5', [
-    { fields: [{ node: nodeC5 }] },
+    { fields: [{ node: nodeC5 }] }
   ]),
-  constellation6: ct.talentTem('constellation6'),
+  constellation6: ct.talentTem('constellation6')
 }
 export default new CharacterSheet(sheet, data)

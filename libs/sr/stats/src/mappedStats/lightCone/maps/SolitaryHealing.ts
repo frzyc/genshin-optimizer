@@ -10,7 +10,7 @@ const dm = {
   passive_brEffect_: data_gen.superimpose.passiveStats.brEffect_,
   dot_dmg_: data_gen.superimpose.otherStats[o++],
   duration: data_gen.superimpose.otherStats[o++][1],
-  energy: data_gen.superimpose.otherStats[o++],
+  energy: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

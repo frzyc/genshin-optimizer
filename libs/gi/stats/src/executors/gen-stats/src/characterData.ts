@@ -2,7 +2,7 @@ import type {
   ElementKey,
   LocationCharacterKey,
   RegionKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import type { CharacterId, StatKey } from '@genshin-optimizer/gi/dm'
 import {
@@ -16,7 +16,7 @@ import {
   fetterInfoExcelConfigData,
   propTypeMap,
   regionMap,
-  weaponMap,
+  weaponMap
 } from '@genshin-optimizer/gi/dm'
 import * as somniaData from './Somnia/data.json'
 
@@ -58,12 +58,12 @@ export default function characterData() {
         attackBase,
         defenseBase,
         propGrowCurves,
-        skillDepotId,
+        skillDepotId
       } = charData
       const curves = Object.fromEntries(
         propGrowCurves.map(({ type, growCurve }) => [
           propTypeMap[type],
-          growCurve,
+          growCurve
         ])
       ) as Record<'hp' | 'atk' | 'def', CharacterGrowCurveKey>
       const { infoBirthDay, infoBirthMonth, avatarAssocType } =
@@ -92,9 +92,9 @@ export default function characterData() {
         lvlCurves: [
           { key: 'hp', base: hpBase, curve: curves.hp },
           { key: 'atk', base: attackBase, curve: curves.atk },
-          { key: 'def', base: defenseBase, curve: curves.def },
+          { key: 'def', base: defenseBase, curve: curves.def }
         ],
-        ascensionBonus,
+        ascensionBonus
       }
       return [locCharKey, result]
     })

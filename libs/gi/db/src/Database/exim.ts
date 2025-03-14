@@ -13,13 +13,13 @@ function newMergeCounter<T>(): MergeResultCounter<T> {
     upgraded: [],
     remove: [],
     notInImport: 0,
-    beforeMerge: 0,
+    beforeMerge: 0
   }
 }
 function newImportCounter(): ImportResultCounter {
   return {
     import: 0,
-    beforeImport: 0,
+    beforeImport: 0
   }
 }
 
@@ -39,7 +39,7 @@ export function newImportResult(
     teams: newImportCounter(),
     teamChars: newImportCounter(),
     keepNotInImport,
-    ignoreDups,
+    ignoreDups
   }
 }
 export type IGO = {

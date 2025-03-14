@@ -26,8 +26,8 @@ const eleMas = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     eleMas,
-    hp_,
-  },
+    hp_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -42,15 +42,15 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: hp_,
+              node: hp_
             },
             {
-              node: eleMas,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: eleMas
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

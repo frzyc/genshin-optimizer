@@ -7,14 +7,14 @@ import type {
   TagMapEntries,
   TagMapEntry,
   TagOverride,
-  TagValRead,
+  TagValRead
 } from '@genshin-optimizer/pando/engine'
 import {
   TypedRead,
   tag as baseTag,
   tagVal as baseTagVal,
   constant,
-  reread,
+  reread
 } from '@genshin-optimizer/pando/engine'
 import type { IBaseConditionalData } from './IConditionalData'
 import type { EntryType, Preset } from './listing'
@@ -82,7 +82,7 @@ export class Read<Tag_ extends Tag = Tag> extends TypedRead<Tag_> {
       // 2) In TeamData: ownBuff.stackTmp.<q>.add(cmpNE(own.stackIn.<q>, 0, /* priority */))
       // 3) In TeamData: ownBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, own.stackIn))
       // 4) teamBuff.<stat>.add(own.stackOut.<q>)
-      this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })), // How should we get this reader? it should be a specific game's Read
+      this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })) // How should we get this reader? it should be a specific game's Read
     ]
   }
   reread(r: this): TagMapNodeEntry<Tag_> {

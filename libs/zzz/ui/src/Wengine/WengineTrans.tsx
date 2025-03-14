@@ -8,7 +8,7 @@ export function WengineName({ wKey }: { wKey: WengineKey }) {
 
 export function WengineRefineDesc({
   wKey,
-  phase,
+  phase
 }: {
   wKey: WengineKey
   phase: number
@@ -25,7 +25,7 @@ export function WengineRefineDesc({
 
 export function WengineRefineName({
   wKey,
-  phase,
+  phase
 }: {
   wKey: WengineKey
   phase: number

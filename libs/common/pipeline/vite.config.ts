@@ -12,8 +12,8 @@ export default defineConfig(() => ({
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
-    }),
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
+    })
   ],
 
   // Uncomment this if you are using workers.
@@ -29,7 +29,7 @@ export default defineConfig(() => ({
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../../coverage/libs/common/pipeline',
-      provider: 'v8' as const,
-    },
-  },
+      provider: 'v8' as const
+    }
+  }
 }))

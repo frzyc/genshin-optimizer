@@ -4,13 +4,13 @@ import {
   CustomNumberInputButtonGroupWrapper,
   DropdownButton,
   SqBadge,
-  TextButton,
+  TextButton
 } from '@genshin-optimizer/common/ui'
 import { clamp, getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import type { RelicSubStatKey } from '@genshin-optimizer/sr/consts'
 import {
   allRelicSubStatKeys,
-  relicSubstatRollData,
+  relicSubstatRollData
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { ISubstat } from '@genshin-optimizer/sr/srod'
@@ -18,7 +18,7 @@ import { StatIcon } from '@genshin-optimizer/sr/svgicons'
 import {
   getSubstatSummedRolls,
   getSubstatValuesPercent,
-  roundStat,
+  roundStat
 } from '@genshin-optimizer/sr/util'
 import {
   Box,
@@ -28,7 +28,7 @@ import {
   ListItemText,
   MenuItem,
   Slider,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -38,7 +38,7 @@ import { StatDisplay } from '../../Character'
 export default function SubstatInput({
   index,
   relic,
-  setSubstat,
+  setSubstat
 }: {
   index: number
   relic: ICachedRelic | undefined
@@ -50,7 +50,7 @@ export default function SubstatInput({
     key = '',
     value = 0,
     rolls = [],
-    efficiency = 0,
+    efficiency = 0
   } = relic?.substats[index] ?? {}
   // const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const rollNum = rolls.length
@@ -80,7 +80,7 @@ export default function SubstatInput({
       key
         ? [
             { value: 0 },
-            ...getSubstatSummedRolls(rarity, key).map((v) => ({ value: v })),
+            ...getSubstatSummedRolls(rarity, key).map((v) => ({ value: v }))
           ]
         : [{ value: 0 }],
     [key, rarity]
@@ -149,10 +149,10 @@ export default function SubstatInput({
               disabled={!key}
               error={!!error}
               sx={{
-                px: 1,
+                px: 1
               }}
               inputProps={{
-                sx: { textAlign: 'right' },
+                sx: { textAlign: 'right' }
               }}
             />
           </CustomNumberInputButtonGroupWrapper>
@@ -260,7 +260,7 @@ function SliderWrapper({
   value,
   setValue,
   marks,
-  disabled = false,
+  disabled = false
 }: {
   value: number
   setValue: (v: number) => void

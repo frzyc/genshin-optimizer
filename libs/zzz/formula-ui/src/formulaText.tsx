@@ -1,7 +1,7 @@
 import {
   getUnitStr,
   objFilter,
-  valueString,
+  valueString
 } from '@genshin-optimizer/common/util'
 import type { CalcMeta } from '@genshin-optimizer/game-opt/engine'
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
@@ -29,7 +29,7 @@ export function formulaText(
   if (old) return old
   const {
     val,
-    meta: { tag, op, ops, usedCats },
+    meta: { tag, op, ops, usedCats }
   } = data
   const usedTag =
     tag && (objFilter(tag, (_, k) => usedCats.has(k as keyof Tag)) as Tag)
@@ -111,7 +111,7 @@ export function formulaText(
     formula,
     prec,
     sheet,
-    deps: [...new Set(deps)],
+    deps: [...new Set(deps)]
   }
   return result
 }
@@ -120,5 +120,5 @@ const details = {
   sum: { head: '', joiner: ' + ', end: '', prec: 1 },
   prod: { head: '', joiner: ' * ', end: '', prec: 2 },
   max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
-  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
+  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity }
 } as const

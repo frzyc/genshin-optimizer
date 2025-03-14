@@ -1,12 +1,12 @@
 import { verifyObjKeys } from '@genshin-optimizer/common/util'
 import type {
   AbilityKey,
-  CharacterGenderedKey,
+  CharacterGenderedKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allAbilityKeys,
   allCharacterGenderedKeys,
-  allTrailblazerGenderedKeys,
+  allTrailblazerGenderedKeys
 } from '@genshin-optimizer/sr/consts'
 import type { AvatarSkillTreeConfig, Rank } from '@genshin-optimizer/sr/dm'
 import {
@@ -15,7 +15,7 @@ import {
   avatarRankConfig,
   avatarSkillConfig,
   avatarSkillTreeConfig,
-  characterIdMap,
+  characterIdMap
 } from '@genshin-optimizer/sr/dm'
 import { convertToHash } from '../util'
 
@@ -52,8 +52,8 @@ function addBonusAbility(
       name: convertToHash(config.PointName).toString(),
       fullDesc: convertToHash(config.PointDesc).toString(),
       shortDesc: '',
-      tag: '',
-    },
+      tag: ''
+    }
   ]
 }
 
@@ -79,7 +79,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
       name: SkillName.Hash.toString(),
       fullDesc: SkillDesc?.Hash.toString() ?? '',
       shortDesc: SimpleSkillDesc?.Hash.toString() ?? '',
-      tag: SkillTag.Hash.toString(),
+      tag: SkillTag.Hash.toString()
     })
   })
 
@@ -92,7 +92,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
     _technique,
     bonusAbility1,
     bonusAbility2,
-    bonusAbility3,
+    bonusAbility3
   ] = Object.values(avatarSkillTreeConfig[charId]).map(
     // Grab the first level
     (skillTree) => skillTree[0]
@@ -109,8 +109,8 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
         Rank,
         {
           name: convertToHash(Name).toString(),
-          desc: convertToHash(Desc).toString(),
-        },
+          desc: convertToHash(Desc).toString()
+        }
       ]
       return tuple
     }
@@ -123,8 +123,8 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
     {
       name,
       abilities,
-      ranks,
-    },
+      ranks
+    }
   ]
   return tuple
 })

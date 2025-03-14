@@ -88,6 +88,6 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   TwinNephrite,
   WanderingEvenstar,
   WaveridingWhirl,
-  WineAndSong,
+  WineAndSong
 } as const
 export default catalyst

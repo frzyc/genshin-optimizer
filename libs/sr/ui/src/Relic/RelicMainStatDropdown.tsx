@@ -2,7 +2,7 @@ import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
 import type {
   RelicMainStatKey,
-  RelicSlotKey,
+  RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import { relicSlotToMainStatKeys } from '@genshin-optimizer/sr/consts'
 import { StatIcon } from '@genshin-optimizer/sr/svgicons'
@@ -15,7 +15,7 @@ export function RelicMainStatDropdown({
   slotKey,
   setStatKey,
   defText,
-  dropdownButtonProps = {},
+  dropdownButtonProps = {}
 }: {
   statKey?: RelicMainStatKey
   slotKey: RelicSlotKey

@@ -5,7 +5,7 @@ import {
   infoMut,
   input,
   subscript,
-  target,
+  target
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -28,12 +28,12 @@ const eleMas = equal(input.activeCharKey, target.charKey, eleMas_disp)
 const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
-      eleMas,
+      eleMas
     },
     nonStacking: {
-      leafCon: nonstackWrite,
-    },
-  },
+      leafCon: nonstackWrite
+    }
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -48,25 +48,25 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(eleMas_disp, { path: 'eleMas' }),
+              node: infoMut(eleMas_disp, { path: 'eleMas' })
             },
             {
-              node: eleMas_dispInactive,
+              node: eleMas_dispInactive
             },
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
+              unit: 's'
             },
             {
               text: stg('cd'),
               value: 20,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

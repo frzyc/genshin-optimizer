@@ -11,7 +11,7 @@ import {
   sum,
   tally,
   threshold,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -24,12 +24,12 @@ const charged_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const stackAtk_arrs = [
   [-1, 0.16, 0.2, 0.24, 0.28, 0.32],
   [-1, 0.32, 0.4, 0.48, 0.56, 0.64],
-  [-1, 0.48, 0.6, 0.72, 0.84, 0.96],
+  [-1, 0.48, 0.6, 0.72, 0.84, 0.96]
 ]
 const moveSPD_arrs = [
   [-1, 0.04, 0.06, 0.08, 0.1, 0.12],
   [-1, 0.07, 0.09, 0.11, 0.13, 0.15],
-  [-1, 0.1, 0.12, 0.14, 0.16, 0.18],
+  [-1, 0.1, 0.12, 0.14, 0.16, 0.18]
 ]
 
 const sameElementTeammates = lookup(input.charEle, tally, naught)
@@ -70,8 +70,8 @@ const data = dataObjForWeaponSheet(key, {
   premod: {
     charged_dmg_,
     atk_,
-    moveSPD_,
-  },
+    moveSPD_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -80,22 +80,22 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: charged_dmg_,
-        },
-      ],
+          node: charged_dmg_
+        }
+      ]
     },
     {
       header: headerTemplate(key, st('stacks')),
       fields: [
         {
-          node: atk_,
+          node: atk_
         },
         {
           canShow: (data) => data.get(moveSPD_).value > 0,
-          node: moveSPD_,
-        },
-      ],
-    },
-  ],
+          node: moveSPD_
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

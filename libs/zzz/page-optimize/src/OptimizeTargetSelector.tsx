@@ -6,7 +6,7 @@ import { MenuItem } from '@mui/material'
 export function OptimizeTargetSelector({
   disabled = false,
   formulaKey,
-  setFormulaKey,
+  setFormulaKey
 }: {
   disabled?: boolean
   formulaKey: FormulaKey
@@ -42,5 +42,5 @@ const formulaKeyTextMap: Record<FormulaKey, string> = {
   shock: 'Shock Anomaly',
   corruption: 'Corruption Anomaly',
   shatter: 'Shatter Anomaly',
-  assault: 'Assault Anomaly',
+  assault: 'Assault Anomaly'
 }

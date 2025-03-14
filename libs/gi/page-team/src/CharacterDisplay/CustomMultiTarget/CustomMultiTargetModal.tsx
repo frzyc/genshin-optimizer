@@ -1,7 +1,7 @@
 import {
   CardThemed,
   InfoTooltip,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
@@ -21,7 +21,7 @@ import {
   Grid,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   Suspense,
@@ -29,7 +29,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import CustomMultiTargetCard from './CustomMultiTargetCard'
@@ -37,7 +37,7 @@ import CustomMultiTargetImportBtn from './CustomMultiTargetImportBtn'
 
 export function CustomMultiTargetModal({
   open,
-  onClose: onCloseModal,
+  onClose: onCloseModal
 }: {
   open: boolean
   onClose: () => void
@@ -93,7 +93,7 @@ export function CustomMultiTargetModal({
   const onClose = useCallback(() => {
     onCloseModal()
     database.teamChars.set(teamCharId, {
-      customMultiTargets,
+      customMultiTargets
     })
   }, [database, teamCharId, customMultiTargets, onCloseModal])
 
@@ -106,13 +106,13 @@ export function CustomMultiTargetModal({
     const newData = {
       ...origData,
       hit: { ...origData.hit },
-      infusion: { ...origData.infusion },
+      infusion: { ...origData.infusion }
     }
     delete newData.hit.reaction
     delete newData.infusion.team
     return {
       data: new UIData(newData, undefined),
-      teamData,
+      teamData
     }
   }, [origUIData, teamData])
 
@@ -137,7 +137,7 @@ export function CustomMultiTargetModal({
       customMultiTargets,
       deleteCustomMultiTarget,
       dupCustomMultiTarget,
-      setCustomMultiTarget,
+      setCustomMultiTarget
     ]
   )
 

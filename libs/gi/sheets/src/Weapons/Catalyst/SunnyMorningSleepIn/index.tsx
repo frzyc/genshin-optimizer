@@ -36,8 +36,8 @@ const afterBurst_eleMas = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    eleMas: sum(swirl_eleMas, afterSkill_eleMas, afterBurst_eleMas),
-  },
+    eleMas: sum(swirl_eleMas, afterSkill_eleMas, afterBurst_eleMas)
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -52,16 +52,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: swirl_eleMas,
+              node: swirl_eleMas
             },
             {
               text: stg('duration'),
               value: '6',
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -73,16 +73,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: afterSkill_eleMas,
+              node: afterSkill_eleMas
             },
             {
               text: stg('duration'),
               value: '9',
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -94,17 +94,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: afterBurst_eleMas,
+              node: afterBurst_eleMas
             },
             {
               text: stg('duration'),
               value: '30',
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

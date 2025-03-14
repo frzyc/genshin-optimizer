@@ -7,20 +7,20 @@ import {
   max,
   prod,
   read,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
   RelicCavernSetKey,
   RelicPlanarSetKey,
-  RelicSlotKey,
+  RelicSlotKey
 } from '@genshin-optimizer/sr/consts'
 import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type {
   ICachedLightCone,
   ICachedRelic,
   StatFilter,
-  Team,
+  Team
 } from '@genshin-optimizer/sr/db'
 import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
@@ -55,7 +55,7 @@ export function optimize(
     // min constraints from stat filters; invert max constraints if needed
     ...statFilters.map(({ tag, isMax }) =>
       isMax ? prod(-1, new Read(tag, 'sum')) : new Read(tag, 'sum')
-    ),
+    )
     // other calcs (graph, etc)
   ]
   const nodes = detach(undetachedNodes, calc, (tag: Tag) => {
@@ -101,7 +101,7 @@ export function optimize(
       -Infinity,
       ...statFilters.map((filter) =>
         filter.isMax ? filter.value * -1 : filter.value
-      ),
+      )
     ],
     candidates: [
       lightCones.map(convertLightConeToStats),
@@ -110,11 +110,11 @@ export function optimize(
       relicsBySlot.body.map(convertRelicToStats),
       relicsBySlot.feet.map(convertRelicToStats),
       relicsBySlot.sphere.map(convertRelicToStats),
-      relicsBySlot.rope.map(convertRelicToStats),
+      relicsBySlot.rope.map(convertRelicToStats)
     ],
     numWorkers,
     topN,
-    setProgress,
+    setProgress
   })
 }
 
@@ -128,7 +128,7 @@ function convertRelicToStats(relic: ICachedRelic): Candidate<string> {
         .filter(({ key, value }) => key && value)
         .map(({ key, value }) => [key, value])
     ),
-    [setKey]: 1,
+    [setKey]: 1
   } as Candidate<string>
 }
 
@@ -141,6 +141,6 @@ function convertLightConeToStats(
     lvl,
     superimpose,
     ascension,
-    [key]: 1,
+    [key]: 1
   } as Candidate<string>
 }

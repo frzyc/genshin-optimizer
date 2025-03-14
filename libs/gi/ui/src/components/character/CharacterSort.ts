@@ -3,13 +3,13 @@ import type {
   CharacterKey,
   CharacterRarityKey,
   ElementKey,
-  WeaponTypeKey,
+  WeaponTypeKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterRarityKeys,
   allElementKeys,
   allWeaponTypeKeys,
-  charKeyToLocGenderedCharKey,
+  charKeyToLocGenderedCharKey
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import { i18n } from '@genshin-optimizer/gi/i18n'
@@ -19,7 +19,7 @@ export const characterSortKeys = [
   'level',
   'rarity',
   'name',
-  'favorite',
+  'favorite'
 ] as const
 export type CharacterSortKey = (typeof characterSortKeys)[number]
 
@@ -42,7 +42,7 @@ export function characterSortConfigs(
       return char ? char.level * (char.ascension + 1) : 0
     },
     rarity: (ck) => getCharStat(ck).rarity ?? 0,
-    favorite: (ck) => (database.charMeta.get(ck).favorite ? 1 : 0),
+    favorite: (ck) => (database.charMeta.get(ck).favorite ? 1 : 0)
   }
 }
 
@@ -51,7 +51,7 @@ export const characterFilterKeys = [
   'weaponType',
   'rarity',
   'name',
-  'new',
+  'new'
 ] as const
 export type CharacterFilterKey = (typeof characterFilterKeys)[number]
 
@@ -86,7 +86,7 @@ export function characterFilterConfigs(
           .includes(filter.toLowerCase())),
     new: (ck, filter) =>
       filter === undefined ||
-      filter === (database.chars.get(ck as CharacterKey) ? 'no' : 'yes'),
+      filter === (database.chars.get(ck as CharacterKey) ? 'no' : 'yes')
   }
 }
 
@@ -95,7 +95,7 @@ export const characterSortMap: Partial<
 > = {
   name: ['favorite', 'name'],
   level: ['favorite', 'level', 'rarity', 'name'],
-  rarity: ['favorite', 'rarity', 'level', 'name'],
+  rarity: ['favorite', 'rarity', 'level', 'name']
 }
 
 export const initialCharacterDisplayState = (): {
@@ -111,5 +111,5 @@ export const initialCharacterDisplayState = (): {
   weaponType: [...allWeaponTypeKeys],
   element: [...allElementKeys],
   rarity: [...allCharacterRarityKeys],
-  pageIndex: 0,
+  pageIndex: 0
 })

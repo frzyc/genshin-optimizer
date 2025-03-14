@@ -13,7 +13,7 @@ import {
   CardHeader,
   IconButton,
   Tooltip,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -30,7 +30,7 @@ export function BuildCard({
   onDupe,
   onEquip,
   onRemove,
-  hideFooter = false,
+  hideFooter = false
 }: {
   avatar?: ReactNode
   name: ReactNode
@@ -73,7 +73,7 @@ export function BuildCard({
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        boxShadow: active ? '0px 0px 0px 2px green inset' : undefined,
+        boxShadow: active ? '0px 0px 0px 2px green inset' : undefined
       }}
     >
       {onActive ? (
@@ -93,7 +93,7 @@ export function BuildCard({
           sx={{
             display: 'flex',
             justifyContent: 'space-around',
-            marginTop: 'auto',
+            marginTop: 'auto'
           }}
         >
           <Tooltip

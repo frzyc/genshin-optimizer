@@ -1,25 +1,25 @@
 import {
   notEmpty,
   type FilterConfigs,
-  type SortConfigs,
+  type SortConfigs
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
   ArtCharDatabase,
   Team,
-  TeamSortKey,
+  TeamSortKey
 } from '@genshin-optimizer/gi/db'
 
 export function teamSortConfigs(): SortConfigs<TeamSortKey, Team> {
   return {
     name: (team) => team.name ?? '',
-    lastEdit: (team) => team.lastEdit ?? 0,
+    lastEdit: (team) => team.lastEdit ?? 0
   }
 }
 
 export const teamSortMap: Record<TeamSortKey, TeamSortKey[]> = {
   name: ['name', 'lastEdit'],
-  lastEdit: ['lastEdit'],
+  lastEdit: ['lastEdit']
 }
 
 export const teamFilterKeys = ['charKeys', 'name'] as const
@@ -51,6 +51,6 @@ export function teamFilterConfigs(
       !!database.teams
         .get(teamId)
         ?.name.toLowerCase()
-        .includes(filter.toLowerCase()),
+        .includes(filter.toLowerCase())
   }
 }

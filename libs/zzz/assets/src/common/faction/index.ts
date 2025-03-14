@@ -17,6 +17,6 @@ const data = {
   SonsOfCalydon,
   StarsOfLyra,
   VictoriaHousekeepingCo,
-  RandomPlay,
+  RandomPlay
 } as const
 export default data

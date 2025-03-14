@@ -5,7 +5,7 @@ import {
   input,
   lookup,
   naught,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -18,7 +18,7 @@ const [, trm] = trans('weapon', key)
 const stackHp_arrs = [
   [-1, 0.12, 0.15, 0.18, 0.21, 0.24],
   [-1, 0.24, 0.3, 0.36, 0.42, 0.48],
-  [-1, 0.4, 0.5, 0.6, 0.7, 0.8],
+  [-1, 0.4, 0.5, 0.6, 0.7, 0.8]
 ]
 const burst_critRate_arr = [-1, 0.28, 0.35, 0.42, 0.49, 0.56]
 
@@ -41,8 +41,8 @@ const burst_critRate_ = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     hp_,
-    burst_critRate_,
-  },
+    burst_critRate_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -56,14 +56,14 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: stack }),
         fields: [
           {
-            node: hp_,
+            node: hp_
           },
           {
-            node: burst_critRate_,
-          },
-        ],
-      })),
-    },
-  ],
+            node: burst_critRate_
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -2,7 +2,7 @@ import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import {
   nameToKey,
   objFilterKeys,
-  objKeyValMap,
+  objKeyValMap
 } from '@genshin-optimizer/common/util'
 import { parse } from 'json-bigint'
 import { TextMapEN } from '../../TextMapUtil'
@@ -56,7 +56,7 @@ dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/EquipmentConfig_idmap_gen.json`,
   objKeyValMap(equipmentConfigSrc, (config) => [
     config.EquipmentID,
-    nameToKey(TextMapEN[config.EquipmentName.Hash.toString()]),
+    nameToKey(TextMapEN[config.EquipmentName.Hash.toString()])
   ])
 )
 dumpFile(
@@ -66,7 +66,7 @@ dumpFile(
       Object.entries(equipmentConfigSrc).map(([, data]) =>
         nameToKey(TextMapEN[data.EquipmentName.Hash.toString()])
       )
-    ),
+    )
   ]
     .filter((s) => s && s !== 'NICKNAME')
     .sort()

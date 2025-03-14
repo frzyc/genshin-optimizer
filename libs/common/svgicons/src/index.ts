@@ -9,6 +9,6 @@ export * from './icons/TwitchIcon'
 export const iconInlineProps: SvgIconProps = {
   fontSize: 'inherit',
   sx: {
-    verticalAlign: '-10%',
-  },
+    verticalAlign: '-10%'
+  }
 } as const

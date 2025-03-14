@@ -53,7 +53,7 @@ export const artifactIdMap: Record<string | number, ArtifactSetKey> = {
   15035: 'FragmentOfHarmonicWhimsy',
   15036: 'UnfinishedReverie',
   15037: 'ScrollOfTheHeroOfCinderCity',
-  15038: 'ObsidianCodex',
+  15038: 'ObsidianCodex'
 } as const
 
 export const artifactSlotMap = {
@@ -61,6 +61,6 @@ export const artifactSlotMap = {
   EQUIP_BRACER: 'flower',
   EQUIP_SHOES: 'sands',
   EQUIP_RING: 'goblet',
-  EQUIP_DRESS: 'circlet',
+  EQUIP_DRESS: 'circlet'
 } as const
 export type DArtifactSlotKey = keyof typeof artifactSlotMap

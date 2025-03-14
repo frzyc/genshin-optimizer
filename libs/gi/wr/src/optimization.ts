@@ -11,7 +11,7 @@ import type {
   ReadNode,
   StrNode,
   StrPrioNode,
-  ThresholdNode,
+  ThresholdNode
 } from './type'
 import { constant } from './utils'
 
@@ -28,7 +28,7 @@ const allCommutativeMonoidOperations: Record<
   min: (x: number[]): number => Math.min(...x),
   max: (x: number[]): number => Math.max(...x),
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
-  mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
+  mul: (x: number[]): number => x.reduce((a, b) => a * b, 1)
 }
 export const allOperations: Record<
   Operation | 'threshold',
@@ -42,7 +42,7 @@ export const allOperations: Record<
   },
   sum_frac: (x: number[]): number => x[0] / x.reduce((a, b) => a + b),
   threshold: ([value, threshold, pass, fail]: number[]): number =>
-    value >= threshold ? pass : fail,
+    value >= threshold ? pass : fail
 }
 
 const commutativeMonoidOperationSet = new Set(
@@ -294,7 +294,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
           ...n,
           operands: [...n.operands].sort(
             (a, b) => nodeSortMap.get(a)! - nodeSortMap.get(b)!
-          ),
+          )
         }
     }
   })
@@ -512,7 +512,7 @@ export function constantFold(
           if (!nextContext) {
             nextContext = {
               data: [...context.data, formula.data],
-              processed: new Map(),
+              processed: new Map()
             }
             nextContextMap.set(nextContext, new Map())
             nextMap.set(formula.data, nextContext)
@@ -543,7 +543,7 @@ function transpose(br: AnyNode, fold: AnyNode, parent: AnyNode): AnyNode {
   function replace(newNode: AnyNode): AnyNode {
     return {
       ...parent,
-      operands: parent.operands.map((n) => (n === br ? newNode : n)),
+      operands: parent.operands.map((n) => (n === br ? newNode : n))
     } as AnyNode
   }
 
@@ -552,7 +552,7 @@ function transpose(br: AnyNode, fold: AnyNode, parent: AnyNode): AnyNode {
     if (v2.operation === 'const' || v3.operation === 'const') {
       return {
         operation: 'threshold',
-        operands: [v0, v1, replace(v2) as any, replace(v3) as any],
+        operands: [v0, v1, replace(v2) as any, replace(v3) as any]
       }
     }
   }
@@ -562,5 +562,5 @@ function transpose(br: AnyNode, fold: AnyNode, parent: AnyNode): AnyNode {
 export const testing = {
   constantFold,
   flatten,
-  deduplicate,
+  deduplicate
 }

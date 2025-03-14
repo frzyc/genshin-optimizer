@@ -3,12 +3,12 @@ import { BootstrapTooltip, SqBadge } from '@genshin-optimizer/common/ui'
 import { bulkCatTotal, handleMultiSelect } from '@genshin-optimizer/common/util'
 import {
   allElementWithPhyKeys,
-  artSlotMainKeys,
+  artSlotMainKeys
 } from '@genshin-optimizer/gi/consts'
 import {
   TeamCharacterContext,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import {
   AtkIcon,
@@ -16,7 +16,7 @@ import {
   HpIcon,
   PlumeIcon,
   SlotIcon,
-  StatIcon,
+  StatIcon
 } from '@genshin-optimizer/gi/svgicons'
 import { StatColoredWithUnit } from '@genshin-optimizer/gi/ui'
 import {
@@ -25,7 +25,7 @@ import {
   CardContent,
   Divider,
   Grid,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -34,14 +34,14 @@ const artifactsSlotsToSelectMainStats = ['sands', 'goblet', 'circlet'] as const
 
 export default function MainStatSelectionCard({
   disabled = false,
-  filteredArtIdMap,
+  filteredArtIdMap
 }: {
   disabled?: boolean
   filteredArtIdMap: Record<string, boolean>
 }) {
   const { t } = useTranslation('artifact')
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const { mainStatKeys } = useOptConfig(optConfigId)!
   const database = useDatabase()
@@ -52,7 +52,7 @@ export default function MainStatSelectionCard({
       sandsMainStatTots: artSlotMainKeys['sands'],
       gobletMainStatTots: artSlotMainKeys['goblet'],
       circletMainStatTots: artSlotMainKeys['circlet'],
-      slotTots: artifactsSlotsToSelectMainStats,
+      slotTots: artifactsSlotsToSelectMainStats
     } as const
     const catTotals = bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
@@ -76,9 +76,9 @@ export default function MainStatSelectionCard({
         plume: catTotals.plumeMainStatTots,
         sands: catTotals.sandsMainStatTots,
         goblet: catTotals.gobletMainStatTots,
-        circlet: catTotals.circletMainStatTots,
+        circlet: catTotals.circletMainStatTots
       },
-      slotTots: catTotals.slotTots,
+      slotTots: catTotals.slotTots
     }
   }, [database, filteredArtIdMap])
 
@@ -150,7 +150,7 @@ export default function MainStatSelectionCard({
                     mainStatKey.includes(ele)
                   )
                   const color = selectedMainKeys.includes(mainStatKey)
-                    ? element ?? 'success'
+                    ? (element ?? 'success')
                     : 'secondary'
                   return (
                     <Grid
@@ -181,7 +181,7 @@ export default function MainStatSelectionCard({
                           sx={{
                             height: '100%',
                             pointerEvents: disabled ? 'none' : undefined,
-                            cursor: disabled ? 'none' : undefined,
+                            cursor: disabled ? 'none' : undefined
                           }}
                           startIcon={<StatIcon statKey={mainStatKey} />}
                           onClick={() =>
@@ -191,8 +191,8 @@ export default function MainStatSelectionCard({
                                 [slotKey]: mainKeysHandler(
                                   selectedMainKeys,
                                   mainStatKey
-                                ),
-                              },
+                                )
+                              }
                             })
                           }
                         >

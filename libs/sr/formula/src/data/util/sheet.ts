@@ -2,7 +2,7 @@ import { tag } from '@genshin-optimizer/game-opt/engine'
 import {
   prod,
   type NumNode,
-  type StrNode,
+  type StrNode
 } from '@genshin-optimizer/pando/engine'
 import type { StatKey } from '@genshin-optimizer/sr/consts'
 import type { Read, Tag } from '.'
@@ -13,7 +13,7 @@ import {
   semiOwnBuff,
   teamBuff,
   type TagMapNodeEntries,
-  type TagMapNodeEntry,
+  type TagMapNodeEntry
 } from '.'
 import type { ElementalType, Sheet } from './listing'
 
@@ -70,7 +70,7 @@ export function registerBuff(
       // Hook for listing
       namedReader.toEntry(entry.value),
       // Still include the original entry
-      entry,
+      entry
     ]
   })
 }
@@ -106,7 +106,7 @@ export function registerBuffFormula(
       // Hook for listing
       namedReader.toEntry(entry.value),
       // Still include the original entry
-      entry,
+      entry
     ]
   })
 }
@@ -124,7 +124,7 @@ function registerFormula(
     listing.add(
       listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
     ),
-    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
+    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value }))
   ]
 }
 

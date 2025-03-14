@@ -20,7 +20,7 @@ export default function CustomDot({
   radiusUnselected = 3,
   colorSelected = 'red',
   colorUnselected,
-  shape = 'circle',
+  shape = 'circle'
 }: CustomDotProps) {
   if (!cx || !cy || !payload) {
     return null
@@ -80,7 +80,7 @@ function CustomShape({
   cy,
   r,
   fill,
-  stroke,
+  stroke
 }: {
   shape: CustomShapeType
   id?: string

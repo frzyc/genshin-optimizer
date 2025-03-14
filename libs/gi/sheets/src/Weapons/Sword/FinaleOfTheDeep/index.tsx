@@ -5,7 +5,7 @@ import {
   min,
   percent,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -49,8 +49,8 @@ const data = dataObjForWeaponSheet(
   {
     premod: {
       atk_: base_atk_,
-      atk: bond_atk,
-    },
+      atk: bond_atk
+    }
   },
   { bond_atk }
 )
@@ -66,21 +66,21 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: base_atk_,
+              node: base_atk_
             },
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
+              unit: 's'
             },
             {
               text: stg('cd'),
               value: 10,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -91,17 +91,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: bond_atk,
+              node: bond_atk
             },
             {
               text: stg('duration'),
               value: 15,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

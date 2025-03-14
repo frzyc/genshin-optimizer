@@ -3,14 +3,14 @@ import {
   deepClone,
   deletePropPath,
   evalIfFunc,
-  layeredAssignment,
+  layeredAssignment
 } from '@genshin-optimizer/common/util'
 import { TeamCharacterContext, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import type {
   DocumentConditional,
   IDocumentConditionalExclusive,
-  IDocumentConditionalMultiple,
+  IDocumentConditionalMultiple
 } from '@genshin-optimizer/gi/sheets'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -26,7 +26,7 @@ interface ConditionalSelectorProps {
 }
 export function ConditionalSelector({
   conditional,
-  disabled = false,
+  disabled = false
 }: ConditionalSelectorProps) {
   const { data } = useContext(DataContext)
   if (
@@ -61,7 +61,7 @@ interface SimpleConditionalSelectorProps extends ConditionalSelectorProps {
 }
 function SimpleConditionalSelector({
   conditional,
-  disabled,
+  disabled
 }: SimpleConditionalSelectorProps) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
@@ -120,7 +120,7 @@ interface ExclusiveConditionalSelectorProps extends ConditionalSelectorProps {
 }
 function ExclusiveConditionalSelector({
   conditional,
-  disabled,
+  disabled
 }: ExclusiveConditionalSelectorProps) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
@@ -201,7 +201,7 @@ interface MultipleConditionalSelectorProps extends ConditionalSelectorProps {
 }
 function MultipleConditionalSelector({
   conditional,
-  disabled,
+  disabled
 }: MultipleConditionalSelectorProps) {
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)

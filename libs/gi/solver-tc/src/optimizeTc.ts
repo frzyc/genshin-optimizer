@@ -2,7 +2,7 @@ import { objMap } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
-  artSubstatRollData,
+  artSubstatRollData
 } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
@@ -42,8 +42,8 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
   const {
     artifact: {
       slots,
-      substats: { stats: substats, type: substatsType, rarity },
-    },
+      substats: { stats: substats, type: substatsType, rarity }
+    }
   } = charTC
   const existingRolls = objMap(substats, (v, k) =>
     Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
@@ -56,7 +56,7 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
       Object.entries(existingRolls) as Array<[SubstatKey, number]>,
       mainStatsCount,
       minSubLines
-    ),
+    )
   }
 }
 
@@ -71,9 +71,9 @@ export function optimizeTcUsingNodes(
   const {
     artifact: {
       slots,
-      substats: { stats: substats, type: substatsType, rarity },
+      substats: { stats: substats, type: substatsType, rarity }
     },
-    optimization: { distributedSubstats, maxSubstats },
+    optimization: { distributedSubstats, maxSubstats }
   } = charTC
 
   const scalesWith = new Set<string>()
@@ -102,7 +102,7 @@ export function optimizeTcUsingNodes(
   let max = -Infinity
   const buffer: Record<string, number> = {} //Object.fromEntries([...subs].map((x) => [x, 0]))
   const bufferRolls: Partial<Record<SubstatKey | 'other', number>> = {
-    other: 0,
+    other: 0
   } // Object.fromEntries([...subs].map((x) => [x, 0]))
   let maxBuffer: Record<string, number> = structuredClone(buffer)
   let maxBufferRolls: Partial<Record<SubstatKey | 'other', number>> =
@@ -124,7 +124,7 @@ export function optimizeTcUsingNodes(
       [...scalesWithSub, 'other'].map((k) =>
         k === 'other' ? distributedSubstats : maxSubsAssignable[k]
       )
-    ),
+    )
   })
   let tested = 0
   let failed = 0
@@ -138,7 +138,7 @@ export function optimizeTcUsingNodes(
           resultType: 'count',
           tested,
           failed,
-          skipped,
+          skipped
         })
       if (x !== 'other') buffer[x] = substatValue(x, toAssign)
       bufferRolls[x] = toAssign
@@ -156,7 +156,7 @@ export function optimizeTcUsingNodes(
         //check for distributed feasibility
         const allRolls = allSubstatKeys.map((k) => [
           k,
-          (existingRolls[k] ?? 0) + (bufferRolls[k] ?? 0),
+          (existingRolls[k] ?? 0) + (bufferRolls[k] ?? 0)
         ]) as Array<[SubstatKey, number]>
         const minOtherRolls = getMinOtherRolls(
           allRolls,
@@ -187,7 +187,7 @@ export function optimizeTcUsingNodes(
     console.log({
       maxBuffer,
       maxBufferRolls,
-      scalesWith,
+      scalesWith
     })
   }
   const distributed = Object.entries(maxBufferRolls).reduce(
@@ -201,7 +201,7 @@ export function optimizeTcUsingNodes(
     maxBuffer,
     tested,
     failed,
-    skipped,
+    skipped
   })
   // return {
   //   maxBuffer,

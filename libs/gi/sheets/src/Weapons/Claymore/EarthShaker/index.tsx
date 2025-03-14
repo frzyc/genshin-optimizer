@@ -17,8 +17,8 @@ const pyroReaction_skill_dmg_ = equal(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    skill_dmg_: pyroReaction_skill_dmg_,
-  },
+    skill_dmg_: pyroReaction_skill_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -32,17 +32,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: pyroReaction_skill_dmg_,
+              node: pyroReaction_skill_dmg_
             },
             {
               text: stg('duration'),
               value: 8,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

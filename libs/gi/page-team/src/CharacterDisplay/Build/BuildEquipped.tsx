@@ -3,21 +3,21 @@ import { type ArtifactSlotKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardNano,
   BuildCard,
   CharIconSide,
-  WeaponCardNano,
+  WeaponCardNano
 } from '@genshin-optimizer/gi/ui'
 import { Grid } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 export function BuildEquipped({
   active = false,
-  onChangeBuild,
+  onChangeBuild
 }: {
   active?: boolean
   onChangeBuild?: () => void
@@ -25,14 +25,14 @@ export function BuildEquipped({
   const { t } = useTranslation('build')
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {
-    character: { key: characterKey, equippedArtifacts, equippedWeapon },
+    character: { key: characterKey, equippedArtifacts, equippedWeapon }
   } = useContext(CharacterContext)
   const database = useDatabase()
   const onActive = useMemo(() => {
     if (active) return undefined
     return () => {
       database.teams.setLoadoutDatum(teamId, teamCharId, {
-        buildType: 'equipped',
+        buildType: 'equipped'
       })
       onChangeBuild?.()
     }
@@ -41,7 +41,7 @@ export function BuildEquipped({
     database.teamChars.newBuild(teamCharId, {
       name: t('buildEqCard.copy.nameReal'),
       artifactIds: equippedArtifacts,
-      weaponId: equippedWeapon,
+      weaponId: equippedWeapon
     })
   const weaponTypeKey = getCharStat(characterKey).weaponType
   const copyToTc = () => {
@@ -55,7 +55,7 @@ export function BuildEquipped({
     // copy over name
     database.buildTcs.set(newBuildTcId, {
       name: t('buildEqCard.copy.nameTc'),
-      description: t('buildEqCard.copy.desc'),
+      description: t('buildEqCard.copy.desc')
     })
   }
 
@@ -74,13 +74,13 @@ export function BuildEquipped({
 }
 function BuildEquip({
   weaponId,
-  artifactIds,
+  artifactIds
 }: {
   weaponId: string
   artifactIds: Record<ArtifactSlotKey, string>
 }) {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const weaponTypeKey = getCharStat(characterKey).weaponType
   return (

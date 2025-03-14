@@ -11,13 +11,13 @@ export function ConditionalWrapper({
   condition,
   wrapper,
   falseWrapper,
-  children,
+  children
 }: Prop) {
   return (
     condition
       ? wrapper(children)
       : falseWrapper
-      ? falseWrapper(children)
-      : children
+        ? falseWrapper(children)
+        : children
   ) as JSX.Element
 }

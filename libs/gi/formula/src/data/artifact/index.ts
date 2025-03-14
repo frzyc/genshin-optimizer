@@ -106,6 +106,6 @@ const data: TagMapNodeEntries[] = [
   VermillionHereafter,
   ViridescentVenerer,
   VourukashasGlow,
-  WanderersTroupe,
+  WanderersTroupe
 ]
 export default data.flat()

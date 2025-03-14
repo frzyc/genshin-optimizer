@@ -17,7 +17,7 @@ export function SRODevAd({ children }: { children: ReactNode }) {
         cursor: 'pointer',
         gap: 1,
         minHeight: '100%',
-        minWidth: '100%',
+        minWidth: '100%'
       }}
       onClick={toDiscord}
     >

@@ -1,6 +1,6 @@
 import type {
   LocationCharacterKey,
-  LocationGenderedCharacterKey,
+  LocationGenderedCharacterKey
 } from '@genshin-optimizer/gi/consts'
 import type { Translatable } from '../common'
 
@@ -14,46 +14,46 @@ const char: Partial<
   Eula: {
     skill: {
       brandDMG: [3765549071, 'skillParam'],
-      grimheartDuration: [164817062, 'skillParam'],
-    },
+      grimheartDuration: [164817062, 'skillParam']
+    }
   },
   KaedeharaKazuha: {
     burst: {
       name: 2015878197,
       description: [1543060392, 'paragraph'],
-      slashdmg: [439659606, 'skillParam'],
-    },
+      slashdmg: [439659606, 'skillParam']
+    }
   },
   KamisatoAyaka: {
     burst: {
       cutting: [373269062, 'skillParam'],
-      bloom: [2543020158, 'skillParam'],
-    },
+      bloom: [2543020158, 'skillParam']
+    }
   },
   Neuvillette: {
-    constellationName: 1525610219,
+    constellationName: 1525610219
   },
   Noelle: {
     skill: {
-      triggerChance: [3971383039, 'skillParam'],
+      triggerChance: [3971383039, 'skillParam']
     },
     burst: {
-      atkBonus: [4151293863, 'skillParam'],
-    },
+      atkBonus: [4151293863, 'skillParam']
+    }
   },
   Traveler: {
     electro: {
       skill: {
         enerRegen: [2165261751, 'skillParam'],
-        enerRechInc: [3328414367, 'skillParam'],
+        enerRechInc: [3328414367, 'skillParam']
       },
       burst: {
-        thunderDMG: [3560985918, 'skillParam'],
-      },
-    },
+        thunderDMG: [3560985918, 'skillParam']
+      }
+    }
   },
   Zhongli: {
-    constellationName: 2721221067,
-  },
+    constellationName: 2721221067
+  }
 }
 export default char

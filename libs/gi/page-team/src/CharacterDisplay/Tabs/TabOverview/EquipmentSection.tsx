@@ -2,12 +2,12 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
-  charKeyToLocCharKey,
+  charKeyToLocCharKey
 } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
@@ -16,7 +16,7 @@ import {
   DataContext,
   DocumentDisplay,
   EquippedGrid,
-  SetEffectDisplay,
+  SetEffectDisplay
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import {
@@ -25,7 +25,7 @@ import {
   Grid,
   Stack,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -33,10 +33,10 @@ import { useTranslation } from 'react-i18next'
 export default function EquipmentSection() {
   const database = useDatabase()
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const {
-    loadoutDatum: { buildType, buildId },
+    loadoutDatum: { buildType, buildId }
   } = useContext(TeamCharacterContext)
   const loadoutEquip = buildId && buildType === 'real'
   const { teamData, data } = useContext(DataContext)
@@ -97,7 +97,7 @@ export default function EquipmentSection() {
                 if (loadoutEquip) database.builds.set(buildId, { weaponId: id })
                 else
                   database.weapons.set(id, {
-                    location: charKeyToLocCharKey(characterKey),
+                    location: charKeyToLocCharKey(characterKey)
                   })
               }}
               setArtifact={(slotKey, id) => {
@@ -108,7 +108,7 @@ export default function EquipmentSection() {
                 else
                   id
                     ? database.arts.set(id, {
-                        location: charKeyToLocCharKey(characterKey),
+                        location: charKeyToLocCharKey(characterKey)
                       })
                     : artifactIds[slotKey] &&
                       database.arts.set(artifactIds[slotKey], { location: '' })
@@ -142,10 +142,10 @@ function ArtifactSectionCard() {
   const { t } = useTranslation(['page_character', 'artifact'])
   const database = useDatabase()
   const {
-    character: { equippedArtifacts },
+    character: { equippedArtifacts }
   } = useContext(CharacterContext)
   const {
-    loadoutDatum: { buildType, buildId },
+    loadoutDatum: { buildType, buildId }
   } = useContext(TeamCharacterContext)
   const { data } = useContext(DataContext)
   const hasEquipped = !!Object.values(equippedArtifacts).filter((i) => i).length
@@ -159,7 +159,7 @@ function ArtifactSectionCard() {
 
     if (buildEquip)
       database.builds.set(buildId, {
-        artifactIds: objKeyMap(allArtifactSlotKeys, () => undefined),
+        artifactIds: objKeyMap(allArtifactSlotKeys, () => undefined)
       })
     else
       Object.values(equippedArtifacts).forEach((aid) =>

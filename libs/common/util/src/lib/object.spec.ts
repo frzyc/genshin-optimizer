@@ -5,7 +5,7 @@ import {
   layeredAssignment,
   objMultiplication,
   objPathValue,
-  verifyObjKeys,
+  verifyObjKeys
 } from './object'
 
 test('crawlObject', () => {

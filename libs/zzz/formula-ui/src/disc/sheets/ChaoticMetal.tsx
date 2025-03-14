@@ -18,9 +18,9 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc2'),
-      },
-    ],
+        text: chg('desc2')
+      }
+    ]
   },
   4: {
     title: <Set4Display />,
@@ -28,21 +28,21 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('desc4'),
+        text: chg('desc4')
       },
       {
         type: 'fields',
-        fields: [TagToTagField(buff.set4_passive.tag)],
+        fields: [TagToTagField(buff.set4_passive.tag)]
       },
       {
         type: 'conditional',
         conditional: {
           label: ch('set4_cond'),
           metadata: cond.trigger_corruption,
-          fields: [TagToTagField(buff.set4_cond_trigger_corruption.tag)],
-        },
-      },
-    ],
-  },
+          fields: [TagToTagField(buff.set4_cond_trigger_corruption.tag)]
+        }
+      }
+    ]
+  }
 }
 export default sheet

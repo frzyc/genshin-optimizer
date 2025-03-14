@@ -6,12 +6,12 @@ import {
   Slot3Icon,
   Slot4Icon,
   Slot5Icon,
-  Slot6Icon,
+  Slot6Icon
 } from '../icons'
 
 export function SlotIcon({
   slotKey,
-  iconProps = {},
+  iconProps = {}
 }: {
   slotKey: DiscSlotKey
   iconProps?: SvgIconProps

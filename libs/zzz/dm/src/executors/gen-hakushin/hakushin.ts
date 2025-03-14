@@ -1,6 +1,6 @@
 import {
   dumpPrettyFile,
-  fetchJsonFromUrl,
+  fetchJsonFromUrl
 } from '@genshin-optimizer/common/pipeline'
 import { PROJROOT_PATH } from '../../consts'
 import { DEBUG } from './debug'
@@ -15,7 +15,7 @@ const categories = [
   'weapon',
   'bangboo',
   'equipment', // discs
-  'monster', // enemies
+  'monster' // enemies
 ] as const
 type Category = (typeof categories)[number]
 export async function getDataFromHakushin() {

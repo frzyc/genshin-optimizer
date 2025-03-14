@@ -4,7 +4,7 @@ import type { CharacterGenderedKey } from '@genshin-optimizer/sr/consts'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 
 export function CharacterName({
-  genderedKey,
+  genderedKey
 }: {
   genderedKey: CharacterGenderedKey
 }) {

@@ -17,7 +17,7 @@ const sheet = registerRelic(
 
   // Conditional buffs
   customHeal('set4_heal', prod(own.final.hp, dm[4].hpRestore), {
-    cond: cmpGE(relicCount, 4, 'unique', ''),
+    cond: cmpGE(relicCount, 4, 'unique', '')
   })
 )
 export default sheet

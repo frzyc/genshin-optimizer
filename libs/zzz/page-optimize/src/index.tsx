@@ -4,13 +4,13 @@ import {
   DropdownButton,
   NumberInputLazy,
   TextFieldLazy,
-  useScrollRef,
+  useScrollRef
 } from '@genshin-optimizer/common/ui'
 import {
   objFilter,
   objMap,
   range,
-  toDecimal,
+  toDecimal
 } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
 import {
@@ -18,28 +18,28 @@ import {
   allDiscSlotKeys,
   allFormulaKeys,
   wengineSheets,
-  type LocationKey,
+  type LocationKey
 } from '@genshin-optimizer/zzz/consts'
 import type {
   ICachedCharacter,
   Stats,
-  ZzzDatabase,
+  ZzzDatabase
 } from '@genshin-optimizer/zzz/db'
 import {
   CharacterContext,
   useCharacter,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { combineStats, type BuildResult } from '@genshin-optimizer/zzz/solver'
 import {
   getCharacterStats,
-  getWengineStats,
+  getWengineStats
 } from '@genshin-optimizer/zzz/stats'
 import {
   LocationAutocomplete,
   WengineAutocomplete,
   WengineRefineDesc,
-  WengineRefineName,
+  WengineRefineName
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -47,7 +47,7 @@ import {
   CardContent,
   InputAdornment,
   MenuItem,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Stack } from '@mui/system'
 import type { ReactNode } from 'react'
@@ -57,7 +57,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import BaseStatCard from './BaseStatCard'
 import { BuildDisplay } from './BuildDisplay'
@@ -129,7 +129,7 @@ export default function PageOptimize() {
               ({ slotKey, location }) =>
                 slotKey === k && location === character.key
             )?.id) ??
-            '',
+            ''
         ])
       ) as Record<DiscSlotKey, string>),
 
@@ -157,7 +157,7 @@ export default function PageOptimize() {
             character={character}
             characterStats={characterStats}
             wengineStats={wengineStats}
-          />,
+          />
         ],
         [
           'bonusStats',
@@ -167,12 +167,12 @@ export default function PageOptimize() {
             locationKey={locationKey}
             baseStats={character?.stats ?? {}}
             setBaseStats={setStats}
-          />,
+          />
         ],
         [
           'disc4pCond',
           'Disc 4p Conditionals',
-          <DiscConditionalsCard key="disc4pCond" baseStats={baseStats} />,
+          <DiscConditionalsCard key="disc4pCond" baseStats={baseStats} />
         ],
         [
           'opt',
@@ -183,17 +183,13 @@ export default function PageOptimize() {
             baseStats={baseStats}
             location={locationKey}
             formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
-          />,
+          />
         ],
         [
           'buildDisplay',
           'Build Display',
-          <BuildsDisplay
-            key="buildDisplay"
-            builds={builds}
-            stats={baseStats}
-          />,
-        ],
+          <BuildsDisplay key="buildDisplay" builds={builds} stats={baseStats} />
+        ]
       ] as const
     }, [
       baseStats,
@@ -205,7 +201,7 @@ export default function PageOptimize() {
       locationKey,
       setStats,
       handleLocationKeyChange,
-      wengineStats,
+      wengineStats
     ])
 
   return (
@@ -226,7 +222,7 @@ export default function PageOptimize() {
 function Section({
   index,
   title,
-  children,
+  children
 }: {
   index: number
   title: React.ReactNode
@@ -242,7 +238,7 @@ function Section({
           position: 'sticky',
           top: index * SECTION_SPACING_PX,
           bottom: BOT_PX + (numSections - 1 - index) * SECTION_SPACING_PX,
-          zIndex: 100,
+          zIndex: 100
         })}
       >
         <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
@@ -252,7 +248,7 @@ function Section({
       <Box
         ref={charScrollRef}
         sx={{
-          scrollMarginTop: (index + 1) * SECTION_SPACING_PX,
+          scrollMarginTop: (index + 1) * SECTION_SPACING_PX
         }}
       >
         {children}
@@ -269,7 +265,7 @@ function CharacterSection({
   baseStats,
   character,
   characterStats,
-  wengineStats,
+  wengineStats
 }: {
   database: ZzzDatabase
   setLocationKey: (lk: LocationKey) => void
@@ -333,12 +329,12 @@ function CharacterSection({
                   inputProps={{
                     sx: { width: '2ch' },
                     max: 60,
-                    min: 1,
+                    min: 1
                   }}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">Lv.</InputAdornment>
-                    ),
+                    )
                   }}
                 />
 
@@ -413,12 +409,12 @@ function CharacterSection({
                   inputProps={{
                     sx: { width: '2ch' },
                     max: 60,
-                    min: 1,
+                    min: 1
                   }}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">Lv.</InputAdornment>
-                    ),
+                    )
                   }}
                 />
               </Box>

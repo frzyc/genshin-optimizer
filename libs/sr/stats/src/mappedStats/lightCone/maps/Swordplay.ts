@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   common_dmg_: data_gen.superimpose.otherStats[o++],
-  stacks: data_gen.superimpose.otherStats[o++][1],
+  stacks: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

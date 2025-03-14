@@ -3,20 +3,20 @@ import {
   objKeyMap,
   pruneOrPadArray,
   range,
-  shallowCompareObj,
+  shallowCompareObj
 } from '@genshin-optimizer/common/util'
 import { correctConditionalValue } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
-  allRelicSlotKeys,
+  allRelicSlotKeys
 } from '@genshin-optimizer/sr/consts'
 import type { Dst, Src } from '@genshin-optimizer/sr/formula'
 import {
   getConditional,
   isMember,
   type Sheet,
-  type Tag,
+  type Tag
 } from '@genshin-optimizer/sr/formula'
 import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
@@ -93,7 +93,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       frames,
       conditionals,
       bonusStats,
-      statConstraints,
+      statConstraints
     } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
@@ -117,7 +117,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareType,
           compareBuildId,
           compareBuildTcId,
-          optConfigId,
+          optConfigId
         } = teammateDatum
 
         if (!allCharacterKeys.includes(characterKey)) return undefined
@@ -172,7 +172,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareType,
           compareBuildId,
           compareBuildTcId,
-          optConfigId,
+          optConfigId
         } as TeammateDatum
       })
     }
@@ -250,7 +250,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       frames,
       conditionals,
       bonusStats,
-      statConstraints,
+      statConstraints
     }
   }
 
@@ -323,7 +323,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   } {
     const def = {
       relicIds: objKeyMap(allRelicSlotKeys, () => undefined),
-      lightConeId: undefined,
+      lightConeId: undefined
     }
     switch (buildType) {
       case 'equipped': {
@@ -331,7 +331,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         if (!char) return def
         return {
           relicIds: char.equippedRelics,
-          lightConeId: char.equippedLightCone,
+          lightConeId: char.equippedLightCone
         }
       }
       case 'real': {
@@ -339,7 +339,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         if (!build) return def
         return {
           relicIds: build.relicIds,
-          lightConeId: build.lightConeId,
+          lightConeId: build.lightConeId
         }
       }
       case 'tc': {
@@ -437,7 +437,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           src,
           dst,
           condKey,
-          condValues,
+          condValues
         })
       } else {
         const cond = team.conditionals[condIndex]

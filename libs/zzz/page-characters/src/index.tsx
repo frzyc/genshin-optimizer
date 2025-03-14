@@ -4,7 +4,7 @@ import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeKeys,
   allCharacterKeys,
-  allCharacterRarityKeys,
+  allCharacterRarityKeys
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
@@ -13,7 +13,7 @@ import {
   CharacterEditor,
   CharacterRarityToggle,
   CharacterSingleSelectionModal,
-  ElementToggle,
+  ElementToggle
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -21,7 +21,7 @@ import {
   CardContent,
   Grid,
   Skeleton,
-  TextField,
+  TextField
 } from '@mui/material'
 import { Suspense, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -33,9 +33,9 @@ export default function PageCharacter() {
   const { database } = useDatabaseContext()
   const navigate = useNavigate()
   const {
-    params: { characterKey: characterKeyRaw },
+    params: { characterKey: characterKeyRaw }
   } = useMatch({ path: '/characters/:characterKey', end: false }) ?? {
-    params: {},
+    params: {}
   }
   const { charKeys } = useMemo(() => {
     const charKeys = database.chars.keys
@@ -135,7 +135,7 @@ export default function PageCharacter() {
                 size="small"
                 sx={{ height: '100%' }}
                 InputProps={{
-                  sx: { height: '100%' },
+                  sx: { height: '100%' }
                 }}
               />
             </Grid>

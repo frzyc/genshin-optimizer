@@ -45,7 +45,7 @@ export const relicSetIdMap: Record<string, RelicSetKey> = {
   317: 'LushakaTheSunkenSeas',
   318: 'TheWondrousBananAmusementPark',
   319: 'BoneCollectionsSereneDemesne',
-  320: 'GiantTreeOfRaptBrooding',
+  320: 'GiantTreeOfRaptBrooding'
 }
 export type RelicSetId = keyof typeof relicSetIdMap
 
@@ -55,7 +55,7 @@ export const relicSlotMap: Record<RelicSlotDMKey, RelicSlotKey> = {
   BODY: 'body',
   FOOT: 'feet',
   NECK: 'sphere',
-  OBJECT: 'rope',
+  OBJECT: 'rope'
 } as const
 
 export type RelicSlotDMKey =
@@ -78,7 +78,7 @@ export const allRelicStatSubDMKeys = [
   'CriticalDamageBase',
   'StatusProbabilityBase',
   'StatusResistanceBase',
-  'BreakDamageAddedRatioBase',
+  'BreakDamageAddedRatioBase'
 ] as const
 export type RelicStatSubDMKey = (typeof allRelicStatSubDMKeys)[number]
 
@@ -101,7 +101,7 @@ export const allRelicStatMainDMKeys = [
   'QuantumAddedRatio',
   'ImaginaryAddedRatio',
   'BreakDamageAddedRatioBase',
-  'SPRatioBase',
+  'SPRatioBase'
 ] as const
 export type RelicStatMainDMKey = (typeof allRelicStatMainDMKeys)[number]
 

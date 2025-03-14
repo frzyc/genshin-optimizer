@@ -18,7 +18,7 @@ export class DataManager<
   exportGOOD(go: Partial<IGOOD & IGO>) {
     go[this.dataKey] = Object.entries(this.data).map(([id, value]) => ({
       ...this.deCache(value),
-      id,
+      id
     }))
   }
   importGOOD(go: IGOOD & IGO, _result: ImportResult) {

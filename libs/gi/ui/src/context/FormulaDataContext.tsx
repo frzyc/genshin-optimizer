@@ -14,7 +14,7 @@ type FormulaDataContextObj = {
 export const FormulaDataContext = createContext({
   setFormulaData: () => {},
   onModalOpen: () => {},
-  onModalClose: () => {},
+  onModalClose: () => {}
 } as FormulaDataContextObj)
 
 export function FormulaDataWrapper({ children }: { children: JSX.Element }) {
@@ -39,7 +39,7 @@ export function FormulaDataWrapper({ children }: { children: JSX.Element }) {
         node,
         modalOpen: open,
         onModalOpen: onOpen,
-        onModalClose: onClose,
+        onModalClose: onClose
       }}
     >
       {children}

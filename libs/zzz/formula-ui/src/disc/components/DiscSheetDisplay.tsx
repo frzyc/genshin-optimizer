@@ -11,7 +11,7 @@ import {
   Divider,
   Skeleton,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense } from 'react'
 import { discUiSheets } from '../sheets'
@@ -30,7 +30,7 @@ export function DiscSheetDisplay({ setKey }: { setKey: DiscSetKey }) {
               src={discDefIcon(setKey)}
               sx={{
                 maxHeight: '5em',
-                width: 'auto',
+                width: 'auto'
               }}
             />
             <Box>
@@ -50,7 +50,7 @@ export function DiscSheetDisplay({ setKey }: { setKey: DiscSetKey }) {
   )
 }
 export function DiscUiSheetElement({
-  uiSheetElement,
+  uiSheetElement
 }: {
   uiSheetElement: UISheetElement
 }) {

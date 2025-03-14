@@ -20,8 +20,8 @@ const set4 = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     atk_: set2,
-    all_dmg_: set4,
-  },
+    all_dmg_: set4
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -37,13 +37,13 @@ const sheet: SetEffectSheet = {
           50: {
             fields: [
               {
-                node: set4,
-              },
-            ],
-          },
-        },
-      },
-    ],
-  },
+                node: set4
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

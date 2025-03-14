@@ -6,7 +6,7 @@ import { allPathKeys } from '@genshin-optimizer/sr/consts'
 import {
   OptConfigContext,
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { getLightConeStat } from '@genshin-optimizer/sr/stats'
 import { LightConeToggle } from '@genshin-optimizer/sr/ui'
@@ -20,14 +20,14 @@ import {
   Divider,
   IconButton,
   Skeleton,
-  Stack,
+  Stack
 } from '@mui/material'
 import { Box } from '@mui/system'
 import { Suspense, useContext, useMemo } from 'react'
 import { LightConeLevelFilter } from './LightConeLevelFilter'
 export function LightConeFilter({
   numLightCone,
-  disabled,
+  disabled
 }: {
   numLightCone: number
   disabled?: boolean
@@ -44,7 +44,7 @@ export function LightConeFilter({
               display: 'flex',
               gap: 2,
               justifyContent: 'space-between',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
             <Box
@@ -67,7 +67,7 @@ export function LightConeFilter({
               color={optConfig.optLightCone ? 'success' : 'secondary'}
               onClick={() =>
                 database.optConfigs.set(optConfigId, {
-                  optLightCone: !optConfig.optLightCone,
+                  optLightCone: !optConfig.optLightCone
                 })
               }
             >
@@ -93,7 +93,7 @@ export function LightConeFilter({
 function LightConeFilterModal({
   show,
   onClose,
-  disabled,
+  disabled
 }: {
   show: boolean
   onClose: () => void
@@ -122,7 +122,7 @@ function LightConeFilterModal({
                 disabled={disabled}
                 onClick={() =>
                   database.optConfigs.set(optConfigId, {
-                    useEquippedLightCone: !optConfig.useEquippedLightCone,
+                    useEquippedLightCone: !optConfig.useEquippedLightCone
                   })
                 }
                 color={optConfig.useEquippedLightCone ? 'success' : 'secondary'}
@@ -170,7 +170,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
     optConfig.lcLevelLow,
     optConfig.lcLevelHigh,
     optConfig.optLightCone,
-    optConfig.useEquippedLightCone,
+    optConfig.useEquippedLightCone
   ])
   return (
     <LightConeToggle

@@ -13,7 +13,7 @@ const schedulers = new BorrowManager(
       .map(async (_) => {
         const worker = await createWorker(language, undefined, {
           errorHandler: console.error,
-          langPath: './assets',
+          langPath: './assets'
         })
         scheduler.addWorker(worker)
       })

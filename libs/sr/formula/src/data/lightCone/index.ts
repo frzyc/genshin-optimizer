@@ -250,7 +250,7 @@ const data: TagMapNodeEntries[] = [
   WhereaboutsShouldDreamsRest,
   WoofWalkTime,
   WorrisomeBlissful,
-  YetHopeIsPriceless,
+  YetHopeIsPriceless
 ]
 
 export default data.flat()

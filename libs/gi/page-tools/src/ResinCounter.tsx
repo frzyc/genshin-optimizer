@@ -11,7 +11,7 @@ import {
   Divider,
   Grid,
   InputBase,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useEffect, useRef, useState } from 'react'
 
@@ -39,7 +39,7 @@ export default function ResinCounter() {
       )
     database.displayTool.set({
       resin: newResin,
-      resinDate: new Date().getTime(),
+      resinDate: new Date().getTime()
     })
   }
 

@@ -22,8 +22,8 @@ export function getCharacterStats(
       hp_base,
       hp_growth,
       anomMas_base,
-      anomProf,
-    },
+      anomProf
+    }
   } = getCharStat(ck)
   const validPromotionStats =
     promotionStats[Math.floor(level / 10) > 0 ? Math.floor(level / 10) - 1 : 0]
@@ -35,7 +35,7 @@ export function getCharacterStats(
     anomProf,
     atk_base: atk_base + atk_growth * (level - 1) + validPromotionStats.atk,
     def_base: def_base + def_growth * (level - 1) + validPromotionStats.def,
-    hp_base: hp_base + hp_growth * (level - 1) + validPromotionStats.hp,
+    hp_base: hp_base + hp_growth * (level - 1) + validPromotionStats.hp
   }
   if (core > 1 && coreStats[core - 1]) objSumInPlace(stats, coreStats[core - 1])
 

@@ -3,7 +3,7 @@ import {
   artifactMainstatData,
   artifactSubstatData,
   artifactSubstatRollCorrection,
-  artifactSubstatRollData,
+  artifactSubstatRollData
 } from '@genshin-optimizer/gi/dm'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
@@ -31,20 +31,20 @@ const allStat = {
   char: {
     expCurve: charExpCurve,
     skillParam: characterSkillParamDump,
-    data: characterDataDump,
+    data: characterDataDump
   },
   weapon: {
     expCurve: weaponExpCurve,
-    data: weaponDataDump,
+    data: weaponDataDump
   },
   art: {
     data: artifactDataDump,
     subRoll: artifactSubstatRollData,
     subRollCorrection: artifactSubstatRollCorrection,
     main: artifactMainstatData,
-    sub: artifactSubstatData,
+    sub: artifactSubstatData
   },
-  material: materialDataDump,
+  material: materialDataDump
 } as const
 
 export type AllStats = typeof allStat

@@ -1,12 +1,12 @@
 import { prettify } from '@genshin-optimizer/common/util'
 import {
   compileTagMapValues,
-  setDebugMode,
+  setDebugMode
 } from '@genshin-optimizer/pando/engine'
 import type {
   DiscMainStatKey,
   DiscSetKey,
-  DiscSubStatKey,
+  DiscSubStatKey
 } from '@genshin-optimizer/zzz/consts'
 import { data, keys, values } from '..'
 import {
@@ -14,7 +14,7 @@ import {
   conditionals,
   discTagMapNodeEntries,
   teamData,
-  withMember,
+  withMember
 } from '../..'
 import { Calculator } from '../../calculator'
 import type { Read } from '../util'
@@ -26,7 +26,7 @@ import {
   own,
   ownBuff,
   ownTag,
-  type TagMapNodeEntries,
+  type TagMapNodeEntries
 } from '../util'
 
 setDebugMode(true)
@@ -52,10 +52,10 @@ function testCharacterData(
         special: 0,
         assist: 0,
         chain: 0,
-        core: 6,
+        core: 6
       }),
       ...discTagMapNodeEntries(discStats, {
-        [setKey]: 4,
+        [setKey]: 4
       }),
       ...otherCharData
     ),
@@ -66,7 +66,7 @@ function testCharacterData(
     enemyDebuff.common.resRed_.electric.add(0.15),
     enemyDebuff.common.dmgInc_.add(0.1),
     enemyDebuff.common.dmgRed_.add(0.15),
-    enemyDebuff.common.stun_.add(1.5),
+    enemyDebuff.common.stun_.add(1.5)
   ]
   return data
 }
@@ -93,7 +93,7 @@ describe('Disc sheets test', () => {
   })
   it('BranchBladeSong', () => {
     const data = testCharacterData('BranchBladeSong', undefined, [
-      ownBuff.initial.anomMas.add(25),
+      ownBuff.initial.anomMas.add(25)
     ])
     data.push(
       cond(
@@ -309,7 +309,7 @@ describe('Disc sheets test', () => {
   })
   it('SwingJazz', () => {
     const data = testCharacterData('SwingJazz', undefined, [
-      ownBuff.initial.anomMas.add(25),
+      ownBuff.initial.anomMas.add(25)
     ])
     data.push(cond('SwingJazz', conditionals.SwingJazz.chain_or_ult.name, 1))
     const calc = new Calculator(

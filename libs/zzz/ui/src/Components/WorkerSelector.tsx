@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 export function WorkerSelector({
   numWorkers,
-  setNumWorkers,
+  setNumWorkers
 }: {
   numWorkers: number
   setNumWorkers: (w: number) => void

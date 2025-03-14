@@ -4,7 +4,7 @@ import { range } from '@genshin-optimizer/common/util'
 import {
   allAbilityLimits,
   type AbilityKey,
-  type CharacterKey,
+  type CharacterKey
 } from '@genshin-optimizer/sr/consts'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { MenuItem } from '@mui/material'
@@ -18,7 +18,7 @@ type AbilityDropdownProps = {
 export function AbilityDropdown({
   characterKey,
   abilityKey,
-  dropDownButtonProps = {},
+  dropDownButtonProps = {}
 }: AbilityDropdownProps) {
   const character = useCharacter(characterKey)
   const { database } = useDatabaseContext()

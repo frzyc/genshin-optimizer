@@ -6,7 +6,7 @@ const levels = [0, 4, 8, 12, 16, 20] as const
 export default function AssumeFullLevelToggle({
   mainStatAssumptionLevel = 0,
   setmainStatAssumptionLevel,
-  disabled,
+  disabled
 }) {
   const { t } = useTranslation('page_character_optimize')
   return (

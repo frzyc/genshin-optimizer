@@ -4,7 +4,7 @@ import {
   input,
   subscript,
   tally,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import { st } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -22,8 +22,8 @@ const eleMas = greaterEq(
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    eleMas,
-  },
+    eleMas
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -33,10 +33,10 @@ const sheet: IWeaponSheet = {
       canShow: unequal(eleMas, 0, 1),
       fields: [
         {
-          node: eleMas,
-        },
-      ],
-    },
-  ],
+          node: eleMas
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

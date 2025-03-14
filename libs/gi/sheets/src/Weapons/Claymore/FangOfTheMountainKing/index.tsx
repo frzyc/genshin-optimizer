@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -33,8 +33,8 @@ const burst_dmg_ = { ...skill_dmg_ }
 const data = dataObjForWeaponSheet(key, {
   premod: {
     skill_dmg_,
-    burst_dmg_,
-  },
+    burst_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -48,19 +48,19 @@ const sheet: IWeaponSheet = {
         name: st('stack', { count: stacks }),
         fields: [
           {
-            node: skill_dmg_,
+            node: skill_dmg_
           },
           {
-            node: burst_dmg_,
+            node: burst_dmg_
           },
           {
             text: stg('duration'),
             value: 6,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -12,7 +12,7 @@ const dm = {
   duration: data_gen.superimpose.otherStats[o++][1],
   crit_dmg_: data_gen.superimpose.otherStats[o++],
   startEnergy: data_gen.superimpose.otherStats[o++][1],
-  startDuration: data_gen.superimpose.otherStats[o++][1],
+  startDuration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

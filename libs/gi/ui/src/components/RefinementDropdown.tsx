@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 export function RefinementDropdown({
   refinement,
   setRefinement,
-  disabled = false,
+  disabled = false
 }: {
   refinement: RefinementKey
   setRefinement: (r: RefinementKey) => void

@@ -9,7 +9,7 @@ import {
   useCharacter,
   useLightCone,
   useRelics,
-  useTeam,
+  useTeam
 } from '@genshin-optimizer/sr/db-ui'
 import type { Member } from '@genshin-optimizer/sr/formula'
 import {
@@ -21,11 +21,11 @@ import {
   srCalculatorWithEntries,
   teamData,
   withMember,
-  withPreset,
+  withPreset
 } from '@genshin-optimizer/sr/formula'
 import {
   relicsTagMapNodes,
-  relicTcTagMapNodes,
+  relicTcTagMapNodes
 } from '@genshin-optimizer/sr/solver'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import type { ReactNode } from 'react'
@@ -33,7 +33,7 @@ import { useMemo } from 'react'
 
 export function TeamCalcProvider({
   teamId,
-  children,
+  children
 }: {
   teamId: string
   children: ReactNode
@@ -79,10 +79,10 @@ export function TeamCalcProvider({
           values.flatMap((value, frameIndex) =>
             withPreset(`preset${frameIndex}` as Preset, {
               tag: { ...tag },
-              value: constant(value),
+              value: constant(value)
             })
           )
-        ),
+        )
       ]),
     [team, member0, member1, member2, member3]
   )
@@ -106,15 +106,15 @@ function useCharacterAndEquipment(
     meta?.buildType === 'equipped'
       ? character?.equippedLightCone
       : meta?.buildType === 'real'
-      ? build?.lightConeId
-      : undefined
+        ? build?.lightConeId
+        : undefined
   )
   const relics = useRelics(
     meta?.buildType === 'equipped'
       ? character?.equippedRelics
       : meta?.buildType === 'real'
-      ? build?.relicIds
-      : undefined
+        ? build?.relicIds
+        : undefined
   )
   const lcTagEntries = useMemo(() => {
     const lc =

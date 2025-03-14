@@ -6,7 +6,7 @@ export type CardBackgroundColor = 'light' | 'dark' | 'normal'
 const bgMap = {
   light: 'contentLight',
   dark: 'contentDark',
-  normal: 'contentNormal',
+  normal: 'contentNormal'
 } as const
 
 interface StyledCardProps extends CardProps {
@@ -18,15 +18,15 @@ interface StyledCardProps extends CardProps {
  * Use bgt=["light", "dark"] to use [`contentLight`, `contentDark`]
  */
 export const CardThemed = styled(Card, {
-  shouldForwardProp: (prop) => prop !== 'bgt',
+  shouldForwardProp: (prop) => prop !== 'bgt'
 })<StyledCardProps>(({ theme, bgt }) => {
   const palette = (
     bgt && bgt in bgMap
       ? bgMap[bgt as CardBackgroundColor]
-      : bgt ?? 'contentNormal'
+      : (bgt ?? 'contentNormal')
   ) as keyof Palette
   const paletteColor = theme.palette[palette] as PaletteColor
   return {
-    backgroundColor: paletteColor?.main,
+    backgroundColor: paletteColor?.main
   }
 })

@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -41,8 +41,8 @@ const eleMas = greaterEq(
 export const data = dataObjForWeaponSheet(key, {
   premod: {
     atk_,
-    eleMas,
-  },
+    eleMas
+  }
 })
 const sheet: IWeaponSheet = {
   document: [
@@ -53,9 +53,9 @@ const sheet: IWeaponSheet = {
       name: trm('condName'),
       states: objKeyMap(charArr, (n) => ({
         name: st('members', { count: n }),
-        fields: [{ node: atk_ }, { node: eleMas }],
-      })),
-    },
-  ],
+        fields: [{ node: atk_ }, { node: eleMas }]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

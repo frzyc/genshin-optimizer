@@ -249,6 +249,6 @@ const maps = {
   WhereaboutsShouldDreamsRest,
   WoofWalkTime,
   WorrisomeBlissful,
-  YetHopeIsPriceless,
+  YetHopeIsPriceless
 }
 export default maps

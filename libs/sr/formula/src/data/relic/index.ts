@@ -88,6 +88,6 @@ const data: TagMapNodeEntries[] = [
   SpaceSealingStation,
   SprightlyVonwacq,
   TaliaKingdomOfBanditry,
-  TheWondrousBananAmusementPark,
+  TheWondrousBananAmusementPark
 ]
 export default data.flat()

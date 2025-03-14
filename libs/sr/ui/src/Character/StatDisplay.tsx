@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 export function StatDisplay({
   statKey,
   showPercent = false,
-  disableIcon = false,
+  disableIcon = false
 }: {
   statKey: StatKey
   showPercent?: boolean

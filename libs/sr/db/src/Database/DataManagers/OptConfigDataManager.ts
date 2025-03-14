@@ -4,7 +4,7 @@ import type {
   PathKey,
   RelicCavernSetKey,
   RelicMainStatKey,
-  RelicPlanarSetKey,
+  RelicPlanarSetKey
 } from '@genshin-optimizer/sr/consts'
 import {
   allPathKeys,
@@ -12,7 +12,7 @@ import {
   allRelicPlanarSetKeys,
   lightConeMaxLevel,
   relicMaxLevel,
-  relicSlotToMainStatKeys,
+  relicSlotToMainStatKeys
 } from '@genshin-optimizer/sr/consts'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { DataManager } from '../DataManager'
@@ -26,7 +26,7 @@ export const maxBuildsToShowDefault = 5
 export const allAllowLocationsState = [
   'unequippedOnly',
   'customList',
-  'all',
+  'all'
 ] as const
 export type AllowLocationsState = (typeof allAllowLocationsState)[number]
 
@@ -108,7 +108,7 @@ export class OptConfigDataManager extends DataManager<
       useEquippedLightCone,
 
       maxBuildsToShow,
-      generatedBuildListId,
+      generatedBuildListId
     } = obj as OptConfig
 
     if (!Array.isArray(statFilters)) statFilters = []
@@ -198,7 +198,7 @@ export class OptConfigDataManager extends DataManager<
       useEquippedLightCone,
 
       maxBuildsToShow,
-      generatedBuildListId,
+      generatedBuildListId
     }
   }
   new(data: Partial<OptConfig> = {}) {
@@ -245,7 +245,7 @@ export class OptConfigDataManager extends DataManager<
       return this.database.generatedBuildList.set(listId, list)
     else
       return this.database.optConfigs.set(optConfigId, {
-        generatedBuildListId: this.database.generatedBuildList.new(list),
+        generatedBuildListId: this.database.generatedBuildList.new(list)
       }) // Create a new list
   }
 }
@@ -270,5 +270,5 @@ const initialBuildSettings: OptConfig = deepFreeze({
   lightConePaths: [],
   useEquippedLightCone: false,
 
-  maxBuildsToShow: 5,
+  maxBuildsToShow: 5
 })

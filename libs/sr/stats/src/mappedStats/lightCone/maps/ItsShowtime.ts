@@ -11,7 +11,7 @@ const dm = {
   stacks: data_gen.superimpose.otherStats[o++][1],
   duration: data_gen.superimpose.otherStats[o++],
   eff_threshold: data_gen.superimpose.otherStats[o++][1],
-  atk_: data_gen.superimpose.otherStats[o++],
+  atk_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

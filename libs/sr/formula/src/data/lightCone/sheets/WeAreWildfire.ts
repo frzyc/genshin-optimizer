@@ -6,7 +6,7 @@ import {
   customHeal,
   own,
   percent,
-  target,
+  target
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

@@ -5,7 +5,7 @@ import {
   createConditionalEntries,
   createConvert,
   tag,
-  type Desc as BaseDesc,
+  type Desc as BaseDesc
 } from '@genshin-optimizer/game-opt/engine'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
@@ -90,7 +90,7 @@ const stats: Record<Stat, Desc> = {
   critRate_: agg,
   critDMG_: agg,
   dmg_: agg,
-  heal_: agg,
+  heal_: agg
 } as const
 export const ownTag = {
   base: { atk: agg, def: agg, hp: agg },
@@ -106,21 +106,21 @@ export const ownTag = {
     skill: agg,
     burst: agg,
     stamina: agg,
-    specialized: iso,
+    specialized: iso
   },
   weapon: {
     lvl: iso,
     refinement: iso,
     ascension: iso,
     primary: agg,
-    secondary: agg,
+    secondary: agg
   },
   common: {
     weaponType: iso,
     critMode: fixed,
     cappedCritRate_: fixed,
     count: isoSum,
-    eleCount: fixed,
+    eleCount: fixed
   },
   reaction: {
     infusion: iso,
@@ -131,7 +131,7 @@ export const ownTag = {
     transMulti: iso,
     cataBase: iso,
     cataAddi: agg,
-    bonus: agg,
+    bonus: agg
   },
   trans: {
     multi: fixed,
@@ -139,7 +139,7 @@ export const ownTag = {
     cappedCritRate_: fixed,
     critRate_: agg,
     critDMG_: agg,
-    critMulti: fixed,
+    critMulti: fixed
   },
   dmg: { out: fixed, inDmg: fixed, critMulti: fixed },
   prep: { ele: prep, move: prep, amp: prep, cata: prep, trans: prep },
@@ -150,11 +150,11 @@ export const ownTag = {
     heal: prep,
     trans: prep,
     transCrit: prep,
-    swirl: prep,
+    swirl: prep
   },
   listing: {
-    formulas: aggStr,
-  },
+    formulas: aggStr
+  }
 } as const
 export const enemyTag = {
   common: {
@@ -162,9 +162,9 @@ export const enemyTag = {
     defRed_: agg,
     defIgn: agg,
     preRes: agg,
-    postRes: fixed,
+    postRes: fixed
   },
-  reaction: { amp: fixed, cata: fixed },
+  reaction: { amp: fixed, cata: fixed }
 } as const
 
 export const convert = createConvert<Read>()
@@ -191,7 +191,7 @@ const nullTag: Tag = {
   move: null,
   trans: null,
   amp: null,
-  cata: null,
+  cata: null
 }
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'own', sheet, qt: 'misc' }).withAll('q', [])
@@ -207,7 +207,7 @@ export const queryTypes = new Set([
   'misc',
   'stackIn',
   'stackTmp',
-  'stackOut',
+  'stackOut'
 ])
 // Register `q:`
 for (const values of [...Object.values(ownTag), ...Object.values(enemyTag)])

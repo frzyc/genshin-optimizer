@@ -4,7 +4,7 @@ import { ColorText } from './ColorText'
 export function StarsDisplay<S extends number>({
   stars = 1 as S,
   colored = false,
-  inline = false,
+  inline = false
 }: {
   stars?: S
   colored?: boolean

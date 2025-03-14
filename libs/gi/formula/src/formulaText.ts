@@ -18,7 +18,7 @@ export function translate(
   if (old) return old
   const {
     val,
-    meta: { tag, op, ops },
+    meta: { tag, op, ops }
   } = data
 
   const deps = new Set<FormulaText>()
@@ -93,7 +93,7 @@ export function translate(
     formula,
     prec,
     sheet,
-    deps: [...new Set(deps)],
+    deps: [...new Set(deps)]
   }
   cache.set(data, result)
   return result
@@ -103,5 +103,5 @@ const details = {
   sum: { head: '', joiner: ' + ', end: '', prec: 1 },
   prod: { head: '', joiner: ' * ', end: '', prec: 2 },
   max: { head: 'Max(', joiner: ', ', end: ')', prec: Infinity },
-  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity },
+  min: { head: 'Min(', joiner: ', ', end: ')', prec: Infinity }
 } as const

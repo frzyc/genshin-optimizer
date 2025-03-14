@@ -1,6 +1,6 @@
 import type {
   SpecialityKey,
-  WengineRarityKey,
+  WengineRarityKey
 } from '@genshin-optimizer/zzz/consts'
 
 // libs\zzz\dm\src\dm\wengine\wengineIdMap.json
@@ -65,7 +65,7 @@ export const WengineIdMap = {
   14131: 'ElegantVanity',
   14132: 'HeartstringNocturne',
   14136: 'SpectralGaze',
-  14138: 'SeveredInnocence',
+  14138: 'SeveredInnocence'
 } as const
 
 export const specialityMap: Record<number, SpecialityKey> = {
@@ -73,13 +73,13 @@ export const specialityMap: Record<number, SpecialityKey> = {
   2: 'stun',
   3: 'anomaly',
   4: 'support',
-  5: 'defense',
+  5: 'defense'
 } as const
 
 export const wengineRarityMap: Record<number, WengineRarityKey> = {
   2: 'B',
   3: 'A',
-  4: 'S',
+  4: 'S'
 } as const
 
 export const subStatMap = {
@@ -91,5 +91,5 @@ export const subStatMap = {
   'CRIT DMG': 'crit_dmg_',
   'Energy Regen': 'enerRegen_',
   'Anomaly Proficiency': 'anomProf',
-  'PEN Ratio': 'pen_',
+  'PEN Ratio': 'pen_'
 } as const

@@ -8,7 +8,7 @@ let o = 0
 
 const dm = {
   common_dmg_: data_gen.superimpose.otherStats[o++],
-  maxEnergy: data_gen.superimpose.otherStats[o++][1],
+  maxEnergy: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

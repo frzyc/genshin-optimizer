@@ -5,6 +5,6 @@ import S from './RANK_S.png'
 const data = {
   S,
   A,
-  B,
+  B
 } as const
 export default data

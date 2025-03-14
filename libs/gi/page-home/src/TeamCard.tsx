@@ -6,7 +6,7 @@ import {
   Divider,
   Grid,
   Link,
-  Typography,
+  Typography
 } from '@mui/material'
 import d1 from './teamIcons/d1.png'
 import frzyc from './teamIcons/frzyc.png'
@@ -28,78 +28,78 @@ const team = [
     img: frzyc,
     title: (t) => t('teamCard.jobTitle.leadDev'),
     subtitle: 'Insomniac in Chief',
-    url: process.env.NX_URL_GITHUB_FRZYC,
+    url: process.env.NX_URL_GITHUB_FRZYC
   },
   {
     name: 'Lantua',
     img: lantua,
     title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Copium Calculator',
-    url: process.env.NX_URL_GITHUB_LANTUA,
+    url: process.env.NX_URL_GITHUB_LANTUA
   },
   {
     name: 'Van',
     img: van,
     title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Waverider Stowaway',
-    url: process.env.NX_URL_GITHUB_VAN,
+    url: process.env.NX_URL_GITHUB_VAN
   },
   {
     name: '✦ Sin ✦',
     img: sin,
     title: (t) => t('teamCard.jobTitle.admin'),
     subtitle: 'Ohh, shiny.',
-    url: '',
+    url: ''
   },
   {
     name: 'Stain',
     img: stain,
     title: (t) => t('teamCard.jobTitle.admin'),
     subtitle: 'Australia Man',
-    url: '',
+    url: ''
   },
   {
     name: 'yae!',
     img: yae,
     title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'eeeqeee',
-    url: '',
+    url: ''
   },
   {
     name: 'tooflesswulf',
     img: toofless,
     title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Mad Mathematician',
-    url: '',
+    url: ''
   },
   {
     name: 'Qbe',
     img: qbe,
     title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Irminsul Debugger',
-    url: '',
+    url: ''
   },
   {
     name: 'Polomo',
     img: polomo,
     title: (t) => t('teamCard.jobTitle.translator'),
     subtitle: 'Director of Text',
-    url: '',
+    url: ''
   },
   {
     name: 'Vlad',
     img: vlad,
     title: (t) => t('teamCard.jobTitle.TC'),
     subtitle: 'Spreadsheet Renegade',
-    url: '',
+    url: ''
   },
   {
     name: 'D1firehail',
     img: d1,
     title: (t) => t('teamCard.jobTitle.mod'),
     subtitle: 'Scanner Spy',
-    url: '',
-  },
+    url: ''
+  }
 ] as const
 
 export default function TeamCard() {
@@ -151,7 +151,7 @@ export default function TeamCard() {
                       sx={{
                         textAlign: 'center',
                         transform:
-                          name === 'Stain' ? 'rotate(180deg)' : undefined,
+                          name === 'Stain' ? 'rotate(180deg)' : undefined
                       }}
                       color="secondary.light"
                     >

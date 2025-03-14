@@ -8,13 +8,13 @@ import {
   own,
   ownBuff,
   registerBuff,
-  teamBuff,
+  teamBuff
 } from '../../util'
 import {
   cmpSpecialtyAndEquipped,
   entriesForWengine,
   registerWengine,
-  showSpecialtyAndEquipped,
+  showSpecialtyAndEquipped
 } from '../util'
 
 const key: WengineKey = 'PreciousFossilizedCore'

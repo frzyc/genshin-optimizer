@@ -8,7 +8,7 @@ import {
   naught,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -41,9 +41,9 @@ const time_normal_dmg_ = equal(
         prod(
           time,
           subscript(input.weapon.refinement, time_normal_dmg_arr, {
-            unit: '%',
+            unit: '%'
           })
-        ),
+        )
       ])
     ),
     naught,
@@ -63,7 +63,7 @@ const hit_normal_dmg_ = equal(
         prod(
           hit,
           subscript(input.weapon.refinement, hit_normal_dmg_arr, { unit: '%' })
-        ),
+        )
       ])
     ),
     naught,
@@ -79,8 +79,8 @@ const finalNormal_dmg_ = min(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     atkSPD_,
-    normal_dmg_: finalNormal_dmg_,
-  },
+    normal_dmg_: finalNormal_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -89,17 +89,17 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: atkSPD_,
-        },
-      ],
+          node: atkSPD_
+        }
+      ]
     },
     {
       header: headerTemplate(key, st('conditional')),
       fields: [
         {
-          node: finalNormal_dmg_,
-        },
-      ],
+          node: finalNormal_dmg_
+        }
+      ]
     },
     {
       value: condTimePassive,
@@ -117,12 +117,12 @@ const sheet: IWeaponSheet = {
                 // }, {
                 text: stg('duration'),
                 value: 14,
-                unit: 's',
-              },
-            ],
-          },
+                unit: 's'
+              }
+            ]
+          }
         ])
-      ),
+      )
     },
     {
       value: condHitPassive,
@@ -141,13 +141,13 @@ const sheet: IWeaponSheet = {
                 text: stg('cd'),
                 value: 0.3,
                 unit: 's',
-                fixed: 1,
-              },
-            ],
-          },
+                fixed: 1
+              }
+            ]
+          }
         ])
-      ),
-    },
-  ],
+      )
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

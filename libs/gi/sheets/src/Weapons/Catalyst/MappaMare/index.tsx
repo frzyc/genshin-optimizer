@@ -6,7 +6,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -24,14 +24,14 @@ const eleDmgs = objKeyValMap(allElementKeys, (e) => [
   lookup(
     condPassive,
     {
-      ...objKeyMap(range(1, 2), (i) => prod(allDmgInc, i)),
+      ...objKeyMap(range(1, 2), (i) => prod(allDmgInc, i))
     },
     naught
-  ),
+  )
 ])
 
 const data = dataObjForWeaponSheet(key, {
-  premod: eleDmgs,
+  premod: eleDmgs
 })
 
 const sheet: IWeaponSheet = {
@@ -48,11 +48,11 @@ const sheet: IWeaponSheet = {
           {
             text: stg('duration'),
             value: 10,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -5,7 +5,7 @@ import {
   prod,
   subscript,
   sum,
-  tagVal,
+  tagVal
 } from '@genshin-optimizer/pando/engine'
 import { allStats } from '@genshin-optimizer/sr/stats'
 import type { ElementalType, TagMapNodeEntries } from '../util'
@@ -18,7 +18,7 @@ const breakBaseRatios: Record<ElementalType, number> = {
   lightning: 1,
   wind: 1.5,
   quantum: 0.5,
-  imaginary: 0.5,
+  imaginary: 0.5
 }
 const data: TagMapNodeEntries = [
   // Formula calculations
@@ -29,7 +29,7 @@ const data: TagMapNodeEntries = [
         '',
         tagVal('elementalType'),
         own.char.ele
-      ),
+      )
     })
   ),
   ownBuff.formula.shield.add(
@@ -47,6 +47,6 @@ const data: TagMapNodeEntries = [
       sum(percent(1), own.final.brEffect_),
       own.dmg.inDmg
     )
-  ),
+  )
 ]
 export default data

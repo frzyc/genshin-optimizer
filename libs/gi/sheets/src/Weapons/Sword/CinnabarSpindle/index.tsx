@@ -28,11 +28,11 @@ const data = dataObjForWeaponSheet(
   {
     premod: {
       // TODO: should be total
-      skill_dmgInc,
-    },
+      skill_dmgInc
+    }
   },
   {
-    skill_dmgInc,
+    skill_dmgInc
   }
 )
 const sheet: IWeaponSheet = {
@@ -46,12 +46,12 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: skill_dmgInc,
-            },
-          ],
-        },
-      },
-    },
-  ],
+              node: skill_dmgInc
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

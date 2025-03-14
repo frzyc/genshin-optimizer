@@ -3,7 +3,7 @@ import { SqBadge } from '@genshin-optimizer/common/ui'
 import { notEmpty } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
-  ArtifactSlotKey,
+  ArtifactSlotKey
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import { getArtSheet } from '@genshin-optimizer/gi/sheets'
@@ -19,12 +19,15 @@ type ArtifactSetBadgesProps = {
 export function ArtifactSetBadges({ artifacts }: ArtifactSetBadgesProps) {
   const setToSlots = useMemo(() => {
     const setToSlots: Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>> =
-      artifacts.filter(notEmpty).reduce((acc, curr) => {
-        acc[curr.setKey]
-          ? acc[curr.setKey]!.push(curr.slotKey)
-          : (acc[curr.setKey] = [curr.slotKey])
-        return acc
-      }, {} as Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>>)
+      artifacts.filter(notEmpty).reduce(
+        (acc, curr) => {
+          acc[curr.setKey]
+            ? acc[curr.setKey]!.push(curr.slotKey)
+            : (acc[curr.setKey] = [curr.slotKey])
+          return acc
+        },
+        {} as Partial<Record<ArtifactSetKey, ArtifactSlotKey[]>>
+      )
     Object.keys(setToSlots).forEach((setKey) => {
       if (setToSlots[setKey]?.length === 1) delete setToSlots[setKey]
     })
@@ -45,7 +48,7 @@ export function ArtifactSetBadges({ artifacts }: ArtifactSetBadgesProps) {
 }
 function ArtifactSetBadge({
   setKey,
-  slotarr,
+  slotarr
 }: {
   setKey: ArtifactSetKey
   slotarr: ArtifactSlotKey[]

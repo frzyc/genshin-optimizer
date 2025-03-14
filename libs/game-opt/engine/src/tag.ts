@@ -45,7 +45,7 @@ export const createAllBoolConditionals =
     allConditionals(nullTag, sheet, ignored, { type: 'bool' }, (r) => ({
       ifOn: (node: NumNode | number, off?: NumNode | number) =>
         cmpNE(r, 0, node, off),
-      ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
+      ifOff: (node: NumNode | number) => cmpEq(r, 0, node)
     }))
 export const createAllListConditionals =
   <T extends string, Tag_ extends Tag>(nullTag: Tag_) =>
@@ -53,7 +53,7 @@ export const createAllListConditionals =
     allConditionals(nullTag, sheet, ignored, { type: 'list', list }, (r) => ({
       map: (table: Record<T, number>, def = 0) =>
         subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
-      value: r,
+      value: r
     }))
 export const createAllNumConditionals =
   <Tag_ extends Tag>(nullTag: Tag_) =>
@@ -99,7 +99,7 @@ function allConditionals<T, Tag_ extends Tag>(
     qt: 'cond' as const,
     [condMeta]: meta, // Add metadata directly to tag
     // Remove irrelevant tags
-    ...nullTag,
+    ...nullTag
   } as unknown as Tag_
   let base = reader.max.withTag(baseTag) as Read<Tag_>
   if (shared === 'both')

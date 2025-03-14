@@ -14,7 +14,7 @@ import { DataContext } from '../../context'
 export function TalentDropdown({
   talentKey,
   setTalent,
-  dropDownButtonProps,
+  dropDownButtonProps
 }: {
   talentKey: keyof ICharacter['talent']
   setTalent: (talent: number) => void
@@ -23,7 +23,7 @@ export function TalentDropdown({
   const { t } = useTranslation('sheet_gen')
 
   const {
-    character: { talent },
+    character: { talent }
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
   const levelBoost = data.get(input.total[`${talentKey}Boost`] as NumNode).value

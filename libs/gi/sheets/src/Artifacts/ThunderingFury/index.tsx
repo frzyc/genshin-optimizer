@@ -22,8 +22,8 @@ export const data: Data = dataObjForArtifactSheet(key, {
     electrocharged_dmg_,
     superconduct_dmg_,
     hyperbloom_dmg_,
-    aggravate_dmg_,
-  },
+    aggravate_dmg_
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -34,23 +34,23 @@ const sheet: SetEffectSheet = {
         header: setHeader(4),
         fields: [
           {
-            node: overloaded_dmg_,
+            node: overloaded_dmg_
           },
           {
-            node: electrocharged_dmg_,
+            node: electrocharged_dmg_
           },
           {
-            node: superconduct_dmg_,
+            node: superconduct_dmg_
           },
           {
-            node: hyperbloom_dmg_,
+            node: hyperbloom_dmg_
           },
           {
-            node: aggravate_dmg_,
-          },
-        ],
-      },
-    ],
-  },
+            node: aggravate_dmg_
+          }
+        ]
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

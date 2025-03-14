@@ -10,7 +10,7 @@ const dm = {
   passive_baseSpd: data_gen.superimpose.passiveStats.baseSpd,
   stacks: data_gen.superimpose.otherStats[o++][1],
   crit_dmg_: data_gen.superimpose.otherStats[o++],
-  basic_dmg_: data_gen.superimpose.otherStats[o++],
+  basic_dmg_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

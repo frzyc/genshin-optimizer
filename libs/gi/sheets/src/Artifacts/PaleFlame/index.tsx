@@ -8,7 +8,7 @@ import {
   lookup,
   naught,
   percent,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -51,8 +51,8 @@ const set4Phys = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     physical_dmg_: sum(set2, set4Phys),
-    atk_: set4Atk,
-  },
+    atk_: set4Atk
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -73,19 +73,19 @@ const sheet: SetEffectSheet = {
               fields: [
                 { node: set4Atk },
                 {
-                  node: set4Phys,
+                  node: set4Phys
                 },
                 {
                   text: stg('duration'),
                   value: 7,
-                  unit: 's',
-                },
-              ],
-            },
+                  unit: 's'
+                }
+              ]
+            }
           ])
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

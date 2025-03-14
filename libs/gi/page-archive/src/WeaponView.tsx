@@ -1,7 +1,7 @@
 import {
   CardThemed,
   ModalWrapper,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { weaponAsset } from '@genshin-optimizer/gi/assets'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
@@ -12,7 +12,7 @@ import {
   WeaponDesc,
   WeaponName,
   WeaponPassiveDesc,
-  WeaponPassiveName,
+  WeaponPassiveName
 } from '@genshin-optimizer/gi/ui'
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { getLevelString } from '@genshin-optimizer/gi/util'
@@ -24,14 +24,14 @@ import {
   Grid,
   IconButton,
   ListItem,
-  Typography,
+  Typography
 } from '@mui/material'
 
 export function WeaponView({
   show,
   weaponUIData,
   weapon,
-  onClose,
+  onClose
 }: {
   show: boolean
   weaponUIData: UIData
@@ -66,7 +66,7 @@ export function WeaponView({
                           maxWidth: 256,
                           width: '100%',
                           height: 'auto',
-                          borderRadius: 1,
+                          borderRadius: 1
                         }}
                       />
                     </Box>
@@ -121,7 +121,7 @@ export function WeaponView({
                       {[
                         input.weapon.main,
                         input.weapon.sub,
-                        input.weapon.sub2,
+                        input.weapon.sub2
                       ].map((node) => {
                         const n = weaponUIData.get(node)
                         if (n.isEmpty || !n.value) return null

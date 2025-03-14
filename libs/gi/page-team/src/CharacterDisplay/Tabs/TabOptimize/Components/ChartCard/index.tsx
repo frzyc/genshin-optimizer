@@ -2,25 +2,25 @@ import { ReadOnlyTextArea } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
-  InfoTooltip,
+  InfoTooltip
 } from '@genshin-optimizer/common/ui'
 import {
   notEmpty,
   objKeyMap,
   objPathValue,
-  valueString,
+  valueString
 } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useGeneratedBuildList,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
   GraphContext,
-  resolveInfo,
+  resolveInfo
 } from '@genshin-optimizer/gi/ui'
 import type { Info, InfoExtra, NumNode } from '@genshin-optimizer/gi/wr'
 import { input } from '@genshin-optimizer/gi/wr'
@@ -28,7 +28,7 @@ import {
   CheckBox,
   CheckBoxOutlineBlank,
   Download,
-  Replay,
+  Replay
 } from '@mui/icons-material'
 import {
   Button,
@@ -37,7 +37,7 @@ import {
   Divider,
   Grid,
   Slider,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { TFunction } from 'i18next'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
@@ -53,7 +53,7 @@ import {
   Scatter,
   Tooltip,
   XAxis,
-  YAxis,
+  YAxis
 } from 'recharts'
 import OptimizationTargetSelector from '../OptimizationTargetSelector'
 import CustomDot from './CustomDot'
@@ -76,7 +76,7 @@ export default function ChartCard({
   plotBase,
   setPlotBase,
   disabled = false,
-  showTooltip = false,
+  showTooltip = false
 }: ChartCardProps) {
   const { t } = useTranslation(['page_character_optimize', 'ui'])
   const { data } = useContext(DataContext)
@@ -85,10 +85,10 @@ export default function ChartCard({
   const [showMin, setshowMin] = useState(true)
   const { graphBuilds } = useContext(GraphContext)
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const { generatedBuildListId } = useOptConfig(optConfigId) ?? {
-    generatedBuildListId: undefined,
+    generatedBuildListId: undefined
   }
   const { builds: generatedBuilds } = useGeneratedBuildList(
     generatedBuildListId ?? ''
@@ -127,7 +127,7 @@ export default function ChartCard({
         const artifactIdsArr = Object.values(artifactIds).filter(notEmpty)
         const enhancedDatum: EnhancedPoint = new EnhancedPoint(x, y, {
           artifactIds,
-          weaponId,
+          weaponId
         })
         const datumBuildMap = objKeyMap(artifactIdsArr, (_) => true)
 
@@ -201,7 +201,7 @@ export default function ChartCard({
 
     const downloadData = {
       minimum: minimumData.map((point) => [point.x, point.y]),
-      allData: points.map((point) => [point.x, point.y]),
+      allData: points.map((point) => [point.x, point.y])
     }
     return {
       displayData: points.filter(
@@ -209,7 +209,7 @@ export default function ChartCard({
       ),
       downloadData,
       sliderMin,
-      sliderMax,
+      sliderMax
     }
   }, [chartData, generatedBuilds, data, graphBuilds, sliderLow, sliderHigh])
 
@@ -243,7 +243,7 @@ export default function ChartCard({
                   defaultText={buttonText}
                   disabled={disabled}
                   targetSelectorModalProps={{
-                    excludeSections: ['character', 'bonusStats', 'teamBuff'],
+                    excludeSections: ['character', 'bonusStats', 'teamBuff']
                   }}
                 />
               </span>
@@ -353,7 +353,7 @@ function Chart({
   displayData,
   plotNode,
   valueNode,
-  showMin,
+  showMin
 }: {
   displayData: EnhancedPoint[]
   plotNode: NumNode
@@ -449,28 +449,28 @@ function Chart({
                     id: 'min',
                     value: t('tcGraph.statReqThr'),
                     type: 'line' as LegendType,
-                    color: lineColor,
-                  },
+                    color: lineColor
+                  }
                 ]
               : []),
             {
               id: 'trueY',
               value: t('tcGraph.generatedBuilds'),
               type: 'circle',
-              color: optTargetColor,
+              color: optTargetColor
             },
             {
               id: 'highlighted',
               value: t('tcGraph.highlightedBuilds'),
               type: 'square',
-              color: highlightedColor,
+              color: highlightedColor
             },
             {
               id: 'current',
               value: t('tcGraph.currentBuild'),
               type: 'diamond',
-              color: currentColor,
-            },
+              color: currentColor
+            }
           ]}
         />
         {showMin && (

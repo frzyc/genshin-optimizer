@@ -41,7 +41,7 @@ export function DiscSetAutocomplete({
     () =>
       allDiscSetKeys.map((set) => ({
         key: set,
-        label: t(`discNames_gen:${set}`),
+        label: t(`discNames_gen:${set}`)
       })),
     [t]
   )

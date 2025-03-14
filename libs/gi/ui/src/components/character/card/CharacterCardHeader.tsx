@@ -2,7 +2,7 @@ import {
   ConditionalWrapper,
   NextImage,
   SqBadge,
-  StarsDisplay,
+  StarsDisplay
 } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
@@ -21,7 +21,7 @@ import { CharacterName } from '../Trans'
 export function CharacterCardHeader({
   children,
   characterKey,
-  onClick,
+  onClick
 }: {
   children: React.ReactNode
   characterKey: CharacterKey
@@ -62,8 +62,8 @@ export function CharacterCardHeader({
             opacity: 0.5,
             backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
-            backgroundSize: 'cover',
-          },
+            backgroundSize: 'cover'
+          }
         }}
         width="100%"
       >
@@ -94,7 +94,7 @@ export function CharacterCardHeader({
 
 export function CharacterCardHeaderContent({
   characterKey,
-  tcOverride = false,
+  tcOverride = false
 }: {
   characterKey: CharacterKey
   tcOverride?: boolean
@@ -153,7 +153,7 @@ export function CharacterCardHeaderContent({
           component="span"
           whiteSpace="nowrap"
           sx={{
-            opacity: 0.85,
+            opacity: 0.85
           }}
         >
           <SqBadge
@@ -170,7 +170,7 @@ export function CharacterCardHeaderContent({
         display="flex"
         gap={1}
         sx={{
-          opacity: 0.85,
+          opacity: 0.85
         }}
       >
         <Chip
@@ -200,7 +200,7 @@ export function CharacterCardHeaderContent({
 }
 
 export function HeaderContentNew({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {

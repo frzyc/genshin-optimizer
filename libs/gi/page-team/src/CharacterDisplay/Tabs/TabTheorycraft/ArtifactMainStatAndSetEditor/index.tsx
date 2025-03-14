@@ -6,7 +6,7 @@ import { ArtifactMainLevelSlot } from './ArtifactMainLevelSlot'
 import { ArtifactSetsEditor } from './ArtifactSetsEditor'
 
 export function ArtifactMainStatAndSetEditor({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {

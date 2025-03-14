@@ -5,7 +5,7 @@ import type { GeneratedBuild } from '@genshin-optimizer/zzz/db'
 import {
   OptConfigContext,
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { EquipGrid } from '@genshin-optimizer/zzz/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -22,7 +22,7 @@ const columns = {
   sm: 2,
   md: 3,
   lg: 4,
-  xl: 4,
+  xl: 4
 } as const
 /**
  * A UI component that renders a list of generated builds
@@ -46,7 +46,7 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
                 sx={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  gap: 1,
+                  gap: 1
                 }}
               >
                 <Typography>
@@ -69,7 +69,7 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
 export default GeneratedBuildsDisplay
 
 function EquipBtn({
-  build: { discIds, wengineId },
+  build: { discIds, wengineId }
 }: {
   build: GeneratedBuild
 }) {

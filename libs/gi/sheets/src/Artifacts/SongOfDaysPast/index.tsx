@@ -6,7 +6,7 @@ import {
   greaterEq,
   input,
   lookup,
-  naught,
+  naught
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -38,7 +38,7 @@ const burst_dmgInc = { ...healing_dmgInc }
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
-    heal_: set2,
+    heal_: set2
   },
   teamBuff: {
     premod: {
@@ -46,9 +46,9 @@ export const data: Data = dataObjForArtifactSheet(key, {
       charged_dmgInc,
       plunging_dmgInc,
       skill_dmgInc,
-      burst_dmgInc,
-    },
-  },
+      burst_dmgInc
+    }
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -65,33 +65,33 @@ const sheet: SetEffectSheet = {
           name: `${heal}`,
           fields: [
             {
-              node: normal_dmgInc,
+              node: normal_dmgInc
             },
             {
-              node: charged_dmgInc,
+              node: charged_dmgInc
             },
             {
-              node: plunging_dmgInc,
+              node: plunging_dmgInc
             },
             {
-              node: skill_dmgInc,
+              node: skill_dmgInc
             },
             {
-              node: burst_dmgInc,
+              node: burst_dmgInc
             },
             {
               text: st('triggerQuota'),
-              value: 5,
+              value: 5
             },
             {
               text: stg('duration'),
               value: 10,
-              unit: 's',
-            },
-          ],
-        })),
-      },
-    ],
-  },
+              unit: 's'
+            }
+          ]
+        }))
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

@@ -1,14 +1,14 @@
 import {
   BootstrapTooltip,
   ColorText,
-  type CardBackgroundColor,
+  type CardBackgroundColor
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc, valueString } from '@genshin-optimizer/common/util'
 import type { AmpReactionKey } from '@genshin-optimizer/gi/consts'
 import { allAmpReactionKeys } from '@genshin-optimizer/gi/consts'
 import type {
   IBasicFieldDisplay,
-  IFieldDisplay,
+  IFieldDisplay
 } from '@genshin-optimizer/gi/sheets'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -21,7 +21,7 @@ import {
   ListItem,
   Skeleton,
   Typography,
-  styled,
+  styled
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'
@@ -31,7 +31,7 @@ import { AmpReactionModeText } from './AmpReactionModeText'
 
 export function FieldsDisplay({
   fields,
-  bgt = 'normal',
+  bgt = 'normal'
 }: {
   fields: IFieldDisplay[]
   bgt?: CardBackgroundColor
@@ -47,7 +47,7 @@ export function FieldsDisplay({
 
 function FieldDisplay({
   field,
-  component = ListItem,
+  component = ListItem
 }: {
   field: IFieldDisplay
   component?: React.ElementType
@@ -74,7 +74,7 @@ function FieldDisplay({
 
 export function BasicFieldDisplay({
   field,
-  component,
+  component
 }: {
   field: IBasicFieldDisplay
   component?: React.ElementType
@@ -91,7 +91,7 @@ export function BasicFieldDisplay({
         display: 'flex',
         justifyContent: 'space-between',
         gap: 1,
-        py: 0.25,
+        py: 0.25
       }}
       component={component}
     >
@@ -112,7 +112,7 @@ export function NodeFieldDisplay({
   compareCalcRes,
   component = ListItem,
   emphasize,
-  showZero = false,
+  showZero = false
 }: {
   calcRes?: CalcResult
   compareCalcRes?: CalcResult
@@ -170,7 +170,7 @@ export function NodeFieldDisplay({
               gap: 0.5,
               alignItems: 'center',
               justifyContent: 'flex-end',
-              flexWrap: 'wrap',
+              flexWrap: 'wrap'
             }}
           >
             <span>
@@ -198,7 +198,7 @@ export function NodeFieldDisplay({
         gap: 1,
         boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
         py: 0.25,
-        textDecoration: strikethrough ? 'line-through' : undefined,
+        textDecoration: strikethrough ? 'line-through' : undefined
       }}
       component={component}
     >
@@ -209,7 +209,7 @@ export function NodeFieldDisplay({
           gap: 0.5,
           alignItems: 'center',
           justifyContent: 'flex-end',
-          flexWrap: 'wrap',
+          flexWrap: 'wrap'
         }}
       >
         {multiDisplay}
@@ -263,7 +263,7 @@ export function NodeFieldDisplayText({ node }: { node: CalcResult }) {
         display: 'flex',
         gap: 1,
         alignItems: 'center',
-        marginRight: 'auto',
+        marginRight: 'auto'
       }}
     >
       {!!isTeamBuff && <GroupsIcon />}
@@ -285,18 +285,18 @@ export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
       bgt === 'light'
         ? 'contentLight'
         : bgt === 'dark'
-        ? 'contentDark'
-        : 'contentNormal'
+          ? 'contentDark'
+          : 'contentNormal'
     return {
       borderRadius: theme.shape.borderRadius,
       overflow: 'hidden',
       margin: 0,
       '> .MuiListItem-root:nth-of-type(even)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['main'],
+        backgroundColor: (theme.palette[palette] as PaletteColor)['main']
       },
       '> .MuiListItem-root:nth-of-type(odd)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['dark'],
-      },
+        backgroundColor: (theme.palette[palette] as PaletteColor)['dark']
+      }
     }
   }
 )

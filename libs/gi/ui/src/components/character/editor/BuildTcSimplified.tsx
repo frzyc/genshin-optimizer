@@ -28,8 +28,8 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
     artifact: {
       slots,
       substats: { stats: substats },
-      sets,
-    },
+      sets
+    }
   } = useBuildTc(buildTcId)!
   const weaponSheet = getWeaponSheet(weapon.key)
   const substatsArr = Object.entries(substats)
@@ -55,7 +55,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                     p: 1,
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: 1,
+                    gap: 1
                   }}
                 >
                   {Object.entries(sets).map(([setKey, number]) => (
@@ -85,7 +85,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
               display: 'flex',
               flexDirection: 'column',
               gap: 1,
-              justifyContent: 'space-between',
+              justifyContent: 'space-between'
             }}
           >
             {Object.entries(slots).map(([sk, { level, statKey }]) => (
@@ -110,7 +110,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  gap: 1,
+                  gap: 1
                 }}
               >
                 {arr.map(([sk, number]) => (
@@ -120,7 +120,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                       display: 'flex',
                       alignItems: 'center',
                       gap: 1,
-                      justifyContent: 'space-between',
+                      justifyContent: 'space-between'
                     }}
                   >
                     <StatWithUnit statKey={sk} />

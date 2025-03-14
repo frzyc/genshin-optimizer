@@ -3,7 +3,7 @@ import {
   CardThemed,
   ImgIcon,
   ModalWrapper,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
@@ -11,7 +11,7 @@ import type { ICachedWeapon } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useBuildTc,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { SlotIcon } from '@genshin-optimizer/gi/svgicons'
@@ -19,7 +19,7 @@ import {
   ArtifactSetName,
   BuildCard,
   StatWithUnit,
-  WeaponCardNanoObj,
+  WeaponCardNanoObj
 } from '@genshin-optimizer/gi/ui'
 import { artDisplayValue, getLevelString } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
@@ -32,21 +32,21 @@ import {
   Grid,
   IconButton,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   useContext,
   useDeferredValue,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildTc({
   buildTcId,
   active = false,
-  onChangeBuild,
+  onChangeBuild
 }: {
   buildTcId: string
   active?: boolean
@@ -63,7 +63,7 @@ export default function BuildTc({
     return () => {
       database.teams.setLoadoutDatum(teamId, teamCharId, {
         buildType: 'tc',
-        buildTcId,
+        buildTcId
       })
       onChangeBuild?.()
     }
@@ -75,7 +75,7 @@ export default function BuildTc({
   const onDupe = () =>
     database.teamChars.newBuildTc(teamCharId, {
       ...structuredClone(buildTc),
-      name: t('buildTcCard.copy.nameTc', { name }),
+      name: t('buildTcCard.copy.nameTc', { name })
     })
   return (
     <>
@@ -102,9 +102,9 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
     artifact: {
       slots,
       substats: { stats: substats },
-      sets,
+      sets
     },
-    character,
+    character
   } = useBuildTc(buildTcId)!
   const weaponSheet = getWeaponSheet(weapon.key)
   const substatsArr = Object.entries(substats)
@@ -158,7 +158,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                   p: 1,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: 1,
+                  gap: 1
                 }}
               >
                 {Object.entries(sets).map(([setKey, number]) => (
@@ -187,7 +187,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
               display: 'flex',
               flexDirection: 'column',
               gap: 1,
-              justifyContent: 'space-between',
+              justifyContent: 'space-between'
             }}
           >
             {Object.entries(slots).map(([sk, { level, statKey }]) => (
@@ -212,7 +212,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  gap: 1,
+                  gap: 1
                 }}
               >
                 {arr.map(([sk, number]) => (
@@ -222,7 +222,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
                       display: 'flex',
                       alignItems: 'center',
                       gap: 1,
-                      justifyContent: 'space-between',
+                      justifyContent: 'space-between'
                     }}
                   >
                     <StatWithUnit statKey={sk} />
@@ -243,7 +243,7 @@ function TcEquip({ buildTcId }: { buildTcId: string }) {
 
 function BuildTcEditor({
   buildTcId,
-  onClose,
+  onClose
 }: {
   buildTcId: string
   onClose: () => void

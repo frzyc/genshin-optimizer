@@ -1,31 +1,31 @@
 import {
   useBoolState,
   useForceUpdate,
-  useMediaQueryUp,
+  useMediaQueryUp
 } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
   SqBadge,
-  useInfScroll,
+  useInfScroll
 } from '@genshin-optimizer/common/ui'
 import { filterFunction } from '@genshin-optimizer/common/util'
 import {
   TeamCharacterContext,
   useDatabase,
-  useOptConfig,
+  useOptConfig
 } from '@genshin-optimizer/gi/db-ui'
 import {
   ArtifactCard,
   ArtifactCardNano,
   ArtifactFilterDisplay,
   ExcludeIcon,
-  OptimizationIcon,
+  OptimizationIcon
 } from '@genshin-optimizer/gi/ui'
 import {
   artifactFilterConfigs,
-  initialArtifactFilterOption,
+  initialArtifactFilterOption
 } from '@genshin-optimizer/gi/util'
 import AddIcon from '@mui/icons-material/Add'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
@@ -42,7 +42,7 @@ import {
   Grid,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import {
   Suspense,
@@ -50,13 +50,13 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useReducer,
+  useReducer
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 export default function ExcludeArt({
   disabled = false,
-  excludedTotal,
+  excludedTotal
 }: {
   disabled?: boolean
   excludedTotal: string
@@ -64,7 +64,7 @@ export default function ExcludeArt({
   const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
   const {
-    teamChar: { optConfigId },
+    teamChar: { optConfigId }
   } = useContext(TeamCharacterContext)
   const { artExclusion, useExcludedArts } = useOptConfig(optConfigId)!
   const [show, onOpen, onClose] = useBoolState(false)
@@ -74,7 +74,7 @@ export default function ExcludeArt({
     (ids: string[]) => {
       database.optConfigs.set(optConfigId, {
         artExclusion: [...artExclusion, ...ids],
-        useExcludedArts: false,
+        useExcludedArts: false
       })
     },
     [database, optConfigId, artExclusion]
@@ -83,7 +83,7 @@ export default function ExcludeArt({
     (ids: string[]) => {
       database.optConfigs.set(optConfigId, {
         artExclusion: artExclusion.filter((i) => !ids.includes(i)),
-        useExcludedArts: false,
+        useExcludedArts: false
       })
     },
     [database, optConfigId, artExclusion]
@@ -91,7 +91,7 @@ export default function ExcludeArt({
   const toggleArtExclusion = useCallback(
     () =>
       database.optConfigs.set(optConfigId, {
-        useExcludedArts: !useExcludedArts,
+        useExcludedArts: !useExcludedArts
       }),
     [database, optConfigId, useExcludedArts]
   )
@@ -194,8 +194,8 @@ export default function ExcludeArt({
                 !numExcludedArt
                   ? 'secondary'
                   : useExcludedArts
-                  ? 'warning'
-                  : 'primary'
+                    ? 'warning'
+                    : 'primary'
               }
             >
               {useExcludedArts ? (
@@ -227,7 +227,7 @@ function ExcludeArtRedButtons({
   artifactIds,
   artExclusion,
   onExclude,
-  onInclude,
+  onInclude
 }: {
   artifactIds: string[]
   artExclusion: string[]
@@ -300,7 +300,7 @@ function ArtifactSelectModal({
   onInclude,
   show,
   onClose,
-  artExclusion,
+  artExclusion
 }: {
   onExclude: (ids: string[]) => void
   onInclude: (ids: string[]) => void

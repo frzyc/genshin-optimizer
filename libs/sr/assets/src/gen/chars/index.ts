@@ -142,6 +142,6 @@ const data = {
   Xueyi,
   Yanqing,
   Yukong,
-  Yunli,
+  Yunli
 } as const
 export default data

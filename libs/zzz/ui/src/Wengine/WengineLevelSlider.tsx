@@ -14,7 +14,7 @@ export function WengineLevelSlider({
   setBoth,
   dark = false,
   disabled = false,
-  showLevelText = false,
+  showLevelText = false
 }: {
   levelLow: number
   levelHigh: number
@@ -47,7 +47,7 @@ export function WengineLevelSlider({
         display: 'flex',
         alignItems: 'center',
         bgcolor: dark ? 'contentNormal.main' : 'contentLight.main',
-        overflow: 'visible',
+        overflow: 'visible'
       }}
     >
       <Box sx={{ width: 'max-content', height: 32, display: 'flex' }}>
@@ -62,7 +62,7 @@ export function WengineLevelSlider({
                 justifyContent: 'center',
                 alignItems: 'center',
                 color: 'rgba(255,255,255,0.9)',
-                backgroundColor: 'rgb(30,120,200)',
+                backgroundColor: 'rgb(30,120,200)'
               }}
             >
               {t('levelSliderTitle')}
@@ -76,7 +76,7 @@ export function WengineLevelSlider({
           onChange={(val) => setLow(clamp(val ?? 0, 0, levelHigh))}
           sx={{
             px: 1,
-            width: '3em',
+            width: '3em'
           }}
           inputProps={{ sx: { textAlign: showLevelText ? 'right' : 'center' } }}
           disabled={disabled}

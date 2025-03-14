@@ -2,14 +2,14 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { lightConeMaxLevel } from '@genshin-optimizer/sr/consts'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { LightConeLevelSlider } from '@genshin-optimizer/sr/ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { memo, useContext } from 'react'
 
 export const LightConeLevelFilter = memo(function LightConeLevelFilter({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {
@@ -37,7 +37,7 @@ export const LightConeLevelFilter = memo(function LightConeLevelFilter({
         setBoth={(lcLevelLow, lcLevelHigh) =>
           database.optConfigs.set(optConfigId, {
             lcLevelLow,
-            lcLevelHigh,
+            lcLevelHigh
           })
         }
         disabled={disabled}

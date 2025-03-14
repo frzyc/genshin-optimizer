@@ -1,6 +1,6 @@
 import type {
   RelicMainStatKey,
-  RelicSubStatKey,
+  RelicSubStatKey
 } from '@genshin-optimizer/sr/consts'
 
 export const relicLevelVariant = (level: number) =>
@@ -12,7 +12,7 @@ export const allRollColorKeys = [
   'roll3',
   'roll4',
   'roll5',
-  'roll6',
+  'roll6'
 ] as const
 export type RollColorKey = (typeof allRollColorKeys)[number]
 

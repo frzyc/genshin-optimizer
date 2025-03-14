@@ -2,14 +2,14 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import { discMaxLevel } from '@genshin-optimizer/zzz/consts'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { DiscLevelSlider } from '@genshin-optimizer/zzz/ui'
 import { CardContent, Divider, Typography } from '@mui/material'
 import { memo, useContext } from 'react'
 
 export const DiscLevelFilter = memo(function DiscLevelFilter({
-  disabled = false,
+  disabled = false
 }: {
   disabled?: boolean
 }) {
@@ -37,7 +37,7 @@ export const DiscLevelFilter = memo(function DiscLevelFilter({
         setBoth={(levelLow, levelHigh) =>
           database.optConfigs.set(optConfigId, {
             levelLow,
-            levelHigh,
+            levelHigh
           })
         }
         disabled={disabled}

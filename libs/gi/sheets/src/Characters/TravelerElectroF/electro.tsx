@@ -1,7 +1,7 @@
 import type {
   CharacterKey,
   CharacterSheetKey,
-  ElementKey,
+  ElementKey
 } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
@@ -15,7 +15,7 @@ import {
   prod,
   subscript,
   sum,
-  target,
+  target
 } from '@genshin-optimizer/gi/wr'
 import { cond, stg, trans } from '../../SheetUtil'
 import type { TalentSheet } from '../ICharacterSheet.d'
@@ -42,7 +42,7 @@ export default function electro(
       amuletDuration: skillParam_gen.skill[s++][0],
       enerRech_: skillParam_gen.skill[s++][0],
       enerRech_duration: skillParam_gen.skill[s++][0],
-      cd: skillParam_gen.skill[s++][0],
+      cd: skillParam_gen.skill[s++][0]
     },
     burst: {
       pressDmg: skillParam_gen.burst[b++],
@@ -51,26 +51,26 @@ export default function electro(
       energyRestore: skillParam_gen.burst[b++],
       duration: skillParam_gen.burst[b++][0],
       cd: skillParam_gen.burst[b++][0],
-      enerCost: skillParam_gen.burst[b++][0],
+      enerCost: skillParam_gen.burst[b++][0]
     },
     passive1: {
-      cdRed: skillParam_gen.passive1[0][0],
+      cdRed: skillParam_gen.passive1[0][0]
     },
     passive2: {
-      enerRech_: skillParam_gen.passive2[0][0],
+      enerRech_: skillParam_gen.passive2[0][0]
     },
     constellation1: {
-      addlAmulets: 1,
+      addlAmulets: 1
     },
     constellation2: {
       duration: skillParam_gen.constellation2[0],
-      electro_enemyRes: skillParam_gen.constellation2[1],
+      electro_enemyRes: skillParam_gen.constellation2[1]
     },
     constellation6: {
       numAttacks: skillParam_gen.constellation6[0],
       thunder_dmg_: skillParam_gen.constellation6[0],
-      energyRestore: skillParam_gen.constellation6[1],
-    },
+      energyRestore: skillParam_gen.constellation6[1]
+    }
   } as const
 
   const [condSkillAmuletPath, condSkillAmulet] = cond(
@@ -111,7 +111,7 @@ export default function electro(
   const dmgFormulas = {
     ...dmgForms,
     skill: {
-      dmg: dmgNode('atk', dm.skill.dmg, 'skill'),
+      dmg: dmgNode('atk', dm.skill.dmg, 'skill')
     },
     burst: {
       pressDmg: dmgNode('atk', dm.burst.pressDmg, 'burst'),
@@ -122,7 +122,7 @@ export default function electro(
         customDmgNode(
           prod(
             subscript(input.total.burstIndex, dm.burst.thunderDmg, {
-              unit: '%',
+              unit: '%'
             }),
             percent(dm.constellation6.thunder_dmg_),
             input.total.atk
@@ -130,8 +130,8 @@ export default function electro(
           'burst',
           { hit: { ele: constant(elementKey) } }
         )
-      ),
-    },
+      )
+    }
   } as const
 
   const burstC3 = greaterEq(input.constellation, 3, 3)
@@ -140,16 +140,16 @@ export default function electro(
   const data = dataObjForCharacterSheet(charKey, dmgFormulas, {
     premod: {
       skillBoost: skillC5,
-      burstBoost: burstC3,
+      burstBoost: burstC3
     },
     teamBuff: {
       premod: {
-        electro_enemyRes_: c2Thunder_electro_enemyRes_,
+        electro_enemyRes_: c2Thunder_electro_enemyRes_
       },
       total: {
-        enerRech_: skillAmulet_enerRech_, // In total to avoid loops
-      },
-    },
+        enerRech_: skillAmulet_enerRech_ // In total to avoid loops
+      }
+    }
   })
 
   const talent: TalentSheet = {
@@ -158,26 +158,26 @@ export default function electro(
         fields: [
           {
             node: infoMut(dmgFormulas.skill.dmg, {
-              name: ct.chg(`skill.skillParams.0`),
-            }),
+              name: ct.chg(`skill.skillParams.0`)
+            })
           },
           {
             canShow: (data) => data.get(input.constellation).value < 4,
             node: infoMut(
               subscript(input.total.skillIndex, dm.skill.energyRestore),
               {
-                name: ch(`skill.enerRest.none`),
+                name: ch(`skill.enerRest.none`)
               }
-            ),
+            )
           },
           {
             canShow: (data) => data.get(input.constellation).value >= 4,
             node: infoMut(
               subscript(input.total.skillIndex, dm.skill.energyRestore),
               {
-                name: ch('skill.enerRest.over35'),
+                name: ch('skill.enerRest.over35')
               }
-            ),
+            )
           },
           {
             canShow: (data) => data.get(input.constellation).value >= 4,
@@ -187,27 +187,27 @@ export default function electro(
                 2
               ),
               { name: ch('skill.enerRest.under35') }
-            ),
+            )
           },
           {
             text: ch('skill.amuletGenAmt'),
             value: (data) =>
               data.get(input.constellation).value >= 1
                 ? dm.skill.amulets + dm.constellation1.addlAmulets
-                : dm.skill.amulets,
+                : dm.skill.amulets
           },
           {
             text: ct.chg('skill.skillParams.4'),
             value: dm.skill.amuletDuration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: dm.skill.cd,
             unit: 's',
-            fixed: 1,
-          },
-        ],
+            fixed: 1
+          }
+        ]
       },
       ct.condTem('skill', {
         value: condSkillAmulet,
@@ -218,34 +218,34 @@ export default function electro(
           on: {
             fields: [
               {
-                node: infoMut(skillAmulet_enerRech_Disp, { path: 'enerRech_' }),
+                node: infoMut(skillAmulet_enerRech_Disp, { path: 'enerRech_' })
               },
               {
                 text: stg('duration'),
                 value: dm.skill.enerRech_duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
+                unit: 's'
+              }
+            ]
+          }
+        }
       }),
       ct.headerTem('passive1', {
         fields: [
           {
-            text: ct.chg('passive1.description'),
-          },
-        ],
+            text: ct.chg('passive1.description')
+          }
+        ]
       }),
       ct.headerTem('passive2', {
         fields: [
           {
             node: infoMut(p2_enerRech_, {
               name: ch('passive2.enerRech_'),
-              unit: '%',
-            }),
-          },
-        ],
-      }),
+              unit: '%'
+            })
+          }
+        ]
+      })
     ]),
 
     burst: ct.talentTem('burst', [
@@ -253,46 +253,46 @@ export default function electro(
         fields: [
           {
             node: infoMut(dmgFormulas.burst.pressDmg, {
-              name: ct.chg(`burst.skillParams.0`),
-            }),
+              name: ct.chg(`burst.skillParams.0`)
+            })
           },
           {
             node: infoMut(dmgFormulas.burst.thunderDmg, {
-              name: ct.chg(`burst.skillParams.1`),
-            }),
+              name: ct.chg(`burst.skillParams.1`)
+            })
           },
           {
             node: infoMut(dmgFormulas.burst.thirdThunderDmg, {
-              name: ch('burst.3rd'),
-            }),
+              name: ch('burst.3rd')
+            })
           },
           {
             text: ch('burst.thunderCd'),
             value: dm.burst.thunderCd,
             unit: 's',
-            fixed: 1,
+            fixed: 1
           },
           {
             node: infoMut(burstEnergyRestore, {
               name: ct.chg(`burst.skillParams.2`),
-              fixed: 1,
-            }),
+              fixed: 1
+            })
           },
           {
             text: stg('duration'),
             value: dm.burst.duration,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: dm.burst.cd,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('energyCost'),
-            value: dm.burst.enerCost,
-          },
-        ],
+            value: dm.burst.enerCost
+          }
+        ]
       },
       ct.condTem('constellation2', {
         value: condC2Thunder,
@@ -303,17 +303,17 @@ export default function electro(
           on: {
             fields: [
               {
-                node: c2Thunder_electro_enemyRes_,
+                node: c2Thunder_electro_enemyRes_
               },
               {
                 text: stg('duration'),
                 value: dm.constellation2.duration,
-                unit: 's',
-              },
-            ],
-          },
-        },
-      }),
+                unit: 's'
+              }
+            ]
+          }
+        }
+      })
     ]),
 
     passive1: ct.talentTem('passive1'),
@@ -321,16 +321,16 @@ export default function electro(
     constellation1: ct.talentTem('constellation1'),
     constellation2: ct.talentTem('constellation2'),
     constellation3: ct.talentTem('constellation3', [
-      { fields: [{ node: burstC3 }] },
+      { fields: [{ node: burstC3 }] }
     ]),
     constellation4: ct.talentTem('constellation4'),
     constellation5: ct.talentTem('constellation5', [
-      { fields: [{ node: skillC5 }] },
+      { fields: [{ node: skillC5 }] }
     ]),
-    constellation6: ct.talentTem('constellation6'),
+    constellation6: ct.talentTem('constellation6')
   }
   return {
     talent,
-    data,
+    data
   }
 }

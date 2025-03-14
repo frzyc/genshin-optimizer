@@ -5,18 +5,18 @@ import type {
   ArtifactSlotKey,
   LocationCharacterKey,
   MainStatKey,
-  SubstatKey,
+  SubstatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactRarityKeys,
   allArtifactSetKeys,
   allArtifactSlotKeys,
   allLocationCharacterKeys,
-  allSubstatKeys,
+  allSubstatKeys
 } from '@genshin-optimizer/gi/consts'
 import {
   artifactSortKeys,
-  type ArtifactSortKey,
+  type ArtifactSortKey
 } from '@genshin-optimizer/gi/util'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataEntry } from '../DataEntry'
@@ -62,7 +62,7 @@ export function initialFilterOption(): FilterOption {
     rvLow: 0,
     rvHigh: 900,
     useMaxRV: false,
-    lines: [1, 2, 3, 4],
+    lines: [1, 2, 3, 4]
   }
 }
 
@@ -71,7 +71,7 @@ function initialState(): IDisplayArtifact {
     filterOption: initialFilterOption(),
     ascending: false,
     sortType: artifactSortKeys[0],
-    effFilter: [...allSubstatKeys],
+    effFilter: [...allSubstatKeys]
   }
 }
 
@@ -106,7 +106,7 @@ export class DisplayArtifactEntry extends DataEntry<
         rvLow,
         rvHigh,
         useMaxRV,
-        lines,
+        lines
       } = filterOption
       artSetKeys = validateArr(artSetKeys, allArtifactSetKeys, [])
       rarity = validateArr(rarity, allArtifactRarityKeys)
@@ -146,7 +146,7 @@ export class DisplayArtifactEntry extends DataEntry<
         rvLow,
         rvHigh,
         useMaxRV,
-        lines,
+        lines
       } as FilterOption
     }
 
@@ -159,7 +159,7 @@ export class DisplayArtifactEntry extends DataEntry<
       filterOption,
       ascending,
       sortType,
-      effFilter,
+      effFilter
     } as IDisplayArtifact
   }
   override set(

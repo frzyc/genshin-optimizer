@@ -1,13 +1,13 @@
 import type {
   AnyNode,
   ReRead,
-  TagMapEntries,
+  TagMapEntries
 } from '@genshin-optimizer/pando/engine'
 import {
   addCustomOperation,
   compileTagMapValues,
   constant,
-  TagMapSubset,
+  TagMapSubset
 } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
@@ -26,7 +26,7 @@ export * from './util'
   addCustomOperation('floor', {
     range: ([r]) => ({ min: floor([r.max]), max: floor([r.min]) }),
     monotonicity: () => [{ inc: true, dec: false }],
-    calc: floor,
+    calc: floor
   })
 }
 

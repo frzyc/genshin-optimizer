@@ -29,7 +29,7 @@ const avatarRankConfigSrc = parse(
 ) as AvatarRankConfig[]
 const avatarRankConfigMap = objKeyValMap(avatarRankConfigSrc, (config) => [
   config.RankID,
-  config,
+  config
 ])
 
 // Convert to { charId: { eidolon#: config } } mapping
@@ -40,9 +40,9 @@ const avatarRankConfig = Object.fromEntries(
     Object.fromEntries(
       avatarConfig.RankIDList.map((rankId) => [
         avatarRankConfigMap[rankId].Rank, // Map Eidolon #1-6
-        avatarRankConfigMap[rankId], // to Config
+        avatarRankConfigMap[rankId] // to Config
       ])
-    ),
+    )
   ])
 )
 

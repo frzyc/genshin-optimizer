@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, nonStackBuff, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -39,10 +39,10 @@ const selfEleMas = equal(
           stack,
           subscript(input.weapon.refinement, selfEmSrc, {
             unit: '%',
-            fixed: 2,
+            fixed: 2
           }),
           input.total.hp
-        ),
+        )
       ])
     ),
     naught
@@ -63,23 +63,23 @@ const data = dataObjForWeaponSheet(
   key,
   {
     premod: {
-      hp_,
+      hp_
     },
     total: {
-      eleMas: selfEleMas,
+      eleMas: selfEleMas
     },
     teamBuff: {
       total: {
-        eleMas: teamEleMas,
+        eleMas: teamEleMas
       },
       nonStacking: {
-        key: nonstackWrite,
-      },
-    },
+        key: nonstackWrite
+      }
+    }
   },
   {
     selfEleMas,
-    teamEleMas,
+    teamEleMas
   }
 )
 
@@ -87,7 +87,7 @@ const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: hp_ }],
+      fields: [{ node: hp_ }]
     },
     {
       header: headerTemplate(key, st('stacks')),
@@ -102,17 +102,17 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: stack }),
             fields: [
               {
-                node: selfEleMas,
+                node: selfEleMas
               },
               {
                 text: stg('duration'),
                 value: 20,
-                unit: 's',
-              },
-            ],
-          },
+                unit: 's'
+              }
+            ]
+          }
         ])
-      ),
+      )
     },
     {
       header: headerTemplate(key, st('teamBuff')),
@@ -120,18 +120,18 @@ const sheet: IWeaponSheet = {
       teamBuff: true,
       fields: [
         {
-          node: teamEleMas,
+          node: teamEleMas
         },
         {
-          node: teamEleMasInactive,
+          node: teamEleMasInactive
         },
         {
           text: stg('duration'),
           value: 20,
-          unit: 's',
-        },
-      ],
-    },
-  ],
+          unit: 's'
+        }
+      ]
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

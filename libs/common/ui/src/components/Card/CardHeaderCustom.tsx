@@ -6,7 +6,7 @@ import type { ReactNode } from 'react'
 export function CardHeaderCustom({
   avatar,
   title,
-  action,
+  action
 }: {
   avatar?: ReactNode
   title: ReactNode

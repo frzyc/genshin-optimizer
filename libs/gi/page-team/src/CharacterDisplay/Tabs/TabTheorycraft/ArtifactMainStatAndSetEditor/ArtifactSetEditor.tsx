@@ -2,7 +2,7 @@ import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   CardThemed,
   DropdownButton,
-  ImgIcon,
+  ImgIcon
 } from '@genshin-optimizer/common/ui'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
 import type { ArtifactSetKey, SetNum } from '@genshin-optimizer/gi/consts'
@@ -10,7 +10,7 @@ import { getArtSheet } from '@genshin-optimizer/gi/sheets'
 import {
   ArtifactSetName,
   ArtifactSetTooltip,
-  SetEffectDisplay,
+  SetEffectDisplay
 } from '@genshin-optimizer/gi/ui'
 import ClearIcon from '@mui/icons-material/Clear'
 import InfoIcon from '@mui/icons-material/Info'
@@ -21,7 +21,7 @@ import { BuildTcContext } from '../../../../BuildTcContext'
 export function ArtifactSetEditor({
   setKey,
   remaining,
-  disabled = false,
+  disabled = false
 }: {
   setKey: ArtifactSetKey
   remaining: number
@@ -29,9 +29,9 @@ export function ArtifactSetEditor({
 }) {
   const {
     buildTc: {
-      artifact: { sets },
+      artifact: { sets }
     },
-    setBuildTc,
+    setBuildTc
   } = useContext(BuildTcContext)
   const value = sets[setKey]
   const setValue = useCallback(

@@ -25,7 +25,7 @@ export async function artifactArchive(id: ArtifactSetKey, lang: string) {
     .setTitle(translate(namespace, 'setName', lang))
     .setColor(rarityColors[rarity - 1])
     .setFooter({
-      text: 'Artifact Archive',
+      text: 'Artifact Archive'
     })
     .setDescription(clean(text))
   const thumbnail =
@@ -34,6 +34,6 @@ export async function artifactArchive(id: ArtifactSetKey, lang: string) {
 
   return {
     content: '',
-    embeds: [embed],
+    embeds: [embed]
   }
 }

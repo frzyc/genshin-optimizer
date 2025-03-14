@@ -5,7 +5,7 @@ import { valueString } from '@genshin-optimizer/common/util'
 import type { GeneratedBuild } from '@genshin-optimizer/sr/db'
 import {
   OptConfigContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/sr/db-ui'
 import { EquipRow } from '@genshin-optimizer/sr/ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
@@ -20,7 +20,7 @@ import {
   IconButton,
   Stack,
   TextField,
-  Typography,
+  Typography
 } from '@mui/material'
 import type { FormEventHandler } from 'react'
 import { memo, useContext, useState } from 'react'
@@ -52,7 +52,7 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
               sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
-                gap: 1,
+                gap: 1
               }}
             >
               <Typography>
@@ -73,7 +73,7 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
 export default GeneratedBuildsDisplay
 
 function NewBuildButton({
-  build: { relicIds, lightConeId },
+  build: { relicIds, lightConeId }
 }: {
   build: GeneratedBuild
 }) {
@@ -96,7 +96,7 @@ function NewBuildButton({
         name,
         teamId,
         relicIds,
-        lightConeId,
+        lightConeId
       })
 
     setName('')

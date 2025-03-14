@@ -5,7 +5,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -23,15 +23,15 @@ const all_dmg_ = subscript(input.weapon.refinement, all_dmg_s, { unit: '%' })
 const all_dmg_stack = lookup(
   condPassive,
   {
-    ...objKeyMap(range(1, 5), (i) => prod(all_dmg_, i)),
+    ...objKeyMap(range(1, 5), (i) => prod(all_dmg_, i))
   },
   naught
 )
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
-    all_dmg_: all_dmg_stack,
-  },
+    all_dmg_: all_dmg_stack
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -46,18 +46,18 @@ const sheet: IWeaponSheet = {
           name: st('seconds', { count: i * 4 }),
           fields: [
             {
-              node: all_dmg_stack,
+              node: all_dmg_stack
             },
             {
               text: trm('takeMoreDmg'),
               value: (data) =>
                 takeDMG_s[data.get(input.weapon.refinement).value] * i,
-              unit: '%',
-            },
-          ],
-        })),
-      },
-    },
-  ],
+              unit: '%'
+            }
+          ]
+        }))
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

@@ -7,7 +7,7 @@ import {
   reader,
   teamBuff,
   type TagMapNodeEntries,
-  type TagMapNodeEntry,
+  type TagMapNodeEntry
 } from '.'
 import type { Attribute, Sheet } from './listing'
 
@@ -63,7 +63,7 @@ export function registerBuff(
       // Hook for listing
       namedReader.toEntry(entry.value),
       // Still include the original entry
-      entry,
+      entry
     ]
   })
 }
@@ -97,7 +97,7 @@ export function registerBuffFormula(
     // Hook for listing
     namedReader.toEntry(entry.value),
     // Still include the original entry
-    entry,
+    entry
   ]
 }
 
@@ -114,7 +114,7 @@ function registerFormula(
     listing.add(
       listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
     ),
-    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
+    ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value }))
   ]
 }
 

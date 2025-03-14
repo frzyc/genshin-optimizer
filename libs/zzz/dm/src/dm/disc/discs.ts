@@ -21,7 +21,7 @@ const discsJsonData = JSON.parse(readHakushinJSON('equipment.json')) as Record<
 const discNames = Object.fromEntries(
   Object.values(discsJsonData).map(({ EN: { name } }) => [
     nameToKey(name),
-    name,
+    name
   ])
 )
 

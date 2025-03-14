@@ -2,13 +2,13 @@ import {
   CardThemed,
   DropdownButton,
   InfoTooltip,
-  NumberInputLazy,
+  NumberInputLazy
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { DiscSetKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
-  allDiscSetKeys,
+  allDiscSetKeys
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints } from '@genshin-optimizer/zzz/db'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
@@ -21,7 +21,7 @@ import {
   Divider,
   MenuItem,
   Stack,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 const constraintKeys: StatKey[] = [
@@ -32,12 +32,12 @@ const constraintKeys: StatKey[] = [
   'crit_dmg_',
   'anomProf',
   'pen',
-  ...allAttributeDamageKeys,
+  ...allAttributeDamageKeys
 ]
 export function StatFilterCard({
   constraints,
   setConstraints,
-  disabled = false,
+  disabled = false
 }: {
   constraints: Constraints
   setConstraints: (constraints: Constraints) => void
@@ -53,7 +53,7 @@ export function StatFilterCard({
             display: 'flex',
             gap: 1,
             justifyContent: 'space-between',
-            flexDirection: 'column',
+            flexDirection: 'column'
           }}
         >
           <Box display="flex" justifyContent="space-between">
@@ -78,13 +78,13 @@ export function StatFilterCard({
                     onChange={(v) =>
                       setConstraints({
                         ...constraints,
-                        [key]: { value: v, isMax },
+                        [key]: { value: v, isMax }
                       })
                     }
                     inputProps={{ sx: { textAlign: 'right' } }}
                     InputProps={{
                       startAdornment: <StatDisplay statKey={key as StatKey} />,
-                      endAdornment: getUnitStr(key),
+                      endAdornment: getUnitStr(key)
                     }}
                   />
                   <ButtonGroup size="small">
@@ -92,7 +92,7 @@ export function StatFilterCard({
                       onClick={() =>
                         setConstraints({
                           ...constraints,
-                          [key]: { value, isMax: !isMax },
+                          [key]: { value, isMax: !isMax }
                         })
                       }
                     >
@@ -118,7 +118,7 @@ export function StatFilterCard({
                     onClick={() =>
                       setConstraints({
                         ...constraints,
-                        [key]: { value: 0, isMax: false },
+                        [key]: { value: 0, isMax: false }
                       })
                     }
                   >

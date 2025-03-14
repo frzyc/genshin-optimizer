@@ -135,7 +135,7 @@ export const parsingFunctions: {
           chargedLegal,
           charged,
           chargedJudgment: {},
-          plunging,
+          plunging
         } as any
       }
       if (charkey === 'Furina') {
@@ -164,7 +164,7 @@ export const parsingFunctions: {
           chargedLegal,
           charged,
           chargedJudgment,
-          plunging,
+          plunging
         } as any
       }
       if (charkey === 'Lyney') {
@@ -220,7 +220,7 @@ export const parsingFunctions: {
   talent: (lang, string) => talent(string),
   altSprint: (lang, string) => altSprint(string),
   passive1: (lang, string) => passive1(string),
-  passive4: (lang, string) => passive4(string),
+  passive4: (lang, string) => passive4(string)
 }
 
 export function constellation(string: string) {

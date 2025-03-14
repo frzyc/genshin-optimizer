@@ -5,7 +5,7 @@ import type { SkillKey } from '@genshin-optimizer/zzz/consts'
 import { skillLimits } from '@genshin-optimizer/zzz/consts'
 import {
   useCharacterContext,
-  useDatabaseContext,
+  useDatabaseContext
 } from '@genshin-optimizer/zzz/db-ui'
 import { MenuItem } from '@mui/material'
 import { useCallback } from 'react'
@@ -18,13 +18,13 @@ export function SkillDropdown({ skillKey }: { skillKey: SkillKey }) {
   const {
     [skillKey]: level = 0,
     promotion = 0,
-    key: characterKey,
+    key: characterKey
   } = character ?? {}
   const setSkill = useCallback(
     (val: number) =>
       characterKey &&
       database.chars.set(characterKey, {
-        [skillKey]: val,
+        [skillKey]: val
       }),
     [database, characterKey, skillKey]
   )

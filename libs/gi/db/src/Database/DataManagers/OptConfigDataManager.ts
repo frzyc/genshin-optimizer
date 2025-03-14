@@ -2,17 +2,17 @@ import {
   clamp,
   deepClone,
   deepFreeze,
-  validateArr,
+  validateArr
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
   LocationCharacterKey,
-  MainStatKey,
+  MainStatKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
   allLocationCharacterKeys,
-  artSlotMainKeys,
+  artSlotMainKeys
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
@@ -28,10 +28,10 @@ export const allArtifactSetExclusionKeys = [
         'PrayersForDestiny',
         'PrayersForIllumination',
         'PrayersForWisdom',
-        'PrayersToSpringtime',
+        'PrayersToSpringtime'
       ].includes(key)
   ),
-  'rainbow',
+  'rainbow'
 ] as ArtSetExclusionKey[]
 
 export type ArtSetExclusionKey =
@@ -115,7 +115,7 @@ export class OptConfigDataManager extends DataManager<
       generatedBuildListId,
       useTeammateBuild,
       upOptLevelLow,
-      upOptLevelHigh,
+      upOptLevelHigh
     } = obj as OptConfig
 
     if (typeof statFilters !== 'object') statFilters = {}
@@ -217,7 +217,7 @@ export class OptConfigDataManager extends DataManager<
       generatedBuildListId,
       useTeammateBuild,
       upOptLevelLow,
-      upOptLevelHigh,
+      upOptLevelHigh
     }
   }
   new(data: Partial<OptConfig> = {}) {
@@ -244,7 +244,7 @@ export class OptConfigDataManager extends DataManager<
     if (!overrideOptTarget) return rest
     return {
       ...rest,
-      optimizationTarget: overrideOptTarget,
+      optimizationTarget: overrideOptTarget
     }
   }
   import(data: object): string {
@@ -268,7 +268,7 @@ export class OptConfigDataManager extends DataManager<
       return this.database.generatedBuildList.set(listId, list)
     } else {
       return this.database.optConfigs.set(optConfigId, {
-        generatedBuildListId: this.database.generatedBuildList.new(list),
+        generatedBuildListId: this.database.generatedBuildList.new(list)
       })
     }
   }
@@ -282,7 +282,7 @@ const initialBuildSettings: OptConfig = deepFreeze({
   mainStatKeys: {
     sands: [...artSlotMainKeys['sands']],
     goblet: [...artSlotMainKeys['goblet']],
-    circlet: [...artSlotMainKeys['circlet']],
+    circlet: [...artSlotMainKeys['circlet']]
   },
   optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
@@ -296,7 +296,7 @@ const initialBuildSettings: OptConfig = deepFreeze({
   useTeammateBuild: false,
   upOptLevelLow: 0,
   upOptLevelHigh: 19,
-  generatedBuildListId: undefined,
+  generatedBuildListId: undefined
 })
 
 export function handleArtSetExclusion(

@@ -7,7 +7,7 @@ import {
   ownBuff,
   percent,
   registerBuff,
-  registerBuffFormula,
+  registerBuffFormula
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

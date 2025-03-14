@@ -3,7 +3,7 @@ import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   allAttributeDamageKeys,
   allAttributeKeys,
-  elementalData,
+  elementalData
 } from '@genshin-optimizer/zzz/consts'
 import type { Attribute, Tag } from '@genshin-optimizer/zzz/formula'
 import { own } from '@genshin-optimizer/zzz/formula'
@@ -19,7 +19,7 @@ export const charBaseUiSheet: TagField[] = (
     'enerRegen',
     'anomProf',
     'anomMas',
-    'dmg_',
+    'dmg_'
   ] as const
 ).map((statKey) => {
   if (
@@ -29,21 +29,21 @@ export const charBaseUiSheet: TagField[] = (
   ) {
     const tag = {
       ...own.final.dmg_.tag,
-      attribute: statKey.slice(0, -5) as Attribute,
+      attribute: statKey.slice(0, -5) as Attribute
     } as Tag
     return {
       title: <StatDisplay statKey={statKey} />,
-      fieldRef: tag,
+      fieldRef: tag
     } as TagField
   }
   if (statKey === 'crit_')
     return {
       fieldRef: own.common.cappedCrit_.tag,
-      title: <StatDisplay statKey={statKey} />,
+      title: <StatDisplay statKey={statKey} />
     }
   return {
     fieldRef: own.final[statKey as keyof typeof own.final].tag as Tag,
-    title: <StatDisplay statKey={statKey} />,
+    title: <StatDisplay statKey={statKey} />
   }
 })
 
@@ -57,9 +57,9 @@ charBaseUiSheet.push(
         q: 'standardDmg',
         attribute: attr,
         damageType1: 'elemental',
-        name: 'standardDmgInst',
+        name: 'standardDmgInst'
       },
-      title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>,
+      title: <ColorText color={attr}>{elementalData[attr]} Damage</ColorText>
     })
   ),
   ...allAttributeKeys.map(
@@ -70,11 +70,11 @@ charBaseUiSheet.push(
         q: 'anomalyDmg',
         attribute: attr,
         damageType1: 'anomaly',
-        name: 'anomalyDmgInst',
+        name: 'anomalyDmgInst'
       },
       title: (
         <ColorText color={attr}>{elementalData[attr]} Anomaly Damage</ColorText>
-      ),
+      )
     })
   )
 )

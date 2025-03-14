@@ -6,7 +6,7 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import {
   formulaText,
   TagDisplay,
-  useZzzCalcContext,
+  useZzzCalcContext
 } from '@genshin-optimizer/zzz/formula-ui'
 import { ZCard } from '@genshin-optimizer/zzz/ui'
 import HelpIcon from '@mui/icons-material/Help'

@@ -2,7 +2,7 @@ import type {
   AttributeKey,
   CharacterRarityKey,
   FactionKey,
-  SpecialityKey,
+  SpecialityKey
 } from '@genshin-optimizer/zzz/consts'
 
 // Copied from libs\zzz\dm\src\dm\character\characterIdMap.json
@@ -37,7 +37,7 @@ export const characterIdMap = {
   '1321': 'Evelyn',
   '1351': 'Pulchra',
   '1361': 'Trigger',
-  '1381': 'Soldier0Anby',
+  '1381': 'Soldier0Anby'
 } as const
 
 export const attributeMap: Record<number, AttributeKey> = {
@@ -45,14 +45,14 @@ export const attributeMap: Record<number, AttributeKey> = {
   201: 'fire',
   202: 'ice',
   203: 'electric',
-  205: 'ether',
+  205: 'ether'
 } as const
 export const specialityMap: Record<number, SpecialityKey> = {
   1: 'attack',
   2: 'stun',
   3: 'anomaly',
   4: 'support',
-  5: 'defense',
+  5: 'defense'
 } as const
 export const factionMap: Record<number, FactionKey> = {
   0: 'RandomPlay',
@@ -63,12 +63,12 @@ export const factionMap: Record<number, FactionKey> = {
   5: 'NewEriduDefenseForce',
   6: 'HollowSpecialOoperationsSection6',
   7: 'CriminalInvestigationSpecialResponseTeam',
-  8: 'StarsOfLyra',
+  8: 'StarsOfLyra'
 }
 
 export const characterRarityMap: Record<number, CharacterRarityKey> = {
   3: 'A',
-  4: 'S',
+  4: 'S'
 } as const
 
 // TODO: everything is base here
@@ -81,5 +81,5 @@ export const coreStatMap = {
   'Base Energy Regen': 'base_enerRegen',
   'Anomaly Proficiency': 'anomProf',
   'Anomaly Mastery': 'anomMas_base',
-  'PEN Ratio': 'pen_',
+  'PEN Ratio': 'pen_'
 } as const

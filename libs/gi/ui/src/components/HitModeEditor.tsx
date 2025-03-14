@@ -3,30 +3,30 @@ import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import {
   DropdownButton,
   SolidToggleButtonGroup,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import type {
   AdditiveReactionKey,
   AmpReactionKey,
-  ElementKey,
+  ElementKey
 } from '@genshin-optimizer/gi/consts'
 import {
   allAmpReactionKeys,
   allHitModeKeys,
   allowedAdditiveReactions,
-  allowedAmpReactions,
+  allowedAmpReactions
 } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { isCharMelee } from '@genshin-optimizer/gi/stats'
 import {
   CryoIcon,
   ElectroIcon,
   HydroIcon,
-  PyroIcon,
+  PyroIcon
 } from '@genshin-optimizer/gi/svgicons'
 import { infusionNode, uiInput as input } from '@genshin-optimizer/gi/wr'
 import type { ToggleButtonGroupProps } from '@mui/material'
@@ -62,7 +62,7 @@ export const infusionVals = {
       <ElectroIcon {...iconInlineProps} /> <SqBadge>Somnia Burst</SqBadge>{' '}
       Parallax Paws
     </span>
-  ),
+  )
 }
 type InfusionAuraDropdownProps = Omit<
   DropdownButtonProps,
@@ -71,10 +71,10 @@ type InfusionAuraDropdownProps = Omit<
 export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
   const {
     teamCharId,
-    teamChar: { infusionAura },
+    teamChar: { infusionAura }
   } = useContext(TeamCharacterContext)
   const {
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const database = useDatabase()
   if (!isCharMelee(characterKey)) return null
@@ -108,7 +108,7 @@ export function ReactionToggle(props: ReactionToggleProps) {
   const { t } = useTranslation('page_character')
   const {
     teamCharId,
-    teamChar: { reaction },
+    teamChar: { reaction }
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { data } = useContext(DataContext)
@@ -119,8 +119,8 @@ export function ReactionToggle(props: ReactionToggleProps) {
       ...(allowedAmpReactions[charEleKey] ?? []),
       ...(allowedAmpReactions[infusion] ?? []),
       ...(allowedAdditiveReactions[charEleKey] ?? []),
-      ...(allowedAdditiveReactions[infusion] ?? []),
-    ]),
+      ...(allowedAdditiveReactions[infusion] ?? [])
+    ])
   ]
   return (
     <SolidToggleButtonGroup
@@ -153,7 +153,7 @@ export function HitModeToggle(props: HitModeToggleProps) {
   const { t } = useTranslation('page_character')
   const {
     teamCharId,
-    teamChar: { hitMode = 'avgHit' },
+    teamChar: { hitMode = 'avgHit' }
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   return (

@@ -37,12 +37,12 @@ const data = dataObjForWeaponSheet(
     premod: {
       normal_dmgInc,
       skill_dmgInc,
-      critRate_,
-    },
+      critRate_
+    }
   },
   {
     normal_dmgInc,
-    skill_dmgInc,
+    skill_dmgInc
   }
 )
 
@@ -50,7 +50,7 @@ const sheet: IWeaponSheet = {
   document: [
     {
       header: headerTemplate(key, st('base')),
-      fields: [{ node: critRate_ }],
+      fields: [{ node: critRate_ }]
     },
     {
       header: headerTemplate(key, st('conditional')),
@@ -61,29 +61,29 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: normal_dmgInc,
+              node: normal_dmgInc
             },
             {
-              node: skill_dmgInc,
+              node: skill_dmgInc
             },
             {
               text: st('triggerQuota'),
-              value: 28,
+              value: 28
             },
             {
               text: stg('duration'),
               value: 12,
-              unit: 's',
+              unit: 's'
             },
             {
               text: stg('cd'),
               value: 12,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

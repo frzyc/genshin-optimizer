@@ -6,7 +6,7 @@ export const entryTypes = [
   'teamBuff',
   'notOwnBuff',
   'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
-  'display', // Display-only, not participating in any buffs
+  'display' // Display-only, not participating in any buffs
 ] as const
 
 export const presets = [
@@ -19,7 +19,7 @@ export const presets = [
   'preset6',
   'preset7',
   'preset8',
-  'preset9',
+  'preset9'
 ] as const
 
 export type EntryType = (typeof entryTypes)[number]

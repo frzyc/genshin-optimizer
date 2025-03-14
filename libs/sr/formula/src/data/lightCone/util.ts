@@ -4,7 +4,7 @@ import {
   cmpGE,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import type { LightConeDatum } from '@genshin-optimizer/sr/stats'
@@ -61,6 +61,6 @@ export function entriesForLightCone(
           cmpGE(lcCount, 1, 'unique', '')
         )
       }
-    ),
+    )
   ]
 }

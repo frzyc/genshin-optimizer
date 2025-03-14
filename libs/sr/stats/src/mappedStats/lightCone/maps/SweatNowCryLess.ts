@@ -8,7 +8,7 @@ let o = 1
 
 const dm = {
   passive_crit_: data_gen.superimpose.passiveStats.crit_,
-  common_dmg_: data_gen.superimpose.otherStats[o++],
+  common_dmg_: data_gen.superimpose.otherStats[o++]
 } as const
 
 export default dm

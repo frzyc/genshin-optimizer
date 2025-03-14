@@ -20,6 +20,6 @@ const data = {
   constellation6,
   passive1,
   passive2,
-  skill,
+  skill
 } as const
 export default data

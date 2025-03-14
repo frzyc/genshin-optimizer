@@ -8,7 +8,7 @@ export function wengineSortConfigs(): SortConfigs<WengineSortKey, IWengine> {
   return {
     level: (we) => we.level * (we.modification + 1),
     rarity: (we) => getWengineStat(we.key).rarity,
-    name: (we) => i18n.t(`${we.key}`) as string,
+    name: (we) => i18n.t(`${we.key}`) as string
   }
 }
 export function wengineFilterConfigs(): FilterConfigs<
@@ -36,7 +36,7 @@ export function wengineFilterConfigs(): FilterConfigs<
     locations: (we, filter, filters) =>
       we.location && !filters['showEquipped']
         ? filter.includes(we.location)
-        : true,
+        : true
   }
 }
 
@@ -44,5 +44,5 @@ export const wengineSortMap: Partial<Record<WengineSortKey, WengineSortKey[]>> =
   {
     name: ['name'],
     level: ['level', 'rarity', 'name'],
-    rarity: ['rarity', 'level', 'name'],
+    rarity: ['rarity', 'level', 'name']
   }

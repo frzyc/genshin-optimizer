@@ -30,7 +30,7 @@ export class DataManager<
     const key = this.dataKey
     zo[key] = Object.entries(this.data).map(([id, value]) => ({
       ...this.deCache(value),
-      id,
+      id
     }))
   }
   importZOD(

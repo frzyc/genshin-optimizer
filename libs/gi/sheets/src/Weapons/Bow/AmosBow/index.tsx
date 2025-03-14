@@ -6,7 +6,7 @@ import {
   naught,
   prod,
   subscript,
-  sum,
+  sum
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -20,17 +20,17 @@ const arrowDmgInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 
 const [condPassivePath, condPassive] = cond(key, 'StrongWilled')
 const normal_dmg_ = subscript(input.weapon.refinement, autoDmgInc, {
-  path: 'normal_dmg_',
+  path: 'normal_dmg_'
 })
 const charged_dmg_ = subscript(input.weapon.refinement, autoDmgInc, {
-  path: 'charged_dmg_',
+  path: 'charged_dmg_'
 })
 
 const dmgInc = subscript(input.weapon.refinement, arrowDmgInc)
 const normal_dmg_arrow_ = lookup(
   condPassive,
   {
-    ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
+    ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i))
   },
   naught,
   { path: 'normal_dmg_' }
@@ -38,7 +38,7 @@ const normal_dmg_arrow_ = lookup(
 const charged_dmg_arrow_ = lookup(
   condPassive,
   {
-    ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i)),
+    ...objKeyMap(range(1, 5), (i) => prod(dmgInc, i))
   },
   naught,
   { path: 'charged_dmg_' }
@@ -47,8 +47,8 @@ const charged_dmg_arrow_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     normal_dmg_: sum(normal_dmg_, normal_dmg_arrow_),
-    charged_dmg_: sum(charged_dmg_, charged_dmg_arrow_),
-  },
+    charged_dmg_: sum(charged_dmg_, charged_dmg_arrow_)
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -57,12 +57,12 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: normal_dmg_,
+          node: normal_dmg_
         },
         {
-          node: charged_dmg_,
-        },
-      ],
+          node: charged_dmg_
+        }
+      ]
     },
     {
       value: condPassive,
@@ -73,14 +73,14 @@ const sheet: IWeaponSheet = {
         name: st('seconds', { count: i / 10 }),
         fields: [
           {
-            node: normal_dmg_arrow_,
+            node: normal_dmg_arrow_
           },
           {
-            node: charged_dmg_arrow_,
-          },
-        ],
-      })),
-    },
-  ],
+            node: charged_dmg_arrow_
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

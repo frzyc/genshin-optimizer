@@ -36,6 +36,6 @@ const data = {
   technique_0,
   ult_0,
   ult_1,
-  ult_2,
+  ult_2
 } as const
 export default data

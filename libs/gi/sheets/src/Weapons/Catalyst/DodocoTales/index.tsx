@@ -26,8 +26,8 @@ const atk_ = equal(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     charged_dmg_,
-    atk_,
-  },
+    atk_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -41,16 +41,16 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: charged_dmg_,
+              node: charged_dmg_
             },
             {
               text: stg('duration'),
               value: 6,
-              unit: 's',
-            },
-          ],
-        },
-      },
+              unit: 's'
+            }
+          ]
+        }
+      }
     },
     {
       value: condCharged,
@@ -61,17 +61,17 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: atk_,
+              node: atk_
             },
             {
               text: stg('duration'),
               value: 6,
-              unit: 's',
-            },
-          ],
-        },
-      },
-    },
-  ],
+              unit: 's'
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

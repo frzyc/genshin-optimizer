@@ -2,19 +2,19 @@ import {
   ConditionalWrapper,
   ImgIcon,
   NextImage,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
   characterAsset,
   commonDefIcon,
   rarityDefIcon,
-  specialityDefIcon,
+  specialityDefIcon
 } from '@genshin-optimizer/zzz/assets'
 import {
   allSkillKeys,
   type CharacterKey,
-  type MilestoneKey,
+  type MilestoneKey
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/zzz/db'
 import { useCharacter } from '@genshin-optimizer/zzz/db-ui'
@@ -32,7 +32,7 @@ import { CharacterName } from './CharacterTrans'
 
 export function CharacterCompactMindscapeSelector({
   mindscape,
-  setMindscape,
+  setMindscape
 }: {
   mindscape: number
   setMindscape: (mindscape: number) => void
@@ -49,7 +49,7 @@ export function CharacterCompactMindscapeSelector({
               borderRadius: '4px',
               overflow: 'hidden',
               padding: '16px',
-              textAlign: 'center',
+              textAlign: 'center'
             }}
           >
             {t('mindscape', { level: i })}
@@ -61,7 +61,7 @@ export function CharacterCompactMindscapeSelector({
 }
 
 export function CharacterCoverArea({
-  character: { level, promotion, key: characterKey },
+  character: { level, promotion, key: characterKey }
 }: {
   character: ICachedCharacter
 }) {
@@ -77,7 +77,7 @@ export function CharacterCoverArea({
 function CoverArea({
   characterKey,
   level,
-  promotion,
+  promotion
 }: {
   characterKey: CharacterKey
   level: number
@@ -97,7 +97,7 @@ function CoverArea({
             bottom: 0,
             transform: 'translate(-50%, -50%)',
             opacity: 1,
-            textAlign: 'center',
+            textAlign: 'center'
           }}
         >
           {<ImgIcon size={1.5} src={rarityDefIcon(rarity)} />}
@@ -112,7 +112,7 @@ function CoverArea({
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
-            px: 1,
+            px: 1
           }}
         >
           <CharChip characterKey={characterKey} />
@@ -152,7 +152,7 @@ function CharChip({ characterKey }: { characterKey: CharacterKey }) {
 }
 function LevelBadge({
   level,
-  promotion,
+  promotion
 }: {
   level: number
   promotion: MilestoneKey
@@ -168,7 +168,7 @@ function LevelBadge({
 
 export function CharacterCoverOptimize({
   characterKey,
-  onClick,
+  onClick
 }: {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
@@ -209,7 +209,7 @@ export function CharacterCoverOptimize({
 
 function CharImage({
   characterKey,
-  character,
+  character
 }: {
   characterKey: CharacterKey
   character: CharacterData
@@ -227,7 +227,7 @@ function CharImage({
         display: 'flex',
         background: `${theme.palette[attribute].main}`,
         zIndex: 1,
-        overflow: 'hidden',
+        overflow: 'hidden'
       })}
     >
       <Box
@@ -237,7 +237,7 @@ function CharImage({
           right: '0',
           display: 'flex',
           transform: 'rotate(10deg) translateX(-50%)',
-          zIndex: 2,
+          zIndex: 2
         }}
       >
         <ScrollingBackgroundText characterKey={characterKey} />
@@ -258,7 +258,7 @@ function CharInformation({
   characterKey,
   characterStat,
   promotion,
-  level,
+  level
 }: {
   characterKey: CharacterKey
   characterStat: CharacterData
@@ -279,7 +279,7 @@ function CharInformation({
     height: '1.9em',
     borderRadius: '20px',
     fontWeight: '500',
-    fontSize: '0.9rem',
+    fontSize: '0.9rem'
   }
   return (
     <Box
@@ -289,7 +289,7 @@ function CharInformation({
         padding: '16px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-between'
       }}
     >
       <Box>
@@ -297,14 +297,14 @@ function CharInformation({
           gap={2}
           sx={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <ImgIcon size={2} src={rarityDefIcon(rarity)} />
           <Typography
             variant="h5"
             sx={{
-              fontWeight: '900',
+              fontWeight: '900'
             }}
           >
             <CharacterName characterKey={characterKey} />
@@ -315,7 +315,7 @@ function CharInformation({
             variant="h5"
             color="primary"
             sx={{
-              fontWeight: '900',
+              fontWeight: '900'
             }}
           >
             {t('mindscape', { level: character ? character.mindscape : 0 })}
@@ -326,7 +326,7 @@ function CharInformation({
             sx={(theme) => ({
               border: `2px solid ${theme.palette.contentZzz.main}`,
               borderRadius: '20px',
-              display: 'flex',
+              display: 'flex'
             })}
           >
             <Typography
@@ -339,7 +339,7 @@ function CharInformation({
               sx={{
                 fontWeight: '900',
                 paddingLeft: '4px',
-                pr: '10px',
+                pr: '10px'
               }}
             >
               / {milestoneMaxLevel[promotion]}
@@ -352,7 +352,7 @@ function CharInformation({
                 <Box
                   sx={(theme) => ({
                     ...skillStyles,
-                    background: `${theme.palette.background.default}`,
+                    background: `${theme.palette.background.default}`
                   })}
                 >
                   {character ? character[item] : 0}
@@ -364,7 +364,7 @@ function CharInformation({
               <Box
                 sx={(theme) => ({
                   ...skillStyles,
-                  background: `${theme.palette.background.default}`,
+                  background: `${theme.palette.background.default}`
                 })}
               >
                 {character ? character.core : 0}
@@ -378,7 +378,7 @@ function CharInformation({
 }
 
 function ScrollingBackgroundText({
-  characterKey,
+  characterKey
 }: {
   characterKey: CharacterKey
 }) {
@@ -387,8 +387,8 @@ function ScrollingBackgroundText({
     animation: 'scroll 16s infinite linear',
     '@keyframes scroll': {
       '0%': { transform: 'translateX(-100%)' },
-      '100%': { transform: 'translateX(0)' },
-    },
+      '100%': { transform: 'translateX(0)' }
+    }
   } as React.CSSProperties
 
   return (
@@ -406,7 +406,7 @@ function ScrollingBackgroundText({
         justifyContent: 'center',
         fontFamily: 'Impact',
         opacity: 0.1,
-        ...scroll,
+        ...scroll
       }}
     >
       {t(`${characterKey}`)}

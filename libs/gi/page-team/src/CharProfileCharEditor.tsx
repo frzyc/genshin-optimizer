@@ -2,13 +2,13 @@ import {
   BootstrapTooltip,
   CardThemed,
   ImgIcon,
-  ModalWrapper,
+  ModalWrapper
 } from '@genshin-optimizer/common/ui'
 import { allTravelerKeys } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   useDBMeta,
-  useDatabase,
+  useDatabase
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import {
@@ -19,7 +19,7 @@ import {
   CloseIcon,
   LevelSelect,
   TalentDropdown,
-  UnCheckIcon,
+  UnCheckIcon
 } from '@genshin-optimizer/gi/ui'
 import {
   Box,
@@ -28,7 +28,7 @@ import {
   Grid,
   IconButton,
   Skeleton,
-  Typography,
+  Typography
 } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -36,7 +36,7 @@ import { BuildTcContext } from './BuildTcContext'
 
 export function CharProfileCharEditor({
   show,
-  onClose,
+  onClose
 }: {
   show: boolean
   onClose: () => void
@@ -67,7 +67,7 @@ function Content({ onClose }: { onClose?: () => void }) {
   const database = useDatabase()
   const {
     character: charContext,
-    character: { key: characterKey },
+    character: { key: characterKey }
   } = useContext(CharacterContext)
   const { buildTc, setBuildTc } = useContext(BuildTcContext)
 
@@ -123,7 +123,7 @@ function Content({ onClose }: { onClose?: () => void }) {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 1,
+                gap: 1
               }}
             >
               <CharacterCoverArea />
@@ -150,8 +150,8 @@ function Content({ onClose }: { onClose?: () => void }) {
                           />
                         ),
                         sx: {
-                          color: buildTc?.character ? 'yellow' : undefined,
-                        },
+                          color: buildTc?.character ? 'yellow' : undefined
+                        }
                       }}
                       setTalent={(talent) =>
                         buildTc?.character
@@ -178,16 +178,16 @@ function Content({ onClose }: { onClose?: () => void }) {
                           if (buildTc.character)
                             buildTc.character = {
                               ...buildTc.character,
-                              ...data,
+                              ...data
                             }
                         })
                       : allTravelerKeys.includes(
-                          characterKey as (typeof allTravelerKeys)[number]
-                        )
-                      ? allTravelerKeys.forEach((tkey) => {
-                          database.chars.set(tkey, data)
-                        })
-                      : database.chars.set(characterKey, data)
+                            characterKey as (typeof allTravelerKeys)[number]
+                          )
+                        ? allTravelerKeys.forEach((tkey) => {
+                            database.chars.set(tkey, data)
+                          })
+                        : database.chars.set(characterKey, data)
                   }}
                 />
               </CardThemed>
@@ -208,7 +208,7 @@ function Content({ onClose }: { onClose?: () => void }) {
                               buildTc.character.constellation = constellation
                           })
                         : database.chars.set(characterKey, {
-                            constellation,
+                            constellation
                           })
                     }
                   />

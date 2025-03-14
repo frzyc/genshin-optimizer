@@ -7,7 +7,7 @@ import {
   lookup,
   naught,
   prod,
-  subscript,
+  subscript
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -43,8 +43,8 @@ const charged_dmg_ = lookup(
 const data = dataObjForWeaponSheet(key, {
   premod: {
     hp_,
-    charged_dmg_,
-  },
+    charged_dmg_
+  }
 })
 
 const sheet: IWeaponSheet = {
@@ -53,9 +53,9 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('base')),
       fields: [
         {
-          node: hp_,
-        },
-      ],
+          node: hp_
+        }
+      ]
     },
     {
       value: condHpChanges,
@@ -66,22 +66,22 @@ const sheet: IWeaponSheet = {
         name: st('times', { count: changes }),
         fields: [
           {
-            node: charged_dmg_,
+            node: charged_dmg_
           },
           {
             text: stg('duration'),
             value: 4,
-            unit: 's',
+            unit: 's'
           },
           {
             text: stg('cd'),
             value: 0.3,
             fixed: 1,
-            unit: 's',
-          },
-        ],
-      })),
-    },
-  ],
+            unit: 's'
+          }
+        ]
+      }))
+    }
+  ]
 }
 export default new WeaponSheet(sheet, data)

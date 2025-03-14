@@ -53,7 +53,7 @@ export function compileTagMapKeys(
     data[tag.category] = {
       offset: byteOffset,
       mask: ((1 << bitNeeded) - 1) << bitOffset,
-      ids: Object.fromEntries(values.map((v, i) => [v, (i + 1) << bitOffset])),
+      ids: Object.fromEntries(values.map((v, i) => [v, (i + 1) << bitOffset]))
     }
     bitOffset += bitNeeded
   }
@@ -93,7 +93,7 @@ export function mergeTagMapValues<V>(
   const result: RawTagMapValues<V> = Object.fromEntries(
     [...keys].map((key) => [
       key,
-      mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => !!x)),
+      mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => !!x))
     ])
   )
   const refs = entries.flatMap((e) => e[entryRef] ?? [])

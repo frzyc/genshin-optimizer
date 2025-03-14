@@ -5,11 +5,11 @@ import { useDatabaseContext } from './DatabaseContext'
 
 export const OptConfigContext = createContext({
   optConfigId: '',
-  optConfig: {} as OptConfig,
+  optConfig: {} as OptConfig
 })
 export function OptConfigProvider({
   optConfigId,
-  children,
+  children
 }: {
   optConfigId: string
   children: React.ReactNode

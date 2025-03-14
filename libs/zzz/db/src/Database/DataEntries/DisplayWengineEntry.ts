@@ -2,12 +2,12 @@ import { validateArr } from '@genshin-optimizer/common/util'
 import type {
   LocationKey,
   SpecialityKey,
-  WengineRarityKey,
+  WengineRarityKey
 } from '@genshin-optimizer/zzz/consts'
 import {
   allLocationKeys,
   allSpecialityKeys,
-  allWengineRarityKeys,
+  allWengineRarityKeys
 } from '@genshin-optimizer/zzz/consts'
 import type { ZzzDatabase } from '../Database'
 import { DataEntry } from '../DataEntry'
@@ -34,13 +34,13 @@ const initialOption = (): Omit<IDisplayWengine, 'ascending' | 'sortType'> => ({
   locked: ['locked', 'unlocked'],
   showEquipped: true,
   showInventory: true,
-  locations: [],
+  locations: []
 })
 
 const initialState = (): IDisplayWengine => ({
   ...initialOption(),
   sortType: wengineSortKeys[0],
-  ascending: false,
+  ascending: false
 })
 
 export class DisplayWengineEntry extends DataEntry<
@@ -62,7 +62,7 @@ export class DisplayWengineEntry extends DataEntry<
       locked,
       showEquipped,
       showInventory,
-      locations,
+      locations
     } = obj
     const { editWengineId } = obj
     if (typeof editWengineId !== 'string') return undefined
@@ -87,7 +87,7 @@ export class DisplayWengineEntry extends DataEntry<
       locked,
       showEquipped,
       showInventory,
-      locations,
+      locations
     }
     return data
   }

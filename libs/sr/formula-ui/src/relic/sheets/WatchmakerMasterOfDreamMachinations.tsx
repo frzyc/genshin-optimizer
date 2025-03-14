@@ -5,7 +5,7 @@ import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
 import {
   getRelicInterpolateObject,
-  mappedStats,
+  mappedStats
 } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
@@ -25,18 +25,18 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('setEffects.2', getRelicInterpolateObject(key, 2)),
+        text: chg('setEffects.2', getRelicInterpolateObject(key, 2))
       },
       {
         type: 'fields',
         fields: [
           {
             title: <StatDisplay statKey="brEffect_" />,
-            fieldValue: dm[2].brEffect_,
-          },
-        ],
-      },
-    ],
+            fieldValue: dm[2].brEffect_
+          }
+        ]
+      }
+    ]
   },
   4: {
     title: '4-Set', // TODO: L10n
@@ -44,7 +44,7 @@ const sheet: UISheet<'2' | '4'> = {
     documents: [
       {
         type: 'text',
-        text: chg('setEffects.4', getRelicInterpolateObject(key, 4)),
+        text: chg('setEffects.4', getRelicInterpolateObject(key, 4))
       },
       {
         type: 'conditional',
@@ -53,21 +53,21 @@ const sheet: UISheet<'2' | '4'> = {
           header: {
             icon: <ImgIcon src={icon} />,
             text: 'Use Their Ult on an ally', // TODO: L10n
-            additional: <SqBadge>4-Set</SqBadge>, // TODO: L10n
+            additional: <SqBadge>4-Set</SqBadge> // TODO: L10n
           },
           metadata: cond.useUltimateOnAlly,
           label: '4-Set',
           fields: [
             {
               title: <StatDisplay statKey="brEffect_" />,
-              fieldRef: buff.set4_brEffect_.tag,
+              fieldRef: buff.set4_brEffect_.tag
             },
             // TODO: translate DM "Duration"
-            { title: 'Duration', fieldValue: dm['4'].duration },
-          ],
-        },
-      },
-    ],
-  },
+            { title: 'Duration', fieldValue: dm['4'].duration }
+          ]
+        }
+      }
+    ]
+  }
 }
 export default sheet

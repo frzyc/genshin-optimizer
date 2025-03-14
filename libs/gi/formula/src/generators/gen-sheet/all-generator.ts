@@ -1,7 +1,7 @@
 import {
   allArtifactSetKeys,
   allCharacterKeys,
-  allWeaponKeys,
+  allWeaponKeys
 } from '@genshin-optimizer/gi/consts'
 import type { Tree } from '@nx/devkit'
 import genIndex from './genIndex'

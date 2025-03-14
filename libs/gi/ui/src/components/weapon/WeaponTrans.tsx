@@ -21,7 +21,7 @@ export function WeaponPassiveName({ weaponKey }: { weaponKey: WeaponKey }) {
 
 export function WeaponPassiveDesc({
   weaponKey,
-  refineIndex,
+  refineIndex
 }: {
   weaponKey: WeaponKey
   refineIndex: number

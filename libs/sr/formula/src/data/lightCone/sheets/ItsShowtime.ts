@@ -6,7 +6,7 @@ import {
   own,
   ownBuff,
   registerBuff,
-  registerBuffFormula,
+  registerBuffFormula
 } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 

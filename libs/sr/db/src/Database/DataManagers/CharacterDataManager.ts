@@ -6,11 +6,11 @@ import {
   allCharacterKeys,
   allRelicSlotKeys,
   allStatBoostKeys,
-  allTrailblazerKeys,
+  allTrailblazerKeys
 } from '@genshin-optimizer/sr/consts'
 import type {
   ICharacter,
-  ISrObjectDescription,
+  ISrObjectDescription
 } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type { ICachedCharacter, ISroDatabase } from '../../Interfaces'
@@ -33,7 +33,7 @@ export class CharacterDataManager extends DataManager<
     const {
       key: characterKey,
       level: rawLevel,
-      ascension: rawAscension,
+      ascension: rawAscension
     } = obj as ICharacter
     let {
       basic,
@@ -44,7 +44,7 @@ export class CharacterDataManager extends DataManager<
       statBoosts,
       eidolon,
       servantSkill,
-      servantTalent,
+      servantTalent
     } = obj as ICharacter
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
@@ -59,14 +59,16 @@ export class CharacterDataManager extends DataManager<
       bonusAbilities = objKeyMap(allBonusAbilityKeys, (key) =>
         typeof bonusAbilities[key] !== 'boolean'
           ? false
-          : bonusAbilities[key] ?? false
+          : (bonusAbilities[key] ?? false)
       )
     }
     if (typeof statBoosts !== 'object')
       statBoosts = objKeyMap(allStatBoostKeys, (_key) => false)
     else {
       statBoosts = objKeyMap(allStatBoostKeys, (key) =>
-        typeof statBoosts[key] !== 'boolean' ? false : statBoosts[key] ?? false
+        typeof statBoosts[key] !== 'boolean'
+          ? false
+          : (statBoosts[key] ?? false)
       )
     }
     basic = typeof basic !== 'number' ? 1 : clamp(basic, 1, 6)
@@ -90,7 +92,7 @@ export class CharacterDataManager extends DataManager<
       statBoosts,
       eidolon,
       servantSkill,
-      servantTalent,
+      servantTalent
     }
     return char
   }
@@ -111,7 +113,7 @@ export class CharacterDataManager extends DataManager<
         : Object.values(this.database.lightCones?.data ?? {}).find(
             (lc) => lc?.location === id
           )?.id,
-      ...storageObj,
+      ...storageObj
     }
   }
   override deCache(char: ICachedCharacter): ICharacter {
@@ -127,7 +129,7 @@ export class CharacterDataManager extends DataManager<
       statBoosts,
       eidolon,
       servantSkill,
-      servantTalent,
+      servantTalent
     } = char
     const result: ICharacter = {
       key,
@@ -141,7 +143,7 @@ export class CharacterDataManager extends DataManager<
       statBoosts,
       eidolon,
       servantSkill,
-      servantTalent,
+      servantTalent
     }
     return result
   }
@@ -179,7 +181,7 @@ export class CharacterDataManager extends DataManager<
     if (lightCone && lightCone.location === key && char.equippedLightCone)
       this.database.lightCones.setCached(char.equippedLightCone, {
         ...lightCone,
-        location: '',
+        location: ''
       })
     return super.remove(key)
   }
@@ -231,7 +233,7 @@ export class CharacterDataManager extends DataManager<
         ult,
         talent,
         bonusAbilities,
-        statBoosts,
+        statBoosts
       } = db
       const dbSr = {
         key,
@@ -243,7 +245,7 @@ export class CharacterDataManager extends DataManager<
         ult,
         talent,
         bonusAbilities,
-        statBoosts,
+        statBoosts
       }
       ;({
         key,
@@ -255,7 +257,7 @@ export class CharacterDataManager extends DataManager<
         ult,
         talent,
         bonusAbilities,
-        statBoosts,
+        statBoosts
       } = char)
       const charSr = {
         key,
@@ -267,7 +269,7 @@ export class CharacterDataManager extends DataManager<
         ult,
         talent,
         bonusAbilities,
-        statBoosts,
+        statBoosts
       }
       return JSON.stringify(dbSr) === JSON.stringify(charSr)
     }
@@ -323,6 +325,6 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     equippedRelics: objKeyMap(allRelicSlotKeys, () => ''),
     equippedLightCone: '',
     servantSkill: 1,
-    servantTalent: 1,
+    servantTalent: 1
   }
 }

@@ -4,14 +4,14 @@ import {
   CardThemed,
   ConditionalWrapper,
   NextImage,
-  SqBadge,
+  SqBadge
 } from '@genshin-optimizer/common/ui'
 import { imgAssets } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
   useCharMeta,
   useCharacter,
-  useDBMeta,
+  useDBMeta
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
@@ -29,7 +29,7 @@ export function CharacterCardPico({
   onMouseDown,
   onMouseEnter,
   hoverChild,
-  hideFav,
+  hideFav
 }: {
   characterKey: CharacterKey
   onClick?: (characterKey: CharacterKey) => void
@@ -75,7 +75,7 @@ export function CharacterCardPico({
           maxWidth: 128,
           position: 'relative',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
         }}
       >
         <ConditionalWrapper
@@ -102,7 +102,7 @@ export function CharacterCardPico({
                 lineHeight: 1,
                 opacity: 0.85,
                 pointerEvents: 'none',
-                top: 0,
+                top: 0
               }}
             >
               <strong>
@@ -130,7 +130,7 @@ export function CharacterCardPico({
                 opacity: 0.85,
                 pointerEvents: 'none',
                 bottom: 0,
-                right: 0,
+                right: 0
               }}
             >
               <strong>
@@ -151,7 +151,7 @@ export function BlankCharacterCardPico({ index }: { index: number }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        py: '12.5%',
+        py: '12.5%'
       }}
     >
       <Box

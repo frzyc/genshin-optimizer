@@ -6,7 +6,7 @@ import {
   allNumConditionals,
   ownBuff,
   percent,
-  teamBuff,
+  teamBuff
 } from '../util'
 import { artCount, registerArt } from './util'
 

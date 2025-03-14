@@ -9,7 +9,7 @@ let o = 1
 const dm = {
   passive_hp_: data_gen.superimpose.passiveStats.hp_,
   crit_dmg_: data_gen.superimpose.otherStats[o++],
-  duration: data_gen.superimpose.otherStats[o++][1],
+  duration: data_gen.superimpose.otherStats[o++][1]
 } as const
 
 export default dm

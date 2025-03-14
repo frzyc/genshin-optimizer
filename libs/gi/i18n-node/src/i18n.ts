@@ -40,11 +40,11 @@ i18nInstance.init({
 
   backend: {
     // Path to load localization data from.
-    loadPath: `${__dirname}/assets/gi/locales/{{lng}}/{{ns}}.json`,
+    loadPath: `${__dirname}/assets/gi/locales/{{lng}}/{{ns}}.json`
   },
   interpolation: {
-    escapeValue: false, //react does interlopation already
-  },
+    escapeValue: false //react does interlopation already
+  }
 })
 i18nInstance.services.formatter?.add('percent', (value, _lng, options) => {
   return (value * 100).toFixed(options.fixed)

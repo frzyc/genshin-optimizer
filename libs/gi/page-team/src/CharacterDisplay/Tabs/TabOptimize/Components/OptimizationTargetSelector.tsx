@@ -13,7 +13,7 @@ export default function OptimizationTargetSelector({
   showEmptyTargets = false,
   defaultText,
   targetSelectorModalProps = {},
-  buttonProps = {},
+  buttonProps = {}
 }: {
   optimizationTarget?: string[]
   setTarget: (target: string[]) => void

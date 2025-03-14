@@ -8,7 +8,7 @@ import {
   lookup,
   naught,
   percent,
-  prod,
+  prod
 } from '@genshin-optimizer/gi/wr'
 import { cond, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -38,8 +38,8 @@ const set4 = greaterEq(
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
     atk_: set2,
-    all_dmg_: set4,
-  },
+    all_dmg_: set4
+  }
 })
 
 const sheet: SetEffectSheet = {
@@ -55,12 +55,12 @@ const sheet: SetEffectSheet = {
           name: `${stacks}`,
           fields: [
             {
-              node: set4,
-            },
-          ],
-        })),
-      },
-    ],
-  },
+              node: set4
+            }
+          ]
+        }))
+      }
+    ]
+  }
 }
 export default new ArtifactSheet(sheet, data)

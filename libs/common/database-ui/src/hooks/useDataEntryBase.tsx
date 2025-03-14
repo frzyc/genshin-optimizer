@@ -1,7 +1,7 @@
 'use client'
 import type {
   Database,
-  DataEntryBase,
+  DataEntryBase
 } from '@genshin-optimizer/common/database'
 import { useEffect, useState } from 'react'
 export function useDataEntryBase<

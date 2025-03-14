@@ -7,13 +7,13 @@ import {
   type ArtCharDatabase,
   type ICachedArtifact,
   type ICachedCharacter,
-  type ICachedWeapon,
+  type ICachedWeapon
 } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
-  useTeam,
+  useTeam
 } from '@genshin-optimizer/gi/db-ui'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
 import type { CharacterSheet, WeaponSheet } from '@genshin-optimizer/gi/sheets'
@@ -22,7 +22,7 @@ import {
   displayDataMap,
   getCharSheet,
   getWeaponSheet,
-  resonanceData,
+  resonanceData
 } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
@@ -32,7 +32,7 @@ import {
   dataObjForArtifact,
   dataObjForCharacterNew,
   dataObjForWeapon,
-  mergeData,
+  mergeData
 } from '@genshin-optimizer/gi/wr'
 import { useContext, useDeferredValue, useEffect, useMemo } from 'react'
 import type { TeamData } from '../type/TeamData'
@@ -70,7 +70,7 @@ export function useTeamDataNoContext(
   const dbDirtyDeferred = useDeferredValue(dbDirty)
   const { gender } = useDBMeta()
   const { loadoutData } = useTeam(teamId) ?? {
-    loadoutData: [] as Array<LoadoutDatum | undefined>,
+    loadoutData: [] as Array<LoadoutDatum | undefined>
   }
   const data = useMemo(
     () =>
@@ -92,7 +92,7 @@ export function useTeamDataNoContext(
       mainStatAssumptionLevel,
       overrideTeamCharId,
       overrideArt,
-      overrideWeapon,
+      overrideWeapon
     ]
   )
 
@@ -194,7 +194,7 @@ export function getTeamData(
         conditional,
         bonusStats,
         hitMode,
-        reaction,
+        reaction
       } = teamChar
       const dbChar = database.chars.get(characterKey)
       if (!dbChar) return undefined
@@ -247,7 +247,7 @@ export function getTeamData(
 
           enemyOverride,
           hitMode,
-          reaction,
+          reaction
         },
         weapon,
         arts
@@ -258,7 +258,7 @@ export function getTeamData(
   const teamBundle = Object.fromEntries(
     (teamBundleArr.filter((b) => b) as CharBundle[]).map((bundle) => [
       bundle.character.key,
-      bundle,
+      bundle
     ])
   )
   const teamData = objMap(teamBundle, ({ data }) => data)
@@ -300,7 +300,7 @@ function getCharDataBundle(
   const sheetData = mergeData([
     characterSheet.data,
     weaponSheetsData,
-    allArtifactData,
+    allArtifactData
   ])
   const artifactData = Array.isArray(artifacts)
     ? artifacts.map((a) => dataObjForArtifact(a, mainStatAssumptionLevel))
@@ -311,7 +311,7 @@ function getCharDataBundle(
     dataObjForWeapon(weapon),
     sheetData,
     common, // NEED TO PUT THIS AT THE END
-    resonanceData,
+    resonanceData
   ]
   return { character, weapon, characterSheet, weaponSheet, data }
 }

@@ -3,7 +3,7 @@ import type {
   IConditionalData,
   IFormulaData,
   Tag,
-  TagMapNodeEntries,
+  TagMapNodeEntries
 } from '@genshin-optimizer/game-opt/engine'
 import type { AnyNode, ReRead } from '@genshin-optimizer/pando/engine'
 import { traverse } from '@genshin-optimizer/pando/engine'

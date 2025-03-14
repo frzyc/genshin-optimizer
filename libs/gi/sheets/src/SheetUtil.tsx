@@ -2,7 +2,7 @@ import type {
   ArtifactSetKey,
   CharacterKey,
   CharacterSheetKey,
-  WeaponKey,
+  WeaponKey
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
 import type {
@@ -10,7 +10,7 @@ import type {
   NonStackBuff,
   NumNode,
   ReadNode,
-  StrNode,
+  StrNode
 } from '@genshin-optimizer/gi/wr'
 import {
   customStringRead,
@@ -18,7 +18,7 @@ import {
   infoMut,
   input,
   nonStacking,
-  unequal,
+  unequal
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
 
@@ -74,7 +74,7 @@ export function trans(
     ),
     (strKey: string, values?: Record<string, string | number>) => (
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />
-    ),
+    )
   ]
 }
 
@@ -85,7 +85,7 @@ export function activeCharBuff(
 ) {
   return [
     infoMut(node, { ...info, isTeamBuff: true }),
-    equal(input.activeCharKey, buffTargetKey, node),
+    equal(input.activeCharKey, buffTargetKey, node)
   ]
 }
 
@@ -99,7 +99,7 @@ export function nonStackBuff(
     unequal(nonStacking[buffName], input.charKey, buffNode, {
       path,
       isTeamBuff: true,
-      strikethrough: true,
-    }),
+      strikethrough: true
+    })
   ]
 }
