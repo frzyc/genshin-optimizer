@@ -6,10 +6,13 @@
 
 /libs/gi/dm/GenshinData
 /libs/sr/dm/StarRailData
+/libs/zzz/dm/ZenlessData
+/libs/zzz/dm/HakushinData
 *_gen.json
 
 /libs/gi/stats/Data
 /libs/sr/stats/Data
+/libs/zzz/stats/Data
 
 # nx
 /.nx/cache
