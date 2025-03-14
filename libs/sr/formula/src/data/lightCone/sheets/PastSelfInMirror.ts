@@ -10,7 +10,7 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-const { useUltimate } = allBoolConditionals(key)
+const { ultUsed } = allBoolConditionals(key)
 
 const sheet = registerLightCone(
   key,
@@ -19,12 +19,12 @@ const sheet = registerLightCone(
 
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
+    'common_dmg_',
     teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, useUltimate.ifOn(subscript(superimpose, dm.dmg_))),
+      cmpGE(lcCount, 1, ultUsed.ifOn(subscript(superimpose, dm.common_dmg_)))
     ),
     cmpGE(lcCount, 1, 'infer', ''),
-    true,
-  ),
+    true
+  )
 )
 export default sheet

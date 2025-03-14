@@ -236,7 +236,7 @@ function SelectionCard({
                   component="span"
                   whiteSpace="nowrap"
                 >
-                  {t('characterCard.charLevel', { level: level })}
+                  {t('charLevel', { level: level })}
                 </Typography>
                 <Typography
                   variant="body2"

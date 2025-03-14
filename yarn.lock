@@ -3626,6 +3626,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^5.2.5":
+  version: 5.2.5
+  resolution: "@fontsource/inter@npm:5.2.5"
+  checksum: c1ac0a7379766d50c3ff27e1c6dc538d7700b9587bae6f1a36d4fd584f8a8983079be5e42520895dda90897e150d0c8824134a5847a5c0c2f11ca949d748fc03
+  languageName: node
+  linkType: hard
+
 "@fontsource/roboto@npm:^5.0.13":
   version: 5.0.13
   resolution: "@fontsource/roboto@npm:5.0.13"
@@ -13910,6 +13917,7 @@ __metadata:
     "@emotion/babel-plugin": 11.11.0
     "@emotion/react": 11.11.4
     "@emotion/styled": 11.11.5
+    "@fontsource/inter": ^5.2.5
     "@fontsource/roboto": ^5.0.13
     "@mui/icons-material": ^5.14.12
     "@mui/lab": ^5.0.0-alpha.170

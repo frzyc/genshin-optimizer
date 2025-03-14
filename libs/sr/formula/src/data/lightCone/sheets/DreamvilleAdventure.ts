@@ -1,16 +1,7 @@
-import { cmpGE, subscript } from '@genshin-optimizer/pando/engine'
+import { cmpEq, cmpGE, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
-import {
-  allBoolConditionals,
-  allListConditionals,
-  allNumConditionals,
-  enemyDebuff,
-  own,
-  ownBuff,
-  registerBuff,
-  teamBuff,
-} from '../../util'
+import { allListConditionals, own, registerBuff, teamBuff } from '../../util'
 import { entriesForLightCone, registerLightCone } from '../util'
 
 const key: LightConeKey = 'DreamvilleAdventure'
@@ -19,40 +10,61 @@ const dm = mappedStats.lightCone[key]
 const lcCount = own.common.count.sheet(key)
 const { superimpose } = own.lightCone
 
-// TODO: Add conditionals
-const { boolConditional } = allBoolConditionals(key)
-const { listConditional } = allListConditionals(key, ['val1', 'val2'])
-const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { childishness } = allListConditionals(key, ['basic', 'skill', 'ult'])
 
 const sheet = registerLightCone(
   key,
   // Handles base stats and passive buffs
   entriesForLightCone(key, data_gen),
 
-  // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
-    ownBuff.premod.common_dmg_.add(
+    'basic_dmg_',
+    teamBuff.premod.dmg_.addWithDmgType(
+      'basic',
       cmpGE(
         lcCount,
         1,
-        boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_)),
-      ),
+        cmpEq(
+          childishness.value,
+          1,
+          subscript(superimpose, dm.basic_skill_ult_dmg_)
+        )
+      )
     ),
-    cmpGE(lcCount, 1, 'infer', ''),
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
-    'team_dmg_',
-    teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 })),
+    'skill_dmg_',
+    teamBuff.premod.dmg_.addWithDmgType(
+      'skill',
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(
+          childishness.value,
+          2,
+          subscript(superimpose, dm.basic_skill_ult_dmg_)
+        )
+      )
     ),
-    cmpGE(lcCount, 1, 'infer', ''),
+    cmpGE(lcCount, 1, 'infer', '')
   ),
   registerBuff(
-    'enemy_defRed_',
-    enemyDebuff.common.defRed_.add(cmpGE(lcCount, 1, numConditional)),
-    cmpGE(lcCount, 1, 'infer', ''),
-  ),
+    'ult_dmg_',
+    teamBuff.premod.dmg_.addWithDmgType(
+      'ult',
+      cmpGE(
+        lcCount,
+        1,
+        cmpEq(
+          childishness.value,
+          3,
+          subscript(superimpose, dm.basic_skill_ult_dmg_)
+        )
+      )
+    ),
+    cmpGE(lcCount, 1, 'infer', '')
+  )
 )
 export default sheet

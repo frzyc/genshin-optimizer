@@ -42,7 +42,7 @@ export function DiscSetCardCompact({
         width: '100%',
       }}
     >
-      <Box component="div" sx={{ padding: '8px' }}>
+      <Box component="div" sx={{ px: '8px', py: '6px' }}>
         <Stack spacing={1}>
           {/* TODO: translate */}
           {Object.entries(sets).map(([key, count]) => (

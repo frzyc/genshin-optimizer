@@ -47,9 +47,10 @@ export function EmptyCompactCard({
             sx={{
               display: 'flex',
               alignItems: 'center',
-              px: '16px',
+              px: '40px',
+              py: '12px',
               justifyContent: 'center',
-              height: '212px',
+              height: '204px',
             }}
           >
             <Typography

@@ -6,7 +6,6 @@ import { own } from '@genshin-optimizer/zzz/formula'
 import {
   CharacterCoverOptimize,
   CharacterEditor,
-  ZCard,
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -126,9 +125,7 @@ function CharacterSection() {
             }}
           >
             <Stack spacing={1}>
-              <ZCard>
-                <CharacterCoverOptimize character={character} />
-              </ZCard>
+              <CharacterCoverOptimize characterKey={characterKey} />
               <Button fullWidth disabled={!characterKey} onClick={onClick}>
                 {/* TODO: Translation */}
                 Edit Character

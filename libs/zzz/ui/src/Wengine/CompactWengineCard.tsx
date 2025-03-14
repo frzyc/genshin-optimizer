@@ -59,7 +59,7 @@ export function CompactWengineCard({
           wrapper={wrapperFunc}
           falseWrapper={falseWrapperFunc}
         >
-          <Box sx={{ padding: '12px' }}>
+          <Box sx={{ px: '12px', py: '10px' }}>
             <Box component={'div'} sx={{ display: 'flex' }}>
               <Box component={'div'}>
                 <Box
