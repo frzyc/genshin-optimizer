@@ -663,7 +663,7 @@ export const conditionals = {
       type: 'num',
       int_only: true,
       min: 0,
-      max: 2,
+      max: 3,
     },
   },
   Guinaifen: {
@@ -1275,69 +1275,6 @@ export const conditionals = {
       sheet: 'PioneerDiverOfDeadWaters',
       name: 'wearerDebuff',
       type: 'bool',
-    },
-  },
-  Pioneering: {
-    boolConditional: {
-      sheet: 'Pioneering',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Pioneering',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Pioneering',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  PlanetaryRendezvous: {
-    boolConditional: {
-      sheet: 'PlanetaryRendezvous',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PlanetaryRendezvous',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PlanetaryRendezvous',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  PoisedToBloom: {
-    boolConditional: {
-      sheet: 'PoisedToBloom',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PoisedToBloom',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PoisedToBloom',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PostOpConversation: {
