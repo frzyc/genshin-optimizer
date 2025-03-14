@@ -67,7 +67,7 @@ export default function CharacterTalentPane() {
   const passivesList: [
     tKey: TalentSheetElementKey,
     tText: string,
-    asc: number
+    asc: number,
   ][] = [
     ['passive1', t('unlockPassive1'), 1],
     ['passive2', t('unlockPassive2'), 4],
@@ -102,7 +102,7 @@ export default function CharacterTalentPane() {
       database.chars,
       characterKey,
       constellation,
-    ]
+    ],
   )
 
   return (
@@ -248,7 +248,7 @@ function SkillDisplayCard({
     (children: ReactNode) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
     ),
-    [onClickTitle]
+    [onClickTitle],
   )
 
   let header: ReactNode = null

@@ -48,7 +48,7 @@ export class GeneratedBuildListDataManager extends DataManager<
           const artifactIds = objKeyMap(allArtifactSlotKeys, (slotKey) =>
             this.database.arts.get(artifactIdsRaw[slotKey])?.slotKey === slotKey
               ? artifactIdsRaw[slotKey]
-              : undefined
+              : undefined,
           )
 
           return { artifactIds, weaponId }

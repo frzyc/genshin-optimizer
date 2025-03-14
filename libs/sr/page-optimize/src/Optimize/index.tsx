@@ -79,7 +79,7 @@ function OptimizeWrapper() {
       rope: optConfig.slotRopeKeys,
     } as const
     const isFilteredSlot = (
-      slotKey: RelicSlotKey
+      slotKey: RelicSlotKey,
     ): slotKey is 'body' | 'feet' | 'sphere' | 'rope' =>
       ['body', 'feet', 'sphere', 'rope'].includes(slotKey)
     return (
@@ -106,7 +106,7 @@ function OptimizeWrapper() {
           body: [],
           sphere: [],
           rope: [],
-        } as Record<RelicSlotKey, ICachedRelic[]>
+        } as Record<RelicSlotKey, ICachedRelic[]>,
       )
     )
   }, [
@@ -158,9 +158,9 @@ function OptimizeWrapper() {
     () =>
       Object.values(relicsBySlot).reduce(
         (total, relics) => total * relics.length,
-        1
+        1,
       ) * lightCones.length,
-    [lightCones.length, relicsBySlot]
+    [lightCones.length, relicsBySlot],
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -201,7 +201,7 @@ function OptimizeWrapper() {
       lightCones,
       relicsBySlot,
       numWorkers,
-      setProgress
+      setProgress,
     )
 
     cancelled.then(() => optimizer.terminate('user cancelled'))
@@ -221,7 +221,7 @@ function OptimizeWrapper() {
           lightConeId: ids[0],
           relicIds: objKeyMap(
             allRelicSlotKeys,
-            (_slot, index) => ids[index + 1]
+            (_slot, index) => ids[index + 1],
           ),
           value,
         })),

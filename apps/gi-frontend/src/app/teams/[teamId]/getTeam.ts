@@ -5,7 +5,7 @@ import type { SupabaseClient } from '@supabase/supabase-js'
 export default async function getTeam(
   supabase: SupabaseClient<Database>,
   accountId: string | null,
-  teamId: string
+  teamId: string,
 ) {
   if (!accountId) return null
   const { data, error } = await supabase
@@ -46,7 +46,7 @@ export default async function getTeam(
         ),
         index,
         build_type
-      ) `
+      ) `,
     )
     .eq('account_id', accountId)
     .eq('id', teamId)

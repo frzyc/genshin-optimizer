@@ -52,7 +52,7 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
 
   useEffect(
     () => database.lightCones.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+    [database, setDirtyDatabase],
   )
 
   const { lightConeIds, totalLightConeNum } = useMemo(() => {
@@ -63,8 +63,8 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
         sortFunction(
           lightConeSortMap[sortType] ?? [],
           ascending,
-          lightConeSortConfigs()
-        )
+          lightConeSortConfigs(),
+        ),
       )
       .map((lc) => lc.id)
     return dirtyDatabase && { lightConeIds, totalLightConeNum }
@@ -79,11 +79,11 @@ export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    lightConeIds.length
+    lightConeIds.length,
   )
   const lightConeIdsToShow = useMemo(
     () => lightConeIds.slice(0, numShow),
-    [lightConeIds, numShow]
+    [lightConeIds, numShow],
   )
 
   const showingTextProps = {

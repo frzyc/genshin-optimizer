@@ -121,10 +121,10 @@ const sourceActive_geo_enemyRes_ = greaterEq(
   sum(
     equal(condSourceActive, 'on', 1),
     equal(condNsBlessing, 'on', 1),
-    greaterEq(input.constellation, 2, 1)
+    greaterEq(input.constellation, 2, 1),
   ),
   1,
-  equal(geoSourcePossible, 1, skill_enemyRes_)
+  equal(geoSourcePossible, 1, skill_enemyRes_),
 )
 const sourceActive_other_enemyRes_ = objKeyValMap(buffableEle, (ele) => [
   `${ele}_enemyRes_`,
@@ -134,7 +134,7 @@ const sourceActive_other_enemyRes_ = objKeyValMap(buffableEle, (ele) => [
 const a1_normal_dmg_ = greaterEq(
   input.asc,
   1,
-  equal(condNsBlessing, 'on', lessThan(convertedSources, 2, dm.passive1.dmg_))
+  equal(condNsBlessing, 'on', lessThan(convertedSources, 2, dm.passive1.dmg_)),
 )
 const a1_plunging_dmg_ = { ...a1_normal_dmg_ }
 
@@ -142,7 +142,7 @@ const [condNsBurstPath, condNsBurst] = cond(key, 'nsBurst')
 const a4_nsBurst_def_ = greaterEq(
   input.asc,
   4,
-  equal(condNsBurst, 'on', dm.passive2.def_)
+  equal(condNsBurst, 'on', dm.passive2.def_),
 )
 
 const ns_plunge_nodes = plungingDmgNodes('def', dm.plunging, {
@@ -156,8 +156,8 @@ const c2_sourceActive_geo_all_dmg_ = greaterEq(
   lessThan(
     sourceActive_geo_enemyRes_,
     -0.01,
-    equal(target.charEle, 'geo', dm.constellation2.geo_critDMG_)
-  )
+    equal(target.charEle, 'geo', dm.constellation2.geo_critDMG_),
+  ),
 )
 const c2_sourceActive_pyro_atk_disp = greaterEq(
   input.constellation,
@@ -165,14 +165,14 @@ const c2_sourceActive_pyro_atk_disp = greaterEq(
   greaterEq(
     tally.pyro,
     1,
-    equal(condSourceActive, 'on', dm.constellation2.pyro_atk_)
+    equal(condSourceActive, 'on', dm.constellation2.pyro_atk_),
   ),
-  { path: 'atk_', isTeamBuff: true }
+  { path: 'atk_', isTeamBuff: true },
 )
 const c2_sourceActive_pyro_atk_ = equal(
   target.charEle,
   'pyro',
-  c2_sourceActive_pyro_atk_disp
+  c2_sourceActive_pyro_atk_disp,
 )
 const c2_sourceActive_hydro_hp_disp = greaterEq(
   input.constellation,
@@ -180,14 +180,14 @@ const c2_sourceActive_hydro_hp_disp = greaterEq(
   greaterEq(
     tally.hydro,
     1,
-    equal(condSourceActive, 'on', dm.constellation2.hydro_hp_)
+    equal(condSourceActive, 'on', dm.constellation2.hydro_hp_),
   ),
-  { path: 'hp_', isTeamBuff: true }
+  { path: 'hp_', isTeamBuff: true },
 )
 const c2_sourceActive_hydro_hp_ = equal(
   target.charEle,
   'hydro',
-  c2_sourceActive_hydro_hp_disp
+  c2_sourceActive_hydro_hp_disp,
 )
 const c2_sourceActive_cryo_critDMG_disp = greaterEq(
   input.constellation,
@@ -195,14 +195,14 @@ const c2_sourceActive_cryo_critDMG_disp = greaterEq(
   greaterEq(
     tally.cryo,
     1,
-    equal(condSourceActive, 'on', dm.constellation2.cryo_critDMG_)
+    equal(condSourceActive, 'on', dm.constellation2.cryo_critDMG_),
   ),
-  { path: 'critDMG_', isTeamBuff: true }
+  { path: 'critDMG_', isTeamBuff: true },
 )
 const c2_sourceActive_cryo_critDMG_ = equal(
   target.charEle,
   'cryo',
-  c2_sourceActive_cryo_critDMG_disp
+  c2_sourceActive_cryo_critDMG_disp,
 )
 
 const [condC4BloomingPath, condC4Blooming] = cond(key, 'c4Blooming')
@@ -212,8 +212,8 @@ const c4_normal_dmgInc = greaterEq(
   equal(
     condC4Blooming,
     'on',
-    prod(percent(dm.constellation4.dmgInc), input.total.def)
-  )
+    prod(percent(dm.constellation4.dmgInc), input.total.def),
+  ),
 )
 const c4_charged_dmgInc = { ...c4_normal_dmgInc }
 const c4_plunging_dmgInc = { ...c4_normal_dmgInc }
@@ -225,15 +225,15 @@ const c6Imperishable_normal_dmgInc = greaterEq(
   equal(
     condC6Imperishable,
     'on',
-    prod(percent(dm.constellation6.dmgInc), input.total.def)
-  )
+    prod(percent(dm.constellation6.dmgInc), input.total.def),
+  ),
 )
 const c6Imperishable_plunging_dmgInc = { ...c6Imperishable_normal_dmgInc }
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
     ...Object.fromEntries(
       dm.nightsoul.hitArr.map((arr, i) => [
@@ -241,7 +241,7 @@ const dmgFormulas = {
         dmgNode('def', arr, 'normal', {
           infusion: { nonOverridableSelf: constant('geo') },
         }),
-      ])
+      ]),
     ),
   },
   charged: {
@@ -265,7 +265,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       6,
-      customHealNode(prod(input.total.def, percent(dm.constellation6.heal)))
+      customHealNode(prod(input.total.def, percent(dm.constellation6.heal))),
     ),
     c6Imperishable_normal_dmgInc,
     c6Imperishable_plunging_dmgInc,
@@ -467,10 +467,10 @@ const sheet: TalentSheet = {
       canShow: greaterEq(
         sum(
           lessThan(sourceActive_geo_enemyRes_, -0.01, 1),
-          greaterEq(convertedSources, 0, equal(condSourceActive, 'on', 1))
+          greaterEq(convertedSources, 0, equal(condSourceActive, 'on', 1)),
         ),
         1,
-        1
+        1,
       ),
       fields: [
         {
@@ -480,25 +480,25 @@ const sheet: TalentSheet = {
         {
           node: infoMut(
             { ...c2_sourceActive_geo_all_dmg_ },
-            { variant: 'geo' }
+            { variant: 'geo' },
           ),
         },
         {
           node: infoMut(
             { ...c2_sourceActive_pyro_atk_disp },
-            { variant: 'pyro' }
+            { variant: 'pyro' },
           ),
         },
         {
           node: infoMut(
             { ...c2_sourceActive_hydro_hp_disp },
-            { variant: 'hydro' }
+            { variant: 'hydro' },
           ),
         },
         {
           node: infoMut(
             { ...c2_sourceActive_cryo_critDMG_disp },
-            { variant: 'cryo' }
+            { variant: 'cryo' },
           ),
         },
       ],

@@ -10,7 +10,7 @@ import type {
 import { readFileSync } from 'fs'
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
 const { clientid } = JSON.parse(
-  readFileSync('./apps/somnia/src/config.json').toString()
+  readFileSync('./apps/somnia/src/config.json').toString(),
 )
 
 export default {
@@ -28,7 +28,7 @@ export default {
   //true if user triggered the original interaction
   sender(
     user: User | PartialUser,
-    interaction: MessageInteractionMetadata | null
+    interaction: MessageInteractionMetadata | null,
   ) {
     if (interaction) return user.id === interaction.user.id
     return false

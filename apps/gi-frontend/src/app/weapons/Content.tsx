@@ -46,7 +46,7 @@ export default function Content({
         (payload) => {
           if (payload.new)
             setWeapons((weapons) => [...weapons, payload.new] as Weapons)
-        }
+        },
       )
       .subscribe()
 

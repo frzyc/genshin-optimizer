@@ -58,9 +58,9 @@ export function LightConeCard({
   const calc = useMemo(
     () =>
       srCalculatorWithEntries(
-        lightConeTagMapNodeEntries(key, level, ascension, superimpose)
+        lightConeTagMapNodeEntries(key, level, ascension, superimpose),
       ),
-    [ascension, key, level, superimpose]
+    [ascension, key, level, superimpose],
   )
   const lcStat = getLightConeStat(key)
 

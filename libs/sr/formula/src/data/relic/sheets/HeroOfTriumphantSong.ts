@@ -22,9 +22,9 @@ const sheet = registerRelic(
     'set4_ult_dmg_',
     ownBuff.premod.dmg_.addWithDmgType(
       'ult',
-      cmpGE(relicCount, 4, followUpUsed.ifOn(dm[4].ult_dmg_))
+      cmpGE(relicCount, 4, followUpUsed.ifOn(dm[4].ult_dmg_)),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

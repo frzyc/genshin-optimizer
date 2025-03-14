@@ -28,7 +28,7 @@ function skillDmg(name: string, baseMult: number, addlMult: number[]) {
   // (baseMult * capped break effect + addlMult)
   const multi = sum(
     prod(baseMult, min(own.final.brEffect_, percent(dm.skill1.maxbrEffect_))),
-    percent(subscript(char.skill, addlMult))
+    percent(subscript(char.skill, addlMult)),
   )
   const base = prod(own.final.atk, multi)
   return customDmg(name, { ...baseTag, damageType1: 'skill' }, base)
@@ -36,7 +36,7 @@ function skillDmg(name: string, baseMult: number, addlMult: number[]) {
 
 const ba3_brEffect_ = isBonusAbilityActive(
   3,
-  prod(sum(own.final.atk, -100), 1 / dm.ba3.perAtk, percent(dm.ba3.break_))
+  prod(sum(own.final.atk, -100), 1 / dm.ba3.perAtk, percent(dm.ba3.break_)),
 )
 
 const sheet = register(
@@ -54,31 +54,31 @@ const sheet = register(
   ...customDmg(
     'techDmg',
     { ...baseTag, damageType1: 'technique' },
-    prod(own.final.atk, percent(dm.technique.dmg))
+    prod(own.final.atk, percent(dm.technique.dmg)),
   ),
   // TODO: ba2 superbreak; needs toughness reduction calculations + maybe some kind of reaction toggle
   ...registerBuff('ba3_brEffect_', ownBuff.premod.brEffect_.add(ba3_brEffect_)),
 
   // Buffs
   ownBuff.premod.spd.add(
-    ultInCompleteCombustion.ifOn(subscript(char.ult, dm.ult.spd))
+    ultInCompleteCombustion.ifOn(subscript(char.ult, dm.ult.spd)),
   ),
   ...ownBuff.premod.dmg_.break.map((read) =>
     read.add(
       ultInCompleteCombustion.ifOn(
-        percent(subscript(char.ult, dm.ult.break_dmg_))
-      )
-    )
+        percent(subscript(char.ult, dm.ult.break_dmg_)),
+      ),
+    ),
   ),
   ownBuff.premod.brEfficiency_.add(
-    ultInCompleteCombustion.ifOn(percent(dm.ult.brEffiency_))
+    ultInCompleteCombustion.ifOn(percent(dm.ult.brEffiency_)),
   ),
   // TODO: Properly add a way to set enemy weakness. This will be incorrect for enemies who already have fire weakness
   enemyDebuff.common.res.fire.add(techFireWeakness.ifOn(percent(-0.1))),
   ownBuff.premod.eff_res_.add(
     ultInCompleteCombustion.ifOn(
-      percent(subscript(char.talent, dm.talent.eff_res_))
-    )
-  )
+      percent(subscript(char.talent, dm.talent.eff_res_)),
+    ),
+  ),
 )
 export default sheet

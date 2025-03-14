@@ -19,20 +19,20 @@ const { hitPassive } = allNumConditionals(key, true, 0, 5)
 
 const time_normal_dmg_ = prod(
   timePassive,
-  percent(subscript(refinement, time_normal_dmg_arr))
+  percent(subscript(refinement, time_normal_dmg_arr)),
 )
 const hit_normal_dmg_ = prod(
   hitPassive,
-  percent(subscript(refinement, hit_normal_dmg_arr))
+  percent(subscript(refinement, hit_normal_dmg_arr)),
 )
 
 const normal_dmg_ = min(
   percent(subscript(refinement, max_normal_dmg_arr)),
-  sum(time_normal_dmg_, hit_normal_dmg_)
+  sum(time_normal_dmg_, hit_normal_dmg_),
 )
 
 export default register(
   key,
   entriesForWeapon(key),
-  ownBuff.premod.dmg_.normal.add(normal_dmg_)
+  ownBuff.premod.dmg_.normal.add(normal_dmg_),
 )

@@ -106,8 +106,8 @@ const a4EdictStacks_atk_ = greaterEq(
   lookup(
     condA4EdictStacks,
     objKeyMap(a4EdictStacksArr, (stack) => percent(stack * dm.passive2.atk_)),
-    naught
-  )
+    naught,
+  ),
 )
 
 const c1Rebuke_dmg_ = greaterEq(input.constellation, 1, dm.constellation1.dmg_)
@@ -122,22 +122,22 @@ const c2EdictStacks_burst_dmg_ = greaterEq(
     lookup(
       condA4EdictStacks,
       objKeyMap(a4EdictStacksArr, (stack) =>
-        percent(stack * dm.constellation2.dmg_)
+        percent(stack * dm.constellation2.dmg_),
       ),
-      naught
-    )
-  )
+      naught,
+    ),
+  ),
 )
 
 const c6Rebuke_critRate_ = greaterEq(
   input.constellation,
   6,
-  dm.constellation6.skill_critRate_
+  dm.constellation6.skill_critRate_,
 )
 const c6Rebuke_critDMG_ = greaterEq(
   input.constellation,
   6,
-  dm.constellation6.skill_critDMG_
+  dm.constellation6.skill_critDMG_,
 )
 
 const rebukeDmg = greaterEq(
@@ -149,13 +149,13 @@ const rebukeDmg = greaterEq(
       charged_critDMG_: c6Rebuke_critDMG_,
       charged_dmg_: rebuke_dmg_,
     },
-  })
+  }),
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -173,9 +173,9 @@ const dmgFormulas = {
           'normal',
           undefined,
           // TODO: Is this really special multiplier?
-          subscript(input.total.skillIndex, dm.skill.fistDmg, { unit: '%' })
+          subscript(input.total.skillIndex, dm.skill.fistDmg, { unit: '%' }),
         ),
-      ])
+      ]),
     ),
     hpCost: prod(percent(dm.skill.hpCost), input.total.hp),
   },
@@ -190,9 +190,9 @@ const dmgFormulas = {
         input.constellation,
         4,
         dm.constellation4.heal + dm.passive1.hpRestore,
-        dm.passive1.hpRestore
+        dm.passive1.hpRestore,
       ),
-      0
+      0,
     ),
   },
   constellation6: {
@@ -323,7 +323,7 @@ const sheet: TalentSheet = {
             {
               name: ct.chg(`auto.skillParams.${i}`),
               multi: i === 3 ? 2 : undefined,
-            }
+            },
           ),
         })),
         {

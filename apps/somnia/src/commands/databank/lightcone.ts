@@ -35,7 +35,7 @@ function getDropdown(id: string, superimposition: string) {
       new StringSelectMenuBuilder()
         .setCustomId(`databank lightcone ${id} ${superimposition}`)
         .setPlaceholder(`Superimposition ${superimposition}`)
-        .addOptions(options)
+        .addOptions(options),
     ),
   ]
 }
@@ -44,7 +44,7 @@ export function lightconeBank(
   id: LightConeKey,
   name: string,
   data: any,
-  args: string
+  args: string,
 ) {
   const msg: any = {}
   //weapon rarity color

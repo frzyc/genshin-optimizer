@@ -67,7 +67,7 @@ export function artifactsData(
   data: {
     set: ArtifactSetKey
     stats: readonly { key: MainStatKey | SubstatKey; value: number }[]
-  }[]
+  }[],
 ): TagMapNodeEntries {
   const {
     common: { count },
@@ -95,11 +95,11 @@ export function artifactsData(
     ...Object.entries(stats).map(([k, v]) =>
       readStat(premod, k as MainStatKey | SubstatKey)
         .sheet('dyn')
-        .add(v)
+        .add(v),
     ),
 
     ...Object.entries(sets).map(([k, v]) =>
-      count.sheet(k as ArtifactSetKey).add(v)
+      count.sheet(k as ArtifactSetKey).add(v),
     ),
   ]
 }
@@ -112,14 +112,14 @@ export function artifactsData(
  */
 export function conditionalData(
   dst: Member,
-  data: SrcCondInfo<Member, Sheet> | undefined
+  data: SrcCondInfo<Member, Sheet> | undefined,
 ) {
   if (!data) return []
   return Object.entries(data).flatMap(([src, entries]) =>
     Object.entries(entries).flatMap(([sheet, entries]) => {
       const conds = conditionalEntries(sheet, src, dst)
       return Object.entries(entries).map(([k, v]) => conds(k, v))
-    })
+    }),
   )
 }
 
@@ -133,13 +133,13 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'own', src: dst, dst: null }))
+        .reread(reader.withTag({ et: 'own', src: dst, dst: null })),
     ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = own.with('src', dst)
       return members.map((src) =>
-        entry.reread(teamBuff.withTag({ dst, src, name: null }))
+        entry.reread(teamBuff.withTag({ dst, src, name: null })),
       )
     }),
     // Not Self Buff
@@ -148,14 +148,14 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       return members
         .filter((src) => src !== dst)
         .map((src) =>
-          entry.reread(notOwnBuff.withTag({ dst, src, name: null }))
+          entry.reread(notOwnBuff.withTag({ dst, src, name: null })),
         )
     }),
     // Enemy Debuff
     members.map((src) =>
       enemy.reread(
-        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
-      )
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null }),
+      ),
     ),
     // Resonance Team Buff
     own.reread(teamBuff.withTag({ et: 'teamBuff', sheet: 'reso', name: null })),
@@ -175,7 +175,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
 
     // Total Team Stat
     members.map((src) =>
-      teamEntry.add(reader.withTag({ et: 'own', src, dst: null }))
+      teamEntry.add(reader.withTag({ et: 'own', src, dst: null })),
     ),
   ].flat()
 }

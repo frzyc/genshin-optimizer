@@ -23,7 +23,7 @@ const normal_dmg_ = lookup(
     '2': subscript(input.weapon.refinement, naStack2),
     '3': subscript(input.weapon.refinement, naStack3),
   },
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

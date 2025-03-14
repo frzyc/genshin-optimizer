@@ -98,7 +98,7 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
 
 const filterOptionReducer = (
   state: Partial<ArtifactFilterOption>,
-  action: Partial<ArtifactFilterOption>
+  action: Partial<ArtifactFilterOption>,
 ) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
@@ -112,7 +112,7 @@ export default function TabUpopt() {
   const { gender } = useDBMeta()
   const [filterOption, filterOptionDispatch] = useReducer(
     filterOptionReducer,
-    initialArtifactFilterOption()
+    initialArtifactFilterOption(),
   )
 
   const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
@@ -136,9 +136,9 @@ export default function TabUpopt() {
     () =>
       database.arts.followAny(
         (_, reason) =>
-          (reason === 'new' || reason === 'remove') && setArtsDirty()
+          (reason === 'new' || reason === 'remove') && setArtsDirty(),
       ),
-    [setArtsDirty, database]
+    [setArtsDirty, database],
   )
   const filteredArts = useMemo(() => {
     const {
@@ -179,9 +179,9 @@ export default function TabUpopt() {
     () =>
       objKeyMap(
         filteredArts.map(({ id }) => id),
-        (_) => true
+        (_) => true,
       ),
-    [filteredArts]
+    [filteredArts],
   )
 
   const { artSetKeys = [], slotKeys = [] } = filterOption
@@ -206,7 +206,7 @@ export default function TabUpopt() {
           ctMap['setTotal'][setKey].current++
           ctMap['slotTotal'][slotKey].current++
         }
-      })
+      }),
     )
   }, [database, optConfig, filteredArtIdMap])
 
@@ -230,36 +230,36 @@ export default function TabUpopt() {
     const workerData = uiDataForTeam(
       teamDataLocal.teamData,
       gender,
-      activeCharKey
+      activeCharKey,
     )[characterKey]?.target.data![0]
     if (!workerData) return
     Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
     const optimizationTargetNode = objPathValue(
       workerData.display ?? {},
-      optimizationTarget
+      optimizationTarget,
     ) as NumNode | undefined
     if (!optimizationTargetNode) return
 
     const valueFilter: { value: NumNode; minimum: number }[] = Object.entries(
-      statFilters
+      statFilters,
     ).flatMap(([pathStr, settings]) =>
       settings
         .filter((setting) => !setting.disabled)
         .map((setting) => {
           const filterNode: NumNode = objPathValue(
             workerData.display ?? {},
-            JSON.parse(pathStr)
+            JSON.parse(pathStr),
           )
           const infoResolved = filterNode?.info && resolveInfo(filterNode.info)
           const minimum =
             infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
           return { value: filterNode, minimum }
-        })
+        }),
     )
 
     const curEquipSetKeys = objKeyMap(
       allArtifactSlotKeys,
-      (slotKey) => equippedArts[slotKey]?.setKey
+      (slotKey) => equippedArts[slotKey]?.setKey,
     )
     function respectSexExclusion(art: ICachedArtifact) {
       const newSK = { ...curEquipSetKeys }
@@ -315,23 +315,23 @@ export default function TabUpopt() {
       .filter(
         (art) =>
           !mainStatKeys[art.slotKey]?.length ||
-          mainStatKeys[art.slotKey]?.includes(art.mainStatKey)
+          mainStatKeys[art.slotKey]?.includes(art.mainStatKey),
       )
       .filter(
-        (art) => upOptLevelLow <= art.level && art.level <= upOptLevelHigh
+        (art) => upOptLevelLow <= art.level && art.level <= upOptLevelHigh,
       )
     if (!artifactsToConsider.length) return
     const nodes = optimize(
       [optimizationTargetNode, ...valueFilter.map((x) => x.value)],
       workerData,
-      ({ path: [p] }) => p !== 'dyn'
+      ({ path: [p] }) => p !== 'dyn',
     )
 
     return new UpOptCalculator(
       nodes,
       [-Infinity, ...valueFilter.map((x) => x.minimum)],
       equippedArts,
-      artifactsToConsider
+      artifactsToConsider,
     )
     /**
      * WARNING:
@@ -374,13 +374,13 @@ export default function TabUpopt() {
         }
 
       const numPages = Math.ceil(
-        upOptCalc.artifacts.length / artifactsToDisplayPerPage
+        upOptCalc.artifacts.length / artifactsToDisplayPerPage,
       )
 
       const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
       const toShow = upOptCalc.artifacts.slice(
         currentPageIndex * artifactsToDisplayPerPage,
-        (currentPageIndex + 1) * artifactsToDisplayPerPage
+        (currentPageIndex + 1) * artifactsToDisplayPerPage,
       )
       const thr = upOptCalc.thresholds[0]
 
@@ -389,18 +389,18 @@ export default function TabUpopt() {
           currentPageIndex * artifactsToDisplayPerPage,
           Math.min(
             (currentPageIndex + 1) * artifactsToDisplayPerPage - 1,
-            upOptCalc.artifacts.length - 1
-          )
+            upOptCalc.artifacts.length - 1,
+          ),
         ),
         numPages,
         currentPageIndex,
         minObj0: toShow.reduce(
           (a, b) => Math.min(b.result!.distr.lower, a),
-          thr
+          thr,
         ),
         maxObj0: toShow.reduce(
           (a, b) => Math.max(b.result!.distr.upper, a),
-          thr
+          thr,
         ),
       }
     }, [pageIdex, upOptCalc])
@@ -411,7 +411,7 @@ export default function TabUpopt() {
       upOptCalc.calcSlowToIndex(end)
       setpageIdex(value - 1)
     },
-    [upOptCalc]
+    [upOptCalc],
   )
 
   const dataContext: dataContextObj | undefined = useMemo(() => {
@@ -603,7 +603,7 @@ export default function TabUpopt() {
                         objMax={maxObj0}
                         objMin={minObj0}
                       />
-                    )
+                    ),
                 )}
             </Suspense>
             {pagination}

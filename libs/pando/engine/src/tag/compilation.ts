@@ -31,7 +31,7 @@ export function compileTagMapKeys(
   tags: readonly (
     | { category: TagCategory; values: Set<TagValue> }
     | undefined
-  )[]
+  )[],
 ): RawTagMapKeys {
   const data: RawTagMapKeys['data'] = {}
   let byteOffset = 0,
@@ -62,7 +62,7 @@ export function compileTagMapKeys(
 
 export function compileTagMapValues<V>(
   _keys: RawTagMapKeys,
-  entries: TagMapEntries<V>
+  entries: TagMapEntries<V>,
 ): RawTagMapValues<V> {
   const keys = new TagMapKeys(_keys),
     tagLen = keys.tagLen,
@@ -86,7 +86,7 @@ export function compileTagMapValues<V>(
 }
 
 export function mergeTagMapValues<V>(
-  entries: RawTagMapValues<V>[]
+  entries: RawTagMapValues<V>[],
 ): RawTagMapValues<V> {
   if (entries.length == 1) return entries[0]!
   const keys = new Set(entries.flatMap((entry) => Object.keys(entry)))
@@ -94,7 +94,7 @@ export function mergeTagMapValues<V>(
     [...keys].map((key) => [
       key,
       mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => !!x)),
-    ])
+    ]),
   )
   const refs = entries.flatMap((e) => e[entryRef] ?? [])
   if (refs.length) result[entryRef] = refs

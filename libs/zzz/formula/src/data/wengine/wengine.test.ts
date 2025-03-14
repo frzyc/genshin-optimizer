@@ -58,7 +58,7 @@ function testCharacterData(wengineKey: WengineKey) {
         chain: 0,
         core: 6,
       }),
-      ...wengineTagMapNodeEntries(wengineKey, 60, 5, 5)
+      ...wengineTagMapNodeEntries(wengineKey, 60, 5, 5),
     ),
     own.common.critMode.add('avg'),
     enemy.common.def.add(953),
@@ -75,7 +75,7 @@ function cond(
   characterKey: CharacterKey,
   wKey: WengineKey,
   name: string,
-  value: number
+  value: number,
 ) {
   return conditionalEntries(wKey, characterKey, null)(name, value)
 }
@@ -91,13 +91,13 @@ describe('Disc sheets test', () => {
         characterKey,
         'BashfulDemon',
         conditionals.BashfulDemon.launch_ex_attack.name,
-        4
-      )
+        4,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: characterKey, dst: characterKey })
     const char = convert(ownTag, { et: 'own', src: characterKey })
     // printDebug(calc, char.combat.atk_)

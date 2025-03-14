@@ -166,7 +166,7 @@ export class DisplayArtifactEntry extends DataEntry<
     value:
       | Partial<IDisplayArtifact>
       | ((v: IDisplayArtifact) => Partial<IDisplayArtifact> | void)
-      | { action: 'reset' }
+      | { action: 'reset' },
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset')

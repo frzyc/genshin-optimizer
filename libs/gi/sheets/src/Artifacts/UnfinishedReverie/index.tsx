@@ -30,9 +30,9 @@ const set4 = greaterEq(
     lookup(
       condStacks,
       objKeyMap(set4Arr, (stacks) => constant(stacks)),
-      naught
-    )
-  )
+      naught,
+    ),
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

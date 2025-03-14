@@ -67,12 +67,12 @@ export function UploadCard({
         copyStorage.copyFrom(database.storage)
         const importedDatabase = new ArtCharDatabase(
           (index + 1) as 1 | 2 | 3 | 4,
-          copyStorage
+          copyStorage,
         )
         const importResult = importedDatabase.importGOOD(
           parsed,
           keepNotInImport,
-          ignoreDups
+          ignoreDups,
         )
         if (!importResult) {
           setErrorMsg('uploadCard.error.goInvalid')

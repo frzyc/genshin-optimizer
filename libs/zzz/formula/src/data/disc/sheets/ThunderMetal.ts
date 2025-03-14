@@ -19,7 +19,7 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_enemy_shocked_atk_',
     ownBuff.combat.atk_.add(cmpGE(discCount, 2, enemy_shocked.ifOn(0.28))),
-    showCond4Set
-  )
+    showCond4Set,
+  ),
 )
 export default sheet

@@ -53,7 +53,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
   useEffect(
     () => database.dbMeta.follow((r, dbMeta) => setDBMeta(dbMeta)),
-    [database]
+    [database],
   )
   // Need to update the dbMeta when database changes
   useEffect(() => setDBMeta(database.dbMeta.get()), [database])
@@ -68,7 +68,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   const numLoadouts = database.teamChars.values.length
   const numBuilds = database.builds.values.length
   const hasData = Boolean(
-    numChar || numArt || numWeapon || numTeams || numLoadouts || numBuilds
+    numChar || numArt || numWeapon || numTeams || numLoadouts || numBuilds,
   )
   const copyToClipboard = useCallback(
     () =>
@@ -76,7 +76,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
         .writeText(JSON.stringify(database.exportGOOD()))
         .then(() => alert('Copied database to clipboard.'))
         .catch(console.error),
-    [database]
+    [database],
   )
 
   const onDelete = useCallback(() => {
@@ -120,7 +120,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
   }, [tempName, database])
   const onKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
-    [onBlur]
+    [onBlur],
   )
 
   return (

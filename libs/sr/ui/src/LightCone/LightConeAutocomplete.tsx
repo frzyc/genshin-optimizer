@@ -26,14 +26,14 @@ export function LightConeAutocomplete({
         (key): GeneralAutocompleteOption<LightConeKey | ''> => ({
           key,
           label: t(`lightConeNames_gen:${key}`),
-        })
+        }),
       ),
-    [t]
+    [t],
   )
 
   const onChange = useCallback(
     (k: LightConeKey | '' | null) => setLCKey(k ?? ''),
-    [setLCKey]
+    [setLCKey],
   )
   const toImg = useCallback(
     (key: LightConeKey | '') =>
@@ -44,7 +44,7 @@ export function LightConeAutocomplete({
           src={lightConeAsset(key, 'cover')}
         />
       ),
-    []
+    [],
   )
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

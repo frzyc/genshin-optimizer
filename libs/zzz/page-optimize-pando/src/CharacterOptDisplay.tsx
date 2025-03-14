@@ -105,7 +105,7 @@ function CharacterSection() {
   const character = useCharacterContext()!
   const { key: characterKey } = character
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
-    undefined
+    undefined,
   )
   const onClick = useCallback(() => {
     character?.key && setCharacterKey(character.key)

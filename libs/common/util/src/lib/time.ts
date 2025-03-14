@@ -20,7 +20,7 @@ export function timeString(ms: number) {
   return `${hours ? `${hours}:` : ''}${strPadLeft(
     minutes.toString(),
     '0',
-    2
+    2,
   )}:${strPadLeft(seconds.toString(), '0', 2)} ${timeText}`
 }
 export function timeStringMs(ms: number) {
@@ -31,10 +31,10 @@ export function timeStringMs(ms: number) {
   return `${hours ? `${hours}:` : ''}${strPadLeft(
     minutes.toString(),
     '0',
-    2
+    2,
   )}:${strPadLeft(seconds.toString(), '0', 2)}.${strPadLeft(
     milliseconds.toString(),
     '0',
-    3
+    3,
   )} ${timeText}`
 }

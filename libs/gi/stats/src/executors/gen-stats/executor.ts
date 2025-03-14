@@ -52,7 +52,7 @@ export type AllStats = typeof allStat
 export default async function runExecutor(_options: GenStatsExecutorSchema) {
   console.log(`Writing basic character data to ${path}/Characters`)
   Object.entries(characterDataDump).forEach(([characterKey, data]) =>
-    dumpFile(`${path}/Characters/${characterKey}/data.json`, data)
+    dumpFile(`${path}/Characters/${characterKey}/data.json`, data),
   )
 
   // dumpFile(`${__dirname}/allChar_gen.json`, characterSkillParamDump)
@@ -62,14 +62,14 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
       `${path}/Weapons/${
         data.weaponType[0].toUpperCase() + data.weaponType.slice(1)
       }/${weaponKey}/data.json`,
-      data
-    )
+      data,
+    ),
   )
   dumpFile(`${path}/Weapons/expCurve.json`, weaponExpCurve)
 
   console.log(`Writing character data to ${path}/Characters`)
   Object.entries(characterSkillParamDump).forEach(([characterKey, data]) =>
-    dumpFile(`${path}/Characters/${characterKey}/skillParam.json`, data)
+    dumpFile(`${path}/Characters/${characterKey}/skillParam.json`, data),
   )
   dumpFile(`${path}/Characters/expCurve.json`, charExpCurve)
 
@@ -80,7 +80,7 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
   dumpFile(`${path}/Artifacts/artifact_sub_rolls.json`, artifactSubstatRollData)
   dumpFile(
     `${path}/Artifacts/artifact_sub_rolls_correction.json`,
-    artifactSubstatRollCorrection
+    artifactSubstatRollCorrection,
   )
 
   console.log(`Writing material data to ${path}/Materials`)

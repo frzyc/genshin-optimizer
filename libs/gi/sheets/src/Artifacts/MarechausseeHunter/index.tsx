@@ -27,8 +27,8 @@ const set4_critRate_ = greaterEq(
   lookup(
     condSet4,
     objKeyMap(stacksArr, (stack) => constant(stack * 0.12)),
-    naught
-  )
+    naught,
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

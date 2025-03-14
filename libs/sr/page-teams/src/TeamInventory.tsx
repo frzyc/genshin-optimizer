@@ -24,7 +24,7 @@ export function TeamInventory() {
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
   useEffect(
     () => database.teams.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+    [database, setDirtyDatabase],
   )
 
   const navigate = useNavigate()
@@ -38,12 +38,12 @@ export function TeamInventory() {
 
   const { numShow, setTriggerElement } = useInfScroll(
     amtPerSize[size],
-    teamIds.length
+    teamIds.length,
   )
 
   const teamIdsToShow = useMemo(
     () => teamIds.slice(0, numShow),
-    [teamIds, numShow]
+    [teamIds, numShow],
   )
 
   return (

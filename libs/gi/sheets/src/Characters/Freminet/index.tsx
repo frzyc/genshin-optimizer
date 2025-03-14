@@ -108,20 +108,20 @@ const stalkFrost_dmg_ = compareEq(
   condStalk,
   'on',
   infoMut(percent(2), { name: ct.ch('frost_dmgMult_') }),
-  one
+  one,
 )
 
 const [condA4AfterShatterPath, condA4AfterShatter] = cond(key, 'a4AfterShatter')
 const a4AfterShatter_pressure_dmg_ = greaterEq(
   input.asc,
   4,
-  equal(condA4AfterShatter, 'on', dm.passive2.pressure_dmg_)
+  equal(condA4AfterShatter, 'on', dm.passive2.pressure_dmg_),
 )
 
 const c1Pressure_critRate_ = greaterEq(
   input.constellation,
   1,
-  dm.constellation1.pressure_critRate_
+  dm.constellation1.pressure_critRate_,
 )
 
 const [condC4C6StacksPath, condC4C6Stacks] = cond(key, 'c4C6Stacks')
@@ -132,10 +132,13 @@ const c4Stacks_atk_ = greaterEq(
   lookup(
     condC4C6Stacks,
     objKeyMap(c4C6StacksArr, (stack) =>
-      prod(dm.constellation4.atk_, Math.min(dm.constellation4.maxStacks, stack))
+      prod(
+        dm.constellation4.atk_,
+        Math.min(dm.constellation4.maxStacks, stack),
+      ),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 const c6Stacks_critDMG_ = greaterEq(
   input.constellation,
@@ -143,10 +146,10 @@ const c6Stacks_critDMG_ = greaterEq(
   lookup(
     condC4C6Stacks,
     objKeyMap(c4C6StacksArr, (stack) =>
-      prod(dm.constellation6.critDMG_, stack)
+      prod(dm.constellation6.critDMG_, stack),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const pressureAddl: Data = {
@@ -162,7 +165,7 @@ const physPressureAddl: Data = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spin_dmg, 'charged'),
@@ -176,44 +179,44 @@ const dmgFormulas = {
       dm.skill.frostDmg,
       'skill',
       undefined,
-      stalkFrost_dmg_
+      stalkFrost_dmg_,
     ),
     level0Dmg: dmgNode('atk', dm.skill.level0Dmg, 'skill', pressureAddl),
     level1CryoDmg: dmgNode(
       'atk',
       dm.skill.level1CryoDmg,
       'skill',
-      pressureAddl
+      pressureAddl,
     ),
     level1PhysDmg: dmgNode(
       'atk',
       dm.skill.level1PhysDmg,
       'skill',
-      physPressureAddl
+      physPressureAddl,
     ),
     level2CryoDmg: dmgNode(
       'atk',
       dm.skill.level2CryoDmg,
       'skill',
-      pressureAddl
+      pressureAddl,
     ),
     level2PhysDmg: dmgNode(
       'atk',
       dm.skill.level2PhysDmg,
       'skill',
-      physPressureAddl
+      physPressureAddl,
     ),
     level3CryoDmg: dmgNode(
       'atk',
       dm.skill.level3CryoDmg,
       'skill',
-      pressureAddl
+      pressureAddl,
     ),
     level3PhysDmg: dmgNode(
       'atk',
       dm.skill.level3PhysDmg,
       'skill',
-      physPressureAddl
+      physPressureAddl,
     ),
     level4Dmg: dmgNode('atk', dm.skill.level4Dmg, 'skill', physPressureAddl),
     thornDmg: dmgNode('atk', dm.skill.thornDmg, 'skill'),

@@ -77,7 +77,7 @@ export default function ExcludeArt({
         useExcludedArts: false,
       })
     },
-    [database, optConfigId, artExclusion]
+    [database, optConfigId, artExclusion],
   )
   const onInclude = useCallback(
     (ids: string[]) => {
@@ -86,14 +86,14 @@ export default function ExcludeArt({
         useExcludedArts: false,
       })
     },
-    [database, optConfigId, artExclusion]
+    [database, optConfigId, artExclusion],
   )
   const toggleArtExclusion = useCallback(
     () =>
       database.optConfigs.set(optConfigId, {
         useExcludedArts: !useExcludedArts,
       }),
-    [database, optConfigId, useExcludedArts]
+    [database, optConfigId, useExcludedArts],
   )
 
   return (
@@ -194,8 +194,8 @@ export default function ExcludeArt({
                 !numExcludedArt
                   ? 'secondary'
                   : useExcludedArts
-                  ? 'warning'
-                  : 'primary'
+                    ? 'warning'
+                    : 'primary'
               }
             >
               {useExcludedArts ? (
@@ -312,7 +312,7 @@ function ArtifactSelectModal({
   const database = useDatabase()
   const [filterOption, filterOptionDispatch] = useReducer(
     filterOptionReducer,
-    initialArtifactFilterOption()
+    initialArtifactFilterOption(),
   )
 
   const [dbDirty, forceUpdate] = useForceUpdate()
@@ -324,7 +324,7 @@ function ArtifactSelectModal({
 
   const filterConfigs = useMemo(
     () => artifactFilterConfigs({ excludedIds: artExclusion }),
-    [artExclusion]
+    [artExclusion],
   )
   const artifactIds = useMemo(() => {
     const filterFunc = filterFunction(filterOption, filterConfigs)
@@ -335,11 +335,11 @@ function ArtifactSelectModal({
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    artifactIds.length
+    artifactIds.length,
   )
   const artifactIdsToShow = useMemo(
     () => artifactIds.slice(0, numShow),
-    [artifactIds, numShow]
+    [artifactIds, numShow],
   )
   return (
     <ModalWrapper

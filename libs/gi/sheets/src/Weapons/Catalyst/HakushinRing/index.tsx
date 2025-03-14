@@ -31,7 +31,11 @@ const nonstackWrites = objKeyValMap(allElementKeys, (key) => [
     : equalStr(condPassive, key, input.charKey),
 ])
 const nonElectro_dmg_disp = objKeyMap(nonElectroEle, (key) =>
-  nonStackBuff(`hakushin${key}`, `${key}_dmg_`, equal(key, condPassive, eleDmg))
+  nonStackBuff(
+    `hakushin${key}`,
+    `${key}_dmg_`,
+    equal(key, condPassive, eleDmg),
+  ),
 )
 const nonElectro_dmg_ = objKeyValMap(nonElectroEle, (key) => [
   `${key}_dmg_`,
@@ -41,7 +45,7 @@ const nonElectro_dmg_ = objKeyValMap(nonElectroEle, (key) => [
 const [electro_dmg_disp, electro_dmg_dispInactive] = nonStackBuff(
   'hakushinelectro',
   'electro_dmg_',
-  unequal(condPassive, undefined, eleDmg)
+  unequal(condPassive, undefined, eleDmg),
 )
 const electro_dmg_ = equal('electro', target.charEle, electro_dmg_disp)
 

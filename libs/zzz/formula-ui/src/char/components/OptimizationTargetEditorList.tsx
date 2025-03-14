@@ -41,7 +41,7 @@ export function OptimizationTargetEditorList({
       else statFilters_[oldIndex].tag = tag
       setStatFilters(statFilters_)
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
 
   const delTarget = useCallback(
@@ -50,7 +50,7 @@ export function OptimizationTargetEditorList({
       statFilters_.splice(index, 1)
       setStatFilters(statFilters_)
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
   const setTargetValue = useCallback(
     (index: number, value: number) => {
@@ -58,7 +58,7 @@ export function OptimizationTargetEditorList({
       statFilters_[index].value = value
       setStatFilters(statFilters_)
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
   const setTargetisMax = useCallback(
     (index: number, isMax: boolean) => {
@@ -66,7 +66,7 @@ export function OptimizationTargetEditorList({
       statFilters_[index].isMax = isMax
       setStatFilters(statFilters_)
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
   const setTargetDisabled = useCallback(
     (index: number, disabled: boolean) => {
@@ -74,7 +74,7 @@ export function OptimizationTargetEditorList({
       statFilters_[index].disabled = disabled
       setStatFilters(statFilters_)
     },
-    [setStatFilters, statFilters]
+    [setStatFilters, statFilters],
   )
 
   return (

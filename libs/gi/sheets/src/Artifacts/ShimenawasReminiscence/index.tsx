@@ -16,7 +16,7 @@ const set2 = greaterEq(input.artSet.ShimenawasReminiscence, 2, percent(0.18))
 const set4Norm = greaterEq(
   input.artSet.ShimenawasReminiscence,
   4,
-  equal('used', usedEnergyState, percent(0.5))
+  equal('used', usedEnergyState, percent(0.5)),
 )
 const set4Charged = { ...set4Norm }
 const set4Plunge = { ...set4Norm }

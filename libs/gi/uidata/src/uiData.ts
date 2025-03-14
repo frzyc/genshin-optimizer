@@ -111,7 +111,7 @@ export class UIData {
         (x: ReadNode<number> | ReadNode<string>, path: string[]) => {
           const node = objPathValue(calculated, x.path) as NumNode | undefined
           if (node) layeredAssignment(result, path, node)
-        }
+        },
       )
       this.teamBuff = result
     }
@@ -121,8 +121,8 @@ export class UIData {
     if (!this.bonusStats)
       this.bonusStats = Object.fromEntries(
         Object.entries(input.customBonus).map(
-          ([key, node]) => [key, this.get(node)] as const
-        )
+          ([key, node]) => [key, this.get(node)] as const,
+        ),
       )
     return this.bonusStats
   }
@@ -146,7 +146,7 @@ export class UIData {
         [],
         (x: any) => x.operation,
         (x: NumNode, key: string[]) =>
-          layeredAssignment(result, key, this.get(x))
+          layeredAssignment(result, key, this.get(x)),
       )
     }
     return result
@@ -166,10 +166,10 @@ export class UIData {
   private computeNode(node: NumNode): CalcResult<number>
   private computeNode(node: StrNode): CalcResult<string | undefined>
   private computeNode(
-    node: NumNode | StrNode
+    node: NumNode | StrNode,
   ): CalcResult<number | string | undefined>
   private computeNode(
-    node: NumNode | StrNode
+    node: NumNode | StrNode,
   ): CalcResult<number | string | undefined> {
     const old = this.nodes.get(node)
     if (old) return old
@@ -247,7 +247,7 @@ export class UIData {
       .filter((x) => x)
   }
   private readFirst(
-    path: readonly string[]
+    path: readonly string[],
   ): CalcResult<number | string | undefined> | undefined {
     const data = this.data
       .map((x) => objPathValue(x, path) as NumNode | StrNode)
@@ -257,7 +257,7 @@ export class UIData {
 
   private _prio(nodes: readonly StrNode[]): CalcResult<string | undefined> {
     const first = nodes.find(
-      (node) => this.computeNode(node).value !== undefined
+      (node) => this.computeNode(node).value !== undefined,
     )
     return first ? this.computeNode(first) : illformedStr
   }
@@ -274,7 +274,7 @@ export class UIData {
     return smallest ?? illformedStr
   }
   private _read(
-    node: ReadNode<number | string | undefined>
+    node: ReadNode<number | string | undefined>,
   ): CalcResult<number | string | undefined> {
     const { path } = node
     let result: CalcResult<number | string | undefined>
@@ -290,7 +290,7 @@ export class UIData {
           ? this._small(nodes as StrNode[])
           : this._accumulate(
               node.accu,
-              (nodes as NumNode[]).map((x) => this.computeNode(x))
+              (nodes as NumNode[]).map((x) => this.computeNode(x)),
             )
     }
     const meta = { ...result.meta, path }
@@ -298,7 +298,7 @@ export class UIData {
     return { ...result, meta }
   }
   private _lookup(
-    node: LookupNode<NumNode | StrNode>
+    node: LookupNode<NumNode | StrNode>,
   ): CalcResult<number | string | undefined> {
     const key = this.computeNode(node.operands[0]).value
     const selected = node.table[key!] ?? node.operands[1]
@@ -306,7 +306,7 @@ export class UIData {
     return this.computeNode(selected)
   }
   private _match(
-    node: MatchNode<StrNode | NumNode, StrNode | NumNode>
+    node: MatchNode<StrNode | NumNode, StrNode | NumNode>,
   ): CalcResult<number | string | undefined> {
     const [v1Node, v2Node, matchNode, unmatchNode] = node.operands
     const v1 = this.computeNode(v1Node),
@@ -319,7 +319,7 @@ export class UIData {
       : result
   }
   private _threshold(
-    node: ThresholdNode<NumNode | StrNode>
+    node: ThresholdNode<NumNode | StrNode>,
   ): CalcResult<number | string | undefined> {
     const [valueNode, thresholdNode, pass, fail] = node.operands
     const value = this.computeNode(valueNode),
@@ -333,11 +333,11 @@ export class UIData {
         ? makeEmpty(result.value)
         : result
       : node.emptyOn === 'l'
-      ? makeEmpty(result.value)
-      : result
+        ? makeEmpty(result.value)
+        : result
   }
   private _data(
-    node: DataNode<NumNode | StrNode>
+    node: DataNode<NumNode | StrNode>,
   ): CalcResult<number | string | undefined> {
     let child = this.children.get(node.data)
     if (!child) {
@@ -350,7 +350,7 @@ export class UIData {
     const { operation, operands } = node
     return this._accumulate(
       operation,
-      operands.map((x) => this.computeNode(x))
+      operands.map((x) => this.computeNode(x)),
     )
   }
   private _subscript(node: SubscriptNode<number>): CalcResult<number> {
@@ -368,7 +368,7 @@ export class UIData {
   }
   private _accumulate(
     operation: ComputeNode['operation'],
-    operands: CalcResult<number>[]
+    operands: CalcResult<number>[],
   ): CalcResult<number> {
     const info = accumulateInfo(operands)
     const isEmpty = operands.every((x) => x.isEmpty)
@@ -432,7 +432,7 @@ function accumulateInfo<V>(operands: CalcResult<V>[]): Info {
     }
   }
   const variants = new Set(
-    operands.flatMap((x) => [x.info.variant!, x.info.subVariant!])
+    operands.flatMap((x) => [x.info.variant!, x.info.subVariant!]),
   )
   variants.delete(undefined!)
   const sorted = [...variants].sort((a, b) => score(a) - score(b))
@@ -477,10 +477,10 @@ const illformedStr: CalcResult<string | undefined> = {
 function makeEmpty(value: number): CalcResult<number>
 function makeEmpty(value: string | undefined): CalcResult<string | undefined>
 function makeEmpty(
-  value: number | string | undefined
+  value: number | string | undefined,
 ): CalcResult<number | string | undefined>
 function makeEmpty(
-  value: number | string | undefined
+  value: number | string | undefined,
 ): CalcResult<number | string | undefined> {
   return {
     value,
@@ -502,7 +502,7 @@ const teamBuff = setReadNodeKeys(deepNodeClone(input), ['teamBuff']) // Use ONLY
 export function uiDataForTeam(
   teamData: Partial<Record<CharacterKey, Data[]>>,
   gender: GenderKey,
-  activeCharKey?: CharacterKey
+  activeCharKey?: CharacterKey,
 ): Partial<
   Record<
     CharacterKey,
@@ -513,7 +513,7 @@ export function uiDataForTeam(
   // enough to attempt for the understanding of this abomination.
 
   const mergedData = Object.entries(teamData).map(
-    ([key, data]) => [key, { ...mergeData(data) }] as [CharacterKey, Data]
+    ([key, data]) => [key, { ...mergeData(data) }] as [CharacterKey, Data],
   )
   const result = Object.fromEntries(
     mergedData.map(([key]) => [
@@ -523,7 +523,7 @@ export function uiDataForTeam(
         buffs: [] as Data[],
         calcs: {} as Partial<Record<CharacterKey, Data>>,
       },
-    ])
+    ]),
   )
 
   const customReadNodes = {}
@@ -578,7 +578,7 @@ export function uiDataForTeam(
           layeredAssignment(
             buff,
             path,
-            resetData(getReadNode(['teamBuff', ...path]), calc, info)
+            resetData(getReadNode(['teamBuff', ...path]), calc, info),
           )
 
           crawlObject(
@@ -600,11 +600,11 @@ export function uiDataForTeam(
                 data = result[sourceKey].targetRef
               }
               layeredAssignment(calc, x.path, resetData(readNode, data))
-            }
+            },
           )
-        }
+        },
       )
-    })
+    }),
   )
   mergedData.forEach(([targetKey, data]) => {
     delete data.teamBuff
@@ -625,7 +625,7 @@ export function uiDataForTeam(
           prefix: 'teamBuff',
           pivot,
         }
-      }
+      },
     )
     Object.assign(
       targetRef,
@@ -633,7 +633,7 @@ export function uiDataForTeam(
         data,
         buff,
         { teamBuff: buff, activeCharKey: constant(activeCharKey) },
-      ])
+      ]),
     )
     ;(targetRef as any)['target'] = targetRef
   })
@@ -647,10 +647,10 @@ export function uiDataForTeam(
           Object.entries(value.calcs).map(([key, value]) => [
             key,
             new UIData(value, origin),
-          ])
+          ]),
         ),
       },
-    ])
+    ]),
   )
 }
 
@@ -665,7 +665,7 @@ export function compareTeamBuffUIData(uiData1: UIData, uiData2: UIData): any {
 }
 export function compareDisplayUIData(
   uiData1: UIData,
-  uiData2: UIData
+  uiData2: UIData,
 ): { [key: string]: DisplaySub<ComparedNodeDisplay> } {
   return compareInternal(uiData1.getDisplay(), uiData2.getDisplay())
 }
@@ -701,7 +701,10 @@ function compareInternal(data1: any | undefined, data2: any | undefined): any {
       ...Object.keys(data2 ?? {}),
     ])
     return Object.fromEntries(
-      [...keys].map((key) => [key, compareInternal(data1?.[key], data2?.[key])])
+      [...keys].map((key) => [
+        key,
+        compareInternal(data1?.[key], data2?.[key]),
+      ]),
     )
   }
 }

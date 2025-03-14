@@ -160,7 +160,7 @@ function SpecialitySelector({ disabled }: { disabled?: boolean }) {
             totals[path]++
             return totals
           },
-          objKeyMap(allPathKeys, () => 0)
+          objKeyMap(allPathKeys, () => 0),
         )
       : objKeyMap(allPathKeys, () => 0)
   }, [

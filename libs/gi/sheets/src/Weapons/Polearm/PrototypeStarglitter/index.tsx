@@ -19,16 +19,16 @@ const dmgInc = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const normal_dmg_ = lookup(
   condStack,
   objKeyMap(range(1, 2), (i) =>
-    prod(subscript(input.weapon.refinement, dmgInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refinement, dmgInc, { unit: '%' }), i),
   ),
-  naught
+  naught,
 )
 const charged_dmg_ = lookup(
   condStack,
   objKeyMap(range(1, 2), (i) =>
-    prod(subscript(input.weapon.refinement, dmgInc, { unit: '%' }), i)
+    prod(subscript(input.weapon.refinement, dmgInc, { unit: '%' }), i),
   ),
-  naught
+  naught,
 )
 export const data = dataObjForWeaponSheet(key, {
   premod: {
@@ -50,7 +50,7 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: i }),
             fields: [{ node: normal_dmg_ }, { node: charged_dmg_ }],
           },
-        ])
+        ]),
       ),
     },
   ],

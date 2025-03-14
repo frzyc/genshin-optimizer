@@ -37,22 +37,22 @@ const sheet = registerLightCone(
       cmpGE(
         lcCount,
         1,
-        boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_))
-      )
+        boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_)),
+      ),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'team_dmg_',
     teamBuff.premod.common_dmg_.add(
-      cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 }))
+      cmpGE(lcCount, 1, listConditional.map({ val1: 1, val2: 2 })),
     ),
-    cmpGE(lcCount, 1, 'infer', '')
+    cmpGE(lcCount, 1, 'infer', ''),
   ),
   registerBuff(
     'enemy_defRed_',
     enemyDebuff.common.defRed_.add(cmpGE(lcCount, 1, numConditional)),
-    cmpGE(lcCount, 1, 'infer', '')
-  )
+    cmpGE(lcCount, 1, 'infer', ''),
+  ),
 )
 export default sheet

@@ -9,7 +9,7 @@ export function getCharStat(ck: CharacterKey) {
 export function getCharacterStats(
   ck: CharacterKey,
   level: number,
-  core: number
+  core: number,
 ) {
   const {
     promotionStats,

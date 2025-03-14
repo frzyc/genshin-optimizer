@@ -90,14 +90,14 @@ const [condBurstUsedPath, condBurstUsed] = cond(key, 'burstUsed')
 const p2Burst_eleMas = equal(
   condBurstUsed,
   'burstUsed',
-  greaterEq(input.asc, 4, dm.passive2.eleMasInc)
+  greaterEq(input.asc, 4, dm.passive2.eleMasInc),
 )
 
 const [condP1EnemyHpPath, condP1EnemyHp] = cond(key, 'p1EnemyHp')
 const p1_blossom_dmg_ = greaterEq(
   input.asc,
   1,
-  equal(condP1EnemyHp, 'belowHp', dm.passive1.blossomDmgInc)
+  equal(condP1EnemyHp, 'belowHp', dm.passive1.blossomDmgInc),
 )
 
 const [condC2StacksPath, condC2Stacks] = cond(key, 'c2Stacks')
@@ -111,24 +111,24 @@ const c2_burst_dmgInc = greaterEq(
         range(1, dm.constellation2.maxStacks).map((i) => [
           i,
           prod(i, dm.constellation2.blossomDmgInc),
-        ])
+        ]),
       ),
-      naught
+      naught,
     ),
-    input.total.def
-  )
+    input.total.def,
+  ),
 )
 
 const [condSkillInFieldPath, condSkillInField] = cond(key, 'skillInField')
 const c4_plunging_dmg_disp = greaterEq(
   input.constellation,
   4,
-  equal(condSkillInField, 'skillInField', dm.constellation4.plunging_dmg_)
+  equal(condSkillInField, 'skillInField', dm.constellation4.plunging_dmg_),
 )
 const c4_plunging_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  c4_plunging_dmg_disp
+  c4_plunging_dmg_disp,
 )
 
 // Maybe we should just have a single conditional for "in field AND crystallize shield"?
@@ -140,18 +140,18 @@ const c6_Crystal_all_dmg_disp = greaterEq(
   equal(
     condSkillInField,
     'skillInField',
-    equal(condC6Crystallize, 'c6Crystallize', dm.constellation6.bonus_dmg_)
-  )
+    equal(condC6Crystallize, 'c6Crystallize', dm.constellation6.bonus_dmg_),
+  ),
 )
 const c6_Crystal_all_dmg_ = equal(
   input.activeCharKey,
   target.charKey,
-  c6_Crystal_all_dmg_disp
+  c6_Crystal_all_dmg_disp,
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -396,7 +396,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

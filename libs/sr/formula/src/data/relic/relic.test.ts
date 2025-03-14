@@ -34,7 +34,7 @@ Object.assign(values, compileTagMapValues(keys, data))
 function testCharacterData(
   setKey: RelicSetKey,
   relicStats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>> = {},
-  otherCharData: TagMapNodeEntries = []
+  otherCharData: TagMapNodeEntries = [],
 ) {
   const data: TagMapNodeEntries = [
     ...teamData(['Seele']),
@@ -55,10 +55,10 @@ function testCharacterData(
           bonusAbilities: {},
           statBoosts: {},
         },
-        1
+        1,
       ),
       ...relicTagMapNodeEntries(relicStats, { [setKey]: 4 }),
-      ...otherCharData
+      ...otherCharData,
     ),
     own.common.critMode.add('avg'),
     enemy.common.res.quantum.add(0.1),
@@ -70,7 +70,7 @@ function testCharacterData(
 function testTeamData(
   setKey: RelicSetKey,
   relicStats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>> = {},
-  otherCharData: TagMapNodeEntries = []
+  otherCharData: TagMapNodeEntries = [],
 ) {
   const data: TagMapNodeEntries = [
     ...teamData(['Seele', 'SilverWolf']),
@@ -91,10 +91,10 @@ function testTeamData(
           bonusAbilities: {},
           statBoosts: {},
         },
-        1
+        1,
       ),
       ...relicTagMapNodeEntries(relicStats, { [setKey]: 4 }),
-      ...otherCharData
+      ...otherCharData,
     ),
     ...withMember(
       'SilverWolf',
@@ -113,9 +113,9 @@ function testTeamData(
           bonusAbilities: {},
           statBoosts: {},
         },
-        2
+        2,
       ),
-      ...otherCharData
+      ...otherCharData,
     ),
     own.common.critMode.add('avg'),
     enemy.common.res.quantum.add(0.1),
@@ -140,13 +140,13 @@ describe('Relic sheets test', () => {
       cond(
         'BandOfSizzlingThunder',
         conditionals.BandOfSizzlingThunder.skillUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -161,7 +161,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -176,7 +176,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -193,13 +193,13 @@ describe('Relic sheets test', () => {
       cond(
         'CelestialDifferentiator',
         conditionals.CelestialDifferentiator.firstAttack.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -213,13 +213,13 @@ describe('Relic sheets test', () => {
       cond(
         'ChampionOfStreetwiseBoxing',
         conditionals.ChampionOfStreetwiseBoxing.hits.name,
-        5
-      )
+        5,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -233,13 +233,13 @@ describe('Relic sheets test', () => {
       cond(
         'DuranDynastyOfRunningWolves',
         conditionals.DuranDynastyOfRunningWolves.merit.name,
-        5
-      )
+        5,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -252,7 +252,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -265,13 +265,13 @@ describe('Relic sheets test', () => {
       cond(
         'FiresmithOfLavaForging',
         conditionals.FiresmithOfLavaForging.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -286,7 +286,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -300,7 +300,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -314,13 +314,13 @@ describe('Relic sheets test', () => {
       cond(
         'ForgeOfTheKalpagniLantern',
         conditionals.ForgeOfTheKalpagniLantern.enemyHit.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -334,13 +334,13 @@ describe('Relic sheets test', () => {
       cond(
         'GeniusOfBrilliantStars',
         conditionals.GeniusOfBrilliantStars.hasQuantumWeakness.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -354,13 +354,13 @@ describe('Relic sheets test', () => {
       cond(
         'HunterOfGlacialForest',
         conditionals.HunterOfGlacialForest.ultUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -375,7 +375,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -391,7 +391,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -399,7 +399,7 @@ describe('Relic sheets test', () => {
     expect(calc.compute(seele.final.brEffect_).val).toBeCloseTo(2.34 + 0.16)
     // First + second part of 4 set bonus
     expect(calc.compute(seele.final.defIgn_.break[0]).val).toBeCloseTo(
-      0.1 + 0.15
+      0.1 + 0.15,
     )
   })
 
@@ -408,7 +408,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -422,7 +422,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -432,12 +432,12 @@ describe('Relic sheets test', () => {
   it('LongevousDisciple', () => {
     const data = testCharacterData('LongevousDisciple')
     data.push(
-      cond('LongevousDisciple', conditionals.LongevousDisciple.stacks.name, 2)
+      cond('LongevousDisciple', conditionals.LongevousDisciple.stacks.name, 2),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -452,13 +452,13 @@ describe('Relic sheets test', () => {
       cond(
         'MessengerTraversingHackerspace',
         conditionals.MessengerTraversingHackerspace.ultUsed.name,
-        2
-      )
+        2,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -471,7 +471,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -487,7 +487,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -502,7 +502,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -514,12 +514,12 @@ describe('Relic sheets test', () => {
     const calcSeele = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const calcSilverWolf = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'SilverWolf', dst: 'SilverWolf' })
 
     expect(calcSeele.compute(own.final.enerRegen_).val).toBeCloseTo(0.05)
@@ -534,23 +534,23 @@ describe('Relic sheets test', () => {
       cond(
         'PioneerDiverOfDeadWaters',
         conditionals.PioneerDiverOfDeadWaters.affectedByDebuff.name,
-        1
+        1,
       ),
       cond(
         'PioneerDiverOfDeadWaters',
         conditionals.PioneerDiverOfDeadWaters.debuffCount.name,
-        3
+        3,
       ),
       cond(
         'PioneerDiverOfDeadWaters',
         conditionals.PioneerDiverOfDeadWaters.wearerDebuff.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -567,13 +567,13 @@ describe('Relic sheets test', () => {
       cond(
         'PrisonerInDeepConfinement',
         conditionals.PrisonerInDeepConfinement.dotCount.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -588,7 +588,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -604,13 +604,13 @@ describe('Relic sheets test', () => {
       cond(
         'SigoniaTheUnclaimedDesolation',
         conditionals.SigoniaTheUnclaimedDesolation.enemiesDefeated.name,
-        10
-      )
+        10,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -627,7 +627,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -639,7 +639,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -653,7 +653,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -666,13 +666,13 @@ describe('Relic sheets test', () => {
       cond(
         'TheAshblazingGrandDuke',
         conditionals.TheAshblazingGrandDuke.followUpDmgDealt.name,
-        8
-      )
+        8,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -686,13 +686,13 @@ describe('Relic sheets test', () => {
       cond(
         'TheWindSoaringValorous',
         conditionals.TheWindSoaringValorous.followUpUsed.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -707,7 +707,7 @@ describe('Relic sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -721,18 +721,18 @@ describe('Relic sheets test', () => {
       cond(
         'WastelanderOfBanditryDesert',
         conditionals.WastelanderOfBanditryDesert.attackingDebuffed.name,
-        1
+        1,
       ),
       cond(
         'WastelanderOfBanditryDesert',
         conditionals.WastelanderOfBanditryDesert.enemyImprisoned.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 
@@ -749,13 +749,13 @@ describe('Relic sheets test', () => {
       cond(
         'WatchmakerMasterOfDreamMachinations',
         conditionals.WatchmakerMasterOfDreamMachinations.useUltimateOnAlly.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Seele', dst: 'Seele' })
     const seele = convert(ownTag, { et: 'own', src: 'Seele' })
 

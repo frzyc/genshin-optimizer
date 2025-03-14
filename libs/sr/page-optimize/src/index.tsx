@@ -40,7 +40,7 @@ import { OptSelector } from './OptSelector'
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
   const [characterKey, setCharacterKey] = useState<CharacterKey>(
-    allCharacterKeys[0]
+    allCharacterKeys[0],
   )
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
@@ -59,7 +59,7 @@ export default function PageOptimize() {
           t('charNames_gen:Character')
         : t('Optimize')
       return `Optimize - ${charName}`
-    }, [characterKey, t])
+    }, [characterKey, t]),
   )
   const srcDstDisplayContextValue = useMemo(() => {
     const charList = characterKey ? [characterKey] : []
@@ -78,7 +78,7 @@ export default function PageOptimize() {
       condKey: string,
       src: string,
       dst: string | null,
-      condValue: number
+      condValue: number,
     ) => {
       if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
         return
@@ -91,10 +91,10 @@ export default function PageOptimize() {
         condKey,
         src,
         dst,
-        condValue
+        condValue,
       )
     },
-    [characterKey, database.charOpts]
+    [characterKey, database.charOpts],
   )
   const tag = useMemo<Tag>(
     () => ({
@@ -102,7 +102,7 @@ export default function PageOptimize() {
       dst: characterKey,
       preset: `preset0`,
     }),
-    [characterKey]
+    [characterKey],
   )
 
   const [debugRead, setDebugRead] = useState<BaseRead>()
@@ -111,7 +111,7 @@ export default function PageOptimize() {
       read: debugRead,
       setRead: setDebugRead,
     }),
-    [debugRead]
+    [debugRead],
   )
   return (
     <Box>

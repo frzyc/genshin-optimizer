@@ -51,21 +51,21 @@ export default function LightConeData(): LightConeData {
                 ...abilityProperty,
                 key: statKeyMap[abilityProperty.PropertyType],
               },
-            ])
+            ]),
           ),
         }
         // Transpose the config so each param has its own array so we can use subscript() on it
         expandedConfig.ParamList = range(
           0,
-          expandedConfig.ParamList[0].length - 1
+          expandedConfig.ParamList[0].length - 1,
         ).map((pIndex) =>
-          expandedConfig.ParamList.map((params) => params[pIndex])
+          expandedConfig.ParamList.map((params) => params[pIndex]),
         )
         expandedConfig.AbilityProperty = range(
           0,
-          expandedConfig.AbilityProperty[0].length - 1
+          expandedConfig.AbilityProperty[0].length - 1,
         ).map((apIndex) =>
-          expandedConfig.AbilityProperty.map((prop) => prop[apIndex])
+          expandedConfig.AbilityProperty.map((prop) => prop[apIndex]),
         )
 
         const result: LightConeDatum = {
@@ -92,7 +92,7 @@ export default function LightConeData(): LightConeData {
                 base: BaseHP.Value,
                 add: BaseHPAdd.Value,
               },
-            })
+            }),
           ),
           superimpose: {
             otherStats: expandedConfig.ParamList.map((superimpose) => [
@@ -103,14 +103,14 @@ export default function LightConeData(): LightConeData {
               expandedConfig.AbilityProperty.map((superimpose) => [
                 superimpose[0].key,
                 [-1, ...superimpose.map((prop) => prop.Value.Value)],
-              ])
+              ]),
             ),
           },
         }
         const lightConeKey = lightConeIdMap[lightConeId]
         return [lightConeKey, result] as const
-      }
-    )
+      },
+    ),
   )
 
   verifyObjKeys(data, allLightConeKeys)

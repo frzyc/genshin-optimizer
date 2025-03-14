@@ -13,7 +13,7 @@ const allEle_dmg_ = Object.fromEntries(
   allElementKeys.map((ele) => [
     `${ele}_dmg_`,
     subscript(input.weapon.refinement, allEle_dmg_arr, { unit: '%' }),
-  ])
+  ]),
 )
 
 const charged_dmgIncArr = [-1, 1.6, 2, 2.4, 2.8, 3.2]
@@ -23,8 +23,8 @@ const charged_dmgInc = equal(
   'on',
   prod(
     subscript(input.weapon.refinement, charged_dmgIncArr, { unit: '%' }),
-    input.total.eleMas
-  )
+    input.total.eleMas,
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, {

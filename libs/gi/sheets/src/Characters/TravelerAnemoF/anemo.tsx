@@ -31,7 +31,7 @@ import {
 export default function anemo(
   key: CharacterSheetKey,
   charKey: CharacterKey,
-  dmgForms: { [key: string]: DisplaySub }
+  dmgForms: { [key: string]: DisplaySub },
 ) {
   const elementKey: ElementKey = 'anemo'
   const condCharKey = 'TravelerAnemo'
@@ -74,12 +74,12 @@ export default function anemo(
 
   const [condSkillAbsorptionPath, condSkillAbsorption] = cond(
     condCharKey,
-    'skillAbsorption'
+    'skillAbsorption',
   )
 
   const [condBurstAbsorptionPath, condBurstAbsorption] = cond(
     condCharKey,
-    `${elementKey}BurstAbsorption`
+    `${elementKey}BurstAbsorption`,
   )
 
   const nodeC2 = greaterEq(input.constellation, 2, dm.constellation2.enerRech_)
@@ -88,7 +88,7 @@ export default function anemo(
   const nodeC6 = greaterEq(
     input.constellation,
     6,
-    equal(condC6, 'on', dm.constellation6.enemyRes_)
+    equal(condC6, 'on', dm.constellation6.enemyRes_),
   )
   const nodesC6 = objKeyValMap(absorbableEle, (ele) => [
     `${ele}_enemyRes_`,
@@ -98,8 +98,8 @@ export default function anemo(
       equal(
         condC6,
         'on',
-        equal(condBurstAbsorption, ele, dm.constellation6.enemyRes_)
-      )
+        equal(condBurstAbsorption, ele, dm.constellation6.enemyRes_),
+      ),
     ),
   ])
 
@@ -118,8 +118,8 @@ export default function anemo(
           dm.skill.initial_dmg,
           'skill',
           absorptionData,
-          constant(dm.skill.ele_dmg, { unit: '%' })
-        )
+          constant(dm.skill.ele_dmg, { unit: '%' }),
+        ),
       ),
       max_ele_dmg: unequal(
         condSkillAbsorption,
@@ -129,8 +129,8 @@ export default function anemo(
           dm.skill.initial_max,
           'skill',
           absorptionData,
-          constant(dm.skill.ele_dmg, { unit: '%' })
-        )
+          constant(dm.skill.ele_dmg, { unit: '%' }),
+        ),
       ),
       storm_dmg: dmgNode('atk', dm.skill.storm_dmg, 'skill'),
       storm_max: dmgNode('atk', dm.skill.storm_max, 'skill'),
@@ -142,8 +142,8 @@ export default function anemo(
           dm.skill.storm_dmg,
           'skill',
           absorptionData,
-          constant(dm.skill.ele_dmg, { unit: '%' })
-        )
+          constant(dm.skill.ele_dmg, { unit: '%' }),
+        ),
       ),
       storm_ele_max: unequal(
         condSkillAbsorption,
@@ -153,8 +153,8 @@ export default function anemo(
           dm.skill.storm_max,
           'skill',
           absorptionData,
-          constant(dm.skill.ele_dmg, { unit: '%' })
-        )
+          constant(dm.skill.ele_dmg, { unit: '%' }),
+        ),
       ),
     },
     burst: {
@@ -164,7 +164,7 @@ export default function anemo(
         undefined,
         dmgNode('atk', dm.burst.absorbDmg, 'burst', {
           hit: { ele: condBurstAbsorption },
-        })
+        }),
       ),
     },
     passive1: {
@@ -173,14 +173,14 @@ export default function anemo(
         1,
         customDmgNode(prod(input.total.atk, dm.passive1.dmg), 'elemental', {
           hit: { ele: constant(elementKey) },
-        })
+        }),
       ),
     },
     passive2: {
       heal: greaterEq(
         input.asc,
         2,
-        customHealNode(prod(percent(dm.passive2.heal_), input.total.hp))
+        customHealNode(prod(percent(dm.passive2.heal_), input.total.hp)),
       ),
     },
   } as const
@@ -274,7 +274,7 @@ export default function anemo(
                 },
               ],
             },
-          ])
+          ]),
         ),
       }),
       ct.headerTem('constellation4', {
@@ -331,7 +331,7 @@ export default function anemo(
                 },
               ],
             },
-          ])
+          ]),
         ),
       }),
       ct.condTem('constellation6', {
@@ -380,7 +380,7 @@ export default function anemo(
                 },
               ],
             },
-          ])
+          ]),
         ),
       }),
     ]),

@@ -10,7 +10,7 @@ import genSheet from './genSheet'
 import type { GenSheetGeneratorSchema } from './schema'
 export default async function genSheetGenerator(
   tree: Tree,
-  options: GenSheetGeneratorSchema
+  options: GenSheetGeneratorSchema,
 ) {
   const { sheet_type, sheet } = options
   switch (sheet_type) {
@@ -33,6 +33,6 @@ export default async function genSheetGenerator(
   await genSheet(tree, options, true)
   await genIndex(tree, sheet_type)
   console.log(
-    'Generated sheet. Include the generated file in the corresponding `index.ts` to complete the process'
+    'Generated sheet. Include the generated file in the corresponding `index.ts` to complete the process',
   )
 }

@@ -49,7 +49,7 @@ export default function FormulaModal() {
   const { setFormulaData } = useContext(FormulaDataContext)
   const onCloseHandler = useCallback(
     () => setFormulaData?.(undefined, undefined),
-    [setFormulaData]
+    [setFormulaData],
   )
   return (
     <ModalWrapper open={!!modalOpen} onClose={onCloseHandler}>
@@ -98,7 +98,7 @@ function FormulaCalc({
   const { data: contextData } = useContext(FormulaDataContext)
   const header = useMemo(
     () => getDisplayHeader(contextData ?? data, sectionKey, database),
-    [database, contextData, data, sectionKey]
+    [database, contextData, data, sectionKey],
   )
   if (!header) return null
   if (Object.entries(displayNs).every(([_, node]) => node.isEmpty)) return null
@@ -114,7 +114,7 @@ function FormulaCalc({
       <CardContent>
         {Object.entries(displayNs).map(
           ([key, node]) =>
-            !node.isEmpty && <FormulaAccordian key={key} node={node} />
+            !node.isEmpty && <FormulaAccordian key={key} node={node} />,
         )}
       </CardContent>
     </CardThemed>
@@ -125,7 +125,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
   const [expanded, setExpanded] = useState(false)
   const handleChange = useCallback(
     (e: React.SyntheticEvent, isExpanded: boolean) => setExpanded(isExpanded),
-    []
+    [],
   )
   const scrollRef =
     useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement | null>
@@ -134,7 +134,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
     if (node === contextNode)
       setTimeout(
         () => scrollRef?.current?.scrollIntoView?.({ behavior: 'smooth' }),
-        300
+        300,
       )
   }, [scrollRef, node, contextNode])
 

@@ -44,40 +44,40 @@ const sheet = register(
   ...customBreakDmg(
     'zoneBreakDmg',
     { ...baseTag, damageType1: 'break' },
-    subscript(char.ult, dm.ult.breakDmg)
+    subscript(char.ult, dm.ult.breakDmg),
   ),
   ...customBreakDmg(
     'talentBreakDmg',
     { ...baseTag, damageType1: 'break' },
-    sum(subscript(char.talent, dm.talent.breakDmg), e6TechniqueAddMult)
+    sum(subscript(char.talent, dm.talent.breakDmg), e6TechniqueAddMult),
   ),
 
   // Buffs
   registerBuff(
     'skillOvertone_dmg_',
     teamBuff.premod.common_dmg_.add(
-      skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
-    )
+      skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_)),
+    ),
   ),
   // TODO: Break efficiency
   registerBuff(
     'skillOvertone_weakness_',
-    teamBuff.premod.weakness_.add(skillOvertone.ifOn(dm.skill.weakness_))
+    teamBuff.premod.weakness_.add(skillOvertone.ifOn(dm.skill.weakness_)),
   ),
   registerBuff(
     'ultZone_resPen_',
     teamBuff.premod.resPen_.add(
-      ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
-    )
+      ultZone.ifOn(subscript(char.ult, dm.ult.resPen_)),
+    ),
   ),
   // TODO: ultimate actionDelay_ of 20%*BrEff_ + 10%
   registerBuff(
     'talent_spd_',
-    notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_))
+    notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_)),
   ),
   registerBuff(
     'ba1_break_',
-    teamBuff.premod.brEffect_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
+    teamBuff.premod.brEffect_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_)),
   ),
   registerBuffFormula(
     'ba3_dmg_',
@@ -92,33 +92,33 @@ const sheet = register(
               prod(
                 sum(own.final.brEffect_, -dm.b3.breakThreshold),
                 1 / dm.b3.perBreak,
-                dm.b3.dmg_per
+                dm.b3.dmg_per,
               ),
-              0
+              0,
             ),
-            dm.b3.max_dmg_
-          )
-        )
-      )
+            dm.b3.max_dmg_,
+          ),
+        ),
+      ),
     ),
     undefined,
-    true
+    true,
   ),
   registerBuff(
     'e1_defIgn_',
-    teamBuff.premod.defIgn_.add(cmpGE(char.eidolon, 1, dm.e1.defIgn_))
+    teamBuff.premod.defIgn_.add(cmpGE(char.eidolon, 1, dm.e1.defIgn_)),
   ),
   registerBuff(
     'e2_atk_',
     teamBuff.premod.atk_.add(
-      cmpGE(char.eidolon, 2, cmpEq(enemy.common.isBroken, 1, dm.e2.atk_))
-    )
+      cmpGE(char.eidolon, 2, cmpEq(enemy.common.isBroken, 1, dm.e2.atk_)),
+    ),
   ),
   registerBuff(
     'e4_break_',
     ownBuff.premod.brEffect_.add(
-      cmpGE(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
-    )
-  )
+      cmpGE(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_)),
+    ),
+  ),
 )
 export default sheet

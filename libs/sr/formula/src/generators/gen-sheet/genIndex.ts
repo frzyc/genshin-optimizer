@@ -38,7 +38,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -58,7 +58,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -70,7 +70,7 @@ async function writeLightConeIndex(path: string) {
 import type { TagMapNodeEntries } from '../util'
 ${allLightConeKeys
   .map(
-    (lightConeKey) => `import ${lightConeKey} from './sheets/${lightConeKey}'`
+    (lightConeKey) => `import ${lightConeKey} from './sheets/${lightConeKey}'`,
   )
   .join('\n')}
 
@@ -81,7 +81,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

@@ -19,10 +19,10 @@ export const allTalentSheetElementStatBoostKey = [
 export type TalentSheetElementStatBoostKey =
   (typeof allTalentSheetElementStatBoostKey)[number]
 export function isTalentSheetElementStatBoostKey(
-  key: string
+  key: string,
 ): key is TalentSheetElementStatBoostKey {
   return allTalentSheetElementStatBoostKey.includes(
-    key as TalentSheetElementStatBoostKey
+    key as TalentSheetElementStatBoostKey,
   )
 }
 
@@ -37,10 +37,10 @@ export const allTalentSheetElementEidolonKey = [
 export type TalentSheetElementEidolonKey =
   (typeof allTalentSheetElementEidolonKey)[number]
 export function isTalentSheetElementEidolonKey(
-  key: string
+  key: string,
 ): key is TalentSheetElementEidolonKey {
   return allTalentSheetElementEidolonKey.includes(
-    key as TalentSheetElementEidolonKey
+    key as TalentSheetElementEidolonKey,
   )
 }
 export const allTalentSheetElementBonusAbilityKey = [
@@ -51,10 +51,10 @@ export const allTalentSheetElementBonusAbilityKey = [
 export type TalentSheetElementBonusAbilityKey =
   (typeof allTalentSheetElementBonusAbilityKey)[number]
 export function isTalentSheetElementBonusAbilityKey(
-  key: string
+  key: string,
 ): key is TalentSheetElementBonusAbilityKey {
   return allTalentSheetElementBonusAbilityKey.includes(
-    key as TalentSheetElementBonusAbilityKey
+    key as TalentSheetElementBonusAbilityKey,
   )
 }
 
@@ -73,7 +73,7 @@ export const allTalentSheetElementKey = [
 export type TalentSheetElementKey = (typeof allTalentSheetElementKey)[number]
 
 export function isTalentKey(
-  tKey: TalentSheetElementKey
+  tKey: TalentSheetElementKey,
 ): tKey is 'basic' | 'skill' | 'ult' | 'talent' {
   return (
     ['basic', 'skill', 'ult', 'talent'] as TalentSheetElementKey[]
@@ -81,7 +81,7 @@ export function isTalentKey(
 }
 
 export function getStatBoostKey(
-  key: TalentSheetElementStatBoostKey
+  key: TalentSheetElementStatBoostKey,
 ): StatBoostKey {
   return parseInt(key.split('statBoost')[1] ?? '1') as StatBoostKey
 }
@@ -91,7 +91,7 @@ export function getEidolonKey(key: TalentSheetElementEidolonKey): EidolonKey {
 }
 
 export function getBonusAbilityKey(
-  key: TalentSheetElementBonusAbilityKey
+  key: TalentSheetElementBonusAbilityKey,
 ): BonusAbilityKey {
   return parseInt(key.split('bonusAbility')[1] ?? '1') as BonusAbilityKey
 }

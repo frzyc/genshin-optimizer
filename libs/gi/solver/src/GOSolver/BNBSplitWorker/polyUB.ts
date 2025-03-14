@@ -46,10 +46,10 @@ function readP(k: string, minmax: MinMax): LinTerm {
 function sumP(...terms: (PolynomialWithBounds | number)[]): PolySum {
   const c = (terms.filter((v) => typeof v === 'number') as number[]).reduce(
     (a, b) => a + b,
-    0
+    0,
   )
   const poly = terms.filter(
-    (v) => typeof v !== 'number'
+    (v) => typeof v !== 'number',
   ) as PolynomialWithBounds[]
   return {
     type: 'sum',
@@ -62,10 +62,10 @@ function sumP(...terms: (PolynomialWithBounds | number)[]): PolySum {
 function prodP(...terms: (PolynomialWithBounds | number)[]): PolyProd {
   const k = (terms.filter((v) => typeof v === 'number') as number[]).reduce(
     (a, b) => a * b,
-    1
+    1,
   )
   const poly = terms.filter(
-    (v) => typeof v !== 'number'
+    (v) => typeof v !== 'number',
   ) as PolynomialWithBounds[]
   const minMax = poly.reduce(
     ({ min: min1, max: max1 }, { min: min2, max: max2 }) => {
@@ -74,7 +74,7 @@ function prodP(...terms: (PolynomialWithBounds | number)[]): PolyProd {
         max: Math.max(min1 * min2, min1 * max2, max1 * min2, max1 * max2),
       }
     },
-    { min: k, max: k }
+    { min: k, max: k },
   )
   return { type: 'prod', terms: poly, $k: k, ...minMax }
 }
@@ -83,7 +83,7 @@ function slopePoint(
   slope: number,
   x0: number,
   y0: number,
-  poly: PolynomialWithBounds
+  poly: PolynomialWithBounds,
 ): PolynomialWithBounds {
   return sumP(y0 - slope * x0, prodP(slope, poly))
 }
@@ -93,7 +93,7 @@ function interpolate(
   x1: number,
   y1: number,
   poly: PolynomialWithBounds,
-  upper: boolean
+  upper: boolean,
 ): PolynomialWithBounds {
   if (Math.abs(x0 - x1) < 1e-10)
     return constP(upper ? Math.max(y0, y1) : Math.min(y0, y1))
@@ -102,7 +102,7 @@ function interpolate(
 
 export function polyUB(
   nodes: OptNode[],
-  arts: ArtifactsBySlot
+  arts: ArtifactsBySlot,
 ): SumOfMonomials[] {
   const minMaxes = new Map<OptNode, MinMax>()
   forEachNodes(
@@ -120,7 +120,7 @@ export function polyUB(
           f.operands.forEach((op) => minMaxes.set(op, { min: NaN, max: NaN }))
       }
     },
-    (_) => _
+    (_) => _,
   )
   const statMinMax = computeFullArtRange(arts)
   const nodeRanges = computeNodeRange([...minMaxes.keys()], statMinMax)
@@ -137,7 +137,7 @@ export function polyUB(
       const { operation } = f
       const map: (op: OptNode, c?: Context) => PolynomialWithBounds = (
         op,
-        c = context
+        c = context,
       ) => _map(op, c)
       const oppositeContext = context === upper ? lower : upper
 
@@ -166,7 +166,7 @@ export function polyUB(
           const k = op(
             f.operands
               .filter((op) => op.operation === 'const')
-              .map((c) => (c as ConstantNode<number>).value)
+              .map((c) => (c as ConstantNode<number>).value),
           )
           const polys = f.operands
             .filter((op) => op.operation !== 'const')
@@ -182,7 +182,7 @@ export function polyUB(
               )
                 throw new PolyError(
                   'Unallowed large crossing post approximation',
-                  operation
+                  operation,
                 )
 
               return p
@@ -202,7 +202,7 @@ export function polyUB(
             c = op(
               f.operands
                 .filter((op) => op.operation === 'const')
-                .map((c) => (c as ConstantNode<number>).value)
+                .map((c) => (c as ConstantNode<number>).value),
             )
           if (
             (operation === 'max' && context === lower) ||
@@ -233,7 +233,7 @@ export function polyUB(
               max,
               op([max]),
               x,
-              context === upper
+              context === upper,
             )
         }
         case 'sum_frac': {
@@ -296,7 +296,7 @@ export function polyUB(
         default:
           assertUnreachable(operation)
       }
-    }
+    },
   )
 
   return poly.map((p) => expandPoly(p))
@@ -324,8 +324,8 @@ function prodM(...monomials: Monomial[][]): Monomial[] {
         ret.terms.push(...nxt.terms)
         return ret
       },
-      { $k: 1, terms: [] }
-    )
+      { $k: 1, terms: [] },
+    ),
   )
 }
 function foldLikeTerms(mon: Monomial[]): Monomial[] {
@@ -377,7 +377,7 @@ function expandPoly(node: PolynomialWithBounds): SumOfMonomials {
 class PolyError extends Error {
   constructor(cause: string, operation: string) {
     super(
-      `Found ${cause} in ${operation} node when generating polynomial upper bound`
+      `Found ${cause} in ${operation} node when generating polynomial upper bound`,
     )
   }
 }

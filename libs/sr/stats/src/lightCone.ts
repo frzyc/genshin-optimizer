@@ -13,11 +13,11 @@ export function getLightConeStat(lcKey: LightConeKey) {
  */
 export function getLightConeInterpolateObject(
   lck: LightConeKey,
-  superimpose: number
+  superimpose: number,
 ) {
   return Object.fromEntries(
     allStats.lightCone[lck].superimpose.otherStats.map(
-      (superimposeParams, index) => [index + 1, superimposeParams[superimpose]]
-    )
+      (superimposeParams, index) => [index + 1, superimposeParams[superimpose]],
+    ),
   )
 }

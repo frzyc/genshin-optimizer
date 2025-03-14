@@ -28,7 +28,7 @@ export default function ScalesWith() {
                     <ArtifactStatWithUnit statKey={k} />
                   </strong>
                 ))([...scalesWith][i / 2])
-              : str
+              : str,
           )}
       </Alert>
     )

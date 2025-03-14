@@ -8,7 +8,7 @@ const data_gen = allStats.relic[key]
 const sheet = registerRelic(
   key,
   // Handles passive buffs
-  entriesForRelic(key, data_gen)
+  entriesForRelic(key, data_gen),
   // TODO: Shield strength?
 )
 export default sheet

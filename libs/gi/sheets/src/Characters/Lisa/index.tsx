@@ -78,17 +78,17 @@ const [condC2Path, condC2] = cond(key, 'LisaC2')
 const nodeA4DefShred = greaterEq(
   input.asc,
   1,
-  equal(condA4, 'on', dm.passive2.defShred)
+  equal(condA4, 'on', dm.passive2.defShred),
 )
 const nodeC2DefIncrease = greaterEq(
   input.constellation,
   2,
-  equal(condC2, 'on', constant(0.25))
+  equal(condC2, 'on', constant(0.25)),
 ) // Doesn't exist in skillParam_gen
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -104,7 +104,7 @@ const dmgFormulas = {
   burst: {
     summon: customDmgNode(
       prod(percent(dm.burst.summon), input.total.atk),
-      'burst'
+      'burst',
     ),
     tick: dmgNode('atk', dm.burst.tick, 'burst'),
   },

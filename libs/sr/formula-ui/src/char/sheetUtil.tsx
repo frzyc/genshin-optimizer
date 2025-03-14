@@ -30,7 +30,7 @@ import { bonusAbilityReqMap, bonusStatsReqMap } from './StatBoostBonusAbility'
 export function talentSheet(
   ckey: CharacterGenderedKey,
   talentKey: 'basic' | 'skill' | 'ult' | 'talent' | 'technique',
-  docs: Document[] = []
+  docs: Document[] = [],
 ): UISheetElement {
   const [chg] = trans('char', ckey)
   return {
@@ -52,8 +52,8 @@ export function talentSheet(
               talentKey,
               talentKey === 'technique'
                 ? 1
-                : calc.compute(own.char[talentKey]).val
-            )
+                : calc.compute(own.char[talentKey]).val,
+            ),
           ),
       },
       ...docs,
@@ -63,7 +63,7 @@ export function talentSheet(
 export function bonusAbilitySheet(
   ckey: CharacterGenderedKey,
   talentKey: TalentSheetElementBonusAbilityKey,
-  docs: Document[] = []
+  docs: Document[] = [],
 ): UISheetElement {
   const [chg] = trans('char', ckey)
   return {
@@ -79,8 +79,8 @@ export function bonusAbilitySheet(
             getCharInterpolateObject(
               characterGenderedKeyToCharacterKey(ckey),
               talentKey,
-              0
-            ) // TODO: FIXME: does not seem to work for bonus Stats (wrong array format)
+              0,
+            ), // TODO: FIXME: does not seem to work for bonus Stats (wrong array format)
           ),
       },
       ...docs,
@@ -88,12 +88,12 @@ export function bonusAbilitySheet(
   }
 }
 export function bonusStatsSheets(
-  ckey: CharacterGenderedKey
+  ckey: CharacterGenderedKey,
 ): Record<TalentSheetElementStatBoostKey, UISheetElement> {
   return objKeyMap(allTalentSheetElementStatBoostKey, (key) => {
     const stats = getCharStat(characterGenderedKeyToCharacterKey(ckey))
     const [statKey] = Object.entries(
-      stats.skillTree[key]?.levels?.[0].stats ?? {}
+      stats.skillTree[key]?.levels?.[0].stats ?? {},
     )[0]
     const buff = buffs[characterGenderedKeyToCharacterKey(ckey)]
     return {
@@ -117,7 +117,7 @@ export function bonusStatsSheets(
 export function eidolonSheet(
   ckey: CharacterGenderedKey,
   talentKey: TalentSheetElementEidolonKey,
-  docs: Document[] = []
+  docs: Document[] = [],
 ): UISheetElement {
   const [chg] = trans('char', ckey)
   const eidolonNum = getEidolonKey(talentKey)
@@ -133,8 +133,8 @@ export function eidolonSheet(
           getCharInterpolateObject(
             characterGenderedKeyToCharacterKey(ckey),
             'eidolon',
-            eidolonNum
-          )
+            eidolonNum,
+          ),
         ),
       },
       ...docs,

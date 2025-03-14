@@ -5,7 +5,7 @@ export type Unit = '' | '%' | 's'
 export function valueString(
   value: number,
   unit: Unit = '',
-  fixed = -1
+  fixed = -1,
 ): string {
   if (!isFinite(value)) {
     if (value > 0) return `\u221E`
@@ -21,10 +21,10 @@ export function valueString(
         Math.abs(value) < 10
           ? 3
           : Math.abs(value) < 1000
-          ? 2
-          : Math.abs(value) < 10000
-          ? 1
-          : 0
+            ? 2
+            : Math.abs(value) < 10000
+              ? 1
+              : 0
   }
   return `${value.toFixed(fixed)}${unit}`
 }

@@ -25,7 +25,7 @@ const base_bloom_dmg_ = greaterEq(
   input.artSet.FlowerOfParadiseLost,
   4,
   percent(0.4),
-  { path: 'bloom_dmg_' }
+  { path: 'bloom_dmg_' },
 )
 const base_hyperbloom_dmg_ = {
   ...base_bloom_dmg_,
@@ -44,11 +44,11 @@ const stack_bloom_dmg_ = greaterEq(
   lookup(
     condStacks,
     Object.fromEntries(
-      stacksArr.map((stack) => [stack, prod(stack, percent(0.1))])
+      stacksArr.map((stack) => [stack, prod(stack, percent(0.1))]),
     ),
     naught,
-    { path: 'bloom_dmg_' }
-  )
+    { path: 'bloom_dmg_' },
+  ),
 )
 const stack_hyperbloom_dmg_ = {
   ...stack_bloom_dmg_,
@@ -113,7 +113,7 @@ const sheet: SetEffectSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
       },
     ],

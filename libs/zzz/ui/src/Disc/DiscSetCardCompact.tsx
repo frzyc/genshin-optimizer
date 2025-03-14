@@ -30,7 +30,7 @@ export function DiscSetCardCompact({
           if (count >= 2) return [setKey as DiscSetKey, 2]
           return [setKey as DiscSetKey, 0]
         })
-        .filter(([, count]) => count > 0)
+        .filter(([, count]) => count > 0),
     ) as Partial<Record<DiscSetKey, 2 | 4>>
   }, [discs])
 

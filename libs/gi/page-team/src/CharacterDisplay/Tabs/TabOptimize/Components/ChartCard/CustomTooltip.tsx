@@ -63,7 +63,7 @@ export default function CustomTooltip({
       () =>
         selectedPoint?.build?.artifactIds &&
         objMap(selectedPoint.build.artifactIds, (id) => database.arts.get(id)),
-      [database.arts, selectedPoint]
+      [database.arts, selectedPoint],
     ) ?? objKeyMap(allArtifactSlotKeys, () => undefined)
   const clickAwayHandler = useCallback(
     (e) => {
@@ -76,13 +76,13 @@ export default function CustomTooltip({
         setSelectedPoint(undefined)
       }
     },
-    [setSelectedPoint]
+    [setSelectedPoint],
   )
 
   const currentlyEquipped =
     equippedWeapon === selectedPoint?.build?.weaponId &&
     allArtifactSlotKeys.every(
-      (slotKey) => artifactsBySlot[slotKey]?.id === equippedArtifacts[slotKey]
+      (slotKey) => artifactsBySlot[slotKey]?.id === equippedArtifacts[slotKey],
     )
 
   const activeBuild =
@@ -92,14 +92,14 @@ export default function CustomTooltip({
     allArtifactSlotKeys.every(
       (slotKey) =>
         artifactsBySlot[slotKey]?.id ===
-        data.get(input.art[slotKey].id).value?.toString()
+        data.get(input.art[slotKey].id).value?.toString(),
     )
 
   const generLabel = useMemo(
     () =>
       selectedPoint?.generBuildNumber !== undefined &&
       `#${selectedPoint?.generBuildNumber}`,
-    [selectedPoint]
+    [selectedPoint],
   )
   const graphLabel = useMemo(
     () =>
@@ -112,7 +112,7 @@ export default function CustomTooltip({
           Graph #{{ count: selectedPoint?.graphBuildNumber + 1 }}
         </Trans>
       ),
-    [selectedPoint, t]
+    [selectedPoint, t],
   )
 
   if (!tooltipProps.active || !selectedPoint) return null
@@ -174,14 +174,14 @@ export default function CustomTooltip({
               <strong>{xLabel}</strong>:{' '}
               {valueString(
                 xUnit === '%' ? selectedPoint.x / 100 : selectedPoint.x,
-                xUnit
+                xUnit,
               )}
             </Typography>
             <Typography>
               <strong>{yLabel}</strong>:{' '}
               {valueString(
                 yUnit === '%' ? selectedPoint.y / 100 : selectedPoint.y,
-                yUnit
+                yUnit,
               )}
             </Typography>
             <BootstrapTooltip

@@ -13,7 +13,7 @@ const [condPassivePath, condPassive] = cond(key, 'BaneOfFlameAndWater')
 const all_dmg_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, all_dmg_s)
+  subscript(input.weapon.refinement, all_dmg_s),
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -30,7 +30,7 @@ export interface CharInfo {
 }
 export function dataGenToCharInfo(
   data_gen: CharacterDataGen,
-  travelerEle: ElementKey = 'anemo'
+  travelerEle: ElementKey = 'anemo',
 ): CharInfo {
   return {
     key: locCharKeyToCharKey(data_gen.key, travelerEle),
@@ -82,7 +82,7 @@ export function dmg(
   const base = prod(
     final[stat],
     talentMulti,
-    ...(arg.baseMulti ? [arg.baseMulti] : [])
+    ...(arg.baseMulti ? [arg.baseMulti] : []),
   )
   return customDmg(name, ele, move, base, arg, ...extra)
 }
@@ -102,10 +102,10 @@ export function shield(
     arg.ele,
     sum(
       prod(percent(subscript(lvl, tlvlMulti)), own.final[stat]),
-      subscript(lvl, flat)
+      subscript(lvl, flat),
     ),
     arg,
-    ...extra
+    ...extra,
   )
 }
 
@@ -122,7 +122,7 @@ export function fixedShield(
     arg.ele,
     sum(prod(percent, own.final[base]), flat),
     arg,
-    ...extra
+    ...extra,
   )
 }
 
@@ -130,7 +130,7 @@ const baseStats = new Set(['atk', 'def', 'hp'])
 
 export function entriesForChar(
   { key, ele, weaponType, region }: CharInfo,
-  { lvlCurves, ascensionBonus }: CharacterDataGen
+  { lvlCurves, ascensionBonus }: CharacterDataGen,
 ): TagMapNodeEntries {
   const specialized = new Set(Object.keys(ascensionBonus))
   specialized.delete('atk')
@@ -141,13 +141,13 @@ export function entriesForChar(
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      ownBuff.base[key].add(prod(base, allStatics('static')[curve]))
+      ownBuff.base[key].add(prod(base, allStatics('static')[curve])),
     ),
     ...Object.entries(ascensionBonus).map(([key, values]) =>
       (baseStats.has(key)
         ? ownBuff.base[key as 'atk' | 'def' | 'hp']
         : readStat(ownBuff.premod, key)
-      ).add(subscript(ascension, values))
+      ).add(subscript(ascension, values)),
     ),
 
     // Constants
@@ -173,7 +173,7 @@ export function entriesForChar(
     // Specialized stats, items here are sheet-specific data (i.e., `sheet:<key>`)
     // Read from `ownBuff` to include only sheet's contribution.
     ...[...specialized].map((stat) =>
-      ownBuff.char.specialized.add(readStat(ownBuff.premod, stat).sheet(key))
+      ownBuff.char.specialized.add(readStat(ownBuff.premod, stat).sheet(key)),
     ),
   ]
 }

@@ -27,14 +27,14 @@ export function getCharInterpolateObject(
     | 'bonusAbility2'
     | 'bonusAbility3',
   skLevel: number,
-  skIndex = 0
+  skIndex = 0,
 ) {
   switch (skType) {
     case 'eidolon':
       return Object.fromEntries(
         allStats.char[ck].rankMap[skLevel as Rank].params.map(
-          (param, index) => [index + 1, param]
-        )
+          (param, index) => [index + 1, param],
+        ),
       )
     case 'basic':
     case 'skill':
@@ -43,8 +43,8 @@ export function getCharInterpolateObject(
     case 'technique':
       return Object.fromEntries(
         allStats.char[ck].skillTree[skType].skillParamList[skIndex].map(
-          (skills, index) => [index + 1, skills[skLevel]]
-        )
+          (skills, index) => [index + 1, skills[skLevel]],
+        ),
       )
     case 'bonusAbility1':
     case 'bonusAbility2':
@@ -52,28 +52,28 @@ export function getCharInterpolateObject(
       return Object.fromEntries(
         allStats.char[ck].skillTree[skType].skillParamList[skIndex][
           skLevel
-        ].map((skills, index) => [index + 1, skills])
+        ].map((skills, index) => [index + 1, skills]),
       )
   }
 }
 
 export function getCharStatBoostStatKey(
   ck: CharacterKey,
-  bonusStats: StatBoostKey | `${StatBoostKey}`
+  bonusStats: StatBoostKey | `${StatBoostKey}`,
 ) {
   return getCharStatBoostStat(ck, bonusStats).statKey
 }
 
 export function getCharStatBoostStatValue(
   ck: CharacterKey,
-  bonusStats: StatBoostKey | `${StatBoostKey}`
+  bonusStats: StatBoostKey | `${StatBoostKey}`,
 ) {
   return getCharStatBoostStat(ck, bonusStats).value
 }
 
 export function getCharStatBoostStat(
   ck: CharacterKey,
-  bonusStats: StatBoostKey | `${StatBoostKey}`
+  bonusStats: StatBoostKey | `${StatBoostKey}`,
 ) {
   const boost = getCharStatBoost(ck, bonusStats)
   const levels = boost.levels
@@ -89,7 +89,7 @@ export function getCharStatBoostStat(
 }
 export function getCharStatBoost(
   ck: CharacterKey,
-  bonusStats: StatBoostKey | `${StatBoostKey}`
+  bonusStats: StatBoostKey | `${StatBoostKey}`,
 ) {
   const { skillTree } = getCharStat(ck)
   return skillTree[`statBoost${bonusStats}`]

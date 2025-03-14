@@ -48,7 +48,7 @@ ${dataContent}
 } as const
 export default data
 `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   mkdirSync(path, { recursive: true })
   writeFileSync(`${path}/index.ts`, indexContent)
@@ -57,6 +57,6 @@ export default data
     Object.entries(obj).map(async ([key, val]) => {
       if (typeof val === 'object')
         await generateIndexFromObj(val, `${path}/${key}`)
-    })
+    }),
   )
 }

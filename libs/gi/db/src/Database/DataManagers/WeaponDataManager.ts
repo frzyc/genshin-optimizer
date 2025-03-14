@@ -45,7 +45,7 @@ export class WeaponDataManager extends DataManager<
   }
   ensureEquipment(
     charKey: CharacterKey,
-    weaponIds: Set<string> = new Set(this.keys)
+    weaponIds: Set<string> = new Set(this.keys),
   ) {
     const char = this.database.chars.get(charKey)
     if (char?.equippedWeapon) return undefined
@@ -113,20 +113,20 @@ export class WeaponDataManager extends DataManager<
         prevWeapon = this.get(
           this.new(
             defaultInitialWeapon(
-              allStats.char.data[charKeyToLocCharKey(prevChar.key)].weaponType
-            )
-          )
+              allStats.char.data[charKeyToLocCharKey(prevChar.key)].weaponType,
+            ),
+          ),
         )
 
       if (newChar)
         this.database.chars.setEquippedWeapon(
           charKeyToLocCharKey(newChar.key),
-          newWeapon.id
+          newWeapon.id,
         )
       if (prevChar && prevWeapon)
         this.database.chars.setEquippedWeapon(
           charKeyToLocCharKey(prevChar.key),
-          prevWeapon.id
+          prevWeapon.id,
         )
     } else
       newWeapon.location &&
@@ -186,7 +186,7 @@ export class WeaponDataManager extends DataManager<
       if (!result.ignoreDups) {
         const { duplicated, upgraded } = this.findDups(
           weapon,
-          Array.from(idsToRemove)
+          Array.from(idsToRemove),
         )
         if (duplicated[0] || upgraded[0]) {
           foundDupOrUpgrade = true
@@ -197,8 +197,8 @@ export class WeaponDataManager extends DataManager<
             upgraded[0]?.location === weapon.location
               ? [upgraded[0], true]
               : duplicated[0]
-              ? [duplicated[0], false]
-              : [upgraded[0], true]
+                ? [duplicated[0], false]
+                : [upgraded[0], true]
           if (importId) {
             // favor exact id matches
             const up = upgraded.find((w) => w.id === importId)
@@ -243,7 +243,7 @@ export class WeaponDataManager extends DataManager<
 
     // Shouldn't remove Somnia's signature
     const idtoRemoveArr = Array.from(idsToRemove).filter(
-      (id) => this.get(id)?.key !== 'QuantumCatalyst'
+      (id) => this.get(id)?.key !== 'QuantumCatalyst',
     )
     if (result.keepNotInImport || result.ignoreDups)
       result.weapons.notInImport = idtoRemoveArr.length
@@ -254,7 +254,7 @@ export class WeaponDataManager extends DataManager<
 
   findDups(
     weapon: IWeapon,
-    idList = this.keys
+    idList = this.keys,
   ): { duplicated: ICachedWeapon[]; upgraded: ICachedWeapon[] } {
     const { key, level, ascension, refinement } = weapon
 
@@ -266,7 +266,7 @@ export class WeaponDataManager extends DataManager<
         key === candidate.key &&
         level >= candidate.level &&
         ascension >= candidate.ascension &&
-        refinement >= candidate.refinement
+        refinement >= candidate.refinement,
     )
 
     // Strictly upgraded weapons
@@ -275,7 +275,7 @@ export class WeaponDataManager extends DataManager<
         (candidate) =>
           level > candidate.level ||
           ascension > candidate.ascension ||
-          refinement > candidate.refinement
+          refinement > candidate.refinement,
       )
       .sort((candidates) => (candidates.location === weapon.location ? -1 : 1))
     // Strictly duplicated weapons
@@ -284,7 +284,7 @@ export class WeaponDataManager extends DataManager<
         (candidate) =>
           level === candidate.level &&
           ascension === candidate.ascension &&
-          refinement === candidate.refinement
+          refinement === candidate.refinement,
       )
       .sort((candidates) => (candidates.location === weapon.location ? -1 : 1))
     return { duplicated, upgraded }
@@ -308,7 +308,7 @@ export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
   }
 }
 export const defaultInitialWeapon = (
-  type: WeaponTypeKey = 'sword'
+  type: WeaponTypeKey = 'sword',
 ): ICachedWeapon => initialWeapon(defaultInitialWeaponKey(type))
 
 export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({

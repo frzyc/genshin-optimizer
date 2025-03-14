@@ -5,7 +5,7 @@ export class DataManager<
   CacheKey extends string,
   DataKey extends string,
   CacheValue extends StorageValue,
-  StorageValue
+  StorageValue,
 > extends DataManagerBase<
   CacheKey,
   DataKey,
@@ -35,7 +35,7 @@ export class DataManager<
   }
   importZOD(
     zo: IZenlessObjectDescription & IZZZDatabase,
-    _result: ImportResult
+    _result: ImportResult,
   ) {
     const entries = zo[this.dataKey]
     if (entries && Array.isArray(entries))

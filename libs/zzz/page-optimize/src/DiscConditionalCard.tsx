@@ -58,7 +58,7 @@ export function DiscConditionalCard({
       character &&
       sheet?.getStats &&
       sheet.getStats(character?.conditionals, baseStats),
-    [baseStats, character, sheet]
+    [baseStats, character, sheet],
   )
   if (!sheet || !character) return null
   const { condMeta } = sheet

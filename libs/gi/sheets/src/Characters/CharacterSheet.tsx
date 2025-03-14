@@ -4,7 +4,7 @@ import type { TalentSheet, TalentSheetElementKey } from './ICharacterSheet'
 
 export type AllCharacterSheets = (
   characterkey: CharacterKey,
-  gender: GenderKey
+  gender: GenderKey,
 ) => CharacterSheet
 export class CharacterSheet {
   readonly sheet: TalentSheet

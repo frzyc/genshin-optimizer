@@ -23,7 +23,7 @@ export function useNumWorkers() {
       (num: number) => {
         setNumWorkers(clamp(Math.round(num), 1, nativeThreads))
       },
-      [nativeThreads]
+      [nativeThreads],
     ),
   ] as const
 }

@@ -26,9 +26,9 @@ const relicArray = Object.entries(relicSetConfig).map(([setId, setConfig]) => {
       ([setCount, skillConfig]) =>
         [+setCount, convertToHash(skillConfig.SkillDesc).toString()] as [
           RelicSetCountKey,
-          string
-        ]
-    )
+          string,
+        ],
+    ),
   ) as SetEffectData
 
   const tuple: [RelicSetKey, RelicData] = [

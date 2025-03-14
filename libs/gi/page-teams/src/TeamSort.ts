@@ -28,7 +28,7 @@ export type TeamFilterKey = (typeof teamFilterKeys)[number]
 export type TeamFilterConfigs = FilterConfigs<TeamFilterKey, string>
 
 export function teamFilterConfigs(
-  database: ArtCharDatabase
+  database: ArtCharDatabase,
 ): TeamFilterConfigs {
   return {
     charKeys: (teamId: string, filter: CharacterKey[]) => {
@@ -41,7 +41,7 @@ export function teamFilterConfigs(
         ?.map(({ teamCharId }) => database.teamChars.get(teamCharId)?.key)
         .filter(notEmpty)
       const allFilteredCharInTeam = filter.every((charKey) =>
-        characters?.includes(charKey)
+        characters?.includes(charKey),
       )
 
       return allFilteredCharInTeam

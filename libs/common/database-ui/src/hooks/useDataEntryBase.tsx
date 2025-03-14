@@ -9,7 +9,7 @@ export function useDataEntryBase<
   B extends string,
   C,
   D,
-  E extends Database
+  E extends Database,
 >(entry: DataEntryBase<A, B, C, D, E>) {
   const [data, setData] = useState(() => entry?.get())
 

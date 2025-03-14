@@ -154,7 +154,7 @@ describe('A general optimizeTC usecase', () => {
       HuTaoTeamCharId,
       0,
       overrideArt,
-      overrideWeapon
+      overrideWeapon,
     )!
 
     expect(teamData).toBeTruthy()
@@ -170,7 +170,7 @@ describe('A general optimizeTC usecase', () => {
       teamData,
       characterKey,
       ['normal', '0'],
-      statFilters
+      statFilters,
     )
     expect(nodes).toBeTruthy()
     nodes &&

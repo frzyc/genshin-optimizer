@@ -126,7 +126,7 @@ export function NodeFieldDisplay({
   const { setFormulaData } = useContext(FormulaDataContext)
   const onClick = useCallback(
     () => setFormulaData(data, calcRes),
-    [setFormulaData, data, calcRes]
+    [setFormulaData, data, calcRes],
   )
   if (!calcRes && !compareCalcRes) return null
   const { multi, strikethrough } = calcRes?.info ?? compareCalcRes?.info ?? {}
@@ -139,7 +139,7 @@ export function NodeFieldDisplay({
 
   let fieldVal = false as ReactNode
   const { unit, fixed, variant, subVariant } = resolveInfo(
-    (calcRes?.info ?? compareCalcRes?.info)!
+    (calcRes?.info ?? compareCalcRes?.info)!,
   )
   const calcDisplay = GetCalcDisplay((calcRes ?? compareCalcRes)!)
 
@@ -279,24 +279,25 @@ export interface FieldDisplayListProps extends ListProps {
   bgt?: CardBackgroundColor
   palletOption?: keyof PaletteColor
 }
-export const FieldDisplayList = styled(List)<FieldDisplayListProps>(
-  ({ theme, bgt = 'normal' }) => {
-    const palette =
-      bgt === 'light'
-        ? 'contentLight'
-        : bgt === 'dark'
+export const FieldDisplayList = styled(List)<FieldDisplayListProps>(({
+  theme,
+  bgt = 'normal',
+}) => {
+  const palette =
+    bgt === 'light'
+      ? 'contentLight'
+      : bgt === 'dark'
         ? 'contentDark'
         : 'contentNormal'
-    return {
-      borderRadius: theme.shape.borderRadius,
-      overflow: 'hidden',
-      margin: 0,
-      '> .MuiListItem-root:nth-of-type(even)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['main'],
-      },
-      '> .MuiListItem-root:nth-of-type(odd)': {
-        backgroundColor: (theme.palette[palette] as PaletteColor)['dark'],
-      },
-    }
+  return {
+    borderRadius: theme.shape.borderRadius,
+    overflow: 'hidden',
+    margin: 0,
+    '> .MuiListItem-root:nth-of-type(even)': {
+      backgroundColor: (theme.palette[palette] as PaletteColor)['main'],
+    },
+    '> .MuiListItem-root:nth-of-type(odd)': {
+      backgroundColor: (theme.palette[palette] as PaletteColor)['dark'],
+    },
   }
-)
+})

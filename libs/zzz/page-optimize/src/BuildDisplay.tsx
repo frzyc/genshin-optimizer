@@ -38,9 +38,9 @@ export function BuildDisplay({
       applyCalc(
         baseStats,
         character?.conditionals ?? {},
-        Object.values(discs).filter(notEmpty).map(convertDiscToStats)
+        Object.values(discs).filter(notEmpty).map(convertDiscToStats),
       ),
-    [baseStats, character?.conditionals, discs]
+    [baseStats, character?.conditionals, discs],
   )
   const onEquip = useCallback(() => {
     Object.values(discIds).forEach((dId) => {

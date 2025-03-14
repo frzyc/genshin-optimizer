@@ -50,7 +50,7 @@ export function ArtifactMainLevelSlot({
         buildTc.artifact.slots[slotKey] = { ...slot, ...action }
       })
     },
-    [setBuildTc, slotKey]
+    [setBuildTc, slotKey],
   )
   const setRarity = useCallback(
     (r: ArtifactRarity) => {
@@ -58,7 +58,7 @@ export function ArtifactMainLevelSlot({
       if (level > mLvl) setSlot({ rarity: r, level: mLvl })
       else setSlot({ rarity: r })
     },
-    [level, setSlot]
+    [level, setSlot],
   )
 
   return (
@@ -143,7 +143,7 @@ export function ArtifactMainLevelSlot({
       <CardThemed sx={{ height: '100%', minWidth: '4em' }}>
         <Box p={1} textAlign="center">{`${artDisplayValue(
           getMainStatDisplayValue(statKey, rarity, level),
-          getUnitStr(statKey)
+          getUnitStr(statKey),
         )}${getUnitStr(statKey)}`}</Box>
       </CardThemed>
     </Box>

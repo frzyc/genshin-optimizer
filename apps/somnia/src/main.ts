@@ -12,7 +12,7 @@ import * as http from 'http'
 
 // So we can modify config.json after building, thereby not exposing credentials in our build drop
 const { clientid, token } = JSON.parse(
-  readFileSync('./apps/somnia/src/config.json').toString()
+  readFileSync('./apps/somnia/src/config.json').toString(),
 )
 
 const client = new Client({
@@ -33,11 +33,11 @@ import * as events from './lib/events'
 client.on(Events.ClientReady, (...args) => events.ready(...args))
 //interactions
 client.on(Events.InteractionCreate, (...args) =>
-  events.interactionCreate(...args)
+  events.interactionCreate(...args),
 )
 //reactions
 client.on(Events.MessageReactionAdd, (...args) =>
-  events.messageReactionAdd(...args)
+  events.messageReactionAdd(...args),
 )
 
 //collect commands

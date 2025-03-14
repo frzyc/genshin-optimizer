@@ -100,7 +100,7 @@ const dm = {
 
 const [condC1AfterSkillHitPath, condC1AfterSkillHit] = cond(
   key,
-  'c1AfterSkillHit'
+  'c1AfterSkillHit',
 )
 const c1AfterSkillHit_hypersense_dmg_ = greaterEq(
   input.constellation,
@@ -108,8 +108,8 @@ const c1AfterSkillHit_hypersense_dmg_ = greaterEq(
   greaterEq(
     input.asc,
     1,
-    equal(condC1AfterSkillHit, 'on', dm.constellation1.dmg_)
-  )
+    equal(condC1AfterSkillHit, 'on', dm.constellation1.dmg_),
+  ),
 )
 
 const [condC2SupersensePath, condC2Supersense] = cond(key, 'c2Supersense')
@@ -117,13 +117,13 @@ const c2Supersense_electro_dmg_ = greaterEq(
   input.constellation,
   2,
   equal(condC2Supersense, 'on', dm.constellation2.electro_dmg_base),
-  { path: 'electro_dmg_' }
+  { path: 'electro_dmg_' },
 )
 
 const c2BurstHitArr = range(1, dm.constellation2.electro_dmg_arr.length)
 const [condC2BurstHitStackPath, condC2BurstHitStack] = cond(
   key,
-  'c2BurstHitStack'
+  'c2BurstHitStack',
 )
 const c2BurstHitStack_electro_dmg_ = greaterEq(
   input.constellation,
@@ -134,12 +134,12 @@ const c2BurstHitStack_electro_dmg_ = greaterEq(
     lookup(
       condC2BurstHitStack,
       objKeyMap(c2BurstHitArr, (stack) =>
-        percent(dm.constellation2.electro_dmg_arr[stack - 1])
+        percent(dm.constellation2.electro_dmg_arr[stack - 1]),
       ),
-      naught
-    )
+      naught,
+    ),
   ),
-  { path: 'electro_dmg_' }
+  { path: 'electro_dmg_' },
 )
 
 const c6StacksArr = range(1, dm.constellation6.stacks)
@@ -150,21 +150,21 @@ const c6Stacks_atk_disp = greaterEq(
   lookup(
     condC6Stacks,
     objKeyMap(c6StacksArr, (stack) =>
-      prod(percent(dm.constellation6.atk_), stack)
+      prod(percent(dm.constellation6.atk_), stack),
     ),
-    naught
+    naught,
   ),
-  { path: 'atk_', isTeamBuff: true }
+  { path: 'atk_', isTeamBuff: true },
 )
 const c6Stacks_atk_ = equal(
   input.activeCharKey,
   target.charKey,
-  c6Stacks_atk_disp
+  c6Stacks_atk_disp,
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -188,8 +188,8 @@ const dmgFormulas = {
         {
           ...hitEle[ele],
           premod: { all_dmg_: c1AfterSkillHit_hypersense_dmg_ },
-        }
-      )
+        },
+      ),
     ),
   },
   constellation6: {
@@ -200,14 +200,14 @@ const dmgFormulas = {
         prod(
           percent(dm.passive1.dmg),
           input.total.atk,
-          percent(dm.constellation6.dmg)
+          percent(dm.constellation6.dmg),
         ),
         'elemental',
         {
           ...hitEle[ele],
           premod: { all_dmg_: c1AfterSkillHit_hypersense_dmg_ },
-        }
-      )
+        },
+      ),
     ),
   },
 }

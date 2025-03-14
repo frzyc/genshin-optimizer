@@ -158,7 +158,7 @@ type LevelDropdownProps = {
   ascension: AscensionKey | undefined
   setLevelAscension: (
     level: number | undefined,
-    ascension: AscensionKey | undefined
+    ascension: AscensionKey | undefined,
   ) => void
   disabled?: boolean
 }

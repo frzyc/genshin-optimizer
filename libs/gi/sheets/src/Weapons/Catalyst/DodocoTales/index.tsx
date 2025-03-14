@@ -15,12 +15,12 @@ const [condChargedPath, condCharged] = cond(key, 'DodoventureCharged')
 const charged_dmg_ = equal(
   'on',
   condNormal,
-  subscript(input.weapon.refinement, chargedDmgInc)
+  subscript(input.weapon.refinement, chargedDmgInc),
 )
 const atk_ = equal(
   'on',
   condCharged,
-  subscript(input.weapon.refinement, atkInc)
+  subscript(input.weapon.refinement, atkInc),
 )
 
 const data = dataObjForWeaponSheet(key, {

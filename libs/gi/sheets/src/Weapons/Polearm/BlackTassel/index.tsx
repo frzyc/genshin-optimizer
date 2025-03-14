@@ -13,7 +13,7 @@ const [condPassivePath, condPassive] = cond(key, 'PressTheAdvantage')
 const all_dmg_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, dmgInc)
+  subscript(input.weapon.refinement, dmgInc),
 )
 const data = dataObjForWeaponSheet(key, {
   premod: {

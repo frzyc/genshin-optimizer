@@ -19,7 +19,7 @@ export const slashcommand = new SlashCommandBuilder()
       .setName('name')
       .setDescription('Character name')
       .setAutocomplete(true)
-      .setRequired(true)
+      .setRequired(true),
   )
 
 const multioptThread = '1035231314074411008'

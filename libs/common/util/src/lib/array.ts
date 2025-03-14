@@ -5,7 +5,7 @@ export function getArrLastElement<E>(arr: E[]): E | null {
 const rangeGen = function* (
   from: number,
   to: number,
-  step: number
+  step: number,
 ): Iterable<number> {
   for (let i = from; i <= to; i += step) yield i
 }
@@ -51,7 +51,7 @@ export function linspace(
   start: number,
   stop: number,
   num: number,
-  inclusiveEnd = true
+  inclusiveEnd = true,
 ) {
   const step = (stop - start) / (inclusiveEnd ? num - 1 : num)
   return range(0, num - 1).map((i) => start + step * i)

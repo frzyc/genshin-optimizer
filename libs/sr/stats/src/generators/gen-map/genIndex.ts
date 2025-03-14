@@ -35,7 +35,7 @@ const maps = {
 export default maps
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

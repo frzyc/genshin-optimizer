@@ -54,14 +54,14 @@ export function WeaponSelectionModal({
 }: WeaponSelectionModalProps) {
   const { t } = useTranslation(['page_weapon', 'weaponNames_gen'])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey[]>(
-    weaponTypeFilter ? [weaponTypeFilter] : [...allWeaponTypeKeys]
+    weaponTypeFilter ? [weaponTypeFilter] : [...allWeaponTypeKeys],
   )
 
   const database = useDatabase()
   const [state, setState] = useState(database.displayWeapon.get())
   useEffect(
     () => database.displayWeapon.follow((r, dbMeta) => setState(dbMeta)),
-    [database]
+    [database],
   )
 
   useEffect(() => {
@@ -82,11 +82,11 @@ export function WeaponSelectionModal({
             !deferredSearchTerm ||
             t(`weaponNames_gen:${wKey}`)
               .toLowerCase()
-              .includes(deferredSearchTerm.toLowerCase())
+              .includes(deferredSearchTerm.toLowerCase()),
         )
         .filter((wKey) => rarity.includes(getWeaponStat(wKey).rarity))
         .sort((a, b) => getWeaponStat(b).rarity - getWeaponStat(a).rarity),
-    [deferredSearchTerm, filter, rarity, t, weaponFilter]
+    [deferredSearchTerm, filter, rarity, t, weaponFilter],
   )
 
   const weaponTotals = useMemo(
@@ -96,9 +96,9 @@ export function WeaponSelectionModal({
           const wtk = getWeaponStat(wk).weaponType
           ct[wtk].total++
           if (weaponIdList.includes(wk)) ct[wtk].current++
-        })
+        }),
       ),
-    [weaponIdList]
+    [weaponIdList],
   )
 
   const weaponRarityTotals = useMemo(
@@ -108,9 +108,9 @@ export function WeaponSelectionModal({
           const wr = getWeaponStat(wk).rarity
           ct[wr].total++
           if (weaponIdList.includes(wk)) ct[wr].current++
-        })
+        }),
       ),
-    [weaponIdList]
+    [weaponIdList],
   )
 
   return (

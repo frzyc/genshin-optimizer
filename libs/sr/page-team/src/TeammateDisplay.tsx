@@ -185,7 +185,7 @@ function CharacterSection() {
   const character = useCharacterContext()!
   const { key: characterKey } = character
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
-    undefined
+    undefined,
   )
   return (
     <Stack spacing={1}>
@@ -228,7 +228,7 @@ function CurrentBuildDisplay() {
   const [dbDirty, setDbDirty] = useForceUpdate()
   const buildName = useMemo(
     () => dbDirty && database.teams.getActiveBuildName(teammateDatum),
-    [database.teams, dbDirty, teammateDatum]
+    [database.teams, dbDirty, teammateDatum],
   )
   useEffect(() => {
     let unFollow = () => {}
@@ -263,7 +263,7 @@ function BuildDisplay() {
   const { database } = useDatabaseContext()
   const { relicIds, lightConeId } = useMemo(
     () => database.teams.getTeamActiveBuild(teammateDatum),
-    [database.teams, teammateDatum]
+    [database.teams, teammateDatum],
   )
   return <EquipRow relicIds={relicIds} lightConeId={lightConeId} />
 }

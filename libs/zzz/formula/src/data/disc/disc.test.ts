@@ -36,7 +36,7 @@ Object.assign(values, compileTagMapValues(keys, data))
 function testCharacterData(
   setKey: DiscSetKey,
   discStats: Partial<Record<DiscMainStatKey | DiscSubStatKey, number>> = {},
-  otherCharData: TagMapNodeEntries = []
+  otherCharData: TagMapNodeEntries = [],
 ) {
   const data: TagMapNodeEntries = [
     ...teamData(['Anby']),
@@ -57,7 +57,7 @@ function testCharacterData(
       ...discTagMapNodeEntries(discStats, {
         [setKey]: 4,
       }),
-      ...otherCharData
+      ...otherCharData,
     ),
     own.common.critMode.add('avg'),
     enemy.common.def.add(953),
@@ -84,7 +84,7 @@ describe('Disc sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     // printDebug(calc, anby.final.dmg_)
@@ -99,13 +99,13 @@ describe('Disc sheets test', () => {
       cond(
         'BranchBladeSong',
         conditionals.BranchBladeSong.apply_or_trigger.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.anomMas).val).toBeCloseTo(119) // should be greater than 115
@@ -119,7 +119,7 @@ describe('Disc sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.anomProf).val).toBeCloseTo(93 + 30) // 2p passive
@@ -131,28 +131,32 @@ describe('Disc sheets test', () => {
   it('ChaoticMetal', () => {
     const data = testCharacterData('ChaoticMetal')
     data.push(
-      cond('ChaoticMetal', conditionals.ChaoticMetal.trigger_corruption.name, 6)
+      cond(
+        'ChaoticMetal',
+        conditionals.ChaoticMetal.trigger_corruption.name,
+        6,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_.ether).val).toBeCloseTo(0.1) // 2p passive
     expect(calc.compute(anby.final.crit_dmg_).val).toBeCloseTo(
-      0.5 + 0.2 + 0.055 * 6
+      0.5 + 0.2 + 0.055 * 6,
     )
   })
   it('FangedMetal', () => {
     const data = testCharacterData('FangedMetal')
     data.push(
-      cond('FangedMetal', conditionals.FangedMetal.inflict_assault.name, 1)
+      cond('FangedMetal', conditionals.FangedMetal.inflict_assault.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     // printDebug(calc, anby.final.dmg_.physical)
@@ -164,7 +168,7 @@ describe('Disc sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.anomProf).val).toBeCloseTo(93 + 30) // 2p passive
@@ -172,12 +176,12 @@ describe('Disc sheets test', () => {
   it('HormonePunk', () => {
     const data = testCharacterData('HormonePunk')
     data.push(
-      cond('HormonePunk', conditionals.HormonePunk.entering_combat.name, 1)
+      cond('HormonePunk', conditionals.HormonePunk.entering_combat.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.atk_).val).toBeCloseTo(0.1) // 2p passive
@@ -189,13 +193,13 @@ describe('Disc sheets test', () => {
       cond(
         'InfernoMetal',
         conditionals.InfernoMetal.hitting_burning_enemy.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
@@ -207,13 +211,13 @@ describe('Disc sheets test', () => {
       cond(
         'InfernoMetal',
         conditionals.InfernoMetal.hitting_burning_enemy.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_.fire).val).toBeCloseTo(0.1) // 2p passive
@@ -225,7 +229,7 @@ describe('Disc sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_.ice).val).toBeCloseTo(0.1) // 2p passive
@@ -235,12 +239,12 @@ describe('Disc sheets test', () => {
   it('PolarMetal with cond', () => {
     const data = testCharacterData('PolarMetal')
     data.push(
-      cond('PolarMetal', conditionals.PolarMetal.freeze_shatter.name, 1)
+      cond('PolarMetal', conditionals.PolarMetal.freeze_shatter.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_.ice).val).toBeCloseTo(0.1) // 2p passive
@@ -253,13 +257,13 @@ describe('Disc sheets test', () => {
       cond(
         'ProtoPunk',
         conditionals.ProtoPunk.def_assist_or_evasive_assist.name,
-        1
-      )
+        1,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.shield_).val).toBeCloseTo(0.15) // 2p passive
@@ -268,12 +272,12 @@ describe('Disc sheets test', () => {
   it('PufferElectro', () => {
     const data = testCharacterData('PufferElectro')
     data.push(
-      cond('PufferElectro', conditionals.PufferElectro.launching_ult.name, 1)
+      cond('PufferElectro', conditionals.PufferElectro.launching_ult.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.pen_).val).toBeCloseTo(0.08) // 2p passive
@@ -285,16 +289,16 @@ describe('Disc sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     expect(calc.compute(enemyDebuff.common.stun_.basic[0]).val).toBeCloseTo(
-      1.5 + 0.2
+      1.5 + 0.2,
     ) // 4p passive
     expect(calc.compute(enemyDebuff.common.stun_.dash[0]).val).toBeCloseTo(
-      1.5 + 0.2
+      1.5 + 0.2,
     ) // 4p passive
     expect(
-      calc.compute(enemyDebuff.common.stun_.dodgeCounter[0]).val
+      calc.compute(enemyDebuff.common.stun_.dodgeCounter[0]).val,
     ).toBeCloseTo(1.5 + 0.2) // 4p passive
   })
   it('SoulRock', () => {
@@ -302,7 +306,7 @@ describe('Disc sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.def_).val).toBeCloseTo(0.16) //2p passive
@@ -315,7 +319,7 @@ describe('Disc sheets test', () => {
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.initial.enerRegen_).val).toBeCloseTo(0.2) // 2p
@@ -324,12 +328,12 @@ describe('Disc sheets test', () => {
   it('ThunderMetal', () => {
     const data = testCharacterData('ThunderMetal')
     data.push(
-      cond('ThunderMetal', conditionals.ThunderMetal.enemy_shocked.name, 1)
+      cond('ThunderMetal', conditionals.ThunderMetal.enemy_shocked.name, 1),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.dmg_.electric).val).toBeCloseTo(0.1) // 2p passive
@@ -341,13 +345,13 @@ describe('Disc sheets test', () => {
       cond(
         'WoodpeckerElectro',
         conditionals.WoodpeckerElectro.crit_basic_dodge_ex.name,
-        3
-      )
+        3,
+      ),
     )
     const calc = new Calculator(
       keys,
       values,
-      compileTagMapValues(keys, data)
+      compileTagMapValues(keys, data),
     ).withTag({ src: 'Anby', dst: 'Anby' })
     const anby = convert(ownTag, { et: 'own', src: 'Anby' })
     expect(calc.compute(anby.final.crit_).val).toBeCloseTo(0.05 + 0.08) // 2p passive

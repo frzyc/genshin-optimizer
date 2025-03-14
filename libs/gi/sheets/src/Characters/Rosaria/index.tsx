@@ -93,7 +93,7 @@ const [condC6Path, condC6] = cond(key, 'DilucC6')
 const nodeA1CritInc = greaterEq(
   input.asc,
   1,
-  equal(condA1, 'on', dm.passive1.crInc)
+  equal(condA1, 'on', dm.passive1.crInc),
 )
 const nodeA4OptTarget = infoMut(
   greaterEq(
@@ -101,10 +101,10 @@ const nodeA4OptTarget = infoMut(
     4,
     min(
       prod(percent(dm.passive2.crBonus), input.premod.critRate_),
-      percent(dm.passive2.maxBonus)
-    )
+      percent(dm.passive2.maxBonus),
+    ),
   ),
-  { path: 'critRate_', isTeamBuff: true }
+  { path: 'critRate_', isTeamBuff: true },
 )
 const nodeA4CritBonusDisp = equal(condA4, 'on', nodeA4OptTarget)
 const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
@@ -112,22 +112,22 @@ const nodeA4CritBonus = unequal(target.charKey, key, nodeA4CritBonusDisp)
 const nodeC1AtkSpd = greaterEq(
   input.constellation,
   1,
-  equal(condC1, 'on', dm.constellation1.atkSpdInc)
+  equal(condC1, 'on', dm.constellation1.atkSpdInc),
 )
 const nodeC1NormalInc = greaterEq(
   input.constellation,
   1,
-  equal(condC1, 'on', dm.constellation1.dmgInc)
+  equal(condC1, 'on', dm.constellation1.dmgInc),
 )
 const nodeC6PhysShred = greaterEq(
   input.constellation,
   6,
-  equal(condC6, 'on', -dm.constellation6.physShred)
+  equal(condC6, 'on', -dm.constellation6.physShred),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),

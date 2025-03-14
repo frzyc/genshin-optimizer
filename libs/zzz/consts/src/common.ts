@@ -37,7 +37,7 @@ export const unCondKeys = [
 ] as const
 
 export const allStatKeys = Array.from(
-  new Set([...allDiscMainStatKeys, ...allDiscSubStatKeys, ...otherStatKeys])
+  new Set([...allDiscMainStatKeys, ...allDiscSubStatKeys, ...otherStatKeys]),
 )
 export type StatKey = (typeof allStatKeys)[number]
 
@@ -50,7 +50,7 @@ export const allPandoStatKeys = Array.from(
     ...allDiscMainStatKeys,
     ...allDiscSubStatKeys,
     ...extraPandoStatKeys,
-  ])
+  ]),
 )
 export type PandoStatKey = (typeof allPandoStatKeys)[number]
 

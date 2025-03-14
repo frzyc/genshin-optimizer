@@ -35,12 +35,12 @@ type EquipmentSkillConfig_bySuperimpose = {
 }
 
 const equipmentSkillConfigSrc = parse(
-  readDMJSON('ExcelOutput/EquipmentSkillConfig.json')
+  readDMJSON('ExcelOutput/EquipmentSkillConfig.json'),
 ) as EquipmentSkillConfig[]
 
 const skillIdToLightConeIdMap = objKeyValMap(
   Object.values(equipmentConfig),
-  (config) => [config.SkillID, config.EquipmentID]
+  (config) => [config.SkillID, config.EquipmentID],
 )
 
 export const equipmentSkillConfig = equipmentSkillConfigSrc.reduce(
@@ -54,12 +54,12 @@ export const equipmentSkillConfig = equipmentSkillConfigSrc.reduce(
     fullConfig[lightConeId].push(config)
     return fullConfig
   },
-  {} as Record<LightConeId, EquipmentSkillConfig[]>
+  {} as Record<LightConeId, EquipmentSkillConfig[]>,
 )
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/equipmentSkillConfig_gen.json`,
-  equipmentSkillConfig
+  equipmentSkillConfig,
 )
 
 // Convert from skill.superimpose.param -> skill.param[] where each entry is a superimpose
@@ -73,13 +73,13 @@ export const equipmentSkillConfig_bySuperimpose = objMap(
           flatConfig[key] = []
         }
         flatConfig[key].push(value)
-      })
+      }),
     )
     return flatConfig as EquipmentSkillConfig_bySuperimpose
-  }
+  },
 )
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/equipmentSkillConfig_bySuperimpose_gen.json`,
-  equipmentSkillConfig_bySuperimpose
+  equipmentSkillConfig_bySuperimpose,
 )

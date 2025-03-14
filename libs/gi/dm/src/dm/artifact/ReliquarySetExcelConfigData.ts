@@ -20,13 +20,13 @@ type ReliquarySetExcelConfigData = {
   // ]
 }
 const reliquarySetExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquarySetExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/ReliquarySetExcelConfigData.json'),
 ) as ReliquarySetExcelConfigData[]
 
 const reliquarySetExcelConfigData = Object.fromEntries(
   reliquarySetExcelConfigDataSrc
     .filter(({ setId }) => setId in artifactIdMap)
-    .map((data) => [data.setId, data])
+    .map((data) => [data.setId, data]),
 ) as Record<number, ReliquarySetExcelConfigData>
 
 export { reliquarySetExcelConfigData }

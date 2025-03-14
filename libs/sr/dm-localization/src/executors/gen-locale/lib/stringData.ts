@@ -31,7 +31,7 @@ function processString(str: string | undefined) {
   // Eliminating double tag simplifies regex later
   str = str.replace(
     /(<color=#[a-f0-9]{6,8}>)<unbreak>(.*?)<\/unbreak>(<\/color>)/g,
-    '$1$2$3'
+    '$1$2$3',
   )
   // Find portion similar to
   // <color=#f29e38ff>#1[i]%</color>
@@ -59,10 +59,10 @@ function processString(str: string | undefined) {
         return `<${interpolationTags.orangeStrong}>${value}</${interpolationTags.orangeStrong}>`
       else if (colorHex)
         throw new Error(
-          `Unhandled colorHex ${colorHex} in string ${str} on match ${match}`
+          `Unhandled colorHex ${colorHex} in string ${str} on match ${match}`,
         )
       else return `${value}`
-    }
+    },
   )
 
   // replace simple #1 => {{1}}. Only match to 2 digits to prevent matching color hashes.
@@ -82,7 +82,7 @@ function createValueStr(
   index: string | null,
   type: string | null,
   suffix: string | null,
-  plainString: string | null
+  plainString: string | null,
 ) {
   if (index) {
     if (suffix == '%') {
@@ -99,7 +99,7 @@ function createValueStr(
     return plainString
   } else {
     throw new Error(
-      'No index, suffix, type or plainString passed to createValueStr'
+      'No index, suffix, type or plainString passed to createValueStr',
     )
   }
 }
@@ -113,34 +113,33 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
     [],
     (value) => typeof value === 'string' && !!value,
     (hash: string, path) =>
-      layeredAssignment(data, path, processString(strings[hash]))
+      layeredAssignment(data, path, processString(strings[hash])),
   )
 
   // Trailblazer name handling
   allTrailblazerGenderedKeys.forEach((key) => {
     const type = allElementalTypeKeys.find((typeKey) =>
-      key.toLowerCase().includes(typeKey)
+      key.toLowerCase().includes(typeKey),
     )
     if (!type)
       throw new Error(
-        `Trailblazer key ${key} was unable to find an elemental type`
+        `Trailblazer key ${key} was unable to find an elemental type`,
       )
     const typeString = strings[HashData.characters.type[type]]
 
     const trailblazerKey = allTrailblazerKeys.find((tbKey) =>
-      key.includes(tbKey)
+      key.includes(tbKey),
     )
     if (!trailblazerKey)
       throw new Error(
-        `Trailblazer key ${key} was unable to find a trailblazer key`
+        `Trailblazer key ${key} was unable to find a trailblazer key`,
       )
     const path = TrailblazerPathMap[trailblazerKey]
     const pathString = strings[HashData.characters.path[path]]
 
     // Override name to something like 'Trailblazer (Physical • Destruction)'
-    data.char[
-      key
-    ].name = `${data.char[key].name} (${typeString} • ${pathString})`
+    data.char[key].name =
+      `${data.char[key].name} (${typeString} • ${pathString})`
     data.charNames[key] = data.char[key].name
   })
 

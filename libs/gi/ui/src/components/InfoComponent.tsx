@@ -39,11 +39,11 @@ export function InfoComponent({
 }) {
   const [show, onTrue, onFalse] = useBoolState(
     typeof window !== 'undefined' &&
-      localStorage.getItem(`infoShown_${pageKey}`) !== 'true'
+      localStorage.getItem(`infoShown_${pageKey}`) !== 'true',
   )
 
   const [displayText] = useState(
-    Array.isArray(text) ? getRandomElementFromArray(text) : text
+    Array.isArray(text) ? getRandomElementFromArray(text) : text,
   )
   const closeModal = useCallback(() => {
     onFalse()

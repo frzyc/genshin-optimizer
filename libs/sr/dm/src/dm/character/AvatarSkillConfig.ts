@@ -90,7 +90,7 @@ export type StanceDamageType =
   | 'Physical'
 
 const avatarSkillConfigSrc = parse(
-  readDMJSON('ExcelOutput/AvatarSkillConfig.json')
+  readDMJSON('ExcelOutput/AvatarSkillConfig.json'),
 ) as AvatarSkillConfig[]
 
 const avatarSkillConfig = {} as Record<string, AvatarSkillConfig[]>
@@ -101,7 +101,7 @@ avatarSkillConfigSrc.forEach((config) => {
 
 dumpFile(
   `${PROJROOT_PATH}/src/dm/character/avatarSkillConfig_gen.json`,
-  avatarSkillConfig
+  avatarSkillConfig,
 )
 
 export { avatarSkillConfig }

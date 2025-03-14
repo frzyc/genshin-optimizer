@@ -172,6 +172,6 @@ const allArtifactSetCount = [1, 2, 3, 4, 5] as const
 export type SetNum = (typeof allArtifactSetCount)[number]
 
 export const allMainSubStatKeys = Array.from(
-  new Set([...allSubstatKeys, ...allMainStatKeys] as const)
+  new Set([...allSubstatKeys, ...allMainStatKeys] as const),
 )
 export type MainSubStatKey = (typeof allMainSubStatKeys)[number]

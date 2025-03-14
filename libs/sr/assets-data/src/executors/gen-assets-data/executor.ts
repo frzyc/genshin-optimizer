@@ -68,7 +68,7 @@ const assetData = {
 export type AssetData = typeof assetData
 
 const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
-  options
+  options,
 ) => {
   console.log('Executor ran for GenAssetsData', options)
 
@@ -82,9 +82,9 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
           Object.entries(relicDatas).map(([relicSlotKey, relicData]) => [
             relicSlotMap[relicSlotKey as RelicSlotDMKey],
             relicData.ItemFigureIconPath,
-          ])
+          ]),
         ),
-      ])
+      ]),
   ) as RelicIcons
 
   // parse baseStat/ascension/basic data for characters.
@@ -104,7 +104,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
       bonusAbility3,
     ] = Object.values(avatarSkillTreeConfig[avatarId]).map(
       // Grab the first level; we just need the image names
-      (skillTree) => skillTree[0].IconPath
+      (skillTree) => skillTree[0].IconPath,
     )
 
     const assets: CharacterIcon = {
@@ -151,7 +151,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   // Dump out the asset List.
   dumpFile(
     `${workspaceRoot}/libs/sr/assets-data/src/AssetsData_gen.json`,
-    assetData
+    assetData,
   )
 
   return {

@@ -19,9 +19,9 @@ const sheet = registerDisc(
   registerBuff(
     'set4_cond_hitting_burning_enemy',
     ownBuff.combat.crit_.add(
-      cmpGE(discCount, 4, hitting_burning_enemy.ifOn(0.28))
+      cmpGE(discCount, 4, hitting_burning_enemy.ifOn(0.28)),
     ),
-    showCond4Set
-  )
+    showCond4Set,
+  ),
 )
 export default sheet

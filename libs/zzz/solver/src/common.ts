@@ -23,7 +23,7 @@ export function combineStats(...stats: Stats[]) {
   stats.forEach((s) =>
     Object.entries(s).forEach(([k, v]) => {
       total[k] = (total[k] ?? 0) + v
-    })
+    }),
   )
   return total
 }
@@ -37,7 +37,7 @@ export function convertDiscToStats(disc: ICachedDisc): DiscStats {
         substats.map(({ key, upgrades }) => [
           key,
           getDiscSubStatBaseVal(key, rarity) * upgrades,
-        ])
+        ]),
       ),
     },
     setKey,

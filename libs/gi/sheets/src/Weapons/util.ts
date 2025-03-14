@@ -15,7 +15,7 @@ import {
 export function dataObjForWeaponSheet(
   key: WeaponKey,
   additional: Data = {},
-  displayWeapon: DisplaySub = {}
+  displayWeapon: DisplaySub = {},
 ): Data {
   const { weaponType, mainStat, subStat, ascensionBonus } = getWeaponStat(key)
   const result: Data = {
@@ -42,11 +42,11 @@ export function dataObjForWeaponSheet(
     sum(
       prod(
         mainStat.base,
-        subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve])
+        subscript(input.weapon.lvl, allStats.weapon.expCurve[mainStat.curve]),
       ),
-      subscript(input.weapon.asc, ascensionBonus['atk'] ?? [])
+      subscript(input.weapon.asc, ascensionBonus['atk'] ?? []),
     ),
-    { path: mainStat.type }
+    { path: mainStat.type },
   )
   merging.push({
     base: { [mainStat.type]: input.weapon.main },
@@ -63,9 +63,9 @@ export function dataObjForWeaponSheet(
     const substatNode = infoMut(
       prod(
         subStat.base,
-        subscript(input.weapon.lvl, allStats.weapon.expCurve[subStat.curve])
+        subscript(input.weapon.lvl, allStats.weapon.expCurve[subStat.curve]),
       ),
-      { path: subStat.type }
+      { path: subStat.type },
     )
     merging.push({
       premod: { [subStat.type]: input.weapon.sub },

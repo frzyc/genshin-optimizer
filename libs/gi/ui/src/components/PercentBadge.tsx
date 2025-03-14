@@ -22,7 +22,7 @@ export function PercentBadge({
           `roll${clamp(
             Math.floor((value / max) * 10) - 4,
             1,
-            6
+            6,
           )}` as RollColorKey,
           (value * 100).toFixed() + '%',
         ]

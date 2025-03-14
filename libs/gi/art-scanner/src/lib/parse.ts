@@ -32,7 +32,7 @@ export function parseSetKeys(texts: string[]): Set<ArtifactSetKey> {
         key,
         levenshteinDistance(
           text.replace(/\W/g, ''),
-          key //TODO: use the translated set name?
+          key, //TODO: use the translated set name?
         ),
       ])
   return getBestKeyDist(kdist)
@@ -46,7 +46,7 @@ export function parseSlotKeys(texts: string[]): Set<ArtifactSlotKey> {
         key,
         levenshteinDistance(
           text.replace(/\W/g, ''),
-          artSlotNames[key].replace(/\W/g, '')
+          artSlotNames[key].replace(/\W/g, ''),
         ),
       ])
   return getBestKeyDist(kdist)
@@ -63,14 +63,14 @@ export function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
           key,
           levenshteinDistance(
             text.replace(/\W/g, ''),
-            (statMap[key] ?? '').replace(/\W/g, '')
+            (statMap[key] ?? '').replace(/\W/g, ''),
           ),
         ])
     }
   return getBestKeyDist(kdist)
 }
 export function parseMainStatValues(
-  texts: string[]
+  texts: string[],
 ): { mainStatValue: number; unit?: string }[] {
   const results: { mainStatValue: number; unit?: string }[] = []
   for (const text of texts) {
@@ -79,7 +79,7 @@ export function parseMainStatValues(
     if (match)
       results.push({
         mainStatValue: parseFloat(
-          match[1].replace(/,/g, '.').replace(/\.{2,}/g, '.')
+          match[1].replace(/,/g, '.').replace(/\.{2,}/g, '.'),
         ),
         unit: '%',
       })
@@ -116,7 +116,7 @@ export function parseSubstats(texts: string[]): ISubstat[] {
             match[1]
               .replace(/(,|\.)(\d{3}(?!\d))/g, '$2')
               .replace(/,/g, '.')
-              .replace(/\.{2,}/g, '.')
+              .replace(/\.{2,}/g, '.'),
           ),
         })
     })
@@ -137,7 +137,7 @@ export function parseLocation(texts: string[]): LocationCharacterKey {
         key,
         levenshteinDistance(
           text.replace(/\W/g, ''),
-          key //TODO: use the translated character name?
+          key, //TODO: use the translated character name?
         ),
       ])
   }

@@ -20,7 +20,7 @@ export function useCharSelectionCallback() {
       }
       navigate(`/characters/${characterKey}`)
     },
-    [navigate, database]
+    [navigate, database],
   )
   return cb
 }

@@ -20,7 +20,7 @@ const set2 = greaterEq(input.artSet.Instructor, 2, 80)
 const set4TallyWrite = greaterEqStr(
   input.artSet[key],
   4,
-  equalStr(condState, 'on', input.charKey)
+  equalStr(condState, 'on', input.charKey),
 )
 const [set4, set4Inactive] = nonStackBuff('inst4', 'eleMas', 120)
 

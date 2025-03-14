@@ -19,9 +19,9 @@ const crit_ = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const critRate_ = lookup(
   condStack,
   objKeyMap(range(1, 5), (i) =>
-    prod(subscript(input.weapon.refinement, crit_, { unit: '%' }), i)
+    prod(subscript(input.weapon.refinement, crit_, { unit: '%' }), i),
   ),
-  naught
+  naught,
 )
 export const data = dataObjForWeaponSheet(key, {
   premod: {
@@ -42,7 +42,7 @@ const sheet: IWeaponSheet = {
             name: st('stack', { count: i }),
             fields: [{ node: critRate_ }],
           },
-        ])
+        ]),
       ),
     },
   ],

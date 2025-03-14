@@ -33,11 +33,11 @@ export function LocationFilterMultiAutocomplete({
 
   const toExLabel = useCallback(
     (key: LocationKey) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: LocationKey) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
 
   /* const isFavorite = useCallback(
@@ -66,14 +66,14 @@ export function LocationFilterMultiAutocomplete({
             label: t(v),
             favorite: false,
             alternateNames: [v],
-          })
+          }),
         )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
-    [database.chars, t]
+    [database.chars, t],
   )
 
   return (

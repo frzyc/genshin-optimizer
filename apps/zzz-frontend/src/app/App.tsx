@@ -21,10 +21,10 @@ import Header from './Header'
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
 const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
 const PageOptimizePando = lazy(
-  () => import('@genshin-optimizer/zzz/page-optimize-pando')
+  () => import('@genshin-optimizer/zzz/page-optimize-pando'),
 )
 const PageCharacters = lazy(
-  () => import('@genshin-optimizer/zzz/page-characters')
+  () => import('@genshin-optimizer/zzz/page-characters'),
 )
 const PageWengines = lazy(() => import('@genshin-optimizer/zzz/page-wengines'))
 const PageSettings = lazy(() => import('@genshin-optimizer/zzz/page-settings'))

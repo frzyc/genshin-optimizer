@@ -42,7 +42,7 @@ type ReturnItemIDList = {
 }
 
 const ItemConfigEquipmentSrc = parse(
-  readDMJSON('ExcelOutput/ItemConfigEquipment.json')
+  readDMJSON('ExcelOutput/ItemConfigEquipment.json'),
 ) as ItemConfigEquipment[]
 
 dumpFile(
@@ -50,23 +50,23 @@ dumpFile(
   objKeyValMap(ItemConfigEquipmentSrc, (config) => [
     config.ID,
     nameToKey(TextMapEN[config.ItemName.Hash.toString()]),
-  ])
+  ]),
 )
 dumpFile(
   `${PROJROOT_PATH}/src/dm/lightCone/ItemConfigEquipment_keys_gen.json`,
   [
     ...new Set(
       ItemConfigEquipmentSrc.map((data) =>
-        nameToKey(TextMapEN[data.ItemName.Hash.toString()])
-      )
+        nameToKey(TextMapEN[data.ItemName.Hash.toString()]),
+      ),
     ),
   ]
     .filter((s) => s && s !== 'NICKNAME')
-    .sort()
+    .sort(),
 )
 
 const ItemConfigEquipment = objFilterKeys(
   objKeyValMap(ItemConfigEquipmentSrc, (config) => [config.ID, config]),
-  Object.keys(lightConeIdMap) as LightConeId[]
+  Object.keys(lightConeIdMap) as LightConeId[],
 ) as Record<LightConeId, ItemConfigEquipment>
 export { ItemConfigEquipment }

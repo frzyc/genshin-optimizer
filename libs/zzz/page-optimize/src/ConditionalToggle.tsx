@@ -30,7 +30,7 @@ function ConditionalToggle({ condMeta }: { condMeta: CondMeta }) {
           [condMeta.key]: value,
         },
       })),
-    [database.chars, characterKey, condMeta.key]
+    [database.chars, characterKey, condMeta.key],
   )
   if (condMeta.max > 1)
     return (

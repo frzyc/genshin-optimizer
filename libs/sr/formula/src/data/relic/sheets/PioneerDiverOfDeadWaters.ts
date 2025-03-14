@@ -21,7 +21,7 @@ const { debuffCount } = allNumConditionals(
   key,
   true,
   dm[4].debuffThreshold1,
-  dm[4].debuffThreshold2
+  dm[4].debuffThreshold2,
 )
 
 const sheet = registerRelic(
@@ -33,9 +33,9 @@ const sheet = registerRelic(
   registerBuff(
     'set2_common_dmg_',
     ownBuff.premod.common_dmg_.add(
-      cmpGE(relicCount, 2, affectedByDebuff.ifOn(dm[2].dmg_))
+      cmpGE(relicCount, 2, affectedByDebuff.ifOn(dm[2].dmg_)),
     ),
-    cmpGE(relicCount, 2, 'infer', '')
+    cmpGE(relicCount, 2, 'infer', ''),
   ),
   registerBuff(
     'set4_crit_dmg_',
@@ -48,19 +48,19 @@ const sheet = registerRelic(
             debuffCount,
             dm[4].debuffThreshold2,
             prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_2),
-            prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_1)
-          )
-        )
-      )
+            prod(wearerDebuff.ifOn(2, 1), dm[4].crit_dmg_1),
+          ),
+        ),
+      ),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
+    cmpGE(relicCount, 4, 'infer', ''),
   ),
   registerBuff(
     'set4_crit_',
     ownBuff.premod.crit_.add(
-      cmpGE(relicCount, 4, wearerDebuff.ifOn(dm[4].crit_))
+      cmpGE(relicCount, 4, wearerDebuff.ifOn(dm[4].crit_)),
     ),
-    cmpGE(relicCount, 4, 'infer', '')
-  )
+    cmpGE(relicCount, 4, 'infer', ''),
+  ),
 )
 export default sheet

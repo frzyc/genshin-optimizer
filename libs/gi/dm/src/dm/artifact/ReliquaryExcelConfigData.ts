@@ -42,11 +42,11 @@ type ReliquaryExcelConfigData = {
   gadgetId: number //70600041
 }
 const reliquaryExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ReliquaryExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/ReliquaryExcelConfigData.json'),
 ) as ReliquaryExcelConfigData[]
 
 const reliquaryExcelConfigData = Object.fromEntries(
-  reliquaryExcelConfigDataSrc.map((data) => [data.id, data])
+  reliquaryExcelConfigDataSrc.map((data) => [data.id, data]),
 ) as Record<number, ReliquaryExcelConfigData>
 
 dumpFile(
@@ -55,8 +55,8 @@ dumpFile(
     reliquaryExcelConfigDataSrc.map((data) => [
       data.id,
       [data.setId, nameToKey(TextMapEN[data.nameTextMapHash])],
-    ])
-  )
+    ]),
+  ),
 )
 
 export { reliquaryExcelConfigData }

@@ -9,11 +9,11 @@ type RewardExcelConfigData = {
 }
 
 const rewardExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/RewardExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/RewardExcelConfigData.json'),
 ) as RewardExcelConfigData[]
 //character data
 const rewardExcelConfigData = Object.fromEntries(
-  rewardExcelConfigDataSrc.map((data) => [data.rewardId, data])
+  rewardExcelConfigDataSrc.map((data) => [data.rewardId, data]),
 ) as { [rewardId: number]: RewardExcelConfigData }
 
 export { rewardExcelConfigData }

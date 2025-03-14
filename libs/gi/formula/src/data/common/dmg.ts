@@ -33,29 +33,29 @@ const data: TagMapNodeEntries = [
         prod(
           sum(enemy.common.lvl, 100),
           sum(percent(1), prod(-1, enemy.common.defRed_)), // TODO: Cap
-          sum(percent(1), prod(-1, enemy.common.defIgn)) // TODO: Cap
-        )
+          sum(percent(1), prod(-1, enemy.common.defIgn)), // TODO: Cap
+        ),
       ),
-      enemy.common.postRes
-    )
+      enemy.common.postRes,
+    ),
   ),
   ownBuff.dmg.out.add(
     prod(
       own.reaction.ampMulti,
       sum(own.formula.base, own.reaction.cataAddi),
-      sum(percent(1), own.final.dmg_)
-    )
+      sum(percent(1), own.final.dmg_),
+    ),
   ),
   ownBuff.dmg.critMulti.add(
     lookup(own.common.critMode, {
       crit: sum(1, own.common.cappedCritRate_),
       nonCrit: 1,
       avg: sum(1, prod(own.common.cappedCritRate_, own.final.critDMG_)),
-    })
+    }),
   ),
 
   ownBuff.reaction.infusion.add(
-    subscript(own.reaction.infusionIndex.max, infusionTable)
+    subscript(own.reaction.infusionIndex.max, infusionTable),
   ),
   ownBuff.reaction.infusionIndex.add(0),
 ]

@@ -25,15 +25,15 @@ const sheet = registerRelic(
         cmpGE(
           sum(
             ...allPathKeys.map((path) =>
-              cmpEq(own.char.path, path, team.common.count.withPath(path))
-            )
+              cmpEq(own.char.path, path, team.common.count.withPath(path)),
+            ),
           ),
           1,
-          dm[2].crit_
-        )
-      )
+          dm[2].crit_,
+        ),
+      ),
     ),
-    cmpGE(relicCount, 2, 'infer', '')
-  )
+    cmpGE(relicCount, 2, 'infer', ''),
+  ),
 )
 export default sheet

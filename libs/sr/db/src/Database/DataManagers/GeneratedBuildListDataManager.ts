@@ -47,7 +47,7 @@ export class GeneratedBuildListDataManager extends DataManager<
           const relicIds = objKeyMap(allRelicSlotKeys, (slotKey) =>
             this.database.relics.get(relicIdsRaw[slotKey])?.slotKey === slotKey
               ? relicIdsRaw[slotKey]
-              : undefined
+              : undefined,
           )
 
           return { relicIds, lightConeId, value }

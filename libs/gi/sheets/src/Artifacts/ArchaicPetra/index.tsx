@@ -28,14 +28,14 @@ const set4TallyWrite = greaterEqStr(
   greaterEqStr(
     sum(...absorbableEle.map((ele) => equal(condNode, ele, 1))),
     1,
-    input.charKey
-  )
+    input.charKey,
+  ),
 )
 const set4Nodes = Object.fromEntries(
   absorbableEle.map((e) => [
     `${e}_dmg_`,
     nonStackBuff('ap4', `${e}_dmg_`, equal(condNode, e, percent(0.35))),
-  ])
+  ]),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -74,7 +74,7 @@ const sheet: SetEffectSheet = {
                 },
               ],
             },
-          ])
+          ]),
         ),
       },
     ],

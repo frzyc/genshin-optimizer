@@ -36,15 +36,15 @@ export function LevelSelect({
     (level = 1) => {
       level = clamp(level, 1, useLow ? maxLevelLow : maxLevel)
       const milestone = milestoneMaxLevels.findIndex(
-        (ascenML) => level <= ascenML
+        (ascenML) => level <= ascenML,
       ) as MilestoneKey
       setBoth({ level, milestone })
     },
-    [setBoth, milestoneMaxLevels, useLow]
+    [setBoth, milestoneMaxLevels, useLow],
   )
   const setAscension = useCallback(() => {
     const lowerAscension = milestoneMaxLevels.findIndex(
-      (ascenML) => level !== 60 && level === ascenML
+      (ascenML) => level !== 60 && level === ascenML,
     ) as MilestoneKey
     if (milestone === lowerAscension)
       setBoth({ milestone: (milestone + 1) as MilestoneKey })
@@ -109,7 +109,7 @@ export function LevelSelect({
                   : `Lv. ${lv}/${milestoneMaxLevels[as]}`}
               </MenuItem>
             )
-          }
+          },
         )}
       </DropdownButton>
     </Box>

@@ -48,7 +48,7 @@ const PageArchive = lazy(() => import('@genshin-optimizer/gi/page-archive'))
 const PageDocumentation = lazy(() => import('@genshin-optimizer/gi/page-doc'))
 const PageScanner = lazy(() => import('@genshin-optimizer/gi/page-scanner'))
 const PageCharacters = lazy(
-  () => import('@genshin-optimizer/gi/page-characters')
+  () => import('@genshin-optimizer/gi/page-characters'),
 )
 const PageTeams = lazy(() => import('@genshin-optimizer/gi/page-teams'))
 const PageTeam = lazy(() => import('@genshin-optimizer/gi/page-team'))
@@ -77,13 +77,13 @@ function App() {
       dbs[index] = db
       setDatabases(dbs)
     },
-    [databases, setDatabases]
+    [databases, setDatabases],
   )
 
   const database = databases[dbIndex - 1]
   const dbContextObj = useMemo(
     () => ({ databases, setDatabases, database, setDatabase }),
-    [databases, setDatabases, database, setDatabase]
+    [databases, setDatabases, database, setDatabase],
   )
   const SillyContextObj = useSilly()
   const SnowContextObj = useSnow()
@@ -158,7 +158,7 @@ function Content() {
                 minWidth: 160,
                 maxWidth: Math.min(
                   adWidth >= 160 && adWidth <= 320 ? adWidth : adWidth * 0.5,
-                  AD_RAIL_MAXWIDTH
+                  AD_RAIL_MAXWIDTH,
                 ),
                 height: AD_RAIL_HEIGHT,
                 width: '100%',

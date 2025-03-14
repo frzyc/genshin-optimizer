@@ -113,8 +113,8 @@ const a4_skill_dmg_ = greaterEq(
   4,
   min(
     prod(percent(dm.passive2.dmgInc), input.total.eleMas), // TODO: is this total or premod; test with nahida
-    percent(dm.passive2.maxDmgInc)
-  )
+    percent(dm.passive2.maxDmgInc),
+  ),
 )
 const a4_burst_dmg_ = { ...a4_skill_dmg_ }
 
@@ -122,7 +122,7 @@ const [condWithMirrorsPath, condWithMirrors] = cond(key, 'withMirrors')
 const withMirrorsInfusion = equalStr(
   condWithMirrors,
   'on',
-  constant(elementKey)
+  constant(elementKey),
 )
 
 const debateStacksArr = range(1, dm.constellation2.numStacks)
@@ -133,16 +133,16 @@ const c2DebateStacks_eleMas = greaterEq(
   lookup(
     condDebateStacks,
     objKeyMap(debateStacksArr, (stack) =>
-      prod(stack, dm.constellation2.eleMas)
+      prod(stack, dm.constellation2.eleMas),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const mirrorsConsumedArr = range(0, 3)
 const [condMirrorsConsumedPath, condMirrorsConsumed] = cond(
   key,
-  'mirrorsConsumed'
+  'mirrorsConsumed',
 )
 const c4MirrorsConsumed_eleMasDisp = infoMut(
   greaterEq(
@@ -151,17 +151,17 @@ const c4MirrorsConsumed_eleMasDisp = infoMut(
     lookup(
       condMirrorsConsumed,
       objKeyMap(mirrorsConsumedArr, (count) =>
-        prod(count, dm.constellation4.eleMas)
+        prod(count, dm.constellation4.eleMas),
       ),
-      naught
-    )
+      naught,
+    ),
   ),
-  { path: 'eleMas', isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true },
 )
 const c4MirrorsConsumed_eleMas = unequal(
   input.activeCharKey,
   key,
-  c4MirrorsConsumed_eleMasDisp
+  c4MirrorsConsumed_eleMasDisp,
 )
 const c4MirrorsGenerated_dendro_dmg_ = greaterEq(
   input.constellation,
@@ -172,33 +172,33 @@ const c4MirrorsGenerated_dendro_dmg_ = greaterEq(
     unequal(
       condMirrorsConsumed,
       undefined,
-      prod(3, percent(dm.constellation4.dendro_dmg_))
+      prod(3, percent(dm.constellation4.dendro_dmg_)),
     ),
     lookup(
       condMirrorsConsumed,
       objKeyMap(mirrorsConsumedArr, (count) =>
-        prod(3 - count, percent(dm.constellation4.dendro_dmg_))
+        prod(3 - count, percent(dm.constellation4.dendro_dmg_)),
       ),
-      naught
-    )
-  )
+      naught,
+    ),
+  ),
 )
 
 const [condExcessMirrorPath, condExcessMirror] = cond(key, 'excessMirror')
 const c6ExcessMirror_critRate_ = greaterEq(
   input.constellation,
   6,
-  equal(condExcessMirror, 'on', dm.constellation6.critRate_)
+  equal(condExcessMirror, 'on', dm.constellation6.critRate_),
 )
 const c6ExcessMirror_critDMG_ = greaterEq(
   input.constellation,
   6,
-  equal(condExcessMirror, 'on', dm.constellation6.critDMG_)
+  equal(condExcessMirror, 'on', dm.constellation6.critDMG_),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -208,13 +208,13 @@ const dmgFormulas = {
     rushDmg: splitScaleDmgNode(
       ['atk', 'eleMas'],
       [dm.skill.rushDmgAtk, dm.skill.rushDmgEm],
-      'skill'
+      'skill',
     ),
     mirrorDmg1: splitScaleDmgNode(
       ['atk', 'eleMas'],
       [dm.skill.mirrorDmgAtk, dm.skill.mirrorDmgEm],
       'skill',
-      { premod: { skill_dmg_: a4_skill_dmg_ } }
+      { premod: { skill_dmg_: a4_skill_dmg_ } },
     ),
   },
   burst: {
@@ -222,7 +222,7 @@ const dmgFormulas = {
       ['atk', 'eleMas'],
       [dm.burst.instanceDmgAtk, dm.burst.instanceDmgEm],
       'burst',
-      { premod: { burst_dmg_: a4_burst_dmg_ } }
+      { premod: { burst_dmg_: a4_burst_dmg_ } },
     ),
   },
   passive2: {

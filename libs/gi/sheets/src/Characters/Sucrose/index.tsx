@@ -83,7 +83,7 @@ const [condAbsorptionPath, condAbsorption] = cond(key, 'absorption')
 // A1 Swirl Reaction Element
 const condSwirlPaths = objKeyMap(absorbableEle, (ele) => [key, `swirl${ele}`])
 const condSwirls = objKeyMap(absorbableEle, (ele) =>
-  condReadNode(condSwirlPaths[ele])
+  condReadNode(condSwirlPaths[ele]),
 )
 // Set to "hit" if skill hit opponents
 const [condSkillHitOpponentPath, condSkillHitOpponent] = cond(key, 'skillHit')
@@ -95,16 +95,16 @@ const asc1 = objKeyMap(absorbableEle, (ele) =>
     target.charKey,
     key, // Not applying to Sucrose
     equal(target.charEle, condSwirls[ele], asc1Disp),
-    { path: 'eleMas', isTeamBuff: true }
-  )
+    { path: 'eleMas', isTeamBuff: true },
+  ),
 ) // And element matches the swirl
 const asc4OptNode = infoMut(
   greaterEq(
     input.asc,
     4,
-    prod(percent(dm.passive2.eleMas_), input.premod.eleMas)
+    prod(percent(dm.passive2.eleMas_), input.premod.eleMas),
   ),
-  { path: 'eleMas', isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true },
 )
 const asc4Disp = equal('hit', condSkillHitOpponent, asc4OptNode)
 const asc4 = unequal(target.charKey, key, asc4Disp)
@@ -112,12 +112,12 @@ const c6Base = greaterEq(input.constellation, 6, percent(0.2))
 
 const c6Bonus = objKeyMap(
   absorbableEle.map((ele) => `${ele}_dmg_` as const),
-  (key) => equal(condAbsorption, key.slice(0, -5), c6Base)
+  (key) => equal(condAbsorption, key.slice(0, -5), c6Base),
 )
 
 export const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -136,9 +136,9 @@ export const dmgFormulas = {
           key,
           dmgNode('atk', dm.burst.dmg_, 'burst', {
             hit: { ele: constant(key) },
-          })
+          }),
         ),
-      ])
+      ]),
     ),
   },
   passive2: {
@@ -278,12 +278,12 @@ const sheet: TalentSheet = {
                   dmgFormulas.burst[eleKey as keyof typeof dmgFormulas.burst],
                   {
                     name: ct.chg(`burst.skillParams.1`),
-                  }
+                  },
                 ),
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.condTem('constellation6', {
@@ -301,7 +301,7 @@ const sheet: TalentSheet = {
             ),
             fields: Object.values(c6Bonus).map((n) => ({ node: n })),
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('constellation6', {

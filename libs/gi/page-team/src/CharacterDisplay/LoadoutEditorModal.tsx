@@ -38,7 +38,7 @@ export function LoadoutEditorModal({
     const index = database.teams
       .get(teamId)!
       .loadoutData.findIndex(
-        (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+        (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId,
       )
     if (index < 0) return
     database.teams.set(teamId, (team) => {

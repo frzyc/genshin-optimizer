@@ -33,7 +33,7 @@ import {
 
 const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
-  (key) => input.total[key]
+  (key) => input.total[key],
 )
 
 export const hitEle = objKeyMap(allElementKeys, (ele) => ({
@@ -47,7 +47,7 @@ const inferredHitEle = stringPrio(
       skill: input.charEle,
       burst: input.charEle,
     },
-    undefined
+    undefined,
   ),
   lookup(
     input.weaponType,
@@ -57,9 +57,9 @@ const inferredHitEle = stringPrio(
       polearm: infusionNode,
       catalyst: input.charEle,
     },
-    undefined
+    undefined,
   ),
-  'physical'
+  'physical',
 )
 
 function getTalentType(
@@ -69,7 +69,7 @@ function getTalentType(
     | 'plunging_collision'
     | 'plunging_impact'
     | 'skill'
-    | 'burst'
+    | 'burst',
 ) {
   switch (move) {
     case 'normal':
@@ -95,7 +95,7 @@ export function customDmgNode(
     | 'skill'
     | 'burst'
     | 'elemental',
-  additional: Data = {}
+  additional: Data = {},
 ): NumNode {
   return data(
     input.hit.dmg,
@@ -108,7 +108,7 @@ export function customDmgNode(
         },
       },
       additional,
-    ])
+    ]),
   )
 }
 /** Note: `additional` applies only to this formula */
@@ -121,7 +121,7 @@ export function customHealNode(base: NumNode, additional?: Data): NumNode {
   const healInc = input.total.healInc
   const healNode = prod(
     sum(base, healInc),
-    sum(one, input.total.heal_, input.total.incHeal_)
+    sum(one, input.total.heal_, input.total.incHeal_),
   )
 
   return additional ? data(healNode, additional) : healNode
@@ -149,7 +149,7 @@ export function dmgNode(
     | 'burst',
   additional: Data = {},
   specialMultiplier?: NumNode,
-  overrideTalentType?: 'skill' | 'burst' | 'auto'
+  overrideTalentType?: 'skill' | 'burst' | 'auto',
 ): NumNode {
   const talentType = overrideTalentType ?? getTalentType(move)
   return customDmgNode(
@@ -158,10 +158,10 @@ export function dmgNode(
         unit: '%',
       }),
       input.total[base],
-      ...(specialMultiplier ? [infoMut(specialMultiplier, { unit: '%' })] : [])
+      ...(specialMultiplier ? [infoMut(specialMultiplier, { unit: '%' })] : []),
     ),
     move,
-    additional
+    additional,
   )
 }
 /** Note: `additional` applies only to this formula */
@@ -176,7 +176,7 @@ export function splitScaleDmgNode(
     | 'skill'
     | 'burst',
   additional: Data = {},
-  specialMultiplier?: NumNode
+  specialMultiplier?: NumNode,
 ): NumNode {
   const talentType = getTalentType(move)
   return customDmgNode(
@@ -189,12 +189,12 @@ export function splitScaleDmgNode(
           input.total[base],
           ...(specialMultiplier
             ? [infoMut(specialMultiplier, { unit: '%' })]
-            : [])
-        )
-      )
+            : []),
+        ),
+      ),
     ),
     move,
-    additional
+    additional,
   )
 }
 const allPlungingDmgKeys = ['dmg', 'low', 'high'] as const
@@ -203,7 +203,7 @@ export function plungingDmgNodes(
   base: MainStatKey | SubstatKey,
   lvlMultipliers: Record<PlungingDmgKey, number[]>,
   additional: Data = {},
-  specialMultiplier?: NumNode
+  specialMultiplier?: NumNode,
 ): Record<PlungingDmgKey, NumNode> {
   const nodes = Object.fromEntries(
     Object.entries(lvlMultipliers).map(([key, multi]) => [
@@ -213,9 +213,9 @@ export function plungingDmgNodes(
         multi,
         key === 'dmg' ? 'plunging_collision' : 'plunging_impact',
         additional,
-        specialMultiplier
+        specialMultiplier,
       ),
-    ])
+    ]),
   )
   verifyObjKeys(nodes, allPlungingDmgKeys)
   return nodes
@@ -226,11 +226,11 @@ export function shieldNode(
   base: MainStatKey | SubstatKey,
   percent: NumNode | number,
   flat: NumNode | number,
-  additional?: Data
+  additional?: Data,
 ): NumNode {
   return customShieldNode(
     sum(prod(percent, input.total[base]), flat),
-    additional
+    additional,
   )
 }
 /** Note: `additional` applies only to this formula */
@@ -238,7 +238,7 @@ export function healNode(
   base: MainStatKey | SubstatKey,
   percent: NumNode | number,
   flat: NumNode | number,
-  additional?: Data
+  additional?: Data,
 ): NumNode {
   return customHealNode(sum(prod(percent, input.total[base]), flat), additional)
 }
@@ -255,7 +255,7 @@ export function shieldNodeTalent(
     | 'skill'
     | 'burst',
   additional?: Data,
-  multiplier?: NumNode | number
+  multiplier?: NumNode | number,
 ): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
@@ -264,11 +264,11 @@ export function shieldNodeTalent(
       prod(
         subscript(talentIndex, baseMultiplier, { unit: '%' }),
         input.total[base],
-        ...(multiplier ? [multiplier] : [])
+        ...(multiplier ? [multiplier] : []),
       ),
-      subscript(talentIndex, flat)
+      subscript(talentIndex, flat),
     ),
-    additional
+    additional,
   )
 }
 export function shieldElement(element: ElementKey, shieldNode: NumNode) {
@@ -289,7 +289,7 @@ export function healNodeTalent(
     | 'skill'
     | 'burst',
   additional?: Data,
-  multiplier?: NumNode | number
+  multiplier?: NumNode | number,
 ): NumNode {
   const talentType = getTalentType(move)
   const talentIndex = input.total[`${talentType}Index`]
@@ -298,22 +298,22 @@ export function healNodeTalent(
       prod(
         subscript(talentIndex, baseMultiplier, { unit: '%' }),
         input.total[base],
-        ...(multiplier ? [multiplier] : [])
+        ...(multiplier ? [multiplier] : []),
       ),
-      prod(subscript(talentIndex, flat), ...(multiplier ? [multiplier] : []))
+      prod(subscript(talentIndex, flat), ...(multiplier ? [multiplier] : [])),
     ),
-    additional
+    additional,
   )
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   display: { [key: string]: DisplaySub },
-  additional: Data = {}
+  additional: Data = {},
 ): Data {
   function curve(base: number, lvlCurve: CharacterGrowCurveKey): NumNode {
     return prod(
       base,
-      subscript<number>(input.lvl, allStats.char.expCurve[lvlCurve])
+      subscript<number>(input.lvl, allStats.char.expCurve[lvlCurve]),
     )
   }
   const element = getCharEle(key)
@@ -337,7 +337,7 @@ export function dataObjForCharacterSheet(
   layeredAssignment(
     data,
     ['teamBuff', 'tally', 'maxEleMas'],
-    input.premod.eleMas
+    input.premod.eleMas,
   )
   if (weaponType !== 'catalyst') {
     if (!data.display!['basic']) data.display!['basic'] = {}

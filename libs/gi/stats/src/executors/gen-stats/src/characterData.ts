@@ -64,7 +64,7 @@ export default function characterData() {
         propGrowCurves.map(({ type, growCurve }) => [
           propTypeMap[type],
           growCurve,
-        ])
+        ]),
       ) as Record<'hp' | 'atk' | 'def', CharacterGrowCurveKey>
       const { infoBirthDay, infoBirthMonth, avatarAssocType } =
         fetterInfoExcelConfigData[charid]
@@ -97,7 +97,7 @@ export default function characterData() {
         ascensionBonus,
       }
       return [locCharKey, result]
-    })
+    }),
   ) as CharacterDatas
   data.Somnia = somniaData as CharacterDataGen
   return data

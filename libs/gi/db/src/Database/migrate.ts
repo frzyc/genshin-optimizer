@@ -116,7 +116,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
                   disabled: false,
                 },
               ],
-            ])
+            ]),
         )
         return { ...b, statFilters: newStatFilters }
       })
@@ -133,7 +133,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
           // Invert the list; should be all location keys that are not in allowLocations
           // We will remove extra keys later in validation code
           const excludedLocations = allLocationCharacterKeys.filter(
-            (loc) => !allowLocations.includes(loc)
+            (loc) => !allowLocations.includes(loc),
           )
           delete b.allowLocations
           return { ...b, excludedLocations }
@@ -230,13 +230,13 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
       (
         team: Team & {
           teamCharIds: Array<string | undefined>
-        }
+        },
       ) => {
         const { teamCharIds = [] } = team
         team.loadoutData = teamCharIds.map((teamCharId) => {
           if (!teamCharId) return undefined
           const teamChar = teamchars.find(
-            (tc: { id: string }) => tc.id === teamCharId
+            (tc: { id: string }) => tc.id === teamCharId,
           )
           if (!teamChar) return undefined
           const {
@@ -259,7 +259,7 @@ export function migrateGOOD(good: IGOOD & IGO): IGOOD & IGO {
             compareBuildTcId,
           } as LoadoutDatum
         })
-      }
+      },
     )
   })
 
@@ -366,7 +366,7 @@ export function migrate(storage: DBStorage) {
                   disabled: false,
                 },
               ],
-            ])
+            ]),
         )
         storage.set(key, { ...buildSettings, statFilters: newStatFilters })
       }
@@ -383,7 +383,7 @@ export function migrate(storage: DBStorage) {
           // Invert the list; should be all location keys that are not in allowLocations
           // We will remove extra keys later in validation code
           const excludedLocations = allLocationCharacterKeys.filter(
-            (loc) => !allowLocations.includes(loc)
+            (loc) => !allowLocations.includes(loc),
           )
           delete b.allowLocations
           storage.set(key, {
@@ -525,7 +525,7 @@ interface IGOCharacter extends ICharacter {
   team: [
     teammate1: CharacterKey | '',
     teammate2: CharacterKey | '',
-    teammate3: CharacterKey | ''
+    teammate3: CharacterKey | '',
   ]
   teamConditional: Partial<Record<CharacterKey, object>>
 }

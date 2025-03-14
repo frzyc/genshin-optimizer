@@ -96,7 +96,7 @@ export class DisplayWeaponEntry extends DataEntry<
     value:
       | Partial<IDisplayWeapon>
       | ((v: IDisplayWeapon) => Partial<IDisplayWeapon> | void)
-      | { action: 'reset' }
+      | { action: 'reset' },
   ): boolean {
     if ('action' in value) {
       if (value.action === 'reset') return super.set(initialOption())

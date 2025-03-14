@@ -17,13 +17,13 @@ import type { Linear } from './linearUB'
  */
 export function pickSplitKey(
   appxs: Linear[],
-  arts: ArtifactsBySlot
+  arts: ArtifactsBySlot,
 ): { splitOn: string; splitVal: number } {
   const minMax = computeFullArtRange(arts)
 
   const allKeys = [
     ...new Set(
-      appxs.flatMap((appx) => Object.keys(appx).filter((k) => k !== '$c'))
+      appxs.flatMap((appx) => Object.keys(appx).filter((k) => k !== '$c')),
     ),
   ]
 
@@ -32,7 +32,7 @@ export function pickSplitKey(
       const { min, max } = minMax[stat]
       const oldHeur = appxs.reduce(
         (h, lin) => h + ((max - min) * (lin[stat] ?? 0)) ** 2,
-        0
+        0,
       )
 
       const { lowerRange, upperRange } = allArtifactSlotKeys.reduce(
@@ -49,7 +49,7 @@ export function pickSplitKey(
             upperRange: upperRange + (maxv - lub),
           }
         },
-        { lowerRange: 0, upperRange: 0 }
+        { lowerRange: 0, upperRange: 0 },
       )
       const newHeur =
         appxs.reduce(
@@ -57,14 +57,14 @@ export function pickSplitKey(
             h +
             (lowerRange * (lin[stat] ?? 0)) ** 2 +
             (upperRange * (lin[stat] ?? 0)) ** 2,
-          0
+          0,
         ) / 2
 
       const heur = newHeur - oldHeur
       if (heur < minHeur) return { bestKey: stat, minHeur: heur }
       return { bestKey, minHeur }
     },
-    { bestKey: '', minHeur: Infinity }
+    { bestKey: '', minHeur: Infinity },
   )
 
   // Pick key that gives minimum heur (maximum reduction old -> new)
@@ -77,7 +77,7 @@ export function pickSplitKey(
 /** Splits a filter based on the set key into 32 chunks. */
 export function splitOnSet(
   setKey: ArtifactSetKey,
-  arts: ArtifactsBySlot
+  arts: ArtifactsBySlot,
 ): ArtifactsBySlot[] {
   return splitArts(arts, (arts) => arts.map((art) => art.set === setKey))
 }
@@ -89,17 +89,17 @@ export function splitOnSet(
 export function splitAtValue(
   stat: string,
   threshold: number,
-  arts: ArtifactsBySlot
+  arts: ArtifactsBySlot,
 ): ArtifactsBySlot[] {
   threshold -= arts.base[stat]
   const valsBySlot = allArtifactSlotKeys.map((slot) =>
     arts.values[slot]
       .map((art) => ({ art, val: art.values[stat] }))
-      .sort((a, b) => a.val - b.val)
+      .sort((a, b) => a.val - b.val),
   )
   const mins = valsBySlot.map(([first]) => first.val)
   const ranges = valsBySlot.map(
-    (arts) => arts[arts.length - 1].val - arts[0].val
+    (arts) => arts[arts.length - 1].val - arts[0].val,
   )
   const totalRange = ranges.reduce((a, b) => a + b)
   const cutoff =
@@ -124,7 +124,7 @@ export function splitAtValue(
 
 function splitArts(
   { base, values }: ArtifactsBySlot,
-  predicate: (arts: ArtifactBuildData[], slotIndex: number) => boolean[]
+  predicate: (arts: ArtifactBuildData[], slotIndex: number) => boolean[],
 ): ArtifactsBySlot[] {
   const partition = allArtifactSlotKeys.map((slot, si) => {
     const arts = values[slot]

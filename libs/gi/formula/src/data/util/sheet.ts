@@ -25,7 +25,7 @@ export function register(
     return { tag: { ...tag, sheet }, value }
   }
   return data.flatMap((data) =>
-    Array.isArray(data) ? data.map(internal) : internal(data)
+    Array.isArray(data) ? data.map(internal) : internal(data),
   )
 }
 
@@ -49,7 +49,7 @@ export function customDmg(
     tag(cond, { move }),
     ownBuff.formula.base.add(base),
     ownBuff.prep.ele.add(eleOverride ?? own.reaction.infusion),
-    ...extra
+    ...extra,
   )
 }
 
@@ -76,7 +76,7 @@ export function customShield(
     'shield',
     ele ? tag(cond, { ele }) : cond,
     ownBuff.formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
@@ -92,7 +92,7 @@ export function customHeal(
     'heal',
     cond,
     ownBuff.formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
@@ -107,7 +107,7 @@ function registerFormula(
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
-      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
+      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond),
     ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
@@ -119,7 +119,7 @@ export function listingItem(t: Read, cond?: string | StrNode) {
 
 export function readStat(
   list: Record<Stat | 'shield_', Read>,
-  key: StatKey
+  key: StatKey,
 ): Read {
   return key.endsWith('_dmg_')
     ? list['dmg_'][key.slice(0, -5) as ElementWithPhyKey]

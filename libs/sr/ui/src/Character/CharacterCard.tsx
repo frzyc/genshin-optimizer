@@ -140,7 +140,7 @@ function StatLine({
           calc
             .withTag({ src: characterKey, dst: characterKey })
             .compute(own.final[statKey]).val,
-          statKey
+          statKey,
         ).toFixed(statToFixed(statKey))}
         {getUnitStr(statKey)}
       </span>

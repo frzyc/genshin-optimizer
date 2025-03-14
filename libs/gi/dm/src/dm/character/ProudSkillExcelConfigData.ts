@@ -76,7 +76,7 @@ export type ProudSkillExcelConfigData = {
   // ]
 }
 const proudSkillExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/ProudSkillExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/ProudSkillExcelConfigData.json'),
 ) as ProudSkillExcelConfigData[]
 
 const proudSkillExcelConfigData = {} as {

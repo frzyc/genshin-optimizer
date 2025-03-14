@@ -67,8 +67,8 @@ describe('character test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
-        )
+          1,
+        ),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -106,9 +106,9 @@ describe('lightCone test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
+          1,
         ),
-        ...lightConeTagMapNodeEntries(lcKey, lvl, ascension as AscensionKey, 1)
+        ...lightConeTagMapNodeEntries(lcKey, lvl, ascension as AscensionKey, 1),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -147,9 +147,9 @@ describe('char+lightCone test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
+          1,
         ),
-        ...lightConeTagMapNodeEntries(lcKey, 1, 0, 1)
+        ...lightConeTagMapNodeEntries(lcKey, 1, 0, 1),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -179,8 +179,8 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
-        )
+          1,
+        ),
       ),
       ...withMember(
         'Argenti',
@@ -199,8 +199,8 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          2
-        )
+          2,
+        ),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -228,8 +228,8 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
-        )
+          1,
+        ),
       ),
       ...withMember(
         'Argenti',
@@ -248,9 +248,9 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          2
+          2,
         ),
-        teamBuff.premod.atk.add(cmpEq(target.char.teamPosition, 1, 10000))
+        teamBuff.premod.atk.add(cmpEq(target.char.teamPosition, 1, 10000)),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -279,8 +279,8 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
-        )
+          1,
+        ),
       ),
       ...withMember(
         'Argenti',
@@ -299,13 +299,13 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          2
-        )
+          2,
+        ),
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
     expect(
-      calc.withTag({ src: 'Argenti' }).compute(own.char.maxEnergy).val
+      calc.withTag({ src: 'Argenti' }).compute(own.char.maxEnergy).val,
     ).toEqual(180)
     expect(calc.compute(team.char.maxEnergy.sum).val).toEqual(189)
   })
@@ -330,9 +330,9 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
+          1,
         ),
-        ownBuff.premod.heal_.add(1.5)
+        ownBuff.premod.heal_.add(1.5),
       ),
       ...withMember(
         'Argenti',
@@ -351,9 +351,9 @@ describe('team test', () => {
             bonusAbilities: {},
             statBoosts: {},
           },
-          1
+          1,
         ),
-        ownBuff.premod.incHeal_.add(2.5)
+        ownBuff.premod.incHeal_.add(2.5),
       ),
       ownBuff.formula.base.add(target.final.hp),
     ]
@@ -361,14 +361,14 @@ describe('team test', () => {
     const copiedHealFormula = prod(
       semiOwn.formula.base,
       sum(percent(1), own.final.heal_),
-      sum(percent(1), target.final.incHeal_)
+      sum(percent(1), target.final.incHeal_),
     )
 
     expect(
       calc
         .withTag({ src: 'Acheron', dst: 'Argenti' })
         .toDebug()
-        .compute(copiedHealFormula).val
+        .compute(copiedHealFormula).val,
     ).toEqual(142.56 * (1 + 1.5) * (1 + 2.5))
   })
 })

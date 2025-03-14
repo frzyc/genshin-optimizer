@@ -95,7 +95,7 @@ export function LoadoutEditor({
       conditional,
       [],
       (o) => typeof o !== 'object',
-      () => count++
+      () => count++,
     )
     return count
   }, [conditional])

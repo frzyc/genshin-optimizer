@@ -67,7 +67,7 @@ export default function TeamExportModal({
   // If a mtarget is selected as opt-target, enforce it must be selected
   const enforceOptTargetMtarget = (
     loadoutDatum: LoadoutDatum,
-    setting: LoadoutExportSetting
+    setting: LoadoutExportSetting,
   ) => {
     const teamChar = database.teamChars.get(loadoutDatum.teamCharId)!
     const optConfig = database.optConfigs.get(teamChar.optConfigId)!
@@ -86,8 +86,8 @@ export default function TeamExportModal({
       loadoutData.map((loadoutDatum) =>
         loadoutDatum
           ? enforceOptTargetMtarget(loadoutDatum, defLoadoutExportSetting())
-          : defLoadoutExportSetting()
-      )
+          : defLoadoutExportSetting(),
+      ),
     )
   const onExport = () => {
     const data = database.teams.export(teamId, loadoutDataExportSetting)
@@ -105,8 +105,8 @@ export default function TeamExportModal({
       loadoutData.map((loadoutDatum) =>
         loadoutDatum
           ? enforceOptTargetMtarget(loadoutDatum, defLoadoutExportSetting())
-          : defLoadoutExportSetting()
-      )
+          : defLoadoutExportSetting(),
+      ),
     )
   }
 
@@ -125,7 +125,7 @@ export default function TeamExportModal({
           convertTcBuilds: buildTcIds,
           exportCustomMultiTarget: customMultiTargets?.map((_, i) => i) ?? [],
         })
-      })
+      }),
     )
   }
 
@@ -188,7 +188,7 @@ export default function TeamExportModal({
                       }
                     />
                   </Grid>
-                )
+                ),
             )}
           </Grid>
         </CardContent>
@@ -307,7 +307,7 @@ function LoadoutSetting({
                       setSetting({
                         exportCustomMultiTarget: toggleInArr(
                           setting.exportCustomMultiTarget,
-                          i
+                          i,
                         ),
                       })
                     }
@@ -390,7 +390,7 @@ function LoadoutSetting({
                   setSetting({
                     convertTcBuilds: toggleInArr(
                       setting.convertTcBuilds,
-                      buildTcId
+                      buildTcId,
                     ),
                   })
                 }

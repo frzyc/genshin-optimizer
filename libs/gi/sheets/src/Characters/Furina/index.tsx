@@ -123,13 +123,13 @@ const dm = {
 
 const [condSkillHpConsumeStacksPath, condSkillHpConsumeStacks] = cond(
   key,
-  'skillHpConsumeStacks'
+  'skillHpConsumeStacks',
 )
 const skillHpConsumeStacksArr = range(1, 4)
 const member_mult_ = lookup(
   condSkillHpConsumeStacks,
   objKeyMap(skillHpConsumeStacksArr, (stack) => percent(1 + 0.1 * stack)),
-  one
+  one,
 )
 
 const [condBurstFanfarePath, condBurstFanfare] = cond(key, 'burstFanfare')
@@ -137,28 +137,28 @@ const burstFanfareArr = range(50, dm.burst.maxFanfare, 50)
 const c1FanfareArr = range(
   50,
   dm.burst.maxFanfare + dm.constellation1.fanfareLimitInc,
-  50
+  50,
 )
 const clampedFanfareNum = lookup(
   condBurstFanfare,
   objKeyMap(c1FanfareArr, (stacks) =>
-    stacks > 450 ? greaterEq(input.constellation, 1, stacks) : constant(stacks)
+    stacks > 450 ? greaterEq(input.constellation, 1, stacks) : constant(stacks),
   ),
-  naught
+  naught,
 )
 const burstFanfare_all_dmg_ = prod(
   clampedFanfareNum,
   subscript(input.total.burstIndex, dm.burst.dmgIncRatio, {
     unit: '%',
     fixed: 2,
-  })
+  }),
 )
 const burstFanfare_incHeal_ = prod(
   clampedFanfareNum,
   subscript(input.total.burstIndex, dm.burst.heal_ratio, {
     unit: '%',
     fixed: 2,
-  })
+  }),
 )
 
 const a4Member_dmg_ = greaterEq(
@@ -166,8 +166,8 @@ const a4Member_dmg_ = greaterEq(
   4,
   min(
     prod(percent(dm.passive2.member_dmg_), input.total.hp, percent(1 / 1000)),
-    percent(dm.passive2.max_member_dmg_)
-  )
+    percent(dm.passive2.max_member_dmg_),
+  ),
 )
 const a4HealInterval = greaterEq(
   input.asc,
@@ -176,10 +176,10 @@ const a4HealInterval = greaterEq(
     prod(
       percent(-dm.passive2.interval_dec_),
       input.total.hp,
-      percent(1 / 1000)
+      percent(1 / 1000),
     ),
-    percent(-dm.passive2.max_interval_dec_)
-  )
+    percent(-dm.passive2.max_interval_dec_),
+  ),
 )
 const member_addl: Data = {
   premod: {
@@ -195,10 +195,10 @@ const c2Overstack_hp_ = greaterEq(
   lookup(
     condC2Overstack,
     objKeyMap(c2OverstackArr, (stack) =>
-      prod(stack, percent(dm.constellation2.hp_, { fixed: 2 }))
+      prod(stack, percent(dm.constellation2.hp_, { fixed: 2 })),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const [condc6Path, condc6] = cond(key, 'c6')
@@ -207,7 +207,7 @@ const [condC6PneumaPath, condC6Pneuma] = cond(key, 'c6Pneuma')
 const c6_infusion = greaterEqStr(
   input.constellation,
   6,
-  equalStr(condc6, 'on', 'hydro')
+  equalStr(condc6, 'on', 'hydro'),
 )
 const c6_auto_dmgInc = greaterEq(
   input.constellation,
@@ -215,20 +215,20 @@ const c6_auto_dmgInc = greaterEq(
   equal(
     condc6,
     'on',
-    prod(percent(dm.constellation6.auto_dmgInc), input.total.hp)
-  )
+    prod(percent(dm.constellation6.auto_dmgInc), input.total.hp),
+  ),
 )
 const c6_normal_dmgInc = infoMut(
   { ...c6_auto_dmgInc },
-  { path: 'normal_dmgInc' }
+  { path: 'normal_dmgInc' },
 )
 const c6_charged_dmgInc = infoMut(
   { ...c6_auto_dmgInc },
-  { path: 'charged_dmgInc' }
+  { path: 'charged_dmgInc' },
 )
 const c6_plunging_dmgInc = infoMut(
   { ...c6_auto_dmgInc },
-  { path: 'plunging_dmgInc' }
+  { path: 'plunging_dmgInc' },
 )
 
 const c6Pneuma_auto_dmgInc = greaterEq(
@@ -240,21 +240,21 @@ const c6Pneuma_auto_dmgInc = greaterEq(
     equal(
       condC6Pneuma,
       'on',
-      prod(percent(dm.constellation6.pneumaAuto_dmgInc), input.total.hp)
-    )
-  )
+      prod(percent(dm.constellation6.pneumaAuto_dmgInc), input.total.hp),
+    ),
+  ),
 )
 const c6Pneuma_normal_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
-  { path: 'normal_dmgInc' }
+  { path: 'normal_dmgInc' },
 )
 const c6Pneuma_charged_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
-  { path: 'charged_dmgInc' }
+  { path: 'charged_dmgInc' },
 )
 const c6Pneuma_plunging_impact_dmgInc = infoMut(
   { ...c6Pneuma_auto_dmgInc },
-  { path: 'plunging_dmgInc' }
+  { path: 'plunging_dmgInc' },
 )
 
 const dmgFormulas = {
@@ -267,7 +267,7 @@ const dmgFormulas = {
             normal_dmgInc: sum(c6_normal_dmgInc, c6Pneuma_normal_dmgInc),
           },
         }),
-      ])
+      ]),
     ),
     thornBladeDmg: dmgNode('atk', dm.normal.bladeThornDmg, 'normal', {
       premod: {
@@ -290,27 +290,27 @@ const dmgFormulas = {
       dm.skill.usherDmg,
       'skill',
       member_addl,
-      member_mult_
+      member_mult_,
     ),
     chevalDmg: dmgNode(
       'hp',
       dm.skill.chevalDmg,
       'skill',
       member_addl,
-      member_mult_
+      member_mult_,
     ),
     crabDmg: dmgNode(
       'hp',
       dm.skill.crabDmg,
       'skill',
       member_addl,
-      member_mult_
+      member_mult_,
     ),
     streamsHeal: healNodeTalent(
       'hp',
       dm.skill.streamsHealBase,
       dm.skill.streamsHealFlat,
-      'skill'
+      'skill',
     ),
   },
   burst: {
@@ -329,7 +329,7 @@ const dmgFormulas = {
     heal: greaterEq(
       input.constellation,
       6,
-      healNode('hp', percent(dm.constellation6.ousiaHeal), 0)
+      healNode('hp', percent(dm.constellation6.ousiaHeal), 0),
     ),
   },
 }
@@ -630,7 +630,7 @@ const sheet: TalentSheet = {
                 node: burstFanfare_incHeal_,
               },
             ],
-          })
+          }),
         ),
     }),
     ct.headerTem('constellation1', {

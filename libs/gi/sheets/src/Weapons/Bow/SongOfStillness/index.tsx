@@ -13,7 +13,7 @@ const [condAfterHealPath, condAfterHeal] = cond(key, 'afterHeal')
 const all_dmg_ = equal(
   condAfterHeal,
   'on',
-  subscript(input.weapon.refinement, dmg_arr)
+  subscript(input.weapon.refinement, dmg_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -71,27 +71,27 @@ const [condC2Path, condC2] = cond(key, 'QiqiC2')
 const nodeA1HealingBonus_disp = greaterEq(
   input.asc,
   1,
-  equal(condA1, 'on', 0.2, { path: 'incHeal_' })
+  equal(condA1, 'on', 0.2, { path: 'incHeal_' }),
 )
 const nodeA1HealingBonus = equal(
   input.activeCharKey,
   target.charKey,
-  nodeA1HealingBonus_disp
+  nodeA1HealingBonus_disp,
 )
 const nodeC2ChargedDmgInc = equal(
   condC2,
   'on',
-  greaterEq(input.constellation, 2, 0.15)
+  greaterEq(input.constellation, 2, 0.15),
 )
 const nodeC2NormalDmgInc = equal(
   condC2,
   'on',
-  greaterEq(input.constellation, 2, 0.15)
+  greaterEq(input.constellation, 2, 0.15),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -104,13 +104,13 @@ const dmgFormulas = {
       'atk',
       dm.skill.hitRegenPercent,
       dm.skill.hitRegenFlat,
-      'skill'
+      'skill',
     ),
     contRegen: healNodeTalent(
       'atk',
       dm.skill.contRegenPercent,
       dm.skill.contRegenFlat,
-      'skill'
+      'skill',
     ),
   },
   burst: {
@@ -119,7 +119,7 @@ const dmgFormulas = {
       'atk',
       dm.burst.healPercent,
       dm.burst.healFlat,
-      'burst'
+      'burst',
     ),
   },
 }

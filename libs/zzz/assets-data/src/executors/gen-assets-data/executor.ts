@@ -44,7 +44,7 @@ export type AssetData = {
 }
 
 const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
-  options
+  options,
 ) => {
   console.log('Executor ran for GenAssetsData', options)
   const assetData: AssetData = {
@@ -84,7 +84,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   // Dump out the asset List.
   dumpFile(
     `${workspaceRoot}/libs/zzz/assets-data/src/AssetsData_gen.json`,
-    assetData
+    assetData,
   )
 
   return {

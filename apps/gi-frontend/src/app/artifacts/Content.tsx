@@ -22,7 +22,7 @@ export default function Content({
 }) {
   const supabase = useSupabase()
   const [artifacts, setArtifacts] = useState(() =>
-    serverArtifacts.map(artifactToCached)
+    serverArtifacts.map(artifactToCached),
   )
   const addArtifact = async () => {
     try {
@@ -77,7 +77,7 @@ export default function Content({
             if (!artifact) return
             setArtifacts((arts) => [...arts, artifactToCached(artifact)])
           }
-        }
+        },
       )
       .subscribe()
 
@@ -142,7 +142,7 @@ function artifactToCached(artifact: Artifact): ICachedArtifact {
       lock,
       location: character ? charKeyToLocCharKey(character.key) : '',
     },
-    artifact.id
+    artifact.id,
   )
   return ret
 }

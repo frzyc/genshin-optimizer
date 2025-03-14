@@ -110,12 +110,12 @@ const a4Dmg_Disp = greaterEq(
         stacks,
         sum(
           percent(dm.passive2.baseDmg_),
-          prod(stacks, percent(dm.passive2.stackDmg_))
+          prod(stacks, percent(dm.passive2.stackDmg_)),
         ),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 const a4Dmg = equal(target.charKey, input.activeCharKey, a4Dmg_Disp)
 
@@ -130,16 +130,16 @@ const c4Hp_ = greaterEq(
       c4Stacks.map((stacks) => [
         stacks,
         prod(stacks, percent(dm.constellation4.bonusHp_)),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const hitEle = { hit: { ele: constant(elementKey) } }
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -161,8 +161,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation2.arrowDmg_), input.total.hp),
         'burst',
-        hitEle
-      )
+        hitEle,
+      ),
     ),
   },
   constellation6: {
@@ -173,11 +173,11 @@ const dmgFormulas = {
         prod(
           subscript(input.total.autoIndex, dm.charged.barb, { unit: '%' }),
           percent(dm.constellation6.dmg_),
-          input.total.hp
+          input.total.hp,
         ),
         'charged',
-        hitEle
-      )
+        hitEle,
+      ),
     ),
   },
 }
@@ -328,7 +328,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),
@@ -378,7 +378,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('constellation2', {

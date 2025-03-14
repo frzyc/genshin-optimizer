@@ -13,7 +13,7 @@ const [condPassivePath, condPassive] = cond(key, 'EverChanging')
 const atk_ = equal(
   'on',
   condPassive,
-  subscript(input.weapon.refinement, atkInc)
+  subscript(input.weapon.refinement, atkInc),
 )
 
 const data = dataObjForWeaponSheet(key, {

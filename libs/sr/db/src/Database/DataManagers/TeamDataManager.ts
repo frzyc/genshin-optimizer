@@ -217,7 +217,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           if (condValues.every((v) => !v)) return false
 
           return true
-        }
+        },
       )
 
       if (!Array.isArray(bonusStats)) bonusStats = []
@@ -349,7 +349,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   }
   getActiveBuildName(
     { buildType, buildId, buildTcId }: TeammateDatum,
-    equippedName = 'Equipped Build'
+    equippedName = 'Equipped Build',
   ) {
     switch (buildType) {
       case 'equipped':
@@ -363,7 +363,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
 
   followTeamDatum(
     { buildType, buildId, buildTcId }: TeammateDatum,
-    callback: () => void
+    callback: () => void,
   ) {
     if (buildType === 'real') {
       const build = this.database.builds.get(buildId)
@@ -373,7 +373,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         ? this.database.lightCones.follow(build.lightConeId, callback)
         : () => {}
       const unfollowRelics = Object.values(build.relicIds).map((id) =>
-        id ? this.database.relics.follow(id, callback) : () => {}
+        id ? this.database.relics.follow(id, callback) : () => {},
       )
       return () => {
         unfollowBuild()
@@ -386,20 +386,20 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   }
   followTeamDatumCompare(
     { compareType, compareBuildId, compareBuildTcId }: TeammateDatum,
-    callback: () => void
+    callback: () => void,
   ) {
     if (compareType === 'real') {
       const build = this.database.builds.get(compareBuildId)
       if (!build) return () => {}
       const unfollowBuild = this.database.builds.follow(
         compareBuildId,
-        callback
+        callback,
       )
       const unfollowLightCone = build.lightConeId
         ? this.database.lightCones.follow(build.lightConeId, callback)
         : () => {}
       const unfollowRelics = Object.values(build.relicIds).map((id) =>
-        id ? this.database.relics.follow(id, callback) : () => {}
+        id ? this.database.relics.follow(id, callback) : () => {},
       )
       return () => {
         unfollowBuild()
@@ -418,7 +418,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     src: Src,
     dst: Dst,
     condValue: number,
-    frameIndex: number
+    frameIndex: number,
   ) {
     this.set(teamId, (team) => {
       if (frameIndex > team.frames.length) return false
@@ -427,7 +427,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           c.condKey === condKey &&
           c.sheet === sheet &&
           c.src === src &&
-          c.dst === dst
+          c.dst === dst,
       )
       if (condIndex === -1) {
         const condValues = new Array(team.frames.length).fill(0)
@@ -470,12 +470,12 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     teamId: string,
     tag: Tag,
     value: number | null,
-    frameIndex: number
+    frameIndex: number,
   ) {
     this.set(teamId, (team) => {
       if (frameIndex > team.frames.length) return
       const statIndex = team.bonusStats.findIndex((s) =>
-        shallowCompareObj(s.tag, tag)
+        shallowCompareObj(s.tag, tag),
       )
       if (statIndex === -1 && value !== null) {
         const values = new Array(team.frames.length).fill(0)
@@ -501,12 +501,12 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     tag: Tag,
     value: number | null,
     isMax: boolean,
-    frameIndex: number
+    frameIndex: number,
   ) {
     this.set(teamId, (team) => {
       if (frameIndex > team.frames.length) return
       const statIndex = team.statConstraints.findIndex((s) =>
-        shallowCompareObj(s.tag, tag)
+        shallowCompareObj(s.tag, tag),
       )
       if (statIndex === -1 && value !== null) {
         const values = new Array(team.frames.length).fill(0)

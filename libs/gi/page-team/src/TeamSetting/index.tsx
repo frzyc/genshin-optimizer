@@ -125,12 +125,12 @@ function TeamEditor({
     const existingIndex = loadoutData.findIndex(
       (loadoutDatum) =>
         loadoutDatum &&
-        database.teamChars.get(loadoutDatum.teamCharId)?.key === cKey
+        database.teamChars.get(loadoutDatum.teamCharId)?.key === cKey,
     )
     if (existingIndex < 0) {
       //find the first available teamchar
       let teamCharId = database.teamChars.keys.find(
-        (k) => database.teamChars.get(k)!.key === cKey
+        (k) => database.teamChars.get(k)!.key === cKey,
       )
       // if there is no teamchar, create one.
       if (!teamCharId) teamCharId = database.teamChars.new(cKey)
@@ -172,7 +172,7 @@ function TeamEditor({
   }
 
   const [charSelectIndex, setCharSelectIndex] = useState(
-    undefined as number | undefined
+    undefined as number | undefined,
   )
   const onSingleSelect = (cKey: CharacterKey) => {
     if (charSelectIndex === undefined) return

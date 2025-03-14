@@ -12,7 +12,7 @@ type FormulaText = {
 }
 export function translate(
   data: CalcResult<number, Output>,
-  cache: Map<CalcResult<number, Output>, FormulaText> = new Map()
+  cache: Map<CalcResult<number, Output>, FormulaText> = new Map(),
 ): FormulaText {
   const old = cache.get(data)
   if (old) return old
@@ -24,7 +24,7 @@ export function translate(
   const deps = new Set<FormulaText>()
   function getString(
     ops: CalcResult<number, Output>[],
-    prec: number // precedence of the encompassing/parent term
+    prec: number, // precedence of the encompassing/parent term
   ): string[] {
     return ops.map((op) => {
       const text = translate(op, cache)

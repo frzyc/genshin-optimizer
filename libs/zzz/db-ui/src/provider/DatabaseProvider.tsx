@@ -31,13 +31,13 @@ export function DatabaseProvider({ children }: { children: ReactNode }) {
       dbs[index] = db
       setDatabases(dbs)
     },
-    [databases, setDatabases]
+    [databases, setDatabases],
   )
 
   const database = databases[dbIndex - 1]
   const dbContextObj: DatabaseContextObj = useMemo(
     () => ({ databases, setDatabases, database, setDatabase }),
-    [databases, setDatabases, database, setDatabase]
+    [databases, setDatabases, database, setDatabase],
   )
   return (
     <DatabaseContext.Provider value={dbContextObj}>

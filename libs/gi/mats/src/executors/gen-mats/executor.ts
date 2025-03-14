@@ -9,7 +9,7 @@ const characterMatDump = characterMatData()
 
 export default async function runExecutor(_options: GenMatsExecutorSchema) {
   console.log(
-    `Writing character mat data to ${proj_path}/src/allCharacterMats_gen.json`
+    `Writing character mat data to ${proj_path}/src/allCharacterMats_gen.json`,
   )
   dumpFile(`${proj_path}/src/allCharacterMats_gen.json`, characterMatDump)
 

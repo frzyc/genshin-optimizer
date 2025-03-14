@@ -58,7 +58,7 @@ export function prune<I extends OP, ID>(
   candidates: Candidate<ID>[][],
   dynTagCat: string,
   minimum: number[],
-  topN: number
+  topN: number,
 ): PruneResult<I, ID> {
   const state = new State(nodes, minimum, candidates, dynTagCat)
   while (state.progress) {
@@ -87,7 +87,7 @@ export class State<I extends OP, ID> implements PruneResult<I, ID> {
     nodes: NumNode<I>[],
     minimum: number[],
     candidates: Candidate<ID>[][],
-    cat: string
+    cat: string,
   ) {
     this.#nodes = nodes
     this.minimum = minimum
@@ -125,14 +125,14 @@ export class State<I extends OP, ID> implements PruneResult<I, ID> {
     return (this.#nodeRanges ??= computeNodeRanges(
       this.nodes,
       this.cat,
-      this.cndRanges
+      this.cndRanges,
     ))
   }
   get monotonicities(): Monotonicities {
     return (this.#monotonicities ??= getMonotonicities(
       this.nodes.slice(0, this.minimum.length),
       this.cat,
-      this.nodeRanges
+      this.nodeRanges,
     ))
   }
 }
@@ -233,11 +233,13 @@ export function pruneBottom<ID>(state: State<OP, ID>, topN: number) {
     comp.map((c) => {
       const out: Val = { incomp: [], inc: {}, c }
       for (const [cat, m] of monotonicities)
-        if (m.inc) out.inc[cat] = c[cat] ?? 0 // increasing
-        else if (m.dec) out.inc[cat] = -(c[cat] ?? 0) // decreasing
+        if (m.inc)
+          out.inc[cat] = c[cat] ?? 0 // increasing
+        else if (m.dec)
+          out.inc[cat] = -(c[cat] ?? 0) // decreasing
         else out.incomp.push(c[cat] ?? 0) // incomparable
       return out
-    })
+    }),
   )
   const sample = vals[0][0]
   if (sample === undefined) return
@@ -353,7 +355,7 @@ export function reaffine<ID>(state: State<OP, ID>) {
       if (keys.length === 1 && w[keys[0]] === 1) return [w, keys[0]]
       // skip `w[offset]` because it doesn't go into the new `Read` nodes
       return [w, '\u{F33D}' + keys.flatMap((k) => [k, w[k]]).join('\u{F00D}')]
-    })
+    }),
   )
   if (!isDebug('calc')) {
     // "!cat1:<w1>:cat2:<w2>:.." => "cX" (skipped in debug mode)
@@ -373,11 +375,11 @@ export function reaffine<ID>(state: State<OP, ID>) {
         if (name in result) return // same weight, different offsets
         result[name] = Object.entries(w).reduce(
           (acu, [k, v]) => acu + (c[k] ?? 0) * v,
-          0
+          0,
         )
       })
       return result
-    })
+    }),
   )
   state.nodes = mapBottomUp(nodes, (n, o) => {
     const w = topWeights.get(o)
@@ -396,7 +398,7 @@ function computeCndRanges<ID>(cnds: Candidate<ID>[]): CndRanges[number] {
   const first: Candidate | undefined = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(
-    Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])
+    Object.entries(first).map(([k, v]) => [k, { min: v, max: v }]),
   )
   for (const c of iter) {
     for (const [k, r] of Object.entries(result)) {
@@ -415,7 +417,7 @@ function computeCndRanges<ID>(cnds: Candidate<ID>[]): CndRanges[number] {
 function computeNodeRanges(
   nodes: NumNode<OP>[],
   cat: string,
-  cndRanges: CndRanges
+  cndRanges: CndRanges,
 ): NodeRanges {
   const result = new Map<AnyNode<OP>, Range>()
   traverse(nodes, (n, visit) => {
@@ -427,7 +429,7 @@ function computeNodeRanges(
 
     function cornerRange(
       op: keyof typeof arithmetic,
-      [x0, x1]: [Range, Range]
+      [x0, x1]: [Range, Range],
     ): Range {
       const calc = arithmetic[op]
       const vals = [
@@ -517,7 +519,7 @@ function computeNodeRanges(
 function getMonotonicities(
   nodes: NumNode<OP>[],
   cat: string,
-  nodeRanges: NodeRanges
+  nodeRanges: NodeRanges,
 ): Monotonicities {
   const mon = new Map<AnyNode<OP>, Monotonicity>()
   const toVisit: { node: AnyNode<OP>; inc: boolean }[] = []

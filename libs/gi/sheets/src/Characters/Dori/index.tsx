@@ -103,34 +103,34 @@ const [condC4BelowEnerPath, condC4BelowEner] = cond(key, 'c4BelowEner')
 const c4BelowHp_incHeal_disp = greaterEq(
   input.constellation,
   4,
-  equal(condC4BelowHp, 'belowHp', dm.constellation4.incHeal_)
+  equal(condC4BelowHp, 'belowHp', dm.constellation4.incHeal_),
 )
 const c4BelowHp_incHeal_ = equal(
   input.activeCharKey,
   target.charKey,
-  c4BelowHp_incHeal_disp
+  c4BelowHp_incHeal_disp,
 )
 const c4BelowEner_enerRech_disp = greaterEq(
   input.constellation,
   4,
-  equal(condC4BelowEner, 'belowEner', dm.constellation4.enerRech_)
+  equal(condC4BelowEner, 'belowEner', dm.constellation4.enerRech_),
 )
 const c4BelowEner_enerRech_ = equal(
   input.activeCharKey,
   target.charKey,
-  c4BelowEner_enerRech_disp
+  c4BelowEner_enerRech_disp,
 )
 
 const [condC6AfterSkillPath, condC6AfterSkill] = cond(key, 'c6AfterSkill')
 const c6AfterSkill_infusion = greaterEqStr(
   input.constellation,
   6,
-  equalStr(condC6AfterSkill, 'on', elementKey)
+  equalStr(condC6AfterSkill, 'on', elementKey),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     spinningDmg: dmgNode('atk', dm.charged.spinningDmg, 'charged'),
@@ -151,8 +151,8 @@ const dmgFormulas = {
       4,
       min(
         prod(constant(dm.passive2.energyRegen), input.total.enerRech_),
-        constant(dm.passive2.maxEnergyRegen)
-      )
+        constant(dm.passive2.maxEnergyRegen),
+      ),
     ),
   },
   constellation2: {
@@ -165,11 +165,11 @@ const dmgFormulas = {
           infoMut(percent(dm.constellation2.toopDmg), {
             name: ct.ch('c2MultiplierKey_'),
           }),
-          input.total.atk
+          input.total.atk,
         ),
         'elemental',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
   constellation6: {
@@ -179,8 +179,8 @@ const dmgFormulas = {
       equal(
         condC6AfterSkill,
         'on',
-        customHealNode(prod(percent(dm.constellation6.heal_), input.total.hp))
-      )
+        customHealNode(prod(percent(dm.constellation6.heal_), input.total.hp)),
+      ),
     ),
   },
 }

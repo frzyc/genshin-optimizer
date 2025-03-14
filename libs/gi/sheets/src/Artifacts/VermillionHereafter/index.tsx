@@ -26,7 +26,7 @@ const afterBurstAtk_ = greaterEq(
   input.artSet.VermillionHereafter,
   4,
   equal(condAfterBurst, 'on', percent(0.08)),
-  { path: 'atk_' }
+  { path: 'atk_' },
 )
 const [condStacksPath, condStacks] = cond(key, 'stacks')
 const stacksAtk_ = greaterEq(
@@ -38,12 +38,12 @@ const stacksAtk_ = greaterEq(
     lookup(
       condStacks,
       Object.fromEntries(
-        range(1, 4).map((stacks) => [stacks, percent(0.1 * stacks)])
+        range(1, 4).map((stacks) => [stacks, percent(0.1 * stacks)]),
       ),
-      naught
+      naught,
     ),
-    { path: 'atk_' }
-  )
+    { path: 'atk_' },
+  ),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -81,7 +81,7 @@ const sheet: SetEffectSheet = {
               name: st('stack', { count: stacks }),
               fields: [{ node: stacksAtk_ }],
             },
-          ])
+          ]),
         ),
       },
     ],

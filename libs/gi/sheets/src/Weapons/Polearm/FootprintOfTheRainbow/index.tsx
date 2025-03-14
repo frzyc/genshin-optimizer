@@ -12,7 +12,7 @@ const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const afterSkill_def_ = equal(
   condAfterSkill,
   'on',
-  subscript(input.weapon.refinement, def_arr)
+  subscript(input.weapon.refinement, def_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

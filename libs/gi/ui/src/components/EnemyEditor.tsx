@@ -47,7 +47,7 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(
     () => setexpanded(!expanded),
-    [setexpanded, expanded]
+    [setexpanded, expanded],
   )
   const {
     enemyOverride,

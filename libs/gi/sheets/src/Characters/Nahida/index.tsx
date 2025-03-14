@@ -119,10 +119,10 @@ const burst_karma_dmg_ = equal(
       pyroLevel,
       1,
       subscript(input.total.burstIndex, dm.burst.dmg_1),
-      subscript(input.total.burstIndex, dm.burst.dmg_2)
-    )
+      subscript(input.total.burstIndex, dm.burst.dmg_2),
+    ),
   ),
-  { unit: '%' }
+  { unit: '%' },
 )
 
 const electroLevel = sum(tally.electro, greaterEq(input.constellation, 1, 1))
@@ -136,10 +136,10 @@ const burst_skillIntervalDec = equal(
       electroLevel,
       1,
       subscript(input.total.burstIndex, dm.burst.intervalDec_1),
-      subscript(input.total.burstIndex, dm.burst.intervalDec_2)
-    )
+      subscript(input.total.burstIndex, dm.burst.intervalDec_2),
+    ),
   ),
-  { unit: '%' }
+  { unit: '%' },
 )
 
 const hydroLevel = sum(tally.hydro, greaterEq(input.constellation, 1, 1))
@@ -153,15 +153,15 @@ const burst_durationInc = equal(
       hydroLevel,
       1,
       subscript(input.total.burstIndex, dm.burst.durationInc1),
-      subscript(input.total.burstIndex, dm.burst.durationInc2)
-    )
+      subscript(input.total.burstIndex, dm.burst.durationInc2),
+    ),
   ),
-  { unit: '%' }
+  { unit: '%' },
 )
 
 const [condA1ActiveInBurstPath, condA1ActiveInBurst] = cond(
   key,
-  'condA1ActiveInBurst'
+  'condA1ActiveInBurst',
 )
 const a1InBurst_eleMasDisp = greaterEq(
   input.asc,
@@ -173,21 +173,21 @@ const a1InBurst_eleMasDisp = greaterEq(
       sum(
         // Either party is in burst, or this is a teammate
         equal(condPartyInBurst, 'on', 1),
-        unequal(input.activeCharKey, key, 1)
+        unequal(input.activeCharKey, key, 1),
       ),
       1,
       min(
         prod(percent(dm.passive1.eleMas_), tally.maxEleMas),
-        dm.passive1.maxEleMas
-      )
-    )
+        dm.passive1.maxEleMas,
+      ),
+    ),
   ),
-  { path: 'eleMas', isTeamBuff: true }
+  { path: 'eleMas', isTeamBuff: true },
 )
 const a1InBurst_eleMas = equal(
   input.activeCharKey,
   target.charKey,
-  a1InBurst_eleMasDisp
+  a1InBurst_eleMasDisp,
 )
 
 const a4Karma_dmg_ = infoMut(
@@ -197,12 +197,12 @@ const a4Karma_dmg_ = infoMut(
     min(
       prod(
         percent(dm.passive2.eleMas_dmg_),
-        max(sum(input.total.eleMas, -dm.passive2.eleMas_min), 0)
+        max(sum(input.total.eleMas, -dm.passive2.eleMas_min), 0),
       ),
-      percent(dm.passive2.eleMas_dmg_ * dm.passive2.eleMas_maxCounted)
-    )
+      percent(dm.passive2.eleMas_dmg_ * dm.passive2.eleMas_maxCounted),
+    ),
   ),
-  { unit: '%' }
+  { unit: '%' },
 )
 const a4Karma_critRate_ = infoMut(
   greaterEq(
@@ -211,12 +211,12 @@ const a4Karma_critRate_ = infoMut(
     min(
       prod(
         percent(dm.passive2.eleMas_critRate_),
-        max(sum(input.total.eleMas, -dm.passive2.eleMas_min), 0)
+        max(sum(input.total.eleMas, -dm.passive2.eleMas_min), 0),
       ),
-      percent(dm.passive2.eleMas_critRate_ * dm.passive2.eleMas_maxCounted)
-    )
+      percent(dm.passive2.eleMas_critRate_ * dm.passive2.eleMas_maxCounted),
+    ),
   ),
-  { unit: '%' }
+  { unit: '%' },
 )
 
 const triKarmaAddl = {
@@ -230,7 +230,7 @@ const [condC2BloomPath, condC2Bloom] = cond(key, 'c2Bloom')
 const c2Burning_critRate_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2Bloom, 'on', percent(dm.constellation2.critRate_))
+  equal(condC2Bloom, 'on', percent(dm.constellation2.critRate_)),
 )
 const c2Bloom_critRate_ = { ...c2Burning_critRate_ }
 const c2Hyperbloom_critRate_ = { ...c2Burning_critRate_ }
@@ -238,7 +238,7 @@ const c2Burgeon_critRate_ = { ...c2Burning_critRate_ }
 const c2Burning_critDMG_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2Bloom, 'on', percent(dm.constellation2.critDMG_))
+  equal(condC2Bloom, 'on', percent(dm.constellation2.critDMG_)),
 )
 const c2Bloom_critDMG_ = { ...c2Burning_critDMG_ }
 const c2Hyperbloom_critDMG_ = { ...c2Burning_critDMG_ }
@@ -248,7 +248,7 @@ const [condC2QSAPath, condC2QSA] = cond(key, 'c2QSA')
 const c2qsa_DefRed_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2QSA, 'on', percent(dm.constellation2.defDec_))
+  equal(condC2QSA, 'on', percent(dm.constellation2.defDec_)),
 )
 
 const [condC4CountPath, condC4Count] = cond(key, 'c4Count')
@@ -262,15 +262,15 @@ const c4_eleMas = greaterEq(
       c4CountArr.map((count) => [
         count,
         subscript(constant(count - 1), [...dm.constellation4.eleMas]),
-      ])
+      ]),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -283,7 +283,7 @@ const dmgFormulas = {
       ['atk', 'eleMas'],
       [dm.skill.karmaAtkDmg, dm.skill.karmaEleMasDmg],
       'skill',
-      triKarmaAddl
+      triKarmaAddl,
     ),
   },
   passive2: {
@@ -297,11 +297,11 @@ const dmgFormulas = {
       customDmgNode(
         sum(
           prod(percent(dm.constellation6.atkDmg), input.total.atk),
-          prod(percent(dm.constellation6.eleMasDmg), input.total.eleMas)
+          prod(percent(dm.constellation6.eleMasDmg), input.total.eleMas),
         ),
         'skill',
-        triKarmaAddl
-      )
+        triKarmaAddl,
+      ),
     ),
   },
 }
@@ -529,7 +529,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('constellation6', {
@@ -598,7 +598,7 @@ const sheet: TalentSheet = {
       // Show for teammates always
       canShow: sum(
         equal(condPartyInBurst, 'on', 1),
-        unequal(input.activeCharKey, key, 1)
+        unequal(input.activeCharKey, key, 1),
       ),
       teamBuff: true,
       path: condA1ActiveInBurstPath,
@@ -628,7 +628,7 @@ const sheet: TalentSheet = {
       canShow: unequal(
         input.activeCharKey,
         key,
-        equal(condA1ActiveInBurst, 'on', 1)
+        equal(condA1ActiveInBurst, 'on', 1),
       ),
       teamBuff: true,
       path: condC4CountPath,
@@ -645,7 +645,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
   ]),

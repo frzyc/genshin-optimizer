@@ -43,7 +43,7 @@ export function ArtifactSubCard({
         charTC.artifact.substats.type = t
       })
     },
-    [setBuildTc]
+    [setBuildTc],
   )
   const setRarity = useCallback(
     (r: ArtifactRarity) => {
@@ -51,17 +51,17 @@ export function ArtifactSubCard({
         charTC.artifact.substats.rarity = r
       })
     },
-    [setBuildTc]
+    [setBuildTc],
   )
 
   const rv =
     Object.entries(substats).reduce(
       (t, [k, v]) => t + v / getSubstatValue(k),
-      0
+      0,
     ) * 100
   const rolls = Object.entries(substats).reduce(
     (t, [k, v]) => t + v / getSubstatValue(k, rarity, substatsType),
-    0
+    0,
   )
   const { high, numUpgrades } = artSubstatRollData[rarity]
   const maxRolls = (high + numUpgrades) * 5

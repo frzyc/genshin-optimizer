@@ -61,5 +61,5 @@ export default register(
 
   // Formulas
   // TODO: Add dmg/heal/shield formulas using `dmg`, `customDmg`, `shield`, `customShield`, `fixedShield`, or `customHeal`
-  dmg('normal1', info, 'atk', _dm.normal.dmg1, 'normal')
+  dmg('normal1', info, 'atk', _dm.normal.dmg1, 'normal'),
 )

@@ -42,7 +42,7 @@ export const uiSheets: Record<
   ${allCharacterKeys.join('\n,  ')}
 } as const
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -62,7 +62,7 @@ export const discUiSheets: Record<DiscSetKey, UISheet<'2' | '4'>> = {
   ${allDiscSetKeys.join('\n,  ')}
 }
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -82,7 +82,7 @@ export const wengineUiSheets: Record<WengineKey, UISheetElement> =
     ${allWengineKeys.join(',\n  ')}
   }
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

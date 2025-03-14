@@ -32,7 +32,7 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
 
   useEffect(
     () => database.relics.followAny(setDirtyDatabase),
-    [database, setDirtyDatabase]
+    [database, setDirtyDatabase],
   )
 
   const { relicIds, totalRelicsNum } = useMemo(() => {
@@ -49,12 +49,12 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
       : totalRelicsNum
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    relicIds.length
+    relicIds.length,
   )
 
   const relicsIdsToShow = useMemo(
     () => relicIds.slice(0, numShow),
-    [relicIds, numShow]
+    [relicIds, numShow],
   )
   const showingTextProps = {
     numShowing: relicsIdsToShow.length,

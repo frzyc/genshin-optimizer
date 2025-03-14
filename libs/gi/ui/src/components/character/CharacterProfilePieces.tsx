@@ -129,7 +129,7 @@ export function CharacterCompactConstSelector({
               component={NextImage ? NextImage : 'img'}
               src={
                 characterSheet.getTalentOfKey(
-                  `constellation${i}` as TalentSheetElementKey
+                  `constellation${i}` as TalentSheetElementKey,
                 )?.img
               }
               sx={{

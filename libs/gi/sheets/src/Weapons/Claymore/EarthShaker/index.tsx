@@ -12,7 +12,7 @@ const [condPyroReactionPath, condPyroReaction] = cond(key, 'pyroReaction')
 const pyroReaction_skill_dmg_ = equal(
   condPyroReaction,
   'on',
-  subscript(input.weapon.refinement, skill_dmg_arr)
+  subscript(input.weapon.refinement, skill_dmg_arr),
 )
 
 const data = dataObjForWeaponSheet(key, {

@@ -39,7 +39,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -60,7 +60,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -82,7 +82,7 @@ const data: TagMapNodeEntries[] = [
 export default data.flat()
 
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

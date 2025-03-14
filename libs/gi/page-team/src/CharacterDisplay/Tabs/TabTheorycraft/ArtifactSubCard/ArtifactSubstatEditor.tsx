@@ -45,17 +45,17 @@ export function ArtifactSubstatEditor({
             getSubstatValue(
               statKey,
               charTC.artifact.substats.rarity,
-              charTC.artifact.substats.type
-            )
+              charTC.artifact.substats.type,
+            ),
         )
         charTC.optimization.distributedSubstats = clamp(
           charTC.optimization.distributedSubstats + statDiff,
           0,
-          45
+          45,
         )
       })
     },
-    [setBuildTc, statKey]
+    [setBuildTc, statKey],
   )
   const maxSubstat = maxSubstats[statKey]
   const setMaxSubstat = useCallback(
@@ -64,7 +64,7 @@ export function ArtifactSubstatEditor({
         charTC.optimization.maxSubstats[statKey] = v
       })
     },
-    [setBuildTc, statKey]
+    [setBuildTc, statKey],
   )
   // const { t } = useTranslation('page_character')
   const substatValue = getSubstatValue(statKey, rarity, substatsType)
@@ -77,14 +77,14 @@ export function ArtifactSubstatEditor({
   const rv = ((rolls * substatValue) / getSubstatValue(statKey)) * 100
   const numMains = mainStatKeys.reduce(
     (t, ms) => t + (ms === statKey ? 1 : 0),
-    0
+    0,
   )
   const maxRolls = (5 - numMains) * (artMaxLevel[rarity] / 4 + 1)
   // 0.0001 to nudge float comparasion
   const invalid = rolls - 0.0001 > maxRolls
   const setRValue = useCallback(
     (r: number) => setValue(r * substatValue),
-    [setValue, substatValue]
+    [setValue, substatValue],
   )
 
   return (
@@ -177,7 +177,7 @@ export function ArtifactSubstatEditor({
                     numMains
                       ? `tabTheorycraft.maxRollsMain`
                       : `tabTheorycraft.maxRolls`,
-                    { value: maxRolls }
+                    { value: maxRolls },
                   )}
                 </Typography>
               }
@@ -227,8 +227,8 @@ export function ArtifactSubstatEditor({
             rolls - 0.0001 > maxSubstat
               ? 'error'
               : maxSubstat > maxRolls
-              ? 'warning'
-              : 'success'
+                ? 'warning'
+                : 'success'
           }
           focused
           inputProps={{

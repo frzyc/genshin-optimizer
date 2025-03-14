@@ -20,17 +20,17 @@ const sheet = registerDisc(
     'set4_basic_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'basic',
-      cmpGE(discCount, 4, prod(0.2, freeze_shatter.ifOn(2, 1)))
+      cmpGE(discCount, 4, prod(0.2, freeze_shatter.ifOn(2, 1))),
     ),
-    showCond4Set
+    showCond4Set,
   ),
   registerBuff(
     'set4_dash_dmg_',
     ownBuff.combat.dmg_.addWithDmgType(
       'dash',
-      cmpGE(discCount, 4, prod(0.2, freeze_shatter.ifOn(2, 1)))
+      cmpGE(discCount, 4, prod(0.2, freeze_shatter.ifOn(2, 1))),
     ),
-    showCond4Set
-  )
+    showCond4Set,
+  ),
 )
 export default sheet

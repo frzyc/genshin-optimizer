@@ -33,11 +33,11 @@ export const slashcommand = new SlashCommandBuilder()
           .setName('name')
           .setDescription('Character name')
           .setAutocomplete(true)
-          .setRequired(true)
+          .setRequired(true),
       )
       .addStringOption((o) =>
-        o.setName('skill').setDescription('Skill name').setAutocomplete(true)
-      )
+        o.setName('skill').setDescription('Skill name').setAutocomplete(true),
+      ),
   )
   .addSubcommand((s) =>
     s
@@ -48,7 +48,7 @@ export const slashcommand = new SlashCommandBuilder()
           .setName('name')
           .setDescription('Light Cone name')
           .setAutocomplete(true)
-          .setRequired(true)
+          .setRequired(true),
       )
       .addStringOption((o) =>
         o
@@ -59,9 +59,9 @@ export const slashcommand = new SlashCommandBuilder()
             { name: 'Superimposition 2', value: '1' },
             { name: 'Superimposition 3', value: '2' },
             { name: 'Superimposition 4', value: '3' },
-            { name: 'Superimposition 5', value: '4' }
-          )
-      )
+            { name: 'Superimposition 5', value: '4' },
+          ),
+      ),
   )
   .addSubcommand((s) =>
     s
@@ -72,15 +72,15 @@ export const slashcommand = new SlashCommandBuilder()
           .setName('name')
           .setDescription('Relic set name')
           .setAutocomplete(true)
-          .setRequired(true)
-      )
+          .setRequired(true),
+      ),
   )
 
 //requiring all the data because imports dont work
 //TODO: use generated imports instead of require
 const databankPath = path.join(
   cwd,
-  '/libs/sr/dm-localization/assets/locales/en'
+  '/libs/sr/dm-localization/assets/locales/en',
 )
 //get keys
 //TODO: fix any typing
@@ -210,7 +210,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
 
 export async function selectmenu(
   interaction: StringSelectMenuInteraction,
-  args: string[]
+  args: string[],
 ) {
   const subcommand = args[1]
   const id = args[2]

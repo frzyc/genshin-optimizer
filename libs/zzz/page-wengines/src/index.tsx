@@ -56,7 +56,7 @@ export default function PageWengine() {
     //ReactGA.send({ hitType: 'pageview', page: '/wengine' }) Needs Google Analytics
     return database.wengines.followAny(
       (_, r) =>
-        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate()
+        (r === 'new' || r === 'remove' || r === 'update') && forceUpdate(),
     )
   }, [forceUpdate, database])
   const [searchTerm, setSearchTerm] = useState('')
@@ -66,14 +66,14 @@ export default function PageWengine() {
     (key: string | undefined) => {
       database.displayWengine.set({ editWengineId: key })
     },
-    [database]
+    [database],
   )
 
   const newWengine = useCallback(
     (wengineKey: WengineKey) => {
       editWegine(database.wengines.new(initialWengine(wengineKey)))
     },
-    [database.wengines, editWegine]
+    [database.wengines, editWegine],
   )
 
   const {
@@ -102,15 +102,15 @@ export default function PageWengine() {
             showEquipped,
             locations,
           },
-          wengineFilterConfigs()
-        )
+          wengineFilterConfigs(),
+        ),
       )
       .sort(
         sortFunction(
           wengineSortMap[sortType as WengineSortKey] ?? [],
           ascending,
-          wengineSortConfigs()
-        )
+          wengineSortConfigs(),
+        ),
       )
       .map((key) => key.id)
     return dbDirty && { wengineIds, totalWengineNum }
@@ -132,16 +132,16 @@ export default function PageWengine() {
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    wengineIds.length
+    wengineIds.length,
   )
   const wenginesIdsToShow = useMemo(
     () => wengineIds.slice(0, numShow),
-    [wengineIds, numShow]
+    [wengineIds, numShow],
   )
 
   const resetEditWengine = useCallback(
     () => database.displayWengine.set({ editWengineId: '' }),
-    [database]
+    [database],
   )
 
   const { editWengineId } = state

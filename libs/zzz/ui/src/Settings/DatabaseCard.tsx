@@ -49,7 +49,7 @@ function DataCard({ index }: { index: number }) {
   const [{ name, lastEdit }, setDBMeta] = useState(database.dbMeta.get())
   useEffect(
     () => database.dbMeta.follow((_, dbMeta) => setDBMeta(dbMeta)),
-    [database]
+    [database],
   )
   // Need to update the dbMeta when database changes
   useEffect(() => setDBMeta(database.dbMeta.get()), [database])
@@ -67,7 +67,7 @@ function DataCard({ index }: { index: number }) {
         .writeText(JSON.stringify(database.exportZOD()))
         .then(() => alert('Copied database to clipboard.'))
         .catch(console.error),
-    [database]
+    [database],
   )
 
   const onDelete = useCallback(() => {
@@ -111,7 +111,7 @@ function DataCard({ index }: { index: number }) {
   }, [tempName, database])
   const onKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
-    [onBlur]
+    [onBlur],
   )
 
   return (

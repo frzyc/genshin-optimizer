@@ -112,7 +112,7 @@ export class ZzzDatabase extends Database {
   importZOD(
     zod: IZenlessObjectDescription & IZZZDatabase,
     keepNotInImport: boolean,
-    ignoreDups: boolean
+    ignoreDups: boolean,
   ): ImportResult {
     zod = migrateZOD(zod)
     const source = zod.source ?? 'Unknown'
@@ -123,7 +123,7 @@ export class ZzzDatabase extends Database {
     const result: ImportResult = newImportResult(
       source,
       keepNotInImport,
-      ignoreDups
+      ignoreDups,
     )
 
     // Follow updates from char/disc/wengine to gather import results
@@ -136,10 +136,10 @@ export class ZzzDatabase extends Database {
       //   else arr[ind] = value
       // }),
       this.chars.followAny((_key, reason, value) =>
-        result.characters[reason].push(value)
+        result.characters[reason].push(value),
       ),
       this.discs.followAny((_key, reason, value) =>
-        result.discs[reason].push(value)
+        result.discs[reason].push(value),
       ),
       // TODO:
       /* this.wengines.followAny((_key, reason, value) =>

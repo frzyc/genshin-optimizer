@@ -8,11 +8,11 @@ type FetterCharacterCardExcelConfigData = {
 }
 
 const fetterCharacterCardExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/FetterCharacterCardExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/FetterCharacterCardExcelConfigData.json'),
 ) as FetterCharacterCardExcelConfigData[]
 //character data
 const fetterCharacterCardExcelConfigData = Object.fromEntries(
-  fetterCharacterCardExcelConfigDataSrc.map((data) => [data.avatarId, data])
+  fetterCharacterCardExcelConfigDataSrc.map((data) => [data.avatarId, data]),
 ) as Record<CharacterId, FetterCharacterCardExcelConfigData>
 
 export { fetterCharacterCardExcelConfigData }

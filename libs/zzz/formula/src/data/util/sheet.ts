@@ -30,7 +30,7 @@ export function register(
     return { tag: { ...tag, sheet }, value }
   }
   return data.flatMap((data) =>
-    Array.isArray(data) ? data.map(internal) : internal(data)
+    Array.isArray(data) ? data.map(internal) : internal(data),
   )
 }
 
@@ -48,7 +48,7 @@ export function registerBuff(
   name: string,
   entries: TagMapNodeEntry | TagMapNodeEntry[],
   cond: string | StrNode = 'infer',
-  team = false
+  team = false,
 ): TagMapNodeEntries {
   if (!Array.isArray(entries)) entries = [entries]
   return entries.flatMap((entry) => {
@@ -82,7 +82,7 @@ export function registerBuffFormula(
   name: string,
   entry: TagMapNodeEntry,
   cond: string | StrNode = 'infer',
-  team = false
+  team = false,
 ): TagMapNodeEntries {
   // Remove unused tags. We cannot use `sheet:null` here because
   // `namedReader` is also used as a `Tag` inside `listingItem`.
@@ -112,7 +112,7 @@ function registerFormula(
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
-      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
+      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond),
     ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]
@@ -146,7 +146,7 @@ export function customDmg(
     'standardDmg',
     tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
@@ -172,7 +172,7 @@ export function customShield(
     'shield',
     cond,
     ownBuff.formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
@@ -198,7 +198,7 @@ export function customHeal(
     'heal',
     cond,
     ownBuff.formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
@@ -226,13 +226,13 @@ export function customAnomalyDmg(
     'anomalyDmg',
     tag(cond, dmgTag),
     ownBuff.formula.base.add(base),
-    ...extra
+    ...extra,
   )
 }
 
 export function getStatFromStatKey(
   buff: typeof ownBuff.initial,
-  statKey: PandoStatKey
+  statKey: PandoStatKey,
 ) {
   switch (statKey) {
     case 'fire_dmg_':

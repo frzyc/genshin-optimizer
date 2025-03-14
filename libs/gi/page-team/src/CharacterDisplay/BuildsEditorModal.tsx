@@ -70,7 +70,7 @@ function BuildManagementContent({ onClose }: { onClose: () => void }) {
   const onChangeBuild = useCallback(
     () => setTimeout(onClose, 1000),
 
-    [onClose]
+    [onClose],
   )
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>

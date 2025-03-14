@@ -19,7 +19,7 @@ const set2 = greaterEq(input.artSet.TravelingDoctor, 2, percent(0.2))
 const heal = greaterEq(
   input.artSet.TravelingDoctor,
   4,
-  prod(percent(0.2), input.total.hp)
+  prod(percent(0.2), input.total.hp),
 )
 
 export const data: Data = dataObjForArtifactSheet(
@@ -31,7 +31,7 @@ export const data: Data = dataObjForArtifactSheet(
   },
   {
     heal,
-  }
+  },
 )
 
 const sheet: SetEffectSheet = {

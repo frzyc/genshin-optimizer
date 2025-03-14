@@ -96,8 +96,8 @@ const nodeSkill = equal(
   condQuill,
   prod(
     input.total.atk,
-    subscript(input.total.skillIndex, dm.skill.dmgAtk_, { unit: '%' })
-  )
+    subscript(input.total.skillIndex, dm.skill.dmgAtk_, { unit: '%' }),
+  ),
 )
 
 const [condBurstPath, condBurst] = cond(key, 'burst')
@@ -107,8 +107,8 @@ const enemyRes_ = equal(
   subscript(
     input.total.burstIndex,
     dm.burst.res_.map((x) => -x),
-    { unit: '%' }
-  )
+    { unit: '%' },
+  ),
 )
 
 const nodeBurstCryo_enemyRes_ = { ...enemyRes_ }
@@ -118,7 +118,7 @@ const [condAsc1Path, condAsc1] = cond(key, 'asc1')
 const nodeAsc1Disp = greaterEq(
   input.asc,
   1,
-  equal(condAsc1, 'field', dm.passive1.cryo_dmg_)
+  equal(condAsc1, 'field', dm.passive1.cryo_dmg_),
 )
 const nodeAsc1 = equal(input.activeCharKey, target.charKey, nodeAsc1Disp)
 
@@ -126,7 +126,7 @@ const [condAsc4Path, condAsc4] = cond(key, 'asc4')
 const nodeAsc4 = greaterEq(
   input.asc,
   4,
-  equal(condAsc4, 'press', dm.passive2.press_dmg_)
+  equal(condAsc4, 'press', dm.passive2.press_dmg_),
 )
 const nodeAsc4Press_skill_dmg_ = { ...nodeAsc4 }
 const nodeAsc4Press_burst_dmg_ = { ...nodeAsc4 }
@@ -134,7 +134,7 @@ const [condAsc4HoldPath, condAsc4Hold] = cond(key, 'asc4Hold')
 const nodeAsc4Hold = greaterEq(
   input.asc,
   4,
-  equal(condAsc4Hold, 'hold', dm.passive2.hold_dmg_)
+  equal(condAsc4Hold, 'hold', dm.passive2.hold_dmg_),
 )
 const nodeAsc4Hold_normal_dmg_ = { ...nodeAsc4Hold }
 const nodeAsc4Hold_charged_dmg_ = { ...nodeAsc4Hold }
@@ -143,7 +143,7 @@ const nodeAsc4Hold_plunging_dmg_ = { ...nodeAsc4Hold }
 const nodeC2Disp = greaterEq(
   input.constellation,
   2,
-  equal(condAsc1, 'field', dm.passive1.cryo_dmg_)
+  equal(condAsc1, 'field', dm.passive1.cryo_dmg_),
 )
 const nodeC2 = equal(input.activeCharKey, target.charKey, nodeC2Disp)
 
@@ -154,14 +154,14 @@ const c4Inc = greaterEq(
   lookup(
     condC4,
     objKeyMap(range(1, dm.constellation4.maxStacks), (i) =>
-      percent(i * dm.constellation4.dmg_)
+      percent(i * dm.constellation4.dmg_),
     ),
-    0
-  )
+    0,
+  ),
 )
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -372,7 +372,7 @@ const sheet: TalentSheet = {
         (i) => ({
           name: st('stack', { count: i }),
           fields: [{ node: c4Inc }],
-        })
+        }),
       ),
     }),
     ct.headerTem('constellation6', {

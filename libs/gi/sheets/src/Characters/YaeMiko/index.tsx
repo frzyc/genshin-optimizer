@@ -82,14 +82,14 @@ const [condC4Path, condC4] = cond(key, 'c4')
 const nodeC4 = greaterEq(
   input.constellation,
   4,
-  equal('hit', condC4, dm.constellation4.ele_dmg_)
+  equal('hit', condC4, dm.constellation4.ele_dmg_),
 )
 
 const nodeC6 = greaterEq(input.constellation, 6, dm.constellation6.defIgn_)
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg: dmgNode('atk', dm.charged.dmg, 'charged'),
@@ -99,7 +99,7 @@ const dmgFormulas = {
     dmg1: lessThan(
       input.constellation,
       2,
-      dmgNode('atk', dm.skill.dmg1, 'skill')
+      dmgNode('atk', dm.skill.dmg1, 'skill'),
     ),
     dmg2: dmgNode('atk', dm.skill.dmg2, 'skill', {
       premod: { enemyDefIgn_: nodeC6 },
@@ -112,7 +112,7 @@ const dmgFormulas = {
       2,
       dmgNode('atk', dm.skill.dmg4, 'skill', {
         premod: { enemyDefIgn_: nodeC6 },
-      })
+      }),
     ),
   },
   burst: {
@@ -123,7 +123,7 @@ const dmgFormulas = {
     nodeAsc4: greaterEq(
       input.asc,
       4,
-      prod(input.total.eleMas, percent(dm.passive2.eleMas_dmg_, { fixed: 2 }))
+      prod(input.total.eleMas, percent(dm.passive2.eleMas_dmg_, { fixed: 2 })),
     ),
   },
 }

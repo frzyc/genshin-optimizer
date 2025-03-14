@@ -89,14 +89,14 @@ export function WeaponSwapModal({
     (weaponKey: WeaponKey) => {
       setEditWeaponId(database.weapons.new(initialWeapon(weaponKey)))
     },
-    [database, setEditWeaponId]
+    [database, setEditWeaponId],
   )
   const resetEditWeapon = useCallback(() => setEditWeaponId(''), [])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
   useEffect(
     () => database.weapons.followAny(forceUpdate),
-    [forceUpdate, database]
+    [forceUpdate, database],
   )
 
   const brPt = useMediaQueryUp()
@@ -108,12 +108,12 @@ export function WeaponSwapModal({
   const weaponIds = useMemo(() => {
     const filterFunc = filterFunction(
       { weaponType: weaponTypeKey, rarity, name: deferredSearchTerm },
-      weaponFilterConfigs()
+      weaponFilterConfigs(),
     )
     const sortFunc = sortFunction(
       weaponSortMap['level'] ?? [],
       false,
-      weaponSortConfigs()
+      weaponSortConfigs(),
     )
     let weaponIds = database.weapons.values
       .filter(filterFunc)
@@ -136,11 +136,11 @@ export function WeaponSwapModal({
 
   const { numShow, setTriggerElement } = useInfScroll(
     numToShowMap[brPt],
-    weaponIds.length
+    weaponIds.length,
   )
   const weaponIdsToShow = useMemo(
     () => weaponIds.slice(0, numShow),
-    [weaponIds, numShow]
+    [weaponIds, numShow],
   )
 
   // for pagination

@@ -82,7 +82,7 @@ export function wengineTagMapNodeEntries(
   key: WengineKey,
   level: number,
   modification: MilestoneKey,
-  phase: PhaseKey
+  phase: PhaseKey,
 ): TagMapNodeEntries {
   return [
     // Opt-in for wengine buffs, instead of enabling it by default to reduce `read` traffic
@@ -97,7 +97,7 @@ export function wengineTagMapNodeEntries(
 
 export function discTagMapNodeEntries(
   stats: Partial<Record<DiscMainStatKey | DiscSubStatKey, number>>,
-  sets: Partial<Record<DiscSetKey, number>>
+  sets: Partial<Record<DiscSetKey, number>>,
 ): TagMapNodeEntries {
   const {
     common: { count },
@@ -113,11 +113,11 @@ export function discTagMapNodeEntries(
       .withTag({ sheet: 'disc', qt: 'initial' })
       .reread(reader.sheet('dyn')),
     ...Object.entries(stats).map(([k, v]) =>
-      getStatFromStatKey(initial, k).sheet('dyn').add(v)
+      getStatFromStatKey(initial, k).sheet('dyn').add(v),
     ),
 
     ...Object.entries(sets).map(([k, v]) =>
-      count.sheet(k as DiscSetKey).add(v)
+      count.sheet(k as DiscSetKey).add(v),
     ),
   ]
 }
@@ -132,13 +132,13 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'own', dst: null, src: dst }))
+        .reread(reader.withTag({ et: 'own', dst: null, src: dst })),
     ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = own.with('src', dst)
       return members.map((src) =>
-        entry.reread(teamBuff.withTag({ dst, src, name: null }))
+        entry.reread(teamBuff.withTag({ dst, src, name: null })),
       )
     }),
     // Not Self Buff
@@ -147,14 +147,14 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       return members
         .filter((src) => src !== dst)
         .map((src) =>
-          entry.reread(notOwnBuff.withTag({ dst, src, name: null }))
+          entry.reread(notOwnBuff.withTag({ dst, src, name: null })),
         )
     }),
     // Enemy Debuff
     members.map((src) =>
       enemy.reread(
-        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
-      )
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null }),
+      ),
     ),
     // Non-stacking
     members.flatMap((src, i) => {

@@ -110,7 +110,7 @@ const [condAfterBurstPath, condAfterBurst] = cond(key, 'afterBurst')
 const afterBurst_charged_dmg_ = equal(
   condAfterBurst,
   'on',
-  subscript(input.total.burstIndex, dm.burst.charged_dmg_)
+  subscript(input.total.burstIndex, dm.burst.charged_dmg_),
 )
 
 const [condP1SealsPath, condP1Seals] = cond(key, 'p1Seals')
@@ -123,30 +123,30 @@ const p1_pyro_dmg_ = greaterEq(
       condP1Seals,
       objKeyMap(sealsArr, (seal) =>
         // Only allow 4th seal for c6.
-        seal === 4 ? greaterEq(input.constellation, 6, seal) : constant(seal)
+        seal === 4 ? greaterEq(input.constellation, 6, seal) : constant(seal),
       ),
-      naught
+      naught,
     ),
-    dm.passive1.seal_pyro_dmg_
-  )
+    dm.passive1.seal_pyro_dmg_,
+  ),
 )
 
 const a4_dmg = greaterEq(
   input.asc,
   4,
-  customDmgNode(prod(input.total.atk, dm.passive2.dmg), 'charged')
+  customDmgNode(prod(input.total.atk, dm.passive2.dmg), 'charged'),
 )
 
 const [condC2EnemyHpPath, condC2EnemyHp] = cond(key, 'c2EnemyHp')
 const c2EnemyHp_critRate_ = greaterEq(
   input.constellation,
   2,
-  equal(condC2EnemyHp, 'on', dm.c2.charged_critRate_)
+  equal(condC2EnemyHp, 'on', dm.c2.charged_critRate_),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: Object.fromEntries(
     dm.charged.dmgArr.map((arr, i) => [
@@ -154,7 +154,7 @@ const dmgFormulas = {
       i < 4
         ? dmgNode('atk', arr, 'charged')
         : greaterEq(input.constellation, 6, dmgNode('atk', arr, 'charged')),
-    ])
+    ]),
   ),
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
@@ -173,9 +173,9 @@ const dmgFormulas = {
           critHit: one,
           avgHit: input.total.cappedCritRate,
         },
-        naught
+        naught,
       ),
-      a4_dmg
+      a4_dmg,
     ),
   },
   constellation4: {
@@ -184,13 +184,13 @@ const dmgFormulas = {
       4,
       shieldElement(
         elementKey,
-        customShieldNode(prod(input.total.hp, dm.c4.hpShield_))
-      )
+        customShieldNode(prod(input.total.hp, dm.c4.hpShield_)),
+      ),
     ),
     norm_shield: greaterEq(
       input.constellation,
       4,
-      customShieldNode(prod(input.total.hp, dm.c4.hpShield_))
+      customShieldNode(prod(input.total.hp, dm.c4.hpShield_)),
     ),
   },
 } as const
@@ -280,8 +280,8 @@ const sheet: TalentSheet = {
                   },
                 ],
               },
-            ]
-          )
+            ],
+          ),
         ),
     }),
     ct.headerTem('passive2', {

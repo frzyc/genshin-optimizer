@@ -14,7 +14,7 @@ const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
 const [plunging_dmg_, plunging_dmg_inactive] = nonStackBuff(
   'crane',
   'plunging_dmg_',
-  subscript(input.weapon.refinement, plunging_dmg_arr, { unit: '%' })
+  subscript(input.weapon.refinement, plunging_dmg_arr, { unit: '%' }),
 )
 
 const data = dataObjForWeaponSheet(key, {

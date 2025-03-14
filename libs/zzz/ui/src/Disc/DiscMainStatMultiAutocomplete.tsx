@@ -26,20 +26,20 @@ export function DiscMainStatMultiAutocomplete({
         label: `${tk(key)}${getUnitStr(key)}`,
         variant: 'fix variant',
       })),
-    [tk]
+    [tk],
   )
 
   const toImg = useCallback(
     (key: StatKey) => <StatIcon statKey={key} iconProps={iconInlineProps} />,
-    []
+    [],
   )
   const toExLabel = useCallback(
     (key: DiscMainStatKey) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: DiscMainStatKey) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
   return (
     <GeneralAutocompleteMulti

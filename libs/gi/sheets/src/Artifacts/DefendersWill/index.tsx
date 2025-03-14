@@ -17,7 +17,7 @@ const res_ = objKeyValMap(allElementKeys, (ele) => [
   greaterEq(
     input.artSet.DefendersWill,
     4,
-    greaterEq(tally[ele], 1, percent(0.3))
+    greaterEq(tally[ele], 1, percent(0.3)),
   ),
 ])
 

@@ -19,7 +19,7 @@ export default function artifactData() {
     Object.entries(reliquarySetExcelConfigData).map(([setid, setData]) => {
       const { setNeedNum } = setData
       const codexInSet = reliquaryCodexExcelConfigData.filter(
-        (c) => c.suitId?.toString() === setid
+        (c) => c.suitId?.toString() === setid,
       )
       const slots = [
         ...(codexInSet[0].cupId ? (['goblet'] as ArtifactSlotKey[]) : []),
@@ -35,7 +35,7 @@ export default function artifactData() {
         slots,
       }
       return [artifactIdMap[setid], result]
-    })
+    }),
   ) as Record<ArtifactSetKey, ArtifactDataGen>
   return data
 }

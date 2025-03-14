@@ -20,10 +20,10 @@ const critRate_ = lookup(
   condPassive,
   {
     ...objKeyMap(range(1, 5), (i) =>
-      prod(subscript(input.weapon.refinement, critRate_s), i)
+      prod(subscript(input.weapon.refinement, critRate_s), i),
     ),
   },
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -50,7 +50,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
   ],

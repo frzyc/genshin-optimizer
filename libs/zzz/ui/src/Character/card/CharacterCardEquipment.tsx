@@ -70,7 +70,7 @@ export function CharacterCardEquipment({
   const characterDiscs = useMemo(
     () =>
       database.discs.values.filter((disc) => disc.location === characterKey),
-    [database.discs.values, characterKey]
+    [database.discs.values, characterKey],
   )
   return (
     <Box
@@ -162,7 +162,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
               </Box>
             </Box>
           </Box>
-        ) : null
+        ) : null,
       )}
     </Box>
   )

@@ -19,7 +19,7 @@ describe('test  @genshin_optimizer/util/string', () => {
       escaped: 'He said "hello".',
     })
     expect(extractJSON('{"nested": {"key": "value", "list": [1, 2]}}')).toEqual(
-      { nested: { key: 'value', list: [1, 2] } }
+      { nested: { key: 'value', list: [1, 2] } },
     )
     expect(extractJSON('{"bool": true, "nullValue": null}')).toEqual({
       bool: true,

@@ -60,7 +60,7 @@ export function TeamContent({
           index,
           build_type,
         } as TeamLoadoutData
-      })
+      }),
   )
   const saveTeamLoadouts = async () => {
     const { error } = await supabase.from('team_loadouts').upsert(
@@ -96,9 +96,9 @@ export function TeamContent({
               index: teamLoadout.index,
               build_type: teamLoadout?.build_type ?? null,
             }
-          })
+          }),
         )
-      ).filter(notEmpty)
+      ).filter(notEmpty),
     )
     // .select()
     if (error) console.error(error)
@@ -156,17 +156,17 @@ function Teammate({
   setTeamLoadouts: Dispatch<SetStateAction<Array<TeamLoadoutData | null>>>
 }) {
   const [selectedCharId, setSelectedCharId] = useState(
-    teamLoadout?.loadout?.character_id ?? ''
+    teamLoadout?.loadout?.character_id ?? '',
   )
   const handleCharChange = (event: SelectChangeEvent) => {
     setSelectedCharId(event.target.value as string)
   }
   const loadoutsOfChar = loadouts.filter(
     ({ character_key }) =>
-      characters.find(({ id }) => id === selectedCharId)?.key === character_key
+      characters.find(({ id }) => id === selectedCharId)?.key === character_key,
   )
   const [selectedLoadoutId, setSelectedLoadoutId] = useState(
-    teamLoadout?.loadout?.id ?? 'new'
+    teamLoadout?.loadout?.id ?? 'new',
   )
   const handleLoadoutChange = (event: SelectChangeEvent) => {
     setSelectedLoadoutId(event.target.value as string)
@@ -191,7 +191,7 @@ function Teammate({
       }
     } else {
       const selectedLoadout = loadouts.find(
-        ({ id }) => id === selectedLoadoutId
+        ({ id }) => id === selectedLoadoutId,
       )
       if (!selectedLoadout) return
       tloadout.loadout = {

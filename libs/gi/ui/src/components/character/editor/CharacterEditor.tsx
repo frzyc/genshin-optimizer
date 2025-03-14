@@ -63,7 +63,7 @@ function CharacterEditorContent({
       character && {
         character,
       },
-    [character]
+    [character],
   )
 
   const [chartData, setChartData] = useState<ChartData | undefined>()

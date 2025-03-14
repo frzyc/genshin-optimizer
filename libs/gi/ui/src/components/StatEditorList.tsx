@@ -52,23 +52,23 @@ export function StatEditorList({
               [...allMainStatKeys, ...allSubstatKeys] as string[]
             ).includes(statKey)
               ? `${tk(statKey as MainStatKey | SubstatKey)}${statPercent(
-                  statKey as MainStatKey | SubstatKey
+                  statKey as MainStatKey | SubstatKey,
                 )}`
-              : KeyMap.getStr(statKey) ?? 'ERROR',
+              : (KeyMap.getStr(statKey) ?? 'ERROR'),
             color: KeyMap.getVariant(statKey),
-          })
+          }),
         )
         .sort(
           (a, b) =>
             allGroupKeys.indexOf(a.grouper as GroupKey) -
-            allGroupKeys.indexOf(b.grouper as GroupKey)
+            allGroupKeys.indexOf(b.grouper as GroupKey),
         ),
-    [tk, statKeys]
+    [tk, statKeys],
   )
 
   const getOptionDiabled = useCallback(
     (option: StatOption) => Object.keys(statFilters).includes(option.key),
-    [statFilters]
+    [statFilters],
   )
 
   const setKey = useCallback(
@@ -79,8 +79,8 @@ export function StatEditorList({
             Object.entries(statFilters).map(([k, v]) => [
               k === oldk ? newk : k,
               v,
-            ])
-          )
+            ]),
+          ),
         )
       else {
         const statFilters_ = { ...statFilters }
@@ -88,7 +88,7 @@ export function StatEditorList({
         setStatFilters({ ...statFilters_ })
       }
     },
-    [statFilters, setStatFilters]
+    [statFilters, setStatFilters],
   )
 
   const setFilter = useCallback(
@@ -97,7 +97,7 @@ export function StatEditorList({
       statFilters_[sKey] = min
       setStatFilters({ ...statFilters_ })
     },
-    [statFilters, setStatFilters]
+    [statFilters, setStatFilters],
   )
 
   const delKey = useCallback(
@@ -106,7 +106,7 @@ export function StatEditorList({
       delete statFilters_[statKey]
       setStatFilters({ ...statFilters_ })
     },
-    [statFilters, setStatFilters]
+    [statFilters, setStatFilters],
   )
 
   return (
@@ -124,8 +124,8 @@ export function StatEditorList({
             delKey={delKey}
             getOptionDisabled={getOptionDiabled}
           />,
-          statKey
-        )
+          statKey,
+        ),
       )}
       {wrapperFunc(
         <StatFilterItem
@@ -138,7 +138,7 @@ export function StatEditorList({
           disabled={disabled}
           getOptionDisabled={getOptionDiabled}
           label={label}
-        />
+        />,
       )}
     </>
   )
@@ -173,7 +173,7 @@ function StatFilterItem({
   const isFloat = statKey ? getUnitStr(statKey) === '%' : false
   const onValueChange = useCallback(
     (value?: number) => statKey && setValue(statKey, value ?? 0),
-    [setValue, statKey]
+    [setValue, statKey],
   )
   const onKeyChange = useCallback(
     (newKey: InputPremodKey | null) => {
@@ -183,11 +183,11 @@ function StatFilterItem({
         delKey(statKey)
       }
     },
-    [statKey, setKey, delKey]
+    [statKey, setKey, delKey],
   )
   const onDeleteKey = useCallback(
     () => statKey && delKey(statKey),
-    [delKey, statKey]
+    [delKey, statKey],
   )
   return (
     <Box sx={{ display: 'flex' }}>
@@ -223,8 +223,8 @@ function StatFilterItem({
               gridTemplateColumns: isOneCol
                 ? '100%'
                 : isThreeCol
-                ? '33% 33% 33%'
-                : '50% 50%',
+                  ? '33% 33% 33%'
+                  : '50% 50%',
             },
           }}
           // This needs to be done with `style` prop, not `sx` prop, or it doesn't work

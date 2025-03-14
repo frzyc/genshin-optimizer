@@ -72,7 +72,7 @@ export default function TabWeapon() {
   const weaponOptionDispatch = useCallback(
     (option: Partial<ArchiveWeaponOption>) =>
       database.displayArchive.set({ weapon: { ...weapon, ...option } }),
-    [database, weapon]
+    [database, weapon],
   )
   const weaponKeys = useMemo(() => {
     return allWeaponKeys.filter((wKey) => {
@@ -147,15 +147,15 @@ export default function TabWeapon() {
           main: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.main ?? '',
           sub: (wKey: WeaponKey) => weaponDataCache.get(wKey)?.sub ?? '',
           subType: (wKey: WeaponKey) => getWeaponStat(wKey).subStat?.type ?? '',
-        } as SortConfigs<SortKey, WeaponKey>
+        } as SortConfigs<SortKey, WeaponKey>,
       ),
-    [weapon.sortOrder, weapon.sortOrderBy, weaponDataCache]
+    [weapon.sortOrder, weapon.sortOrderBy, weaponDataCache],
   )
 
   const { numShow, setTriggerElement } = useInfScroll(10, weaponKeys.length)
   const weaponKeysToShow = useMemo(
     () => weaponKeys.sort(sortedWeaponKeys).slice(0, numShow),
-    [weaponKeys, sortedWeaponKeys, numShow]
+    [weaponKeys, sortedWeaponKeys, numShow],
   )
   const weaponTotals = useMemo(
     () =>
@@ -166,9 +166,9 @@ export default function TabWeapon() {
           const { type } = subStat as { type: WeaponSubstatKey }
           ct[type].total++
           if (weaponKeys.includes(wKey)) ct[type].current++
-        })
+        }),
       ),
-    [weaponKeys]
+    [weaponKeys],
   )
   const columns: { key: SortKey; label: string; width: number }[] = [
     { key: 'name', label: 'Name', width: 30 },
@@ -298,12 +298,12 @@ const WeaponRow = memo(function WeaponRow({
         refinement: 1,
         location: '',
         lock: false,
-      } as ICachedWeapon),
-    [rarity, wKey]
+      }) as ICachedWeapon,
+    [rarity, wKey],
   )
   const weaponUIData = useMemo(
     () => computeUIData([getWeaponSheet(wKey).data, dataObjForWeapon(weapon)]),
-    [wKey, weapon]
+    [wKey, weapon],
   )
   const main = weaponUIData.get(input.weapon.main)
   const sub = weaponUIData.get(input.weapon.sub)

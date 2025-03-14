@@ -14,7 +14,7 @@ const set2 = greaterEq(input.artSet.MaidenBeloved, 2, percent(0.15))
 const set4 = greaterEq(
   input.artSet.MaidenBeloved,
   4,
-  equal('on', condState, percent(0.2))
+  equal('on', condState, percent(0.2)),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

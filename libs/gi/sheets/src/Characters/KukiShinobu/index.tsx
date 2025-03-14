@@ -99,30 +99,30 @@ const [condUnderHPPath, condUnderHP] = cond(key, 'underHP')
 const a1Heal_ = greaterEq(
   input.asc,
   1,
-  equal(condUnderHP, 'on', dm.passive1.heal_)
+  equal(condUnderHP, 'on', dm.passive1.heal_),
 )
 
 const a4Skill_healInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.emSkillHeal_), input.total.eleMas)
+  prod(percent(dm.passive2.emSkillHeal_), input.total.eleMas),
 )
 const a4Skill_dmgInc = greaterEq(
   input.asc,
   4,
-  prod(percent(dm.passive2.emSkillDmg_), input.total.eleMas)
+  prod(percent(dm.passive2.emSkillDmg_), input.total.eleMas),
 )
 
 const [condC6TriggerPath, condC6Trigger] = cond(key, 'c6Trigger')
 const c6eleMas = greaterEq(
   input.constellation,
   6,
-  equal(condC6Trigger, 'on', dm.constellation6.em)
+  equal(condC6Trigger, 'on', dm.constellation6.em),
 )
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -136,7 +136,7 @@ const dmgFormulas = {
       dm.skill.ringHealHP_,
       dm.skill.ringHealFlat,
       'skill',
-      { premod: { healInc: a4Skill_healInc } }
+      { premod: { healInc: a4Skill_healInc } },
     ),
     ringDmg: dmgNode('atk', dm.skill.ringDmg, 'skill'),
   },
@@ -154,8 +154,8 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation4.markDmg), input.total.hp),
         'skill',
-        { hit: { ele: constant(elementKey) } }
-      )
+        { hit: { ele: constant(elementKey) } },
+      ),
     ),
   },
 }

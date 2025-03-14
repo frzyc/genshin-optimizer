@@ -45,7 +45,7 @@ type RankData = {
 function addBonusAbility(
   config: AvatarSkillTreeConfig,
   abilities: AbilitiesData,
-  key: 'bonusAbility1' | 'bonusAbility2' | 'bonusAbility3'
+  key: 'bonusAbility1' | 'bonusAbility2' | 'bonusAbility3',
 ) {
   abilities[key] = [
     {
@@ -68,7 +68,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
 
   // Skills
   const abilities: AbilitiesData = Object.fromEntries(
-    allAbilityKeys.map((key) => [key, []])
+    allAbilityKeys.map((key) => [key, []]),
   )
   SkillList.forEach((skillId) => {
     const { SkillName, SkillDesc, SimpleSkillDesc, SkillTag, AttackType } =
@@ -95,7 +95,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
     bonusAbility3,
   ] = Object.values(avatarSkillTreeConfig[charId]).map(
     // Grab the first level
-    (skillTree) => skillTree[0]
+    (skillTree) => skillTree[0],
   )
   addBonusAbility(bonusAbility1, abilities, 'bonusAbility1')
   addBonusAbility(bonusAbility2, abilities, 'bonusAbility2')
@@ -113,7 +113,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
         },
       ]
       return tuple
-    }
+    },
   )
   const ranks = Object.fromEntries(rankArray)
   verifyObjKeys(ranks, ['1', '2', '3', '4', '5', '6'] as const)

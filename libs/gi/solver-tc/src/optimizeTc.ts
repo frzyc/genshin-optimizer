@@ -46,7 +46,7 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
     },
   } = charTC
   const existingRolls = objMap(substats, (v, k) =>
-    Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
+    Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType)),
   )
   const mainStatsCount = getMainStatsCount(slots)
   const minSubLines = getMinSubLines(slots)
@@ -55,7 +55,7 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
     minOtherRolls: getMinOtherRolls(
       Object.entries(existingRolls) as Array<[SubstatKey, number]>,
       mainStatsCount,
-      minSubLines
+      minSubLines,
     ),
   }
 }
@@ -65,7 +65,7 @@ export function optimizeTcUsingNodes(
   valueFilter: Array<{ value: NumNode; minimum: number }>,
   charTC: BuildTc,
   callback: (r: TCWorkerResult) => void,
-  debug = false
+  debug = false,
 ) {
   const startTime = performance.now()
   const {
@@ -85,18 +85,18 @@ export function optimizeTcUsingNodes(
       scalesWith.add(val)
       return val
     },
-    1
+    1,
   )
 
   const substatValue = (x: string, m: number) =>
     m * getSubstatValue(x as SubstatKey, rarity, substatsType, false)
 
   const scalesWithSub = [...scalesWith].filter((k) =>
-    allSubstatKeys.includes(k as SubstatKey)
+    allSubstatKeys.includes(k as SubstatKey),
   )
 
   const existingRolls = objMap(substats, (v, k) =>
-    Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType))
+    Math.ceil(substats[k] / getSubstatValue(k, rarity, substatsType)),
   )
   const maxSubsAssignable = objMap(maxSubstats, (v, k) => v - existingRolls[k])
   let max = -Infinity
@@ -114,7 +114,7 @@ export function optimizeTcUsingNodes(
     getMinOtherRolls(
       Object.entries(existingRolls) as Array<[SubstatKey, number]>,
       mainStatsCount,
-      minSubLines
+      minSubLines,
     ) <= 0
 
   callback({
@@ -122,8 +122,8 @@ export function optimizeTcUsingNodes(
     total: countPerms(
       distributedSubstats,
       [...scalesWithSub, 'other'].map((k) =>
-        k === 'other' ? distributedSubstats : maxSubsAssignable[k]
-      )
+        k === 'other' ? distributedSubstats : maxSubsAssignable[k],
+      ),
     ),
   })
   let tested = 0
@@ -161,7 +161,7 @@ export function optimizeTcUsingNodes(
         const minOtherRolls = getMinOtherRolls(
           allRolls,
           mainStatsCount,
-          minSubLines
+          minSubLines,
         )
         // not feasible
         if ((bufferRolls.other ?? 0) < minOtherRolls) {
@@ -192,7 +192,7 @@ export function optimizeTcUsingNodes(
   }
   const distributed = Object.entries(maxBufferRolls).reduce(
     (accu, [k, v]) => accu + (k === 'other' ? 0 : v),
-    0
+    0,
   )
   callback({
     resultType: 'finalize',
@@ -213,7 +213,7 @@ export function optimizeTcUsingNodes(
 function getMinOtherRolls(
   subsRolls: Array<[SubstatKey, number]>,
   mainStatsCount: Partial<Record<SubstatKey, number>>,
-  minSublines: number = 4 * 5
+  minSublines: number = 4 * 5,
 ) {
   const maxSubSlots = subsRolls.reduce((accu, [k, v]) => {
     const maxStatSlot = 5 - (mainStatsCount[k] ?? 0)

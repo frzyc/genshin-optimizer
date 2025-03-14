@@ -46,7 +46,7 @@ export class GeneratedBuildListDataManager extends DataManager<
           const discIds = objKeyMap(allDiscSlotKeys, (slotKey) =>
             this.database.discs.get(discIdsRaw[slotKey])?.slotKey === slotKey
               ? discIdsRaw[slotKey]
-              : undefined
+              : undefined,
           )
 
           return { discIds, wengineId, value }

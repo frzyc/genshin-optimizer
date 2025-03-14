@@ -20,7 +20,7 @@ const [condSet4Path, condSet4] = cond(key, 'set4')
 const set4Cond = greaterEq(
   input.artSet.GoldenTroupe,
   4,
-  equal(condSet4, 'on', 0.25, { path: 'skill_dmg_' })
+  equal(condSet4, 'on', 0.25, { path: 'skill_dmg_' }),
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {

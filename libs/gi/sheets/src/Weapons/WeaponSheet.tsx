@@ -23,7 +23,7 @@ export class WeaponSheet {
 }
 export function headerTemplate(
   weaponKey: WeaponKey,
-  action?: ReactNode
+  action?: ReactNode,
 ): IDocumentHeader {
   const [tr] = trans('weapon', weaponKey)
   return {

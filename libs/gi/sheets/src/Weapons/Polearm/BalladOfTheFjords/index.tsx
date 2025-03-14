@@ -17,7 +17,7 @@ const eleMasArr = [-1, 120, 150, 180, 210, 240]
 const eleMas = greaterEq(
   tally.ele,
   3,
-  subscript(input.weapon.refinement, eleMasArr)
+  subscript(input.weapon.refinement, eleMasArr),
 )
 
 const data = dataObjForWeaponSheet(key, {

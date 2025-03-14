@@ -106,7 +106,7 @@ const skillShotsFired = lookup(
     5: constant(11),
     6: constant(11),
   },
-  constant(5)
+  constant(5),
 )
 const shotsHitArr = range(1, 11) as Array<
   1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
@@ -129,28 +129,28 @@ const [condShotsHitPath, condShotsHit] = cond(key, 'shotsHit')
 const shotsHit_shot_mult_ = lookup(
   condShotsHit,
   objKeyMap(shotsHitArr, (shot) =>
-    greaterEq(skillShotsFired, shot, percent(shotsHit_mult_map[shot]))
+    greaterEq(skillShotsFired, shot, percent(shotsHit_mult_map[shot])),
   ),
-  naught
+  naught,
 )
 const excessSkillCharges_skill_dmg_ = lookup(
   condSkillCharges,
   objKeyMap(skillChargesArr, (charge) =>
-    charge > 3 ? constant((charge - 3) * dm.skill.addlCharge_dmg_) : naught
+    charge > 3 ? constant((charge - 3) * dm.skill.addlCharge_dmg_) : naught,
   ),
-  naught
+  naught,
 )
 
 const [condA1AfterSkillPath, condA1AfterSkill] = cond(key, 'a1AfterSkill')
 const a1AfterSkillInfusion = greaterEqStr(
   input.asc,
   1,
-  equalStr(condA1AfterSkill, 'on', constant('geo'))
+  equalStr(condA1AfterSkill, 'on', constant('geo')),
 )
 const a1AfterSkill_auto_dmg_ = greaterEq(
   input.asc,
   1,
-  equal(condA1AfterSkill, 'on', dm.passive1.auto_dmg_)
+  equal(condA1AfterSkill, 'on', dm.passive1.auto_dmg_),
 )
 const a1AfterSkill_normal_dmg_ = { ...a1AfterSkill_auto_dmg_ }
 const a1AfterSkill_charged_dmg_ = { ...a1AfterSkill_auto_dmg_ }
@@ -158,7 +158,7 @@ const a1AfterSkill_plunging_dmg_ = { ...a1AfterSkill_auto_dmg_ }
 
 const a4ElementArr = ['pyro', 'electro', 'cryo', 'hydro']
 const numTeammates = sum(
-  ...a4ElementArr.map((ele) => tally[ele as keyof typeof tally])
+  ...a4ElementArr.map((ele) => tally[ele as keyof typeof tally]),
 )
 const a4Element_atk_ = greaterEq(
   input.asc,
@@ -167,8 +167,8 @@ const a4Element_atk_ = greaterEq(
     numTeammates,
     2,
     dm.passive2.atk_ * 2,
-    greaterEq(numTeammates, 1, dm.passive2.atk_)
-  )
+    greaterEq(numTeammates, 1, dm.passive2.atk_),
+  ),
 )
 
 const c2Shot_critRate_ = greaterEq(
@@ -177,20 +177,20 @@ const c2Shot_critRate_ = greaterEq(
   lookup(
     condSkillCharges,
     objKeyMap(skillChargesArr, (charge) =>
-      percent(Math.min(charge, 3) * dm.constellation2.critRate_)
+      percent(Math.min(charge, 3) * dm.constellation2.critRate_),
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const [condC4AfterBurstHitPath, condC4AfterBurstHit] = cond(
   key,
-  'c4AfterBurstHit'
+  'c4AfterBurstHit',
 )
 const c4AfterBurstHit_geo_enemyRes_ = greaterEq(
   input.constellation,
   4,
-  equal(condC4AfterBurstHit, 'on', -dm.constellation4.geo_enemyRes_)
+  equal(condC4AfterBurstHit, 'on', -dm.constellation4.geo_enemyRes_),
 )
 
 const c6Shot_critDMG_ = greaterEq(
@@ -201,16 +201,16 @@ const c6Shot_critDMG_ = greaterEq(
     objKeyMap(skillChargesArr, (charge) =>
       charge > 3
         ? percent((charge - 3) * dm.constellation6.shot_critDMG_)
-        : naught
+        : naught,
     ),
-    naught
-  )
+    naught,
+  ),
 )
 
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
-      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+      dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
     ),
   },
   charged: {
@@ -233,7 +233,7 @@ const dmgFormulas = {
         name: ct.ch('shot_mult_'),
         asConst: true,
         unit: '%',
-      })
+      }),
     ),
     bladeDmg: dmgNode('atk', dm.skill.bladeDmg, 'skill'),
   },

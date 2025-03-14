@@ -12,7 +12,7 @@ export const charBaseUiSheet: TagField[] = allStatKeys
   .map((statKey) => {
     if (
       allElementalDmgMainStatKeys.includes(
-        statKey as (typeof allElementalDmgMainStatKeys)[number]
+        statKey as (typeof allElementalDmgMainStatKeys)[number],
       )
     ) {
       const tag = {

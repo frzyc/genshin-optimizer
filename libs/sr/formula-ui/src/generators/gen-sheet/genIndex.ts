@@ -41,7 +41,7 @@ export const uiSheets: Record<
   ${allCharacterKeys.join('\n,  ')}
 } as const
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -60,7 +60,7 @@ export const relicUiSheets: Record<RelicSetKey, UISheet<'2' | '4'>> = {
   ${allRelicSetKeys.join('\n,  ')}
 }
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }
@@ -81,7 +81,7 @@ export const lightConeUiSheets: Record<LightConeKey, UISheetElement> =
     ${allLightConeKeys.join(',\n  ')}
   }
   `,
-    { ...prettierRc, parser: 'typescript' }
+    { ...prettierRc, parser: 'typescript' },
   )
   writeFileSync(path, index)
 }

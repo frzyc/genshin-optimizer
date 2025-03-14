@@ -23,7 +23,7 @@ export function relicsTagMapNodes(relics: ICachedRelic[]): TagMapNodeEntries {
 }
 
 export function relicTcTagMapNodes(
-  relic: IBuildTc['relic']
+  relic: IBuildTc['relic'],
 ): TagMapNodeEntries {
   const {
     slots,

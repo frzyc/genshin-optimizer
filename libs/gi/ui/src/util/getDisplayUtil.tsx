@@ -31,14 +31,14 @@ const talentMap = {
   passive2: '4th Asc. Pass.',
   passive3: 'Util. Pass.',
   ...Object.fromEntries(
-    range(1, 6).map((i) => [`constellation${i}`, `Const. ${i}`])
+    range(1, 6).map((i) => [`constellation${i}`, `Const. ${i}`]),
   ),
 }
 
 export function getDisplayHeader(
   data: UIData,
   sectionKey: string,
-  database: ArtCharDatabase
+  database: ArtCharDatabase,
 ): {
   title: ReactNode
   icon?: ReactNode
@@ -111,7 +111,7 @@ export function getDisplaySections(data: UIData): DisplaySections {
       k !== 'reaction' &&
       !k.startsWith('weapon') &&
       !k.startsWith('artifact') &&
-      k !== 'custom'
+      k !== 'custom',
   )
   return [
     ...basic,

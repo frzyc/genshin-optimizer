@@ -27,8 +27,8 @@ const healing_dmgInc = greaterEq(
   lookup(
     condHealing,
     objKeyMap(healingArr, (healAmt) => constant(healAmt * 0.08)),
-    naught
-  )
+    naught,
+  ),
 )
 const normal_dmgInc = { ...healing_dmgInc }
 const charged_dmgInc = { ...healing_dmgInc }

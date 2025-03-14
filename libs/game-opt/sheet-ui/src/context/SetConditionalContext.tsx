@@ -5,8 +5,8 @@ export type SetConditionalFunc = (
   condKey: string,
   src: string,
   dst: string | null,
-  value: number
+  value: number,
 ) => void
 export const SetConditionalContext = createContext<SetConditionalFunc>(() =>
-  console.warn('SetConditional NOT IMPLEMENTED')
+  console.warn('SetConditional NOT IMPLEMENTED'),
 )

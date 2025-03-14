@@ -68,15 +68,15 @@ describe('Database', () => {
         ([k]) =>
           k.startsWith('sro_lightCone_') ||
           k.startsWith('sro_character_') ||
-          k.startsWith('sro_relic_')
-      )
+          k.startsWith('sro_relic_'),
+      ),
     ).toEqual(
       newDB.storage.entries.filter(
         ([k]) =>
           k.startsWith('sro_lightCone_') ||
           k.startsWith('sro_character_') ||
-          k.startsWith('sro_relic_')
-      )
+          k.startsWith('sro_relic_'),
+      ),
     )
     expect(database.chars.values).toEqual(newDB.chars.values)
     expect(database.lightCones.values).toEqual(newDB.lightCones.values)
@@ -87,7 +87,7 @@ describe('Database', () => {
   test('Does not crash from invalid storage', () => {
     function tryStorage(
       setup: (storage: Storage) => void,
-      verify: (storage: Storage) => void = () => null
+      verify: (storage: Storage) => void = () => null,
     ) {
       localStorage.clear()
       setup(localStorage)
@@ -102,7 +102,7 @@ describe('Database', () => {
       },
       (storage) => {
         expect(storage.getItem('sro_character_x')).toBeNull()
-      }
+      },
     )
     tryStorage(
       (storage) => {
@@ -113,7 +113,7 @@ describe('Database', () => {
       (storage) => {
         expect(storage.getItem('sro_character_x')).toBeNull()
         expect(storage.getItem('sro_relic_x')).toBeNull()
-      }
+      },
     )
   })
 
@@ -128,13 +128,13 @@ describe('Database', () => {
     relic1.location = 'March7th'
     const relic1id = database.relics.new(relic1)
     expect(database.chars.get('March7th')!.equippedRelics.body).toEqual(
-      relic1id
+      relic1id,
     )
     const relic2 = randomizeRelic({ slotKey: 'body' })
     relic2.location = 'March7th'
     const relic2id = database.relics.new(relic2)
     expect(database.chars.get('March7th')!.equippedRelics.body).toEqual(
-      relic2id
+      relic2id,
     )
     expect(database.relics.get(relic1id)?.location).toEqual('')
 
@@ -147,7 +147,7 @@ describe('Database', () => {
 
     database.relics.set(relic2id, { location: 'Gepard' })
     expect(database.chars.get('March7th')!.equippedRelics.body).toEqual(
-      relic1id
+      relic1id,
     )
     expect(database.chars.get('Gepard')!.equippedRelics.body).toEqual(relic2id)
     expect(database.relics.get(relic1id)!.location).toEqual('March7th')
@@ -171,7 +171,7 @@ describe('Database', () => {
       location: 'March7th',
     })
     expect(database.chars.get('March7th')!.equippedRelics.body).toEqual(
-      relic1id
+      relic1id,
     )
     expect(database.relics.get(relic1id)?.location).toEqual('March7th')
     database.relics.remove(relic1id)
@@ -197,7 +197,7 @@ describe('Database', () => {
     const importResult = database.importSROD(
       srod as ISrObjectDescription & ISroDatabase,
       false,
-      false
+      false,
     )
     expect(importResult.characters?.new?.length).toEqual(2)
     expect(importResult.relics.invalid.length).toEqual(0)
@@ -225,7 +225,7 @@ describe('Database', () => {
     database.importSROD(
       srod as ISrObjectDescription & ISroDatabase,
       false,
-      false
+      false,
     )
     expect(database.chars.get('Tingyun')?.equippedRelics.body).toEqual(id)
   })
@@ -248,10 +248,10 @@ describe('Database', () => {
 
     const relic1id = database.relics.new(relic1)
     expect(database.chars.get('March7th')?.equippedRelics.body).toEqual(
-      relic1id
+      relic1id,
     )
     expect(database.chars.get('March7th')?.equippedLightCone).toEqual(
-      lightConeid
+      lightConeid,
     )
     const srod1: ISrObjectDescription = {
       format: 'SROD',
@@ -270,7 +270,7 @@ describe('Database', () => {
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,
       true,
-      false
+      false,
     )
     expect(importResult.relics.new.length).toEqual(2)
     expect(importResult.lightCones.new.length).toEqual(1)
@@ -281,15 +281,15 @@ describe('Database', () => {
     expect(
       database.relics.values.reduce(
         (t, relic) => t + (relic.location === 'March7th' ? 1 : 0),
-        0
-      )
+        0,
+      ),
     ).toEqual(1)
     const bodyId = database.chars.get('March7th')?.equippedRelics.body
     expect(bodyId).toBeTruthy()
     expect(database.relics.get(bodyId)?.setKey).toEqual('BandOfSizzlingThunder')
     expect(
       database.lightCones.get(database.chars.get('March7th')?.equippedLightCone)
-        ?.key
+        ?.key,
     ).toEqual('WeAreWildfire')
   })
 
@@ -313,7 +313,7 @@ describe('Database', () => {
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,
       true,
-      false
+      false,
     )
     expect(importResult.lightCones.upgraded.length).toEqual(1)
     expect(importResult.lightCones.unchanged.length).toEqual(1)
@@ -372,7 +372,7 @@ describe('Database', () => {
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,
       true,
-      false
+      false,
     )
     expect(importResult.relics.upgraded.length).toEqual(1)
     expect(importResult.relics.unchanged.length).toEqual(1)
@@ -408,7 +408,7 @@ describe('Database', () => {
     const importResult = database.importSROD(
       srod as ISrObjectDescription & ISroDatabase,
       false,
-      false
+      false,
     )
     expect(importResult.lightCones.new.length).toEqual(0)
     expect(importResult.characters.new.length).toEqual(1)
@@ -449,7 +449,7 @@ describe('Database', () => {
       const importResult = database.importSROD(
         srod as ISrObjectDescription & ISroDatabase,
         true,
-        false
+        false,
       )
       expect(importResult.relics.notInImport).toEqual(0)
       expect(importResult.relics.unchanged.length).toEqual(4)
@@ -495,7 +495,7 @@ describe('Database', () => {
       const importResult = database.importSROD(
         srod as ISrObjectDescription & ISroDatabase,
         true,
-        false
+        false,
       )
       expect(importResult.lightCones.notInImport).toEqual(0)
       expect(importResult.lightCones.unchanged.length).toEqual(4)
@@ -503,7 +503,7 @@ describe('Database', () => {
       // Expect imports to overwrite the id of old
       expect(database.lightCones.get(oldId1)?.key).toEqual('MakeTheWorldClamor')
       expect(database.lightCones.get(oldId2)?.key).toEqual(
-        'TrendOfTheUniversalMarket'
+        'TrendOfTheUniversalMarket',
       )
       expect(database.lightCones.get(oldId3)?.key).toEqual('ASecretVow')
       expect(database.lightCones.get(oldId4)?.key).toEqual('Chorus')
@@ -534,7 +534,7 @@ describe('Database', () => {
       const importResult = database.importSROD(
         srod as ISrObjectDescription & ISroDatabase,
         true,
-        false
+        false,
       )
       expect(importResult.relics.notInImport).toEqual(2)
       expect(database.relics.values.length).toEqual(4)
@@ -543,10 +543,10 @@ describe('Database', () => {
       expect(database.relics.get(oldId2)?.slotKey).toEqual('body')
       // Expect old relics to have new id
       expect(
-        database.relics.values.find((a) => a.slotKey === 'head')?.id
+        database.relics.values.find((a) => a.slotKey === 'head')?.id,
       ).not.toEqual(oldId1)
       expect(
-        database.relics.values.find((a) => a.slotKey === 'hands')?.id
+        database.relics.values.find((a) => a.slotKey === 'hands')?.id,
       ).not.toEqual(oldId2)
     })
 
@@ -573,7 +573,7 @@ describe('Database', () => {
       const importResult = database.importSROD(
         srod as ISrObjectDescription & ISroDatabase,
         true,
-        false
+        false,
       )
       expect(importResult.lightCones.notInImport).toEqual(2)
       expect(database.lightCones.values.length).toEqual(4)
@@ -582,10 +582,10 @@ describe('Database', () => {
       expect(database.lightCones.get(oldId2)?.key).toEqual('DataBank')
       // Expect old relics to have new id
       expect(
-        database.lightCones.values.find((a) => a.key === 'ASecretVow')?.id
+        database.lightCones.values.find((a) => a.key === 'ASecretVow')?.id,
       ).not.toEqual(oldId1)
       expect(
-        database.lightCones.values.find((a) => a.key === 'Cornucopia')?.id
+        database.lightCones.values.find((a) => a.key === 'Cornucopia')?.id,
       ).not.toEqual(oldId2)
     })
   })
@@ -594,7 +594,7 @@ describe('Database', () => {
     test('Test Trailblazer do not share equipment', () => {
       database.chars.set(
         'TrailblazerPhysical',
-        initialCharacter('TrailblazerPhysical')
+        initialCharacter('TrailblazerPhysical'),
       )
       database.chars.set('TrailblazerFire', initialCharacter('TrailblazerFire'))
       const relic1 = randomizeRelic({
@@ -607,16 +607,16 @@ describe('Database', () => {
       })
 
       expect(
-        database.chars.get('TrailblazerPhysical')!.equippedRelics.body
+        database.chars.get('TrailblazerPhysical')!.equippedRelics.body,
       ).toBeUndefined()
       expect(
-        database.chars.get('TrailblazerFire')!.equippedRelics.body
+        database.chars.get('TrailblazerFire')!.equippedRelics.body,
       ).toEqual(relic1Id)
       const lightCone1Id = database.chars.get(
-        'TrailblazerPhysical'
+        'TrailblazerPhysical',
       )!.equippedLightCone
       expect(database.chars.get('TrailblazerFire')!.equippedLightCone).toEqual(
-        lightCone1Id
+        lightCone1Id,
       )
 
       const relic2 = randomizeRelic({
@@ -628,10 +628,10 @@ describe('Database', () => {
         location: 'TrailblazerPhysical',
       })
       expect(
-        database.chars.get('TrailblazerPhysical')!.equippedRelics.body
+        database.chars.get('TrailblazerPhysical')!.equippedRelics.body,
       ).toEqual(relic2Id)
       expect(
-        database.chars.get('TrailblazerFire')!.equippedRelics.body
+        database.chars.get('TrailblazerFire')!.equippedRelics.body,
       ).toEqual(relic1Id)
 
       const lightCone2Id = database.lightCones.new({
@@ -639,26 +639,26 @@ describe('Database', () => {
         location: 'TrailblazerPhysical',
       })
       expect(
-        database.chars.get('TrailblazerPhysical')!.equippedLightCone
+        database.chars.get('TrailblazerPhysical')!.equippedLightCone,
       ).toEqual(lightCone2Id)
       expect(
-        database.chars.get('TrailblazerFire')!.equippedLightCone
+        database.chars.get('TrailblazerFire')!.equippedLightCone,
       ).toBeUndefined()
 
       // deletion dont remove equipment on other trailblazer
       database.chars.remove('TrailblazerFire')
 
       expect(
-        database.chars.get('TrailblazerPhysical')!.equippedRelics.body
+        database.chars.get('TrailblazerPhysical')!.equippedRelics.body,
       ).toEqual(relic2Id)
       expect(
-        database.chars.get('TrailblazerPhysical')!.equippedLightCone
+        database.chars.get('TrailblazerPhysical')!.equippedLightCone,
       ).toEqual(lightCone2Id)
       expect(database.relics.get(relic2Id)!.location).toEqual(
-        'TrailblazerPhysical'
+        'TrailblazerPhysical',
       )
       expect(database.lightCones.get(lightCone2Id)!.location).toEqual(
-        'TrailblazerPhysical'
+        'TrailblazerPhysical',
       )
 
       // deletion of proper trailblazer does unequip
@@ -722,13 +722,13 @@ describe('Database', () => {
     const importResult = database.importSROD(
       srod1 as ISrObjectDescription & ISroDatabase,
       true,
-      false
+      false,
     )
     expect(importResult.lightCones.new.length).toEqual(1)
     expect(importResult.characters.new.length).toEqual(0)
     expect(
       database.lightCones.get(database.chars.get('March7th')?.equippedLightCone)
-        ?.key
+        ?.key,
     ).toEqual('Chorus')
   })
 })

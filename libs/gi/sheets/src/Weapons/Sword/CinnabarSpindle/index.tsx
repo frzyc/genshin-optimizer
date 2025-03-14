@@ -18,9 +18,9 @@ const skill_dmgInc = equal(
     condPassive,
     prod(
       subscript(input.weapon.refinement, eleDmgIncSrc, { unit: '%' }),
-      input.premod.def
-    )
-  )
+      input.premod.def,
+    ),
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -33,7 +33,7 @@ const data = dataObjForWeaponSheet(
   },
   {
     skill_dmgInc,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

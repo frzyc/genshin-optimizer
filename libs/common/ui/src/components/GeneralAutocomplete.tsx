@@ -134,8 +134,8 @@ export function GeneralAutocomplete<T extends string>({
           (opt) =>
             opt.label.toLowerCase().includes(inputValue.toLowerCase()) ||
             opt.alternateNames?.some((name) =>
-              name.toLowerCase().includes(inputValue.toLowerCase())
-            )
+              name.toLowerCase().includes(inputValue.toLowerCase()),
+            ),
         )
       }
       {...acProps}
@@ -170,7 +170,7 @@ export function GeneralAutocompleteMulti<T extends string>({
       keys
         .map((k) => options.find((o) => o.key === k))
         .filter((o) => o) as unknown as GeneralAutocompleteOption<T>[],
-    [options, keys]
+    [options, keys],
   )
   return (
     <Autocomplete
@@ -238,8 +238,8 @@ export function GeneralAutocompleteMulti<T extends string>({
           (opt) =>
             opt.label.toLowerCase().includes(inputValue.toLowerCase()) ||
             opt.alternateNames?.some((name) =>
-              name.toLowerCase().includes(inputValue.toLowerCase())
-            )
+              name.toLowerCase().includes(inputValue.toLowerCase()),
+            ),
         )
       }
       {...acProps}

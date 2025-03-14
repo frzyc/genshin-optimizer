@@ -34,7 +34,7 @@ export function EquipRow({
           if (count >= 2) return [setKey as RelicSetKey, 2]
           return [setKey as RelicSetKey, 0]
         })
-        .filter(([, count]) => count > 0)
+        .filter(([, count]) => count > 0),
     ) as Partial<Record<RelicSetKey, 2 | 4>>
   }, [database.relics, relicIds])
 

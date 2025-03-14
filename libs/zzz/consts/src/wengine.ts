@@ -408,7 +408,7 @@ export const wengineSheets: Partial<
         | Array<(typeof allWengineCondKeys)[WengineCondKey]>
       getStats: (
         conds: Partial<Record<CondKey, number>>,
-        stats: Record<string, number>
+        stats: Record<string, number>,
       ) => Record<string, number> | undefined
     }
   >

@@ -23,7 +23,7 @@ const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const base_atk_ = equal(
   condAfterSkill,
   'on',
-  subscript(input.weapon.refinement, atk_arr)
+  subscript(input.weapon.refinement, atk_arr),
 )
 
 const hpConsumed = prod(percent(0.25), input.total.hp)
@@ -37,11 +37,11 @@ const bond_atk = equal(
     min(
       prod(
         hpConsumed,
-        subscript(input.weapon.refinement, bond_atkArr, { unit: '%' })
+        subscript(input.weapon.refinement, bond_atkArr, { unit: '%' }),
       ),
-      subscript(input.weapon.refinement, bond_maxAtkArr, { unit: '%' })
-    )
-  )
+      subscript(input.weapon.refinement, bond_maxAtkArr, { unit: '%' }),
+    ),
+  ),
 )
 
 const data = dataObjForWeaponSheet(
@@ -52,7 +52,7 @@ const data = dataObjForWeaponSheet(
       atk: bond_atk,
     },
   },
-  { bond_atk }
+  { bond_atk },
 )
 
 const sheet: IWeaponSheet = {

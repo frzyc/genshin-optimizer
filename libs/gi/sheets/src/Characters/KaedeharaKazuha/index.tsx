@@ -91,19 +91,19 @@ const dm = {
 
 const [condBurstAbsorptionPath, condBurstAbsorption] = cond(
   key,
-  'burstAbsorption'
+  'burstAbsorption',
 )
 
 const [condSkillAbsorptionPath, condSkillAbsorption] = cond(
   key,
-  'skillAbsorption'
+  'skillAbsorption',
 )
 
 const condSwirlPaths = Object.fromEntries(
-  absorbableEle.map((e) => [e, [key, `swirl${e}`]])
+  absorbableEle.map((e) => [e, [key, `swirl${e}`]]),
 )
 const condSwirls = Object.fromEntries(
-  absorbableEle.map((e) => [e, condReadNode(condSwirlPaths[e])])
+  absorbableEle.map((e) => [e, condReadNode(condSwirlPaths[e])]),
 )
 const asc4 = Object.fromEntries(
   absorbableEle.map((ele) => [
@@ -117,11 +117,11 @@ const asc4 = Object.fromEntries(
         // Use premod since this is a percentage-based effect
         prod(
           percent(dm.passive2.elemas_dmg_, { fixed: 2 }),
-          input.premod.eleMas
-        )
-      )
+          input.premod.eleMas,
+        ),
+      ),
     ),
-  ])
+  ]),
 )
 
 // 2 C2 conds for the 2 parts of his C2
@@ -129,26 +129,26 @@ const [condC2Path, condC2] = cond(key, 'c2')
 const c2EleMas = greaterEq(
   input.constellation,
   2,
-  equal('c2', condC2, dm.constellation2.elemas)
+  equal('c2', condC2, dm.constellation2.elemas),
 )
 
 const [condC2PPath, condC2P] = cond(key, 'c2p')
 const c2PEleMasDisp = greaterEq(
   input.constellation,
   2,
-  equal('c2p', condC2P, dm.constellation2.elemas)
+  equal('c2p', condC2P, dm.constellation2.elemas),
 )
 const c2PEleMas = equal(
   input.activeCharKey,
   target.charKey, // Apply to active character
-  unequal(target.charKey, key, c2PEleMasDisp) // But not to Kazuha
+  unequal(target.charKey, key, c2PEleMasDisp), // But not to Kazuha
 )
 
 const [condC6Path, condC6] = cond(key, 'c6')
 const c6infusion = greaterEqStr(
   input.constellation,
   6,
-  equalStr('c6', condC6, 'anemo')
+  equalStr('c6', condC6, 'anemo'),
 )
 const c6Dmg_ = greaterEq(
   input.constellation,
@@ -157,8 +157,8 @@ const c6Dmg_ = greaterEq(
   equal(
     'c6',
     condC6,
-    prod(percent(dm.constellation6.auto_), input.premod.eleMas)
-  )
+    prod(percent(dm.constellation6.auto_), input.premod.eleMas),
+  ),
 )
 // Share `match` and `prod` between the three nodes
 const c6NormDmg_ = { ...c6Dmg_ }
@@ -169,7 +169,7 @@ const passive = percent(0.2)
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     dmg1: dmgNode('atk', dm.charged.dmg1, 'charged'),
@@ -197,7 +197,7 @@ const dmgFormulas = {
       undefined,
       dmgNode('atk', dm.burst.add, 'burst', {
         hit: { ele: condBurstAbsorption },
-      })
+      }),
     ),
   },
   passive1: {
@@ -212,9 +212,9 @@ const dmgFormulas = {
           'plunging_impact',
           {
             hit: { ele: condSkillAbsorption },
-          }
-        )
-      )
+          },
+        ),
+      ),
     ),
   },
   passive2: asc4,
@@ -384,7 +384,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.headerTem('constellation1', {
@@ -450,7 +450,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.condTem('constellation2', {
@@ -513,7 +513,7 @@ const sheet: TalentSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     }),
     ct.condTem('constellation2', {
@@ -530,10 +530,10 @@ const sheet: TalentSheet = {
           4,
           sum(
             ...Object.values(condSwirls).map((val) =>
-              unequal(val, undefined, 1)
-            )
-          )
-        )
+              unequal(val, undefined, 1),
+            ),
+          ),
+        ),
       ),
       name: ct.ch('c2'),
       states: {

@@ -72,7 +72,7 @@ export default function CustomMultiTargetCard({
       target_.targets = [...target_.targets, initCustomTarget(t, multi)]
       setTarget(target_)
     },
-    [target, setTarget]
+    [target, setTarget],
   )
 
   const setCustomTarget = useCallback(
@@ -81,7 +81,7 @@ export default function CustomMultiTargetCard({
       targets[index] = ctarget
       setTarget({ ...target, targets })
     },
-    [target, setTarget]
+    [target, setTarget],
   )
 
   const deleteCustomTarget = useCallback(
@@ -95,7 +95,7 @@ export default function CustomMultiTargetCard({
       targets.splice(index, 1)
       setTarget({ ...target, targets })
     },
-    [target, setTarget, t]
+    [target, setTarget, t],
   )
 
   const [selectedTarget, setSelectedTarget] = useState(-1)
@@ -109,7 +109,7 @@ export default function CustomMultiTargetCard({
       setTarget({ ...target, targets })
       setSelectedTarget(newRank - 1)
     },
-    [target, setTarget]
+    [target, setTarget],
   )
 
   const dupCustomTarget = useCallback(
@@ -118,7 +118,7 @@ export default function CustomMultiTargetCard({
       targets.splice(index, 0, deepClone(targets[index]))
       setTarget({ ...target, targets })
     },
-    [target, setTarget]
+    [target, setTarget],
   )
 
   const copyToClipboard = () =>
@@ -140,12 +140,12 @@ export default function CustomMultiTargetCard({
           rank={i + 1}
         />
       )),
-    [selectedTarget, target.targets]
+    [selectedTarget, target.targets],
   )
   const selectedTargetValid = clamp(
     selectedTarget,
     -1,
-    target.targets.length - 1
+    target.targets.length - 1,
   )
   return (
     <>
@@ -217,7 +217,7 @@ export default function CustomMultiTargetCard({
                           return false
                         }
                       })()
-                    : false
+                    : false,
                 )
                 setTarget((target) => ({
                   ...target,
@@ -291,7 +291,7 @@ function AddCustomTargetBtn({
       onClose()
       setTarget(target, multi)
     },
-    [onClose, setTarget]
+    [onClose, setTarget],
   )
 
   return (

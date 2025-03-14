@@ -40,26 +40,26 @@ export function LocationFilterMultiAutocomplete({
           silly ? 'sillyWisher_charNames' : 'charNames_gen'
         }:${charKeyToLocGenderedCharKey(
           database.chars.LocationToCharacterKey(key),
-          gender
-        )}`
+          gender,
+        )}`,
       ),
-    [database, gender, t]
+    [database, gender, t],
   )
 
   const toImg = useCallback(
     (key: LocationCharacterKey) => (
       <CharIconSide characterKey={database.chars.LocationToCharacterKey(key)} />
     ),
-    [database]
+    [database],
   )
 
   const toExLabel = useCallback(
     (key: LocationCharacterKey) => <strong>{totals[key]}</strong>,
-    [totals]
+    [totals],
   )
   const toExItemLabel = useCallback(
     (key: LocationCharacterKey) => <Chip size="small" label={totals[key]} />,
-    [totals]
+    [totals],
   )
 
   const isFavorite = useCallback(
@@ -67,22 +67,22 @@ export function LocationFilterMultiAutocomplete({
       key === 'Traveler'
         ? allTravelerKeys.some((key) => database.charMeta.get(key).favorite)
         : key
-        ? database.charMeta.get(key).favorite
-        : false,
-    [database]
+          ? database.charMeta.get(key).favorite
+          : false,
+    [database],
   )
 
   const toVariant = useCallback(
     (key: LocationCharacterKey) =>
       getCharEle(database.chars.LocationToCharacterKey(key)),
-    [database]
+    [database],
   )
 
   const values = useMemo(
     () =>
       allLocationCharacterKeys
         .filter((lck) =>
-          database.chars.get(database.chars.LocationToCharacterKey(lck))
+          database.chars.get(database.chars.LocationToCharacterKey(lck)),
         )
         .map(
           (v): GeneralAutocompleteOption<LocationCharacterKey> => ({
@@ -91,14 +91,14 @@ export function LocationFilterMultiAutocomplete({
             favorite: isFavorite(v),
             color: toVariant(v),
             alternateNames: [namesCB(v, false)],
-          })
+          }),
         )
         .sort((a, b) => {
           if (a.favorite && !b.favorite) return -1
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
-    [database.chars, isFavorite, toVariant, silly, namesCB]
+    [database.chars, isFavorite, toVariant, silly, namesCB],
   )
 
   return (

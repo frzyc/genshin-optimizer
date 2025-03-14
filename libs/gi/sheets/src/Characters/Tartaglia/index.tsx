@@ -91,7 +91,7 @@ const dm = {
 
 const dmgFormulas = {
   normal: Object.fromEntries(
-    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')])
+    dm.normal.hitArr.map((arr, i) => [i, dmgNode('atk', arr, 'normal')]),
   ),
   charged: {
     aimed: dmgNode('atk', dm.charged.aimed, 'charged'),
@@ -111,74 +111,74 @@ const dmgFormulas = {
     normal1: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.normal1, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'normal',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     normal2: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.normal2, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'normal',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     normal3: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.normal3, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'normal',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     normal4: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.normal4, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'normal',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     normal5: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.normal5, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'normal',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     normal61: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.normal61, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'normal',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     normal62: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.normal62, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'normal',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     charged1: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.charged1, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'charged',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     charged2: customDmgNode(
       prod(
         subscript(input.total.skillIndex, dm.skill.charged2, { unit: '%' }),
-        input.total.atk
+        input.total.atk,
       ),
       'charged',
-      { hit: { ele: constant('hydro') } }
+      { hit: { ele: constant('hydro') } },
     ),
     riptideSlash: dmgNode('atk', dm.skill.riptideSlash, 'skill'),
   },

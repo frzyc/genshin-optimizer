@@ -72,7 +72,7 @@ export class BuildDataManager extends DataManager<
   }
   getBuildIds(characterKey: CharacterKey) {
     return this.keys.filter(
-      (key) => this.get(key)?.characterKey === characterKey
+      (key) => this.get(key)?.characterKey === characterKey,
     )
   }
 }

@@ -42,7 +42,7 @@ export function withMember(
 
 export function charTagMapNodeEntries(
   data: ICharacter,
-  position: number
+  position: number,
 ): TagMapNodeEntries {
   const { lvl, basic, skill, ult, talent, ascension, eidolon, teamPosition } =
     own.char
@@ -61,12 +61,12 @@ export function charTagMapNodeEntries(
     eidolon.add(data.eidolon),
     teamPosition.add(position),
     ...allStatBoostKeys.map((index) =>
-      ownBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
+      ownBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0),
     ),
     ...allBonusAbilityKeys.map((index) =>
       ownBuff.char[`bonusAbility${index}`].add(
-        data.bonusAbilities[index] ? 1 : 0
-      )
+        data.bonusAbilities[index] ? 1 : 0,
+      ),
     ),
   ]
 }
@@ -75,7 +75,7 @@ export function lightConeTagMapNodeEntries(
   key: LightConeKey,
   level: number,
   ascension: AscensionKey,
-  superimpose: SuperimposeKey
+  superimpose: SuperimposeKey,
 ): TagMapNodeEntries {
   return [
     // Opt-in for light cone buffs, instead of enabling it by default to reduce `read` traffic
@@ -91,7 +91,7 @@ export function lightConeTagMapNodeEntries(
 
 export function relicTagMapNodeEntries(
   stats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>>,
-  sets: Partial<Record<RelicSetKey, number>>
+  sets: Partial<Record<RelicSetKey, number>>,
 ): TagMapNodeEntries {
   const {
     common: { count },
@@ -109,11 +109,11 @@ export function relicTagMapNodeEntries(
       .withTag({ sheet: 'relic', qt: 'premod' })
       .reread(reader.sheet('dyn')),
     ...Object.entries(stats).map(([k, v]) =>
-      getStatFromStatKey(premod, k).sheet('dyn').add(v)
+      getStatFromStatKey(premod, k).sheet('dyn').add(v),
     ),
 
     ...Object.entries(sets).map(([k, v]) =>
-      count.sheet(k as RelicSetKey).add(v)
+      count.sheet(k as RelicSetKey).add(v),
     ),
   ]
 }
@@ -128,13 +128,13 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'own', dst: null, src: dst }))
+        .reread(reader.withTag({ et: 'own', dst: null, src: dst })),
     ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = own.with('src', dst)
       return members.map((src) =>
-        entry.reread(teamBuff.withTag({ dst, src, name: null }))
+        entry.reread(teamBuff.withTag({ dst, src, name: null })),
       )
     }),
     // Not Self Buff
@@ -143,14 +143,14 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       return members
         .filter((src) => src !== dst)
         .map((src) =>
-          entry.reread(notOwnBuff.withTag({ dst, src, name: null }))
+          entry.reread(notOwnBuff.withTag({ dst, src, name: null })),
         )
     }),
     // Enemy Debuff
     members.map((src) =>
       enemy.reread(
-        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
-      )
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null }),
+      ),
     ),
     // Non-stacking
     members.flatMap((src, i) => {

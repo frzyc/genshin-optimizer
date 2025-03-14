@@ -23,10 +23,10 @@ const skill_dmg_ = lookup(
   objKeyMap(stacksArr, (stack) =>
     prod(
       stack,
-      subscript(input.weapon.refinement, skill_dmg_arr, { unit: '%' })
-    )
+      subscript(input.weapon.refinement, skill_dmg_arr, { unit: '%' }),
+    ),
   ),
-  naught
+  naught,
 )
 const burst_dmg_ = { ...skill_dmg_ }
 

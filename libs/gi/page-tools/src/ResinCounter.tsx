@@ -20,11 +20,11 @@ const RESIN_COUNTER_VALUES = [0, -1, -10, -20, -30, -40, -60, 1, 60, RESIN_MAX]
 export default function ResinCounter() {
   const database = useDatabase()
   const [{ resin, resinDate }, setState] = useState(() =>
-    database.displayTool.get()
+    database.displayTool.get(),
   )
   useEffect(
     () => database.displayTool.follow((r, s) => setState(s)),
-    [database]
+    [database],
   )
   const resinIncrement = useRef(undefined as undefined | NodeJS.Timeout)
 
@@ -35,7 +35,7 @@ export default function ResinCounter() {
     } else
       resinIncrement.current = setTimeout(
         () => console.log('set resin', newResin + 1),
-        RESIN_RECH_MS
+        RESIN_RECH_MS,
       )
     database.displayTool.set({
       resin: newResin,
@@ -49,7 +49,7 @@ export default function ResinCounter() {
       const resinToMax = RESIN_MAX - resin
       const resinSinceLastDate = Math.min(
         Math.floor((now - resinDate) / RESIN_RECH_MS),
-        resinToMax
+        resinToMax,
       )
       const catchUpResin = resin + resinSinceLastDate
       const newDate = resinDate + resinSinceLastDate * RESIN_RECH_MS
@@ -57,7 +57,7 @@ export default function ResinCounter() {
       if (catchUpResin < RESIN_MAX)
         resinIncrement.current = setTimeout(
           () => setResin(catchUpResin + 1),
-          now - newDate
+          now - newDate,
         )
     }
     return () => resinIncrement.current && clearTimeout(resinIncrement.current)

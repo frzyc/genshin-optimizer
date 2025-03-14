@@ -27,8 +27,8 @@ const heal = equal(
   key,
   prod(
     subscript(input.weapon.refinement, hpRegen, { unit: '%' }),
-    input.premod.atk
-  )
+    input.premod.atk,
+  ),
 )
 const dmg = equal(
   input.weapon.key,
@@ -36,11 +36,11 @@ const dmg = equal(
   customDmgNode(
     prod(
       subscript(input.weapon.refinement, atkDealt, { unit: '%' }),
-      input.premod.atk
+      input.premod.atk,
     ),
     'elemental',
-    { hit: { ele: constant('physical') } }
-  )
+    { hit: { ele: constant('physical') } },
+  ),
 )
 
 export const data = dataObjForWeaponSheet(
@@ -53,7 +53,7 @@ export const data = dataObjForWeaponSheet(
   {
     heal,
     dmg,
-  }
+  },
 )
 const sheet: IWeaponSheet = {
   document: [

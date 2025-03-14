@@ -24,7 +24,7 @@ type WeaponExcelConfigData = {
       propType: 'FIGHT_PROP_DEFENSE_PERCENT'
       initValue: 0.11259999871253967
       type: 'GROW_CURVE_CRITICAL_201'
-    }
+    },
   ]
   awakenTexture: string //"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Diffuse",
   awakenLightMapTexture: string //"ART/Equip/AvatarEquip/Equip_Claymore_Exotic/Equip_Claymore_Exotic_OverrideTexture/Equip_Claymore_Exotic_02_Tex_Lightmap",
@@ -58,12 +58,12 @@ type WeaponExcelConfigData = {
   gadgetId: 50012407
 }
 const weaponExcelConfigDataSrc = JSON.parse(
-  readDMJSON('ExcelBinOutput/WeaponExcelConfigData.json')
+  readDMJSON('ExcelBinOutput/WeaponExcelConfigData.json'),
 ) as WeaponExcelConfigData[]
 const weaponExcelConfigData = Object.fromEntries(
   weaponExcelConfigDataSrc
     .filter(({ id }) => id in weaponIdMap)
-    .map((data) => [data.id, data])
+    .map((data) => [data.id, data]),
 ) as Record<WeaponId, WeaponExcelConfigData>
 
 dumpFile(
@@ -72,8 +72,8 @@ dumpFile(
     weaponExcelConfigDataSrc.map((data) => [
       data.id,
       nameToKey(TextMapEN[data.nameTextMapHash]),
-    ])
-  )
+    ]),
+  ),
 )
 
 export { weaponExcelConfigData }

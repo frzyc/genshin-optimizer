@@ -33,7 +33,7 @@ type characterAssetKey =
 export function characterAsset(
   ck: CharacterKey,
   asset: characterAssetKey,
-  gender: GenderKey = 'F'
+  gender: GenderKey = 'F',
 ) {
   switch (asset) {
     case 'icon':

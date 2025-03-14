@@ -27,10 +27,10 @@ const [condPassivePath, condPassive] = cond(key, 'passive')
 const atk_ = equal(
   condPassive,
   'on',
-  subscript(input.weapon.refinement, atk_arr)
+  subscript(input.weapon.refinement, atk_arr),
 )
 const otherEleMembers = sum(
-  ...allElementKeys.map((ele) => unequal(target.charEle, ele, tally[ele]))
+  ...allElementKeys.map((ele) => unequal(target.charEle, ele, tally[ele])),
 )
 const charged_dmg_ = threshold(
   otherEleMembers,
@@ -39,8 +39,8 @@ const charged_dmg_ = threshold(
   greaterEq(
     otherEleMembers,
     1,
-    subscript(input.weapon.refinement, charged_dmg_arr1)
-  )
+    subscript(input.weapon.refinement, charged_dmg_arr1),
+  ),
 )
 const burst_dmg_ = threshold(
   otherEleMembers,
@@ -49,8 +49,8 @@ const burst_dmg_ = threshold(
   greaterEq(
     otherEleMembers,
     1,
-    subscript(input.weapon.refinement, burst_dmg_arr1)
-  )
+    subscript(input.weapon.refinement, burst_dmg_arr1),
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, {

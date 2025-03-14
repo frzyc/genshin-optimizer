@@ -57,7 +57,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
     const name = t(
       `${
         silly ? 'sillyWisher_charNames' : 'charNames_gen'
-      }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
+      }:${charKeyToLocGenderedCharKey(characterKey, gender)}`,
     )
 
     if (!window.confirm(t('removeCharacter', { value: name }))) return
@@ -102,7 +102,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   ascension={character.ascension}
                   setBoth={(data) => {
                     allTravelerKeys.includes(
-                      characterKey as (typeof allTravelerKeys)[number]
+                      characterKey as (typeof allTravelerKeys)[number],
                     )
                       ? allTravelerKeys.forEach((tkey) => {
                           database.chars.set(tkey, data)
@@ -186,9 +186,9 @@ function EquipmentSection() {
     () =>
       objKeyMap(
         allArtifactSlotKeys,
-        (slotKey) => data.get(input.art[slotKey].id).value
+        (slotKey) => data.get(input.art[slotKey].id).value,
       ),
-    [data]
+    [data],
   )
 
   return (
@@ -236,7 +236,8 @@ function InTeam() {
       const teamCharIdWithCKey = team.loadoutData.find(
         (loadoutDatum) =>
           loadoutDatum &&
-          database.teamChars.get(loadoutDatum?.teamCharId)?.key === characterKey
+          database.teamChars.get(loadoutDatum?.teamCharId)?.key ===
+            characterKey,
       )
       if (teamCharIdWithCKey)
         loadoutTeamMap[teamCharIdWithCKey?.teamCharId].push(teamId)
@@ -245,11 +246,11 @@ function InTeam() {
   }, [dbDirty, characterKey, database])
   useEffect(
     () => database.teams.followAny(() => setDbDirty()),
-    [database, setDbDirty]
+    [database, setDbDirty],
   )
   useEffect(
     () => database.teamChars.followAny(() => setDbDirty()),
-    [database, setDbDirty]
+    [database, setDbDirty],
   )
   const onAddNewTeam = () => {
     const teamId = database.teams.new()

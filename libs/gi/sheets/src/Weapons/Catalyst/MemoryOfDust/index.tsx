@@ -30,8 +30,8 @@ const atkStacks = prod(
   lookup(
     condPassive,
     Object.fromEntries(range(1, 5).map((i) => [i, prod(atkInc, i)])),
-    naught
-  )
+    naught,
+  ),
 )
 
 const data = dataObjForWeaponSheet(key, {
@@ -72,7 +72,7 @@ const sheet: IWeaponSheet = {
               },
             ],
           },
-        ])
+        ]),
       ),
     },
     {

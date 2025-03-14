@@ -29,8 +29,8 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
         const linboi: Linear = { $c }
         mon.terms.forEach((key, i) => (linboi[key] = w[i] + (linboi[key] ?? 0)))
         return [mon.$k, linboi] as readonly [number, Linear]
-      })
-    )
+      }),
+    ),
   )
 }
 
@@ -51,7 +51,7 @@ export function linearUB(nodes: OptNode[], arts: ArtifactsBySlot): Linear[] {
  */
 function linbound(
   bounds: MinMax[],
-  direction: 'upper' | 'lower' = 'upper'
+  direction: 'upper' | 'lower' = 'upper',
 ): { w: number[]; $c: number; err: number } {
   if (bounds.length === 0) return { w: [], $c: 1, err: 0 } // vacuous product is 0
   const nVar = bounds.length
@@ -86,7 +86,7 @@ function linbound(
         default:
           assertUnreachable(direction)
       }
-    }
+    },
   )
 
   const objective = [...bounds.map((_) => 0), 0, 1]

@@ -173,7 +173,7 @@ async function start() {
     // 3Filter using constraints
     if (
       constraintArr.every(([k, { value, isMax }]) =>
-        isMax ? sum[k] <= value : sum[k] >= value
+        isMax ? sum[k] <= value : sum[k] >= value,
       )
     ) {
       builds.push({

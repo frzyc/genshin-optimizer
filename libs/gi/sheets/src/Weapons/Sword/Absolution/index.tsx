@@ -25,9 +25,9 @@ const [condBondStacksPath, condBondStacks] = cond(key, 'bondStacks')
 const bondStacks_dmg_ = lookup(
   condBondStacks,
   objKeyMap(bondStacksArr, (stack) =>
-    prod(subscript(input.weapon.refinement, dmg_arr), stack)
+    prod(subscript(input.weapon.refinement, dmg_arr), stack),
   ),
-  naught
+  naught,
 )
 
 const data = dataObjForWeaponSheet(key, {

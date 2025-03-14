@@ -25,7 +25,7 @@ export function getFixed(key: StatKey) {
 export function baseCharStats(
   id: CharacterSheetKey,
   level = 90,
-  ascension: AscensionKey = 6
+  ascension: AscensionKey = 6,
 ) {
   const data: TagMapNodeEntries = [
     ...teamData(['0']),
@@ -41,7 +41,7 @@ export function baseCharStats(
           skill: 1,
           burst: 1,
         },
-      })
+      }),
     ),
   ]
   const member0 = convert(ownTag, { et: 'own', src: '0' })
@@ -60,7 +60,7 @@ export function baseWeaponStats(
   id: WeaponKey,
   level = 90,
   ascension: AscensionKey = 6,
-  refine: RefinementKey = 1
+  refine: RefinementKey = 1,
 ) {
   const data: TagMapNodeEntries = [
     ...withMember(
@@ -72,7 +72,7 @@ export function baseWeaponStats(
         refinement: refine,
         location: '',
         lock: false,
-      })
+      }),
     ),
   ]
   const member0 = convert(ownTag, { et: 'own', src: '0' })
