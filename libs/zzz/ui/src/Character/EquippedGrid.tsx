@@ -41,7 +41,9 @@ export function EquippedGrid({
   setWengine,
   setDisc,
 }: {
-  setWengine: (id: string) => void
+  // set undefined to unequip
+  setWengine: (id: string|undefined) => void
+  // set undefined to unequip
   setDisc: (slotKey: DiscSlotKey, id: string | null) => void
 }) {
   const { database } = useDatabaseContext()

@@ -118,7 +118,12 @@ export default function PageOptimize() {
       {character && charOpt && (
         <CharacterContext.Provider value={character}>
           <TagContext.Provider value={tag}>
-            <CharCalcProvider character={character} charOpt={charOpt}>
+            <CharCalcProvider
+              character={character}
+              charOpt={charOpt}
+              wengineId={character.equippedWengine}
+              discIds={character.equippedDiscs}
+            >
               <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
                 <ConditionalValuesContext.Provider value={charOpt.conditionals}>
                   <SetConditionalContext.Provider value={setConditional}>

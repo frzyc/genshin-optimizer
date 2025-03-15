@@ -1,7 +1,11 @@
 import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { useCharacterContext } from '@genshin-optimizer/zzz/db-ui'
+import {
+  OptConfigProvider,
+  useCharacterContext,
+  useCharOpt,
+} from '@genshin-optimizer/zzz/db-ui'
 import { own } from '@genshin-optimizer/zzz/formula'
 import {
   CharacterCoverOptimize,
@@ -12,6 +16,7 @@ import {
   Button,
   CardActionArea,
   CardContent,
+  Grid,
   Stack,
   Typography,
 } from '@mui/material'
@@ -29,6 +34,7 @@ import { TeamHeaderHeightContext } from './context/TeamHeaderHeightContext'
 import { DiscSheetsDisplay } from './DiscSheetsDisplay'
 import Optimize from './Optimize'
 import { EquippedGrid } from './Optimize/EquippedGrid'
+import GeneratedBuildsDisplay from './Optimize/GeneratedBuildsDisplay'
 import { WengineSheetsDisplay } from './WengineSheetsDisplay'
 
 const BOT_PX = 0
@@ -47,6 +53,7 @@ export function CharacterOptDisplay() {
           <WengineSheetsDisplay key="wengineCond" />,
         ],
         ['opt', 'Optimize', <OptimizeSection key="opt" />],
+        ['builds', 'Builds', <BuildsSection key="builds" />],
       ] as const
     }, [])
 
@@ -124,15 +131,21 @@ function CharacterSection() {
               backgroundColor: '#1b263b',
             }}
           >
-            <Stack spacing={1}>
-              <CharacterCoverOptimize characterKey={characterKey} />
-              <Button fullWidth disabled={!characterKey} onClick={onClick}>
-                {/* TODO: Translation */}
-                Edit Character
-              </Button>
-              <CharStatsDisplay />
-            </Stack>
-            <EquippedGrid onClick={onClick} />
+            <Grid container spacing={2}>
+              <Grid item xs={6} lg={5} xl={4}>
+                <Stack spacing={1}>
+                  <CharacterCoverOptimize characterKey={characterKey} />
+                  <Button fullWidth disabled={!characterKey} onClick={onClick}>
+                    {/* TODO: Translation */}
+                    Edit Character
+                  </Button>
+                  <CharStatsDisplay />
+                </Stack>
+              </Grid>
+              <Grid item xs={6} lg={7} xl={8}>
+                <EquippedGrid onClick={onClick} />
+              </Grid>
+            </Grid>
           </CardContent>
         </CardThemed>
         <BonusStatsSection />
@@ -147,4 +160,14 @@ function CharacterSection() {
 
 function OptimizeSection() {
   return <Optimize />
+}
+function BuildsSection() {
+  const { key: characterKey } = useCharacterContext()!
+  const { optConfigId } = useCharOpt(characterKey)!
+  if (!optConfigId) return null
+  return (
+    <OptConfigProvider optConfigId={optConfigId}>
+      <GeneratedBuildsDisplay />
+    </OptConfigProvider>
+  )
 }

@@ -111,7 +111,8 @@ export function Content({ onClose }: { onClose?: () => void }) {
               <EquippedGrid
                 setWengine={(id) => {
                   if (!id) {
-                    database.wengines.set(equippedWengine, { location: '' })
+                    equippedWengine &&
+                      database.wengines.set(equippedWengine, { location: '' })
                   } else {
                     database.wengines.set(id, {
                       location: characterKey,
@@ -120,7 +121,10 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 }}
                 setDisc={(slotKey, id) => {
                   if (!id)
-                    database.discs.set(equippedDiscs[slotKey], { location: '' })
+                    equippedDiscs[slotKey] &&
+                      database.discs.set(equippedDiscs[slotKey], {
+                        location: '',
+                      })
                   else
                     database.discs.set(id, {
                       location: characterKey,

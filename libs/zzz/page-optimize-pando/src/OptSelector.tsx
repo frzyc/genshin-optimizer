@@ -4,7 +4,7 @@ import { OptimizationTargetSelector } from '@genshin-optimizer/zzz/formula-ui'
 
 export function OptSelector({
   character: { key: characterKey },
-  charOpt: { target },
+  charOpt: { targetName, targetSheet },
 }: {
   charOpt: CharOpt
   character: ICachedCharacter
@@ -12,10 +12,14 @@ export function OptSelector({
   const { database } = useDatabaseContext()
   return (
     <OptimizationTargetSelector
-      optTarget={target}
-      setOptTarget={(tag) =>
+      sheet={targetSheet}
+      name={targetName}
+      setOptTarget={({ sheet, name }) =>
+        sheet &&
+        name &&
         database.charOpts.set(characterKey, {
-          target: tag,
+          targetSheet: sheet,
+          targetName: name,
         })
       }
       buttonProps={{ fullWidth: true, sx: { height: '100%' } }}
