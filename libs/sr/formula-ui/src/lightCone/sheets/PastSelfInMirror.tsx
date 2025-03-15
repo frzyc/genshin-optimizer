@@ -44,25 +44,21 @@ const sheet: UISheetElement = {
           icon: <ImgIcon src={icon} sx={{ width: 'auto' }} size={2} />,
           text: chg('passive.name'),
         },
-        metadata: cond.useUltimate,
-        label: 'Wearer use their Ultimate',
+        metadata: cond.ultUsed,
+        label: 'Wearer used their Ultimate',
         fields: [
           {
             title: <StatDisplay statKey="dmg_" />,
-            fieldRef: buff.cond_dmg_.tag,
+            fieldRef: buff.common_dmg_.tag,
           },
           // TODO: translate DM "Duration"
           {
             title: 'Duration',
-            fieldValue: (
-              <SuperImposeWrapper lcKey={key}>
-                {(superimpose) => dm.duration[superimpose]}
-              </SuperImposeWrapper>
-            ),
+            fieldValue: `${dm.duration}`,
           },
           {
             // TODO: should only show when wearer brEffect_ > dm.brEffect_thresh_[superimpose]
-            title: 'Skill POint recovered',
+            title: 'Skill Point recovered',
             fieldValue: 1,
           },
         ],
@@ -72,10 +68,10 @@ const sheet: UISheetElement = {
       type: 'fields',
       fields: [
         {
-          title: 'Energy regen at start of each wave',
+          title: 'Energy regen at the start of each wave',
           fieldValue: (
             <SuperImposeWrapper lcKey={key}>
-              {(superimpose) => dm.enerRegn[superimpose]}
+              {(superimpose) => dm.energy[superimpose]}
             </SuperImposeWrapper>
           ),
         },
