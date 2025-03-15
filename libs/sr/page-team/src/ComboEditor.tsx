@@ -6,8 +6,8 @@ import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Read } from '@genshin-optimizer/sr/formula'
 import {
-  OptimizationTargetDisplay,
   OptimizationTargetSelector,
+  TagDisplay,
 } from '@genshin-optimizer/sr/formula-ui'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import { Box, CardActionArea, Divider, Typography } from '@mui/material'
@@ -91,7 +91,7 @@ function Combo({ frame, index }: { frame: Frame; index: number }) {
           <Typography>{index + 1}</Typography>
           <Divider orientation="vertical" />
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <OptimizationTargetDisplay tag={frame.tag} />
+            <TagDisplay tag={frame.tag} />
           </Box>
         </Box>
 
