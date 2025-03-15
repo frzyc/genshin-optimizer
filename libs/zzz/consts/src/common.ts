@@ -98,6 +98,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
   enerRegen: 'Energy Regen',
+  base_enerRegen: 'Base Energy Regen',
   impact_: 'Impact',
   impact: 'Impact',
   daze_: 'Daze',

@@ -9,17 +9,22 @@ export function OptimizeTargetSelector({
   setFormulaKey,
 }: {
   disabled?: boolean
-  formulaKey: FormulaKey
+  formulaKey?: FormulaKey
   setFormulaKey: (key: FormulaKey) => void
 }) {
   return (
     <DropdownButton
       disabled={disabled}
       fullWidth
+      color={formulaKey ? 'success' : 'warning'}
       title={
-        <span>
-          Optimize Target: <strong>{formulaKeyTextMap[formulaKey]}</strong>
-        </span>
+        formulaKey ? (
+          <span>
+            Optimize Target: <strong>{formulaKeyTextMap[formulaKey]}</strong>
+          </span>
+        ) : (
+          'Select an Optimization Target'
+        )
       }
       sx={{ flexGrow: 1 }}
     >

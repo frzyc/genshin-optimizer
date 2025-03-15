@@ -50,7 +50,7 @@ export default function OptimizeWrapper({
   baseStats,
   setResults,
 }: {
-  formulaKey: FormulaKey
+  formulaKey?: FormulaKey
   location: LocationKey
   baseStats: Stats
   setResults: (builds: BuildResult[]) => void
@@ -128,7 +128,7 @@ export default function OptimizeWrapper({
   useEffect(() => () => cancelToken.current(), [])
 
   const onOptimize = useCallback(async () => {
-    if (!character) return
+    if (!character||!formulaKey) return
     const { setFilter2, setFilter4 } = character
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setResults([])

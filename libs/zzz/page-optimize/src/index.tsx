@@ -16,7 +16,6 @@ import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCoreKeysWithNone,
   allDiscSlotKeys,
-  allFormulaKeys,
   wengineSheets,
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -182,7 +181,7 @@ export default function PageOptimize() {
             setResults={setBuilds}
             baseStats={baseStats}
             location={locationKey}
-            formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
+            formulaKey={character?.formulaKey}
           />,
         ],
         [
@@ -362,7 +361,7 @@ function CharacterSection({
               {characterStats && <StatsDisplay stats={characterStats} />}
               <OptimizeTargetSelector
                 disabled={!character}
-                formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
+                formulaKey={character?.formulaKey}
                 setFormulaKey={setFormulaKey}
               />
             </Stack>
